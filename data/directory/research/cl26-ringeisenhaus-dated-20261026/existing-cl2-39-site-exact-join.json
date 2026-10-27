@@ -1,0 +1,1844 @@
+{
+  "schema": "AO_FSSP_39_TO_EXISTING_CL2_MASTER_SOURCE_ROW_IDENTITY_JOIN_V1",
+  "as_of": "2026-10-27",
+  "baseline": "frozen CL2 2584 research groups, not public places",
+  "method": "FSSP exact original Mass row -> CL2 frozen venue source ID/group -> effective physical anchor. No name-based fuzzy admission.",
+  "counts": {
+    "sites": 39,
+    "locked_mass_rows": 74,
+    "distinct_group_ids": 39,
+    "distinct_effective_anchors": 39,
+    "existing_venues_reused": 39,
+    "new_site_groups": 0,
+    "new_public_mass_events": 0,
+    "new_pins": 0,
+    "named_worship_or_host_building_georeferences": 38,
+    "named_worship_site_room_still_unlocated": 1,
+    "exact_visitor_door_coordinates_surveyed": 0,
+    "proposed_building_geometry_witnesses": 38,
+    "original_pilot_frozen_ID_conflicts": 0
+  },
+  "source_to_master_existing_site_join": [
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-001",
+      "operator_named_church": "St. Anna",
+      "operator_city": "Heidelberg",
+      "operator_location": "Plöck 4, 69117 Heidelberg",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-9EDD49549E6F",
+      "existing_effective_cl2_physical_anchor_id": "RG-9EDD49549E6F",
+      "frozen_source_venue_id": "ao-fssp-st-anna-plock-4-69117-heidelberg-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 18,
+          "source_venue_id": "ao-fssp-st-anna-plock-4-69117-heidelberg-deutschland",
+          "local_clock": "18:00"
+        }
+      ],
+      "existing_cl2_name": "St. Anna",
+      "existing_cl2_physical_description": "Plöck 4, 69117 Heidelberg, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 49.4088,
+          "longitude": 8.6956,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://commons.wikimedia.org/wiki/Category:St._Anna_(Heidelberg)",
+          "identity_conflicts": [
+            "NOT_HOSPITAL_GEOPOINT",
+            "CHURCH_DOOR_NOT_SURVEYED"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-002",
+      "operator_named_church": "Propsteikirche St. Nikolaus",
+      "operator_city": "Kiel",
+      "operator_location": "Rathausstraße 5, 24103 Kiel",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-A6DA8C9EDCF8",
+      "existing_effective_cl2_physical_anchor_id": "RG-A6DA8C9EDCF8",
+      "frozen_source_venue_id": "ao-fssp-st-nikolaus-rathausstr-5-d-24103-kiel-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 21,
+          "source_venue_id": "ao-fssp-st-nikolaus-rathausstr-5-d-24103-kiel-deutschland",
+          "local_clock": "16:00"
+        }
+      ],
+      "existing_cl2_name": "St. Nikolaus",
+      "existing_cl2_physical_description": "Rathausstraße 5, 24103 Kiel, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 54.3225,
+          "longitude": 10.1314,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://aroundus.com/p/6566929-propsteikirche-st.-nikolaus",
+          "identity_conflicts": [
+            "ST_NIKOLAUS_CAMPUS_KITA_AT_SAME_RATHAUSSTRASSE_5",
+            "POI_NOT_DOOR"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-003",
+      "operator_named_church": "Propsteikirche St. Clemens",
+      "operator_city": "Hannover",
+      "operator_location": "Platz an der Basilika 1, 30169 Hannover",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-58B096C9EE65",
+      "existing_effective_cl2_physical_anchor_id": "RG-58B096C9EE65",
+      "frozen_source_venue_id": "ao-fssp-basilika-st-clemens-platz-an-der-basilika-1-d-30169-hannover-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 22,
+          "source_venue_id": "ao-fssp-basilika-st-clemens-platz-an-der-basilika-1-d-30169-hannover-deutschland",
+          "local_clock": "13:30"
+        },
+        {
+          "historical_row": 3452,
+          "source_venue_id": "ao-fssp-basilika-st-clemens-platz-an-der-basilika-1-d-30169-hannover-deutschland",
+          "local_clock": "15:30"
+        }
+      ],
+      "existing_cl2_name": "Basilika St. Clemens",
+      "existing_cl2_physical_description": "Platz an der Basilika 1, 30169 Hannover, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 52.373,
+          "longitude": 9.72683,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/de/W357786647",
+          "identity_conflicts": [
+            "BUILDING_CENTRE_NOT_CHURCH_DOOR"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-004",
+      "operator_named_church": "Pfarrkirche St. Dionysius",
+      "operator_city": "Düsseldorf-Volmerswerth",
+      "operator_location": "Abteihofstr. 25, 40221 Düsseldorf",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-5740F42C1189",
+      "existing_effective_cl2_physical_anchor_id": "RG-5740F42C1189",
+      "frozen_source_venue_id": "ao-fssp-kirche-st-dionysius-abteihofstr-25-d-40221-dusseldorf-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 23,
+          "source_venue_id": "ao-fssp-kirche-st-dionysius-abteihofstr-25-d-40221-dusseldorf-deutschland",
+          "local_clock": "10:30"
+        },
+        {
+          "historical_row": 3453,
+          "source_venue_id": "ao-fssp-kirche-st-dionysius-abteihofstr-25-d-40221-dusseldorf-deutschland",
+          "local_clock": "18:30"
+        },
+        {
+          "historical_row": 3454,
+          "source_venue_id": "ao-fssp-kirche-st-dionysius-abteihofstr-25-d-40221-dusseldorf-deutschland",
+          "local_clock": "08:30"
+        }
+      ],
+      "existing_cl2_name": "Kirche St. Dionysius",
+      "existing_cl2_physical_description": "Abteihofstraße 25, 40221 Düsseldorf-Volmerswerth, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 51.185138889,
+          "longitude": 6.764916667,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://de.wikipedia.org/wiki/St._Dionysius_(D%C3%BCsseldorf)",
+          "identity_conflicts": [
+            "2026_10_11_SUNDAY_0800_SPECIAL_TIME",
+            "CHURCH_DOOR_NOT_SURVEYED"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-005",
+      "operator_named_church": "Pfarrkirche St. Antonius",
+      "operator_city": "Wuppertal-Barmen",
+      "operator_location": "Unterdörnen 137, 42275 Wuppertal-Barmen",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-F9271685520E",
+      "existing_effective_cl2_physical_anchor_id": "RG-F9271685520E",
+      "frozen_source_venue_id": "ao-fssp-st-antonius-unterdornen-137-d-42275-wuppertal-barmen-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 24,
+          "source_venue_id": "ao-fssp-st-antonius-unterdornen-137-d-42275-wuppertal-barmen-deutschland",
+          "local_clock": "18:30"
+        }
+      ],
+      "existing_cl2_name": "St. Antonius",
+      "existing_cl2_physical_description": "Unterdörnen 137, 42275 Wuppertal-Barmen, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 51.2706,
+          "longitude": 7.195561111,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://commons.wikimedia.org/wiki/Category:St._Antonius_(Wuppertal)",
+          "identity_conflicts": [
+            "WIKIMEDIA_UNTERDORNEN_139_VS_OFFICIAL_137",
+            "NEARBY_TURMKAPELLE_DISTINCT",
+            "SKIP_2ND_MONDAYS_AND_FEASTS"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-006",
+      "operator_named_church": "St. Josef",
+      "operator_city": "Remscheid",
+      "operator_location": "Menninghauser Str. 5, 42859 Remscheid",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-FB121507FDF6",
+      "existing_effective_cl2_physical_anchor_id": "RG-FB121507FDF6",
+      "frozen_source_venue_id": "ao-fssp-st-joseph-menninghauser-stra-e-5-d-42859-remscheid-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 25,
+          "source_venue_id": "ao-fssp-st-joseph-menninghauser-stra-e-5-d-42859-remscheid-deutschland",
+          "local_clock": "08:00"
+        }
+      ],
+      "existing_cl2_name": "St. Joseph",
+      "existing_cl2_physical_description": "Menninghauser Straße 5, 42859 Remscheid, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 51.17199,
+          "longitude": 7.20953,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://www.kuladig.de/Objektansicht/KLD-280076",
+          "identity_conflicts": [
+            "St Josef church Menninghauser Str 5. Do not match church to the distinct community office 5b or nursery 5c."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-007",
+      "operator_named_church": "St. Joseph",
+      "operator_city": "Recklinghausen-Grullbad",
+      "operator_location": "Grullbadstr. 94, 45661 Recklinghausen",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-0AB8366D07A8",
+      "existing_effective_cl2_physical_anchor_id": "RG-0AB8366D07A8",
+      "frozen_source_venue_id": "ao-fssp-kirche-st-joseph-grullbadstr-94-d-45661-recklinghausen-grullbad-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 27,
+          "source_venue_id": "ao-fssp-kirche-st-joseph-grullbadstr-94-d-45661-recklinghausen-grullbad-deutschland",
+          "local_clock": "18:00"
+        },
+        {
+          "historical_row": 3455,
+          "source_venue_id": "ao-fssp-kirche-st-joseph-grullbadstr-94-d-45661-recklinghausen-grullbad-deutschland",
+          "local_clock": "18:00"
+        },
+        {
+          "historical_row": 3456,
+          "source_venue_id": "ao-fssp-kirche-st-joseph-grullbadstr-94-d-45661-recklinghausen-grullbad-deutschland",
+          "local_clock": "08:00"
+        },
+        {
+          "historical_row": 3457,
+          "source_venue_id": "ao-fssp-kirche-st-joseph-grullbadstr-94-d-45661-recklinghausen-grullbad-deutschland",
+          "local_clock": "18:00"
+        }
+      ],
+      "existing_cl2_name": "Kirche St. Joseph",
+      "existing_cl2_physical_description": "Grullbadstraße 94, 45661 Recklinghausen-Grullbad, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 51.57955556,
+          "longitude": 7.20147222,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://de.wikipedia.org/wiki/St._Joseph_(Recklinghausen)",
+          "identity_conflicts": [
+            "Published church coordinate is research only. FSSP local operator reports church temporarily shut for structural problems and weekday Masses moved to St Gertrudis, Heidestr 21. This georeference MUST NOT validate a current timetable."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-008",
+      "operator_named_church": "St. Josef",
+      "operator_city": "Oberhausen-Styrum",
+      "operator_location": "Lothringer Str. 154, 46045 Oberhausen",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-C6D6F07584B8",
+      "existing_effective_cl2_physical_anchor_id": "RG-C6D6F07584B8",
+      "frozen_source_venue_id": "ao-fssp-kirche-st-joseph-lothringer-str-154-d-46045-oberhausen-styrum-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 29,
+          "source_venue_id": "ao-fssp-kirche-st-joseph-lothringer-str-154-d-46045-oberhausen-styrum-deutschland",
+          "local_clock": "10:00"
+        },
+        {
+          "historical_row": 3458,
+          "source_venue_id": "ao-fssp-kirche-st-joseph-lothringer-str-154-d-46045-oberhausen-styrum-deutschland",
+          "local_clock": "18:00"
+        },
+        {
+          "historical_row": 3459,
+          "source_venue_id": "ao-fssp-kirche-st-joseph-lothringer-str-154-d-46045-oberhausen-styrum-deutschland",
+          "local_clock": "08:30"
+        },
+        {
+          "historical_row": 3460,
+          "source_venue_id": "ao-fssp-kirche-st-joseph-lothringer-str-154-d-46045-oberhausen-styrum-deutschland",
+          "local_clock": "18:30"
+        }
+      ],
+      "existing_cl2_name": "Kirche St. Joseph",
+      "existing_cl2_physical_description": "Lothringer Straße 154, 46045 Oberhausen-Styrum, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 51.46172,
+          "longitude": 6.85293,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": 29047159,
+          "witness_url": "https://mapcarta.com/de/W29047159",
+          "identity_conflicts": [
+            "Roman Catholic St Joseph at Lothringer Str 154; mapped building=yes way, not visitor doorway. Avoid other St Josef in Oberhausen."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-009",
+      "operator_named_church": "St. Michael",
+      "operator_city": "Recklinghausen",
+      "operator_location": "Michaelstraße 1, 45661 Recklinghausen",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-908B5ADE6AE9",
+      "existing_effective_cl2_physical_anchor_id": "RG-908B5ADE6AE9",
+      "frozen_source_venue_id": "ao-fssp-kirche-st-michael-michaelstr-1-d-45661-recklinghausen-hochlarmark-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 28,
+          "source_venue_id": "ao-fssp-kirche-st-michael-michaelstr-1-d-45661-recklinghausen-hochlarmark-deutschland",
+          "local_clock": "10:00"
+        }
+      ],
+      "existing_cl2_name": "Kirche St. Michael",
+      "existing_cl2_physical_description": "Michaelstraße 1, 45661 Recklinghausen, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 51.56191667,
+          "longitude": 7.18641667,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://de.wikipedia.org/wiki/St._Michael_(Hochlarmark)",
+          "identity_conflicts": [
+            "Historic St Michael church point. Parish office and Caritashaus/Kindergarten beside church are not interchangeable worship targets."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-010",
+      "operator_named_church": "Kirche Maria Hilf",
+      "operator_city": "Köln",
+      "operator_location": "Rolandstr. 59, 50677 Köln",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-9A2723B3878B",
+      "existing_effective_cl2_physical_anchor_id": "RG-9A2723B3878B",
+      "frozen_source_venue_id": "ao-fssp-kirche-maria-hilf-rolandstrasse-59-d-50677-koln-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 30,
+          "source_venue_id": "ao-fssp-kirche-maria-hilf-rolandstrasse-59-d-50677-koln-deutschland",
+          "local_clock": "10:00"
+        },
+        {
+          "historical_row": 3461,
+          "source_venue_id": "ao-fssp-kirche-maria-hilf-rolandstrasse-59-d-50677-koln-deutschland",
+          "local_clock": "18:30"
+        },
+        {
+          "historical_row": 3462,
+          "source_venue_id": "ao-fssp-kirche-maria-hilf-rolandstrasse-59-d-50677-koln-deutschland",
+          "local_clock": "09:00"
+        }
+      ],
+      "existing_cl2_name": "Kirche Maria Hilf",
+      "existing_cl2_physical_description": "Rolandstraße 59, 50677 Köln, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 50.91865,
+          "longitude": 6.95686,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/W225722089",
+          "identity_conflicts": [
+            "CHURCH_ROLANDSTR_59_NOT_FSSP_PARISH_RESIDENCE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-011",
+      "operator_named_church": "St.-Anna-Kapelle",
+      "operator_city": "Leverkusen-Lützenkirchen",
+      "operator_location": "Kapellenstr. 10, 51381 Leverkusen",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-678EC717A04C",
+      "existing_effective_cl2_physical_anchor_id": "RG-678EC717A04C",
+      "frozen_source_venue_id": "ao-fssp-st-anna-kapelle-kapellenstr-10-d-51381-leverkusen-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 31,
+          "source_venue_id": "ao-fssp-st-anna-kapelle-kapellenstr-10-d-51381-leverkusen-deutschland",
+          "local_clock": "18:30"
+        }
+      ],
+      "existing_cl2_name": "St. Anna Kapelle",
+      "existing_cl2_physical_description": "Kapellenstraße 10, 51381 Leverkusen-Lützenkirchen, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 51.06665,
+          "longitude": 7.0582,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": 94701638,
+          "witness_url": "https://mapcarta.com/de/W94701638",
+          "identity_conflicts": [
+            "The Anna-Kapelle building=chapel; NOT the distinct St Maurinus parish church or Kreuzkapelle in Lützenkirchen."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-012",
+      "operator_named_church": "Heilig-Kreuz-Kapelle",
+      "operator_city": "Odenthal-Klasmühle",
+      "operator_location": "Kapellenweg 3, Odenthal-Klasmühle",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-42CF36017EF5",
+      "existing_effective_cl2_physical_anchor_id": "RG-42CF36017EF5",
+      "frozen_source_venue_id": "ao-fssp-heilig-kreuz-kapelle-kapellenweg-3-d-51519-odenthal-klasmuhle-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 32,
+          "source_venue_id": "ao-fssp-heilig-kreuz-kapelle-kapellenweg-3-d-51519-odenthal-klasmuhle-deutschland",
+          "local_clock": "18:00"
+        }
+      ],
+      "existing_cl2_name": "Heilig-Kreuz-Kapelle",
+      "existing_cl2_physical_description": "Kapellenweg 3, 51519 Odenthal-Klasmühle, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 51.033944,
+          "longitude": 7.161611,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://commons.wikimedia.org/wiki/Category:Heilig-Kreuz-Kirche_(Odenthal)",
+          "identity_conflicts": [
+            "WORSHIP_CHAPEL_SHARED_USE_NOT_PROPERTY_OWNERSHIP"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-013",
+      "operator_named_church": "St. Apollinaris",
+      "operator_city": "Lindlar-Frielingsdorf",
+      "operator_location": "Jan-Wellem-Straße 12, 51789 Lindlar",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-B04A7AF4A366",
+      "existing_effective_cl2_physical_anchor_id": "RG-B04A7AF4A366",
+      "frozen_source_venue_id": "ao-fssp-st-apollinaris-jan-wellem-strasse-12-d-51789-lindlar-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 33,
+          "source_venue_id": "ao-fssp-st-apollinaris-jan-wellem-strasse-12-d-51789-lindlar-deutschland",
+          "local_clock": "17:30"
+        }
+      ],
+      "existing_cl2_name": "St. Apollinaris",
+      "existing_cl2_physical_description": "Jan-Wellem-Straße 12, 51789 Lindlar-Frielingsdorf, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 51.04548,
+          "longitude": 7.42666,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://www.kuladig.de/Objektansicht/KLD-261991",
+          "identity_conflicts": [
+            "FSSP_SOURCE_JAN_WELLEMSTR_12_VS_HIKER_PARKING_ST_APOLLINARIS_WEG_3",
+            "OUTDOORACTIVE_PARKING_COORD_NOT_CHURCH_POINT",
+            "LOCAL_2025_MONTHLY_EXCEPTION_MAY_DIFFER"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-014",
+      "operator_named_church": "St. Martinus",
+      "operator_city": "Nörvenich-Pingsheim",
+      "operator_location": "Alfons-Keever-Straße 5, 52388 Nörvenich",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-79EBE30CAE61",
+      "existing_effective_cl2_physical_anchor_id": "RG-79EBE30CAE61",
+      "frozen_source_venue_id": "ao-fssp-st-martinus-alfons-keever-str-5-d-52388-norvenich-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 34,
+          "source_venue_id": "ao-fssp-st-martinus-alfons-keever-str-5-d-52388-norvenich-deutschland",
+          "local_clock": "19:00"
+        }
+      ],
+      "existing_cl2_name": "St. Martinus",
+      "existing_cl2_physical_description": "Alfons-Keever-Straße 5, 52388 Nörvenich-Pingsheim, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 50.7996,
+          "longitude": 6.6935,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": 42740032,
+          "witness_url": "https://mapcarta.com/W42740032",
+          "identity_conflicts": [
+            "Pingsheim Roman Catholic way, not St Martinus in Erftstadt-Borr or St Martinus Wissersheim. Operator address 5 versus map way address 7; door unapproved."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-015",
+      "operator_named_church": "Canisianum (formerly St. Petrus Canisius)",
+      "operator_city": "Saarlouis",
+      "operator_location": "Stiftstraße 18, 66740 Saarlouis",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-D503E8771A57",
+      "existing_effective_cl2_physical_anchor_id": "RG-D503E8771A57",
+      "frozen_source_venue_id": "ao-fssp-kirche-st-petrus-canisius-stiftstr-18-d-66740-saarlouis-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 36,
+          "source_venue_id": "ao-fssp-kirche-st-petrus-canisius-stiftstr-18-d-66740-saarlouis-deutschland",
+          "local_clock": "08:00"
+        },
+        {
+          "historical_row": 3463,
+          "source_venue_id": "ao-fssp-kirche-st-petrus-canisius-stiftstr-18-d-66740-saarlouis-deutschland",
+          "local_clock": "10:00"
+        },
+        {
+          "historical_row": 3464,
+          "source_venue_id": "ao-fssp-kirche-st-petrus-canisius-stiftstr-18-d-66740-saarlouis-deutschland",
+          "local_clock": "18:00"
+        },
+        {
+          "historical_row": 3465,
+          "source_venue_id": "ao-fssp-kirche-st-petrus-canisius-stiftstr-18-d-66740-saarlouis-deutschland",
+          "local_clock": "18:30"
+        },
+        {
+          "historical_row": 3466,
+          "source_venue_id": "ao-fssp-kirche-st-petrus-canisius-stiftstr-18-d-66740-saarlouis-deutschland",
+          "local_clock": "08:00"
+        }
+      ],
+      "existing_cl2_name": "Kirche St. Petrus Canisius",
+      "existing_cl2_physical_description": "Stiftstraße 18, 66740 Saarlouis, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 49.3156,
+          "longitude": 6.75388,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/de/W733991343",
+          "identity_conflicts": [
+            "OSM_STIFTSTRASSE_20_VS_FSSP_SOURCE_18",
+            "CANISIANUM_ALIAS_ST_PETRUS_CANISIUS"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-016",
+      "operator_named_church": "St. Albert",
+      "operator_city": "Stuttgart-Zuffenhausen",
+      "operator_location": "Wollinstr. 55, 70439 Stuttgart",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-A9290990C7DE",
+      "existing_effective_cl2_physical_anchor_id": "RG-A9290990C7DE",
+      "frozen_source_venue_id": "ao-fssp-kirche-st-albert-wollinstrasse-55-d-70435-stuttgart-zuffenhausen-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 38,
+          "source_venue_id": "ao-fssp-kirche-st-albert-wollinstrasse-55-d-70435-stuttgart-zuffenhausen-deutschland",
+          "local_clock": "08:00"
+        },
+        {
+          "historical_row": 3467,
+          "source_venue_id": "ao-fssp-kirche-st-albert-wollinstrasse-55-d-70435-stuttgart-zuffenhausen-deutschland",
+          "local_clock": "09:30"
+        },
+        {
+          "historical_row": 3469,
+          "source_venue_id": "ao-fssp-kirche-st-albert-wollinstrasse-55-d-70435-stuttgart-zuffenhausen-deutschland",
+          "local_clock": "18:30"
+        },
+        {
+          "historical_row": 3470,
+          "source_venue_id": "ao-fssp-kirche-st-albert-wollinstrasse-55-d-70435-stuttgart-zuffenhausen-deutschland",
+          "local_clock": "08:30"
+        }
+      ],
+      "existing_cl2_name": "Kirche St. Albert",
+      "existing_cl2_physical_description": "Wollinstraße 55, 70439 Stuttgart-Zuffenhausen, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 48.839722222,
+          "longitude": 9.146388889,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://dewiki.de/Lexikon/Liste_von_Sakralbauten_in_Stuttgart",
+          "identity_conflicts": [
+            "WOLLINSTR_55_POSTCODE_70439_VS_70435",
+            "SECONDARY_COORDINATE_NOT_OSM_CHURCH_WAY_VERIFIED"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-017",
+      "operator_named_church": "St. Leonhard",
+      "operator_city": "Schwäbisch Gmünd",
+      "operator_location": "Aalener Str. 2, 73529 Schwäbisch Gmünd",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-CD4C7536D753",
+      "existing_effective_cl2_physical_anchor_id": "RG-CD4C7536D753",
+      "frozen_source_venue_id": "ao-fssp-kirche-st-leonhard-aalener-strasse-1-d-73527-schwabisch-gmund-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 39,
+          "source_venue_id": "ao-fssp-kirche-st-leonhard-aalener-strasse-1-d-73527-schwabisch-gmund-deutschland",
+          "local_clock": "08:00"
+        },
+        {
+          "historical_row": 3471,
+          "source_venue_id": "ao-fssp-kirche-st-leonhard-aalener-strasse-1-d-73527-schwabisch-gmund-deutschland",
+          "local_clock": "09:30"
+        }
+      ],
+      "existing_cl2_name": "Kirche St. Leonhard",
+      "existing_cl2_physical_description": "Aalener Straße 2, 73529 Schwäbisch Gmünd, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL20",
+          "source_evidence_file": "cl20-geo-entrance-20261026/source-geocodes.json",
+          "latitude": 48.80303,
+          "longitude": 9.80474,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_BUILDING_NOT_ENTRANCE",
+          "osm_way_id": 253934498,
+          "witness_url": "https://mapcarta.com/de/W253934498",
+          "identity_conflicts": [
+            "FRIEDHOFSTRASSE_2_VS_AALENER_STRASSE_2",
+            "NEARBY_HERRGOTTSRUHKAPELLE_AALENER_4_IS_DIFFERENT",
+            "OSM_WAY_CENTER_NOT_ENTRANCE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-018",
+      "operator_named_church": "St. Leonhard",
+      "operator_city": "Nußdorf am Inn",
+      "operator_location": "Leonardiweg, 83131 Nußdorf",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-44E3105F7AA2",
+      "existing_effective_cl2_physical_anchor_id": "RG-44E3105F7AA2",
+      "frozen_source_venue_id": "ao-fssp-kirche-st-leonhard-leonhardiweg-d-83131-nu-dorf-am-inn-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 44,
+          "source_venue_id": "ao-fssp-kirche-st-leonhard-leonhardiweg-d-83131-nu-dorf-am-inn-deutschland",
+          "local_clock": "19:00"
+        }
+      ],
+      "existing_cl2_name": "Kirche St. Leonhard",
+      "existing_cl2_physical_description": "Leonardiweg, 83131 Nußdorf am Inn, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 47.73986,
+          "longitude": 12.15365,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": 171690178,
+          "witness_url": "https://mapcarta.com/W171690178",
+          "identity_conflicts": [
+            "Named St Leonhard church footprint (OSM building=yes), not Sankt Vitus, nearby pilgrimage church, or parish office; seasonal 2026 non-service exception requires separate calendar review."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-019",
+      "operator_named_church": "Frauenkirche",
+      "operator_city": "Neckarsulm",
+      "operator_location": "Spitalstraße, 74172 Neckarsulm",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-652E192B4AE6",
+      "existing_effective_cl2_physical_anchor_id": "RG-652E192B4AE6",
+      "frozen_source_venue_id": "ao-fssp-frauenkirche-spitalstr-1-d-74172-neckarsulm-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 40,
+          "source_venue_id": "ao-fssp-frauenkirche-spitalstr-1-d-74172-neckarsulm-deutschland",
+          "local_clock": "09:30"
+        },
+        {
+          "historical_row": 3472,
+          "source_venue_id": "ao-fssp-frauenkirche-spitalstr-1-d-74172-neckarsulm-deutschland",
+          "local_clock": "08:00"
+        },
+        {
+          "historical_row": 3473,
+          "source_venue_id": "ao-fssp-frauenkirche-spitalstr-1-d-74172-neckarsulm-deutschland",
+          "local_clock": "19:00"
+        }
+      ],
+      "existing_cl2_name": "Frauenkirche",
+      "existing_cl2_physical_description": "Spitalstraße, 74172 Neckarsulm, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 49.19502,
+          "longitude": 9.22604,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/W43376158",
+          "identity_conflicts": [
+            "FRAUENKIRCHE_SPITALSTR_1_NOT_OTHER_ST_DIONYSIUS_PFARRKIRCHE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-020",
+      "operator_named_church": "Allerheiligenkirche am Kreuz (Kreuzkirche)",
+      "operator_city": "München",
+      "operator_location": "Kreuzstraße 10, 80331 München",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-76DA4637CD34",
+      "existing_effective_cl2_physical_anchor_id": "RG-76DA4637CD34",
+      "frozen_source_venue_id": "ao-fssp-allerheiligenkirche-am-kreuz-kreuzkirche-kreuzstra-e-10-d-80331-munchen-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 42,
+          "source_venue_id": "ao-fssp-allerheiligenkirche-am-kreuz-kreuzkirche-kreuzstra-e-10-d-80331-munchen-deutschland",
+          "local_clock": "07:30"
+        },
+        {
+          "historical_row": 3474,
+          "source_venue_id": "ao-fssp-allerheiligenkirche-am-kreuz-kreuzkirche-kreuzstra-e-10-d-80331-munchen-deutschland",
+          "local_clock": "09:30"
+        },
+        {
+          "historical_row": 3475,
+          "source_venue_id": "ao-fssp-allerheiligenkirche-am-kreuz-kreuzkirche-kreuzstra-e-10-d-80331-munchen-deutschland",
+          "local_clock": "18:00"
+        },
+        {
+          "historical_row": 3476,
+          "source_venue_id": "ao-fssp-allerheiligenkirche-am-kreuz-kreuzkirche-kreuzstra-e-10-d-80331-munchen-deutschland",
+          "local_clock": "08:00"
+        },
+        {
+          "historical_row": 3477,
+          "source_venue_id": "ao-fssp-allerheiligenkirche-am-kreuz-kreuzkirche-kreuzstra-e-10-d-80331-munchen-deutschland",
+          "local_clock": "18:00"
+        },
+        {
+          "historical_row": 3478,
+          "source_venue_id": "ao-fssp-allerheiligenkirche-am-kreuz-kreuzkirche-kreuzstra-e-10-d-80331-munchen-deutschland",
+          "local_clock": "08:00"
+        }
+      ],
+      "existing_cl2_name": "Allerheiligenkirche am Kreuz (Kreuzkirche)",
+      "existing_cl2_physical_description": "Kreuzstraße 10, 80331 München, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 48.13568,
+          "longitude": 11.56784,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/de/W48605346",
+          "identity_conflicts": [
+            "CATHOLIC_KREUZKIRCHE_KREUZSTR_10_NOT_PROTESTANT_KREUZKIRCHE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-021",
+      "operator_named_church": "St. Willibald",
+      "operator_city": "Ingolstadt-Oberhaunstadt",
+      "operator_location": "Dorfplatz 4, Oberhaunstadt",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-ABC18B4F4EA3",
+      "existing_effective_cl2_physical_anchor_id": "RG-ABC18B4F4EA3",
+      "frozen_source_venue_id": "ao-fssp-kirche-st-willibald-dorfplatz-4-d-85055-ingolstadt-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 45,
+          "source_venue_id": "ao-fssp-kirche-st-willibald-dorfplatz-4-d-85055-ingolstadt-deutschland",
+          "local_clock": "10:00"
+        }
+      ],
+      "existing_cl2_name": "Kirche St. Willibald",
+      "existing_cl2_physical_description": "Dorfplatz 4, 85055 Ingolstadt-Oberhaunstadt, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 48.795508889,
+          "longitude": 11.439963056,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://commons.wikimedia.org/wiki/Category:St._Willibald_(Oberhaunstadt)",
+          "identity_conflicts": [
+            "FSSP_DORFPLATZ_4_VS_WIKIMEDIA_DORFPLATZ_5",
+            "PHOTO_CAMERA_LOCATION_NOT_OBJECT_LOCATION"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-022",
+      "operator_named_church": "Heilig-Kreuz-Kirche",
+      "operator_city": "Eichstätt",
+      "operator_location": "Kapuzinergasse 2, 85072 Eichstätt",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-DA23F93A19D9",
+      "existing_effective_cl2_physical_anchor_id": "RG-DA23F93A19D9",
+      "frozen_source_venue_id": "ao-fssp-heilig-kreuz-kirche-kapuzinergasse-2-d-85072-eichstatt-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 46,
+          "source_venue_id": "ao-fssp-heilig-kreuz-kirche-kapuzinergasse-2-d-85072-eichstatt-deutschland",
+          "local_clock": "19:00"
+        },
+        {
+          "historical_row": 3479,
+          "source_venue_id": "ao-fssp-heilig-kreuz-kirche-kapuzinergasse-2-d-85072-eichstatt-deutschland",
+          "local_clock": "16:30"
+        }
+      ],
+      "existing_cl2_name": "Heilig-Kreuz-Kirche",
+      "existing_cl2_physical_description": "Kapuzinergasse 2, 85072 Eichstätt, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL20",
+          "source_evidence_file": "cl20-geo-entrance-20261026/source-geocodes.json",
+          "latitude": 48.88995784685476,
+          "longitude": 11.1907285451889,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_BUILDING_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://en.naturpark-altmuehltal.de/sehenswertes/ehemalige_kapuzinerkirche_heil-1753/?setLanguage=en",
+          "identity_conflicts": [
+            "DAYTIME_CHURCH_OPEN_NOT_DOOR_GPS",
+            "REGIONAL_TOURISM_POI_NOT_SATELLITE_ENTRANCE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-023",
+      "operator_named_church": "Marktkirche zur Allerheiligsten Dreifaltigkeit",
+      "operator_city": "Grafing",
+      "operator_location": "Dreifaltigkeitsgasse 3, 85567 Grafing",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-72D35EC6A519",
+      "existing_effective_cl2_physical_anchor_id": "RG-72D35EC6A519",
+      "frozen_source_venue_id": "ao-fssp-marktkirche-zur-allerheiligsten-dreifaltigkeit-dreifaltigkeitsgasse-3-d-85567-grafing-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 48,
+          "source_venue_id": "ao-fssp-marktkirche-zur-allerheiligsten-dreifaltigkeit-dreifaltigkeitsgasse-3-d-85567-grafing-deutschland",
+          "local_clock": "19:00"
+        }
+      ],
+      "existing_cl2_name": "Marktkirche zur Allerheiligsten Dreifaltigkeit",
+      "existing_cl2_physical_description": "Dreifaltigkeitsgasse 3, 85567 Grafing, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 48.04588,
+          "longitude": 11.96699,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": 69721248,
+          "witness_url": "https://mapcarta.com/de/W69721248",
+          "identity_conflicts": [
+            "The named Roman Catholic Marktkirche is the way at Marktplatz 10; original FSSP source Dreifaltigkeitsgasse 3. Distinct St Leonhard church 140m away."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-024",
+      "operator_named_church": "St. Peter und Paul",
+      "operator_city": "Ried-Hörmannsberg",
+      "operator_location": "Meringer Str. 4, 86510 Ried",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-AF1F7D1B45CA",
+      "existing_effective_cl2_physical_anchor_id": "RG-AF1F7D1B45CA",
+      "frozen_source_venue_id": "ao-fssp-pfarrkirche-st-peter-und-paul-meringer-str-2-d-86510-hormannsberg-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 49,
+          "source_venue_id": "ao-fssp-pfarrkirche-st-peter-und-paul-meringer-str-2-d-86510-hormannsberg-deutschland",
+          "local_clock": "08:30"
+        }
+      ],
+      "existing_cl2_name": "Pfarrkirche St. Peter und Paul",
+      "existing_cl2_physical_description": "Meringer Straße 4, 86510 Ried-Hörmannsberg, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL20",
+          "source_evidence_file": "cl20-geo-entrance-20261026/source-geocodes.json",
+          "latitude": 48.28306,
+          "longitude": 11.02163,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_BUILDING_NOT_ENTRANCE",
+          "osm_way_id": 124192379,
+          "witness_url": "https://mapcarta.com/de/W124192379",
+          "identity_conflicts": [
+            "STREET_NUMBER_2_VS_4",
+            "OSM_WAY_CENTER_NOT_PUBLIC_ENTRANCE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-025",
+      "operator_named_church": "Ignatiuskapelle",
+      "operator_city": "Landsberg am Lech",
+      "operator_location": "Malteserstraße, 86899 Landsberg",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-A6C39F7BB74C",
+      "existing_effective_cl2_physical_anchor_id": "RG-A6C39F7BB74C",
+      "frozen_source_venue_id": "ao-fssp-heilig-kreuz-kirche-ignatiuskapelle-malteserstrasse-d-86899-landsberg-a-lech-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 51,
+          "source_venue_id": "ao-fssp-heilig-kreuz-kirche-ignatiuskapelle-malteserstrasse-d-86899-landsberg-a-lech-deutschland",
+          "local_clock": "18:00"
+        }
+      ],
+      "existing_cl2_name": "Heilig-Kreuz-Kirche (Ignatiuskapelle)",
+      "existing_cl2_physical_description": "Malteserstraße, 86899 Landsberg am Lech, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL25",
+          "source_evidence_file": "cl25-last-seven-geo-20261026/evidence.json",
+          "latitude": 48.0495,
+          "longitude": 10.88024,
+          "feature_role": "HOST_CHURCH_BUILDING_NOT_EXACT_UPSTAIRS_WORSHIP_ROOM",
+          "osm_way_id": 87971830,
+          "witness_url": "https://mapcarta.com/W87971830",
+          "identity_conflicts": [
+            "The FSSP Mass is in Ignatiuskapelle on the first floor over sacristy at Heilig Kreuz, accessible by wooden stairs. This church footprint is a HOST REFERENCE only, not the exact chapel, door, floor, or visitor route."
+          ]
+        }
+      ],
+      "spatial_disposition": "HOST_CHURCH_ONLY_UPSTAIRS_IGNATIUSKAPELLE_ROOM_UNMAPPED",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-026",
+      "operator_named_church": "Schlosskapelle",
+      "operator_city": "Bad Grönenbach",
+      "operator_location": "Pappenheimerstraße, 87730 Bad Grönenbach",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-2CB0BAA6356A",
+      "existing_effective_cl2_physical_anchor_id": "RG-2CB0BAA6356A",
+      "frozen_source_venue_id": "ao-fssp-schlosskapelle-bad-gronenbach-pappenheimerstrasse-d-87730-bad-gronenbach-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 52,
+          "source_venue_id": "ao-fssp-schlosskapelle-bad-gronenbach-pappenheimerstrasse-d-87730-bad-gronenbach-deutschland",
+          "local_clock": "10:00"
+        }
+      ],
+      "existing_cl2_name": "Schlosskapelle Bad Grönenbach",
+      "existing_cl2_physical_description": "Pappenheimerstraße, 87730 Bad Grönenbach, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL26",
+          "source_evidence_file": "cl26-ringeisenhaus-dated-20261026/evidence.json",
+          "latitude": 47.87579,
+          "longitude": 10.21727,
+          "feature_role": "NAMED_SCHLOSSKAPELLE_OSM_WAY_WITHIN_RINGEISENHAUS_COMPLEX_NOT_VISITOR_DOOR",
+          "osm_way_id": 1036283953,
+          "witness_url": "https://mapcarta.com/W1036283953",
+          "identity_conflicts": [
+            "DISTINCT_HOST_BUILDING_OSM_304721616",
+            "NOT_HOHES_SCHLOSS_OSM_304720796",
+            "NOT_SURVEYED_VISITOR_DOOR"
+          ]
+        }
+      ],
+      "spatial_disposition": "NAMED_SCHLOSSKAPELLE_WITH_DISTINCT_HOST_BUILDING_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-027",
+      "operator_named_church": "Sühnekirche",
+      "operator_city": "Wigratzbad",
+      "operator_location": "Kirchstraße, 88145 Wigratzbad",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-FCA7C4504955",
+      "existing_effective_cl2_physical_anchor_id": "RG-FCA7C4504955",
+      "frozen_source_venue_id": "ao-fssp-suhnekirche-kirchstrasse-d-88145-opfenbach-wigratzbad-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 53,
+          "source_venue_id": "ao-fssp-suhnekirche-kirchstrasse-d-88145-opfenbach-wigratzbad-deutschland",
+          "local_clock": "07:55"
+        }
+      ],
+      "existing_cl2_name": "Sühnekirche",
+      "existing_cl2_physical_description": "Kirchstraße, 88145 Wigratzbad, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 47.64262,
+          "longitude": 9.83458,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/W87807590",
+          "identity_conflicts": [
+            "SUEHNEKIRCHE_DISTINCT_FROM_SEMINARKAPELLE_AND_GNADENKAPELLE",
+            "HOST_SITE_ORDINARY_MASS_CLOCKS_NOT_FSSP_CLOCKS"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-028",
+      "operator_named_church": "St. Georg",
+      "operator_city": "Nürnberg",
+      "operator_location": "Bierweg 35, 90411 Nürnberg",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-2EFC29209788",
+      "existing_effective_cl2_physical_anchor_id": "RG-2EFC29209788",
+      "frozen_source_venue_id": "ao-fssp-st-georg-bierweg-35-d-90411-nurnberg-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 54,
+          "source_venue_id": "ao-fssp-st-georg-bierweg-35-d-90411-nurnberg-deutschland",
+          "local_clock": "18:00"
+        }
+      ],
+      "existing_cl2_name": "St. Georg",
+      "existing_cl2_physical_description": "Bierweg 35, 90411 Nürnberg, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL25",
+          "source_evidence_file": "cl25-last-seven-geo-20261026/evidence.json",
+          "latitude": 49.487378,
+          "longitude": 11.112051,
+          "feature_role": "NAMED_CATHOLIC_CHURCH_SITE_COORDINATE_NOT_OSM_WAY",
+          "osm_way_id": null,
+          "witness_url": "https://de.wikipedia.org/wiki/Liste_von_Sakralbauten_in_N%C3%BCrnberg",
+          "identity_conflicts": [
+            "Ziegelstein Catholic parish church St Georg, Bierweg 35, NOT same-name Protestant Kraftshof St Georg, office at 33, or parish hall at 43. Owner listing calls 33 postal address but Mass organizer specifies church 35."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-029",
+      "operator_named_church": "Wallfahrtskirche Maria Hilf",
+      "operator_city": "Amberg",
+      "operator_location": "Auf dem Mariahilfberg 3, 92224 Amberg",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-FE34BC6FA80D",
+      "existing_effective_cl2_physical_anchor_id": "RG-FE34BC6FA80D",
+      "frozen_source_venue_id": "ao-fssp-wallfahrtskirche-maria-hilf-mariahilfberg-3-d-92224-amberg-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 55,
+          "source_venue_id": "ao-fssp-wallfahrtskirche-maria-hilf-mariahilfberg-3-d-92224-amberg-deutschland",
+          "local_clock": "17:00"
+        }
+      ],
+      "existing_cl2_name": "Wallfahrtskirche Maria Hilf",
+      "existing_cl2_physical_description": "Auf dem Mariahilfberg 3, 92224 Amberg, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL20",
+          "source_evidence_file": "cl20-geo-entrance-20261026/source-geocodes.json",
+          "latitude": 49.4529,
+          "longitude": 11.871,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_BUILDING_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/35839988",
+          "identity_conflicts": [
+            "CHURCH_4_VS_MONASTERY_OPERATOR_MAILING_3",
+            "POI_NOT_CHURCH_VISITOR_DOOR"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-030",
+      "operator_named_church": "Schulkirche St. Augustinus",
+      "operator_city": "Amberg",
+      "operator_location": "Deutsche Schulgasse 2, 92224 Amberg",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-720C5757DCDE",
+      "existing_effective_cl2_physical_anchor_id": "RG-720C5757DCDE",
+      "frozen_source_venue_id": "ao-fssp-st-augustinuskirche-deutsche-schulgasse-4-d-92224-amberg-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 56,
+          "source_venue_id": "ao-fssp-st-augustinuskirche-deutsche-schulgasse-4-d-92224-amberg-deutschland",
+          "local_clock": "17:00"
+        }
+      ],
+      "existing_cl2_name": "St. Augustinuskirche",
+      "existing_cl2_physical_description": "Deutsche Schulgasse 2, 92224 Amberg, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL20",
+          "source_evidence_file": "cl20-geo-entrance-20261026/source-geocodes.json",
+          "latitude": 49.44562,
+          "longitude": 11.85514,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_BUILDING_NOT_ENTRANCE",
+          "osm_way_id": 52739490,
+          "witness_url": "https://mapcarta.com/W52739490",
+          "identity_conflicts": [
+            "DEUTSCHE_SCHULGASSE_2_VS_4",
+            "HISTORICAL_MARKER_CORNER_COORDINATES_NOT_DOOR_COORDINATE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-031",
+      "operator_named_church": "St. Jobst",
+      "operator_city": "Neumarkt in der Oberpfalz",
+      "operator_location": "Regensburger Straße 16, 92318 Neumarkt",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-7984EDAD6FCE",
+      "existing_effective_cl2_physical_anchor_id": "RG-7984EDAD6FCE",
+      "frozen_source_venue_id": "ao-fssp-kirche-st-jobst-regensburger-str-16-d-92318-neumarkt-in-der-oberpfalz-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 57,
+          "source_venue_id": "ao-fssp-kirche-st-jobst-regensburger-str-16-d-92318-neumarkt-in-der-oberpfalz-deutschland",
+          "local_clock": "10:15"
+        },
+        {
+          "historical_row": 3480,
+          "source_venue_id": "ao-fssp-kirche-st-jobst-regensburger-str-16-d-92318-neumarkt-in-der-oberpfalz-deutschland",
+          "local_clock": "18:00"
+        }
+      ],
+      "existing_cl2_name": "Kirche St. Jobst",
+      "existing_cl2_physical_description": "Regensburger Straße 16, 92318 Neumarkt in der Oberpfalz, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 49.273932,
+          "longitude": 11.462553,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://www.outdooractive.com/de/poi/bayerischer-jura/st.-jobst/2603398/",
+          "identity_conflicts": [
+            "PARISH_SUNDAY_1000_1115_VS_NATIONAL_FSSP_1015",
+            "CEMETERY_CHURCH_NOT_MAIN_ST_JOHANNES_PFARRKIRCHE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-032",
+      "operator_named_church": "Kapuzinerkirche Maria Unbefleckte Empfängnis",
+      "operator_city": "Türkheim",
+      "operator_location": "Grabenstraße 2, 86842 Türkheim",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-2676DCD5BCE9",
+      "existing_effective_cl2_physical_anchor_id": "RG-2676DCD5BCE9",
+      "frozen_source_venue_id": "ao-fssp-kapuzinerkirche-maria-unbefleckte-empfangnis-grabenstrasse-2-d-86842-turkheim-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 1272,
+          "source_venue_id": "ao-fssp-kapuzinerkirche-maria-unbefleckte-empfangnis-grabenstrasse-2-d-86842-turkheim-deutschland",
+          "local_clock": "08:00"
+        },
+        {
+          "historical_row": 3481,
+          "source_venue_id": "ao-fssp-kapuzinerkirche-maria-unbefleckte-empfangnis-grabenstrasse-2-d-86842-turkheim-deutschland",
+          "local_clock": "10:00"
+        },
+        {
+          "historical_row": 3482,
+          "source_venue_id": "ao-fssp-kapuzinerkirche-maria-unbefleckte-empfangnis-grabenstrasse-2-d-86842-turkheim-deutschland",
+          "local_clock": "18:30"
+        },
+        {
+          "historical_row": 3483,
+          "source_venue_id": "ao-fssp-kapuzinerkirche-maria-unbefleckte-empfangnis-grabenstrasse-2-d-86842-turkheim-deutschland",
+          "local_clock": "07:45"
+        }
+      ],
+      "existing_cl2_name": "Kapuzinerkirche Maria Unbefleckte Empfängnis",
+      "existing_cl2_physical_description": "Grabenstraße 2, 86842 Türkheim, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 48.059474,
+          "longitude": 10.640398,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://www.outdooractive.com/en/poi/allgaeu/kapuzinerkirche-maria-unbefleckte-empfaengnis-tuerkheim/1701617/",
+          "identity_conflicts": [
+            "LOCAL_FSSP_MAY_MOVE_WEEKDAY_EVENINGS_TO_OTHER_CHURCH",
+            "TOURISM_MAXIMILIAN_PHILIPP_STR_VS_FSSP_GRABENSTRASSE_SOURCE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-033",
+      "operator_named_church": "Seminarkapelle St. Josef",
+      "operator_city": "Wigratzbad",
+      "operator_location": "Kirchstraße 16, 88145 Wigratzbad",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-F0CF3094C586",
+      "existing_effective_cl2_physical_anchor_id": "RG-F0CF3094C586",
+      "frozen_source_venue_id": "ao-fssp-seminarkapelle-st-josef-kirchstrasse-16-d-88145-opfenbach-wigratzbad-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 1274,
+          "source_venue_id": "ao-fssp-seminarkapelle-st-josef-kirchstrasse-16-d-88145-opfenbach-wigratzbad-deutschland",
+          "local_clock": "10:15"
+        }
+      ],
+      "existing_cl2_name": "Seminarkapelle St. Josef",
+      "existing_cl2_physical_description": "Kirchstraße 16, 88145 Wigratzbad, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 47.64288,
+          "longitude": 9.8363,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/N2789544934",
+          "identity_conflicts": [
+            "SEMINARKAPELLE_SEPARATE_FROM_SUEHNEKIRCHE",
+            "NODE_POI_NOT_CHAPEL_BUILDING_POLYGON"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-034",
+      "operator_named_church": "St. Michael",
+      "operator_city": "Bonn",
+      "operator_location": "Rheinbacher Straße, 53115 Bonn",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-9780644F87EF",
+      "existing_effective_cl2_physical_anchor_id": "RG-9780644F87EF",
+      "frozen_source_venue_id": "ao-fssp-st-michael-rheinbacher-str-13-d-53115-bonn-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 1275,
+          "source_venue_id": "ao-fssp-st-michael-rheinbacher-str-13-d-53115-bonn-deutschland",
+          "local_clock": "18:00"
+        },
+        {
+          "historical_row": 3484,
+          "source_venue_id": "ao-fssp-st-michael-rheinbacher-str-13-d-53115-bonn-deutschland",
+          "local_clock": "19:00"
+        }
+      ],
+      "existing_cl2_name": "St. Michael",
+      "existing_cl2_physical_description": "Rheinbacher Straße, 53115 Bonn, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL25",
+          "source_evidence_file": "cl25-last-seven-geo-20261026/evidence.json",
+          "latitude": 50.73111,
+          "longitude": 7.08321,
+          "feature_role": "MATCHED_CHURCH_BUILDING_WAY",
+          "osm_way_id": 38572397,
+          "witness_url": "https://mapcarta.com/de/W38572397",
+          "identity_conflicts": [
+            "OSM way church postal Rheinbacher Straße 8; parish church operator lists Rheinbacher Str 10; FSSP international directory lists 13. Exact Catholic building is identified, postcode and street-side entrances NOT decided. Adjacent Bücherei-im-Turm way 38572398 NOT the church."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-035",
+      "operator_named_church": "St. Margareth am Milchberg",
+      "operator_city": "Augsburg",
+      "operator_location": "Spitalgasse 1, 86150 Augsburg",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-C09D7900595A",
+      "existing_effective_cl2_physical_anchor_id": "RG-C09D7900595A",
+      "frozen_source_venue_id": "AO-EUR-DE-134",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 1761,
+          "source_venue_id": "AO-EUR-DE-134",
+          "local_clock": "10:00"
+        },
+        {
+          "historical_row": 3485,
+          "source_venue_id": "AO-EUR-DE-134",
+          "local_clock": "08:00"
+        },
+        {
+          "historical_row": 3486,
+          "source_venue_id": "AO-EUR-DE-134",
+          "local_clock": "18:00"
+        }
+      ],
+      "existing_cl2_name": "St Margareth am Milchberg",
+      "existing_cl2_physical_description": "Spitalgasse 1, 86150 Augsburg, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL25",
+          "source_evidence_file": "cl25-last-seven-geo-20261026/evidence.json",
+          "latitude": 48.36194,
+          "longitude": 10.90313,
+          "feature_role": "MATCHED_CHURCH_BUILDING_WAY",
+          "osm_way_id": 89933886,
+          "witness_url": "https://mapcarta.com/de/W89933886",
+          "identity_conflicts": [
+            "Named FSSP-used former Dominican convent church at Spitalgasse 1; distinct from nearby St Ulrich und Afra and Heilig-Geist-Spital complex."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-036",
+      "operator_named_church": "Haus St. Stola",
+      "operator_city": "Deining-Mittersthal",
+      "operator_location": "An der Leiten 2, 92364 Deining-Mittersthal",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-2FB9528CC06C",
+      "existing_effective_cl2_physical_anchor_id": "RG-2FB9528CC06C",
+      "frozen_source_venue_id": "AO-EUR-DE-027",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 1779,
+          "source_venue_id": "AO-EUR-DE-027",
+          "local_clock": "18:00"
+        },
+        {
+          "historical_row": 3487,
+          "source_venue_id": "AO-EUR-DE-027",
+          "local_clock": "08:00"
+        }
+      ],
+      "existing_cl2_name": "Haus St Stola",
+      "existing_cl2_physical_description": "An der Leiten 2, 92364 Deining-Mittersthal, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [],
+      "spatial_disposition": "PRIVATE_RELIGIOUS_HOUSE_CHAPEL_GEOCODE_WITHHELD",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-037",
+      "operator_named_church": "St. Sebastian",
+      "operator_city": "Garmisch-Partenkirchen",
+      "operator_location": "Münchner Str. 1, 82467 Garmisch-Partenkirchen",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-1CF04BDB75BB",
+      "existing_effective_cl2_physical_anchor_id": "RG-1CF04BDB75BB",
+      "frozen_source_venue_id": "AO-EUR-DE-146",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 1790,
+          "source_venue_id": "AO-EUR-DE-146",
+          "local_clock": "18:00"
+        }
+      ],
+      "existing_cl2_name": "St Sebastian",
+      "existing_cl2_physical_description": "Münchner Straße 1, 82467 Garmisch-Partenkirchen, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL25",
+          "source_evidence_file": "cl25-last-seven-geo-20261026/evidence.json",
+          "latitude": 47.49535,
+          "longitude": 11.10875,
+          "feature_role": "MATCHED_CHAPEL_BUILDING_WAY",
+          "osm_way_id": 59100618,
+          "witness_url": "https://mapcarta.com/W59100618",
+          "identity_conflicts": [
+            "Named historic former plague chapel St Sebastian at Münchner Straße 1. Different from generic other St Sebastian; some external FSSP information used Ludwigstraße 81. OSM notes wheelchair=no, not independently audited."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL14-DE-FSSP-038",
+      "operator_named_church": "Pfarrkirche St. Elisabeth",
+      "operator_city": "Blaibach",
+      "operator_location": "Kirchplatz 12, 93476 Blaibach",
+      "operator_source_url": "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php",
+      "frozen_existing_cl2_research_group_id": "RG-ECC02A515013",
+      "existing_effective_cl2_physical_anchor_id": "RG-ECC02A515013",
+      "frozen_source_venue_id": "AO-EUR-DE-118",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 1850,
+          "source_venue_id": "AO-EUR-DE-118",
+          "local_clock": "11:30"
+        }
+      ],
+      "existing_cl2_name": "St Elisabeth",
+      "existing_cl2_physical_description": "Kirchplatz 12, 93476 Blaibach, Germany",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL25",
+          "source_evidence_file": "cl25-last-seven-geo-20261026/evidence.json",
+          "latitude": 49.16642,
+          "longitude": 12.80857,
+          "feature_role": "MATCHED_CHURCH_BUILDING_WAY",
+          "osm_way_id": 168435145,
+          "witness_url": "https://mapcarta.com/fr/W168435145",
+          "identity_conflicts": [
+            "Church operator says St Elisabeth Kirchplatz 12, while Pfarrhof is Benefiziatengasse 9. OSM way is named Roman Catholic church, not rectory or adjacent Konzerthaus."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    },
+    {
+      "pilot_source_place_id": "CL17-DE-FSSP-POTSDAM",
+      "operator_named_church": "St. Josefs-Kapelle, Alexianer St. Josefs Krankenhaus Potsdam",
+      "operator_city": "Potsdam",
+      "operator_location": "Allee nach Sanssouci 7, 14471 Potsdam",
+      "operator_source_url": "https://www.alexianer-potsdam.de/st-josefs-kapelle",
+      "frozen_existing_cl2_research_group_id": "RG-ACB05FA9F792",
+      "existing_effective_cl2_physical_anchor_id": "RG-ACB05FA9F792",
+      "frozen_source_venue_id": "ao-fssp-kapelle-des-st-josefs-krankenhauses-allee-nach-sanssouci-7-d-14471-potsdam-deutschland",
+      "frozen_historical_mass_rows": [
+        {
+          "historical_row": 20,
+          "source_venue_id": "ao-fssp-kapelle-des-st-josefs-krankenhauses-allee-nach-sanssouci-7-d-14471-potsdam-deutschland",
+          "local_clock": "17:00"
+        }
+      ],
+      "existing_cl2_name": "Kapelle des St. Josefs-Krankenhauses",
+      "existing_cl2_physical_description": "Allee nach Sanssouci 7, 14471 Potsdam, Germany (vehicle access via Zimmerstraße 6)",
+      "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
+      "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL22",
+          "source_evidence_file": "cl22-correct-chapel-20261026/spatial-witnesses.json",
+          "latitude": 52.39966,
+          "longitude": 13.04481,
+          "feature_role": "ACTUAL_ST_JOSEFSKAPELLE_NOT_NEARBY_RAUEM_DER_STILLE",
+          "osm_way_id": 301020129,
+          "witness_url": "https://mapcarta.com/W301020129",
+          "identity_conflicts": [
+            "WRONG_NEARBY_OSM_31290074",
+            "HOSPITAL_VEHICLE_ENTRANCE_NOT_CHAPEL_ENTRANCE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
+      "published_entrance": false,
+      "public_pin": false,
+      "new_site_id_created": false,
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
+    }
+  ],
+  "release_limits": [
+    "All research only",
+    "No public map pin or entrance",
+    "No site group merge or new site",
+    "No recurrence/timetable changes",
+    "No Una Cum or missal-rite promotion"
+  ],
+  "site_release_cautions": [
+    {
+      "source_place_id": "CL14-DE-FSSP-036",
+      "description": "Religious house residence; public chapel room/visitor entrance unverified; do not geocode house door as public pin"
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-025",
+      "description": "Landsberg upstairs Ignatiuskapelle; mapped Heilig-Kreuz-Kirche is only the host building"
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-026",
+      "description": "Bad Grönenbach named Schlosskapelle and host Ringeisenhaus are distinct mapped objects; neither point is an observed entrance"
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-007",
+      "description": "Recklinghausen St Joseph parish OFFICE closed, not proven CHURCH closure; preserve operator Mass source and no replacement claim"
+    },
+    {
+      "source_place_id": "CL17-DE-FSSP-POTSDAM",
+      "description": "Actual hospital St Josefskapelle is distinct from nearby Raum der Stille; campus vehicle access Zimmerstraße 6 is not church door"
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-024",
+      "description": "Hörmannsberg Meringer Straße number 2 vs 4 conflict; verify before navigation"
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-030",
+      "description": "Amberg Schulkirche Deutsche Schulgasse number 2 vs 4 conflict; verify before navigation"
+    }
+  ]
+}
