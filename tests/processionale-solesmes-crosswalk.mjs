@@ -1241,6 +1241,14 @@ test('Psalm 17 mediants and two flex-source windows remain strictly experimental
  assert.equal(doc.medials.length,17);
  assert.equal(doc.flex.length,2);
  assert.equal(doc.counting.endingOnlySnippetHypotheses,19);
+ const bulk=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
+ const families=readJSON('data/research/processionale-palm-four-cadence-families-17-case-20261027.v1.json');
+ const work=readJSON('data/research/processionale-palm-14verse-pointing-worklist-20261027.v1.json');
+ const link='data/research/processionale-palm-medial-flex-bulk-hypotheses-20261027.v1.json';
+ assert.equal(bulk.batch30MedialFlexWorklist.path,link);
+ assert.equal(families.batch30MediantFlexReview.path,link);
+ assert.equal(work.batch30MedialFlexHandoff.path,link);
+ assert.equal(work.batch30MedialFlexHandoff.fullVerseScoresNewlyApproved,0);
  assert.equal(doc.counting.flexOccurrences,3);
  assert.equal(doc.counting.fullyNotatedAdditionalVersesApproved,0);
  assert.equal(doc.counting.productionScoreAssignments,0);
