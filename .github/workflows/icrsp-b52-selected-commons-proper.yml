@@ -1,0 +1,39 @@
+name: ICRSP B52 printed Commons vs actual selected Mass
+
+on:
+  push:
+    branches:
+      - governance/icrsp-source-inventory-1665
+    paths:
+      - 'tests/icrsp-b52-three-commons-selected-proper-browser.mjs'
+      - 'data/source-text/icrsp-france-b41-1962-vatican-three-commons-print-image-collation.v1.json'
+      - 'data/source-text/icrsp-france-b42-first-live-18-date-resolver-observations.v1.json'
+      - '.github/workflows/icrsp-b52-selected-commons-proper.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: icrsp-b52-${{ github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  original-missal-common-and-live-selection:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install existing browser harness
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Verify three photographed Common identities and three real selected calendar Propers
+        run: node tests/icrsp-b52-three-commons-selected-proper-browser.mjs
+      - name: Source and publication restriction
+        run: |
+          echo "B52 tests do not certify Common selection permissions, an absent production text, translation rights, or publication."
+          echo "No write token, no automatic repository mutation, no new mass, no duplicate Common resolver."
