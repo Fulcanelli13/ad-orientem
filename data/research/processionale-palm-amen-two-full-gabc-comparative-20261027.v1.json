@@ -392,5 +392,151 @@
     "releasePermitted": false,
     "readerRuntimeChanged": false,
     "newGabcCreated": false
+  },
+  "batch42OfficeTone1fDoxologyMethod": {
+    "batch": 42,
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "SOURCE_BASED_STANDARD_TONE_1F_DOXOLOGY_METHOD_IDENTIFIED__TWO_AMEN_GABCS_STILL_MUSICALLY_UNAPPROVED",
+    "scope": "1962 Palm distribution Psalms 23 and 46, with respective Pueri Hebraeorum antiphons. Explicitly distinguish 1961 first-tone office/antiphonal psalm formula from same-edition ad-Introitum and later different-context Gloria Patri settings.",
+    "sourceHierarchy": [
+      {
+        "id": "LU1961_PSALMTONES_112_113",
+        "title": "The Liber Usualis, Solesmes 1961, pp.112-113, The Eight Tones of the Psalms",
+        "url": "https://longbeachchant.com/wp-content/uploads/2019/11/liber-1961-eight-psalm-tones.pdf#page=2",
+        "relevantRule": "Office/antiphonal psalmody: first verse intoned; subsequent verses resume dominant; Tone I mediant has two accents; Tone I f termination has one accent with two preparatory syllables. Notes on page 113 say repeated intonation does not apply when several psalms are under a single Gloria Patri.",
+        "authority": "CONTEMPORARY_PRIMARY_TONE_GRAMMAR_AND_FIRST_TONE_F_FORMULA",
+        "pageImageInspected": true,
+        "fullPalm1961AmenUnderlay": false
+      },
+      {
+        "id": "GR1961_PALM_PS23",
+        "title": "Graduale Romanum 1961, Psalm 23, p.143** (restored text)",
+        "url": "https://gregobase.selapa.net/sources/2/1179.png",
+        "relevantRule": "Printed Psalm 23 first-verse tone and indicated rest of text; does not fully notate separate concluding doxology.",
+        "authority": "PRIMARY_PALM_PROCESSIONAL_MELODY_AND_TEXT",
+        "fullPalm1961AmenUnderlay": false
+      },
+      {
+        "id": "GR1961_PALM_PS46",
+        "title": "Graduale Romanum 1961, Psalm 46, p.144** (restored text)",
+        "url": "https://gregobase.selapa.net/sources/2/1180.png",
+        "relevantRule": "Printed Psalm 46 first-verse tone and indicated rest of text; distinct melodic psalm model from Psalm 23.",
+        "authority": "PRIMARY_PALM_PROCESSIONAL_MELODY_AND_TEXT",
+        "fullPalm1961AmenUnderlay": false
+      },
+      {
+        "id": "MR1962_PALM_DISTRIBUTION",
+        "title": "Missale Romanum 1962, Palm Sunday distribution and antiphon rubrics",
+        "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+        "relevantRule": "Conclude each distribution psalm with Gloria Patri and repeat its corresponding antiphon; conditional early closure does not imply additional independent Amen response.",
+        "authority": "ROMAN_1962_PRIMARY_LITURGICAL_ORDER_NOT_SCORE"
+      },
+      {
+        "id": "PSALLITE_102_104",
+        "title": "Psallite Sapienter, Palm Sunday §§102–104",
+        "url": "https://media.churchmusicassociation.org/books/7848318-Psallite-Sapienter-A-Musicians-Guide-to-the-Extraordinary-Form.pdf#page=37",
+        "relevantRule": "Every two Palm psalm verses repeat corresponding antiphon, with Gloria Patri concluding the psalms. Supporting rubrical guide.",
+        "authority": "CONTEMPORARY_1962_MUSIC_GUIDE"
+      },
+      {
+        "id": "LU1961_FIRST_TONE_1F_PS109",
+        "title": "Liber Usualis 1961 p.128, Psalm 109 Tone 1.f",
+        "url": "https://gregobase.selapa.net/chant.php?id=18175",
+        "relevantRule": "Same 1f family example; terminal dex(g) tris(f) me(gh gr) is(gf..) shows pitch-group division. It does not include a fully notated Gloria/Sicut erat ending or establish complete Palm-pointing.",
+        "authority": "SAME_EDITION_SAME_PSALM_TONE_FAMILY_DIFFERENT_OCCASION"
+      },
+      {
+        "id": "GR1961_INTROIT_GLORIA_DISTINCT",
+        "title": "Graduale Romanum 1961 p.135* Gloria Patri I",
+        "url": "https://gregobase.selapa.net/chant.php?id=4341",
+        "relevantRule": "Fully notated Introit doxology; genre-specific and must not be transplanted into Palm distribution psalmody.",
+        "authority": "NEGATIVE_GENRE_CONTROL"
+      }
+    ],
+    "toneModel": {
+      "commonFamily": "PRIMA_TONUS_TERMINATIO_F__OFFICE_STYLE_ANTIPHONAL_PSALMODY",
+      "requiredSeparateOpeningModels": [
+        "GR1961_PALM_NOVUS_PS23",
+        "GR1961_PALM_NOVUS_PS46"
+      ],
+      "sourceFirstToneTermination": "ONE_ACCENT_TWO_PREPARATORY_SYLLABLES",
+      "sharedFirstVerseCadentialPitchGroups": [
+        "g",
+        "f",
+        "gh",
+        "gr",
+        "gf"
+      ],
+      "historicalEvidence": "Both printed 1961 restored Palm first-verses have five flattened terminal pitch groups; generic 1f office source shares the f termination. Same terminal pitch family does not itself guarantee all GABC underlays or distinct first-half mediants.",
+      "firstVerseIntonationRepeatedAtEveryVerse": false,
+      "normalizedDoxology": "Gloria Patri and Sicut erat sung as final psalm doxology (two verse-length members), then the same associated antiphon is repeated.",
+      "euouae": "E-u-o-u-a-e mnemonic for the six syllables of sæculorum Amen, used to specify psalm termination/differentia; not a separately sung lyric or automatically a literal melodic map for this Palm witness.",
+      "amenIsSeparateResponsorialEvent": false,
+      "fullPalmDoxologyPrintedScoreFound": false,
+      "fullIndependentMelodyProof": false
+    },
+    "twoExistingAmenResearchSettings": {
+      "ids": [
+        "PALM-R02-PS23-DOXO-L12",
+        "PALM-R02-PS46-DOXO-L12"
+      ],
+      "sourceSyllablesLastSix": [
+        "sæ",
+        "cu",
+        "ló",
+        "rum",
+        "A",
+        "men"
+      ],
+      "hypothesisTerminalUnderlayLastFour": [
+        {
+          "syllable": "ló",
+          "pitchGroups": "g",
+          "role": "PREPARATION_1"
+        },
+        {
+          "syllable": "rum",
+          "pitchGroups": "f",
+          "role": "PREPARATION_2"
+        },
+        {
+          "syllable": "A",
+          "pitchGroups": "gh gr",
+          "role": "PUTATIVE_FINAL_ACCENT"
+        },
+        {
+          "syllable": "men",
+          "pitchGroups": "gf..",
+          "role": "POSTACCENT_CLOSE"
+        }
+      ],
+      "structuralOneAccentTwoPreparationFit": true,
+      "sourceActuallyWritesFourLastGroupsForPalmAmen": false,
+      "duplicatedPitchSequenceAcrossTwoPsalmModelsIsEditorialHypothesis": true,
+      "lexicalAmenStressAndPunctuationMusicianCertified": false,
+      "verifiedByExsurgePreviously": true,
+      "editionSpecificFullVerseMusicApproved": false,
+      "noNewGabcCreated": true
+    },
+    "correctedAcceptancePath": {
+      "previousOverstrictAssumption": "Require an original 1961 fully notated Palm-specific Sicut erat... Amen before any approval.",
+      "improvedMusicalCriterion": "A complete printed Palm-specific doxology need not exist for formulaic psalm tones: a qualified Gregorian editor may independently approve a faithful 1961 first-tone f formula underlay by comparing pp.112–113 tone grammar, the two printed Palm first-verse witnesses, proper 1962 Latin text and antiphon cycle. No extrapolating from an Introit Gloria Patri.",
+      "independentEditorialRequirements": [
+        "For each Psalm model separately, verify the exact Tone 1f formula, initial treatment and all medial accents in both doxology members.",
+        "Point complete Sicut erat text with correct natural/secondary accents, punctuation, position of preparatory syllables, proper treatment of Amen and 1f cadence.",
+        "Confirm correspondence of the terminal groups to the 1961 f differentia and immediate antiphon reprise, without assuming a separate Amen response.",
+        "Provide traceable named editorial decision and notation/Latin side-by-side, then run Exsurge and reader-specific 1962 source gate before any score publication."
+      ],
+      "requireImpossibleFullSourceScore": false,
+      "requireHumanEditorMusicalCheck": true,
+      "existingProvisionalGabcIsAutomaticReleaseCandidate": false
+    },
+    "noSeparateAmenEvent": true,
+    "independentMusicalApprovals": 0,
+    "scorePromotions": 0,
+    "readerRuntimeChanged": false,
+    "researchOnly": true,
+    "releasePermitted": false
   }
 }
