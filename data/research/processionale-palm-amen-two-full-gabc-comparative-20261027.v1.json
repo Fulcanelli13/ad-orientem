@@ -294,5 +294,103 @@
     "runId": 40523935267,
     "preserveHistoricalComparisonAsWritten": true,
     "editorAction": "Find source-matched Palm procession doxology underlay or have qualified chant editor establish legitimate 1f tone ending including Amen and repeat-antiphon rubric."
+  },
+  "batch41SameEditionIntroitalComparison": {
+    "batch": 41,
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "SAME_1961_EDITION_NOTATED_FIRST_TONE_AMEN_FOUND_BUT_INTROIT_GENRE_MISMATCH_NO_PALM_ENDING_APPROVAL",
+    "discovery": "A fully written Gloria Patri I with a distinct final Amen exists in the very same 1961 Graduale Romanum, p.135*; the heading specifies Toni Gloria Patri ad Introitum. This is stronger chronological control than the formerly used 1974 comparison, but weaker contextual control than a Palm-processional 1f score.",
+    "contemporary1961Witness": {
+      "title": "Gloria Patri I",
+      "edition": "Graduale Romanum, Solesmes 1961",
+      "printedPage": "135*",
+      "chantDatabaseId": 4341,
+      "sourceRecordUrl": "https://gregobase.selapa.net/chant.php?id=4341",
+      "gabcTranscriptUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=4341",
+      "sameEditionAsPalm": true,
+      "tag": "Toni Gloria Patri ad Introitum",
+      "genre": "INTROIT_DOXOLOGY_NOT_PALM_DISTRIBUTION_PSALM",
+      "lastLatinPitchGroups": [
+        {
+          "syllable": "ló",
+          "notes": "g'"
+        },
+        {
+          "syllable": "rum",
+          "notes": "f"
+        },
+        {
+          "syllable": "A",
+          "notes": "fff"
+        },
+        {
+          "syllable": "men",
+          "notes": "d."
+        }
+      ],
+      "sourceEvidenceGrade": "PAGE_AND_EDITION_ATTRIBUTED_GREGObase_GABC_TRANSCRIPTION_AND_RENDERED_PDF_VISUALLY_CHECKED_NOT_AN_INDEPENDENT_FULL_ORIGINAL_1961_PALM_PAGE_COLLATION",
+      "sourcePdfRenderedFromTranscription": "https://gregobase.selapa.net/download.php?format=pdf&id=4341",
+      "maySupplyOriginalPalmScore": false
+    },
+    "officeFamilyComparator": {
+      "title": "Psalm 109 (Dixit Dominus), Tone 1f",
+      "sourceRecordUrl": "https://gregobase.selapa.net/chant.php?id=18175",
+      "gabcTranscriptUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=18175",
+      "edition": "Liber Usualis, Solesmes 1961",
+      "printedPage": "128",
+      "genre": "OFFICE_PSALM_1F_NOT_PALM_PROCESSIONAL",
+      "hasPublishedFirstVerseExample": true,
+      "exposesPrintedFullPalmAmen": false,
+      "terminationExcerpt": "me(gh gr)is.(gf..)",
+      "relevance": "Confirms common 1f office-psalm final pitch-group family, not the full Gloria Patri / Sicut erat Amen underlay in the processional."
+    },
+    "palm1961Source": {
+      "psalm23Source": "Graduale Romanum 1961 p.143**; first verse notated; doxology text printed without full note underlay",
+      "psalm46Source": "Graduale Romanum 1961 p.144**; first verse notated; doxology text printed without full note underlay",
+      "explicitlyNotatedPalmSpecificSicutEratAmenFound": false,
+      "originalPalmSourceGabcIdentifiers": [
+        "gregobase-19315.gabc",
+        "gregobase-19316.gabc"
+      ],
+      "candidateResearchAmenPitchGroups": [
+        {
+          "syllable": "ló",
+          "notes": "g"
+        },
+        {
+          "syllable": "rum",
+          "notes": "f"
+        },
+        {
+          "syllable": "A",
+          "notes": "gh gr"
+        },
+        {
+          "syllable": "men",
+          "notes": "gf.."
+        }
+      ],
+      "comparisonConclusion": "The 1961 contemporary Introit end differs sharply from the speculative Palm end. Musical genre and mode-family alone do not authorize transfer in either direction. Neither is independently certified as the Palm Amen setting."
+    },
+    "historical1974ComparatorRetained": "1974 Graduale p822 I Tone Introit/Communion remains background corroboration; do not describe it as primary evidence of a contradictory Palm melody.",
+    "liturgicalStructureWitness": {
+      "source": "CAECILIA vol.83 no.2 (Jan-Feb 1956), p.44, official contemporary committee's musical guide",
+      "url": "https://media.musicasacra.com/publications/caecilia/caecilia_v83n02_1956_01_copy2.pdf#page=6",
+      "fact": "Distribution chant can conclude with Gloria Patri and antiphon if palms finish early; no inference that a separate response or Introit Gloria Patri tune is prescribed."
+    },
+    "musicalEditorNeeds": [
+      "Obtain actual Palm distribution Psalm 23 and 46 1f Sicut erat/saeculorum Amen music or a reliable edition-specific treatment for the processional.",
+      "Check whether office-mode 1f EUOUAE termination is actually appropriate after the Palm Antiphon and how Amen is sung.",
+      "Confirm both Palm doxology mediant accent groups, genre-specific final Amen notes and antiphon returns against 1961 witnesses.",
+      "Require an independent qualified musical signoff for each of the two doxology cases before promoting."
+    ],
+    "preservesTwoDistinctPendingCases": true,
+    "hasSourceSpecificMusicalApproval": false,
+    "validatedOriginalFullGabcCount": 0,
+    "existing17CasesStillProvisional": true,
+    "releasePermitted": false,
+    "readerRuntimeChanged": false,
+    "newGabcCreated": false
   }
 }
