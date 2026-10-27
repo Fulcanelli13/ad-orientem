@@ -1563,3 +1563,60 @@ test('two flexed Psalm23 full-GABC hypotheses cover three verses but retain exac
  const reader=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
  assert.equal(reader.includes('PALM-R02-PS23-L07 1961 Palm complete-verse'),false);
 });
+
+
+test('four higher-risk whole-verse GABCs keep exact Latin but withhold musical approval',()=>{
+ const four=readJSON('data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json');
+ const master=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
+ const prior=readJSON('data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json');
+ const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/æ/g,'ae').toLowerCase().replace(/[^a-z]/g,'');
+ const sourceById=new Map(master.cases.map(x=>[x.id,x]));
+ const syllableSource=new Map(master.batch33RemainingEightReview.rows.map(x=>[x.id,x]));
+ assert.equal(four.batch,34);
+ assert.equal(four.cases.length,4);
+ assert.equal(four.counts.wholeVerseSchematicsTotal,15);
+ assert.equal(four.counts.remainingFullGabcHolds,2);
+ assert.equal(four.counts.productionMusicallyApproved,0);
+ assert.equal(four.restrictions.releaseAllowed,false);
+ const generated=new Set([...prior.scoreCases.map(x=>x.id),
+    ...master.batch33RemainingEightReview.twoPsalm23FlexGabcCandidates.candidates.map(x=>x.id),
+    ...four.cases.map(x=>x.id)]);
+ assert.equal(generated.size,15);
+ assert.equal(sourceById.size,17);
+ const held=new Set(four.withheld.ids);
+ assert.equal(held.size,2);
+ for(const [id] of sourceById)assert.ok(generated.has(id)||held.has(id),id);
+ assert.equal([...generated].some(x=>held.has(x)),false);
+ for(const row of four.cases){
+  const primary=sourceById.get(row.id), original=syllableSource.get(row.id);
+  assert.ok(primary&&original,row.id);
+  assert.deepEqual(row.sourceLatin,[primary.sourceSegments.medial,primary.sourceSegments.termination]);
+  assert.deepEqual(row.sourceSyllables,original.fullPrintedSyllabifiedSections);
+  assert.equal(row.gabcResearchOnly.split('%%').length,2);
+  assert.equal(row.gabcResearchOnly.split('*(:)').length,2);
+  const [a,b]=row.gabcResearchOnly.slice(row.gabcResearchOnly.indexOf('(c4)')+4).split('*(:)');
+  for(const [partIndex,part] of [a,b].entries()){
+   const originalWords=row.sourceSyllables[partIndex].split(/\s+/);
+   const expectedSyllables=originalWords.flatMap(word=>word.split('-'));
+   const observedSyllables=[...part.matchAll(/([\p{L}]+[.,;!?]?)\(([^)]+)\)/gu)];
+   assert.equal(observedSyllables.length,expectedSyllables.length,row.id);
+   assert.deepEqual(observedSyllables.map(x=>norm(x[1])),expectedSyllables.map(norm),row.id);
+   assert.deepEqual(observedSyllables.map(x=>x[2]),row.pitchesBySection[partIndex],row.id);
+   const encodedWords=part.replace(/\([^)]*\)/g,'').replace(/[:*]/g,'').trim().split(/\s+/);
+   assert.deepEqual(encodedWords.map(norm),originalWords.map(norm),row.id);
+   assert.equal(norm(encodedWords.join('')),norm(row.sourceLatin[partIndex]),row.id);
+  }
+  const firstAccent=row.hypotheticalAccentAnchors[0], lastAccent=row.hypotheticalAccentAnchors[1];
+  const medialSyll=row.sourceSyllables[0].split(/\s+/).flatMap(w=>w.split('-'));
+  assert.equal(norm(medialSyll[firstAccent.index]),norm(firstAccent.syllable),row.id);
+  assert.equal(norm(medialSyll[lastAccent.index]),norm(lastAccent.syllable),row.id);
+  assert.equal(row.manuallyStaffCompared,false);
+  assert.equal(row.LatinAccentHumanChecked,false);
+  assert.equal(row.musicianApproved,false);
+  assert.equal(row.productionEligible,false);
+ }
+ assert.equal(four.withheld.melodiesFabricated,false);
+ const reader=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
+ assert.ok(!reader.includes('processionale-palm-four-exception-full-verse-schematics'));
+});
+
