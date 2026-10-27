@@ -757,7 +757,10 @@ button.ao-schola-control{cursor:pointer}
 /* Existing approved icon becomes an in-stage focus illustration only if
    a real unoccupied reading region is available. Otherwise retain rail art. */
 .ao-reader-shell[data-mode="LIVE"][data-cinematic-visual="ICON"] .ao-cinematic[data-kind="ELEVATION"]{
-  position:absolute;inset:auto 0 clamp(68px,9vh,82px);height:172px;
+  /* Preserve space for the caption below the icon, above the card counter.
+     On a 390x844 phone the former 9vh offset placed the caption 15px
+     across the counter although the 172px icon stage itself cleared it. */
+  position:absolute;inset:auto 0 clamp(108px,13vh,124px);height:172px;
   display:grid;place-items:center;padding:0;z-index:17;
   background:transparent;box-shadow:none;pointer-events:none;
 }
@@ -4226,7 +4229,9 @@ export function createReaderDomAdapter({
       const room=visibleBottom-lastTextBottom;
       const iconAvailable=Boolean(current.priestActionIconKey &&
         current.cinematic?.kind==="ELEVATION");
-      const canIllustrate=iconAvailable && room>=272 && bounds?.height>=420;
+      // The icon must have room for both its source words and its external
+      // caption: the raised stage needs another ~38px clearance.
+      const canIllustrate=iconAvailable && room>=310 && bounds?.height>=420;
       stageCinema.hidden=!canIllustrate;
       stageCinema.setAttribute?.("aria-hidden","true");
       if(stageShell)stageShell.dataset.cinematicVisual=canIllustrate?"ICON":"RAIL";
