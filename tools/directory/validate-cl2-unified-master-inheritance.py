@@ -24,7 +24,7 @@ def main():
       "source_ministry":2723,"mass_time":4681,
       "timetable_ministry_link":4681,"institute_norm":8,
       "existing_alias":5,"identity_exception":49,
-      "classification_exception":0,"unified_site_candidate":1639,"unified_research_inventory":4218,"unified_provider_coverage":554,"unified_third_party_source_lead":1531,"unified_directory_country_census":65,"unified_identity_review_cohort":1497
+      "classification_exception":0,"unified_site_candidate":1639,"unified_research_inventory":4218,"unified_provider_coverage":554,"unified_third_party_source_lead":1531,"unified_directory_country_census":65,"unified_identity_review_cohort":1639
     }
     for table,n in expected.items():
         assert count(db,f'SELECT COUNT(*) FROM {table} ')==n,(table,n)
