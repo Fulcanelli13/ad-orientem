@@ -186,6 +186,16 @@ export function installSequentialDevotionalReader({
       p.style.setProperty("opacity",power,"important");
       p.dataset.aoDevoActive=i===found?"true":"false";
     });
+    // Both prayer faces exist in the DOM. The nonvisible (e.g. Latin)
+    // paragraphs would otherwise retain the default muted focus opacity
+    // when a user reveals them between focus-animation frames. Normalize
+    // every source-owned daily paragraph, not only the currently shown face.
+    if(contemplativeDailyPrimary){
+      paragraphs.forEach(p=>{
+        p.style.setProperty("--ao-devo-focus","1");
+        p.style.setProperty("opacity","1","important");
+      });
+    }
     if(last!==shown[found]){last=shown[found];if(userScrolled)onFocus(last)}
   }
   const queue=()=>{if(!frame)frame=doc.defaultView.requestAnimationFrame(focus)};
