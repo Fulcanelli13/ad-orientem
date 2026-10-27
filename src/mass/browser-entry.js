@@ -28,7 +28,8 @@ import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.
 import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
 import { installPentecostSunday1960PrefaceSource } from "./1962-pentecost-sunday-prefatio1960-source.js";
 import {select1962CommemorationsForMassForm} from "./1962-commemoration-form-source.js";
-import {allSouls1962RequiemOverlay} from "./1962-all-souls-source.js";
+import {allSouls1962RequiemOverlay,is1962AllSoulsCalendarMass,
+  resolve1962AllSoulsAdditionalProper} from "./1962-all-souls-source.js";
 import {selectedPreflightStudyProper} from "./preflight-study-proper.js";
 import {massScriptureContextForCard} from "./scripture-reading-context.js";
 import {nativeRiteScriptureContext} from "./scripture-native-rite-context.js";
@@ -789,7 +790,7 @@ export function ordinaryMassPrefaceOwner(resolvedMass,{observed=false}={}){
   return resolvedMass.calendarDay?.id??null;
 }
 
-export function createBrowserMassController({rogationPreflight=null,fullMassPreflight=null,observedSource=null,localOrations=null}={}) {
+export function createBrowserMassController({rogationPreflight=null,fullMassPreflight=null,observedSource=null,localOrations=null,getAllSoulsMassChoice=()=>1}={}) {
   const api = celebrationApi();
   if (!api?.getResolvedMass) throw new Error("AO_CELEBRATION_API is not ready");
   // The observer may explicitly select the source Proper of a different
@@ -843,12 +844,24 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
         throw new Error("GOOD_FRIDAY_IS_NOT_A_MASS_FORM");
       const localRequest=localOrations?.selectionFor?.(resolvedMass)??null;
       let presentedProper=formSelectedProper.proper;
+      const allSoulsMassNumber=getAllSoulsMassChoice(resolvedMass);
+      if(allSoulsMassNumber!==1){
+        if(!is1962AllSoulsCalendarMass(resolvedMass,options.proper))
+          throw Error("ALL_SOULS_ALTERNATE_PROPER_CALENDAR_CHANGED");
+        const day=calendarResolution?.date===resolvedMass.date?calendarResolution:
+          await runtime()?.resolver?.resolveDay?.(resolvedMass.date);
+        presentedProper=await resolve1962AllSoulsAdditionalProper({
+          calendarResolution:day,
+          properResolver:runtime()?.resolver?.properResolver,
+          massNumber:allSoulsMassNumber,
+        });
+      }
       if(localRequest){
         if(localRequest.date!==resolvedMass.date||
            localRequest.form!==(chosen?.form??options.celebrationForm))
           throw new Error("LOCAL_ADDITIONAL_ORATIONS_SELECTION_CHANGED");
         const result=projectObservedLocalOrations({
-          originalProper:proper,selectedProper:formSelectedProper.proper,
+          originalProper:proper,selectedProper:presentedProper,
           calendarResolution,form:localRequest.form,
           commemorationId:localRequest.commemorationId,
           observedGroups:localRequest.observedGroups,
@@ -894,7 +907,12 @@ function showFailure(error, button = null) {
 export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
   const shellFocusGuard=installShellFocusVisibilityGuard({doc:document,win:window});
   if (globalThis.AO_R17_BROWSER_ENTRY?.installed) return globalThis.AO_R17_BROWSER_ENTRY;
-  const state = { installed: false, polls: 0, controller: null, rogationPreflight: null, fullMassPreflight: null, fullMassCatalogue: null, observedSource: null, localOrations: null };
+  const state = { installed: false, polls: 0, controller: null, rogationPreflight: null, fullMassPreflight: null, fullMassCatalogue: null, observedSource: null, localOrations: null, allSoulsMassChoice:null };
+  function selectedAllSoulsMass(legacy){
+    return is1962AllSoulsCalendarMass(legacy)
+      &&state.allSoulsMassChoice?.date===legacy?.date
+      ?state.allSoulsMassChoice.number:1;
+  }
 
   // Explicit Mass-prayer entry. The canonical R17 controller remains the sole
   // source-authorized Start Mass owner; Prayer never reconstructs a Mass plan.
@@ -962,6 +980,14 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          onOpenPrayerRoute:openFolioPrayer,
 
          getSourceGate:()=>state.observedSource?.preparationGate?.()??{ready:true,reason:null},
+         getAllSoulsMassChoice:selectedAllSoulsMass,
+         onAllSoulsMassChange:number=>{
+           const base=celebrationApi()?.getResolvedMass?.();
+           if(![1,2,3].includes(number)||!is1962AllSoulsCalendarMass(base))
+             throw Error("ALL_SOULS_ALTERNATE_SELECTION_OUTSIDE_DAY");
+           state.allSoulsMassChoice=Object.freeze({date:base.date,number});
+           state.fullMassPreflight?.refresh?.();
+         },
          getLocalOrationSummary:()=>state.localOrations?.status?.()??null,
          getCalendarState:()=>runtimeState(),
          subscribeCalendarState:notify=>runtime()?.store?.subscribe?.(notify)??null,
@@ -1022,6 +1048,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          fullMassPreflight:state.fullMassPreflight,
          observedSource:state.observedSource,
          localOrations:state.localOrations,
+         getAllSoulsMassChoice:selectedAllSoulsMass,
        });
       state.installed = true;
       document.documentElement.dataset.aoR17MassBridge = "ready";
