@@ -247,15 +247,21 @@ try{
      for(const massNumber of [1,2,3]){
        const input=container.locator('[data-ao-all-souls-mass][value="'+massNumber+'"]');
        await input.check();
-       const output=await page.evaluate(async()=>{
-         const prepared=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
-         const mass=prepared?.session?.resolvedMass;
-         return {sourcePath:mass?.proper?.data?.sourcePath??mass?.proper?.sourcePath??null,
-           overlays:mass?.overlays??[],mode:prepared?.readerPreferences?.mode??null,
-           massReady:prepared?.session?.plan?.kind??null,
-           sourceProof:mass?.proper?.data?.allSoulsSourceProof??null};
-       });
-       out.cases.push({massNumber,...output});
+       const readerTab=page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]');
+       await readerTab.click();
+       for(const mode of ["MISSAL","SIMPLE","LIVE"]){
+         await page.locator('[data-full-mass-reader-mode][value="'+mode+'"]').check();
+         const output=await page.evaluate(async()=>{
+           const prepared=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
+           const mass=prepared?.session?.resolvedMass;
+           return {sourcePath:mass?.proper?.data?.sourcePath??mass?.proper?.sourcePath??null,
+             overlays:mass?.overlays??[],mode:prepared?.readerPreferences?.mode??null,
+             massReady:prepared?.session?.plan?.kind??null,
+             sourceProof:mass?.proper?.data?.allSoulsSourceProof??null};
+         });
+         out.cases.push({massNumber,requestedMode:mode,...output});
+       }
+       if(massNumber!==3)await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
      }
    }catch(error){out.error=String(error?.message??error)}
    return out;
@@ -267,11 +273,12 @@ try{
    check(row.sourcePath==="Sancti/11-02m"+row.massNumber,
     "NOV02_NATIVE_PREPARED_WRONG_FORMULARY:"+row.massNumber+":"+row.sourcePath);
    check(row.overlays.includes("REQUIEM"),"NOV02_NATIVE_PREPARED_REQUIEM_RITE_MISSING:"+row.massNumber);
+   check(row.mode===row.requestedMode,"NOV02_NATIVE_READER_MODE_NOT_APPLIED:"+row.massNumber+":"+row.requestedMode);
    if(row.massNumber>1)
      check(row.sourceProof?.status==="SOURCE_VERIFIED",
        "NOV02_NATIVE_ALTERNATE_SOURCE_PROOF_MISSING:"+row.massNumber);
  }
- check(massUi.cases.length===3,"NOV02_NATIVE_THREE_FORMULARY_CYCLE_INCOMPLETE");
+ check(massUi.cases.length===9,"NOV02_NATIVE_NINE_FORMULARY_MODE_COMBINATIONS_INCOMPLETE");
  const c=evaluated.ceremonial;
  check(c.req.omittedPeace.includes("AO.SM.C0225"),"REQUIEM_PEACE_PRAYER_NOT_OMITTED");
  check(c.req.omittedFinalBlessing.includes("AO.SM.C0263"),"REQUIEM_FINAL_BLESSING_NOT_OMITTED");
