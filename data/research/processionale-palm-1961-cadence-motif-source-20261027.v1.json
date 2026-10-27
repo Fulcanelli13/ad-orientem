@@ -1,0 +1,106 @@
+{
+  "schema": "ao-palm-printed-graduale-gabc-cadence-anchor-collation-v1",
+  "batch": 23,
+  "date": "2026-10-27",
+  "stage": "PALM-R02",
+  "status": "FOUR_EXACT_FIRST_VERSE_CADENCE_ANCHORS_CAPTURED_FROM_ARCHIVED_GABC_NO_PITCH_APPROVAL",
+  "printedWitness": {
+    "title": "Graduale Romanum 1961, Psalmi usitati per Hebdomadam Sanctam secundum novam interpretationem latinam",
+    "ps23": {
+      "printedPage": "143**",
+      "pdfIndex": 142,
+      "url": "https://gregobase.selapa.net/sources/2/1179.png"
+    },
+    "ps46": {
+      "printedPage": "144**",
+      "pdfIndex": 143,
+      "url": "https://gregobase.selapa.net/sources/2/1180.png"
+    },
+    "pdf": "https://s9.imslp.org/files/imglnks/usimg/1/1a/IMSLP52097-PMLP108040-GR6_Proprium_et_Commune_pro_aliquibus_locis,_Psalmi.pdf"
+  },
+  "psalms": [
+    {
+      "psalm": 23,
+      "rawArchivedPath": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+      "gitBlobSha": "d250480c2b5e40f6a9e9aeaaa20308c1dafdc6e4",
+      "printedFacsimilePdfIndex": 142,
+      "sourceStatus": "PRIMARY_1961_BOOK_RAW_GRAGOBASE_TRANSCRIPTION_NOT_EDITOR_APPROVED",
+      "sourceFirstVerse": "Dómini est terra et quae replent eam * orbis terrarum et qui habitant in eo.",
+      "firstVerseEvidence": "(c4) DO(f)mi(gh)ni(h) est(h) ter(h)ra,(h) et(h) quæ(h) <b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.) *(:) or(h)bis(h) ter(h)rá(h)rum(h) et(h)  qui(h) há(h)bi(h)<i>tant</i>(g) <i>in</i>(f) <b>e</b>(gh gr)o.(gf..) (::)",
+      "firstSection": "(c4) DO(f)mi(gh)ni(h) est(h) ter(h)ra,(h) et(h) quæ(h) <b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "medialGabc": "*(:)",
+      "secondSection": "or(h)bis(h) ter(h)rá(h)rum(h) et(h)  qui(h) há(h)bi(h)<i>tant</i>(g) <i>in</i>(f) <b>e</b>(gh gr)o.(gf..)",
+      "secondVerseCue": "(Z) <i>Flexa :</i> rex(h) glo(h)ri(gr)æ?(g.) +(h)  (h) (::) 2. Nam(h) ip(h)se...(h)",
+      "flexExample": "rex(h) glo(h)ri(gr)æ?(g.) +(h)",
+      "mediantCadenceExcerpt": "quæ(h) <b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "terminationCadenceExcerpt": "há(h)bi(h)<i>tant</i>(g) <i>in</i>(f) <b>e</b>(gh gr)o.(gf..)",
+      "humanCadenceApplicationApproval": false
+    },
+    {
+      "psalm": 46,
+      "rawArchivedPath": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+      "gitBlobSha": "ed88fa7750a052aa4b4586f6898238b8208eb270",
+      "printedFacsimilePdfIndex": 143,
+      "sourceStatus": "PRIMARY_1961_BOOK_RAW_GREGOBASE_TRANSCRIPTION_TEXT_QUARANTINED",
+      "sourceFirstVerse": "Omnes populi, plaudite manibus * exsultate Deo voce laetitiae.",
+      "rawLatinConflict": "Omnes gentes",
+      "rawFirstVerseEvidence": "(c4) O(f)mnes(gh) gen(h)tes,(h) <b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.) *(:) ex(h)sul(h)tá(h)te(h) De(h)o(h)  vo(h)<i>ce</i>(g) <i>læ</i>(f)<b>ti</b>(gh)ti(gr)æ :(gf..) (::)",
+      "provisionalFirstVerseEvidence": "(c4) O(f)mnes(gh) pó(h)pu(h)li,(h) <b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.) *(:) ex(h)sul(h)tá(h)te(h) De(h)o(h)  vo(h)<i>ce</i>(g) <i>læ</i>(f)<b>ti</b>(gh)ti(gr)æ :(gf..) (::)",
+      "provisionalFile": "data/research/chant-source-review/palm46-omnes-populi-1961-provisional.gabc",
+      "gitProvisionalBlobSha": "7cb0d43043400f6c4e8ba53d439637a3b09b62eb",
+      "provisionalFirstSection": "(c4) O(f)mnes(gh) pó(h)pu(h)li,(h) <b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "medialGabc": "*(:)",
+      "secondSection": "ex(h)sul(h)tá(h)te(h) De(h)o(h)  vo(h)<i>ce</i>(g) <i>læ</i>(f)<b>ti</b>(gh)ti(gr)æ :(gf..)",
+      "secondVerseCue": "2. Quó(h)ni(h)am...(h)",
+      "rawBadOpening": "O(f)mnes(gh) gen(h)tes,(h)",
+      "provisionalOpening": "O(f)mnes(gh) pó(h)pu(h)li,(h)",
+      "oldNotes": [
+        "f",
+        "gh",
+        "h",
+        "h"
+      ],
+      "provisionalNotes": [
+        "f",
+        "gh",
+        "h",
+        "h",
+        "h"
+      ],
+      "firstVerseSourceAfterPlauditeUnchanged": true,
+      "mediantCadenceExcerpt": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "terminationCadenceExcerpt": "vo(h)<i>ce</i>(g) <i>læ</i>(f)<b>ti</b>(gh)ti(gr)æ :(gf..)",
+      "humanCadenceApplicationApproval": false
+    }
+  ],
+  "editorialScope": {
+    "whatIsEstablished": "Exact research archived GABC fragments for both fully printed first-verses' final pitch groups at mediant/termination, plus the Psalm23 flex demonstration and Psalm46 five-syllable derivative comparison.",
+    "whatIsNotEstablished": "Whole-verse transfer to the 13 distinct other patterns, accented Latin editorial validation, precise cadential accent application, or a licensed/human-approved GABC for production.",
+    "neededIndependentChecks": [
+      "Compare excerpt note groups with original 1961 scanned staff and independent chant-editor signoff",
+      "Identify intonation, tenor, accent and preparatory note model separately for each Psalm",
+      "At all 13 remaining unique verse patterns, map accent/word grouping, flex where applicable, mediant and termination",
+      "Handle doxology as four additional tone-specific applications",
+      "Render any editor-reviewed candidate in existing Exsurge and test mobile layout after approvals"
+    ],
+    "scholaOwner": "#1749",
+    "latinOwner": "#894",
+    "noNewRenderer": true
+  },
+  "counting": {
+    "printedFirstVerses": 2,
+    "firstVerseCadenceFragments": 4,
+    "printedPsalm23FlexExample": 1,
+    "otherVerseApplicationsPending": 14,
+    "doxologyApplicationsPending": 4,
+    "distinctPendingMusicReviewItems": 17,
+    "approvedNewMusicalSettings": 0,
+    "productionScoreAssignments": 0
+  },
+  "release": {
+    "musicianCertified": false,
+    "textualAccentsAllCertified": false,
+    "sourceEdApproved": false,
+    "publishingAllowed": false
+  }
+}
