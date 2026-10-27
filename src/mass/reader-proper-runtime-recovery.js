@@ -49,6 +49,20 @@ function parsedLines(parsed,ids){
   return [];
 }
 
+// Read-only exact section projection shared with the November 2 source owner.
+// The pinned parser handles same-language @ references; this method reuses
+// the identical text normalizer already used by native Reader recovery.
+export function trilingualParsedProperSection(parsedSources,section){
+ const translated={};
+ for(const [lang,key] of [["la","lat"],["en","en"],["fr","fr"]]){
+   const text=cleanLines(parsedLines(parsedSources?.[lang],[section]),lang);
+   if(!text || /(^|\n)\s*[$@]/m.test(text))
+     throw new Error("SOURCE_SECTION_UNRESOLVED:"+section+":"+lang);
+   translated[key]=text;
+ }
+ return Object.freeze(translated);
+}
+
 async function recoverText(hostResolver,path,sectionIds,diagnostic){
   const out={lat:"",en:"",fr:""};
   for(const language of ["la","en","fr"]){
