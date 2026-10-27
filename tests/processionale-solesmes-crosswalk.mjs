@@ -2027,3 +2027,28 @@ test('Ps46 L05 preserves Ward long-word secondary accent as an unapproved rule-c
  assert.equal(b.readerRuntimeChanged,false);
  assert.equal(b.permittedAutomaticPromotion,false);
 });
+
+
+test('Palm Amen 1961 introital comparison does not transfer a same-edition but wrong-genre cadence',()=>{
+ const d=readJSON('data/research/processionale-palm-amen-two-full-gabc-comparative-20261027.v1.json');
+ const b=d.batch41SameEditionIntroitalComparison;
+ assert.equal(b.batch,41);
+ assert.equal(b.contemporary1961Witness.printedPage,'135*');
+ assert.equal(b.contemporary1961Witness.chantDatabaseId,4341);
+ assert.equal(b.contemporary1961Witness.genre,'INTROIT_DOXOLOGY_NOT_PALM_DISTRIBUTION_PSALM');
+ assert.deepEqual(b.contemporary1961Witness.lastLatinPitchGroups.map(x=>x.notes),["g'","f","fff","d."]);
+ assert.equal(b.contemporary1961Witness.maySupplyOriginalPalmScore,false);
+ assert.equal(b.officeFamilyComparator.genre,'OFFICE_PSALM_1F_NOT_PALM_PROCESSIONAL');
+ assert.equal(b.officeFamilyComparator.exposesPrintedFullPalmAmen,false);
+ assert.deepEqual(b.palm1961Source.candidateResearchAmenPitchGroups.map(x=>x.notes),['g','f','gh gr','gf..']);
+ assert.equal(b.palm1961Source.explicitlyNotatedPalmSpecificSicutEratAmenFound,false);
+ assert.equal(d.fullHypotheticalGabcCases.length,2);
+ assert.equal(d.fullHypotheticalGabcCases.every(x=>x.editorScoreApproved===false&&x.productionEligible===false),true);
+ assert.equal(b.preservesTwoDistinctPendingCases,true);
+ assert.equal(b.hasSourceSpecificMusicalApproval,false);
+ assert.equal(b.validatedOriginalFullGabcCount,0);
+ assert.equal(b.existing17CasesStillProvisional,true);
+ assert.equal(b.releasePermitted,false);
+ assert.equal(b.readerRuntimeChanged,false);
+ assert.equal(b.newGabcCreated,false);
+});
