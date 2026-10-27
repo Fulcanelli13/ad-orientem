@@ -1,0 +1,244 @@
+{
+  "schema": "AO_1962_TEMPORAL_PREFACE_SOURCE_SCREEN_20261027_V1",
+  "canonicalSource": "2026 Calendar year audit sourcePath identities (live production resolver)",
+  "casesOriginallyUnmapped": 19,
+  "sourceScreened": 19,
+  "sourceLanguage": "Latin",
+  "upstream": "DivinumOfficium/divinum-officium master, web/www/missa/Latin/Tempora",
+  "screenMethod": "Opened each of 19 original Latin Temporal files. Recorded original Prefatio Rule directives/absence and source-limited rubric candidates; no new text inferred.",
+  "rubrics": [
+    "RGMR_1960_489_A",
+    "RGMR_1960_494_B",
+    "RGMR_1960_498"
+  ],
+  "authority": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+  "counts": {
+    "EASTER_TEMPORAL_SUNDAY": 1,
+    "CORPUS_CHRISTI_VERSIONED": 1,
+    "SEPTEMBER_EMBER": 3,
+    "ADVENT_NAMED_FERIA": 13,
+    "GAUDETE_SUNDAY": 1
+  },
+  "sourceCases": [
+    {
+      "date": "2026-04-26",
+      "sourcePath": "Tempora/Pasc3-0r",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc3-0r.txt",
+      "family": "EASTER_TEMPORAL_SUNDAY",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "The original Rule has no explicit Prefatio; §489(a) requires Paschal Preface of a seasonal Sunday. Raw Common likely a source-selection conflict.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-06-04",
+      "sourcePath": "Tempora/Pent01-4",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent01-4.txt",
+      "family": "CORPUS_CHRISTI_VERSIONED",
+      "firstPassOriginalPrefatioTokens": [
+        "Prefatio=Nat",
+        "(sed rubrica 1960)",
+        "Prefatio=Sacramento"
+      ],
+      "sourceFinding": "Source has two historical selectors divided by a version condition; do not infer original mandatory 1962 sacramental Preface or 2020 optional permission.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-09-23",
+      "sourcePath": "Tempora/093-3",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-3.txt",
+      "family": "SEPTEMBER_EMBER",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "September Ember Wednesday, no explicit source Prefatio; §498 candidate if no proper/seasonal obligation.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-09-25",
+      "sourcePath": "Tempora/093-5",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-5.txt",
+      "family": "SEPTEMBER_EMBER",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "September Ember Friday, no explicit source Prefatio; §498 candidate if no proper/seasonal obligation.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-09-26",
+      "sourcePath": "Tempora/093-6",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-6.txt",
+      "family": "SEPTEMBER_EMBER",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "September Ember Saturday, no explicit source Prefatio; §498 candidate if no proper/seasonal obligation.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-12-01",
+      "sourcePath": "Tempora/Adv1-2",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv1-2.txt",
+      "family": "ADVENT_NAMED_FERIA",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "No explicit Prefatio in named original source file. §494(b) Trinity is Sunday-only; §498 Common is a candidate for selected ordinary feria; local or later optional Advent Prefaces not inferred.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-12-05",
+      "sourcePath": "Tempora/Adv1-6",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv1-6.txt",
+      "family": "ADVENT_NAMED_FERIA",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "No explicit Prefatio in named original source file. §494(b) Trinity is Sunday-only; §498 Common is a candidate for selected ordinary feria; local or later optional Advent Prefaces not inferred.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-12-09",
+      "sourcePath": "Tempora/Adv2-3",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv2-3.txt",
+      "family": "ADVENT_NAMED_FERIA",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "No explicit Prefatio in named original source file. §494(b) Trinity is Sunday-only; §498 Common is a candidate for selected ordinary feria; local or later optional Advent Prefaces not inferred.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-12-10",
+      "sourcePath": "Tempora/Adv2-4",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv2-4.txt",
+      "family": "ADVENT_NAMED_FERIA",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "No explicit Prefatio in named original source file. §494(b) Trinity is Sunday-only; §498 Common is a candidate for selected ordinary feria; local or later optional Advent Prefaces not inferred.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-12-12",
+      "sourcePath": "Tempora/Adv2-6",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv2-6.txt",
+      "family": "ADVENT_NAMED_FERIA",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "No explicit Prefatio in named original source file. §494(b) Trinity is Sunday-only; §498 Common is a candidate for selected ordinary feria; local or later optional Advent Prefaces not inferred.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-12-14",
+      "sourcePath": "Tempora/Adv3-1",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-1.txt",
+      "family": "ADVENT_NAMED_FERIA",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "No explicit Prefatio in named original source file. §494(b) Trinity is Sunday-only; §498 Common is a candidate for selected ordinary feria; local or later optional Advent Prefaces not inferred.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-12-15",
+      "sourcePath": "Tempora/Adv3-2",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-2.txt",
+      "family": "ADVENT_NAMED_FERIA",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "No explicit Prefatio in named original source file. §494(b) Trinity is Sunday-only; §498 Common is a candidate for selected ordinary feria; local or later optional Advent Prefaces not inferred.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-12-16",
+      "sourcePath": "Tempora/Adv3-3",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-3.txt",
+      "family": "ADVENT_NAMED_FERIA",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "No explicit Prefatio in named original source file. §494(b) Trinity is Sunday-only; §498 Common is a candidate for selected ordinary feria; local or later optional Advent Prefaces not inferred.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-12-17",
+      "sourcePath": "Tempora/Adv3-4",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-4.txt",
+      "family": "ADVENT_NAMED_FERIA",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "No explicit Prefatio in named original source file. §494(b) Trinity is Sunday-only; §498 Common is a candidate for selected ordinary feria; local or later optional Advent Prefaces not inferred.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-12-18",
+      "sourcePath": "Tempora/Adv3-5",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-5.txt",
+      "family": "ADVENT_NAMED_FERIA",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "No explicit Prefatio in named original source file. §494(b) Trinity is Sunday-only; §498 Common is a candidate for selected ordinary feria; local or later optional Advent Prefaces not inferred.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-12-19",
+      "sourcePath": "Tempora/Adv3-6",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-6.txt",
+      "family": "ADVENT_NAMED_FERIA",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "No explicit Prefatio in named original source file. §494(b) Trinity is Sunday-only; §498 Common is a candidate for selected ordinary feria; local or later optional Advent Prefaces not inferred.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-12-22",
+      "sourcePath": "Tempora/Adv4-2",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv4-2.txt",
+      "family": "ADVENT_NAMED_FERIA",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "No explicit Prefatio in named original source file. §494(b) Trinity is Sunday-only; §498 Common is a candidate for selected ordinary feria; local or later optional Advent Prefaces not inferred.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-12-23",
+      "sourcePath": "Tempora/Adv4-3",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv4-3.txt",
+      "family": "ADVENT_NAMED_FERIA",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "No explicit Prefatio in named original source file. §494(b) Trinity is Sunday-only; §498 Common is a candidate for selected ordinary feria; local or later optional Advent Prefaces not inferred.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    },
+    {
+      "date": "2026-12-13",
+      "sourcePath": "Tempora/Adv3-0",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-0.txt",
+      "family": "GAUDETE_SUNDAY",
+      "firstPassOriginalPrefatioTokens": [],
+      "sourceFinding": "Gaudete is still an Advent Sunday despite rank I/rose. §494(b) Trinity Preface applies to Advent Sundays; raw Common is a candidate source conflict.",
+      "status": "SOURCE_SCREEN_ONLY_UNCERTIFIED",
+      "autoPublish": false,
+      "changesReader": false
+    }
+  ],
+  "sourceDefectHolds": [
+    "Corpus Christi double source selector requires source-version arbitration",
+    "Advent Sunday proper/trinity obligation requires named-source and weekday gate"
+  ],
+  "editorialCertification": 0,
+  "autoPublish": false,
+  "changesReader": false
+}
