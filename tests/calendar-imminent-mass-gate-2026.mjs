@@ -62,7 +62,8 @@ try{
    const selected=select1962CommemorationsForMassForm({
      proper:inputProper,calendarResolution:resolution,form:"SOLEMN"});
    const prepared=adaptV346ResolvedMass(legacy,{
-     form:"solemn",presentationMode:"MISSAL",proper:selected.proper});
+     form:"solemn",presentationMode:"MISSAL",proper:selected.proper,
+     calendarResolution:resolution});
    const plan=compileMassPlan(prepared);
    const p=prepared.proper?.data??prepared.proper;
    const slots={};
