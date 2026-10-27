@@ -670,6 +670,30 @@ try{
   }
   assert.equal(marianCases.filter(x=>x.result==="READER_SELECTED_CATEGORY_MATCH").length,21);
 
+  // 15 Easter saint Masses and five Ascension saint Masses must choose
+  // the named Preface in the native 65-card source path, not display
+  // a Common text with a green READY status.
+  const seasonalSaintCases=readerAuditRows.filter(x=>
+    x.id?.startsWith("sancti:")&&
+    (x.sourceExpected==="PASCHALIS"||x.sourceExpected==="ASCENSIO"));
+  assert.equal(seasonalSaintCases.length,20,
+    "Seasonal source screen no longer matches actual 2026 principal Masses");
+  assert.equal(seasonalSaintCases.filter(x=>x.sourceExpected==="PASCHALIS").length,15);
+  assert.equal(seasonalSaintCases.filter(x=>x.sourceExpected==="ASCENSIO").length,5);
+  for(const item of seasonalSaintCases){
+    assert.equal(item.result,"READER_SELECTED_CATEGORY_MATCH",
+      item.date+": seasonal saint's Mass has uncorrected native Preface");
+    assert.equal(item.finalReaderSlot,"READY",item.date);
+    assert.equal(item.selectedPrefaceSource,"Ordo/Prefationes",item.date);
+    assert.equal(item.selectedPrefaceSection,
+      item.sourceExpected==="PASCHALIS"?"Pasch":"Asc",item.date);
+    assert.equal(item.selectedPrefaceVariant,
+      item.sourceExpected==="PASCHALIS"?"EASTERTIDE":null,item.date);
+    assert.equal(item.nativeAdapterPrincipalId,item.id,item.date);
+    assert.equal(item.trilingualSelected,true,item.date);
+  }
+  assert.equal(readerAuditRows.find(x=>x.date==="2026-05-11")?.sourceExpected,
+    "APOSTOLI","11 May source must remain an Apostles' Preface, not Eastertide");
   const readerResultCounts=Object.fromEntries(
     [...new Set(readerAuditRows.map(x=>x.result))].sort()
       .map(key=>[key,readerAuditRows.filter(x=>x.result===key).length]));
@@ -696,6 +720,7 @@ try{
       marianPrefaceSourceCases:22,
       marianPrefacesRecoveredReady:21,
       marianLourdesBookConflictBlocked:1,
+      seasonalSanctoralPrefacesRecoveredReady:20,
       readerLiturgicalSourceReleaseReady,
       unresolvedOrWrongReaderCases:100-matchedNativeReady,
       readerResultCounts,
@@ -714,6 +739,7 @@ try{
     readerNativeReadyAndCategoryMatched:matchedNativeReady,
     readerWrongPrefaceNativeReady:wrongNativeReady,
     marianPrefacesRecoveredReady:21,marianLourdesBookConflictBlocked:1,
+    seasonalSanctoralPrefacesRecoveredReady:20,
     readerLiturgicalSourceReleaseReady,
     readerNotConfirmedCorrect:100-matchedNativeReady,
     categories:readerResultCounts,editoriallyCertified:0
