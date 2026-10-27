@@ -114,3 +114,47 @@ The earlier merged research intake `data/directory/research/canonical-g0-site-ad
 The CL2 SQLite builder therefore now imports all **36 leads as `unified_site_candidate`**, with frozen candidate IDs, country, locality, physical-description evidence, batch and exact original source URLs; it never promotes them into `unified_physical_site` automatically. The new **`unified_research_inventory`** view exposes 2,579 provisional accepted physical anchors **plus 36 unresolved lead records = 2,615 differently scoped inventory entries**, not 2,615 unique real churches. Every entry is in the SAME queryable CL2 research database. The 36 separate CL1/classification-only source orphans and the 49 existing identity-review flags remain preserved; they cannot be naively added to the physical total because identities may overlap.
 
 **Next completeness gates:** systematically crosswalk all already researched organization and regional directories against this one inventory; classify each *candidate identity*, not each Mass: exact existing building / strong possible alias / new physical building supported / out-of-scope or closed / unresolved. Bring confirmed new buildings into the canonical physical table with stable lineage only when identity evidence is adequate. Track source-coverage totals and missing-region/institute queues at the *provider catalogue level*, then enrich all accepted sites in 100–200-record or larger cohorts. No independent B90/B98/CL27 directory becomes a second authority.
+
+
+### Source-census consolidation, not pin enrichment (27 October 2026)
+
+The same CL2 SQLite now reconstructs a **worldwide candidate and provider source index** from already committed repository files. These are materialized tables and a view inside CL2, **not a second register or another list to maintain manually**.
+
+| CL2 research population | Records | Meaning |
+|---|---:|---|
+| `unified_physical_site` | **2,579** | Provisional physical anchors already consolidated |
+| `unified_provider_coverage` | **554** | Six committed provider-feed source corpora: FSSP 286, ICKSP 94, AASJMV 6, verified-global round 19 6, official French SSPX feed 89, diocesan feed 73 |
+| Exact existing CL2 source-ID links within provider feeds | **322** | Existing source identities, **not** separately certified buildings |
+| Prior G0 provider crosslink | **1** | Retain existing research lead rather than duplicate |
+| Additional unmatched *worship-type* provider leads | **159** | Source candidates; no physical identity or current schedule certification |
+| Other unmatched provider records | **72** | Residences, missions or ambiguous/non-worship facilities; **not** added as Mass sites |
+| Third-party worldwide directory source leads | **1,531** | Historical directory *listings*, not evidence of 1,531 churches offering current 1962 Mass |
+| Third-party exact existing CL2 source-ID links | **87** | No duplicate site promotion |
+| Unmatched third-party leads | **1,444** | Source identities held until a building-level deduplication verdict |
+| Original B84–B90 G0 leads | **36** | Already staged from source master |
+| **Unresolved candidate lead entries in CL2** | **1,639** | 36 G0 + 159 provider + 1,444 third-party, potentially overlapping physical places |
+| **Combined CL2 inventory entries** | **4,218** | 2,579 physical anchors + 1,639 lead identities; **NOT** 4,218 distinct churches |
+
+All **1,531** worldwide crosswalk source entries were carried forward, including **1,303** marked unmatched by the earlier *name-only* screen, **148** single name-only candidates and **80** ambiguous name candidates. **No name similarity is an approved same-building match.** Source properties, original URL references, candidate IDs, provenance and previous cautious dispositions remain queryable. Only **87** have an exact original CL2 source-ID relationship; *absence of an exact ID is not proof of a missing church*.
+
+The third-party country census has **65** country listings, **54** successfully traversed for their recorded snapshot and **11 incomplete** (GB, IE, JP, TW, BY, KR, RU, UA, HK, IN, IL). An exhausted third-party directory listing is **not** evidence that Ad Orientem has comprehensively covered all Catholic institutions or sites in a country. Continue first-party institute, national association and diocesan source discovery after these known corpora are reconciled.
+
+For throughput, `unified_identity_review_cohort` groups all **1,639** unresolved identity leads into **nine large batches**: eight cohorts of 200 records plus one of 39, ordered by source type and original supporting links. Their initial status is `UNRESOLVED_CANDIDATE_IDENTITY`; **zero** are automatically promoted as independently distinct physical sites, and no precise pin, current Mass time or public map entry is generated. Relevant named site and affiliation records can be enriched *after* the ultimate physical venue census is deduplicated.
+
+Rebuild `rebuild-cl2-research-snapshot.py`, then inspect:
+
+```sql
+SELECT source_family,entries,exact_CL2_ids,prior_g0_links,
+       new_unresolved_worship_leads,non_worship_or_ambiguous
+FROM unified_provider_census_by_family ORDER BY source_family;
+
+SELECT cohort_no,COUNT(*) AS unresolved_leads
+FROM unified_identity_review_cohort
+GROUP BY cohort_no ORDER BY cohort_no;
+
+SELECT country,listed_source_count,discovered_source_count,source_listing_complete
+FROM unified_directory_country_census
+WHERE source_listing_complete=0 ORDER BY country;
+```
+
+**Next census gate:** extend the same provider/source coverage register to any other previously researched feeds, then resolve candidates by stable source IDs, source ownership and physical-building evidence *in bulk*; avoid blind name matches and do not equate the sum of unresolved leads with newly found churches. Completing exact worldwide site coverage remains an **open** milestone.
