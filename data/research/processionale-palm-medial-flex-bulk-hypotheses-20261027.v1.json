@@ -1,0 +1,673 @@
+{
+  "schema": "ao-palm-17-medials-two-flex-experimental-source-window-v1",
+  "batch": 30,
+  "date": "2026-10-27",
+  "stage": "PALM-R02",
+  "status": "17_MEDIAL_ENDING_PROPOSALS_2_FLEX_PROPOSALS_RESEARCH_ONLY",
+  "basis": "Exactly printed first-verse Psalm23 and Psalm46 mediant GABC note groups, with manually prepared Latin suffixes that still require accentual review; flex model based on one printed rex gloriae? example.",
+  "sources": {
+    "book": "Graduale Romanum 1961, printed 143** and 144**",
+    "url": "https://s9.imslp.org/files/imglnks/usimg/1/1a/IMSLP52097-PMLP108040-GR6_Proprium_et_Commune_pro_aliquibus_locis,_Psalmi.pdf",
+    "ps23GabcArchive": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+    "ps46GabcArchive": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+    "ps23MedialSource": "re(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+    "ps46MedialSource": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+    "ps23FlexSource": "rex(h) glo(h)ri(gr)æ?(g.)",
+    "firstVerseOnlyFullyNotated": true
+  },
+  "medials": [
+    {
+      "id": "PALM-R02-PS23-L02",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-L02"
+      ],
+      "sourceMedialLatin": "Nam ipse super mária fundávit eum",
+      "sourceFirstVerseExcerpt": "re(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "sourceFirstVerseWordModel": "re-plent e-ám",
+      "endingSyllables": [
+        "dá",
+        "vit",
+        "e",
+        "um"
+      ],
+      "sourceNoteGroups": [
+        "ixi hr",
+        "h",
+        "g hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS23-L02 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) dá(ixi hr)vit(h)e(g hr)um(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS23-L07",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-L07",
+        "PALM-R02-PS23-L09"
+      ],
+      "sourceMedialLatin": "et attóllite vos, fores antíquae,",
+      "sourceFirstVerseExcerpt": "re(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "sourceFirstVerseWordModel": "re-plent e-ám",
+      "endingSyllables": [
+        "res",
+        "an",
+        "tí",
+        "quae"
+      ],
+      "sourceNoteGroups": [
+        "ixi hr",
+        "h",
+        "g hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS23-L07 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) res(ixi hr)an(h)tí(g hr)quae(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS23-L08",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-L08"
+      ],
+      "sourceMedialLatin": "Dóminus fortis et potens,",
+      "sourceFirstVerseExcerpt": "re(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "sourceFirstVerseWordModel": "re-plent e-ám",
+      "endingSyllables": [
+        "tis",
+        "et",
+        "po",
+        "tens"
+      ],
+      "sourceNoteGroups": [
+        "ixi hr",
+        "h",
+        "g hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS23-L08 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) tis(ixi hr)et(h)po(g hr)tens(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS23-L10",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-L10"
+      ],
+      "sourceMedialLatin": "Quis est iste rex glóriae?",
+      "sourceFirstVerseExcerpt": "re(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "sourceFirstVerseWordModel": "re-plent e-ám",
+      "endingSyllables": [
+        "rex",
+        "gló",
+        "ri",
+        "ae"
+      ],
+      "sourceNoteGroups": [
+        "ixi hr",
+        "h",
+        "g hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS23-L10 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) rex(ixi hr)gló(h)ri(g hr)ae(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS46-L02",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L02"
+      ],
+      "sourceMedialLatin": "Quóniam Dóminus excélsus, terríbilis,",
+      "sourceFirstVerseExcerpt": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "sourceFirstVerseWordModel": "pláu-di-te má-ni-bus",
+      "endingSyllables": [
+        "cél",
+        "sus",
+        "ter",
+        "rí",
+        "bi",
+        "lis"
+      ],
+      "sourceNoteGroups": [
+        "ixi",
+        "hr",
+        "h",
+        "g",
+        "hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS46-L02 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) cél(ixi)sus(hr)ter(h)rí(g)bi(hr)lis(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS46-L03",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L03"
+      ],
+      "sourceMedialLatin": "Súbjicit pópulos nóbis",
+      "sourceFirstVerseExcerpt": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "sourceFirstVerseWordModel": "pláu-di-te má-ni-bus",
+      "endingSyllables": [
+        "cit",
+        "pó",
+        "pu",
+        "los",
+        "nó",
+        "bis"
+      ],
+      "sourceNoteGroups": [
+        "ixi",
+        "hr",
+        "h",
+        "g",
+        "hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS46-L03 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) cit(ixi)pó(hr)pu(h)los(g)nó(hr)bis(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS46-L04",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L04"
+      ],
+      "sourceMedialLatin": "Eligit nobis hereditátem nostram",
+      "sourceFirstVerseExcerpt": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "sourceFirstVerseWordModel": "pláu-di-te má-ni-bus",
+      "endingSyllables": [
+        "re",
+        "di",
+        "tá",
+        "tem",
+        "nos",
+        "tram"
+      ],
+      "sourceNoteGroups": [
+        "ixi",
+        "hr",
+        "h",
+        "g",
+        "hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS46-L04 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) re(ixi)di(hr)tá(h)tem(g)nos(hr)tram(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS46-L05",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L05"
+      ],
+      "sourceMedialLatin": "Ascéndit Deus cum exsultatióne,",
+      "sourceFirstVerseExcerpt": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "sourceFirstVerseWordModel": "pláu-di-te má-ni-bus",
+      "endingSyllables": [
+        "ex",
+        "sul",
+        "ta",
+        "ti",
+        "ó",
+        "ne"
+      ],
+      "sourceNoteGroups": [
+        "ixi",
+        "hr",
+        "h",
+        "g",
+        "hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS46-L05 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) ex(ixi)sul(hr)ta(h)ti(g)ó(hr)ne(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS46-L06",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L06"
+      ],
+      "sourceMedialLatin": "Psállite Deo, psállite;",
+      "sourceFirstVerseExcerpt": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "sourceFirstVerseWordModel": "pláu-di-te má-ni-bus",
+      "endingSyllables": [
+        "te",
+        "De",
+        "o",
+        "psál",
+        "li",
+        "te"
+      ],
+      "sourceNoteGroups": [
+        "ixi",
+        "hr",
+        "h",
+        "g",
+        "hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS46-L06 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) te(ixi)De(hr)o(h)psál(g)li(hr)te(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS46-L07",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L07"
+      ],
+      "sourceMedialLatin": "Quóniam Rex omnis terrae est Deus,",
+      "sourceFirstVerseExcerpt": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "sourceFirstVerseWordModel": "pláu-di-te má-ni-bus",
+      "endingSyllables": [
+        "nis",
+        "ter",
+        "rae",
+        "est",
+        "De",
+        "us"
+      ],
+      "sourceNoteGroups": [
+        "ixi",
+        "hr",
+        "h",
+        "g",
+        "hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS46-L07 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) nis(ixi)ter(hr)rae(h)est(g)De(hr)us(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS46-L08",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L08"
+      ],
+      "sourceMedialLatin": "Deus regnat super natiónes,",
+      "sourceFirstVerseExcerpt": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "sourceFirstVerseWordModel": "pláu-di-te má-ni-bus",
+      "endingSyllables": [
+        "su",
+        "per",
+        "na",
+        "ti",
+        "ó",
+        "nes"
+      ],
+      "sourceNoteGroups": [
+        "ixi",
+        "hr",
+        "h",
+        "g",
+        "hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS46-L08 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) su(ixi)per(hr)na(h)ti(g)ó(hr)nes(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS46-L09",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L09"
+      ],
+      "sourceMedialLatin": "Príncipes populórum congregáti sunt",
+      "sourceFirstVerseExcerpt": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "sourceFirstVerseWordModel": "pláu-di-te má-ni-bus",
+      "endingSyllables": [
+        "rum",
+        "con",
+        "gre",
+        "gá",
+        "ti",
+        "sunt"
+      ],
+      "sourceNoteGroups": [
+        "ixi",
+        "hr",
+        "h",
+        "g",
+        "hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS46-L09 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) rum(ixi)con(hr)gre(h)gá(g)ti(hr)sunt(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS46-L10",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L10"
+      ],
+      "sourceMedialLatin": "Nam Dei sunt próceres terrae:",
+      "sourceFirstVerseExcerpt": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "sourceFirstVerseWordModel": "pláu-di-te má-ni-bus",
+      "endingSyllables": [
+        "sunt",
+        "pró",
+        "ce",
+        "res",
+        "ter",
+        "rae"
+      ],
+      "sourceNoteGroups": [
+        "ixi",
+        "hr",
+        "h",
+        "g",
+        "hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS46-L10 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) sunt(ixi)pró(hr)ce(h)res(g)ter(hr)rae(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS23-DOXO-L11",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-DOXO-L11"
+      ],
+      "sourceMedialLatin": "Glória Patri, et Fílio,",
+      "sourceFirstVerseExcerpt": "re(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "sourceFirstVerseWordModel": "re-plent e-ám",
+      "endingSyllables": [
+        "et",
+        "Fí",
+        "li",
+        "o"
+      ],
+      "sourceNoteGroups": [
+        "ixi hr",
+        "h",
+        "g hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS23-DOXO-L11 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) et(ixi hr)Fí(h)li(g hr)o(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS23-DOXO-L12",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-DOXO-L12"
+      ],
+      "sourceMedialLatin": "Sicut erat in princípio, et nunc, et semper,",
+      "sourceFirstVerseExcerpt": "re(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "sourceFirstVerseWordModel": "re-plent e-ám",
+      "endingSyllables": [
+        "nunc",
+        "et",
+        "sem",
+        "per"
+      ],
+      "sourceNoteGroups": [
+        "ixi hr",
+        "h",
+        "g hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS23-DOXO-L12 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) nunc(ixi hr)et(h)sem(g hr)per(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS46-DOXO-L11",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-DOXO-L11"
+      ],
+      "sourceMedialLatin": "Glória Patri, et Fílio,",
+      "sourceFirstVerseExcerpt": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "sourceFirstVerseWordModel": "pláu-di-te má-ni-bus",
+      "endingSyllables": [
+        "Pa",
+        "tri",
+        "et",
+        "Fí",
+        "li",
+        "o"
+      ],
+      "sourceNoteGroups": [
+        "ixi",
+        "hr",
+        "h",
+        "g",
+        "hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS46-DOXO-L11 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) Pa(ixi)tri(hr)et(h)Fí(g)li(hr)o(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS46-DOXO-L12",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-DOXO-L12"
+      ],
+      "sourceMedialLatin": "Sicut erat in princípio, et nunc, et semper,",
+      "sourceFirstVerseExcerpt": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "sourceFirstVerseWordModel": "pláu-di-te má-ni-bus",
+      "endingSyllables": [
+        "o",
+        "et",
+        "nunc",
+        "et",
+        "sem",
+        "per"
+      ],
+      "sourceNoteGroups": [
+        "ixi",
+        "hr",
+        "h",
+        "g",
+        "hr",
+        "h."
+      ],
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS46-DOXO-L12 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) o(ixi)et(hr)nunc(h)et(g)sem(hr)per(h.) (:) (::)\n",
+      "sourceLatinSuffixMatch": true,
+      "noteGroupsIdenticalToFirstVerseSource": true,
+      "humanLexicalAccentChecked": false,
+      "humanSyllabificationChecked": false,
+      "sameTwoAccentMediantPatternVerified": false,
+      "fullVerseMusicCreated": false,
+      "editorApproved": false,
+      "productionAllowed": false
+    }
+  ],
+  "flex": [
+    {
+      "id": "PALM-R02-PS23-FLEX-L07-L09",
+      "occurrenceIds": [
+        "PALM-R02-PS23-L07",
+        "PALM-R02-PS23-L09"
+      ],
+      "printedPhrase": "Attóllite, portae, cápita vestra,",
+      "endingSyllables": [
+        "cá",
+        "pi",
+        "ta",
+        "ves",
+        "tra"
+      ],
+      "sourceGroupHypothesis": [
+        "h",
+        "h",
+        "h",
+        "gr",
+        "g."
+      ],
+      "sourceFlexExcerpt": "rex(h) glo(h)ri(gr)æ?(g.)",
+      "sourceOriginalOnlyFourSyllables": true,
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS23-FLEX-L07-L09 FLEX RESEARCH-ONLY;\noffice-part:Psalmus;\ncommentary: Not an approved full verse;\n%%\n(c4) cá(h)pi(h)ta(h)ves(gr)tra(g.) (,) (::)\n",
+      "exceptionReview": "Extra h recitation before printed four-syllable flex example requires review",
+      "pitchEditorApproved": false,
+      "printedEntireVerseNotated": false,
+      "publicationAllowed": false
+    },
+    {
+      "id": "PALM-R02-PS23-FLEX-L08",
+      "occurrenceIds": [
+        "PALM-R02-PS23-L08"
+      ],
+      "printedPhrase": "Quis est iste rex glóriae?",
+      "endingSyllables": [
+        "rex",
+        "gló",
+        "ri",
+        "ae"
+      ],
+      "sourceGroupHypothesis": [
+        "h",
+        "h",
+        "gr",
+        "g."
+      ],
+      "sourceFlexExcerpt": "rex(h) glo(h)ri(gr)æ?(g.)",
+      "sourceOriginalOnlyFourSyllables": true,
+      "provisionalGabcEndingOnly": "name:PALM-R02-PS23-FLEX-L08 FLEX RESEARCH-ONLY;\noffice-part:Psalmus;\ncommentary: Not an approved full verse;\n%%\n(c4) rex(h)gló(h)ri(gr)ae(g.) (,) (::)\n",
+      "exceptionReview": "Printed rex gloriae? four-syllable flex example matches these words; full earlier recitation not notated",
+      "pitchEditorApproved": false,
+      "printedEntireVerseNotated": false,
+      "publicationAllowed": false
+    }
+  ],
+  "counting": {
+    "medialReviewCases": 17,
+    "verseMedials": 13,
+    "doxologyMedials": 4,
+    "flexDistinct": 2,
+    "flexOccurrences": 3,
+    "endingOnlySnippetHypotheses": 19,
+    "fullyNotatedAdditionalVersesApproved": 0,
+    "productionScoreAssignments": 0,
+    "realExsurgeProofsPassed": 0
+  },
+  "guards": {
+    "sourceAccentGroupReassignmentNotCertified": true,
+    "Psalm23MedialFourGroupsNotEquivalentToPsalm46SixGroups": true,
+    "doxologyAmenSeparateTerminationHold": true,
+    "AbrahamAccentReferenceSeparate": true,
+    "doNotConflateShortRecitationWithWholePsalmMusic": true,
+    "onlyPrintedFlexExampleRexGloriae": true,
+    "sourceArchiveUnmodified": true,
+    "scoreOwner": "#1749",
+    "LatinOwner": "#894",
+    "readerUnmodified": true,
+    "releaseAllowed": false
+  }
+}
