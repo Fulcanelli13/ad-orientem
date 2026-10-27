@@ -30,7 +30,9 @@
           "image_file": "https://commons.wikimedia.org/wiki/File:Salvator_Mundi_MET_DP148737.jpg",
           "rights": "MET_EXACT_IMAGE_CC0",
           "pixels": "2857x3832",
-          "artistic_comment": "Baroque sovereign Christ on clouds, blue and red, globe"
+          "artistic_comment": "Baroque sovereign Christ on clouds, blue and red, globe",
+          "editorial_status": "REJECTED_BY_USER_20261027",
+          "rejection_scope": "Christ the King module only"
         },
         {
           "id": "K2",
@@ -40,7 +42,9 @@
           "image_file": "https://commons.wikimedia.org/wiki/File:Cristo_Salvatore_di_Guido_Reni.JPG",
           "rights": "PHOTOGRAPH_CC_BY_SA_3_0_CREDIT_AND_SHARE_ALIKE_CONDITIONS",
           "pixels": "4352x3264 photography; alternate artwork TIF 2526x3142",
-          "artistic_comment": "Austere Savior; framing and source version must be assessed"
+          "artistic_comment": "Austere Savior; framing and source version must be assessed",
+          "editorial_status": "REJECTED_BY_USER_20261027",
+          "rejection_scope": "Christ the King module only"
         },
         {
           "id": "K3",
@@ -50,7 +54,9 @@
           "image_file": "https://commons.wikimedia.org/wiki/File:Seghers_Salvator_Mundi.jpg",
           "rights": "COMMONS_PD_ART_SOURCE_PHOTO_TERMS_UNVERIFIED",
           "pixels": "4111x5389",
-          "artistic_comment": "Caravaggesque direct frontal blessing, dark globe, deep red mantle; source photo made with phone, inspect fidelity"
+          "artistic_comment": "Caravaggesque direct frontal blessing, dark globe, deep red mantle; source photo made with phone, inspect fidelity",
+          "editorial_status": "REJECTED_BY_USER_20261027",
+          "rejection_scope": "Christ the King module only"
         },
         {
           "id": "K4",
@@ -60,7 +66,9 @@
           "image_file": "https://www.nga.gov/artworks/46167-salvator-mundi",
           "rights": "NGA_OPEN_ACCESS_PUBLIC_DOMAIN",
           "pixels": "High resolution official file available; actual pixels not yet verified",
-          "artistic_comment": "Earlier devotional half-length Savior with open book, not orb; less Baroque"
+          "artistic_comment": "Earlier devotional half-length Savior with open book, not orb; less Baroque",
+          "editorial_status": "REJECTED_BY_USER_20261027",
+          "rejection_scope": "Christ the King module only"
         },
         {
           "id": "K5",
@@ -70,9 +78,14 @@
           "image_file": "https://www.metmuseum.org/art/collection/search/437698",
           "rights": "MET_OPEN_ACCESS_CC0",
           "pixels": "Museum original file available; dimensions pending",
-          "artistic_comment": "Monumental standing blessing Christ, Renaissance; frame issue to verify"
+          "artistic_comment": "Monumental standing blessing Christ, Renaissance; frame issue to verify",
+          "editorial_status": "REJECTED_BY_USER_20261027",
+          "rejection_scope": "Christ the King module only"
         }
-      ]
+      ],
+      "editorial_status": "ALL_K1_TO_K5_REJECTED_FOR_CHRIST_THE_KING_MODULE",
+      "user_reason": "Reject all the Salvator Mundi types; find Christ King imagery instead",
+      "previous_painting_status": "HISTORICALLY_APPROVED_BENSON_BUT_EXPLICITLY_SUPERSEDED_ICONOGRAPHY_NOW_REJECTED_FOR_MODULE"
     },
     {
       "module": "holy-spirit",
@@ -88,7 +101,9 @@
           "image_file": "https://commons.wikimedia.org/wiki/Category:Pentecost_(Anthony_van_Dyck)",
           "rights": "COMMONS_PD_ART_SOURCE_PHOTO_LICENSE_NOT_FULLY_SIGNED_OFF",
           "pixels": "6064x7368 alternative Commons image; smaller 802x1000 version",
-          "artistic_comment": "Strong chiaroscuro, full oil painting, Mary and apostles"
+          "artistic_comment": "Strong chiaroscuro, full oil painting, Mary and apostles",
+          "editorial_status": "USER_LIKED",
+          "user_rank": 2
         },
         {
           "id": "H2",
@@ -98,7 +113,8 @@
           "image_file": "https://commons.wikimedia.org/wiki/File:Matthys_Voet_-_Mysteries_of_the_Rosary,_Pentecost.jpeg",
           "rights": "COMMONS_PD_ART_REPRODUCTION_TERRITORY_REVIEW_PENDING",
           "pixels": "3354x4500",
-          "artistic_comment": "Antwerp church, radiant dove, deep shadow, dense apostles"
+          "artistic_comment": "Antwerp church, radiant dove, deep shadow, dense apostles",
+          "editorial_status": "NOT_SELECTED_KEEP_PREVIOUS_STATUS"
         },
         {
           "id": "H3",
@@ -108,7 +124,9 @@
           "image_file": "https://commons.wikimedia.org/wiki/File:Morazzone,_pentecoste,_1615_circa_01.JPG",
           "rights": "SAILKO_PHOTOGRAPH_FREE_LICENSE_WITH_CREDIT_AND_SHARE_ALIKE_CONDITIONS",
           "pixels": "1536x1897 documented candidate; other photos may exist",
-          "artistic_comment": "Dramatic dark Baroque, descending flame and group; stronger match than restricted Louvre reproduction"
+          "artistic_comment": "Dramatic dark Baroque, descending flame and group; stronger match than restricted Louvre reproduction",
+          "editorial_status": "USER_STRONG_PREFERENCE",
+          "user_rank": 1
         },
         {
           "id": "H4",
@@ -118,7 +136,8 @@
           "image_file": "https://commons.wikimedia.org/wiki/File:Tiziano,_pentecoste,_1555,_04.jpg",
           "rights": "SAILKO_CREATIVE_COMMONS_PHOTOGRAPHER_LICENSE_CHECK_EXACT_TERMS",
           "pixels": "1796x2505",
-          "artistic_comment": "Venetian vault with intense descending light and group of apostles, dramatic composition"
+          "artistic_comment": "Venetian vault with intense descending light and group of apostles, dramatic composition",
+          "editorial_status": "NOT_SELECTED_KEEP_PREVIOUS_STATUS"
         },
         {
           "id": "H5",
@@ -128,14 +147,22 @@
           "image_file": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
           "rights": "EXISTING_APPROVED_ORIGINAL_KEEP_PHOTO_RIGHTS_HOLD",
           "pixels": "Older WGA photo may be undersized; alternate EXIF photographer licence conflict",
-          "artistic_comment": "Retain current approved if user wants same painting rather than replacing"
+          "artistic_comment": "Retain current approved if user wants same painting rather than replacing",
+          "editorial_status": "NOT_SELECTED_KEEP_PREVIOUS_STATUS"
         }
-      ]
+      ],
+      "editorial_status": "TWO_USER_LIKED_PENDING_SINGLE_FINAL_SELECTION"
     }
   ],
   "removed_previously_researched_option": {
     "artist": "Charles Le Brun",
     "title": "La Descente du Saint-Esprit",
     "reason": "Strong painting but Louvre exact photo rights unresolved; do not present as active selection with unresolved photography"
+  },
+  "latest_user_feedback": {
+    "timestamp": "2026-10-27T16:38:36Z",
+    "verbatim": "reject all the salvator mundi types and go more for a christ king type... Van Dyk and Morazzone (the latter in particular) are really good for holy spirit",
+    "interpretation": "Reject K1–K5 and current Benson-as-Christ-King concept; H1 and H3 favorable, H3 preferred; none explicitly final",
+    "replacements_installed": false
   }
 }
