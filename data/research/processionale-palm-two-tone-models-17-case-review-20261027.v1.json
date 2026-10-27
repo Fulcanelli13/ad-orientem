@@ -763,5 +763,560 @@
     "plausibleButMusicianUnapproved": 3,
     "monosyllableAccentUnresolved": 1,
     "doNotGenerateCompleteScores": true
+  },
+  "batch33RemainingEightReview": {
+    "date": "2026-10-27",
+    "source": "1961 Solesmes Graduale Romanum restored Holy Week Psalms printed pp143**–144**, visually checked",
+    "sourcePdf": "https://s9.imslp.org/files/imglnks/usimg/1/1a/IMSLP52097-PMLP108040-GR6_Proprium_et_Commune_pro_aliquibus_locis,_Psalmi.pdf",
+    "status": "SEVENTEEN_FULL_LATIN_TRANSCRIPTIONS_NINE_UNAPPROVED_FULL_GABC_EIGHT_EXPLICIT_SCORE_HOLDS",
+    "researchFullGabcNinePath": "data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json",
+    "wholeVerseResearchGabcPrepared": 9,
+    "remainingFullySyllabifiedNotMusicallySet": 8,
+    "medialHeldFour": 4,
+    "ps23FlexCasesTwo": 2,
+    "doxologyAmenEndingCasesTwo": 2,
+    "note": "The categories overlap: 2 flex cases also have mediant work; four nonflex difficult medials include Psalm23 L10 and Psalm46 L05/L08/L09. No arithmetic between category subtotals may imply extra cases.",
+    "rows": [
+      {
+        "id": "PALM-R02-PS23-L07",
+        "psalm": 23,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "flex",
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Attóllite, portae, cápita vestra,",
+          "et attóllite vos, fores antíquae,",
+          "ut ingrediátur rex glóriae!"
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "At-tól-li-te por-tae cá-pi-ta ves-tra,",
+          "et at-tól-li-te vos fo-res an-tí-quae,",
+          "ut in-gre-di-á-tur rex gló-ri-ae!"
+        ],
+        "syllableGroupsBySection": [
+          [
+            "At",
+            "tól",
+            "li",
+            "te",
+            "por",
+            "tae",
+            "cá",
+            "pi",
+            "ta",
+            "ves",
+            "tra,"
+          ],
+          [
+            "et",
+            "at",
+            "tól",
+            "li",
+            "te",
+            "vos",
+            "fo",
+            "res",
+            "an",
+            "tí",
+            "quae,"
+          ],
+          [
+            "ut",
+            "in",
+            "gre",
+            "di",
+            "á",
+            "tur",
+            "rex",
+            "gló",
+            "ri",
+            "ae!"
+          ]
+        ],
+        "syllableCountBySection": [
+          11,
+          11,
+          10
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS23-L07",
+          "PALM-R02-PS23-L09"
+        ],
+        "difficulty": "FLEX_MEDIANT_DOUBLE_ACCENT_AND_THREE_SYLLABLE_FINAL_HOLD",
+        "sourceAndIssue": "Psalm 23 printed flex rex gloriae sample, verse 7/9 repeated; repaired medial accent model research-only.",
+        "printedSourcePage": "143**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": true,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS23",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      },
+      {
+        "id": "PALM-R02-PS23-L08",
+        "psalm": 23,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "flex",
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Quis est iste rex glóriae?",
+          "Dóminus fortis et potens,",
+          "Dóminus potens in praélio."
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "Quis est is-te rex gló-ri-ae?",
+          "Dó-mi-nus for-tis et po-tens,",
+          "Dó-mi-nus po-tens in prae-li-o."
+        ],
+        "syllableGroupsBySection": [
+          [
+            "Quis",
+            "est",
+            "is",
+            "te",
+            "rex",
+            "gló",
+            "ri",
+            "ae?"
+          ],
+          [
+            "Dó",
+            "mi",
+            "nus",
+            "for",
+            "tis",
+            "et",
+            "po",
+            "tens,"
+          ],
+          [
+            "Dó",
+            "mi",
+            "nus",
+            "po",
+            "tens",
+            "in",
+            "prae",
+            "li",
+            "o."
+          ]
+        ],
+        "syllableCountBySection": [
+          8,
+          8,
+          9
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS23-L08"
+        ],
+        "difficulty": "FLEX_MEDIANT_AND_ORTHOGRAPHY_HOLD",
+        "sourceAndIssue": "Printed flex rex gloriae text motif matches last four syllables; printed 1961 praélio spelling differs from canonical 1962 proelio inquiry.",
+        "printedSourcePage": "143**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": true,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS23",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      },
+      {
+        "id": "PALM-R02-PS23-L10",
+        "psalm": 23,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Quis est iste rex glóriae?",
+          "Dóminus exercítuum: ipse est rex glóriae."
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "Quis est is-te rex gló-ri-ae?",
+          "Dó-mi-nus ex-er-cí-tu-um: ip-se est rex gló-ri-ae."
+        ],
+        "syllableGroupsBySection": [
+          [
+            "Quis",
+            "est",
+            "is",
+            "te",
+            "rex",
+            "gló",
+            "ri",
+            "ae?"
+          ],
+          [
+            "Dó",
+            "mi",
+            "nus",
+            "ex",
+            "er",
+            "cí",
+            "tu",
+            "um:",
+            "ip",
+            "se",
+            "est",
+            "rex",
+            "gló",
+            "ri",
+            "ae."
+          ]
+        ],
+        "syllableCountBySection": [
+          8,
+          15
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS23-L10"
+        ],
+        "difficulty": "MONOSYLLABIC_REX_AND_GLORIAE_MEDIANT_ACCENT_HOLD",
+        "sourceAndIssue": "The two-accent mediant cannot be obtained from printed source by naive suffix copy; local special adjustment needed.",
+        "printedSourcePage": "143**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": false,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS23",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      },
+      {
+        "id": "PALM-R02-PS46-L05",
+        "psalm": 46,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Ascéndit Deus cum exsultatióne,",
+          "Dóminus cum voce tubae."
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "As-cén-dit De-us cum ex-sul-ta-ti-ó-ne,",
+          "Dó-mi-nus cum vo-ce tu-bae."
+        ],
+        "syllableGroupsBySection": [
+          [
+            "As",
+            "cén",
+            "dit",
+            "De",
+            "us",
+            "cum",
+            "ex",
+            "sul",
+            "ta",
+            "ti",
+            "ó",
+            "ne,"
+          ],
+          [
+            "Dó",
+            "mi",
+            "nus",
+            "cum",
+            "vo",
+            "ce",
+            "tu",
+            "bae."
+          ]
+        ],
+        "syllableCountBySection": [
+          12,
+          8
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS46-L05"
+        ],
+        "difficulty": "ARTIFICIAL_MEDIANT_SECONDARY_ACCENT_HOLD",
+        "sourceAndIssue": "Long accented exsultatione ending; source tone underlay requires editorial artificial secondary accent or documented alternative.",
+        "printedSourcePage": "144**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": false,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS46",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      },
+      {
+        "id": "PALM-R02-PS46-L08",
+        "psalm": 46,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Deus regnat super natiónes,",
+          "Deus sedet super sólium sanctum suum."
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "De-us reg-nat su-per na-ti-ó-nes,",
+          "De-us se-det su-per só-li-um sanc-tum su-um."
+        ],
+        "syllableGroupsBySection": [
+          [
+            "De",
+            "us",
+            "reg",
+            "nat",
+            "su",
+            "per",
+            "na",
+            "ti",
+            "ó",
+            "nes,"
+          ],
+          [
+            "De",
+            "us",
+            "se",
+            "det",
+            "su",
+            "per",
+            "só",
+            "li",
+            "um",
+            "sanc",
+            "tum",
+            "su",
+            "um."
+          ]
+        ],
+        "syllableCountBySection": [
+          10,
+          13
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS46-L08"
+        ],
+        "difficulty": "MEDIANT_TWO_ACCENTS_POSITION_HOLD",
+        "sourceAndIssue": "The text stresses near regnat / nationes and the exact two-melodic-accent distribution is not established by a source-notated verse.",
+        "printedSourcePage": "144**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": false,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS46",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      },
+      {
+        "id": "PALM-R02-PS46-L09",
+        "psalm": 46,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Príncipes populórum congregáti sunt",
+          "cum pópulo Dei Abraham."
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "Prín-ci-pes po-pu-ló-rum con-gre-gá-ti sunt",
+          "cum pó-pu-lo De-i A-bra-ham."
+        ],
+        "syllableGroupsBySection": [
+          [
+            "Prín",
+            "ci",
+            "pes",
+            "po",
+            "pu",
+            "ló",
+            "rum",
+            "con",
+            "gre",
+            "gá",
+            "ti",
+            "sunt"
+          ],
+          [
+            "cum",
+            "pó",
+            "pu",
+            "lo",
+            "De",
+            "i",
+            "A",
+            "bra",
+            "ham."
+          ]
+        ],
+        "syllableCountBySection": [
+          12,
+          9
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS46-L09"
+        ],
+        "difficulty": "MEDIANT_SECONDARY_ACCENT_AND_ABRAHAM_HOLD",
+        "sourceAndIssue": "Gregorio Latin proper name stress model suggests Ábraham, printed 1961 does not accent Abraham; medial congregati sunt poses a monosyllabic-cadence problem.",
+        "printedSourcePage": "144**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": false,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS46",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      },
+      {
+        "id": "PALM-R02-PS23-DOXO-L12",
+        "psalm": 23,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Sicut erat in princípio, et nunc, et semper,",
+          "et in saécula saeculórum. Amen."
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "Si-cut e-rat in prin-cí-pi-o, et nunc, et sem-per,",
+          "et in saé-cu-la sae-cu-ló-rum. A-men."
+        ],
+        "syllableGroupsBySection": [
+          [
+            "Si",
+            "cut",
+            "e",
+            "rat",
+            "in",
+            "prin",
+            "cí",
+            "pi",
+            "o,",
+            "et",
+            "nunc,",
+            "et",
+            "sem",
+            "per,"
+          ],
+          [
+            "et",
+            "in",
+            "saé",
+            "cu",
+            "la",
+            "sae",
+            "cu",
+            "ló",
+            "rum.",
+            "A",
+            "men."
+          ]
+        ],
+        "syllableCountBySection": [
+          14,
+          11
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS23-DOXO-L12"
+        ],
+        "difficulty": "PS23_DOXOLOGY_SECOND_LINE_AMEN_DIFFERENTIA_HOLD",
+        "sourceAndIssue": "Printed full Latin but not complete melody, EUOUAE forms require source-specific tone/antiphon return evidence.",
+        "printedSourcePage": "143**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": false,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS23",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      },
+      {
+        "id": "PALM-R02-PS46-DOXO-L12",
+        "psalm": 46,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Sicut erat in princípio, et nunc, et semper,",
+          "et in saécula saeculórum. Amen."
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "Si-cut e-rat in prin-cí-pi-o, et nunc, et sem-per,",
+          "et in saé-cu-la sae-cu-ló-rum. A-men."
+        ],
+        "syllableGroupsBySection": [
+          [
+            "Si",
+            "cut",
+            "e",
+            "rat",
+            "in",
+            "prin",
+            "cí",
+            "pi",
+            "o,",
+            "et",
+            "nunc,",
+            "et",
+            "sem",
+            "per,"
+          ],
+          [
+            "et",
+            "in",
+            "saé",
+            "cu",
+            "la",
+            "sae",
+            "cu",
+            "ló",
+            "rum.",
+            "A",
+            "men."
+          ]
+        ],
+        "syllableCountBySection": [
+          14,
+          11
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS46-DOXO-L12"
+        ],
+        "difficulty": "PS46_DOXOLOGY_SECOND_LINE_AMEN_DIFFERENTIA_HOLD",
+        "sourceAndIssue": "Same Latin text, separate Psalm46 melody and antiphon/differentia lineage. No same-tune presumption.",
+        "printedSourcePage": "144**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": false,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS46",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      }
+    ],
+    "fullLatinTextCoverageUniqueCases": 17,
+    "actualAdditionalScoreApprovedCount": 0,
+    "productionScoreAssignmentCount": 0,
+    "approvalRule": "Only Schola PR #1749 can source-review and accept exact melodic underlay. 1962 source owner issue #894 accepts the Latin. This file is not a second score registry.",
+    "publishAllowed": false
   }
 }
