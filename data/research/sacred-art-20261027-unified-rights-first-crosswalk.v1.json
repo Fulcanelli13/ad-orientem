@@ -75,11 +75,10 @@
     "class_i_provisional_met_cc0_exact_photo_lead": 1,
     "module_institutional_open_access_exact_source_leads": 3,
     "module_museum_object_pd_but_photo_unknown": 1,
-    "module_staged_original_variants_all_four_branches": 21,
-    "module_staged_distinct_module_ids_all_four_branches": 19,
+    "module_staged_original_variants_all_four_branches": 22,
+    "module_staged_distinct_module_ids_all_four_branches": 20,
     "module_staged_missing_module_ids": [
       "joseph",
-      "angel",
       "evening"
     ],
     "module_technical_preflight_scored_not_human_approved": 8,
@@ -103,7 +102,10 @@
     "missing_three_originals_queued_for_exact_source_archival": 3,
     "missing_three_production_rights_cleared": 0,
     "class_i_additional_exact_institution_policies_reviewed": 4,
-    "class_i_additional_exact_photo_legal_approvals": 0
+    "class_i_additional_exact_photo_legal_approvals": 0,
+    "missing_three_reference_files_archived": 1,
+    "missing_three_original_source_rate_limited": 2,
+    "missing_three_final_legal_and_quality_accepted": 0
   },
   "exception_flags": [
     {
@@ -1399,9 +1401,10 @@
         "warning": "Do not replace with 2605x997 crop; no frame removal before painted edge verification",
         "source_research_only": true,
         "workflow_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40527341367",
-        "acquisition_current_outcome": "QUEUED_NOT_YET_VERIFIED",
+        "acquisition_current_outcome": "SOURCE_RATE_LIMITED_HTTP_429_NO_FILE_ARCHIVED",
         "photo_quality_human_final_accepted": false,
-        "photo_production_released": false
+        "photo_production_released": false,
+        "acquisition_error": "HTTPError: HTTP Error 429: Too many requests (f061ab2)"
       }
     },
     {
@@ -1545,7 +1548,16 @@
       },
       "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
       "source_rights_notes": "Commons PD-Art marking",
-      "staged_photo_variants": [],
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-missing-three-20261027/angel-original.jpg",
+          "sha256": "9e1d8a2732d7f156d9fc94d4c552e915c0c54b756049de03a37b3b41ffbae01f",
+          "width": 694,
+          "height": 1100,
+          "status": "ARCHIVED_REFERENCE_ONLY_LOW_RES_RIGHTS_PENDING"
+        }
+      ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
       "production_released": false,
@@ -1563,7 +1575,7 @@
         "warning": "No AI upscale, no replacement of original with Palazzo Mansi follower/workshop painting",
         "source_research_only": true,
         "workflow_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40527341367",
-        "acquisition_current_outcome": "QUEUED_NOT_YET_VERIFIED",
+        "acquisition_current_outcome": "REFERENCE_FILE_ARCHIVED_SHA_VERIFIED_QUALITY_AND_RIGHTS_HOLD",
         "photo_quality_human_final_accepted": false,
         "photo_production_released": false
       }
@@ -1869,9 +1881,10 @@
         "warning": "Do not repurpose separate Rijksmuseum Evening Prayer artwork as approved OP6; no email, permission request or paid use",
         "source_research_only": true,
         "workflow_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40527341367",
-        "acquisition_current_outcome": "QUEUED_NOT_YET_VERIFIED",
+        "acquisition_current_outcome": "SOURCE_RATE_LIMITED_HTTP_429_NO_FILE_ARCHIVED",
         "photo_quality_human_final_accepted": false,
-        "photo_production_released": false
+        "photo_production_released": false,
+        "acquisition_error": "HTTPError: HTTP Error 429: Too many requests (f061ab2)"
       }
     },
     {
@@ -2382,5 +2395,6 @@
     "six_designated_licence_source_review": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
   },
   "latest_source_gate_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40465399678",
-  "current_missing_three_research_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40527341367"
+  "current_missing_three_research_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40527341367",
+  "current_missing_three_reference_fallback_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40528275735"
 }
