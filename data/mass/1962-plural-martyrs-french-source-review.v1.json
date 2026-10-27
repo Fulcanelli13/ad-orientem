@@ -1,0 +1,88 @@
+{
+  "schema": "AO_1962_PLURAL_MARTYRS_FRENCH_SOURCE_REVIEW_V1",
+  "recordedAt": "2026-10-27",
+  "release": "SOURCE_CONFLICT_FAIL_CLOSED_DRAFT_NO_NEW_TRANSLATIONS",
+  "sourceEdition": "DivinumOfficium/divinum-officium",
+  "gitCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+  "sourceWitnesses": [
+    {
+      "role": "ORIGINAL_LATIN_PLURAL_VIRGIN_MARTYRS",
+      "path": "web/www/horas/Latin/Commune/C6b.txt",
+      "gitBlobSha": "49ba7690a3043419ecc673abac6ec229554ab78d",
+      "url": "https://github.com/DivinumOfficium/divinum-officium/blob/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/horas/Latin/Commune/C6b.txt"
+    },
+    {
+      "role": "SINGULAR_FRENCH_SECRET_POSTCOMMUNION_SOURCE_ERROR",
+      "path": "web/www/horas/Francais/Commune/C6b.txt",
+      "gitBlobSha": "7807147ed57e87b4bbda1bcef7d0ab4bada46aa7",
+      "url": "https://github.com/DivinumOfficium/divinum-officium/blob/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/horas/Francais/Commune/C6b.txt"
+    },
+    {
+      "role": "ORIGINAL_LATIN_NONVIRGIN_MARTYR_INHERITANCE",
+      "path": "web/www/horas/Latin/Commune/C7b.txt",
+      "gitBlobSha": "e87cd5cf73c353b8916fd1b6db126fda0362feaa",
+      "url": "https://github.com/DivinumOfficium/divinum-officium/blob/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/horas/Latin/Commune/C7b.txt"
+    },
+    {
+      "role": "FRENCH_NONVIRGIN_MARTYR_INHERITED_CONFLICT",
+      "path": "web/www/horas/Francais/Commune/C7b.txt",
+      "gitBlobSha": "5e67d7a19475985fd1a4e8ea329e1127fbd17c78",
+      "url": "https://github.com/DivinumOfficium/divinum-officium/blob/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/horas/Francais/Commune/C7b.txt"
+    },
+    {
+      "role": "PERPETUA_FELICITY_LATIN_NONVIRGIN_COMMON_IDENTITY",
+      "path": "web/www/missa/Latin/Sancti/03-06.txt",
+      "gitBlobSha": "18f15984a80925387013942fdd72356599e3476a",
+      "url": "https://github.com/DivinumOfficium/divinum-officium/blob/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/missa/Latin/Sancti/03-06.txt"
+    },
+    {
+      "role": "PERPETUA_FELICITY_FRENCH_COLLECT_SECRET_WRONG_VIRGIN_DESIGNATION",
+      "path": "web/www/missa/Francais/Sancti/03-06.txt",
+      "gitBlobSha": "9fef03b6c1cd0d648709a46e65b73c2e28b4c35f",
+      "url": "https://github.com/DivinumOfficium/divinum-officium/blob/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/missa/Francais/Sancti/03-06.txt"
+    }
+  ],
+  "defects": [
+    {
+      "id": "PLURAL_VIRGIN_MARTYRS_FRENCH_SINGULAR_ORATIONS",
+      "candidatePaths": [
+        "Commune/C6b",
+        "Commune/C7b"
+      ],
+      "kind": "SINGULAR_FRENCH_BODY_IN_PLURAL_LATIN_SOURCE",
+      "sourceSlots": [
+        "SECRET_SET",
+        "POSTCOMMUNION_SET"
+      ],
+      "printed1962Reference": "ICRSP_B41_MULTIPLE_VIRGIN_MARTYRS_AND_NONVIRGIN_FEMALE_MARTYRS",
+      "evidence": "Latin C6b secret/postcommunion carry N. et N.; French C6b text contains singular N. only; C7b French inherits C6b by substitution.",
+      "selectionReachability": "DIRECT_SELECTED_COMMON_ROUTE_NOT_YET_VERIFIED",
+      "action": "Fail closed only on exact source-path plus still-plural Latin placeholders with deficient French name count; do not infer that Sanctoral or feria inherited this wording."
+    },
+    {
+      "id": "PERPETUA_FELICITY_NONVIRGIN_FRENCH_IDENTITY",
+      "candidatePaths": [
+        "Sancti/03-06"
+      ],
+      "kind": "INCORRECT_VIRGIN_LABEL_IN_NAMED_FRENCH_SOURCE",
+      "sourceSlots": [
+        "COLLECT_SET",
+        "SECRET_SET"
+      ],
+      "printed1962Reference": "ICRSP_B41_MULTIPLE_NONVIRGIN_FEMALE_MARTYRS",
+      "evidence": "Latin Sancti/03-06 declares vide C7b; French Sancti/03-06 Collect and Secret label Perpetua and Felicity as Vierges et Martyres, contrary to their non-Virgin Latin Common. Named Postcommunion has proper plural martyrs.",
+      "selected2026CalendarDay": "Tempora/Quad2-5",
+      "selectionReachability": "NAMED_PROPER_SOURCE_AVAILABLE; WHETHER ACTUALLY_SELECTED_OR_A_READER_COMMEMORATION_NOT_CERTIFIED",
+      "action": "Fail closed only if exact named sourcePath or explicit prayer sourcePath and corroborating non-Virgin Latin prayer; leave 2026 Lenten feria, independent named Postcommunion and unrelated masses intact."
+    }
+  ],
+  "limitations": [
+    "No master-language correction was written to the pinned external donor.",
+    "Current reader projection guards affected French prayer bodies; the separate printable Calendar Proper renderer has not been changed.",
+    "No English/French user-facing translation is created, copied, or approved.",
+    "1962 rite and local oration-selection status are entirely owned by existing DayResolver and Mass form source.",
+    "Original 1962 printed Common evidence is structural, not a complete photographed full-year Missal collation.",
+    "Proven source defect does not establish a production-visible text defect until exact selected/commemorative source identity is traced."
+  ],
+  "published": false
+}
