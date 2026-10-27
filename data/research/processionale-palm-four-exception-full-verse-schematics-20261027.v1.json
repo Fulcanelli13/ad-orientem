@@ -1,0 +1,320 @@
+{
+  "schema": "ao-palm-four-complete-high-risk-verse-gabc-schematics-v1",
+  "batch": 34,
+  "date": "2026-10-27",
+  "status": "FOUR_RESEARCH_ONLY_COMPLETE_GABC_CONJECTURES_TWO_DOXOLOGY_AMEN_SCORES_WITHHELD",
+  "source": "Graduale Romanum 1961 textus novus pp.143** and 144**, first verses notated; all four subsequent full verses are unnotated in source",
+  "sourceLink": "https://s9.imslp.org/files/imglnks/usimg/1/1a/IMSLP52097-PMLP108040-GR6_Proprium_et_Commune_pro_aliquibus_locis,_Psalmi.pdf",
+  "editorCaution": "These four scores are deliberately musical SCHEMATICS, not source-backed complete transcriptions. Exsurge parsing is purely typographical. Every difficult medial accent/secondary accent needs a Gregorian editor with the primary 1961 score and Solesmes rulebook. Do not auto-merge.",
+  "cases": [
+    {
+      "id": "PALM-R02-PS23-L10",
+      "psalm": 23,
+      "sourceLatin": [
+        "Quis est iste rex glóriae?",
+        "Dóminus exercítuum: ipse est rex glóriae."
+      ],
+      "sourceSyllables": [
+        "Quis est is-te rex gló-ri-ae?",
+        "Dó-mi-nus ex-er-cí-tu-um: ip-se est rex gló-ri-ae."
+      ],
+      "medialTonicPitchCell": "initial h tenor; first accented motif (ixi or ixi hr) then second motif g or g hr",
+      "hypotheticalAccentAnchors": [
+        {
+          "syllable": "rex",
+          "index": 4,
+          "naturalStress": true
+        },
+        {
+          "syllable": "gló",
+          "index": 5,
+          "naturalStress": true
+        }
+      ],
+      "textualCitation": "1961 Graduale Romanum p143**",
+      "hypothesisWhyNotMusicallyCertified": "Two adjacent lexical accents rex glóriae are not source-notated as a later-verse mediant; combining the first-verse 23 tonic cell with the dactylic expansion seen in Psalm46 is hypothetical",
+      "firstVerseGabcEvidenceByPsalm": "gregobase-19315.gabc",
+      "terminalPitchSource": "GR1961_PS46_3SYLLABLE_END",
+      "terminalSpecialCase": false,
+      "transcriptMatchesPrimaryLatin": true,
+      "partSyllableCounts": [
+        8,
+        15
+      ],
+      "pitchesBySection": [
+        [
+          "h",
+          "h",
+          "h",
+          "h",
+          "ixi hr",
+          "g",
+          "hr",
+          "h."
+        ],
+        [
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "g",
+          "f",
+          "gh",
+          "gr",
+          "gf.."
+        ]
+      ],
+      "gabcResearchOnly": "name:PALM-R02-PS23-L10 source-constrained full verse conjectural musical underlay;\noffice-part:Psalmus;\ncommentary: FULL LATIN and GABC syllables, but medial is an explicit musical conjecture, not 1961 printed full notation. THIS CANNOT BE PUBLISHED;\n%%\n(c4) Quis(h) est(h) is(h)te(h) rex(ixi hr) gló(g)ri(hr)ae?(h.) *(:) Dó(h)mi(h)nus(h) ex(h)er(h)cí(h)tu(h)um:(h) ip(h)se(h) est(g) rex(f) gló(gh)ri(gr)ae.(gf..) (::)\n",
+      "manuallyStaffCompared": false,
+      "LatinAccentHumanChecked": false,
+      "musicianApproved": false,
+      "ExsurgeRenderPass": false,
+      "referenceOnly": true,
+      "productionEligible": false
+    },
+    {
+      "id": "PALM-R02-PS46-L05",
+      "psalm": 46,
+      "sourceLatin": [
+        "Ascéndit Deus cum exsultatióne,",
+        "Dóminus cum voce tubae."
+      ],
+      "sourceSyllables": [
+        "As-cén-dit De-us cum ex-sul-ta-ti-ó-ne,",
+        "Dó-mi-nus cum vo-ce tu-bae."
+      ],
+      "medialTonicPitchCell": "initial h tenor; first accented motif (ixi or ixi hr) then second motif g or g hr",
+      "hypotheticalAccentAnchors": [
+        {
+          "syllable": "ta",
+          "index": 8,
+          "naturalStress": false
+        },
+        {
+          "syllable": "ó",
+          "index": 10,
+          "naturalStress": true
+        }
+      ],
+      "textualCitation": "1961 Graduale Romanum p144**",
+      "hypothesisWhyNotMusicallyCertified": "Artificial secondary accent on unstressed -ta- of exsultatióne is NOT attested for this Palm score; two-note second accent compressed from a comparative source",
+      "firstVerseGabcEvidenceByPsalm": "gregobase-19316.gabc",
+      "terminalPitchSource": "GR1961_PS23_2SYLLABLE_END",
+      "terminalSpecialCase": false,
+      "transcriptMatchesPrimaryLatin": true,
+      "partSyllableCounts": [
+        12,
+        8
+      ],
+      "pitchesBySection": [
+        [
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "ixi",
+          "hr",
+          "g hr",
+          "h."
+        ],
+        [
+          "h",
+          "h",
+          "h",
+          "h",
+          "g",
+          "f",
+          "gh gr",
+          "gf.."
+        ]
+      ],
+      "gabcResearchOnly": "name:PALM-R02-PS46-L05 source-constrained full verse conjectural musical underlay;\noffice-part:Psalmus;\ncommentary: FULL LATIN and GABC syllables, but medial is an explicit musical conjecture, not 1961 printed full notation. THIS CANNOT BE PUBLISHED;\n%%\n(c4) As(h)cén(h)dit(h) De(h)us(h) cum(h) ex(h)sul(h)ta(ixi)ti(hr)ó(g hr)ne,(h.) *(:) Dó(h)mi(h)nus(h) cum(h) vo(g)ce(f) tu(gh gr)bae.(gf..) (::)\n",
+      "manuallyStaffCompared": false,
+      "LatinAccentHumanChecked": false,
+      "musicianApproved": false,
+      "ExsurgeRenderPass": false,
+      "referenceOnly": true,
+      "productionEligible": false
+    },
+    {
+      "id": "PALM-R02-PS46-L08",
+      "psalm": 46,
+      "sourceLatin": [
+        "Deus regnat super natiónes,",
+        "Deus sedet super sólium sanctum suum."
+      ],
+      "sourceSyllables": [
+        "De-us reg-nat su-per na-ti-ó-nes,",
+        "De-us se-det su-per só-li-um sanc-tum su-um."
+      ],
+      "medialTonicPitchCell": "initial h tenor; first accented motif (ixi or ixi hr) then second motif g or g hr",
+      "hypotheticalAccentAnchors": [
+        {
+          "syllable": "reg",
+          "index": 2,
+          "naturalStress": true
+        },
+        {
+          "syllable": "ó",
+          "index": 8,
+          "naturalStress": true
+        }
+      ],
+      "textualCitation": "1961 Graduale Romanum p144**",
+      "hypothesisWhyNotMusicallyCertified": "Five intervening syllables between regnat and natiónes are carried on guessed h recitation; no source-notated later verse validates the extension",
+      "firstVerseGabcEvidenceByPsalm": "gregobase-19316.gabc",
+      "terminalPitchSource": "GR1961_PS23_2SYLLABLE_END",
+      "terminalSpecialCase": false,
+      "transcriptMatchesPrimaryLatin": true,
+      "partSyllableCounts": [
+        10,
+        13
+      ],
+      "pitchesBySection": [
+        [
+          "h",
+          "h",
+          "ixi",
+          "hr",
+          "h",
+          "h",
+          "h",
+          "h",
+          "g hr",
+          "h."
+        ],
+        [
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "g",
+          "f",
+          "gh gr",
+          "gf.."
+        ]
+      ],
+      "gabcResearchOnly": "name:PALM-R02-PS46-L08 source-constrained full verse conjectural musical underlay;\noffice-part:Psalmus;\ncommentary: FULL LATIN and GABC syllables, but medial is an explicit musical conjecture, not 1961 printed full notation. THIS CANNOT BE PUBLISHED;\n%%\n(c4) De(h)us(h) reg(ixi)nat(hr) su(h)per(h) na(h)ti(h)ó(g hr)nes,(h.) *(:) De(h)us(h) se(h)det(h) su(h)per(h) só(h)li(h)um(h) sanc(g)tum(f) su(gh gr)um.(gf..) (::)\n",
+      "manuallyStaffCompared": false,
+      "LatinAccentHumanChecked": false,
+      "musicianApproved": false,
+      "ExsurgeRenderPass": false,
+      "referenceOnly": true,
+      "productionEligible": false
+    },
+    {
+      "id": "PALM-R02-PS46-L09",
+      "psalm": 46,
+      "sourceLatin": [
+        "Príncipes populórum congregáti sunt",
+        "cum pópulo Dei Abraham."
+      ],
+      "sourceSyllables": [
+        "Prín-ci-pes po-pu-ló-rum con-gre-gá-ti sunt",
+        "cum pó-pu-lo De-i A-bra-ham."
+      ],
+      "medialTonicPitchCell": "initial h tenor; first accented motif (ixi or ixi hr) then second motif g or g hr",
+      "hypotheticalAccentAnchors": [
+        {
+          "syllable": "ló",
+          "index": 5,
+          "naturalStress": true
+        },
+        {
+          "syllable": "gá",
+          "index": 9,
+          "naturalStress": true
+        }
+      ],
+      "textualCitation": "1961 Graduale Romanum p144**",
+      "hypothesisWhyNotMusicallyCertified": "Three unstressed syllables separate the word accents; extra reciting h is inferred; terminal Abraham stress Á is a separate unapproved external lexical hypothesis",
+      "firstVerseGabcEvidenceByPsalm": "gregobase-19316.gabc",
+      "terminalPitchSource": "GR1961_PS46_3SYLLABLE_END",
+      "terminalSpecialCase": true,
+      "transcriptMatchesPrimaryLatin": true,
+      "partSyllableCounts": [
+        12,
+        9
+      ],
+      "pitchesBySection": [
+        [
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "ixi",
+          "hr",
+          "h",
+          "h",
+          "g",
+          "hr",
+          "h."
+        ],
+        [
+          "h",
+          "h",
+          "h",
+          "h",
+          "g",
+          "f",
+          "gh",
+          "gr",
+          "gf.."
+        ]
+      ],
+      "gabcResearchOnly": "name:PALM-R02-PS46-L09 source-constrained full verse conjectural musical underlay;\noffice-part:Psalmus;\ncommentary: FULL LATIN and GABC syllables, but medial is an explicit musical conjecture, not 1961 printed full notation. THIS CANNOT BE PUBLISHED;\n%%\n(c4) Prín(h)ci(h)pes(h) po(h)pu(h)ló(ixi)rum(hr) con(h)gre(h)gá(g)ti(hr) sunt(h.) *(:) cum(h) pó(h)pu(h)lo(h) De(g)i(f) A(gh)bra(gr)ham.(gf..) (::)\n",
+      "manuallyStaffCompared": false,
+      "LatinAccentHumanChecked": false,
+      "musicianApproved": false,
+      "ExsurgeRenderPass": false,
+      "referenceOnly": true,
+      "productionEligible": false
+    }
+  ],
+  "withheld": {
+    "ids": [
+      "PALM-R02-PS23-DOXO-L12",
+      "PALM-R02-PS46-DOXO-L12"
+    ],
+    "reason": "The source gives complete text et in saécula saeculórum. Amen. but no fully notated tone-specific last-verse termination. Office EUOUAE is not by itself authority for these Palm procession chants.",
+    "sourceSyllabificationAvailable": true,
+    "melodiesFabricated": false,
+    "scorePublication": false
+  },
+  "counts": {
+    "additionalWholeVerseSchematics": 4,
+    "previousWholeVerseSchematics": 11,
+    "wholeVerseSchematicsTotal": 15,
+    "remainingFullGabcHolds": 2,
+    "productionMusicallyApproved": 0,
+    "estimatedPhysicalOccurrencesCovered": 16,
+    "sourceLatinCasesCovered": 17
+  },
+  "ownership": {
+    "research": "draft PR #1752",
+    "schola": "draft PR #1749",
+    "canonicalLatin": "issue #894"
+  },
+  "restrictions": {
+    "noNewAudio": true,
+    "noNewScoreRenderer": true,
+    "sourceGabcArchivedUnchanged": true,
+    "releaseAllowed": false
+  }
+}
