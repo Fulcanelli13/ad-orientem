@@ -1,0 +1,181 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B39_CONCLUDING_CSE_SOURCE_PRECISION_V1",
+  "asOf": "2026-10-28",
+  "status": "ADDITIVE_RESEARCH_ONLY_NOT_CERTIFIED",
+  "continuity": {
+    "historicalBaseline": "2026-10-21: 68 family contexts examined, 65 improved, 130 answer units, 64 complete packets awaiting human certification",
+    "latestExisting": "B37 2026-10-27; 147-family composite and specialist review queue reconciled",
+    "scope": "existing CSE141–147 only; no new canonical IDs",
+    "originalEnglishChanoineSource": "STILL_BLOCKED; the repo's editorial source_main_answer_verbatim is not a verified historical English witness",
+    "persona": "fictional Chanoine priest persona, not Archbishop Lefebvre quotation; no later document attributed to historical speaker"
+  },
+  "sources": {
+    "VS": {
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "loci": "§§77–82",
+      "class": "1993 papal encyclical; later than Chanoine's fictional period"
+    },
+    "CCC1735": {
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_3/i_freedom_and_responsibility.html",
+      "loci": "§§1734–1735",
+      "class": "1992 Catechism, editorial cross-reference"
+    },
+    "CCC1793": {
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_6/iv_erroneous_judgment.html",
+      "loci": "§§1790–1793",
+      "class": "1992 Catechism, later editorial cross-reference"
+    },
+    "CCC1954": {
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_1/i_the_natural_moral_law.index.html",
+      "loci": "§§1954–1960",
+      "class": "1992 Catechism, later editorial cross-reference"
+    }
+  },
+  "proposals": [
+    {
+      "id": "CHA-CSE-CSE144",
+      "sourceQuestionId": "CSE144",
+      "change": "RESTORE_EXPLICIT_OBJECT_VS_IMPUTABILITY_DISTINCTION",
+      "proposedOpening": {
+        "en": "Mercy begins by taking a person's suffering and constraints seriously. In moral judgment, however, two questions must not be confused: what kind of act was chosen, and how freely and knowingly this person chose it. Fear, ignorance or coercion may lessen responsibility without making every possible means morally right.",
+        "fr": "La miséricorde commence par prendre au sérieux la souffrance et les contraintes d'une personne. Dans le jugement moral, il faut pourtant distinguer deux questions : quelle sorte d'acte a été choisie, et avec quelle liberté et connaissance cette personne l'a choisi. La peur, l'ignorance ou la contrainte peuvent diminuer la responsabilité sans rendre juste tout moyen possible."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does distinguishing the act from responsibility mean withholding practical help?",
+          "fr": "Distinguer l'acte de la responsabilité signifie-t-il refuser une aide concrète ?"
+        },
+        "answer": {
+          "en": "No. Prudence and charity require listening, protection and practical assistance where needed. Veritatis splendor §§78–82 concerns the moral object; Catechism §1735 addresses diminished imputability. Neither source licenses a confident judgment of an unknown person's soul.",
+          "fr": "Non. La prudence et la charité exigent l'écoute, la protection et, si nécessaire, une aide concrète. Veritatis splendor, §§78–82, traite de l'objet moral ; le Catéchisme, §1735, de l'imputabilité diminuée. Aucun de ces textes n'autorise un jugement assuré sur l'âme d'une personne dont on ignore les circonstances."
+        }
+      },
+      "sourceRefs": [
+        "VS §§78–82",
+        "CCC1735 §1735"
+      ],
+      "evidenceClass": "EN_FR_EDITORIAL_PARAPHRASE_PRIMARY_LOCI_VERIFIED_NOT_HISTORICAL_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_DOCTRINAL_TRANSLATION_PERSONA_REVIEW_NOT_CERTIFIED",
+      "release": {
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "claimCertified": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "id": "CHA-CSE-CSE146",
+      "sourceQuestionId": "CSE146",
+      "change": "QUALIFY_CULTURAL_PREVALENCE_AND_CULPABLE_VS_INVINCIBLE_IGNORANCE",
+      "proposedOpening": {
+        "en": "A custom does not become morally right merely because it is widespread. But common assumptions can influence what a person understands. Ignorance is not always innocent, and neither is it always culpable; the distinction matters before judging anyone's responsibility.",
+        "fr": "Un usage ne devient pas moralement juste du seul fait qu'il est répandu. Cependant, les idées reçues peuvent influencer ce qu'une personne comprend. L'ignorance n'est pas toujours innocente, mais elle n'est pas non plus toujours coupable ; cette distinction compte avant de juger la responsabilité de quelqu'un."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does belonging to a culture automatically excuse every act it approves?",
+          "fr": "L'appartenance à une culture excuse-t-elle automatiquement tous les actes qu'elle approuve ?"
+        },
+        "answer": {
+          "en": "No. Catechism §§1791–1793 distinguishes negligence in seeking truth from invincible ignorance. A widespread custom is neither proof of moral rightness nor proof that each participant is equally blameworthy.",
+          "fr": "Non. Le Catéchisme, §§1791–1793, distingue la négligence dans la recherche de la vérité de l'ignorance invincible. Un usage répandu ne prouve ni sa rectitude morale ni une culpabilité identique de tous ceux qui y participent."
+        }
+      },
+      "sourceRefs": [
+        "CCC1793 §§1791–1793",
+        "CCC1735 §1735"
+      ],
+      "evidenceClass": "LATER_MAGISTERIAL_CROSS_REFERENCE_EN_FR_EDITORIAL_PARAPHRASE",
+      "reviewGate": "READY_FOR_HUMAN_DOCTRINAL_TRANSLATION_PERSONA_REVIEW_NOT_CERTIFIED",
+      "release": {
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "claimCertified": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "id": "CHA-CSE-CSE147",
+      "sourceQuestionId": "CSE147",
+      "change": "PRECISE_NATURAL_LAW_ACCESSIBILITY_WITHOUT_ASSUMING_UNIVERSAL_IMMEDIATE_ASSENT",
+      "proposedOpening": {
+        "en": "I would not ask a non-Catholic to accept an argument merely because it comes from a pope. The Church also proposes that reason can examine goods such as justice, fidelity, freedom and the welfare of children. We should explain the premises and hear objections, without pretending that everyone immediately perceives each conclusion alike.",
+        "fr": "Je ne demanderais pas à un non-catholique d'accepter un argument du seul fait qu'il vient d'un pape. L'Église propose aussi que la raison puisse examiner des biens tels que la justice, la fidélité, la liberté et le bien des enfants. Exposons les prémisses et écoutons les objections, sans prétendre que chacun perçoit immédiatement toutes les conclusions de la même façon."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does the Church say natural-law conclusions are obvious to everybody?",
+          "fr": "L'Église dit-elle que toutes les conclusions de la loi naturelle sont évidentes pour chacun ?"
+        },
+        "answer": {
+          "en": "No. Catechism §§1954–1957 grounds natural law in reason, while §1960 explicitly says its precepts are not perceived clearly and immediately by everyone. This is a reason for careful argument, not for assuming agreement or compelling a profession of faith.",
+          "fr": "Non. Le Catéchisme, §§1954–1957, fonde la loi naturelle dans la raison, tandis que le §1960 précise que ses préceptes ne sont pas perçus clairement et immédiatement par tous. Cela appelle une argumentation soignée, non la présomption d'un accord ni l'exigence d'une profession de foi."
+        }
+      },
+      "sourceRefs": [
+        "CCC1954 §§1954–1960"
+      ],
+      "evidenceClass": "LATER_MAGISTERIAL_CROSS_REFERENCE_EN_FR_EDITORIAL_PARAPHRASE",
+      "reviewGate": "READY_FOR_HUMAN_DOCTRINAL_TRANSLATION_PERSONA_REVIEW_NOT_CERTIFIED",
+      "release": {
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "claimCertified": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    }
+  ],
+  "noRewrite": [
+    {
+      "id": "CSE141",
+      "reason": "Existing voice-parity correction applied; source-consistent; do not overwrite."
+    },
+    {
+      "id": "CSE145",
+      "reason": "Existing fidelity/love distinction adequate; no source repair warranted."
+    }
+  ],
+  "specialistHolds": [
+    {
+      "id": "CSE142",
+      "reason": "Trauma, compulsive behaviour and clinical outcomes require specialist review."
+    },
+    {
+      "id": "CSE143",
+      "reason": "Claims about psychological harms and causality require clinical evidence and safeguarding review."
+    }
+  ],
+  "nextQueue": [
+    "Human review CSE144/CSE146/CSE147 against existing original bilingual editorial source; no historical-source attribution",
+    "Clinical specialist review CSE142–143; preserve source arguments",
+    "Resume unresolved 39 specialist queue only where authoritative new evidence available; do not mass-rewrite",
+    "Original English Chanoine witness remains blocked; no reconstruction"
+  ],
+  "counts": {
+    "existingFamiliesScoped": 7,
+    "proposedDistinctFamilies": 3,
+    "bilingualAnswerUnitsProposed": 6,
+    "noRewrite": 2,
+    "specialistHolds": 2,
+    "newCanonicalIds": 0,
+    "humanCertified": 0
+  },
+  "release": {
+    "sourceSentenceHumanCertified": false,
+    "translationApproved": false,
+    "personaVoiceApproved": false,
+    "claimCertified": false,
+    "safeguardingApproved": false,
+    "publicationApproved": false,
+    "routingEnabled": false
+  }
+}
