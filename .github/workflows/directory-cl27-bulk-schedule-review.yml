@@ -61,6 +61,19 @@ jobs:
           assert 'public_approval:false' in html
           assert data['counts']['classification_source_rows'] == 2715
           assert data['counts']['organization_labels_at_source_only'] == 2008
+          assert data['counts']['institute_norm_assertions_from_CL2'] == 8
+          assert data['counts']['inherited_institute_source_labels'] == 1389
+          assert data['counts']['inherited_source_labels_by_institute'] == {'FSSP':381,'ICKSP':158,'IBP':31,'SSPX':819}
+          inherited=[x for x in data['source_scoped_classification_assertions'] if x['inherited_institute_id']]
+          assert len(inherited)==1389
+          assert all(x['liturgical_use']=='ROMAN' and x['effective_missal_edition']=='1962' and
+                     len(x['inherited_institute_policy'])==2 and
+                     x['liturgical_claim_grade']=='INHERITED_INSTITUTE_NORM_SOURCE_LABEL_NOT_MASS_VERIFIED'
+                     for x in inherited)
+          assert sum(bool(x['missal_edition_at_source_scope']=='1962') for x in data['source_scoped_classification_assertions'])==3
+          assert all(x['rite_of_all_celebrations']=='UNKNOWN' and
+                     x['missal_for_all_celebrations']=='UNKNOWN' and not x['public_classification_approved']
+                     for x in data['physical_site_classification_facets'])
           assert html.find('id="embedded-data"') < html.find("const embedded=document.getElementById('embedded-data')")
           token='<script id="embedded-data" type="application/json">'
           payload=html.split(token,1)[1].split('</script>',1)[0]
@@ -112,6 +125,8 @@ jobs:
           c=d['counts']
           assert (c['distinct_physical_anchors'],c['classification_source_rows'],c['safe_exact_classification_source_joins'])==(2579,2715,2674)
           assert c['public_classifications_approved']==0 and c['una_cum_confirmed_per_celebration']==0
+          assert c['institute_norm_assertions_from_CL2']==8 and c['inherited_institute_source_labels']==1389
+          assert c['inherited_exact_joined_source_labels']<=1389
           assert all(r['una_cum']=='UNKNOWN' for r in d['physical_site_classification_facets'])
           print('CL27 classifications PASS')
           PY
