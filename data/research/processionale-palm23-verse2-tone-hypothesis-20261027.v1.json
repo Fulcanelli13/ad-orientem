@@ -3,7 +3,7 @@
   "date": "2026-10-27",
   "batch": 24,
   "stage": "PALM-R02",
-  "status": "TWO_PROVISIONAL_ALTERNATIVES_ONE_NATIVE_RENDERED_SECOND_RENDER_PENDING_ZERO_EDITOR_APPROVAL",
+  "status": "TWO_PROVISIONAL_GABC_V2_VARIANTS_NATIVE_EXSURGE_PROVED_NO_MUSICAL_APPROVAL",
   "target": {
     "psalm": 23,
     "liturgicalLine": 2,
@@ -230,7 +230,17 @@
         }
       ]
     },
-    "meaning": "Real Exsurge parser/layout/nonempty SVG validation on pinned Schola source, not score/music/editorial approval or physical device pixel QA."
+    "meaning": "Real Exsurge parser/layout/nonempty SVG validation on pinned Schola source, not score/music/editorial approval or physical device pixel QA.",
+    "comparisonRun": {
+      "runId": 40455234551,
+      "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40455234551",
+      "originalSHA256": "871b48676c1c942630406d651b4cd8b6b1e2783fb6ddbb8e5895544483e57b91",
+      "alternativeSHA256": "3ba84cc3b5e38110b23e7593ed02fe8fe95a0c2b7a56a7ca6b41fd520f89173d",
+      "bothRendered260420800": true,
+      "bothSyllabicTextMatching": true,
+      "originalMusicalApproved": false,
+      "alternativeMusicalApproved": false
+    }
   },
   "alternativeAccentAlignment": {
     "file": "data/research/chant-source-review/palm23-verse2-accent-alignment-20261027-ALTERNATE.gabc",
@@ -254,6 +264,32 @@
     ],
     "originalApproved": false,
     "alternativeApproved": false,
-    "realExsurgeRendered": false
+    "realExsurgeRendered": true,
+    "exsurgeProofRunId": 40455234551,
+    "exsurgeProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40455234551",
+    "alternativeSha256": "3ba84cc3b5e38110b23e7593ed02fe8fe95a0c2b7a56a7ca6b41fd520f89173d",
+    "renderResult": {
+      "parsedMappings": 14,
+      "viewports": [
+        {
+          "width": 260,
+          "systems": 2,
+          "svgChildren": 1
+        },
+        {
+          "width": 420,
+          "systems": 1,
+          "svgChildren": 1
+        },
+        {
+          "width": 800,
+          "systems": 1,
+          "svgChildren": 1
+        }
+      ]
+    },
+    "neumeToAccentMusicalCertification": false,
+    "actualChurchPerformanceCertified": false,
+    "noteGroupCompressionNeedsEditorSignoff": true
   }
 }
