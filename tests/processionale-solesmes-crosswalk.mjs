@@ -1382,3 +1382,62 @@ test('source-accent audit blocks 13 invalid mediants despite valid Exsurge SVG',
   assert.equal(item.automaticPublicationAllowed,false);
  }
 });
+
+
+test('nine complete research-only Psalm verse GABCs preserve Latin words and never publish',()=>{
+ const d=readJSON('data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json');
+ const audit=readJSON('data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json');
+ const endings=readJSON('data/research/processionale-palm-attested-cadence-windows-20261027.v1.json');
+ const textIndex=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
+ const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/æ/g,'ae').replace(/[^a-z]/gi,'').toLowerCase();
+ assert.equal(d.batch,32);
+ assert.equal(d.scoreCases.length,9);
+ assert.equal(d.counts.fullResearchGabcCandidates,9);
+ assert.equal(d.counts.musicalApproved,0);
+ assert.equal(d.counts.productionAssignments,0);
+ assert.equal(d.approvalGates.manualSyllabificationReviewed,false);
+ assert.equal(d.approvalGates.sourceToneModelApproved,false);
+ assert.equal(d.approvalGates.productionReaderEligible,false);
+ assert.equal(new Set(d.scoreCases.map(x=>x.id)).size,9);
+ const aligned=new Map(audit.batch31CorrectiveUnderlayReview.proposals.map(x=>[x.id,x]));
+ const terminals=new Map(endings.cases.map(x=>[x.id,x]));
+ const original=new Map(textIndex.cases.map(x=>[x.id,x]));
+ const flexIds=new Set(['PALM-R02-PS23-L07','PALM-R02-PS23-L08']);
+ for(const row of d.scoreCases){
+   assert.equal(flexIds.has(row.id),false);
+   const m=aligned.get(row.id),t=terminals.get(row.id),src=original.get(row.id);
+   assert.ok(m&&t&&src,row.id);
+   assert.equal(row.psalm,src.psalm);
+   assert.equal(row.gabcResearchOnly.split('%%').length,2);
+   assert.equal(row.gabcResearchOnly.split('*(:)').length,2);
+   assert.equal(row.wordBoundariesPreserved,true);
+   assert.deepEqual(row.fullLatin,[src.sourceSegments.medial,src.sourceSegments.termination]);
+   const parts=row.gabcResearchOnly.slice(row.gabcResearchOnly.indexOf('(c4)')+4).split('*(:)');
+   assert.equal(parts.length,2);
+   const pitchGroups=[row.medialNoteGroups,row.terminationNoteGroups];
+   const windows=[m.endingSyllables,t.textWindowSyllables];
+   const pitchSuffixes=[m.sourceModeledPitches,t.formulaPitchGroups];
+   for(let k=0;k<2;k++){
+     const words=row.independentManualLatinSyllabification[k].split(/\s+/);
+     const syllables=words.flatMap(w=>w.split('-'));
+     assert.equal(row.partsNoteCount[k],syllables.length,row.id);
+     assert.equal(norm(syllables.join('')),norm(row.fullLatin[k]),row.id);
+     assert.deepEqual(pitchGroups[k].slice(-windows[k].length),pitchSuffixes[k],row.id);
+     const noteTokens=[...parts[k].matchAll(/([\p{L}]+[.,;!?]?)\(([^)]+)\)/gu)].map(x=>({lyric:x[1],notes:x[2]}));
+     assert.equal(noteTokens.length,syllables.length,row.id);
+     assert.deepEqual(noteTokens.map(x=>norm(x.lyric)),syllables.map(norm),row.id);
+     assert.deepEqual(noteTokens.map(x=>x.notes),pitchGroups[k],row.id);
+     const encodedWords=parts[k].replace(/\([^)]*\)/g,'').replace(/\(c4\)/g,'')
+       .replace(/[:*]/g,'').trim().split(/\s+/).map(x=>norm(x));
+     assert.deepEqual(encodedWords,words.map(w=>norm(w)),row.id);
+     assert.ok(pitchGroups[k].slice(0,-windows[k].length).every(note=>note==='h'),row.id);
+   }
+   assert.equal(row.musicalFormulaEditorApproved,false);
+   assert.equal(row.lexicalAccentEditoriallyCertified,false);
+   assert.equal(row.exsurgeRendered,false);
+   assert.equal(row.releaseAllowed,false);
+   assert.equal(row.noReaderIntegration,true);
+ }
+ const reader=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
+ assert.equal(reader.includes('processionale-palm-nine-complete-verse-research-candidates'),false);
+});
