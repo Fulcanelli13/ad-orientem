@@ -1,0 +1,313 @@
+{
+  "schema": "AO_CLASS_I_ART_BATCH02_TEN_OPEN_DATES_V1",
+  "created": "2026-10-27",
+  "state": "USER_SELECTION_PENDING",
+  "previous_batch": "data/research/sacred-art-20261027-class-i-10-date-batch01.v1.json",
+  "notes": [
+    "Ten remaining dates not yet selected / recovered from earlier user approval; five Batch1 NONE include genuinely new alternatives",
+    "6 historical Oct19 approvals and 8 historical recovered approvals are withheld from new ballot and preserved",
+    "No previously declined artwork shown again",
+    "Artwork and exact image license kept distinct, no fee, no emails, no frame, no artwork alterations, no automatic publication",
+    "Easter Wednesday visual must represent John 21 after Resurrection rather than Luke 5",
+    "If no painting appeals select NONE without stopping rest of batch"
+  ],
+  "dates": [
+    {
+      "number": 1,
+      "date": "2026-01-06",
+      "title": "Epiphany",
+      "editorial_state": "PREVIOUS_ALL_CHOICES_DECLINED",
+      "scripture": null,
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Peter Paul Rubens",
+          "title": "The Adoration of the Magi",
+          "source_url": "https://kmska.be/en/masterpiece/the-adoration-of-the-magi-6",
+          "comments": "KMSKA museum oil 1624–25; large expressive altar panel, photo terms need exact check",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        },
+        {
+          "code": "B",
+          "artist": "Jacques Jordaens",
+          "title": "The Adoration of the Magi",
+          "source_url": "https://www.boijmans.nl/en/collection/artworks/2008",
+          "comments": "Boijmans museum oil c1655, richly Baroque, exact museum image reuse not certified",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        },
+        {
+          "code": "C",
+          "artist": "Luca Giordano",
+          "title": "The Adoration of the Magi",
+          "source_url": "https://collection.nmwa.go.jp/en/P.2025-0002.html",
+          "comments": "Japanese NMWA museum oil c1687–89, wide Baroque painting; photograph terms unverified",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        }
+      ],
+      "user_vote": null
+    },
+    {
+      "number": 2,
+      "date": "2026-04-04",
+      "title": "Holy Saturday",
+      "editorial_state": "PREVIOUS_ALL_CHOICES_DECLINED",
+      "scripture": null,
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Anthony van Dyck",
+          "title": "The Lamentation over the Dead Christ",
+          "source_url": "https://www.gidsen.kmska.be/en/masterpiece/the-lamentation-over-the-dead-christ-2",
+          "comments": "KMSKA c1640, Christ at rock-hewn tomb and Virgin grief; strong Baroque horizontal canvas; photograph rights source-specific",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        },
+        {
+          "code": "B",
+          "artist": "Peter Paul Rubens",
+          "title": "The Lamentation over the Dead Christ",
+          "source_url": "https://kmska.be/en/masterpiece/the-lamentation-over-the-dead-christ-0",
+          "comments": "KMSKA 1614 oil on panel, 55×73cm, dramatically lit grief; exact photo licence not presumed",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        }
+      ],
+      "user_vote": null
+    },
+    {
+      "number": 3,
+      "date": "2026-04-08",
+      "title": "Easter Wednesday",
+      "editorial_state": "PREVIOUS_ALL_CHOICES_DECLINED",
+      "scripture": "John 21:1–14",
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Anonymous Venetian (possibly Lambert Sustris), formerly attributed to Tintoretto",
+          "title": "Christ at the Sea of Galilee",
+          "source_url": "https://www.nga.gov/artworks/41637-christ-sea-galilee",
+          "comments": "NGA official open image; scholarly record confirms *post-Resurrection John 21*, seven apostles and dawn; avoid asserting Tintoretto authorship",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        },
+        {
+          "code": "B",
+          "artist": "Alessandro Magnasco",
+          "title": "Christ at the Sea of Galilee",
+          "source_url": "https://www.nga.gov/artworks/12129-christ-sea-galilee",
+          "comments": "NGA Open Access; dark turbulent seascape, but exact John 21 identification less clear than A",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        }
+      ],
+      "user_vote": null
+    },
+    {
+      "number": 4,
+      "date": "2026-04-09",
+      "title": "Easter Thursday",
+      "editorial_state": "PREVIOUS_ALL_CHOICES_DECLINED",
+      "scripture": "John 20:11–18",
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Titian",
+          "title": "Noli me Tangere",
+          "source_url": "https://www.nationalgallery.org.uk/paintings/titian-noli-me-tangere",
+          "comments": "National Gallery, London c1514; full oil, Gospel exact; current NG reproduction terms unsuitable for unrestricted derivatives",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        },
+        {
+          "code": "B",
+          "artist": "Federico Barocci",
+          "title": "Noli me tangere",
+          "source_url": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/31972/Barocci%20Federico%20%28Barocci%29%2C%20Apparizione%20di%20Cristo%20risorto%20a%20santa%20Maria%20Maddalena",
+          "comments": "Alte Pinakothek Munich inv494; late 16th-century oil; independent image reuse verification pending",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        }
+      ],
+      "user_vote": null
+    },
+    {
+      "number": 5,
+      "date": "2026-05-29",
+      "title": "Pentecost Ember Friday",
+      "editorial_state": "UNSELECTED_RESEARCH_REQUEST_20261019",
+      "scripture": "Luke 5:17–26",
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Johannes Wierix, after Gerard van Groeningen",
+          "title": "The Paralytic Lowered through the Roof",
+          "source_url": "https://www.rijksmuseum.nl/en/collection/object/Christus-geneest-een-verlamde-man-die-door-het-dak-werd-neergelaten--d3dd97fd936ec658fe24cb8663a0eb50",
+          "comments": "Rijksmuseum public-domain engraving, full composition precisely illustrates Luke 5; monochrome, not oil",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        },
+        {
+          "code": "B",
+          "artist": "James Tissot",
+          "title": "The Palsied Man Let Down through the Roof",
+          "source_url": "https://opencollection.brooklynmuseum.org/objects/4504",
+          "comments": "Brooklyn Museum watercolor, physically exact John/Luke gospel scene; photo-use to confirm",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        }
+      ],
+      "user_vote": null
+    },
+    {
+      "number": 6,
+      "date": "2026-07-01",
+      "title": "Precious Blood of Our Lord",
+      "editorial_state": "PREVIOUS_ALL_CHOICES_DECLINED",
+      "scripture": null,
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Sebald Beham",
+          "title": "Christ as Man of Sorrows at the Foot of the Cross",
+          "source_url": "https://www.nga.gov/artworks/4392-christ-man-sorrows-foot-cross",
+          "comments": "NGA public-domain engraving; Christ with visible chalice and Eucharistic bread; new more precise subject but not an oil painting",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        },
+        {
+          "code": "B",
+          "artist": "Jacques de Gheyn II, after Karel van Mander I",
+          "title": "Christ in the Winepress",
+          "source_url": "https://www.metmuseum.org/art/collection/search/434386",
+          "comments": "Met public-domain engraving c1596–98; Precious Blood symbolic winepress imagery, not an oil painting",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        }
+      ],
+      "user_vote": null
+    },
+    {
+      "number": 7,
+      "date": "2026-09-29",
+      "title": "Dedication of Saint Michael",
+      "editorial_state": "NEW_DATE_SELECTION",
+      "scripture": null,
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Guido Reni",
+          "title": "Archangel Michael Defeating Satan",
+          "source_url": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+          "comments": "Reuse existing Saint Michael module and user-selected Guardian Angel module painting; original-image photographic gate already documented",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        },
+        {
+          "code": "B",
+          "artist": "Ignacio de Ries",
+          "title": "Saint Michael the Archangel",
+          "source_url": "https://www.metmuseum.org/art/collection/search/437729",
+          "comments": "Met official Open Access/CC0, c1640s; distinct Spanish Baroque archangel portrait",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        }
+      ],
+      "user_vote": null
+    },
+    {
+      "number": 8,
+      "date": "2026-12-08",
+      "title": "Immaculate Conception",
+      "editorial_state": "NEW_DATE_SELECTION",
+      "scripture": null,
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Immaculate Conception",
+          "source_url": "https://www.clevelandart.org/art/1959.189",
+          "comments": "Cleveland c1680 full painting official OA; crescent moon, angels, warm-cloud Baroque",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        },
+        {
+          "code": "B",
+          "artist": "Guido Reni",
+          "title": "The Immaculate Conception",
+          "source_url": "https://commons.wikimedia.org/wiki/Category:Immaculate_Conception_by_Guido_Reni",
+          "comments": "Canonical painting by Reni; precise museum object/photo link to verify before release",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        }
+      ],
+      "user_vote": null
+    },
+    {
+      "number": 9,
+      "date": "2026-12-24",
+      "title": "Christmas Vigil",
+      "editorial_state": "NEW_DATE_SELECTION",
+      "scripture": null,
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Jacopo Bassano",
+          "title": "The Annunciation to the Shepherds",
+          "source_url": "https://www.nga.gov/artworks/267-annunciation-shepherds",
+          "comments": "NGA OA c1555–60, exact annunciation to shepherds as thematic anticipation (event itself belongs to Christmas night, not vigil Gospel)",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        },
+        {
+          "code": "B",
+          "artist": "Hans Leonhard Schäufelein",
+          "title": "Adoration of the Shepherds",
+          "source_url": "https://www.clevelandart.org/art/1916.807",
+          "comments": "Cleveland OA c1510 dark Nativity with Joseph's candle; anticipatory rather than vigil Gospel; user dislikes old-Joseph depictions, inspect",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        }
+      ],
+      "user_vote": null
+    },
+    {
+      "number": 10,
+      "date": "2026-12-25",
+      "title": "The Nativity of Our Lord",
+      "editorial_state": "NEW_DATE_SELECTION",
+      "scripture": null,
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Bernardo Cavallino",
+          "title": "Adoration of the Shepherds",
+          "source_url": "https://www.clevelandart.org/art/1968.100",
+          "comments": "Cleveland OA, Neapolitan dark interior around radiant Child and Gloria angels",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        },
+        {
+          "code": "B",
+          "artist": "Carlo Dolci",
+          "title": "Adoration of the Shepherds",
+          "source_url": "https://www.clevelandart.org/art/1968.22",
+          "comments": "Cleveland OA c1670, vertical dark-cloud baroque; includes Joseph, test age depiction",
+          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
+          "user_selection": null
+        }
+      ],
+      "user_vote": null
+    }
+  ],
+  "counts": {
+    "dates": 10,
+    "candidates": 21,
+    "prior_batch_selected": 5,
+    "prior_batch_research_more": 5,
+    "this_batch_approved": 0,
+    "app_release": 0
+  }
+}
