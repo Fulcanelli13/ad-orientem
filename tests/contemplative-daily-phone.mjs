@@ -90,6 +90,30 @@ try{
       console.log("PASS "+width+"px: canonical 11/13 morning/evening, Latin flip, context isolation");
     }finally{await page.close();}
   }
+  // French and Latin are exercised through the production settings UI, not mock text.
+  const frenchPage=await browser.newPage({viewport:{width:390,height:844},
+    isMobile:true,hasTouch:true,serviceWorkers:"block",locale:"fr-FR",reducedMotion:"reduce"});
+  try{
+    await frenchPage.goto(base+"?aoPrayReader=contemplative",{waitUntil:"domcontentloaded",timeout:90000});
+    await frenchPage.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().installed===true&&typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
+    await frenchPage.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("settings"));
+    await frenchPage.locator('#ao-settings-modular-root [data-settings-route="/settings/language-reading"]').click();
+    await frenchPage.locator('[data-pref-path="general.uiLanguage"][data-pref-value="fr"]').click();
+    await frenchPage.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr");
+    await frenchPage.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("home"));
+    assert.equal(await frenchPage.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+    assert.equal(await frenchPage.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.morning_evening",{returnContext:null})),true);
+    await frenchPage.waitForSelector("#aoPray435930[data-ao-contemplative-daily='guided'] .aoDevoSequenceTimeline");
+    assert.match(await frenchPage.locator("#aoPray435930 .aoTP381DaypartStrip").innerText(),/Matin\\s+Soir/);
+    await frenchPage.locator("#aoPray435930 .aoDevoStop[data-ao-devo-chapter='2']").click();
+    const frenchFlip=frenchPage.locator("#aoPray435930 [data-tp381-flip]").first();
+    const vernacular=await frenchFlip.innerText();
+    assert.match(vernacular,/Notre Père/i,"Approved French canonical Our Father missing");
+    await frenchFlip.click();
+    assert.match(await frenchFlip.innerText(),/Pater noster/i,"French-to-Latin face missing");
+    await frenchPage.screenshot({path:resolve(captures,"french-latin-390.png"),animations:"disabled"});
+    console.log("PASS 390px French UI and French-to-Latin Prayer text");
+  } finally { await frenchPage.close(); }
   // Without the explicit flag, the live app must remain in its current design.
   const defaultPage=await browser.newPage({viewport:{width:390,height:844},serviceWorkers:"block"});
   try{
