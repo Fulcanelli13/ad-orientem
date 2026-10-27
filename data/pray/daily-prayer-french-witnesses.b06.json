@@ -7,10 +7,12 @@
     "historical_digitized_text_witnesses": 2,
     "bibliographic_only_witnesses": 1,
     "preliminary_french_latin_occurrences": 21,
-    "fully_certified_complete_prayer_forms": 6,
+    "fully_certified_complete_prayer_forms": 15,
     "visually_inspected_pdf_pages": 2,
     "modern_web_reprint_rejected_as_original_source": 1,
-    "visually_inspected_historical_page_images_including_wikisource": 4
+    "visually_inspected_historical_page_images_including_wikisource": 4,
+    "total_distinct_print_checked_french_source_forms": 15,
+    "french_print_form_count_basis": "6 forms B07 + 9 forms B09 (including a previously bundled contrition/resolution split and an independently identified All Saints prayer). 21 French source occurrences is a different denominator."
   },
   "sources": {
     "FRENCH1905": {
@@ -197,9 +199,12 @@
       "language": "fr",
       "page_image_index": 42,
       "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/42",
-      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
-      "full_text_certified": false,
-      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+      "verification": "FULL_BODY_VISUALLY_COMPARED_WITH_PRINTED_PAGE",
+      "full_text_certified": true,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED",
+      "complete_source_form_ids": [
+        "b09-fr1905-evening-adoration"
+      ]
     },
     {
       "id": "AO.DAILY.B06.011",
@@ -211,9 +216,12 @@
       "language": "fr",
       "page_image_index": 42,
       "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/42",
-      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
-      "full_text_certified": false,
-      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+      "verification": "FULL_BODY_VISUALLY_COMPARED_WITH_PRINTED_PAGE",
+      "full_text_certified": true,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED",
+      "complete_source_form_ids": [
+        "b09-fr1905-evening-thanksgiving"
+      ]
     },
     {
       "id": "AO.DAILY.B06.012",
@@ -223,11 +231,14 @@
       "title": "Demande de lumière pour l'examen",
       "incipit": "Source éternelle de lumière, Esprit-Saint",
       "language": "fr",
-      "page_image_index": 43,
-      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/43",
-      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
-      "full_text_certified": false,
-      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+      "page_image_index": 42,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/42",
+      "verification": "FULL_BODY_VISUALLY_COMPARED_WITH_PRINTED_PAGE",
+      "full_text_certified": true,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED",
+      "complete_source_form_ids": [
+        "b09-fr1905-evening-light"
+      ]
     },
     {
       "id": "AO.DAILY.B06.013",
@@ -239,9 +250,14 @@
       "language": "fr",
       "page_image_index": 43,
       "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/43",
-      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
-      "full_text_certified": false,
-      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+      "verification": "FULL_BODY_VISUALLY_COMPARED_WITH_PRINTED_PAGE",
+      "full_text_certified": true,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED",
+      "witness_note": "B09 separates the single earlier bundled B06 topic record into two actually different complete prayers: French Evening Act of Contrition (p.7*) and Resolution (pp.7*–8*). Do not treat them as one text.",
+      "complete_source_form_ids": [
+        "b09-fr1905-evening-contrition",
+        "b09-fr1905-evening-resolution"
+      ]
     },
     {
       "id": "AO.DAILY.B06.014",
@@ -253,9 +269,12 @@
       "language": "fr",
       "page_image_index": 44,
       "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/44",
-      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
-      "full_text_certified": false,
-      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+      "verification": "FULL_BODY_VISUALLY_COMPARED_WITH_PRINTED_PAGE",
+      "full_text_certified": true,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED",
+      "complete_source_form_ids": [
+        "b09-fr1905-evening-bedtime"
+      ]
     },
     {
       "id": "AO.DAILY.B06.015",
@@ -267,9 +286,12 @@
       "language": "fr",
       "page_image_index": 44,
       "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/44",
-      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
-      "full_text_certified": false,
-      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+      "verification": "FULL_BODY_VISUALLY_COMPARED_WITH_PRINTED_PAGE",
+      "full_text_certified": true,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED",
+      "complete_source_form_ids": [
+        "b09-fr1905-evening-intercession"
+      ]
     },
     {
       "id": "AO.DAILY.B06.016",
@@ -281,9 +303,12 @@
       "language": "fr",
       "page_image_index": 44,
       "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/44",
-      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
-      "full_text_certified": false,
-      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+      "verification": "FULL_BODY_VISUALLY_COMPARED_WITH_PRINTED_PAGE",
+      "full_text_certified": true,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED",
+      "complete_source_form_ids": [
+        "b09-fr1905-evening-visita"
+      ]
     },
     {
       "id": "AO.DAILY.B06.017",
