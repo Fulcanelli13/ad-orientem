@@ -50,6 +50,7 @@ try{
         return {route:m.dataset.aoTraditionalPrayRoute,mode:r.dataset.aoContemplativeDaily,
           kind:m.dataset.aoTraditionalDualAxis,count:t.querySelectorAll(".aoDevoStop").length,
           dots:t.querySelectorAll(".aoDevoStop[aria-label]").length,
+          touchTarget:t.querySelector(".aoDevoStop")?.getBoundingClientRect().width,
           active:t.querySelectorAll("[aria-current='step']").length,
           current:Number(m.querySelector(".aoDevoCard").dataset.aoDevoIndex),
           text:b.innerText.slice(0,200),heading:h?.textContent,fontSize:parseFloat(style.fontSize),
@@ -61,6 +62,7 @@ try{
         ["pray.morning_evening","guided","daily",12,12,1,0],"Canonical Morning sequence/progress or accessibility lost");
       assert.ok(initial.rect.left>=-1&&initial.rect.right<=width+1,"Daily prayer overflows viewport "+JSON.stringify(initial.rect));
       assert.ok(initial.rootScroll<=width+1,"Page overflow at "+width+"px");
+      assert.ok(initial.touchTarget>=43,"Stage navigation target below 44px: "+initial.touchTarget);
       assert.ok(initial.heading&&initial.text.length>25,"Opening prayer missing");
       assert.ok(initial.background.includes("gradient"),"Contemplative background missing");
       await page.screenshot({path:resolve(captures,"morning-"+width+".png"),animations:"disabled"});
