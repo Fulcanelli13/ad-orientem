@@ -75,7 +75,7 @@
     "class_i_provisional_met_cc0_exact_photo_lead": 1,
     "module_institutional_open_access_exact_source_leads": 3,
     "module_museum_object_pd_but_photo_unknown": 1,
-    "module_staged_original_variants_all_four_branches": 20,
+    "module_staged_original_variants_all_four_branches": 21,
     "module_staged_distinct_module_ids_all_four_branches": 19,
     "module_staged_missing_module_ids": [
       "joseph",
@@ -96,7 +96,10 @@
     "current_6_unique_exact_designated_open_photo_sources_preserved": 6,
     "classi_met_2026_selected_images_newly_SHA_archived": 2,
     "rosary_exact_cc_by_file_original_newly_SHA_archived": 1,
-    "new_open_source_acquisition_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40465741444"
+    "new_open_source_acquisition_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40465741444",
+    "rosary_approved_painting_license_qualified_photo_variants": 2,
+    "rosary_license_qualified_full_painting_candidate_variants": 1,
+    "new_open_source_acquisition_comparison_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40466162003"
   },
   "exception_flags": [
     {
@@ -2025,6 +2028,15 @@
           "width": 1772,
           "height": 2652,
           "status": "ORIGINAL_CC_BY_3_0_LICENSED_HUMAN_QA_PENDING"
+        },
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-open-photo-candidates-20261027/module-rosary-lotto-alt-original.jpg",
+          "sha256": "352ec3f397d6f5de89dd824cd0542b157ccea617d2521a83102d84b6adff106d",
+          "width": 2304,
+          "height": 3456,
+          "status": "PHOTO_CROP_OF_APPROVED_PAINTING_NOT_COMPLETE_HERO_CANDIDATE",
+          "copyright": "CC BY 3.0 Sailko attribution+adaptation notice"
         }
       ],
       "exact_file_rights_cleared": false,
@@ -2056,6 +2068,29 @@
         "true_original_bytes_frozen": true,
         "master_visual_signoff": false,
         "release": false
+      },
+      "same_painting_photo_comparison": {
+        "first_original": "module-rosary-lotto-original.jpg",
+        "first_source_sha256": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
+        "first_dimensions": [
+          1772,
+          2652
+        ],
+        "first_composition": "COMPLETE_ALTARPIECE_WITH_ALL_MYSTERY_ROUNDELS_AND_SAINTS_VISIBLE",
+        "first_photo_problem": "Visible mounting pins/edge background; exact painted edge needs non-destructive inspection",
+        "second_original": "module-rosary-lotto-alt-original.jpg",
+        "second_source_sha256": "352ec3f397d6f5de89dd824cd0542b157ccea617d2521a83102d84b6adff106d",
+        "second_dimensions": [
+          2304,
+          3456
+        ],
+        "second_composition": "CENTRAL_DETAIL_CROP_MISSING_MUCH_OF_15_MYSTERIES_AND_OTHER_FIGURES",
+        "second_status": "RETAIN_AS_DETAIL_REFERENCE_ONLY_NOT_FULL_PAINTING_HERO",
+        "image_versions_rights": "Both are photographer Sailko CC BY 3.0; attribution and modifications must be credited",
+        "reviewer_preference_for_next_full_photo_QA": "Lotto 01 complete photo, do not crop 11 into hero",
+        "user_painting_selection_unchanged": true,
+        "user_photo_visual_approval": false,
+        "app_release": false
       }
     },
     {
