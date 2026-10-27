@@ -70,3 +70,31 @@ CL27 keeps two different statements separate:
 CL27's offline reviewer shows the distinction and can filter direct witnesses separately from institutional defaults. `institute_norm_inherited_source_ids` at a physical anchor identifies **which source ministries** have inherited defaults, not a building-wide 1962 rite. No new public 1962, Una Cum, current timetable or canonical approval is produced. The CL27 GitHub workflow asserts all four institutional category counts and the scope protections.
 
 **Release dependency:** The 1,879 published preliminary R49 pins are a separate historical projection without a proven one-to-one identity crosswalk to CL2's 2,579 physical anchors. Do not match them by name or affiliation and copy the inherited field onto pins. First land the upstream physical-master PR chain, review source-to-pin identity joins, and use CL2 effective scoped views in the existing Find UI. Merge CL27 only after that contract is verified.
+
+
+## Exact R49→CL2 physical identity integration (27 October, latest validated pass)
+
+The public provisional R49 file has **1,879 source-identified pins**. Each R49 pin's *frozen source ID* is also an existing CL2 venue-source ID: **1,879/1,879 exact source-and-group joins**, with **zero fuzzy matches or invented site identities**. They represent **1,844 distinct CL2 physical anchors**. There are **35 duplicate-pin physical-site groups**, eight of which carry different source coordinates and require separate geometry review before a marker is chosen. The other 27 duplicate groups agree on stored coordinates but are not automatically promoted to release-ready map markers.
+
+The full CL2 physical master still contains **735 more distinct sites without an R49 pin**; these remain a separate research-only publication backlog. For the 1,879 matched existing pins, CL2 institute norms cover **1,183 source memberships**: **FSSP 307, ICKSP 128, IBP 19, SSPX 729**. This is not 1,183 approved celebrations, public Missal classifications or distinct venues. The scope is explicitly *source-labelled ministry*. No physical venue automatically gains a rite, Missal, Una Cum or canonical status, and all current schedule claims remain subject to their separate verification gate.
+
+The crosswalk uses no guesswork from names, nearby coordinates, websites or institutional affiliation. It also confirms the exact R49/CL2 *stored source coordinate* agreement for 1,878 pins; the 1 remaining CL2 coordinate pair is absent, not necessarily a bad R49 location. That parity is not independently verified geocoding.
+
+The existing CL27 branch now contains:
+- \`tools/directory/build-cl27-r49-unified-crosswalk.py\`: deterministic exact-ID join across **all** R49 pins, sourced CL2 ministries, physical anchors, canonical institute rules, held duplicates and absent-site backlog. The output is a derived research audit, **not a competing registry**.
+- \`src/find/cl2-research-crosswalk-adapter.js\`: **nonactivated** read-only adapter capable of representing 1,844 physical-site groupings while preserving all 1,879 original source memberships and their inherited ministerial classifications. No app entry point currently invokes it.
+- \`tests/directory-cl27-r49-unified-adapter.mjs\`: rejects altered source identities, altered geometry and attempted publication flags; asserts the eight spatial-conflict groups remain review-only.
+- The **same CL27 workflow**, which reconstructs the CL2 SQLite, runs institutional inheritance tests, builds the crosswalk, tests the adapter and checks all publication gates at **€0**.
+
+Run the crosswalk after CL2 SQLite has been reconstructed:
+
+\`\`\`bash
+python3 tools/directory/build-cl27-r49-unified-crosswalk.py \
+  --db /tmp/ao-tlm-registry.sqlite \
+  --output /tmp/ao-r49-cl2-crosswalk.json
+
+node tests/directory-cl27-r49-unified-adapter.mjs \
+  /tmp/ao-r49-cl2-crosswalk.json
+\`\`\`
+
+**Next runtime gate:** resolve eight conflicting-coordinate duplicate groups; establish explicit physical anchor-to-pin selection and preservation of multiple institute source memberships; review release rules for the 735 unpublished sites; and only then activate the read-only projection in the existing Find UI. Do not indiscriminately mark shared churches as Roman 1962 or merge scheduled Mass records by proximity.
