@@ -36,4 +36,4 @@ assert.match(CONTEMPLATIVE_DAILY_PREVIEW_CSS,/prefers-reduced-motion:reduce/);
 assert.match(CONTEMPLATIVE_DAILY_PREVIEW_CSS,/focus-visible/);
 assert.match(CONTEMPLATIVE_DAILY_PREVIEW_CSS,/aoDevoSequenceTimeline/);
 assert.doesNotMatch(CONTEMPLATIVE_DAILY_PREVIEW_CSS,/\.homeScreen|\.ao-reader-shell|#ao-calendar-modular-root/,"must not restyle Home, Mass or Calendar");
-console.log("Contemplative Morning/Evening preview: 15 assertions passed");
+console.log("Contemplative Morning/Evening preview: contract checks passed");
