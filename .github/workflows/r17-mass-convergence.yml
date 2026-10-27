@@ -82,6 +82,7 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: node tests/gr1961-342-selected-proper-contract.mjs
+      - run: node tests/gr1961-342-source-proof-reuse.mjs
       - run: npm run test:gr1961-342-resolved-year
 
   curated65-phone:
