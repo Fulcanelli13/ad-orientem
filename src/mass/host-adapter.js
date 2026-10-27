@@ -156,6 +156,16 @@ export function adaptV346ResolvedMass(legacy, options={}) {
     if(!overlays.includes("VOTIVE_PROPER"))overlays.push("VOTIVE_PROPER");
   }
   const proper=properEnvelope(bind1962PrincipalPrefaceIdentity(selectedProper,legacy),legacy);
+  // The host classifies the *Mass of the day* as CALENDAR even for All
+  // Souls. Its exact canonical 1962 Proper is nevertheless a Requiem:
+  // activate the funeral Mass rules from authenticated identity and donor,
+  // not from the black liturgical colour, feast title or civil date.
+  const selectedSource=String(proper?.data?.sourcePath??proper?.sourcePath??"");
+  const calendarAllSouls=type==="CALENDAR"&&
+    resultId==="mass_of_day"&&requestedId==="mass_of_day"&&
+    String(legacy.calendarDay?.id??"")==="sancti:11-02m1:1:b"&&
+    selectedSource==="Sancti/11-02m1";
+  if(calendarAllSouls&&!overlays.includes("REQUIEM"))overlays.push("REQUIEM");
   const precedingRites=[...new Set([
     ...(options.precedingRites??[]),
     ...(rogationSelection?.precedingRites??[])
