@@ -2564,7 +2564,9 @@
       "historicalSyllableMetadataErrata": 1,
       "printedWholeLaterVersesMusicallyNotated": 0,
       "humanEditorialAcceptances": 0,
-      "productionAssignments": 0
+      "productionAssignments": 0,
+      "ownPsalmPrintedOpeningAccentGroupPairReused": 5,
+      "accentCellVariantsNotPrintedIdenticallyInOwnPsalmOpening": 12
     },
     "blockedGates": [
       "Musician must determine whether artificial stressed -ta- of exsultatióne is valid in Ps46 L05",
@@ -2576,6 +2578,7 @@
     ],
     "editorialCorrection": "Prior Batch31 Populórum lexical anchor lór was a syllabification error; accented syllable is ló. The complete new GABC has ló(ixi) correctly, but this does not certify the full musical phrase.",
     "batch35RiskReframing": "The 1974 Introit/Communion Amen is a separate usage, thus a warning against conflation, NOT source conflict within the incomplete 1961 Palm print.",
-    "approvalAllowed": false
+    "approvalAllowed": false,
+    "varianceStatus": "12_OF_17_USE_ADAPTED_MUSIC_CELLS_REQUIRE_TONE_EDITOR_VERIFICATION"
   }
 }
