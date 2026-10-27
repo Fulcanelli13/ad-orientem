@@ -415,7 +415,7 @@ export function mountFullMassPreflight({
     const fr=french(),summary=selectionFor(legacy),l=(en,frText)=>fr?frText:en;
     const properPath=String(legacy?.proper?.data?.sourcePath??
        legacy?.proper?.sourcePath??"");
-    const allSoulsDay=/^\\d{4}-11-02$/.test(date)&&
+    const allSoulsDay=/^\d{4}-11-02$/.test(date)&&
        legacy?.calendarDay?.id==="sancti:11-02m1:1:b"&&
        properPath==="Sancti/11-02m1"&&
        ["","mass_of_day"].includes(String(legacy?.requestedCelebrationId??""))&&
