@@ -101,7 +101,9 @@
     "rosary_license_qualified_full_painting_candidate_variants": 1,
     "new_open_source_acquisition_comparison_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40466162003",
     "missing_three_originals_queued_for_exact_source_archival": 3,
-    "missing_three_production_rights_cleared": 0
+    "missing_three_production_rights_cleared": 0,
+    "class_i_additional_exact_institution_policies_reviewed": 4,
+    "class_i_additional_exact_photo_legal_approvals": 0
   },
   "exception_flags": [
     {
@@ -413,7 +415,17 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "followup_source_policy_review_20261027": {
+        "date": "2026-03-31",
+        "institution": "National Gallery of Ireland",
+        "exact_photo_rights": "EXACT_PHOTO_LICENSE_NOT_CONFIRMED_FOR_JESUIT_LOAN",
+        "policy_url": "https://www.nationalgallery.ie/explore-and-learn/creative-commons-download-artwork",
+        "policy": "NGI distributes designated artwork images under CC BY 4.0, including commercial derivatives, but it must be verified that this privately owned indefinite-loan Taking of Christ exact file carries the required CC badge.",
+        "next": "Check NGI collection and licensing image entry for this exact accession, or separately open-licensed same-original photograph.",
+        "painting_approval_preserved": true,
+        "exact_photo_global_release_cleared": false
+      }
     },
     {
       "date": "2026-04-01",
@@ -434,7 +446,17 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "followup_source_policy_review_20261027": {
+        "date": "2026-04-01",
+        "institution": "National Gallery London",
+        "exact_photo_rights": "SOURCE_INSTITUTION_IMAGES_CC_BY_NC_ND_UNSUITABLE_FOR_APP_DERIVATIVES",
+        "policy_url": "https://www.nationalgallery.org.uk/documentation/ngacuk/licences",
+        "policy": "National Gallery content-image licence says CC BY-NC-ND 4.0; do not treat public-domain Honthorst painting as authorization to edit/rehost museum file for commercial-capable app.",
+        "next": "Find independently rights-cleared full Honthorst painting photograph; preserve chosen original.",
+        "painting_approval_preserved": true,
+        "exact_photo_global_release_cleared": false
+      }
     },
     {
       "date": "2026-04-02",
@@ -529,7 +551,17 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "followup_source_policy_review_20261027": {
+        "date": "2026-04-06",
+        "institution": "Museo Nacional Thyssen-Bornemisza",
+        "exact_photo_rights": "MUSEUM_SOURCE_RESTRICTED_EDUCATIONAL_NONCOMMERCIAL_AND_NO_MODIFICATIONS",
+        "policy_url": "https://www.museothyssen.org/en/use-images-and-legal-terms/photographic-archive-and-use-images-works",
+        "policy": "Thyssen states rights to reproductions and disallows partial/detail modification without prior written authorization. Approved Stom Supper at Emmaus painting does not carry unrestricted commercial photograph grant.",
+        "next": "Find separately open-license same Stom object photograph; no paid museum licence or communication.",
+        "painting_approval_preserved": true,
+        "exact_photo_global_release_cleared": false
+      }
     },
     {
       "date": "2026-04-07",
@@ -550,7 +582,18 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "followup_source_policy_review_20261027": {
+        "date": "2026-04-07",
+        "institution": "KMSKA Antwerp",
+        "exact_photo_rights": "MUSEUM_PUBLISHED_FREE_PUBLIC_DOMAIN_PHOTO_POLICY_VERIFY_EXACT_TIF_AND_PROFESSIONAL_USAGE_EXCEPTION",
+        "policy_url": "https://vriend.kmska.be/en/disclaimer",
+        "object_url": "https://kmska.be/en/masterpiece/epitaph-of-nicolaas-rockox-and-his-wife-adriana-perez",
+        "policy": "General KMSKA disclaimer: public-domain artwork photographs downloadable free with no restrictions; object page presents a TIF download but invites contacting the museum for professional use. Interpret discrepancy conservatively until exact-file terms are reconciled.",
+        "next": "Verify TIF depicts central 307 panel rather than whole 307–311 triptych; capture source checksum, reuse declaration and painted edges; no contacting.",
+        "painting_approval_preserved": true,
+        "exact_photo_global_release_cleared": false
+      }
     },
     {
       "date": "2026-04-08",
