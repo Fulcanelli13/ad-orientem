@@ -616,7 +616,7 @@ function render(){
           :(isFr()?row.titleFr:row.titleEn)
       }));
       chapters.push({id:daily?"daily-finished":"examen-finished",title:L("Prayer completed","Prière terminée")});
-      const index=daily?S.dailyStep:S.examenStep;
+      const index=daily?clampPrayerCardStep(S.dailyStep,rows.length):S.examenStep;
       const reader=installSequentialDevotionalReader({
         mount:m,kind:daily?"daily":"examen",chapters,activeIndex:index,
         paragraphSelector:".aoTP381GuideCard>p,.aoTP381TextParagraph",
@@ -886,7 +886,7 @@ function handleClick(e){
    }
    if(b.hasAttribute("data-tp381-examen-return")){
      S.route="pray.morning_evening";S.returnToDaily=false;S.dailyMode="guided";
-     S.dailyStep=Math.min(S.dailyStep+1,guidedDailyCards("evening").length);return render();
+     S.dailyStep=Math.min(S.dailyStep+1,dailyReadingPlan().rows.length);return render();
    }
    if(b.hasAttribute("data-tp381-examen-overview")){S.examenStep=0;return render()}
 
