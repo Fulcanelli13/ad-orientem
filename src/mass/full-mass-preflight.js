@@ -79,11 +79,12 @@ export function mountFullMassPreflight({
   let allSoulsSuccession=null;
   const successionFor=legacy=>{
     const massNumber=getAllSoulsMassChoice(legacy);
+    const canonical=getCalendarState?.()?.resolution;
     if(![1,2,3].includes(massNumber)||
+       canonical?.date!==legacy?.date||canonical?.status!=="ready"||
        !is1962AllSoulsCalendarMass({
-         ...legacy,calendarDay:legacy?.calendarDay?.raw?.main??
-           legacy?.calendarDay
-       }))return null;
+         ...legacy,calendarDay:canonical.day?.main
+       },canonical.proper))return null;
     const current=allSoulsSuccession?.date===legacy.date&&
       allSoulsSuccession.massNumber===massNumber?allSoulsSuccession:null;
     return Object.freeze({
@@ -458,8 +459,10 @@ export function mountFullMassPreflight({
        is1962AllSoulsCalendarMass({
          ...legacy,calendarDay:authoritativeDay.day?.main
        },authoritativeDay.proper)&&
-       (!legacy?.properSource||legacy.properSource===chosenOriginal)&&
-       (!properPath||properPath===chosenOriginal);
+       (!legacy?.properSource||legacy.properSource===chosenOriginal||
+         legacy.properSource==="Sancti/11-02m1")&&
+       (!properPath||properPath===chosenOriginal||
+         properPath==="Sancti/11-02m1");
     const chosenAllSoulsMass=allSoulsDay?getAllSoulsMassChoice(legacy):1;
     if(allSoulsSuccession && (
       !allSoulsDay||allSoulsSuccession.date!==date||

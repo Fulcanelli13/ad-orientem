@@ -859,6 +859,14 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
       const allSoulsMassNumber=getAllSoulsMassChoice(resolvedMass);
       const originalNumber=Number(/^sancti:11-02m([123]):1:b$/.exec(
           String(calendarResolution?.day?.main?.id??""))?.[1]??0);
+      if(originalNumber&&allSoulsMassNumber===originalNumber&&
+         is1962AllSoulsCalendarMass({
+           ...resolvedMass,calendarDay:calendarResolution.day.main
+         },calendarResolution.proper)){
+        // The host's own Proper may still refer to Mass I. The Calendar's
+        // selected original proper is the authoritative Mass II/III donor.
+        presentedProper=calendarResolution.proper;
+      }
       if(originalNumber&&allSoulsMassNumber!==originalNumber){
         if(!is1962AllSoulsCalendarMass({
           ...resolvedMass,calendarDay:calendarResolution?.day?.main
@@ -907,8 +915,7 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
         const canonical=calendarResolution?.date===resolvedMass.date
           ?calendarResolution:await runtime()?.resolver?.resolveDay?.(resolvedMass.date);
         if(!is1962AllSoulsCalendarMass({
-          ...resolvedMass,calendarDay:resolvedMass.calendarDay?.raw?.main??
-            resolvedMass.calendarDay??canonical?.day?.main
+          ...resolvedMass,calendarDay:canonical?.day?.main
         },canonical?.proper))
           throw Error("RITUS_XIV_NON_AUTHENTIC_CALENDAR_SOURCE");
         if(chosen.allSoulsSuccession.massNumber!==allSoulsMassNumber||
@@ -958,10 +965,17 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
   const state = { installed: false, polls: 0, controller: null, rogationPreflight: null, fullMassPreflight: null, fullMassCatalogue: null, observedSource: null, localOrations: null, allSoulsMassChoice:null };
   function authenticAllSoulsMass(legacy){
     const day=runtimeState()?.resolution;
-    if(!legacy||day?.date!==legacy.date)return false;
-    return is1962AllSoulsCalendarMass(
-      {...legacy,calendarDay:legacy.calendarDay?.raw?.main??
-        legacy.calendarDay??day.day?.main},day.proper);
+    if(!legacy||day?.date!==legacy.date||day.status!=="ready")return false;
+    // The historical host still exposes the default first Mass, even
+    // when the canonical Calendar has selected its second/third Proper.
+    // Only the exact authoritative 1962 principal/Proper pair may decide.
+    const principal=day.day?.main;
+    if(!is1962AllSoulsCalendarMass({
+      ...legacy,calendarDay:principal
+    },day.proper))return false;
+    const source=String(legacy.properSource??"");
+    return !source||source==="Sancti/11-02m1"||
+      source===String(day.proper?.data?.sourcePath??"");
   }
   function selectedAllSoulsMass(legacy){
     if(!authenticAllSoulsMass(legacy))return 1;
