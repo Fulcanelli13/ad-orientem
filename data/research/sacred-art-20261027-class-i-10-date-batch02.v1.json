@@ -1,5 +1,5 @@
 {
-  "schema": "AO_CLASS_I_ART_BATCH02_TEN_OPEN_DATES_V1",
+  "schema": "AO_CLASS_I_ART_BATCH02_TEN_DATES_WITH_1962_MASS_READINGS_AND_IMAGE_CONTEXT_V2",
   "created": "2026-10-27",
   "state": "USER_SELECTION_PENDING",
   "previous_batch": "data/research/sacred-art-20261027-class-i-10-date-batch01.v1.json",
@@ -26,7 +26,9 @@
           "source_url": "https://kmska.be/en/masterpiece/the-adoration-of-the-magi-6",
           "comments": "KMSKA museum oil 1624–25; large expressive altar panel, photo terms need exact check",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "The Magi kneel before the Christ Child in a monumental Baroque setting.",
+          "scripture_fit": "DIRECT_GOSPEL"
         },
         {
           "code": "B",
@@ -35,7 +37,9 @@
           "source_url": "https://www.boijmans.nl/en/collection/artworks/2008",
           "comments": "Boijmans museum oil c1655, richly Baroque, exact museum image reuse not certified",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "Wise men offer gifts to the Child in a richly populated Flemish interior.",
+          "scripture_fit": "DIRECT_GOSPEL"
         },
         {
           "code": "C",
@@ -44,10 +48,19 @@
           "source_url": "https://collection.nmwa.go.jp/en/P.2025-0002.html",
           "comments": "Japanese NMWA museum oil c1687–89, wide Baroque painting; photograph terms unverified",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "The visiting kings and their retinue gather at the Nativity.",
+          "scripture_fit": "DIRECT_GOSPEL"
         }
       ],
-      "user_vote": null
+      "user_vote": null,
+      "liturgical_1962": {
+        "epistle": "Isaiah 60:1–6",
+        "gospel": "Matthew 2:1–12",
+        "reading_summary": "The nations and kings are drawn to Jerusalem's light; the Magi follow the star, adore the Child and offer gold, frankincense and myrrh.",
+        "theme": "Manifestation of Christ to the Gentiles",
+        "source": "https://latinmasspropers.com/mass/epiphany-of-the-lord/"
+      }
     },
     {
       "number": 2,
@@ -63,7 +76,9 @@
           "source_url": "https://www.gidsen.kmska.be/en/masterpiece/the-lamentation-over-the-dead-christ-2",
           "comments": "KMSKA c1640, Christ at rock-hewn tomb and Virgin grief; strong Baroque horizontal canvas; photograph rights source-specific",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "The Virgin and disciples mourn the dead Christ at the tomb.",
+          "scripture_fit": "THEMATIC_BEFORE_VIGIL_RESURRECTION"
         },
         {
           "code": "B",
@@ -72,10 +87,25 @@
           "source_url": "https://kmska.be/en/masterpiece/the-lamentation-over-the-dead-christ-0",
           "comments": "KMSKA 1614 oil on panel, 55×73cm, dramatically lit grief; exact photo licence not presumed",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "The dead Christ is mourned by those closest to Him.",
+          "scripture_fit": "THEMATIC_BEFORE_VIGIL_RESURRECTION"
         }
       ],
-      "user_vote": null
+      "user_vote": null,
+      "liturgical_1962": {
+        "prophecies": [
+          "Genesis 1:1–2:2 (Creation)",
+          "Exodus 14:24–15:1 (Passage through the Sea)",
+          "Isaiah 4:2–6 (purification and glory)",
+          "Deuteronomy 31:22–30 (Moses' testimony)"
+        ],
+        "epistle": "Colossians 3:1–4",
+        "gospel": "Matthew 28:1–7",
+        "reading_summary": "Creation and deliverance prepare for baptism and the Resurrection; the women find the empty tomb and hear the angel's proclamation that Christ is risen.",
+        "theme": "From the darkness of the tomb to the victory of the Resurrection",
+        "source": "https://catholic-resources.net/Lectionary/Roman_Missal.htm"
+      }
     },
     {
       "number": 3,
@@ -91,19 +121,37 @@
           "source_url": "https://www.nga.gov/artworks/41637-christ-sea-galilee",
           "comments": "NGA official open image; scholarly record confirms *post-Resurrection John 21*, seven apostles and dawn; avoid asserting Tintoretto authorship",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "At dawn the risen Christ directs the seven disciples' nets from the shore; Peter prepares to leap into the water.",
+          "scripture_fit": "EXACT_GOSPEL_JOHN21"
         },
         {
           "code": "B",
-          "artist": "Alessandro Magnasco",
-          "title": "Christ at the Sea of Galilee",
-          "source_url": "https://www.nga.gov/artworks/12129-christ-sea-galilee",
-          "comments": "NGA Open Access; dark turbulent seascape, but exact John 21 identification less clear than A",
-          "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "artist": "Konrad Witz",
+          "title": "The Miraculous Draught of Fishes",
+          "source_url": "https://utpictura18.univ-amu.fr/notice/10318-peche-miraculeuse-konrad-witz",
+          "comments": "1444 Geneva altarpiece; contains John 21 catch with Matthew 14 Peter-on-water motif; photographic rights remain uncertain",
+          "license_review": "MUSEUM_PHOTOGRAPH_REUSE_RESTRICTED_NEEDS_DIFFERENT_FREE_REPRODUCTION",
+          "user_selection": null,
+          "previous_candidate": {
+            "artist": "Alessandro Magnasco",
+            "title": "Christ at the Sea of Galilee",
+            "source_url": "https://www.nga.gov/artworks/12129-christ-sea-galilee",
+            "rejection_reason": "NGA object is Peter rescued from water (Matthew 14), not the Resurrection fishing scene (John 21); subject mismatch",
+            "user_rejected": false
+          },
+          "depicts": "Christ stands near Lake Geneva imagined as Galilee while the Apostles make the miraculous catch; image combines the catch with Peter on the water.",
+          "scripture_fit": "JOHN21_WITH_MATTHEW14_CONFLATION"
         }
       ],
-      "user_vote": null
+      "user_vote": null,
+      "liturgical_1962": {
+        "epistle": "Acts 3:13–15, 17–19",
+        "gospel": "John 21:1–14",
+        "reading_summary": "Peter preaches Christ's Resurrection; at dawn the risen Lord appears to seven disciples by Lake Tiberias, tells them to cast the net and offers them bread and fish.",
+        "theme": "Risen Christ on the shore; the miraculous catch of 153 fish",
+        "source": "https://latinmasspropers.com/mass/wednesday-in-the-octave-of-easter/"
+      }
     },
     {
       "number": 4,
@@ -119,7 +167,9 @@
           "source_url": "https://www.nationalgallery.org.uk/paintings/titian-noli-me-tangere",
           "comments": "National Gallery, London c1514; full oil, Gospel exact; current NG reproduction terms unsuitable for unrestricted derivatives",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "Risen Christ meets Mary Magdalene in the garden, who turns to Him in recognition.",
+          "scripture_fit": "EXACT_GOSPEL_JOHN20"
         },
         {
           "code": "B",
@@ -128,10 +178,19 @@
           "source_url": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/31972/Barocci%20Federico%20%28Barocci%29%2C%20Apparizione%20di%20Cristo%20risorto%20a%20santa%20Maria%20Maddalena",
           "comments": "Alte Pinakothek Munich inv494; late 16th-century oil; independent image reuse verification pending",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "Christ appears to Mary Magdalene after His Resurrection.",
+          "scripture_fit": "EXACT_GOSPEL_JOHN20"
         }
       ],
-      "user_vote": null
+      "user_vote": null,
+      "liturgical_1962": {
+        "epistle": "Acts 8:26–40",
+        "gospel": "John 20:11–18",
+        "reading_summary": "Philip baptizes the Ethiopian official; Mary Magdalene recognizes the risen Jesus when He calls her by name, and He tells her not to cling to Him.",
+        "theme": "Resurrection recognition, faith and baptism",
+        "source": "https://latinmasspropers.com/mass/thursday-in-the-octave-of-easter/"
+      }
     },
     {
       "number": 5,
@@ -147,7 +206,9 @@
           "source_url": "https://www.rijksmuseum.nl/en/collection/object/Christus-geneest-een-verlamde-man-die-door-het-dak-werd-neergelaten--d3dd97fd936ec658fe24cb8663a0eb50",
           "comments": "Rijksmuseum public-domain engraving, full composition precisely illustrates Luke 5; monochrome, not oil",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "The friends of a paralyzed man lower him through the roof before Jesus, who forgives and heals him.",
+          "scripture_fit": "EXACT_GOSPEL_LUKE5_ENGRAVING"
         },
         {
           "code": "B",
@@ -156,10 +217,19 @@
           "source_url": "https://opencollection.brooklynmuseum.org/objects/4504",
           "comments": "Brooklyn Museum watercolor, physically exact John/Luke gospel scene; photo-use to confirm",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "Tissot renders the crowded house and disabled man descending through the roof.",
+          "scripture_fit": "EXACT_GOSPEL_LUKE5_WATERCOLOR"
         }
       ],
-      "user_vote": null
+      "user_vote": null,
+      "liturgical_1962": {
+        "epistle": "Joel 2:23–24, 26–27",
+        "gospel": "Luke 5:17–26",
+        "reading_summary": "God promises abundance and His abiding presence; Jesus forgives and heals the paralytic lowered through the roof.",
+        "theme": "Healing of body and soul in the Pentecost octave",
+        "source": "https://latinmasspropers.com/mass/ember-friday-of-pentecost/"
+      }
     },
     {
       "number": 6,
@@ -175,7 +245,9 @@
           "source_url": "https://www.nga.gov/artworks/4392-christ-man-sorrows-foot-cross",
           "comments": "NGA public-domain engraving; Christ with visible chalice and Eucharistic bread; new more precise subject but not an oil painting",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "Christ as the Man of Sorrows and signs of the Eucharist: a symbolic depiction of Blood and redemption, not the physical lance wound.",
+          "scripture_fit": "TYPOLOGICAL_SYMBOLIC_PRINT"
         },
         {
           "code": "B",
@@ -184,10 +256,19 @@
           "source_url": "https://www.metmuseum.org/art/collection/search/434386",
           "comments": "Met public-domain engraving c1596–98; Precious Blood symbolic winepress imagery, not an oil painting",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "Christ is pressed like grapes in a mystical winepress, an allegory of His Blood poured out for salvation.",
+          "scripture_fit": "TYPOLOGICAL_SYMBOLIC_PRINT"
         }
       ],
-      "user_vote": null
+      "user_vote": null,
+      "liturgical_1962": {
+        "epistle": "Hebrews 9:11–15",
+        "gospel": "John 19:30–35",
+        "reading_summary": "Christ enters the sanctuary as High Priest through His own Blood; at the Crucifixion His side is pierced and blood and water flow out.",
+        "theme": "Redemption through the Precious Blood",
+        "source": "https://latinmasspropers.com/mass/the-precious-blood-of-our-lord-jesus-christ/"
+      }
     },
     {
       "number": 7,
@@ -203,7 +284,9 @@
           "source_url": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
           "comments": "Reuse existing Saint Michael module and user-selected Guardian Angel module painting; original-image photographic gate already documented",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "Armoured Michael triumphs over Satan. This is traditional Michael iconography, not the Gospel scene of children and guardian angels.",
+          "scripture_fit": "FEAST_ICONOGRAPHY_NOT_LITERAL_READING"
         },
         {
           "code": "B",
@@ -212,10 +295,19 @@
           "source_url": "https://www.metmuseum.org/art/collection/search/437729",
           "comments": "Met official Open Access/CC0, c1640s; distinct Spanish Baroque archangel portrait",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "Michael stands armed above evil in a bright Baroque heavenly vision; it illustrates his victory, not the exact Matthew reading.",
+          "scripture_fit": "FEAST_ICONOGRAPHY_NOT_LITERAL_READING"
         }
       ],
-      "user_vote": null
+      "user_vote": null,
+      "liturgical_1962": {
+        "epistle": "Apocalypse 1:1–5",
+        "gospel": "Matthew 18:1–10",
+        "reading_summary": "God's revelation is communicated through an angel; Christ speaks of little children, humility and their angels who behold the Father's face.",
+        "theme": "Heavenly angels as servants of God and protectors of the faithful",
+        "source": "https://latinmasspropers.com/mass/dedication-of-st-michael-the-archangel/"
+      }
     },
     {
       "number": 8,
@@ -231,7 +323,9 @@
           "source_url": "https://www.clevelandart.org/art/1959.189",
           "comments": "Cleveland c1680 full painting official OA; crescent moon, angels, warm-cloud Baroque",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "The Virgin is suspended above the crescent moon among angels, immaculate and triumphant; iconography of the doctrine.",
+          "scripture_fit": "DOCTRINAL_ICONOGRAPHY_NOT_GOSPEL_SCENE"
         },
         {
           "code": "B",
@@ -240,10 +334,19 @@
           "source_url": "https://www.metmuseum.org/art/collection/search/437423",
           "comments": "Metropolitan Museum original accession 59.32, Guido Reni The Immaculate Conception (1627), official Open Access photo, lighter than Murillo but major altarpiece",
           "license_review": "MET_PUBLIC_DOMAIN_IMAGE_SOURCE_PUBLISHED_BYTE_CHECK_PENDING",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "Reni depicts Mary surrounded by heavenly light as the Immaculate Virgin.",
+          "scripture_fit": "DOCTRINAL_ICONOGRAPHY_NOT_GOSPEL_SCENE"
         }
       ],
-      "user_vote": null
+      "user_vote": null,
+      "liturgical_1962": {
+        "epistle": "Proverbs 8:22–35",
+        "gospel": "Luke 1:26–28",
+        "reading_summary": "The liturgy applies Wisdom's ancient words to Mary's privileges; Gabriel greets her as full of grace. The feast celebrates Mary's preservation from original sin.",
+        "theme": "Immaculate Conception, not the conception of Christ at the Annunciation",
+        "source": "https://latinmasspropers.com/mass/immaculate-conception-of-the-blessed-virgin-mary/"
+      }
     },
     {
       "number": 9,
@@ -259,7 +362,9 @@
           "source_url": "https://www.nga.gov/artworks/267-annunciation-shepherds",
           "comments": "NGA OA c1555–60, exact annunciation to shepherds as thematic anticipation (event itself belongs to Christmas night, not vigil Gospel)",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "An angel announces the birth of Christ to shepherds at night; event occurs AFTER the birth in Luke 2, not in this day's Matthew Gospel.",
+          "scripture_fit": "ANTICIPATORY_NOT_VIGIL_GOSPEL"
         },
         {
           "code": "B",
@@ -268,10 +373,30 @@
           "source_url": "https://www.clevelandart.org/art/1916.807",
           "comments": "Cleveland OA c1510 dark Nativity with Joseph's candle; anticipatory rather than vigil Gospel; user dislikes old-Joseph depictions, inspect",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "Shepherds adore the newborn Child; Christmas-night subject, not the Vigil's Joseph dream.",
+          "scripture_fit": "ANTICIPATORY_NOT_VIGIL_GOSPEL"
+        },
+        {
+          "code": "C",
+          "artist": "Gaetano Gandolfi",
+          "title": "Joseph's Dream",
+          "source_url": "https://act.library.vanderbilt.edu/artworks/54282",
+          "comments": "c.1790 oil painting; angel addresses young/mature sleeping Joseph; Matthew 1:18–25 direct Gospel, photo source Commons faithful-image claim needs exact check",
+          "license_review": "COMMONS_EXACT_FILE_PD_ART_NOT_GLOBAL_SIGNOFF",
+          "user_selection": null,
+          "depicts": "Joseph sleeps while an angel tells him to receive Mary and accept the coming Child; corresponds directly to the Vigil Gospel.",
+          "scripture_fit": "EXACT_VIGIL_GOSPEL_ETCHING"
         }
       ],
-      "user_vote": null
+      "user_vote": null,
+      "liturgical_1962": {
+        "epistle": "Romans 1:1–6",
+        "gospel": "Matthew 1:18–21",
+        "reading_summary": "Christ is the promised descendant of David; an angel tells Joseph to receive Mary, for her child is conceived of the Holy Ghost, and to name Him Jesus.",
+        "theme": "Joseph's obedience and expectancy before the Nativity",
+        "source": "https://latinmasspropers.com/mass/vigil-of-christmas/"
+      }
     },
     {
       "number": 10,
@@ -287,7 +412,9 @@
           "source_url": "https://www.clevelandart.org/art/1968.100",
           "comments": "Cleveland OA, Neapolitan dark interior around radiant Child and Gloria angels",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "The shepherds kneel by the manger in a dark Neapolitan setting lit by the newborn Christ; especially suited to the Midnight and Dawn Gospels.",
+          "scripture_fit": "NATIVITY_DIRECT_MIDNIGHT_DAWN"
         },
         {
           "code": "B",
@@ -296,18 +423,48 @@
           "source_url": "https://www.clevelandart.org/art/1968.22",
           "comments": "Cleveland OA c1670, vertical dark-cloud baroque; includes Joseph, test age depiction",
           "license_review": "EXACT_FILE_NOT_YET_SIGNED_OFF",
-          "user_selection": null
+          "user_selection": null,
+          "depicts": "The Holy Family, shepherds and Child in a luminous vertical Nativity; chiefly Luke 2, and thematically the Incarnation of John's prologue.",
+          "scripture_fit": "NATIVITY_DIRECT_MIDNIGHT_DAWN"
         }
       ],
-      "user_vote": null
+      "user_vote": null,
+      "liturgical_1962": {
+        "midnight": {
+          "epistle": "Titus 2:11–15",
+          "gospel": "Luke 2:1–14"
+        },
+        "dawn": {
+          "epistle": "Titus 3:4–7",
+          "gospel": "Luke 2:15–20"
+        },
+        "day": {
+          "epistle": "Hebrews 1:1–12",
+          "gospel": "John 1:1–14"
+        },
+        "reading_summary": "Three Christmas Masses: at Midnight the birth and angelic announcement; at Dawn the shepherds visit the Child; by Day the eternal Word made flesh.",
+        "theme": "One shared Christmas hero must work across the three Masses",
+        "source": "https://catholic-resources.net/Lectionary/Roman_Missal.htm"
+      }
     }
   ],
   "counts": {
     "dates": 10,
-    "candidates": 21,
+    "candidates": 22,
     "prior_batch_selected": 5,
     "prior_batch_research_more": 5,
     "this_batch_approved": 0,
     "app_release": 0
+  },
+  "user_requested_review_UI": {
+    "decision_under_each_painting": true,
+    "ten_feasts_in_single_horizontal_carousel": true,
+    "one_synchronized_choice_per_date": true,
+    "none_on_same_feast_panel": true,
+    "submit_all_at_end": true,
+    "context_before_images": true,
+    "scripture_fit_label": "literal / anticipatory / typological / feast iconography",
+    "all_choice_originals_user_unapproved": true,
+    "photographic_release": false
   }
 }
