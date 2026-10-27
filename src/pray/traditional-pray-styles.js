@@ -146,6 +146,13 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 #aoPray435930 .aoDailyFormulationChoices button[aria-pressed="true"]{color:var(--liturgical,#c7ae6d);border-color:var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.07))}
 #aoPray435930 .aoTP381GuideCard .aoDailyFormulationChoices+.aoTP381PrayerCard{padding:0}
 
+
+/* Future Short/Complete source profiles: invisible until an entire profile is approved. */
+#aoPray435930 .aoDailyLengthChoices{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:8px 14px 4px}
+#aoPray435930 .aoDailyLengthChoices button{padding:8px 12px;min-height:42px;border-radius:999px;border:1px solid var(--border,rgba(255,255,255,.17));background:transparent;color:var(--muted,#aeb2b8);font:500 .78rem/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoDailyLengthChoices button[aria-pressed="true"]{color:var(--liturgical,#c7ae6d);border-color:var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.08))}
+@media(max-width:360px){#aoPray435930 .aoDailyLengthChoices button{flex:1;min-width:0}}
+
 `;
 
 export function installTraditionalPrayStyles(doc=globalThis.document){
