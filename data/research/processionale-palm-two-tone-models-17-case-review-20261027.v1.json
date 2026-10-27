@@ -721,5 +721,22 @@
     "noPricing": true,
     "noRuntimeChange": true,
     "publicationAllowed": false
+  },
+  "batch28CadenceFamilies": {
+    "evidencePath": "data/research/processionale-palm-four-cadence-families-17-case-20261027.v1.json",
+    "status": "SAME_SOURCE_FAMILY_4_OTHER_CLASS_ADAPTATION_10_SPECIAL_EXCEPTION_3",
+    "sameSourceAccentClassCases": 4,
+    "otherAccentClassAdaptationCases": 10,
+    "specialExceptions": 3,
+    "sourceOwnedFamilies": [
+      "PALM_PS23_PAROXYTONON_2",
+      "PALM_PS23_PROPAROXYTONON_3",
+      "PALM_PS46_PAROXYTONON_2",
+      "PALM_PS46_PROPAROXYTONON_3"
+    ],
+    "editorialMethod": "One approved first-verse identity per Psalm then authorize the correct 2/3-syllable accent-class cadence formula separately for each source tone. Doxology Amen and Abraham held separately.",
+    "modelApproval": false,
+    "fullGabcBulkGeneratorEligible": false,
+    "noProductionPromotion": true
   }
 }
