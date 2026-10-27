@@ -94,7 +94,7 @@ const GROUPS=Object.freeze({
     after:[{block:"B084"}],
   }),
   "AO.CARD.029":Object.freeze({
-    titles:["Placeat tibi · Closing Prayer","Final Blessing"],
+    titles:["Priest silently prays · Placeat tibi","Final Blessing"],
     after:[{block:"B091"}],
   }),
   "AO.CARD.030":Object.freeze({
