@@ -105,20 +105,20 @@
         {
           "stage": "hope",
           "witness": {
-            "type": "historical-occurrence-id",
-            "id": "AO.DAILY.B01.049"
+            "type": "historical-form-id",
+            "id": "b11-lasance-morning-hope"
           },
           "required": true,
-          "notes": "Source paragraph spans original pp.137–138; full scan body NOT yet certified. HOLD."
+          "notes": "Full 1911 pp137–138 checked on original images B11; wording preserved."
         },
         {
           "stage": "charity",
           "witness": {
-            "type": "historical-occurrence-id",
-            "id": "AO.DAILY.B01.050"
+            "type": "historical-form-id",
+            "id": "b11-lasance-morning-love"
           },
           "required": true,
-          "notes": "Printed p.138 original scan still pending complete-form verification. HOLD."
+          "notes": "Full 1911 p138 checked on original image B11."
         },
         {
           "stage": "supplication",
@@ -149,8 +149,8 @@
         }
       ],
       "editorial_status": "PROPOSAL_NOT_USER_APPROVED",
-      "release_status": "HELD_NEEDS_PRINT_VERIFIED_STAGES",
-      "hold_notes": "Hope and Charity original English complete text and language witness unresolved."
+      "release_status": "REQUIRES_CANONICAL_TEXT_RIGHTS_REVIEW",
+      "hold_notes": "Core historical acts are fully image checked; historical-source canonical common prayer wording and jurisdictional rights review still pending."
     },
     {
       "id": "evening-short-en",
@@ -611,5 +611,6 @@
     "user_formulation_preferences": "saved by stage and language; default choices proposed only",
     "combined_forms": "one form can satisfy several stages but only renders once per recitation",
     "complementary_night_prayers": "Salva nos, Visita and St Alphonsus may be selected together, not exclusive textual variants"
-  }
+  },
+  "b11_update": "B11 image-checked 14 complete original English texts from 8 print-page images (including full Lasance morning Hope and Charity); proposed Morning Complete EN no longer held for those forms."
 }
