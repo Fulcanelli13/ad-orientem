@@ -78,3 +78,33 @@ Remaining **194 unmapped cases** retain all their separate source/permission/par
 **Production sequencing:** source PR #1747 before dependent #1751 then #1761, rerun this actual 365-date audit after each source merge, and never introduce a Calendar-only fake Preface correction. Unmergeable historical broad PR #1083 remains research rather than a second live global resolver. The €0 art security issue #1756 was resolved in merged #1765; permanent art originals remain in guarded research branches and production workflow permissions remain read-only.
 
 **Release hold:** Ordo PR #1739 remains DRAFT and unmerged pending supported source gates, EN/FR mobile visual acceptance and explicit approval. No art/photo, local custom, 2020 Preface or Office entitlement approval is implied.
+
+
+## B03 — fully integrated Mass source chain and unchanged raw Calendar backlog
+
+**Operational baseline as of 27 October 2026; supersedes any B01/B02 statements that #1747/#1751/#1761 remain unmerged.**
+
+The ordered Mass repair programme was integrated into **one production main**, with full Required Main, App, R17 65-card reader and phone browser acceptance before each merge:
+
+- [#1783](https://github.com/Fulcanelli13/ad-orientem/pull/1783): two 2026 June Sundays with source-verified `Prefatio1960=Trinitate` at the shared resolved Proper level.
+- [#1747](https://github.com/Fulcanelli13/ad-orientem/pull/1747): 22 Lenten weekday and eight Pentecost Vigil/octave Prefaces corrected at the **native reader's selected-text** recovery boundary.
+- [#1751](https://github.com/Fulcanelli13/ad-orientem/pull/1751): 14 real 2026 Easter Preface cases, selecting exactly one authentic Paschal `in hac potissimum nocte` / `in hac potissimum die` / `in hoc potissimum` clause in the native reader.
+- [#1761](https://github.com/Fulcanelli13/ad-orientem/pull/1761): the authenticated missing 12 April 2026 In Albis Secret recovered from exact trilingual source witnesses; native Collect/Secret/Postcommunion and Preface slots ready. [Issue #1758](https://github.com/Fulcanelli13/ad-orientem/issues/1758) completed.
+
+These are **46 distinct tested Preface dates (2+30+14)**, plus one distinct Secret recovery (12 April, whose Paschal Preface was already in the 14-date coverage). They are **not** 47 Calendar source assertions resolved, and the 46 test fixtures and actual calendar dates do not by themselves establish global text correctness.
+
+[Calendar Ordo source integration commit `994d77e1`](https://github.com/Fulcanelli13/ad-orientem/commit/994d77e1446fc78daf5cf6339590baf088867904) imported every completed Mass repair into the **existing** Grid/Ordo Calendar branch while preserving its thirteen intended files and no alternate day resolver. The [fresh 365-day production Calendar audit #40463708406](https://github.com/Fulcanelli13/ad-orientem/actions/runs/40463708406) **PASSED** on that exact new code: 365/365 dates resolved, 72/72 independent checkpoints, zero missing rank/colour/title, zero discrepancy, zero independent Preface editorial certifications.
+
+| Independently screened source attribute | B02 before #1747/#1751/#1761 | B03 after all three merges |
+|---|---:|---:|
+| General Roman Preface heading/rule agreements | 119 | **119** |
+| **Raw canonical Proper source conflicts** | 50 | **50** |
+| Unmapped principal Preface rules | 194 | **194** |
+| Good Friday not-Mass / All Souls special hold | 2 | **2** |
+| Editorially certified Prefaces | 0 | **0** |
+
+**Proven boundary:** the 30 Lent/Pentecost and 14 Easter repairs are reader-source selection corrections, not changes to `AO_RUNTIME_V8.resolver.resolveDay(...).proper.data.preface` for their 2026 canonical raw sources. The independent Ordo reviewer intentionally reads that raw Proper and still reports their historical conflicts. No Calendar-only override may hide these 50 records. The two June shared resolver fixes *did* reduce the source conflict total from 52 to 50, and that is the only currently observed raw-data reduction.
+
+**Remaining source-ownership strategy:** retain the real unresolved 50 conflict queue (30 already known authentic reader source selections, 12 Easter/Ascension source cases, five named sanctoral, three Advent Sundays), and separately investigate how authenticated universal rules can be incorporated into the single shared canonical source selection **without** changing raw donor provenance or damaging reader's source-completeness tests. Never treat an already-correct reader text as a pretext to mark source certified. The 194 currently unmapped require grouped primary-book authority, not title/colour heuristics or optional local rubrics.
+
+**Release boundary:** PR #1739 remains DRAFT, not merged. Tested phone month UI and 2026 audit succeeded at imported Mass-code head. Manual EN/FR mobile visual review and source/rubric holds remain. The Gregorian Roman 1962 general Calendar is not interchangeable with the particular ICRSP France Ordo. No optional 2020 Preface, office, Mass alternative or local custom permission has been inferred.
