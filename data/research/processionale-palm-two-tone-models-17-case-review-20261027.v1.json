@@ -1531,5 +1531,29 @@
       "renderJobId": 122232484479,
       "musicEditorCertified": 0
     }
+  },
+  "batch34CompletionResearch": {
+    "source": "data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json",
+    "status": "FIFTEEN_COMPLETE_GABC_RESEARCH_ONLY_CANDIDATES_TWO_AMEN_HELD",
+    "initialCompleteGabc": 9,
+    "psalm23FlexedFullGabc": 2,
+    "highRiskUnapprovedGabc": 4,
+    "totalCompleteResearchGabc": 15,
+    "remainingNoGabcIds": [
+      "PALM-R02-PS23-DOXO-L12",
+      "PALM-R02-PS46-DOXO-L12"
+    ],
+    "physicalChantOccurrencesRepresented": 16,
+    "specialExtraTextOnlyNoMelody": 2,
+    "explicitFourNewWarnings": [
+      "Psalm23 L10 adjacent rex/glóriae accented syllable needs specialist chant pointing",
+      "Psalm46 L05 artificial accent on the unstressed exsultatióne syllable -ta- conjectural",
+      "Psalm46 L08 extended tenor between regnat and natiónes conjectural",
+      "Psalm46 L09 extended medial tenor and externally hypothesized Hebrew proper name stress Abraham"
+    ],
+    "technicalExsurgeNewHeadPending": true,
+    "humanApprovedCount": 0,
+    "productionAssignedCount": 0,
+    "publicationAllowed": false
   }
 }
