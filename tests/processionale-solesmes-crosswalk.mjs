@@ -1999,3 +1999,31 @@ test('Ps46 L05 has no natural stress compliant one-step artificial accent assign
  assert.equal(a.explicitReviewerSignoffNeeded,true);
  assert.equal(a.releasePermitted,false);
 });
+
+
+test('Ps46 L05 preserves Ward long-word secondary accent as an unapproved rule-class candidate',()=>{
+ const master=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
+ const b=master.batch40L05LongWordAccentEvidence;
+ const old=master.batch39L05BoundedFeasibility;
+ assert.equal(b.caseId,'PALM-R02-PS46-L05');
+ assert.equal(b.preservesHistoricalBatch39,true);
+ assert.equal(old.candidatesWithSourceSupportedTwoAfterNaturalBeforeLast,0);
+ assert.equal(b.candidate.firstMusicalAccent.index,8);
+ assert.equal(b.candidate.secondMusicalAccent.index,10);
+ assert.equal(b.candidate.secondMusicalAccent.index-b.candidate.firstMusicalAccent.index,2);
+ assert.equal(b.candidate.syllablesBetweenMusicalAccents.length,1);
+ assert.equal(b.candidate.distanceAfterPreviousNatural,8-3);
+ assert.equal(b.candidate.compliesWithNpmTwoAfterPreviousNatural,false);
+ assert.equal(b.candidate.spacingPass,true);
+ assert.equal(b.candidate.needsStressedCum,false);
+ assert.equal(b.candidate.noNewPitchGroupProposed,true);
+ const p=readJSON('data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json').cases.find(x=>x.id===b.caseId);
+ assert.ok(p.gabcResearchOnly.includes(b.candidate.originalMedialGabcExcerpt));
+ assert.equal(p.musicianApproved,false);
+ assert.equal(p.productionEligible,false);
+ assert.equal(b.full1961PalmVerseNotationWitnessFound,false);
+ assert.equal(b.hasMusicalEditorialSignoff,false);
+ assert.equal(b.scorePublished,false);
+ assert.equal(b.readerRuntimeChanged,false);
+ assert.equal(b.permittedAutomaticPromotion,false);
+});
