@@ -45,12 +45,12 @@ function verifyCandidate(candidate,proper,mappedEn,mappedFr){
     return {status:"TEXT_QUALITY_REVIEW",reason:"NOT_EIGHT_WORD_INITIAL_TEXT"};
   if(!candidate.evidence?.some(r=>r.path===proper.sourcePath))
     return {status:"NOT_SOURCE_SELECTED",reason:"NO_EXACT_RESOLVED_PROPER_PATH"};
-  const english=paragraphs(mappedEn,track),french=paragraphs(mappedFr,track);
-  if(!english?.length||!french?.length)
-    return {status:"SLOT_NOT_READY",reason:"SOURCE_SELECTED_CHANT_SLOT_INCOMPLETE"};
   const pre=!NONPRE.has(track);
   const proofPart=pre?proofPartFor(proper,candidate):null;
   if(pre&&!proofPart)return {status:"SEGMENT_UNVERIFIED",reason:"NO_CERTIFIED_TRILINGUAL_PRE_GOSPEL_PART"};
+  const english=paragraphs(mappedEn,track),french=paragraphs(mappedFr,track);
+  if(!english?.length||!french?.length)
+    return {status:"SLOT_NOT_READY",reason:"SOURCE_SELECTED_CHANT_SLOT_INCOMPLETE"};
   // Exactly one independently identified chant row. Sequence plus Alleluia
   // and other multi-piece containers are never assigned one speculative score.
   const latinEn=pre?proofPart.lat:english.length===1?english[0].latin:null;
