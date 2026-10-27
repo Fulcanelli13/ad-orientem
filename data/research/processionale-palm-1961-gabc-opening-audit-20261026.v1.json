@@ -193,8 +193,8 @@
           7,
           8
         ],
-        "sourceLatinFirstHemistich": "Quis est iste rex gloriae?",
-        "sourceLatinSecondHemistich": "Dominus fortis et potens, Dominus potens in proelio.",
+        "sourceLatinFirstHemistich": "Quis est iste rex gloriae? Dominus fortis et potens,",
+        "sourceLatinSecondHemistich": "Dominus potens in proelio.",
         "firstVerseFullStaffPrinted": false,
         "secondVerseShortCuePrinted": false,
         "originalCompleteMelodyAvailable": false,
@@ -203,7 +203,9 @@
         "printedMediantAsterisk": true,
         "accentCadenceUnderlaySignedOff": false,
         "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK",
-        "flexaWarning": "Cannot copy printed rex gloriae? illustration onto this different phrase without syllabic adjustment."
+        "flexaWarning": "Source's Psalm23 flexa example is rex gloriae?, which is this line's flex phrase; distinct subsequent text still needs melodic mediation and cadence review.",
+        "flexAfter": "Quis est iste rex gloriae?",
+        "postFlexBeforeMediant": "Dominus fortis et potens,"
       },
       {
         "psalm": 23,
@@ -447,6 +449,20 @@
         "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK"
       }
     ],
-    "readOnlyNoRuntimeAssignment": true
+    "readOnlyNoRuntimeAssignment": true,
+    "refinedMarkerBoundary": {
+      "psalm": 23,
+      "line": 8,
+      "source": "Graduale Romanum 1961 p143**",
+      "markerSequence": [
+        "†",
+        "*"
+      ],
+      "flexAfter": "Quis est iste rex gloriae?",
+      "medialAfter": "Dominus fortis et potens,",
+      "finalPhrase": "Dominus potens in proelio.",
+      "sourceTranscriptionCorrected": true,
+      "manualMusicalApproval": false
+    }
   }
 }
