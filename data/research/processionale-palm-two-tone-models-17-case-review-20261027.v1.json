@@ -1555,5 +1555,28 @@
     "humanApprovedCount": 0,
     "productionAssignedCount": 0,
     "publicationAllowed": false
+  },
+  "batch35ComparativeDoxology": {
+    "path": "data/research/processionale-palm-amen-two-full-gabc-comparative-20261027.v1.json",
+    "status": "SEVENTEEN_OUT_OF_SEVENTEEN_WHOLE_GABC_RESEARCH_CANDIDATES_WITH_TWO_AMEN_MUSICAL_SOURCE_CONFLICTS",
+    "sources": "1961 Palm Graduale pp143**–144** versus fully notated 1974 Roman Gradual Tone I Gloria Patri p822 (Introit/Communion), not asserted equivalent",
+    "researchCandidates": {
+      "nineNonFlexPreviouslyRendered": 9,
+      "twoPsalm23FlexedPreviouslyRendered": 2,
+      "fourHighRiskPreviouslyRendered": 4,
+      "twoSpecialDoxologyHypothesesAwaitingRendering": 2,
+      "distinctTotal": 17
+    },
+    "originalPrinted1961DoxologySettingsFullyNotated": 0,
+    "sourceSpecificDoxologyAmenMusicalRulesConfirmed": false,
+    "noCrossEditionScorePublication": true,
+    "stillSourceContested": [
+      "Psalm23 DOXO L12: guessed first-tone Amen note-group transfer differs from published 1974 source, not marked authentic",
+      "Psalm46 DOXO L12: same text and pitch hypothesis based on Psalm23 model because both nominally 1f; edition-specific proof is missing",
+      "Whether the Pueri Hebraeorum antiphon is repeated after the doxology should follow Palm rubric, not Office psalmody differentia"
+    ],
+    "musicalApprovals": 0,
+    "productionScoreAssignments": 0,
+    "releaseEligible": false
   }
 }
