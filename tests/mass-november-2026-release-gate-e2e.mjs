@@ -78,6 +78,12 @@ try{
   // Look only at the RESOLVED source and its explicitly exposed alternatives.
   // Never count unrelated historical artwork aliases or registry strings.
   const {resolve1962AllSoulsAdditionalProper}=await import("/src/mass/1962-all-souls-source.js");
+  const firstPreface=souls?.proper?.data?.preface??null;
+  const firstPrefaceEvidence={keys:Object.keys(firstPreface??{}),
+    lat:String(firstPreface?.lat??"").slice(0,100),
+    la:String(firstPreface?.la??"").slice(0,100),
+    en:String(firstPreface?.en??"").slice(0,100),
+    fr:String(firstPreface?.fr??"").slice(0,100)};
   const candidates=[souls.proper?.data,
    ...(Array.isArray(souls.proper?.alternatives)?souls.proper.alternatives:[]),
    ...(Array.isArray(souls.proper?.data?.alternatives)?souls.proper.data.alternatives:[]),
@@ -151,7 +157,7 @@ try{
   const ordinary={overlays:[]};
   return {
    saints:{...extract(saint),forms:saintForms},
-   souls:{...extract(souls),resolvedFormularies:resolved,additionalErrors,discovery},
+   souls:{...extract(souls),resolvedFormularies:resolved,additionalErrors,firstPrefaceEvidence,discovery},
    ceremonial:{
     req:{omittedPeace:requiemOmittedOrdinaryCuesForResolvedMass(requiem),
      omittedFinalBlessing:requiemFinalBlessingOmittedCuesForResolvedMass(requiem),
@@ -238,6 +244,21 @@ try{
      },null,{timeout:60000});
      await page.evaluate(()=>globalThis.AO_CELEBRATION_API?.openPreflight?.());
      await page.waitForSelector("[data-ao-full-mass-preflight]",{timeout:30000});
+     out.host=await page.evaluate(()=>{
+       const mass=globalThis.AO_CELEBRATION_API?.getResolvedMass?.();
+       const state=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+       const inspect=x=>({sourcePath:x?.sourcePath??x?.data?.sourcePath??null,status:x?.status??null,
+         keys:Object.keys(x??{}).slice(0,15)});
+       return {massDate:mass?.date,massKeys:Object.keys(mass??{}).slice(0,50),
+         celebrationId:mass?.celebrationId,requestedCelebrationId:mass?.requestedCelebrationId,
+         celebrationType:mass?.celebrationType,calendarDay:mass?.calendarDay,
+         proper:inspect(mass?.proper),properSource:mass?.properSource,
+         selectedDate:state?.selectedDate,resolutionDate:state?.resolution?.date,
+         dayMain:state?.resolution?.day?.main,
+         resolvedProper:inspect(state?.resolution?.proper),
+         preflight:globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight,
+       };
+     });
      const container=page.locator("[data-ao-all-souls-choices]");
      out.available=await container.count()===1&&
        await container.evaluate(el=>!el.hidden);
