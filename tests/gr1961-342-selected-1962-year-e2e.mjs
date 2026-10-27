@@ -39,6 +39,7 @@ try{
   if(ledger.schema!=="ao-gr1961-342-source-slot-triage-v1"||ledger.records.length!==342)throw Error("Research ledger identity drift");
   globalThis.__gr1961ResearchLedger=ledger;
   globalThis.__gr1961ResearchVerifier=await import("/tools/mass/reconcile-gr1961-342-selected-proper.mjs");
+  globalThis.__gr1961PreGospelProofCache=new Map();
   return {candidateCount:ledger.records.length,sourceCount:ledger.summary.sourcePaths};
  });
  assert.deepEqual(init,{candidateCount:342,sourceCount:91});
@@ -47,13 +48,20 @@ try{
   const batch=dates.slice(start,start+10);
   const results=await page.evaluate(async dates=>{
    const resolver=globalThis.AO_RUNTIME_V8.resolver;
-   const {reconcile342WithSelectedMass}=globalThis.__gr1961ResearchVerifier;
+   const {reconcile342WithSelectedMass,recoverSelectedPreGospelFor342}=globalThis.__gr1961ResearchVerifier;
    const ledger=globalThis.__gr1961ResearchLedger;
+   const cache=globalThis.__gr1961PreGospelProofCache;
    return Promise.all(dates.map(async date=>{
     try{
      const resolved=await resolver.resolveDay(date);
-     const row=reconcile342WithSelectedMass(ledger,resolved,{date});
-     return {...row};
+     const original=reconcile342WithSelectedMass(ledger,resolved,{date});
+     const recovered=await recoverSelectedPreGospelFor342(ledger,resolved,{
+       hostResolver:resolver.properResolver,cache});
+     const row=reconcile342WithSelectedMass(ledger,recovered.actual,{date});
+     return {...row,
+       baselineSegmentHolds:original.unresolved.filter(r=>r.status==="SEGMENT_UNVERIFIED").length,
+       preGospelRecovery:{status:recovered.status,sourcePath:recovered.sourcePath,
+         cacheHit:recovered.cacheHit,certified:recovered.certified}};
     }catch(e){
      return {date,status:"RESOLVER_EXCEPTION",reason:String(e?.message??e),matched:[],unresolved:[],musicalApprovals:0,readerPromotions:0};
     }
@@ -76,6 +84,22 @@ try{
   compact.unresolvedCandidateDatePairs+compact.sourceMatchOccurrences,
   "Every source-qualified candidate-date pair must receive a counted disposition");
  const datesWithMatches=new Set(compact.observations.map(r=>r.date));
+ const baselineSegmentHolds=rows.reduce((n,r)=>n+(r.baselineSegmentHolds??0),0);
+ const postRecoverySegmentHolds=compact.unverifiedByStatus?.SEGMENT_UNVERIFIED??0;
+ assert.ok(postRecoverySegmentHolds<=baselineSegmentHolds,
+  "Certified source proof must not create additional unresolved pre-Gospel cases");
+ const recoveryRows=rows.filter(r=>r.preGospelRecovery?.status&&r.preGospelRecovery.status!=="NOT_IN_RESEARCH_SCOPE");
+ const recoveryStatusCounts=Object.fromEntries([...new Set(recoveryRows.map(r=>r.preGospelRecovery.status))].sort().map(status=>[
+  status,recoveryRows.filter(r=>r.preGospelRecovery.status===status).length]));
+ const sourceProofStats={baselineSegmentHolds,postRecoverySegmentHolds,
+  reductionInSegmentHolds:baselineSegmentHolds-postRecoverySegmentHolds,
+  sourceProofCacheEntries:await page.evaluate(()=>globalThis.__gr1961PreGospelProofCache.size),
+  sourceProofRelevantDates:recoveryRows.length,
+  sourceProofSourcePaths:new Set(recoveryRows.map(r=>r.preGospelRecovery.sourcePath)).size,
+  sourceProofCacheHits:recoveryRows.filter(r=>r.preGospelRecovery.cacheHit).length,
+  sourceProofCertifiedDates:recoveryRows.filter(r=>r.preGospelRecovery.certified).length,
+  byStatus:recoveryStatusCounts};
+ console.log("AO_GR1961_2026_PRE_GOSPEL_RECOVERY="+JSON.stringify(sourceProofStats));
  console.log("AO_GR1961_2026_SELECTED_PROPER_SUMMARY="+JSON.stringify({
   year:compact.year,daysChecked:compact.daysChecked,daysSourceReady:compact.daysSourceReady,
   dayResolverFailures:compact.dayResolverFailures,
@@ -91,6 +115,7 @@ try{
   unresolvedCandidateDatePairs:compact.unresolvedCandidateDatePairs,
   distinctUnresolvedCandidateIds:compact.distinctUnresolvedCandidateIds,
   unverifiedByStatus:compact.unverifiedByStatus,
+  preGospelRecovery:sourceProofStats,
   musicalFacsimileApprovals:0,editorialPromotions:0,
  }));
  console.log("AO_GR1961_2026_SELECTED_PROPER_OBSERVATIONS="+JSON.stringify(compact.observations));
