@@ -748,8 +748,15 @@ try{
   const matchedNativeReady=readerResultCounts.READER_SELECTED_CATEGORY_MATCH??0;
   const wrongNativeReady=readerResultCounts.READER_WRONG_PREFACE_READY??0;
   const blockedNative=readerResultCounts.READER_PREFACE_BLOCKED_OR_MISSING??0;
+  // The contradictory 11 February Lourdes donor is an intentional
+  // fail-closed hold. 99 correct READY slots + this one explicit MISSING
+  // slot is the only acceptable completion of the 100-case reader review.
+  const blockedLourdes=readerAuditRows.find(x=>x.date==="2026-02-11");
+  const singleExplicitHold=blockedNative===1&&
+    blockedLourdes?.result==="READER_PREFACE_BLOCKED_OR_MISSING"&&
+    blockedLourdes?.finalReaderSlot==="MISSING";
   const readerLiturgicalSourceReleaseReady=wrongNativeReady===0&&
-    matchedNativeReady===100;
+    matchedNativeReady===99&&singleExplicitHold;
   // Zero global clearance is claimed when actual native slot status or
   // source ownership is unavailable. A matching heading alone is NOT enough.
   assert.equal(Object.values(readerResultCounts).reduce((a,b)=>a+b,0),100);
