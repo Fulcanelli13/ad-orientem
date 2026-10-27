@@ -1,3 +1,5 @@
+> **B07 ERRATUM (27 Oct 2026):** The B04 claim below that Moran (1883) has no Night/Evening chapter was **incorrect**. It has a *Night Prayer* beginning on printed p. 12; nine descriptive prayer components are now registered. Updated cumulative coverage is **7 English books / 14 daypart chapter views / 155 English source occurrences**, plus **21 French-source occurrences** (176 occurrences total). **Nine complete texts** (6 French, 3 English) have now been visually checked against **three original printed-page images**, but are not published. See [B07 correction and print-image verification](DAILY-PRAYER-PRINT-TEXT-VERIFICATION-B07-20261027.md). Earlier counts and claims below are historical research snapshots, not the current totals.
+
 # Daily Prayer research — B05 English reconciliation and B06 French witness recovery
 
 27 October 2026 · Draft [PR #1785](https://github.com/Fulcanelli13/ad-orientem/pull/1785) · Research-only (no live content, no new prayer UI).
