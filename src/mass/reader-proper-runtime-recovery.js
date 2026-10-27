@@ -2,6 +2,7 @@ import {certifyPreGospelChantParts} from "./reader-pre-gospel-chant-source.js";
 import {render1962EasterPrefaceVariant} from "./1962-easter-preface-form.js";
 import {recover1962InAlbisSecretFromPinnedSource} from "./1962-in-albis-secret-source.js";
 import {required1962MarianPrefaceOwner,verifyMarianLatinSourceRule,render1962MarianPrefaceForm,isSelected1962MarianPrefaceForm} from "./1962-marian-preface-source.js";
+import {required1962SeasonalSanctoralPrefaceOwner,originalSanctoralLacksOwnPreface,matches1962SeasonalSanctoralSelection} from "./1962-seasonal-sanctoral-preface-source.js";
 const PER_DOM=Object.freeze({
   la:"Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
   en:"Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
@@ -122,7 +123,7 @@ function applyMarianPrefaceForm(text,language,form){
 // heading in these specifically matched host source files is a known
 // normalizer defect, not a liturgical option.
 // https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html
-export function authenticated1962PrefaceRecoveryOwner(principalCelebrationId,sourcePath){
+export function authenticated1962PrefaceRecoveryOwner(principalCelebrationId,sourcePath,calendarDate=null){
   const id=String(principalCelebrationId??"");
   const path=String(sourcePath??"").trim();
   const parts=id.split(":");
@@ -133,6 +134,9 @@ export function authenticated1962PrefaceRecoveryOwner(principalCelebrationId,sou
     marianForm:marian.form,blocked:marian.blocked,
     sourceOwner:marian,scope:marian.scope,
     rubric:"RGMR_495",sourcePath:path});
+  const seasonal=required1962SeasonalSanctoralPrefaceOwner(id,path,calendarDate);
+  if(seasonal)return Object.freeze({...seasonal,
+    sourcePath:path,seasonalSanctoral:seasonal});
   // Exclude selected votives, proper feast formularies, unrelated path
   // aliases and Office variants. Source ID *and* canonical source path must
   // agree before we are allowed to replace a populated Common Preface.
@@ -164,7 +168,7 @@ export function authenticated1962PrefaceRecoveryOwner(principalCelebrationId,sou
       scope:"PASCHAL_AFTER_OCTAVE_1962",rubric:"PREFATIO_PASCHALIS_1962",sourcePath:path});
   return null;
 }
-async function recoverContradictoryPreface(data,hostResolver,principalCelebrationId,diagnostic){
+async function recoverContradictoryPreface(data,hostResolver,principalCelebrationId,calendarDate,diagnostic){
   // This source correction belongs only to the selected calendar Mass.
   // Never reinterpret an expressly selected votive, Requiem or special
   // formulary, even when it happens to inherit the day's base source path.
@@ -172,8 +176,12 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
   if(requested&&requested!=="mass_of_day")return null;
   if(/(?:votive|requiem|mass_of_dead)/i.test(String(data?.riteProfile??data?.profile??"")))
     return null;
-  const owner=authenticated1962PrefaceRecoveryOwner(principalCelebrationId,data?.sourcePath);
+  const owner=authenticated1962PrefaceRecoveryOwner(principalCelebrationId,data?.sourcePath,calendarDate);
   if(!owner||owner.blocked)return null;
+  if(owner.seasonalSanctoral){
+    const original=await hostResolver.resolveSource(data.sourcePath,"la",diagnostic);
+    if(!originalSanctoralLacksOwnPreface(original,owner.seasonalSanctoral))return null;
+  }
   if(owner.marianForm){
     // Named feasts must possess their authenticated Latin Rule. The 1962
     // Saturday BVM Mass is validated by its *selected C10 source identity*
@@ -212,13 +220,20 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
       return null;
     if(language==="la"&&owner.section==="Spiritu"&&
        !/^de (?:Spiritu Sancto|Sancto Spiritu)(?:\s|$)/i.test(text))return null;
+    if(language==="la"&&owner.section==="Asc"&&
+       !/^de Ascensione Domini(?:\s|$)/i.test(text))return null;
     result[language==="la"?"lat":language]=text;
   }
   if(!hasThreeLanguages(result))return null;
   if(owner.marianForm&&!isSelected1962MarianPrefaceForm(
     {...result,marianForm:owner.marianForm},owner.sourceOwner))return null;
+  if(owner.seasonalSanctoral&&!matches1962SeasonalSanctoralSelection({
+    ...result,prefaceSection:owner.section,prefaceVariant:owner.variant,
+    recoveryScope:owner.scope,seasonalSanctoralDate:calendarDate
+  },owner.seasonalSanctoral))return null;
   return Object.freeze({...result,sourcePath:"Ordo/Prefationes",prefaceSection:owner.section,
     ...(owner.marianForm?{marianForm:owner.marianForm}:{}),
+    ...(owner.seasonalSanctoral?{seasonalSanctoralDate:calendarDate}:{}),
     recoveryScope:owner.scope??"CERTIFIED_EXACT_FEAST",rubric:owner.rubric??null,
     prefaceVariant:owner.variant??null,
     originalProperSourcePath:String(data.sourcePath??"")});
@@ -255,6 +270,7 @@ function rewrap(envelope,data){
 export async function recoverReaderProperOmissions(proper,{
   hostResolver,
   principalCelebrationId=null,
+  calendarDate=null,
   diagnostic={requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]},
 }={}){
   const {envelope,data}=unwrap(proper);
@@ -287,7 +303,8 @@ export async function recoverReaderProperOmissions(proper,{
   let recoveredPreface=null;
   try{
     recoveredPreface=await recoverContradictoryPreface(data,hostResolver,
-      principalCelebrationId??data.principalCelebrationId??data.mainId,diagnostic);
+      principalCelebrationId??data.principalCelebrationId??data.mainId,
+      calendarDate??data.selectedMassDate??null,diagnostic);
   }catch(error){
     // A missing remote source must not crash the Mass reader. The reader
     // Preface decision gate independently blocks the inherited Common
