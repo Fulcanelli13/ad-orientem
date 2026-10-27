@@ -125,13 +125,21 @@ def main():
         rows.append(nga)
     OUT.parent.mkdir(parents=True,exist_ok=True)
     count=sum(r["source_byte_status"]=="MUSEUM_IMAGE_VERIFIED" for r in rows)
-    OUT.write_text(json.dumps({"schema":"AO_MUSEUM_IMAGE_BYTES_AUDIT_V1",
+    required_approved={"murillo-immaculate-conception","cavallino-christmas"}
+    verified_approved={r["id"] for r in rows if r["source_byte_status"]=="MUSEUM_IMAGE_VERIFIED"}
+    approved_failures=sorted(required_approved-verified_approved)
+    OUT.write_text(json.dumps({"schema":"AO_MUSEUM_IMAGE_BYTES_AUDIT_V2",
         "checked_utc":datetime.now(timezone.utc).isoformat(),"source_count":len(rows),
-        "museum_bytes_verified":count,"frame_visually_certified":0,"release_count":0,
+        "museum_bytes_verified":count,"approved_source_count":len(required_approved),
+        "approved_bytes_verified":len(required_approved)-len(approved_failures),
+        "approved_failed":approved_failures,"frame_visually_certified":0,"release_count":0,
         "note":"Independent museum-origin sources, including two previously user-approved Class I paintings. Hash applies ONLY to this downloaded variant. Source images deleted on completion; manual four-edge inspection still mandatory.",
         "results":rows},indent=2)+"\n")
     print("museum source files verified:",count)
     for r in rows: print(r["id"],r["source_byte_status"],r.get("error",r.get("sha256","")))
+    if approved_failures:
+        print("FAIL CLOSED: approved paintings not byte-verified:", ", ".join(approved_failures))
+        return 3
     return 0 if count else 2
 if __name__=="__main__":
     raise SystemExit(main())
