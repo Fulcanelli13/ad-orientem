@@ -7,7 +7,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from urllib.request import Request, urlopen
 from urllib.parse import urlparse
-from PIL import Image
+from PIL import Image, ImageFilter, ImageStat
 
 OUT=Path("data/research/sacred-art-20261027-museum-origin-source-byte-report.v1.json")
 API="https://openaccess-api.clevelandart.org/api/artworks/2017.192"
@@ -16,6 +16,50 @@ CAP=25*1024*1024
 def read_json(url):
     with urlopen(Request(url,headers={"User-Agent":"AdOrientem-Art-Provenance/1.0","Accept":"application/json"}),timeout=35) as r:
         return json.load(r)
+
+def pixel_diagnostics(image):
+    """Quantitative edge and fidelity indicators. NOT a frame-free visual certification."""
+    im=image.convert("RGB")
+    im.thumbnail((1200, 1200), Image.Resampling.LANCZOS)
+    w,h=im.size
+    pad=max(3, round(min(w,h)*0.025))
+    edge_boxes={
+      "top":((0,0,w,pad),(0,pad,w,2*pad)),
+      "bottom":((0,h-pad,w,h),(0,h-2*pad,w,h-pad)),
+      "left":((0,0,pad,h),(pad,0,2*pad,h)),
+      "right":((w-pad,0,w,h),(w-2*pad,0,w-pad,h))
+    }
+    per_edge={}
+    flags=[]
+    for edge,(outer,inner) in edge_boxes.items():
+        out=ImageStat.Stat(im.crop(outer))
+        inside=ImageStat.Stat(im.crop(inner))
+        outer_std=round(sum(out.stddev)/3,2)
+        inner_std=round(sum(inside.stddev)/3,2)
+        outer_lum=round(sum(out.mean)/3,2)
+        inner_lum=round(sum(inside.mean)/3,2)
+        flag=outer_std<6 and inner_std>18 and abs(inner_lum-outer_lum)>12
+        per_edge[edge]={"outer_rgb_std_average":outer_std,"inner_rgb_std_average":inner_std,
+                        "outer_luminance_proxy":outer_lum,"inner_luminance_proxy":inner_lum,
+                        "uniform_external_band_heuristic_flag":flag}
+        if flag: flags.append(edge)
+    gray=im.convert("L")
+    hist=gray.histogram()
+    total=sum(hist)
+    ed=gray.filter(ImageFilter.FIND_EDGES)
+    return {
+      "method":"Pillow downsampled 1200px edge-band texture+tone scan, not visual approval",
+      "sample_dimensions":[w,h],
+      "edge_strips":per_edge,
+      "heuristic_flags":flags,
+      "image_dark_pixels_pct":round(sum(hist[:10])*100/total,3),
+      "image_bright_pixels_pct":round(sum(hist[246:])*100/total,3),
+      "edge_intensity_mean":round(ImageStat.Stat(ed).mean[0],3),
+      "full_resolution_four_edge_visual_result":"NOT_DONE",
+      "frame_clearance":"BLOCKED",
+      "automated_no_frame_claim":False
+    }
+
 def fetch_image(url,folder,id_,host):
     parsed=urlparse(url)
     if parsed.scheme!="https" or not (parsed.hostname==host or parsed.hostname.endswith("."+host)):
@@ -38,8 +82,11 @@ def fetch_image(url,folder,id_,host):
     with Image.open(path) as im:
         im.load()
     if fmt!="JPEG" or min(dims)<1500: raise ValueError("Not a sufficiently large intact JPEG")
+    with Image.open(path) as img:
+        quality=pixel_diagnostics(img)
     path.unlink(missing_ok=True)
-    return {"url":url,"sha256":h.hexdigest(),"bytes":n,"pixels":dims,"format":fmt}
+    return {"url":url,"sha256":h.hexdigest(),"bytes":n,"pixels":dims,"format":fmt,
+            "image_diagnostics":quality}
 def main():
     rows=[]
     with TemporaryDirectory() as td:
