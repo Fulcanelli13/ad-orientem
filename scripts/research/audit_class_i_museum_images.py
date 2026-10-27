@@ -18,6 +18,16 @@ CLEVELAND_SOURCES=[
 ]
 NGA="https://api.nga.gov/iiif/294e57e7-14ef-4e2e-8b3d-081b4cc05fd6/full/full/0/default.jpg"
 CAP=25*1024*1024
+# Exact known museum alternate with ornate physical frame; permanently forbidden.
+BANNED_IMAGE_URLS={
+    "https://openaccess-cdn.clevelandart.org/alternate/1959.189/1959.189_alt0_print.jpg"
+}
+# Width/height of canvas, not width/height of framed display.
+CANVAS_ASPECT_RATIOS={
+    "1959.189":127.5/220.5,
+    "1968.100":148.3/126.8
+}
+MAX_CANVAS_RATIO_ERROR=0.045
 def read_json(url):
     with urlopen(Request(url,headers={"User-Agent":"AdOrientem-Art-Provenance/1.0","Accept":"application/json"}),timeout=35) as r:
         return json.load(r)
@@ -67,6 +77,8 @@ def pixel_diagnostics(image):
 
 def fetch_image(url,folder,id_,host):
     parsed=urlparse(url)
+    if url.split("?")[0] in BANNED_IMAGE_URLS or "/alternate/" in parsed.path:
+        raise ValueError("PROHIBITED_FRAME_SOURCE: physical-frame alternate excluded")
     if parsed.scheme!="https" or not (parsed.hostname==host or parsed.hostname.endswith("."+host)):
         raise ValueError("Image URL not from authorised museum hostname")
     path=folder/(id_+".jpg")
@@ -108,7 +120,18 @@ def main():
                 images=obj.get("images") or {}
                 print_url=(images.get("print") or images.get("web") or {}).get("url")
                 if not print_url:raise ValueError("No museum image URL")
+                expected_path=f"/{accession}/{accession}_print.jpg"
+                if urlparse(print_url).path != expected_path:
+                    raise ValueError("Wrong image variant: canonical artwork-only print required")
                 cma.update(fetch_image(print_url,folder,slug,"clevelandart.org"))
+                if accession in CANVAS_ASPECT_RATIOS:
+                    measured=cma["pixels"][0]/cma["pixels"][1]
+                    expected=CANVAS_ASPECT_RATIOS[accession]
+                    relative_error=abs(measured/expected-1)
+                    cma["canvas_ratio_error"]=round(relative_error,5)
+                    if relative_error>MAX_CANVAS_RATIO_ERROR:
+                        raise ValueError("Canvas aspect mismatch; possible frame/mat/crop: reject pending full inspection")
+                cma["image_variant"]="OFFICIAL_PRIMARY_ONLY_NEVER_ALTERNATE_FRAMED_PHOTO"
                 cma["source_byte_status"]="MUSEUM_IMAGE_VERIFIED"
                 cma["source_variant"]="CLEVELAND_API_PRINT_OR_WEB_NOT_COMMONS_JPEG"
             except Exception as e:
@@ -128,7 +151,9 @@ def main():
     required_approved={"murillo-immaculate-conception","cavallino-christmas"}
     verified_approved={r["id"] for r in rows if r["source_byte_status"]=="MUSEUM_IMAGE_VERIFIED"}
     approved_failures=sorted(required_approved-verified_approved)
-    OUT.write_text(json.dumps({"schema":"AO_MUSEUM_IMAGE_BYTES_AUDIT_V2",
+    OUT.write_text(json.dumps({"schema":"AO_MUSEUM_IMAGE_BYTES_AUDIT_V3",
+        "permanently_banned_photographs":sorted(BANNED_IMAGE_URLS),
+        "canvas_aspect_ratio_gate":"Sanity check for framed/cropped alternate, NOT sufficient as no-frame certification",
         "checked_utc":datetime.now(timezone.utc).isoformat(),"source_count":len(rows),
         "museum_bytes_verified":count,"approved_source_count":len(required_approved),
         "approved_bytes_verified":len(required_approved)-len(approved_failures),
