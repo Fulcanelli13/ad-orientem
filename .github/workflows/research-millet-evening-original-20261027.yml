@@ -1,0 +1,55 @@
+name: Evening Prayer Millet original — unapproved research candidate
+on:
+  push:
+    branches: [research/module-hero-pd-masters-20261026]
+    paths:
+      - '.github/workflows/research-millet-evening-original-20261027.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: millet-evening-source-20261027
+  cancel-in-progress: false
+jobs:
+  preserve-unaltered-candidate:
+    if: github.ref == 'refs/heads/research/module-hero-pd-masters-20261026'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/module-hero-pd-masters-20261026
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Verify immutable native Millet source and store photo candidacy
+        run: python scripts/art/acquire-millet-evening-research.py
+      - name: Reject any purported quality, license or editorial signoff
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib, json
+          root=Path('assets/staged/module-hero-evening-candidate-20261027')
+          j=json.loads((root/'millet-acquisition.json').read_text())
+          assert j['editorial_final_selected'] is False
+          assert j['pristine_photo_verified'] is False
+          assert j['photo_rights_approved'] is False
+          assert j['app_publication_approved'] is False
+          assert (j['width_px'], j['height_px'])==(7053,5864)
+          raw=(root/'millet-angelus-google-art-original.jpg').read_bytes()
+          assert hashlib.sha256(raw).hexdigest()==j['sha256']
+          print('Source candidate verified, no licence, editorial or quality release')
+          PY
+          test "${GITHUB_REF}" = 'refs/heads/research/module-hero-pd-masters-20261026'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f assets/staged/module-hero-evening-candidate-20261027/millet-angelus-google-art-original.jpg
+          git add -f assets/staged/module-hero-evening-candidate-20261027/millet-acquisition.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'research(art): archive unaltered Millet Angelus image as evening alternative'
+            git push origin HEAD:research/module-hero-pd-masters-20261026
+          fi
