@@ -1173,3 +1173,59 @@ test('Palm cadence bulk matrix identifies four source-owned ending families and 
  assert.equal(d.release.scoreRuntimeAssignments,0);
  assert.equal(d.release.publicationAllowed,false);
 });
+
+
+test('printed Psalm23 and Psalm46 alternate cadence accents generate fifteen controlled ending-only fragments',()=>{
+ const b=readJSON('data/research/processionale-palm-attested-cadence-windows-20261027.v1.json');
+ const q=readJSON('data/research/processionale-palm-four-cadence-families-17-case-20261027.v1.json');
+ const a=readFileSync(new URL('../data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc',import.meta.url),'utf8');
+ const c=readFileSync(new URL('../data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc',import.meta.url),'utf8');
+ const sha=t=>createHash('sha256').update(t).digest('hex');
+ const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/æ/g,'ae').replace(/[^a-z]/gi,'').toLowerCase();
+ assert.equal(b.stage,'PALM-R02');
+ assert.equal(b.batch,29);
+ assert.equal(sha(a),b.evidence.ps23.originalSha256);
+ assert.equal(sha(c),b.evidence.ps46.originalSha256);
+ assert.ok(a.includes(b.evidence.ps23.cadenceSource));
+ assert.ok(c.includes(b.evidence.ps46.cadenceSource));
+ for(const p of b.evidence.ps23.prepSource)assert.ok(a.includes(p));
+ for(const p of b.evidence.ps46.prepSource)assert.ok(c.includes(p));
+ assert.deepEqual(b.evidence.sharedFlattenedCadencePitches,['g','f','gh','gr','gf']);
+ assert.equal(b.cases.length,17);
+ const snippetCases=b.cases.filter(x=>x.gabcEndingExcerpt);
+ assert.equal(snippetCases.length,15);
+ assert.equal(b.cases.filter(x=>x.status==='MANUAL_DOXOLOGY_AMEN_HOLD').length,2);
+ assert.deepEqual(b.cases.filter(x=>x.status==='MANUAL_DOXOLOGY_AMEN_HOLD').map(x=>x.id),[
+ 'PALM-R02-PS23-DOXO-L12','PALM-R02-PS46-DOXO-L12'
+ ]);
+ const byID=new Map(q.caseMatrix.map(x=>[x.id,x]));
+ for(const row of b.cases){
+  const s=byID.get(row.id);assert.ok(s,row.id);
+  assert.equal(row.psalm,s.psalm);
+  assert.equal(row.releaseEligible,false);
+  if(!row.gabcEndingExcerpt)continue;
+  assert.equal(row.gabcEndingExcerpt.split('%%').length,2);
+  const expectedPitchGroups=row.textWindowSyllables.length===4?['g','f','gh gr','gf..']:['g','f','gh','gr','gf..'];
+  assert.deepEqual(row.formulaPitchGroups,expectedPitchGroups);
+  assert.deepEqual(row.textWindowSyllables.length,[4,5].includes(row.textWindowSyllables.length)?row.textWindowSyllables.length:null);
+  assert.equal(norm(s.printedLatinSegments.termination).endsWith(norm(row.textWindowSyllables.join(''))),true,row.id);
+  const body=row.gabcEndingExcerpt.slice(row.gabcEndingExcerpt.indexOf('(c4)'));
+  const parsed=Array.from(body.matchAll(/([\p{L}]+)\(([^)]+)\)/gu)).map(x=>[x[1],x[2]]);
+  assert.deepEqual(parsed,row.textWindowSyllables.map((t,i)=>[t,expectedPitchGroups[i]]),row.id);
+  assert.equal(row.completeVerseNotCreated,true);
+  assert.equal(row.neumeUnderlayHumanApproved,false);
+  assert.equal(row.sourceEditionLatinHumanApproved,false);
+ }
+ const ab=b.cases.find(x=>x.id==='PALM-R02-PS46-L09');
+ assert.equal(ab.properNameAccentEvidence.hypothesizedSyllables,'Á-bra-ham');
+ assert.equal(ab.properNameAccentEvidence.pinnedCommitSha,'5a35693414bd9b2864415e62cd463ca52da771b4');
+ assert.equal(ab.properNameAccentEvidence.stillNeedsChantEditor,true);
+ assert.equal(b.counts.endingGabcFragmentsDrafted,15);
+ assert.equal(b.counts.actualMusicalOccurrencesCoveredBy15Fragments,16);
+ assert.equal(b.counts.publishedScoreAssignments,0);
+ assert.equal(b.release.cadenceTransferHumanCertified,false);
+ assert.equal(b.release.fullVerseGabcMusicallyCertified,false);
+ assert.equal(b.release.publicationEligible,false);
+ const reader=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
+ assert.ok(!reader.includes('processionale-palm-attested-cadence-windows'));
+});
