@@ -29,6 +29,7 @@
       },
       "whole_uncropped_reference_path": "assets/staged/module-hero-photo-evidence-20261027/angelus-whole-uncropped-reference.jpg",
       "whole_uncropped_reference_sha256": "e3ba1816ce1355b3c2b3d327475588a3d2ce0fa8c68a65a6d9f4620e88190cee",
+      "complete_unframed_review_derivative": null,
       "native_pixel_samples": [
         {
           "kind": "top_left",
@@ -129,6 +130,7 @@
       },
       "whole_uncropped_reference_path": "assets/staged/module-hero-photo-evidence-20261027/adoration-whole-uncropped-reference.jpg",
       "whole_uncropped_reference_sha256": "d17a6bf7ae290ef2b14c924805d0947cd755872b48e14e8b586a18bf91fa1f89",
+      "complete_unframed_review_derivative": null,
       "native_pixel_samples": [
         {
           "kind": "top_left",
@@ -229,6 +231,20 @@
       },
       "whole_uncropped_reference_path": "assets/staged/module-hero-photo-evidence-20261027/confession-whole-uncropped-reference.jpg",
       "whole_uncropped_reference_sha256": "abbcb28fa7ce47bf6f12bfa068e09b42a9f936c955c435f37a25bd9749ac1cd7",
+      "complete_unframed_review_derivative": {
+        "path": "assets/staged/module-hero-photo-evidence-20261027/confession-whole-contain-review-candidate.webp",
+        "sha256": "8e4abfa0fbe894085db1dda46378a669ae5244811ec7b9941855ed7f9930e893",
+        "dimensions": [
+          1800,
+          1631
+        ],
+        "painted_area_crop_performed": false,
+        "entire_source_painting_retained": true,
+        "colour_handling": "ICC_CONVERTED_TO_SRGB_FOR_DERIVATIVE_PREVIEW_ONLY",
+        "human_approved": false,
+        "app_released": false,
+        "use_rule": "object-fit contain; no automatic centre crop"
+      },
       "native_pixel_samples": [
         {
           "kind": "top_left",
@@ -239,7 +255,7 @@
             512
           ],
           "path": "assets/staged/module-hero-photo-evidence-20261027/confession-top_left-native-pixels.png",
-          "sha256": "54bb825772a11c5fab43bea3fcd50f250177bcbd656b9482d6ce08f28b82b24e",
+          "sha256": "926e4cf9e8a51161992b0a999279719cee029181bc1106862c8ec30b86242cde",
           "rescaled": false
         },
         {
@@ -251,7 +267,7 @@
             512
           ],
           "path": "assets/staged/module-hero-photo-evidence-20261027/confession-top_right-native-pixels.png",
-          "sha256": "e293afc7299b382c434b58a171b5474f1dce1694528937bca3ee2ccac94f5d3f",
+          "sha256": "1bbc81a904b8afa3ff94ca5c046879937adf7b4a5d7a78606b6486ca30c2ab72",
           "rescaled": false
         },
         {
@@ -263,7 +279,7 @@
             3712
           ],
           "path": "assets/staged/module-hero-photo-evidence-20261027/confession-bottom_left-native-pixels.png",
-          "sha256": "ce01f317ec69eda2271049681c800ed2ff3a7f75c34c8114d218156e5515060a",
+          "sha256": "606f881b4fe740543a0883ff4211e23c58ae69abb19d329331400c4ece71287b",
           "rescaled": false
         },
         {
@@ -275,7 +291,7 @@
             3712
           ],
           "path": "assets/staged/module-hero-photo-evidence-20261027/confession-bottom_right-native-pixels.png",
-          "sha256": "acf7b9ca97d594af213b08622ebac854e129e2d4c1c9083424c12d531989d6c6",
+          "sha256": "781ab1b7c47bf47c0030e80dd5c643ea9698b64ac806d0885b294358a6450640",
           "rescaled": false
         },
         {
@@ -287,7 +303,7 @@
             2112
           ],
           "path": "assets/staged/module-hero-photo-evidence-20261027/confession-centre-native-pixels.png",
-          "sha256": "e0d3bbca4ec17ec7436abd2d9e62d97c879779c5abe981edcd260da784118e8b",
+          "sha256": "66913158c46b2c84700b56b0cfc1e12de7b19e1df40c17c652643aa92533f9de",
           "rescaled": false
         }
       ],
