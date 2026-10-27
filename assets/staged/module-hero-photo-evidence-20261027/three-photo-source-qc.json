@@ -1,0 +1,315 @@
+{
+  "schema": "AO_MODULE_HERO_MASTER_3_EXACT_SOURCE_PIXEL_QA_V1",
+  "programme": "No-cost, no-contact, research-only photographic investigation",
+  "approved_paintings_modified": false,
+  "original_binary_files_modified": false,
+  "no_crop_produced": true,
+  "no_rights_hold_overridden": true,
+  "method": "Git exact archived bytes verified SHA256; native 512px corner/centre crops plus whole-view proxy; optional source-version request.",
+  "number_of_originals_verified": 3,
+  "technical_QA_evidence_records": [
+    {
+      "module_id": "angelus",
+      "artist": "Philippe de Champaigne",
+      "painting": "The Annunciation",
+      "original_branch": "research/module-hero-wave2-20261026",
+      "original_repo_path": "assets/staged/module-hero-wave2/angelus-met.jpg",
+      "verified_archived_original_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "byte_size": 3055151,
+      "dimensions": [
+        3741,
+        3658
+      ],
+      "icc_embedded": false,
+      "iso_exif": null,
+      "previews_colour_handling": "UNTAGGED_SOURCE_ASSUMED_SRGB_FOR_PREVIEW_NOT_COLOUR_FIDELITY_PROOF",
+      "non_authoritative_luma_diagnostics": {
+        "approx_fraction_luma_0_to_9": 0.030939,
+        "approx_fraction_luma_246_to_255": 0.000227
+      },
+      "whole_uncropped_reference_path": "assets/staged/module-hero-photo-evidence-20261027/angelus-whole-uncropped-reference.jpg",
+      "whole_uncropped_reference_sha256": "e3ba1816ce1355b3c2b3d327475588a3d2ce0fa8c68a65a6d9f4620e88190cee",
+      "native_pixel_samples": [
+        {
+          "kind": "top_left",
+          "pixel_bbox": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "path": "assets/staged/module-hero-photo-evidence-20261027/angelus-top_left-native-pixels.png",
+          "sha256": "0850eeaf29ecab84c6c38e2e39ca72ac7369b36329863ddc183993db57ce3002",
+          "rescaled": false
+        },
+        {
+          "kind": "top_right",
+          "pixel_bbox": [
+            3229,
+            0,
+            3741,
+            512
+          ],
+          "path": "assets/staged/module-hero-photo-evidence-20261027/angelus-top_right-native-pixels.png",
+          "sha256": "3c0b5e81f86853a776935bc978c5d475500d79783cd598efd7f8003f12891c08",
+          "rescaled": false
+        },
+        {
+          "kind": "bottom_left",
+          "pixel_bbox": [
+            0,
+            3146,
+            512,
+            3658
+          ],
+          "path": "assets/staged/module-hero-photo-evidence-20261027/angelus-bottom_left-native-pixels.png",
+          "sha256": "d243e07e11cbf8ff9123721fba22df569075743c34099b811bac5864a7789b9a",
+          "rescaled": false
+        },
+        {
+          "kind": "bottom_right",
+          "pixel_bbox": [
+            3229,
+            3146,
+            3741,
+            3658
+          ],
+          "path": "assets/staged/module-hero-photo-evidence-20261027/angelus-bottom_right-native-pixels.png",
+          "sha256": "ddd2df85402057cbf22c0ac5cf759ba78c74e5a95c71474423c72d897ae8bc7b",
+          "rescaled": false
+        },
+        {
+          "kind": "centre",
+          "pixel_bbox": [
+            1614,
+            1573,
+            2126,
+            2085
+          ],
+          "path": "assets/staged/module-hero-photo-evidence-20261027/angelus-centre-native-pixels.png",
+          "sha256": "e77abc3d7e9f72b17cdb639c9f8f633c52e71af49a7948b69be290daccc37cd4",
+          "rescaled": false
+        }
+      ],
+      "source_file_version_observation": {
+        "status": "MATCHING_SOURCE_BYTES",
+        "sha256_current_observed": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+        "bytes_current_observed": 3055151,
+        "content_type": "image/jpeg",
+        "never_auto_replace_source": true
+      },
+      "museum_object_record": "https://www.metmuseum.org/art/collection/search/438724",
+      "published_rights_witness": "Met Open Access CC0, exact public-domain object; version-specific download still compared separately",
+      "authorised_crop_bbox": null,
+      "external_frame_confirmed": false,
+      "whole_painting_surface_verified": false,
+      "human_master_visual_QA_approved": false,
+      "worldwide_distribution_legality_signed_off": false,
+      "production_release_authorized": false,
+      "status": "SOURCE_BYTES_VERIFIED_NATIVE_PIXEL_QA_EVIDENCE_GENERATED_NOT_HUMAN_APPROVED"
+    },
+    {
+      "module_id": "adoration",
+      "artist": "Jean Auguste Dominique Ingres",
+      "painting": "The Virgin Adoring the Host",
+      "original_branch": "research/module-hero-museum-photos-20261026",
+      "original_repo_path": "assets/staged/module-hero-masters/adoration.jpg",
+      "verified_archived_original_sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "byte_size": 2467303,
+      "dimensions": [
+        3122,
+        3813
+      ],
+      "icc_embedded": false,
+      "iso_exif": null,
+      "previews_colour_handling": "UNTAGGED_SOURCE_ASSUMED_SRGB_FOR_PREVIEW_NOT_COLOUR_FIDELITY_PROOF",
+      "non_authoritative_luma_diagnostics": {
+        "approx_fraction_luma_0_to_9": 0.028333,
+        "approx_fraction_luma_246_to_255": 0.00013
+      },
+      "whole_uncropped_reference_path": "assets/staged/module-hero-photo-evidence-20261027/adoration-whole-uncropped-reference.jpg",
+      "whole_uncropped_reference_sha256": "d17a6bf7ae290ef2b14c924805d0947cd755872b48e14e8b586a18bf91fa1f89",
+      "native_pixel_samples": [
+        {
+          "kind": "top_left",
+          "pixel_bbox": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "path": "assets/staged/module-hero-photo-evidence-20261027/adoration-top_left-native-pixels.png",
+          "sha256": "c317275eabbc47236e8346171054e40fafc9be7bc64a3e9998ebd92453728352",
+          "rescaled": false
+        },
+        {
+          "kind": "top_right",
+          "pixel_bbox": [
+            2610,
+            0,
+            3122,
+            512
+          ],
+          "path": "assets/staged/module-hero-photo-evidence-20261027/adoration-top_right-native-pixels.png",
+          "sha256": "c24ccbd1acc1168835559e5e31050cc86860db3da283b37c6d109a17870fd2e0",
+          "rescaled": false
+        },
+        {
+          "kind": "bottom_left",
+          "pixel_bbox": [
+            0,
+            3301,
+            512,
+            3813
+          ],
+          "path": "assets/staged/module-hero-photo-evidence-20261027/adoration-bottom_left-native-pixels.png",
+          "sha256": "2834de4eb22312230a1ce1ed600d403265ff14464757b61304834a1636d09f84",
+          "rescaled": false
+        },
+        {
+          "kind": "bottom_right",
+          "pixel_bbox": [
+            2610,
+            3301,
+            3122,
+            3813
+          ],
+          "path": "assets/staged/module-hero-photo-evidence-20261027/adoration-bottom_right-native-pixels.png",
+          "sha256": "883859fbdb6c86873815022dd18662fb781433af1d7ff1b49fa8c4fe90bbdc42",
+          "rescaled": false
+        },
+        {
+          "kind": "centre",
+          "pixel_bbox": [
+            1305,
+            1650,
+            1817,
+            2162
+          ],
+          "path": "assets/staged/module-hero-photo-evidence-20261027/adoration-centre-native-pixels.png",
+          "sha256": "8e0a5525b747a89b4e60151e96da01e0e1e6373ca50e4c86f1ad72bc5e8c6be2",
+          "rescaled": false
+        }
+      ],
+      "source_file_version_observation": {
+        "status": "MATCHING_SOURCE_BYTES",
+        "sha256_current_observed": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+        "bytes_current_observed": 2467303,
+        "content_type": "image/jpeg",
+        "never_auto_replace_source": true
+      },
+      "museum_object_record": "https://www.metmuseum.org/art/collection/search/438434",
+      "published_rights_witness": "Met Open Access CC0, exact public-domain object; external grey border identity remains under review",
+      "authorised_crop_bbox": null,
+      "external_frame_confirmed": false,
+      "whole_painting_surface_verified": false,
+      "human_master_visual_QA_approved": false,
+      "worldwide_distribution_legality_signed_off": false,
+      "production_release_authorized": false,
+      "status": "SOURCE_BYTES_VERIFIED_NATIVE_PIXEL_QA_EVIDENCE_GENERATED_NOT_HUMAN_APPROVED"
+    },
+    {
+      "module_id": "confession",
+      "artist": "Bartolomé Esteban Murillo",
+      "painting": "The Return of the Prodigal Son",
+      "original_branch": "research/module-hero-museum-photos-20261026",
+      "original_repo_path": "assets/staged/module-hero-masters/confession.jpg",
+      "verified_archived_original_sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+      "byte_size": 3022309,
+      "dimensions": [
+        4096,
+        3712
+      ],
+      "icc_embedded": true,
+      "iso_exif": null,
+      "previews_colour_handling": "ICC_CONVERTED_TO_SRGB_FOR_DERIVATIVE_PREVIEW_ONLY",
+      "non_authoritative_luma_diagnostics": {
+        "approx_fraction_luma_0_to_9": 0.0,
+        "approx_fraction_luma_246_to_255": 6.3e-05
+      },
+      "whole_uncropped_reference_path": "assets/staged/module-hero-photo-evidence-20261027/confession-whole-uncropped-reference.jpg",
+      "whole_uncropped_reference_sha256": "abbcb28fa7ce47bf6f12bfa068e09b42a9f936c955c435f37a25bd9749ac1cd7",
+      "native_pixel_samples": [
+        {
+          "kind": "top_left",
+          "pixel_bbox": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "path": "assets/staged/module-hero-photo-evidence-20261027/confession-top_left-native-pixels.png",
+          "sha256": "54bb825772a11c5fab43bea3fcd50f250177bcbd656b9482d6ce08f28b82b24e",
+          "rescaled": false
+        },
+        {
+          "kind": "top_right",
+          "pixel_bbox": [
+            3584,
+            0,
+            4096,
+            512
+          ],
+          "path": "assets/staged/module-hero-photo-evidence-20261027/confession-top_right-native-pixels.png",
+          "sha256": "e293afc7299b382c434b58a171b5474f1dce1694528937bca3ee2ccac94f5d3f",
+          "rescaled": false
+        },
+        {
+          "kind": "bottom_left",
+          "pixel_bbox": [
+            0,
+            3200,
+            512,
+            3712
+          ],
+          "path": "assets/staged/module-hero-photo-evidence-20261027/confession-bottom_left-native-pixels.png",
+          "sha256": "ce01f317ec69eda2271049681c800ed2ff3a7f75c34c8114d218156e5515060a",
+          "rescaled": false
+        },
+        {
+          "kind": "bottom_right",
+          "pixel_bbox": [
+            3584,
+            3200,
+            4096,
+            3712
+          ],
+          "path": "assets/staged/module-hero-photo-evidence-20261027/confession-bottom_right-native-pixels.png",
+          "sha256": "acf7b9ca97d594af213b08622ebac854e129e2d4c1c9083424c12d531989d6c6",
+          "rescaled": false
+        },
+        {
+          "kind": "centre",
+          "pixel_bbox": [
+            1792,
+            1600,
+            2304,
+            2112
+          ],
+          "path": "assets/staged/module-hero-photo-evidence-20261027/confession-centre-native-pixels.png",
+          "sha256": "e0d3bbca4ec17ec7436abd2d9e62d97c879779c5abe981edcd260da784118e8b",
+          "rescaled": false
+        }
+      ],
+      "source_file_version_observation": {
+        "status": "MATCHING_SOURCE_BYTES",
+        "sha256_current_observed": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+        "bytes_current_observed": 3022309,
+        "content_type": "image/jpeg",
+        "never_auto_replace_source": true
+      },
+      "museum_object_record": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "published_rights_witness": "NGA publicly downloadable public-domain reproduction, accession 1948.12.1",
+      "authorised_crop_bbox": null,
+      "external_frame_confirmed": false,
+      "whole_painting_surface_verified": false,
+      "human_master_visual_QA_approved": false,
+      "worldwide_distribution_legality_signed_off": false,
+      "production_release_authorized": false,
+      "status": "SOURCE_BYTES_VERIFIED_NATIVE_PIXEL_QA_EVIDENCE_GENERATED_NOT_HUMAN_APPROVED"
+    }
+  ],
+  "visual_final_acceptances": 0,
+  "licensed_photo_publications": 0,
+  "artistic_gate": "Human comparison of actual 100% image and real painted edges remains mandatory"
+}
