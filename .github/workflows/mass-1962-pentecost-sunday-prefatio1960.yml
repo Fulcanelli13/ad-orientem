@@ -1,0 +1,31 @@
+name: Mass 1962 source-specific Pentecost Sunday Prefaces
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/mass/1962-pentecost-sunday-prefatio1960-source.js'
+      - 'src/mass/browser-entry.js'
+      - 'tests/mass-1962-pentecost-sunday-prefatio1960.mjs'
+      - 'tests/mass-1962-pentecost-sunday-prefatio1960-production.mjs'
+      - '.github/workflows/mass-1962-pentecost-sunday-prefatio1960.yml'
+permissions:
+  contents: read
+jobs:
+  authenticated-1960-sunday-preface:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: Verify node syntax
+        run: node --check src/mass/1962-pentecost-sunday-prefatio1960-source.js
+      - name: Source owner / fail-closed tests
+        run: node tests/mass-1962-pentecost-sunday-prefatio1960.mjs
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Test real 2026 Sunday sources and native reader
+        run: node tests/mass-1962-pentecost-sunday-prefatio1960-production.mjs
