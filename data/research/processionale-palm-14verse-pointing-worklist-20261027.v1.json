@@ -589,5 +589,15 @@
     ],
     "nextBulkOperation": "Generate all 17 source-owned GABCs in one pass only after validating four tone underlays and special-end rules. Maintain original source archive immutable.",
     "releaseEligible": false
+  },
+  "batch29PartialCadenceHandoff": {
+    "path": "data/research/processionale-palm-attested-cadence-windows-20261027.v1.json",
+    "sourceFootprints": 2,
+    "endingGabcFragments": 15,
+    "musicalCaseOccurrencesRepresented": 16,
+    "AmenCasesWithheld": 2,
+    "crossPsalmCadencePitchSimilarityPrinted": true,
+    "musicianApprovalRequired": true,
+    "neverInstantiateReaderScore": true
   }
 }
