@@ -105,7 +105,10 @@
     "class_i_additional_exact_photo_legal_approvals": 0,
     "missing_three_reference_files_archived": 1,
     "missing_three_original_source_rate_limited": 2,
-    "missing_three_final_legal_and_quality_accepted": 0
+    "missing_three_final_legal_and_quality_accepted": 0,
+    "historical_conversation_date_choices_detected_outside_B56": 8,
+    "historical_conversation_date_choices_conflicting_or_primary_ambiguous": 1,
+    "b56_approved_dates_before_formal_reconciliation": 24
   },
   "exception_flags": [
     {
@@ -157,7 +160,17 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "historical_conversation_date_artwork_recovery": {
+        "artist": "Tintoretto or workshop",
+        "title": "The Circumcision",
+        "editorial_state": "EARLIER_USER_APPROVED_PAINTING",
+        "source_note": "19 Oct artwork selection, not yet projected to B56",
+        "reconciliation_required": true,
+        "verified_photo_rights": false,
+        "verified_physical_object_id": false,
+        "auto_promotion_blocked": true
+      }
     },
     {
       "date": "2026-01-06",
@@ -532,7 +545,17 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "historical_conversation_date_artwork_recovery": {
+        "artist": "William-Adolphe Bouguereau",
+        "title": "The Holy Women at the Tomb",
+        "editorial_state": "EARLIER_USER_SELECTED_PRIMARY",
+        "source_note": "19 Oct art selection, earlier Rubens Resurrection remains alternate",
+        "reconciliation_required": true,
+        "verified_photo_rights": false,
+        "verified_physical_object_id": false,
+        "auto_promotion_blocked": true
+      }
     },
     {
       "date": "2026-04-06",
@@ -727,7 +750,17 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "historical_conversation_date_artwork_recovery": {
+        "artist": "Hans Süss von Kulmbach",
+        "title": "The Ascension",
+        "editorial_state": "HISTORICAL_APPROVAL_PRIMARY_AMBIGUOUS",
+        "source_note": "Earlier approval and primary selection reported, but another retrospective calls primary undecided: reconcile not silently override B56 hold",
+        "reconciliation_required": true,
+        "verified_photo_rights": false,
+        "verified_physical_object_id": false,
+        "auto_promotion_blocked": true
+      }
     },
     {
       "date": "2026-05-23",
@@ -907,7 +940,17 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "historical_conversation_date_artwork_recovery": {
+        "artist": "Laurent Girardin",
+        "title": "The Trinity",
+        "editorial_state": "EARLIER_USER_APPROVED_PAINTING",
+        "source_note": "19 Oct selection history; exact physical original needs ID check",
+        "reconciliation_required": true,
+        "verified_photo_rights": false,
+        "verified_physical_object_id": false,
+        "auto_promotion_blocked": true
+      }
     },
     {
       "date": "2026-06-04",
@@ -966,7 +1009,17 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "historical_conversation_date_artwork_recovery": {
+        "artist": "Andrea Sacchi",
+        "title": "The Birth of Saint John the Baptist",
+        "editorial_state": "EARLIER_USER_APPROVED_PAINTING",
+        "source_note": "19 Oct selection history",
+        "reconciliation_required": true,
+        "verified_photo_rights": false,
+        "verified_physical_object_id": false,
+        "auto_promotion_blocked": true
+      }
     },
     {
       "date": "2026-06-29",
@@ -1190,7 +1243,17 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "historical_conversation_date_artwork_recovery": {
+        "artist": "Michael Willmann",
+        "title": "The Family of Christ",
+        "editorial_state": "EARLIER_USER_APPROVED_PAINTING",
+        "source_note": "19 Oct selection history",
+        "reconciliation_required": true,
+        "verified_photo_rights": false,
+        "verified_physical_object_id": false,
+        "auto_promotion_blocked": true
+      }
     },
     {
       "date": "2026-12-08",
@@ -1222,7 +1285,17 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "historical_conversation_date_artwork_recovery": {
+        "artist": "Bernardo Strozzi",
+        "title": "Saint John the Baptist Interrogated",
+        "editorial_state": "EARLIER_USER_APPROVED_PAINTING",
+        "source_note": "19 Oct selection history",
+        "reconciliation_required": true,
+        "verified_photo_rights": false,
+        "verified_physical_object_id": false,
+        "auto_promotion_blocked": true
+      }
     },
     {
       "date": "2026-12-20",
@@ -1238,7 +1311,17 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "historical_conversation_date_artwork_recovery": {
+        "artist": "Giovanni Battista Gaulli",
+        "title": "The Preaching of Saint John the Baptist",
+        "editorial_state": "EARLIER_USER_APPROVED_PAINTING",
+        "source_note": "19 Oct selection history",
+        "reconciliation_required": true,
+        "verified_photo_rights": false,
+        "verified_physical_object_id": false,
+        "auto_promotion_blocked": true
+      }
     },
     {
       "date": "2026-12-24",
@@ -2495,5 +2578,6 @@
   "current_missing_three_reference_fallback_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40528275735",
   "module_hero_selection_supersession_policy": "Read user_oct27_choice first when present; old approved_painting remains historical record. No app photo release until separate exact-file gate. Guardian reuses Michael module original.",
   "latest_user_direction_summary": "Christ the King rejects all Salvator Mundi type paintings; Holy Spirit Morazzone favored over Van Dyck; neither new choice production-released",
-  "next_module_hero_priority_after_rejected_king": "Continue remaining module hero release exceptions and 53 Class I rights-first/quality selection; leave King unresolved instead of forcing mediocre imagery."
+  "next_module_hero_priority_after_rejected_king": "Continue remaining module hero release exceptions and 53 Class I rights-first/quality selection; leave King unresolved instead of forcing mediocre imagery.",
+  "historical_recovery_note": "The 24/53 B56 selected count is not the whole historical record: eight date-level decisions from user conversation surfaced outside this current B56 register. This research-only crosswalk preserves these choices WITHOUT silently modifying B56 selections; reconcile chronology/identity and keep the previously approved paintings before requesting new vote."
 }
