@@ -125,6 +125,14 @@ export function summarize342SelectedMassSweep(ledger,dayRows,{year}={}){
    date:r.date,properSource:r.properSource,status:m.status,reason:m.reason,sourceBlobSha:m.sourceBlobSha})));
  const unique=new Set(observations.map(x=>x.id));
  const contested=observations.filter(x=>x.status==="AMBIGUOUS_SCORE_VARIANT");
+ const candidateDatePairsInspected=passed.reduce((sum,row)=>sum+(row.candidatesInspected??0),0);
+ const ownerPathsVisited=new Set(passed.map(row=>row.properSource).filter(Boolean));
+ const candidateOwnerPathsVisited=new Set(passed.filter(row=>(row.candidatesInspected??0)>0).map(row=>row.properSource));
+ const unresolved=passed.flatMap(row=>row.unresolved);
+ const unverifiedByStatus=Object.freeze(Object.fromEntries(
+   [...new Set(unresolved.map(row=>row.status))].sort().map(status=>[
+     status,unresolved.filter(row=>row.status===status).length])));
+ const distinctUnresolvedCandidateIds=new Set(unresolved.map(row=>row.id)).size;
  return Object.freeze({schema:"ao-gr1961-342-selected-mass-sweep-v1",year:year??null,
    daysChecked:dayRows.length,daysSourceReady:passed.length,
    dayResolverFailures:dayRows.length-passed.length,
@@ -132,6 +140,11 @@ export function summarize342SelectedMassSweep(ledger,dayRows,{year}={}){
    distinctTextMatchedCandidateIds:unique.size,
    ambiguousVariantOccurrences:contested.length,
    researchCandidatesNotObservedInSweep:ledger.records.length-unique.size,
+   calendarProperSourcePathsVisited:ownerPathsVisited.size,
+   candidateSourcePathsVisited:candidateOwnerPathsVisited.size,
+   daysWithCandidateSourcePath:passed.filter(row=>(row.candidatesInspected??0)>0).length,
+   candidateDatePairsInspected,unresolvedCandidateDatePairs:unresolved.length,
+   distinctUnresolvedCandidateIds,unverifiedByStatus,
    musicalFacsimileApprovals:0,editorialPromotions:0,
    observations:Object.freeze(observations),
    exceptions:Object.freeze(dayRows.filter(r=>r.status!=="ACTUAL_DAY_RESOLVER_RESEARCH_SCREENED").map(x=>({date:x.date,status:x.status}))),
