@@ -104,8 +104,10 @@ def install_known_provider_feed_census(db):
         ('ICKSP','data/directory/generated/v19/icksp-federated.geojson','GEOJSON'),
         ('AASJMV','data/directory/generated/v19/aasjmv.v1.json','PROVIDER_JSON'),
         ('VG19','data/directory/generated/v19/verified-global-round19-20261010.v1.json','PROVIDER_JSON'),
+        ('SSPX_FR','data/directory/generated/v19/sspx-france-first-party.v1.json','PROVIDER_JSON'),
+        ('DIOCESAN','data/directory/generated/v19/diocesan.v1.json','PROVIDER_JSON'),
     )
-    eligible={'church','chapel','school_chapel','private_chapel','basilica','oratory','monastery'}
+    eligible={'church','chapel','school_chapel','private_chapel','basilica','oratory','monastery','shrine'}
     db.executescript("""
 CREATE TABLE unified_provider_coverage (
  source_family TEXT NOT NULL,
@@ -143,7 +145,7 @@ CREATE VIEW unified_provider_census_by_family AS
     for family,path,fmt in feeds:
         d=json.loads(Path(path).read_text(encoding='utf-8'))
         entries=d['features'] if fmt=='GEOJSON' else d['records']
-        expected={'FSSP':286,'ICKSP':94,'AASJMV':6,'VG19':6}[family]
+        expected={'FSSP':286,'ICKSP':94,'AASJMV':6,'VG19':6,'SSPX_FR':89,'DIOCESAN':73}[family]
         assert len(entries)==expected
         seen=set()
         family_counts={'exact':0,'g0_link':0,'new_candidate':0,'not_worship_or_ambiguous':0}
@@ -175,7 +177,7 @@ CREATE VIEW unified_provider_census_by_family AS
                 db.execute('INSERT INTO unified_site_candidate VALUES (?,?,?,?,?,?,?,?,?,?,?,0,0,?)',
                   (rid,'PROVIDER_'+family,cc,str(properties.get('city') or properties.get('l') or ''),
                    name,str(properties.get('a') or ''),
-                   path,path,None,0,'IDENTITY_RECONCILIATION_REQUIRED',
+                   str(properties.get('su') or path),path,None,0,'IDENTITY_RECONCILIATION_REQUIRED',
                    json.dumps({'provider_family':family,'provider_original_record':entry,
                      'original_repository_path':path},ensure_ascii=False,separators=(',',':'))))
             else:
@@ -192,16 +194,18 @@ CREATE VIEW unified_provider_census_by_family AS
         'ICKSP':{'exact':74,'g0_link':0,'new_candidate':9,'not_worship_or_ambiguous':11},
         'AASJMV':{'exact':6,'g0_link':0,'new_candidate':0,'not_worship_or_ambiguous':0},
         'VG19':{'exact':0,'g0_link':1,'new_candidate':5,'not_worship_or_ambiguous':0},
+        'SSPX_FR':{'exact':1,'g0_link':0,'new_candidate':88,'not_worship_or_ambiguous':0},
+        'DIOCESAN':{'exact':16,'g0_link':0,'new_candidate':54,'not_worship_or_ambiguous':3},
     },stats
-    assert db.execute('SELECT COUNT(*) FROM unified_provider_coverage').fetchone()[0]==392
-    assert db.execute('SELECT COUNT(*) FROM unified_site_candidate').fetchone()[0]==53
-    assert db.execute('SELECT COUNT(*) FROM unified_research_inventory').fetchone()[0]==2632
+    assert db.execute('SELECT COUNT(*) FROM unified_provider_coverage').fetchone()[0]==554
+    assert db.execute('SELECT COUNT(*) FROM unified_site_candidate').fetchone()[0]==195
+    assert db.execute('SELECT COUNT(*) FROM unified_research_inventory').fetchone()[0]==2774
     assert db.execute('SELECT COUNT(*) FROM unified_site_candidate WHERE is_canonical_physical_site!=0 OR is_public_site!=0').fetchone()[0]==0
-    return {'source_feed_entries_screened':392,'exact_CL2_source_ID_matches':305,
-            'prior_G0_provider_links':1,'new_unresolved_worship_leads':17,
-            'non_worship_or_ambiguous_held':69,
-            'candidate_ids_total_G0_and_feeds':53,
-            'not_unique_venue_count_inventory_rows':2632,
+    return {'source_feed_entries_screened':554,'exact_CL2_source_ID_matches':322,
+            'prior_G0_provider_links':1,'new_unresolved_worship_leads':159,
+            'non_worship_or_ambiguous_held':72,
+            'candidate_ids_total_G0_and_feeds':195,
+            'not_unique_venue_count_inventory_rows':2774,
             'feed_counts':stats,'new_physically_admitted_sites':0}
 
 
@@ -305,8 +309,8 @@ CREATE TABLE unified_directory_country_census (
     assert complete==54
     assert db.execute('SELECT COUNT(*) FROM unified_third_party_source_lead').fetchone()[0]==1531
     assert db.execute('SELECT COUNT(*) FROM unified_directory_country_census').fetchone()[0]==65
-    assert db.execute('SELECT COUNT(*) FROM unified_site_candidate').fetchone()[0]==1497
-    assert db.execute('SELECT COUNT(*) FROM unified_research_inventory').fetchone()[0]==4076
+    assert db.execute('SELECT COUNT(*) FROM unified_site_candidate').fetchone()[0]==1639
+    assert db.execute('SELECT COUNT(*) FROM unified_research_inventory').fetchone()[0]==4218
     assert db.execute('SELECT COUNT(*) FROM unified_site_candidate WHERE is_canonical_physical_site!=0 OR is_public_site!=0').fetchone()[0]==0
     return {'third_party_leads_ingested':1531,'exact_CL2_source_ids':87,
             'identity_unresolved_source_leads':1444,
@@ -315,8 +319,8 @@ CREATE TABLE unified_directory_country_census (
             'source_country_listings_incomplete':11,
             'census_country_listings_complete':54,
             'total_provisional_physical_anchors_unchanged':2579,
-            'combined_candidate_lead_records_G0_feeds_third_party':1497,
-            'total_differently_scoped_inventory_rows_not_unique_sites':4076,
+            'combined_candidate_lead_records_G0_feeds_third_party':1639,
+            'total_differently_scoped_inventory_rows_not_unique_sites':4218,
             'new_admitted_sites':0}
 
 
@@ -332,7 +336,7 @@ def install_bulk_identity_review_cohorts(db):
     db.executescript("""
 CREATE TABLE unified_identity_review_cohort (
  candidate_research_id TEXT PRIMARY KEY,
- cohort_no INTEGER NOT NULL CHECK(cohort_no BETWEEN 1 AND 8),
+ cohort_no INTEGER NOT NULL CHECK(cohort_no BETWEEN 1 AND 9),
  source_grade TEXT NOT NULL CHECK(source_grade IN
   ('PRIOR_RESEARCH_G0','PROVIDER_REPORTED_WORSHIP','THIRD_PARTY_WITH_OWNER_LINK',
    'THIRD_PARTY_PREVIOUS_NAME_REVIEW','THIRD_PARTY_UNMATCHED')),
@@ -364,16 +368,16 @@ CREATE INDEX identity_cohort_round ON unified_identity_review_cohort(cohort_no);
                 'THIRD_PARTY_PREVIOUS_NAME_REVIEW':3,
                 'THIRD_PARTY_UNMATCHED':4}
     rows.sort(key=lambda x:(priorities[x[2]],x[1],x[0]))
-    assert len(rows)==1497
+    assert len(rows)==1639
     for n,(sid,country,grade) in enumerate(rows):
         db.execute('INSERT INTO unified_identity_review_cohort VALUES (?,?,?,?,"UNRESOLVED_CANDIDATE_IDENTITY",0)',
                    (sid,n//200+1,grade,country))
-    assert db.execute('SELECT COUNT(*) FROM unified_identity_review_cohort').fetchone()[0]==1497
+    assert db.execute('SELECT COUNT(*) FROM unified_identity_review_cohort').fetchone()[0]==1639
     size=[r[0] for r in db.execute('SELECT COUNT(*) FROM unified_identity_review_cohort GROUP BY cohort_no ORDER BY cohort_no')]
-    assert size==[200,200,200,200,200,200,200,97],size
+    assert size==[200,200,200,200,200,200,200,200,39],size
     assert db.execute('SELECT COUNT(*) FROM unified_identity_review_cohort WHERE admitted_to_physical_site!=0').fetchone()[0]==0
-    return {'identity_review_cohorts':8,'cohort_sizes':size,
-            'candidate_source_records_not_independent_sites':1497,
+    return {'identity_review_cohorts':9,'cohort_sizes':size,
+            'candidate_source_records_not_independent_sites':1639,
             'physical_site_additions':0}
 
 
