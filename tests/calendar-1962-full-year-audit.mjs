@@ -692,8 +692,15 @@ try{
     assert.equal(item.nativeAdapterPrincipalId,item.id,item.date);
     assert.equal(item.trilingualSelected,true,item.date);
   }
-  assert.equal(readerAuditRows.find(x=>x.date==="2026-05-11")?.sourceExpected,
-    "APOSTOLI","11 May source must remain an Apostles' Preface, not Eastertide");
+  const philipJames=readerAuditRows.find(x=>x.date==="2026-05-11");
+  assert.equal(philipJames?.sourceExpected,"APOSTOLI",
+    "11 May source must remain an Apostles' Preface, not Eastertide");
+  assert.equal(philipJames?.result,"READER_SELECTED_CATEGORY_MATCH",
+    "11 May Apostles' Preface must not be printed as a READY Common");
+  assert.equal(philipJames?.selectedPrefaceSection,"Apostolis");
+  assert.equal(philipJames?.selectedPrefaceSource,"Ordo/Prefationes");
+  assert.equal(philipJames?.finalReaderSlot,"READY");
+  assert.equal(philipJames?.nativeAdapterPrincipalId,"sancti:05-11r:2:r");
   const readerResultCounts=Object.fromEntries(
     [...new Set(readerAuditRows.map(x=>x.result))].sort()
       .map(key=>[key,readerAuditRows.filter(x=>x.result===key).length]));
@@ -721,6 +728,8 @@ try{
       marianPrefacesRecoveredReady:21,
       marianLourdesBookConflictBlocked:1,
       seasonalSanctoralPrefacesRecoveredReady:20,
+    may11ApostlesPrefaceRecoveredReady:1,
+      may11ApostlesPrefaceRecoveredReady:1,
       readerLiturgicalSourceReleaseReady,
       unresolvedOrWrongReaderCases:100-matchedNativeReady,
       readerResultCounts,
