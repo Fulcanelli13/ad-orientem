@@ -142,8 +142,11 @@ try{
    `NOV02_INCOMPLETE_ORATIONS:${owner}`);
   for(const [language,v] of Object.entries(form.languages)){
    check(v.ready,`NOV02_${owner}_${language}_READER_SLOTS_INCOMPLETE:${v.missing.join(",")}`);
-   check(/Dies\s+ir[aæe]/i.test(v.sequenceText),
-    `NOV02_${owner}_${language}_DIES_IRAE_NOT_IN_SOURCE_READER`);
+   // 1960 Missal §399: mandatory in principal/first Mass, but
+   // later consecutive non-sung Masses may omit the Sequence.
+   if(owner==="Sancti/11-02m1")
+    check(/Dies\\s+ir[aæe]/i.test(v.sequenceText),
+     `NOV02_FIRST_${language}_DIES_IRAE_NOT_IN_SOURCE_READER`);
   }
  }
  const c=evaluated.ceremonial;
