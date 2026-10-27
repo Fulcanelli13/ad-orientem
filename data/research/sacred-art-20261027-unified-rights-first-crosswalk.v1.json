@@ -108,7 +108,14 @@
     "missing_three_final_legal_and_quality_accepted": 0,
     "historical_conversation_date_choices_detected_outside_B56": 8,
     "historical_conversation_date_choices_conflicting_or_primary_ambiguous": 1,
-    "b56_approved_dates_before_formal_reconciliation": 24
+    "b56_approved_dates_before_formal_reconciliation": 24,
+    "batch01_user_selections": 5,
+    "batch01_none_research_more": 5,
+    "selected_dates_including_batch01": 29,
+    "historical_other_user_approved_date_artworks_missing_b56": 14,
+    "historical_recorded_earlier_definite_approved_dates_not_in_b56": 13,
+    "historical_ambiguous_ascension_requiring_source_resolution": 1,
+    "remaining_dates_without_selected_or_recovered_approval": 10
   },
   "exception_flags": [
     {
@@ -176,7 +183,7 @@
       "date": "2026-01-06",
       "principal_id": "sancti:01-06:1:w",
       "feast": "Epiphany of the Lord",
-      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "editorial_status": "USER_DEFERRED_ALL_BATCH01_CANDIDATES_RESEARCH_NEW_ALTERNATIVES",
       "chosen_painting": null,
       "earlier_subject_selection_artwork_id": "met-436984",
       "earlier_subject_selection_not_user_date_approval": true,
@@ -186,7 +193,15 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261027_batch01_decision": {
+        "status": "NEW_ALTERNATIVES_REQUESTED",
+        "selected_painting": null,
+        "choice_code": "NONE",
+        "source_file": "data/research/sacred-art-20261027-class-i-10-date-batch01.v1.json",
+        "rights_quality_hold": true,
+        "app_released": false
+      }
     },
     {
       "date": "2026-02-18",
@@ -292,39 +307,82 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261019_recovered_explicit_approval": {
+        "artist": "AI reinterpretation inspired by Giacomo Cavedone",
+        "title": "Christ Commands the Shadows",
+        "status": "APPROVED_AI_DERIVATIVE_NOT_HISTORICAL_ORIGINAL",
+        "source_date": "2026-10-19T16:40:07Z",
+        "reproduction_rights": "NOT_VERIFIED",
+        "image_quality": "NOT_VERIFIED",
+        "production_release": false
+      }
     },
     {
       "date": "2026-03-15",
       "principal_id": "tempora:Quad4-0:1:pv",
       "feast": "IV Sunday of Lent",
-      "editorial_status": "REVIEWED_OPEN_NO_CURRENT_DATE_SELECTION",
-      "chosen_painting": null,
+      "editorial_status": "USER_SELECTED_BATCH01_DATE_SPECIFIC",
+      "chosen_painting": {
+        "artist": "Giovanni Lanfranco",
+        "title": "Miracle of the Loaves and Fishes",
+        "object_url": "https://catalogo.fondazionezeri.unibo.it/entry/work/53025/",
+        "source_user_vote": "2026-10-27T17:08:10Z"
+      },
       "earlier_subject_selection_artwork_id": null,
       "earlier_subject_selection_not_user_date_approval": true,
       "legacy_ten_photo_same_painting": false,
       "legacy_ten_photo_sha_if_same_painting": null,
       "legacy_ten_photo_rights_evidence": null,
       "old_photo_does_not_match_later_approval": false,
-      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "rights_review_queue": "NEW_SELECTED_EXACT_PHOTO_RIGHTS_AND_QUALITY_UNREVIEWED",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261027_batch01_decision": {
+        "status": "CHOSEN",
+        "selected_painting": {
+          "artist": "Giovanni Lanfranco",
+          "title": "Miracle of the Loaves and Fishes",
+          "object_url": "https://catalogo.fondazionezeri.unibo.it/entry/work/53025/"
+        },
+        "choice_code": "A",
+        "source_file": "data/research/sacred-art-20261027-class-i-10-date-batch01.v1.json",
+        "rights_quality_hold": true,
+        "app_released": false
+      }
     },
     {
       "date": "2026-03-19",
       "principal_id": "sancti:03-19:1:w",
       "feast": "St. Joseph, Spouse of the Bl. Virgin Mary",
-      "editorial_status": "REVIEWED_OPEN_NO_CURRENT_DATE_SELECTION",
-      "chosen_painting": null,
+      "editorial_status": "USER_SELECTED_BATCH01_DATE_SPECIFIC",
+      "chosen_painting": {
+        "artist": "Claudio Coello",
+        "title": "St Joseph and the Christ Child",
+        "object_url": "https://emuseum.toledomuseum.org/objects/55088/st-joseph-and-the-christ-child",
+        "source_user_vote": "2026-10-27T17:08:10Z"
+      },
       "earlier_subject_selection_artwork_id": "cma-160143",
       "earlier_subject_selection_not_user_date_approval": true,
       "legacy_ten_photo_same_painting": false,
       "legacy_ten_photo_sha_if_same_painting": null,
       "legacy_ten_photo_rights_evidence": null,
       "old_photo_does_not_match_later_approval": false,
-      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "rights_review_queue": "NEW_SELECTED_EXACT_PHOTO_RIGHTS_AND_QUALITY_UNREVIEWED",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261027_batch01_decision": {
+        "status": "CHOSEN",
+        "selected_painting": {
+          "artist": "Claudio Coello",
+          "title": "St Joseph and the Christ Child",
+          "object_url": "https://emuseum.toledomuseum.org/objects/55088/st-joseph-and-the-christ-child"
+        },
+        "choice_code": "A",
+        "source_file": "data/research/sacred-art-20261027-class-i-10-date-batch01.v1.json",
+        "rights_quality_hold": true,
+        "app_released": false
+      }
     },
     {
       "date": "2026-03-22",
@@ -340,7 +398,16 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261019_recovered_explicit_approval": {
+        "artist": "AI oil-style reinterpretation after Lucas van Doetechum",
+        "title": "Passion Sunday devotional reinterpretation",
+        "status": "APPROVED_AI_DERIVATIVE_NOT_HISTORICAL_ORIGINAL",
+        "source_date": "2026-10-19T17:23:19Z",
+        "reproduction_rights": "NOT_VERIFIED",
+        "image_quality": "NOT_VERIFIED",
+        "production_release": false
+      }
     },
     {
       "date": "2026-03-25",
@@ -519,7 +586,7 @@
       "date": "2026-04-04",
       "principal_id": "tempora:Quad6-6r:1:vw",
       "feast": "Holy Saturday",
-      "editorial_status": "REVIEWED_OPEN_NO_CURRENT_DATE_SELECTION",
+      "editorial_status": "USER_DEFERRED_ALL_BATCH01_CANDIDATES_RESEARCH_NEW_ALTERNATIVES",
       "chosen_painting": null,
       "earlier_subject_selection_artwork_id": "met-437156",
       "earlier_subject_selection_not_user_date_approval": true,
@@ -529,7 +596,15 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261027_batch01_decision": {
+        "status": "NEW_ALTERNATIVES_REQUESTED",
+        "selected_painting": null,
+        "choice_code": "NONE",
+        "source_file": "data/research/sacred-art-20261027-class-i-10-date-batch01.v1.json",
+        "rights_quality_hold": true,
+        "app_released": false
+      }
     },
     {
       "date": "2026-04-05",
@@ -624,7 +699,7 @@
       "date": "2026-04-08",
       "principal_id": "tempora:Pasc0-3:1:w",
       "feast": "Wednesday in the Octave of Easter",
-      "editorial_status": "REVIEWED_OPEN_NO_CURRENT_DATE_SELECTION",
+      "editorial_status": "USER_DEFERRED_ALL_BATCH01_CANDIDATES_RESEARCH_NEW_ALTERNATIVES",
       "chosen_painting": null,
       "earlier_subject_selection_artwork_id": "cma-78982",
       "earlier_subject_selection_not_user_date_approval": true,
@@ -634,13 +709,21 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261027_batch01_decision": {
+        "status": "NEW_ALTERNATIVES_REQUESTED",
+        "selected_painting": null,
+        "choice_code": "NONE",
+        "source_file": "data/research/sacred-art-20261027-class-i-10-date-batch01.v1.json",
+        "rights_quality_hold": true,
+        "app_released": false
+      }
     },
     {
       "date": "2026-04-09",
       "principal_id": "tempora:Pasc0-4:1:w",
       "feast": "Thursday in the Octave of Easter",
-      "editorial_status": "REVIEWED_OPEN_NO_CURRENT_DATE_SELECTION",
+      "editorial_status": "USER_DEFERRED_ALL_BATCH01_CANDIDATES_RESEARCH_NEW_ALTERNATIVES",
       "chosen_painting": null,
       "earlier_subject_selection_artwork_id": "cma-78982",
       "earlier_subject_selection_not_user_date_approval": true,
@@ -650,7 +733,15 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261027_batch01_decision": {
+        "status": "NEW_ALTERNATIVES_REQUESTED",
+        "selected_painting": null,
+        "choice_code": "NONE",
+        "source_file": "data/research/sacred-art-20261027-class-i-10-date-batch01.v1.json",
+        "rights_quality_hold": true,
+        "app_released": false
+      }
     },
     {
       "date": "2026-04-10",
@@ -832,7 +923,16 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261019_recovered_explicit_approval": {
+        "artist": "Henry Ossawa Tanner",
+        "title": "Nicodemus",
+        "status": "APPROVED_HISTORICAL_PAINTING",
+        "source_date": "2026-10-19T18:10:24Z",
+        "reproduction_rights": "NOT_VERIFIED",
+        "image_quality": "NOT_VERIFIED",
+        "production_release": false
+      }
     },
     {
       "date": "2026-05-26",
@@ -848,7 +948,16 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261019_recovered_explicit_approval": {
+        "artist": "Figge (attribution unresolved)",
+        "title": "The Good Shepherd",
+        "status": "APPROVED_HISTORICAL_PAINTING_ATTRIBUTION_UNRESOLVED",
+        "source_date": "2026-10-19T19:54:42Z",
+        "reproduction_rights": "NOT_VERIFIED",
+        "image_quality": "NOT_VERIFIED",
+        "production_release": false
+      }
     },
     {
       "date": "2026-05-27",
@@ -892,7 +1001,16 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261019_recovered_explicit_approval": {
+        "artist": "North Netherlandish painter",
+        "title": "Sending Out of the Twelve",
+        "status": "APPROVED_HISTORICAL_PAINTING_ARTIST_UNRESOLVED",
+        "source_date": "2026-10-19T18:10:24Z",
+        "reproduction_rights": "NOT_VERIFIED",
+        "image_quality": "NOT_VERIFIED",
+        "production_release": false
+      }
     },
     {
       "date": "2026-05-29",
@@ -924,7 +1042,16 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261019_recovered_explicit_approval": {
+        "artist": "John Bridges",
+        "title": "Jesus Restoring to Health Peter’s Wife’s Mother",
+        "status": "APPROVED_HISTORICAL_ILLUSTRATION",
+        "source_date": "2026-10-19T18:10:24Z",
+        "reproduction_rights": "NOT_VERIFIED",
+        "image_quality": "NOT_VERIFIED",
+        "production_release": false
+      }
     },
     {
       "date": "2026-05-31",
@@ -956,17 +1083,34 @@
       "date": "2026-06-04",
       "principal_id": "tempora:Pent01-4:1:w",
       "feast": "Corpus Christi",
-      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
-      "chosen_painting": null,
+      "editorial_status": "USER_SELECTED_BATCH01_DATE_SPECIFIC",
+      "chosen_painting": {
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "object_url": "https://collections.louvre.fr/ark:/53355/cl010062076",
+        "source_user_vote": "2026-10-27T17:08:10Z"
+      },
       "earlier_subject_selection_artwork_id": "met-437722",
       "earlier_subject_selection_not_user_date_approval": true,
       "legacy_ten_photo_same_painting": false,
       "legacy_ten_photo_sha_if_same_painting": null,
       "legacy_ten_photo_rights_evidence": null,
       "old_photo_does_not_match_later_approval": false,
-      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "rights_review_queue": "NEW_SELECTED_EXACT_PHOTO_RIGHTS_AND_QUALITY_UNREVIEWED",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261027_batch01_decision": {
+        "status": "CHOSEN",
+        "selected_painting": {
+          "artist": "Philippe de Champaigne",
+          "title": "La Petite Cène",
+          "object_url": "https://collections.louvre.fr/ark:/53355/cl010062076"
+        },
+        "choice_code": "A",
+        "source_file": "data/research/sacred-art-20261027-class-i-10-date-batch01.v1.json",
+        "rights_quality_hold": true,
+        "app_released": false
+      }
     },
     {
       "date": "2026-06-12",
@@ -1025,23 +1169,40 @@
       "date": "2026-06-29",
       "principal_id": "sancti:06-29:1:r",
       "feast": "Sts. Peter & Paul",
-      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
-      "chosen_painting": null,
+      "editorial_status": "USER_SELECTED_BATCH01_DATE_SPECIFIC",
+      "chosen_painting": {
+        "artist": "Bartolomeo Manfredi (possibly with Nicolas Tournier)",
+        "title": "Saints Peter and Paul",
+        "object_url": "https://www.metmuseum.org/art/collection/search/442491",
+        "source_user_vote": "2026-10-27T17:08:10Z"
+      },
       "earlier_subject_selection_artwork_id": null,
       "earlier_subject_selection_not_user_date_approval": true,
       "legacy_ten_photo_same_painting": false,
       "legacy_ten_photo_sha_if_same_painting": null,
       "legacy_ten_photo_rights_evidence": null,
       "old_photo_does_not_match_later_approval": false,
-      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "rights_review_queue": "NEW_SELECTED_EXACT_PHOTO_RIGHTS_AND_QUALITY_UNREVIEWED",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261027_batch01_decision": {
+        "status": "CHOSEN",
+        "selected_painting": {
+          "artist": "Bartolomeo Manfredi (possibly with Nicolas Tournier)",
+          "title": "Saints Peter and Paul",
+          "object_url": "https://www.metmuseum.org/art/collection/search/442491"
+        },
+        "choice_code": "A",
+        "source_file": "data/research/sacred-art-20261027-class-i-10-date-batch01.v1.json",
+        "rights_quality_hold": true,
+        "app_released": false
+      }
     },
     {
       "date": "2026-07-01",
       "principal_id": "sancti:07-01:1:r",
       "feast": "The Precious Blood of Our Lord Jesus Christ",
-      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "editorial_status": "USER_DEFERRED_ALL_BATCH01_CANDIDATES_RESEARCH_NEW_ALTERNATIVES",
       "chosen_painting": null,
       "earlier_subject_selection_artwork_id": null,
       "earlier_subject_selection_not_user_date_approval": true,
@@ -1051,23 +1212,48 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261027_batch01_decision": {
+        "status": "NEW_ALTERNATIVES_REQUESTED",
+        "selected_painting": null,
+        "choice_code": "NONE",
+        "source_file": "data/research/sacred-art-20261027-class-i-10-date-batch01.v1.json",
+        "rights_quality_hold": true,
+        "app_released": false
+      }
     },
     {
       "date": "2026-08-15",
       "principal_id": "sancti:08-15:1:w",
       "feast": "Assumption of the Blessed Virgin Mary",
-      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
-      "chosen_painting": null,
+      "editorial_status": "USER_SELECTED_BATCH01_DATE_SPECIFIC",
+      "chosen_painting": {
+        "artist": "Guido Reni",
+        "title": "Assumption of the Virgin",
+        "object_url": "https://sammlung.staedelmuseum.de/en/work/assumption-of-the-virgin",
+        "source_user_vote": "2026-10-27T17:08:10Z"
+      },
       "earlier_subject_selection_artwork_id": "nga-46131",
       "earlier_subject_selection_not_user_date_approval": true,
       "legacy_ten_photo_same_painting": false,
       "legacy_ten_photo_sha_if_same_painting": null,
       "legacy_ten_photo_rights_evidence": null,
       "old_photo_does_not_match_later_approval": false,
-      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "rights_review_queue": "NEW_SELECTED_EXACT_PHOTO_RIGHTS_AND_QUALITY_UNREVIEWED",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "user_20261027_batch01_decision": {
+        "status": "CHOSEN",
+        "selected_painting": {
+          "artist": "Guido Reni",
+          "title": "Assumption of the Virgin",
+          "object_url": "https://sammlung.staedelmuseum.de/en/work/assumption-of-the-virgin"
+        },
+        "choice_code": "A",
+        "source_file": "data/research/sacred-art-20261027-class-i-10-date-batch01.v1.json",
+        "rights_quality_hold": true,
+        "app_released": false
+      }
     },
     {
       "date": "2026-09-29",
@@ -2579,5 +2765,19 @@
   "module_hero_selection_supersession_policy": "Read user_oct27_choice first when present; old approved_painting remains historical record. No app photo release until separate exact-file gate. Guardian reuses Michael module original.",
   "latest_user_direction_summary": "Christ the King rejects all Salvator Mundi type paintings; Holy Spirit Morazzone favored over Van Dyck; neither new choice production-released",
   "next_module_hero_priority_after_rejected_king": "Continue remaining module hero release exceptions and 53 Class I rights-first/quality selection; leave King unresolved instead of forcing mediocre imagery.",
-  "historical_recovery_note": "The 24/53 B56 selected count is not the whole historical record: eight date-level decisions from user conversation surfaced outside this current B56 register. This research-only crosswalk preserves these choices WITHOUT silently modifying B56 selections; reconcile chronology/identity and keep the previously approved paintings before requesting new vote."
+  "historical_recovery_note": "The 24/53 B56 selected count is not the whole historical record: eight date-level decisions from user conversation surfaced outside this current B56 register. This research-only crosswalk preserves these choices WITHOUT silently modifying B56 selections; reconcile chronology/identity and keep the previously approved paintings before requesting new vote.",
+  "batch01_vote_reference": "data/research/sacred-art-20261027-class-i-10-date-batch01.v1.json",
+  "recovered_historical_20261019_paintings_note": "Six additional explicit October 19 user-approved artworks recovered by conversation retrieval: March 8, March 22, May 25, May 26, May 28, May 30. March 8/22 are AI-derived art and must never be misrepresented as historical paintings. May 29 selected research, not approved. May 26 Figge approval, Murillo Good Shepherd rejected.",
+  "next_batch10_unresolved_dates": [
+    "2026-01-06",
+    "2026-04-04",
+    "2026-04-08",
+    "2026-04-09",
+    "2026-05-29",
+    "2026-07-01",
+    "2026-09-29",
+    "2026-12-08",
+    "2026-12-24",
+    "2026-12-25"
+  ]
 }
