@@ -14,7 +14,43 @@ const fail=(status,reason,base={})=>Object.freeze({
   trilingualTextComplete:false,autoPublish:false,changesReader:false,...base
 });
 const rule=(category,clause,basis)=>Object.freeze({category,clause,basis});
-function expectedFor(id,date,rank,colour){
+// §299 supplies a preceding Sunday Proper to an ordinary feria, while
+// §§489(b), 490(b) govern Preface inheritance. Do NOT generalise this to
+// saints, votives, non-white days, unknown source paths or a simple date guess.
+function romanEasterUtc(year){
+  // Gregorian computus, used only as independent seasonal boundary evidence.
+  const a=year%19,b=Math.floor(year/100),c=year%100;
+  const d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25);
+  const g=Math.floor((b-f+1)/3);
+  const h=(19*a+b-d-g+15)%30;
+  const i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k+7)%7;
+  const m=Math.floor((a+11*h+22*l)/451);
+  const month=Math.floor((h+l-7*m+114)/31);
+  const day=((h+l-7*m+114)%31)+1;
+  return Date.UTC(year,month-1,day);
+}
+function inheritedSundayFeriaPreface(id,date,rank,colour,sourcePath){
+  if(id!==":feria:4:w"||rank!==4||colour!=="white")return null;
+  const inherited=/^Tempora\/Pasc([1-6])-0$/.exec(sourcePath);
+  if(!inherited||!/^\d{4}-\d{2}-\d{2}$/.test(date))return null;
+  const year=Number(date.slice(0,4));
+  if(year<1900||year>2099)return null; // independent computus tested range
+  const day=Date.parse(date+"T12:00:00.000Z");
+  if(!Number.isFinite(day))return null;
+  const easter=romanEasterUtc(year);
+  const days=Math.round((day-Date.UTC(year,0,1,12))/86400000)-
+    Math.round((easter-Date.UTC(year,0,1))/86400000);
+  const week=Number(inherited[1]);
+  // Never inherit from an unrelated preceding or following Sunday source.
+  if(days<=week*7||days>week*7+6)return null;
+  if(days>=1&&days<=38)
+    return rule("PASCHALIS","489_B","SOURCE_MATCHED_INHERITED_PASCHAL_FERIA");
+  if(days>=40&&days<=47)
+    return rule("ASCENSIO","490_B","SOURCE_MATCHED_INHERITED_ASCENSION_FERIA");
+  return null;
+}
+
+function expectedFor(id,date,rank,colour,sourcePath){
   // Explicit feast/source IDs; do not infer Lord/Mary/Apostle solely from
   // vernacular titles, colour, modern observances or commemoration labels.
   const main=id.split(":").slice(0,2).join(":").toLowerCase();
@@ -61,6 +97,8 @@ function expectedFor(id,date,rank,colour){
     // Generic IDs do not identify the source's Office season; require a
     // witnessed GREEN IV-class Mass per annum, not just a date.
     if(rank===4&&colour==="green")return rule("COMMUNIS","498","GREEN_IV_FERIA_PER_ANNUM");
+    const inherited=inheritedSundayFeriaPreface(id,date,rank,colour,sourcePath);
+    if(inherited)return inherited;
     return null;
   }
   // The resolver source owns the *principal* Mass. Only named Temporale
@@ -132,7 +170,11 @@ export function review1962PrefaceForCalendarDay(resolution){
   if(/(?:requiem|votive|mass_of_dead)/i.test(text(p.riteProfile??p.profile)))
     return fail("WITHHELD","SELECTED_SPECIAL_MASS_NOT_THE_GENERAL_CALENDAR",{principalId:id,date});
   const rank=Number(main.rank),colour=text(resolution?.colourPlan?.massColor??p.color??main.color).toLowerCase();
-  const expectation=expectedFor(id,date,rank,colour);
+  const alternate=resolution?.day?.selectedMassOption?.path;
+  const sourcePath=text(p.sourcePath);
+  const expected=alternate&&alternate!==sourcePath?null:
+    expectedFor(id,date,rank,colour,sourcePath);
+  const expectation=expected;
   const heading=latinHeading(p.preface),actual=classify1962PrefaceHeading(heading);
   const validPassage=value=>Boolean(text(value)&&!/^[$@]/.test(text(value)));
   const complete=validPassage(p.preface?.lat??p.preface?.la)&&
