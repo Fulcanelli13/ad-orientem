@@ -221,4 +221,57 @@ assert.equal(outsideOwner.ready,true,
 assert.equal(inspect1962PluralMartyrsFrenchOrationSource(affected,"COLLECT_SET"),null,
   "The printed plural Collect was not the known French source defect");
 
+// Source-provenance exception for Perpetua/Felicity's *named* 1962 Proper.
+// The pinned French Sancti/03-06 Collect and Secret say "Vierges et
+// Martyres" even though Latin derives from the NON-VIRGIN female Martyrs'
+// C7b Common. This must also cover an actual ferial Mass's independently
+// source-identified commemorative row, not only a selected Common page.
+const nonVirginLatin="Da nobis, quaesumus, Domine, palmas sanctárum Mártyrum tuárum Perpétuæ et Felicitátis venerari.";
+const incorrectFrench="Donnez-nous, Seigneur, le triomphe de vos saintes Vierges et Martyres Perpétue et Félicité, afin de les honorer.";
+const namedProper={...frenchProper,sourcePath:"Sancti/03-06",
+  collects:[{lat:nonVirginLatin,fr:incorrectFrench}],
+  secrets:[{lat:nonVirginLatin,fr:incorrectFrench}],
+  postcommunions:[{lat:"Mýsticis, Dómine, repléti sumus",fr:"Nous sommes comblés, Seigneur"}],
+};
+const badNamed=properToReaderSlots(namedProper,{language:"fr"});
+assert.equal(badNamed.slots.COLLECT_SET.status,"MISSING","Wrong Virgin identity in named Collect must be held");
+assert.equal(badNamed.slots.SECRET_SET.status,"MISSING","Wrong Virgin identity in named Secret must be held");
+assert.equal(badNamed.slots.POSTCOMMUNION_SET.status,"READY","Independent named Postcommunion remains available");
+const correctNamed=properToReaderSlots({...namedProper,collects:[{
+  lat:nonVirginLatin,fr:incorrectFrench.replace("Vierges et ","")
+}],secrets:[{lat:nonVirginLatin,fr:incorrectFrench.replace("Vierges et ","")}]},{language:"fr"});
+assert.equal(correctNamed.ready,true,"Correct non-Virgin French Proper must not be blocked");
+const namedEnglish=properToReaderSlots({...proper,sourcePath:"Sancti/03-06",
+  collects:[{lat:nonVirginLatin,en:"Collect for the Martyrs Perpetua and Felicitas"}],
+  secrets:[{lat:nonVirginLatin,en:"Secret for the Martyrs Perpetua and Felicitas"}],
+},{language:"en"});
+assert.equal(namedEnglish.ready,true,"French editorial issue must never affect English");
+const attachedCommemoration=properToReaderSlots({
+  ...frenchProper,sourcePath:"Tempora/Quad2-5",
+  collects:[{lat:"Ferial Collect",fr:"Collecte de la férie"},{
+    sourcePath:"Sancti/03-06:Oratio",lat:nonVirginLatin,fr:incorrectFrench
+  }],
+  secrets:[{lat:"Ferial Secret",fr:"Secrète de la férie"},{
+    sourcePath:"Sancti/03-06:Secreta",lat:nonVirginLatin,fr:incorrectFrench
+  }],
+},{language:"fr"});
+assert.equal(attachedCommemoration.slots.COLLECT_SET.status,"MISSING",
+  "Source-attested Perpetua/Felicity commemoration under Lenten Mass must fail closed");
+assert.equal(attachedCommemoration.slots.SECRET_SET.status,"MISSING");
+const unmarkedCommemoration=properToReaderSlots({...frenchProper,sourcePath:"Tempora/Quad2-5",
+  collects:[{lat:nonVirginLatin,fr:incorrectFrench}],
+},{language:"fr"});
+assert.equal(unmarkedCommemoration.slots.COLLECT_SET.status,"READY",
+  "Do not infer an otherwise unproven child donor identity solely from words");
+const latinActuallyVirgin=properToReaderSlots({...namedProper,
+  collects:[{lat:"sanctárum Vírginum et Mártyrum Perpétuæ et Felicitátis",
+    fr:incorrectFrench}],
+  secrets:[{lat:"sanctárum Vírginum et Mártyrum Perpétuæ et Felicitátis",
+    fr:incorrectFrench}],
+},{language:"fr"});
+assert.equal(latinActuallyVirgin.ready,true,
+  "No invented correction if the identified Latin itself says Virgin");
+assert.equal(namedProper.collects[0].fr,incorrectFrench,
+  "Actual source text immutable under read-only editor guard");
+
 console.log("Proper → reader slots: PASS — EN/FR vernacular projection, certified suppressions, no duplicate Gradual/Alleluia.");
