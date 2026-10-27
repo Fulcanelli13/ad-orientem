@@ -24,10 +24,18 @@ def main():
       "source_ministry":2723,"mass_time":4681,
       "timetable_ministry_link":4681,"institute_norm":8,
       "existing_alias":5,"identity_exception":49,
-      "classification_exception":0,"unified_site_candidate":1639,"unified_research_inventory":4218,"unified_provider_coverage":554,"unified_third_party_source_lead":1531,"unified_directory_country_census":65,"unified_identity_review_cohort":1639
+      "classification_exception":0,"unified_provider_coverage":554,"unified_third_party_source_lead":1531,"unified_directory_country_census":65,"unified_additional_provider_feed":791
     }
     for table,n in expected.items():
         assert count(db,f'SELECT COUNT(*) FROM {table} ')==n,(table,n)
+    added=count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE source_batch='ADDITIONAL_PROVIDER'")
+    n_candidates=1639+added
+    assert n_candidates>=1639
+    assert count(db,'SELECT COUNT(*) FROM unified_site_candidate')==n_candidates
+    assert count(db,'SELECT COUNT(*) FROM unified_research_inventory')==2579+n_candidates
+    assert count(db,'SELECT COUNT(*) FROM unified_identity_review_cohort')==n_candidates
+    assert count(db,"SELECT COUNT(*) FROM unified_additional_provider_feed WHERE census_join_state='NEW_UNRESOLVED_WORSHIP_OR_MASS_SITE_LEAD'")==added
+    assert count(db,"SELECT COUNT(*) FROM unified_additional_provider_feed WHERE census_join_state='EXACT_CL2_FROZEN_SOURCE_ID' OR census_join_state='EXACT_EXISTING_CL2_CANDIDATE_ID' OR census_join_state='NEW_UNRESOLVED_WORSHIP_OR_MASS_SITE_LEAD' OR census_join_state='NON_WORSHIP_OR_AMBIGUOUS_FACILITY_HELD'")==791
     assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
     assert not db.execute('PRAGMA foreign_key_check').fetchall()
     assert count(db,"SELECT COUNT(*) FROM source_ministry WHERE institute_id IS NOT NULL")==1389
@@ -52,7 +60,7 @@ def main():
     assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE related_existing_provider_id IS NOT NULL")==2
     assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE reconciliation_status!='IDENTITY_RECONCILIATION_REQUIRED'")==0
     assert count(db,"SELECT COUNT(*) FROM unified_research_inventory WHERE kind='ADMITTED_PHYSICAL_ANCHOR'")==2579
-    assert count(db,"SELECT COUNT(*) FROM unified_research_inventory WHERE kind='CANDIDATE_IDENTITY_UNRESOLVED'")==1639
+    assert count(db,"SELECT COUNT(*) FROM unified_research_inventory WHERE kind='CANDIDATE_IDENTITY_UNRESOLVED'")==n_candidates
     assert not db.execute("SELECT candidate_research_id FROM unified_site_candidate INTERSECT SELECT group_id FROM canonical_site").fetchall()
     assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE source_batch='THIRD_PARTY_LMD'")==1444
     assert count(db,"SELECT COUNT(*) FROM unified_third_party_source_lead WHERE exact_cl2_frozen_source_id IS NOT NULL")==87
@@ -62,7 +70,8 @@ def main():
     assert count(db,"SELECT COUNT(*) FROM unified_third_party_source_lead WHERE previous_similarity_disposition='AMBIGUOUS_NAME_MATCH'")==80
     assert count(db,"SELECT COUNT(*) FROM unified_directory_country_census WHERE source_listing_complete=1")==54
     assert count(db,"SELECT COUNT(*) FROM unified_directory_country_census WHERE source_listing_complete=0")==11
-    assert [r[0] for r in db.execute('SELECT COUNT(*) FROM unified_identity_review_cohort GROUP BY cohort_no ORDER BY cohort_no')]==[200,200,200,200,200,200,200,200,39]
+    cohort_sizes=[r[0] for r in db.execute('SELECT COUNT(*) FROM unified_identity_review_cohort GROUP BY cohort_no ORDER BY cohort_no')]
+    assert cohort_sizes==[200]*(n_candidates//200)+([n_candidates%200] if n_candidates%200 else [])
     assert count(db,"SELECT COUNT(*) FROM unified_identity_review_cohort WHERE admitted_to_physical_site!=0")==0
     assert not db.execute("SELECT candidate_research_id FROM unified_site_candidate EXCEPT SELECT candidate_research_id FROM unified_identity_review_cohort").fetchall()
     assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE source_batch LIKE 'PROVIDER_%'")==159
@@ -114,7 +123,7 @@ def main():
     db.close()
     print("UNIFIED MASTER PASS: 2,579 physical sites, 2,723 source ministries, "
           "4,681 Mass rows, 1,389 rule-inheriting institute labels, "
-          "36 G0 + 159 provider + 1,444 third-party leads staged; 554 provider-feed entries screened, "
+          "36 G0 + 159 provider + 1,444 third-party + additional provider leads staged; 1,345 provider-feed entries screened, "
           "13 held source-less timetables, source/celebration overrides tested, zero published.")
 
 if __name__=='__main__': main()
