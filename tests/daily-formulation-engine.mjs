@@ -188,6 +188,21 @@ const noRelease={...manifest,witnesses:{
 assert.deepEqual(preferences.load(noRelease),{},"Withdrawn source must not be loaded");
 assert.equal(preferences.save(noRelease,{selection:{offering:"alternative"}}).saved,false);
 assert.deepEqual(preferences.load(manifest),{offering:"alternative"});
+// Imported/corrupt settings must never be re-emitted as sensitive free text.
+entries.set(preferences.key,JSON.stringify({version:1,profiles:{
+ "en:morning:short":{offering:"alternative",freeform:"I confessed a private matter"},
+ "fr:morning:short":{offrande:"french"},
+ "other:notes:private":{confession:"private journal"}
+}}));
+assert.equal(preferences.save(manifest,{
+ language:"en",daypart:"morning",length:"short",selection:{offering:"offering"}
+}).saved,true);
+const sanitized=entries.get(preferences.key);
+assert.ok(!sanitized.includes("I confessed a private matter"));
+assert.ok(!sanitized.includes("private journal"));
+assert.ok(!sanitized.includes("freeform"));
+assert.ok(!sanitized.includes("other:notes:private"));
+assert.ok(sanitized.includes("fr:morning:short"),"Known language profile preserved");
 assert.equal(preferences.clear({language:"en",daypart:"morning",length:"short"}),true);
 assert.deepEqual(preferences.load(manifest),{});
 assert.equal(preferences.save(manifest,{selection:{offering:"offering"}}).saved,true);
