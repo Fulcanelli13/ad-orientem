@@ -52,3 +52,47 @@ Every source part, row count, frozen group/source ID uniqueness, Mass VERIFIED l
 ## Relation to parallel branches
 
 Source branches: site pipeline B98 #1721 → B99 #1722 → B100 #1725. Classification contract B92 [#1724](https://github.com/Fulcanelli13/ad-orientem/pull/1724). CL2 consumes both datasets, without claiming those independent branches or live application updates have merged. Preserve those branches' respective evidence claims and IDs.
+
+## CL2 unified master v2 — physical venues, ministries, timetables and shared institutional norms (27 October)
+
+**This is the same SQLite canonical research master, not a separate directory.**
+The existing checksum-verified 25-part source snapshot continues to be the single input to `rebuild-cl2-research-snapshot.py`. It now reconstructs both the original lossless tables and these in the **same database**:
+
+| Table or view | Role |
+|---|---|
+| `unified_physical_site` | **2,579** actual provisional physical anchors, with all 2,584 historical IDs represented via original aliases; no duplicated venue per institute |
+| `venue_source`, `source_ministry` | The 2,687 original source-venue rows plus 36 separate classification-only assertions; 2,723 source-ministry rows, including eight unclassified source records held |
+| `institute_norm` | **One authoritative pair of defaults per institute**, currently FSSP, ICKSP, IBP, SSPX (Roman usage and 1962 Missal), each with its own original institutional evidence URL |
+| `timetable_ministry_link` | All **4,681** original historical Mass rows, with physical-site and source-ministry links only when exact identity is safe, otherwise an explicit hold |
+| `effective_source_liturgy` | Directly resolves all eligible source institute labels to an inherited norm, never labels the actual church as wholly belonging to that institute |
+| `effective_mass_liturgy` | Group → source ministry → Mass time *inherited norm*, separately marked **not yet independently verified as that celebration** |
+| `classification_exception` | Dated, HTTPS-evidenced explicit **ministry-level override** before **celebration-level override**, leaving source-wide group policy unchanged |
+
+### First category-wide application
+
+The official institute-wide default **Roman / 1962** is defined in a single file, `institution-norms.v1.json` (not one row per church).
+
+| Institute | Source-labelled records inheriting the group rule |
+|---|---:|
+| FSSP | 381 |
+| ICKSP | 158 |
+| IBP | 31 |
+| SSPX | 819 |
+| **Total** | **1,389** |
+
+These are **1,389 source-classification assertions, not 1,389 public churches or confirmed Masses**. Some are classification-only records without confirmed physical anchors. Only exact source/group joins may be treated as linked; the five group contradictions, 36 classification-only records and eight unclassified venue sources are retained. All unknown/unverified affiliations (diocesan unspecified, other institutes, shared sites, etc.) remain UNKNOWN until an approved institute norm or explicit local source exists. Institute norms may also be updated centrally without rewriting any site.
+
+**Scopes matter:** the fact that FSSP generally uses the 1962 Missal can propagate to a *source-linked FSSP ministry*. It cannot classify every Mass in a diocesan church hosting the Fraternity. Nor is it proof of a current timetable, a personally named celebrant, canonical standing or a specific *una cum* mention. Such data occupy separate sourced scopes. The first four standard norms have citations from the official institutions and a 2022 decree; the exception table resolves individual source/ministry or Mass-specific documented departures above the institute norm.
+
+Run and verify (Python standard library, **€0**):
+
+```bash
+python3 tools/directory/rebuild-cl2-research-snapshot.py \
+  --snapshot-dir data/directory/research/cl2-unified-20261026 \
+  --output /tmp/ad-orientem-unified-master.sqlite
+
+python3 tools/directory/validate-cl2-unified-master-inheritance.py \
+  --db /tmp/ad-orientem-unified-master.sqlite
+```
+
+The import remains **research-only** until exact site, ministry and current timetable release gates pass. The official rules, frozen original records, aliases and all held exceptions are kept together in this one master. Nothing in this extension modifies `src/find` or the public 1,882-pin provisional snapshot.
