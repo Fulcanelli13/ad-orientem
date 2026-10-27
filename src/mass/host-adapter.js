@@ -74,7 +74,8 @@ export function bind1962PrincipalPrefaceIdentity(proper,legacy){
     return proper;
   const verdict=inspect1962PrefaceSelection({
     principalCelebrationId:id,selectedPreface:data.preface,
-    requestedCelebrationId:"mass_of_day",sourcePath:path
+    requestedCelebrationId:"mass_of_day",sourcePath:path,
+    calendarDate:legacy.date??null
   });
   if(verdict.status==="UNMAPPED_SOURCE")return proper;
   // A conflicting pre-existing owner must not silently suppress the
@@ -82,7 +83,8 @@ export function bind1962PrincipalPrefaceIdentity(proper,legacy){
   if(data.principalCelebrationId&&data.principalCelebrationId!==id)
     throw new Error("PREFACE_SOURCE_IDENTITY_CONFLICT");
   const bound=Object.freeze({...data,principalCelebrationId:id,
-    requestedCelebrationId:"mass_of_day"});
+    requestedCelebrationId:"mass_of_day",
+    selectedMassDate:legacy.date??null});
   return proper.data?Object.freeze({...proper,data:bound}):bound;
 }
 
