@@ -3379,5 +3379,78 @@
     "noNewGabcGenerated": true,
     "explicitReviewerSignoffNeeded": true,
     "releasePermitted": false
+  },
+  "batch40L05LongWordAccentEvidence": {
+    "batch": 40,
+    "date": "2026-10-27",
+    "caseId": "PALM-R02-PS46-L05",
+    "status": "INTRA_WORD_SECONDARY_ACCENT_STRUCTURALLY_PLAUSIBLE_UNDER_OLDER_SOLESMES_RULE_NOT_1961_PALM_MUSICALLY_APPROVED",
+    "narrowQuestion": "Does a long-word secondary accent on -ta- of exsultatióne supply the first Tone-I two-accent mediant anchor without treating weak cum as naturally stressed?",
+    "sources": [
+      {
+        "authority": "Justine Ward, Gregorian Chant Vol. II (1949) ch. VI, printed pp. 36-37",
+        "witness": "SCANNED_PAGES_VISUALLY_INSPECTED",
+        "url": "https://media.musicasacra.com/pdf/ward5.pdf#page=46",
+        "scope": "Two-accent Mode-I mediant can use tonic or secondary accents; in long words, a secondary accent can replace a tonic accent melodically. Does not notate this Palm verse."
+      },
+      {
+        "authority": "Benedictines of Stanbrook, A Grammar of Plainsong (1905), Psalmody, printed p.54, historical OCR witness",
+        "witness": "SINGLE_OCR_TEXT_WITNESS_NOT_VISUALLY_CONFIRMED",
+        "url": "https://www.scribd.com/document/433591050/grammarofplainso00stanuoft",
+        "scope": "In long words a secondary accent may occur two syllables before the tonic accent where it occupies a strong cadence beat. Actual 1905 staff/page still to be inspected."
+      },
+      {
+        "authority": "Rules for Text Underlay of the Psalm Text at the Cadence Formulas (NPM/SG381 guide), PDF pp.1-2",
+        "witness": "SCANNED_PAGES_VISUALLY_INSPECTED",
+        "url": "https://npm.org/wp-content/uploads/2017/07/Rules-for-Text-Underlay-of-the-Psalm-Text-at-the-Psalm-Tone-Cadence.pdf",
+        "scope": "Two-accent spacing at most two unaccented syllables; forward two-after-prior-true-accent artificial-accent rule. Supporting grammar, not an exhaustive rule for all historical long-word secondary accents or a 1961 Palm notated setting."
+      },
+      {
+        "authority": "1961 Graduale Romanum, Palm Psalm46, p.144**",
+        "witness": "ORIGINAL_FIRST_VERSE_NOTATED_ONLY",
+        "url": "https://gregobase.selapa.net/sources/2/1180.png",
+        "scope": "Original Psalm46 psalm-tone opening, not a full Psalm46:5 pointing or independently notated completion."
+      }
+    ],
+    "sourceLatin": "Ascéndit Deus cum exsultatióne",
+    "syllableModel": "As(0)-cén(1)-dit(2) De(3)-us(4) cum(5) ex(6)-sul(7)-ta(8)-ti(9)-ó(10)-ne(11)",
+    "candidate": {
+      "status": "REOPEN_AS_RULE_CLASS_FEASIBLE_NOT_SOURCE_AUTHENTIC",
+      "firstMusicalAccent": {
+        "syllable": "ta",
+        "index": 8,
+        "lexicalStress": false,
+        "sourceType": "POSSIBLE_INTRA_WORD_SECONDARY_ACCENT"
+      },
+      "secondMusicalAccent": {
+        "syllable": "ó",
+        "index": 10,
+        "lexicalStress": true
+      },
+      "positionWithinWord": "ta is two syllables BEFORE the tonic ó in ex-sul-ta-ti-ó-ne",
+      "syllablesBetweenMusicalAccents": [
+        "ti"
+      ],
+      "spacingPass": true,
+      "previousKnownNaturalAccent": {
+        "syllable": "De",
+        "index": 3
+      },
+      "distanceAfterPreviousNatural": 5,
+      "compliesWithNpmTwoAfterPreviousNatural": false,
+      "needsStressedCum": false,
+      "originalResearchGabcBodyPreserved": true,
+      "originalMedialGabcExcerpt": "ta(ixi)ti(hr)ó(g hr)ne,",
+      "noNewPitchGroupProposed": true
+    },
+    "narrowBatch39Reconciliation": "Batch39 excluded a direct two-after-previous-natural-accent derivation. It did not test the older separate long-word secondary-accent mechanism, which counts BACKWARD from the tonic accent of exsultatióne. Ward permits that class. The candidate is therefore no longer ruled out solely by its distance from De, but neither Ward nor the OCR Stanbrook source certifies the particular note/underlay application in the 1961 Palm processional.",
+    "nextEvidenceNeeded": "Compare the actual 1961 Palm 1f tone, notated long-word mediants of the SAME usage where available, and qualified musical-editor adjudication of ta(ixi) ti(hr) ó(g hr) plus the first-tone variant; confirm the Stanbrook rule against its printed facsimile.",
+    "preservesHistoricalBatch39": true,
+    "full1961PalmVerseNotationWitnessFound": false,
+    "hasMusicalEditorialSignoff": false,
+    "existing17SettingsStillProvisional": true,
+    "scorePublished": false,
+    "readerRuntimeChanged": false,
+    "permittedAutomaticPromotion": false
   }
 }
