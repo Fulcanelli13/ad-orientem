@@ -371,16 +371,18 @@ try{
        massUi.succession?.nextPurification?.length===0,
    "NOV02_RITUS_XIV_EXPLICIT_CONDITIONAL_CUES_NOT_MATCHED");
  check(massUi.mobileDisplay?.checks?.length===3 &&
-   massUi.mobileDisplay.checks.every(row=>
-     row.modeApplied===row.mode &&
-     row.paragraphNotes.some(x=>x.cue==="AO.SM.C0112" && /épître/i.test(x.text)) &&
-     row.paragraphNotes.some(x=>x.cue==="AO.SM.C0247" && /eau seulement/i.test(x.text)) &&
-     !row.paragraphNotes.some(x=>x.cue==="AO.SM.C0248") &&
-     (row.mode==="SIMPLE"
-       ? row.rubrics.length===0
-       : row.rubrics.length===2 &&
-         row.rubrics.some(x=>x.cue==="AO.SM.C0112") &&
-         row.rubrics.some(x=>x.cue==="AO.SM.C0247"))),
+   massUi.mobileDisplay.checks.every(row=>{
+     if(row.modeApplied!==row.mode||row.selectedCueRoot!==3)return false;
+     const displayed=row.mode==="SIMPLE"
+       ?row.paragraphNotes:row.rubrics;
+     return displayed.length===2 &&
+       displayed.some(x=>x.cue==="AO.SM.C0112" && /épître/i.test(x.text)) &&
+       displayed.some(x=>x.cue==="AO.SM.C0247" && /eau seulement/i.test(x.text)) &&
+       !displayed.some(x=>x.cue==="AO.SM.C0248") &&
+       (row.mode==="SIMPLE"
+         ?row.rubrics.length===0
+         :row.paragraphNotes.length===0);
+   }),
    "NOV02_RITUS_XIV_MOBILE_NATIVE_RENDERER_ALL_MODES_NOT_VERIFIED");
  const c=evaluated.ceremonial;
  check(c.req.omittedPeace.includes("AO.SM.C0225"),"REQUIEM_PEACE_PRAYER_NOT_OMITTED");
