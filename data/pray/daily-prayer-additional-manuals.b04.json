@@ -22,18 +22,18 @@
       "work": "The Catholic Prayer Book and Manual of Meditations",
       "edition": "Patrick F. Moran, Dublin, Browne & Nolan, 1883",
       "morning": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Morning_Prayer",
-      "evening": null,
-      "notes": "A distinct Morning Prayer chapter is verified. No separate Evening Prayer chapter located in the table of contents consulted; do not fabricate one."
+      "evening": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Night_Prayer",
+      "notes": "Original 1883 table of contents confirms Morning Prayer printed p. 2 and Night Prayer printed p. 12; the prior claim that Moran had no evening section was incorrect. The night chapter includes confessional, thanksgiving, protection and departed prayers."
     }
   },
   "scope": {
     "additional_books": 3,
-    "additional_chapter_views": 5,
-    "additional_source_occurrences": 53,
+    "additional_chapter_views": 6,
+    "additional_source_occurrences": 62,
     "bySource": {
       "POCKET1899": 20,
       "KEY1901": 21,
-      "MORAN1883": 12
+      "MORAN1883": 21
     },
     "facsimile_scan_compared": 0,
     "production_changes": 0
@@ -727,6 +727,123 @@
       "content_kind": "historical-rubric",
       "verification": "SOURCE_CHAPTER_TEXT_LOCATED_FACSIMILE_PENDING",
       "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B04.054",
+      "source": "MORAN1883",
+      "period": "evening",
+      "stage": "presence",
+      "title": "Opening evening Trinitarian invocation",
+      "incipit": "Blessed be the holy and undivided Trinity, now and for ever",
+      "witness_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Night_Prayer",
+      "web_line": null,
+      "content_kind": "night-opening",
+      "verification": "SOURCE_CHAPTER_TEXT_LOCATED_FACSIMILE_PAGE_12_CHECKED_FULL_SECTION_PRINT_BOUNDARIES_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B04.055",
+      "source": "MORAN1883",
+      "period": "evening",
+      "stage": "examination",
+      "title": "Penitential introductory prayer",
+      "incipit": "O eternal, Infinite, and Almighty God, Whose glory the heaven of heavens cannot contain",
+      "witness_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Night_Prayer",
+      "web_line": null,
+      "content_kind": "private-examination-prayer",
+      "verification": "SOURCE_CHAPTER_TEXT_LOCATED_FACSIMILE_PAGE_12_CHECKED_FULL_SECTION_PRINT_BOUNDARIES_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B04.056",
+      "source": "MORAN1883",
+      "period": "evening",
+      "stage": "examination",
+      "title": "General Confession and daily examination rubric",
+      "incipit": "I confess to Almighty God, to blessed Mary, ever Virgin",
+      "witness_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Night_Prayer",
+      "web_line": null,
+      "content_kind": "private-devotional-prayer-rubric",
+      "verification": "SOURCE_CHAPTER_TEXT_LOCATED_FACSIMILE_PAGE_12_CHECKED_FULL_SECTION_PRINT_BOUNDARIES_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B04.057",
+      "source": "MORAN1883",
+      "period": "evening",
+      "stage": "thanksgiving",
+      "title": "Night thanksgiving and petition for protection",
+      "incipit": "And now, O most gracious and liberal Benefactor",
+      "witness_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Night_Prayer",
+      "web_line": null,
+      "content_kind": "extended-night-thanksgiving",
+      "verification": "SOURCE_CHAPTER_TEXT_LOCATED_FACSIMILE_PAGE_12_CHECKED_FULL_SECTION_PRINT_BOUNDARIES_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B04.058",
+      "source": "MORAN1883",
+      "period": "evening",
+      "stage": "contrition",
+      "title": "Extended Act of Contrition",
+      "incipit": "O dread Lord, and most indulgent Father of mercies",
+      "witness_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Night_Prayer",
+      "web_line": null,
+      "content_kind": "long-contrition",
+      "verification": "SOURCE_CHAPTER_TEXT_LOCATED_FACSIMILE_PAGE_12_CHECKED_FULL_SECTION_PRINT_BOUNDARIES_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B04.059",
+      "source": "MORAN1883",
+      "period": "evening",
+      "stage": "departed",
+      "title": "Prayer for the Faithful Departed",
+      "incipit": "O God, the Creator and Redeemer of all the faithful",
+      "witness_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Night_Prayer",
+      "web_line": null,
+      "content_kind": "fidelium-deus-collect",
+      "verification": "SOURCE_CHAPTER_TEXT_LOCATED_FACSIMILE_PAGE_12_CHECKED_FULL_SECTION_PRINT_BOUNDARIES_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B04.060",
+      "source": "MORAN1883",
+      "period": "evening",
+      "stage": "night-protection",
+      "title": "Salva nos and protecting aspirations",
+      "incipit": "Save us, O Lord, waking; and keep us, sleeping",
+      "witness_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Night_Prayer",
+      "web_line": null,
+      "content_kind": "salva-nos-antiphon",
+      "verification": "SOURCE_CHAPTER_TEXT_LOCATED_FACSIMILE_PAGE_12_CHECKED_FULL_SECTION_PRINT_BOUNDARIES_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B04.061",
+      "source": "MORAN1883",
+      "period": "evening",
+      "stage": "night-protection",
+      "title": "Visita quaesumus bedtime collect",
+      "incipit": "Visit, we beseech thee, O Lord, this habitation",
+      "witness_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Night_Prayer",
+      "web_line": null,
+      "content_kind": "visita-quaesumus",
+      "verification": "SOURCE_CHAPTER_TEXT_LOCATED_FACSIMILE_PAGE_12_CHECKED_FULL_SECTION_PRINT_BOUNDARIES_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B04.062",
+      "source": "MORAN1883",
+      "period": "evening",
+      "stage": "night-protection",
+      "title": "Petition for protection by angels and perseverance",
+      "incipit": "Let the eyes of thy providence watch over me",
+      "witness_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Night_Prayer",
+      "web_line": null,
+      "content_kind": "extended-protection-paragraph",
+      "verification": "SOURCE_CHAPTER_TEXT_LOCATED_FACSIMILE_PAGE_12_CHECKED_FULL_SECTION_PRINT_BOUNDARIES_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
     }
   ],
   "selected_crossmanual_comparisons": [
@@ -774,7 +891,7 @@
     }
   ],
   "holds": [
-    "No Moran evening chapter was evidenced in the consulted table of contents; do not invent it.",
+    "Correction B07: Moran 1883 Night Prayer is present at printed p.12 and must be included in historical comparisons. Nine descriptive night components registered, including one sub-paragraph overlap; not nine independent complete prayer texts.",
     "Do not count the Key of Heaven Holy Name/Loreto litanies printed in chapters as mandatory steps of a morning/evening lay routine.",
     "Historical rubrics are not prayers and should not appear as different-text tabs.",
     "Unverified print source and rights/embedded authorship holds remain.",
