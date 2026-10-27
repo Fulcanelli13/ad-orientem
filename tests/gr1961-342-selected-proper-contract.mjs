@@ -28,7 +28,8 @@ assert.equal(actual.musicalApprovals,0);
 assert.equal(actual.readerPromotions,0);
 assert.equal(actual.actualChoirProgramme,"UNKNOWN");
 assert.equal(actual.autoAssignedScore,null);
-assert.equal(reconcile342WithSelectedMass(ledger,{...ready,date:"2026-10-28"}).status,"DAY_RESOLVER_NOT_READY");
+assert.equal(reconcile342WithSelectedMass(ledger,{...ready,date:"2026-10-28"},{date:"2026-10-27"}).status,"DAY_RESOLVER_NOT_READY",
+  "Selected UI date must not silently follow a changed resolver date");
 assert.equal(reconcile342WithSelectedMass(ledger,{...ready,proper:{...ready.proper,status:"failed"}}).status,"DAY_RESOLVER_NOT_READY");
 assert.equal(reconcile342WithSelectedMass(ledger,{...ready,proper:{...ready.proper,sourcePath:"Tempora/WRONG"}}).status,"DAY_RESOLVER_NOT_READY");
 const changed={...ready,proper:{...ready.proper,data:{...source,introit:{...named,lat:"A different Introit was actually selected."}}}};
