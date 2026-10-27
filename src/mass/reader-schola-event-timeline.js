@@ -1,3 +1,4 @@
+import {resolve1962OrganPermission} from "./reader-rite-music-authority.js";
 // Source-first, read-only Schola event itinerary for the existing curated
 // LIVE Mass cards. Musical windows are not evidence of observed singing.
 // Source blocks and exact curated IDs, never historical numeric card slots,
@@ -70,6 +71,43 @@ export const MASS_SCHOLA_EVENT_SPECS=freeze([
 const sourceId=card=>String(card?.sourceSectionId??card?.sectionId??"");
 const blockOwned=(card,id)=>(card?.blocks??[]).some(b=>b.blockId===id&&
    b.omittedByRite==null && (b.paragraphCount==null || b.paragraphCount>0));
+
+const KNOWN_SEASONS=new Set(["ADVENT","LENT","PASSIONTIDE","SEPTUAGESIMA","SEXAGESIMA",
+ "QUINQUAGESIMA","CHRISTMAS","EPIPHANY","EASTER","PENTECOST","ORDINARY"]);
+/** Only the canonical 1958 resolver determines organ permission.
+ * Verified date/season is mandatory outside the independently attested
+ * Requiem ban. No broad card is a substitute for a precise priest cue. */
+export function organAuthorityForScholaEvent(event,resolvedMass){
+ if(event?.kind!=="ORGAN_OPTION")return null;
+ const plan=resolvedMass?.provenance?.organ1962??null;
+ const verified=plan?.verified===true&&plan.source==="LITURGICAL_PLAN_1962";
+ const requiem=resolvedMass?.overlays?.includes("REQUIEM")===true;
+ const season=verified&&KNOWN_SEASONS.has(String(plan?.season??"").toUpperCase())
+   ?String(plan.season).toUpperCase():null;
+ const base=freeze({authority:"EXISTING_1958_ORGAN_PERMISSION",
+  actuallyPlaying:"UNKNOWN",notAnObservation:true,
+  precision:"SOURCE_SECTION_NOT_EXACT_PRIEST_CUE"});
+ if(!season&&!requiem)return freeze({...base,status:"REQUIRES_CONTEXT",
+  reason:"LITURGICAL_SEASON_NOT_SOURCE_VERIFIED",solo:"REQUIRES_CONTEXT",
+  accompaniment:"REQUIRES_CONTEXT",references:freeze([])});
+ // The special Triduum exceptions need a verified moment boundary, not
+ // only a season label. Separate rite controllers own those boundaries.
+ if(verified&&plan.triduum===true)return freeze({...base,status:"REQUIRES_EXACT_RITE_STAGE",
+  reason:"TRIDUUM_STAGE_NOT_CERTIFIED_BY_ORDINARY_CARD",
+  solo:"REQUIRES_CONTEXT",accompaniment:"REQUIRES_CONTEXT",references:freeze(["84"])});
+ const ctx={season,requiem,septEmberFerial:verified&&plan.septEmberFerial===true,
+  exceptionalFeastConfirmed:verified&&plan.exceptionalFeastConfirmed===true};
+ const solo=resolve1962OrganPermission({...ctx,kind:"SOLO"});
+ const accompaniment=resolve1962OrganPermission({...ctx,kind:"ACCOMPANY_CHANT"});
+ const status=solo.status==="FORBIDDEN"?"SOLO_FORBIDDEN":
+  solo.status==="PERMITTED_NOT_OBSERVED"?"SOLO_POTENTIALLY_PERMITTED":
+  "REQUIRES_CONTEXT";
+ return freeze({...base,status,reason:solo.reason,solo:solo.status,
+  accompaniment:accompaniment.status,
+  references:freeze([...new Set([...solo.authority,...accompaniment.authority])]),
+  reminder:"Even if solo playing is allowed for this liturgical context, priest chants, responses, Consecration and blessing have their own prohibitions. No playing is observed."});
+}
+
 const asCard=card=>freeze({id:String(card.sectionId),sourceSectionId:sourceId(card),
   title:String(card.title??""),sequence:card.sequence});
 const empty=(reason)=>freeze({schema:"ao-schola-music-itinerary-v1",supported:false,
@@ -130,7 +168,8 @@ export function buildScholaMusicItinerary({cards,form,tracks=[],sanctusPerforman
    ordinal:rank+1,card:asCard(chosen.card),cardIndex:chosen.index,
    sourceRef:spec.afterBlock??spec.at.block??spec.at.section,
    sourcePrecision:spec.precision??(spec.at.block?"SOURCE_BLOCK":"SOURCE_SECTION"),
-   status:organ?"PERMISSION_NOT_EVALUATED":local?"LOCAL_PROGRAMME_UNCONFIRMED":
+   organPermission:organ?organAuthorityForScholaEvent(spec,resolvedMass):null,
+   status:organ?"ORGAN_CANDIDATE_REQUIRES_RITUAL_CUE":local?"LOCAL_PROGRAMME_UNCONFIRMED":
      spec.manualOnly?"AWAIT_EXPLICIT_CHOIR_OBSERVATION":
      spec.kind==="QUIET_INTERVAL"?"SOURCE_STAGE_NOT_PERFORMANCE_OBSERVATION":
        spec.kind==="DISPLAY_REFERENCE"?"PRINTED_REFERENCE_NOT_NEW_CHANT":"EXPECTED_NOT_OBSERVED",
@@ -145,7 +184,7 @@ export function buildScholaMusicItinerary({cards,form,tracks=[],sanctusPerforman
   events:freeze(events),unresolved:freeze(unresolved),
   sourceCardCount:cards.length,cardOrder:freeze(cards.map(c=>String(c.sectionId))),
   actuallySinging:"UNKNOWN",activeClock:"SCHOLA_INDEPENDENT",
-  organAuthority:"EXISTING_1958_ORGAN_PERMISSION_NOT_EVALUATED_HERE",
+  organAuthority:"EXISTING_1958_ORGAN_PERMISSION_CONTEXT_FILTERED_NOT_A_PLAYING_CLAIM",
   specialRiteAuthority:"EXISTING_SEPARATE_RITE_MUSIC_REGISTRY",
  });
 }
