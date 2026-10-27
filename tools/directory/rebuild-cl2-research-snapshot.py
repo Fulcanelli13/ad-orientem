@@ -327,6 +327,115 @@ CREATE TABLE unified_directory_country_census (
 
 
 
+
+def install_remaining_committed_provider_feeds(db):
+    """Full-source screening of eighteen additional committed institute feeds.
+
+    These are *source assertions* under CL2, not physically unique sites.
+    Preserve every source record and exact source key. Only eligible worship
+    types become unresolved candidate identities; no rite/missal inferred.
+    """
+    names=(
+      'cmri','cspv','rci','sspx-asia-central-americas',
+      'sspx-district-seed','sspx-four-district-bulk','sspx-france-second-pass',
+      'sspx-global-completion-20261009','sspx-mexico-completion-20261009',
+      'sspx-north-america-20261008','sspx-oct26-americas',
+      'sspx-oct26-europe','sspx-oct26-followup-65',
+      'sspx-oct26-poland','sspx-priority-europe-pacific-20261009',
+      'una-voce-czech-round20-20261010'
+    )
+    feeds=[('V19_'+name,'data/directory/generated/v19/'+name+'.v1.json','V19')
+           for name in names]
+    feeds+=[
+      ('IBP_LEGACY','data/directory/generated/ibp/venues.v1.json','LEGACY'),
+      ('ICKSP_LEGACY','data/directory/generated/icksp/venues.v1.json','LEGACY')
+    ]
+    db.executescript("""
+CREATE TABLE unified_additional_provider_feed (
+  feed_name TEXT NOT NULL,record_id TEXT NOT NULL,
+  country TEXT NOT NULL, venue_label TEXT NOT NULL, venue_type TEXT NOT NULL,
+  source_repo_path TEXT NOT NULL, source_link TEXT,
+  census_join_state TEXT NOT NULL CHECK(census_join_state IN (
+    'EXACT_CL2_FROZEN_SOURCE_ID','EXACT_EXISTING_CL2_CANDIDATE_ID',
+    'NEW_UNRESOLVED_WORSHIP_OR_MASS_SITE_LEAD',
+    'NON_WORSHIP_OR_AMBIGUOUS_FACILITY_HELD')),
+  candidate_identity_id TEXT,
+  original_provider_row_json TEXT NOT NULL,
+  PRIMARY KEY(feed_name,record_id),
+  FOREIGN KEY(candidate_identity_id) REFERENCES unified_site_candidate(candidate_research_id)
+);
+CREATE INDEX addfeed_disposition ON unified_additional_provider_feed(census_join_state);
+CREATE VIEW unified_additional_feed_coverage AS
+ SELECT feed_name,COUNT(*) AS input_rows,
+   SUM(census_join_state='EXACT_CL2_FROZEN_SOURCE_ID') AS exact_CL2_source_ids,
+   SUM(census_join_state='EXACT_EXISTING_CL2_CANDIDATE_ID') AS existing_candidate_source_ids,
+   SUM(census_join_state='NEW_UNRESOLVED_WORSHIP_OR_MASS_SITE_LEAD') AS new_unresolved_source_leads,
+   SUM(census_join_state='NON_WORSHIP_OR_AMBIGUOUS_FACILITY_HELD') AS held_facilities
+ FROM unified_additional_provider_feed GROUP BY feed_name;
+""")
+    base={x[0] for x in db.execute('SELECT source_id FROM venue_source')}
+    seen_candidate={x[0] for x in db.execute('SELECT candidate_research_id FROM unified_site_candidate')}
+    allowed={'church','chapel','school_chapel','private_chapel','basilica',
+             'oratory','monastery','shrine','mission'}
+    total=0
+    summary={}
+    for family,path,shape in feeds:
+        d=json.loads(Path(path).read_text(encoding='utf-8'))
+        rows=d['records']
+        assert isinstance(rows,list) and rows
+        n={'exact_base':0,'candidate_alias':0,'new_worship_candidate':0,'held_other':0}
+        seen_ids=set()
+        for raw in rows:
+            sid=raw.get('u') if shape=='V19' else raw.get('venue_id')
+            cc=raw.get('cc') if shape=='V19' else raw.get('address',{}).get('country_code')
+            name=raw.get('n') if shape=='V19' else raw.get('name',{}).get('official')
+            kind=raw.get('vt') if shape=='V19' else raw.get('venue_type')
+            href=raw.get('su') if shape=='V19' else raw.get('upstream',{}).get('detail_url')
+            assert sid and sid not in seen_ids and name and cc and kind,(family,sid)
+            seen_ids.add(sid)
+            candidate=None
+            if sid in base:
+                state='EXACT_CL2_FROZEN_SOURCE_ID';n['exact_base']+=1
+            elif sid in seen_candidate:
+                state='EXACT_EXISTING_CL2_CANDIDATE_ID'
+                candidate=sid;n['candidate_alias']+=1
+            elif kind in allowed:
+                state='NEW_UNRESOLVED_WORSHIP_OR_MASS_SITE_LEAD'
+                candidate=sid
+                n['new_worship_candidate']+=1
+                addr=raw.get('a') if shape=='V19' else raw.get('address',{}).get('formatted')
+                loc=raw.get('l') if shape=='V19' else raw.get('address',{}).get('city')
+                db.execute('INSERT INTO unified_site_candidate VALUES (?,?,?,?,?,?,?,?,?,?,?,0,0,?)',
+                 (sid,'ADDITIONAL_PROVIDER',cc,str(loc or ''),str(name),
+                  str(addr or ''),str(href or path),path,None,0,
+                  'IDENTITY_RECONCILIATION_REQUIRED',
+                  json.dumps({'feed':family,'path':path,'original_source':raw},
+                             ensure_ascii=False,separators=(',',':'))))
+                seen_candidate.add(sid)
+            else:
+                state='NON_WORSHIP_OR_AMBIGUOUS_FACILITY_HELD';n['held_other']+=1
+            db.execute('INSERT INTO unified_additional_provider_feed VALUES (?,?,?,?,?,?,?,?,?,?)',
+              (family,sid,cc,str(name),str(kind),path,href,state,candidate,
+               json.dumps(raw,ensure_ascii=False,separators=(',',':'))))
+        summary[family]=n
+        total+=len(rows)
+    assert len(feeds)==18
+    assert total==791,total
+    assert db.execute('SELECT COUNT(*) FROM unified_additional_provider_feed').fetchone()[0]==791
+    fresh=sum(r['new_worship_candidate'] for r in summary.values())
+    assert fresh==db.execute("SELECT COUNT(*) FROM unified_site_candidate WHERE source_batch='ADDITIONAL_PROVIDER'").fetchone()[0]
+    assert db.execute('SELECT COUNT(*) FROM unified_site_candidate WHERE is_canonical_physical_site!=0 OR is_public_site!=0').fetchone()[0]==0
+    return {
+      'additional_source_feeds':18,'source_entries_reviewed':791,
+      'exact_original_CL2_source_ids':sum(r['exact_base'] for r in summary.values()),
+      'same_frozen_id_as_prior_candidate':sum(r['candidate_alias'] for r in summary.values()),
+      'new_unresolved_worship_site_source_leads':fresh,
+      'non_worship_and_ambiguous_held':sum(r['held_other'] for r in summary.values()),
+      'feeds':summary,'admitted_new_physical_sites':0
+    }
+
+
+
 def install_bulk_identity_review_cohorts(db):
     """Make the existing unadmitted leads reviewable in large fixed cohorts.
 
@@ -336,7 +445,7 @@ def install_bulk_identity_review_cohorts(db):
     db.executescript("""
 CREATE TABLE unified_identity_review_cohort (
  candidate_research_id TEXT PRIMARY KEY,
- cohort_no INTEGER NOT NULL CHECK(cohort_no BETWEEN 1 AND 9),
+ cohort_no INTEGER NOT NULL CHECK(cohort_no BETWEEN 1 AND 20),
  source_grade TEXT NOT NULL CHECK(source_grade IN
   ('PRIOR_RESEARCH_G0','PROVIDER_REPORTED_WORSHIP','THIRD_PARTY_WITH_OWNER_LINK',
    'THIRD_PARTY_PREVIOUS_NAME_REVIEW','THIRD_PARTY_UNMATCHED')),
@@ -354,7 +463,7 @@ CREATE INDEX identity_cohort_round ON unified_identity_review_cohort(cohort_no);
         sid,batch,cc=r
         if batch in ('B84','B85','B86','B87','B88','B89','B90'):
             grade='PRIOR_RESEARCH_G0'
-        elif batch.startswith('PROVIDER_'):
+        elif batch.startswith('PROVIDER_') or batch=='ADDITIONAL_PROVIDER':
             grade='PROVIDER_REPORTED_WORSHIP'
         elif batch=='THIRD_PARTY_LMD':
             status,nlinks=prior[sid]
@@ -368,16 +477,17 @@ CREATE INDEX identity_cohort_round ON unified_identity_review_cohort(cohort_no);
                 'THIRD_PARTY_PREVIOUS_NAME_REVIEW':3,
                 'THIRD_PARTY_UNMATCHED':4}
     rows.sort(key=lambda x:(priorities[x[2]],x[1],x[0]))
-    assert len(rows)==1639
+    expected=db.execute('SELECT COUNT(*) FROM unified_site_candidate').fetchone()[0]
+    assert len(rows)==expected and expected>=1639
     for n,(sid,country,grade) in enumerate(rows):
         db.execute('INSERT INTO unified_identity_review_cohort VALUES (?,?,?,?,"UNRESOLVED_CANDIDATE_IDENTITY",0)',
                    (sid,n//200+1,grade,country))
-    assert db.execute('SELECT COUNT(*) FROM unified_identity_review_cohort').fetchone()[0]==1639
+    assert db.execute('SELECT COUNT(*) FROM unified_identity_review_cohort').fetchone()[0]==expected
     size=[r[0] for r in db.execute('SELECT COUNT(*) FROM unified_identity_review_cohort GROUP BY cohort_no ORDER BY cohort_no')]
-    assert size==[200,200,200,200,200,200,200,200,39],size
+    assert size==[200]*(expected//200)+([expected%200] if expected%200 else []),size
     assert db.execute('SELECT COUNT(*) FROM unified_identity_review_cohort WHERE admitted_to_physical_site!=0').fetchone()[0]==0
-    return {'identity_review_cohorts':9,'cohort_sizes':size,
-            'candidate_source_records_not_independent_sites':1639,
+    return {'identity_review_cohorts':len(size),'cohort_sizes':size,
+            'candidate_source_records_not_independent_sites':expected,
             'physical_site_additions':0}
 
 
@@ -656,6 +766,7 @@ CREATE VIEW venue_with_classification AS SELECT v.source_id,v.recorded_group_id,
     candidate_stats=install_existing_g0_candidates_into_single_master(db)
     provider_stats=install_known_provider_feed_census(db)
     worldwide_stats=install_third_party_worldwide_source_leads(db)
+    additional_stats=install_remaining_committed_provider_feeds(db)
     cohort_stats=install_bulk_identity_review_cohorts(db)
     db.commit()
     assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
@@ -663,6 +774,6 @@ CREATE VIEW venue_with_classification AS SELECT v.source_id,v.recorded_group_id,
         assert db.execute('SELECT COUNT(*) FROM '+table).fetchone()[0]==expected
     assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
     db.close()
-    print(json.dumps({'status':'PASS','output':str(output),'bytes':output.stat().st_size,'source_parts':sum(len(v) for v in manifest['shards'].values()),'source_rows':2687,'classification_rows':2715,'alias_count':5,'held_group_conflicts':5,'public_changes':0,'unified_master':unified_stats,'unresolved_venue_candidate_intake':candidate_stats,'provider_source_coverage':provider_stats,'third_party_source_census':worldwide_stats,'census_identity_review_cohorts':cohort_stats}))
+    print(json.dumps({'status':'PASS','output':str(output),'bytes':output.stat().st_size,'source_parts':sum(len(v) for v in manifest['shards'].values()),'source_rows':2687,'classification_rows':2715,'alias_count':5,'held_group_conflicts':5,'public_changes':0,'unified_master':unified_stats,'unresolved_venue_candidate_intake':candidate_stats,'provider_source_coverage':provider_stats,'third_party_source_census':worldwide_stats,'additional_provider_source_census':additional_stats,'census_identity_review_cohorts':cohort_stats}))
 
 if __name__=='__main__': main()
