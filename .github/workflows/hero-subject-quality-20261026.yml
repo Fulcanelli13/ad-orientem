@@ -1,4 +1,4 @@
-name: Original-subject and 3 hero master pixel evidence — branch-scoped permanent archive
+name: Original-subject and 6 rights-sourced paintings — branch-scoped permanent archive
 on:
   push:
     branches:
@@ -7,6 +7,7 @@ on:
       - .github/workflows/hero-subject-quality-20261026.yml
       - assets/staged/module-hero-masters/**
       - scripts/research/hero_photographic_master_qc_20261027.py
+      - scripts/research/hero_open_source_acquisition_20261027.py
 permissions:
   contents: write
 jobs:
@@ -28,6 +29,7 @@ jobs:
           git show FETCH_HEAD:scripts/art/make-subject-specific-hero-details.py >/tmp/subject-details.py
           python /tmp/subject-details.py
           python scripts/research/hero_photographic_master_qc_20261027.py
+          python scripts/research/hero_open_source_acquisition_20261027.py
           python - <<'PY'
           import json
           from pathlib import Path
@@ -41,6 +43,7 @@ jobs:
           PY
           git add -f assets/staged/module-hero-subject-details/
           git add -f assets/staged/module-hero-photo-evidence-20261027/
+          git add -f assets/staged/module-hero-open-photo-candidates-20261027/
           if git diff --cached --quiet; then
             echo "Permanent research branch already contains these checked details."
             exit 0
