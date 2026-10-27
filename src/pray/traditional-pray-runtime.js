@@ -4,6 +4,7 @@ import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "./dying-companion-
 import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabel} from "./guided-daily-cards.js";
 import {installSequentialDevotionalReader} from "./devotional-sequence-adapter.js";
 import {dailyHorizonState} from "./quiet-devotional-progression.js";
+import {createDailySessionTimer,sessionClockLabel} from "./daily-session-timer.js";
 import "./quiet-devotional-progression-styles.js";
 import {
   SACRED_HYMNS_V381,
@@ -99,7 +100,63 @@ function prayerRows(rows){
 }
 
 let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={},OPEN_RECEIPT=null,MASS_HANDOFF_BUSY=false;
-let S={litanyMode:"full",litanyStep:0,mealStep:0,route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",communionStep:0,goodDeathStep:0,dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false,massStep:0,massDepth:"brief"};
+let S={dailyTimerOpen:false,litanyMode:"full",litanyStep:0,mealStep:0,route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",communionStep:0,goodDeathStep:0,dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false,massStep:0,massDepth:"brief"};
+
+
+const DAILY_SESSION_CLOCK=createDailySessionTimer();
+let DAILY_TIMER_TICK=null;
+function stopDailyTimerTick(){
+ if(DAILY_TIMER_TICK!==null){clearInterval(DAILY_TIMER_TICK);DAILY_TIMER_TICK=null;}
+}
+function syncDailyTimerView(){
+ const m=mount();if(!m||S.route!=="pray.morning_evening")return;
+ const tick=DAILY_SESSION_CLOCK.snapshot();
+ const value=sessionClockLabel(tick.elapsedMs);
+ const readout=m.querySelector("[data-ao-daily-clock-readout]");
+ if(readout)readout.textContent=value;
+ const summary=m.querySelector("[data-ao-daily-clock-summary]");
+ if(summary)summary.textContent=L("Timer","Minuteur")+(tick.running?" · "+value:"");
+ const action=m.querySelector("[data-tp381-timer-control='toggle']");
+ if(action){
+   action.textContent=tick.running?L("Pause","Pause"):tick.elapsedMs>0?L("Resume","Reprendre"):L("Start","Démarrer");
+   action.setAttribute("aria-pressed",String(tick.running));
+ }
+ const reached=m.querySelector("[data-ao-daily-clock-target-reached]");
+ if(reached){reached.hidden=!tick.atTarget;reached.textContent=L("Gentle target reached · continue praying at your pace.","Durée indicative atteinte · poursuivez à votre rythme.");}
+ for(const b of m.querySelectorAll("[data-tp381-timer-target]")){
+  const value=b.dataset.tp381TimerTarget;
+  b.setAttribute("aria-pressed",String(value===(tick.targetMs===null?"none":String(tick.targetMs/60000))));
+ }
+}
+function startDailyTimerTick(){
+ stopDailyTimerTick();
+ if(!DAILY_SESSION_CLOCK.snapshot().running)return;
+ DAILY_TIMER_TICK=setInterval(()=>{
+   if(!root()?.classList.contains("open")||!["pray.morning_evening","pray.nightly_examen"].includes(S.route)){
+     DAILY_SESSION_CLOCK.pause();stopDailyTimerTick();return;
+   }
+   syncDailyTimerView();
+ },1000);
+}
+function resetDailySessionTimer(){
+ stopDailyTimerTick();DAILY_SESSION_CLOCK.reset();S.dailyTimerOpen=false;
+}
+function dailyTimerControls(){
+ const tick=DAILY_SESSION_CLOCK.snapshot();
+ const trigger=`<button type="button" class="aoDailyClockDisclosure" data-tp381-timer-toggle aria-expanded="${S.dailyTimerOpen}" data-ao-daily-clock-summary>${esc(L("Timer","Minuteur")+(tick.running?" · "+sessionClockLabel(tick.elapsedMs):""))}</button>`;
+ if(!S.dailyTimerOpen)return `<div class="aoDailyClockShell">${trigger}</div>`;
+ const targets=[null,5,10,15,20].map(target=>{
+   const value=target===null?"none":String(target),label=target===null?L("No target","Sans limite"):target+" min";
+   return `<button type="button" data-tp381-timer-target="${value}" aria-pressed="${target===tick.targetMs/60000||(target===null&&tick.targetMs===null)}">${esc(label)}</button>`;
+ }).join("");
+ return `<div class="aoDailyClockShell">${trigger}<section class="aoDailyClockPanel" aria-label="${esc(L("Optional prayer session timer","Minuteur facultatif de prière"))}">
+ <output data-ao-daily-clock-readout aria-live="off">${sessionClockLabel(tick.elapsedMs)}</output>
+ <div class="aoDailyClockActions"><button type="button" data-tp381-timer-control="toggle" aria-pressed="${tick.running}">${esc(tick.running?L("Pause","Pause"):tick.elapsedMs>0?L("Resume","Reprendre"):L("Start","Démarrer"))}</button><button type="button" data-tp381-timer-control="reset">${esc(L("Reset","Remettre à zéro"))}</button></div>
+ <div class="aoDailyClockTargets" aria-label="${esc(L("Gentle time target","Durée indicative"))}">${targets}</div>
+ <p data-ao-daily-clock-target-reached ${tick.atTarget?"":"hidden"}>${esc(L("Gentle target reached · continue praying at your pace.","Durée indicative atteinte · poursuivez à votre rythme."))}</p>
+ <small>${esc(L("Time is only a guide. You move between prayers yourself; nothing is recorded.","Le temps n’est qu’un repère. Vous avancez vous-même ; rien n’est enregistré."))}</small>
+ </section></div>`;
+}
 
 function guidedCardFrame({id,title,step,total,body,onStep="daily",complete=false,returnButton=""}){
  const label=guidedStepLabel(step,total,isFr()?"fr":"en");
@@ -147,7 +204,7 @@ function renderMorningEvening(){
  const guided=S.dailyMode==="guided";
  const choice=`<nav class="aoTP381DaypartStrip" aria-label="${esc(L("Time of prayer","Moment de prière"))}"><button type="button" data-tp381-daypart="morning" aria-pressed="${S.daypart==="morning"}" class="${S.daypart==="morning"?"active":""}">${esc(L("Morning","Matin"))}</button><button type="button" data-tp381-daypart="evening" aria-pressed="${S.daypart==="evening"}" class="${S.daypart==="evening"?"active":""}">${esc(L("Evening","Soir"))}</button></nav>`;
  const options=`<details class="aoTP381SecondaryOptions" data-ao-daily-options><summary>${esc(L("Reading options and guidance","Options de lecture et guide"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(intro)}</p><div class="aoTP381GuideMode" role="group" aria-label="${esc(L("Prayer view","Présentation des prières"))}"><button type="button" data-tp381-daily-mode="guided" aria-pressed="${guided}">${esc(L("Guided","Guidé"))}</button><button type="button" data-tp381-daily-mode="list" aria-pressed="${!guided}">${esc(L("All prayers","Toutes les prières"))}</button></div></div></details>`;
- return `${head(L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body aoTP381DonorBody">${choice}${guided?dailyHorizonMarkup(rows.length):""}${guided?renderDailyGuided(rows):prayerRows(rows.map(x=>[x.id,x.title,x.note]))}${options}${source("Baltimore Manual · Morning Prayers",TRADITIONAL_PRAY_SOURCES_V381.morning)}${source("Baltimore Manual · Evening Prayers",TRADITIONAL_PRAY_SOURCES_V381.evening)}</main>`;
+ return `${head(L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body aoTP381DonorBody">${choice}${dailyTimerControls()}${guided?dailyHorizonMarkup(rows.length):""}${guided?renderDailyGuided(rows):prayerRows(rows.map(x=>[x.id,x.title,x.note]))}${options}${source("Baltimore Manual · Morning Prayers",TRADITIONAL_PRAY_SOURCES_V381.morning)}${source("Baltimore Manual · Evening Prayers",TRADITIONAL_PRAY_SOURCES_V381.evening)}</main>`;
 }
 const HYMN_KEYS=Object.freeze(["te_deum","veni_creator","ave_maris_stella"]);
 function hymnLineMarkup(value){
@@ -458,6 +515,7 @@ function render(){
   delete m.dataset.aoTraditionalDualAxis;
   m.dataset.aoTraditionalPrayRoute=S.route;
   m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="mass.prepare"||S.route==="mass.thanksgiving"?renderMassFolioPrayers():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
+  if(S.screen==="module"&&S.route==="pray.morning_evening")syncDailyTimerView();
   if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen"].includes(S.route)){
     const daily=S.route==="pray.morning_evening";
     const rows=daily?guidedDailyCards(S.daypart):NIGHTLY_EXAMEN_CARDS;
@@ -554,6 +612,7 @@ function render(){
 }
 function open(route,opts={}){
   if(!ROUTES[route])return false;
+  resetDailySessionTimer();
   OPEN_RECEIPT=captureObservedModuleOrigin(window,"pray");
   OPEN_OPTS={...opts};MASS_HANDOFF_BUSY=false;
   S={...S,route,screen:"module",prayerId:null,guidedFromList:false,
@@ -584,6 +643,7 @@ function back(){
   if(S.route==="pray.morning_evening"&&S.dailyMode==="guided"&&S.guidedFromList){
     S.dailyMode="list";S.guidedFromList=false;return render()
   }
+  if(S.route==="pray.morning_evening")resetDailySessionTimer();
   return returnToObservedModuleOrigin(window,OPEN_RECEIPT,{
     close:()=>BASE_CLOSE(),
     restoreParent:()=>{
@@ -594,6 +654,7 @@ function back(){
   });
 }
 function goHome(){
+  resetDailySessionTimer();
   // Explicit Home overrides any deep-link return owner. A normal close may
   // asynchronously restore the previous Prayer context and reopen this sheet.
   BASE_CLOSE({silent:true});
@@ -604,7 +665,7 @@ function goHome(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-home]"))return goHome();
@@ -638,6 +699,26 @@ function handleClick(e){
     return;
   }
   if(b.dataset.tp381Open)return open(b.dataset.tp381Open,{trigger:b});
+  if(b.hasAttribute("data-tp381-timer-toggle")){
+    if(S.route!=="pray.morning_evening")return;
+    S.dailyTimerOpen=!S.dailyTimerOpen;return render();
+  }
+  if(b.hasAttribute("data-tp381-timer-control")){
+    if(S.route!=="pray.morning_evening")return;
+    const action=b.dataset.tp381TimerControl;
+    if(action==="toggle"){
+      if(DAILY_SESSION_CLOCK.snapshot().running)DAILY_SESSION_CLOCK.pause();
+      else DAILY_SESSION_CLOCK.start();
+    }else if(action==="reset")DAILY_SESSION_CLOCK.reset();
+    startDailyTimerTick();syncDailyTimerView();return;
+  }
+  if(b.hasAttribute("data-tp381-timer-target")){
+    if(S.route!=="pray.morning_evening")return;
+    const raw=b.dataset.tp381TimerTarget;
+    const value=raw==="none"?null:Number(raw);
+    DAILY_SESSION_CLOCK.setTarget(value);
+    syncDailyTimerView();return;
+  }
   if(b.dataset.tp381Daypart){S.daypart=b.dataset.tp381Daypart==="evening"?"evening":"morning";S.dailyStep=0;return render()}
    if(b.dataset.tp381DailyMode){
      const next=b.dataset.tp381DailyMode==="list"?"list":"guided";
