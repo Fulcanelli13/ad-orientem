@@ -1,0 +1,785 @@
+{
+  "schema": "ao-palm-full-verse-bulk-draft-nine-source-guarded-v1",
+  "date": "2026-10-27",
+  "batch": 32,
+  "status": "NINE_COMPLETE_GABC_RESEARCH_CANDIDATES_NOT_EDITOR_APPROVED",
+  "stage": "PALM-R02",
+  "purpose": "Consolidate whole Latin verses for 9 source-stress-aligned non-flex research candidates in one batch. Does not invent complete canonical printed chants or approve the musical underlay.",
+  "scoreCases": [
+    {
+      "id": "PALM-R02-PS23-L02",
+      "psalm": 23,
+      "type": "VERSE",
+      "sourceReferencePaths": [
+        "data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json",
+        "data/research/processionale-palm-attested-cadence-windows-20261027.v1.json",
+        "data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json"
+      ],
+      "sourceScoreEdition": "Graduale Romanum Solesmes 1961 Palm pp143**/144**",
+      "medialPrintedSourceStatus": "ONLY_FIRST_VERSE_FULLY_NOTATED",
+      "fullLatin": [
+        "Nam ipse super mária fundávit eum",
+        "et super flúmina firmávit eum."
+      ],
+      "normalizedLatinProtected": true,
+      "independentManualLatinSyllabification": [
+        "Nam ip-se su-per má-ri-a fun-dá-vit e-um",
+        "et su-per flú-mi-na fir-má-vit e-um."
+      ],
+      "partsNoteCount": [
+        13,
+        11
+      ],
+      "firstThreeGroupsOfMedial": [
+        "h",
+        "h",
+        "h"
+      ],
+      "medialNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "ixi hr",
+        "h",
+        "g hr",
+        "h."
+      ],
+      "terminationNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "cadenceTextWindows": [
+        [
+          "dá",
+          "vit",
+          "e",
+          "um"
+        ],
+        [
+          "má",
+          "vit",
+          "e",
+          "um"
+        ]
+      ],
+      "explicitReviewerRisks": [
+        "All recitations before printed fragments are inferred h, not printed full text",
+        "Manual word division/syllabification not independently corrected against original Graduale",
+        "Medial accent-neume adaptation is inferred and requires musical editor",
+        "End-cadence grouping belongs to printed paired exemplars only, not this exact verse",
+        "Printed special Palm processional tone identity must be approved before any release"
+      ],
+      "gabcResearchOnly": "name:PALM-R02-PS23-L02 1961 Palm ending-dependent complete research draft NOT APPROVED;\noffice-part:Psalmus;\ncommentary: Manually syllabified full Latin, inferred h recitation, unapproved medial and terminal cadences; no historical complete source or production score;\n%%\n(c4) Nam(h) ip(h) se(h) su(h) per(h) má(h) ri(h) a(h) fun(h) dá(ixi hr) vit(h) e(g hr) um(h.) *(:) et(h) su(h) per(h) flú(h) mi(h) na(h) fir(h) má(g) vit(f) e(gh gr) um.(gf..) (::)\n",
+      "exsurgeParsed": false,
+      "exsurgeRendered": false,
+      "lexicalAccentEditoriallyCertified": false,
+      "musicalFormulaEditorApproved": false,
+      "sourceOwnerApproved": false,
+      "releaseAllowed": false,
+      "noReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L02",
+      "psalm": 46,
+      "type": "VERSE",
+      "sourceReferencePaths": [
+        "data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json",
+        "data/research/processionale-palm-attested-cadence-windows-20261027.v1.json",
+        "data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json"
+      ],
+      "sourceScoreEdition": "Graduale Romanum Solesmes 1961 Palm pp143**/144**",
+      "medialPrintedSourceStatus": "ONLY_FIRST_VERSE_FULLY_NOTATED",
+      "fullLatin": [
+        "Quóniam Dóminus excélsus, terríbilis,",
+        "Rex magnus super omnem terram."
+      ],
+      "normalizedLatinProtected": true,
+      "independentManualLatinSyllabification": [
+        "Quó-ni-am Dó-mi-nus ex-cél-sus, ter-rí-bi-lis,",
+        "Rex mag-nus su-per om-nem ter-ram."
+      ],
+      "partsNoteCount": [
+        13,
+        9
+      ],
+      "firstThreeGroupsOfMedial": [
+        "h",
+        "h",
+        "h"
+      ],
+      "medialNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "ixi",
+        "hr",
+        "h",
+        "g",
+        "hr",
+        "h."
+      ],
+      "terminationNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "cadenceTextWindows": [
+        [
+          "cél",
+          "sus",
+          "ter",
+          "rí",
+          "bi",
+          "lis"
+        ],
+        [
+          "om",
+          "nem",
+          "ter",
+          "ram"
+        ]
+      ],
+      "explicitReviewerRisks": [
+        "All recitations before printed fragments are inferred h, not printed full text",
+        "Manual word division/syllabification not independently corrected against original Graduale",
+        "Medial accent-neume adaptation is inferred and requires musical editor",
+        "End-cadence grouping belongs to printed paired exemplars only, not this exact verse",
+        "Printed special Palm processional tone identity must be approved before any release"
+      ],
+      "gabcResearchOnly": "name:PALM-R02-PS46-L02 1961 Palm ending-dependent complete research draft NOT APPROVED;\noffice-part:Psalmus;\ncommentary: Manually syllabified full Latin, inferred h recitation, unapproved medial and terminal cadences; no historical complete source or production score;\n%%\n(c4) Quó(h) ni(h) am(h) Dó(h) mi(h) nus(h) ex(h) cél(ixi) sus,(hr) ter(h) rí(g) bi(hr) lis,(h.) *(:) Rex(h) mag(h) nus(h) su(h) per(h) om(g) nem(f) ter(gh gr) ram.(gf..) (::)\n",
+      "exsurgeParsed": false,
+      "exsurgeRendered": false,
+      "lexicalAccentEditoriallyCertified": false,
+      "musicalFormulaEditorApproved": false,
+      "sourceOwnerApproved": false,
+      "releaseAllowed": false,
+      "noReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L03",
+      "psalm": 46,
+      "type": "VERSE",
+      "sourceReferencePaths": [
+        "data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json",
+        "data/research/processionale-palm-attested-cadence-windows-20261027.v1.json",
+        "data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json"
+      ],
+      "sourceScoreEdition": "Graduale Romanum Solesmes 1961 Palm pp143**/144**",
+      "medialPrintedSourceStatus": "ONLY_FIRST_VERSE_FULLY_NOTATED",
+      "fullLatin": [
+        "Súbjicit pópulos nóbis",
+        "et natiónes pédibus nostris."
+      ],
+      "normalizedLatinProtected": true,
+      "independentManualLatinSyllabification": [
+        "Súb-ji-cit pó-pu-los nó-bis",
+        "et na-ti-ó-nes pé-di-bus nos-tris."
+      ],
+      "partsNoteCount": [
+        8,
+        10
+      ],
+      "firstThreeGroupsOfMedial": [
+        "h",
+        "h",
+        "h"
+      ],
+      "medialNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "ixi",
+        "hr",
+        "h",
+        "g hr",
+        "h."
+      ],
+      "terminationNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "cadenceTextWindows": [
+        [
+          "pó",
+          "pu",
+          "los",
+          "nó",
+          "bis"
+        ],
+        [
+          "di",
+          "bus",
+          "nos",
+          "tris"
+        ]
+      ],
+      "explicitReviewerRisks": [
+        "All recitations before printed fragments are inferred h, not printed full text",
+        "Manual word division/syllabification not independently corrected against original Graduale",
+        "Medial accent-neume adaptation is inferred and requires musical editor",
+        "End-cadence grouping belongs to printed paired exemplars only, not this exact verse",
+        "Printed special Palm processional tone identity must be approved before any release"
+      ],
+      "gabcResearchOnly": "name:PALM-R02-PS46-L03 1961 Palm ending-dependent complete research draft NOT APPROVED;\noffice-part:Psalmus;\ncommentary: Manually syllabified full Latin, inferred h recitation, unapproved medial and terminal cadences; no historical complete source or production score;\n%%\n(c4) Súb(h) ji(h) cit(h) pó(ixi) pu(hr) los(h) nó(g hr) bis(h.) *(:) et(h) na(h) ti(h) ó(h) nes(h) pé(h) di(g) bus(f) nos(gh gr) tris.(gf..) (::)\n",
+      "exsurgeParsed": false,
+      "exsurgeRendered": false,
+      "lexicalAccentEditoriallyCertified": false,
+      "musicalFormulaEditorApproved": false,
+      "sourceOwnerApproved": false,
+      "releaseAllowed": false,
+      "noReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L04",
+      "psalm": 46,
+      "type": "VERSE",
+      "sourceReferencePaths": [
+        "data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json",
+        "data/research/processionale-palm-attested-cadence-windows-20261027.v1.json",
+        "data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json"
+      ],
+      "sourceScoreEdition": "Graduale Romanum Solesmes 1961 Palm pp143**/144**",
+      "medialPrintedSourceStatus": "ONLY_FIRST_VERSE_FULLY_NOTATED",
+      "fullLatin": [
+        "Eligit nobis hereditátem nostram",
+        "glóriam Jacob, quem díligit."
+      ],
+      "normalizedLatinProtected": true,
+      "independentManualLatinSyllabification": [
+        "E-li-git no-bis he-re-di-tá-tem nos-tram",
+        "gló-ri-am Ja-cob, quem dí-li-git."
+      ],
+      "partsNoteCount": [
+        12,
+        9
+      ],
+      "firstThreeGroupsOfMedial": [
+        "h",
+        "h",
+        "h"
+      ],
+      "medialNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "ixi hr",
+        "h",
+        "g hr",
+        "h."
+      ],
+      "terminationNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh",
+        "gr",
+        "gf.."
+      ],
+      "cadenceTextWindows": [
+        [
+          "tá",
+          "tem",
+          "nos",
+          "tram"
+        ],
+        [
+          "cob",
+          "quem",
+          "dí",
+          "li",
+          "git"
+        ]
+      ],
+      "explicitReviewerRisks": [
+        "All recitations before printed fragments are inferred h, not printed full text",
+        "Manual word division/syllabification not independently corrected against original Graduale",
+        "Medial accent-neume adaptation is inferred and requires musical editor",
+        "End-cadence grouping belongs to printed paired exemplars only, not this exact verse",
+        "Printed special Palm processional tone identity must be approved before any release"
+      ],
+      "gabcResearchOnly": "name:PALM-R02-PS46-L04 1961 Palm ending-dependent complete research draft NOT APPROVED;\noffice-part:Psalmus;\ncommentary: Manually syllabified full Latin, inferred h recitation, unapproved medial and terminal cadences; no historical complete source or production score;\n%%\n(c4) E(h) li(h) git(h) no(h) bis(h) he(h) re(h) di(h) tá(ixi hr) tem(h) nos(g hr) tram(h.) *(:) gló(h) ri(h) am(h) Ja(h) cob,(g) quem(f) dí(gh) li(gr) git.(gf..) (::)\n",
+      "exsurgeParsed": false,
+      "exsurgeRendered": false,
+      "lexicalAccentEditoriallyCertified": false,
+      "musicalFormulaEditorApproved": false,
+      "sourceOwnerApproved": false,
+      "releaseAllowed": false,
+      "noReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L06",
+      "psalm": 46,
+      "type": "VERSE",
+      "sourceReferencePaths": [
+        "data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json",
+        "data/research/processionale-palm-attested-cadence-windows-20261027.v1.json",
+        "data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json"
+      ],
+      "sourceScoreEdition": "Graduale Romanum Solesmes 1961 Palm pp143**/144**",
+      "medialPrintedSourceStatus": "ONLY_FIRST_VERSE_FULLY_NOTATED",
+      "fullLatin": [
+        "Psállite Deo, psállite;",
+        "psállite Regi nostro, psállite."
+      ],
+      "normalizedLatinProtected": true,
+      "independentManualLatinSyllabification": [
+        "Psál-li-te De-o, psál-li-te;",
+        "psál-li-te Re-gi nos-tro, psál-li-te."
+      ],
+      "partsNoteCount": [
+        8,
+        10
+      ],
+      "firstThreeGroupsOfMedial": [
+        "h",
+        "h",
+        "h"
+      ],
+      "medialNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "ixi hr",
+        "h",
+        "g",
+        "hr",
+        "h."
+      ],
+      "terminationNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh",
+        "gr",
+        "gf.."
+      ],
+      "cadenceTextWindows": [
+        [
+          "De",
+          "o",
+          "psál",
+          "li",
+          "te"
+        ],
+        [
+          "nos",
+          "tro",
+          "psál",
+          "li",
+          "te"
+        ]
+      ],
+      "explicitReviewerRisks": [
+        "All recitations before printed fragments are inferred h, not printed full text",
+        "Manual word division/syllabification not independently corrected against original Graduale",
+        "Medial accent-neume adaptation is inferred and requires musical editor",
+        "End-cadence grouping belongs to printed paired exemplars only, not this exact verse",
+        "Printed special Palm processional tone identity must be approved before any release"
+      ],
+      "gabcResearchOnly": "name:PALM-R02-PS46-L06 1961 Palm ending-dependent complete research draft NOT APPROVED;\noffice-part:Psalmus;\ncommentary: Manually syllabified full Latin, inferred h recitation, unapproved medial and terminal cadences; no historical complete source or production score;\n%%\n(c4) Psál(h) li(h) te(h) De(ixi hr) o,(h) psál(g) li(hr) te;(h.) *(:) psál(h) li(h) te(h) Re(h) gi(h) nos(g) tro,(f) psál(gh) li(gr) te.(gf..) (::)\n",
+      "exsurgeParsed": false,
+      "exsurgeRendered": false,
+      "lexicalAccentEditoriallyCertified": false,
+      "musicalFormulaEditorApproved": false,
+      "sourceOwnerApproved": false,
+      "releaseAllowed": false,
+      "noReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L07",
+      "psalm": 46,
+      "type": "VERSE",
+      "sourceReferencePaths": [
+        "data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json",
+        "data/research/processionale-palm-attested-cadence-windows-20261027.v1.json",
+        "data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json"
+      ],
+      "sourceScoreEdition": "Graduale Romanum Solesmes 1961 Palm pp143**/144**",
+      "medialPrintedSourceStatus": "ONLY_FIRST_VERSE_FULLY_NOTATED",
+      "fullLatin": [
+        "Quóniam Rex omnis terrae est Deus,",
+        "psállite hymnum."
+      ],
+      "normalizedLatinProtected": true,
+      "independentManualLatinSyllabification": [
+        "Quó-ni-am Rex om-nis ter-rae est De-us,",
+        "psál-li-te hym-num."
+      ],
+      "partsNoteCount": [
+        11,
+        5
+      ],
+      "firstThreeGroupsOfMedial": [
+        "h",
+        "h",
+        "h"
+      ],
+      "medialNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "h",
+        "ixi",
+        "hr",
+        "h",
+        "g hr",
+        "h."
+      ],
+      "terminationNoteGroups": [
+        "h",
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "cadenceTextWindows": [
+        [
+          "ter",
+          "rae",
+          "est",
+          "De",
+          "us"
+        ],
+        [
+          "li",
+          "te",
+          "hym",
+          "num"
+        ]
+      ],
+      "explicitReviewerRisks": [
+        "All recitations before printed fragments are inferred h, not printed full text",
+        "Manual word division/syllabification not independently corrected against original Graduale",
+        "Medial accent-neume adaptation is inferred and requires musical editor",
+        "End-cadence grouping belongs to printed paired exemplars only, not this exact verse",
+        "Printed special Palm processional tone identity must be approved before any release"
+      ],
+      "gabcResearchOnly": "name:PALM-R02-PS46-L07 1961 Palm ending-dependent complete research draft NOT APPROVED;\noffice-part:Psalmus;\ncommentary: Manually syllabified full Latin, inferred h recitation, unapproved medial and terminal cadences; no historical complete source or production score;\n%%\n(c4) Quó(h) ni(h) am(h) Rex(h) om(h) nis(h) ter(ixi) rae(hr) est(h) De(g hr) us,(h.) *(:) psál(h) li(g) te(f) hym(gh gr) num.(gf..) (::)\n",
+      "exsurgeParsed": false,
+      "exsurgeRendered": false,
+      "lexicalAccentEditoriallyCertified": false,
+      "musicalFormulaEditorApproved": false,
+      "sourceOwnerApproved": false,
+      "releaseAllowed": false,
+      "noReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L10",
+      "psalm": 46,
+      "type": "VERSE",
+      "sourceReferencePaths": [
+        "data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json",
+        "data/research/processionale-palm-attested-cadence-windows-20261027.v1.json",
+        "data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json"
+      ],
+      "sourceScoreEdition": "Graduale Romanum Solesmes 1961 Palm pp143**/144**",
+      "medialPrintedSourceStatus": "ONLY_FIRST_VERSE_FULLY_NOTATED",
+      "fullLatin": [
+        "Nam Dei sunt próceres terrae:",
+        "excelsus est valde."
+      ],
+      "normalizedLatinProtected": true,
+      "independentManualLatinSyllabification": [
+        "Nam De-i sunt pró-ce-res ter-rae:",
+        "ex-cel-sus est val-de."
+      ],
+      "partsNoteCount": [
+        9,
+        6
+      ],
+      "firstThreeGroupsOfMedial": [
+        "h",
+        "h",
+        "h"
+      ],
+      "medialNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "h",
+        "ixi",
+        "hr",
+        "h",
+        "g hr",
+        "h."
+      ],
+      "terminationNoteGroups": [
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "cadenceTextWindows": [
+        [
+          "pró",
+          "ce",
+          "res",
+          "ter",
+          "rae"
+        ],
+        [
+          "sus",
+          "est",
+          "val",
+          "de"
+        ]
+      ],
+      "explicitReviewerRisks": [
+        "All recitations before printed fragments are inferred h, not printed full text",
+        "Manual word division/syllabification not independently corrected against original Graduale",
+        "Medial accent-neume adaptation is inferred and requires musical editor",
+        "End-cadence grouping belongs to printed paired exemplars only, not this exact verse",
+        "Printed special Palm processional tone identity must be approved before any release"
+      ],
+      "gabcResearchOnly": "name:PALM-R02-PS46-L10 1961 Palm ending-dependent complete research draft NOT APPROVED;\noffice-part:Psalmus;\ncommentary: Manually syllabified full Latin, inferred h recitation, unapproved medial and terminal cadences; no historical complete source or production score;\n%%\n(c4) Nam(h) De(h) i(h) sunt(h) pró(ixi) ce(hr) res(h) ter(g hr) rae:(h.) *(:) ex(h) cel(h) sus(g) est(f) val(gh gr) de.(gf..) (::)\n",
+      "exsurgeParsed": false,
+      "exsurgeRendered": false,
+      "lexicalAccentEditoriallyCertified": false,
+      "musicalFormulaEditorApproved": false,
+      "sourceOwnerApproved": false,
+      "releaseAllowed": false,
+      "noReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS23-DOXO-L11",
+      "psalm": 23,
+      "type": "DOXOLOGY",
+      "sourceReferencePaths": [
+        "data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json",
+        "data/research/processionale-palm-attested-cadence-windows-20261027.v1.json",
+        "data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json"
+      ],
+      "sourceScoreEdition": "Graduale Romanum Solesmes 1961 Palm pp143**/144**",
+      "medialPrintedSourceStatus": "ONLY_FIRST_VERSE_FULLY_NOTATED",
+      "fullLatin": [
+        "Glória Patri, et Fílio,",
+        "et Spirítui Sancto."
+      ],
+      "normalizedLatinProtected": true,
+      "independentManualLatinSyllabification": [
+        "Gló-ri-a Pa-tri, et Fí-li-o,",
+        "et Spi-rí-tu-i Sanc-to."
+      ],
+      "partsNoteCount": [
+        9,
+        7
+      ],
+      "firstThreeGroupsOfMedial": [
+        "h",
+        "h",
+        "h"
+      ],
+      "medialNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "ixi",
+        "hr",
+        "h",
+        "g",
+        "hr",
+        "h."
+      ],
+      "terminationNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "cadenceTextWindows": [
+        [
+          "Pa",
+          "tri",
+          "et",
+          "Fí",
+          "li",
+          "o"
+        ],
+        [
+          "tu",
+          "i",
+          "Sanc",
+          "to"
+        ]
+      ],
+      "explicitReviewerRisks": [
+        "All recitations before printed fragments are inferred h, not printed full text",
+        "Manual word division/syllabification not independently corrected against original Graduale",
+        "Medial accent-neume adaptation is inferred and requires musical editor",
+        "End-cadence grouping belongs to printed paired exemplars only, not this exact verse",
+        "Printed special Palm processional tone identity must be approved before any release"
+      ],
+      "gabcResearchOnly": "name:PALM-R02-PS23-DOXO-L11 1961 Palm ending-dependent complete research draft NOT APPROVED;\noffice-part:Psalmus;\ncommentary: Manually syllabified full Latin, inferred h recitation, unapproved medial and terminal cadences; no historical complete source or production score;\n%%\n(c4) Gló(h) ri(h) a(h) Pa(ixi) tri,(hr) et(h) Fí(g) li(hr) o,(h.) *(:) et(h) Spi(h) rí(h) tu(g) i(f) Sanc(gh gr) to.(gf..) (::)\n",
+      "exsurgeParsed": false,
+      "exsurgeRendered": false,
+      "lexicalAccentEditoriallyCertified": false,
+      "musicalFormulaEditorApproved": false,
+      "sourceOwnerApproved": false,
+      "releaseAllowed": false,
+      "noReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-DOXO-L11",
+      "psalm": 46,
+      "type": "DOXOLOGY",
+      "sourceReferencePaths": [
+        "data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json",
+        "data/research/processionale-palm-attested-cadence-windows-20261027.v1.json",
+        "data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json"
+      ],
+      "sourceScoreEdition": "Graduale Romanum Solesmes 1961 Palm pp143**/144**",
+      "medialPrintedSourceStatus": "ONLY_FIRST_VERSE_FULLY_NOTATED",
+      "fullLatin": [
+        "Glória Patri, et Fílio,",
+        "et Spirítui Sancto."
+      ],
+      "normalizedLatinProtected": true,
+      "independentManualLatinSyllabification": [
+        "Gló-ri-a Pa-tri, et Fí-li-o,",
+        "et Spi-rí-tu-i Sanc-to."
+      ],
+      "partsNoteCount": [
+        9,
+        7
+      ],
+      "firstThreeGroupsOfMedial": [
+        "h",
+        "h",
+        "h"
+      ],
+      "medialNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "ixi",
+        "hr",
+        "h",
+        "g",
+        "hr",
+        "h."
+      ],
+      "terminationNoteGroups": [
+        "h",
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "cadenceTextWindows": [
+        [
+          "Pa",
+          "tri",
+          "et",
+          "Fí",
+          "li",
+          "o"
+        ],
+        [
+          "tu",
+          "i",
+          "Sanc",
+          "to"
+        ]
+      ],
+      "explicitReviewerRisks": [
+        "All recitations before printed fragments are inferred h, not printed full text",
+        "Manual word division/syllabification not independently corrected against original Graduale",
+        "Medial accent-neume adaptation is inferred and requires musical editor",
+        "End-cadence grouping belongs to printed paired exemplars only, not this exact verse",
+        "Printed special Palm processional tone identity must be approved before any release"
+      ],
+      "gabcResearchOnly": "name:PALM-R02-PS46-DOXO-L11 1961 Palm ending-dependent complete research draft NOT APPROVED;\noffice-part:Psalmus;\ncommentary: Manually syllabified full Latin, inferred h recitation, unapproved medial and terminal cadences; no historical complete source or production score;\n%%\n(c4) Gló(h) ri(h) a(h) Pa(ixi) tri,(hr) et(h) Fí(g) li(hr) o,(h.) *(:) et(h) Spi(h) rí(h) tu(g) i(f) Sanc(gh gr) to.(gf..) (::)\n",
+      "exsurgeParsed": false,
+      "exsurgeRendered": false,
+      "lexicalAccentEditoriallyCertified": false,
+      "musicalFormulaEditorApproved": false,
+      "sourceOwnerApproved": false,
+      "releaseAllowed": false,
+      "noReaderIntegration": true
+    }
+  ],
+  "sourcePageUrls": [
+    "https://gregobase.selapa.net/sources/2/1179.png",
+    "https://gregobase.selapa.net/sources/2/1180.png"
+  ],
+  "ownerPRs": {
+    "schola": 1749,
+    "latinIssue": 894,
+    "researchPR": 1752
+  },
+  "exclusions": [
+    "PALM-R02-PS23-L07 (requires flex)",
+    "PALM-R02-PS23-L08 (requires flex)",
+    "Other 6 medians with unverified accented assignments",
+    "Both Doxology second verse Amen termination applications"
+  ],
+  "approvalGates": {
+    "printedLatinExact": true,
+    "manualSyllabificationReviewed": false,
+    "sourceToneModelApproved": false,
+    "flexNotNeededForThese": true,
+    "exsurgeRendered": false,
+    "musicalEditorSigned": false,
+    "productionReaderEligible": false
+  },
+  "counts": {
+    "fullResearchGabcCandidates": 9,
+    "originalSourceFullyNotatedBeyondVerse1": 0,
+    "musicalApproved": 0,
+    "productionAssignments": 0
+  }
+}
