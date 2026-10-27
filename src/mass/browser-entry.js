@@ -857,17 +857,35 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
       const localRequest=localOrations?.selectionFor?.(resolvedMass)??null;
       let presentedProper=formSelectedProper.proper;
       const allSoulsMassNumber=getAllSoulsMassChoice(resolvedMass);
-      if(allSoulsMassNumber!==1){
-        const day=calendarResolution?.date===resolvedMass.date?calendarResolution:
-          await runtime()?.resolver?.resolveDay?.(resolvedMass.date);
-        if(!is1962AllSoulsCalendarMass(
-          {...resolvedMass,calendarDay:resolvedMass.calendarDay??day?.day?.main},day?.proper))
+      const originalNumber=Number(/^sancti:11-02m([123]):1:b$/.exec(
+          String(calendarResolution?.day?.main?.id??""))?.[1]??0);
+      if(originalNumber&&allSoulsMassNumber!==originalNumber){
+        if(!is1962AllSoulsCalendarMass({
+          ...resolvedMass,calendarDay:calendarResolution?.day?.main
+        },calendarResolution?.proper))
           throw Error("ALL_SOULS_ALTERNATE_PROPER_CALENDAR_CHANGED");
-        presentedProper=await resolve1962AllSoulsAdditionalProper({
-          calendarResolution:day,
-          properResolver:runtime()?.resolver?.properResolver,
-          massNumber:allSoulsMassNumber,
-        });
+        let first=calendarResolution;
+        if(originalNumber!==1){
+          // Read the default Mass as an independent source witness, preserving
+          // the user's original Home formularyIndex after the fetch.
+          const resolver=runtime()?.resolver;
+          const stored=resolver?.formularies?.get?.(resolvedMass.date);
+          try{first=await resolver?.resolveDay?.(resolvedMass.date,{formularyIndex:0});}
+          finally{
+            if(stored===undefined)resolver?.formularies?.delete?.(resolvedMass.date);
+            else resolver?.formularies?.set?.(resolvedMass.date,stored);
+          }
+        }
+        if(!is1962AllSoulsCalendarMass({
+          ...resolvedMass,calendarDay:first?.day?.main
+        },first?.proper)||first?.day?.main?.id!=="sancti:11-02m1:1:b")
+          throw Error("ALL_SOULS_FIRST_SOURCE_UNAVAILABLE");
+        presentedProper=allSoulsMassNumber===1?first.proper:
+          await resolve1962AllSoulsAdditionalProper({
+            calendarResolution:first,
+            properResolver:runtime()?.resolver?.properResolver,
+            massNumber:allSoulsMassNumber,
+          });
       }
       if(localRequest){
         if(localRequest.date!==resolvedMass.date||
@@ -946,9 +964,13 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
         legacy.calendarDay??day.day?.main},day.proper);
   }
   function selectedAllSoulsMass(legacy){
-    return authenticAllSoulsMass(legacy)
-      &&state.allSoulsMassChoice?.date===legacy?.date
-      ?state.allSoulsMassChoice.number:1;
+    if(!authenticAllSoulsMass(legacy))return 1;
+    const currentPath=String(runtimeState()?.resolution?.proper?.data?.sourcePath??"");
+    const original=/^Sancti\/11-02m([123])$/.exec(currentPath);
+    // A same-date Home formulary change invalidates the old Folio override.
+    const override=state.allSoulsMassChoice;
+    return override?.date===legacy?.date&&override?.baseSourcePath===currentPath
+      ?override.number:Number(original?.[1]??1);
   }
 
   // Explicit Mass-prayer entry. The canonical R17 controller remains the sole
@@ -1022,7 +1044,8 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
            const base=celebrationApi()?.getResolvedMass?.();
            if(![1,2,3].includes(number)||!authenticAllSoulsMass(base))
              throw Error("ALL_SOULS_ALTERNATE_SELECTION_OUTSIDE_DAY");
-           state.allSoulsMassChoice=Object.freeze({date:base.date,number});
+           state.allSoulsMassChoice=Object.freeze({date:base.date,number,
+             baseSourcePath:String(runtimeState()?.resolution?.proper?.data?.sourcePath??"")});
            state.fullMassPreflight?.refresh?.();
          },
          getLocalOrationSummary:()=>state.localOrations?.status?.()??null,
