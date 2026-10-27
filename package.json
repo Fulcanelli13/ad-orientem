@@ -52,7 +52,7 @@
     "check:reader-release": "node tests/reader-release-certification.mjs",
     "test:reader-rail-ownership": "node tests/reader-rail-ownership.mjs",
     "test:reader-guide": "node tests/reader-guide.mjs",
-    "test:reader-schola": "node tests/reader-schola.mjs && node tests/mass-rite-music-authority.mjs && node tests/reader-rite-music-presentation.mjs && node tests/reader-schola-windows.mjs && node tests/reader-chant-score-pilot.mjs && node tests/reader-chant-engraver.mjs && node tests/mass-chant-programme.mjs && node tests/mass-gregorian-programme-layers.mjs && node tests/reader-proper-chant-crosswalk.mjs && node tests/mass-chant-preparation-study.mjs && node tests/gr1961-chant-corpus-bulk.mjs && node tests/gr1961-promotion-gate.mjs && node tests/gr1961-identity-risk-audit.mjs && node tests/gr1961-first200-latin-source-screen.mjs && node tests/gr1961-first200-excerpt-positions.mjs && node tests/gr1961-second200-latin-source-screen.mjs && node tests/gr1961-first400-pre-gospel-text-discrimination.mjs && node tests/gr1961-remaining795-latin-source-screen.mjs && node tests/gr1961-remaining795-text-discrimination.mjs && node tests/gr1961-342-source-slot-triage.mjs && node tests/gr1961-first400-other-proper-text-review.mjs && node tests/reader-pent21-proper-score-reference.mjs",
+    "test:reader-schola": "node tests/reader-schola.mjs && node tests/mass-rite-music-authority.mjs && node tests/reader-rite-music-presentation.mjs && node tests/reader-schola-windows.mjs && node tests/reader-chant-score-pilot.mjs && node tests/reader-chant-engraver.mjs && node tests/mass-chant-programme.mjs && node tests/mass-gregorian-programme-layers.mjs && node tests/reader-proper-chant-crosswalk.mjs && node tests/mass-chant-preparation-study.mjs && node tests/gr1961-chant-corpus-bulk.mjs && node tests/gr1961-promotion-gate.mjs && node tests/gr1961-identity-risk-audit.mjs && node tests/gr1961-first200-latin-source-screen.mjs && node tests/gr1961-first200-excerpt-positions.mjs && node tests/gr1961-second200-latin-source-screen.mjs && node tests/gr1961-first400-pre-gospel-text-discrimination.mjs && node tests/gr1961-remaining795-latin-source-screen.mjs && node tests/gr1961-remaining795-text-discrimination.mjs && node tests/gr1961-342-source-slot-triage.mjs && node tests/gr1961-342-selected-proper-contract.mjs && node tests/gr1961-first400-other-proper-text-review.mjs && node tests/reader-pent21-proper-score-reference.mjs",
     "test:mass-customs-missal": "node tests/mass-customs-missal-presentation.mjs",
     "test:gloria-credo-faithful": "node tests/gloria-credo-faithful.mjs",
     "test:mass-complete-icon-atlas": "node tests/mass-complete-icon-atlas.mjs",
@@ -308,7 +308,8 @@
     "test:sacred-places-p43": "node tests/sacred-places-p43-eight-distinct-church-buildings.mjs",
     "test:sacred-places-p44": "node tests/sacred-places-p44-two-catalan-basilicas.mjs",
     "test:sacred-places-p46": "node tests/sacred-places-p46-four-exact-catholic-buildings.mjs",
-    "test:sacred-places-p48": "node tests/sacred-places-p48-eight-global-buildings.mjs"
+    "test:sacred-places-p48": "node tests/sacred-places-p48-eight-global-buildings.mjs",
+    "test:gr1961-342-resolved-year": "node tests/gr1961-342-selected-1962-year-e2e.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
