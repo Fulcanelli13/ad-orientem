@@ -75,7 +75,11 @@ export function createDailyFormulationPreferenceStore({
  }
  function save(manifest,{language="en",daypart="morning",length="short",selection={}}={}){
    const id=profileKey(language,daypart,length);
+   if(!selection||typeof selection!=="object"||Array.isArray(selection))
+     return {saved:false,selection:load(manifest,{language,daypart,length})};
    const source=normalizedDailySelections(selection);
+   if(Object.keys(source).length!==Object.keys(selection).length)
+     return {saved:false,selection:load(manifest,{language,daypart,length})};
    const picked=validated(manifest,language,daypart,length,source);
    // Invalid and uncleared explicit selections must never silently turn
    // into the default while claiming persistence succeeded.
