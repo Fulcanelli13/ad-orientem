@@ -1,4 +1,6 @@
 // 1962 Preface decision gate. No translation, text substitution or DOM ownership.
+import {required1962MarianPrefaceOwner,isSelected1962MarianPrefaceForm}
+  from "./1962-marian-preface-source.js";
 // When source metadata is incomplete, return UNRESOLVED rather than Common.
 // The actual calendar/proper source owner must supply an authenticated identity.
 const OWNERS=Object.freeze({
@@ -45,11 +47,24 @@ function matches1962PaschalPrefaceVariant(preface,variant){
 }
 const heading=text=>Object.entries(HEADINGS).find(([,regex])=>regex.test(text))?.[0]??null;
 const ownerKey=id=>String(id??"").toLowerCase().replace(/:[^:]+:[^:]+$/,"");
-export function inspect1962PrefaceSelection({principalCelebrationId,selectedPreface,requestedCelebrationId=null}={}){
+export function inspect1962PrefaceSelection({principalCelebrationId,selectedPreface,
+  requestedCelebrationId=null,sourcePath=null}={}){
   if(requestedCelebrationId&&requestedCelebrationId!=="mass_of_day")
     return Object.freeze({status:"NEEDS_SELECTED_FORMULARY",requiredId:null,actualId:heading(slotText(selectedPreface)),
       reason:"An explicit votive or special Mass cannot inherit the day's principal Preface blindly."});
   const key=ownerKey(principalCelebrationId);
+  const marian=required1962MarianPrefaceOwner(principalCelebrationId,sourcePath);
+  if(marian){
+    const actualId=heading(slotText(selectedPreface));
+    const valid=!marian.blocked&&actualId==="MARIA"&&
+      isSelected1962MarianPrefaceForm(selectedPreface,marian);
+    return Object.freeze({status:valid?"MATCH":marian.blocked?"MISSING_PREFACE":
+      actualId?"CONTRADICTION":"MISSING_PREFACE",
+      requiredId:"MARIA",actualId,requiredForm:marian.form??null,
+      sourceScope:marian.scope,
+      reason:valid?null:marian.blocked??
+        "The exact 1962 Marian Preface requires its verified feast/Saturday form, not inherited Common."});
+  }
   // Required Prefaces for the source-owned Lenten Temporale and for the
   // Pentecost Vigil/octave: 1960 Missal §§486(a), 493(a). An inherited
   // Common Preface must be blocked if source recovery cannot retrieve the
