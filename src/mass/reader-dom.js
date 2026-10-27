@@ -536,6 +536,12 @@ const SHELL_STYLE = `
  box-shadow:0 12px 44px rgba(0,0,0,.55);border-radius:12px;
  display:grid;gap:10px;font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
 .ao-schola-dock:has(.ao-schola-programme[open]){overflow:visible!important;z-index:41}
+/* The editor is optional; it must never capture touch navigation when
+ * the reader enters Mass from a preceding rite. The nav itself has
+ * pointer-events:none, so only its actual 44px buttons sit above the
+ * expanded local music editor. Preserve other modal stacking unchanged. */
+.ao-reader-shell:has(.ao-schola-programme[open]) .ao-reader-nav{z-index:42}
+
 /* Explicitly hide a closed <details> editor. The author's display:grid
  * otherwise overrides the browser's UA closed-details display rule and
  * leaves an invisible fixed-height panel intercepting Mass navigation. */
