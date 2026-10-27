@@ -239,6 +239,14 @@ const timerClickEnd=runtime.indexOf("if(b.dataset.tp381Daypart)",timerClickStart
 assert.ok(timerClickStart>=0 && timerClickEnd>timerClickStart);
 assert.ok(!runtime.slice(timerClickStart,timerClickEnd).includes("S.dailyStep"),
   "Clock operations must never change prayer progress");
+const disclosure=runtime.slice(runtime.indexOf('if(b.hasAttribute("data-tp381-timer-toggle"))'),
+ runtime.indexOf('if(b.hasAttribute("data-tp381-timer-control"))'));
+assert.ok(disclosure.includes("shell.outerHTML=dailyTimerControls()"),
+ "Expanding timer must only replace timer shell");
+assert.ok(disclosure.includes("preventScroll:true"),
+ "Timer disclosure must keep keyboard focus without moving the prayer");
+assert.ok(!disclosure.includes("return render();\n  }"),
+ "Regular timer disclosure must not rerender the whole reader");
 assert.ok(runtime.includes("if(next!==S.daypart)resetDailySessionTimer()"),
   "A different Morning or Evening session must not inherit the previous timer");
 assert.ok(runtime.includes("if(S.route===\"pray.morning_evening\")resetDailySessionTimer()"),
