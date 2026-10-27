@@ -1,0 +1,264 @@
+{
+  "schema": "AO_CLASS_I_BATCH03_SOURCE_PHOTO_AUDIT_V1",
+  "date": "2026-10-27",
+  "editorial_state": "BATCH03_CHOICES_NOT_SUBMITTED",
+  "source_branch": "research/sacred-art-b56-classi-53-hero-selector-20261024",
+  "policy": {
+    "cost_eur": 0,
+    "release": false,
+    "photo_publication_authorized": false,
+    "prior_batch02_decisions_unchanged": true,
+    "historical_approvals_rejections_unchanged": true,
+    "unchosen_candidates_not_rejected": true,
+    "quality_gates": [
+      "exact accession/object match",
+      "original unframed image (not gallery/frame photo)",
+      "actual file permission and provenance",
+      "sufficient resolution",
+      "original source color/tonal faithfulness",
+      "no glare, moire, compression smearing, severe damage or intrusive watermark",
+      "sha256/checksum when acquired",
+      "no silent AI alteration"
+    ]
+  },
+  "dates": [
+    {
+      "key": "ep",
+      "date": "2026-01-06",
+      "title": "Epiphany",
+      "epistle": "Isaiah 60:1–6",
+      "gospel": "Matthew 2:1–12",
+      "user_vote": "PENDING",
+      "options": [
+        {
+          "code": "A",
+          "artist": "Matthias Stom",
+          "work": "The Adoration of the Magi",
+          "institution": "Nationalmuseum Stockholm NM 1792",
+          "source_url": "https://commons.wikimedia.org/wiki/File:The_Adoration_of_the_Magi_(Matthias_Stom)_-_Nationalmuseum_-_18796.jpg",
+          "file_finding": "3650x3747 museum-supplied Commons photograph",
+          "rights_status": "PUBLIC_DOMAIN_FILE_INDICATED",
+          "gospel_fit": "DIRECT_GOSPEL",
+          "next_check": "Inspect original for frame, edge crop, colour, sharpness",
+          "asset_publication_ready": false
+        },
+        {
+          "code": "B",
+          "artist": "Bartolomé Esteban Murillo",
+          "work": "The Adoration of the Magi",
+          "institution": "Toledo Museum of Art 1975.84",
+          "source_url": "https://emuseum.toledomuseum.org/objects/55299/the-adoration-of-the-magi",
+          "file_finding": "Museum downloadable original, 2000px display option",
+          "rights_status": "EXACT_PHOTO_RIGHTS_UNCHECKED",
+          "gospel_fit": "DIRECT_GOSPEL",
+          "next_check": "Find original higher-quality frame-free file",
+          "asset_publication_ready": false
+        }
+      ]
+    },
+    {
+      "key": "hs",
+      "date": "2026-04-04",
+      "title": "Holy Saturday Easter Vigil",
+      "epistle": "Genesis 1:1–2:2 / Exodus 14:24–15:1 / Isaiah 4:2–6 / Deuteronomy 31:22–30; Colossians 3:1–4",
+      "gospel": "Matthew 28:1–7",
+      "user_vote": "PENDING",
+      "options": [
+        {
+          "code": "A",
+          "artist": "Jacopo da Empoli",
+          "work": "Three Marys at the Tomb",
+          "institution": "Blanton Museum of Art 2002.2824",
+          "source_url": "https://blanton.emuseum.com/objects/16324/three-marys-at-the-tomb",
+          "file_finding": "Museum IIIF offers public-domain object; Commons gallery photograph has a frame",
+          "rights_status": "PUBLIC_DOMAIN_OBJECT",
+          "gospel_fit": "DIRECT_WITH_THREE_WOMEN_TRADITION",
+          "next_check": "Reject framed gallery photo as publication asset; inspect IIIF for clean original",
+          "asset_publication_ready": false
+        },
+        {
+          "code": "B",
+          "artist": "Johann König",
+          "work": "The Resurrection of Christ",
+          "institution": "Cleveland Museum of Art 2017.192",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Clevelandart_2017.192.jpg",
+          "file_finding": "Cleveland-derived CC0 jpeg 2561x3400; separate framed alternate exists",
+          "rights_status": "CC0_EXACT_FILE",
+          "gospel_fit": "RESURRECTION_ICONOGRAPHY_NOT_MATTHEW_LITERAL",
+          "next_check": "Verify file visually does not include frame; verify tonal integrity",
+          "asset_publication_ready": false
+        }
+      ]
+    },
+    {
+      "key": "ew",
+      "date": "2026-04-08",
+      "title": "Wednesday within Easter Octave",
+      "epistle": "Acts 3:13–15,17–19",
+      "gospel": "John 21:1–14",
+      "user_vote": "PENDING",
+      "options": [
+        {
+          "code": "A",
+          "artist": "Sebastiano Ricci",
+          "work": "The Miraculous Draught of Fishes",
+          "institution": "Detroit Institute of Arts 76.146",
+          "source_url": "https://dia.org/collection/miraculous-draught-fishes/58375",
+          "file_finding": "Official TIFF download advertised; Commons photo 4775x3730",
+          "rights_status": "REUSE_RIGHTS_UNVERIFIED_FOR_TIFF",
+          "gospel_fit": "EXACT_JOHN21",
+          "next_check": "Evaluate TIFF provenance and rights, frame-free/no glare; Commons photograph may be visitor camera",
+          "asset_publication_ready": false
+        },
+        {
+          "code": "B",
+          "artist": "Joachim Beuckelaer",
+          "work": "The Miraculous Draught of Fishes",
+          "institution": "J. Paul Getty Museum 71.PB.59",
+          "source_url": "https://artsandculture.google.com/asset/the-miraculous-draught-of-fishes-0092/VAG7d8jwCQKKUQ",
+          "file_finding": "Getty Open Content; Commons Google Art Project photo 4166x2137",
+          "rights_status": "GETTY_OPEN_CONTENT",
+          "gospel_fit": "EXACT_JOHN21_MULTI_SCENE",
+          "next_check": "Verify full size and graphic fitness: biblical figures are small",
+          "asset_publication_ready": false
+        }
+      ]
+    },
+    {
+      "key": "et",
+      "date": "2026-04-09",
+      "title": "Thursday within Easter Octave",
+      "epistle": "Acts 8:26–40",
+      "gospel": "John 20:11–18",
+      "user_vote": "PENDING",
+      "options": [
+        {
+          "code": "A",
+          "artist": "Eustache Le Sueur",
+          "work": "L’Apparition du Christ à la Madeleine (Noli me tangere)",
+          "institution": "Musée de Grenoble",
+          "source_url": "https://www.museedegrenoble.fr/oeuvre/62/1922-l-apparition-du-christ-a-la-madeleine-noli-me-tangere.htm",
+          "file_finding": "Official photo credited Ville de Grenoble / J.-L. Lacroix and labels Domaine public",
+          "rights_status": "PUBLIC_DOMAIN_OBJECT_PHOTO_SCOPE_TO_CHECK",
+          "gospel_fit": "DIRECT_JOHN20",
+          "next_check": "Find sufficiently large clean original; do not assume photographer waiver",
+          "asset_publication_ready": false
+        },
+        {
+          "code": "B",
+          "artist": "Claude Lorrain",
+          "work": "Christ Appears in front of Mary Magdalene (Noli me tangere)",
+          "institution": "Städel 1479",
+          "source_url": "https://sammlung.staedelmuseum.de/en/work/christ-appears-in-front-of-mary-magdalene",
+          "file_finding": "Official record labels Picture Copyright Public Domain",
+          "rights_status": "PUBLIC_DOMAIN_PICTURE",
+          "gospel_fit": "DIRECT_JOHN20_LANDSCAPE",
+          "next_check": "Verify original dimensions, file source and colour; figures small",
+          "asset_publication_ready": false
+        }
+      ]
+    },
+    {
+      "key": "pf",
+      "date": "2026-05-29",
+      "title": "Pentecost Ember Friday",
+      "epistle": "Joel 2:23–24,26–27",
+      "gospel": "Luke 5:17–26",
+      "user_vote": "PENDING",
+      "options": [
+        {
+          "code": "A",
+          "artist": "Netherlandish 16th century",
+          "work": "The Healing of the Paralytic",
+          "institution": "National Gallery of Art 1943.7.7",
+          "source_url": "https://www.nga.gov/artworks/12205-healing-paralytic",
+          "file_finding": "NGA direct media download available public domain",
+          "rights_status": "NGA_OPEN_ACCESS",
+          "gospel_fit": "EXACT_LUKE5_BUT_HEALED_MAN_FOREGROUND",
+          "next_check": "Verify clean photographic image; research another candidate because lone choice",
+          "asset_publication_ready": false
+        }
+      ]
+    },
+    {
+      "key": "pb",
+      "date": "2026-07-01",
+      "title": "Most Precious Blood of Our Lord",
+      "epistle": "Hebrews 9:11–15",
+      "gospel": "John 19:30–35",
+      "user_vote": "PENDING",
+      "options": [
+        {
+          "code": "A",
+          "artist": "Anthony van Dyck",
+          "work": "Le Coup de lance",
+          "institution": "Royal Museum of Fine Arts Antwerp KMSKA",
+          "source_url": "https://www.kmska.be/fr/le-coup-de-lance-de-rubens",
+          "file_finding": "Museum scholarly attribution reassigned to Van Dyck (Rubens workshop)",
+          "rights_status": "PHOTO_RIGHTS_UNVERIFIED",
+          "gospel_fit": "EXACT_LANCE_JOHN19_34",
+          "next_check": "Confirm exact digital photo and quality; maintain attribution qualifier",
+          "asset_publication_ready": false
+        },
+        {
+          "code": "B",
+          "artist": "Philippe de Champaigne",
+          "work": "The Dead Christ on the Cross",
+          "institution": "Toledo Museum of Art 2020.5",
+          "source_url": "https://emuseum.toledomuseum.org/objects/78369/the-dead-christ-on-the-cross",
+          "file_finding": "Toledo museum JPEG downloaded/display option to 2000px",
+          "rights_status": "PHOTO_RIGHTS_UNVERIFIED",
+          "gospel_fit": "JOHN19_30_PRIOR_TO_LANCE",
+          "next_check": "2000px may be insufficient and this is a modello",
+          "asset_publication_ready": false
+        }
+      ]
+    },
+    {
+      "key": "cv",
+      "date": "2026-12-24",
+      "title": "Christmas Vigil",
+      "epistle": "Romans 1:1–6",
+      "gospel": "Matthew 1:18–21",
+      "user_vote": "PENDING",
+      "options": [
+        {
+          "code": "A",
+          "artist": "Georges de La Tour",
+          "work": "Dream of Saint Joseph",
+          "institution": "Musée d’arts de Nantes",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Georges_de_La_Tour_024.jpg",
+          "file_finding": "Commons file 2024x2485 from Yorck Project, public domain marked",
+          "rights_status": "PUBLIC_DOMAIN_FILE_INDICATED",
+          "gospel_fit": "JOSEPH_DREAM_AMBIGUOUS_WHICH_EPISODE",
+          "next_check": "Do not claim Matthew 1 exclusivity; visually inspect source quality",
+          "asset_publication_ready": false
+        },
+        {
+          "code": "B",
+          "artist": "Philippe de Champaigne",
+          "work": "The Dream of Saint Joseph",
+          "institution": "National Gallery London NG6276",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "file_finding": "Commons 4421x6000 jpg 18.83MB; National Gallery identifies Matthew 1 dream",
+          "rights_status": "COMMONS_PD_ART_FILE",
+          "gospel_fit": "EXACT_MATTHEW1",
+          "next_check": "Check full-size unframed reproduction and reuse jurisdiction",
+          "asset_publication_ready": false
+        }
+      ]
+    }
+  ],
+  "excluded_reference": {
+    "work": "Valentin de Boulogne, Dream of Saint Joseph, ca 1624–26",
+    "reason": "Met catalogue regards the second dream, Matthew 2:13, as most likely; not suitable as a literal Christmas Vigil/Matthew 1 image",
+    "source": "https://resources.metmuseum.org/resources/metpublications/pdf/Valentin_de_Boulogne_Beyond_Caravaggio.pdf"
+  },
+  "notes": [
+    "Not a new ballot and not a user decision.",
+    "Object identity, digital file licence and actual photo quality remain separate gates.",
+    "A framed alternate illustration of König is not the exact CC0 image intended for archive.",
+    "Stom: use Nationalmuseum supplied Commons record, not other paintings bearing the same title.",
+    "Beuckelaer: prefer Getty museum image/Google Art Project over a visitor-shot Commons photo."
+  ]
+}
