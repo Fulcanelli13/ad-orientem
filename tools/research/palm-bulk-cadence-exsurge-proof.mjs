@@ -4,15 +4,16 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import {createHash} from 'node:crypto';
-const [vendorPath,registryPath,ps23Path,ps46Path,medialPath,lexicalAuditPath,completePath]=process.argv.slice(2);
-if(!vendorPath||!registryPath||!ps23Path||!ps46Path||!medialPath||!lexicalAuditPath||!completePath)
- throw new Error('Usage: node palm-bulk-cadence-exsurge-proof.mjs VENDOR REGISTRY SOURCE23 SOURCE46 MEDIAL_FLEX_REGISTRY ACCENT_AUDIT NINE_COMPLETE_RESEARCH');
+const [vendorPath,registryPath,ps23Path,ps46Path,medialPath,lexicalAuditPath,completePath,masterPath]=process.argv.slice(2);
+if(!vendorPath||!registryPath||!ps23Path||!ps46Path||!medialPath||!lexicalAuditPath||!completePath||!masterPath)
+ throw new Error('Usage: node palm-bulk-cadence-exsurge-proof.mjs VENDOR REGISTRY SOURCE23 SOURCE46 MEDIAL_FLEX_REGISTRY ACCENT_AUDIT NINE_COMPLETE_RESEARCH MASTER_17_CASES');
 const bundle=fs.readFileSync(vendorPath,'utf8');
 const v=JSON.parse(fs.readFileSync(registryPath,'utf8'));
 const raw23=fs.readFileSync(ps23Path,'utf8'),raw46=fs.readFileSync(ps46Path,'utf8');
 const medial=JSON.parse(fs.readFileSync(medialPath,'utf8'));
 const audit=JSON.parse(fs.readFileSync(lexicalAuditPath,'utf8'));
 const complete=JSON.parse(fs.readFileSync(completePath,'utf8'));
+const master=JSON.parse(fs.readFileSync(masterPath,'utf8'));
 const sha=s=>createHash('sha256').update(s).digest('hex');
 assert.ok(bundle.length>200000,'Existing pinned local Exsurge required');
 assert.equal(sha(raw23),v.evidence.ps23.originalSha256);
@@ -130,6 +131,35 @@ for(const row of complete.scoreCases){
  completeViews.push({id:row.id,parsedMappings:maps.length,views:viewports});
 }
 assert.equal(completeViews.length,9);
+const flexDrafts=master.batch33RemainingEightReview.twoPsalm23FlexGabcCandidates.candidates;
+assert.equal(flexDrafts.length,2);
+assert.equal(master.batch33RemainingEightReview.scoreCoverageAfterTwoFlexDrafts.completeExperimentalGabcCases,11);
+const flexDraftViews=[];
+for(const row of flexDrafts){
+ assert.equal(row.productionScoreApproved,false);
+ assert.equal(row.editorialAccentCertified,false);
+ assert.equal(row.actualSourcePrintedFullVerseWithPitches,false);
+ const gabc=row.gabcResearchOnly;
+ assert.equal(gabc.split('%%').length,2);
+ assert.equal(gabc.split('+(h)').length,2);
+ assert.equal(gabc.split('*(:)').length,2);
+ const ctx=new api.ChantContext();
+ const maps=api.Gabc.createMappingsFromSource(ctx,gabc);
+ assert.ok(maps.length>=10,row.id+' missing flexed note groups');
+ const score=new api.ChantScore(ctx,maps,true);
+ score.performLayout(ctx);
+ const views=[];
+ for(const width of [260,420,800]){
+   await new Promise((resolve,reject)=>{try{score.layoutChantLines(ctx,width,resolve)}catch(e){reject(e)}});
+   const svg=score.createSvgTree(ctx);
+   assert.equal(svg.name,'svg',row.id+' flexed');
+   assert.ok(svg.children.length>0&&score.lines.length>0,row.id+' missing notated staff');
+   views.push({width,systems:score.lines.length,svgChildren:svg.children.length});
+ }
+ assert.ok(views[0].systems>=views.at(-1).systems,row.id+' poor wrap');
+ flexDraftViews.push({id:row.id,notes:maps.length,views});
+}
+assert.equal(flexDraftViews.length,2);
 console.log('AO_PALM_15_CADENCE_RENDER_RESULT:'+JSON.stringify({
  schema:'ao-palm-bulk-source-cadence-real-exsurge-v1',
  conclusion:'15_PARTIAL_CADENCE_SNIPPETS_SVG_RENDERED_NOT_FULL_PSALM_SCORES_OR_MUSICALLY_APPROVED',
@@ -137,9 +167,10 @@ console.log('AO_PALM_15_CADENCE_RENDER_RESULT:'+JSON.stringify({
  sourceApproval:false,fullVerseGabcScoresCreated:0,
  printedPsalm46OpeningTextStillQuarantined:true,editoriallyAccepted:0,runtimeScoreAssignments:0,
  snippetCount:results.length,medialAndFlexSnippetCount:medialViews.length,
- totalViewportChecks:3*(results.length+medialViews.length+correctedViews.length+completeViews.length),
+ totalViewportChecks:3*(results.length+medialViews.length+correctedViews.length+completeViews.length+flexDraftViews.length),
+ completeFlexedProvisionalVerseCount:flexDraftViews.length,
  fullProvisionalVerseCount:completeViews.length,
  repairedMedialCount:correctedViews.length,viewportsTested:[260,420,800],
  individualResults:results,medialAndFlexResults:medialViews,correctedMedialResults:correctedViews,
- completeResearchVerseResults:completeViews
+ completeResearchVerseResults:completeViews,completeFlexedResearchVerseResults:flexDraftViews
 }));
