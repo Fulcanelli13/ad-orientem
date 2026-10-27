@@ -122,6 +122,9 @@ function dailyReleasedFormOptions(prayerId,daypart,language){
  });
 }
 function dailyFormulationPrayerCard(prayerId){
+ // Standard is the exact 11/13 canonical baseline even after future release.
+ // Only Short/Complete approved profiles may render a changed source text.
+ if(S.dailyLength==="standard")return prayerCard(prayerId,{focusParagraphs:true});
  const lang=isFr()?"fr":"en";
  const options=dailyReleasedFormOptions(prayerId,S.daypart,lang);
  if(!options.length)return prayerCard(prayerId,{focusParagraphs:true});
