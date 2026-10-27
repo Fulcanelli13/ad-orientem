@@ -1,0 +1,244 @@
+{
+  "schema": "ao-palm-1961-two-doxology-amen-comparison-v1",
+  "date": "2026-10-27",
+  "batch": 35,
+  "stage": "PALM-R02",
+  "status": "TWO_FULL_AMEN_HYPOTHESES_CREATED_WITH_EXPLICIT_LITURGICAL_MUSICAL_SOURCE_CONFLICT",
+  "sources": [
+    {
+      "id": "S1961-P23",
+      "type": "PRIMARY_PALM_PROCESSIONAL_FIRST_VERSE_ONLY",
+      "edition": "Graduale Romanum 1961 pp143**",
+      "url": "https://gregobase.selapa.net/sources/2/1179.png",
+      "sourceGabc": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+      "scope": "1st verse note contour and subsequent Latin doxology text, NOT a written out Sicut erat cadence"
+    },
+    {
+      "id": "S1961-P46",
+      "type": "PRIMARY_PALM_PROCESSIONAL_FIRST_VERSE_ONLY",
+      "edition": "Graduale Romanum 1961 pp144**",
+      "url": "https://gregobase.selapa.net/sources/2/1180.png",
+      "sourceGabc": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+      "scope": "1st verse Psalm46 tone contour, same 1f type, NOT a written out Sicut erat cadence; raw Omnes gentes mismatch quarantined"
+    },
+    {
+      "id": "S1974-1stTone",
+      "type": "COMPARATIVE_EXPLICITLY_NOT_SAME_EDITION_OR_USE",
+      "edition": "Graduale Romanum 1974 p822, first tone Introit/Communion Gloria Patri",
+      "url": "https://www.gregorianum.org/wiki/I_Tono_Gloria_Patri_(Introitus_et_Communionis)",
+      "scope": "Complete sung Sicut erat, saeculorum Amen; its final Amen is a distinct descending resolution, unlike naive 1961 Palm source-contour transfer"
+    }
+  ],
+  "comparativeEvidence": {
+    "fullFirstTone1974LastFourLyricPitchGroups": [
+      {
+        "syllable": "ló",
+        "note": "g'"
+      },
+      {
+        "syllable": "rum",
+        "note": "f"
+      },
+      {
+        "syllable": "A",
+        "note": "fff"
+      },
+      {
+        "syllable": "men",
+        "note": "d."
+      }
+    ],
+    "hypotheticalPalmSourceTransferredLastFour": [
+      {
+        "syllable": "ló",
+        "note": "g"
+      },
+      {
+        "syllable": "rum",
+        "note": "f"
+      },
+      {
+        "syllable": "A",
+        "note": "gh gr"
+      },
+      {
+        "syllable": "men",
+        "note": "gf.."
+      }
+    ],
+    "noteGroupContradiction": "Final Amen in fully-notated 1974 I Tone doxology is different from extrapolating ordinary Palm 1961 Psalm23 1f terminal onto A-men. Thus neither source transfer can be source-certified without closer edition/usage check.",
+    "unambiguousPrintedPsalmTone": "The two 1961 Palm Psalm exemplars have first-tone-type reciting h and f-gh-h initial intonation; performance-source secondary table calls both 1f, but the 1974 first-tone doxology is for Introit and Communion usage, not automatically Palm procession.",
+    "doxologyAmenHasPrintedTextButNoNotesIn1961": true,
+    "doxologyAntiphonReturn": "Separate Palm blessing/distribution rubric review; office EUOUAE rules are a comparison only."
+  },
+  "fullHypotheticalGabcCases": [
+    {
+      "id": "PALM-R02-PS23-DOXO-L12",
+      "psalm": 23,
+      "printedLatinSections": [
+        "Sicut erat in princípio, et nunc, et semper,",
+        "et in saécula saeculórum. Amen."
+      ],
+      "exactSyllabificationSections": [
+        "Si-cut e-rat in prin-cí-pi-o, et nunc, et sem-per,",
+        "et in saé-cu-la sae-cu-ló-rum. A-men."
+      ],
+      "syllableCounts": [
+        14,
+        11
+      ],
+      "suppliedNoteGroups": [
+        [
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "ixi hr",
+          "h",
+          "g hr",
+          "h."
+        ],
+        [
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "g",
+          "f",
+          "gh gr",
+          "gf.."
+        ]
+      ],
+      "gabcHypothesisOnly": "name:PALM-R02-PS23-DOXO-L12 palm doxology 1961 hypothesized tone not edition-approved;\noffice-part:Psalmus;\ncommentary: NOT a printed 1961 full score. The Amen handling is speculative; do not use for liturgy or publish as source-authentic;\n%%\n(c4) Si(h)cut(h) e(h)rat(h) in(h) prin(h)cí(h)pi(h)o,(h) et(h) nunc,(ixi hr) et(h) sem(g hr)per,(h.) *(:) et(h) in(h) saé(h)cu(h)la(h) sae(h)cu(h)ló(g)rum.(f) A(gh gr)men.(gf..) (::)\n",
+      "lexicalAccentHypotheses": {
+        "medial": [
+          "nunc",
+          "sem"
+        ],
+        "terminal": [
+          "A"
+        ],
+        "unverifiedTextAccent": true
+      },
+      "cadentialPointingAssumption": "Model A: treat Amen (Á-men) as the terminal paroxytonic word and preceding ló-rum as two preparation syllables.",
+      "sourceDerivation": "Graduale Romanum 1961 printed Palm Psalm23 terminal e(gh gr)o(gf..) and Psalm23 first-verse accented mediatio, transposed by underlay only; Psalm46 original medial has different three-syllable timing and this borrowing has NOT been source certified.",
+      "unresolved1974Contradiction": "Graduale Romanum 1974 First Tone full doxology writes saeculórum. Amen with a distinctive descending ending on A-men, NOT 1961 Palm source cadential pitch group.",
+      "sourceFirstVerseOnlyFullyNotated": true,
+      "authenticPalmMelodyCertified": false,
+      "hasAmenSourceSpecialCadence": false,
+      "actualPsalmToneDoxologyEditorConfirmed": false,
+      "editorScoreApproved": false,
+      "productionEligible": false,
+      "rendered": false
+    },
+    {
+      "id": "PALM-R02-PS46-DOXO-L12",
+      "psalm": 46,
+      "printedLatinSections": [
+        "Sicut erat in princípio, et nunc, et semper,",
+        "et in saécula saeculórum. Amen."
+      ],
+      "exactSyllabificationSections": [
+        "Si-cut e-rat in prin-cí-pi-o, et nunc, et sem-per,",
+        "et in saé-cu-la sae-cu-ló-rum. A-men."
+      ],
+      "syllableCounts": [
+        14,
+        11
+      ],
+      "suppliedNoteGroups": [
+        [
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "ixi hr",
+          "h",
+          "g hr",
+          "h."
+        ],
+        [
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "g",
+          "f",
+          "gh gr",
+          "gf.."
+        ]
+      ],
+      "gabcHypothesisOnly": "name:PALM-R02-PS46-DOXO-L12 palm doxology 1961 hypothesized tone not edition-approved;\noffice-part:Psalmus;\ncommentary: NOT a printed 1961 full score. The Amen handling is speculative; do not use for liturgy or publish as source-authentic;\n%%\n(c4) Si(h)cut(h) e(h)rat(h) in(h) prin(h)cí(h)pi(h)o,(h) et(h) nunc,(ixi hr) et(h) sem(g hr)per,(h.) *(:) et(h) in(h) saé(h)cu(h)la(h) sae(h)cu(h)ló(g)rum.(f) A(gh gr)men.(gf..) (::)\n",
+      "lexicalAccentHypotheses": {
+        "medial": [
+          "nunc",
+          "sem"
+        ],
+        "terminal": [
+          "A"
+        ],
+        "unverifiedTextAccent": true
+      },
+      "cadentialPointingAssumption": "Model A: treat Amen (Á-men) as the terminal paroxytonic word and preceding ló-rum as two preparation syllables.",
+      "sourceDerivation": "Graduale Romanum 1961 printed Palm Psalm23 terminal e(gh gr)o(gf..) and Psalm23 first-verse accented mediatio, transposed by underlay only; Psalm46 original medial has different three-syllable timing and this borrowing has NOT been source certified.",
+      "unresolved1974Contradiction": "Graduale Romanum 1974 First Tone full doxology writes saeculórum. Amen with a distinctive descending ending on A-men, NOT 1961 Palm source cadential pitch group.",
+      "sourceFirstVerseOnlyFullyNotated": true,
+      "authenticPalmMelodyCertified": false,
+      "hasAmenSourceSpecialCadence": false,
+      "actualPsalmToneDoxologyEditorConfirmed": false,
+      "editorScoreApproved": false,
+      "productionEligible": false,
+      "rendered": false
+    }
+  ],
+  "counts": {
+    "doxologyResearchFullGabc": 2,
+    "printed1961OriginalDoxologyFullGabc": 0,
+    "earlierCompleteCandidateCases": 15,
+    "allDistinctCasesWithResearchGabc": 17,
+    "physicallyNotatedNewOriginals": 0,
+    "humanMusicalApprovals": 0,
+    "productionScoreAssignments": 0
+  },
+  "release": {
+    "bothHypothesesMusicallyUnapproved": true,
+    "sourceSpecificAmenHandlingStillHeld": true,
+    "renderIsNotMusicalCertification": true,
+    "onlyLocalResearchArtifacts": true,
+    "readerRuntimeChanged": false,
+    "noScorePromoted": true,
+    "publishAllowed": false
+  },
+  "reviewerNeeds": [
+    "Obtain Palm procession source-specific complete sung doxology or correct musical rule; do not substitute 1974 Introit/Communion score uncritically",
+    "Determine whether 1961 psalm tone 1f has an independent Amen cadence after final saeculórum",
+    "Review 1961 doxology medial word accents nunc and semper and handling of long first phrase",
+    "Confirm exact repeated Pueri Hebraeorum antiphon order from pre- and post-distribution chant rubrics",
+    "Verify 1962 canonical Latin editorial owner #894 before score promotion",
+    "Check all 17 complete GABCs manually, not just Exsurge"
+  ],
+  "related": {
+    "sourceMaster": "data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json",
+    "musicOwner": "PR #1749",
+    "textOwner": "issue #894",
+    "researchOwner": "draft PR #1752"
+  }
+}
