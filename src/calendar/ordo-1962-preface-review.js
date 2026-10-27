@@ -50,6 +50,79 @@ function inheritedSundayFeriaPreface(id,date,rank,colour,sourcePath){
   return null;
 }
 
+
+const utcDate=date=>Date.parse(date+"T12:00:00.000Z");
+const withinDays=(actual,start,low,high)=>{
+  const n=Math.round((actual-start)/86400000);
+  return n>=low&&n<=high;
+};
+function firstAdventSundayUtc(year){
+  const dec3=Date.UTC(year,11,3);
+  return dec3-new Date(dec3).getUTCDay()*86400000;
+}
+function thirdSeptemberSundayUtc(year){
+  const sept1=Date.UTC(year,8,1);
+  return sept1+((7-new Date(sept1).getUTCDay())%7+14)*86400000;
+}
+// Prove a common-family identity AND its temporal entitlement. These are
+// original source/rubric heading AUDITS only, never changes to the reader.
+// The donor source for C10* needs its own provenance: the Missal's §309(a)
+// expressly names Mary's Saturday Masses; §495 supplies their Preface.
+function sourceOwned1962FeriaAndSaturday(id,date,rank,colour,sourcePath){
+  const year=Number(date.slice(0,4));
+  if(year<1900||year>2099)return null;
+  const actual=utcDate(date);
+  if(!Number.isFinite(actual))return null;
+  const weekday=new Date(actual).getUTCDay();
+  const md=date.slice(5);
+  if(rank===4&&colour==="white"&&id===":feria:4:w"){
+    if(md>="01-02"&&md<="01-05"&&sourcePath==="Sancti/01-01")
+      return rule("NATIVITATE","484_B","SOURCE_MATCHED_NATIVITY_SEASON_FERIA");
+    if(md>="01-07"&&md<="01-13"&&
+      (sourcePath==="Sancti/01-06"||sourcePath==="Tempora/Epi1-0a"))
+      return rule("EPIPHANIA","485_B","SOURCE_MATCHED_EPIPHANY_SEASON_FERIA");
+    const prelent=/^Tempora\/Quadp([1-3])-0$/.exec(sourcePath);
+    if(prelent){
+      const week=Number(prelent[1]);
+      const start=romanEasterUtc(year)-63*86400000+(week-1)*7*86400000;
+      if(weekday!==0&&withinDays(actual,start,1,6))
+        return rule("COMMUNIS","498","SOURCE_MATCHED_PRELENT_FERIA");
+    }
+  }
+  if(rank===4&&colour==="white"&&weekday===6){
+    const suffix=/^commune:C10(b|c|Pasc|t):4:w$/.exec(id);
+    if(suffix&&sourcePath==="Commune/C10"+suffix[1])
+      return rule("MARIA","309_A_495","SOURCE_MATCHED_BVM_SATURDAY_MASS");
+  }
+  const advent=/^tempora:Adv([1-4])-([1-6]):[23]:v$/.exec(id);
+  if(advent&&colour==="violet"&&sourcePath==="Tempora/Adv"+advent[1]+"-"+advent[2]){
+    const expectedDate=firstAdventSundayUtc(year)+
+      ((Number(advent[1])-1)*7+Number(advent[2]))*86400000;
+    const screened=new Set(["1-2","1-6","2-3","2-4","2-6",
+      "3-1","3-2","3-3","3-4","3-5","3-6","4-2","4-3"]);
+    if(screened.has(advent[1]+"-"+advent[2])&&withinDays(actual,expectedDate,0,0))
+      return rule("COMMUNIS","498","SOURCE_MATCHED_ADVENT_FERIA_NO_UNIVERSAL_SEASONAL_PREFACE");
+  }
+  const ember=/^tempora:093-([356]):2:v$/.exec(id);
+  if(ember&&colour==="violet"&&sourcePath==="Tempora/093-"+ember[1]){
+    const expectedDate=thirdSeptemberSundayUtc(year)+Number(ember[1])*86400000;
+    if(withinDays(actual,expectedDate,0,0))
+      return rule("COMMUNIS","498","SOURCE_MATCHED_SEPTEMBER_EMBER_FERIA");
+  }
+  if(id==="tempora:Adv3-0:1:pv"&&sourcePath==="Tempora/Adv3-0"&&
+    rank===1&&colour==="rose"&&weekday===0&&
+    withinDays(actual,firstAdventSundayUtc(year),14,14))
+    return rule("TRINITATE","494_B","SOURCE_MATCHED_GAUDETE_ADVENT_SUNDAY");
+  if(id==="tempora:Pasc3-0r:2:w"&&sourcePath==="Tempora/Pasc3-0r"&&
+    rank===2&&colour==="white"&&weekday===0&&
+    withinDays(actual,romanEasterUtc(year),21,21))
+    return rule("PASCHALIS","489_A","SOURCE_MATCHED_THIRD_POST_EASTER_SUNDAY");
+  // The Corpus Christi donor contains competing older/versioned selectors
+  // 'Prefatio=Nat' and 'Prefatio=Sacramento'. 2020 optional Preface
+  // permissions cannot be inferred; keep this exact source UNMAPPED.
+  return null;
+}
+
 function expectedFor(id,date,rank,colour,sourcePath){
   // Explicit feast/source IDs; do not infer Lord/Mary/Apostle solely from
   // vernacular titles, colour, modern observances or commemoration labels.
@@ -115,6 +188,8 @@ function expectedFor(id,date,rank,colour,sourcePath){
     return rule("EPIPHANIA","485_B","EPIPHANY_SEASON_SUNDAY");
   if(["12-26","12-27","12-28"].includes(md)&&/^sancti:12-(?:26|27|28):/i.test(id))
     return rule("NATIVITATE","484_B","CHRISTMAS_OCTAVE_SAINT");
+  const family=sourceOwned1962FeriaAndSaturday(id,date,rank,colour,sourcePath);
+  if(family)return family;
   if(id===":feria:4:w"){
     // Generic IDs do not identify the source's Office season; require a
     // witnessed GREEN IV-class Mass per annum, not just a date.
