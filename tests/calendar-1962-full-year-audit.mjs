@@ -316,6 +316,13 @@ try{
     SOURCE_MATCHED_SEASONAL_FERIA:[],
     SANCTORAL_MARIAN_SOURCE_CONFLICT:[],
     ORIGINAL_COMMON_SANCTORAL_MATCH:[],
+    GENERIC_NATIVITY_EPIPHANY_CONFLICT:[],
+    GENERIC_PRELENT_COMMON_AGREEMENT:[],
+    BVM_SATURDAY_MARIAN_CONFLICT:[],
+    ADVENT_FERIA_COMMON_AGREEMENT:[],
+    SEPTEMBER_EMBER_COMMON_AGREEMENT:[],
+    GAUDETE_TRINITY_SOURCE_CONFLICT:[],
+    EASTER_SUNDAY_PASCHAL_CONFLICT:[],
   };
   for(const row of rows){
     const id=row.mainId,review=row.prefaceReview,sourcePath=row.properSourcePath;
@@ -329,6 +336,27 @@ try{
     else if(review?.status==="SOURCE_CONFLICT"&&
        review.basis==="ORIGINAL_MARIAN_PREFATIO_SOURCE_1960")
       group="SANCTORAL_MARIAN_SOURCE_CONFLICT";
+    else if(review?.status==="SOURCE_CONFLICT"&&
+      /^(?:SOURCE_MATCHED_NATIVITY_SEASON_FERIA|SOURCE_MATCHED_EPIPHANY_SEASON_FERIA)$/.test(review.basis??""))
+      group="GENERIC_NATIVITY_EPIPHANY_CONFLICT";
+    else if(review?.status==="RULE_TEXT_AGREE"&&
+      review.basis==="SOURCE_MATCHED_PRELENT_FERIA")
+      group="GENERIC_PRELENT_COMMON_AGREEMENT";
+    else if(review?.status==="SOURCE_CONFLICT"&&
+      review.basis==="SOURCE_MATCHED_BVM_SATURDAY_MASS")
+      group="BVM_SATURDAY_MARIAN_CONFLICT";
+    else if(review?.status==="RULE_TEXT_AGREE"&&
+      review.basis==="SOURCE_MATCHED_ADVENT_FERIA_NO_UNIVERSAL_SEASONAL_PREFACE")
+      group="ADVENT_FERIA_COMMON_AGREEMENT";
+    else if(review?.status==="RULE_TEXT_AGREE"&&
+      review.basis==="SOURCE_MATCHED_SEPTEMBER_EMBER_FERIA")
+      group="SEPTEMBER_EMBER_COMMON_AGREEMENT";
+    else if(review?.status==="SOURCE_CONFLICT"&&
+      review.basis==="SOURCE_MATCHED_GAUDETE_ADVENT_SUNDAY")
+      group="GAUDETE_TRINITY_SOURCE_CONFLICT";
+    else if(review?.status==="SOURCE_CONFLICT"&&
+      review.basis==="SOURCE_MATCHED_THIRD_POST_EASTER_SUNDAY")
+      group="EASTER_SUNDAY_PASCHAL_CONFLICT";
     else if(review?.status==="UNMAPPED"){
       if(id.startsWith("sancti:")){
         group=review.actual==="COMMUNIS"?"SANCTORAL_COMMON_FIRST_PASS":
@@ -357,13 +385,20 @@ try{
   const sizes=Object.fromEntries(Object.entries(cohorts).map(([k,v])=>[k,v.length]));
   assert.deepEqual(sizes,{
     SANCTORAL_COMMON_FIRST_PASS:131,
-    TEMPORAL_FORM_RULE_UNMAPPED:19,
-    SATURDAY_BVM_COMMON_UNMAPPED:12,
-    GENERIC_FERIA_UNMAPPED:10,
+    TEMPORAL_FORM_RULE_UNMAPPED:1,
+    SATURDAY_BVM_COMMON_UNMAPPED:0,
+    GENERIC_FERIA_UNMAPPED:0,
     LATER_OPTIONAL_PREFACE_AUTHORITY:2,
     SOURCE_MATCHED_SEASONAL_FERIA:9,
     SANCTORAL_MARIAN_SOURCE_CONFLICT:9,
     ORIGINAL_COMMON_SANCTORAL_MATCH:2,
+    GENERIC_NATIVITY_EPIPHANY_CONFLICT:6,
+    GENERIC_PRELENT_COMMON_AGREEMENT:4,
+    BVM_SATURDAY_MARIAN_CONFLICT:12,
+    ADVENT_FERIA_COMMON_AGREEMENT:13,
+    SEPTEMBER_EMBER_COMMON_AGREEMENT:3,
+    GAUDETE_TRINITY_SOURCE_CONFLICT:1,
+    EASTER_SUNDAY_PASCHAL_CONFLICT:1,
   },"Bulk source cohorts changed: reconcile before reporting any coverage gain");
   assert.equal(Object.values(sizes).reduce((a,b)=>a+b,0),194,
     "The original 194-case worklist must account for every promotion and still-withheld case");
@@ -387,17 +422,36 @@ try{
     "2026-04-23","2026-05-06","2026-05-08","2026-05-21","2026-05-22"];
   assert.deepEqual(cohorts.SOURCE_MATCHED_SEASONAL_FERIA.map(x=>x.date),
     exactPromotions,"The adopted inherited-seasonal source family changed");
-  assert.equal(summary.prefaceReview.unmapped,174);
-  assert.equal(summary.prefaceReview.ruleAndTextAgree,130);
-  assert.equal(summary.prefaceReview.sourceConflict,59);
+  const temporalScreen=JSON.parse(await readFile(resolve(root,
+    "data/research/1962-temporal-preface-source-screen-20261027.v1.json"),"utf8"));
+  assert.equal(temporalScreen.schema,"AO_1962_TEMPORAL_PREFACE_SOURCE_SCREEN_20261027_V1");
+  assert.equal(temporalScreen.sourceCases.length,19);
+  const selectedTemporal=[...cohorts.TEMPORAL_FORM_RULE_UNMAPPED,
+    ...cohorts.ADVENT_FERIA_COMMON_AGREEMENT,
+    ...cohorts.SEPTEMBER_EMBER_COMMON_AGREEMENT,
+    ...cohorts.GAUDETE_TRINITY_SOURCE_CONFLICT,
+    ...cohorts.EASTER_SUNDAY_PASCHAL_CONFLICT];
+  assert.equal(selectedTemporal.length,19);
+  assert.deepEqual(new Set(selectedTemporal.map(x=>x.sourcePath)),
+    new Set(temporalScreen.sourceCases.map(x=>x.sourcePath)));
+  assert.equal(cohorts.TEMPORAL_FORM_RULE_UNMAPPED[0].date,"2026-06-04",
+    "Version-dependent Corpus Christi must stay held");
+  for(const x of cohorts.BVM_SATURDAY_MARIAN_CONFLICT)
+    assert.equal(new Date(x.date+"T12:00:00Z").getUTCDay(),6,
+      x.date+" Marian Saturday must be an actual Saturday");
+  assert.equal(summary.prefaceReview.unmapped,134);
+  assert.equal(summary.prefaceReview.ruleAndTextAgree,150);
+  assert.equal(summary.prefaceReview.sourceConflict,79);
   await writeFile(resolve(outputDir,"1962-2026-preface-bulk-triage.json"),JSON.stringify({
     schema:"AO_1962_PREFACE_2026_BULK_TRIAGE_V1",
     year:2026,sourceAuditRun:"Live 1962 shared canonical resolver and independent Preface audit",
     sourceRegister:"data/research/1962-sanctoral-preface-source-screen-20261027.v1.json",
+    temporalRegister:"data/research/1962-temporal-preface-source-screen-20261027.v1.json",
     totalHistoricalUnmappedWorklist:194,
-    newlySourceMatchedWithheldFromEditorialApproval:11,
-    stillUnmapped:174,
-    stillRawSourceConflicts:59,
+    newlySourceMatchedWithheldFromEditorialApproval:31,
+    newlySourceIdentifiedConflicts:29,
+    stillUnmapped:134,
+    stillRawSourceConflicts:79,
     independentPrefacesEditoriallyCertified:0,
     groupSizes:sizes,
     sourceScope:"GENERAL_ROMAN_1962",
@@ -405,11 +459,13 @@ try{
     cohortRows:cohorts,
   },null,2)+"\n","utf8");
   console.log("CALENDAR_1962_PREFACE_BULK_TRIAGE="+JSON.stringify({
-    groupSizes:sizes,matchedSeasonalFerias:9,matchedOriginalCommon:2,marianSourceConflicts:9,unmapped:174,
+    groupSizes:sizes,matchedSeasonalFerias:9,matchedOriginalCommon:2,
+    matchedAdditionalCommonSeasonal:20,marianSourceConflicts:9,
+    identifiedAdditionalSourceConflicts:20,unmapped:134,
     originalUnmappedWorklist:194,
     originalSanctoralSourcesScreened:142,
     sourcePrefatioDirectivesObserved:11,
-    unverifiedSourceSelectionsRemaining:174,
+    unverifiedSourceSelectionsRemaining:134,
     editoriallyCertified:0,
   }));
 
