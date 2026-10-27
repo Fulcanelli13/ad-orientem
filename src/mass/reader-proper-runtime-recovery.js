@@ -175,10 +175,14 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
   const owner=authenticated1962PrefaceRecoveryOwner(principalCelebrationId,data?.sourcePath);
   if(!owner||owner.blocked)return null;
   if(owner.marianForm){
-    // A feast must possess its own authenticated Latin rule. Ordinary
-    // Saturday BVM Masses instead use the universal 1962 Marian rubric.
-    const donor=await hostResolver.resolveSource(data.sourcePath,"la",diagnostic);
-    if(!verifyMarianLatinSourceRule(donor,owner.sourceOwner))return null;
+    // Named feasts must possess their authenticated Latin Rule. The 1962
+    // Saturday BVM Mass is validated by its *selected C10 source identity*
+    // and the printed universal Missal rubric, not by attempting to fetch
+    // a missing DO-style Commune/C10 physical file from a different donor.
+    if(owner.sourceOwner.rule){
+      const donor=await hostResolver.resolveSource(data.sourcePath,"la",diagnostic);
+      if(!verifyMarianLatinSourceRule(donor,owner.sourceOwner))return null;
+    }else if(!verifyMarianLatinSourceRule(null,owner.sourceOwner))return null;
   }
   const heading=String(data.preface?.lat??data.preface?.la??"").trim();
   const currentlyCommon=/^Communis(?:\s|$)/i.test(heading);
