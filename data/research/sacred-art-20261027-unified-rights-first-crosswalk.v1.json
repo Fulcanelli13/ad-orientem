@@ -84,7 +84,12 @@
       "rosary"
     ],
     "module_technical_preflight_scored_not_human_approved": 8,
-    "module_full_pixel_quality_certified": 0
+    "module_full_pixel_quality_certified": 0,
+    "photo_source_published_rights_designated_placements": 6,
+    "photo_archived_preview_individually_inspected": 8,
+    "photo_preview_screen_for_followup": 4,
+    "photo_preview_with_specific_holds": 4,
+    "photo_human_full_master_quality_approved": 0
   },
   "exception_flags": [
     {
@@ -173,7 +178,17 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "exact_designated_source_rights_record": {
+        "source_url": "https://www.metmuseum.org/art/collection/search/436839",
+        "license": "MET_CC0_OFFICIAL_OA",
+        "photo_version_qa": "PHOTO_REQUIRES_AUTHENTIC_NO_SURROUND_PREPARATION",
+        "source_manifest_sha256": null,
+        "metadata_photo_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436839/2186892/main-image",
+        "photo_version_match_current_museum_NOT_CONFIRMED": true,
+        "production_release_authorized": false,
+        "source_witness": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
+      }
     },
     {
       "date": "2026-02-22",
@@ -999,7 +1014,17 @@
       "old_photo_does_not_match_later_approval": false,
       "rights_review_queue": "INSTITUTIONAL_CC0_EXACT_PHOTO_FILE_LEAD",
       "master_photo_review": "NOT_HUMAN_APPROVED",
-      "release": "NOT_AUTHORIZED"
+      "release": "NOT_AUTHORIZED",
+      "exact_designated_source_rights_record": {
+        "source_url": "https://www.metmuseum.org/art/collection/search/437607",
+        "license": "MET_CC0_OFFICIAL_OA",
+        "photo_version_qa": "PENDING_MASTER_PAINTED_EDGES",
+        "source_manifest_sha256": null,
+        "metadata_photo_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/437607/2100377/main-image",
+        "photo_version_match_current_museum_NOT_CONFIRMED": true,
+        "production_release_authorized": false,
+        "source_witness": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
+      }
     },
     {
       "date": "2026-11-02",
@@ -1180,7 +1205,17 @@
       ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
-      "production_released": false
+      "production_released": false,
+      "exact_designated_source_rights_record": {
+        "source_url": "https://www.metmuseum.org/art/collection/search/438724",
+        "license": "MET_CC0_OFFICIAL_OA",
+        "photo_version_qa": "PENDING_MASTER_PAINTED_EDGES",
+        "source_manifest_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+        "metadata_photo_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/438724/796490/main-image",
+        "photo_version_match_current_museum_NOT_CONFIRMED": true,
+        "production_release_authorized": false,
+        "source_witness": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
+      }
     },
     {
       "module_id": "joseph",
@@ -1248,7 +1283,14 @@
       ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
-      "production_released": false
+      "production_released": false,
+      "archived_photo_preview_quality_review": {
+        "status": "PREVIEW_ACCEPTABLE_FOR_CONTINUED_MASTER_QA",
+        "photo_SHA256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+        "review_source": "data/research/sacred-art-20261027-eight-hero-preview-visual-audit.v1.json",
+        "sample_only_not_master_verified": true,
+        "no_release": true
+      }
     },
     {
       "module_id": "heart-mary",
@@ -1276,7 +1318,14 @@
       ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
-      "production_released": false
+      "production_released": false,
+      "archived_photo_preview_quality_review": {
+        "status": "PREVIEW_ACCEPTABLE_FOR_CONTINUED_MASTER_QA",
+        "photo_SHA256": "82e465f5600d0df4b2af32d22b8642a832bfc4cdd5d19d1f1c2b0baeec49649d",
+        "review_source": "data/research/sacred-art-20261027-eight-hero-preview-visual-audit.v1.json",
+        "sample_only_not_master_verified": true,
+        "no_release": true
+      }
     },
     {
       "module_id": "michael",
@@ -1305,7 +1354,14 @@
       ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
-      "production_released": false
+      "production_released": false,
+      "archived_photo_preview_quality_review": {
+        "status": "PREVIEW_TECHNICAL_DETAIL_HOLD",
+        "photo_SHA256": "4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad",
+        "review_source": "data/research/sacred-art-20261027-eight-hero-preview-visual-audit.v1.json",
+        "sample_only_not_master_verified": true,
+        "no_release": true
+      }
     },
     {
       "module_id": "angel",
@@ -1347,7 +1403,14 @@
       ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
-      "production_released": false
+      "production_released": false,
+      "archived_photo_preview_quality_review": {
+        "status": "PREVIEW_ACCEPTABLE_FOR_CONTINUED_MASTER_QA",
+        "photo_SHA256": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+        "review_source": "data/research/sacred-art-20261027-eight-hero-preview-visual-audit.v1.json",
+        "sample_only_not_master_verified": true,
+        "no_release": true
+      }
     },
     {
       "module_id": "adoration",
@@ -1371,7 +1434,17 @@
       ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
-      "production_released": false
+      "production_released": false,
+      "exact_designated_source_rights_record": {
+        "source_url": "https://www.metmuseum.org/art/collection/search/438434",
+        "license": "MET_CC0_OFFICIAL_OA",
+        "photo_version_qa": "PHOTO_REQUIRES_AUTHENTIC_FRAME_FREE_PREPARATION_BEFORE_PUBLICATION",
+        "source_manifest_sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+        "metadata_photo_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/438434/794561/main-image",
+        "photo_version_match_current_museum_NOT_CONFIRMED": true,
+        "production_release_authorized": false,
+        "source_witness": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
+      }
     },
     {
       "module_id": "scripture",
@@ -1400,7 +1473,14 @@
       ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
-      "production_released": false
+      "production_released": false,
+      "archived_photo_preview_quality_review": {
+        "status": "PREVIEW_TEXTURE_QUALITY_HOLD",
+        "photo_SHA256": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158",
+        "review_source": "data/research/sacred-art-20261027-eight-hero-preview-visual-audit.v1.json",
+        "sample_only_not_master_verified": true,
+        "no_release": true
+      }
     },
     {
       "module_id": "king",
@@ -1450,7 +1530,14 @@
       ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
-      "production_released": false
+      "production_released": false,
+      "archived_photo_preview_quality_review": {
+        "status": "PREVIEW_ACCEPTABLE_FOR_CONTINUED_MASTER_QA",
+        "photo_SHA256": "a2c3a6eda78b412da44d50197d853f01e1cd3ded5ebd5996816db451f11606b6",
+        "review_source": "data/research/sacred-art-20261027-eight-hero-preview-visual-audit.v1.json",
+        "sample_only_not_master_verified": true,
+        "no_release": true
+      }
     },
     {
       "module_id": "salvation",
@@ -1595,7 +1682,14 @@
       ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
-      "production_released": false
+      "production_released": false,
+      "archived_photo_preview_quality_review": {
+        "status": "PREVIEW_EDGE_OR_EMBLEM_IDENTITY_HOLD",
+        "photo_SHA256": "347cf5d74cc575bcb082250a90dc64c54dc673e94fbc4e48efcd27fa2a3b09c1",
+        "review_source": "data/research/sacred-art-20261027-eight-hero-preview-visual-audit.v1.json",
+        "sample_only_not_master_verified": true,
+        "no_release": true
+      }
     },
     {
       "module_id": "mass",
@@ -1623,7 +1717,14 @@
       ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
-      "production_released": false
+      "production_released": false,
+      "archived_photo_preview_quality_review": {
+        "status": "PREVIEW_RESPONSIVE_COMPOSITION_HOLD",
+        "photo_SHA256": "909302874ecb137b75c3b97974e9a4b42ec3c4d10a6d3e83bc98c130057b760f",
+        "review_source": "data/research/sacred-art-20261027-eight-hero-preview-visual-audit.v1.json",
+        "sample_only_not_master_verified": true,
+        "no_release": true
+      }
     },
     {
       "module_id": "confession",
@@ -1647,7 +1748,17 @@
       ],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
-      "production_released": false
+      "production_released": false,
+      "exact_designated_source_rights_record": {
+        "source_url": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+        "license": "NGA_PUBLIC_DOMAIN_OPEN_ACCESS",
+        "photo_version_qa": "PENDING_MASTER_PAINTED_EDGES",
+        "source_manifest_sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+        "metadata_photo_url": "https://api.nga.gov/iiif/676fa96e-ad4e-4209-b985-ae0c15f5d902/full/full/0/default.jpg",
+        "photo_version_match_current_museum_NOT_CONFIRMED": true,
+        "production_release_authorized": false,
+        "source_witness": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
+      }
     },
     {
       "module_id": "rosary",
@@ -1663,7 +1774,17 @@
       "staged_photo_variants": [],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
-      "production_released": false
+      "production_released": false,
+      "exact_designated_source_rights_record": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+        "license": "CC_BY_3_0_UNPORTED_PHOTOGRAPHER_SAILKO",
+        "photo_version_qa": "PENDING_ORIGINAL_BYTES_NO_PHOTOGRAPH_ASSET_ARCHIVED",
+        "source_manifest_sha256": null,
+        "metadata_photo_url": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+        "photo_version_match_current_museum_NOT_CONFIRMED": true,
+        "production_release_authorized": false,
+        "source_witness": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
+      }
     },
     {
       "module_id": "sorrows",
@@ -1849,5 +1970,9 @@
     "git_directory_listing_verified": true,
     "quality_review_files": "assets/staged/module-hero-quality-reviews/visual-preflight.json",
     "quality_note": "All eight contain technical-only diagnostics; human visual and photo-rights review remain pending."
+  },
+  "cross_branch_qa_sources": {
+    "preview_image_review": "data/research/sacred-art-20261027-eight-hero-preview-visual-audit.v1.json",
+    "six_designated_licence_source_review": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
   }
 }
