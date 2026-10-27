@@ -107,7 +107,7 @@ async function snapshot(page,width,lang,cueId,expected,{reducedMotion=false}={})
       // visibly sourced, never merely because the prayer text is on screen.
       sourceActionRubric:[...scroller.querySelectorAll(".ao-reader-paragraph")]
         .filter(el=>el.dataset.cueId===window.__AO_PHONE_PREVIEW.getActiveCue() ||
-          el.dataset.sourceCueIds?.split(/\\s+/).includes(window.__AO_PHONE_PREVIEW.getActiveCue()))
+          el.dataset.sourceCueIds?.split(" ").includes(window.__AO_PHONE_PREVIEW.getActiveCue()))
         .some(el=>[...el.querySelectorAll(
           ".ao-iconless-source-rubric[data-source-cue-id],"+
           ".ao-live-inline-rubrics [data-source-cue-id]"
