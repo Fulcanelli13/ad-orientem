@@ -40,8 +40,12 @@ for(let i=0;i<2;i++){
   }
 }
 assert.equal(manifest.release.musicEditorReviewed,false);
-assert.equal(manifest.release.exsurgeRendered,false,
-  'A prior in-repository claim of Exsurge acceptance must not preempt evidence');
+assert.equal(manifest.release.exsurgeParsed,true,'Native parser proof must be recorded');
+assert.equal(manifest.release.exsurgeRendered,true,'Prior pinned Exsurge SVG evidence must be linked');
+assert.equal(manifest.nativeRenderProof.runId,40454771798);
+assert.equal(manifest.nativeRenderProof.candidateSha256,createHash('sha256').update(candidate,'utf8').digest('hex'));
+assert.equal(manifest.nativeRenderProof.sourceSha256,createHash('sha256').update(raw,'utf8').digest('hex'));
+assert.equal(manifest.release.nativePhoneDeviceAccepted,false);
 assert.equal(manifest.release.scorePublicationAllowed,false);
 
 const bundle=readFileSync(vendorPath,'utf8');
