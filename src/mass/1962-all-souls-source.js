@@ -72,7 +72,8 @@ export async function resolve1962AllSoulsAdditionalProper({
      if(!text.includes(marker))throw Error("ALL_SOULS_SOURCE_RULE_MISSING:"+sourcePath+":"+lang+":"+marker);
    }
  }
- if(!["lat","en","fr"].every(lang=>required(first.preface?.[lang]))){
+ if(!required(first.preface?.lat??first.preface?.la)||
+    !["en","fr"].every(lang=>required(first.preface?.[lang]))){
    throw Error("ALL_SOULS_REQUIEM_PREFACE_SOURCE_MISSING");
  }
  const text=Object.fromEntries(Object.entries(REQUIRED_SECTIONS).map(([name,section])=>

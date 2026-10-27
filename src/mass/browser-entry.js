@@ -83,7 +83,12 @@ export function deriveHostOptions({ resolvedMass, assemblyStatus, arch, runtimeS
   }
   const rites = mapInsertedRites(resolvedMass.insertedRites ?? []);
   const selectedProper=assemblyStatus?.proper ?? resolvedMass?.proper ?? null;
-  const allSoulsRequiem=allSouls1962RequiemOverlay(resolvedMass,selectedProper);
+  const calendarResolution=runtimeState?.resolution?.date===resolvedMass.date
+    ?runtimeState.resolution:null;
+  const sourceIdentity=selectedProper??calendarResolution?.proper??null;
+  const calendarOwner=resolvedMass.calendarDay??calendarResolution?.day?.main??null;
+  const allSoulsRequiem=allSouls1962RequiemOverlay(
+    {...resolvedMass,calendarDay:calendarOwner},sourceIdentity);
   return Object.freeze({
     proper: selectedProper,
     overlays: allSoulsRequiem,
@@ -846,10 +851,11 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
       let presentedProper=formSelectedProper.proper;
       const allSoulsMassNumber=getAllSoulsMassChoice(resolvedMass);
       if(allSoulsMassNumber!==1){
-        if(!is1962AllSoulsCalendarMass(resolvedMass,options.proper))
-          throw Error("ALL_SOULS_ALTERNATE_PROPER_CALENDAR_CHANGED");
         const day=calendarResolution?.date===resolvedMass.date?calendarResolution:
           await runtime()?.resolver?.resolveDay?.(resolvedMass.date);
+        if(!is1962AllSoulsCalendarMass(
+          {...resolvedMass,calendarDay:resolvedMass.calendarDay??day?.day?.main},day?.proper))
+          throw Error("ALL_SOULS_ALTERNATE_PROPER_CALENDAR_CHANGED");
         presentedProper=await resolve1962AllSoulsAdditionalProper({
           calendarResolution:day,
           properResolver:runtime()?.resolver?.properResolver,
@@ -908,8 +914,14 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
   const shellFocusGuard=installShellFocusVisibilityGuard({doc:document,win:window});
   if (globalThis.AO_R17_BROWSER_ENTRY?.installed) return globalThis.AO_R17_BROWSER_ENTRY;
   const state = { installed: false, polls: 0, controller: null, rogationPreflight: null, fullMassPreflight: null, fullMassCatalogue: null, observedSource: null, localOrations: null, allSoulsMassChoice:null };
+  function authenticAllSoulsMass(legacy){
+    const day=runtimeState()?.resolution;
+    if(!legacy||day?.date!==legacy.date)return false;
+    return is1962AllSoulsCalendarMass(
+      {...legacy,calendarDay:legacy.calendarDay??day.day?.main},day.proper);
+  }
   function selectedAllSoulsMass(legacy){
-    return is1962AllSoulsCalendarMass(legacy)
+    return authenticAllSoulsMass(legacy)
       &&state.allSoulsMassChoice?.date===legacy?.date
       ?state.allSoulsMassChoice.number:1;
   }
@@ -983,7 +995,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          getAllSoulsMassChoice:selectedAllSoulsMass,
          onAllSoulsMassChange:number=>{
            const base=celebrationApi()?.getResolvedMass?.();
-           if(![1,2,3].includes(number)||!is1962AllSoulsCalendarMass(base))
+           if(![1,2,3].includes(number)||!authenticAllSoulsMass(base))
              throw Error("ALL_SOULS_ALTERNATE_SELECTION_OUTSIDE_DAY");
            state.allSoulsMassChoice=Object.freeze({date:base.date,number});
            state.fullMassPreflight?.refresh?.();

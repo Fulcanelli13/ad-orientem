@@ -415,9 +415,14 @@ export function mountFullMassPreflight({
     const fr=french(),summary=selectionFor(legacy),l=(en,frText)=>fr?frText:en;
     const properPath=String(legacy?.proper?.data?.sourcePath??
        legacy?.proper?.sourcePath??"");
+    const authoritativeDay=getCalendarState?.()?.resolution;
     const allSoulsDay=/^\d{4}-11-02$/.test(date)&&
-       legacy?.calendarDay?.id==="sancti:11-02m1:1:b"&&
-       properPath==="Sancti/11-02m1"&&
+       authoritativeDay?.date===date&&
+       authoritativeDay?.status==="ready"&&
+       authoritativeDay?.day?.main?.id==="sancti:11-02m1:1:b"&&
+       authoritativeDay?.proper?.data?.sourcePath==="Sancti/11-02m1"&&
+       (!legacy?.calendarDay?.id||legacy.calendarDay.id==="sancti:11-02m1:1:b")&&
+       (!properPath||properPath==="Sancti/11-02m1")&&
        ["","mass_of_day"].includes(String(legacy?.requestedCelebrationId??""))&&
        ["","mass_of_day"].includes(String(legacy?.celebrationId??""));
     const chosenAllSoulsMass=allSoulsDay?getAllSoulsMassChoice(legacy):1;
