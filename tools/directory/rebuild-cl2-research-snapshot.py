@@ -10,6 +10,8 @@ import hashlib
 import json
 from pathlib import Path
 import sqlite3
+import re
+import unicodedata
 
 EXPECTED={
   'site':2584,'venue':2687,'mass':4681,
@@ -18,6 +20,74 @@ EXPECTED={
 
 def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+
+
+def install_existing_g0_candidates_into_single_master(db):
+    """Stage already-committed B84-B90 research leads IN CL2, not a new master.
+
+    A name collision is NOT deduplication and a source lead is NOT an admitted
+    worship building. Preserve every frozen original ID until site identity
+    evidence is reconciled. Geocoding and timetable enrichment are out of scope.
+    """
+    path=Path('data/directory/research/canonical-g0-site-admissions-b84-b90-20261026.v1.json')
+    d=json.loads(path.read_text(encoding='utf-8'))
+    assert d['schema']=='AO_DIRECTORY_CANONICAL_G0_RESEARCH_VENUE_ADMISSIONS_V1'
+    assert d['record_count']==36 and len(d['records'])==36
+    assert d['by_batch']=={'B84':11,'B85':2,'B86':9,'B87':9,'B88':1,'B89':2,'B90':2}
+    normalize=lambda v:re.sub(r'[^a-z0-9]','',unicodedata.normalize('NFKD',
+        str(v or '')).encode('ascii','ignore').decode('ascii').lower())
+    existing=set(x[0] for x in db.execute('SELECT group_id FROM canonical_site'))
+    existing_names={}
+    for x in db.execute('SELECT group_id,country,name FROM canonical_site'):
+        existing_names.setdefault((x[1],normalize(x[2])),[]).append(x[0])
+    db.executescript("""
+CREATE TABLE unified_site_candidate (
+ candidate_research_id TEXT PRIMARY KEY, source_batch TEXT NOT NULL,
+ country TEXT NOT NULL, locality TEXT NOT NULL, name TEXT NOT NULL,
+ source_physical_description TEXT NOT NULL,
+ liturgical_source_url TEXT NOT NULL, building_source_url TEXT NOT NULL,
+ related_existing_provider_id TEXT,
+ same_name_country_count INTEGER NOT NULL,
+ reconciliation_status TEXT NOT NULL CHECK(reconciliation_status='IDENTITY_RECONCILIATION_REQUIRED'),
+ is_canonical_physical_site INTEGER NOT NULL DEFAULT 0 CHECK(is_canonical_physical_site=0),
+ is_public_site INTEGER NOT NULL DEFAULT 0 CHECK(is_public_site=0),
+ source_json TEXT NOT NULL
+);
+CREATE INDEX candidate_country ON unified_site_candidate(country);
+CREATE VIEW unified_research_inventory AS
+ SELECT anchor_id AS stable_id,country,name,'ADMITTED_PHYSICAL_ANCHOR' AS kind
+ FROM unified_physical_site
+ UNION ALL
+ SELECT candidate_research_id AS stable_id,country,name,'CANDIDATE_IDENTITY_UNRESOLVED' AS kind
+ FROM unified_site_candidate;
+""")
+    assert len({x['research_group_id'] for x in d['records']})==36
+    assert not any(x['research_group_id'] in existing for x in d['records'])
+    collisions=0
+    for x in d['records']:
+        assert x['batch'] in d['by_batch']
+        assert x['admission_status']=='G0_RESEARCH_ONLY'
+        assert x['map_publication']=='NOT_PUBLISHED'
+        assert x['scheduled_mass_status']=='UNVERIFIED_NOT_IMPORTED'
+        matches=existing_names.get((x['cc'],normalize(x['name'])),[])
+        collisions+=bool(matches)
+        db.execute('INSERT INTO unified_site_candidate VALUES (?,?,?,?,?,?,?,?,?,?,?,0,0,?)',
+          (x['research_group_id'],x['batch'],x['cc'],x['locality'],x['name'],
+           x['physical_address'],x['liturgical_source_url'],x['building_source_url'],
+           x.get('related_existing_provider_id'),len(matches),
+           'IDENTITY_RECONCILIATION_REQUIRED',
+           json.dumps(x,ensure_ascii=False,separators=(',',':'))))
+    assert collisions==4
+    assert db.execute('SELECT COUNT(*) FROM unified_site_candidate').fetchone()[0]==36
+    assert db.execute("SELECT COUNT(*) FROM unified_site_candidate WHERE related_existing_provider_id IS NOT NULL").fetchone()[0]==1
+    assert db.execute('SELECT COUNT(*) FROM unified_research_inventory').fetchone()[0]==2615
+    assert db.execute('SELECT COUNT(*) FROM unified_site_candidate WHERE is_canonical_physical_site!=0 OR is_public_site!=0').fetchone()[0]==0
+    return {'candidate_leads_staged':36, 'candidate_ids_not_equal_to_CL2_canonical_ids':36,
+            'name_country_collision_hints_not_identity_joins':collisions,
+            'existing_provider_link_hints':1, 'approved_new_physical_sites':0,
+            'research_inventory_rows_with_unresolved_candidates':2615}
 
 
 
@@ -292,12 +362,13 @@ CREATE VIEW venue_with_classification AS SELECT v.source_id,v.recorded_group_id,
         x=r.get('item') or r
         db.execute('INSERT INTO identity_exception VALUES (?,?,?,?,?)',(i,r['kind'],x.get('source_id'),x.get('group_id'),json_text(r)))
     unified_stats=install_unified_physical_ministry_and_group_defaults(db,rows,manifest,root)
+    candidate_stats=install_existing_g0_candidates_into_single_master(db)
     db.commit()
     assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
     for table,expected in [('canonical_site',2584),('venue_source',2687),('classification_source',2715),('mass_time',4681),('existing_alias',5),('identity_exception',49)]:
         assert db.execute('SELECT COUNT(*) FROM '+table).fetchone()[0]==expected
     assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
     db.close()
-    print(json.dumps({'status':'PASS','output':str(output),'bytes':output.stat().st_size,'source_parts':sum(len(v) for v in manifest['shards'].values()),'source_rows':2687,'classification_rows':2715,'alias_count':5,'held_group_conflicts':5,'public_changes':0,'unified_master':unified_stats}))
+    print(json.dumps({'status':'PASS','output':str(output),'bytes':output.stat().st_size,'source_parts':sum(len(v) for v in manifest['shards'].values()),'source_rows':2687,'classification_rows':2715,'alias_count':5,'held_group_conflicts':5,'public_changes':0,'unified_master':unified_stats,'unresolved_venue_candidate_intake':candidate_stats}))
 
 if __name__=='__main__': main()
