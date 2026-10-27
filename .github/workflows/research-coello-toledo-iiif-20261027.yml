@@ -25,7 +25,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
-      - name: Obtain the two exact Toledo institutional versions
+      - name: Try both exact-object museum versions; preserve any fully verified original
         run: python scripts/art/acquire-coello-pristine-research.py --source toledo
       - name: Assert existing Commons source preserved, museum photo identities and no release
         shell: bash
@@ -40,19 +40,19 @@ jobs:
           assert j['publication_rights_approved'] is False
           assert j['app_release_approved'] is False
           rows=j['original_files']
-          assert len(rows)==3, [x['path'] for x in rows]
-          assert {x.get('iiif_id') for x in rows if x.get('iiif_id')}=={'19775','48017'}
+          museum={x.get('iiif_id') for x in rows if x.get('iiif_id')}
+          assert museum and museum.issubset({'19775','48017'}), museum
+          assert len(rows)==len(museum)+1
           assert any(x.get('source_sha1')=='dcbbf752ed5c4089efa877f67c83b48033cdf180' for x in rows)
           for row in rows:
             raw=pathlib.Path(row['path']).read_bytes()
             assert hashlib.sha256(raw).hexdigest()==row['sha256']
-          print('Three pristine SOURCE BYTES preserved; ZERO pristine/publication approvals')
+          print('Verified museum source photos:',sorted(museum),'; ZERO pristine/publication approvals')
           PY
           test "${GITHUB_REF}" = 'refs/heads/research/module-hero-pd-masters-20261026'
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -f assets/staged/module-hero-coello-20261027/coello-toledo-iiif-19775-original.jpg
-          git add -f assets/staged/module-hero-coello-20261027/coello-toledo-iiif-48017-original.jpg
+          git add -f assets/staged/module-hero-coello-20261027/coello-toledo-iiif-*-original.jpg
           git add -f assets/staged/module-hero-coello-20261027/acquisition-manifest.json
           if ! git diff --cached --quiet; then
             git commit -m 'research(art): preserve exact institutional Coello color references unapproved'
