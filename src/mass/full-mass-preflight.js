@@ -75,6 +75,19 @@ export function mountFullMassPreflight({
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
   let root=null,selected=null,explicit=false,selectedMode=null,explicitMode=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
   let folioStep="overview",experience={before:"none",after:"none",language:null},prayerOpening=false;
+  let allSoulsSuccession=null;
+  const successionFor=legacy=>{
+    const massNumber=getAllSoulsMassChoice(legacy);
+    if(!/^\d{4}-11-02$/.test(String(legacy?.date??""))||
+       ![1,2,3].includes(massNumber))return null;
+    const current=allSoulsSuccession?.date===legacy.date&&
+      allSoulsSuccession.massNumber===massNumber?allSoulsSuccession:null;
+    return Object.freeze({
+      date:legacy.date,massNumber,
+      previous:massNumber===1?"NONE":current?.previous??"UNKNOWN",
+      next:massNumber===3?"NONE":current?.next??"UNKNOWN",
+    });
+  };
   const donorSuppressed=new Map();
   const suppressDonorDuplicates=()=>{
     const panel=root?.parentElement;
@@ -132,6 +145,7 @@ export function mountFullMassPreflight({
     return Object.freeze({...value,explicitlyChosenForm:explicit,
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
       readerLanguage:selectedExperience().language,
+      allSoulsSuccession:successionFor(legacy),
       beforeMass:selectedExperience().before,afterMass:selectedExperience().after});
   }
   function openCategory(kind){
@@ -213,7 +227,13 @@ export function mountFullMassPreflight({
         [1,2,3].map(n=>'<label class="aoFullMassChoice"><input type="radio"'+
           ' name="ao-all-souls-formulary" value="'+n+'" data-ao-all-souls-mass>'+ 
           '<span data-ao-all-souls-mass-label="'+n+'"></span></label>').join('')+
-        '</div><p data-ao-all-souls-note></p></fieldset>'+ 
+        '</div><p data-ao-all-souls-note></p>'+ 
+        '<div data-ao-all-souls-succession-controls>'+ 
+        '<label data-ao-all-souls-previous-label></label>'+ 
+        '<select data-ao-all-souls-succession="previous"></select>'+ 
+        '<label data-ao-all-souls-next-label></label>'+ 
+        '<select data-ao-all-souls-succession="next"></select>'+ 
+        '</div><p data-ao-all-souls-succession-note></p></fieldset>'+ 
         '<p data-full-mass-category-error role="alert" hidden></p>'+
         '<details data-full-mass-review><summary data-full-mass-review-summary></summary>'+
         '<div data-full-mass-review-body></div></details>'+
@@ -378,6 +398,18 @@ export function mountFullMassPreflight({
         if(el?.matches?.("[data-ao-all-souls-mass]")){
           onAllSoulsMassChange(Number(el.value));refresh();return;
         }
+        if(el?.matches?.("[data-ao-all-souls-succession]")){
+          const direction=el.dataset.aoAllSoulsSuccession;
+          const base=getResolvedMass();
+          const current=successionFor(base);
+          if(!current||!["previous","next"].includes(direction))return;
+          const allowed=direction==="previous"
+            ? ["UNKNOWN","IMMEDIATE","INTERRUPTED","NONE"]
+            : ["UNKNOWN","IMMEDIATE","INTERRUPTED_LT3","INTERRUPTED_GTE3","NONE"];
+          if(!allowed.includes(el.value))return;
+          allSoulsSuccession=Object.freeze({...current,[direction]:el.value});
+          refresh();return;
+        }
         if(el?.matches?.("[data-folio-language]")){
           if(["en","fr"].includes(el.value))experience.language=el.value;
           refresh();return;
@@ -426,6 +458,10 @@ export function mountFullMassPreflight({
        ["","mass_of_day"].includes(String(legacy?.requestedCelebrationId??""))&&
        ["","mass_of_day"].includes(String(legacy?.celebrationId??""));
     const chosenAllSoulsMass=allSoulsDay?getAllSoulsMassChoice(legacy):1;
+    if(allSoulsSuccession && (
+      !allSoulsDay||allSoulsSuccession.date!==date||
+      allSoulsSuccession.massNumber!==chosenAllSoulsMass))
+      allSoulsSuccession=null;
     const selector=root.querySelector("[data-ao-all-souls-choices]");
     selector.hidden=!allSoulsDay;
     if(allSoulsDay){
@@ -435,6 +471,37 @@ export function mountFullMassPreflight({
       selector.querySelector("[data-ao-all-souls-note]").textContent=l(
         "Choose the Mass actually celebrated. The Second and Third have distinct readings and prayers.",
         "Choisissez la messe réellement célébrée. Les deuxième et troisième ont des lectures et prières distinctes.");
+      const context=successionFor(legacy);
+      const labels={
+        previous:[["UNKNOWN","Not known","Non précisé"],
+          ["IMMEDIATE","Immediately before, same priest","Juste avant, même prêtre"],
+          ["INTERRUPTED","Earlier, with an interruption","Auparavant, avec interruption"],
+          ["NONE","No previous Mass by this priest","Aucune messe précédente par ce prêtre"]],
+        next:[["UNKNOWN","Not known","Non précisé"],
+          ["IMMEDIATE","Immediately afterwards, same priest","Juste après, même prêtre"],
+          ["INTERRUPTED_LT3","After a break, within three hours","Après interruption, dans les trois heures"],
+          ["INTERRUPTED_GTE3","After a break, after three hours","Après interruption, après trois heures"],
+          ["NONE","No following Mass by this priest","Aucune messe suivante par ce prêtre"]],
+      };
+      for(const direction of ["previous","next"]){
+        const select=selector.querySelector('[data-ao-all-souls-succession="'+direction+'"]');
+        const label=selector.querySelector('[data-ao-all-souls-'+direction+'-label]');
+        select.hidden=label.hidden=direction==="previous"?massNumber===1:massNumber===3;
+        label.textContent=direction==="previous"
+          ?l("Previous Mass by this priest","Messe précédente par ce prêtre")
+          :l("Next Mass by this priest","Messe suivante par ce prêtre");
+        select.replaceChildren();
+        for(const [value,en,frText] of labels[direction]){
+          const option=doc.createElement("option");
+          option.value=value;option.textContent=l(en,frText);
+          select.append(option);
+        }
+        select.value=context[direction];
+        select.setAttribute("aria-label",label.textContent);
+      }
+      selector.querySelector("[data-ao-all-souls-succession-note]").textContent=l(
+        "Only select a succession circumstance if known. The first, second and third texts do not, by themselves, determine the priest's ablutions.",
+        "Ne précisez une succession que si elle est connue. Le premier, deuxième ou troisième formulaire ne détermine pas à lui seul les ablutions du prêtre.");
       for(const [index,en,frText] of [
         [1,"First Mass","Première messe"],
         [2,"Second Mass","Deuxième messe"],
