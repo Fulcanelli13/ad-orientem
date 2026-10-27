@@ -44,6 +44,14 @@ assert.equal(scoreForSourceOwnedProperTrack(source,"COMMUNION")?.id,"GREGOBASE-1
 assert.equal(scoreForSourceOwnedProperTrack(source,"KYRIE"),null);
 assert.equal(source.candidates[0].sourcePath,"Sancti/12-25m3");
 assert.equal(source.candidates[0].certainty,"TEXT_MATCH_NOT_LOCAL_CHANT_OBSERVED");
+for(const chant of records){
+ assert.deepEqual(chant.sourcePathAllowlist,["Sancti/12-25m3"]);
+ assert.match(chant.sourcePageScanUrl,/\/sources\/2\/(?:59|60|61)\.png$/);
+}
+assert.equal(matchSourceOwnedProperScores({...mapped,
+ sourcePath:"Tempora/12-25-3"}).candidates.length,0,
+ "A synthetic Christmas source path must not claim the real source identity");
+
 assert.equal(matchSourceOwnedProperScores({...mapped,sourcePath:""}).status,"SOURCE_UNREADY");
 assert.equal(matchSourceOwnedProperScores({...mapped,schema:"untrusted"}).status,"SOURCE_UNREADY");
 assert.equal(matchSourceOwnedProperScores({...mapped,slots:{}}).candidates.length,0);

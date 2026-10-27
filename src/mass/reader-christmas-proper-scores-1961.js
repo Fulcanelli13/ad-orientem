@@ -43,6 +43,9 @@ transcriber:Andrew Hinkley;
 ]);
 export const CHRISTMAS_DAY_PROPER_SCORES_1961=Object.freeze(CHANTS.map(row=>Object.freeze({
   ...row,status:"SOURCE_MATCH_REQUIRED_NOT_DATE_ASSIGNED",version:"Solesmes",
+  sourcePathAllowlist:Object.freeze(["Sancti/12-25m3"]),
+  sourcePageScanUrl:"https://gregobase.selapa.net/sources/2/"+
+    ({33:59,34:60,35:61})[Number(row.folio)]+".png",
   provenance:"GREGOBASE_CC0_TRANSCRIPTION",transcriptionAuthor:"Andrew Hinkley",
   bookWitnesses:Object.freeze([
     "Graduale Romanum (Solesmes, 1961), p. "+row.folio,
