@@ -22,7 +22,7 @@ const manifest={
     antiphon:witness("antiphon","en","Save us, O Lord, waking; and keep us, sleeping."),
     french:witness("french","fr","Mon Dieu, je Vous remercie et Vous offre ma journée."),
     pending:witness("pending","en","A text not yet approved for public redistribution.",{releaseStatus:"research"}),
-    noSource:witness("noSource","en","A purported historical prayer with no source link.",{sourceUrl:null})
+    "no-source":witness("no-source","en","A purported historical prayer with no source link.",{sourceUrl:null})
   },
   profiles:{
     "en:morning:short":{steps:[
@@ -93,7 +93,7 @@ const wrongLang={...manifest,
 };
 assert.throws(()=>compileDailyFormulation(wrongLang),/cannot be translated by fallback/);
 const missingSource={...manifest,
-  profiles:{"en:morning:short":{steps:[{id:"a",type:"prayer",variants:["noSource"]}]}}
+  profiles:{"en:morning:short":{steps:[{id:"a",type:"prayer",variants:["no-source"]}]}}
 };
 assert.throws(()=>compileDailyFormulation(missingSource),/lacks source URL/);
 assert.throws(()=>compileDailyFormulation(manifest,{length:"abridged"}),/Unsupported daily prayer length/);
