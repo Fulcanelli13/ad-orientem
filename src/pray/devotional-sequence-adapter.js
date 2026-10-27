@@ -163,6 +163,11 @@ export function installSequentialDevotionalReader({
       const selected=shown.findIndex(p=>Number(p.dataset.aoMercyStep)===restoreStep);
       if(selected>=0)found=selected;
     }else if(body.scrollTop<2)found=0;
+    // The opt-in contemplative Daily reader makes *all* canonical prayer
+    // paragraphs fully legible, including Latin after face switching.
+    // Other modes retain the existing paragraph-focus visual policy.
+    const contemplativeDailyPrimary=kind==="daily"&&
+      mount.closest?.('#aoPray435930[data-ao-contemplative-daily="guided"]');
     shown.forEach((p,i)=>{
       // A liturgical prayer is never muted behind instructional focus cues.
       // Adoration/Benediction retain subtle focus only for their guidance.
@@ -176,7 +181,7 @@ export function installSequentialDevotionalReader({
       // focus still determines when the actual user reaches each posture cue.
       const stationsPrayer=kind==="stations"&&
         Boolean(p.closest(".aoP435930VRLine,.aoP435930StationPrayer"));
-      const power=canonicalPrayer||confessionPrimary||stationsPrayer?"1":i===found?"1":Math.abs(i-found)===1?".56":".30";
+      const power=canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary?"1":i===found?"1":Math.abs(i-found)===1?".56":".30";
       p.style.setProperty("--ao-devo-focus",power);
       p.style.setProperty("opacity",power,"important");
       p.dataset.aoDevoActive=i===found?"true":"false";
