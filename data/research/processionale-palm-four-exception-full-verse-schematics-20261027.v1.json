@@ -285,7 +285,63 @@
       "musicianApproved": false,
       "ExsurgeRenderPass": false,
       "referenceOnly": true,
-      "productionEligible": false
+      "productionEligible": false,
+      "batch37ArtificialAccentAlternative": {
+        "underlyingTrueWordAccent": {
+          "word": "populórum",
+          "syllable": "ló",
+          "syllableIndex": 5
+        },
+        "artificialSecondaryAccent": {
+          "word": "congregáti",
+          "syllable": "con",
+          "syllableIndex": 7
+        },
+        "twoSyllablesAfterTrueAccent": true,
+        "secondRealWordAccent": {
+          "word": "congregáti",
+          "syllable": "gá",
+          "syllableIndex": 9
+        },
+        "interveningAfterSecondaryBeforeNextAccent": 1,
+        "methodSource": "Rules for Text Underlay of Psalm Text at Cadence Formulas, pp1-2: when >2 unaccented syllables between accents, secondary accent falls two syllables after actual accent.",
+        "sourceUrl": "https://npm.org/wp-content/uploads/2017/07/Rules-for-Text-Underlay-of-the-Psalm-Text-at-the-Psalm-Tone-Cadence.pdf",
+        "recitationAndMelodicGroupHypothesis": "ló(h)rum(h) con(ixi hr)gre(h)gá(g)ti(hr)sunt(h.)",
+        "originalRejectedHypothesisPreserved": true,
+        "alternativeGabcWholeVerseResearchOnly": "name:PALM-R02-PS46-L09 SECONDARY_ACCENT_ALTERNATIVE pending musician approval;\noffice-part:Psalmus;\ncommentary: Rule-guided correction moves first 2-accent mediant cell to con after populorum accented lo; no approved 1961 Palm score. Do not publish or assume correct music;\n%%\n(c4) Prín(h)ci(h)pes(h) po(h)pu(h)ló(h)rum(h) con(ixi hr)gre(h)gá(g)ti(hr) sunt(h.) *(:) cum(h) pó(h)pu(h)lo(h) De(g)i(f) A(gh)bra(gr)ham.(gf..) (::)\n",
+        "pitchGroupsBySection": [
+          [
+            "h",
+            "h",
+            "h",
+            "h",
+            "h",
+            "h",
+            "h",
+            "ixi hr",
+            "h",
+            "g",
+            "hr",
+            "h."
+          ],
+          [
+            "h",
+            "h",
+            "h",
+            "h",
+            "g",
+            "f",
+            "gh",
+            "gr",
+            "gf.."
+          ]
+        ],
+        "toneSpecificAdaptationCertified": false,
+        "artificialSecondaryAccentHumanApproved": false,
+        "originalHebrewNameAccentStillRequiresReview": true,
+        "realExsurgeRendered": false,
+        "scorePublicationAllowed": false
+      }
     }
   ],
   "withheld": {
