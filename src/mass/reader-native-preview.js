@@ -74,6 +74,7 @@ import { projectLiveCinematicScene, projectGoodFridayDeathScene } from "./reader
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
 import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rubrics.js";
 import { withPublishedMissalParagraphRubrics } from "./reader-missal-rubrics.js";
+import {with1962RitusXIVParagraphRubrics} from "./1962-all-souls-consecutive-rites.js";
 import { withCertifiedSolemnMissalMinisters } from "./reader-missal-solemn-rubrics.js";
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
 import { certifiedLiveCanonActionOverride } from "./reader-live-canon-action.js";
@@ -2664,7 +2665,7 @@ export async function mountNativeReaderPreview({
               resolvedMass:ready.prepared?.session?.resolvedMass??null,
             })
           : [],
-      paragraphs:withLiveReadingSections(visibleCard,
+      paragraphs:with1962RitusXIVParagraphRubrics(withLiveReadingSections(visibleCard,
         String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"
         ? withCertifiedSolemnMissalMinisters(
           withPublishedMissalParagraphRubrics(
@@ -2693,6 +2694,9 @@ export async function mountNativeReaderPreview({
               visibleCard.paragraphs,ready.data?.rubricEvents??null,{
                 form:ready.prepared?.session?.resolvedMass?.form,
               }),{mode:readerModel?.presentationMode}),
+        ready.prepared?.session?.resolvedMass?.provenance?.allSoulsSuccession,{
+          language:ready.prepared?.readerPreferences?.language??"en",
+        }),
       progress:visibleProgress(visibleCard),
       // Guide/Formation is an independent educational destination. The
       // published R17 1962 event registry, not an inherited 32-card Guide,

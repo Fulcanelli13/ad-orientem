@@ -1,5 +1,6 @@
 import { resolveRogationMassVariant } from "./rogation-mass-selection.js";
 import { compileRogationReaderProper } from "./rogation-reader-proper.js";
+import { inspect1962PrefaceSelection } from "./1962-preface-decision.js";
 // Compatibility bridge from the proven v3.4.6 pre-Mass architecture
 // into the R17 modular session engine.
 // This file intentionally does not depend on window/globalThis or DOM.
@@ -44,6 +45,44 @@ function properEnvelope(proper, legacy) {
     data:proper,
     sourcePath:proper.sourcePath??legacy.properSource??null,
   });
+}
+
+// The reader's Preface decision consumes proper.principalCelebrationId;
+// passing the ID only to asynchronous recovery is insufficient when that
+// recovery is unavailable. Bind identity at the existing host-to-reader
+// handoff, never by guessing it from the civil date or displayed title.
+// A known source-ID and precisely matching canonical Proper path are BOTH
+// prerequisites, and this is restricted to the unoverridden Mass of the day.
+export function bind1962PrincipalPrefaceIdentity(proper,legacy){
+  if(!proper||typeof proper!=="object"||!legacy||typeof legacy!=="object")
+    return proper;
+  const requested=String(legacy.requestedCelebrationId??"mass_of_day");
+  const selected=String(legacy.celebrationId??"mass_of_day");
+  if(requested!=="mass_of_day"||selected!=="mass_of_day"||
+     normalizedType(legacy.celebrationType??"CALENDAR")!=="CALENDAR")
+    return proper;
+  const id=String(legacy.calendarDay?.id??"");
+  const match=/^(tempora|sancti):([A-Za-z0-9-]+):[1-4]:[a-z]{1,2}$/i.exec(id);
+  if(!match)return proper;
+  const data=proper.data??proper;
+  if(!data||typeof data!=="object")return proper;
+  const path=String(data.sourcePath??proper.sourcePath??"");
+  if(path.toLowerCase()!==(match[1]+"/"+match[2]).toLowerCase())return proper;
+  if(data.requestedCelebrationId&&data.requestedCelebrationId!=="mass_of_day"||
+     /(?:votive|requiem|mass_of_dead)/i.test(String(data.riteProfile??data.profile??"")))
+    return proper;
+  const verdict=inspect1962PrefaceSelection({
+    principalCelebrationId:id,selectedPreface:data.preface,
+    requestedCelebrationId:"mass_of_day"
+  });
+  if(verdict.status==="UNMAPPED_SOURCE")return proper;
+  // A conflicting pre-existing owner must not silently suppress the
+  // selected Mass's source identity.
+  if(data.principalCelebrationId&&data.principalCelebrationId!==id)
+    throw new Error("PREFACE_SOURCE_IDENTITY_CONFLICT");
+  const bound=Object.freeze({...data,principalCelebrationId:id,
+    requestedCelebrationId:"mass_of_day"});
+  return proper.data?Object.freeze({...proper,data:bound}):bound;
 }
 
 function celebrationObject(id,type,title=null) {
@@ -106,7 +145,7 @@ export function adaptV346ResolvedMass(legacy, options={}) {
       "rogation-mass-1962","VOTIVE","Missa de Rogationibus · Exaudivit");
     if(!overlays.includes("VOTIVE_PROPER"))overlays.push("VOTIVE_PROPER");
   }
-  const proper=properEnvelope(selectedProper,legacy);
+  const proper=properEnvelope(bind1962PrincipalPrefaceIdentity(selectedProper,legacy),legacy);
   const precedingRites=[...new Set([
     ...(options.precedingRites??[]),
     ...(rogationSelection?.precedingRites??[])
@@ -147,6 +186,8 @@ export function adaptV346ResolvedMass(legacy, options={}) {
       rubricSources:[...(legacy.rubricSources??[])],
       languageCoverage:legacy.languageCoverage??null,
       sourceDiagnostics:legacy.sourceDiagnostics??null,
+      // Descriptive/conditional priest succession, never a fabricated event.
+      allSoulsSuccession:options.allSoulsSuccession??null,
       rogationSelection:rogationSelection ? {
         selection:rogationSelection.selection,
         observance:options.rogationSelection?.observance??null,

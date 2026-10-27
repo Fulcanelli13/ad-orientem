@@ -30,6 +30,30 @@ for(const [principalCelebrationId,lat] of correct)
 assert.equal(inspect1962PrefaceSelection({principalCelebrationId:"sancti:10-07:2:w",selectedPreface:{lat:""}}).status,"MISSING_PREFACE");
 assert.equal(inspect1962PrefaceSelection({principalCelebrationId:"sancti:10-07:2:w",selectedPreface:{lat:"Communis"},requestedCelebrationId:"other-votive"}).status,"NEEDS_SELECTED_FORMULARY");
 assert.equal(PREFACE_SELECTION_WITNESSES.verifiedOwnerKeys.length,4);
+assert.equal(PREFACE_SELECTION_WITNESSES.verifiedSeasonalPatterns.length,2);
+for(const [id,required,good] of [
+ ["tempora:Quad1-1:3:v","QUADRAGESIMA","de Quadragesima"],
+ ["tempora:Quad4-6:3:v","QUADRAGESIMA","de Quadragesima"],
+ ["tempora:Pasc6-6:1:r","SPIRITU","de Spiritu Sancto"],
+ ["tempora:Pasc7-5:1:r","SPIRITU","de Spiritu Sancto"]
+]){
+ const wrong=inspect1962PrefaceSelection({principalCelebrationId:id,selectedPreface:{lat:"Communis"}});
+ assert.equal(wrong.status,"CONTRADICTION",id);
+ assert.equal(wrong.requiredId,required,id);
+ const proper={mainId:id,preface:{lat:"Communis",en:"Common",fr:"Commune"}};
+ const withheld=properToReaderSlots(proper,{language:"fr"});
+ assert.equal(withheld.slots.PREFACE.status,"MISSING",id);
+ assert.equal(withheld.slots.PREFACE.reason,"1962 Preface source decision: CONTRADICTION",id);
+ const certified=inspect1962PrefaceSelection({principalCelebrationId:id,selectedPreface:{lat:good+"\\nVere dignum"}});
+ assert.equal(certified.status,"MATCH",id);
+ const restored=properToReaderSlots({...proper,preface:{lat:good+"\\nVere dignum",en:"Liturgical Preface",fr:"Préface liturgique"}},{language:"fr"});
+ assert.equal(restored.slots.PREFACE.status,"READY",id);
+}
+assert.equal(inspect1962PrefaceSelection({principalCelebrationId:"sancti:03-19:1:w",
+ selectedPreface:{lat:"Communis"}}).status,"UNMAPPED_SOURCE");
+assert.equal(inspect1962PrefaceSelection({principalCelebrationId:"tempora:Quad2-1:3:v",
+ selectedPreface:{lat:"Communis"},requestedCelebrationId:"votive"}).status,"NEEDS_SELECTED_FORMULARY");
+
 console.log("PASS: detects 3/10 wrong Preface owners in real 2026 runtime; no fabricated substitutions; Purification exception protected.");
 
 // Reader projection must fail closed on an authenticated contradictory owner.

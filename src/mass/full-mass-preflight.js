@@ -63,6 +63,8 @@ export function mountFullMassPreflight({
   onBeforeCategoryChange=()=>{},
   onOpenSourceProper=()=>{},
   getSourceGate=()=>({ready:true,reason:null}),
+  getAllSoulsMassChoice=()=>1,
+  onAllSoulsMassChange=()=>{},
   getLocalOrationSummary=()=>null,
   getCalendarState=()=>null,
   subscribeCalendarState=null,
@@ -73,6 +75,24 @@ export function mountFullMassPreflight({
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
   let root=null,selected=null,explicit=false,selectedMode=null,explicitMode=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
   let folioStep="overview",experience={before:"none",after:"none",language:null},prayerOpening=false;
+  let allSoulsSuccession=null;
+  const successionFor=legacy=>{
+    const massNumber=getAllSoulsMassChoice(legacy);
+    if(!/^\d{4}-11-02$/.test(String(legacy?.date??""))||
+       ![1,2,3].includes(massNumber)||
+       ![null,"","mass_of_day"].includes(legacy?.requestedCelebrationId??null)||
+       ![null,"","mass_of_day"].includes(legacy?.celebrationId??null)||
+       legacy?.properSource!=="Sancti/11-02m1"||
+       (legacy?.calendarDay?.raw?.main?.id??legacy?.calendarDay?.id)!==
+         "sancti:11-02m1:1:b")return null;
+    const current=allSoulsSuccession?.date===legacy.date&&
+      allSoulsSuccession.massNumber===massNumber?allSoulsSuccession:null;
+    return Object.freeze({
+      date:legacy.date,massNumber,
+      previous:massNumber===1?"NONE":current?.previous??"UNKNOWN",
+      next:massNumber===3?"NONE":current?.next??"UNKNOWN",
+    });
+  };
   const donorSuppressed=new Map();
   const suppressDonorDuplicates=()=>{
     const panel=root?.parentElement;
@@ -130,6 +150,7 @@ export function mountFullMassPreflight({
     return Object.freeze({...value,explicitlyChosenForm:explicit,
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
       readerLanguage:selectedExperience().language,
+      allSoulsSuccession:successionFor(legacy),
       beforeMass:selectedExperience().before,afterMass:selectedExperience().after});
   }
   function openCategory(kind){
@@ -205,7 +226,20 @@ export function mountFullMassPreflight({
          ["REQUIEM","Requiem","Requiem"],["NUPTIAL","Nuptial","Nuptiale"],
          ["OTHER","Other","Autre"],["SOURCE_DATE","Other Proper","Autre propre"]].map(([id,en,fr])=>
          '<button type="button" data-full-mass-category="'+id+'" data-label-en="'+en+'" data-label-fr="'+fr+'">'+en+'</button>').join("")+
-        '</div><div data-full-mass-source-slot></div><p data-full-mass-category-error role="alert" hidden></p>'+
+        '</div><div data-full-mass-source-slot></div>'+ 
+        '<fieldset data-ao-all-souls-choices hidden class="aoFullMassOptional">'+
+        '<legend data-ao-all-souls-heading></legend><div class="aoFullMassForms">'+
+        [1,2,3].map(n=>'<label class="aoFullMassChoice"><input type="radio"'+
+          ' name="ao-all-souls-formulary" value="'+n+'" data-ao-all-souls-mass>'+ 
+          '<span data-ao-all-souls-mass-label="'+n+'"></span></label>').join('')+
+        '</div><p data-ao-all-souls-note></p>'+ 
+        '<div data-ao-all-souls-succession-controls>'+ 
+        '<label data-ao-all-souls-previous-label></label>'+ 
+        '<select data-ao-all-souls-succession="previous"></select>'+ 
+        '<label data-ao-all-souls-next-label></label>'+ 
+        '<select data-ao-all-souls-succession="next"></select>'+ 
+        '</div><p data-ao-all-souls-succession-note></p></fieldset>'+ 
+        '<p data-full-mass-category-error role="alert" hidden></p>'+
         '<details data-full-mass-review><summary data-full-mass-review-summary></summary>'+
         '<div data-full-mass-review-body></div></details>'+
         '<p data-full-mass-resolver></p><fieldset data-full-mass-form-fieldset>'+
@@ -284,6 +318,7 @@ export function mountFullMassPreflight({
       move("[data-full-mass-special]","[data-folio-celebration-controls]");
       move("[data-full-mass-categories]","[data-folio-celebration-controls]");
       move("[data-full-mass-source-slot]","[data-folio-celebration-controls]");
+      move("[data-ao-all-souls-choices]","[data-folio-celebration-controls]");
       move("[data-full-mass-category-error]","[data-folio-celebration-controls]");
       move("[data-full-mass-review]","[data-folio-celebration-controls]");
       move("[data-full-mass-resolver]","[data-folio-celebration-controls]");
@@ -365,6 +400,21 @@ export function mountFullMassPreflight({
       });
       root.addEventListener("change",e=>{
         const el=e.target;
+        if(el?.matches?.("[data-ao-all-souls-mass]")){
+          onAllSoulsMassChange(Number(el.value));refresh();return;
+        }
+        if(el?.matches?.("[data-ao-all-souls-succession]")){
+          const direction=el.dataset.aoAllSoulsSuccession;
+          const base=getResolvedMass();
+          const current=successionFor(base);
+          if(!current||!["previous","next"].includes(direction))return;
+          const allowed=direction==="previous"
+            ? ["UNKNOWN","IMMEDIATE","INTERRUPTED","NONE"]
+            : ["UNKNOWN","IMMEDIATE","INTERRUPTED_LT3","INTERRUPTED_GTE3","NONE"];
+          if(!allowed.includes(el.value))return;
+          allSoulsSuccession=Object.freeze({...current,[direction]:el.value});
+          refresh();return;
+        }
         if(el?.matches?.("[data-folio-language]")){
           if(["en","fr"].includes(el.value))experience.language=el.value;
           refresh();return;
@@ -400,12 +450,80 @@ export function mountFullMassPreflight({
       folio.querySelector("[data-folio-host-actions]").append(target);
     }
     const fr=french(),summary=selectionFor(legacy),l=(en,frText)=>fr?frText:en;
+    const properPath=String(legacy?.proper?.data?.sourcePath??
+       legacy?.proper?.sourcePath??"");
+    const authoritativeDay=getCalendarState?.()?.resolution;
+    const allSoulsDay=/^\d{4}-11-02$/.test(date)&&
+       authoritativeDay?.date===date&&
+       authoritativeDay?.status==="ready"&&
+       authoritativeDay?.day?.main?.id==="sancti:11-02m1:1:b"&&
+       authoritativeDay?.proper?.data?.sourcePath==="Sancti/11-02m1"&&
+       (!legacy?.calendarDay?.id||legacy.calendarDay.id==="sancti:11-02m1:1:b")&&
+       (!properPath||properPath==="Sancti/11-02m1")&&
+       ["","mass_of_day"].includes(String(legacy?.requestedCelebrationId??""))&&
+       ["","mass_of_day"].includes(String(legacy?.celebrationId??""));
+    const chosenAllSoulsMass=allSoulsDay?getAllSoulsMassChoice(legacy):1;
+    if(allSoulsSuccession && (
+      !allSoulsDay||allSoulsSuccession.date!==date||
+      allSoulsSuccession.massNumber!==chosenAllSoulsMass))
+      allSoulsSuccession=null;
+    const selector=root.querySelector("[data-ao-all-souls-choices]");
+    selector.hidden=!allSoulsDay;
+    if(allSoulsDay){
+      const massNumber=chosenAllSoulsMass;
+      selector.querySelector("[data-ao-all-souls-heading]").textContent=l(
+        "All Souls — Mass formulary","Commémoration des fidèles défunts — formulaire");
+      selector.querySelector("[data-ao-all-souls-note]").textContent=l(
+        "Choose the Mass actually celebrated. The Second and Third have distinct readings and prayers.",
+        "Choisissez la messe réellement célébrée. Les deuxième et troisième ont des lectures et prières distinctes.");
+      const context=successionFor(legacy);
+      const labels={
+        previous:[["UNKNOWN","Not known","Non précisé"],
+          ["IMMEDIATE","Immediately before, same priest","Juste avant, même prêtre"],
+          ["INTERRUPTED","Earlier, with an interruption","Auparavant, avec interruption"],
+          ["NONE","No previous Mass by this priest","Aucune messe précédente par ce prêtre"]],
+        next:[["UNKNOWN","Not known","Non précisé"],
+          ["IMMEDIATE","Immediately afterwards, same priest","Juste après, même prêtre"],
+          ["INTERRUPTED_LT3","After a break, within three hours","Après interruption, dans les trois heures"],
+          ["INTERRUPTED_GTE3","After a break, after three hours","Après interruption, après trois heures"],
+          ["NONE","No following Mass by this priest","Aucune messe suivante par ce prêtre"]],
+      };
+      for(const direction of ["previous","next"]){
+        const select=selector.querySelector('[data-ao-all-souls-succession="'+direction+'"]');
+        const label=selector.querySelector('[data-ao-all-souls-'+direction+'-label]');
+        select.hidden=label.hidden=direction==="previous"?massNumber===1:massNumber===3;
+        label.textContent=direction==="previous"
+          ?l("Previous Mass by this priest","Messe précédente par ce prêtre")
+          :l("Next Mass by this priest","Messe suivante par ce prêtre");
+        select.replaceChildren();
+        for(const [value,en,frText] of labels[direction]){
+          const option=doc.createElement("option");
+          option.value=value;option.textContent=l(en,frText);
+          select.append(option);
+        }
+        select.value=context[direction];
+        select.setAttribute("aria-label",label.textContent);
+      }
+      selector.querySelector("[data-ao-all-souls-succession-note]").textContent=l(
+        "Only select a succession circumstance if known. The first, second and third texts do not, by themselves, determine the priest's ablutions.",
+        "Ne précisez une succession que si elle est connue. Le premier, deuxième ou troisième formulaire ne détermine pas à lui seul les ablutions du prêtre.");
+      for(const [index,en,frText] of [
+        [1,"First Mass","Première messe"],
+        [2,"Second Mass","Deuxième messe"],
+        [3,"Third Mass","Troisième messe"]]){
+        selector.querySelector('[data-ao-all-souls-mass-label="'+index+'"]').textContent=l(en,frText);
+        selector.querySelector('[data-ao-all-souls-mass][value="'+index+'"]').checked=massNumber===index;
+      }
+    }
     const context=massCalendarPreflightContext(legacy,getCalendarState?.()??{},summary.readerLanguage,{form:summary.form});
     const folio=root.querySelector(".aoGuidedMassFolio");
     const word=(selector,en,frText)=>{
       const node=folio?.querySelector(selector);if(node)node.textContent=l(en,frText);
     };
-    const displayTitle=summary.actualTitle||summary.kindLabel;
+    const displayTitle=(summary.actualTitle||summary.kindLabel)+(
+      allSoulsDay&&chosenAllSoulsMass>1
+        ?(chosenAllSoulsMass===2?l(" · Second Mass"," · Deuxième messe"):
+           l(" · Third Mass"," · Troisième messe")):"");
     word("[data-folio-date]",date,""+date);
     word("[data-folio-kind]",summary.kindLabel,summary.kindLabel);
     word("[data-folio-celebration]",displayTitle,displayTitle);
@@ -575,6 +693,8 @@ export function mountFullMassPreflight({
     const observed=legacy?.sourceDiagnostics?.actualMassSelection==="OBSERVED_SOURCE_DAY";
     const proper=legacy?.proper?.data??legacy?.proper??null;
     const ownerPath=String(legacy?.properSource??proper?.sourcePath??"").trim();
+    const effectiveOwnerPath=allSoulsDay&&chosenAllSoulsMass>1
+      ?"Sancti/11-02m"+chosenAllSoulsMass:ownerPath;
     const review=root.querySelector("[data-full-mass-review]");
     root.querySelector("[data-full-mass-review-summary]").textContent=l(
       "Review Mass and Proper","Vérifier la messe et le propre");
@@ -586,7 +706,7 @@ export function mountFullMassPreflight({
       [l("Celebration","Célébration"),summary.kindLabel+(summary.actualTitle?" · "+summary.actualTitle:"")],
       [l("Form","Forme"),summary.formLabel],
       [l("Reader","Lecture"),summary.readerMode],
-      [l("Source of Proper","Source du propre"),ownerPath||l("Resolved by calendar","Résolu par le calendrier")],
+      [l("Source of Proper","Source du propre"),effectiveOwnerPath||l("Resolved by calendar","Résolu par le calendrier")],
     ];
     if(observed){
       entries.push([l("Source feast date","Date de la fête source"),
