@@ -8,6 +8,7 @@ on:
       - 'data/directory/tlm-user-classification-taxonomy.v1.json'
       - 'tools/directory/build-cl27-tlm-classifications.py'
       - 'tools/directory/build-cl27-r49-unified-crosswalk.py'
+      - 'tools/directory/build-cl27-735-unmapped-site-intake.py'
       - 'tools/directory/validate-cl27-eight-spatial-dispositions.py'
       - 'data/directory/research/cl27-classification-review-20261026/**'
       - 'tools/directory/review-cl27-tlm-classifications.html'
@@ -27,6 +28,7 @@ on:
       - 'data/directory/tlm-user-classification-taxonomy.v1.json'
       - 'tools/directory/build-cl27-tlm-classifications.py'
       - 'tools/directory/build-cl27-r49-unified-crosswalk.py'
+      - 'tools/directory/build-cl27-735-unmapped-site-intake.py'
       - 'tools/directory/validate-cl27-eight-spatial-dispositions.py'
       - 'data/directory/research/cl27-classification-review-20261026/**'
       - 'tools/directory/review-cl27-tlm-classifications.html'
@@ -83,6 +85,24 @@ jobs:
           PY
       - name: Validate eight specific disputed source geometries against independent evidence
         run: python3 tools/directory/validate-cl27-eight-spatial-dispositions.py --crosswalk /tmp/cl27-r49-cl2-crosswalk.json --output /tmp/cl27-eight-spatial-QA.json
+      - name: Bulk-screen all 735 unrepresented CL2 physical sites for geocoding intake
+        run: python3 tools/directory/build-cl27-735-unmapped-site-intake.py --db /tmp/cl27-mass-registry.sqlite --crosswalk /tmp/cl27-r49-cl2-crosswalk.json --output /tmp/cl27-735-geocode-intake.json
+      - name: Verify zero geometry promotion and independent source identities for 735-site intake
+        run: |
+          python3 - <<'PY'
+          import json
+          d=json.load(open('/tmp/cl27-735-geocode-intake.json'))
+          c=d['counts']
+          assert c['CL2_locations_not_in_R49']==735
+          assert c['source_memberships_by_site']=={'0':8,'1':691,'2':36}
+          assert c['sites_with_existing_source_coordinates']==0 and c['geocoded_and_approved']==0
+          assert c['new_public_pins']==0 and sum(c['descriptive_text_triage'].values())==735
+          assert len({x['physical_anchor_id'] for x in d['intake']})==735
+          assert all(x['geometry'] is None and x['public_release_approved'] is False for x in d['intake'])
+          assert all(x['count']<=150 and x['research_state']=='RESEARCH_NOT_GEOCODE_VERIFIED'
+                     for x in d['country_batches_max_150'])
+          print('735-site geography intake PASS; all physical IDs preserved, zero geocoded/public sites')
+          PY
       - name: Test read-only CL2 Find projection without a public map mutation
         run: node tests/directory-cl27-r49-unified-adapter.mjs /tmp/cl27-r49-cl2-crosswalk.json
       - name: Check offline classification editor generated from pinned research source
