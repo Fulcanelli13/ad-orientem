@@ -3,9 +3,16 @@
 // RGMR 1960 §§482, 489(b), 490(b): seasonal Preface applies when a
 // festive principal Mass lacks its own proper Preface. NEVER apply this
 // solely from an English title, colour or fixed month/day without a date.
-const paschal=new Set(("04-13 04-14 04-21 04-22 04-24 04-27 04-28 "+
-  "04-29 04-30 05-02 05-04 05-05 05-07 05-09 05-12").split(" "));
-const ascension=new Set("05-15 05-16 05-18 05-19 05-20".split(" "));
+// Exact 2026 selected principal ID rank and vestment suffix from the
+// source-audited 365-day resolver, not guessed from the feast title.
+const entries=str=>new Map(str.split(" ").map(item=>{
+  const [date,rank,colour]=item.split(":");
+  return [date,rank+":"+colour];
+}));
+const paschal=entries("04-13:3:r 04-14:3:r 04-21:3:w 04-22:3:r "+
+  "04-24:3:r 04-27:3:w 04-28:3:w 04-29:3:r 04-30:3:w "+
+  "05-02:3:w 05-04:3:w 05-05:3:w 05-07:3:r 05-09:3:w 05-12:3:r");
+const ascension=entries("05-15:3:w 05-16:3:w 05-18:3:r 05-19:3:w 05-20:3:w");
 export const SEASONAL_SANCTORAL_SOURCE_COMMIT=
   "ad8783641455bae38a8eb5782b34241a7b3ff2ef";
 export const SEASONAL_SANCTORAL_2026_COUNTS=Object.freeze({
@@ -22,7 +29,7 @@ function gregorianEaster(year){
 const dayNumber=date=>Date.parse(date+"T00:00:00.000Z");
 export function required1962SeasonalSanctoralPrefaceOwner(id,sourcePath,date){
   const v=String(id??"");
-  const match=/^sancti:(\d{2}-\d{2}):([1-4]):[a-z]{1,2}$/i.exec(v);
+  const match=/^sancti:(\d{2}-\d{2}):([1-4]):([a-z]{1,2})$/i.exec(v);
   if(!match||!/^\d{4}-\d{2}-\d{2}$/.test(String(date??""))||
      String(date).slice(5)!==match[1]||
      String(sourcePath??"").toLowerCase()!=="sancti/"+match[1])return null;
@@ -31,8 +38,9 @@ export function required1962SeasonalSanctoralPrefaceOwner(id,sourcePath,date){
   // Other years need their own actual resolved celebration identity.
   if(year!==2026)return null;
   const days=Math.round((dayNumber(date)-gregorianEaster(year))/86400000);
-  const category=paschal.has(match[1])&&days>=8&&days<=38?"PASCHALIS":
-    ascension.has(match[1])&&days>=40&&days<=47?"ASCENSIO":null;
+  const token=match[2]+":"+match[3].toLowerCase();
+  const category=paschal.get(match[1])===token&&days>=8&&days<=38?"PASCHALIS":
+    ascension.get(match[1])===token&&days>=40&&days<=47?"ASCENSIO":null;
   if(!category)return null;
   return Object.freeze({
     category,section:category==="PASCHALIS"?"Pasch":"Asc",
