@@ -1397,8 +1397,33 @@
           "actualSourcePrintedFullVerseWithPitches": false,
           "editorialAccentCertified": false,
           "noteGroupsHumanReviewed": false,
-          "parseAndRenderSuccessful": false,
-          "productionScoreApproved": false
+          "parseAndRenderSuccessful": true,
+          "productionScoreApproved": false,
+          "nativeExsurgeProof": {
+            "mappingCount": 17,
+            "views": [
+              {
+                "width": 260,
+                "systems": 3,
+                "svgChildren": 1
+              },
+              {
+                "width": 420,
+                "systems": 2,
+                "svgChildren": 1
+              },
+              {
+                "width": 800,
+                "systems": 1,
+                "svgChildren": 1
+              }
+            ],
+            "jobId": 122232484479,
+            "runId": 40516761771,
+            "result": "PINNED_EXSURGE_JOB_SUCCEEDED_SOURCE_ONLY",
+            "scoreMusicEditoriallyAccepted": false,
+            "manualDevicePixelVisualApproved": false
+          }
         },
         {
           "id": "PALM-R02-PS23-L08",
@@ -1457,8 +1482,33 @@
           "actualSourcePrintedFullVerseWithPitches": false,
           "editorialAccentCertified": false,
           "noteGroupsHumanReviewed": false,
-          "parseAndRenderSuccessful": false,
-          "productionScoreApproved": false
+          "parseAndRenderSuccessful": true,
+          "productionScoreApproved": false,
+          "nativeExsurgeProof": {
+            "mappingCount": 17,
+            "views": [
+              {
+                "width": 260,
+                "systems": 2,
+                "svgChildren": 1
+              },
+              {
+                "width": 420,
+                "systems": 2,
+                "svgChildren": 1
+              },
+              {
+                "width": 800,
+                "systems": 1,
+                "svgChildren": 1
+              }
+            ],
+            "jobId": 122232484479,
+            "runId": 40516761771,
+            "result": "PINNED_EXSURGE_JOB_SUCCEEDED_SOURCE_ONLY",
+            "scoreMusicEditoriallyAccepted": false,
+            "manualDevicePixelVisualApproved": false
+          }
         }
       ],
       "reviewerInstruction": "Do not treat borrowed flex and medians as full original 1961 scores; inspect printed flex + cadence and pronunciation/Latin ortho, then correct notes manually.",
@@ -1475,7 +1525,11 @@
         "PALM-R02-PS46-L09",
         "PALM-R02-PS23-DOXO-L12",
         "PALM-R02-PS46-DOXO-L12"
-      ]
+      ],
+      "completeExperimentalGabcRendered": 11,
+      "allExistingResearchViewports": 168,
+      "renderJobId": 122232484479,
+      "musicEditorCertified": 0
     }
   }
 }
