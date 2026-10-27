@@ -148,6 +148,24 @@ def image_evidence(source: dict, data: bytes) -> dict:
     draw.text((20, 1008), "RESEARCH PHOTO PREVIEW ONLY — NO FRAME CROPPED, NO APPROVAL", fill=(95, 20, 20))
     poster_path = OUT / (id + "-whole-uncropped-reference.jpg")
     poster.save(poster_path, "JPEG", quality=91, subsampling=0)
+    # Only Murillo's currently frameless whole painting may have a non-cropped
+    # UI-size derivative at this stage. This is a REVIEW CANDIDATE, not a live asset.
+    complete_unframed_candidate = None
+    if id == "confession":
+        derivative = preview.copy()
+        derivative.thumbnail((1800, 1800), Image.Resampling.LANCZOS)
+        p = OUT / "confession-whole-contain-review-candidate.webp"
+        derivative.save(p, "WEBP", quality=94, method=6)
+        complete_unframed_candidate = {
+            "path": str(p), "sha256": sha256(p.read_bytes()),
+            "dimensions": list(derivative.size),
+            "painted_area_crop_performed": False,
+            "entire_source_painting_retained": True,
+            "colour_handling": transform_note,
+            "human_approved": False, "app_released": False,
+            "use_rule": "object-fit contain; no automatic centre crop",
+        }
+
     # Lightness fractions diagnose crushed/blown possibilities; do not grade painting aesthetics.
     gray = preview.convert("L")
     hist = gray.histogram()
@@ -165,6 +183,7 @@ def image_evidence(source: dict, data: bytes) -> dict:
         "previews_colour_handling": transform_note, "non_authoritative_luma_diagnostics": fractions,
         "whole_uncropped_reference_path": str(poster_path),
         "whole_uncropped_reference_sha256": sha256(poster_path.read_bytes()),
+        "complete_unframed_review_derivative": complete_unframed_candidate,
         "native_pixel_samples": saved,
         "source_file_version_observation": compare_current_url(source["original_photo_url"], sha256(data)),
         "museum_object_record": source["object_url"], "published_rights_witness": source["rights"],
