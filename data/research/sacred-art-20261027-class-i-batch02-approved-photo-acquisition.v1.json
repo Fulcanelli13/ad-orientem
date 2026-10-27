@@ -1,0 +1,93 @@
+{
+  "schema": "AO_CLASS_I_BATCH02_APPROVED_PAINTINGS_PHOTO_ACQUISITION_V1",
+  "updated": "2026-10-27",
+  "purpose": "Asset acquisition for three specifically user-approved 2026 feast heroes; no public release",
+  "permissions": {
+    "cost_eur": 0,
+    "publication_authorized": false,
+    "frames_allowed": false,
+    "edits_allowed_without_approval": false,
+    "history_unchanged": true
+  },
+  "global_gates": [
+    "exact original object and photographer/source",
+    "free-use exact-file license",
+    "original JPEG/TIFF byte/download and sha256",
+    "full-resolution four-edge visual inspection: ZERO FRAME",
+    "no mat, museum surroundings, captions, borders or watermarks",
+    "colour fidelity, intact composition, sharpness and no glare",
+    "long-term private zero-cost preservation (no expiring Action-only storage)",
+    "user editorial selection already recorded; release is separately forbidden"
+  ],
+  "records": [
+    {
+      "date": "2026-09-29",
+      "feast": "Saint Michael",
+      "artist": "Guido Reni",
+      "work": "The Archangel Michael Defeating Satan",
+      "source_original_location": "Santa Maria della Concezione dei Cappuccini, Rome",
+      "identity_evidence": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/59868/Reni%20Guido%2C%20San%20Michele%20Arcangelo",
+      "approved": true,
+      "source_candidates": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+          "pixels": [
+            1657,
+            2441
+          ],
+          "bytes_approx": 501000,
+          "source_quality": "TOO_SMALL_COMPRESSED_FOR_PRISTINE_CONFIDENCE; NOT_ACCEPTED",
+          "rights": "Commons PD-Art",
+          "frame_status": "UNVERIFIED"
+        },
+        {
+          "url": "https://www.bridgemanimages.com/en/reni/archangel-michael-defeating-satan-c-1636-oil-on-canvas/oil-on-canvas/asset/704436",
+          "pixels": [
+            4499,
+            6478
+          ],
+          "rights": "PAID_LICENSE—EXCLUDED_EUR0",
+          "source_quality": "Large but fee-bound; never purchase"
+        }
+      ],
+      "blocker": "No confirmed premium-quality frame-free cost-free photograph of ORIGINAL painting, not copy or print. Do not substitute Nationalmuseum Stockholm copy NMDrh 644, which museum identifies as copy in poor condition.",
+      "acquisition_state": "RESEARCH_PRISTINE_FREE_PHOTO",
+      "photo_approved": false
+    },
+    {
+      "date": "2026-12-08",
+      "feast": "Immaculate Conception",
+      "artist": "Bartolomé Esteban Murillo",
+      "work": "The Immaculate Conception",
+      "institution": "Cleveland Museum of Art",
+      "accession": "1959.189",
+      "museum_url": "https://www.clevelandart.org/art/1959.189",
+      "api_url": "https://openaccess-api.clevelandart.org/api/artworks/1959.189",
+      "exact_image_url": "TO_BE_FETCHED_FROM_VERIFIED_API_OBJECT",
+      "rights": "Cleveland CC0 confirmed",
+      "approved": true,
+      "acquisition_state": "SOURCE_IDENTIFIED_MUSEUM_QA_RUN_CONFIGURED_NO_BINARY_REPORT_YET",
+      "frame_status": "UNVERIFIED_ORIGINAL_FULL_RESOLUTION",
+      "photo_approved": false
+    },
+    {
+      "date": "2026-12-25",
+      "feast": "Christmas Day",
+      "artist": "Bernardo Cavallino",
+      "work": "Adoration of the Shepherds",
+      "institution": "Cleveland Museum of Art",
+      "accession": "1968.100",
+      "museum_url": "https://www.clevelandart.org/art/1968.100",
+      "api_url": "https://openaccess-api.clevelandart.org/api/artworks/1968.100",
+      "exact_image_url": "TO_BE_FETCHED_FROM_VERIFIED_API_OBJECT",
+      "rights": "Cleveland CC0 confirmed",
+      "approved": true,
+      "acquisition_state": "SOURCE_IDENTIFIED_MUSEUM_QA_RUN_CONFIGURED_NO_BINARY_REPORT_YET",
+      "frame_status": "UNVERIFIED_ORIGINAL_FULL_RESOLUTION",
+      "photo_approved": false
+    }
+  ],
+  "workflow": "scripts/research/audit_class_i_museum_images.py",
+  "workflow_path": ".github/workflows/sacred-art-original-source-audit.yml",
+  "memo": "Approved historical artworks are not yet approved source-image reproductions. Nationalmuseum Stockholm owns a COPY after Reni and must not be used as substitute; distinct original located in Rome. Avoid paid archive photos."
+}
