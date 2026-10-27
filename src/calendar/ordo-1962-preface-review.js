@@ -72,6 +72,28 @@ function expectedFor(id,date,rank,colour,sourcePath){
     "tempora:pasc5-4":rule("ASCENSIO","490_A","ASCENSION"),
   };
   if(exact[main])return exact[main];
+  // The first full 142-file Sanctoral source screen establishes nine
+  // precise Marian original-source selectors (Rubrics §495) plus two exact
+  // Common selectors (Rubrics §498). Never infer them merely from colour,
+  // an English title or a Marian commemoration. The Transfiguration's
+  // original *1960-qualified* Prefatio=Communis
+  // outranks its older Prefatio=Nat (6 August). These are read-only audit
+  // expectations, NOT reader text overrides or publication certification.
+  const originalSanctoralMary=new Set([
+    "02-11","07-02","08-05","08-15","08-22",
+    "09-08","09-12","09-15","11-21"
+  ]);
+  const originalSanctoralCommon=new Set(["08-06","08-14"]);
+  const original=id.match(/^sancti:(\d{2}-\d{2}):[1-4]:[a-z]{1,2}$/i);
+  if(original&&date.slice(5)===original[1]&&
+     sourcePath==="Sancti/"+original[1]){
+    if(originalSanctoralMary.has(original[1]))
+      return rule("MARIA","495","ORIGINAL_MARIAN_PREFATIO_SOURCE_1960");
+    if(originalSanctoralCommon.has(original[1]))
+      return rule("COMMUNIS","498",
+        original[1]==="08-06"?"EXPLICIT_1960_TRANSFIGURATION_COMMON":
+          "EXPLICIT_ASSUMPTION_VIGIL_COMMON");
+  }
   // This is a reviewed index of the *named Roman calendar source paths*,
   // not an inference based on a red vestment or "saint" in the title.
   const apostleFeasts=new Set([
