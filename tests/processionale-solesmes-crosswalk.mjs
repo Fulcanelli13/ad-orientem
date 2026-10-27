@@ -1742,3 +1742,78 @@ test('unified seventeen-case Palm score editor signoff ledger is fail closed',()
  assert.equal(reader.includes('processionale-palm-amen-two-full-gabc-comparative'),false);
 });
 
+
+
+test('seventeen full GABC mediants retain traceable accent cells and reject unverified artificial stress',()=>{
+ const master=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
+ const old=readJSON('data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json');
+ const nine=readJSON('data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json');
+ const high=readJSON('data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json');
+ const amens=readJSON('data/research/processionale-palm-amen-two-full-gabc-comparative-20261027.v1.json');
+ const all=[
+   ...nine.scoreCases.map(x=>[x.id,x.gabcResearchOnly]),
+   ...master.batch33RemainingEightReview.twoPsalm23FlexGabcCandidates.candidates.map(x=>[x.id,x.gabcResearchOnly]),
+   ...high.cases.map(x=>[x.id,x.gabcResearchOnly]),
+   ...amens.fullHypotheticalGabcCases.map(x=>[x.id,x.gabcHypothesisOnly])
+ ];
+ const corpus=new Map(all);
+ const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/æ/g,'ae').replace(/[^a-z]/gi,'').toLowerCase();
+ const review=master.batch36AccentCellReview;
+ assert.equal(review.batch,36);
+ assert.equal(corpus.size,17);
+ assert.equal(review.cases.length,17);
+ assert.equal(review.counts.totalScoreDrafts,17);
+ assert.equal(review.counts.lexicalMediantAccentAlignmentPassed,16);
+ assert.equal(review.counts.artificialSecondaryAccentUnresolved,1);
+ assert.equal(review.counts.historicalSyllableMetadataErrata,1);
+ assert.equal(review.counts.humanEditorialAcceptances,0);
+ assert.equal(review.counts.productionAssignments,0);
+ assert.equal(review.firstTone1974DoxologyComparison.differingContextsNotAContradictionOfTwoPrintedPalmScores,true);
+ assert.equal(review.sourceScope.accentPositionMatchingIsNotMusicalUnderlayApproval,true);
+ assert.equal(review.approvalAllowed,false);
+ assert.equal(old.batch36AccentedSyllableErratum.correctLexicalAnchor,'ló');
+ assert.equal(old.batch36AccentedSyllableErratum.historicalBatch31LexicalAnchor,'lór');
+ let sourceNative=0,artificial=0,matched=0;
+ for(const item of review.cases){
+   let medial=corpus.get(item.id)?.split('%%')[1].split('*(:)')[0];
+   assert.ok(medial,item.id);
+   if(medial.includes('+(h)')) medial=medial.split('+(h)').at(-1);
+   const lyrics=[...medial.matchAll(/([\p{L}]+[.,;!?]?)\(([^)]+)\)/gu)]
+      .map(x=>({syllable:x[1],group:x[2]}));
+   const first=lyrics.filter(x=>x.group.startsWith('ixi'));
+   const second=lyrics.filter(x=>x.group==='g'||x.group==='g hr');
+   assert.equal(first.length,1,item.id);
+   assert.equal(second.length,1,item.id);
+   assert.equal(norm(first[0].syllable),norm(item.firstMediantMelodicAccent.syllable),item.id);
+   assert.equal(first[0].group,item.firstMediantMelodicAccent.noteGroup,item.id);
+   assert.equal(norm(second[0].syllable),norm(item.secondMediantMelodicAccent.syllable),item.id);
+   assert.equal(second[0].group,item.secondMediantMelodicAccent.noteGroup,item.id);
+   assert.equal(item.secondMediantMelodicAccent.wordStressStatus,'MATCHES_PRINTED_LEXICAL_STRESS');
+   assert.equal(item.musicalFormulaIndependentSourceVerified,false);
+   assert.equal(item.completeLaterVerseNotatedIn1961,false);
+   assert.equal(item.humanChantEditorApproved,false);
+   assert.equal(item.exactlyMatchesOwnFirstVerseGroupPair,
+      JSON.stringify([first[0].group,second[0].group])===JSON.stringify(item.sourceFirstVerseAccentGroups));
+   if(item.exactlyMatchesOwnFirstVerseGroupPair)sourceNative++;
+   if(item.category==='ARTIFICIAL_STRESS_NOT_JUSTIFIED'){
+     artificial++;
+     assert.equal(item.id,'PALM-R02-PS46-L05');
+     assert.equal(norm(first[0].syllable),'ta');
+     assert.equal(norm(second[0].syllable),'o');
+   }else{
+     matched++;
+     assert.equal(item.category,'LEXICAL_ACCENT_ALIGNED_ONLY');
+   }
+   const ledger=master.batch35MusicalEditorialAcceptance.statusPerCase.find(x=>x.id===item.id);
+   assert.equal(ledger.batch36LexicalScreening,item.category);
+   assert.equal(ledger.batch36ChantEditorApproved,false);
+   assert.equal(ledger.readyToMerge,false);
+ }
+ assert.deepEqual([matched,artificial,sourceNative],[16,1,5]);
+ for(const id of ['PALM-R02-PS23-DOXO-L12','PALM-R02-PS46-DOXO-L12']){
+   const ledger=master.batch35MusicalEditorialAcceptance.statusPerCase.find(x=>x.id===id);
+   assert.equal(ledger.editorialRisk,'CROSS_CONTEXT_UNATTESTED_AMEN');
+   assert.equal(ledger.humanChantEditorAccepted,false);
+ }
+});
+
