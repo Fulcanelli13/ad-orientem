@@ -72,6 +72,9 @@ try{
  assert.equal(compact.editorialPromotions,0);
  assert.ok(compact.daysSourceReady>0,"Real 1962 DayResolver never yielded a source-ready day");
  assert.equal(compact.observations.length,compact.sourceMatchOccurrences);
+ assert.equal(compact.candidateDatePairsInspected,
+  compact.unresolvedCandidateDatePairs+compact.sourceMatchOccurrences,
+  "Every source-qualified candidate-date pair must receive a counted disposition");
  const datesWithMatches=new Set(compact.observations.map(r=>r.date));
  console.log("AO_GR1961_2026_SELECTED_PROPER_SUMMARY="+JSON.stringify({
   year:compact.year,daysChecked:compact.daysChecked,daysSourceReady:compact.daysSourceReady,
@@ -81,6 +84,13 @@ try{
   ambiguousVariantOccurrences:compact.ambiguousVariantOccurrences,
   observedMassDates:datesWithMatches.size,
   researchCandidatesNotObservedInSweep:compact.researchCandidatesNotObservedInSweep,
+  calendarProperSourcePathsVisited:compact.calendarProperSourcePathsVisited,
+  candidateSourcePathsVisited:compact.candidateSourcePathsVisited,
+  daysWithCandidateSourcePath:compact.daysWithCandidateSourcePath,
+  candidateDatePairsInspected:compact.candidateDatePairsInspected,
+  unresolvedCandidateDatePairs:compact.unresolvedCandidateDatePairs,
+  distinctUnresolvedCandidateIds:compact.distinctUnresolvedCandidateIds,
+  unverifiedByStatus:compact.unverifiedByStatus,
   musicalFacsimileApprovals:0,editorialPromotions:0,
  }));
  console.log("AO_GR1961_2026_SELECTED_PROPER_OBSERVATIONS="+JSON.stringify(compact.observations));
