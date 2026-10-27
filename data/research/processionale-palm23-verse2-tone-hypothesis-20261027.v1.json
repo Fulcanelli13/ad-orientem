@@ -20,7 +20,7 @@
     "introductionRule": "Begin verse 2 on h recitation as attested in printed abbreviated cue; do not repeat first-verse f/gh intonation",
     "cadenceMethod": "Mechanical comparison/hypothetical reassignment of exact first-verse note groups; not authoritative Gregorian accent pointing",
     "sourceFirstVerseMediantSnippet": "quæ(h) <b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
-    "candidateMediantSnippet": "fun(h)dá(ixi hr)vit(h) e(g hr)um :(h.)",
+    "candidateMediantSnippet": "fun(h)dá(ixi hr)vit(h) e(g hr)um(h.)",
     "sourceFirstVerseEndingSnippet": "et(h)  qui(h) há(h)bi(h)<i>tant</i>(g) <i>in</i>(f) <b>e</b>(gh gr)o.(gf..)",
     "candidateEndingSnippet": "flú(h)mi(h)na(h) fir(h)má(g)vit(f) e(gh gr)um.(gf..)",
     "risk": "First-verse terminal pitch positions depend on stress and syllabic length. Candidate má(g) aligns mechanically to source tant(g), not demonstrably to the proper melodic accent; editor must correct or reject.",
@@ -28,8 +28,10 @@
       "Accent position for candidate final firmávit differs from printed first-verse habitant contour",
       "Precise medial preparatory syllable spacing requires checking manual rubrics and original musical score",
       "Exsurge render not yet performed on candidate; no claims of valid mobile/desktop glyph layout",
-      "Original Vatican 1962 print owner must approve orthography, text and punctuation before release"
-    ]
+      "Original Vatican 1962 print owner must approve orthography, text and punctuation before release",
+      "Raw archival GABC ám :(h.) to candidate um(h.) punctuation/note attach normalization changes encoding; chant editor must verify audible equivalence."
+    ],
+    "notationSyntaxDifference": "Raw archived GABC has ám :(h.) with the punctum carried in the colon token. The research derivative instead attaches the h punctum directly to verse2 um(h.) to keep every syllable note-bearing; melodic correctness is still unresolved."
   },
   "cadenceMappings": {
     "medial": [
@@ -164,7 +166,9 @@
     "medialAsteriskPresent": true,
     "doxologyNotIncluded": true,
     "antiphonReturnNotIncluded": true,
-    "productionReadOnly": true
+    "productionReadOnly": true,
+    "sourceArchiveCadenceColonNormalizationRequired": true,
+    "provisionalSyllablesAllHaveAttachedNotes": true
   },
   "release": {
     "musicEditorReviewed": false,
