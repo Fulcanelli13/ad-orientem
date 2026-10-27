@@ -14,7 +14,9 @@
     "unique_prayers_certified": 3,
     "scan_checked_source_occurrences": 3,
     "print_checked_complete_bodies_b07_and_b08": 14,
-    "new_b08_print_checked_complete_bodies": 5
+    "new_b08_print_checked_complete_bodies": 5,
+    "new_b09_complete_forms": 13,
+    "cumulative_complete_text_form_witnesses": 27
   },
   "manual_adjudication_ids": [
     "AO.DAILY.B04.004",
@@ -953,7 +955,11 @@
       "shared_opening_with_added_ids": [],
       "note": "Moran extended Act of Contrition differs from abbreviated modern formula",
       "promotable": false,
-      "manuscript_status": "WEB_CHAPTER_VERIFIED_PRINT_PAGE_12_PARTLY_CHECKED_FULL_PAGES_PENDING"
+      "manuscript_status": "WEB_CHAPTER_VERIFIED_PRINT_PAGE_12_PARTLY_CHECKED_FULL_PAGES_PENDING",
+      "b09_print_verified_form_ids": [
+        "b09-moran-long-contrition"
+      ],
+      "b09_full_text_status": "PRINTED_PAGE_IMAGE_CHECKED_FORM_BODY"
     },
     {
       "occurrence_id": "AO.DAILY.B04.059",
@@ -1027,5 +1033,5 @@
   ],
   "nonrelease_policy": "No distinct-version total can be stated until full wording, facsimile, edition and copyright review.",
   "recovery_note": "B07 historical correction: Moran 1883 Night Prayer explicitly printed from p.12; nine registers/components added. A source component does not necessarily equal a distinct full prayer.",
-  "print_scan_qualification": "14 source-specific complete text bodies now image-checked in B07/B08 (9+5). The prior count 'unique_prayers_certified' is legacy and NOT evidence of uniqueness across all historical editions. No publication or rights permission is implied."
+  "print_scan_qualification": "B07(9)+B08(5)+B09(13)=27 printed-page-checked complete source-form witnesses (15 French / 12 English). Witnesses are not distinct prayer identities nor cleared publication rights."
 }
