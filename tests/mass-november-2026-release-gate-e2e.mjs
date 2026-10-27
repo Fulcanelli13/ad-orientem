@@ -300,6 +300,48 @@ try{
          nextPurification:ritusXIVRubricsForCue(decision,"AO.SM.C0248","en"),
        };
      });
+     await page.setViewportSize({width:390,height:844});
+     out.mobileDisplay=await page.evaluate(async()=>{
+       const prepared=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
+       const decision=prepared?.session?.resolvedMass?.provenance?.allSoulsSuccession;
+       const {createReaderDomAdapter}=await import("/src/mass/reader-dom.js");
+       const {with1962RitusXIVParagraphRubrics}=await import("/src/mass/1962-all-souls-consecutive-rites.js");
+       const root=document.createElement("div");
+       root.dataset.aoNovemberRitusXivRendererTest="true";
+       document.body.append(root);
+       const adapter=createReaderDomAdapter({root,allowPresentationModeSwitch:false});
+       const checks=[];
+       try{
+         const sourceRows=[
+           {id:"AO.SM.C0112",kind:"TEXT",
+             primary:"Deus, qui humánæ substántiæ dignitátem",
+             sourceCueIds:["AO.SM.C0112"]},
+           {id:"AO.SM.C0247",kind:"TEXT",
+             primary:"Quod ore súmpsimus, Dómine, pura mente capiámus",
+             sourceCueIds:["AO.SM.C0247"]},
+           {id:"AO.SM.C0248",kind:"TEXT",
+             primary:"Corpus tuum, Dómine, quod sumpsi",
+             sourceCueIds:["AO.SM.C0248"]},
+         ];
+         for(const mode of ["MISSAL","SIMPLE","LIVE"]){
+           adapter.mount({...prepared,readerPreferences:{...prepared.readerPreferences,mode}});
+           adapter.renderMoment({
+             id:"AO.CARD.026",sectionTitle:"Ablutions",cardTitle:"Ablutions",
+             cardUpdate:true,paragraphs:with1962RitusXIVParagraphRubrics(
+               sourceRows,decision,{language:"fr"}),
+           });
+           const rows=[...root.querySelectorAll("[data-rubric-id]")].map(el=>({
+             id:el.dataset.rubricId,text:el.textContent.trim(),
+             cue:el.dataset.sourceCueId,
+             width:el.getBoundingClientRect().width,
+           })).filter(x=>x.id.startsWith("AO.RITUS.XIV."));
+           checks.push({mode,modeApplied:adapter.getMode(),
+             rubrics:rows,selectedCueRoot:root.querySelectorAll(".ao-reader-paragraph").length});
+         }
+       }finally{adapter.destroy();root.remove()}
+       return {viewport:390,checks};
+     });
+
    }catch(error){out.error=String(error?.message??error)}
    return out;
  })();
@@ -323,6 +365,13 @@ try{
        massUi.succession?.purification?.length===1 &&
        massUi.succession?.nextPurification?.length===0,
    "NOV02_RITUS_XIV_EXPLICIT_CONDITIONAL_CUES_NOT_MATCHED");
+ check(massUi.mobileDisplay?.checks?.length===3 &&
+   massUi.mobileDisplay.checks.every(row=>
+     row.modeApplied===row.mode && row.rubrics?.length===2 &&
+     row.rubrics.some(x=>x.cue==="AO.SM.C0112" && /épître/i.test(x.text)) &&
+     row.rubrics.some(x=>x.cue==="AO.SM.C0247" && /eau seulement/i.test(x.text)) &&
+     !row.rubrics.some(x=>x.cue==="AO.SM.C0248")),
+   "NOV02_RITUS_XIV_MOBILE_NATIVE_RENDERER_ALL_MODES_NOT_VERIFIED");
  const c=evaluated.ceremonial;
  check(c.req.omittedPeace.includes("AO.SM.C0225"),"REQUIEM_PEACE_PRAYER_NOT_OMITTED");
  check(c.req.omittedFinalBlessing.includes("AO.SM.C0263"),"REQUIEM_FINAL_BLESSING_NOT_OMITTED");
