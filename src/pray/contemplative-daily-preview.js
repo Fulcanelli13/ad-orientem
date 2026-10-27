@@ -12,6 +12,7 @@ export function contemplativeDailyMode(search, mount) {
   const params = new URLSearchParams(String(search || "").replace(/^\?/, ""));
   if (params.get("aoPrayReader") !== "contemplative") return null;
   if (mount?.dataset?.aoTraditionalPrayRoute !== "pray.morning_evening") return null;
+  if (mount?.dataset?.aoPrayView !== "traditional-pray" || !mount.querySelector?.(".aoTP381DaypartStrip")) return null;
   // Full-text mode retains the subdued theme but not the guided-stage treatment.
   return mount.dataset.aoTraditionalDualAxis === "daily" ? "guided" : "list";
 }
