@@ -65,7 +65,14 @@
           },
           "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:The_Adoration_of_the_Magi_(Matthias_Stom)_-_Nationalmuseum_-_18796.jpg",
           "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
-          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF",
+          "preview_frame_review_20261027": {
+            "source_preview_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/The_Adoration_of_the_Magi_%28Matthias_Stom%29_-_Nationalmuseum_-_18796.jpg",
+            "basis": "Original-linked Wikimedia image displayed and visually reviewed at browser preview scale",
+            "result": "NO_PHYSICAL_FRAME_VISIBLE_IN_PREVIEW",
+            "confidence_scope": "preview_only",
+            "source": "https://commons.wikimedia.org/wiki/File:The_Adoration_of_the_Magi_(Matthias_Stom)_-_Nationalmuseum_-_18796.jpg"
+          }
         },
         {
           "code": "B",
@@ -152,7 +159,22 @@
               "reason": "PHYSICAL_FRAME_VISIBLE_AND_PROHIBITED",
               "source_state": "REJECT_SOURCE_ONLY_NOT_PAINTING"
             }
-          ]
+          ],
+          "preview_frame_review_20261027": {
+            "source_preview_url": "https://www.clevelandart.org/art/2017.192",
+            "basis": "Cleveland official artwork image and linked illustrative preview (separate framed alternate prohibited)",
+            "result": "NO_PHYSICAL_FRAME_VISIBLE_IN_PREVIEW",
+            "confidence_scope": "preview_only",
+            "source": "https://www.clevelandart.org/art/2017.192",
+            "further_hires_lead": {
+              "url": "https://commons.wikimedia.org/wiki/Category:Christian_paintings_in_the_Cleveland_Museum_of_Art",
+              "filename": "Johann König - The Resurrection of Christ - 2017.192 - Cleveland Museum of Art.tiff",
+              "width": 11243,
+              "height": 14927,
+              "declared_bytes_approx": 503492690,
+              "warning": "Huge museum TIFF ~480 MiB; do not store in repo or assume image visual clearance based on metadata"
+            }
+          }
         }
       ]
     },
@@ -203,7 +225,14 @@
           },
           "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Joachim_Beuckelaer_(Netherlandish_-_The_Miraculous_Draught_of_Fishes_-_Google_Art_Project.jpg",
           "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
-          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF",
+          "preview_frame_review_20261027": {
+            "source_preview_url": "https://sdcason.com/content/images/2021/09/00066501_o.jpg",
+            "basis": "Published preview of Getty Beuckelaer object, not verified identical byte-for-byte with Google Art Project candidate",
+            "result": "NO_PHYSICAL_FRAME_VISIBLE_IN_PREVIEW",
+            "confidence_scope": "preview_only_source_variant_unverified",
+            "source": "https://commons.wikimedia.org/wiki/File:Joachim_Beuckelaer_(Netherlandish_-_The_Miraculous_Draught_of_Fishes_-_Google_Art_Project.jpg"
+          }
         }
       ]
     },
@@ -279,7 +308,14 @@
           },
           "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Netherlandish_16th_Century,_The_Healing_of_the_Paralytic,_c._1560-1590,_NGA_12205.jpg",
           "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
-          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF",
+          "preview_frame_review_20261027": {
+            "source_preview_url": "https://api.nga.gov/iiif/294e57e7-14ef-4e2e-8b3d-081b4cc05fd6/full/full/0/default.jpg?attachment_filename=the_healing_of_the_paralytic_1943.7.7.jpg",
+            "basis": "NGA museum-image preview visible; framed object dimensions in file metadata do not establish frame appearance",
+            "result": "NO_PHYSICAL_FRAME_VISIBLE_IN_PREVIEW",
+            "confidence_scope": "preview_only",
+            "source": "https://www.nga.gov/artworks/12205-healing-paralytic"
+          }
         }
       ]
     },
@@ -369,7 +405,14 @@
           },
           "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
           "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
-          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF",
+          "preview_frame_review_20261027": {
+            "source_preview_url": "https://www.nationalgallery.org.uk/media/b5ydkoyg/n-6276-00-000027-web-hd.jpg?height=960&rxy=0.22580645161290322%2C0.51030110935023776&v=1dbcca4bf6dab60&width=1280",
+            "basis": "Official museum artwork preview is a centre crop, cannot verify outer four edges of original Commons 4421x6000 file",
+            "result": "NO_PHYSICAL_FRAME_VISIBLE_IN_PREVIEW_CROPPED",
+            "confidence_scope": "centre_crop_only",
+            "source": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph"
+          }
         }
       ]
     }
@@ -415,5 +458,22 @@
     ],
     "count_frame_verified_zero": 0,
     "count_assets_blocked_for_missing_frame_proof": 13
+  },
+  "audit_20261027_preview_frame_round": {
+    "count_preview_reviewed": 5,
+    "count_preview_no_frame_visible": 5,
+    "count_full_original_four_edge_file_verified": 0,
+    "count_assets_passed_frame_gate": 0,
+    "count_images_archived_and_hashed": 0,
+    "file_acquisition_blocker": "Direct original-file download from this research runtime unavailable; browser previews are not original-resolution bytes and may be cropped. Need actual originals to meet unconditional frame and pristine quality requirement.",
+    "sources_reviewed": [
+      "Matthias Stom Nationalmuseum Commons original-linked photo",
+      "Johann König Cleveland museum image and distinct CC0 original lead",
+      "Joachim Beuckelaer Getty painting preview not same bytes as Commons source",
+      "Netherlandish Healing of the Paralytic NGA original-linked image",
+      "Philippe de Champaigne National Gallery cropped official preview"
+    ],
+    "special_discovery": "Johann König - The Resurrection of Christ - 2017.192 - Cleveland Museum of Art.tiff: 11,243 x 14,927, ~480MiB on Wikimedia Commons. Better detail source but no storage/pixel inspection conducted.",
+    "rights_vs_frame": "All above remain independently not publication-ready even if exact file rights verified."
   }
 }
