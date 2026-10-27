@@ -74,6 +74,31 @@ const req=prepareMassSessionFromV346({
 expect(req.resolvedMass.overlays.includes("REQUIEM"),"Requiem overlay not inferred");
 expect(req.plan.blessingAllowed===false,"Requiem blessing survived");
 
+// All Souls' principal 1962 CALENDAR Mass is actually a Requiem.
+const soulsLegacy={...base,date:"2026-11-02",
+  calendarDay:{id:"sancti:11-02m1:1:b",title:"Commemoration of All Souls"},
+  properSource:"Sancti/11-02m1"};
+const soulsProper={sourcePath:"Sancti/11-02m1",introit:{lat:"Requiem aeternam"}};
+const souls=prepareMassSessionFromV346(soulsLegacy,{
+  form:"solemn",proper:soulsProper});
+expect(souls.resolvedMass.overlays.includes("REQUIEM"),
+  "All Souls calendar Mass lost its authenticated Requiem overlay");
+expect(souls.plan.blessingAllowed===false,
+  "All Souls calendar Mass wrongly has final blessing");
+expect(souls.plan.dismissal==="REQUIESCANT_IN_PACE",
+  "All Souls calendar Mass wrongly uses ordinary dismissal");
+expect(souls.plan.normalLastGospel===true,
+  "Unaccompanied Requiem Mass must retain Last Gospel");
+for(const [label,variant,selectedProper] of [
+  ["unrelated day",{...soulsLegacy,calendarDay:{id:"sancti:11-03:3:w"}},soulsProper],
+  ["unrelated donor",soulsLegacy,{...soulsProper,sourcePath:"Sancti/11-02m2"}],
+  ["votive override",{...soulsLegacy,requestedCelebrationId:"votive",
+    celebrationId:"votive",celebrationType:"VOTIVE"},soulsProper]
+]){
+  const candidate=prepareMassSessionFromV346(variant,{form:"solemn",proper:selectedProper});
+  expect(!candidate.resolvedMass.overlays.includes("REQUIEM"),
+    "All Souls source-specific overlay leaked to "+label);
+}
 const reqAbs=prepareMassSessionFromV346({
   ...base,
   requestedCelebrationId:"requiem",
