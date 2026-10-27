@@ -3,14 +3,19 @@ import {SEASONAL_SANCTORAL_2026_COUNTS,
  required1962SeasonalSanctoralPrefaceOwner,originalSanctoralLacksOwnPreface,
  matches1962SeasonalSanctoralSelection} from "../src/mass/1962-seasonal-sanctoral-preface-source.js";
 const list={
- PASCHALIS:["04-13","04-14","04-21","04-22","04-24","04-27","04-28",
-   "04-29","04-30","05-02","05-04","05-05","05-07","05-09","05-12"],
- ASCENSIO:["05-15","05-16","05-18","05-19","05-20"]
+ PASCHALIS:["04-13:3:r","04-14:3:r","04-21:3:w","04-22:3:r","04-24:3:r",
+  "04-27:3:w","04-28:3:w","04-29:3:r","04-30:3:w","05-02:3:w",
+  "05-04:3:w","05-05:3:w","05-07:3:r","05-09:3:w","05-12:3:r"],
+ ASCENSIO:["05-15:3:w","05-16:3:w","05-18:3:r","05-19:3:w","05-20:3:w"]
 };
 assert.deepEqual(SEASONAL_SANCTORAL_2026_COUNTS,{paschal:15,ascension:5,total:20});
 let checked=0;
-for(const [family,dates] of Object.entries(list))for(const md of dates){
- const date="2026-"+md,path="Sancti/"+md,id="sancti:"+md+":3:w";
+for(const [family,dates] of Object.entries(list))for(const key of dates){
+ const [md,rank,colour]=key.split(":");
+ const date="2026-"+md,path="Sancti/"+md,id="sancti:"+key;
+ assert.equal(required1962SeasonalSanctoralPrefaceOwner("sancti:"+md+":"+rank+":"+
+   (colour==="r"?"w":"r"),path,date),null,
+   md+" must not apply the season to a different colour/feast ID");
  const source=required1962SeasonalSanctoralPrefaceOwner(id,path,date);
  assert.ok(source,date+" original source was not matched");
  assert.equal(source.category,family,date);
