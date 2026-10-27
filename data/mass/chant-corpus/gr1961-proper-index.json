@@ -1,0 +1,467 @@
+{
+  "schema": "ao-gregobase-graduale1961-research-index-v1",
+  "snapshotDate": "2024-01-05",
+  "sourceRepository": "gregorio-project/GregoBase",
+  "sourceFile": "gregobase_online.sql",
+  "sourceFileBlobSha": "c43cc2d08488eef0f128933fe10b6bb292fa4f3b",
+  "sourceUrl": "https://github.com/gregorio-project/GregoBase/blob/master/gregobase_online.sql",
+  "sourceEditionId": 2,
+  "edition": {
+    "title": "Graduale Romanum",
+    "year": 1961,
+    "editor": "Solesmes"
+  },
+  "rights": "GregoBase transcriptions CC0; not a claim about facsimile scans or recordings",
+  "status": "RESEARCH_ONLY_NOT_MASS_READER",
+  "screening": {
+    "sourceMatchedCoreRows": 1254,
+    "copyrightExcluded": 0,
+    "duplicateExcluded": 1,
+    "validStaged": 1195,
+    "transcriptionExceptions": 58,
+    "byOfficePart": {
+      "al": 284,
+      "in": 229,
+      "of": 185,
+      "co": 225,
+      "gr": 189,
+      "tr": 83
+    }
+  },
+  "batches": [
+    {
+      "path": "data/mass/chant-corpus/gr1961-proper-001.json",
+      "count": 200,
+      "firstId": 1,
+      "lastId": 217,
+      "contentSha256": "29375c60fa772fcf921de0396e52989eb70b345fd26be71f9efdeacbd1a0b7e3",
+      "bytes": 248039
+    },
+    {
+      "path": "data/mass/chant-corpus/gr1961-proper-002.json",
+      "count": 200,
+      "firstId": 218,
+      "lastId": 446,
+      "contentSha256": "49b1161da5e7b6907423ea192d77c8624d81a7ecc3b54a9490734602b1fd4eb1",
+      "bytes": 260834
+    },
+    {
+      "path": "data/mass/chant-corpus/gr1961-proper-003.json",
+      "count": 200,
+      "firstId": 448,
+      "lastId": 669,
+      "contentSha256": "b5fefa90b1b4b2d82b922d8714b3b469106f26c20229782c6efcb11a11496acf",
+      "bytes": 249247
+    },
+    {
+      "path": "data/mass/chant-corpus/gr1961-proper-004.json",
+      "count": 200,
+      "firstId": 670,
+      "lastId": 894,
+      "contentSha256": "8d74d08ac6fb14f631378d3158f3dbc8473de60c9e12138bdc7ea7bf4e8e28de",
+      "bytes": 259004
+    },
+    {
+      "path": "data/mass/chant-corpus/gr1961-proper-005.json",
+      "count": 200,
+      "firstId": 895,
+      "lastId": 1163,
+      "contentSha256": "94cf57aa39a2a33aa2c08d7a44a55748fa720f84e4ba1a4ccafd96c872e1a2e3",
+      "bytes": 253731
+    },
+    {
+      "path": "data/mass/chant-corpus/gr1961-proper-006.json",
+      "count": 195,
+      "firstId": 1165,
+      "lastId": 18437,
+      "contentSha256": "ee8d801ffc1aaff6320f25e2d8dbaee45415ee0150503293a824f60e2262808e",
+      "bytes": 255848
+    }
+  ],
+  "exceptions": [
+    {
+      "gregobaseId": 378,
+      "officePart": "al",
+      "page": "239L",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1049,
+      "officePart": "in",
+      "page": "132",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1052,
+      "officePart": "al",
+      "page": "346",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1053,
+      "officePart": "co",
+      "page": "552",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1054,
+      "officePart": "in",
+      "page": "159",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1058,
+      "officePart": "co",
+      "page": "330",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1059,
+      "officePart": "co",
+      "page": "20**",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1063,
+      "officePart": "tr",
+      "page": "497",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1064,
+      "officePart": "in",
+      "page": "82**",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1066,
+      "officePart": "co",
+      "page": "122",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1070,
+      "officePart": "co",
+      "page": "136**",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1072,
+      "officePart": "in",
+      "page": "[147]",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1073,
+      "officePart": "al",
+      "page": "480",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1078,
+      "officePart": "al",
+      "page": "568",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1079,
+      "officePart": "co",
+      "page": "336",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1082,
+      "officePart": "al",
+      "page": "351",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1090,
+      "officePart": "co",
+      "page": "126",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1093,
+      "officePart": "in",
+      "page": "526",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1094,
+      "officePart": "al",
+      "page": "566",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1095,
+      "officePart": "of",
+      "page": "18**",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1096,
+      "officePart": "al",
+      "page": "[101]",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1098,
+      "officePart": "of",
+      "page": "622E",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1099,
+      "officePart": "of",
+      "page": "137",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1101,
+      "officePart": "al",
+      "page": "493",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1102,
+      "officePart": "al",
+      "page": "18**",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1107,
+      "officePart": "of",
+      "page": "[54]",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1120,
+      "officePart": "in",
+      "page": "33**",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1123,
+      "officePart": "in",
+      "page": "70",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1125,
+      "officePart": "co",
+      "page": "32",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1126,
+      "officePart": "co",
+      "page": "553",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1130,
+      "officePart": "co",
+      "page": "123**",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1131,
+      "officePart": "in",
+      "page": "196",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1133,
+      "officePart": "co",
+      "page": "6**",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1135,
+      "officePart": "in",
+      "page": "247",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1138,
+      "officePart": "al",
+      "page": "305",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1141,
+      "officePart": "in",
+      "page": "521",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1146,
+      "officePart": "al",
+      "page": "58**",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1149,
+      "officePart": "co",
+      "page": "372",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1151,
+      "officePart": "co",
+      "page": "298",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1154,
+      "officePart": "co",
+      "page": "[45]",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1164,
+      "officePart": "al",
+      "page": "[129]",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1176,
+      "officePart": "of",
+      "page": "290",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1177,
+      "officePart": "co",
+      "page": "132**",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1190,
+      "officePart": "co",
+      "page": "512",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1195,
+      "officePart": "in",
+      "page": "625",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1196,
+      "officePart": "co",
+      "page": "570",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1217,
+      "officePart": "al",
+      "page": "251",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 1374,
+      "officePart": "in",
+      "page": "[42]",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 7670,
+      "officePart": "tr",
+      "page": "[8]",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 9166,
+      "officePart": "co",
+      "page": "559",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 10950,
+      "officePart": "co",
+      "page": "[99]",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 15305,
+      "officePart": "of",
+      "page": "283",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 15490,
+      "officePart": "in",
+      "page": "324",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 15784,
+      "officePart": "of",
+      "page": "388",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 16236,
+      "officePart": "in",
+      "page": "607",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 17992,
+      "officePart": "al",
+      "page": "378",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 17993,
+      "officePart": "co",
+      "page": "379",
+      "reason": "No usable structured GABC transcription"
+    },
+    {
+      "gregobaseId": 17998,
+      "officePart": "in",
+      "page": "[3]",
+      "reason": "No usable structured GABC transcription"
+    }
+  ],
+  "releaseRule": "Do not import this data in native Schola until source ownership, 1962 slot eligibility, exact Latin identity, edition verification and editorial review are individually passed.",
+  "identityFindings": {
+    "exactGabcDuplicateGroups": [
+      {
+        "ids": [
+          "GREGOBASE-861",
+          "GREGOBASE-1644"
+        ],
+        "decision": "PRESERVE_BOTH_PENDING_SOURCE_REVIEW"
+      }
+    ],
+    "samePartAndIncipitDistinctMelodies": [
+      {
+        "ids": [
+          "GREGOBASE-200",
+          "GREGOBASE-4653"
+        ],
+        "decision": "PRESERVE_AS_VARIANTS"
+      },
+      {
+        "ids": [
+          "GREGOBASE-827",
+          "GREGOBASE-8201"
+        ],
+        "decision": "PRESERVE_AS_VARIANTS"
+      }
+    ],
+    "existingFiveChristmasPilotIds": [
+      "GREGOBASE-72",
+      "GREGOBASE-1163",
+      "GREGOBASE-324",
+      "GREGOBASE-1274",
+      "GREGOBASE-1139"
+    ],
+    "rule": "Source IDs stay stable. Equal GABC or matching incipits are review evidence, never grounds for silently rewriting original records."
+  }
+}

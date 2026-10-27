@@ -1,0 +1,65 @@
+{
+  "schema": "ao-gr1961-342-2026-ci-disposition-audit-v1",
+  "status": "SOURCE_TEXT_DIAGNOSTICS_ONLY_NOT_MUSICAL_APPROVAL",
+  "provenance": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "prNumber": 1749,
+    "commitSha": "460faf58f594ca9fe089c71903723b603804dc87",
+    "workflow": "R17 Mass convergence",
+    "runId": 40465685828,
+    "jobId": 122060404509,
+    "jobUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40465685828/job/122060404509",
+    "conclusion": "success",
+    "test": "tests/gr1961-342-selected-1962-year-e2e.mjs",
+    "actualResolver": "AO_RUNTIME_V8.resolver.resolveDay",
+    "ledger": "data/mass/chant-corpus/gr1961-342-source-slot-triage.v1.json"
+  },
+  "summary": {
+    "year": 2026,
+    "daysChecked": 365,
+    "daysSourceReady": 365,
+    "dayResolverFailures": 0,
+    "distinctTextMatchedCandidateIds": 3,
+    "sourceMatchOccurrences": 4,
+    "daysWithMatches": 3,
+    "ambiguousVariantOccurrences": 0,
+    "researchCandidatesNotObservedInSweep": 339,
+    "calendarProperSourcePathsVisited": 300,
+    "candidateSourcePathsVisited": 74,
+    "daysWithCandidateSourcePath": 123,
+    "candidateDatePairsInspected": 677,
+    "unresolvedCandidateDatePairs": 673,
+    "distinctUnresolvedCandidateIds": 290,
+    "unverifiedByStatus": {
+      "SEGMENT_UNVERIFIED": 294,
+      "TEXT_NOT_SELECTED": 236,
+      "TEXT_QUALITY_REVIEW": 143
+    },
+    "musicalFacsimileApprovals": 0,
+    "editorialPromotions": 0
+  },
+  "prioritization": [
+    {
+      "status": "SEGMENT_UNVERIFIED",
+      "candidateDatePairs": 294,
+      "action": "Reconcile the 185 distinct research pre-Gospel candidates with selected source's certified Latin/English/French boundaries. No split from textual coincidence."
+    },
+    {
+      "status": "TEXT_NOT_SELECTED",
+      "candidateDatePairs": 236,
+      "action": "Compare opening Latin text and role to actual selected Proper. Distinguish alternate formularies, within-section verses, inherited sources and true contradictions."
+    },
+    {
+      "status": "TEXT_QUALITY_REVIEW",
+      "candidateDatePairs": 143,
+      "action": "Review insufficient or divergent initial text; do not lower eight-word requirement merely to increase matches."
+    }
+  ],
+  "footnotes": [
+    "Denominators are calendar date × candidate occurrences, not unique source scores; a GABC may appear on multiple dates and in more than one category.",
+    "These are measured 2026 calendar-Mass source selections, not all permitted votives, local Propers, Commons or other years.",
+    "No 1961 facsimile musical comparison, editorial approval, production promotion, or local choir-performance verification.",
+    "The 339 other candidate IDs are unobserved as positive matches, not automatically invalid.",
+    "The four positive source-text observations are preserved in gr1961-342-selected-proper-2026-ci-observations.v1.json with an earlier successful CI run."
+  ]
+}

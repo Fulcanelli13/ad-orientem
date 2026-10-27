@@ -86,7 +86,8 @@ try{
    const essential=["src/pray/presentation-coherence.js","src/pray/novena-runtime.js",
      "src/pray/traditional-pray-runtime.js","src/pray/focus-installer.js",
      "src/pray/devotional-card-deck.js","src/pray/devotional-cinematic.js",
-     "assets/pray/angelus/tanner-annunciation-1898.webp"];
+     "assets/pray/angelus/tanner-annunciation-1898.webp",
+      "assets/vendor/exsurge/exsurge.min.js"];
    const missing=[];
    for(const path of essential)if(!await cache.match(new URL(path,base)))missing.push(path);
    return {...meta,missing};
@@ -101,6 +102,35 @@ try{
  const offline=await page.evaluate(()=>({screen:!!document.querySelector(".homeScreen"),sw:!!navigator.serviceWorker.controller,version:globalThis.AO_OFFLINE_APP_V1?.status?.version}));
  assert.equal(offline.screen,true,"Cached offline Home failed");
  assert.equal(offline.sw,true,"Offline navigation lost service worker");
+ // The first offline Mass visit must be able to engrave without any
+ // earlier online opening of a score.
+ const offlineChant=await page.evaluate(async()=>{
+   const host=document.createElement("div");
+   host.style.cssText="position:fixed;top:-10000px;left:0;width:330px;visibility:hidden";
+   document.body.appendChild(host);
+   let renderer;
+   try{
+     const [{createOfflineChantEngraver},{SCHOLA_SCORE_CATALOGUE}]=await Promise.all([
+       import("./src/mass/reader-chant-engraver.js"),
+       import("./src/mass/reader-chant-score-pilot.js"),
+     ]);
+     renderer=createOfflineChantEngraver({viewport:host});
+     const result=await renderer.engrave(SCHOLA_SCORE_CATALOGUE[0].gabc);
+     const svg=host.querySelector("svg");
+     const state=renderer.getState();
+     host.style.width="270px";
+     const resized=await renderer.reflow();
+     return {result,svg:Boolean(svg),width:state.lastWidth,locallyLoaded:state.sourceLoaded,
+       resized,newWidth:renderer.getState().lastWidth};
+   }finally{renderer?.destroy();host.remove();}
+ });
+ assert.equal(offlineChant.result,true,"Kyrie XVI engraving failed in real offline browser");
+ assert.equal(offlineChant.svg,true,"No SVG produced for first-use offline chant");
+ assert.equal(offlineChant.locallyLoaded,true,"Bundled Exsurge did not load offline");
+ assert.equal(offlineChant.resized,true,"Offline score failed to reflow when viewport narrowed");
+ assert.ok(offlineChant.newWidth<offlineChant.width,"Score width did not adapt");
+ console.log("OFFLINE_GREGORIAN_SCORE="+JSON.stringify(offlineChant));
+
  // The Rosary is a core devotional pilot journey: it must open on a first
  // offline launch after a completed bootstrap, even before it was opened online.
  // This exercises the actual first-use dynamic Prayer module graph, not just Home.

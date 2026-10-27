@@ -128,6 +128,77 @@ try{
   assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-chosen-reader-mode"),mode);
  }
 
+
+ // Music is an optional fourth dimension of the established guided Folio:
+ // no alternate Mass, second preflight or silent Gregorian default.
+ const programmeUi=page.locator("[data-full-mass-chant]");
+ assert.equal(await programmeUi.isVisible(),true);
+ await programmeUi.locator("[data-full-mass-chant-heading]").click();
+ assert.equal(await programmeUi.locator("[data-full-mass-chant-choice] option").count(),4);
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.kyrieScoreId,null);
+ await programmeUi.locator("[data-full-mass-chant-choice]").selectOption("GREGOBASE-2982");
+ const selectedMusic=await page.evaluate(()=>__full.selectionFor(__legacyMass()).chantProgramme);
+ assert.equal(selectedMusic.kyrieScoreId,"GREGOBASE-2982");
+ assert.equal(selectedMusic.sourceType,"USER_REPORTED_MUSIC_NOT_RUBRICALLY_CERTIFIED");
+ assert.equal(selectedMusic.selections.KYRIE,"GREGOBASE-2982");
+ const study=programmeUi.locator(".aoMassChantStudy");
+ await study.locator("summary").click();
+ await study.locator("[data-study-score-choice]").selectOption("GREGOBASE-2982");
+ await page.waitForSelector(".aoMassChantStudyWindow svg",{timeout:15000});
+ assert.equal(await study.locator("[data-study-audio]").isVisible(),true);
+ assert.match(await study.locator("[data-study-audio]").innerText(),/no recording has passed/i,
+   "No unverified choir recording may be promoted by the study pilot");
+
+ const additional=[
+   ["GLORIA","GREGOBASE-961"],["CREDO","GREGOBASE-749"],
+   ["SANCTUS_BENEDICTUS","GREGOBASE-1384"],["AGNUS_DEI","GREGOBASE-2760"],
+ ];
+ assert.equal(await programmeUi.locator("[data-full-mass-other-choice]").count(),4,
+   "The ordinary programme must expose the four additional settings independently");
+ for(const [track,id] of additional){
+   await programmeUi.locator('[data-full-mass-other-choice="'+track+'"]').selectOption(id);
+   assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.selections[track],id);
+ }
+ assert.deepEqual(await page.evaluate(()=>Object.keys(__full.selectionFor(__legacyMass()).chantProgramme.selections).sort()),
+   ["AGNUS_DEI","CREDO","GLORIA","KYRIE","SANCTUS_BENEDICTUS"].sort());
+ const perf=programmeUi.locator("[data-full-mass-sanctus-performance]");
+ assert.equal(await perf.inputValue(),"UNSPECIFIED");
+ await perf.selectOption("POLYPHONIC");
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).sanctusPerformance,"POLYPHONIC");
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.selections.SANCTUS_BENEDICTUS,undefined);
+ assert.equal(await programmeUi.locator('[data-full-mass-other-choice="SANCTUS_BENEDICTUS"]').isDisabled(),true,
+   "A Gregorian score must not masquerade as a polyphonic Sanctus");
+ await perf.selectOption("GREGORIAN");
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).sanctusPerformance,"GREGORIAN");
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.selections.SANCTUS_BENEDICTUS,undefined,
+   "Changing to Gregorian must not silently select a Sanctus melody");
+ await programmeUi.locator('[data-full-mass-other-choice="SANCTUS_BENEDICTUS"]').selectOption("GREGOBASE-1384");
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.selections.SANCTUS_BENEDICTUS,"GREGOBASE-1384");
+ await programmeUi.locator('[data-full-mass-other-choice="CREDO"]').selectOption("");
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.selections.CREDO,undefined,
+   "Unknown Credo must not be filled in from the Kyrie");
+
+ // Selecting a reader mode cannot alter this independent musical setting.
+ await page.locator('[data-full-mass-reader-mode][value="SIMPLE"]').check();
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.kyrieScoreId,"GREGOBASE-2982");
+ await page.locator('.aoMassFolioStepNav [data-folio-goto="ceremony"]').click();
+ await page.locator('[data-full-mass-form][value="LOW"]').check();
+ assert.equal(await programmeUi.isVisible(),false);
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme,null);
+ await page.locator('[data-full-mass-form][value="MISSA_CANTATA_INCENSE"]').check();
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.kyrieScoreId,null,
+   "Low Mass must invalidate prior audible choir programme, even after returning to Sung");
+ assert.equal(Object.keys((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.selections).length,0,
+   "Low Mass must also clear Gloria, Sanctus and Agnus choices");
+ await page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]').click();
+ if(!(await programmeUi.evaluate(el=>el.open)))await programmeUi.locator("summary").click();
+ await programmeUi.locator("[data-full-mass-chant-choice]").selectOption("GREGOBASE-1184");
+ await page.evaluate(()=>{__formDate="2026-10-11";__full.refresh()});
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.kyrieScoreId,null,
+   "Kyrie cannot carry automatically to a new Mass date");
+ await page.evaluate(()=>{__formDate="2026-10-04";__full.refresh()});
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.kyrieScoreId,null);
+
  assert.equal(await page.locator('[data-full-mass-form][value="MISSA_CANTATA_INCENSE"]').isChecked(),true);
  assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-celebration-kind"),"CALENDAR");
  await page.locator('.aoMassFolioStepNav [data-folio-goto="ceremony"]').click();

@@ -1,0 +1,69 @@
+{
+  "schema": "ao-gr1961-342-2026-verified-run-observation-v1",
+  "status": "CI_OBSERVED_TEXT_ONLY_NO_MUSICAL_APPROVAL",
+  "source": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "pr": 1749,
+    "commitSha": "0c78faf4e282a7bd6d8eae819265e22d99aba922",
+    "workflow": "R17 Mass convergence",
+    "runId": 40465057870,
+    "jobId": 122058520048,
+    "jobUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40465057870/job/122058520048",
+    "jobConclusion": "success",
+    "test": "tests/gr1961-342-selected-1962-year-e2e.mjs",
+    "researchLedger": "data/mass/chant-corpus/gr1961-342-source-slot-triage.v1.json",
+    "resolver": "AO_RUNTIME_V8.resolver.resolveDay"
+  },
+  "scope": {
+    "year": 2026,
+    "datesChecked": 365,
+    "daysSourceReady": 365,
+    "dayResolverFailures": 0,
+    "distinctTextMatchedCandidateIds": 3,
+    "sourceMatchOccurrences": 4,
+    "datesWithMatches": 3,
+    "ambiguousVariantOccurrences": 0,
+    "candidateIdsNotObservedInSweep": 339,
+    "musicalFacsimileApprovals": 0,
+    "editorialPromotions": 0
+  },
+  "observations": [
+    {
+      "id": "GREGOBASE-195",
+      "trackId": "OFFERTORY",
+      "date": "2026-09-14",
+      "properSource": "Sancti/09-14",
+      "status": "SELECTED_1962_TEXT_EVIDENCE",
+      "sourceBlobSha": "d3a4f0046cbcdf284617e23b6cd43cb606e57792"
+    },
+    {
+      "id": "GREGOBASE-346",
+      "trackId": "COMMUNION",
+      "date": "2026-09-14",
+      "properSource": "Sancti/09-14",
+      "status": "SELECTED_1962_TEXT_EVIDENCE",
+      "sourceBlobSha": "d3a4f0046cbcdf284617e23b6cd43cb606e57792"
+    },
+    {
+      "id": "GREGOBASE-389",
+      "trackId": "INTROIT",
+      "date": "2026-10-04",
+      "properSource": "Tempora/Pent19-0",
+      "status": "SELECTED_1962_TEXT_EVIDENCE",
+      "sourceBlobSha": "1677574533e0c814c2afd9b001b7a5b6f44b22b3"
+    },
+    {
+      "id": "GREGOBASE-389",
+      "trackId": "INTROIT",
+      "date": "2026-10-05",
+      "properSource": "Tempora/Pent19-0",
+      "status": "SELECTED_1962_TEXT_EVIDENCE",
+      "sourceBlobSha": "1677574533e0c814c2afd9b001b7a5b6f44b22b3"
+    }
+  ],
+  "warnings": [
+    "This is the actual production DayResolver's calendar-Mass 2026 snapshot, not an exhaustive search of all votive/Common/alternate formularies.",
+    "No full 1961 printed-edition note-for-note facsimile verification, musical certification, editor approval, performance inference or reader score promotion.",
+    "Unmatched 339 IDs are only unobserved within this bounded sweep; absence does not mean invalid Proper or invalid GABC."
+  ]
+}

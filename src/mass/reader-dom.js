@@ -1,6 +1,9 @@
 import { glossaryContextCapsule } from "../app/contextual-study.js";
 import { decorateLiturgicalSpeaker } from "../app/liturgical-speakers.js";
 import { insertChantPhraseBreaks } from "./reader-chant-line-layout.js";
+import { installNativeScholaScorePilot } from "./reader-chant-score-pilot.js";
+import {selectedChantScoreForReader,MASS_CHANT_ORDINARY_TRACKS} from "./mass-chant-programme.js";
+import {matchSourceOwnedProperScores} from "./reader-proper-chant-crosswalk.js";
 import { missalSourceRubricCopy } from "./reader-missal-book-rubrics.js";
 import { conciseMissalSourceRubric, conciseMissalInlineSequence } from "./reader-rubric-presentation.js";
 import { R17_ICON_KEYS } from "./reader-icons.js";
@@ -2336,6 +2339,7 @@ export function createReaderDomAdapter({
   sections = [],
   onSectionSelect = null,
   allowPresentationModeSwitch = true,
+  properChantSlots = null,
 } = {}) {
   if(!root || typeof root.querySelector !== "function") throw new TypeError("Reader root element required");
 
@@ -2349,6 +2353,7 @@ export function createReaderDomAdapter({
   let sectionItems=Array.isArray(sections)?[...sections]:[];
   let selectedFaithfulRowId=null;
   let scholaCollapsed=false;
+  let chantScorePilot=null;
   let scholaManuallyResized=false;
   let scholaHeight=(root.ownerDocument?.defaultView?.matchMedia?.("(max-width:760px)")?.matches ? 166 : 150);
   let scholaExpandedHeight=scholaHeight;
@@ -2684,6 +2689,7 @@ export function createReaderDomAdapter({
     if(!dock)return;
     syncScholaControls();
     const schola=current?.scholaVisible ? current.schola : null;
+    chantScorePilot?.update(schola);
     const identity=schola ? [schola.trackId,schola.segmentId,schola.cueId].filter(Boolean).join("|") : null;
     const changed=identity!==scholaIdentity;
     if(changed){
@@ -2763,7 +2769,10 @@ export function createReaderDomAdapter({
     const shell=root.querySelector("[data-ao-reader-shell]");
     const scholaActive=dock.dataset.active==="true";
     const scholaRelevant=Boolean(textValue(current?.schola)) && current?.scholaShared!==true;
-    const reserve=(scholaActive||scholaRelevant||scholaCollapsed)
+    const notationOpen=dock.dataset.notation==="true" && !scholaCollapsed;
+    const viewportHeight=root.ownerDocument?.defaultView?.innerHeight||700;
+    const scoreReserve=Math.max(260,Math.min(430,Math.round(viewportHeight*.42)));
+    const reserve=notationOpen ? scoreReserve : (scholaActive||scholaRelevant||scholaCollapsed)
       ? (scholaCollapsed ? 44 :
           dock.dataset.shared==="true" && !scholaManuallyResized ? 132 : scholaHeight) : 0;
     if(shell){
@@ -2940,6 +2949,7 @@ export function createReaderDomAdapter({
       const scholaToggle=event.target?.closest?.("[data-schola-toggle]");
       if(scholaToggle){
         scholaCollapsed=!scholaCollapsed;
+        if(scholaCollapsed)chantScorePilot?.hide?.();
         if(!scholaCollapsed)scholaHeight=scholaExpandedHeight;
         syncScholaChrome();
         ensureShortCardCueTravel();
@@ -3150,9 +3160,18 @@ export function createReaderDomAdapter({
     if(!nextPrepared?.session?.resolvedMass) throw new TypeError("Prepared Mass session required");
     // The root survives innerHTML replacement; old delegated handlers do too unless removed.
     unbind();
+    chantScorePilot?.destroy();chantScorePilot=null;
     prepared=nextPrepared;
     mode=normalizePresentationMode(prepared.readerPreferences?.mode ?? prepared.session.resolvedMass.presentationMode);
     root.innerHTML=buildReaderShellMarkup(prepared);
+    chantScorePilot=installNativeScholaScorePilot(root,{
+      onLayoutChange:()=>syncScholaChrome(),
+      programmeScoreId:selectedChantScoreForReader(prepared.readerPreferences?.chantProgramme,"KYRIE"),
+      programmeSelections:Object.fromEntries(MASS_CHANT_ORDINARY_TRACKS
+        .map(id=>[id,selectedChantScoreForReader(prepared.readerPreferences?.chantProgramme,id)])
+        .filter(([,value])=>Boolean(value))),
+      properScoreMatches:matchSourceOwnedProperScores(properChantSlots),
+    });
     const shell=root.querySelector("[data-ao-reader-shell]");
     if(shell)shell.dataset.modeSwitchLocked=String(!allowPresentationModeSwitch);
     if(!allowPresentationModeSwitch){
@@ -4027,6 +4046,7 @@ export function createReaderDomAdapter({
 
   function destroy(){
     unbind();
+    chantScorePilot?.destroy();chantScorePilot=null;
     if(bellHoldTimer)clearTimeout(bellHoldTimer);
     cancelScholaTicker({clearIdentity:true});
     bellHoldTimer=0;heldBell=null;bellHoldUntil=0;

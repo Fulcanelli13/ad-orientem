@@ -2830,6 +2830,7 @@ export async function mountNativeReaderPreview({
   reader=createReaderDomAdapter({
     root:host,
     iconResolver,
+    properChantSlots:ready.model?.properSlots??null,
     allowPresentationModeSwitch:true,
     sections:sectionItems(),
     onPresentationModeChange:(mode)=>switchPresentationMode(mode),

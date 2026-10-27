@@ -67,6 +67,24 @@ jobs:
           if-no-files-found: warn
           retention-days: 14
 
+  gregorian-selected-1962:
+    # Independent research lane: the full-year source audit must not be
+    # suppressed if unrelated mass-phone or main-test checks fail.
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/gr1961-342-selected-proper-contract.mjs
+      - run: node tests/gr1961-342-source-proof-reuse.mjs
+      - run: npm run test:gr1961-342-resolved-year
+
   curated65-phone:
     # Deliberately independent of the broad npm test job: an unrelated
     # Shrine corpus assertion must not suppress Mass phone acceptance.

@@ -1,0 +1,1155 @@
+{
+  "schema": "ao-gr1961-first200-latin-witness-screen-v1",
+  "researchOnly": true,
+  "stagedCount": 200,
+  "archiveFile": "data/mass/chant-corpus/gr1961-proper-001.json",
+  "archiveBlobSha": "6fc5b02be876f693935d9dddf549ae86e32ce8aa",
+  "latinWitnessRepository": "DivinumOfficium/divinum-officium",
+  "latinWitnessCommit": "ad8783641455bae38a8eb5782b34241a7b3ff2ef",
+  "sourceFiles": [
+    {
+      "path": "Tempora/Adv1-0.txt",
+      "blobSha": "75b533254548cf9f93636ea3d44dca059c6896d1",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Adv2-0.txt",
+      "blobSha": "97130ff3f8e9e8471bc0b51f74558e49b93facf4",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Adv3-0.txt",
+      "blobSha": "de744967d1d6e9ae6a3ccdff81360c8b5565e873",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Adv4-0.txt",
+      "blobSha": "2b9698e67af701d12e12609e64f1d68dc52b6700",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pasc0-0.txt",
+      "blobSha": "1a60124f36969cce967c154ec66a6ac7f43b15e4",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pasc1-0.txt",
+      "blobSha": "92c5d80537dcb09b97ed567f57b47383fc3aa090",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pasc2-0.txt",
+      "blobSha": "56c6c4c1fb80ab7d69c5a87579533a17cf891ffb",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pasc3-0.txt",
+      "blobSha": "582aeed4735ae91a7ecc849392db52eef34c577a",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pasc4-0.txt",
+      "blobSha": "673e27a85c3b7fe2db84ef7dcf34928ec687a993",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pasc5-0.txt",
+      "blobSha": "fed2ed67936384674d024caa2d3c8e31193ede83",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pasc7-0.txt",
+      "blobSha": "64876cd8fa68f29bc86926b60bcc50e4fffa76fe",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Quad1-0.txt",
+      "blobSha": "8c1bfcc7a7ccb926f810c1d3ca41ac84f8573599",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Epi1-0.txt",
+      "blobSha": "1ebc53e4c7ca02c8d8d075f5a3281ef7a6f63532",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Epi2-0.txt",
+      "blobSha": "ef91014e4a791e5c777a8c07494d5355f95807f1",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Epi3-0.txt",
+      "blobSha": "a1c27338ee6b8678f1bdb3bc956857723c3e7e29",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Epi4-0.txt",
+      "blobSha": "819c36cc0e0a07eed18151bdf3924bff13f836e1",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Epi5-0.txt",
+      "blobSha": "f3dbe1c59c25403307c9a55e945c6fb46a5aaeb2",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Epi6-0.txt",
+      "blobSha": "ba220165832a54de3bddfcb5dec0d6d9079cdf6a",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Quad2-0.txt",
+      "blobSha": "6395d06415fc32f8c163cfeec0cc333edf7f252f",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Quad3-0.txt",
+      "blobSha": "447369909971f79c5aede5f5554c073707613589",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Quad4-0.txt",
+      "blobSha": "5d15228d8cec83752d131693110f34aef89aaed1",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Quad5-0.txt",
+      "blobSha": "f2395993e50862261732847c2bcb4a999bbdef1d",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Quad6-0.txt",
+      "blobSha": "9d0de35b80e978aa01d8b194ae7068a7ee14714b",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Quadp1-0.txt",
+      "blobSha": "20b73707547659737a86b142145f41c12fdc53c9",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Quadp2-0.txt",
+      "blobSha": "8603a8d2f4e1e3f4d608a996c9e744eb42606d28",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Quadp3-0.txt",
+      "blobSha": "ba4351128591379e04108d4a32d16ccc7ce15bb1",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pasc6-0.txt",
+      "blobSha": "ed8d4af1759f2641dc64d342c922f3d4f4564b7c",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent01-0.txt",
+      "blobSha": "37c8b116b02433abd9bb03b0fd495e9ae5e95df9",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent02-0.txt",
+      "blobSha": "934264dad5ea530084fc8dfe15eed79edf07c607",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent03-0.txt",
+      "blobSha": "acf8760a8cbd9bdedc21a9da0251d3f06fd82fb9",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent04-0.txt",
+      "blobSha": "bb3f6bc65d635934faf7cf20092d1bfb38a2db86",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent05-0.txt",
+      "blobSha": "2cc7d77d47defc63e10812988aa49bb5be0b953b",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent06-0.txt",
+      "blobSha": "69bee3bc296f2f371b1091967a14c4bb07b12d2b",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent07-0.txt",
+      "blobSha": "cd63373d6ad1fac0015b09f084c9634f585066c6",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent08-0.txt",
+      "blobSha": "383e8b29b153b404136886ee52500f87ca11259f",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent09-0.txt",
+      "blobSha": "183c70f49d62b4f796bac2425405676633894a70",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent10-0.txt",
+      "blobSha": "ab903e94d1be9410f39a932aeb55f6ddf4d73da8",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent11-0.txt",
+      "blobSha": "da5b4cd6cfad7938787fac5b2bd15e3748586288",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent12-0.txt",
+      "blobSha": "83f334b8cfaa68f3db52d659074b1e2a0ffb26f9",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent13-0.txt",
+      "blobSha": "d116ba13695c45655c28b5092a6c20be04e4514a",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent14-0.txt",
+      "blobSha": "b199299c3e7c9cdaa03ff6a6595717a00e909a07",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent15-0.txt",
+      "blobSha": "784a7cbc53b86a3bf17430f336813716897b46a2",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent16-0.txt",
+      "blobSha": "5c00f4f55a7f0cf11ccedac5361e68a53510b792",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent17-0.txt",
+      "blobSha": "305356033d88b59493897818cd2760d13ebd863f",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent18-0.txt",
+      "blobSha": "12148b5f40ddfa4bb516ed6674e43911c2b58b4a",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent19-0.txt",
+      "blobSha": "1677574533e0c814c2afd9b001b7a5b6f44b22b3",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent20-0.txt",
+      "blobSha": "65fb02c3c410c9ae4d969df7d862a7b078e9af89",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent21-0.txt",
+      "blobSha": "8804e666d93fec358a44509e0219514c6142719e",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent22-0.txt",
+      "blobSha": "3d817ff7d32eb61a606a96bddfa94193427941ae",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent23-0.txt",
+      "blobSha": "469c4a2799dc76d814731250361cd6d1a831ffc6",
+      "status": "READ"
+    },
+    {
+      "path": "Tempora/Pent24-0.txt",
+      "blobSha": "01cec142c08d581979614a576bd830a70b04928c",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/01-06.txt",
+      "blobSha": "14ecd813980527a8e8180d51153b16e1c115d1d7",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/01-25.txt",
+      "blobSha": "91ac84254b24ddcc3003dae689cb324e9eb54d29",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/02-02.txt",
+      "blobSha": "16c4f9b4cf99f6719a7701ad71c9f4789600854d",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/02-11.txt",
+      "blobSha": "531e88caf016824e493ff4027e767e5b6934e3fa",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/03-19.txt",
+      "blobSha": "1d74084bac51845b47663157d120295b31e16c2b",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/03-25.txt",
+      "blobSha": "aa5bb26608fad812b08336d69d7e51bdf6e5af2d",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/05-31.txt",
+      "blobSha": "8d1e76e3afb2dc24a884457184722be838d2175a",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/06-24.txt",
+      "blobSha": "223a6fe3fdc14dbc7ba2b5d11e59b0ec545680c7",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/06-29.txt",
+      "blobSha": "98eace8b348a1743e090420a42ced72a548cc0fc",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/07-02.txt",
+      "blobSha": "cfe76120e041d6134a0cb7acea9146e342c756ac",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/08-06.txt",
+      "blobSha": "2ba654683519aad5ebe62fbb5f36c13ccf89799a",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/08-15.txt",
+      "blobSha": "4fa6f0074f1a6581fb857b9cd6b4db9148dcf1b2",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/08-22.txt",
+      "blobSha": "4f1f9a168bdfa6a5e710ebab8db064ce9b0421f9",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/09-08.txt",
+      "blobSha": "f2815b33b1fe8ef646982b5c80165bc52d168e71",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/09-14.txt",
+      "blobSha": "d3a4f0046cbcdf284617e23b6cd43cb606e57792",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/09-29.txt",
+      "blobSha": "f47b9ddbea58cf6da4c6d8c1f998cc850e4326f5",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/10-07.txt",
+      "blobSha": "bcc36edae80c74ebbaa28ca96dfa0d62abd048f3",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/10-DU.txt",
+      "blobSha": "a1ca57155d564dd18f00b2e9b36d73f0a55c0c89",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/11-01.txt",
+      "blobSha": "7c7bb35014ea9463213f80929a4da1d7a881bd3d",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/11-02.txt",
+      "blobSha": "d538728f4d5ab91b1d2067a12dd74451729e200f",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/11-09.txt",
+      "blobSha": "9dd25d8aa792f5d08909e60359b55a8ec30375e3",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/11-21.txt",
+      "blobSha": "faa686bc3b935307e47e06e3462916b5d1ea0ded",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/12-08.txt",
+      "blobSha": "a3e4862cd0eab54cafcb7e543f4fabd22cf97b78",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/12-26.txt",
+      "blobSha": "c8dceecb4a4fcb95c3bd6852788d11e250bf4810",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/12-27.txt",
+      "blobSha": "29a267b3d3dbf60ff6eb2ff805091e32f28c3c1b",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/12-28.txt",
+      "blobSha": "9e41240b7c8a143f87d76cccf0ea1db47f81d9b5",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/12-31.txt",
+      "blobSha": "6190169888c1854d9d39080a11a8e34b3ff59207",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/04-25.txt",
+      "blobSha": "63a232f63cb8a7973b29469f4cbe0184b210b039",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/01-01.txt",
+      "blobSha": "e2233f5812c8961e3c0e94dfeea641281ef31bf8",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/02-22.txt",
+      "blobSha": "76853a23f3e87977972fa9e4c2a60507bc5f4d4a",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/03-07.txt",
+      "blobSha": "4becc7bd0f65d09c244a581465bd7934ceb06f06",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/04-11.txt",
+      "blobSha": "34bc1d825c4d7d09aa20199d1f0a6e6a7f5bec84",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/04-23.txt",
+      "blobSha": "c7b437868aa4f635e99863b0d766b1dd2ea7fad6",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/05-01.txt",
+      "blobSha": "f1e7bc0c1f362a13c8dafacf3dbcac6c4f032ade",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/05-03.txt",
+      "blobSha": "753648391c5b2fe8eb4868643de6178cd12381c7",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/05-06.txt",
+      "blobSha": "8b1e559fa03c0f75e0166fd0dd8dd2d3a733737e",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/05-08.txt",
+      "blobSha": "35589e9ce6ecea51a4cf6071ce7270ff67a1f68e",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/05-13.txt",
+      "blobSha": "ad4cc8726cb92b05050f3d50ae0ce003ed2ea637",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/05-26.txt",
+      "blobSha": "501d5bbfdf97133eccf62fc08befb03372fae555",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/06-11.txt",
+      "blobSha": "96d7acecdde985f8ea6f43682e424d85b2e0ff1e",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/06-13.txt",
+      "blobSha": "8cd2c57f2bb42ceffd140d677db3e7ad2afd13af",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/06-19.txt",
+      "blobSha": "1b7628219af91957ff4af022c95851716ad0c0ac",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/07-16.txt",
+      "blobSha": "561dae580ac1b856cd54c32e7b33908c639c32a7",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/07-22.txt",
+      "blobSha": "0f6e07e1f86e08164ac63d2713f8d5bb0ce63917",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/07-25.txt",
+      "blobSha": "d7734361cc54d526e15daf912164df31c10fd861",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/07-26.txt",
+      "blobSha": "b99cd9e4d1f969d9c69ff485a8ac638388f6d61a",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/08-05.txt",
+      "blobSha": "cbc5a7be2e8e44d5411c353d66c5c5f48e206a60",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/08-10.txt",
+      "blobSha": "fa0f38551e35689aeab7c5a17ef4c5a3906c103d",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/08-14.txt",
+      "blobSha": "7bfb9c761852c9154fc14bdaa221beb46280b8bb",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/08-24.txt",
+      "blobSha": "17cf0bbb8580fb799941fa52c283b4240da322ce",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/09-21.txt",
+      "blobSha": "e469538a7559c3c4f5676d547961d52eacaeca94",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/10-04.txt",
+      "blobSha": "d5662d5e3346642120bc5a14a271b09af0d7f7d3",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/10-18.txt",
+      "blobSha": "5b68391b1e0464a38954b1f03d6343f18ba58f13",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/11-11.txt",
+      "blobSha": "3a8904f7edc0e49594feb6386617cd2d1eff7833",
+      "status": "READ"
+    },
+    {
+      "path": "Sancti/11-30.txt",
+      "blobSha": "6a95f42d67006609eb7b9e3797fbb7177ce3d707",
+      "status": "READ"
+    }
+  ],
+  "candidateOccurrences": [
+    {
+      "gregobaseId": 132,
+      "officePart": "in",
+      "incipit": "Ad te levavi",
+      "properSourcePath": "Tempora/Adv1-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "75b533254548cf9f93636ea3d44dca059c6896d1",
+      "latinExcerpt": "v. Ad te levávi ánimam meam: Deus meus, in te confído, non erubéscam: neque irrídeant me inimíci mei: étenim univérsi, qui te exspéctant, non confundé",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 113,
+      "officePart": "of",
+      "incipit": "Benedixisti Domine",
+      "properSourcePath": "Tempora/Adv3-0",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "de744967d1d6e9ae6a3ccdff81360c8b5565e873",
+      "latinExcerpt": "Benedixísti, Dómine, terram tuam: avertísti captivitátem Jacob: remisísti iniquitatem plebis tuæ.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 1,
+      "officePart": "al",
+      "incipit": "Laudem Domini",
+      "properSourcePath": "Tempora/Adv4-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "2b9698e67af701d12e12609e64f1d68dc52b6700",
+      "latinExcerpt": "V. Laudem Dómini loquétur os meum: et benedícat omnis caro nomen sanctum ejus. Allelúja, allelúja,",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 210,
+      "officePart": "of",
+      "incipit": "Ave Maria (Offertorium)",
+      "properSourcePath": "Tempora/Adv4-0",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "2b9698e67af701d12e12609e64f1d68dc52b6700",
+      "latinExcerpt": "Ave, María, gratia plena; Dóminus tecum: benedícta tu in muliéribus, et benedíctus fructus ventris tui.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 25,
+      "officePart": "in",
+      "incipit": "Quasi modo",
+      "properSourcePath": "Tempora/Pasc1-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "92c5d80537dcb09b97ed567f57b47383fc3aa090",
+      "latinExcerpt": "v. Quasi modo géniti infántes, allelúja: rationábiles, sine dolo lac concupíscite, allelúja, allelúja, allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 135,
+      "officePart": "in",
+      "incipit": "Misericordia Domini",
+      "properSourcePath": "Tempora/Pasc2-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "56c6c4c1fb80ab7d69c5a87579533a17cf891ffb",
+      "latinExcerpt": "v. Misericórdia Dómini plena est terra, allelúja: verbo Dómini cœli firmáti sunt, allelúja, allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 56,
+      "officePart": "tr",
+      "incipit": "Ego sum",
+      "properSourcePath": "Tempora/Pasc2-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "56c6c4c1fb80ab7d69c5a87579533a17cf891ffb",
+      "latinExcerpt": "Ego sum pastor bonus: et cognósco oves meas, et cognóscunt me meæ. Allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 95,
+      "officePart": "co",
+      "incipit": "Ego sum pastor (cum Alleluia)",
+      "properSourcePath": "Tempora/Pasc2-0",
+      "sourceSection": "Communio",
+      "sourceBlobSha": "56c6c4c1fb80ab7d69c5a87579533a17cf891ffb",
+      "latinExcerpt": "Ego sum pastor bonus, allelúja: et cognósco oves meas, et cognóscunt me meæ, allelúja, allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 13,
+      "officePart": "in",
+      "incipit": "Omnis terra",
+      "properSourcePath": "Tempora/Pasc3-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "582aeed4735ae91a7ecc849392db52eef34c577a",
+      "latinExcerpt": "v. Jubiláte Deo, omnis terra, allelúja: psalmum dícite nómini ejus, allelúja: date glóriam laudi ejus, allelúja, allelúja, allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 42,
+      "officePart": "in",
+      "incipit": "Cantate Domino",
+      "properSourcePath": "Tempora/Pasc4-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "673e27a85c3b7fe2db84ef7dcf34928ec687a993",
+      "latinExcerpt": "v. Cantáte Dómino cánticum novum, allelúja: quia mirabília fecit Dóminus, allelúja: ante conspéctum géntium revelávit justítiam suam, allelúja, allelú",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 13,
+      "officePart": "in",
+      "incipit": "Omnis terra",
+      "properSourcePath": "Tempora/Pasc5-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "fed2ed67936384674d024caa2d3c8e31193ede83",
+      "latinExcerpt": "Jubiláte Deo, omnis terra, psalmum dícite nómini ejus: date glóriam laudi ejus.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 99,
+      "officePart": "al",
+      "incipit": "Emitte Spiritum",
+      "properSourcePath": "Tempora/Pasc7-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "64876cd8fa68f29bc86926b60bcc50e4fffa76fe",
+      "latinExcerpt": "Emítte Spíritum tuum, et creabúntur, et renovábis fáciem terræ. Allelúja. (Hic genuflectitur)",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 181,
+      "officePart": "al",
+      "incipit": "Veni Sancte Spiritus",
+      "properSourcePath": "Tempora/Pasc7-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "64876cd8fa68f29bc86926b60bcc50e4fffa76fe",
+      "latinExcerpt": "V. Veni, Sancte Spíritus, reple tuórum corda fidélium: et tui amóris in eis ignem accénde.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 93,
+      "officePart": "of",
+      "incipit": "Tulerunt Jesum",
+      "properSourcePath": "Tempora/Epi1-0",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "1ebc53e4c7ca02c8d8d075f5a3281ef7a6f63532",
+      "latinExcerpt": "Tulérunt Jesum paréntes ejus in Jerúsalem, ut sísterent eum Dómino.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 13,
+      "officePart": "in",
+      "incipit": "Omnis terra",
+      "properSourcePath": "Tempora/Epi2-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "ef91014e4a791e5c777a8c07494d5355f95807f1",
+      "latinExcerpt": "v. Omnis terra adóret te, Deus, et psallat tibi: psalmum dicat nómini tuo, Altíssime.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 47,
+      "officePart": "of",
+      "incipit": "Dextera Domini",
+      "properSourcePath": "Tempora/Epi3-0",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "a1c27338ee6b8678f1bdb3bc956857723c3e7e29",
+      "latinExcerpt": "Déxtera Dómini fecit virtutem, déxtera Dómini exaltávit me: non móriar, sed vivam, et narrábo ópera Dómini.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 47,
+      "officePart": "of",
+      "incipit": "Dextera Domini",
+      "properSourcePath": "Tempora/Epi5-0",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "f3dbe1c59c25403307c9a55e945c6fb46a5aaeb2",
+      "latinExcerpt": "Déxtera Dómini fecit virtutem, déxtera Dómini exaltávit me: non móriar, sed vivam, et narrábo ópera Dómini.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 47,
+      "officePart": "of",
+      "incipit": "Dextera Domini",
+      "properSourcePath": "Tempora/Epi6-0",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "ba220165832a54de3bddfcb5dec0d6d9079cdf6a",
+      "latinExcerpt": "Déxtera Dómini fecit virtutem, déxtera Dómini exaltávit me: non móriar, sed vivam, et narrábo ópera Dómini.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 78,
+      "officePart": "in",
+      "incipit": "Judica me",
+      "properSourcePath": "Tempora/Quad5-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "f2395993e50862261732847c2bcb4a999bbdef1d",
+      "latinExcerpt": "v. Júdica me, Deus, et discérne causam meam de gente non sancta: ab hómine iníquo et dolóso éripe me: quia tu es Deus meus et fortitúdo mea.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 49,
+      "officePart": "gr",
+      "incipit": "Tenuisti manum",
+      "properSourcePath": "Tempora/Quad6-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "9d0de35b80e978aa01d8b194ae7068a7ee14714b",
+      "latinExcerpt": "Tenuísti manum déxteram meam: et in voluntáte tua deduxísti me: et cum glória assumpsísti me.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 124,
+      "officePart": "in",
+      "incipit": "Vultum tuum",
+      "properSourcePath": "Tempora/Pasc6-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "ed8d4af1759f2641dc64d342c922f3d4f4564b7c",
+      "latinExcerpt": "v. Exáudi, Dómine, vocem meam, qua clamávi ad te, allelúja: tibi dixit cor meum, quæsívi vultum tuum, vultum tuum, Dómine, requíram: ne avértas fáciem",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 107,
+      "officePart": "al",
+      "incipit": "Non vos relinquam",
+      "properSourcePath": "Tempora/Pasc6-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "ed8d4af1759f2641dc64d342c922f3d4f4564b7c",
+      "latinExcerpt": "V. Non vos relínquam órphanos: vado, et vénio ad vos, et gaudébit cor vestrum. Allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 211,
+      "officePart": "of",
+      "incipit": "Ascendit Deus",
+      "properSourcePath": "Tempora/Pasc6-0",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "ed8d4af1759f2641dc64d342c922f3d4f4564b7c",
+      "latinExcerpt": "Ascéndit Deus in jubilatióne, et Dóminus in voce tubæ, allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 134,
+      "officePart": "al",
+      "incipit": "Salvum me fac",
+      "properSourcePath": "Tempora/Pent02-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "934264dad5ea530084fc8dfe15eed79edf07c607",
+      "latinExcerpt": "Dómine, Deus meus, in te sperávi: salvum me fac ex ómnibus persequéntibus me et líbera me. Allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 189,
+      "officePart": "al",
+      "incipit": "Propitius esto (All.)",
+      "properSourcePath": "Tempora/Pent04-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "bb3f6bc65d635934faf7cf20092d1bfb38a2db86",
+      "latinExcerpt": "Propítius esto, Dómine, peccátis nostris: ne quando dicant gentes: Ubi est Deus eórum?",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 38,
+      "officePart": "gr",
+      "incipit": "Domine Deus virtutum",
+      "properSourcePath": "Tempora/Pent05-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "2cc7d77d47defc63e10812988aa49bb5be0b953b",
+      "latinExcerpt": "V. Dómine, Deus virtútum, exáudi preces servórum tuórum.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 143,
+      "officePart": "of",
+      "incipit": "Benedicam Dominum",
+      "properSourcePath": "Tempora/Pent05-0",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "2cc7d77d47defc63e10812988aa49bb5be0b953b",
+      "latinExcerpt": "Benedícam Dóminum, qui tríbuit mihi intelléctum: providébam Deum in conspéctu meo semper: quóniam a dextris est mihi, ne commóvear.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 77,
+      "officePart": "al",
+      "incipit": "Omnes gentes plaudite (All)",
+      "properSourcePath": "Tempora/Pent07-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "cd63373d6ad1fac0015b09f084c9634f585066c6",
+      "latinExcerpt": "Omnes gentes, pláudite mánibus: jubiláte Deo in voce exsultatiónis. Allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 63,
+      "officePart": "tr",
+      "incipit": "Cor meum",
+      "properSourcePath": "Tempora/Pent11-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "da5b4cd6cfad7938787fac5b2bd15e3748586288",
+      "latinExcerpt": "In Deo sperávit cor meum, et adjútus sum: et reflóruit caro mea, et ex voluntáte mea confitébor illi.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 172,
+      "officePart": "in",
+      "incipit": "Da pacem",
+      "properSourcePath": "Tempora/Pent18-0",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "12148b5f40ddfa4bb516ed6674e43911c2b58b4a",
+      "latinExcerpt": "v. Da pacem, Dómine, sustinéntibus te, ut prophétæ tui fidéles inveniántur: exáudi preces servi tui et plebis tuæ Israël",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 44,
+      "officePart": "gr",
+      "incipit": "Dirigatur oratio mea",
+      "properSourcePath": "Tempora/Pent19-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "1677574533e0c814c2afd9b001b7a5b6f44b22b3",
+      "latinExcerpt": "Dirigátur orátio mea, sicut incénsum in conspéctu tuo, Dómine.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 63,
+      "officePart": "tr",
+      "incipit": "Cor meum",
+      "properSourcePath": "Tempora/Pent20-0",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "65fb02c3c410c9ae4d969df7d862a7b078e9af89",
+      "latinExcerpt": "Parátum cor meum, Deus, parátum cor meum: cantábo, et psallam tibi, glória mea. Allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 67,
+      "officePart": "of",
+      "incipit": "Recordare mei",
+      "properSourcePath": "Tempora/Pent22-0",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "3d817ff7d32eb61a606a96bddfa94193427941ae",
+      "latinExcerpt": "Recordáre mei, Dómine, omni potentátui dóminans: et da sermónem rectum in os meum, ut pláceant verba mea in conspéctu príncipis.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 205,
+      "officePart": "gr",
+      "incipit": "Omnes de Saba",
+      "properSourcePath": "Sancti/01-06",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "14ecd813980527a8e8180d51153b16e1c115d1d7",
+      "latinExcerpt": "Omnes de Saba vénient, aurum et thus deferéntes, et laudem Dómino annuntiántes.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 50,
+      "officePart": "gr",
+      "incipit": "Suscepimus Deus (Grad.)",
+      "properSourcePath": "Sancti/02-02",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "16c4f9b4cf99f6719a7701ad71c9f4789600854d",
+      "latinExcerpt": "Suscépimus, Deus, misericórdiam tuam in médio templi tui: secúndum nomen tuum, Deus, ita et laus tua in fines terræ.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 5,
+      "officePart": "in",
+      "incipit": "Vidi civitatem",
+      "properSourcePath": "Sancti/02-11",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "531e88caf016824e493ff4027e767e5b6934e3fa",
+      "latinExcerpt": "v. Vidi civitátem sanctam, Jerúsalem novam, descendéntem de cœlo a Deo, parátam sicut sponsam ornátam viro suo.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 27,
+      "officePart": "gr",
+      "incipit": "Flores apparuerunt",
+      "properSourcePath": "Sancti/02-11",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "531e88caf016824e493ff4027e767e5b6934e3fa",
+      "latinExcerpt": "Flores apparuérunt in terra nostra, tempus putatiónis advénit, vox túrturis audíta est in terra nostra.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 80,
+      "officePart": "co",
+      "incipit": "Visitasti terram",
+      "properSourcePath": "Sancti/02-11",
+      "sourceSection": "Communio",
+      "sourceBlobSha": "531e88caf016824e493ff4027e767e5b6934e3fa",
+      "latinExcerpt": "Visitásti terram et inebriásti eam, multiplicásti locupletáre eam.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 153,
+      "officePart": "gr",
+      "incipit": "Beatus vir qui timet (Grad.)",
+      "properSourcePath": "Sancti/03-19",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "1d74084bac51845b47663157d120295b31e16c2b",
+      "latinExcerpt": "Beátus vir, qui timet Dóminum: in mandátis ejus cupit nimis.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 139,
+      "officePart": "co",
+      "incipit": "Joseph fili David",
+      "properSourcePath": "Sancti/03-19",
+      "sourceSection": "Communio",
+      "sourceBlobSha": "1d74084bac51845b47663157d120295b31e16c2b",
+      "latinExcerpt": "Joseph, fili David, noli timére accípere Maríam cónjugem tuam: quod enim in ea natum est, de Spíritu Sancto est. (Allelúja.)",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 18,
+      "officePart": "tr",
+      "incipit": "Gaude Maria",
+      "properSourcePath": "Sancti/05-31",
+      "sourceSection": "Tractus",
+      "sourceBlobSha": "8d1e76e3afb2dc24a884457184722be838d2175a",
+      "latinExcerpt": "Gaude, María Virgo, cunctas hǽreses sola interemísti.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 133,
+      "officePart": "co",
+      "incipit": "Tu puer",
+      "properSourcePath": "Sancti/06-24",
+      "sourceSection": "Communio",
+      "sourceBlobSha": "223a6fe3fdc14dbc7ba2b5d11e59b0ec545680c7",
+      "latinExcerpt": "Tu, puer, Propheta Altíssimi vocaberis: præíbis enim ante fáciem Dómini paráre vias ejus.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 63,
+      "officePart": "tr",
+      "incipit": "Cor meum",
+      "properSourcePath": "Sancti/08-06",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "2ba654683519aad5ebe62fbb5f36c13ccf89799a",
+      "latinExcerpt": "V. Eructávit cor meum verbum bonum: dico ego ópera mea Regi.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 125,
+      "officePart": "of",
+      "incipit": "Gloria et divitiae",
+      "properSourcePath": "Sancti/08-06",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "2ba654683519aad5ebe62fbb5f36c13ccf89799a",
+      "latinExcerpt": "Glória et divítiæ in domo ejus: et justítia ejus manet in sǽculum sǽculi, allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 23,
+      "officePart": "in",
+      "incipit": "Signum magnum",
+      "properSourcePath": "Sancti/08-15",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "4fa6f0074f1a6581fb857b9cd6b4db9148dcf1b2",
+      "latinExcerpt": "v. Signum magnum appáruit in cœlo: múlier amicta sole, et luna sub pédibus ejus, et in cápite ejus coróna stellárum duódecim.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 42,
+      "officePart": "in",
+      "incipit": "Cantate Domino",
+      "properSourcePath": "Sancti/08-15",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "4fa6f0074f1a6581fb857b9cd6b4db9148dcf1b2",
+      "latinExcerpt": "Cantáte Dómino cánticum novum: quóniam mirabília fecit.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 63,
+      "officePart": "tr",
+      "incipit": "Cor meum",
+      "properSourcePath": "Sancti/08-22",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "4f1f9a168bdfa6a5e710ebab8db064ce9b0421f9",
+      "latinExcerpt": "Exsultábit cor meum in salutári tuo: cantábo Dómino, qui bona tríbuit mihi: et psallam nómini Dómini altíssimi.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 2,
+      "officePart": "in",
+      "incipit": "Deus misereatur",
+      "properSourcePath": "Sancti/09-14",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "d3a4f0046cbcdf284617e23b6cd43cb606e57792",
+      "latinExcerpt": "Deus misereátur nostri, et benedícat nobis: illúminet vultum suum super nos, et misereátur nostri.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 195,
+      "officePart": "of",
+      "incipit": "Protege Domine",
+      "properSourcePath": "Sancti/09-14",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "d3a4f0046cbcdf284617e23b6cd43cb606e57792",
+      "latinExcerpt": "Prótege, Dómine, plebem tuam per signum sanctæ Crucis ab ómnibus insídiis inimicórum ómnium: ut tibi gratam exhibeámus servitútem, et acceptábile fiat",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 128,
+      "officePart": "in",
+      "incipit": "Dignus est Agnus",
+      "properSourcePath": "Sancti/10-DU",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "a1ca57155d564dd18f00b2e9b36d73f0a55c0c89",
+      "latinExcerpt": "v. Dignus est Agnus, qui occísus est, accípere virtútem, et divinitátem, et sapiéntiam, et fortitúdinem, et honórem. Ipsi glória et impérium in sǽcula",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 210,
+      "officePart": "of",
+      "incipit": "Ave Maria (Offertorium)",
+      "properSourcePath": "Sancti/12-08",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "a3e4862cd0eab54cafcb7e543f4fabd22cf97b78",
+      "latinExcerpt": "Ave, María, grátia plena; Dóminus tecum: benedícta tu in muliéribus, allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 134,
+      "officePart": "al",
+      "incipit": "Salvum me fac",
+      "properSourcePath": "Sancti/12-26",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "c8dceecb4a4fcb95c3bd6852788d11e250bf4810",
+      "latinExcerpt": "Adjuva me, Dómine, Deus meus: salvum me fac propter misericórdiam tuam.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 136,
+      "officePart": "co",
+      "incipit": "Vox in Rama (Com.)",
+      "properSourcePath": "Sancti/12-28",
+      "sourceSection": "Communio",
+      "sourceBlobSha": "9e41240b7c8a143f87d76cccf0ea1db47f81d9b5",
+      "latinExcerpt": "Vox in Rama audíta est, plorátus, et ululátus: Rachel plorans fílios suos, et nóluit consolári, quia non sunt.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 2,
+      "officePart": "in",
+      "incipit": "Deus misereatur",
+      "properSourcePath": "Sancti/05-03",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "753648391c5b2fe8eb4868643de6178cd12381c7",
+      "latinExcerpt": "Deus misereátur nostri, et benedícat nobis: illúminet vultum suum super nos, et misereátur nostri.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 47,
+      "officePart": "of",
+      "incipit": "Dextera Domini",
+      "properSourcePath": "Sancti/05-03",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "753648391c5b2fe8eb4868643de6178cd12381c7",
+      "latinExcerpt": "Déxtera Dómini fecit virtútem, déxtera Dómini exaltávit me: non móriar, sed vivam et narrábo ópera Dómini, allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 34,
+      "officePart": "gr",
+      "incipit": "Justus ut palma",
+      "properSourcePath": "Sancti/05-06",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "8b1e559fa03c0f75e0166fd0dd8dd2d3a733737e",
+      "latinExcerpt": "Justus ut palma florébit: sicut cedrus Líbani multiplicábitur. Allelúja",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 102,
+      "officePart": "of",
+      "incipit": "Mihi autem adhaerere",
+      "properSourcePath": "Sancti/05-13",
+      "sourceSection": "Offertorium",
+      "sourceBlobSha": "ad4cc8726cb92b05050f3d50ae0ce003ed2ea637",
+      "latinExcerpt": "Mihi autem adhærére Deo bonum est, pónere in Dómino Deo spem meam: ut annúntiem omnes prædicatiónes tuas in portis fíliæ Sion, allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 194,
+      "officePart": "al",
+      "incipit": "De excelso",
+      "properSourcePath": "Sancti/05-26",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "501d5bbfdf97133eccf62fc08befb03372fae555",
+      "latinExcerpt": "De excélso misit ignem in óssibus meis, et erudívit me. Allelúja.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 42,
+      "officePart": "in",
+      "incipit": "Cantate Domino",
+      "properSourcePath": "Sancti/08-10",
+      "sourceSection": "Introitus",
+      "sourceBlobSha": "fa0f38551e35689aeab7c5a17ef4c5a3906c103d",
+      "latinExcerpt": "Cantáte Dómino cánticum novum: cantáte Dómino, omnis terra.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 63,
+      "officePart": "tr",
+      "incipit": "Cor meum",
+      "properSourcePath": "Sancti/08-10",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "fa0f38551e35689aeab7c5a17ef4c5a3906c103d",
+      "latinExcerpt": "Probásti, Dómine, cor meum, et visitásti nocte.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    },
+    {
+      "gregobaseId": 153,
+      "officePart": "gr",
+      "incipit": "Beatus vir qui timet (Grad.)",
+      "properSourcePath": "Sancti/09-21",
+      "sourceSection": "Graduale",
+      "sourceBlobSha": "e469538a7559c3c4f5676d547961d52eacaeca94",
+      "latinExcerpt": "Beátus vir, qui timet Dóminum: in mandátis ejus cupit nimis.",
+      "evidenceLevel": "LATIN_SECTION_OCCURRENCE_NOT_SELECTED_1962_PROPER"
+    }
+  ],
+  "productionApproved": 0,
+  "note": "All remaining records are unassessed against other 1962 Proper sources. An occurrence is not a verified liturgical match."
+}
