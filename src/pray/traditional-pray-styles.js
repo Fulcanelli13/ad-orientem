@@ -139,6 +139,13 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 #aoPray435930 .aoDailyClockPanel small{color:var(--muted,#aeb2b8);line-height:1.5}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoDailyClockPanel{transition:none}}
 
+
+/* Approved source-form selector, shown only after the release manifest is populated. */
+#aoPray435930 .aoDailyFormulationChoices{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:0 0 12px}
+#aoPray435930 .aoDailyFormulationChoices button{min-height:40px;padding:8px 12px;border-radius:999px;border:1px solid var(--border,rgba(255,255,255,.2));background:transparent;color:var(--muted,#aeb2b8);font:500 .75rem/1.35 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoDailyFormulationChoices button[aria-pressed="true"]{color:var(--liturgical,#c7ae6d);border-color:var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.07))}
+#aoPray435930 .aoTP381GuideCard .aoDailyFormulationChoices+.aoTP381PrayerCard{padding:0}
+
 `;
 
 export function installTraditionalPrayStyles(doc=globalThis.document){
