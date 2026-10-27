@@ -350,6 +350,63 @@ try{
    }catch(error){out.error=String(error?.message??error)}
    return out;
  })();
+ // Verify the Home-to-Folio handoff that the two independent selector
+ // acceptance tests do not cover: Home may already select Mass II or III.
+ const crossSelections=[];
+ for(const originalNumber of [2,3]){
+   await page.evaluate(async number=>{
+     const rt=globalThis.AO_RUNTIME_V8,date="2026-11-02";
+     rt.resolver.formularies.set(date,number-1);
+     await rt.controller.home.resolve(date);
+     globalThis.AO_CELEBRATION_API.openPreflight();
+   },originalNumber);
+   await page.waitForFunction(number=>{
+     const st=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+     const form=document.querySelector("[data-ao-all-souls-choices]");
+     return st?.resolution?.day?.main?.id==="sancti:11-02m"+number+":1:b"&&
+       form&&!form.hidden&&Boolean(form.querySelector(
+       '[data-ao-all-souls-mass][value="'+number+'"]')?.checked);
+   },originalNumber,{timeout:45000});
+   await page.locator('[data-ao-all-souls-succession="previous"]')
+     .selectOption("IMMEDIATE");
+   const active=await page.evaluate(async number=>{
+     const before=globalThis.AO_RUNTIME_V8.store.getState().resolution;
+     const prep=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
+     return {number,calendarPath:before.day.main.path,
+       sourcePath:prep.session.resolvedMass.proper?.data?.sourcePath,
+       overlays:prep.session.resolvedMass.overlays,
+       decision:prep.session.resolvedMass.provenance?.allSoulsSuccession};
+   },originalNumber);
+   crossSelections.push(active);
+   await page.locator('[data-ao-all-souls-mass][value="1"]').check();
+   const override=await page.evaluate(async()=>{
+     const state=globalThis.AO_RUNTIME_V8.store.getState();
+     const prepared=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
+     return {homeSource:state.resolution.proper.data.sourcePath,
+       selectedSource:prepared.session.resolvedMass.proper?.data?.sourcePath,
+       overlays:prepared.session.resolvedMass.overlays};
+   });
+   crossSelections.push({number:1,from:originalNumber,...override});
+ }
+ record.allSouls.crossHomeToFolio=crossSelections;
+ for(const row of crossSelections){
+   if(row.number>1){
+     check(row.calendarPath==="Sancti/11-02m"+row.number,
+       "NOV02_HOME_ORIGINAL_FORMULARY_CHANGED:"+row.number);
+     check(row.sourcePath==="Sancti/11-02m"+row.number,
+       "NOV02_HOME_TO_FOLIO_SOURCE_MISMATCH:"+row.number);
+     check(row.decision?.massNumber===row.number&&
+       row.decision?.previous==="IMMEDIATE",
+       "NOV02_HOME_TO_FOLIO_RITUS_XIV_MISSING:"+row.number);
+     check(row.overlays.includes("REQUIEM"),
+       "NOV02_HOME_TO_FOLIO_REQUIEM_MISSING:"+row.number);
+   }else{
+     check(row.homeSource==="Sancti/11-02m"+row.from &&
+       row.selectedSource==="Sancti/11-02m1"&&
+       row.overlays.includes("REQUIEM"),
+       "NOV02_FOLIO_OVERRIDE_DID_NOT_PRESERVE_HOME_OR_REQUIEM:"+row.from);
+   }
+ }
  record.allSouls.ui=massUi;
  check(massUi.error===null,"NOV02_NATIVE_UI_OR_PREPARE:"+massUi.error);
  check(massUi.available,"NOV02_NATIVE_THREE_FORMULARY_CONTROL_MISSING");

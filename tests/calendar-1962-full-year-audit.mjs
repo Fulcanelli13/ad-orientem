@@ -66,11 +66,20 @@ try{
     const chunk=dates.slice(offset,offset+12);
     const response=await page.evaluate(async ids=>{
       const resolver=globalThis.AO_RUNTIME_V8?.resolver;
+      const {review1962OrdinaryForCalendarDay}=await import("/src/calendar/ordo-1962-ordinary-rule-review.js");
+      const {review1962PrefaceForCalendarDay}=await import("/src/calendar/ordo-1962-preface-review.js");
       if(!resolver||typeof resolver.resolveDay!=="function")throw Error("Production day resolver unavailable");
       return Promise.all(ids.map(async date=>{
         try{
           const r=await resolver.resolveDay(date);
           const d=r?.day?.main||{},p=r?.proper?.data||{};
+          const ordo=review1962OrdinaryForCalendarDay(r);
+          const preface=review1962PrefaceForCalendarDay(r);
+          const sourceRule=key=>{
+            const decision=ordo[key];
+            return {status:decision.status,value:decision.value,
+              clause:decision.clause||null,sourceUrl:decision.sourceUrl||null};
+          };
           const commRaw=r?.day?.commemorations||d.commemorations||r?.commemorations||[];
           const comms=(Array.isArray(commRaw)?commRaw:[commRaw]).map(x=>
             typeof x==="string"?x:String(x?.title||x?.name||x?.titleFr||x?.id||"")).filter(Boolean);
@@ -80,6 +89,16 @@ try{
             provenance:{dayTitle:d.title??null,dayColour:d.color??d.colour??null,properTitle:p.name??p.title?.en??null,properColour:p.color??p.colour??null,colourPlan:r?.colourPlan??null,dayCommemorations:d.commemorations??null,properCommemorations:p.commemorations??null},
             rawRank:p.rank??d.rank??null,rawColour:(/^tempora:Quad6-5r:/.test(String(d.id??""))?r?.colourPlan?.primary:r?.colourPlan?.massColor)??p.color??p.colour??d.color??d.colour??r?.colourPlan?.name??null,
             commemorations:comms,properStatus:String(r?.proper?.status||""),
+            properSourcePath:p.sourcePath??r?.proper?.sourcePath??null,
+            source1960Preface:{status:r?.preface1960SourceDecision?.status??null,
+              selected:r?.preface1960SourceDecision?.selected??null,
+              rubric:r?.preface1960SourceDecision?.rubric??null},
+            ordoRuleReview:{gloria:sourceRule("gloria"),credo:sourceRule("credo")},
+            prefaceReview:{status:preface.status,reason:preface.reason,
+              expected:preface.expected,actual:preface.actual,heading:preface.heading,
+              clause:preface.clause,basis:preface.basis,sourceUrl:preface.sourceUrl,
+              trilingualTextComplete:preface.trilingualTextComplete,
+              autoPublish:preface.autoPublish},
             composition:{
               commemorations:(p.calendarCommemorations||[]).map(x=>({name:x.name,path:x.path,prayerSourcePath:x.prayerSourcePath||null,rank:x.rank})),
               collects:(p.collects||[]).length,secrets:(p.secrets||[]).length,
@@ -230,7 +249,27 @@ try{
     resolved:rows.length-unresolved.length,unresolved:unresolved.length,
     missingTitleRankColour:incomplete.length,independentChecks:checks.length,
     independentlyMatched:checks.length-discrepancies.length,independentDiscrepancies:discrepancies.length,
+    prefaceReview:{
+      ruleAndTextAgree:rows.filter(x=>x.prefaceReview?.status==="RULE_TEXT_AGREE").length,
+      sourceConflict:rows.filter(x=>x.prefaceReview?.status==="SOURCE_CONFLICT").length,
+      unmapped:rows.filter(x=>x.prefaceReview?.status==="UNMAPPED").length,
+      missingOrUnrecognized:rows.filter(x=>["UNCLASSIFIED_TEXT","TRANSLATIONS_INCOMPLETE"].includes(x.prefaceReview?.status)).length,
+      specialOrUnavailable:rows.filter(x=>["NOT_MASS","WITHHELD"].includes(x.prefaceReview?.status)).length,
+      editoriallyCertified:0,
+      source:"RGMR_1960_482_499",
+      limitation:"General Roman 1962 selected-day Preface identity and source-heading triage, not verified text or permission to replace Mass source."
+    },
     fullYearIndependentlyCertified:false,
+    ordoRules:{
+      gloriaSupported:rows.filter(x=>x.ordoRuleReview?.gloria?.status==="RULE_SUPPORTED").length,
+      credoSupported:rows.filter(x=>x.ordoRuleReview?.credo?.status==="RULE_SUPPORTED").length,
+      bothSupported:rows.filter(x=>x.ordoRuleReview?.gloria?.status==="RULE_SUPPORTED"&&
+        x.ordoRuleReview?.credo?.status==="RULE_SUPPORTED").length,
+      withheldDates:rows.filter(x=>x.ordoRuleReview?.gloria?.status!=="RULE_SUPPORTED"||
+        x.ordoRuleReview?.credo?.status!=="RULE_SUPPORTED").length,
+      authority:"RGMR_1960_AND_ROMAN_BREVIARY_1960",
+      limitation:"General Roman calendar rubric-match only; source-specific Mass selections and particular ordi not certified."
+    },
     status:"EVIDENCE_AUDIT_NOT_CERTIFICATION",
   };
   result={schema:"ao-1962-year-runtime-audit-v1",createdAt:new Date().toISOString(),sources:fixture.sources,
@@ -243,9 +282,579 @@ try{
     ],summary,unresolved,incomplete,discrepancies,checks,rows};
   await mkdir(outputDir,{recursive:true});
   await writeFile(resolve(outputDir,"1962-2026-full-year-audit.json"),JSON.stringify(result,null,2)+"\n","utf8");
+  await writeFile(resolve(outputDir,"1962-2026-preface-review.json"),JSON.stringify({
+    schema:"AO_1962_PREFACE_REVIEW_365_V1",year:2026,
+    authority:"https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+    sourceScope:"GENERAL_ROMAN_1962_PRINCIPAL_MASS_ONLY",
+    sourceResolverAuditOnly:true,changesReader:false,editorialCertification:false,
+    counts:summary.prefaceReview,
+    queue:rows.filter(x=>x.prefaceReview?.status!=="RULE_TEXT_AGREE").map(x=>({
+      date:x.date,principalId:x.mainId,title:x.title,
+      sourcePath:x.properSourcePath||null,rank:x.rawRank,
+      ...x.prefaceReview
+    })),
+    rows:rows.map(x=>({date:x.date,principalId:x.mainId,title:x.title,rank:x.rawRank,
+      sourcePath:x.properSourcePath||null,
+      ...x.prefaceReview}))
+  },null,2)+"\n","utf8");
+  // Full 194-case backlog is derived from ACTUAL 2026 principal source rows.
+  // The 142-slot Sanctoral witness register was checked separately against
+  // original Latin source files. Never turn original rule observations into
+  // an editor's approval of a Mass, Preface, translation or local practice.
+  const sanctoralScreen=JSON.parse(await readFile(resolve(root,
+    "data/research/1962-sanctoral-preface-source-screen-20261027.v1.json"),"utf8"));
+  assert.equal(sanctoralScreen.schema,"AO_1962_SANCTORAL_PREFACE_SCREEN_20261027_V1");
+  assert.equal(sanctoralScreen.cases?.length,142);
+  const uniquePath=new Map(sanctoralScreen.cases.map(x=>[x.canonicalSourcePath,x]));
+  assert.equal(uniquePath.size,142,"Source-file screen has duplicate identities");
+  const cohorts={
+    SANCTORAL_COMMON_FIRST_PASS:[],
+    SANCTORAL_COMMON_RULE_AGREEMENT:[],
+    SANCTORAL_PASCHAL_RULE_CONFLICT:[],
+    SANCTORAL_ASCENSION_RULE_CONFLICT:[],
+    SANCTORAL_APOSTLE_REDIRECT_RULE_CONFLICT:[],
+    TEMPORAL_FORM_RULE_UNMAPPED:[],
+    SATURDAY_BVM_COMMON_UNMAPPED:[],
+    GENERIC_FERIA_UNMAPPED:[],
+    LATER_OPTIONAL_PREFACE_AUTHORITY:[],
+    SOURCE_MATCHED_SEASONAL_FERIA:[],
+    SANCTORAL_MARIAN_SOURCE_CONFLICT:[],
+    ORIGINAL_COMMON_SANCTORAL_MATCH:[],
+    GENERIC_NATIVITY_EPIPHANY_CONFLICT:[],
+    GENERIC_PRELENT_COMMON_AGREEMENT:[],
+    BVM_SATURDAY_MARIAN_CONFLICT:[],
+    ADVENT_FERIA_COMMON_AGREEMENT:[],
+    SEPTEMBER_EMBER_COMMON_AGREEMENT:[],
+    GAUDETE_TRINITY_SOURCE_CONFLICT:[],
+    EASTER_SUNDAY_PASCHAL_CONFLICT:[],
+    CORPUS_CHRISTI_POST_1960_COMMON:[],
+  };
+  for(const row of rows){
+    const id=row.mainId,review=row.prefaceReview,sourcePath=row.properSourcePath;
+    let group=null;
+    if(review?.status==="RULE_TEXT_AGREE"&&
+       /^SOURCE_MATCHED_INHERITED_(?:PASCHAL|ASCENSION)_FERIA$/.test(review.basis??""))
+      group="SOURCE_MATCHED_SEASONAL_FERIA";
+    else if(review?.status==="RULE_TEXT_AGREE"&&
+       /^(?:EXPLICIT_1960_TRANSFIGURATION_COMMON|EXPLICIT_ASSUMPTION_VIGIL_COMMON)$/.test(review.basis??""))
+      group="ORIGINAL_COMMON_SANCTORAL_MATCH";
+    else if(review?.status==="SOURCE_CONFLICT"&&
+       review.basis==="ORIGINAL_MARIAN_PREFATIO_SOURCE_1960")
+      group="SANCTORAL_MARIAN_SOURCE_CONFLICT";
+    else if(review?.status==="SOURCE_CONFLICT"&&
+      /^(?:SOURCE_MATCHED_NATIVITY_SEASON_FERIA|SOURCE_MATCHED_EPIPHANY_SEASON_FERIA)$/.test(review.basis??""))
+      group="GENERIC_NATIVITY_EPIPHANY_CONFLICT";
+    else if(review?.status==="RULE_TEXT_AGREE"&&
+      review.basis==="SOURCE_MATCHED_PRELENT_FERIA")
+      group="GENERIC_PRELENT_COMMON_AGREEMENT";
+    else if(review?.status==="SOURCE_CONFLICT"&&
+      review.basis==="SOURCE_MATCHED_BVM_SATURDAY_MASS")
+      group="BVM_SATURDAY_MARIAN_CONFLICT";
+    else if(review?.status==="RULE_TEXT_AGREE"&&
+      review.basis==="SOURCE_MATCHED_ADVENT_FERIA_NO_UNIVERSAL_SEASONAL_PREFACE")
+      group="ADVENT_FERIA_COMMON_AGREEMENT";
+    else if(review?.status==="RULE_TEXT_AGREE"&&
+      review.basis==="SOURCE_MATCHED_SEPTEMBER_EMBER_FERIA")
+      group="SEPTEMBER_EMBER_COMMON_AGREEMENT";
+    else if(review?.status==="SOURCE_CONFLICT"&&
+      review.basis==="SOURCE_MATCHED_GAUDETE_ADVENT_SUNDAY")
+      group="GAUDETE_TRINITY_SOURCE_CONFLICT";
+    else if(review?.status==="SOURCE_CONFLICT"&&
+      review.basis==="SOURCE_MATCHED_THIRD_POST_EASTER_SUNDAY")
+      group="EASTER_SUNDAY_PASCHAL_CONFLICT";
+    else if(review?.status==="RULE_TEXT_AGREE"&&
+      review.basis==="ICRSP_POST_1960_CORPUS_CHRISTI_COMMON")
+      group="CORPUS_CHRISTI_POST_1960_COMMON";
+    else if(review?.status==="RULE_TEXT_AGREE"&&review.basis==="ORIGINAL_SCREENED_NON_SEASONAL_SANCTORAL_COMMON")
+      group="SANCTORAL_COMMON_RULE_AGREEMENT";
+    else if(review?.status==="SOURCE_CONFLICT"&&review.basis==="SOURCE_SCREENED_PASCHAL_SANCTORAL_NO_PROPER")
+      group="SANCTORAL_PASCHAL_RULE_CONFLICT";
+    else if(review?.status==="SOURCE_CONFLICT"&&review.basis==="SOURCE_SCREENED_ASCENSION_SANCTORAL_NO_PROPER")
+      group="SANCTORAL_ASCENSION_RULE_CONFLICT";
+    else if(review?.status==="SOURCE_CONFLICT"&&review.basis==="SOURCE_WITNESSED_MAY11_APOSTLE_REDIRECT")
+      group="SANCTORAL_APOSTLE_REDIRECT_RULE_CONFLICT";
+    else if(review?.status==="UNMAPPED"){
+      if(id.startsWith("sancti:")){
+        group=review.actual==="COMMUNIS"?"SANCTORAL_COMMON_FIRST_PASS":
+          "LATER_OPTIONAL_PREFACE_AUTHORITY";
+      }else if(id.startsWith("tempora:"))group="TEMPORAL_FORM_RULE_UNMAPPED";
+      else if(id.startsWith("commune:"))group="SATURDAY_BVM_COMMON_UNMAPPED";
+      else if(id===":feria:4:w")group="GENERIC_FERIA_UNMAPPED";
+      else throw Error("Unknown unmapped source-family: "+row.date+" "+id);
+    }
+    if(!group)continue;
+    const witness=uniquePath.get(sourcePath);
+    cohorts[group].push({
+      date:row.date,principalId:id,sourcePath,
+      heading:review.heading,observedCategory:review.actual,
+      decision:review.status,expected:review.expected,
+      ruleClause:review.clause,evidenceUrl:review.sourceUrl,
+      independentSourceWitness:witness?{
+        originalUrl:witness.upstreamSourceUrl,
+        originalPrefatioRuleTokens:witness.upstreamRuleTokens,
+        sourceScreenStatus:witness.caseStatus,
+        note:witness.reviewNote,
+      }:null,
+      autoPublish:false,changesReader:false,
+    });
+  }
+  const sizes=Object.fromEntries(Object.entries(cohorts).map(([k,v])=>[k,v.length]));
+  assert.deepEqual(sizes,{
+    SANCTORAL_COMMON_FIRST_PASS:6,
+    SANCTORAL_COMMON_RULE_AGREEMENT:104,
+    SANCTORAL_PASCHAL_RULE_CONFLICT:15,
+    SANCTORAL_ASCENSION_RULE_CONFLICT:5,
+    SANCTORAL_APOSTLE_REDIRECT_RULE_CONFLICT:1,
+    TEMPORAL_FORM_RULE_UNMAPPED:0,
+    SATURDAY_BVM_COMMON_UNMAPPED:0,
+    GENERIC_FERIA_UNMAPPED:0,
+    LATER_OPTIONAL_PREFACE_AUTHORITY:2,
+    SOURCE_MATCHED_SEASONAL_FERIA:9,
+    SANCTORAL_MARIAN_SOURCE_CONFLICT:9,
+    ORIGINAL_COMMON_SANCTORAL_MATCH:2,
+    GENERIC_NATIVITY_EPIPHANY_CONFLICT:6,
+    GENERIC_PRELENT_COMMON_AGREEMENT:4,
+    BVM_SATURDAY_MARIAN_CONFLICT:12,
+    ADVENT_FERIA_COMMON_AGREEMENT:13,
+    SEPTEMBER_EMBER_COMMON_AGREEMENT:3,
+    GAUDETE_TRINITY_SOURCE_CONFLICT:1,
+    EASTER_SUNDAY_PASCHAL_CONFLICT:1,
+    CORPUS_CHRISTI_POST_1960_COMMON:1,
+  },"Bulk source cohorts changed: reconcile before reporting any coverage gain");
+  assert.equal(Object.values(sizes).reduce((a,b)=>a+b,0),194,
+    "The original 194-case worklist must account for every promotion and still-withheld case");
+  const sanctoralReviewed=[...cohorts.SANCTORAL_COMMON_FIRST_PASS,
+    ...cohorts.SANCTORAL_COMMON_RULE_AGREEMENT,
+    ...cohorts.SANCTORAL_PASCHAL_RULE_CONFLICT,
+    ...cohorts.SANCTORAL_ASCENSION_RULE_CONFLICT,
+    ...cohorts.SANCTORAL_APOSTLE_REDIRECT_RULE_CONFLICT,
+    ...cohorts.SANCTORAL_MARIAN_SOURCE_CONFLICT,
+    ...cohorts.ORIGINAL_COMMON_SANCTORAL_MATCH];
+  assert.equal(sanctoralReviewed.length,142);
+  for(const x of sanctoralReviewed){
+    assert.ok(x.independentSourceWitness,"One of the 142 source identities was never screened: "+x.date);
+    assert.ok(x.sourcePath.startsWith("Sancti/"));
+  }
+  assert.equal(new Set(sanctoralReviewed.map(x=>x.sourcePath)).size,142);
+  for(const x of cohorts.SANCTORAL_MARIAN_SOURCE_CONFLICT)
+    assert.ok(x.independentSourceWitness.originalPrefatioRuleTokens.some(t=>/^Prefatio=Maria/.test(t)),
+      x.date+" promoted without original Marian source witness");
+  for(const x of cohorts.ORIGINAL_COMMON_SANCTORAL_MATCH)
+    assert.ok(x.independentSourceWitness.originalPrefatioRuleTokens.some(t=>/Prefatio=Communis/.test(t)),
+      x.date+" source did not expressly select Common");
+  assert.equal(sanctoralScreen.cases.filter(x=>x.upstreamRuleTokens.length).length,11);
+  assert.deepEqual(sanctoralScreen.secondPass2026?.groups,{
+    NONSEASONAL_SANCTORAL_COMMON_AGREEMENT:104,
+    EXCEPTIONAL_FEAST_SOURCE_HOLD:6,
+    PASCHAL_SANCTORAL_SOURCE_CONFLICT:15,
+    APOSTLE_REDIRECT_PREFACE_CONFLICT:1,
+    ASCENSION_SANCTORAL_SOURCE_CONFLICT:5,
+  },"Original 131-file research partition changed without deliberate evidence update");
+  const sourceDecisionMap=new Map(sanctoralScreen.cases
+    .filter(x=>x.secondPass2026Family)
+    .map(x=>[x.canonicalSourcePath,x.secondPass2026Family]));
+  for(const [group,family] of [
+    ["SANCTORAL_COMMON_RULE_AGREEMENT","NONSEASONAL_SANCTORAL_COMMON_AGREEMENT"],
+    ["SANCTORAL_PASCHAL_RULE_CONFLICT","PASCHAL_SANCTORAL_SOURCE_CONFLICT"],
+    ["SANCTORAL_ASCENSION_RULE_CONFLICT","ASCENSION_SANCTORAL_SOURCE_CONFLICT"],
+    ["SANCTORAL_APOSTLE_REDIRECT_RULE_CONFLICT","APOSTLE_REDIRECT_PREFACE_CONFLICT"],
+    ["SANCTORAL_COMMON_FIRST_PASS","EXCEPTIONAL_FEAST_SOURCE_HOLD"],
+  ])for(const x of cohorts[group])
+    assert.equal(sourceDecisionMap.get(x.sourcePath),family,
+      x.date+" independent Sanctoral source research does not support new code classification");
+  const exactPromotions=["2026-04-15","2026-04-16","2026-04-17","2026-04-20",
+    "2026-04-23","2026-05-06","2026-05-08","2026-05-21","2026-05-22"];
+  assert.deepEqual(cohorts.SOURCE_MATCHED_SEASONAL_FERIA.map(x=>x.date),
+    exactPromotions,"The adopted inherited-seasonal source family changed");
+  const temporalScreen=JSON.parse(await readFile(resolve(root,
+    "data/research/1962-temporal-preface-source-screen-20261027.v1.json"),"utf8"));
+  assert.equal(temporalScreen.schema,"AO_1962_TEMPORAL_PREFACE_SOURCE_SCREEN_20261027_V1");
+  assert.equal(temporalScreen.sourceCases.length,19);
+  const selectedTemporal=[...cohorts.TEMPORAL_FORM_RULE_UNMAPPED,
+    ...cohorts.ADVENT_FERIA_COMMON_AGREEMENT,
+    ...cohorts.SEPTEMBER_EMBER_COMMON_AGREEMENT,
+    ...cohorts.GAUDETE_TRINITY_SOURCE_CONFLICT,
+    ...cohorts.EASTER_SUNDAY_PASCHAL_CONFLICT,
+    ...cohorts.CORPUS_CHRISTI_POST_1960_COMMON];
+  assert.equal(selectedTemporal.length,19);
+  assert.deepEqual(new Set(selectedTemporal.map(x=>x.sourcePath)),
+    new Set(temporalScreen.sourceCases.map(x=>x.sourcePath)));
+  // Join the 22 already-recorded generic feria/Saturday BVM cases to the
+  // genuine day resolver identities; the BVM donor C10 files have NOT been
+  // independently retrieved and this fact is carried through the report.
+  const extraSource=JSON.parse(await readFile(resolve(root,
+    "data/research/1962-generic-feria-bvm-preface-screen-20261027.v1.json"),"utf8"));
+  assert.equal(extraSource.schema,"AO_1962_GENERIC_FERIA_BVM_PREFACE_SCREEN_20261027_V1");
+  assert.equal(extraSource.cases.length,22);
+  const extraClassified=[
+    ...cohorts.GENERIC_NATIVITY_EPIPHANY_CONFLICT,
+    ...cohorts.GENERIC_PRELENT_COMMON_AGREEMENT,
+    ...cohorts.BVM_SATURDAY_MARIAN_CONFLICT,
+  ];
+  assert.equal(extraClassified.length,22);
+  for(const original of extraSource.cases){
+    const actual=extraClassified.find(x=>x.date===original.date);
+    assert.ok(actual,"Missing recorded source candidate: "+original.date);
+    assert.equal(actual.principalId,original.principalId);
+    assert.equal(actual.sourcePath,original.canonicalProperPath);
+    assert.equal(actual.expected,original.expectedPreface);
+    assert.equal(actual.ruleClause,original.rubricClause);
+  }
+  assert.equal(extraSource.cases.filter(x=>x.originalFileIndependentlyRecovered===false).length,12,
+    "Do not misstate BVM Saturday donor-file recovery");
+  assert.equal(cohorts.CORPUS_CHRISTI_POST_1960_COMMON[0].date,"2026-06-04");
+  assert.equal(cohorts.CORPUS_CHRISTI_POST_1960_COMMON[0].expected,"COMMUNIS",
+    "ICRSP post-1960 Common must not select pre-1960 Nativity or later optional Sacrament");
+  for(const x of cohorts.BVM_SATURDAY_MARIAN_CONFLICT)
+    assert.equal(new Date(x.date+"T12:00:00Z").getUTCDay(),6,
+      x.date+" Marian Saturday must be an actual Saturday");
+  assert.equal(summary.prefaceReview.unmapped,8);
+  assert.equal(summary.prefaceReview.ruleAndTextAgree,255);
+  assert.equal(summary.prefaceReview.sourceConflict,100);
+  await writeFile(resolve(outputDir,"1962-2026-preface-bulk-triage.json"),JSON.stringify({
+    schema:"AO_1962_PREFACE_2026_BULK_TRIAGE_V1",
+    year:2026,sourceAuditRun:"Live 1962 shared canonical resolver and independent Preface audit",
+    sourceRegister:"data/research/1962-sanctoral-preface-source-screen-20261027.v1.json",
+    temporalRegister:"data/research/1962-temporal-preface-source-screen-20261027.v1.json",
+    genericFeriaAndBvmRegister:"data/research/1962-generic-feria-bvm-preface-screen-20261027.v1.json",
+    totalHistoricalUnmappedWorklist:194,
+    newlySourceMatchedWithheldFromEditorialApproval:136,
+    newlySourceIdentifiedConflicts:50,
+    stillUnmapped:8,
+    stillRawSourceConflicts:100,
+    independentPrefacesEditoriallyCertified:0,
+    groupSizes:sizes,
+    sourceScope:"GENERAL_ROMAN_1962",
+    automaticTextReplacement:false,automaticPublication:false,
+    cohortRows:cohorts,
+  },null,2)+"\n","utf8");
+  console.log("CALENDAR_1962_PREFACE_BULK_TRIAGE="+JSON.stringify({
+    groupSizes:sizes,sanctoralNewCommonAgreements:104,
+    sanctoralNewSeasonalSourceConflicts:20,
+    sanctoralApostleSourceConflicts:1,
+    sixExceptionalSanctoralHolds:6,
+    matchedSeasonalFerias:9,matchedOriginalCommon:2,
+    matchedAdditionalCommonSeasonal:21,marianSourceConflicts:9,
+    identifiedAdditionalSourceConflicts:41,unmapped:8,
+    originalUnmappedWorklist:194,
+    originalSanctoralSourcesScreened:142,
+    sourcePrefatioDirectivesObserved:11,
+    unverifiedSourceSelectionsRemaining:8,
+    editoriallyCertified:0,
+  }));
+
+
+  // Reconcile every raw source mismatch against the SAME native reader
+  // recovery, source identity binding and Preface card slot used in R17.
+  // Do not equate an audit-source mismatch to a visible reader defect, or
+  // assume source-owner existence proves that its text was recovered.
+  // This is read-only, emits provenance, and never repairs Mass sources.
+  const rawConflictCases=rows.filter(x=>x.prefaceReview?.status==="SOURCE_CONFLICT")
+    .map(x=>({date:x.date,id:x.mainId,path:x.properSourcePath,
+      sourceExpected:x.prefaceReview.expected,
+      sourceActual:x.prefaceReview.actual,sourceBasis:x.prefaceReview.basis}));
+  assert.equal(rawConflictCases.length,100,"Reader/source reconciliation must inspect every raw conflict");
+  const readerAuditRows=[];
+  for(let offset=0;offset<rawConflictCases.length;offset+=8){
+    const sample=rawConflictCases.slice(offset,offset+8);
+    const inspected=await page.evaluate(async cases=>{
+      const resolver=globalThis.AO_RUNTIME_V8?.resolver;
+      const {recoverReaderProperOmissions,authenticated1962PrefaceRecoveryOwner}=
+        await import("/src/mass/reader-proper-runtime-recovery.js");
+      const {adaptV346ResolvedMass}=await import("/src/mass/host-adapter.js");
+      const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
+      const {inspect1962PrefaceSelection}=await import("/src/mass/1962-preface-decision.js");
+      const {classify1962PrefaceHeading}=await import("/src/calendar/ordo-1962-preface-review.js");
+      const head=source=>String(source?.lat??source?.la??"").trim().split(/\r?\n/)[0]??"";
+      const report=[];
+      for(const entry of cases){
+        const record={...entry};
+        try{
+          const day=await resolver.resolveDay(entry.date);
+          const original=day?.proper?.data;
+          const id=day?.day?.main?.id;
+          const path=original?.sourcePath;
+          record.selectedSourcePath=path??null;
+          record.selectedPrincipalId=id??null;
+          record.originalHeading=head(original?.preface);
+          const initial=classify1962PrefaceHeading(record.originalHeading);
+          record.originalActual=initial;
+          if(day?.status!=="ready"||day?.proper?.status!=="ready"||
+             !original||id!==entry.id||path!==entry.path||initial!==entry.sourceActual){
+            record.result="SOURCE_IDENTITY_OR_RAW_HEADING_CHANGED";
+            report.push(record);
+            continue;
+          }
+          const owner=authenticated1962PrefaceRecoveryOwner(id,path,entry.date);
+          record.recoveryOwnerSection=owner?.section??null;
+          record.recoveryOwnerScope=owner?.scope??null;
+          record.recoveryOwnerVariant=owner?.variant??null;
+          // Exactly the native source recovery that browser-entry uses.
+          const corrected=await recoverReaderProperOmissions(original,{
+            hostResolver:resolver.properResolver,principalCelebrationId:id,
+            calendarDate:entry.date
+          });
+          const correctedLatin=head(corrected?.preface);
+          const category=classify1962PrefaceHeading(correctedLatin);
+          const legacy={canStart:true,date:entry.date,
+            calendarDay:{id,title:day?.day?.main?.title??null},
+            celebrationId:"mass_of_day",requestedCelebrationId:"mass_of_day",
+            celebrationType:"CALENDAR",properSource:path};
+          const adapted=adaptV346ResolvedMass(legacy,{form:"low",proper:corrected});
+          const adaptedId=adapted?.proper?.data?.principalCelebrationId??null;
+          const selectedPreface=adapted?.proper?.data?.preface;
+          const slot=properToReaderSlots(adapted?.proper?.data,{language:"fr"})?.slots?.PREFACE;
+          record.selectedHeading=head(selectedPreface);
+          record.selectedCategory=classify1962PrefaceHeading(record.selectedHeading);
+          record.recoveredHeading=correctedLatin;
+          record.recoveredCategory=category;
+          record.finalReaderSlot=slot?.status??"UNKNOWN";
+          record.sourceOwnerValidation=inspect1962PrefaceSelection({
+            principalCelebrationId:id,selectedPreface,
+            sourcePath:path,calendarDate:entry.date
+          })?.status??"UNKNOWN";
+          record.nativeAdapterPrincipalId=adaptedId;
+          record.selectedPrefaceSource=selectedPreface?.sourcePath??null;
+          record.selectedPrefaceSection=selectedPreface?.prefaceSection??null;
+          record.selectedPrefaceVariant=selectedPreface?.prefaceVariant??null;
+          record.selectedMarianForm=selectedPreface?.marianForm??null;
+          record.residualPrefaceDate=selectedPreface?.residualPrefaceDate??null;
+          record.sourceRecoveryChangedHeading=record.originalHeading!==record.selectedHeading;
+          record.trilingualSelected=Boolean(
+            String(selectedPreface?.lat??selectedPreface?.la??"").trim()&&
+            String(selectedPreface?.en??"").trim()&&String(selectedPreface?.fr??"").trim());
+          record.identityBound=adaptedId===id;
+          if(record.selectedCategory===entry.sourceExpected&&
+             slot?.status==="READY"&&record.trilingualSelected&&record.identityBound){
+            record.result="READER_SELECTED_CATEGORY_MATCH";
+          }else if(slot?.status==="READY"&&record.selectedCategory!==entry.sourceExpected){
+            // A missing principal binding is especially dangerous here:
+            // the native reader actually considers the WRONG Common Preface
+            // READY. Do not hide these under a generic identity-warning label.
+            record.result="READER_WRONG_PREFACE_READY";
+          }else if(!record.identityBound){
+            record.result="NATIVE_READER_SOURCE_IDENTITY_UNBOUND";
+          }else if(record.selectedCategory===entry.sourceExpected){
+            record.result="READER_CORRECT_CATEGORY_BUT_SLOT_NOT_READY";
+          }else if(slot?.status==="READY"){
+            record.result="READER_CORRECT_CATEGORY_LANGUAGE_OR_VALIDATION_INCOMPLETE";
+          }else{
+            record.result="READER_PREFACE_BLOCKED_OR_MISSING";
+          }
+        }catch(error){
+          record.result="READER_RECONCILIATION_ERROR";
+          record.error=String(error?.stack??error).slice(0,900);
+        }
+        report.push(record);
+      }
+      return report;
+    },sample);
+    readerAuditRows.push(...inspected);
+  }
+  assert.equal(readerAuditRows.length,100);
+  assert.deepEqual(readerAuditRows.map(x=>x.date),rawConflictCases.map(x=>x.date),
+    "Native reader comparisons missing or reordered a raw conflict");
+  // The 100-case source queue includes 22 source-specific Marian
+  // feast/Saturday cases plus TWO separately owned calendar celebrations:
+  // 7 October Rosary and 8 December Immaculate Conception. Do not extend
+  // the source-specific interpolation assertion to those named exceptions.
+  const namedMarianDates=new Set(["2026-10-07","2026-12-08"]);
+  const marianCases=readerAuditRows.filter(x=>x.sourceExpected==="MARIA"&&
+    !namedMarianDates.has(x.date));
+  assert.equal(marianCases.length,22,"Source-specific 1962 Marian scope changed");
+  assert.equal(readerAuditRows.filter(x=>x.sourceExpected==="MARIA").length,24,
+    "Full raw Marian conflict scope changed");
+  const special=marianCases.find(x=>x.date==="2026-02-11");
+  assert.equal(special?.result,"READER_PREFACE_BLOCKED_OR_MISSING",
+    "Contradictory Lourdes source must never silently print a Common Preface");
+  assert.equal(special?.finalReaderSlot,"MISSING");
+  for(const item of marianCases.filter(x=>x.date!=="2026-02-11")){
+    assert.equal(item.result,"READER_SELECTED_CATEGORY_MATCH",
+      item.date+": authenticated 1962 Marian form was not selected in native reader");
+    assert.ok(item.selectedMarianForm,item.date+" Marian form interpolation not identified");
+    assert.equal(item.selectedPrefaceSource,"Ordo/Prefationes",item.date);
+    assert.equal(item.nativeAdapterPrincipalId,item.id,item.date);
+  }
+  assert.equal(marianCases.filter(x=>x.result==="READER_SELECTED_CATEGORY_MATCH").length,21);
+  for(const date of namedMarianDates){
+    const item=readerAuditRows.find(x=>x.date===date);
+    assert.equal(item?.sourceExpected,"MARIA",date+": source category changed");
+    assert.equal(item?.result,"READER_SELECTED_CATEGORY_MATCH",
+      date+": named Marian Preface still wrong in native reader");
+    assert.equal(item?.finalReaderSlot,"READY",date);
+    assert.equal(item?.selectedPrefaceSource,"Ordo/Prefationes",date);
+    assert.equal(item?.selectedPrefaceSection,"Maria",date);
+    assert.equal(item?.recoveryOwnerSection,"Maria",date);
+    assert.equal(item?.nativeAdapterPrincipalId,item?.id,date);
+    assert.equal(item?.trilingualSelected,true,date);
+    assert.equal(item?.selectedMarianForm,null,
+      date+": legacy named form must not impersonate source-specific Marian form");
+  }
+
+  // 15 Easter saint Masses and five Ascension saint Masses must choose
+  // the named Preface in the native 65-card source path, not display
+  // a Common text with a green READY status.
+  const seasonalSaintCases=readerAuditRows.filter(x=>
+    x.id?.startsWith("sancti:")&&
+    (x.sourceExpected==="PASCHALIS"||x.sourceExpected==="ASCENSIO"));
+  assert.equal(seasonalSaintCases.length,20,
+    "Seasonal source screen no longer matches actual 2026 principal Masses");
+  assert.equal(seasonalSaintCases.filter(x=>x.sourceExpected==="PASCHALIS").length,15);
+  assert.equal(seasonalSaintCases.filter(x=>x.sourceExpected==="ASCENSIO").length,5);
+  for(const item of seasonalSaintCases){
+    assert.equal(item.result,"READER_SELECTED_CATEGORY_MATCH",
+      item.date+": seasonal saint's Mass has uncorrected native Preface");
+    assert.equal(item.finalReaderSlot,"READY",item.date);
+    assert.equal(item.selectedPrefaceSource,"Ordo/Prefationes",item.date);
+    assert.equal(item.selectedPrefaceSection,
+      item.sourceExpected==="PASCHALIS"?"Pasch":"Asc",item.date);
+    assert.equal(item.selectedPrefaceVariant,
+      item.sourceExpected==="PASCHALIS"?"EASTERTIDE":null,item.date);
+    assert.equal(item.nativeAdapterPrincipalId,item.id,item.date);
+    assert.equal(item.trilingualSelected,true,item.date);
+  }
+  const philipJames=readerAuditRows.find(x=>x.date==="2026-05-11");
+  assert.equal(philipJames?.sourceExpected,"APOSTOLI",
+    "11 May source must remain an Apostles' Preface, not Eastertide");
+  assert.equal(philipJames?.result,"READER_SELECTED_CATEGORY_MATCH",
+    "11 May Apostles' Preface must not be printed as a READY Common");
+  assert.equal(philipJames?.selectedPrefaceSection,"Apostolis");
+  assert.equal(philipJames?.selectedPrefaceSource,"Ordo/Prefationes");
+  assert.equal(philipJames?.finalReaderSlot,"READY");
+  assert.equal(philipJames?.nativeAdapterPrincipalId,"sancti:05-11r:2:r");
+  const residual2026=[
+    "2026-01-02","2026-01-05","2026-01-07","2026-01-08",
+    "2026-01-09","2026-01-12","2026-03-19","2026-05-01",
+    "2026-05-17","2026-11-29","2026-12-06","2026-12-13",
+    "2026-12-20"];
+  assert.equal(residual2026.length,13);
+  for(const date of residual2026){
+    const item=readerAuditRows.find(x=>x.date===date);
+    assert.ok(item,date+": residual Preface absent from raw conflict cohort");
+    assert.equal(item?.result,"READER_SELECTED_CATEGORY_MATCH",
+      date+": original named Preface still incorrect in native reader");
+    assert.equal(item?.sourceOwnerValidation,"MATCH",
+      date+": exact source and selected form validation failed");
+    assert.equal(item?.residualPrefaceDate,date);
+    assert.equal(item?.selectedPrefaceSource,"Ordo/Prefationes");
+    assert.equal(item?.finalReaderSlot,"READY");
+    assert.equal(item?.trilingualSelected,true);
+    assert.equal(item?.nativeAdapterPrincipalId,item?.id);
+  }
+  const readerResultCounts=Object.fromEntries(
+    [...new Set(readerAuditRows.map(x=>x.result))].sort()
+      .map(key=>[key,readerAuditRows.filter(x=>x.result===key).length]));
+  const sourceOwnerCount=readerAuditRows.filter(x=>x.recoveryOwnerSection).length;
+  const matchedNativeReady=readerResultCounts.READER_SELECTED_CATEGORY_MATCH??0;
+  const wrongNativeReady=readerResultCounts.READER_WRONG_PREFACE_READY??0;
+  const blockedNative=readerResultCounts.READER_PREFACE_BLOCKED_OR_MISSING??0;
+  // The contradictory 11 February Lourdes donor is an intentional
+  // fail-closed hold. 99 correct READY slots + this one explicit MISSING
+  // slot is the only acceptable completion of the 100-case reader review.
+  const blockedLourdes=readerAuditRows.find(x=>x.date==="2026-02-11");
+  const singleExplicitHold=blockedNative===1&&
+    blockedLourdes?.result==="READER_PREFACE_BLOCKED_OR_MISSING"&&
+    blockedLourdes?.finalReaderSlot==="MISSING";
+  const readerLiturgicalSourceReleaseReady=wrongNativeReady===0&&
+    matchedNativeReady===99&&singleExplicitHold;
+  // Zero global clearance is claimed when actual native slot status or
+  // source ownership is unavailable. A matching heading alone is NOT enough.
+  assert.equal(Object.values(readerResultCounts).reduce((a,b)=>a+b,0),100);
+  await writeFile(resolve(outputDir,"1962-2026-preface-reader-disposition.json"),
+    JSON.stringify({
+      schema:"AO_1962_2026_READER_PREFACE_SOURCE_DISPOSITION_V1",
+      sourceAuthority:"Existing 2026 production resolver and RGMR §§482–499 Preface audit",
+      readerBoundary:"R17 recoverReaderProperOmissions -> adaptV346ResolvedMass -> properToReaderSlots",
+      sourceScope:"GENERAL_ROMAN_1962_SELECTED_MASS_OF_DAY",
+      totalRawCanonicalConflicts:100,
+      authenticatedRecoveryOwnerCases:sourceOwnerCount,
+      readerSelectedCategoryMatches:matchedNativeReady,
+      readerWrongPrefaceReady:wrongNativeReady,
+      readerPrefaceBlockedOrMissing:blockedNative,
+      marianPrefaceSourceCases:24,
+      marianPrefacesRecoveredReady:23,
+      sourceSpecificMarianCases:22,
+      namedRosaryAndImmaculateRecoveredReady:2,
+      marianLourdesBookConflictBlocked:1,
+      seasonalSanctoralPrefacesRecoveredReady:20,
+      residual2026PrefacesRecoveredReady:13,
+    may11ApostlesPrefaceRecoveredReady:1,
+      readerLiturgicalSourceReleaseReady,
+      unresolvedOrWrongReaderCases:100-matchedNativeReady,
+      readerResultCounts,
+      limitations:[
+        "READY native source slot and Latin category match do not certify the complete Preface text or physical phone rendering",
+        "A source recovery owner alone is not proof its selected trilingual text is ready",
+        "Votive, particular Ordo and optional 2020 Prefaces have not been authorized",
+        "No Mass source, permanent donor text or 65-card reader code has been mutated",
+        "Check separate R17 native-phone regressions before production publication"
+      ],
+      autoPublish:false,changesReader:false,editoriallyCertified:0,
+      rows:readerAuditRows
+    },null,2)+"\n","utf8");
+  console.log("CALENDAR_1962_READER_PREFACE_DISPOSITION="+JSON.stringify({
+    rawConflicts:100,withReaderRecoveryOwners:sourceOwnerCount,
+    readerNativeReadyAndCategoryMatched:matchedNativeReady,
+    readerWrongPrefaceNativeReady:wrongNativeReady,
+    marianPrefacesRecoveredReady:23,marianLourdesBookConflictBlocked:1,
+    seasonalSanctoralPrefacesRecoveredReady:20,
+    residual2026PrefacesRecoveredReady:13,
+    readerLiturgicalSourceReleaseReady,
+    readerNotConfirmedCorrect:100-matchedNativeReady,
+    categories:readerResultCounts,editoriallyCertified:0
+  }));
+
   console.log("CALENDAR_1962_YEAR_AUDIT_SUMMARY="+JSON.stringify(summary));
   console.log("CALENDAR_1962_YEAR_AUDIT_TOP_FINDINGS="+JSON.stringify(discrepancies.slice(0,30).map(x=>({date:x.date,problems:x.problems,title:x.actual?.title,rank:x.actual?.rawRank,color:x.actual?.rawColour}))));
   assert.equal(rows.length,365,"Production resolver sweep must cover every day of 2026");
+  // Full year *screening* does not confer independent certification, but
+  // it must not misreport the living 2026 IV feria as a votive Mass.
+  const oct26=rows.find(x=>x.date==="2026-10-26");
+  assert.equal(oct26.mainId,":feria:4:w","Live general Roman feria identity changed");
+  assert.equal(oct26.ordoRuleReview.gloria.value,false);
+  assert.equal(oct26.ordoRuleReview.credo.value,false);
+  const prefaceDays=new Map([
+    ["2026-01-06","RULE_TEXT_AGREE"],
+    ["2026-02-02","RULE_TEXT_AGREE"],
+    ["2026-04-05","RULE_TEXT_AGREE"],
+    ["2026-05-24","SOURCE_CONFLICT"],
+    ["2026-06-07","RULE_TEXT_AGREE"],
+    ["2026-06-14","RULE_TEXT_AGREE"],
+    ["2026-10-07","SOURCE_CONFLICT"],
+    ["2026-10-11","RULE_TEXT_AGREE"],
+    ["2026-12-08","SOURCE_CONFLICT"]
+  ]);
+  for(const [date,status] of prefaceDays){
+    const row=rows.find(x=>x.date===date);
+    assert.equal(row?.prefaceReview?.status,status,
+      date+" 1962 Preface rule should detect the real source heading without reader recovery");
+  }
+  // Regression: the already merged shared Mass source fix must remain
+  // effective in the actual 2026 Calendar resolver, not merely the R17
+  // reader. Compare against original 1960 source-rule credentials.
+  for(const [date,principal,sourcePath] of [
+    ["2026-06-07","tempora:Pent02-0r:2:g","Tempora/Pent02-0r"],
+    ["2026-06-14","tempora:Pent03-0r:2:g","Tempora/Pent03-0r"]
+  ]){
+    const row=rows.find(x=>x.date===date);
+    assert.equal(row?.mainId,principal,date+": protected 1962 Sunday changed");
+    assert.equal(row?.properSourcePath,sourcePath,date+": underlying source changed");
+    assert.equal(row?.source1960Preface?.status,"SOURCE_VERIFIED",
+      date+": expected actual production Prefatio1960 override was not installed");
+    assert.equal(row?.source1960Preface?.selected,"Trinitate");
+    assert.equal(row?.source1960Preface?.rubric,"RGMR_494_B");
+    assert.equal(row?.prefaceReview?.status,"RULE_TEXT_AGREE",
+      date+": the Calendar audit does not see the repaired source");
+    assert.match(row?.prefaceReview?.heading??"",/^de sanctissima Trinitate/i);
+  }
+  assert.equal(summary.prefaceReview.ruleAndTextAgree+summary.prefaceReview.sourceConflict+
+    summary.prefaceReview.unmapped+summary.prefaceReview.missingOrUnrecognized+
+    summary.prefaceReview.specialOrUnavailable,365,
+    "All 365 days must receive exactly one audited Preface status");
+  const rosary=rows.find(x=>x.date==="2026-10-07");
+  assert.equal(rosary.ordoRuleReview.gloria.value,true);
+  assert.equal(rosary.ordoRuleReview.credo.value,true);
+  assert.ok(summary.ordoRules.bothSupported>60,"Ordo bulk rubric review unexpectedly lost coverage");
   assert.equal(new Set(rows.map(x=>x.date)).size,365,"Production resolver sweep must not repeat dates");
   if(process.env.AO_CALENDAR_AUDIT_STRICT==="1")
     assert.equal(unresolved.length+incomplete.length+discrepancies.length,0,"Full-year source audit has unresolved/discrepant data");

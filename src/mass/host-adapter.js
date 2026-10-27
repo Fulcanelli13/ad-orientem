@@ -6,6 +6,7 @@ import { inspect1962PrefaceSelection } from "./1962-preface-decision.js";
 // This file intentionally does not depend on window/globalThis or DOM.
 
 import { makeResolvedMass, compileMassPlan } from "./session-engine.js";
+import {required1962ResidualPrefaceOwner} from "./1962-residual-preface-source.js";
 
 const LEGACY_EXCEPTIONAL = Object.freeze({
   "good-friday-1962": "GOOD_FRIDAY",
@@ -62,18 +63,26 @@ export function bind1962PrincipalPrefaceIdentity(proper,legacy){
      normalizedType(legacy.celebrationType??"CALENDAR")!=="CALENDAR")
     return proper;
   const id=String(legacy.calendarDay?.id??"");
-  const match=/^(tempora|sancti):([A-Za-z0-9-]+):[1-4]:[a-z]{1,2}$/i.exec(id);
-  if(!match)return proper;
+  const match=/^(tempora|sancti):([A-Za-z0-9-]+):[1-4]:[a-z]{1,2}$/i.exec(id)||
+    /^(commune):(C10(?:b|c|Pasc|t)):4:w$/i.exec(id);
   const data=proper.data??proper;
   if(!data||typeof data!=="object")return proper;
   const path=String(data.sourcePath??proper.sourcePath??"");
-  if(path.toLowerCase()!==(match[1]+"/"+match[2]).toLowerCase())return proper;
+  // A generic IV-class feria has no unique feast source in its ID. Bind it
+  // only for one of the six source-, ID- and date-authenticated 2026
+  // Nativity/Epiphany records. Never authorize arbitrary generic ferias.
+  const exactGenericFeria=id===":feria:4:w"&&
+    Boolean(required1962ResidualPrefaceOwner(id,path,legacy.date));
+  if(!exactGenericFeria&&
+     (!match||path.toLowerCase()!==(match[1]+"/"+match[2]).toLowerCase()))
+    return proper;
   if(data.requestedCelebrationId&&data.requestedCelebrationId!=="mass_of_day"||
      /(?:votive|requiem|mass_of_dead)/i.test(String(data.riteProfile??data.profile??"")))
     return proper;
   const verdict=inspect1962PrefaceSelection({
     principalCelebrationId:id,selectedPreface:data.preface,
-    requestedCelebrationId:"mass_of_day"
+    requestedCelebrationId:"mass_of_day",sourcePath:path,
+    calendarDate:legacy.date??null
   });
   if(verdict.status==="UNMAPPED_SOURCE")return proper;
   // A conflicting pre-existing owner must not silently suppress the
@@ -81,7 +90,8 @@ export function bind1962PrincipalPrefaceIdentity(proper,legacy){
   if(data.principalCelebrationId&&data.principalCelebrationId!==id)
     throw new Error("PREFACE_SOURCE_IDENTITY_CONFLICT");
   const bound=Object.freeze({...data,principalCelebrationId:id,
-    requestedCelebrationId:"mass_of_day"});
+    requestedCelebrationId:"mass_of_day",
+    selectedMassDate:legacy.date??null});
   return proper.data?Object.freeze({...proper,data:bound}):bound;
 }
 
@@ -146,6 +156,25 @@ export function adaptV346ResolvedMass(legacy, options={}) {
     if(!overlays.includes("VOTIVE_PROPER"))overlays.push("VOTIVE_PROPER");
   }
   const proper=properEnvelope(bind1962PrincipalPrefaceIdentity(selectedProper,legacy),legacy);
+  // The host classifies the *Mass of the day* as CALENDAR even for All
+  // Souls. Its exact canonical 1962 Proper is nevertheless a Requiem:
+  // activate the funeral Mass rules from authenticated identity and donor,
+  // not from the black liturgical colour, feast title or civil date.
+  const selectedSource=String(proper?.data?.sourcePath??proper?.sourcePath??"");
+  // Host legacy calendarDay may contain its historical display identity;
+  // the actual native Calendar day is the signed source of its principal
+  // 1962 celebration. It must match this Mass date before it may authorize
+  // the exact first Mass of All Souls.
+  const actualCalendar=options.calendarResolution??null;
+  const selectedCalendarId=actualCalendar
+    ?(actualCalendar.date===legacy.date&&actualCalendar.status==="ready"
+      ?actualCalendar.day?.main?.id:null)
+    :legacy.calendarDay?.id;
+  const allSoulsMass=/^sancti:11-02m([123]):1:b$/.exec(String(selectedCalendarId??""));
+  const calendarAllSouls=type==="CALENDAR"&&
+    resultId==="mass_of_day"&&requestedId==="mass_of_day"&&
+    Boolean(allSoulsMass)&&selectedSource===("Sancti/11-02m"+allSoulsMass?.[1]);
+  if(calendarAllSouls&&!overlays.includes("REQUIEM"))overlays.push("REQUIEM");
   const precedingRites=[...new Set([
     ...(options.precedingRites??[]),
     ...(rogationSelection?.precedingRites??[])
@@ -186,7 +215,7 @@ export function adaptV346ResolvedMass(legacy, options={}) {
       rubricSources:[...(legacy.rubricSources??[])],
       languageCoverage:legacy.languageCoverage??null,
       sourceDiagnostics:legacy.sourceDiagnostics??null,
-      // Descriptive/conditional priest succession, never a fabricated event.
+      // The celebrant's explicitly selected successive-Mass circumstance.
       allSoulsSuccession:options.allSoulsSuccession??null,
       rogationSelection:rogationSelection ? {
         selection:rogationSelection.selection,
