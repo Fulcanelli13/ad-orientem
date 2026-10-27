@@ -466,9 +466,9 @@
       "source": "BAL1888",
       "period": "evening",
       "stage": "presence",
-      "label": "Evening entry / adoration of God",
-      "incipit": "O most holy Trinity",
-      "comparison": "check-full-section-boundaries",
+      "label": "Evening adoration and theological virtues",
+      "incipit": "O my God, I present myself before Thee at the end of another day",
+      "comparison": "composite",
       "witness_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers",
       "verification": "WEB_CHAPTER_INSPECTED_FACSIMILE_PENDING",
       "editorial_status": "CANDIDATE_NOT_APPROVED"
@@ -1072,11 +1072,95 @@
       "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
       "verification": "WEB_CHAPTER_INSPECTED_FACSIMILE_PENDING",
       "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B01.087",
+      "source": "LAS1911",
+      "period": "morning",
+      "stage": "offering",
+      "label": "Apostleship of Prayer Morning Offering",
+      "incipit": "O Jesus, through the immaculate heart of Mary",
+      "comparison": "related-BBG1925-YMG1910",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Morning_Prayers",
+      "verification": "WEB_CHAPTER_INSPECTED_FACSIMILE_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B01.088",
+      "source": "LAS1911",
+      "period": "evening",
+      "stage": "night-protection",
+      "label": "Night Prayer by St Alphonsus Liguori",
+      "incipit": "Jesus Christ, my God, I adore Thee",
+      "comparison": "related-BBG1925-not-identical",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "verification": "WEB_CHAPTER_INSPECTED_FACSIMILE_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B01.089",
+      "source": "LAS1911",
+      "period": "evening",
+      "stage": "night-protection",
+      "label": "Visita quaesumus collect",
+      "incipit": "Visit, we beseech Thee, O Lord, this habitation",
+      "comparison": "compline-derived",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "verification": "WEB_CHAPTER_INSPECTED_FACSIMILE_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B01.090",
+      "source": "LAS1911",
+      "period": "evening",
+      "stage": "commendation",
+      "label": "Into Thy hands",
+      "incipit": "Lord, into Thy hands I commend my spirit",
+      "comparison": "compline-derived",
+      "witness_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
+      "verification": "WEB_CHAPTER_INSPECTED_FACSIMILE_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B01.091",
+      "source": "YMG1910",
+      "period": "evening",
+      "stage": "departed",
+      "label": "Collect for the faithful departed",
+      "incipit": "O God! the Creator and Redeemer of all the faithful",
+      "comparison": "near-parallel-LAS1911",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "verification": "WEB_CHAPTER_INSPECTED_FACSIMILE_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B01.092",
+      "source": "YMG1910",
+      "period": "evening",
+      "stage": "night-protection",
+      "label": "Visita quaesumus collect",
+      "incipit": "Visit, we beseech Thee, O Lord, this habitation",
+      "comparison": "near-parallel-LAS1911",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "verification": "WEB_CHAPTER_INSPECTED_FACSIMILE_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B01.093",
+      "source": "YMG1910",
+      "period": "evening",
+      "stage": "commendation",
+      "label": "Into Thy hands",
+      "incipit": "Lord, into Thy hands I commend my spirit",
+      "comparison": "near-parallel-LAS1911",
+      "witness_url": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Prayers_and_Devotions",
+      "verification": "WEB_CHAPTER_INSPECTED_FACSIMILE_PENDING",
+      "editorial_status": "CANDIDATE_NOT_APPROVED"
     }
   ],
   "counts": {
     "source_chapters": 8,
-    "source_occurrences": 86,
+    "source_occurrences": 93,
     "stage_buckets": 26
   },
   "nonimport_guards": [
