@@ -85,4 +85,50 @@ placeholder.proper.data.preface.fr="@unresolved";
 assert.equal(review1962PrefaceForCalendarDay(placeholder).status,"TRANSLATIONS_INCOMPLETE",
  "Unresolved source marker must not count as a translated Preface");
 assert.equal(classify1962PrefaceHeading("de sacratíssimo Cordis Jesu"),"COR_IESU");
+
+// 2020 optional-preface authority boundary: the original 1962 general cycle
+// must never quietly certify these later ad-libitum Prefaces as mandatory.
+// Sources: CDF Quo magis (22 February 2020) and its accompanying Note.
+const baptist2020=sample("2026-06-24","sancti:06-24:1:w",1,"White","de S. Joannis Baptistæ");
+baptist2020.proper.data.sourcePath="Sancti/06-24";
+const baptistDecision=review1962PrefaceForCalendarDay(baptist2020);
+assert.equal(baptistDecision.status,"UNMAPPED","St John the Baptist optional 2020 Preface is not the mandatory 1962 baseline");
+assert.equal(baptistDecision.autoPublish,false);
+assert.equal(baptistDecision.changesReader,false);
+const dedication2020=sample("2026-11-09","sancti:11-09:2:w",2,"White","in Dedicatione Ecclesiae");
+dedication2020.proper.data.sourcePath="Sancti/11-09";
+const dedicationDecision=review1962PrefaceForCalendarDay(dedication2020);
+assert.equal(dedicationDecision.status,"UNMAPPED","Dedication optional/particular Preface requires its own authority");
+assert.equal(dedicationDecision.autoPublish,false);
+assert.equal(dedicationDecision.changesReader,false);
+
+// Full-year source regression: these two *named* non-Trinity headings are
+// not equivalent to the 1960 §494(b) Sunday Preface.
+for(const [date,id,sourcePath,heading,actual] of [
+  ["2026-06-07","tempora:Pent02-0r:2:g","Tempora/Pent02-0r","de Nativitate Domini","NATIVITATE"],
+  ["2026-06-14","tempora:Pent03-0r:2:g","Tempora/Pent03-0r","de sacratissimo Cordis Jesu","COR_IESU"]
+]){
+  const resolution=sample(date,id,2,"Green",heading);
+  resolution.proper.data.sourcePath=sourcePath;
+  const decision=review1962PrefaceForCalendarDay(resolution);
+  assert.equal(decision.status,"SOURCE_CONFLICT",date+": wrong named raw Preface cannot be shown as source-matched");
+  assert.equal(decision.expected,"TRINITATE");
+  assert.equal(decision.actual,actual);
+  assert.equal(decision.autoPublish,false);
+  assert.equal(decision.changesReader,false);
+}
+// Even an attested Paschal reused Proper does not establish the independent
+// season/date permission when the principal source ID is only generic feria.
+for(const [date,path,heading] of [
+  ["2026-04-15","Tempora/Pasc1-0","Paschalis"],
+  ["2026-05-21","Tempora/Pasc6-0","de Ascensione Domini"]
+]){
+  const resolution=sample(date,":feria:4:w",4,"White",heading);
+  resolution.proper.data.sourcePath=path;
+  const decision=review1962PrefaceForCalendarDay(resolution);
+  assert.equal(decision.status,"UNMAPPED",date+": reused white feria requires independent seasonal evidence");
+  assert.equal(decision.autoPublish,false);
+  assert.equal(decision.changesReader,false);
+}
+
 console.log("PASS 1962 Preface source audit: owner, principal Mass, category, trilingual, regional exclusion, conflict, exceptions");
