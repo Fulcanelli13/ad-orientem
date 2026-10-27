@@ -53,7 +53,9 @@ function inheritedSundayFeriaPreface(id,date,rank,colour,sourcePath){
 
 const utcDate=date=>Date.parse(date+"T12:00:00.000Z");
 const withinDays=(actual,start,low,high)=>{
-  const n=Math.round((actual-start)/86400000);
+  // Actual source dates are validated at 12:00 UTC; independent feast
+  // boundaries are UTC midnight. Floor avoids treating noon as next day.
+  const n=Math.floor((actual-start)/86400000);
   return n>=low&&n<=high;
 };
 function firstAdventSundayUtc(year){
