@@ -14,3 +14,13 @@ export const APPROVED_DAILY_FORMULATION_MANIFEST_V1=Object.freeze({
   witnesses:Object.freeze({}),
   profiles:Object.freeze({})
 });
+
+/**
+ * A source profile must be explicitly allowed here, marked 'approved' in
+ * the manifest and composed only of releaseStatus='cleared' source witnesses
+ * before a replacement sequence may appear. No remote feature flag bypass.
+ */
+export const DAILY_APPROVED_SEQUENCE_RELEASE_V1=Object.freeze({
+  enabled:false,
+  approvedProfileKeys:Object.freeze({})
+});
