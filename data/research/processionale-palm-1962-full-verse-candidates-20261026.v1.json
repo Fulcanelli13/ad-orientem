@@ -117,13 +117,18 @@
         {
           "liturgicalLine": 8,
           "biblicalVerse": 8,
-          "firstHemistich": "Quis est iste rex gloriae?",
-          "secondHemistich": "Dominus fortis et potens, Dominus potens in proelio.",
+          "firstHemistich": "Quis est iste rex gloriae? Dominus fortis et potens,",
+          "secondHemistich": "Dominus potens in proelio.",
           "mediantSeparator": "*",
           "evidence": "1962-LATIN-SLOVAK_SECONDARY_DIGITAL_TRANSCRIPTION",
           "completeVerseCandidate": true,
           "facsimileConfirmedInThisBatch": false,
-          "pointedPsalmToneCertified": false
+          "pointedPsalmToneCertified": false,
+          "flexAfter": "Quis est iste rex gloriae?",
+          "afterFlexBeforeMediant": "Dominus fortis et potens,",
+          "printedFlexaSeparator": "†",
+          "corrected1961SourcePage": "143**",
+          "correctionState": "PRINTED_1961_FLEX_VERSUS_MEDIANT_BOUNDARY_CORRECTED_PENDING_MUSICAL_UNDERLAY_APPROVAL"
         },
         {
           "liturgicalLine": 9,
@@ -379,5 +384,15 @@
     "formalVaticanTypicaOwnershipAndPublisher": "NOT_YET_AUTHENTICATED",
     "official1962SourceOwnerSignoff": false,
     "doNotConflateOCRWithPrint": true
+  },
+  "pointingCorrectionBatch21": {
+    "source": "Graduale Romanum 1961 p143** (original facsimile screenshot)",
+    "sourceImage": "https://gregobase.selapa.net/sources/2/1179.png",
+    "psalm": 23,
+    "liturgicalLine": 8,
+    "previousMisreading": "Quis est iste rex gloriae? * Dominus fortis et potens, Dominus potens in proelio.",
+    "correctPrintedStructure": "Quis est iste rex gloriae? † Dominus fortis et potens, * Dominus potens in proelio.",
+    "scope": "Research split-marker metadata only; no live Missal or melody alteration",
+    "originalPrintedNotationHumanCertified": false
   }
 }
