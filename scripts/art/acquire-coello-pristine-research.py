@@ -94,32 +94,57 @@ def acquire_commons():
 
 
 def acquire_toledo():
+    """Try exact IIIF resource, then exact museum dispatcher; never allow a smaller proxy.
+
+    Missing one museum image does not discard another acquired *verified* reference.
+    Failed endpoints are reported explicitly; no extrapolation or pixel upscaling.
+    """
     manifest = json.loads(download(TOLEDO_MANIFEST, {'emuseum.toledomuseum.org'}, 500_000))
     if manifest.get('label') != 'St. Joseph and the Christ Child':
         raise ValueError('Museum IIIF manifest label mismatch')
     canvases = manifest['sequences'][0]['canvases']
-    rows = []
+    rows, failures = [], []
+    seen = set()
     for canvas in canvases:
         resource = canvas['images'][0]['resource']
         image_url = resource['@id']
         identifier = image_url.split('/image/v2/')[1].split('/')[0]
         if identifier not in EXPECTED_MUSEUM:
             continue
+        seen.add(identifier)
         dims = EXPECTED_MUSEUM[identifier]
         if (canvas['width'], canvas['height']) != dims:
             raise ValueError(f'Museum IIIF metadata changed for {identifier}')
-        raw = download(image_url, {'emuseum.toledomuseum.org'})
-        img = validated_image(raw, dims)
+        fallback = 'https://emuseum.toledomuseum.org/internal/media/dispatcher/' + identifier
+        attempts = [image_url, fallback]
+        chosen = None
+        for candidate in attempts:
+            try:
+                raw = download(candidate, {'emuseum.toledomuseum.org'})
+                img = validated_image(raw, dims)
+                chosen = (raw, img, candidate)
+                break
+            except Exception as exc:
+                failures.append({'museum_image_id': identifier,
+                                 'endpoint': candidate,
+                                 'error': type(exc).__name__ + ': ' + str(exc)[:200]})
+        if chosen is None:
+            continue
+        raw, img, chosen_url = chosen
         f = OUT / f'coello-toledo-iiif-{identifier}-original.jpg'
         preserved_write(f, raw)
-        rows.append({'role': 'museum colour/object reference; photo terms not yet cleared',
+        rows.append({'role': 'museum exact-object colour reference, not rights cleared',
                      'path': str(f.relative_to(ROOT)), 'source_page': TOLEDO_MANIFEST,
+                     'actual_source_url': chosen_url,
                      'iiif_id': identifier, 'sha256': hashlib.sha256(raw).hexdigest(),
                      'bytes': len(raw), **img, 'rights': 'RESEARCH ONLY; museum photo terms pending',
                      'visual_quality': 'PENDING_COLOR_COMPARE_AND_NATIVE_FIDELITY'})
-    if {x['iiif_id'] for x in rows} != set(EXPECTED_MUSEUM):
-        raise ValueError('Required two Toledo image versions not found')
-    return rows
+    if seen != set(EXPECTED_MUSEUM):
+        raise ValueError('Museum manifest no longer identifies the exact two versions')
+    if not rows:
+        raise ValueError('Both museum image endpoints inaccessible or returned wrong pixels: ' +
+                         json.dumps(failures)[:900])
+    return rows, failures
 
 
 def main():
@@ -127,10 +152,12 @@ def main():
     parser.add_argument('--source', choices=('commons', 'toledo', 'all'), default='all')
     args = parser.parse_args()
     rows = []
+    museum_endpoint_failures = []
     if args.source in ('commons', 'all'):
         rows.append(acquire_commons())
     if args.source in ('toledo', 'all'):
-        rows.extend(acquire_toledo())
+        museum_rows, museum_endpoint_failures = acquire_toledo()
+        rows.extend(museum_rows)
     # Preserve existing verified source records when a second source is acquired.
     # Do not allow a later --source commons run to erase museum references.
     OUT.mkdir(parents=True, exist_ok=True)
@@ -157,6 +184,7 @@ def main():
     report = {'module_id': 'joseph', 'object': 'Claudio Coello — St Joseph and Christ Child',
               'accession': 'Toledo Museum of Art 1981.44',
               'original_files': sorted(merged.values(), key=lambda row: row['path']),
+              'museum_source_endpoint_failures': museum_endpoint_failures,
               'editorial_approved': True, 'pristine_quality_approved': False,
               'publication_rights_approved': False, 'app_release_approved': False,
               'cost': 'EUR 0; research-source acquisition only',
