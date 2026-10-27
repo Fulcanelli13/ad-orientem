@@ -608,5 +608,13 @@
     "includesDoxologyMedials": true,
     "finalAmenSourceExceptionStillHeld": true,
     "fullVerseScoresNewlyApproved": 0
+  },
+  "batch31MedialAccentFailClosed": {
+    "path": "data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json",
+    "all17MediantCaseAudited": true,
+    "clearConflictCount": 13,
+    "editorialAcceptanceCount": 0,
+    "autoPublicationForbidden": true,
+    "doxologyAmenRule": "Keep saeculorum Amen within source-specific differentia review; do not create a separate tune merely because the printed text has a full stop."
   }
 }
