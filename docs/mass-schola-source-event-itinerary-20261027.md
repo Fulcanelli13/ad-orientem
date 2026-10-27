@@ -20,3 +20,6 @@ The registry covers the ordinary Mass's Introit, Kyrie, Gloria and priest intona
 The compact `NEXT · ...` label uses the Mass Reader's **actual current sourced card ID** and the next independently source-anchored chant card. It is explicitly described as **later in Mass order, not heard or timed**. No synthetic transitions are sent to `createNativeScholaController`; priest focus and ticker remain completely independent.
 
 Next stages: exact permission-aware organ slots, local programme editor for a parish's Sanctus/Benedictus, source-owned post-Chalice boundary checks for a full real fixture, and validated notation assignment to these events after actual 1961 facsimile checks.
+
+## Regression coverage
+`tests/reader-schola-source-itinerary.mjs` checks source-owned Introit and Communion, B022 absence, card-handoff forecasts, unverified organ and local alternatives, complete B053 post-Chalice timing, separate Gregorian/polyphonic branches, Requiem omissions, Low Mass structural absence and score-archive isolation. The fixture models source-owned curated subcards; real 65-card browser acceptance is still required before merge.

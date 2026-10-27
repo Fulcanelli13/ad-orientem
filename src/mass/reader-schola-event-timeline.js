@@ -87,7 +87,11 @@ export function buildScholaMusicItinerary({cards,form,tracks=[],sanctusPerforman
  if(selected==="LOW")return empty("LOW_MASS_HAS_NO_SCHOLA");
  if(!SUNG.has(selected))return empty("UNSUPPORTED_SUNG_FORM");
  if(!Array.isArray(cards)||!cards.length)return empty("SOURCE_CARDS_REQUIRED");
- if(!cards.every(c=>c?.sectionId&&Number.isInteger(c.sequence)))return empty("SOURCE_CARD_IDENTITY_MISSING");
+ // Stage A only projects the certified curated LIVE family; source-model
+ // fallback or separate rites cannot borrow its Schola time windows.
+ if(!cards.every(c=>String(c?.sectionId??"").startsWith("AO.LIVECURATED.")&&
+    typeof c.sourceSectionId==="string"&&Number.isInteger(c.sequence)))
+   return empty("SOURCE_FIRST_CURATED_LIVE_REQUIRED");
  if(new Set(cards.map(c=>c.sectionId)).size!==cards.length)return empty("DUPLICATE_SOURCE_CARD_ID");
  const bySource=new Map(),bySection=new Map();
  cards.forEach((card,index)=>{
@@ -139,7 +143,7 @@ export function buildScholaMusicItinerary({cards,form,tracks=[],sanctusPerforman
  return freeze({
   schema:"ao-schola-music-itinerary-v1",supported:true,reason:null,
   events:freeze(events),unresolved:freeze(unresolved),
-  sourceCardCount:cards.length,
+  sourceCardCount:cards.length,cardOrder:freeze(cards.map(c=>String(c.sectionId))),
   actuallySinging:"UNKNOWN",activeClock:"SCHOLA_INDEPENDENT",
   organAuthority:"EXISTING_1958_ORGAN_PERMISSION_NOT_EVALUATED_HERE",
   specialRiteAuthority:"EXISTING_SEPARATE_RITE_MUSIC_REGISTRY",
@@ -151,9 +155,8 @@ export function buildScholaMusicItinerary({cards,form,tracks=[],sanctusPerforman
 export function nextScholaMusicEvent(itinerary,cardId){
  if(!itinerary?.supported || !cardId)return null;
  const id=String(cardId);
- const indices=itinerary.events.filter(e=>e.card.id===id).map(e=>e.cardIndex);
- const currentIndex=indices[0]??null;
- if(currentIndex==null)return null;
+ const currentIndex=itinerary.cardOrder?.indexOf(id)??-1;
+ if(currentIndex<0)return null;
  const next=itinerary.events.find(e=>e.cardIndex>currentIndex &&
    e.kind==="CHANT" && e.status==="EXPECTED_NOT_OBSERVED");
  if(!next)return null;
