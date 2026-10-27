@@ -63,7 +63,7 @@ Original images:
 
 ## Specific editorial recommendation without preapproval
 
-- Make **Morning Offering** a multi-form choice: Apostleship A and B (1911), *Blessed Be God* variant (1925, pending image check), 1899 Sacred Heart Morning Offering (B08 scan verified), and Moran's Good Intention (B07 verified). Two closely repeated formulae across books should share a tab with multiple witnesses unless materially different.
+- Make **Morning Offering** a multi-form choice: Apostleship A and B (1911), *Blessed Be God* variant (1925, B10 original-print-image-verified), 1899 Sacred Heart Morning Offering (B08 scan verified), and Moran's Good Intention (B07 verified). Two closely repeated formulae across books should share a tab with multiple witnesses unless materially different.
 - Add **Evening preparation, contrition and resolution** as separate distinct-stage texts; the 1905 French sequence establishes exactly why this distinction matters.
 - Give users **optional combination** of a bedtime protection prayer (e.g. St Alphonsus), an antiphon `Salva nos`, and the collect `Visita quaesumus`. They are different devotional types, not competing wordings of one prayer.
 - A **Faith/Hope/Charity** triplet can be represented in one category with sub-stages; do not manufacture additional prayer text or collapse three acts into one generic summary.
@@ -72,7 +72,7 @@ Original images:
 
 ## Remaining holds
 
-1. Print-page verification of `Blessed Be God` Morning Offering and its incomplete Wikisource daypart transclusion.
+1. **Completed B10:** the 1925 `Blessed Be God` Morning Offering is print-image verified on p.2 (scan image 48); the complete Morning Prayers section ends there; printed p.3 starts a separate common-prayers section. Earlier truncation warning withdrawn.
 2. French source rights/edition boundaries and language parity: **15 verified French source bodies do not imply historical EN translations**.
 3. Cross-manual complete-form deduplication and source-attribution checks for other shortlisted forms.
 4. Editorial approval of candidate tabs/defaults; existing UI and production prayer bank unchanged.
