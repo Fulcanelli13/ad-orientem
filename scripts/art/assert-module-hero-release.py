@@ -37,6 +37,21 @@ def validate(module):
     for key in EXPECTED:
         if checks.get(key) != "pass":
             problems.append("image visual QA pending: " + key)
+    # A source image with a physical gilt frame, gallery wall, or photographic
+    # white mat must never be promoted, even if object, rights and pixels pass.
+    frame = module.get("visual_quality", {}).get("framing_review", {})
+    for field in (
+        "physicalFrameAbsentHumanVerified",
+        "gallerySurroundAbsentHumanVerified",
+        "paintingBoundsHumanVerified",
+        "originalPaintedSurfaceIntactHumanVerified",
+        "noSyntheticFillHumanVerified",
+        "framelessPublicationDerivativeApproved",
+    ):
+        if frame.get(field) is not True:
+            problems.append("frame-free painting release check pending: " + field)
+    if not frame.get("sourceOriginalRemainsArchived"):
+        problems.append("full original source must remain archived alongside frame-free derivative")
     if not module.get("rights_release_cleared"):
         problems.append("exact photo/image rights and attribution not approved")
     if not module.get("app_ready_crop_verified") or not module.get("crop_spec"):
