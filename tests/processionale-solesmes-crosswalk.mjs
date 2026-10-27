@@ -2121,3 +2121,35 @@ test('Batch43 Pueri portantes EUOUAE comparison isolates exact A-syllable differ
  assert.equal(b.publishing.readerChanged,false);
  assert.equal(b.publishing.promoteAllowed,false);
 });
+
+
+test('Batch44 Palm1961 gr is archived white-note evidence but not authenticated doxology Amen',()=>{
+ const d=readJSON('data/research/processionale-palm-amen-two-full-gabc-comparative-20261027.v1.json');
+ const b=d.batch44Palm1961WhiteNoteTerminationProof;
+ assert.equal(b.batch,44);
+ assert.equal(b.originalPrintedSources.length,2);
+ for(const s of b.originalPrintedSources){
+   const original=readFileSync(s.archive,'utf8');
+   assert.ok(original.includes(s.verifiedSourceGabcSnippet));
+   assert.equal(original.includes('book:Graduale Romanum, 1961, p. '+s.printedPage),true);
+ }
+ const [p23,p46]=b.originalPrintedSources;
+ assert.deepEqual(p23.cadenceUnderlay.map(x=>x.notes),['g','f','gh gr','gf..']);
+ assert.deepEqual(p46.cadenceUnderlay.map(x=>x.notes),['g','f','gh','gr','gf..']);
+ assert.equal(p23.accentualShape.includes('two-syllable'),true);
+ assert.equal(p46.accentualShape.includes('three-syllable'),true);
+ assert.equal(b.officeComparator.hasWhiteGAfterGhOnA,false);
+ assert.equal(b.officeComparator.authorityForPalmDistributionAmen,false);
+ assert.equal(b.existingDraft.sourceHasFullyNotatedPalmSicutErat,false);
+ assert.deepEqual(b.existingDraft.ids,d.fullHypotheticalGabcCases.map(x=>x.id));
+ assert.equal(d.fullHypotheticalGabcCases.every(x=>x.gabcHypothesisOnly.includes(b.existingDraft.tail)),true);
+ assert.equal(d.fullHypotheticalGabcCases.every(x=>x.editorScoreApproved===false&&x.productionEligible===false),true);
+ assert.equal(b.existingDraft.sameLastTwoSyllableGroupAsPsalm23Opening,true);
+ assert.equal(b.existingDraft.notAutomaticallyProvenFromSharedTone,true);
+ assert.equal(b.publicationAllowed,false);
+ assert.equal(b.humanMusicianApproved,0);
+ assert.equal(b.productionScoresAdded,0);
+ assert.equal(b.newGabcCreated,false);
+ assert.equal(b.originalSourceArchiveModified,false);
+ assert.equal(b.readerRuntimeChanged,false);
+});
