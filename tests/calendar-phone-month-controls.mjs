@@ -109,9 +109,20 @@ try{
    const ordoCount=await cal.locator('.aoCalOrdoEntry').count();
    assert.ok(ordoCount>=28&&ordoCount<=31,"Ordo must list every in-month day: "+ordoCount);
    // Capture actual resolved liturgical content, not a frame of loading skeletons.
-   await page.waitForFunction(()=>
-     document.querySelectorAll('#ao-calendar-modular-root .aoCalOrdoEntry[data-ready="1"]').length>=3,
-     null,{timeout:45000});
+   // A few resolved entries are not a visual acceptance baseline: the
+   // prior capture showed several "Day awaiting resolution" placeholders
+   // beside Christ the King. Require the entire week in view to resolve
+   // before taking evidence, without inventing missing day identities.
+   await page.waitForFunction(()=>[
+     "2026-10-21","2026-10-22","2026-10-23","2026-10-24",
+     "2026-10-25","2026-10-26","2026-10-27"
+   ].every(date=>document.querySelector(
+     '#ao-calendar-modular-root [data-cal-ordo-date="'+date+'"]')?.dataset.ready==="1"),
+   null,{timeout:90000});
+   const kingLabel=await cal.locator(
+     '[data-cal-ordo-date="2026-10-25"] .aoCalOrdoIdentity strong').innerText();
+   assert.equal(kingLabel,lang==="fr"?"Fête de Notre-Seigneur Jésus-Christ Roi":"Christ the King",
+     "Original source-bound French King feast heading lost");
    const firstResolvedDate=await cal.locator('.aoCalOrdoEntry[data-ready="1"]').first()
      .getAttribute('data-cal-ordo-date');
    const firstOrdo=cal.locator('[data-cal-ordo-date="'+firstResolvedDate+'"]');
