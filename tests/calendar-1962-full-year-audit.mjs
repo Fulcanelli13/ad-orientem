@@ -309,6 +309,10 @@ try{
   assert.equal(uniquePath.size,142,"Source-file screen has duplicate identities");
   const cohorts={
     SANCTORAL_COMMON_FIRST_PASS:[],
+    SANCTORAL_COMMON_RULE_AGREEMENT:[],
+    SANCTORAL_PASCHAL_RULE_CONFLICT:[],
+    SANCTORAL_ASCENSION_RULE_CONFLICT:[],
+    SANCTORAL_APOSTLE_REDIRECT_RULE_CONFLICT:[],
     TEMPORAL_FORM_RULE_UNMAPPED:[],
     SATURDAY_BVM_COMMON_UNMAPPED:[],
     GENERIC_FERIA_UNMAPPED:[],
@@ -361,6 +365,14 @@ try{
     else if(review?.status==="RULE_TEXT_AGREE"&&
       review.basis==="ICRSP_POST_1960_CORPUS_CHRISTI_COMMON")
       group="CORPUS_CHRISTI_POST_1960_COMMON";
+    else if(review?.status==="RULE_TEXT_AGREE"&&review.basis==="ORIGINAL_SCREENED_NON_SEASONAL_SANCTORAL_COMMON")
+      group="SANCTORAL_COMMON_RULE_AGREEMENT";
+    else if(review?.status==="SOURCE_CONFLICT"&&review.basis==="SOURCE_SCREENED_PASCHAL_SANCTORAL_NO_PROPER")
+      group="SANCTORAL_PASCHAL_RULE_CONFLICT";
+    else if(review?.status==="SOURCE_CONFLICT"&&review.basis==="SOURCE_SCREENED_ASCENSION_SANCTORAL_NO_PROPER")
+      group="SANCTORAL_ASCENSION_RULE_CONFLICT";
+    else if(review?.status==="SOURCE_CONFLICT"&&review.basis==="SOURCE_WITNESSED_MAY11_APOSTLE_REDIRECT")
+      group="SANCTORAL_APOSTLE_REDIRECT_RULE_CONFLICT";
     else if(review?.status==="UNMAPPED"){
       if(id.startsWith("sancti:")){
         group=review.actual==="COMMUNIS"?"SANCTORAL_COMMON_FIRST_PASS":
@@ -388,7 +400,11 @@ try{
   }
   const sizes=Object.fromEntries(Object.entries(cohorts).map(([k,v])=>[k,v.length]));
   assert.deepEqual(sizes,{
-    SANCTORAL_COMMON_FIRST_PASS:131,
+    SANCTORAL_COMMON_FIRST_PASS:6,
+    SANCTORAL_COMMON_RULE_AGREEMENT:104,
+    SANCTORAL_PASCHAL_RULE_CONFLICT:15,
+    SANCTORAL_ASCENSION_RULE_CONFLICT:5,
+    SANCTORAL_APOSTLE_REDIRECT_RULE_CONFLICT:1,
     TEMPORAL_FORM_RULE_UNMAPPED:0,
     SATURDAY_BVM_COMMON_UNMAPPED:0,
     GENERIC_FERIA_UNMAPPED:0,
@@ -408,6 +424,10 @@ try{
   assert.equal(Object.values(sizes).reduce((a,b)=>a+b,0),194,
     "The original 194-case worklist must account for every promotion and still-withheld case");
   const sanctoralReviewed=[...cohorts.SANCTORAL_COMMON_FIRST_PASS,
+    ...cohorts.SANCTORAL_COMMON_RULE_AGREEMENT,
+    ...cohorts.SANCTORAL_PASCHAL_RULE_CONFLICT,
+    ...cohorts.SANCTORAL_ASCENSION_RULE_CONFLICT,
+    ...cohorts.SANCTORAL_APOSTLE_REDIRECT_RULE_CONFLICT,
     ...cohorts.SANCTORAL_MARIAN_SOURCE_CONFLICT,
     ...cohorts.ORIGINAL_COMMON_SANCTORAL_MATCH];
   assert.equal(sanctoralReviewed.length,142);
@@ -423,6 +443,25 @@ try{
     assert.ok(x.independentSourceWitness.originalPrefatioRuleTokens.some(t=>/Prefatio=Communis/.test(t)),
       x.date+" source did not expressly select Common");
   assert.equal(sanctoralScreen.cases.filter(x=>x.upstreamRuleTokens.length).length,11);
+  assert.deepEqual(sanctoralScreen.secondPass2026?.groups,{
+    NONSEASONAL_SANCTORAL_COMMON_AGREEMENT:104,
+    EXCEPTIONAL_FEAST_SOURCE_HOLD:6,
+    PASCHAL_SANCTORAL_SOURCE_CONFLICT:15,
+    APOSTLE_REDIRECT_PREFACE_CONFLICT:1,
+    ASCENSION_SANCTORAL_SOURCE_CONFLICT:5,
+  },"Original 131-file research partition changed without deliberate evidence update");
+  const sourceDecisionMap=new Map(sanctoralScreen.cases
+    .filter(x=>x.secondPass2026Family)
+    .map(x=>[x.canonicalSourcePath,x.secondPass2026Family]));
+  for(const [group,family] of [
+    ["SANCTORAL_COMMON_RULE_AGREEMENT","NONSEASONAL_SANCTORAL_COMMON_AGREEMENT"],
+    ["SANCTORAL_PASCHAL_RULE_CONFLICT","PASCHAL_SANCTORAL_SOURCE_CONFLICT"],
+    ["SANCTORAL_ASCENSION_RULE_CONFLICT","ASCENSION_SANCTORAL_SOURCE_CONFLICT"],
+    ["SANCTORAL_APOSTLE_REDIRECT_RULE_CONFLICT","APOSTLE_REDIRECT_PREFACE_CONFLICT"],
+    ["SANCTORAL_COMMON_FIRST_PASS","EXCEPTIONAL_FEAST_SOURCE_HOLD"],
+  ])for(const x of cohorts[group])
+    assert.equal(sourceDecisionMap.get(x.sourcePath),family,
+      x.date+" independent Sanctoral source research does not support new code classification");
   const exactPromotions=["2026-04-15","2026-04-16","2026-04-17","2026-04-20",
     "2026-04-23","2026-05-06","2026-05-08","2026-05-21","2026-05-22"];
   assert.deepEqual(cohorts.SOURCE_MATCHED_SEASONAL_FERIA.map(x=>x.date),
@@ -469,9 +508,9 @@ try{
   for(const x of cohorts.BVM_SATURDAY_MARIAN_CONFLICT)
     assert.equal(new Date(x.date+"T12:00:00Z").getUTCDay(),6,
       x.date+" Marian Saturday must be an actual Saturday");
-  assert.equal(summary.prefaceReview.unmapped,133);
-  assert.equal(summary.prefaceReview.ruleAndTextAgree,151);
-  assert.equal(summary.prefaceReview.sourceConflict,79);
+  assert.equal(summary.prefaceReview.unmapped,8);
+  assert.equal(summary.prefaceReview.ruleAndTextAgree,255);
+  assert.equal(summary.prefaceReview.sourceConflict,100);
   await writeFile(resolve(outputDir,"1962-2026-preface-bulk-triage.json"),JSON.stringify({
     schema:"AO_1962_PREFACE_2026_BULK_TRIAGE_V1",
     year:2026,sourceAuditRun:"Live 1962 shared canonical resolver and independent Preface audit",
@@ -479,10 +518,10 @@ try{
     temporalRegister:"data/research/1962-temporal-preface-source-screen-20261027.v1.json",
     genericFeriaAndBvmRegister:"data/research/1962-generic-feria-bvm-preface-screen-20261027.v1.json",
     totalHistoricalUnmappedWorklist:194,
-    newlySourceMatchedWithheldFromEditorialApproval:32,
-    newlySourceIdentifiedConflicts:29,
-    stillUnmapped:133,
-    stillRawSourceConflicts:79,
+    newlySourceMatchedWithheldFromEditorialApproval:136,
+    newlySourceIdentifiedConflicts:50,
+    stillUnmapped:8,
+    stillRawSourceConflicts:100,
     independentPrefacesEditoriallyCertified:0,
     groupSizes:sizes,
     sourceScope:"GENERAL_ROMAN_1962",
@@ -490,13 +529,17 @@ try{
     cohortRows:cohorts,
   },null,2)+"\n","utf8");
   console.log("CALENDAR_1962_PREFACE_BULK_TRIAGE="+JSON.stringify({
-    groupSizes:sizes,matchedSeasonalFerias:9,matchedOriginalCommon:2,
+    groupSizes:sizes,sanctoralNewCommonAgreements:104,
+    sanctoralNewSeasonalSourceConflicts:20,
+    sanctoralApostleSourceConflicts:1,
+    sixExceptionalSanctoralHolds:6,
+    matchedSeasonalFerias:9,matchedOriginalCommon:2,
     matchedAdditionalCommonSeasonal:21,marianSourceConflicts:9,
-    identifiedAdditionalSourceConflicts:20,unmapped:133,
+    identifiedAdditionalSourceConflicts:41,unmapped:8,
     originalUnmappedWorklist:194,
     originalSanctoralSourcesScreened:142,
     sourcePrefatioDirectivesObserved:11,
-    unverifiedSourceSelectionsRemaining:133,
+    unverifiedSourceSelectionsRemaining:8,
     editoriallyCertified:0,
   }));
 
