@@ -89,7 +89,11 @@
     "photo_archived_preview_individually_inspected": 8,
     "photo_preview_screen_for_followup": 4,
     "photo_preview_with_specific_holds": 4,
-    "photo_human_full_master_quality_approved": 0
+    "photo_human_full_master_quality_approved": 0,
+    "three_official_originals_sha_verified_against_current_url": 3,
+    "native_source_pixel_sample_groups_archived": 3,
+    "full_width_uncropped_official_view_proxies_archived": 3,
+    "whole_contain_review_derivatives_archived": 1
   },
   "exception_flags": [
     {
@@ -1215,6 +1219,70 @@
         "photo_version_match_current_museum_NOT_CONFIRMED": true,
         "production_release_authorized": false,
         "source_witness": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
+      },
+      "exact_original_pixel_source_gate": {
+        "research_provenance_branch": "research/module-hero-pd-masters-20261026",
+        "witness": "assets/staged/module-hero-photo-evidence-20261027/three-photo-source-qc.json",
+        "official_source_bytes_comparison": "CURRENT_REMOTE_OFFICIAL_JPEG_BYTE_IDENTICAL",
+        "original_SHA256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+        "dimensions": [
+          3741,
+          3658
+        ],
+        "native_corner_center_evidence_tiles": [
+          {
+            "path": "assets/staged/module-hero-photo-evidence-20261027/angelus-top_left-native-pixels.png",
+            "bbox": [
+              0,
+              0,
+              512,
+              512
+            ]
+          },
+          {
+            "path": "assets/staged/module-hero-photo-evidence-20261027/angelus-top_right-native-pixels.png",
+            "bbox": [
+              3229,
+              0,
+              3741,
+              512
+            ]
+          },
+          {
+            "path": "assets/staged/module-hero-photo-evidence-20261027/angelus-bottom_left-native-pixels.png",
+            "bbox": [
+              0,
+              3146,
+              512,
+              3658
+            ]
+          },
+          {
+            "path": "assets/staged/module-hero-photo-evidence-20261027/angelus-bottom_right-native-pixels.png",
+            "bbox": [
+              3229,
+              3146,
+              3741,
+              3658
+            ]
+          },
+          {
+            "path": "assets/staged/module-hero-photo-evidence-20261027/angelus-centre-native-pixels.png",
+            "bbox": [
+              1614,
+              1573,
+              2126,
+              2085
+            ]
+          }
+        ],
+        "observed_frame_problem": "Wood-grained border visible along top and right; unclear if external historical frame, painted frame or original support. NO TRIM",
+        "colour_ICC_status": "UNTAGGED_SOURCE_ASSUMED_SRGB_FOR_PREVIEW_NOT_COLOUR_FIDELITY_PROOF",
+        "no_crop_approved": true,
+        "source_photo_legal_per_policy": "INSTITUTIONAL_OPEN_ACCESS_DESIGNATED",
+        "whole_contain_review_candidate": null,
+        "exact_photo_quality_authorised": false,
+        "app_release_authorised": false
       }
     },
     {
@@ -1444,6 +1512,70 @@
         "photo_version_match_current_museum_NOT_CONFIRMED": true,
         "production_release_authorized": false,
         "source_witness": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
+      },
+      "exact_original_pixel_source_gate": {
+        "research_provenance_branch": "research/module-hero-pd-masters-20261026",
+        "witness": "assets/staged/module-hero-photo-evidence-20261027/three-photo-source-qc.json",
+        "official_source_bytes_comparison": "CURRENT_REMOTE_OFFICIAL_JPEG_BYTE_IDENTICAL",
+        "original_SHA256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+        "dimensions": [
+          3122,
+          3813
+        ],
+        "native_corner_center_evidence_tiles": [
+          {
+            "path": "assets/staged/module-hero-photo-evidence-20261027/adoration-top_left-native-pixels.png",
+            "bbox": [
+              0,
+              0,
+              512,
+              512
+            ]
+          },
+          {
+            "path": "assets/staged/module-hero-photo-evidence-20261027/adoration-top_right-native-pixels.png",
+            "bbox": [
+              2610,
+              0,
+              3122,
+              512
+            ]
+          },
+          {
+            "path": "assets/staged/module-hero-photo-evidence-20261027/adoration-bottom_left-native-pixels.png",
+            "bbox": [
+              0,
+              3301,
+              512,
+              3813
+            ]
+          },
+          {
+            "path": "assets/staged/module-hero-photo-evidence-20261027/adoration-bottom_right-native-pixels.png",
+            "bbox": [
+              2610,
+              3301,
+              3122,
+              3813
+            ]
+          },
+          {
+            "path": "assets/staged/module-hero-photo-evidence-20261027/adoration-centre-native-pixels.png",
+            "bbox": [
+              1305,
+              1650,
+              1817,
+              2162
+            ]
+          }
+        ],
+        "observed_frame_problem": "External-looking beige structural border plus grey zone with adjoining painted architecture and signed inscription band. NO BLIND GREY-BORDER CROP",
+        "colour_ICC_status": "UNTAGGED_SOURCE_ASSUMED_SRGB_FOR_PREVIEW_NOT_COLOUR_FIDELITY_PROOF",
+        "no_crop_approved": true,
+        "source_photo_legal_per_policy": "INSTITUTIONAL_OPEN_ACCESS_DESIGNATED",
+        "whole_contain_review_candidate": null,
+        "exact_photo_quality_authorised": false,
+        "app_release_authorised": false
       }
     },
     {
@@ -1758,6 +1890,83 @@
         "photo_version_match_current_museum_NOT_CONFIRMED": true,
         "production_release_authorized": false,
         "source_witness": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
+      },
+      "exact_original_pixel_source_gate": {
+        "research_provenance_branch": "research/module-hero-pd-masters-20261026",
+        "witness": "assets/staged/module-hero-photo-evidence-20261027/three-photo-source-qc.json",
+        "official_source_bytes_comparison": "CURRENT_REMOTE_OFFICIAL_JPEG_BYTE_IDENTICAL",
+        "original_SHA256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+        "dimensions": [
+          4096,
+          3712
+        ],
+        "native_corner_center_evidence_tiles": [
+          {
+            "path": "assets/staged/module-hero-photo-evidence-20261027/confession-top_left-native-pixels.png",
+            "bbox": [
+              0,
+              0,
+              512,
+              512
+            ]
+          },
+          {
+            "path": "assets/staged/module-hero-photo-evidence-20261027/confession-top_right-native-pixels.png",
+            "bbox": [
+              3584,
+              0,
+              4096,
+              512
+            ]
+          },
+          {
+            "path": "assets/staged/module-hero-photo-evidence-20261027/confession-bottom_left-native-pixels.png",
+            "bbox": [
+              0,
+              3200,
+              512,
+              3712
+            ]
+          },
+          {
+            "path": "assets/staged/module-hero-photo-evidence-20261027/confession-bottom_right-native-pixels.png",
+            "bbox": [
+              3584,
+              3200,
+              4096,
+              3712
+            ]
+          },
+          {
+            "path": "assets/staged/module-hero-photo-evidence-20261027/confession-centre-native-pixels.png",
+            "bbox": [
+              1792,
+              1600,
+              2304,
+              2112
+            ]
+          }
+        ],
+        "observed_frame_problem": "No external photographic frame visible in whole view or 3 inspected native crops; archive-made 1800×1631 whole-contain image is review-only, not signed off",
+        "colour_ICC_status": "ICC_CONVERTED_TO_SRGB_FOR_DERIVATIVE_PREVIEW_ONLY",
+        "no_crop_approved": true,
+        "source_photo_legal_per_policy": "INSTITUTIONAL_OPEN_ACCESS_DESIGNATED",
+        "whole_contain_review_candidate": {
+          "path": "assets/staged/module-hero-photo-evidence-20261027/confession-whole-contain-review-candidate.webp",
+          "sha256": "8e4abfa0fbe894085db1dda46378a669ae5244811ec7b9941855ed7f9930e893",
+          "dimensions": [
+            1800,
+            1631
+          ],
+          "painted_area_crop_performed": false,
+          "entire_source_painting_retained": true,
+          "colour_handling": "ICC_CONVERTED_TO_SRGB_FOR_DERIVATIVE_PREVIEW_ONLY",
+          "human_approved": false,
+          "app_released": false,
+          "use_rule": "object-fit contain; no automatic centre crop"
+        },
+        "exact_photo_quality_authorised": false,
+        "app_release_authorised": false
       }
     },
     {
@@ -1974,5 +2183,6 @@
   "cross_branch_qa_sources": {
     "preview_image_review": "data/research/sacred-art-20261027-eight-hero-preview-visual-audit.v1.json",
     "six_designated_licence_source_review": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
-  }
+  },
+  "latest_source_gate_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40465399678"
 }
