@@ -784,5 +784,96 @@
     "newGabcCreated": false,
     "originalSourceArchiveModified": false,
     "readerRuntimeChanged": false
+  },
+  "batch45EpentheticWhiteNoteCorrection": {
+    "batch": 45,
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "REINTERPRET_WHITE_GR_AS_OPTIONAL_EPENTHETIC_SYLLABLE_CUE__NOT_MANDATORY_SOUNDED_NOTE__TWO_DOXOLOGIES_HELD",
+    "sourceValidation": [
+      {
+        "source": "Dom Gregory Suñol, Text Book of Gregorian Chant, Chapter II, printed page 53; translated according to Solesmes method",
+        "url": "https://longbeachchant.com/wp-content/uploads/2019/11/chanting-the-psalms-sunol.pdf#page=9",
+        "pageNumberPdfZeroBased": 8,
+        "role": "PERIOD_EXPLICIT_WHITE_OPTIONAL_SUPPLEMENTARY_NOTE_RULE",
+        "interpretation": "The added hollow note stands for the penultimate unaccented syllable of a three-syllable dactylic cadence; it does not demand a third sounded element in a two-syllable spondaic final word.",
+        "facsimileInspected": true
+      },
+      {
+        "source": "Gregorian Institute of America, An Applied Course in Gregorian Chant, 1956, pp.140-143",
+        "url": "https://media.churchmusicassociation.org/books/applied_course_chant_carroll.pdf#page=144",
+        "role": "SECOND_PERIOD_EXPLANATION_OF_EPENTHESIS",
+        "interpretation": "The auxiliary hollow punctum accommodates an extra atonal syllable between the accented element and final, and is a rhythm-neutral melodic extension rather than a required flourish on any two-syllable text.",
+        "facsimileInspectedForRelevantRule": true
+      },
+      {
+        "source": "Gregorio GABC reference, punctum cavum suffix r",
+        "url": "https://gregorio-project.github.io/gabc/details.html",
+        "role": "NOTATION_SYNTAX",
+        "interpretation": "In the archived GABCs, suffix r makes a hollow punctum at the pitch letter: gr denotes a hollow g, not a separate named pitch."
+      },
+      {
+        "source": "Liber Usualis Solesmes 1961, printed p113 first-tone f termination",
+        "url": "https://longbeachchant.com/wp-content/uploads/2019/11/liber-1961-eight-psalm-tones.pdf#page=2",
+        "role": "CONTEMPORARY_PRINTED_TONE_REFERENCE",
+        "interpretation": "First-tone terminations take one melodic accent with two preparatory syllables; differences between spondaic and dactylic underlays need source-specific judgement."
+      }
+    ],
+    "sourceFacsimileReference": {
+      "psalm23PrintedPage": "143**",
+      "psalm46PrintedPage": "144**",
+      "psalm23Gabc": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+      "psalm46Gabc": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+      "psalm23TwoSyllableLastWord": "e(gh gr)o(gf..)",
+      "psalm46ThreeSyllableLastWord": "ti(gh)ti(gr)æ(gf..)",
+      "correctedInterpretation": "The graphic presence of gr in Psalm23's two-syllable e-o sample need not mean an extra g is sung there; Psalm46's three-syllable ti-ti-æ provides the additional syllable on which hollow gr is actually positioned. The archive does not prove gr is required for the two-syllable A-men.",
+      "contradictsEarlierMandatoryNoteInference": true
+    },
+    "twoHypotheticalDoxologies": {
+      "ids": [
+        "PALM-R02-PS23-DOXO-L12",
+        "PALM-R02-PS46-DOXO-L12"
+      ],
+      "retainedPrintedGabcPhrase": "ló(g)rum.(f) A(gh gr)men.(gf..)",
+      "office1960EuouaeFinal": [
+        "a(gh)",
+        "e(gf..)"
+      ],
+      "singleSyllableMusicalIssue": "A-men has one unstressed syllable after A; a hollow note corresponding to an additional intermediate syllable is not automatically sung.",
+      "A_ghgr_isSourceAuthenticatedRequiredPerformance": false,
+      "A_gh_isMusicallyPlausibleSpondaicVariant": true,
+      "A_gh_hasBeenIndependentlyEditoriallyApproved": false,
+      "originalGabcBytesUnchanged": true,
+      "noAlternativeFullGabcCreated": true,
+      "sourceSpecific1961PalmCompleteDoxologyFound": false
+    },
+    "parallelMediantIssue": {
+      "description": "Both provisional complete Sicut erat GABC bodies are identical, even though the 1961 printed Psalm 23 and Psalm 46 first-verse mediants employ distinct stressed-syllable cell pairs.",
+      "firstPsalmModelAccentedCells": [
+        "ixi hr",
+        "g hr"
+      ],
+      "secondPsalmModelAccentedCells": [
+        "ixi",
+        "g"
+      ],
+      "bothDoxologyResearchBodiesIdentical": true,
+      "bothUseFirstPsalmModelCells": [
+        "ixi hr",
+        "g hr"
+      ],
+      "sourceHasAuthorizedSecondPsalmSameMediant": false,
+      "conclusion": "Shared f termination alone does not justify identical complete Sicut erat medians for both restored psalms. Musical editor must assess full half-verse cell assignment for each, not only final Amen."
+    },
+    "editorialAction": "First determine whether each Palm doxology's A-men follows 1f short (gh/gf) underlay with optional gr omitted, then independently resolve the Psalm23-versus-Psalm46 Sicut erat mediant accents from original source; do not silently rewrite scores. Confirm corresponding antiphon reprise.",
+    "historicalBatch44PreservedNotDeleted": true,
+    "recordIsMusicalRuleCorrectionNotHumanApproval": true,
+    "release": {
+      "humanMusicalApprovalCount": 0,
+      "scorePromotions": 0,
+      "changedGabcCount": 0,
+      "massReaderChanged": false,
+      "productionAllowed": false
+    }
   }
 }
