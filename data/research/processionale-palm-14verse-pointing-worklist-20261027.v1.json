@@ -97,7 +97,13 @@
         "alternativeExsurgeRendered": true,
         "comparisonProofRunId": 40455234551,
         "actualDeviceAccepted": false,
-        "noteUnderlayCertified": false
+        "noteUnderlayCertified": false,
+        "cadenceDecision": "HOLD_BOTH_NO_DEFAULT_NO_APPROVED_VERSION",
+        "postAccentReference": 5,
+        "postAccentTarget": 3,
+        "accentAdjudicationStatus": "NOT_YET_PASSED",
+        "manualMusicalEditorRequired": true,
+        "noInheritanceToOtherPatterns": true
       }
     },
     {
@@ -543,6 +549,9 @@
     "otherTwelvePatternsNoCandidateYet": true,
     "doNotAdvanceReader": true,
     "gabcVariantsPrepared": 2,
-    "editorApprovedVariants": 0
+    "editorApprovedVariants": 0,
+    "aBSourceBasedDecision": "BOTH_A_AND_B_REMAIN_UNCERTIFIED",
+    "cadenceRuleVerifiedForOtherTwelve": false,
+    "noAutomatedExpansionFromV2Hypotheses": true
   }
 }
