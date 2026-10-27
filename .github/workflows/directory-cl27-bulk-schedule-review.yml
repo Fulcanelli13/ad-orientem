@@ -7,6 +7,7 @@ on:
       - 'data/directory/research/cl27-bulk-timetable-audit-20261026/**'
       - 'data/directory/tlm-user-classification-taxonomy.v1.json'
       - 'tools/directory/build-cl27-tlm-classifications.py'
+      - 'tools/directory/build-cl27-r49-unified-crosswalk.py'
       - 'tools/directory/review-cl27-tlm-classifications.html'
       - 'src/find/preliminary-directory-r49.js'
       - 'src/find/explore-presentation.js'
@@ -21,6 +22,7 @@ on:
       - 'tools/directory/validate-cl27-bulk-schedule-audit.py'
       - 'data/directory/tlm-user-classification-taxonomy.v1.json'
       - 'tools/directory/build-cl27-tlm-classifications.py'
+      - 'tools/directory/build-cl27-r49-unified-crosswalk.py'
       - 'tools/directory/review-cl27-tlm-classifications.html'
       - 'src/find/preliminary-directory-r49.js'
       - 'src/find/explore-presentation.js'
@@ -50,6 +52,27 @@ jobs:
         run: python3 tools/directory/validate-cl2-unified-master-inheritance.py --db /tmp/cl27-mass-registry.sqlite
       - name: Generate classified directory from CL2 effective scoped views
         run: python3 tools/directory/build-cl27-tlm-classifications.py --db /tmp/cl27-mass-registry.sqlite --output /tmp/cl27-tlm-classification-facets.json --html-output /tmp/cl27-tlm-classification-review.html
+      - name: Crosswalk all 1,879 existing R49 pins by frozen source ID to CL2
+        run: python3 tools/directory/build-cl27-r49-unified-crosswalk.py --db /tmp/cl27-mass-registry.sqlite --output /tmp/cl27-r49-cl2-crosswalk.json
+      - name: Require zero invented identities and no duplicate-source marker promotion
+        run: |
+          python3 - <<'PY'
+          import json
+          x=json.load(open('/tmp/cl27-r49-cl2-crosswalk.json'))
+          c=x['counts']
+          assert (c['r49_original_pins'],c['exact_source_and_group_id_links'],c['unlinked_pins'])==(1879,1879,0)
+          assert (c['physical_anchors_represented'],c['multiple_pin_physical_anchor_groups'])==(1844,35)
+          assert c['newly_published_pins']==c['newly_published_classifications']==c['newly_published_mass_times']==0
+          assert len({r['r49_pin_id'] for r in x['r49_to_cl2_source_scope']})==1879
+          assert all(r['identity_join']=='EXACT_FROZEN_SOURCE_ID_AND_GROUP' and
+                     r['scope']=='SOURCE_MINISTRY_ONLY_NOT_SITE_OR_CELEBRATION' and
+                     not r['classification_public_approval'] and not r['mass_schedule_public_approval']
+                     for r in x['r49_to_cl2_source_scope'])
+          assert all(g['physical_site_rite']=='UNKNOWN' and g['physical_site_missal']=='UNKNOWN'
+                     and not g['representative_pin_selected']
+                     for g in x['represented_physical_anchors'])
+          print('Exact 1,879-record crosswalk PASS; 1,844 physical anchors; 35 duplicate pin groups held')
+          PY
       - name: Check offline classification editor generated from pinned research source
         run: |
           python3 - <<'PY'
