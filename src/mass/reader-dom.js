@@ -522,6 +522,19 @@ const SHELL_STYLE = `
 .ao-schola-status[hidden]{display:none!important}
 .ao-schola-upcoming{display:block;max-width:min(36vw,190px);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:600 9px/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.02em;color:var(--ao-mass-accent-text)}
 .ao-schola-upcoming[hidden]{display:none!important}
+/* A Mass-order forecast is not an active chant or audio observation. */
+.ao-schola-dock[data-upcoming-only="true"]{
+  display:block!important;height:44px!important;min-height:44px!important;
+  max-height:44px!important;padding:5px 10px!important
+}
+.ao-schola-dock[data-upcoming-only="true"] .ao-schola-title{
+  height:30px!important;min-height:30px!important;padding-right:0!important
+}
+.ao-schola-dock[data-upcoming-only="true"] .ao-schola-main,
+.ao-schola-dock[data-upcoming-only="true"] .ao-schola-meta,
+.ao-schola-dock[data-upcoming-only="true"] .ao-schola-toggle{display:none!important}
+.ao-schola-dock[data-upcoming-only="true"] .ao-schola-upcoming{max-width:75%;font-size:10px}
+
 @media(max-width:760px){.ao-schola-upcoming{max-width:95px;font-size:8px}}
 .ao-schola-main{
   position:relative;height:58px;margin-top:6px;overflow:hidden;border-top:1px solid rgba(255,255,255,.045);
@@ -2745,6 +2758,9 @@ export function createReaderDomAdapter({
         ? "Later in the Mass: "+upcoming.label+". Neither heard nor timed.":"";
       upcomingNode.setAttribute?.("aria-label",upcoming
         ? "Later in Mass order, not observed: "+upcoming.label:"No sourced next chant");
+      dock.dataset.upcomingOnly=String(Boolean(upcoming && !schola && mode==="LIVE"));
+      if(dock.dataset.upcomingOnly==="true" && title)title.textContent="COMING UP";
+      syncScholaChrome();
     }
     dock.dataset.musicStatus=schola?.musicStatus??"NOT_ACTIVE";
     const page=root.querySelector('[data-role="schola-page"]');
@@ -2782,12 +2798,14 @@ export function createReaderDomAdapter({
     const shell=root.querySelector("[data-ao-reader-shell]");
     const scholaActive=dock.dataset.active==="true";
     const scholaRelevant=Boolean(textValue(current?.schola)) && current?.scholaShared!==true;
-    const reserve=(scholaActive||scholaRelevant||scholaCollapsed)
-      ? (scholaCollapsed ? 44 :
+    const forthcoming=dock.dataset.upcomingOnly==="true";
+    const reserve=(scholaActive||scholaRelevant||scholaCollapsed||forthcoming)
+      ? (scholaCollapsed||forthcoming ? 44 :
           dock.dataset.shared==="true" && !scholaManuallyResized ? 132 : scholaHeight) : 0;
     if(shell){
       shell.dataset.scholaVisible=String(scholaActive);
       shell.dataset.scholaRelevant=String(scholaRelevant);
+      shell.dataset.scholaUpcoming=String(forthcoming);
       shell.style.setProperty?.("--ao-schola-reserve",reserve+"px");
     }
     const toggle=dock.querySelector?.("[data-schola-toggle]");

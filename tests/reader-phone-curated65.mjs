@@ -65,6 +65,31 @@ try{
     assert.ok(summary.rootVisible && summary.navNext && summary.navPrev);
     assert.ok(summary.shellWidth<=width+1,"Phone viewport horizontal overflow");
     assert.equal(summary.overflow,false,"Curated Mass caused document horizontal scroll");
+    // Between musical windows, show a Mass-order prediction, not heard sound.
+    if(width===390 && lang==="en" && !secondConfiteor){
+      const collect=await page.evaluate(()=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        const target=api.model.cards.find(c=>c.sourceSectionId==="AO.CARD.004");
+        if(!target)return null;
+        api.showSequence(target.sequence);
+        return target.sectionId;
+      });
+      assert.ok(collect,"Missing sourced Collect card for chant forecast");
+      const expected=await page.evaluate(()=>{
+        const dock=document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock");
+        const node=dock?.querySelector('[data-role="schola-upcoming"]');
+        return {text:node?.textContent??"",hidden:node?.hidden,
+          upcoming:dock?.dataset.upcomingOnly,
+          visible:dock?getComputedStyle(dock).display:null,
+          aria:node?.getAttribute("aria-label")??""};
+      });
+      assert.equal(expected.upcoming,"true","No anticipation in Schola-free Collect interval");
+      assert.equal(expected.hidden,false);
+      assert.match(expected.text,/NEXT.*Gradual/i);
+      assert.match(expected.aria,/not observed/i);
+      assert.notEqual(expected.visible,"none");
+      await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSequence(1));
+    }
     assert.ok(summary.headings.includes("Gloria · The Celebrant's Intonation"));
     assert.ok(summary.headings.includes("Words of Consecration and Elevation · Host"));
     assert.ok(summary.headings.includes("Communion Antiphon"));
