@@ -156,4 +156,69 @@ wrongSource.proper.data.sourcePath="Tempora/Pasc1-0";
 assert.equal(review1962PrefaceForCalendarDay(wrongSource).status,"SOURCE_CONFLICT",
   "Authenticated source-season obligation cannot be silenced by a raw Common Preface");
 
+
+// Verified source witnesses from the first bulk screen of all 142 ordinary
+// Sanctoral raw-Communis cases. These are original donor rule observations,
+// NOT certificates or automatic reader/Calendar text replacements.
+const {readFileSync}=await import("node:fs");
+const witness=JSON.parse(readFileSync(new URL(
+  "../data/research/1962-sanctoral-preface-source-screen-20261027.v1.json",
+  import.meta.url),"utf8"));
+assert.equal(witness.cases.length,142);
+const witnessByPath=new Map(witness.cases.map(x=>[x.canonicalSourcePath,x]));
+assert.equal(witnessByPath.size,142);
+const marianPaths=["02-11","07-02","08-05","08-15","08-22",
+  "09-08","09-12","09-15","11-21"];
+for(const md of marianPaths){
+  const w=witnessByPath.get("Sancti/"+md);
+  assert.ok(w?.upstreamRuleTokens.some(token=>/^Prefatio=Maria/.test(token)),
+    md+" source lacks original Marian rule attestation");
+  const id="sancti:"+md+":3:w";
+  const rank=md==="08-15"?1:md==="07-02"||md==="08-22"||
+    md==="09-08"||md==="09-15"?2:3;
+  const source=sample("2026-"+md,id.replace(":3:",":"+rank+":"),rank,"White","Communis");
+  source.proper.data.sourcePath="Sancti/"+md;
+  const d=review1962PrefaceForCalendarDay(source);
+  assert.equal(d.status,"SOURCE_CONFLICT",md+" missed §495 Marian proper");
+  assert.equal(d.expected,"MARIA");
+  assert.equal(d.actual,"COMMUNIS");
+  assert.equal(d.clause,"495");
+  assert.equal(d.basis,"ORIGINAL_MARIAN_PREFATIO_SOURCE_1960");
+  assert.equal(d.autoPublish,false);
+  assert.equal(d.changesReader,false);
+  const renamed={...source,proper:{...source.proper,data:{...source.proper.data,
+    sourcePath:"Sancti/11-04"}}};
+  assert.equal(review1962PrefaceForCalendarDay(renamed).status,"UNMAPPED",
+    "A Marian title/date without exact original source ID/path is not enough");
+}
+for(const [md,token,basis,rank] of [
+  ["08-06","(rubrica 1960)Prefatio=Communis",
+    "EXPLICIT_1960_TRANSFIGURATION_COMMON",2],
+  ["08-14","Prefatio=Communis","EXPLICIT_ASSUMPTION_VIGIL_COMMON",2]
+]){
+  const w=witnessByPath.get("Sancti/"+md);
+  assert.ok(w?.upstreamRuleTokens.includes(token),md+" missing source version witness");
+  const src=sample("2026-"+md,"sancti:"+md+":"+rank+":w",
+    rank,"White","Communis");
+  src.proper.data.sourcePath="Sancti/"+md;
+  const d=review1962PrefaceForCalendarDay(src);
+  assert.equal(d.status,"RULE_TEXT_AGREE");
+  assert.equal(d.expected,"COMMUNIS");
+  assert.equal(d.basis,basis);
+  assert.equal(d.clause,"498");
+  assert.equal(d.autoPublish,false);
+  assert.equal(d.changesReader,false);
+  if(md==="08-06"){
+    const oldVersion=sample("2026-08-06","sancti:08-06:2:w",
+      2,"White","de Nativitate Domini");
+    oldVersion.proper.data.sourcePath="Sancti/08-06";
+    assert.equal(review1962PrefaceForCalendarDay(oldVersion).status,"SOURCE_CONFLICT",
+      "A pre-1960 Nativity selector must not supersede 1960 Common");
+  }
+}
+// Two redirect-sensitive cases need further source/edition adjudication.
+assert.equal(witness.additionalRedirectOwnerCases.length,2);
+assert.equal(witness.cases.filter(x=>x.upstreamRuleTokens.length>0).length,11);
+console.log("PASS 142-original-source sanctoral witness: nine §495 Marian conflicts, two qualified Common agreements, two redirect holds");
+
 console.log("PASS 1962 Preface source audit: owner, principal Mass, category, trilingual, regional exclusion, conflict, exceptions");
