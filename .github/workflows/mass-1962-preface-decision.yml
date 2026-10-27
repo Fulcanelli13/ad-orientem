@@ -1,12 +1,25 @@
 name: Mass 1962 Preface source decision gate
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main, fix/mass-1962-lent-preface-source-recovery-20261026, fix/mass-1962-easter-preface-variants-20261026]
   push:
     paths:
       - 'src/mass/1962-preface-decision.js'
+      - 'src/mass/1962-easter-preface-form.js'
+      - 'src/mass/1962-in-albis-secret-source.js'
+      - 'data/mass/1962-in-albis-secret-source.v1.json'
+      - 'tests/mass-1962-in-albis-secret-source.mjs'
       - 'src/mass/reader-proper-runtime-recovery.js'
       - 'src/mass/proper-reader-slots.js'
       - 'tests/reader-proper-runtime-recovery.mjs'
+      - 'tests/mass-1962-lent-preface-recovery.mjs'
+      - 'tests/mass-1962-lent-preface-production.mjs'
+      - 'tests/mass-1962-easter-preface-variants.mjs'
+      - 'tests/mass-1962-easter-preface-production.mjs'
+      - 'tests/mass-1962-preface-reader-handoff.mjs'
+      - 'src/mass/host-adapter.js'
+      - 'tests/fixtures/mass-easter-preface-pasch-source.v1.json'
       - 'tests/mass-1962-preface-decision.mjs'
       - '.github/workflows/mass-1962-preface-decision.yml'
 jobs:
@@ -19,7 +32,31 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm install --no-audit --no-fund
       - run: node --check src/mass/1962-preface-decision.js
       - run: node tests/mass-1962-preface-decision.mjs
       - run: node tests/proper-reader-slots.mjs
       - run: node tests/reader-proper-runtime-recovery.mjs
+      - name: Authenticate trilingual Lenten Preface source recovery
+        run: node tests/mass-1962-lent-preface-recovery.mjs
+      - name: Resolve Chromium for production Mass regression
+        run: |
+          if command -v google-chrome >/dev/null 2>&1; then
+            echo "AO_BROWSER_BIN=$(command -v google-chrome)" >> "$GITHUB_ENV"
+            google-chrome --version
+          elif command -v chromium >/dev/null 2>&1; then
+            echo "AO_BROWSER_BIN=$(command -v chromium)" >> "$GITHUB_ENV"
+            chromium --version
+          else
+            npx playwright install --with-deps chromium
+          fi
+      - name: Verify authentic three-language In Albis Secret source and source guards
+        run: node tests/mass-1962-in-albis-secret-source.mjs
+      - name: Verify three authentic trilingual Easter Preface variants
+        run: node tests/mass-1962-easter-preface-variants.mjs
+      - name: Verify source-bound Preface in native R17 reader output
+        run: node tests/mass-1962-preface-reader-handoff.mjs
+      - name: Audit all 30 Lent and Pentecost 2026 production Prefaces
+        run: node tests/mass-1962-lent-preface-production.mjs
+      - name: Audit Easter Prefaces and 12 April secret in actual native reader
+        run: node tests/mass-1962-easter-preface-production.mjs
