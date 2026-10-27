@@ -438,6 +438,12 @@
             "result": "NO_PHYSICAL_FRAME_VISIBLE_IN_PREVIEW_CROPPED",
             "confidence_scope": "centre_crop_only",
             "source": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph"
+          },
+          "image_provider_rights_concern": {
+            "source": "https://www.nationalgallery.org.uk/documentation/ngacuk/licences",
+            "finding": "National Gallery London current API collection images are CC BY-NC-ND 4.0, incompatible with crop/derivative use as a default workflow; Commons PD-Art reproduction is separate exact file and requires its own jurisdiction/source assessment.",
+            "status": "REVIEW_EXACT_COMMONS_FILE_RIGHTS_DISTINCT_FROM_NG_API",
+            "publishing": false
           }
         }
       ]
@@ -454,7 +460,8 @@
     "A framed alternate illustration of König is not the exact CC0 image intended for archive.",
     "Stom: use Nationalmuseum supplied Commons record, not other paintings bearing the same title.",
     "Beuckelaer: prefer Getty museum image/Google Art Project over a visitor-shot Commons photo.",
-    "USER DIRECTIVE 2026-10-27: NO FUCKING FRAMES. No frames in editorial previews, selected heroes, any crops or delivered/public images. This is an unconditional fail; do not present framed source just because its artwork is relevant."
+    "USER DIRECTIVE 2026-10-27: NO FUCKING FRAMES. No frames in editorial previews, selected heroes, any crops or delivered/public images. This is an unconditional fail; do not present framed source just because its artwork is relevant.",
+    "2026-10-27: National Gallery London collection API image licence is CC BY-NC-ND: do not assume a museum-origin API image can be altered or cropped; Commons PD-Art exact-file evidence treated separately. Zero frames requirement absolute."
   ],
   "audit_20261027_verified_file_round": {
     "count_exact_source_files_located": 5,
