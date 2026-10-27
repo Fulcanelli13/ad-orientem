@@ -54,8 +54,7 @@ CREATE TABLE source_ministry (
   inherited_missal TEXT NOT NULL DEFAULT 'UNKNOWN',
   inherited_scope TEXT NOT NULL,
   approval_state TEXT NOT NULL CHECK(approval_state='RESEARCH_ONLY_NOT_PUBLIC'),
-  FOREIGN KEY(physical_anchor_id) REFERENCES unified_physical_site(anchor_id),
-  FOREIGN KEY(source_id) REFERENCES classification_source(source_id)
+  FOREIGN KEY(physical_anchor_id) REFERENCES unified_physical_site(anchor_id)
 );
 CREATE TABLE timetable_ministry_link (
   historical_row INTEGER PRIMARY KEY,source_id TEXT,group_id TEXT,
@@ -168,7 +167,7 @@ CREATE INDEX idx_mass_anchor ON timetable_ministry_link(physical_anchor_id);
                     'SOURCE_LABEL_ONLY' if norm_id else grade,
                     state,rite,missal,scope,'RESEARCH_ONLY_NOT_PUBLIC'))
     assert labels_count==2008
-    assert inherited_count==1386
+    assert inherited_count==1389
     assert exact_links==2674
     for entry in rows['mass']:
         m=entry['original_row']
@@ -198,7 +197,7 @@ CREATE INDEX idx_mass_anchor ON timetable_ministry_link(physical_anchor_id);
     assert db.execute('SELECT COUNT(*) FROM timetable_ministry_link').fetchone()[0]==4681
     assert db.execute('SELECT COUNT(*) FROM unified_physical_site').fetchone()[0]==2579
     assert db.execute('SELECT COUNT(*) FROM institute_norm').fetchone()[0]==8
-    assert db.execute("SELECT COUNT(*) FROM source_ministry WHERE institute_id IS NOT NULL").fetchone()[0]==1386
+    assert db.execute("SELECT COUNT(*) FROM source_ministry WHERE institute_id IS NOT NULL").fetchone()[0]==1389
     assert db.execute("SELECT COUNT(*) FROM classification_exception").fetchone()[0]==0
     assert db.execute("SELECT COUNT(*) FROM timetable_ministry_link WHERE current_schedule_approved=1").fetchone()[0]==0
     return {'physical_sites':2579,'source_ministry_rows':2723,
