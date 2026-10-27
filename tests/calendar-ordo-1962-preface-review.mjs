@@ -198,8 +198,9 @@ for(const [md,token,basis,rank] of [
 ]){
   const w=witnessByPath.get("Sancti/"+md);
   assert.ok(w?.upstreamRuleTokens.includes(token),md+" missing source version witness");
-  const src=sample("2026-"+md,"sancti:"+md+":"+rank+":w",
-    rank,"White","Communis");
+  const isVigil=md==="08-14";
+  const src=sample("2026-"+md,"sancti:"+md+":"+rank+":"+(isVigil?"v":"w"),
+    rank,isVigil?"Violet":"White","Communis");
   src.proper.data.sourcePath="Sancti/"+md;
   const d=review1962PrefaceForCalendarDay(src);
   assert.equal(d.status,"RULE_TEXT_AGREE");
