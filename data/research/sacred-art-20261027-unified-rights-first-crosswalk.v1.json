@@ -1,0 +1,1589 @@
+{
+  "schema": "AO_SACRED_ART_CROSS_BRANCH_RIGHTS_FIRST_EVIDENCE_V1",
+  "date": "2026-10-27",
+  "status": "READ_ONLY_RECONCILIATION_NOT_REPLACEMENT_CANONICAL_LEDGER",
+  "source_files": [
+    {
+      "role": "b56",
+      "path": "data/research/sacred-art-b56-53-classi-curated-source-seed.json",
+      "branch": "research/sacred-art-b56-classi-53-hero-selector-20261024"
+    },
+    {
+      "role": "hero",
+      "path": "data/research/module-hero-editorial-decision-ledger-2026-10-26.review19.json",
+      "branch": "research/module-hero-pd-masters-20261026"
+    },
+    {
+      "role": "hqa",
+      "path": "data/research/module-hero-artwork-production-readiness-2026-10-26.audit1.json",
+      "branch": "research/module-hero-pd-masters-20261026"
+    },
+    {
+      "role": "b50",
+      "path": "data/research/sacred-art-b50-95-photo-rights-resolution-summary.json",
+      "branch": "research/sacred-art-b56-classi-53-hero-selector-20261024"
+    },
+    {
+      "role": "photos",
+      "path": "data/calendar/approved-feast-hero-photo-rights-due-diligence-20261021.v2.json",
+      "branch": "fix/approved-feast-heroes-main-20261021"
+    },
+    {
+      "role": "wave2",
+      "path": "data/research/module-hero-acquisition-wave2-20261026.json",
+      "branch": "research/module-hero-wave2-20261026"
+    },
+    {
+      "role": "museum",
+      "path": "data/research/module-hero-museum-acquisition-20261026.json",
+      "branch": "research/module-hero-museum-photos-20261026"
+    },
+    {
+      "role": "rescue",
+      "path": "data/research/module-hero-rescue-20261026.json",
+      "branch": "research/module-hero-rescue-20261026"
+    }
+  ],
+  "authority": "B56 owns dated Class I choices; review19 owns 22 module paintings; B49/B50 retain 107 historical art selections. This is a linking index; it changes none of them.",
+  "user_policy": "STRICT_EUR0_NO_EMAIL_NO_PERMISSION_REQUEST_NO_PAID_LICENCE_NO_BILLED_STORAGE",
+  "sequence": [
+    "reconcile exact choices without losing prior approvals",
+    "screen original artwork copyright separately from the exact digital photo licence",
+    "resolve exact rights and source-file commercial/derivative/territory terms or hold, no outreach",
+    "inspect rights-qualified full-resolution image fidelity and painted edges, no frame or false recolour",
+    "reuse best photo of approved original, then seek same-original open photo; alternative painting requires curator choice",
+    "permanent free storage with checksum and provenance then manually authorized app release",
+    "finish 22 heroes and 53 Class I before all remaining Sundays and later major Class II dates"
+  ],
+  "metrics": {
+    "b56_dates": 53,
+    "b56_approved_dates": 24,
+    "b56_reviewed_open": 10,
+    "b56_awaiting_review": 19,
+    "modules_final_approved": 22,
+    "legacy_approved_artwork_bank": 107,
+    "legacy_priority_rights_cohort": 95,
+    "legacy_rights_exceptions": 12,
+    "b50_commons_size_and_dimensions_matches_not_sha_clearance": 68,
+    "legacy_ten_photos_matching_current_artistic_selection": 9,
+    "legacy_ten_photos_mismatching_current_artistic_selection": [
+      "2026-04-02"
+    ],
+    "staged_module_photo_files_across_three_branches": 11,
+    "staged_distinct_module_ids": 10,
+    "production_release_authorized_by_this_index": 0
+  },
+  "exception_flags": [
+    {
+      "id": "2026-04-02",
+      "kind": "SUPERSEDED_PHOTO_DO_NOT_SHIP",
+      "note": "Old ten-photo package still has Ugolino; current date-approved original is Champaigne La Petite Cène."
+    },
+    {
+      "id": "2026-10-25",
+      "kind": "CHRISTIES_EXACT_PHOTO_RIGHTS_HOLD"
+    },
+    {
+      "id": "2026-11-29",
+      "kind": "TATE_UK_CLAIM_AND_NONCOMMERCIAL_NO_DERIVS_HOLD"
+    },
+    {
+      "id": "2026-11-02",
+      "kind": "CARRACCI_PHOTO_ORIENTATION_PHYSICAL_OBJECT_VERIFICATION_HOLD"
+    },
+    {
+      "id": "module:king",
+      "kind": "PREVIOUS_CHRISTIES_LOT_WRONG_6223948_USE_6238407_AS_RESEARCH_LEAD_ONLY"
+    },
+    {
+      "id": "module:holy-spirit",
+      "kind": "COMMONS_PD_ART_VERSUS_PHOTOGRAPHER_EXIF_CC_BY_SA_CONFLICT"
+    },
+    {
+      "id": "module:evening",
+      "kind": "ART_UK_NONPUBLICATION_TERMS_AND_LOW_RES_ALTERNATE"
+    },
+    {
+      "id": "module:perpetual",
+      "kind": "DEVOTIONAL_POSTER_COPY_IS_NOT_AUTOMATICALLY_CLEAR_PHOTO"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2026-01-01",
+      "principal_id": "sancti:01-01:1:w",
+      "feast": "Octave Day of Christmas",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "cma-143784",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-01-06",
+      "principal_id": "sancti:01-06:1:w",
+      "feast": "Epiphany of the Lord",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "met-436984",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-02-18",
+      "principal_id": "tempora:Quadp3-3:1:v",
+      "feast": "Ash Wednesday",
+      "editorial_status": "APPROVED_ROUND_1_TO_6",
+      "chosen_painting": {
+        "artist": "Georges de La Tour",
+        "title": "The Penitent Magdalen",
+        "artwork_id": "met-436839",
+        "object_url": "https://www.metmuseum.org/art/collection/search/436839"
+      },
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-02-22",
+      "principal_id": "tempora:Quad1-0:1:v",
+      "feast": "I Sunday of Lent",
+      "editorial_status": "APPROVED_ROUND_1_TO_6",
+      "chosen_painting": {
+        "artist": "Ivan Kramskoi",
+        "title": "Christ in the Wilderness",
+        "artwork_id": "external:tretyakov:inv651",
+        "object_url": "https://my.tretyakov.ru/app/masterpiece/8448"
+      },
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-03-01",
+      "principal_id": "tempora:Quad2-0:1:v",
+      "feast": "II Sunday of Lent",
+      "editorial_status": "APPROVED_ROUND_1_TO_6",
+      "chosen_painting": {
+        "artist": "Giovanni Bellini",
+        "title": "The Transfiguration",
+        "artwork_id": "external:capodimonte:bellini-transfiguration",
+        "object_url": "https://capodimonte.cultura.gov.it/restaurata-la-trasfigurazione-di-bellini-capolavoro-del-maestro-veneziano/"
+      },
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-03-08",
+      "principal_id": "tempora:Quad3-0:1:v",
+      "feast": "III Sunday of Lent",
+      "editorial_status": "REVIEWED_OPEN_NO_CURRENT_DATE_SELECTION",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-03-15",
+      "principal_id": "tempora:Quad4-0:1:pv",
+      "feast": "IV Sunday of Lent",
+      "editorial_status": "REVIEWED_OPEN_NO_CURRENT_DATE_SELECTION",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-03-19",
+      "principal_id": "sancti:03-19:1:w",
+      "feast": "St. Joseph, Spouse of the Bl. Virgin Mary",
+      "editorial_status": "REVIEWED_OPEN_NO_CURRENT_DATE_SELECTION",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "cma-160143",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-03-22",
+      "principal_id": "tempora:Quad5-0:1:v",
+      "feast": "Passion Sunday",
+      "editorial_status": "REVIEWED_OPEN_NO_CURRENT_DATE_SELECTION",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-03-25",
+      "principal_id": "sancti:03-25:1:w",
+      "feast": "Annunciation of the Blessed Virgin Mary",
+      "editorial_status": "APPROVED_ROUND_1_TO_6",
+      "chosen_painting": {
+        "artist": "Orazio Gentileschi",
+        "title": "The Annunciation",
+        "artwork_id": "external:galleria-sabauda:orazio-gentileschi-annunciation-1623",
+        "object_url": "https://catalogo.fondazionezeri.unibo.it/entry/work/47842/Gentileschi%20Orazio%2C%20Annunciazione"
+      },
+      "earlier_subject_selection_artwork_id": "met-438724",
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-03-29",
+      "principal_id": "tempora:Quad6-0r:1:rv",
+      "feast": "Palm Sunday",
+      "editorial_status": "APPROVED_PROTECTED",
+      "chosen_painting": {
+        "artist": "Anthony van Dyck",
+        "title": "The Entry of Christ into Jerusalem",
+        "artwork_id": null,
+        "object_url": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg"
+      },
+      "earlier_subject_selection_artwork_id": "kress-k2017",
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": true,
+      "legacy_ten_photo_sha_if_same_painting": "7dd646da72caebcac8b915db81d97e5e09b430ffe6501834034201ddfd9072aa",
+      "legacy_ten_photo_rights_evidence": {
+        "tier": "COMMONS_PD_ART_WITH_LOCAL_PHOTOGRAPHER",
+        "release": "REVIEW_REQUIRED",
+        "verification_urls": [
+          "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg"
+        ]
+      },
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-03-30",
+      "principal_id": "tempora:Quad6-1:1:v",
+      "feast": "Feria II of Holy Week",
+      "editorial_status": "APPROVED_ROUND_1_TO_6",
+      "chosen_painting": {
+        "artist": "Peter Paul Rubens and workshop, with Anthony van Dyck",
+        "title": "The Feast in the House of Simon the Pharisee",
+        "artwork_id": "external:hermitage:rubens-vandyck-feast-simon-pharisee",
+        "object_url": "https://www.pubhist.com/w20544"
+      },
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-03-31",
+      "principal_id": "tempora:Quad6-2:1:v",
+      "feast": "Feria III of Holy Week",
+      "editorial_status": "APPROVED_ROUND_1_TO_6",
+      "chosen_painting": {
+        "artist": "Michelangelo Merisi da Caravaggio",
+        "title": "The Taking of Christ",
+        "artwork_id": "external:ngi:L.14702",
+        "object_url": "https://www.nationalgallery.ie/ga/node/169"
+      },
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-04-01",
+      "principal_id": "tempora:Quad6-3:1:v",
+      "feast": "Feria IV of Holy Week",
+      "editorial_status": "APPROVED_ROUND_1_TO_6",
+      "chosen_painting": {
+        "artist": "Gerrit van Honthorst",
+        "title": "Christ before the High Priest",
+        "artwork_id": "external:nationalgallery:NG3679",
+        "object_url": "https://www.nationalgallery.org.uk/paintings/gerrit-van-honthorst-christ-before-the-high-priest"
+      },
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-04-02",
+      "principal_id": "tempora:Quad6-4r:1:w",
+      "feast": "Holy Thursday",
+      "editorial_status": "APPROVED_PROTECTED",
+      "chosen_painting": {
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "artwork_id": "ART-hilippe-de-hampaigne-a-etite-ne",
+        "object_url": null
+      },
+      "earlier_subject_selection_artwork_id": "met-459131",
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": true,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-04-03",
+      "principal_id": "tempora:Quad6-5r:1:bv",
+      "feast": "Good Friday",
+      "editorial_status": "APPROVED_ROUND_1_TO_6",
+      "chosen_painting": {
+        "artist": "Peter Paul Rubens",
+        "title": "The Descent from the Cross (central panel of Antwerp Cathedral triptych)",
+        "artwork_id": "external:antwerp-cathedral:rubens-descent-cross-central-panel",
+        "object_url": "https://www.dekathedraal.be/en/rubens-descent-cross"
+      },
+      "earlier_subject_selection_artwork_id": "met-459087",
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-04-04",
+      "principal_id": "tempora:Quad6-6r:1:vw",
+      "feast": "Holy Saturday",
+      "editorial_status": "REVIEWED_OPEN_NO_CURRENT_DATE_SELECTION",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "met-437156",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-04-05",
+      "principal_id": "tempora:Pasc0-0:1:w",
+      "feast": "Easter Sunday",
+      "editorial_status": "REVIEWED_OPEN_NO_CURRENT_DATE_SELECTION",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "cma-78982",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-04-06",
+      "principal_id": "tempora:Pasc0-1:1:w",
+      "feast": "Monday in the Octave of Easter",
+      "editorial_status": "APPROVED_ROUND_1_TO_6",
+      "chosen_painting": {
+        "artist": "Matthias Stom",
+        "title": "The Supper at Emmaus",
+        "artwork_id": "external:thyssen:375-1976.66",
+        "object_url": "https://www.museothyssen.org/en/collection/artists/stom-matthias/supper-emmaus"
+      },
+      "earlier_subject_selection_artwork_id": "cma-78982",
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-04-07",
+      "principal_id": "tempora:Pasc0-2:1:w",
+      "feast": "Tuesday in the Octave of Easter",
+      "editorial_status": "APPROVED_ROUND_1_TO_6",
+      "chosen_painting": {
+        "artist": "Peter Paul Rubens",
+        "title": "Resurrected Christ Appearing to the Apostles — central panel of Rockox–Pérez triptych",
+        "artwork_id": "external:kmska:307-rockox-center",
+        "object_url": "https://kmska.be/en/masterpiece/epitaph-of-nicolaas-rockox-and-his-wife-adriana-perez"
+      },
+      "earlier_subject_selection_artwork_id": "cma-78982",
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-04-08",
+      "principal_id": "tempora:Pasc0-3:1:w",
+      "feast": "Wednesday in the Octave of Easter",
+      "editorial_status": "REVIEWED_OPEN_NO_CURRENT_DATE_SELECTION",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "cma-78982",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-04-09",
+      "principal_id": "tempora:Pasc0-4:1:w",
+      "feast": "Thursday in the Octave of Easter",
+      "editorial_status": "REVIEWED_OPEN_NO_CURRENT_DATE_SELECTION",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "cma-78982",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-04-10",
+      "principal_id": "tempora:Pasc0-5:1:w",
+      "feast": "Friday in the Octave of Easter",
+      "editorial_status": "APPROVED_ROUND_1_TO_6",
+      "chosen_painting": {
+        "artist": "Nicolas Poussin",
+        "title": "The Sacrament of Ordination (Christ Presenting the Keys to Saint Peter)",
+        "artwork_id": "external:kimbell:AP-2011.01",
+        "object_url": "https://kimbellart.org/collection/ap-201101"
+      },
+      "earlier_subject_selection_artwork_id": "cma-78982",
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-04-11",
+      "principal_id": "tempora:Pasc0-6:1:w",
+      "feast": "Saturday in the Octave of Easter",
+      "editorial_status": "APPROVED_ROUND_1_TO_6",
+      "chosen_painting": {
+        "artist": "Eugène Burnand",
+        "title": "Les Disciples Pierre et Jean courant au Sépulcre le matin de la Résurrection",
+        "artwork_id": "external:orsay:RF-1153",
+        "object_url": "https://www.musee-orsay.fr/fr/oeuvres/les-disciples-pierre-et-jean-courant-au-sepulcre-le-matin-de-la-resurrection-9239"
+      },
+      "earlier_subject_selection_artwork_id": "cma-78982",
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-04-12",
+      "principal_id": "tempora:Pasc1-0:1:w",
+      "feast": "Low Sunday",
+      "editorial_status": "APPROVED_ROUND_1_TO_6",
+      "chosen_painting": {
+        "artist": "Michelangelo Merisi da Caravaggio",
+        "title": "The Incredulity of Saint Thomas",
+        "artwork_id": "external:potsdam:caravaggio-incredulity-thomas",
+        "object_url": "https://www.spsg.de/en/palaces-gardens/object/the-incredulity-of-saint-thomas/"
+      },
+      "earlier_subject_selection_artwork_id": "cma-78982",
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-05-01",
+      "principal_id": "sancti:05-01r:1:w",
+      "feast": "St. Joseph the Workman",
+      "editorial_status": "APPROVED_ROUND_1_TO_6",
+      "chosen_painting": {
+        "artist": "Georges de La Tour",
+        "title": "Saint Joseph the Carpenter",
+        "artwork_id": "external:louvre:RF-1948-27",
+        "object_url": "https://collections.louvre.fr/en/ark:/53355/cl010063817"
+      },
+      "earlier_subject_selection_artwork_id": "cma-160143",
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-05-14",
+      "principal_id": "tempora:Pasc5-4:1:w",
+      "feast": "Ascension of the Lord",
+      "editorial_status": "REVIEWED_OPEN_NO_CURRENT_DATE_SELECTION",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "met-436835",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-05-23",
+      "principal_id": "tempora:Pasc6-6:1:r",
+      "feast": "Vigil of Pentecost",
+      "editorial_status": "APPROVED_PROTECTED",
+      "chosen_painting": {
+        "artist": "Juan Bautista Maíno",
+        "title": "The Pentecost",
+        "artwork_id": null,
+        "object_url": "https://commons.wikimedia.org/wiki/File:Maino_Pentecost%C3%A9s%2C_1620-1625._Museo_del_Prado.jpg"
+      },
+      "earlier_subject_selection_artwork_id": "commons-baroncelli-pentecost",
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": true,
+      "legacy_ten_photo_sha_if_same_painting": "d03e5fa2ca64b4d576f3461d25bf861267d2f69382e69bc5bd1f1de4e02038f5",
+      "legacy_ten_photo_rights_evidence": {
+        "tier": "COMMONS_PD_ART_WITH_PRADO_CUSTODIAN",
+        "release": "REVIEW_REQUIRED",
+        "verification_urls": [
+          "https://commons.wikimedia.org/wiki/File:Maino_Pentecost%C3%A9s._Lienzo._285_x_163_cm._Museo_del_Prado.jpg",
+          "https://www.museodelprado.es/en/the-collection/art-work/the-pentecost/49c1d551-240d-4bab-8f4a-39c706ce0ee5"
+        ]
+      },
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-05-24",
+      "principal_id": "tempora:Pasc7-0:1:r",
+      "feast": "Pentecost Sunday",
+      "editorial_status": "APPROVED_PROTECTED",
+      "chosen_painting": {
+        "artist": "Jean II Restout",
+        "title": "Pentecost",
+        "artwork_id": "ART-ean-estout-entecost",
+        "object_url": null
+      },
+      "earlier_subject_selection_artwork_id": "commons-baroncelli-pentecost",
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": true,
+      "legacy_ten_photo_sha_if_same_painting": "5db13e2aedbed466ed8f7d049398f8a9f8a5175dc5665c8b6da56cdc1ee39e1f",
+      "legacy_ten_photo_rights_evidence": {
+        "tier": "COMMONS_PD_ART_WITH_WGA",
+        "release": "REVIEW_REQUIRED",
+        "verification_urls": [
+          "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+          "https://collections.louvre.fr/en/ark:/53355/cl010062538"
+        ]
+      },
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-05-25",
+      "principal_id": "tempora:Pasc7-1:1:r",
+      "feast": "Monday after Pentecost",
+      "editorial_status": "REVIEWED_OPEN_NO_CURRENT_DATE_SELECTION",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "commons-baroncelli-pentecost",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-05-26",
+      "principal_id": "tempora:Pasc7-2:1:r",
+      "feast": "Tuesday after Pentecost",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "commons-baroncelli-pentecost",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-05-27",
+      "principal_id": "tempora:Pasc7-3:1:r",
+      "feast": "Ember Wednesday of Pentecost",
+      "editorial_status": "APPROVED_PROTECTED",
+      "chosen_painting": {
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "artwork_id": "ART-hilippe-de-hampaigne-a-etite-ne",
+        "object_url": null
+      },
+      "earlier_subject_selection_artwork_id": "commons-baroncelli-pentecost",
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": true,
+      "legacy_ten_photo_sha_if_same_painting": "64d631d58256a4e479a05b799af5956240e90c945b6e0418c0c4f3d7ac7af83a",
+      "legacy_ten_photo_rights_evidence": {
+        "tier": "COMMONS_PD_ART_WITH_GOOGLE_IMAGE",
+        "release": "REVIEW_REQUIRED",
+        "verification_urls": [
+          "https://commons.wikimedia.org/wiki/File:Champaigne_Petite_C%C3%A8ne_Louvre.jpg",
+          "https://collections.louvre.fr/en/ark:/53355/cl010062076"
+        ]
+      },
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-05-28",
+      "principal_id": "tempora:Pasc7-4:1:r",
+      "feast": "Thursday after Pentecost",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "commons-baroncelli-pentecost",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-05-29",
+      "principal_id": "tempora:Pasc7-5:1:r",
+      "feast": "Ember Friday of Pentecost",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "commons-baroncelli-pentecost",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-05-30",
+      "principal_id": "tempora:Pasc7-6:1:r",
+      "feast": "Ember Saturday of Pentecost",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "commons-baroncelli-pentecost",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-05-31",
+      "principal_id": "tempora:Pent01-0r:1:w",
+      "feast": "Trinity Sunday",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "cma-136507",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-06-04",
+      "principal_id": "tempora:Pent01-4:1:w",
+      "feast": "Corpus Christi",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "met-437722",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-06-12",
+      "principal_id": "tempora:Pent02-5:1:w",
+      "feast": "Sacred Heart of Jesus",
+      "editorial_status": "APPROVED_PROTECTED",
+      "chosen_painting": {
+        "artist": "Juan Patricio Morlete Ruiz",
+        "title": "The Heart of Jesus",
+        "artwork_id": "commons-morlete-sacred-heart-1759",
+        "object_url": null
+      },
+      "earlier_subject_selection_artwork_id": "commons-morlete-sacred-heart-1759",
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": true,
+      "legacy_ten_photo_sha_if_same_painting": "d0d69e4f0dc0dbfe47b8e7f4dd129f2767ddcd6005412b7fb0a1fd6545878630",
+      "legacy_ten_photo_rights_evidence": {
+        "tier": "COMMONS_PD_ART_WITH_GOOGLE_ART_PROJECT",
+        "release": "REVIEW_REQUIRED",
+        "verification_urls": [
+          "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
+        ]
+      },
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-06-24",
+      "principal_id": "sancti:06-24:1:w",
+      "feast": "Nativity of St. John the Baptist",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "met-437738",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-06-29",
+      "principal_id": "sancti:06-29:1:r",
+      "feast": "Sts. Peter & Paul",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-07-01",
+      "principal_id": "sancti:07-01:1:r",
+      "feast": "The Precious Blood of Our Lord Jesus Christ",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-08-15",
+      "principal_id": "sancti:08-15:1:w",
+      "feast": "Assumption of the Blessed Virgin Mary",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "nga-46131",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-09-29",
+      "principal_id": "sancti:09-29:1:w",
+      "feast": "Dedication of St. Michael the Archangel",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-10-25",
+      "principal_id": "sancti:10-DU:1:w",
+      "feast": "Christ the King",
+      "editorial_status": "APPROVED_PROTECTED",
+      "chosen_painting": {
+        "artist": "Ambrosius Benson",
+        "title": "Salvator Mundi",
+        "artwork_id": null,
+        "object_url": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg"
+      },
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": true,
+      "legacy_ten_photo_sha_if_same_painting": "37cd218c71758d44037d05bddbebf9b2de8eb62d0fa2c50c969be8f7119fa749",
+      "legacy_ten_photo_rights_evidence": {
+        "tier": "COMMONS_PD_ART_WITH_CHRISTIES_COPY",
+        "release": "HOLD_OR_OBTAIN_EXPRESS_PHOTO_REUSE_PERMISSION_OR_OTHER_PROVENANCE",
+        "verification_urls": [
+          "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg",
+          "https://www.christies.com/about-us/contact/terms-and-conditions/?lid=1&sc_lang=en",
+          "https://press.christies.com/images-terms-of-use/"
+        ]
+      },
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "HIGH_RIGHTS_HOLD",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-11-01",
+      "principal_id": "sancti:11-01:1:w",
+      "feast": "All Saints",
+      "editorial_status": "APPROVED_PROTECTED",
+      "chosen_painting": {
+        "artist": "Carlo Saraceni",
+        "title": "Paradise",
+        "artwork_id": null,
+        "object_url": "https://www.metmuseum.org/art/collection/search/437607"
+      },
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": true,
+      "legacy_ten_photo_sha_if_same_painting": "e5f4fde3cf40bb02bfb5fee8d0a54da6a9aaef43a24a508a2db58f6d29326791",
+      "legacy_ten_photo_rights_evidence": {
+        "tier": "MET_OPEN_ACCESS_CC0",
+        "release": "POLICY_SOURCE_PASSED_PHOTO_SIGNOFF_PENDING",
+        "verification_urls": [
+          "https://www.metmuseum.org/art/collection/search/437607",
+          "https://www.metmuseum.org/policies/image-resources",
+          "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources"
+        ]
+      },
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-11-02",
+      "principal_id": "sancti:11-02m1:1:b",
+      "feast": "Commemoration of All Souls",
+      "editorial_status": "APPROVED_PROTECTED",
+      "chosen_painting": {
+        "artist": "Ludovico Carracci",
+        "title": "An Angel Frees the Souls of Purgatory",
+        "artwork_id": null,
+        "object_url": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg"
+      },
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": true,
+      "legacy_ten_photo_sha_if_same_painting": "8ddb069cdbded62cb6927f0723848fcac1d199b073f2a9ea1455ac3c22956139",
+      "legacy_ten_photo_rights_evidence": {
+        "tier": "COMMONS_PD_ART_WITH_WGA_AND_DIMENSIONS_CONFLICT",
+        "release": "ELEVATED_IDENTITY_AND_PHOTO_RIGHTS_REVIEW_REQUIRED",
+        "verification_urls": [
+          "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+          "https://beta.wga.hu/artists/carracci-lodovico-rca68553c81de94/an-angel-frees-the-souls-of-purgatory-rabe8f2105f93a5"
+        ]
+      },
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "HIGH_RIGHTS_HOLD",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-11-29",
+      "principal_id": "tempora:Adv1-0:1:v",
+      "feast": "I Sunday of Advent",
+      "editorial_status": "APPROVED_PROTECTED",
+      "chosen_painting": {
+        "artist": "John Martin",
+        "title": "The Great Day of His Wrath",
+        "artwork_id": null,
+        "object_url": "https://commons.wikimedia.org/wiki/File:John_Martin_-_The_Great_Day_of_His_Wrath_-_Google_Art_Project.jpg"
+      },
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": false,
+      "legacy_ten_photo_same_painting": true,
+      "legacy_ten_photo_sha_if_same_painting": "b9b79c0dc71bcde7c6483ab845f5d709e07b87e4628fa275dd665d2eda9ac73d",
+      "legacy_ten_photo_rights_evidence": {
+        "tier": "COMMONS_PD_ART_EXPLICIT_TATE_UK_PHOTO_CLAIM",
+        "release": "PHOTO_VERSION_HIGH_RIGHTS_HOLD_NO_WORLDWIDE_RELEASE",
+        "verification_urls": [
+          "https://commons.wikimedia.org/wiki/File:John_Martin_-_The_Great_Day_of_His_Wrath_-_Google_Art_Project.jpg",
+          "https://artuk.org/discover/artworks/the-great-day-of-his-wrath-117730",
+          "https://www.tate.org.uk/art/artworks/martin-the-great-day-of-his-wrath-n05613",
+          "https://www.bapla.org.uk/image-suppliers/tate-images",
+          "https://artuk.org/discover/artworks/the-great-day-of-his-wrath-117730"
+        ]
+      },
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "HIGH_RIGHTS_HOLD",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-12-06",
+      "principal_id": "tempora:Adv2-0:1:v",
+      "feast": "II Sunday of Advent",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-12-08",
+      "principal_id": "sancti:12-08:1:w",
+      "feast": "Immaculate Conception of the Blessed Virgin Mary",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "cma-135659",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-12-13",
+      "principal_id": "tempora:Adv3-0:1:pv",
+      "feast": "III Sunday of Advent",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-12-20",
+      "principal_id": "tempora:Adv4-0:1:v",
+      "feast": "IV Sunday of Advent",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-12-24",
+      "principal_id": "sancti:12-24:1:v",
+      "feast": "Vigil of Christmas",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": null,
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    },
+    {
+      "date": "2026-12-25",
+      "principal_id": "sancti:12-25m1:1:w",
+      "feast": "The Nativity of Our Lord",
+      "editorial_status": "AWAITING_DIRECT_B56_REVIEW",
+      "chosen_painting": null,
+      "earlier_subject_selection_artwork_id": "cma-143784",
+      "earlier_subject_selection_not_user_date_approval": true,
+      "legacy_ten_photo_same_painting": false,
+      "legacy_ten_photo_sha_if_same_painting": null,
+      "legacy_ten_photo_rights_evidence": null,
+      "old_photo_does_not_match_later_approval": false,
+      "rights_review_queue": "NO_APPROVED_DATE_PAINTING",
+      "master_photo_review": "NOT_HUMAN_APPROVED",
+      "release": "NOT_AUTHORIZED"
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "angelus",
+      "module": "Angelus",
+      "approved_painting": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Annunciation",
+        "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+        "source_page": "https://www.metmuseum.org/art/collection/search/438724"
+      },
+      "rights_first_bucket": "INSTITUTIONAL_CC0_OR_PD_SOURCE_CLAIM",
+      "source_rights_notes": "Met Open Access, public domain / CC0",
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-wave2-20261026",
+          "path": "assets/staged/module-hero-wave2/angelus-met.jpg",
+          "sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+          "width": 3741,
+          "height": 3658
+        }
+      ],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "joseph",
+      "module": "Saint Joseph",
+      "approved_painting": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Dream of Saint Joseph",
+        "artwork_id": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg"
+      },
+      "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "source_rights_notes": "Commons PD-Art marking; local laws still to consider",
+      "staged_photo_variants": [],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "holy-spirit",
+      "module": "Holy Spirit",
+      "approved_painting": {
+        "artist": "Jean Restout",
+        "title": "Pentecost",
+        "artwork_id": "ART-ean-estout-entecost",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg"
+      },
+      "rights_first_bucket": "HIGH_RIGHTS_HOLD",
+      "source_rights_notes": "Commons PD-Art marking; photographer EXIF says CC-BY-SA—resolve attribution/licensing conflict or source different master",
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-wave2-20261026",
+          "path": "assets/staged/module-hero-wave2/holy-spirit.jpg",
+          "sha256": "c32547f474f4908331c9e7a013809076a65bbbcdc2f8cec6c5b6af2f7e6a1b09",
+          "width": 4037,
+          "height": 2444
+        }
+      ],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "heart-jesus",
+      "module": "Sacred Heart",
+      "approved_painting": {
+        "artist": "Juan Patricio Morlete Ruiz",
+        "title": "The Heart of Jesus",
+        "artwork_id": "commons-morlete-sacred-heart-1759",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
+      },
+      "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "source_rights_notes": "Commons PD-Art marking; image terms require local check",
+      "staged_photo_variants": [],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "heart-mary",
+      "module": "Immaculate Heart",
+      "approved_painting": {
+        "artist": "Juan Patricio Morlete Ruiz",
+        "title": "The Heart of Mary",
+        "artwork_id": "B02-HEART-MARY-MORLETE",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg"
+      },
+      "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "source_rights_notes": "Commons PD-Art marking; image terms require local check",
+      "staged_photo_variants": [],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "michael",
+      "module": "Saint Michael",
+      "approved_painting": {
+        "artist": "Guido Reni",
+        "title": "Archangel Michael Defeating Satan",
+        "artwork_id": "ART-uido-eni-rchangel-ichael-efeating-atan",
+        "source_page": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg"
+      },
+      "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "source_rights_notes": "Commons PD-Art marking; image terms require local check",
+      "staged_photo_variants": [],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "angel",
+      "module": "Guardian Angel",
+      "approved_painting": {
+        "artist": "Pietro da Cortona",
+        "title": "The Guardian Angel",
+        "artwork_id": "ART-ietro-da-ortona-he-uardian-ngel",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg"
+      },
+      "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "source_rights_notes": "Commons PD-Art marking",
+      "staged_photo_variants": [],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "regina",
+      "module": "Regina Cæli",
+      "approved_painting": {
+        "artist": "Peter Paul Rubens",
+        "title": "Resurrection of Christ",
+        "artwork_id": "ART-eter-aul-ubens-esurrection-of-hrist",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg"
+      },
+      "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "source_rights_notes": "Commons PD-Art marking; verify image is intended face of central panel",
+      "staged_photo_variants": [],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "adoration",
+      "module": "Adoration & Benediction",
+      "approved_painting": {
+        "artist": "Jean Auguste Dominique Ingres",
+        "title": "The Virgin Adoring the Host",
+        "artwork_id": "met-438434",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg"
+      },
+      "rights_first_bucket": "INSTITUTIONAL_CC0_OR_PD_SOURCE_CLAIM",
+      "source_rights_notes": "The Met official public domain; Commons PD-Art",
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-museum-photos-20261026",
+          "path": "assets/staged/module-hero-masters/adoration.jpg",
+          "sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+          "width": 3122,
+          "height": 3813
+        }
+      ],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "scripture",
+      "module": "Sacred Scripture",
+      "approved_painting": {
+        "artist": "Caravaggio",
+        "title": "Saint Jerome Writing (Borghese original)",
+        "artwork_id": "W07-007",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Saint_Jerome_Writing-Caravaggio_(1605-6).jpg"
+      },
+      "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "source_rights_notes": "Commons PD-Art marking",
+      "staged_photo_variants": [],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "king",
+      "module": "Christ the King",
+      "approved_painting": {
+        "artist": "Ambrosius Benson",
+        "title": "Salvator Mundi",
+        "artwork_id": "LOCAL-BENSON-SALVATOR",
+        "source_page": "https://www.christies.com/en/lot/lot-6223948"
+      },
+      "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "source_rights_notes": "Commons PD-Art marking; auction reproduction and geographic reuse rights review",
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-wave2-20261026",
+          "path": "assets/staged/module-hero-wave2/king.jpg",
+          "sha256": "2a25ed08f0fc21825eb084e0f5a09de63e8bdcf13c42d8b008d1d3bc805d3cd5",
+          "width": 2987,
+          "height": 3200
+        }
+      ],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "souls",
+      "module": "Holy Souls",
+      "approved_painting": {
+        "artist": "Luca Giordano",
+        "title": "Madonna and Child with Souls in Purgatory",
+        "artwork_id": "souls::1",
+        "source_page": "https://emuseum.mfah.org/objects/64360/madonna-and-child-with-souls-in-purgatory"
+      },
+      "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "source_rights_notes": "Commons PD-Art marking; verify rights in app jurisdictions",
+      "staged_photo_variants": [],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "salvation",
+      "module": "Historia Salutis",
+      "approved_painting": {
+        "artist": "Jean-Léon Gérôme",
+        "title": "The Age of Augustus: The Birth of Christ",
+        "artwork_id": "salvation::1",
+        "source_page": "https://www.museedepicardie.fr/"
+      },
+      "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "source_rights_notes": "Commons PD-Art candidate pending file-by-file confirmation",
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-rescue-20261026",
+          "path": "assets/staged/module-hero-rescue/salvation.jpg",
+          "sha256": "c5b8c147a0e75f1fe91279ceedd323fd246030e8bf0750f4a2b39811bac42102",
+          "width": 6000,
+          "height": 4000
+        }
+      ],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "morning",
+      "module": "Morning Prayer",
+      "approved_painting": {
+        "artist": "Jules Breton",
+        "title": "The Song of the Lark",
+        "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+        "source_page": "https://www.artic.edu/artworks/94841/the-song-of-the-lark"
+      },
+      "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "source_rights_notes": "Commons file terms to verify; AIC official artwork is public domain",
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-rescue-20261026",
+          "path": "assets/staged/module-hero-rescue/morning.jpg",
+          "sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+          "width": 2548,
+          "height": 3300
+        }
+      ],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "evening",
+      "module": "Evening Prayer",
+      "approved_painting": {
+        "artist": "Pierre-Édouard Frère",
+        "title": "The Prayer",
+        "artwork_id": "artuk:op6-prayer-frere",
+        "source_page": "https://artuk.org/discover/artworks/the-prayer-19241"
+      },
+      "rights_first_bucket": "HIGH_RIGHTS_HOLD",
+      "source_rights_notes": "Art UK display is restricted to private/research without separate licence; Commons file PD-Art review required",
+      "staged_photo_variants": [],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "perpetual",
+      "module": "Our Lady of Perpetual Help",
+      "approved_painting": {
+        "artist": "Traditional iconography of Our Lady of Perpetual Help; photograph of Redemptorist Baclaran poster",
+        "title": "Our Holy Mother of Perpetual Succour — clean full-length devotional reproduction",
+        "artwork_id": "commons:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Our_Holy_Mother_Of_Perpetual_Succour.jpg"
+      },
+      "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "source_rights_notes": "Commons marks as PD-Art; photographed/scanned contemporary devotional poster requires independent rights/fidelity review",
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-wave2-20261026",
+          "path": "assets/staged/module-hero-wave2/perpetual.jpg",
+          "sha256": "c6d06a9458658a6de9164895ca784e17ea70548ed090ae27987f28351694d077",
+          "width": 3000,
+          "height": 3688
+        }
+      ],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "saints",
+      "module": "Saints",
+      "approved_painting": {
+        "artist": "Albrecht Dürer",
+        "title": "Adoration of the Trinity (Landauer Altarpiece)",
+        "artwork_id": "khm:GG-838",
+        "source_page": "https://artsandculture.google.com/asset/adoration-of-the-trinity-landauer-altar-albrecht-d%C3%BCrer/_wGp9zTkz0OVqQ?hl=en"
+      },
+      "rights_first_bucket": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "source_rights_notes": "Unverified",
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-wave2-20261026",
+          "path": "assets/staged/module-hero-wave2/saints-khm.jpg",
+          "sha256": "2143788edf006b6794dfae0530f7739786140fee002d93c670507de65f4241e1",
+          "width": 2245,
+          "height": 3000
+        },
+        {
+          "branch": "research/module-hero-wave2-20261026",
+          "path": "assets/staged/module-hero-wave2/saints-gart.jpg",
+          "sha256": "137d3df4dee890524678cbd02b9690130c5550d22ca6778621b24fc6fe6ab5b2",
+          "width": 4969,
+          "height": 5434
+        }
+      ],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "visit",
+      "module": "Visit to the Blessed Sacrament",
+      "approved_painting": {
+        "artist": "Gerrit van Honthorst",
+        "title": "The Adoration of the Shepherds",
+        "artwork_id": "wallraf:honthorst-adoration-shepherds-1622",
+        "source_page": "https://www.wallraf.museum/2017-11-17-honthorst/"
+      },
+      "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "source_rights_notes": "Commons PD-Art; original EXIF explicitly lists Public Domain Mark",
+      "staged_photo_variants": [],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "mass",
+      "module": "Mass Explorer",
+      "approved_painting": {
+        "artist": "Victor Meirelles",
+        "title": "The First Mass in Brazil",
+        "artwork_id": "museu-nacional-belas-artes:meirelles-first-mass-brazil-1860",
+        "source_page": "https://artsandculture.google.com/asset/first-mass-in-brazil-0027/IQFUWbm_Wu1XaA"
+      },
+      "rights_first_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
+      "source_rights_notes": "Commons PD-Art marking; verify photographic quality",
+      "staged_photo_variants": [],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "confession",
+      "module": "Confession",
+      "approved_painting": {
+        "artist": "Bartolomé Esteban Murillo",
+        "title": "The Return of the Prodigal Son",
+        "artwork_id": "nga:34956",
+        "source_page": "https://www.nga.gov/artworks/34956-return-prodigal-son"
+      },
+      "rights_first_bucket": "INSTITUTIONAL_CC0_OR_PD_SOURCE_CLAIM",
+      "source_rights_notes": "NGA explicit public domain open access",
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-museum-photos-20261026",
+          "path": "assets/staged/module-hero-masters/confession.jpg",
+          "sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+          "width": 4096,
+          "height": 3712
+        }
+      ],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "rosary",
+      "module": "The Holy Rosary",
+      "approved_painting": {
+        "artist": "Lorenzo Lotto",
+        "title": "Madonna del Rosario",
+        "artwork_id": "fondazione-zeri:47818",
+        "source_page": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/47818/Lotto%20Lorenzo%2C%20Madonna%20del%20Rosario"
+      },
+      "rights_first_bucket": "OPEN_LICENSE_CONDITIONS_UNVERIFIED",
+      "source_rights_notes": "Sailko photograph CC BY 3.0 Unported—requires attribution and licence link, disclose crop/transform",
+      "staged_photo_variants": [],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    },
+    {
+      "module_id": "sorrows",
+      "module": "Seven Sorrows",
+      "approved_painting": {
+        "artist": "Attributed to the Master of the Female Half-Lengths",
+        "title": "Virgin of the Seven Sorrows (Mare de Déu dels Set Dolors)",
+        "artwork_id": "mnac:008327-000",
+        "source_page": "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000"
+      },
+      "rights_first_bucket": "INSTITUTIONAL_CC0_OR_PD_SOURCE_CLAIM",
+      "source_rights_notes": "MNAC lists artwork as Domini públic; direct downloadable image terms/master bytes not yet checked",
+      "staged_photo_variants": [
+        {
+          "branch": "research/module-hero-museum-photos-20261026",
+          "path": "assets/staged/module-hero-masters/sorrows.jpg",
+          "sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+          "width": 2220,
+          "height": 3000
+        }
+      ],
+      "exact_file_rights_cleared": false,
+      "visual_quality_accepted": false,
+      "production_released": false
+    }
+  ],
+  "photo_archive_note": "The 11 staged files across three source branches are candidate variants, not 11 copyright-cleared masters. The old 22-hero readiness audit's zero physical masters predates these new staged acquisitions. Original source hashes still require pixel QA, rights certification and durable final release."
+}
