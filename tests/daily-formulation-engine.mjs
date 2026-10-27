@@ -7,6 +7,7 @@ import {
 import {
   MORNING_PRAYER_SEQUENCE_V381,EVENING_PRAYER_SEQUENCE_V381
 } from "../src/pray/traditional-pray-data.js";
+import {createDailySessionTimer,sessionClockLabel} from "../src/pray/daily-session-timer.js";
 
 const witness=(id,language,text,options={})=>({
   id,language,text,kind:"historical",releaseStatus:"cleared",
@@ -121,10 +122,41 @@ const paused=dailyTimerSnapshot({nowMs:999999,accumulatedMs:120000,running:false
 assert.equal(paused.elapsedMs,120000);
 assert.throws(()=>dailyTimerSnapshot({nowMs:10,startedMs:11,running:true}),/Invalid running timer start/);
 
+// Timer is deliberately ephemeral and owns no prayer-stage navigation.
+let fakeNow=1000;
+const timer=createDailySessionTimer({clock:()=>fakeNow});
+assert.equal(timer.snapshot().elapsedMs,0);
+assert.equal(timer.snapshot().running,false);
+assert.equal(timer.setTarget(5).targetMs,300000);
+assert.equal(timer.start().running,true);
+fakeNow+=60000;
+assert.equal(timer.snapshot().elapsedMs,60000);
+assert.equal(sessionClockLabel(timer.snapshot().elapsedMs),"01:00");
+timer.start(); // repeated clicks cannot reset the elapsed clock
+fakeNow+=5000;
+assert.equal(timer.pause().elapsedMs,65000);
+fakeNow+=30000; // paused, even if the wall/monotonic clock continues
+assert.equal(timer.snapshot().elapsedMs,65000);
+timer.start();fakeNow+=235000;
+assert.equal(timer.snapshot().elapsedMs,300000);
+assert.equal(timer.snapshot().atTarget,true);
+assert.equal(timer.snapshot().autoAdvance,false);
+assert.equal(timer.snapshot().truncatePrayer,false);
+assert.equal(timer.reset().elapsedMs,0);
+assert.equal(timer.snapshot().targetMs,300000,"Reset preserves selected gentle target");
+assert.throws(()=>timer.setTarget(3),/Unsupported prayer session duration/);
+const badClock=createDailySessionTimer({clock:()=>-1});
+assert.throws(()=>badClock.start(),/Invalid monotonic time/);
+
 assert.equal(MORNING_PRAYER_SEQUENCE_V381.length,11,"Canonical morning reader is unchanged");
 assert.equal(EVENING_PRAYER_SEQUENCE_V381.length,13,"Canonical evening reader is unchanged");
 const runtime=readFileSync("src/pray/traditional-pray-runtime.js","utf8");
 assert.ok(runtime.includes("guidedDailyCards(S.daypart)"),"Existing guided daily reader must remain the source owner");
 assert.ok(!runtime.includes("daily-formulation-engine.js"),"Unapproved historical content must not enter the public reader by accident");
+assert.ok(runtime.includes('data-tp381-timer-toggle'),"Reader should expose the opt-in timer disclosure");
+assert.ok(runtime.includes('data-tp381-timer-control'),"Reader should wire timer controls");
+assert.ok(runtime.includes('data-tp381-timer-target'),"Reader should wire gentle target choices");
+assert.ok(runtime.includes('DAILY_SESSION_CLOCK'),"Reader must own only an ephemeral session clock");
+assert.ok(!runtime.includes('compileDailyFormulation('),"Unapproved historical text compiler must not alter the live prayer reader");
 
 console.log("PASS daily formulation engine: source-language protection, approvals, composite dedup, alternatives, nightly complementary prayers, 11/13 baseline and inert timer");
