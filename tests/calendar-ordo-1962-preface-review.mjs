@@ -117,18 +117,43 @@ for(const [date,id,sourcePath,heading,actual] of [
   assert.equal(decision.autoPublish,false);
   assert.equal(decision.changesReader,false);
 }
-// Even an attested Paschal reused Proper does not establish the independent
-// season/date permission when the principal source ID is only generic feria.
-for(const [date,path,heading] of [
-  ["2026-04-15","Tempora/Pasc1-0","Paschalis"],
-  ["2026-05-21","Tempora/Pasc6-0","de Ascensione Domini"]
+// Independently computed seasonal boundaries, the exact reused Sunday
+// source and the general-Roman IV-class white feria jointly attest §299
+// plus §489(b) / §490(b), not a generic date or colour alone.
+for(const [date,path,heading,category,clause] of [
+  ["2026-04-15","Tempora/Pasc1-0","Paschalis","PASCHALIS","489_B"],
+  ["2026-04-16","Tempora/Pasc1-0","Paschalis","PASCHALIS","489_B"],
+  ["2026-04-17","Tempora/Pasc1-0","Paschalis","PASCHALIS","489_B"],
+  ["2026-04-20","Tempora/Pasc2-0","Paschalis","PASCHALIS","489_B"],
+  ["2026-04-23","Tempora/Pasc2-0","Paschalis","PASCHALIS","489_B"],
+  ["2026-05-06","Tempora/Pasc4-0","Paschalis","PASCHALIS","489_B"],
+  ["2026-05-08","Tempora/Pasc4-0","Paschalis","PASCHALIS","489_B"],
+  ["2026-05-21","Tempora/Pasc6-0","de Ascensione Domini","ASCENSIO","490_B"],
+  ["2026-05-22","Tempora/Pasc6-0","de Ascensione Domini","ASCENSIO","490_B"],
 ]){
   const resolution=sample(date,":feria:4:w",4,"White",heading);
   resolution.proper.data.sourcePath=path;
-  const decision=review1962PrefaceForCalendarDay(resolution);
-  assert.equal(decision.status,"UNMAPPED",date+": reused white feria requires independent seasonal evidence");
-  assert.equal(decision.autoPublish,false);
-  assert.equal(decision.changesReader,false);
+  const d=review1962PrefaceForCalendarDay(resolution);
+  assert.equal(d.status,"RULE_TEXT_AGREE",date+": inherited white feria classification");
+  assert.equal(d.expected,category,date);
+  assert.equal(d.clause,clause,date);
+  assert.equal(d.actual,category,date);
+  assert.equal(d.autoPublish,false,date);
+  assert.equal(d.changesReader,false,date);
+  const falseCases=[
+    {...resolution,date:"2026-02-10"},
+    {...resolution,day:{main:{id:":feria:4:w",rank:4,color:"Violet"}}},
+    {...resolution,proper:{...resolution.proper,data:{...resolution.proper.data,sourcePath:"Tempora/Pasc3-0"}}},
+    {...resolution,day:{main:{id:"sancti:04-15:3:w",rank:3,color:"White"}}},
+    {...resolution,day:{main:{id:":feria:4:w",rank:4,color:"White"},selectedMassOption:{path:"Sancti/04-15"}}},
+  ];
+  for(const candidate of falseCases)
+    assert.notEqual(review1962PrefaceForCalendarDay(candidate).basis,
+      d.basis,"Unmatched season/source/colour/identity must never inherit "+date);
 }
+const wrongSource=sample("2026-04-15",":feria:4:w",4,"White","Communis");
+wrongSource.proper.data.sourcePath="Tempora/Pasc1-0";
+assert.equal(review1962PrefaceForCalendarDay(wrongSource).status,"SOURCE_CONFLICT",
+  "Authenticated source-season obligation cannot be silenced by a raw Common Preface");
 
 console.log("PASS 1962 Preface source audit: owner, principal Mass, category, trilingual, regional exclusion, conflict, exceptions");
