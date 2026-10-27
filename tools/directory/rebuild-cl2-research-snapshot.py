@@ -69,7 +69,8 @@ CREATE TABLE classification_exception (
   subject_type TEXT NOT NULL CHECK(subject_type IN ('MINISTRY','CELEBRATION')),
   subject_key TEXT NOT NULL,
   field TEXT NOT NULL CHECK(field IN ('liturgical_use','missal_edition')),
-  value TEXT NOT NULL,evidence_url TEXT NOT NULL,recorded_at TEXT NOT NULL,
+  value TEXT NOT NULL,evidence_url TEXT NOT NULL CHECK(evidence_url LIKE 'https://%'),
+  recorded_at TEXT NOT NULL CHECK(recorded_at GLOB '????-??-??'),
   approved INTEGER NOT NULL DEFAULT 0 CHECK(approved IN (0,1)),
   PRIMARY KEY(subject_type,subject_key,field,recorded_at)
 );
@@ -97,7 +98,7 @@ SELECT t.historical_row,t.physical_anchor_id,t.ministry_source_id,t.join_state,
            AND e.field='missal_edition' AND e.approved=1
          ORDER BY e.recorded_at DESC LIMIT 1),
          s.missal_edition,'UNKNOWN') AS missal_edition,
-       CASE WHEN t.ministry_source_id IS NULL THEN 'UNKNOWN'
+       CASE WHEN s.institute_id IS NULL THEN 'UNKNOWN'
             ELSE 'INHERITED_INSTITUTE_NORM_SOURCE_LINKED_NOT_MASS_VERIFIED'
        END AS edition_provenance,
        t.current_schedule_approved
@@ -120,6 +121,7 @@ CREATE INDEX idx_mass_anchor ON timetable_ministry_link(physical_anchor_id);
                    (anchor,canonical[1],canonical[2],canonical[3],
                     len(members),'RESEARCH_ONLY_NOT_PUBLIC'))
     by_institute={i['id']:i for i in institutes}
+    norm_values={i['id']:{rule['field']:rule['value'] for rule in i['default_assertions']} for i in institutes}
     for i in institutes:
         for rule in i['default_assertions']:
             assert rule['field'] in ('liturgical_use','missal_edition')
@@ -157,8 +159,8 @@ CREATE INDEX idx_mass_anchor ON timetable_ministry_link(physical_anchor_id);
               group==cls[group_idx] and group in by_site)
         anchor=by_site[group]['effective_anchor_id'] if safe else None
         if safe: exact_links+=1
-        rite=('ROMAN' if norm_id else 'UNKNOWN')
-        missal=('1962' if norm_id else 'UNKNOWN')
+        rite=(norm_values[norm_id]['liturgical_use'] if norm_id else 'UNKNOWN')
+        missal=(norm_values[norm_id]['missal_edition'] if norm_id else 'UNKNOWN')
         if norm_id: inherited_count+=1
         scope=('GROUP_NORM_INHERITED_TO_SOURCE_MINISTRY_LABEL_NOT_CONFIRMED_CELEBRANT'
                if norm_id else 'NO_GROUP_NORM')
