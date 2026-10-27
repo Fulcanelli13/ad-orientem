@@ -1,0 +1,636 @@
+{
+  "schema": "ao-palm-1961-medial-lyric-stress-audit-v1",
+  "batch": 31,
+  "date": "2026-10-27",
+  "stage": "PALM-R02",
+  "status": "FOUND_13_OF_17_AUTOMATIC_MEDIAL_SOURCE_GROUP_MISALIGNMENTS_STOP_BULK_STITCHING",
+  "summary": "A real Exsurge SVG is not a musical validation. Existing 17 manually sliced medial GABC fragments blindly place the two borrowed source-melody accented pitch groups at positions 0 and 2 (Ps23) or 0 and 3 (Ps46). Against the 1961 printed Latin words and generic two-melodic-accent rules, 13 have an obvious lexical-accent mismatch, 3 have plausible lexical anchor placement but no music-editor signoff, and 1 has a monosyllabic-accent review hold. Archive fragments stay untouched for forensic traceability.",
+  "authorities": [
+    {
+      "type": "PRIMARY",
+      "source": "Graduale Romanum 1961, Psalm 23 printed p143** and Psalm46 printed p144**",
+      "url": "https://s9.imslp.org/files/imglnks/usimg/1/1a/IMSLP52097-PMLP108040-GR6_Proprium_et_Commune_pro_aliquibus_locis,_Psalmi.pdf",
+      "printedPages": [
+        "143**",
+        "144**"
+      ],
+      "scope": "Source original pitch groups and word spellings; 2 exemplar first verses only"
+    },
+    {
+      "type": "GRAMMAR",
+      "source": "Liber Usualis 1961 p113, First Tone - Mediant of 2 Accents",
+      "url": "https://longbeachchant.com/wp-content/uploads/2019/11/liber-1961-eight-psalm-tones.pdf#page=2",
+      "scope": "General two-accent mediant model; exact Psalm tone identity/editorial signoff remains separate"
+    },
+    {
+      "type": "GRAMMAR",
+      "source": "Rules for Text Underlay of Psalm Text at the Cadence Formulas",
+      "url": "https://npm.org/wp-content/uploads/2017/07/Rules-for-Text-Underlay-of-the-Psalm-Text-at-the-Psalm-Tone-Cadence.pdf",
+      "scope": "Both melodic accents must correspond to syllabic/textual accents; one-syllable and artificial secondary accent exceptions require human review"
+    }
+  ],
+  "borrowedSourceAccentGroups": {
+    "psalm23": {
+      "source": "<b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "indices": [
+        0,
+        2
+      ],
+      "noteGroups": [
+        "ixi hr",
+        "g hr"
+      ]
+    },
+    "psalm46": {
+      "source": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "indices": [
+        0,
+        3
+      ],
+      "noteGroups": [
+        "ixi",
+        "g"
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "PALM-R02-PS23-L02",
+      "psalm": 23,
+      "sourceWordedLatin": "Nam ipse super mária fundávit eum",
+      "originalPartialSnippet": "name:PALM-R02-PS23-L02 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) dá(ixi hr)vit(h)e(g hr)um(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        2
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "dá",
+        "e"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "dá",
+        "e"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "IN_WINDOW",
+        "IN_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        true,
+        true
+      ],
+      "issue": "fundávit eum: accented dá and e, matching archived two-accent source slot pattern",
+      "underlayAuditVerdict": "LEXICAL_ANCHORS_CONSISTENT_NEEDS_MUSIC_EDITOR",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS23-L07",
+      "psalm": 23,
+      "sourceWordedLatin": "et attóllite vos, fores antíquae,",
+      "originalPartialSnippet": "name:PALM-R02-PS23-L07 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) res(ixi hr)an(h)tí(g hr)quae(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        2
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "res",
+        "tí"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "fo",
+        "tí"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "OUTSIDE_WINDOW",
+        "IN_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        false,
+        true
+      ],
+      "issue": "fores antíquae: copied note group is on final -res rather than the stressed fo- of fores",
+      "underlayAuditVerdict": "WRONG_FIRST_ACCENT_ANCHOR",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS23-L08",
+      "psalm": 23,
+      "sourceWordedLatin": "Dóminus fortis et potens,",
+      "originalPartialSnippet": "name:PALM-R02-PS23-L08 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) tis(ixi hr)et(h)po(g hr)tens(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        2
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "tis",
+        "po"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "for",
+        "po"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "OUTSIDE_WINDOW",
+        "IN_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        false,
+        true
+      ],
+      "issue": "fortis et potens: copied note group is on -tis rather than stressed for-",
+      "underlayAuditVerdict": "WRONG_FIRST_ACCENT_ANCHOR",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS23-L10",
+      "psalm": 23,
+      "sourceWordedLatin": "Quis est iste rex glóriae?",
+      "originalPartialSnippet": "name:PALM-R02-PS23-L10 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) rex(ixi hr)gló(h)ri(g hr)ae(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        2
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "rex",
+        "ri"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "rex",
+        "gló"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "IN_WINDOW",
+        "OUTSIDE_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        true,
+        false
+      ],
+      "issue": "rex glóriae: copied second group is on -ri- rather than stressed gló-; monosyllabic rex needs tone-rule review",
+      "underlayAuditVerdict": "WRONG_SECOND_ACCENT_ANCHOR",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS46-L02",
+      "psalm": 46,
+      "sourceWordedLatin": "Quóniam Dóminus excélsus, terríbilis,",
+      "originalPartialSnippet": "name:PALM-R02-PS46-L02 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) cél(ixi)sus(hr)ter(h)rí(g)bi(hr)lis(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        3
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "cél",
+        "rí"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "cél",
+        "rí"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "IN_WINDOW",
+        "IN_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        true,
+        true
+      ],
+      "issue": "excélsus, terríbilis: accented cél and rí match the positional first-verse melody groups",
+      "underlayAuditVerdict": "LEXICAL_ANCHORS_CONSISTENT_NEEDS_MUSIC_EDITOR",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS46-L03",
+      "psalm": 46,
+      "sourceWordedLatin": "Súbjicit pópulos nóbis",
+      "originalPartialSnippet": "name:PALM-R02-PS46-L03 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) cit(ixi)pó(hr)pu(h)los(g)nó(hr)bis(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        3
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "cit",
+        "los"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "pó",
+        "nó"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "OUTSIDE_WINDOW",
+        "OUTSIDE_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        false,
+        false
+      ],
+      "issue": "pópulos nóbis: transferred melodic accents fall on unstressed -cit and -los",
+      "underlayAuditVerdict": "WRONG_BOTH_ACCENT_ANCHORS",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS46-L04",
+      "psalm": 46,
+      "sourceWordedLatin": "Eligit nobis hereditátem nostram",
+      "originalPartialSnippet": "name:PALM-R02-PS46-L04 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) re(ixi)di(hr)tá(h)tem(g)nos(hr)tram(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        3
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "re",
+        "tem"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "tá",
+        "nos"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "OUTSIDE_WINDOW",
+        "OUTSIDE_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        false,
+        false
+      ],
+      "issue": "hereditátem nostram: copied accents on -re- and -tem, not stressed tá and nos",
+      "underlayAuditVerdict": "WRONG_BOTH_ACCENT_ANCHORS",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS46-L05",
+      "psalm": 46,
+      "sourceWordedLatin": "Ascéndit Deus cum exsultatióne,",
+      "originalPartialSnippet": "name:PALM-R02-PS46-L05 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) ex(ixi)sul(hr)ta(h)ti(g)ó(hr)ne(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        3
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "ex",
+        "ti"
+      ],
+      "expectedTextAccentsHypothesis": [
+        null,
+        "ó"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "UNDECIDED",
+        "OUTSIDE_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        false,
+        false
+      ],
+      "issue": "exsultatióne bears stress on ó, not -ti-; first accent requires an artificial-secondary-accent decision",
+      "underlayAuditVerdict": "WRONG_SECOND_ACCENT_AND_FIRST_NEEDS_REVIEW",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS46-L06",
+      "psalm": 46,
+      "sourceWordedLatin": "Psállite Deo, psállite;",
+      "originalPartialSnippet": "name:PALM-R02-PS46-L06 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) te(ixi)De(hr)o(h)psál(g)li(hr)te(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        3
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "te",
+        "psál"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "De",
+        "psál"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "OUTSIDE_WINDOW",
+        "IN_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        false,
+        true
+      ],
+      "issue": "Deo, psállite: borrowed first melodic accent is on final -te of preceding psállite",
+      "underlayAuditVerdict": "WRONG_FIRST_ACCENT_ANCHOR",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS46-L07",
+      "psalm": 46,
+      "sourceWordedLatin": "Quóniam Rex omnis terrae est Deus,",
+      "originalPartialSnippet": "name:PALM-R02-PS46-L07 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) nis(ixi)ter(hr)rae(h)est(g)De(hr)us(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        3
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "nis",
+        "est"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "ter",
+        "De"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "OUTSIDE_WINDOW",
+        "OUTSIDE_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        false,
+        false
+      ],
+      "issue": "terrae est Deus: current first anchor -nis and second anchor est are not stressed lexical syllables",
+      "underlayAuditVerdict": "WRONG_BOTH_ACCENT_ANCHORS",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS46-L08",
+      "psalm": 46,
+      "sourceWordedLatin": "Deus regnat super natiónes,",
+      "originalPartialSnippet": "name:PALM-R02-PS46-L08 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) su(ixi)per(hr)na(h)ti(g)ó(hr)nes(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        3
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "su",
+        "ti"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "reg",
+        "ó"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "OUTSIDE_WINDOW",
+        "OUTSIDE_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        false,
+        false
+      ],
+      "issue": "regnat super natiónes: pitch accents fall on su and -ti-, not rég and ó",
+      "underlayAuditVerdict": "WRONG_BOTH_ACCENT_ANCHORS",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS46-L09",
+      "psalm": 46,
+      "sourceWordedLatin": "Príncipes populórum congregáti sunt",
+      "originalPartialSnippet": "name:PALM-R02-PS46-L09 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) rum(ixi)con(hr)gre(h)gá(g)ti(hr)sunt(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        3
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "rum",
+        "gá"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "lór",
+        "gá"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "OUTSIDE_WINDOW",
+        "IN_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        false,
+        true
+      ],
+      "issue": "populórum congregáti sunt: first proposed note group on -rum is unstressed; monosyllabic sunt and possible artificial accent remain for review",
+      "underlayAuditVerdict": "WRONG_FIRST_ACCENT_ANCHOR",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS46-L10",
+      "psalm": 46,
+      "sourceWordedLatin": "Nam Dei sunt próceres terrae:",
+      "originalPartialSnippet": "name:PALM-R02-PS46-L10 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) sunt(ixi)pró(hr)ce(h)res(g)ter(hr)rae(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        3
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "sunt",
+        "res"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "pró",
+        "ter"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "OUTSIDE_WINDOW",
+        "OUTSIDE_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        false,
+        false
+      ],
+      "issue": "próceres terrae: proposed accents land on sunt and -res, not pró and ter",
+      "underlayAuditVerdict": "WRONG_BOTH_ACCENT_ANCHORS",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS23-DOXO-L11",
+      "psalm": 23,
+      "sourceWordedLatin": "Glória Patri, et Fílio,",
+      "originalPartialSnippet": "name:PALM-R02-PS23-DOXO-L11 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) et(ixi hr)Fí(h)li(g hr)o(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        2
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "et",
+        "li"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "Pa",
+        "Fí"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "OUTSIDE_WINDOW",
+        "OUTSIDE_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        false,
+        false
+      ],
+      "issue": "Patri et Fílio: copied notes fall on et and -li- rather than Pá and Fí",
+      "underlayAuditVerdict": "WRONG_BOTH_ACCENT_ANCHORS",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS23-DOXO-L12",
+      "psalm": 23,
+      "sourceWordedLatin": "Sicut erat in princípio, et nunc, et semper,",
+      "originalPartialSnippet": "name:PALM-R02-PS23-DOXO-L12 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) nunc(ixi hr)et(h)sem(g hr)per(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        2
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "nunc",
+        "sem"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "nunc",
+        "sem"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "IN_WINDOW",
+        "IN_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        true,
+        true
+      ],
+      "issue": "nunc et semper: melodic groups fall on nunc and sem; whether nunc is the second accented note requires one-syllable rule",
+      "underlayAuditVerdict": "MONOSYLLABLE_SECONDARY_ACCENT_REVIEW",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS46-DOXO-L11",
+      "psalm": 46,
+      "sourceWordedLatin": "Glória Patri, et Fílio,",
+      "originalPartialSnippet": "name:PALM-R02-PS46-DOXO-L11 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) Pa(ixi)tri(hr)et(h)Fí(g)li(hr)o(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        3
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "Pa",
+        "Fí"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "Pa",
+        "Fí"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "IN_WINDOW",
+        "IN_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        true,
+        true
+      ],
+      "issue": "Patri et Fílio: Pá and Fí match borrowed two-accent source groups",
+      "underlayAuditVerdict": "LEXICAL_ANCHORS_CONSISTENT_NEEDS_MUSIC_EDITOR",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    },
+    {
+      "id": "PALM-R02-PS46-DOXO-L12",
+      "psalm": 46,
+      "sourceWordedLatin": "Sicut erat in princípio, et nunc, et semper,",
+      "originalPartialSnippet": "name:PALM-R02-PS46-DOXO-L12 MEDIANT HYPOTHESIS ending-only;\noffice-part:Psalmus;\ncommentary: NOT full score, NOT approved Latin stress, NOTE-GROUP TRANSFER NEEDS EDITOR;\n%%\n(c4) o(ixi)et(hr)nunc(h)et(g)sem(hr)per(h.) (:) (::)\n",
+      "borrowedFirstVerseAccentedNoteIndices": [
+        0,
+        3
+      ],
+      "borrowedMelodicAccentOnSyllables": [
+        "o",
+        "et"
+      ],
+      "expectedTextAccentsHypothesis": [
+        "nunc",
+        "sem"
+      ],
+      "lexicalTokenPresentWithinSnippet": [
+        "OUTSIDE_WINDOW",
+        "OUTSIDE_WINDOW"
+      ],
+      "copiedPositionMatchesLexicalAnchor": [
+        false,
+        false
+      ],
+      "issue": "nunc et semper: borrowed melody accents fall on -o from princípio and 'et' rather than nunc/sem",
+      "underlayAuditVerdict": "WRONG_BOTH_ACCENT_ANCHORS",
+      "wordStressHumanCertified": false,
+      "pitchWordFitMusicianApproved": false,
+      "musicalUseAllowed": false,
+      "doNotAssembleWithOtherFragments": true
+    }
+  ],
+  "counts": {
+    "total": 17,
+    "obviousLexicalMismatch": 13,
+    "lexicalPlacementPlausibleButNotApproved": 3,
+    "oneSyllableRuleUnresolved": 1,
+    "sourceOriginalFirstVersesNotModified": 2,
+    "endingFragmentsAutomaticallyPublished": 0
+  },
+  "failClosedPolicy": {
+    "blockBulkGabcAssemblyFromTheseFragments": true,
+    "blockAutomaticPsalmToneTransposition": true,
+    "requireTwoAccentedSyllablesPerCase": true,
+    "extraHandlingForOneSyllableTextAccents": true,
+    "extraHandlingForArtificialSecondAccents": true,
+    "doNotClaimScoreReadingApprovalFromSvgParsing": true,
+    "manualCorrectionLedgerNeeded": true,
+    "manualMedialCertifiedCount": 0,
+    "productionPromotionAllowed": false
+  },
+  "relatedFiles": [
+    "data/research/processionale-palm-medial-flex-bulk-hypotheses-20261027.v1.json",
+    "data/research/processionale-palm-attested-cadence-windows-20261027.v1.json"
+  ],
+  "doxologyObservation": {
+    "text": "et in saecula saeculorum. Amen.",
+    "EUOUAE": "Vowels of saeculorum Amen used for psalm-tone differentia. The printed punctuation does not itself prove Amen is a separate musical coda.",
+    "source": "https://npm.org/wp-content/uploads/2017/07/Glossary-of-Chant-Terms.pdf",
+    "implication": "Do not create a distinct invented Amen melody. Retain a tone-specific differentia review for both psalms."
+  },
+  "owners": {
+    "schola": "PR #1749",
+    "latin": "issue #894",
+    "research": "PR #1752"
+  }
+}
