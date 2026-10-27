@@ -177,6 +177,8 @@ assert.deepEqual(preferences.load(manifest,{
 }),{},"Short/Complete stored independently");
 const reject=preferences.save(manifest,{selection:{offering:"pending"}});
 assert.equal(reject.saved,false);
+assert.equal(preferences.save(manifest,{selection:{offering:"bad token"}}).saved,false);
+assert.equal(preferences.save(manifest,{selection:{offering:["offering"]}}).saved,false);
 assert.deepEqual(preferences.load(manifest),{offering:"alternative"},"Rejected choice preserves existing preference");
 const noRelease={...manifest,witnesses:{
  ...manifest.witnesses,
