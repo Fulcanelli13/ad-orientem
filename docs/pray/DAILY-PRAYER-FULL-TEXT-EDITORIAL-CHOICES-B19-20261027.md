@@ -8,13 +8,14 @@
 
 This is the first editorial decision sheet containing **all complete candidate wordings** rather than only opening phrases and source IDs. Each checked form retains its recorded print-edition transcription and a direct original page link. Selection boxes are **blank** deliberately; historical source verification is *not* approval as an Ad Orientem default. Printed prayer headings and instruction rubrics remain distinct from recited words.
 
-**How to mark decisions:** Check one choice where the group says *choose one*. For *complementary/sequential* groups, check each entire prayer you want included; do not treat Hope and Charity, or thanksgiving and examination, as interchangeable. Mark your chosen default with `DEFAULT` in review comments if needed. **A checkbox in a PR comment is an editorial request, not an automatic publication permission.**
+**Navigation:** Expand only the prayer category you wish to review; its full historical formulations and checkboxes are grouped immediately beneath the category title. This avoids scrolling past every source text at once.\n\n**How to mark decisions:** Check one choice where the group says *choose one*. For *complementary/sequential* groups, check each entire prayer you want included; do not treat Hope and Charity, or thanksgiving and examination, as interchangeable. Mark your chosen default with `DEFAULT` in review comments if needed. **A checkbox in a PR comment is an editorial request, not an automatic publication permission.**
 
 **Verification:** 42 complete historical bodies were previously reported as original-page-image-checked (27 EN and 15 FR). One additional complete Baltimore Evening light prayer is transcribed from proofread historical page text but awaits direct original-image inspection. The 14 groups below reference a subset of those 43; they do not imply 43 unique theological prayers. All sources require a separate rights/reuse decision before inclusion in the public app.
 
 ---
 
-## 1. EN MORNING — Adoration and Thanksgiving
+<details>
+<summary><strong>1. EN MORNING — Adoration and Thanksgiving</strong></summary>
 
 **Editorial relationship:** select one whole compound · **Recommendation is provisional** · Lasance is one complete act serving two purposes.
 
@@ -42,8 +43,10 @@ O my God! I adore thee, and I love thee with my whole heart. I thank thee for al
 
 **[Original scanned source page](https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/20)** · **Source ID:** `moran-1883-morning-thanksgiving` · **Text check:** print image checked
 
+</details>
 
-## 2. EN MORNING — Morning Offering
+<details>
+<summary><strong>2. EN MORNING — Morning Offering</strong></summary>
 
 **Editorial relationship:** select one form · **Recommendation is provisional** · Different complete prayers and intentions; Moran historical indulgence wording requires context.
 
@@ -107,8 +110,10 @@ To thee, my God, I offer all that I shall do, all that I may suffer during the d
 
 **[Original scanned source page](https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/20)** · **Source ID:** `moran-1883-morning-good-intention` · **Text check:** print image checked
 
+</details>
 
-## 3. EN MORNING — Faith
+<details>
+<summary><strong>3. EN MORNING — Faith</strong></summary>
 
 **Editorial relationship:** select one form · **Recommendation is provisional** · Pocket is a genuinely shorter complete formulation.
 
@@ -136,8 +141,10 @@ O my God! I firmly believe all the sacred truths which Thy holy Catholic Church 
 
 **[Original scanned source page](https://en.wikisource.org/wiki/Page:TheCatholicsPocketPrayerBook.djvu/18)** · **Source ID:** `pocket-1899-morning-short-faith` · **Text check:** print image checked
 
+</details>
 
-## 4. EN MORNING — Hope and Charity
+<details>
+<summary><strong>4. EN MORNING — Hope and Charity</strong></summary>
 
 **Editorial relationship:** complementary recite both · **Recommendation is provisional** · Two separate recitations in Complete; optional in Short.
 
@@ -167,8 +174,10 @@ O my God, I love Thee with my whole heart, and above all things, because Thou ar
 
 **Important:** these are not competing alternatives. They are independent theological Acts to be recited in order, and can be made optional as a group in Short.
 
+</details>
 
-## 5. EN MORNING — Petition and Resolution
+<details>
+<summary><strong>5. EN MORNING — Petition and Resolution</strong></summary>
 
 **Editorial relationship:** complementary or single per profile · **Recommendation is provisional** · Complementary rather than always competing.
 
@@ -208,8 +217,10 @@ O my God, I wish to consecrate this day and all the days of my life to Thy honor
 
 **[Original scanned source page](https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/148)** · **Source ID:** `b11-lasance-morning-consecration` · **Text check:** print image checked
 
+</details>
 
-## 6. FR MORNING — Thanksgiving and Offering
+<details>
+<summary><strong>6. FR MORNING — Thanksgiving and Offering</strong></summary>
 
 **Editorial relationship:** one compound no comparable alternative · **Recommendation is provisional** · French historical combined text: display once.
 
@@ -225,8 +236,10 @@ Mon Dieu, je Vous remercie très humblement de toutes les grâces que Vous m'ave
 
 **[Original scanned source page](https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/38)** · **Source ID:** `fr-1905-morning-thanks-offering` · **Text check:** print image checked
 
+</details>
 
-## 7. FR MORNING — Faith Hope and Charity
+<details>
+<summary><strong>7. FR MORNING — Faith Hope and Charity</strong></summary>
 
 **Editorial relationship:** complementary recite all three · **Recommendation is provisional** · Three original French acts, in order.
 
@@ -268,8 +281,10 @@ Mon Dieu, je Vous aime de tout mon cœur et par-dessus toutes choses, parce que 
 
 **Important:** these are not competing alternatives. They are independent theological Acts to be recited in order, and can be made optional as a group in Short.
 
+</details>
 
-## 8. EN EVENING — Presence and Thanksgiving
+<details>
+<summary><strong>8. EN EVENING — Presence and Thanksgiving</strong></summary>
 
 **Editorial relationship:** compound or two separate · **Recommendation is provisional** · Short uses one Lasance composite; Complete may use BBG Presence and Thanksgiving separately.
 
@@ -311,8 +326,10 @@ I most heartily thank Thee, O Lord, for all Thy mercies and blessings bestowed u
 
 **Important:** option A is a single combined act. Options B and C are **two separate prayers**, and should be selected together for a longer historical-style routine, not offered as equivalent text variants of one paragraph.
 
+</details>
 
-## 9. EN EVENING — Light before Examination
+<details>
+<summary><strong>9. EN EVENING — Light before Examination</strong></summary>
 
 **Editorial relationship:** one standalone image pending · **Recommendation is provisional** · Complete independent prayer after thanksgiving; original page image still pending.
 
@@ -330,8 +347,10 @@ O my God, sovereign Judge of men, who desirest not the death of a sinner, but th
 
 **Mandatory hold:** visually inspect printed Baltimore p.82 original image and resolve reproduction rights before any release. Examination rubrics and the subsequent Act of Contrition are not part of the above recited text.
 
+</details>
 
-## 10. EN EVENING — Contrition
+<details>
+<summary><strong>10. EN EVENING — Contrition</strong></summary>
 
 **Editorial relationship:** select one form · **Recommendation is provisional** · Concise full act vs complete lengthy 1883 penitential act.
 
@@ -359,8 +378,10 @@ O dread Lord, and most indulgent Father of mercies, I, a wretched worm, have sin
 
 **[Original scanned source page](https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/32)** · **Source ID:** `b09-moran-long-contrition` · **Text check:** print image checked
 
+</details>
 
-## 11. EN EVENING — Departed
+<details>
+<summary><strong>11. EN EVENING — Departed</strong></summary>
 
 **Editorial relationship:** one additional collect · **Recommendation is provisional** · Traditional collect, not Psalm 129.
 
@@ -376,8 +397,10 @@ O God, the Creator and Redeemer of all the faithful, grant to the souls of thy s
 
 **[Original scanned source page](https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/33)** · **Source ID:** `moran-1883-evening-for-faithful-departed` · **Text check:** print image checked
 
+</details>
 
-## 12. EN EVENING — Night protection
+<details>
+<summary><strong>12. EN EVENING — Night protection</strong></summary>
 
 **Editorial relationship:** complementary antiphon collect prayer · **Recommendation is provisional** · Antiphon, collect and St Alphonsus night prayer can coexist.
 
@@ -419,8 +442,10 @@ Jesus Christ, my God, I adore Thee and I thank Thee for all the graces Thou hast
 
 **Important:** multiple prayers may coexist. Do not force mutual exclusivity or abbreviate an individual prayer to meet a time target.
 
+</details>
 
-## 13. FR EVENING — Thanksgiving, examination and contrition
+<details>
+<summary><strong>13. FR EVENING — Thanksgiving, examination and contrition</strong></summary>
 
 **Editorial relationship:** sequential three different prayers · **Recommendation is provisional** · Three separate historical prayers with an intervening guided examination.
 
@@ -462,8 +487,10 @@ Me voici, Seigneur, tout couvert de confusion, et pénétré de douleur à la vu
 
 **Important:** these are three successive French texts, with the examen itself a silent guided reflection. They should never be collapsed into a supposed single source prayer.
 
+</details>
 
-## 14. FR EVENING — Night protection
+<details>
+<summary><strong>14. FR EVENING — Night protection</strong></summary>
 
 **Editorial relationship:** complementary prayer and collect · **Recommendation is provisional** · Both prayers can be selected.
 
@@ -495,6 +522,8 @@ Nous Vous supplions, Seigneur, de visiter notre demeure, et d’en éloigner tou
 
 
 ---
+
+</details>
 
 ## Acceptance and release decisions
 
