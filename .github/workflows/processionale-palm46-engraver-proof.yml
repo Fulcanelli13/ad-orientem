@@ -12,6 +12,7 @@ on:
       - data/research/chant-source-review/palm23-verse2-tone-application-20261027-PROVISIONAL.gabc
       - data/research/chant-source-review/palm23-verse2-accent-alignment-20261027-ALTERNATE.gabc
       - data/research/processionale-palm-attested-cadence-windows-20261027.v1.json
+      - data/research/processionale-palm-medial-flex-bulk-hypotheses-20261027.v1.json
       - tools/research/palm-bulk-cadence-exsurge-proof.mjs
 
 permissions:
@@ -57,3 +58,4 @@ jobs:
           processionale/data/research/processionale-palm-attested-cadence-windows-20261027.v1.json
           processionale/data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc
           processionale/data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc
+          processionale/data/research/processionale-palm-medial-flex-bulk-hypotheses-20261027.v1.json
