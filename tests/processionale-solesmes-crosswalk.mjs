@@ -1644,6 +1644,15 @@ test('two final Palm doxology Amen settings remain source-conflicted and not app
  assert.equal(compare.release.publishAllowed,false);
  assert.equal(compare.release.sourceSpecificAmenHandlingStillHeld,true);
  assert.equal(compare.counts.allDistinctCasesWithResearchGabc,17);
+ assert.equal(compare.technicalProof.runId,40523935267);
+ assert.equal(compare.technicalProof.allPartialAndCompleteGabcViewportChecks,186);
+ assert.equal(compare.technicalProof.allFullResearchCandidatesRendered,17);
+ assert.equal(compare.technicalProof.musicianApproved,0);
+ assert.equal(compare.technicalProof.productionAssigned,0);
+ assert.equal(all.batch35ComparativeDoxology.all17ProvisionalScoreGabcRendered,true);
+ assert.equal(all.batch35ComparativeDoxology.researchCandidates.distinctTotal,17);
+ assert.equal(all.batch35ComparativeDoxology.researchCandidates.twoSpecialDoxologyHypothesesRendered,2);
+ assert.equal(all.batch35ComparativeDoxology.sourceSpecificDoxologyAmenMusicalRulesConfirmed,false);
  assert.equal(compare.counts.productionScoreAssignments,0);
  assert.equal(compare.counts.humanMusicalApprovals,0);
  const sourceMap=new Map(all.cases.map(x=>[x.id,x]));
@@ -1676,6 +1685,12 @@ test('two final Palm doxology Amen settings remain source-conflicted and not app
   assert.equal(item.hasAmenSourceSpecialCadence,false);
   assert.equal(item.actualPsalmToneDoxologyEditorConfirmed,false);
   assert.equal(item.authenticPalmMelodyCertified,false);
+  assert.equal(item.rendered,true);
+  assert.equal(item.nativeExsurgeTechnicalProof.runId,40523935267);
+  assert.deepEqual(item.nativeExsurgeTechnicalProof.widths,[260,420,800]);
+  assert.equal(item.nativeExsurgeTechnicalProof.outputSvgNonempty,true);
+  assert.equal(item.nativeExsurgeTechnicalProof.humanMusicAcceptance,false);
+  assert.equal(item.nativeExsurgeTechnicalProof.humanPixelReview,false);
   assert.equal(item.editorScoreApproved,false);
   assert.equal(item.productionEligible,false);
  }
