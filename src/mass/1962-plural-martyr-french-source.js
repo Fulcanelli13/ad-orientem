@@ -17,9 +17,11 @@ const frenchName=/\bN\s*\./giu;
 // "Vierges et Martyres" although their Latin parent C7b is non-Virgin.
 // The 2026 March 6 ordinary Mass remains the Lenten feria.
 const PERPETUA_FELICITY="Sancti/03-06";
-const WITNESS_FRENCH=/\bsaintes\s+Vierges\s+et\s+Martyres\s+Perp[ée]tue\s+et\s+F[ée]licit[ée]\b/iu;
-const MARTYRS_LATIN=/\bMart[yý]rum\b/iu;
-const VIRGINS_LATIN=/\bV[ií]rgin(?:um|ibus)\b/iu;
+const ascii=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+  .replace(/æ/gi,"ae").replace(/œ/gi,"oe");
+const WITNESS_FRENCH=/\bsaintes\s+vierges\s+et\s+martyres\s+perpetue\s+et\s+felicite(?=$|[\s.,;:])/iu;
+const MARTYRS_LATIN=/\bmartyrum\b/iu;
+const VIRGINS_LATIN=/\bvirgin(?:um|ibus)\b/iu;
 
 function originalRows(proper,slot){
   if(slot==="COLLECT_SET")return Array.isArray(proper?.collects)&&proper.collects.length
@@ -49,8 +51,8 @@ export function inspect1962PluralMartyrsFrenchOrationSource(proper,slot){
       if(rowPath!==PERPETUA_FELICITY)continue;
       const latin=String(row?.lat??row?.la??"");
       const french=String(row?.fr??"");
-      if(WITNESS_FRENCH.test(french)&&MARTYRS_LATIN.test(latin)&&
-         !VIRGINS_LATIN.test(latin)){
+      if(WITNESS_FRENCH.test(ascii(french))&&MARTYRS_LATIN.test(ascii(latin))&&
+         !VIRGINS_LATIN.test(ascii(latin))){
         return Object.freeze({
           status:"SOURCE_CONFLICT",reason:"1962 Perpetua and Felicity: French wrongly identifies the non-Virgin martyrs as Virgins",
           sourcePath:rowPath,slot,orationIndex:index,
