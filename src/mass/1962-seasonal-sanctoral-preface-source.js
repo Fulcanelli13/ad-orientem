@@ -22,8 +22,8 @@ function gregorianEaster(year){
 const dayNumber=date=>Date.parse(date+"T00:00:00.000Z");
 export function required1962SeasonalSanctoralPrefaceOwner(id,sourcePath,date){
   const v=String(id??"");
-  const match=/^sancti:(\\d{2}-\\d{2}):([1-4]):[a-z]{1,2}$/i.exec(v);
-  if(!match||!/^\\d{4}-\\d{2}-\\d{2}$/.test(String(date??""))||
+  const match=/^sancti:(\d{2}-\d{2}):([1-4]):[a-z]{1,2}$/i.exec(v);
+  if(!match||!/^\d{4}-\d{2}-\d{2}$/.test(String(date??""))||
      String(date).slice(5)!==match[1]||
      String(sourcePath??"").toLowerCase()!=="sancti/"+match[1])return null;
   const year=Number(String(date).slice(0,4));
@@ -48,14 +48,14 @@ export function originalSanctoralLacksOwnPreface(parsed,owner){
   // An original proper-preface directive always outranks a seasonal default.
   const rules=parsed.map.get("Rule")??[];
   if(!Array.isArray(rules))return false;
-  return !rules.some(s=>/^(?:\\(.*\\))?\\s*Prefatio\\s*=/i.test(String(s).trim()));
+  return !rules.some(s=>/^(?:\(.*\))?\s*Prefatio\s*=/i.test(String(s).trim()));
 }
 export function matches1962SeasonalSanctoralSelection(preface,owner){
   if(!owner||!preface||preface.seasonalSanctoralDate!==owner.date||
     preface.prefaceSection!==owner.section||
     preface.recoveryScope!==owner.scope)return false;
   const latin=String(preface.lat??preface.la??"").normalize("NFD")
-    .replace(/[\\u0300-\\u036f]/g,"").toLowerCase();
+    .replace(/[\u0300-\u036f]/g,"").toLowerCase();
   const three=Boolean(String(preface.en??"").trim()&&String(preface.fr??"").trim());
   if(!three)return false;
   if(owner.category==="ASCENSIO")
