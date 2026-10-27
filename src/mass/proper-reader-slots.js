@@ -162,7 +162,7 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
   const opts={language:locale};
 
   const principalId=proper.principalCelebrationId??proper.mainId??proper.main?.id??null;
-  const prefaceDecision=principalId?inspect1962PrefaceSelection({principalCelebrationId:principalId,selectedPreface:proper.preface,requestedCelebrationId:proper.requestedCelebrationId??null,sourcePath:proper.sourcePath??null}):null;
+  const prefaceDecision=principalId?inspect1962PrefaceSelection({principalCelebrationId:principalId,selectedPreface:proper.preface,requestedCelebrationId:proper.requestedCelebrationId??null,sourcePath:proper.sourcePath??null,calendarDate:proper.selectedMassDate??null}):null;
 
   const slots={
     INTROIT:readyEnvelope("INTROIT",proper.introit,opts),
