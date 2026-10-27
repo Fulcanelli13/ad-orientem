@@ -99,7 +99,9 @@
     "new_open_source_acquisition_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40465741444",
     "rosary_approved_painting_license_qualified_photo_variants": 2,
     "rosary_license_qualified_full_painting_candidate_variants": 1,
-    "new_open_source_acquisition_comparison_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40466162003"
+    "new_open_source_acquisition_comparison_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40466162003",
+    "missing_three_originals_queued_for_exact_source_archival": 3,
+    "missing_three_production_rights_cleared": 0
   },
   "exception_flags": [
     {
@@ -1339,7 +1341,25 @@
       "staged_photo_variants": [],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
-      "production_released": false
+      "production_released": false,
+      "missing_hero_photo_rights_first_review_20261027": {
+        "approved_original": "Philippe de Champaigne / The Dream of Saint Joseph / NG6276, London",
+        "original_web_source": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+        "reference_source_dimensions": [
+          4421,
+          6000
+        ],
+        "reference_current_file_size_MB": 18.83,
+        "published_source_claim": "COMMONS_PD_ART_FAITHFUL_2D_US",
+        "rights_outstanding": "Check exact Art UK/National Gallery photographic source and global reuse; Wikimedia PD-Art reasoning does not override contractual/source-specific territorial restrictions",
+        "production_gate": "HIGH_RES_RESEARCH_PHOTO_ACQUISITION_REQUESTED_NOT_RELEASE_CLEARED",
+        "warning": "Do not replace with 2605x997 crop; no frame removal before painted edge verification",
+        "source_research_only": true,
+        "workflow_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40527341367",
+        "acquisition_current_outcome": "QUEUED_NOT_YET_VERIFIED",
+        "photo_quality_human_final_accepted": false,
+        "photo_production_released": false
+      }
     },
     {
       "module_id": "holy-spirit",
@@ -1485,7 +1505,25 @@
       "staged_photo_variants": [],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
-      "production_released": false
+      "production_released": false,
+      "missing_hero_photo_rights_first_review_20261027": {
+        "approved_original": "Pietro da Cortona / The Guardian Angel / Barberini 1753 Rome",
+        "original_web_source": "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg",
+        "reference_source_dimensions": [
+          694,
+          1100
+        ],
+        "reference_current_file_size_MB": 0.1,
+        "published_source_claim": "COMMONS_PD_ART_FAITHFUL_2D_US",
+        "rights_outstanding": "Italian cultural heritage reuse constraints and photographer rights; commercial 2428x3852 version not free; no fees or licensing requests",
+        "production_gate": "LOW_RES_IDENTITY_REFERENCE_ONLY_HERO_MASTER_STILL_MISSING",
+        "warning": "No AI upscale, no replacement of original with Palazzo Mansi follower/workshop painting",
+        "source_research_only": true,
+        "workflow_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40527341367",
+        "acquisition_current_outcome": "QUEUED_NOT_YET_VERIFIED",
+        "photo_quality_human_final_accepted": false,
+        "photo_production_released": false
+      }
     },
     {
       "module_id": "regina",
@@ -1773,7 +1811,25 @@
       "staged_photo_variants": [],
       "exact_file_rights_cleared": false,
       "visual_quality_accepted": false,
-      "production_released": false
+      "production_released": false,
+      "missing_hero_photo_rights_first_review_20261027": {
+        "approved_original": "Pierre Edouard Frere / The Prayer / Wolverhampton OP6 1857",
+        "original_web_source": "https://commons.wikimedia.org/wiki/File:Pierre_Edouard_Frère_(1819-1886)_-_The_Prayer_-_OP6_-_Wolverhampton_Art_Gallery.jpg",
+        "reference_source_dimensions": [
+          898,
+          1200
+        ],
+        "reference_current_file_size_MB": 0.13,
+        "published_source_claim": "COMMONS_PD_ART_US_VERSUS_ART_UK_NONCOMMERCIAL_SOURCE_TERMS",
+        "rights_outstanding": "Explicit Art UK/Wolverhampton source photo usage restriction, embedded image metadata points to its terms; no commercial distribution clearance",
+        "production_gate": "LOW_RES_AND_EXACT_PHOTO_RIGHTS_HOLD",
+        "warning": "Do not repurpose separate Rijksmuseum Evening Prayer artwork as approved OP6; no email, permission request or paid use",
+        "source_research_only": true,
+        "workflow_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40527341367",
+        "acquisition_current_outcome": "QUEUED_NOT_YET_VERIFIED",
+        "photo_quality_human_final_accepted": false,
+        "photo_production_released": false
+      }
     },
     {
       "module_id": "perpetual",
@@ -2282,5 +2338,6 @@
     "preview_image_review": "data/research/sacred-art-20261027-eight-hero-preview-visual-audit.v1.json",
     "six_designated_licence_source_review": "data/research/sacred-art-20261027-six-exact-open-image-source-gates.v1.json"
   },
-  "latest_source_gate_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40465399678"
+  "latest_source_gate_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40465399678",
+  "current_missing_three_research_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40527341367"
 }
