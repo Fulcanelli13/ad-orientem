@@ -29,7 +29,7 @@ for(const owner of RESIDUAL_1962_PREFACE_CASES){
    false,owner.date+" wrong Joseph variant prohibited");
  const src={la:latin[owner.category],
   en:owner.category==="JOSEPH"?
-    "St Joseph\nOn the solemnity of blessed Joseph.":
+    "St Joseph\non the solemnity of blessed Joseph.":
     "Named heading\nIt is meet and just.",
   fr:owner.category==="JOSEPH"?
     "de Saint Joseph\nCélébrer en la fête du bienheureux Joseph.":
