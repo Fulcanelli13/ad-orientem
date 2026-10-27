@@ -12,6 +12,7 @@ on:
       - "tests/calendar-living-traditional-future-years.mjs"
       - "data/calendar/1962-year-independent-checks-*.json"
       - "tests/calendar-1962-full-year-audit.mjs"
+      - "tests/calendar-imminent-mass-gate-2026.mjs"
       - "src/calendar/ordo-1962-preface-review.js"
       - "src/mass/1962-marian-preface-source.js"
       - "src/mass/1962-preface-decision.js"
@@ -51,6 +52,8 @@ jobs:
         run: node tests/mass-1962-residual-preface-source.mjs
       - name: Strict source-bound 1962 Preface category review
         run: node tests/calendar-ordo-1962-preface-review.mjs
+      - name: Imminent 1962 All Saints and All Souls actual host-to-reader Requiem gate
+        run: node tests/calendar-imminent-mass-gate-2026.mjs
       - name: Exhaustive 2026 production resolver sweep and independent checkpoints
         run: node tests/calendar-1962-full-year-audit.mjs
       - name: Reconcile living saints against every 2026 production day
