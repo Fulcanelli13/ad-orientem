@@ -1499,3 +1499,58 @@ test('all seventeen Palm editorial cases have complete original Latin and only n
  assert.equal(batch.publishAllowed,false);
  assert.equal(audit.batch31CorrectiveUnderlayReview.humanMusicalApprovals,0);
 });
+
+
+test('two flexed Psalm23 full-GABC hypotheses cover three verses but retain exact original Latin and zero approvals',()=>{
+ const master=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
+ const section=master.batch33RemainingEightReview.twoPsalm23FlexGabcCandidates;
+ const summary=master.batch33RemainingEightReview.scoreCoverageAfterTwoFlexDrafts;
+ const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/æ/g,'ae').toLowerCase().replace(/[^a-z]/g,'');
+ assert.equal(section.countDistinct,2);
+ assert.equal(section.coveredPhysicalVerseOccurrences,3);
+ assert.equal(section.candidates.length,2);
+ assert.equal(summary.completeExperimentalGabcCases,11);
+ assert.equal(summary.unscoredCases,6);
+ assert.equal(summary.completelyApprovedCases,0);
+ assert.equal(summary.unscoredIds.length,6);
+ assert.equal(section.publisherAllowed,false);
+ const refs=new Map(master.cases.map(x=>[x.id,x]));
+ for(const row of section.candidates){
+  const src=refs.get(row.id);
+  assert.ok(src,row.id);
+  assert.equal(row.id.startsWith('PALM-R02-PS23-'),true);
+  assert.deepEqual(row.printedLatinSections,Object.values(src.sourceSegments));
+  assert.deepEqual(row.physicalOccurrences,src.occurrenceIds);
+  assert.equal(row.printedLatinSections.length,3);
+  assert.equal(row.gabcResearchOnly.split('%%').length,2);
+  assert.equal(row.gabcResearchOnly.split('+(h)').length,2);
+  assert.equal(row.gabcResearchOnly.split('*(:)').length,2);
+  const sections=row.gabcResearchOnly.slice(row.gabcResearchOnly.indexOf('(c4)')+4).split('+(h)');
+  const flex=sections[0];
+  const halves=sections[1].split('*(:)');
+  const fragments=[flex,...halves];
+  assert.equal(fragments.length,3);
+  for(let i=0;i<fragments.length;i++){
+   const words=row.syllabifiedSections[i].split(/\s+/);
+   const sylls=words.flatMap(x=>x.split('-'));
+   const notes=[...fragments[i].matchAll(/([\p{L}]+[.,;!?]?)\(([^)]+)\)/gu)].map(x=>({s:x[1],note:x[2]}));
+   assert.equal(notes.length,sylls.length,row.id);
+   assert.equal(row.notesBySection[i].length,sylls.length,row.id);
+   assert.deepEqual(notes.map(x=>norm(x.s)),sylls.map(norm),row.id);
+   assert.deepEqual(notes.map(x=>x.note),row.notesBySection[i]);
+   assert.equal(norm(sylls.join('')),norm(row.printedLatinSections[i]),row.id);
+   const lyricWords=fragments[i].replace(/\([^)]*\)/g,'').replace(/[+*:]/g,'').trim().split(/\s+/);
+   assert.deepEqual(lyricWords.map(norm),words.map(norm),row.id);
+  }
+  assert.equal(row.actualSourcePrintedFullVerseWithPitches,false);
+  assert.equal(row.editorialAccentCertified,false);
+  assert.equal(row.noteGroupsHumanReviewed,false);
+  assert.equal(row.parseAndRenderSuccessful,false);
+  assert.equal(row.productionScoreApproved,false);
+ }
+ const repeated=section.candidates.find(x=>x.id==='PALM-R02-PS23-L07');
+ assert.deepEqual(repeated.physicalOccurrences,['PALM-R02-PS23-L07','PALM-R02-PS23-L09']);
+ assert.equal(repeated.noSpecialMusicForRepeatedL09,true);
+ const reader=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
+ assert.equal(reader.includes('PALM-R02-PS23-L07 1961 Palm complete-verse'),false);
+});
