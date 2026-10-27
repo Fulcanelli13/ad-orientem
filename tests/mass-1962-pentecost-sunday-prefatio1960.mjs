@@ -69,7 +69,9 @@ for(const c of cases){
  assert.equal(await resolvePentecostSunday1960Preface(already,host()),already);
  const wrongHeader=original({...c,header:"de Beata Maria Virgine"});
  assert.equal(inspectPentecostSunday1960Source(wrongHeader).status,"UNRECOGNIZED_SOURCE");
- assert.equal(await resolvePentecostSunday1960Preface(wrongHeader,host()),wrongHeader);
+ const unexpected=await resolvePentecostSunday1960Preface(wrongHeader,host());
+ assert.equal(unexpected.proper.status,"failed","Unexpected named Preface must fail closed");
+ assert.match(unexpected.proper.error,/UNRECOGNIZED_RAW_PREFACE_HEADING/);
  const notSunday=original({...c,date:"2026-06-08"});
  assert.equal(await resolvePentecostSunday1960Preface(notSunday,host()),notSunday);
  const wrongPath=original({...c,path:"Tempora/Pent20-0"});
