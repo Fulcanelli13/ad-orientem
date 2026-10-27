@@ -1040,5 +1040,17 @@
     "fullResearchScoresMusicallyApproved": 0,
     "renderingDoesNotConstituteScoreApproval": true,
     "noAutomaticBulkTemplatePropagation": true
+  },
+  "batch36AccentedSyllableErratum": {
+    "affectedCase": "PALM-R02-PS46-L09",
+    "sourcePrintedLatin": "Príncipes populórum congregáti sunt",
+    "word": "populórum",
+    "currentScoreGabcAccentText": "ló",
+    "historicalBatch31LexicalAnchor": "lór",
+    "correctLexicalAnchor": "ló",
+    "why": "Earlier Batch31 worksheet mistakenly treated r as part of the accented syllable. Correct syllabification is po-pu-ló-rum, with r belonging to final rum.",
+    "effect": "Batch31 historical screening classification remains a snapshot of an earlier defective fragment. In Batch36 validation use correct ló anchor for the new complete score, without granting musical approval.",
+    "other17ScoreMelodicApprovalsUnaffected": true,
+    "reviewerApproved": false
   }
 }
