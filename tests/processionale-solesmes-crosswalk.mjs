@@ -1354,4 +1354,31 @@ test('source-accent audit blocks 13 invalid mediants despite valid Exsurge SVG',
  assert.equal(experiments.nativeExsurgeProof.renderingIsNotMelodicCorrectness,true);
  assert.equal(audit.doxologyObservation.EUOUAE.includes('saeculorum Amen'),true);
  assert.equal(audit.failClosedPolicy.productionPromotionAllowed,false);
+ const draft=audit.batch31CorrectiveUnderlayReview;
+ assert.equal(draft.proposals.length,11);
+ assert.equal(draft.excluded.length,6);
+ assert.equal(draft.humanMusicalApprovals,0);
+ assert.equal(draft.publicationAllowed,false);
+ const proposals=new Set(draft.proposals.map(x=>x.id));
+ assert.equal(proposals.size,11);
+ const holds=new Set(draft.excluded.map(x=>x.id));
+ assert.equal(holds.size,6);
+ assert.equal([...proposals].some(id=>holds.has(id)),false);
+ assert.equal([...holds,...proposals].length,17);
+ for(const item of draft.proposals){
+  assert.ok(sourceById.has(item.id));
+  assert.equal(item.sourceMedialLatin,sourceById.get(item.id).sourceMedialLatin);
+  assert.ok(norm(item.sourceMedialLatin).endsWith(norm(item.endingSyllables.join(''))),item.id);
+  assert.deepEqual(item.twoAccentedIndices.map(i=>item.endingSyllables[i]),
+    audit.cases.find(x=>x.id===item.id).expectedTextAccentsHypothesis);
+  assert.ok(item.betweenAccentSyllableCount>=1&&item.betweenAccentSyllableCount<=2);
+  assert.equal(item.sourceModeledPitches.length,item.endingSyllables.length);
+  const G=item.proposedGabcEndingOnly;
+  assert.equal(G.split('%%').length,2);
+  assert.deepEqual([...G.matchAll(/([\p{L}]+)\(([^)]+)\)/gu)].map(x=>[x[1],x[2]]),
+    item.endingSyllables.map((v,i)=>[v,item.sourceModeledPitches[i]]));
+  assert.equal(item.musicalEditorApproved,false);
+  assert.equal(item.sourceToneVariantIndependentlyConfirmed,false);
+  assert.equal(item.automaticPublicationAllowed,false);
+ }
 });
