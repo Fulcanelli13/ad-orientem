@@ -187,6 +187,19 @@ try{
       document.querySelector(".aoTodayV2CalendarInline .aoCalV2YearHeading h2")?.textContent!==previous,
      original,{timeout:10000});
    assert.equal(await cal.locator("[data-cal-pick-date]").count(),42);
+   // November I-class and All Souls principal Masses must display actual
+   // original French Officium headings, not the English host nameFr field.
+   // These assertions use the real 2026 resolver, not synthetic strings.
+   await page.waitForFunction(()=>["2026-11-01","2026-11-02"].every(date=>
+     document.querySelector('[data-cal-pick-date="'+date+'"]')?.dataset.ready==="1"),
+     null,{timeout:90000});
+   for(const [date,en,frTitle] of [
+     ["2026-11-01","All Saints","Tous les Saints"],
+     ["2026-11-02","Commemoration of All Souls","Commémoraison de tous les fidèles défunts"]
+   ]){
+     const title=await cal.locator('[data-cal-pick-date="'+date+'"] .aoCalMonthName').innerText();
+     assert.equal(title,lang==="fr"?frTitle:en,date+" original selected feast in "+lang);
+   }
    // Inspect actual published Calendar customs, not only the shell/month grid.
    // The first month shift from October 2026 lands in November.
    if((width===320&&lang==="en")||(width===390&&lang==="fr")){
