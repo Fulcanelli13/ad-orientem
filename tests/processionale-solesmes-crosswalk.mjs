@@ -989,3 +989,43 @@ test('Psalm23 verse2 GABC prototype retains 24 note-bearing syllables and is nev
  const runtime=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
  assert.equal(runtime.includes('palm23-verse2-tone-application-20261027-PROVISIONAL'),false);
 });
+
+
+test('Psalm23 printed first-verse terminal rule holds both speculative 3-syllable cadence versions',()=>{
+ const h=readJSON('data/research/processionale-palm23-verse2-tone-hypothesis-20261027.v1.json');
+ const w=readJSON('data/research/processionale-palm-14verse-pointing-worklist-20261027.v1.json');
+ const original=readFileSync(new URL('../data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc',import.meta.url),'utf8');
+ const a=readFileSync(new URL('../data/research/chant-source-review/palm23-verse2-tone-application-20261027-PROVISIONAL.gabc',import.meta.url),'utf8');
+ const b=readFileSync(new URL('../data/research/chant-source-review/palm23-verse2-accent-alignment-20261027-ALTERNATE.gabc',import.meta.url),'utf8');
+ const review=h.batch26CadenceAudit;
+ assert.equal(review.batch,26);
+ assert.equal(review.verdict,'NEITHER_A_NOR_B_CAN_BE_EDITORIALLY_SELECTED_FROM_PRINTED_FIRST_VERSE_ALONE');
+ assert.equal(review.decision,'HOLD_BOTH_NO_DEFAULT_NO_APPROVED_VERSION');
+ assert.equal(review.evidence.psalm23Printed1961.notatedFirstVerseFull,true);
+ assert.equal(review.evidence.psalm23Printed1961.secondVerseOnlyCue,'Nam(h) ip(h)se...(h)');
+ assert.ok(original.includes(review.evidence.psalm23Printed1961.secondVerseOnlyCue.replace('Nam(h)','2. Nam(h)')));
+ assert.equal(review.originalTerminalPhrase.postAccentCount,5);
+ assert.equal(review.targetTerminalPhrase.postAccentCount,3);
+ assert.deepEqual(review.originalTerminalPhrase.postAccentSyllables,['bi','tant','in','e','o']);
+ assert.deepEqual(review.targetTerminalPhrase.postAccentSyllables,['vit','e','um']);
+ assert.equal(review.criticalDifference.shortage,2);
+ assert.ok(original.includes(review.originalTerminalPhrase.gabc));
+ assert.equal(review.variantA.accentPitch,'g');
+ assert.equal(review.variantB.accentPitch,'h');
+ assert.ok(a.includes('fir(h)má(g)vit(f) e(gh gr)um.(gf..)'));
+ assert.ok(b.includes('fir(h)má(h)vit(gf) e(gh gr)um.(gf..)'));
+ assert.equal(review.variantA.status,'RETENTION_FOR_COMPARISON_NOT_CHOSEN');
+ assert.equal(review.variantB.status,'RETENTION_FOR_COMPARISON_NOT_CHOSEN');
+ assert.ok(review.musicianAcceptanceChecklist.every(x=>x.passed===false));
+ assert.equal(review.renderProofOnly.exsurgePass,true);
+ assert.equal(review.renderProofOnly.actualMusicalApproval,false);
+ assert.equal(review.other12PatternsMustNotInheritEitherUnapprovedModel,true);
+ const row=w.work.find(x=>x.id==='PALM-R02-PS23-L02');
+ assert.equal(row.provisionalGabcResearch.cadenceDecision,review.decision);
+ assert.equal(row.provisionalGabcResearch.postAccentReference,5);
+ assert.equal(row.provisionalGabcResearch.postAccentTarget,3);
+ assert.equal(row.provisionalGabcResearch.noInheritanceToOtherPatterns,true);
+ assert.equal(w.currentCandidatePipeline.noAutomatedExpansionFromV2Hypotheses,true);
+ assert.equal(w.currentCandidatePipeline.approved,0);
+ assert.equal(h.release.scorePublicationAllowed,false);
+});
