@@ -150,8 +150,13 @@ function dailyApprovedPrayerCard(row){
  const options=approvedDailySlotOptions(DAILY_APPROVED_FORMS,DAILY_SEQUENCE_RELEASE,{
    language,daypart,length,slotId:row.slotId
  });
+ // One slot may legitimately contain several complementary complete prayers.
+ // All selected witnesses are pressed; the current card alone is not enough.
+ const selectedIds=new Set(dailyReadingPlan().rows
+   .filter(x=>x.kind==="approved-source-prayer"&&x.slotId===row.slotId)
+   .map(x=>x.witnessId));
  const choices=options.length>1
-  ?`<nav class="aoDailyFormulationChoices" role="group" aria-label="${esc(L("Prayer formulation","Formulation de la prière"))}">${options.map(item=>`<button type="button" data-tp381-approved-daily-form="${esc(row.slotId)}::${esc(item.id)}" aria-pressed="${item.id===row.witnessId}">${esc(item.title)}</button>`).join("")}</nav>`
+  ?`<nav class="aoDailyFormulationChoices" role="group" aria-label="${esc(L("Prayer formulation","Formulation de la prière"))}">${options.map(item=>`<button type="button" data-tp381-approved-daily-form="${esc(row.slotId)}::${esc(item.id)}" aria-pressed="${selectedIds.has(item.id)}">${esc(item.title)}</button>`).join("")}</nav>`
   :"";
  return `${choices}<article class="aoTP381PrayerCard" data-ao-daily-formulation="${esc(row.witnessId)}">
  <h3>${esc(row.title)}</h3><div class="aoTP381Reader">${prayerParagraphs(row.text)}</div>
