@@ -1,11 +1,11 @@
-name: Original-subject pixel quality checks
+name: Original-subject pixel quality checks (read-only)
 on:
   push:
     branches: [main]
     paths: [.github/workflows/hero-subject-quality-20261026.yml]
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 jobs:
   subject-details:
     runs-on: ubuntu-latest
@@ -16,15 +16,21 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
-      - run: cp scripts/art/make-subject-specific-hero-details.py /tmp/subject-details.py
-      - name: Check Caravaggio face, Reni armour, Honthorst coat of arms and Meirelles altar
+      - name: Inspect research-source original-pixel crops without modifying GitHub
         run: |
-          git fetch origin research/module-hero-pd-masters-20261026
-          git switch -C research/module-hero-pd-masters-20261026 origin/research/module-hero-pd-masters-20261026
+          cp scripts/art/make-subject-specific-hero-details.py /tmp/subject-details.py
+          git fetch --depth=1 origin research/module-hero-pd-masters-20261026
+          git switch --detach FETCH_HEAD
           python /tmp/subject-details.py
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f assets/staged/module-hero-subject-details/
-          git commit -m "research(art): archive 100%-pixel painterly subject detail tiles"
-          git push origin research/module-hero-pd-masters-20261026
-      - run: echo "Research photo details only. No automatic source image quality verdict."
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          rows=json.loads(Path("assets/staged/module-hero-subject-details/subject-detail-manifest.json").read_text())
+          if not rows or not all(row.get("native_pixels_no_rescaling") is True for row in rows):
+              raise SystemExit("Missing native-pixel research source samples")
+          if not all(Path(row["preview"]).is_file() for row in rows):
+              raise SystemExit("Source-based native detail tile missing")
+          print("Read-only native subject crops checked:",len(rows))
+          print("Visual aesthetic judgement remains human; no permanent files are changed.")
+          PY
+      - run: echo "Research-branch permanence is handled by its separate guarded manual writer, not this main workflow."
