@@ -81,6 +81,10 @@ function sourceOwned1962FeriaAndSaturday(id,date,rank,colour,sourcePath){
     if(md>="01-07"&&md<="01-13"&&
       (sourcePath==="Sancti/01-06"||sourcePath==="Tempora/Epi1-0a"))
       return rule("EPIPHANIA","485_B","SOURCE_MATCHED_EPIPHANY_SEASON_FERIA");
+  }
+  // The generic fallback identity ends in ':w', but the actual 1962
+  // Septuagesima feria is VIOLET. Never use the suffix as vestment evidence.
+  if(rank===4&&id===":feria:4:w"&&colour==="violet"){
     const prelent=/^Tempora\/Quadp([1-3])-0$/.exec(sourcePath);
     if(prelent){
       const week=Number(prelent[1]);
