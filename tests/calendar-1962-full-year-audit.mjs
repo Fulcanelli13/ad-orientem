@@ -585,13 +585,14 @@ try{
             report.push(record);
             continue;
           }
-          const owner=authenticated1962PrefaceRecoveryOwner(id,path);
+          const owner=authenticated1962PrefaceRecoveryOwner(id,path,entry.date);
           record.recoveryOwnerSection=owner?.section??null;
           record.recoveryOwnerScope=owner?.scope??null;
           record.recoveryOwnerVariant=owner?.variant??null;
           // Exactly the native source recovery that browser-entry uses.
           const corrected=await recoverReaderProperOmissions(original,{
-            hostResolver:resolver.properResolver,principalCelebrationId:id
+            hostResolver:resolver.properResolver,principalCelebrationId:id,
+            calendarDate:entry.date
           });
           const correctedLatin=head(corrected?.preface);
           const category=classify1962PrefaceHeading(correctedLatin);
