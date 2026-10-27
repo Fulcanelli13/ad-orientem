@@ -98,11 +98,38 @@ try{
     sequenceLatin:String(p.sequence?.lat??p.sequence?.la??"").slice(0,130),
     languages});
   }
+  const req=globalThis.AO_RUNTIME_V8?.resolver?.properResolver;
+  const selectors=globalThis.AO_CELEBRATION_API??{};
+  const rawSources=[];
+  for(const owner of ["Sancti/11-02m1","Sancti/11-02m2","Sancti/11-02m3"]){
+   const langs=[];
+   for(const language of ["la","en","fr"]){
+    try{
+     const raw=await req.resolveSource(owner,language,{
+      requestedFiles:[],cacheHits:[],referencesResolved:[],
+      languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],
+      warnings:[],errors:[]
+     });
+     const sections=raw?.sections??raw?.data?.sections??raw?.rawSections??null;
+     langs.push({language,status:"RETURNED",type:typeof raw,
+      keys:Object.keys(raw??{}).slice(0,18),
+      sectionKeys:sections&&typeof sections==="object"?Object.keys(sections).slice(0,22):null,
+      valueType:typeof raw?.text,
+      sample:String(raw?.text??"").slice(0,85)});
+    }catch(error){
+     langs.push({language,status:"ERROR",message:String(error?.message??error).slice(0,180)});
+    }
+   }
+   rawSources.push({sourcePath:owner,languages:langs});
+  }
+  const discovery={resolverKeys:Object.keys(req??{}).slice(0,40),
+   celebrationApiKeys:Object.keys(selectors).slice(0,35),
+   rawSources};
   const requiem={overlays:["REQUIEM"]};
   const ordinary={overlays:[]};
   return {
    saints:{...extract(saint),forms:saintForms},
-   souls:{...extract(souls),resolvedFormularies:resolved},
+   souls:{...extract(souls),resolvedFormularies:resolved,discovery},
    ceremonial:{
     req:{omittedPeace:requiemOmittedOrdinaryCuesForResolvedMass(requiem),
      omittedFinalBlessing:requiemFinalBlessingOmittedCuesForResolvedMass(requiem),
@@ -145,7 +172,7 @@ try{
    // 1960 Missal §399: mandatory in principal/first Mass, but
    // later consecutive non-sung Masses may omit the Sequence.
    if(owner==="Sancti/11-02m1")
-    check(/Dies\\s+ir[aæe]/i.test(v.sequenceText),
+    check(/Dies\s+ir[aæe]/i.test(v.sequenceText),
      `NOV02_FIRST_${language}_DIES_IRAE_NOT_IN_SOURCE_READER`);
   }
  }
