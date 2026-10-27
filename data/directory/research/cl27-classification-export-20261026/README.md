@@ -56,3 +56,17 @@ The export includes *every physical site* and all 2,715 original source classifi
 The existing map projection now offers more specific **source-reported institute** filter chips (including AASJMV, Canons, Oratorians, Transfiguration, Capuchins and religious communities) without altering the 1,879 R49 pins. No Una Cum, canonical-status or 1962 filter should appear as *confirmed* until the specific celebration has independently supported evidence.
 
 The next evidence workload is to establish actual ministries, exact liturgical editions, dates, and canonical/ecclesial status across these source-identified groups—batch by common first-party URL, preserve original asserted wording and date, and promote only individually evidenced results into the user-facing filters. Do not divert effort into accumulating new classification labels for unexamined sites without physical IDs or links.
+
+
+## Institute-inheritance integration (27 October 2026)
+
+The **only institutional policy registry** is the upstream CL2 `institute_norm` table. CL27 does not own another institute-rule file: it reads CL2 `effective_source_liturgy`, including evidence links, and projects 1,389 source-linked institutional norms (FSSP 381; ICKSP 158; IBP 31; SSPX 819). This replaces CL27's earlier blanket `liturgical_use=UNKNOWN` projection for those sources only.
+
+CL27 keeps two different statements separate:
+
+- `liturgical_use` and `effective_missal_edition` can be `ROMAN` / `1962` **because of an institute norm inherited by a frozen source-labelled ministry**. The `inherited_institute_policy` field links back to the two first-party rules in CL2 and `liturgical_claim_grade` explicitly identifies source-label inheritance rather than direct Mass verification.
+- `missal_edition_at_source_scope` continues to identify the **three distinct direct owner-source witnesses** in original CL2 classification evidence; group policy does not inflate this count.
+
+CL27's offline reviewer shows the distinction and can filter direct witnesses separately from institutional defaults. `institute_norm_inherited_source_ids` at a physical anchor identifies **which source ministries** have inherited defaults, not a building-wide 1962 rite. No new public 1962, Una Cum, current timetable or canonical approval is produced. The CL27 GitHub workflow asserts all four institutional category counts and the scope protections.
+
+**Release dependency:** The 1,879 published preliminary R49 pins are a separate historical projection without a proven one-to-one identity crosswalk to CL2's 2,579 physical anchors. Do not match them by name or affiliation and copy the inherited field onto pins. First land the upstream physical-master PR chain, review source-to-pin identity joins, and use CL2 effective scoped views in the existing Find UI. Merge CL27 only after that contract is verified.
