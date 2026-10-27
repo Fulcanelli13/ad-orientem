@@ -440,6 +440,29 @@ try{
   assert.equal(selectedTemporal.length,19);
   assert.deepEqual(new Set(selectedTemporal.map(x=>x.sourcePath)),
     new Set(temporalScreen.sourceCases.map(x=>x.sourcePath)));
+  // Join the 22 already-recorded generic feria/Saturday BVM cases to the
+  // genuine day resolver identities; the BVM donor C10 files have NOT been
+  // independently retrieved and this fact is carried through the report.
+  const extraSource=JSON.parse(await readFile(resolve(root,
+    "data/research/1962-generic-feria-bvm-preface-screen-20261027.v1.json"),"utf8"));
+  assert.equal(extraSource.schema,"AO_1962_GENERIC_FERIA_BVM_PREFACE_SCREEN_20261027_V1");
+  assert.equal(extraSource.cases.length,22);
+  const extraClassified=[
+    ...cohorts.GENERIC_NATIVITY_EPIPHANY_CONFLICT,
+    ...cohorts.GENERIC_PRELENT_COMMON_AGREEMENT,
+    ...cohorts.BVM_SATURDAY_MARIAN_CONFLICT,
+  ];
+  assert.equal(extraClassified.length,22);
+  for(const original of extraSource.cases){
+    const actual=extraClassified.find(x=>x.date===original.date);
+    assert.ok(actual,"Missing recorded source candidate: "+original.date);
+    assert.equal(actual.principalId,original.principalId);
+    assert.equal(actual.sourcePath,original.canonicalProperPath);
+    assert.equal(actual.expected,original.expectedPreface);
+    assert.equal(actual.ruleClause,original.rubricClause);
+  }
+  assert.equal(extraSource.cases.filter(x=>x.originalFileIndependentlyRecovered===false).length,12,
+    "Do not misstate BVM Saturday donor-file recovery");
   assert.equal(cohorts.CORPUS_CHRISTI_POST_1960_COMMON[0].date,"2026-06-04");
   assert.equal(cohorts.CORPUS_CHRISTI_POST_1960_COMMON[0].expected,"COMMUNIS",
     "ICRSP post-1960 Common must not select pre-1960 Nativity or later optional Sacrament");
@@ -454,6 +477,7 @@ try{
     year:2026,sourceAuditRun:"Live 1962 shared canonical resolver and independent Preface audit",
     sourceRegister:"data/research/1962-sanctoral-preface-source-screen-20261027.v1.json",
     temporalRegister:"data/research/1962-temporal-preface-source-screen-20261027.v1.json",
+    genericFeriaAndBvmRegister:"data/research/1962-generic-feria-bvm-preface-screen-20261027.v1.json",
     totalHistoricalUnmappedWorklist:194,
     newlySourceMatchedWithheldFromEditorialApproval:32,
     newlySourceIdentifiedConflicts:29,
