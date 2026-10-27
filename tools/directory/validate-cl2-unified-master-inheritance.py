@@ -24,7 +24,7 @@ def main():
       "source_ministry":2723,"mass_time":4681,
       "timetable_ministry_link":4681,"institute_norm":8,
       "existing_alias":5,"identity_exception":49,
-      "classification_exception":0,"unified_site_candidate":1497,"unified_research_inventory":4076,"unified_provider_coverage":392,"unified_third_party_source_lead":1531,"unified_directory_country_census":65
+      "classification_exception":0,"unified_site_candidate":1497,"unified_research_inventory":4076,"unified_provider_coverage":392,"unified_third_party_source_lead":1531,"unified_directory_country_census":65,"unified_identity_review_cohort":1497
     }
     for table,n in expected.items():
         assert count(db,f'SELECT COUNT(*) FROM {table} ')==n,(table,n)
@@ -62,6 +62,9 @@ def main():
     assert count(db,"SELECT COUNT(*) FROM unified_third_party_source_lead WHERE previous_similarity_disposition='AMBIGUOUS_NAME_MATCH'")==80
     assert count(db,"SELECT COUNT(*) FROM unified_directory_country_census WHERE source_listing_complete=1")==54
     assert count(db,"SELECT COUNT(*) FROM unified_directory_country_census WHERE source_listing_complete=0")==11
+    assert [r[0] for r in db.execute('SELECT COUNT(*) FROM unified_identity_review_cohort GROUP BY cohort_no ORDER BY cohort_no')]==[200,200,200,200,200,200,200,97]
+    assert count(db,"SELECT COUNT(*) FROM unified_identity_review_cohort WHERE admitted_to_physical_site!=0")==0
+    assert not db.execute("SELECT candidate_research_id FROM unified_site_candidate EXCEPT SELECT candidate_research_id FROM unified_identity_review_cohort").fetchall()
     assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE source_batch LIKE 'PROVIDER_%'")==17
     assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE source_batch IN ('B84','B85','B86','B87','B88','B89','B90')")==36
     assert count(db,"SELECT COUNT(*) FROM unified_provider_coverage WHERE identity_disposition='EXACT_FROZEN_CL2_SOURCE_ID'")==305
