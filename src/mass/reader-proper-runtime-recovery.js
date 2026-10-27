@@ -3,6 +3,7 @@ import {render1962EasterPrefaceVariant} from "./1962-easter-preface-form.js";
 import {recover1962InAlbisSecretFromPinnedSource} from "./1962-in-albis-secret-source.js";
 import {required1962MarianPrefaceOwner,verifyMarianLatinSourceRule,render1962MarianPrefaceForm,isSelected1962MarianPrefaceForm} from "./1962-marian-preface-source.js";
 import {required1962SeasonalSanctoralPrefaceOwner,originalSanctoralLacksOwnPreface,matches1962SeasonalSanctoralSelection,required1962May11ApostlesPrefaceOwner,authenticMay11ApostolicOriginal,matches1962May11ApostlesSelection} from "./1962-seasonal-sanctoral-preface-source.js";
+import {required1962ResidualPrefaceOwner,authentic1962ResidualOriginal,render1962ResidualPreface,matches1962ResidualSelected} from "./1962-residual-preface-source.js";
 const PER_DOM=Object.freeze({
   la:"Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
   en:"Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
@@ -139,6 +140,9 @@ export function authenticated1962PrefaceRecoveryOwner(principalCelebrationId,sou
   const seasonal=required1962SeasonalSanctoralPrefaceOwner(id,path,calendarDate);
   if(seasonal)return Object.freeze({...seasonal,
     sourcePath:path,seasonalSanctoral:seasonal});
+  const residual=required1962ResidualPrefaceOwner(id,path,calendarDate);
+  if(residual)return Object.freeze({...residual,
+    sourcePath:path,residual1962Source:residual});
   // Exclude selected votives, proper feast formularies, unrelated path
   // aliases and Office variants. Source ID *and* canonical source path must
   // agree before we are allowed to replace a populated Common Preface.
@@ -188,6 +192,10 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
     const original=await hostResolver.resolveSource(data.sourcePath,"la",diagnostic);
     if(!originalSanctoralLacksOwnPreface(original,owner.seasonalSanctoral))return null;
   }
+  if(owner.residual1962Source){
+    const original=await hostResolver.resolveSource(data.sourcePath,"la",diagnostic);
+    if(!authentic1962ResidualOriginal(original,owner.residual1962Source))return null;
+  }
   if(owner.marianForm){
     // Named feasts must possess their authenticated Latin Rule. The 1962
     // Saturday BVM Mass is validated by its *selected C10 source identity*
@@ -216,6 +224,10 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
       text=render1962MarianPrefaceForm(text,language,owner.marianForm);
       if(!text)return null;
     }else text=applyMarianPrefaceForm(text,language,owner.form);
+    if(owner.residual1962Source){
+      text=render1962ResidualPreface(text,language,owner.residual1962Source);
+      if(text===null)return null;
+    }
     if(owner.section==="Pasch"){
       text=render1962EasterPrefaceVariant(text,language,owner.variant);
       if(!text)return null;
@@ -241,10 +253,17 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
     ...result,prefaceSection:owner.section,prefaceVariant:owner.variant,
     recoveryScope:owner.scope,seasonalSanctoralDate:calendarDate
   },owner.seasonalSanctoral))return null;
+  if(owner.residual1962Source&&!matches1962ResidualSelected({
+    ...result,sourcePath:"Ordo/Prefationes",
+    prefaceSection:owner.section,prefaceVariant:owner.variant,
+    recoveryScope:owner.scope,residualPrefaceDate:calendarDate,
+    originalProperSourcePath:data.sourcePath
+  },owner.residual1962Source))return null;
   return Object.freeze({...result,sourcePath:"Ordo/Prefationes",prefaceSection:owner.section,
     ...(owner.marianForm?{marianForm:owner.marianForm}:{}),
     ...(owner.seasonalSanctoral?{seasonalSanctoralDate:calendarDate}:{}),
     ...(owner.apostolicSpecial?{sanctoralSourceDate:calendarDate}:{}),
+    ...(owner.residual1962Source?{residualPrefaceDate:calendarDate}:{}),
     recoveryScope:owner.scope??"CERTIFIED_EXACT_FEAST",rubric:owner.rubric??null,
     prefaceVariant:owner.variant??null,
     originalProperSourcePath:String(data.sourcePath??"")});
