@@ -901,6 +901,12 @@ test('1961 source cadence motifs are immutable GABC evidence, not approved Psalm
  assert.deepEqual(ps46.provisionalNotes,['f','gh','h','h','h']);
  assert.equal(old46.split('<b>pláu</b>')[1],candidate46.split('<b>pláu</b>')[1]);
  assert.equal(c.counting.firstVerseCadenceFragments,4);
+ const w=readJSON('data/research/processionale-palm-14verse-pointing-worklist-20261027.v1.json');
+ assert.equal(w.firstVerseCadenceAnchorLink.path,'data/research/processionale-palm-1961-cadence-motif-source-20261027.v1.json');
+ assert.equal(w.firstVerseCadenceAnchorLink.psalm23.flexExampleAvailable,true);
+ assert.equal(w.firstVerseCadenceAnchorLink.psalm46.rawTextQuarantined,true);
+ assert.equal(w.firstVerseCadenceAnchorLink.firstVersePitchTemplateCertification,false);
+ assert.equal(w.firstVerseCadenceAnchorLink.otherVerseToneApprovalCount,0);
  assert.equal(c.counting.otherVerseApplicationsPending,14);
  assert.equal(c.counting.doxologyApplicationsPending,4);
  assert.equal(c.counting.approvedNewMusicalSettings,0);
