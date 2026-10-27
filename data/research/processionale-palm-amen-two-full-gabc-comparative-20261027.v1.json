@@ -283,5 +283,16 @@
     "status": "PINNED_EXSURGE_JOB_SUCCEEDED_TECHNICAL_RENDER_ONLY",
     "musicianApproved": 0,
     "productionAssigned": 0
+  },
+  "batch36ComparativeScopeCorrection": {
+    "status": "DIFFERENT_USAGE_NOT_CONTRADICTORY_PRIMARY_PALM_SOURCES",
+    "primaryPalmEvidence": "1961 Graduale textus novus pp143**–144** fully notates only first verse of each restored Psalm; the complete Sicut erat text is printed but its full melody is not.",
+    "laterWitness": "1974 Graduale Romanum p822 is labelled Gloria Patri for Introitus and Communion, not necessarily the Psalm verses accompanying Palm distribution.",
+    "safeConclusion": "The note-group differences demonstrate that a generic Tone I doxology cannot be silently substituted for the 1961 Palm processional setting. They do not prove the 1961 Palm psalm has a contradictory fully printed Amen melody.",
+    "twoFullExperimentalGabcRenderPass": true,
+    "twoSourceSpecificAmenTunesMusicallyApproved": false,
+    "runId": 40523935267,
+    "preserveHistoricalComparisonAsWritten": true,
+    "editorAction": "Find source-matched Palm procession doxology underlay or have qualified chant editor establish legitimate 1f tone ending including Amen and repeat-antiphon rubric."
   }
 }
