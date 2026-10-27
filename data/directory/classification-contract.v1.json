@@ -1,0 +1,193 @@
+{
+  "schema": "AO_DIRECTORY_CLASSIFICATION_EVIDENCE_V1",
+  "version": "2026-10-26",
+  "purpose": "Separate venue, Mass celebrant, owner/organizer, liturgical usage, ecclesial position and canonical status. Keep unverified values UNKNOWN and preserve conflicting dated source assertions.",
+  "source_of_truth": "data/directory/directory-contract.v1.json; src/find/contracts.js",
+  "subject_types": [
+    "VENUE",
+    "MINISTRY",
+    "CELEBRATION",
+    "COMMUNITY",
+    "ORGANIZER"
+  ],
+  "assertions": [
+    {
+      "field": "liturgical_use",
+      "scope": [
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "ROMAN",
+        "DOMINICAN",
+        "CARMELITE",
+        "PREMONSTRATENSIAN",
+        "OTHER_LATIN_USAGE",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "field": "missal_edition",
+      "scope": [
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "1962",
+        "PRE_1955",
+        "1955_REFORMED",
+        "MIXED_OR_LOCAL",
+        "UNKNOWN"
+      ],
+      "note": "1960 is a rubrical code, not automatically a Missal edition"
+    },
+    {
+      "field": "rubrical_basis",
+      "scope": [
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "1960",
+        "PRE_1955",
+        "1955",
+        "MIXED_OR_LOCAL",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "field": "una_cum",
+      "scope": [
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "YES",
+        "NO",
+        "VARIES_BY_CELEBRANT",
+        "VARIES_BY_OCCASION",
+        "DISPUTED",
+        "UNKNOWN"
+      ],
+      "note": "Pope named in Canon; not a property of a church or identical to canonical status"
+    },
+    {
+      "field": "recognises_current_pontiff",
+      "scope": [
+        "MINISTRY",
+        "COMMUNITY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "YES",
+        "NO",
+        "DISPUTED",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "field": "ecclesial_position",
+      "scope": [
+        "MINISTRY",
+        "COMMUNITY"
+      ],
+      "values": [
+        "ROMAN_PONTIFF_RECOGNISED",
+        "SEDEVACANTIST",
+        "SEDEPRIVATIONIST",
+        "OTHER_POSITION",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "field": "organizer_role",
+      "scope": [
+        "ORGANIZER",
+        "MINISTRY"
+      ],
+      "values": [
+        "LAY_ASSOCIATION",
+        "DIOCESAN_MINISTRY",
+        "PRIESTLY_INSTITUTE",
+        "PRIESTLY_SOCIETY",
+        "RELIGIOUS_COMMUNITY",
+        "INDEPENDENT_CLERGY",
+        "SHARED",
+        "UNKNOWN"
+      ],
+      "note": "Lay-owned building, lay-organized Mass and the officiating priest are separate"
+    },
+    {
+      "field": "venue_owner_type",
+      "scope": [
+        "VENUE"
+      ],
+      "values": [
+        "DIOCESE_PARISH",
+        "RELIGIOUS_INSTITUTE",
+        "LAY_ASSOCIATION",
+        "PRIVATE_PERSON",
+        "OTHER",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "field": "celebrant_relationship",
+      "scope": [
+        "MINISTRY",
+        "CELEBRATION"
+      ],
+      "values": [
+        "OPERATED_BY",
+        "SERVED_BY",
+        "HOSTED_BY",
+        "OCCASIONAL_VISIT",
+        "SHARED_USE",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "field": "canonical_status",
+      "scope": [
+        "MINISTRY",
+        "COMMUNITY"
+      ],
+      "values": [
+        "UNKNOWN",
+        "DATED_AUTHORITY_ASSERTION"
+      ],
+      "note": "Store effective-date/source/authority and self-description independently"
+    }
+  ],
+  "provenance_contract": {
+    "nonUnknownRequires": [
+      "source_ids",
+      "recorded_at",
+      "source_type"
+    ],
+    "eligible_source_types": [
+      "HOLY_SEE_OFFICIAL",
+      "DIOCESE_OFFICIAL",
+      "COMMUNITY_OFFICIAL",
+      "PARISH_OFFICIAL",
+      "OFFICIAL_BULLETIN",
+      "NATIONAL_ASSOCIATION",
+      "SECONDARY_DIRECTORY",
+      "USER_SUBMISSION"
+    ],
+    "evidence_maturity": [
+      "DIRECT_WITNESS_REVIEWED",
+      "SOURCE_REPORTED_UNREVIEWED",
+      "DISPUTED",
+      "UNKNOWN"
+    ],
+    "note": "A generic FSSP/SSPX/CMRI/diocesan/Una Voce label alone cannot certify a missal, Una Cum, current celebrant or canonical status."
+  },
+  "release_gates": [
+    "Do not collapse different rites or missals into a building-level fact.",
+    "Do not infer Una Cum or lay organizer from community affiliation.",
+    "Do not promote an unreviewed source label to a user-facing filter.",
+    "The existing historical B90 4681 Mass schedule rows remain immutable.",
+    "Every source ID must remain tied to its original venue and evidence record."
+  ]
+}

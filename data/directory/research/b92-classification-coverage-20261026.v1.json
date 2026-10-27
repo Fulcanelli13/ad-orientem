@@ -1,0 +1,79 @@
+{
+  "schema": "AO_TLM_B92_CLASSIFICATION_COVERAGE_MANIFEST_V1",
+  "date": "2026-10-26",
+  "offline_master": "Ad_Orientem_B90_Integrated_Research_Master_2609_Sites_2026-10-26.zip",
+  "offline_master_sha256": "7c925699c7ea179794349ce7613d5aa9fd53b976383b7ed6460d38c18c6d5887",
+  "scope": "Offline B90 research data, NOT the application public-map count or runtime provider data; do not add these denominators.",
+  "counts": {
+    "provisional_distinct_site_groups": 2609,
+    "historical_canonical_site_ids": 2612,
+    "source_venue_rows": 2715,
+    "affiliation_labels_nonblank": 2703,
+    "narrowly_identified_org_hints_SOURCE_LABEL_ONLY": 2008,
+    "nonplaceholder_independent_org_field_text_NOT_VERIFIED": 26,
+    "lay_association_mentions_NOT_CONFIRMED_ROLES": 32,
+    "rite_description_nonplaceholder": 79,
+    "source_reported_roman_rite": 61,
+    "exact_literal_1962_edition": 4,
+    "una_cum_source_assertions_direct": 0,
+    "mapped_source_alias_ids": 5,
+    "timetable_rows_unchanged": 4681,
+    "previously_verified_timetable_states_unchanged": 3347
+  },
+  "four_literal_missal_leads": [
+    {
+      "canonical_research_group_id": "RG-B65-0124AC8C5AAD",
+      "source_id": "AO-RSCH-B65-0124AC8C5AAD",
+      "name": "Prandtauerkirche",
+      "country": "AT",
+      "status": "LITERAL_1962_FIELD_UNREVIEWED"
+    },
+    {
+      "canonical_research_group_id": "RG-B65-77C86C7B3EC4",
+      "source_id": "AO-RSCH-B65-77C86C7B3EC4",
+      "name": "Basilica Magistrale di Santa Croce",
+      "country": "IT",
+      "status": "LITERAL_1962_FIELD_UNREVIEWED"
+    },
+    {
+      "canonical_research_group_id": "RG-B65-AFB4955D79E8",
+      "source_id": "AO-RSCH-B65-AFB4955D79E8",
+      "name": "Kerzenkapelle",
+      "country": "DE",
+      "status": "LITERAL_1962_FIELD_UNREVIEWED"
+    },
+    {
+      "canonical_research_group_id": "RG-B66-078F88133F6C",
+      "source_id": "AO-RSCH-B66-078F88133F6C",
+      "name": "Abbaye Notre-Dame de Bellefontaine — église abbatiale",
+      "country": "FR",
+      "status": "LITERAL_1962_FIELD_UNREVIEWED"
+    }
+  ],
+  "companion_artifacts": {
+    "full_classification_json": "Ad_Orientem_B92_Classification_Coverage_2715_Sources_2612_SiteIDs_2026-10-26.json",
+    "full_classification_sha256": "922e9d2ce91eeed58f56242b2cc7191fb3dfbb3ece18fbb4992206d9ecab39ba",
+    "classification_workbook": "Ad_Orientem_B92_Rite_Missal_UnaCum_Organization_Coverage_2026-10-26.xlsx",
+    "workbook_sha256": "12d617ac1cd7d24c7bc99f6f7105ff6d8bd3563c9d27e04126a69acf42520c85",
+    "caveat": "Full binary and 2715-row data are independent conversation artifacts, not committed to this PR. Do not claim that the whole 2609-site master was merged."
+  },
+  "existing_community_level_registry": {
+    "file": "data/directory/status-assertions.v1.json",
+    "community_profiles_total": 4,
+    "profiles": [
+      "SSPX",
+      "FSSP",
+      "ICKSP",
+      "IBP"
+    ],
+    "community_policy_pope_named_in_canon_yes": [
+      "SSPX"
+    ],
+    "community_policy_pope_named_in_canon_unknown": [
+      "FSSP",
+      "ICKSP",
+      "IBP"
+    ],
+    "note": "Source-linked community policy records are preserved. They must not be counted as 2,715 source-row Una Cum assessments or automatically assigned to hosted Masses with unknown celebrants. Dated ecclesial status assertions stay separate."
+  }
+}
