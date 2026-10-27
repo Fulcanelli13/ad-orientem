@@ -4,7 +4,7 @@ Research-only. No change to the live Prayer reader, no claim of editorial approv
 
 ## Scope and counts
 
-- **4 historical books, 8 time-of-day chapter views**, 86 **source occurrences** across 26 editorial time-of-day/stage buckets. An occurrence is **not** a distinct prayer family; this avoids double-counting Lasance near-duplicates.
+- **4 historical books, 8 time-of-day chapter views**, 93 **source occurrences** across 26 editorial time-of-day/stage buckets. An occurrence is **not** a distinct prayer family; this avoids double-counting Lasance near-duplicates.
 - Current production: **11 Morning / 13 Evening cards**, `src/pray/traditional-pray-data.js`; reusable prayer bodies in `src/pray/canonical-data.js`.
 - Review depth: **web chapter inspection**, not direct page-by-page facsimile certification. All records are **candidates**, not approved import instructions. Machine-readable entries: `data/pray/daily-prayer-source-concordance.b01.json`.
 - `Blessed Be God` Morning Wikisource chapter currently truncates after its Morning Offering; **do not call the full Morning section extracted**. 20 October survey crosswalk (`Ad_Orientem_Blessed_Be_God_Survey_2026-10-20.xlsx`) already marks morning pp. 1–2 and evening pp. 12–18 P0 for collation, but states that its 70-unit review is *not* individual-prayer census.
@@ -49,7 +49,7 @@ Research-only. No change to the live Prayer reader, no claim of editorial approv
 ## Next gates
 
 1. Lock printed facsimiles for the 8 chapter views; fix page boundaries, confirm each incipit and prayer ending.
-2. Collate all 86 **source occurrences** against current canonical bodies, detect exact/near overlaps, and count genuinely distinct formulas.
+2. Collate all 93 **source occurrences** against current canonical bodies, detect exact/near overlaps, and count genuinely distinct formulas.
 3. Recover French manuals as edition-specific witnesses; do not treat the September bibliography as verified full transcriptions.
 4. Return verified grouped editorial selections for Morning and Evening; no premature production import.
 5. After approval: existing Prayer runtime, Short/Complete routines, saved formulations, optional stopwatch/meditation timer, silent mode; no new competing prayer engine.
