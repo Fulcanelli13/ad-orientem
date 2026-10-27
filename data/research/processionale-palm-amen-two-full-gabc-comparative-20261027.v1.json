@@ -538,5 +538,101 @@
     "readerRuntimeChanged": false,
     "researchOnly": true,
     "releasePermitted": false
+  },
+  "batch43PueriPortantesEuouaeCrosscheck": {
+    "batch": 43,
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "SAME_ANTIPHON_1960_EUOUAE_LAST_ACCENT_PITCH_GROUP_DIFFERENCE_IDENTIFIED__NO_PROCESSIONAL_TRANSFER_CERTIFIED",
+    "witness": {
+      "name": "Pueri Hebraeorum portantes",
+      "primaryEditionCitation": "Liber antiphonarius, Solesmes 1960 p. 423",
+      "gregobaseId": 12531,
+      "gregobaseUrl": "https://gregobase.selapa.net/chant.php?id=12531",
+      "gabcUrl": "https://gregobase.selapa.net/download.php?format=gabc&id=12531",
+      "medium": "WEB_READABLE_LATER_GABCBased_TRANSCRIPTION_OF_SAME_NAMED_ANTIPHON",
+      "officeUse": "PALM_SUNDAY_OFFICE_ANTIPHON_NOT_PROCESSION_MISSAL_SCORE",
+      "fullEuouaeGabc": "<eu>E(h) u(h) o(g) u(f) a(gh) e.</eu>(gf..)",
+      "melodyLastSix": [
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh",
+        "gf.."
+      ],
+      "sixSyllables": [
+        "sæ",
+        "cu",
+        "ló",
+        "rum",
+        "A",
+        "men"
+      ],
+      "editionOriginal1960PageInspected": false,
+      "transcriptionHistory": "GregoBase notes ending and EUOUAE added 2025-08-21; 1960 source facsimile for this passage has not been visually authenticated; this is lower authority than a checked original image.",
+      "sourceCaveat": "Do not infer that the Office psalm termination is the one used for the restored 1961 Palm distribution psalm; transcription's contextual metadata and source edition do not establish that transfer."
+    },
+    "matchedProcessionalAntiphon": {
+      "name": "Pueri Hebraeorum portantes",
+      "edition": "Graduale Romanum, Solesmes 1961 p. 167; Liber Usualis 1961 p. 581",
+      "archivedGabc": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-1215-e1.gabc",
+      "gregobaseId": 1215,
+      "url": "https://gregobase.selapa.net/chant.php?id=1215",
+      "textAndMelodyFamilyComparable": true,
+      "hasAttestedProcessionalEuouaeInItsGabc": false,
+      "sourceContextDifference": "1960 office antiphon and 1961 Palm distribution antiphon are closely related melodies, but the 1961 archived processional GABC does not encode the 1960 EUOUAE continuation."
+    },
+    "existingResearchGabc": {
+      "ids": [
+        "PALM-R02-PS23-DOXO-L12",
+        "PALM-R02-PS46-DOXO-L12"
+      ],
+      "lastSixSyllables": [
+        "sæ",
+        "cu",
+        "ló",
+        "rum",
+        "A",
+        "men"
+      ],
+      "lastSixPitchGroups": [
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "reproducedEnding": "sae(h)cu(h)ló(g)rum.(f) A(gh gr)men.(gf..)",
+      "musicianApproved": false
+    },
+    "comparison": {
+      "equalFirstFourPitchGroups": true,
+      "differentFifthPitchGroup": {
+        "syllable": "A",
+        "office1960": "gh",
+        "palmDraft": "gh gr"
+      },
+      "equalSixthPitchGroup": true,
+      "extraGrpClaim": "1960 EUOUAE transcription does not include gr on A, whereas both provisional Palm GABCs do. Distinction may arise from different formula application, rhythmic or melodic genre and syllabification; this comparison alone does not establish an error.",
+      "canChooseOfficeAsProductionScore": false,
+      "musicalEditorQuestion": "For each restored Palm Psalm, is the final 1f Amen sung with A(gh)men(gf) as in office-chant EUOUAE, or is A(gh gr)men(gf) justified by the independently notated 1961 restored Palm Psalm first-verse two-syllable termination? Check original 1960 p423 and 1961 p167/143**/144** pages, not just GABC transcriptions."
+    },
+    "otherAntiphon": {
+      "name": "Pueri Hebraeorum vestimenta",
+      "primary1960Locator": "Liber antiphonarius, Solesmes 1960 p. 424",
+      "primary1961Locator": "Graduale Romanum 1961 p. 168 and Liber Usualis 1961 p. 582",
+      "source1960EuouaeNotesChecked": false,
+      "noInferredSharedEuouae": true
+    },
+    "publishing": {
+      "editorialScoreApproved": 0,
+      "numberOfDraftScoresChanged": 0,
+      "numberOfAdditionalGabcCreated": 0,
+      "readerChanged": false,
+      "promoteAllowed": false
+    },
+    "priority": "HEAD_TO_HEAD_1960_1961_SAME_ANTIPHON_ORIGINAL_FACSIMILE_AND_END_OF_EUOUAE_CHECK"
   }
 }
