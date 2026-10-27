@@ -2,11 +2,14 @@ name: Mass 1962 Preface source decision gate
 on:
   workflow_dispatch:
   pull_request:
-    branches: [main, fix/mass-1962-lent-preface-source-recovery-20261026]
+    branches: [main, fix/mass-1962-lent-preface-source-recovery-20261026, fix/mass-1962-easter-preface-variants-20261026]
   push:
     paths:
       - 'src/mass/1962-preface-decision.js'
       - 'src/mass/1962-easter-preface-form.js'
+      - 'src/mass/1962-in-albis-secret-source.js'
+      - 'data/mass/1962-in-albis-secret-source.v1.json'
+      - 'tests/mass-1962-in-albis-secret-source.mjs'
       - 'src/mass/reader-proper-runtime-recovery.js'
       - 'src/mass/proper-reader-slots.js'
       - 'tests/reader-proper-runtime-recovery.mjs'
@@ -47,11 +50,13 @@ jobs:
           else
             npx playwright install --with-deps chromium
           fi
+      - name: Verify authentic three-language In Albis Secret source and source guards
+        run: node tests/mass-1962-in-albis-secret-source.mjs
       - name: Verify three authentic trilingual Easter Preface variants
         run: node tests/mass-1962-easter-preface-variants.mjs
       - name: Verify source-bound Preface in native R17 reader output
         run: node tests/mass-1962-preface-reader-handoff.mjs
       - name: Audit all 30 Lent and Pentecost 2026 production Prefaces
         run: node tests/mass-1962-lent-preface-production.mjs
-      - name: Audit all 14 2026 Easter Vigil, octave and seasonal Prefaces
+      - name: Audit Easter Prefaces and 12 April secret in actual native reader
         run: node tests/mass-1962-easter-preface-production.mjs

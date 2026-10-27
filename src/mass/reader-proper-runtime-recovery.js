@@ -1,5 +1,6 @@
 import {certifyPreGospelChantParts} from "./reader-pre-gospel-chant-source.js";
 import {render1962EasterPrefaceVariant} from "./1962-easter-preface-form.js";
+import {recover1962InAlbisSecretFromPinnedSource} from "./1962-in-albis-secret-source.js";
 const PER_DOM=Object.freeze({
   la:"Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
   en:"Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
@@ -272,9 +273,14 @@ export async function recoverReaderProperOmissions(proper,{
     diagnostic?.warnings?.push?.("PREFACE_SOURCE_RECOVERY_UNAVAILABLE:"+
       String(error?.message??error));
   }
+  // A Secret may have a source-owned Latin body but be incomplete in one
+  // vernacular. Check the exact pinned repair independently of whether a
+  // Latin string alone would make the older recovery logic skip the slot.
+  const sourceOwnedSecret=recover1962InAlbisSecretFromPinnedSource(
+    data,principalCelebrationId??data.principalCelebrationId??data.mainId,cleanLines);
   const needs={
     epistle:!textUsable(data.epistle),
-    secrets:!arrayUsable(data.secrets)&&!textUsable(data.secret),
+    secrets:Boolean(sourceOwnedSecret)||(!arrayUsable(data.secrets)&&!textUsable(data.secret)),
     postcommunions:!arrayUsable(data.postcommunions)&&!textUsable(data.postcommunion),
   };
   const orationGroups=[
@@ -298,8 +304,16 @@ export async function recoverReaderProperOmissions(proper,{
     if(textUsable(value))next.epistle=value;
   }
   if(needs.secrets){
-    const value=await recoverText(hostResolver,path,["Secreta"],diagnostic);
-    if(textUsable(value)){next.secrets=Object.freeze([value]);next.secret=value}
+    // Exact donor correction: Tempora/Pasc1-0's [Secreta] points to
+    // itself in the pinned host archive. The ordinary source resolver
+    // cannot resolve this circular reference. Use the independently
+    // pinned three-language Divinum Officium section only on that owner,
+    // retaining all normal completeness and source identity checks.
+    const value=sourceOwnedSecret??await recoverText(hostResolver,path,["Secreta"],diagnostic);
+    if(hasThreeLanguages(value)&&["lat","en","fr"].every(
+      lang=>sourceTextComplete(value[lang]))){
+      next.secrets=Object.freeze([value]);next.secret=value;
+    }
   }
   if(needs.postcommunions){
     const value=await recoverText(hostResolver,path,["Postcommunio"],diagnostic);

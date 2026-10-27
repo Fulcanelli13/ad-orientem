@@ -164,25 +164,60 @@ try{
  // the production Secret has a self-referential source row. Explicitly
  // retain the native reader's rejection rather than patching it with
  // another day's Secret merely to pass a Preface presentation smoke test.
- const missingSecret=await page.evaluate(async()=>{
+ const inAlbis=await page.evaluate(async()=>{
    const resolver=globalThis.AO_RUNTIME_V8.resolver;
    const {recoverReaderProperOmissions}=await import("/src/mass/reader-proper-runtime-recovery.js");
-   const {prepareMassSessionFromV346}=await import("/src/mass/host-adapter.js");
    const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
-   const d=await resolver.resolveDay("2026-04-12");
-   const id=d.day.main.id;
-   const p=await recoverReaderProperOmissions(d.proper.data,{
+   const {hasExact1962InAlbisSecretSourceOwner}=await import("/src/mass/1962-in-albis-secret-source.js");
+   const d=await resolver.resolveDay("2026-04-12"),id=d.day.main.id;
+   const original=d.proper.data;
+   const raw=properToReaderSlots({...original,principalCelebrationId:id},{language:"fr"});
+   const p=await recoverReaderProperOmissions(original,{
      hostResolver:resolver.properResolver,principalCelebrationId:id
    });
-   const status=properToReaderSlots({...p,principalCelebrationId:id},{language:"fr"});
-   return {id,source:p.sourcePath,preface:status.slots.PREFACE.status,
-     secret:status.slots.SECRET_SET.status,
-     secretReason:status.slots.SECRET_SET.reason??null};
+   const corrected=properToReaderSlots({...p,principalCelebrationId:id},{language:"fr"});
+   return {
+     id,source:p.sourcePath,rawSecret:raw.slots.SECRET_SET.status,
+     sourceOwnerEligible:hasExact1962InAlbisSecretSourceOwner(original,id),
+     rawShape:{
+       path:original.sourcePath,
+       requestedCelebrationId:original.requestedCelebrationId??null,
+       principalCelebrationId:original.principalCelebrationId??null,
+       riteProfile:original.riteProfile??original.profile??null,
+       calendarCommemorations:(original.calendarCommemorations??[]).map(x=>({
+         path:x.path??null,inseparable:x.inseparable??null})),
+       appliedCommemorations:(original.appliedCommemorations??[]).map(x=>({
+         path:x.path??null,inseparable:x.inseparable??null})),
+       sourceSecret:(original.secrets??[]).map(x=>({
+         latin:String(x?.lat??x?.la??"").slice(0,115),
+         english:String(x?.en??"").slice(0,115),
+         french:String(x?.fr??"").slice(0,115),
+         sourcePath:x?.sourcePath??null,oneConclusion:Boolean(x?.oneConclusion)
+       })),
+       singularSecret:original.secret?{
+         lat:String(original.secret.lat??original.secret.la??"").slice(0,100),
+         fr:String(original.secret.fr??"").slice(0,100)}:null
+     },
+     secret:corrected.slots.SECRET_SET.status,
+     collect:corrected.slots.COLLECT_SET.status,
+     postcommunion:corrected.slots.POSTCOMMUNION_SET.status,
+     preface:corrected.slots.PREFACE.status,
+     secretText:corrected.slots.SECRET_SET.data?.paragraphs?.[0]?.vernacular??null,
+     sourceEvidence:p.secrets?.[0]?.sourceEvidence??null,
+     untouched:String(original.secrets?.[0]?.fr??"")===
+       String(d.proper.data.secrets?.[0]?.fr??"")
+   };
  });
- console.log("MASS_1962_IN_ALBIS_SECRET_UNRESOLVED="+JSON.stringify(missingSecret));
- assert.equal(missingSecret.id,"tempora:Pasc1-0:1:w");
- assert.equal(missingSecret.preface,"READY","12 April source Preface must be corrected separately");
- assert.equal(missingSecret.secret,"MISSING","12 April missing Secret must not be bypassed");
+ console.log("MASS_1962_IN_ALBIS_SECRET_RECOVERED="+JSON.stringify(inAlbis));
+ assert.equal(inAlbis.id,"tempora:Pasc1-0:1:w");
+ assert.equal(inAlbis.rawSecret,"MISSING","Known donor self-reference must never be treated as Secret text");
+ assert.equal(inAlbis.secret,"READY","Authenticated source must recover named 12 April Secret");
+ assert.equal(inAlbis.preface,"READY");
+ assert.equal(inAlbis.collect,"READY");
+ assert.equal(inAlbis.postcommunion,"READY");
+ assert.ok(inAlbis.secretText?.startsWith("Accueillez, Seigneur"));
+ assert.equal(inAlbis.sourceEvidence?.schema,"AO_IN_ALBIS_1962_SECRET_SOURCE_V1");
+ assert.equal(inAlbis.untouched,true);
  const rendered=await page.evaluate(async()=>{
    const dayResolver=globalThis.AO_RUNTIME_V8.resolver;
    const {recoverReaderProperOmissions}=await import("/src/mass/reader-proper-runtime-recovery.js");
@@ -191,6 +226,8 @@ try{
    const results=[];
    for(const [date,variant,mode] of [
      ["2026-04-05","OCTAVE_DAY","MISSAL"],
+     ["2026-04-12","EASTERTIDE","MISSAL"],
+     ["2026-04-12","EASTERTIDE","LIVE"],
      ["2026-05-10","EASTERTIDE","LIVE"],
      ["2026-05-10","EASTERTIDE","SIMPLE"]
    ]){
@@ -220,7 +257,21 @@ try{
        await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
        const root=preview.root;
        const visible=(root?.querySelector(".ao-prayer-card")?.innerText??root?.innerText??"");
-       results.push({date,mode,id,variant,modelCount:cards.length,
+       let inAlbisSecret=null;
+       if(date==="2026-04-12"){
+         const secretCard=cards.find(c=>JSON.stringify(c.paragraphs??[])
+           .includes("Accueillez, Seigneur"));
+         if(secretCard)preview.showSection(secretCard.sectionId);
+         await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+         const renderedSecret=(root?.querySelector(".ao-prayer-card")?.innerText??root?.innerText??"");
+         inAlbisSecret={sectionId:secretCard?.sectionId??null,
+           hasFrench:renderedSecret.includes("Accueillez, Seigneur"),
+           textBeforeConclusion:renderedSecret.indexOf("Accueillez, Seigneur")<
+             renderedSecret.indexOf("Par Notre-Seigneur Jésus-Christ"),
+           hasAuthenticBody:renderedSecret.includes("bonheur sans fin"),
+           sample:renderedSecret.slice(0,340)};
+       }
+       results.push({date,mode,id,variant,modelCount:cards.length,inAlbisSecret,
          slotStatus:original?.status??null,cardSection:card?.sectionId??null,
          renderedPhrase:visible.includes("en ce jour")?"OCTAVE_DAY":
            visible.includes("en ce temps")?"EASTERTIDE":
@@ -244,6 +295,13 @@ try{
    assert.equal(item.renderedPhrase,item.variant,item.date+" wrong seasonal phrase in rendered Preface");
    assert.equal(item.hasFrench,true,item.date+" trilingual source lost in rendered reader");
    assert.equal(item.hasComposite,false,item.date+" unresolved seasonal alternatives visible");
+   if(item.date==="2026-04-12"){
+     assert.ok(item.inAlbisSecret?.sectionId,"In Albis native Secret card missing");
+     assert.equal(item.inAlbisSecret.hasFrench,true,"In Albis Secret not rendered in native LIVE");
+     assert.equal(item.inAlbisSecret.hasAuthenticBody,true,"In Albis Secret source body missing");
+     assert.equal(item.inAlbisSecret.textBeforeConclusion,true,
+       "In Albis Secret conclusion displayed before its prayer");
+   }
  }
  console.log("PASS native R17 rendered Preface in MISSAL, LIVE, SIMPLE on real 2026 Masses.");
  console.log("PASS 14 real 1962 Easter Preface source identities and trilingual variants: 1 Vigil, 7 octave, 6 later.");
