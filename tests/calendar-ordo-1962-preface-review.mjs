@@ -335,14 +335,16 @@ for(const w of originals){
   assert.equal(d.autoPublish,false);
   assert.equal(d.changesReader,false);
   const swapped={...day,proper:{...day.proper,data:{...day.proper.data,sourcePath:"Sancti/01-14"}}};
-  if(path!=="Sancti/01-14"){
+  if(path!=="Sancti/01-14"&&expected){
     const changed=review1962PrefaceForCalendarDay(swapped);
     assert.notEqual(changed.basis,d.basis,
       date+" same feast ID with different donor source gained unauthorized Preface");
   }
   const yearChange={...day,date:"2027-"+md};
-  assert.notEqual(review1962PrefaceForCalendarDay(yearChange).basis,d.basis,
+  if(expected)assert.notEqual(review1962PrefaceForCalendarDay(yearChange).basis,d.basis,
     "2026 source screening must not silently certify 2027 for "+md);
+  else assert.equal(review1962PrefaceForCalendarDay(yearChange).status,"UNMAPPED",
+    "Held exceptional feasts remain held in future years");
 }
 assert.deepEqual(groupCount,{COMMON:104,PASCHALIS:15,ASCENSIO:5,APOSTOLI:1,HOLD:6});
 console.log("PASS 131 exact original Sanctoral source screen: 104 nonseasonal Common, 15 Easter, five Ascension, one redirected Apostles, six independent-source holds");
