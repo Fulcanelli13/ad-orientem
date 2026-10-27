@@ -215,6 +215,8 @@ export function adaptV346ResolvedMass(legacy, options={}) {
       rubricSources:[...(legacy.rubricSources??[])],
       languageCoverage:legacy.languageCoverage??null,
       sourceDiagnostics:legacy.sourceDiagnostics??null,
+      // The celebrant's explicitly selected successive-Mass circumstance.
+      allSoulsSuccession:options.allSoulsSuccession??null,
       rogationSelection:rogationSelection ? {
         selection:rogationSelection.selection,
         observance:options.rogationSelection?.observance??null,
