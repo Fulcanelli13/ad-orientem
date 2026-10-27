@@ -50,12 +50,12 @@ footer{padding:20px 0;color:#b5a991;font:11px system-ui}
 <label class="full">Search <input id="search" type="search" placeholder="Church, city, source ID" disabled></label>
 <label>Country <select id="country" disabled><option value="">All</option></select></label>
 <label>Institute label <select id="institute" disabled><option value="">All source labels</option></select></label>
-<label class="full">1962 source evidence <select id="missal" disabled><option value="">All records</option><option value="yes">Source-specific witness</option><option value="no">No accepted source witness</option></select></label>
+<label class="full">1962 evidence scope <select id="missal" disabled><option value="">All records</option><option value="witness">Direct source witness</option><option value="inherited">Inherited institute norm</option><option value="unknown">Neither source evidence type</option></select></label>
 </div><div id="count" class="count">0 places</div></div>
 <div id="sites" aria-label="Filtered physical worship places"></div></section>
 <section class="panel"><div id="detail" class="pad"><p>Load the classification export and select a physical site to inspect its evidence.</p></div></section>
 </main>
-<footer>All site and source IDs are preserved. Do not use source-reported institute labels to infer Una cum, a Missal edition, ecclesial position or canonical recognition. Export a draft to retain manual decisions.</footer>
+<footer>All site and source IDs are preserved. CL2 provides institute-wide 1962/Roman norms for named ministries, not certification of each Mass or every celebration in a shared church. Never infer Una Cum, ecclesial position or canonical recognition. Export a draft to retain manual decisions.</footer>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
@@ -73,7 +73,9 @@ function resetOptions(){
 function filtered(){
  const q=$('search').value.toLocaleLowerCase(),c=$('country').value,i=$('institute').value,m=$('missal').value;
  return sites.filter(s=>(!c||s.country===c)&&(!i||s.institute_source_labels.includes(i))&&
- (!m||(m==='yes'?s.source_level_1962_witness_ids.length>0:s.source_level_1962_witness_ids.length===0))&&
+ (!m||(m==='witness'?s.source_level_1962_witness_ids.length>0:
+ m==='inherited'?s.institute_norm_inherited_source_ids.length>0:
+ s.source_level_1962_witness_ids.length===0&&s.institute_norm_inherited_source_ids.length===0))&&
  (!q||[s.name,s.country,s.physical_description,s.physical_anchor_id,...s.source_ids].join(' ').toLocaleLowerCase().includes(q)));
 }
 function choose(id){selected=byId.get(id);render();}
@@ -85,7 +87,8 @@ function render(){
  const b=el('button',null,'site'+(selected?.physical_anchor_id===s.physical_anchor_id?' active':''));b.type='button';
  b.append(el('div',s.name),el('small',s.country+' · '+s.physical_anchor_id));
  const pills=el('div');for(const id of s.institute_source_labels.slice(0,5))pills.append(el('span',id,'tag'));
- if(s.source_level_1962_witness_ids.length)pills.append(el('span','1962 source witness','tag'));
+ if(s.source_level_1962_witness_ids.length)pills.append(el('span','Direct 1962 source witness','tag'));
+ if(s.institute_norm_inherited_source_ids.length)pills.append(el('span','1962 institutional norm · '+s.institute_norm_inherited_source_ids.length+' source(s)','tag'));
  b.append(pills);b.onclick=()=>choose(s.physical_anchor_id);frag.append(b);
  }
  $('sites').append(frag);
@@ -99,14 +102,26 @@ function showDetail(){
  n.append(el('div','PHYSICAL VENUE · RESEARCH ONLY','eyebrow'),el('h2',s.name),el('p',s.physical_description),el('div',s.country+' · '+s.physical_anchor_id,'meta'));
  n.append(el('h3','Source-reported institutes'));
  n.append(el('p',s.institute_source_labels.length?s.institute_source_labels.join(' · '):'Not established'));
- n.append(el('p','These labels do not certify who celebrates each Mass, a community’s canonical status, the liturgical books used, or the Pope’s commemoration.','note'));
+ n.append(el('p','CL2 institute-wide Roman/1962 rules are inherited where a frozen source carries the institute label. They apply only to source-labelled ministries: no entire venue, individual celebration, Una Cum or canonical standing is automatically certified.','note'));
  n.append(el('h3','Evidence by frozen source ID'));
  if(!s.source_ids.length)n.append(el('p','No safely joined classification source. Identity review required.'));
  for(const id of s.source_ids){
  const x=sources.get(id),box=el('div',null,'source');
- box.append(el('strong',id),el('div',x?'Institute label: '+text(x.institution_label)+' · Missal at source scope: '+text(x.missal_edition_at_source_scope):'Missing source record'));
- const url=allowedUrl(x?.missal_owner_witness_url)||allowedUrl(x?.institution_source_url);
- if(url){const a=el('a','Review source');a.href=url;a.target='_blank';a.rel='noopener noreferrer';box.append(a)}
+ box.append(el('strong',id));
+ if(x){
+   box.append(el('div','Institute label: '+text(x.institution_label)+' · Group-inherited use: '+
+     text(x.liturgical_use)+' / '+text(x.effective_missal_edition)+' · Direct source witness: '+
+     text(x.missal_edition_at_source_scope)));
+   box.append(el('div','Scope: '+text(x.liturgical_claim_grade)+' · physical join: '+text(x.join_state),'note'));
+   for(const norm of (x.inherited_institute_policy||[])){
+     const url=allowedUrl(norm.evidence_url);
+     if(url){const a=el('a','Institute policy · '+norm.field+' ('+norm.value+')');a.href=url;a.target='_blank';a.rel='noopener noreferrer';box.append(a,el('span',' · '))}
+   }
+   for(const pair of [['Direct source witness',x.missal_owner_witness_url],['Listed organization source',x.institution_source_url]]){
+     const url=allowedUrl(pair[1]);
+     if(url){const a=el('a',pair[0]);a.href=url;a.target='_blank';a.rel='noopener noreferrer';box.append(a,el('span',' · '))}
+   }
+ }else box.append(el('div','Missing source record'));
  n.append(box);
  }
  n.append(el('h3','Source-grounded classification draft'));
