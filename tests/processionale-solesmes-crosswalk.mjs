@@ -1241,6 +1241,15 @@ test('Psalm 17 mediants and two flex-source windows remain strictly experimental
  assert.equal(doc.medials.length,17);
  assert.equal(doc.flex.length,2);
  assert.equal(doc.counting.endingOnlySnippetHypotheses,19);
+ assert.equal(doc.counting.realExsurgeProofsPassed,19);
+ assert.equal(doc.counting.totalCadenceAndMedialFlexFragmentsRendered,34);
+ assert.equal(doc.counting.totalViewportSvgChecksPassed,102);
+ assert.equal(doc.nativeExsurgeProof.runId,40465647938);
+ assert.equal(doc.nativeExsurgeProof.conclusion,'success');
+ assert.equal(doc.nativeExsurgeProof.allSvgChecksPassed,102);
+ assert.equal(doc.nativeExsurgeProof.historicalMusicalFormulaApproved,false);
+ assert.equal(doc.nativeExsurgeProof.manualDevicePixelReviewPassed,false);
+ assert.equal(doc.nativeExsurgeProof.productionScorePromoted,0);
  const bulk=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
  const families=readJSON('data/research/processionale-palm-four-cadence-families-17-case-20261027.v1.json');
  const work=readJSON('data/research/processionale-palm-14verse-pointing-worklist-20261027.v1.json');
