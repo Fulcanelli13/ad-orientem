@@ -1974,3 +1974,28 @@ test('Palm Psalm46 L08 secondary accent aligns two syllables after super and psa
  assert.equal(b.sourceNotes.musicEditorApprovalCount,0);
 });
 
+
+
+test('Ps46 L05 has no natural stress compliant one-step artificial accent assignment',()=>{
+ const master=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
+ const a=master.batch39L05BoundedFeasibility;
+ assert.equal(a.sourceCase,'PALM-R02-PS46-L05');
+ assert.deepEqual(a.sourceVerifiedLexicalAccents.map(x=>x.index),[1,3,10]);
+ assert.deepEqual(a.candidateFirstAccentWindowByMaxTwoInterveningSyllables,[7,8,9]);
+ assert.equal(a.candidateEvaluation.length,3);
+ assert.equal(a.lastMelodicAccentOnPrintedStressIndex,10);
+ const passing=a.candidateEvaluation.filter(x=>x.couldBeArtificialTwoAfterNearestNatural);
+ assert.equal(passing.length,0);
+ assert.equal(a.candidatesWithSourceSupportedTwoAfterNaturalBeforeLast,0);
+ for(const row of a.candidateEvaluation){
+   assert.equal(row.interveningBeforeLast,10-row.firstMelodicAccentSyllableIndex-1);
+   assert.equal(row.distanceFromNearestPriorNaturallyAccentedSyllable,row.firstMelodicAccentSyllableIndex-3);
+   assert.equal(row.couldBeArtificialTwoAfterNearestNatural,
+     row.distanceFromNearestPriorNaturallyAccentedSyllable===2);
+ }
+ assert.equal(a.optionalWeakMonosyllable.sourcePermitsAccentingItInThisPalmTone,false);
+ assert.equal(a.existingCandidateFirstAccent.passesTwoAfterRule,false);
+ assert.equal(a.noNewGabcGenerated,true);
+ assert.equal(a.explicitReviewerSignoffNeeded,true);
+ assert.equal(a.releasePermitted,false);
+});
