@@ -316,22 +316,28 @@ assert.equal(Object.keys(APPROVED_DAILY_FORMULATION_MANIFEST_V1.witnesses).lengt
  "No historical texts are cleared for public reader in this draft");
 assert.equal(Object.keys(APPROVED_DAILY_FORMULATION_MANIFEST_V1.profiles).length,0,
  "No historical profile is approved in this draft");
-const standardGuard=runtime.slice(runtime.indexOf("function dailyFormulationPrayerCard(prayerId)"),runtime.indexOf("function dailyFormulationPrayerCard(prayerId)")+360);
-assert.ok(standardGuard.includes('if(S.dailyLength==="standard")return prayerCard(prayerId,{focusParagraphs:true});'),
- "Standard may never display a historical variant even if a future approval manifest is populated");
+const standardGuard=runtime.slice(runtime.indexOf("function releasedDailySequenceFor(length)"),runtime.indexOf("function dailyReadingPlan()"));
+assert.ok(standardGuard.includes('if(length==="standard")return {mode:"canonical",rows:baseline,length};'),
+ "Standard must always return unchanged canonical rows even after a future source release");
+assert.ok(runtime.includes(':prayerCard(row.id,{focusParagraphs:true});'),
+ "Canonical cards must directly render canonical source text, not a second variant path");
+assert.ok(!runtime.includes("dailyFormulationPrayerCard(")&&!runtime.includes("dailyReleasedFormOptions("),
+ "Do not keep an alternate historical rendering path for canonical card IDs");
 const approvedCue=runtime.slice(runtime.indexOf("function renderDailyGuided(rows)"),runtime.indexOf("const id=step===total?",runtime.indexOf("function renderDailyGuided(rows)")));
 assert.ok(approvedCue.includes("row.editorial===true")&&approvedCue.includes("row.cue"),
  "An approved examination reflection must retain its authored cue, not inherited legacy exposition");
 assert.ok(runtime.includes("function dailyReadingPlan()"),"Source adapter must attach to live reader");
 assert.ok(runtime.includes("resolveDailyReaderSequence({"),"Reader must reuse one guarded sequence adapter");
-assert.ok(runtime.includes("DAILY_SEQUENCE_RELEASE.enabled!==true"),"Existing per-card selector requires independent release switch");
+assert.ok(runtime.includes("DAILY_SEQUENCE_RELEASE.enabled!==true"),"No Short/Complete choice without the independent release switch");
 assert.ok(runtime.includes("plan.mode===\"approved\""),"Approved vs canonical list routing must remain separate");
 assert.ok(runtime.includes("[data-tp381-approved-daily-form]"),"Approved choice buttons must have an event owner");
 assert.ok(runtime.includes('dailyLengthControls()'),"Optional Short/Complete control must be guarded by available profiles");
-assert.ok(runtime.includes("dailyReleasedFormOptions(prayerId,S.daypart,lang)"),
- "Future formulation tabs must be routed through explicit source gate");
-assert.ok(runtime.includes('data-tp381-daily-form'),
- "Release-gated choice buttons must be wired");
+assert.ok(runtime.includes("approvedDailySlotOptions(DAILY_APPROVED_FORMS,DAILY_SEQUENCE_RELEASE"),
+ "All historical options use the one approved profile and witness gate");
+assert.ok(runtime.includes("selectedIds.has(item.id)"),
+ "Complementary source prayers must each display their active state");
+assert.ok(!runtime.includes("data-tp381-daily-form"),
+ "Removed legacy per-canonical historical-form selector must not reappear");
 assert.ok(runtime.includes("dailyFormPreferenceStore()"),
  "Only validated local formulation IDs should be persisted");
 const dailyMarkup=runtime.slice(runtime.indexOf("function renderMorningEvening()"),runtime.indexOf("const HYMN_KEYS"));
