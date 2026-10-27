@@ -1125,6 +1125,13 @@ test('Palm cadence bulk matrix identifies four source-owned ending families and 
  assert.equal(d.counts.ps23TargetOccurrences,7);
  assert.equal(d.counts.ps46TargetOccurrences,11);
  assert.equal(d.counts.scoreApplicationsOutstanding,18);
+ assert.equal(master.batch28CadenceFamilies.evidencePath,'data/research/processionale-palm-four-cadence-families-17-case-20261027.v1.json');
+ assert.equal(master.batch28CadenceFamilies.sameSourceAccentClassCases,4);
+ assert.equal(master.batch28CadenceFamilies.otherAccentClassAdaptationCases,10);
+ const w=readJSON('data/research/processionale-palm-14verse-pointing-worklist-20261027.v1.json');
+ assert.equal(w.batch28CadenceReviewQueue.path,master.batch28CadenceFamilies.evidencePath);
+ assert.equal(w.batch28CadenceReviewQueue.approvedToneFamilies,0);
+ assert.equal(w.batch28CadenceReviewQueue.releaseEligible,false);
  assert.deepEqual(d.familyModels.map(x=>[x.id,x.caseCount,x.printedFirstVerseProvidesSameAccentClass]),[
   ['PALM_PS23_PAROXYTONON_2',2,true],
   ['PALM_PS23_PROPAROXYTONON_3',3,false],
