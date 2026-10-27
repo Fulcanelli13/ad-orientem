@@ -114,13 +114,42 @@ function applyMarianPrefaceForm(text,language,form){
   }
   return text;
 }
-function authenticatedPrefaceOwner(value){
-  const id=String(value??"");
+// The 1960 Missal §§482, 486(a) require the Lenten Preface for a
+// *principal Mass of the Lenten temporal cycle*. An inherited Common
+// heading in these specifically matched host source files is a known
+// normalizer defect, not a liturgical option.
+// https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html
+export function authenticated1962PrefaceRecoveryOwner(principalCelebrationId,sourcePath){
+  const id=String(principalCelebrationId??"");
+  const path=String(sourcePath??"").trim();
   const parts=id.split(":");
-  return VERIFIED_PREFACE_OWNERS[parts.slice(0,2).join(":")]??null;
+  const exact=VERIFIED_PREFACE_OWNERS[parts.slice(0,2).join(":")]??null;
+  if(exact)return exact;
+  // Exclude selected votives, proper feast formularies, unrelated path
+  // aliases and Office variants. Source ID *and* canonical source path must
+  // agree before we are allowed to replace a populated Common Preface.
+  const lent=/^tempora:(Quad[1-4]-[0-6]):([1-3]):v$/i.exec(id);
+  if(lent&&path.toLowerCase()==="tempora/"+lent[1].toLowerCase())
+    return Object.freeze({section:"Quad",scope:"LENT_TEMPORAL_1962",
+      rubric:"RGMR_486_A",sourcePath:path});
+  // RGMR §493(a): the Vigil and octave of Pentecost have the Holy
+  // Spirit Preface. Pentecost Sunday (Pasc7-0) was already independently
+  // certified above. Only extend to *identical source paths* below.
+  const pentecost=/^tempora:(Pasc(?:6-6|7-[1-6])):1:r$/i.exec(id);
+  if(pentecost&&path.toLowerCase()==="tempora/"+pentecost[1].toLowerCase())
+    return Object.freeze({section:"Spiritu",scope:"PENTECOST_OCTAVE_1962",
+      rubric:"RGMR_493_A",sourcePath:path});
+  return null;
 }
 async function recoverContradictoryPreface(data,hostResolver,principalCelebrationId,diagnostic){
-  const owner=authenticatedPrefaceOwner(principalCelebrationId);
+  // This source correction belongs only to the selected calendar Mass.
+  // Never reinterpret an expressly selected votive, Requiem or special
+  // formulary, even when it happens to inherit the day's base source path.
+  const requested=String(data?.requestedCelebrationId??"").trim();
+  if(requested&&requested!=="mass_of_day")return null;
+  if(/(?:votive|requiem|mass_of_dead)/i.test(String(data?.riteProfile??data?.profile??"")))
+    return null;
+  const owner=authenticated1962PrefaceRecoveryOwner(principalCelebrationId,data?.sourcePath);
   if(!owner)return null;
   const heading=String(data.preface?.lat??data.preface?.la??"").trim();
   const currentlyCommon=/^Communis(?:\s|$)/i.test(heading);
@@ -133,10 +162,17 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
     let text=cleanLines(section,language);
     text=applyMarianPrefaceForm(text,language,owner.form);
     if(!sourceTextComplete(text)||/\*Festivitáte\*|\*Feast\*/.test(text))return null;
+    // Verify the returned Latin section is the Lenten Preface itself.
+    if(language==="la"&&owner.section==="Quad"&&!/^de Quadragesima(?:\s|$)/i.test(text))
+      return null;
+    if(language==="la"&&owner.section==="Spiritu"&&
+       !/^de (?:Spiritu Sancto|Sancto Spiritu)(?:\s|$)/i.test(text))return null;
     result[language==="la"?"lat":language]=text;
   }
   if(!hasThreeLanguages(result))return null;
-  return Object.freeze({...result,sourcePath:"Ordo/Prefationes",prefaceSection:owner.section});
+  return Object.freeze({...result,sourcePath:"Ordo/Prefationes",prefaceSection:owner.section,
+    recoveryScope:owner.scope??"CERTIFIED_EXACT_FEAST",rubric:owner.rubric??null,
+    originalProperSourcePath:String(data.sourcePath??"")});
 }
 
 function sourceOrationOwners(data,path){
@@ -199,7 +235,17 @@ export async function recoverReaderProperOmissions(proper,{
       diagnostic?.warnings?.push?.("PRE_GOSPEL_CHANT_SOURCE_UNAVAILABLE:"+String(error?.message??error));
     }
   }
-  const recoveredPreface=await recoverContradictoryPreface(data,hostResolver,principalCelebrationId??data.principalCelebrationId??data.mainId,diagnostic);
+  let recoveredPreface=null;
+  try{
+    recoveredPreface=await recoverContradictoryPreface(data,hostResolver,
+      principalCelebrationId??data.principalCelebrationId??data.mainId,diagnostic);
+  }catch(error){
+    // A missing remote source must not crash the Mass reader. The reader
+    // Preface decision gate independently blocks the inherited Common
+    // Preface for authenticated obligatory seasonal cases.
+    diagnostic?.warnings?.push?.("PREFACE_SOURCE_RECOVERY_UNAVAILABLE:"+
+      String(error?.message??error));
+  }
   const needs={
     epistle:!textUsable(data.epistle),
     secrets:!arrayUsable(data.secrets)&&!textUsable(data.secret),
