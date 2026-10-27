@@ -652,11 +652,16 @@ try{
   assert.equal(readerAuditRows.length,100);
   assert.deepEqual(readerAuditRows.map(x=>x.date),rawConflictCases.map(x=>x.date),
     "Native reader comparisons missing or reordered a raw conflict");
-  // Exact 22-case Marian source gate: a wrong Common must never be shown
-  // as READY, and the Lourdes donor/books disagreement must stay blocked.
-  // These identities are already present in the independent 100-case queue.
-  const marianCases=readerAuditRows.filter(x=>x.sourceExpected==="MARIA");
-  assert.equal(marianCases.length,22,"Original 1962 Marian failure scope changed");
+  // The 100-case source queue includes 22 source-specific Marian
+  // feast/Saturday cases plus TWO separately owned calendar celebrations:
+  // 7 October Rosary and 8 December Immaculate Conception. Do not extend
+  // the source-specific interpolation assertion to those named exceptions.
+  const namedMarianDates=new Set(["2026-10-07","2026-12-08"]);
+  const marianCases=readerAuditRows.filter(x=>x.sourceExpected==="MARIA"&&
+    !namedMarianDates.has(x.date));
+  assert.equal(marianCases.length,22,"Source-specific 1962 Marian scope changed");
+  assert.equal(readerAuditRows.filter(x=>x.sourceExpected==="MARIA").length,24,
+    "Full raw Marian conflict scope changed");
   const special=marianCases.find(x=>x.date==="2026-02-11");
   assert.equal(special?.result,"READER_PREFACE_BLOCKED_OR_MISSING",
     "Contradictory Lourdes source must never silently print a Common Preface");
@@ -669,6 +674,20 @@ try{
     assert.equal(item.nativeAdapterPrincipalId,item.id,item.date);
   }
   assert.equal(marianCases.filter(x=>x.result==="READER_SELECTED_CATEGORY_MATCH").length,21);
+  for(const date of namedMarianDates){
+    const item=readerAuditRows.find(x=>x.date===date);
+    assert.equal(item?.sourceExpected,"MARIA",date+": source category changed");
+    assert.equal(item?.result,"READER_SELECTED_CATEGORY_MATCH",
+      date+": named Marian Preface still wrong in native reader");
+    assert.equal(item?.finalReaderSlot,"READY",date);
+    assert.equal(item?.selectedPrefaceSource,"Ordo/Prefationes",date);
+    assert.equal(item?.selectedPrefaceSection,"Maria",date);
+    assert.equal(item?.recoveryOwnerSection,"Maria",date);
+    assert.equal(item?.nativeAdapterPrincipalId,item?.id,date);
+    assert.equal(item?.trilingualSelected,true,date);
+    assert.equal(item?.selectedMarianForm,null,
+      date+": legacy named form must not impersonate source-specific Marian form");
+  }
 
   // 15 Easter saint Masses and five Ascension saint Masses must choose
   // the named Preface in the native 65-card source path, not display
@@ -724,12 +743,13 @@ try{
       readerSelectedCategoryMatches:matchedNativeReady,
       readerWrongPrefaceReady:wrongNativeReady,
       readerPrefaceBlockedOrMissing:blockedNative,
-      marianPrefaceSourceCases:22,
-      marianPrefacesRecoveredReady:21,
+      marianPrefaceSourceCases:24,
+      marianPrefacesRecoveredReady:23,
+      sourceSpecificMarianCases:22,
+      namedRosaryAndImmaculateRecoveredReady:2,
       marianLourdesBookConflictBlocked:1,
       seasonalSanctoralPrefacesRecoveredReady:20,
     may11ApostlesPrefaceRecoveredReady:1,
-      may11ApostlesPrefaceRecoveredReady:1,
       readerLiturgicalSourceReleaseReady,
       unresolvedOrWrongReaderCases:100-matchedNativeReady,
       readerResultCounts,
@@ -747,7 +767,7 @@ try{
     rawConflicts:100,withReaderRecoveryOwners:sourceOwnerCount,
     readerNativeReadyAndCategoryMatched:matchedNativeReady,
     readerWrongPrefaceNativeReady:wrongNativeReady,
-    marianPrefacesRecoveredReady:21,marianLourdesBookConflictBlocked:1,
+    marianPrefacesRecoveredReady:23,marianLourdesBookConflictBlocked:1,
     seasonalSanctoralPrefacesRecoveredReady:20,
     readerLiturgicalSourceReleaseReady,
     readerNotConfirmedCorrect:100-matchedNativeReady,
