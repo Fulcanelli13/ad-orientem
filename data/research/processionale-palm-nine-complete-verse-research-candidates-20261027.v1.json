@@ -610,7 +610,7 @@
         "End-cadence grouping belongs to printed paired exemplars only, not this exact verse",
         "Printed special Palm processional tone identity must be approved before any release"
       ],
-      "gabcResearchOnly": "name:PALM-R02-PS46-L10 1961 Palm complete-verse RESEARCH ONLY;\noffice-part:Psalmus;\ncommentary: Word boundaries retained. All melodic text underlay hypothetical, NOT Solesmes original complete verse score or musical approval;\n%%\n(c4) Nam(h) De(h)i(h) sunt(h) pró(ixi)ce(hr)res(h) ter(g hr)rae:(h.) *(:) ex(h)cel(h)sus(g) est(f) val(gh gr)de.(gf..) (::)\n",
+      "gabcResearchOnly": "name:PALM-R02-PS46-L10 1961 Palm complete-verse RESEARCH ONLY;\noffice-part:Psalmus;\ncommentary: Word boundaries retained. All melodic text underlay hypothetical, NOT Solesmes original complete verse score or musical approval;\n%%\n(c4) Nam(h) De(h)i(h) sunt(h) pró(ixi)ce(hr)res(h) ter(g hr)rae(h.) *(:) ex(h)cel(h)sus(g) est(f) val(gh gr)de.(gf..) (::)\n",
       "exsurgeParsed": false,
       "exsurgeRendered": false,
       "lexicalAccentEditoriallyCertified": false,
@@ -622,7 +622,8 @@
       "gabcResearchOnlyWordText": [
         "Nam Dei sunt próceres terrae:",
         "excelsus est valde."
-      ]
+      ],
+      "renderNormalization": "Printed text ends terrae: before mediant; GABC lyric removes colon since it is expressed by the following *(:) half-verse break; Latin letters unchanged."
     },
     {
       "id": "PALM-R02-PS23-DOXO-L11",
