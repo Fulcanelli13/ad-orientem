@@ -1,0 +1,36 @@
+name: Original-subject pixel quality checks (read-only)
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/hero-subject-quality-20261026.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  subject-details:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Inspect research-source original-pixel crops without modifying GitHub
+        run: |
+          cp scripts/art/make-subject-specific-hero-details.py /tmp/subject-details.py
+          git fetch --depth=1 origin research/module-hero-pd-masters-20261026
+          git switch --detach FETCH_HEAD
+          python /tmp/subject-details.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          rows=json.loads(Path("assets/staged/module-hero-subject-details/subject-detail-manifest.json").read_text())
+          if not rows or not all(row.get("native_pixels_no_rescaling") is True for row in rows):
+              raise SystemExit("Missing native-pixel research source samples")
+          if not all(Path(row["preview"]).is_file() for row in rows):
+              raise SystemExit("Source-based native detail tile missing")
+          print("Read-only native subject crops checked:",len(rows))
+          print("Visual aesthetic judgement remains human; no permanent files are changed.")
+          PY
+      - run: echo "Research-branch permanence is handled by its separate guarded manual writer, not this main workflow."
