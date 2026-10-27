@@ -610,13 +610,15 @@ try{
           record.recoveredCategory=category;
           record.finalReaderSlot=slot?.status??"UNKNOWN";
           record.sourceOwnerValidation=inspect1962PrefaceSelection({
-            principalCelebrationId:id,selectedPreface
+            principalCelebrationId:id,selectedPreface,
+            sourcePath:path,calendarDate:entry.date
           })?.status??"UNKNOWN";
           record.nativeAdapterPrincipalId=adaptedId;
           record.selectedPrefaceSource=selectedPreface?.sourcePath??null;
           record.selectedPrefaceSection=selectedPreface?.prefaceSection??null;
           record.selectedPrefaceVariant=selectedPreface?.prefaceVariant??null;
           record.selectedMarianForm=selectedPreface?.marianForm??null;
+          record.residualPrefaceDate=selectedPreface?.residualPrefaceDate??null;
           record.sourceRecoveryChangedHeading=record.originalHeading!==record.selectedHeading;
           record.trilingualSelected=Boolean(
             String(selectedPreface?.lat??selectedPreface?.la??"").trim()&&
@@ -720,6 +722,25 @@ try{
   assert.equal(philipJames?.selectedPrefaceSource,"Ordo/Prefationes");
   assert.equal(philipJames?.finalReaderSlot,"READY");
   assert.equal(philipJames?.nativeAdapterPrincipalId,"sancti:05-11r:2:r");
+  const residual2026=[
+    "2026-01-02","2026-01-05","2026-01-07","2026-01-08",
+    "2026-01-09","2026-01-12","2026-03-19","2026-05-01",
+    "2026-05-17","2026-11-29","2026-12-06","2026-12-13",
+    "2026-12-20"];
+  assert.equal(residual2026.length,13);
+  for(const date of residual2026){
+    const item=readerAuditRows.find(x=>x.date===date);
+    assert.ok(item,date+": residual Preface absent from raw conflict cohort");
+    assert.equal(item?.result,"READER_SELECTED_CATEGORY_MATCH",
+      date+": original named Preface still incorrect in native reader");
+    assert.equal(item?.sourceOwnerValidation,"MATCH",
+      date+": exact source and selected form validation failed");
+    assert.equal(item?.residualPrefaceDate,date);
+    assert.equal(item?.selectedPrefaceSource,"Ordo/Prefationes");
+    assert.equal(item?.finalReaderSlot,"READY");
+    assert.equal(item?.trilingualSelected,true);
+    assert.equal(item?.nativeAdapterPrincipalId,item?.id);
+  }
   const readerResultCounts=Object.fromEntries(
     [...new Set(readerAuditRows.map(x=>x.result))].sort()
       .map(key=>[key,readerAuditRows.filter(x=>x.result===key).length]));
@@ -749,6 +770,7 @@ try{
       namedRosaryAndImmaculateRecoveredReady:2,
       marianLourdesBookConflictBlocked:1,
       seasonalSanctoralPrefacesRecoveredReady:20,
+      residual2026PrefacesRecoveredReady:13,
     may11ApostlesPrefaceRecoveredReady:1,
       readerLiturgicalSourceReleaseReady,
       unresolvedOrWrongReaderCases:100-matchedNativeReady,
@@ -769,6 +791,7 @@ try{
     readerWrongPrefaceNativeReady:wrongNativeReady,
     marianPrefacesRecoveredReady:23,marianLourdesBookConflictBlocked:1,
     seasonalSanctoralPrefacesRecoveredReady:20,
+    residual2026PrefacesRecoveredReady:13,
     readerLiturgicalSourceReleaseReady,
     readerNotConfirmedCorrect:100-matchedNativeReady,
     categories:readerResultCounts,editoriallyCertified:0
