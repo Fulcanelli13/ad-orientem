@@ -86,8 +86,10 @@ try{
      sourceFromLegacy:Boolean(legacy?.proper),
      sourceFromResolution:Boolean(resolution?.proper),
      selectedStatus:selected?.status,selectedReason:selected?.reason,
-     sourcePreface:source?.preface?.lat?.slice(0,140)??null,
-     sourceLanguages:["lat","en","fr"].map(lang=>String(source?.preface?.[lang]??"").length),
+     sourcePreface:String(source?.preface?.lat??source?.preface?.la??"").slice(0,140),
+     sourceLanguages:["la","en","fr"].map(lang=>
+       String(lang==="la"?(source?.preface?.lat??source?.preface?.la??""):
+         source?.preface?.[lang]??"").length),
      nativeOverlays:prepared?.overlays??[],
      plan:{blessingAllowed:plan.blessingAllowed,
        dismissal:plan.dismissal,normalLastGospel:plan.normalLastGospel},
