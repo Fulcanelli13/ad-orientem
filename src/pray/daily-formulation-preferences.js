@@ -32,7 +32,15 @@ function readRaw(storage,key){
    const parsed=JSON.parse(v);
    if(!parsed||parsed.version!==1||!parsed.profiles||typeof parsed.profiles!=="object"||Array.isArray(parsed.profiles))
      return {};
-   return parsed.profiles;
+   // Previously saved content is not trusted. When preserving other
+   // profiles during a save, never carry unknown fields, free-text notes,
+   // foreign identifiers or unrecognized profile names forward.
+   const safe={};
+   for(const [profile,selection] of Object.entries(parsed.profiles)){
+     if(!/^(en|fr|la):(morning|evening):(short|complete)$/.test(profile))continue;
+     safe[profile]=normalizedDailySelections(selection);
+   }
+   return safe;
  }catch{return {}}
 }
 
