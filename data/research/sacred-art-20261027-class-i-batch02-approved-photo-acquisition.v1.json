@@ -85,11 +85,11 @@
       "accession": "1959.189",
       "museum_url": "https://www.clevelandart.org/art/1959.189",
       "api_url": "https://openaccess-api.clevelandart.org/api/artworks/1959.189",
-      "exact_image_url": "TO_BE_FETCHED_FROM_VERIFIED_API_OBJECT",
+      "exact_image_url": "https://openaccess-cdn.clevelandart.org/1959.189/1959.189_print.jpg",
       "rights": "Cleveland CC0 confirmed",
       "approved": true,
-      "acquisition_state": "SOURCE_IDENTIFIED_MUSEUM_QA_RUN_CONFIGURED_NO_BINARY_REPORT_YET",
-      "frame_status": "FRAMED_ALTERNATE_SOURCE_REJECTED; PRIMARY_UNVERIFIED",
+      "acquisition_state": "ORIGINAL_PRIMARY_JPEG_BYTES_SHA256_VERIFIED_20261027",
+      "frame_status": "PRIMARY_SOURCE_NO_AUTOMATED_BORDER_FLAGS; FULL_RES_HUMAN_REVIEW_REQUIRED",
       "photo_approved": false,
       "verified_source_exclusion": {
         "file_url": "https://openaccess-cdn.clevelandart.org/alternate/1959.189/1959.189_alt0_print.jpg",
@@ -106,6 +106,24 @@
           220.5
         ],
         "aspect_check": "Source JPEG width/height must approximate 0.5782 and undergo human 4-edge inspection"
+      },
+      "verified_exact_image": {
+        "source_url": "https://openaccess-cdn.clevelandart.org/1959.189/1959.189_print.jpg",
+        "sha256": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
+        "bytes": 4691706,
+        "pixels": [
+          1951,
+          3400
+        ],
+        "format": "JPEG",
+        "rights": "CLEVELAND_CC0",
+        "frame_automated_four_edge_flags": [],
+        "source_variant": "OFFICIAL_PRIMARY_ONLY_NEVER_ALTERNATE_FRAMED_PHOTO",
+        "canvas_ratio_error": 0.00762,
+        "frame_full_resolution_human_inspection": "PENDING",
+        "permanently_archived_binary": false,
+        "publication_authorized": false,
+        "checksum_report": "data/research/sacred-art-20261027-museum-origin-source-byte-report.v1.json"
       }
     },
     {
@@ -117,11 +135,11 @@
       "accession": "1968.100",
       "museum_url": "https://www.clevelandart.org/art/1968.100",
       "api_url": "https://openaccess-api.clevelandart.org/api/artworks/1968.100",
-      "exact_image_url": "TO_BE_FETCHED_FROM_VERIFIED_API_OBJECT",
+      "exact_image_url": "https://openaccess-cdn.clevelandart.org/1968.100/1968.100_print.jpg",
       "rights": "Cleveland CC0 confirmed",
       "approved": true,
-      "acquisition_state": "SOURCE_IDENTIFIED_MUSEUM_QA_RUN_CONFIGURED_NO_BINARY_REPORT_YET",
-      "frame_status": "PRIMARY_PREVIEW_UNFRAMED; ORIGINAL_UNVERIFIED",
+      "acquisition_state": "ORIGINAL_PRIMARY_JPEG_BYTES_SHA256_VERIFIED_20261027",
+      "frame_status": "PRIMARY_SOURCE_NO_AUTOMATED_BORDER_FLAGS; FULL_RES_HUMAN_REVIEW_REQUIRED",
       "photo_approved": false,
       "preferred_primary_candidate": {
         "url": "https://openaccess-cdn.clevelandart.org/1968.100/1968.100_print.jpg",
@@ -131,6 +149,24 @@
           126.8
         ],
         "aspect_check": "Source JPEG width/height must approximate 1.1696 and undergo human 4-edge inspection"
+      },
+      "verified_exact_image": {
+        "source_url": "https://openaccess-cdn.clevelandart.org/1968.100/1968.100_print.jpg",
+        "sha256": "115e78e0c096c9274051fa89f277d93392cec097474d183c1e4f20a371960268",
+        "bytes": 6445697,
+        "pixels": [
+          3400,
+          2905
+        ],
+        "format": "JPEG",
+        "rights": "CLEVELAND_CC0",
+        "frame_automated_four_edge_flags": [],
+        "source_variant": "OFFICIAL_PRIMARY_ONLY_NEVER_ALTERNATE_FRAMED_PHOTO",
+        "canvas_ratio_error": 0.00072,
+        "frame_full_resolution_human_inspection": "PENDING",
+        "permanently_archived_binary": false,
+        "publication_authorized": false,
+        "checksum_report": "data/research/sacred-art-20261027-museum-origin-source-byte-report.v1.json"
       }
     }
   ],
@@ -143,5 +179,12 @@
     "Museum catalogue unframed dimensions refer to object measurement and say nothing about whether actual photograph includes a frame.",
     "Global no-visible-frame policy remains absolute; preserve painting approval and reject unsuitable PHOTO source only."
   ],
-  "acquisition_safety_note": "Only images.print canonical paths from exact Cleveland API record accepted. NEVER images.alternate_images, automatically chosen search results, framed photographs or museum room snapshots. Global zero frame directive applies even for approved paintings."
+  "acquisition_safety_note": "Only images.print canonical paths from exact Cleveland API record accepted. NEVER images.alternate_images, automatically chosen search results, framed photographs or museum room snapshots. Global zero frame directive applies even for approved paintings.",
+  "verified_origin_run": {
+    "timestamp": "2026-10-27T20:54:16.189643+00:00",
+    "total_verified": 4,
+    "approved_bytes_verified": 2,
+    "approved_publication_ready": 0,
+    "note": "Reports actual bytes, SHA256, pixel-decoded JPEG and canvas ratio sanity. Four-edge heuristic found no suspicious uniform bands. It cannot prove zero physical frames; human full-resolution inspection and permanent originals remain unmet."
+  }
 }
