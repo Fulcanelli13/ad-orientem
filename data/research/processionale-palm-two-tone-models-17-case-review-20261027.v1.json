@@ -1992,7 +1992,8 @@
         "batch37SourceRuleFlags": [
           "TWO_ACCENT_MAX_TWO_UNACCENTED_RULE_VIOLATED"
         ],
-        "batch37RequiresMusicalRewriteBeforePromotion": true
+        "batch37RequiresMusicalRewriteBeforePromotion": true,
+        "batch37AlternativeRuleSourcePointer": "cases[id=PALM-R02-PS46-L09].batch37ArtificialAccentAlternative"
       },
       {
         "id": "PALM-R02-PS46-L10",
@@ -3101,6 +3102,23 @@
     "productionScoreCount": 0,
     "all17PreviouslySvgRenderedButNotMusicallyProven": true,
     "rejectAsSourceAuthenticUntilEdited": true,
-    "noProductionChange": true
+    "noProductionChange": true,
+    "psalm46L09RuleBasedAlternative": {
+      "pointer": "data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json",
+      "field": "cases[id=PALM-R02-PS46-L09].batch37ArtificialAccentAlternative",
+      "originalAccent": "ló(ixi)...gá(g) with 3 syllables between",
+      "sourceRuleAlignedHypothesis": "ló(h)rum(h) con(ixi hr)gre(h)gá(g)ti(hr)sunt(h.)",
+      "derivedArtificialSecondaryAccent": "con is 2 syllables after true ló, leaving 1 between con and real gá",
+      "source": "Rules for Text Underlay of Psalm Text at Psalm Tone Cadence pp1-2, secondary accent two syllables after true accent",
+      "canPotentiallyRemoveSpacingDefectAfterEditorialReview": true,
+      "grammaticalRuleScreensPassed": true,
+      "actualToneMelodyOriginalEditionAttested": false,
+      "gregorianEditorAccepted": false,
+      "latinCanonicalOwnerAccepted": false,
+      "renderRunPending": true,
+      "canonicalScoreReplacementMade": false,
+      "sourceOriginalRejectedDraftPreserved": true,
+      "productionEligible": false
+    }
   }
 }
