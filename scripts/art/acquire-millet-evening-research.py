@@ -36,6 +36,11 @@ def fetch(url, hosts, size=MAX_BYTES):
     return raw
 
 def main():
+    # Candidate only: never turn the editorial preference into an implicit final choice.
+    ledger = json.loads((ROOT / 'data/research/module-hero-editorial-decision-ledger-2026-10-26.review19.json').read_text())
+    evening = next(x for x in ledger['final_approved_heroes'] if x['module_id'] == 'evening')
+    if evening.get('artist') != 'Pierre-Édouard Frère' or evening.get('title') != 'The Prayer':
+        raise ValueError('The pinned review19 Evening Prayer baseline changed; reconcile editorial choices before acquisition')
     params = urlencode({"action": "query", "format": "json", "prop": "imageinfo",
                         "iiprop": "url|size|sha1|mime|extmetadata",
                         "titles": "File:" + TITLE})
