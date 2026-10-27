@@ -2287,8 +2287,10 @@ function syncIconlessSourceRubric(root,current,mode,iconResolver,form,language){
   });
   if(decision!==CUE_SURFACE.INLINE_RUBRIC &&
      !(elevationRailFallback&&!visibleExactRubric))return;
-  const label=sourceActionRubricLabel(action?.label??action?.action??action?.value,
-    language);
+  // The cue may use the native reader's plain-string action shape;
+  // textValue also covers the sourced {text} shape without inventing copy.
+  const label=sourceActionRubricLabel(
+    action?.label??action?.action??action?.value??textValue(action),language);
   if(!label)return;
   const doc=owner.ownerDocument??globalThis.document;
   const note=doc.createElement("span");
