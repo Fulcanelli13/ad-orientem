@@ -183,7 +183,7 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
   // not sufficient: fail closed for exactly these two source identities,
   // without overwriting text or applying the hold to English/other Masses.
   if(locale==="fr"){
-    for(const slot of ["SECRET_SET","POSTCOMMUNION_SET"]){
+    for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
       const hold=inspect1962PluralMartyrsFrenchOrationSource(proper,slot);
       if(hold)slots[slot]=Object.freeze({
         status:"MISSING",slot,data:null,reason:hold.reason,
