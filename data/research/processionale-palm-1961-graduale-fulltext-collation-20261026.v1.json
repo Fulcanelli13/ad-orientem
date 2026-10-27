@@ -48,10 +48,17 @@
       "psalm": 23,
       "liturgicalLine": 8,
       "biblicalVerse": 8,
-      "firstHemistich": "Quis est iste rex gloriae?",
-      "secondHemistich": "Dominus fortis et potens, Dominus potens in proelio.",
+      "firstHemistich": "Quis est iste rex gloriae? Dominus fortis et potens,",
+      "secondHemistich": "Dominus potens in proelio.",
       "medialStar": true,
-      "flexAfter": "Quis est iste rex gloriae"
+      "flexAfter": "Quis est iste rex gloriae",
+      "flexPhrase": "Quis est iste rex gloriae?",
+      "flexMarker": "†",
+      "postFlexPreMediant": "Dominus fortis et potens,",
+      "markersInPrintedOrder": [
+        "†",
+        "*"
+      ]
     },
     {
       "psalm": 23,
@@ -186,5 +193,11 @@
     "ps46Line3": "Subjicit populos nobis",
     "ps46Line4": "Eligit nobis hereditatem nostram",
     "scope": "Direct colour photography of 1962-labelled Missal; identity of imprint not verified; original Batch18 1961-only metrics unchanged"
+  },
+  "psalm23Verse8Correction": {
+    "printedSource": "Graduale Romanum 1961 p143**",
+    "previous": "Quis est iste rex gloriae? * Dominus fortis et potens, Dominus potens in proelio.",
+    "corrected": "Quis est iste rex gloriae? † Dominus fortis et potens, * Dominus potens in proelio.",
+    "musicalPointingCertified": false
   }
 }
