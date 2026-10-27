@@ -118,6 +118,7 @@ function dailyFormPreferenceStore(){
  return DAILY_FORM_PREFERENCES;
 }
 function dailyReleasedFormOptions(prayerId,daypart,language){
+ if(DAILY_SEQUENCE_RELEASE.enabled!==true)return [];
  if(!DAILY_APPROVED_FORMS.profiles?.[[language,daypart,"complete"].join(":")])
    return [];
  try{
