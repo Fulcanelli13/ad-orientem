@@ -719,7 +719,7 @@ function handleClick(e){
     DAILY_SESSION_CLOCK.setTarget(value);
     syncDailyTimerView();return;
   }
-  if(b.dataset.tp381Daypart){S.daypart=b.dataset.tp381Daypart==="evening"?"evening":"morning";S.dailyStep=0;return render()}
+  if(b.dataset.tp381Daypart){const next=b.dataset.tp381Daypart==="evening"?"evening":"morning";if(next!==S.daypart)resetDailySessionTimer();S.daypart=next;S.dailyStep=0;return render()}
    if(b.dataset.tp381DailyMode){
      const next=b.dataset.tp381DailyMode==="list"?"list":"guided";
      if(next==="guided"&&S.dailyMode==="list")S.guidedFromList=true;
