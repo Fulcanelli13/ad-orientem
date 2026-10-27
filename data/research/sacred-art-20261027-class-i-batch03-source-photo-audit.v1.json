@@ -11,15 +11,25 @@
     "historical_approvals_rejections_unchanged": true,
     "unchosen_candidates_not_rejected": true,
     "quality_gates": [
+      "hard fail closed until full-resolution original file has verified zero visible frames",
       "exact accession/object match",
-      "original unframed image (not gallery/frame photo)",
+      "ABSOLUTE: no visible physical frame, mount, mat, wall or gallery environment in any preview, mosaic or final digital image; full-resolution edge check required",
       "actual file permission and provenance",
       "sufficient resolution",
       "original source color/tonal faithfulness",
       "no glare, moire, compression smearing, severe damage or intrusive watermark",
       "sha256/checksum when acquired",
       "no silent AI alteration"
-    ]
+    ],
+    "frame_policy": {
+      "severity": "ABSOLUTE_FAIL",
+      "rule": "NO_VISIBLE_FRAMES_OR_MOUNTS: image sources and images shown in any editorial review, gallery, mosaic, module hero, crop, thumbnail, archive/published output must contain artwork ONLY, with no visible physical frame, mount, mat, wall, label, pedestal or gallery environment.",
+      "acceptance": "FAIL_CLOSED: if full-resolution original pixels have not been inspected for a frame, frame_status is UNVERIFIED and the image cannot pass QA, be promoted or presented as a vetted candidate. Images positively showing a frame are disallowed as previews and delivery assets.",
+      "candidate_distinction": "Reject the framed photographic SOURCE only; do not silently reject the depicted historic artwork or erase earlier editorial approval.",
+      "clean_source_priority": "Use pristine museum-origin artwork-only image. A separate clean source must replace framed photographs. Never simply conceal a frame by styling the webpage or treating a thumbnail as proof.",
+      "crop_rule": "Crop only if a documented lossless/non-destructive trim can remove all extraneous borders without cutting painted canvas, signature, painted edge or relevant composition; inspect resulting full-resolution file. Prefer original artwork-only source.",
+      "release_gate": "Require frame_status VERIFIED_NO_FRAME, visual QC, file-rights review, checksum, source accession, editorial approval and manual release permission. For now no candidate is publication-ready."
+    }
   },
   "dates": [
     {
@@ -53,7 +63,9 @@
             "visual_original_inspection": "NOT_FULL_PIXEL_INSPECTED",
             "pass_on_rights": true
           },
-          "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:The_Adoration_of_the_Magi_(Matthias_Stom)_-_Nationalmuseum_-_18796.jpg"
+          "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:The_Adoration_of_the_Magi_(Matthias_Stom)_-_Nationalmuseum_-_18796.jpg",
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
         },
         {
           "code": "B",
@@ -65,7 +77,9 @@
           "rights_status": "EXACT_PHOTO_RIGHTS_UNCHECKED",
           "gospel_fit": "DIRECT_GOSPEL",
           "next_check": "Find original higher-quality frame-free file",
-          "asset_publication_ready": false
+          "asset_publication_ready": false,
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
         }
       ]
     },
@@ -94,7 +108,16 @@
             "pass_on_rights": false,
             "confirmed_museum_url": "https://blanton.emuseum.com/objects/16324/three-marys-at-the-tomb",
             "quality_note": "Source IIIF image needed: available Commons gallery image may include frame."
-          }
+          },
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF",
+          "excluded_framed_sources": [
+            {
+              "description": "Framed Commons gallery photograph of Three Marys at the Tomb",
+              "reason": "PHYSICAL_FRAME_VISIBLE_AND_PROHIBITED",
+              "source_state": "REJECT_SOURCE_ONLY_NOT_PAINTING"
+            }
+          ]
         },
         {
           "code": "B",
@@ -120,7 +143,16 @@
             "pass_on_rights": true,
             "corrected_creation_date": "1622 (museum), Commons record wrongly says 1600"
           },
-          "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Clevelandart_2017.192.jpg"
+          "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Clevelandart_2017.192.jpg",
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF",
+          "excluded_framed_sources": [
+            {
+              "description": "Separate framed alternate of König Resurrection",
+              "reason": "PHYSICAL_FRAME_VISIBLE_AND_PROHIBITED",
+              "source_state": "REJECT_SOURCE_ONLY_NOT_PAINTING"
+            }
+          ]
         }
       ]
     },
@@ -142,7 +174,9 @@
           "rights_status": "REUSE_RIGHTS_UNVERIFIED_FOR_TIFF",
           "gospel_fit": "EXACT_JOHN21",
           "next_check": "Evaluate TIFF provenance and rights, frame-free/no glare; Commons photograph may be visitor camera",
-          "asset_publication_ready": false
+          "asset_publication_ready": false,
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
         },
         {
           "code": "B",
@@ -167,7 +201,9 @@
             "pass_on_rights": false,
             "priority_note": "Museum-origin Google Art Project 4166x2137 preferred; separate 3656x1825 Commons image is own-work photograph not preferred."
           },
-          "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Joachim_Beuckelaer_(Netherlandish_-_The_Miraculous_Draught_of_Fishes_-_Google_Art_Project.jpg"
+          "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Joachim_Beuckelaer_(Netherlandish_-_The_Miraculous_Draught_of_Fishes_-_Google_Art_Project.jpg",
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
         }
       ]
     },
@@ -189,7 +225,9 @@
           "rights_status": "PUBLIC_DOMAIN_OBJECT_PHOTO_SCOPE_TO_CHECK",
           "gospel_fit": "DIRECT_JOHN20",
           "next_check": "Find sufficiently large clean original; do not assume photographer waiver",
-          "asset_publication_ready": false
+          "asset_publication_ready": false,
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
         },
         {
           "code": "B",
@@ -201,7 +239,9 @@
           "rights_status": "PUBLIC_DOMAIN_PICTURE",
           "gospel_fit": "DIRECT_JOHN20_LANDSCAPE",
           "next_check": "Verify original dimensions, file source and colour; figures small",
-          "asset_publication_ready": false
+          "asset_publication_ready": false,
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
         }
       ]
     },
@@ -237,7 +277,9 @@
             "pass_on_rights": true,
             "scholarly_correction": "NGA narrative depicts paralytic lowered through roof in background; Commons generic Bethesda tag misleading"
           },
-          "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Netherlandish_16th_Century,_The_Healing_of_the_Paralytic,_c._1560-1590,_NGA_12205.jpg"
+          "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Netherlandish_16th_Century,_The_Healing_of_the_Paralytic,_c._1560-1590,_NGA_12205.jpg",
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
         }
       ]
     },
@@ -259,7 +301,9 @@
           "rights_status": "PHOTO_RIGHTS_UNVERIFIED",
           "gospel_fit": "EXACT_LANCE_JOHN19_34",
           "next_check": "Confirm exact digital photo and quality; maintain attribution qualifier",
-          "asset_publication_ready": false
+          "asset_publication_ready": false,
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
         },
         {
           "code": "B",
@@ -271,7 +315,9 @@
           "rights_status": "PHOTO_RIGHTS_UNVERIFIED",
           "gospel_fit": "JOHN19_30_PRIOR_TO_LANCE",
           "next_check": "2000px may be insufficient and this is a modello",
-          "asset_publication_ready": false
+          "asset_publication_ready": false,
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
         }
       ]
     },
@@ -293,7 +339,9 @@
           "rights_status": "PUBLIC_DOMAIN_FILE_INDICATED",
           "gospel_fit": "JOSEPH_DREAM_AMBIGUOUS_WHICH_EPISODE",
           "next_check": "Do not claim Matthew 1 exclusivity; visually inspect source quality",
-          "asset_publication_ready": false
+          "asset_publication_ready": false,
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
         },
         {
           "code": "B",
@@ -319,7 +367,9 @@
             "pass_on_rights": false,
             "source_note": "Not interchangeable with 246x344 legacy thumbnail or arbitrary cropped variant."
           },
-          "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg"
+          "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF"
         }
       ]
     }
@@ -334,7 +384,8 @@
     "Object identity, digital file licence and actual photo quality remain separate gates.",
     "A framed alternate illustration of König is not the exact CC0 image intended for archive.",
     "Stom: use Nationalmuseum supplied Commons record, not other paintings bearing the same title.",
-    "Beuckelaer: prefer Getty museum image/Google Art Project over a visitor-shot Commons photo."
+    "Beuckelaer: prefer Getty museum image/Google Art Project over a visitor-shot Commons photo.",
+    "USER DIRECTIVE 2026-10-27: NO FUCKING FRAMES. No frames in editorial previews, selected heroes, any crops or delivered/public images. This is an unconditional fail; do not present framed source just because its artwork is relevant."
   ],
   "audit_20261027_verified_file_round": {
     "count_exact_source_files_located": 5,
@@ -343,7 +394,7 @@
     "count_full_pixel_inspected": 0,
     "count_downloaded_and_sha256_hashed": 0,
     "count_publication_ready": 0,
-    "summary": "Exact Commons file pages and recorded dimensions confirmed by source listings, but file download is not available in research environment; frame-free/color/compression cannot be conclusively signed off. No artwork approvals or release.",
+    "summary": "Exact Commons file pages and recorded dimensions confirmed by source listings, but file download is not available in research environment; frame-free/color/compression cannot be conclusively signed off. No artwork approvals or release. Absolute no-frame gate formalized for every candidate and presentation. No source is signed off for zero visible frame without full-resolution inspection.",
     "observations": [
       "Nationalmuseum supplies Stom digital reproduction as public domain.",
       "Cleveland Museum König exact photo CC0, 1622 creation date; Commons metadata 1600 incorrect.",
@@ -361,6 +412,8 @@
       "https://commons.wikimedia.org/wiki/Category:Google_Art_Project_works_by_Joachim_Beuckelaer",
       "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
       "https://blanton.emuseum.com/objects/16324/three-marys-at-the-tomb"
-    ]
+    ],
+    "count_frame_verified_zero": 0,
+    "count_assets_blocked_for_missing_frame_proof": 13
   }
 }
