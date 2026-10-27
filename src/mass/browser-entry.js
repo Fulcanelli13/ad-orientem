@@ -28,6 +28,9 @@ import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.
 import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
 import { installPentecostSunday1960PrefaceSource } from "./1962-pentecost-sunday-prefatio1960-source.js";
 import {select1962CommemorationsForMassForm} from "./1962-commemoration-form-source.js";
+import {resolve1962AllSoulsSuccession} from "./1962-all-souls-consecutive-rites.js";
+import {allSouls1962RequiemOverlay,is1962AllSoulsCalendarMass,
+  resolve1962AllSoulsAdditionalProper} from "./1962-all-souls-source.js";
 import {selectedPreflightStudyProper} from "./preflight-study-proper.js";
 import {massScriptureContextForCard} from "./scripture-reading-context.js";
 import {nativeRiteScriptureContext} from "./scripture-native-rite-context.js";
@@ -80,8 +83,21 @@ export function deriveHostOptions({ resolvedMass, assemblyStatus, arch, runtimeS
     throw new Error(assemblyStatus.reason || "Host preflight is not startable");
   }
   const rites = mapInsertedRites(resolvedMass.insertedRites ?? []);
+  const selectedProper=assemblyStatus?.proper ?? resolvedMass?.proper ?? null;
+  // Host getResolvedMass() uses a Calendar-day wrapper; live resolver
+  // retains the authenticated Proper. Both forms are valid inputs, but
+  // never compare two missing dates and dereference an absent state.
+  const calendarResolution=runtimeState?.resolution?.date &&
+    runtimeState.resolution.date===resolvedMass.date
+    ?runtimeState.resolution:null;
+  const sourceIdentity=selectedProper??calendarResolution?.proper??null;
+  const calendarOwner=resolvedMass.calendarDay?.raw?.main??
+    resolvedMass.calendarDay??calendarResolution?.day?.main??null;
+  const allSoulsRequiem=allSouls1962RequiemOverlay(
+    {...resolvedMass,calendarDay:calendarOwner},sourceIdentity);
   return Object.freeze({
-    proper: assemblyStatus?.proper ?? resolvedMass?.proper ?? null,
+    proper: selectedProper,
+    overlays: allSoulsRequiem,
     celebrationForm: arch?.celebrationForm ?? runtimeState?.settings?.massForm ?? "sung",
     presentationMode: mapLegacyFollowMode(
       arch?.followMode ?? runtimeState?.settings?.followMode ?? "vox"
@@ -785,7 +801,7 @@ export function ordinaryMassPrefaceOwner(resolvedMass,{observed=false}={}){
   return resolvedMass.calendarDay?.id??null;
 }
 
-export function createBrowserMassController({rogationPreflight=null,fullMassPreflight=null,observedSource=null,localOrations=null}={}) {
+export function createBrowserMassController({rogationPreflight=null,fullMassPreflight=null,observedSource=null,localOrations=null,getAllSoulsMassChoice=()=>1}={}) {
   const api = celebrationApi();
   if (!api?.getResolvedMass) throw new Error("AO_CELEBRATION_API is not ready");
   // The observer may explicitly select the source Proper of a different
@@ -839,12 +855,25 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
         throw new Error("GOOD_FRIDAY_IS_NOT_A_MASS_FORM");
       const localRequest=localOrations?.selectionFor?.(resolvedMass)??null;
       let presentedProper=formSelectedProper.proper;
+      const allSoulsMassNumber=getAllSoulsMassChoice(resolvedMass);
+      if(allSoulsMassNumber!==1){
+        const day=calendarResolution?.date===resolvedMass.date?calendarResolution:
+          await runtime()?.resolver?.resolveDay?.(resolvedMass.date);
+        if(!is1962AllSoulsCalendarMass(
+          {...resolvedMass,calendarDay:resolvedMass.calendarDay??day?.day?.main},day?.proper))
+          throw Error("ALL_SOULS_ALTERNATE_PROPER_CALENDAR_CHANGED");
+        presentedProper=await resolve1962AllSoulsAdditionalProper({
+          calendarResolution:day,
+          properResolver:runtime()?.resolver?.properResolver,
+          massNumber:allSoulsMassNumber,
+        });
+      }
       if(localRequest){
         if(localRequest.date!==resolvedMass.date||
            localRequest.form!==(chosen?.form??options.celebrationForm))
           throw new Error("LOCAL_ADDITIONAL_ORATIONS_SELECTION_CHANGED");
         const result=projectObservedLocalOrations({
-          originalProper:proper,selectedProper:formSelectedProper.proper,
+          originalProper:proper,selectedProper:presentedProper,
           calendarResolution,form:localRequest.form,
           commemorationId:localRequest.commemorationId,
           observedGroups:localRequest.observedGroups,
@@ -854,8 +883,25 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
           throw new Error("LOCAL_ADDITIONAL_ORATIONS_"+result.reason);
         presentedProper=result.proper;
       }
+      let allSoulsSuccession=null;
+      if(chosen?.allSoulsSuccession){
+        const canonical=calendarResolution?.date===resolvedMass.date
+          ?calendarResolution:await runtime()?.resolver?.resolveDay?.(resolvedMass.date);
+        if(!is1962AllSoulsCalendarMass({
+          ...resolvedMass,calendarDay:resolvedMass.calendarDay?.raw?.main??
+            resolvedMass.calendarDay??canonical?.day?.main
+        },canonical?.proper))
+          throw Error("RITUS_XIV_NON_AUTHENTIC_CALENDAR_SOURCE");
+        if(chosen.allSoulsSuccession.massNumber!==allSoulsMassNumber||
+           chosen.allSoulsSuccession.date!==resolvedMass.date)
+          throw Error("RITUS_XIV_STALE_FOLIO_CIRCUMSTANCE");
+        allSoulsSuccession=resolve1962AllSoulsSuccession({
+          ...chosen.allSoulsSuccession,
+          sourcePath:presentedProper?.data?.sourcePath??presentedProper?.sourcePath,
+        });
+      }
       const optional=fullMassPreflight?.composeRitesFor?.(resolvedMass,options)??null;
-      return Object.freeze({...options,proper:presentedProper,rogationSelection,
+      return Object.freeze({...options,proper:presentedProper,rogationSelection,allSoulsSuccession,
         ...(optional?{
           precedingRites:optional.precedingRites,
           followingActions:optional.followingActions,
@@ -890,7 +936,19 @@ function showFailure(error, button = null) {
 export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
   const shellFocusGuard=installShellFocusVisibilityGuard({doc:document,win:window});
   if (globalThis.AO_R17_BROWSER_ENTRY?.installed) return globalThis.AO_R17_BROWSER_ENTRY;
-  const state = { installed: false, polls: 0, controller: null, rogationPreflight: null, fullMassPreflight: null, fullMassCatalogue: null, observedSource: null, localOrations: null };
+  const state = { installed: false, polls: 0, controller: null, rogationPreflight: null, fullMassPreflight: null, fullMassCatalogue: null, observedSource: null, localOrations: null, allSoulsMassChoice:null };
+  function authenticAllSoulsMass(legacy){
+    const day=runtimeState()?.resolution;
+    if(!legacy||day?.date!==legacy.date)return false;
+    return is1962AllSoulsCalendarMass(
+      {...legacy,calendarDay:legacy.calendarDay?.raw?.main??
+        legacy.calendarDay??day.day?.main},day.proper);
+  }
+  function selectedAllSoulsMass(legacy){
+    return authenticAllSoulsMass(legacy)
+      &&state.allSoulsMassChoice?.date===legacy?.date
+      ?state.allSoulsMassChoice.number:1;
+  }
 
   // Explicit Mass-prayer entry. The canonical R17 controller remains the sole
   // source-authorized Start Mass owner; Prayer never reconstructs a Mass plan.
@@ -958,6 +1016,14 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          onOpenPrayerRoute:openFolioPrayer,
 
          getSourceGate:()=>state.observedSource?.preparationGate?.()??{ready:true,reason:null},
+         getAllSoulsMassChoice:selectedAllSoulsMass,
+         onAllSoulsMassChange:number=>{
+           const base=celebrationApi()?.getResolvedMass?.();
+           if(![1,2,3].includes(number)||!authenticAllSoulsMass(base))
+             throw Error("ALL_SOULS_ALTERNATE_SELECTION_OUTSIDE_DAY");
+           state.allSoulsMassChoice=Object.freeze({date:base.date,number});
+           state.fullMassPreflight?.refresh?.();
+         },
          getLocalOrationSummary:()=>state.localOrations?.status?.()??null,
          getCalendarState:()=>runtimeState(),
          subscribeCalendarState:notify=>runtime()?.store?.subscribe?.(notify)??null,
@@ -1018,6 +1084,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          fullMassPreflight:state.fullMassPreflight,
          observedSource:state.observedSource,
          localOrations:state.localOrations,
+         getAllSoulsMassChoice:selectedAllSoulsMass,
        });
       state.installed = true;
       document.documentElement.dataset.aoR17MassBridge = "ready";

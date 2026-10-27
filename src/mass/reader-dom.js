@@ -1695,6 +1695,12 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
           ((event.review==="EXISTING_PUBLISHED_R17_1962_RUBRIC" &&
             event.owner==="PUBLISHED_R17_MISSAL_INLINE" &&
             event.actor==="PRIEST" && event.sourceId==="MR62_RITUS") ||
+           (event.review==="RITUS_1962_EXPLICIT_PRIEST_SUCCESSION" &&
+            event.owner==="RITUS_XIV_SOURCE_CONDITIONAL" &&
+            event.actor==="PRIEST" && event.sourceId==="MR62_RITUS" &&
+            event.kind==="CONDITIONAL_DIRECTION" &&
+            /^AO\.RITUS\.XIV\.[123]\.XIV\.[12]/.test(String(event.id)) &&
+            ["AO.SM.C0112","AO.SM.C0247","AO.SM.C0248"].includes(event.sourceCueId)) ||
            (event.review==="EXISTING_CERTIFIED_R18_SOLEMN_MINISTER" &&
             event.owner==="R18_CERTIFIED_SOLEMN_MISSAL" &&
             typeof event.actor==="string" && event.actor.trim() &&
@@ -3845,7 +3851,11 @@ export function createReaderDomAdapter({
             node.append(secondary);
           }
           const inlineRubrics=mode==="MISSAL"||mode==="LIVE"
-            ? p.publishedMissalRubrics : p.publishedCanonRubrics;
+            ? p.publishedMissalRubrics
+            : [...p.publishedCanonRubrics,
+              ...p.publishedMissalRubrics.filter(event=>
+                event.review==="RITUS_1962_EXPLICIT_PRIEST_SUCCESSION" &&
+                event.owner==="RITUS_XIV_SOURCE_CONDITIONAL")];
           // Existing bracketed directions are already rubrics in the
           // Missal's source text. Never print a second paraphrase below them.
           const alreadyPrintedRubric=(mode==="MISSAL"||mode==="LIVE") &&
@@ -3948,7 +3958,9 @@ export function createReaderDomAdapter({
                 }else actions.append(text);
               }
             }else{
-              actions.textContent=shortRubrics.map(event=>event.shortAction).join(" · ");
+              actions.textContent=shortRubrics.map(event=>
+                event.review==="RITUS_1962_EXPLICIT_PRIEST_SUCCESSION"
+                  ?event.displayText:event.shortAction).join(" · ");
             }
             note.append(actions);
             node.append(note);
