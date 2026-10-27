@@ -1,0 +1,45 @@
+{
+  "schema": "AO_MUSEUM_IMAGE_BYTES_AUDIT_V1",
+  "checked_utc": "2026-10-27T18:57:30.885368+00:00",
+  "source_count": 2,
+  "museum_bytes_verified": 2,
+  "frame_visually_certified": 0,
+  "release_count": 0,
+  "note": "Independent museum-origin sources; hash applies ONLY to this downloaded variant. Source images deleted on completion; manual four-edge inspection still mandatory.",
+  "results": [
+    {
+      "id": "koenig-resurrection",
+      "museum": "Cleveland Museum of Art",
+      "accession": "2017.192",
+      "frame_status": "UNVERIFIED_FOUR_EDGE_HUMAN_INSPECTION",
+      "release": false,
+      "source_byte_status": "MUSEUM_IMAGE_VERIFIED",
+      "url": "https://openaccess-cdn.clevelandart.org/2017.192/2017.192_print.jpg",
+      "sha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+      "bytes": 1932047,
+      "pixels": [
+        2561,
+        3400
+      ],
+      "format": "JPEG",
+      "source_variant": "CLEVELAND_API_PRINT_OR_WEB_NOT_COMMONS_JPEG"
+    },
+    {
+      "id": "netherlandish-ember-friday",
+      "museum": "National Gallery of Art",
+      "accession": "1943.7.7",
+      "frame_status": "UNVERIFIED_FOUR_EDGE_HUMAN_INSPECTION",
+      "release": false,
+      "source_byte_status": "MUSEUM_IMAGE_VERIFIED",
+      "url": "https://api.nga.gov/iiif/294e57e7-14ef-4e2e-8b3d-081b4cc05fd6/full/full/0/default.jpg",
+      "sha256": "3723b116592415bd2538d6e64e53897d374223b489b2e6ce2506716014fc39b2",
+      "bytes": 3850458,
+      "pixels": [
+        2892,
+        4096
+      ],
+      "format": "JPEG",
+      "source_variant": "NGA_ORIGINAL_IIIF_NOT_COMMONS_JPEG"
+    }
+  ]
+}
