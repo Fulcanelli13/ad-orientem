@@ -63,7 +63,7 @@ const francais=review1962PrefaceForCalendarDay(sample("2026-12-08","sancti:12-08
 assert.equal(francais.status,"TRANSLATIONS_INCOMPLETE");
 assert.equal(francais.trilingualTextComplete,false);
 const unknown=review1962PrefaceForCalendarDay(sample("2026-10-15","sancti:10-15:3:w",3,"White","Communis"));
-assert.equal(unknown.status,"UNMAPPED","Unlisted saint must not infer a Common Preface");
+assert.equal(unknown.status,"UNMAPPED","Unknown original source path is not attested by title or colour");
 const noTitle=review1962PrefaceForCalendarDay(sample("2026-10-25","sancti:10-DU:1:w",1,"White","unclassified header"));
 assert.equal(noTitle.status,"UNCLASSIFIED_TEXT");
 const comm=sample("2026-10-11","tempora:Pent20-0:2:g",2,"Green","de sanctissima Trinitate");
@@ -295,5 +295,56 @@ eucharist.proper.data.sourcePath="Tempora/Pent01-4";
 assert.notEqual(review1962PrefaceForCalendarDay(eucharist).status,"RULE_TEXT_AGREE",
   "Later optional 2020 Sacrament Preface cannot be conferred automatically");
 console.log("PASS 41 exact-source 1960 ordinary Preface classifications: Christmas/Epiphany ferias, pre-Lent, BVM Saturday, Advent, September Ember, Sundays; no publication");
+
+
+// Third bulk source cohort: 131 original Sancti source owners, not 131
+// free-form inferences. Assert complete exact-identity partition against
+// the pre-existing independently screened *pinned* witness manifest.
+const originals=witness.cases.filter(x=>x.upstreamRuleTokens.length===0);
+assert.equal(originals.length,131);
+const exceptional=new Set(["06-23","08-29","09-29","11-01","11-18r","12-24"]);
+const groupCount={COMMON:0,PASCHALIS:0,ASCENSIO:0,APOSTOLI:0,HOLD:0};
+for(const w of originals){
+  const path=w.canonicalSourcePath;
+  const k=path.slice("Sancti/".length);
+  const md=k.slice(0,5),date="2026-"+md;
+  const rank=md==="05-11"||md==="06-23"||md==="08-10"?2:
+    md==="09-29"||md==="11-01"||md==="12-24"?1:3;
+  const color=k==="06-23"||k==="12-24"?"Violet":
+    /^(?:04-13|04-14|04-22|04-24|04-29|05-07|05-11r|05-12|05-18|06-05|06-26|07-03r|07-10|07-23|07-28|08-10|08-29|09-19|09-28|10-14|11-12|11-14|11-23|11-25|12-02)$/.test(k)
+      ?"Red":"White";
+  const id="sancti:"+k+":"+rank+":"+(color==="Red"?"r":color==="Violet"?"v":"w");
+  const day=sample(date,id,rank,color,"Communis");
+  day.proper.data.sourcePath=path;
+  const d=review1962PrefaceForCalendarDay(day);
+  let expected;
+  if(exceptional.has(k))expected=null;
+  else if(k==="05-11r")expected="APOSTOLI";
+  else if(date>="2026-04-05"&&date<="2026-05-13")expected="PASCHALIS";
+  else if(date>="2026-05-14"&&date<="2026-05-22")expected="ASCENSIO";
+  else expected="COMMUNIS";
+  if(expected){
+    assert.equal(d.expected,expected,JSON.stringify({date,id,d}));
+    assert.equal(d.status,expected==="COMMUNIS"?"RULE_TEXT_AGREE":"SOURCE_CONFLICT",
+      date+" original source/season reviewer");
+    groupCount[expected]++;
+  }else{
+    assert.equal(d.status,"UNMAPPED",date+" exceptional feast still needs independent original-book source adjudication");
+    groupCount.HOLD++;
+  }
+  assert.equal(d.autoPublish,false);
+  assert.equal(d.changesReader,false);
+  const swapped={...day,proper:{...day.proper,data:{...day.proper.data,sourcePath:"Sancti/01-14"}}};
+  if(path!=="Sancti/01-14"){
+    const changed=review1962PrefaceForCalendarDay(swapped);
+    assert.notEqual(changed.basis,d.basis,
+      date+" same feast ID with different donor source gained unauthorized Preface");
+  }
+  const yearChange={...day,date:"2027-"+md};
+  assert.notEqual(review1962PrefaceForCalendarDay(yearChange).basis,d.basis,
+    "2026 source screening must not silently certify 2027 for "+md);
+}
+assert.deepEqual(groupCount,{COMMON:104,PASCHALIS:15,ASCENSIO:5,APOSTOLI:1,HOLD:6});
+console.log("PASS 131 exact original Sanctoral source screen: 104 nonseasonal Common, 15 Easter, five Ascension, one redirected Apostles, six independent-source holds");
 
 console.log("PASS 1962 Preface source audit: owner, principal Mass, category, trilingual, regional exclusion, conflict, exceptions");
