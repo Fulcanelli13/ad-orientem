@@ -535,6 +535,7 @@ const SHELL_STYLE = `
  padding:13px;background:#152018;border:1px solid rgba(225,207,145,.38);
  box-shadow:0 12px 44px rgba(0,0,0,.55);border-radius:12px;
  display:grid;gap:10px;font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-schola-dock:has(.ao-schola-programme[open]){overflow:visible!important;z-index:41}
 .ao-schola-programme-fields p{margin:0;color:var(--ao-muted)}
 .ao-schola-programme-fields label{display:grid;gap:3px;color:var(--ao-text)}
 .ao-schola-programme-fields input[type="text"],

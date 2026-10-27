@@ -88,6 +88,34 @@ try{
       assert.match(expected.text,/NEXT.*Gradual/i);
       assert.match(expected.aria,/not observed/i);
       assert.notEqual(expected.visible,"none");
+      // Source-free personal plan, persisted in this browser but never a
+      // Gregorian-source approval or observation of today's choir.
+      const planPanel=page.locator("#ao-r17-native-reader-preview [data-schola-local-panel]");
+      await planPanel.locator("summary").click();
+      const planVisible=await planPanel.evaluate(el=>{
+        const box=el.querySelector(".ao-schola-programme-fields");
+        const rect=box.getBoundingClientRect();
+        return {opened:el.open,visible:rect.height>60,above:rect.bottom<
+          el.getBoundingClientRect().top,clipped:getComputedStyle(el.closest(".ao-schola-dock")).overflow};
+      });
+      assert.equal(planVisible.opened,true);
+      assert.equal(planVisible.visible,true);
+      assert.equal(planVisible.above,true,"Music editor should open ABOVE the bottom Schola dock");
+      assert.notEqual(planVisible.clipped,"hidden","Editor clipped by Schola dock");
+      const localCheck=planPanel.locator('[data-schola-local-choice="OFFERTORY_LOCAL_MOTET"]');
+      await localCheck.check();
+      await planPanel.locator("[data-schola-local-parish]").fill("St Joseph local programme");
+      await planPanel.locator("[data-schola-local-parish]").press("Tab");
+      const savedPlan=await page.evaluate(()=>{
+        const plan=JSON.parse(localStorage.getItem("ao-schola-local-programme-v1")||"{}");
+        return {name:plan.parishLabel,selected:plan.choices?.OFFERTORY_LOCAL_MOTET?.selected,
+          observed:plan.observedSinging};
+      });
+      assert.equal(savedPlan.name,"St Joseph local programme");
+      assert.equal(savedPlan.selected,true);
+      assert.equal(savedPlan.observed,false);
+      assert.ok(await planPanel.locator('[data-schola-organ-rule="OFFERTORY_ORGAN_OPTION"]').count());
+      await planPanel.locator("summary").click();
       await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSequence(1));
     }
     assert.ok(summary.headings.includes("Gloria · The Celebrant's Intonation"));
