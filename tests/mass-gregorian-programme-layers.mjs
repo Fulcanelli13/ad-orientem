@@ -70,6 +70,7 @@ for(const bad of [
   {...local,sourceUrl:"http://example.org/unsafe"},
   {...local,tracks:{INTROIT:"MAGICAL_MELODY"}},
   {...local,tracks:{}},
+  {...local,tracks:{INVENTED_TRACK:"GREGORIAN"}},
 ])assert.equal(composeGregorianProgrammeLayers({...context,evidence:[bad]}).local.status,"UNKNOWN",
   "Unsupported local assertion must fail closed");
 assert.equal(composeGregorianProgrammeLayers({...context,evidence:[local,{...local,id:"other-claim"}]}).local.status,
@@ -86,6 +87,9 @@ assert.equal(user.user.selections[0].scoreId,"GREGOBASE-2982");
 assert.equal(user.user.status,"USER_SELECTED_UNVERIFIED");
 assert.equal(user.local.status,"UNKNOWN","Self-reported Ordinary is not external choir evidence");
 assert.equal(composeGregorianProgrammeLayers({...context,date:"2026-10-19",chantProgramme:selected}).user.status,"UNKNOWN");
+assert.equal(composeGregorianProgrammeLayers({...context,
+  properCrosswalk:{...crosswalk,sourcePath:"Sancti/10-18"},chantProgramme:selected}).user.status,"UNKNOWN",
+  "User selections cannot travel to another Proper on the same calendar day");
 const disabled=composeGregorianProgrammeLayers({properCrosswalk:null,date});
 assert.equal(disabled.standard.references.length,0);
 console.log("PASS Gregorian layering: reuse source-owned 1962 Proper, site and institute evidence isolated, no auto-performance");
