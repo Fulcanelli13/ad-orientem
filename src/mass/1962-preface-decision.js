@@ -1,6 +1,8 @@
 // 1962 Preface decision gate. No translation, text substitution or DOM ownership.
 import {required1962MarianPrefaceOwner,isSelected1962MarianPrefaceForm}
   from "./1962-marian-preface-source.js";
+import {required1962SeasonalSanctoralPrefaceOwner,matches1962SeasonalSanctoralSelection}
+  from "./1962-seasonal-sanctoral-preface-source.js";
 // When source metadata is incomplete, return UNRESOLVED rather than Common.
 // The actual calendar/proper source owner must supply an authenticated identity.
 const OWNERS=Object.freeze({
@@ -48,7 +50,7 @@ function matches1962PaschalPrefaceVariant(preface,variant){
 const heading=text=>Object.entries(HEADINGS).find(([,regex])=>regex.test(text))?.[0]??null;
 const ownerKey=id=>String(id??"").toLowerCase().replace(/:[^:]+:[^:]+$/,"");
 export function inspect1962PrefaceSelection({principalCelebrationId,selectedPreface,
-  requestedCelebrationId=null,sourcePath=null}={}){
+  requestedCelebrationId=null,sourcePath=null,calendarDate=null}={}){
   if(requestedCelebrationId&&requestedCelebrationId!=="mass_of_day")
     return Object.freeze({status:"NEEDS_SELECTED_FORMULARY",requiredId:null,actualId:heading(slotText(selectedPreface)),
       reason:"An explicit votive or special Mass cannot inherit the day's principal Preface blindly."});
@@ -64,6 +66,18 @@ export function inspect1962PrefaceSelection({principalCelebrationId,selectedPref
       sourceScope:marian.scope,
       reason:valid?null:marian.blocked??
         "The exact 1962 Marian Preface requires its verified feast/Saturday form, not inherited Common."});
+  }
+  const seasonalSaint=required1962SeasonalSanctoralPrefaceOwner(
+    principalCelebrationId,sourcePath,calendarDate);
+  if(seasonalSaint){
+    const actualId=heading(slotText(selectedPreface));
+    const valid=actualId===seasonalSaint.category&&
+      matches1962SeasonalSanctoralSelection(selectedPreface,seasonalSaint);
+    return Object.freeze({status:valid?"MATCH":actualId?"CONTRADICTION":"MISSING_PREFACE",
+      requiredId:seasonalSaint.category,actualId,
+      requiredVariant:seasonalSaint.variant,scope:seasonalSaint.scope,
+      reason:valid?null:"Seasonal saint's Mass must have the exact authenticated "+
+        "1962 trilingual Easter/Ascension Preface for its selected Mass date."});
   }
   // Required Prefaces for the source-owned Lenten Temporale and for the
   // Pentecost Vigil/octave: 1960 Missal §§486(a), 493(a). An inherited
