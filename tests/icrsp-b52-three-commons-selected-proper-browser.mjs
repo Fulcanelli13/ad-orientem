@@ -83,7 +83,7 @@ try {
  await browser?.close();
  await new Promise(ok=>server.close(ok));
 }
-const words=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+const words=s=>String(s??"").normalize("NFD").replace(/æ/gi,"ae").replace(/œ/gi,"oe").replace(/[\u0300-\u036f]/g,"")
  .replace(/[^a-zA-Z]+/g," ").trim().replace(/\s+/g," ").toLowerCase();
 const contains=(t,phrase)=>(" "+words(t)+" ").includes(" "+words(phrase)+" ");
 let assertions=0;
