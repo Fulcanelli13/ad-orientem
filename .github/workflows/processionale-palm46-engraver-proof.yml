@@ -13,6 +13,7 @@ on:
       - data/research/chant-source-review/palm23-verse2-accent-alignment-20261027-ALTERNATE.gabc
       - data/research/processionale-palm-attested-cadence-windows-20261027.v1.json
       - data/research/processionale-palm-medial-flex-bulk-hypotheses-20261027.v1.json
+      - data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json
       - tools/research/palm-bulk-cadence-exsurge-proof.mjs
 
 permissions:
@@ -51,7 +52,7 @@ jobs:
           processionale/data/research/chant-source-review/palm23-verse2-tone-application-20261027-PROVISIONAL.gabc
           processionale/data/research/processionale-palm23-verse2-tone-hypothesis-20261027.v1.json
           processionale/data/research/chant-source-review/palm23-verse2-accent-alignment-20261027-ALTERNATE.gabc
-      - name: Prove 15 source-anchored Psalm cadence excerpts render as offline SVG
+      - name: Test retained cadence evidence and 11 corrected medial hypotheses with pinned Exsurge
         run: >
           node processionale/tools/research/palm-bulk-cadence-exsurge-proof.mjs
           schola-owner/assets/vendor/exsurge/exsurge.min.js
@@ -59,3 +60,4 @@ jobs:
           processionale/data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc
           processionale/data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc
           processionale/data/research/processionale-palm-medial-flex-bulk-hypotheses-20261027.v1.json
+          processionale/data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json
