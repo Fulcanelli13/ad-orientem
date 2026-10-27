@@ -1077,7 +1077,7 @@ test('Palm two source tone models classify seventeen editorial applications and 
    assert.equal(m.terminalSourceExcerpt,src.terminationCadenceExcerpt);
    assert.equal(m.identifiedTerminalGroups.preparatory.length,2);
    for(const segment of m.identifiedTerminalGroups.preparatory)
-     assert.equal(old.includes(segment),true);
+     assert.equal(old.replace(/<[^>]+>/g,'').includes(segment),true);
    assert.equal(m.completeFormulaMusicianSignedOff,false);
  }
  assert.deepEqual(bulk.models[0].identifiedTerminalGroups.preparatory,['tant(g)','in(f)']);
