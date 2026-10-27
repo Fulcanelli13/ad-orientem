@@ -77,10 +77,24 @@ try{
   }));
   // Look only at the RESOLVED source and its explicitly exposed alternatives.
   // Never count unrelated historical artwork aliases or registry strings.
+  const {resolve1962AllSoulsAdditionalProper}=await import("/src/mass/1962-all-souls-source.js");
   const candidates=[souls.proper?.data,
    ...(Array.isArray(souls.proper?.alternatives)?souls.proper.alternatives:[]),
    ...(Array.isArray(souls.proper?.data?.alternatives)?souls.proper.data.alternatives:[]),
    ...(Array.isArray(souls.alternativeMasses)?souls.alternativeMasses:[])];
+   const additionalErrors=[];
+   for(const massNumber of [2,3]){
+     try{
+       const explicit=await resolve1962AllSoulsAdditionalProper({
+         calendarResolution:souls,
+         properResolver:globalThis.AO_RUNTIME_V8.resolver.properResolver,
+         massNumber
+       });
+       candidates.push(explicit.data);
+     }catch(error){
+       additionalErrors.push({massNumber,reason:String(error?.message??error)});
+     }
+   }
   const resolved=[];
   for(const item of candidates){
    const p=item?.proper?.data??item?.proper??item?.data??item;
@@ -137,7 +151,7 @@ try{
   const ordinary={overlays:[]};
   return {
    saints:{...extract(saint),forms:saintForms},
-   souls:{...extract(souls),resolvedFormularies:resolved,discovery},
+   souls:{...extract(souls),resolvedFormularies:resolved,additionalErrors,discovery},
    ceremonial:{
     req:{omittedPeace:requiemOmittedOrdinaryCuesForResolvedMass(requiem),
      omittedFinalBlessing:requiemFinalBlessingOmittedCuesForResolvedMass(requiem),
@@ -209,6 +223,55 @@ try{
      `NOV02_FIRST_${language}_DIES_IRAE_NOT_IN_SOURCE_READER`);
   }
  }
+ check((b.additionalErrors??[]).length===0,
+  "NOV02_ADDITIONAL_SOURCE_BUILD_ERRORS:"+JSON.stringify(b.additionalErrors));
+ const massUi=await (async()=>{
+   const out={cases:[],error:null,available:false};
+   try{
+     const changed=await page.evaluate(async()=>await globalThis.AO_CALENDAR_WEEK_CACHE_V4345.revealDate(
+       "2026-11-02",{forceLoader:false,prefetch:false}));
+     if(changed!==true)throw Error("NOV02_NATIVE_DATE_CHANGE_FAILED");
+     await page.waitForFunction(()=>{
+       const s=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+       return s?.selectedDate==="2026-11-02"&&
+         s?.resolution?.date==="2026-11-02"&&!s.resolving;
+     },null,{timeout:60000});
+     await page.evaluate(()=>globalThis.AO_CELEBRATION_API?.openPreflight?.());
+     await page.waitForSelector("[data-ao-full-mass-preflight]",{timeout:30000});
+     const container=page.locator("[data-ao-all-souls-choices]");
+     out.available=await container.count()===1&&
+       await container.evaluate(el=>!el.hidden);
+     if(!out.available)throw Error("NOV02_NATIVE_FORMULARY_UI_NOT_VISIBLE");
+     const tab=page.locator('[data-folio-goto="celebration"]').first();
+     if(await tab.isVisible())await tab.click();
+     for(const massNumber of [1,2,3]){
+       const input=container.locator('[data-ao-all-souls-mass][value="'+massNumber+'"]');
+       await input.check();
+       const output=await page.evaluate(async()=>{
+         const prepared=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
+         const mass=prepared?.session?.resolvedMass;
+         return {sourcePath:mass?.proper?.data?.sourcePath??mass?.proper?.sourcePath??null,
+           overlays:mass?.overlays??[],mode:prepared?.readerPreferences?.mode??null,
+           massReady:prepared?.session?.plan?.kind??null,
+           sourceProof:mass?.proper?.data?.allSoulsSourceProof??null};
+       });
+       out.cases.push({massNumber,...output});
+     }
+   }catch(error){out.error=String(error?.message??error)}
+   return out;
+ })();
+ record.allSouls.ui=massUi;
+ check(massUi.error===null,"NOV02_NATIVE_UI_OR_PREPARE:"+massUi.error);
+ check(massUi.available,"NOV02_NATIVE_THREE_FORMULARY_CONTROL_MISSING");
+ for(const row of massUi.cases){
+   check(row.sourcePath==="Sancti/11-02m"+row.massNumber,
+    "NOV02_NATIVE_PREPARED_WRONG_FORMULARY:"+row.massNumber+":"+row.sourcePath);
+   check(row.overlays.includes("REQUIEM"),"NOV02_NATIVE_PREPARED_REQUIEM_RITE_MISSING:"+row.massNumber);
+   if(row.massNumber>1)
+     check(row.sourceProof?.status==="SOURCE_VERIFIED",
+       "NOV02_NATIVE_ALTERNATE_SOURCE_PROOF_MISSING:"+row.massNumber);
+ }
+ check(massUi.cases.length===3,"NOV02_NATIVE_THREE_FORMULARY_CYCLE_INCOMPLETE");
  const c=evaluated.ceremonial;
  check(c.req.omittedPeace.includes("AO.SM.C0225"),"REQUIEM_PEACE_PRAYER_NOT_OMITTED");
  check(c.req.omittedFinalBlessing.includes("AO.SM.C0263"),"REQUIEM_FINAL_BLESSING_NOT_OMITTED");
