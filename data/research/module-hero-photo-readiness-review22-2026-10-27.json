@@ -1,0 +1,74 @@
+{
+  "version": "2026-10-27.review22",
+  "supersedes_summary": "data/research/module-hero-photo-readiness-review21-2026-10-27.json",
+  "scope": "Module hero images; research only, NOT editorial migration or app release",
+  "counts": {
+    "module_placements": 22,
+    "distinct_current_or_shared_primary_paintings": 21,
+    "existing_final_primary_placements_with_some_archived_matching_source": 21,
+    "existing_final_primary_placements_missing_matching_source": 1,
+    "leading_evening_candidate_archived": true,
+    "placements_with_matching_final_or_leading_candidate_source": 22,
+    "pristine_masters_human_approved": 0
+  },
+  "joseph_coello": {
+    "source": "assets/staged/module-hero-coello-20261027/coello-commons-bookscan-original.jpg",
+    "sha256": "2cf2cc0b4742849df4a80474d7ab4f1922d749d7c663596f2ad727acdb1b81b1",
+    "pixel_dimensions": [
+      2215,
+      3926
+    ],
+    "native_crop_report": "assets/staged/module-hero-coello-20261027/review/coello-native-pixel-review.json",
+    "native_crops_examined": [
+      "joseph-face",
+      "christ-child-face",
+      "joseph-garment",
+      "upper-right-arched-boundary",
+      "lower-carpentry-tools",
+      "angel-and-flowers"
+    ],
+    "observations": "All selected subjects correctly sampled at unchanged native pixels. Facial modelling, flowers and woodwork identifiable. Dark areas show visible white speckling; some modelling transitions are soft. The extent attributable to printed source, compression or authentic craquelure cannot be decided without comparison to museum reproduction.",
+    "framing": "Original historically blank arched-canvas upper corners are part of object and must not be digitally filled; no external frame displayed in archived overview.",
+    "colour": "No embedded ICC, printed reproduction; independent Toledo colour reference required",
+    "museum_sources": "Two exact Toledo 1981.44 IIIF variants identified, neither yet checksummed in archive; exact-dimension dispatcher fallback added",
+    "release_pass": false
+  },
+  "evening_millet": {
+    "source": "assets/staged/module-hero-evening-candidate-20261027/millet-angelus-google-art-original.jpg",
+    "sha1": "42504539adbaad1a45066bd95a6dedb093b5288c",
+    "sha256": "77de352e8d7d0c540274464f618a336eef05cf376858e7da94d0b69bf7bd1aa2",
+    "pixel_dimensions": [
+      7053,
+      5864
+    ],
+    "bytes": 7099454,
+    "source_manifest": "assets/staged/module-hero-evening-candidate-20261027/millet-acquisition.json",
+    "exact_artwork": "Jean-Francois Millet, L'Angelus, Musée d'Orsay",
+    "editorial_state": "leading preference, NOT final replacement for Pierre-Édouard Frère The Prayer",
+    "native_pixel_review": "scripts/art/review-millet-evening-native.py and research-only workflow committed; output not yet verified at time of this ledger",
+    "rights": "Commons PD claim, exact photographic rights and international reuse review pending",
+    "release_pass": false
+  },
+  "blocked_sources": [
+    {
+      "module_ids": [
+        "michael",
+        "angel"
+      ],
+      "reason": "Shared Roman Guido Reni master is compressed and soft; do not use larger glare/perspective church photos"
+    },
+    {
+      "module_ids": [
+        "holy-spirit"
+      ],
+      "reason": "Restout photo has glare, external museum frame and image-rights conflict; Morazzone is preference not final"
+    },
+    {
+      "module_ids": [
+        "salvation"
+      ],
+      "reason": "Gérôme photo shows whole gallery, not painting-only source"
+    }
+  ],
+  "release_policy": "Only human-confirmed original-pixel fidelity, exact painting state, faithful museum colour, verified rights, frameless whole painted surface, and app responsive compositions may pass. Original research files are immutable."
+}
