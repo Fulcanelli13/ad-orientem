@@ -14,6 +14,8 @@ const OWNERS=Object.freeze({
 const HEADINGS=Object.freeze({
   SPIRITU:/^(?:de\s+spiritu\s+sancto|de\s+sancto\s+spiritu)/i,
   QUADRAGESIMA:/^de\s+quadragesima/i,
+  ASCENSIO:/^de\s+ascensione\s+domini/i,
+  APOSTOLI:/^de\s+apostolis/i,
   MARIA:/^(?:de\s+beata\s+maria\s+virgine|de\s+b\.?\s*m\.?\s*v\.?)/i,
   NATIVITATE:/^de\s+nativitate\s+domini/i,
   TRINITATE:/^de\s+sanctissima\s+trinitate/i,
