@@ -1,0 +1,178 @@
+{
+  "schema": "AO_TLM_B85_FIRST_PARTY_AASJMV_ROME_CANONICAL_IDENTITY_SAFEGUARDS_20261025_V1",
+  "checked_on": "2026-10-25",
+  "scope": "RESEARCH_ONLY_NO_MASTER_IMPORT",
+  "prior_prs": [
+    1682,
+    1683,
+    1686,
+    1687,
+    1688
+  ],
+  "input": "B84 45 exception workbook and actual B82 CANONICAL SITES physical name/address/operator columns",
+  "baseline": {
+    "version": "B82",
+    "distinct_provisional_physical_sites": 2573,
+    "historical_canonical_ids": 2576,
+    "venue_source_rows": 2679,
+    "mass_timetable_rows": 4681,
+    "previously_verified_schedule_rows": 3347
+  },
+  "aasjmv": {
+    "reviewed": 18,
+    "rejected_b84_heuristic_links": [
+      {
+        "entry_id": "B83-091",
+        "rejected_group_id": "RG-B65-A368B83F6B58",
+        "grounded_b82_conflict": "Guarulhos SP church of Nossa Senhora do Rosário dos Homens Pretos e São Benedito; not Campos RJ Nossa Senhora do Terço",
+        "decision": "REJECT_HEURISTIC_ID_LINK"
+      },
+      {
+        "entry_id": "B83-092",
+        "rejected_group_id": "RG-CB03C808AE8A",
+        "grounded_b82_conflict": "SSPX Capela Imaculada Conceição in Campinas SP; not AASJMV Ururaí RJ",
+        "decision": "REJECT_HEURISTIC_ID_LINK"
+      },
+      {
+        "entry_id": "B83-094",
+        "rejected_group_id": "RG-9157D597CA5B",
+        "grounded_b82_conflict": "SSPX Priorado São Sebastião in Arraial Novo; not AASJMV Bom Jesus Crucificado parish",
+        "decision": "REJECT_HEURISTIC_ID_LINK"
+      },
+      {
+        "entry_id": "B83-095",
+        "rejected_group_id": "RG-039BD5307887",
+        "grounded_b82_conflict": "Campos parish; not Itaperuna parish",
+        "decision": "REJECT_HEURISTIC_ID_LINK"
+      },
+      {
+        "entry_id": "B83-096",
+        "rejected_group_id": "RG-812C5014CA08",
+        "grounded_b82_conflict": "Contagem MG chapel; not Natividade RJ parish",
+        "decision": "REJECT_HEURISTIC_ID_LINK"
+      },
+      {
+        "entry_id": "B83-098",
+        "rejected_group_id": "RG-5EB7EF358855",
+        "grounded_b82_conflict": "IBP Santarém PA chapel; not Santa Clara RJ parish",
+        "decision": "REJECT_HEURISTIC_ID_LINK"
+      },
+      {
+        "entry_id": "B83-099",
+        "rejected_group_id": "RG-B65-596F949E3A13",
+        "grounded_b82_conflict": "São José dos Campos SP chapel; not Bom Jesus do Itabapoana quasi-parish",
+        "decision": "REJECT_HEURISTIC_ID_LINK"
+      },
+      {
+        "entry_id": "B83-100",
+        "rejected_group_id": "RG-AEC17D325223",
+        "grounded_b82_conflict": "Abacial Santo Antônio de Pádua with FSSP source; not the AASJMV Santo Antônio de Pádua parish",
+        "decision": "REJECT_HEURISTIC_ID_LINK"
+      },
+      {
+        "entry_id": "B83-102",
+        "rejected_group_id": "RG-812C5014CA08",
+        "grounded_b82_conflict": "Contagem MG chapel; not São João da Barra RJ parish",
+        "decision": "REJECT_HEURISTIC_ID_LINK"
+      },
+      {
+        "entry_id": "B83-103",
+        "rejected_group_id": "RG-812C5014CA08",
+        "grounded_b82_conflict": "Contagem MG chapel; not Varre-Sai RJ parish",
+        "decision": "REJECT_HEURISTIC_ID_LINK"
+      },
+      {
+        "entry_id": "B83-104",
+        "rejected_group_id": "RG-B65-596F949E3A13",
+        "grounded_b82_conflict": "São José dos Campos SP chapel; not Campos RJ Nossa Senhora Aparecida reitoria",
+        "decision": "REJECT_HEURISTIC_ID_LINK"
+      },
+      {
+        "entry_id": "B83-105",
+        "rejected_group_id": "RG-9723082006BB",
+        "grounded_b82_conflict": "AASJMV Divinópolis MG church; not Campos RJ Nossa Senhora do Carmo reitoria",
+        "decision": "REJECT_HEURISTIC_ID_LINK"
+      },
+      {
+        "entry_id": "B83-106",
+        "rejected_group_id": "RG-B65-596F949E3A13",
+        "grounded_b82_conflict": "São José dos Campos SP chapel; not Campos RJ São José reitoria",
+        "decision": "REJECT_HEURISTIC_ID_LINK"
+      },
+      {
+        "entry_id": "B83-107",
+        "rejected_group_id": "RG-1D73C857A99D",
+        "grounded_b82_conflict": "SSPX Belo Horizonte site on Av Cel José Dias Bicalho; not AASJMV Oratório São José on Rua Aiuruoca 148",
+        "decision": "REJECT_HEURISTIC_ID_LINK"
+      }
+    ],
+    "identity_holds": [
+      {
+        "entry_id": "B83-090",
+        "unproven_suggested_group_id": "RG-039BD5307887",
+        "reason": "Name resembles Campos parish, physical street absent in B82",
+        "decision": "HOLD_BUILDING_IDENTITY_UNPROVEN"
+      },
+      {
+        "entry_id": "B83-093",
+        "unproven_suggested_group_id": "RG-9A22C0A51830",
+        "reason": "Same São Geraldo name; exact building/owner role not established",
+        "decision": "HOLD_BUILDING_IDENTITY_UNPROVEN"
+      },
+      {
+        "entry_id": "B83-097",
+        "unproven_suggested_group_id": "RG-EB3C1F42A9D4",
+        "reason": "Generic Nossa Senhora Aparecida chapel lacks city and exact building in B82",
+        "decision": "HOLD_BUILDING_IDENTITY_UNPROVEN"
+      },
+      {
+        "entry_id": "B83-101",
+        "unproven_suggested_group_id": "RG-8144F4F2DCF9",
+        "reason": "São Fidélis name matches but exact B82 physical address missing",
+        "decision": "HOLD_BUILDING_IDENTITY_UNPROVEN"
+      }
+    ],
+    "owner_directory_links": [
+      "https://adapostolica.org/paroquias/",
+      "https://adapostolica.org/reitorias/"
+    ],
+    "source_access_warning": "Direct owner directory fetch returned 403; B83 captured upstream transcriptions, and some cases have separate third-party corroboration. Neither establishes an authoritative building match.",
+    "historic_research_recovery": {
+      "entry_id": "B83-107",
+      "source_id": "AASJMV-EXT-001",
+      "church": "Capela do Oratório São José",
+      "physical_address": "Rua Aiuruoca 148, Fernão Dias, Belo Horizonte, Minas Gerais, Brazil",
+      "owner_url": "https://oratoriosaojosebh.org/comunidades-atendidas/",
+      "status": "SEPARATE_WORSHIP_LOCATION_SOURCE_RECORDED_PREVIOUSLY_NOT_B82_CANONICAL_NO_NEW_ID_MINTED"
+    }
+  },
+  "rome": {
+    "first_party_current": "https://www.icrss.it/roma/",
+    "old_church": {
+      "group_id": "RG-0139779AA43D",
+      "name": "Basilica dei Santi Celso e Giuliano",
+      "actual_physical_address": "Via del Banco di Santo Spirito 5, Roma",
+      "problem": "B82 physical description currently embeds temporary Immacolata address with historic basilica name",
+      "inherited_verified_row_count": 5
+    },
+    "temporary_church": {
+      "group_id": "RG-C14F352FA2E8",
+      "name": "Chiesa dell'Immacolata dei Miracoli",
+      "physical_address": "Via Sebastiano Veniero 3, Roma",
+      "role": "CURRENT_TEMPORARY_MASS_LOCATION_DURING_RESTORATION"
+    },
+    "next_action": "Keep both historical group IDs, separate addresses, review effective-date schedules; do not automatically migrate 5 inherited verified rows or create new venue ID."
+  },
+  "qa": {
+    "aasjmv_cases_reviewed": 18,
+    "invalid_suggestions": 14,
+    "unproven_suggestions": 4,
+    "rome_existing_groups_reconciled": 2,
+    "new_site_admissions": 0,
+    "new_map_pins": 0,
+    "verified_timetable_rows_changed": 0,
+    "canonical_id_rows_changed": 0,
+    "source_rows_changed": 0
+  },
+  "workflow": "Manual production import blocked until crosswalk rechecked by physical building, owner, locality, address and source-date. This file is evidence only and does not contain the binary B85 audit workbook."
+}
