@@ -96,3 +96,21 @@ python3 tools/directory/validate-cl2-unified-master-inheritance.py \
 ```
 
 The import remains **research-only** until exact site, ministry and current timetable release gates pass. The official rules, frozen original records, aliases and all held exceptions are kept together in this one master. Nothing in this extension modifies `src/find` or the public 1,882-pin provisional snapshot.
+
+
+## Master-first worldwide venue census — revised editorial order (27 October 2026)
+
+The work order is now **binding for this registry**:
+
+1. **Build the ultimate list first.** Source-led worldwide physical-worship-site discovery, all traditional communities and local networks, full country coverage and exhaustive cross-provider deduplication. The end product is ONE CL2 master with admitted physical anchors, source memberships and clearly identified unresolved *candidate* identities. No apparent venue is discarded merely for lacking precise coordinates or a current Mass timetable. Document supplier/institution coverage and the date each list was exhausted; no invented "100% worldwide" conclusion.
+2. **Enrich the complete master in large batches.** Extract available *name, country, locality, source/owner, institute/community, relationship, and applicable rite/Missal norm* across hundreds of sites at once. Reuse the existing eight first-party institutional norm assertions for the four named institutes and extend centrally when new group norms are sourced. Carry sources and scopes through the entire family; do **not** manually research the same rule at every church.
+3. **Only then work the remaining exceptions.** Incomplete source identities, ambiguous shared buildings, conflicting labels, unsupported classifications, local departures and provenance follow-up get targeted review queues. Manual site-by-site work belongs here.
+4. **Defer** precise pins/geocoding, navigation, regularly verified timetables and public release until the worldwide list is sufficiently consolidated and bulk fields have been filled. Existing historical time and geometry data are preserved as-is, not discarded; no new research effort on those tracks should displace Stage 1.
+
+### Existing data the ultimate census must not overlook
+
+The earlier merged research intake \`data/directory/research/canonical-g0-site-admissions-b84-b90-20261026.v1.json\` contains **36 G0 candidate site IDs** from B84–B90. None of those exact IDs occurs among the CL2 2,584 historical canonical site IDs. This does **not** prove 36 distinct missing churches. A country+normalized-name comparison produced **four same-name hints**, some in different cities; there is also one explicit known provider link \`AASJMV-EXT-001\`. A name collision or provider link alone is not an identity approval.
+
+The CL2 SQLite builder therefore now imports all **36 leads as \`unified_site_candidate\`**, with frozen candidate IDs, country, locality, physical-description evidence, batch and exact original source URLs; it never promotes them into \`unified_physical_site\` automatically. The new **\`unified_research_inventory\`** view exposes 2,579 provisional accepted physical anchors **plus 36 unresolved lead records = 2,615 differently scoped inventory entries**, not 2,615 unique real churches. Every entry is in the SAME queryable CL2 research database. The 36 separate CL1/classification-only source orphans and the 49 existing identity-review flags remain preserved; they cannot be naively added to the physical total because identities may overlap.
+
+**Next completeness gates:** systematically crosswalk all already researched organization and regional directories against this one inventory; classify each *candidate identity*, not each Mass: exact existing building / strong possible alias / new physical building supported / out-of-scope or closed / unresolved. Bring confirmed new buildings into the canonical physical table with stable lineage only when identity evidence is adequate. Track source-coverage totals and missing-region/institute queues at the *provider catalogue level*, then enrich all accepted sites in 100–200-record or larger cohorts. No independent B90/B98/CL27 directory becomes a second authority.
