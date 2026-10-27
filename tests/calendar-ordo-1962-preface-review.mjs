@@ -222,4 +222,70 @@ assert.equal(witness.additionalRedirectOwnerCases.length,2);
 assert.equal(witness.cases.filter(x=>x.upstreamRuleTokens.length>0).length,11);
 console.log("PASS 142-original-source sanctoral witness: nine §495 Marian conflicts, two qualified Common agreements, two redirect holds");
 
+
+// Original 1960 RGMR §§299, 309(a), 482–498. These are assertions about
+// the canonical source/heading only, NOT authorization to substitute texts.
+const secondBatch=[
+  ...[["01-02","Sancti/01-01"],["01-05","Sancti/01-01"]].map(
+    ([md,path])=>[md,":feria:4:w",4,"White",path,"NATIVITATE","484_B","SOURCE_CONFLICT","SOURCE_MATCHED_NATIVITY_SEASON_FERIA"]),
+  ...["01-07","01-08","01-09","01-12"].map(md=>
+    [md,":feria:4:w",4,"White",md==="01-12"?"Tempora/Epi1-0a":"Sancti/01-06",
+    "EPIPHANIA","485_B","SOURCE_CONFLICT","SOURCE_MATCHED_EPIPHANY_SEASON_FERIA"]),
+  ...[["02-03","Quadp1-0"],["02-13","Quadp2-0"],
+    ["02-16","Quadp3-0"],["02-17","Quadp3-0"]].map(
+    ([md,source])=>[md,":feria:4:w",4,"White","Tempora/"+source,
+    "COMMUNIS","498","RULE_TEXT_AGREE","SOURCE_MATCHED_PRELENT_FERIA"]),
+  ...[
+    ["01-03","C10b"],["01-10","C10b"],["02-14","C10c"],
+    ["04-18","C10Pasc"],["06-20","C10t"],["06-27","C10t"],
+    ["07-04","C10t"],["07-11","C10t"],["08-01","C10t"],
+    ["10-31","C10t"],["11-07","C10t"],["11-28","C10t"],
+  ].map(([md,owner])=>[md,"commune:"+owner+":4:w",4,"White",
+    "Commune/"+owner,"MARIA","309_A_495","SOURCE_CONFLICT","SOURCE_MATCHED_BVM_SATURDAY_MASS"]),
+  ...[["09-23",3],["09-25",5],["09-26",6]].map(
+    ([md,day])=>[md,"tempora:093-"+day+":2:v",2,"Violet",
+    "Tempora/093-"+day,"COMMUNIS","498","RULE_TEXT_AGREE","SOURCE_MATCHED_SEPTEMBER_EMBER_FERIA"]),
+  ...[
+    ["12-01","Adv1-2",3],["12-05","Adv1-6",3],
+    ["12-09","Adv2-3",3],["12-10","Adv2-4",3],
+    ["12-12","Adv2-6",3],["12-14","Adv3-1",3],
+    ["12-15","Adv3-2",3],["12-16","Adv3-3",2],
+    ["12-17","Adv3-4",2],["12-18","Adv3-5",2],
+    ["12-19","Adv3-6",2],["12-22","Adv4-2",2],
+    ["12-23","Adv4-3",2],
+  ].map(([md,path,rank])=>[md,"tempora:"+path+":"+rank+":v",
+    rank,"Violet","Tempora/"+path,"COMMUNIS","498","RULE_TEXT_AGREE",
+    "SOURCE_MATCHED_ADVENT_FERIA_NO_UNIVERSAL_SEASONAL_PREFACE"]),
+  ["12-13","tempora:Adv3-0:1:pv",1,"Rose","Tempora/Adv3-0",
+    "TRINITATE","494_B","SOURCE_CONFLICT","SOURCE_MATCHED_GAUDETE_ADVENT_SUNDAY"],
+  ["04-26","tempora:Pasc3-0r:2:w",2,"White","Tempora/Pasc3-0r",
+    "PASCHALIS","489_A","SOURCE_CONFLICT","SOURCE_MATCHED_THIRD_POST_EASTER_SUNDAY"],
+];
+assert.equal(secondBatch.length,40);
+for(const [md,id,rank,colour,path,expected,clause,status,basis] of secondBatch){
+  const res=sample("2026-"+md,id,rank,colour,"Communis");
+  res.proper.data.sourcePath=path;
+  const d=review1962PrefaceForCalendarDay(res);
+  assert.equal(d.status,status,md+": "+JSON.stringify(d));
+  assert.equal(d.expected,expected,md);
+  assert.equal(d.clause,clause,md);
+  assert.equal(d.basis,basis,md);
+  assert.equal(d.autoPublish,false);
+  assert.equal(d.changesReader,false);
+  // No different proper, principal, votive profile or source year can
+  // inherit the classification from date/colour alone.
+  const other={...res,proper:{...res.proper,data:{...res.proper.data,sourcePath:"Sancti/12-01"}}};
+  assert.notEqual(review1962PrefaceForCalendarDay(other).basis,basis,
+    md+" substituted source was incorrectly accepted");
+  const votive={...res,proper:{...res.proper,data:{...res.proper.data,riteProfile:"votive_mass"}}};
+  assert.equal(review1962PrefaceForCalendarDay(votive).status,"WITHHELD",md);
+}
+for(const [md,rank,colour] of [["06-04",1,"White"]]){
+  const c=sample("2026-"+md,"tempora:Pent01-4:"+rank+":w",rank,colour,"Communis");
+  c.proper.data.sourcePath="Tempora/Pent01-4";
+  assert.equal(review1962PrefaceForCalendarDay(c).status,"UNMAPPED",
+    "The version-dependent Corpus Christi Preface may not be invented");
+}
+console.log("PASS 40 exact-source 1960 ordinary Preface classifications: Christmas/Epiphany ferias, pre-Lent, BVM Saturday, Advent, September Ember, Sundays; no publication");
+
 console.log("PASS 1962 Preface source audit: owner, principal Mass, category, trilingual, regional exclusion, conflict, exceptions");
