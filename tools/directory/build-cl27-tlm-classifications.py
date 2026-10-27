@@ -37,6 +37,22 @@ def main():
                          ("classification_source", 2715), ("mass_time", 4681),
                          ("identity_exception", 49)]:
         assert db.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0] == total
+    # Read the one CL2 authoritative institution policy and effective scoped views.
+    # CL27 may project these facts but must never recalculate or reauthor them.
+    for table, total in [("unified_physical_site", 2579), ("source_ministry", 2723),
+                         ("institute_norm", 8), ("timetable_ministry_link", 4681)]:
+        assert db.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0] == total
+    norm_evidence = defaultdict(list)
+    for n in db.execute("SELECT * FROM institute_norm ORDER BY institute_id,field"):
+        norm_evidence[n["institute_id"]].append({
+            "field": n["field"], "value": n["value"],
+            "subject_scope": n["subject_scope"], "evidence_url": n["evidence_url"],
+            "evidence_kind": n["evidence_kind"], "evidence_basis": n["evidence_basis"]
+        })
+    effective_sources = {r["source_id"]: dict(r)
+                         for r in db.execute("SELECT * FROM effective_source_liturgy")}
+    assert len(effective_sources) == 2723
+    assert set(norm_evidence) == {"FSSP", "ICKSP", "IBP", "SSPX"}
     anchor_rows = db.execute("SELECT * FROM canonical_site ORDER BY effective_anchor_id, group_id").fetchall()
     physical = defaultdict(list)
     for s in anchor_rows:
@@ -72,6 +88,23 @@ def main():
             assert group not in ("UNKNOWN", "UNRESOLVED", "")
             institutions[group] += 1
         edition = "1962" if c["owner_verified_missal_1962"] else UNKNOWN
+        inherited = effective_sources[c["source_id"]]
+        institute = inherited["institute_id"]
+        norm = norm_evidence.get(institute, [])
+        assert (len(norm) == 2) if institute else not norm
+        if institute:
+            assert inherited["institute_label_grade"] == "SOURCE_LABEL_ONLY"
+            assert inherited["liturgical_use"] == "ROMAN"
+            assert inherited["missal_edition"] == "1962"
+            counts["inherited_institute_source_labels"] += 1
+            counts["inherited_" + institute] += 1
+        else:
+            assert inherited["liturgical_use"] == UNKNOWN
+            assert inherited["missal_edition"] == UNKNOWN
+        if safe:
+            assert inherited["physical_anchor_id"] == effective
+        else:
+            assert inherited["physical_anchor_id"] is None
         claim = {
             "source_id": c["source_id"],
             "historical_group_id": col(raw, "historical_group_id"),
@@ -88,7 +121,16 @@ def main():
             "ecclesial_position": UNKNOWN,
             "pontiff_recognition": UNKNOWN,
             "una_cum": UNKNOWN,
-            "liturgical_use": UNKNOWN,
+            # A group-wide norm is sourced ONCE in CL2, inherited by this
+            # source-labelled ministry; a direct owner witness remains separate.
+            "liturgical_use": inherited["liturgical_use"],
+            "effective_missal_edition": inherited["missal_edition"],
+            "inherited_institute_id": institute,
+            "inherited_institute_policy": norm,
+            "inherited_scope": inherited["inherited_scope"],
+            "liturgical_claim_grade": (
+                "INHERITED_INSTITUTE_NORM_SOURCE_LABEL_NOT_MASS_VERIFIED"
+                if institute else UNKNOWN),
             "missal_edition_at_source_scope": edition,
             "missal_owner_witness_url": col(raw, "owner_missal_evidence_url") if edition == "1962" else None,
             "missal_assertion_scope": "EXACT_SOURCE_WITNESS_NOT_BLANKET_MASS" if edition == "1962" else UNKNOWN,
@@ -107,6 +149,9 @@ def main():
     assert counts["CLASSIFICATION_ONLY_NO_B98_SOURCE"] == 36
     assert counts["source_edition_1962"] == 3
     assert counts["source_label_only"] == 2008
+    assert counts["inherited_institute_source_labels"] == 1389
+    assert {i: counts["inherited_" + i] for i in norm_evidence} == {
+        "FSSP": 381, "ICKSP": 158, "IBP": 31, "SSPX": 819}
     assert len(source_records) == 2715
 
     site_rows = []
@@ -118,6 +163,8 @@ def main():
                          if r["institution_label"] != UNKNOWN})
         witness_ids = sorted(r["source_id"] for r in records
                              if r["missal_edition_at_source_scope"] == "1962")
+        inherited_ids = sorted(r["source_id"] for r in records
+                               if r["inherited_institute_id"] is not None)
         site_rows.append({
             "physical_anchor_id": anchor,
             "historical_group_ids": sorted(row["group_id"] for row in historical),
@@ -128,6 +175,8 @@ def main():
             "institute_source_labels": labels,
             "source_label_conflicts": len(labels) > 1,
             "source_level_1962_witness_ids": witness_ids,
+            "institute_norm_inherited_source_ids": inherited_ids,
+            # Do not copy any inherited liturgical norm onto a shared building.
             "celebrant": UNKNOWN,
             "organizing_society": UNKNOWN,
             "una_cum": UNKNOWN,
@@ -144,6 +193,11 @@ def main():
     assert sum(len(x["source_ids"]) for x in site_rows) == 2674
     assert sum(len(x["historical_group_ids"]) for x in site_rows) == 2584
     assert sum(len(x["source_level_1962_witness_ids"]) for x in site_rows) == 3
+    assert sum(len(x["institute_norm_inherited_source_ids"]) for x in site_rows) == sum(
+        r["inherited_institute_id"] is not None and r["physical_anchor_id"] is not None
+        for r in source_records)
+    assert all(r["rite_of_all_celebrations"] == UNKNOWN
+               and r["missal_for_all_celebrations"] == UNKNOWN for r in site_rows)
     assert all(x["una_cum"] == UNKNOWN and x["ecclesial_position"] == UNKNOWN
                and not x["public_classification_approved"] for x in site_rows)
 
@@ -165,13 +219,19 @@ def main():
             "venue_sources_without_classification_held": len(missing),
             "organization_labels_at_source_only": counts["source_label_only"],
             "source_scoped_1962_witnesses": counts["source_edition_1962"],
+            "institute_norm_assertions_from_CL2": sum(map(len, norm_evidence.values())),
+            "inherited_institute_source_labels": counts["inherited_institute_source_labels"],
+            "inherited_source_labels_by_institute": {
+                i: counts["inherited_" + i] for i in sorted(norm_evidence)},
+            "inherited_exact_joined_source_labels": sum(
+                len(x["institute_norm_inherited_source_ids"]) for x in site_rows),
             "una_cum_confirmed_per_celebration": 0,
             "public_classifications_approved": 0,
         },
         "physical_site_classification_facets": site_rows,
         "source_scoped_classification_assertions": source_records,
         "unclassified_frozen_venue_source_ids": missing,
-        "release_note": "The institute facet is a qualified research label, not a verified celebrant, status or Una Cum filter."
+        "release_note": "CL2 institution-wide Roman/1962 norms are inherited by source-labelled ministries. This does not certify any individual Mass, venue-wide Missal, celebrant, canonical status, or Una Cum value."
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     serialized = json.dumps(result, ensure_ascii=False, separators=(",", ":"))
@@ -188,9 +248,9 @@ def main():
         args.html_output.write_text(html, encoding="utf-8")
         assert html.count('id="embedded-data"') == 1 and 'AO_CL27_TLM_CLASSIFICATION_PROJECTION_V1' in html
         print(f"Self-contained offline reviewer: {args.html_output}")
-    print("Classification projection PASS: 2,579 physical anchors / 2,715 source claims / "
-          "2,008 organization label hints / three exact source-scoped 1962 witnesses / "
-          "zero venue-level Una Cum or public approvals")
+    print("Classification projection PASS: 2,579 anchors / 2,715 source claims / "
+          "1,389 CL2 group-inherited source labels / 3 direct owner 1962 witnesses / "
+          "zero venue-wide inference or public approvals")
 
 
 if __name__ == "__main__":
