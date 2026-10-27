@@ -71,7 +71,10 @@
     ],
     "staged_module_photo_files_across_three_branches": 11,
     "staged_distinct_module_ids": 10,
-    "production_release_authorized_by_this_index": 0
+    "production_release_authorized_by_this_index": 0,
+    "class_i_provisional_met_cc0_exact_photo_lead": 1,
+    "module_institutional_open_access_exact_source_leads": 3,
+    "module_museum_object_pd_but_photo_unknown": 1
   },
   "exception_flags": [
     {
@@ -984,7 +987,7 @@
         ]
       },
       "old_photo_does_not_match_later_approval": false,
-      "rights_review_queue": "EXACT_PHOTO_FILE_RIGHTS_NOT_VERIFIED",
+      "rights_review_queue": "INSTITUTIONAL_CC0_EXACT_PHOTO_FILE_LEAD",
       "master_photo_review": "NOT_HUMAN_APPROVED",
       "release": "NOT_AUTHORIZED"
     },
@@ -1012,7 +1015,7 @@
         ]
       },
       "old_photo_does_not_match_later_approval": false,
-      "rights_review_queue": "HIGH_RIGHTS_HOLD",
+      "rights_review_queue": "ELEVATED_PAINTING_SURFACE_IDENTITY_AND_PHOTO_RIGHTS_HOLD",
       "master_photo_review": "NOT_HUMAN_APPROVED",
       "release": "NOT_AUTHORIZED"
     },
@@ -1154,7 +1157,7 @@
         "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
         "source_page": "https://www.metmuseum.org/art/collection/search/438724"
       },
-      "rights_first_bucket": "INSTITUTIONAL_CC0_OR_PD_SOURCE_CLAIM",
+      "rights_first_bucket": "INSTITUTIONAL_OPEN_ACCESS_EXACT_SOURCE_LEAD",
       "source_rights_notes": "Met Open Access, public domain / CC0",
       "staged_photo_variants": [
         {
@@ -1298,7 +1301,7 @@
         "artwork_id": "met-438434",
         "source_page": "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg"
       },
-      "rights_first_bucket": "INSTITUTIONAL_CC0_OR_PD_SOURCE_CLAIM",
+      "rights_first_bucket": "INSTITUTIONAL_OPEN_ACCESS_EXACT_SOURCE_LEAD",
       "source_rights_notes": "The Met official public domain; Commons PD-Art",
       "staged_photo_variants": [
         {
@@ -1529,7 +1532,7 @@
         "artwork_id": "nga:34956",
         "source_page": "https://www.nga.gov/artworks/34956-return-prodigal-son"
       },
-      "rights_first_bucket": "INSTITUTIONAL_CC0_OR_PD_SOURCE_CLAIM",
+      "rights_first_bucket": "INSTITUTIONAL_OPEN_ACCESS_EXACT_SOURCE_LEAD",
       "source_rights_notes": "NGA explicit public domain open access",
       "staged_photo_variants": [
         {
@@ -1569,7 +1572,7 @@
         "artwork_id": "mnac:008327-000",
         "source_page": "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000"
       },
-      "rights_first_bucket": "INSTITUTIONAL_CC0_OR_PD_SOURCE_CLAIM",
+      "rights_first_bucket": "MUSEUM_PAINTING_PUBLIC_DOMAIN_PHOTO_TERMS_UNVERIFIED",
       "source_rights_notes": "MNAC lists artwork as Domini públic; direct downloadable image terms/master bytes not yet checked",
       "staged_photo_variants": [
         {
@@ -1585,5 +1588,13 @@
       "production_released": false
     }
   ],
-  "photo_archive_note": "The 11 staged files across three source branches are candidate variants, not 11 copyright-cleared masters. The old 22-hero readiness audit's zero physical masters predates these new staged acquisitions. Original source hashes still require pixel QA, rights certification and durable final release."
+  "photo_archive_note": "The 11 staged files across three source branches are candidate variants, not 11 copyright-cleared masters. The old 22-hero readiness audit's zero physical masters predates these new staged acquisitions. Original source hashes still require pixel QA, rights certification and durable final release.",
+  "rights_source_policy_links": [
+    "https://www.metmuseum.org/de/policies/frequently-asked-questions-image-and-data-resources",
+    "https://www.nga.gov/terms-and-notices",
+    "https://www.clevelandart.org/open-access",
+    "https://commons.wikimedia.org/wiki/Commons:Reuse_of_PD-Art_photographs",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0790",
+    "https://www.christies.com/about/terms-and-conditions/terms-and-conditions-for-website-use"
+  ]
 }
