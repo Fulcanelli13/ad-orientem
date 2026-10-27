@@ -79,3 +79,29 @@ export function matches1962SeasonalSanctoralSelection(preface,owner){
     (latin.match(/potissimum/g)||[]).length===1&&
     preface.prefaceVariant==="EASTERTIDE";
 }
+
+export function required1962May11ApostlesPrefaceOwner(id,path,date){
+  if(id!=="sancti:05-11r:2:r"||path!=="Sancti/05-11r"||
+     date!=="2026-05-11")return null;
+  return Object.freeze({category:"APOSTOLI",section:"Apostolis",
+    variant:null,originalPath:path,principalId:id,date,
+    sourceWitness:"Sancti/05-01",
+    scope:"PHILIP_JAMES_APOSTLES_1962",rubric:"RGMR_497"});
+}
+export function authenticMay11ApostolicOriginal(parsed){
+  const text=(parsed?.map?.get?.("Officium")??[]).join(" ")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+  return text.includes("philippi")&&text.includes("jacobi")&&
+    text.includes("apostolorum");
+}
+export function matches1962May11ApostlesSelection(preface,owner){
+  if(!owner||!preface||preface.sanctoralSourceDate!==owner.date||
+     preface.prefaceSection!=="Apostolis"||
+     preface.recoveryScope!==owner.scope||preface.prefaceVariant!=null)
+    return false;
+  const latin=String(preface.lat??preface.la??"").normalize("NFD")
+    .replace(/[\u0300-\u036f]/g,"").toLowerCase();
+  return latin.startsWith("de apostolis")&&
+    latin.includes("te, domine, suppliciter exorare")&&
+    Boolean(String(preface.en??"").trim()&&String(preface.fr??"").trim());
+}
