@@ -915,3 +915,52 @@ test('1961 source cadence motifs are immutable GABC evidence, not approved Psalm
  const palm=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
  assert.equal(palm.includes('processionale-palm-1961-cadence-motif-source'),false);
 });
+
+
+test('Psalm23 verse2 GABC prototype retains 24 note-bearing syllables and is never an approved score',()=>{
+ const h=readJSON('data/research/processionale-palm23-verse2-tone-hypothesis-20261027.v1.json');
+ const w=readJSON('data/research/processionale-palm-14verse-pointing-worklist-20261027.v1.json');
+ const gabc=readFileSync(new URL('../data/research/chant-source-review/palm23-verse2-tone-application-20261027-PROVISIONAL.gabc',import.meta.url),'utf8');
+ const raw=readFileSync(new URL('../data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc',import.meta.url),'utf8');
+ assert.equal(h.stage,'PALM-R02');
+ assert.equal(h.target.psalm,23);
+ assert.equal(h.target.liturgicalLine,2);
+ assert.equal(h.batch,24);
+ assert.equal(gabc.split('%%').length,2);
+ assert.ok(gabc.includes('\n%%\n(c4)'));
+ assert.equal(gabc.split('*(:)').length,2);
+ assert.ok(raw.includes('2. Nam(h) ip(h)se...(h)'));
+ assert.ok(gabc.includes('Nam(h) ip(h)se(h)'));
+ assert.ok(!gabc.includes('DO(f)mi(gh)'));
+ assert.ok(gabc.includes('fun(h)dá(ixi hr)vit(h) e(g hr)um(h.)'));
+ assert.ok(raw.includes('quæ(h) <b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)'));
+ const normalized=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z ]/g,' ').replace(/\s+/g,' ').trim();
+ const body=gabc.slice(gabc.indexOf('(c4)'));
+ const halves=body.split('*(:)');
+ const syllables=s=>Array.from(s.matchAll(/([\p{L}]+[.,;!?]?)\(([^)]+)\)/gu)).map(x=>({text:x[1],notes:x[2]}));
+ const plain=s=>s.replace(/\(c4\)/g,'').replace(/\([^)]*\)/g,'').replace(/[:*]/g,'').trim();
+ const extracted=halves.map(syllables);
+ const stored=[h.cadenceMappings.medial,h.cadenceMappings.termination];
+ assert.deepEqual(extracted.map(x=>x.length),[13,11]);
+ assert.equal(h.tests.noteBearingSyllables,24);
+ for(let i=0;i<2;i++)for(let j=0;j<extracted[i].length;j++){
+  assert.equal(normalized(extracted[i][j].text),normalized(stored[i][j][0]));
+  assert.equal(extracted[i][j].notes,stored[i][j][1]);
+ }
+ const row=w.work.find(x=>x.psalm===23&&x.printedChantLine===2);
+ assert.ok(row);
+ assert.equal(normalized(plain(halves[0])),normalized(row.sourceSections.medial));
+ assert.equal(normalized(plain(halves[1])),normalized(row.sourceSections.termination));
+ assert.equal(h.tests.sourceArchiveCadenceColonNormalizationRequired,true);
+ assert.equal(h.tests.provisionalSyllablesAllHaveAttachedNotes,true);
+ assert.ok(h.method.mismatchHold.some(s=>s.includes('Accent position')));
+ assert.ok(h.method.mismatchHold.some(s=>s.includes('Raw archival GABC')));
+ assert.equal(h.release.musicEditorReviewed,false);
+ assert.equal(h.release.printedNoteByNoteProven,false);
+ assert.equal(h.release.exsurgeParsed,false);
+ assert.equal(h.release.exsurgeRendered,false);
+ assert.equal(h.release.scorePublicationAllowed,false);
+ assert.equal(h.release.productionMassReaderChanges,0);
+ const runtime=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
+ assert.equal(runtime.includes('palm23-verse2-tone-application-20261027-PROVISIONAL'),false);
+});
