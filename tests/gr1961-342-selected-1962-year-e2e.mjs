@@ -100,6 +100,23 @@ try{
   sourceProofCertifiedDates:recoveryRows.filter(r=>r.preGospelRecovery.certified).length,
   byStatus:recoveryStatusCounts};
  console.log("AO_GR1961_2026_PRE_GOSPEL_RECOVERY="+JSON.stringify(sourceProofStats));
+ const paths=new Map();
+ for(const row of rows){
+  const sourcePath=row.preGospelRecovery?.sourcePath;
+  if(!sourcePath||row.preGospelRecovery.status==="NOT_IN_RESEARCH_SCOPE")continue;
+  const existing=paths.get(sourcePath)??{sourcePath,dates:0,
+    baselineSegmentHolds:0,remainingSegmentHolds:0,recoveryStatuses:{}};
+  existing.dates++;
+  existing.baselineSegmentHolds+=row.baselineSegmentHolds??0;
+  existing.remainingSegmentHolds+=row.unresolved?.filter(x=>x.status==="SEGMENT_UNVERIFIED").length??0;
+  const key=row.preGospelRecovery.status;
+  existing.recoveryStatuses[key]=(existing.recoveryStatuses[key]??0)+1;
+  paths.set(sourcePath,existing);
+ }
+ const pathReview=[...paths.values()].sort((a,b)=>b.baselineSegmentHolds-a.baselineSegmentHolds||a.sourcePath.localeCompare(b.sourcePath));
+ assert.equal(pathReview.reduce((n,r)=>n+r.baselineSegmentHolds,0),baselineSegmentHolds);
+ console.log("AO_GR1961_2026_PRE_GOSPEL_SOURCE_PATH_QUEUE="+JSON.stringify(pathReview));
+
  console.log("AO_GR1961_2026_SELECTED_PROPER_SUMMARY="+JSON.stringify({
   year:compact.year,daysChecked:compact.daysChecked,daysSourceReady:compact.daysSourceReady,
   dayResolverFailures:compact.dayResolverFailures,
