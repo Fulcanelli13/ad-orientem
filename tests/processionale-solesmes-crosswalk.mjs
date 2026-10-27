@@ -820,7 +820,14 @@ test('printed Psalm accents and doxologies remain tone-specific research',()=>{
   assert.equal(w.accentReviewLink.totalPendingToneApplications,18);
   assert.equal(w.accentReviewLink.allToneCadencesApproved,false);
   assert.equal(a.patterns.flatMap(x=>x.occurrenceIds).length,14);
-  assert.equal(a.counts.printedAccentedWordsTranscribed,45);
+  assert.equal(a.counts.printedAccentedWordsTranscribed,46);
+  const p7=a.patterns.find(x=>x.patternId==='PALM-R02-PS23-L07');
+  assert.equal(p7.sourceSectionAccents.flex,'Attóllite, portae, cápita vestra,');
+  assert.ok(p7.printedAccentedWords.some(x=>x.word==='cápita'));
+  assert.equal(a.doxology.filter(x=>x.printedAccentText.medial.startsWith('Glória Patri')).length,2);
+  assert.equal(a.batch23Reinspection.confirmedCorrections.length,2);
+  assert.equal(a.batch23Reinspection.uncertainAccentChecks.length,1);
+  assert.equal(a.batch23Reinspection.musicalAccentCadencePlacementApproved,false);
   const all=new Map(w.work.map(x=>[x.id,x]));
   for(const pattern of a.patterns){
     assert.ok(pattern.occurrenceIds.length>=1);
@@ -862,4 +869,43 @@ test('printed Psalm accents and doxologies remain tone-specific research',()=>{
   assert.equal(a.publication.eligible,false);
   const runtime=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
   assert.ok(!runtime.includes('processionale-palm-1961-accent-doxology-review'));
+});
+
+
+test('1961 source cadence motifs are immutable GABC evidence, not approved Psalm tone transfers',()=>{
+ const c=readJSON('data/research/processionale-palm-1961-cadence-motif-source-20261027.v1.json');
+ assert.equal(c.stage,'PALM-R02');
+ assert.equal(c.batch,23);
+ assert.equal(c.psalms.length,2);
+ assert.deepEqual(c.psalms.map(x=>x.psalm),[23,46]);
+ const canonical=readFileSync(new URL('../data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc',import.meta.url),'utf8');
+ const old46=readFileSync(new URL('../data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc',import.meta.url),'utf8');
+ const candidate46=readFileSync(new URL('../data/research/chant-source-review/palm46-omnes-populi-1961-provisional.gabc',import.meta.url),'utf8');
+ for(const [ps,src] of [[c.psalms[0],canonical],[c.psalms[1],old46]]){
+    const firstVerse=ps.psalm===23?ps.firstVerseEvidence:ps.rawFirstVerseEvidence;
+    assert.ok(src.includes(firstVerse));
+    assert.equal(firstVerse.includes('*(:)'),true);
+    assert.equal(src.includes(ps.mediantCadenceExcerpt),true);
+    assert.equal(src.includes(ps.terminationCadenceExcerpt),true);
+    assert.equal(ps.humanCadenceApplicationApproval,false);
+ }
+ assert.ok(c.psalms[0].secondVerseCue.includes('Flexa :'));
+ assert.ok(canonical.includes(c.psalms[0].flexExample));
+ const ps46=c.psalms[1];
+ assert.ok(old46.includes(ps46.rawBadOpening));
+ assert.ok(candidate46.includes(ps46.provisionalOpening));
+ assert.ok(candidate46.includes(ps46.provisionalFirstVerseEvidence));
+ assert.equal(ps46.rawBadOpening,'O(f)mnes(gh) gen(h)tes,(h)');
+ assert.equal(ps46.provisionalOpening,'O(f)mnes(gh) pó(h)pu(h)li,(h)');
+ assert.deepEqual(ps46.oldNotes,['f','gh','h','h']);
+ assert.deepEqual(ps46.provisionalNotes,['f','gh','h','h','h']);
+ assert.equal(old46.split('<b>pláu</b>')[1],candidate46.split('<b>pláu</b>')[1]);
+ assert.equal(c.counting.firstVerseCadenceFragments,4);
+ assert.equal(c.counting.otherVerseApplicationsPending,14);
+ assert.equal(c.counting.doxologyApplicationsPending,4);
+ assert.equal(c.counting.approvedNewMusicalSettings,0);
+ assert.equal(c.release.musicianCertified,false);
+ assert.equal(c.release.publishingAllowed,false);
+ const palm=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
+ assert.equal(palm.includes('processionale-palm-1961-cadence-motif-source'),false);
 });
