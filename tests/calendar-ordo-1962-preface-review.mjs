@@ -233,7 +233,7 @@ const secondBatch=[
     "EPIPHANIA","485_B","SOURCE_CONFLICT","SOURCE_MATCHED_EPIPHANY_SEASON_FERIA"]),
   ...[["02-03","Quadp1-0"],["02-13","Quadp2-0"],
     ["02-16","Quadp3-0"],["02-17","Quadp3-0"]].map(
-    ([md,source])=>[md,":feria:4:w",4,"White","Tempora/"+source,
+    ([md,source])=>[md,":feria:4:w",4,"Violet","Tempora/"+source,
     "COMMUNIS","498","RULE_TEXT_AGREE","SOURCE_MATCHED_PRELENT_FERIA"]),
   ...[
     ["01-03","C10b"],["01-10","C10b"],["02-14","C10c"],
