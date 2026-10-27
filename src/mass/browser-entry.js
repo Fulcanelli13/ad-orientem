@@ -28,6 +28,7 @@ import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.
 import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
 import { installPentecostSunday1960PrefaceSource } from "./1962-pentecost-sunday-prefatio1960-source.js";
 import {select1962CommemorationsForMassForm} from "./1962-commemoration-form-source.js";
+import {allSouls1962RequiemOverlay} from "./1962-all-souls-source.js";
 import {selectedPreflightStudyProper} from "./preflight-study-proper.js";
 import {massScriptureContextForCard} from "./scripture-reading-context.js";
 import {nativeRiteScriptureContext} from "./scripture-native-rite-context.js";
@@ -80,8 +81,11 @@ export function deriveHostOptions({ resolvedMass, assemblyStatus, arch, runtimeS
     throw new Error(assemblyStatus.reason || "Host preflight is not startable");
   }
   const rites = mapInsertedRites(resolvedMass.insertedRites ?? []);
+  const selectedProper=assemblyStatus?.proper ?? resolvedMass?.proper ?? null;
+  const allSoulsRequiem=allSouls1962RequiemOverlay(resolvedMass,selectedProper);
   return Object.freeze({
-    proper: assemblyStatus?.proper ?? resolvedMass?.proper ?? null,
+    proper: selectedProper,
+    overlays: allSoulsRequiem,
     celebrationForm: arch?.celebrationForm ?? runtimeState?.settings?.massForm ?? "sung",
     presentationMode: mapLegacyFollowMode(
       arch?.followMode ?? runtimeState?.settings?.followMode ?? "vox"
