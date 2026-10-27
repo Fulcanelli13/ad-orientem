@@ -4,12 +4,13 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import {createHash} from 'node:crypto';
-const [vendorPath,registryPath,ps23Path,ps46Path]=process.argv.slice(2);
-if(!vendorPath||!registryPath||!ps23Path||!ps46Path)
- throw new Error('Usage: node palm-bulk-cadence-exsurge-proof.mjs VENDOR REGISTRY SOURCE23 SOURCE46');
+const [vendorPath,registryPath,ps23Path,ps46Path,medialPath]=process.argv.slice(2);
+if(!vendorPath||!registryPath||!ps23Path||!ps46Path||!medialPath)
+ throw new Error('Usage: node palm-bulk-cadence-exsurge-proof.mjs VENDOR REGISTRY SOURCE23 SOURCE46 MEDIAL_FLEX_REGISTRY');
 const bundle=fs.readFileSync(vendorPath,'utf8');
 const v=JSON.parse(fs.readFileSync(registryPath,'utf8'));
 const raw23=fs.readFileSync(ps23Path,'utf8'),raw46=fs.readFileSync(ps46Path,'utf8');
+const medial=JSON.parse(fs.readFileSync(medialPath,'utf8'));
 const sha=s=>createHash('sha256').update(s).digest('hex');
 assert.ok(bundle.length>200000,'Existing pinned local Exsurge required');
 assert.equal(sha(raw23),v.evidence.ps23.originalSha256);
@@ -46,6 +47,33 @@ for(const row of cadenceCases){
   mappings:mappings.length,widths});
 }
 assert.equal(results.length,15);
+assert.equal(medial.medials.length,17);
+assert.equal(medial.flex.length,2);
+assert.ok(raw23.includes(medial.sources.ps23MedialSource));
+assert.ok(raw46.includes(medial.sources.ps46MedialSource));
+assert.ok(raw23.includes(medial.sources.ps23FlexSource));
+const medialViews=[];
+for(const row of [...medial.medials,...medial.flex]){
+ const gabc=row.provisionalGabcEndingOnly;
+ assert.equal(gabc.split('%%').length,2);
+ assert.equal(row.editorApproved??row.pitchEditorApproved,false);
+ const ctx=new api.ChantContext();
+ const mappings=api.Gabc.createMappingsFromSource(ctx,gabc);
+ assert.ok(mappings.length>=2,row.id+' missing medial or flex notation');
+ const score=new api.ChantScore(ctx,mappings,true);
+ score.performLayout(ctx);
+ const viewports=[];
+ for(const width of [260,420,800]){
+  await new Promise((resolve,reject)=>{try{score.layoutChantLines(ctx,width,resolve)}catch(e){reject(e)}});
+  const svg=score.createSvgTree(ctx);
+  assert.equal(svg.name,'svg',row.id+' missing SVG');
+  assert.ok(svg.children.length>0&&score.lines.length>0,row.id+' empty score');
+  viewports.push({width,systems:score.lines.length,svgChildren:svg.children.length});
+ }
+ assert.ok(viewports[0].systems>=viewports[2].systems,row.id+' wrap regression');
+ medialViews.push({id:row.id,kind:row.sourceMedialLatin?'MEDIANT':'FLEX',mappings:mappings.length,viewports});
+}
+assert.equal(medialViews.length,19);
 assert.equal(v.cases.filter(x=>!x.gabcEndingExcerpt).length,2);
 console.log('AO_PALM_15_CADENCE_RENDER_RESULT:'+JSON.stringify({
  schema:'ao-palm-bulk-source-cadence-real-exsurge-v1',
@@ -53,5 +81,7 @@ console.log('AO_PALM_15_CADENCE_RENDER_RESULT:'+JSON.stringify({
  batch:v.batch,originalRawSourcesUnchanged:true,checksums:{ps23:sha(raw23),ps46:sha(raw46)},
  sourceApproval:false,fullVerseGabcScoresCreated:0,
  printedPsalm46OpeningTextStillQuarantined:true,editoriallyAccepted:0,runtimeScoreAssignments:0,
- snippetCount:results.length,viewportsTested:[260,420,800],individualResults:results
+ snippetCount:results.length,medialAndFlexSnippetCount:medialViews.length,
+ totalViewportChecks:3*(results.length+medialViews.length),viewportsTested:[260,420,800],
+ individualResults:results,medialAndFlexResults:medialViews
 }));
