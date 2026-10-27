@@ -4,7 +4,7 @@
   "strict_cost": "EUR0",
   "contact_attempts": 0,
   "artwork_selections_changed": 0,
-  "staged_count": 1,
+  "staged_count": 0,
   "production_approved": 0,
   "records": [
     {
@@ -16,98 +16,10 @@
     },
     {
       "module_id": "angel",
-      "artist": "Pietro da Cortona",
-      "painting": "The Guardian Angel",
-      "object_id": "Palazzo Barberini Rome inv. 1753",
-      "identity_page": "https://www.museicapitolini.org/it/immagini/pietro-da-cortona-angelo-custode",
-      "exact_commons_file_page": "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg",
-      "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Cortona_Guardian_Angel_01.jpg",
-      "original_repo_path": "assets/staged/module-hero-missing-three-20261027/angel-original.jpg",
-      "source_sha256": "9e1d8a2732d7f156d9fc94d4c552e915c0c54b756049de03a37b3b41ffbae01f",
-      "source_bytes": 103659,
-      "source_dimensions": [
-        694,
-        1100
-      ],
-      "source_icc_present": false,
-      "uncropped_preview_path": "assets/staged/module-hero-missing-three-20261027/angel-uncropped-preview.jpg",
-      "uncropped_preview_sha256": "0d3212e0cd492ad1bc146bbc2ec467731a70661b564c3d9f21e0df5152a6af07",
-      "native_pixel_samples": [
-        {
-          "kind": "top_left",
-          "path": "assets/staged/module-hero-missing-three-20261027/angel-top_left-native.png",
-          "bbox": [
-            0,
-            0,
-            512,
-            512
-          ],
-          "sha256": "71bac973a8af9ab3e73afa3c5efd9ae20b18d17a070726fde1186ab02f9b534d",
-          "rescaled": false
-        },
-        {
-          "kind": "top_right",
-          "path": "assets/staged/module-hero-missing-three-20261027/angel-top_right-native.png",
-          "bbox": [
-            182,
-            0,
-            694,
-            512
-          ],
-          "sha256": "7d4ad4272a9d53a9b820dc6931c0f163237b5323cc68fbab8f96902ae7ae0516",
-          "rescaled": false
-        },
-        {
-          "kind": "bottom_left",
-          "path": "assets/staged/module-hero-missing-three-20261027/angel-bottom_left-native.png",
-          "bbox": [
-            0,
-            588,
-            512,
-            1100
-          ],
-          "sha256": "26e77cfb47bcc19e4c05fae0b76eebe3a631462ce79c2b72d054b7fa94ab571b",
-          "rescaled": false
-        },
-        {
-          "kind": "bottom_right",
-          "path": "assets/staged/module-hero-missing-three-20261027/angel-bottom_right-native.png",
-          "bbox": [
-            182,
-            588,
-            694,
-            1100
-          ],
-          "sha256": "17dd908b2bb9b6847e513349fbe6935342377f17015fd96aee75e7424edf3446",
-          "rescaled": false
-        },
-        {
-          "kind": "center",
-          "path": "assets/staged/module-hero-missing-three-20261027/angel-center-native.png",
-          "bbox": [
-            91,
-            294,
-            603,
-            806
-          ],
-          "sha256": "4bfc65c4edbedb74ba340d0c8c7a44045d5452b076d5d1d76a0fd3116733b03b",
-          "rescaled": false
-        }
-      ],
-      "rights_status": "RESEARCH_PD_ART_COMMONS_US_ONLY_ITALIAN_CULTURAL_HERITAGE_AND_PHOTO_USE_HOLD",
-      "quality_status": "LOW_RESOLUTION_QUALITY_HOLD_DO_NOT_UPSCALE",
-      "research_warnings": [
-        "The approved original is 1656 Pietro da Cortona in Galleria Nazionale d'Arte Antica, not later copy in Palazzo Mansi.",
-        "Licensed Bridgeman 2428x3852 source not available for free unrestricted use; do not fetch licensed commercial image.",
-        "This 694x1100 archived file is an object-identity REFERENCE only, not a final hero master."
-      ],
+      "stage_status": "FETCH_OR_VERIFY_HOLD",
+      "reason": "HTTPError: HTTP Error 429: Too many requests (f061ab2)",
       "painting_choice_unchanged": true,
-      "artificial_upscaling": false,
-      "crop_applied": false,
-      "rights_cleared_for_global_app": false,
-      "master_quality_approved": false,
-      "production_released": false,
-      "stage_status": "EXACT_SOURCE_ARCHIVED_RESEARCH_ONLY"
+      "production_released": false
     },
     {
       "module_id": "evening",
