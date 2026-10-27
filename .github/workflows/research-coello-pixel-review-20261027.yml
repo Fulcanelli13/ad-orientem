@@ -1,0 +1,51 @@
+name: Coello native-pixel photographic review atlas (research only)
+on:
+  push:
+    branches: [research/module-hero-pd-masters-20261026]
+    paths:
+      - '.github/workflows/research-coello-pixel-review-20261027.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: coello-pixel-review-20261027
+  cancel-in-progress: false
+jobs:
+  native-pixel-review:
+    if: github.ref == 'refs/heads/research/module-hero-pd-masters-20261026'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/module-hero-pd-masters-20261026
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Verify unchanged Coello original and crop at true native pixel resolution
+        run: python scripts/art/prepare-coello-original-pixel-review.py
+      - name: Guard research-only output and preserve PNG details
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,pathlib
+          p=pathlib.Path('assets/staged/module-hero-coello-20261027/review/coello-native-pixel-review.json')
+          j=json.loads(p.read_text())
+          assert j['source_unmodified'] and j['pristine_quality_approved'] is False
+          assert j['publication_approved'] is False
+          assert len(j['native_crops'])==6
+          assert all(x['native_pixels_no_upscaling'] is True and x['visual_quality_approved'] is False for x in j['native_crops'])
+          for x in j['native_crops']:
+            assert (p.parent/x['crop']).is_file()
+          PY
+          test "${GITHUB_REF}" = 'refs/heads/research/module-hero-pd-masters-20261026'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f assets/staged/module-hero-coello-20261027/review/
+          if ! git diff --cached --quiet; then
+            git commit -m 'research(art): archive verified native Coello subject crops, no approval'
+            git push origin HEAD:research/module-hero-pd-masters-20261026
+          fi
