@@ -24,7 +24,7 @@ def main():
       "source_ministry":2723,"mass_time":4681,
       "timetable_ministry_link":4681,"institute_norm":8,
       "existing_alias":5,"identity_exception":49,
-      "classification_exception":0,"unified_site_candidate":36,"unified_research_inventory":2615
+      "classification_exception":0,"unified_site_candidate":53,"unified_research_inventory":2632,"unified_provider_coverage":392
     }
     for table,n in expected.items():
         assert count(db,f'SELECT COUNT(*) FROM {table} ')==n,(table,n)
@@ -54,6 +54,17 @@ def main():
     assert count(db,"SELECT COUNT(*) FROM unified_research_inventory WHERE kind='ADMITTED_PHYSICAL_ANCHOR'")==2579
     assert count(db,"SELECT COUNT(*) FROM unified_research_inventory WHERE kind='CANDIDATE_IDENTITY_UNRESOLVED'")==36
     assert not db.execute("SELECT candidate_research_id FROM unified_site_candidate INTERSECT SELECT group_id FROM canonical_site").fetchall()
+    assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE source_batch LIKE 'PROVIDER_%'")==17
+    assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE source_batch IN ('B84','B85','B86','B87','B88','B89','B90')")==36
+    assert count(db,"SELECT COUNT(*) FROM unified_provider_coverage WHERE identity_disposition='EXACT_FROZEN_CL2_SOURCE_ID'")==305
+    assert count(db,"SELECT COUNT(*) FROM unified_provider_coverage WHERE identity_disposition='EXPLICIT_EXISTING_G0_PROVIDER_LINK_NOT_NEW_SITE'")==1
+    assert count(db,"SELECT COUNT(*) FROM unified_provider_coverage WHERE identity_disposition='WORSHIP_SOURCE_ID_UNMATCHED_CANDIDATE'")==17
+    assert count(db,"SELECT COUNT(*) FROM unified_provider_coverage WHERE identity_disposition='NON_WORSHIP_OR_AMBIGUOUS_SOURCE_ID_UNMATCHED'")==69
+    assert count(db,"SELECT COUNT(*) FROM unified_provider_coverage WHERE source_family='FSSP'")==286
+    assert count(db,"SELECT COUNT(*) FROM unified_provider_coverage WHERE source_family='ICKSP'")==94
+    assert count(db,"SELECT COUNT(*) FROM unified_provider_coverage WHERE source_family='AASJMV'")==6
+    assert count(db,"SELECT COUNT(*) FROM unified_provider_coverage WHERE source_family='VG19'")==6
+    assert count(db,"SELECT COUNT(*) FROM unified_site_candidate WHERE is_canonical_physical_site!=0 OR is_public_site!=0")==0
 
     # All 5 alias site IDs resolve to precisely one physical anchor.
     assert count(db,"SELECT SUM(history_site_count-1) FROM unified_physical_site")==5
@@ -90,7 +101,7 @@ def main():
     db.close()
     print("UNIFIED MASTER PASS: 2,579 physical sites, 2,723 source ministries, "
           "4,681 Mass rows, 1,389 rule-inheriting institute labels, "
-          "36 existing G0 leads staged without automatic venue admission, "
+          "36 G0 + 17 provider-only leads staged; 392 feed records screened, "
           "13 held source-less timetables, source/celebration overrides tested, zero published.")
 
 if __name__=='__main__': main()
