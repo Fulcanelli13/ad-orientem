@@ -1,9 +1,15 @@
-name: Palm Psalm 46 exact Exsurge source review
+name: Palm restored psalms read-only Exsurge proof
 
 # Original pull_request run: https://github.com/Fulcanelli13/ad-orientem/actions/runs/40378960243
-# Subsequent notation checks are intentional on-demand, not a PR-wide loop.
+# Reuse the existing pinned vendor for isolated Palm research validation.
+# Trigger only on the explicitly named music-proof files; not on all PR commits.
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - .github/workflows/processionale-palm46-engraver-proof.yml
+      - tools/research/palm23-verse2-exsurge-proof.mjs
+      - data/research/chant-source-review/palm23-verse2-tone-application-20261027-PROVISIONAL.gabc
 
 permissions:
   contents: read
@@ -33,3 +39,10 @@ jobs:
           schola-owner/assets/vendor/exsurge/exsurge.min.js
           processionale/data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc
           processionale/data/research/chant-source-review/palm46-omnes-populi-1961-provisional.gabc
+      - name: Render experimental Psalm23 verse2 at phone/tablet/desktop widths
+        run: > 
+          node processionale/tools/research/palm23-verse2-exsurge-proof.mjs
+          schola-owner/assets/vendor/exsurge/exsurge.min.js
+          processionale/data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc
+          processionale/data/research/chant-source-review/palm23-verse2-tone-application-20261027-PROVISIONAL.gabc
+          processionale/data/research/processionale-palm23-verse2-tone-hypothesis-20261027.v1.json
