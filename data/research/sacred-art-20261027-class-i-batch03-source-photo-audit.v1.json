@@ -475,5 +475,27 @@
     ],
     "special_discovery": "Johann König - The Resurrection of Christ - 2017.192 - Cleveland Museum of Art.tiff: 11,243 x 14,927, ~480MiB on Wikimedia Commons. Better detail source but no storage/pixel inspection conducted.",
     "rights_vs_frame": "All above remain independently not publication-ready even if exact file rights verified."
+  },
+  "acquisition_run_20261027": {
+    "original_source_byte_audit": "data/research/sacred-art-20261027-class-i-original-byte-report.v1.json",
+    "original_source_run_time_utc": "2026-10-27T18:54:21.961891Z",
+    "original_source_attempts": 5,
+    "original_source_verified": 0,
+    "original_source_blocker": "HTTP 429 Too Many Requests from Wikimedia Commons on all five exact source files; do not retry bulk Commons in a tight loop.",
+    "museum_source_fallback_script": "scripts/research/audit_class_i_museum_images.py",
+    "museum_fallback_targets": [
+      "Cleveland Open Access API 2017.192 (Johann König)",
+      "NGA IIIF 1943.7.7 (Netherlandish Healing of Paralytic)"
+    ],
+    "museum_fallback_run_status": "OUTPUT_PENDING_NOT_CLAIMED_SUCCESS",
+    "workflow": ".github/workflows/sacred-art-original-source-audit.yml",
+    "commons_sha1_from_structured_records": {
+      "koenig-resurrection": "de5c983c0f4df218573836d0099e495b7084ec27",
+      "beuckelaer-easter-wednesday": "8bf8dfbedd099daf6892b4570964d1b5e07d6df2"
+    },
+    "zero_frame_passes": 0,
+    "photo_releases": 0,
+    "user_decisions_changed": 0,
+    "cost_eur": 0
   }
 }
