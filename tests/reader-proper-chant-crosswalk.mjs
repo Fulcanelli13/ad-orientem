@@ -9,7 +9,7 @@ import {
 
 const records=CHRISTMAS_DAY_PROPER_SCORES_1961;
 assert.equal(records.length,5);
-assert.equal(SCHOLA_SCORE_CATALOGUE.length,12,"Seven Ordinary and five Proper exemplars");
+assert.equal(SCHOLA_SCORE_CATALOGUE.length,17,"Seven Ordinary and ten source-gated Proper references");
 const expected={
   INTROIT:"GREGOBASE-72",GRADUAL:"GREGOBASE-1163",
   ALLELUIA_TRACT_SEQUENCE:"GREGOBASE-324",
@@ -21,12 +21,12 @@ for(const rec of records){
   assert.match(rec.sourceUrl,/gregobase\.selapa\.net\/chant\.php\?id=\d+/);
   assert.ok(rec.bookWitnesses.every(x=>/1961/.test(x)));
   assert.equal(rec.status,"SOURCE_MATCH_REQUIRED_NOT_DATE_ASSIGNED");
-  assert.equal(availableNativeScholaScores(rec.trackId).length,1);
+  assert.equal(availableNativeScholaScores(rec.trackId).length,2);
 }
 assert.equal(normalizeChantLatin("Púer nátus est nobis"),"puer natus est nobis");
 assert.equal(normalizeChantLatin("Caéli terræ"),"caeli terrae");
 const mapped={
-  schema:"ao-reader-proper-slots-v1",sourcePath:"Tempora/12-25-3",
+  schema:"ao-reader-proper-slots-v1",sourcePath:"Sancti/12-25m3",
   slots:Object.fromEntries([
     ["INTROIT", "Puer natus est nobis, et filius datus est nobis."],
     ["GRADUAL","Viderunt omnes fines terrae salutare Dei nostri."],
@@ -42,7 +42,7 @@ assert.equal(source.candidates.length,5);
 assert.deepEqual(Object.fromEntries(source.candidates.map(c=>[c.trackId,c.scoreId])),expected);
 assert.equal(scoreForSourceOwnedProperTrack(source,"COMMUNION")?.id,"GREGOBASE-1139");
 assert.equal(scoreForSourceOwnedProperTrack(source,"KYRIE"),null);
-assert.equal(source.candidates[0].sourcePath,"Tempora/12-25-3");
+assert.equal(source.candidates[0].sourcePath,"Sancti/12-25m3");
 assert.equal(source.candidates[0].certainty,"TEXT_MATCH_NOT_LOCAL_CHANT_OBSERVED");
 assert.equal(matchSourceOwnedProperScores({...mapped,sourcePath:""}).status,"SOURCE_UNREADY");
 assert.equal(matchSourceOwnedProperScores({...mapped,schema:"untrusted"}).status,"SOURCE_UNREADY");

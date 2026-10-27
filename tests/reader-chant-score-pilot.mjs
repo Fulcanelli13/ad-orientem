@@ -17,7 +17,7 @@ assert.equal(resolveNativeScholaScore({trackId:"KYRIE",selectedScoreId:"UNKNOWN"
 assert.equal(resolveNativeScholaScore({trackId:"UNKNOWN",selectedScoreId:SCHOLA_SCORE_PILOT.id}).score,null);
 assert.equal(availableNativeScholaScores("KYRIE").length,3);
 assert.equal(availableNativeScholaScores("SANCTUS_BENEDICTUS").length,1);
-assert.equal(SCHOLA_SCORE_CATALOGUE.length,12);
+assert.equal(SCHOLA_SCORE_CATALOGUE.length,17);
 assert.equal(availableNativeScholaScores("GLORIA")[0].id,"GREGOBASE-961");
 assert.equal(availableNativeScholaScores("CREDO")[0].id,"GREGOBASE-749");
 assert.equal(availableNativeScholaScores("SANCTUS_BENEDICTUS")[0].id,"GREGOBASE-1384");
