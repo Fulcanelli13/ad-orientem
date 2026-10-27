@@ -10,6 +10,7 @@ import {
 import {createDailySessionTimer,sessionClockLabel} from "../src/pray/daily-session-timer.js";
 import {createDailyFormulationPreferenceStore} from "../src/pray/daily-formulation-preferences.js";
 import {APPROVED_DAILY_FORMULATION_MANIFEST_V1} from "../src/pray/daily-approved-formulations.js";
+import {auditDailyStageMigration,DAILY_PROPOSED_STAGE_COVERAGE,DAILY_LEGACY_RETAINED_EXTRAS} from "../src/pray/daily-sequence-migration-audit.js";
 
 const witness=(id,language,text,options={})=>({
   id,language,text,kind:"historical",releaseStatus:"cleared",
@@ -211,6 +212,26 @@ assert.equal(entries.size,0);
 const unavailable=createDailyFormulationPreferenceStore();
 assert.equal(unavailable.save(manifest,{selection:{offering:"alternative"}}).saved,false);
 assert.deepEqual(unavailable.load(manifest),{});
+
+// No reader sequence change is allowed without accounting for all existing
+// canonical card IDs and specifically adding the absent devotional purposes.
+const migration=auditDailyStageMigration();
+assert.deepEqual([migration.morning.legacyCount,migration.evening.legacyCount],[11,13]);
+assert.equal(migration.morning.safe,true,JSON.stringify(migration.morning));
+assert.equal(migration.evening.safe,true,JSON.stringify(migration.evening));
+assert.equal(migration.morning.proposedStageCount,9);
+assert.equal(migration.evening.proposedStageCount,9);
+assert.equal(migration.morning.missingStageCoverage,3);
+assert.equal(migration.evening.missingStageCoverage,4);
+assert.equal(migration.morning.completeStageCoverage,4);
+assert.equal(migration.evening.completeStageCoverage,2);
+assert.ok(DAILY_PROPOSED_STAGE_COVERAGE.morning.find(s=>s.id==="offering").coverage==="missing",
+ "A historical offering cannot be slotted into an existing non-offering card");
+assert.ok(DAILY_PROPOSED_STAGE_COVERAGE.evening.find(s=>s.id==="night-protection").coverage==="missing");
+assert.ok(DAILY_LEGACY_RETAINED_EXTRAS.morning.includes("sacrament_act_of_contrition"),
+ "Original Morning Contrition must be preserved until editorially decided");
+assert.ok(DAILY_LEGACY_RETAINED_EXTRAS.evening.includes("foundations_glory_be"),
+ "Evening doxology is not a final commendation and must be retained");
 
 assert.equal(MORNING_PRAYER_SEQUENCE_V381.length,11,"Canonical morning reader is unchanged");
 assert.equal(EVENING_PRAYER_SEQUENCE_V381.length,13,"Canonical evening reader is unchanged");
