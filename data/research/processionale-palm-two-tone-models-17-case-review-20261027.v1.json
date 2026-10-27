@@ -3153,8 +3153,11 @@
         "secondAccent": "natiónes: ó (index 8)",
         "sourceRuleStructuralFit": true,
         "sourceMusicalVariantProof": false,
-        "renderPending": true,
-        "approved": false
+        "renderPending": false,
+        "approved": false,
+        "renderedAt260420800": true,
+        "renderRunId": 40539921610,
+        "humanMusicalApproval": false
       },
       {
         "id": "PALM-R02-PS46-L09",
@@ -3166,7 +3169,10 @@
         "sourceRuleStructuralFit": true,
         "sourceMusicalVariantProof": false,
         "renderedAt260420800": true,
-        "approved": false
+        "approved": false,
+        "renderPending": false,
+        "renderRunId": 40539921610,
+        "humanMusicalApproval": false
       }
     ],
     "unresolvedL05": {
@@ -3283,6 +3289,15 @@
       "attestedAntiphonStructureDoesNotApproveGabc": true,
       "musicEditorApprovalCount": 0,
       "approvedCompletePalmScores": 0
+    },
+    "technicalProof": {
+      "runId": 40539921610,
+      "jobId": 122315217952,
+      "totalSuccessfulSvgViewportChecks": 192,
+      "completeOriginalResearchCandidates": 17,
+      "additionalUnapprovedSourceRuleAlternatives": 2,
+      "sourceApprovedScores": 0,
+      "note": "Both Psalm46 L08 and L09 alternate GABCs rendered at 260/420/800. Does not certify text underlay, artificial accents, original 1961 melody, or publication."
     }
   }
 }
