@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { properToReaderSlots, assertReaderProperReady } from "../src/mass/proper-reader-slots.js";
 import {composeProperReaderParagraphs} from "../src/mass/proper-reader-composition.js";
+import {inspect1962PluralMartyrsFrenchOrationSource} from "../src/mass/1962-plural-martyr-french-source.js";
 
 const t=(lat,en)=>({lat,en,fr:""});
 const proper={
@@ -176,5 +177,48 @@ const unmarkedReading=properToReaderSlots({...proper,
 }).slots.EPISTLE_OR_LESSON.data.paragraphs[0];
 assert.equal(unmarkedReading.latin,"Léctio. Deo grátias.");
 assert.equal(unmarkedReading.vernacular,"Reading. Thanks be to God.");
+
+// Original 1962 plural female-Martyr Common: the public French donor's
+// Secret/Postcommunion are singular while the Latin names two martyrs.
+const martyrLatin="Oratio pro sanctarum Martyrum N. et N. sollemnitate.";
+const badFrench="Prière pour votre sainte Martyre N.";
+const goodFrench="Prière pour vos saintes Martyres N. et N.";
+const affected={...frenchProper,sourcePath:"Commune/C6b",
+  secrets:[{lat:martyrLatin,fr:badFrench,en:"Prayer for holy Martyrs N. and N."}],
+  postcommunions:[{lat:martyrLatin,fr:badFrench,en:"Holy Martyrs N. and N."}],
+};
+const untouched=JSON.stringify(affected);
+const hold=inspect1962PluralMartyrsFrenchOrationSource(affected,"SECRET_SET");
+assert.equal(hold.status,"SOURCE_CONFLICT");
+assert.equal(hold.latinPluralNameCount,2);
+assert.equal(hold.frenchNameCount,1);
+const guarded=properToReaderSlots(affected,{language:"fr"});
+assert.equal(guarded.slots.SECRET_SET.status,"MISSING");
+assert.equal(guarded.slots.POSTCOMMUNION_SET.status,"MISSING");
+assert.ok(guarded.missing.includes("SECRET_SET")&&guarded.missing.includes("POSTCOMMUNION_SET"));
+assert.equal(guarded.slots.COLLECT_SET.status,"READY","Other proper prayers unchanged");
+assert.equal(JSON.stringify(affected),untouched,"Never modify the resolved Proper source");
+
+const inheritedNonVirgin=properToReaderSlots({...affected,sourcePath:"Commune/C7b"},{language:"fr"});
+assert.equal(inheritedNonVirgin.slots.SECRET_SET.status,"MISSING");
+assert.equal(inheritedNonVirgin.slots.POSTCOMMUNION_SET.status,"MISSING");
+const exactPlural=properToReaderSlots({...affected,
+  secrets:[{lat:martyrLatin,fr:goodFrench}],
+  postcommunions:[{lat:martyrLatin,fr:goodFrench}],
+},{language:"fr"});
+assert.equal(exactPlural.slots.SECRET_SET.status,"READY");
+assert.equal(exactPlural.slots.POSTCOMMUNION_SET.status,"READY");
+assert.equal(exactPlural.ready,true,"Valid plural translation remains permitted");
+// English is source-complete; the French hold cannot spill across languages.
+const englishUnchanged=properToReaderSlots({...proper,sourcePath:"Commune/C6b",
+  secrets:[{lat:martyrLatin,en:"Saints N. and N."}],
+  postcommunions:[{lat:martyrLatin,en:"Saints N. and N."}],
+},{language:"en"});
+assert.equal(englishUnchanged.ready,true);
+const outsideOwner=properToReaderSlots({...affected,sourcePath:"Sancti/07-10"},{language:"fr"});
+assert.equal(outsideOwner.ready,true,
+  "The donor exception must not block unrelated selected Masses");
+assert.equal(inspect1962PluralMartyrsFrenchOrationSource(affected,"COLLECT_SET"),null,
+  "The printed plural Collect was not the known French source defect");
 
 console.log("Proper → reader slots: PASS — EN/FR vernacular projection, certified suppressions, no duplicate Gradual/Alleluia.");
