@@ -3120,5 +3120,169 @@
       "sourceOriginalRejectedDraftPreserved": true,
       "productionEligible": false
     }
+  },
+  "batch38SecondaryAccentAndAntiphon": {
+    "batch": 38,
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "TWO_SOURCE_GRAMMAR_REPAIR_HYPOTHESES_ONE_HARD_ARTIFICIAL_STRESS_HOLD_AND_VERIFIED_ANTIPHON_PAIR_SEQUENCE",
+    "sourceList": [
+      {
+        "name": "Graduale Romanum 1961 Psalm 23 and Psalm 46",
+        "url": "https://s9.imslp.org/files/imglnks/usimg/1/1a/IMSLP52097-PMLP108040-GR6_Proprium_et_Commune_pro_aliquibus_locis,_Psalmi.pdf",
+        "sourceRole": "Original 1961 Psalm text and one fully notated opening verse each. URL spelling here pending correction."
+      },
+      {
+        "name": "Psallite Sapienter 1962 musician guide paragraphs 102–104",
+        "url": "https://media.churchmusicassociation.org/books/7848318-Psallite-Sapienter-A-Musicians-Guide-to-the-Extraordinary-Form.pdf#page=37",
+        "sourceRole": "Palm distribution antiphon repeated after pairs, and optional early termination with Gloria Patri and antiphon."
+      },
+      {
+        "name": "Text underlay rules",
+        "url": "https://npm.org/wp-content/uploads/2017/07/Rules-for-Text-Underlay-of-the-Psalm-Text-at-the-Psalm-Tone-Cadence.pdf",
+        "sourceRole": "Artificial accent two syllables after previous true accent and no more than two unaccented syllables between melodic accents"
+      }
+    ],
+    "secondaryAccentAlternatives": [
+      {
+        "id": "PALM-R02-PS46-L08",
+        "sourcePointer": "data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json",
+        "field": "cases[id=PALM-R02-PS46-L08].batch38SecondaryAccentAlternative",
+        "naturalAccent": "súper: su (index 4)",
+        "artificialAccent": "natiónes: na (index 6)",
+        "secondAccent": "natiónes: ó (index 8)",
+        "sourceRuleStructuralFit": true,
+        "sourceMusicalVariantProof": false,
+        "renderPending": true,
+        "approved": false
+      },
+      {
+        "id": "PALM-R02-PS46-L09",
+        "sourcePointer": "data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json",
+        "field": "cases[id=PALM-R02-PS46-L09].batch37ArtificialAccentAlternative",
+        "naturalAccent": "populórum: ló (index 5)",
+        "artificialAccent": "congregáti: con (index 7)",
+        "secondAccent": "congregáti: gá (index 9)",
+        "sourceRuleStructuralFit": true,
+        "sourceMusicalVariantProof": false,
+        "renderedAt260420800": true,
+        "approved": false
+      }
+    ],
+    "unresolvedL05": {
+      "id": "PALM-R02-PS46-L05",
+      "printedLatin": "Ascéndit Deus cum exsultatióne",
+      "syllabification": "As-cén-dit De-us cum ex-sul-ta-ti-ó-ne",
+      "indexedSyllables": [
+        [
+          "cén",
+          1
+        ],
+        [
+          "De",
+          3
+        ],
+        [
+          "cum",
+          5
+        ],
+        [
+          "ex",
+          6
+        ],
+        [
+          "sul",
+          7
+        ],
+        [
+          "ta",
+          8
+        ],
+        [
+          "ó",
+          10
+        ]
+      ],
+      "proposedExistingFirstAccentIndex": 8,
+      "naturalAccentsBeforeThat": [
+        1,
+        3
+      ],
+      "distanceFromNearestTrueAccentToExistingArtificial": 5,
+      "nearestTrueAccent": "Déus: De(index 3)",
+      "ruleRequiresTwoAfterTrueAccent": true,
+      "verdict": "CURRENT_ARTIFICIAL_TA_AT_INDEX_8_NOT_JUSTIFIED_BY_TWO_AFTER_RULE",
+      "aSingleSecondaryFromDeAtCumIndex5StillLeavesFourUnaccentedBeforeO": true,
+      "automaticNoteCorrectionPermitted": false,
+      "requiredEvidence": "Authoritative special mediant adaptation / secondary stress for longer exsultatióne; must not freely invent additional melodic accents."
+    },
+    "psalm23Antiphon": {
+      "antiphon": "Pueri Hebraeorum portantes",
+      "versesInPrintedSelection": [
+        1,
+        2,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "initialAntiphonFirst": true,
+      "pairEndVerseNumbers": [
+        2,
+        8,
+        10,
+        12
+      ],
+      "explicitAntiphonReturnAfterFinalDoxology": true,
+      "liturgicalLocation": "Blessing/distribution of palms",
+      "flexibleIfDistributionEndsEarly": true
+    },
+    "psalm46Antiphon": {
+      "antiphon": "Pueri Hebraeorum vestimenta",
+      "versesInPrintedSelection": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "initialAntiphonFirst": true,
+      "pairEndVerseNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12
+      ],
+      "explicitAntiphonReturnAfterFinalDoxology": true,
+      "liturgicalLocation": "Blessing/distribution of palms",
+      "flexibleIfDistributionEndsEarly": true
+    },
+    "scholaEventIntegration": {
+      "sourceClass": "RUBRICALLY_ATTESTED_EVENT_ORDER_RESEARCH_ONLY",
+      "readOnlyEventHandoffToPR": "#1781",
+      "rhythm": "After each completed 2-verse pair in corresponding Psalm, and doxology at end, repeat its own Pueri Hebraeorum antiphon.",
+      "stopCondition": "If palms distribution ends earlier, sing doxology and final antiphon without claiming every intermediate pair had occurred.",
+      "noSpuriousSeparateAmenResponse": true,
+      "latinDefault": true,
+      "noReaderChange": true,
+      "noTimingEstimatesOrFabricatedDurations": true
+    },
+    "sourceNotes": {
+      "publicationMayNotUseMusicYet": true,
+      "attestedAntiphonStructureDoesNotApproveGabc": true,
+      "musicEditorApprovalCount": 0,
+      "approvedCompletePalmScores": 0
+    }
   }
 }
