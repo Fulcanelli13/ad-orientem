@@ -133,7 +133,7 @@ try{
  // no alternate Mass, second preflight or silent Gregorian default.
  const programmeUi=page.locator("[data-full-mass-chant]");
  assert.equal(await programmeUi.isVisible(),true);
- await programmeUi.locator("summary").click();
+ await programmeUi.locator("[data-full-mass-chant-heading]").click();
  assert.equal(await programmeUi.locator("[data-full-mass-chant-choice] option").count(),4);
  assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).chantProgramme.kyrieScoreId,null);
  await programmeUi.locator("[data-full-mass-chant-choice]").selectOption("GREGOBASE-2982");
