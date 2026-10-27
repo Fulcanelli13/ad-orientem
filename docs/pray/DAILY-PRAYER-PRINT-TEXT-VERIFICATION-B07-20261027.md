@@ -42,7 +42,7 @@ Machine-readable full text: `data/pray/daily-prayer-scan-checked-forms.b07.json`
 
 **English, Patrick F. Moran 1883:**
 - [Image p. 20, printed 2](https://en.wikisource.org/wiki/Page:The_Catholic_prayer_book.djvu/20): **Thanksgiving**, **Prayer for Necessary Grace**, **Good Intention**, three complete prayer paragraphs in original printed format.
-- Moran's Good Intention contains historical language about earning indulgences. Preserve it only as historical wording; **do not present any printed indemnity or indulgence offer as a current benefit**, or rewrite the prayer and claim historical identity.
+- Moran's Good Intention contains historical language about earning indulgences. Preserve it only as historical wording; **do not present any historical indulgence grant as a current benefit**, or rewrite the prayer and claim historical identity.
 
 Full chapter collation for Moran's recovered Night Prayer is **not yet** print-facsimile-certified beyond inspected p. 12. The existing research remains at source-text candidate status for its separate night prayers.
 
