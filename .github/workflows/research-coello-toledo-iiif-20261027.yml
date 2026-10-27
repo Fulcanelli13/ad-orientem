@@ -4,6 +4,7 @@ on:
     branches: [research/module-hero-pd-masters-20261026]
     paths:
       - '.github/workflows/research-coello-toledo-iiif-20261027.yml'
+      - 'scripts/art/acquire-coello-pristine-research.py'
   workflow_dispatch:
 permissions:
   contents: write
