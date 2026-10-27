@@ -121,9 +121,14 @@ function sourceOwned1962FeriaAndSaturday(id,date,rank,colour,sourcePath){
     rank===2&&colour==="white"&&weekday===0&&
     withinDays(actual,romanEasterUtc(year),21,21))
     return rule("PASCHALIS","489_A","SOURCE_MATCHED_THIRD_POST_EASTER_SUNDAY");
-  // The Corpus Christi donor contains competing older/versioned selectors
-  // 'Prefatio=Nat' and 'Prefatio=Sacramento'. 2020 optional Preface
-  // permissions cannot be inferred; keep this exact source UNMAPPED.
+  // ICRSP France independently states post-1960 Corpus Christi:
+  // Præfatio Communis, and the older Missal: Præfatio de Nativitate.
+  // 1960 §498 selects Common in the universal 1962 baseline. The later
+  // 2020 optional Eucharistic Preface is NOT an automatic entitlement.
+  if(id==="tempora:Pent01-4:1:w"&&sourcePath==="Tempora/Pent01-4"&&
+    rank===1&&colour==="white"&&weekday===4&&
+    withinDays(actual,romanEasterUtc(year),60,60))
+    return rule("COMMUNIS","498","ICRSP_POST_1960_CORPUS_CHRISTI_COMMON");
   return null;
 }
 
