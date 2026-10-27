@@ -77,6 +77,17 @@ export async function resolve1962AllSoulsAdditionalProper({
  }
  const text=Object.fromEntries(Object.entries(REQUIRED_SECTIONS).map(([name,section])=>
     [name,trilingualParsedProperSection(parsed,section)]));
+ // Two independent biblical witnesses and distinct Latin oration verify
+ // that a source reference is not silently falling back to the first Mass.
+ const references={
+   2:{epistle:/2\\s*Mach\\.?\\s*12:43-46/i,gospel:/Joann\\.?\\s*6:37-40/i},
+   3:{epistle:/Apoc\\.?\\s*14:13/i,gospel:/Joann\\.?\\s*6:51-55/i},
+ };
+ const witness=references[number];
+ if(!witness.epistle.test(text.epistle.lat)||
+    !witness.gospel.test(text.gospel.lat)||
+    text.collect.lat===String(first.collects?.[0]?.lat??""))
+   throw Error("ALL_SOULS_APPOINTED_READING_OR_COLLECT_CONFLICT:"+sourcePath);
  const next=Object.freeze({
    ...first,
    sourcePath,
