@@ -80,15 +80,21 @@ jobs:
             "records":[{"physical_site_context":anchor,"field":"venue_owner_type","subject_type":"VENUE",
               "subject_id":anchor,"value":"UNKNOWN","source_ids":[source],
               "source_type":"USER_SUBMISSION","source_url":"https://example.org/","recorded_at":"2026-10-26",
-              "evidence_excerpt":"Synthetic fixture only, not a verified statement","public_approval":False}]}
+              "evidence_excerpt":"Synthetic fixture only, not a verified statement","public_approval":False},
+              {"physical_site_context":anchor,"field":"una_cum","subject_type":"MINISTRY",
+               "subject_id":"invented-ministry-id-must-remain-held","value":"NO","source_ids":[source],
+               "source_type":"USER_SUBMISSION","source_url":"https://example.org/","recorded_at":"2026-10-26",
+               "evidence_excerpt":"Synthetic fake ministry ID; must NOT satisfy a canonical identity gate","public_approval":False}]}
           open('/tmp/cl27-draft-test.json','w').write(json.dumps(draft))
           PY
           python3 tools/directory/validate-cl27-editorial-classification-drafts.py --db /tmp/cl27-mass-registry.sqlite --input /tmp/cl27-draft-test.json --report /tmp/cl27-draft-report.json
           python3 - <<'PY'
           import json
           r=json.load(open('/tmp/cl27-draft-report.json'))
-          assert r['summary']['submitted_drafts']==1
+          assert r['summary']['submitted_drafts']==2
           assert r['summary']['source_linked_pending_review']==1
+          assert r['summary']['unregistered_ministry_celebration_community_subjects']==1
+          assert r['records'][1]['review_gate']=='HOLD_SUBJECT_ID_NEEDS_CANONICAL_ENTITY_CROSSWALK'
           assert r['summary']['new_public_classifications']==0
           assert r['summary']['new_public_mass_times']==0
           PY
