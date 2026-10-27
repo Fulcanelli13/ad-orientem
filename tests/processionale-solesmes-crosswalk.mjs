@@ -1107,3 +1107,62 @@ test('Palm two source tone models classify seventeen editorial applications and 
  assert.equal(bulk.counts.scoreAssignedToProduction,0);
  assert.equal(bulk.controls.publicationAllowed,false);
 });
+
+
+test('Palm cadence bulk matrix identifies four source-owned ending families and three exceptions',()=>{
+ const d=readJSON('data/research/processionale-palm-four-cadence-families-17-case-20261027.v1.json');
+ const master=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
+ const raw23=readFileSync(new URL('../data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc',import.meta.url),'utf8');
+ const raw46=readFileSync(new URL('../data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc',import.meta.url),'utf8');
+ assert.equal(d.stage,'PALM-R02');
+ assert.equal(d.batch,28);
+ assert.equal(d.counts.uniqueEditorCases,17);
+ assert.equal(d.familyModels.length,4);
+ assert.equal(d.caseMatrix.length,17);
+ assert.equal(d.counts.directlyComparableAccentClassCases,4);
+ assert.equal(d.counts.adaptationAccentClassCases,10);
+ assert.equal(d.counts.separateExceptions,3);
+ assert.equal(d.counts.ps23TargetOccurrences,7);
+ assert.equal(d.counts.ps46TargetOccurrences,11);
+ assert.equal(d.counts.scoreApplicationsOutstanding,18);
+ assert.deepEqual(d.familyModels.map(x=>[x.id,x.caseCount,x.printedFirstVerseProvidesSameAccentClass]),[
+  ['PALM_PS23_PAROXYTONON_2',2,true],
+  ['PALM_PS23_PROPAROXYTONON_3',3,false],
+  ['PALM_PS46_PAROXYTONON_2',7,false],
+  ['PALM_PS46_PROPAROXYTONON_3',2,true]
+ ]);
+ assert.deepEqual(d.specialExceptions.map(x=>x.caseId),[
+  'PALM-R02-PS46-L09','PALM-R02-PS23-DOXO-L12','PALM-R02-PS46-DOXO-L12'
+ ]);
+ assert.ok(d.specialExceptions.every(x=>x.automaticGabcAllowed===false));
+ assert.ok(d.familyModels.every(x=>!x.perCaseCadenceApproved&&!x.musicianEditorReviewed));
+ assert.ok(d.caseMatrix.every(x=>!x.hasHumanTextAccentVerified&&!x.hasHumanApprovedMelody));
+ assert.ok(d.caseMatrix.every(x=>!x.pitchGroupsAssignedToWholeVerse&&!x.fullGabcCandidateApproved));
+ assert.ok(d.caseMatrix.every(x=>x.releaseStatus==='EDITORIAL_HOLD_NO_PRODUCTION_ASSIGNMENT'));
+ const src=new Map(master.cases.map(x=>[x.id,x]));
+ for(const c of d.caseMatrix){
+   const base=src.get(c.id); assert.ok(base,c.id);
+   assert.equal(c.sourceToneModel,base.modelId);
+   assert.deepEqual(c.sourceOccurrenceIds,base.occurrenceIds);
+   assert.deepEqual(c.printedLatinSegments,base.sourceSegments);
+   assert.equal(c.terminalLexicalItem,base.terminalLexicalStressHypothesis.word);
+   assert.equal(c.flexRequired,Boolean(base.sourceSegments.flex));
+   assert.ok(c.reviewFamily.startsWith('PALM_PS'+c.psalm+'_TERMINATION_'));
+ }
+ assert.equal(d.caseMatrix.filter(x=>x.flexRequired).length,2);
+ const duo=d.caseMatrix.find(x=>x.id==='PALM-R02-PS23-L07');
+ assert.deepEqual(duo.sourceOccurrenceIds,['PALM-R02-PS23-L07','PALM-R02-PS23-L09']);
+ for(const m of d.familyModels.filter(x=>x.printedFirstVerseProvidesSameAccentClass)){
+  const archive=(m.psalm===23?raw23:raw46);
+  const a=m.sourceExemplar;
+  assert.ok(archive.includes(a.gabcTerminal));
+  for(const preparatory of a.preparatoryGroups)
+   assert.ok(archive.replace(/<[^>]+>/g,'').includes(preparatory));
+ }
+ assert.ok(!d.verificationMethod.fullGabcGenerationUntilEditorFormulaValidated);
+ assert.ok(d.verificationMethod.allowBatchCandidateGenerationAfterFourFamiliesAccepted);
+ assert.equal(d.release.allFourMelodicEndingFamiliesCertified,false);
+ assert.equal(d.release.editorialHumanApprovals,0);
+ assert.equal(d.release.scoreRuntimeAssignments,0);
+ assert.equal(d.release.publicationAllowed,false);
+});
