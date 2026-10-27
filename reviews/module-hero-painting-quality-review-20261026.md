@@ -1,0 +1,93 @@
+# Ad Orientem — real painting-photo fidelity review atlas
+**Source date:** 26 October 2026. **Status:** preliminary photographic QA from physically archived original bytes; **not artwork-release approval**.
+
+All 22 editorially selected **paintings are unchanged**. What is under review is which *photograph* best represents each painting, rather than the largest or brightest downloaded file.
+
+## Museum-issued original files — strongest first candidates
+
+These are actual source photos downloaded from the owning institutions. The following images are lighter, **source-derived preview copies** for human comparison; they are not the preserved original files.
+
+| Approved hero | Full artwork (scaled only to show) | Native-pixel detail | Preliminary visual judgement |
+|---|---|---|---|
+| Murillo — **Confession** (NGA 1948.12.1) | ![Full Murillo photo](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-museum-photos-20261026/assets/staged/module-hero-preview-jpegs/confession-whole-preview.jpg) | ![420px native detail](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-museum-photos-20261026/assets/staged/module-hero-preview-jpegs/confession-upper-detail.jpg) | **Promising.** Subdued authentic tonal modelling and fine ageing/craquelure visible. The whole painted scene is present. Verify colour fidelity and exact file rights before release. |
+| Ingres — **Adoration** (Met 2005.186) | ![Full Ingres photo](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-museum-photos-20261026/assets/staged/module-hero-preview-jpegs/adoration-whole-preview.jpg) | ![420px native detail](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-museum-photos-20261026/assets/staged/module-hero-preview-jpegs/adoration-upper-detail.jpg) | **Promising.** Fine face and paint-surface ageing are visible and not smoothed over. Embedded ICC missing; compare displayed colour with museum reference. |
+| Master of the Female Half-Lengths — **Seven Sorrows** (MNAC 008327-000) | ![Full Seven Sorrows photo](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-museum-photos-20261026/assets/staged/module-hero-preview-jpegs/sorrows-whole-preview.jpg) | ![420px native detail](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-museum-photos-20261026/assets/staged/module-hero-preview-jpegs/sorrows-upper-detail.jpg) | **Promising.** All seven roundels and sword are visible. Original age-related craquelure in gold halo/black robes should remain. Museum says artwork PD; digital photo permissions still pending. |
+
+## Public-domain source photos — check true painterly detail
+
+| Hero | Full artwork source-derived preview | Sampled native-pixel detail | QA risk |
+|---|---|---|---|
+| Guido Reni — St Michael | ![Reni](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/michael-whole-preview.jpg) | ![Reni detail](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/michael-upper-detail.jpg) | **Reproduction needs improvement/comparison.** 1,657×2,441 file is only 513 kB; soft areas require scrutiny rather than false 'high-res passed'. |
+| Caravaggio — Saint Jerome | ![Jerome](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/scripture-whole-preview.jpg) | ![Jerome detail](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/scripture-upper-detail.jpg) | **Further targeted detail review.** The sampled 420px tile hits black background, not face/hands; cannot evaluate alleged JPEG compression from this tile. |
+| Rubens — Resurrection | ![Rubens](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/regina-whole-preview.jpg) | ![Rubens detail](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/regina-upper-detail.jpg) | Promising texture. Preserve painting panel identity and Christ/banner in app. |
+| Gerrit van Honthorst — Shepherds | ![Honthorst](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/visit-whole-preview.jpg) | ![Honthorst detail](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/visit-upper-detail.jpg) | Credible dark candlelight; do not artificially lift darkness. The historic-looking lower-right arms need exact source research before any crop/edit, *not automatic watermark removal*. |
+| Meirelles — First Mass | ![Meirelles](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/mass-whole-preview.jpg) | ![Meirelles detail](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/mass-upper-detail.jpg) | Strong complete panorama. Hero must respect wide composition; do not centre-crop into portrait. |
+| Luca Giordano — Holy Souls | ![Giordano](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/souls-whole-preview.jpg) | ![Giordano detail](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/souls-upper-detail.jpg) | Preliminary pleasing detailed source; institutional colour calibration still unverified. |
+| Morlete Ruiz — Heart of Jesus | ![Sacred Heart](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/heart-jesus-whole-preview.jpg) | ![Sacred Heart detail](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/heart-jesus-upper-detail.jpg) | Full side roundels visible; do not lose iconography. |
+| Morlete Ruiz — Heart of Mary | ![Immaculate Heart](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/heart-mary-whole-preview.jpg) | ![Immaculate Heart detail](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/heart-mary-upper-detail.jpg) | Do not artificially alter colour to match companion painting. |
+
+## Holy Rosary — critical photographic choice
+
+Both source photos depict the **same approved** Lorenzo Lotto painting; different photographic composition:
+
+| File | Display | Verdict |
+|---|---|---|
+| Sailko **01**, 1,772×2,652, CC BY 3.0 | ![Full Lotto altarpiece](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/lotto-rosary-photo-comparison-20261026/assets/staged/module-hero-preview-jpegs/rosary-lotto-01-whole-preview.jpg) | **Eligible for complete altarpiece composition**; all fifteen medallions visible. Warm orange/yellow appearance and painterly detail require comparison with regional/institutional reference. Not approved as final photographic master. |
+| Sailko **11**, 2,304×3,456, CC BY 3.0 | ![Lotto detail photo](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/lotto-rosary-photo-comparison-20261026/assets/staged/module-hero-preview-jpegs/rosary-lotto-11-whole-preview.jpg) | **REJECT AS FULL HERO PHOTOGRAPH.** It is a **cropped central Virgin/Child detail** and removes much of the fifteen mysteries. Higher pixels are irrelevant. Keep the photo as a permitted detail illustration with Sailko credit. |
+
+| Yorck Project **whole altarpiece**, 1,880×2,886, public-domain candidate | ![Yorck full Lotto altarpiece](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/lotto-rosary-photo-comparison-20261026/assets/staged/module-hero-preview-jpegs/rosary-lotto-yorck-whole-preview.jpg) | **Provisionally PREFERRED PHOTOGRAPHIC SOURCE**: all fifteen scenes preserved, less yellow/orange cast and clearer iconography than Sailko 01 in the reviewed source-derived comparison. No ICC profile: museum colour calibration and native-pixel QA still pending. |
+
+![Yorck native medallion texture](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/lotto-rosary-photo-comparison-20261026/assets/staged/module-hero-preview-jpegs/rosary-lotto-yorck-upper-detail.jpg) ![Yorck native garment texture](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/lotto-rosary-photo-comparison-20261026/assets/staged/module-hero-preview-jpegs/rosary-lotto-yorck-centre-detail.jpg)
+
+The Yorck file's SHA-256 is `595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca`. **Source-photo preference is not an artwork or app release approval.** The permanent Lorenzo Lotto painting decision and all other editorial statuses are unchanged.
+
+## St Joseph
+
+The **complete National Gallery NG6276** photo (Philippe de Champaigne, *The Dream of Saint Joseph*) was acquired with original SHA-256 `d632ea2012825ecdccc760f50b7cc9107a30bf4a2349541742ef6f66a4987f9b`, 4,421×6,000 and 19.75 MB. [Research original](https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-joseph-original-20261026/assets/staged/module-hero-masters/joseph.jpg). Actual full-image and native-detail previews from that original were subsequently examined:
+
+![Full Saint Joseph](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-joseph-original-20261026/assets/staged/module-hero-preview-jpegs/joseph-whole-preview.jpg) ![Saint Joseph 420px native detail](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-joseph-original-20261026/assets/staged/module-hero-preview-jpegs/joseph-upper-detail.jpg)
+
+**Promising full-fidelity photograph:** subdued chiaroscuro, delicate flesh and drapery modelling, and surface details are preserved. It is still not released until rights, institution-calibrated colour, and app layout gates pass. We specifically did **not** substitute a small cropped thumbnail.
+
+## Required sign-off (none currently satisfied in full)
+
+- Exact correct museum accession and the **whole original painting**, with any deliberate detail treatment separately marked.
+- Original file bytes and SHA-256 permanently archived at €0, with source, photographer, and capture state.
+- Painterly **colour and light** faithful to authoritative museum reference; original impasto and craquelure preserved.
+- No uncorrected optical distortion, glare, invasive JPEG artefacts, artificial saturation, denoising or AI detail fabrication.
+- Exact source-file publication rights and any photographer attribution/licence link/change indication.
+- Both full-view and any mobile/desktop cropped arrangement explicitly approved and tested **inside the actual app**.
+
+Source quality status is **preliminary**, not production-approved. Main audit: [22-module master quality register](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/research/module-hero-artwork-production-readiness-2026-10-26.audit1.json).
+
+## Second acquisition (verified 2026-10-26) — exact photo quality matters
+
+The images below were actually captured as original unmodified source bytes (SHA-256 in the audit) and reviewed as original-derived previews. They are still **NOT approved for app release**.
+
+| Artwork | Actual photo | Painting-fidelity observation |
+|---|---|---|
+| **The Annunciation — Philippe de Champaigne**, Met 2004.31 | ![Full Met Annunciation](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-wave2-20261026/assets/staged/module-hero-preview-jpegs/angelus-met-whole-preview.jpg) | **Promising museum source**. Correct square painting, subtle original painted shadows and fabric; photograph includes the old outer panel boundary. CC0 claim is museum sourced. |
+| **Saints — Dürer GG838, framed altarpiece** | ![Actual altar with carved frame](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-wave2-20261026/assets/staged/module-hero-preview-jpegs/saints-khm-whole-preview.jpg) | Valuable **historic context photo**, but the painting becomes tiny with surrounding altar frame. DO NOT choose this as the default painted hero. |
+| **Saints — Dürer GG838, painting itself** | ![Dürer full original painting](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-wave2-20261026/assets/staged/module-hero-preview-jpegs/saints-gart-whole-preview.jpg) | **Provisionally preferred**. The entire multi-saint painted composition is visible, with painterly garment, facial and halation details surviving native-pixel preview. |
+| **Christ the King — Ambrosius Benson** | ![Benson Salvator Mundi](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-wave2-20261026/assets/staged/module-hero-preview-jpegs/king-whole-preview.jpg) | **Promising detailed image**. Native face and embroidered garment review confirms actual fine paint features. Remove nothing from original; trim photographic white background only after crop approval. |
+| **Our Lady of Perpetual Help** — specifically approved poster reproduction | ![Redemptorist poster scan](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-wave2-20261026/assets/staged/module-hero-preview-jpegs/perpetual-whole-preview.jpg) | Poster chosen by user is preserved, but local printed texture and edge noise visible. Do not falsely present as a direct painting/icon master or AI-smooth the poster. |
+| **Holy Spirit — Jean II Restout** | ![Photo with camera glare](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-wave2-20261026/assets/staged/module-hero-preview-jpegs/holy-spirit-whole-preview.jpg) | **REJECT THIS PHOTO for hero**. Strong reflections/glare and noise obstruct painting despite 4,037×2,444 dimensions; additionally copyright metadata on photo is contradictory. Painting remains selected. |
+| **Morning Prayer — Jules Breton** | ![Breton Song of the Lark](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-rescue-20261026/assets/staged/module-hero-preview-jpegs/morning-whole-preview.jpg) | **Promising** 2,548×3,300 public-domain linked photograph. Natural dawn atmosphere and genuine texture. AIC IIIF direct fetch failed with HTTP 403; use existing source as provisional reference, pending institutional colour comparison. |
+| **Historia Salutis — Gérôme (1855) museum-room photo** | ![Gérôme work in museum room with other paintings](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-rescue-20261026/assets/staged/module-hero-preview-jpegs/salvation-whole-preview.jpg) | **REJECT THIS PHOTO for hero**. 6,000×4,000 records the entire installation room, other paintings, people, glare and perspective. It is not a flat faithful image of Gérôme's large completed painting. Preserve as provenance/context only. |
+
+**Critical identity exclusion:** Getty's *The Age of Augustus, the Birth of Christ*, Getty 85.PA.226 (1852–54), is a **smaller preparatory study**, not the full finished **1855** Gérôme painting at the Musée de Picardie (RF 1983 92, 620×1014 cm). A higher-quality Getty scan must **never replace** the user-approved finished original.
+
+**Strict quality status:** no amount of added pixels rescues the Holy Spirit glare photo or the Gérôme installation panorama. Neither has been promoted. Complete 22-module editorial selections remain untouched. The remaining photographic acquisitions/clearances still prioritize Rome's original *Guardian Angel*, Frère's Wolverhampton *The Prayer*, a better Restout source, and the complete Gérôme painting.
+
+## Additional Saint Michael source test — two worse higher-pixel photographs
+
+The exact Guido Reni original was checked using two more actually acquired Commons originals, each with source hash and attribution terms recorded.
+
+| Candidate | Photo evidence | Decision |
+|---|---|---|
+| Sailko, 2,112×2,816, CC BY-SA 3.0 | ![Reni altarpiece angled](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/reni-faithful-photographic-comparison-20261026/assets/staged/module-hero-preview-jpegs/reni-sailko-whole-preview.jpg) | **REJECT PHOTO** for hero. Perspective/keystone skew, reflected light and reduced subject clarity. |
+| Church documentation, 5,152×3,864, CC BY-SA 4.0 | ![Reni painting within ornate chapel](https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/reni-faithful-photographic-comparison-20261026/assets/staged/module-hero-preview-jpegs/reni-church-whole-preview.jpg) | **REJECT PHOTO** for hero. Huge decorative enclosure and concentrated spotlight glare on the artwork despite larger original size. |
+
+The existing modest 1,657×2,441 image is **still better as a complete flat-looking representation** than either of these newly found larger photos. It remains provisional because its compressed painted detail may be poor. Do not substitute any other copy after Reni.
+
+**Museum-quality access exceptions:** [source-by-source €0 acquisition request dossier](https://github.com/Fulcanelli13/ad-orientem/blob/main/data/research/module-hero-free-image-access-exceptions-20261026.md). Messages are prepared as research briefs only; they have not been sent.

@@ -1,0 +1,40 @@
+name: Museum hero-source research photos (€0)
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/module-hero-museum-source-20261026.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hero-museum-source-20261026
+  cancel-in-progress: false
+
+jobs:
+  institutional-photo-acquisition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Acquire official Met, NGA, and MNAC photos to review staging only
+        run: python scripts/art/acquire-museum-module-hero-photos.py
+      - name: Generate unenhanced native-pixel inspection sheets
+        run: python scripts/art/review-module-hero-quality.py
+      - name: Permanently preserve originals and their reports on an isolated review branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c research/module-hero-museum-photos-20261026
+          git add -f assets/staged/module-hero-masters/ assets/staged/module-hero-quality-reviews/ data/research/module-hero-museum-acquisition-20261026.json
+          if ! git diff --cached --quiet; then
+            git commit -m "research(art): stage institutional hero photo bytes without visual approval"
+            git push --set-upstream origin research/module-hero-museum-photos-20261026
+          fi
+      - name: State release boundary
+        run: echo "Nothing published. All files remain blocked pending visual fidelity, legal and crop QA."

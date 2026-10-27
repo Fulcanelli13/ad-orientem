@@ -1,0 +1,33 @@
+name: Lotto Rosary 2-source fidelity comparison (€0)
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/lotto-photo-fidelity-20261026.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  archive-and-inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Verify CC BY 3.0 at source and stage both photo originals
+        run: python scripts/art/acquire-lotto-photo-pair.py
+      - name: Preserve unchanged photos and source provenance on isolated research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c research/lotto-rosary-photo-comparison-20261026
+          git add -f data/research/lotto-rosary-photo-comparison-20261026.json
+          if [ -d assets/staged/module-hero-comparisons ]; then
+            git add -f assets/staged/module-hero-comparisons/
+          fi
+          git commit -m "research(art): archive two licensed Lotto photographs for painting-quality review"
+          git push --set-upstream origin research/lotto-rosary-photo-comparison-20261026
+      - name: Publication boundary
+        run: echo "Do not deploy photos; painterly fidelity, attribution placement and crops require human approval."

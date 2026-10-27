@@ -1,0 +1,37 @@
+name: Lotto third faithful full-artwork comparison
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/lotto-third-photo-20261026.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  compare-original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - run: |
+          cp scripts/art/acquire-lotto-yorck-third-photo.py /tmp/lotto-third.py
+          cp scripts/art/make-module-hero-review-previews.py /tmp/lotto-previews.py
+      - name: Download third full altarpiece on existing isolated Rosary branch
+        env:
+          AO_HERO_PREVIEW_INPUT: assets/staged/module-hero-comparisons
+        run: |
+          git fetch origin research/lotto-rosary-photo-comparison-20261026
+          git switch -C research/lotto-rosary-photo-comparison-20261026 origin/research/lotto-rosary-photo-comparison-20261026
+          python /tmp/lotto-third.py
+          python /tmp/lotto-previews.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f assets/staged/module-hero-comparisons/rosary-lotto-yorck.jpg assets/staged/module-hero-preview-jpegs/ data/research/lotto-rosary-yorck-third-witness-20261026.json
+          git commit -m "research(art): archive third complete Lotto photograph with QA previews"
+          git push origin research/lotto-rosary-photo-comparison-20261026
+      - run: echo "The Lotto painting remains selected; photographic quality verdict is separate."
+
+# Research retry: corrected JSON decode; same original image identity and rights gates.

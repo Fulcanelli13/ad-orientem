@@ -1,0 +1,35 @@
+name: Guido Reni source-photo comparison
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/module-hero-reni-fidelity-20261026.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  compare-original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Download exact original Rome painting photos with checksums
+        run: python3 scripts/art/acquire-reni-alternate-originals.py
+      - name: Make true-source painting-quality preview tiles
+        env:
+          AO_HERO_PREVIEW_INPUT: assets/staged/reni-alt-source
+        run: python3 scripts/art/make-module-hero-review-previews.py
+      - name: Preserve images and provenance permanently on a separate branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c research/reni-faithful-photographic-comparison-20261026
+          git add -f data/research/reni-painting-fidelity-20261026.json
+          if [ -d assets/staged/reni-alt-source ]; then git add -f assets/staged/reni-alt-source; fi
+          if [ -d assets/staged/module-hero-preview-jpegs ]; then git add -f assets/staged/module-hero-preview-jpegs; fi
+          git commit -m "research(art): archival Reni original photos and fidelity comparisons, no app changes"
+          git push --set-upstream origin research/reni-faithful-photographic-comparison-20261026
+      - run: echo "Research only, CC-by/sharealike obligations not yet cleared for app publication."
