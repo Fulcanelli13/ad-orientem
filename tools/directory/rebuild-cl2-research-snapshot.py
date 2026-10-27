@@ -182,7 +182,7 @@ CREATE VIEW unified_provider_census_by_family AS
                 disposition='NON_WORSHIP_OR_AMBIGUOUS_SOURCE_ID_UNMATCHED'
                 g0_id=None;candidate_id=None
                 family_counts['not_worship_or_ambiguous']+=1
-            db.execute('INSERT INTO unified_provider_coverage VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
+            db.execute('INSERT INTO unified_provider_coverage VALUES (?,?,?,?,?,?,?,?,?,?,?)',
                        (family,rid,cc,name,kind,path,disposition,
                         rid if already else None,g0_id,candidate_id,
                         json.dumps(entry,ensure_ascii=False,separators=(',',':'))))
