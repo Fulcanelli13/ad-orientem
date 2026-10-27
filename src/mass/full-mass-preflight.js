@@ -420,10 +420,11 @@ export function mountFullMassPreflight({
        properPath==="Sancti/11-02m1"&&
        ["","mass_of_day"].includes(String(legacy?.requestedCelebrationId??""))&&
        ["","mass_of_day"].includes(String(legacy?.celebrationId??""));
+    const chosenAllSoulsMass=allSoulsDay?getAllSoulsMassChoice(legacy):1;
     const selector=root.querySelector("[data-ao-all-souls-choices]");
     selector.hidden=!allSoulsDay;
     if(allSoulsDay){
-      const massNumber=getAllSoulsMassChoice(legacy);
+      const massNumber=chosenAllSoulsMass;
       selector.querySelector("[data-ao-all-souls-heading]").textContent=l(
         "All Souls — Mass formulary","Commémoration des fidèles défunts — formulaire");
       selector.querySelector("[data-ao-all-souls-note]").textContent=l(
@@ -442,7 +443,10 @@ export function mountFullMassPreflight({
     const word=(selector,en,frText)=>{
       const node=folio?.querySelector(selector);if(node)node.textContent=l(en,frText);
     };
-    const displayTitle=summary.actualTitle||summary.kindLabel;
+    const displayTitle=(summary.actualTitle||summary.kindLabel)+(
+      allSoulsDay&&chosenAllSoulsMass>1
+        ?(chosenAllSoulsMass===2?l(" · Second Mass"," · Deuxième messe"):
+           l(" · Third Mass"," · Troisième messe")):"");
     word("[data-folio-date]",date,""+date);
     word("[data-folio-kind]",summary.kindLabel,summary.kindLabel);
     word("[data-folio-celebration]",displayTitle,displayTitle);
@@ -612,6 +616,8 @@ export function mountFullMassPreflight({
     const observed=legacy?.sourceDiagnostics?.actualMassSelection==="OBSERVED_SOURCE_DAY";
     const proper=legacy?.proper?.data??legacy?.proper??null;
     const ownerPath=String(legacy?.properSource??proper?.sourcePath??"").trim();
+    const effectiveOwnerPath=allSoulsDay&&chosenAllSoulsMass>1
+      ?"Sancti/11-02m"+chosenAllSoulsMass:ownerPath;
     const review=root.querySelector("[data-full-mass-review]");
     root.querySelector("[data-full-mass-review-summary]").textContent=l(
       "Review Mass and Proper","Vérifier la messe et le propre");
@@ -623,7 +629,7 @@ export function mountFullMassPreflight({
       [l("Celebration","Célébration"),summary.kindLabel+(summary.actualTitle?" · "+summary.actualTitle:"")],
       [l("Form","Forme"),summary.formLabel],
       [l("Reader","Lecture"),summary.readerMode],
-      [l("Source of Proper","Source du propre"),ownerPath||l("Resolved by calendar","Résolu par le calendrier")],
+      [l("Source of Proper","Source du propre"),effectiveOwnerPath||l("Resolved by calendar","Résolu par le calendrier")],
     ];
     if(observed){
       entries.push([l("Source feast date","Date de la fête source"),
