@@ -297,6 +297,101 @@ try{
       sourcePath:x.properSourcePath||null,
       ...x.prefaceReview}))
   },null,2)+"\n","utf8");
+  // Full 194-case backlog is derived from ACTUAL 2026 principal source rows.
+  // The 142-slot Sanctoral witness register was checked separately against
+  // original Latin source files. Never turn original rule observations into
+  // an editor's approval of a Mass, Preface, translation or local practice.
+  const sanctoralScreen=JSON.parse(await readFile(resolve(root,
+    "data/research/1962-sanctoral-preface-source-screen-20261027.v1.json"),"utf8"));
+  assert.equal(sanctoralScreen.schema,"AO_1962_SANCTORAL_PREFACE_SCREEN_20261027_V1");
+  assert.equal(sanctoralScreen.cases?.length,142);
+  const uniquePath=new Map(sanctoralScreen.cases.map(x=>[x.canonicalSourcePath,x]));
+  assert.equal(uniquePath.size,142,"Source-file screen has duplicate identities");
+  const cohorts={
+    SANCTORAL_COMMON_FIRST_PASS:[],
+    TEMPORAL_FORM_RULE_UNMAPPED:[],
+    SATURDAY_BVM_COMMON_UNMAPPED:[],
+    GENERIC_FERIA_UNMAPPED:[],
+    LATER_OPTIONAL_PREFACE_AUTHORITY:[],
+    SOURCE_MATCHED_SEASONAL_FERIA:[],
+  };
+  for(const row of rows){
+    const id=row.mainId,review=row.prefaceReview,sourcePath=row.properSourcePath;
+    let group=null;
+    if(review?.status==="RULE_TEXT_AGREE"&&
+       /^SOURCE_MATCHED_INHERITED_(?:PASCHAL|ASCENSION)_FERIA$/.test(review.basis??""))
+      group="SOURCE_MATCHED_SEASONAL_FERIA";
+    else if(review?.status==="UNMAPPED"){
+      if(id.startsWith("sancti:")){
+        group=review.actual==="COMMUNIS"?"SANCTORAL_COMMON_FIRST_PASS":
+          "LATER_OPTIONAL_PREFACE_AUTHORITY";
+      }else if(id.startsWith("tempora:"))group="TEMPORAL_FORM_RULE_UNMAPPED";
+      else if(id.startsWith("commune:"))group="SATURDAY_BVM_COMMON_UNMAPPED";
+      else if(id===":feria:4:w")group="GENERIC_FERIA_UNMAPPED";
+      else throw Error("Unknown unmapped source-family: "+row.date+" "+id);
+    }
+    if(!group)continue;
+    const witness=uniquePath.get(sourcePath);
+    cohorts[group].push({
+      date:row.date,principalId:id,sourcePath,
+      heading:review.heading,observedCategory:review.actual,
+      decision:review.status,expected:review.expected,
+      ruleClause:review.clause,evidenceUrl:review.sourceUrl,
+      independentSourceWitness:witness?{
+        originalUrl:witness.upstreamSourceUrl,
+        originalPrefatioRuleTokens:witness.upstreamRuleTokens,
+        sourceScreenStatus:witness.caseStatus,
+        note:witness.reviewNote,
+      }:null,
+      autoPublish:false,changesReader:false,
+    });
+  }
+  const sizes=Object.fromEntries(Object.entries(cohorts).map(([k,v])=>[k,v.length]));
+  assert.deepEqual(sizes,{
+    SANCTORAL_COMMON_FIRST_PASS:142,
+    TEMPORAL_FORM_RULE_UNMAPPED:19,
+    SATURDAY_BVM_COMMON_UNMAPPED:12,
+    GENERIC_FERIA_UNMAPPED:10,
+    LATER_OPTIONAL_PREFACE_AUTHORITY:2,
+    SOURCE_MATCHED_SEASONAL_FERIA:9,
+  },"Bulk source cohorts changed: reconcile before reporting any coverage gain");
+  assert.equal(Object.values(sizes).reduce((a,b)=>a+b,0),194,
+    "The original 194-case worklist must account for every promotion and still-withheld case");
+  for(const x of cohorts.SANCTORAL_COMMON_FIRST_PASS){
+    assert.ok(x.independentSourceWitness,"One of the 142 source identities was never screened: "+x.date);
+    assert.ok(x.sourcePath.startsWith("Sancti/"));
+  }
+  assert.equal(sanctoralScreen.cases.filter(x=>x.upstreamRuleTokens.length).length,11);
+  const exactPromotions=["2026-04-15","2026-04-16","2026-04-17","2026-04-20",
+    "2026-04-23","2026-05-06","2026-05-08","2026-05-21","2026-05-22"];
+  assert.deepEqual(cohorts.SOURCE_MATCHED_SEASONAL_FERIA.map(x=>x.date),
+    exactPromotions,"The adopted inherited-seasonal source family changed");
+  assert.equal(summary.prefaceReview.unmapped,185);
+  assert.equal(summary.prefaceReview.ruleAndTextAgree,128);
+  assert.equal(summary.prefaceReview.sourceConflict,50);
+  await writeFile(resolve(outputDir,"1962-2026-preface-bulk-triage.json"),JSON.stringify({
+    schema:"AO_1962_PREFACE_2026_BULK_TRIAGE_V1",
+    year:2026,sourceAuditRun:"Live 1962 shared canonical resolver and independent Preface audit",
+    sourceRegister:"data/research/1962-sanctoral-preface-source-screen-20261027.v1.json",
+    totalHistoricalUnmappedWorklist:194,
+    newlySourceMatchedWithheldFromEditorialApproval:9,
+    stillUnmapped:185,
+    stillRawSourceConflicts:50,
+    independentPrefacesEditoriallyCertified:0,
+    groupSizes:sizes,
+    sourceScope:"GENERAL_ROMAN_1962",
+    automaticTextReplacement:false,automaticPublication:false,
+    cohortRows:cohorts,
+  },null,2)+"\n","utf8");
+  console.log("CALENDAR_1962_PREFACE_BULK_TRIAGE="+JSON.stringify({
+    groupSizes:sizes,matchedSeasonalFerias:9,unmapped:185,
+    originalUnmappedWorklist:194,
+    originalSanctoralSourcesScreened:142,
+    sourcePrefatioDirectivesObserved:11,
+    unverifiedSourceSelectionsRemaining:185,
+    editoriallyCertified:0,
+  }));
+
   console.log("CALENDAR_1962_YEAR_AUDIT_SUMMARY="+JSON.stringify(summary));
   console.log("CALENDAR_1962_YEAR_AUDIT_TOP_FINDINGS="+JSON.stringify(discrepancies.slice(0,30).map(x=>({date:x.date,problems:x.problems,title:x.actual?.title,rank:x.actual?.rawRank,color:x.actual?.rawColour}))));
   assert.equal(rows.length,365,"Production resolver sweep must cover every day of 2026");
