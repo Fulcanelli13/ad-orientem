@@ -62,6 +62,10 @@ try{
  // Optional session timer stays subordinate to the existing prayer card.
  // No release-approved historical witnesses exist yet: source tabs stay hidden.
  assert.equal(await page.locator("#aoPray435930 .aoDailyFormulationChoices").count(),0);
+ assert.equal(await page.locator("#aoPray435930 .aoDailyLengthChoices").count(),0,
+  "An unapproved Short/Complete profile must not appear on the real phone reader");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-daily-formulation]").count(),0,
+  "No unapproved historical prayer should render in the existing reader");
  assert.equal(await page.locator("#aoPray435930 [data-tp381-timer-toggle]").count(),1);
  assert.equal(await page.locator("#aoPray435930 .aoDailyClockPanel").count(),0);
  const beforeTimerCard=await page.locator("#aoPray435930 .aoDevoCard").evaluate(el=>{
