@@ -68,7 +68,7 @@
         9
       ],
       "sourceSectionAccents": {
-        "flex": "Attóllite, portae, capita vestra,",
+        "flex": "Attóllite, portae, cápita vestra,",
         "medial": "et attóllite vos, fores antíquae,",
         "termination": "ut ingrediátur rex glóriae!"
       },
@@ -92,6 +92,10 @@
         {
           "section": "termination",
           "word": "glóriae"
+        },
+        {
+          "section": "flex",
+          "word": "cápita"
         }
       ],
       "transcriptionStatus": "VISIBLE_ORTHOGRAPHIC_ACCENTS_PARTIAL_DIPLOMATIC_SOURCE_WITNESS",
@@ -471,7 +475,7 @@
       "printedLine": 11,
       "printedPage": "143**",
       "printedAccentText": {
-        "medial": "Gloria Patri, et Fílio,",
+        "medial": "Glória Patri, et Fílio,",
         "termination": "et Spirítui Sancto."
       },
       "completePointingApproved": false,
@@ -495,7 +499,7 @@
       "printedLine": 11,
       "printedPage": "144**",
       "printedAccentText": {
-        "medial": "Gloria Patri, et Fílio,",
+        "medial": "Glória Patri, et Fílio,",
         "termination": "et Spirítui Sancto."
       },
       "completePointingApproved": false,
@@ -520,7 +524,7 @@
     "doxologyToneApplications": 4,
     "totalPendingMusicalApplications": 18,
     "distinctReviewItemsIncludingEachPsalmsDoxology": 17,
-    "printedAccentedWordsTranscribed": 45,
+    "printedAccentedWordsTranscribed": 46,
     "pitchApproved": 0,
     "finishedCompleteGABCScores": 0
   },
@@ -570,5 +574,38 @@
     "scholaApproved": false,
     "productionScoreAssignments": 0,
     "eligible": false
+  },
+  "batch23Reinspection": {
+    "source": "IMSLP Graduale Romanum 1961 printed facsimile PDF pages 143** and 144**",
+    "pdfPageIndicesZeroBased": [
+      142,
+      143
+    ],
+    "reviewType": "Direct printed page screenshot + selective readable PDF text, not relying on OCR for accent detection",
+    "confirmedCorrections": [
+      {
+        "location": "Psalm 23 lines 7 and 9",
+        "word": "cápita",
+        "previous": "capita",
+        "scope": "One shared text pattern, two musical occurrences"
+      },
+      {
+        "location": "Both psalms doxology line 11",
+        "word": "Glória",
+        "previous": "Gloria",
+        "scope": "Two tone-specific applications"
+      }
+    ],
+    "uncertainAccentChecks": [
+      {
+        "location": "Psalm 46 line 10",
+        "word": "excelsus",
+        "question": "Inspect exact printed accent above e in the line-10 token before changing the original accented worksheet; the page's accessible PDF text and displayed image differ in clarity.",
+        "releaseBlockingForThisWord": true
+      }
+    ],
+    "sourceOnly": true,
+    "musicalAccentCadencePlacementApproved": false,
+    "canonicalLatinTextReplaced": false
   }
 }
