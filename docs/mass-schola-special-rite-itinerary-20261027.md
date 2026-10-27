@@ -11,7 +11,7 @@ Supported source owners: Asperges/Vidi aquam; Palm; Candlemas; Rogations; Corpus
 - Optional `In paradisum` is absent unless the burial procession was explicitly selected.
 - Easter Vigil in-church vs separate baptistery branches filter their own stage IDs, and the Mass handoff stage has no inherited ceremony music.
 - Good Friday's death pause and rite-ending silence suppress both active and anticipatory labels. A `SOURCE_HOLD` generates no visible chant.
-- The special events appear in the **same bottom Schola dock**, but with static `EXPECTED · RITE MUSIC` and `NEXT` information. No Schola phrase controls, progressive ticker, organ permission guesses, custom programme edits or duplicate central prayer text.
+- The special events appear in the **same bottom Schola dock** in LIVE, SIMPLE and MISSAL modes, but with static `EXPECTED · RITE MUSIC` and `NEXT` information. No Schola phrase controls, progressive ticker, organ permission guesses, custom programme edits or duplicate central prayer text.
 - When a native pre-Mass or post-Mass ceremony hands back to the Mass, its forecast disappears. The ordinary Mass's independent Schola timeline resumes only from the existing Mass source.
 - The 1958 instrument-permission layer remains separate: predicted chant does not imply organ permission.
 

@@ -128,6 +128,7 @@ const native=readFileSync(new URL("../src/mass/reader-native-preview.js",import.
 assert.match(dom,/data-role="schola-special-current"/);
 assert.match(dom,/data-role="schola-special-next"/);
 assert.match(dom,/special\.stageId===current\?\.id/);
+assert.doesNotMatch(dom,/special\.stageId===current\?\.id[^;]*mode==="LIVE"/);
 assert.match(native,/specialRiteMusicItinerary:\(\)=>projectNativeRiteMusicItinerary/);
 assert.match(native,/inAsperges\?\["ASPERGES"/);
 assert.match(native,/inHolyThursdayPost\?\["HOLY_THURSDAY_POST"/);

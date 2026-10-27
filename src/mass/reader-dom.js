@@ -2865,7 +2865,7 @@ export function createReaderDomAdapter({
     // A rite boundary is authoritative. Never keep the Palm/Asperges
     // forecast once the native controller hands back to ordinary Mass.
     const specialActive=Boolean(!schola && special?.supported===true &&
-      special.stageId===current?.id && special.silentStage!==true && mode==="LIVE");
+      special.stageId===current?.id && special.silentStage!==true);
     const riteCurrent=specialActive?special.current??[]:[];
     const riteNext=specialActive?special.upcoming:null;
     const currentNode=root.querySelector('[data-role="schola-special-current"]');
