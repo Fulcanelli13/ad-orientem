@@ -569,9 +569,12 @@
         "A",
         "men"
       ],
-      "editionOriginal1960PageInspected": false,
+      "editionOriginal1960PageInspected": true,
       "transcriptionHistory": "GregoBase notes ending and EUOUAE added 2025-08-21; 1960 source facsimile for this passage has not been visually authenticated; this is lower authority than a checked original image.",
-      "sourceCaveat": "Do not infer that the Office psalm termination is the one used for the restored 1961 Palm distribution psalm; transcription's contextual metadata and source edition do not establish that transfer."
+      "sourceCaveat": "Do not infer that the Office psalm termination is the one used for the restored 1961 Palm distribution psalm; transcription's contextual metadata and source edition do not establish that transfer.",
+      "originalFacsimileUrl": "https://gregobase.selapa.net/sources/48/512.png",
+      "pageContext": "At Prime, not at Palm distribution. Printed first-tone f antiphon and six-syllable EUOUAE are visible across pp.423-424.",
+      "sourceEvidenceGrade": "PRIMARY_1960_OFFICE_PRINTED_FACSIMILE_PAGES_423_424_VISUALLY_INSPECTED_PLUS_GABCBased_TRANSCRIPTION"
     },
     "matchedProcessionalAntiphon": {
       "name": "Pueri Hebraeorum portantes",
@@ -581,7 +584,12 @@
       "url": "https://gregobase.selapa.net/chant.php?id=1215",
       "textAndMelodyFamilyComparable": true,
       "hasAttestedProcessionalEuouaeInItsGabc": false,
-      "sourceContextDifference": "1960 office antiphon and 1961 Palm distribution antiphon are closely related melodies, but the 1961 archived processional GABC does not encode the 1960 EUOUAE continuation."
+      "sourceContextDifference": "1960 office antiphon and 1961 Palm distribution antiphon are closely related melodies, but the 1961 archived processional GABC does not encode the 1960 EUOUAE continuation.",
+      "originalFacsimileUrl": "https://gregobase.selapa.net/sources/2/193.png",
+      "original1961PageInspected": true,
+      "originalPrintedMode": "1 antiphona I f",
+      "originalPrintedDoxologyUnderlayAvailable": false,
+      "palmPsalmTextEditionCaution": "Printed 1961 Graduale pp.167-169 show antiquus Psalm 23 and 46; restored 1961 textus novus witnesses are separate pp.143**-144**. Do not conflate the psalm text families when adjudicating sound underlay."
     },
     "existingResearchGabc": {
       "ids": [
@@ -617,14 +625,37 @@
       "equalSixthPitchGroup": true,
       "extraGrpClaim": "1960 EUOUAE transcription does not include gr on A, whereas both provisional Palm GABCs do. Distinction may arise from different formula application, rhythmic or melodic genre and syllabification; this comparison alone does not establish an error.",
       "canChooseOfficeAsProductionScore": false,
-      "musicalEditorQuestion": "For each restored Palm Psalm, is the final 1f Amen sung with A(gh)men(gf) as in office-chant EUOUAE, or is A(gh gr)men(gf) justified by the independently notated 1961 restored Palm Psalm first-verse two-syllable termination? Check original 1960 p423 and 1961 p167/143**/144** pages, not just GABC transcriptions."
+      "musicalEditorQuestion": "For each restored Palm Psalm, is the final 1f Amen sung with A(gh)men(gf) as in office-chant EUOUAE, or is A(gh gr)men(gf) justified by the independently notated 1961 restored Palm Psalm first-verse two-syllable termination? Check original 1960 p423 and 1961 p167/143**/144** pages, not just GABC transcriptions.",
+      "twoIndependentAntiphonPrintExamples1960": true,
+      "source1960FacsimileInspected": true,
+      "source1961ProcessionalFacsimileInspected": true,
+      "anyIndependentlyPrintedPalmFullSicutEratAmenFound": false,
+      "warningTextusAntiquusVsNovus": true
     },
     "otherAntiphon": {
       "name": "Pueri Hebraeorum vestimenta",
       "primary1960Locator": "Liber antiphonarius, Solesmes 1960 p. 424",
       "primary1961Locator": "Graduale Romanum 1961 p. 168 and Liber Usualis 1961 p. 582",
-      "source1960EuouaeNotesChecked": false,
-      "noInferredSharedEuouae": true
+      "source1960EuouaeNotesChecked": true,
+      "noInferredSharedEuouae": true,
+      "gregobaseId": 12140,
+      "originalFacsimileUrl": "https://gregobase.selapa.net/sources/48/513.png",
+      "gabcUrl": "https://gregobase.selapa.net/download.php?format=gabc&id=12140",
+      "originalPrintedMode": "I f; ad Tertiam",
+      "originalPrintedEuouae": true,
+      "source1960EuouaePitchGroups": [
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh",
+        "gf.."
+      ],
+      "sameSixPitchGroupsAsPortantes": true,
+      "matchedProcessionalOriginalFacsimileUrl": "https://gregobase.selapa.net/sources/2/194.png",
+      "processionalOriginalPrintedMode": "2 antiphona I f",
+      "processional1961PrintedPageInspected": true,
+      "matchingAntiphonTextButDifferentLiturgicalUse": true
     },
     "publishing": {
       "editorialScoreApproved": 0,
@@ -633,6 +664,6 @@
       "readerChanged": false,
       "promoteAllowed": false
     },
-    "priority": "HEAD_TO_HEAD_1960_1961_SAME_ANTIPHON_ORIGINAL_FACSIMILE_AND_END_OF_EUOUAE_CHECK"
+    "priority": "BOTH_1960_PRINTED_OFFICE_1F_EUOUAE_IDENTICAL_1961_PROCESSIONAL_TONE_MODE_CONFIRMED__HUMAN_MUSICAL_ADJUDICATION_REMAINS_FOR_NOVUS_PSALMS"
   }
 }
