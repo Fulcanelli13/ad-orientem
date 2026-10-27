@@ -314,6 +314,8 @@ try{
     GENERIC_FERIA_UNMAPPED:[],
     LATER_OPTIONAL_PREFACE_AUTHORITY:[],
     SOURCE_MATCHED_SEASONAL_FERIA:[],
+    SANCTORAL_MARIAN_SOURCE_CONFLICT:[],
+    ORIGINAL_COMMON_SANCTORAL_MATCH:[],
   };
   for(const row of rows){
     const id=row.mainId,review=row.prefaceReview,sourcePath=row.properSourcePath;
@@ -321,6 +323,12 @@ try{
     if(review?.status==="RULE_TEXT_AGREE"&&
        /^SOURCE_MATCHED_INHERITED_(?:PASCHAL|ASCENSION)_FERIA$/.test(review.basis??""))
       group="SOURCE_MATCHED_SEASONAL_FERIA";
+    else if(review?.status==="RULE_TEXT_AGREE"&&
+       /^(?:EXPLICIT_1960_TRANSFIGURATION_COMMON|EXPLICIT_ASSUMPTION_VIGIL_COMMON)$/.test(review.basis??""))
+      group="ORIGINAL_COMMON_SANCTORAL_MATCH";
+    else if(review?.status==="SOURCE_CONFLICT"&&
+       review.basis==="ORIGINAL_MARIAN_PREFATIO_SOURCE_1960")
+      group="SANCTORAL_MARIAN_SOURCE_CONFLICT";
     else if(review?.status==="UNMAPPED"){
       if(id.startsWith("sancti:")){
         group=review.actual==="COMMUNIS"?"SANCTORAL_COMMON_FIRST_PASS":
@@ -348,35 +356,48 @@ try{
   }
   const sizes=Object.fromEntries(Object.entries(cohorts).map(([k,v])=>[k,v.length]));
   assert.deepEqual(sizes,{
-    SANCTORAL_COMMON_FIRST_PASS:142,
+    SANCTORAL_COMMON_FIRST_PASS:131,
     TEMPORAL_FORM_RULE_UNMAPPED:19,
     SATURDAY_BVM_COMMON_UNMAPPED:12,
     GENERIC_FERIA_UNMAPPED:10,
     LATER_OPTIONAL_PREFACE_AUTHORITY:2,
     SOURCE_MATCHED_SEASONAL_FERIA:9,
+    SANCTORAL_MARIAN_SOURCE_CONFLICT:9,
+    ORIGINAL_COMMON_SANCTORAL_MATCH:2,
   },"Bulk source cohorts changed: reconcile before reporting any coverage gain");
   assert.equal(Object.values(sizes).reduce((a,b)=>a+b,0),194,
     "The original 194-case worklist must account for every promotion and still-withheld case");
-  for(const x of cohorts.SANCTORAL_COMMON_FIRST_PASS){
+  const sanctoralReviewed=[...cohorts.SANCTORAL_COMMON_FIRST_PASS,
+    ...cohorts.SANCTORAL_MARIAN_SOURCE_CONFLICT,
+    ...cohorts.ORIGINAL_COMMON_SANCTORAL_MATCH];
+  assert.equal(sanctoralReviewed.length,142);
+  for(const x of sanctoralReviewed){
     assert.ok(x.independentSourceWitness,"One of the 142 source identities was never screened: "+x.date);
     assert.ok(x.sourcePath.startsWith("Sancti/"));
   }
+  assert.equal(new Set(sanctoralReviewed.map(x=>x.sourcePath)).size,142);
+  for(const x of cohorts.SANCTORAL_MARIAN_SOURCE_CONFLICT)
+    assert.ok(x.independentSourceWitness.originalPrefatioRuleTokens.some(t=>/^Prefatio=Maria/.test(t)),
+      x.date+" promoted without original Marian source witness");
+  for(const x of cohorts.ORIGINAL_COMMON_SANCTORAL_MATCH)
+    assert.ok(x.independentSourceWitness.originalPrefatioRuleTokens.some(t=>/Prefatio=Communis/.test(t)),
+      x.date+" source did not expressly select Common");
   assert.equal(sanctoralScreen.cases.filter(x=>x.upstreamRuleTokens.length).length,11);
   const exactPromotions=["2026-04-15","2026-04-16","2026-04-17","2026-04-20",
     "2026-04-23","2026-05-06","2026-05-08","2026-05-21","2026-05-22"];
   assert.deepEqual(cohorts.SOURCE_MATCHED_SEASONAL_FERIA.map(x=>x.date),
     exactPromotions,"The adopted inherited-seasonal source family changed");
-  assert.equal(summary.prefaceReview.unmapped,185);
-  assert.equal(summary.prefaceReview.ruleAndTextAgree,128);
-  assert.equal(summary.prefaceReview.sourceConflict,50);
+  assert.equal(summary.prefaceReview.unmapped,174);
+  assert.equal(summary.prefaceReview.ruleAndTextAgree,130);
+  assert.equal(summary.prefaceReview.sourceConflict,59);
   await writeFile(resolve(outputDir,"1962-2026-preface-bulk-triage.json"),JSON.stringify({
     schema:"AO_1962_PREFACE_2026_BULK_TRIAGE_V1",
     year:2026,sourceAuditRun:"Live 1962 shared canonical resolver and independent Preface audit",
     sourceRegister:"data/research/1962-sanctoral-preface-source-screen-20261027.v1.json",
     totalHistoricalUnmappedWorklist:194,
-    newlySourceMatchedWithheldFromEditorialApproval:9,
-    stillUnmapped:185,
-    stillRawSourceConflicts:50,
+    newlySourceMatchedWithheldFromEditorialApproval:11,
+    stillUnmapped:174,
+    stillRawSourceConflicts:59,
     independentPrefacesEditoriallyCertified:0,
     groupSizes:sizes,
     sourceScope:"GENERAL_ROMAN_1962",
@@ -384,11 +405,11 @@ try{
     cohortRows:cohorts,
   },null,2)+"\n","utf8");
   console.log("CALENDAR_1962_PREFACE_BULK_TRIAGE="+JSON.stringify({
-    groupSizes:sizes,matchedSeasonalFerias:9,unmapped:185,
+    groupSizes:sizes,matchedSeasonalFerias:9,matchedOriginalCommon:2,marianSourceConflicts:9,unmapped:174,
     originalUnmappedWorklist:194,
     originalSanctoralSourcesScreened:142,
     sourcePrefatioDirectivesObserved:11,
-    unverifiedSourceSelectionsRemaining:185,
+    unverifiedSourceSelectionsRemaining:174,
     editoriallyCertified:0,
   }));
 
