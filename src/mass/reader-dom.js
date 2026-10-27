@@ -1699,7 +1699,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
             event.owner==="RITUS_XIV_SOURCE_CONDITIONAL" &&
             event.actor==="PRIEST" && event.sourceId==="MR62_RITUS" &&
             event.kind==="CONDITIONAL_DIRECTION" &&
-            /^AO\\.RITUS\\.XIV\\.[123]\\.XIV\\.[12]/.test(String(event.id)) &&
+            /^AO\.RITUS\.XIV\.[123]\.XIV\.[12]/.test(String(event.id)) &&
             ["AO.SM.C0112","AO.SM.C0247","AO.SM.C0248"].includes(event.sourceCueId)) ||
            (event.review==="EXISTING_CERTIFIED_R18_SOLEMN_MINISTER" &&
             event.owner==="R18_CERTIFIED_SOLEMN_MISSAL" &&
