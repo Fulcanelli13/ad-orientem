@@ -1,4 +1,4 @@
-name: Original-subject research details — branch-scoped permanent archive
+name: Original-subject and 3 hero master pixel evidence — branch-scoped permanent archive
 on:
   push:
     branches:
@@ -6,6 +6,7 @@ on:
     paths:
       - .github/workflows/hero-subject-quality-20261026.yml
       - assets/staged/module-hero-masters/**
+      - scripts/research/hero_photographic_master_qc_20261027.py
 permissions:
   contents: write
 jobs:
@@ -26,6 +27,7 @@ jobs:
           git fetch --depth=1 origin main
           git show FETCH_HEAD:scripts/art/make-subject-specific-hero-details.py >/tmp/subject-details.py
           python /tmp/subject-details.py
+          python scripts/research/hero_photographic_master_qc_20261027.py
           python - <<'PY'
           import json
           from pathlib import Path
@@ -38,6 +40,7 @@ jobs:
           print("Generated research detail crops for permanent archive:",len(rows))
           PY
           git add -f assets/staged/module-hero-subject-details/
+          git add -f assets/staged/module-hero-photo-evidence-20261027/
           if git diff --cached --quiet; then
             echo "Permanent research branch already contains these checked details."
             exit 0
