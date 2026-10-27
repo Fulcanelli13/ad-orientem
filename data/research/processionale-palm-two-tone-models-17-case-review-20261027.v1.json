@@ -1326,6 +1326,156 @@
       "explicitHoldBothAmen": true,
       "mustCheckWhetherFinalAntiphonReturnsByActualPalmRite": true,
       "note": "The return-to-antiphon decision belongs to the Palm procession source-specific event master, not generic Office psalmody."
+    },
+    "twoPsalm23FlexGabcCandidates": {
+      "status": "TWO_COMPLETE_GABC_HYPOTHESES_REUSE_FOR_L07_L09_AND_L08_MUSICALLY_UNAPPROVED",
+      "countDistinct": 2,
+      "coveredPhysicalVerseOccurrences": 3,
+      "candidates": [
+        {
+          "id": "PALM-R02-PS23-L07",
+          "physicalOccurrences": [
+            "PALM-R02-PS23-L07",
+            "PALM-R02-PS23-L09"
+          ],
+          "printedLatinSections": [
+            "Attóllite, portae, cápita vestra,",
+            "et attóllite vos, fores antíquae,",
+            "ut ingrediátur rex glóriae!"
+          ],
+          "syllabifiedSections": [
+            "At-tól-li-te por-tae cá-pi-ta ves-tra,",
+            "et at-tól-li-te vos fo-res an-tí-quae,",
+            "ut in-gre-di-á-tur rex gló-ri-ae!"
+          ],
+          "notesBySection": [
+            [
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "gr",
+              "g."
+            ],
+            [
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "ixi",
+              "hr",
+              "h",
+              "g hr",
+              "h."
+            ],
+            [
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "g",
+              "f",
+              "gh",
+              "gr",
+              "gf.."
+            ]
+          ],
+          "flexSourceAnchor": "rex(h) glo(h)ri(gr)æ?(g.) +(h)",
+          "flexPrintNotSameWholeVerse": true,
+          "noSpecialMusicForRepeatedL09": true,
+          "gabcResearchOnly": "name:PALM-R02-PS23-L07 Palm 1961 flexed full chant research hypothesis NOT APPROVED;\noffice-part:Psalmus;\ncommentary: A research hypothesis using one source-notated Psalm23 flex motif, source-modeled two-accent mediant, and paired terminal cadence; this full verse is not printed with notes. Musical/editorial approval required;\n%%\n(c4) At(h)tól(h)li(h)te(h) por(h)tae(h) cá(h)pi(h)ta(h) ves(gr)tra,(g.) +(h) et(h) at(h)tól(h)li(h)te(h) vos(h) fo(ixi)res(hr) an(h)tí(g hr)quae,(h.) *(:) ut(h) in(h)gre(h)di(h)á(h)tur(g) rex(f) gló(gh)ri(gr)ae!(gf..) (::)\n",
+          "flexSymbolRepresentsSourceReferenceNotApproval": true,
+          "fullLatinWordBoundariesPreserved": true,
+          "actualSourcePrintedFullVerseWithPitches": false,
+          "editorialAccentCertified": false,
+          "noteGroupsHumanReviewed": false,
+          "parseAndRenderSuccessful": false,
+          "productionScoreApproved": false
+        },
+        {
+          "id": "PALM-R02-PS23-L08",
+          "physicalOccurrences": [
+            "PALM-R02-PS23-L08"
+          ],
+          "printedLatinSections": [
+            "Quis est iste rex glóriae?",
+            "Dóminus fortis et potens,",
+            "Dóminus potens in praélio."
+          ],
+          "syllabifiedSections": [
+            "Quis est is-te rex gló-ri-ae?",
+            "Dó-mi-nus for-tis et po-tens,",
+            "Dó-mi-nus po-tens in prae-li-o."
+          ],
+          "notesBySection": [
+            [
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "gr",
+              "g."
+            ],
+            [
+              "h",
+              "h",
+              "h",
+              "ixi",
+              "hr",
+              "h",
+              "g hr",
+              "h."
+            ],
+            [
+              "h",
+              "h",
+              "h",
+              "h",
+              "g",
+              "f",
+              "gh",
+              "gr",
+              "gf.."
+            ]
+          ],
+          "flexSourceAnchor": "rex(h) glo(h)ri(gr)æ?(g.) +(h)",
+          "flexPrintNotSameWholeVerse": false,
+          "noSpecialMusicForRepeatedL09": false,
+          "gabcResearchOnly": "name:PALM-R02-PS23-L08 Palm 1961 flexed full chant research hypothesis NOT APPROVED;\noffice-part:Psalmus;\ncommentary: A research hypothesis using one source-notated Psalm23 flex motif, source-modeled two-accent mediant, and paired terminal cadence; this full verse is not printed with notes. Musical/editorial approval required;\n%%\n(c4) Quis(h) est(h) is(h)te(h) rex(h) gló(h)ri(gr)ae?(g.) +(h) Dó(h)mi(h)nus(h) for(ixi)tis(hr) et(h) po(g hr)tens,(h.) *(:) Dó(h)mi(h)nus(h) po(h)tens(g) in(f) prae(gh)li(gr)o.(gf..) (::)\n",
+          "flexSymbolRepresentsSourceReferenceNotApproval": true,
+          "fullLatinWordBoundariesPreserved": true,
+          "actualSourcePrintedFullVerseWithPitches": false,
+          "editorialAccentCertified": false,
+          "noteGroupsHumanReviewed": false,
+          "parseAndRenderSuccessful": false,
+          "productionScoreApproved": false
+        }
+      ],
+      "reviewerInstruction": "Do not treat borrowed flex and medians as full original 1961 scores; inspect printed flex + cadence and pronunciation/Latin ortho, then correct notes manually.",
+      "publisherAllowed": false
+    },
+    "scoreCoverageAfterTwoFlexDrafts": {
+      "completeExperimentalGabcCases": 11,
+      "unscoredCases": 6,
+      "completelyApprovedCases": 0,
+      "unscoredIds": [
+        "PALM-R02-PS23-L10",
+        "PALM-R02-PS46-L05",
+        "PALM-R02-PS46-L08",
+        "PALM-R02-PS46-L09",
+        "PALM-R02-PS23-DOXO-L12",
+        "PALM-R02-PS46-DOXO-L12"
+      ]
     }
   }
 }
