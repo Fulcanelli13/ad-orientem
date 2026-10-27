@@ -1084,6 +1084,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       observedMassSelection:state.observedSource?.status?.()??null,
        fullMassPreflight:state.fullMassPreflight?.status?.()??null,
        fullMassCatalogue:state.fullMassCatalogue?.status?.()??null,
+      sharedSundayPrefatio1960:state.pentecostSundaySource??null,
       polls: state.polls,
       hostApi: Boolean(celebrationApi()?.getResolvedMass),
       presentationOwner: "R17_NATIVE_PRODUCTION",
