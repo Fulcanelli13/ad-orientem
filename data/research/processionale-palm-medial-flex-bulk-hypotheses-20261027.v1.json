@@ -3,7 +3,7 @@
   "batch": 30,
   "date": "2026-10-27",
   "stage": "PALM-R02",
-  "status": "17_MEDIAL_ENDING_PROPOSALS_2_FLEX_PROPOSALS_RESEARCH_ONLY",
+  "status": "34_GABC_FRAGMENTS_PARSE_BUT_13_MEDIAL_ACCENT_CONFLICTS_BLOCK_MUSICAL_REUSE",
   "basis": "Exactly printed first-verse Psalm23 and Psalm46 mediant GABC note groups, with manually prepared Latin suffixes that still require accentual review; flex model based on one printed rex gloriae? example.",
   "sources": {
     "book": "Graduale Romanum 1961, printed 143** and 144**",
@@ -45,7 +45,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "LEXICAL_ANCHORS_CONSISTENT_NEEDS_MUSIC_EDITOR",
+      "unverifiedMusicalAccentAnchors": [
+        "dá",
+        "e"
+      ],
+      "musicEditorRejectOrRewriteNeeded": false,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": false
     },
     {
       "id": "PALM-R02-PS23-L07",
@@ -77,7 +85,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "WRONG_FIRST_ACCENT_ANCHOR",
+      "unverifiedMusicalAccentAnchors": [
+        "res",
+        "tí"
+      ],
+      "musicEditorRejectOrRewriteNeeded": true,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": true
     },
     {
       "id": "PALM-R02-PS23-L08",
@@ -108,7 +124,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "WRONG_FIRST_ACCENT_ANCHOR",
+      "unverifiedMusicalAccentAnchors": [
+        "tis",
+        "po"
+      ],
+      "musicEditorRejectOrRewriteNeeded": true,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": true
     },
     {
       "id": "PALM-R02-PS23-L10",
@@ -139,7 +163,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "WRONG_SECOND_ACCENT_ANCHOR",
+      "unverifiedMusicalAccentAnchors": [
+        "rex",
+        "ri"
+      ],
+      "musicEditorRejectOrRewriteNeeded": true,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": true
     },
     {
       "id": "PALM-R02-PS46-L02",
@@ -174,7 +206,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "LEXICAL_ANCHORS_CONSISTENT_NEEDS_MUSIC_EDITOR",
+      "unverifiedMusicalAccentAnchors": [
+        "cél",
+        "rí"
+      ],
+      "musicEditorRejectOrRewriteNeeded": false,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": false
     },
     {
       "id": "PALM-R02-PS46-L03",
@@ -209,7 +249,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "WRONG_BOTH_ACCENT_ANCHORS",
+      "unverifiedMusicalAccentAnchors": [
+        "cit",
+        "los"
+      ],
+      "musicEditorRejectOrRewriteNeeded": true,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": true
     },
     {
       "id": "PALM-R02-PS46-L04",
@@ -244,7 +292,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "WRONG_BOTH_ACCENT_ANCHORS",
+      "unverifiedMusicalAccentAnchors": [
+        "re",
+        "tem"
+      ],
+      "musicEditorRejectOrRewriteNeeded": true,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": true
     },
     {
       "id": "PALM-R02-PS46-L05",
@@ -279,7 +335,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "WRONG_SECOND_ACCENT_AND_FIRST_NEEDS_REVIEW",
+      "unverifiedMusicalAccentAnchors": [
+        "ex",
+        "ti"
+      ],
+      "musicEditorRejectOrRewriteNeeded": true,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": true
     },
     {
       "id": "PALM-R02-PS46-L06",
@@ -314,7 +378,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "WRONG_FIRST_ACCENT_ANCHOR",
+      "unverifiedMusicalAccentAnchors": [
+        "te",
+        "psál"
+      ],
+      "musicEditorRejectOrRewriteNeeded": true,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": true
     },
     {
       "id": "PALM-R02-PS46-L07",
@@ -349,7 +421,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "WRONG_BOTH_ACCENT_ANCHORS",
+      "unverifiedMusicalAccentAnchors": [
+        "nis",
+        "est"
+      ],
+      "musicEditorRejectOrRewriteNeeded": true,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": true
     },
     {
       "id": "PALM-R02-PS46-L08",
@@ -384,7 +464,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "WRONG_BOTH_ACCENT_ANCHORS",
+      "unverifiedMusicalAccentAnchors": [
+        "su",
+        "ti"
+      ],
+      "musicEditorRejectOrRewriteNeeded": true,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": true
     },
     {
       "id": "PALM-R02-PS46-L09",
@@ -419,7 +507,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "WRONG_FIRST_ACCENT_ANCHOR",
+      "unverifiedMusicalAccentAnchors": [
+        "rum",
+        "gá"
+      ],
+      "musicEditorRejectOrRewriteNeeded": true,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": true
     },
     {
       "id": "PALM-R02-PS46-L10",
@@ -454,7 +550,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "WRONG_BOTH_ACCENT_ANCHORS",
+      "unverifiedMusicalAccentAnchors": [
+        "sunt",
+        "res"
+      ],
+      "musicEditorRejectOrRewriteNeeded": true,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": true
     },
     {
       "id": "PALM-R02-PS23-DOXO-L11",
@@ -485,7 +589,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "WRONG_BOTH_ACCENT_ANCHORS",
+      "unverifiedMusicalAccentAnchors": [
+        "et",
+        "li"
+      ],
+      "musicEditorRejectOrRewriteNeeded": true,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": true
     },
     {
       "id": "PALM-R02-PS23-DOXO-L12",
@@ -516,7 +628,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "MONOSYLLABLE_SECONDARY_ACCENT_REVIEW",
+      "unverifiedMusicalAccentAnchors": [
+        "nunc",
+        "sem"
+      ],
+      "musicEditorRejectOrRewriteNeeded": false,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": false
     },
     {
       "id": "PALM-R02-PS46-DOXO-L11",
@@ -551,7 +671,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "LEXICAL_ANCHORS_CONSISTENT_NEEDS_MUSIC_EDITOR",
+      "unverifiedMusicalAccentAnchors": [
+        "Pa",
+        "Fí"
+      ],
+      "musicEditorRejectOrRewriteNeeded": false,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": false
     },
     {
       "id": "PALM-R02-PS46-DOXO-L12",
@@ -586,7 +714,15 @@
       "sameTwoAccentMediantPatternVerified": false,
       "fullVerseMusicCreated": false,
       "editorApproved": false,
-      "productionAllowed": false
+      "productionAllowed": false,
+      "batch31ReviewVerdict": "WRONG_BOTH_ACCENT_ANCHORS",
+      "unverifiedMusicalAccentAnchors": [
+        "o",
+        "et"
+      ],
+      "musicEditorRejectOrRewriteNeeded": true,
+      "autoWholeVerseAssemblyAllowed": false,
+      "gabcRendersButNotMusicallyFit": true
     }
   ],
   "flex": [
@@ -670,7 +806,9 @@
     "scoreOwner": "#1749",
     "LatinOwner": "#894",
     "readerUnmodified": true,
-    "releaseAllowed": false
+    "releaseAllowed": false,
+    "all17MedialHypothesesNeedHumanAccentReview": true,
+    "fullVerseStitchingForbiddenUntilAccentFixes": true
   },
   "sourceCorrections": [
     {
@@ -702,6 +840,16 @@
     "manualDevicePixelReviewPassed": false,
     "historicalMusicalFormulaApproved": false,
     "productionScorePromoted": 0,
-    "note": "Proof run refers to same 19 musical fragment bodies, before addition of record crosslinks. No source GABC fragment was changed after this run."
+    "note": "Proof run refers to same 19 musical fragment bodies, before addition of record crosslinks. No source GABC fragment was changed after this run.",
+    "renderingIsNotMelodicCorrectness": true
+  },
+  "batch31AccentConflictAudit": {
+    "path": "data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json",
+    "observedLexicalConflicts": 13,
+    "lexicallyPlausibleNotApproved": 3,
+    "monosyllableRuleHold": 1,
+    "oldRenderedFragmentsRemainAsExperimentalFailureCases": true,
+    "anyAutomaticWholeVerseAssemblyPermitted": false,
+    "doxologyAmenIsDifferentiaReviewNotAutomaticallySeparateCoda": true
   }
 }
