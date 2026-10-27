@@ -157,6 +157,19 @@ assert.ok(runtime.includes('data-tp381-timer-toggle'),"Reader should expose the 
 assert.ok(runtime.includes('data-tp381-timer-control'),"Reader should wire timer controls");
 assert.ok(runtime.includes('data-tp381-timer-target'),"Reader should wire gentle target choices");
 assert.ok(runtime.includes('DAILY_SESSION_CLOCK'),"Reader must own only an ephemeral session clock");
+
+const timerClickStart=runtime.indexOf('if(b.hasAttribute("data-tp381-timer-toggle"))');
+const timerClickEnd=runtime.indexOf("if(b.dataset.tp381Daypart)",timerClickStart);
+assert.ok(timerClickStart>=0 && timerClickEnd>timerClickStart);
+assert.ok(!runtime.slice(timerClickStart,timerClickEnd).includes("S.dailyStep"),
+  "Clock operations must never change prayer progress");
+assert.ok(runtime.includes("if(next!==S.daypart)resetDailySessionTimer()"),
+  "A different Morning or Evening session must not inherit the previous timer");
+assert.ok(runtime.includes("if(S.route===\"pray.morning_evening\")resetDailySessionTimer()"),
+  "Leaving the guided reader must release the timer");
+const timerStyle=readFileSync("src/pray/traditional-pray-styles.js","utf8");
+assert.ok(timerStyle.includes(".aoDailyClockPanel"),"Session timer controls require scoped styling");
+
 assert.ok(!runtime.includes('compileDailyFormulation('),"Unapproved historical text compiler must not alter the live prayer reader");
 
 console.log("PASS daily formulation engine: source-language protection, approvals, composite dedup, alternatives, nightly complementary prayers, 11/13 baseline and inert timer");
