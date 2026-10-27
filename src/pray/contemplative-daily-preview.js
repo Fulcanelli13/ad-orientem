@@ -20,6 +20,11 @@ export function contemplativeDailyMode(search, mount) {
 export const CONTEMPLATIVE_DAILY_PREVIEW_CSS = [
   '#aoPray435930[data-ao-contemplative-daily]{--text:#eee9df;--muted:#aeb3ba;--bg:#0b121b;--surface:#101a24;--surface-1:#101a24;--border:rgba(236,224,204,.13);--liturgical:#c6a67a;color:var(--text)!important}',
   '#aoPray435930[data-ao-contemplative-daily] .aoP435930Sheet{background:radial-gradient(ellipse 98% 45% at 55% 105%,color-mix(in srgb,var(--ao-contemplative-light,#ac8773) 29%,transparent),transparent 74%),linear-gradient(175deg,#0a1119 6%,#111d29 67%,#18222b 100%)!important;color:#eee9df!important;border:1px solid rgba(224,199,163,.15)!important;box-shadow:0 -12px 65px rgba(0,0,0,.54)!important}',
+  // The approved Design B has a very quiet landscape silhouette beneath the text.
+  // It is decorative, does not block touch input, and never requires art assets.
+  '#aoPray435930[data-ao-contemplative-daily] .aoP435930Sheet{position:relative!important;isolation:isolate!important}',
+  '#aoPray435930[data-ao-contemplative-daily] .aoP435930Sheet::before{content:"";position:absolute;inset:auto 0 0;height:clamp(48px,10dvh,100px);z-index:0;pointer-events:none;background:rgba(5,13,21,.4);clip-path:polygon(0% 65%,14% 57%,29% 68%,48% 49%,63% 62%,81% 53%,100% 66%,100% 100%,0 100%)}',
+  '#aoPray435930[data-ao-contemplative-daily] .aoP435930Mount{position:relative!important;z-index:1!important}',,
   '#aoPray435930[data-ao-contemplative-daily] .aoP435930Mount{background:transparent!important;color:#eee9df!important}',
   '#aoPray435930[data-ao-contemplative-daily] .aoP435930Head{background:rgba(8,15,23,.88)!important;border-bottom:1px solid rgba(239,224,198,.08)!important;padding-block:8px!important;align-items:center!important}',
   '#aoPray435930[data-ao-contemplative-daily] .aoP435930Head small{display:none!important}',
