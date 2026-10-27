@@ -12,6 +12,7 @@ import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCar
 import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reader-missal-granularity.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
+import { buildScholaMusicItinerary } from "./reader-schola-event-timeline.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
 import { GLORIA_CREDO_FAITHFUL_GESTURES, isGloriaCredoGestureSourceCue, resolveFaithfulGestureForCue } from "./faithful-gesture-cues.js";
 import { loadReaderCueRegistries } from "./reader-cue-state.js";
@@ -2832,6 +2833,15 @@ export async function mountNativeReaderPreview({
     iconResolver,
     allowPresentationModeSwitch:true,
     sections:sectionItems(),
+    // Resolve against the CURRENT sourced presentation model after mode or
+    // local-custom changes; the timeline never drives chant advancement.
+    scholaMusicItinerary:()=>buildScholaMusicItinerary({
+      cards:readerModel?.cards,
+      form:prepared.session.resolvedMass.form,
+      resolvedMass:prepared.session.resolvedMass,
+      tracks:ready.scholaState?.trackIds??[],
+      sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
+    }),
     onPresentationModeChange:(mode)=>switchPresentationMode(mode),
     onCustomaryChange:change=>{
       customaryPrefs=updateMassCustomaryPreferences(customaryPrefs,change,customStorage);

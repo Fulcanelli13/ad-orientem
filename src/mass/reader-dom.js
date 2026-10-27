@@ -13,6 +13,7 @@ import { approvedPriestRubricGestureArt } from "./reader-approved-priest-gesture
 import { approvedPriestHeadBowRubricArt } from "./reader-approved-priest-head-bow.js";
 import { actionMeaning } from "./reader-canonical-icons.js";
 import { CUE_SURFACE, resolveCueSurface, sourceActionRubricLabel } from "./reader-cue-visual-policy.js";
+import { nextScholaMusicEvent } from "./reader-schola-event-timeline.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -519,6 +520,9 @@ const SHELL_STYLE = `
 .ao-schola-page{font:700 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:var(--ao-mass-accent-text)}
 .ao-schola-status{font:600 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.06em;color:#9aa79b}
 .ao-schola-status[hidden]{display:none!important}
+.ao-schola-upcoming{display:block;max-width:min(36vw,190px);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:600 9px/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.02em;color:var(--ao-mass-accent-text)}
+.ao-schola-upcoming[hidden]{display:none!important}
+@media(max-width:760px){.ao-schola-upcoming{max-width:95px;font-size:8px}}
 .ao-schola-main{
   position:relative;height:58px;margin-top:6px;overflow:hidden;border-top:1px solid rgba(255,255,255,.045);
   border-bottom:1px solid rgba(255,255,255,.045);cursor:pointer;display:flex;align-items:center
@@ -2031,7 +2035,7 @@ export function buildReaderShellMarkup(prepared = {}) {
 
   <div class="ao-schola-dock" data-channel="schola" data-active="false" data-collapsed="false" data-show-translation="false">
     <span class="ao-schola-resize" data-schola-resize aria-hidden="true"></span>
-    <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-status" data-role="schola-status" hidden></span><span class="ao-schola-page" data-role="schola-page"></span></div>
+    <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-status" data-role="schola-status" hidden></span><span class="ao-schola-page" data-role="schola-page"></span><span class="ao-schola-upcoming" data-role="schola-upcoming" hidden></span></div>
     <button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button>
     <div class="ao-schola-main" data-schola-translate title="Tap to translate" role="button" tabindex="-1" aria-label="Translate Schola text in place" aria-pressed="false" aria-disabled="true"><span data-role="schola" aria-live="polite">—</span></div>
     <div class="ao-schola-meta">
@@ -2334,6 +2338,7 @@ export function createReaderDomAdapter({
   onScholaPrevious = null,
   onScholaRelease = null,
   sections = [],
+  scholaMusicItinerary = null,
   onSectionSelect = null,
   allowPresentationModeSwitch = true,
 } = {}) {
@@ -2726,6 +2731,20 @@ export function createReaderDomAdapter({
       status.textContent=schola ? "EXPECTED" : "";
       status.hidden=!schola;
       status.setAttribute?.("aria-label","Schola text expected; actual singing not detected");
+    }
+    // This is the NEXT possible source-owned chant in Mass order, NOT a
+    // detection of the choir or an automatic advance of its private clock.
+    const upcomingNode=root.querySelector('[data-role="schola-upcoming"]');
+    if(upcomingNode){
+      const itinerary=typeof scholaMusicItinerary==="function"
+        ? scholaMusicItinerary():scholaMusicItinerary;
+      const upcoming=nextScholaMusicEvent(itinerary,current?.id);
+      upcomingNode.hidden=!upcoming;
+      upcomingNode.textContent=upcoming?"NEXT · "+upcoming.label:"";
+      upcomingNode.title=upcoming
+        ? "Later in the Mass: "+upcoming.label+". Neither heard nor timed.":"";
+      upcomingNode.setAttribute?.("aria-label",upcoming
+        ? "Later in Mass order, not observed: "+upcoming.label:"No sourced next chant");
     }
     dock.dataset.musicStatus=schola?.musicStatus??"NOT_ACTIVE";
     const page=root.querySelector('[data-role="schola-page"]');
