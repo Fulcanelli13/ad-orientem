@@ -805,3 +805,58 @@ test('Psalm 23 verse 8 flex cannot be conflated with mediant, and 14 pending ver
  const palm=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
  assert.ok(!palm.includes('processionale-palm-14verse-pointing-worklist'));
 });
+
+
+test('printed Psalm accents and doxologies remain tone-specific research',()=>{
+  const a=readJSON('data/research/processionale-palm-1961-accent-doxology-review-20261027.v1.json');
+  const w=readJSON('data/research/processionale-palm-14verse-pointing-worklist-20261027.v1.json');
+  const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()
+    .replace(/subjicit/g,'subicit').replace(/praelio/g,'proelio')
+    .replace(/[^a-z ]/g,' ').replace(/\s+/g,' ').trim();
+  assert.equal(a.stage,'PALM-R02');
+  assert.equal(a.batch,22);
+  assert.equal(a.patterns.length,13);
+  assert.equal(a.patterns.flatMap(x=>x.occurrenceIds).length,14);
+  assert.equal(a.counts.printedAccentedWordsTranscribed,45);
+  const all=new Map(w.work.map(x=>[x.id,x]));
+  for(const pattern of a.patterns){
+    assert.ok(pattern.occurrenceIds.length>=1);
+    assert.equal(pattern.toneCadenceSignoff,false);
+    assert.equal(pattern.fullPointingSignedOff,false);
+    for(const id of pattern.occurrenceIds){
+      const ref=all.get(id);
+      assert.ok(ref);
+      assert.equal(pattern.psalm,ref.psalm);
+      assert.deepEqual(Object.keys(pattern.sourceSectionAccents),Object.keys(ref.sourceSections));
+      for(const section of Object.keys(ref.sourceSections))
+        assert.equal(norm(pattern.sourceSectionAccents[section]),norm(ref.sourceSections[section]));
+    }
+  }
+  assert.deepEqual(a.patterns.filter(x=>x.occurrenceIds.length===2)[0].occurrenceIds,
+    ['PALM-R02-PS23-L07','PALM-R02-PS23-L09']);
+  const p8=a.patterns.find(x=>x.patternId==='PALM-R02-PS23-L08');
+  assert.deepEqual(Object.keys(p8.sourceSectionAccents),['flex','medial','termination']);
+  assert.ok(p8.sourceSectionAccents.termination.endsWith('praélio.'));
+  assert.equal(a.orthographicVariants.length,2);
+  assert.equal(a.orthographicVariants[0].researchCandidate,'proelio');
+  assert.equal(a.orthographicVariants[0].print1961,'praélio');
+  assert.equal(a.orthographicVariants[1].researchCandidate,'Subicit');
+  assert.equal(a.orthographicVariants[1].print1961,'Súbjicit');
+  assert.ok(a.orthographicVariants.every(v=>v.automaticLatinReplacement===false));
+  assert.deepEqual(a.doxology.map(x=>x.id),[
+    'PALM-R02-PS23-DOXO-L11','PALM-R02-PS23-DOXO-L12',
+    'PALM-R02-PS46-DOXO-L11','PALM-R02-PS46-DOXO-L12']);
+  assert.equal(a.counts.doxologyToneApplications,4);
+  assert.equal(a.counts.totalPendingMusicalApplications,18);
+  assert.equal(a.counts.distinctReviewItemsIncludingEachPsalmsDoxology,17);
+  assert.ok(a.doxology.every(x=>x.completePointingApproved===false));
+  assert.ok(a.doxology.every(x=>x.toneMustBeReviewedWithinOwnPsalm===true));
+  assert.equal(a.critical.ps23EightFlexSeparateFromMediant,true);
+  assert.equal(a.critical.noAutomaticLiveClock,true);
+  assert.equal(a.publication.humanEditorialAccentVerificationComplete,false);
+  assert.equal(a.publication.wordSyllableNeumeUnderlayCertified,false);
+  assert.equal(a.publication.productionScoreAssignments,0);
+  assert.equal(a.publication.eligible,false);
+  const runtime=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
+  assert.ok(!runtime.includes('processionale-palm-1961-accent-doxology-review'));
+});
