@@ -279,9 +279,24 @@ try{
     }
     const target=card.querySelector('[data-cue-id="AO.SM.C0174"]');
     if(!target)throw Error("PHONE_ELEVATION_CUE_MISSING");
-    const cr=card.getBoundingClientRect(),tr=target.getBoundingClientRect();
-    card.scrollTop=Math.max(0,tr.top-cr.top+card.scrollTop+
-      tr.height/2-card.clientHeight*.39);
+    // Use the SAME geometry-based, source-only selector as production.
+    // A center-based target may fall outside the final cue's available
+    // scrolling territory on some headless browser/font metrics.
+    const {pickActiveCue,cueItemsFromScrollContainer}=await import(
+      "/src/mass/reader-cue-focus.js");
+    const items=cueItemsFromScrollContainer(card);
+    const max=Math.max(0,card.scrollHeight-card.clientHeight);
+    const steps=80,position=Array.from({length:steps+1},(_,i)=>
+      max*(steps-i)/steps).find(y=>pickActiveCue({
+        scrollTop:y,clientHeight:card.clientHeight,
+        scrollHeight:card.scrollHeight,items
+      })==="AO.SM.C0174");
+    if(position===undefined)throw Error(
+      "PHONE_ELEVATION_HAS_NO_READER_FOCUS_TERRITORY");
+    card.scrollTop=position;
+    // The scroller may already be at its final edge: explicitly notify
+    // the regular focus listener without modifying native source state.
+    card.dispatchEvent(new Event("scroll"));
   });
   // B052 covers both C0173 (consecration words) and C0174 (elevation).
   // Require the *same exact source cue* and rendered rail state together.
