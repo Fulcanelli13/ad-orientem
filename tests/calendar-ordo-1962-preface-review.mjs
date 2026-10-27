@@ -303,7 +303,7 @@ console.log("PASS 41 exact-source 1960 ordinary Preface classifications: Christm
 const originals=witness.cases.filter(x=>x.upstreamRuleTokens.length===0);
 assert.equal(originals.length,131);
 const exceptional=new Set(["06-23","08-29","09-29","11-01","11-18r","12-24"]);
-const groupCount={COMMON:0,PASCHALIS:0,ASCENSIO:0,APOSTOLI:0,HOLD:0};
+const groupCount={COMMUNIS:0,PASCHALIS:0,ASCENSIO:0,APOSTOLI:0,HOLD:0};
 for(const w of originals){
   const path=w.canonicalSourcePath;
   const k=path.slice("Sancti/".length);
@@ -346,7 +346,7 @@ for(const w of originals){
   else assert.equal(review1962PrefaceForCalendarDay(yearChange).status,"UNMAPPED",
     "Held exceptional feasts remain held in future years");
 }
-assert.deepEqual(groupCount,{COMMON:104,PASCHALIS:15,ASCENSIO:5,APOSTOLI:1,HOLD:6});
+assert.deepEqual(groupCount,{COMMUNIS:104,PASCHALIS:15,ASCENSIO:5,APOSTOLI:1,HOLD:6});
 console.log("PASS 131 exact original Sanctoral source screen: 104 nonseasonal Common, 15 Easter, five Ascension, one redirected Apostles, six independent-source holds");
 
 console.log("PASS 1962 Preface source audit: owner, principal Mass, category, trilingual, regional exclusion, conflict, exceptions");
