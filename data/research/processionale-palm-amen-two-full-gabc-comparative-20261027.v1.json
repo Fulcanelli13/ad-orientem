@@ -1,0 +1,1004 @@
+{
+  "schema": "ao-palm-1961-two-doxology-amen-comparison-v1",
+  "date": "2026-10-27",
+  "batch": 35,
+  "stage": "PALM-R02",
+  "status": "TWO_FULL_AMEN_RESEARCH_SCORES_SVG_RENDERED_BUT_SOURCE_CONFLICT_BLOCKS_LITURGICAL_ACCEPTANCE",
+  "sources": [
+    {
+      "id": "S1961-P23",
+      "type": "PRIMARY_PALM_PROCESSIONAL_FIRST_VERSE_ONLY",
+      "edition": "Graduale Romanum 1961 pp143**",
+      "url": "https://gregobase.selapa.net/sources/2/1179.png",
+      "sourceGabc": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+      "scope": "1st verse note contour and subsequent Latin doxology text, NOT a written out Sicut erat cadence"
+    },
+    {
+      "id": "S1961-P46",
+      "type": "PRIMARY_PALM_PROCESSIONAL_FIRST_VERSE_ONLY",
+      "edition": "Graduale Romanum 1961 pp144**",
+      "url": "https://gregobase.selapa.net/sources/2/1180.png",
+      "sourceGabc": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+      "scope": "1st verse Psalm46 tone contour, same 1f type, NOT a written out Sicut erat cadence; raw Omnes gentes mismatch quarantined"
+    },
+    {
+      "id": "S1974-1stTone",
+      "type": "COMPARATIVE_EXPLICITLY_NOT_SAME_EDITION_OR_USE",
+      "edition": "Graduale Romanum 1974 p822, first tone Introit/Communion Gloria Patri",
+      "url": "https://www.gregorianum.org/wiki/I_Tono_Gloria_Patri_(Introitus_et_Communionis)",
+      "scope": "Complete sung Sicut erat, saeculorum Amen; its final Amen is a distinct descending resolution, unlike naive 1961 Palm source-contour transfer"
+    }
+  ],
+  "comparativeEvidence": {
+    "fullFirstTone1974LastFourLyricPitchGroups": [
+      {
+        "syllable": "ló",
+        "note": "g'"
+      },
+      {
+        "syllable": "rum",
+        "note": "f"
+      },
+      {
+        "syllable": "A",
+        "note": "fff"
+      },
+      {
+        "syllable": "men",
+        "note": "d."
+      }
+    ],
+    "hypotheticalPalmSourceTransferredLastFour": [
+      {
+        "syllable": "ló",
+        "note": "g"
+      },
+      {
+        "syllable": "rum",
+        "note": "f"
+      },
+      {
+        "syllable": "A",
+        "note": "gh gr"
+      },
+      {
+        "syllable": "men",
+        "note": "gf.."
+      }
+    ],
+    "noteGroupContradiction": "Final Amen in fully-notated 1974 I Tone doxology is different from extrapolating ordinary Palm 1961 Psalm23 1f terminal onto A-men. Thus neither source transfer can be source-certified without closer edition/usage check.",
+    "unambiguousPrintedPsalmTone": "The two 1961 Palm Psalm exemplars have first-tone-type reciting h and f-gh-h initial intonation; performance-source secondary table calls both 1f, but the 1974 first-tone doxology is for Introit and Communion usage, not automatically Palm procession.",
+    "doxologyAmenHasPrintedTextButNoNotesIn1961": true,
+    "doxologyAntiphonReturn": "Separate Palm blessing/distribution rubric review; office EUOUAE rules are a comparison only.",
+    "sameProvisionalGabcUnderlayAppliedToBothPsalmDooxologies": true,
+    "sharedUnderlayCaveat": "Both 1961 Psalm verses have same general first-tone 1f family but the same generated Amen melodic body is a model assumption, not independently notated in both Psalm entries."
+  },
+  "fullHypotheticalGabcCases": [
+    {
+      "id": "PALM-R02-PS23-DOXO-L12",
+      "psalm": 23,
+      "printedLatinSections": [
+        "Sicut erat in princípio, et nunc, et semper,",
+        "et in saécula saeculórum. Amen."
+      ],
+      "exactSyllabificationSections": [
+        "Si-cut e-rat in prin-cí-pi-o, et nunc, et sem-per,",
+        "et in saé-cu-la sae-cu-ló-rum. A-men."
+      ],
+      "syllableCounts": [
+        14,
+        11
+      ],
+      "suppliedNoteGroups": [
+        [
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "ixi hr",
+          "h",
+          "g hr",
+          "h."
+        ],
+        [
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "g",
+          "f",
+          "gh gr",
+          "gf.."
+        ]
+      ],
+      "gabcHypothesisOnly": "name:PALM-R02-PS23-DOXO-L12 palm doxology 1961 hypothesized tone not edition-approved;\noffice-part:Psalmus;\ncommentary: NOT a printed 1961 full score. The Amen handling is speculative; do not use for liturgy or publish as source-authentic;\n%%\n(c4) Si(h)cut(h) e(h)rat(h) in(h) prin(h)cí(h)pi(h)o,(h) et(h) nunc,(ixi hr) et(h) sem(g hr)per,(h.) *(:) et(h) in(h) saé(h)cu(h)la(h) sae(h)cu(h)ló(g)rum.(f) A(gh gr)men.(gf..) (::)\n",
+      "lexicalAccentHypotheses": {
+        "medial": [
+          "nunc",
+          "sem"
+        ],
+        "terminal": [
+          "A"
+        ],
+        "unverifiedTextAccent": true
+      },
+      "cadentialPointingAssumption": "Model A: treat Amen (Á-men) as the terminal paroxytonic word and preceding ló-rum as two preparation syllables.",
+      "sourceDerivation": "Graduale Romanum 1961 printed Palm Psalm23 terminal e(gh gr)o(gf..) and Psalm23 first-verse accented mediatio, transposed by underlay only; Psalm46 original medial has different three-syllable timing and this borrowing has NOT been source certified.",
+      "unresolved1974Contradiction": "Graduale Romanum 1974 First Tone full doxology writes saeculórum. Amen with a distinctive descending ending on A-men, NOT 1961 Palm source cadential pitch group.",
+      "sourceFirstVerseOnlyFullyNotated": true,
+      "authenticPalmMelodyCertified": false,
+      "hasAmenSourceSpecialCadence": false,
+      "actualPsalmToneDoxologyEditorConfirmed": false,
+      "editorScoreApproved": false,
+      "productionEligible": false,
+      "rendered": true,
+      "nativeExsurgeTechnicalProof": {
+        "runId": 40523935267,
+        "jobId": 122258204325,
+        "widths": [
+          260,
+          420,
+          800
+        ],
+        "outputSvgNonempty": true,
+        "humanMusicAcceptance": false,
+        "humanPixelReview": false
+      }
+    },
+    {
+      "id": "PALM-R02-PS46-DOXO-L12",
+      "psalm": 46,
+      "printedLatinSections": [
+        "Sicut erat in princípio, et nunc, et semper,",
+        "et in saécula saeculórum. Amen."
+      ],
+      "exactSyllabificationSections": [
+        "Si-cut e-rat in prin-cí-pi-o, et nunc, et sem-per,",
+        "et in saé-cu-la sae-cu-ló-rum. A-men."
+      ],
+      "syllableCounts": [
+        14,
+        11
+      ],
+      "suppliedNoteGroups": [
+        [
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "ixi hr",
+          "h",
+          "g hr",
+          "h."
+        ],
+        [
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "h",
+          "g",
+          "f",
+          "gh gr",
+          "gf.."
+        ]
+      ],
+      "gabcHypothesisOnly": "name:PALM-R02-PS46-DOXO-L12 palm doxology 1961 hypothesized tone not edition-approved;\noffice-part:Psalmus;\ncommentary: NOT a printed 1961 full score. The Amen handling is speculative; do not use for liturgy or publish as source-authentic;\n%%\n(c4) Si(h)cut(h) e(h)rat(h) in(h) prin(h)cí(h)pi(h)o,(h) et(h) nunc,(ixi hr) et(h) sem(g hr)per,(h.) *(:) et(h) in(h) saé(h)cu(h)la(h) sae(h)cu(h)ló(g)rum.(f) A(gh gr)men.(gf..) (::)\n",
+      "lexicalAccentHypotheses": {
+        "medial": [
+          "nunc",
+          "sem"
+        ],
+        "terminal": [
+          "A"
+        ],
+        "unverifiedTextAccent": true
+      },
+      "cadentialPointingAssumption": "Model A: treat Amen (Á-men) as the terminal paroxytonic word and preceding ló-rum as two preparation syllables.",
+      "sourceDerivation": "Graduale Romanum 1961 printed Palm Psalm23 terminal e(gh gr)o(gf..) and Psalm23 first-verse accented mediatio, transposed by underlay only; Psalm46 original medial has different three-syllable timing and this borrowing has NOT been source certified.",
+      "unresolved1974Contradiction": "Graduale Romanum 1974 First Tone full doxology writes saeculórum. Amen with a distinctive descending ending on A-men, NOT 1961 Palm source cadential pitch group.",
+      "sourceFirstVerseOnlyFullyNotated": true,
+      "authenticPalmMelodyCertified": false,
+      "hasAmenSourceSpecialCadence": false,
+      "actualPsalmToneDoxologyEditorConfirmed": false,
+      "editorScoreApproved": false,
+      "productionEligible": false,
+      "rendered": true,
+      "nativeExsurgeTechnicalProof": {
+        "runId": 40523935267,
+        "jobId": 122258204325,
+        "widths": [
+          260,
+          420,
+          800
+        ],
+        "outputSvgNonempty": true,
+        "humanMusicAcceptance": false,
+        "humanPixelReview": false
+      }
+    }
+  ],
+  "counts": {
+    "doxologyResearchFullGabc": 2,
+    "printed1961OriginalDoxologyFullGabc": 0,
+    "earlierCompleteCandidateCases": 15,
+    "allDistinctCasesWithResearchGabc": 17,
+    "physicallyNotatedNewOriginals": 0,
+    "humanMusicalApprovals": 0,
+    "productionScoreAssignments": 0
+  },
+  "release": {
+    "bothHypothesesMusicallyUnapproved": true,
+    "sourceSpecificAmenHandlingStillHeld": true,
+    "renderIsNotMusicalCertification": true,
+    "onlyLocalResearchArtifacts": true,
+    "readerRuntimeChanged": false,
+    "noScorePromoted": true,
+    "publishAllowed": false
+  },
+  "reviewerNeeds": [
+    "Obtain Palm procession source-specific complete sung doxology or correct musical rule; do not substitute 1974 Introit/Communion score uncritically",
+    "Determine whether 1961 psalm tone 1f has an independent Amen cadence after final saeculórum",
+    "Review 1961 doxology medial word accents nunc and semper and handling of long first phrase",
+    "Confirm exact repeated Pueri Hebraeorum antiphon order from pre- and post-distribution chant rubrics",
+    "Verify 1962 canonical Latin editorial owner #894 before score promotion",
+    "Check all 17 complete GABCs manually, not just Exsurge"
+  ],
+  "related": {
+    "sourceMaster": "data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json",
+    "musicOwner": "PR #1749",
+    "textOwner": "issue #894",
+    "researchOwner": "draft PR #1752"
+  },
+  "technicalProof": {
+    "runId": 40523935267,
+    "jobId": 122258204325,
+    "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40523935267",
+    "renderedAmenCandidates": 2,
+    "viewportWidths": [
+      260,
+      420,
+      800
+    ],
+    "amenViews": 6,
+    "allPartialAndCompleteGabcViewportChecks": 186,
+    "allFullResearchCandidatesRendered": 17,
+    "status": "PINNED_EXSURGE_JOB_SUCCEEDED_TECHNICAL_RENDER_ONLY",
+    "musicianApproved": 0,
+    "productionAssigned": 0
+  },
+  "batch36ComparativeScopeCorrection": {
+    "status": "DIFFERENT_USAGE_NOT_CONTRADICTORY_PRIMARY_PALM_SOURCES",
+    "primaryPalmEvidence": "1961 Graduale textus novus pp143**–144** fully notates only first verse of each restored Psalm; the complete Sicut erat text is printed but its full melody is not.",
+    "laterWitness": "1974 Graduale Romanum p822 is labelled Gloria Patri for Introitus and Communion, not necessarily the Psalm verses accompanying Palm distribution.",
+    "safeConclusion": "The note-group differences demonstrate that a generic Tone I doxology cannot be silently substituted for the 1961 Palm processional setting. They do not prove the 1961 Palm psalm has a contradictory fully printed Amen melody.",
+    "twoFullExperimentalGabcRenderPass": true,
+    "twoSourceSpecificAmenTunesMusicallyApproved": false,
+    "runId": 40523935267,
+    "preserveHistoricalComparisonAsWritten": true,
+    "editorAction": "Find source-matched Palm procession doxology underlay or have qualified chant editor establish legitimate 1f tone ending including Amen and repeat-antiphon rubric."
+  },
+  "batch41SameEditionIntroitalComparison": {
+    "batch": 41,
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "SAME_1961_EDITION_NOTATED_FIRST_TONE_AMEN_FOUND_BUT_INTROIT_GENRE_MISMATCH_NO_PALM_ENDING_APPROVAL",
+    "discovery": "A fully written Gloria Patri I with a distinct final Amen exists in the very same 1961 Graduale Romanum, p.135*; the heading specifies Toni Gloria Patri ad Introitum. This is stronger chronological control than the formerly used 1974 comparison, but weaker contextual control than a Palm-processional 1f score.",
+    "contemporary1961Witness": {
+      "title": "Gloria Patri I",
+      "edition": "Graduale Romanum, Solesmes 1961",
+      "printedPage": "135*",
+      "chantDatabaseId": 4341,
+      "sourceRecordUrl": "https://gregobase.selapa.net/chant.php?id=4341",
+      "gabcTranscriptUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=4341",
+      "sameEditionAsPalm": true,
+      "tag": "Toni Gloria Patri ad Introitum",
+      "genre": "INTROIT_DOXOLOGY_NOT_PALM_DISTRIBUTION_PSALM",
+      "lastLatinPitchGroups": [
+        {
+          "syllable": "ló",
+          "notes": "g'"
+        },
+        {
+          "syllable": "rum",
+          "notes": "f"
+        },
+        {
+          "syllable": "A",
+          "notes": "fff"
+        },
+        {
+          "syllable": "men",
+          "notes": "d."
+        }
+      ],
+      "sourceEvidenceGrade": "PAGE_AND_EDITION_ATTRIBUTED_GREGObase_GABC_TRANSCRIPTION_AND_RENDERED_PDF_VISUALLY_CHECKED_NOT_AN_INDEPENDENT_FULL_ORIGINAL_1961_PALM_PAGE_COLLATION",
+      "sourcePdfRenderedFromTranscription": "https://gregobase.selapa.net/download.php?format=pdf&id=4341",
+      "maySupplyOriginalPalmScore": false
+    },
+    "officeFamilyComparator": {
+      "title": "Psalm 109 (Dixit Dominus), Tone 1f",
+      "sourceRecordUrl": "https://gregobase.selapa.net/chant.php?id=18175",
+      "gabcTranscriptUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=18175",
+      "edition": "Liber Usualis, Solesmes 1961",
+      "printedPage": "128",
+      "genre": "OFFICE_PSALM_1F_NOT_PALM_PROCESSIONAL",
+      "hasPublishedFirstVerseExample": true,
+      "exposesPrintedFullPalmAmen": false,
+      "terminationExcerpt": "me(gh gr)is.(gf..)",
+      "relevance": "Confirms common 1f office-psalm final pitch-group family, not the full Gloria Patri / Sicut erat Amen underlay in the processional."
+    },
+    "palm1961Source": {
+      "psalm23Source": "Graduale Romanum 1961 p.143**; first verse notated; doxology text printed without full note underlay",
+      "psalm46Source": "Graduale Romanum 1961 p.144**; first verse notated; doxology text printed without full note underlay",
+      "explicitlyNotatedPalmSpecificSicutEratAmenFound": false,
+      "originalPalmSourceGabcIdentifiers": [
+        "gregobase-19315.gabc",
+        "gregobase-19316.gabc"
+      ],
+      "candidateResearchAmenPitchGroups": [
+        {
+          "syllable": "ló",
+          "notes": "g"
+        },
+        {
+          "syllable": "rum",
+          "notes": "f"
+        },
+        {
+          "syllable": "A",
+          "notes": "gh gr"
+        },
+        {
+          "syllable": "men",
+          "notes": "gf.."
+        }
+      ],
+      "comparisonConclusion": "The 1961 contemporary Introit end differs sharply from the speculative Palm end. Musical genre and mode-family alone do not authorize transfer in either direction. Neither is independently certified as the Palm Amen setting."
+    },
+    "historical1974ComparatorRetained": "1974 Graduale p822 I Tone Introit/Communion remains background corroboration; do not describe it as primary evidence of a contradictory Palm melody.",
+    "liturgicalStructureWitness": {
+      "source": "CAECILIA vol.83 no.2 (Jan-Feb 1956), p.44, official contemporary committee's musical guide",
+      "url": "https://media.musicasacra.com/publications/caecilia/caecilia_v83n02_1956_01_copy2.pdf#page=6",
+      "fact": "Distribution chant can conclude with Gloria Patri and antiphon if palms finish early; no inference that a separate response or Introit Gloria Patri tune is prescribed."
+    },
+    "musicalEditorNeeds": [
+      "Obtain actual Palm distribution Psalm 23 and 46 1f Sicut erat/saeculorum Amen music or a reliable edition-specific treatment for the processional.",
+      "Check whether office-mode 1f EUOUAE termination is actually appropriate after the Palm Antiphon and how Amen is sung.",
+      "Confirm both Palm doxology mediant accent groups, genre-specific final Amen notes and antiphon returns against 1961 witnesses.",
+      "Require an independent qualified musical signoff for each of the two doxology cases before promoting."
+    ],
+    "preservesTwoDistinctPendingCases": true,
+    "hasSourceSpecificMusicalApproval": false,
+    "validatedOriginalFullGabcCount": 0,
+    "existing17CasesStillProvisional": true,
+    "releasePermitted": false,
+    "readerRuntimeChanged": false,
+    "newGabcCreated": false
+  },
+  "batch42OfficeTone1fDoxologyMethod": {
+    "batch": 42,
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "SOURCE_BASED_STANDARD_TONE_1F_DOXOLOGY_METHOD_IDENTIFIED__TWO_AMEN_GABCS_STILL_MUSICALLY_UNAPPROVED",
+    "scope": "1962 Palm distribution Psalms 23 and 46, with respective Pueri Hebraeorum antiphons. Explicitly distinguish 1961 first-tone office/antiphonal psalm formula from same-edition ad-Introitum and later different-context Gloria Patri settings.",
+    "sourceHierarchy": [
+      {
+        "id": "LU1961_PSALMTONES_112_113",
+        "title": "The Liber Usualis, Solesmes 1961, pp.112-113, The Eight Tones of the Psalms",
+        "url": "https://longbeachchant.com/wp-content/uploads/2019/11/liber-1961-eight-psalm-tones.pdf#page=2",
+        "relevantRule": "Office/antiphonal psalmody: first verse intoned; subsequent verses resume dominant; Tone I mediant has two accents; Tone I f termination has one accent with two preparatory syllables. Notes on page 113 say repeated intonation does not apply when several psalms are under a single Gloria Patri.",
+        "authority": "CONTEMPORARY_PRIMARY_TONE_GRAMMAR_AND_FIRST_TONE_F_FORMULA",
+        "pageImageInspected": true,
+        "fullPalm1961AmenUnderlay": false
+      },
+      {
+        "id": "GR1961_PALM_PS23",
+        "title": "Graduale Romanum 1961, Psalm 23, p.143** (restored text)",
+        "url": "https://gregobase.selapa.net/sources/2/1179.png",
+        "relevantRule": "Printed Psalm 23 first-verse tone and indicated rest of text; does not fully notate separate concluding doxology.",
+        "authority": "PRIMARY_PALM_PROCESSIONAL_MELODY_AND_TEXT",
+        "fullPalm1961AmenUnderlay": false
+      },
+      {
+        "id": "GR1961_PALM_PS46",
+        "title": "Graduale Romanum 1961, Psalm 46, p.144** (restored text)",
+        "url": "https://gregobase.selapa.net/sources/2/1180.png",
+        "relevantRule": "Printed Psalm 46 first-verse tone and indicated rest of text; distinct melodic psalm model from Psalm 23.",
+        "authority": "PRIMARY_PALM_PROCESSIONAL_MELODY_AND_TEXT",
+        "fullPalm1961AmenUnderlay": false
+      },
+      {
+        "id": "MR1962_PALM_DISTRIBUTION",
+        "title": "Missale Romanum 1962, Palm Sunday distribution and antiphon rubrics",
+        "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+        "relevantRule": "Conclude each distribution psalm with Gloria Patri and repeat its corresponding antiphon; conditional early closure does not imply additional independent Amen response.",
+        "authority": "ROMAN_1962_PRIMARY_LITURGICAL_ORDER_NOT_SCORE"
+      },
+      {
+        "id": "PSALLITE_102_104",
+        "title": "Psallite Sapienter, Palm Sunday §§102–104",
+        "url": "https://media.churchmusicassociation.org/books/7848318-Psallite-Sapienter-A-Musicians-Guide-to-the-Extraordinary-Form.pdf#page=37",
+        "relevantRule": "Every two Palm psalm verses repeat corresponding antiphon, with Gloria Patri concluding the psalms. Supporting rubrical guide.",
+        "authority": "CONTEMPORARY_1962_MUSIC_GUIDE"
+      },
+      {
+        "id": "LU1961_FIRST_TONE_1F_PS109",
+        "title": "Liber Usualis 1961 p.128, Psalm 109 Tone 1.f",
+        "url": "https://gregobase.selapa.net/chant.php?id=18175",
+        "relevantRule": "Same 1f family example; terminal dex(g) tris(f) me(gh gr) is(gf..) shows pitch-group division. It does not include a fully notated Gloria/Sicut erat ending or establish complete Palm-pointing.",
+        "authority": "SAME_EDITION_SAME_PSALM_TONE_FAMILY_DIFFERENT_OCCASION"
+      },
+      {
+        "id": "GR1961_INTROIT_GLORIA_DISTINCT",
+        "title": "Graduale Romanum 1961 p.135* Gloria Patri I",
+        "url": "https://gregobase.selapa.net/chant.php?id=4341",
+        "relevantRule": "Fully notated Introit doxology; genre-specific and must not be transplanted into Palm distribution psalmody.",
+        "authority": "NEGATIVE_GENRE_CONTROL"
+      }
+    ],
+    "toneModel": {
+      "commonFamily": "PRIMA_TONUS_TERMINATIO_F__OFFICE_STYLE_ANTIPHONAL_PSALMODY",
+      "requiredSeparateOpeningModels": [
+        "GR1961_PALM_NOVUS_PS23",
+        "GR1961_PALM_NOVUS_PS46"
+      ],
+      "sourceFirstToneTermination": "ONE_ACCENT_TWO_PREPARATORY_SYLLABLES",
+      "sharedFirstVerseCadentialPitchGroups": [
+        "g",
+        "f",
+        "gh",
+        "gr",
+        "gf"
+      ],
+      "historicalEvidence": "Both printed 1961 restored Palm first-verses have five flattened terminal pitch groups; generic 1f office source shares the f termination. Same terminal pitch family does not itself guarantee all GABC underlays or distinct first-half mediants.",
+      "firstVerseIntonationRepeatedAtEveryVerse": false,
+      "normalizedDoxology": "Gloria Patri and Sicut erat sung as final psalm doxology (two verse-length members), then the same associated antiphon is repeated.",
+      "euouae": "E-u-o-u-a-e mnemonic for the six syllables of sæculorum Amen, used to specify psalm termination/differentia; not a separately sung lyric or automatically a literal melodic map for this Palm witness.",
+      "amenIsSeparateResponsorialEvent": false,
+      "fullPalmDoxologyPrintedScoreFound": false,
+      "fullIndependentMelodyProof": false
+    },
+    "twoExistingAmenResearchSettings": {
+      "ids": [
+        "PALM-R02-PS23-DOXO-L12",
+        "PALM-R02-PS46-DOXO-L12"
+      ],
+      "sourceSyllablesLastSix": [
+        "sæ",
+        "cu",
+        "ló",
+        "rum",
+        "A",
+        "men"
+      ],
+      "hypothesisTerminalUnderlayLastFour": [
+        {
+          "syllable": "ló",
+          "pitchGroups": "g",
+          "role": "PREPARATION_1"
+        },
+        {
+          "syllable": "rum",
+          "pitchGroups": "f",
+          "role": "PREPARATION_2"
+        },
+        {
+          "syllable": "A",
+          "pitchGroups": "gh gr",
+          "role": "PUTATIVE_FINAL_ACCENT"
+        },
+        {
+          "syllable": "men",
+          "pitchGroups": "gf..",
+          "role": "POSTACCENT_CLOSE"
+        }
+      ],
+      "structuralOneAccentTwoPreparationFit": true,
+      "sourceActuallyWritesFourLastGroupsForPalmAmen": false,
+      "duplicatedPitchSequenceAcrossTwoPsalmModelsIsEditorialHypothesis": true,
+      "lexicalAmenStressAndPunctuationMusicianCertified": false,
+      "verifiedByExsurgePreviously": true,
+      "editionSpecificFullVerseMusicApproved": false,
+      "noNewGabcCreated": true
+    },
+    "correctedAcceptancePath": {
+      "previousOverstrictAssumption": "Require an original 1961 fully notated Palm-specific Sicut erat... Amen before any approval.",
+      "improvedMusicalCriterion": "A complete printed Palm-specific doxology need not exist for formulaic psalm tones: a qualified Gregorian editor may independently approve a faithful 1961 first-tone f formula underlay by comparing pp.112–113 tone grammar, the two printed Palm first-verse witnesses, proper 1962 Latin text and antiphon cycle. No extrapolating from an Introit Gloria Patri.",
+      "independentEditorialRequirements": [
+        "For each Psalm model separately, verify the exact Tone 1f formula, initial treatment and all medial accents in both doxology members.",
+        "Point complete Sicut erat text with correct natural/secondary accents, punctuation, position of preparatory syllables, proper treatment of Amen and 1f cadence.",
+        "Confirm correspondence of the terminal groups to the 1961 f differentia and immediate antiphon reprise, without assuming a separate Amen response.",
+        "Provide traceable named editorial decision and notation/Latin side-by-side, then run Exsurge and reader-specific 1962 source gate before any score publication."
+      ],
+      "requireImpossibleFullSourceScore": false,
+      "requireHumanEditorMusicalCheck": true,
+      "existingProvisionalGabcIsAutomaticReleaseCandidate": false
+    },
+    "noSeparateAmenEvent": true,
+    "independentMusicalApprovals": 0,
+    "scorePromotions": 0,
+    "readerRuntimeChanged": false,
+    "researchOnly": true,
+    "releasePermitted": false
+  },
+  "batch43PueriPortantesEuouaeCrosscheck": {
+    "batch": 43,
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "SAME_ANTIPHON_1960_EUOUAE_LAST_ACCENT_PITCH_GROUP_DIFFERENCE_IDENTIFIED__NO_PROCESSIONAL_TRANSFER_CERTIFIED",
+    "witness": {
+      "name": "Pueri Hebraeorum portantes",
+      "primaryEditionCitation": "Liber antiphonarius, Solesmes 1960 p. 423",
+      "gregobaseId": 12531,
+      "gregobaseUrl": "https://gregobase.selapa.net/chant.php?id=12531",
+      "gabcUrl": "https://gregobase.selapa.net/download.php?format=gabc&id=12531",
+      "medium": "WEB_READABLE_LATER_GABCBased_TRANSCRIPTION_OF_SAME_NAMED_ANTIPHON",
+      "officeUse": "PALM_SUNDAY_OFFICE_ANTIPHON_NOT_PROCESSION_MISSAL_SCORE",
+      "fullEuouaeGabc": "<eu>E(h) u(h) o(g) u(f) a(gh) e.</eu>(gf..)",
+      "melodyLastSix": [
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh",
+        "gf.."
+      ],
+      "sixSyllables": [
+        "sæ",
+        "cu",
+        "ló",
+        "rum",
+        "A",
+        "men"
+      ],
+      "editionOriginal1960PageInspected": true,
+      "transcriptionHistory": "GregoBase notes ending and EUOUAE added 2025-08-21; 1960 source facsimile for this passage has not been visually authenticated; this is lower authority than a checked original image.",
+      "sourceCaveat": "Do not infer that the Office psalm termination is the one used for the restored 1961 Palm distribution psalm; transcription's contextual metadata and source edition do not establish that transfer.",
+      "originalFacsimileUrl": "https://gregobase.selapa.net/sources/48/512.png",
+      "pageContext": "At Prime, not at Palm distribution. Printed first-tone f antiphon and six-syllable EUOUAE are visible across pp.423-424.",
+      "sourceEvidenceGrade": "PRIMARY_1960_OFFICE_PRINTED_FACSIMILE_PAGES_423_424_VISUALLY_INSPECTED_PLUS_GABCBased_TRANSCRIPTION"
+    },
+    "matchedProcessionalAntiphon": {
+      "name": "Pueri Hebraeorum portantes",
+      "edition": "Graduale Romanum, Solesmes 1961 p. 167; Liber Usualis 1961 p. 581",
+      "archivedGabc": "data/research/chant-source-archive/1961-liber-usualis-gregobase-20261026/gregobase-1215-e1.gabc",
+      "gregobaseId": 1215,
+      "url": "https://gregobase.selapa.net/chant.php?id=1215",
+      "textAndMelodyFamilyComparable": true,
+      "hasAttestedProcessionalEuouaeInItsGabc": false,
+      "sourceContextDifference": "1960 office antiphon and 1961 Palm distribution antiphon are closely related melodies, but the 1961 archived processional GABC does not encode the 1960 EUOUAE continuation.",
+      "originalFacsimileUrl": "https://gregobase.selapa.net/sources/2/193.png",
+      "original1961PageInspected": true,
+      "originalPrintedMode": "1 antiphona I f",
+      "originalPrintedDoxologyUnderlayAvailable": false,
+      "palmPsalmTextEditionCaution": "Printed 1961 Graduale pp.167-169 show antiquus Psalm 23 and 46; restored 1961 textus novus witnesses are separate pp.143**-144**. Do not conflate the psalm text families when adjudicating sound underlay."
+    },
+    "existingResearchGabc": {
+      "ids": [
+        "PALM-R02-PS23-DOXO-L12",
+        "PALM-R02-PS46-DOXO-L12"
+      ],
+      "lastSixSyllables": [
+        "sæ",
+        "cu",
+        "ló",
+        "rum",
+        "A",
+        "men"
+      ],
+      "lastSixPitchGroups": [
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "reproducedEnding": "sae(h)cu(h)ló(g)rum.(f) A(gh gr)men.(gf..)",
+      "musicianApproved": false
+    },
+    "comparison": {
+      "equalFirstFourPitchGroups": true,
+      "differentFifthPitchGroup": {
+        "syllable": "A",
+        "office1960": "gh",
+        "palmDraft": "gh gr"
+      },
+      "equalSixthPitchGroup": true,
+      "extraGrpClaim": "1960 EUOUAE transcription does not include gr on A, whereas both provisional Palm GABCs do. Distinction may arise from different formula application, rhythmic or melodic genre and syllabification; this comparison alone does not establish an error.",
+      "canChooseOfficeAsProductionScore": false,
+      "musicalEditorQuestion": "For each restored Palm Psalm, is the final 1f Amen sung with A(gh)men(gf) as in office-chant EUOUAE, or is A(gh gr)men(gf) justified by the independently notated 1961 restored Palm Psalm first-verse two-syllable termination? Check original 1960 p423 and 1961 p167/143**/144** pages, not just GABC transcriptions.",
+      "twoIndependentAntiphonPrintExamples1960": true,
+      "source1960FacsimileInspected": true,
+      "source1961ProcessionalFacsimileInspected": true,
+      "anyIndependentlyPrintedPalmFullSicutEratAmenFound": false,
+      "warningTextusAntiquusVsNovus": true
+    },
+    "otherAntiphon": {
+      "name": "Pueri Hebraeorum vestimenta",
+      "primary1960Locator": "Liber antiphonarius, Solesmes 1960 p. 424",
+      "primary1961Locator": "Graduale Romanum 1961 p. 168 and Liber Usualis 1961 p. 582",
+      "source1960EuouaeNotesChecked": true,
+      "noInferredSharedEuouae": true,
+      "gregobaseId": 12140,
+      "originalFacsimileUrl": "https://gregobase.selapa.net/sources/48/513.png",
+      "gabcUrl": "https://gregobase.selapa.net/download.php?format=gabc&id=12140",
+      "originalPrintedMode": "I f; ad Tertiam",
+      "originalPrintedEuouae": true,
+      "source1960EuouaePitchGroups": [
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh",
+        "gf.."
+      ],
+      "sameSixPitchGroupsAsPortantes": true,
+      "matchedProcessionalOriginalFacsimileUrl": "https://gregobase.selapa.net/sources/2/194.png",
+      "processionalOriginalPrintedMode": "2 antiphona I f",
+      "processional1961PrintedPageInspected": true,
+      "matchingAntiphonTextButDifferentLiturgicalUse": true
+    },
+    "publishing": {
+      "editorialScoreApproved": 0,
+      "numberOfDraftScoresChanged": 0,
+      "numberOfAdditionalGabcCreated": 0,
+      "readerChanged": false,
+      "promoteAllowed": false
+    },
+    "priority": "BOTH_1960_PRINTED_OFFICE_1F_EUOUAE_IDENTICAL_1961_PROCESSIONAL_TONE_MODE_CONFIRMED__HUMAN_MUSICAL_ADJUDICATION_REMAINS_FOR_NOVUS_PSALMS"
+  },
+  "batch44Palm1961WhiteNoteTerminationProof": {
+    "batch": 44,
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "SOURCE_ANCHORED_WHY_GR_IS_NOT_INVENTED_BUT_DOXOLOGY_AMEN_UNDERLAY_STILL_NOT_ATTESTED",
+    "conclusion": "The extra white g note encoded gr is a literal part of both independently archived restored 1961 Palm Psalm first-verse terminations. Its musical existence and two-vs-three-syllable placement are printed; application to A-men in either complete, unnotated Sicut erat remains an unapproved editorial extrapolation.",
+    "originalPrintedSources": [
+      {
+        "psalm": 23,
+        "sourceUrl": "https://gregobase.selapa.net/sources/2/1179.png",
+        "printedPage": "143**",
+        "archive": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+        "verifiedSourceGabcSnippet": "<i>tant</i>(g) <i>in</i>(f) <b>e</b>(gh gr)o.(gf..)",
+        "cadenceUnderlay": [
+          {
+            "syllable": "tant",
+            "notes": "g"
+          },
+          {
+            "syllable": "in",
+            "notes": "f"
+          },
+          {
+            "syllable": "e",
+            "notes": "gh gr"
+          },
+          {
+            "syllable": "o",
+            "notes": "gf.."
+          }
+        ],
+        "accentualShape": "two-syllable final word e-o: white g note lies on e with gh; this is the closest same-rite notated comparison to draft two-syllable A-men"
+      },
+      {
+        "psalm": 46,
+        "sourceUrl": "https://gregobase.selapa.net/sources/2/1180.png",
+        "printedPage": "144**",
+        "archive": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+        "verifiedSourceGabcSnippet": "<i>ce</i>(g) <i>læ</i>(f)<b>ti</b>(gh)ti(gr)æ :(gf..)",
+        "cadenceUnderlay": [
+          {
+            "syllable": "ce",
+            "notes": "g"
+          },
+          {
+            "syllable": "læ",
+            "notes": "f"
+          },
+          {
+            "syllable": "ti",
+            "notes": "gh"
+          },
+          {
+            "syllable": "ti",
+            "notes": "gr"
+          },
+          {
+            "syllable": "æ",
+            "notes": "gf.."
+          }
+        ],
+        "accentualShape": "three-syllable final word ti-ti-æ: white g note is assigned to middle unaccented syllable, rather than both gh and gr on stressed ti"
+      }
+    ],
+    "notationMeaning": {
+      "gabcRMeaning": "In GABC 'gr' denotes a white/hollow note at pitch g, not an independent pitch called gr; a valid extra note within the original processional tone.",
+      "gabcReferenceUrl": "https://gregobase.selapa.net/?page_id=53",
+      "primaryRuleReferenceUrl": "https://longbeachchant.com/wp-content/uploads/2019/11/liber-1961-eight-psalm-tones.pdf#page=2",
+      "underlayTeachingUrl": "https://npm.org/wp-content/uploads/2017/07/Rules-for-Text-Underlay-of-the-Psalm-Text-at-the-Psalm-Tone-Cadence.pdf#page=2",
+      "whiteEpentheticNote": "The supporting pedagogy discusses white notes as psalm-tone epenthetic syllable indications. Do not equate that blanket explanation with proof of the exact Psalm23 two-syllable assignment; the scanned Palm first verse, not this generic rule, is the direct evidence."
+    },
+    "officeComparator": {
+      "edition": "Liber antiphonarius 1960, pp.423–424",
+      "usage": "Prime and Terce Office Pueri antiphons",
+      "sourceUrls": [
+        "https://gregobase.selapa.net/sources/48/512.png",
+        "https://gregobase.selapa.net/sources/48/513.png"
+      ],
+      "sixVowelCadence": [
+        "h",
+        "h",
+        "g",
+        "f",
+        "gh",
+        "gf.."
+      ],
+      "hasWhiteGAfterGhOnA": false,
+      "authorityForPalmDistributionAmen": false
+    },
+    "existingDraft": {
+      "ids": [
+        "PALM-R02-PS23-DOXO-L12",
+        "PALM-R02-PS46-DOXO-L12"
+      ],
+      "tail": "ló(g)rum.(f) A(gh gr)men.(gf..)",
+      "sameLastTwoSyllableGroupAsPsalm23Opening": true,
+      "sameFlattenedPitchOrderAsBothPrinted1961PsalmOpenings": true,
+      "sourceHasFullyNotatedPalmSicutErat": false,
+      "editorMusicalSignoff": false,
+      "notAutomaticallyProvenFromSharedTone": true
+    },
+    "specificMusicalDecision": {
+      "question": "Does the restored 1961 processional 1f termination for the Sicut erat doxology treat two-syllable A-men analogously to the Psalm23 two-syllable e-o ending (retaining white gr), or follow the 1960 Office EUOUAE which omits gr? Underlay should be vetted independently for both Psalm23 and Psalm46.",
+      "proposedNonDecision": "Retain both original hypotheses unchanged, including gh gr; do not silently delete gr or mark it approved. Source-matched musical editor to make the choice.",
+      "maximalVerifiedConclusions": [
+        "P23 two-syllable Palm exemplar does include gr",
+        "P46 three-syllable Palm exemplar does include gr on the subsequent syllable",
+        "1960 Office Pueri EUOUAE has no gr",
+        "No staff-notated full Palm Sicut erat has been established"
+      ],
+      "cannotInferAbsentSource": "It is not established that all Palm doxologies necessarily use the same 5-pitch-group distribution as exemplary verse endings."
+    },
+    "publicationAllowed": false,
+    "humanMusicianApproved": 0,
+    "productionScoresAdded": 0,
+    "newGabcCreated": false,
+    "originalSourceArchiveModified": false,
+    "readerRuntimeChanged": false
+  },
+  "batch45EpentheticWhiteNoteCorrection": {
+    "batch": 45,
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "REINTERPRET_WHITE_GR_AS_OPTIONAL_EPENTHETIC_SYLLABLE_CUE__NOT_MANDATORY_SOUNDED_NOTE__TWO_DOXOLOGIES_HELD",
+    "sourceValidation": [
+      {
+        "source": "Dom Gregory Suñol, Text Book of Gregorian Chant, Chapter II, printed page 53; translated according to Solesmes method",
+        "url": "https://longbeachchant.com/wp-content/uploads/2019/11/chanting-the-psalms-sunol.pdf#page=9",
+        "pageNumberPdfZeroBased": 8,
+        "role": "PERIOD_EXPLICIT_WHITE_OPTIONAL_SUPPLEMENTARY_NOTE_RULE",
+        "interpretation": "The added hollow note stands for the penultimate unaccented syllable of a three-syllable dactylic cadence; it does not demand a third sounded element in a two-syllable spondaic final word.",
+        "facsimileInspected": true
+      },
+      {
+        "source": "Gregorian Institute of America, An Applied Course in Gregorian Chant, 1956, pp.140-143",
+        "url": "https://media.churchmusicassociation.org/books/applied_course_chant_carroll.pdf#page=144",
+        "role": "SECOND_PERIOD_EXPLANATION_OF_EPENTHESIS",
+        "interpretation": "The auxiliary hollow punctum accommodates an extra atonal syllable between the accented element and final, and is a rhythm-neutral melodic extension rather than a required flourish on any two-syllable text.",
+        "facsimileInspectedForRelevantRule": true
+      },
+      {
+        "source": "Gregorio GABC reference, punctum cavum suffix r",
+        "url": "https://gregorio-project.github.io/gabc/details.html",
+        "role": "NOTATION_SYNTAX",
+        "interpretation": "In the archived GABCs, suffix r makes a hollow punctum at the pitch letter: gr denotes a hollow g, not a separate named pitch."
+      },
+      {
+        "source": "Liber Usualis Solesmes 1961, printed p113 first-tone f termination",
+        "url": "https://longbeachchant.com/wp-content/uploads/2019/11/liber-1961-eight-psalm-tones.pdf#page=2",
+        "role": "CONTEMPORARY_PRINTED_TONE_REFERENCE",
+        "interpretation": "First-tone terminations take one melodic accent with two preparatory syllables; differences between spondaic and dactylic underlays need source-specific judgement."
+      }
+    ],
+    "sourceFacsimileReference": {
+      "psalm23PrintedPage": "143**",
+      "psalm46PrintedPage": "144**",
+      "psalm23Gabc": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+      "psalm46Gabc": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+      "psalm23TwoSyllableLastWord": "e(gh gr)o(gf..)",
+      "psalm46ThreeSyllableLastWord": "ti(gh)ti(gr)æ(gf..)",
+      "correctedInterpretation": "The graphic presence of gr in Psalm23's two-syllable e-o sample need not mean an extra g is sung there; Psalm46's three-syllable ti-ti-æ provides the additional syllable on which hollow gr is actually positioned. The archive does not prove gr is required for the two-syllable A-men.",
+      "contradictsEarlierMandatoryNoteInference": true
+    },
+    "twoHypotheticalDoxologies": {
+      "ids": [
+        "PALM-R02-PS23-DOXO-L12",
+        "PALM-R02-PS46-DOXO-L12"
+      ],
+      "retainedPrintedGabcPhrase": "ló(g)rum.(f) A(gh gr)men.(gf..)",
+      "office1960EuouaeFinal": [
+        "a(gh)",
+        "e(gf..)"
+      ],
+      "singleSyllableMusicalIssue": "A-men has one unstressed syllable after A; a hollow note corresponding to an additional intermediate syllable is not automatically sung.",
+      "A_ghgr_isSourceAuthenticatedRequiredPerformance": false,
+      "A_gh_isMusicallyPlausibleSpondaicVariant": true,
+      "A_gh_hasBeenIndependentlyEditoriallyApproved": false,
+      "originalGabcBytesUnchanged": true,
+      "noAlternativeFullGabcCreated": true,
+      "sourceSpecific1961PalmCompleteDoxologyFound": false
+    },
+    "parallelMediantIssue": {
+      "description": "Both provisional complete Sicut erat GABC bodies are identical, even though the 1961 printed Psalm 23 and Psalm 46 first-verse mediants employ distinct stressed-syllable cell pairs.",
+      "firstPsalmModelAccentedCells": [
+        "ixi hr",
+        "g hr"
+      ],
+      "secondPsalmModelAccentedCells": [
+        "ixi",
+        "g"
+      ],
+      "bothDoxologyResearchBodiesIdentical": true,
+      "bothUseFirstPsalmModelCells": [
+        "ixi hr",
+        "g hr"
+      ],
+      "sourceHasAuthorizedSecondPsalmSameMediant": false,
+      "conclusion": "Shared f termination alone does not justify identical complete Sicut erat medians for both restored psalms. Musical editor must assess full half-verse cell assignment for each, not only final Amen."
+    },
+    "editorialAction": "First determine whether each Palm doxology's A-men follows 1f short (gh/gf) underlay with optional gr omitted, then independently resolve the Psalm23-versus-Psalm46 Sicut erat mediant accents from original source; do not silently rewrite scores. Confirm corresponding antiphon reprise.",
+    "historicalBatch44PreservedNotDeleted": true,
+    "recordIsMusicalRuleCorrectionNotHumanApproval": true,
+    "release": {
+      "humanMusicalApprovalCount": 0,
+      "scorePromotions": 0,
+      "changedGabcCount": 0,
+      "massReaderChanged": false,
+      "productionAllowed": false
+    }
+  },
+  "batch46SicutEratMediantCellCrosswalk": {
+    "batch": 46,
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "PS23_EXACT_FOUR_SYLLABLE_SOURCE_CELL_MATCH_PS46_SIX_TO_FOUR_SYLLABLE_UNATTESTED_CONTRACTION_BOTH_UNAPPROVED",
+    "finding": "The two 1961 restored Palm Psalm first-verse mediants have the same six flattened melodic pitch symbols, but their distribution over Latin syllables differs. The common draft Sicut erat mediant reproduces Psalm23's four-syllable pattern exactly, whereas Psalm46's six-syllable source-specific pattern would need a documented contraction to work with the doxology's four-syllable final phrase.",
+    "sources": [
+      {
+        "id": "GR1961_PS23_143STARSTAR",
+        "book": "Graduale Romanum 1961 p.143**",
+        "sourceUrl": "https://gregobase.selapa.net/sources/2/1179.png",
+        "archivedGabc": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+        "sourceCadence": "<b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+        "syllables": [
+          "re",
+          "plent",
+          "e",
+          "am"
+        ],
+        "noteGroups": [
+          "ixi hr",
+          "h",
+          "g hr",
+          "h."
+        ],
+        "musicallyAccentedSyllableIndices": [
+          0,
+          2
+        ],
+        "independentCompleteDoxologyWitness": false
+      },
+      {
+        "id": "GR1961_PS46_144STARSTAR",
+        "book": "Graduale Romanum 1961 p.144**",
+        "sourceUrl": "https://gregobase.selapa.net/sources/2/1180.png",
+        "archivedGabc": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+        "sourceCadence": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+        "syllables": [
+          "pláu",
+          "di",
+          "te",
+          "má",
+          "ni",
+          "bus"
+        ],
+        "noteGroups": [
+          "ixi",
+          "hr",
+          "h",
+          "g",
+          "hr",
+          "h."
+        ],
+        "musicallyAccentedSyllableIndices": [
+          0,
+          3
+        ],
+        "independentCompleteDoxologyWitness": false
+      }
+    ],
+    "sharedFlattenedPitchSymbols": [
+      "ixi",
+      "hr",
+      "h",
+      "g",
+      "hr",
+      "h."
+    ],
+    "sameSourceMelodicToneFamily": true,
+    "sameSourceSyllableToGroupAssignment": false,
+    "latinDoxologyMediant": {
+      "full": "Sicut erat in princípio, et nunc, et semper,",
+      "cadentialLastFourSyllables": [
+        "nunc",
+        "et",
+        "sem",
+        "per"
+      ],
+      "naturalCadentialAccents": [
+        "nunc",
+        "sem"
+      ],
+      "indicesInFour": [
+        0,
+        2
+      ],
+      "draftLastFourUnderlay": "nunc,(ixi hr) et(h) sem(g hr)per,(h.)",
+      "noteGroups": [
+        "ixi hr",
+        "h",
+        "g hr",
+        "h."
+      ],
+      "wordPunctuationFromSourceRetained": true,
+      "musicalAccentRuling": "nunc and sem are lexically usable accented syllables with one unaccented et between, but tonic accent and comma timing require singer/editor review; evidence of cell match is not full musical acceptance."
+    },
+    "psalm23Case": {
+      "id": "PALM-R02-PS23-DOXO-L12",
+      "exactSameAccentGroupAndInterveningSyllableAllocationAsOwnPrintedExample": true,
+      "sourceFourSyllables": true,
+      "candidateFourSyllables": true,
+      "samePrintedGroupAssignment": true,
+      "sourceAuthenticFullDoxology": false,
+      "provisionalStatus": "SOURCE_CELL_PATTERNS_MATCH_MUSIC_EDITOR_REQUIRED"
+    },
+    "psalm46Case": {
+      "id": "PALM-R02-PS46-DOXO-L12",
+      "sourceSixSyllables": true,
+      "candidateFourSyllables": true,
+      "samePrintedGroupAssignment": false,
+      "usesPsalm23Grouping": true,
+      "sameFlattenedPitchSymbols": true,
+      "publishedOriginal1961DoxologyFourSyllableContractionFound": false,
+      "hasIndependent1961PalmPsalm46EditorAuthorizedMediant": false,
+      "provisionalStatus": "FOUR_SYLLABLE_CONTRACTION_NOT_SOURCE_CERTIFIED_HARD_HOLD"
+    },
+    "unresolvedTail": "Even the Psalm23 mediant group match does NOT approve its six-syllable EUOUAE/Amen cadence, nor certify punctuation, sung hollow notes, full source text or antiphon return.",
+    "reviewInstruction": "Music editor: first assess Psalm23 nunc / et / sem / per against its authenticated four-syllable exemplar, then explicitly rule on the four-syllable contraction of Psalm46's six-syllable exemplar (possibly legitimate shared two-accent Tone I grammar, but do not declare it an exact match). Independently inspect each shorter two-syllable Amen differentia, and release neither score before whole-verse musical review.",
+    "noNewGabcCreated": true,
+    "noExistingGabcModified": true,
+    "distinctApprovedDoxologyCount": 0,
+    "humanMusicalApprovals": 0,
+    "readerRuntimeChanged": false,
+    "productionEligible": false
+  }
+}

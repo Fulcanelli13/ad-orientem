@@ -1,0 +1,34 @@
+{
+  "schema": "ao-graduale1961-new-psalter-archive-v1",
+  "captureRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40371603485",
+  "captureJobId": 121743501887,
+  "source": "GregoBase CC0 transcriptions",
+  "originalPrintedImages": [
+    "https://gregobase.selapa.net/sources/2/1179.png",
+    "https://gregobase.selapa.net/sources/2/1180.png"
+  ],
+  "sourceCount": 2,
+  "completeMelodyCertifications": 0,
+  "approvedRoman1962RuntimeScores": 0,
+  "records": [
+    {
+      "gregobaseId": 19315,
+      "psalm": 23,
+      "file": "gregobase-19315.gabc",
+      "sourceURL": "https://gregobase.selapa.net/download.php?id=19315&format=gabc",
+      "sha256": "06537463e71d320e5134ac84a7cb0bc70579169cd3c509883caf9eb98cdc9be2",
+      "bytes": 452,
+      "disposition": "SOURCE_MATCHED_OPENING_NO_FULL_MELODY_QA"
+    },
+    {
+      "gregobaseId": 19316,
+      "psalm": 46,
+      "file": "gregobase-19316.gabc",
+      "sourceURL": "https://gregobase.selapa.net/download.php?id=19316&format=gabc",
+      "sha256": "eb13e9eadcfeebca7e5fa0617f6cbb6c9823464ff88af2995952ab21ca8717a0",
+      "bytes": 362,
+      "disposition": "QUARANTINED_OMNES_GENTES_VS_ORIGINAL_OMNES_POPULI"
+    }
+  ],
+  "review": "File #19316 preserved as evidence and QUARANTINED for incorrect first-word text underlay; score #19315 text incipit matches but remains note and full-verse unverified."
+}

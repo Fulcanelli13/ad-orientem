@@ -1,0 +1,611 @@
+{
+  "schema": "ao-palm-graduale1961-accent-doxology-editorial-witness-v1",
+  "batch": 22,
+  "date": "2026-10-27",
+  "stage": "PALM-R02",
+  "status": "SOURCE_ACCENTS_STAGED_13_DISTINCT_VERSE_PATTERNS_4_DOXOLOGY_OCCURRENCES_NONE_CERTIFIED",
+  "sources": {
+    "printed1961Graduale": {
+      "name": "Graduale Romanum 1961 Textus novus",
+      "pdf": "https://s9.imslp.org/files/imglnks/usimg/1/1a/IMSLP52097-PMLP108040-GR6_Proprium_et_Commune_pro_aliquibus_locis,_Psalmi.pdf",
+      "ps23PageIndex": 142,
+      "ps46PageIndex": 143,
+      "ps23Page": "https://gregobase.selapa.net/sources/2/1179.png",
+      "ps46Page": "https://gregobase.selapa.net/sources/2/1180.png",
+      "verification": "VISIBLE_PRINTED_SCORES_INSPECTED"
+    },
+    "sourceTextOwner": "#894",
+    "musicalOwner": "PR #1749",
+    "researchOwner": "PR #1752"
+  },
+  "patterns": [
+    {
+      "patternId": "PALM-R02-PS23-L02",
+      "occurrenceIds": [
+        "PALM-R02-PS23-L02"
+      ],
+      "psalm": 23,
+      "printedPage": "143**",
+      "printedChantLines": [
+        2
+      ],
+      "sourceSectionAccents": {
+        "medial": "Nam ipse super mária fundávit eum",
+        "termination": "et super flúmina firmávit eum."
+      },
+      "printedAccentedWords": [
+        {
+          "section": "medial",
+          "word": "mária"
+        },
+        {
+          "section": "medial",
+          "word": "fundávit"
+        },
+        {
+          "section": "termination",
+          "word": "flúmina"
+        },
+        {
+          "section": "termination",
+          "word": "firmávit"
+        }
+      ],
+      "transcriptionStatus": "VISIBLE_ORTHOGRAPHIC_ACCENTS_PARTIAL_DIPLOMATIC_SOURCE_WITNESS",
+      "toneCadenceSignoff": false,
+      "fullPointingSignedOff": false
+    },
+    {
+      "patternId": "PALM-R02-PS23-L07",
+      "occurrenceIds": [
+        "PALM-R02-PS23-L07",
+        "PALM-R02-PS23-L09"
+      ],
+      "psalm": 23,
+      "printedPage": "143**",
+      "printedChantLines": [
+        7,
+        9
+      ],
+      "sourceSectionAccents": {
+        "flex": "Attóllite, portae, cápita vestra,",
+        "medial": "et attóllite vos, fores antíquae,",
+        "termination": "ut ingrediátur rex glóriae!"
+      },
+      "printedAccentedWords": [
+        {
+          "section": "flex",
+          "word": "Attóllite"
+        },
+        {
+          "section": "medial",
+          "word": "attóllite"
+        },
+        {
+          "section": "medial",
+          "word": "antíquae"
+        },
+        {
+          "section": "termination",
+          "word": "ingrediátur"
+        },
+        {
+          "section": "termination",
+          "word": "glóriae"
+        },
+        {
+          "section": "flex",
+          "word": "cápita"
+        }
+      ],
+      "transcriptionStatus": "VISIBLE_ORTHOGRAPHIC_ACCENTS_PARTIAL_DIPLOMATIC_SOURCE_WITNESS",
+      "toneCadenceSignoff": false,
+      "fullPointingSignedOff": false
+    },
+    {
+      "patternId": "PALM-R02-PS23-L08",
+      "occurrenceIds": [
+        "PALM-R02-PS23-L08"
+      ],
+      "psalm": 23,
+      "printedPage": "143**",
+      "printedChantLines": [
+        8
+      ],
+      "sourceSectionAccents": {
+        "flex": "Quis est iste rex glóriae?",
+        "medial": "Dóminus fortis et potens,",
+        "termination": "Dóminus potens in praélio."
+      },
+      "printedAccentedWords": [
+        {
+          "section": "flex",
+          "word": "glóriae"
+        },
+        {
+          "section": "medial",
+          "word": "Dóminus"
+        },
+        {
+          "section": "termination",
+          "word": "Dóminus"
+        },
+        {
+          "section": "termination",
+          "word": "praélio"
+        }
+      ],
+      "transcriptionStatus": "VISIBLE_ORTHOGRAPHIC_ACCENTS_PARTIAL_DIPLOMATIC_SOURCE_WITNESS",
+      "toneCadenceSignoff": false,
+      "fullPointingSignedOff": false
+    },
+    {
+      "patternId": "PALM-R02-PS23-L10",
+      "occurrenceIds": [
+        "PALM-R02-PS23-L10"
+      ],
+      "psalm": 23,
+      "printedPage": "143**",
+      "printedChantLines": [
+        10
+      ],
+      "sourceSectionAccents": {
+        "medial": "Quis est iste rex glóriae?",
+        "termination": "Dóminus exercítuum: ipse est rex glóriae."
+      },
+      "printedAccentedWords": [
+        {
+          "section": "medial",
+          "word": "glóriae"
+        },
+        {
+          "section": "termination",
+          "word": "Dóminus"
+        },
+        {
+          "section": "termination",
+          "word": "exercítuum"
+        },
+        {
+          "section": "termination",
+          "word": "glóriae"
+        }
+      ],
+      "transcriptionStatus": "VISIBLE_ORTHOGRAPHIC_ACCENTS_PARTIAL_DIPLOMATIC_SOURCE_WITNESS",
+      "toneCadenceSignoff": false,
+      "fullPointingSignedOff": false
+    },
+    {
+      "patternId": "PALM-R02-PS46-L02",
+      "occurrenceIds": [
+        "PALM-R02-PS46-L02"
+      ],
+      "psalm": 46,
+      "printedPage": "144**",
+      "printedChantLines": [
+        2
+      ],
+      "sourceSectionAccents": {
+        "medial": "Quóniam Dóminus excélsus, terríbilis,",
+        "termination": "Rex magnus super omnem terram."
+      },
+      "printedAccentedWords": [
+        {
+          "section": "medial",
+          "word": "Quóniam"
+        },
+        {
+          "section": "medial",
+          "word": "Dóminus"
+        },
+        {
+          "section": "medial",
+          "word": "excélsus"
+        },
+        {
+          "section": "medial",
+          "word": "terríbilis"
+        }
+      ],
+      "transcriptionStatus": "VISIBLE_ORTHOGRAPHIC_ACCENTS_PARTIAL_DIPLOMATIC_SOURCE_WITNESS",
+      "toneCadenceSignoff": false,
+      "fullPointingSignedOff": false
+    },
+    {
+      "patternId": "PALM-R02-PS46-L03",
+      "occurrenceIds": [
+        "PALM-R02-PS46-L03"
+      ],
+      "psalm": 46,
+      "printedPage": "144**",
+      "printedChantLines": [
+        3
+      ],
+      "sourceSectionAccents": {
+        "medial": "Súbjicit pópulos nóbis",
+        "termination": "et natiónes pédibus nostris."
+      },
+      "printedAccentedWords": [
+        {
+          "section": "medial",
+          "word": "Súbjicit"
+        },
+        {
+          "section": "medial",
+          "word": "pópulos"
+        },
+        {
+          "section": "medial",
+          "word": "nóbis"
+        },
+        {
+          "section": "termination",
+          "word": "natiónes"
+        },
+        {
+          "section": "termination",
+          "word": "pédibus"
+        }
+      ],
+      "transcriptionStatus": "VISIBLE_ORTHOGRAPHIC_ACCENTS_PARTIAL_DIPLOMATIC_SOURCE_WITNESS",
+      "toneCadenceSignoff": false,
+      "fullPointingSignedOff": false
+    },
+    {
+      "patternId": "PALM-R02-PS46-L04",
+      "occurrenceIds": [
+        "PALM-R02-PS46-L04"
+      ],
+      "psalm": 46,
+      "printedPage": "144**",
+      "printedChantLines": [
+        4
+      ],
+      "sourceSectionAccents": {
+        "medial": "Eligit nobis hereditátem nostram",
+        "termination": "glóriam Jacob, quem díligit."
+      },
+      "printedAccentedWords": [
+        {
+          "section": "medial",
+          "word": "hereditátem"
+        },
+        {
+          "section": "termination",
+          "word": "glóriam"
+        },
+        {
+          "section": "termination",
+          "word": "díligit"
+        }
+      ],
+      "transcriptionStatus": "VISIBLE_ORTHOGRAPHIC_ACCENTS_PARTIAL_DIPLOMATIC_SOURCE_WITNESS",
+      "toneCadenceSignoff": false,
+      "fullPointingSignedOff": false
+    },
+    {
+      "patternId": "PALM-R02-PS46-L05",
+      "occurrenceIds": [
+        "PALM-R02-PS46-L05"
+      ],
+      "psalm": 46,
+      "printedPage": "144**",
+      "printedChantLines": [
+        5
+      ],
+      "sourceSectionAccents": {
+        "medial": "Ascéndit Deus cum exsultatióne,",
+        "termination": "Dóminus cum voce tubae."
+      },
+      "printedAccentedWords": [
+        {
+          "section": "medial",
+          "word": "Ascéndit"
+        },
+        {
+          "section": "medial",
+          "word": "exsultatióne"
+        },
+        {
+          "section": "termination",
+          "word": "Dóminus"
+        }
+      ],
+      "transcriptionStatus": "VISIBLE_ORTHOGRAPHIC_ACCENTS_PARTIAL_DIPLOMATIC_SOURCE_WITNESS",
+      "toneCadenceSignoff": false,
+      "fullPointingSignedOff": false
+    },
+    {
+      "patternId": "PALM-R02-PS46-L06",
+      "occurrenceIds": [
+        "PALM-R02-PS46-L06"
+      ],
+      "psalm": 46,
+      "printedPage": "144**",
+      "printedChantLines": [
+        6
+      ],
+      "sourceSectionAccents": {
+        "medial": "Psállite Deo, psállite;",
+        "termination": "psállite Regi nostro, psállite."
+      },
+      "printedAccentedWords": [
+        {
+          "section": "medial",
+          "word": "Psállite"
+        },
+        {
+          "section": "medial",
+          "word": "psállite"
+        },
+        {
+          "section": "termination",
+          "word": "psállite"
+        },
+        {
+          "section": "termination",
+          "word": "psállite"
+        }
+      ],
+      "transcriptionStatus": "VISIBLE_ORTHOGRAPHIC_ACCENTS_PARTIAL_DIPLOMATIC_SOURCE_WITNESS",
+      "toneCadenceSignoff": false,
+      "fullPointingSignedOff": false
+    },
+    {
+      "patternId": "PALM-R02-PS46-L07",
+      "occurrenceIds": [
+        "PALM-R02-PS46-L07"
+      ],
+      "psalm": 46,
+      "printedPage": "144**",
+      "printedChantLines": [
+        7
+      ],
+      "sourceSectionAccents": {
+        "medial": "Quóniam Rex omnis terrae est Deus,",
+        "termination": "psállite hymnum."
+      },
+      "printedAccentedWords": [
+        {
+          "section": "medial",
+          "word": "Quóniam"
+        },
+        {
+          "section": "termination",
+          "word": "psállite"
+        }
+      ],
+      "transcriptionStatus": "VISIBLE_ORTHOGRAPHIC_ACCENTS_PARTIAL_DIPLOMATIC_SOURCE_WITNESS",
+      "toneCadenceSignoff": false,
+      "fullPointingSignedOff": false
+    },
+    {
+      "patternId": "PALM-R02-PS46-L08",
+      "occurrenceIds": [
+        "PALM-R02-PS46-L08"
+      ],
+      "psalm": 46,
+      "printedPage": "144**",
+      "printedChantLines": [
+        8
+      ],
+      "sourceSectionAccents": {
+        "medial": "Deus regnat super natiónes,",
+        "termination": "Deus sedet super sólium sanctum suum."
+      },
+      "printedAccentedWords": [
+        {
+          "section": "medial",
+          "word": "natiónes"
+        },
+        {
+          "section": "termination",
+          "word": "sólium"
+        }
+      ],
+      "transcriptionStatus": "VISIBLE_ORTHOGRAPHIC_ACCENTS_PARTIAL_DIPLOMATIC_SOURCE_WITNESS",
+      "toneCadenceSignoff": false,
+      "fullPointingSignedOff": false
+    },
+    {
+      "patternId": "PALM-R02-PS46-L09",
+      "occurrenceIds": [
+        "PALM-R02-PS46-L09"
+      ],
+      "psalm": 46,
+      "printedPage": "144**",
+      "printedChantLines": [
+        9
+      ],
+      "sourceSectionAccents": {
+        "medial": "Príncipes populórum congregáti sunt",
+        "termination": "cum pópulo Dei Abraham."
+      },
+      "printedAccentedWords": [
+        {
+          "section": "medial",
+          "word": "Príncipes"
+        },
+        {
+          "section": "medial",
+          "word": "populórum"
+        },
+        {
+          "section": "medial",
+          "word": "congregáti"
+        },
+        {
+          "section": "termination",
+          "word": "pópulo"
+        }
+      ],
+      "transcriptionStatus": "VISIBLE_ORTHOGRAPHIC_ACCENTS_PARTIAL_DIPLOMATIC_SOURCE_WITNESS",
+      "toneCadenceSignoff": false,
+      "fullPointingSignedOff": false
+    },
+    {
+      "patternId": "PALM-R02-PS46-L10",
+      "occurrenceIds": [
+        "PALM-R02-PS46-L10"
+      ],
+      "psalm": 46,
+      "printedPage": "144**",
+      "printedChantLines": [
+        10
+      ],
+      "sourceSectionAccents": {
+        "medial": "Nam Dei sunt próceres terrae:",
+        "termination": "excelsus est valde."
+      },
+      "printedAccentedWords": [
+        {
+          "section": "medial",
+          "word": "próceres"
+        }
+      ],
+      "transcriptionStatus": "VISIBLE_ORTHOGRAPHIC_ACCENTS_PARTIAL_DIPLOMATIC_SOURCE_WITNESS",
+      "toneCadenceSignoff": false,
+      "fullPointingSignedOff": false
+    }
+  ],
+  "doxology": [
+    {
+      "id": "PALM-R02-PS23-DOXO-L11",
+      "psalm": 23,
+      "printedLine": 11,
+      "printedPage": "143**",
+      "printedAccentText": {
+        "medial": "Glória Patri, et Fílio,",
+        "termination": "et Spirítui Sancto."
+      },
+      "completePointingApproved": false,
+      "toneMustBeReviewedWithinOwnPsalm": true
+    },
+    {
+      "id": "PALM-R02-PS23-DOXO-L12",
+      "psalm": 23,
+      "printedLine": 12,
+      "printedPage": "143**",
+      "printedAccentText": {
+        "medial": "Sicut erat in princípio, et nunc, et semper,",
+        "termination": "et in saécula saeculórum. Amen."
+      },
+      "completePointingApproved": false,
+      "toneMustBeReviewedWithinOwnPsalm": true
+    },
+    {
+      "id": "PALM-R02-PS46-DOXO-L11",
+      "psalm": 46,
+      "printedLine": 11,
+      "printedPage": "144**",
+      "printedAccentText": {
+        "medial": "Glória Patri, et Fílio,",
+        "termination": "et Spirítui Sancto."
+      },
+      "completePointingApproved": false,
+      "toneMustBeReviewedWithinOwnPsalm": true
+    },
+    {
+      "id": "PALM-R02-PS46-DOXO-L12",
+      "psalm": 46,
+      "printedLine": 12,
+      "printedPage": "144**",
+      "printedAccentText": {
+        "medial": "Sicut erat in princípio, et nunc, et semper,",
+        "termination": "et in saécula saeculórum. Amen."
+      },
+      "completePointingApproved": false,
+      "toneMustBeReviewedWithinOwnPsalm": true
+    }
+  ],
+  "counts": {
+    "pendingMusicalVerseOccurrences": 14,
+    "distinctVersePatterns": 13,
+    "doxologyToneApplications": 4,
+    "totalPendingMusicalApplications": 18,
+    "distinctReviewItemsIncludingEachPsalmsDoxology": 17,
+    "printedAccentedWordsTranscribed": 46,
+    "pitchApproved": 0,
+    "finishedCompleteGABCScores": 0
+  },
+  "orthographicVariants": [
+    {
+      "psalm": 23,
+      "printedLine": 8,
+      "section": "termination",
+      "researchCandidate": "proelio",
+      "print1961": "praélio",
+      "normalization": "praelio and proelio treated as a declared orthographic variant for matching ONLY",
+      "canonicalSourceOwnerResolution": "#894",
+      "automaticLatinReplacement": false
+    },
+    {
+      "psalm": 46,
+      "printedLine": 3,
+      "section": "medial",
+      "researchCandidate": "Subicit",
+      "print1961": "Súbjicit",
+      "normalization": "historical j/i spelling recorded; meaning and word order unchanged",
+      "canonicalSourceOwnerResolution": "#894",
+      "automaticLatinReplacement": false
+    }
+  ],
+  "critical": {
+    "originalLatinTextVerses": 16,
+    "fullyNotatedFirstVerses": 2,
+    "ps23FlexLines": [
+      7,
+      8,
+      9
+    ],
+    "ps23EightFlexSeparateFromMediant": true,
+    "ps46LastTwoChantLinesOneBiblicalVerse": true,
+    "ps23SevenNineSameMusicPattern": true,
+    "doNotConflateDoxologyToneAcrossPsalms": true,
+    "sourceAccentsAreNotCadenceOrPitchApproval": true,
+    "printedBoldAndItalicNeedIndependentReview": true,
+    "noAutomaticLiveClock": true,
+    "zeroRuntimeChanges": true
+  },
+  "publication": {
+    "humanEditorialAccentVerificationComplete": false,
+    "wordSyllableNeumeUnderlayCertified": false,
+    "sourceApproved": false,
+    "scholaApproved": false,
+    "productionScoreAssignments": 0,
+    "eligible": false
+  },
+  "batch23Reinspection": {
+    "source": "IMSLP Graduale Romanum 1961 printed facsimile PDF pages 143** and 144**",
+    "pdfPageIndicesZeroBased": [
+      142,
+      143
+    ],
+    "reviewType": "Direct printed page screenshot + selective readable PDF text, not relying on OCR for accent detection",
+    "confirmedCorrections": [
+      {
+        "location": "Psalm 23 lines 7 and 9",
+        "word": "cápita",
+        "previous": "capita",
+        "scope": "One shared text pattern, two musical occurrences"
+      },
+      {
+        "location": "Both psalms doxology line 11",
+        "word": "Glória",
+        "previous": "Gloria",
+        "scope": "Two tone-specific applications"
+      }
+    ],
+    "uncertainAccentChecks": [
+      {
+        "location": "Psalm 46 line 10",
+        "word": "excelsus",
+        "question": "Inspect exact printed accent above e in the line-10 token before changing the original accented worksheet; the page's accessible PDF text and displayed image differ in clarity.",
+        "releaseBlockingForThisWord": true
+      }
+    ],
+    "sourceOnly": true,
+    "musicalAccentCadencePlacementApproved": false,
+    "canonicalLatinTextReplaced": false
+  }
+}

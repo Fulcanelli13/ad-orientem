@@ -1,0 +1,468 @@
+{
+  "schema": "ao-palm-restored-1961-gabc-opening-printed-source-review-v1",
+  "batch": 20,
+  "date": "2026-10-26",
+  "stage": "PALM-R02",
+  "status": "TWO_PRINTED_OPENING_STAFFS_COMPARED_WITH_ARCHIVED_GABCS_VERSIFIED_UNDERLAY_UNCERTIFIED",
+  "basis": {
+    "page23": "https://gregobase.selapa.net/sources/2/1179.png",
+    "page46": "https://gregobase.selapa.net/sources/2/1180.png",
+    "originalPrintedPDF": "https://s9.imslp.org/files/imglnks/usimg/1/1a/IMSLP52097-PMLP108040-GR6_Proprium_et_Commune_pro_aliquibus_locis,_Psalmi.pdf",
+    "zeroBasedPages": [
+      142,
+      143
+    ],
+    "visualInspection": "PRINTED_PAGE_143_144_SCREENSHOTS_INSPECTED_2026-10-26",
+    "oldTextScope": "TEXTUS_NOVUS_ONLY",
+    "vatican1962TextApprovalOwner": "#894",
+    "scholaNotationApprovalOwner": "PR #1749"
+  },
+  "psalm23": {
+    "scoreId": 19315,
+    "source": "Graduale Romanum 1961 p143**",
+    "sourceArchivePath": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+    "archiveSha256": "06537463e71d320e5134ac84a7cb0bc70579169cd3c509883caf9eb98cdc9be2",
+    "printedOpening": "Dómini est terra et quae replent eam",
+    "gabcOpening": "DO(f)mi(gh)ni(h) est(h) ter(h)ra,(h)",
+    "firstSyllableMappings": [
+      {
+        "syllable": "DO",
+        "gabc": "f"
+      },
+      {
+        "syllable": "mi",
+        "gabc": "gh"
+      },
+      {
+        "syllable": "ni",
+        "gabc": "h"
+      }
+    ],
+    "scorePrintedExtent": "FULL_FIRST_VERSE_AND_SHORT_SECOND_VERSE_CUE_ONLY",
+    "rawDoubleDelimiter": true,
+    "rawSourceMustStayByteExact": true,
+    "printedFlexAfterChantLines": [
+      7,
+      8,
+      9
+    ],
+    "gabcFlexExampleText": "rex gloriae?",
+    "gabcHasFlexExample": true,
+    "flexaWarning": "Printed flexa marks on Psalm 23 lines 7, 8 and 9 cannot all be implemented by copying the single original rex gloriae? GABC example as syllable-aligned music without independent cadence/last-accent analysis.",
+    "versionStatus": "OPENING_INCIPIT_TONE_SOURCE_CORRELATED_NO_FULL_NOTE_SIGNOFF",
+    "scorePromoted": false
+  },
+  "psalm46": {
+    "scoreId": 19316,
+    "source": "Graduale Romanum 1961 p144**",
+    "sourceArchivePath": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+    "archiveSha256": "eb13e9eadcfeebca7e5fa0617f6cbb6c9823464ff88af2995952ab21ca8717a0",
+    "actualPrinted": "O-mnes pó-pu-li, pláudite mánibus",
+    "archivedBad": "O(f)mnes(gh) gen(h)tes,(h)",
+    "archivedBadSyllableCount": 4,
+    "archivedBadPitchGroups": [
+      "f",
+      "gh",
+      "h",
+      "h"
+    ],
+    "archivedTextMatches1961Print": false,
+    "provisionalPath": "data/research/chant-source-review/palm46-omnes-populi-1961-provisional.gabc",
+    "candidateOpening": "O(f)mnes(gh) pó(h)pu(h)li,(h)",
+    "candidateSyllableCount": 5,
+    "candidatePitchGroups": [
+      "f",
+      "gh",
+      "h",
+      "h",
+      "h"
+    ],
+    "intervention": "Replace 2-syllable gen-tes with 3-syllable pó-pu-li, assigning each a recitation h pitch. Preserve all pitches from pláudite onward unchanged; remove repeated header delimiter in derivative only.",
+    "unchangedFollowingToken": "<b>pláu</b>",
+    "entireFollowingGabcBodyByteIdentical": true,
+    "toneContourEvidence": "Printed first verse shows two opening note-groups then recitation tenor on three pó-pu-li syllables; this supports the local correction hypothesis, not a human certified facsimile-to-GABC engraving.",
+    "printVerification": "FIRST_FIVE_SYLLABLES_VISUALLY_CORRELATED_FULL_PITCH_COUNT_UNCERTIFIED",
+    "scorePrintedExtent": "FULL_FIRST_VERSE_AND_SHORT_SECOND_VERSE_CUE_ONLY",
+    "nativeExsurgeProof": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40378960243",
+    "svgRenderAlreadyPassed": true,
+    "humanMusicianAndPrintedNeumeApproval": false,
+    "sourceRawQuarantined": true,
+    "derivativeResearchOnly": true,
+    "scorePromoted": false
+  },
+  "sharedConstraints": {
+    "fullPrintedPsalmTextVerses": 16,
+    "completeVersesIndividuallyFullyNotated": 2,
+    "otherVersesNeedIndependentPsalmTonePointing": 14,
+    "note": "Count 2 notated first verses / 14 other full printed verses; each original GABC only supplies the melody of the fully notated opening and a partial next-verse cue.",
+    "psalm23FlexPrinted": 3,
+    "noAutomaticVerseToNoteMapping": true,
+    "textualAsteriskNotSufficientForPsalmTone": true,
+    "noFixedDuration": true,
+    "antiphonAfterTwoVerses": true,
+    "psalm46LiturgicalLines9And10AreOneBiblicalVerse": true
+  },
+  "release": {
+    "sourceRawPreserved": true,
+    "canonical1962FullTextHumanApproved": false,
+    "printedFullMusicalUnderlayVerified": false,
+    "pitchNeumeHumanCertification": false,
+    "complete14RemainingPsalmTonesApproved": false,
+    "nativePhoneVisualAcceptance": false,
+    "runtimeTextModified": false,
+    "runtimeMusicModified": false,
+    "approvedRuntimeAssignments": 0,
+    "publicationEligible": false
+  },
+  "musicalExpansionHandoff": {
+    "owner": "Existing Schola PR #1749; existing Latin source #894",
+    "lineCount": 16,
+    "sourcePrintedCompleteText": true,
+    "firstNotatedLines": 2,
+    "remainingManualAdaptationLines": 14,
+    "explanation": "Opening GABC displays fully notated verse 1 for each Psalm. Verse 2 includes a shortened cue but not a fully notated verse. The other lines have printed text with accent typography, medial stars and sometimes flex daggers. This is not equivalent to a ready-to-display 16-verse GABC.",
+    "notationInstruction": "Human editor must select correct psalm tone from each original p143**/p144** staff, derive Latin word and syllable stress, and align intonation/recitation/flex/mediation/termination to each full line; preserve printed antiphon-after-two structure and doxology. No fixed runtime Schola timing.",
+    "lineReview": [
+      {
+        "psalm": 23,
+        "printedChantLine": 1,
+        "biblicalVerse": 1,
+        "printedPage": "143**",
+        "performancePair": [
+          1,
+          2
+        ],
+        "sourceLatinFirstHemistich": "Domini est terra et quae replent eam",
+        "sourceLatinSecondHemistich": "orbis terrarum et qui habitant in eo.",
+        "firstVerseFullStaffPrinted": true,
+        "secondVerseShortCuePrinted": false,
+        "originalCompleteMelodyAvailable": true,
+        "requiresManualPsalmToneAdaptation": false,
+        "printedFlexa": false,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FIRST_VERSE_SOURCE_CONTOUR_RESEARCH_NO_HUMAN_CERTIFICATION"
+      },
+      {
+        "psalm": 23,
+        "printedChantLine": 2,
+        "biblicalVerse": 2,
+        "printedPage": "143**",
+        "performancePair": [
+          1,
+          2
+        ],
+        "sourceLatinFirstHemistich": "Nam ipse super maria fundavit eum",
+        "sourceLatinSecondHemistich": "et super flumina firmavit eum.",
+        "firstVerseFullStaffPrinted": false,
+        "secondVerseShortCuePrinted": true,
+        "originalCompleteMelodyAvailable": false,
+        "requiresManualPsalmToneAdaptation": true,
+        "printedFlexa": false,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK"
+      },
+      {
+        "psalm": 23,
+        "printedChantLine": 7,
+        "biblicalVerse": 7,
+        "printedPage": "143**",
+        "performancePair": [
+          7,
+          8
+        ],
+        "sourceLatinFirstHemistich": "Attollite, portae, capita vestra, et attollite vos, fores antiquae",
+        "sourceLatinSecondHemistich": "ut ingrediatur rex gloriae!",
+        "firstVerseFullStaffPrinted": false,
+        "secondVerseShortCuePrinted": false,
+        "originalCompleteMelodyAvailable": false,
+        "requiresManualPsalmToneAdaptation": true,
+        "printedFlexa": true,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK",
+        "flexaWarning": "Cannot copy printed rex gloriae? illustration onto this different phrase without syllabic adjustment."
+      },
+      {
+        "psalm": 23,
+        "printedChantLine": 8,
+        "biblicalVerse": 8,
+        "printedPage": "143**",
+        "performancePair": [
+          7,
+          8
+        ],
+        "sourceLatinFirstHemistich": "Quis est iste rex gloriae? Dominus fortis et potens,",
+        "sourceLatinSecondHemistich": "Dominus potens in proelio.",
+        "firstVerseFullStaffPrinted": false,
+        "secondVerseShortCuePrinted": false,
+        "originalCompleteMelodyAvailable": false,
+        "requiresManualPsalmToneAdaptation": true,
+        "printedFlexa": true,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK",
+        "flexaWarning": "Source's Psalm23 flexa example is rex gloriae?, which is this line's flex phrase; distinct subsequent text still needs melodic mediation and cadence review.",
+        "flexAfter": "Quis est iste rex gloriae?",
+        "postFlexBeforeMediant": "Dominus fortis et potens,"
+      },
+      {
+        "psalm": 23,
+        "printedChantLine": 9,
+        "biblicalVerse": 9,
+        "printedPage": "143**",
+        "performancePair": [
+          9,
+          10
+        ],
+        "sourceLatinFirstHemistich": "Attollite, portae, capita vestra, et attollite vos, fores antiquae",
+        "sourceLatinSecondHemistich": "ut ingrediatur rex gloriae!",
+        "firstVerseFullStaffPrinted": false,
+        "secondVerseShortCuePrinted": false,
+        "originalCompleteMelodyAvailable": false,
+        "requiresManualPsalmToneAdaptation": true,
+        "printedFlexa": true,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK",
+        "flexaWarning": "Cannot copy printed rex gloriae? illustration onto this different phrase without syllabic adjustment."
+      },
+      {
+        "psalm": 23,
+        "printedChantLine": 10,
+        "biblicalVerse": 10,
+        "printedPage": "143**",
+        "performancePair": [
+          9,
+          10
+        ],
+        "sourceLatinFirstHemistich": "Quis est iste rex gloriae?",
+        "sourceLatinSecondHemistich": "Dominus exercituum: ipse est rex gloriae.",
+        "firstVerseFullStaffPrinted": false,
+        "secondVerseShortCuePrinted": false,
+        "originalCompleteMelodyAvailable": false,
+        "requiresManualPsalmToneAdaptation": true,
+        "printedFlexa": false,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK"
+      },
+      {
+        "psalm": 46,
+        "printedChantLine": 1,
+        "biblicalVerse": 1,
+        "printedPage": "144**",
+        "performancePair": [
+          1,
+          2
+        ],
+        "sourceLatinFirstHemistich": "Omnes populi plaudite manibus",
+        "sourceLatinSecondHemistich": "exsultate Deo voce laetitiae.",
+        "firstVerseFullStaffPrinted": true,
+        "secondVerseShortCuePrinted": false,
+        "originalCompleteMelodyAvailable": true,
+        "requiresManualPsalmToneAdaptation": false,
+        "printedFlexa": false,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FIRST_VERSE_SOURCE_CONTOUR_RESEARCH_NO_HUMAN_CERTIFICATION"
+      },
+      {
+        "psalm": 46,
+        "printedChantLine": 2,
+        "biblicalVerse": 2,
+        "printedPage": "144**",
+        "performancePair": [
+          1,
+          2
+        ],
+        "sourceLatinFirstHemistich": "Quoniam Dominus excelsus, terribilis",
+        "sourceLatinSecondHemistich": "rex magnus super omnem terram.",
+        "firstVerseFullStaffPrinted": false,
+        "secondVerseShortCuePrinted": true,
+        "originalCompleteMelodyAvailable": false,
+        "requiresManualPsalmToneAdaptation": true,
+        "printedFlexa": false,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK"
+      },
+      {
+        "psalm": 46,
+        "printedChantLine": 3,
+        "biblicalVerse": 3,
+        "printedPage": "144**",
+        "performancePair": [
+          3,
+          4
+        ],
+        "sourceLatinFirstHemistich": "Subicit populos nobis",
+        "sourceLatinSecondHemistich": "et nationes pedibus nostris.",
+        "firstVerseFullStaffPrinted": false,
+        "secondVerseShortCuePrinted": false,
+        "originalCompleteMelodyAvailable": false,
+        "requiresManualPsalmToneAdaptation": true,
+        "printedFlexa": false,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK"
+      },
+      {
+        "psalm": 46,
+        "printedChantLine": 4,
+        "biblicalVerse": 4,
+        "printedPage": "144**",
+        "performancePair": [
+          3,
+          4
+        ],
+        "sourceLatinFirstHemistich": "Eligit nobis hereditatem nostram",
+        "sourceLatinSecondHemistich": "gloriam Jacob, quem diligit.",
+        "firstVerseFullStaffPrinted": false,
+        "secondVerseShortCuePrinted": false,
+        "originalCompleteMelodyAvailable": false,
+        "requiresManualPsalmToneAdaptation": true,
+        "printedFlexa": false,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK"
+      },
+      {
+        "psalm": 46,
+        "printedChantLine": 5,
+        "biblicalVerse": 5,
+        "printedPage": "144**",
+        "performancePair": [
+          5,
+          6
+        ],
+        "sourceLatinFirstHemistich": "Ascendit Deus cum exsultatione",
+        "sourceLatinSecondHemistich": "Dominus cum voce tubae.",
+        "firstVerseFullStaffPrinted": false,
+        "secondVerseShortCuePrinted": false,
+        "originalCompleteMelodyAvailable": false,
+        "requiresManualPsalmToneAdaptation": true,
+        "printedFlexa": false,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK"
+      },
+      {
+        "psalm": 46,
+        "printedChantLine": 6,
+        "biblicalVerse": 6,
+        "printedPage": "144**",
+        "performancePair": [
+          5,
+          6
+        ],
+        "sourceLatinFirstHemistich": "Psallite Deo, psallite",
+        "sourceLatinSecondHemistich": "psallite regi nostro, psallite.",
+        "firstVerseFullStaffPrinted": false,
+        "secondVerseShortCuePrinted": false,
+        "originalCompleteMelodyAvailable": false,
+        "requiresManualPsalmToneAdaptation": true,
+        "printedFlexa": false,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK"
+      },
+      {
+        "psalm": 46,
+        "printedChantLine": 7,
+        "biblicalVerse": 7,
+        "printedPage": "144**",
+        "performancePair": [
+          7,
+          8
+        ],
+        "sourceLatinFirstHemistich": "Quoniam rex omnis terrae est Deus",
+        "sourceLatinSecondHemistich": "psallite hymnum.",
+        "firstVerseFullStaffPrinted": false,
+        "secondVerseShortCuePrinted": false,
+        "originalCompleteMelodyAvailable": false,
+        "requiresManualPsalmToneAdaptation": true,
+        "printedFlexa": false,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK"
+      },
+      {
+        "psalm": 46,
+        "printedChantLine": 8,
+        "biblicalVerse": 8,
+        "printedPage": "144**",
+        "performancePair": [
+          7,
+          8
+        ],
+        "sourceLatinFirstHemistich": "Deus regnat super nationes",
+        "sourceLatinSecondHemistich": "Deus sedet super solium sanctum suum.",
+        "firstVerseFullStaffPrinted": false,
+        "secondVerseShortCuePrinted": false,
+        "originalCompleteMelodyAvailable": false,
+        "requiresManualPsalmToneAdaptation": true,
+        "printedFlexa": false,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK"
+      },
+      {
+        "psalm": 46,
+        "printedChantLine": 9,
+        "biblicalVerse": 9,
+        "printedPage": "144**",
+        "performancePair": [
+          9,
+          10
+        ],
+        "sourceLatinFirstHemistich": "Principes populorum congregati sunt",
+        "sourceLatinSecondHemistich": "cum populo Dei Abraham.",
+        "firstVerseFullStaffPrinted": false,
+        "secondVerseShortCuePrinted": false,
+        "originalCompleteMelodyAvailable": false,
+        "requiresManualPsalmToneAdaptation": true,
+        "printedFlexa": false,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK"
+      },
+      {
+        "psalm": 46,
+        "printedChantLine": 10,
+        "biblicalVerse": 9,
+        "printedPage": "144**",
+        "performancePair": [
+          9,
+          10
+        ],
+        "sourceLatinFirstHemistich": "Nam Dei sunt proceres terrae:",
+        "sourceLatinSecondHemistich": "excelsus est valde.",
+        "firstVerseFullStaffPrinted": false,
+        "secondVerseShortCuePrinted": false,
+        "originalCompleteMelodyAvailable": false,
+        "requiresManualPsalmToneAdaptation": true,
+        "printedFlexa": false,
+        "printedMediantAsterisk": true,
+        "accentCadenceUnderlaySignedOff": false,
+        "status": "FULL_PRINTED_TEXT_NEEDS_CHANT_TONE_WORD_ACCENT_FLEX_MEDIANT_TERMINATION_WORK"
+      }
+    ],
+    "readOnlyNoRuntimeAssignment": true,
+    "refinedMarkerBoundary": {
+      "psalm": 23,
+      "line": 8,
+      "source": "Graduale Romanum 1961 p143**",
+      "markerSequence": [
+        "†",
+        "*"
+      ],
+      "flexAfter": "Quis est iste rex gloriae?",
+      "medialAfter": "Dominus fortis et potens,",
+      "finalPhrase": "Dominus potens in proelio.",
+      "sourceTranscriptionCorrected": true,
+      "manualMusicalApproval": false
+    }
+  }
+}

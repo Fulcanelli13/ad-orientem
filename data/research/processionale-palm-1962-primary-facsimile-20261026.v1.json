@@ -1,0 +1,214 @@
+{
+  "schema": "ao-roman1962-palm-distribution-primary-facsimile-collation-v1",
+  "date": "2026-10-26",
+  "status": "PRIMARY_1962_PRINTED_SOURCE_VISUALLY_COLLATED_ROMAN_OWNER_SIGNOFF_PENDING",
+  "owner": "Existing source-integrity issue #894; existing Schola notation PR #1749",
+  "source": {
+    "edition": "Missale Romanum",
+    "place": "Vatican",
+    "year": 1962,
+    "collection": "GregoBase original scans courtesy Church Music Association of America",
+    "listing": "https://gregobase.selapa.net/source.php?id=42&images=1&index=8",
+    "facsimiles": [
+      {
+        "printedPage": 130,
+        "url": "https://gregobase.selapa.net/sources/42/212.png",
+        "content": "Palmarum blessing opening and sources/ceremonial context"
+      },
+      {
+        "printedPage": 131,
+        "url": "https://gregobase.selapa.net/sources/42/213.png",
+        "content": "DE DISTRIBUTIONE RAMORUM, paragraphs 10-12, Psalmus 23, Psalmus 46 opening"
+      },
+      {
+        "printedPage": 132,
+        "url": "https://gregobase.selapa.net/sources/42/214.png",
+        "content": "Psalmus 46 completion, Gloria Patri, final antiphon, ending rule"
+      }
+    ]
+  },
+  "ceremony": {
+    "stageId": "PALM-R02",
+    "paragraph": 12,
+    "location": "DE DISTRIBUTIONE RAMORUM",
+    "rule": "When distribution begins, sing antiphons with the indicated psalms in repeated pairs; continue as needed until distribution finishes. If it finishes earlier, conclude with Gloria Patri and repeat the antiphon.",
+    "claimType": "PRIMARY_PRINTED_RUBRIC",
+    "notAnAutomatedMusicTimer": true,
+    "renderingOwnedBy": "#1749"
+  },
+  "psalm23": {
+    "sourcePage": 131,
+    "psalmHeading": "Psalmus 23, 1-2 et 7-10",
+    "antiphonScoreId": 1215,
+    "firstLatin": "Domini est terra et quae replent eam",
+    "novus": true,
+    "printedVersePairs": [
+      [
+        1,
+        2
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        9,
+        10
+      ]
+    ],
+    "versePairOpenings": [
+      {
+        "printedFirst": 1,
+        "begin": "Domini est terra et quae replent eam",
+        "next": "Nam ipse super maria fundavit eum"
+      },
+      {
+        "printedFirst": 7,
+        "begin": "Attollite, portae, capita vestra",
+        "next": "Quis est iste rex gloriae?"
+      },
+      {
+        "printedFirst": 9,
+        "begin": "Attollite, portae, capita vestra",
+        "next": "Quis est iste rex gloriae?"
+      }
+    ],
+    "repeatedAntiphon": true,
+    "doxologyLines": [
+      "Gloria Patri, et Filio",
+      "Sicut erat in principio"
+    ],
+    "closingAntiphon": true
+  },
+  "psalm46": {
+    "sourcePages": [
+      131,
+      132
+    ],
+    "psalmHeading": "Psalmus 46",
+    "antiphonScoreId": 1155,
+    "firstLatin": "Omnes populi, plaudite manibus",
+    "novus": true,
+    "printedLiturgicalLines": 10,
+    "biblicalVersesInBeaPsalter": 9,
+    "printedPairs": [
+      {
+        "lines": [
+          1,
+          2
+        ],
+        "starts": [
+          "Omnes populi, plaudite manibus",
+          "Quoniam Dominus excelsus, terribilis"
+        ],
+        "page": 131
+      },
+      {
+        "lines": [
+          3,
+          4
+        ],
+        "starts": [
+          "Subicit populos nobis",
+          "Eligit nobis hereditatem nostram"
+        ],
+        "page": 131
+      },
+      {
+        "lines": [
+          5,
+          6
+        ],
+        "starts": [
+          "Ascendit Deus cum exsultatione",
+          "Psallite Deo, psallite"
+        ],
+        "page": 132
+      },
+      {
+        "lines": [
+          7,
+          8
+        ],
+        "starts": [
+          "Quoniam rex omnis terrae est Deus",
+          "Deus regnat super nationes"
+        ],
+        "page": 132
+      },
+      {
+        "lines": [
+          9,
+          10
+        ],
+        "starts": [
+          "Principes populorum congregati sunt",
+          "Nam Dei sunt proceres terrae"
+        ],
+        "page": 132,
+        "biblicalVerseBoth": 9
+      }
+    ],
+    "repeatedAntiphon": true,
+    "doxologyLines": [
+      "Gloria Patri, et Filio",
+      "Sicut erat in principio"
+    ],
+    "closingAntiphon": true,
+    "gabc19316": false,
+    "correction": "Original 1962 source unequivocally confirms Omnes populi. Source GABC #19316 incorrectly sings Omnes gentes and is quarantined."
+  },
+  "sourcePriority": [
+    "Actual 1962 Vatican Missal pages 131-132 govern the Latin text and ceremony, over 1961 old-text Psalm settings and the modern GregoBase metadata.",
+    "1961 Graduale Romanum p143** and p144** support melodic reconstruction of revised-Latin chants, subject to separate pitch/underlay review.",
+    "Textus antiquus psalm sources 288 and 435 remain historically useful but cannot silently override this Roman 1962 source.",
+    "First-verse GABC tone and full Psalm Latin text are separate records. Render only explicitly selected and approved components."
+  ],
+  "openGates": [
+    "Canonical 1962 text-owner accepts this direct facsimile collation (#894)",
+    "Full Latin verse-by-verse keyed transcription, accent and pointing against 1962 print",
+    "Corrected Psalm 46 actual neumes/underlay reviewed against Graduale p144** (#1749)",
+    "Existing Schola offline presentation device/mobile acceptance (#1749)"
+  ],
+  "promotion": {
+    "sourceTextDirectImageVerified": true,
+    "sourceRubricDirectImageVerified": true,
+    "ownerSignedOff": false,
+    "completePsalmPointingCertified": false,
+    "scoreMelodyNoteByNoteCertified": false,
+    "approvedScholaRuntimeScores": 0
+  },
+  "editorialCorrections": [
+    {
+      "path": "psalm46.printedPairs[1].starts[0]",
+      "previous": "Subicit nobis nationes",
+      "corrected": "Subicit populos nobis",
+      "scope": "Research metadata; not production Mass text",
+      "sourceCheck": [
+        "https://misal.tradi.sk/omsovy-poriadok/menlive-casti/zaznam-zobrazenie/176",
+        "https://texts.livemass.net/cgi-bin/horas/Pofficium.pl?command=prayOmnes&date1=11-17-2025&lang2=Latin-Bea&version=Rubrics+1960+-+1960&votive=Hodie"
+      ],
+      "status": "CONFIRMED_BY_TWO_INDEPENDENT_DIGITAL_LATIN_WITNESSES"
+    },
+    {
+      "path": "External secondary HTML rubric label",
+      "previous": "Ant. I.: Ps 22, 1-2; 7-10",
+      "corrected": "Psalmus 23 (Domini est terra) as original 1962 research source",
+      "scope": "Third-party web transcription index typo, not a correction to source Missal",
+      "status": "REJECT_BAD_EXTERNAL_NUMBERING"
+    },
+    {
+      "path": "External secondary HTML Psalm 46 line 7",
+      "previous": "Quoniam rex omnis; terrae est Deus",
+      "corrected": "Quoniam rex omnis terrae est Deus",
+      "status": "REJECT_STRAY_SEMICOLON_IN_WEB_TRANSCRIPTION"
+    }
+  ],
+  "editorialCompleteness": {
+    "scope": "SOURCE_INICIPITS_AND_VERSE_PAIRS_RECONCILED_NOT_FULL_PROPER_TEXT_CERTIFIED",
+    "psalm23VerseIncipits": 6,
+    "psalm46ChantLineIncipits": 10,
+    "psalm46BiblicalVerseCount": 9,
+    "original1962PrintHumanReviewOwner": "#894"
+  }
+}

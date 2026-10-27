@@ -1,0 +1,179 @@
+{
+  "schema": "ao-palm46-1961-new-psalm-underlay-review-v1",
+  "updated": "2026-10-26",
+  "status": "FACSIMILE_OPENING_RECITING_TONE_CANDIDATE_STAGED_NOT_FULL_SCORE_APPROVED",
+  "owner": "Existing Schola score-owner PR #1749; source-integrity issue #894",
+  "source": {
+    "url": "https://gregobase.selapa.net/chant.php?id=19316",
+    "scoreId": 19316,
+    "archivedFile": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+    "sha256": "eb13e9eadcfeebca7e5fa0617f6cbb6c9823464ff88af2995952ab21ca8717a0",
+    "originalPrintedPage": "Graduale Romanum 1961 p.144**",
+    "pageWitness": "https://gregobase.selapa.net/sources/2/1180.png",
+    "sourceOldWord": "gentes",
+    "printedRequiredWord": "populi"
+  },
+  "issue": {
+    "location": "First Psalm 46 verse, opening five sung syllables",
+    "badReading": "O-mnes gen-tes",
+    "requiredReading": "O-mnes pó-pu-li",
+    "badSyllableCount": 4,
+    "requiredSyllableCount": 5,
+    "existingGabcText": "O(f)mnes(gh) gen(h)tes,(h)",
+    "notesBefore": [
+      "f",
+      "gh",
+      "h",
+      "h"
+    ],
+    "pitchAssignmentOfNewExtraSyllable": "VISUALLY_CORRELATED_TO_PRINTED_RECITING_TONE_BUT_NOT_HUMAN_SIGNED_OFF",
+    "actualError": "GregoBase metadata and body retain Omnes gentes although original textus novus and 1962 Roman source use Omnes populi"
+  },
+  "candidate": {
+    "status": "SUGGESTED_TENOR_DISTRIBUTION_DO_NOT_PUBLISH",
+    "openingGabc": "O(f)mnes(gh) pó(h)pu(h)li,(h)",
+    "openingTokens": [
+      {
+        "syllable": "O",
+        "gabc": "f"
+      },
+      {
+        "syllable": "mnes",
+        "gabc": "gh"
+      },
+      {
+        "syllable": "pó",
+        "gabc": "h"
+      },
+      {
+        "syllable": "pu",
+        "gabc": "h"
+      },
+      {
+        "syllable": "li,",
+        "gabc": "h"
+      }
+    ],
+    "mechanism": "Repeated h tenor is visible on the printed O-mnes pó-pu-li syllables (p.144**); research candidate adds one h to accommodate pó-pu-li. This verifies opening contour only, not all score neumes or performance eligibility.",
+    "mustBeReviewedAgainstPrint": true,
+    "publicationEligible": false,
+    "file": "data/research/chant-source-review/palm46-omnes-populi-1961-provisional.gabc",
+    "openingContourReview": "Printed 1961 p.144** directly inspected; printed O-mnes pó-pu-li notation shows the repeated reciting pitch on pó, pu, li. This supports using h on the three replacement syllables only.",
+    "openingPitchContourVisuallyCompared": true,
+    "completeChantPitchAndNeumesCertified": false,
+    "fileRole": "READ_ONLY_RESEARCH_FIXTURE_NO_RUNTIME_REFERENCE",
+    "renderingProofPassed": true,
+    "humanMusicalReviewPassed": false
+  },
+  "header": {
+    "rawContainsDoubleDelimiter": true,
+    "rawPattern": "\\n%%\\n%%\\r\\n",
+    "proposedResearchParsingNormalization": "Replace the adjacent two delimiters with one GABC header/body delimiter, without modifying syllable pitches or the archived original",
+    "notAnApprovalOfExsurgeRendering": true,
+    "provisionalFileSingleDelimiter": true,
+    "originalFilePreservedWithDoubleDelimiter": true
+  },
+  "requiredComparisons": [
+    "See actual staff note alignment for O-mnes pó-pu-li on the 1961 p144** original image",
+    "Verify number and position of h tenor note(s) against printed source",
+    "Check exact accent, pitch, flexa, source-body and next verse 2. Quoniam cue",
+    "Confirm published 1962 Psalm 46 full Latin words and permitted psalm-tone formula",
+    "Render corrected candidate through existing local Exsurge pilot in PR #1749 only after source owner's signoff"
+  ],
+  "sourceChecks": {
+    "rawArchivedFileImmutable": true,
+    "sha256CorrectedDerivativeNotYetComputed": true,
+    "additionalPitchClaimForbidden": true,
+    "productionApproved": false
+  },
+  "testability": {
+    "rawSnippetOccursExactlyOnce": true,
+    "requiredFirstSyllables": "O-mnes pó-pu-li",
+    "singleSourceScore": true
+  },
+  "review": {
+    "originalPage": "https://gregobase.selapa.net/sources/2/1180.png",
+    "pageView": "WEB_IMAGE_RENDERED_ORIGINAL_SOURCE",
+    "reviewerFindings": [
+      "Printed staff and text show Omnes pó-pu-li",
+      "Compared with raw source: source provides one h pitch each for gen and tes",
+      "Third recitation syllable on h is a localized proposed text-underlay correction",
+      "Following Plaudite/second half remains byte-identical to original except GABC delimiter and header metadata"
+    ],
+    "remainingGates": [
+      "Human chant-editor verifies printed neume-to-syllable alignment",
+      "Exsurge produces acceptable score from candidate at mobile/desktop widths",
+      "Original 1962 ceremonial Latin verified against printed page",
+      "Complete Psalm 46 pointed verse text and repeats sourced",
+      "Existing PR #1749 signs off explicit score-version approval"
+    ]
+  },
+  "nativeExsurgeProof": {
+    "status": "COMPLETE_3_VIEWPORTS_SVG_PARSE_RENDER_PROOF_ONLY",
+    "runId": 40378960243,
+    "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40378960243",
+    "jobId": 121769655876,
+    "conclusion": "success",
+    "pinnedExistingScholaSourceCommit": "8a75c2cbb6ea2bc6ba26da30ec923b3dc8c827e1",
+    "engine": "existing assets/vendor/exsurge/exsurge.min.js",
+    "rawSourceSha256": "eb13e9eadcfeebca7e5fa0617f6cbb6c9823464ff88af2995952ab21ca8717a0",
+    "compared": [
+      {
+        "item": "raw_incorrect_text_reference",
+        "parsedMappings": 12,
+        "viewports": [
+          {
+            "widthPx": 260,
+            "staffSystems": 2,
+            "svgChildren": 1
+          },
+          {
+            "widthPx": 420,
+            "staffSystems": 1,
+            "svgChildren": 1
+          },
+          {
+            "widthPx": 800,
+            "staffSystems": 1,
+            "svgChildren": 1
+          }
+        ]
+      },
+      {
+        "item": "provisional_omnes_populi_derivative",
+        "parsedMappings": 12,
+        "viewports": [
+          {
+            "widthPx": 260,
+            "staffSystems": 2,
+            "svgChildren": 1
+          },
+          {
+            "widthPx": 420,
+            "staffSystems": 1,
+            "svgChildren": 1
+          },
+          {
+            "widthPx": 800,
+            "staffSystems": 1,
+            "svgChildren": 1
+          }
+        ]
+      }
+    ],
+    "trueClaims": [
+      "actual existing Schola renderer loaded from pinned code",
+      "score GABC parsed and nonempty SVG rendered",
+      "responsive layout completed at three sizes",
+      "archived source hash and only-four-transformations validated"
+    ],
+    "falseClaims": [
+      "full printed neume/pitch certification",
+      "1962 complete verse/pointing transcription",
+      "human chorister audible-performed identity",
+      "native device pixel-level QA",
+      "production selection or Mass assignment"
+    ],
+    "releaseEligible": false
+  }
+}

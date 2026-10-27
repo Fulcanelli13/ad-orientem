@@ -1,0 +1,498 @@
+{
+  "schema": "ao-palm23-v2-provisional-gabc-source-transfer-review-v1",
+  "date": "2026-10-27",
+  "batch": 24,
+  "stage": "PALM-R02",
+  "status": "PSALM23_V2_A_SOURCE_PLAUSIBLE_B_UNSUPPORTED_COMPRESSION_BOTH_UNAPPROVED_PENDING_EDITOR",
+  "target": {
+    "psalm": 23,
+    "liturgicalLine": 2,
+    "biblicalVerse": 2,
+    "printedLatin": "Nam ipse super mária fundávit eum * et super flúmina firmávit eum.",
+    "editorialSource": "Graduale Romanum 1961 p.143** Textus novus",
+    "printedPageUrl": "https://gregobase.selapa.net/sources/2/1179.png",
+    "rawArchivedSource": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+    "scoreHypothesis": "data/research/chant-source-review/palm23-verse2-tone-application-20261027-PROVISIONAL.gabc"
+  },
+  "method": {
+    "sourceAvailable": "Printed Psalm23 first verse fully notated; only opening of verse2 noted",
+    "printedSecondVerseCue": "Nam(h) ip(h)se...(h)",
+    "introductionRule": "Begin verse 2 on h recitation as attested in printed abbreviated cue; do not repeat first-verse f/gh intonation",
+    "cadenceMethod": "Mechanical comparison/hypothetical reassignment of exact first-verse note groups; not authoritative Gregorian accent pointing",
+    "sourceFirstVerseMediantSnippet": "quæ(h) <b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+    "candidateMediantSnippet": "fun(h)dá(ixi hr)vit(h) e(g hr)um(h.)",
+    "sourceFirstVerseEndingSnippet": "et(h)  qui(h) há(h)bi(h)<i>tant</i>(g) <i>in</i>(f) <b>e</b>(gh gr)o.(gf..)",
+    "candidateEndingSnippet": "flú(h)mi(h)na(h) fir(h)má(g)vit(f) e(gh gr)um.(gf..)",
+    "risk": "First-verse terminal pitch positions depend on stress and syllabic length. Candidate má(g) aligns mechanically to source tant(g), not demonstrably to the proper melodic accent; editor must correct or reject.",
+    "mismatchHold": [
+      "Accent position for candidate final firmávit differs from printed first-verse habitant contour",
+      "Precise medial preparatory syllable spacing requires checking manual rubrics and original musical score",
+      "Native Exsurge parsed and produced SVG at 260/420/800px; physical-device visual/pixel review and editorial cadence approval still pending.",
+      "Original Vatican 1962 print owner must approve orthography, text and punctuation before release",
+      "Raw archival GABC ám :(h.) to candidate um(h.) punctuation/note attach normalization changes encoding; chant editor must verify audible equivalence."
+    ],
+    "notationSyntaxDifference": "Raw archived GABC has ám :(h.) with the punctum carried in the colon token. The research derivative instead attaches the h punctum directly to verse2 um(h.) to keep every syllable note-bearing; melodic correctness is still unresolved."
+  },
+  "cadenceMappings": {
+    "medial": [
+      [
+        "Nam",
+        "h",
+        "1961 printed abbreviated second-verse cue"
+      ],
+      [
+        "ip",
+        "h",
+        "1961 printed abbreviated second-verse cue"
+      ],
+      [
+        "se",
+        "h",
+        "1961 printed abbreviated second-verse cue"
+      ],
+      [
+        "su",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "per",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "má",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "ri",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "a",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "fun",
+        "h",
+        "source quæ(h)"
+      ],
+      [
+        "dá",
+        "ixi hr",
+        "source re(ixi hr)"
+      ],
+      [
+        "vit",
+        "h",
+        "source plent(h)"
+      ],
+      [
+        "e",
+        "g hr",
+        "source e(g hr)"
+      ],
+      [
+        "um",
+        "h.",
+        "source ám :(h.)"
+      ]
+    ],
+    "termination": [
+      [
+        "et",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "su",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "per",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "flú",
+        "h",
+        "hypothesized recitation h"
+      ],
+      [
+        "mi",
+        "h",
+        "source qui(h), shifted recitation"
+      ],
+      [
+        "na",
+        "h",
+        "source há(h), shifted recitation"
+      ],
+      [
+        "fir",
+        "h",
+        "source bi(h), shifted recitation"
+      ],
+      [
+        "má",
+        "g",
+        "source tant(g); accent conflict unresolved"
+      ],
+      [
+        "vit",
+        "f",
+        "source in(f)"
+      ],
+      [
+        "e",
+        "gh gr",
+        "source e(gh gr)"
+      ],
+      [
+        "um",
+        "gf..",
+        "source o(gf..)"
+      ]
+    ]
+  },
+  "tests": {
+    "targetSourceTextMatchesNormalizedPsalm23Verse2": true,
+    "noteBearingSyllables": 24,
+    "openingCueOnH": true,
+    "medialAsteriskPresent": true,
+    "doxologyNotIncluded": true,
+    "antiphonReturnNotIncluded": true,
+    "productionReadOnly": true,
+    "sourceArchiveCadenceColonNormalizationRequired": true,
+    "provisionalSyllablesAllHaveAttachedNotes": true
+  },
+  "release": {
+    "musicEditorReviewed": false,
+    "printedNoteByNoteProven": false,
+    "accentCorrectnessCertified": false,
+    "exsurgeParsed": true,
+    "exsurgeRendered": true,
+    "sourceOwnerApproved": false,
+    "scholaOwnerApproved": false,
+    "scorePublicationAllowed": false,
+    "productionMassReaderChanges": 0,
+    "nativePhoneDeviceAccepted": false
+  },
+  "nativeRenderProof": {
+    "runId": 40454771798,
+    "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40454771798",
+    "jobId": 122025419732,
+    "conclusion": "success",
+    "ownerVendorCommit": "8a75c2cbb6ea2bc6ba26da30ec923b3dc8c827e1",
+    "candidateSha256": "871b48676c1c942630406d651b4cd8b6b1e2783fb6ddbb8e5895544483e57b91",
+    "sourceSha256": "06537463e71d320e5134ac84a7cb0bc70579169cd3c509883caf9eb98cdc9be2",
+    "candidate": {
+      "parsedMappings": 14,
+      "viewports": [
+        {
+          "width": 260,
+          "systems": 2,
+          "svgChildren": 1
+        },
+        {
+          "width": 420,
+          "systems": 1,
+          "svgChildren": 1
+        },
+        {
+          "width": 800,
+          "systems": 1,
+          "svgChildren": 1
+        }
+      ]
+    },
+    "original": {
+      "parsedMappings": 25,
+      "viewports": [
+        {
+          "width": 260,
+          "systems": 3,
+          "svgChildren": 1
+        },
+        {
+          "width": 420,
+          "systems": 3,
+          "svgChildren": 1
+        },
+        {
+          "width": 800,
+          "systems": 2,
+          "svgChildren": 1
+        }
+      ]
+    },
+    "meaning": "Real Exsurge parser/layout/nonempty SVG validation on pinned Schola source, not score/music/editorial approval or physical device pixel QA.",
+    "comparisonRun": {
+      "runId": 40455234551,
+      "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40455234551",
+      "originalSHA256": "871b48676c1c942630406d651b4cd8b6b1e2783fb6ddbb8e5895544483e57b91",
+      "alternativeSHA256": "3ba84cc3b5e38110b23e7593ed02fe8fe95a0c2b7a56a7ca6b41fd520f89173d",
+      "bothRendered260420800": true,
+      "bothSyllabicTextMatching": true,
+      "originalMusicalApproved": false,
+      "alternativeMusicalApproved": false
+    }
+  },
+  "alternativeAccentAlignment": {
+    "file": "data/research/chant-source-review/palm23-verse2-accent-alignment-20261027-ALTERNATE.gabc",
+    "status": "SECOND_RESEARCH_OPTION_FOR_MUSICAL_EDITOR_NO_CERTIFIED_CORRECTION",
+    "sharedMedialSectionUnchanged": true,
+    "terminalOriginal": "fir(h)má(g)vit(f) e(gh gr)um.(gf..)",
+    "terminalAlternative": "fir(h)má(h)vit(gf) e(gh gr)um.(gf..)",
+    "originalFirstVerseTerminalContour": "há(h)bi(h)tant(g) in(f) e(gh gr)o.(gf..)",
+    "mechanism": "Experimental accent-aware recasting: assign h recitation to stressed má in firmávit and combine the first-verse g and f postaccent note groups on vit(gf) because verse2 contains one fewer syllable in the terminal phrase.",
+    "explicitLimitation": "One-to-one source-note transference no longer holds and combining two former syllabic notes into a clivis could violate proper Solesmes psalm-tone pointing. This is a reviewer alternative only, not verified reconstruction.",
+    "sungRecitationAttestedByPrintedCueOnly": [
+      "Nam",
+      "ip",
+      "se"
+    ],
+    "reviewBeforeUse": [
+      "Confirm exact editorial Solesmes formula for Psalm23 second-verse final cadence",
+      "Compare Latin accent and preparatory-syllable counting for firmávit eum",
+      "Check if gf clivis on vit is musically allowed in this tone",
+      "Render both alternatives with real Exsurge, separately from music signoff"
+    ],
+    "originalApproved": false,
+    "alternativeApproved": false,
+    "realExsurgeRendered": true,
+    "exsurgeProofRunId": 40455234551,
+    "exsurgeProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40455234551",
+    "alternativeSha256": "3ba84cc3b5e38110b23e7593ed02fe8fe95a0c2b7a56a7ca6b41fd520f89173d",
+    "renderResult": {
+      "parsedMappings": 14,
+      "viewports": [
+        {
+          "width": 260,
+          "systems": 2,
+          "svgChildren": 1
+        },
+        {
+          "width": 420,
+          "systems": 1,
+          "svgChildren": 1
+        },
+        {
+          "width": 800,
+          "systems": 1,
+          "svgChildren": 1
+        }
+      ]
+    },
+    "neumeToAccentMusicalCertification": false,
+    "actualChurchPerformanceCertified": false,
+    "noteGroupCompressionNeedsEditorSignoff": true
+  },
+  "batch26CadenceAudit": {
+    "batch": 26,
+    "date": "2026-10-27",
+    "verdict": "NEITHER_A_NOR_B_CAN_BE_EDITORIALLY_SELECTED_FROM_PRINTED_FIRST_VERSE_ALONE",
+    "evidence": {
+      "psalm23Printed1961": {
+        "title": "Graduale Romanum 1961, printed page 143**",
+        "url": "https://gregobase.selapa.net/sources/2/1179.png",
+        "pdfPageIndexZeroBased": 142,
+        "notatedFirstVerseFull": true,
+        "secondVerseOnlyCue": "Nam(h) ip(h)se...(h)",
+        "printedTargetText": "Nam ipse super mária fundávit eum * et super flúmina firmávit eum.",
+        "scope": "The printed page authorizes v2 Latin and its introductory tenor cue, not the full v2 cadence."
+      },
+      "generalPsalmody": {
+        "title": "Liber Usualis 1961, The Tones of the Psalms, printed p113",
+        "url": "https://longbeachchant.com/wp-content/uploads/2019/11/liber-1961-eight-psalm-tones.pdf#page=2",
+        "printedLabel": "113",
+        "evidence": "The first-tone model distinguishes first-verse-only intonation from subsequent recitation and includes a distinct termination formula depending on stressed text and preparatory syllables.",
+        "limitation": "A generic psalm-tone diagram must not silently replace the exact processional Psalm23 score; exact correspondence of the f termination/subtype remains an editorial comparison, not a certified identification."
+      }
+    },
+    "originalTerminalPhrase": {
+      "latin": "qui hábitant in eo",
+      "gabc": "qui(h) há(h)bi(h)<i>tant</i>(g) <i>in</i>(f) <b>e</b>(gh gr)o.(gf..)",
+      "accentedWord": "hábitant",
+      "accentedSyllable": "há",
+      "pitchGroupAtAccent": "h",
+      "postAccentSyllables": [
+        "bi",
+        "tant",
+        "in",
+        "e",
+        "o"
+      ],
+      "postAccentCount": 5,
+      "notesAfterAccent": [
+        "h",
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ]
+    },
+    "targetTerminalPhrase": {
+      "latin": "firmávit eum",
+      "accentedWord": "firmávit",
+      "accentedSyllable": "má",
+      "postAccentSyllables": [
+        "vit",
+        "e",
+        "um"
+      ],
+      "postAccentCount": 3,
+      "canonical1962SpellingStillOwner": "#894"
+    },
+    "variantA": {
+      "sourceFile": "data/research/chant-source-review/palm23-verse2-tone-application-20261027-PROVISIONAL.gabc",
+      "accentPitch": "g",
+      "postAccentNotes": [
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "proof": "Native Exsurge parse/layout/SVG at 260, 420, 800",
+      "status": "RETENTION_FOR_COMPARISON_NOT_CHOSEN",
+      "issue": "Moves the accent má onto g by mechanical word-to-note copying; not demonstrated correct as a psalm-tone accent transfer."
+    },
+    "variantB": {
+      "sourceFile": "data/research/chant-source-review/palm23-verse2-accent-alignment-20261027-ALTERNATE.gabc",
+      "accentPitch": "h",
+      "postAccentNotes": [
+        "gf",
+        "gh gr",
+        "gf.."
+      ],
+      "proof": "Native Exsurge parse/layout/SVG at 260, 420, 800",
+      "status": "RETENTION_FOR_COMPARISON_NOT_CHOSEN",
+      "issue": "Invents an unprinted gf clivis on vit to compress two source pitch groups; Exsurge acceptance cannot validate Gregorian musical correctness."
+    },
+    "criticalDifference": {
+      "postAccentSourceCount": 5,
+      "postAccentTargetCount": 3,
+      "shortage": 2,
+      "doesNotAuthorizeDroppingOrMergingPitches": true
+    },
+    "unknowns": [
+      "Exact proper psalm-tone termination as demonstrated by source, including accent-bearing cadence notes and preparatory syllables",
+      "Permissible adaptation to firmávit eum's three post-accent syllables",
+      "Whether punctuation and melodic grouping in the archived first-verse GABC matches the original printed staff exactly",
+      "Musician-approved second verse terminal and medial cadences; comparison with print/manual and actual singing",
+      "Canonical Latin owner approval under #894"
+    ],
+    "decision": "HOLD_BOTH_NO_DEFAULT_NO_APPROVED_VERSION",
+    "musicianAcceptanceChecklist": [
+      {
+        "gate": "1961_SOURCE_AND_TONE_IDENTITY",
+        "passed": false
+      },
+      {
+        "gate": "ACCENT_AND_POSTACCENT_CADENCE_FORMULA",
+        "passed": false
+      },
+      {
+        "gate": "SPOKEN_LATIN_AND_ORTHOGRAPHY_1962_OWNER",
+        "passed": false
+      },
+      {
+        "gate": "FULL_NEUME_FACSIMILE_REVIEW",
+        "passed": false
+      },
+      {
+        "gate": "INDEPENDENT_HUMAN_MUSICAL_EDITOR_SIGNOFF",
+        "passed": false
+      },
+      {
+        "gate": "PHYSICAL_MOBILE_NOTATION_ACCEPTANCE",
+        "passed": false
+      }
+    ],
+    "renderProofOnly": {
+      "originalFirstDraftRun": 40454771798,
+      "abRun": 40455234551,
+      "exsurgePass": true,
+      "actualMusicalApproval": false
+    },
+    "preventCascadingExperimentalCopies": true,
+    "other12PatternsMustNotInheritEitherUnapprovedModel": true,
+    "noProductionChange": true,
+    "supersededBy": "batch27CadentialAccentCorrection",
+    "previousReasoningInvalid": true,
+    "previousReasoningCorrection": "Prior 5-versus-3 syllables after há/má counts from the wrong word-level accent for the final psalm-tone cadence. It does NOT establish the last cadential accented syllable, which is nearer the termination. The 1961 tone manual explicitly prescribes two preparatory notes before the termination accented note without regard to those preparations' verbal stress."
+  },
+  "batch27CadentialAccentCorrection": {
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "ANALYTICAL_CORRECTION_TWO_PREPARATORY_GROUPS_ESTABLISHED_MUSICAL_EDITOR_NOT_APPROVED",
+    "primaryWitness": {
+      "title": "Graduale Romanum 1961 restored Holy Week Psalms",
+      "psalm23PrintedPage": "143**",
+      "psalm46PrintedPage": "144**",
+      "facsimilePdf": "https://s9.imslp.org/files/imglnks/usimg/1/1a/IMSLP52097-PMLP108040-GR6_Proprium_et_Commune_pro_aliquibus_locis,_Psalmi.pdf"
+    },
+    "methodSources": [
+      {
+        "title": "Liber Usualis 1961 - The Eight Tones of Psalms, First Tone, p113",
+        "url": "https://longbeachchant.com/wp-content/uploads/2019/11/liber-1961-eight-psalm-tones.pdf#page=2",
+        "scope": "first tone generic explanation: termination of one melodic accent with two preparatory syllables; first verse intonation not repeated for subsequent verses"
+      },
+      {
+        "title": "Rules for Text Underlay of Psalm Text at Cadence Formulas",
+        "url": "https://npm.org/wp-content/uploads/2017/07/Rules-for-Text-Underlay-of-the-Psalm-Text-at-the-Psalm-Tone-Cadence.pdf#page=1",
+        "scope": "textual accent corresponds to melodic accent; preparatory notes counted regardless of lexical stress; epenthesis for dactylic cadences"
+      }
+    ],
+    "originalP23Terminal": {
+      "source": "qui(h) há(h)bi(h)<i>tant</i>(g) <i>in</i>(f) <b>e</b>(gh gr)o.(gf..)",
+      "preparatory": [
+        "tant(g)",
+        "in(f)"
+      ],
+      "cadentialAccentGroup": "e(gh gr)",
+      "postAccent": "o(gf..)",
+      "lastWord": "eo",
+      "confidence": "SCORE_GABC_EXACT; interpretation of e as final accented first syllable is an evidence-supported psalm-tone analysis, not a human certification"
+    },
+    "verse2VariantA": {
+      "source": "fir(h)má(g)vit(f) e(gh gr)um.(gf..)",
+      "preparatory": [
+        "má(g)",
+        "vit(f)"
+      ],
+      "cadentialAccentGroup": "e(gh gr)",
+      "postAccent": "um(gf..)",
+      "status": "TWO_PREPARATORY_NOTE_ALIGNMENT_PLAUSIBLE_PENDING_ACCENT_EDITOR",
+      "previousBatch26ReasonInvalid": true,
+      "sourceMelodicGroupsPreserved": true
+    },
+    "verse2VariantB": {
+      "source": "fir(h)má(h)vit(gf) e(gh gr)um.(gf..)",
+      "preparatory": [
+        "vit(gf)"
+      ],
+      "cadentialAccentGroup": "e(gh gr)",
+      "postAccent": "um(gf..)",
+      "status": "ADDED_GF_COMPRESSION_NOT_PRESENT_IN_PRINTED_FORMULA",
+      "previousBatch26ReasonInvalid": true,
+      "sourceMelodicGroupsPreserved": false
+    },
+    "conclusion": "Version A now has specific two-preparatory-group support and should be prioritized for independent editorial review; B remains a rejected-as-unjustified automatic compression hypothesis but is preserved as research alternative. Neither is certified as musically correct, nor safe for automatic transfer into the rest of the psalms.",
+    "editorialHolds": [
+      "Confirm printed staff matches archived GABC groups including r/episemata and ictus marks",
+      "Confirm target e-um/syllabification and that the dominant cadential text accent is on the first syllable of eum",
+      "Mediant of two accents in fundávit eum requires its own underlay adjudication",
+      "Special Palm processional tone termination must match the printed exemplar, generic office tone tables cannot be substituted",
+      "Validate Psalm46 own separate printed cadence independently",
+      "Physical mobile score inspection and canonical Latin approval still open"
+    ],
+    "Aapproved": false,
+    "Bapproved": false,
+    "promotionAllowed": false,
+    "notesCopiedToProduction": 0
+  }
+}

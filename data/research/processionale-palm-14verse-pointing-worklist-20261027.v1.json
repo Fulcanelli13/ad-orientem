@@ -1,0 +1,620 @@
+{
+  "schema": "ao-palm-p23-p46-pointing-worklist-v1",
+  "date": "2026-10-27",
+  "batch": 21,
+  "stage": "PALM-R02",
+  "status": "14_UNDERLAY_OCCURRENCES_13_DISTINCT_PATTERNS_0_MUSICALLY_APPROVED",
+  "purpose": "Read-only, source-derived review worklist for existing Schola. Earlier Psalm 23 verse8 metadata had mistakenly conflated flex and mediant; corrected from printed Graduale 1961 p143**.",
+  "authorities": {
+    "scorePrint": [
+      "https://gregobase.selapa.net/sources/2/1179.png",
+      "https://gregobase.selapa.net/sources/2/1180.png"
+    ],
+    "witness": "Graduale Romanum 1961 Textus novus printed pp143**-144**",
+    "latinCanonOwner": "#894",
+    "scoreOwner": "PR #1749",
+    "researchOwner": "PR #1752"
+  },
+  "counting": {
+    "completePsalmTextLines": 16,
+    "firstVerseFullMusicTemplates": 2,
+    "furtherMusicalVerseOccurrences": 14,
+    "distinctTextAndMarkerPatterns": 13,
+    "samePsalmReusableOccurrencePairs": 1,
+    "p23FlexedOccurrences": 3,
+    "p46BiblicalVerse9LiturgicalLines": 2,
+    "fullApprovedMusicalVerseAdaptations": 0,
+    "productionScoreAssignments": 0
+  },
+  "duplicateReuse": {
+    "samePsalmSameMarkerSectionsOnly": true,
+    "exactSafePair": [
+      "PALM-R02-PS23-L07",
+      "PALM-R02-PS23-L09"
+    ],
+    "exception": "Psalm23 L08 and L10 share Quis est iste rex gloriae? but differ: L08 is flex followed by Dominus fortis... mediant; L10 places its mediant after the opening question. Never deduplicate by first phrase alone."
+  },
+  "sourceMotifs": {
+    "ps23": {
+      "existingSourceId": 19315,
+      "header": "Graduale Romanum 1961 p143**",
+      "intonation": "DO(f)mi(gh)ni(h)",
+      "flexSourceExample": "rex(h) glo(h)ri(gr)æ?(g.) +(h)",
+      "rawFullFirstVerseOnly": true,
+      "underlayMayNotBeInferredWithoutReview": true
+    },
+    "ps46": {
+      "existingSourceId": 19316,
+      "header": "Graduale Romanum 1961 p144**",
+      "archivedWrongIncipit": "O(f)mnes(gh) gen(h)tes,(h)",
+      "provisionalNewIncipit": "O(f)mnes(gh) pó(h)pu(h)li,(h)",
+      "sourceRawQuarantined": true,
+      "underlayMayNotBeInferredWithoutReview": true
+    }
+  },
+  "work": [
+    {
+      "id": "PALM-R02-PS23-L02",
+      "psalm": 23,
+      "printedChantLine": 2,
+      "biblicalVerse": 2,
+      "repeatAntiphonAfterPair": true,
+      "pair": [
+        1,
+        2
+      ],
+      "printedPage": "143**",
+      "sourceSections": {
+        "medial": "Nam ipse super maria fundavit eum",
+        "termination": "et super flumina firmavit eum."
+      },
+      "markerSequence": [
+        "*"
+      ],
+      "reuseKey": "ps23|medial:nam ipse super maria fundavit eum|termination:et super flumina firmavit eum",
+      "syllabicFormulaSource": "GregoBase #19315, 1961 print p143**",
+      "wordStressCandidatesCertified": false,
+      "intonationRecitationAdaptationCertified": false,
+      "medialCadenceCertified": false,
+      "terminationCadenceCertified": false,
+      "flexaCadenceCertified": false,
+      "completeGabcScoreCertified": false,
+      "localPerformanceCertified": false,
+      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR",
+      "provisionalGabcResearch": {
+        "candidatePath": "data/research/chant-source-review/palm23-verse2-tone-application-20261027-PROVISIONAL.gabc",
+        "evidencePath": "data/research/processionale-palm23-verse2-tone-hypothesis-20261027.v1.json",
+        "scope": "ONE_24_SYLLABLE_TONE_APPLICATION_HYPOTHESIS",
+        "printedSecondVerseCueUsed": true,
+        "allSyllablesHaveGabcNoteGroups": true,
+        "sourceArchivedGabcUnmodified": true,
+        "musicalAccentHold": "Both GABC variants render natively, but original má(g) is misaligned with stress and alternative vit(gf) merges source syllabic g/f pitches without editor authority.",
+        "musicEditorApproved": false,
+        "exsurgeRendered": true,
+        "publicationAllowed": false,
+        "exsurgeProofRunId": 40454771798,
+        "alternativeFile": "data/research/chant-source-review/palm23-verse2-accent-alignment-20261027-ALTERNATE.gabc",
+        "alternativeExsurgeRendered": true,
+        "comparisonProofRunId": 40455234551,
+        "actualDeviceAccepted": false,
+        "noteUnderlayCertified": false,
+        "cadenceDecision": "A_SOURCE_SHAPE_PLAUSIBLE_B_UNATTESTED_BOTH_UNAPPROVED",
+        "postAccentReference": 5,
+        "postAccentTarget": 3,
+        "accentAdjudicationStatus": "NOT_YET_PASSED",
+        "manualMusicalEditorRequired": true,
+        "noInheritanceToOtherPatterns": true,
+        "earlierPostAccentFiveVsThreeReasoningSuperseded": true,
+        "newCadentialAnalysis": "Both source and A-candidate have g then f as 2 immediately preceding preparatory notes before last main cadential accent e in eo/eum. Preliminary source-supported shape, NOT musical-editor acceptance. B merges g/f and remains unsupported."
+      }
+    },
+    {
+      "id": "PALM-R02-PS23-L07",
+      "psalm": 23,
+      "printedChantLine": 7,
+      "biblicalVerse": 7,
+      "repeatAntiphonAfterPair": false,
+      "pair": [
+        7,
+        8
+      ],
+      "printedPage": "143**",
+      "sourceSections": {
+        "flex": "Attollite, portae, capita vestra,",
+        "medial": "et attollite vos, fores antiquae,",
+        "termination": "ut ingrediatur rex gloriae!"
+      },
+      "markerSequence": [
+        "†",
+        "*"
+      ],
+      "reuseKey": "ps23|flex:attollite portae capita vestra|medial:et attollite vos fores antiquae|termination:ut ingrediatur rex gloriae",
+      "syllabicFormulaSource": "GregoBase #19315, 1961 print p143**",
+      "wordStressCandidatesCertified": false,
+      "intonationRecitationAdaptationCertified": false,
+      "medialCadenceCertified": false,
+      "terminationCadenceCertified": false,
+      "flexaCadenceCertified": false,
+      "completeGabcScoreCertified": false,
+      "localPerformanceCertified": false,
+      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR"
+    },
+    {
+      "id": "PALM-R02-PS23-L08",
+      "psalm": 23,
+      "printedChantLine": 8,
+      "biblicalVerse": 8,
+      "repeatAntiphonAfterPair": true,
+      "pair": [
+        7,
+        8
+      ],
+      "printedPage": "143**",
+      "sourceSections": {
+        "flex": "Quis est iste rex gloriae?",
+        "medial": "Dominus fortis et potens,",
+        "termination": "Dominus potens in proelio."
+      },
+      "markerSequence": [
+        "†",
+        "*"
+      ],
+      "reuseKey": "ps23|flex:quis est iste rex gloriae|medial:dominus fortis et potens|termination:dominus potens in proelio",
+      "syllabicFormulaSource": "GregoBase #19315, 1961 print p143**",
+      "wordStressCandidatesCertified": false,
+      "intonationRecitationAdaptationCertified": false,
+      "medialCadenceCertified": false,
+      "terminationCadenceCertified": false,
+      "flexaCadenceCertified": false,
+      "completeGabcScoreCertified": false,
+      "localPerformanceCertified": false,
+      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR"
+    },
+    {
+      "id": "PALM-R02-PS23-L09",
+      "psalm": 23,
+      "printedChantLine": 9,
+      "biblicalVerse": 9,
+      "repeatAntiphonAfterPair": false,
+      "pair": [
+        9,
+        10
+      ],
+      "printedPage": "143**",
+      "sourceSections": {
+        "flex": "Attollite, portae, capita vestra,",
+        "medial": "et attollite vos, fores antiquae,",
+        "termination": "ut ingrediatur rex gloriae!"
+      },
+      "markerSequence": [
+        "†",
+        "*"
+      ],
+      "reuseKey": "ps23|flex:attollite portae capita vestra|medial:et attollite vos fores antiquae|termination:ut ingrediatur rex gloriae",
+      "syllabicFormulaSource": "GregoBase #19315, 1961 print p143**",
+      "wordStressCandidatesCertified": false,
+      "intonationRecitationAdaptationCertified": false,
+      "medialCadenceCertified": false,
+      "terminationCadenceCertified": false,
+      "flexaCadenceCertified": false,
+      "completeGabcScoreCertified": false,
+      "localPerformanceCertified": false,
+      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR"
+    },
+    {
+      "id": "PALM-R02-PS23-L10",
+      "psalm": 23,
+      "printedChantLine": 10,
+      "biblicalVerse": 10,
+      "repeatAntiphonAfterPair": true,
+      "pair": [
+        9,
+        10
+      ],
+      "printedPage": "143**",
+      "sourceSections": {
+        "medial": "Quis est iste rex gloriae?",
+        "termination": "Dominus exercituum: ipse est rex gloriae."
+      },
+      "markerSequence": [
+        "*"
+      ],
+      "reuseKey": "ps23|medial:quis est iste rex gloriae|termination:dominus exercituum ipse est rex gloriae",
+      "syllabicFormulaSource": "GregoBase #19315, 1961 print p143**",
+      "wordStressCandidatesCertified": false,
+      "intonationRecitationAdaptationCertified": false,
+      "medialCadenceCertified": false,
+      "terminationCadenceCertified": false,
+      "flexaCadenceCertified": false,
+      "completeGabcScoreCertified": false,
+      "localPerformanceCertified": false,
+      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR"
+    },
+    {
+      "id": "PALM-R02-PS46-L02",
+      "psalm": 46,
+      "printedChantLine": 2,
+      "biblicalVerse": 2,
+      "repeatAntiphonAfterPair": true,
+      "pair": [
+        1,
+        2
+      ],
+      "printedPage": "144**",
+      "sourceSections": {
+        "medial": "Quoniam Dominus excelsus, terribilis",
+        "termination": "rex magnus super omnem terram."
+      },
+      "markerSequence": [
+        "*"
+      ],
+      "reuseKey": "ps46|medial:quoniam dominus excelsus terribilis|termination:rex magnus super omnem terram",
+      "syllabicFormulaSource": "GregoBase #19316 quarantined, 1961 print p144**",
+      "wordStressCandidatesCertified": false,
+      "intonationRecitationAdaptationCertified": false,
+      "medialCadenceCertified": false,
+      "terminationCadenceCertified": false,
+      "flexaCadenceCertified": false,
+      "completeGabcScoreCertified": false,
+      "localPerformanceCertified": false,
+      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR"
+    },
+    {
+      "id": "PALM-R02-PS46-L03",
+      "psalm": 46,
+      "printedChantLine": 3,
+      "biblicalVerse": 3,
+      "repeatAntiphonAfterPair": false,
+      "pair": [
+        3,
+        4
+      ],
+      "printedPage": "144**",
+      "sourceSections": {
+        "medial": "Subicit populos nobis",
+        "termination": "et nationes pedibus nostris."
+      },
+      "markerSequence": [
+        "*"
+      ],
+      "reuseKey": "ps46|medial:subicit populos nobis|termination:et nationes pedibus nostris",
+      "syllabicFormulaSource": "GregoBase #19316 quarantined, 1961 print p144**",
+      "wordStressCandidatesCertified": false,
+      "intonationRecitationAdaptationCertified": false,
+      "medialCadenceCertified": false,
+      "terminationCadenceCertified": false,
+      "flexaCadenceCertified": false,
+      "completeGabcScoreCertified": false,
+      "localPerformanceCertified": false,
+      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR"
+    },
+    {
+      "id": "PALM-R02-PS46-L04",
+      "psalm": 46,
+      "printedChantLine": 4,
+      "biblicalVerse": 4,
+      "repeatAntiphonAfterPair": true,
+      "pair": [
+        3,
+        4
+      ],
+      "printedPage": "144**",
+      "sourceSections": {
+        "medial": "Eligit nobis hereditatem nostram",
+        "termination": "gloriam Jacob, quem diligit."
+      },
+      "markerSequence": [
+        "*"
+      ],
+      "reuseKey": "ps46|medial:eligit nobis hereditatem nostram|termination:gloriam jacob quem diligit",
+      "syllabicFormulaSource": "GregoBase #19316 quarantined, 1961 print p144**",
+      "wordStressCandidatesCertified": false,
+      "intonationRecitationAdaptationCertified": false,
+      "medialCadenceCertified": false,
+      "terminationCadenceCertified": false,
+      "flexaCadenceCertified": false,
+      "completeGabcScoreCertified": false,
+      "localPerformanceCertified": false,
+      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR"
+    },
+    {
+      "id": "PALM-R02-PS46-L05",
+      "psalm": 46,
+      "printedChantLine": 5,
+      "biblicalVerse": 5,
+      "repeatAntiphonAfterPair": false,
+      "pair": [
+        5,
+        6
+      ],
+      "printedPage": "144**",
+      "sourceSections": {
+        "medial": "Ascendit Deus cum exsultatione",
+        "termination": "Dominus cum voce tubae."
+      },
+      "markerSequence": [
+        "*"
+      ],
+      "reuseKey": "ps46|medial:ascendit deus cum exsultatione|termination:dominus cum voce tubae",
+      "syllabicFormulaSource": "GregoBase #19316 quarantined, 1961 print p144**",
+      "wordStressCandidatesCertified": false,
+      "intonationRecitationAdaptationCertified": false,
+      "medialCadenceCertified": false,
+      "terminationCadenceCertified": false,
+      "flexaCadenceCertified": false,
+      "completeGabcScoreCertified": false,
+      "localPerformanceCertified": false,
+      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR"
+    },
+    {
+      "id": "PALM-R02-PS46-L06",
+      "psalm": 46,
+      "printedChantLine": 6,
+      "biblicalVerse": 6,
+      "repeatAntiphonAfterPair": true,
+      "pair": [
+        5,
+        6
+      ],
+      "printedPage": "144**",
+      "sourceSections": {
+        "medial": "Psallite Deo, psallite",
+        "termination": "psallite regi nostro, psallite."
+      },
+      "markerSequence": [
+        "*"
+      ],
+      "reuseKey": "ps46|medial:psallite deo psallite|termination:psallite regi nostro psallite",
+      "syllabicFormulaSource": "GregoBase #19316 quarantined, 1961 print p144**",
+      "wordStressCandidatesCertified": false,
+      "intonationRecitationAdaptationCertified": false,
+      "medialCadenceCertified": false,
+      "terminationCadenceCertified": false,
+      "flexaCadenceCertified": false,
+      "completeGabcScoreCertified": false,
+      "localPerformanceCertified": false,
+      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR"
+    },
+    {
+      "id": "PALM-R02-PS46-L07",
+      "psalm": 46,
+      "printedChantLine": 7,
+      "biblicalVerse": 7,
+      "repeatAntiphonAfterPair": false,
+      "pair": [
+        7,
+        8
+      ],
+      "printedPage": "144**",
+      "sourceSections": {
+        "medial": "Quoniam rex omnis terrae est Deus",
+        "termination": "psallite hymnum."
+      },
+      "markerSequence": [
+        "*"
+      ],
+      "reuseKey": "ps46|medial:quoniam rex omnis terrae est deus|termination:psallite hymnum",
+      "syllabicFormulaSource": "GregoBase #19316 quarantined, 1961 print p144**",
+      "wordStressCandidatesCertified": false,
+      "intonationRecitationAdaptationCertified": false,
+      "medialCadenceCertified": false,
+      "terminationCadenceCertified": false,
+      "flexaCadenceCertified": false,
+      "completeGabcScoreCertified": false,
+      "localPerformanceCertified": false,
+      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR"
+    },
+    {
+      "id": "PALM-R02-PS46-L08",
+      "psalm": 46,
+      "printedChantLine": 8,
+      "biblicalVerse": 8,
+      "repeatAntiphonAfterPair": true,
+      "pair": [
+        7,
+        8
+      ],
+      "printedPage": "144**",
+      "sourceSections": {
+        "medial": "Deus regnat super nationes",
+        "termination": "Deus sedet super solium sanctum suum."
+      },
+      "markerSequence": [
+        "*"
+      ],
+      "reuseKey": "ps46|medial:deus regnat super nationes|termination:deus sedet super solium sanctum suum",
+      "syllabicFormulaSource": "GregoBase #19316 quarantined, 1961 print p144**",
+      "wordStressCandidatesCertified": false,
+      "intonationRecitationAdaptationCertified": false,
+      "medialCadenceCertified": false,
+      "terminationCadenceCertified": false,
+      "flexaCadenceCertified": false,
+      "completeGabcScoreCertified": false,
+      "localPerformanceCertified": false,
+      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR"
+    },
+    {
+      "id": "PALM-R02-PS46-L09",
+      "psalm": 46,
+      "printedChantLine": 9,
+      "biblicalVerse": 9,
+      "repeatAntiphonAfterPair": false,
+      "pair": [
+        9,
+        10
+      ],
+      "printedPage": "144**",
+      "sourceSections": {
+        "medial": "Principes populorum congregati sunt",
+        "termination": "cum populo Dei Abraham."
+      },
+      "markerSequence": [
+        "*"
+      ],
+      "reuseKey": "ps46|medial:principes populorum congregati sunt|termination:cum populo dei abraham",
+      "syllabicFormulaSource": "GregoBase #19316 quarantined, 1961 print p144**",
+      "wordStressCandidatesCertified": false,
+      "intonationRecitationAdaptationCertified": false,
+      "medialCadenceCertified": false,
+      "terminationCadenceCertified": false,
+      "flexaCadenceCertified": false,
+      "completeGabcScoreCertified": false,
+      "localPerformanceCertified": false,
+      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR"
+    },
+    {
+      "id": "PALM-R02-PS46-L10",
+      "psalm": 46,
+      "printedChantLine": 10,
+      "biblicalVerse": 9,
+      "repeatAntiphonAfterPair": true,
+      "pair": [
+        9,
+        10
+      ],
+      "printedPage": "144**",
+      "sourceSections": {
+        "medial": "Nam Dei sunt proceres terrae:",
+        "termination": "excelsus est valde."
+      },
+      "markerSequence": [
+        "*"
+      ],
+      "reuseKey": "ps46|medial:nam dei sunt proceres terrae|termination:excelsus est valde",
+      "syllabicFormulaSource": "GregoBase #19316 quarantined, 1961 print p144**",
+      "wordStressCandidatesCertified": false,
+      "intonationRecitationAdaptationCertified": false,
+      "medialCadenceCertified": false,
+      "terminationCadenceCertified": false,
+      "flexaCadenceCertified": false,
+      "completeGabcScoreCertified": false,
+      "localPerformanceCertified": false,
+      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR"
+    }
+  ],
+  "doxology": {
+    "separatelyRequiresToneAndCadenceReview": true,
+    "psalms": [
+      23,
+      46
+    ],
+    "gloriaPatriAndSicutErat": true,
+    "notIncludedIn14OccurrenceCount": true,
+    "sourceHasTwoPrintedDoxologyLinesPerPsalm": true
+  },
+  "scopeGuards": {
+    "visibleSourceAsteriskIsNotPitchApproval": true,
+    "flexIsNotMediant": true,
+    "readOnlyResearch": true,
+    "musicDoesNotAdvanceMassCard": true,
+    "antiphonReturnIsChoirObservedNotTimerDriven": true,
+    "neumeLevelHumanSignoff": false,
+    "releaseEligible": false
+  },
+  "accentReviewLink": {
+    "path": "data/research/processionale-palm-1961-accent-doxology-review-20261027.v1.json",
+    "printedSource": "Graduale Romanum 1961 pp143**-144**",
+    "distinctVersePatterns": 13,
+    "verseOccurrences": 14,
+    "doxologyToneInstances": 4,
+    "totalPendingToneApplications": 18,
+    "accentWitnessHumanVerified": false,
+    "allToneCadencesApproved": false,
+    "sourceTextCanonOwner": "#894",
+    "scholaMusicOwner": "#1749"
+  },
+  "firstVerseCadenceAnchorLink": {
+    "path": "data/research/processionale-palm-1961-cadence-motif-source-20261027.v1.json",
+    "psalm23": {
+      "sourceScoreId": 19315,
+      "printedPage": "143**",
+      "firstVerseOnly": true,
+      "flexExampleAvailable": true
+    },
+    "psalm46": {
+      "sourceScoreId": 19316,
+      "printedPage": "144**",
+      "rawTextQuarantined": true,
+      "provisionalOmnesPopuliUnderlayEditorCertified": false
+    },
+    "scope": "GABC byte-exact source fragments show first verse medial/final pitch groups only; never automatically transpose or expand onto 13 remaining patterns",
+    "firstVersePitchTemplateCertification": false,
+    "otherVerseToneApprovalCount": 0,
+    "releaseEligible": false
+  },
+  "currentCandidatePipeline": {
+    "firstMusicUnderlayCandidate": "PALM-R02-PS23-L02",
+    "candidateCreated": 1,
+    "distinctPatterns": 13,
+    "approved": 0,
+    "exsurgeCandidateRendered": 2,
+    "otherTwelvePatternsNoCandidateYet": true,
+    "doNotAdvanceReader": true,
+    "gabcVariantsPrepared": 2,
+    "editorApprovedVariants": 0,
+    "aBSourceBasedDecision": "A_HAS_PLAUSIBLE_SOURCE_TERM_2PREP__B_GF_COMPRESSION_UNSUPPORTED__NEITHER_APPROVED",
+    "cadenceRuleVerifiedForOtherTwelve": false,
+    "noAutomatedExpansionFromV2Hypotheses": true
+  },
+  "batch27ConsolidatedToneModel": {
+    "path": "data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json",
+    "sourceToneModels": 2,
+    "uniqueVersePatterns": 13,
+    "doxologyApplications": 4,
+    "distinctReviewCases": 17,
+    "classifiedPendingCases": 17,
+    "editoriallyAcceptedToneModels": 0,
+    "correctedEarlierCadenceReasoning": true,
+    "sourceAuthority": "#894",
+    "ScholaOwner": "#1749"
+  },
+  "batch28CadenceReviewQueue": {
+    "path": "data/research/processionale-palm-four-cadence-families-17-case-20261027.v1.json",
+    "seventeenReviewCases": 17,
+    "sourceAccentClassMatches": 4,
+    "otherAccentClassAdaptations": 10,
+    "specialCases": [
+      "PALM-R02-PS46-L09",
+      "PALM-R02-PS23-DOXO-L12",
+      "PALM-R02-PS46-DOXO-L12"
+    ],
+    "independentToneFamilies": 4,
+    "approvedToneFamilies": 0,
+    "pendingManualDecisions": [
+      "P23 two-syllable and three-syllable endings",
+      "P46 two-syllable and three-syllable endings",
+      "Psalm23 flexa on three liturgical occurrences",
+      "Psalm23/Psalm46 doxology final Amen and antiphon return",
+      "Psalm46 Abraham pronunciation and printed lexeme"
+    ],
+    "nextBulkOperation": "Generate all 17 source-owned GABCs in one pass only after validating four tone underlays and special-end rules. Maintain original source archive immutable.",
+    "releaseEligible": false
+  },
+  "batch29PartialCadenceHandoff": {
+    "path": "data/research/processionale-palm-attested-cadence-windows-20261027.v1.json",
+    "sourceFootprints": 2,
+    "endingGabcFragments": 15,
+    "musicalCaseOccurrencesRepresented": 16,
+    "AmenCasesWithheld": 2,
+    "crossPsalmCadencePitchSimilarityPrinted": true,
+    "musicianApprovalRequired": true,
+    "neverInstantiateReaderScore": true
+  },
+  "batch30MedialFlexHandoff": {
+    "path": "data/research/processionale-palm-medial-flex-bulk-hypotheses-20261027.v1.json",
+    "bulkMedialCases": 17,
+    "flexReviewPatterns": 2,
+    "printedFlexOccurrences": 3,
+    "includesDoxologyMedials": true,
+    "finalAmenSourceExceptionStillHeld": true,
+    "fullVerseScoresNewlyApproved": 0
+  },
+  "batch31MedialAccentFailClosed": {
+    "path": "data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json",
+    "all17MediantCaseAudited": true,
+    "clearConflictCount": 13,
+    "editorialAcceptanceCount": 0,
+    "autoPublicationForbidden": true,
+    "doxologyAmenRule": "Keep saeculorum Amen within source-specific differentia review; do not create a separate tune merely because the printed text has a full stop."
+  }
+}

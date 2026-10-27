@@ -1,0 +1,141 @@
+{
+  "schema": "ao-palm-1962-independent-printed-missal-images-v1",
+  "batch": 19,
+  "date": "2026-10-26",
+  "status": "BENZIGER_1962_APPROVED_IUXTA_TYPICAM_EDITION_IMPRINT_VERIFIED_AND_16_LINES_PRINTED_COLLATION_RESEARCH_ONLY",
+  "stage": "PALM-R02",
+  "source": {
+    "description": "Scanned colour pages of a physical Missale Romanum described by its archive host as a 1962 missal",
+    "imprintStatus": "BENZIGER_BROTHERS_1962_EDITIO_IUXTA_TYPICAM_PRINTED_IMPRINT_AUTHENTICATED",
+    "pages": [
+      {
+        "printedPage": 134,
+        "scanNo": 211,
+        "url": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0211.jpg",
+        "psalm23Lines": [
+          1,
+          2,
+          7,
+          8,
+          9,
+          10
+        ],
+        "psalm46Lines": [
+          1,
+          2
+        ]
+      },
+      {
+        "printedPage": 135,
+        "scanNo": 212,
+        "url": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0212.jpg",
+        "psalm46Lines": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "rubric": "Quae si non sufficiant, repetantur quousque distributio finiatur; si autem finiantur prius, claudatur cum Gloria Patri et repetitur antiphona."
+      }
+    ],
+    "repositoryPath": "research/processionale-solesmes-20261026",
+    "scanNotOCR": true,
+    "hostingDisclaimer": "Host's unrelated editorial and religious claims are not evidence for liturgical authority; use only direct photographic page images.",
+    "bibliography": {
+      "titlePage": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0012.jpg",
+      "printingPage": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0013.jpg",
+      "archdiocesanApprovalPage": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0014.jpg",
+      "title": "Missale Romanum",
+      "editionDesignation": "Editio iuxta typicam",
+      "publisher": "Benziger Brothers, Inc.",
+      "publishingPlace": "Novi Eboraci (New York)",
+      "printingLocation": "United States of America",
+      "printedApprovalDate": "1962-03-01",
+      "approvingOrdinary": "Franciscus Cardinalis Spellman, Archbishop of New York",
+      "authorityClaim": "Approves printing as an edition iuxta typicam; this is not the Vatican's own printed editio typica.",
+      "externalHostPolicy": "The hosting site's partisan theological claims are irrelevant and are not used as evidence of the book's edition, liturgical standing, or textual readings."
+    }
+  },
+  "sourceConclusions": [
+    {
+      "psalm": 23,
+      "liturgicalLines": [
+        7,
+        9
+      ],
+      "reading": "et attollite vos, fores antiquae",
+      "status": "DIRECT_PRINTED_1962_SCAN_SUPPORTS_FORES_NOT_PORTAE",
+      "otherIndependentPrint": "Graduale Romanum 1961 p143**",
+      "rejectedOCR": "et attollite vos, portae antique",
+      "disposition": "DIGITIZED_OCR_READING_UNSUPPORTED_BY_INSPECTED_PRINT_WITNESSES"
+    },
+    {
+      "psalm": 46,
+      "liturgicalLine": 3,
+      "reading": "Subjicit populos nobis",
+      "modernizedOrthography": "Subicit populos nobis",
+      "status": "BATCH16_WORD_ORDER_CORRECT_PRINT_CORROBORATED"
+    },
+    {
+      "psalm": 46,
+      "liturgicalLine": 4,
+      "reading": "Eligit nobis hereditatem nostram",
+      "status": "BATCH16_ELIGIT_CORRECT_PRINT_CORROBORATED"
+    }
+  ],
+  "coverage": {
+    "ps23WholeVersesVisible": [
+      1,
+      2,
+      7,
+      8,
+      9,
+      10
+    ],
+    "ps46WholeChantLinesVisible": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "ps46BiblicalVerses": 9,
+    "totalWholeVerseTextLinesVisuallyCompared": 16,
+    "musicalMediantStarsCompared": 16,
+    "ps23ExtraFlexDaggersInMissalScan": 0,
+    "ps23ExtraFlexDaggersIn1961Graduale": 3
+  },
+  "timing": {
+    "anthemRepeatsRequired": true,
+    "repeatUntilPhysicalDistributionEnds": true,
+    "whenVersesFinishEarlyConcludeWithGloriaAndAntiphon": true,
+    "noFixedDuration": true,
+    "printedPage": 135
+  },
+  "editionWarning": "Benziger Brothers 1962 Editio iuxta typicam is now identified from original photographic title, printer and imprimatur pages. It supplies strong independently approved Roman Missal print evidence for fores antiquae. It is a different imprint with Palm pp134-135, not the Vatican typical impression previously cited at pp131-132; never equate the pagination or automatically assert note-for-note parity.",
+  "owner": {
+    "canonicalRoman": "#894",
+    "schola": "#1749",
+    "research": "#1752"
+  },
+  "promotion": {
+    "printedTextCorroboratedAsSecondaryIndependent1962Scan": true,
+    "officialVaticanTypicaEditionIdentitySignedOff": false,
+    "canonicalLatinOwnerSignedOff": false,
+    "completeGregorianPointingSignedOff": false,
+    "individualNoteUnderlaySignedOff": false,
+    "approvedRuntimeScores": 0,
+    "publicationAllowed": false,
+    "nonVaticanAuthorizedEditionBibliographicallyIdentified": true
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "schema": "ao-palm-1962-incipit-crosswalk-20261026-v1",
+  "status": "COMPLETE_16_OPENING_LINES_COLLATION_SOURCE_OWNER_SIGNOFF_PENDING",
+  "date": "2026-10-26",
+  "scope": "Two Psalm incipit sequences used at Palm distribution; not full Latin psalm text and not melody QA.",
+  "romanPrintedPrimary": {
+    "pageImages": [
+      "https://gregobase.selapa.net/sources/42/213.png",
+      "https://gregobase.selapa.net/sources/42/214.png"
+    ],
+    "edition": "Missale Romanum 1962",
+    "verification": "SOURCE_ANCHOR_RECORDED_IN_EXISTING_PRIMARY_FACSIMILE_REGISTRY"
+  },
+  "independentTextWitnesses": [
+    {
+      "authority": "1962 Latin-Slovak Roman Missal Latin section",
+      "url": "https://misal.tradi.sk/omsovy-poriadok/menlive-casti/zaznam-zobrazenie/176",
+      "note": "Digital transcription has apparent wrong external Psalm 22 label and a stray semicolon in Psalm 46 line 7, both explicitly excluded"
+    },
+    {
+      "authority": "Independent Pius-XII Latin Bea Psalter text",
+      "url": "https://texts.livemass.net/cgi-bin/horas/Pofficium.pl?command=prayOmnes&date1=11-17-2025&lang2=Latin-Bea&version=Rubrics+1960+-+1960&votive=Hodie",
+      "note": "Use Latin-Bea column for nine scriptural verses; older Vulgate Latin column is not interchangeable"
+    }
+  ],
+  "psalms": [
+    {
+      "psalm": 23,
+      "readerStage": "PALM-R02",
+      "antiphon": "PUERI_HEBRAEORUM_PORTANTES",
+      "approvedMode": "TEXTUS_NOVUS",
+      "liturgicalLineNumbers": [
+        1,
+        2,
+        7,
+        8,
+        9,
+        10
+      ],
+      "biblicalVerseNumbers": [
+        1,
+        2,
+        7,
+        8,
+        9,
+        10
+      ],
+      "incipits": [
+        "Domini est terra et quae replent eam",
+        "Nam ipse super maria fundavit eum",
+        "Attollite portae capita vestra",
+        "Quis est iste rex gloriae",
+        "Attollite portae capita vestra",
+        "Quis est iste rex gloriae"
+      ],
+      "pairing": [
+        [
+          1,
+          2
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ]
+    },
+    {
+      "psalm": 46,
+      "readerStage": "PALM-R02",
+      "antiphon": "PUERI_HEBRAEORUM_VESTIMENTA",
+      "approvedMode": "TEXTUS_NOVUS",
+      "liturgicalLineNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "biblicalVerseNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        9
+      ],
+      "incipits": [
+        "Omnes populi plaudite manibus",
+        "Quoniam Dominus excelsus terribilis",
+        "Subicit populos nobis",
+        "Eligit nobis hereditatem nostram",
+        "Ascendit Deus cum exsultatione",
+        "Psallite Deo psallite",
+        "Quoniam rex omnis terrae est Deus",
+        "Deus regnat super nationes",
+        "Principes populorum congregati sunt",
+        "Nam Dei sunt proceres terrae"
+      ],
+      "pairing": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ]
+    }
+  ],
+  "corrections": {
+    "resolved": [
+      "Research source matrix previously misread Psalm 46 line 3 as Subicit nobis nationes; corrected to Subicit populos nobis",
+      "Outside secondary site's wrong Psalm 22 heading not imported as canonical identifier",
+      "Outside secondary site's superfluous Psalm 46 line-7 semicolon not imported"
+    ],
+    "mustNotInfer": [
+      "16 verified incipits do not supply complete Latin verse texts or pointed chant underlay",
+      "No automatic 1962 Schola score promotion",
+      "GregoBase 19316 remains quarantined even though its provisional correction renders"
+    ]
+  },
+  "completeness": {
+    "incipits": 16,
+    "completePsalmVersesCertified": 0,
+    "musicalMelodiesCertified": 0,
+    "approvedRuntimeAssignments": 0
+  }
+}

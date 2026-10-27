@@ -1,0 +1,153 @@
+{
+  "schema": "ao-1962-palm-chant-coverage-handoff-v1",
+  "date": "2026-10-26",
+  "scope": "RESEARCH_HANDOFF_ONLY_TO_EXISTING_1962_MISSAL_OWNER",
+  "sourceOwner": "Existing native PALM reader and Mass source-integrity programme (issue #894)",
+  "relatedHistoricalPR": "#1752",
+  "state": "SOURCE_SUPPORTS_ABSENCE_IN_NATIVE_READER_BUT_PRIMARY_FACSIMILE_AND_RUNTIME_OWNER_SIGNOFF_STILL_REQUIRED",
+  "goal": "Support complete source-owned schola chant sequence inside current Palm stages, without parallel processional app or new events.",
+  "primaryCrossReferences": [
+    {
+      "edition": "Liber Usualis 1961, Palm Sunday",
+      "pages": "580-591",
+      "sourceType": "NEAR_CONTEMPORARY_ROMAN_CHANT_BOOK",
+      "link": "https://dev-gregbooks.impetra.com/holy_week.html",
+      "status": "INDEXED_REFERENCE_NOT_FULL_FACSIMILE_COLLATED",
+      "note": "Clearly differentiates Roman OHS and monastic OHM chant witnesses."
+    },
+    {
+      "edition": "Ordo Hebdomadae Sanctae 1961 Roman",
+      "pages": "29-40",
+      "sourceType": "ROMAN_CHANT_BOOK",
+      "link": "https://dev-gregbooks.impetra.com/holy_week.html",
+      "status": "INDEX_REFERENCE_NOT_PRIMARY_PAGE_IMAGE_VERIFIED"
+    },
+    {
+      "edition": "Pueri Hebraeorum psalm tones and texts",
+      "pages": "PDF pp 1-8",
+      "sourceType": "NOTATED_SECONDARY_CHANT_HANDOUT",
+      "link": "https://archive.ccwatershed.org/pdfs/5206-pueri-hebraeorum-psalms-palm-sunday/download/",
+      "status": "VISUALLY_CHECKED_PDF_PAGES_1_2_5",
+      "note": "Psalms printed in Vulgate verses, with instructions for alternating antiphons; not authoritative for making rite timing decisions."
+    },
+    {
+      "edition": "Psallite Sapienter (2008)",
+      "pages": "Printed pp 35-36 / PDF pages 37-38 (zero-based 36-37)",
+      "sourceType": "RUBRICALLY_SCOPED_SECONDARY_1962_GUIDE",
+      "link": "https://media.churchmusicassociation.org/books/7848318-Psallite-Sapienter-A-Musicians-Guide-to-the-Extraordinary-Form.pdf",
+      "status": "FACSIMILE_VISUALLY_CHECKED",
+      "paragraphs": [
+        "104",
+        "105",
+        "106",
+        "107",
+        "108",
+        "109"
+      ]
+    }
+  ],
+  "mainlinePaths": [
+    "data/presentation/reader-palm.v1.json",
+    "src/mass/reader-palm.js",
+    "data/research/mass-special-rite-music-events-20261019.v1.json"
+  ],
+  "findings": [
+    {
+      "id": "PALM-1962-CHANT-01",
+      "stageId": "PALM-R02",
+      "sourceRecordIds": [
+        "PALM-DST-010",
+        "PALM-DST-030"
+      ],
+      "existingSourcePaths": [
+        "texts.puerI",
+        "texts.puerII"
+      ],
+      "evidence": "1962 Roman chant witness: two Pueri Hebraeorum antiphons are sung with Psalms 23 and 46; present native payload has only antiphons.",
+      "missing": [
+        "Ps 23:1-2 and 7-10",
+        "Ps 46 verses",
+        "Doxologies following Psalms",
+        "Antiphon repeat after every two verses",
+        "End-early handling: finish with Gloria Patri then antiphon",
+        "Repeat as needed while palms are distributed"
+      ],
+      "classification": "EXPLICIT_1962_SOURCE_TEXT_ABSENT",
+      "implementationOwner": "PALM_NATIVE_PAYLOAD",
+      "sequencePolicy": "Chant progression may repeat with indefinite distribution duration; do not create misleading fixed timer or automated movement.",
+      "status": "READY_FOR_PRIMARY_SOURCE_TEXT_CAPTURE_NOT_RUNTIME"
+    },
+    {
+      "id": "PALM-1962-CHANT-02",
+      "stageId": "PALM-R04",
+      "existingSourcePaths": [
+        "texts.procedamus",
+        "texts.processionResponse",
+        "texts.gloriaLaus"
+      ],
+      "evidence": "1961 LU 584-590 and Psallite Sapienter §§106-107 list a wider repertoire; optional antiphons depend on actual procession length.",
+      "missing": [
+        "Optional antiphons, e.g. Occurrunt turbae, Cum angelis et pueris, Turba multa, Coeperunt, Omnes collaudant, Fulgentibus palmis, Ave",
+        "Associated Psalm 147 for Omnes collaudant when selected",
+        "Gloria laus verse lines and refrain alternation"
+      ],
+      "classification": "CHANT_REPERTOIRE_INCOMPLETE_WITH_OPTIONALITY",
+      "implementationOwner": "PALM_NATIVE_PAYLOAD_AND_EXISTING_SCHOLA_EVENT",
+      "sequencePolicy": "Do not force every optional chant, invent timings, or flatten chant alternatives into a fixed Mass script. Keep Gloria laus as a distinct required hymn event.",
+      "status": "REQUIRES_SOURCE_OWNER_CHANT_SELECTION_DESIGN"
+    },
+    {
+      "id": "PALM-1962-CHANT-03",
+      "stageId": "PALM-R05",
+      "existingSourcePaths": [
+        "texts.ingrediente"
+      ],
+      "evidence": "Psallite Sapienter §108 and Liber Usualis p.590 identify Ingrediente response, verse Cumque audisset and repeated Cum ramis response.",
+      "missing": [
+        "Cumque audisset responsory verse",
+        "Return of final Cum ramis response"
+      ],
+      "classification": "RESPONSORY_PORTION_ABSENT",
+      "implementationOwner": "PALM_NATIVE_PAYLOAD_AND_EXISTING_SCHOLA_EVENT",
+      "status": "READY_FOR_PRIMARY_SOURCE_TEXT_CAPTURE_NOT_RUNTIME"
+    },
+    {
+      "id": "PALM-1962-CHANT-04",
+      "stageId": "PALM-R03",
+      "existingSourcePaths": [
+        "texts.gospel"
+      ],
+      "evidence": "Gospel follows palm distribution and precedes Procession in revised Roman Holy Week.",
+      "classification": "CORRECT_NO_CHANGE",
+      "status": "CLOSED"
+    },
+    {
+      "id": "PALM-1962-CHANT-05",
+      "stageId": "PALM-R07",
+      "existingSourcePaths": [],
+      "evidence": "After blessing and procession Mass begins at Introit, prayers at foot omitted, Last Gospel suppressed as owned by current plan.",
+      "classification": "EXISTING_HANDOFF_PRESERVE",
+      "status": "CLOSED"
+    }
+  ],
+  "prohibitions": [
+    "DO_NOT_REPLACE_1962_WITH_1888_OR_1893_MONASTIC_CHANTS",
+    "DO_NOT_TOUCH_RUNTIME_IN_THIS_RESEARCH_PR",
+    "DO_NOT_CREATE_PARALLEL_CHANT_EVENT_REGISTRY",
+    "DO_NOT_INFER_PALM_PROCESSION_FROM_FEAST_DATE_ALONE",
+    "DO_NOT_ASSUME_ALL_OPTIONAL_PROCESSION_ANTIPHONS_ARE_ALWAYS_SUNG",
+    "DO_NOT_ASSUME_PSALM_VERSES_ARE_FIXED_DURATION",
+    "DO_NOT_COPY_MODERN_SCORE_IMAGES_WITHOUT_RIGHTS_REVIEW",
+    "DO_NOT_PRESENT_FULL_TEXT_AS_CERTIFIED_BEFORE_ROMAN_FACSIMILE_QA"
+  ],
+  "acceptancePlan": [
+    "Source-owner review canonical 1961 LU and/or printed 1962 Roman books for exact Latin, chants and where obligatory/optional",
+    "Add missing Psalm 23/46 and refrain sequence to existing PALM-R02 without new canonical Mass card",
+    "Document canonical Psalm numbering (Vulgate Psalm 23/46) and EN/FR scripture alignments",
+    "Represent Palm-R04 optional chants as conditional Schola interludes under existing event authority",
+    "Finish Gloria laus refrain/verse presentation only if locally sung; do not invent chant progression",
+    "Add Cumque audisset response pair for PALM-R05 without changing existing return boundary",
+    "Browser test a short distribution, long repeated distribution, abbreviated procession, long procession, and no-procession branch",
+    "Confirm no changes to 1962 Candlemas Exsurge exclusion and Corpus trigger pending its independent source check"
+  ]
+}

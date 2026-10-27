@@ -1,0 +1,3456 @@
+{
+  "schema": "ao-palm-1961-two-source-tone-models-17-case-bulk-review-v1",
+  "batch": 27,
+  "date": "2026-10-27",
+  "stage": "PALM-R02",
+  "status": "TWO_PRINTED_SOURCE_MODELS_17_DISTINCT_EDITORIAL_CASES_CLASSIFIED_0_MUSICAL_SETTINGS_CERTIFIED",
+  "editorialPrinciple": "Classify all verses in bulk by source-owned melodic model and last-word cadential accent class; editorial verification of exact syllables and melodic formula precedes any generated score. Do not infer that an accent in the penultimate word must be the cadence's terminal melodic accent.",
+  "sourceHierarchy": [
+    {
+      "rank": 1,
+      "label": "Solesmes 1961 printed restored Palm Psalm23 and Psalm46",
+      "urls": [
+        "https://gregobase.selapa.net/sources/2/1179.png",
+        "https://gregobase.selapa.net/sources/2/1180.png"
+      ],
+      "pdf": "https://s9.imslp.org/files/imglnks/usimg/1/1a/IMSLP52097-PMLP108040-GR6_Proprium_et_Commune_pro_aliquibus_locis,_Psalmi.pdf",
+      "screenshotIndices": [
+        142,
+        143
+      ],
+      "governs": "Exact score families, pitch contours, source text, flex location"
+    },
+    {
+      "rank": 2,
+      "label": "1961 Liber Usualis Office psalm-tone grammar p113",
+      "url": "https://longbeachchant.com/wp-content/uploads/2019/11/liber-1961-eight-psalm-tones.pdf#page=2",
+      "governs": "Comparative grammar; no substitution of Office tune variant for Palm printed score"
+    },
+    {
+      "rank": 3,
+      "label": "Rules for Text Underlay of Psalm Text at Cadence Formulas",
+      "url": "https://npm.org/wp-content/uploads/2017/07/Rules-for-Text-Underlay-of-the-Psalm-Text-at-the-Psalm-Tone-Cadence.pdf#page=1",
+      "governs": "Accentual underlay and preparatory-syllable handling; secondary rules cannot override actual staff"
+    }
+  ],
+  "models": [
+    {
+      "modelId": "GR1961_PALM_NOVUS_PS23",
+      "psalm": 23,
+      "printedGradualePage": "143**",
+      "scoreSourceGregoBaseId": 19315,
+      "clef": "c4",
+      "openingIntonation": "DO(f)mi(gh)ni(h)",
+      "subsequentVerseOpening": "Nam(h) ip(h)se...(h)",
+      "subsequentVerseRecitation": "h",
+      "fullNotatedVerseScope": "FIRST_VERSE_ONLY",
+      "medialSourceExcerpt": "quæ(h) <b>re</b>(ixi hr)plent(h) <b>e</b>(g hr)ám :(h.)",
+      "terminalSourceExcerpt": "há(h)bi(h)<i>tant</i>(g) <i>in</i>(f) <b>e</b>(gh gr)o.(gf..)",
+      "sourceFlexExample": "rex(h) glo(h)ri(gr)æ?(g.) +(h)",
+      "identifiedTerminalGroups": {
+        "preparatory": [
+          "tant(g)",
+          "in(f)"
+        ],
+        "cadentialAccent": "e(gh gr)",
+        "postAccent": "o(gf..)"
+      },
+      "modelType": "FIRST_TONE_STYLE_STRUCTURE_FROM_PRINTED_ORIGINAL__EXACT_LOCAL_VARIANT_UNCERTIFIED",
+      "modeIdVerified": false,
+      "completeFormulaMusicianSignedOff": false
+    },
+    {
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "psalm": 46,
+      "printedGradualePage": "144**",
+      "scoreSourceGregoBaseId": 19316,
+      "clef": "c4",
+      "openingIntonation": "O(f)mnes(gh) pó(h)pu(h)li,(h)",
+      "subsequentVerseOpening": "Quó(h)ni(h)am...(h)",
+      "subsequentVerseRecitation": "h",
+      "fullNotatedVerseScope": "FIRST_VERSE_ONLY",
+      "medialSourceExcerpt": "<b>pláu</b>(ixi)di(hr)te(h) <b>má</b>(g)ni(hr)bus :(h.)",
+      "terminalSourceExcerpt": "vo(h)<i>ce</i>(g) <i>læ</i>(f)<b>ti</b>(gh)ti(gr)æ :(gf..)",
+      "sourceFlexExample": null,
+      "identifiedTerminalGroups": {
+        "preparatory": [
+          "ce(g)",
+          "læ(f)"
+        ],
+        "cadentialAccent": "ti(gh)",
+        "postAccent": [
+          "ti(gr)",
+          "æ(gf..)"
+        ]
+      },
+      "modelType": "FIRST_TONE_STYLE_STRUCTURE_FROM_PRINTED_ORIGINAL__EXACT_LOCAL_VARIANT_UNCERTIFIED",
+      "rawGregoBaseTextQuarantined": "Omnes gentes",
+      "correctedSourceLatin": "Omnes populi",
+      "modeIdVerified": false,
+      "completeFormulaMusicianSignedOff": false
+    }
+  ],
+  "cases": [
+    {
+      "id": "PALM-R02-PS23-L02",
+      "type": "VERSE",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-L02"
+      ],
+      "printedChantLines": [
+        2
+      ],
+      "printedPage": "143**",
+      "sourceSegments": {
+        "medial": "Nam ipse super mária fundávit eum",
+        "termination": "et super flúmina firmávit eum."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS23",
+      "terminalLexicalStressHypothesis": {
+        "word": "eum",
+        "syllables": [
+          "e",
+          "um"
+        ],
+        "accent": "e",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [
+        "PROVISIONAL_A",
+        "PROVISIONAL_B"
+      ],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS23-L07",
+      "type": "VERSE",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-L07",
+        "PALM-R02-PS23-L09"
+      ],
+      "printedChantLines": [
+        7,
+        9
+      ],
+      "printedPage": "143**",
+      "sourceSegments": {
+        "flex": "Attóllite, portae, cápita vestra,",
+        "medial": "et attóllite vos, fores antíquae,",
+        "termination": "ut ingrediátur rex glóriae!"
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS23",
+      "terminalLexicalStressHypothesis": {
+        "word": "glóriae",
+        "syllables": [
+          "gló",
+          "ri",
+          "ae"
+        ],
+        "accent": "gló",
+        "class": "three-syllable_proparoxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "OPEN_FLEX_SOURCE_PRINTED_MARKER",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS23-L08",
+      "type": "VERSE",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-L08"
+      ],
+      "printedChantLines": [
+        8
+      ],
+      "printedPage": "143**",
+      "sourceSegments": {
+        "flex": "Quis est iste rex glóriae?",
+        "medial": "Dóminus fortis et potens,",
+        "termination": "Dóminus potens in praélio."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS23",
+      "terminalLexicalStressHypothesis": {
+        "word": "praélio",
+        "syllables": [
+          "prae",
+          "li",
+          "o"
+        ],
+        "accent": "prae",
+        "class": "three-syllable_proparoxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "OPEN_FLEX_SOURCE_PRINTED_MARKER",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS23-L10",
+      "type": "VERSE",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-L10"
+      ],
+      "printedChantLines": [
+        10
+      ],
+      "printedPage": "143**",
+      "sourceSegments": {
+        "medial": "Quis est iste rex glóriae?",
+        "termination": "Dóminus exercítuum: ipse est rex glóriae."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS23",
+      "terminalLexicalStressHypothesis": {
+        "word": "glóriae",
+        "syllables": [
+          "gló",
+          "ri",
+          "ae"
+        ],
+        "accent": "gló",
+        "class": "three-syllable_proparoxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L02",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L02"
+      ],
+      "printedChantLines": [
+        2
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Quóniam Dóminus excélsus, terríbilis,",
+        "termination": "Rex magnus super omnem terram."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "terram",
+        "syllables": [
+          "ter",
+          "ram"
+        ],
+        "accent": "ter",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L03",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L03"
+      ],
+      "printedChantLines": [
+        3
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Súbjicit pópulos nóbis",
+        "termination": "et natiónes pédibus nostris."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "nostris",
+        "syllables": [
+          "nos",
+          "tris"
+        ],
+        "accent": "nos",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L04",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L04"
+      ],
+      "printedChantLines": [
+        4
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Eligit nobis hereditátem nostram",
+        "termination": "glóriam Jacob, quem díligit."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "díligit",
+        "syllables": [
+          "dí",
+          "li",
+          "git"
+        ],
+        "accent": "dí",
+        "class": "three-syllable_proparoxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L05",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L05"
+      ],
+      "printedChantLines": [
+        5
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Ascéndit Deus cum exsultatióne,",
+        "termination": "Dóminus cum voce tubae."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "tubae",
+        "syllables": [
+          "tu",
+          "bae"
+        ],
+        "accent": "tu",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L06",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L06"
+      ],
+      "printedChantLines": [
+        6
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Psállite Deo, psállite;",
+        "termination": "psállite Regi nostro, psállite."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "psállite",
+        "syllables": [
+          "psál",
+          "li",
+          "te"
+        ],
+        "accent": "psál",
+        "class": "three-syllable_proparoxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L07",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L07"
+      ],
+      "printedChantLines": [
+        7
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Quóniam Rex omnis terrae est Deus,",
+        "termination": "psállite hymnum."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "hymnum",
+        "syllables": [
+          "hym",
+          "num"
+        ],
+        "accent": "hym",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L08",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L08"
+      ],
+      "printedChantLines": [
+        8
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Deus regnat super natiónes,",
+        "termination": "Deus sedet super sólium sanctum suum."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "suum",
+        "syllables": [
+          "su",
+          "um"
+        ],
+        "accent": "su",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L09",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L09"
+      ],
+      "printedChantLines": [
+        9
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Príncipes populórum congregáti sunt",
+        "termination": "cum pópulo Dei Abraham."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "Abraham",
+        "syllables": null,
+        "accent": null,
+        "class": "FOREIGN_PROPER_NAME_ACCENT_NOT_ATTESTED_IN_PRINT"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-L10",
+      "type": "VERSE",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-L10"
+      ],
+      "printedChantLines": [
+        10
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Nam Dei sunt próceres terrae:",
+        "termination": "excelsus est valde."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "valde",
+        "syllables": [
+          "val",
+          "de"
+        ],
+        "accent": "val",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS23-DOXO-L11",
+      "type": "DOXOLOGY",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-DOXO-L11"
+      ],
+      "printedChantLines": [
+        11
+      ],
+      "printedPage": "143**",
+      "sourceSegments": {
+        "medial": "Glória Patri, et Fílio,",
+        "termination": "et Spirítui Sancto."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS23",
+      "terminalLexicalStressHypothesis": {
+        "word": "Sancto",
+        "syllables": [
+          "Sanc",
+          "to"
+        ],
+        "accent": "Sanc",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS23-DOXO-L12",
+      "type": "DOXOLOGY",
+      "psalm": 23,
+      "occurrenceIds": [
+        "PALM-R02-PS23-DOXO-L12"
+      ],
+      "printedChantLines": [
+        12
+      ],
+      "printedPage": "143**",
+      "sourceSegments": {
+        "medial": "Sicut erat in princípio, et nunc, et semper,",
+        "termination": "et in saécula saeculórum. Amen."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS23",
+      "terminalLexicalStressHypothesis": {
+        "word": "Amen",
+        "syllables": [
+          "A",
+          "men"
+        ],
+        "accent": "A",
+        "class": "two-syllable_paroxytonon_DOXOLOGY_EXCEPTION"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-DOXO-L11",
+      "type": "DOXOLOGY",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-DOXO-L11"
+      ],
+      "printedChantLines": [
+        11
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Glória Patri, et Fílio,",
+        "termination": "et Spirítui Sancto."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "Sancto",
+        "syllables": [
+          "Sanc",
+          "to"
+        ],
+        "accent": "Sanc",
+        "class": "two-syllable_paroxytonon"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    },
+    {
+      "id": "PALM-R02-PS46-DOXO-L12",
+      "type": "DOXOLOGY",
+      "psalm": 46,
+      "occurrenceIds": [
+        "PALM-R02-PS46-DOXO-L12"
+      ],
+      "printedChantLines": [
+        12
+      ],
+      "printedPage": "144**",
+      "sourceSegments": {
+        "medial": "Sicut erat in princípio, et nunc, et semper,",
+        "termination": "et in saécula saeculórum. Amen."
+      },
+      "modelId": "GR1961_PALM_NOVUS_PS46",
+      "terminalLexicalStressHypothesis": {
+        "word": "Amen",
+        "syllables": [
+          "A",
+          "men"
+        ],
+        "accent": "A",
+        "class": "two-syllable_paroxytonon_DOXOLOGY_EXCEPTION"
+      },
+      "cadentialRuleReference": "SAME_PRINTED_PSALM_TWO_PREPARATORY_PITCH_GROUPS__ONE_MAIN_CADENTIAL_ACCENT_MODEL_CHECK",
+      "mediantAccentReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "terminationMelodyReviewStatus": "OPEN_SOURCE_WORDS_ONLY",
+      "flexReviewStatus": "NO_FLEX",
+      "hasHumanVerifiedSyllableDivision": false,
+      "hasHumanApprovedMelody": false,
+      "completeGabcCandidate": [],
+      "readOnlyNoReaderIntegration": true
+    }
+  ],
+  "batch26Correction": {
+    "priorId": "batch26CadenceAudit",
+    "supersededAsMusicalReasoning": true,
+    "reason": "It wrongly counted post-accent syllables after hábitant/firmávit instead of identifying the terminal cadential accent at eo/eum. Two preparatory pitch groups g and f immediately precede the accented terminal cadence cell. Their word stresses are not independently the terminal melodic accent.",
+    "psalm23Verse2VariantA": "SOURCE_SHAPE_PLAUSIBLE_TWO_PREPARATORY_GROUPS_NOT_EDITOR_APPROVED",
+    "psalm23Verse2VariantB": "UNATTESTED_GF_COMPRESSION_HOLD",
+    "unreviewedOtherVersesMustNotInheritEither": true
+  },
+  "processingPlan": {
+    "step1": "Human review two printed source models; authenticate exact tone/termination variants and full formula",
+    "step2": "Verify Latin syllable/stress, especially Abraham and both doxology Amen special endings, in one 17-case pass",
+    "step3": "One bulk source-aware candidate generation pass after model approval; never generate a second independent score engine",
+    "step4": "Automatic GABC parsing/Exsurge 260/420/800 and source-identity fail-closed checks for every candidate",
+    "step5": "Human note-level facsimile and device acceptance, then existing Schola owner promotion only"
+  },
+  "counts": {
+    "originalPsalmTextLines": 16,
+    "sourceFirstVersesFullyNotated": 2,
+    "remainingVerseOccurrences": 14,
+    "distinctVersePatterns": 13,
+    "doxologyApplications": 4,
+    "distinctEditorialCases": 17,
+    "terminalWordsPreclassified": 17,
+    "terminalStressClassesWithUnresolvedLexicalAccent": 1,
+    "sourceToneModels": 2,
+    "sourceToneModelsMusicallyApproved": 0,
+    "actualAdditionalGabcVariantsDrafted": 2,
+    "additionalMusicallyApproved": 0,
+    "scoreAssignedToProduction": 0
+  },
+  "controls": {
+    "originalRawGabcUntouched": true,
+    "canonSourceOwner": "#894",
+    "existingScholaOwner": "PR #1749",
+    "researchOwner": "PR #1752",
+    "noCrossRiteToneAssumption": true,
+    "noInferenceFromLocalScholaPractice": true,
+    "noSecondEngine": true,
+    "noAutoTriggerByLiturgicalDate": true,
+    "noPricing": true,
+    "noRuntimeChange": true,
+    "publicationAllowed": false
+  },
+  "batch28CadenceFamilies": {
+    "evidencePath": "data/research/processionale-palm-four-cadence-families-17-case-20261027.v1.json",
+    "status": "SAME_SOURCE_FAMILY_4_OTHER_CLASS_ADAPTATION_10_SPECIAL_EXCEPTION_3",
+    "sameSourceAccentClassCases": 4,
+    "otherAccentClassAdaptationCases": 10,
+    "specialExceptions": 3,
+    "sourceOwnedFamilies": [
+      "PALM_PS23_PAROXYTONON_2",
+      "PALM_PS23_PROPAROXYTONON_3",
+      "PALM_PS46_PAROXYTONON_2",
+      "PALM_PS46_PROPAROXYTONON_3"
+    ],
+    "editorialMethod": "One approved first-verse identity per Psalm then authorize the correct 2/3-syllable accent-class cadence formula separately for each source tone. Doxology Amen and Abraham held separately.",
+    "modelApproval": false,
+    "fullGabcBulkGeneratorEligible": false,
+    "noProductionPromotion": true
+  },
+  "batch29BulkCadenceWindows": {
+    "register": "data/research/processionale-palm-attested-cadence-windows-20261027.v1.json",
+    "sourceSupportedCadenceClasses": 2,
+    "partialEndingGabcResearchFragments": 15,
+    "ordinary": 14,
+    "AbrahamConditional": 1,
+    "doxologyAmenUnresolved": 2,
+    "fullVerseApproved": 0
+  },
+  "batch30MedialFlexWorklist": {
+    "path": "data/research/processionale-palm-medial-flex-bulk-hypotheses-20261027.v1.json",
+    "medialCases": 17,
+    "flexDistinctCases": 2,
+    "flexOccurrences": 3,
+    "provisionalPartialGabcSnippets": 19,
+    "sourceApprovedScores": 0,
+    "wholeVerseMelodicApproved": false
+  },
+  "batch31MedialAccentFailClosed": {
+    "path": "data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json",
+    "obviousLexicalConflicts": 13,
+    "plausibleButMusicianUnapproved": 3,
+    "monosyllableAccentUnresolved": 1,
+    "doNotGenerateCompleteScores": true
+  },
+  "batch33RemainingEightReview": {
+    "date": "2026-10-27",
+    "source": "1961 Solesmes Graduale Romanum restored Holy Week Psalms printed pp143**–144**, visually checked",
+    "sourcePdf": "https://s9.imslp.org/files/imglnks/usimg/1/1a/IMSLP52097-PMLP108040-GR6_Proprium_et_Commune_pro_aliquibus_locis,_Psalmi.pdf",
+    "status": "SEVENTEEN_FULL_LATIN_TRANSCRIPTIONS_NINE_UNAPPROVED_FULL_GABC_EIGHT_EXPLICIT_SCORE_HOLDS",
+    "researchFullGabcNinePath": "data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json",
+    "wholeVerseResearchGabcPrepared": 9,
+    "remainingFullySyllabifiedNotMusicallySet": 8,
+    "medialHeldFour": 4,
+    "ps23FlexCasesTwo": 2,
+    "doxologyAmenEndingCasesTwo": 2,
+    "note": "The categories overlap: 2 flex cases also have mediant work; four nonflex difficult medials include Psalm23 L10 and Psalm46 L05/L08/L09. No arithmetic between category subtotals may imply extra cases.",
+    "rows": [
+      {
+        "id": "PALM-R02-PS23-L07",
+        "psalm": 23,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "flex",
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Attóllite, portae, cápita vestra,",
+          "et attóllite vos, fores antíquae,",
+          "ut ingrediátur rex glóriae!"
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "At-tól-li-te por-tae cá-pi-ta ves-tra,",
+          "et at-tól-li-te vos fo-res an-tí-quae,",
+          "ut in-gre-di-á-tur rex gló-ri-ae!"
+        ],
+        "syllableGroupsBySection": [
+          [
+            "At",
+            "tól",
+            "li",
+            "te",
+            "por",
+            "tae",
+            "cá",
+            "pi",
+            "ta",
+            "ves",
+            "tra,"
+          ],
+          [
+            "et",
+            "at",
+            "tól",
+            "li",
+            "te",
+            "vos",
+            "fo",
+            "res",
+            "an",
+            "tí",
+            "quae,"
+          ],
+          [
+            "ut",
+            "in",
+            "gre",
+            "di",
+            "á",
+            "tur",
+            "rex",
+            "gló",
+            "ri",
+            "ae!"
+          ]
+        ],
+        "syllableCountBySection": [
+          11,
+          11,
+          10
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS23-L07",
+          "PALM-R02-PS23-L09"
+        ],
+        "difficulty": "FLEX_MEDIANT_DOUBLE_ACCENT_AND_THREE_SYLLABLE_FINAL_HOLD",
+        "sourceAndIssue": "Psalm 23 printed flex rex gloriae sample, verse 7/9 repeated; repaired medial accent model research-only.",
+        "printedSourcePage": "143**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": true,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS23",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      },
+      {
+        "id": "PALM-R02-PS23-L08",
+        "psalm": 23,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "flex",
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Quis est iste rex glóriae?",
+          "Dóminus fortis et potens,",
+          "Dóminus potens in praélio."
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "Quis est is-te rex gló-ri-ae?",
+          "Dó-mi-nus for-tis et po-tens,",
+          "Dó-mi-nus po-tens in prae-li-o."
+        ],
+        "syllableGroupsBySection": [
+          [
+            "Quis",
+            "est",
+            "is",
+            "te",
+            "rex",
+            "gló",
+            "ri",
+            "ae?"
+          ],
+          [
+            "Dó",
+            "mi",
+            "nus",
+            "for",
+            "tis",
+            "et",
+            "po",
+            "tens,"
+          ],
+          [
+            "Dó",
+            "mi",
+            "nus",
+            "po",
+            "tens",
+            "in",
+            "prae",
+            "li",
+            "o."
+          ]
+        ],
+        "syllableCountBySection": [
+          8,
+          8,
+          9
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS23-L08"
+        ],
+        "difficulty": "FLEX_MEDIANT_AND_ORTHOGRAPHY_HOLD",
+        "sourceAndIssue": "Printed flex rex gloriae text motif matches last four syllables; printed 1961 praélio spelling differs from canonical 1962 proelio inquiry.",
+        "printedSourcePage": "143**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": true,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS23",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      },
+      {
+        "id": "PALM-R02-PS23-L10",
+        "psalm": 23,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Quis est iste rex glóriae?",
+          "Dóminus exercítuum: ipse est rex glóriae."
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "Quis est is-te rex gló-ri-ae?",
+          "Dó-mi-nus ex-er-cí-tu-um: ip-se est rex gló-ri-ae."
+        ],
+        "syllableGroupsBySection": [
+          [
+            "Quis",
+            "est",
+            "is",
+            "te",
+            "rex",
+            "gló",
+            "ri",
+            "ae?"
+          ],
+          [
+            "Dó",
+            "mi",
+            "nus",
+            "ex",
+            "er",
+            "cí",
+            "tu",
+            "um:",
+            "ip",
+            "se",
+            "est",
+            "rex",
+            "gló",
+            "ri",
+            "ae."
+          ]
+        ],
+        "syllableCountBySection": [
+          8,
+          15
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS23-L10"
+        ],
+        "difficulty": "MONOSYLLABIC_REX_AND_GLORIAE_MEDIANT_ACCENT_HOLD",
+        "sourceAndIssue": "The two-accent mediant cannot be obtained from printed source by naive suffix copy; local special adjustment needed.",
+        "printedSourcePage": "143**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": false,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS23",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      },
+      {
+        "id": "PALM-R02-PS46-L05",
+        "psalm": 46,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Ascéndit Deus cum exsultatióne,",
+          "Dóminus cum voce tubae."
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "As-cén-dit De-us cum ex-sul-ta-ti-ó-ne,",
+          "Dó-mi-nus cum vo-ce tu-bae."
+        ],
+        "syllableGroupsBySection": [
+          [
+            "As",
+            "cén",
+            "dit",
+            "De",
+            "us",
+            "cum",
+            "ex",
+            "sul",
+            "ta",
+            "ti",
+            "ó",
+            "ne,"
+          ],
+          [
+            "Dó",
+            "mi",
+            "nus",
+            "cum",
+            "vo",
+            "ce",
+            "tu",
+            "bae."
+          ]
+        ],
+        "syllableCountBySection": [
+          12,
+          8
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS46-L05"
+        ],
+        "difficulty": "ARTIFICIAL_MEDIANT_SECONDARY_ACCENT_HOLD",
+        "sourceAndIssue": "Long accented exsultatione ending; source tone underlay requires editorial artificial secondary accent or documented alternative.",
+        "printedSourcePage": "144**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": false,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS46",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      },
+      {
+        "id": "PALM-R02-PS46-L08",
+        "psalm": 46,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Deus regnat super natiónes,",
+          "Deus sedet super sólium sanctum suum."
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "De-us reg-nat su-per na-ti-ó-nes,",
+          "De-us se-det su-per só-li-um sanc-tum su-um."
+        ],
+        "syllableGroupsBySection": [
+          [
+            "De",
+            "us",
+            "reg",
+            "nat",
+            "su",
+            "per",
+            "na",
+            "ti",
+            "ó",
+            "nes,"
+          ],
+          [
+            "De",
+            "us",
+            "se",
+            "det",
+            "su",
+            "per",
+            "só",
+            "li",
+            "um",
+            "sanc",
+            "tum",
+            "su",
+            "um."
+          ]
+        ],
+        "syllableCountBySection": [
+          10,
+          13
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS46-L08"
+        ],
+        "difficulty": "MEDIANT_TWO_ACCENTS_POSITION_HOLD",
+        "sourceAndIssue": "The text stresses near regnat / nationes and the exact two-melodic-accent distribution is not established by a source-notated verse.",
+        "printedSourcePage": "144**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": false,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS46",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      },
+      {
+        "id": "PALM-R02-PS46-L09",
+        "psalm": 46,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Príncipes populórum congregáti sunt",
+          "cum pópulo Dei Abraham."
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "Prín-ci-pes po-pu-ló-rum con-gre-gá-ti sunt",
+          "cum pó-pu-lo De-i A-bra-ham."
+        ],
+        "syllableGroupsBySection": [
+          [
+            "Prín",
+            "ci",
+            "pes",
+            "po",
+            "pu",
+            "ló",
+            "rum",
+            "con",
+            "gre",
+            "gá",
+            "ti",
+            "sunt"
+          ],
+          [
+            "cum",
+            "pó",
+            "pu",
+            "lo",
+            "De",
+            "i",
+            "A",
+            "bra",
+            "ham."
+          ]
+        ],
+        "syllableCountBySection": [
+          12,
+          9
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS46-L09"
+        ],
+        "difficulty": "MEDIANT_SECONDARY_ACCENT_AND_ABRAHAM_HOLD",
+        "sourceAndIssue": "Gregorio Latin proper name stress model suggests Ábraham, printed 1961 does not accent Abraham; medial congregati sunt poses a monosyllabic-cadence problem.",
+        "printedSourcePage": "144**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": false,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS46",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      },
+      {
+        "id": "PALM-R02-PS23-DOXO-L12",
+        "psalm": 23,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Sicut erat in princípio, et nunc, et semper,",
+          "et in saécula saeculórum. Amen."
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "Si-cut e-rat in prin-cí-pi-o, et nunc, et sem-per,",
+          "et in saé-cu-la sae-cu-ló-rum. A-men."
+        ],
+        "syllableGroupsBySection": [
+          [
+            "Si",
+            "cut",
+            "e",
+            "rat",
+            "in",
+            "prin",
+            "cí",
+            "pi",
+            "o,",
+            "et",
+            "nunc,",
+            "et",
+            "sem",
+            "per,"
+          ],
+          [
+            "et",
+            "in",
+            "saé",
+            "cu",
+            "la",
+            "sae",
+            "cu",
+            "ló",
+            "rum.",
+            "A",
+            "men."
+          ]
+        ],
+        "syllableCountBySection": [
+          14,
+          11
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS23-DOXO-L12"
+        ],
+        "difficulty": "PS23_DOXOLOGY_SECOND_LINE_AMEN_DIFFERENTIA_HOLD",
+        "sourceAndIssue": "Printed full Latin but not complete melody, EUOUAE forms require source-specific tone/antiphon return evidence.",
+        "printedSourcePage": "143**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": false,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS23",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      },
+      {
+        "id": "PALM-R02-PS46-DOXO-L12",
+        "psalm": 46,
+        "stage": "SOURCE_TEXT_COMPLETE_MELODY_UNDERLAY_HELD",
+        "sourceSectionOrder": [
+          "medial",
+          "termination"
+        ],
+        "sourceLatinSegments": [
+          "Sicut erat in princípio, et nunc, et semper,",
+          "et in saécula saeculórum. Amen."
+        ],
+        "fullPrintedSyllabifiedSections": [
+          "Si-cut e-rat in prin-cí-pi-o, et nunc, et sem-per,",
+          "et in saé-cu-la sae-cu-ló-rum. A-men."
+        ],
+        "syllableGroupsBySection": [
+          [
+            "Si",
+            "cut",
+            "e",
+            "rat",
+            "in",
+            "prin",
+            "cí",
+            "pi",
+            "o,",
+            "et",
+            "nunc,",
+            "et",
+            "sem",
+            "per,"
+          ],
+          [
+            "et",
+            "in",
+            "saé",
+            "cu",
+            "la",
+            "sae",
+            "cu",
+            "ló",
+            "rum.",
+            "A",
+            "men."
+          ]
+        ],
+        "syllableCountBySection": [
+          14,
+          11
+        ],
+        "physicalOccurrences": [
+          "PALM-R02-PS46-DOXO-L12"
+        ],
+        "difficulty": "PS46_DOXOLOGY_SECOND_LINE_AMEN_DIFFERENTIA_HOLD",
+        "sourceAndIssue": "Same Latin text, separate Psalm46 melody and antiphon/differentia lineage. No same-tune presumption.",
+        "printedSourcePage": "144**",
+        "canonicalLatinMatchedAfterDiacriticNormalization": true,
+        "specialFlexRequired": false,
+        "usePsalmSpecific1961Tone": "GR1961_PALM_NOVUS_PS46",
+        "scoreRenderingAllowed": false,
+        "musicPitchesAssigned": false,
+        "editorScoreApproved": false,
+        "noFullGabcScoreUntilMusicianCorrectsUnderlay": true,
+        "productionEligible": false
+      }
+    ],
+    "fullLatinTextCoverageUniqueCases": 17,
+    "actualAdditionalScoreApprovedCount": 0,
+    "productionScoreAssignmentCount": 0,
+    "approvalRule": "Only Schola PR #1749 can source-review and accept exact melodic underlay. 1962 source owner issue #894 accepts the Latin. This file is not a second score registry.",
+    "publishAllowed": false,
+    "officeDifferentiaScopeWarning": {
+      "primaryType": "Palm processional psalms, Graduale Romanum 1961 restored Holy Week appendices",
+      "officeEuouaeReference": "The Office differentia concept is a useful analogy but does not alone license an Office doxology cadence or an antiphon return in these Palm processional psalms.",
+      "visualFacsimileFinding": "Primary Palm Psalm23/46 pages print full Gloria Patri and Sicut erat text but do not provide fully notated music on those subsequent doxology lines, nor a separately notated Amen formula.",
+      "sourcePriority": "1961 printed Palm processional Psalm score and actual local rite/chant sequence, then general Liber Usualis rules only as secondary grammar.",
+      "explicitHoldBothAmen": true,
+      "mustCheckWhetherFinalAntiphonReturnsByActualPalmRite": true,
+      "note": "The return-to-antiphon decision belongs to the Palm procession source-specific event master, not generic Office psalmody."
+    },
+    "twoPsalm23FlexGabcCandidates": {
+      "status": "TWO_COMPLETE_GABC_HYPOTHESES_REUSE_FOR_L07_L09_AND_L08_MUSICALLY_UNAPPROVED",
+      "countDistinct": 2,
+      "coveredPhysicalVerseOccurrences": 3,
+      "candidates": [
+        {
+          "id": "PALM-R02-PS23-L07",
+          "physicalOccurrences": [
+            "PALM-R02-PS23-L07",
+            "PALM-R02-PS23-L09"
+          ],
+          "printedLatinSections": [
+            "Attóllite, portae, cápita vestra,",
+            "et attóllite vos, fores antíquae,",
+            "ut ingrediátur rex glóriae!"
+          ],
+          "syllabifiedSections": [
+            "At-tól-li-te por-tae cá-pi-ta ves-tra,",
+            "et at-tól-li-te vos fo-res an-tí-quae,",
+            "ut in-gre-di-á-tur rex gló-ri-ae!"
+          ],
+          "notesBySection": [
+            [
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "gr",
+              "g."
+            ],
+            [
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "ixi",
+              "hr",
+              "h",
+              "g hr",
+              "h."
+            ],
+            [
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "g",
+              "f",
+              "gh",
+              "gr",
+              "gf.."
+            ]
+          ],
+          "flexSourceAnchor": "rex(h) glo(h)ri(gr)æ?(g.) +(h)",
+          "flexPrintNotSameWholeVerse": true,
+          "noSpecialMusicForRepeatedL09": true,
+          "gabcResearchOnly": "name:PALM-R02-PS23-L07 Palm 1961 flexed full chant research hypothesis NOT APPROVED;\noffice-part:Psalmus;\ncommentary: A research hypothesis using one source-notated Psalm23 flex motif, source-modeled two-accent mediant, and paired terminal cadence; this full verse is not printed with notes. Musical/editorial approval required;\n%%\n(c4) At(h)tól(h)li(h)te(h) por(h)tae(h) cá(h)pi(h)ta(h) ves(gr)tra,(g.) +(h) et(h) at(h)tól(h)li(h)te(h) vos(h) fo(ixi)res(hr) an(h)tí(g hr)quae,(h.) *(:) ut(h) in(h)gre(h)di(h)á(h)tur(g) rex(f) gló(gh)ri(gr)ae!(gf..) (::)\n",
+          "flexSymbolRepresentsSourceReferenceNotApproval": true,
+          "fullLatinWordBoundariesPreserved": true,
+          "actualSourcePrintedFullVerseWithPitches": false,
+          "editorialAccentCertified": false,
+          "noteGroupsHumanReviewed": false,
+          "parseAndRenderSuccessful": true,
+          "productionScoreApproved": false,
+          "nativeExsurgeProof": {
+            "mappingCount": 17,
+            "views": [
+              {
+                "width": 260,
+                "systems": 3,
+                "svgChildren": 1
+              },
+              {
+                "width": 420,
+                "systems": 2,
+                "svgChildren": 1
+              },
+              {
+                "width": 800,
+                "systems": 1,
+                "svgChildren": 1
+              }
+            ],
+            "jobId": 122232484479,
+            "runId": 40516761771,
+            "result": "PINNED_EXSURGE_JOB_SUCCEEDED_SOURCE_ONLY",
+            "scoreMusicEditoriallyAccepted": false,
+            "manualDevicePixelVisualApproved": false
+          }
+        },
+        {
+          "id": "PALM-R02-PS23-L08",
+          "physicalOccurrences": [
+            "PALM-R02-PS23-L08"
+          ],
+          "printedLatinSections": [
+            "Quis est iste rex glóriae?",
+            "Dóminus fortis et potens,",
+            "Dóminus potens in praélio."
+          ],
+          "syllabifiedSections": [
+            "Quis est is-te rex gló-ri-ae?",
+            "Dó-mi-nus for-tis et po-tens,",
+            "Dó-mi-nus po-tens in prae-li-o."
+          ],
+          "notesBySection": [
+            [
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "h",
+              "gr",
+              "g."
+            ],
+            [
+              "h",
+              "h",
+              "h",
+              "ixi",
+              "hr",
+              "h",
+              "g hr",
+              "h."
+            ],
+            [
+              "h",
+              "h",
+              "h",
+              "h",
+              "g",
+              "f",
+              "gh",
+              "gr",
+              "gf.."
+            ]
+          ],
+          "flexSourceAnchor": "rex(h) glo(h)ri(gr)æ?(g.) +(h)",
+          "flexPrintNotSameWholeVerse": false,
+          "noSpecialMusicForRepeatedL09": false,
+          "gabcResearchOnly": "name:PALM-R02-PS23-L08 Palm 1961 flexed full chant research hypothesis NOT APPROVED;\noffice-part:Psalmus;\ncommentary: A research hypothesis using one source-notated Psalm23 flex motif, source-modeled two-accent mediant, and paired terminal cadence; this full verse is not printed with notes. Musical/editorial approval required;\n%%\n(c4) Quis(h) est(h) is(h)te(h) rex(h) gló(h)ri(gr)ae?(g.) +(h) Dó(h)mi(h)nus(h) for(ixi)tis(hr) et(h) po(g hr)tens,(h.) *(:) Dó(h)mi(h)nus(h) po(h)tens(g) in(f) prae(gh)li(gr)o.(gf..) (::)\n",
+          "flexSymbolRepresentsSourceReferenceNotApproval": true,
+          "fullLatinWordBoundariesPreserved": true,
+          "actualSourcePrintedFullVerseWithPitches": false,
+          "editorialAccentCertified": false,
+          "noteGroupsHumanReviewed": false,
+          "parseAndRenderSuccessful": true,
+          "productionScoreApproved": false,
+          "nativeExsurgeProof": {
+            "mappingCount": 17,
+            "views": [
+              {
+                "width": 260,
+                "systems": 2,
+                "svgChildren": 1
+              },
+              {
+                "width": 420,
+                "systems": 2,
+                "svgChildren": 1
+              },
+              {
+                "width": 800,
+                "systems": 1,
+                "svgChildren": 1
+              }
+            ],
+            "jobId": 122232484479,
+            "runId": 40516761771,
+            "result": "PINNED_EXSURGE_JOB_SUCCEEDED_SOURCE_ONLY",
+            "scoreMusicEditoriallyAccepted": false,
+            "manualDevicePixelVisualApproved": false
+          }
+        }
+      ],
+      "reviewerInstruction": "Do not treat borrowed flex and medians as full original 1961 scores; inspect printed flex + cadence and pronunciation/Latin ortho, then correct notes manually.",
+      "publisherAllowed": false
+    },
+    "scoreCoverageAfterTwoFlexDrafts": {
+      "completeExperimentalGabcCases": 11,
+      "unscoredCases": 6,
+      "completelyApprovedCases": 0,
+      "unscoredIds": [
+        "PALM-R02-PS23-L10",
+        "PALM-R02-PS46-L05",
+        "PALM-R02-PS46-L08",
+        "PALM-R02-PS46-L09",
+        "PALM-R02-PS23-DOXO-L12",
+        "PALM-R02-PS46-DOXO-L12"
+      ],
+      "completeExperimentalGabcRendered": 11,
+      "allExistingResearchViewports": 168,
+      "renderJobId": 122232484479,
+      "musicEditorCertified": 0
+    }
+  },
+  "batch34CompletionResearch": {
+    "source": "data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json",
+    "status": "FIFTEEN_COMPLETE_GABC_RESEARCH_ONLY_CANDIDATES_TWO_AMEN_HELD",
+    "initialCompleteGabc": 9,
+    "psalm23FlexedFullGabc": 2,
+    "highRiskUnapprovedGabc": 4,
+    "totalCompleteResearchGabc": 15,
+    "remainingNoGabcIds": [
+      "PALM-R02-PS23-DOXO-L12",
+      "PALM-R02-PS46-DOXO-L12"
+    ],
+    "physicalChantOccurrencesRepresented": 16,
+    "specialExtraTextOnlyNoMelody": 2,
+    "explicitFourNewWarnings": [
+      "Psalm23 L10 adjacent rex/glóriae accented syllable needs specialist chant pointing",
+      "Psalm46 L05 artificial accent on the unstressed exsultatióne syllable -ta- conjectural",
+      "Psalm46 L08 extended tenor between regnat and natiónes conjectural",
+      "Psalm46 L09 extended medial tenor and externally hypothesized Hebrew proper name stress Abraham"
+    ],
+    "technicalExsurgeNewHeadPending": true,
+    "humanApprovedCount": 0,
+    "productionAssignedCount": 0,
+    "publicationAllowed": false
+  },
+  "batch35ComparativeDoxology": {
+    "path": "data/research/processionale-palm-amen-two-full-gabc-comparative-20261027.v1.json",
+    "status": "SEVENTEEN_OUT_OF_SEVENTEEN_WHOLE_GABC_RESEARCH_CANDIDATES_WITH_TWO_AMEN_MUSICAL_SOURCE_CONFLICTS",
+    "sources": "1961 Palm Graduale pp143**–144** versus fully notated 1974 Roman Gradual Tone I Gloria Patri p822 (Introit/Communion), not asserted equivalent",
+    "researchCandidates": {
+      "nineNonFlexPreviouslyRendered": 9,
+      "twoPsalm23FlexedPreviouslyRendered": 2,
+      "fourHighRiskPreviouslyRendered": 4,
+      "distinctTotal": 17,
+      "twoSpecialDoxologyHypothesesRendered": 2
+    },
+    "originalPrinted1961DoxologySettingsFullyNotated": 0,
+    "sourceSpecificDoxologyAmenMusicalRulesConfirmed": false,
+    "noCrossEditionScorePublication": true,
+    "stillSourceContested": [
+      "Psalm23 DOXO L12: guessed first-tone Amen note-group transfer differs from published 1974 source, not marked authentic",
+      "Psalm46 DOXO L12: same text and pitch hypothesis based on Psalm23 model because both nominally 1f; edition-specific proof is missing",
+      "Whether the Pueri Hebraeorum antiphon is repeated after the doxology should follow Palm rubric, not Office psalmody differentia"
+    ],
+    "musicalApprovals": 0,
+    "productionScoreAssignments": 0,
+    "releaseEligible": false,
+    "all17ProvisionalScoreGabcRendered": true,
+    "renderingEvidence": {
+      "runId": 40523935267,
+      "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40523935267",
+      "totalViewportChecks": 186,
+      "fullCandidateCount": 17,
+      "mediaWidths": [
+        260,
+        420,
+        800
+      ]
+    }
+  },
+  "batch35MusicalEditorialAcceptance": {
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "ALL_SEVENTEEN_GABC_RESEARCH_CANDIDATES_RENDERED_ZERO_MUSIC_EDITOR_RELEASE_ACCEPTANCES",
+    "sourceHierarchy": [
+      "1961 Palm printed Graduale Psalm23 p143** and Psalm46 p144**: primary first-verse melody and subsequent Latin text",
+      "1974 Graduale first-tone doxology: comparison only, not an automatically equivalent Palm cadence",
+      "General Solesmes Office-tone accent and flex rules: grammar only, not independent Palm source score"
+    ],
+    "scoreCaseCount": 17,
+    "physicalApplications": 18,
+    "categoryCounts": {
+      "latinAlignedProvisional": 9,
+      "flexedProvisional": 2,
+      "specialMedialProvisional": 4,
+      "sourceConflictAmenProvisional": 2
+    },
+    "statusPerCase": [
+      {
+        "id": "PALM-R02-PS23-L02",
+        "psalm": 23,
+        "physicalOccurrences": [
+          "PALM-R02-PS23-L02"
+        ],
+        "pointer": "data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json",
+        "scoreField": "scoreCases",
+        "scoreNature": "LATIN_ALIGNED_PROVISIONAL",
+        "editorialRisk": "UNATTESTED_FULL_VERSE_NOTATION",
+        "nextMusicalDecision": "Validate verse-specific two-accent mediant and terminal word accent against printed Solesmes score.",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p143**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "dá",
+          "e"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 1,
+        "batch37SourceRuleFlags": [],
+        "batch37RequiresMusicalRewriteBeforePromotion": false
+      },
+      {
+        "id": "PALM-R02-PS23-L07",
+        "psalm": 23,
+        "physicalOccurrences": [
+          "PALM-R02-PS23-L07",
+          "PALM-R02-PS23-L09"
+        ],
+        "pointer": "data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json",
+        "scoreField": "batch33RemainingEightReview.twoPsalm23FlexGabcCandidates.candidates",
+        "scoreNature": "PS23_FLEXED_PROVISIONAL",
+        "editorialRisk": "BLOCKING_FLEX_AND_MEDIANT",
+        "nextMusicalDecision": "Validate printed rex gloriae flex motif transfer, musical pause and two-accent mediant.",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p143**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "fo",
+          "tí"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 2,
+        "batch37SourceRuleFlags": [
+          "PSALM23_FLEX_NOTED_PATTERN_TRANSFER_UNAPPROVED"
+        ],
+        "batch37RequiresMusicalRewriteBeforePromotion": false
+      },
+      {
+        "id": "PALM-R02-PS23-L08",
+        "psalm": 23,
+        "physicalOccurrences": [
+          "PALM-R02-PS23-L08"
+        ],
+        "pointer": "data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json",
+        "scoreField": "batch33RemainingEightReview.twoPsalm23FlexGabcCandidates.candidates",
+        "scoreNature": "PS23_FLEXED_PROVISIONAL",
+        "editorialRisk": "BLOCKING_FLEX_AND_MEDIANT",
+        "nextMusicalDecision": "Validate printed rex gloriae flex motif transfer, musical pause and two-accent mediant.",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p143**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "for",
+          "po"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 2,
+        "batch37SourceRuleFlags": [
+          "PSALM23_FLEX_NOTED_PATTERN_TRANSFER_UNAPPROVED"
+        ],
+        "batch37RequiresMusicalRewriteBeforePromotion": false
+      },
+      {
+        "id": "PALM-R02-PS23-L10",
+        "psalm": 23,
+        "physicalOccurrences": [
+          "PALM-R02-PS23-L10"
+        ],
+        "pointer": "data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json",
+        "scoreField": "cases",
+        "scoreNature": "SPECIAL_MEDIANT_PROVISIONAL",
+        "editorialRisk": "BLOCKING_PITCH_HYPOTHESIS",
+        "nextMusicalDecision": "Two adjacent lexical accents rex glóriae are not source-notated as a later-verse mediant; combining the first-verse 23 tonic cell with the dactylic expansion seen in Psalm46 is hypothetical",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p143**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "rex",
+          "gló"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 0,
+        "batch37SourceRuleFlags": [
+          "TWO_ADJACENT_ACCENTS_AND_MONOSYLLABIC_REX_REQUIRE_RULE_CHOICE"
+        ],
+        "batch37RequiresMusicalRewriteBeforePromotion": false
+      },
+      {
+        "id": "PALM-R02-PS46-L02",
+        "psalm": 46,
+        "physicalOccurrences": [
+          "PALM-R02-PS46-L02"
+        ],
+        "pointer": "data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json",
+        "scoreField": "scoreCases",
+        "scoreNature": "LATIN_ALIGNED_PROVISIONAL",
+        "editorialRisk": "UNATTESTED_FULL_VERSE_NOTATION",
+        "nextMusicalDecision": "Validate verse-specific two-accent mediant and terminal word accent against printed Solesmes score.",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p144**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "cél",
+          "rí"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 2,
+        "batch37SourceRuleFlags": [],
+        "batch37RequiresMusicalRewriteBeforePromotion": false
+      },
+      {
+        "id": "PALM-R02-PS46-L03",
+        "psalm": 46,
+        "physicalOccurrences": [
+          "PALM-R02-PS46-L03"
+        ],
+        "pointer": "data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json",
+        "scoreField": "scoreCases",
+        "scoreNature": "LATIN_ALIGNED_PROVISIONAL",
+        "editorialRisk": "UNATTESTED_FULL_VERSE_NOTATION",
+        "nextMusicalDecision": "Validate verse-specific two-accent mediant and terminal word accent against printed Solesmes score.",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p144**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "pó",
+          "nó"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 2,
+        "batch37SourceRuleFlags": [],
+        "batch37RequiresMusicalRewriteBeforePromotion": false
+      },
+      {
+        "id": "PALM-R02-PS46-L04",
+        "psalm": 46,
+        "physicalOccurrences": [
+          "PALM-R02-PS46-L04"
+        ],
+        "pointer": "data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json",
+        "scoreField": "scoreCases",
+        "scoreNature": "LATIN_ALIGNED_PROVISIONAL",
+        "editorialRisk": "UNATTESTED_FULL_VERSE_NOTATION",
+        "nextMusicalDecision": "Validate verse-specific two-accent mediant and terminal word accent against printed Solesmes score.",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p144**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "tá",
+          "nos"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 1,
+        "batch37SourceRuleFlags": [],
+        "batch37RequiresMusicalRewriteBeforePromotion": false
+      },
+      {
+        "id": "PALM-R02-PS46-L05",
+        "psalm": 46,
+        "physicalOccurrences": [
+          "PALM-R02-PS46-L05"
+        ],
+        "pointer": "data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json",
+        "scoreField": "cases",
+        "scoreNature": "SPECIAL_MEDIANT_PROVISIONAL",
+        "editorialRisk": "BLOCKING_PITCH_HYPOTHESIS",
+        "nextMusicalDecision": "Artificial secondary accent on unstressed -ta- of exsultatióne is NOT attested for this Palm score; two-note second accent compressed from a comparative source",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p144**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "ARTIFICIAL_STRESS_NOT_JUSTIFIED",
+        "batch36ObservedAccentedSyllables": [
+          "ta",
+          "ó"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 1,
+        "batch37SourceRuleFlags": [
+          "NONLEXICAL_ARTIFICIAL_ACCENT_NOT_YET_GROUNDED_IN_1961_PALM"
+        ],
+        "batch37RequiresMusicalRewriteBeforePromotion": true
+      },
+      {
+        "id": "PALM-R02-PS46-L06",
+        "psalm": 46,
+        "physicalOccurrences": [
+          "PALM-R02-PS46-L06"
+        ],
+        "pointer": "data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json",
+        "scoreField": "scoreCases",
+        "scoreNature": "LATIN_ALIGNED_PROVISIONAL",
+        "editorialRisk": "UNATTESTED_FULL_VERSE_NOTATION",
+        "nextMusicalDecision": "Validate verse-specific two-accent mediant and terminal word accent against printed Solesmes score.",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p144**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "De",
+          "psál"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 1,
+        "batch37SourceRuleFlags": [],
+        "batch37RequiresMusicalRewriteBeforePromotion": false
+      },
+      {
+        "id": "PALM-R02-PS46-L07",
+        "psalm": 46,
+        "physicalOccurrences": [
+          "PALM-R02-PS46-L07"
+        ],
+        "pointer": "data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json",
+        "scoreField": "scoreCases",
+        "scoreNature": "LATIN_ALIGNED_PROVISIONAL",
+        "editorialRisk": "UNATTESTED_FULL_VERSE_NOTATION",
+        "nextMusicalDecision": "Validate verse-specific two-accent mediant and terminal word accent against printed Solesmes score.",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p144**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "ter",
+          "De"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 2,
+        "batch37SourceRuleFlags": [],
+        "batch37RequiresMusicalRewriteBeforePromotion": false
+      },
+      {
+        "id": "PALM-R02-PS46-L08",
+        "psalm": 46,
+        "physicalOccurrences": [
+          "PALM-R02-PS46-L08"
+        ],
+        "pointer": "data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json",
+        "scoreField": "cases",
+        "scoreNature": "SPECIAL_MEDIANT_PROVISIONAL",
+        "editorialRisk": "BLOCKING_PITCH_HYPOTHESIS",
+        "nextMusicalDecision": "Five intervening syllables between regnat and natiónes are carried on guessed h recitation; no source-notated later verse validates the extension",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p144**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "reg",
+          "ó"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 5,
+        "batch37SourceRuleFlags": [
+          "TWO_ACCENT_MAX_TWO_UNACCENTED_RULE_VIOLATED"
+        ],
+        "batch37RequiresMusicalRewriteBeforePromotion": true
+      },
+      {
+        "id": "PALM-R02-PS46-L09",
+        "psalm": 46,
+        "physicalOccurrences": [
+          "PALM-R02-PS46-L09"
+        ],
+        "pointer": "data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json",
+        "scoreField": "cases",
+        "scoreNature": "SPECIAL_MEDIANT_PROVISIONAL",
+        "editorialRisk": "BLOCKING_PITCH_HYPOTHESIS",
+        "nextMusicalDecision": "Three unstressed syllables separate the word accents; extra reciting h is inferred; terminal Abraham stress Á is a separate unapproved external lexical hypothesis",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p144**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "ló",
+          "gá"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 3,
+        "batch37SourceRuleFlags": [
+          "TWO_ACCENT_MAX_TWO_UNACCENTED_RULE_VIOLATED"
+        ],
+        "batch37RequiresMusicalRewriteBeforePromotion": true,
+        "batch37AlternativeRuleSourcePointer": "cases[id=PALM-R02-PS46-L09].batch37ArtificialAccentAlternative"
+      },
+      {
+        "id": "PALM-R02-PS46-L10",
+        "psalm": 46,
+        "physicalOccurrences": [
+          "PALM-R02-PS46-L10"
+        ],
+        "pointer": "data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json",
+        "scoreField": "scoreCases",
+        "scoreNature": "LATIN_ALIGNED_PROVISIONAL",
+        "editorialRisk": "UNATTESTED_FULL_VERSE_NOTATION",
+        "nextMusicalDecision": "Validate verse-specific two-accent mediant and terminal word accent against printed Solesmes score.",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p144**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "pró",
+          "ter"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 2,
+        "batch37SourceRuleFlags": [],
+        "batch37RequiresMusicalRewriteBeforePromotion": false
+      },
+      {
+        "id": "PALM-R02-PS23-DOXO-L11",
+        "psalm": 23,
+        "physicalOccurrences": [
+          "PALM-R02-PS23-DOXO-L11"
+        ],
+        "pointer": "data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json",
+        "scoreField": "scoreCases",
+        "scoreNature": "LATIN_ALIGNED_PROVISIONAL",
+        "editorialRisk": "UNATTESTED_FULL_VERSE_NOTATION",
+        "nextMusicalDecision": "Validate verse-specific two-accent mediant and terminal word accent against printed Solesmes score.",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p143**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "Pa",
+          "Fí"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 2,
+        "batch37SourceRuleFlags": [],
+        "batch37RequiresMusicalRewriteBeforePromotion": false
+      },
+      {
+        "id": "PALM-R02-PS23-DOXO-L12",
+        "psalm": 23,
+        "physicalOccurrences": [
+          "PALM-R02-PS23-DOXO-L12"
+        ],
+        "pointer": "data/research/processionale-palm-amen-two-full-gabc-comparative-20261027.v1.json",
+        "scoreField": "fullHypotheticalGabcCases",
+        "scoreNature": "AMEN_EDITION_CONFLICT_PROVISIONAL",
+        "editorialRisk": "CROSS_CONTEXT_UNATTESTED_AMEN",
+        "nextMusicalDecision": "Find a 1961 Palm-specific Sicut erat/Amen score or validate underlay from the correct 1f formula; the 1974 Introit/Communion example is a different usage, not itself evidence of an error in the Palm source.",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p143**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "nunc,",
+          "sem"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 1,
+        "batch37SourceRuleFlags": [
+          "FULL_SICUT_ERAT_AMEN_UNATTESTED_FOR_PALM_SOURCE"
+        ],
+        "batch37RequiresMusicalRewriteBeforePromotion": false
+      },
+      {
+        "id": "PALM-R02-PS46-DOXO-L11",
+        "psalm": 46,
+        "physicalOccurrences": [
+          "PALM-R02-PS46-DOXO-L11"
+        ],
+        "pointer": "data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json",
+        "scoreField": "scoreCases",
+        "scoreNature": "LATIN_ALIGNED_PROVISIONAL",
+        "editorialRisk": "UNATTESTED_FULL_VERSE_NOTATION",
+        "nextMusicalDecision": "Validate verse-specific two-accent mediant and terminal word accent against printed Solesmes score.",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p144**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "Pa",
+          "Fí"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 2,
+        "batch37SourceRuleFlags": [],
+        "batch37RequiresMusicalRewriteBeforePromotion": false
+      },
+      {
+        "id": "PALM-R02-PS46-DOXO-L12",
+        "psalm": 46,
+        "physicalOccurrences": [
+          "PALM-R02-PS46-DOXO-L12"
+        ],
+        "pointer": "data/research/processionale-palm-amen-two-full-gabc-comparative-20261027.v1.json",
+        "scoreField": "fullHypotheticalGabcCases",
+        "scoreNature": "AMEN_EDITION_CONFLICT_PROVISIONAL",
+        "editorialRisk": "CROSS_CONTEXT_UNATTESTED_AMEN",
+        "nextMusicalDecision": "Find a 1961 Palm-specific Sicut erat/Amen score or validate underlay from the correct 1f formula; the 1974 Introit/Communion example is a different usage, not itself evidence of an error in the Palm source.",
+        "textPrimaryPrintedEdition": "1961 Graduale Romanum p144**",
+        "printed1961CompleteLaterVerseScore": false,
+        "canonical1962LatinOwnerSignedOff": false,
+        "local1961ToneSourceCertified": false,
+        "LatinWordAccentMusicallyVerified": false,
+        "neumeByNeumeFacsimileVerified": false,
+        "humanChantEditorAccepted": false,
+        "mobileStaffLayoutHumanApproved": false,
+        "productionScoreWired": false,
+        "readyToMerge": false,
+        "batch36LexicalScreening": "LEXICAL_ACCENT_ALIGNED_ONLY",
+        "batch36ObservedAccentedSyllables": [
+          "nunc,",
+          "sem"
+        ],
+        "batch36ChantEditorApproved": false,
+        "batch37InterveningUnaccentedSyllables": 1,
+        "batch37SourceRuleFlags": [
+          "FULL_SICUT_ERAT_AMEN_UNATTESTED_FOR_PALM_SOURCE"
+        ],
+        "batch37RequiresMusicalRewriteBeforePromotion": false
+      }
+    ],
+    "zeroReleaseMustRemainTrue": true,
+    "signoffGates": {
+      "canonicalLatinIssue894": false,
+      "palm1961MelodicSourceReview": false,
+      "accentAndNeumeQualityReview": false,
+      "requiredMobileVisualQA": false,
+      "scholaPR1749SourceGate": false,
+      "readerIntegration": false
+    },
+    "nextAction": "One music editor reviews the 17 GABC candidates by psalm tone and risk: resolve Amen discrepancy, special medians, flexes, then ordinary verses; accept or rewrite before score registration.",
+    "reviewerPriorityOrder": [
+      "2 Amen source conflicts",
+      "4 special medians",
+      "2 special Psalm23 flexes",
+      "9 Latin-aligned drafts"
+    ],
+    "sourceArchiveProtected": true,
+    "scoreReaderChanges": 0,
+    "CIProof": {
+      "exsurgeRun": 40523935267,
+      "renderedWholeGabc": 17,
+      "totalViewportPasses": 186,
+      "requiredMainGateLatestHead": "PENDING"
+    },
+    "owner": {
+      "schola": "PR #1749",
+      "research": "draft PR #1752",
+      "canonicalLatin": "issue #894"
+    }
+  },
+  "batch36AccentCellReview": {
+    "batch": 36,
+    "date": "2026-10-27",
+    "status": "ALL_17_GABC_MEDIANT_ACCENT_CELLS_SCREENED_16_LEXICAL_MATCH_1_ARTIFICIAL_ACCENT_PENDING_0_MUSICAL_APPROVAL",
+    "primaryPrintedFacsimiles": [
+      {
+        "source": "Graduale Romanum 1961 Psalm 23 p143**",
+        "url": "https://gregobase.selapa.net/sources/2/1179.png",
+        "melodicFirstVerseGroups": [
+          "ixi hr",
+          "g hr"
+        ]
+      },
+      {
+        "source": "Graduale Romanum 1961 Psalm 46 p144**",
+        "url": "https://gregobase.selapa.net/sources/2/1180.png",
+        "melodicFirstVerseGroups": [
+          "ixi",
+          "g"
+        ]
+      }
+    ],
+    "independent1961FirstToneFComparison": {
+      "source": "Liber Usualis Solesmes 1961 p128 Psalm109 in tone 1.f",
+      "url": "https://gregobase.selapa.net/chant.php?id=18175",
+      "permittedInference": "Confirms a contemporary source for the same tone FAMILY, not Palm-specific later verses or an independent written Amen formula."
+    },
+    "sourceScope": {
+      "originalPalmFirstVersesNotated": 2,
+      "subsequentPalmVersesPrintedLatinOnly": true,
+      "accentPositionMatchingIsNotMusicalUnderlayApproval": true,
+      "productionAllowed": false
+    },
+    "firstTone1974DoxologyComparison": {
+      "url": "https://www.gregorianum.org/index.php?mobileaction=toggle_view_mobile&title=I_Tono_Gloria_Patri_%28Introitus_et_Communionis%29",
+      "scope": "Graduale Romanum 1974 p822 first tone for Introit and Communion, not the 1961 Palm processional setting",
+      "comparativeAmen": [
+        "A(fff)",
+        "men(d.)"
+      ],
+      "provisionalPsalm23ToneTransferAmen": [
+        "A(gh gr)",
+        "men(gf..)"
+      ],
+      "differingContextsNotAContradictionOfTwoPrintedPalmScores": true,
+      "needsPalmsSpecificToneVerification": true
+    },
+    "cases": [
+      {
+        "id": "PALM-R02-PS23-L02",
+        "psalm": 23,
+        "firstMediantMelodicAccent": {
+          "syllable": "dá",
+          "noteGroup": "ixi hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "e",
+          "noteGroup": "g hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi hr",
+          "g hr"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": true,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      },
+      {
+        "id": "PALM-R02-PS46-L02",
+        "psalm": 46,
+        "firstMediantMelodicAccent": {
+          "syllable": "cél",
+          "noteGroup": "ixi",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "rí",
+          "noteGroup": "g",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi",
+          "g"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": true,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      },
+      {
+        "id": "PALM-R02-PS46-L03",
+        "psalm": 46,
+        "firstMediantMelodicAccent": {
+          "syllable": "pó",
+          "noteGroup": "ixi",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "nó",
+          "noteGroup": "g hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi",
+          "g"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": false,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      },
+      {
+        "id": "PALM-R02-PS46-L04",
+        "psalm": 46,
+        "firstMediantMelodicAccent": {
+          "syllable": "tá",
+          "noteGroup": "ixi hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "nos",
+          "noteGroup": "g hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi",
+          "g"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": false,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      },
+      {
+        "id": "PALM-R02-PS46-L06",
+        "psalm": 46,
+        "firstMediantMelodicAccent": {
+          "syllable": "De",
+          "noteGroup": "ixi hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "psál",
+          "noteGroup": "g",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi",
+          "g"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": false,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      },
+      {
+        "id": "PALM-R02-PS46-L07",
+        "psalm": 46,
+        "firstMediantMelodicAccent": {
+          "syllable": "ter",
+          "noteGroup": "ixi",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "De",
+          "noteGroup": "g hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi",
+          "g"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": false,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      },
+      {
+        "id": "PALM-R02-PS46-L10",
+        "psalm": 46,
+        "firstMediantMelodicAccent": {
+          "syllable": "pró",
+          "noteGroup": "ixi",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "ter",
+          "noteGroup": "g hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi",
+          "g"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": false,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      },
+      {
+        "id": "PALM-R02-PS23-DOXO-L11",
+        "psalm": 23,
+        "firstMediantMelodicAccent": {
+          "syllable": "Pa",
+          "noteGroup": "ixi",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "Fí",
+          "noteGroup": "g",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi hr",
+          "g hr"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": false,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      },
+      {
+        "id": "PALM-R02-PS46-DOXO-L11",
+        "psalm": 46,
+        "firstMediantMelodicAccent": {
+          "syllable": "Pa",
+          "noteGroup": "ixi",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "Fí",
+          "noteGroup": "g",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi",
+          "g"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": true,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      },
+      {
+        "id": "PALM-R02-PS23-L07",
+        "psalm": 23,
+        "firstMediantMelodicAccent": {
+          "syllable": "fo",
+          "noteGroup": "ixi",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "tí",
+          "noteGroup": "g hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi hr",
+          "g hr"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": false,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      },
+      {
+        "id": "PALM-R02-PS23-L08",
+        "psalm": 23,
+        "firstMediantMelodicAccent": {
+          "syllable": "for",
+          "noteGroup": "ixi",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "po",
+          "noteGroup": "g hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi hr",
+          "g hr"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": false,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      },
+      {
+        "id": "PALM-R02-PS23-L10",
+        "psalm": 23,
+        "firstMediantMelodicAccent": {
+          "syllable": "rex",
+          "noteGroup": "ixi hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "gló",
+          "noteGroup": "g",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi hr",
+          "g hr"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": false,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      },
+      {
+        "id": "PALM-R02-PS46-L05",
+        "psalm": 46,
+        "firstMediantMelodicAccent": {
+          "syllable": "ta",
+          "noteGroup": "ixi",
+          "wordStressStatus": "ARTIFICIAL_SECONDARY_ACCENT_UNVERIFIED"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "ó",
+          "noteGroup": "g hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi",
+          "g"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": false,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "ARTIFICIAL_STRESS_NOT_JUSTIFIED"
+      },
+      {
+        "id": "PALM-R02-PS46-L08",
+        "psalm": 46,
+        "firstMediantMelodicAccent": {
+          "syllable": "reg",
+          "noteGroup": "ixi",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "ó",
+          "noteGroup": "g hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi",
+          "g"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": false,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      },
+      {
+        "id": "PALM-R02-PS46-L09",
+        "psalm": 46,
+        "firstMediantMelodicAccent": {
+          "syllable": "ló",
+          "noteGroup": "ixi",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "gá",
+          "noteGroup": "g",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi",
+          "g"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": true,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      },
+      {
+        "id": "PALM-R02-PS23-DOXO-L12",
+        "psalm": 23,
+        "firstMediantMelodicAccent": {
+          "syllable": "nunc,",
+          "noteGroup": "ixi hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "sem",
+          "noteGroup": "g hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi hr",
+          "g hr"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": true,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      },
+      {
+        "id": "PALM-R02-PS46-DOXO-L12",
+        "psalm": 46,
+        "firstMediantMelodicAccent": {
+          "syllable": "nunc,",
+          "noteGroup": "ixi hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "secondMediantMelodicAccent": {
+          "syllable": "sem",
+          "noteGroup": "g hr",
+          "wordStressStatus": "MATCHES_PRINTED_LEXICAL_STRESS"
+        },
+        "sourceFirstVerseAccentGroups": [
+          "ixi",
+          "g"
+        ],
+        "exactlyMatchesOwnFirstVerseGroupPair": false,
+        "musicalFormulaIndependentSourceVerified": false,
+        "completeLaterVerseNotatedIn1961": false,
+        "humanChantEditorApproved": false,
+        "category": "LEXICAL_ACCENT_ALIGNED_ONLY"
+      }
+    ],
+    "counts": {
+      "totalScoreDrafts": 17,
+      "lexicalMediantAccentAlignmentPassed": 16,
+      "artificialSecondaryAccentUnresolved": 1,
+      "historicalSyllableMetadataErrata": 1,
+      "printedWholeLaterVersesMusicallyNotated": 0,
+      "humanEditorialAcceptances": 0,
+      "productionAssignments": 0,
+      "ownPsalmPrintedOpeningAccentGroupPairReused": 5,
+      "accentCellVariantsNotPrintedIdenticallyInOwnPsalmOpening": 12
+    },
+    "blockedGates": [
+      "Musician must determine whether artificial stressed -ta- of exsultatióne is valid in Ps46 L05",
+      "Musician must validate actual 1f accent formula and allowable cell alternations for each Psalm verse",
+      "Musician must resolve Palm processional Sicut erat/Amen with a source-specific witness or demonstrable rule",
+      "Music reviewer must compare flex treatment and punctuation against printed Palm 1961 p143**",
+      "Canonical Latin source owner #894 must accept final editorial text and punctuation",
+      "Physical small-screen staff review and Schola owner #1749 approval remain unsigned"
+    ],
+    "editorialCorrection": "Prior Batch31 Populórum lexical anchor lór was a syllabification error; accented syllable is ló. The complete new GABC has ló(ixi) correctly, but this does not certify the full musical phrase.",
+    "batch35RiskReframing": "The 1974 Introit/Communion Amen is a separate usage, thus a warning against conflation, NOT source conflict within the incomplete 1961 Palm print.",
+    "approvalAllowed": false,
+    "varianceStatus": "12_OF_17_USE_ADAPTED_MUSIC_CELLS_REQUIRE_TONE_EDITOR_VERIFICATION"
+  },
+  "batch37StrictTwoAccentSpacingCheck": {
+    "batch": 37,
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "TWO_COMPLETE_GABC_MEDIANTS_EXCEED_PRINTED_TWO_ACCENT_RULE_ONE_NONLEXICAL_ARTIFICIAL_ACCENT_HOLD_ZERO_APPROVALS",
+    "primaryReference": {
+      "book": "Liber Usualis 1961 p113",
+      "url": "https://longbeachchant.com/wp-content/uploads/2019/11/liber-1961-eight-psalm-tones.pdf#page=2",
+      "scope": "First Tone: mediant of two accents; psalm-tone flex may have variable treatment"
+    },
+    "complementaryTextUnderlayRules": {
+      "title": "Rules for Text Underlay of the Psalm Text at the Cadence Formulas",
+      "url": "https://npm.org/wp-content/uploads/2017/07/Rules-for-Text-Underlay-of-the-Psalm-Text-at-the-Psalm-Tone-Cadence.pdf#page=1",
+      "scope": "With two melodic accents: at most two unaccented intervening syllables; when too many, form a correctly placed secondary accent. On page 2, artificial secondary accent always two syllables after a true accent, never immediately following it."
+    },
+    "caution": "Modern pedagogical rules are a diagnostic comparator, not a fully attested original 1961 Palm-rite note-by-note setting. Violations prohibit promotion of the current research draft until revised by a qualified editor, rather than proving a different valid reconstruction impossible.",
+    "cases": [
+      {
+        "id": "PALM-R02-PS23-L02",
+        "sourceWordAccents": {
+          "first": {
+            "index": 9,
+            "syllable": "dá",
+            "noteGroup": "ixi hr"
+          },
+          "second": {
+            "index": 11,
+            "syllable": "e",
+            "noteGroup": "g hr"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 1,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": true,
+        "flagCodes": [],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS46-L02",
+        "sourceWordAccents": {
+          "first": {
+            "index": 7,
+            "syllable": "cél",
+            "noteGroup": "ixi"
+          },
+          "second": {
+            "index": 10,
+            "syllable": "rí",
+            "noteGroup": "g"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 2,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": true,
+        "flagCodes": [],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS46-L03",
+        "sourceWordAccents": {
+          "first": {
+            "index": 3,
+            "syllable": "pó",
+            "noteGroup": "ixi"
+          },
+          "second": {
+            "index": 6,
+            "syllable": "nó",
+            "noteGroup": "g hr"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 2,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": true,
+        "flagCodes": [],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS46-L04",
+        "sourceWordAccents": {
+          "first": {
+            "index": 8,
+            "syllable": "tá",
+            "noteGroup": "ixi hr"
+          },
+          "second": {
+            "index": 10,
+            "syllable": "nos",
+            "noteGroup": "g hr"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 1,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": true,
+        "flagCodes": [],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS46-L06",
+        "sourceWordAccents": {
+          "first": {
+            "index": 3,
+            "syllable": "De",
+            "noteGroup": "ixi hr"
+          },
+          "second": {
+            "index": 5,
+            "syllable": "psál",
+            "noteGroup": "g"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 1,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": true,
+        "flagCodes": [],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS46-L07",
+        "sourceWordAccents": {
+          "first": {
+            "index": 6,
+            "syllable": "ter",
+            "noteGroup": "ixi"
+          },
+          "second": {
+            "index": 9,
+            "syllable": "De",
+            "noteGroup": "g hr"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 2,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": true,
+        "flagCodes": [],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS46-L10",
+        "sourceWordAccents": {
+          "first": {
+            "index": 4,
+            "syllable": "pró",
+            "noteGroup": "ixi"
+          },
+          "second": {
+            "index": 7,
+            "syllable": "ter",
+            "noteGroup": "g hr"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 2,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": true,
+        "flagCodes": [],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS23-DOXO-L11",
+        "sourceWordAccents": {
+          "first": {
+            "index": 3,
+            "syllable": "Pa",
+            "noteGroup": "ixi"
+          },
+          "second": {
+            "index": 6,
+            "syllable": "Fí",
+            "noteGroup": "g"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 2,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": true,
+        "flagCodes": [],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS46-DOXO-L11",
+        "sourceWordAccents": {
+          "first": {
+            "index": 3,
+            "syllable": "Pa",
+            "noteGroup": "ixi"
+          },
+          "second": {
+            "index": 6,
+            "syllable": "Fí",
+            "noteGroup": "g"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 2,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": true,
+        "flagCodes": [],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS23-L07",
+        "sourceWordAccents": {
+          "first": {
+            "index": 6,
+            "syllable": "fo",
+            "noteGroup": "ixi"
+          },
+          "second": {
+            "index": 9,
+            "syllable": "tí",
+            "noteGroup": "g hr"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 2,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": true,
+        "flagCodes": [
+          "PSALM23_FLEX_NOTED_PATTERN_TRANSFER_UNAPPROVED"
+        ],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS23-L08",
+        "sourceWordAccents": {
+          "first": {
+            "index": 3,
+            "syllable": "for",
+            "noteGroup": "ixi"
+          },
+          "second": {
+            "index": 6,
+            "syllable": "po",
+            "noteGroup": "g hr"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 2,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": true,
+        "flagCodes": [
+          "PSALM23_FLEX_NOTED_PATTERN_TRANSFER_UNAPPROVED"
+        ],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS23-L10",
+        "sourceWordAccents": {
+          "first": {
+            "index": 4,
+            "syllable": "rex",
+            "noteGroup": "ixi hr"
+          },
+          "second": {
+            "index": 5,
+            "syllable": "gló",
+            "noteGroup": "g"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 0,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": true,
+        "flagCodes": [
+          "TWO_ADJACENT_ACCENTS_AND_MONOSYLLABIC_REX_REQUIRE_RULE_CHOICE"
+        ],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS46-L05",
+        "sourceWordAccents": {
+          "first": {
+            "index": 8,
+            "syllable": "ta",
+            "noteGroup": "ixi"
+          },
+          "second": {
+            "index": 10,
+            "syllable": "ó",
+            "noteGroup": "g hr"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 1,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": true,
+        "flagCodes": [
+          "NONLEXICAL_ARTIFICIAL_ACCENT_NOT_YET_GROUNDED_IN_1961_PALM"
+        ],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS46-L08",
+        "sourceWordAccents": {
+          "first": {
+            "index": 2,
+            "syllable": "reg",
+            "noteGroup": "ixi"
+          },
+          "second": {
+            "index": 8,
+            "syllable": "ó",
+            "noteGroup": "g hr"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 5,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": false,
+        "flagCodes": [
+          "TWO_ACCENT_MAX_TWO_UNACCENTED_RULE_VIOLATED"
+        ],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS46-L09",
+        "sourceWordAccents": {
+          "first": {
+            "index": 5,
+            "syllable": "ló",
+            "noteGroup": "ixi"
+          },
+          "second": {
+            "index": 9,
+            "syllable": "gá",
+            "noteGroup": "g"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 3,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": false,
+        "flagCodes": [
+          "TWO_ACCENT_MAX_TWO_UNACCENTED_RULE_VIOLATED"
+        ],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS23-DOXO-L12",
+        "sourceWordAccents": {
+          "first": {
+            "index": 10,
+            "syllable": "nunc,",
+            "noteGroup": "ixi hr"
+          },
+          "second": {
+            "index": 12,
+            "syllable": "sem",
+            "noteGroup": "g hr"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 1,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": true,
+        "flagCodes": [
+          "FULL_SICUT_ERAT_AMEN_UNATTESTED_FOR_PALM_SOURCE"
+        ],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      },
+      {
+        "id": "PALM-R02-PS46-DOXO-L12",
+        "sourceWordAccents": {
+          "first": {
+            "index": 10,
+            "syllable": "nunc,",
+            "noteGroup": "ixi hr"
+          },
+          "second": {
+            "index": 12,
+            "syllable": "sem",
+            "noteGroup": "g hr"
+          }
+        },
+        "interveningUnaccentedSyllableCount": 1,
+        "satisfiesMaxTwoBetweenUnderComparativeRule": true,
+        "flagCodes": [
+          "FULL_SICUT_ERAT_AMEN_UNATTESTED_FOR_PALM_SOURCE"
+        ],
+        "sourceUnderlayIsExact1961PalmNotatedLaterVerse": false,
+        "GregorianEditorSignedOff": false,
+        "mayCopyIntoProduction": false
+      }
+    ],
+    "countsByInterveningSyllables": {
+      "0": 1,
+      "1": 6,
+      "2": 8,
+      "3": 1,
+      "5": 1
+    },
+    "failingTwoAccentRuleIds": [
+      "PALM-R02-PS46-L08",
+      "PALM-R02-PS46-L09"
+    ],
+    "positionalSourceDefects": [
+      {
+        "id": "PALM-R02-PS46-L08",
+        "lyric": "Deus regnat super natiónes",
+        "problem": "reg → ó has FIVE intervening syllables; incompatible with two-accent formula in cited underlay guidance.",
+        "action": "Re-point using source-approved artificial secondary accent or a locally attested alternate modulation; cannot publish current version.",
+        "canReleaseWithoutRewrite": false
+      },
+      {
+        "id": "PALM-R02-PS46-L09",
+        "lyric": "Príncipes populórum congregáti sunt",
+        "problem": "ló → gá has THREE intervening syllables; cannot simply stretch the recitation between the two accented notes.",
+        "action": "Obtain corrected Solesmes two-accent setting including possible artificial secondary accent. Hebrew-name Abraham ending remains a separate review.",
+        "canReleaseWithoutRewrite": false
+      },
+      {
+        "id": "PALM-R02-PS46-L05",
+        "lyric": "Ascéndit Deus cum exsultatióne",
+        "problem": "The full GABC places its first marked melodic accent on unstressed ta of exsultatióne. Current record cites no source proving this is the correct artificial accent location.",
+        "action": "Apply actual first-tone secondary-accent underlay rule to the whole phrase and prove position; do not treat its 1-syllable gap as sufficient validation.",
+        "canReleaseWithoutRewrite": false
+      },
+      {
+        "id": "PALM-R02-PS23-L10",
+        "lyric": "Quis est iste rex glóriae?",
+        "problem": "rex and gló are adjacent accented note groups; monosyllabic and adjacent-accent special adaptations must be source-reviewed.",
+        "action": "Check permissible two-accent cadence treatment and printed p143** staff; hold before release.",
+        "canReleaseWithoutRewrite": false
+      }
+    ],
+    "secondaryHolds": {
+      "unapprovedAmenIds": [
+        "PALM-R02-PS23-DOXO-L12",
+        "PALM-R02-PS46-DOXO-L12"
+      ],
+      "unapprovedFlexIds": [
+        "PALM-R02-PS23-L07",
+        "PALM-R02-PS23-L08"
+      ],
+      "overlappingCategoriesNotAdditive": true
+    },
+    "nextReleaseWorkOrder": [
+      "Repair Ps46 L08 and L09 accent gaps using attested two-accent modulations",
+      "Establish artificial secondary accent in Ps46 L05 and unusual adjacent rex/glóriae in Ps23 L10",
+      "Verify both Palm Sicut erat Amen endings with actual source-specific chant underlay",
+      "Validate Psalm23 L07/L08 flex and all remaining adapted neumes across 17 complete research drafts"
+    ],
+    "humanApprovedCount": 0,
+    "productionScoreCount": 0,
+    "all17PreviouslySvgRenderedButNotMusicallyProven": true,
+    "rejectAsSourceAuthenticUntilEdited": true,
+    "noProductionChange": true,
+    "psalm46L09RuleBasedAlternative": {
+      "pointer": "data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json",
+      "field": "cases[id=PALM-R02-PS46-L09].batch37ArtificialAccentAlternative",
+      "originalAccent": "ló(ixi)...gá(g) with 3 syllables between",
+      "sourceRuleAlignedHypothesis": "ló(h)rum(h) con(ixi hr)gre(h)gá(g)ti(hr)sunt(h.)",
+      "derivedArtificialSecondaryAccent": "con is 2 syllables after true ló, leaving 1 between con and real gá",
+      "source": "Rules for Text Underlay of Psalm Text at Psalm Tone Cadence pp1-2, secondary accent two syllables after true accent",
+      "canPotentiallyRemoveSpacingDefectAfterEditorialReview": true,
+      "grammaticalRuleScreensPassed": true,
+      "actualToneMelodyOriginalEditionAttested": false,
+      "gregorianEditorAccepted": false,
+      "latinCanonicalOwnerAccepted": false,
+      "renderRunPending": true,
+      "canonicalScoreReplacementMade": false,
+      "sourceOriginalRejectedDraftPreserved": true,
+      "productionEligible": false
+    }
+  },
+  "batch38SecondaryAccentAndAntiphon": {
+    "batch": 38,
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "status": "TWO_SOURCE_GRAMMAR_REPAIR_HYPOTHESES_ONE_HARD_ARTIFICIAL_STRESS_HOLD_AND_VERIFIED_ANTIPHON_PAIR_SEQUENCE",
+    "sourceList": [
+      {
+        "name": "Graduale Romanum 1961 Psalm 23 and Psalm 46",
+        "url": "https://s9.imslp.org/files/imglnks/usimg/1/1a/IMSLP52097-PMLP108040-GR6_Proprium_et_Commune_pro_aliquibus_locis,_Psalmi.pdf",
+        "sourceRole": "Original 1961 Psalm text and one fully notated opening verse each. URL spelling here pending correction."
+      },
+      {
+        "name": "Psallite Sapienter 1962 musician guide paragraphs 102–104",
+        "url": "https://media.churchmusicassociation.org/books/7848318-Psallite-Sapienter-A-Musicians-Guide-to-the-Extraordinary-Form.pdf#page=37",
+        "sourceRole": "Palm distribution antiphon repeated after pairs, and optional early termination with Gloria Patri and antiphon."
+      },
+      {
+        "name": "Text underlay rules",
+        "url": "https://npm.org/wp-content/uploads/2017/07/Rules-for-Text-Underlay-of-the-Psalm-Text-at-the-Psalm-Tone-Cadence.pdf",
+        "sourceRole": "Artificial accent two syllables after previous true accent and no more than two unaccented syllables between melodic accents"
+      }
+    ],
+    "secondaryAccentAlternatives": [
+      {
+        "id": "PALM-R02-PS46-L08",
+        "sourcePointer": "data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json",
+        "field": "cases[id=PALM-R02-PS46-L08].batch38SecondaryAccentAlternative",
+        "naturalAccent": "súper: su (index 4)",
+        "artificialAccent": "natiónes: na (index 6)",
+        "secondAccent": "natiónes: ó (index 8)",
+        "sourceRuleStructuralFit": true,
+        "sourceMusicalVariantProof": false,
+        "renderPending": false,
+        "approved": false,
+        "renderedAt260420800": true,
+        "renderRunId": 40539921610,
+        "humanMusicalApproval": false
+      },
+      {
+        "id": "PALM-R02-PS46-L09",
+        "sourcePointer": "data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json",
+        "field": "cases[id=PALM-R02-PS46-L09].batch37ArtificialAccentAlternative",
+        "naturalAccent": "populórum: ló (index 5)",
+        "artificialAccent": "congregáti: con (index 7)",
+        "secondAccent": "congregáti: gá (index 9)",
+        "sourceRuleStructuralFit": true,
+        "sourceMusicalVariantProof": false,
+        "renderedAt260420800": true,
+        "approved": false,
+        "renderPending": false,
+        "renderRunId": 40539921610,
+        "humanMusicalApproval": false
+      }
+    ],
+    "unresolvedL05": {
+      "id": "PALM-R02-PS46-L05",
+      "printedLatin": "Ascéndit Deus cum exsultatióne",
+      "syllabification": "As-cén-dit De-us cum ex-sul-ta-ti-ó-ne",
+      "indexedSyllables": [
+        [
+          "cén",
+          1
+        ],
+        [
+          "De",
+          3
+        ],
+        [
+          "cum",
+          5
+        ],
+        [
+          "ex",
+          6
+        ],
+        [
+          "sul",
+          7
+        ],
+        [
+          "ta",
+          8
+        ],
+        [
+          "ó",
+          10
+        ]
+      ],
+      "proposedExistingFirstAccentIndex": 8,
+      "naturalAccentsBeforeThat": [
+        1,
+        3
+      ],
+      "distanceFromNearestTrueAccentToExistingArtificial": 5,
+      "nearestTrueAccent": "Déus: De(index 3)",
+      "ruleRequiresTwoAfterTrueAccent": true,
+      "verdict": "CURRENT_ARTIFICIAL_TA_AT_INDEX_8_NOT_JUSTIFIED_BY_TWO_AFTER_RULE",
+      "aSingleSecondaryFromDeAtCumIndex5StillLeavesFourUnaccentedBeforeO": true,
+      "automaticNoteCorrectionPermitted": false,
+      "requiredEvidence": "Authoritative special mediant adaptation / secondary stress for longer exsultatióne; must not freely invent additional melodic accents."
+    },
+    "psalm23Antiphon": {
+      "antiphon": "Pueri Hebraeorum portantes",
+      "versesInPrintedSelection": [
+        1,
+        2,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "initialAntiphonFirst": true,
+      "pairEndVerseNumbers": [
+        2,
+        8,
+        10,
+        12
+      ],
+      "explicitAntiphonReturnAfterFinalDoxology": true,
+      "liturgicalLocation": "Blessing/distribution of palms",
+      "flexibleIfDistributionEndsEarly": true
+    },
+    "psalm46Antiphon": {
+      "antiphon": "Pueri Hebraeorum vestimenta",
+      "versesInPrintedSelection": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "initialAntiphonFirst": true,
+      "pairEndVerseNumbers": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12
+      ],
+      "explicitAntiphonReturnAfterFinalDoxology": true,
+      "liturgicalLocation": "Blessing/distribution of palms",
+      "flexibleIfDistributionEndsEarly": true
+    },
+    "scholaEventIntegration": {
+      "sourceClass": "RUBRICALLY_ATTESTED_EVENT_ORDER_RESEARCH_ONLY",
+      "readOnlyEventHandoffToPR": "#1781",
+      "rhythm": "After each completed 2-verse pair in corresponding Psalm, and doxology at end, repeat its own Pueri Hebraeorum antiphon.",
+      "stopCondition": "If palms distribution ends earlier, sing doxology and final antiphon without claiming every intermediate pair had occurred.",
+      "noSpuriousSeparateAmenResponse": true,
+      "latinDefault": true,
+      "noReaderChange": true,
+      "noTimingEstimatesOrFabricatedDurations": true
+    },
+    "sourceNotes": {
+      "publicationMayNotUseMusicYet": true,
+      "attestedAntiphonStructureDoesNotApproveGabc": true,
+      "musicEditorApprovalCount": 0,
+      "approvedCompletePalmScores": 0
+    },
+    "technicalProof": {
+      "runId": 40539921610,
+      "jobId": 122315217952,
+      "totalSuccessfulSvgViewportChecks": 192,
+      "completeOriginalResearchCandidates": 17,
+      "additionalUnapprovedSourceRuleAlternatives": 2,
+      "sourceApprovedScores": 0,
+      "note": "Both Psalm46 L08 and L09 alternate GABCs rendered at 260/420/800. Does not certify text underlay, artificial accents, original 1961 melody, or publication."
+    }
+  },
+  "batch39L05BoundedFeasibility": {
+    "date": "2026-10-27",
+    "stage": "PALM-R02",
+    "sourceCase": "PALM-R02-PS46-L05",
+    "canonicalText": "Ascéndit Deus cum exsultatióne",
+    "printedSyllableModel": "As-cén-dit De-us cum ex-sul-ta-ti-ó-ne",
+    "sourceVerifiedLexicalAccents": [
+      {
+        "word": "Ascéndit",
+        "syllable": "cén",
+        "index": 1
+      },
+      {
+        "word": "Deus",
+        "syllable": "De",
+        "index": 3
+      },
+      {
+        "word": "exsultatióne",
+        "syllable": "ó",
+        "index": 10
+      }
+    ],
+    "optionalWeakMonosyllable": {
+      "word": "cum",
+      "index": 5,
+      "lexicallyStressedByDefault": false,
+      "sourcePermitsAccentingItInThisPalmTone": false
+    },
+    "lastMelodicAccentOnPrintedStressIndex": 10,
+    "candidateFirstAccentWindowByMaxTwoInterveningSyllables": [
+      7,
+      8,
+      9
+    ],
+    "candidateEvaluation": [
+      {
+        "firstMelodicAccentSyllableIndex": 7,
+        "sourceSyllable": "sul",
+        "interveningBeforeLast": 2,
+        "distanceFromNearestPriorNaturallyAccentedSyllable": 4,
+        "couldBeArtificialTwoAfterNearestNatural": false,
+        "validOnlyIfNewlyAccentedCumAsMonosyllable": true,
+        "textUnderlayStatus": "REQUIRES_INDEPENDENTLY_JUSTIFIED_ACCENT_ON_CUM"
+      },
+      {
+        "firstMelodicAccentSyllableIndex": 8,
+        "sourceSyllable": "ta",
+        "interveningBeforeLast": 1,
+        "distanceFromNearestPriorNaturallyAccentedSyllable": 5,
+        "couldBeArtificialTwoAfterNearestNatural": false,
+        "validOnlyIfNewlyAccentedCumAsMonosyllable": false,
+        "textUnderlayStatus": "NOT_TWO_AFTER_KNOWN_NATURAL_WORD_ACCENT"
+      },
+      {
+        "firstMelodicAccentSyllableIndex": 9,
+        "sourceSyllable": "ti",
+        "interveningBeforeLast": 0,
+        "distanceFromNearestPriorNaturallyAccentedSyllable": 6,
+        "couldBeArtificialTwoAfterNearestNatural": false,
+        "validOnlyIfNewlyAccentedCumAsMonosyllable": false,
+        "textUnderlayStatus": "NOT_TWO_AFTER_KNOWN_NATURAL_WORD_ACCENT"
+      }
+    ],
+    "candidatesWithSourceSupportedTwoAfterNaturalBeforeLast": 0,
+    "existingCandidateFirstAccent": {
+      "syllable": "ta",
+      "index": 8,
+      "nearestNaturalSyllable": "De",
+      "nearestNaturalIndex": 3,
+      "distanceFromTrueAccent": 5,
+      "passesTwoAfterRule": false
+    },
+    "conditionalAnalysis": "If a qualified Gregorian editor establishes that cum (index 5) can be treated as a stressed monosyllable in this Psalm and cadence, sul (index 7) would be precisely two syllables after it and two syllables before the final ó (index 10). Neither that monosyllable decision nor the source-specific melodic note allocation is attested in the available witness.",
+    "conclusion": "There is no source-supported first-melodic-accent solution under a single artificial-secondary-accent two-after rule using the explicit natural word stresses listed above. This is a bounded constraint result, not a claim that no valid Gregorian musical solution exists.",
+    "nextEvidenceNeeded": "An actual underlay for exsultatióne in this source tone, or editor-attested treatment of the weak monosyllable cum plus justified first-tone pitch groups.",
+    "noNewGabcGenerated": true,
+    "explicitReviewerSignoffNeeded": true,
+    "releasePermitted": false
+  },
+  "batch40L05LongWordAccentEvidence": {
+    "batch": 40,
+    "date": "2026-10-27",
+    "caseId": "PALM-R02-PS46-L05",
+    "status": "INTRA_WORD_SECONDARY_ACCENT_STRUCTURALLY_PLAUSIBLE_UNDER_OLDER_SOLESMES_RULE_NOT_1961_PALM_MUSICALLY_APPROVED",
+    "narrowQuestion": "Does a long-word secondary accent on -ta- of exsultatióne supply the first Tone-I two-accent mediant anchor without treating weak cum as naturally stressed?",
+    "sources": [
+      {
+        "authority": "Justine Ward, Gregorian Chant Vol. II (1949) ch. VI, printed pp. 36-37",
+        "witness": "SCANNED_PAGES_VISUALLY_INSPECTED",
+        "url": "https://media.musicasacra.com/pdf/ward5.pdf#page=46",
+        "scope": "Two-accent Mode-I mediant can use tonic or secondary accents; in long words, a secondary accent can replace a tonic accent melodically. Does not notate this Palm verse."
+      },
+      {
+        "authority": "Benedictines of Stanbrook, A Grammar of Plainsong (1905), Psalmody, printed p.54, historical OCR witness",
+        "witness": "SINGLE_OCR_TEXT_WITNESS_NOT_VISUALLY_CONFIRMED",
+        "url": "https://www.scribd.com/document/433591050/grammarofplainso00stanuoft",
+        "scope": "In long words a secondary accent may occur two syllables before the tonic accent where it occupies a strong cadence beat. Actual 1905 staff/page still to be inspected."
+      },
+      {
+        "authority": "Rules for Text Underlay of the Psalm Text at the Cadence Formulas (NPM/SG381 guide), PDF pp.1-2",
+        "witness": "SCANNED_PAGES_VISUALLY_INSPECTED",
+        "url": "https://npm.org/wp-content/uploads/2017/07/Rules-for-Text-Underlay-of-the-Psalm-Text-at-the-Psalm-Tone-Cadence.pdf",
+        "scope": "Two-accent spacing at most two unaccented syllables; forward two-after-prior-true-accent artificial-accent rule. Supporting grammar, not an exhaustive rule for all historical long-word secondary accents or a 1961 Palm notated setting."
+      },
+      {
+        "authority": "1961 Graduale Romanum, Palm Psalm46, p.144**",
+        "witness": "ORIGINAL_FIRST_VERSE_NOTATED_ONLY",
+        "url": "https://gregobase.selapa.net/sources/2/1180.png",
+        "scope": "Original Psalm46 psalm-tone opening, not a full Psalm46:5 pointing or independently notated completion."
+      }
+    ],
+    "sourceLatin": "Ascéndit Deus cum exsultatióne",
+    "syllableModel": "As(0)-cén(1)-dit(2) De(3)-us(4) cum(5) ex(6)-sul(7)-ta(8)-ti(9)-ó(10)-ne(11)",
+    "candidate": {
+      "status": "REOPEN_AS_RULE_CLASS_FEASIBLE_NOT_SOURCE_AUTHENTIC",
+      "firstMusicalAccent": {
+        "syllable": "ta",
+        "index": 8,
+        "lexicalStress": false,
+        "sourceType": "POSSIBLE_INTRA_WORD_SECONDARY_ACCENT"
+      },
+      "secondMusicalAccent": {
+        "syllable": "ó",
+        "index": 10,
+        "lexicalStress": true
+      },
+      "positionWithinWord": "ta is two syllables BEFORE the tonic ó in ex-sul-ta-ti-ó-ne",
+      "syllablesBetweenMusicalAccents": [
+        "ti"
+      ],
+      "spacingPass": true,
+      "previousKnownNaturalAccent": {
+        "syllable": "De",
+        "index": 3
+      },
+      "distanceAfterPreviousNatural": 5,
+      "compliesWithNpmTwoAfterPreviousNatural": false,
+      "needsStressedCum": false,
+      "originalResearchGabcBodyPreserved": true,
+      "originalMedialGabcExcerpt": "ta(ixi)ti(hr)ó(g hr)ne,",
+      "noNewPitchGroupProposed": true
+    },
+    "narrowBatch39Reconciliation": "Batch39 excluded a direct two-after-previous-natural-accent derivation. It did not test the older separate long-word secondary-accent mechanism, which counts BACKWARD from the tonic accent of exsultatióne. Ward permits that class. The candidate is therefore no longer ruled out solely by its distance from De, but neither Ward nor the OCR Stanbrook source certifies the particular note/underlay application in the 1961 Palm processional.",
+    "nextEvidenceNeeded": "Compare the actual 1961 Palm 1f tone, notated long-word mediants of the SAME usage where available, and qualified musical-editor adjudication of ta(ixi) ti(hr) ó(g hr) plus the first-tone variant; confirm the Stanbrook rule against its printed facsimile.",
+    "preservesHistoricalBatch39": true,
+    "full1961PalmVerseNotationWitnessFound": false,
+    "hasMusicalEditorialSignoff": false,
+    "existing17SettingsStillProvisional": true,
+    "scorePublished": false,
+    "readerRuntimeChanged": false,
+    "permittedAutomaticPromotion": false
+  }
+}

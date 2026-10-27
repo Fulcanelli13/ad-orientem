@@ -1,0 +1,469 @@
+{
+  "schema": "ao-1961-graduale-romanum-palm-psalter-edition-contrast-v1",
+  "date": "2026-10-26",
+  "status": "ORIGINAL_1962_VATICAN_FACSIMILE_CONFIRMS_RESTORED_PALM_PSALMS_GABC46_QUARANTINED",
+  "scope": "Competing Psalm text traditions for Roman restored Palm Sunday distribution; candidate GABC must match accepted Latin version before full notation.",
+  "owners": {
+    "romanSource": "https://github.com/Fulcanelli13/ad-orientem/issues/894",
+    "nativeSchola": "https://github.com/Fulcanelli13/ad-orientem/pull/1749",
+    "research": "https://github.com/Fulcanelli13/ad-orientem/pull/1752"
+  },
+  "printedEdition": {
+    "title": "Graduale Romanum",
+    "edition": "Solesmes 1961",
+    "oldPages": [
+      "167",
+      "168"
+    ],
+    "newPages": [
+      "143**",
+      "144**"
+    ],
+    "indexEvidence": "1961 printed Index Psalmorum separates Textus antiquus Psalmus 23/46 and Textus novus Psalmus 23/46",
+    "footnoteEvidence": "1961 Palm Sunday score footnote directs to the new psalm translation of the Vatican typical restored Holy Week Ordo, pp.143** ff.",
+    "indexWitness": "https://archive.ccwatershed.org/media/pdfs/13/08/14/13-54-23_0.pdf",
+    "oldTextWitness": "https://archive.ccwatershed.org/media/pdfs/13/08/14/13-43-42_0.pdf",
+    "originalScoreImagesVisuallyInspected": true,
+    "originalScoreImages": [
+      {
+        "page": "143**",
+        "url": "https://gregobase.selapa.net/sources/2/1179.png",
+        "verification": "DIRECT_IMAGE_INSPECTED",
+        "heading": "PSALMI USITATI PER HEBDOMADAM SANCTAM SECUNDUM NOVAM INTERPRETATIONEM LATINAM",
+        "component": "Psalmus 23, 1–2 et 7–10",
+        "firstWords": "Domini est terra et quae replent eam",
+        "notationCoverage": "FULLY_NOTATED_FIRST_VERSE_PLUS_CUED_SECOND_VERSE",
+        "fullVersesPrinted": true,
+        "psalmVerseNumbers": [
+          1,
+          2,
+          7,
+          8,
+          9,
+          10
+        ],
+        "doxologyNumbers": [
+          11,
+          12
+        ]
+      },
+      {
+        "page": "144**",
+        "url": "https://gregobase.selapa.net/sources/2/1180.png",
+        "verification": "DIRECT_IMAGE_INSPECTED",
+        "heading": "Psalmi usitati per Hebdomadam Sanctam",
+        "component": "Psalmus 46",
+        "firstWords": "Omnes populi, plaudite manibus",
+        "notationCoverage": "FULLY_NOTATED_FIRST_VERSE_PLUS_CUED_SECOND_VERSE",
+        "fullVersesPrinted": true,
+        "psalmVerseNumbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "doxologyNumbers": [
+          11,
+          12
+        ]
+      }
+    ],
+    "imageReviewConclusions": [
+      "P143** and p144** are ORIGINAL 1961 printed score images, not online OCR or secondary index.",
+      "1961 appendix prints complete prescribed Psalm words but only fully notates initial Psalm tone and abbreviated cue at next verse.",
+      "Textus novus Psalm 46 visibly opens 'Omnes populi' at p144**, not GregoBase #19316 'Omnes gentes'.",
+      "Full source page images still do not prove 19316's individual pitch-by-pitch equivalence or correct word-to-neume alignment.",
+      "Processional delivery and 1962 liturgical permission remain separate from page-image transcription correctness."
+    ],
+    "oldScoreStatus": "ALTERNATIVE_HISTORICAL_PRINTED_TEXT_NOT_SELECTED_AS_1962_PRIMARY_BY_RESEARCH",
+    "newScoreStatus": "1961_NEW_PSALTER_DIRECT_IMAGE_AND_1962_VATICAN_MISSAL_PRIMARY_PRINT_AGREE"
+  },
+  "candidates": [
+    {
+      "psalm": 23,
+      "stage": "PALM-R02",
+      "antiphonScoreId": 1215,
+      "older": {
+        "id": 288,
+        "incipit": "Domini est terra, et plenitudo eius",
+        "edition": "TEXTUS_ANTIQUUS",
+        "page": "167",
+        "url": "https://gregobase.selapa.net/chant.php?id=288",
+        "archived": true,
+        "sha256": "809e3d2c3bd37d8beb1035d4fd36cd5d4d4170abd56bc85583c493bea1f22e9e"
+      },
+      "newer": {
+        "id": 19315,
+        "incipit": "Domini est terra, et quae replent eam",
+        "edition": "TEXTUS_NOVUS",
+        "page": "143**",
+        "url": "https://gregobase.selapa.net/chant.php?id=19315",
+        "archived": true,
+        "sha256": "06537463e71d320e5134ac84a7cb0bc70579169cd3c509883caf9eb98cdc9be2",
+        "transcriber": "Simone Sanavio",
+        "proofread": "GregoBase marks proofread Apr 22 2025",
+        "exactLatin1962": "Dómini est terra et quae replent eam",
+        "status": "INCIPIT_MATCH_1962_OCR_MELODY_NOT_CERTIFIED",
+        "imageWitnessURL": "https://gregobase.selapa.net/sources/2/1179.png",
+        "originalPrintedIncipitVisuallyChecked": true,
+        "archivePath": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+        "archiveStatus": "RAW_BYTES_SHA256_VERIFIED_UNAPPROVED",
+        "hasExtraGabcDelimiter": true,
+        "extraDelimiterEvidence": "Raw source contains consecutive %% lines, to be assessed by notation renderer owner; archive remains byte-exact.",
+        "roman1962PrimaryPageImage": "https://gregobase.selapa.net/sources/42/213.png"
+      },
+      "versePairs": [
+        [
+          1,
+          2
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "repeat": "AFTER_EVERY_TWO_VERSES",
+      "termination": "DOXOLOGY_AND_ANTIPHON"
+    },
+    {
+      "psalm": 46,
+      "stage": "PALM-R02",
+      "antiphonScoreId": 1155,
+      "older": {
+        "id": 435,
+        "incipit": "Omnes gentes, plaudite manibus, iubilate Deo in voce exsultationis",
+        "edition": "TEXTUS_ANTIQUUS",
+        "page": "168",
+        "url": "https://gregobase.selapa.net/chant.php?id=435",
+        "archived": true,
+        "sha256": "1d0c30188c5d7852b55c98af972342dad00c66652b9deabe7f70094d03420872"
+      },
+      "newer": {
+        "id": 19316,
+        "incipit": "Omnes gentes plaudite manibus, exsultate Deo voce laetitiae",
+        "edition": "TEXTUS_NOVUS",
+        "page": "144**",
+        "url": "https://gregobase.selapa.net/chant.php?id=19316",
+        "archived": true,
+        "sha256": "eb13e9eadcfeebca7e5fa0617f6cbb6c9823464ff88af2995952ab21ca8717a0",
+        "transcriber": "Simone Sanavio",
+        "proofread": "No proofread flag on record",
+        "exactLatin1962": "Omnes pópuli, pláudite mánibus",
+        "gabcFirstWords": "Omnes gentes plaudite",
+        "status": "PRINTED_PAGE_CONFIRMS_OMNES_POPULI_GABC_WRONG_UNDERLAY_BLOCKING",
+        "error": "GregoBase #19316 transcribes 'Omnes gentes' as first words while the 1961 Graduale Romanum printed Textus novus index, the 1956 official restored Holy Week text in Schmidt, and the 1962 printed Missal OCR witness read 'Omnes populi'. Source GABC is not faithful to the required first words.",
+        "evidence": [
+          "https://gregobase.selapa.net/download.php?format=gabc&id=19316",
+          "https://www.virgosacrata.com/wp/wp-content/uploads/2024/02/Graduale-Romanum-Index.pdf",
+          "https://dokumen.pub/hebdomada-sancta-fontes-historici-commen.html",
+          "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf"
+        ],
+        "imageWitnessURL": "https://gregobase.selapa.net/sources/2/1180.png",
+        "originalPrintedIncipitVisuallyChecked": true,
+        "archivePath": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+        "archiveStatus": "RAW_BYTES_SHA256_VERIFIED_UNAPPROVED",
+        "hasExtraGabcDelimiter": true,
+        "extraDelimiterEvidence": "Raw source contains consecutive %% lines, to be assessed by notation renderer owner; archive remains byte-exact.",
+        "researchCorrection": {
+          "status": "ISOLATED_RESEARCH_UNDERLAY_CANDIDATE_NOT_FOR_APP",
+          "candidateGabcPath": "data/research/chant-source-review/palm46-omnes-populi-1961-provisional.gabc",
+          "correctionReviewPath": "data/research/processionale-palm46-gabc-underlay-review-20261026.v1.json",
+          "originalSourceId": 19316,
+          "originalSha256": "eb13e9eadcfeebca7e5fa0617f6cbb6c9823464ff88af2995952ab21ca8717a0",
+          "sourcePrint": "Graduale Romanum 1961 p.144**",
+          "changes": "Correct metadata and Omnes populi 5-syllable underlay, remove adjacent duplicate GABC delimiter, add unapproved research commentary; all other neumes and text identical",
+          "exactMatchToOriginalBeyondOpening": "NOT_CERTIFIED",
+          "visualOpeningRecitingTone": true,
+          "publicationAllowed": false,
+          "mustPass": [
+            "Human neume/underlay signoff",
+            "Existing Exsurge rendering test",
+            "Canonical 1962 Latin source approval",
+            "Full psalm verses and pointing",
+            "Explicit #1749 runtime promotion gate"
+          ]
+        },
+        "roman1962PrimaryPageImages": [
+          "https://gregobase.selapa.net/sources/42/213.png",
+          "https://gregobase.selapa.net/sources/42/214.png"
+        ]
+      },
+      "versePairs": "SEQUENTIAL_PAIRS",
+      "repeat": "AFTER_EVERY_TWO_VERSES",
+      "termination": "DOXOLOGY_AND_ANTIPHON"
+    }
+  ],
+  "romanRule": {
+    "status": "PRIMARY_1962_PRINT_VISUALLY_VERIFIED_TEXT_RUBRIC_OWNER_SIGNOFF_PENDING",
+    "evidence": [
+      "1961 printed Graduale distinguishes Vatican restored Holy Week new psalm interpretation from older text",
+      "1956 restored Holy Week choir guide states pair order and flexible duration"
+    ],
+    "doNotPresumeOldTextAllowed": true,
+    "doNotAutoSelectEitherVersion": true,
+    "primary1962Witness": {
+      "source": "https://gregobase.selapa.net/source.php?id=42&images=1&index=8",
+      "originalBook": "Vatican Missale Romanum 1962",
+      "inspectedPageImages": [
+        "https://gregobase.selapa.net/sources/42/213.png",
+        "https://gregobase.selapa.net/sources/42/214.png"
+      ],
+      "printedPages": [
+        131,
+        132
+      ],
+      "inspection": "PRIMARY_PRINTED_1962_VATICAN_MISSAL_DIRECT_IMAGE_COLLATED",
+      "ps23Expected": "Dómini est terra et quae replent eam",
+      "ps46Expected": "Omnes pópuli, pláudite mánibus",
+      "evidenceTier": "PRIMARY_VISUAL_SOURCE",
+      "sourceCollationPath": "data/research/processionale-palm-1962-primary-facsimile-20261026.v1.json",
+      "humanOwnerAccepted": false
+    }
+  },
+  "sourceSafety": {
+    "firstVerseGabcIsNotCompletePsalm": true,
+    "scoreTitleNotAuthority": true,
+    "pitchNeumeCollationComplete": false,
+    "approvedRuntimeAssignments": 0,
+    "criticalHold": "Original 1961 printed Psalm 46 p.144** has 'Omnes populi' while catalogued GABC 19316 begins 'Omnes gentes'. Two-versus-three-syllable underlay may require reassignment of neumes, not an automatic text replace.",
+    "newPsalmGabcArchiveCommit": "d8af7728daf94936266afe31071d0096c05a6a02",
+    "newPsalmGabcArchiveManifest": "data/research/chant-source-archive/1961-graduale-novus-20261026/sha256-manifest.json",
+    "newPsalmSourceCount": 2,
+    "newPsalmTotalBytes": 814,
+    "newPsalmPreservation": "BOTH_RAW_FILES_SHA256_VERIFIED_19316_QUARANTINED_19315_SOURCE_ONLY",
+    "originalSourceByteIntegrityConfirmed": true,
+    "hasExtraGabcDelimiter": true,
+    "scoreGabcSyntaxNotCertified": true,
+    "openingResearchCorrectionExists": true
+  },
+  "acceptance": {
+    "state": "RESEARCH_REQUIREMENTS_ONLY",
+    "existingStage": "PALM-R02",
+    "shortDistribution": "Manually finish using prescribed concluding Gloria Patri and antiphon when distribution completes; never force a timed score",
+    "longDistribution": "Repeat antiphon after appointed verse pairs, adapt to actual duration",
+    "noMovementInference": true,
+    "noFixedSongPlaylist": true,
+    "editorialProgramme": {
+      "sourceAuthority": "Printed 1961 Graduale Romanum restored-Holy-Week appendix pp143**–144**, corroborated by 1962 Roman Missal OCR.",
+      "status": "APPROVED_STRUCTURE_FOR_RESEARCH_NO_RUNTIME_SCORE_AUTHORIZATION",
+      "form": "PALM_SUNDAY_RESTORED_ROMAN_RITE_DISTRIBUTION",
+      "psalms": [
+        {
+          "psalm": 23,
+          "antiphonScoreId": 1215,
+          "preferredLatin": "TEXTUS_NOVUS_1961_APPENDIX",
+          "sourcePage": "143**",
+          "versePairs": [
+            [
+              1,
+              2
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9,
+              10
+            ]
+          ],
+          "doXology": [
+            11,
+            12
+          ],
+          "antiphonAfterEachPair": true,
+          "doXologyThenAntiphon": true,
+          "verseIncipits": [
+            {
+              "verse": 1,
+              "incipit": "Domini est terra et quae replent eam"
+            },
+            {
+              "verse": 2,
+              "incipit": "Nam ipse super maria fundavit eum"
+            },
+            {
+              "verse": 7,
+              "incipit": "Attollite, portae, capita vestra"
+            },
+            {
+              "verse": 8,
+              "incipit": "Quis est iste rex gloriae?"
+            },
+            {
+              "verse": 9,
+              "incipit": "Attollite, portae, capita vestra"
+            },
+            {
+              "verse": 10,
+              "incipit": "Quis est iste rex gloriae?"
+            }
+          ]
+        },
+        {
+          "psalm": 46,
+          "antiphonScoreId": 1155,
+          "preferredLatin": "TEXTUS_NOVUS_1961_APPENDIX",
+          "sourcePage": "144**",
+          "versePairs": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9,
+              10
+            ]
+          ],
+          "doXology": [
+            11,
+            12
+          ],
+          "antiphonAfterEachPair": true,
+          "doXologyThenAntiphon": true,
+          "verseIncipits": [
+            {
+              "verse": 1,
+              "incipit": "Omnes populi, plaudite manibus",
+              "biblicalVerse": 1
+            },
+            {
+              "verse": 2,
+              "incipit": "Quoniam Dominus excelsus, terribilis",
+              "biblicalVerse": 2
+            },
+            {
+              "verse": 3,
+              "incipit": "Subicit populos nobis",
+              "biblicalVerse": 3
+            },
+            {
+              "verse": 4,
+              "incipit": "Eligit nobis hereditatem nostram",
+              "biblicalVerse": 4
+            },
+            {
+              "verse": 5,
+              "incipit": "Ascendit Deus cum exsultatione",
+              "biblicalVerse": 5
+            },
+            {
+              "verse": 6,
+              "incipit": "Psallite Deo, psallite",
+              "biblicalVerse": 6
+            },
+            {
+              "verse": 7,
+              "incipit": "Quoniam rex omnis terrae est Deus",
+              "biblicalVerse": 7
+            },
+            {
+              "verse": 8,
+              "incipit": "Deus regnat super nationes",
+              "biblicalVerse": 8
+            },
+            {
+              "verse": 9,
+              "incipit": "Principes populorum congregati sunt",
+              "biblicalVerse": 9,
+              "biblicalHalf": "A"
+            },
+            {
+              "verse": 10,
+              "incipit": "Nam Dei sunt proceres terrae",
+              "biblicalVerse": 9,
+              "biblicalHalf": "B"
+            }
+          ],
+          "numberingStatus": "TEN_PRINTED_PSALM_CHANT_LINES_FOR_NINE_BIBLICAL_VERSES",
+          "numberingProofPath": "data/research/processionale-palm46-dual-numbering-20261026.v1.json",
+          "numberingSource": "Graduale Romanum 1961 p.144** (printed 1..10 + Gloria 11/Sicut 12); Bea Latin textual Psalm 46 nine full biblical verses",
+          "printedVerseCount": 10,
+          "biblicalVerseCount": 9
+        }
+      ],
+      "endOfDistribution": "OPTIONAL_REPETITION_WHEN_DISTRIBUTION_CONTINUES; WHEN_SHORT_FINISH_DOXOLOGY_AND_FINAL_ANTIPHON_AT_ACTUAL_DISTRIBUTION_COMPLETION",
+      "localChoirSignal": "MANUAL_OBSERVATION_NO_AUTOTIMER",
+      "requirements": [
+        "Source-owned complete Latin full verses with correct pointing",
+        "Approved reciting tone against 1961 score",
+        "Second score must have Omnes populi syllable alignment, not Omnes gentes",
+        "Antiphons as repeatable 1962-prescribed chant events in existing PALM-R02",
+        "No user icon or posture advance from Schola progress"
+      ],
+      "presentationRule": "Psalm 46 chant-line numbers 9 and 10 are halves of biblical verse 9. Show printed liturgical line numbers in Schola; cross-link both to scriptural verse 9. Do not invent a biblical verse 10.",
+      "psalm46DualNumberingPath": "data/research/processionale-palm46-dual-numbering-20261026.v1.json",
+      "roman1962PrimaryFacsimile": "data/research/processionale-palm-1962-primary-facsimile-20261026.v1.json",
+      "reconciledPsalm46IncipitCheck": "data/research/processionale-palm-1962-incipit-reconciliation-20261026.v1.json",
+      "textualRepairs": [
+        {
+          "printedLine": 3,
+          "before": "Subicit nobis nationes",
+          "after": "Subicit populos nobis",
+          "changedFile": "processionale-palm-1962-primary-facsimile-20261026.v1.json"
+        },
+        {
+          "printedLine": 4,
+          "before": "Elegit nobis hereditatem nostram",
+          "after": "Eligit nobis hereditatem nostram",
+          "changedFile": "processionale-roman-palm-psalter-editions-20261026.v1.json"
+        }
+      ],
+      "reconciliationStatus": "TEN_OF_TEN_PSALM46_INCIPITS_SOURCE_ALIGNED_WITH_PALM1962_AND_BEA"
+    }
+  },
+  "gates": [
+    {
+      "id": "PSALTER_LATIN_VERSION_1962",
+      "status": "PRIMARY_1962_IMAGE_VERIFIED_ISSUE_894_OWNER_ACCEPTANCE_PENDING",
+      "owner": "#894"
+    },
+    {
+      "id": "NOVUS_GABC_RAW_HASH_ARCHIVE",
+      "status": "COMPLETE_TWO_RAW_FILES_QUARANTINED_19316",
+      "owner": "#1752"
+    },
+    {
+      "id": "FULL_PSALM_TEXT_AND_POINTING",
+      "status": "OPEN",
+      "owner": "#894"
+    },
+    {
+      "id": "NEW_PSALTER_NEUME_COMPARISON",
+      "status": "OPEN",
+      "owner": "#1749"
+    },
+    {
+      "id": "MANUAL_SCROLL_PHONE_ACCEPTANCE",
+      "status": "OPEN",
+      "owner": "#1749"
+    },
+    {
+      "id": "GREGOBASE_19316_OMNES_POPULI_CORRECTION",
+      "status": "OPEN_BLOCKING_VISUAL_SOURCE_CONFIRMED",
+      "owner": "#1749/#894"
+    }
+  ]
+}
