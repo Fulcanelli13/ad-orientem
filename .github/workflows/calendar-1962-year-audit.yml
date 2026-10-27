@@ -13,6 +13,12 @@ on:
       - "data/calendar/1962-year-independent-checks-*.json"
       - "tests/calendar-1962-full-year-audit.mjs"
       - "src/calendar/ordo-1962-preface-review.js"
+      - "src/mass/1962-marian-preface-source.js"
+      - "src/mass/1962-preface-decision.js"
+      - "src/mass/reader-proper-runtime-recovery.js"
+      - "src/mass/proper-reader-slots.js"
+      - "src/mass/host-adapter.js"
+      - "tests/mass-1962-marian-preface-source.mjs"
       - "tests/calendar-ordo-1962-preface-review.mjs"
       - ".github/workflows/calendar-1962-year-audit.yml"
   workflow_dispatch:
@@ -33,6 +39,8 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npm run test:calendar
       - run: npx playwright install --with-deps chromium
+      - name: Guard exact 1962 Marian Preface forms and conflicting Lourdes book source
+        run: node tests/mass-1962-marian-preface-source.mjs
       - name: Strict source-bound 1962 Preface category review
         run: node tests/calendar-ordo-1962-preface-review.mjs
       - name: Exhaustive 2026 production resolver sweep and independent checkpoints
