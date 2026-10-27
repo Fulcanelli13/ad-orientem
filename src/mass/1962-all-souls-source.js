@@ -18,8 +18,9 @@ export function is1962AllSoulsCalendarMass(resolvedMass,proper=null){
  // a contradictory explicit source must never pass on a fallback.
  const path=String(p.sourcePath??proper?.sourcePath??
    (proper==null?r.properSource:null)??"");
- return /^\d{4}-11-02$/.test(date)&&id==="sancti:11-02m1:1:b"&&
-   path==="Sancti/11-02m1"&&
+ const indexed=/^sancti:11-02m([123]):1:b$/.exec(id);
+ return /^\d{4}-11-02$/.test(date)&&Boolean(indexed)&&
+   path===("Sancti/11-02m"+indexed?.[1])&&
    [null,"","mass_of_day"].includes(r.requestedCelebrationId??null)&&
    [null,"","mass_of_day"].includes(r.celebrationId??null)&&
    ["CALENDAR","MASS_OF_DAY",""].includes(String(r.celebrationType??"").toUpperCase());

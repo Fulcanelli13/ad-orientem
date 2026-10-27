@@ -1,4 +1,10 @@
 // 1962 Preface decision gate. No translation, text substitution or DOM ownership.
+import {required1962MarianPrefaceOwner,isSelected1962MarianPrefaceForm}
+  from "./1962-marian-preface-source.js";
+import {required1962SeasonalSanctoralPrefaceOwner,matches1962SeasonalSanctoralSelection,required1962May11ApostlesPrefaceOwner,matches1962May11ApostlesSelection}
+  from "./1962-seasonal-sanctoral-preface-source.js";
+import {required1962ResidualPrefaceOwner,matches1962ResidualSelected}
+  from "./1962-residual-preface-source.js";
 // When source metadata is incomplete, return UNRESOLVED rather than Common.
 // The actual calendar/proper source owner must supply an authenticated identity.
 const OWNERS=Object.freeze({
@@ -10,8 +16,12 @@ const OWNERS=Object.freeze({
 const HEADINGS=Object.freeze({
   SPIRITU:/^(?:de\s+spiritu\s+sancto|de\s+sancto\s+spiritu)/i,
   QUADRAGESIMA:/^de\s+quadragesima/i,
+  ASCENSIO:/^de\s+ascensione\s+domini/i,
+  APOSTOLI:/^de\s+apostolis/i,
   MARIA:/^(?:de\s+beata\s+maria\s+virgine|de\s+b\.?\s*m\.?\s*v\.?)/i,
   NATIVITATE:/^de\s+nativitate\s+domini/i,
+  EPIPHANIA:/^de\s+epiphania\s+domini/i,
+  JOSEPH:/^de\s+(?:s\.?|sancto)\s+(?:joseph|ioseph)/i,
   TRINITATE:/^de\s+sanctissima\s+trinitate/i,
   COMMUNIS:/^communis/i,
   PASCHALIS:/^paschalis/i
@@ -45,11 +55,57 @@ function matches1962PaschalPrefaceVariant(preface,variant){
 }
 const heading=text=>Object.entries(HEADINGS).find(([,regex])=>regex.test(text))?.[0]??null;
 const ownerKey=id=>String(id??"").toLowerCase().replace(/:[^:]+:[^:]+$/,"");
-export function inspect1962PrefaceSelection({principalCelebrationId,selectedPreface,requestedCelebrationId=null}={}){
+export function inspect1962PrefaceSelection({principalCelebrationId,selectedPreface,
+  requestedCelebrationId=null,sourcePath=null,calendarDate=null}={}){
   if(requestedCelebrationId&&requestedCelebrationId!=="mass_of_day")
     return Object.freeze({status:"NEEDS_SELECTED_FORMULARY",requiredId:null,actualId:heading(slotText(selectedPreface)),
       reason:"An explicit votive or special Mass cannot inherit the day's principal Preface blindly."});
   const key=ownerKey(principalCelebrationId);
+  const marian=required1962MarianPrefaceOwner(principalCelebrationId,sourcePath);
+  if(marian){
+    const actualId=heading(slotText(selectedPreface));
+    const valid=!marian.blocked&&actualId==="MARIA"&&
+      isSelected1962MarianPrefaceForm(selectedPreface,marian);
+    return Object.freeze({status:valid?"MATCH":marian.blocked?"MISSING_PREFACE":
+      actualId?"CONTRADICTION":"MISSING_PREFACE",
+      requiredId:"MARIA",actualId,requiredForm:marian.form??null,
+      sourceScope:marian.scope,
+      reason:valid?null:marian.blocked??
+        "The exact 1962 Marian Preface requires its verified feast/Saturday form, not inherited Common."});
+  }
+  const may11=required1962May11ApostlesPrefaceOwner(
+    principalCelebrationId,sourcePath,calendarDate);
+  if(may11){
+    const actualId=heading(slotText(selectedPreface));
+    const valid=matches1962May11ApostlesSelection(selectedPreface,may11);
+    return Object.freeze({status:valid?"MATCH":actualId?"CONTRADICTION":"MISSING_PREFACE",
+      requiredId:"APOSTOLI",actualId,sourceScope:may11.scope,
+      reason:valid?null:"Saints Philip and James require the authenticated Apostles Preface (1962 §497)."});
+  }
+  const seasonalSaint=required1962SeasonalSanctoralPrefaceOwner(
+    principalCelebrationId,sourcePath,calendarDate);
+  if(seasonalSaint){
+    const actualId=heading(slotText(selectedPreface));
+    const valid=actualId===seasonalSaint.category&&
+      matches1962SeasonalSanctoralSelection(selectedPreface,seasonalSaint);
+    return Object.freeze({status:valid?"MATCH":actualId?"CONTRADICTION":"MISSING_PREFACE",
+      requiredId:seasonalSaint.category,actualId,
+      requiredVariant:seasonalSaint.variant,scope:seasonalSaint.scope,
+      reason:valid?null:"Seasonal saint's Mass must have the exact authenticated "+
+        "1962 trilingual Easter/Ascension Preface for its selected Mass date."});
+  }
+  const residual=required1962ResidualPrefaceOwner(
+    principalCelebrationId,sourcePath,calendarDate);
+  if(residual){
+    const actualId=heading(slotText(selectedPreface));
+    const valid=actualId===residual.category&&
+      matches1962ResidualSelected(selectedPreface,residual);
+    return Object.freeze({status:valid?"MATCH":actualId?"CONTRADICTION":"MISSING_PREFACE",
+      requiredId:residual.category,actualId,
+      requiredVariant:residual.variant,scope:residual.scope,
+      reason:valid?null:"The exact 2026 principal Mass requires its authenticated "+
+        "1962 named or seasonal Preface in all three source languages."});
+  }
   // Required Prefaces for the source-owned Lenten Temporale and for the
   // Pentecost Vigil/octave: 1960 Missal §§486(a), 493(a). An inherited
   // Common Preface must be blocked if source recovery cannot retrieve the

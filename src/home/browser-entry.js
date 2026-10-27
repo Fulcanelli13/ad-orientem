@@ -292,6 +292,39 @@ export function createHomeOwner(win=globalThis){
       void navigateHomeShortcut("mass",{trigger:massEntry,routeId:"mass.current"});
       return;
     }
+    // The modular Today Home retains the canonical 1962 Calendar's Mass
+    // I/II/III chooser. Unlike the legacy Home, it has a separate DOM root:
+    // delegate the visible button to the *existing* host resolver rather
+    // than building another Mass catalogue or guessing a donor from labels.
+    const formulary=target?.closest?.(".homeScreen.aoTodayV2 [data-formulary]");
+    if(formulary){
+      event.preventDefault?.();
+      event.stopImmediatePropagation?.();
+      const rt=runtime(win),current=state(win);
+      const date=current?.selectedDate,index=Number(formulary.dataset.formulary);
+      const options=current?.resolution?.day?.massOptions??[];
+      const selected=options.find(x=>x.index===index);
+      const existing=rt?.resolver?.formularies;
+      const resolve=rt?.controller?.home?.resolve;
+      if(current?.route!=="home"||current?.resolving||
+         current?.resolution?.status!=="ready"||current.resolution.date!==date||
+         !Number.isInteger(index)||!selected?.path||
+         typeof existing?.set!=="function"||typeof resolve!=="function"){
+        showRouteError("calendar.formulary",formulary);
+        return;
+      }
+      existing.set(date,index);
+      void Promise.resolve(rt.controller.home.resolve(date)).then(()=>{
+        const latest=state(win);
+        if(latest?.selectedDate!==date||latest?.resolution?.date!==date||
+           latest?.resolution?.day?.selectedMassOption?.path!==selected.path)
+          showRouteError("calendar.formulary",formulary);
+      }).catch(error=>{
+        try{win?.console?.error?.("1962 source formulary selection failed",error)}catch{}
+        showRouteError("calendar.formulary",formulary);
+      });
+      return;
+    }
     const restoreToday=target?.closest?.("[data-home-restore-today]");
     if(restoreToday){
       event.preventDefault?.();event.stopImmediatePropagation?.();

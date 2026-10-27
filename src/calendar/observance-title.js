@@ -34,6 +34,18 @@ const NAMES = Object.freeze({
     fr: "Samedi après le deuxième dimanche de l’Avent",
   }),
 });
+// Original 1962 French Sanctoral Officium labels, pinned to the exact
+// selected Roman Proper ID and donor. The host's "nameFr" is English for
+// these dates. Keep this Calendar-only: never change a Mass's source, form,
+// rank, text, commemoration or local/particular feast permission.
+// Source: DivinumOfficium missa/Francais/Sancti at ad8783641455bae3...
+const FRENCH_PRINCIPAL_SOURCE_TITLES=Object.freeze({
+  "sancti:10-du:1:w":Object.freeze({path:"sancti/10-du",title:"Fête de Notre-Seigneur Jésus-Christ Roi"}),
+  "sancti:10-28:2:r":Object.freeze({path:"sancti/10-28",title:"Saints Simon et Jude, apôtres"}),
+  "sancti:11-01:1:w":Object.freeze({path:"sancti/11-01",title:"Tous les Saints"}),
+  "sancti:11-02m1:1:b":Object.freeze({path:"sancti/11-02m1",title:"Commémoraison de tous les fidèles défunts"}),
+  "sancti:11-04:3:w":Object.freeze({path:"sancti/11-04",title:"Saint Charles Borromée, évêque et confesseur"}),
+});
 // The actual Saturday BVM *celebration* remains different from the appointed
 // seasonal Common Mass formulary. Keep that variant intact in Mass/Proper.
 const BVM_SATURDAY_COMMONS = new Set([
@@ -123,6 +135,12 @@ export function calendarObservanceAlias(resolution, language = "en") {
   const lang = language === "fr" ? "fr" : "en";
   const feria=sourceFeriaTitle(resolution,lang);
   if(feria)return feria;
+  if(lang==="fr"){
+    const attested=FRENCH_PRINCIPAL_SOURCE_TITLES[id.toLowerCase()];
+    const donor=String(resolution?.proper?.data?.sourcePath??"").toLowerCase();
+    if(attested&&resolution?.proper?.status==="ready"&&donor===attested.path)
+      return attested.title;
+  }
   // Strict source-identity test: no accidental matching of e.g. 12-020 or
   // a Proper path with different semantics; no translated-title heuristics.
   const key = id.split(":").slice(0, 2).join(":");
