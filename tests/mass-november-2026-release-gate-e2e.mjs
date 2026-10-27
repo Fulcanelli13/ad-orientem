@@ -2,7 +2,7 @@
 // Use the existing production resolver / native R17 Proper mapper. This test
 // deliberately fails when the three distinct All Souls Masses are not actually
 // selectable and source-complete; historical metadata is not a release proof.
-// Authorities: Missal 1960 rubrics §§402–404 and Ritus servandus XIII.
+// Authorities: Missal 1960 rubrics §§399, 402–404 and Ritus servandus XIII–XIV.
 // https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html
 import assert from "node:assert/strict";
 import http from "node:http";
