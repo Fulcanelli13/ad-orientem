@@ -1,7 +1,7 @@
 // 1962 Preface decision gate. No translation, text substitution or DOM ownership.
 import {required1962MarianPrefaceOwner,isSelected1962MarianPrefaceForm}
   from "./1962-marian-preface-source.js";
-import {required1962SeasonalSanctoralPrefaceOwner,matches1962SeasonalSanctoralSelection}
+import {required1962SeasonalSanctoralPrefaceOwner,matches1962SeasonalSanctoralSelection,required1962May11ApostlesPrefaceOwner,matches1962May11ApostlesSelection}
   from "./1962-seasonal-sanctoral-preface-source.js";
 // When source metadata is incomplete, return UNRESOLVED rather than Common.
 // The actual calendar/proper source owner must supply an authenticated identity.
@@ -66,6 +66,15 @@ export function inspect1962PrefaceSelection({principalCelebrationId,selectedPref
       sourceScope:marian.scope,
       reason:valid?null:marian.blocked??
         "The exact 1962 Marian Preface requires its verified feast/Saturday form, not inherited Common."});
+  }
+  const may11=required1962May11ApostlesPrefaceOwner(
+    principalCelebrationId,sourcePath,calendarDate);
+  if(may11){
+    const actualId=heading(slotText(selectedPreface));
+    const valid=matches1962May11ApostlesSelection(selectedPreface,may11);
+    return Object.freeze({status:valid?"MATCH":actualId?"CONTRADICTION":"MISSING_PREFACE",
+      requiredId:"APOSTOLI",actualId,sourceScope:may11.scope,
+      reason:valid?null:"Saints Philip and James require the authenticated Apostles Preface (1962 §497)."});
   }
   const seasonalSaint=required1962SeasonalSanctoralPrefaceOwner(
     principalCelebrationId,sourcePath,calendarDate);
