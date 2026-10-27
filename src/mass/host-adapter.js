@@ -170,10 +170,10 @@ export function adaptV346ResolvedMass(legacy, options={}) {
     ?(actualCalendar.date===legacy.date&&actualCalendar.status==="ready"
       ?actualCalendar.day?.main?.id:null)
     :legacy.calendarDay?.id;
+  const allSoulsMass=/^sancti:11-02m([123]):1:b$/.exec(String(selectedCalendarId??""));
   const calendarAllSouls=type==="CALENDAR"&&
     resultId==="mass_of_day"&&requestedId==="mass_of_day"&&
-    selectedCalendarId==="sancti:11-02m1:1:b"&&
-    selectedSource==="Sancti/11-02m1";
+    Boolean(allSoulsMass)&&selectedSource===("Sancti/11-02m"+allSoulsMass?.[1]);
   if(calendarAllSouls&&!overlays.includes("REQUIEM"))overlays.push("REQUIEM");
   const precedingRites=[...new Set([
     ...(options.precedingRites??[]),
