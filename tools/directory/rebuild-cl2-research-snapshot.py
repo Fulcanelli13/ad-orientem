@@ -322,6 +322,62 @@ CREATE TABLE unified_directory_country_census (
 
 
 
+
+def install_bulk_identity_review_cohorts(db):
+    """Make the existing unadmitted leads reviewable in large fixed cohorts.
+
+    This is a worklist backed by the SAME CL2 physical+source master. It is not
+    a second venue database or a claim of new worship buildings.
+    """
+    db.executescript("""
+CREATE TABLE unified_identity_review_cohort (
+ candidate_research_id TEXT PRIMARY KEY,
+ cohort_no INTEGER NOT NULL CHECK(cohort_no BETWEEN 1 AND 8),
+ source_grade TEXT NOT NULL CHECK(source_grade IN
+  ('PRIOR_RESEARCH_G0','PROVIDER_REPORTED_WORSHIP','THIRD_PARTY_WITH_OWNER_LINK',
+   'THIRD_PARTY_PREVIOUS_NAME_REVIEW','THIRD_PARTY_UNMATCHED')),
+ country TEXT NOT NULL,
+ editorial_state TEXT NOT NULL CHECK(editorial_state='UNRESOLVED_CANDIDATE_IDENTITY'),
+ admitted_to_physical_site INTEGER NOT NULL CHECK(admitted_to_physical_site=0),
+ FOREIGN KEY(candidate_research_id) REFERENCES unified_site_candidate(candidate_research_id)
+);
+CREATE INDEX identity_cohort_round ON unified_identity_review_cohort(cohort_no);
+""")
+    prior={x[0]:x[1:] for x in db.execute(
+        'SELECT source_id,previous_similarity_disposition,original_source_url_count FROM unified_third_party_source_lead')}
+    rows=[]
+    for r in db.execute('SELECT candidate_research_id,source_batch,country FROM unified_site_candidate'):
+        sid,batch,cc=r
+        if batch in ('B84','B85','B86','B87','B88','B89','B90'):
+            grade='PRIOR_RESEARCH_G0'
+        elif batch.startswith('PROVIDER_'):
+            grade='PROVIDER_REPORTED_WORSHIP'
+        elif batch=='THIRD_PARTY_LMD':
+            status,nlinks=prior[sid]
+            if nlinks>0:grade='THIRD_PARTY_WITH_OWNER_LINK'
+            elif status!='UNMATCHED_RESEARCH_LEAD':grade='THIRD_PARTY_PREVIOUS_NAME_REVIEW'
+            else:grade='THIRD_PARTY_UNMATCHED'
+        else:raise AssertionError('Undocumented CL2 lead source: '+batch)
+        rows.append((sid,cc,grade))
+    priorities={'PRIOR_RESEARCH_G0':0,'PROVIDER_REPORTED_WORSHIP':1,
+                'THIRD_PARTY_WITH_OWNER_LINK':2,
+                'THIRD_PARTY_PREVIOUS_NAME_REVIEW':3,
+                'THIRD_PARTY_UNMATCHED':4}
+    rows.sort(key=lambda x:(priorities[x[2]],x[1],x[0]))
+    assert len(rows)==1497
+    for n,(sid,country,grade) in enumerate(rows):
+        db.execute('INSERT INTO unified_identity_review_cohort VALUES (?,?,?,?,"UNRESOLVED_CANDIDATE_IDENTITY",0)',
+                   (sid,n//200+1,grade,country))
+    assert db.execute('SELECT COUNT(*) FROM unified_identity_review_cohort').fetchone()[0]==1497
+    size=[r[0] for r in db.execute('SELECT COUNT(*) FROM unified_identity_review_cohort GROUP BY cohort_no ORDER BY cohort_no')]
+    assert size==[200,200,200,200,200,200,200,97],size
+    assert db.execute('SELECT COUNT(*) FROM unified_identity_review_cohort WHERE admitted_to_physical_site!=0').fetchone()[0]==0
+    return {'identity_review_cohorts':8,'cohort_sizes':size,
+            'candidate_source_records_not_independent_sites':1497,
+            'physical_site_additions':0}
+
+
+
 def install_unified_physical_ministry_and_group_defaults(db, rows, manifest, root):
     """Extend the SAME source-of-truth SQLite: physical sites → source ministries → Mass rows.
     
@@ -596,12 +652,13 @@ CREATE VIEW venue_with_classification AS SELECT v.source_id,v.recorded_group_id,
     candidate_stats=install_existing_g0_candidates_into_single_master(db)
     provider_stats=install_known_provider_feed_census(db)
     worldwide_stats=install_third_party_worldwide_source_leads(db)
+    cohort_stats=install_bulk_identity_review_cohorts(db)
     db.commit()
     assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
     for table,expected in [('canonical_site',2584),('venue_source',2687),('classification_source',2715),('mass_time',4681),('existing_alias',5),('identity_exception',49)]:
         assert db.execute('SELECT COUNT(*) FROM '+table).fetchone()[0]==expected
     assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
     db.close()
-    print(json.dumps({'status':'PASS','output':str(output),'bytes':output.stat().st_size,'source_parts':sum(len(v) for v in manifest['shards'].values()),'source_rows':2687,'classification_rows':2715,'alias_count':5,'held_group_conflicts':5,'public_changes':0,'unified_master':unified_stats,'unresolved_venue_candidate_intake':candidate_stats,'provider_source_coverage':provider_stats,'third_party_source_census':worldwide_stats}))
+    print(json.dumps({'status':'PASS','output':str(output),'bytes':output.stat().st_size,'source_parts':sum(len(v) for v in manifest['shards'].values()),'source_rows':2687,'classification_rows':2715,'alias_count':5,'held_group_conflicts':5,'public_changes':0,'unified_master':unified_stats,'unresolved_venue_candidate_intake':candidate_stats,'provider_source_coverage':provider_stats,'third_party_source_census':worldwide_stats,'census_identity_review_cohorts':cohort_stats}))
 
 if __name__=='__main__': main()
