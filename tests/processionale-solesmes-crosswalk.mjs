@@ -2129,7 +2129,7 @@ test('Batch44 Palm1961 gr is archived white-note evidence but not authenticated 
  assert.equal(b.batch,44);
  assert.equal(b.originalPrintedSources.length,2);
  for(const s of b.originalPrintedSources){
-   const original=readFileSync(s.archive,'utf8');
+   const original=readFileSync(new URL('../'+s.archive, import.meta.url),'utf8');
    assert.ok(original.includes(s.verifiedSourceGabcSnippet));
    assert.equal(original.includes('book:Graduale Romanum, 1961, p. '+s.printedPage),true);
  }
