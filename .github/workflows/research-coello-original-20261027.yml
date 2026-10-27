@@ -1,0 +1,59 @@
+name: Coello exact-source research acquisition (research branch only)
+# Source photo candidate is public-domain on Commons, but no visual/pass is automatic.
+on:
+  push:
+    branches: [research/module-hero-pd-masters-20261026]
+    paths:
+      - '.github/workflows/research-coello-original-20261027.yml'
+      - 'scripts/art/acquire-coello-pristine-research.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: coello-original-research-20261027
+  cancel-in-progress: false
+jobs:
+  fetch-immutable-original:
+    if: github.ref == 'refs/heads/research/module-hero-pd-masters-20261026'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/module-hero-pd-masters-20261026
+          fetch-depth: 1
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Fetch Commons image with pinned SHA1 and pixel dimensions
+        run: python scripts/art/acquire-coello-pristine-research.py --source commons
+      - name: Assert research only and archive exact unmodified image
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "${GITHUB_REF}" = 'refs/heads/research/module-hero-pd-masters-20261026'
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('assets/staged/module-hero-coello-20261027')
+          manifest=json.loads((root/'acquisition-manifest.json').read_text())
+          assert manifest['app_release_approved'] is False
+          assert manifest['pristine_quality_approved'] is False
+          assert manifest['publication_rights_approved'] is False
+          row=manifest['original_files'][0]
+          raw=pathlib.Path(row['path']).read_bytes()
+          assert len(raw)==6058605 and hashlib.sha1(raw).hexdigest()=='dcbbf752ed5c4089efa877f67c83b48033cdf180'
+          assert row['dimensions']==[2215,3926]
+          print('Pinned Coello study bytes verified; NO photo quality/publication clearance')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f assets/staged/module-hero-coello-20261027/coello-commons-bookscan-original.jpg
+          git add -f assets/staged/module-hero-coello-20261027/acquisition-manifest.json
+          if git diff --cached --quiet; then
+            echo 'Original research bytes already archived; no new commit'
+          else
+            git commit -m 'research(art): archive pinned Commons Coello source as unapproved photo'
+            git push origin HEAD:research/module-hero-pd-masters-20261026
+          fi
