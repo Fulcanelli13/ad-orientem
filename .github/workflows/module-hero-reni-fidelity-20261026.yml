@@ -1,35 +1,33 @@
-name: Guido Reni source-photo comparison
+name: Guido Reni preserved source photographs (read-only)
+# The permanent, original-byte archive already exists on the research branch.
+# This default-branch job is read-only and never creates new image assets.
 on:
-  push:
-    branches: [main]
-    paths: [.github/workflows/module-hero-reni-fidelity-20261026.yml]
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 jobs:
-  compare-original:
+  verify-existing-source-archive:
     runs-on: ubuntu-latest
-    timeout-minutes: 17
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - name: Read the permanently preserved, unapproved research originals
+        uses: actions/checkout@v4
+        with:
+          ref: research/reni-faithful-photographic-comparison-20261026
+          path: art-research
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
-      - name: Download exact original Rome painting photos with checksums
-        run: python3 scripts/art/acquire-reni-alternate-originals.py
-      - name: Make true-source painting-quality preview tiles
-        env:
-          AO_HERO_PREVIEW_INPUT: assets/staged/reni-alt-source
-        run: python3 scripts/art/make-module-hero-review-previews.py
-      - name: Preserve images and provenance permanently on a separate branch
+      - name: Verify archived bytes, source SHA-256, and unapproved preview evidence
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -c research/reni-faithful-photographic-comparison-20261026
-          git add -f data/research/reni-painting-fidelity-20261026.json
-          if [ -d assets/staged/reni-alt-source ]; then git add -f assets/staged/reni-alt-source; fi
-          if [ -d assets/staged/module-hero-preview-jpegs ]; then git add -f assets/staged/module-hero-preview-jpegs; fi
-          git commit -m "research(art): archival Reni original photos and fidelity comparisons, no app changes"
-          git push --set-upstream origin research/reni-faithful-photographic-comparison-20261026
-      - run: echo "Research only, CC-by/sharealike obligations not yet cleared for app publication."
+          python scripts/art/verify-research-archive-readonly.py \
+            --archive-root art-research \
+            --source-prefix assets/staged/reni-alt-source \
+            --min-originals 2 \
+            --report data/research/reni-painting-fidelity-20261026.json \
+            --check-previews
+      - name: Publication remains prohibited
+        run: echo "Research-only originals; no aesthetic, licence, crop or app release approvals."
