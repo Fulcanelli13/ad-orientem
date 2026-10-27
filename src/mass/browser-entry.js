@@ -822,6 +822,7 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
       const proper=await recoverReaderProperOmissions(observed?.proper??options.proper,{
         hostResolver:runtime()?.resolver?.properResolver,
         principalCelebrationId:ordinaryMassPrefaceOwner(resolvedMass,{observed:Boolean(observed)}),
+        calendarDate:resolvedMass.date,
       });
       const rogationSelection=rogationPreflight?.selectionFor?.(resolvedMass)??null;
       const chosen=fullMassPreflight?.selectionFor?.(resolvedMass)??null;
