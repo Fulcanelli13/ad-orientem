@@ -1,0 +1,419 @@
+{
+  "schema": "ad-orientem.daily-prayer-french-witness-register.v1",
+  "batch": "B06",
+  "date": "2026-10-27",
+  "scope": "Initial original French witnesses only, separate from English 146-occurrence denominator",
+  "summary": {
+    "historical_digitized_text_witnesses": 2,
+    "bibliographic_only_witnesses": 1,
+    "preliminary_french_latin_occurrences": 21,
+    "fully_certified_complete_prayer_forms": 0,
+    "visually_inspected_pdf_pages": 2,
+    "modern_web_reprint_rejected_as_original_source": 1
+  },
+  "sources": {
+    "FRENCH1905": {
+      "work": "Catéchisme du saint concile de Trente (1905 edition), appended Exercices de la vie chrétienne",
+      "language": "fr",
+      "edition": "1905 printed witness",
+      "source_type": "historical_edition_transcription_uncorrected_except_37",
+      "morning_pages": [
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "evening_pages": [
+        42,
+        43,
+        44
+      ],
+      "source_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/37",
+      "warning": "Several Wikisource pages explicitly uncorrected and contain malformed OCR; inspect page image before certifying text. Catechism title is a container, not an attribution of daily prayers to Trent."
+    },
+    "FRMICRO_UNDATED": {
+      "work": "Prières du matin et du soir, CIHM/ICMH microform 49569",
+      "language": "fr+la",
+      "edition": "Printed date/author not established in reviewed scan; do not label as 1888",
+      "source_type": "photographic_microform_scan_partly_visual_checked",
+      "pdf_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Pri%C3%A8res_du_matin_et_du_soir_%28microforme%29_%28IA_cihm_49569%29.pdf",
+      "scanned_pages_visual_checked": [
+        5,
+        14
+      ],
+      "warning": "Opening prayer photographic microform is legible only in part at inspected pages; year, imprint, author and edition remain unverified, not certified preconciliar."
+    },
+    "MAME1884": {
+      "work": "Petit paroissien perle, containing Morning and Evening Prayers",
+      "language": "fr+la",
+      "edition": "Tours, A. Mame et fils, 1884",
+      "source_type": "bibliographic_catalogue_only",
+      "catalogue_url": "https://catalogue.bnf.fr/ark:/12148/cb45002504d",
+      "warning": "BnF catalogue confirms the 1884 book and advertised contents, but no public page transcription for Morning/Evening has been verified; zero prayer body candidates should be imported from metadata."
+    }
+  },
+  "records": [
+    {
+      "id": "AO.DAILY.B06.001",
+      "source": "FRENCH1905",
+      "period": "morning",
+      "stage": "presence",
+      "title": "Adoration de la Trinité",
+      "incipit": "Très sainte et très auguste Trinité",
+      "language": "fr",
+      "page_image_index": 37,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/37",
+      "verification": "PRINTED_PAGE_TRANSCRIPTION_CORRECTED",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.002",
+      "source": "FRENCH1905",
+      "period": "morning",
+      "stage": "virtues",
+      "title": "Acte de foi",
+      "incipit": "Mon Dieu, je crois fermement toutes les vérités",
+      "language": "fr",
+      "page_image_index": 38,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/38",
+      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.003",
+      "source": "FRENCH1905",
+      "period": "morning",
+      "stage": "virtues",
+      "title": "Acte d'espérance",
+      "incipit": "Mon Dieu, j'espère avec une ferme confiance",
+      "language": "fr",
+      "page_image_index": 38,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/38",
+      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.004",
+      "source": "FRENCH1905",
+      "period": "morning",
+      "stage": "virtues",
+      "title": "Acte de charité",
+      "incipit": "Mon Dieu, je Vous aime de tout mon cœur",
+      "language": "fr",
+      "page_image_index": 38,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/38",
+      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.005",
+      "source": "FRENCH1905",
+      "period": "morning",
+      "stage": "offering",
+      "title": "Remerciement et offrande de la journée",
+      "incipit": "Mon Dieu, je Vous remercie très humblement",
+      "language": "fr",
+      "page_image_index": 38,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/38",
+      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.006",
+      "source": "FRENCH1905",
+      "period": "morning",
+      "stage": "resolution",
+      "title": "Résolution d'éviter le péché",
+      "incipit": "Adorable Jésus, divin Modèle de la perfection",
+      "language": "fr",
+      "page_image_index": 38,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/38",
+      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.007",
+      "source": "FRENCH1905",
+      "period": "morning",
+      "stage": "supplication",
+      "title": "Demande des grâces nécessaires",
+      "incipit": "Mon Dieu, Vous connaissez ma faiblesse",
+      "language": "fr",
+      "page_image_index": 39,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/39",
+      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.008",
+      "source": "FRENCH1905",
+      "period": "morning",
+      "stage": "marian",
+      "title": "Invocation de la Sainte Vierge",
+      "incipit": "Sainte Vierge, Mère de Dieu, ma Mère",
+      "language": "fr",
+      "page_image_index": 41,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/41",
+      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.009",
+      "source": "FRENCH1905",
+      "period": "morning",
+      "stage": "guardian",
+      "title": "Prière au bon Ange Gardien",
+      "incipit": "Ange du ciel, mon fidèle et charitable guide",
+      "language": "fr",
+      "page_image_index": 41,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/41",
+      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.010",
+      "source": "FRENCH1905",
+      "period": "evening",
+      "stage": "presence",
+      "title": "Adoration du soir",
+      "incipit": "Je Vous adore, ô mon Dieu, avec la soumission",
+      "language": "fr",
+      "page_image_index": 42,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/42",
+      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.011",
+      "source": "FRENCH1905",
+      "period": "evening",
+      "stage": "thanksgiving",
+      "title": "Remerciement du soir",
+      "incipit": "Quelles actions de grâces Vous rendrai-je",
+      "language": "fr",
+      "page_image_index": 42,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/42",
+      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.012",
+      "source": "FRENCH1905",
+      "period": "evening",
+      "stage": "examination",
+      "title": "Demande de lumière pour l'examen",
+      "incipit": "Source éternelle de lumière, Esprit-Saint",
+      "language": "fr",
+      "page_image_index": 43,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/43",
+      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.013",
+      "source": "FRENCH1905",
+      "period": "evening",
+      "stage": "contrition",
+      "title": "Douleur des péchés et bon propos",
+      "incipit": "Me voici, Seigneur, tout couvert de confusion",
+      "language": "fr",
+      "page_image_index": 43,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/43",
+      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.014",
+      "source": "FRENCH1905",
+      "period": "evening",
+      "stage": "night-protection",
+      "title": "Repos et protection des Saints",
+      "incipit": "Bénissez, ô mon Dieu, le repos que je vais prendre",
+      "language": "fr",
+      "page_image_index": 44,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/44",
+      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.015",
+      "source": "FRENCH1905",
+      "period": "evening",
+      "stage": "intercession",
+      "title": "Prière pour les vivants et les défunts",
+      "incipit": "Répandez, Seigneur, vos bénédictions sur mes parents",
+      "language": "fr",
+      "page_image_index": 44,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/44",
+      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.016",
+      "source": "FRENCH1905",
+      "period": "evening",
+      "stage": "night-protection",
+      "title": "Visita, quaesumus (français)",
+      "incipit": "Nous Vous supplions, Seigneur, de visiter notre",
+      "language": "fr",
+      "page_image_index": 44,
+      "witness_url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/44",
+      "verification": "OCR_TEXT_SECTION_FOUND_NEEDS_FACSIMILE_REVIEW",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.017",
+      "source": "FRMICRO_UNDATED",
+      "period": "morning",
+      "stage": "invocation",
+      "title": "Veni Sancte Spiritus latin",
+      "incipit": "Veni, sancte Spiritus, reple tuorum corda fidelium",
+      "language": "fr+la",
+      "page_image_index": 5,
+      "witness_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Pri%C3%A8res_du_matin_et_du_soir_%28microforme%29_%28IA_cihm_49569%29.pdf",
+      "verification": "SCANNED_PAGE_VISUALLY_SIGHTED_NOT_COMPLETE_FORM_CERTIFIED",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.018",
+      "source": "FRMICRO_UNDATED",
+      "period": "morning",
+      "stage": "presence",
+      "title": "Adoration de la Trinité",
+      "incipit": "Très-sainte et très-auguste Trinité, Dieu seul",
+      "language": "fr+la",
+      "page_image_index": 5,
+      "witness_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Pri%C3%A8res_du_matin_et_du_soir_%28microforme%29_%28IA_cihm_49569%29.pdf",
+      "verification": "SCANNED_PAGE_VISUALLY_SIGHTED_NOT_COMPLETE_FORM_CERTIFIED",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.019",
+      "source": "FRMICRO_UNDATED",
+      "period": "evening",
+      "stage": "presence",
+      "title": "Adoration du soir",
+      "incipit": "Je vous adore, ô mon Dieu, avec la soumission",
+      "language": "fr+la",
+      "page_image_index": 14,
+      "witness_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Pri%C3%A8res_du_matin_et_du_soir_%28microforme%29_%28IA_cihm_49569%29.pdf",
+      "verification": "SCANNED_PAGE_VISUALLY_SIGHTED_NOT_COMPLETE_FORM_CERTIFIED",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.020",
+      "source": "FRMICRO_UNDATED",
+      "period": "evening",
+      "stage": "thanksgiving",
+      "title": "Remerciement du soir",
+      "incipit": "Quelles actions de grâces vous rendrai-je",
+      "language": "fr+la",
+      "page_image_index": 14,
+      "witness_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Pri%C3%A8res_du_matin_et_du_soir_%28microforme%29_%28IA_cihm_49569%29.pdf",
+      "verification": "SCANNED_PAGE_VISUALLY_SIGHTED_NOT_COMPLETE_FORM_CERTIFIED",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "id": "AO.DAILY.B06.021",
+      "source": "FRMICRO_UNDATED",
+      "period": "evening",
+      "stage": "examination",
+      "title": "Demande de lumière",
+      "incipit": "Source éternelle de lumière, Esprit saint",
+      "language": "fr+la",
+      "page_image_index": 14,
+      "witness_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Pri%C3%A8res_du_matin_et_du_soir_%28microforme%29_%28IA_cihm_49569%29.pdf",
+      "verification": "SCANNED_PAGE_VISUALLY_SIGHTED_NOT_COMPLETE_FORM_CERTIFIED",
+      "full_text_certified": false,
+      "editorial_status": "SOURCE_CANDIDATE_NOT_APPROVED"
+    }
+  ],
+  "parallels": [
+    {
+      "sources": [
+        "FRENCH1905",
+        "FRMICRO_UNDATED"
+      ],
+      "stage": "morning.presence",
+      "decision": "SHARED_TRADITIONAL_FRENCH_FORM",
+      "note": "Both print Trinitarian adoration opening Très sainte et très auguste Trinité; do not present two tabs just for spelling (Très-sainte vs Très sainte)."
+    },
+    {
+      "sources": [
+        "FRENCH1905",
+        "FRMICRO_UNDATED"
+      ],
+      "stage": "evening.presence",
+      "decision": "SAME_PRAYER_OPENING_ONLY",
+      "note": "1905 page and scanned booklet page 14 share Je vous adore ô mon Dieu; full edition comparison needed to determine whether endings differ."
+    },
+    {
+      "sources": [
+        "FRENCH1905",
+        "FRMICRO_UNDATED"
+      ],
+      "stage": "evening.thanksgiving",
+      "decision": "SAME_PRAYER_OPENING_ONLY",
+      "note": "Both share Quelles actions de grâces... full source checked only in openings."
+    },
+    {
+      "sources": [
+        "FRENCH1905",
+        "FRMICRO_UNDATED"
+      ],
+      "stage": "evening.examination",
+      "decision": "SAME_PRAYER_OPENING_ONLY",
+      "note": "Source éternelle de lumière; do not count new variants until complete paragraph compare."
+    },
+    {
+      "sources": [
+        "FRENCH1905"
+      ],
+      "stage": "morning.offering",
+      "decision": "GENUINE_FRENCH_COMPOSED_OFFERING",
+      "note": "1905 edition has a standalone French thanksgiving/offering of thoughts, words, acts and sufferings; not a back-translation from the English Apostleship of Prayer."
+    },
+    {
+      "sources": [
+        "FRENCH1905"
+      ],
+      "stage": "evening.night-protection",
+      "decision": "LITURGICAL_COLLECT_FAMILY",
+      "note": "1905 vernacular nocturnal protection derived from Latin Visita quaesumus; preserve it as a French witness to the same prayer family, not a new unrelated translation."
+    }
+  ],
+  "comparison_source_not_historical_authority": {
+    "name": "La Porte Latine 2020 prayers matin et soir",
+    "url": "https://laportelatine.org/spiritualite/prieres-et-devotions/prieres-matin-et-soir",
+    "use": "modern comparative reprint only, not evidence of the preconciliar edition's precise text or its own copyright status"
+  },
+  "nonimport_guards": [
+    "No translating historical English prayer into French and labelling it old French.",
+    "No treating 1884 bibliographic catalogue as scanned body text.",
+    "A digitized 1905 catechism page with OCR errors is not clean publishable text.",
+    "Scanned CIHM booklet year and author unknown; preconciliar status not established.",
+    "Distinguish daypart instructions from prayer bodies.",
+    "No claim of 21 unique prayers; records are source occurrences."
+  ]
+}
