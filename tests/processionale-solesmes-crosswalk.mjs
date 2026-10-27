@@ -2097,9 +2097,17 @@ test('Batch43 Pueri portantes EUOUAE comparison isolates exact A-syllable differ
  assert.equal(b.comparison.differentFifthPitchGroup.palmDraft,'gh gr');
  assert.equal(b.comparison.equalFirstFourPitchGroups,true);
  assert.equal(b.comparison.equalSixthPitchGroup,true);
- assert.equal(b.witness.editionOriginal1960PageInspected,false);
+ assert.equal(b.witness.editionOriginal1960PageInspected,true);
  assert.equal(b.matchedProcessionalAntiphon.hasAttestedProcessionalEuouaeInItsGabc,false);
- assert.equal(b.otherAntiphon.source1960EuouaeNotesChecked,false);
+ assert.equal(b.otherAntiphon.source1960EuouaeNotesChecked,true);
+ assert.equal(b.otherAntiphon.gregobaseId,12140);
+ assert.equal(b.matchedProcessionalAntiphon.original1961PageInspected,true);
+ assert.equal(b.otherAntiphon.processional1961PrintedPageInspected,true);
+ assert.equal(b.otherAntiphon.sameSixPitchGroupsAsPortantes,true);
+ assert.deepEqual(b.otherAntiphon.source1960EuouaePitchGroups,['h','h','g','f','gh','gf..']);
+ assert.equal(b.comparison.twoIndependentAntiphonPrintExamples1960,true);
+ assert.equal(b.comparison.anyIndependentlyPrintedPalmFullSicutEratAmenFound,false);
+ assert.equal(b.comparison.warningTextusAntiquusVsNovus,true);
  assert.equal(b.comparison.canChooseOfficeAsProductionScore,false);
  assert.equal(b.existingResearchGabc.ids.length,2);
  for(const x of d.fullHypotheticalGabcCases){
