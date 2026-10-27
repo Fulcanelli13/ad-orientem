@@ -4,6 +4,7 @@
 // No import in src/mass/reader-* and NO six-gate musical promotion.
 import {properToReaderSlots} from "../../src/mass/proper-reader-slots.js";
 import {validatedPreGospelChantParts} from "../../src/mass/reader-pre-gospel-chant-source.js";
+import {recoverReaderProperOmissions} from "../../src/mass/reader-proper-runtime-recovery.js";
 import {normalizeChantLatin} from "../../src/mass/reader-proper-chant-crosswalk.js";
 
 export const SELECTED_1962_GREGORIAN_REVIEW_SCHEMA="ao-gr1961-342-selected-1962-proper-review-v1";
@@ -66,6 +67,70 @@ function verifyCandidate(candidate,proper,mappedEn,mappedFr){
     chantSourceRef:proofPart?.sourceRef??proper.sourcePath,
     matchCount:matches.length};
 }
+// Use exactly the reader's EXISTING source recovery before diagnosing a
+// pre-Gospel hold. Research-only: reuse its certified proof, not its other
+// repaired fields, and never change the production DayResolver or source text.
+// A source path alone is NOT a cache key: seasonal and selected-Formulary
+// variants may carry different trilingual Graduale payloads.
+export async function recoverSelectedPreGospelFor342(ledger,actual,{hostResolver,cache}={}){
+  if(ledger?.schema!=="ao-gr1961-342-source-slot-triage-v1"||
+     ledger.researchOnly!==true||ledger.records?.length!==342)
+    throw Error("GR1961_342_RESEARCH_LEDGER_REQUIRED");
+  const selected=actual?.proper?.data;
+  const sourcePath=String(selected?.sourcePath??"").trim();
+  const original=Object.freeze({actual,status:"NOT_IN_RESEARCH_SCOPE",sourcePath:sourcePath||null,
+    cacheHit:false,certified:false});
+  if(actual?.status!=="ready"||actual?.proper?.status?.toLowerCase?.()!=="ready"||!sourcePath||
+     (actual.proper.sourcePath&&actual.proper.sourcePath!==sourcePath))return original;
+  const relevant=ledger.records.some(row=>row.tier==="STRONG_INITIAL_TEXT"&&
+    ["gr","al","tr"].includes(row.officePart)&&row.sourcePaths.includes(sourcePath));
+  if(!relevant)return original;
+  const trilingual=selected.gradual;
+  if(!["lat","en","fr"].every(language=>String(trilingual?.[language]??"").trim()))
+    return Object.freeze({...original,status:"TRILINGUAL_HOST_TEXT_MISSING"});
+  if(selected.readerChantSourceProof){
+    try{
+      const parts=validatedPreGospelChantParts(selected);
+      if(parts?.length===2)return Object.freeze({...original,status:"HOST_PROOF_ALREADY_CERTIFIED",certified:true});
+    }catch{
+      return Object.freeze({...original,status:"HOST_PROOF_INVALID"});
+    }
+  }
+  if(typeof hostResolver?.resolveSource!=="function")
+    return Object.freeze({...original,status:"SOURCE_RESOLVER_UNAVAILABLE"});
+  if(!(cache instanceof Map))throw Error("GR1961_342_SOURCE_PROOF_CACHE_REQUIRED");
+  const key=JSON.stringify([sourcePath,trilingual.lat,trilingual.en,trilingual.fr]);
+  const cacheHit=cache.has(key);
+  if(!cacheHit){
+    cache.set(key,(async()=>{
+      try{
+        const envelope=await recoverReaderProperOmissions(actual.proper,{
+          hostResolver,principalCelebrationId:actual?.day?.main?.id??null});
+        const next=envelope?.data??envelope;
+        const proof=next?.readerChantSourceProof??null;
+        if(!proof)return Object.freeze({status:"SOURCE_BOUNDARY_UNRESOLVED",proof:null});
+        // Proof may be reused ONLY when all three original flattened texts
+        // reconstruct the exact current selected Proper in the existing gate.
+        const parts=validatedPreGospelChantParts({...selected,readerChantSourceProof:proof});
+        if(!parts?.length)return Object.freeze({status:"SOURCE_BOUNDARY_UNRESOLVED",proof:null});
+        return Object.freeze({status:"SOURCE_BOUNDARY_CERTIFIED",proof});
+      }catch(error){
+        return Object.freeze({status:"SOURCE_RECOVERY_ERROR",proof:null,
+          reason:String(error?.message??error).slice(0,160)});
+      }
+    })());
+  }
+  const outcome=await cache.get(key);
+  if(!outcome.proof)
+    return Object.freeze({...original,status:outcome.status,reason:outcome.reason??null,cacheHit});
+  // No imported oration or Preface changes: only source-validated chant
+  // boundaries copied onto a fresh research-only Proper projection.
+  const researchProper={...selected,readerChantSourceProof:outcome.proof};
+  const researchActual={...actual,proper:{...actual.proper,data:researchProper}};
+  return Object.freeze({actual:researchActual,status:outcome.status,
+    sourcePath,cacheHit,certified:true});
+}
+
 export function reconcile342WithSelectedMass(ledger,actual,{date=actual?.date,language="en"}={}){
   if(ledger?.schema!=="ao-gr1961-342-source-slot-triage-v1"||
      ledger.researchOnly!==true||ledger.records?.length!==342||
