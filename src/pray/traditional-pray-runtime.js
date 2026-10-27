@@ -118,14 +118,9 @@ function dailyFormPreferenceStore(){
  return DAILY_FORM_PREFERENCES;
 }
 function dailyReleasedFormOptions(prayerId,daypart,language){
- if(DAILY_SEQUENCE_RELEASE.enabled!==true)return [];
- if(!DAILY_APPROVED_FORMS.profiles?.[[language,daypart,"complete"].join(":")])
-   return [];
- try{
-   return availableFormulations(DAILY_APPROVED_FORMS,{
-     language,daypart,length:"complete",stepId:prayerId
-   });
- }catch{return []}
+ return approvedDailySlotOptions(DAILY_APPROVED_FORMS,DAILY_SEQUENCE_RELEASE,{
+   language,daypart,length:"complete",slotId:prayerId
+ });
 }
 function dailyFormulationPrayerCard(prayerId){
  const lang=isFr()?"fr":"en";
