@@ -1,0 +1,683 @@
+{
+  "schema": "ao-palm-source-attested-two-accent-class-cadence-windows-v1",
+  "batch": 29,
+  "date": "2026-10-27",
+  "stage": "PALM-R02",
+  "status": "PRINTED_TWOFOLD_CADENCE_MOTIF_COMPARED_15_PARTIAL_GABC_CADENCE_WINDOWS_RESEARCH_ONLY",
+  "summary": "The two separate primary 1961 Graduale Palm psalm scores give literal flattened note-group examples of the same 5 groups g f gh gr gf with alternate two-syllable (gh gr on one accented syllable) versus three-syllable (gh on accented syllable, gr on epenthetic following) assignment. The shared cadence notes are PRINTED in these examples, but application to all other text endings is merely a source-informed candidate until editorial acceptance. These are ending fragments, not complete GABC scores.",
+  "evidence": {
+    "ps23": {
+      "rawArchived": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19315.gabc",
+      "originalSha256": "06537463e71d320e5134ac84a7cb0bc70579169cd3c509883caf9eb98cdc9be2",
+      "printedPage": "143**",
+      "cadenceSource": "<b>e</b>(gh gr)o.(gf..)",
+      "prepSource": [
+        "<i>tant</i>(g)",
+        "<i>in</i>(f)"
+      ]
+    },
+    "ps46": {
+      "rawArchived": "data/research/chant-source-archive/1961-graduale-novus-20261026/gregobase-19316.gabc",
+      "originalSha256": "eb13e9eadcfeebca7e5fa0617f6cbb6c9823464ff88af2995952ab21ca8717a0",
+      "printedPage": "144**",
+      "cadenceSource": "<b>ti</b>(gh)ti(gr)æ :(gf..)",
+      "prepSource": [
+        "<i>ce</i>(g)",
+        "<i>læ</i>(f)"
+      ]
+    },
+    "sharedFlattenedCadencePitches": [
+      "g",
+      "f",
+      "gh",
+      "gr",
+      "gf"
+    ],
+    "printedIllustrationNotWholeVerseApproval": true,
+    "noUnreviewedCrossPsalmScoreCopy": true
+  },
+  "sourcePrintedFacsimiles": [
+    "https://gregobase.selapa.net/sources/2/1179.png",
+    "https://gregobase.selapa.net/sources/2/1180.png"
+  ],
+  "editorialRules": [
+    {
+      "url": "https://longbeachchant.com/wp-content/uploads/2019/11/liber-1961-eight-psalm-tones.pdf#page=2",
+      "rule": "Two preparation notes, with additional white note for dactylic cadence; do not infer mode-variant identity from office-tone table."
+    },
+    {
+      "url": "https://npm.org/wp-content/uploads/2017/07/Rules-for-Text-Underlay-of-the-Psalm-Text-at-the-Psalm-Tone-Cadence.pdf#page=2",
+      "rule": "For antepenultimate stress, an epenthetic syllable receives a separate note and clivis/pes may not be split arbitrarily."
+    }
+  ],
+  "cadenceExamples": {
+    "paroxy": {
+      "psalm": 23,
+      "printedPage": "143**",
+      "cadence": "<b>e</b>(gh gr)o.(gf..)",
+      "preparations": [
+        "tant(g)",
+        "in(f)"
+      ],
+      "sourceCadenceNoteGroups": [
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "expression": "g, f | gh+gr, gf",
+      "soundNotes": [
+        "g",
+        "f",
+        "gh",
+        "gr",
+        "gf"
+      ],
+      "printedLatin": "eo"
+    },
+    "proparoxy": {
+      "psalm": 46,
+      "printedPage": "144**",
+      "cadence": "<b>ti</b>(gh)ti(gr)æ :(gf..)",
+      "preparations": [
+        "ce(g)",
+        "læ(f)"
+      ],
+      "sourceCadenceNoteGroups": [
+        "g",
+        "f",
+        "gh",
+        "gr",
+        "gf.."
+      ],
+      "expression": "g, f | gh, gr, gf",
+      "soundNotes": [
+        "g",
+        "f",
+        "gh",
+        "gr",
+        "gf"
+      ],
+      "printedLatin": "laetitiae"
+    }
+  },
+  "cases": [
+    {
+      "id": "PALM-R02-PS23-L02",
+      "psalm": 23,
+      "type": "VERSE",
+      "numberOfOccurrences": 1,
+      "sourceOccurrences": [
+        "PALM-R02-PS23-L02"
+      ],
+      "endingFamily": "PALM_PS23_TERMINATION_PAROXYTONON_2",
+      "sourcePage": "143**",
+      "printedLatinTermination": "et super flúmina firmávit eum.",
+      "textWindowSyllables": [
+        "má",
+        "vit",
+        "e",
+        "um"
+      ],
+      "formulaPitchGroups": [
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "exactFinalAccentedSyllable": "e",
+      "sourceEvidenceModel": "GR1961_PS23_2SYLLABLE_END",
+      "provenance": "Source GABC cadence-group sequence flattening identical across Psalm23 two-syllable and Psalm46 three-syllable endings.",
+      "underlayBasis": "LAST_WORD_AND_TWO_PREPARATORY_SYLLABLES_EDITORIAL_PROPOSAL",
+      "gabcEndingExcerpt": "name:PALM-R02-PS23-L02 ending-only editorial excerpt NOT approved;\noffice-part:Psalmus;\ncommentary: Only the final cadence window is syllabified, NOT a whole verse or approved score;\n%%\n(c4) má(g)vit(f)e(gh gr)um(gf..) (::)\n",
+      "lexicalAccentHumanApproved": false,
+      "neumeUnderlayHumanApproved": false,
+      "sourceEditionLatinHumanApproved": false,
+      "completeVerseNotCreated": true,
+      "releaseEligible": false
+    },
+    {
+      "id": "PALM-R02-PS23-L07",
+      "psalm": 23,
+      "type": "VERSE",
+      "numberOfOccurrences": 2,
+      "sourceOccurrences": [
+        "PALM-R02-PS23-L07",
+        "PALM-R02-PS23-L09"
+      ],
+      "endingFamily": "PALM_PS23_TERMINATION_PROPAROXYTONON_3",
+      "sourcePage": "143**",
+      "printedLatinTermination": "ut ingrediátur rex glóriae!",
+      "textWindowSyllables": [
+        "tur",
+        "rex",
+        "gló",
+        "ri",
+        "ae"
+      ],
+      "formulaPitchGroups": [
+        "g",
+        "f",
+        "gh",
+        "gr",
+        "gf.."
+      ],
+      "exactFinalAccentedSyllable": "gló",
+      "sourceEvidenceModel": "GR1961_PS46_3SYLLABLE_END",
+      "provenance": "Source GABC cadence-group sequence flattening identical across Psalm23 two-syllable and Psalm46 three-syllable endings.",
+      "underlayBasis": "LAST_WORD_AND_TWO_PREPARATORY_SYLLABLES_EDITORIAL_PROPOSAL",
+      "gabcEndingExcerpt": "name:PALM-R02-PS23-L07 ending-only editorial excerpt NOT approved;\noffice-part:Psalmus;\ncommentary: Only the final cadence window is syllabified, NOT a whole verse or approved score;\n%%\n(c4) tur(g)rex(f)gló(gh)ri(gr)ae(gf..) (::)\n",
+      "lexicalAccentHumanApproved": false,
+      "neumeUnderlayHumanApproved": false,
+      "sourceEditionLatinHumanApproved": false,
+      "completeVerseNotCreated": true,
+      "releaseEligible": false
+    },
+    {
+      "id": "PALM-R02-PS23-L08",
+      "psalm": 23,
+      "type": "VERSE",
+      "numberOfOccurrences": 1,
+      "sourceOccurrences": [
+        "PALM-R02-PS23-L08"
+      ],
+      "endingFamily": "PALM_PS23_TERMINATION_PROPAROXYTONON_3",
+      "sourcePage": "143**",
+      "printedLatinTermination": "Dóminus potens in praélio.",
+      "textWindowSyllables": [
+        "tens",
+        "in",
+        "praé",
+        "li",
+        "o"
+      ],
+      "formulaPitchGroups": [
+        "g",
+        "f",
+        "gh",
+        "gr",
+        "gf.."
+      ],
+      "exactFinalAccentedSyllable": "praé",
+      "sourceEvidenceModel": "GR1961_PS46_3SYLLABLE_END",
+      "provenance": "Source GABC cadence-group sequence flattening identical across Psalm23 two-syllable and Psalm46 three-syllable endings.",
+      "underlayBasis": "LAST_WORD_AND_TWO_PREPARATORY_SYLLABLES_EDITORIAL_PROPOSAL",
+      "gabcEndingExcerpt": "name:PALM-R02-PS23-L08 ending-only editorial excerpt NOT approved;\noffice-part:Psalmus;\ncommentary: Only the final cadence window is syllabified, NOT a whole verse or approved score;\n%%\n(c4) tens(g)in(f)praé(gh)li(gr)o(gf..) (::)\n",
+      "lexicalAccentHumanApproved": false,
+      "neumeUnderlayHumanApproved": false,
+      "sourceEditionLatinHumanApproved": false,
+      "completeVerseNotCreated": true,
+      "releaseEligible": false
+    },
+    {
+      "id": "PALM-R02-PS23-L10",
+      "psalm": 23,
+      "type": "VERSE",
+      "numberOfOccurrences": 1,
+      "sourceOccurrences": [
+        "PALM-R02-PS23-L10"
+      ],
+      "endingFamily": "PALM_PS23_TERMINATION_PROPAROXYTONON_3",
+      "sourcePage": "143**",
+      "printedLatinTermination": "Dóminus exercítuum: ipse est rex glóriae.",
+      "textWindowSyllables": [
+        "est",
+        "rex",
+        "gló",
+        "ri",
+        "ae"
+      ],
+      "formulaPitchGroups": [
+        "g",
+        "f",
+        "gh",
+        "gr",
+        "gf.."
+      ],
+      "exactFinalAccentedSyllable": "gló",
+      "sourceEvidenceModel": "GR1961_PS46_3SYLLABLE_END",
+      "provenance": "Source GABC cadence-group sequence flattening identical across Psalm23 two-syllable and Psalm46 three-syllable endings.",
+      "underlayBasis": "LAST_WORD_AND_TWO_PREPARATORY_SYLLABLES_EDITORIAL_PROPOSAL",
+      "gabcEndingExcerpt": "name:PALM-R02-PS23-L10 ending-only editorial excerpt NOT approved;\noffice-part:Psalmus;\ncommentary: Only the final cadence window is syllabified, NOT a whole verse or approved score;\n%%\n(c4) est(g)rex(f)gló(gh)ri(gr)ae(gf..) (::)\n",
+      "lexicalAccentHumanApproved": false,
+      "neumeUnderlayHumanApproved": false,
+      "sourceEditionLatinHumanApproved": false,
+      "completeVerseNotCreated": true,
+      "releaseEligible": false
+    },
+    {
+      "id": "PALM-R02-PS46-L02",
+      "psalm": 46,
+      "type": "VERSE",
+      "numberOfOccurrences": 1,
+      "sourceOccurrences": [
+        "PALM-R02-PS46-L02"
+      ],
+      "endingFamily": "PALM_PS46_TERMINATION_PAROXYTONON_2",
+      "sourcePage": "144**",
+      "printedLatinTermination": "Rex magnus super omnem terram.",
+      "textWindowSyllables": [
+        "om",
+        "nem",
+        "ter",
+        "ram"
+      ],
+      "formulaPitchGroups": [
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "exactFinalAccentedSyllable": "ter",
+      "sourceEvidenceModel": "GR1961_PS23_2SYLLABLE_END",
+      "provenance": "Source GABC cadence-group sequence flattening identical across Psalm23 two-syllable and Psalm46 three-syllable endings.",
+      "underlayBasis": "LAST_WORD_AND_TWO_PREPARATORY_SYLLABLES_EDITORIAL_PROPOSAL",
+      "gabcEndingExcerpt": "name:PALM-R02-PS46-L02 ending-only editorial excerpt NOT approved;\noffice-part:Psalmus;\ncommentary: Only the final cadence window is syllabified, NOT a whole verse or approved score;\n%%\n(c4) om(g)nem(f)ter(gh gr)ram(gf..) (::)\n",
+      "lexicalAccentHumanApproved": false,
+      "neumeUnderlayHumanApproved": false,
+      "sourceEditionLatinHumanApproved": false,
+      "completeVerseNotCreated": true,
+      "releaseEligible": false
+    },
+    {
+      "id": "PALM-R02-PS46-L03",
+      "psalm": 46,
+      "type": "VERSE",
+      "numberOfOccurrences": 1,
+      "sourceOccurrences": [
+        "PALM-R02-PS46-L03"
+      ],
+      "endingFamily": "PALM_PS46_TERMINATION_PAROXYTONON_2",
+      "sourcePage": "144**",
+      "printedLatinTermination": "et natiónes pédibus nostris.",
+      "textWindowSyllables": [
+        "di",
+        "bus",
+        "nos",
+        "tris"
+      ],
+      "formulaPitchGroups": [
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "exactFinalAccentedSyllable": "nos",
+      "sourceEvidenceModel": "GR1961_PS23_2SYLLABLE_END",
+      "provenance": "Source GABC cadence-group sequence flattening identical across Psalm23 two-syllable and Psalm46 three-syllable endings.",
+      "underlayBasis": "LAST_WORD_AND_TWO_PREPARATORY_SYLLABLES_EDITORIAL_PROPOSAL",
+      "gabcEndingExcerpt": "name:PALM-R02-PS46-L03 ending-only editorial excerpt NOT approved;\noffice-part:Psalmus;\ncommentary: Only the final cadence window is syllabified, NOT a whole verse or approved score;\n%%\n(c4) di(g)bus(f)nos(gh gr)tris(gf..) (::)\n",
+      "lexicalAccentHumanApproved": false,
+      "neumeUnderlayHumanApproved": false,
+      "sourceEditionLatinHumanApproved": false,
+      "completeVerseNotCreated": true,
+      "releaseEligible": false
+    },
+    {
+      "id": "PALM-R02-PS46-L04",
+      "psalm": 46,
+      "type": "VERSE",
+      "numberOfOccurrences": 1,
+      "sourceOccurrences": [
+        "PALM-R02-PS46-L04"
+      ],
+      "endingFamily": "PALM_PS46_TERMINATION_PROPAROXYTONON_3",
+      "sourcePage": "144**",
+      "printedLatinTermination": "glóriam Jacob, quem díligit.",
+      "textWindowSyllables": [
+        "cob",
+        "quem",
+        "dí",
+        "li",
+        "git"
+      ],
+      "formulaPitchGroups": [
+        "g",
+        "f",
+        "gh",
+        "gr",
+        "gf.."
+      ],
+      "exactFinalAccentedSyllable": "dí",
+      "sourceEvidenceModel": "GR1961_PS46_3SYLLABLE_END",
+      "provenance": "Source GABC cadence-group sequence flattening identical across Psalm23 two-syllable and Psalm46 three-syllable endings.",
+      "underlayBasis": "LAST_WORD_AND_TWO_PREPARATORY_SYLLABLES_EDITORIAL_PROPOSAL",
+      "gabcEndingExcerpt": "name:PALM-R02-PS46-L04 ending-only editorial excerpt NOT approved;\noffice-part:Psalmus;\ncommentary: Only the final cadence window is syllabified, NOT a whole verse or approved score;\n%%\n(c4) cob(g)quem(f)dí(gh)li(gr)git(gf..) (::)\n",
+      "lexicalAccentHumanApproved": false,
+      "neumeUnderlayHumanApproved": false,
+      "sourceEditionLatinHumanApproved": false,
+      "completeVerseNotCreated": true,
+      "releaseEligible": false
+    },
+    {
+      "id": "PALM-R02-PS46-L05",
+      "psalm": 46,
+      "type": "VERSE",
+      "numberOfOccurrences": 1,
+      "sourceOccurrences": [
+        "PALM-R02-PS46-L05"
+      ],
+      "endingFamily": "PALM_PS46_TERMINATION_PAROXYTONON_2",
+      "sourcePage": "144**",
+      "printedLatinTermination": "Dóminus cum voce tubae.",
+      "textWindowSyllables": [
+        "vo",
+        "ce",
+        "tu",
+        "bae"
+      ],
+      "formulaPitchGroups": [
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "exactFinalAccentedSyllable": "tu",
+      "sourceEvidenceModel": "GR1961_PS23_2SYLLABLE_END",
+      "provenance": "Source GABC cadence-group sequence flattening identical across Psalm23 two-syllable and Psalm46 three-syllable endings.",
+      "underlayBasis": "LAST_WORD_AND_TWO_PREPARATORY_SYLLABLES_EDITORIAL_PROPOSAL",
+      "gabcEndingExcerpt": "name:PALM-R02-PS46-L05 ending-only editorial excerpt NOT approved;\noffice-part:Psalmus;\ncommentary: Only the final cadence window is syllabified, NOT a whole verse or approved score;\n%%\n(c4) vo(g)ce(f)tu(gh gr)bae(gf..) (::)\n",
+      "lexicalAccentHumanApproved": false,
+      "neumeUnderlayHumanApproved": false,
+      "sourceEditionLatinHumanApproved": false,
+      "completeVerseNotCreated": true,
+      "releaseEligible": false
+    },
+    {
+      "id": "PALM-R02-PS46-L06",
+      "psalm": 46,
+      "type": "VERSE",
+      "numberOfOccurrences": 1,
+      "sourceOccurrences": [
+        "PALM-R02-PS46-L06"
+      ],
+      "endingFamily": "PALM_PS46_TERMINATION_PROPAROXYTONON_3",
+      "sourcePage": "144**",
+      "printedLatinTermination": "psállite Regi nostro, psállite.",
+      "textWindowSyllables": [
+        "nos",
+        "tro",
+        "psál",
+        "li",
+        "te"
+      ],
+      "formulaPitchGroups": [
+        "g",
+        "f",
+        "gh",
+        "gr",
+        "gf.."
+      ],
+      "exactFinalAccentedSyllable": "psál",
+      "sourceEvidenceModel": "GR1961_PS46_3SYLLABLE_END",
+      "provenance": "Source GABC cadence-group sequence flattening identical across Psalm23 two-syllable and Psalm46 three-syllable endings.",
+      "underlayBasis": "LAST_WORD_AND_TWO_PREPARATORY_SYLLABLES_EDITORIAL_PROPOSAL",
+      "gabcEndingExcerpt": "name:PALM-R02-PS46-L06 ending-only editorial excerpt NOT approved;\noffice-part:Psalmus;\ncommentary: Only the final cadence window is syllabified, NOT a whole verse or approved score;\n%%\n(c4) nos(g)tro(f)psál(gh)li(gr)te(gf..) (::)\n",
+      "lexicalAccentHumanApproved": false,
+      "neumeUnderlayHumanApproved": false,
+      "sourceEditionLatinHumanApproved": false,
+      "completeVerseNotCreated": true,
+      "releaseEligible": false
+    },
+    {
+      "id": "PALM-R02-PS46-L07",
+      "psalm": 46,
+      "type": "VERSE",
+      "numberOfOccurrences": 1,
+      "sourceOccurrences": [
+        "PALM-R02-PS46-L07"
+      ],
+      "endingFamily": "PALM_PS46_TERMINATION_PAROXYTONON_2",
+      "sourcePage": "144**",
+      "printedLatinTermination": "psállite hymnum.",
+      "textWindowSyllables": [
+        "li",
+        "te",
+        "hym",
+        "num"
+      ],
+      "formulaPitchGroups": [
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "exactFinalAccentedSyllable": "hym",
+      "sourceEvidenceModel": "GR1961_PS23_2SYLLABLE_END",
+      "provenance": "Source GABC cadence-group sequence flattening identical across Psalm23 two-syllable and Psalm46 three-syllable endings.",
+      "underlayBasis": "LAST_WORD_AND_TWO_PREPARATORY_SYLLABLES_EDITORIAL_PROPOSAL",
+      "gabcEndingExcerpt": "name:PALM-R02-PS46-L07 ending-only editorial excerpt NOT approved;\noffice-part:Psalmus;\ncommentary: Only the final cadence window is syllabified, NOT a whole verse or approved score;\n%%\n(c4) li(g)te(f)hym(gh gr)num(gf..) (::)\n",
+      "lexicalAccentHumanApproved": false,
+      "neumeUnderlayHumanApproved": false,
+      "sourceEditionLatinHumanApproved": false,
+      "completeVerseNotCreated": true,
+      "releaseEligible": false
+    },
+    {
+      "id": "PALM-R02-PS46-L08",
+      "psalm": 46,
+      "type": "VERSE",
+      "numberOfOccurrences": 1,
+      "sourceOccurrences": [
+        "PALM-R02-PS46-L08"
+      ],
+      "endingFamily": "PALM_PS46_TERMINATION_PAROXYTONON_2",
+      "sourcePage": "144**",
+      "printedLatinTermination": "Deus sedet super sólium sanctum suum.",
+      "textWindowSyllables": [
+        "sanc",
+        "tum",
+        "su",
+        "um"
+      ],
+      "formulaPitchGroups": [
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "exactFinalAccentedSyllable": "su",
+      "sourceEvidenceModel": "GR1961_PS23_2SYLLABLE_END",
+      "provenance": "Source GABC cadence-group sequence flattening identical across Psalm23 two-syllable and Psalm46 three-syllable endings.",
+      "underlayBasis": "LAST_WORD_AND_TWO_PREPARATORY_SYLLABLES_EDITORIAL_PROPOSAL",
+      "gabcEndingExcerpt": "name:PALM-R02-PS46-L08 ending-only editorial excerpt NOT approved;\noffice-part:Psalmus;\ncommentary: Only the final cadence window is syllabified, NOT a whole verse or approved score;\n%%\n(c4) sanc(g)tum(f)su(gh gr)um(gf..) (::)\n",
+      "lexicalAccentHumanApproved": false,
+      "neumeUnderlayHumanApproved": false,
+      "sourceEditionLatinHumanApproved": false,
+      "completeVerseNotCreated": true,
+      "releaseEligible": false
+    },
+    {
+      "id": "PALM-R02-PS46-L09",
+      "psalm": 46,
+      "type": "VERSE",
+      "numberOfOccurrences": 1,
+      "sourceOccurrences": [
+        "PALM-R02-PS46-L09"
+      ],
+      "endingFamily": "PALM_PS46_TERMINATION_UNVERIFIED_PROPER_NAME",
+      "sourcePage": "144**",
+      "printedLatinTermination": "cum pópulo Dei Abraham.",
+      "textWindowSyllables": [
+        "De",
+        "i",
+        "Á",
+        "bra",
+        "ham"
+      ],
+      "formulaPitchGroups": [
+        "g",
+        "f",
+        "gh",
+        "gr",
+        "gf.."
+      ],
+      "exactFinalAccentedSyllable": "Á",
+      "sourceEvidenceModel": "GR1961_PS46_3SYLLABLE_END",
+      "provenance": "Source GABC cadence-group sequence flattening identical across Psalm23 two-syllable and Psalm46 three-syllable endings.",
+      "underlayBasis": "INDEPENDENT_LATIN_NAME_ACCENT_HYPOTHESIS_DO_NOT_AUTOAPPROVE",
+      "gabcEndingExcerpt": "name:PALM-R02-PS46-L09 ending-only editorial excerpt NOT approved;\noffice-part:Psalmus;\ncommentary: Only the final cadence window is syllabified, NOT a whole verse or approved score;\n%%\n(c4) De(g)i(f)Á(gh)bra(gr)ham(gf..) (::)\n",
+      "lexicalAccentHumanApproved": false,
+      "neumeUnderlayHumanApproved": false,
+      "sourceEditionLatinHumanApproved": false,
+      "completeVerseNotCreated": true,
+      "releaseEligible": false,
+      "properNameAccentEvidence": {
+        "hypothesizedSyllables": "Á-bra-ham",
+        "lexicalAccent": "Á",
+        "case": "proparoxytonon",
+        "source": "gregorio-project/latin-ecclesiastic-accents doc/accentuation-rules.md",
+        "pinnedCommitSha": "5a35693414bd9b2864415e62cd463ca52da771b4",
+        "url": "https://github.com/gregorio-project/latin-ecclesiastic-accents/blob/5a35693414bd9b2864415e62cd463ca52da771b4/doc/accentuation-rules.md",
+        "rule": "For Ab- names, antepenultimate A attracts accent; Abraham given as explicit example",
+        "latinPrintNoAcute": true,
+        "stillNeedsChantEditor": true
+      }
+    },
+    {
+      "id": "PALM-R02-PS46-L10",
+      "psalm": 46,
+      "type": "VERSE",
+      "numberOfOccurrences": 1,
+      "sourceOccurrences": [
+        "PALM-R02-PS46-L10"
+      ],
+      "endingFamily": "PALM_PS46_TERMINATION_PAROXYTONON_2",
+      "sourcePage": "144**",
+      "printedLatinTermination": "excelsus est valde.",
+      "textWindowSyllables": [
+        "sus",
+        "est",
+        "val",
+        "de"
+      ],
+      "formulaPitchGroups": [
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "exactFinalAccentedSyllable": "val",
+      "sourceEvidenceModel": "GR1961_PS23_2SYLLABLE_END",
+      "provenance": "Source GABC cadence-group sequence flattening identical across Psalm23 two-syllable and Psalm46 three-syllable endings.",
+      "underlayBasis": "LAST_WORD_AND_TWO_PREPARATORY_SYLLABLES_EDITORIAL_PROPOSAL",
+      "gabcEndingExcerpt": "name:PALM-R02-PS46-L10 ending-only editorial excerpt NOT approved;\noffice-part:Psalmus;\ncommentary: Only the final cadence window is syllabified, NOT a whole verse or approved score;\n%%\n(c4) sus(g)est(f)val(gh gr)de(gf..) (::)\n",
+      "lexicalAccentHumanApproved": false,
+      "neumeUnderlayHumanApproved": false,
+      "sourceEditionLatinHumanApproved": false,
+      "completeVerseNotCreated": true,
+      "releaseEligible": false
+    },
+    {
+      "id": "PALM-R02-PS23-DOXO-L11",
+      "psalm": 23,
+      "type": "DOXOLOGY",
+      "numberOfOccurrences": 1,
+      "sourceOccurrences": [
+        "PALM-R02-PS23-DOXO-L11"
+      ],
+      "endingFamily": "PALM_PS23_TERMINATION_PAROXYTONON_2",
+      "sourcePage": "143**",
+      "printedLatinTermination": "et Spirítui Sancto.",
+      "textWindowSyllables": [
+        "tu",
+        "i",
+        "Sanc",
+        "to"
+      ],
+      "formulaPitchGroups": [
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "exactFinalAccentedSyllable": "Sanc",
+      "sourceEvidenceModel": "GR1961_PS23_2SYLLABLE_END",
+      "provenance": "Source GABC cadence-group sequence flattening identical across Psalm23 two-syllable and Psalm46 three-syllable endings.",
+      "underlayBasis": "LAST_WORD_AND_TWO_PREPARATORY_SYLLABLES_EDITORIAL_PROPOSAL",
+      "gabcEndingExcerpt": "name:PALM-R02-PS23-DOXO-L11 ending-only editorial excerpt NOT approved;\noffice-part:Psalmus;\ncommentary: Only the final cadence window is syllabified, NOT a whole verse or approved score;\n%%\n(c4) tu(g)i(f)Sanc(gh gr)to(gf..) (::)\n",
+      "lexicalAccentHumanApproved": false,
+      "neumeUnderlayHumanApproved": false,
+      "sourceEditionLatinHumanApproved": false,
+      "completeVerseNotCreated": true,
+      "releaseEligible": false
+    },
+    {
+      "id": "PALM-R02-PS23-DOXO-L12",
+      "psalm": 23,
+      "reason": "Separate Amen after a printed full stop, does not automatically borrow the 4-/5-syllable cadence-window across punctuation.",
+      "status": "MANUAL_DOXOLOGY_AMEN_HOLD",
+      "sourceLatin": "et in saécula saeculórum. Amen.",
+      "releaseEligible": false
+    },
+    {
+      "id": "PALM-R02-PS46-DOXO-L11",
+      "psalm": 46,
+      "type": "DOXOLOGY",
+      "numberOfOccurrences": 1,
+      "sourceOccurrences": [
+        "PALM-R02-PS46-DOXO-L11"
+      ],
+      "endingFamily": "PALM_PS46_TERMINATION_PAROXYTONON_2",
+      "sourcePage": "144**",
+      "printedLatinTermination": "et Spirítui Sancto.",
+      "textWindowSyllables": [
+        "tu",
+        "i",
+        "Sanc",
+        "to"
+      ],
+      "formulaPitchGroups": [
+        "g",
+        "f",
+        "gh gr",
+        "gf.."
+      ],
+      "exactFinalAccentedSyllable": "Sanc",
+      "sourceEvidenceModel": "GR1961_PS23_2SYLLABLE_END",
+      "provenance": "Source GABC cadence-group sequence flattening identical across Psalm23 two-syllable and Psalm46 three-syllable endings.",
+      "underlayBasis": "LAST_WORD_AND_TWO_PREPARATORY_SYLLABLES_EDITORIAL_PROPOSAL",
+      "gabcEndingExcerpt": "name:PALM-R02-PS46-DOXO-L11 ending-only editorial excerpt NOT approved;\noffice-part:Psalmus;\ncommentary: Only the final cadence window is syllabified, NOT a whole verse or approved score;\n%%\n(c4) tu(g)i(f)Sanc(gh gr)to(gf..) (::)\n",
+      "lexicalAccentHumanApproved": false,
+      "neumeUnderlayHumanApproved": false,
+      "sourceEditionLatinHumanApproved": false,
+      "completeVerseNotCreated": true,
+      "releaseEligible": false
+    },
+    {
+      "id": "PALM-R02-PS46-DOXO-L12",
+      "psalm": 46,
+      "reason": "Separate Amen after a printed full stop, does not automatically borrow the 4-/5-syllable cadence-window across punctuation.",
+      "status": "MANUAL_DOXOLOGY_AMEN_HOLD",
+      "sourceLatin": "et in saécula saeculórum. Amen.",
+      "releaseEligible": false
+    }
+  ],
+  "counts": {
+    "caseCount": 17,
+    "ordinaryPatternWindows": 14,
+    "properNameWindowWithExternalLexicalHypothesis": 1,
+    "doxologyAmenHolds": 2,
+    "endingGabcFragmentsDrafted": 15,
+    "actualMusicalOccurrencesCoveredBy15Fragments": 16,
+    "wholePsalmVersesWithFullyApprovedNewGabc": 0,
+    "publishedScoreAssignments": 0
+  },
+  "batchApproach": {
+    "route": "Human musical editor validates two printed CADENCE NOTE GROUP CONTEXTS, then validate full Latin accent/preparatory positions, doxology special boundary, medio-flex and the 1962 canonical spellings before generating complete scores",
+    "explicitNoFullVerseMusic": true,
+    "noAdditionalAudio": true,
+    "noCalendarReaderInferences": true
+  },
+  "release": {
+    "existingScholaOwner": "#1749",
+    "existing1962LatinOwner": "#894",
+    "researchOwner": "#1752",
+    "printedCadencePatternMatched": true,
+    "cadenceTransferHumanCertified": false,
+    "AbrahamAccentIn1961Print": false,
+    "AmenDoxologySettled": false,
+    "fullVerseGabcMusicallyCertified": false,
+    "publicationEligible": false
+  }
+}
