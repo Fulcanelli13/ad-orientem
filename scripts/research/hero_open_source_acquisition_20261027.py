@@ -19,6 +19,14 @@ TARGETS = [
      "author":"Sailko","license_url":"https://creativecommons.org/licenses/by/3.0/",
      "license_specific_source_text_verified_on":"2026-10-27",
      "license_declarations":["photographer owns own photo","CC BY 3.0 allows commercial redistribution with credit, licence link, and change disclosure"]},
+    {"id":"module-rosary-lotto-alt","type":"commons_cc_by",
+     "file_url":"https://upload.wikimedia.org/wikipedia/commons/0/09/Lorenzo_lotto%2C_madonna_del_rosario%2C_1539%2C_11.jpg",
+     "title":"Madonna del Rosario","artist":"Lorenzo Lotto","module_id":"rosary",
+     "object_url":"https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_11.jpg",
+     "rights":"CC_BY_3_0_UNPORTED_PHOTOGRAPHER_SAILKO",
+     "author":"Sailko","license_url":"https://creativecommons.org/licenses/by/3.0/",
+     "license_specific_source_text_verified_on":"2026-10-27",
+     "license_declarations":["same Lotto original and photographer; alternate ISO 6400 / 2304x3456 image","CC BY 3.0 with attribution, link and change disclosure"]},
 ]
 
 def get(url:str,max_bytes:int=25000000)->bytes:
@@ -118,8 +126,8 @@ def main():
                  "manual_source_review_required":True}
             print(t["id"],row["status"],row["error_type"],row["error_message"])
         rows.append(row)
-    (ROOT/"three-source-acquisition-status.json").write_text(
-       json.dumps({"schema":"AO_B57_THREE_NEW_OPEN_IMAGE_MASTERS_V1",
+    (ROOT/"four-source-acquisition-status.json").write_text(
+       json.dumps({"schema":"AO_B57_FOUR_OPEN_IMAGE_VARIANTS_V2",
         "date":"2026-10-27","cost":"EUR0","no_contact":True,
         "no_permissions_requested":True,"no_artwork_substitutions":True,
         "staged":sum(r.get("status","").startswith("STAGED_") for r in rows),
