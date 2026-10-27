@@ -1,0 +1,317 @@
+{
+  "schema": "ad-orientem.daily-prayer-editorial-options.b08.v1",
+  "batch": "B08",
+  "date": "2026-10-27",
+  "status": "RESEARCH_SHORTLIST_NOT_APPROVED_OR_SHIPPED",
+  "summary": "User-approved architecture: fixed devotional purposes, distinct historical prayer formulas as optional tabs, remembered per-stage preferences, short/complete historical presets and independent optional timer. This shortlist is a review tool, not an automatic production import.",
+  "morning": [
+    {
+      "id": "presence",
+      "name": "Presence of God",
+      "required": true,
+      "alternatives": [
+        {
+          "occurrence_id": "AO.DAILY.B01.022",
+          "reason": "Baltimore explicit Trinitarian adoration"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B01.002",
+          "reason": "Blessed Be God recollection"
+        }
+      ]
+    },
+    {
+      "id": "thanksgiving",
+      "name": "Thanksgiving",
+      "required": true,
+      "alternatives": [
+        {
+          "occurrence_id": "AO.DAILY.B04.042",
+          "reason": "Moran 1883; complete scan-checked"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B04.008",
+          "reason": "Pocket 1899 longer Trinitarian form; scan pending"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B01.003",
+          "reason": "Blessed Be God acts; section may contain multiple prayer units"
+        }
+      ]
+    },
+    {
+      "id": "offering",
+      "name": "Morning Offering",
+      "required": true,
+      "alternatives": [
+        {
+          "occurrence_id": "AO.DAILY.B04.044",
+          "reason": "Moran Good Intention; scan-checked, historical indulgence language must be explained"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B04.004",
+          "reason": "Pocket Sacred Heart offering; scan-checked 1899 printed pp.8-9"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B01.004",
+          "reason": "Blessed Be God Apostleship of Prayer form; print scan still pending"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B06.005",
+          "reason": "French 1905 Thanksgiving and Offering combined; use once, not twice"
+        }
+      ]
+    },
+    {
+      "id": "theological-virtues",
+      "name": "Faith, Hope, Charity",
+      "required": false,
+      "subphases": [
+        {
+          "id": "faith",
+          "alternatives": [
+            {
+              "occurrence_id": "AO.DAILY.B04.005",
+              "reason": "Pocket 1899 short Faith; scan-checked"
+            },
+            {
+              "occurrence_id": "AO.DAILY.B04.048",
+              "reason": "Moran 1883 distinct Faith; scan pending"
+            },
+            {
+              "occurrence_id": "AO.DAILY.B06.002",
+              "reason": "1905 historical French Faith; scan-checked"
+            }
+          ]
+        },
+        {
+          "id": "hope",
+          "alternatives": [
+            {
+              "occurrence_id": "AO.DAILY.B01.028",
+              "reason": "Baltimore historical Hope"
+            },
+            {
+              "occurrence_id": "AO.DAILY.B04.049",
+              "reason": "Moran Hope; scan pending"
+            },
+            {
+              "occurrence_id": "AO.DAILY.B06.003",
+              "reason": "1905 French Hope; scan-checked"
+            }
+          ]
+        },
+        {
+          "id": "charity",
+          "alternatives": [
+            {
+              "occurrence_id": "AO.DAILY.B01.029",
+              "reason": "Baltimore historical Charity"
+            },
+            {
+              "occurrence_id": "AO.DAILY.B04.050",
+              "reason": "Moran Charity; scan pending"
+            },
+            {
+              "occurrence_id": "AO.DAILY.B06.004",
+              "reason": "1905 French Charity; scan-checked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "supplication-resolution",
+      "name": "Petitions and Resolution",
+      "required": false,
+      "alternatives": [
+        {
+          "occurrence_id": "AO.DAILY.B04.043",
+          "reason": "Moran necessary grace; scan-checked"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B04.045",
+          "reason": "Moran resolution; scan pending"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B06.006",
+          "reason": "1905 French resolution; scan-checked"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B06.007",
+          "reason": "1905 French supplication; scan-checked"
+        }
+      ]
+    },
+    {
+      "id": "marian-guardian",
+      "name": "Marian and Guardian Prayer",
+      "required": false,
+      "alternatives": [
+        {
+          "occurrence_id": "AO.DAILY.B01.033",
+          "reason": "Angele Dei shared prayer, one family; not three book tabs"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B01.032",
+          "reason": "Baltimore St Joseph"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B01.034",
+          "reason": "Baltimore Patron Saint"
+        }
+      ]
+    }
+  ],
+  "evening": [
+    {
+      "id": "presence",
+      "name": "Presence of God",
+      "required": true,
+      "alternatives": [
+        {
+          "occurrence_id": "AO.DAILY.B01.005",
+          "reason": "Blessed Be God presence act"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B01.036",
+          "reason": "Baltimore evening adoration"
+        }
+      ]
+    },
+    {
+      "id": "thanksgiving",
+      "name": "Thanksgiving",
+      "required": true,
+      "alternatives": [
+        {
+          "occurrence_id": "AO.DAILY.B01.006",
+          "reason": "Blessed Be God thanksgiving"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B04.057",
+          "reason": "Moran night long Thanksgiving + Protection; compare prayer boundaries, not yet fully scan transcribed"
+        }
+      ]
+    },
+    {
+      "id": "examination",
+      "name": "Examination of Conscience",
+      "required": true,
+      "mode": "guided-or-historical-method",
+      "alternatives": [
+        {
+          "occurrence_id": "AO.DAILY.B01.010",
+          "reason": "Blessed Be God structured examination"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B01.038",
+          "reason": "Baltimore prayer for light and examination"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B06.012",
+          "reason": "1905 French prayer for light; scan pending"
+        }
+      ]
+    },
+    {
+      "id": "contrition",
+      "name": "Contrition and Purpose of Amendment",
+      "required": true,
+      "alternatives": [
+        {
+          "occurrence_id": "AO.DAILY.B01.061",
+          "reason": "Lasance short evening Contrition; not identical to morning act"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B04.058",
+          "reason": "Moran 1883 long Act of Contrition on pp.14–15; print passage located, full body not yet separately registered"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B01.012",
+          "reason": "Blessed Be God traditional Contrition"
+        }
+      ]
+    },
+    {
+      "id": "intercession",
+      "name": "Intercessions",
+      "required": false,
+      "alternatives": [
+        {
+          "occurrence_id": "AO.DAILY.B01.013",
+          "reason": "Blessed Be God prayer for living"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B01.041",
+          "reason": "Baltimore intercessions share opening but differ in conclusion"
+        }
+      ]
+    },
+    {
+      "id": "departed",
+      "name": "Prayers for the Departed",
+      "required": false,
+      "alternatives": [
+        {
+          "occurrence_id": "AO.DAILY.B04.059",
+          "reason": "Moran Fidelium Deus collect; scan checked, share canonical ID"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B01.014",
+          "reason": "De Profundis with versicles distinguished; alternate separate form"
+        }
+      ]
+    },
+    {
+      "id": "night-protection",
+      "name": "Protection Before Sleep",
+      "required": true,
+      "selection_policy": "MULTI_SELECT_COMPLEMENTARY_TEXTS_NOT_SINGLE_REPLACEMENT",
+      "alternatives": [
+        {
+          "occurrence_id": "AO.DAILY.B04.060",
+          "reason": "Salva nos antiphon; complete scan checked"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B04.061",
+          "reason": "Visita quaesumus collect; complete scan checked"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B01.018",
+          "reason": "Blessed Be God St Alphonsus night prayer; scan pending"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B01.043",
+          "reason": "Baltimore bedside blessing; scan pending"
+        }
+      ]
+    },
+    {
+      "id": "commendation",
+      "name": "Final Commendation",
+      "required": false,
+      "alternatives": [
+        {
+          "occurrence_id": "AO.DAILY.B01.090",
+          "reason": "Lasance In manus tuas; source identity with Young Man's Guide"
+        },
+        {
+          "occurrence_id": "AO.DAILY.B01.019",
+          "reason": "Blessed Be God bedside commendation; passage source-boundary check pending"
+        }
+      ]
+    }
+  ],
+  "interface_rules": [
+    "Pick one preferred substantive formula per single-prayer slot; give separate citations for identical copies in multiple historical books.",
+    "Do not copy a single composite 1905 French thanksgiving/offering to two different recitation stages; allow stage linkage and display once.",
+    "Preserve original prayer order as an independently identified historical preset, do not retroactively attribute an editorial assembly to a single manual.",
+    "Offer optional stages and Short/Complete routines, but never truncate a historically sourced prayer midway.",
+    "Time tracking is independent of prayer content: stopwatch by default, optional gentle duration or silent meditation, hide controls, no stage auto-advancement.",
+    "Do not claim English prayer source implies a verified FR/LA equivalent; show a sourced fallback or defer.",
+    "Historical private Confiteor with rubrical actor semantics is not automatically the priest's liturgical absolution.",
+    "Apply source rights and historical indulgence caveats before any publication."
+  ],
+  "review_gate": "Select per-category defaults after more full-text witness certifications; do not mark the unverified alternatives as ready to ship."
+}
