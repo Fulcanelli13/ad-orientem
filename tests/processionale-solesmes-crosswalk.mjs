@@ -1903,8 +1903,8 @@ test('Psalm46 L09 artificial accent alternative follows two-after lexical rule w
  assert.equal(alt.originalRejectedHypothesisPreserved,true);
  const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/æ/g,'ae').replace(/[^a-z]/gi,'').toLowerCase();
  const original=old.gabcResearchOnly;
- assert.ok(original.includes('ló(ixi)rum(hr) con(h)gre(h)gá(g)ti(hr)sunt(h.)'));
- assert.ok(alt.alternativeGabcWholeVerseResearchOnly.includes('ló(h)rum(h) con(ixi hr)gre(h)gá(g)ti(hr)sunt(h.)'));
+ assert.ok(original.includes('ló(ixi)rum(hr) con(h)gre(h)gá(g)ti(hr) sunt(h.)'));
+ assert.ok(alt.alternativeGabcWholeVerseResearchOnly.includes('ló(h)rum(h) con(ixi hr)gre(h)gá(g)ti(hr) sunt(h.)'));
  const first=alt.alternativeGabcWholeVerseResearchOnly.split('%%')[1].split('*(:)')[0];
  const sylls=old.sourceSyllables[0].split(/\s+/).flatMap(w=>w.split('-'));
  const enc=[...first.matchAll(/([\p{L}]+[.,;!?]?)\(([^)]+)\)/gu)];
