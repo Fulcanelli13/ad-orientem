@@ -20,7 +20,8 @@
   "source_git_paths": [
     "data/research/sacred-art-20261027-unified-rights-first-crosswalk.v1.json",
     "data/research/sacred-art-b50-95-exact-photo-version-evidence.csv",
-    "data/research/sacred-art-b49-107-approved-95-firstpass-12-exceptions.json"
+    "data/research/sacred-art-b49-107-approved-95-firstpass-12-exceptions.json",
+    "assets/staged/module-hero-quality-reviews/visual-preflight.json (research/module-hero-pd-masters-20261026)"
   ],
   "metrics": {
     "selected_current_placements": 46,
@@ -35,7 +36,16 @@
     "historical_artwork_priority_source_rows": 95,
     "historical_exception_rows": 12,
     "photos_complete_quality_signoff": 0,
-    "new_publication_release_permissions": 0
+    "new_publication_release_permissions": 0,
+    "staged_module_original_variants_all_branches": 19,
+    "staged_module_originals_distinct_modules": 18,
+    "staged_missing_module_ids": [
+      "joseph",
+      "angel",
+      "evening",
+      "rosary"
+    ],
+    "quality_preflight_reported_originals": 8
   },
   "reusable_original_groups": [
     {
@@ -177,7 +187,19 @@
       },
       "source_url": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
       "previous_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
-      "archived_variants": [],
+      "archived_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/heart-jesus.jpg",
+          "sha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+          "reported_width": 2345,
+          "reported_height": 3045,
+          "quality_inspection_existing": "AUTOMATED_TECHNICAL_PREFLIGHT_ONLY",
+          "warnings": [
+            "No embedded ICC profile: colour accuracy cannot be inferred"
+          ]
+        }
+      ],
       "shared_physical_object_key": "shared-morlete-heart-jesus",
       "legal_review_status": "PD_ART_US_CLAIM_DOCUMENTED_TERRITORIAL_REVIEW",
       "license_published": null,
@@ -204,7 +226,19 @@
       },
       "source_url": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
       "previous_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
-      "archived_variants": [],
+      "archived_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/heart-mary.jpg",
+          "sha256": "82e465f5600d0df4b2af32d22b8642a832bfc4cdd5d19d1f1c2b0baeec49649d",
+          "reported_width": 2277,
+          "reported_height": 2960,
+          "quality_inspection_existing": "AUTOMATED_TECHNICAL_PREFLIGHT_ONLY",
+          "warnings": [
+            "No embedded ICC profile: colour accuracy cannot be inferred"
+          ]
+        }
+      ],
       "shared_physical_object_key": "juan-patricio-morlete-ruiz-the-heart-of-mary",
       "legal_review_status": "PD_ART_US_CLAIM_DOCUMENTED_TERRITORIAL_REVIEW",
       "license_published": null,
@@ -231,7 +265,20 @@
       },
       "source_url": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
       "previous_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
-      "archived_variants": [],
+      "archived_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/michael.jpg",
+          "sha256": "4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad",
+          "reported_width": 1657,
+          "reported_height": 2441,
+          "quality_inspection_existing": "AUTOMATED_TECHNICAL_PREFLIGHT_ONLY",
+          "warnings": [
+            "Low bytes per pixel: investigate possible JPEG detail loss (not definitive)",
+            "No embedded ICC profile: colour accuracy cannot be inferred"
+          ]
+        }
+      ],
       "shared_physical_object_key": "guido-reni-archangel-michael-defeating-satan",
       "legal_review_status": "PD_ART_US_CLAIM_DOCUMENTED_TERRITORIAL_REVIEW",
       "license_published": null,
@@ -285,7 +332,17 @@
       },
       "source_url": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
       "previous_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
-      "archived_variants": [],
+      "archived_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/regina.jpg",
+          "sha256": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+          "reported_width": 2144,
+          "reported_height": 3000,
+          "quality_inspection_existing": "AUTOMATED_TECHNICAL_PREFLIGHT_ONLY",
+          "warnings": []
+        }
+      ],
       "shared_physical_object_key": "peter-paul-rubens-resurrection-of-christ",
       "legal_review_status": "PD_ART_US_CLAIM_DOCUMENTED_TERRITORIAL_REVIEW",
       "license_published": null,
@@ -347,7 +404,20 @@
       },
       "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Jerome_Writing-Caravaggio_(1605-6).jpg",
       "previous_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
-      "archived_variants": [],
+      "archived_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/scripture.jpg",
+          "sha256": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158",
+          "reported_width": 8708,
+          "reported_height": 6212,
+          "quality_inspection_existing": "AUTOMATED_TECHNICAL_PREFLIGHT_ONLY",
+          "warnings": [
+            "Low bytes per pixel: investigate possible JPEG detail loss (not definitive)",
+            "No embedded ICC profile: colour accuracy cannot be inferred"
+          ]
+        }
+      ],
       "shared_physical_object_key": "caravaggio-saint-jerome-writing-borghese-original",
       "legal_review_status": "PD_ART_US_CLAIM_DOCUMENTED_TERRITORIAL_REVIEW",
       "license_published": null,
@@ -409,7 +479,17 @@
       },
       "source_url": "https://emuseum.mfah.org/objects/64360/madonna-and-child-with-souls-in-purgatory",
       "previous_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
-      "archived_variants": [],
+      "archived_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/souls.jpg",
+          "sha256": "a2c3a6eda78b412da44d50197d853f01e1cd3ded5ebd5996816db451f11606b6",
+          "reported_width": 2393,
+          "reported_height": 3200,
+          "quality_inspection_existing": "AUTOMATED_TECHNICAL_PREFLIGHT_ONLY",
+          "warnings": []
+        }
+      ],
       "shared_physical_object_key": "luca-giordano-madonna-and-child-with-souls-in-purgatory",
       "legal_review_status": "PD_ART_US_CLAIM_DOCUMENTED_TERRITORIAL_REVIEW",
       "license_published": null,
@@ -610,7 +690,17 @@
       },
       "source_url": "https://www.wallraf.museum/2017-11-17-honthorst/",
       "previous_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
-      "archived_variants": [],
+      "archived_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/visit.jpg",
+          "sha256": "347cf5d74cc575bcb082250a90dc64c54dc673e94fbc4e48efcd27fa2a3b09c1",
+          "reported_width": 3948,
+          "reported_height": 3328,
+          "quality_inspection_existing": "AUTOMATED_TECHNICAL_PREFLIGHT_ONLY",
+          "warnings": []
+        }
+      ],
       "shared_physical_object_key": "gerrit-van-honthorst-the-adoration-of-the-shepherds",
       "legal_review_status": "PD_ART_US_CLAIM_DOCUMENTED_TERRITORIAL_REVIEW",
       "license_published": null,
@@ -637,7 +727,19 @@
       },
       "source_url": "https://artsandculture.google.com/asset/first-mass-in-brazil-0027/IQFUWbm_Wu1XaA",
       "previous_bucket": "COMMONS_PD_ART_TERRITORIAL_AUDIT_REQUIRED",
-      "archived_variants": [],
+      "archived_variants": [
+        {
+          "branch": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-masters/mass.jpg",
+          "sha256": "909302874ecb137b75c3b97974e9a4b42ec3c4d10a6d3e83bc98c130057b760f",
+          "reported_width": 4424,
+          "reported_height": 3399,
+          "quality_inspection_existing": "AUTOMATED_TECHNICAL_PREFLIGHT_ONLY",
+          "warnings": [
+            "No embedded ICC profile: colour accuracy cannot be inferred"
+          ]
+        }
+      ],
       "shared_physical_object_key": "victor-meirelles-the-first-mass-in-brazil",
       "legal_review_status": "PD_ART_US_CLAIM_DOCUMENTED_TERRITORIAL_REVIEW",
       "license_published": null,
@@ -3110,5 +3212,135 @@
       "rights_and_quality_review_done": false,
       "app_release": false
     }
-  ]
+  ],
+  "technical_asset_discovery": {
+    "tracked_branch": "research/module-hero-pd-masters-20261026",
+    "eight_originals": [
+      {
+        "module_id": "heart-jesus",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/heart-jesus.jpg",
+        "source_sha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+        "reported_dimensions": [
+          2345,
+          3045
+        ],
+        "reported_bytes": 2012474,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [
+          "No embedded ICC profile: colour accuracy cannot be inferred"
+        ],
+        "master_quality_approved": false
+      },
+      {
+        "module_id": "heart-mary",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/heart-mary.jpg",
+        "source_sha256": "82e465f5600d0df4b2af32d22b8642a832bfc4cdd5d19d1f1c2b0baeec49649d",
+        "reported_dimensions": [
+          2277,
+          2960
+        ],
+        "reported_bytes": 1951966,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [
+          "No embedded ICC profile: colour accuracy cannot be inferred"
+        ],
+        "master_quality_approved": false
+      },
+      {
+        "module_id": "michael",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/michael.jpg",
+        "source_sha256": "4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad",
+        "reported_dimensions": [
+          1657,
+          2441
+        ],
+        "reported_bytes": 513396,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [
+          "Low bytes per pixel: investigate possible JPEG detail loss (not definitive)",
+          "No embedded ICC profile: colour accuracy cannot be inferred"
+        ],
+        "master_quality_approved": false
+      },
+      {
+        "module_id": "regina",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/regina.jpg",
+        "source_sha256": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+        "reported_dimensions": [
+          2144,
+          3000
+        ],
+        "reported_bytes": 4593377,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [],
+        "master_quality_approved": false
+      },
+      {
+        "module_id": "scripture",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/scripture.jpg",
+        "source_sha256": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158",
+        "reported_dimensions": [
+          8708,
+          6212
+        ],
+        "reported_bytes": 7423474,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [
+          "Low bytes per pixel: investigate possible JPEG detail loss (not definitive)",
+          "No embedded ICC profile: colour accuracy cannot be inferred"
+        ],
+        "master_quality_approved": false
+      },
+      {
+        "module_id": "souls",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/souls.jpg",
+        "source_sha256": "a2c3a6eda78b412da44d50197d853f01e1cd3ded5ebd5996816db451f11606b6",
+        "reported_dimensions": [
+          2393,
+          3200
+        ],
+        "reported_bytes": 1789923,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [],
+        "master_quality_approved": false
+      },
+      {
+        "module_id": "visit",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/visit.jpg",
+        "source_sha256": "347cf5d74cc575bcb082250a90dc64c54dc673e94fbc4e48efcd27fa2a3b09c1",
+        "reported_dimensions": [
+          3948,
+          3328
+        ],
+        "reported_bytes": 9588163,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [],
+        "master_quality_approved": false
+      },
+      {
+        "module_id": "mass",
+        "source_branch": "research/module-hero-pd-masters-20261026",
+        "repo_path": "assets/staged/module-hero-masters/mass.jpg",
+        "source_sha256": "909302874ecb137b75c3b97974e9a4b42ec3c4d10a6d3e83bc98c130057b760f",
+        "reported_dimensions": [
+          4424,
+          3399
+        ],
+        "reported_bytes": 3421164,
+        "technical_preflight": "PRESENT_NOT_HUMAN_APPROVED",
+        "preflight_warnings": [
+          "No embedded ICC profile: colour accuracy cannot be inferred"
+        ],
+        "master_quality_approved": false
+      }
+    ],
+    "notes": "Do not mistakenly claim no acquired originals by reading older audit1 readiness snapshot; source bytes are present in four branch directories. No automated technical warning is an artwork quality verdict."
+  }
 }
