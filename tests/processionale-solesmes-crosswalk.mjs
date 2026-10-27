@@ -1459,7 +1459,7 @@ test('all seventeen Palm editorial cases have complete original Latin and only n
  const unscoredIds=new Set(batch.rows.map(x=>x.id));
  assert.equal(unscoredIds.size,8);
  for(const id of scoredIds)assert.equal(unscoredIds.has(id),false);
- for(const id of sourceById)assert.ok(unscoredIds.has(id)||scoredIds.has(id),id);
+ for(const id of sourceById.keys())assert.ok(unscoredIds.has(id)||scoredIds.has(id),id);
  assert.equal(sourceById.size,17);
  const actualOccurrences=batch.rows.flatMap(x=>x.physicalOccurrences);
  assert.equal(actualOccurrences.length,9);
