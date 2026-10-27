@@ -120,6 +120,28 @@ try{
       assert.equal(savedPlan.observed,false);
       assert.ok(await planPanel.locator('[data-schola-organ-rule="OFFERTORY_ORGAN_OPTION"]').count());
       await planPanel.locator("summary").click();
+      // A closed music editor must not remain a transparent hit target over
+      // ordinary Mass navigation (regression from R17 phone, 27 Oct).
+      const hiddenPanel=await planPanel.evaluate(el=>{
+        const fields=el.querySelector(".ao-schola-programme-fields");
+        const css=getComputedStyle(fields);
+        const rect=fields.getBoundingClientRect();
+        return {open:el.open,display:css.display,pointerEvents:css.pointerEvents,
+          rectHeight:rect.height};
+      });
+      assert.equal(hiddenPanel.open,false);
+      assert.equal(hiddenPanel.display,"none",
+        "Closed Schola editor visually overlaps ordinary Mass navigation");
+      assert.equal(hiddenPanel.pointerEvents,"none",
+        "Closed Schola editor must not intercept taps");
+      assert.equal(hiddenPanel.rectHeight,0);
+      const nextButton=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
+      const beforeTap=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard?.()?.sequence);
+      await nextButton.tap({timeout:5000});
+      const afterTap=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard?.()?.sequence);
+      if(Number.isFinite(beforeTap)&&Number.isFinite(afterTap)){
+        assert.notEqual(afterTap,beforeTap,"Mass next-card tap was intercepted");
+      }
       await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSequence(1));
     }
     assert.ok(summary.headings.includes("Gloria · The Celebrant's Intonation"));
