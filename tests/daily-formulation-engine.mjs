@@ -316,6 +316,12 @@ assert.equal(Object.keys(APPROVED_DAILY_FORMULATION_MANIFEST_V1.witnesses).lengt
  "No historical texts are cleared for public reader in this draft");
 assert.equal(Object.keys(APPROVED_DAILY_FORMULATION_MANIFEST_V1.profiles).length,0,
  "No historical profile is approved in this draft");
+const standardGuard=runtime.slice(runtime.indexOf("function dailyFormulationPrayerCard(prayerId)"),runtime.indexOf("function dailyFormulationPrayerCard(prayerId)")+360);
+assert.ok(standardGuard.includes('if(S.dailyLength==="standard")return prayerCard(prayerId,{focusParagraphs:true});'),
+ "Standard may never display a historical variant even if a future approval manifest is populated");
+const approvedCue=runtime.slice(runtime.indexOf("function renderDailyGuided(rows)"),runtime.indexOf("const id=step===total?",runtime.indexOf("function renderDailyGuided(rows)")));
+assert.ok(approvedCue.includes("row.editorial===true")&&approvedCue.includes("row.cue"),
+ "An approved examination reflection must retain its authored cue, not inherited legacy exposition");
 assert.ok(runtime.includes("function dailyReadingPlan()"),"Source adapter must attach to live reader");
 assert.ok(runtime.includes("resolveDailyReaderSequence({"),"Reader must reuse one guarded sequence adapter");
 assert.ok(runtime.includes("DAILY_SEQUENCE_RELEASE.enabled!==true"),"Existing per-card selector requires independent release switch");
