@@ -1405,6 +1405,27 @@
         "photo_quality_human_final_accepted": false,
         "photo_production_released": false,
         "acquisition_error": "HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+      },
+      "previous_approved_painting_retained_as_historical": {
+        "artist": "Philippe de Champaigne",
+        "title": "The Dream of Saint Joseph",
+        "artwork_id": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg"
+      },
+      "user_oct27_choice": {
+        "choice_code": "S4",
+        "painting": {
+          "artist": "Claudio Coello",
+          "title": "St Joseph and the Christ Child",
+          "object_url": "https://emuseum.toledomuseum.org/objects/55088/st-joseph-and-the-christ-child",
+          "date": 1666
+        },
+        "user_comment": "M4 and S4 are good",
+        "editorial_status": "USER_APPROVED_REPLACEMENT_PENDING_PHOTO",
+        "source_basis": "Toledo Museum; exact photo rights pending",
+        "rights_review_not_complete": true,
+        "quality_approval": false,
+        "production_release": false
       }
     },
     {
@@ -1578,6 +1599,27 @@
         "acquisition_current_outcome": "REFERENCE_FILE_ARCHIVED_SHA_VERIFIED_QUALITY_AND_RIGHTS_HOLD",
         "photo_quality_human_final_accepted": false,
         "photo_production_released": false
+      },
+      "previous_approved_painting_retained_as_historical": {
+        "artist": "Pietro da Cortona",
+        "title": "The Guardian Angel",
+        "artwork_id": "ART-ietro-da-ortona-he-uardian-ngel",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg"
+      },
+      "user_oct27_choice": {
+        "choice_code": "M4",
+        "painting": {
+          "artist": "Guido Reni",
+          "title": "Archangel Michael Defeating Satan",
+          "reuse_module": "michael",
+          "source_url": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg"
+        },
+        "user_comment": "M4 and S4 are good",
+        "editorial_status": "USER_APPROVED_SHARED_ARTWORK_PENDING_RELEASE",
+        "source_basis": "Reuses already selected Guido Reni Michael image and source; no separate new image needed",
+        "rights_review_not_complete": true,
+        "quality_approval": false,
+        "production_release": false
       }
     },
     {
@@ -1885,6 +1927,14 @@
         "photo_quality_human_final_accepted": false,
         "photo_production_released": false,
         "acquisition_error": "HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+      },
+      "user_oct27_choice": {
+        "choice_code": "E9",
+        "artist": "Jean-François Millet",
+        "title": "The Angelus",
+        "editorial_status": "USER_LEADING_CHOICE_NOT_EXPLICITLY_FINAL",
+        "positive_reserve": "Moritz Müller Evening Prayer (E6)",
+        "photo_rights_not_yet_released": true
       }
     },
     {
@@ -2396,5 +2446,6 @@
   },
   "latest_source_gate_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40465399678",
   "current_missing_three_research_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40527341367",
-  "current_missing_three_reference_fallback_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40528275735"
+  "current_missing_three_reference_fallback_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40528275735",
+  "module_hero_selection_supersession_policy": "Read user_oct27_choice first when present; old approved_painting remains historical record. No app photo release until separate exact-file gate. Guardian reuses Michael module original."
 }
