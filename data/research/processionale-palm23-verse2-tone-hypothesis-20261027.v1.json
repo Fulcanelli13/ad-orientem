@@ -3,7 +3,7 @@
   "date": "2026-10-27",
   "batch": 24,
   "stage": "PALM-R02",
-  "status": "PROVISIONAL_GABC_NATIVE_EXSURGE_SVG_RENDERED_THREE_WIDTHS_MUSICAL_CADENCE_STILL_UNAPPROVED",
+  "status": "TWO_PROVISIONAL_ALTERNATIVES_ONE_NATIVE_RENDERED_SECOND_RENDER_PENDING_ZERO_EDITOR_APPROVAL",
   "target": {
     "psalm": 23,
     "liturgicalLine": 2,
@@ -231,5 +231,29 @@
       ]
     },
     "meaning": "Real Exsurge parser/layout/nonempty SVG validation on pinned Schola source, not score/music/editorial approval or physical device pixel QA."
+  },
+  "alternativeAccentAlignment": {
+    "file": "data/research/chant-source-review/palm23-verse2-accent-alignment-20261027-ALTERNATE.gabc",
+    "status": "SECOND_RESEARCH_OPTION_FOR_MUSICAL_EDITOR_NO_CERTIFIED_CORRECTION",
+    "sharedMedialSectionUnchanged": true,
+    "terminalOriginal": "fir(h)má(g)vit(f) e(gh gr)um.(gf..)",
+    "terminalAlternative": "fir(h)má(h)vit(gf) e(gh gr)um.(gf..)",
+    "originalFirstVerseTerminalContour": "há(h)bi(h)tant(g) in(f) e(gh gr)o.(gf..)",
+    "mechanism": "Experimental accent-aware recasting: assign h recitation to stressed má in firmávit and combine the first-verse g and f postaccent note groups on vit(gf) because verse2 contains one fewer syllable in the terminal phrase.",
+    "explicitLimitation": "One-to-one source-note transference no longer holds and combining two former syllabic notes into a clivis could violate proper Solesmes psalm-tone pointing. This is a reviewer alternative only, not verified reconstruction.",
+    "sungRecitationAttestedByPrintedCueOnly": [
+      "Nam",
+      "ip",
+      "se"
+    ],
+    "reviewBeforeUse": [
+      "Confirm exact editorial Solesmes formula for Psalm23 second-verse final cadence",
+      "Compare Latin accent and preparatory-syllable counting for firmávit eum",
+      "Check if gf clivis on vit is musically allowed in this tone",
+      "Render both alternatives with real Exsurge, separately from music signoff"
+    ],
+    "originalApproved": false,
+    "alternativeApproved": false,
+    "realExsurgeRendered": false
   }
 }
