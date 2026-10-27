@@ -1,0 +1,61 @@
+{
+  "record": "Evening Prayer — exact-object photo acquisition exceptions",
+  "date": "2026-10-27",
+  "scope": "Research-only; no editorial replacement, license approval or app release",
+  "current_editorial_primary": {
+    "artist": "Pierre-Édouard Frère",
+    "title": "The Prayer",
+    "museum": "Wolverhampton Art Gallery",
+    "inventory": "OP6",
+    "source": "https://artuk.org/discover/artworks/the-prayer-19241",
+    "image_on_commons": "Pierre Edouard Frère (1819-1886) - The Prayer - OP6 - Wolverhampton Art Gallery.jpg",
+    "pixels": [
+      898,
+      1200
+    ],
+    "status": "photo unsuitable for pristine full-image reproduction; right terms unresolved"
+  },
+  "leading_not_final_alternative": {
+    "artist": "Jean-François Millet",
+    "title": "L'Angélus",
+    "museum": "Musée d'Orsay",
+    "museum_page": "https://www.musee-orsay.fr/en/artworks/langelus-345",
+    "commons_source": "https://commons.wikimedia.org/wiki/File:Jean-Fran%C3%A7ois_Millet_-_The_Angelus_-_Google_Art_Project.jpg",
+    "pixels": [
+      7053,
+      5864
+    ],
+    "status": "candidate exact-source acquisition configured; unarchived at last verified inspection; no human color/photography approval"
+  },
+  "exact_identity_exclusions": [
+    {
+      "artist": "Pierre-Édouard Frère",
+      "title": "The Evening Prayer",
+      "inventory": "SK-A-3081",
+      "museum": "Rijksmuseum Amsterdam",
+      "pixels": [
+        2086,
+        2500
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Evening_Prayer_by_Pierre_Edouard_Fr%C3%A8re_Rijksmuseum_Amsterdam_SK-A-3081.jpg",
+      "reason": "Different painting from Wolverhampton OP6, even though painter and title resemble the selected work; never use its source to fulfil OP6.",
+      "metadata_concern": "Commons image contains Photoshop CS4/uncalibrated colour and proprietary metadata; not quality-cleared."
+    },
+    {
+      "artist": "Pierre-Édouard Frère",
+      "title": "The Prayer",
+      "museum": "Wolverhampton Art Gallery",
+      "image_type": "AI 2x upscale from 898x1200",
+      "source": "https://renopenrose.getarchive.net/amp/media/pierre-edouard-frere-1819-1886-the-prayer-op6-wolverhampton-art-gallery-ec39b5",
+      "reason": "Enlarged web copy is not an independent high-resolution original; reject for pristine criterion."
+    }
+  ],
+  "release_gate": {
+    "editorial_locked": false,
+    "alternate_photo_archived": false,
+    "pristine_master_verified": false,
+    "rights_cleared": false,
+    "production_released": false
+  },
+  "cost_eur": 0
+}
