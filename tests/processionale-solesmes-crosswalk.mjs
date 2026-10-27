@@ -1920,3 +1920,50 @@ test('Psalm46 L09 artificial accent alternative follows two-after lexical rule w
  assert.equal(alt.originalHebrewNameAccentStillRequiresReview,true);
 });
 
+
+
+test('Palm Psalm46 L08 secondary accent aligns two syllables after super and psalm pair antiphons',()=>{
+ const master=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
+ const high=readJSON('data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json');
+ const b=master.batch38SecondaryAccentAndAntiphon;
+ const p=high.cases.find(x=>x.id==='PALM-R02-PS46-L08');
+ const alt=p.batch38SecondaryAccentAlternative;
+ assert.equal(b.batch,38);
+ assert.equal(b.secondaryAccentAlternatives.length,2);
+ assert.equal(alt.status,'COMPARATIVE_RULE_POINTING_PASSES_PALM_MUSIC_NOT_VERIFIED');
+ assert.equal(alt.sourcePrintedLatin,p.sourceLatin[0]);
+ assert.equal(alt.naturalAccent.syllable,'su');
+ assert.equal(alt.naturalAccent.index,4);
+ assert.equal(alt.artificialSecondaryAccent.syllable,'na');
+ assert.equal(alt.artificialSecondaryAccent.index,6);
+ assert.equal(alt.lastLexicalAccent.syllable,'ó');
+ assert.equal(alt.lastLexicalAccent.index,8);
+ assert.equal(alt.artificialSecondaryAccent.index-alt.naturalAccent.index,2);
+ assert.equal(alt.lastLexicalAccent.index-alt.artificialSecondaryAccent.index-1,1);
+ assert.equal(alt.originalFiveUnaccentedSyllablesBetweenRégAndÓPreservedAsRejectedBaseline,true);
+ const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/æ/g,'ae').replace(/[^a-z]/gi,'').toLowerCase();
+ const words=p.sourceSyllables[0].split(/\s+/),syllables=words.flatMap(x=>x.split('-'));
+ const first=alt.candidateWholeVerseResearchGabc.split('%%')[1].split('*(:)')[0];
+ const got=[...first.matchAll(/([\p{L}]+[.,;!?]?)\(([^)]+)\)/gu)];
+ assert.equal(got.length,syllables.length);
+ assert.deepEqual(got.map(x=>norm(x[1])),syllables.map(norm));
+ assert.deepEqual(got.map(x=>x[2]),alt.candidateGroupsInMedial);
+ assert.equal(norm(got.map(x=>x[1]).join('')),norm(p.sourceLatin[0]));
+ assert.deepEqual(first.replace(/\([^)]*\)/g,'').trim().split(/\s+/).map(norm),words.map(norm));
+ assert.equal(alt.humanMelodyAccepted,false);
+ assert.equal(alt.sourceToneIndependentWitnessFound,false);
+ assert.equal(alt.productionEligible,false);
+ assert.deepEqual(b.psalm23Antiphon.pairEndVerseNumbers,[2,8,10,12]);
+ assert.deepEqual(b.psalm46Antiphon.pairEndVerseNumbers,[2,4,6,8,10,12]);
+ assert.equal(b.psalm23Antiphon.explicitAntiphonReturnAfterFinalDoxology,true);
+ assert.equal(b.psalm46Antiphon.explicitAntiphonReturnAfterFinalDoxology,true);
+ assert.equal(b.scholaEventIntegration.noReaderChange,true);
+ assert.equal(b.scholaEventIntegration.noSpuriousSeparateAmenResponse,true);
+ const l=b.unresolvedL05;
+ assert.equal(l.proposedExistingFirstAccentIndex,8);
+ assert.equal(l.distanceFromNearestTrueAccentToExistingArtificial,5);
+ assert.equal(l.aSingleSecondaryFromDeAtCumIndex5StillLeavesFourUnaccentedBeforeO,true);
+ assert.equal(l.automaticNoteCorrectionPermitted,false);
+ assert.equal(b.sourceNotes.musicEditorApprovalCount,0);
+});
+
