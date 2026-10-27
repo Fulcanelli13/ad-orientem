@@ -6,6 +6,8 @@ on:
       - governance/icrsp-source-inventory-1665
     paths:
       - 'tests/icrsp-b52-three-commons-selected-proper-browser.mjs'
+      - 'data/source-text/icrsp-france-b53-three-commons-language-witness-audit.v1.json'
+      - 'tests/test_icrsp_b53_common_language_witnesses.py'
       - 'data/source-text/icrsp-france-b41-1962-vatican-three-commons-print-image-collation.v1.json'
       - 'data/source-text/icrsp-france-b42-first-live-18-date-resolver-observations.v1.json'
       - '.github/workflows/icrsp-b52-selected-commons-proper.yml'
@@ -31,6 +33,8 @@ jobs:
         run: |
           npm install --no-audit --no-fund
           npx playwright install --with-deps chromium
+      - name: Verify nine oration-body language witnesses remain research-only
+        run: python3 -m unittest discover -s tests -p 'test_icrsp_b53_common_language_witnesses.py' -v
       - name: Verify three photographed Common identities and three real selected calendar Propers
         run: node tests/icrsp-b52-three-commons-selected-proper-browser.mjs
       - name: Source and publication restriction
