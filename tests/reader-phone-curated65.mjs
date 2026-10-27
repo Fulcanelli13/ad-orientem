@@ -351,7 +351,8 @@ try{
       // merely because an unrelated small icon was removed. Source-printed
       // bracketed rubrics already carry their wording, so don't double-print.
       const rubricParity=await page.evaluate(async()=>{
-        const {publishedMissalRubricsForParagraph}=await import("/src/mass/reader-missal-rubrics.js");
+        const {publishedMissalRubricsForParagraph,RITUS_1962_PLACEAT_ADDENDUM}=
+          await import("/src/mass/reader-missal-rubrics.js");
         const registry=await (await fetch("/data/presentation/reader-rubric-events.v1.json")).json();
         const api=window.__AO_PHONE_PREVIEW,expected=new Set(),found=new Set();
         const missing=[],uncertified=[];
@@ -396,8 +397,21 @@ try{
             }
             for(const item of idNodes){
               const id=item.dataset.rubricId;
-              if(!registry.items.some(record=>record.id===id))
-                uncertified.push({card:card.title,id});
+              // Keep the frozen 57-source/icon master intact. Admit ONLY the
+              // separately source-certified 1962 Ritus XII.1 bowed-hands
+              // text, not arbitrary unlisted IDs, derived icons or clocks.
+              const original=registry.items.some(record=>record.id===id);
+              const addendum=events.some(event=>
+                id===RITUS_1962_PLACEAT_ADDENDUM.id &&
+                event.id===id &&
+                event.sourceCueId===RITUS_1962_PLACEAT_ADDENDUM.cueId &&
+                event.owner===RITUS_1962_PLACEAT_ADDENDUM.owner &&
+                event.review===RITUS_1962_PLACEAT_ADDENDUM.review &&
+                event.sourceId==="MR62_RITUS" &&
+                event.actor==="PRIEST" && event.kind==="GESTURE" &&
+                event.observedNow===false &&
+                !registry.items.some(x=>x.id===id));
+              if(!original&&!addendum)uncertified.push({card:card.title,id});
             }
           }
         }

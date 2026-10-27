@@ -109,4 +109,30 @@ for(const id of ["AO.SM.C0161","AO.SM.C0174","AO.SM.C0181"]){
  assert.equal(bells.length,0,"Uncertified independent bell stage auto-published");
 }
 
+// Source-verified Ritus IV.3 priest bows are book text only. They must
+// survive the real reader moment normalization, not merely a raw projector.
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+ for(const language of ["en","fr"]){
+  const subject=[mk("combined-gloria",["AO.SM.C0053","AO.SM.C0054"]),
+    mk("adoramus",["AO.SM.C0056"])];
+  const missal=withPublishedMissalParagraphRubrics(subject,source,
+    {form,language,presentationMode:"MISSAL"});
+  const normalized=normalizeReaderMoment({paragraphs:missal});
+  assert.deepEqual(normalized.paragraphs.map(p=>p.publishedMissalRubrics.map(x=>x.id)),
+   [["MR62.ADD.C0054.01"],["MR62.ADD.C0056.01"]],
+   "Book-only source-note identities lost through real reader normalization");
+  assert.ok(normalized.paragraphs.every(p=>p.publishedMissalRubrics.every(x=>
+   x.actor==="PRIEST"&&x.observedNow===false&&
+   x.owner==="MR62_1962_MISSAL_ONLY_GLORIA_BOWS")));
+  const live=withPublishedMissalParagraphRubrics(subject,source,
+    {form,language,presentationMode:"LIVE"});
+  assert.ok(live.every(p=>!p.publishedMissalRubrics?.length),
+   "Never auto-project priest IV.3 bow onto choir-owned LIVE words");
+  const spoof=structuredClone(missal[1]);
+  spoof.publishedMissalRubrics[0].sourceCueId="AO.SM.C0055";
+  assert.equal(normalizeReaderMoment({paragraphs:[spoof]})
+    .paragraphs[0].publishedMissalRubrics.length,0,
+   "Source cue mismatch must never render a forged Missal rubric");
+ }
+}
 console.log("PASS 52 existing approved priest actions + 2 published canonical-digits STATE annotations (EN/FR, four forms); bells remain unpromoted.");

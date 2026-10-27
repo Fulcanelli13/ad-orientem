@@ -4,8 +4,10 @@
  * observation or a change to the ritual text/card/clock.
  *
  * The 19 Canon entries reuse the existing strict published Canon allowlist.
- * The other 33 entries are also individually approved in the shipped R17
- * registry; no new "1962_NORMATIVE" row is automatically promoted.
+ * The other 33 entries are individually approved in the frozen R17 registry.
+ * New Ritus XII.1 bowed-hands detail is a separate, fully source-identified,
+ * exact-cue display addendum. It never alters the frozen 57-event art crosswalk
+ * nor manufactures an observed priest/Schola action clock.
  */
 import {publishedCanonRubricsForParagraph} from "./reader-canon-published-rubrics.js";
 
@@ -82,12 +84,58 @@ const validCue=id=>/^AO\.SM\.C\d{4}$/.test(String(id??""));
 const frozen=Object.freeze;
 const isCanon=id=>Number(id.slice(-4))>=150&&Number(id.slice(-4))<=207;
 
+// Explicit source certification outside the 57 frozen rubric/icon master.
+// C0261 already contains the complete silent prayer. The 1962 Ritus XII.1
+// directs the priest's posture for that prayer; it does NOT create a new
+// visible prayer card or constitute evidence of a live timed observation.
+// Source: https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=22
+// Witness: https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien
+export const RITUS_1962_PLACEAT_ADDENDUM=Object.freeze({
+  id:"MR62.ADD.C0261.01",
+  cueId:"AO.SM.C0261",
+  actor:"PRIEST",
+  kind:"GESTURE",
+  sourceSection:"Ritus servandus XII.1",
+  triggerLat:"Placeat tibi, sancta Trinitas",
+  en:"The priest bows his head over the altar, with his joined hands resting upon it, and says this prayer silently.",
+  fr:"Le prêtre incline la tête devant l’autel, les mains jointes posées sur celui-ci, et récite cette prière à voix basse.",
+  owner:"MR62_1962_MISSAL_ADDITIONS",
+  review:"NEW_1962_RITUS_SOURCE_CERTIFIED_ADDENDUM",
+});
+
+// Ritus servandus IV.3: two source-attested priest inclinations. These are
+// book directions, NOT inferred LIVE gestures from choir phrases. C0054
+// finishes the PRIEST's Gloria intonation; C0056 belongs to his private
+// continuation, which is independent of SCHOLA_PUBLIC time.
+// Authority: https://www.documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf
+// Witness: https://icrspfrance.fr/textes-liturgiques.php?article=a0003_ancien
+export const RITUS_1962_GLORIA_MISSAL_BOWS=Object.freeze([
+ Object.freeze({
+  id:"MR62.ADD.C0054.01",cueId:"AO.SM.C0054",
+  actor:"PRIEST",kind:"GESTURE",sourceSection:"Ritus servandus IV.3",
+  triggerLat:"Deo",shortAction:"JOINS HANDS AND BOWS HEAD TO CROSS",
+  en:"At Deo, the priest joins his hands and bows his head toward the altar Cross.",
+  fr:"À Deo, le prêtre joint les mains et incline la tête vers la Croix de l’autel.",
+  owner:"MR62_1962_MISSAL_ONLY_GLORIA_BOWS",
+  review:"SOURCE_CERTIFIED_1962_MISSAL_ONLY_NOT_LIVE_CLOCK",
+ }),
+ Object.freeze({
+  id:"MR62.ADD.C0056.01",cueId:"AO.SM.C0056",
+  actor:"PRIEST",kind:"GESTURE",sourceSection:"Ritus servandus IV.3",
+  triggerLat:"Adoramus te",shortAction:"BOWS HEAD TO CROSS",
+  en:"At Adoramus te, the priest bows his head toward the altar Cross during his own recitation.",
+  fr:"À Adoramus te, le prêtre incline la tête vers la Croix de l’autel pendant sa propre récitation.",
+  owner:"MR62_1962_MISSAL_ONLY_GLORIA_BOWS",
+  review:"SOURCE_CERTIFIED_1962_MISSAL_ONLY_NOT_LIVE_CLOCK",
+ }),
+]);
+
 /**
  * Reuses original Canon publication authority and the explicit outside-Canon
  * list. A citation URL is reused, not copied from unapproved French research.
  */
 export function publishedMissalRubricsForParagraph(paragraph,registry,{
- form="MISSA_CANTATA_SIMPLE",language="en",
+ form="MISSA_CANTATA_SIMPLE",language="en",presentationMode=null,
 }={}){
  if(registry?.schema!=="ao-reader-rubric-events-v1" ||
     registry.status!=="SOURCE_BACKED_OVERLAY" ||
@@ -132,7 +180,7 @@ export function publishedMissalRubricsForParagraph(paragraph,registry,{
    label:x.label,sourceUrl:source.url,kind:"STATE"})));
  }
  const positioned=new Map(ids.map((id,i)=>[id,i]));
- return frozen(candidates.sort((a,b)=>
+ const original=frozen(candidates.sort((a,b)=>
      positioned.get(a.cueId)-positioned.get(b.cueId)||a.order-b.order)
    .filter(x=>ACTIONS[x.label] || (x.kind==="STATE"&&APPROVED_MISSAL_PRIEST_STATES[x.id]))
    .map(x=>frozen({
@@ -144,6 +192,41 @@ export function publishedMissalRubricsForParagraph(paragraph,registry,{
      sourceUrl:x.sourceUrl??source.url,review:"EXISTING_PUBLISHED_R17_1962_RUBRIC",
      observedNow:false,owner:MISSAL_RUBRIC_OWNER,
    })));
+ // Only exact existing source-cue IDs and MISSAL mode may publish these
+ // directions. No choir phrase activates a live priest gesture, and neither
+ // the 57 approved rubric IDs nor their 414-row image crosswalk is modified.
+ const bookOnly=String(presentationMode??"").toUpperCase()==="MISSAL"
+   ? RITUS_1962_GLORIA_MISSAL_BOWS.filter(row=>
+       ids.includes(row.cueId) &&
+       !registry.items.some(x=>x.cueId===row.cueId&&x.actor==="PRIEST") &&
+       !original.some(x=>x.sourceCueId===row.cueId))
+     .map(row=>frozen({
+       id:row.id,sourceCueId:row.cueId,actor:row.actor,
+       shortAction:row.shortAction,displayText:row[isFrench?"fr":"en"],
+       kind:row.kind,latinTrigger:row.triggerLat,order:1,
+       sourceId:"MR62_RITUS",sourceUrl:source.url,
+       review:row.review,observedNow:false,owner:row.owner,
+     }))
+   : [];
+ // Never use a text match or external preference to activate this direction.
+ // Preserve the original published registry and its 414-row icon crosswalk.
+ const placeat=RITUS_1962_PLACEAT_ADDENDUM;
+ const addendumAllowed=ids.includes(placeat.cueId) &&
+   !registry.items.some(x=>x.cueId===placeat.cueId && x.actor==="PRIEST") &&
+   !original.some(x=>x.sourceCueId===placeat.cueId);
+ if(!addendumAllowed)return frozen([...original,...bookOnly].sort((a,b)=>
+   positioned.get(a.sourceCueId)-positioned.get(b.sourceCueId)||a.order-b.order));
+ const added=frozen({
+   id:placeat.id,sourceCueId:placeat.cueId,actor:placeat.actor,
+   shortAction:"BOWS AT ALTAR WITH JOINED HANDS",
+   displayText:placeat[isFrench?"fr":"en"],
+   kind:placeat.kind,latinTrigger:placeat.triggerLat,order:1,
+   sourceId:"MR62_RITUS",sourceUrl:source.url,
+   review:placeat.review,observedNow:false,owner:placeat.owner,
+ });
+ return frozen([...original,...bookOnly,added].sort((a,b)=>
+   positioned.get(a.sourceCueId)-positioned.get(b.sourceCueId)||
+   a.order-b.order));
 }
 
 export function withPublishedMissalParagraphRubrics(paragraphs,registry,options={}){
