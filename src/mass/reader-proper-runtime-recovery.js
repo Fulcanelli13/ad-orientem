@@ -2,7 +2,7 @@ import {certifyPreGospelChantParts} from "./reader-pre-gospel-chant-source.js";
 import {render1962EasterPrefaceVariant} from "./1962-easter-preface-form.js";
 import {recover1962InAlbisSecretFromPinnedSource} from "./1962-in-albis-secret-source.js";
 import {required1962MarianPrefaceOwner,verifyMarianLatinSourceRule,render1962MarianPrefaceForm,isSelected1962MarianPrefaceForm} from "./1962-marian-preface-source.js";
-import {required1962SeasonalSanctoralPrefaceOwner,originalSanctoralLacksOwnPreface,matches1962SeasonalSanctoralSelection} from "./1962-seasonal-sanctoral-preface-source.js";
+import {required1962SeasonalSanctoralPrefaceOwner,originalSanctoralLacksOwnPreface,matches1962SeasonalSanctoralSelection,required1962May11ApostlesPrefaceOwner,authenticMay11ApostolicOriginal,matches1962May11ApostlesSelection} from "./1962-seasonal-sanctoral-preface-source.js";
 const PER_DOM=Object.freeze({
   la:"Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
   en:"Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
@@ -134,6 +134,8 @@ export function authenticated1962PrefaceRecoveryOwner(principalCelebrationId,sou
     marianForm:marian.form,blocked:marian.blocked,
     sourceOwner:marian,scope:marian.scope,
     rubric:"RGMR_495",sourcePath:path});
+  const apostle=required1962May11ApostlesPrefaceOwner(id,path,calendarDate);
+  if(apostle)return Object.freeze({...apostle,sourcePath:path,apostolicSpecial:apostle});
   const seasonal=required1962SeasonalSanctoralPrefaceOwner(id,path,calendarDate);
   if(seasonal)return Object.freeze({...seasonal,
     sourcePath:path,seasonalSanctoral:seasonal});
@@ -178,6 +180,10 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
     return null;
   const owner=authenticated1962PrefaceRecoveryOwner(principalCelebrationId,data?.sourcePath,calendarDate);
   if(!owner||owner.blocked)return null;
+  if(owner.apostolicSpecial){
+    const original=await hostResolver.resolveSource(owner.apostolicSpecial.sourceWitness,"la",diagnostic);
+    if(!authenticMay11ApostolicOriginal(original))return null;
+  }
   if(owner.seasonalSanctoral){
     const original=await hostResolver.resolveSource(data.sourcePath,"la",diagnostic);
     if(!originalSanctoralLacksOwnPreface(original,owner.seasonalSanctoral))return null;
@@ -227,6 +233,10 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
   if(!hasThreeLanguages(result))return null;
   if(owner.marianForm&&!isSelected1962MarianPrefaceForm(
     {...result,marianForm:owner.marianForm},owner.sourceOwner))return null;
+  if(owner.apostolicSpecial&&!matches1962May11ApostlesSelection({
+    ...result,prefaceSection:owner.section,prefaceVariant:owner.variant,
+    recoveryScope:owner.scope,sanctoralSourceDate:calendarDate
+  },owner.apostolicSpecial))return null;
   if(owner.seasonalSanctoral&&!matches1962SeasonalSanctoralSelection({
     ...result,prefaceSection:owner.section,prefaceVariant:owner.variant,
     recoveryScope:owner.scope,seasonalSanctoralDate:calendarDate
@@ -234,6 +244,7 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
   return Object.freeze({...result,sourcePath:"Ordo/Prefationes",prefaceSection:owner.section,
     ...(owner.marianForm?{marianForm:owner.marianForm}:{}),
     ...(owner.seasonalSanctoral?{seasonalSanctoralDate:calendarDate}:{}),
+    ...(owner.apostolicSpecial?{sanctoralSourceDate:calendarDate}:{}),
     recoveryScope:owner.scope??"CERTIFIED_EXACT_FEAST",rubric:owner.rubric??null,
     prefaceVariant:owner.variant??null,
     originalProperSourcePath:String(data.sourcePath??"")});
