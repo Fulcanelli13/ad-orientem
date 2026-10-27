@@ -1,0 +1,33 @@
+name: Module hero rescue preserved original fidelity (read-only)
+# The permanent, original-byte archive already exists on the research branch.
+# This default-branch job is read-only and never creates new image assets.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-existing-source-archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read the permanently preserved, unapproved research originals
+        uses: actions/checkout@v4
+        with:
+          ref: research/module-hero-rescue-20261026
+          path: art-research
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Verify archived bytes, source SHA-256, and unapproved preview evidence
+        run: |
+          python scripts/art/verify-research-archive-readonly.py \
+            --archive-root art-research \
+            --source-prefix assets/staged/module-hero-rescue \
+            --min-originals 2 \
+            --report data/research/module-hero-rescue-20261026.json \
+            --check-previews
+      - name: Publication remains prohibited
+        run: echo "Research-only originals; no aesthetic, licence, crop or app release approvals."
