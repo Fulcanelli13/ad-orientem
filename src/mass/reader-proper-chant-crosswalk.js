@@ -3,6 +3,10 @@
 // The *actual resolved* 1962 Proper owns the text. No guessed feast,
 // commemoration, missing-source fallbacks or performance confirmation.
 import {CHRISTMAS_DAY_PROPER_SCORES_1961} from "./reader-christmas-proper-scores-1961.js";
+import {PENT21_PROPER_SCORES_1961} from "./reader-pent21-proper-scores-1961.js";
+const PROPER_1961_REFERENCE_CATALOGUE=Object.freeze([
+  ...CHRISTMAS_DAY_PROPER_SCORES_1961,...PENT21_PROPER_SCORES_1961,
+]);
 
 export const PROPER_CHANT_SOURCE_SCHEMA="ao-reader-proper-chant-crosswalk-v1";
 const ALLOWED=new Set(["INTROIT","GRADUAL","ALLELUIA_TRACT_SEQUENCE","OFFERTORY","COMMUNION"]);
@@ -28,7 +32,7 @@ function sourceEnvelopeFor(mapped,trackId){
   }
   return latin.join(" ");
 }
-export function matchSourceOwnedProperScores(mapped,{catalogue=CHRISTMAS_DAY_PROPER_SCORES_1961}={}){
+export function matchSourceOwnedProperScores(mapped,{catalogue=PROPER_1961_REFERENCE_CATALOGUE}={}){
   const path=String(mapped?.sourcePath??"").trim();
   if(mapped?.schema!=="ao-reader-proper-slots-v1"||!path)
     return Object.freeze({schema:PROPER_CHANT_SOURCE_SCHEMA,sourcePath:path||null,status:"SOURCE_UNREADY",
@@ -40,6 +44,7 @@ export function matchSourceOwnedProperScores(mapped,{catalogue=CHRISTMAS_DAY_PRO
     const normalized=normalizeChantLatin(latin);
     const matches=catalogue.filter(record=>{
       if(record.trackId!==track||!record.gabc?.includes("%%"))return false;
+      if(record.sourcePathAllowlist?.length && !record.sourcePathAllowlist.includes(path))return false;
       const witness=normalizeChantLatin(record.incipit);
       if(!witness||witness.split(" ").length<3)return false;
       // Allow only a short head rubric/Alleluia intonation before the
@@ -69,6 +74,6 @@ export function scoreForSourceOwnedProperTrack(crosswalk,trackId){
      crosswalk?.status!=="PARTIALLY_MATCHED")return null;
   const candidate=crosswalk.candidates?.find(row=>row.trackId===trackId);
   if(!candidate)return null;
-  return CHRISTMAS_DAY_PROPER_SCORES_1961.find(record=>
+  return PROPER_1961_REFERENCE_CATALOGUE.find(record=>
     record.trackId===trackId&&record.id===candidate.scoreId)??null;
 }

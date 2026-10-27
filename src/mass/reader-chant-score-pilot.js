@@ -1,6 +1,7 @@
 import {createOfflineChantEngraver} from './reader-chant-engraver.js';
 import {ORDINARY_1961_SCORE_SOURCES} from './reader-ordinary-scores-1961.js';
 import {CHRISTMAS_DAY_PROPER_SCORES_1961} from './reader-christmas-proper-scores-1961.js';
+import {PENT21_PROPER_SCORES_1961} from './reader-pent21-proper-scores-1961.js';
 // Native Mass Schola: real Gregorian score selection and continuous manuscript viewing.
 // Research/pilot only: selected preview is NOT the actual choir's musical setting.
 // No playback, priest action, card navigation, audio clock, or liturgical inference.
@@ -62,6 +63,7 @@ export const SCHOLA_SCORE_CATALOGUE=Object.freeze([
       "Liber Usualis (Solesmes, 1961), p. 37"])}),
   ...ORDINARY_1961_SCORE_SOURCES,
   ...CHRISTMAS_DAY_PROPER_SCORES_1961,
+  ...PENT21_PROPER_SCORES_1961,
 ]);
 export const SCHOLA_SCORE_PILOT=SCHOLA_SCORE_CATALOGUE[0];
 export const SCHOLA_SCORE_TRACK_IDS=Object.freeze([
