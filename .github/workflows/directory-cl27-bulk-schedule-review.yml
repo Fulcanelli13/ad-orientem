@@ -99,8 +99,8 @@ jobs:
           assert c['new_public_pins']==0 and sum(c['descriptive_text_triage'].values())==735
           assert len({x['physical_anchor_id'] for x in d['intake']})==735
           assert all(x['geometry'] is None and x['public_release_approved'] is False for x in d['intake'])
-          assert all(x['count']<=150 and x['research_state']=='RESEARCH_NOT_GEOCODE_VERIFIED'
-                     for x in d['country_batches_max_150'])
+          assert [x['count'] for x in d['geocode_batches_max_150']]==[150,150,150,150,135]
+          assert all(x['research_state']=='RESEARCH_NOT_GEOCODE_VERIFIED' for x in d['geocode_batches_max_150'])
           print('735-site geography intake PASS; all physical IDs preserved, zero geocoded/public sites')
           PY
       - name: Test read-only CL2 Find projection without a public map mutation
