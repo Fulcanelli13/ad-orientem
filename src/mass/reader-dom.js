@@ -14,6 +14,7 @@ import { approvedPriestHeadBowRubricArt } from "./reader-approved-priest-head-bo
 import { actionMeaning } from "./reader-canonical-icons.js";
 import { CUE_SURFACE, resolveCueSurface, sourceActionRubricLabel } from "./reader-cue-visual-policy.js";
 import { nextScholaMusicEvent } from "./reader-schola-event-timeline.js";
+import {SCHOLA_OPTIONAL_EVENT_IDS} from "./reader-schola-local-programme.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -522,6 +523,30 @@ const SHELL_STYLE = `
 .ao-schola-status[hidden]{display:none!important}
 .ao-schola-upcoming{display:block;max-width:min(36vw,190px);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:600 9px/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.02em;color:var(--ao-mass-accent-text)}
 .ao-schola-upcoming[hidden]{display:none!important}
+.ao-schola-programme{position:absolute;right:52px;top:8px;z-index:19;max-width:min(86vw,330px);
+ color:var(--ao-text);font-family:var(--ao-font-ui,system-ui,sans-serif)}
+.ao-schola-programme summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;
+ min-height:25px;padding:5px 8px;border:1px solid rgba(225,207,145,.25);
+ border-radius:7px;background:var(--ao-mass-panel);font:600 9px/1.1 var(--ao-font-ui,system-ui,sans-serif);
+ letter-spacing:.05em;white-space:nowrap}
+.ao-schola-programme summary::-webkit-details-marker{display:none}
+.ao-schola-programme-fields{position:absolute;right:0;bottom:calc(100% + 8px);
+ width:min(86vw,330px);max-height:min(62vh,460px);overflow:auto;
+ padding:13px;background:#152018;border:1px solid rgba(225,207,145,.38);
+ box-shadow:0 12px 44px rgba(0,0,0,.55);border-radius:12px;
+ display:grid;gap:10px;font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-schola-programme-fields p{margin:0;color:var(--ao-muted)}
+.ao-schola-programme-fields label{display:grid;gap:3px;color:var(--ao-text)}
+.ao-schola-programme-fields input[type="text"],
+.ao-schola-programme-fields select{min-height:36px;width:100%;padding:6px;color:var(--ao-text);
+ background:#101711;border:1px solid rgba(225,207,145,.25);border-radius:6px}
+.ao-schola-programme-option{display:flex!important;gap:8px!important;align-items:center!important}
+.ao-schola-programme-option input{width:19px;height:19px;flex:0 0 19px}
+.ao-schola-programme-fields small{font-size:10px;color:var(--ao-muted)}
+.ao-reader-shell:not([data-mode="LIVE"]) .ao-schola-programme{display:none!important}
+.ao-schola-dock[data-collapsed="true"] .ao-schola-programme{display:none!important}
+.ao-schola-dock[data-upcoming-only="true"] .ao-schola-programme{top:7px;right:9px}
+
 /* A Mass-order forecast is not an active chant or audio observation. */
 .ao-schola-dock[data-upcoming-only="true"]{
   display:block!important;height:44px!important;min-height:44px!important;
@@ -2050,6 +2075,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     <span class="ao-schola-resize" data-schola-resize aria-hidden="true"></span>
     <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-status" data-role="schola-status" hidden></span><span class="ao-schola-page" data-role="schola-page"></span><span class="ao-schola-upcoming" data-role="schola-upcoming" hidden></span></div>
     <button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button>
+    <details class="ao-schola-programme" data-schola-local-panel><summary aria-label="Edit your local Schola music plan">MUSIC PLAN</summary><div class="ao-schola-programme-fields"><p>Local programme only · not an observation or an approved score</p><label>Parish / chapel <input type="text" maxlength="80" data-schola-local-parish placeholder="Optional local name"></label><label>Sanctus and Benedictus <select data-schola-local-sanctus><option value="UNSPECIFIED">Not specified</option><option value="GREGORIAN">Gregorian · together</option><option value="POLYPHONIC">Polyphonic · Benedictus after Chalice</option></select></label><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="ENTRANCE_ORGAN_OPTION"><span>Entrance organ</span></label><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="OFFERTORY_LOCAL_MOTET"><span>Offertory motet</span></label><input type="text" maxlength="80" data-schola-local-title="OFFERTORY_LOCAL_MOTET" placeholder="Optional title (unverified)" aria-label="Offertory motet title"><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="OFFERTORY_ORGAN_OPTION"><span>Offertory organ</span></label><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="COMMUNION_LOCAL_MOTET"><span>Communion motet</span></label><input type="text" maxlength="80" data-schola-local-title="COMMUNION_LOCAL_MOTET" placeholder="Optional title (unverified)" aria-label="Communion motet title"><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="RECESSIONAL_ORGAN_OPTION"><span>Recessional organ</span></label><small>Solo organ use requires the verified 1958 permission rules; planning music never overrides them.</small></div></details>
     <div class="ao-schola-main" data-schola-translate title="Tap to translate" role="button" tabindex="-1" aria-label="Translate Schola text in place" aria-pressed="false" aria-disabled="true"><span data-role="schola" aria-live="polite">—</span></div>
     <div class="ao-schola-meta">
       <span class="ao-schola-progress"><span data-role="schola-progress"></span></span>
@@ -2352,6 +2378,8 @@ export function createReaderDomAdapter({
   onScholaRelease = null,
   sections = [],
   scholaMusicItinerary = null,
+  scholaLocalProgramme = null,
+  onScholaLocalProgrammeChange = null,
   onSectionSelect = null,
   allowPresentationModeSwitch = true,
 } = {}) {
@@ -2701,6 +2729,31 @@ export function createReaderDomAdapter({
     const dock=root.querySelector(".ao-schola-dock");
     if(!dock)return;
     syncScholaControls();
+    // Do not interpret a saved parish programme as a performance log.
+    const selectedPlan=typeof scholaLocalProgramme==="function"
+      ? scholaLocalProgramme():scholaLocalProgramme;
+    const planRoot=root.querySelector("[data-schola-local-panel]");
+    if(planRoot && selectedPlan){
+      const parish=planRoot.querySelector("[data-schola-local-parish]");
+      if(parish && parish.value!==selectedPlan.parishLabel)parish.value=selectedPlan.parishLabel;
+      for(const id of SCHOLA_OPTIONAL_EVENT_IDS){
+        const checkbox=planRoot.querySelector('[data-schola-local-choice="'+id+'"]');
+        if(checkbox)checkbox.checked=selectedPlan.choices?.[id]?.selected===true;
+        const title=planRoot.querySelector('[data-schola-local-title="'+id+'"]');
+        if(title && title.value!==(selectedPlan.choices?.[id]?.title??""))
+          title.value=selectedPlan.choices?.[id]?.title??"";
+      }
+      const sanctus=planRoot.querySelector("[data-schola-local-sanctus]");
+      const currentSetting=prepared?.readerPreferences?.sanctusPerformance;
+      // The existing independent Schola controller is authoritative for
+      // edited per-parish Benedictus preference (not this local-plan file).
+      const setting=typeof scholaMusicItinerary==="function"
+        ? scholaMusicItinerary()?.events?.some(e=>e.id==="BENEDICTUS_AFTER_CHALICE")
+          ?"POLYPHONIC":scholaMusicItinerary()?.events?.some(e=>e.id==="BENEDICTUS_CONTINUOUS")
+          ?"GREGORIAN":"UNSPECIFIED"
+        :(currentSetting??"UNSPECIFIED");
+      if(sanctus)sanctus.value=setting;
+    }
     const schola=current?.scholaVisible ? current.schola : null;
     const identity=schola ? [schola.trackId,schola.segmentId,schola.cueId].filter(Boolean).join("|") : null;
     const changed=identity!==scholaIdentity;
@@ -2912,6 +2965,21 @@ export function createReaderDomAdapter({
     if(bound) return;
     bound=true;
     rootChangeListener=event=>{
+      const programmeTarget=event.target;
+      if(programmeTarget?.matches?.("[data-schola-local-parish]")){
+        onScholaLocalProgrammeChange?.({kind:"parishLabel",value:programmeTarget.value});return;
+      }
+      if(programmeTarget?.matches?.("[data-schola-local-choice]")){
+        onScholaLocalProgrammeChange?.({kind:"eventSelected",
+          eventId:programmeTarget.dataset.scholaLocalChoice,value:programmeTarget.checked});return;
+      }
+      if(programmeTarget?.matches?.("[data-schola-local-title]")){
+        onScholaLocalProgrammeChange?.({kind:"eventTitle",
+          eventId:programmeTarget.dataset.scholaLocalTitle,value:programmeTarget.value});return;
+      }
+      if(programmeTarget?.matches?.("[data-schola-local-sanctus]")){
+        onCustomaryChange?.({kind:"sanctusPerformance",value:programmeTarget.value});return;
+      }
       const picker=root.querySelector('[data-role="faithful-icon-picker"]');
       if(picker && !picker.hidden){
         const cueId=picker.dataset.cueId;

@@ -13,6 +13,7 @@ import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reade
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
 import { buildScholaMusicItinerary } from "./reader-schola-event-timeline.js";
+import {readScholaLocalProgramme, updateScholaLocalProgramme, applyScholaLocalProgramme} from "./reader-schola-local-programme.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
 import { GLORIA_CREDO_FAITHFUL_GESTURES, isGloriaCredoGestureSourceCue, resolveFaithfulGestureForCue } from "./faithful-gesture-cues.js";
 import { loadReaderCueRegistries } from "./reader-cue-state.js";
@@ -1367,6 +1368,7 @@ export async function mountNativeReaderPreview({
   try{customStorage=win.localStorage??null;}catch{}
   let customaryPrefs=readMassCustomaryPreferences(prepared.readerPreferences,customStorage);
   ready.scholaState.setSanctusPerformance?.(customaryPrefs.sanctusPerformance);
+  let scholaLocalProgramme=readScholaLocalProgramme(customStorage);
   let riteChoice=null;
   let palmGospelCueVisible=null;
 
@@ -2835,13 +2837,18 @@ export async function mountNativeReaderPreview({
     sections:sectionItems(),
     // Resolve against the CURRENT sourced presentation model after mode or
     // local-custom changes; the timeline never drives chant advancement.
-    scholaMusicItinerary:()=>buildScholaMusicItinerary({
+    scholaLocalProgramme:()=>scholaLocalProgramme,
+    onScholaLocalProgrammeChange:change=>{
+      scholaLocalProgramme=updateScholaLocalProgramme(scholaLocalProgramme,change,customStorage);
+      queue();
+    },
+    scholaMusicItinerary:()=>applyScholaLocalProgramme(buildScholaMusicItinerary({
       cards:readerModel?.cards,
       form:prepared.session.resolvedMass.form,
       resolvedMass:prepared.session.resolvedMass,
       tracks:ready.scholaState?.trackIds??[],
       sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
-    }),
+    }),scholaLocalProgramme),
     onPresentationModeChange:(mode)=>switchPresentationMode(mode),
     onCustomaryChange:change=>{
       customaryPrefs=updateMassCustomaryPreferences(customaryPrefs,change,customStorage);

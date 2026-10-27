@@ -73,7 +73,8 @@ const host=plan.events.find(e=>e.id==="HOST_CONSECRATION_SILENCE");
 assert.equal(host.sourcePrecision,"CONSECRATION_CUE_ONLY");
 assert.equal(host.sourceRef,"AO.SM.B052");
 assert.equal(plan.events.find(e=>e.id==="OFFERTORY_ORGAN_OPTION").status,
- "PERMISSION_NOT_EVALUATED");
+ "ORGAN_CANDIDATE_REQUIRES_RITUAL_CUE");
+assert.equal(plan.events.find(e=>e.id==="OFFERTORY_ORGAN_OPTION").organPermission.status,"REQUIRES_CONTEXT");
 assert.equal(plan.events.find(e=>e.id==="OFFERTORY_LOCAL_MOTET").status,
  "LOCAL_PROGRAMME_UNCONFIRMED");
 const gregorian=buildScholaMusicItinerary({...args,sanctusPerformance:"GREGORIAN"});
