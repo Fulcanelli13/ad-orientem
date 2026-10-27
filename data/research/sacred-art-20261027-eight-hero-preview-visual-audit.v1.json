@@ -1,0 +1,315 @@
+{
+  "schema": "AO_SACRED_ART_20261027_8_PRESERVED_HERO_PREVIEW_VISUAL_FINDINGS_V1",
+  "date": "2026-10-27",
+  "inspection_scope": "Direct visual examination of GitHub-preserved whole previews (~720px) and selected native-pixel detail samples (~420px display of original-pixel 540 squares); not a 100% comprehensive full-resolution master review. Earlier automated technical preflight was separately examined.",
+  "user_policy": "NO_ART_PAINTING_RESELECTION_NO_FRAMES_NO_AI_RETOUCH_NO_PAYMENTS_NO_REQUESTS",
+  "findings_count": 8,
+  "status_counts": {
+    "PREVIEW_ACCEPTABLE_FOR_CONTINUED_MASTER_QA": 4,
+    "PREVIEW_TECHNICAL_DETAIL_HOLD": 1,
+    "PREVIEW_TEXTURE_QUALITY_HOLD": 1,
+    "PREVIEW_EDGE_OR_EMBLEM_IDENTITY_HOLD": 1,
+    "PREVIEW_RESPONSIVE_COMPOSITION_HOLD": 1
+  },
+  "image_provenance_note": "Photo source original SHA-256 and size/dimensions are from prior archived research manifest; the partial image viewing here cannot independently recalculate or certify full photo-byte integrity.",
+  "diagnostic_caveat": "Human preview-level judgments do not promote image to a licensed or production-quality master. A visible mark may be painted or added; provenance must be resolved before any image alteration.",
+  "research_specific_external_evidence": {
+    "visit": "https://museenkoeln.de/portal/bild-der-woche.aspx?bdw=2017_52",
+    "visit_commons": "https://commons.wikimedia.org/wiki/File:Adoration_of_the_shepherds,_by_Gerard_van_Honthorst.jpg",
+    "visit_documentation": "https://www.codart.nl/guide/agenda/wonderful-honthorsts-adoration-shepherds/",
+    "rosary_comparison": [
+      "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+      "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_11.jpg"
+    ]
+  },
+  "records": [
+    {
+      "status": "PREVIEW_ACCEPTABLE_FOR_CONTINUED_MASTER_QA",
+      "whole": "Full original composition appears present in the preserved preview; no external photographic frame apparent. Heart and flanking oval saint portraits visible.",
+      "detail": "Native upper crop shows identifiable brushwork and crown-of-thorns elements; no unambiguous digital damage demonstrable from limited crop.",
+      "risk": [
+        "many small devotional portraits may become unreadable on 320px",
+        "exact museum/reference colour unavailable",
+        "JPEG does not include ICC profile"
+      ],
+      "module_id": "heart-jesus",
+      "artwork_photo_SHA256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+      "reported_original_size": [
+        2345,
+        3045
+      ],
+      "original_reference_repo_path": "assets/staged/module-hero-masters/heart-jesus.jpg",
+      "reviewed_view_types": [
+        "archived full-image scaled preview",
+        "archived native-pixel central or upper detail tile"
+      ],
+      "witness_urls": [
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/heart-jesus-whole-preview.jpg",
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-quality-reviews/heart-jesus-inspection.png"
+      ],
+      "checks_not_passed": [
+        "full-resolution entire master visual inspection",
+        "signed original image source license",
+        "original painting provenance vs exact photograph",
+        "painted edges versus external mounting",
+        "museum reference colour comparison",
+        "crop safety at device widths"
+      ],
+      "release_approved": false,
+      "painting_approval_unchanged": true
+    },
+    {
+      "status": "PREVIEW_ACCEPTABLE_FOR_CONTINUED_MASTER_QA",
+      "whole": "Main Heart of Mary and surrounding saints, angels and medallions fully represented in preview, no external photo frame apparent.",
+      "detail": "Native centre detail shows faces and painting surface but cannot establish museum-accurate colour.",
+      "risk": [
+        "small surrounding medallions need contain/no-crop on mobile",
+        "no embedded ICC profile",
+        "highly detailed composition loses secondary meaning at tiny display sizes"
+      ],
+      "module_id": "heart-mary",
+      "artwork_photo_SHA256": "82e465f5600d0df4b2af32d22b8642a832bfc4cdd5d19d1f1c2b0baeec49649d",
+      "reported_original_size": [
+        2277,
+        2960
+      ],
+      "original_reference_repo_path": "assets/staged/module-hero-masters/heart-mary.jpg",
+      "reviewed_view_types": [
+        "archived full-image scaled preview",
+        "archived native-pixel central or upper detail tile"
+      ],
+      "witness_urls": [
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/heart-mary-whole-preview.jpg",
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-quality-reviews/heart-mary-inspection.png"
+      ],
+      "checks_not_passed": [
+        "full-resolution entire master visual inspection",
+        "signed original image source license",
+        "original painting provenance vs exact photograph",
+        "painted edges versus external mounting",
+        "museum reference colour comparison",
+        "crop safety at device widths"
+      ],
+      "release_approved": false,
+      "painting_approval_unchanged": true
+    },
+    {
+      "status": "PREVIEW_TECHNICAL_DETAIL_HOLD",
+      "whole": "Strong vertical primary figure and demon legible in overall composition; no external frame apparent.",
+      "detail": "Native chest/fabric detail looks reasonably legible but cannot disprove lossy high-frequency detail removal.",
+      "risk": [
+        "source 1657x2441 is 513396 bytes, previous machine warning low bytes-per-pixel",
+        "sharpening or AI upscaling would falsify painterly texture",
+        "verify thin sword and wingtips in responsive crop"
+      ],
+      "module_id": "michael",
+      "artwork_photo_SHA256": "4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad",
+      "reported_original_size": [
+        1657,
+        2441
+      ],
+      "original_reference_repo_path": "assets/staged/module-hero-masters/michael.jpg",
+      "reviewed_view_types": [
+        "archived full-image scaled preview",
+        "archived native-pixel central or upper detail tile"
+      ],
+      "witness_urls": [
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/michael-whole-preview.jpg",
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-quality-reviews/michael-inspection.png"
+      ],
+      "checks_not_passed": [
+        "full-resolution entire master visual inspection",
+        "signed original image source license",
+        "original painting provenance vs exact photograph",
+        "painted edges versus external mounting",
+        "museum reference colour comparison",
+        "crop safety at device widths"
+      ],
+      "release_approved": false,
+      "painting_approval_unchanged": true
+    },
+    {
+      "status": "PREVIEW_ACCEPTABLE_FOR_CONTINUED_MASTER_QA",
+      "whole": "Christ's body, banner, attending figures visually coherent in whole-image preview, no external photographed frame apparent.",
+      "detail": "Native stone/foot detail retains canvas texture; no clear preview-level optical flaw.",
+      "risk": [
+        "verify the photographed side/panel is the approved central face, not different reverse",
+        "verify no material painted edge missing",
+        "rightmost figures susceptible to mobile crop"
+      ],
+      "module_id": "regina",
+      "artwork_photo_SHA256": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+      "reported_original_size": [
+        2144,
+        3000
+      ],
+      "original_reference_repo_path": "assets/staged/module-hero-masters/regina.jpg",
+      "reviewed_view_types": [
+        "archived full-image scaled preview",
+        "archived native-pixel central or upper detail tile"
+      ],
+      "witness_urls": [
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/regina-whole-preview.jpg",
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-quality-reviews/regina-inspection.png"
+      ],
+      "checks_not_passed": [
+        "full-resolution entire master visual inspection",
+        "signed original image source license",
+        "original painting provenance vs exact photograph",
+        "painted edges versus external mounting",
+        "museum reference colour comparison",
+        "crop safety at device widths"
+      ],
+      "release_approved": false,
+      "painting_approval_unchanged": true
+    },
+    {
+      "status": "PREVIEW_TEXTURE_QUALITY_HOLD",
+      "whole": "Caravaggio Borghese Saint Jerome, pen, book, skull and red drapery visible with a deep original tenebrist palette; preview is not framed.",
+      "detail": "Native preview of desk/book and background has visible speckled texture; cannot distinguish artwork craquelure/pigment from photographic or compression artifacts without side-by-side master/institutional comparison.",
+      "risk": [
+        "8708x6212 megapixel value does not prove fidelity",
+        "possible grain/texture loss or compression requires 100% and museum reference",
+        "preserve black tonal intentions; no artificial brightening"
+      ],
+      "module_id": "scripture",
+      "artwork_photo_SHA256": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158",
+      "reported_original_size": [
+        8708,
+        6212
+      ],
+      "original_reference_repo_path": "assets/staged/module-hero-masters/scripture.jpg",
+      "reviewed_view_types": [
+        "archived full-image scaled preview",
+        "archived native-pixel central or upper detail tile"
+      ],
+      "witness_urls": [
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/scripture-whole-preview.jpg",
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-quality-reviews/scripture-inspection.png"
+      ],
+      "checks_not_passed": [
+        "full-resolution entire master visual inspection",
+        "signed original image source license",
+        "original painting provenance vs exact photograph",
+        "painted edges versus external mounting",
+        "museum reference colour comparison",
+        "crop safety at device widths"
+      ],
+      "release_approved": false,
+      "painting_approval_unchanged": true
+    },
+    {
+      "status": "PREVIEW_ACCEPTABLE_FOR_CONTINUED_MASTER_QA",
+      "whole": "Entire Giordano Madonna and purgatorial souls visible, apparently no external photographed frame.",
+      "detail": "Native blue/red drapery detail retains gradation; no obvious resampling defect in this limited inspection.",
+      "risk": [
+        "check dark purgatorial figure detail",
+        "confirm the unframed area really includes all painted edges",
+        "brighter light palette may need faithful museum colour comparison"
+      ],
+      "module_id": "souls",
+      "artwork_photo_SHA256": "a2c3a6eda78b412da44d50197d853f01e1cd3ded5ebd5996816db451f11606b6",
+      "reported_original_size": [
+        2393,
+        3200
+      ],
+      "original_reference_repo_path": "assets/staged/module-hero-masters/souls.jpg",
+      "reviewed_view_types": [
+        "archived full-image scaled preview",
+        "archived native-pixel central or upper detail tile"
+      ],
+      "witness_urls": [
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/souls-whole-preview.jpg",
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-quality-reviews/souls-inspection.png"
+      ],
+      "checks_not_passed": [
+        "full-resolution entire master visual inspection",
+        "signed original image source license",
+        "original painting provenance vs exact photograph",
+        "painted edges versus external mounting",
+        "museum reference colour comparison",
+        "crop safety at device widths"
+      ],
+      "release_approved": false,
+      "painting_approval_unchanged": true
+    },
+    {
+      "status": "PREVIEW_EDGE_OR_EMBLEM_IDENTITY_HOLD",
+      "whole": "Honthorst 1622 Nativity central faces and Christ remain legible; no surrounding photographic frame. Distinct round red/blue heraldic-looking device appears at lower right.",
+      "detail": "Native upper preview shows natural-looking fine surface texture in dark field; small crop cannot rule out image artifacts.",
+      "risk": [
+        "lower-right device visibly present both in archived Commons image and Cologne museum's 2017 presentation image; its status as historical painted element, image overlay or later addition is not yet proven",
+        "DO NOT crop/erase/retouch device without documentary proof it is outside painted surface and reuse terms permit modification",
+        "source photo EXIF photographer credited Sabrina Walz/Rheinisches Bildarchiv Köln with Public Domain Mark metadata: jurisdiction/source conditions require exact-file audit",
+        "mobile landscape still needs full contain rather than center crop"
+      ],
+      "module_id": "visit",
+      "artwork_photo_SHA256": "347cf5d74cc575bcb082250a90dc64c54dc673e94fbc4e48efcd27fa2a3b09c1",
+      "reported_original_size": [
+        3948,
+        3328
+      ],
+      "original_reference_repo_path": "assets/staged/module-hero-masters/visit.jpg",
+      "reviewed_view_types": [
+        "archived full-image scaled preview",
+        "archived native-pixel central or upper detail tile"
+      ],
+      "witness_urls": [
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/visit-whole-preview.jpg",
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-quality-reviews/visit-inspection.png"
+      ],
+      "checks_not_passed": [
+        "full-resolution entire master visual inspection",
+        "signed original image source license",
+        "original painting provenance vs exact photograph",
+        "painted edges versus external mounting",
+        "museum reference colour comparison",
+        "crop safety at device widths"
+      ],
+      "release_approved": false,
+      "painting_approval_unchanged": true
+    },
+    {
+      "status": "PREVIEW_RESPONSIVE_COMPOSITION_HOLD",
+      "whole": "Meirelles full wide First Mass in Brazil scene is present, no external photo frame; ceremonial priest/altar occupies relatively small part amid very numerous figures.",
+      "detail": "Native priest/group crop shows recognizable forms but limited facial detail at narrow UI sizes; dense subject is not intrinsically a flawed photograph.",
+      "risk": [
+        "Never auto-fill a phone-width tall hero by cutting side figures or the central altar",
+        "check 320px/390px mobile presentation with contain/expand option and legible focal cues",
+        "unmanaged sRGB and actual source color fidelity pending"
+      ],
+      "module_id": "mass",
+      "artwork_photo_SHA256": "909302874ecb137b75c3b97974e9a4b42ec3c4d10a6d3e83bc98c130057b760f",
+      "reported_original_size": [
+        4424,
+        3399
+      ],
+      "original_reference_repo_path": "assets/staged/module-hero-masters/mass.jpg",
+      "reviewed_view_types": [
+        "archived full-image scaled preview",
+        "archived native-pixel central or upper detail tile"
+      ],
+      "witness_urls": [
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-preview-jpegs/mass-whole-preview.jpg",
+        "https://github.com/Fulcanelli13/ad-orientem/blob/research/module-hero-pd-masters-20261026/assets/staged/module-hero-quality-reviews/mass-inspection.png"
+      ],
+      "checks_not_passed": [
+        "full-resolution entire master visual inspection",
+        "signed original image source license",
+        "original painting provenance vs exact photograph",
+        "painted edges versus external mounting",
+        "museum reference colour comparison",
+        "crop safety at device widths"
+      ],
+      "release_approved": false,
+      "painting_approval_unchanged": true
+    }
+  ],
+  "followup_actions": [
+    "Inspect three file-level institutionally reusable acquired masters (Angelus, Adoration, Confession) at 100% only when actual full bytes accessible; do not fake master QA based on previews",
+    "Fetch official Met exact OA images for La Tour (Ash Wednesday) and Saraceni (All Saints), preserve SHA, test external padding versus painting",
+    "Archive Lotto original Sailko CC BY 3.0 1772x2652 and compare with 2304x3456 ISO6400 alternate by actual texture before choosing best reproduction",
+    "Verify Honthorst red/blue lower-right round device against the conserved actual canvas before any proposed crop or source replacement",
+    "Keep the remaining 24 Class I artistic choices unchanged and resolve their legal/photo evidence, not another 4-date shortlist"
+  ]
+}
