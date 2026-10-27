@@ -48,9 +48,31 @@
           ],
           "rights": "PAID_LICENSE—EXCLUDED_EUR0",
           "source_quality": "Large but fee-bound; never purchase"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Chiesa_di_Santa_Maria_Immacolata_a_via_Veneto_04.jpg",
+          "pixels": [
+            3864,
+            5152
+          ],
+          "source_quality": "IN_SITU_CAMERA_PHOTO_OF_CHURCH_UNINSPECTED; NOT_CONFIRMED_ARTWORK_ONLY; NO_FRAME_GATE",
+          "rights": "CC BY-SA 4.0 credited Nicholas Gemini; do not treat as CC0 or museum repro",
+          "frame_status": "UNVERIFIED_CAMERA_SCENE",
+          "disposition": "EXCLUDE_FROM_PRISTINE_HERO_PIPELINE_UNLESS_EXACT_PHOTO_PASSES_UNFRAMED_VISUAL_AND_OPTICAL_QA"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Cappouccini,_guido_reni,_san_michele_arcangelo_01.JPG",
+          "pixels": [
+            2112,
+            2816
+          ],
+          "source_quality": "IN_SITU_CAMERA_PHOTO 1/13S ISO1600; focus/noise/glare/frame risk; no unframed signoff",
+          "rights": "CC BY-SA 3.0 attributed Sailko, not CC0",
+          "frame_status": "UNVERIFIED_IN_SITU",
+          "disposition": "EXCLUDE_FROM_PRISTINE_HERO_PIPELINE_UNLESS_VISUAL_FRAME_FREE_AND_IMAGE_QUALITY_CLEARED"
         }
       ],
-      "blocker": "No confirmed premium-quality frame-free cost-free photograph of ORIGINAL painting, not copy or print. Do not substitute Nationalmuseum Stockholm copy NMDrh 644, which museum identifies as copy in poor condition.",
+      "blocker": "Still no confirmed pristine, free, original, artwork-only, four-edge-frame-free photo of Rome painting. In-situ larger camera photos must not be upgraded to hero just for pixel count. Paid licensed photos forbidden; Stockholm copy forbidden.",
       "acquisition_state": "RESEARCH_PRISTINE_FREE_PHOTO",
       "photo_approved": false
     },
@@ -89,5 +111,11 @@
   ],
   "workflow": "scripts/research/audit_class_i_museum_images.py",
   "workflow_path": ".github/workflows/sacred-art-original-source-audit.yml",
-  "memo": "Approved historical artworks are not yet approved source-image reproductions. Nationalmuseum Stockholm owns a COPY after Reni and must not be used as substitute; distinct original located in Rome. Avoid paid archive photos."
+  "memo": "Approved historical artworks are not yet approved source-image reproductions. Nationalmuseum Stockholm owns a COPY after Reni and must not be used as substitute; distinct original located in Rome. Avoid paid archive photos.",
+  "last_source_check": "2026-10-27",
+  "audit_notes": [
+    "Additional high-pixel Rome in-situ photographs discovered but image-quality/frame acceptance not demonstrated; not equivalent to pristine museum artwork reproduction.",
+    "Museum catalogue unframed dimensions refer to object measurement and say nothing about whether actual photograph includes a frame.",
+    "Global no-visible-frame policy remains absolute; preserve painting approval and reject unsuitable PHOTO source only."
+  ]
 }
