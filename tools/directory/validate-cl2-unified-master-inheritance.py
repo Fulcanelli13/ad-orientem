@@ -36,6 +36,12 @@ def main():
     assert count(db,'SELECT COUNT(*) FROM unified_identity_review_cohort')==n_candidates
     assert count(db,"SELECT COUNT(*) FROM unified_additional_provider_feed WHERE census_join_state='NEW_UNRESOLVED_WORSHIP_OR_MASS_SITE_LEAD'")==added
     assert count(db,"SELECT COUNT(*) FROM unified_additional_provider_feed WHERE census_join_state='EXACT_CL2_FROZEN_SOURCE_ID' OR census_join_state='EXACT_EXISTING_CL2_CANDIDATE_ID' OR census_join_state='NEW_UNRESOLVED_WORSHIP_OR_MASS_SITE_LEAD' OR census_join_state='NON_WORSHIP_OR_AMBIGUOUS_FACILITY_HELD'")==791
+    assert count(db,"SELECT COUNT(*) FROM unified_same_building_review_hint WHERE auto_join_allowed!=0 OR public_release_allowed!=0")==0
+    assert count(db,"SELECT COUNT(*) FROM unified_candidate_same_address_hint WHERE approved_duplicate_merge!=0")==0
+    assert count(db,"SELECT COUNT(*) FROM unified_same_building_review_hint WHERE hint_kind='EXACT_NORMALIZED_REPORTED_ADDRESS_REVIEW'")>=0
+    assert count(db,"SELECT COUNT(*) FROM unified_same_building_review_hint WHERE hint_kind='SAME_NAME_COUNTRY_ONLY_NOT_IDENTITY_PROOF'")>=0
+    assert count(db,"SELECT COUNT(*) FROM unified_candidate_same_address_hint WHERE first_candidate_id>=second_candidate_id")==0
+    assert count(db,"SELECT COUNT(*) FROM unified_same_building_review_hint h JOIN unified_site_candidate c ON c.candidate_research_id=h.candidate_id JOIN unified_physical_site p ON p.anchor_id=h.possible_anchor_id WHERE c.country!=p.country")==0
     assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
     assert not db.execute('PRAGMA foreign_key_check').fetchall()
     assert count(db,"SELECT COUNT(*) FROM source_ministry WHERE institute_id IS NOT NULL")==1389
