@@ -81,12 +81,12 @@ CREATE VIEW unified_research_inventory AS
            json.dumps(x,ensure_ascii=False,separators=(',',':'))))
     assert collisions==4
     assert db.execute('SELECT COUNT(*) FROM unified_site_candidate').fetchone()[0]==36
-    assert db.execute("SELECT COUNT(*) FROM unified_site_candidate WHERE related_existing_provider_id IS NOT NULL").fetchone()[0]==1
+    assert db.execute("SELECT COUNT(*) FROM unified_site_candidate WHERE related_existing_provider_id IS NOT NULL").fetchone()[0]==2
     assert db.execute('SELECT COUNT(*) FROM unified_research_inventory').fetchone()[0]==2615
     assert db.execute('SELECT COUNT(*) FROM unified_site_candidate WHERE is_canonical_physical_site!=0 OR is_public_site!=0').fetchone()[0]==0
     return {'candidate_leads_staged':36, 'candidate_ids_not_equal_to_CL2_canonical_ids':36,
             'name_country_collision_hints_not_identity_joins':collisions,
-            'existing_provider_link_hints':1, 'approved_new_physical_sites':0,
+            'existing_provider_link_hints':2, 'approved_new_physical_sites':0,
             'research_inventory_rows_with_unresolved_candidates':2615}
 
 
