@@ -53,14 +53,26 @@
           "reason": "Pocket Sacred Heart offering; scan-checked 1899 printed pp.8-9"
         },
         {
+          "form_ref": "b09-lasance-apostleship-my-god",
+          "related_source": "LAS1911",
+          "reason": "Lasance With God p127 first Apostleship offering (O my God); print verified B09; separately printed alternative joined by 'or:'."
+        },
+        {
+          "occurrence_id": "AO.DAILY.B01.087",
+          "form_ref": "b09-lasance-apostleship-o-jesus",
+          "reason": "Lasance With God p127 second Apostleship offering (O, Jesus); verified B09; substantive difference from BBG 1925."
+        },
+        {
           "occurrence_id": "AO.DAILY.B01.004",
-          "reason": "Blessed Be God Apostleship of Prayer form; print scan still pending"
+          "reason": "Blessed Be God 1925 through the Immaculate Heart, original printed p.2 FULL text verified B10; proposed default, not approved."
         },
         {
           "occurrence_id": "AO.DAILY.B06.005",
           "reason": "French 1905 Thanksgiving and Offering combined; use once, not twice"
         }
-      ]
+      ],
+      "offerings_authoritative_matrix": "data/pray/daily-prayer-morning-offering-choices.b10.json",
+      "note": "This B08 shortlist is a research matrix only. B10 is authoritative for six source-based alternatives including two printed 1911 Apostleship forms. A full-form ID can be used when the older 93-entry register did not split two texts printed under one heading."
     },
     {
       "id": "theological-virtues",
@@ -313,5 +325,6 @@
     "Historical private Confiteor with rubrical actor semantics is not automatically the priest's liturgical absolution.",
     "Apply source rights and historical indulgence caveats before any publication."
   ],
-  "review_gate": "Select per-category defaults after more full-text witness certifications; do not mark the unverified alternatives as ready to ship."
+  "review_gate": "Select per-category defaults after more full-text witness certifications; do not mark the unverified alternatives as ready to ship.",
+  "b10_update": "Printed page 2 verifies 1925 BBG Morning Offering and complete Morning section boundary; corrected offering shortlist contains 1911 Lasance A/B forms, no duplicate by book alone."
 }
