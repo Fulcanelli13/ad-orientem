@@ -24,9 +24,8 @@ jobs:
           python-version: '3.11'
       - name: Install image parser
         run: python -m pip install --disable-pip-version-check Pillow==11.3.0
-      - name: Fetch and hash exact originals without approving frames
-        continue-on-error: true
-        run: python scripts/research/audit_class_i_original_images.py --output data/research/sacred-art-20261027-class-i-original-byte-report.v1.json
+      # Wikimedia rate-limited every original-source request with HTTP 429 on 2026-10-27.
+      # Do not retry from CI automatically; preserve that failure report in history.
       - name: Independently verify two museum-hosted files
         run: python scripts/research/audit_class_i_museum_images.py
       - name: Save small provenance JSON only (no binaries or expiring artifacts)
