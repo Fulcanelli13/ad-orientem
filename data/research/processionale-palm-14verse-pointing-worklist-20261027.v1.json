@@ -567,5 +567,27 @@
     "correctedEarlierCadenceReasoning": true,
     "sourceAuthority": "#894",
     "ScholaOwner": "#1749"
+  },
+  "batch28CadenceReviewQueue": {
+    "path": "data/research/processionale-palm-four-cadence-families-17-case-20261027.v1.json",
+    "seventeenReviewCases": 17,
+    "sourceAccentClassMatches": 4,
+    "otherAccentClassAdaptations": 10,
+    "specialCases": [
+      "PALM-R02-PS46-L09",
+      "PALM-R02-PS23-DOXO-L12",
+      "PALM-R02-PS46-DOXO-L12"
+    ],
+    "independentToneFamilies": 4,
+    "approvedToneFamilies": 0,
+    "pendingManualDecisions": [
+      "P23 two-syllable and three-syllable endings",
+      "P46 two-syllable and three-syllable endings",
+      "Psalm23 flexa on three liturgical occurrences",
+      "Psalm23/Psalm46 doxology final Amen and antiphon return",
+      "Psalm46 Abraham pronunciation and printed lexeme"
+    ],
+    "nextBulkOperation": "Generate all 17 source-owned GABCs in one pass only after validating four tone underlays and special-end rules. Maintain original source archive immutable.",
+    "releaseEligible": false
   }
 }
