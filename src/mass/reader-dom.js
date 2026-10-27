@@ -2421,6 +2421,7 @@ export function createReaderDomAdapter({
   let bound=false;
   let rootClickListener=null;
   let rootChangeListener=null;
+  let rootInputListener=null;
   let rootKeydownListener=null;
   let sectionItems=Array.isArray(sections)?[...sections]:[];
   let selectedFaithfulRowId=null;
@@ -3030,9 +3031,11 @@ export function createReaderDomAdapter({
   function unbind(){
     if(rootClickListener)root.removeEventListener?.("click",rootClickListener);
     if(rootChangeListener)root.removeEventListener?.("change",rootChangeListener);
+    if(rootInputListener)root.removeEventListener?.("input",rootInputListener);
     if(rootKeydownListener)root.removeEventListener?.("keydown",rootKeydownListener);
     rootClickListener=null;
     rootChangeListener=null;
+    rootInputListener=null;
     rootKeydownListener=null;
     bound=false;
   }
@@ -3040,6 +3043,19 @@ export function createReaderDomAdapter({
   function bind(){
     if(bound) return;
     bound=true;
+    // Persist editable local names immediately. Waiting for a blur/change
+    // event loses text when source-cue re-projections repaint the dock.
+    rootInputListener=event=>{
+      const field=event.target;
+      if(field?.matches?.("[data-schola-local-parish]")){
+        onScholaLocalProgrammeChange?.({kind:"parishLabel",value:field.value});return;
+      }
+      if(field?.matches?.("[data-schola-local-title]")){
+        onScholaLocalProgrammeChange?.({kind:"eventTitle",
+          eventId:field.dataset.scholaLocalTitle,value:field.value});
+      }
+    };
+    root.addEventListener?.("input",rootInputListener);
     rootChangeListener=event=>{
       const programmeTarget=event.target;
       if(programmeTarget?.matches?.("[data-schola-local-parish]")){

@@ -105,6 +105,10 @@ try{
       const localCheck=planPanel.locator('[data-schola-local-choice="OFFERTORY_LOCAL_MOTET"]');
       await localCheck.check();
       await planPanel.locator("[data-schola-local-parish]").fill("St Joseph local programme");
+      // Commit on the input event, even if the independently scrolling
+      // Reader repaints before the blur/change event reaches the root.
+      await page.waitForFunction(()=>JSON.parse(localStorage.getItem(
+        "ao-schola-local-programme-v1")||"{}").parishLabel==="St Joseph local programme");
       await planPanel.locator("[data-schola-local-parish]").press("Tab");
       const savedPlan=await page.evaluate(()=>{
         const plan=JSON.parse(localStorage.getItem("ao-schola-local-programme-v1")||"{}");
