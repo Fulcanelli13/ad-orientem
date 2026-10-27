@@ -1,6 +1,7 @@
 import {certifyPreGospelChantParts} from "./reader-pre-gospel-chant-source.js";
 import {render1962EasterPrefaceVariant} from "./1962-easter-preface-form.js";
 import {recover1962InAlbisSecretFromPinnedSource} from "./1962-in-albis-secret-source.js";
+import {required1962MarianPrefaceOwner,verifyMarianLatinSourceRule,render1962MarianPrefaceForm,isSelected1962MarianPrefaceForm} from "./1962-marian-preface-source.js";
 const PER_DOM=Object.freeze({
   la:"Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
   en:"Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
@@ -127,6 +128,11 @@ export function authenticated1962PrefaceRecoveryOwner(principalCelebrationId,sou
   const parts=id.split(":");
   const exact=VERIFIED_PREFACE_OWNERS[parts.slice(0,2).join(":")]??null;
   if(exact)return exact;
+  const marian=required1962MarianPrefaceOwner(id,path);
+  if(marian)return Object.freeze({section:"Maria",
+    marianForm:marian.form,blocked:marian.blocked,
+    sourceOwner:marian,scope:marian.scope,
+    rubric:"RGMR_495",sourcePath:path});
   // Exclude selected votives, proper feast formularies, unrelated path
   // aliases and Office variants. Source ID *and* canonical source path must
   // agree before we are allowed to replace a populated Common Preface.
@@ -167,7 +173,13 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
   if(/(?:votive|requiem|mass_of_dead)/i.test(String(data?.riteProfile??data?.profile??"")))
     return null;
   const owner=authenticated1962PrefaceRecoveryOwner(principalCelebrationId,data?.sourcePath);
-  if(!owner)return null;
+  if(!owner||owner.blocked)return null;
+  if(owner.marianForm){
+    // A feast must possess its own authenticated Latin rule. Ordinary
+    // Saturday BVM Masses instead use the universal 1962 Marian rubric.
+    const donor=await hostResolver.resolveSource(data.sourcePath,"la",diagnostic);
+    if(!verifyMarianLatinSourceRule(donor,owner.sourceOwner))return null;
+  }
   const heading=String(data.preface?.lat??data.preface?.la??"").trim();
   const currentlyCommon=/^Communis(?:\s|$)/i.test(heading);
   const unresolvedPaschalAlternatives=owner.section==="Pasch"&&
@@ -182,7 +194,10 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
     const section=parsedLines(parsed,[owner.section]);
     if(!section.length)return null;
     let text=cleanLines(section,language);
-    text=applyMarianPrefaceForm(text,language,owner.form);
+    if(owner.marianForm){
+      text=render1962MarianPrefaceForm(text,language,owner.marianForm);
+      if(!text)return null;
+    }else text=applyMarianPrefaceForm(text,language,owner.form);
     if(owner.section==="Pasch"){
       text=render1962EasterPrefaceVariant(text,language,owner.variant);
       if(!text)return null;
@@ -196,7 +211,10 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
     result[language==="la"?"lat":language]=text;
   }
   if(!hasThreeLanguages(result))return null;
+  if(owner.marianForm&&!isSelected1962MarianPrefaceForm(
+    {...result,marianForm:owner.marianForm},owner.sourceOwner))return null;
   return Object.freeze({...result,sourcePath:"Ordo/Prefationes",prefaceSection:owner.section,
+    ...(owner.marianForm?{marianForm:owner.marianForm}:{}),
     recoveryScope:owner.scope??"CERTIFIED_EXACT_FEAST",rubric:owner.rubric??null,
     prefaceVariant:owner.variant??null,
     originalProperSourcePath:String(data.sourcePath??"")});
