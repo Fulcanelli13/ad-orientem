@@ -5,6 +5,7 @@ on:
     paths:
       - "data/directory/research/cl2-unified-20261026/**"
       - "tools/directory/rebuild-cl2-research-snapshot.py"
+      - "tools/directory/validate-cl2-unified-master-inheritance.py"
       - "tools/directory/build-cl2-unified-research-master.py"
       - ".github/workflows/directory-cl2-unified-master.yml"
   workflow_dispatch:
@@ -21,6 +22,7 @@ jobs:
         run: |
           python3 -m py_compile tools/directory/build-cl2-unified-research-master.py
           python3 -m py_compile tools/directory/rebuild-cl2-research-snapshot.py
+          python3 -m py_compile tools/directory/validate-cl2-unified-master-inheritance.py
       - name: Rebuild whole master from committed research JSON alone
         run: |
           python3 tools/directory/rebuild-cl2-research-snapshot.py --snapshot-dir data/directory/research/cl2-unified-20261026 --output /tmp/cl2-research.sqlite
@@ -37,6 +39,8 @@ jobs:
           assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
           print("CL2 full SQLite data reconstruction and integrity PASS")
           PY
+      - name: Validate 2,579 physical sites, group inheritance and exception precedence
+        run: python3 tools/directory/validate-cl2-unified-master-inheritance.py --db /tmp/cl2-research.sqlite
       - name: Tamper a source shard and require checksum rejection
         run: |
           cp -a data/directory/research/cl2-unified-20261026 /tmp/cl2-tampered
