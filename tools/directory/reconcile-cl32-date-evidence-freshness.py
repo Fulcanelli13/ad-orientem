@@ -44,7 +44,6 @@ def main():
  hol=j["holnest_private_chapel_hold"]
  limitations=j["source_limitations"]
  assert len(rows)==104 and len(upgrades)==2
- assert {r["source_event_key"] for r in upgrades}==set() if False else True
  assert {x["date"] for x in upgrades}=={"2026-11-13","2026-12-04"}
  assert {x["time"] for x in upgrades}=={"19:00"}
  assert {x["research_venue_key"] for x in upgrades}=={"DE-STEPHANSPOSCHING-LOH-HEILIG-KREUZ"}
@@ -140,9 +139,7 @@ def main():
    "SELECT phase,source_event_key,cl31_research_working_anchor_id"
    " FROM cl31_dated_source_anchor_candidate")}
  assert set(prior)==pairs
- before={(r["research_source_event_key"]):(r) for r in db.execute(
-   "SELECT research_source_event_key,evidence_grade FROM cl28_crossnetwork_dated_source_candidate"
- )} if False else {r["source_record_key"]:r["source_grade"] for r in db.execute(
+ before={r["source_record_key"]:r["source_grade"] for r in db.execute(
    "SELECT source_record_key,source_grade FROM cl28_crossnetwork_dated_source_candidate")}
  assert before["CL28-017"].startswith("SECONDARY_")
  assert before["CL28-018"].startswith("SECONDARY_")
