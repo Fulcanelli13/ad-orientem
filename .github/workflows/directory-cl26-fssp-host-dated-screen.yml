@@ -310,6 +310,59 @@ jobs:
           assert db.execute('SELECT COUNT(*) FROM mass_time').fetchone()[0]==4681
           print('CL26 PASS: 38/39 geography, 1 private house hold, 14 external source dates, 0 publication')
           PY
+      - name: Assert all 39 German FSSP sites reuse exact existing CL2 venue groups (no new site)
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          base=Path('data/directory/research/cl2-unified-20261026')
+          path=Path('data/directory/research/cl26-ringeisenhaus-dated-20261026/existing-cl2-39-site-exact-join.json')
+          j=json.loads(path.read_text(encoding='utf-8'))
+          assert j['schema']=='AO_FSSP_39_TO_EXISTING_CL2_MASTER_SOURCE_ROW_IDENTITY_JOIN_V1'
+          expected=j['counts']
+          assert expected['sites']==39
+          assert expected['locked_mass_rows']==74
+          assert expected['distinct_group_ids']==39
+          assert expected['distinct_effective_anchors']==39
+          assert expected['named_worship_or_host_building_georeferences']==38
+          assert expected['new_site_groups']==0
+          assert expected['new_public_mass_events']==0
+          assert expected['new_pins']==0
+          original_mass={}
+          for p in sorted(base.glob('mass-??-of-07.json')):
+              for r in json.loads(p.read_text(encoding='utf-8'))['records']:
+                  original_mass[r['historical_row']]=r
+          canonical={}
+          for p in sorted(base.glob('site-??-of-06.json')):
+              for r in json.loads(p.read_text(encoding='utf-8'))['records']:
+                  canonical[r['group_id']]=r
+          assert len(original_mass)==4681
+          assert len(canonical)==2584
+          records=j['source_to_master_existing_site_join']
+          assert len(records)==39
+          assert len({x['pilot_source_place_id'] for x in records})==39
+          assert len({x['existing_effective_cl2_physical_anchor_id'] for x in records})==39
+          assert sum(len(x['frozen_historical_mass_rows']) for x in records)==74
+          assert sum(len(x['geographic_source_pointers']) for x in records)==38
+          for row in records:
+              group=canonical[row['frozen_existing_cl2_research_group_id']]
+              assert group['effective_anchor_id']==row['existing_effective_cl2_physical_anchor_id']
+              assert group['canonical'][1]=='DE'
+              assert group['canonical'][7]=='RESEARCH_ONLY_NOT_PUBLIC'
+              assert row['join_grade']=='EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY'
+              assert not any(row[k] for k in ('published_entrance','public_pin','new_site_id_created','recurrence_modified','research_geometry_is_public_pin_approved'))
+              for slot in row['frozen_historical_mass_rows']:
+                  original=original_mass[slot['historical_row']]['original_row']
+                  assert original[26]==row['frozen_existing_cl2_research_group_id']
+                  assert original[1]==slot['source_venue_id']==row['frozen_source_venue_id']
+                  assert original[7]==slot['local_clock']
+          deining=next(x for x in records if x['pilot_source_place_id']=='CL14-DE-FSSP-036')
+          assert deining['spatial_disposition']=='PRIVATE_RELIGIOUS_HOUSE_CHAPEL_GEOCODE_WITHHELD'
+          assert not deining['geographic_source_pointers']
+          landsberg=next(x for x in records if x['pilot_source_place_id']=='CL14-DE-FSSP-025')
+          assert landsberg['spatial_disposition']=='HOST_CHURCH_ONLY_UPSTAIRS_IGNATIUSKAPELLE_ROOM_UNMAPPED'
+          print('39/39 FSSP existing frozen venue anchors matched by 74 original Mass rows; 38 geometry witnesses; zero new sites or public pins')
+          PY
       - name: Export temporary regenerable reports
         uses: actions/upload-artifact@v4
         with:
