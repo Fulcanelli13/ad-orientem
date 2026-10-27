@@ -543,6 +543,8 @@ const SHELL_STYLE = `
 .ao-schola-programme-option{display:flex!important;gap:8px!important;align-items:center!important}
 .ao-schola-programme-option input{width:19px;height:19px;flex:0 0 19px}
 .ao-schola-programme-fields small{font-size:10px;color:var(--ao-muted)}
+.ao-schola-programme-fields .ao-schola-organ-rule[data-permission="SOLO_FORBIDDEN"]{color:#e5a6a6}
+.ao-schola-programme-fields .ao-schola-organ-rule{margin-top:-8px;margin-left:27px}
 .ao-reader-shell:not([data-mode="LIVE"]) .ao-schola-programme{display:none!important}
 .ao-schola-dock[data-collapsed="true"] .ao-schola-programme{display:none!important}
 .ao-schola-dock[data-upcoming-only="true"] .ao-schola-programme{top:7px;right:9px}
@@ -2075,7 +2077,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     <span class="ao-schola-resize" data-schola-resize aria-hidden="true"></span>
     <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-status" data-role="schola-status" hidden></span><span class="ao-schola-page" data-role="schola-page"></span><span class="ao-schola-upcoming" data-role="schola-upcoming" hidden></span></div>
     <button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button>
-    <details class="ao-schola-programme" data-schola-local-panel><summary aria-label="Edit your local Schola music plan">MUSIC PLAN</summary><div class="ao-schola-programme-fields"><p>Local programme only · not an observation or an approved score</p><label>Parish / chapel <input type="text" maxlength="80" data-schola-local-parish placeholder="Optional local name"></label><label>Sanctus and Benedictus <select data-schola-local-sanctus><option value="UNSPECIFIED">Not specified</option><option value="GREGORIAN">Gregorian · together</option><option value="POLYPHONIC">Polyphonic · Benedictus after Chalice</option></select></label><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="ENTRANCE_ORGAN_OPTION"><span>Entrance organ</span></label><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="OFFERTORY_LOCAL_MOTET"><span>Offertory motet</span></label><input type="text" maxlength="80" data-schola-local-title="OFFERTORY_LOCAL_MOTET" placeholder="Optional title (unverified)" aria-label="Offertory motet title"><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="OFFERTORY_ORGAN_OPTION"><span>Offertory organ</span></label><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="COMMUNION_LOCAL_MOTET"><span>Communion motet</span></label><input type="text" maxlength="80" data-schola-local-title="COMMUNION_LOCAL_MOTET" placeholder="Optional title (unverified)" aria-label="Communion motet title"><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="RECESSIONAL_ORGAN_OPTION"><span>Recessional organ</span></label><small>Solo organ use requires the verified 1958 permission rules; planning music never overrides them.</small></div></details>
+    <details class="ao-schola-programme" data-schola-local-panel><summary aria-label="Edit your local Schola music plan">MUSIC PLAN</summary><div class="ao-schola-programme-fields"><p>Local programme only · not an observation or an approved score</p><label>Parish / chapel <input type="text" maxlength="80" data-schola-local-parish placeholder="Optional local name"></label><label>Sanctus and Benedictus <select data-schola-local-sanctus><option value="UNSPECIFIED">Not specified</option><option value="GREGORIAN">Gregorian · together</option><option value="POLYPHONIC">Polyphonic · Benedictus after Chalice</option></select></label><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="ENTRANCE_ORGAN_OPTION"><span>Entrance organ</span></label><small class="ao-schola-organ-rule" data-schola-organ-rule="ENTRANCE_ORGAN_OPTION" aria-live="polite">Permission not verified</small><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="OFFERTORY_LOCAL_MOTET"><span>Offertory motet</span></label><input type="text" maxlength="80" data-schola-local-title="OFFERTORY_LOCAL_MOTET" placeholder="Optional title (unverified)" aria-label="Offertory motet title"><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="OFFERTORY_ORGAN_OPTION"><span>Offertory organ</span></label><small class="ao-schola-organ-rule" data-schola-organ-rule="OFFERTORY_ORGAN_OPTION" aria-live="polite">Permission not verified</small><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="COMMUNION_LOCAL_MOTET"><span>Communion motet</span></label><input type="text" maxlength="80" data-schola-local-title="COMMUNION_LOCAL_MOTET" placeholder="Optional title (unverified)" aria-label="Communion motet title"><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="RECESSIONAL_ORGAN_OPTION"><span>Recessional organ</span></label><small class="ao-schola-organ-rule" data-schola-organ-rule="RECESSIONAL_ORGAN_OPTION" aria-live="polite">Permission not verified</small><small>Solo organ use requires the verified 1958 permission rules; planning music never overrides them.</small></div></details>
     <div class="ao-schola-main" data-schola-translate title="Tap to translate" role="button" tabindex="-1" aria-label="Translate Schola text in place" aria-pressed="false" aria-disabled="true"><span data-role="schola" aria-live="polite">—</span></div>
     <div class="ao-schola-meta">
       <span class="ao-schola-progress"><span data-role="schola-progress"></span></span>
@@ -2736,9 +2738,24 @@ export function createReaderDomAdapter({
     if(planRoot && selectedPlan){
       const parish=planRoot.querySelector("[data-schola-local-parish]");
       if(parish && parish.value!==selectedPlan.parishLabel)parish.value=selectedPlan.parishLabel;
+      const authorityItinerary=typeof scholaMusicItinerary==="function"
+        ?scholaMusicItinerary():scholaMusicItinerary;
       for(const id of SCHOLA_OPTIONAL_EVENT_IDS){
         const checkbox=planRoot.querySelector('[data-schola-local-choice="'+id+'"]');
         if(checkbox)checkbox.checked=selectedPlan.choices?.[id]?.selected===true;
+        const organRule=planRoot.querySelector('[data-schola-organ-rule="'+id+'"]');
+        if(organRule){
+          const option=authorityItinerary?.events?.find(e=>e.id===id);
+          const status=option?.organPermission?.status??"REQUIRES_CONTEXT";
+          organRule.textContent=status==="SOLO_FORBIDDEN"
+            ?"Solo organ forbidden in this liturgical context":
+            status==="SOLO_POTENTIALLY_PERMITTED"
+              ?"Solo organ may be permitted; priest's own chant and ritual silences still govern":
+              status==="REQUIRES_EXACT_RITE_STAGE"
+                ?"Triduum stage not verified · do not assume solo organ":
+                "Organ permission not verified · do not assume solo organ";
+          organRule.dataset.permission=status;
+        }
         const title=planRoot.querySelector('[data-schola-local-title="'+id+'"]');
         if(title && title.value!==(selectedPlan.choices?.[id]?.title??""))
           title.value=selectedPlan.choices?.[id]?.title??"";
