@@ -80,7 +80,19 @@
       "flexaCadenceCertified": false,
       "completeGabcScoreCertified": false,
       "localPerformanceCertified": false,
-      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR"
+      "status": "SOURCE_TEXT_AND_PRINTED_MARKERS_ONLY_WAITING_SCHOLA_EDITOR",
+      "provisionalGabcResearch": {
+        "candidatePath": "data/research/chant-source-review/palm23-verse2-tone-application-20261027-PROVISIONAL.gabc",
+        "evidencePath": "data/research/processionale-palm23-verse2-tone-hypothesis-20261027.v1.json",
+        "scope": "ONE_24_SYLLABLE_TONE_APPLICATION_HYPOTHESIS",
+        "printedSecondVerseCueUsed": true,
+        "allSyllablesHaveGabcNoteGroups": true,
+        "sourceArchivedGabcUnmodified": true,
+        "musicalAccentHold": "Candidate final firmávit stress location does not demonstrably fit first-verse cadence mapping; reject or rewrite after chant-editor inspection.",
+        "musicEditorApproved": false,
+        "exsurgeRendered": false,
+        "publicationAllowed": false
+      }
     },
     {
       "id": "PALM-R02-PS23-L07",
@@ -515,5 +527,14 @@
     "firstVersePitchTemplateCertification": false,
     "otherVerseToneApprovalCount": 0,
     "releaseEligible": false
+  },
+  "currentCandidatePipeline": {
+    "firstMusicUnderlayCandidate": "PALM-R02-PS23-L02",
+    "candidateCreated": 1,
+    "distinctPatterns": 13,
+    "approved": 0,
+    "exsurgeCandidateRendered": 0,
+    "otherTwelvePatternsNoCandidateYet": true,
+    "doNotAdvanceReader": true
   }
 }
