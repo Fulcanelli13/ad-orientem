@@ -102,13 +102,13 @@
         },
         {
           "id": "H3",
-          "artist": "Charles Le Brun",
-          "title": "La Descente du Saint-Esprit",
-          "object_url": "https://collections.louvre.fr/ark:/53355/cl010060608",
-          "image_file": "https://collections.louvre.fr/ark:/53355/cl010060608",
-          "rights": "LOUVRE_GRANDPALAISRMN_EXACT_PHOTO_REUSE_UNVERIFIED",
-          "pixels": "Exact photo candidate not rights cleared",
-          "artistic_comment": "Monumental calm Virgin in blue, classical columns, 1656-57; DON'T confuse with Verdier B720 historically misattributed Champaigne"
+          "artist": "Pier Francesco Mazzucchelli (il Morazzone)",
+          "title": "Pentecost (c. 1615)",
+          "object_url": "https://commons.wikimedia.org/wiki/Category:Pentecost_by_Morazzone_(1615_ca.)_-_Pinacoteca_del_Castello_Sforzesco,_Milan",
+          "image_file": "https://commons.wikimedia.org/wiki/File:Morazzone,_pentecoste,_1615_circa_01.JPG",
+          "rights": "SAILKO_PHOTOGRAPH_FREE_LICENSE_WITH_CREDIT_AND_SHARE_ALIKE_CONDITIONS",
+          "pixels": "1536x1897 documented candidate; other photos may exist",
+          "artistic_comment": "Dramatic dark Baroque, descending flame and group; stronger match than restricted Louvre reproduction"
         },
         {
           "id": "H4",
@@ -132,5 +132,10 @@
         }
       ]
     }
-  ]
+  ],
+  "removed_previously_researched_option": {
+    "artist": "Charles Le Brun",
+    "title": "La Descente du Saint-Esprit",
+    "reason": "Strong painting but Louvre exact photo rights unresolved; do not present as active selection with unresolved photography"
+  }
 }
