@@ -46,7 +46,7 @@ def main():
     assert count(db,"SELECT COUNT(*) FROM source_ministry WHERE institute_id IS NULL AND inherited_missal!='UNKNOWN'")==0
 
     # All 5 alias site IDs resolve to precisely one physical anchor.
-    assert count(db,"SELECT COUNT(*) FROM unified_physical_site WHERE history_site_count>1")==5
+    assert count(db,"SELECT SUM(history_site_count-1) FROM unified_physical_site")==5
     assert count(db,"SELECT SUM(history_site_count) FROM unified_physical_site")==2584
 
     # Verify a source-ministry exception supersedes its norm, and a single Mass
