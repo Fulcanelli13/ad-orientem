@@ -1,0 +1,53 @@
+name: Millet Evening Prayer photo — native detail research
+on:
+  push:
+    branches: [research/module-hero-pd-masters-20261026]
+    paths:
+      - '.github/workflows/research-millet-evening-native-review-20261027.yml'
+      - 'scripts/art/review-millet-evening-native.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: millet-evening-native-review
+  cancel-in-progress: false
+jobs:
+  capture-native-details:
+    if: github.ref == 'refs/heads/research/module-hero-pd-masters-20261026'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/module-hero-pd-masters-20261026
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Check preserved sha256 and render native pixel detail only
+        run: python scripts/art/review-millet-evening-native.py
+      - name: Verify all crop outputs remain unpublished research assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, pathlib
+          d=pathlib.Path('assets/staged/module-hero-evening-candidate-20261027/review')
+          j=json.loads((d/'millet-native-photo-review.json').read_text())
+          assert len(j['crops'])==8
+          assert j['source_original_preserved']
+          assert j['editorial_selected'] is False
+          assert j['pristine_quality_approved'] is False
+          assert j['production_released'] is False
+          assert all(x['native_pixels_unscaled'] and (d/x['file']).is_file() for x in j['crops'])
+          print('Review tiles created; NO pristine or publication passes')
+          PY
+          test "${GITHUB_REF}" = 'refs/heads/research/module-hero-pd-masters-20261026'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f assets/staged/module-hero-evening-candidate-20261027/review/
+          if ! git diff --cached --quiet; then
+            git commit -m 'research(art): archive 8 native Millet detail crops, no quality approval'
+            git push origin HEAD:research/module-hero-pd-masters-20261026
+          fi
