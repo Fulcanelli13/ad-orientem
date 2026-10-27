@@ -131,17 +131,39 @@ def main():
         rows.append(acquire_commons())
     if args.source in ('toledo', 'all'):
         rows.extend(acquire_toledo())
+    # Preserve existing verified source records when a second source is acquired.
+    # Do not allow a later --source commons run to erase museum references.
+    OUT.mkdir(parents=True, exist_ok=True)
+    manifest_path = OUT / 'acquisition-manifest.json'
+    old_rows = []
+    if manifest_path.exists():
+        old = json.loads(manifest_path.read_text())
+        if old.get('accession') != 'Toledo Museum of Art 1981.44':
+            raise ValueError('Pre-existing Coello manifest object mismatch')
+        old_rows = old.get('original_files', [])
+        for prior in old_rows:
+            file = ROOT / prior['path']
+            if not file.is_file():
+                raise ValueError(f'Previously archived source file absent: {file}')
+            if hashlib.sha256(file.read_bytes()).hexdigest() != prior['sha256']:
+                raise ValueError(f'Previously archived source file mutated: {file}')
+    merged = {row['path']: row for row in old_rows}
+    for row in rows:
+        previous = merged.get(row['path'])
+        if previous and previous['sha256'] != row['sha256']:
+            raise ValueError('Source version changed without review: ' + row['path'])
+        merged[row['path']] = row
     # Fail-closed research report. Absolutely no release approval or derivatives.
     report = {'module_id': 'joseph', 'object': 'Claudio Coello — St Joseph and Christ Child',
-              'accession': 'Toledo Museum of Art 1981.44', 'original_files': rows,
+              'accession': 'Toledo Museum of Art 1981.44',
+              'original_files': sorted(merged.values(), key=lambda row: row['path']),
               'editorial_approved': True, 'pristine_quality_approved': False,
               'publication_rights_approved': False, 'app_release_approved': False,
               'cost': 'EUR 0; research-source acquisition only',
               'notes': ['Do not remove historic blank upper corners; originally arched canvas.',
                         'Books may introduce halftone and colour shift despite larger pixel count.',
                         'Never substitute an AI reconstruction, enhanced photo, or a different painting.']}
-    OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / 'acquisition-manifest.json').write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n')
+    manifest_path.write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n')
     print(json.dumps(report, ensure_ascii=False))
 
 
