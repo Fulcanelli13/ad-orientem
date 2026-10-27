@@ -1,0 +1,136 @@
+{
+  "schema": "AO_SACRED_ART_NEXT_TWO_BLOCKED_HERO_OPTIONS_20261027_V1",
+  "created": "2026-10-27",
+  "date_of_user_request": "2026-10-27T16:28:13Z",
+  "editorial_status": "VISUAL_CHOICES_UNAPPROVED_NO_AUTOMATIC_REPLACEMENT",
+  "prior_user_choices": {
+    "Guardian": "M4 Guido Reni Saint Michael (shared existing Michael artwork)",
+    "Joseph": "S4 Claudio Coello youthful Saint Joseph",
+    "Evening": "E9 Millet Angelus leading; E6 reserve"
+  },
+  "constraints": [
+    "Strict EUR0/no contact/no licensing or rights-holder requests",
+    "Do not reopen formerly approved artwork unless exact photo provenance genuinely blocks use",
+    "Preserve superseded historic approvals and rejects",
+    "Display 4-5 actual paintings with image references; if rights hard, offer alternatives without lengthy research",
+    "Visual suitability and exact photo permission remain separate"
+  ],
+  "groups": [
+    {
+      "module": "king",
+      "module_label": "Christ the King",
+      "previous_painting": "Ambrosius Benson — Salvator Mundi",
+      "reason_for_alternatives": "Christie's-sourced photographic source under unresolved redistribution restrictions",
+      "candidates": [
+        {
+          "id": "K1",
+          "artist": "Domenico Fetti",
+          "title": "Salvator Mundi",
+          "object_url": "https://www.metmuseum.org/art/collection/search/438169",
+          "image_file": "https://commons.wikimedia.org/wiki/File:Salvator_Mundi_MET_DP148737.jpg",
+          "rights": "MET_EXACT_IMAGE_CC0",
+          "pixels": "2857x3832",
+          "artistic_comment": "Baroque sovereign Christ on clouds, blue and red, globe"
+        },
+        {
+          "id": "K2",
+          "artist": "Guido Reni",
+          "title": "Cristo Salvatore",
+          "object_url": "https://commons.wikimedia.org/wiki/File:Guido_Reni_PR_Salvator_Mundi_PR83_Musei_di_Strada_Nuova.tif",
+          "image_file": "https://commons.wikimedia.org/wiki/File:Cristo_Salvatore_di_Guido_Reni.JPG",
+          "rights": "PHOTOGRAPH_CC_BY_SA_3_0_CREDIT_AND_SHARE_ALIKE_CONDITIONS",
+          "pixels": "4352x3264 photography; alternate artwork TIF 2526x3142",
+          "artistic_comment": "Austere Savior; framing and source version must be assessed"
+        },
+        {
+          "id": "K3",
+          "artist": "Workshop of Gerard Seghers",
+          "title": "Salvator Mundi",
+          "object_url": "https://commons.wikimedia.org/wiki/File:Seghers_Salvator_Mundi.jpg",
+          "image_file": "https://commons.wikimedia.org/wiki/File:Seghers_Salvator_Mundi.jpg",
+          "rights": "COMMONS_PD_ART_SOURCE_PHOTO_TERMS_UNVERIFIED",
+          "pixels": "4111x5389",
+          "artistic_comment": "Caravaggesque direct frontal blessing, dark globe, deep red mantle; source photo made with phone, inspect fidelity"
+        },
+        {
+          "id": "K4",
+          "artist": "Correggio",
+          "title": "Salvator Mundi",
+          "object_url": "https://www.nga.gov/artworks/46167-salvator-mundi",
+          "image_file": "https://www.nga.gov/artworks/46167-salvator-mundi",
+          "rights": "NGA_OPEN_ACCESS_PUBLIC_DOMAIN",
+          "pixels": "High resolution official file available; actual pixels not yet verified",
+          "artistic_comment": "Earlier devotional half-length Savior with open book, not orb; less Baroque"
+        },
+        {
+          "id": "K5",
+          "artist": "Andrea Solario",
+          "title": "Christ Blessing",
+          "object_url": "https://www.metmuseum.org/art/collection/search/437698",
+          "image_file": "https://www.metmuseum.org/art/collection/search/437698",
+          "rights": "MET_OPEN_ACCESS_CC0",
+          "pixels": "Museum original file available; dimensions pending",
+          "artistic_comment": "Monumental standing blessing Christ, Renaissance; frame issue to verify"
+        }
+      ]
+    },
+    {
+      "module": "holy-spirit",
+      "module_label": "Holy Spirit",
+      "previous_painting": "Jean II Restout — Pentecost (1732)",
+      "reason_for_alternatives": "Current photographic copy PD-Art metadata conflicts with photographer CC BY-SA EXIF",
+      "candidates": [
+        {
+          "id": "H1",
+          "artist": "Anthony van Dyck",
+          "title": "Pentecost",
+          "object_url": "https://www.spsg.de/presse-foto-film/pressematerial-aktuell/2026-04-30-van-dyck-gemaelde-im-wissenschafts-und-restaurierungszentrum",
+          "image_file": "https://commons.wikimedia.org/wiki/Category:Pentecost_(Anthony_van_Dyck)",
+          "rights": "COMMONS_PD_ART_SOURCE_PHOTO_LICENSE_NOT_FULLY_SIGNED_OFF",
+          "pixels": "6064x7368 alternative Commons image; smaller 802x1000 version",
+          "artistic_comment": "Strong chiaroscuro, full oil painting, Mary and apostles"
+        },
+        {
+          "id": "H2",
+          "artist": "Matthys Voet",
+          "title": "Pentecost (Fifteen Mysteries of the Rosary)",
+          "object_url": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+          "image_file": "https://commons.wikimedia.org/wiki/File:Matthys_Voet_-_Mysteries_of_the_Rosary,_Pentecost.jpeg",
+          "rights": "COMMONS_PD_ART_REPRODUCTION_TERRITORY_REVIEW_PENDING",
+          "pixels": "3354x4500",
+          "artistic_comment": "Antwerp church, radiant dove, deep shadow, dense apostles"
+        },
+        {
+          "id": "H3",
+          "artist": "Charles Le Brun",
+          "title": "La Descente du Saint-Esprit",
+          "object_url": "https://collections.louvre.fr/ark:/53355/cl010060608",
+          "image_file": "https://collections.louvre.fr/ark:/53355/cl010060608",
+          "rights": "LOUVRE_GRANDPALAISRMN_EXACT_PHOTO_REUSE_UNVERIFIED",
+          "pixels": "Exact photo candidate not rights cleared",
+          "artistic_comment": "Monumental calm Virgin in blue, classical columns, 1656-57; DON'T confuse with Verdier B720 historically misattributed Champaigne"
+        },
+        {
+          "id": "H4",
+          "artist": "Titian",
+          "title": "The Descent of the Holy Spirit (Santa Maria della Salute)",
+          "object_url": "https://commons.wikimedia.org/wiki/File:Tiziano,_pentecoste,_1555,_04.jpg",
+          "image_file": "https://commons.wikimedia.org/wiki/File:Tiziano,_pentecoste,_1555,_04.jpg",
+          "rights": "SAILKO_CREATIVE_COMMONS_PHOTOGRAPHER_LICENSE_CHECK_EXACT_TERMS",
+          "pixels": "1796x2505",
+          "artistic_comment": "Venetian vault with intense descending light and group of apostles, dramatic composition"
+        },
+        {
+          "id": "H5",
+          "artist": "Jean II Restout",
+          "title": "Pentecost",
+          "object_url": "https://utpictura18.univ-amu.fr/en/notice/6004-pentecost-restout",
+          "image_file": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+          "rights": "EXISTING_APPROVED_ORIGINAL_KEEP_PHOTO_RIGHTS_HOLD",
+          "pixels": "Older WGA photo may be undersized; alternate EXIF photographer licence conflict",
+          "artistic_comment": "Retain current approved if user wants same painting rather than replacing"
+        }
+      ]
+    }
+  ]
+}
