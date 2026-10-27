@@ -21,6 +21,8 @@ on:
       - "tests/mass-1962-marian-preface-source.mjs"
       - "src/mass/1962-seasonal-sanctoral-preface-source.js"
       - "tests/mass-1962-seasonal-sanctoral-preface-source.mjs"
+      - "src/mass/1962-residual-preface-source.js"
+      - "tests/mass-1962-residual-preface-source.mjs"
       - "tests/calendar-ordo-1962-preface-review.mjs"
       - ".github/workflows/calendar-1962-year-audit.yml"
   workflow_dispatch:
@@ -45,6 +47,8 @@ jobs:
         run: node tests/mass-1962-marian-preface-source.mjs
       - name: Guard source- and date-authenticated Easter Ascension saint Prefaces
         run: node tests/mass-1962-seasonal-sanctoral-preface-source.mjs
+      - name: Guard 13 source- and date-bound 1962 residual Prefaces
+        run: node tests/mass-1962-residual-preface-source.mjs
       - name: Strict source-bound 1962 Preface category review
         run: node tests/calendar-ordo-1962-preface-review.mjs
       - name: Exhaustive 2026 production resolver sweep and independent checkpoints
