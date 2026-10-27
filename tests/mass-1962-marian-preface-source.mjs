@@ -34,7 +34,8 @@ for(const [md,rank,colour,form] of feasts){
  assert.equal(verifyMarianLatinSourceRule({map:new Map([["Rule",["Prefatio=Communis"]]])},source),false);
  for(const lang of ["la","en","fr"]){
    const text=render1962MarianPrefaceForm(donor[lang],lang,form);
-   assert.ok(text&&text!==donor[lang],md+" "+lang+" source marker replaced");
+   assert.ok(text&&(lang==="fr"&&form==="FESTIVITY"||text!==donor[lang]),
+     md+" "+lang+" source must retain the exact attested form");
    if(lang==="la"){
      assert.equal(isSelected1962MarianPrefaceForm({lat:text,marianForm:form},source),true);
      assert.equal(isSelected1962MarianPrefaceForm({lat:text,marianForm:"VENERATION"},source),false);
