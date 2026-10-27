@@ -89,6 +89,24 @@ expect(souls.plan.dismissal==="REQUIESCANT_IN_PACE",
   "All Souls calendar Mass wrongly uses ordinary dismissal");
 expect(souls.plan.normalLastGospel===true,
   "Unaccompanied Requiem Mass must retain Last Gospel");
+const actualAllSouls={status:"ready",date:"2026-11-02",
+  day:{main:{id:"sancti:11-02m1:1:b",title:"All Souls"}}};
+const hostLegacyAlias={...soulsLegacy,
+  calendarDay:{id:"Sancti/11-02m1",title:"All Souls — old host identity"}};
+const sourceBound=prepareMassSessionFromV346(hostLegacyAlias,{
+  form:"solemn",proper:soulsProper,calendarResolution:actualAllSouls});
+expect(sourceBound.resolvedMass.overlays.includes("REQUIEM"),
+  "Actual Calendar resolver identity must override obsolete legacy host identity");
+for(const corruptedCalendar of [
+  {...actualAllSouls,date:"2026-11-03"},
+  {...actualAllSouls,day:{main:{id:"sancti:11-03:3:w"}}},
+  {...actualAllSouls,status:"failed"}
+]){
+  const declined=prepareMassSessionFromV346(hostLegacyAlias,{
+    form:"solemn",proper:soulsProper,calendarResolution:corruptedCalendar});
+  expect(!declined.resolvedMass.overlays.includes("REQUIEM"),
+    "Stale/failed/mismatched actual Calendar source falsely activated Requiem");
+}
 for(const [label,variant,selectedProper] of [
   ["unrelated day",{...soulsLegacy,calendarDay:{id:"sancti:11-03:3:w"}},soulsProper],
   ["unrelated donor",soulsLegacy,{...soulsProper,sourcePath:"Sancti/11-02m2"}],
