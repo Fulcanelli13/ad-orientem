@@ -51,9 +51,16 @@ try{
    const {compileMassPlan}=await import("/src/mass/session-engine.js");
    const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
    const {select1962CommemorationsForMassForm}=await import("/src/mass/1962-commemoration-form-source.js");
-   const source=legacy?.proper?.data??legacy?.proper;
+   const bridge=globalThis.AO_SEQUENCE_BRIDGE_V23??globalThis.AO_SEQUENCE_BRIDGE_V22;
+   const assembly=bridge?.getAssemblyStatus?.();
+   // Reproduce browser-entry deriveHostOptions: assembly source has priority,
+   // then legacy. A direct resolver source is the recovery witness if the
+   // assembly has not yet populated its independent Proper slot.
+   const inputProper=assembly?.proper??legacy?.proper??resolution?.proper??null;
+   const source=inputProper?.data??inputProper;
+   if(!source)throw Error("REAL_2026_MASS_PROPER_UNAVAILABLE");
    const selected=select1962CommemorationsForMassForm({
-     proper:legacy.proper,calendarResolution:resolution,form:"SOLEMN"});
+     proper:inputProper,calendarResolution:resolution,form:"SOLEMN"});
    const prepared=adaptV346ResolvedMass(legacy,{
      form:"solemn",presentationMode:"MISSAL",proper:selected.proper});
    const plan=compileMassPlan(prepared);
@@ -69,7 +76,10 @@ try{
      date:resolution?.date,id:resolution?.day?.main?.id,
      path:source?.sourcePath,colour:resolution?.colourPlan?.massColor??source?.color??null,
      legacyType:legacy?.celebrationType,legacyId:legacy?.celebrationId,
-     legacyStatus:legacy?.canStart,sourceStatus:legacy?.proper?.status,
+     legacyStatus:legacy?.canStart,sourceStatus:inputProper?.status??"ready",
+     sourceFromAssembly:Boolean(assembly?.proper),
+     sourceFromLegacy:Boolean(legacy?.proper),
+     sourceFromResolution:Boolean(resolution?.proper),
      selectedStatus:selected?.status,selectedReason:selected?.reason,
      sourcePreface:source?.preface?.lat?.slice(0,140)??null,
      sourceLanguages:["lat","en","fr"].map(lang=>String(source?.preface?.[lang]??"").length),
