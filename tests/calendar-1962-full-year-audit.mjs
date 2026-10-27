@@ -615,6 +615,7 @@ try{
           record.selectedPrefaceSource=selectedPreface?.sourcePath??null;
           record.selectedPrefaceSection=selectedPreface?.prefaceSection??null;
           record.selectedPrefaceVariant=selectedPreface?.prefaceVariant??null;
+          record.selectedMarianForm=selectedPreface?.marianForm??null;
           record.sourceRecoveryChangedHeading=record.originalHeading!==record.selectedHeading;
           record.trilingualSelected=Boolean(
             String(selectedPreface?.lat??selectedPreface?.la??"").trim()&&
@@ -650,6 +651,24 @@ try{
   assert.equal(readerAuditRows.length,100);
   assert.deepEqual(readerAuditRows.map(x=>x.date),rawConflictCases.map(x=>x.date),
     "Native reader comparisons missing or reordered a raw conflict");
+  // Exact 22-case Marian source gate: a wrong Common must never be shown
+  // as READY, and the Lourdes donor/books disagreement must stay blocked.
+  // These identities are already present in the independent 100-case queue.
+  const marianCases=readerAuditRows.filter(x=>x.sourceExpected==="MARIA");
+  assert.equal(marianCases.length,22,"Original 1962 Marian failure scope changed");
+  const special=marianCases.find(x=>x.date==="2026-02-11");
+  assert.equal(special?.result,"READER_PREFACE_BLOCKED_OR_MISSING",
+    "Contradictory Lourdes source must never silently print a Common Preface");
+  assert.equal(special?.finalReaderSlot,"MISSING");
+  for(const item of marianCases.filter(x=>x.date!=="2026-02-11")){
+    assert.equal(item.result,"READER_SELECTED_CATEGORY_MATCH",
+      item.date+": authenticated 1962 Marian form was not selected in native reader");
+    assert.ok(item.selectedMarianForm,item.date+" Marian form interpolation not identified");
+    assert.equal(item.selectedPrefaceSource,"Ordo/Prefationes",item.date);
+    assert.equal(item.nativeAdapterPrincipalId,item.id,item.date);
+  }
+  assert.equal(marianCases.filter(x=>x.result==="READER_SELECTED_CATEGORY_MATCH").length,21);
+
   const readerResultCounts=Object.fromEntries(
     [...new Set(readerAuditRows.map(x=>x.result))].sort()
       .map(key=>[key,readerAuditRows.filter(x=>x.result===key).length]));
@@ -673,6 +692,9 @@ try{
       readerSelectedCategoryMatches:matchedNativeReady,
       readerWrongPrefaceReady:wrongNativeReady,
       readerPrefaceBlockedOrMissing:blockedNative,
+      marianPrefaceSourceCases:22,
+      marianPrefacesRecoveredReady:21,
+      marianLourdesBookConflictBlocked:1,
       readerLiturgicalSourceReleaseReady,
       unresolvedOrWrongReaderCases:100-matchedNativeReady,
       readerResultCounts,
@@ -690,6 +712,7 @@ try{
     rawConflicts:100,withReaderRecoveryOwners:sourceOwnerCount,
     readerNativeReadyAndCategoryMatched:matchedNativeReady,
     readerWrongPrefaceNativeReady:wrongNativeReady,
+    marianPrefacesRecoveredReady:21,marianLourdesBookConflictBlocked:1,
     readerLiturgicalSourceReleaseReady,
     readerNotConfirmedCorrect:100-matchedNativeReady,
     categories:readerResultCounts,editoriallyCertified:0
