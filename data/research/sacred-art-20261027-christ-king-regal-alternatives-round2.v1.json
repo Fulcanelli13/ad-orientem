@@ -2,7 +2,7 @@
   "schema": "AO_ART_20261027_CHRIST_THE_KING_REGAL_NOT_SALVATOR_V1",
   "request_timestamp": "2026-10-27T16:38:36Z",
   "user_direction": "Reject all Salvator Mundi types. Search Christ as reigning King, majestic Judge, triumphant conqueror, and in glory.",
-  "editorial_status": "FIVE_NEW_VISUAL_CHOICES_UNAPPROVED",
+  "editorial_status": "ALL_R1_TO_R5_REJECTED_BY_USER_20261027",
   "rejected_earlier_codes": [
     "K1",
     "K2",
@@ -42,7 +42,8 @@
         5000
       ],
       "visual": "Seated judging Christ above humanity; commanding, dynamic and monumental",
-      "tradeoff": "Crowded long vertical masterpiece; Christ only one part of scene, may be hard to read at mobile hero size"
+      "tradeoff": "Crowded long vertical masterpiece; Christ only one part of scene, may be hard to read at mobile hero size",
+      "editorial_status": "REJECTED_BY_USER_FOR_CHRIST_THE_KING"
     },
     {
       "code": "R2",
@@ -57,7 +58,8 @@
         2514
       ],
       "visual": "Triumphant risen Christ, banner, death and serpent vanquished, winged attendants",
-      "tradeoff": "Kingship shown via victory rather than visible royal crown or throne"
+      "tradeoff": "Kingship shown via victory rather than visible royal crown or throne",
+      "editorial_status": "REJECTED_BY_USER_FOR_CHRIST_THE_KING"
     },
     {
       "code": "R3",
@@ -72,7 +74,8 @@
         1333
       ],
       "visual": "Christ enthroned above a crown carried by angels; regal imagery explicitly",
-      "tradeoff": "Very wide mural/detail image, may be problematic in narrow mobile hero"
+      "tradeoff": "Very wide mural/detail image, may be problematic in narrow mobile hero",
+      "editorial_status": "REJECTED_BY_USER_FOR_CHRIST_THE_KING"
     },
     {
       "code": "R4",
@@ -87,7 +90,8 @@
         1648
       ],
       "visual": "Seated Christ, heavenly angels, God the Father holding crown, dark sky",
-      "tradeoff": "Original horizontal, image appears a detail/entire subject but not regal scepter"
+      "tradeoff": "Original horizontal, image appears a detail/entire subject but not regal scepter",
+      "editorial_status": "REJECTED_BY_USER_FOR_CHRIST_THE_KING"
     },
     {
       "code": "R5",
@@ -103,7 +107,8 @@
         4000
       ],
       "visual": "Resurrected Christ in triumph above serpent and skeleton, surrounded by heavenly host and saints",
-      "tradeoff": "Oil sketch with relatively light, unfinished painterly palette; explicitly Eucharistic theme, no physical crown"
+      "tradeoff": "Oil sketch with relatively light, unfinished painterly palette; explicitly Eucharistic theme, no physical crown",
+      "editorial_status": "REJECTED_BY_USER_FOR_CHRIST_THE_KING"
     }
   ],
   "release_conditions": {
@@ -111,5 +116,12 @@
     "retain_complete_painted_surface": true,
     "quality_photo_stage_after_selection": true,
     "app_published": false
+  },
+  "user_feedback": {
+    "at": "2026-10-27T16:43:59Z",
+    "verbatim": "i don't like them",
+    "scope": "All five Christ the King options R1–R5 in this immediately preceding carousel",
+    "decision": "REJECT_AS_KING_MODULE_HERO",
+    "interpretation": "No final replacement for Christ the King. Do not put rejected options forward again. Retain records for provenance, but pause selection while progressing other modules."
   }
 }
