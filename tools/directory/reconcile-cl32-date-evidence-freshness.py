@@ -139,8 +139,8 @@ def main():
    "SELECT phase,source_event_key,cl31_research_working_anchor_id"
    " FROM cl31_dated_source_anchor_candidate")}
  assert set(prior)==pairs
- before={r["source_record_key"]:r["source_grade"] for r in db.execute(
-   "SELECT source_record_key,source_grade FROM cl28_crossnetwork_dated_source_candidate")}
+ before={r["research_source_event_key"]:r["evidence_grade"] for r in db.execute(
+   "SELECT research_source_event_key,evidence_grade FROM cl28_crossnetwork_dated_source_candidate")}
  assert before["CL28-017"].startswith("SECONDARY_")
  assert before["CL28-018"].startswith("SECONDARY_")
  assert before["CL28-016"].startswith("SECONDARY_")
