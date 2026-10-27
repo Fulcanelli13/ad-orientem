@@ -2,15 +2,21 @@ name: Mass 1962 Preface source decision gate
 on:
   workflow_dispatch:
   pull_request:
-    branches: [main]
+    branches: [main, fix/mass-1962-lent-preface-source-recovery-20261026]
   push:
     paths:
       - 'src/mass/1962-preface-decision.js'
+      - 'src/mass/1962-easter-preface-form.js'
       - 'src/mass/reader-proper-runtime-recovery.js'
       - 'src/mass/proper-reader-slots.js'
       - 'tests/reader-proper-runtime-recovery.mjs'
       - 'tests/mass-1962-lent-preface-recovery.mjs'
       - 'tests/mass-1962-lent-preface-production.mjs'
+      - 'tests/mass-1962-easter-preface-variants.mjs'
+      - 'tests/mass-1962-easter-preface-production.mjs'
+      - 'tests/mass-1962-preface-reader-handoff.mjs'
+      - 'src/mass/host-adapter.js'
+      - 'tests/fixtures/mass-easter-preface-pasch-source.v1.json'
       - 'tests/mass-1962-preface-decision.mjs'
       - '.github/workflows/mass-1962-preface-decision.yml'
 jobs:
@@ -30,7 +36,22 @@ jobs:
       - run: node tests/reader-proper-runtime-recovery.mjs
       - name: Authenticate trilingual Lenten Preface source recovery
         run: node tests/mass-1962-lent-preface-recovery.mjs
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
+      - name: Resolve Chromium for production Mass regression
+        run: |
+          if command -v google-chrome >/dev/null 2>&1; then
+            echo "AO_BROWSER_BIN=$(command -v google-chrome)" >> "$GITHUB_ENV"
+            google-chrome --version
+          elif command -v chromium >/dev/null 2>&1; then
+            echo "AO_BROWSER_BIN=$(command -v chromium)" >> "$GITHUB_ENV"
+            chromium --version
+          else
+            npx playwright install --with-deps chromium
+          fi
+      - name: Verify three authentic trilingual Easter Preface variants
+        run: node tests/mass-1962-easter-preface-variants.mjs
+      - name: Verify source-bound Preface in native R17 reader output
+        run: node tests/mass-1962-preface-reader-handoff.mjs
       - name: Audit all 30 Lent and Pentecost 2026 production Prefaces
         run: node tests/mass-1962-lent-preface-production.mjs
+      - name: Audit all 14 2026 Easter Vigil, octave and seasonal Prefaces
+        run: node tests/mass-1962-easter-preface-production.mjs

@@ -1,4 +1,5 @@
 import {certifyPreGospelChantParts} from "./reader-pre-gospel-chant-source.js";
+import {render1962EasterPrefaceVariant} from "./1962-easter-preface-form.js";
 const PER_DOM=Object.freeze({
   la:"Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
   en:"Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
@@ -139,6 +140,21 @@ export function authenticated1962PrefaceRecoveryOwner(principalCelebrationId,sou
   if(pentecost&&path.toLowerCase()==="tempora/"+pentecost[1].toLowerCase())
     return Object.freeze({section:"Spiritu",scope:"PENTECOST_OCTAVE_1962",
       rubric:"RGMR_493_A",sourcePath:path});
+  // The 1962 Paschal Preface has three *mutually exclusive* readings.
+  // Source ID and actual canonical Proper path must both match: no
+  // generic feria, feast in Eastertide, or votive source inheritance.
+  const vigil=/^tempora:(Quad6-6r):1:vw$/i.exec(id);
+  if(vigil&&path.toLowerCase()==="tempora/"+vigil[1].toLowerCase())
+    return Object.freeze({section:"Pasch",variant:"VIGIL_NIGHT",
+      scope:"PASCHAL_VIGIL_1962",rubric:"PREFATIO_PASCHALIS_1962",sourcePath:path});
+  const octave=/^tempora:(Pasc0-[0-6]):1:w$/i.exec(id);
+  if(octave&&path.toLowerCase()==="tempora/"+octave[1].toLowerCase())
+    return Object.freeze({section:"Pasch",variant:"OCTAVE_DAY",
+      scope:"PASCHAL_OCTAVE_1962",rubric:"PREFATIO_PASCHALIS_1962",sourcePath:path});
+  const season=/^tempora:(Pasc[1-4]-[0-6]r?|Pasc5-[0-3]):[1-3]:w$/i.exec(id);
+  if(season&&path.toLowerCase()==="tempora/"+season[1].toLowerCase())
+    return Object.freeze({section:"Pasch",variant:"EASTERTIDE",
+      scope:"PASCHAL_AFTER_OCTAVE_1962",rubric:"PREFATIO_PASCHALIS_1962",sourcePath:path});
   return null;
 }
 async function recoverContradictoryPreface(data,hostResolver,principalCelebrationId,diagnostic){
@@ -153,7 +169,12 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
   if(!owner)return null;
   const heading=String(data.preface?.lat??data.preface?.la??"").trim();
   const currentlyCommon=/^Communis(?:\s|$)/i.test(heading);
-  if(!currentlyCommon)return null; // Preserve source-selected non-Common text pending independent certification.
+  const unresolvedPaschalAlternatives=owner.section==="Pasch"&&
+    /^Paschalis(?:\s|$)/i.test(heading)&&
+    /(sed tempore Passionis|sed octava Paschæ|hoc potíssimum~)/i.test(heading);
+  // The original [Pasch] contains night, octave-day, and later-season
+  // options simultaneously. It is not a reader-ready printed Preface.
+  if(!currentlyCommon&&!unresolvedPaschalAlternatives)return null;
   const result={};
   for(const language of ["la","en","fr"]){
     const parsed=await hostResolver.resolveSource("Ordo/Prefationes",language,diagnostic);
@@ -161,6 +182,10 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
     if(!section.length)return null;
     let text=cleanLines(section,language);
     text=applyMarianPrefaceForm(text,language,owner.form);
+    if(owner.section==="Pasch"){
+      text=render1962EasterPrefaceVariant(text,language,owner.variant);
+      if(!text)return null;
+    }
     if(!sourceTextComplete(text)||/\*Festivitáte\*|\*Feast\*/.test(text))return null;
     // Verify the returned Latin section is the Lenten Preface itself.
     if(language==="la"&&owner.section==="Quad"&&!/^de Quadragesima(?:\s|$)/i.test(text))
@@ -172,6 +197,7 @@ async function recoverContradictoryPreface(data,hostResolver,principalCelebratio
   if(!hasThreeLanguages(result))return null;
   return Object.freeze({...result,sourcePath:"Ordo/Prefationes",prefaceSection:owner.section,
     recoveryScope:owner.scope??"CERTIFIED_EXACT_FEAST",rubric:owner.rubric??null,
+    prefaceVariant:owner.variant??null,
     originalProperSourcePath:String(data.sourcePath??"")});
 }
 
