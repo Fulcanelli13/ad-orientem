@@ -191,6 +191,26 @@ for(const row of exception.cases){
  exceptionViews.push({id:row.id,mappings:mappings.length,views});
 }
 assert.equal(exceptionViews.length,4);
+const ps46l08=exception.cases.find(x=>x.id==='PALM-R02-PS46-L08');
+const art08=ps46l08?.batch38SecondaryAccentAlternative;
+assert.ok(art08,'Missing source-complete Palm 46:8 alternative');
+assert.equal(art08.humanMelodyAccepted,false);
+assert.equal(art08.sourceToneIndependentWitnessFound,false);
+assert.equal(art08.productionEligible,false);
+const alt08Ctx=new api.ChantContext();
+const alt08Map=api.Gabc.createMappingsFromSource(alt08Ctx,art08.candidateWholeVerseResearchGabc);
+assert.ok(alt08Map.length>=10,'L08 alternate not parsed');
+const alt08Score=new api.ChantScore(alt08Ctx,alt08Map,true);
+alt08Score.performLayout(alt08Ctx);
+const alt08Views=[];
+for(const width of [260,420,800]){
+ await new Promise((resolve,reject)=>{try{alt08Score.layoutChantLines(alt08Ctx,width,resolve)}catch(e){reject(e)}});
+ const svg=alt08Score.createSvgTree(alt08Ctx);
+ assert.equal(svg.name,'svg','L08 alternate');
+ assert.ok(svg.children.length>0&&alt08Score.lines.length>0,'L08 empty SVG');
+ alt08Views.push({width,systems:alt08Score.lines.length,svgChildren:svg.children.length});
+}
+assert.ok(alt08Views[0].systems>=alt08Views.at(-1).systems,'L08 unexpected line reflow');
 const ps46l09=exception.cases.find(x=>x.id==='PALM-R02-PS46-L09');
 assert.ok(ps46l09?.batch37ArtificialAccentAlternative);
 const art=ps46l09.batch37ArtificialAccentAlternative;
@@ -252,7 +272,7 @@ console.log('AO_PALM_15_CADENCE_RENDER_RESULT:'+JSON.stringify({
  sourceApproval:false,fullVerseGabcScoresCreated:0,
  printedPsalm46OpeningTextStillQuarantined:true,editoriallyAccepted:0,runtimeScoreAssignments:0,
  snippetCount:results.length,medialAndFlexSnippetCount:medialViews.length,
- totalViewportChecks:3*(results.length+medialViews.length+correctedViews.length+completeViews.length+flexDraftViews.length+exceptionViews.length+amenViews.length+1),
+ totalViewportChecks:3*(results.length+medialViews.length+correctedViews.length+completeViews.length+flexDraftViews.length+exceptionViews.length+amenViews.length+2),
  alternateResearchVerseRenderCount:1,
  amenUnapprovedFullScoreCount:amenViews.length,
  allFullResearchScoreCount:completeViews.length+flexDraftViews.length+exceptionViews.length+amenViews.length,
@@ -263,5 +283,6 @@ console.log('AO_PALM_15_CADENCE_RENDER_RESULT:'+JSON.stringify({
  individualResults:results,medialAndFlexResults:medialViews,correctedMedialResults:correctedViews,
  completeResearchVerseResults:completeViews,completeFlexedResearchVerseResults:flexDraftViews,
  highRiskCompleteVerseResults:exceptionViews,amenComparisonResults:amenViews,
- ps46L09ArtificialAccentAlternative:{mappings:artMaps.length,viewports:alternateViews,sourceApproved:false}
+ ps46L09ArtificialAccentAlternative:{mappings:artMaps.length,viewports:alternateViews,sourceApproved:false},
+ ps46L08ArtificialAccentAlternative:{mappings:alt08Map.length,viewports:alt08Views,sourceApproved:false}
 }));
