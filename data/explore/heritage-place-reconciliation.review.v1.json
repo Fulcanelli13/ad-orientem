@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 512,
+    "places": 515,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 253,
+    "places_without_direct_claim": 256,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -281,7 +281,10 @@
       "place:AT:p48-sg-0197-239345806",
       "place:AU:p48-sg-0743-155809136",
       "place:CA:p48-sg-0424-103862161",
-      "place:PT:p48-sg-0156-96319696"
+      "place:PT:p48-sg-0156-96319696",
+      "place:LV:p50-sg-0341-196704436",
+      "place:RO:p50-sg-0330-231691229",
+      "place:LT:p50-sg-0333-112746030"
     ],
     "customs_without_exact_place": [
       {
@@ -5839,6 +5842,24 @@
     {
       "place_id": "place:PT:p48-sg-0156-96319696",
       "display_name": "Igreja de Santo António de Lisboa",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:LV:p50-sg-0341-196704436",
+      "display_name": "Skaistkalnes Vissvētākās Jaunavas Marijas Debesīs Uzņemšanas Romas katoļu baznīca",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:RO:p50-sg-0330-231691229",
+      "display_name": "Bazilica Maria Radna (Sanctuarul Maica Harurilor)",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:LT:p50-sg-0333-112746030",
+      "display_name": "Aušros Vartų koplyčia — Chapel of the Gate of Dawn",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }

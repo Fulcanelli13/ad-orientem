@@ -1,0 +1,120 @@
+{
+  "schema": "AO_SACRED_PLACES_P50_THREE_EXACT_CATHOLIC_WORSHIP_STRUCTURES_V1",
+  "date": "2026-10-26",
+  "status": "PROPOSED_CANONICAL_RELEASE_PENDING_CI_MERGE",
+  "baseline": {
+    "places": 512,
+    "sources": 810,
+    "crosswalk": 512,
+    "unlinked": 253,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 515,
+    "sources": 813,
+    "crosswalk": 515,
+    "unlinked": 256,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "new_physical_locations": 3,
+  "new_mapping_rows_resolved": 0,
+  "new_global_candidate_ids_resolved": 3,
+  "global_canonical_links_after_release": 139,
+  "global_unresolved_after_release": 361,
+  "remaining_open_mapping_queue_after_release": 33,
+  "new_geo_areas": [],
+  "photo_assets_approved": 0,
+  "tlm_schedule_links_added": 0,
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0341",
+      "place_id": "place:LV:p50-sg-0341-196704436",
+      "name": "Skaistkalnes Vissvētākās Jaunavas Marijas Debesīs Uzņemšanas Romas katoļu baznīca",
+      "place_type": "church",
+      "country": "LV",
+      "country_name": "Latvia",
+      "city": "Skaistkalne, Bauska Municipality",
+      "lat": 56.38032,
+      "lng": 24.64323,
+      "geo_source_ref": "osm:way:196704436",
+      "geo_source_url": "https://www.openstreetmap.org/way/196704436",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W196704436",
+      "identity_source_url": "https://visit.bauska.lv/en/objects/see-do/sights/map/skaistkalne-roman-catholic-church/",
+      "identity_source_issuer": "Bauska Municipality official visitor office",
+      "source_directness": "PRIMARY_INSTITUTIONAL",
+      "scope_limit": "Named Roman Catholic Assumption church at Skaistkalne, mapped amenity=place_of_worship building=church denomination=catholic; do not assume minor-basilica canonical status or map the neighbouring manor and municipal offices",
+      "source_ids": [
+        "AO-P50-SITE-SG-INV-0341-196704436"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0330",
+      "place_id": "place:RO:p50-sg-0330-231691229",
+      "name": "Bazilica Maria Radna (Sanctuarul Maica Harurilor)",
+      "place_type": "basilica",
+      "country": "RO",
+      "country_name": "Romania",
+      "city": "Radna, Lipova, Arad",
+      "lat": 46.09919,
+      "lng": 21.68631,
+      "geo_source_ref": "osm:way:231691229",
+      "geo_source_url": "https://www.openstreetmap.org/way/231691229",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W231691229",
+      "identity_source_url": "https://www.basilicamariaradna.info/",
+      "identity_source_issuer": "Basilica Maria Radna Roman Catholic custodians",
+      "source_directness": "OFFICIAL_SHRINE",
+      "scope_limit": "Roman Catholic Marian pilgrimage basilica church, independently mapped building=church; do not substitute adjacent Franciscan monastery OSM way 231691224 tagged building=residential",
+      "source_ids": [
+        "AO-P50-SITE-SG-INV-0330-231691229"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0333",
+      "place_id": "place:LT:p50-sg-0333-112746030",
+      "name": "Aušros Vartų koplyčia — Chapel of the Gate of Dawn",
+      "place_type": "chapel",
+      "country": "LT",
+      "country_name": "Lithuania",
+      "city": "Vilnius",
+      "lat": 54.67435,
+      "lng": 25.28956,
+      "geo_source_ref": "osm:way:112746030",
+      "geo_source_url": "https://www.openstreetmap.org/way/112746030",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W112746030",
+      "identity_source_url": "https://vilnensis.lt/baznycios/ausros-vartai-vilnius/",
+      "identity_source_issuer": "Roman Catholic Archdiocese of Vilnius",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "scope_limit": "Chapel housing Our Lady of Mercy above the historic Gate of Dawn, mapped building=gatehouse amenity=place_of_worship denomination=catholic; not adjoining Church of Saint Teresa and not an independent church-footprint polygon",
+      "source_ids": [
+        "AO-P50-SITE-SG-INV-0333-112746030"
+      ]
+    }
+  ],
+  "held_map_searches": [
+    {
+      "candidate_id": "SG-INV-0130",
+      "reason": "Caravaca results point to an OSM castle/fortress complex; separately verify the basilica footprint before publication"
+    },
+    {
+      "candidate_id": "SG-INV-0321",
+      "reason": "OSM way 330540560 is Mátraverebély village parish Church of Our Lady, not the distinct Szentkút sanctuary; do not reuse"
+    },
+    {
+      "candidate_id": "SG-INV-0049",
+      "reason": "Lateran area contains separate Scala Sancta, baptistery, basilica and complex; exact basilica church way not independently adjudicated"
+    }
+  ],
+  "source_claims": [
+    "Official Roman Catholic municipality visitor evidence for exact Skaistkalne Assumption church building, OSM way 196704436",
+    "Roman Catholic Basilica Maria Radna custodians and named place-of-worship OSM way 231691229 distinguish adjacent way 231691224 monastery",
+    "Archdiocese of Vilnius Chapel of Gate of Dawn + OSM gatehouse way 112746030; site architectural type explicitly preserved"
+  ],
+  "policy": [
+    "Every Place inherits frozen global 500 lead ID and gets one independently matched worship structure, not town centre or complex marker.",
+    "No claim of papal basilica status for Skaistkalne, whose verified identity here is the Roman Catholic Assumption church.",
+    "Chapel of Gate of Dawn is part of a gatehouse; keep chapel semantics and precise building tag rather than misrepresenting a freestanding church.",
+    "No pilgrimage schedules, Mass times, art/photos, special classification or heritage claims are inferred."
+  ]
+}

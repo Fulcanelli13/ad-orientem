@@ -6481,6 +6481,30 @@
       "directness": "PRIMARY_INSTITUTIONAL",
       "url": "https://www.visitlisboa.com/en/places/igreja-de-santo-antonio",
       "contribution": "Catholic custodian/diocesan or authoritative civic evidence identifies exact church building osm:way:96319696. Catholic shrine church on Largo Santo António da Sé, not Lisbon Cathedral or adjoining Museum of Saint Anthony"
+    },
+    {
+      "id": "AO-P50-SITE-SG-INV-0341-196704436",
+      "title": "Skaistkalnes Vissvētākās Jaunavas Marijas Debesīs Uzņemšanas Romas katoļu baznīca — exact Catholic worship structure",
+      "issuer": "Bauska Municipality official visitor office",
+      "directness": "PRIMARY_INSTITUTIONAL",
+      "url": "https://visit.bauska.lv/en/objects/see-do/sights/map/skaistkalne-roman-catholic-church/",
+      "contribution": "Institutional Roman Catholic identity source corroborates the individual OSM feature osm:way:196704436. Named Roman Catholic Assumption church at Skaistkalne, mapped amenity=place_of_worship building=church denomination=catholic; do not assume minor-basilica canonical status or map the neighbouring manor and municipal offices"
+    },
+    {
+      "id": "AO-P50-SITE-SG-INV-0330-231691229",
+      "title": "Bazilica Maria Radna (Sanctuarul Maica Harurilor) — exact Catholic worship structure",
+      "issuer": "Basilica Maria Radna Roman Catholic custodians",
+      "directness": "OFFICIAL_SHRINE",
+      "url": "https://www.basilicamariaradna.info/",
+      "contribution": "Institutional Roman Catholic identity source corroborates the individual OSM feature osm:way:231691229. Roman Catholic Marian pilgrimage basilica church, independently mapped building=church; do not substitute adjacent Franciscan monastery OSM way 231691224 tagged building=residential"
+    },
+    {
+      "id": "AO-P50-SITE-SG-INV-0333-112746030",
+      "title": "Aušros Vartų koplyčia — Chapel of the Gate of Dawn — exact Catholic worship structure",
+      "issuer": "Roman Catholic Archdiocese of Vilnius",
+      "directness": "OFFICIAL_DIOCESAN",
+      "url": "https://vilnensis.lt/baznycios/ausros-vartai-vilnius/",
+      "contribution": "Institutional Roman Catholic identity source corroborates the individual OSM feature osm:way:112746030. Chapel housing Our Lady of Mercy above the historic Gate of Dawn, mapped building=gatehouse amenity=place_of_worship denomination=catholic; not adjoining Church of Saint Teresa and not an independent church-footprint polygon"
     }
   ]
 }
