@@ -1950,6 +1950,13 @@ test('Palm Psalm46 L08 secondary accent aligns two syllables after super and psa
  assert.deepEqual(got.map(x=>x[2]),alt.candidateGroupsInMedial);
  assert.equal(norm(got.map(x=>x[1]).join('')),norm(p.sourceLatin[0]));
  assert.deepEqual(first.replace(/\([^)]*\)/g,'').trim().split(/\s+/).map(norm),words.map(norm));
+ assert.equal(alt.renderedByExsurge,true);
+ assert.equal(alt.pinnedNativeExsurgeProof.runId,40539921610);
+ assert.deepEqual(alt.pinnedNativeExsurgeProof.widthPx,[260,420,800]);
+ assert.equal(alt.pinnedNativeExsurgeProof.musicianApproved,false);
+ assert.equal(b.technicalProof.totalSuccessfulSvgViewportChecks,192);
+ assert.equal(b.technicalProof.sourceApprovedScores,0);
+ assert.equal(b.secondaryAccentAlternatives.every(x=>x.renderedAt260420800===true&&x.humanMusicalApproval===false),true);
  assert.equal(alt.humanMelodyAccepted,false);
  assert.equal(alt.sourceToneIndependentWitnessFound,false);
  assert.equal(alt.productionEligible,false);
