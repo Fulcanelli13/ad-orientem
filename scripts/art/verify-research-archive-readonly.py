@@ -59,7 +59,7 @@ def main():
     for src in files:
         assert src.stat().st_size>1000,("Empty or thumbnail-only source file",src)
         with Image.open(src) as img:
-            assert img.format in {"JPEG","PNG","WEBP"},(src,img.format)
+            assert img.format in {"JPEG","MPO","PNG","WEBP"},(src,img.format)
             assert min(img.size)>350,(src,img.size)
             img.verify()
     if args.check_previews:
