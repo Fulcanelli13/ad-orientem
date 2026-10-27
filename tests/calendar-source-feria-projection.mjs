@@ -62,4 +62,27 @@ assert.equal(calendarObservanceAlias({...friday,date:"2027-01-14"},"en"),null,
   "Proper source alone cannot extend Epiphany segment after January 13");
 assert.equal(calendarObservanceAlias({...friday,proper:{status:"failed",data:{sourcePath:"Sancti/01-06"}}},"en"),null,
   "An unavailable inherited Proper must not be advertised as sourced");
+// A number of original 1962 French Officium witnesses are incorrectly
+// surfaced by the production resolver as English "nameFr". The Calendar
+// display must use only the exact canonical source, not a translated-title
+// heuristic or an override of the Mass's original Proper.
+for(const [date,id,path,fr] of [
+  ["2026-10-25","sancti:10-DU:1:w","Sancti/10-DU","Fête de Notre-Seigneur Jésus-Christ Roi"],
+  ["2026-10-28","sancti:10-28:2:r","Sancti/10-28","Saints Simon et Jude, apôtres"],
+  ["2026-11-01","sancti:11-01:1:w","Sancti/11-01","Tous les Saints"],
+  ["2026-11-02","sancti:11-02m1:1:b","Sancti/11-02m1","Commémoraison de tous les fidèles défunts"],
+  ["2026-11-04","sancti:11-04:3:w","Sancti/11-04","Saint Charles Borromée, évêque et confesseur"]
+]){
+  const resolved={date,status:"ready",day:{main:{id,title:"English source alias"}},
+    proper:{status:"ready",data:{name:"English source alias",nameFr:"English source alias",sourcePath:path}}};
+  assert.equal(calendarObservanceAlias(resolved,"fr"),fr,date+" original 1962 French Officium");
+  assert.equal(calendarObservanceAlias(resolved,"en"),null,date+" English owner unchanged");
+  assert.equal(calendarObservanceAlias({...resolved,proper:{status:"failed",data:resolved.proper.data}},"fr"),
+    null,date+" no source without ready Proper");
+  assert.equal(calendarObservanceAlias({...resolved,proper:{status:"ready",
+    data:{...resolved.proper.data,sourcePath:"Sancti/12-25"}}},"fr"),
+    null,date+" mismatched donor must not inherit French title");
+  assert.equal(calendarObservanceAlias({...resolved,day:{main:{id:"votive:"+id}}},"fr"),
+    null,date+" selected votive cannot inherit Calendar-only heading");
+}
 console.log("PASS 1962 source-first feria headline projection: 55-date historical cohort, EN/FR, temporal source ID and weekday guards");
