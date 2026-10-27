@@ -1,0 +1,604 @@
+name: Directory CL32 complete source-date quality and calendar freshness audit
+
+on:
+  push:
+    paths:
+      - 'data/directory/research/cl17-release-gates-20261026/**'
+      - 'tools/directory/reconcile-cl17-release-gates.py'
+      - 'data/directory/research/cl18-fssp-calendar-address-20261026/**'
+      - 'tools/directory/reconcile-cl18-calendar-address.py'
+      - 'data/directory/research/cl19-remaining-fssp-20261026/**'
+      - 'tools/directory/reconcile-cl19-remaining-site-sources.py'
+      - 'data/directory/research/cl20-geo-entrance-20261026/**'
+      - 'tools/directory/reconcile-cl20-geospatial-candidates.py'
+      - 'data/directory/research/cl21-entrance-evidence-20261026/**'
+      - 'tools/directory/reconcile-cl21-entrance-evidence.py'
+      - 'data/directory/research/cl22-correct-chapel-20261026/**'
+      - 'tools/directory/reconcile-cl22-correct-chapel.py'
+      - 'data/directory/research/cl23-bulk-geospatial-20261026/**'
+      - 'data/directory/research/cl24-fssp-15-site-resolution-20261026/**'
+      - 'data/directory/research/cl25-last-seven-geo-20261026/**'
+      - 'data/directory/research/cl26-ringeisenhaus-dated-20261026/**'
+      - 'data/directory/research/cl27-operator-bulk-20261026/**'
+      - 'data/directory/research/cl28-crossnetwork-dated-20261026/**'
+      - 'data/directory/research/cl29-sspx-uk-20261026/**'
+      - 'data/directory/research/cl30-global-source-crosswalk-20261026/**'
+      - 'data/directory/research/cl31-identity-queue-20261026/**'
+      - 'data/directory/research/cl32-date-proof-freshness-20261027/**'
+      - 'tools/directory/reconcile-cl23-full-spatial-screen.py'
+      - 'tools/directory/reconcile-cl24-site-exceptions.py'
+      - 'tools/directory/reconcile-cl25-seven-spatial-exceptions.py'
+      - 'tools/directory/reconcile-cl26-final-geo-and-dated-external.py'
+      - 'tools/directory/reconcile-cl27-operator-date-bulk.py'
+      - 'tools/directory/reconcile-cl28-crossnetwork-dates.py'
+      - 'tools/directory/reconcile-cl29-uk-dated-owner-pdf.py'
+      - 'tools/directory/reconcile-cl30-global-104-dated.py'
+      - 'tools/directory/reconcile-cl31-identity-and-owner-queue.py'
+      - 'tools/directory/reconcile-cl32-date-evidence-freshness.py'
+      - 'tools/directory/acquire-original-operator-pdf.py'
+      - '.github/workflows/directory-cl23-bulk-spatial-screen.yml'
+      - '.github/workflows/directory-cl24-fssp-spatial-exceptions.yml'
+      - '.github/workflows/directory-cl25-fssp-final-spatial-exceptions.yml'
+      - '.github/workflows/directory-cl26-fssp-host-dated-screen.yml'
+      - '.github/workflows/directory-cl27-owner-dated-event-screen.yml'
+      - '.github/workflows/directory-cl28-crossnetwork-dated-events.yml'
+      - '.github/workflows/directory-cl29-sspx-uk-dated-source.yml'
+      - '.github/workflows/directory-cl30-global-dated-crosswalk.yml'
+      - '.github/workflows/directory-cl31-identity-296-queue-bridge.yml'
+      - '.github/workflows/directory-cl32-quality-freshness-104.yml'
+  pull_request:
+    paths:
+      - 'data/directory/research/cl17-release-gates-20261026/**'
+      - 'tools/directory/reconcile-cl17-release-gates.py'
+      - 'data/directory/research/cl18-fssp-calendar-address-20261026/**'
+      - 'tools/directory/reconcile-cl18-calendar-address.py'
+      - 'data/directory/research/cl19-remaining-fssp-20261026/**'
+      - 'tools/directory/reconcile-cl19-remaining-site-sources.py'
+      - 'data/directory/research/cl20-geo-entrance-20261026/**'
+      - 'tools/directory/reconcile-cl20-geospatial-candidates.py'
+      - 'data/directory/research/cl21-entrance-evidence-20261026/**'
+      - 'tools/directory/reconcile-cl21-entrance-evidence.py'
+      - 'data/directory/research/cl22-correct-chapel-20261026/**'
+      - 'tools/directory/reconcile-cl22-correct-chapel.py'
+      - 'data/directory/research/cl23-bulk-geospatial-20261026/**'
+      - 'data/directory/research/cl24-fssp-15-site-resolution-20261026/**'
+      - 'data/directory/research/cl25-last-seven-geo-20261026/**'
+      - 'data/directory/research/cl26-ringeisenhaus-dated-20261026/**'
+      - 'data/directory/research/cl27-operator-bulk-20261026/**'
+      - 'data/directory/research/cl28-crossnetwork-dated-20261026/**'
+      - 'data/directory/research/cl29-sspx-uk-20261026/**'
+      - 'data/directory/research/cl30-global-source-crosswalk-20261026/**'
+      - 'data/directory/research/cl31-identity-queue-20261026/**'
+      - 'data/directory/research/cl32-date-proof-freshness-20261027/**'
+      - 'tools/directory/reconcile-cl23-full-spatial-screen.py'
+      - 'tools/directory/reconcile-cl24-site-exceptions.py'
+      - 'tools/directory/reconcile-cl25-seven-spatial-exceptions.py'
+      - 'tools/directory/reconcile-cl26-final-geo-and-dated-external.py'
+      - 'tools/directory/reconcile-cl27-operator-date-bulk.py'
+      - 'tools/directory/reconcile-cl28-crossnetwork-dates.py'
+      - 'tools/directory/reconcile-cl29-uk-dated-owner-pdf.py'
+      - 'tools/directory/reconcile-cl30-global-104-dated.py'
+      - 'tools/directory/reconcile-cl31-identity-and-owner-queue.py'
+      - 'tools/directory/reconcile-cl32-date-evidence-freshness.py'
+      - 'tools/directory/acquire-original-operator-pdf.py'
+      - '.github/workflows/directory-cl23-bulk-spatial-screen.yml'
+      - '.github/workflows/directory-cl24-fssp-spatial-exceptions.yml'
+      - '.github/workflows/directory-cl25-fssp-final-spatial-exceptions.yml'
+      - '.github/workflows/directory-cl26-fssp-host-dated-screen.yml'
+      - '.github/workflows/directory-cl27-owner-dated-event-screen.yml'
+      - '.github/workflows/directory-cl28-crossnetwork-dated-events.yml'
+      - '.github/workflows/directory-cl29-sspx-uk-dated-source.yml'
+      - '.github/workflows/directory-cl30-global-dated-crosswalk.yml'
+      - '.github/workflows/directory-cl31-identity-296-queue-bridge.yml'
+      - '.github/workflows/directory-cl32-quality-freshness-104.yml'
+  workflow_dispatch:
+
+jobs:
+  bulk-site-spatial-audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate original CL2 through CL7 and source chain
+        run: |
+          python3 tools/directory/validate-cl3-reconciliation.py
+          python3 tools/directory/validate-cl4-owner-screening.py
+          python3 tools/directory/validate-cl5-provisional-intake.py
+          python3 tools/directory/validate-cl6-source-reconciliation.py
+          python3 tools/directory/validate-cl7-final-gaps.py
+      - name: Rebuild source-evidence database from CL2 through CL23
+        run: |
+          python3 tools/directory/rebuild-cl7-research-index.py --output /tmp/ao-cl23.sqlite
+          python3 tools/directory/audit-cl-completeness.py --db /tmp/ao-cl23.sqlite --output-dir /tmp/ao-cl8
+          python3 tools/directory/audit-cl9-owner-evidence.py --db /tmp/ao-cl23.sqlite --cl8-csv /tmp/ao-cl8/missal_1962_reconciliation.csv --out-dir /tmp/ao-cl9
+          python3 tools/directory/adjudicate-cl10-missal-evidence.py --db /tmp/ao-cl23.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl10
+          python3 tools/directory/reconcile-cl11-owner-sources.py --db /tmp/ao-cl23.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl11
+          python3 tools/directory/reconcile-cl12-singletons.py --db /tmp/ao-cl23.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl12
+          python3 tools/directory/reconcile-cl13-remaining-1962.py --db /tmp/ao-cl23.sqlite --cl9-csv /tmp/ao-cl9/cl9_432_mass_candidates.csv --out-dir /tmp/ao-cl13
+          python3 tools/directory/reconcile-cl14-fssp-owner-site-evidence.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl14
+          python3 tools/directory/triage-cl15-1962-holds.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl15
+          python3 tools/directory/reconcile-cl16-priority-one.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl16
+          python3 tools/directory/reconcile-cl17-release-gates.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl17
+          python3 tools/directory/reconcile-cl18-calendar-address.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl18
+          python3 tools/directory/reconcile-cl19-remaining-site-sources.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl19
+          python3 tools/directory/reconcile-cl20-geospatial-candidates.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl20
+          python3 tools/directory/reconcile-cl21-entrance-evidence.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl21
+          python3 tools/directory/reconcile-cl22-correct-chapel.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl22
+          python3 tools/directory/reconcile-cl23-full-spatial-screen.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl23
+          python3 tools/directory/reconcile-cl24-site-exceptions.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl24
+          python3 tools/directory/reconcile-cl25-seven-spatial-exceptions.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl25
+          python3 tools/directory/reconcile-cl26-final-geo-and-dated-external.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl26
+          python3 tools/directory/reconcile-cl27-operator-date-bulk.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl27
+          python3 tools/directory/reconcile-cl28-crossnetwork-dates.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl28
+          python3 tools/directory/reconcile-cl29-uk-dated-owner-pdf.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl29
+          python3 tools/directory/reconcile-cl30-global-104-dated.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl30
+          python3 tools/directory/reconcile-cl31-identity-and-owner-queue.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl31
+          python3 tools/directory/reconcile-cl32-date-evidence-freshness.py --db /tmp/ao-cl23.sqlite --out-dir /tmp/ao-cl32
+          python3 tools/directory/acquire-original-operator-pdf.py --help >/dev/null
+      - name: Assert complete 39-site spatial screen, 17 sourced points and 15 holds
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl17/cl17_summary.json').read_text())
+          assert x['accepted_book_evidence_rows']==256
+          assert x['held_book_evidence_rows']==176
+          assert x['fssp_source_named_worship_place_pilot']==39
+          assert x['pilot_frozen_mass_rows_with_named_owner_address']==74
+          assert x['new_accepted_named_owner_programme_row']==20
+          assert sum(x['pilot_owner_address_documentation_grades'].values())==39
+          assert x['public_sites_new']==x['public_mass_times_new']==x['current_dated_recurrence_approvals_new']==x['physical_coordinate_or_entrance_approvals_new']==x['una_cum_approvals_new']==0
+          db=sqlite3.connect('/tmp/ao-cl23.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM cl17_accepted_mass_gates').fetchone()[0]==256
+          assert db.execute('SELECT COUNT(*) FROM cl17_owner_site_stage').fetchone()[0]==39
+          assert db.execute('SELECT COUNT(*) FROM cl17_accepted_mass_gates WHERE source_place_id IS NOT NULL').fetchone()[0]==74
+          assert db.execute('SELECT COUNT(*) FROM cl17_potsdam_identity WHERE distinct_venues=0').fetchone()[0]==1
+          assert db.execute('SELECT COUNT(*) FROM classification_source WHERE owner_verified_missal_1962=1').fetchone()[0]==3
+          assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
+          y=json.loads(Path('/tmp/ao-cl18/cl18_summary.json').read_text())
+          assert y['named_pilot_places']==39
+          assert y['pilot_mass_rows_with_parsed_source_calendar_rules']==74
+          assert y['auto_expandable_rule_expressions']==73
+          assert y['manual_feast_only_rule_expressions']==1
+          assert y['distinct_place_local_owner_second_source_reviews']==12
+          assert y['pilot_sites_not_independently_crosschecked']==27
+          assert y['unverified_projected_candidate_dates']>200
+          assert y['public_pin_approvals_new']==y['church_entrance_geocode_approvals_new']==y['future_date_schedule_approvals_new']==y['public_mass_events_new']==y['una_cum_new']==0
+          assert db.execute('SELECT COUNT(*) FROM cl18_recurrence_rules').fetchone()[0]==74
+          assert db.execute('SELECT COUNT(*) FROM cl18_site_verification').fetchone()[0]==39
+          assert db.execute('SELECT COUNT(*) FROM cl18_site_verification WHERE independent_crosscheck=1').fetchone()[0]==12
+          assert db.execute('SELECT COUNT(*) FROM cl18_unverified_projection WHERE released=1 OR owner_calendar_verified=1').fetchone()[0]==0
+          z=json.loads(Path('/tmp/ao-cl19/cl19_summary.json').read_text())
+          assert z['owner_named_pilot_sites']==39
+          assert z['already_crosschecked_in_CL18']==12
+          assert z['new_sites_screened_against_another_source']==27
+          assert z['pilot_sites_with_some_second_source_screen']==39
+          assert z['new_independent_primary_church_identity_sources']==22
+          assert z['new_same_institution_local_FSSP_sources']==4
+          assert z['new_secondary_only_heritage_references']==1
+          assert z['new_source_published_building_coord_candidates']==1
+          assert z['all_new_sites_public_entrances_approved']==z['all_new_sites_geocodes_approved']==0
+          assert z['new_current_mass_occurrence_public_approvals']==z['new_public_map_pins']==z['new_una_cum']==0
+          assert db.execute('SELECT COUNT(*) FROM cl19_second_source_review').fetchone()[0]==27
+          assert db.execute('SELECT COUNT(*) FROM cl19_second_source_review WHERE independent_primary=1').fetchone()[0]==22
+          assert db.execute('SELECT COUNT(*) FROM cl19_dated_source_event').fetchone()[0]==3
+          assert db.execute('SELECT COUNT(*) FROM cl19_dated_source_event WHERE public_approval=1').fetchone()[0]==0
+          geo=json.loads(Path('/tmp/ao-cl20/cl20_summary.json').read_text())
+          assert geo['pilot_owner_named_sites']==39
+          assert geo['new_source_georeferenced_church_building_candidates']==6
+          assert geo['building_reference_eligible_at_research_level']==5
+          assert geo['spatial_disagreement_held_at_research_building_level']==1
+          assert geo['potentially_wrong_Potsdam_OSM_chapel_object_excluded']==1
+          assert geo['building_points_independently_entrance_confirmed']==0
+          assert geo['Potsdam_operator_vehicle_access_route_documented']==1
+          assert geo['new_approved_church_entrance_coordinates']==geo['new_approved_public_church_map_points']==geo['new_approved_future_mass_occurrences']==geo['new_public_mass_schedules']==geo['new_una_cum']==0
+          assert db.execute('SELECT COUNT(*) FROM cl20_building_spatial_candidate').fetchone()[0]==6
+          assert db.execute('SELECT COUNT(*) FROM cl20_building_spatial_candidate WHERE building_reference_supported=1').fetchone()[0]==5
+          assert db.execute('SELECT COUNT(*) FROM cl20_rejected_object_hypothesis').fetchone()[0]==1
+          assert db.execute('SELECT COUNT(*) FROM cl20_building_spatial_candidate WHERE public_geocoordinate_approved=1 OR published_map_pin=1 OR visitor_entrance_geocode_approved=1').fetchone()[0]==0
+          ent=json.loads(Path('/tmp/ao-cl21/cl21_summary.json').read_text())
+          assert ent['entry_route_site_reviews']==7
+          assert ent['exterior_architectural_portal_or_main_door_identification_records']==3
+          assert ent['wrong_place_or_not_an_exterior_church_door_explicitly_excluded']==5
+          assert ent['Potsdam_Raum_der_Stille_separate_Auferstehungskapelle_confirmed_by_hospital'] is True
+          assert ent['new_verified_door_level_coordinates']==ent['new_operational_mass_entrance_approvals']==ent['new_published_direction_records']==ent['new_public_map_pins']==ent['new_confirmed_future_mass_schedules']==ent['new_una_cum']==0
+          assert db.execute('SELECT COUNT(*) FROM cl21_entrance_evidence').fetchone()[0]==7
+          assert db.execute('SELECT COUNT(*) FROM cl21_entrance_evidence WHERE architectural_entry_identified=1').fetchone()[0]==3
+          assert db.execute('SELECT COUNT(*) FROM cl21_excluded_wrong_target').fetchone()[0]==5
+          assert db.execute('SELECT COUNT(*) FROM cl21_entrance_evidence WHERE actual_door_gps_approved=1 OR public_pin_approved=1').fetchone()[0]==0
+          j22=json.loads(Path('/tmp/ao-cl22/cl22_summary.json').read_text())
+          assert j22['source_place_ids_reconciled']==2
+          assert j22['new_potsdam_correct_chapel_osm_building_way']==301020129
+          assert j22['excluded_wrong_potsdam_quiet_chapel_way']==31290074
+          assert 15<j22['distance_between_distinct_chapel_building_references_m']<25
+          assert j22['new_research_church_building_reference_supported']==1
+          assert j22['new_geolocated_southwest_marker_near_amberg_portal']==1
+          assert 15<j22['amberg_marker_vicinity_distance_from_building_reference_m']<30
+          assert j22['new_verified_worship_door_GPS']==j22['new_operational_access_approvals']==j22['new_public_pins']==j22['new_mass_schedules']==j22['new_una_cum']==0
+          assert db.execute('SELECT COUNT(*) FROM cl22_building_vs_door_research').fetchone()[0]==2
+          assert db.execute('SELECT COUNT(*) FROM cl22_spatial_lookalike_veto').fetchone()[0]==1
+          assert db.execute('SELECT COUNT(*) FROM cl22_building_vs_door_research WHERE surveyed_door_approved=1 OR public_point_approved=1').fetchone()[0]==0
+          report=json.loads(Path('/tmp/ao-cl23/cl23_summary.json').read_text())
+          assert report['all_owner_named_physical_sites']==39
+          assert report['remaining_without_candidate_as_of_CL22']==32
+          assert report['new_directly_named_spatial_church_references']==17
+          assert report['new_mapped_OSM_church_building_ways']==6
+          assert report['new_mapped_OSM_chapel_nodes']==1
+          assert report['new_other_named_church_site_or_POI_references']==10
+          assert report['new_without_any_directly_named_spatial_reference']==15
+          assert report['total_research_georeferenced_or_candidate_points']==24
+          assert report['total_research_supported_georeferences_excluding_spatially_held']==23
+          assert report['independent_actual_church_entrance_coordinates_approved']==report['future_calendar_occurrences_approved']==report['public_church_pins_new']==report['public_mass_times_new']==report['una_cum_new']==0
+          assert db.execute('SELECT COUNT(*) FROM cl23_georeferenced_worship_object').fetchone()[0]==17
+          assert db.execute('SELECT COUNT(*) FROM cl23_georeferenced_worship_object WHERE feature_type="OSM_NAMED_CHURCH_WAY"').fetchone()[0]==6
+          assert db.execute('SELECT COUNT(*) FROM cl23_unlocated_pilot_site').fetchone()[0]==15
+          assert db.execute('SELECT COUNT(*) FROM cl23_georeferenced_worship_object WHERE public_pin_approved=1 OR surveyed_entrance_approved=1').fetchone()[0]==0
+          print('CL23 PASS: all 39 screened, 17 new named spatial references, 15 holds, zero public pins')
+          PY
+      - name: Assert CL24 15 reviewed, 8 new georeferences, seven holds, closures and zero publication
+        run: |
+          python3 - <<'PY'
+          import json, sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl24/cl24_summary.json').read_text())
+          assert x['pilot_frozen_sites']==39
+          assert x['cl23_spatial_exceptions_screened']==15
+          assert x['new_research_supported_named_building_references']==8
+          assert x['new_of_which_named_osm_worship_building_ways']==5
+          assert x['remaining_no_source_named_geospatial_reference']==7
+          assert x['research_supported_named_geospatial_references']==31
+          assert x['existing_spatial_conflicts_held']==1
+          assert x['all_with_any_spatial_candidate_including_conflict']==32
+          assert x['one_operational_closure_conflict_for_manual_review']==1
+          assert x['provisional_alternate_worship_place_leads_without_admission']==0
+          assert x['pilot_historical_mass_row_patterns_unchanged']==74
+          assert x['source_1962_book_evidence_supported_unchanged']==256
+          assert x['source_1962_book_evidence_held_unchanged']==176
+          assert x['newly_approved_church_door_coordinates']==0
+          assert x['newly_approved_public_map_pins']==0
+          assert x['newly_approved_future_mass_instances']==0
+          assert x['newly_approved_una_cum']==0
+          db=sqlite3.connect('/tmp/ao-cl23.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM cl24_research_building_reference').fetchone()[0]==8
+          assert db.execute('SELECT COUNT(*) FROM cl24_remaining_spatial_hold').fetchone()[0]==7
+          assert db.execute('SELECT COUNT(*) FROM cl24_operational_exception').fetchone()[0]==1
+          assert db.execute("SELECT COUNT(*) FROM cl24_operational_exception WHERE operational_status='CLOSURE_OR_VENUE_TRANSFER_UNVERIFIED_SOURCE_CONFLICT'").fetchone()[0]==1
+          assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
+          assert db.execute('SELECT COUNT(*) FROM mass_time').fetchone()[0]==4681
+          assert db.execute('SELECT COUNT(*) FROM cl17_accepted_mass_gates').fetchone()[0]==256
+          assert db.execute('SELECT COUNT(*) FROM cl18_recurrence_rules').fetchone()[0]==74
+          print('CL24 PASS: 31/39 supported, 1 spatially held, 7 unlocated; 0 public pins')
+          PY
+      - name: Assert CL25 37 of 39 georeferenced host/buildings, seven source-dated holds, zero releases
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl25/cl25_summary.json').read_text())
+          assert x['frozen_pilot_sites']==39
+          assert x['inherited_supported_georeferences']==31
+          assert x['new_research_worship_or_host_georeferences']==6
+          assert x['new_named_osm_worship_or_host_way_references']==5
+          assert x['research_supported_worship_or_host_georeferences']==37
+          assert x['of_which_host_building_without_chapel_room_geometry']==1
+          assert x['research_worship_place_building_references_excluding_host_only']==36
+          assert x['prior_spatial_conflict_held']==1
+          assert x['private_house_chapel_without_public_geo']==1
+          assert x['remaining_exceptions_not_research_mapped']==2
+          assert x['new_explicit_operator_dated_mass_candidates']==7
+          assert x['new_approved_operator_dated_mass_instances']==0
+          assert x['operator_venue_exception_records']==2
+          assert x['source_closure_transfer_claims_retracted']==1
+          assert x['original_historical_mass_patterns_unchanged']==74
+          assert x['original_book_1962_supported_unchanged']==256
+          assert x['original_book_1962_held_unchanged']==176
+          assert x['newly_approved_entrances']==0
+          assert x['new_public_mass_schedule_entries']==0
+          assert x['new_public_map_pins']==0
+          assert x['new_una_cum_approvals']==0
+          db=sqlite3.connect('/tmp/ao-cl23.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM cl25_geographic_reference').fetchone()[0]==6
+          assert db.execute('SELECT COUNT(*) FROM cl25_geographic_reference WHERE host_building_only=1').fetchone()[0]==1
+          assert db.execute('SELECT COUNT(*) FROM cl25_private_house_chapel_hold').fetchone()[0]==1
+          assert db.execute('SELECT COUNT(*) FROM cl25_dated_operator_candidate').fetchone()[0]==7
+          assert db.execute('SELECT COUNT(*) FROM cl25_operator_venue_exception').fetchone()[0]==2
+          assert db.execute('SELECT COUNT(*) FROM cl25_dated_operator_candidate WHERE app_calendar_approved=1').fetchone()[0]==0
+          assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
+          assert db.execute('SELECT COUNT(*) FROM mass_time').fetchone()[0]==4681
+          assert db.execute('SELECT COUNT(*) FROM cl18_recurrence_rules').fetchone()[0]==74
+          print('CL25 PASS: 37/39 named worship/host, 1 conflict, 1 private hold, 7 source dates, zero publication')
+          PY
+      - name: Assert 38 named pilot buildings and fourteen external dates with zero publication
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl26/cl26_summary.json').read_text())
+          assert x['pilot_frozen_sites']==39
+          assert x['inherited_research_supported_sites']==37
+          assert x['CL20_spatial_conflict_correctly_resolved_host_level']==1
+          assert x['research_supported_named_worship_or_host_places']==38
+          assert x['research_worship_or_named_church_sites_excluding_interior_host_only']==37
+          assert x['host_only_interior_chapel_references']==1
+          assert x['remaining_unlocated_religious_house']==1
+          assert x['new_freiburg_external_to_pilot_individually_listed_ordo_dates']==14
+          assert x['new_freiburg_FSSP_celebrant_dates']==6
+          assert x['new_freiburg_other_celebrant_dates']==8
+          assert x['already_CL25_Nuremberg_individually_listed_dates']==7
+          assert x['cumulative_cross_phase_individually_listed_future_mass_candidates']==21
+          assert x['source_recurring_GOCATH_dates_approved']==0
+          assert x['new_mass_calendar_instances_published']==0
+          assert x['new_public_pins']==0
+          assert x['new_door_coordinates_approved']==0
+          assert x['frozen_74_historical_source_mass_patterns_unchanged']==74
+          assert x['original_supported_liturgical_book_evidence']==256
+          assert x['original_held_liturgical_book_evidence']==176
+          assert x['new_una_cum']==0
+          assert x['new_freiburg_worldwide_master_dedup_approved']==0
+          assert 20<x['host_to_named_chapel_reference_separation_m']<35
+          db=sqlite3.connect('/tmp/ao-cl23.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM cl26_host_chapel_identity_resolution').fetchone()[0]==1
+          assert db.execute('SELECT COUNT(*) FROM cl26_unlocated_religious_house').fetchone()[0]==1
+          assert db.execute('SELECT COUNT(*) FROM cl26_external_date_specific_ordo_event').fetchone()[0]==14
+          assert db.execute("SELECT COUNT(*) FROM cl26_external_date_specific_ordo_event WHERE celebrant_grade='FSSP'").fetchone()[0]==6
+          assert db.execute('SELECT COUNT(*) FROM cl26_external_date_specific_ordo_event WHERE matched_canonical_site_id IS NOT NULL OR published_calendar_instance=1').fetchone()[0]==0
+          assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
+          assert db.execute('SELECT COUNT(*) FROM mass_time').fetchone()[0]==4681
+          print('CL26 PASS: 38/39 geography, 1 private house hold, 14 external source dates, 0 publication')
+          PY
+      - name: Assert 39 pilot site source ledger, nine new dated research rows and six false-event controls
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl27/cl27_summary.json').read_text())
+          assert x['frozen_pilot_source_places_scoped']==39
+          assert x['feeds_screened_and_classified']==10
+          assert x['new_individually_listed_future_source_candidates']==9
+          assert x['of_which_local_organizer_full_page_date_candidates']==5
+          assert x['of_which_mutable_index_requires_direct_refresh']==4
+          assert x['new_german_pilot_source_event_candidates']==3
+          assert x['new_outside_pilot_source_event_candidates']==6
+          assert x['previous_CL25_individually_listed_dates']==7
+          assert x['previous_CL26_individually_listed_dates']==14
+          assert x['cumulative_cross_phase_dated_source_candidates']==30
+          assert x['source_syndication_negative_controls']==6
+          assert x['hard_false_occurrence_or_wrong_venue_syndication_guards']==5
+          assert x['indexed_source_requires_direct_refresh']==1
+          assert x['research_supported_pilot_building_or_host_references_unchanged']==38
+          assert x['unlocated_private_pilot_religious_house_unchanged']==1
+          assert x['frozen_pilot_mass_patterns_unchanged']==74
+          assert x['1962_wording_evidence_supported_unchanged']==256
+          assert x['1962_wording_evidence_held_unchanged']==176
+          assert x['approved_new_future_Mass_events']==0
+          assert x['new_public_map_pins']==0
+          assert x['new_entrance_coordinates']==0
+          assert x['new_una_cum']==0
+          assert x['mass_time_rows_unchanged']==4681
+          assert x['canonical_site_rows_unchanged']==2584
+          db=sqlite3.connect('/tmp/ao-cl23.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM cl27_39_pilot_operator_source_ledger').fetchone()[0]==39
+          assert db.execute('SELECT COUNT(*) FROM cl27_local_dated_research_candidate').fetchone()[0]==9
+          assert db.execute('SELECT COUNT(*) FROM cl27_schedule_feed_negative_control').fetchone()[0]==6
+          assert db.execute("SELECT COUNT(*) FROM cl27_local_dated_research_candidate WHERE source_grade='DIOCESAN_PARISH_EXPLICIT_DATE_ON_SEARCH_INDEX_SNAPSHOT'").fetchone()[0]==4
+          assert db.execute('SELECT COUNT(*) FROM cl27_local_dated_research_candidate WHERE published_mass_instance=1 OR independently_approved=1').fetchone()[0]==0
+          assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
+          assert db.execute('SELECT COUNT(*) FROM mass_time').fetchone()[0]==4681
+          print('CL27 PASS: 39-site source ledger, 9 research-only dates (4 mutable held), 6 syndication guards')
+          PY
+      - name: Assert eighteen CL28 dated rows, six churches, four held and zero public promotion
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl28/cl28_summary.json').read_text())
+          assert x['source_event_records_new']==18
+          assert x['first_party_FSSP_uk_dated_rows']==13
+          assert x['host_parish_dated_FSSP_Germany_rows']==2
+          assert x['secondary_exact_date_rows']==3
+          assert x['ambiguous_Mass_vs_adoration_service_label_held']==1
+          assert x['secondary_dates_held_for_local_operator_confirmation']==3
+          assert x['source_listed_without_those_4_holds']==14
+          assert x['new_date_specific_site_locations']==6
+          assert x['new_German_pilot_event_candidates']==2
+          assert x['new_external_to_pilot_event_candidates']==16
+          assert x['cross_phase_source_listed_candidate_rows_CL25_CL28']==48
+          assert x['previous_phase_source_listed_candidates']==30
+          assert x['local_source_date_time_fingerprint_collisions_prior_phases']==0
+          assert x['unread_or_stale_source_feed_deferrals']==6
+          assert x['source_readback_and_exception_controls']==9
+          assert x['All_Souls_2026_distinct_location_time_slots']==6
+          assert x['prior_existing_pilot_39_sites']==39
+          assert x['prior_geo_references']==38
+          assert x['historic_pilot_mass_patterns_unchanged']==74
+          assert x['1962_wording_supported_unchanged']==256
+          assert x['1962_wording_held_unchanged']==176
+          assert x['canonical_site_total_unchanged']==2584
+          assert x['mass_time_total_unchanged']==4681
+          assert x['public_calendar_new']==0
+          assert x['public_sites_new']==0
+          assert x['public_geocodes_new']==0
+          assert x['Una_Cum_new']==0
+          assert x['global_master_dedup_approved']==0
+          db=sqlite3.connect('/tmp/ao-cl23.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM cl28_crossnetwork_dated_source_candidate').fetchone()[0]==18
+          assert db.execute('SELECT COUNT(*) FROM cl28_feed_readback_hold').fetchone()[0]==9
+          assert db.execute("SELECT COUNT(*) FROM cl28_crossnetwork_dated_source_candidate WHERE evidence_grade='FIRST_PARTY_FSSP_DATED_MASS_INTENTION'").fetchone()[0]==13
+          assert db.execute('SELECT COUNT(*) FROM cl28_crossnetwork_dated_source_candidate WHERE matched_global_site_id IS NOT NULL OR approved_future_mass=1').fetchone()[0]==0
+          assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
+          assert db.execute('SELECT COUNT(*) FROM mass_time').fetchone()[0]==4681
+          print('CL28 PASS: 18 source-listed future dates, four held, six churches, zero publication')
+          PY
+      - name: Assert CL29 fifty SSPX PDF Masses plus six FSSP bulletin Masses, zero public release
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl29/cl29_summary.json').read_text())
+          assert x['operator_primary_documents_processed']==2
+          assert x['SSPX_pdf_pages_visually_inspected']==5
+          assert x['first_party_SSPX_dated_mass_cells']==50
+          assert x['first_party_FSSP_warrington_dated_mass_rows']==6
+          assert x['new_dated_source_candidates']==56
+          assert x['distinct_research_venue_references']==19
+          assert x['named_operator_venue_directory_identifications']==18
+          assert x['locality_only_actual_building_held']==1
+          assert x['source_exception_controls']==8
+          assert x['public_events_new']==x['public_venues_new']==x['public_pins_new']==0
+          assert x['new_una_cum']==0
+          assert x['global_canonical_site_mappings_approved']==0
+          assert x['global_event_identity_mappings_approved']==0
+          assert x['prior_CL25_CL28_research_source_candidate_rows']==48
+          assert x['cumulative_CL25_CL29_research_source_candidate_rows']==104
+          assert x['frozen_german_pilot_places_unchanged']==39
+          assert x['frozen_german_pilot_historic_patterns_unchanged']==74
+          assert x['original_1962_liturgical_wording_supported']==256
+          assert x['original_1962_liturgical_wording_held']==176
+          assert x['canonical_site_count_unchanged']==2584
+          assert x['mass_time_count_unchanged']==4681
+          assert x['source_PDF_binary_preserved_in_git'] is False
+          db=sqlite3.connect('/tmp/ao-cl23.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM cl29_research_source_document').fetchone()[0]==2
+          assert db.execute('SELECT COUNT(*) FROM cl29_research_venue_identity').fetchone()[0]==19
+          assert db.execute('SELECT COUNT(*) FROM cl29_operator_dated_mass_candidate').fetchone()[0]==56
+          assert db.execute("SELECT COUNT(*) FROM cl29_operator_dated_mass_candidate WHERE source_org='SSPX'").fetchone()[0]==50
+          assert db.execute("SELECT COUNT(*) FROM cl29_operator_dated_mass_candidate WHERE source_org='FSSP'").fetchone()[0]==6
+          assert db.execute('SELECT COUNT(*) FROM cl29_source_exception_hold').fetchone()[0]==8
+          assert db.execute('SELECT COUNT(*) FROM cl29_operator_dated_mass_candidate WHERE global_event_id IS NOT NULL OR public_calendar_approved=1 OR una_cum_approved=1').fetchone()[0]==0
+          assert db.execute('SELECT COUNT(*) FROM mass_time').fetchone()[0]==4681
+          assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
+          print('CL29 PASS: 56 dated, 19 venue refs, 1 locality hold, 0 public release')
+          PY
+      - name: Assert CL30 104 original dated rows and 32 frozen global venue candidate reconciliations
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl30/cl30_summary.json').read_text())
+          assert x['frozen_site_master_rows']==2584
+          assert x['frozen_mass_time_rows']==4681
+          assert x['source_dates_reconciled']==104
+          assert x['source_venue_keys']==32
+          assert x['candidate_unique_research_anchors']==27
+          assert x['source_date_rows_with_single_anchor_candidate']==82
+          assert x['held_source_venue_keys']==5
+          assert x['held_source_date_rows']==22
+          assert x['named_postcode_match_venue_keys']==22
+          assert x['same_effective_anchor_multi_alias_cases']==1
+          assert x['multiple_effective_anchor_ambiguous_venues']==2
+          assert x['no_suitable_venue_match']==3
+          assert x['historical_verified_timetable_collision_on_new_date']==1
+          assert x['new_master_venues']==0
+          assert x['new_public_mass_instances']==0
+          assert x['new_public_map_pins']==0
+          assert x['new_una_cum']==0
+          assert x['pilot_39_site_identities_untouched']==39
+          db=sqlite3.connect('/tmp/ao-cl23.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM cl30_source_to_global_research_anchor').fetchone()[0]==32
+          assert db.execute('SELECT COUNT(*) FROM cl30_source_to_global_research_anchor WHERE proposed_effective_anchor_id IS NOT NULL').fetchone()[0]==27
+          assert db.execute('SELECT COUNT(*) FROM cl30_dated_event_to_global_research_anchor').fetchone()[0]==104
+          assert db.execute('SELECT COUNT(*) FROM cl30_dated_event_to_global_research_anchor WHERE proposed_effective_anchor_id IS NOT NULL').fetchone()[0]==82
+          assert db.execute('SELECT COUNT(*) FROM cl30_source_to_global_research_anchor WHERE promotion_approved=1 OR new_canonical_venue_admitted=1').fetchone()[0]==0
+          assert db.execute('SELECT COUNT(*) FROM cl30_dated_event_to_global_research_anchor WHERE app_mass_calendar_approved=1 OR public_recurring_mass_approved=1').fetchone()[0]==0
+          assert db.execute('SELECT COUNT(*) FROM mass_time').fetchone()[0]==4681
+          assert db.execute("SELECT COUNT(*) FROM canonical_site WHERE release!='RESEARCH_ONLY_NOT_PUBLIC'").fetchone()[0]==0
+          print('CL30 PASS: 104 date-source rows, 27/32 research anchors, 82/104 candidate event links, 0 public release')
+          PY
+      - name: Assert CL31 100 of 104 source-date working anchors and 296 disjoint owner reviews
+        run: |
+          python3 - <<'PY'
+          import json, sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl31/cl31_summary.json').read_text())
+          assert x['frozen_master_site_groups']==2584
+          assert x['frozen_master_mass_rows']==4681
+          assert x['source_venue_keys']==32
+          assert x['previous_CL30_single_anchor_keys']==27
+          assert x['added_research_only_single_working_anchor_keys']==2
+          assert x['total_research_working_anchor_keys']==29
+          assert x['prior_CL30_candidate_linked_source_dates']==82
+          assert x['newly_working_linked_source_dates']==18
+          assert x['CL31_total_working_linked_dated_source_events']==100
+          assert x['source_dates_in_cross_phase_corpus']==104
+          assert x['held_unlinked_venue_keys']==3
+          assert x['held_unlinked_source_dates']==4
+          assert x['parallel_owner_review_rows_preserved']==296
+          assert x['parallel_owner_review_distinct_anchors']==143
+          assert x['date_events_overlapping_owner_review_anchors']==0
+          assert x['remaining_master_duplicate_identity_merges_authorized']==0
+          assert x['source_pdf_original_binary_archived'] is False
+          assert x['source_pdf_verified_sha256'] is None
+          assert x['public_sites_promoted']==0
+          assert x['public_mass_occurrences_promoted']==0
+          assert x['public_pins_created']==0
+          assert x['una_cum_changed']==0
+          db=sqlite3.connect('/tmp/ao-cl23.sqlite')
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('SELECT COUNT(*) FROM cl31_worship_identity_working_crosswalk').fetchone()[0]==32
+          assert db.execute('SELECT COUNT(*) FROM cl31_worship_identity_working_crosswalk WHERE cl31_research_working_anchor_id IS NOT NULL').fetchone()[0]==29
+          assert db.execute('SELECT COUNT(*) FROM cl31_dated_source_anchor_candidate').fetchone()[0]==104
+          assert db.execute('SELECT COUNT(*) FROM cl31_dated_source_anchor_candidate WHERE cl31_research_working_anchor_id IS NOT NULL').fetchone()[0]==100
+          assert db.execute('SELECT COUNT(*) FROM cl31_parallel_global_owner_review_anchor').fetchone()[0]==296
+          assert db.execute('SELECT COUNT(*) FROM cl31_worship_identity_working_crosswalk WHERE canonical_identity_merged=1 OR public_worship_site_approved=1').fetchone()[0]==0
+          assert db.execute('SELECT COUNT(*) FROM cl31_dated_source_anchor_candidate WHERE public_mass_date_approved=1').fetchone()[0]==0
+          assert db.execute('SELECT COUNT(*) FROM mass_time').fetchone()[0]==4681
+          print('CL31 PASS: 29/32 research identities, 100/104 dated links, 296 queue preserved, 0 releases')
+          PY
+      - name: Assert CL32 all 104 dated source grades and two upgraded Loh source proofs, zero publication
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          x=json.loads(Path('/tmp/ao-cl32/cl32_summary.json').read_text())
+          assert x['source_date_rows']==104
+          assert x['direct_operator_or_host_date_specific_unambiguous_mass_evidence']==98
+          assert x['source_date_with_ambiguous_mass_vs_adoration']==1
+          assert x['mutable_index_only_needs_direct_live_confirmation']==4
+          assert x['secondary_date_only_needs_local_operator']==1
+          assert x['direct_host_parish_date_upgrade_from_cl28_secondary']==2
+          assert x['mapped_to_existing_cl2_working_anchor_research_only']==100
+          assert x['unmatched_named_or_private_site_working_anchor']==4
+          assert x['date_before_as_of']==8
+          assert x['date_equal_as_of']==5
+          assert x['date_after_as_of']==91
+          assert x['truly_published_mass_instances']==0
+          assert x['new_canonical_venues']==0
+          assert x['new_public_map_pins']==0
+          assert x['una_cum_status_changes']==0
+          assert x['zero_original_secondary_grade_mutations'] is True
+          assert x['original_PDF_binary_retrieved_or_hashed'] is False
+          db=sqlite3.connect('/tmp/ao-cl23.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+          assert db.execute('SELECT COUNT(*) FROM cl32_source_date_mass_evidence_grade').fetchone()[0]==104
+          assert db.execute('SELECT COUNT(*) FROM cl32_direct_host_parish_date_proof').fetchone()[0]==2
+          assert db.execute("SELECT COUNT(*) FROM cl32_source_date_mass_evidence_grade WHERE quality_grade LIKE 'DIRECT_%'").fetchone()[0]==99
+          assert db.execute('SELECT COUNT(*) FROM cl32_source_date_mass_evidence_grade WHERE automatically_published=1').fetchone()[0]==0
+          assert db.execute('SELECT COUNT(*) FROM canonical_site').fetchone()[0]==2584
+          assert db.execute('SELECT COUNT(*) FROM mass_time').fetchone()[0]==4681
+          print('CL32 PASS: 104 dates, 98 direct Mass witnesses, 2 new host corroborations, no publication')
+          PY
+      - name: Export temporary regenerable reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-cl32-104-source-evidence-date-freshness
+          path: /tmp/ao-cl32/
+          retention-days: 1
