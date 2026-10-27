@@ -11,6 +11,9 @@ import {createDailySessionTimer,sessionClockLabel} from "../src/pray/daily-sessi
 import {createDailyFormulationPreferenceStore} from "../src/pray/daily-formulation-preferences.js";
 import {APPROVED_DAILY_FORMULATION_MANIFEST_V1} from "../src/pray/daily-approved-formulations.js";
 import {auditDailyStageMigration,DAILY_PROPOSED_STAGE_COVERAGE,DAILY_LEGACY_RETAINED_EXTRAS} from "../src/pray/daily-sequence-migration-audit.js";
+import {DAILY_APPROVED_SEQUENCE_RELEASE_V1} from "../src/pray/daily-approved-formulations.js";
+import {resolveDailyReaderSequence,approvedDailySlotOptions,dailyLengthChoices} from "../src/pray/daily-source-sequence-adapter.js";
+import {guidedDailyCards} from "../src/pray/guided-daily-cards.js";
 
 const witness=(id,language,text,options={})=>({
   id,language,text,kind:"historical",releaseStatus:"cleared",
@@ -213,6 +216,78 @@ const unavailable=createDailyFormulationPreferenceStore();
 assert.equal(unavailable.save(manifest,{selection:{offering:"alternative"}}).saved,false);
 assert.deepEqual(unavailable.load(manifest),{});
 
+// Staged future sequence delivery: static double release switch, exact
+// source approval, exact-language witness and canonical fallback.
+const baselineMorning=guidedDailyCards("morning");
+const baselineEvening=guidedDailyCards("evening");
+const explicitlyApproved={...manifest,profiles:{
+ ...manifest.profiles,
+ "en:morning:short":{...manifest.profiles["en:morning:short"],releaseStatus:"approved"},
+ "en:evening:short":{...manifest.profiles["en:evening:short"],releaseStatus:"approved"}
+}};
+const allowlist={enabled:true,approvedProfileKeys:{
+ "en:morning:short":true,"en:evening:short":true
+}};
+const adapterArgs={manifest:explicitlyApproved,canonicalRows:baselineMorning,
+ language:"en",daypart:"morning",length:"short"};
+const disabled=resolveDailyReaderSequence({...adapterArgs,release:DAILY_APPROVED_SEQUENCE_RELEASE_V1});
+assert.equal(DAILY_APPROVED_SEQUENCE_RELEASE_V1.enabled,false);
+assert.equal(disabled.mode,"canonical");
+assert.equal(disabled.rows,baselineMorning,"Canonical list must be returned unchanged by identity");
+assert.deepEqual(disabled.rows.map(x=>x.id),
+ baselineMorning.map(x=>x.id),"Disabled release cannot reorder any original prayer");
+assert.equal(resolveDailyReaderSequence({...adapterArgs,release:{enabled:true,approvedProfileKeys:{}}}).mode,"canonical");
+assert.equal(resolveDailyReaderSequence({...adapterArgs,release:{enabled:false,approvedProfileKeys:allowlist.approvedProfileKeys}}).mode,"canonical");
+assert.equal(resolveDailyReaderSequence({...adapterArgs,release:allowlist,length:"complete"}).mode,"canonical",
+ "A profile must be both approved and explicitly allowlisted");
+const staged=resolveDailyReaderSequence({...adapterArgs,release:allowlist});
+assert.equal(staged.mode,"approved");
+assert.equal(staged.rows.length,2,"One composite act must be recited once");
+assert.deepEqual(staged.rows[0].coveredSlots,["adoration","thanksgiving"]);
+assert.equal(staged.rows[1].text,manifest.witnesses.offering.text);
+assert.equal(staged.advance,"manual-only");
+assert.equal(staged.historicalWholeBook,false);
+assert.equal(staged.rows[0].kind,"approved-source-prayer");
+assert.equal(staged.rows[1].sourceUrl,manifest.witnesses.offering.sourceUrl);
+assert.equal(resolveDailyReaderSequence({
+ ...adapterArgs,release:allowlist,selection:{offering:"alternative"}
+}).rows[1].witnessId,"alternative");
+assert.equal(resolveDailyReaderSequence({
+ ...adapterArgs,release:allowlist,selection:{offering:"french"}
+}).mode,"canonical","Mixed-language selection must not silently render a partial approved plan");
+assert.equal(resolveDailyReaderSequence({
+ ...adapterArgs,release:allowlist,selection:{offering:"pending"}
+}).mode,"canonical","Unlisted and uncleared choice must fail closed");
+const revokedManifest={...explicitlyApproved,witnesses:{...explicitlyApproved.witnesses,
+ offering:{...explicitlyApproved.witnesses.offering,releaseStatus:"research"}}};
+assert.equal(resolveDailyReaderSequence({
+ ...adapterArgs,manifest:revokedManifest,release:allowlist
+}).mode,"canonical","Revoked sources must restore the complete canonical plan");
+assert.deepEqual(approvedDailySlotOptions(explicitlyApproved,allowlist,{
+ language:"en",daypart:"morning",length:"short",slotId:"offering"
+}).map(x=>x.id),["offering","alternative"]);
+assert.deepEqual(approvedDailySlotOptions(explicitlyApproved,DAILY_APPROVED_SEQUENCE_RELEASE_V1,{
+ language:"en",daypart:"morning",length:"short",slotId:"offering"
+}),[]);
+assert.deepEqual(dailyLengthChoices(explicitlyApproved,allowlist,{
+ language:"en",daypart:"morning"
+}),["short"]);
+const stagedNight=resolveDailyReaderSequence({
+ manifest:explicitlyApproved,release:allowlist,canonicalRows:baselineEvening,
+ language:"en",daypart:"evening",length:"short",
+ selection:{protection:["night","antiphon"]}
+});
+assert.equal(stagedNight.mode,"approved");
+assert.deepEqual(stagedNight.rows.map(x=>x.kind),["examination","approved-source-prayer","approved-source-prayer"]);
+assert.equal(stagedNight.rows.length,3);
+assert.equal(stagedNight.rows[0].editorial,true);
+assert.equal(stagedNight.rows[1].slotId,"protection");
+assert.equal(stagedNight.rows[2].slotId,"protection");
+assert.equal(resolveDailyReaderSequence({
+ manifest:wrongLang,release:allowlist,canonicalRows:baselineMorning,
+ language:"en",daypart:"morning",length:"short"
+}).mode,"canonical","Profiles not explicitly approved must never be public");
+
 // No reader sequence change is allowed without accounting for all existing
 // canonical card IDs and specifically adding the absent devotional purposes.
 const migration=auditDailyStageMigration();
@@ -241,6 +316,12 @@ assert.equal(Object.keys(APPROVED_DAILY_FORMULATION_MANIFEST_V1.witnesses).lengt
  "No historical texts are cleared for public reader in this draft");
 assert.equal(Object.keys(APPROVED_DAILY_FORMULATION_MANIFEST_V1.profiles).length,0,
  "No historical profile is approved in this draft");
+assert.ok(runtime.includes("function dailyReadingPlan()"),"Source adapter must attach to live reader");
+assert.ok(runtime.includes("resolveDailyReaderSequence({"),"Reader must reuse one guarded sequence adapter");
+assert.ok(runtime.includes("DAILY_SEQUENCE_RELEASE.enabled!==true"),"Existing per-card selector requires independent release switch");
+assert.ok(runtime.includes("plan.mode===\"approved\""),"Approved vs canonical list routing must remain separate");
+assert.ok(runtime.includes("[data-tp381-approved-daily-form]"),"Approved choice buttons must have an event owner");
+assert.ok(runtime.includes('dailyLengthControls()'),"Optional Short/Complete control must be guarded by available profiles");
 assert.ok(runtime.includes("dailyReleasedFormOptions(prayerId,S.daypart,lang)"),
  "Future formulation tabs must be routed through explicit source gate");
 assert.ok(runtime.includes('data-tp381-daily-form'),
