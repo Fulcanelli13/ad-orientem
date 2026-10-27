@@ -22,6 +22,8 @@ jobs:
           ref: research/lotto-rosary-photo-comparison-20261026
           path: lotto-research
           persist-credentials: false
+      - name: Verify all production workflows remain read-only
+        run: node tests/production-tree-hygiene.mjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
