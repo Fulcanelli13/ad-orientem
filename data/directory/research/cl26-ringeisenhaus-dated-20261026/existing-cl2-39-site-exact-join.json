@@ -11,7 +11,12 @@
     "existing_venues_reused": 39,
     "new_site_groups": 0,
     "new_public_mass_events": 0,
-    "new_pins": 0
+    "new_pins": 0,
+    "named_worship_or_host_building_georeferences": 38,
+    "named_worship_site_room_still_unlocated": 1,
+    "exact_visitor_door_coordinates_surveyed": 0,
+    "proposed_building_geometry_witnesses": 38,
+    "original_pilot_frozen_ID_conflicts": 0
   },
   "source_to_master_existing_site_join": [
     {
@@ -34,12 +39,27 @@
       "existing_cl2_physical_description": "Plöck 4, 69117 Heidelberg, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 49.4088,
+          "longitude": 8.6956,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://commons.wikimedia.org/wiki/Category:St._Anna_(Heidelberg)",
+          "identity_conflicts": [
+            "NOT_HOSPITAL_GEOPOINT",
+            "CHURCH_DOOR_NOT_SURVEYED"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-002",
@@ -61,12 +81,27 @@
       "existing_cl2_physical_description": "Rathausstraße 5, 24103 Kiel, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 54.3225,
+          "longitude": 10.1314,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://aroundus.com/p/6566929-propsteikirche-st.-nikolaus",
+          "identity_conflicts": [
+            "ST_NIKOLAUS_CAMPUS_KITA_AT_SAME_RATHAUSSTRASSE_5",
+            "POI_NOT_DOOR"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-003",
@@ -93,12 +128,26 @@
       "existing_cl2_physical_description": "Platz an der Basilika 1, 30169 Hannover, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 52.373,
+          "longitude": 9.72683,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/de/W357786647",
+          "identity_conflicts": [
+            "BUILDING_CENTRE_NOT_CHURCH_DOOR"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-004",
@@ -130,12 +179,27 @@
       "existing_cl2_physical_description": "Abteihofstraße 25, 40221 Düsseldorf-Volmerswerth, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 51.185138889,
+          "longitude": 6.764916667,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://de.wikipedia.org/wiki/St._Dionysius_(D%C3%BCsseldorf)",
+          "identity_conflicts": [
+            "2026_10_11_SUNDAY_0800_SPECIAL_TIME",
+            "CHURCH_DOOR_NOT_SURVEYED"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-005",
@@ -157,12 +221,28 @@
       "existing_cl2_physical_description": "Unterdörnen 137, 42275 Wuppertal-Barmen, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 51.2706,
+          "longitude": 7.195561111,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://commons.wikimedia.org/wiki/Category:St._Antonius_(Wuppertal)",
+          "identity_conflicts": [
+            "WIKIMEDIA_UNTERDORNEN_139_VS_OFFICIAL_137",
+            "NEARBY_TURMKAPELLE_DISTINCT",
+            "SKIP_2ND_MONDAYS_AND_FEASTS"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-006",
@@ -184,12 +264,26 @@
       "existing_cl2_physical_description": "Menninghauser Straße 5, 42859 Remscheid, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 51.17199,
+          "longitude": 7.20953,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://www.kuladig.de/Objektansicht/KLD-280076",
+          "identity_conflicts": [
+            "St Josef church Menninghauser Str 5. Do not match church to the distinct community office 5b or nursery 5c."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-007",
@@ -226,12 +320,26 @@
       "existing_cl2_physical_description": "Grullbadstraße 94, 45661 Recklinghausen-Grullbad, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 51.57955556,
+          "longitude": 7.20147222,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://de.wikipedia.org/wiki/St._Joseph_(Recklinghausen)",
+          "identity_conflicts": [
+            "Published church coordinate is research only. FSSP local operator reports church temporarily shut for structural problems and weekday Masses moved to St Gertrudis, Heidestr 21. This georeference MUST NOT validate a current timetable."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-008",
@@ -268,12 +376,26 @@
       "existing_cl2_physical_description": "Lothringer Straße 154, 46045 Oberhausen-Styrum, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 51.46172,
+          "longitude": 6.85293,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": 29047159,
+          "witness_url": "https://mapcarta.com/de/W29047159",
+          "identity_conflicts": [
+            "Roman Catholic St Joseph at Lothringer Str 154; mapped building=yes way, not visitor doorway. Avoid other St Josef in Oberhausen."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-009",
@@ -295,12 +417,26 @@
       "existing_cl2_physical_description": "Michaelstraße 1, 45661 Recklinghausen, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 51.56191667,
+          "longitude": 7.18641667,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://de.wikipedia.org/wiki/St._Michael_(Hochlarmark)",
+          "identity_conflicts": [
+            "Historic St Michael church point. Parish office and Caritashaus/Kindergarten beside church are not interchangeable worship targets."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-010",
@@ -332,12 +468,26 @@
       "existing_cl2_physical_description": "Rolandstraße 59, 50677 Köln, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 50.91865,
+          "longitude": 6.95686,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/W225722089",
+          "identity_conflicts": [
+            "CHURCH_ROLANDSTR_59_NOT_FSSP_PARISH_RESIDENCE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-011",
@@ -359,12 +509,26 @@
       "existing_cl2_physical_description": "Kapellenstraße 10, 51381 Leverkusen-Lützenkirchen, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 51.06665,
+          "longitude": 7.0582,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": 94701638,
+          "witness_url": "https://mapcarta.com/de/W94701638",
+          "identity_conflicts": [
+            "The Anna-Kapelle building=chapel; NOT the distinct St Maurinus parish church or Kreuzkapelle in Lützenkirchen."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-012",
@@ -386,12 +550,26 @@
       "existing_cl2_physical_description": "Kapellenweg 3, 51519 Odenthal-Klasmühle, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 51.033944,
+          "longitude": 7.161611,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://commons.wikimedia.org/wiki/Category:Heilig-Kreuz-Kirche_(Odenthal)",
+          "identity_conflicts": [
+            "WORSHIP_CHAPEL_SHARED_USE_NOT_PROPERTY_OWNERSHIP"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-013",
@@ -413,12 +591,28 @@
       "existing_cl2_physical_description": "Jan-Wellem-Straße 12, 51789 Lindlar-Frielingsdorf, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 51.04548,
+          "longitude": 7.42666,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://www.kuladig.de/Objektansicht/KLD-261991",
+          "identity_conflicts": [
+            "FSSP_SOURCE_JAN_WELLEMSTR_12_VS_HIKER_PARKING_ST_APOLLINARIS_WEG_3",
+            "OUTDOORACTIVE_PARKING_COORD_NOT_CHURCH_POINT",
+            "LOCAL_2025_MONTHLY_EXCEPTION_MAY_DIFFER"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-014",
@@ -440,12 +634,26 @@
       "existing_cl2_physical_description": "Alfons-Keever-Straße 5, 52388 Nörvenich-Pingsheim, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 50.7996,
+          "longitude": 6.6935,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": 42740032,
+          "witness_url": "https://mapcarta.com/W42740032",
+          "identity_conflicts": [
+            "Pingsheim Roman Catholic way, not St Martinus in Erftstadt-Borr or St Martinus Wissersheim. Operator address 5 versus map way address 7; door unapproved."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-015",
@@ -487,12 +695,27 @@
       "existing_cl2_physical_description": "Stiftstraße 18, 66740 Saarlouis, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 49.3156,
+          "longitude": 6.75388,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/de/W733991343",
+          "identity_conflicts": [
+            "OSM_STIFTSTRASSE_20_VS_FSSP_SOURCE_18",
+            "CANISIANUM_ALIAS_ST_PETRUS_CANISIUS"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-016",
@@ -529,12 +752,27 @@
       "existing_cl2_physical_description": "Wollinstraße 55, 70439 Stuttgart-Zuffenhausen, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 48.839722222,
+          "longitude": 9.146388889,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://dewiki.de/Lexikon/Liste_von_Sakralbauten_in_Stuttgart",
+          "identity_conflicts": [
+            "WOLLINSTR_55_POSTCODE_70439_VS_70435",
+            "SECONDARY_COORDINATE_NOT_OSM_CHURCH_WAY_VERIFIED"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-017",
@@ -561,12 +799,28 @@
       "existing_cl2_physical_description": "Aalener Straße 2, 73529 Schwäbisch Gmünd, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL20",
+          "source_evidence_file": "cl20-geo-entrance-20261026/source-geocodes.json",
+          "latitude": 48.80303,
+          "longitude": 9.80474,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_BUILDING_NOT_ENTRANCE",
+          "osm_way_id": 253934498,
+          "witness_url": "https://mapcarta.com/de/W253934498",
+          "identity_conflicts": [
+            "FRIEDHOFSTRASSE_2_VS_AALENER_STRASSE_2",
+            "NEARBY_HERRGOTTSRUHKAPELLE_AALENER_4_IS_DIFFERENT",
+            "OSM_WAY_CENTER_NOT_ENTRANCE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-018",
@@ -588,12 +842,26 @@
       "existing_cl2_physical_description": "Leonardiweg, 83131 Nußdorf am Inn, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 47.73986,
+          "longitude": 12.15365,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": 171690178,
+          "witness_url": "https://mapcarta.com/W171690178",
+          "identity_conflicts": [
+            "Named St Leonhard church footprint (OSM building=yes), not Sankt Vitus, nearby pilgrimage church, or parish office; seasonal 2026 non-service exception requires separate calendar review."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-019",
@@ -625,12 +893,26 @@
       "existing_cl2_physical_description": "Spitalstraße, 74172 Neckarsulm, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 49.19502,
+          "longitude": 9.22604,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/W43376158",
+          "identity_conflicts": [
+            "FRAUENKIRCHE_SPITALSTR_1_NOT_OTHER_ST_DIONYSIUS_PFARRKIRCHE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-020",
@@ -677,12 +959,26 @@
       "existing_cl2_physical_description": "Kreuzstraße 10, 80331 München, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 48.13568,
+          "longitude": 11.56784,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/de/W48605346",
+          "identity_conflicts": [
+            "CATHOLIC_KREUZKIRCHE_KREUZSTR_10_NOT_PROTESTANT_KREUZKIRCHE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-021",
@@ -704,12 +1000,27 @@
       "existing_cl2_physical_description": "Dorfplatz 4, 85055 Ingolstadt-Oberhaunstadt, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 48.795508889,
+          "longitude": 11.439963056,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://commons.wikimedia.org/wiki/Category:St._Willibald_(Oberhaunstadt)",
+          "identity_conflicts": [
+            "FSSP_DORFPLATZ_4_VS_WIKIMEDIA_DORFPLATZ_5",
+            "PHOTO_CAMERA_LOCATION_NOT_OBJECT_LOCATION"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-022",
@@ -736,12 +1047,27 @@
       "existing_cl2_physical_description": "Kapuzinergasse 2, 85072 Eichstätt, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL20",
+          "source_evidence_file": "cl20-geo-entrance-20261026/source-geocodes.json",
+          "latitude": 48.88995784685476,
+          "longitude": 11.1907285451889,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_BUILDING_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://en.naturpark-altmuehltal.de/sehenswertes/ehemalige_kapuzinerkirche_heil-1753/?setLanguage=en",
+          "identity_conflicts": [
+            "DAYTIME_CHURCH_OPEN_NOT_DOOR_GPS",
+            "REGIONAL_TOURISM_POI_NOT_SATELLITE_ENTRANCE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-023",
@@ -763,12 +1089,26 @@
       "existing_cl2_physical_description": "Dreifaltigkeitsgasse 3, 85567 Grafing, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL24",
+          "source_evidence_file": "cl24-fssp-15-site-resolution-20261026/evidence.json",
+          "latitude": 48.04588,
+          "longitude": 11.96699,
+          "feature_role": "NAMED_BUILDING_OR_CHURCH_POI_NOT_ENTRANCE",
+          "osm_way_id": 69721248,
+          "witness_url": "https://mapcarta.com/de/W69721248",
+          "identity_conflicts": [
+            "The named Roman Catholic Marktkirche is the way at Marktplatz 10; original FSSP source Dreifaltigkeitsgasse 3. Distinct St Leonhard church 140m away."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-024",
@@ -790,12 +1130,27 @@
       "existing_cl2_physical_description": "Meringer Straße 4, 86510 Ried-Hörmannsberg, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL20",
+          "source_evidence_file": "cl20-geo-entrance-20261026/source-geocodes.json",
+          "latitude": 48.28306,
+          "longitude": 11.02163,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_BUILDING_NOT_ENTRANCE",
+          "osm_way_id": 124192379,
+          "witness_url": "https://mapcarta.com/de/W124192379",
+          "identity_conflicts": [
+            "STREET_NUMBER_2_VS_4",
+            "OSM_WAY_CENTER_NOT_PUBLIC_ENTRANCE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-025",
@@ -817,12 +1172,26 @@
       "existing_cl2_physical_description": "Malteserstraße, 86899 Landsberg am Lech, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL25",
+          "source_evidence_file": "cl25-last-seven-geo-20261026/evidence.json",
+          "latitude": 48.0495,
+          "longitude": 10.88024,
+          "feature_role": "HOST_CHURCH_BUILDING_NOT_EXACT_UPSTAIRS_WORSHIP_ROOM",
+          "osm_way_id": 87971830,
+          "witness_url": "https://mapcarta.com/W87971830",
+          "identity_conflicts": [
+            "The FSSP Mass is in Ignatiuskapelle on the first floor over sacristy at Heilig Kreuz, accessible by wooden stairs. This church footprint is a HOST REFERENCE only, not the exact chapel, door, floor, or visitor route."
+          ]
+        }
+      ],
+      "spatial_disposition": "HOST_CHURCH_ONLY_UPSTAIRS_IGNATIUSKAPELLE_ROOM_UNMAPPED",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-026",
@@ -844,12 +1213,28 @@
       "existing_cl2_physical_description": "Pappenheimerstraße, 87730 Bad Grönenbach, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL26",
+          "source_evidence_file": "cl26-ringeisenhaus-dated-20261026/evidence.json",
+          "latitude": 47.87579,
+          "longitude": 10.21727,
+          "feature_role": "NAMED_SCHLOSSKAPELLE_OSM_WAY_WITHIN_RINGEISENHAUS_COMPLEX_NOT_VISITOR_DOOR",
+          "osm_way_id": 1036283953,
+          "witness_url": "https://mapcarta.com/W1036283953",
+          "identity_conflicts": [
+            "DISTINCT_HOST_BUILDING_OSM_304721616",
+            "NOT_HOHES_SCHLOSS_OSM_304720796",
+            "NOT_SURVEYED_VISITOR_DOOR"
+          ]
+        }
+      ],
+      "spatial_disposition": "NAMED_SCHLOSSKAPELLE_WITH_DISTINCT_HOST_BUILDING_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-027",
@@ -871,12 +1256,27 @@
       "existing_cl2_physical_description": "Kirchstraße, 88145 Wigratzbad, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 47.64262,
+          "longitude": 9.83458,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/W87807590",
+          "identity_conflicts": [
+            "SUEHNEKIRCHE_DISTINCT_FROM_SEMINARKAPELLE_AND_GNADENKAPELLE",
+            "HOST_SITE_ORDINARY_MASS_CLOCKS_NOT_FSSP_CLOCKS"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-028",
@@ -898,12 +1298,26 @@
       "existing_cl2_physical_description": "Bierweg 35, 90411 Nürnberg, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL25",
+          "source_evidence_file": "cl25-last-seven-geo-20261026/evidence.json",
+          "latitude": 49.487378,
+          "longitude": 11.112051,
+          "feature_role": "NAMED_CATHOLIC_CHURCH_SITE_COORDINATE_NOT_OSM_WAY",
+          "osm_way_id": null,
+          "witness_url": "https://de.wikipedia.org/wiki/Liste_von_Sakralbauten_in_N%C3%BCrnberg",
+          "identity_conflicts": [
+            "Ziegelstein Catholic parish church St Georg, Bierweg 35, NOT same-name Protestant Kraftshof St Georg, office at 33, or parish hall at 43. Owner listing calls 33 postal address but Mass organizer specifies church 35."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-029",
@@ -925,12 +1339,27 @@
       "existing_cl2_physical_description": "Auf dem Mariahilfberg 3, 92224 Amberg, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL20",
+          "source_evidence_file": "cl20-geo-entrance-20261026/source-geocodes.json",
+          "latitude": 49.4529,
+          "longitude": 11.871,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_BUILDING_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/35839988",
+          "identity_conflicts": [
+            "CHURCH_4_VS_MONASTERY_OPERATOR_MAILING_3",
+            "POI_NOT_CHURCH_VISITOR_DOOR"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-030",
@@ -952,12 +1381,27 @@
       "existing_cl2_physical_description": "Deutsche Schulgasse 2, 92224 Amberg, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL20",
+          "source_evidence_file": "cl20-geo-entrance-20261026/source-geocodes.json",
+          "latitude": 49.44562,
+          "longitude": 11.85514,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_BUILDING_NOT_ENTRANCE",
+          "osm_way_id": 52739490,
+          "witness_url": "https://mapcarta.com/W52739490",
+          "identity_conflicts": [
+            "DEUTSCHE_SCHULGASSE_2_VS_4",
+            "HISTORICAL_MARKER_CORNER_COORDINATES_NOT_DOOR_COORDINATE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-031",
@@ -984,12 +1428,27 @@
       "existing_cl2_physical_description": "Regensburger Straße 16, 92318 Neumarkt in der Oberpfalz, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 49.273932,
+          "longitude": 11.462553,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://www.outdooractive.com/de/poi/bayerischer-jura/st.-jobst/2603398/",
+          "identity_conflicts": [
+            "PARISH_SUNDAY_1000_1115_VS_NATIONAL_FSSP_1015",
+            "CEMETERY_CHURCH_NOT_MAIN_ST_JOHANNES_PFARRKIRCHE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-032",
@@ -1026,12 +1485,27 @@
       "existing_cl2_physical_description": "Grabenstraße 2, 86842 Türkheim, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 48.059474,
+          "longitude": 10.640398,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://www.outdooractive.com/en/poi/allgaeu/kapuzinerkirche-maria-unbefleckte-empfaengnis-tuerkheim/1701617/",
+          "identity_conflicts": [
+            "LOCAL_FSSP_MAY_MOVE_WEEKDAY_EVENINGS_TO_OTHER_CHURCH",
+            "TOURISM_MAXIMILIAN_PHILIPP_STR_VS_FSSP_GRABENSTRASSE_SOURCE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-033",
@@ -1053,12 +1527,27 @@
       "existing_cl2_physical_description": "Kirchstraße 16, 88145 Wigratzbad, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL23",
+          "source_evidence_file": "cl23-bulk-geospatial-20261026/coordinate-evidence.json",
+          "latitude": 47.64288,
+          "longitude": 9.8363,
+          "feature_role": "NAMED_CHURCH_OR_CHAPEL_SITE_NOT_ENTRANCE",
+          "osm_way_id": null,
+          "witness_url": "https://mapcarta.com/N2789544934",
+          "identity_conflicts": [
+            "SEMINARKAPELLE_SEPARATE_FROM_SUEHNEKIRCHE",
+            "NODE_POI_NOT_CHAPEL_BUILDING_POLYGON"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-034",
@@ -1085,12 +1574,26 @@
       "existing_cl2_physical_description": "Rheinbacher Straße, 53115 Bonn, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL25",
+          "source_evidence_file": "cl25-last-seven-geo-20261026/evidence.json",
+          "latitude": 50.73111,
+          "longitude": 7.08321,
+          "feature_role": "MATCHED_CHURCH_BUILDING_WAY",
+          "osm_way_id": 38572397,
+          "witness_url": "https://mapcarta.com/de/W38572397",
+          "identity_conflicts": [
+            "OSM way church postal Rheinbacher Straße 8; parish church operator lists Rheinbacher Str 10; FSSP international directory lists 13. Exact Catholic building is identified, postcode and street-side entrances NOT decided. Adjacent Bücherei-im-Turm way 38572398 NOT the church."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-035",
@@ -1122,12 +1625,26 @@
       "existing_cl2_physical_description": "Spitalgasse 1, 86150 Augsburg, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL25",
+          "source_evidence_file": "cl25-last-seven-geo-20261026/evidence.json",
+          "latitude": 48.36194,
+          "longitude": 10.90313,
+          "feature_role": "MATCHED_CHURCH_BUILDING_WAY",
+          "osm_way_id": 89933886,
+          "witness_url": "https://mapcarta.com/de/W89933886",
+          "identity_conflicts": [
+            "Named FSSP-used former Dominican convent church at Spitalgasse 1; distinct from nearby St Ulrich und Afra and Heilig-Geist-Spital complex."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-036",
@@ -1155,11 +1672,12 @@
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
       "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "spatial_disposition": "PRIVATE_RELIGIOUS_HOUSE_CHAPEL_GEOCODE_WITHHELD",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-037",
@@ -1181,12 +1699,26 @@
       "existing_cl2_physical_description": "Münchner Straße 1, 82467 Garmisch-Partenkirchen, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL25",
+          "source_evidence_file": "cl25-last-seven-geo-20261026/evidence.json",
+          "latitude": 47.49535,
+          "longitude": 11.10875,
+          "feature_role": "MATCHED_CHAPEL_BUILDING_WAY",
+          "osm_way_id": 59100618,
+          "witness_url": "https://mapcarta.com/W59100618",
+          "identity_conflicts": [
+            "Named historic former plague chapel St Sebastian at Münchner Straße 1. Different from generic other St Sebastian; some external FSSP information used Ludwigstraße 81. OSM notes wheelchair=no, not independently audited."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL14-DE-FSSP-038",
@@ -1208,12 +1740,26 @@
       "existing_cl2_physical_description": "Kirchplatz 12, 93476 Blaibach, Germany",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL25",
+          "source_evidence_file": "cl25-last-seven-geo-20261026/evidence.json",
+          "latitude": 49.16642,
+          "longitude": 12.80857,
+          "feature_role": "MATCHED_CHURCH_BUILDING_WAY",
+          "osm_way_id": 168435145,
+          "witness_url": "https://mapcarta.com/fr/W168435145",
+          "identity_conflicts": [
+            "Church operator says St Elisabeth Kirchplatz 12, while Pfarrhof is Benefiziatengasse 9. OSM way is named Roman Catholic church, not rectory or adjacent Konzerthaus."
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     },
     {
       "pilot_source_place_id": "CL17-DE-FSSP-POTSDAM",
@@ -1235,12 +1781,27 @@
       "existing_cl2_physical_description": "Allee nach Sanssouci 7, 14471 Potsdam, Germany (vehicle access via Zimmerstraße 6)",
       "site_release_state": "RESEARCH_ONLY_NOT_PUBLIC",
       "join_grade": "EXACT_FROZEN_HISTORICAL_ROW_NOT_FUZZY",
-      "geographic_source_pointers": [],
-      "spatial_disposition": "SOURCE_GEO_PENDING_ATTACHMENT",
+      "geographic_source_pointers": [
+        {
+          "research_phase": "CL22",
+          "source_evidence_file": "cl22-correct-chapel-20261026/spatial-witnesses.json",
+          "latitude": 52.39966,
+          "longitude": 13.04481,
+          "feature_role": "ACTUAL_ST_JOSEFSKAPELLE_NOT_NEARBY_RAUEM_DER_STILLE",
+          "osm_way_id": 301020129,
+          "witness_url": "https://mapcarta.com/W301020129",
+          "identity_conflicts": [
+            "WRONG_NEARBY_OSM_31290074",
+            "HOSPITAL_VEHICLE_ENTRANCE_NOT_CHAPEL_ENTRANCE"
+          ]
+        }
+      ],
+      "spatial_disposition": "SOURCE_BACKED_WORSHIP_BUILDING_OR_NAMED_POI_NOT_ENTRANCE",
       "published_entrance": false,
       "public_pin": false,
       "new_site_id_created": false,
-      "recurrence_modified": false
+      "recurrence_modified": false,
+      "research_geometry_is_public_pin_approved": false
     }
   ],
   "release_limits": [
@@ -1249,5 +1810,35 @@
     "No site group merge or new site",
     "No recurrence/timetable changes",
     "No Una Cum or missal-rite promotion"
+  ],
+  "site_release_cautions": [
+    {
+      "source_place_id": "CL14-DE-FSSP-036",
+      "description": "Religious house residence; public chapel room/visitor entrance unverified; do not geocode house door as public pin"
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-025",
+      "description": "Landsberg upstairs Ignatiuskapelle; mapped Heilig-Kreuz-Kirche is only the host building"
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-026",
+      "description": "Bad Grönenbach named Schlosskapelle and host Ringeisenhaus are distinct mapped objects; neither point is an observed entrance"
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-007",
+      "description": "Recklinghausen St Joseph parish OFFICE closed, not proven CHURCH closure; preserve operator Mass source and no replacement claim"
+    },
+    {
+      "source_place_id": "CL17-DE-FSSP-POTSDAM",
+      "description": "Actual hospital St Josefskapelle is distinct from nearby Raum der Stille; campus vehicle access Zimmerstraße 6 is not church door"
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-024",
+      "description": "Hörmannsberg Meringer Straße number 2 vs 4 conflict; verify before navigation"
+    },
+    {
+      "source_place_id": "CL14-DE-FSSP-030",
+      "description": "Amberg Schulkirche Deutsche Schulgasse number 2 vs 4 conflict; verify before navigation"
+    }
   ]
 }
