@@ -619,15 +619,21 @@ try{
           record.trilingualSelected=Boolean(
             String(selectedPreface?.lat??selectedPreface?.la??"").trim()&&
             String(selectedPreface?.en??"").trim()&&String(selectedPreface?.fr??"").trim());
-          if(adaptedId!==id){
-            record.result="NATIVE_READER_SOURCE_IDENTITY_UNBOUND";
-          }else if(record.selectedCategory===entry.sourceExpected&&
-                  slot?.status==="READY"&&record.trilingualSelected){
+          record.identityBound=adaptedId===id;
+          if(record.selectedCategory===entry.sourceExpected&&
+             slot?.status==="READY"&&record.trilingualSelected&&record.identityBound){
             record.result="READER_SELECTED_CATEGORY_MATCH";
-          }else if(slot?.status==="READY"){
-            record.result="READER_WRONG_OR_UNVERIFIED_PREFACE_READY";
+          }else if(slot?.status==="READY"&&record.selectedCategory!==entry.sourceExpected){
+            // A missing principal binding is especially dangerous here:
+            // the native reader actually considers the WRONG Common Preface
+            // READY. Do not hide these under a generic identity-warning label.
+            record.result="READER_WRONG_PREFACE_READY";
+          }else if(!record.identityBound){
+            record.result="NATIVE_READER_SOURCE_IDENTITY_UNBOUND";
           }else if(record.selectedCategory===entry.sourceExpected){
             record.result="READER_CORRECT_CATEGORY_BUT_SLOT_NOT_READY";
+          }else if(slot?.status==="READY"){
+            record.result="READER_CORRECT_CATEGORY_LANGUAGE_OR_VALIDATION_INCOMPLETE";
           }else{
             record.result="READER_PREFACE_BLOCKED_OR_MISSING";
           }
@@ -649,6 +655,10 @@ try{
       .map(key=>[key,readerAuditRows.filter(x=>x.result===key).length]));
   const sourceOwnerCount=readerAuditRows.filter(x=>x.recoveryOwnerSection).length;
   const matchedNativeReady=readerResultCounts.READER_SELECTED_CATEGORY_MATCH??0;
+  const wrongNativeReady=readerResultCounts.READER_WRONG_PREFACE_READY??0;
+  const blockedNative=readerResultCounts.READER_PREFACE_BLOCKED_OR_MISSING??0;
+  const readerLiturgicalSourceReleaseReady=wrongNativeReady===0&&
+    matchedNativeReady===100;
   // Zero global clearance is claimed when actual native slot status or
   // source ownership is unavailable. A matching heading alone is NOT enough.
   assert.equal(Object.values(readerResultCounts).reduce((a,b)=>a+b,0),100);
@@ -661,6 +671,9 @@ try{
       totalRawCanonicalConflicts:100,
       authenticatedRecoveryOwnerCases:sourceOwnerCount,
       readerSelectedCategoryMatches:matchedNativeReady,
+      readerWrongPrefaceReady:wrongNativeReady,
+      readerPrefaceBlockedOrMissing:blockedNative,
+      readerLiturgicalSourceReleaseReady,
       unresolvedOrWrongReaderCases:100-matchedNativeReady,
       readerResultCounts,
       limitations:[
@@ -676,6 +689,8 @@ try{
   console.log("CALENDAR_1962_READER_PREFACE_DISPOSITION="+JSON.stringify({
     rawConflicts:100,withReaderRecoveryOwners:sourceOwnerCount,
     readerNativeReadyAndCategoryMatched:matchedNativeReady,
+    readerWrongPrefaceNativeReady:wrongNativeReady,
+    readerLiturgicalSourceReleaseReady,
     readerNotConfirmedCorrect:100-matchedNativeReady,
     categories:readerResultCounts,editoriallyCertified:0
   }));
