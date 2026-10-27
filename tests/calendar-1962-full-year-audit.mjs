@@ -323,6 +323,7 @@ try{
     SEPTEMBER_EMBER_COMMON_AGREEMENT:[],
     GAUDETE_TRINITY_SOURCE_CONFLICT:[],
     EASTER_SUNDAY_PASCHAL_CONFLICT:[],
+    CORPUS_CHRISTI_POST_1960_COMMON:[],
   };
   for(const row of rows){
     const id=row.mainId,review=row.prefaceReview,sourcePath=row.properSourcePath;
@@ -357,6 +358,9 @@ try{
     else if(review?.status==="SOURCE_CONFLICT"&&
       review.basis==="SOURCE_MATCHED_THIRD_POST_EASTER_SUNDAY")
       group="EASTER_SUNDAY_PASCHAL_CONFLICT";
+    else if(review?.status==="RULE_TEXT_AGREE"&&
+      review.basis==="ICRSP_POST_1960_CORPUS_CHRISTI_COMMON")
+      group="CORPUS_CHRISTI_POST_1960_COMMON";
     else if(review?.status==="UNMAPPED"){
       if(id.startsWith("sancti:")){
         group=review.actual==="COMMUNIS"?"SANCTORAL_COMMON_FIRST_PASS":
@@ -385,7 +389,7 @@ try{
   const sizes=Object.fromEntries(Object.entries(cohorts).map(([k,v])=>[k,v.length]));
   assert.deepEqual(sizes,{
     SANCTORAL_COMMON_FIRST_PASS:131,
-    TEMPORAL_FORM_RULE_UNMAPPED:1,
+    TEMPORAL_FORM_RULE_UNMAPPED:0,
     SATURDAY_BVM_COMMON_UNMAPPED:0,
     GENERIC_FERIA_UNMAPPED:0,
     LATER_OPTIONAL_PREFACE_AUTHORITY:2,
@@ -399,6 +403,7 @@ try{
     SEPTEMBER_EMBER_COMMON_AGREEMENT:3,
     GAUDETE_TRINITY_SOURCE_CONFLICT:1,
     EASTER_SUNDAY_PASCHAL_CONFLICT:1,
+    CORPUS_CHRISTI_POST_1960_COMMON:1,
   },"Bulk source cohorts changed: reconcile before reporting any coverage gain");
   assert.equal(Object.values(sizes).reduce((a,b)=>a+b,0),194,
     "The original 194-case worklist must account for every promotion and still-withheld case");
@@ -430,17 +435,19 @@ try{
     ...cohorts.ADVENT_FERIA_COMMON_AGREEMENT,
     ...cohorts.SEPTEMBER_EMBER_COMMON_AGREEMENT,
     ...cohorts.GAUDETE_TRINITY_SOURCE_CONFLICT,
-    ...cohorts.EASTER_SUNDAY_PASCHAL_CONFLICT];
+    ...cohorts.EASTER_SUNDAY_PASCHAL_CONFLICT,
+    ...cohorts.CORPUS_CHRISTI_POST_1960_COMMON];
   assert.equal(selectedTemporal.length,19);
   assert.deepEqual(new Set(selectedTemporal.map(x=>x.sourcePath)),
     new Set(temporalScreen.sourceCases.map(x=>x.sourcePath)));
-  assert.equal(cohorts.TEMPORAL_FORM_RULE_UNMAPPED[0].date,"2026-06-04",
-    "Version-dependent Corpus Christi must stay held");
+  assert.equal(cohorts.CORPUS_CHRISTI_POST_1960_COMMON[0].date,"2026-06-04");
+  assert.equal(cohorts.CORPUS_CHRISTI_POST_1960_COMMON[0].expected,"COMMUNIS",
+    "ICRSP post-1960 Common must not select pre-1960 Nativity or later optional Sacrament");
   for(const x of cohorts.BVM_SATURDAY_MARIAN_CONFLICT)
     assert.equal(new Date(x.date+"T12:00:00Z").getUTCDay(),6,
       x.date+" Marian Saturday must be an actual Saturday");
-  assert.equal(summary.prefaceReview.unmapped,134);
-  assert.equal(summary.prefaceReview.ruleAndTextAgree,150);
+  assert.equal(summary.prefaceReview.unmapped,133);
+  assert.equal(summary.prefaceReview.ruleAndTextAgree,151);
   assert.equal(summary.prefaceReview.sourceConflict,79);
   await writeFile(resolve(outputDir,"1962-2026-preface-bulk-triage.json"),JSON.stringify({
     schema:"AO_1962_PREFACE_2026_BULK_TRIAGE_V1",
@@ -448,9 +455,9 @@ try{
     sourceRegister:"data/research/1962-sanctoral-preface-source-screen-20261027.v1.json",
     temporalRegister:"data/research/1962-temporal-preface-source-screen-20261027.v1.json",
     totalHistoricalUnmappedWorklist:194,
-    newlySourceMatchedWithheldFromEditorialApproval:31,
+    newlySourceMatchedWithheldFromEditorialApproval:32,
     newlySourceIdentifiedConflicts:29,
-    stillUnmapped:134,
+    stillUnmapped:133,
     stillRawSourceConflicts:79,
     independentPrefacesEditoriallyCertified:0,
     groupSizes:sizes,
@@ -460,12 +467,12 @@ try{
   },null,2)+"\n","utf8");
   console.log("CALENDAR_1962_PREFACE_BULK_TRIAGE="+JSON.stringify({
     groupSizes:sizes,matchedSeasonalFerias:9,matchedOriginalCommon:2,
-    matchedAdditionalCommonSeasonal:20,marianSourceConflicts:9,
-    identifiedAdditionalSourceConflicts:20,unmapped:134,
+    matchedAdditionalCommonSeasonal:21,marianSourceConflicts:9,
+    identifiedAdditionalSourceConflicts:20,unmapped:133,
     originalUnmappedWorklist:194,
     originalSanctoralSourcesScreened:142,
     sourcePrefatioDirectivesObserved:11,
-    unverifiedSourceSelectionsRemaining:134,
+    unverifiedSourceSelectionsRemaining:133,
     editoriallyCertified:0,
   }));
 
