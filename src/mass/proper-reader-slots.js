@@ -2,6 +2,7 @@ import {validatedPreGospelChantParts} from "./reader-pre-gospel-chant-source.js"
 import {correct1962ProperEditorialReferences} from "./1962-proper-editorial-corrections.js";
 import {project1962Pent21AlleluiaDisplayRows,PS113_PENT21_ENGLISH_EDITORIAL} from "./1962-ps113-alleluia-editorial.js";
 import {inspect1962PrefaceSelection} from "./1962-preface-decision.js";
+import {inspect1962PluralMartyrsFrenchOrationSource} from "./1962-plural-martyr-french-source.js";
 const REQUIRED_SLOTS = Object.freeze([
   "INTROIT","COLLECT_SET","EPISTLE_OR_LESSON","GRADUAL",
   "GOSPEL","OFFERTORY","SECRET_SET","PREFACE","COMMUNION","POSTCOMMUNION_SET"
@@ -176,6 +177,20 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
     COMMUNION:readyEnvelope("COMMUNION",proper.communion,opts),
     POSTCOMMUNION_SET:readyEnvelope("POSTCOMMUNION_SET",proper.postcommunions?.length?proper.postcommunions:proper.postcommunion,opts),
   };
+
+  // A few hosted Commune/C6b and C7b French donor prayers have singular
+  // N. wording under the Latin plural N. et N. rubric. Non-empty French is
+  // not sufficient: fail closed for exactly these two source identities,
+  // without overwriting text or applying the hold to English/other Masses.
+  if(locale==="fr"){
+    for(const slot of ["SECRET_SET","POSTCOMMUNION_SET"]){
+      const hold=inspect1962PluralMartyrsFrenchOrationSource(proper,slot);
+      if(hold)slots[slot]=Object.freeze({
+        status:"MISSING",slot,data:null,reason:hold.reason,
+        sourceConflict:hold
+      });
+    }
+  }
 
   if(proper.inseparableOrationsDecision?.status==="UNVERIFIED"){
     for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
