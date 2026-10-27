@@ -151,7 +151,7 @@
             "corrected_creation_date": "1622 (museum), Commons record wrongly says 1600"
           },
           "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Clevelandart_2017.192.jpg",
-          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_HUMAN_VISUAL_REVIEW",
           "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF",
           "excluded_framed_sources": [
             {
@@ -174,6 +174,19 @@
               "declared_bytes_approx": 503492690,
               "warning": "Huge museum TIFF ~480 MiB; do not store in repo or assume image visual clearance based on metadata"
             }
+          },
+          "verified_museum_original_file_20261027": {
+            "institution": "Cleveland Museum of Art",
+            "accession": "2017.192",
+            "source_url": "https://openaccess-cdn.clevelandart.org/2017.192/2017.192_print.jpg",
+            "file_bytes": 1932047,
+            "width": 2561,
+            "height": 3400,
+            "sha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+            "media_type": "image/jpeg",
+            "exact_file_provenance": "Cleveland OA API accession 2017.192 images.print.url",
+            "rights": "CC0 supplier verified",
+            "scope": "byte-integrity verified; four-edge frame visual inspection not completed"
           }
         }
       ]
@@ -307,7 +320,7 @@
             "scholarly_correction": "NGA narrative depicts paralytic lowered through roof in background; Commons generic Bethesda tag misleading"
           },
           "exact_image_source_url": "https://commons.wikimedia.org/wiki/File:Netherlandish_16th_Century,_The_Healing_of_the_Paralytic,_c._1560-1590,_NGA_12205.jpg",
-          "frame_status": "UNVERIFIED_FULL_RESOLUTION_IMAGE",
+          "frame_status": "UNVERIFIED_FULL_RESOLUTION_HUMAN_VISUAL_REVIEW",
           "frame_policy_result": "BLOCKED_PENDING_UNFRAMED_VISUAL_PROOF",
           "preview_frame_review_20261027": {
             "source_preview_url": "https://api.nga.gov/iiif/294e57e7-14ef-4e2e-8b3d-081b4cc05fd6/full/full/0/default.jpg?attachment_filename=the_healing_of_the_paralytic_1943.7.7.jpg",
@@ -315,6 +328,19 @@
             "result": "NO_PHYSICAL_FRAME_VISIBLE_IN_PREVIEW",
             "confidence_scope": "preview_only",
             "source": "https://www.nga.gov/artworks/12205-healing-paralytic"
+          },
+          "verified_museum_original_file_20261027": {
+            "institution": "National Gallery of Art",
+            "accession": "1943.7.7",
+            "source_url": "https://api.nga.gov/iiif/294e57e7-14ef-4e2e-8b3d-081b4cc05fd6/full/full/0/default.jpg",
+            "file_bytes": 3850458,
+            "width": 2892,
+            "height": 4096,
+            "sha256": "3723b116592415bd2538d6e64e53897d374223b489b2e6ce2506716014fc39b2",
+            "media_type": "image/jpeg",
+            "exact_file_provenance": "NGA IIIF full-size endpoint attached to original accession",
+            "rights": "NGA Open Access image source",
+            "scope": "byte-integrity verified; four-edge frame visual inspection not completed"
           }
         }
       ]
@@ -487,7 +513,7 @@
       "Cleveland Open Access API 2017.192 (Johann König)",
       "NGA IIIF 1943.7.7 (Netherlandish Healing of Paralytic)"
     ],
-    "museum_fallback_run_status": "OUTPUT_PENDING_NOT_CLAIMED_SUCCESS",
+    "museum_fallback_run_status": "TWO_MUSEUM_ORIGIN_IMAGE_FILES_BYTE_VERIFIED_RECORDED",
     "workflow": ".github/workflows/sacred-art-original-source-audit.yml",
     "commons_sha1_from_structured_records": {
       "koenig-resurrection": "de5c983c0f4df218573836d0099e495b7084ec27",
@@ -497,5 +523,16 @@
     "photo_releases": 0,
     "user_decisions_changed": 0,
     "cost_eur": 0
+  },
+  "audit_20261027_museum_origin_success": {
+    "source_report_path": "data/research/sacred-art-20261027-museum-origin-source-byte-report.v1.json",
+    "source_run_status": "TWO_SUCCESSFUL_BYTE_VERIFICATIONS_20261027",
+    "source_count": 2,
+    "byte_verified": 2,
+    "publication_ready": 0,
+    "full_res_visual_frame_gate_passed": 0,
+    "differences": "Cleveland print JPEG is 1,932,047 bytes whereas its distinct Commons JPEG is 1,931,937 bytes. NGA IIIF image is 2,892x4,096, distinct from 2,222x3,147 Commons variant. Hashes MUST NOT be carried across variants.",
+    "note": "Downloaded originals were deleted in ephemeral runner, SHA-256 retained permanently in research report. Not yet permanently archived; do not treat this as preserving the originals or as a pristine signoff.",
+    "followup": "Inspect exactly these full-size files visually for zero frame, mount or gallery elements; edge check, tonal, sharpness and deterioration; select preferred archive version; no publication."
   }
 }
