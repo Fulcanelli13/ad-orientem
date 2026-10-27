@@ -2262,7 +2262,31 @@ function syncIconlessSourceRubric(root,current,mode,iconResolver,form,language){
   ));
   const decision=resolveCueSurface({mode,cueId,sourceCueId,
     actionMeaning:meaning,iconKey,iconUrl,hasSourceRubric,printedRubric});
-  if(decision!==CUE_SURFACE.INLINE_RUBRIC)return;
+  // The source-owned Host/Chalice Elevation icon moves into the centre only
+  // when the prayer leaves adequate room. On cramped phones it remains
+  // source-owned, but the rail is sometimes intentionally withheld because
+  // its donor icon is blank. A visible rubric must own the action instead.
+  // Do not manufacture another cue, show blank artwork, or duplicate an
+  // already visible, exact-cue source rubric.
+  const elevationRailFallback=(
+    (cueId==="AO.SM.C0174"&&current?.cinematicScene?.id==="HOST_ELEVATION" ||
+     cueId==="AO.SM.C0181"&&current?.cinematicScene?.id==="CHALICE_ELEVATION") &&
+    root.querySelector("[data-ao-reader-shell]")?.dataset.cinematicVisual==="RAIL" &&
+    (!tile || tile.dataset.iconVisible!=="true" ||
+      tile.getBoundingClientRect().height===0 ||
+      globalThis.getComputedStyle?.(tile)?.display==="none")
+  );
+  const visibleExactRubric=[...owner.querySelectorAll(
+    '.ao-live-inline-rubrics [data-source-cue-id="'+cueId+'"],'+
+    '.ao-iconless-source-rubric[data-source-cue-id="'+cueId+'"]'
+  )].some(node=>{
+    const style=globalThis.getComputedStyle?.(node);
+    return node.getBoundingClientRect().height>0 && node.textContent?.trim() &&
+      style?.display!=="none" && style?.visibility!=="hidden" &&
+      Number(style?.opacity??1)>0;
+  });
+  if(decision!==CUE_SURFACE.INLINE_RUBRIC &&
+     !(elevationRailFallback&&!visibleExactRubric))return;
   const label=sourceActionRubricLabel(action?.label??action?.action??action?.value,
     language);
   if(!label)return;
