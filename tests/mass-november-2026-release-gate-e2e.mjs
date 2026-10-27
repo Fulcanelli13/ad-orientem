@@ -335,8 +335,13 @@ try{
              cue:el.dataset.sourceCueId,
              width:el.getBoundingClientRect().width,
            })).filter(x=>x.id.startsWith("AO.RITUS.XIV."));
+           const paragraphNotes=[...root.querySelectorAll(".ao-reader-paragraph")].map(el=>({
+             cue:el.dataset.cueId??null,
+             text:el.querySelector(".ao-canon-inline-rubrics")?.textContent?.trim()??"",
+           })).filter(x=>x.text);
            checks.push({mode,modeApplied:adapter.getMode(),
-             rubrics:rows,selectedCueRoot:root.querySelectorAll(".ao-reader-paragraph").length});
+             rubrics:rows,paragraphNotes,
+             selectedCueRoot:root.querySelectorAll(".ao-reader-paragraph").length});
          }
        }finally{adapter.destroy();root.remove()}
        return {viewport:390,checks};
@@ -367,10 +372,15 @@ try{
    "NOV02_RITUS_XIV_EXPLICIT_CONDITIONAL_CUES_NOT_MATCHED");
  check(massUi.mobileDisplay?.checks?.length===3 &&
    massUi.mobileDisplay.checks.every(row=>
-     row.modeApplied===row.mode && row.rubrics?.length===2 &&
-     row.rubrics.some(x=>x.cue==="AO.SM.C0112" && /épître/i.test(x.text)) &&
-     row.rubrics.some(x=>x.cue==="AO.SM.C0247" && /eau seulement/i.test(x.text)) &&
-     !row.rubrics.some(x=>x.cue==="AO.SM.C0248")),
+     row.modeApplied===row.mode &&
+     row.paragraphNotes.some(x=>x.cue==="AO.SM.C0112" && /épître/i.test(x.text)) &&
+     row.paragraphNotes.some(x=>x.cue==="AO.SM.C0247" && /eau seulement/i.test(x.text)) &&
+     !row.paragraphNotes.some(x=>x.cue==="AO.SM.C0248") &&
+     (row.mode==="SIMPLE"
+       ? row.rubrics.length===0
+       : row.rubrics.length===2 &&
+         row.rubrics.some(x=>x.cue==="AO.SM.C0112") &&
+         row.rubrics.some(x=>x.cue==="AO.SM.C0247"))),
    "NOV02_RITUS_XIV_MOBILE_NATIVE_RENDERER_ALL_MODES_NOT_VERIFIED");
  const c=evaluated.ceremonial;
  check(c.req.omittedPeace.includes("AO.SM.C0225"),"REQUIEM_PEACE_PRAYER_NOT_OMITTED");
