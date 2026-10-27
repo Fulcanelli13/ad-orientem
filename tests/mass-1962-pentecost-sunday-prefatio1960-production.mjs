@@ -29,12 +29,15 @@ try{
   {waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>typeof globalThis.AO_RUNTIME_V8?.resolver?.resolveDay==="function",
   null,{timeout:90000});
+ // The *normal production bootstrap* must install the resolver wrapper.
+ // Do not call an installer here: a test-only install could hide wiring errors.
+ await page.waitForFunction(()=>
+  globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.sharedSundayPrefatio1960?.installed===true,
+  null,{timeout:90000});
  const rows=await page.evaluate(async()=>{
-  const {installPentecostSunday1960PrefaceSource}=await import(
-    "/src/mass/1962-pentecost-sunday-prefatio1960-source.js");
   const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
-  const installed=installPentecostSunday1960PrefaceSource(window);
-  if(!installed.installed)throw Error("1960_SOURCE_INSTALL_FAILED:"+installed.reason);
+  const installed=globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.sharedSundayPrefatio1960;
+  if(!installed?.installed)throw Error("PRODUCTION_1960_SOURCE_BOOTSTRAP_NOT_INSTALLED");
   const dates=["2026-06-07","2026-06-14","2026-06-12","2026-10-11"];
   const results=[];
   for(const date of dates){
