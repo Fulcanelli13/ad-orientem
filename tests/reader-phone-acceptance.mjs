@@ -264,9 +264,27 @@ try{
     return shell?.dataset.objectiveContext==="true" &&
       explanation&&!explanation.hidden&&explanation.dataset.blockId==="AO.SM.B052";
   },null,{timeout:5000});
+  // CDP touchend can leave kinetic scrolling active after the first C0174
+  // focus event. Wait for physical scroll quiescence, then anchor the exact
+  // elevation cue before checking its native state and painted rail.
+  await page.evaluate(async()=>{
+    const card=document.querySelector(".ao-prayer-card");
+    if(!card)throw Error("PHONE_PRAYER_CARD_MISSING");
+    let last=card.scrollTop,quietFrames=0;
+    for(let frame=0;frame<90&&quietFrames<8;frame++){
+      await new Promise(resolve=>requestAnimationFrame(resolve));
+      const next=card.scrollTop;
+      quietFrames=Math.abs(next-last)<0.5?quietFrames+1:0;
+      last=next;
+    }
+    const target=card.querySelector('[data-cue-id="AO.SM.C0174"]');
+    if(!target)throw Error("PHONE_ELEVATION_CUE_MISSING");
+    const cr=card.getBoundingClientRect(),tr=target.getBoundingClientRect();
+    card.scrollTop=Math.max(0,tr.top-cr.top+card.scrollTop+
+      tr.height/2-card.clientHeight*.39);
+  });
   // B052 covers both C0173 (consecration words) and C0174 (elevation).
-  // Wait for the *same exact source cue* and rendered rail state together:
-  // touch momentum can move focus back to C0173 after the earlier check.
+  // Require the *same exact source cue* and rendered rail state together.
   const elevationPainted=await page.waitForFunction(()=>{
     const source=window.__AO_PHONE_PREVIEW?.getNativeEventState();
     const context=document.querySelector('[data-role="objective-context"]');
@@ -302,6 +320,7 @@ try{
     const actionText=action?.querySelector('[data-role="priest-action"]');
     return {
       context:box?.textContent??"",
+      nativeCueId:window.__AO_PHONE_PREVIEW?.getNativeEventState()?.nativeCueId??null,
       contextHeight:box?.getBoundingClientRect().height??0,
       ribbonHeight:box?.parentElement?.getBoundingClientRect().height??0,
       oldTopDisplay:top?getComputedStyle(top).display:null,
@@ -335,6 +354,8 @@ try{
     "Priest actions and position must remain on the right rail");
   assert.equal(objectiveVisual.positionActive,"true",
     "Context ribbon displaced the priest's active station");
+  assert.equal(objectiveVisual.nativeCueId,"AO.SM.C0174",
+    "The stationary visual audit must still be on the Host elevation cue");
   assert.equal(objectiveVisual.sourceActionFallback,"true",
     "The legacy objective context still identifies the unpainted elevation");
   assert.equal(objectiveVisual.sourceActionTextDisplay,"none",
