@@ -1136,7 +1136,7 @@ test('Palm cadence bulk matrix identifies four source-owned ending families and 
  ]);
  assert.ok(d.specialExceptions.every(x=>x.automaticGabcAllowed===false));
  assert.ok(d.familyModels.every(x=>!x.perCaseCadenceApproved&&!x.musicianEditorReviewed));
- assert.ok(d.caseMatrix.every(x=>!x.hasHumanTextAccentVerified&&!x.hasHumanApprovedMelody));
+ assert.ok(d.caseMatrix.every(x=>x.humanTextAccentVerified===false&&x.hasHumanApprovedMelody===false));
  assert.ok(d.caseMatrix.every(x=>!x.pitchGroupsAssignedToWholeVerse&&!x.fullGabcCandidateApproved));
  assert.ok(d.caseMatrix.every(x=>x.releaseStatus==='EDITORIAL_HOLD_NO_PRODUCTION_ASSIGNMENT'));
  const src=new Map(master.cases.map(x=>[x.id,x]));
