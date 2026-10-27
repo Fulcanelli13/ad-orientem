@@ -95,6 +95,15 @@ export function installContemplativeDailyPreview(win = globalThis) {
         const value = horizon?.style.getPropertyValue("--ao-sky-" + name);
         if (value) root.style.setProperty("--ao-contemplative-" + name, value);
       }
+      // The traditional renderer flips language faces from a document-level
+      // capture listener. That listener deliberately stops propagation, so
+      // the generic card focus listener cannot re-focus the newly revealed
+      // Latin paragraphs. Normalize both faces at mount time, including the
+      // initially hidden face; the actual prayer text remains source-owned.
+      for (const paragraph of mount.querySelectorAll(".aoDevoCardScroll .aoDevoParagraph")) {
+        paragraph.style.setProperty("--ao-devo-focus", "1");
+        paragraph.style.setProperty("opacity", "1", "important");
+      }
       // Compact timeline dots remain individually accessible, named and clickable.
       for (const button of mount.querySelectorAll(".aoDevoSequenceTimeline .aoDevoStop")) {
         const name = button.querySelector(".aoDevoStopTitle")?.textContent?.trim();
