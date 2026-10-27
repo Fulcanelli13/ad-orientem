@@ -1882,3 +1882,41 @@ test('Palm two-accent underlay rule detects 5 and 3 syllable spacing defects',()
  assert.equal(reader.includes('batch37StrictTwoAccentSpacingCheck'),false);
 });
 
+
+
+test('Psalm46 L09 artificial accent alternative follows two-after lexical rule without being approved',()=>{
+ const special=readJSON('data/research/processionale-palm-four-exception-full-verse-schematics-20261027.v1.json');
+ const master=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
+ const old=special.cases.find(x=>x.id==='PALM-R02-PS46-L09');
+ assert.ok(old);
+ const alt=old.batch37ArtificialAccentAlternative;
+ assert.ok(alt);
+ assert.equal(alt.underlyingTrueWordAccent.syllable,'ló');
+ assert.equal(alt.underlyingTrueWordAccent.syllableIndex,5);
+ assert.equal(alt.artificialSecondaryAccent.syllable,'con');
+ assert.equal(alt.artificialSecondaryAccent.syllableIndex,7);
+ assert.equal(alt.secondRealWordAccent.syllable,'gá');
+ assert.equal(alt.secondRealWordAccent.syllableIndex,9);
+ assert.equal(alt.artificialSecondaryAccent.syllableIndex-alt.underlyingTrueWordAccent.syllableIndex,2);
+ assert.equal(alt.secondRealWordAccent.syllableIndex-alt.artificialSecondaryAccent.syllableIndex-1,1);
+ assert.equal(alt.twoSyllablesAfterTrueAccent,true);
+ assert.equal(alt.originalRejectedHypothesisPreserved,true);
+ const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/æ/g,'ae').replace(/[^a-z]/gi,'').toLowerCase();
+ const original=old.gabcResearchOnly;
+ assert.ok(original.includes('ló(ixi)rum(hr) con(h)gre(h)gá(g)ti(hr)sunt(h.)'));
+ assert.ok(alt.alternativeGabcWholeVerseResearchOnly.includes('ló(h)rum(h) con(ixi hr)gre(h)gá(g)ti(hr)sunt(h.)'));
+ const first=alt.alternativeGabcWholeVerseResearchOnly.split('%%')[1].split('*(:)')[0];
+ const sylls=old.sourceSyllables[0].split(/\s+/).flatMap(w=>w.split('-'));
+ const enc=[...first.matchAll(/([\p{L}]+[.,;!?]?)\(([^)]+)\)/gu)];
+ assert.equal(enc.length,sylls.length);
+ assert.deepEqual(enc.map(x=>norm(x[1])),sylls.map(norm));
+ assert.deepEqual(enc.map(x=>x[2]),alt.pitchGroupsBySection[0]);
+ assert.equal(norm(enc.map(x=>x[1]).join('')),norm(old.sourceLatin[0]));
+ assert.equal(master.batch37StrictTwoAccentSpacingCheck.cases.find(x=>x.id===old.id)
+   .interveningUnaccentedSyllableCount,3);
+ assert.equal(alt.artificialSecondaryAccentHumanApproved,false);
+ assert.equal(alt.toneSpecificAdaptationCertified,false);
+ assert.equal(alt.scorePublicationAllowed,false);
+ assert.equal(alt.originalHebrewNameAccentStillRequiresReview,true);
+});
+
