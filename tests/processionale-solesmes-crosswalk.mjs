@@ -1441,3 +1441,61 @@ test('nine complete research-only Psalm verse GABCs preserve Latin words and nev
  const reader=readFileSync(new URL('../src/mass/reader-palm.js',import.meta.url),'utf8');
  assert.equal(reader.includes('processionale-palm-nine-complete-verse-research-candidates'),false);
 });
+
+
+test('all seventeen Palm editorial cases have complete original Latin and only nine get experimental full GABC',()=>{
+ const master=readJSON('data/research/processionale-palm-two-tone-models-17-case-review-20261027.v1.json');
+ const nine=readJSON('data/research/processionale-palm-nine-complete-verse-research-candidates-20261027.v1.json');
+ const audit=readJSON('data/research/processionale-palm-medial-accent-conflict-audit-20261027.v1.json');
+ const batch=master.batch33RemainingEightReview;
+ const sourceById=new Map(master.cases.map(x=>[x.id,x]));
+ const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/æ/g,'ae').toLowerCase().replace(/[^a-z]/g,'');
+ assert.equal(batch.rows.length,8);
+ assert.equal(batch.fullLatinTextCoverageUniqueCases,17);
+ assert.equal(batch.wholeVerseResearchGabcPrepared,9);
+ assert.equal(batch.remainingFullySyllabifiedNotMusicallySet,8);
+ const scoredIds=new Set(nine.scoreCases.map(x=>x.id));
+ assert.equal(scoredIds.size,9);
+ const unscoredIds=new Set(batch.rows.map(x=>x.id));
+ assert.equal(unscoredIds.size,8);
+ for(const id of scoredIds)assert.equal(unscoredIds.has(id),false);
+ for(const id of sourceById)assert.ok(unscoredIds.has(id)||scoredIds.has(id),id);
+ assert.equal(sourceById.size,17);
+ const actualOccurrences=batch.rows.flatMap(x=>x.physicalOccurrences);
+ assert.equal(actualOccurrences.length,9);
+ for(const row of batch.rows){
+  const printed=sourceById.get(row.id);
+  assert.ok(printed,row.id);
+  assert.equal(row.sourceSectionOrder.length,printed.sourceSegments.flex?3:2);
+  assert.deepEqual(row.sourceSectionOrder,Object.keys(printed.sourceSegments));
+  assert.deepEqual(row.sourceLatinSegments,Object.values(printed.sourceSegments));
+  assert.equal(row.syllableGroupsBySection.length,row.sourceSectionOrder.length);
+  assert.deepEqual(row.syllableCountBySection,row.syllableGroupsBySection.map(x=>x.length));
+  for(let i=0;i<row.sourceLatinSegments.length;i++){
+   const original=row.sourceLatinSegments[i];
+   const grouped=row.fullPrintedSyllabifiedSections[i];
+   const words=grouped.trim().split(/\s+/);
+   const syllables=words.flatMap(x=>x.split('-'));
+   assert.deepEqual(syllables,row.syllableGroupsBySection[i]);
+   assert.equal(norm(syllables.join('')),norm(original),row.id);
+   assert.equal(row.syllableCountBySection[i],syllables.length,row.id);
+  }
+  assert.equal(row.musicPitchesAssigned,false);
+  assert.equal(row.editorScoreApproved,false);
+  assert.equal(row.productionEligible,false);
+  assert.equal(row.noFullGabcScoreUntilMusicianCorrectsUnderlay,true);
+  assert.equal(row.scoreRenderingAllowed,false);
+  assert.equal(row.usePsalmSpecific1961Tone,printed.modelId);
+  assert.deepEqual(row.physicalOccurrences,printed.occurrenceIds);
+ }
+ const repeat=batch.rows.find(x=>x.id==='PALM-R02-PS23-L07');
+ assert.deepEqual(repeat.physicalOccurrences,['PALM-R02-PS23-L07','PALM-R02-PS23-L09']);
+ assert.equal(batch.rows.filter(x=>x.specialFlexRequired).length,2);
+ assert.equal(batch.rows.filter(x=>x.id.endsWith('DOXO-L12')).length,2);
+ assert.equal(batch.officeDifferentiaScopeWarning.explicitHoldBothAmen,true);
+ assert.equal(batch.officeDifferentiaScopeWarning.mustCheckWhetherFinalAntiphonReturnsByActualPalmRite,true);
+ assert.equal(batch.actualAdditionalScoreApprovedCount,0);
+ assert.equal(batch.productionScoreAssignmentCount,0);
+ assert.equal(batch.publishAllowed,false);
+ assert.equal(audit.batch31CorrectiveUnderlayReview.humanMusicalApprovals,0);
+});
