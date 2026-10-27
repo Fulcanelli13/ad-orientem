@@ -4,6 +4,7 @@
 // Existing 1,195 GABCs remain in data/mass/chant-corpus (research only).
 import {PROPER_CHANT_SOURCE_SCHEMA} from "./reader-proper-chant-crosswalk.js";
 import {MASS_CHANT_PROGRAMME_SCHEMA} from "./mass-chant-programme.js";
+import {SCHOLA_SCORE_TRACK_IDS} from "./reader-chant-score-pilot.js";
 
 export const GREGORIAN_PROGRAMME_LAYERS_SCHEMA="ao-gregorian-programme-layers-v1";
 export const GREGORIAN_LOCAL_EVIDENCE_SCHEMA="ao-local-schola-evidence-v1";
@@ -12,7 +13,7 @@ const PROPER_TRACKS=new Set(["INTROIT","GRADUAL","ALLELUIA_TRACT_SEQUENCE","OFFE
 const STYLES=new Set(["GREGORIAN","PSALM_TONE","POLYPHONY","OTHER","OMITTED","UNREPORTED"]);
 const identifier=value=>typeof value==="string" && /^[A-Za-z0-9._:-]+$/.test(value);
 const cited=value=>typeof value==="string" && /^https:\/\/[^\s/]+\//.test(value);
-const own=(obj,key)=>Object.prototype.hasOwnProperty.call(obj,key);
+const VALID_TRACKS=new Set(SCHOLA_SCORE_TRACK_IDS);
 
 function documentedTracks(value){
   if(!value||typeof value!=="object"||Array.isArray(value))return null;
@@ -20,7 +21,7 @@ function documentedTracks(value){
   if(!pairs.length)return null;
   const tracks={};
   for(const [trackId,style] of pairs){
-    if(typeof trackId!=="string" || !/^[A-Z_]+$/.test(trackId) || !STYLES.has(style))return null;
+    if(!VALID_TRACKS.has(trackId) || !STYLES.has(style))return null;
     tracks[trackId]=style;
   }
   return Object.freeze(tracks);
@@ -69,9 +70,15 @@ export function composeGregorianProgrammeLayers({
   const instituteClaims=usable.map(row=>eligible(row,"INSTITUTE_CUSTOM",context)).filter(Boolean);
   const site=isolatedMatches(siteClaims),institute=isolatedMatches(instituteClaims);
   // User-selected Ordinary examples are personal, not corroboration that a choir sang.
+  let userIdentityMatches=false;
+  try{
+    const parts=JSON.parse(chantProgramme?.identity??"null");
+    userIdentityMatches=Array.isArray(parts)&&parts.length===9&&
+      parts[0]===date&&parts[6]===sourcePath;
+  }catch{ /* malformed or stale saved programme: not evidence */ }
   const userChoices=roman&&chantProgramme?.schema===MASS_CHANT_PROGRAMME_SCHEMA&&
     chantProgramme.sourceType==="USER_REPORTED_MUSIC_NOT_RUBRICALLY_CERTIFIED"&&
-    chantProgramme.date===date && chantProgramme.identity ?chantProgramme.selections??{}:{};
+    chantProgramme.date===date&&userIdentityMatches?chantProgramme.selections??{}:{};
   const userSelected=Object.freeze(Object.entries(userChoices)
     .filter(([track,id])=>/^[A-Z_]+$/.test(track)&&/^GREGOBASE-\d+$/.test(id))
     .map(([trackId,scoreId])=>Object.freeze({trackId,scoreId,
