@@ -102,14 +102,14 @@
       "category": "Prayer for priests",
       "target": "Priesthood, vocations, optional First Thursday",
       "editorial_notes": "Distinct prayer for priests under the Sacred Heart of Jesus. The ICKSP webpage contains a formatting glitch in its second prayer; do not ingest uncorrected verbatim web text.",
-      "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY",
+      "full_text_import": "ENGLISH_ORIGINAL_ONLY",
+      "release_status": "IMPLEMENTED_ON_PR_BRANCH_NOT_MERGED",
       "verified": "ENGLISH_BODY_READ",
       "source_body_text_accessible": true,
-      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
-      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_coverage_status": "IMPLEMENTED_IN_DRAFT_ENGLISH_ONLY",
+      "app_coverage_label": "O Jesus Eternal Priest implemented from ICKSP English; verified French/Latin not available",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "next_action": "Run full Node/Playwright tests, collate 1914 original, locate independently attested French translation if available",
       "review_group": "POTENTIAL_PERSONAL_DEVOTION",
       "source_selection_status": "ACCEPTED",
       "historical_witness_candidate": {
@@ -122,6 +122,11 @@
         "status": "HISTORICAL_DATE_LOCATED_PRIMARY_PAGE_IMAGE_NOT_COLLATED",
         "attribution_warning": "Frequently attributed to St Thérèse, but the 1914 printed witness associates the published prayer with a Sister of the Holy Child in Pennsylvania, not with St Thérèse. Do not attribute authorship to the saint without primary evidence.",
         "next_gate": "Inspect 1914 issue page image and compare the exact English form to ICKSP text before importing."
+      },
+      "app_integration_route": "pray.prayers_for_priests",
+      "text_witnesses": {
+        "en": "https://institute-christ-king.org/resources/devotions-prayers/614-devotions-prayer-priests",
+        "historicalLead": "American Ecclesiastical Review, vol. 50 (1914), pp. 608-609; original page remains uncollated"
       }
     },
     {
@@ -136,16 +141,17 @@
       "target": "Priesthood, vocations",
       "editorial_notes": "Second distinct prayer on same ICKSP page. Text has a likely copy/paste error ('on here'); exact historical witness and editorial correction required before publishing.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY",
+      "release_status": "SOURCE_CORRUPTION_HOLD",
       "verified": "ENGLISH_BODY_WITH_COPY_ERROR",
       "source_body_text_accessible": true,
       "relation": "SECOND_PRAYER_SAME_PAGE",
-      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
-      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_coverage_status": "INDEXED_LINKED_NOT_PUBLISHED_CORRUPT",
+      "app_coverage_label": "Second priest prayer distinct, linked as held source; corrupted published line",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "next_action": "Find independent authoritative form and remove source corruption without conjectural repair",
       "review_group": "POTENTIAL_PERSONAL_DEVOTION",
-      "source_selection_status": "ACCEPTED"
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.prayers_for_priests"
     },
     {
       "id": "icksp_us_prayer_infant_jesus",
@@ -207,10 +213,10 @@
       "verified": "FULL_ENGLISH_BODY_FOUND_ON_ICKSP_UK",
       "alternative_source_url": "https://icksp.org.uk/newbrighton/consecration-to-our-lady/",
       "source_body_text_accessible": true,
-      "app_coverage_status": "IMPLEMENTED_DRAFT_WITH_INDEPENDENT_HISTORICAL_WITNESSES",
-      "app_coverage_label": "English 1890 and French historical original added to prayer reader (draft branch)",
+      "app_coverage_status": "IMPLEMENTED_IN_DRAFT_CORRECTED_SOURCE_BOUNDARIES",
+      "app_coverage_label": "Historical English and French prayer implemented; original language boundaries corrected",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "next_action": "Run full Node/Playwright tests before release; verify English/French full text and source punctuation in reader",
       "review_group": "POTENTIAL_PERSONAL_DEVOTION",
       "source_selection_status": "ACCEPTED",
       "app_integration_route": "pray.marian_protection",
@@ -626,5 +632,15 @@
   },
   "editorial_selection_policy": "ALL_INSTITUTE_SELECTED_ITEMS_ACCEPTED",
   "editorial_approval_required": false,
-  "editorial_note": "Institute selection establishes relevance. Route without duplicating existing identities; verify exact text, translations and ritual context before release. First 25 items are not exhaustive."
+  "editorial_note": "Institute selection establishes relevance. Route without duplicating existing identities; verify exact text, translations and ritual context before release. First 25 items are not exhaustive.",
+  "integration_progress": {
+    "as_of": "2026-10-28",
+    "initial_review_items": 25,
+    "source_selections_accepted": 25,
+    "full_prayer_readers_implemented_in_draft": 2,
+    "full_new_prayers_published_to_production": 0,
+    "source_held_second_priest_prayer": 1,
+    "languages": "August Queen historically attested EN/FR; Eternal Priest ICKSP EN only; no invented Latin or Italian",
+    "test_status": "STATIC_JS_PARSE_AND_SOURCE_ROUTE_INVARIANTS_PASS; NODE_PLAYWRIGHT_NOT_EXECUTED"
+  }
 }
