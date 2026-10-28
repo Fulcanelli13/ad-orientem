@@ -4,7 +4,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from scripts.office.normalize_xhtml import normalize_xhtml, convert_tree
+from scripts.office.normalize_xhtml import normalize_xhtml, convert_tree, classify_latin_cell
 
 PIN = "126a07f91ede04664108abb6fb20ace3f4de14b9"
 DAY = "2026-10-31"
@@ -24,6 +24,22 @@ HTML = """<?xml version="1.0" encoding="UTF-8"?><html><head><title>Office</title
 </div></body></html>"""
 
 class NormalizerTests(unittest.TestCase):
+    def test_semantic_navigation_labels_never_split_source_content(self):
+        examples = {
+            "Incipit\\n℣. Deus": "OPENING",
+            "Psalmi {ex Psalterio}\\nAnt.": "PSALMODY",
+            "Ant. Vidi turbam\\nPsalmus 109": "PSALMODY",
+            "Capitulum Hymnus Versus {ex Proprio}": "CHAPTER_HYMN_VERSE",
+            "Canticum: Magnificat": "GOSPEL_CANTICLE",
+            "Oratio {ex Proprio}": "PRAYER",
+            "Conclusio\\n℣.": "CONCLUSION",
+        }
+        for text, expected in examples.items():
+            self.assertEqual(classify_latin_cell(text)["role"], expected, text)
+        unknown = classify_latin_cell("Textus sine titulo")
+        self.assertEqual(unknown["role"], "SOURCE_SECTION")
+        self.assertEqual(unknown["certainty"], "NONE")
+
     def test_convert_to_plain_sourced_blocks(self):
         doc = normalize_xhtml(HTML, date=DAY, hour="VESPERS", language="la", source_revision=PIN)
         self.assertEqual(doc["status"], "STRUCTURED_UNVERIFIED")
