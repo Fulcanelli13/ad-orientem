@@ -16,7 +16,8 @@ function vicinity(profile,item){
 export function discoverItemsWithinMapBounds(items,bounds){
  if(!bounds||typeof bounds.contains!=="function")return list(items);
  return list(items).filter(item=>{
-  if(!item?.map_publishable||!item?.geo)return false;
+  if(!item?.map_publishable||!item?.geo||item.geo.lat==null||item.geo.lng==null
+    ||String(item.geo.lat).trim()===""||String(item.geo.lng).trim()==="")return false;
   const lat=Number(item.geo.lat),lng=Number(item.geo.lng);
   return Number.isFinite(lat)&&Number.isFinite(lng)&&lat>=-90&&lat<=90&&lng>=-180&&lng<=180
     &&Boolean(bounds.contains([lng,lat]));
