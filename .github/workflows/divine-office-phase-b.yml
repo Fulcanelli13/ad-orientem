@@ -170,7 +170,7 @@ jobs:
           PY
       - name: Install pinned Playwright browser for mobile layout QA
         run: |
-          npm ci --ignore-scripts --no-audit --no-fund
+          npm install --no-save --package-lock=false --ignore-scripts --no-audit --no-fund @playwright/test@1.55.0
           npx playwright install --with-deps chromium
       - name: Exercise real Office source cells in LIVE and MISSAL at phone sizes
         env:
