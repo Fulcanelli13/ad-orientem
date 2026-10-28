@@ -8,6 +8,7 @@ import {
   LIVE_LATIN_FIRST_INVITATION_CUES,
 } from "../src/mass/reader-text.js";
 import { properToReaderSlots } from "../src/mass/proper-reader-slots.js";
+import { requiemFootPsalmAndLavaboOmittedCuesForResolvedMass } from "../src/mass/reader-requiem-conditions.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const low=load("../data/presentation/reader-text-low.v1.json");
@@ -230,6 +231,60 @@ for(const corpus of [low,sung]){
   assert.equal(glory.length,1,corpus.form+" Lavabo projects Glory be exactly once");
   assert.equal(sicut.length,1,corpus.form+" Lavabo projects Sicut erat exactly once");
 }
+
+// P0 1962 All Souls field gate — Ritus servandus XIII.1 suppresses the
+// complete Psalm 42, but NOT the original Introibo or Confiteor; at the
+// Offertory it suppresses the Lavabo doxology, but NOT the Lavabo itself.
+// Assert both fixed LOW/SUNG donors and both rendered reader languages.
+const requiemOmissions=requiemFootPsalmAndLavaboOmittedCuesForResolvedMass({
+  overlays:["REQUIEM"],
+});
+assert.equal(requiemOmissions.length,12);
+assert.deepEqual(requiemFootPsalmAndLavaboOmittedCuesForResolvedMass({overlays:[]}),[]);
+const requiemFrench=load("../data/presentation/reader-french-ordinary.v1.json");
+const cuesIn=card=>card.paragraphs.flatMap(p=>p.sourceCueIds??[]);
+for(const corpus of [low,sung]){
+ for(const language of ["en","fr"]){
+  const opt={corpus,properSlots,vernacularLanguage:language,
+    frenchOrdinary:requiemFrench,omittedOrdinaryCues:requiemOmissions};
+  const footRequiem=buildReaderSectionCard({
+    ...opt,section:sections.sectionById("AO.CARD.001"),
+  });
+  const offRequiem=buildReaderSectionCard({
+    ...opt,section:sections.sectionById("AO.CARD.010"),
+  });
+  const footCueIds=cuesIn(footRequiem),offCueIds=cuesIn(offRequiem);
+  for(const kept of ["AO.SM.C0002","AO.SM.C0003","AO.SM.C0014","AO.SM.C0015",
+    "AO.SM.C0016","AO.SM.C0021"])
+    assert.ok(footCueIds.includes(kept),corpus.form+"/"+language+" Requiem lost "+kept);
+  for(let n=4;n<=13;n++){
+    const omitted="AO.SM.C"+String(n).padStart(4,"0");
+    assert.ok(!footCueIds.includes(omitted),corpus.form+"/"+language+" Judica remains: "+omitted);
+  }
+  assert.equal(footRequiem.blocks.find(b=>b.blockId==="AO.SM.B003")?.omittedByRite,
+    "RITUS_XIII_1_REQUIEM");
+  assert.ok(offCueIds.includes("AO.SM.C0125"),
+    corpus.form+"/"+language+" Requiem lost Lavabo Psalm");
+  for(const omitted of ["AO.SM.C0126","AO.SM.C0127"])
+    assert.ok(!offCueIds.includes(omitted),corpus.form+"/"+language+" Requiem retained "+omitted);
+  assert.ok(!offRequiem.blocks.find(b=>b.blockId==="AO.SM.B037")?.omittedByRite,
+    "Lavabo itself may not disappear at a Requiem");
+ }
+ // Unmodified normal Mass still renders both original, preserved donor cues.
+ const normalFoot=buildReaderSectionCard({
+   corpus,section:sections.sectionById("AO.CARD.001"),properSlots,
+ });
+ assert.ok(cuesIn(normalFoot).includes("AO.SM.C0004"),"Ordinary Judica changed");
+ assert.throws(()=>buildReaderSectionCard({
+   corpus,section:sections.sectionById("AO.CARD.001"),properSlots,
+   omittedOrdinaryCues:["AO.SM.C0004"],
+ }),/REQUIEM_JUDICA_SOURCE_IDENTITY_MISMATCH/);
+ assert.throws(()=>buildReaderSectionCard({
+   corpus,section:sections.sectionById("AO.CARD.010"),properSlots,
+   omittedOrdinaryCues:["AO.SM.C0126"],
+ }),/REQUIEM_LAVABO_SOURCE_IDENTITY_MISMATCH/);
+}
+console.log("1962 All Souls Judica/Lavabo exclusions: PASS — LOW/SUNG EN/FR and ordinary donor untouched.");
 
 const credo=buildReaderSectionCard({
   corpus:sung,
