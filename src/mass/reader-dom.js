@@ -80,7 +80,7 @@ const SHELL_STYLE = `
 .ao-mass-prefs-close{appearance:none;border:0;background:transparent;color:#89958c;font-size:22px;line-height:1;padding:3px 5px}
 .ao-mass-prefs-group{margin-top:14px}
 .ao-mass-prefs-group>small{display:block;margin-bottom:7px;color:#6e7a72;font:700 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;text-transform:uppercase}
-.ao-mode-ribbon{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.ao-mode-ribbon{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
 .ao-mode-ribbon button{
   appearance:none;border:0;background:transparent;color:#929a93;min-width:0;height:44px;padding:4px 0;
   font:700 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.09em
@@ -206,7 +206,6 @@ const SHELL_STYLE = `
 .ao-canon-inline-heading{display:block;margin-bottom:3px;color:var(--ao-mass-accent-text);font:700 9px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em}
 .ao-canon-inline-actions{display:block;white-space:normal}
 .ao-canon-inline-source{display:inline-block;margin-top:4px;color:#aabdb0;text-underline-offset:3px;font:500 10px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
-.ao-reader-shell[data-mode="SIMPLE"] .ao-canon-inline-rubrics{font-size:10px}
 .ao-reader-shell[data-canon-inline="true"] .ao-state-ribbon{grid-template-columns:minmax(0,1fr) auto;height:48px;min-height:48px;align-items:center}
 .ao-reader-shell[data-canon-inline="true"] .ao-state-cell{display:none}
 .ao-state-source{display:none}
@@ -642,7 +641,7 @@ button.ao-schola-control{cursor:pointer}
 .ao-schola-control[data-schola-previous]:disabled,.ao-schola-control[data-schola-next]:disabled{
   opacity:.25;cursor:default
 }
-/* Preserve the frozen 4-column donor geometry in SIMPLE and MISSAL.
+/* Preserve the frozen 4-column donor geometry in MISSAL.
    In LIVE only, expose explicit independent phrase correction at 320px+. */
 .ao-reader-shell:not([data-mode="LIVE"]) .ao-schola-control[data-schola-previous],
 .ao-reader-shell:not([data-mode="LIVE"]) .ao-schola-control[data-schola-next]{display:none!important}
@@ -1011,7 +1010,7 @@ button.ao-schola-control{cursor:pointer}
 }
 
 /* Dedicated bilingual book view. This is intentionally scoped to
- * MISSAL, leaving LIVE gesture/cue and SIMPLE narration untouched. */
+ * MISSAL, leaving LIVE gesture/cue behaviour untouched. */
 .ao-reader-shell[data-mode="MISSAL"]{
   --ao-missal-column-gap:clamp(16px,3.4vw,48px);
 }
@@ -1143,7 +1142,7 @@ button.ao-schola-control{cursor:pointer}
 /* Fixed-height LIVE cards must have genuine paragraph runway, even when
    source text is shorter than the viewport. Percentage is relative to the
    scroller content box, not measured during transient ribbon/dock layout. */
-.ao-reader-shell:is([data-mode="LIVE"],[data-mode="SIMPLE"]) .ao-prayer-card .ao-prayer-body[data-ao-reading-runway="true"]{
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-card .ao-prayer-body[data-ao-reading-runway="true"]{
   min-height:calc(100% + var(--ao-min-reading-travel,72px));
 }
 
@@ -1168,8 +1167,7 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="RUBRIC"]::before{display:none}
 /* LIVE is an operational Mass companion, never an explanatory Guide.
    Keep the original posture/position ribbon; remove its centre Guide tile. */
-.ao-reader-shell[data-mode="LIVE"] .ao-state-ribbon,
-.ao-reader-shell[data-mode="SIMPLE"] .ao-state-ribbon{
+.ao-reader-shell[data-mode="LIVE"] .ao-state-ribbon{
   grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
 }
 .ao-reader-shell .ao-state-guide,
@@ -2022,7 +2020,7 @@ export function buildReaderShellMarkup(prepared = {}) {
   <div class="ao-section-menu" data-role="section-menu" hidden></div>
   <aside class="ao-mass-prefs" data-role="mass-preferences" data-open="false" aria-label="Mass preferences">
     <div class="ao-mass-prefs-head"><b>Mass preferences</b><button class="ao-mass-prefs-close" type="button" data-reader-preferences-close aria-label="Close preferences">×</button></div>
-    <div class="ao-mass-prefs-group"><small>Reader mode</small><nav class="ao-mode-ribbon" aria-label="Reader mode">${["MISSAL","SIMPLE","LIVE"].map(m => `<button type="button" data-reader-mode="${m}" aria-pressed="${String(m===mode)}"><span>${m}</span></button>`).join("")}</nav></div>
+    <div class="ao-mass-prefs-group"><small>Reader mode</small><nav class="ao-mode-ribbon" aria-label="Reader mode">${["MISSAL","LIVE"].map(m => `<button type="button" data-reader-mode="${m}" aria-pressed="${String(m===mode)}"><span>${m}</span></button>`).join("")}</nav></div>
     <div class="ao-mass-prefs-group ao-customary-controls" role="group" aria-label="Local Mass customs">
       <small>Local participation customs</small>
       <label>Posture tradition<select data-reader-customary="postureProfile" aria-label="Posture tradition">
@@ -3484,7 +3482,7 @@ export function createReaderDomAdapter({
       // can otherwise be bypassed by the terminal-cue edge rule before
       // the focus line ever reaches them (Pater noster C0210).
       const openingTravel=Math.max(0,(center-firstCenter)/1.8)+64;
-      // Long composite Simple cards can place the penultimate cue beyond
+      // Long composite source cards can place the penultimate cue beyond
       // 1800px; the former cap made C0199 (Per quem) unreachable.
       const guaranteed=Math.min(3600,Math.max(baseline,
         Math.ceil(requiredScroll+28),Math.ceil(openingTravel)));
