@@ -2495,9 +2495,27 @@ export async function mountNativeReaderPreview({
     if(!blessing || blessing.firstParagraphIndex==null || !blessing.paragraphCount)return card;
     const start=blessing.firstParagraphIndex;
     const end=start+blessing.paragraphCount;
+    if(!Number.isInteger(start)||start<0||end>card.paragraphs.length)
+      throw new Error("INVALID_FINAL_BLESSING_SOURCE_BOUNDARY");
     const paragraphs=card.paragraphs.filter((_,index)=>index<start||index>=end);
     if(!paragraphs.length && !card.stateOnly)return null;
-    return Object.freeze({...card,title:"Placeat tibi, sancta Trinitas",paragraphs:Object.freeze(paragraphs),planFilteredBlocks:Object.freeze(["AO.SM.B092"])});
+    // The closing prayer and the optional final blessing have distinct
+    // source owners. Removing B092 must also rebase the displayed block
+    // offsets, otherwise LIVE reading-section ownership points past the
+    // remaining paragraphs during Requiem/Corpus following-action handoff.
+    const blocks=(card.blocks??[]).map(block=>{
+      if(block.blockId==="AO.SM.B092")return Object.freeze({...block,
+        firstParagraphIndex:null,paragraphCount:0,omittedByPlan:true});
+      if(block.firstParagraphIndex==null||!block.paragraphCount)return block;
+      const first=block.firstParagraphIndex,last=first+block.paragraphCount;
+      if(first>=end)return Object.freeze({...block,firstParagraphIndex:first-blessing.paragraphCount});
+      if(first<end&&last>start)
+        throw new Error("FINAL_BLESSING_SOURCE_BLOCK_OVERLAP:"+block.blockId);
+      return block;
+    });
+    return Object.freeze({...card,title:"Placeat tibi, sancta Trinitas",
+      paragraphs:Object.freeze(paragraphs),blocks:Object.freeze(blocks),
+      planFilteredBlocks:Object.freeze(["AO.SM.B092"])});
   }
 
   function isLastGospelCard(card){
