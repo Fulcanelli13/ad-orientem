@@ -50,6 +50,7 @@ class OfficeCells(HTMLParser):
         self.skip = 0
         self.headline: list[str] = []
         self.in_headline = False
+        self.headline_started = False
         self.seen_h2 = False
         self.body = False
 
@@ -63,9 +64,10 @@ class OfficeCells(HTMLParser):
             return
         if self.skip:
             return
-        if tag == "p" and self.body and not self.seen_h2 and not self.in_headline:
+        if tag == "p" and self.body and not self.seen_h2 and not self.headline_started:
             if "cen" in attrs.get("class", "").split():
                 self.in_headline = True
+                self.headline_started = True
         if tag == "h2" and self.body:
             self.seen_h2 = True
         if tag == "td":
