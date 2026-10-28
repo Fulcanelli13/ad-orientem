@@ -145,7 +145,7 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
    without replacing, advancing or scrolling the canonical prayer card. */
 #aoPray435930[data-ao-contemplative-daily="guided"] .aoDailyClockPanel{
  position:fixed!important;
- inset:auto auto calc(110px + env(safe-area-inset-bottom)) 50%!important;
+ inset:auto auto calc(122px + env(safe-area-inset-bottom)) 50%!important;
  transform:translateX(-50%);
  z-index:40;
  box-sizing:border-box;
