@@ -258,6 +258,61 @@ const attachedCommemoration=properToReaderSlots({
 assert.equal(attachedCommemoration.slots.COLLECT_SET.status,"MISSING",
   "Source-attested Perpetua/Felicity commemoration under Lenten Mass must fail closed");
 assert.equal(attachedCommemoration.slots.SECRET_SET.status,"MISSING");
+// Production DayResolver does NOT annotate each commemorative prayer row
+// with sourcePath. It supplies the authenticated calendarCommemorations list.
+// The row-count and exact owner identity must be reconciled before display.
+const realistic2026Commemoration={
+ ...frenchProper,sourcePath:"Tempora/Quad2-5",
+ calendarCommemorations:[{path:"Sancti/03-06",
+    prayerSourcePath:"Sancti/03-06",name:"Sts. Felicitas & Perpetua"}],
+ collects:[{lat:"Ferial Collect",fr:"Collecte de la férie"},
+   {lat:nonVirginLatin,fr:incorrectFrench}],
+ secrets:[{lat:"Ferial Secret",fr:"Secrète de la férie"},
+   {lat:nonVirginLatin,fr:incorrectFrench}],
+ postcommunions:[{lat:"Ferial Postcommunion",fr:"Postcommunion de la férie"},
+   {lat:"Postcommunio Martyrum",fr:"Postcommunion des martyres"}]
+};
+const real2026=properToReaderSlots(realistic2026Commemoration,{language:"fr"});
+assert.equal(real2026.slots.COLLECT_SET.status,"MISSING",
+ "Exact 6 March source-owned second Collect must not display the wrong Virgin identity");
+assert.equal(real2026.slots.SECRET_SET.status,"MISSING",
+ "Exact 6 March source-owned second Secret must not display the wrong Virgin identity");
+assert.equal(real2026.slots.POSTCOMMUNION_SET.status,"READY",
+ "The independent named Postcommunion must remain visible");
+const fixed2026=properToReaderSlots({...realistic2026Commemoration,
+ collects:[realistic2026Commemoration.collects[0],
+  {...realistic2026Commemoration.collects[1],
+   fr:incorrectFrench.replace("Vierges et ","")}],
+ secrets:[realistic2026Commemoration.secrets[0],
+  {...realistic2026Commemoration.secrets[1],
+   fr:incorrectFrench.replace("Vierges et ","")}]
+},{language:"fr"});
+assert.equal(fixed2026.slots.COLLECT_SET.status,"READY",
+ "Correct source-identified French commemoration must remain renderable");
+assert.equal(fixed2026.slots.SECRET_SET.status,"READY");
+const mismatchedCount=properToReaderSlots({...realistic2026Commemoration,
+ collects:realistic2026Commemoration.collects.slice(1),
+ secrets:realistic2026Commemoration.secrets.slice(1)
+},{language:"fr"});
+assert.equal(inspect1962PluralMartyrsFrenchOrationSource({
+ ...realistic2026Commemoration,collects:realistic2026Commemoration.collects.slice(1)
+},"COLLECT_SET"),null,"Ambiguous row index must not invent a source identity");
+const anotherCommemoration=properToReaderSlots({...realistic2026Commemoration,
+ calendarCommemorations:[{path:"Sancti/11-11cc",prayerSourcePath:"Sancti/11-11cc"}]
+},{language:"fr"});
+assert.equal(anotherCommemoration.slots.COLLECT_SET.status,"READY",
+ "Do not misattribute another saint's source to Perpetua/Felicity");
+assert.equal(anotherCommemoration.slots.SECRET_SET.status,"READY");
+const multipleUnderOneConclusion=properToReaderSlots({...realistic2026Commemoration,
+ collects:[realistic2026Commemoration.collects[0],
+   {...realistic2026Commemoration.collects[1],oneConclusion:{status:"UNVERIFIED"}}]
+},{language:"fr"});
+assert.equal(inspect1962PluralMartyrsFrenchOrationSource({
+ ...realistic2026Commemoration,collects:[realistic2026Commemoration.collects[0],
+   {...realistic2026Commemoration.collects[1],oneConclusion:{status:"UNVERIFIED"}}]
+},"COLLECT_SET"),null,
+ "Do not infer individual owner through one-conclusion group boundaries");
+
 const unmarkedCommemoration=properToReaderSlots({...frenchProper,sourcePath:"Tempora/Quad2-5",
   collects:[{lat:nonVirginLatin,fr:incorrectFrench}],
 },{language:"fr"});
