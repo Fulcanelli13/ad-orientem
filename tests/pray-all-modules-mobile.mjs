@@ -582,6 +582,38 @@ try{
    assert.equal(await page.locator("#aoPray435930.open [data-n1-select]").count(),16,
      "A detail Back tap must restore the source-backed Novena overview: "+id);
  }
+ // B25: separate original-English Holy Face supplement, original sixteen novenas remain frozen.
+ const holyFace="#aoPray435930.open";
+ assert.equal(await page.locator(holyFace+" [data-n1-select]").count(),16,"B25 must not alter the sixteen bilingual novenas");
+ const holyChoice=page.locator(holyFace+' [data-n1-supplement="holy_face_1887"]');
+ assert.equal(await holyChoice.count(),1,"Historical Holy Face appears in existing Novenas overview");
+ await holyChoice.tap({timeout:9000});
+ assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3?.state?.()?.id),"holy_face_1887");
+ assert.equal(await page.locator(holyFace+' [data-n1-day]').count(),9,"Nine complete historical days must be navigable");
+ await page.locator(holyFace+' [data-n1-mode="simple"]').tap();
+ await page.locator(holyFace+' [data-n1-begin]').tap();
+ assert.equal(await page.locator(holyFace+' [data-ao-novena-deck="simple"]').count(),1);
+ const firstHoly=await page.locator(holyFace+" .aoN1SourceText").innerText();
+ for(const fragment of [/Bethlehem/i,/Spiritual Bouquet/i,/Virtue/i,/I\./,/II\./,/III\./,/Amen\./]){
+   assert.match(firstHoly,fragment,"Holy Face day 1 must retain complete source part: "+fragment);
+ }
+ assert.ok(firstHoly.length>3200,"Day 1 should contain its entire historical meditation, not an editorial précis");
+ await page.locator(holyFace+" details.aoN1DayDisclosure > summary").tap({timeout:9000});
+ assert.equal(await page.locator(holyFace+" details.aoN1DayDisclosure").evaluate(el=>el.open),true,"Days disclosure must expand before touch navigation");
+ await page.locator(holyFace+' [data-n1-day="9"]').tap({timeout:9000});
+ const ninthHoly=await page.locator(holyFace+" .aoN1SourceText").innerText();
+ assert.match(ninthHoly,/Resurrection/i);
+ assert.match(ninthHoly,/Spiritual Bouquet/i);
+ assert.match(ninthHoly,/Amen\./);
+ assert.ok(ninthHoly.length>3000,"Day 9 original closing and meditations must survive");
+ await page.screenshot({path:resolve(root,"artifacts/pray-b25-holy-face-day9-390.png"),animations:"disabled"});
+ await page.setViewportSize({width:320,height:720});
+ assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),"B25 full original must not overflow at 320px");
+ await page.screenshot({path:resolve(root,"artifacts/pray-b25-holy-face-day9-320.png"),animations:"disabled"});
+ await page.setViewportSize({width:390,height:844});
+ await page.locator(holyFace+" [data-n1-back]").tap();
+ await page.locator(holyFace+" [data-n1-back]").tap();
+ assert.equal(await page.locator(holyFace+" [data-n1-select]").count(),16,"B25 must preserve existing Novena overview on Back");
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
  await page.waitForSelector("#aoPray435930 [data-p435930-lib-open]",{timeout:10000});
  const ids=await page.locator("#aoPray435930 [data-p435930-lib-open]").evaluateAll(nodes=>nodes.map(x=>x.dataset.p435930LibOpen));
