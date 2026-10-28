@@ -445,6 +445,11 @@ export async function prepareNativeReaderPreview({
   // No mixed preceding+following graph is automatically certified here.
   const singleFollowing=following.length===1 ? following[0] : null;
   const compatibleFollowing=following.length===0 ||
+    (preceding.length===0 && singleFollowing==="REQUIEM_ABSOLUTION" &&
+      Boolean(loadedRequiemAbsolution) &&
+      (plan?.overlayGraphs??[]).includes("REQUIEM") &&
+      plan?.dismissal==="REQUIESCANT_IN_PACE" &&
+      plan?.blessingAllowed===false && plan?.normalLastGospel===false) ||
     (preceding.length===0 && singleFollowing==="GENERIC_PROCESSION" &&
       Boolean(loadedGenericProcession) && plan?.blessingAllowed!==false &&
       plan?.normalLastGospel!==false) ||
