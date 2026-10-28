@@ -518,6 +518,33 @@ try{
  await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.screen==="overview",null,{timeout:10000});
  assert.equal(await page.locator("#aoPray435930.open [data-n1-select]").count(),16,
    "The ICKSP additional entry displaced an original novena");
+ // ICKSP's Pius X annual feast-inclusive repeat-form novena is distinct from
+ // Moran's 29 Nov–7 Dec day-specific original, and from the monthly Infant King.
+ assert.equal(await page.locator("#aoPray435930.open [data-n1-select='immaculate_conception']").count(),1,
+   "Moran's original Immaculate novena must remain visible");
+ assert.equal(await page.locator("#aoPray435930.open [data-n1-supplement]").count(),2,
+   "Institute supplement must show Infant King and Pius X as two separate entries");
+ await page.locator("#aoPray435930.open [data-n1-supplement='icksp_immaculate_conception']").tap();
+ await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.id==='icksp_immaculate_conception'
+   &&globalThis.AO_NOVENAS_V3?.state?.()?.screen==='detail',null,{timeout:10000});
+ assert.equal(await page.locator("#aoPray435930.open [data-n1-day]").count(),9,
+   "Institute feast-inclusive prayer must expose nine actual days");
+ assert.match(await page.locator("#aoPray435930.open [data-ao-novena-detail]").innerText(),
+   /30 Nov|30 novembre|30 nov/i,"Institutional 30 Nov–8 Dec observance not labelled");
+ await page.locator("#aoPray435930.open [data-n1-mode='simple']").tap();
+ await page.locator("#aoPray435930.open [data-n1-begin]").tap();
+ const immaculatePiusX=await page.locator("#aoPray435930.open [data-ao-novena-deck='simple']").innerText();
+ assert.match(immaculatePiusX,/Most holy Virgin|Vierge très sainte/i,
+   "Historic St Pius X prayer failed to render in original language");
+ assert.doesNotMatch(immaculatePiusX,/Day one proper prayer|Prière propre au premier jour/i,
+   "Invented daily prayer was inserted into the repeat-only Institute witness");
+ await page.locator("#aoPray435930.open [data-n1-day-next]").tap();
+ assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3?.state?.()?.day),2,
+   "Institute prayer day two failed to navigate");
+ await page.locator("#aoPray435930.open [data-n1-back]").tap();
+ await page.locator("#aoPray435930.open [data-n1-back]").tap();
+ assert.equal(await page.locator("#aoPray435930.open [data-n1-select]").count(),16,
+   "Moran or other original novena disappeared after returning from Institute variant");
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
  await page.waitForSelector("#aoPray435930 [data-p435930-lib-open]",{timeout:10000});
  const ids=await page.locator("#aoPray435930 [data-p435930-lib-open]").evaluateAll(nodes=>nodes.map(x=>x.dataset.p435930LibOpen));
