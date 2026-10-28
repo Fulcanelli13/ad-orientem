@@ -8,7 +8,7 @@ import {
   LIVE_LATIN_FIRST_INVITATION_CUES,
 } from "../src/mass/reader-text.js";
 import { properToReaderSlots } from "../src/mass/proper-reader-slots.js";
-import { requiemFootPsalmAndLavaboOmittedCuesForResolvedMass } from "../src/mass/reader-requiem-conditions.js";
+import { requiemFootPsalmAndLavaboOmittedCuesForResolvedMass, requiemGospelOmittedCuesForResolvedMass } from "../src/mass/reader-requiem-conditions.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const low=load("../data/presentation/reader-text-low.v1.json");
@@ -174,6 +174,45 @@ assert.ok(gospelCard.paragraphs.some(p=>p.id==="AO.SM.C0088" && /sins be blotted
   "priest-private Per evangelica dicta disappeared behind Proper replacement");
 assert.equal(gospelCard.paragraphs.filter(p=>/ENGLISH GOSPEL/.test(p.primary)).length,1,
   "Gospel Proper payload was duplicated during fixed-tail composition");
+
+// XIII.1: Requiem Gospel does not include the private Jube/Dominus-sit
+// petition or the book-kiss Per evangelica dicta, but retains Munda cor
+// meum, the Gospel Proper, and the Laus tibi response. Both texts, both forms.
+const gospelOmissions=requiemGospelOmittedCuesForResolvedMass({overlays:["REQUIEM"]});
+assert.deepEqual(gospelOmissions,["AO.SM.C0080","AO.SM.C0088"]);
+assert.deepEqual(requiemGospelOmittedCuesForResolvedMass({overlays:[]}),[]);
+const gospelFrench=load("../data/presentation/reader-french-ordinary.v1.json");
+for(const corpus of [low,sung]){
+ for(const language of ["en","fr"]){
+  const opts={corpus,properSlots,vernacularLanguage:language,
+    frenchOrdinary:gospelFrench};
+  const reqPrep=buildReaderSectionCard({
+    ...opts,section:sections.sectionById("AO.CARD.006"),
+    omittedOrdinaryCues:gospelOmissions,
+  });
+  const reqGospel=buildReaderSectionCard({
+    ...opts,section:sections.sectionById("AO.CARD.007"),
+    omittedOrdinaryCues:gospelOmissions,
+  });
+  const ids=x=>x.paragraphs.flatMap(p=>p.sourceCueIds??[p.id]);
+  assert.ok(ids(reqPrep).includes("AO.SM.C0079"),"Requiem lost Munda cor meum");
+  assert.ok(ids(reqPrep).includes("AO.SM.C0081"),"Requiem lost Gospel-side movement");
+  assert.ok(!ids(reqPrep).includes("AO.SM.C0080"),"Requiem retained Jube Domine");
+  assert.ok(reqGospel.paragraphs.some(p=>p.primary==="ENGLISH GOSPEL"),
+    "Requiem lost resolved Gospel text");
+  assert.ok(ids(reqGospel).includes("AO.SM.C0087"),"Requiem lost Laus tibi");
+  assert.ok(!ids(reqGospel).includes("AO.SM.C0088"),"Requiem retained Per evangelica dicta");
+  const normalPrep=buildReaderSectionCard({
+    ...opts,section:sections.sectionById("AO.CARD.006"),
+  });
+  const normalGospel=buildReaderSectionCard({
+    ...opts,section:sections.sectionById("AO.CARD.007"),
+  });
+  assert.ok(ids(normalPrep).includes("AO.SM.C0080"),"Ordinary Jube Domine changed");
+  assert.ok(ids(normalGospel).includes("AO.SM.C0088"),"Ordinary Gospel kiss changed");
+ }
+}
+console.log("Ritus XIII.1 Requiem Gospel exceptions: PASS — LOW/SUNG EN/FR, Ordinary unchanged.");
 
 const lastGospel=buildReaderSectionCard({
   corpus:sung,
