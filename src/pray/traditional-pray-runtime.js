@@ -2,7 +2,7 @@ import "./traditional-pray-styles.js";
 import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "./dying-companion-flow.js";
 import {JOSEPH_LITANY_1909_V1,JOSEPH_LITANY_2021_V1} from "./st-joseph-litany-1909.v1.js";
-import {B01_FULL_GRACE_1888,B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
+import {B01_FULL_GRACE_1888,B01_SHORT_GRACE_CATECHISM,B01_FRENCH_HOPE_TRADITION,B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import {GOLDEN_ARROW_REPARATION_V1} from "./icksp-golden-arrow-reparation.v1.js";
 import {ICRSP_SEASONAL_HYMNS_V1,ICRSP_SEASONAL_HYMN_IDS_V1} from "./icrsp-seasonal-hymns.v1.js";
 import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabel} from "./guided-daily-cards.js";
@@ -98,18 +98,22 @@ function prayerTitle(p,id){
   return isFr()?(p.titleFr||p.title||id):(p.title||id);
 }
 function prayerCard(id,{focusParagraphs=false}={}){
-  const p=data().prayers?.[id];
-  if(!p)return `<div class="aoTP381Fail">${esc(L("This canonical prayer is unavailable in the current corpus.","Cette prière canonique n’est pas disponible dans le corpus actuel."))}</div>`;
-  const vern=isFr()?(p.fr||p.en||p.la):(p.en||p.fr||p.la),latin=p.la||"",both=!!(vern&&latin);
-  const prov=p.provenance||{};
-  return `<article class="aoTP381PrayerCard"><h3>${esc(prayerTitle(p,id))}</h3>${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${focusParagraphs?prayerParagraphs(vern):nl(vern)}</span><span data-face-la hidden>${focusParagraphs?prayerParagraphs(latin):nl(latin)}</span></button>`:`<div class="aoTP381Reader">${nl(vern||latin)}</div>`}${source(prov.work||p.title||id,prov.url||p.sourceUrl)}</article>`;
+ const isHope=id==="foundations_act_of_hope"&&isFr();
+ const traditional=isHope&&S.hopeFrenchEdition==="traditional";
+ const p=traditional?B01_FRENCH_HOPE_TRADITION:data().prayers?.[id];
+ if(!p)return `<div class="aoTP381Fail">${esc(L("This canonical prayer is unavailable in the current corpus.","Cette prière canonique n’est pas disponible dans le corpus actuel."))}</div>`;
+ const vern=isFr()?(p.fr||p.en||p.la):(p.en||p.fr||p.la),latin=p.la||"",both=!!(vern&&latin);
+ const prov=p.provenance||{};
+ const choice=isHope?`<nav class="aoTP381Tabs" role="group" data-ao-b01-hope-versions aria-label="Version de l'acte d'espérance"><button type="button" data-tp381-b01-hope="published" aria-pressed="${!traditional}" class="${traditional?"":"active"}">Compendium · 2005</button><button type="button" data-tp381-b01-hope="traditional" aria-pressed="${traditional}" class="${traditional?"active":""}">Traditionnel · français</button></nav>`:"";
+ const notice=isHope?`<p class="aoTP381Intro" data-ao-b01-hope-source-status>${esc(traditional?"Cette prière française complète est une version traditionnelle indépendante, non la transcription du Compendium de 2005.":"Cette formulation reproduit le témoin français publié dans le Compendium (2005), y compris « Dans cette foi » ; choisir « Traditionnel » pour une autre version authentiquement attestée.")}</p>`:"";
+ return `${choice}<article class="aoTP381PrayerCard"><h3>${esc(traditional?p.titleFr:prayerTitle(p,id))}</h3>${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${focusParagraphs?prayerParagraphs(vern):nl(vern)}</span><span data-face-la hidden>${focusParagraphs?prayerParagraphs(latin):nl(latin)}</span></button>`:`<div class="aoTP381Reader">${nl(vern||latin)}</div>`}${source(prov.work||p.title||id,prov.url||p.sourceUrl)}${notice}</article>`;
 }
 function prayerRows(rows){
   return `<div class="aoTP381PrayerList">${rows.map(([id,title,note])=>`<button type="button" ${id.includes(".")?`data-tp381-route="${esc(id)}"`:`data-tp381-prayer="${esc(id)}"`}><span><b>${esc(title)}</b><small>${esc(note)}</small></span><i aria-hidden="true">→</i></button>`).join("")}</div>`;
 }
 
 let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={},OPEN_RECEIPT=null,MASS_HANDOFF_BUSY=false;
-let S={dailyTimerOpen:false,dailyLength:"standard",litanyMode:"full",litanyStep:0,mealStep:0,mealForm:"short",examenContrition:"standard",route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",communionStep:0,goodDeathStep:0,goodDeathJosephEdition:"1909",dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false,massStep:0,massDepth:"brief"};
+let S={dailyTimerOpen:false,dailyLength:"standard",litanyMode:"full",litanyStep:0,mealStep:0,mealForm:"short",examenContrition:"standard",hopeFrenchEdition:"published",route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",communionStep:0,goodDeathStep:0,goodDeathJosephEdition:"1909",dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false,massStep:0,massDepth:"brief"};
 
 
 
@@ -439,14 +443,15 @@ function renderNightlyExamen(){
  return `${head(L("Nightly Examination","Examen du soir"))}<main class="aoP435930Body aoTP381DonorBody"><section class="aoDevoCard" data-ao-devo-card="${esc(item?.id||"examen-finished")}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L("Examination of conscience","Examen de conscience"))}">${card}</div></section><details class="aoTP381SecondaryOptions" data-ao-examen-options><summary>${esc(L("About this examination","À propos de cet examen"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("Review the day before God in silence. This brief examen does not replace preparation for sacramental Confession; no answers are collected.","Examinez votre journée devant Dieu, dans le silence. Cet examen bref ne remplace pas la préparation à la Confession sacramentelle ; aucune réponse n’est recueillie."))}</p></div></details><div class="aoTP381PrayerList"><button type="button" data-tp381-route="pray.confession"><span><b>${esc(L("Preparing for sacramental Confession?","Vous préparez-vous à la Confession sacramentelle ?"))}</b><small>${esc(L("Open the full Confession examination","Ouvrir l’examen complet de Confession"))}</small></span><i aria-hidden="true">→</i></button></div></main>`;
 }
 function renderMealPrayers(){
- const before=S.mealStep!==1,full=!before&&S.mealForm==="full";
+ const before=S.mealStep!==1,full=!before&&S.mealForm==="full",catechism=!before&&S.mealForm==="catechism";
  const id=before?"foundations_grace_before_meals":"foundations_grace_after_meals";
  const title=before?L("Before meals","Avant le repas"):L("After meals","Après le repas");
- const choice=before?"":`<nav class="aoTP381Tabs" role="group" aria-label="${esc(L("Grace after Meals version","Version des grâces après le repas"))}"><button type="button" data-tp381-b01-meal="short" aria-pressed="${!full}" class="${!full?"active":""}">${esc(L("Ordinary","Habituel"))}</button><button type="button" data-tp381-b01-meal="full" aria-pressed="${full}" class="${full?"active":""}">${esc(L("Complete · 1888","Complète · 1888"))}</button></nav>`;
+ const choice=before?"":`<nav class="aoTP381Tabs" role="group" aria-label="${esc(L("Grace after Meals version","Version des grâces après le repas"))}"><button type="button" data-tp381-b01-meal="short" aria-pressed="${!full&&!catechism}" class="${!full&&!catechism?"active":""}">${esc(L("Existing short","Brève existante"))}</button><button type="button" data-tp381-b01-meal="catechism" aria-pressed="${catechism}" class="${catechism?"active":""}">${esc(L("Catechism · short","Catéchisme · brève"))}</button><button type="button" data-tp381-b01-meal="full" aria-pressed="${full}" class="${full?"active":""}">${esc(L("Manual · 1888","Manuel · 1888"))}</button></nav>`;
  const prayer=full?
-   sourcedPrayerCard(B01_FULL_GRACE_1888,L(B01_FULL_GRACE_1888.title,B01_FULL_GRACE_1888.titleFr),{focusParagraphs:true}):prayerCard(id,{focusParagraphs:true});
+   sourcedPrayerCard(B01_FULL_GRACE_1888,L(B01_FULL_GRACE_1888.title,B01_FULL_GRACE_1888.titleFr),{focusParagraphs:true}):catechism?
+   sourcedPrayerCard(B01_SHORT_GRACE_CATECHISM,L(B01_SHORT_GRACE_CATECHISM.title,B01_SHORT_GRACE_CATECHISM.titleFr),{focusParagraphs:true}):prayerCard(id,{focusParagraphs:true});
  const card=`<section class="aoDevoCard" data-ao-devo-card="${before?"meal-before":"meal-after"}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(title)}">${prayer}</div></section>`;
- const context=`<details class="aoTP381SecondaryOptions" data-ao-meal-options><summary>${esc(L("About these prayers","À propos de ces prières"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("The ordinary short Grace stays the default. The complete 1888 Baltimore Manual response-form is an independent optional thanksgiving. Its French wording is an editorial rendering, not an attested historical French edition.","Les grâces habituelles brèves restent la formule par défaut. Le texte complet du Manuel de Baltimore (1888) est une option distincte avec répons ; son français est une traduction éditoriale, non une édition française historique attestée."))}</p>${source("Baltimore Manual · 1888 · Grace after Meals",B01_FULL_GRACE_1888.provenance.url)}</div></details>`;
+ const context=`<details class="aoTP381SecondaryOptions" data-ao-meal-options><summary>${esc(L("About these prayers","À propos de ces prières"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("The existing abridged composite remains the default, with two independently sourced alternatives: the short Baltimore Catechism Grace and complete 1888 Baltimore Manual thanksgiving. Neither historical English witness supplies an original French or Latin translation; the displayed French variants are editorial.","La forme brève composite existante reste par défaut. Deux options distinctes : le Catéchisme de Baltimore (forme brève) et le Manuel de 1888 (action de grâces complète). Leurs versions françaises sont des traductions éditoriales ; aucun latin historique n’est supposé."))}</p>${source("Baltimore Manual · 1888 · Grace after Meals",B01_FULL_GRACE_1888.provenance.url)}${source("Baltimore Catechism No. 3 · short Grace after Meals",B01_SHORT_GRACE_CATECHISM.provenance.url)}</div></details>`;
  return `${head(L("Grace at Meals","Prières des repas"))}<main class="aoP435930Body aoTP381DonorBody">${choice}${card}${context}</main>`;
 }
 function sourcedPrayerCard(item,label,{focusParagraphs=false,verseFocus=false}={}){
@@ -854,7 +859,7 @@ function goHome(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-b01-meal],[data-tp381-b01-contrition],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-b01-meal],[data-tp381-b01-hope],[data-tp381-b01-contrition],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-home]"))return goHome();
@@ -1068,7 +1073,8 @@ function handleClick(e){
 
   if(b.dataset.tp381LitanyMode){S.litanyMode=b.dataset.tp381LitanyMode==="guided"?"guided":"full";S.litanyStep=0;return render()}
   if(b.hasAttribute("data-tp381-litany-step")){S.litanyStep=Math.max(0,Math.min(6,Number(b.dataset.tp381LitanyStep)||0));return render()}
-  if(b.dataset.tp381B01Meal){if(S.route!=="pray.meal_prayers"||S.mealStep!==1)return;S.mealForm=b.dataset.tp381B01Meal==="full"?"full":"short";return render()}
+  if(b.dataset.tp381B01Meal){if(S.route!=="pray.meal_prayers"||S.mealStep!==1)return;S.mealForm=["full","catechism"].includes(b.dataset.tp381B01Meal)?b.dataset.tp381B01Meal:"short";return render()}
+  if(b.dataset.tp381B01Hope){if(!isFr()||S.route!=="pray.morning_evening")return;S.hopeFrenchEdition=b.dataset.tp381B01Hope==="traditional"?"traditional":"published";return render()}
   if(b.dataset.tp381B01Contrition){if(S.route!=="pray.nightly_examen"||S.returnToDaily)return;S.examenContrition=b.dataset.tp381B01Contrition==="piusx"?"piusx":"standard";return render()}
   if(b.dataset.tp381Hymn){S.hymn=hymnById(b.dataset.tp381Hymn)?b.dataset.tp381Hymn:"te_deum";S.hymnLang=null;return render()}
   if(b.dataset.tp381HymnLang){S.hymnLang=["en","fr","la"].includes(b.dataset.tp381HymnLang)?b.dataset.tp381HymnLang:(isFr()?"fr":"en");return render()}
