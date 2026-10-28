@@ -109,11 +109,11 @@ test("Second Advent Vespers score incipits match only the correct Sunday selecti
       {index:1,sourceCellId:"Vespera1",semantic:{role:"OPENING"},text:"Incipit"},
       ...["In illa die","Iucundare","Ecce Dominus veniet","Omnes","Ecce veniet"].map((a,i)=>({
         index:i+2,sourceCellId:"Vespera"+(i+2),semantic:{role:"PSALMODY"},
-        text:"Ant. "+a+" * laudamus.\\nPsalmus "+psalms[i][0]+(psalms[i][1]?"("+psalms[i][1]+")":"")+" [1]"
+        text:"Ant. "+a+" * laudamus.\nPsalmus "+psalms[i][0]+(psalms[i][1]?"("+psalms[i][1]+")":"")+" [1]"
       })),
       {index:7,sourceCellId:"Vespera7",semantic:{role:"CHAPTER_HYMN_VERSE"},text:"Capitulum"},
       {index:8,sourceCellId:"Vespera8",semantic:{role:"GOSPEL_CANTICLE"},
-        text:"Canticum: Magnificat\\nAnt. "+magn+" * gratia"},
+        text:"Canticum: Magnificat\nAnt. "+magn+" * gratia"},
       {index:9,sourceCellId:"Vespera9",semantic:{role:"PRAYER"},text:"Oratio"},
       {index:10,sourceCellId:"Vespera10",semantic:{role:"CONCLUSION"},text:"Conclusio"},
     ]
