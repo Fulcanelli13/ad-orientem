@@ -31,7 +31,7 @@ assert.match(runtime,/id==='king-sacred-heart-litany'/);
 assert.match(runtime,/BEN.step===benStages\(\).length-1/);
 assert.match(runtime,/CHRIST_KING_WITNESSES.consecrationFrench/);
 assert.match(runtime,/CHRIST_KING_WITNESSES.consecrationEnglish/);
-assert.match(runtime,/BEN=\{step:0,divinePraises:false,celebration:'ordinary'/);
+assert.match(runtime,/BEN=\{step:0,divinePraises:false,praisesForm:'1962',celebration:'ordinary'/);
 
 
 const royalCalls=CHRIST_KING_LAUDES_SECTIONS.map(section=>section.calls.length);
