@@ -20,6 +20,7 @@ export const BATCH03_LITANY_EDITION_POLICY=Object.freeze({
     sourceUrl:"https://icrspfrance.fr/textes-liturgiques.php?article=a0087_nouveau",
     additionalSourceUrl:"https://icrspfrance.fr/textes-liturgiques.php?article=a0106_nouveau",
     rubric:"1960 General Rubrics 80–90: conditional procession or other supplications; prescribed litany and prayers",
+    rubricConflict:"Rubricae generales (1960), n. 82 states that the Litany is not doubled in the Major procession. An older commentary reproduced on the ICRSP page describes doubled invocations; treat it as historical commentary, not a 1962 performance instruction.",
     localVariation:true}),
   vigil:Object.freeze({id:"vigil",labelEn:"Easter Vigil · distinct shorter litany",
     labelFr:"Vigile pascale · litanies abrégées distinctes",
@@ -41,6 +42,7 @@ export const BATCH03_ICRSP_MAJOR_PROCESSION_STEPS=Object.freeze([
 ]);
 export const BATCH03_LITANY_SOURCE_STATUS=Object.freeze({
   latinFrench:"SOURCE_IDENTIFIED_LINE_COLLATION_PENDING",
+  rubrics1960:"SOURCE_CONFLICT_DOUBLE_INVOCATIONS_HELD_AND_FLAGGED",
   comparisonEnglish1883:"DISTINCT_PRIVATE_1883_WITNESS_NOT_1962",
   comparisonFrench1862:"DISTINCT_PRIVATE_1862_WITNESS_NOT_1962",
   offlineComplete1962:"BLOCKED_UNTIL_ENTIRE_EDITION_VERIFIED",
