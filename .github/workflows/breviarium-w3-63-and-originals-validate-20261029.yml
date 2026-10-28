@@ -1,0 +1,28 @@
+name: Breviarium W3 - sixty-three quality records and four original hashes
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/breviarium-w3-63-and-originals-validate-20261029.yml
+      - scripts/art/validate-breviarium-w3-63-and-w3b-20261029.mjs
+      - data/calendar/sacred-art-breviarium-83-w3-weak-photo-alternatives-20261029.v1.json
+      - data/calendar/sacred-art-breviarium-83-gallery-intake-20261029.v1.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  protect-editorial-and-verify-archived-original-hashes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Assert 35 and 28 source gates plus SHA1 and SHA256
+        run: |
+          node --check scripts/art/validate-breviarium-w3-63-and-w3b-20261029.mjs
+          node scripts/art/validate-breviarium-w3-63-and-w3b-20261029.mjs
