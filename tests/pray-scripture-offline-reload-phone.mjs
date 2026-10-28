@@ -37,10 +37,32 @@ try{
  };
  wire(page);
  await page.goto(origin,{waitUntil:"load",timeout:90000});
- await page.waitForFunction(()=>globalThis.AO_OFFLINE_APP_V1?.status?.ready===true,null,{timeout:90000});
+ await page.waitForFunction(()=>globalThis.AO_OFFLINE_APP_V1?.status?.ready===true ||
+  Boolean(globalThis.AO_OFFLINE_APP_V1?.status?.error),null,{timeout:90000}).catch(async error=>{
+   const context=await page.evaluate(()=>({status:globalThis.AO_OFFLINE_APP_V1?.status??null,
+     serviceWorker:('serviceWorker' in navigator),controller:!!navigator.serviceWorker?.controller,
+     href:location.href})).catch(e=>({readError:String(e)}));
+   throw new Error("Offline bootstrap wait failed: "+JSON.stringify(context),{cause:error});
+  });
+ const bootstrap=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1?.status??null);
+ assert.equal(bootstrap?.error,null,"Transactional offline bootstrap failed before Prayer test: "+JSON.stringify(bootstrap));
+ assert.equal(bootstrap?.ready,true,"Transactional offline bootstrap never became ready: "+JSON.stringify(bootstrap));
  const ready=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.equal(ready.error,null,"Transactional bootstrap failed: "+JSON.stringify(ready));
  assert.ok(ready.version,"No complete offline app snapshot");
+ // Measure the completed and cryptographically verified resource snapshot.
+ // The presence of READY is meaningful only after the transactional commit.
+ const certified=await page.evaluate(async()=>{
+  const status=globalThis.AO_OFFLINE_APP_V1.status;
+  const cache=await caches.open("ao-bootstrap-snapshot-v1-"+status.version);
+  const entries=await cache.keys();
+  const marker=entries.find(x=>x.url.includes("__ao_bootstrap_completed__"));
+  const metadata=marker?await (await cache.match(marker)).json():null;
+  return {entries:entries.length,files:metadata?.files??null,bytes:metadata?.bytes??null};
+ });
+ console.log("OFFLINE_CERTIFIED_GRAPH "+JSON.stringify(certified));
+ assert.ok(certified.files>0&&certified.files<=416,"Unexpected measured offline graph size: "+JSON.stringify(certified));
+ assert.ok(certified.bytes>0&&certified.bytes<=35_000_000,"Offline byte ceiling must remain enforced");
 
  const openPrayer=async(p,route)=>{
   await p.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});

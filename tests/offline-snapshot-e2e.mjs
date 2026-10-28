@@ -92,8 +92,8 @@ try{
    return {...meta,missing};
  });
  assert.deepEqual(firstSnapshot.missing,[],"First-use Prayer lazy entry modules not in completed snapshot");
- assert.ok(firstSnapshot.files<=384 && firstSnapshot.bytes<=35000000,
-  "Offline Rosary change exceeded transactional bootstrap limits");
+ assert.ok(firstSnapshot.files>0 && firstSnapshot.files<=416 && firstSnapshot.bytes<=35000000,
+  "Measured first-use graph must fit its 416-resource and 35 MB transactional limits: "+JSON.stringify(firstSnapshot));
  console.log("OFFLINE_FIRST_USE_SNAPSHOT="+JSON.stringify(firstSnapshot));
  await context.setOffline(true);
  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
@@ -170,9 +170,10 @@ try{
   "First-use offline Divine Mercy did not render French opening prayer");
  assert.match(await page.locator("#aoPray435930.open [data-ao-mercy-bead-navigation] .aoMercyBeadPosition").innerText(),/Prières initiales/i,
   "First-use offline Divine Mercy lost its French prayer counter");
- await page.locator("#aoPray435930.open [data-p435930-mercy-next]").first().evaluate(el=>el.click());
- assert.match(await page.locator("#aoPray435930.open .aoMercyControls span").innerText(),/Notre Père/i,
-  "First-use offline Divine Mercy did not advance");
+ await page.locator("#aoPray435930.open [data-p435930-mercy-jump=\'4\']").tap();
+ assert.match(await page.locator("#aoPray435930.open .aoMercyPrayer").innerText(),/Père éternel/i,
+  "First-use offline Divine Mercy did not advance to the first large bead");
+ assert.equal(await page.locator("#aoPray435930.open .aoMercyBeadNavigation [role=\'progressbar\']").getAttribute("aria-valuenow"),"5");
  assert.match(await page.locator("#aoPray435930.open .aoMercySource a").getAttribute("href"),
   /^https:\/\/www\.vaticannews\.va\/fr\//,
   "Offline Divine Mercy lost its source link");
@@ -221,9 +222,9 @@ try{
   "First-use Stations should open at the first station");
  assert.ok((await stationRoot.locator(".aoP435930Stations").innerText()).length>150,
   "Offline Stations returned an empty prayer");
- await stationRoot.locator("[data-p435930-station-next]").first().evaluate(x=>x.click());
+ await stationRoot.locator("[data-p435930-station-step=\'1\']").tap();
  await page.waitForFunction(()=>document.querySelector("#aoPray435930.open [data-p435930-station-step='1'][aria-current='step']"),null,{timeout:12000});
- await stationRoot.locator("[data-p435930-station-prev]").first().evaluate(x=>x.click());
+ await stationRoot.locator("[data-p435930-station-step=\'0\']").tap();
  await page.waitForFunction(()=>document.querySelector("#aoPray435930.open [data-p435930-station-step='0'][aria-current='step']"),null,{timeout:12000});
  assert.ok(await stationRoot.locator("details.aoP435930Source a.aoP435930SourceLink").count(),
   "Offline Stations omitted the original historical witness link");

@@ -11,7 +11,9 @@ export const CHRIST_KING_WITNESSES=Object.freeze({
   "sacredHeartLitany": "https://www.icrsp.org/Litanies-Sacre-Coeur",
   "christKingOrdo": "https://icrspfrance.fr/ordo.php?d=2026-10-01"
 });
-export const CHRIST_KING_OPTION_DEFAULTS=Object.freeze({procession:true,royalPraises:true,sacredHeartLitany:false,consecration:true});
+// Local Christ the King ceremonies must be observed or explicitly selected; no
+// procession, chant or consecration is presumed from the feast-name switch.
+export const CHRIST_KING_OPTION_DEFAULTS=Object.freeze({procession:false,royalPraises:false,sacredHeartLitany:false,consecration:false});
 export const CHRIST_KING_EXTRA_STAGES=Object.freeze([
  ["king-procession","Eucharistic procession","Procession eucharistique","procession"],
  ["king-royal-praises","Christus vincit","Christus vincit","royalPraises"],

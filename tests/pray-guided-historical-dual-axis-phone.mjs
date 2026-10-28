@@ -122,6 +122,8 @@ try{
  assert.equal(await page.locator(rootSel+" [data-p435930-word-done]").count(),1);
   assert.equal(await wordProgress.getAttribute("aria-valuenow"),"7");
  await open("pray.forty_hours");
+ assert.equal(await page.locator("[data-ao-forty-mode=choose]").count(),1,"Forty Hours now explicitly offers visitor and solemn paths");
+ await page.locator("[data-p435930-forty-mode=visitor]").tap();
  await page.waitForSelector(timeline,{timeout:12000});
  s=await snapshot();assert.deepEqual({owner:s.owner,chapters:s.chapters,index:s.index},
   {owner:"fortyHours",chapters:6,index:0});

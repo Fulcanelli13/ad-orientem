@@ -24,7 +24,7 @@ import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleRespon
 import { rosaryGuideSections } from "./rosary-guide-data.js";
 import { rosaryNamedChapters,rosaryCurrentChapter } from "./rosary-card-chapters.js";
 import {installRosaryActiveCard} from "./rosary-active-card.js";
-import { divineMercySteps, mercyStepText, MERCY_WITNESSES, rosaryPlan, ROSARY_METHODS } from "./devotional-methods-v1.js";
+import { divineMercySteps, mercyStepText, MERCY_WITNESSES, MERCY_OPTIONAL_OPENINGS, rosaryPlan, ROSARY_METHODS } from "./devotional-methods-v1.js";
 import {mercyBeadNavHTML,updateMercyBeadNav} from "./mercy-bead-presentation.js";
 import { applyRosaryScripturePolicy } from "./rosary-scripture-policy.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
@@ -41,6 +41,11 @@ import { parseSevenWordsHistoricalWitness } from "./seven-words-witness.v1.js";
 import { prayCollationNotice } from "./source-collation-notices.v1.js";
 import { prayerCompendiumFrenchWitness } from "./compendium-french-witnesses.v1.js";
 import {christKingStages,CHRIST_KING_OPTION_DEFAULTS,CHRIST_KING_CONSECRATION,CHRIST_KING_ROYAL_PRAISES,CHRIST_KING_WITNESSES} from "./christ-king-benediction.js";
+import {benedictionAlleluiaStatus,benedictionVersiclesForDate,BENEDICTION_1962_WITNESS} from "./benediction-1962.js";
+import {divinePraisesForForm,DIVINE_PRAISES_EDITION} from "./benediction-divine-praises.js";
+import {FORTY_HOURS_SOLEMN_SOURCE,FORTY_HOURS_SOLEMN_STAGES,fortySolemnAt} from "./forty-hours-solemn.js";
+import {EUCHARISTIC_WITNESS_IDS,getEucharisticWitness,EUCHARISTIC_SOURCE} from "./eucharistic-witnesses.js";
+import {instituteOptionalFor} from "./icksp-batch02-optional.js";
 import {SACRED_HEART_DEVOTIONS_V382} from "./traditional-pray-data.js";
 
 // Locked v43.59.30 PRAY presentation runtime. Kept intact inside a browser-only
@@ -232,7 +237,7 @@ let rosaryScriptureReturn=null;
 let ROSARY_CHOOSER={method:'ordinary',decades:5,guide:S.rosary.mode==='guided'?'guided':'simple',optionsOpen:false};
 function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,since:''}}
 let CONF=freshConfessionState();
-let BEN={step:0,divinePraises:false,celebration:"ordinary",feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};
+let BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:"ordinary",feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};
 let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};
 // Adoration preserves an explicit, secondary handoff to the distinct public
 // Benediction reader. The wording indicates whether this is a first visit or
@@ -244,7 +249,7 @@ let FS={step:0,intention:false,communion:false,rosary:false,meditation:false,con
 let PEN={step:0,token:0};
 let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null};
 let SEVEN={step:0,sections:null,appendix:'',loading:false,error:'',srcToken:0,scriptToken:0};
-let FORTY={step:0};
+let FORTY={mode:'choose',step:0,solemnStep:0};
 let STATIONS={step:0,optionsOpen:false,publicPosture:false};
 // An explicitly selected public Stations method owns its local recitation/depth.
 // A shared Rosary or prayer-settings preference must not silently deactivate it.
@@ -387,7 +392,7 @@ function open(id,opts={}){
   else if(id==='pray.divine_mercy'){view='mercy';MERCY.step=0;}
   else if(id==='pray.rosary_methods'){view='rosaryMethods';}
   else if(id==='pray.confession'){view='confession';CONF=freshConfessionState();}
-  else if(id==='pray.benediction')view='benediction';
+  else if(id==='pray.benediction'){view='benediction';BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};}
   else if(id==='pray.adoration')view='adoration';
   else if(id==='pray.stations'){view='stations';STATIONS.step=0}
   else if(id==='pray.visit_blessed_sacrament'){view='adoration';ADOR.mode='visit'}
@@ -396,7 +401,7 @@ function open(id,opts={}){
   else if(id==='pray.litany_saints'){view='litany';LIT.step=0}
   else if(id==='pray.seven_words'){view='sevenWords';SEVEN.step=0}
   else if(id==='pray.tenebrae'){view='tenebrae';TEN.day=0;TEN.hour='MATINS';TEN.step=0;TEN.guided=true;TEN.model=null;TEN.error=null;TEN.epoch++}
-  else if(id==='pray.forty_hours'){view='fortyHours';FORTY.step=0}
+  else if(id==='pray.forty_hours'){view='fortyHours';FORTY={mode:'choose',step:0,solemnStep:0}}
   else if(id==='pray.de_profundis'){view='prayerOnly';prayerReturnView='home';prayerId='dead_de_profundis'}
   else if(id==='pray.eternal_rest'){view='prayerOnly';prayerReturnView='home';prayerId='foundations_eternal_rest'}
   else if(id==='programme.first_friday')view='firstFriday';
@@ -414,7 +419,7 @@ function close({silent=false,preserve=false}={}){
     praySessionLanguage=null;
     // Privacy-sensitive preparation is memory-only and is cleared on a true close.
     CONF=freshConfessionState();
-    BEN={step:0,divinePraises:false};ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};adorationQuietReturn=null;
+    BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};adorationQuietReturn=null;
     if(!silent){FF={step:0,intention:false,communion:false};FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0}}
   }
   const ret=returnContext;returnContext=null;if(!silent&&!preserve){navStack=[];externalResume=null}if(!silent&&ret)queueMicrotask(()=>{if(ret?.surface==='apostolate')void window?.AO_APP_SHELL_V1?.navigate?.('apostolate');else window.AO_NAV_V362?.restore?.(ret)});
@@ -534,7 +539,7 @@ function devotionalGuide(id){
 }
 
 function prayerBlock(id,opts={}){
- const p=P(id);if(!p)return callout(esc(L('Prayer unavailable in this build.','Prière indisponible dans cette version.')),'warn');
+ const p=opts.record||P(id);if(!p)return callout(esc(L('Prayer unavailable in this build.','Prière indisponible dans cette version.')),'warn');
  const vern=p[lang()]||'',latin=p.la||'',both=!!(latin&&vern),englishOnly=!vern&&!latin&&!!p.en,shown=vern||latin||p.en||'';
  const origin=opts.scriptureContext?prayerScriptureOrigin(id):null;
  const originCapsule=origin?.reference?'<div class="aoP435930ScriptureOrigin" data-ao-prayer-scripture-origin="'+esc(id)+'">'+
@@ -1471,6 +1476,7 @@ function benFeastOptions(){
   '<label class="aoP435930Toggle"><input type="checkbox" data-p435930-ben-feast '+(enabled?'checked':'')+'><span><b>'+esc(L('Christ the King · optional elements','Christ-Roi · éléments facultatifs'))+'</b><small>'+esc(L('This is not a universal order of service.','Ceci n’est pas un ordre de cérémonie universel.'))+'</small></span></label>'+
   (enabled?opts.map(([key,label])=>'<label class="aoP435930Toggle"><input type="checkbox" data-p435930-ben-feast-option="'+key+'" '+(BEN.feastOptions[key]?'checked':'')+'><span><b>'+esc(label)+'</b></span></label>').join(''):'')+
   benFeastSource(L('Pius XI · Quas primas §28','Pie XI · Quas primas §28'),CHRIST_KING_WITNESSES.decree)+
+  benFeastSource(L('2012 Royal Praises witness · not a prescribed local 1962 chant','Témoin des Laudes de 2012 · non un chant local de 1962 prescrit'),CHRIST_KING_WITNESSES.royalPraises)+
   '</div></details>';
 }
 function renderBenediction(){
@@ -1487,12 +1493,15 @@ function renderBenediction(){
   benFeastSource(L('ICKSP Ordo · 25 October 2026','Ordo ICRSP · 25 octobre 2026'),CHRIST_KING_WITNESSES.christKingOrdo);
  if(id==='king-consecration')body=guideNow(L('Act of Dedication of the human race','Acte de consécration du genre humain'),L('This begins “Most sweet Jesus, Redeemer of the human race”, not the different short personal Christ the King prayer.','Cet acte commence par « Très doux Jésus, Rédempteur du genre humain », et diffère de la courte consécration personnelle au Christ-Roi.'))+benFeastPrayer(CHRIST_KING_CONSECRATION,L('Consecration of the human race','Consécration du genre humain'),(isFr()?CHRIST_KING_WITNESSES.consecrationFrench:CHRIST_KING_WITNESSES.consecrationEnglish))+guideCue(L('WAIT FOR','ATTENDEZ'),L('Continue when the consecration ends and Tantum Ergo is actually sung.','Avancez quand la consécration prend fin et que commence effectivement le Tantum Ergo.'));
  if(id==='hymn')body=`${guideNow(L('Pray or sing Tantum Ergo','Priez ou chantez Tantum Ergo'),L('Follow the congregation and local posture. Keep your attention on the Blessed Sacrament rather than on the screen.','Suivez l’assemblée et la posture locale. Gardez votre attention sur le Saint-Sacrement plutôt que sur l’écran.'))}${prayerBlock('benediction_tantum_ergo',{kicker:L('Traditional hymn','Hymne traditionnel')})}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when the minister begins Panem de caelo and the collect that follows.','Avancez lorsque le ministre commence Panem de caelo et l’oraison qui suit.'))}`;
- if(id==='prayer')body=`${guideNow(L('Answer the versicle; listen to the collect','Répondez au verset ; écoutez l’oraison'),L('Make the response with the congregation. The minister then says the collect; do not race ahead of the public rite.','Faites le répons avec l’assemblée. Le ministre récite ensuite l’oraison ; ne devancez pas le rite public.'))}${prayerBlock('benediction_versicles',{kicker:L('Panem de caelo · Deus qui nobis','Panem de caelo · Deus qui nobis')})}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when the minister prepares to give the Eucharistic blessing.','Avancez lorsque le ministre se prépare à donner la bénédiction eucharistique.'))}`;
+ if(id==='prayer')body=`${guideNow(L('Answer the versicle; listen to the collect','Répondez au verset ; écoutez l’oraison'),L('Make the response with the congregation. The minister then says the collect; do not race ahead of the public rite.','Faites le répons avec l’assemblée. Le ministre récite ensuite l’oraison ; ne devancez pas le rite public.'))}${prayerBlock('benediction_versicles',{kicker:L('Panem de caelo · Deus qui nobis','Panem de caelo · Deus qui nobis'),record:{...P('benediction_versicles'),...benedictionVersiclesForDate(P('benediction_versicles'),selectedDateKey())}})}${benFeastSource(L('1961 Graduale · seasonal Alleluia (Paschal time or Corpus Christi feast)','Graduel 1961 · Alleluia saisonnier (temps pascal ou Fête-Dieu)'),BENEDICTION_1962_WITNESS.url)}${!benedictionAlleluiaStatus(selectedDateKey()).known?callout(esc(L('A canonical calendar date was not available; no seasonal Alleluia has been assumed.','Date du calendrier canonique indisponible : l’Alléluia saisonnier n’a pas été présumé.')),'warn'):''}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when the minister prepares to give the Eucharistic blessing.','Avancez lorsque le ministre se prépare à donner la bénédiction eucharistique.'))}`;
  if(id==='blessing')body=`${guideNow(L('Receive the Eucharistic blessing','Recevez la bénédiction eucharistique'),L('Stop interacting with the phone. Attend to the blessing being given with the Blessed Sacrament.','Cessez d’interagir avec le téléphone. Soyez attentif à la bénédiction donnée avec le Saint-Sacrement.'))}${guideCue(L('WAIT UNTIL IT ENDS','ATTENDEZ LA FIN'),L('Do not advance during the blessing. Continue only after it has ended and the service moves on.','N’avancez pas pendant la bénédiction. Continuez seulement lorsqu’elle est terminée et que l’office se poursuit.'))}`;
- if(id==='praises')body=`${guideNow(L('Follow what is actually prayed next','Suivez ce qui est réellement prié ensuite'),L('If the Divine Praises are said here, pray them with the church. If they are omitted, leave them off and continue when Reposition begins.','Si les Louanges divines sont récitées ici, priez-les avec l’assemblée. Si elles sont omises, ne les ajoutez pas et continuez lorsque commence la reposition.'))}<label class="aoP435930Toggle"><input type="checkbox" data-p435930-ben-praises ${BEN.divinePraises?'checked':''}><span><b>${esc(L('The Divine Praises are being said','Les Louanges divines sont récitées'))}</b><small>${esc(L('Show the text only when it belongs to this service','Afficher le texte seulement lorsqu’il appartient à cet office'))}</small></span></label>${BEN.divinePraises?prayerBlock('benediction_divine_praises',{kicker:L('Pray with the church','Prier avec l’assemblée')}):''}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when the Blessed Sacrament is being returned to the tabernacle.','Avancez lorsque le Saint-Sacrement est reporté au tabernacle.'))}`;
+ if(id==='praises')body=`${guideNow(L('Follow what is actually prayed next','Suivez ce qui est réellement prié ensuite'),L('If the Divine Praises are said here, pray them with the church. If they are omitted, leave them off and continue when Reposition begins.','Si les Louanges divines sont récitées ici, priez-les avec l’assemblée. Si elles sont omises, ne les ajoutez pas et continuez lorsque commence la reposition.'))}
+ <label class="aoP435930Toggle"><input type="checkbox" data-p435930-ben-praises ${BEN.divinePraises?'checked':''}><span><b>${esc(L('The Divine Praises are being said','Les Louanges divines sont récitées'))}</b><small>${esc(L('Show the text only when it belongs to this service','Afficher le texte seulement lorsqu’il appartient à cet office'))}</small></span></label>
+ ${BEN.divinePraises?`<div class="aoP435930GuideMode" role="group" aria-label="${esc(L('Divine Praises edition','Version des Louanges divines'))}"><label><input type="radio" name="ao-ben-praises-edition" value="1962" data-p435930-ben-praises-form ${BEN.praisesForm==='1962'?'checked':''}>${esc(L('1962 · 13 invocations','1962 · 13 invocations'))}</label><label><input type="radio" name="ao-ben-praises-edition" value="later" data-p435930-ben-praises-form ${BEN.praisesForm==='later'?'checked':''}>${esc(L('After 1964 · 14 invocations','Après 1964 · 14 invocations'))}</label></div>`+prayerBlock('benediction_divine_praises',{kicker:L('Pray with the church','Prier avec l’assemblée'),record:divinePraisesForForm(P('benediction_divine_praises'),BEN.praisesForm)})+benFeastSource(L('AAS 56 (1964), p. 338 · Holy Spirit invocation added after 1962','AAS 56 (1964), p. 338 · invocation au Saint-Esprit ajoutée après 1962'),DIVINE_PRAISES_EDITION.witness):''}
+ ${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when the Blessed Sacrament is being returned to the tabernacle.','Avancez lorsque le Saint-Sacrement est reporté au tabernacle.'))}`;
  if(id==='reposition')body=`${guideNow(L('Follow the Reposition','Suivez la reposition'),L('Follow the chant and movement actually used as the Blessed Sacrament is returned to the tabernacle. The app does not force Psalm 116 or another local custom.','Suivez le chant et le mouvement réellement utilisés lorsque le Saint-Sacrement est reporté au tabernacle. L’application n’impose ni le psaume 116 ni un autre usage local.'))}${guideCue(L('FINISH WHEN','TERMINEZ LORSQUE'),L('The Blessed Sacrament has been reposed and the public service has actually ended.','Le Saint-Sacrement a été replacé au tabernacle et l’office public est réellement terminé.'))}`;
  return `${head(L('Benediction','Bénédiction'),L('Live companion · the church determines the pace','Compagnon en direct · l’église détermine le rythme'))}<main class="aoP435930Body aoP435930BenedictionReader" data-ao-benediction-step="${i}" data-ao-benediction-celebration="${esc(BEN.celebration)}" data-ao-benediction-final="${i===stages.length-1}">
-  ${benFeastOptions()}
+  ${benFeastOptions()}${batch02SourceLinks('benediction-optional-local')}
  <section class="aoDevoCard" data-ao-devo-card="${esc(id)}">
   <header class="aoDevoCardHead"><small class="aoDevoCardNumber">${i+1} / ${stages.length}</small><h2 class="aoDevoCardTitle">${esc(titles[i])}</h2></header>
   <div class="aoDevoCardScroll" role="region" tabindex="0" aria-label="${esc(titles[i])}">${body}</div>
@@ -1600,6 +1609,19 @@ function guidedStage(kind,steps,index,lastLabel){
  ${guideNow(st.title,st.now)}${guidePrayers(st.prayers)}${guideCue(L('SILENCE / NOTICE','SILENCE / ATTENTION'),st.silence)}${st.extra||''}<button type="button" class="${st.prayers.length===0?'aoAdorationQuietEnter':'aoAdorationQuietLink'}" data-p435930-ador-quiet-enter>${esc(st.prayers.length===0?L('Remain in silence','Demeurer en silence'):L('Pause in silence','Faire une pause en silence'))}</button>
  </div></section>${guideNav(kind,index,steps.length,lastLabel)}`
 }
+function batch02SourceLinks(destination){
+ const items=instituteOptionalFor(destination);
+ return `<details class="aoP435930PrayerOptions aoBatch02OptionalSources"><summary>${esc(L('Institute prayer alternatives · source links','Prières complémentaires de l’Institut · sources'))}</summary><p>${esc(L('These are optional related prayers or locally used chants, not obligatory parts of the rite. Source-specific modern wording is linked until reuse and recension have been independently certified.','Prières connexes et chants employés localement, non parties obligatoires du rite. Les textes modernes propres à la source sont liés jusqu’à certification indépendante des versions et droits de réutilisation.'))}</p><div class="aoP435930LibraryMini">${items.map(x=>`<a href="${esc(x.source)}" target="_blank" rel="noopener noreferrer"><b>${esc(isFr()?x.titleFr:x.titleEn)}</b> <small>${esc(x.category)} · ${esc(x.language)} ↗</small></a>`).join('')}</div></details>`;
+}
+function eucharisticWitnessTreasury(){
+ const tantum=P("benediction_tantum_ergo");
+ const cards=EUCHARISTIC_WITNESS_IDS.map(id=>{
+  const rec=getEucharisticWitness(id,{tantum});
+  const role=rec.category==="corpus-christi-mass-sequence"?L("Corpus Christi Mass sequence","Séquence de la messe de la Fête-Dieu"):rec.category==="corpus-christi-office-antiphon"?L("Corpus Christi Vespers antiphon","Antienne des vêpres de la Fête-Dieu"):L("Full Eucharistic hymn · concluding stanzas are Tantum Ergo","Hymne eucharistique complet · les dernières strophes sont Tantum Ergo");
+  return `<details class="aoP435930PrayerOptions aoEucharisticWitness" data-ao-eucharistic-witness="${esc(rec.id)}"><summary>${esc(rec.titleLa)}</summary><p><small>${esc(role)}. ${esc(L("Original Latin; modern English/French translations are not supplied without reuse verification.","Latin original ; les traductions modernes anglaises ou françaises ne sont pas reproduites sans vérification des droits."))}</small></p><div class="aoP435930Text" lang="la">${nl(rec.la)}</div><p><a href="${esc(rec.source)}" target="_blank" rel="noopener noreferrer">${esc(L("ICRSP Corpus Christi · original source","ICRSP Fête-Dieu · source originale"))} ↗</a></p></details>`;
+ }).join("");
+ return `<section data-ao-eucharistic-treasury="latin-source"><h3>${esc(L('Historical Eucharistic texts','Textes eucharistiques historiques'))}</h3><p>${esc(L('The Eucharistic Pange lingua is not the Passiontide hymn with a similar title. Lauda Sion is a Mass sequence; O sacrum convivium is an Office antiphon. Neither is imposed on silent adoration or Benediction.','Le Pange lingua eucharistique n’est pas l’hymne du Temps de la Passion du même nom. Lauda Sion est une séquence de messe ; O sacrum convivium est une antienne de l’Office. Aucun n’est imposé à l’adoration silencieuse ni à la Bénédiction.'))}</p>${cards}</section>`;
+}
 function renderAdoration(){
  if(ADOR.mode==='home')return `${head(L('Adoration & Visit','Adoration et visite'),L('Enter prayer without a prescribed duration','Entrer en prière sans durée imposée'))}
   <main class="aoP435930Body aoAdorationChooser" data-ao-adoration-chooser="quiet-v2">
@@ -1656,7 +1678,7 @@ function renderAdoration(){
  if(ADOR.mode==='four'){
   const steps=fourSteps();content=`${presenceBar()}${guidedStage('four',steps,ADOR.fourStep,L('Return to silent adoration','Revenir à l’adoration silencieuse'))}${callout(esc(L('The Four Ends are a method for structuring prayer, not four tasks that earn completion.','Les quatre fins sont une méthode pour structurer la prière, non quatre tâches qui donnent un accomplissement.')),'rubric')}`;
  }
- if(ADOR.mode==='treasury')content=`<div class="aoP435930LibraryMini">${['foundations_prayer_of_adoration','adoration_anima_christi','adoration_spiritual_communion','adoration_lord_i_am_not_worthy','benediction_o_salutaris','benediction_tantum_ergo','adoration_litany_blessed_sacrament'].map(id=>{const p=P(id);return p?`<button data-p435930-open-prayer="${id}"><b>${esc(isFr()?(p.titleFr||p.title):p.title)}</b><span>${esc(['en','fr','la'].filter(k=>p[k]).map(k=>k.toUpperCase()).join(' · '))}</span></button>`:''}).join('')}</div>`;
+ if(ADOR.mode==='treasury')content=`<div class="aoP435930LibraryMini">${['foundations_prayer_of_adoration','adoration_anima_christi','adoration_spiritual_communion','adoration_lord_i_am_not_worthy','benediction_o_salutaris','benediction_tantum_ergo','adoration_litany_blessed_sacrament'].map(id=>{const p=P(id);return p?`<button data-p435930-open-prayer="${id}"><b>${esc(isFr()?(p.titleFr||p.title):p.title)}</b><span>${esc(['en','fr','la'].filter(k=>p[k]).map(k=>k.toUpperCase()).join(' · '))}</span></button>`:''}).join('')}</div>`+eucharisticWitnessTreasury()+batch02SourceLinks('adoration-optional');
  const isGuided=['visit','holy','four'].includes(ADOR.mode);
  const stage=isGuided?(ADOR.mode==='visit'?ADOR.visitStep:ADOR.mode==='holy'?ADOR.holyStep:ADOR.fourStep):-1;
  return `${head(L('Adoration & Visit','Adoration et visite'),ADOR.mode==='visit'?L('Guided Visit','Visite guidée'):ADOR.mode==='open'?L('Open-ended Adoration','Adoration libre'):ADOR.mode==='holy'?L('Guided Holy Hour','Heure Sainte guidée'):ADOR.mode==='four'?L('Four Ends method','Méthode des quatre fins'):L('Eucharistic Treasury','Trésor eucharistique'))}<main class="aoP435930Body aoP435930AdorationReader" data-ao-adoration-folio="v1" data-ao-adoration-mode="${esc(ADOR.mode)}" data-ao-adoration-step="${stage}"><button class="aoP435930InlineBack" data-p435930-ador-home>${assetIcon('ao-ui-back')} ${esc(L('Choose another mode','Choisir un autre mode'))}</button>${content}${devotionalGuide('adoration')} </main>`;
@@ -1823,6 +1845,7 @@ function backToParent(){
  if(view==='mercy'||view==='rosaryMethods'){view='home';return render()}
  if(view==='family'){view='home';familyId=null;navStack=[];return render()}
  if(view==='adoration'&&ADOR.mode!=='home'){ADOR.quiet=false;ADOR.mode='home';return render()}
+ if(view==='fortyHours'&&FORTY.mode!=='choose'){FORTY.mode='choose';return render()}
  if(view==='library'&&LIB.open){LIB.open=null;return render()}
  if(view==='prayerOnly'){view=prayerReturnView||'library';return render()}
  if(view!=='home'&&navStack.length){popView();return render()}
@@ -2157,7 +2180,34 @@ function fortyStageBody(){
  if(i===4)return `${guideNow(L('When Benediction begins','Lorsque la Bénédiction commence'),L('Switch from private adoration to the live Benediction companion. Advance there only when the corresponding action happens in the church.','Passez de l’adoration privée au compagnon de Bénédiction en direct. N’avancez là-bas que lorsque l’action correspondante se produit dans l’église.'))}<button type="button" class="aoP435930Primary" data-p435930-forty-ben>${esc(L('Follow Benediction','Suivre la Bénédiction'))}</button>`;
  return `${guideNow(L('Leave recollected','Partir recueilli'),L('Before leaving, give thanks, make your final act of reverence, and carry the recollection of the visit back into your duties.','Avant de partir, rendez grâce, faites votre dernier acte de révérence et emportez le recueillement de la visite dans vos devoirs.'))}${guidePrayers([{id:'foundations_act_of_love'}])}${guideCue(L('RETURN TO DUTY','RETOUR AU DEVOIR'),L('Do not turn the exit into another checklist. Finish simply and go.','Ne transformez pas la sortie en nouvelle liste de contrôle. Terminez simplement et partez.'))}`
 }
+function renderFortySolemn(){
+ const total=FORTY_HOURS_SOLEMN_STAGES.length;
+ FORTY.solemnStep=Math.max(0,Math.min(total-1,FORTY.solemnStep));
+ const st=fortySolemnAt(FORTY.solemnStep),i=FORTY.solemnStep;
+ const label=L(st.titleEn,st.titleFr),desc=L(st.bodyEn,st.bodyFr);
+ const calendar=[1,2,3].map(day=>{
+  const first=FORTY_HOURS_SOLEMN_STAGES.findIndex(x=>x.day===day);
+  return `<button type="button" class="aoP435930Secondary" data-p435930-forty-solemn-jump="${first}" aria-pressed="${st.day===day}">${esc(L('Day ','Jour ')+day)}</button>`;
+ }).join("");
+ const next=i<total-1?`<button type="button" data-p435930-forty-solemn-next>${esc(L('Next actual stage','Étape suivante réelle'))}</button>`:`<button type="button" data-p435930-forty-choose>${esc(L('Back to choices','Retour aux choix'))}</button>`;
+ const actions=st.id==="day3-benediction"
+ ?`<button type="button" class="aoP435930Primary" data-p435930-forty-ben>${esc(L('Follow live Benediction','Suivre la Bénédiction en direct'))}</button>`
+ :st.kind==="participant"?`<button type="button" class="aoP435930Secondary" data-p435930-forty-own="pray.adoration" data-p435930-forty-ador="open">${esc(L('Open silent Adoration','Ouvrir l’adoration silencieuse'))}</button>`:"";
+ return `${head(L('Solemn Forty Hours','Quarante-Heures solennelles'),L('Participant’s three-day ceremonial reference','Repères des cérémonies publiques sur trois jours'))}
+ <main class="aoP435930Body aoP435930SolemnReader" data-ao-forty-mode="solemn" data-ao-forty-day="${st.day}" data-ao-forty-stage="${esc(st.id)}">
+ <button type="button" class="aoP435930InlineBack" data-p435930-forty-choose>${esc(L('Choose another way to follow','Changer de parcours'))}</button>
+ <p>${esc(L('A sourced historical guide, not a parish timetable or a replacement for the clergy’s ceremonial book. The order shown is indicative; follow the local church whenever it differs.','Guide historique sourcé, non horaire paroissial ni substitut au cérémonial du clergé. L’ordre affiché est indicatif ; suivez votre église s’il diffère.'))}</p>
+ <nav class="aoFortySolemnControls" style="display:flex;gap:8px;flex-wrap:wrap" aria-label="${esc(L('Three days','Trois jours'))}">${calendar}</nav>
+ <section class="aoDevoCard" data-ao-devo-card="solemn-${esc(st.id)}">
+ <header class="aoDevoCardHead"><small>${esc(L('Day ','Jour ')+st.day)} · ${i+1} / ${total}</small><h2 class="aoDevoCardTitle">${esc(label)}</h2></header>
+ <div class="aoDevoCardScroll" role="region" aria-label="${esc(label)}"><p>${esc(desc)}</p><p><small>${esc(st.kind==="public"?L('Clergy-led public ceremony','Cérémonie publique du clergé'):st.kind==="participant"?L('Participant / private adoration','Fidèle / adoration privée'):L('Historical context','Contexte historique'))} ${st.conditional?L('· only if held locally','· si célébré localement'):''}</small></p>${actions}</div></section>
+ <nav class="aoFortySolemnControls" style="display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap" aria-label="${esc(L('Ceremonial navigation','Navigation cérémonielle'))}"><button type="button" data-p435930-forty-solemn-prev ${i===0?'disabled':''}>${esc(L('Previous','Précédent'))}</button>${next}</nav>
+ <p class="aoP435930FeastSource"><a href="${esc(FORTY_HOURS_SOLEMN_SOURCE.institute)}" target="_blank" rel="noopener noreferrer">${esc(L('ICKSP · Forty Hours historical structure','ICRSP · Déroulement historique des Quarante-Heures'))} ↗</a></p>
+ <details class="aoP435930PrayerOptions"><summary>${esc(L('Ceremonial source and limits','Sources et limites cérémonielles'))}</summary><p>${esc(L('The Institute describes opening and closing votive Masses, a Mass for Peace on the second day, public Litany and processions in the complete solemn observance. Exact order and proper prayers await a verified local ceremonial witness. The app never asks a lay person to perform the public blessing.','L’Institut décrit les messes votives d’ouverture et de clôture, la messe pour la paix au deuxième jour, les litanies et processions publiques dans la forme solennelle complète. L’ordre exact et les prières propres exigent un cérémonial local vérifié. L’application n’attribue jamais au fidèle la bénédiction publique.'))}</p></details></main>`;
+}
 function renderFortyHours(){
+ if(FORTY.mode==='choose')return `${head(L('Forty Hours','Quarante-Heures'),L('Choose the experience appropriate to your visit','Choisissez le parcours adapté à votre visite'))}<main class="aoP435930Body aoP435930AdorationReader" data-ao-forty-mode="choose"><div class="aoP435930BigGrid"><button type="button" data-p435930-forty-mode="visitor"><b>${esc(L('Visiting the Forty Hours','Visiter les Quarante-Heures'))}</b><span>${esc(L('The existing six-stage quiet companion for an individual visit.','Le parcours silencieux existant en six étapes pour une visite personnelle.'))}</span></button><button type="button" data-p435930-forty-mode="solemn"><b>${esc(L('Following the solemn Forty Hours','Suivre les Quarante-Heures solennelles'))}</b><span>${esc(L('Three-day guide to public ceremonies, with local variations.','Parcours sur trois jours des cérémonies publiques et variantes locales.'))}</span></button></div>${devotionalSource('Baltimore Manual · Forty Hours (1889)',L('Historical account and private prayer aids. Not a universal ceremonial timetable.','Présentation historique et aides de prière privées, non un horaire cérémoniel universel.'),'fortyHours')}</main>`;
+ if(FORTY.mode==='solemn')return renderFortySolemn();
  FORTY.step=Math.max(0,Math.min(FORTY_STAGES.length-1,FORTY.step));
  const index=FORTY.step,title=L(FORTY_STAGES[index][0],FORTY_STAGES[index][1]);
  const card=sourcedDevotionalCard({kind:'fortyHours',id:'forty-'+index,title,index,total:FORTY_STAGES.length,
@@ -2213,7 +2263,7 @@ function renderMercy(){
   return '<article tabindex="0" class="aoMercyLine aoDevoParagraph'+(selected?' aoMercyPrayer':'')+'" data-ao-mercy-step="'+stepIndex+'" data-ao-devo-active="'+selected+'"><small>'+esc(marker)+'</small><p>'+esc(mercyStepText(step,language))+'</p></article>';
  }).join('');
  const note=item.group==='large-bead'?L('Pray once on the large bead.','Récitez une fois sur le gros grain.'):item.group==='small-bead'?L('Pray on each of the ten small beads.','Récitez sur chacun des dix petits grains.'):item.group==='conclusion'?L('Repeat three times.','Répétez trois fois.'):'';
- return `${head(L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('Five decades · St Faustina, 1935','Cinq dizaines · Sainte Faustine, 1935'))}<main class="aoP435930Body aoMercyReader" data-ao-mercy-deck="chapters-v1" data-ao-mercy-bead-reader="quiet-v1">${mercyBeadNavHTML(steps,index,{french:fr})}<section class="aoDevoCard" data-ao-devo-card="${esc(activeChapter.id)}"><header class="aoDevoCardHead"><h2 class="aoDevoCardTitle">${esc(activeChapter.title)}</h2></header><div class="aoDevoCardScroll" role="region" aria-label="${esc(activeChapter.title)}">${prayerParagraphs}</div></section><p class="aoMercyNote">${esc(note)}</p>${MERCY.guide==='guided'?'<p class="aoMercyHelp">'+esc(L('Contemplate the sorrowful Passion of Our Lord and pray for the whole world. Continue at your own pace.','Méditez la douloureuse Passion de Notre-Seigneur et priez pour le monde entier. Avancez à votre rythme.'))+'</p>':''}<details class="aoMercyOptional" data-ao-mercy-options ${MERCY.optionsOpen?"open":""}><summary>${esc(L("Prayer options","Options de prière"))}<small>${esc(L("Guidance and concluding prayer","Guide et prière finale"))}</small></summary><div class="aoMercyOptions"><button type="button" data-p435930-mercy-guide aria-pressed="${MERCY.guide==='guided'}">${esc(L('Guided explanation','Explication guidée'))}</button><button type="button" data-p435930-mercy-closing aria-pressed="${MERCY.includeClosing}">${esc(L('Optional concluding prayer','Prière finale facultative'))}</button></div></details><p class="aoMercySource"><a href="${esc(MERCY_WITNESSES[language])}" target="_blank" rel="noopener noreferrer">${esc(L('Original published prayer sequence','Texte et ordre publiés'))} ↗</a></p></main>`;
+ return `${head(L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('Five decades · St Faustina, 1935','Cinq dizaines · Sainte Faustine, 1935'))}<main class="aoP435930Body aoMercyReader" data-ao-mercy-deck="chapters-v1" data-ao-mercy-bead-reader="quiet-v1"><details class="aoMercyOptional aoBatch02MercyOpenings" data-ao-mercy-opening-options><summary>${esc(L('Optional prayers before the Chaplet · St Faustina','Prières facultatives avant le chapelet · sainte Faustine'))}</summary><p>${esc(L('These are additional opening devotions, not new rosary beads. The original prayer wording is available at the official source; modern English translations are not reproduced without permission or independent reuse rights. French and Latin are not fabricated.','Ces prières préliminaires sont facultatives et ne constituent pas de nouveaux grains. Le texte se consulte dans sa source officielle ; aucune traduction française ou latine n’est inventée.'))}</p>${MERCY_OPTIONAL_OPENINGS.map(x=>`<p><a href="${esc(x.source)}" target="_blank" rel="noopener noreferrer">${esc(x.title)}</a> · ${esc(x.diary)} <small>EN · ${esc(L('source-only','lien vers la source'))}</small></p>`).join('')}</details>${mercyBeadNavHTML(steps,index,{french:fr})}<section class="aoDevoCard" data-ao-devo-card="${esc(activeChapter.id)}"><header class="aoDevoCardHead"><h2 class="aoDevoCardTitle">${esc(activeChapter.title)}</h2></header><div class="aoDevoCardScroll" role="region" aria-label="${esc(activeChapter.title)}">${prayerParagraphs}</div></section><p class="aoMercyNote">${esc(note)}</p>${MERCY.guide==='guided'?'<p class="aoMercyHelp">'+esc(L('Contemplate the sorrowful Passion of Our Lord and pray for the whole world. Continue at your own pace.','Méditez la douloureuse Passion de Notre-Seigneur et priez pour le monde entier. Avancez à votre rythme.'))+'</p>':''}<details class="aoMercyOptional" data-ao-mercy-options ${MERCY.optionsOpen?"open":""}><summary>${esc(L("Prayer options","Options de prière"))}<small>${esc(L("Guidance and concluding prayer","Guide et prière finale"))}</small></summary><div class="aoMercyOptions"><button type="button" data-p435930-mercy-guide aria-pressed="${MERCY.guide==='guided'}">${esc(L('Guided explanation','Explication guidée'))}</button><button type="button" data-p435930-mercy-closing aria-pressed="${MERCY.includeClosing}">${esc(L('Optional concluding prayer','Prière finale facultative'))}</button></div></details><p class="aoMercySource"><a href="${esc(MERCY_WITNESSES[language])}" target="_blank" rel="noopener noreferrer">${esc(L('Original published prayer sequence','Texte et ordre publiés'))} ↗</a></p></main>`;
 }
 function renderRosaryMethods(){
  const allowed=['ordinary','dominican','montfort','montfort_short','scriptural'];
@@ -2242,7 +2292,7 @@ function renderRosaryMethods(){
     <p class="aoRosaryReadyDescription">${esc(choices[method][1])}</p>
     <button type="button" class="aoRosaryBegin" data-p435930-rosary-begin>${esc(L('Begin Rosary','Commencer le Rosaire'))}</button>
   </section>
-  <p class="aoRosarySourceCurrent"><a href="${esc(methodData.source)}" target="_blank" rel="noopener noreferrer">${esc(L('Source for the chosen method','Source de la méthode choisie'))} ↗</a>${method==='montfort'?'<small>'+esc(L('Adapted devotional wording; not a literal translation.','Formulation dévotionnelle adaptée, non traduction littérale.'))+'</small>':''}</p>
+  <p class="aoRosarySourceCurrent"><a href="${esc(methodData.source)}" target="_blank" rel="noopener noreferrer">${esc(L('Source for the chosen method','Source de la méthode choisie'))} ↗</a>${method==='montfort'?'<small>'+esc(L('Adapted devotional wording; not a literal translation.','Formulation dévotionnelle adaptée, non traduction littérale.'))+'</small>':method==='montfort_short'?'<small>'+esc(L('Original French clauses; English and Latin editorial translations.','Clausules françaises originales ; versions anglaise et latine éditoriales.'))+'</small>':method==='scriptural'?'<small>'+esc(L('Editorial Scripture-linked method: approved Douay–Rheims/CPDV and Crampon 1923 verse registry. The 2002 apostolic letter is later commentary, not the historical source.','Méthode éditoriale liée aux Écritures : registre approuvé Douay–Rheims/CPDV et Crampon 1923. La lettre de 2002 est un commentaire ultérieur, non la source historique.'))+'</small>':''}</p>
   <button type="button" class="aoRosaryCustomizeToggle" data-p435930-rosary-customize aria-expanded="${ROSARY_CHOOSER.optionsOpen?'true':'false'}" aria-controls="ao-rosary-chooser-options">${esc(L('Change method, duration or reading','Changer méthode, durée ou lecture'))}<span aria-hidden="true">${ROSARY_CHOOSER.optionsOpen?'−':'+'}</span></button>
   <div id="ao-rosary-chooser-options" class="aoRosaryCustomPanel" ${ROSARY_CHOOSER.optionsOpen?'':'hidden'}>
   <section><p class="aoMercyKicker">${esc(L('Prayer method','Méthode de prière'))}</p><div class="aoRosaryChoiceGrid" role="group" aria-label="${esc(L('Rosary method','Méthode du Rosaire'))}">${methods}</div></section>
@@ -2690,7 +2740,7 @@ function onClick(e){
  if(b.matches('[data-p435930-conf-clear]')){CONF=freshConfessionState();return render()}
  if(b.dataset.p435930BenStep!=null){BEN.step=+b.dataset.p435930BenStep;return render()}
  if(b.matches('[data-p435930-ben-finish]')&&BEN.step===benStages().length-1){
-  setAdorationPresence('reserved');BEN={step:0,divinePraises:false,celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};popView('home');return render()
+  setAdorationPresence('reserved');BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};popView('home');return render()
  }
  if(b.matches('[data-p435930-ador-quiet-enter]'))return enterAdorationQuiet();
  if(b.matches('[data-p435930-ador-quiet-exit]'))return exitAdorationQuiet();
@@ -2737,6 +2787,11 @@ function onClick(e){
  if(b.dataset.p435930WordStep!=null){SEVEN.step=Math.max(0,Math.min(6,+b.dataset.p435930WordStep));return render()}
  if(b.matches('[data-p435930-word-done]')){popView('home');return render()}
  if(b.dataset.p435930FortyStep!=null){FORTY.step=Math.max(0,Math.min(FORTY_STAGES.length-1,+b.dataset.p435930FortyStep));return render()}
+ if(b.hasAttribute('data-p435930-forty-mode')){FORTY.mode=b.dataset.p435930FortyMode==='solemn'?'solemn':'visitor';FORTY.step=0;FORTY.solemnStep=0;return render()}
+ if(b.hasAttribute('data-p435930-forty-choose')){FORTY.mode='choose';return render()}
+ if(b.hasAttribute('data-p435930-forty-solemn-jump')){const i=Number(b.dataset.p435930FortySolemnJump);if(Number.isInteger(i)&&i>=0&&i<FORTY_HOURS_SOLEMN_STAGES.length){FORTY.solemnStep=i;return render()}return}
+ if(b.hasAttribute('data-p435930-forty-solemn-prev')){FORTY.solemnStep=Math.max(0,FORTY.solemnStep-1);return render()}
+ if(b.hasAttribute('data-p435930-forty-solemn-next')){FORTY.solemnStep=Math.min(FORTY_HOURS_SOLEMN_STAGES.length-1,FORTY.solemnStep+1);return render()}
  if(b.matches('[data-p435930-forty-done]')){FORTY.step=0;return backToParent()}
  if(b.matches('[data-p435930-forty-ben]')){pushView();view='benediction';BEN.step=0;return render()}
  if(b.dataset.p435930FortyOwn){const id=b.dataset.p435930FortyOwn;if(id==='pray.rosary'){launchRosaryPlayer(captureResume());return}pushView();if(id==='pray.adoration'){view='adoration';ADOR.mode=b.dataset.p435930FortyAdor||'open'}else if(id==='pray.litany_saints'){view='litany';LIT.step=0}else if(id==='pray.penitential_psalms'){view='penitential';PEN.step=b.dataset.p435930FortyPsalm!=null?+b.dataset.p435930FortyPsalm:0};return render()}
@@ -2792,6 +2847,7 @@ function onChange(e){const x=e.target;
    render();queueMicrotask(()=>{const d=mount()?.querySelector('[data-ao-ben-feast-options]');if(d)d.open=true});return;
   }
   if(x.matches('[data-p435930-ben-praises]')){BEN.divinePraises=x.checked;return render()}
+ if(x.matches('[data-p435930-ben-praises-form]')){BEN.praisesForm=x.value==='later'?'later':'1962';return render()}
  if(x.matches('[data-p435930-station-stabat]')){S.stations.stabat=x.checked;save();return render()}
  if(x.matches('[data-p435930-station-public-posture]')){
   STATIONS.publicPosture=x.checked;
