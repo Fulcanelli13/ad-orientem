@@ -1,0 +1,165 @@
+{
+  "schema": "AO_PRAYER_WAVE1_EDITORIAL_PHOTO_PRELIMINARY_VISUAL_QA_V1",
+  "date": "2026-10-28",
+  "type": "REVIEW_OF_EXISTING_PREVIEWS_AND_SELECTED_NATIVE_TILES",
+  "editorial_primaries_changed": 0,
+  "originals_changed": 0,
+  "release_granted": 0,
+  "no_paid_content": true,
+  "no_contact": true,
+  "methodology": "Independently inspect repository-hosted uncompressed native detail tiles and separately inspect whole-image review previews. Preview images are low-weight derivatives and do not certify the exact original at all edges or a device rendering. Staged masters verified separately by GitHub Actions byte/integrity job 40685269314.",
+  "observation_limit": "Assistant review does not constitute user's final visual approval, rights certification, or review of the actual rendered app at phone widths.",
+  "review_records": [
+    {
+      "module": "morning",
+      "painting": "Jules Breton — The Song of the Lark",
+      "whole_preview": {
+        "ref": "research/module-hero-rescue-20261026",
+        "path": "assets/staged/module-hero-preview-jpegs/morning-whole-preview.jpg"
+      },
+      "native_details": [
+        "assets/staged/module-hero-preview-jpegs/morning-centre-detail.jpg",
+        "assets/staged/module-hero-preview-jpegs/morning-upper-detail.jpg"
+      ],
+      "preliminary_visual_composition": "PASS_WITH_DISPLAY_RESTRICTIONS",
+      "description": "The warm sunrise lies low left; upright fieldworker and tiny lark in upper-left sky are intentional composition anchors. Palette is muted earth tones and luminous horizon. Native skirt surface shows natural canvas/paint texture rather than synthetic sharpening.",
+      "painted_perimeter_state": "NOT_NATIVE_FOUR_EDGE_CERTIFIED",
+      "photo_colour_state": "REFERENCE_ACCEPTABLE_EXACT_ICC_PENDING",
+      "phone_display_policy": "WHOLE_OR_CONTAIN; avoid CSS background-size: cover for narrow/wide hero; do not omit bird, sun, worker or feet.",
+      "final_qa_open": [
+        "full native four-edge inspection",
+        "colour/ICC comparison against institutional source",
+        "real-app 320/390px rendering",
+        "source-file licence closure"
+      ],
+      "photo_released": false
+    },
+    {
+      "module": "confession",
+      "painting": "Bartolomé Esteban Murillo — The Return of the Prodigal Son",
+      "whole_preview": {
+        "ref": "research/module-hero-pd-masters-20261026",
+        "path": "assets/staged/module-hero-institutional-frame-review-20261028/confession-responsive-comparison.jpg"
+      },
+      "native_details": [
+        "assets/staged/module-hero-institutional-review-20261028/confession-father-face-native.png",
+        "assets/staged/module-hero-institutional-review-20261028/confession-embrace-hands-native.png",
+        "assets/staged/module-hero-institutional-review-20261028/confession-foreground-dog-native.png",
+        "assets/staged/module-hero-institutional-review-20261028/confession-top-edge-native.png"
+      ],
+      "preliminary_visual_composition": "PASS_WITH_DISPLAY_RESTRICTIONS",
+      "description": "Strong fidelity at the father's face, clasped hands, dog fur and painted upper architecture. No photographic frame is apparent on the contain review. Full-scene presentation includes the kneeling son, forgiving father, small white dog and side servants.",
+      "painted_perimeter_state": "PRELIMINARY_APPARENTLY_FRAMELESS_NOT_ALL_EDGES_CERTIFIED",
+      "photo_colour_state": "SUBJECT_DETAIL_GOOD_COLOUR_CALIBRATION_PENDING",
+      "phone_display_policy": "WHOLE_OR_CONTAIN preferred. Existing 3:4 candidate may be acceptable subject to app test. Disallow 16:9 cover: removes small white dog and changes narrative. Require full dog visibility in any final crop.",
+      "final_qa_open": [
+        "all native outer edges and exact framing certification",
+        "colour and licence-file confirmation",
+        "phone/live route tests"
+      ],
+      "photo_released": false
+    },
+    {
+      "module": "seven-sorrows",
+      "painting": "Master of the Female Half-Lengths (attributed) — Virgin of the Seven Sorrows",
+      "whole_preview": {
+        "ref": "research/module-hero-museum-photos-20261026",
+        "path": "assets/staged/module-hero-preview-jpegs/sorrows-whole-preview.jpg"
+      },
+      "native_details": [
+        "assets/staged/module-hero-preview-jpegs/sorrows-centre-detail.jpg",
+        "assets/staged/module-hero-preview-jpegs/sorrows-upper-detail.jpg"
+      ],
+      "preliminary_visual_composition": "PASS_WITH_DISPLAY_RESTRICTIONS",
+      "description": "The sorrowful Virgin with one conspicuous sword is framed by seven narrative roundels. Surface craquelure in central gold/background and darker cloak is genuine-looking historic paint texture, not a reason for synthetic retouching. All seven medallions and bottom cloak are essential.",
+      "iconography_correction": "This specific painting does NOT depict seven physical swords. It depicts seven narrative medallions and one prominent sword; correct prior inaccurate crop instructions.",
+      "painted_perimeter_state": "NO_OBVIOUS_EXTERNAL_FRAME_IN_WHOLE_PREVIEW; NATIVE_FOUR_EDGE_REVIEW_PENDING",
+      "photo_colour_state": "MUTED/HISTORIC_SURFACE_PHOTOGRAPH_PRESENT; CALIBRATION_PENDING",
+      "phone_display_policy": "WHOLE_OR_CONTAIN; do not cut any of seven outer scenes or sword. Use dark negative-space support for portrait canvas in wide layout rather than forced cover.",
+      "final_qa_open": [
+        "native four-edge and physical painting border verification",
+        "MNAC source/file permission detail",
+        "colour compare",
+        "320/390px real app"
+      ],
+      "photo_released": false
+    },
+    {
+      "module": "angelus",
+      "painting": "Philippe de Champaigne — The Annunciation",
+      "whole_preview": {
+        "ref": "research/module-hero-pd-masters-20261026",
+        "path": "assets/staged/module-hero-institutional-frame-review-20261028/angelus-responsive-comparison.jpg"
+      },
+      "preliminary_visual_composition": "HOLD_PAINTED_EDGE_AND_CROPS",
+      "description": "The existing reference explicitly shows an unpainted oak edge outside the image; candidate remove-support crop is plausible, but 3:4 cover excludes lilies and 16:9 cover excludes part of the dove/lilies. Preserve full Annunciation.",
+      "phone_display_policy": "CONTAIN_OF_EXACT_PAINTED_SURFACE; NO_COVER_AND_NO_OAK_EXTERIOR",
+      "final_qa_open": [
+        "painted perimeter precision and four-edge review",
+        "full colour",
+        "test alternate contain presentation"
+      ],
+      "photo_released": false
+    },
+    {
+      "module": "rosary",
+      "painting": "Lorenzo Lotto — Madonna del Rosario",
+      "whole_preview": {
+        "ref": "research/module-hero-pd-masters-20261026",
+        "path": "assets/staged/module-hero-open-photo-candidates-20261027/module-rosary-lotto-full-uncropped-review.jpg"
+      },
+      "native_details": [
+        "assets/staged/module-hero-open-photo-candidates-20261027/module-rosary-lotto-top_left-native.png",
+        "assets/staged/module-hero-open-photo-candidates-20261027/module-rosary-lotto-top_right-native.png"
+      ],
+      "preliminary_visual_composition": "HOLD_VISIBLE_MOUNTING_HARDWARE_AND_MASTER_QUALITY",
+      "description": "Exactly fifteen roundels/episodes are shown above Madonna and Child, with the lower donor/angel group. Original full-work image includes a narrow external perimeter plus mounting clips at top and bottom; top-left and top-right native tiles confirm hardware. Higher-resolution 'alt' image omits most of composition and is never equivalent.",
+      "photo_file_rights": {
+        "source": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+        "photographer": "Sailko",
+        "licence": "CC BY 3.0",
+        "licence_url": "https://creativecommons.org/licenses/by/3.0/",
+        "credit_required": true,
+        "modification_notice_required_for_crop": true
+      },
+      "phone_display_policy": "CROP ONLY EXTERNAL CLIPS/UNPAINTED OUTSIDE EDGE IF FULL PAINTED ART PRESERVED AND EXACT PIXEL BOX VERIFIED; CONTAIN SO ALL FIFTEEN ROUNDELS VISIBLE. NO DETAIL SUBSTITUTE.",
+      "final_qa_open": [
+        "measure precise pixel boundary removing clips without painted loss",
+        "native edge checks",
+        "fidelity/colour comparison to higher quality source",
+        "attribution UI with file and licence link",
+        "real phone render"
+      ],
+      "photo_released": false
+    },
+    {
+      "module": "evening",
+      "painting": "Pierre-Édouard Frère — The Prayer (OP6 Wolverhampton)",
+      "preliminary_visual_composition": "HOLD_NATIVE_QUALITY_AND_EXACT_PHOTO_RIGHTS",
+      "description": "The art is identified with Wolverhampton accession OP6. Known Commons/Art UK file is 898×1200 and only a low-resolution reference; separate Rijksmuseum Frère Evening Prayer is an entirely different work and not a substitute.",
+      "source_evidence": [
+        "https://artuk.org/discover/artworks/the-prayer-19241",
+        "https://commons.wikimedia.org/wiki/Category:Pierre-%C3%89douard_Fr%C3%A8re"
+      ],
+      "phone_display_policy": "NO_UPSCALE_DISGUISED_AS_NATIVE; preserve two kneeling/praying children and bed; primary identity locked.",
+      "final_qa_open": [
+        "licensed higher-res exact OP6 source",
+        "original bytes and SHA-256",
+        "photographic native edge and mobile checks"
+      ],
+      "photo_released": false
+    }
+  ],
+  "summary": {
+    "preliminary_visually_good_with_restrictions": 3,
+    "blocked_photographic_source_or_crop": 3,
+    "released_to_app": 0,
+    "native_assets_integrity_verified_previous_workflow": 5,
+    "quality_final_passes": 0,
+    "source_qa_runs": [
+      "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40685269314"
+    ]
+  },
+  "zero_euro_policy": true,
+  "reviewer_may_not_change_approved_painting": true
+}
