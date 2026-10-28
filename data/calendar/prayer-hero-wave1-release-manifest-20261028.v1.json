@@ -53,7 +53,24 @@
         "quality_verdict": "NOT_RELEASED",
         "framing_pass": false,
         "responsive_crop_approved": false,
-        "app_release": "BLOCKED"
+        "app_release": "BLOCKED",
+        "source_repo_file": {
+          "repository": "Fulcanelli13/ad-orientem",
+          "ref": "research/module-hero-rescue-20261026",
+          "path": "assets/staged/module-hero-rescue/morning.jpg",
+          "git_blob_sha": "eb9497278df2630a4c05642eb2c1b63eaefc9084",
+          "repo_listing_bytes": 2080000,
+          "previously_reported_sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+          "previously_reported_dimensions": [
+            2548,
+            3300
+          ],
+          "git_path_verified": "YES_BY_DIRECTORY_LISTING",
+          "byte_level_recomputed_this_pass": false,
+          "photo_release_cleared": false
+        },
+        "legacy_staged_original_path": "assets/staged/module-hero-rescue/morning.jpg",
+        "staged_original_ref": "research/module-hero-rescue-20261026"
       },
       "blockers": [
         "SOURCE_PHOTOGRAPHIC_QUALITY_NOT_CERTIFIED",
@@ -127,7 +144,9 @@
         "quality_verdict": "NOT_RELEASED",
         "framing_pass": false,
         "responsive_crop_approved": false,
-        "app_release": "BLOCKED"
+        "app_release": "BLOCKED",
+        "source_repo_file": null,
+        "source_repo_resolution": "NO_REUSABLE_HIGH_RES_MASTER_VERIFIED; 898x1200 Commons/Art UK reference not licensed for app."
       },
       "blockers": [
         "NATIVE_PHOTO_MASTER_NOT_ACQUIRED",
@@ -210,7 +229,24 @@
         "quality_verdict": "NOT_RELEASED",
         "framing_pass": false,
         "responsive_crop_approved": false,
-        "app_release": "BLOCKED"
+        "app_release": "BLOCKED",
+        "source_repo_file": {
+          "repository": "Fulcanelli13/ad-orientem",
+          "ref": "research/module-hero-wave2-20261026",
+          "path": "assets/staged/module-hero-wave2/angelus-met.jpg",
+          "git_blob_sha": "d5e92365196b361c29e3f3d5cc8b5cca2926c2ed",
+          "repo_listing_bytes": 3055151,
+          "previously_reported_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+          "previously_reported_dimensions": [
+            3741,
+            3658
+          ],
+          "git_path_verified": "YES_BY_DIRECTORY_LISTING",
+          "byte_level_recomputed_this_pass": false,
+          "photo_release_cleared": false
+        },
+        "legacy_staged_original_path": "assets/staged/module-hero-wave2/angelus-met.jpg",
+        "staged_original_ref": "research/module-hero-wave2-20261026"
       },
       "blockers": [
         "SOURCE_PHOTOGRAPHIC_QUALITY_NOT_CERTIFIED",
@@ -275,13 +311,31 @@
       "photo": {
         "existing_master_acquired_by_previous_manifest": true,
         "original_sha256_recorded": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
-        "staged_original_path": "assets/staged/module-hero-comparisons/rosary-lotto-yorck.jpg",
+        "staged_original_path": "assets/staged/module-hero-open-photo-candidates-20261027/module-rosary-lotto-original.jpg",
         "rights_claim": "Sailko photograph CC BY 3.0 Unported—requires attribution and licence link, disclose crop/transform",
         "source_status": "attribution_required",
         "quality_verdict": "NOT_RELEASED",
         "framing_pass": false,
         "responsive_crop_approved": false,
-        "app_release": "BLOCKED"
+        "app_release": "BLOCKED",
+        "source_repo_file": {
+          "repository": "Fulcanelli13/ad-orientem",
+          "ref": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-open-photo-candidates-20261027/module-rosary-lotto-original.jpg",
+          "git_blob_sha": "2d66e9d970b8f93a7e63acc49b97e50eccf1d853",
+          "repo_listing_bytes": 3355634,
+          "previously_reported_sha256": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
+          "previously_reported_dimensions": [
+            1772,
+            2652
+          ],
+          "git_path_verified": "YES_BY_DIRECTORY_LISTING",
+          "byte_level_recomputed_this_pass": false,
+          "photo_release_cleared": false,
+          "note": "This is Sailko full-work candidate, not retired/missing yorck branch. The earlier 595c... hash belongs to superseded historical path and remains recorded separately; candidate source hash 5563... does not automatically replace it."
+        },
+        "legacy_staged_original_path": "assets/staged/module-hero-comparisons/rosary-lotto-yorck.jpg",
+        "staged_original_ref": "research/module-hero-pd-masters-20261026"
       },
       "blockers": [
         "SOURCE_PHOTOGRAPHIC_QUALITY_NOT_CERTIFIED",
@@ -353,7 +407,24 @@
         "quality_verdict": "NOT_RELEASED",
         "framing_pass": false,
         "responsive_crop_approved": false,
-        "app_release": "BLOCKED"
+        "app_release": "BLOCKED",
+        "source_repo_file": {
+          "repository": "Fulcanelli13/ad-orientem",
+          "ref": "research/module-hero-museum-photos-20261026",
+          "path": "assets/staged/module-hero-masters/confession.jpg",
+          "git_blob_sha": "c0904b5d2a6a4bd99b224194217ce45c6a9fe676",
+          "repo_listing_bytes": 3022309,
+          "previously_reported_sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+          "previously_reported_dimensions": [
+            4096,
+            3712
+          ],
+          "git_path_verified": "YES_BY_DIRECTORY_LISTING",
+          "byte_level_recomputed_this_pass": false,
+          "photo_release_cleared": false
+        },
+        "legacy_staged_original_path": "assets/staged/module-hero-masters/confession.jpg",
+        "staged_original_ref": "research/module-hero-museum-photos-20261026"
       },
       "blockers": [
         "SOURCE_PHOTOGRAPHIC_QUALITY_NOT_CERTIFIED",
@@ -417,7 +488,21 @@
         "quality_verdict": "NOT_RELEASED",
         "framing_pass": false,
         "responsive_crop_approved": false,
-        "app_release": "BLOCKED"
+        "app_release": "BLOCKED",
+        "source_repo_file": {
+          "repository": "Fulcanelli13/ad-orientem",
+          "ref": "research/module-hero-museum-photos-20261026",
+          "path": "assets/staged/module-hero-masters/sorrows.jpg",
+          "git_blob_sha": "f57231e8a7539a70bcb19a33765348f86572a511",
+          "repo_listing_bytes": 1454827,
+          "previously_reported_sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+          "previously_reported_dimensions": null,
+          "git_path_verified": "YES_BY_DIRECTORY_LISTING",
+          "byte_level_recomputed_this_pass": false,
+          "photo_release_cleared": false
+        },
+        "legacy_staged_original_path": "assets/staged/module-hero-masters/sorrows.jpg",
+        "staged_original_ref": "research/module-hero-museum-photos-20261026"
       },
       "blockers": [
         "SOURCE_PHOTOGRAPHIC_QUALITY_NOT_CERTIFIED",
@@ -463,6 +548,10 @@
     "editorial_primaries_changed": 0,
     "historic_approvals_changed": 0,
     "separate_unreviewed_placement": "sacred-heart::heart-jesus--primary",
-    "rule": "Rights-page and source metadata are evidence, not permission to activate an image; no master, crop, attribution or live URL may be promoted until independently checked."
+    "rule": "Rights-page and source metadata are evidence, not permission to activate an image; no master, crop, attribution or live URL may be promoted until independently checked.",
+    "git_repo_path_repair": "2026-10-28",
+    "git_listings_rechecked": 5,
+    "native_file_sha256_recomputed_in_this_update": false,
+    "artwork_selection_changed": 0
   }
 }
