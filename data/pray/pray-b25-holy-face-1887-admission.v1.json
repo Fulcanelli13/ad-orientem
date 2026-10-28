@@ -1,0 +1,51 @@
+{
+  "schema": "ao.pray.b25-holy-face-janvier-1887-publication.v1",
+  "date": "2026-10-29",
+  "workId": "holy_face_1887",
+  "historicalOriginal": "Janvier/Bennett 1887 manual pp. 108–142",
+  "sourceUrl": "https://www.martinians.org/novena-to-the-holy-face",
+  "sourceHTMLSha256": "d999ceff56b953ff3416cefa36d8fd252ebdf12eb5c630b9aed4004a5e0bb642",
+  "sourcePath": "data/pray/research/pray-b25-holy-face-janvier-1887-nine-full-english-days.v1.json",
+  "sourceModule": "src/pray/holy-face-janvier-1887-b25.js",
+  "type": "ORIGINAL_ENGLISH_TEXT_SUPPLEMENT_EXISTING_NOVENAS",
+  "sourceStatus": "COMPLETE_NINE_DAY_DIGITAL_ENGLISH_TEXT_NOT_1887_PHOTO_COLLATED",
+  "completeness": {
+    "days": 9,
+    "threePointMeditations": 9,
+    "acts": 9,
+    "virtues": 9,
+    "spiritualBouquets": 9,
+    "commonOpeningIncludedEachDay": 9,
+    "concludingCollectsIncludedEachDay": 9
+  },
+  "translation": {
+    "originalEnglish": true,
+    "verifiedOriginalFrench": false,
+    "verifiedOriginalLatin": false,
+    "generatedTranslation": false,
+    "frenchUIRequiresExplicitEnglishWitnessAction": true
+  },
+  "calendar": {
+    "system": "Existing Easter-relative Calendar intelligence",
+    "feast": "Shrove Tuesday",
+    "easterOffsetForFeast": -47,
+    "startOffset": -56,
+    "endOffset": -48,
+    "voluntaryOutsideDates": true
+  },
+  "protection": {
+    "frozenExistingNovenas": 16,
+    "originalNovenaIdentitiesChanged": 0,
+    "canonicalPrayersChanged": 0,
+    "modern2022AppendicesImported": false,
+    "historicalIndulgencesClaimedCurrent": false,
+    "externalRuntimeFetch": false,
+    "additionalServiceCostEuros": 0
+  },
+  "outstandingOriginalTextReview": [
+    "Compare every day line-by-line with a photographed 1887 original printed edition; do not claim this done",
+    "Cross-check modern reprint against complete digital transcription for OCR/punctuation variants",
+    "Seek independent authorized French historical text before enabling any French prayer body"
+  ],
+  "ui": "Existing Pray > Novenas supplement using common 3-stage SOURCE_REPEAT_ONLY engine (Prepare, full historical meditation, Close)"
+}
