@@ -64,16 +64,16 @@
       "candidatePaths": [
         "Sancti/03-06"
       ],
-      "kind": "INCORRECT_VIRGIN_LABEL_IN_NAMED_FRENCH_SOURCE",
+      "kind": "INCORRECT_VIRGIN_LABEL_IN_NAMED_LATIN_AND_FRENCH_RESOLVED_SOURCE",
       "sourceSlots": [
         "COLLECT_SET",
         "SECRET_SET"
       ],
       "printed1962Reference": "ICRSP_B41_MULTIPLE_NONVIRGIN_FEMALE_MARTYRS",
-      "evidence": "Latin Sancti/03-06 declares vide C7b; French Sancti/03-06 Collect and Secret label Perpetua and Felicity as Vierges et Martyres, contrary to their non-Virgin Latin Common. Named Postcommunion has proper plural martyrs.",
+      "evidence": "Latin Sancti/03-06 declares vide C7b; French Sancti/03-06 Collect and Secret label Perpetua and Felicity as Vierges et Martyres, contrary to their non-Virgin Latin Common. Named Postcommunion has proper plural martyrs. Live browser additionally proves the normalizer leaves 'Virginum et Martyrum' in the selected Latin commemorative prayer, not only incorrect French 'Vierges et Martyres'.",
       "selected2026CalendarDay": "Tempora/Quad2-5",
-      "selectionReachability": "NAMED_PROPER_SOURCE_AVAILABLE; WHETHER ACTUALLY_SELECTED_OR_A_READER_COMMEMORATION_NOT_CERTIFIED",
-      "action": "Fail closed only if exact named sourcePath or explicit prayer sourcePath and corroborating non-Virgin Latin prayer; leave 2026 Lenten feria, independent named Postcommunion and unrelated masses intact."
+      "selectionReachability": "ACTUAL_FERIA_COMMEMORATION_RENDERED_IN_2026_AND_2027_READY_BEFORE_FIX",
+      "action": "Fail closed for both inherited incorrect Latin and French phrase using an attested Sancti/03-06 owner: explicit row source or unambiguous Calendar commemoration prayer list and count. Corrected source must be separately approved."
     }
   ],
   "limitations": [
@@ -82,7 +82,20 @@
     "No English/French user-facing translation is created, copied, or approved.",
     "1962 rite and local oration-selection status are entirely owned by existing DayResolver and Mass form source.",
     "Original 1962 printed Common evidence is structural, not a complete photographed full-year Missal collation.",
-    "Proven source defect does not establish a production-visible text defect until exact selected/commemorative source identity is traced."
+    "Exact 6 March 2026 and 2027 selected Calendar source and French Reader exposure was proven by real browser trace; preventing it is pending latest CI retest."
   ],
-  "published": false
+  "published": false,
+  "evidenceAdded": "2026-10-28",
+  "actualBrowserEvidence": {
+    "workflow": "1962-plural-martyrs-live-owner.yml",
+    "initialReadOnlyRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40624538664",
+    "firstFinding": "Unannotated app Proper oration arrays on 6 March 2026 and 2027 visibly contain French 'Vierges et Martyres' despite legitimate Latin source C7b non-Virgin Common.",
+    "secondReadOnlyRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40624978820",
+    "secondFinding": "Live calendar Commemorations explicitly identify Sancti/03-06, but flattened rows have no individual sourcePath. Both resolved Latin and French commemorative Collect and Secret still say Virginum et Martyrum/Vierges et Martyres; all formerly labelled READY.",
+    "verifiedSelectedMain2026": "Tempora/Quad2-5",
+    "verifiedSelectedMain2027": "Tempora/Quad3-6",
+    "selectedPrincipalReplaced": false,
+    "correctDisplayAtCurrentPRHead": "PENDING_LIVE_RETEST",
+    "translatedPrayersAdded": 0
+  }
 }
