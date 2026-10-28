@@ -33,6 +33,7 @@ jobs:
           node --check src/office/research-reader.js
           node --check src/office/sung-vespers-gate.js
           node --check scripts/office/audit-sunday-chant.mjs
+          node --check scripts/office/audit-advent-vespers-text.mjs
       - name: Calendar, Tenebrae and composition probe contracts
         run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-native-sung.mjs
       - name: Source-cell HTML normalizer unit tests
@@ -122,6 +123,7 @@ jobs:
             --upstream "$UPSTREAM" --out "$OUTPUT/advent-vespers" \
             --dates 2026-11-28,2026-11-29 --hours VESPERS --languages la,en,fr
           python3 scripts/office/normalize_xhtml.py --out "$OUTPUT/advent-vespers"
+          node scripts/office/audit-advent-vespers-text.mjs --out "$OUTPUT/advent-vespers" --report "$OUTPUT/advent-text-audit.json"
           node --input-type=module -e '
             import {readFileSync} from "node:fs";
             const p=JSON.parse(readFileSync(process.env.OUTPUT+"/manifest.json","utf8"));
@@ -145,6 +147,10 @@ jobs:
           advent=json.loads((Path(os.environ["OUTPUT"])/"advent-vespers"/"normalized-manifest.json").read_text(encoding="utf8"))
           assert advent["count"]==6 and advent["alignmentSamples"]==2 and advent["structurallyAligned"]==2
           assert advent["published"]==0 and advent["liturgicallyVerified"]==0
+          pair=json.loads((Path(os.environ["OUTPUT"])/"advent-text-audit.json").read_text(encoding="utf8"))
+          assert pair["textScoreCandidatesAligned"] is True, pair
+          assert pair["requiresDistinctFirstVespersMusic"] is True, pair
+          assert pair["scoresPublished"]==0 and pair["sungButtonEnabled"] is False
           previews=json.loads((Path(os.environ["OUTPUT"])/"preview"/"preview-manifest.json").read_text(encoding="utf8"))
           assert previews["pages"]==64 and previews["published"]==0 and previews["researchOnly"]
           print("Office normalization research manifest valid: 96 documents, 32 trilingual groups, zero published.")
