@@ -190,7 +190,11 @@ try{
  await feastDetails.locator("summary").tap();
  await page.locator(rootSel+" [data-p435930-ben-feast]").check();
  assert.equal(await feastDetails.evaluate(el=>el.open),true,"Feast options close during configuration");
- assert.equal((await snapshot()).stops,10,"Expected seven canonical stages plus three witnessed additions");
+ assert.equal((await snapshot()).stops,7,"Selecting the feast must not assume optional local ceremonies");
+ for(const key of ["procession","royalPraises","consecration"]){
+  await page.locator(rootSel+" [data-p435930-ben-feast-option='"+key+"']").check();
+ }
+ assert.equal((await snapshot()).stops,10,"Only three explicitly selected local ceremonies must be added");
  const sequence=await page.locator(timeline+" [data-ao-devo-chapter]").evaluateAll(els=>els.map(el=>el.getAttribute("data-ao-devo-chapter")));
  assert.equal(sequence.length,10);
  assert.equal(await page.locator(rootSel+" [data-p435930-ben-feast-option='sacredHeartLitany']").isChecked(),false,
