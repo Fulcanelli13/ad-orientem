@@ -1,0 +1,231 @@
+{
+  "schema": "AO_MR1962_GOOD_FRIDAY_B12_SOLEMN_ORATIONS_PRINTED_SPEAKER_SOURCE_V1",
+  "version": 1,
+  "editorialDate": "2026-10-28",
+  "ownerIssue": 894,
+  "status": "ORIGINAL_PRINTED_WITNESS_ALIGNED_ANCHORS_AND_RUBRIC_NOT_FULL_TEXT_CERTIFIED",
+  "authority": {
+    "edition": "Missale Romanum (Vatican 1962)",
+    "originalSourceIndex": "https://gregobase.selapa.net/source.php?id=42&images=1",
+    "prayerPages": [
+      167,
+      175
+    ],
+    "rubricPage": 167,
+    "rubricSection": 14,
+    "rubricProof": "Printed 1962 rubric 14 identifies the celebrant as saying Oremus, Flectamus genua, Levate and the subsequent oration; distinguish this speaking actor from the faithful's kneel/rise events.",
+    "vaticanScansCourtesy": "Church Music Association of America via GregoBase"
+  },
+  "scope": {
+    "language": "original Latin only",
+    "prayerPairs": 9,
+    "visualPagesReviewed": 9,
+    "sourcePrayerMidAndEndPhraseAnchors": 18,
+    "speakerRowsPerPrayer": 5,
+    "sourceTextMutated": false,
+    "normalMassReaderMutated": false,
+    "vaticanPageImagesStoredInRepo": false
+  },
+  "warnings": [
+    "This audit verifies source-anchored Latin clauses and the printed speaker/rubric; it is not a word-for-word diplomatic collation of all nine full prayers.",
+    "The app expands shortened printed Per Dominum/Per eundem Dominum conclusions; a substantive deviation would require independent liturgical decision before correction.",
+    "Keep PRINTED_1962 Good Friday Jewish prayer distinct from the 2008 optional wording; do not certify the alternative as the printed edition.",
+    "English/French authorized translation and full chant/stanza/actor review remain open."
+  ],
+  "prayers": [
+    {
+      "number": 1,
+      "key": "HOLY_CHURCH",
+      "intentionPrintedPage": 167,
+      "collectPrintedPage": 168,
+      "intentionScanUrl": "https://gregobase.selapa.net/sources/42/249.png",
+      "collectScanUrl": "https://gregobase.selapa.net/sources/42/250.png",
+      "collectOriginalPhraseAnchors": [
+        "custodi opera misericordiae tuae",
+        "stabili fide in confessione tui nominis perseveret"
+      ],
+      "intentionStatus": "VISUALLY_PRESENT_SOURCE_INCIPIT_ANCHORED",
+      "collectStatus": "VISUAL_INTERNAL_AND_CLOSING_CLAUSE_ANCHORS_MATCHED",
+      "speakerRubric": "CELEBRANT_FOR_INTENTION_AND_ORATION_AND_3_CUES",
+      "postureEventIds": [
+        "GF-SOP-01-K",
+        "GF-SOP-01-R"
+      ],
+      "fullTextDiplomaticCertified": false
+    },
+    {
+      "number": 2,
+      "key": "SUPREME_PONTIFF",
+      "intentionPrintedPage": 168,
+      "collectPrintedPage": 169,
+      "intentionScanUrl": "https://gregobase.selapa.net/sources/42/250.png",
+      "collectScanUrl": "https://gregobase.selapa.net/sources/42/251.png",
+      "collectOriginalPhraseAnchors": [
+        "electum nobis Antistitem tua pietate conserva",
+        "credulitatis suae meritis augeatur"
+      ],
+      "intentionStatus": "VISUALLY_PRESENT_SOURCE_INCIPIT_ANCHORED",
+      "collectStatus": "VISUAL_INTERNAL_AND_CLOSING_CLAUSE_ANCHORS_MATCHED",
+      "speakerRubric": "CELEBRANT_FOR_INTENTION_AND_ORATION_AND_3_CUES",
+      "postureEventIds": [
+        "GF-SOP-02-K",
+        "GF-SOP-02-R"
+      ],
+      "fullTextDiplomaticCertified": false
+    },
+    {
+      "number": 3,
+      "key": "ALL_ORDERS_AND_DEGREES",
+      "intentionPrintedPage": 169,
+      "collectPrintedPage": 170,
+      "intentionScanUrl": "https://gregobase.selapa.net/sources/42/251.png",
+      "collectScanUrl": "https://gregobase.selapa.net/sources/42/252.png",
+      "collectOriginalPhraseAnchors": [
+        "exaudi nos pro universis ordinibus supplicantes",
+        "ab omnibus tibi gradibus fideliter serviatur"
+      ],
+      "intentionStatus": "VISUALLY_PRESENT_SOURCE_INCIPIT_ANCHORED",
+      "collectStatus": "VISUAL_INTERNAL_AND_CLOSING_CLAUSE_ANCHORS_MATCHED",
+      "speakerRubric": "CELEBRANT_FOR_INTENTION_AND_ORATION_AND_3_CUES",
+      "postureEventIds": [
+        "GF-SOP-03-K",
+        "GF-SOP-03-R"
+      ],
+      "fullTextDiplomaticCertified": false
+    },
+    {
+      "number": 4,
+      "key": "PUBLIC_OFFICIALS",
+      "intentionPrintedPage": 170,
+      "collectPrintedPage": 171,
+      "intentionScanUrl": "https://gregobase.selapa.net/sources/42/252.png",
+      "collectScanUrl": "https://gregobase.selapa.net/sources/42/253.png",
+      "collectOriginalPhraseAnchors": [
+        "religionis integritas",
+        "patriae securitas indesinenter consistat"
+      ],
+      "intentionStatus": "VISUALLY_PRESENT_SOURCE_INCIPIT_ANCHORED",
+      "collectStatus": "VISUAL_INTERNAL_AND_CLOSING_CLAUSE_ANCHORS_MATCHED",
+      "speakerRubric": "CELEBRANT_FOR_INTENTION_AND_ORATION_AND_3_CUES",
+      "postureEventIds": [
+        "GF-SOP-04-K",
+        "GF-SOP-04-R"
+      ],
+      "fullTextDiplomaticCertified": false
+    },
+    {
+      "number": 5,
+      "key": "CATECHUMENS",
+      "intentionPrintedPage": 171,
+      "collectPrintedPage": 172,
+      "intentionScanUrl": "https://gregobase.selapa.net/sources/42/253.png",
+      "collectScanUrl": "https://gregobase.selapa.net/sources/42/254.png",
+      "collectOriginalPhraseAnchors": [
+        "nova semper prole fecundas",
+        "adoptionis tuae filiis aggregentur"
+      ],
+      "intentionStatus": "VISUALLY_PRESENT_SOURCE_INCIPIT_ANCHORED",
+      "collectStatus": "VISUAL_INTERNAL_AND_CLOSING_CLAUSE_ANCHORS_MATCHED",
+      "speakerRubric": "CELEBRANT_FOR_INTENTION_AND_ORATION_AND_3_CUES",
+      "postureEventIds": [
+        "GF-SOP-05-K",
+        "GF-SOP-05-R"
+      ],
+      "fullTextDiplomaticCertified": false
+    },
+    {
+      "number": 6,
+      "key": "NEEDS_OF_FAITHFUL",
+      "intentionPrintedPage": 172,
+      "collectPrintedPage": 172,
+      "intentionScanUrl": "https://gregobase.selapa.net/sources/42/254.png",
+      "collectScanUrl": "https://gregobase.selapa.net/sources/42/254.png",
+      "collectOriginalPhraseAnchors": [
+        "de quacumque tribulatione clamantium",
+        "misericordiam tuam gaudeant affuisse"
+      ],
+      "intentionStatus": "VISUALLY_PRESENT_SOURCE_INCIPIT_ANCHORED",
+      "collectStatus": "VISUAL_INTERNAL_AND_CLOSING_CLAUSE_ANCHORS_MATCHED",
+      "speakerRubric": "CELEBRANT_FOR_INTENTION_AND_ORATION_AND_3_CUES",
+      "postureEventIds": [
+        "GF-SOP-06-K",
+        "GF-SOP-06-R"
+      ],
+      "fullTextDiplomaticCertified": false
+    },
+    {
+      "number": 7,
+      "key": "HERETICS_AND_SCHISMATICS",
+      "intentionPrintedPage": 173,
+      "collectPrintedPage": 173,
+      "intentionScanUrl": "https://gregobase.selapa.net/sources/42/255.png",
+      "collectScanUrl": "https://gregobase.selapa.net/sources/42/255.png",
+      "collectOriginalPhraseAnchors": [
+        "diabolica fraude deceptas",
+        "ad veritatis tuae redeant unitatem"
+      ],
+      "intentionStatus": "VISUALLY_PRESENT_SOURCE_INCIPIT_ANCHORED",
+      "collectStatus": "VISUAL_INTERNAL_AND_CLOSING_CLAUSE_ANCHORS_MATCHED",
+      "speakerRubric": "CELEBRANT_FOR_INTENTION_AND_ORATION_AND_3_CUES",
+      "postureEventIds": [
+        "GF-SOP-07-K",
+        "GF-SOP-07-R"
+      ],
+      "fullTextDiplomaticCertified": false
+    },
+    {
+      "number": 8,
+      "key": "CONVERSION_OF_JEWS",
+      "intentionPrintedPage": 173,
+      "collectPrintedPage": 174,
+      "intentionScanUrl": "https://gregobase.selapa.net/sources/42/255.png",
+      "collectScanUrl": "https://gregobase.selapa.net/sources/42/256.png",
+      "collectOriginalPhraseAnchors": [
+        "pro illius populi obcaecatione deferimus",
+        "a suis tenebris eruantur"
+      ],
+      "intentionStatus": "VISUALLY_PRESENT_SOURCE_INCIPIT_ANCHORED",
+      "collectStatus": "VISUAL_INTERNAL_AND_CLOSING_CLAUSE_ANCHORS_MATCHED",
+      "speakerRubric": "CELEBRANT_FOR_INTENTION_AND_ORATION_AND_3_CUES",
+      "postureEventIds": [
+        "GF-SOP-08-K",
+        "GF-SOP-08-R"
+      ],
+      "fullTextDiplomaticCertified": false
+    },
+    {
+      "number": 9,
+      "key": "CONVERSION_OF_PAGANS",
+      "intentionPrintedPage": 174,
+      "collectPrintedPage": 175,
+      "intentionScanUrl": "https://gregobase.selapa.net/sources/42/256.png",
+      "collectScanUrl": "https://gregobase.selapa.net/sources/42/257.png",
+      "collectOriginalPhraseAnchors": [
+        "qui non mortem peccatorum sed vitam semper inquiris",
+        "ad laudem et gloriam nominis tui"
+      ],
+      "intentionStatus": "VISUALLY_PRESENT_SOURCE_INCIPIT_ANCHORED",
+      "collectStatus": "VISUAL_INTERNAL_AND_CLOSING_CLAUSE_ANCHORS_MATCHED",
+      "speakerRubric": "CELEBRANT_FOR_INTENTION_AND_ORATION_AND_3_CUES",
+      "postureEventIds": [
+        "GF-SOP-09-K",
+        "GF-SOP-09-R"
+      ],
+      "fullTextDiplomaticCertified": false
+    }
+  ],
+  "criticalEdition": {
+    "prayer8Default": "PRINTED_1962",
+    "laterVariant": "HOLY_SEE_2008",
+    "original1962ImagePages": [
+      173,
+      174
+    ]
+  },
+  "remaining": [
+    "Full-word Latin visual line-by-line collation of nine prayers (including editorial conclusion expansions)",
+    "Critical Latin chant/rubric timing for solemn vs ordinary forms",
+    "Historic/authorized EN/FR parallel readings",
+    "Good Friday Passion actor assignment and full John 18–19 text"
+  ]
+}
