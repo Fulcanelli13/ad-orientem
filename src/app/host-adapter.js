@@ -153,6 +153,12 @@ export function createAppHostAdapter(win = globalThis) {
         // obsolete PrayerBook surface if that owner cannot open.
         return Promise.resolve(modular.open()).then(openedSuccessfully);
       }
+      if (domain === "learn" && typeof win?.AO_LEARN_APP_V1?.open === "function") {
+        // Existing callers may already have installed the owner (including
+        // specialist return routes). Keep their synchronous handoff contract;
+        // only the first genuinely missing owner needs an asynchronous import.
+        return Promise.resolve(win.AO_LEARN_APP_V1.open()).then(openedSuccessfully);
+      }
       if (domain === "find" || domain === "apostolate" || domain === "learn") {
         // A first-use import installs the same modular domain owner as before.
         // No historical V37 fallback and no eager Formation/Explore corpora.
