@@ -27,7 +27,7 @@ for(const r of records){
    assert.equal(r.sr,"","site-only venue cannot assert unverified Mass times");
    assert.equal(r.soa,"FIRST_PARTY_SITE_APPROVED_2026_10_29");
  }else assert.ok(r.sr.trim().length>=10,r.u+": explicit Mass schedule evidence missing");
- assert.equal(r.source_checked_on,"2026-10-08");
+ assert.equal(r.source_checked_on,r.ps==="SITE_ONLY_SOURCE_CONFIRMED"?"2026-10-29":"2026-10-08");
  assert.ok(!keys.has(r.u),"Duplicate provider venue ID: "+r.u);
  keys.add(r.u);
  const addressKey=r.cc+":"+normalized(r.a);
