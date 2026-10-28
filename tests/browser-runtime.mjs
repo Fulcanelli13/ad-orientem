@@ -81,15 +81,15 @@ assert.equal(runtime.getReaderState().cardTitle,"Introit & Preparatory Prayers")
 assert.ok(runtime.getReaderState().paragraphs.some(p=>p.primary==="Introit of the Rosary"));
 
 const host=runtime.showCanonicalEvent("MC-CNS-010",{priestPosition:{label:"ALTAR CENTER"},priestVoice:{label:"SILENT"}});
-assert.equal(host.card.sectionId,"AO.CARD.015");
+assert.equal(host.card.sectionId,"AO.CANON.06");
 assert.equal(runtime.getReaderState().cardTitle,"Consecration of the Sacred Host");
 const same=runtime.showCanonicalEvent("MC-CNS-040",{gesture:{label:"GENUFLECT"}});
-assert.equal(same.card.sectionId,"AO.CARD.015");
+assert.equal(same.card.sectionId,"AO.CANON.06");
 assert.ok(runtime.getReaderState().paragraphs.length>0);
 const chalice=runtime.showCanonicalEvent("MC-CNS-080");
-assert.equal(chalice.card.sectionId,"AO.CARD.016");
-runtime.previous(); assert.equal(runtime.getCurrentSectionId(),"AO.CARD.015");
-runtime.next(); assert.equal(runtime.getCurrentSectionId(),"AO.CARD.016");
+assert.equal(chalice.card.sectionId,"AO.CANON.07");
+runtime.previous(); assert.equal(runtime.getCurrentSectionId(),"AO.CANON.06");
+runtime.next(); assert.equal(runtime.getCurrentSectionId(),"AO.CANON.07");
 runtime.destroy(); assert.equal(root.innerHTML,""); assert.equal(runtime.getReaderModel(),null);
 
 
