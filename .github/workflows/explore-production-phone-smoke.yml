@@ -1,0 +1,41 @@
+name: Explore production phone smoke
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, labeled]
+    branches: [main]
+    paths:
+      - "tests/explore-production-phone-smoke.mjs"
+      - ".github/workflows/explore-production-phone-smoke.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  production-visitor-smoke:
+    # Drafts are opt-in, and no cron or production action is created.
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false || contains(github.event.pull_request.labels.*.name, 'visual-review')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Test deployed Explore in real Chromium
+        env:
+          AO_EXPLORE_PRODUCTION_URL: https://ad-orientem.vercel.app/
+        run: node tests/explore-production-phone-smoke.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: explore-production-phone-smoke
+          path: artifacts/explore-production-smoke
+          if-no-files-found: warn
+          retention-days: 7
