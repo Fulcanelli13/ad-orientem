@@ -1056,7 +1056,7 @@
       "id": "geographical-places",
       "canonical_owner": "sacred-geography",
       "source_of_truth": "data/geography/seed-registry.v1.json",
-      "count": 261,
+      "count": 512,
       "publication_status": "EXPLORE_SEED_LOADED",
       "primary_destination": "explore",
       "notes": "Canonical place IDs are shared by shrine/relic/pilgrimage associations."
@@ -1119,7 +1119,7 @@
       "id": "customs",
       "canonical_owner": "customs-atlas",
       "source_of_truth": "data/customs/customs-atlas-seed.v1.json",
-      "count": 13,
+      "count": 38,
       "publication_status": "EXPLORE_SEED_LOADED",
       "primary_destination": "explore",
       "notes": "Ten published and three context-only records as of inspected seed."
@@ -1128,7 +1128,7 @@
       "id": "customs-attestations",
       "canonical_owner": "customs-atlas",
       "source_of_truth": "data/customs/customs-atlas-seed.v1.json",
-      "count": 71,
+      "count": 97,
       "publication_status": "EXPLORE_SEED_LOADED",
       "primary_destination": "explore",
       "notes": "Evidence attestations are not additional customs."
