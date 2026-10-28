@@ -1,37 +1,39 @@
-# B23 — Original texts with Ad Orientem English and French translations
+# B23–B24 — Trilingual prayer readings and Hagan comparison
 
-**28 October 2026 · Research PR #1785 · Draft translations, not published prayers**
+**28 October 2026 · PR #1785 research only · Live publication switch OFF**
 
-The exact edition remains the primary record. The user may now read existing source-form texts in their original language or in explicitly-labelled **Ad Orientem editorial translations** directly inside the single-file HTML reviewer:
+## User-facing rule: only Latin / English / French
 
-- Original 1905 Italian — English or French draft translation, including original common prayers recovered from the **same 1905 Compendio**, chapters I–III.
-- Authorized French revision, 1913 — original French or English draft translation.
-- Any English rendering in the draft is a new translation of source words, **not an attested historical English prayer** and not a replacement for the printed 1905/1913 text.
+The single-file editorial reviewer offers exactly three reading languages: **Latin, English and French**. The source edition selector offers the distinct **1905 original** and **1913 revised** St Pius X routines. It does *not* offer an Italian reading option or Hagan as a third edition; Italian text is retained only in research-source records to audit translations, not displayed in the reading surface.
 
-## Translation inventory
+Latin forms are distinguished by provenance: the traditional Latin wording for familiar named prayers, versus explicitly marked Ad Orientem Latin drafts for the edition-specific core and theological acts. English and French drafts are also labelled editorial rather than falsely attributed to an edition that did not print them in that language. The printed French 1913 source may be shown directly as an authenticated source-language form.
 
-| Parent edition | Source text category | Drafts |
-| --- | --- | --- |
-| 1905 original Italian | Morning core (1), Evening core (1), three invocations (3), plus nine authentic 1905 Italian common-prayer formulations (9) | English and French; **14 distinct units** |
-| 1913 revised French | Morning core (1), Evening core (1), twelve printed common prayers/invocations (12) | English; 14 distinct units |
-| Total | **28 source-aligned units** | **28 covered units; no editorial approval implied** |
+The exact editions retain different Morning/Evening **orders**. Switching the reading language does not change the edition or import common prayer wording from the other edition without disclosure.
 
-The full machine-readable record is [`data/pray/daily-prayer-pius-x-translations.b23.json`](../../data/pray/daily-prayer-pius-x-translations.b23.json). Each translation is keyed by the **exact edition, daypart and stage ID** of B21, not by a generic prayer title. This prevents contamination between the original 1905 and later revised 1913 forms.
+## Current coverage
 
-## Reader behavior (offline editorial HTML)
+| Parent edition | Prayer/formula units with Latin, English and French readings | Source caveat |
+| --- | ---: | --- |
+| Original 1905 | **16** (5 original appendix bodies/invocations, 9 original catechism common formulas, 2 conventional named prayer forms) | The *Salve Regina* and *Angele Dei* are standard prayer readings, not certified exact 1905 appendix wordings |
+| Revised 1913 French | **14** (2 core and 12 common formulas/invocations) | The examen is a guided act, and *De profundis* is an adjacent optional devotion without exact edition-text collation in this dataset |
+| Total | **30 source-aligned reading units**, each with Latin + English, and French or French original | Editorial draft, not approved public text |
 
-Use the **St Pius X · Primary routine** tab. Select a source edition, Morning/Evening, and **Original / English (AO draft) / Français (AO draft)**. Translated text is labelled in the prayer reading card, with an expandable **original-source comparison** below. Where the original text has not been transcribed or the requested-language translation is absent, the reader displays a warning instead of importing a modern or postconciliar substitute.
+All 30 translation units have Latin and English readings. The 1905 readings also have French drafts; the 1913 source already supplies original French wording. The 1905 source-wording statuses and the 1913 edition-specific passages are independently retained in `data/pray/daily-prayer-pius-x-primary-structure.b21.json` and `data/pray/daily-prayer-pius-x-translations.b23.json`.
 
-The 1905 appendix gives titles for its common recitations. The same printed 1905 *Compendio*, **Prime nozioni di catechismo**, chapters [I](https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Prime_nozioni_di_catechismo/Capo_I), [II](https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Prime_nozioni_di_catechismo/Capo_II) and [III](https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Prime_nozioni_di_catechismo/Capo_III), supplies nine of those formulas, now restored under edition- and chapter-specific provenance in B21 and translated into English/French in B23. **Salve Regina and Angele Dei** remain source-copy pending; they are not silently borrowed from the 1913 French revision. The original 1905 `tutte la mie azioni` source anomaly is kept in the original and explained where the English/French drafts render its clear intended meaning.
+## Hagan — a comparison witness, not a blocker
 
-The 1913 French evening **De profundis** belongs to an adjacent optional devotion; translating its entire Psalm requires identifying the exact source version. A guided examination of conscience is a practice rather than one printed prayer body; its prompts must be sourced and marked as editorial guidance, not fabricated quotation.
+The [National Library of Ireland](https://catalogue.nli.ie/Record/vtls000760522) confirms **Rev. John Hagan, *Catechism of Christian Doctrine*, Dublin: M. H. Gill, 1914, 152 pages**. No readable original 1914 prayer appendix has been recovered in this batch.
 
-## Editorial acceptance criteria
+A [Hagan-related online transcription of Q972–985](https://sites.google.com/view/pius-x-catechism/on-daily-exercises-and-devotions) permits a **secondary comparison of Q974's English sense**, not a certification of the exact 1914 printed text. Comparisons are recorded in `data/pray/daily-prayer-hagan-comparison.b24.json`.
 
-1. Every printed source text remains available with its original edition and page/source link.
-2. A bilingual proofreader confirms all English and French draft prayer translations, sentence by sentence.
-3. Each selection is approved as a complete source prayer, with edition-specific order.
-4. Do not attribute English draft words to Rev. John Hagan (1914) without locating that actual English volume; catalogue existence is not wording verification.
-5. Do not publish on the live reader before editorial selection, original-print page checks and territory-specific distribution/reuse review. The public implementation manifest is deliberately empty and `DAILY_APPROVED_SEQUENCE_RELEASE_V1.enabled=false`.
+Key example: the authenticated 1905 appendix includes **"created me"** in the thanksgiving; the Hagan-related online English text says only that God has **"made me a Christian"**. Our draft preserves *both*, faithful to the 1905 source. Elsewhere, "all my actions" vs "all my acts" and "preserve me this day from sin" vs "keep me this day without sin" are compatible senses, not grounds to change the source.
 
-**Implementation scope:** PR #1785 research only. No Home, Mass, Calendar, public Prayer text or timer feature modified.
+The 1913 revised evening prayer is **not** verifiable through the 1905-related Hagan online Q984. If the actual 1914 printed book becomes readable, record precise page and compare separately.
+
+## Review behavior and release policy
+
+The offline [editorial reviewer](./DAILY-PRAYER-REJECTION-REVIEW-2026-10-28.html) starts on the St Pius X primary routine and shows its stage list in either 1905 or 1913 order, with **Latin / English / Français** selectors. For the 1905 morning core prayer in English, a disclosure compares the translation to Hagan-related wording and explicitly warns that the exact 1914 print is not verified.
+
+Source languages remain in the research registry for verification and provenance. Their absence from the reading surface is deliberate. Missing text stages show a warning rather than switching to an unverified text or source language. The original appendix's minor grammatical/transcription discrepancy remains recorded in B22.
+
+No new prayer wording is on the live reader. Releasing historical text requires editorial approval, careful original-copy collation, and a documented rights/reuse decision. `DAILY_APPROVED_SEQUENCE_RELEASE_V1.enabled=false`; the publication manifest remains empty.
