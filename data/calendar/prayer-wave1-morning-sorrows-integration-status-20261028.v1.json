@@ -43,5 +43,31 @@
   ],
   "browser_status": "PASS initial tests 320/390/1440, preview flag default off; screenshot archival job will track later CI.",
   "merge_policy": "This is a draft review change; no direct production release of either painting.",
-  "morlete_ruiz_state": "Historical Sacred Heart approval unaffected; placement review remains separate."
+  "morlete_ruiz_state": "Historical Sacred Heart approval unaffected; placement review remains separate.",
+  "source_rights_research_20261028": {
+    "morning": {
+      "institutional_artwork_page": "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+      "institutional_open_access_terms": "https://api.artic.edu/docs/",
+      "commons_pd_art_witness": "https://commons.wikimedia.org/wiki/File:Jules_Breton,_le_chant_de_l%27alouette.1884.jpg",
+      "legal_assessment": "PUBLIC_DOMAIN_ARTWORK_AND_OPEN_ACCESS_ROUTE_IDENTIFIED; EXACT_STAGED_FILE_ORIGIN_PENDING_FULL_DOCUMENTATION",
+      "photo_reuse_final_approval": false
+    },
+    "seven-sorrows": {
+      "identity": "MNAC 008327-000",
+      "commons_pd_art_witness": "https://commons.wikimedia.org/wiki/File:Master_of_the_Half_Lengths_-_Virgin_of_the_Seven_Sorrows_-_Google_Art_Project.jpg",
+      "external_higher_quality_original_dimensions": [
+        3250,
+        4391
+      ],
+      "external_original_sha1": "03c6d507851e439df31dfaf0fec390b6e55c86db",
+      "existing_verified_staged_original_dimensions": [
+        2220,
+        3000
+      ],
+      "source_note": "Wikimedia file reports PD-Art, Public Domain Mark and faithful two-dimensional work; recheck jurisdiction and exactly which bytes entered current staged archive.",
+      "next_quality_action": "Verify whether 3250x4391 original has better tone, paint texture and no frame before substituting staged master; never treat mere pixel count as quality.",
+      "photo_reuse_final_approval": false
+    },
+    "final_releases": 0
+  }
 }
