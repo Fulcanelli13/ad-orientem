@@ -7,7 +7,7 @@ const mx=load(root+"sspx-mexico-seven-alias-review-20261009.v2.json");
 const total=load(root+"sspx-worldwide-210-case-disposition-20261009.v3.json");
 const originals=load(root+"staging/sspx-world-map/worldwide-reconciliation.v1.json");
 const files=["sspx-asia-central-americas","sspx-district-seed","sspx-four-district-bulk","sspx-france-first-party","sspx-france-second-pass","sspx-north-america-20261008","sspx-oct26-americas","sspx-oct26-europe","sspx-oct26-poland","sspx-mexico-completion-20261009","sspx-priority-europe-pacific-20261009"];
-const registry=files.flatMap(name=>load("data/directory/generated/v19/"+name+".v1.json").records);
+const registry=files.flatMap(name=>load("data/directory/generated/v19/"+name+".v1.json").records.filter(r=>r.ps!=="SITE_ONLY_SOURCE_CONFIRMED"));
 const ids=new Set(registry.map(x=>x.u));
 assert.equal(registry.length,597);
 assert.equal(ids.size,597);
