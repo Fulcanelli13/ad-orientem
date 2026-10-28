@@ -6,6 +6,7 @@ on:
     paths:
       - .github/workflows/prayer-wave1-remaining-photo-comparison-20261028.yml
       - scripts/art/prayer-wave1-remaining-photo-comparison-20261028.py
+      - scripts/art/prayer-wave1-final-photo-candidate-proof-20261028.py
   workflow_dispatch:
 
 permissions:
@@ -29,6 +30,8 @@ jobs:
         run: |
           python -m py_compile scripts/art/prayer-wave1-remaining-photo-comparison-20261028.py
           python scripts/art/prayer-wave1-remaining-photo-comparison-20261028.py
+          python -m py_compile scripts/art/prayer-wave1-final-photo-candidate-proof-20261028.py
+          python scripts/art/prayer-wave1-final-photo-candidate-proof-20261028.py
       - name: Archive original candidates and QA contact sheets permanently
         run: |
           git config user.name "Ad Orientem research audit"
