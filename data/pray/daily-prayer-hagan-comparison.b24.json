@@ -1,0 +1,83 @@
+{
+  "schema": "ad-orientem.daily-prayer-hagan-comparison.b24.v1",
+  "date": "2026-10-28",
+  "status": "RESEARCH_COMPARISON_NOT_1914_PRINT_TEXT_VERIFICATION",
+  "sources": {
+    "bibliography": {
+      "title": "Catechism of Christian doctrine",
+      "translator": "Rev. John Hagan",
+      "publisher": "M. H. Gill, Dublin",
+      "year": 1914,
+      "pages": 152,
+      "url": "https://catalogue.nli.ie/Record/vtls000760522",
+      "scanAvailable": false
+    },
+    "onlineDerived": {
+      "url": "https://sites.google.com/view/pius-x-catechism/on-daily-exercises-and-devotions",
+      "type": "LATER_ONLINE_DERIVATIVE_OF_CATECHETICAL_INSTRUCTIONS",
+      "cannotAssertOriginal1914": true
+    },
+    "onlineContext": {
+      "url": "https://www.ewtn.com/catholicism/library/catechism-of-st-pius-x-1286",
+      "note": "Online Hagan-related material published with a later editorial introduction and stated style modifications; does not certify exact 1914 appendix wording."
+    },
+    "originalReference": {
+      "url": "https://it.wikisource.org/wiki/Pagina:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu/408",
+      "type": "PROOFREAD_1905_APPENDIX"
+    },
+    "q974Reference": {
+      "url": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quinta/Capo_VIII",
+      "type": "1905_GREATER_CATECHISM"
+    }
+  },
+  "comparisons": [
+    {
+      "unit": "piusx-1905-it/morning/daily-prayer",
+      "issue": "Adoration and love",
+      "ourTranslation": "I adore You, my God, and love You with all my heart.",
+      "haganRelated": "I adore Thee, O my God, and I love Thee with all my heart.",
+      "result": "SEMANTIC_MATCH; pronoun register only"
+    },
+    {
+      "unit": "piusx-1905-it/morning/daily-prayer",
+      "issue": "Creation and baptismal identity",
+      "ourTranslation": "for having created me, made me a Christian",
+      "haganRelated": "for having made me a Christian",
+      "result": "OUR_TRANSLATION_RETAINS_CREATED_ME",
+      "note": "The 1905 original appendix and Q974 explicitly include the phrase 'created me'. Hagan-related online Q974 drops it; do not delete the original meaning to mimic this derivative."
+    },
+    {
+      "unit": "piusx-1905-it/morning/daily-prayer",
+      "issue": "Offered works",
+      "ourTranslation": "I offer You all my actions",
+      "haganRelated": "I offer Thee all my acts",
+      "result": "SEMANTIC_MATCH",
+      "note": "Original 1905 printed transcription has unresolved 'tutte la mie azioni', but Q974 has grammatically standard 'tutte le mie azioni'."
+    },
+    {
+      "unit": "piusx-1905-it/morning/daily-prayer",
+      "issue": "Preservation from sin",
+      "ourTranslation": "preserve me this day from sin and deliver me from all evil",
+      "haganRelated": "keep me this day without sin and to deliver me from all evil",
+      "result": "SEMANTIC_MATCH; keep historic English as optional comparison only"
+    },
+    {
+      "unit": "piusx-1905-it/evening/daily-prayer",
+      "issue": "Evening appendix",
+      "result": "NOT_COMPARABLE",
+      "note": "Hagan-related online Q984 prescribes repeating morning prayers and examination; the distinct short 1905 printed evening appendix is not present. Do not recast online Q984 as the original evening appendix."
+    },
+    {
+      "unit": "piusx-1913-fr/morning/daily-prayer",
+      "issue": "Revised catechism",
+      "result": "NOT_DIRECTLY_COMPARABLE",
+      "note": "The 1913 French revised sequence includes petitions and order changes not present in the 1905 appendix. English Hagan-related Q974 comparison cannot certify this edition."
+    }
+  ],
+  "conclusion": "Hagan is valuable for checking English register and broad 1905 practice meaning, but the online derivative cannot authorize the exact wording of the 1914 printing or override the 1905 Italian text. No user-visible Italian language mode.",
+  "release": {
+    "verified1914WordingCount": 0,
+    "editorialOnly": true,
+    "publicEnabled": false
+  }
+}
