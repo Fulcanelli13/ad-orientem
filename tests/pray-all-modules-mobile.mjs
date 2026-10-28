@@ -379,6 +379,11 @@ try{
   ["pray.forty_hours","fortyHours","forty-1"]
  ]){
   await page.evaluate(id=>globalThis.AO_PRAY_V435930.open(id,{returnContext:null}),route);
+  if(route==="pray.forty_hours"){
+   assert.equal(await page.locator("#aoPray435930.open [data-ao-forty-mode=choose]").count(),1,
+    "Forty Hours must preserve the existing visitor companion alongside the new solemn reference");
+   await page.locator("#aoPray435930.open [data-p435930-forty-mode=visitor]").tap();
+  }
   const reader="#aoPray435930.open [data-ao-devotional-owner='"+owner+"']";
   const progress=page.locator(reader+" .aoDevoSequenceTimeline .aoDevoProgress");
   await progress.waitFor({state:"visible",timeout:10000});
