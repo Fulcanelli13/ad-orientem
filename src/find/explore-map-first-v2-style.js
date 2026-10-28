@@ -65,6 +65,62 @@ export const EXPLORE_MAP_FIRST_V2_STYLE = `
   color:#b9c4c8;padding:20px 15px;margin:0;
   font:13px/1.5 var(--ao-font-ui,system-ui,sans-serif);
 }
+.aoHeritageSurface .aoMapcnDiscoverRail[data-discover-expanded="false"] .aoMapcnEditorialStrip{display:none}
+.aoHeritageSurface .aoMapcnEditorialStrip{
+  flex:none;padding:11px 12px 12px;
+  border-bottom:1px solid rgba(201,174,121,.25);
+  background:linear-gradient(145deg,rgba(201,174,121,.07),transparent 75%);
+}
+.aoHeritageSurface .aoMapcnEditorialHeading{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:7px;margin-bottom:8px;
+}
+.aoHeritageSurface .aoMapcnEditorialHeading span{
+  color:#dec38f;letter-spacing:.11em;
+  font:700 9px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoHeritageSurface .aoMapcnEditorialHeading small{
+  color:#a5b4b8;font:10px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoHeritageSurface .aoMapcnEditorialCarousel{
+  display:flex;gap:8px;min-width:0;overflow-x:auto;
+  padding-bottom:2px;overscroll-behavior-x:contain;scroll-snap-type:x proximity;
+  scrollbar-width:thin;scrollbar-color:#7d6d51 transparent;
+}
+.aoHeritageSurface .aoMapcnEditorialCard{
+  flex:0 0 238px;display:flex;align-items:stretch;gap:9px;
+  min-height:80px;padding:5px;
+  text-align:left;color:#efe6d3;background:#1a2933;
+  border:1px solid rgba(201,174,121,.24);border-radius:10px;
+  scroll-snap-align:start;cursor:pointer;
+}
+.aoHeritageSurface .aoMapcnEditorialCard:hover,
+.aoHeritageSurface .aoMapcnEditorialCard[aria-current="true"]{
+  background:#263940;border-color:rgba(201,174,121,.75);
+}
+.aoHeritageSurface .aoMapcnEditorialCard:focus-visible{
+  outline:2px solid var(--ao-liturgical-accent,#d9c59a);outline-offset:-3px;
+}
+.aoHeritageSurface .aoMapcnEditorialCard img{
+  display:block;width:88px;height:76px;flex:none;
+  object-fit:cover;background:#15232d;border-radius:7px;
+}
+.aoHeritageSurface .aoMapcnEditorialCard img[data-photo-orientation="portrait"]{
+  object-fit:contain;
+}
+.aoHeritageSurface .aoMapcnEditorialLabel{
+  display:flex;flex-direction:column;justify-content:center;gap:5px;
+  min-width:0;overflow:hidden;
+}
+.aoHeritageSurface .aoMapcnEditorialLabel strong{
+  color:#f0e3cc;font:500 14px/1.18 var(--ao-font-display,Georgia,serif);
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;
+}
+.aoHeritageSurface .aoMapcnEditorialLabel small{
+  color:#9aadb1;font:11px/1.28 var(--ao-font-ui,system-ui,sans-serif);
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;
+}
+
 .aoHeritageSurface .aoMapcnDiscoverItem>img{
   object-fit:cover;
 }
