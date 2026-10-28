@@ -17,8 +17,12 @@ assert.ok(PRAYER_ACQUISITION_WITNESSES_V1.every(x=>x.source?.url==="https://en.w
 assert.ok(PRAYER_ACQUISITION_WITNESSES_V1.every(x=>x.language==="en"&&x.text?.length>50));
 assert.ok(PRAYER_ACQUISITION_WITNESSES_V1.every(x=>x.release.status==="STAGED_RESEARCH_NOT_LIVE" && !x.release.allowed_in_prayer_hub && x.release.exact_print_verified===false));
 assert.ok(PRAYER_ACQUISITION_WITNESSES_V1.every(x=>x.release.translation_status.fr==="NOT_AVAILABLE" && x.release.translation_status.la==="NOT_ADMITTED"));
-assert.equal(prayerAcquisitionCandidates("prepare_spiritual_reading").length,2);
-assert.equal(prayerAcquisitionCandidates("conclude_spiritual_reading").length,1);
-assert.equal(prayerAcquisitionCandidates("self_offering").length,1);
+assert.equal(prayerAcquisitionCandidates("prepare_spiritual_reading").length,0);
+assert.equal(prayerAcquisitionCandidates("prepare_spiritual_reading",{research:true}).length,2);
+assert.equal(prayerAcquisitionCandidates("prepare_spiritual_reading",{research:true,language:"fr"}).length,0);
+assert.equal(prayerAcquisitionCandidates("conclude_spiritual_reading").length,0);
+assert.equal(prayerAcquisitionCandidates("conclude_spiritual_reading",{research:true}).length,1);
+assert.equal(prayerAcquisitionCandidates("self_offering").length,0);
+assert.equal(prayerAcquisitionCandidates("self_offering",{research:true}).length,1);
 assert.equal(prayerAcquisitionCandidates("unsupported-purpose").length,0);
 console.log("Editorial acquisition wave 04: 97 source candidates; four Lasance English text witnesses staged; no live release, fabricated language, or canonical replacement PASS");
