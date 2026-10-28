@@ -92,6 +92,24 @@ try{
       "Optional art may not precede original Rosary start "+JSON.stringify(hierarchy));
     owner="#aoPrayerBookRoot.open";
    }
+   // The Prayer root can render behind the loading director; DOM-based assertions
+   // alone would falsely pass while the app is still covered by a startup curtain.
+   await page.waitForFunction(()=>{
+     const boot=document.querySelector("#ao-cinema-boot");
+     const loader=document.querySelector("#ao-cinema-loader");
+     return (!boot || boot.classList.contains("aoCinemaBootDone")) &&
+       (!loader || !loader.classList.contains("aoCinemaLoaderOn"));
+   },null,{timeout:45000});
+   if(which==="rosary"){
+     await page.waitForFunction(()=>{
+       const button=document.querySelector('#aoPrayerBookRoot.open .lab-rosary-hero [data-lab-rosary-today]');
+       if(!button)return false;
+       const b=button.getBoundingClientRect();
+       if(b.width<40||b.height<40||b.top<0||b.top>=innerHeight)return false;
+       const center=document.elementFromPoint(b.left+b.width/2,b.top+b.height/2);
+       return Boolean(center?.closest?.("#aoPrayerBookRoot.open"));
+     },null,{timeout:45000});
+   }
    assert.equal(await art.evaluate(el=>el.open),false,"image must stay collapsed on opening");
    const initial=await art.evaluate(el=>({
     top:el.getBoundingClientRect().top,height:el.getBoundingClientRect().height,
