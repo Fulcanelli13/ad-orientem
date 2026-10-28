@@ -32,6 +32,13 @@ for(const id of ids){
     assert.match(h.englishSource.work,/Edward Caswall.*1849/);
     assert.match(h.englishSource.url,/wikimedia\.org/);
     assert.match(h.languageStatus,/CASWALL_1849_ENGLISH/);
+  }else if(id==="lustra_sex"){
+    assert.equal(h.en.split(/\n\s*\n/).length,6,"1842 Passion hymn has six historical source units");
+    assert.match(h.en,/And now, six lustral courses run/);
+    assert.match(h.en,/O faithful Cross, thou peerless Tree/);
+    assert.match(h.englishSource.witnessStatus,/1842_BILINGUAL_PRINTED/);
+    assert.match(h.englishSource.editorialNote,/Good Friday/);
+    assert.match(h.languageStatus,/1842_ENGLISH_PASSION_HYMN_EXCERPT/);
   }else assert.equal(h.en,undefined,"Do not invent a modern English edition: "+id);
   if(["audi_benigne","vexilla_regis"].includes(id)){
     assert.equal(h.fr.split(/\n\s*\n/).length,id==="vexilla_regis"?7:5);

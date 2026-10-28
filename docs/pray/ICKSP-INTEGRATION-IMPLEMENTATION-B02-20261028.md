@@ -164,3 +164,11 @@ From the original *Lyra Catholica* (London: James Burns, 1849) printed pages, th
 Source scan: https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf
 
 Each English edition is credited, separated by stanzas, and guarded in Node/mobile tests. Seasonal hymn witness coverage now stands at **8/8 Latin, 5/8 historical English, 2/8 historic French**. The remaining historic English searches concern *Ad cenam Agni providi* (the restricted pre-1632 recension), *Lustra sex* and *O sol salutis*. These texts are not silently reconstructed.
+
+## B11 — Lustra sex historical 1842 Catholic English witness
+
+Original bilingual printed Catholic booklet *Devotions commemorative of the Most Adorable Passion of Our Lord and Saviour Jesus Christ*, James Burns, **1842**, printed pp. lv–lvi (PDF zero-index pp. 126–127), visually checked. Its Good Friday section prints the Latin *Lustra sex qui iam peregit* stanza, subsequent *Felle potus*, *Crux fidelis*, *Flecte ramos*, *Sola digna*, and concluding doxology with an English parallel. The six corresponding historical English units are added to the existing Sacred Hymns reader, with original refrain/disclosure identified as an editorial reading extraction. The book presents this as a **Good Friday Pange lingua / Reproaches liturgical text**, not as a separate 1842 Lauds assignment. The Latin ICRSP Lauds hymn and its exact six-stanza identity remain untouched.
+
+Primary source: https://upload.wikimedia.org/wikipedia/commons/e/ed/Devotions_commemorative_of_the_most_adorable_Passion_of_Our_Lord_and_Saviour_Jesus_Christ-_translated_from_Catholic_sources_%28IA_DevotionsCommemorativeOf%29.pdf
+
+Counts: **8 Latin seasonal hymns**, **6 historical English witnesses** (one extracted from an independently documented Good Friday hymn), **2 historical French witnesses**. Outstanding English: *Ad cenam Agni providi* (older, conditional recension) and *O sol salutis intimis*. Historic French pending for the other six hymn identities. No overall Office calendar automation is claimed; all additions remain on PR #1800.

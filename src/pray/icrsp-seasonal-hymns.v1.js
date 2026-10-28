@@ -407,7 +407,49 @@ Unius Triníque nomen
 Laudet univérsitas.
 Amen.`,
 "https://icrspfrance.fr/textes-liturgiques.php?article=x628ec868_lisible",
-{subtitleFr:"Laudes du Temps de la Passion"}),
+{subtitleFr:"Laudes du Temps de la Passion",en:`And now, six lustral courses run,
+His task of love is well nigh done;
+The Saviour, of His own free will,
+Prepares His Passion to fulfil;
+And on the Cross the Victim lies,
+Meek, and bound for sacrifice.
+
+Gall His drink, behold Him languish,
+While His tender frame with anguish
+Thorns, and nails, and javelin fierce,
+One by one, acutely pierce;
+Till from His wounded side a flood
+Of Water flows, with mingled Blood,
+Which earth and sea, which world and skies,
+From sin's pollution purifies.
+
+O faithful Cross, thou peerless Tree,
+No forest yields the like of thee,
+Leaf, flower, and bud.
+Sweet is the Wood, and sweet its weight,
+And sweet the nails which penetrate thee,
+Thou sweet Wood.
+
+Bow thy branches, haughty Tree;
+Suspend thy wonted cruelty;
+Relax thy tightened arms; repress,
+For once, thy native stubbornness;
+Thy Royal burden gently bear,
+And spare our dying God, O spare!
+
+Thou alone wert meet esteemed
+Him to bear, who man redeemed;
+Thou, unshaken Ark, bedewed
+With the Lamb's availing Blood,
+Shipwrecked man dost safely guide,
+And in port securely hide.
+
+To the Undivided Three
+In Heaven be glory, praise,
+And honour given, alike to
+Father, and to Son, and Paraclete,
+The Three in One; yea, let the adoring world
+Proclaim of Three and One the glorious Name. Amen.`,englishSource:{"work":"Devotions commemorative of the Most Adorable Passion of Our Lord and Saviour Jesus Christ","imprint":"London: James Burns, 1842","location":"The Reproaches, sung on Good Friday; Pange lingua verses Lustra sex through doxology","printedPages":"lv–lvi","pdfPagesZeroBased":[126,127],"url":"https://upload.wikimedia.org/wikipedia/commons/e/ed/Devotions_commemorative_of_the_most_adorable_Passion_of_Our_Lord_and_Saviour_Jesus_Christ-_translated_from_Catholic_sources_%28IA_DevotionsCommemorativeOf%29.pdf","witnessStatus":"ORIGINAL_1842_BILINGUAL_PRINTED_PAGES_INSPECTED","editorialNote":"Historical English rendering extracted from the 1842 Good Friday hymn; repeated responses compressed into corresponding Crux fidelis stanza for reading, not an independently attested standalone Lauds setting; keep original source linked."},languageStatus:"HISTORICAL_LATIN_PLUS_1842_ENGLISH_PASSION_HYMN_EXCERPT_FRENCH_PENDING"}),
   o_sol_salutis:h("o_sol_salutis","O sol salutis intimis","Lent","Lauds",
 `O sol salútis, íntimis,
 Iesu, refúlge méntibus,
