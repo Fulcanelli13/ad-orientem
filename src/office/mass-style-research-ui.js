@@ -108,6 +108,16 @@
       if(button.hasAttribute("data-office-settings-toggle")){const m=root.querySelector("[data-office-settings-menu]");closeMenus(m?.hidden?"settings":null);return;}
       if(button.hasAttribute("data-office-section-select")){showCard(Number(button.dataset.officeSectionSelect));return;}
       if(button.hasAttribute("data-office-jump")){showCard(Number(button.dataset.officeJump));return;}
+      if(button.hasAttribute("data-office-omit-martyrology")){
+        // User explicitly omits only the reading when outside choir, NOT
+        // its following versicle and prayer, which is its own source part.
+        const reading=cards[current],following=cards[current+1];
+        if(reading?.dataset.officeSourcePart==="MARTYROLOGY_READING"&&
+           following?.dataset.officeSourcePart==="POST_MARTYROLOGY_PRAYER"&&
+           following.dataset.sourceCellLa===reading.dataset.sourceCellLa)
+          showCard(current+1,"omit-reading");
+        return;
+      }
       if(button.hasAttribute("data-office-nav")){showCard(current+Number(button.dataset.officeNav));return;}
       if(button.hasAttribute("data-office-mode-select")){setMode(button.dataset.officeModeSelect);return;}
     });
