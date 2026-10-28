@@ -136,7 +136,12 @@
     "batch6_source_version_holds": 1,
     "batch6_institutional_source_photo_rights_holds": 2,
     "batch6_new_photo_rights_final_certifications": 0,
-    "batch6_new_pristine_certifications": 0
+    "batch6_new_pristine_certifications": 0,
+    "batch7_exact_source_mislink_resolved": 1,
+    "batch7_added_original_research_photo_candidates": 2,
+    "batch7_official_aic_iiif_403_holds": 1,
+    "batch7_new_pristine_photo_certifications": 0,
+    "batch7_new_production_activations": 0
   },
   "primary_artworks": [
     {
@@ -1954,6 +1959,22 @@
           "production_allowed": false,
           "source_provenance_exception": "PINNED_RESEARCH_IMAGE_2548x3300_IS_DIFFERENT_THAN_COMMONS_CURRENT_1019x1534_COLOUR_ENHANCED_PNG",
           "prevent_auto_replace_with_commons_png": true
+        },
+        "batch7_institution_and_exact_commons": {
+          "aic_artwork_id": 94841,
+          "aic_title": "The Song of the Lark",
+          "aic_image_id": "48b2de88-ba73-8e19-f448-d1cef4a1c847",
+          "aic_public_domain_object": true,
+          "aic_iiif_image_acquisition": "HTTP_403_HOLD",
+          "verified_matching_commons_file": "https://commons.wikimedia.org/wiki/File:Jules_Breton,_le_chant_de_l'alouette.1884.jpg",
+          "verified_exact_archived_sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+          "commons_original_sha1": "885e783c3a4cbb6b96f5b6da1072d9ba37c99f20",
+          "archived_original_physically_identical_to_commons": true,
+          "previously_mislinked_png_replaced_in_source_evidence_only": true,
+          "master_original_untouched": true,
+          "source_photo_rights_final_certified": false,
+          "pristine_certified": false,
+          "production_activated": false
         }
       },
       "alternative_source_candidate": null,
@@ -2601,6 +2622,23 @@
           "photo_rights_final_certified": false,
           "pristine_final_certified": false,
           "production_allowed": false
+        },
+        "batch7_nga_cc0_photo": {
+          "status": "ADDITIONAL_INSTITUTION_DONATED_EXACT_CC0_PHOTO_ARCHIVED",
+          "candidate_path": "assets/staged/prayer-art-b7-three-institution-native-20261028/confession-nga-donated-cc0.jpg",
+          "sha256": "71b30dda1ce9aaba5e05499b15ecb842078975d1d512090988c40ad07add0d1a",
+          "pixels": [
+            4000,
+            3658
+          ],
+          "commons_sha1": "e91b10fda9a0ff8410f7033fa91a8b2244d6d874",
+          "commons_cc0": true,
+          "source_file": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo,_The_Return_of_the_Prodigal_Son,_1667-1670,_NGA_34956.jpg",
+          "preview": "assets/staged/prayer-art-b7-three-institution-native-20261028/confession-nga-donated-cc0-full-composition-review.jpg",
+          "existing_primary_preserved": true,
+          "photo_rights_final_certified": false,
+          "pristine_certified": false,
+          "production_activated": false
         }
       },
       "alternative_source_candidate": null,
@@ -2915,6 +2953,30 @@
           "photo_rights_final_certified": false,
           "pristine_final_certified": false,
           "production_allowed": false
+        },
+        "batch7_mnac_google_art_photo": {
+          "status": "ADDITIONAL_GOOGLE_ART_PROJECT_SOURCE_ARCHIVED_MNAC_008327_ARTWORK",
+          "mnac_original_object": "008327-000",
+          "mnac_object_public_domain_record": true,
+          "commons_source": "https://commons.wikimedia.org/wiki/File:Master_of_the_Half_Lengths_-_Virgin_of_the_Seven_Sorrows_-_Google_Art_Project.jpg",
+          "rights_record_type": "COMMONS_PD_ART_FAITHFUL_2D_NOT_MNAC_FILE_EXACT_CHAIN",
+          "candidate_path": "assets/staged/prayer-art-b7b-breton-mnac-exact-commons-20261029/sorrows-google-art-project-3250x4391-commons-original.jpg",
+          "sha256": "9ac17078b83f2cf6031aa70a86917929cdeea16927e66c4bb7c0f7671ec89667",
+          "pixels": [
+            3250,
+            4391
+          ],
+          "commons_sha1": "03c6d507851e439df31dfaf0fec390b6e55c86db",
+          "preview": "assets/staged/prayer-art-b7b-breton-mnac-exact-commons-20261029/sorrows-google-art-project-entire-composition-review.jpg",
+          "older_primary_master_sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+          "older_primary_master_dimensions": [
+            2220,
+            3000
+          ],
+          "original_primary_preserved": true,
+          "photo_rights_final_certified": false,
+          "pristine_certified": false,
+          "production_activated": false
         }
       },
       "alternative_source_candidate": null,
@@ -6973,6 +7035,22 @@
       "pristine_photo_final_certifications": 0,
       "releases": 0,
       "cost_eur": 0
+    },
+    "B7_THREE_INSTITUTION_AND_TWO_EXACT_COMMONS": {
+      "status": "COMPLETE_RESEARCH_EVIDENCE_TWO_CANDIDATE_FILES_ADDED_BRETON_IDENTITY_RECONCILED",
+      "workflow_b7": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40775294062",
+      "workflow_b7b": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40775463929",
+      "b7_sources": "assets/staged/prayer-art-b7-three-institution-native-20261028/institution-native-source-audit.json",
+      "b7b_sources": "assets/staged/prayer-art-b7b-breton-mnac-exact-commons-20261029/two-case-results.json",
+      "institutional_objects_confirmed": 3,
+      "confirmed_archived_primary_source_versions": 1,
+      "additional_unmodified_photo_candidates_archived": 2,
+      "official_aic_iiif_denied": 1,
+      "photo_rights_final_certified": 0,
+      "pristine_final_certified": 0,
+      "production_activated": 0,
+      "cost_eur": 0,
+      "remark": "NGA official CC0 donor file is 4000x3658; MNAC Google Art exact-work candidate 3250x4391. Primary master hashes unchanged."
     }
   },
   "protected_wave1_notes": {
@@ -7096,6 +7174,51 @@
         "pristine_final_certified": false,
         "production_allowed": false
       }
+    }
+  ],
+  "institutional_photo_candidates": [
+    {
+      "hero": "confession",
+      "status": "ADDITIONAL_INSTITUTION_DONATED_EXACT_CC0_PHOTO_ARCHIVED",
+      "candidate_path": "assets/staged/prayer-art-b7-three-institution-native-20261028/confession-nga-donated-cc0.jpg",
+      "sha256": "71b30dda1ce9aaba5e05499b15ecb842078975d1d512090988c40ad07add0d1a",
+      "pixels": [
+        4000,
+        3658
+      ],
+      "commons_sha1": "e91b10fda9a0ff8410f7033fa91a8b2244d6d874",
+      "commons_cc0": true,
+      "source_file": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo,_The_Return_of_the_Prodigal_Son,_1667-1670,_NGA_34956.jpg",
+      "preview": "assets/staged/prayer-art-b7-three-institution-native-20261028/confession-nga-donated-cc0-full-composition-review.jpg",
+      "existing_primary_preserved": true,
+      "photo_rights_final_certified": false,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "hero": "sorrows",
+      "status": "ADDITIONAL_GOOGLE_ART_PROJECT_SOURCE_ARCHIVED_MNAC_008327_ARTWORK",
+      "mnac_original_object": "008327-000",
+      "mnac_object_public_domain_record": true,
+      "commons_source": "https://commons.wikimedia.org/wiki/File:Master_of_the_Half_Lengths_-_Virgin_of_the_Seven_Sorrows_-_Google_Art_Project.jpg",
+      "rights_record_type": "COMMONS_PD_ART_FAITHFUL_2D_NOT_MNAC_FILE_EXACT_CHAIN",
+      "candidate_path": "assets/staged/prayer-art-b7b-breton-mnac-exact-commons-20261029/sorrows-google-art-project-3250x4391-commons-original.jpg",
+      "sha256": "9ac17078b83f2cf6031aa70a86917929cdeea16927e66c4bb7c0f7671ec89667",
+      "pixels": [
+        3250,
+        4391
+      ],
+      "commons_sha1": "03c6d507851e439df31dfaf0fec390b6e55c86db",
+      "preview": "assets/staged/prayer-art-b7b-breton-mnac-exact-commons-20261029/sorrows-google-art-project-entire-composition-review.jpg",
+      "older_primary_master_sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+      "older_primary_master_dimensions": [
+        2220,
+        3000
+      ],
+      "original_primary_preserved": true,
+      "photo_rights_final_certified": false,
+      "pristine_certified": false,
+      "production_activated": false
     }
   ]
 }
