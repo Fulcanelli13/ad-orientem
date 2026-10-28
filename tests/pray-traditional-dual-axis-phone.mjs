@@ -162,7 +162,7 @@ try{
  assert.equal(evening.index,0);assert.equal(evening.kind,"daily");
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-quiet-daily-horizon"),"evening");
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"10");
- await page.locator("#aoPray435930 .aoDevoStop").nth(8).evaluate(b=>b.click());
+ await page.locator("#aoPray435930 .aoDevoStop").nth(7).evaluate(b=>b.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-phase"),"3",
   "Evening atmosphere must pass from blue hour to nightfall");
  await page.locator("#aoPray435930 .aoDevoStop").nth(10).evaluate(b=>b.click());
