@@ -4,8 +4,8 @@
   "status": "RESEARCH_ONLY_SOURCE_EVIDENCE_NO_PINS",
   "source_p51": "data/geography/research/sacred-places-p51-150-bulk-reconciliation-20261028.v1.json",
   "input_source_less": 47,
-  "source_urls_found": 45,
-  "source_urls_still_missing": 2,
+  "source_urls_found": 46,
+  "source_urls_still_missing": 1,
   "site_specific_primary_sources": 41,
   "source_quality_breakdown": {
     "CATHOLIC_PRIMARY": 30,
@@ -13,9 +13,10 @@
     "INDIRECT_CONTEXT": 1,
     "CATHOLIC_INSTITUTIONAL": 1,
     "HERITAGE_CONTEXT": 2,
-    "UNRESOLVED": 2,
+    "UNRESOLVED": 1,
     "SECONDARY_CONTEXT": 1,
-    "HERITAGE_PRIMARY": 2
+    "HERITAGE_PRIMARY": 2,
+    "CATHOLIC_INSTITUTIONAL_CONTEXT": 1
   },
   "geometry_proposals_cleared_to_publish": 0,
   "precautions": [
@@ -25,7 +26,8 @@
     "Santo Niño Cebu OSM way 413764505 is tagged landuse=religious and nearby node 10757993558 identifies Pilgrim Center, not confirmed church footprint.",
     "Trier Cathedral and Bernadette Nevers are already canonical; not two additional pins.",
     "La Popa hilltop sanctuary is not the Pie de la Popa Candelaria Ermita; St John Ein Karem is not Church of Visitation.",
-    "No existing production data and no Mass times modified."
+    "No existing production data and no Mass times modified.",
+    "Simala 2017 Catholic religious-institute visitor article is contextual testimony and does not verify a precise chapel building, current custodial authority or reported miraculous events."
   ],
   "rows": [
     {
@@ -321,10 +323,10 @@
       "rank": 116,
       "original_name": "Marian Shrine of Simala, Sibonga",
       "country": "PH",
-      "source_url": null,
-      "source_issuer": null,
-      "evidence_tier": "UNRESOLVED",
-      "identity_scope_note": "No safe source-level matching established in this pass",
+      "source_url": "https://www.blessedsacramentphil.org/provincial-update-35/",
+      "source_issuer": "Congregation of the Blessed Sacrament, Philippine Province (visitor's first-hand account)",
+      "evidence_tier": "CATHOLIC_INSTITUTIONAL_CONTEXT",
+      "identity_scope_note": "Catholic religious congregation reports visiting Marian Monks of Eucharistic Adoration monastery at Upper Lindogon, Simala; institutional third-party testimony only. Not the shrine custodian; no exact monastery/church footprint, miracle verification or diocesan status certification.",
       "source_usable_for_site_specific_identity": false,
       "osm_feature_ref": null,
       "osm_feature_type": null,
