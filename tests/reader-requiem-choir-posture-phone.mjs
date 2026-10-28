@@ -53,6 +53,37 @@ try{
      select.value="REQUIEM_CHOIR_1962";
      select.dispatchEvent(new Event("change",{bubbles:true}));
    });
+   // Missal is intentionally a static book view: scrolling its columns
+   // must not impersonate the priest's live source-cue clock. Check that
+   // the opted-in profile persists and that all source prayer anchors exist,
+   // then reserve exact live scroll-transition assertions for LIVE mode.
+   if(mode==="MISSAL"){
+     const staticMissal=await page.evaluate(async()=>{
+       const api=window.__AO_PHONE_PREVIEW;
+       const cues=["AO.SM.C0150","AO.SM.C0208","AO.SM.C0253","AO.SM.C0257"];
+       const available=cues.every(cue=>api.model.cards.some(card=>
+         (card.paragraphs??[]).some(p=>p.sourceCueIds?.includes(cue))));
+       const card=api.model.cards.find(c=>(c.paragraphs??[]).some(p=>
+         p.sourceCueIds?.includes("AO.SM.C0253")));
+       api.showSequence(card.sequence);
+       await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
+       const before=api.getActiveCue();
+       const scroller=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+       scroller.scrollTop=Math.max(0,scroller.scrollHeight-scroller.clientHeight);
+       scroller.dispatchEvent(new Event("scroll",{bubbles:true}));
+       await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
+       return {available,mode:api.getPresentationMode(),
+         chosen:api.getNativeEventState()?.customary?.postureProfile,
+         before,after:api.getActiveCue()};
+     });
+     assert.equal(staticMissal.available,true,"Missal lost canonical Requiem source anchors");
+     assert.equal(staticMissal.mode,"MISSAL");
+     assert.equal(staticMissal.chosen,"REQUIEM_CHOIR_1962");
+     assert.equal(staticMissal.after,staticMissal.before,
+       "Missal book scrolling must not claim a new live priest/choir event");
+     assert.deepEqual(errors,[],form+"/"+mode+" phone runtime errors");
+     continue;
+   }
    async function focus(cueId){
      const result=await page.evaluate(async target=>{
        const api=window.__AO_PHONE_PREVIEW;
