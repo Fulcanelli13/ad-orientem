@@ -30,7 +30,7 @@ export const PRINTED_RUBRIC_WITNESSES=Object.freeze({
     Object.freeze({id:"SUNDAY_166",page:62,pdfPage:62,paragraph:"166(a,b,g,h)",
       principle:"First Sunday Vespers follows Saturday's psalter where not proper; Compline after First Vespers is Saturday, after Second Vespers is Sunday.",
       check:"SOURCE_COMPLINE_PROPER_REQUIRES_MANUAL_COLLATION",verifiedAgainstPrintedRule:true}),
-    Object.freeze({id:"FESTIVE_167",page:62,pdfPage:62,paragraph:"167(a,b,g,h)",
+    Object.freeze({id:"FESTIVE_167",page:63,pdfPage:63,paragraph:"167(a,b,g,h)",
       principle:"Class I feast First and Second Vespers are festive; Compline following either is of Sunday.",
       check:"SOURCE_COMPLINE_PROPER_REQUIRES_MANUAL_COLLATION",verifiedAgainstPrintedRule:true}),
     Object.freeze({id:"CONCURRENCE_103_105",page:20,pdfPage:17,paragraph:"103–105",
@@ -104,7 +104,7 @@ export function inspectFeastTransition({halloween,allSaints,allSouls,matins}={})
       allSoulsVespers:d.headline.split("\n")[0],
     },
     unresolved:[
-      "NOVEMBER_1_2_VESPERS_CONCURRENCE_AND_COMMEmORATIONS",
+      "NOVEMBER_1_2_VESPERS_CONCURRENCE_AND_COMMEMORATIONS",
       "1961_PRINTED_PROPER_TEXT_LINES_NOT_COLLATED",
       "EN_FR_TRANSLATION_PARAGRAPH_COMPLETENESS_NOT_ATTESTED",
       "LOCAL_CALENDAR_VARIATIONS_NOT_RECONCILED",
