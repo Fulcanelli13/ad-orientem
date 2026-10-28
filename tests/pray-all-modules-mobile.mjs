@@ -598,7 +598,9 @@ try{
    assert.match(firstHoly,fragment,"Holy Face day 1 must retain complete source part: "+fragment);
  }
  assert.ok(firstHoly.length>3200,"Day 1 should contain its entire historical meditation, not an editorial précis");
- await page.locator(holyFace+' [data-n1-day="9"]').tap();
+ await page.locator(holyFace+" details.aoN1DayDisclosure > summary").tap({timeout:9000});
+ assert.equal(await page.locator(holyFace+" details.aoN1DayDisclosure").evaluate(el=>el.open),true,"Days disclosure must expand before touch navigation");
+ await page.locator(holyFace+' [data-n1-day="9"]').tap({timeout:9000});
  const ninthHoly=await page.locator(holyFace+" .aoN1SourceText").innerText();
  assert.match(ninthHoly,/Resurrection/i);
  assert.match(ninthHoly,/Spiritual Bouquet/i);
