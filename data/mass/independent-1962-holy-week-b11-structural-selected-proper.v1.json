@@ -1,0 +1,82 @@
+{
+  "schema": "AO_MR1962_HOLY_WEEK_B11_ORIGINAL_RITE_STRUCTURE_AND_SELECTED_PROPER_V1",
+  "version": 1,
+  "editorialDate": "2026-10-28",
+  "ownerIssue": 894,
+  "status": "B11_CROSSWALK_RUNTIME_SOURCE_VERIFIED_WITH_ONE_CHRISM_HOLD",
+  "primaryWitness": "data/mass/independent-1962-holy-week-b09-original-image-witness.v1.json",
+  "precedingCrosswalk": "data/mass/independent-1962-holy-week-b10-original-runtime-crosswalk.v1.json",
+  "sourceYears": [
+    2026,
+    2027
+  ],
+  "authority": "1962 Vatican printed Missale Romanum: page-anchored B09 independent image witnesses. App owner is the existing 1962 Calendar resolver, R17 reader and existing distinct-rite graphs.",
+  "policy": "Structural printed headings must be checked as ritual boundaries; never count them as text omissions or claim original heading wording shown verbatim. The Holy Thursday Latin Introit is checked against the actual resolved proper, not a sample string in source JSON.",
+  "counts": {
+    "priorB10ExactLatinIncipits": 22,
+    "remainingB10Observations": 7,
+    "structuralRiteMatches": 5,
+    "structuralHolds": 1,
+    "fullyCollatedLatinTexts": 0,
+    "certifiedEnglishFrenchTranslations": 0,
+    "sourceSelectedIntroitMatches": 1
+  },
+  "nonClaims": [
+    "No Chrism Mass full formulary or autonomous choice certification",
+    "No full 1962 Holy Week text transcription",
+    "No English/French critical certification",
+    "No modification to the 65-card Ordinary or any distinct-rite graph",
+    "Only two exact Holy Thursday production calendar dates (2026-04-02 and 2027-03-25) were tested; no full-year critical collation"
+  ],
+  "records": [
+    {
+      "id": "BEGIN_PALM_BLESSING",
+      "status": "NATIVE_RITE_STRUCTURE_MATCH",
+      "owner": "data/mass/special-days-extension.v1.3.json#graphs.PALM / src/mass/reader-palm.js",
+      "proof": "PALM-R01 blessing card precedes PALM-R07 handoff to normal Mass Introit; the blessing is not the principal Mass Proper.",
+      "printedPage": 130
+    },
+    {
+      "id": "CHRISM_MASS_DISTINCT",
+      "status": "SEPARATE_CHRISM_MASS_UNVERIFIED",
+      "owner": "1962 printed Missal p.153; distinct from universal evening Mass",
+      "proof": "Current Holy Thursday selected General Roman Proper must not be misrepresented as the Chrism Mass. Separate Chrism selection requires an original dated/authorized source and exact distinct formulary, not a title heuristic.",
+      "printedPage": 153
+    },
+    {
+      "id": "EVENING_MASS_DISTINCT",
+      "status": "NATIVE_RITE_STRUCTURE_MATCH",
+      "owner": "data/mass/independent-1962-holy-week-b04.v1.json#rites.HOLY_THURSDAY_1962 / shared 1962 resolver",
+      "proof": "Normal calendar Holy Thursday Mass follows source identity Tempora/Quad6-4r and its Proper; post-Mass reservation/stripping has separate HT_POST graph.",
+      "printedPage": 154
+    },
+    {
+      "id": "GOOD_FRIDAY_NOT_AN_ORDINARY_MASS",
+      "status": "NATIVE_RITE_STRUCTURE_MATCH",
+      "owner": "src/mass/session-engine.js / data/mass/special-days-core.v1.1.json#graphs.GF",
+      "proof": "makeResolvedMass(distinctRite GOOD_FRIDAY) produces DISTINCT_RITE; ordinary Mass graph is inactive; Good Friday has a separate 56-event source.",
+      "printedPage": 161
+    },
+    {
+      "id": "CROSS_BEFORE_COMMUNION",
+      "status": "NATIVE_RITE_STRUCTURE_MATCH",
+      "owner": "data/mass/special-days-core.v1.1.json#graphs.GF",
+      "proof": "GF-COM-800 PRESHANCTIFIED_COMMUNION preparation occurs after GF-X-700 cross replacement, which is after the GF-VEN-6xx veneration records. Not a second ordinary Mass.",
+      "printedPage": 179
+    },
+    {
+      "id": "VIGIL_HEADING",
+      "status": "NATIVE_RITE_STRUCTURE_MATCH",
+      "owner": "data/mass/special-days-core.v1.1.json#graphs.EV / src/mass/reader-easter-vigil.js",
+      "proof": "EV-FIRE-010 begins the standalone 38-record Vigil; EV-MASS-700 is its later Kyrie handoff to ordinary Mass, rather than treating the Vigil prelude as a standalone votive Mass.",
+      "printedPage": 182
+    },
+    {
+      "id": "HOLY_THURSDAY_INTROIT",
+      "status": "MATCHED_NATIVE_SELECTED_LATIN_INTROIT",
+      "owner": "AO_RUNTIME_V8.resolver.resolveDay(2026-04-02 and 2027-03-25) / properToReaderSlots",
+      "proof": "Actual normal production AO_RUNTIME_V8.resolver.resolveDay on 2026-04-02 and 2027-03-25 selects first-class Tempora/Quad6-4r. Its full source Latin Introit contains the Vatican 1962 printed p.154 scan 236 incipit; EN/FR Proper and Latin paragraphs in both native Reader slots are READY. Verified by source browser test CI #40642776094.",
+      "printedPage": 154
+    }
+  ]
+}
