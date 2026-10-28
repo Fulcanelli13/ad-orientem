@@ -1,0 +1,37 @@
+name: 1962 Holy Week B11 original selected Proper
+on:
+  push:
+    branches: ['audit/1962-holy-week-b11-source-proper-structure-20261028']
+    paths:
+      - 'tests/1962-holy-week-b11-holy-thursday-original-selected-proper.mjs'
+      - '.github/workflows/mass-1962-holy-week-b11-selected-proper.yml'
+      - 'data/mass/independent-1962-holy-week-b11-structural-selected-proper.v1.json'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tests/1962-holy-week-b11-holy-thursday-original-selected-proper.mjs'
+      - '.github/workflows/mass-1962-holy-week-b11-selected-proper.yml'
+      - 'data/mass/independent-1962-holy-week-b11-structural-selected-proper.v1.json'
+      - 'data/mass/independent-1962-holy-week-b09-original-image-witness.v1.json'
+      - 'src/mass/session-engine.js'
+      - 'src/mass/proper-reader-slots.js'
+      - 'src/mass/reader-palm.js'
+      - 'src/mass/reader-good-friday.js'
+      - 'src/mass/reader-easter-vigil.js'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-holy-thursday-1962:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: node --check tests/1962-holy-week-b11-holy-thursday-original-selected-proper.mjs
+      - run: npx playwright install --with-deps chromium
+      - name: Compare the 1962 source identity and Introit with the original printed missal
+        run: node tests/1962-holy-week-b11-holy-thursday-original-selected-proper.mjs
