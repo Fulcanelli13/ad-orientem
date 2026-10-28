@@ -628,6 +628,7 @@ function prayFamilies(){
     ['external','pray.sacred_heart',L('Sacred Heart of Jesus','Sacré-Cœur de Jésus'),L('Litany · reparation · consecration.','Litanies · réparation · consécration.')],
     ['external','pray.holy_name_litany',L('Litany of the Holy Name','Litanies du Saint Nom'),L('Traditional Roman form available offline.','Forme romaine traditionnelle disponible hors ligne.')],
     ['external','pray.sacred_hymns',L('Sacred Hymns & Canticles','Hymnes & cantiques sacrés'),L('Te Deum · Veni Creator · Ave Maris Stella.','Te Deum · Veni Creator · Ave Maris Stella.')],
+    ['external','pray.marian_protection',L('August Queen of Heaven','Auguste Reine des cieux'),L('Historical prayer to Our Lady, Queen of Angels.','Prière historique à Notre-Dame, Reine des Anges.')],
     ['external','pray.good_death',L('Preparation for a Good Death','Préparation à une bonne mort'),L('St Joseph · final perseverance · traditional prayers.','Saint Joseph · persévérance finale · prières traditionnelles.')],
     ['external','pray.dying_companion',L('Dying Companion','Accompagnement du mourant'),L('Priest · Viaticum · bedside prayer · commendation.','Prêtre · Viatique · prière au chevet · recommandation.')]
    ])
