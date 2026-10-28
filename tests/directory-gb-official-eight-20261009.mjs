@@ -8,7 +8,7 @@ const manifest=read("data/directory/research/gb-firstparty-8-original-source-man
 const corpus=read("data/directory/generated/v19/diocesan.v1.json");
 assert.equal(manifest.schema,"AO_EDITOR_REVIEWED_FIRSTPARTY_MASS_BATCH_V1");
 assert.equal(manifest.records.length,8);
-assert.equal(corpus.records.length,73);
+assert.equal(corpus.records.length,74);
 const prev={...corpus,records:corpus.records.filter(row=>!manifest.records.some(r=>r.u===row.u))};
 assert.equal(prev.records.length,65);
 const first=stageFirstPartyMassBatch(prev,manifest);
@@ -19,7 +19,7 @@ assert.equal(merged.records.length,73);
 const repeated=stageFirstPartyMassBatch(merged,manifest);
 assert.equal(repeated.summary.accepted,0);
 assert.equal(repeated.summary.held,8);
-assert.equal(new Set(corpus.records.map(x=>x.u)).size,73);
+assert.equal(new Set(corpus.records.map(x=>x.u)).size,74);
 const joined=publishableDirectoryRecords(joinDirectoryRecords(expandResearchProviderSnapshot(corpus)));
 for(const evidence of manifest.records){
  const row=corpus.records.find(r=>r.u===evidence.u);
