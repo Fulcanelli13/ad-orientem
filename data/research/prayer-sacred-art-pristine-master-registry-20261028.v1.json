@@ -57,7 +57,7 @@
     "masters_archived": 20,
     "masters_missing": 2,
     "master_sha_recorded": 20,
-    "native_hash_ci_pass": 5,
+    "native_hash_ci_pass": 20,
     "pristine_publication_ready": 0,
     "production_activated": 0,
     "source_quality_status": {
@@ -81,7 +81,20 @@
     "request_better_photo": 13,
     "distinct_better_photo_artworks": 10,
     "referrals": 6,
-    "unreviewed": 1
+    "unreviewed": 1,
+    "originals_verified_in_full_bulk_native_run": 20,
+    "native_source_retrieval_failures": 0,
+    "preliminary_native_contact_issue_counts": {
+      "TRIM_EXPOSED_SUPPORT": 2,
+      "NO_OBVIOUS_EXTERNAL_FRAME": 10,
+      "REPLACE_PHOTOGRAPH_EXTERNAL_FRAME": 1,
+      "BETTER_NATIVE_DETAIL_REQUESTED": 1,
+      "REMOVE_WHITE_NONART_SURROUND": 2,
+      "REPLACE_PHOTOGRAPH_GALLERY_INSTALLATION": 1,
+      "REVIEW_PRINT_POSTER_BOUNDARY": 1,
+      "CHECK_ARCHED_PANEL_BOUNDS": 1,
+      "CHECK_SUSPECT_RED_CORNER_MARK": 1
+    }
   },
   "primary_artworks": [
     {
@@ -112,7 +125,7 @@
           3658
         ],
         "bytes": 3055151,
-        "hash_verification": "WAVE1_CI_REHASH_PASS"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -129,7 +142,17 @@
           "Museum photograph preferred; compare source coloration to Met's official colour-managed record.",
           "Check that Mary's face, lily and hovering angel survive mobile framing."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "TRIM_EXPOSED_SUPPORT",
+          "visible_observation": "Rough unpainted wooden support appears along the native edges; use the separately reviewed Met painting-boundary derivative, not the full support.",
+          "next_photo_action": "Verify painted boundary without trimming any paint or lilies/dove.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-01.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -177,7 +200,7 @@
           6000
         ],
         "bytes": 19749000,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -194,7 +217,17 @@
           "Do not substitute the cropped 2,605×997 Commons derivative for the complete 4,421×6,000 master.",
           "Check Joseph's sleeping face and Mary's figure; no shadow lifting of the intentionally dark areas."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+          "visible_observation": "Whole painting and native corners show dark painted areas without a clearly separate physical frame; granularity needs full-size centre assessment.",
+          "next_photo_action": "Check museum colour and meaningful focal detail.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-01.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -239,7 +272,7 @@
           2444
         ],
         "bytes": 4430258,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -257,7 +290,17 @@
           "High ISO/compression and hypercontrast can compromise the painted atmosphere.",
           "Confirmed actual photo has broad glare/reflections and capture noise, not merely theoretical risk. Seek a new professional original without paying."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "REPLACE_PHOTOGRAPH_EXTERNAL_FRAME",
+          "visible_observation": "Gilt moulding and brown gallery surround visibly enter all four corners; the source photograph is not acceptable as a frame-free hero.",
+          "next_photo_action": "Seek exact Jean Restout Pentecost museum/original photographic reproduction without a frame; resolve photographer attribution.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-01.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -302,7 +345,7 @@
           3045
         ],
         "bytes": 2012474,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -318,7 +361,17 @@
         "specific_issues": [
           "Inspect red heart, radiance, dark contours, gold tones and glazing for false oversaturation or edge halos."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+          "visible_observation": "The decorated pictorial border appears integral to the work; no separate outer frame obvious in four corners. Source has uneven texture/noise.",
+          "next_photo_action": "Confirm printed/artwork border identity and colour using original institution reference.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-01.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -363,7 +416,7 @@
           2960
         ],
         "bytes": 1951966,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -380,7 +433,17 @@
           "Match this reproduction to its companion Sacred Heart source; check if editing introduced artificial colour differences.",
           "Artwork metadata dating anomaly is not photo evidence."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+          "visible_observation": "Decorative margins appear integral to the work; no separate external frame obvious, but fine texture/noise needs review.",
+          "next_photo_action": "Check institutional colour fidelity; preserve all narrative medallions.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-01.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -425,7 +488,7 @@
           2441
         ],
         "bytes": 513396,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -442,7 +505,17 @@
           "Examine sword/wing feather microdetails, fabric highlights, deep brown shadows, and signs of sharpening halos.",
           "High-res museum scan preferable to merely larger digital copy."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "BETTER_NATIVE_DETAIL_REQUESTED",
+          "visible_observation": "No strong external frame in the four corners; native image may be too soft/compressed for pristine use.",
+          "next_photo_action": "Find clean high-detail exact Guido Reni painting photograph; compare compression and angels' wings/faces.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-02.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -544,7 +617,7 @@
           3000
         ],
         "bytes": 4593377,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -561,7 +634,17 @@
           "Distinguish historical central Resurrection panel from triptych assembly, overframed museum photograph, or panels reversed.",
           "Check topmost banner and lower foot/sepulchre not clipped."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+          "visible_observation": "Painting surface extends to natural edges in sampled corners; visible aging/paint texture should not be digitally repaired.",
+          "next_photo_action": "Verify the desired central triptych panel face and institutional tone.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-02.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -606,7 +689,7 @@
           3813
         ],
         "bytes": 2467303,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -623,7 +706,17 @@
           "Use the official Met open access original preferentially; a museum-approved scan can be better than an enormous third-party upscaled copy.",
           "Check face/host/halo whites retain tonal detail."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "TRIM_EXPOSED_SUPPORT",
+          "visible_observation": "Thick light-brown unpainted support or wooden edge visible around the painting in the native corners.",
+          "next_photo_action": "Find exact painted bounds; produce faithful painting-only derivative without loss of painted canvas.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-02.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -668,7 +761,7 @@
           6212
         ],
         "bytes": 7423474,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -685,7 +778,17 @@
           "Caravaggio has several St Jerome versions; confirm Borghese original and painting state before comparing photographic sharpness.",
           "Preserve dark pigments and illumination; do not brighten tenebrism artificially."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+          "visible_observation": "Very dark canvas reaches all four native corners; no external frame obvious; some corners contain little illuminated detail.",
+          "next_photo_action": "Inspect face, book, hand and chiaroscuro against trustworthy original.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-02.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -730,7 +833,7 @@
           3200
         ],
         "bytes": 7773073,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -747,7 +850,17 @@
           "Correct the unrelated auction lot reference before editorial data is reused.",
           "Check painting identity, surrounding arch and halo crop; a high-res copy of a wrong Christ is unacceptable."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "REMOVE_WHITE_NONART_SURROUND",
+          "visible_observation": "Large white rectangular background/print margin surrounds the dark painted panel in top and bottom native corner samples.",
+          "next_photo_action": "Find pure painting surface bounds or source a clean exact-work photograph; never cut Christ's rays, orb or cross.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-02.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -792,7 +905,7 @@
           3200
         ],
         "bytes": 1789923,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -809,7 +922,17 @@
           "Verify inventory BF.2004.1 and full lower-zone figures; avoid saturation of blue/red garments.",
           "Review tonal detail of darker souls without synthetic shadow enhancement."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+          "visible_observation": "Colourful painted surface continues through all sampled corners; no obvious external frame in contact sheet.",
+          "next_photo_action": "Check source reproduction and tonal contrast at native focal regions.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-03.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -854,7 +977,7 @@
           4000
         ],
         "bytes": 7530116,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -872,7 +995,17 @@
           "Do not crop away the architectural panorama or Christ's birth scene.",
           "The 6000×4000 shot is gallery installation scene, not flat capture of selected painting. No arbitrary perspective restoration as a substitute for authentic master."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "REPLACE_PHOTOGRAPH_GALLERY_INSTALLATION",
+          "visible_observation": "Whole image shows Gérôme painting hanging amid multiple other framed works in gallery; this is not a direct photograph of the approved painting.",
+          "next_photo_action": "Acquire exact work alone, unobstructed, high-quality, no gallery perspective or external frame.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-03.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -917,7 +1050,7 @@
           3300
         ],
         "bytes": 2080000,
-        "hash_verification": "WAVE1_CI_REHASH_PASS"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -934,7 +1067,17 @@
           "Look for Art Institute of Chicago's authoritative colour-managed master rather than 1019×1534 PNG.",
           "Check sky dusk tonal gradation versus posterized or boosted orange lighting."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+          "visible_observation": "Whole Breton painting and native corners show painting surface, no external frame obvious.",
+          "next_photo_action": "Keep lark, sunrise and fieldworker; institutional colour and full-size texture check.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-03.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -1040,7 +1183,7 @@
           3688
         ],
         "bytes": 2764032,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -1057,7 +1200,17 @@
           "Check that photographic capture faithfully represents *approved poster* (not original Roman icon), including symbols, faces and typography.",
           "Reject inkjet halftone, moiré, glossy glare, uneven hue even with 3000×3688 dimensions."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "REVIEW_PRINT_POSTER_BOUNDARY",
+          "visible_observation": "Current source shows visible bright poster/printed border and potential mounting/background; not proven to be pristine photographic reproduction of the devotional image.",
+          "next_photo_action": "Seek clean high-quality reproduction of the approved traditional icon presentation; preserve devotion's identity and historical approval.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-03.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -1102,7 +1255,7 @@
           5434
         ],
         "bytes": 5931350,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -1119,7 +1272,17 @@
           "Compare full KHM ensemble photo including sculptural frame to painting-only file. Hero must feature actual painted panel.",
           "Museum full-object shot is a fidelity reference, not necessarily an approved mobile crop."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "CHECK_ARCHED_PANEL_BOUNDS",
+          "visible_observation": "Arch-shaped Dürer work has dark surrounding regions; cannot infer if all dark border belongs to the painting from corners.",
+          "next_photo_action": "Confirm exact curved painted edge/museum object rather than removing valid painted portions.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-03.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -1164,7 +1327,7 @@
           3328
         ],
         "bytes": 9588163,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -1181,7 +1344,17 @@
           "Check Wallraf-specific Honthorst painting identity; several similar Adoration of Shepherds compositions exist.",
           "Inspect candle/child radiance, excessive overexposure and black clipping."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "CHECK_SUSPECT_RED_CORNER_MARK",
+          "visible_observation": "Whole-photo miniature shows a reddish round mark in the lower-right margin; may be logo/watermark or photographic overlay. Cannot certify pristine until source recheck.",
+          "next_photo_action": "Inspect exact full-resolution lower-right detail and compare with Wallraf original; reject if added watermark.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-04.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -1226,7 +1399,7 @@
           3399
         ],
         "bytes": 3421164,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -1243,7 +1416,17 @@
           "Wide densely populated original cannot be blindly cut to portrait; review mobile layout using letterbox or controlled focal crop.",
           "Texture and faces across scene must remain coherent, not upscaled."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+          "visible_observation": "Whole composition and native corners show continuous painted scene without an obvious surrounding frame.",
+          "next_photo_action": "Confirm foreground detail, accurate colours and source file reuse.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-04.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -1288,7 +1471,7 @@
           3712
         ],
         "bytes": 3022309,
-        "hash_verification": "WAVE1_CI_REHASH_PASS"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -1305,7 +1488,17 @@
           "Prefer NGA official IIIF original; preview demonstrates muted palette and whole scene, but still inspect source bytes.",
           "Preserve father/son embrace plus surrounding figures; do not isolate figures into false composition."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+          "visible_observation": "Full Murillo scene and sampled corners contain painted image, not a separate frame; dog remains fully visible.",
+          "next_photo_action": "Source rights are public domain; final source and colour comparison still needed.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-04.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -1352,7 +1545,7 @@
           2886
         ],
         "bytes": 3259819,
-        "hash_verification": "REHASHED_COMPARISON_CI_PASS",
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS",
         "recovered_location": {
           "repository": "Fulcanelli13/ad-orientem",
           "ref": "research/prayer-wave1-photo-comparison-20261028",
@@ -1381,7 +1574,17 @@
           "Inspect ISO6400 Sailko photo for chroma noise and loss of fine details in 15 mystery medallions.",
           "Test full altarpiece and detail-legibility at phone width; museum reference takes precedence for colour."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "REMOVE_WHITE_NONART_SURROUND",
+          "visible_observation": "Clean Yorck master has broad white surround outside the arched altarpiece at top/side; no physical mounting clips, and all fifteen roundels visible.",
+          "next_photo_action": "Assess faithful backing crop/masking preserving full curved painted field and lower group.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-04.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": {
         "url": "https://commons.wikimedia.org/wiki/File:Lorenzo_Lotto_057.jpg",
@@ -1437,7 +1640,7 @@
           3000
         ],
         "bytes": 1454827,
-        "hash_verification": "WAVE1_CI_REHASH_PASS"
+        "hash_verification": "REHASHED_20_MASTER_BATCH_CI_PASS"
       },
       "quality": {
         "pristine_certified": false,
@@ -1454,7 +1657,17 @@
           "Museum preview identifies seven roundels, sword and sorrowful Virgin; exact MNAC master bytes and camera fidelity unverified.",
           "Preserve all seven roundels and sword; do not crop to Madonna alone."
         ],
-        "original_reported_quality_status": "NOT_RELEASED"
+        "original_reported_quality_status": "NOT_RELEASED",
+        "native_batch_visual_review": {
+          "scope": "WHOLE_IMAGE_AND_FOUR_NATIVE_CORNER_SAMPLES_NOT_FULL_COLOUR_CERTIFICATION",
+          "technical_integrity": "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS",
+          "preliminary_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+          "visible_observation": "Whole MNAC image and four original corners show historical painted surface and craquelure, no obvious external frame.",
+          "next_photo_action": "Preserve seven story medallions and single prominent sword; no artificial denoise.",
+          "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-04.jpg",
+          "no_frame_or_pristine_publication_signoff": false,
+          "source_photo_publication_approved": false
+        }
       },
       "alternative_source_candidate": null,
       "remaining_gates": [
@@ -4353,7 +4566,21 @@
       "master_hashes_recalculated_in_this_pass": 0,
       "production_releases": 0,
       "explanation": "Six source ledgers reconciled in bulk; previous photo checks retained rather than treated as fresh inspections.",
-      "existing_native_hash_ci_comparisons": 5
+      "existing_native_hash_ci_comparisons": 5,
+      "latest_native_bulk_scan": {
+        "action_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40705943093",
+        "source_file": "assets/staged/prayer-pristine-bulk-native-audit-20261028/native-audit.json",
+        "inspected_originals": 20,
+        "integrity_pass": 20,
+        "retrieval_errors": 0,
+        "contact_sheets": [
+          "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-01.jpg",
+          "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-02.jpg",
+          "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-03.jpg",
+          "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-04.jpg"
+        ],
+        "pristine_final_certified": 0
+      }
     },
     "B1_IMAGE_ACQUISITION": {
       "status": "QUEUE_READY",
@@ -4519,10 +4746,17 @@
         "historic:peter paul rubens:the holy trinity"
       ],
       "done_in_this_pass": 0,
-      "workflow": "Research all image exceptions in one 15+ artwork batch, archive native bytes and independent checksum; no subjective approval by file size alone."
+      "workflow": "Research all image exceptions in one 15+ artwork batch, archive native bytes and independent checksum; no subjective approval by file size alone.",
+      "additional_review_flags": [
+        "Ingres Adoration: exposed wooden support",
+        "Benson Salvator Mundi: white surround",
+        "Perpetual Help: source poster/border",
+        "Lotto Rosary: white outside curved altarpiece",
+        "Wallraf Honthorst: suspicious lower-right red round overprint"
+      ]
     },
     "B2_MASTER_QUALITY": {
-      "status": "QUEUE_READY",
+      "status": "WHOLE_WORK_AND_CORNER_PRELIMINARY_SCANNED_NOT_PRISTINE_SIGNED_OFF",
       "existing_master_count": 20,
       "file_queue": [
         {
@@ -4634,7 +4868,10 @@
         "Per-file photographer rights and credit/change notices",
         "Full-quality source, no AI upscaling, separately archived crop derivative"
       ],
-      "source_originals_not_reprocessed_in_this_pass": 20
+      "source_originals_not_reprocessed_in_this_pass": 20,
+      "verified_source_checksums": 20,
+      "visual_issues_classified_in_one_batch": 20,
+      "remaining_full_focal_detail_rights_and_colour_certification": 20
     },
     "B3_PUBLICATION": {
       "status": "NOT_STARTED_DO_NOT_ACTIVATE",
