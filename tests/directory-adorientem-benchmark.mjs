@@ -20,6 +20,7 @@ const byCountry={};let count=0;
 for(const name of rows){
  const snapshot=JSON.parse(fs.readFileSync("data/directory/generated/v19/"+name+".v1.json","utf8"));
  for(const p of snapshot.records??[]){
+  if(p.ps==="SITE_ONLY_SOURCE_CONFIRMED")continue; // frozen Mass-site comparator
   for(const v of p.pv?.length?p.pv:[p]){
    const cc=v.cc||p.cc;
    if(!cc)continue;count++;byCountry[cc]=(byCountry[cc]||0)+1;

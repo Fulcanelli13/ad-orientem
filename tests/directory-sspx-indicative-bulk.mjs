@@ -78,12 +78,17 @@ for(const name of names){
  for(const k of Object.keys(all))all[k].push(...doc[k]);
 }
 const joined=publishableDirectoryRecords(joinDirectoryRecords(all));
-const original=joined.filter(x=>x.ministries.some(m=>m.community_id==="SSPX"));
+const original=joined.filter(x=>x.ministries.some(m=>m.community_id==="SSPX")&&
+  x.venue.publication_state!=="SITE_ONLY_SOURCE_CONFIRMED");
 const baseline=original.filter(x=>isMapPublishableGeo(x.venue.geo,x.venue.address.country_code)).length;
 assert.equal(original.length,613);
 assert.equal(baseline,401);
 const allIndicative=applyIndicativeSspxLocations(joined);
-const newRows=allIndicative.records.filter(x=>x.ministries.some(m=>m.community_id==="SSPX"));
+const siteOnly=allIndicative.records.filter(x=>x.venue.publication_state==="SITE_ONLY_SOURCE_CONFIRMED");
+assert.equal(siteOnly.length,1,"Kraków site-only record remains available");
+assert.equal(siteOnly[0].venue.geo.lat,null,"No indicative pin for address-only Kraków chapel");
+const newRows=allIndicative.records.filter(x=>x.ministries.some(m=>m.community_id==="SSPX")&&
+  x.venue.publication_state!=="SITE_ONLY_SOURCE_CONFIRMED");
 const mapped=newRows.filter(x=>isMapPublishableGeo(x.venue.geo,x.venue.address.country_code)).length;
 assert.equal(allIndicative.summary.total_sspx,613);
 assert.equal(allIndicative.summary.already_mapped,401);

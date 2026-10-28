@@ -70,6 +70,7 @@ function pill(name,value,label,current){
 function venueCard(record,vm){
   const v=record.venue??{},m=arr(record.ministries)[0]??{},label=communityLabel(m.community_id,vm.communities),una=communion(record);
   const schedule=rawSchedules(record)[0]?.schedule;
+  const siteOnly=v.publication_state==="SITE_ONLY_SOURCE_CONFIRMED";
   const freshness=schedule? scheduleFreshnessLabel(schedule,vm.language):null;
   const checked=schedule? checkedDateLabel(schedule,vm.language):null;
   const status=una==="YES"?"UNA CUM":una==="NO"?"NON-UNA CUM":"STATUS UNKNOWN";
@@ -79,6 +80,7 @@ function venueCard(record,vm){
     +'<span>'+esc([v?.address?.city,v?.address?.country_code].filter(Boolean).join(" · "))+'</span>'
     +'<em>'+esc(usageLabel(m))+'</em>'
     +(schedule?.payload?.raw?'<p>'+esc(String(schedule.payload.raw).slice(0,180))+'</p>':"")
+    +(siteOnly?'<span class="aoFindFreshness" data-state="UNKNOWN">'+esc(L(vm.language,"Mass times not verified","Horaires de messe non vérifiés"))+'</span>':"")
     +(freshness?'<span class="aoFindFreshness" data-state="REVIEW_DUE">'+esc(freshness)+'</span>':"")
     +(checked?'<small class="aoFindChecked">'+esc(checked)+'</small>':"")
     +'</button>';
@@ -115,6 +117,10 @@ function detailSheet(vm){
         +'</article>';
     }
     html+='</section>';
+  }else if(v.publication_state==="SITE_ONLY_SOURCE_CONFIRMED"){
+    html+='<section class="aoFindSchedules"><small>'+esc(L(vm.language,"SCHEDULE","HORAIRES"))+'</small>'
+      +'<article><strong>'+esc(L(vm.language,"Mass times not verified","Horaires de messe non vérifiés"))+'</strong>'
+      +'<p>'+esc(L(vm.language,"The worship location is source-confirmed, but its Mass timetable has not been verified. Consult the official source before travelling.","Ce lieu de culte est confirmé par une source officielle, mais ses horaires de messe ne sont pas vérifiés. Consultez la source officielle avant de vous déplacer."))+'</p></article></section>';
   }
   html+='<section class="aoFindActions">';
   // Most prominent action: the official provider/chapel listing, not our pin.

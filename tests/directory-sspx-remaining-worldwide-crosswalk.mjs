@@ -6,7 +6,7 @@ import {isMapPublishableGeo} from "../src/find/geo-provenance.js";
 const read=p=>JSON.parse(fs.readFileSync(p,"utf8"));
 const root="data/directory/generated/v19/";
 const oldNames=["sspx-asia-central-americas","sspx-district-seed","sspx-four-district-bulk","sspx-france-first-party","sspx-france-second-pass","sspx-north-america-20261008","sspx-oct26-americas","sspx-oct26-europe","sspx-oct26-poland","sspx-mexico-completion-20261009","sspx-priority-europe-pacific-20261009","sspx-oct26-followup-65"];
-const old=oldNames.flatMap(s=>read(root+s+".v1.json").records);
+const old=oldNames.flatMap(s=>read(root+s+".v1.json").records.filter(r=>r.ps!=="SITE_ONLY_SOURCE_CONFIRMED"));
 const current=read(root+"sspx-global-completion-20261009.v1.json");
 const geo=read(root+"sspx-global-completion-20261009.geo.v1.json");
 const reviews=read("data/directory/research/sspx-last-71-source-review-20261009.v1.json");

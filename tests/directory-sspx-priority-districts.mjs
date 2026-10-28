@@ -6,7 +6,7 @@ const load=x=>JSON.parse(readFileSync(x,"utf8"));
 const path="data/directory/generated/v19/";
 const fresh=load(path+"sspx-priority-europe-pacific-20261009.v1.json");
 const ledger=load("data/directory/research/sspx-priority-districts-reconciliation-20261009.v1.json");
-const former=["sspx-asia-central-americas","sspx-district-seed","sspx-four-district-bulk","sspx-france-first-party","sspx-france-second-pass","sspx-north-america-20261008","sspx-oct26-americas","sspx-oct26-europe","sspx-oct26-poland","sspx-mexico-completion-20261009"].flatMap(x=>load(path+x+".v1.json").records);
+const former=["sspx-asia-central-americas","sspx-district-seed","sspx-four-district-bulk","sspx-france-first-party","sspx-france-second-pass","sspx-north-america-20261008","sspx-oct26-americas","sspx-oct26-europe","sspx-oct26-poland","sspx-mexico-completion-20261009"].flatMap(x=>load(path+x+".v1.json").records.filter(r=>r.ps!=="SITE_ONLY_SOURCE_CONFIRMED"));
 assert.equal(former.length,586);
 assert.equal(fresh.provider,"SSPX_PRIORITY_EUROPE_PACIFIC_20261009");
 assert.equal(fresh.records.length,11);

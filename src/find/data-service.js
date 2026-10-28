@@ -111,10 +111,12 @@ export function expandResearchProviderSnapshot(snapshot={}, {geoRecords=[]}={}){
     const venueId="ao-research-"+base;
     const ministryId="ao-ministry-"+base;
     const scheduleId="ao-schedule-"+base;
+    const siteOnly=text(row.ps)==="SITE_ONLY_SOURCE_CONFIRMED";
     const scheduleSourceId="src-research-"+base+"-schedule";
+    const principalSourceId=siteOnly?"src-research-"+base+"-site":scheduleSourceId;
     const authorizationSourceId=row.au?"src-research-"+base+"-authorization":null;
     const editionSourceId=row.eu?"src-research-"+base+"-edition":null;
-    const sourceIds=[scheduleSourceId,...(authorizationSourceId?[authorizationSourceId]:[]),...(editionSourceId?[editionSourceId]:[])];
+    const sourceIds=[principalSourceId,...(authorizationSourceId?[authorizationSourceId]:[]),...(editionSourceId?[editionSourceId]:[])];
     const formatted=text(row.a)||[row.l,row.r,row.cc].map(text).filter(Boolean).join(", ");
     const scheduleRaw=text(row.sr);
     const serviceType=text(row.svc)||"MASS";
@@ -133,6 +135,9 @@ export function expandResearchProviderSnapshot(snapshot={}, {geoRecords=[]}={}){
         provider_relationship:row.pr??null,
         source_liturgical_profile:row.sl??null,
         geometry_status:row.gs??null,
+        site_only_approval:row.soa??null,
+        site_only_source_url:siteOnly?text(row.su):null,
+        research_group_ids:row.rg??null,
       },
       address:{
         line1:text(row.a)||null,line2:null,postal_code:null,
@@ -162,7 +167,7 @@ export function expandResearchProviderSnapshot(snapshot={}, {geoRecords=[]}={}){
         family:text(row.f)||"ROMAN",
         books:text(row.b)||"UNKNOWN",
         mass_form:text(row.mf)||"TRADITIONAL_LATIN",
-        evidence_source_ids:[editionSourceId??scheduleSourceId],
+        evidence_source_ids:[editionSourceId??principalSourceId],
       },
       authorization:{
         status:row.az??null,
@@ -179,7 +184,7 @@ export function expandResearchProviderSnapshot(snapshot={}, {geoRecords=[]}={}){
       active:true,
       source_ids:sourceIds,
     });
-    out.schedules.push({
+    if(!siteOnly)out.schedules.push({
       schedule_id:scheduleId,
       ministry_id:ministryId,
       service_type:serviceType,
@@ -194,7 +199,7 @@ export function expandResearchProviderSnapshot(snapshot={}, {geoRecords=[]}={}){
       },
     });
     out.sources.push({
-      source_id:scheduleSourceId,
+      source_id:principalSourceId,
       registry_source_id:null,
       source_type:text(row.st)||"COMMUNITY_OFFICIAL",
       publisher:text(row.j)||text(row.c)||provider,
@@ -202,7 +207,8 @@ export function expandResearchProviderSnapshot(snapshot={}, {geoRecords=[]}={}){
       url:text(row.su),
       retrieved_at:generatedAt,
       authority:text(row.sa)||"PRIMARY",
-      fields_supported:editionSourceId?["venue","venue.contact","schedule"]:["venue","venue.contact","schedule","liturgical_usage"],
+      fields_supported:siteOnly?["venue","venue.contact","liturgical_usage"]:
+        (editionSourceId?["venue","venue.contact","schedule"]:["venue","venue.contact","schedule","liturgical_usage"]),
     });
     if(editionSourceId){
       out.sources.push({
@@ -294,7 +300,25 @@ export function publishableDirectoryRecords(records){
   return safeArray(records).filter(record=>{
     if(isHeldDirectoryPublication(record))return false;
     if(auditVenue(record?.venue).length!==0)return false;
-    if(["SSPX_DISTRICT_SEED","SSPX_FRANCE_FIRST_PARTY","SSPX_FRANCE_SECOND_PASS","SSPX_FOUR_DISTRICT_BULK","SSPX_OCT26_MULTIREGION","SSPX_OCT26_AMERICAS","SSPX_OCT26_POLAND","SSPX_ASIA_CENTRAL_AMERICAS_20261008","SSPX_NA_DISTRICTS_20261008"].includes(record?.venue?.upstream?.provider_id)){
+    // Site-only admissions are explicit, source-backed physical venues, not
+    // certified Mass schedules or map pins. Only reviewed IDs may use this lane.
+    const siteOnly=record?.venue?.publication_state==="SITE_ONLY_SOURCE_CONFIRMED";
+    if(siteOnly){
+      const venue=record.venue;
+      const approvedIds=new Set([
+        "SSPX-OCT26-PL-KRAKOW-KAPLICA-SW-PIUSA-X",
+        "DIO-GB-EASTANGLIA-WITHERMARSH-GREEN-1962",
+      ]);
+      const url=text(venue?.upstream?.site_only_source_url);
+      const sourced=safeArray(record?.sources).some(source=>
+        source?.url===url&&source?.authority==="PRIMARY"&&safeArray(source?.fields_supported).includes("venue"));
+      const hasSchedule=safeArray(record?.ministries).some(ministry=>safeArray(ministry?.schedules).length>0);
+      if(!approvedIds.has(text(venue?.upstream?.upstream_id))||
+        venue?.upstream?.site_only_approval!=="FIRST_PARTY_SITE_APPROVED_2026_10_29"||
+        !url.startsWith("https://")||!sourced||hasSchedule||
+        venue?.geo?.lat!=null||venue?.geo?.lng!=null)return false;
+    }
+    if(!siteOnly&&["SSPX_DISTRICT_SEED","SSPX_FRANCE_FIRST_PARTY","SSPX_FRANCE_SECOND_PASS","SSPX_FOUR_DISTRICT_BULK","SSPX_OCT26_MULTIREGION","SSPX_OCT26_AMERICAS","SSPX_OCT26_POLAND","SSPX_ASIA_CENTRAL_AMERICAS_20261008","SSPX_NA_DISTRICTS_20261008"].includes(record?.venue?.upstream?.provider_id)){
       if(!["CURRENT_PUBLIC_MASS","CONDITIONAL_MASS"].includes(record?.venue?.publication_state))return false;
       const valid=safeArray(record?.ministries).some(m=>m.community_id==="SSPX" &&
         safeArray(m?.schedules).some(s=>s.service_type==="MASS" &&

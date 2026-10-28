@@ -3,9 +3,9 @@ import {auditWorldwideDirectory} from "../tools/directory/audit-worldwide-corpus
 
 const result=auditWorldwideDirectory();
 assert.equal(result.schema,"AO_DIRECTORY_WORLDWIDE_COVERAGE_AUDIT_V1");
-assert.equal(result.source_venue_records,1437);
+assert.equal(result.source_venue_records,1439);
 assert.equal(result.mass_evidenced_records,1200);
-assert.equal(result.without_mass_assertion,237);
+assert.equal(result.without_mass_assertion,239);
 assert.equal(result.by_provider.length,21);
 const byId=new Map(result.by_provider.map(p=>[p.provider,p]));
 assert.equal(byId.get("FSSP_LIVE").records,404);
@@ -25,7 +25,9 @@ assert.equal(byId.get("SSPX_OCT26_MULTIREGION").records,61);
 assert.equal(byId.get("SSPX_OCT26_MULTIREGION").mass_evidenced_records,61);
 assert.equal(byId.get("SSPX_OCT26_AMERICAS").records,44);
 assert.equal(byId.get("SSPX_OCT26_AMERICAS").mass_evidenced_records,44);
-assert.equal(byId.get("SSPX_OCT26_POLAND").records,38);
+assert.equal(byId.get("SSPX_OCT26_POLAND").records,39);
+assert.equal(byId.get("DIOCESAN").records,74);
+assert.equal(byId.get("DIOCESAN").without_mass_assertion,1);
 assert.equal(byId.get("SSPX_OCT26_POLAND").mass_evidenced_records,38);
 assert.equal(byId.get("SSPX_ASIA_CENTRAL_AMERICAS_20261008").records,47);
 assert.equal(byId.get("SSPX_ASIA_CENTRAL_AMERICAS_20261008").mass_evidenced_records,47);

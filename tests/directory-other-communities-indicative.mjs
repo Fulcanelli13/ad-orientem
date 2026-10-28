@@ -20,10 +20,12 @@ for(const name of names){
  for(const k of Object.keys(collected))collected[k].push(...expanded[k]);
 }
 const records=publishableDirectoryRecords(joinDirectoryRecords(collected));
-const other=records.filter(r=>!r.ministries.some(m=>m.community_id==="SSPX"));
+const other=records.filter(r=>!r.ministries.some(m=>m.community_id==="SSPX")&&
+ r.venue.publication_state!=="SITE_ONLY_SOURCE_CONFIRMED");
 const before=other.filter(r=>isMapPublishableGeo(r.venue.geo,r.venue.address.country_code)).length;
 const result=applyIndicativeOtherCommunities(records);
-const after=result.records.filter(r=>!r.ministries.some(m=>m.community_id==="SSPX"));
+const after=result.records.filter(r=>!r.ministries.some(m=>m.community_id==="SSPX")&&
+ r.venue.publication_state!=="SITE_ONLY_SOURCE_CONFIRMED");
 assert.equal(after.length,other.length);
 assert.equal(result.summary.eligible,other.length);
 assert.equal(result.summary.already_mapped,before);
@@ -40,6 +42,8 @@ for(let i=0;i<records.length;i++){
   assert.strictEqual(target,source,"Never move existing verified pins");
  if(source.ministries.some(m=>m.community_id==="SSPX"))
   assert.strictEqual(target,source,"SSPX records owned by prior enrichment pass");
+ if(source.venue.publication_state==="SITE_ONLY_SOURCE_CONFIRMED")
+  assert.strictEqual(target,source,"Address-only chapel must never be converted to a map pin");
  if(target.venue.geo.indicative_only){
   assert.equal(target.venue.geo.routing_eligible,false);
   assert.equal(target.venue.geo.matched_country_code,target.venue.address.country_code);

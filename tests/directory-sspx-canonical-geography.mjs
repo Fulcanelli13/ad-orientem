@@ -13,7 +13,7 @@ const names=[
  "sspx-official-route-oct26-20261009"
 ];
 const sources=names.map(stem=>({stem,source:read(root+stem+".v1.json"),geo:read(root+stem+".geo.v1.json")}));
-const allRows=sources.flatMap(x=>x.source.records);
+const allRows=sources.flatMap(x=>x.source.records.filter(r=>r.ps!=="SITE_ONLY_SOURCE_CONFIRMED"));
 const allPins=sources.flatMap(x=>x.geo.records);
 const audit=read("data/directory/research/sspx-oct26-canonical-le-laus-and-ten-pins.v1.json");
 const v6=read("data/directory/research/sspx-worldwide-210-case-disposition-20261009.v6.json");
