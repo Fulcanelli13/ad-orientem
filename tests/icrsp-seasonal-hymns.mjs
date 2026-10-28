@@ -39,6 +39,12 @@ for(const id of ids){
     assert.match(h.englishSource.witnessStatus,/1842_BILINGUAL_PRINTED/);
     assert.match(h.englishSource.editorialNote,/Good Friday/);
     assert.match(h.languageStatus,/1842_ENGLISH_PASSION_HYMN_EXCERPT/);
+  }else if(id==="o_sol_salutis"){
+    assert.equal(h.en.split(/\n\s*\n/).length,5);
+    assert.match(h.en,/O Jesus, thou Sun of the world/);
+    assert.equal(h.englishSource.translator,"Dom Laurence Shepherd");
+    assert.equal(h.englishSource.editionYear,1870);
+    assert.match(h.englishSource.witnessStatus,/PAGE_IMAGES_NOT_CHECKED/);
   }else assert.equal(h.en,undefined,"Do not invent a modern English edition: "+id);
   if(["audi_benigne","vexilla_regis"].includes(id)){
     assert.equal(h.fr.split(/\n\s*\n/).length,id==="vexilla_regis"?7:5);

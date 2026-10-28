@@ -725,9 +725,20 @@
       },
       "office_role": "Lent Lauds",
       "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
-      "english_translation_status": "HISTORICAL_EDITION_REQUIRED",
+      "english_translation_status": "SHEPHERD_1870_ENGLISH_HISTORICAL_IN_DRAFT",
       "liturgical_rubric": null,
-      "provenance_note": "Complete liturgical text embedded within ICRSP First Sunday of Lent Office; exact standalone hymn article URL not yet captured"
+      "provenance_note": "Complete liturgical text embedded within ICRSP First Sunday of Lent Office; exact standalone hymn article URL not yet captured",
+      "historical_english_translation": {
+        "work": "Dom Prosper Guéranger, The Liturgical Year, Vol. V: Lent",
+        "translator": "Dom Laurence Shepherd",
+        "editionYear": 1870,
+        "imprint": "Dublin: James Duffy, 1870",
+        "section": "Chapter IV · Morning and Night Prayers for Lent · Lenten Lauds hymn",
+        "url": "https://lyp.network/lyp/497-commentary-on-the-seasons/501-lent/3639-chapter-4-morning-and-night-prayers-for-lent",
+        "originalEdition": "https://en.wikisource.org/wiki/Index:The_liturgical_year_(IA_liturgicalyear05gura).pdf",
+        "witnessStatus": "1870_EDITION_COMPLETE_TRANSCRIPTION_PAGE_IMAGES_NOT_CHECKED",
+        "textForm": "FIVE_PROSE_PARAGRAPHS"
+      }
     },
     {
       "id": "icrsp_fr_ex_more_docti",
@@ -897,8 +908,8 @@
     "hymn_original_corpus_preserved": 3,
     "hymns_reader_total": 11,
     "production_hymn_releases": 0,
-    "full_historical_english_hymns_in_draft": 6,
-    "other_english_hymns_unverified": 2,
+    "full_historical_english_hymns_in_draft": 7,
+    "other_english_hymns_unverified": 1,
     "historical_french_seasonal_hymns_in_draft": 2,
     "caswall_1849_pages_collated": 4,
     "release_status": "DRAFT_BRANCH_ONLY_ACTIONS_GATES_REQUIRED",

@@ -477,7 +477,15 @@ Et nos novi per grátiam
 Novum canámus cánticum.
 Amen.`,
 "https://icrspfrance.fr/textes-liturgiques.php?article=a0155_ancien",
-{subtitleFr:"Laudes du Carême",sourceLabel:"ICRSP France · Laudes · First Sunday of Lent Office"}),
+{en:`O Jesus, thou Sun of the world's salvation! shine in the depths of our souls; for now is the hour of night's departure, and sweeter daybreak dawns upon the earth.
+
+O thou that givest us this acceptable time! give us to wash, with our tears, the victim we offer thee, which is our heart; and grant that it may burn with joyous love.
+
+If the rod of penance but strike these hearts of stone, a flood of ceaseless tears will flow from that same fount, whence came our many sins.
+
+The day, thine own day, is at hand, when all things bloom afresh; oh! grant, that we, too, may rejoice, being brought once more to the path by thy right hand.
+
+O merciful Trinity! may the world prostrate itself before thee, and adore; and we, made new by grace, sing a new canticle of praise. Amen.`,englishSource:{"work":"Dom Prosper Guéranger, The Liturgical Year, Vol. V: Lent","translator":"Dom Laurence Shepherd","editionYear":1870,"imprint":"Dublin: James Duffy, 1870","section":"Chapter IV · Morning and Night Prayers for Lent · Lenten Lauds hymn","url":"https://lyp.network/lyp/497-commentary-on-the-seasons/501-lent/3639-chapter-4-morning-and-night-prayers-for-lent","originalEdition":"https://en.wikisource.org/wiki/Index:The_liturgical_year_(IA_liturgicalyear05gura).pdf","witnessStatus":"1870_EDITION_COMPLETE_TRANSCRIPTION_PAGE_IMAGES_NOT_CHECKED","textForm":"FIVE_PROSE_PARAGRAPHS"},languageStatus:"HISTORICAL_LATIN_AND_SHEPHERD_1870_ENGLISH",subtitleFr:"Laudes du Carême",sourceLabel:"ICRSP France · Laudes · First Sunday of Lent Office"}),
   ex_more_docti:h("ex_more_docti","Ex more docti mystico","Lent","Matins",
 `Ex more docti mýstico
 Servémus hoc ieiúnium,

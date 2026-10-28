@@ -172,3 +172,9 @@ Original bilingual printed Catholic booklet *Devotions commemorative of the Most
 Primary source: https://upload.wikimedia.org/wikipedia/commons/e/ed/Devotions_commemorative_of_the_most_adorable_Passion_of_Our_Lord_and_Saviour_Jesus_Christ-_translated_from_Catholic_sources_%28IA_DevotionsCommemorativeOf%29.pdf
 
 Counts: **8 Latin seasonal hymns**, **6 historical English witnesses** (one extracted from an independently documented Good Friday hymn), **2 historical French witnesses**. Outstanding English: *Ad cenam Agni providi* (older, conditional recension) and *O sol salutis intimis*. Historic French pending for the other six hymn identities. No overall Office calendar automation is claimed; all additions remain on PR #1800.
+
+## B12 — O sol salutis: Catholic 1870 English Lauds witness
+
+Five historic English prose paragraphs of the Lenten Lauds hymn *O sol salutis intimis*, from Dom Prosper Guéranger, *The Liturgical Year*, Volume V *Lent*, translated by Dom Laurence Shepherd (Dublin: James Duffy, 1870), Chapter IV. Original Latin, placement in Lauds and complete contemporary transcription: https://lyp.network/lyp/497-commentary-on-the-seasons/501-lent/3639-chapter-4-morning-and-night-prayers-for-lent. Original historical scanned edition: https://en.wikisource.org/wiki/Index:The_liturgical_year_(IA_liturgicalyear05gura).pdf. The specific printed page images remain **not visually checked**, a provenance limitation held in the data. No editorial translation generated.
+
+The Sacred Hymns UI now labels historical English **per-witness edition years** instead of unconditionally assuming 1849, allowing 1842, 1849 and 1870 source families to remain distinct. Cumulative: **8 Latin, 7 historical English, 2 historical French**; the historical pre-1632 *Ad cenam Agni providi* remains the only English gap, with recension comparison pending.

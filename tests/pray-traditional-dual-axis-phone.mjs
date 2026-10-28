@@ -353,7 +353,7 @@ try{
    assert.equal((await snapshot()).id,"hymn-"+key,"Historical Office hymn missing from timeline");
    const text=await page.locator("#aoPray435930 .aoDevoCardScroll").innerText();
    assert.ok(text.length>450,key+" incomplete Latin text");
-   const historicalEnglish=["audi_benigne","ex_more_docti","vexilla_regis","ad_regias_agni_dapes","aeterne_rex_altissime","lustra_sex"].includes(key);
+   const historicalEnglish=["audi_benigne","ex_more_docti","vexilla_regis","ad_regias_agni_dapes","aeterne_rex_altissime","lustra_sex","o_sol_salutis"].includes(key);
    if(!historicalEnglish)assert.match(text,/Amen\./,
      key+" Latin-only historical hymn has lost its original conclusion");
    if(historicalEnglish){
@@ -370,6 +370,7 @@ try{
        aeterne_rex_altissime:"O Thou eternal King most high",
        ex_more_docti:"Now with the slow-revolving year",
        lustra_sex:"And now, six lustral courses run",
+       o_sol_salutis:"O Jesus, thou Sun of the world",
      }[key];
      assert.ok((await page.locator("#aoPray435930 .aoDevoCardScroll").innerText()).includes(opening),
        key+" must render the sourced 1849 English original after language selection");
