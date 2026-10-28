@@ -586,7 +586,7 @@
         ]
       },
       "office_role": "Eastertide Vespers",
-      "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
+      "french_translation_status": "PARTIAL_1913_GLADU_WITNESS_HELD_NOT_PUBLISHED",
       "english_translation_status": "TWO_DISTINCT_HISTORICAL_ENGLISH_WITNESSES_ONE_NONCATHOLIC_1851_NEEDS_PRIMARY_COLLATION",
       "liturgical_rubric": "Distinct ordinary Roman Breviary post-1632 and restricted historical pre-1632 recensions; 1912 Antiphonale conditional usage",
       "historical_english_translation": {
@@ -614,7 +614,33 @@
         "editorialNote": "Historical English devotional rendering of the earlier Latin hymn tradition. Some source Latin verses differ from the exact ICRSP pre-1632 recension. Not a Catholic-authorized Office text and not an English translation of the ordinary post-1632 hymn. Original 1851 pages not visually inspected.",
         "license": "Author died 1866; public-domain historical English translation, not modern editorial arrangement",
         "for_hymn_id": "ad_cenam_agni_providi"
-      }
+      },
+      "french_source_candidates": [
+        {
+          "source": "Fr Louis Gladu, O.M.I., Les Hymnes du Bréviaire, second corrected edition, Québec 1913",
+          "source_url": "https://www.liberius.net/livres/Les_hymnes_du_Breviaire_000000919.pdf",
+          "format": "Latin/French side-by-side printed PDF",
+          "pdf_screenshot_status": "WEB_SCREENSHOT_TIMED_OUT_NO_VISUAL_COLLATION",
+          "copyright_verification": "Author death and cross-jurisdiction reuse status not independently established",
+          "revised": {
+            "hymn": "ad_regias_agni_dapes",
+            "pdfPagesZeroBased": [
+              28,
+              29
+            ],
+            "publication": "Gladu 1913 pp. 28–29",
+            "availableVerses": 7,
+            "appRequiredVerses": 8,
+            "mismatch": "Printed 1913 French edition stops before the doxology of the current eight-stanza 1962-aligned Latin register; not a complete one-to-one French witness."
+          },
+          "pre1632": {
+            "hymn": "ad_cenam_agni_providi",
+            "status": "NOT_IN_1913_REVISED_ROMAN_BREVIARY",
+            "why": "Do not substitute the revised Ad regias translation for the pre-1632 text; preserve right/custom/indult restriction."
+          }
+        }
+      ],
+      "french_release_gate": "Check source image pages, 1913 publisher's exact wording, missing final doxology, translation reuse rights and 1962 recension; no invented completion or source substitution."
     },
     {
       "id": "icrsp_fr_aeterne_rex_altissime",
@@ -645,7 +671,7 @@
         ]
       },
       "office_role": "Ascension Matins",
-      "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
+      "french_translation_status": "PARTIAL_1913_GLADU_WITNESS_HELD_NOT_PUBLISHED",
       "english_translation_status": "HISTORICAL_ENGLISH_1849_INTEGRATED_DRAFT",
       "liturgical_rubric": null,
       "historical_english_translation": {
@@ -659,7 +685,26 @@
         ],
         "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
         "status": "ORIGINAL_PRINTED_IMAGES_INSPECTED"
-      }
+      },
+      "french_source_candidates": [
+        {
+          "source": "Fr Louis Gladu, O.M.I., Les Hymnes du Bréviaire, second corrected edition, Québec 1913",
+          "source_url": "https://www.liberius.net/livres/Les_hymnes_du_Breviaire_000000919.pdf",
+          "format": "Latin/French side-by-side printed PDF",
+          "pdf_screenshot_status": "WEB_SCREENSHOT_TIMED_OUT_NO_VISUAL_COLLATION",
+          "copyright_verification": "Author death and cross-jurisdiction reuse status not independently established",
+          "hymn": "aeterne_rex_altissime",
+          "pdfPagesZeroBased": [
+            65,
+            66
+          ],
+          "publication": "Gladu 1913 pp. 65–66",
+          "availableVerses": 7,
+          "appRequiredVerses": 8,
+          "mismatch": "French 1913 witness ends at the judge/crowns stanza, before the Latin doxology retained in the canonical eight-stanza record."
+        }
+      ],
+      "french_release_gate": "Check source image pages, 1913 publisher's exact wording, missing final doxology, translation reuse rights and 1962 recension; no invented completion or source substitution."
     },
     {
       "id": "icrsp_fr_lustra_sex",
@@ -968,7 +1013,11 @@
     "release_status": "DRAFT_BRANCH_ONLY_ACTIONS_GATES_REQUIRED",
     "other_french_hymns_unverified": 3,
     "english_with_primary_image_confirmation": 6,
-    "english_with_historical_transcription_only": 2
+    "english_with_historical_transcription_only": 2,
+    "partial_french_1913_witnesses_held": 2,
+    "older_easter_french_witness_missing": 1,
+    "latest_test_status": "2026-10-28 PR#1800 previous head 25/28 CI pass; newest changes awaiting full workflow completion; draft only",
+    "gladu_1913_source_rights": "PUBLIC_DOMAIN_STATUS_NOT_INDEPENDENTLY_VERIFIED_FOR_ALL_JURISDICTIONS"
   },
   "reconciliation_pass3": {
     "date": "2026-10-28",
