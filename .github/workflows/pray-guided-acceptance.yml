@@ -5,6 +5,8 @@ on:
     paths:
       - "src/pray/**"
       - "tests/pray-guided-cards.mjs"
+      - "tests/contemplative-daily-preview.mjs"
+      - "tests/contemplative-daily-phone.mjs"
       - "tests/pray-all-modules-mobile.mjs"
       - ".github/workflows/pray-guided-acceptance.yml"
   workflow_dispatch:
@@ -29,3 +31,12 @@ jobs:
       - run: node tests/pray-traditional-life.mjs
       - run: npx playwright install --with-deps chromium
       - run: node tests/pray-all-modules-mobile.mjs
+      - run: node tests/contemplative-daily-phone.mjs
+      - name: Capture contemplative Prayer screens for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: contemplative-prayer-viewport-captures
+          path: artifacts/pray-contemplative-daily
+          if-no-files-found: warn
+          retention-days: 3
