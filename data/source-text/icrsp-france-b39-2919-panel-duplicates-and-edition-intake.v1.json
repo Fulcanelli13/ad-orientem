@@ -1,0 +1,5769 @@
+{
+  "schema": "AO_ICRSP_B39_CROSS_COHORT_PANEL_BODY_HASH_AUDIT_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "scope": "Cross-cohort mechanical panel SHA and host label reconciliation, not critical edition, rights, rubric or app-owner parity.",
+  "sourceCohorts": [
+    {
+      "tag": "B21",
+      "filename": "icrsp-france-b21-140-automated-commentary-signals.v1.json",
+      "sourceArticles": 140,
+      "observedPanels": 535,
+      "sourceFileSha256": "d2dc3d6762893910f805a45ea3c71757ae7e6bb199618f3bd92da827974a9bcb"
+    },
+    {
+      "tag": "B23",
+      "filename": "icrsp-france-b23-233-automated-commentary-signals.v1.json",
+      "sourceArticles": 233,
+      "observedPanels": 1072,
+      "sourceFileSha256": "e8a284c0f6d3cdf11f3317f8fba9fd4c8f14105f9a9b8125c03e95739feca60c"
+    },
+    {
+      "tag": "B29",
+      "filename": "icrsp-france-b29-200-automated-commentary-signals.v1.json",
+      "sourceArticles": 200,
+      "observedPanels": 551,
+      "sourceFileSha256": "da81e1b4f74787a6907551f084c84d2c7bb34e27c45ee70f641df4476e1006b0"
+    },
+    {
+      "tag": "B32",
+      "filename": "icrsp-france-b32-final210-automated-signals.v1.json",
+      "sourceArticles": 210,
+      "observedPanels": 761,
+      "sourceFileSha256": "59435ebef7568f8ec1ec09d6448bda36f99021e035d5fc4aff0e0e4ff7136415"
+    }
+  ],
+  "totals": {
+    "sourceArticleIds": 783,
+    "panelOccurrences": 2919,
+    "legacyMetadataPanelCount": 2856,
+    "newlyObservedPanelOccurrences": 63,
+    "b29AddedSalesianPanels": 24,
+    "b32AddedSalesianPanels": 39,
+    "metadataDriftArticleCount": 63,
+    "distinctNormalizedBodyHashes": 2616,
+    "repeatedBodyHashGroups": 223,
+    "repeatedPanelOccurrences": 526,
+    "extraOccurrencesBeyondUniqueHashes": 303,
+    "crossArticleRepeatedBodyGroups": 219,
+    "mixedCandidateWorkFamilyHashGroups": 3,
+    "sourceEditionVerified": 0,
+    "rightsCleared": 0,
+    "appContentPublished": 0
+  },
+  "metadataDriftArticleIds": [
+    "a0008_nouveau",
+    "a0029_nouveau",
+    "a0031_nouveau",
+    "a0088_ancien",
+    "a0089_ancien",
+    "a0091_ancien",
+    "a0110_ancien",
+    "a0115_nouveau",
+    "a0116_ancien",
+    "a0130_ancien",
+    "a0133_ancien",
+    "a0140_ancien",
+    "a0146_ancien",
+    "a0172_ancien",
+    "a0173_ancien",
+    "a0174_ancien",
+    "a0175_ancien",
+    "a0176_ancien",
+    "a0180_ancien",
+    "a0181_ancien",
+    "a0183_ancien",
+    "a0184_ancien",
+    "a0185_ancien",
+    "a0186_ancien",
+    "a0188_ancien",
+    "a0191_ancien",
+    "a0192_ancien",
+    "a0193_ancien",
+    "a0194_ancien",
+    "a0197_ancien",
+    "a0199_ancien",
+    "a0202_ancien",
+    "a0204_ancien",
+    "a0205_ancien",
+    "a0206_ancien",
+    "a0220_ancien",
+    "a0221_nouveau",
+    "a0222_nouveau",
+    "a0231_ancien",
+    "a0242_ancien",
+    "a0245_ancien",
+    "a0297_ancien",
+    "a0309_ancien",
+    "a0315_ancien",
+    "a0318_ancien",
+    "a0352_ancien",
+    "a0365_ancien",
+    "a0389_ancien",
+    "a0420_ancien",
+    "a0439_ancien",
+    "a0443_ancien",
+    "a0444_ancien",
+    "a0466_ancien",
+    "a0471_ancien",
+    "a0478_ancien",
+    "a0487_ancien",
+    "a0494_ancien",
+    "a0535_ancien",
+    "a0543_ancien",
+    "a0562_ancien",
+    "a0584_ancien",
+    "a0665_ancien",
+    "a0819_ancien"
+  ],
+  "familyEditorialIntake": [
+    {
+      "candidateFamily": "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK",
+      "panelOccurrences": 1035,
+      "distinctArticleIds": 557,
+      "distinctBodyHashes": 932,
+      "hostLabels": [
+        "Commentaire (Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Commentaire (Dom Pius Parsch, Le guide dans l’année liturgique)",
+        "DOM GUÉRANGER, L’ANNÉE LITURGIQUE",
+        "Dom Guéranger, l’Année Liturgique",
+        "Dom Guéranger, l’Année Liturgique : le 27 juin",
+        "Dom Guéranger, l’Année Liturgique : l’Octave de St Jean-Baptiste",
+        "Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Dom Pius Parsch, le Guide dans l’année liturgique",
+        "L’Année Liturgique"
+      ],
+      "examplePanelRefs": [
+        "a0002_nouveau#2",
+        "a0002_nouveau#4",
+        "a0004_nouveau#1",
+        "a0004_nouveau#3",
+        "a0005_nouveau#1",
+        "a0005_nouveau#3",
+        "a0006_nouveau#1",
+        "a0006_nouveau#3",
+        "a0007_nouveau#1",
+        "a0007_nouveau#3",
+        "a0008_nouveau#1",
+        "a0008_nouveau#3"
+      ],
+      "originalEditionNotYetCollated": true,
+      "workAttributionNotCertified": true,
+      "reproductionPermissionNotEstablished": true
+    },
+    {
+      "candidateFamily": "WEBSITE_PRESENTATION_UNATTRIBUTED",
+      "panelOccurrences": 655,
+      "distinctArticleIds": 654,
+      "distinctBodyHashes": 582,
+      "hostLabels": [
+        "Présentation",
+        "Sermon pour la fête de la Présentation de la Sainte Vierge 21 novembre 1617"
+      ],
+      "examplePanelRefs": [
+        "a0002_nouveau#1",
+        "a0020_nouveau#1",
+        "a0021_nouveau#1",
+        "a0023_nouveau#1",
+        "a0024_nouveau#1",
+        "a0025_nouveau#1",
+        "a0027_nouveau#1",
+        "a0029_nouveau#1",
+        "a0030_nouveau#1",
+        "a0031_nouveau#1",
+        "a0032_nouveau#1",
+        "a0033_nouveau#1"
+      ],
+      "originalEditionNotYetCollated": true,
+      "workAttributionNotCertified": true,
+      "reproductionPermissionNotEstablished": true
+    },
+    {
+      "candidateFamily": "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK",
+      "panelOccurrences": 520,
+      "distinctArticleIds": 520,
+      "distinctBodyHashes": 476,
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "examplePanelRefs": [
+        "a0002_nouveau#5",
+        "a0004_nouveau#4",
+        "a0005_nouveau#4",
+        "a0006_nouveau#4",
+        "a0007_nouveau#4",
+        "a0008_nouveau#5",
+        "a0009_nouveau#4",
+        "a0010_nouveau#5",
+        "a0013_nouveau#4",
+        "a0014_nouveau#4",
+        "a0015_nouveau#4",
+        "a0021_nouveau#5"
+      ],
+      "originalEditionNotYetCollated": true,
+      "workAttributionNotCertified": true,
+      "reproductionPermissionNotEstablished": true
+    },
+    {
+      "candidateFamily": "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK",
+      "panelOccurrences": 472,
+      "distinctArticleIds": 471,
+      "distinctBodyHashes": 420,
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Bhx Cardinal Schuster, Liber Sacramentorum : la bénédiction nuptiale",
+        "Bhx Cardinal Schuster, Liber Sacramentorum : la messe nuptiale",
+        "Bhx cardinal Schuster, Liber Sacramentorum"
+      ],
+      "examplePanelRefs": [
+        "a0002_nouveau#3",
+        "a0004_nouveau#2",
+        "a0005_nouveau#2",
+        "a0006_nouveau#2",
+        "a0007_nouveau#2",
+        "a0008_nouveau#2",
+        "a0009_nouveau#2",
+        "a0010_nouveau#2",
+        "a0013_nouveau#2",
+        "a0014_nouveau#2",
+        "a0015_nouveau#2",
+        "a0021_nouveau#3"
+      ],
+      "originalEditionNotYetCollated": true,
+      "workAttributionNotCertified": true,
+      "reproductionPermissionNotEstablished": true
+    },
+    {
+      "candidateFamily": "OTHER_HOST_PANEL_PROVENANCE_CHECK",
+      "panelOccurrences": 168,
+      "distinctArticleIds": 134,
+      "distinctBodyHashes": 144,
+      "hostLabels": [
+        "1. Forme ordinaire et extraordinaire",
+        "1. — Exposé dogmatique.",
+        "2. Nouveau missel ou révision du missel traditionnel?",
+        "2. — Exposé historique.",
+        "3. Théologie et phénoménologie de la liturgie",
+        "3. — Exposé liturgique.",
+        "4. Occasion pour un examen de conscience réciproque",
+        "Aurelius Clemens Prudentius, Peristephanon",
+        "Benoît XVI, Catéchèses, 15 décembre 2010",
+        "Benoît XVI, Catéchèses, 16 février 2011",
+        "Benoît XVI, Catéchèses, 2 mars 2011",
+        "Benoît XVI, Catéchèses, 23 février 2011",
+        "Benoît XVI, Catéchèses, 24 octobre 2007",
+        "Benoît XVI, Catéchèses, 30 juin 2010",
+        "Benoît XVI, Lettre, 29 avril 2007",
+        "Benoît XVI, audience du 23 mars 2011",
+        "Benoît XVI, audience du 9 février 2011",
+        "Benoît XVI, catéchèses",
+        "Benoît XVI, catéchèses (17 juin 2009)",
+        "Benoît XVI, catéchèses (21 octobre 2009)",
+        "Benoît XVI, catéchèses (24 juin et 5 août 2009)",
+        "Benoît XVI, catéchèses (3 février 2010)",
+        "Benoît XVI, catéchèses (3, 10 & 17 mars 2010)",
+        "Benoît XVI, catéchèses (4 octobre 2006)",
+        "Benoît XVI, catéchèses (janvier-février 2008)",
+        "Benoît XVI, catéchèses, 10 février 2010",
+        "Benoît XVI, catéchèses, 10 octobre 2007",
+        "Benoît XVI, catéchèses, 11 mars 2009",
+        "Benoît XVI, catéchèses, 12 décembre 2007",
+        "Benoît XVI, catéchèses, 13 décembre 2006",
+        "Benoît XVI, catéchèses, 14 mars 2007",
+        "Benoît XVI, catéchèses, 18 février 2009",
+        "Benoît XVI, catéchèses, 18 juin 2008",
+        "Benoît XVI, catéchèses, 20 juin 2007",
+        "Benoît XVI, catéchèses, 21 mars 2007"
+      ],
+      "examplePanelRefs": [
+        "a0010_nouveau#4",
+        "a0024_nouveau#5",
+        "a0029_nouveau#5",
+        "a0035_nouveau#5",
+        "a0043_nouveau#5",
+        "a0044_nouveau#2",
+        "a0044_nouveau#3",
+        "a0077_nouveau#5",
+        "a0079_nouveau#5",
+        "a0082_nouveau#5",
+        "a0087_nouveau#2",
+        "a0088_ancien#4"
+      ],
+      "originalEditionNotYetCollated": true,
+      "workAttributionNotCertified": true,
+      "reproductionPermissionNotEstablished": true
+    },
+    {
+      "candidateFamily": "FRANCIS_DE_SALES_HOST_ATTRIBUTION_UNVERIFIED",
+      "panelOccurrences": 34,
+      "distinctArticleIds": 34,
+      "distinctBodyHashes": 34,
+      "hostLabels": [
+        "Saint François de Sales, Sermons"
+      ],
+      "examplePanelRefs": [
+        "a0008_nouveau#4",
+        "a0031_nouveau#5",
+        "a0091_ancien#4",
+        "a0110_ancien#4",
+        "a0115_nouveau#5",
+        "a0116_ancien#4",
+        "a0140_ancien#4",
+        "a0172_ancien#4",
+        "a0174_ancien#4",
+        "a0191_ancien#5",
+        "a0192_ancien#5",
+        "a0193_ancien#5"
+      ],
+      "originalEditionNotYetCollated": true,
+      "workAttributionNotCertified": true,
+      "reproductionPermissionNotEstablished": true
+    },
+    {
+      "candidateFamily": "LITURGICAL_FORMULARY_UNATTRIBUTED",
+      "panelOccurrences": 20,
+      "distinctArticleIds": 14,
+      "distinctBodyHashes": 16,
+      "hostLabels": [
+        "A la Messe.",
+        "La Messe",
+        "La messe en latin officiellement de retour en novembre - 6 octobre 2006",
+        "Le Motu proprio sur la messe en latin bientôt disponible - 23 mars 2007",
+        "Le retour de la messe en latin - 14 octobre 2006",
+        "Le retour de la messe en latin - le 7 juillet",
+        "Patience! La messe en latin arrive: les précisions du cardinal Bertone- 5 avril 2007",
+        "Retour de la Messe en latin: vade retro Vatican II - le 28 juin",
+        "Textes de la Procession et de la Messe",
+        "’Summorum pontificum’ pour la libéralisation de la messe en latin - le 5 juillet"
+      ],
+      "examplePanelRefs": [
+        "a0107_nouveau#2",
+        "a0238_ancien#12",
+        "a0238_ancien#13",
+        "a0238_ancien#3",
+        "a0238_ancien#6",
+        "a0238_ancien#7",
+        "a0238_ancien#8",
+        "a0238_ancien#9",
+        "a0568_ancien#6",
+        "a0570_ancien#5",
+        "a0597_ancien#5",
+        "a0602_ancien#5"
+      ],
+      "originalEditionNotYetCollated": true,
+      "workAttributionNotCertified": true,
+      "reproductionPermissionNotEstablished": true
+    },
+    {
+      "candidateFamily": "LEFEBVRE_MISSAL_EDITION_CHECK",
+      "panelOccurrences": 13,
+      "distinctArticleIds": 13,
+      "distinctBodyHashes": 13,
+      "hostLabels": [
+        "Dom Gaspard Lefebvre, La Croisade Liturgique.",
+        "Dom Gaspard Lefebvre, Missel",
+        "Dom Gaspard Lefebvre, la Croisade Liturgique",
+        "Dom Lefebvre, Missel",
+        "Dom Lefebvre, Missel Quoditien",
+        "Dom Lefebvre, Missel Quotidien",
+        "Dom Lefèvre, Missel"
+      ],
+      "examplePanelRefs": [
+        "a0069_nouveau#2",
+        "a0145_nouveau#2",
+        "a0208_nouveau#1",
+        "a0222_nouveau#5",
+        "a0223_nouveau#5",
+        "a0231_ancien#4",
+        "a0318_ancien#1",
+        "a0541_ancien#3",
+        "a0542_ancien#1",
+        "a0568_ancien#2",
+        "a0762_ancien#2",
+        "a0812_ancien#2"
+      ],
+      "originalEditionNotYetCollated": true,
+      "workAttributionNotCertified": true,
+      "reproductionPermissionNotEstablished": true
+    },
+    {
+      "candidateFamily": "PARSCH_GUIDE_LITURGIQUE_EDITION_CHECK",
+      "panelOccurrences": 2,
+      "distinctArticleIds": 2,
+      "distinctBodyHashes": 2,
+      "hostLabels": [
+        "Dom Pius Parsch, Le bréviaire expliqué"
+      ],
+      "examplePanelRefs": [
+        "a1019_ancien#2",
+        "a1021_ancien#2"
+      ],
+      "originalEditionNotYetCollated": true,
+      "workAttributionNotCertified": true,
+      "reproductionPermissionNotEstablished": true
+    }
+  ],
+  "topicSignalPanelOccurrences": {
+    "HISTORIC_EDITION_SCOPE": 602,
+    "LITURGICAL_CALENDAR_HISTORY": 1507,
+    "CUSTOM_PROCESSION_BLESSING": 1348,
+    "PATRISTIC_REFERENCE": 812,
+    "SAINTS_CULT_AND_HISTORY": 1794,
+    "SOURCE_RHETORIC_CONTEXT_REVIEW": 800,
+    "SCRIPTURAL_FIGURES_PARALLELS": 817,
+    "ROMAN_STATION_OR_CHURCH": 971,
+    "SACRED_ART_HISTORY": 212
+  },
+  "duplicateGroups": [
+    {
+      "bodySha256": "e7c50d2b4d3a7523f2364ce57065239c5e9e3fec97fbe8d6c8bb03ff63c3259d",
+      "occurrences": 12,
+      "distinctArticleCount": 12,
+      "articleIds": [
+        "a0099_nouveau",
+        "a0100_nouveau",
+        "a0101_nouveau",
+        "a0102_nouveau",
+        "a0103_nouveau",
+        "a0104_nouveau",
+        "a0784_ancien",
+        "a0785_ancien",
+        "a0786_ancien",
+        "a0787_ancien",
+        "a0788_ancien",
+        "a0789_ancien"
+      ],
+      "panelRefs": [
+        "a0099_nouveau#1",
+        "a0100_nouveau#1",
+        "a0101_nouveau#1",
+        "a0102_nouveau#1",
+        "a0103_nouveau#1",
+        "a0104_nouveau#1",
+        "a0784_ancien#1",
+        "a0785_ancien#1",
+        "a0786_ancien#1",
+        "a0787_ancien#1",
+        "a0788_ancien#1",
+        "a0789_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "6099a10bb015cf4900656fdf9500c210c4618b2868c061127700d7ca963bdeca",
+      "occurrences": 8,
+      "distinctArticleCount": 8,
+      "articleIds": [
+        "a0205_nouveau",
+        "a0208_nouveau",
+        "a0318_ancien",
+        "a0558_ancien",
+        "a0587_ancien",
+        "a0588_ancien",
+        "a0596_ancien",
+        "a0890_ancien"
+      ],
+      "panelRefs": [
+        "a0205_nouveau#5",
+        "a0208_nouveau#5",
+        "a0318_ancien#5",
+        "a0558_ancien#5",
+        "a0587_ancien#5",
+        "a0588_ancien#5",
+        "a0596_ancien#5",
+        "a0890_ancien#5"
+      ],
+      "hostLabels": [
+        "Aurelius Clemens Prudentius, Peristephanon"
+      ],
+      "candidateFamilies": [
+        "OTHER_HOST_PANEL_PROVENANCE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "6a4a0590378ec20b193f8da85d878a5154afbb4f3159f243a2ba5a8bef9de65f",
+      "occurrences": 8,
+      "distinctArticleCount": 8,
+      "articleIds": [
+        "a0156_nouveau",
+        "a0159_nouveau",
+        "a0160_nouveau",
+        "a0161_nouveau",
+        "a0162_nouveau",
+        "a0164_nouveau",
+        "a0165_nouveau",
+        "a0281_ancien"
+      ],
+      "panelRefs": [
+        "a0156_nouveau#5",
+        "a0159_nouveau#5",
+        "a0160_nouveau#5",
+        "a0161_nouveau#5",
+        "a0162_nouveau#5",
+        "a0164_nouveau#5",
+        "a0165_nouveau#2",
+        "a0281_ancien#6"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "4d24d57fe135fa7ba258ecc11f60ec26ea82acb5a7d9969cbff58f1038bfee8f",
+      "occurrences": 7,
+      "distinctArticleCount": 7,
+      "articleIds": [
+        "a0156_nouveau",
+        "a0157_nouveau",
+        "a0159_nouveau",
+        "a0160_nouveau",
+        "a0161_nouveau",
+        "a0162_nouveau",
+        "a0939_ancien"
+      ],
+      "panelRefs": [
+        "a0156_nouveau#3",
+        "a0157_nouveau#3",
+        "a0159_nouveau#3",
+        "a0160_nouveau#3",
+        "a0161_nouveau#3",
+        "a0162_nouveau#3",
+        "a0939_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "25368c302a77ce0a9571fe0bdbb610b46319b196e02296b57f3cfcff214babc7",
+      "occurrences": 6,
+      "distinctArticleCount": 6,
+      "articleIds": [
+        "a0813_ancien",
+        "a0814_ancien",
+        "a0815_ancien",
+        "a0816_ancien",
+        "a0817_ancien",
+        "a0818_ancien"
+      ],
+      "panelRefs": [
+        "a0813_ancien#2",
+        "a0814_ancien#2",
+        "a0815_ancien#2",
+        "a0816_ancien#2",
+        "a0817_ancien#2",
+        "a0818_ancien#2"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "3073c347327d57063dcdc189c1858d42a60d20c973237d73270cf784ed9e8935",
+      "occurrences": 6,
+      "distinctArticleCount": 6,
+      "articleIds": [
+        "a0071_nouveau",
+        "a0072_nouveau",
+        "a0073_nouveau",
+        "a0074_nouveau",
+        "a0075_nouveau",
+        "a0346_ancien"
+      ],
+      "panelRefs": [
+        "a0071_nouveau#1",
+        "a0072_nouveau#1",
+        "a0073_nouveau#1",
+        "a0074_nouveau#1",
+        "a0075_nouveau#1",
+        "a0346_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "38960e68380bd81d2f50beb95d1fca6228f6a2bba476e203cd6417f987a202b6",
+      "occurrences": 6,
+      "distinctArticleCount": 6,
+      "articleIds": [
+        "a0834_ancien",
+        "a0835_ancien",
+        "a0836_ancien",
+        "a0837_ancien",
+        "a0838_ancien",
+        "a0839_ancien"
+      ],
+      "panelRefs": [
+        "a0834_ancien#1",
+        "a0835_ancien#1",
+        "a0836_ancien#1",
+        "a0837_ancien#1",
+        "a0838_ancien#1",
+        "a0839_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "6bd259a10340cc0ea95bcfab603a40c33d21729b68d687a3b11bcc94af020eb6",
+      "occurrences": 6,
+      "distinctArticleCount": 6,
+      "articleIds": [
+        "a0970_ancien",
+        "a0971_ancien",
+        "a0972_ancien",
+        "a0973_ancien",
+        "a0974_ancien",
+        "a0975_ancien"
+      ],
+      "panelRefs": [
+        "a0970_ancien#3",
+        "a0971_ancien#3",
+        "a0972_ancien#3",
+        "a0973_ancien#3",
+        "a0974_ancien#3",
+        "a0975_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "f0045725fdfe2880ebdac23df65f5fe330a27b17425350d7c4af0fcad1ada63f",
+      "occurrences": 6,
+      "distinctArticleCount": 6,
+      "articleIds": [
+        "a0819_ancien",
+        "a0820_ancien",
+        "a0821_ancien",
+        "a0822_ancien",
+        "a0823_ancien",
+        "a0824_ancien"
+      ],
+      "panelRefs": [
+        "a0819_ancien#2",
+        "a0820_ancien#2",
+        "a0821_ancien#2",
+        "a0822_ancien#2",
+        "a0823_ancien#2",
+        "a0824_ancien#2"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "53d3418def9f7d7f91f3808293b42d277ce21bbd690e33546d9974bbb1c38561",
+      "occurrences": 5,
+      "distinctArticleCount": 5,
+      "articleIds": [
+        "a0988_ancien",
+        "a0989_ancien",
+        "a0990_ancien",
+        "a0991_ancien",
+        "a0992_ancien"
+      ],
+      "panelRefs": [
+        "a0988_ancien#4",
+        "a0989_ancien#3",
+        "a0990_ancien#3",
+        "a0991_ancien#3",
+        "a0992_ancien#6"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "986e7092df2eef4f98bf6fb278a013267fd844e570cf1789cee309061bc5d40f",
+      "occurrences": 5,
+      "distinctArticleCount": 5,
+      "articleIds": [
+        "a0609_ancien",
+        "a0610_ancien",
+        "a0611_ancien",
+        "a0612_ancien",
+        "a0613_ancien"
+      ],
+      "panelRefs": [
+        "a0609_ancien#4",
+        "a0610_ancien#4",
+        "a0611_ancien#3",
+        "a0612_ancien#4",
+        "a0613_ancien#5"
+      ],
+      "hostLabels": [
+        "La Messe"
+      ],
+      "candidateFamilies": [
+        "LITURGICAL_FORMULARY_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "586ad960fb3c5093f74b9da90abca0057db9bcf0d2da4ec39ca8afb7d13a814d",
+      "occurrences": 4,
+      "distinctArticleCount": 4,
+      "articleIds": [
+        "a0318_ancien",
+        "a0588_ancien",
+        "a0596_ancien",
+        "a0890_ancien"
+      ],
+      "panelRefs": [
+        "a0318_ancien#3",
+        "a0588_ancien#3",
+        "a0596_ancien#3",
+        "a0890_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "70496690082b689075aa3fbedf55db9d1c62443eee583760970e7e206c9a4e69",
+      "occurrences": 4,
+      "distinctArticleCount": 1,
+      "articleIds": [
+        "a0171_ancien"
+      ],
+      "panelRefs": [
+        "a0171_ancien#2",
+        "a0171_ancien#3",
+        "a0171_ancien#4",
+        "a0171_ancien#5"
+      ],
+      "hostLabels": [
+        "Jeudi après les Cendres",
+        "Mercredi des Cendres",
+        "Samedi après les Cendres",
+        "Vendredi après les Cendres"
+      ],
+      "candidateFamilies": [
+        "OTHER_HOST_PANEL_PROVENANCE_CHECK"
+      ],
+      "crossArticle": false,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "7237f0ef9d57303a93385637b1f3c310c4c8f4d8f2eaebee6ae7e2b84fa0c832",
+      "occurrences": 4,
+      "distinctArticleCount": 4,
+      "articleIds": [
+        "a0779_ancien",
+        "a0781_ancien",
+        "a0782_ancien",
+        "a0783_ancien"
+      ],
+      "panelRefs": [
+        "a0779_ancien#1",
+        "a0781_ancien#1",
+        "a0782_ancien#1",
+        "a0783_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "7ee0c475f87ed2e9d54bf511ab6ecdc3a29308fd2e455414a49deba19a75ea23",
+      "occurrences": 4,
+      "distinctArticleCount": 4,
+      "articleIds": [
+        "a0318_ancien",
+        "a0588_ancien",
+        "a0596_ancien",
+        "a0890_ancien"
+      ],
+      "panelRefs": [
+        "a0318_ancien#4",
+        "a0588_ancien#4",
+        "a0596_ancien#4",
+        "a0890_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "ace902de3e7e8fbff91a63e14440e6811578d1022bdab1d27e8f457362a58952",
+      "occurrences": 4,
+      "distinctArticleCount": 4,
+      "articleIds": [
+        "a0157_nouveau",
+        "a0160_nouveau",
+        "a0161_nouveau",
+        "a0939_ancien"
+      ],
+      "panelRefs": [
+        "a0157_nouveau#1",
+        "a0160_nouveau#1",
+        "a0161_nouveau#1",
+        "a0939_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "b74c18faece7529486dbb9e5621d7c6aa9cafd169f101e4c463ec36dbbf9905a",
+      "occurrences": 4,
+      "distinctArticleCount": 4,
+      "articleIds": [
+        "a0827_ancien",
+        "a0828_ancien",
+        "a0829_ancien",
+        "a0830_ancien"
+      ],
+      "panelRefs": [
+        "a0827_ancien#1",
+        "a0828_ancien#1",
+        "a0829_ancien#1",
+        "a0830_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "bbced011ceb992f8ef01721d947ddcdad878c8e93e37f1a8e78f762d873bcc99",
+      "occurrences": 4,
+      "distinctArticleCount": 4,
+      "articleIds": [
+        "a0318_ancien",
+        "a0588_ancien",
+        "a0596_ancien",
+        "a0890_ancien"
+      ],
+      "panelRefs": [
+        "a0318_ancien#2",
+        "a0588_ancien#2",
+        "a0596_ancien#2",
+        "a0890_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "e3f283d96498bdf9e5c5b5a704510019a556e7163ca16114c4487615b7d0f87b",
+      "occurrences": 4,
+      "distinctArticleCount": 4,
+      "articleIds": [
+        "a0988_ancien",
+        "a0990_ancien",
+        "a0991_ancien",
+        "a0992_ancien"
+      ],
+      "panelRefs": [
+        "a0988_ancien#1",
+        "a0990_ancien#1",
+        "a0991_ancien#1",
+        "a0992_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "e6b0714657582d9ae16053fd9f071f576912afab6b58009b9cc8897fa0ab5d2d",
+      "occurrences": 4,
+      "distinctArticleCount": 4,
+      "articleIds": [
+        "a0250_nouveau",
+        "a0402_ancien",
+        "a0403_ancien",
+        "a0438_ancien"
+      ],
+      "panelRefs": [
+        "a0250_nouveau#3",
+        "a0402_ancien#5",
+        "a0403_ancien#1",
+        "a0438_ancien#2"
+      ],
+      "hostLabels": [
+        "On pourra se reporter aussi aux textes liturgiques et commentaires de la vigile et du jour Octave"
+      ],
+      "candidateFamilies": [
+        "OTHER_HOST_PANEL_PROVENANCE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "03b90e0bf69aa2b5ab2d892f50113fcb55dc1cfcee5d6fe9c562f38848a6a55c",
+      "occurrences": 3,
+      "distinctArticleCount": 3,
+      "articleIds": [
+        "a0250_nouveau",
+        "a0403_ancien",
+        "a0438_ancien"
+      ],
+      "panelRefs": [
+        "a0250_nouveau#6",
+        "a0403_ancien#4",
+        "a0438_ancien#5"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "04d8cc7b7ab9eac559134b14387f54c87035155265c956175768241a36b26908",
+      "occurrences": 3,
+      "distinctArticleCount": 3,
+      "articleIds": [
+        "a0064_nouveau",
+        "a0067_nouveau",
+        "a0342_ancien"
+      ],
+      "panelRefs": [
+        "a0064_nouveau#1",
+        "a0067_nouveau#1",
+        "a0342_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "060afc99da9705bf4304b67ca29520aed906ea54a5ebbceecf9c598a3538b971",
+      "occurrences": 3,
+      "distinctArticleCount": 1,
+      "articleIds": [
+        "a0620_ancien"
+      ],
+      "panelRefs": [
+        "a0620_ancien#2",
+        "a0620_ancien#3",
+        "a0620_ancien#4"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Guéranger, l’Année Liturgique",
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK",
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": false,
+      "potentialLabelConflict": true,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "0e850efe7571f8c191911521efecac5f79a9e5bab15edc1fe0f6d427e1bb435e",
+      "occurrences": 3,
+      "distinctArticleCount": 3,
+      "articleIds": [
+        "a0250_nouveau",
+        "a0403_ancien",
+        "a0438_ancien"
+      ],
+      "panelRefs": [
+        "a0250_nouveau#4",
+        "a0403_ancien#2",
+        "a0438_ancien#3"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "4bcfaf2179ba600a9431d876bc7a2579957b46a979d49cd6f322c4332b49baae",
+      "occurrences": 3,
+      "distinctArticleCount": 3,
+      "articleIds": [
+        "a0408_ancien",
+        "a0409_ancien",
+        "a1035_ancien"
+      ],
+      "panelRefs": [
+        "a0408_ancien#5",
+        "a0409_ancien#1",
+        "a1035_ancien#3"
+      ],
+      "hostLabels": [
+        "Historique"
+      ],
+      "candidateFamilies": [
+        "OTHER_HOST_PANEL_PROVENANCE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "51cb83e20de299c574c52dd27485f6ab28a4e1a46459f3f89c2ade3742620029",
+      "occurrences": 3,
+      "distinctArticleCount": 3,
+      "articleIds": [
+        "a0972_ancien",
+        "a0973_ancien",
+        "a0974_ancien"
+      ],
+      "panelRefs": [
+        "a0972_ancien#1",
+        "a0973_ancien#1",
+        "a0974_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "728b35e0e1754ebecadc864e7088c3e495eed59e5d24b96f42a9fbf57b0b6306",
+      "occurrences": 3,
+      "distinctArticleCount": 3,
+      "articleIds": [
+        "a0408_ancien",
+        "a0409_ancien",
+        "a1035_ancien"
+      ],
+      "panelRefs": [
+        "a0408_ancien#6",
+        "a0409_ancien#5",
+        "a1035_ancien#5"
+      ],
+      "hostLabels": [
+        "Constitution apostolique Munificentissimus Deus, 1950"
+      ],
+      "candidateFamilies": [
+        "OTHER_HOST_PANEL_PROVENANCE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "f28647fc900ee640bec22001ec906e3f034e2f300f6d76a23ae72d0228acab1b",
+      "occurrences": 3,
+      "distinctArticleCount": 3,
+      "articleIds": [
+        "a0250_nouveau",
+        "a0403_ancien",
+        "a0438_ancien"
+      ],
+      "panelRefs": [
+        "a0250_nouveau#5",
+        "a0403_ancien#3",
+        "a0438_ancien#4"
+      ],
+      "hostLabels": [
+        "Bhx cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "f7065cd86b5f07e4617528f88076d8657ec053b809302f1ddab35ea14761b309",
+      "occurrences": 3,
+      "distinctArticleCount": 3,
+      "articleIds": [
+        "a0970_ancien",
+        "a0972_ancien",
+        "a0973_ancien"
+      ],
+      "panelRefs": [
+        "a0970_ancien#5",
+        "a0972_ancien#5",
+        "a0973_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "002010c1ba38d2532ec2cfee3fd1e24260467f7c94c971956d7caee224bae4c2",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0111_nouveau",
+        "a0279_ancien"
+      ],
+      "panelRefs": [
+        "a0111_nouveau#4",
+        "a0279_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "03550cd66b37bc9ac4a0cb100ab03fc11e79f8864f96135bc5411bd51dc466dc",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0225_nouveau",
+        "a0228_ancien"
+      ],
+      "panelRefs": [
+        "a0225_nouveau#1",
+        "a0228_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "062610f06d3ba8f12b0d4b824d26077beb6ebace21cf9858a1a53e004c8ed791",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0184_nouveau",
+        "a0514_ancien"
+      ],
+      "panelRefs": [
+        "a0184_nouveau#5",
+        "a0514_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "06ce6082e89311f791c47f0a1292dc2e00da361c2129696bf45934d9dc4c85c0",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0137_nouveau",
+        "a0803_ancien"
+      ],
+      "panelRefs": [
+        "a0137_nouveau#3",
+        "a0803_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "09679529c14754b73ad33a1dce91200f1e1ea70fd9b2955d3a96ccf649c447ce",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0113_nouveau",
+        "a0762_ancien"
+      ],
+      "panelRefs": [
+        "a0113_nouveau#1",
+        "a0762_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "09e9be710709660e6d0e3f29d9844a952ed14268384eee3c714660460f5cd94b",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0097_nouveau",
+        "a1072_ancien"
+      ],
+      "panelRefs": [
+        "a0097_nouveau#1",
+        "a1072_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "0a5673c6c02520d0c439107723e38e216ac0963b802f64776e58e8feccba8657",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0182_nouveau",
+        "a0512_ancien"
+      ],
+      "panelRefs": [
+        "a0182_nouveau#4",
+        "a0512_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "0afa7fcbe93e080b0ccab87286d43b780351ba93e24b958c91ad982e683086e3",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0142_nouveau",
+        "a0808_ancien"
+      ],
+      "panelRefs": [
+        "a0142_nouveau#2",
+        "a0808_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "0b7820116b45a03978e11a9b63b93068e787d261abbb54bb0d9246959d9270d3",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0248_nouveau",
+        "a0532_ancien"
+      ],
+      "panelRefs": [
+        "a0248_nouveau#5",
+        "a0532_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "0ce09ed76e6208121b7505550df7c926d6781cfdb81a923a506b20a6e677dc5d",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0116_nouveau",
+        "a0765_ancien"
+      ],
+      "panelRefs": [
+        "a0116_nouveau#3",
+        "a0765_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "0d338a47bab97b03350a81e27abcb1e5855289ea5ff263bbc221fe6cd072d695",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0179_nouveau",
+        "a0509_ancien"
+      ],
+      "panelRefs": [
+        "a0179_nouveau#1",
+        "a0509_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "0d66190bcf874ebf375459235f66cbd556ab02a2b8b54c79c3e0e3ea623e9e70",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0184_nouveau",
+        "a0514_ancien"
+      ],
+      "panelRefs": [
+        "a0184_nouveau#1",
+        "a0514_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "0eb91135502d1070e88beac27d0b4e46ef1750ba8e9d85f5773b584c34cbf202",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0116_nouveau",
+        "a0765_ancien"
+      ],
+      "panelRefs": [
+        "a0116_nouveau#1",
+        "a0765_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "0fa1aee7671b3975c74ac5891f9f296b7a93cb82798442be3b1be16ffd50980e",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0103_nouveau",
+        "a0788_ancien"
+      ],
+      "panelRefs": [
+        "a0103_nouveau#2",
+        "a0788_ancien#2"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "10226150e40c085abacb8e554f1d88937b953e224607a38d86227e1d554b5e81",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0087_nouveau",
+        "a0777_ancien"
+      ],
+      "panelRefs": [
+        "a0087_nouveau#1",
+        "a0777_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "1050dcea2f7327f5a3afb70904fa4cb292fcd1eea66528b3e6c3ad1808b4ad63",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0100_ancien",
+        "a0103_ancien"
+      ],
+      "panelRefs": [
+        "a0100_ancien#1",
+        "a0103_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "12c88dd311e2885b4a4db4679107b62a69e45fc4df972ba4b728aba5419d9a27",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0055_nouveau",
+        "a0329_ancien"
+      ],
+      "panelRefs": [
+        "a0055_nouveau#1",
+        "a0329_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "12f044780e0eabc6bb8822c068eb50c685fcfbfea8030f938dac3ebbd54333f6",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0144_nouveau",
+        "a0810_ancien"
+      ],
+      "panelRefs": [
+        "a0144_nouveau#4",
+        "a0810_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "13982e7e5af1098e9c9549c162dc837dc81c56647f4c1a8b2148039275700dcd",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0187_nouveau",
+        "a0516_ancien"
+      ],
+      "panelRefs": [
+        "a0187_nouveau#1",
+        "a0516_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "145320de832cbd0559ea8158f4c22dc357988a96922fd19b014a19ff47f8808d",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0137_nouveau",
+        "a0803_ancien"
+      ],
+      "panelRefs": [
+        "a0137_nouveau#1",
+        "a0803_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "14e2e22d1177e94607eaff9e981086bc9a097da821fdc3f8d14a34ff4a8cde21",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0027_nouveau",
+        "a0742_ancien"
+      ],
+      "panelRefs": [
+        "a0027_nouveau#1",
+        "a0742_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "162c4a004ebc1cd15023fdef41eacc4aead96d5d3c583f575fe0d512f51bdffb",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0126_nouveau",
+        "a0775_ancien"
+      ],
+      "panelRefs": [
+        "a0126_nouveau#1",
+        "a0775_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "176dcae1898e17f3707a7bb7627f44eafe9793ad6d1fc3d37d5cfa0b27460f2d",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0047_nouveau",
+        "a0321_ancien"
+      ],
+      "panelRefs": [
+        "a0047_nouveau#1",
+        "a0321_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "1b347a0f995bac1e835b742becb22301d25acd30a23bf73bd110e38d57c8f468",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0046_nouveau",
+        "a0305_ancien"
+      ],
+      "panelRefs": [
+        "a0046_nouveau#1",
+        "a0305_ancien#1"
+      ],
+      "hostLabels": [
+        "Commentaire (Dom Pius Parsch, Le guide dans l’année liturgique",
+        "Commentaire (Dom Pius Parsch, Le guide dans l’année liturgique)"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "1b3a0fc121c61ca5ee284e36a4f211c228590c75d54ad776405f87e6d5f1ac6c",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0180_nouveau",
+        "a0510_ancien"
+      ],
+      "panelRefs": [
+        "a0180_nouveau#2",
+        "a0510_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "1ce6bad990702a8eeda250ba820ed0c5b2671882724e0c2e67dd5145dcec5e3d",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0146_nouveau",
+        "a0811_ancien"
+      ],
+      "panelRefs": [
+        "a0146_nouveau#5",
+        "a0811_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "204dc68ccef732d1d8476c74d1f22ebaabd9c2d8beb01e91cb202a048c99edc3",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0225_nouveau",
+        "a0228_ancien"
+      ],
+      "panelRefs": [
+        "a0225_nouveau#3",
+        "a0228_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "22965b40e4785213f483afb8d4521d497fda71082571b01dd26a64604497f47c",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0087_nouveau",
+        "a0777_ancien"
+      ],
+      "panelRefs": [
+        "a0087_nouveau#6",
+        "a0777_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "2299514458298e780385be037760063b0147d3c2dc77a1d5351e428e7d3ef8aa",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0196_nouveau",
+        "a0525_ancien"
+      ],
+      "panelRefs": [
+        "a0196_nouveau#5",
+        "a0525_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "23795b3a2e6f84b5128a98cc820208a7b9346fce0666263d0882015e5726208c",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0027_nouveau",
+        "a0742_ancien"
+      ],
+      "panelRefs": [
+        "a0027_nouveau#2",
+        "a0742_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "243c34ae54fb4b2128f7ed4e22999e97214a2e2474b3b40aa316124278419eb0",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0045_nouveau",
+        "a0304_ancien"
+      ],
+      "panelRefs": [
+        "a0045_nouveau#2",
+        "a0304_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "2457aa0d113602a12d375e7374663f9e4490a84dfada54889b272efc71e88eaf",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0013_nouveau",
+        "a0034_ancien"
+      ],
+      "panelRefs": [
+        "a0013_nouveau#2",
+        "a0034_ancien#2"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "247cc8d0e423f005d879e22ec00e52e1545be685fb20b6a7243ad39cfe88b56b",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0013_nouveau",
+        "a0034_ancien"
+      ],
+      "panelRefs": [
+        "a0013_nouveau#1",
+        "a0034_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "24a0795efe59a51e754f52122fda1ebcaa8640ddd26ffb321d3afdeaf16c976d",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0139_nouveau",
+        "a0805_ancien"
+      ],
+      "panelRefs": [
+        "a0139_nouveau#1",
+        "a0805_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "27d69b479c3b0ea26f55c034622b248c7a648803ef3ced00719870bfc59b45fb",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0116_nouveau",
+        "a0765_ancien"
+      ],
+      "panelRefs": [
+        "a0116_nouveau#4",
+        "a0765_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "29181943b49e63dbf632a2eea7b1d2a3ea820ec95c614d3054a17f7144b2ce52",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0212_nouveau",
+        "a0303_ancien"
+      ],
+      "panelRefs": [
+        "a0212_nouveau#3",
+        "a0303_ancien#3"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "2acb020e739261644d60c7bc6135dcfb8098cd559429f9b1e54eb939b04cdf53",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0180_nouveau",
+        "a0510_ancien"
+      ],
+      "panelRefs": [
+        "a0180_nouveau#5",
+        "a0510_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "2b603d6d08e18270f280b21771f1650746f0aad350c8d8550635cca688a679de",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0077_nouveau",
+        "a0745_ancien"
+      ],
+      "panelRefs": [
+        "a0077_nouveau#2",
+        "a0745_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "2fbe9d800ffd87480210022a32d4d1fd325b1b4d1132d073c054fd1d8d1de335",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0192_nouveau",
+        "a0521_ancien"
+      ],
+      "panelRefs": [
+        "a0192_nouveau#4",
+        "a0521_ancien#4"
+      ],
+      "hostLabels": [
+        "Benoît XVI, catéchèses, 28 novembre 2007"
+      ],
+      "candidateFamilies": [
+        "OTHER_HOST_PANEL_PROVENANCE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "32bc292bb011d03a7960da257648639f5dc177aafde97f5fa39478d5f753448f",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0049_nouveau",
+        "a0323_ancien"
+      ],
+      "panelRefs": [
+        "a0049_nouveau#1",
+        "a0323_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "342b26704dd7b59b8fbd5863bbd61d27e15f9dacb072770126b0732eb4d60047",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0083_nouveau",
+        "a0751_ancien"
+      ],
+      "panelRefs": [
+        "a0083_nouveau#5",
+        "a0751_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "342c519df4ad00bd1e09284ebd1ac932684119e5af8b33ff17f60509921ef942",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0084_nouveau",
+        "a0752_ancien"
+      ],
+      "panelRefs": [
+        "a0084_nouveau#2",
+        "a0752_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "34b9a0a06bf2c9036ecc7aa810a094f20cc80f7d1a09f6bcba1ea648cb47a15b",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0182_nouveau",
+        "a0512_ancien"
+      ],
+      "panelRefs": [
+        "a0182_nouveau#5",
+        "a0512_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "355fabfb692fef4cba7d106b0daebb94d01c57b80cd36af67cfe9fda896fe5fb",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0057_nouveau",
+        "a0331_ancien"
+      ],
+      "panelRefs": [
+        "a0057_nouveau#1",
+        "a0331_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "36acb3d71e46dc32a7a0b141b345c07570dfe84e94f23e3ad1dbf087964b7eb3",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0116_nouveau",
+        "a0765_ancien"
+      ],
+      "panelRefs": [
+        "a0116_nouveau#5",
+        "a0765_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "37a8c87f384b2648e22abade5c51cb8ac7da33a52e03787e4001c31577009aae",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0020_nouveau",
+        "a0031_nouveau"
+      ],
+      "panelRefs": [
+        "a0020_nouveau#1",
+        "a0031_nouveau#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "3806a39c0e3029eb3572cc8dfbb27ca326a567232c659cc1332222954f8b74d1",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0027_nouveau",
+        "a0742_ancien"
+      ],
+      "panelRefs": [
+        "a0027_nouveau#4",
+        "a0742_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "38567822f36ef5d7ca994ea2613721ccdbf3399ac8e20d2abfca81389c58ab30",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0137_nouveau",
+        "a0803_ancien"
+      ],
+      "panelRefs": [
+        "a0137_nouveau#2",
+        "a0803_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "3c769bf6f02d4e6790f1bbcb18ff148ca42fd74c36d2e6fc92cad08aa2e8818f",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0220_nouveau",
+        "a0992_ancien"
+      ],
+      "panelRefs": [
+        "a0220_nouveau#2",
+        "a0992_ancien#3"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "3e457c7180f407d93d86497f29779f35de3aee59fb0b050aa557059f504ca709",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0091_nouveau",
+        "a0758_ancien"
+      ],
+      "panelRefs": [
+        "a0091_nouveau#1",
+        "a0758_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "3f21807142e0806bd8e3ce5ec8c4f30e39c9f6da9ade293c5003a47cb554b714",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0077_nouveau",
+        "a0745_ancien"
+      ],
+      "panelRefs": [
+        "a0077_nouveau#5",
+        "a0745_ancien#5"
+      ],
+      "hostLabels": [
+        "Benoît XVI, catéchèses, 5 mars 2008"
+      ],
+      "candidateFamilies": [
+        "OTHER_HOST_PANEL_PROVENANCE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "3fef685bcaa5bfcfda0a39a0dc6ebce93be6ed8754441d184dc951de0d7d2e14",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0220_nouveau",
+        "a0992_ancien"
+      ],
+      "panelRefs": [
+        "a0220_nouveau#4",
+        "a0992_ancien#5"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "408ba9d72fa43aa7f21cc084ad01f6010848569a20538fec966c2856d684f9bb",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0142_nouveau",
+        "a0808_ancien"
+      ],
+      "panelRefs": [
+        "a0142_nouveau#4",
+        "a0808_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "40ca331ee7fd6acc4927f9c9cbbe055207e90dfeda610b0df91324ddf04436ba",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0420_ancien",
+        "a0535_ancien"
+      ],
+      "panelRefs": [
+        "a0420_ancien#5",
+        "a0535_ancien#2"
+      ],
+      "hostLabels": [
+        "Plan d'un panégyrique de saint Louis, roi de France 25 août 1602 Plan"
+      ],
+      "candidateFamilies": [
+        "OTHER_HOST_PANEL_PROVENANCE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "40e5aadcbfebcce49d9a312943e94523330af2dad9a6614984e6764d4441be40",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0116_nouveau",
+        "a0765_ancien"
+      ],
+      "panelRefs": [
+        "a0116_nouveau#2",
+        "a0765_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "426f265374d77755e60170ca6a4678c1c98a9c20e48aa6c803859e41f1be0ec5",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0062_nouveau",
+        "a0336_ancien"
+      ],
+      "panelRefs": [
+        "a0062_nouveau#1",
+        "a0336_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "449cf926f8e90e9d862839f54d74b4176b1ba6bd21dd14850a9b7e59a9da41ff",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0193_nouveau",
+        "a0522_ancien"
+      ],
+      "panelRefs": [
+        "a0193_nouveau#2",
+        "a0522_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "46a011afaa5888d5930b5de71cdf27a8182888cba2d628969e6029a6866479c7",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0192_nouveau",
+        "a0521_ancien"
+      ],
+      "panelRefs": [
+        "a0192_nouveau#1",
+        "a0521_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "4840a9c835ec39c5a85c6b9c2e91323788237629343368b6f910020ef5e7d42f",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0193_nouveau",
+        "a0522_ancien"
+      ],
+      "panelRefs": [
+        "a0193_nouveau#3",
+        "a0522_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "499b2c402d33bd5ecdbe5d65c160730aa864b39d0d870435b1c853b048a018ec",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0124_nouveau",
+        "a0773_ancien"
+      ],
+      "panelRefs": [
+        "a0124_nouveau#5",
+        "a0773_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "4bd7927f3a5643ebb8c75260a7e84441fe8b3ec50c6e5cacec7d2f2136496296",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0182_nouveau",
+        "a0512_ancien"
+      ],
+      "panelRefs": [
+        "a0182_nouveau#3",
+        "a0512_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "4e58c9c913741f049d45188496ec2a52b9030a0376e57107592464d6836644af",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0192_nouveau",
+        "a0521_ancien"
+      ],
+      "panelRefs": [
+        "a0192_nouveau#2",
+        "a0521_ancien#2"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "516151646a1cb30663e81d81ae11a2f6f93ffaaa7559969659040c8d1c6f39b5",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0409_ancien",
+        "a1035_ancien"
+      ],
+      "panelRefs": [
+        "a0409_ancien#4",
+        "a1035_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "51e6d8860d09f7b432245fb9101072d91639cbb103e31d15c99ae32fd6f6f8d4",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0077_nouveau",
+        "a0745_ancien"
+      ],
+      "panelRefs": [
+        "a0077_nouveau#6",
+        "a0745_ancien#6"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "541d64cf948a8de9f6bc594f3d34021b89a4e4fd932c35e2d4aa034f1a10b0d4",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0052_nouveau",
+        "a0326_ancien"
+      ],
+      "panelRefs": [
+        "a0052_nouveau#1",
+        "a0326_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "5481c80d039acb78e86d8e52a7caa52088b109a9b680df754fa140fcce13cc93",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0204_nouveau",
+        "a1008_ancien"
+      ],
+      "panelRefs": [
+        "a0204_nouveau#2",
+        "a1008_ancien#3"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique : le 27 juin"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "57d0053611ac9842a3d50aefd3bb06c11739207d46440055384b427aa049580a",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0222_nouveau",
+        "a0223_nouveau"
+      ],
+      "panelRefs": [
+        "a0222_nouveau#1",
+        "a0223_nouveau#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "58dc6db30db8af1b28b9090a187098e5964801ffcfafed8888dde00280a32736",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0026_nouveau",
+        "a0891_ancien"
+      ],
+      "panelRefs": [
+        "a0026_nouveau#3",
+        "a0891_ancien#3"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "5b1677fb230c778a82568e3df0c476a1a4d84504a69fdfb43258919a039dd69a",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0141_nouveau",
+        "a0807_ancien"
+      ],
+      "panelRefs": [
+        "a0141_nouveau#2",
+        "a0807_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "5c8194802340f95c69a17a89472334f5505e4aa5ff241231b0d408871197527a",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0091_nouveau",
+        "a0758_ancien"
+      ],
+      "panelRefs": [
+        "a0091_nouveau#2",
+        "a0758_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "5d69540d6d83cde686b1377f2f1534beec2c9e56dbfea44896f95bef709a52e6",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0087_nouveau",
+        "a0777_ancien"
+      ],
+      "panelRefs": [
+        "a0087_nouveau#5",
+        "a0777_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "5ec83cce0883af8e82eb930529eb8e6dfd62c1ff8c40965a4b8b533f599f67b4",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0129_nouveau",
+        "a0425_ancien"
+      ],
+      "panelRefs": [
+        "a0129_nouveau#5",
+        "a0425_ancien#5"
+      ],
+      "hostLabels": [
+        "Dom Flicoteaux, la Noël d’été"
+      ],
+      "candidateFamilies": [
+        "OTHER_HOST_PANEL_PROVENANCE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "5f7218395ef0618bd80b992ee24ea66c008efce6ca34a527fb5e44432e4ef462",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0124_nouveau",
+        "a0773_ancien"
+      ],
+      "panelRefs": [
+        "a0124_nouveau#4",
+        "a0773_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "5fc17a998942faca1215c06905add633ddaf4731c45a414a12d9d17adaabed20",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0187_nouveau",
+        "a0516_ancien"
+      ],
+      "panelRefs": [
+        "a0187_nouveau#2",
+        "a0516_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "619092fcf63d964d7cde2ca9e11f0dacc4af3074209cc1cd689338af888a8927",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0196_nouveau",
+        "a0525_ancien"
+      ],
+      "panelRefs": [
+        "a0196_nouveau#2",
+        "a0525_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "619e3a612d8231eade4dd054ef68223fa49dfe79ca3373353db0e73630e3ffc8",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0088_nouveau",
+        "a0755_ancien"
+      ],
+      "panelRefs": [
+        "a0088_nouveau#1",
+        "a0755_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "620dc46280ca3a606f17f732e0fbafdeb53fc24897c83e628790cfcc5d6b05b9",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0180_nouveau",
+        "a0510_ancien"
+      ],
+      "panelRefs": [
+        "a0180_nouveau#4",
+        "a0510_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "64248ba3dd8a5d964cc311eab6c35ec45d218ae65f822bbc4f5344113501d116",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0144_nouveau",
+        "a0810_ancien"
+      ],
+      "panelRefs": [
+        "a0144_nouveau#1",
+        "a0810_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "64e970c26583216917385b5c283df250cb560fe246adbd4bd23ee0bd21e2ab91",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0051_nouveau",
+        "a0325_ancien"
+      ],
+      "panelRefs": [
+        "a0051_nouveau#1",
+        "a0325_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "65e1ae0ef3639743ce69524ea3745dfc5d25242189109bc4c9837b39536d34ec",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0204_nouveau",
+        "a1008_ancien"
+      ],
+      "panelRefs": [
+        "a0204_nouveau#5",
+        "a1008_ancien#6"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "6608081e073975ec32c678393e21e929ecb9167d3059cefe8cef29d6cd2b2d0f",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0195_nouveau",
+        "a0524_ancien"
+      ],
+      "panelRefs": [
+        "a0195_nouveau#1",
+        "a0524_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "66d92eec92b32e960a7f7bd0121c15de90e5843c4d2d394338b4785ab235e8bd",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0050_nouveau",
+        "a0324_ancien"
+      ],
+      "panelRefs": [
+        "a0050_nouveau#1",
+        "a0324_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "67e21d6964c5762ff211214d024f192ae71f9ad3cbc860013307d19d2ac70803",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0609_ancien",
+        "a0611_ancien"
+      ],
+      "panelRefs": [
+        "a0609_ancien#1",
+        "a0611_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "687d431ccfd0137fe5eb1eea3480867f4dbbbae360c0f02d7d73f86cac97ba14",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0086_nouveau",
+        "a0754_ancien"
+      ],
+      "panelRefs": [
+        "a0086_nouveau#2",
+        "a0754_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "6900e2ddc34fad67c3ce25324185cb4d4016d56d6a2ef98d1e289679cf8fea84",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0098_nouveau",
+        "a0761_ancien"
+      ],
+      "panelRefs": [
+        "a0098_nouveau#1",
+        "a0761_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "69e6c07ceb2f53397307704e820f919c39b083e1dbf3c99a7b3dfd078462df6a",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0084_nouveau",
+        "a0752_ancien"
+      ],
+      "panelRefs": [
+        "a0084_nouveau#1",
+        "a0752_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "6a5516246f2782efc3a0e1eecf7c12a856f3f88d450ae7c9e8bba3bbf8d29caa",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0080_nouveau",
+        "a0748_ancien"
+      ],
+      "panelRefs": [
+        "a0080_nouveau#4",
+        "a0748_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "6b3c536edd9dd003029c336ecfa50014ed51d0393b2cad95de0e856666885f18",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0029_nouveau",
+        "a0220_ancien"
+      ],
+      "panelRefs": [
+        "a0029_nouveau#5",
+        "a0220_ancien#2"
+      ],
+      "hostLabels": [
+        "Sommaire d'un sermon sur la sainte Croix 20 avril 1612 Plan"
+      ],
+      "candidateFamilies": [
+        "OTHER_HOST_PANEL_PROVENANCE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "6c131e278dc21d126db5bf677dc6ac4216e4d6549e5a7aa6df2bd2ddbe9ee7f5",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0126_nouveau",
+        "a0775_ancien"
+      ],
+      "panelRefs": [
+        "a0126_nouveau#5",
+        "a0775_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "6c21e2990985635a50b36c9235e331bda7e17fac6f728213fd2e8d511489a24b",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0204_nouveau",
+        "a1008_ancien"
+      ],
+      "panelRefs": [
+        "a0204_nouveau#3",
+        "a1008_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique : l’Octave de St Jean-Baptiste"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "6cb3cc681dbe2674b389ef25986f79183c94b0229684feed033a4d3b4ddc935d",
+      "occurrences": 2,
+      "distinctArticleCount": 1,
+      "articleIds": [
+        "a0622_ancien"
+      ],
+      "panelRefs": [
+        "a0622_ancien#2",
+        "a0622_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK",
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": false,
+      "potentialLabelConflict": true,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "6cdc76e8d402966fea80c0a4f872565a6f7ae4e66cad2afdb38c49606f907c43",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0192_nouveau",
+        "a0521_ancien"
+      ],
+      "panelRefs": [
+        "a0192_nouveau#3",
+        "a0521_ancien#3"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "6d5faca94594504f9128f3f9cc032acc22ce34d28222241515f49b580270e7b8",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0146_nouveau",
+        "a0811_ancien"
+      ],
+      "panelRefs": [
+        "a0146_nouveau#1",
+        "a0811_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "70c485bcc4e2efea4e58a49e839202c8f1b43246507a003a36a97a86491a4d84",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0058_nouveau",
+        "a0332_ancien"
+      ],
+      "panelRefs": [
+        "a0058_nouveau#1",
+        "a0332_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "70e85cce257645368833f790afda90730eed70e6dd0510d0369891bf3c8430e9",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0100_nouveau",
+        "a0785_ancien"
+      ],
+      "panelRefs": [
+        "a0100_nouveau#2",
+        "a0785_ancien#2"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "724b21edc7a4f5ad48311a8a23e18f128e5199015507c3d248636055a53e1d27",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0182_nouveau",
+        "a0512_ancien"
+      ],
+      "panelRefs": [
+        "a0182_nouveau#1",
+        "a0512_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "747b217131f1824b2b8e7ac15a9990ef794c3b19eb17460352f970c4fc89c490",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0013_nouveau",
+        "a0034_ancien"
+      ],
+      "panelRefs": [
+        "a0013_nouveau#3",
+        "a0034_ancien#3"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "74b11c8453c61c3f5aa2e00aaf8dd4ead090b8e2c1459baedaf277e3f01978b3",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0187_nouveau",
+        "a0516_ancien"
+      ],
+      "panelRefs": [
+        "a0187_nouveau#3",
+        "a0516_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "74f3c68358a4079f87e0bdec5cb4bea40145df78ea2c92d45991b633cc523a64",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0111_nouveau",
+        "a0279_ancien"
+      ],
+      "panelRefs": [
+        "a0111_nouveau#2",
+        "a0279_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "7605afff732a6e77e1f172ba2c519a9619710b392efa4afe959fa5d27722ee10",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0248_nouveau",
+        "a0532_ancien"
+      ],
+      "panelRefs": [
+        "a0248_nouveau#4",
+        "a0532_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "767524aed4127f51f47cc269b385081184a17b7824443efd2d1ebd232ace64b2",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0101_nouveau",
+        "a0786_ancien"
+      ],
+      "panelRefs": [
+        "a0101_nouveau#2",
+        "a0786_ancien#2"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "76d1911c5a585be8bd0a7655434919c7950b9b2fdcc4652d253c25611f565d39",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0084_nouveau",
+        "a0752_ancien"
+      ],
+      "panelRefs": [
+        "a0084_nouveau#4",
+        "a0752_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "76e753ee2199764f73e64d610d202384e07638dc9f7a6610895e9213db53b145",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0184_nouveau",
+        "a0514_ancien"
+      ],
+      "panelRefs": [
+        "a0184_nouveau#4",
+        "a0514_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "77997d928056e7e2c0068cdff8f43222daf7a4c508575f334b7ce9856385c482",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0180_nouveau",
+        "a0510_ancien"
+      ],
+      "panelRefs": [
+        "a0180_nouveau#1",
+        "a0510_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "7b3cceaaf5b98ea98ba00aea7e74e5071ceea71fa7189bbfff77199071f0721c",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0225_nouveau",
+        "a0228_ancien"
+      ],
+      "panelRefs": [
+        "a0225_nouveau#2",
+        "a0228_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "821037b7dbb30e022bf106b15f0f801c08fdc3056f61bbc4627e87399ee4b218",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0204_nouveau",
+        "a1008_ancien"
+      ],
+      "panelRefs": [
+        "a0204_nouveau#4",
+        "a1008_ancien#5"
+      ],
+      "hostLabels": [
+        "Dom Flicoteaux, la Noël d’été"
+      ],
+      "candidateFamilies": [
+        "OTHER_HOST_PANEL_PROVENANCE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "829fc5c55cdac9e2c25125fbb048b55906148239f1b21a8cacea394226e95dec",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0091_nouveau",
+        "a0758_ancien"
+      ],
+      "panelRefs": [
+        "a0091_nouveau#3",
+        "a0758_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "82c5208c2be821b40af5917990eb19ac8b07ae5324060c3ac2441fa91d9c2af1",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0144_nouveau",
+        "a0810_ancien"
+      ],
+      "panelRefs": [
+        "a0144_nouveau#2",
+        "a0810_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "83a16315670b4aee796eb6267eeadff506c41bbc0d7f7492a43172f0cf44626b",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0184_nouveau",
+        "a0514_ancien"
+      ],
+      "panelRefs": [
+        "a0184_nouveau#2",
+        "a0514_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "8454c484c8055e95710c3621cc97ec53e1fa1762e650a512bf298f383089c802",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0087_nouveau",
+        "a0777_ancien"
+      ],
+      "panelRefs": [
+        "a0087_nouveau#3",
+        "a0777_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "84f50cc444e446c02ea7bfd10f5ca9bf3a353034249df0bc11eda87cecad831d",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0248_nouveau",
+        "a0532_ancien"
+      ],
+      "panelRefs": [
+        "a0248_nouveau#1",
+        "a0532_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "87c4e05c2d48c7c19937392695abeb8c25bd3ecbfd63963c35e23421a3e02cb7",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0014_nouveau",
+        "a0035_ancien"
+      ],
+      "panelRefs": [
+        "a0014_nouveau#2",
+        "a0035_ancien#2"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "87ed363cac145ce561a62577d7debd5034e21a725041587a37edd19af240dd2e",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0452_ancien",
+        "a0454_ancien"
+      ],
+      "panelRefs": [
+        "a0452_ancien#1",
+        "a0454_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "8a6dda2e557078c8341a5f4edc5400a4e095f605052868aff215bd5551efbf87",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0126_nouveau",
+        "a0775_ancien"
+      ],
+      "panelRefs": [
+        "a0126_nouveau#2",
+        "a0775_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "8d555dba4918a9c4eb94a84418effc0f037b09c9b6c0b58de62210ed752fe024",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0066_nouveau",
+        "a0341_ancien"
+      ],
+      "panelRefs": [
+        "a0066_nouveau#1",
+        "a0341_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "8d9518d4674fa2265315233547ff66156720a4a8748c985f76b94ecf156805b6",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0193_nouveau",
+        "a0522_ancien"
+      ],
+      "panelRefs": [
+        "a0193_nouveau#5",
+        "a0522_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "8e25b27a73c72f88c31b5783d6ade812692a3a72529bc30e1418b754e3a3aaa4",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0137_nouveau",
+        "a0803_ancien"
+      ],
+      "panelRefs": [
+        "a0137_nouveau#4",
+        "a0803_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "8ec4ebed4dc78d815826d51432ccf44cf0aeb9e6afec770192549f2dc792bdad",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0010_nouveau",
+        "a0593_ancien"
+      ],
+      "panelRefs": [
+        "a0010_nouveau#2",
+        "a0593_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "8f0ed6231839e72bd2220005c796555ab8291f0e6368a5277b628f8231854f6d",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0091_nouveau",
+        "a0758_ancien"
+      ],
+      "panelRefs": [
+        "a0091_nouveau#4",
+        "a0758_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "9025cad4f12b487f353547c9f90e8476a2f90148706b14d6873091af00f412bd",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0210_nouveau",
+        "a1002_ancien"
+      ],
+      "panelRefs": [
+        "a0210_nouveau#2",
+        "a1002_ancien#2"
+      ],
+      "hostLabels": [
+        "Benoît XVI, Catéchèses, 30 juin 2010"
+      ],
+      "candidateFamilies": [
+        "OTHER_HOST_PANEL_PROVENANCE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "902b868d78771ac885e135c6c3ecb00abe868e4363e7934e45cb6dd60c2474dc",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0157_nouveau",
+        "a0939_ancien"
+      ],
+      "panelRefs": [
+        "a0157_nouveau#2",
+        "a0939_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "908371cd52b04177939859aede931a297ee5bcfc9fd8e0727c7e7ddb58a157d1",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0124_nouveau",
+        "a0773_ancien"
+      ],
+      "panelRefs": [
+        "a0124_nouveau#1",
+        "a0773_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "95809625697c122802cd4befcd90115b07a0e55699a6a48f32a7706276896c05",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0098_nouveau",
+        "a0761_ancien"
+      ],
+      "panelRefs": [
+        "a0098_nouveau#3",
+        "a0761_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "97125d10dca62752c71d8755142a5fae50befb14ed18869f73631f9cb8c8f038",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0195_nouveau",
+        "a0524_ancien"
+      ],
+      "panelRefs": [
+        "a0195_nouveau#2",
+        "a0524_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "97d0bce70a41d5de97bb7db7024af4c01510d4dfa5f679bfed588cdd8021bf2d",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0146_nouveau",
+        "a0811_ancien"
+      ],
+      "panelRefs": [
+        "a0146_nouveau#2",
+        "a0811_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "9b2664e7cc25428227e3de4408649386b59ac22b4f566b96c654986cfea319a6",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0015_nouveau",
+        "a0036_ancien"
+      ],
+      "panelRefs": [
+        "a0015_nouveau#1",
+        "a0036_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "9bc8c572afff17a4bdbb66e2726fbffd3497339343302a86a599900eaa107de1",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0061_nouveau",
+        "a0335_ancien"
+      ],
+      "panelRefs": [
+        "a0061_nouveau#1",
+        "a0335_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "9e3bfb862f4ade867d399f8a0b00f52c901c0e00d4e161ba0689e233afeb8dea",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0015_nouveau",
+        "a0036_ancien"
+      ],
+      "panelRefs": [
+        "a0015_nouveau#2",
+        "a0036_ancien#2"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "a0dff4bab4afc273b220a3b8a34dfcef5f01eb01aa94e139afbed24d182627f2",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0139_nouveau",
+        "a0805_ancien"
+      ],
+      "panelRefs": [
+        "a0139_nouveau#3",
+        "a0805_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "a157f3ae996be4c5aac3b3d577990849ec4f009f8b404b87e54b7a9ef7ebd416",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0190_nouveau",
+        "a0519_ancien"
+      ],
+      "panelRefs": [
+        "a0190_nouveau#5",
+        "a0519_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "a4166794cc7f1fc3bf09106bf27f0c143e8a44536a13da1eb6d0f239ea2f4ff7",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0083_nouveau",
+        "a0751_ancien"
+      ],
+      "panelRefs": [
+        "a0083_nouveau#2",
+        "a0751_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "a488500ed3067b735b6b049a3bccf37e0baf4ca69eca8801a883a8afdc805754",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0190_nouveau",
+        "a0519_ancien"
+      ],
+      "panelRefs": [
+        "a0190_nouveau#3",
+        "a0519_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "a4d28134fa02b36f8b71fbecbe59b5c7cf8775871010862e4fab91cfb606088c",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0086_nouveau",
+        "a0754_ancien"
+      ],
+      "panelRefs": [
+        "a0086_nouveau#4",
+        "a0754_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "a55e9cfa4d18834502f1dc639a5812aba22928bad6a4f4e313d2181cf74f3938",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0027_nouveau",
+        "a0742_ancien"
+      ],
+      "panelRefs": [
+        "a0027_nouveau#5",
+        "a0742_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "a83cb7c0a9a0babdb4fcc1b446497f3caec880d4a00d137604acc1650b36abed",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0182_nouveau",
+        "a0512_ancien"
+      ],
+      "panelRefs": [
+        "a0182_nouveau#2",
+        "a0512_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "a8567f500fc82dc78f9b6c612800e99bdc6136a84fe0e144706169b6283a668b",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0014_nouveau",
+        "a0035_ancien"
+      ],
+      "panelRefs": [
+        "a0014_nouveau#3",
+        "a0035_ancien#3"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "aade799bfe0ab7aeed8429c0bae54597d7a05bae220d7d8d071a3fae1937ec85",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0027_nouveau",
+        "a0742_ancien"
+      ],
+      "panelRefs": [
+        "a0027_nouveau#3",
+        "a0742_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "ab1eac071409cd229187f4ce2e55a7b962992454bdfdc25975a2f032becf4a2a",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0179_nouveau",
+        "a0509_ancien"
+      ],
+      "panelRefs": [
+        "a0179_nouveau#2",
+        "a0509_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "acc867e01d76c30262448298079eac4a63f153439477c700b1a9d4b0a65b594e",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0083_nouveau",
+        "a0751_ancien"
+      ],
+      "panelRefs": [
+        "a0083_nouveau#4",
+        "a0751_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "af904c80358492ce635648c6210446c265ee04bdb03dc020b2c6cccf88ef27aa",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0195_nouveau",
+        "a0524_ancien"
+      ],
+      "panelRefs": [
+        "a0195_nouveau#4",
+        "a0524_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "afeef93cbb23ad2b3bd999a04e4e4acf5388a0ba20163c076cdfb0f27c6344d6",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0056_nouveau",
+        "a0330_ancien"
+      ],
+      "panelRefs": [
+        "a0056_nouveau#1",
+        "a0330_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "b0c4c9e28517bd829800f1b5d80be7d7b4fb2cd6837e5cf5460275e5f00d863a",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0655_ancien",
+        "a0656_ancien"
+      ],
+      "panelRefs": [
+        "a0655_ancien#1",
+        "a0656_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "b0e53966fb6348c36bb5c3327b58e1fbcddf05a5c9abf1c4785ad61f7da60f89",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0141_nouveau",
+        "a0807_ancien"
+      ],
+      "panelRefs": [
+        "a0141_nouveau#1",
+        "a0807_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "b0e59176cf28806c3f081f4c0096c0097bf2635a2ae1cec8d60c7f726799c639",
+      "occurrences": 2,
+      "distinctArticleCount": 1,
+      "articleIds": [
+        "a0623_ancien"
+      ],
+      "panelRefs": [
+        "a0623_ancien#2",
+        "a0623_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum",
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK",
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": false,
+      "potentialLabelConflict": true,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "b1236adc881a79f1603f464f612f7075ccd80377e3395fec5e82854bf8cbef89",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0104_nouveau",
+        "a0789_ancien"
+      ],
+      "panelRefs": [
+        "a0104_nouveau#3",
+        "a0789_ancien#3"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "b277800b237b21f9b9b6366953750b440caf843fadab19daa7b9d0cece0b021f",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0053_nouveau",
+        "a0327_ancien"
+      ],
+      "panelRefs": [
+        "a0053_nouveau#1",
+        "a0327_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "b37ce00f3dadf6fc0ffb3e17e9be132b74a73c07fc3f84911ea96e01fb4a7f48",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0080_nouveau",
+        "a0748_ancien"
+      ],
+      "panelRefs": [
+        "a0080_nouveau#5",
+        "a0748_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "b3edbebb6b46cb48148f25535fd3fa86ae2443fa1991b029700ee268d5267e32",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0054_nouveau",
+        "a0328_ancien"
+      ],
+      "panelRefs": [
+        "a0054_nouveau#1",
+        "a0328_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "b524cdd854ec537e060257346842549114fbe60a211b58ed71566b69a507b37d",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0187_nouveau",
+        "a0516_ancien"
+      ],
+      "panelRefs": [
+        "a0187_nouveau#5",
+        "a0516_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "b577717fb5d2db51aa3651b6545f3fe98de4797b55a67b36ebfb17a455783dc8",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0091_nouveau",
+        "a0758_ancien"
+      ],
+      "panelRefs": [
+        "a0091_nouveau#5",
+        "a0758_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "b5c05cbf1c1e3b2c224afeb1a65dec74e467cd60c2e285a2b3a7eeae2dffe33f",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0190_nouveau",
+        "a0519_ancien"
+      ],
+      "panelRefs": [
+        "a0190_nouveau#2",
+        "a0519_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "b6695a0739a425fa8e5b0ab1cd4b65ebd0f8390b1e0f021891f7c8f97e5d4619",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0220_nouveau",
+        "a0992_ancien"
+      ],
+      "panelRefs": [
+        "a0220_nouveau#3",
+        "a0992_ancien#4"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "b6c20e2ece101dc5ef29fab621db76155e14327990ed357da9b62340f3076605",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0048_nouveau",
+        "a0322_ancien"
+      ],
+      "panelRefs": [
+        "a0048_nouveau#1",
+        "a0322_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "b854ff8a7e02ec8fb9e80bed001f9db0b2f333626540754e258c3def9f656c2e",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0179_nouveau",
+        "a0509_ancien"
+      ],
+      "panelRefs": [
+        "a0179_nouveau#5",
+        "a0509_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "b9cde382111632afaae53ae3c86b0cd9c6d7bcaa7b4bad757fac6df7bfcc0258",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0196_nouveau",
+        "a0525_ancien"
+      ],
+      "panelRefs": [
+        "a0196_nouveau#4",
+        "a0525_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "ba226451dfe3df369b612072df315f5a87f06a2c82f525d2929879b702f9f275",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0139_nouveau",
+        "a0805_ancien"
+      ],
+      "panelRefs": [
+        "a0139_nouveau#4",
+        "a0805_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "c403880f379ca3bc960831ba5f237959c5e624e808dded86e371ceb4f3b86996",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0248_nouveau",
+        "a0532_ancien"
+      ],
+      "panelRefs": [
+        "a0248_nouveau#2",
+        "a0532_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "c91422d63719767b28f3f298b7e2a6700f2057b172761d935456780146f30192",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0124_nouveau",
+        "a0773_ancien"
+      ],
+      "panelRefs": [
+        "a0124_nouveau#3",
+        "a0773_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "c95527845160946326cd35997081326a5a0e8df25087b2936008cc1a43e6cf6c",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0102_nouveau",
+        "a0787_ancien"
+      ],
+      "panelRefs": [
+        "a0102_nouveau#2",
+        "a0787_ancien#2"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "c9737d4d4f03e4c501e39d1c62845516901d62c3b06cfdfaeac800aa9574ab66",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0179_nouveau",
+        "a0509_ancien"
+      ],
+      "panelRefs": [
+        "a0179_nouveau#3",
+        "a0509_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "c9a987f8d669d439e73c64d66937d44d09c332d242bddfdcf086b9eaee1ae193",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0195_nouveau",
+        "a0524_ancien"
+      ],
+      "panelRefs": [
+        "a0195_nouveau#3",
+        "a0524_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "cc0bec3e17b50b4dae2c478dac61320caaf78a8ed5f826500b3f535a89b1b7b3",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0139_nouveau",
+        "a0805_ancien"
+      ],
+      "panelRefs": [
+        "a0139_nouveau#5",
+        "a0805_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "cdf19667e3b49ecc379dd96fa73f858571b2814963bc8aa71ff963f471e9f790",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0124_nouveau",
+        "a0773_ancien"
+      ],
+      "panelRefs": [
+        "a0124_nouveau#2",
+        "a0773_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "ce7d149ce05660e5ce9c754506ce83152f70e4b248b32c589fde557149fa0b7c",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0141_nouveau",
+        "a0807_ancien"
+      ],
+      "panelRefs": [
+        "a0141_nouveau#4",
+        "a0807_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "d399d1122d4b8a2271cbdc8674c9888bfbe2a5a4a940c1e2c49ec2425cc1dc14",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0077_nouveau",
+        "a0745_ancien"
+      ],
+      "panelRefs": [
+        "a0077_nouveau#4",
+        "a0745_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "d6ccc864b58aa8a996f6fd3f686c34be6fd6eea79f82555845d78551bf8fb068",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0147_nouveau",
+        "a0293_ancien"
+      ],
+      "panelRefs": [
+        "a0147_nouveau#1",
+        "a0293_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "d9c09454a369cc3281e6c78efe0ceb95d98503f92c14f3ee5b24c28ae116c88c",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0137_nouveau",
+        "a0803_ancien"
+      ],
+      "panelRefs": [
+        "a0137_nouveau#5",
+        "a0803_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "dab8505d1cfa6b52f7d8b5b247d8448cc18373345ee6b347b0f2b916c7e09a4c",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0086_nouveau",
+        "a0754_ancien"
+      ],
+      "panelRefs": [
+        "a0086_nouveau#1",
+        "a0754_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "dbeddf2248b42870e700d98e6b187ed91467fb0dfefeb77b981ce17b25e2b30d",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0080_nouveau",
+        "a0748_ancien"
+      ],
+      "panelRefs": [
+        "a0080_nouveau#1",
+        "a0748_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "dc1a4d2203c2219e60058e79d88ad7dd79ccaaa89278b6ab764b0e5b3c98cf67",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0099_nouveau",
+        "a0784_ancien"
+      ],
+      "panelRefs": [
+        "a0099_nouveau#2",
+        "a0784_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "df3dffc14575107d5b47ac6d86cf5592789f6a1506a993ad9fea388566de447f",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0144_nouveau",
+        "a0810_ancien"
+      ],
+      "panelRefs": [
+        "a0144_nouveau#5",
+        "a0810_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "df6da245b647feac09ba99f40a818e9f608644dc6b52705fe89cdad3834b36fd",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0010_nouveau",
+        "a0593_ancien"
+      ],
+      "panelRefs": [
+        "a0010_nouveau#3",
+        "a0593_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "e0ebcf4d7becc5ab33bb506394a2d879f72392cadeebbd0329e51cedaac977e5",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0248_nouveau",
+        "a0532_ancien"
+      ],
+      "panelRefs": [
+        "a0248_nouveau#3",
+        "a0532_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "e20b6ac24fbc0f177d9f3a6f76e5a3b61ae8f3386c0fec985c575bed0725037f",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0184_nouveau",
+        "a0514_ancien"
+      ],
+      "panelRefs": [
+        "a0184_nouveau#3",
+        "a0514_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "e33dff560a576e45781ee7e476d84deac9989ef730e5697a266bb84f7f918145",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0210_nouveau",
+        "a1002_ancien"
+      ],
+      "panelRefs": [
+        "a0210_nouveau#1",
+        "a1002_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "e50c0d0c7b50e62ea8a3f85e51caeeef50a62777e5183c5fb0eaf4867f23208a",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0068_nouveau",
+        "a0343_ancien"
+      ],
+      "panelRefs": [
+        "a0068_nouveau#1",
+        "a0343_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "e6c70abfb9a7de3406f39c8b51e60e98d9cde645e546ec0d12664b555b287b48",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0010_nouveau",
+        "a0593_ancien"
+      ],
+      "panelRefs": [
+        "a0010_nouveau#1",
+        "a0593_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "e6ecf4e09e746f08f8d8eea433a7fdfbd078c3f804375ae586a88eb316ded70f",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0179_nouveau",
+        "a0509_ancien"
+      ],
+      "panelRefs": [
+        "a0179_nouveau#4",
+        "a0509_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "e778194099802fed1e9b24497c1ab4210862efd1ba7e78966711cd721f225763",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0080_nouveau",
+        "a0748_ancien"
+      ],
+      "panelRefs": [
+        "a0080_nouveau#2",
+        "a0748_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "eab378da9214f5f5fcb949c7217cb2f539ee2ae9c68b9b91a2dfb13f27ce89d9",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0187_nouveau",
+        "a0516_ancien"
+      ],
+      "panelRefs": [
+        "a0187_nouveau#4",
+        "a0516_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "ebff8ad752245c12c41c3c6ebad530318990ed17c833778f3f3b42883ec9cc36",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0142_nouveau",
+        "a0808_ancien"
+      ],
+      "panelRefs": [
+        "a0142_nouveau#3",
+        "a0808_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "ec47b20dc5efe545237bed7d4ccaf3862917fcd4be3493150e000a8df2c34749",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0111_nouveau",
+        "a0279_ancien"
+      ],
+      "panelRefs": [
+        "a0111_nouveau#3",
+        "a0279_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "ec96c0f720ac59fa959cc65d6801c63bbefe3f95383ccd794174e3f788b6e177",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0060_nouveau",
+        "a0334_ancien"
+      ],
+      "panelRefs": [
+        "a0060_nouveau#1",
+        "a0334_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, Le guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "eeeb35987bdd4f083aa1c767d9af60bd31182a89febfe77f981508f6c4710a7b",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0146_nouveau",
+        "a0811_ancien"
+      ],
+      "panelRefs": [
+        "a0146_nouveau#4",
+        "a0811_ancien#4"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "f03d6bb276fe169517bccf9f4a041477897b06ce4dc41acfb27ea7de2983a131",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0104_nouveau",
+        "a0789_ancien"
+      ],
+      "panelRefs": [
+        "a0104_nouveau#2",
+        "a0789_ancien#2"
+      ],
+      "hostLabels": [
+        "Dom Pius Parsch, le Guide dans l’année liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "f1f7b89b9ef6ea171df2a392507b85e8c21cfcc6a4be0243df38c60d177763f2",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0045_nouveau",
+        "a0304_ancien"
+      ],
+      "panelRefs": [
+        "a0045_nouveau#1",
+        "a0304_ancien#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "f7b801c9a5df62ca00989d3ce0248d75a5baf15d0996e5ca81cbd9d1cdaca32e",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0180_nouveau",
+        "a0510_ancien"
+      ],
+      "panelRefs": [
+        "a0180_nouveau#3",
+        "a0510_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "f7cb40ac99ba3ec2d0151713ca0df9577462ab869b1102079a2c6303cbe7229a",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0029_nouveau",
+        "a0030_nouveau"
+      ],
+      "panelRefs": [
+        "a0029_nouveau#1",
+        "a0030_nouveau#1"
+      ],
+      "hostLabels": [
+        "Présentation"
+      ],
+      "candidateFamilies": [
+        "WEBSITE_PRESENTATION_UNATTRIBUTED"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "f8568b52be01e2bd8e6895b58750decea9a8b05c25d7f55bea490dad551d1267",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0141_nouveau",
+        "a0807_ancien"
+      ],
+      "panelRefs": [
+        "a0141_nouveau#3",
+        "a0807_ancien#3"
+      ],
+      "hostLabels": [
+        "Bhx Cardinal Schuster, Liber Sacramentorum"
+      ],
+      "candidateFamilies": [
+        "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "f93c53e1d922c4cde7075c2143bcb48f5b223a9f6f4f474c1417051c0fd52c67",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0141_nouveau",
+        "a0807_ancien"
+      ],
+      "panelRefs": [
+        "a0141_nouveau#5",
+        "a0807_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "f9770d6f0f1854aeb232ff5427a1aaaeb5326885258c161b1c966e6b7726c902",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0195_nouveau",
+        "a0524_ancien"
+      ],
+      "panelRefs": [
+        "a0195_nouveau#5",
+        "a0524_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "f97c94f9c235da0bcb5685253dfbf97533b0b4fe5e3b48a4e75371ec16f6f29b",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0084_nouveau",
+        "a0752_ancien"
+      ],
+      "panelRefs": [
+        "a0084_nouveau#5",
+        "a0752_ancien#5"
+      ],
+      "hostLabels": [
+        "Office du jour"
+      ],
+      "candidateFamilies": [
+        "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "fa42b4af60001094d9667167d081288db34de8d8e56e00e30770163a0261f6a6",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0014_nouveau",
+        "a0035_ancien"
+      ],
+      "panelRefs": [
+        "a0014_nouveau#1",
+        "a0035_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    },
+    {
+      "bodySha256": "fc256c77aac52b91e18886df4ff8753abf0f936712fb3b305d9cd07a3ce00542",
+      "occurrences": 2,
+      "distinctArticleCount": 2,
+      "articleIds": [
+        "a0026_nouveau",
+        "a0891_ancien"
+      ],
+      "panelRefs": [
+        "a0026_nouveau#1",
+        "a0891_ancien#1"
+      ],
+      "hostLabels": [
+        "Dom Guéranger, l’Année Liturgique"
+      ],
+      "candidateFamilies": [
+        "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK"
+      ],
+      "crossArticle": true,
+      "potentialLabelConflict": false,
+      "editorialCertification": false,
+      "contentPublicationApproved": false
+    }
+  ],
+  "knownCrossSourceDuplicatePairChecks": [
+    {
+      "articleIds": [
+        "a0184_nouveau",
+        "a0514_ancien"
+      ],
+      "commonNormalizedBodyHashes": 5,
+      "comparisonIsHashOnly": true
+    },
+    {
+      "articleIds": [
+        "a0048_nouveau",
+        "a0322_ancien"
+      ],
+      "commonNormalizedBodyHashes": 1,
+      "comparisonIsHashOnly": true
+    },
+    {
+      "articleIds": [
+        "a0050_nouveau",
+        "a0324_ancien"
+      ],
+      "commonNormalizedBodyHashes": 1,
+      "comparisonIsHashOnly": true
+    },
+    {
+      "articleIds": [
+        "a0047_nouveau",
+        "a0321_ancien"
+      ],
+      "commonNormalizedBodyHashes": 1,
+      "comparisonIsHashOnly": true
+    },
+    {
+      "articleIds": [
+        "a0056_nouveau",
+        "a0330_ancien"
+      ],
+      "commonNormalizedBodyHashes": 1,
+      "comparisonIsHashOnly": true
+    }
+  ],
+  "saturdayMarianFiveArticleSharedBodyHashes": [
+    "3073c347327d57063dcdc189c1858d42a60d20c973237d73270cf784ed9e8935"
+  ],
+  "qualityGates": {
+    "allSourceArticleBodiesAutomated": "COMPLETE",
+    "allArticleSelectedPassages": "COMPLETE_WITH_ONE_INDEXED_EXCEPTION",
+    "crossCohortPanelHashesAndHostLabels": "COMPLETE",
+    "printedOriginalEditionAndAuthorship": "OPEN",
+    "historicalAnd1962LiturgicalScope": "OPEN",
+    "canonicalAppOwnerExactContentParity": "OPEN",
+    "copyrightAndTranslationRights": "NOT_CLEARED",
+    "editorialPublishing": "NOT_APPROVED"
+  },
+  "sourceProseCopied": false,
+  "publicationApproved": false
+}

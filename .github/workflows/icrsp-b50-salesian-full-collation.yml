@@ -1,0 +1,29 @@
+name: ICRSP B50 live Salesian full-work text collation
+on:
+  push:
+    branches:
+      - governance/icrsp-source-inventory-1665
+    paths:
+      - 'scripts/icrsp_b50_salesian_ix_full_diff.py'
+      - 'tests/test_icrsp_b50_salesian_ix_full_diff.py'
+      - '.github/workflows/icrsp-b50-salesian-full-collation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: icrsp-b50-live-collation
+  cancel-in-progress: true
+jobs:
+  compare:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline boundary and normalization tests
+        run: python -m unittest discover -s tests -p 'test_icrsp_b50_salesian_ix_full_diff.py' -v
+      - name: Full live three-work comparison (no source prose retained)
+        run: python scripts/icrsp_b50_salesian_ix_full_diff.py --output "$RUNNER_TEMP/b50_salesian_ix_machine_diff.json"

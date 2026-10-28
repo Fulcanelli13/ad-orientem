@@ -1,0 +1,262 @@
+{
+  "schema": "AO_ICRSP_B16_EDITION_DIVERGENCE_AND_SEVEN_CLAIM_OWNER_RECONCILIATION_V1",
+  "asOf": "2026-10-26",
+  "issue": 1665,
+  "pr": 1666,
+  "editionScope": "Verbatim original print-page visual collation remains zero; digital editions and versions cannot be conflated",
+  "precedingBatch15": "data/source-text/icrsp-france-b15-original-language-and-print-evidence.v1.json",
+  "recheckSources": [
+    {
+      "kind": "GREEK_AUTHORIAL_TEXT_SECONDARY_OCR",
+      "url": "https://sophiascriptura.com/fathers/hippolytus-in-danielem/1-1/",
+      "work": "Hippolytus-attributed In Danielem",
+      "sourceEdition": "Bonwetsch GCS 1 (1897), digitized OCR; site groups multiple sections under label 1.4 starting GCS printed p.10",
+      "observation": "Greek OCR includes a sentence whose Susanna/Church/Jehoiakim/Christ relationship is recognisable; OCR exhibits visible garbled character sequences, so this is not full exact Greek critical collation.",
+      "greekSemanticAnchor": "ἡ Σωσάννα προετυποῦτο εἰς τὴν ἐκκλησίαν, Ἰωακεὶμ δὲ ὁ ἀνὴρ αὐτῆς εἰς τὸν Χριστόν",
+      "originalPrintedPageImageRead": false,
+      "greekOCRReliablyPrintable": false
+    },
+    {
+      "kind": "ALTERNATE_EDITORIAL_NUMBERING",
+      "url": "https://ancientlibrary.net/hippolytus-of-rome-commentary-on-daniel/",
+      "work": "Greek Commentary on Daniel digital edition",
+      "observedSearchLocator": "14.5",
+      "sourceEditionMappingNotVerified": true,
+      "observation": "Indexed Greek wording places Susanna/Church comparison under section label 14.5 in a search result. This is not a proved Bonwetsch-versus-Schmidt original division concordance; user-facing section mapping requires page-level verification."
+    },
+    {
+      "kind": "MODERN_COPYRIGHT_TRANSLATION",
+      "url": "https://www.pergrazia.com/wp-content/uploads/2019/12/0205_hippolytus_commentary-on-daniel_2010.pdf",
+      "work": "Thomas C. Schmidt translation (2010)",
+      "observedNumber": "I.15.5–6, printed English p.25",
+      "reproductionRightsCleared": false
+    }
+  ],
+  "sectionIdentityException": {
+    "claimId": "ICRSP-B12-CLM-004",
+    "originalWork": "Traditionally Hippolytus, Commentary on Daniel",
+    "modernNumber": "I.15.5–6",
+    "separateGreekSearchIndexNumber": "14.5",
+    "bonwetschOcrGroup": "1.4 [aggregated], GCS page start 10",
+    "normalizedUnambiguousSectionIdentifierApproved": false,
+    "disposition": "HOLD_FOR_BONWETSCH_1897_PRINTED_PAGE_AND_FABRICIUS_1716_P27"
+  },
+  "historicalPrintGates": [
+    {
+      "id": "FABRICIUS1716_P27",
+      "catalog": "https://www.digitale-sammlungen.de/de/details/bsb11759163",
+      "pageLevelTechnicalDocumentation": "https://digitale-sammlungen.de/en/interfaces",
+      "pageAccessAttempt": "BSB page viewer needs JS; tested IIIF manifest URL inaccessible to available web source",
+      "printedPage27VisualInspection": false,
+      "printedPageVisualInspection": false
+    },
+    {
+      "id": "GUERANGER1903_NAAMAN",
+      "catalog": "https://lasource.diocese85.org/index.php?id=6188&l_typdoc=&lvl=indexint_see&nb_per_page_custom=25&nbr_lignes=40&page=1",
+      "digitalHostedPassage": true,
+      "originalPrintedPageVisualInspection": false,
+      "printedPageVisualInspection": false
+    },
+    {
+      "id": "GUERANGER1903_SUSANNA",
+      "catalog": "https://lasource.diocese85.org/index.php?id=6188&l_typdoc=&lvl=indexint_see&nb_per_page_custom=25&nbr_lignes=40&page=1",
+      "digitalHostedPassage": true,
+      "originalPrintedPageVisualInspection": false,
+      "printedPageVisualInspection": false
+    },
+    {
+      "id": "PARISOT1894_VIII11",
+      "catalog": "https://books.google.com/books/about/Aphraatis_sapientis_Persae_demonstration.html?id=uutRoYBAOUIC",
+      "volumeContentsChapterStartPrintedPage": 361,
+      "exactSectionPrintPageNotLocated": true,
+      "printedPageVisualInspection": false
+    },
+    {
+      "id": "PARISOT1894_XXI14",
+      "catalog": "https://books.google.com/books/about/Aphraatis_sapientis_Persae_demonstration.html?id=uutRoYBAOUIC",
+      "volumeContentsChapterStartPrintedPage": 931,
+      "exactSectionPrintPageNotLocated": true,
+      "printedPageVisualInspection": false
+    },
+    {
+      "id": "PARISOT1894_XXI15",
+      "catalog": "https://books.google.com/books/about/Aphraatis_sapientis_Persae_demonstration.html?id=uutRoYBAOUIC",
+      "volumeContentsChapterStartPrintedPage": 931,
+      "exactSectionPrintPageNotLocated": true,
+      "printedPageVisualInspection": false
+    }
+  ],
+  "scriptureCorrespondencesCrosswalk": {
+    "existingOwnerPr": 1553,
+    "inspectedHead": "3288c4a505092875f10b96faa5b26dfc02d72bb3",
+    "sourceFile": "data/scripture/correspondences/thematic-source-leads.v1.json",
+    "sourceBlobSha": "b07633cb322a092ce98c5cc54435ced8c9891bad",
+    "namedTopicRows": 56,
+    "specificNamedNaamanSusannaElijahElishaTopics": 0,
+    "warning": "An absence of explicit names in the 56 topical titles is not a corpus-wide absence of equivalent verse relationships. Relationship classes cannot be mechanically inferred from UBS word alignments. No change to PR1553 branch."
+  },
+  "rows": [
+    {
+      "b12ClaimId": "ICRSP-B12-CLM-001",
+      "articleId": "a0191_ancien",
+      "sourcePath": "Tempora/Quad3-1",
+      "actualProperReadingPair": {
+        "lesson": "2Kings 5:1–15",
+        "gospel": "Luke 4:23–30"
+      },
+      "ownerTarget": "EXISTING_SCRIPTURE_CORRESPONDENCES_PR_1553",
+      "candidateThematicFamily": "baptism",
+      "interpretationType": "DIRECT_GOSPEL_MENTION",
+      "summary": "Luke 4:27 names Naaman (the Mass selection covers 4:23–30)",
+      "attestationGrade": "EXISTING_SCRIPTURE_DIRECT_REFERENT",
+      "exactWitnessLocator": "Luke 4:27",
+      "proposedDisposition": "ANNOTATE_EXISTING_PASSAGE_LINK_NOT_NEW_VERSE",
+      "existingThemeWasCheckedByExactNamedSubjectsOnly": true,
+      "allOtherCompendiumEvidenceSemanticallyChecked": false,
+      "criticalPrintWitnessApproved": false,
+      "rightsAndAttributionGatePassed": false,
+      "productionRecordApproved": false
+    },
+    {
+      "b12ClaimId": "ICRSP-B12-CLM-002",
+      "articleId": "a0191_ancien",
+      "sourcePath": "Tempora/Quad3-1",
+      "actualProperReadingPair": {
+        "lesson": "2Kings 5:1–15",
+        "gospel": "Luke 4:23–30"
+      },
+      "ownerTarget": "EXISTING_SCRIPTURE_CORRESPONDENCES_PR_1553",
+      "candidateThematicFamily": "baptism",
+      "interpretationType": "PATRISTIC_AND_LITURGICAL_BAPTISMAL_TYPE",
+      "summary": "Naaman purified in Jordan as figure of baptism",
+      "attestationGrade": "EARLY_PATRISTIC_LATIN_WITNESS_LOCATED_B14_AND_LENT_SOURCE_TRANSCRIPTION",
+      "exactWitnessLocator": "Ambrose De mysteriis III.16–17; Guéranger Monday Lent III",
+      "proposedDisposition": "RECONCILE_WITH_BAPTISM_THEMATIC_OWNER",
+      "existingThemeWasCheckedByExactNamedSubjectsOnly": true,
+      "allOtherCompendiumEvidenceSemanticallyChecked": false,
+      "criticalPrintWitnessApproved": false,
+      "rightsAndAttributionGatePassed": false,
+      "productionRecordApproved": false
+    },
+    {
+      "b12ClaimId": "ICRSP-B12-CLM-003",
+      "articleId": "a0198_ancien",
+      "sourcePath": "Tempora/Quad3-6",
+      "actualProperReadingPair": {
+        "lesson": "Daniel 13:1–9; 13:15–17; 13:19–30; 13:33–62",
+        "gospel": "John 8:1–11"
+      },
+      "ownerTarget": "EXISTING_SCRIPTURE_CORRESPONDENCES_PR_1553",
+      "candidateThematicFamily": "spirit-church",
+      "interpretationType": "HISTORICAL_MASS_DAY_LECTION_PAIRING",
+      "summary": "Susanna innocent and vindicated versus woman offered mercy in John 8",
+      "attestationGrade": "GUERANGER_LENT_DAY_HOSTED_TEXT_ONLY",
+      "exactWitnessLocator": "Guéranger Saturday Lent III LEÇON and ÉVANGILE",
+      "proposedDisposition": "DAY_CONTEXT_ONLY_NOT_OT_NEW_TESTAMENT_QUOTATION",
+      "existingThemeWasCheckedByExactNamedSubjectsOnly": true,
+      "allOtherCompendiumEvidenceSemanticallyChecked": false,
+      "criticalPrintWitnessApproved": false,
+      "rightsAndAttributionGatePassed": false,
+      "productionRecordApproved": false
+    },
+    {
+      "b12ClaimId": "ICRSP-B12-CLM-004",
+      "articleId": "a0198_ancien",
+      "sourcePath": "Tempora/Quad3-6",
+      "actualProperReadingPair": {
+        "lesson": "Daniel 13:1–9; 13:15–17; 13:19–30; 13:33–62",
+        "gospel": "John 8:1–11"
+      },
+      "ownerTarget": "EXISTING_SCRIPTURE_CORRESPONDENCES_PR_1553",
+      "candidateThematicFamily": "spirit-church",
+      "interpretationType": "PATRISTIC_CHURCH_TYPOLOGY",
+      "summary": "Susanna figures the Church and Jehoiakim figures Christ",
+      "attestationGrade": "ANCIENT_GREEK_OCR_SOURCE_VISIBLE_BONWETSCH_1897_NOT_PRINT_CERTIFIED",
+      "exactWitnessLocator": "Hippolytus-attributed In Danielem, modern 1.15.5 / alternate digital 14.5 locator",
+      "proposedDisposition": "HOLD_EDITION_NUMBERING_AND_PERIOD_RHETORIC",
+      "existingThemeWasCheckedByExactNamedSubjectsOnly": true,
+      "allOtherCompendiumEvidenceSemanticallyChecked": false,
+      "criticalPrintWitnessApproved": false,
+      "rightsAndAttributionGatePassed": false,
+      "productionRecordApproved": false
+    },
+    {
+      "b12ClaimId": "ICRSP-B12-CLM-005",
+      "articleId": "a0205_ancien",
+      "sourcePath": "Tempora/Quad4-4",
+      "actualProperReadingPair": {
+        "lesson": "2Kings 4:25–38",
+        "gospel": "Luke 7:11–16"
+      },
+      "ownerTarget": "EXISTING_SCRIPTURE_CORRESPONDENCES_PR_1553",
+      "candidateThematicFamily": "passion",
+      "interpretationType": "LITURGICAL_PAIR_WITH_GENERAL_PATRISTIC_RESTORATION",
+      "summary": "Elisha Shunammite child paired with Christ at Nain; Aphrahat VIII.11 witnesses OT resurrection",
+      "attestationGrade": "PATRISTIC_SYRIAC_TEI_B15_GENERAL_THEME_NOT_EXACT_ELISHA_NAIN",
+      "exactWitnessLocator": "Guéranger Thursday Lent IV; Aphrahat VIII.11",
+      "proposedDisposition": "NO_FALSE_PATRISTIC_ELISHA_NAIN_ATTRIBUTION",
+      "existingThemeWasCheckedByExactNamedSubjectsOnly": true,
+      "allOtherCompendiumEvidenceSemanticallyChecked": false,
+      "criticalPrintWitnessApproved": false,
+      "rightsAndAttributionGatePassed": false,
+      "productionRecordApproved": false
+    },
+    {
+      "b12ClaimId": "ICRSP-B12-CLM-006",
+      "articleId": "a0206_ancien",
+      "sourcePath": "Tempora/Quad4-5",
+      "actualProperReadingPair": {
+        "lesson": "1Kings 17:17–24",
+        "gospel": "John 11:1–45"
+      },
+      "ownerTarget": "EXISTING_SCRIPTURE_CORRESPONDENCES_PR_1553",
+      "candidateThematicFamily": "passion",
+      "interpretationType": "PATRISTIC_AUTHORIAL_CHRISTOLOGICAL_ANALOGY",
+      "summary": "Elijah and Christ raise widow's son, Christ raises Lazarus",
+      "attestationGrade": "APHRAHAT_XXI14_ORIGINAL_LANGUAGE_TEI_WITNESS_B15",
+      "exactWitnessLocator": "Aphrahat XXI.14; Guéranger Friday Lent IV",
+      "proposedDisposition": "PRESERVE_MULTIPLE_EVENTS_NO_PREDICTION_OF_JOHN_11",
+      "existingThemeWasCheckedByExactNamedSubjectsOnly": true,
+      "allOtherCompendiumEvidenceSemanticallyChecked": false,
+      "criticalPrintWitnessApproved": false,
+      "rightsAndAttributionGatePassed": false,
+      "productionRecordApproved": false
+    },
+    {
+      "b12ClaimId": "ICRSP-B12-CLM-007",
+      "articleId": "a0186_ancien",
+      "sourcePath": "Tempora/Quad2-5",
+      "actualProperReadingPair": {
+        "lesson": "Genesis 37:6–22",
+        "gospel": "Matthew 21:33–46"
+      },
+      "ownerTarget": "EXISTING_SCRIPTURE_CORRESPONDENCES_PR_1553",
+      "candidateThematicFamily": "christ-prefigured",
+      "interpretationType": "CHRISTOLOGICAL_JOSEPH_PARALLEL_WITH_OUTSIDE_LECTION_EPISODE",
+      "summary": "Joseph is read as figure of Christ and wicked tenants",
+      "attestationGrade": "HOLD_GENESIS37_28_OUTSIDE_SELECTED_LECTION",
+      "exactWitnessLocator": "Guéranger Friday Lent II; Mass reads Genesis 37:6–22",
+      "proposedDisposition": "DO_NOT_ADD_GENESIS37_28_AS_MASS_READING",
+      "existingThemeWasCheckedByExactNamedSubjectsOnly": true,
+      "allOtherCompendiumEvidenceSemanticallyChecked": false,
+      "criticalPrintWitnessApproved": false,
+      "rightsAndAttributionGatePassed": false,
+      "productionRecordApproved": false
+    }
+  ],
+  "protection": {
+    "modernTranslationReproductionClear": false,
+    "allCriticalPrintPagesVerified": false,
+    "allAppContentAbsencesProven": false,
+    "changesToReaderCalendarMassOrScriptureProduction": false,
+    "publicationApproved": false
+  },
+  "totals": {
+    "b12AtomicClaimsMapped": 7,
+    "distinctMassSourcePaths": 5,
+    "digitalGreekSourceWitnessLocated": 1,
+    "originalPrintedPageVisualChecks": 0,
+    "publishedAppClaims": 0
+  },
+  "next": "Resolve section-concordance exception against actual Bonwetsch/Fabricius printed pagination, then have existing PR1553 owner consider attested nonduplicate relationships; avoid parallel typology or app changes."
+}

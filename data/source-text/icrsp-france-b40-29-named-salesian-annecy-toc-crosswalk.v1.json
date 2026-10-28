@@ -1,0 +1,760 @@
+{
+  "schema": "AO_ICRSP_B40_29_NAMED_SALESIAN_PANELS_TO_ANNECY_SERMONS_TOC_V1",
+  "asOf": "2026-10-26",
+  "repository": "Fulcanelli13/ad-orientem",
+  "ownerPR": 1666,
+  "sourceDriftFiles": [
+    "icrsp-france-b30-24-added-francis-de-sales-panel-labels.v1.json",
+    "icrsp-france-b33-b32-last210-salesian-panel-drift.v1.json"
+  ],
+  "referenceAuthorities": [
+    {
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb33015558w",
+      "role": "BIBLIOGRAPHIC_AUTHORITY_FOR_ANNECY_1892_TO_1964_27_VOLUME_EDITION"
+    },
+    {
+      "url": "https://visitationannecy.org/magasin/oeuvres/",
+      "role": "PUBLIC_EDITORIAL_SERMONS_VII_TO_X"
+    },
+    {
+      "url": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+      "role": "DIGITAL_TOC_ONLY_NOT_ORIGINAL_PAGE_COLLATION"
+    }
+  ],
+  "method": "Manual matching of 29 source-specific hosted headings (article ID + SHA) to catalogue items in Annecy Volumes VII, VIII, IX. Matching a title to a digital table of contents does not establish that the hosted paragraph corresponds to the printed edition, or whether an original holograph or Visitation-recorded sermon is authentic.",
+  "counts": {
+    "newlyObservedSalesianPanels": 63,
+    "namedPanelsWithTocCandidate": 29,
+    "unnamedGenericPanelsAwaitingTOCResolution": 34,
+    "namedDistinctSourceHashes": 27,
+    "duplicateNamedSourceHashGroups": 2,
+    "explicitDateConflicts": 3,
+    "uniqueDateConflictIssues": 2,
+    "hostTrailingPlanSuffixDisagreesWithEditedType": 11,
+    "hostedDateUnverifiedByTOC": 4,
+    "printedOriginalTextVerifications": 0,
+    "sourceRightsCleared": 0,
+    "publicationApproved": 0
+  },
+  "duplicateNamedPanelGroups": [
+    {
+      "hash": "6b3c536edd9dd003029c336ecfa50014ed51d0393b2cad95de0e856666885f18",
+      "articleIds": [
+        "a0220_ancien",
+        "a0029_nouveau"
+      ]
+    },
+    {
+      "hash": "40ca331ee7fd6acc4927f9c9cbbe055207e90dfeda610b0df91324ddf04436ba",
+      "articleIds": [
+        "a0535_ancien",
+        "a0420_ancien"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "articleId": "a0088_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0088_ancien",
+      "sourceCohort": "B29",
+      "sourcePanelOrdinal": 4,
+      "sourcePanelHash": "439ea841d2b3f215c8b868f08f7c3478ec80e0abeab605ec43c3e2790ea07069",
+      "websiteHostLabel": "Fragment d'un sermon pour le premier Dimanche de l'Avent 30 novembre 1608 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "LXXIII",
+        "indexEntryKind": "Fragment",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1943,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": true,
+      "reviewHolds": [
+        "HOST_SUFFIX_PLAN_CONFLICTS_WITH_EDITED_KIND"
+      ],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0089_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0089_ancien",
+      "sourceCohort": "B29",
+      "sourcePanelOrdinal": 4,
+      "sourcePanelHash": "47681ad6f2ec27b23ff6f4467267372fe7d13e9490e83f6913968efb934f5da4",
+      "websiteHostLabel": "Fragment d'un sermon pour le deuxième Dimanche de l'Avent 5 décembre 1610 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "LXXXI",
+        "indexEntryKind": "Fragment",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1958,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": true,
+      "reviewHolds": [
+        "HOST_SUFFIX_PLAN_CONFLICTS_WITH_EDITED_KIND"
+      ],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0819_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0819_ancien",
+      "sourceCohort": "B29",
+      "sourcePanelOrdinal": 4,
+      "sourcePanelHash": "a32cbf57ca66ae3f683dd7b4ea70078ea58af5c3e028fc72b8438303a14af48e",
+      "websiteHostLabel": "Sermon sur le deuxième verset du Benedictus 5 décembre 1616",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "CXVI",
+        "indexEntryKind": "Sermon",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 2022,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0130_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0130_ancien",
+      "sourceCohort": "B29",
+      "sourcePanelOrdinal": 2,
+      "sourcePanelHash": "04c90ae9e2f1eebc50bf72bc445f7ec3209b0584667a9580946d345882c179a2",
+      "websiteHostLabel": "Sermon pour le Dimanche de la Septuagésime 6 février 1594",
+      "annecyEditionCandidate": {
+        "volume": 7,
+        "indexNumber": "X",
+        "indexEntryKind": "Sermon",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1747,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0133_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0133_ancien",
+      "sourceCohort": "B29",
+      "sourcePanelOrdinal": 2,
+      "sourcePanelHash": "70003491db964455afc8c4c11ffb8c608203fb681ab85137895e18dc82639ed3",
+      "websiteHostLabel": "Sermon pour le Dimanche de la Sexagésime 13 février 1594",
+      "annecyEditionCandidate": {
+        "volume": 7,
+        "indexNumber": "XI",
+        "indexEntryKind": "Sermon",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1749,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0180_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0180_ancien",
+      "sourceCohort": "B29",
+      "sourcePanelOrdinal": 4,
+      "sourcePanelHash": "5a4df685c2c60ab0ba89b66c1e94816ec5ae36e5a839d66334c94a8e8c1b0a3a",
+      "websiteHostLabel": "Sermon pour le deuxième Dimanche de Carême 23 février 1614",
+      "annecyEditionCandidate": {
+        "volume": 9,
+        "indexNumber": "IV",
+        "indexEntryKind": "Sermon",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 2126,
+        "sourceSeries": "SECOND_SERIES_VISITATION_RECORDED"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0188_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0188_ancien",
+      "sourceCohort": "B29",
+      "sourcePanelOrdinal": 3,
+      "sourcePanelHash": "7e5e9a06dfd3250e54ff83bfdce85f178744845103f1c1948875a498664e3930",
+      "websiteHostLabel": "Fragment d'un sermon pour le troisième Dimanche de Carême 22 mars 1615 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "CV",
+        "indexEntryKind": "Fragment",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 2002,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": true,
+      "reviewHolds": [
+        "HOST_SUFFIX_PLAN_CONFLICTS_WITH_EDITED_KIND"
+      ],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0199_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0199_ancien",
+      "sourceCohort": "B29",
+      "sourcePanelOrdinal": 3,
+      "sourcePanelHash": "cc729fdb466a5240253d099543b7f803ce35c1b08cf8102f998f630b527617b8",
+      "websiteHostLabel": "Fragment d'un sermon pour le quatrième Dimanche de Carême 20 mars 1594 Plan",
+      "annecyEditionCandidate": {
+        "volume": 7,
+        "indexNumber": "XV",
+        "indexEntryKind": "Fragment",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1758,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": true,
+      "reviewHolds": [
+        "HOST_SUFFIX_PLAN_CONFLICTS_WITH_EDITED_KIND"
+      ],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0220_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_ancien",
+      "sourceCohort": "B29",
+      "sourcePanelOrdinal": 2,
+      "sourcePanelHash": "6b3c536edd9dd003029c336ecfa50014ed51d0393b2cad95de0e856666885f18",
+      "websiteHostLabel": "Sommaire d'un sermon sur la sainte Croix 20 avril 1612 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "LXXXVIII",
+        "indexEntryKind": "Sommaire",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1970,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": true,
+      "reviewHolds": [
+        "DATE_CONFLICT_20_APR_VS_30_APR_1612",
+        "HOST_SUFFIX_PLAN_CONFLICTS_WITH_EDITED_KIND"
+      ],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0029_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0029_nouveau",
+      "sourceCohort": "B29",
+      "sourcePanelOrdinal": 5,
+      "sourcePanelHash": "6b3c536edd9dd003029c336ecfa50014ed51d0393b2cad95de0e856666885f18",
+      "websiteHostLabel": "Sommaire d'un sermon sur la sainte Croix 20 avril 1612 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "LXXXVIII",
+        "indexEntryKind": "Sommaire",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1970,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": true,
+      "reviewHolds": [
+        "DATE_CONFLICT_20_APR_VS_30_APR_1612",
+        "HOST_SUFFIX_PLAN_CONFLICTS_WITH_EDITED_KIND"
+      ],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0352_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0352_ancien",
+      "sourceCohort": "B29",
+      "sourcePanelOrdinal": 5,
+      "sourcePanelHash": "0d75c65abc91991885834247e6fea00ddacf5ebff278ab3dd432efcc152edf14",
+      "websiteHostLabel": "Sermon pour la fête de la Visitation de la Sainte Vierge 2 juillet 1618",
+      "annecyEditionCandidate": {
+        "volume": 9,
+        "indexNumber": "XIX",
+        "indexEntryKind": "Sermon",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 2154,
+        "sourceSeries": "SECOND_SERIES_VISITATION_RECORDED"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0389_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0389_ancien",
+      "sourceCohort": "B29",
+      "sourcePanelOrdinal": 5,
+      "sourcePanelHash": "2c9d881a63d4eae985f3a19e9040bb6a7ca63eb6a7c586e57dd86b092b0d5ed1",
+      "websiteHostLabel": "Sermon pour le jour de saint Pierre ad vincula 1ᵉʳ août 1593",
+      "annecyEditionCandidate": {
+        "volume": 7,
+        "indexNumber": "III",
+        "indexEntryKind": "Sermon",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1730,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0535_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0535_ancien",
+      "sourceCohort": "B29",
+      "sourcePanelOrdinal": 2,
+      "sourcePanelHash": "40ca331ee7fd6acc4927f9c9cbbe055207e90dfeda610b0df91324ddf04436ba",
+      "websiteHostLabel": "Plan d'un panégyrique de saint Louis, roi de France 25 août 1602 Plan",
+      "annecyEditionCandidate": {
+        "volume": 7,
+        "indexNumber": "LXII",
+        "indexEntryKind": "Plan",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1906,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0420_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0420_ancien",
+      "sourceCohort": "B29",
+      "sourcePanelOrdinal": 5,
+      "sourcePanelHash": "40ca331ee7fd6acc4927f9c9cbbe055207e90dfeda610b0df91324ddf04436ba",
+      "websiteHostLabel": "Plan d'un panégyrique de saint Louis, roi de France 25 août 1602 Plan",
+      "annecyEditionCandidate": {
+        "volume": 7,
+        "indexNumber": "LXII",
+        "indexEntryKind": "Plan",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1906,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0173_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0173_ancien",
+      "sourceCohort": "B32",
+      "sourcePanelOrdinal": 4,
+      "sourcePanelHash": "b7a1373933ba247a12534ff3736dd87088d4d6e464b2e7f3080f17dbad144d18",
+      "websiteHostLabel": "Sommaire d'un sermon pour le mercredi après le premier Dimanche de Carême 10 mars 1604 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "LXVI",
+        "indexEntryKind": "Sommaire",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1930,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": true,
+      "reviewHolds": [
+        "DATE_IN_HOST_BUT_UNDATED_INDEX",
+        "HOST_SUFFIX_PLAN_CONFLICTS_WITH_EDITED_KIND"
+      ],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0175_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0175_ancien",
+      "sourceCohort": "B32",
+      "sourcePanelOrdinal": 4,
+      "sourcePanelHash": "b879f760d37269b8dfb2b6fc9c3095f86d2b7c47d4a15482211467e3e25725fa",
+      "websiteHostLabel": "Fragment d'un sermon pour le jeudi après le premier Dimanche de Carême 3 mars 1594 Plan",
+      "annecyEditionCandidate": {
+        "volume": 7,
+        "indexNumber": "XIII",
+        "indexEntryKind": "Fragment",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1754,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": true,
+      "reviewHolds": [
+        "HOST_SUFFIX_PLAN_CONFLICTS_WITH_EDITED_KIND"
+      ],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0176_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0176_ancien",
+      "sourceCohort": "B32",
+      "sourcePanelOrdinal": 4,
+      "sourcePanelHash": "6a79f18f56b0af5398e8e5352df2f1f6f459d0d0055e830b7dcb774b946f376b",
+      "websiteHostLabel": "Fragment d'un sermon pour le vendredi après le premier Dimanche de Carême 12 mars 1604 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "LXVII",
+        "indexEntryKind": "Fragment",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1932,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": true,
+      "reviewHolds": [
+        "DATE_IN_HOST_BUT_UNDATED_INDEX",
+        "HOST_SUFFIX_PLAN_CONFLICTS_WITH_EDITED_KIND"
+      ],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0181_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0181_ancien",
+      "sourceCohort": "B32",
+      "sourcePanelOrdinal": 4,
+      "sourcePanelHash": "58ba5473af9e4adf7e8d960079a43f9dba2a5e57e58d77b188eb5c2139253384",
+      "websiteHostLabel": "Plan d'un sermon pour le lundi après le deuxième Dimanche de Carême 15 mars 1604 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "LXVIII",
+        "indexEntryKind": "Plan",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1934,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [
+        "DATE_IN_HOST_BUT_UNDATED_INDEX"
+      ],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0183_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0183_ancien",
+      "sourceCohort": "B32",
+      "sourcePanelOrdinal": 4,
+      "sourcePanelHash": "efa60a7c17774bce68684b2a98d6a8ce43c5d22760a043aa2af3f0341d4e95bb",
+      "websiteHostLabel": "Plan d'un sermon pour le mardi après le deuxième Dimanche de Carême 21 février 1617 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "CXXIX",
+        "indexEntryKind": "Plan",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 2046,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0184_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0184_ancien",
+      "sourceCohort": "B32",
+      "sourcePanelOrdinal": 4,
+      "sourcePanelHash": "56c45b797487260f21ee932a5833333916fef8f8e8a24a4777e86e11bd2fc238",
+      "websiteHostLabel": "Plan d'un sermon pour le mercredi après le deuxième Dimanche de Carême 17 mars 1604 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "LXIX",
+        "indexEntryKind": "Plan",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1936,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [
+        "DATE_IN_HOST_BUT_UNDATED_INDEX"
+      ],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0185_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0185_ancien",
+      "sourceCohort": "B32",
+      "sourcePanelOrdinal": 4,
+      "sourcePanelHash": "91d63cdbf9e127b19197ac7e5917fab66818dbd2994a96274f4054f69e5155ee",
+      "websiteHostLabel": "Plan d'un sermon pour le jeudi après le deuxième Dimanche de Carême 23 février 1617 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "CXXXI",
+        "indexEntryKind": "Plan",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 2049,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0186_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0186_ancien",
+      "sourceCohort": "B32",
+      "sourcePanelOrdinal": 4,
+      "sourcePanelHash": "703a9a8210609b471692d3be6680dcded1d55193e4a9567a002fdd785be216fc",
+      "websiteHostLabel": "Fragment d'un sermon pour le vendredi après le deuxième Dimanche de Carême 20 mars 1615 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "CIV",
+        "indexEntryKind": "Fragment",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 2000,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": true,
+      "reviewHolds": [
+        "HOST_SUFFIX_PLAN_CONFLICTS_WITH_EDITED_KIND"
+      ],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0194_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0194_ancien",
+      "sourceCohort": "B32",
+      "sourcePanelOrdinal": 5,
+      "sourcePanelHash": "e841e60fc0de1848bed6457e5ba3713a51da7c19a9f767456627c9b5ac1df68d",
+      "websiteHostLabel": "Plan d'un sermon pour le jeudi après le troisième Dimanche de Carême 3 mars 1617 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "CXXXVII",
+        "indexEntryKind": "Plan",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 2060,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [
+        "DATE_CONFLICT_03_MAR_VS_02_MAR_1617"
+      ],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0202_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0202_ancien",
+      "sourceCohort": "B32",
+      "sourcePanelOrdinal": 5,
+      "sourcePanelHash": "932bf52be2d5e7d62a8ada9a9cfbd7ab52709dc8813ccccc66c8d7112c8f030e",
+      "websiteHostLabel": "Plan d'un sermon pour le lundi après le quatrième Dimanche de Carême 2 avril 1612 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "LXXXVI",
+        "indexEntryKind": "Plan",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1967,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0205_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0205_ancien",
+      "sourceCohort": "B32",
+      "sourcePanelOrdinal": 5,
+      "sourcePanelHash": "0a7d532c2d845ecb1c50f95213384240e96a44b9f2fa09d30a95fd30ea15295b",
+      "websiteHostLabel": "Plan d'un sermon pour le jeudi après le quatrième Dimanche de Carême 9 mars 1617 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "CXL",
+        "indexEntryKind": "Plan",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 2066,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0206_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0206_ancien",
+      "sourceCohort": "B32",
+      "sourcePanelOrdinal": 5,
+      "sourcePanelHash": "d5c66afb80e2ef9c1697a280d5c06bcee6b0de346818f3a095e39e7ef1c97f06",
+      "websiteHostLabel": "Plan d'un sermon pour le vendredi après le quatrième Dimanche de Carême 6 avril 1601 Plan",
+      "annecyEditionCandidate": {
+        "volume": 7,
+        "indexNumber": "LI",
+        "indexEntryKind": "Plan",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1880,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0146_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0146_ancien",
+      "sourceCohort": "B32",
+      "sourcePanelOrdinal": 2,
+      "sourcePanelHash": "23000ae75f0e4f047b3226540447ad899ef4e9c90d720af3acf8c69171f01f86",
+      "websiteHostLabel": "Fragment d'un sermon pour la fête de la Purification 2 février 1613 Plan",
+      "annecyEditionCandidate": {
+        "volume": 8,
+        "indexNumber": "XCI",
+        "indexEntryKind": "Fragment",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1976,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": true,
+      "reviewHolds": [
+        "HOST_SUFFIX_PLAN_CONFLICTS_WITH_EDITED_KIND"
+      ],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0309_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0309_ancien",
+      "sourceCohort": "B32",
+      "sourcePanelOrdinal": 6,
+      "sourcePanelHash": "2e1bbb7499f67bd997b3b5946714a44be1811af5d7400af1f2a1c26ef4cdd5ab",
+      "websiteHostLabel": "Plans de deux sermons pour la Nativité de saint Jean-Baptiste Plan",
+      "annecyEditionCandidate": {
+        "volume": 7,
+        "indexNumber": "LX",
+        "indexEntryKind": "Plans (two)",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 1903,
+        "sourceSeries": "FIRST_SERIES_AUTOGRAPH_OR_WORKING_DRAFT"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0562_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0562_ancien",
+      "sourceCohort": "B32",
+      "sourcePanelOrdinal": 5,
+      "sourcePanelHash": "7aa6877d3b1792d459f97a95ef1462231113b3ebe10c4de20a7b4c523c84cea0",
+      "websiteHostLabel": "Sermon pour la fête de la Présentation de la Sainte Vierge 21 novembre 1617",
+      "annecyEditionCandidate": {
+        "volume": 9,
+        "indexNumber": "XVI",
+        "indexEntryKind": "Sermon",
+        "publicIndexUrl": "https://www.portapiemonte.com.br/acervo-dom-bosco/pt/francesco_di_sales/00-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20I-XXVII-Touts%20les%20index.asp",
+        "indexLine": 2148,
+        "sourceSeries": "SECOND_SERIES_VISITATION_RECORDED"
+      },
+      "reviewStatus": "BIBLIOGRAPHIC_INDEX_ENTRY_CORROBORATED__CONTENT_NOT_COLLATED",
+      "hostTitleSuffixPlanIsNotIndexKind": false,
+      "reviewHolds": [],
+      "originalPrintedPageAndTextCompared": false,
+      "authorOriginalOrAutographCertified": false,
+      "modernHostProseCopyrightCleared": false,
+      "publicationApproved": false
+    }
+  ],
+  "appOwnerParagraphComparisonComplete": false,
+  "sourceProseStored": false,
+  "rightsCleared": false,
+  "publicationApproved": false
+}

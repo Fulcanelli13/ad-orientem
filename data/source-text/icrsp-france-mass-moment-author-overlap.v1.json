@@ -1,0 +1,235 @@
+{
+  "schema": "AO_ICRSP_ULTRA_MASTER_AUTHOR_OVERLAP_REVIEW_V1",
+  "date": "2026-10-25",
+  "state": "AUTHOR_FAMILY_METADATA_OVERLAP_ONLY_NO_PASSAGE_EQUIVALENCE",
+  "basis": [
+    "data/learn/research/mass-moment-author-evidence-review-20261016.v1.json",
+    "data/source-text/icrsp-france-commentary-783-verified-summary.v1.json",
+    "data/source-text/icrsp-france-mass-explorer-39-owner-parity.v1.json"
+  ],
+  "counts": {
+    "priorResearchClaims": 139,
+    "researchGuideOwnerCount": 16,
+    "icrspCorePanels": 1506,
+    "sameAuthorPriorCandidates": 13,
+    "certifiedPassageIdentityMatches": 0,
+    "appPublicationsApproved": 0
+  },
+  "mainWorkFamilies": [
+    {
+      "author": "Dom Prosper Guéranger",
+      "sourceWorkFamily": "GUERANGER_ANNEE_LITURGIQUE",
+      "icrspPanelOccurrences": 492,
+      "existingMassMomentResearchClaims": 13,
+      "existingMassMomentResearchRecordPointers": [
+        {
+          "id": "VER-039",
+          "guideIds": [
+            "AO.CARD.014"
+          ],
+          "sourceLocator": "TE IGITUR, introductory paragraph",
+          "workEditionCollated": false,
+          "publicationApproved": false,
+          "quotationReproductionCleared": false,
+          "grade": "PASSAGE VERIFIED"
+        },
+        {
+          "id": "VER-040",
+          "guideIds": [
+            "AO.CARD.014"
+          ],
+          "sourceLocator": "TE IGITUR, offering and triple sign",
+          "workEditionCollated": false,
+          "publicationApproved": false,
+          "quotationReproductionCleared": false,
+          "grade": "PASSAGE VERIFIED"
+        },
+        {
+          "id": "VER-041",
+          "guideIds": [
+            "AO.CARD.014"
+          ],
+          "sourceLocator": "TE IGITUR, pro Ecclesia",
+          "workEditionCollated": false,
+          "publicationApproved": false,
+          "quotationReproductionCleared": false,
+          "grade": "PASSAGE VERIFIED"
+        },
+        {
+          "id": "VER-042",
+          "guideIds": [
+            "AO.CARD.014"
+          ],
+          "sourceLocator": "TE IGITUR, adunare",
+          "workEditionCollated": false,
+          "publicationApproved": false,
+          "quotationReproductionCleared": false,
+          "grade": "PASSAGE VERIFIED"
+        },
+        {
+          "id": "VER-043",
+          "guideIds": [
+            "AO.CARD.014"
+          ],
+          "sourceLocator": "TE IGITUR, Una cum",
+          "workEditionCollated": false,
+          "publicationApproved": false,
+          "quotationReproductionCleared": false,
+          "grade": "PASSAGE VERIFIED"
+        },
+        {
+          "id": "VER-044",
+          "guideIds": [
+            "AO.CARD.014"
+          ],
+          "sourceLocator": "MEMENTO DES VIVANTS",
+          "workEditionCollated": false,
+          "publicationApproved": false,
+          "quotationReproductionCleared": false,
+          "grade": "PASSAGE VERIFIED"
+        },
+        {
+          "id": "VER-045",
+          "guideIds": [
+            "AO.CARD.014"
+          ],
+          "sourceLocator": "MEMENTO DES VIVANTS",
+          "workEditionCollated": false,
+          "publicationApproved": false,
+          "quotationReproductionCleared": false,
+          "grade": "PASSAGE VERIFIED"
+        },
+        {
+          "id": "VER-046",
+          "guideIds": [
+            "AO.CARD.014"
+          ],
+          "sourceLocator": "QUAM OBLATIONEM",
+          "workEditionCollated": false,
+          "publicationApproved": false,
+          "quotationReproductionCleared": false,
+          "grade": "PASSAGE VERIFIED"
+        },
+        {
+          "id": "VER-047",
+          "guideIds": [
+            "AO.CARD.014"
+          ],
+          "sourceLocator": "QUAM OBLATIONEM, adscriptam",
+          "workEditionCollated": false,
+          "publicationApproved": false,
+          "quotationReproductionCleared": false,
+          "grade": "PASSAGE VERIFIED"
+        },
+        {
+          "id": "VER-048",
+          "guideIds": [
+            "AO.CARD.014"
+          ],
+          "sourceLocator": "QUAM OBLATIONEM, ratam",
+          "workEditionCollated": false,
+          "publicationApproved": false,
+          "quotationReproductionCleared": false,
+          "grade": "PASSAGE VERIFIED"
+        },
+        {
+          "id": "VER-049",
+          "guideIds": [
+            "AO.CARD.014"
+          ],
+          "sourceLocator": "QUAM OBLATIONEM, rationabilem",
+          "workEditionCollated": false,
+          "publicationApproved": false,
+          "quotationReproductionCleared": false,
+          "grade": "PASSAGE VERIFIED"
+        },
+        {
+          "id": "VER-050",
+          "guideIds": [
+            "AO.CARD.017"
+          ],
+          "sourceLocator": "SUPRA QUAE",
+          "workEditionCollated": false,
+          "publicationApproved": false,
+          "quotationReproductionCleared": false,
+          "grade": "SECTION-LEVEL"
+        },
+        {
+          "id": "VER-051",
+          "guideIds": [
+            "AO.CARD.017"
+          ],
+          "sourceLocator": "SUPPLICES",
+          "workEditionCollated": false,
+          "publicationApproved": false,
+          "quotationReproductionCleared": false,
+          "grade": "SECTION-LEVEL"
+        }
+      ],
+      "claimToExactICRSPArticlePassageMatches": 0,
+      "passageIdentityEstablished": false,
+      "caution": "COMMON_AUTHOR_NAME_IS_NOT_SHARED_PASSAGE_EVIDENCE; DO_NOT_AUTOMERGE"
+    },
+    {
+      "author": "Blessed Ildefonso Schuster",
+      "sourceWorkFamily": "SCHUSTER_LIBER_SACRAMENTORUM",
+      "icrspPanelOccurrences": 472,
+      "existingMassMomentResearchClaims": 0,
+      "existingMassMomentResearchRecordPointers": [],
+      "claimToExactICRSPArticlePassageMatches": 0,
+      "passageIdentityEstablished": false,
+      "caution": "COMMON_AUTHOR_NAME_IS_NOT_SHARED_PASSAGE_EVIDENCE; DO_NOT_AUTOMERGE"
+    },
+    {
+      "author": "Dom Pius Parsch",
+      "sourceWorkFamily": "PARSCH_GUIDE_ANNEE_LITURGIQUE",
+      "icrspPanelOccurrences": 542,
+      "existingMassMomentResearchClaims": 0,
+      "existingMassMomentResearchRecordPointers": [],
+      "claimToExactICRSPArticlePassageMatches": 0,
+      "passageIdentityEstablished": false,
+      "caution": "COMMON_AUTHOR_NAME_IS_NOT_SHARED_PASSAGE_EVIDENCE; DO_NOT_AUTOMERGE"
+    }
+  ],
+  "otherExistingMassMomentAuthors": [
+    {
+      "author": "St Alphonsus de Liguori",
+      "existingResearchClaims": 41,
+      "icrspExactPanelFamilyCount": null,
+      "interpretation": "AUTHORS_NOT_IN_THREE_PRIMARY_ICRSP_FAMILIES_DO_NOT_INFER_NOT_PRESENT_ANYWHERE"
+    },
+    {
+      "author": "Fr Nicholas Gihr",
+      "existingResearchClaims": 12,
+      "icrspExactPanelFamilyCount": null,
+      "interpretation": "AUTHORS_NOT_IN_THREE_PRIMARY_ICRSP_FAMILIES_DO_NOT_INFER_NOT_PRESENT_ANYWHERE"
+    },
+    {
+      "author": "St Thomas Aquinas",
+      "existingResearchClaims": 6,
+      "icrspExactPanelFamilyCount": null,
+      "interpretation": "AUTHORS_NOT_IN_THREE_PRIMARY_ICRSP_FAMILIES_DO_NOT_INFER_NOT_PRESENT_ANYWHERE"
+    },
+    {
+      "author": "Roman Catechism (Council of Trent)",
+      "existingResearchClaims": 4,
+      "icrspExactPanelFamilyCount": null,
+      "interpretation": "AUTHORS_NOT_IN_THREE_PRIMARY_ICRSP_FAMILIES_DO_NOT_INFER_NOT_PRESENT_ANYWHERE"
+    },
+    {
+      "author": "Fr Pierre Le Brun",
+      "existingResearchClaims": 38,
+      "icrspExactPanelFamilyCount": null,
+      "interpretation": "AUTHORS_NOT_IN_THREE_PRIMARY_ICRSP_FAMILIES_DO_NOT_INFER_NOT_PRESENT_ANYWHERE"
+    },
+    {
+      "author": "Josef A. Jungmann",
+      "existingResearchClaims": 25,
+      "icrspExactPanelFamilyCount": null,
+      "interpretation": "AUTHORS_NOT_IN_THREE_PRIMARY_ICRSP_FAMILIES_DO_NOT_INFER_NOT_PRESENT_ANYWHERE"
+    }
+  ],
+  "decision": "RECONCILE_GUERANGER_13_RESEARCH_LOCATORS_FIRST; DO_NOT_RESTUDY_THE_SAME_AUTHOR_SIMPLY_BECAUSE_THE_INDEX_HAS_492_PANELS",
+  "rights": "ALL_ICRSP_TRANSLATIONS_AND_PARAPHRASES_UNCLEARED",
+  "publicationGate": "CLOSED_ORIGINAL_WORK_EDITION_PASSAGE_AND_RIGHTS_NOT_CERTIFIED"
+}

@@ -1,0 +1,1774 @@
+{
+  "schema": "AO_ICRSP_B02_STRUCTURAL_EXCEPTION_CANDIDATES_V1",
+  "asOf": "2026-10-25",
+  "source": "data/source-text/icrsp-france-index-discovery.v1.json",
+  "scope": {
+    "windowStart": 0,
+    "windowEnd": 199,
+    "metadataInspected": 200
+  },
+  "status": "HEURISTIC_STRUCTURE_AUDIT_NO_CANONICAL_PROMOTION",
+  "summary": {
+    "candidateArticleCount": 120,
+    "byFlag": {
+      "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE": 104,
+      "COMMENTARY_HEADING_NOT_FOUND": 4,
+      "EDITION_OR_HISTORICAL_VARIANT_SIGNAL": 32,
+      "MULTIPLE_MASS_FORMULARY_BOUNDARIES": 10
+    }
+  },
+  "rights": "INDEX_METADATA_ONLY_REPRODUCTION_NOT_CLEARED",
+  "candidates": [
+    {
+      "articleId": "a0813_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0813_ancien",
+      "fullPageTitle": "Lundi de la 1ʳᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Lun."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0814_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0814_ancien",
+      "fullPageTitle": "Mardi de la 1ʳᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Mar."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0815_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0815_ancien",
+      "fullPageTitle": "Mercredi de la 1ʳᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Mer."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0816_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0816_ancien",
+      "fullPageTitle": "Jeudi de la 1ʳᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Jeu."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0817_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0817_ancien",
+      "fullPageTitle": "Vendredi de la 1ʳᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Ven."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0818_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0818_ancien",
+      "fullPageTitle": "Samedi de la 1ʳᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Sam."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0819_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0819_ancien",
+      "fullPageTitle": "Lundi de la 2ᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Lun."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0820_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0820_ancien",
+      "fullPageTitle": "Mardi de la 2ᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Mar."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0821_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0821_ancien",
+      "fullPageTitle": "Mercredi de la 2ᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Mer."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0822_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0822_ancien",
+      "fullPageTitle": "Jeudi de la 2ᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Jeu."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0823_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0823_ancien",
+      "fullPageTitle": "Vendredi de la 2ᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Ven."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0824_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0824_ancien",
+      "fullPageTitle": "Samedi de la 2ᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Sam."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0825_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0825_ancien",
+      "fullPageTitle": "Lundi de la 3ᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Lun."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "COMMENTARY_HEADING_NOT_FOUND",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0826_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0826_ancien",
+      "fullPageTitle": "Mardi de la 3ᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Mar."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "COMMENTARY_HEADING_NOT_FOUND",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0093_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0093_ancien",
+      "fullPageTitle": "Mercredi des Quatre-Temps de l’Avent",
+      "indexLabels": [
+        "Mer. Q.-T."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0827_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0827_ancien",
+      "fullPageTitle": "Jeudi de la 3ᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Jeu."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0094_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0094_ancien",
+      "fullPageTitle": "Vendredi des Quatre-Temps de l’Avent",
+      "indexLabels": [
+        "Ven. Q.-T."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0095_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0095_ancien",
+      "fullPageTitle": "Samedi des Quatre-Temps de l’Avent",
+      "indexLabels": [
+        "Sam. Q.-T."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0828_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0828_ancien",
+      "fullPageTitle": "Lundi de la 4ᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Lun."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0829_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0829_ancien",
+      "fullPageTitle": "Mardi de la 4ᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Mar."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0830_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0830_ancien",
+      "fullPageTitle": "Mercredi de la 4ᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Mer."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0831_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0831_ancien",
+      "fullPageTitle": "Jeudi de la 4ᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Jeu."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "COMMENTARY_HEADING_NOT_FOUND",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0832_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0832_ancien",
+      "fullPageTitle": "Vendredi de la 4ᵉ semaine de l’Avent",
+      "indexLabels": [
+        "Ven."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0100_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0100_ancien",
+      "fullPageTitle": "29 décembre (5ᵉ jour dans l’Octave de la Nativité, St Thomas Becket)",
+      "indexLabels": [
+        "29 décembre (5ᵉ jour dans l’Octave de la Nativité, St Thomas Becket)"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "MULTIPLE_MASS_FORMULARY_BOUNDARIES"
+      ],
+      "h3BoundaryLabels": [
+        "Textes de la Messe du 5ᵉ jour de l’Octave après 1962",
+        "Textes de la Messe avant 1962"
+      ],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0103_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0103_ancien",
+      "fullPageTitle": "31 décembre (7ᵉ jour dans l’Octave de la Nativité, St Silvestre Iᵉʳ)",
+      "indexLabels": [
+        "31 décembre (7ᵉ jour dans l’Octave de la Nativité, St Silvestre Iᵉʳ)"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "MULTIPLE_MASS_FORMULARY_BOUNDARIES"
+      ],
+      "h3BoundaryLabels": [
+        "Textes de la Messe après 1960",
+        "Textes de la Messe entre 1942 et 1960",
+        "Textes de la Messe avant 1942"
+      ],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0106_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0106_ancien",
+      "fullPageTitle": "Féries du Temps de la Nativité (2 au 5 janvier)",
+      "indexLabels": [
+        "Féries du Temps de la Nativité (2 au 5 janvier)"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "MULTIPLE_MASS_FORMULARY_BOUNDARIES"
+      ],
+      "h3BoundaryLabels": [
+        "Messe 1",
+        "Messe 2"
+      ],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0134_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0134_ancien",
+      "fullPageTitle": "Dimanche de la Quinquagésime",
+      "indexLabels": [
+        "Dimanche de la Quinquagésime"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "COMMENTARY_HEADING_NOT_FOUND"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0139_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0139_ancien",
+      "fullPageTitle": "Mercredi des Cendres",
+      "indexLabels": [
+        "Mer. des Cendres"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0140_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0140_ancien",
+      "fullPageTitle": "Jeudi après les Cendres",
+      "indexLabels": [
+        "Jeu. des Cendres"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0153_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0153_ancien",
+      "fullPageTitle": "Vendredi après les Cendres",
+      "indexLabels": [
+        "Ven. des Cendres"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0154_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0154_ancien",
+      "fullPageTitle": "Samedi après les Cendres",
+      "indexLabels": [
+        "Sam. des Cendres"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0172_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0172_ancien",
+      "fullPageTitle": "Lundi de la 1ʳᵉ semaine de Carême",
+      "indexLabels": [
+        "Lun."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0174_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0174_ancien",
+      "fullPageTitle": "Mardi de la 1ʳᵉ semaine de Carême",
+      "indexLabels": [
+        "Mar."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0173_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0173_ancien",
+      "fullPageTitle": "Mercredi des Quatre-Temps (1ʳᵉ semaine de Carême)",
+      "indexLabels": [
+        "Mer. Q.-T."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0175_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0175_ancien",
+      "fullPageTitle": "Jeudi de la 1ʳᵉ semaine de Carême",
+      "indexLabels": [
+        "Jeu."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0176_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0176_ancien",
+      "fullPageTitle": "Vendredi des Quatre-Temps (1ʳᵉ semaine)",
+      "indexLabels": [
+        "Ven. Q.-T."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0177_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0177_ancien",
+      "fullPageTitle": "Samedi des Quatre-Temps (1ʳᵉ semaine)",
+      "indexLabels": [
+        "Sam. Q.-T."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0181_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0181_ancien",
+      "fullPageTitle": "Lundi de la 2ᵉ semaine de Carême",
+      "indexLabels": [
+        "Lun."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0183_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0183_ancien",
+      "fullPageTitle": "Mardi de la 2ᵉ semaine de Carême",
+      "indexLabels": [
+        "Mar."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0184_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0184_ancien",
+      "fullPageTitle": "Mercredi de la 2ᵉ semaine de Carême",
+      "indexLabels": [
+        "Mer."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0185_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0185_ancien",
+      "fullPageTitle": "Jeudi de la 2ᵉ semaine de Carême",
+      "indexLabels": [
+        "Jeu."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0186_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0186_ancien",
+      "fullPageTitle": "Vendredi de la 2ᵉ semaine de Carême",
+      "indexLabels": [
+        "Ven."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0187_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0187_ancien",
+      "fullPageTitle": "Samedi de la 2ᵉ semaine de Carême",
+      "indexLabels": [
+        "Sam."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0191_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_ancien",
+      "fullPageTitle": "Lundi de la 3ᵉ semaine de Carême",
+      "indexLabels": [
+        "Lun."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0192_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0192_ancien",
+      "fullPageTitle": "Mardi de la 3ᵉ semaine de Carême",
+      "indexLabels": [
+        "Mar."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0193_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0193_ancien",
+      "fullPageTitle": "Mercredi de la 3ᵉ semaine de Carême",
+      "indexLabels": [
+        "Mer."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0194_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0194_ancien",
+      "fullPageTitle": "Jeudi de la 3ᵉ semaine de Carême",
+      "indexLabels": [
+        "Jeu."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0197_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0197_ancien",
+      "fullPageTitle": "Vendredi de la 3ᵉ semaine de Carême",
+      "indexLabels": [
+        "Ven."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0198_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0198_ancien",
+      "fullPageTitle": "Samedi de la 3ᵉ semaine de Carême",
+      "indexLabels": [
+        "Sam."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0202_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0202_ancien",
+      "fullPageTitle": "Lundi de la 4ᵉ semaine de Carême",
+      "indexLabels": [
+        "Lun."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0203_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0203_ancien",
+      "fullPageTitle": "Mardi de la 4ᵉ semaine de Carême",
+      "indexLabels": [
+        "Mar."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0204_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0204_ancien",
+      "fullPageTitle": "Mercredi de la 4ᵉ semaine de Carême",
+      "indexLabels": [
+        "Mer."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0205_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0205_ancien",
+      "fullPageTitle": "Jeudi de la 4ᵉ semaine de Carême",
+      "indexLabels": [
+        "Jeu."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0206_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0206_ancien",
+      "fullPageTitle": "Vendredi de la 4ᵉ semaine de Carême",
+      "indexLabels": [
+        "Ven."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0207_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0207_ancien",
+      "fullPageTitle": "Samedi de la 4ᵉ semaine de Carême",
+      "indexLabels": [
+        "Sam."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0004_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0004_nouveau",
+      "fullPageTitle": "Lundi de la Passion",
+      "indexLabels": [
+        "Lun."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0005_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0005_nouveau",
+      "fullPageTitle": "Mardi de la Passion",
+      "indexLabels": [
+        "Mar."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0006_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0006_nouveau",
+      "fullPageTitle": "Mercredi de la Passion",
+      "indexLabels": [
+        "Mer."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0007_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0007_nouveau",
+      "fullPageTitle": "Jeudi de la Passion",
+      "indexLabels": [
+        "Jeu."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0008_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0008_nouveau",
+      "fullPageTitle": "Vendredi de la Passion",
+      "indexLabels": [
+        "Ven."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0009_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0009_nouveau",
+      "fullPageTitle": "Samedi de la Passion",
+      "indexLabels": [
+        "Sam."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0010_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0010_nouveau",
+      "fullPageTitle": "Dimanche des Rameaux avant 1955",
+      "indexLabels": [
+        "Dimanche des Rameaux avant 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0593_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0593_ancien",
+      "fullPageTitle": "Dimanche des Rameaux",
+      "indexLabels": [
+        "Dimanche des Rameaux"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "MULTIPLE_MASS_FORMULARY_BOUNDARIES"
+      ],
+      "h3BoundaryLabels": [
+        "Messe 1",
+        "Messe 2",
+        "Messe 3",
+        "Messe 4"
+      ],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0034_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0034_ancien",
+      "fullPageTitle": "Lundi Saint (avant Pie XII)",
+      "indexLabels": [
+        "Lun. saint · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0013_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0013_nouveau",
+      "fullPageTitle": "Lundi Saint",
+      "indexLabels": [
+        "Lun. saint"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0035_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0035_ancien",
+      "fullPageTitle": "Mardi Saint (avant Pie XII)",
+      "indexLabels": [
+        "Mar. saint · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0014_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0014_nouveau",
+      "fullPageTitle": "Mardi Saint",
+      "indexLabels": [
+        "Mar. saint"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0036_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0036_ancien",
+      "fullPageTitle": "Mercredi Saint (avant Pie XII)",
+      "indexLabels": [
+        "Mer. saint · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0015_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0015_nouveau",
+      "fullPageTitle": "Mercredi Saint",
+      "indexLabels": [
+        "Mer. saint"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0221_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0221_ancien",
+      "fullPageTitle": "Jeudi Saint (avant Pie XII)",
+      "indexLabels": [
+        "Jeu. saint · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "MULTIPLE_MASS_FORMULARY_BOUNDARIES",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [
+        "Messe 1",
+        "Messe 2"
+      ],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0020_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0020_nouveau",
+      "fullPageTitle": "Jeudi Saint après 1955",
+      "indexLabels": [
+        "Jeu. saint · ap. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "MULTIPLE_MASS_FORMULARY_BOUNDARIES",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [
+        "Messe 1",
+        "Messe 2",
+        "Messe 3",
+        "Messe 4"
+      ],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0220_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_ancien",
+      "fullPageTitle": "Vendredi Saint (avant Pie XII)",
+      "indexLabels": [
+        "Ven. saint · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0029_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0029_nouveau",
+      "fullPageTitle": "Vendredi Saint après 1955",
+      "indexLabels": [
+        "Ven. saint · ap. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "MULTIPLE_MASS_FORMULARY_BOUNDARIES",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [
+        "Messe 1",
+        "Messe 2",
+        "Messe 3",
+        "Messe 4"
+      ],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0222_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_ancien",
+      "fullPageTitle": "Samedi Saint (avant Pie XII)",
+      "indexLabels": [
+        "Sam. saint · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0030_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0030_nouveau",
+      "fullPageTitle": "Samedi Saint après 1951",
+      "indexLabels": [
+        "Sam. saint · ap. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "MULTIPLE_MASS_FORMULARY_BOUNDARIES",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [
+        "Messe 1",
+        "Messe 2",
+        "Messe 3"
+      ],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0595_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0595_ancien",
+      "fullPageTitle": "Vigile Pascale",
+      "indexLabels": [
+        "Vigile Pascale"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "MULTIPLE_MASS_FORMULARY_BOUNDARIES"
+      ],
+      "h3BoundaryLabels": [
+        "Messe 1",
+        "Messe 2",
+        "Messe 3"
+      ],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0032_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0032_nouveau",
+      "fullPageTitle": "Lundi dans l’Octave de Pâques",
+      "indexLabels": [
+        "Lun. de l’octave"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0033_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0033_nouveau",
+      "fullPageTitle": "Mardi dans l’Octave de Pâques",
+      "indexLabels": [
+        "Mar. de l’octave"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0034_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0034_nouveau",
+      "fullPageTitle": "Mercredi dans l’Octave de Pâques",
+      "indexLabels": [
+        "Mer. de l’octave"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0035_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0035_nouveau",
+      "fullPageTitle": "Jeudi dans l’Octave de Pâques",
+      "indexLabels": [
+        "Jeu. de l’octave"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0036_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0036_nouveau",
+      "fullPageTitle": "Vendredi dans l’Octave de Pâques",
+      "indexLabels": [
+        "Ven. de l’octave"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0037_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0037_nouveau",
+      "fullPageTitle": "Samedi in Albis dans l’Octave de Pâques",
+      "indexLabels": [
+        "Sam. in Albis"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0106_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0106_nouveau",
+      "fullPageTitle": "Lundi des Rogations",
+      "indexLabels": [
+        "Lun. des Rogations"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0107_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0107_nouveau",
+      "fullPageTitle": "Mardi des Rogations",
+      "indexLabels": [
+        "Mar. des Rogations"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0108_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0108_nouveau",
+      "fullPageTitle": "Mercredi des Rogations",
+      "indexLabels": [
+        "Mer. des Rogations"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0156_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0156_nouveau",
+      "fullPageTitle": "Vendredi dans l’Octave de l’Ascension",
+      "indexLabels": [
+        "Ven. de l’octave"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0157_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0157_nouveau",
+      "fullPageTitle": "Samedi dans l’Octave de l’Ascension",
+      "indexLabels": [
+        "Sam. de l’octave"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0939_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0939_ancien",
+      "fullPageTitle": "Samedi dans l’Octave de l’Ascension (avant 1955)",
+      "indexLabels": [
+        "Sam. de l’octave · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0280_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0280_ancien",
+      "fullPageTitle": "Dimanche après l’Ascension",
+      "indexLabels": [
+        "Dimanche après l’Ascension"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL"
+      ],
+      "h3BoundaryLabels": [
+        "Textes de la Messe"
+      ],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0159_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0159_nouveau",
+      "fullPageTitle": "Lundi dans l’Octave de l’Ascension",
+      "indexLabels": [
+        "Lun. de l’octave"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0160_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0160_nouveau",
+      "fullPageTitle": "Mardi dans l’Octave de l’Ascension",
+      "indexLabels": [
+        "Mar. de l’octave"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0161_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0161_nouveau",
+      "fullPageTitle": "Mercredi dans l’Octave de l’Ascension",
+      "indexLabels": [
+        "Mer. de l’octave"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0163_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0163_nouveau",
+      "fullPageTitle": "Vendredi après l’Octave de l’Ascension",
+      "indexLabels": [
+        "Ven. de l’octave"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0164_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0164_nouveau",
+      "fullPageTitle": "Vigile de la Pentecôte avant 1955",
+      "indexLabels": [
+        "Vigile de la Pentecôte avant 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0165_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0165_nouveau",
+      "fullPageTitle": "Vigile de la Pentecôte après 1955",
+      "indexLabels": [
+        "Vigile de la Pentecôte après 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0168_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0168_nouveau",
+      "fullPageTitle": "Lundi de la Pentecôte",
+      "indexLabels": [
+        "Lun."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0169_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0169_nouveau",
+      "fullPageTitle": "Mardi de la Pentecôte",
+      "indexLabels": [
+        "Mar."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0170_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0170_nouveau",
+      "fullPageTitle": "Mercredi des Quatre-Temps de Pentecôte",
+      "indexLabels": [
+        "Mer. Q.-T."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0171_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0171_nouveau",
+      "fullPageTitle": "Jeudi de la Pentecôte",
+      "indexLabels": [
+        "Jeu."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0172_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0172_nouveau",
+      "fullPageTitle": "Vendredi des Quatre-Temps de Pentecôte",
+      "indexLabels": [
+        "Ven. Q.-T."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0173_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0173_nouveau",
+      "fullPageTitle": "Samedi des Quatre-Temps de Pentecôte",
+      "indexLabels": [
+        "Sam. Q.-T."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0970_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0970_ancien",
+      "fullPageTitle": "Vendredi dans l’Octave de la Fête-Dieu (avant 1955)",
+      "indexLabels": [
+        "Ven. de l’octave · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0971_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0971_ancien",
+      "fullPageTitle": "Samedi dans l’Octave de la Fête-Dieu (avant 1955)",
+      "indexLabels": [
+        "Sam. de l’octave · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0972_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0972_ancien",
+      "fullPageTitle": "Lundi dans l’Octave de la Fête-Dieu (avant 1955)",
+      "indexLabels": [
+        "Lun. de l’octave · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0973_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0973_ancien",
+      "fullPageTitle": "Mardi dans l’Octave de la Fête-Dieu (avant 1955)",
+      "indexLabels": [
+        "Mar. de l’octave · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0974_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0974_ancien",
+      "fullPageTitle": "Mercredi dans l’Octave de la Fête-Dieu (avant 1955)",
+      "indexLabels": [
+        "Mer. de l’octave · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0975_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0975_ancien",
+      "fullPageTitle": "Octave de la Fête-Dieu (avant 1955)",
+      "indexLabels": [
+        "Octave de la Fête-Dieu (avant 1955)"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0220_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0220_nouveau",
+      "fullPageTitle": "Fête du Sacré-Coeur",
+      "indexLabels": [
+        "Fête du Sacré-Coeur"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "MULTIPLE_MASS_FORMULARY_BOUNDARIES"
+      ],
+      "h3BoundaryLabels": [
+        "Textes de la Messe avant 1929",
+        "Textes de la Messe après 1929"
+      ],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0987_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0987_ancien",
+      "fullPageTitle": "Samedi dans l’Octave du Sacré-Cœur (avant 1955)",
+      "indexLabels": [
+        "Sam. de l’octave · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0988_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0988_ancien",
+      "fullPageTitle": "Lundi dans l’Octave du Sacré-Cœur (avant 1955)",
+      "indexLabels": [
+        "Lun. de l’octave · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0989_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0989_ancien",
+      "fullPageTitle": "Mardi dans l’Octave du Sacré-Cœur (avant 1955)",
+      "indexLabels": [
+        "Mar. de l’octave · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0990_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0990_ancien",
+      "fullPageTitle": "Mercredi dans l’Octave du Sacré-Cœur (avant 1955)",
+      "indexLabels": [
+        "Mer. de l’octave · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0991_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0991_ancien",
+      "fullPageTitle": "Jeudi dans l’Octave du Sacré-Cœur (avant 1955)",
+      "indexLabels": [
+        "Jeu. de l’octave · av. 1955"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL",
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0992_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0992_ancien",
+      "fullPageTitle": "Octave du Sacré-Cœur (avant 1955)",
+      "indexLabels": [
+        "Octave du Sacré-Cœur (avant 1955)"
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0452_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0452_ancien",
+      "fullPageTitle": "Mercredi des Quatre-Temps de Septembre",
+      "indexLabels": [
+        "Mer. Q.-T."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0453_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0453_ancien",
+      "fullPageTitle": "Vendredi des Quatre-Temps de Septembre",
+      "indexLabels": [
+        "Ven. Q.-T."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0454_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0454_ancien",
+      "fullPageTitle": "Samedi des Quatre-Temps de Septembre",
+      "indexLabels": [
+        "Sam. Q.-T."
+      ],
+      "sourceSection": "temporal",
+      "flags": [
+        "ABBREVIATED_INDEX_LABEL_NEEDS_FULL_TITLE"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0655_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0655_ancien",
+      "fullPageTitle": "Octave de St Etienne (2 janvier, avant 1955)",
+      "indexLabels": [
+        "Octave de St Etienne (2 janvier, avant 1955)"
+      ],
+      "sourceSection": "sanctoral",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0656_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0656_ancien",
+      "fullPageTitle": "Octave de St Jean (3 janvier, avant 1955)",
+      "indexLabels": [
+        "Octave de St Jean (3 janvier, avant 1955)"
+      ],
+      "sourceSection": "sanctoral",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    },
+    {
+      "articleId": "a0580_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0580_ancien",
+      "fullPageTitle": "Vigile de l’Epiphanie (5 janvier, avant 1955)",
+      "indexLabels": [
+        "Vigile de l’Epiphanie (5 janvier, avant 1955)"
+      ],
+      "sourceSection": "sanctoral",
+      "flags": [
+        "EDITION_OR_HISTORICAL_VARIANT_SIGNAL"
+      ],
+      "h3BoundaryLabels": [],
+      "disposition": "REVIEW_ONLY_NO_PUBLICATION"
+    }
+  ]
+}

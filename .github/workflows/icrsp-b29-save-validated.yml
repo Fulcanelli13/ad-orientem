@@ -1,0 +1,57 @@
+name: ICRSP B29 validate preserved 200-source evidence (read only)
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+concurrency:
+  group: icrsp-b29-save-validated
+  cancel-in-progress: false
+jobs:
+  archive:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: governance/icrsp-source-inventory-1665
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          run-id: 40335540491
+          github-token: ${{ github.token }}
+          repository: Fulcanelli13/ad-orientem
+          name: icrsp-b29-200-validated-source-signals
+          path: /tmp/icrsp-b29-validated
+      - name: Check completed 200-source scan artifact and exact IDs without mutation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('/tmp/icrsp-b29-validated')
+          a=json.loads((root/'icrsp-france-b29-200-new-source-metadata.v1.json').read_text(encoding='utf8'))
+          b=json.loads((root/'icrsp-france-b29-200-automated-commentary-signals.v1.json').read_text(encoding='utf8'))
+          old=json.loads(Path('data/source-text/icrsp-france-b28-eight-stream-363-unique-topic-ledger.v1.json').read_text(encoding='utf8'))
+          wave=json.loads(Path('data/source-text/icrsp-france-next250-metadata-reading-queue.v1.json').read_text(encoding='utf8'))
+          cohort={r['articleId'] for r in a['records']}
+          selected={r['articleId'] for r in b['records']}
+          used={r['articleId'] for r in old['uniqueArticles']}|{r['articleId'] for r in wave['rows']}
+          assert a['schema']=='AO_ICRSP_B29_FRESH200_UNREVIEWED_NONOVERLAPPING_METADATA_V1'
+          assert b['schema']=='AO_ICRSP_B29_FRESH200_REAL_SOURCE_BODY_LEXICAL_SCREEN_V1'
+          assert len(cohort)==len(selected)==200 and cohort==selected and not cohort&used
+          assert b['totals']['newDistinctSourceBodiesScanned']==200
+          assert b['totals']['sourcePanelsScanned']==551
+          assert b['totals']['panelMetadataMismatchCount']==24
+          assert len(b['metadataDriftIds'])==24
+          assert not b['publicationApproved'] and not b['sourceProseCopied']
+          assert not a['publicationApproved'] and not a['hostedTextStored']
+          original={x['articleId']:x for x in a['records']}
+          assert all(x['sourceUrl']==original[x['articleId']]['sourceUrl'] for x in b['records'])
+          assert all(not x['published'] and not x['originalEditionCertified'] for x in b['records'])
+          for name in ('icrsp-france-b29-200-new-source-metadata.v1.json','icrsp-france-b29-200-automated-commentary-signals.v1.json'):
+              persisted=Path('data/source-text')/name
+              assert persisted.exists() and persisted.read_bytes()==(root/name).read_bytes(), name
+          print('PASS: 200 new source IDs, 551 panels, 24 metadata drift exceptions; no hosted prose copied')
+          PY

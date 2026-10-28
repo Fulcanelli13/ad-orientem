@@ -1,0 +1,1473 @@
+{
+  "schema": "AO_ICRSP_B20_NEXT160_TARGET_SELECTION_AND_TEXT_REVIEW_BOUNDARIES_V1",
+  "asOf": "2026-10-26",
+  "issue": 1665,
+  "ownerPR": 1666,
+  "from": "Recovered 783-commentary-bearing article archive artifact from run 40204497782, locally inspected structurally; exact URL and title checked against existing committed index.",
+  "excludes": "Existing 51 B10-B11 Temporal page themes by articleId; do not re-open Fromage editions or duplicate related PR #1553.",
+  "definition": "Selection and source-ID/owner triage, NOT 160 source-text thematic reviews.",
+  "selectionMethod": "Stratified across index position and section to prevent only high-profile saints dominating; 10 explicitly source-reviewed pages front-loaded; 115 sanctoral, 30 temporal, 12 particular, 3 ritual.",
+  "totals": {
+    "selectedSourceArticles": 160,
+    "sectionDistribution": {
+      "sanctoral": 115,
+      "temporal": 30,
+      "local_propers": 12,
+      "ritual": 3
+    },
+    "directlyWebReadTopicArticlesInThisBatch": 10,
+    "metadataOnlyUntilSourceRead": 150,
+    "fullyAuthorByAuthorReviewed": 0,
+    "sourceClaimsApprovedForPublication": 0,
+    "newProductionFeatures": 0
+  },
+  "records": [
+    {
+      "articleId": "a0665_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0665_ancien",
+      "articleTitle": "St Blaise, évêque et martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "WEB_PAGE_DIRECTLY_READ_TOPIC_EXCERPT_ONLY",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0146_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0146_ancien",
+      "articleTitle": "Purification de la T. Sainte Vierge (Présentation du Seigneur)",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "WEB_PAGE_DIRECTLY_READ_TOPIC_EXCERPT_ONLY",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0318_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0318_ancien",
+      "articleTitle": "Sts Pierre et Paul, apôtres",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "WEB_PAGE_DIRECTLY_READ_TOPIC_EXCERPT_ONLY",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0309_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0309_ancien",
+      "articleTitle": "Nativité de Saint Jean-Baptiste",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "WEB_PAGE_DIRECTLY_READ_TOPIC_EXCERPT_ONLY",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0752_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0752_ancien",
+      "articleTitle": "St Georges, martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "WEB_PAGE_DIRECTLY_READ_TOPIC_EXCERPT_ONLY",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0379_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0379_ancien",
+      "articleTitle": "St Christophe, martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "WEB_PAGE_DIRECTLY_READ_TOPIC_EXCERPT_ONLY",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0361_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0361_ancien",
+      "articleTitle": "St Bonaventure, évêque, confesseur et docteur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "WEB_PAGE_DIRECTLY_READ_TOPIC_EXCERPT_ONLY",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0655_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0655_ancien",
+      "articleTitle": "Octave de St Etienne (2 janvier, avant 1955)",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0580_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0580_ancien",
+      "articleTitle": "Vigile de l’Epiphanie (5 janvier, avant 1955)",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0112_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0112_ancien",
+      "articleTitle": "Baptême du Seigneur (13 janvier)",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0626_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0626_ancien",
+      "articleTitle": "St Paul, premier ermite et confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0631_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0631_ancien",
+      "articleTitle": "Sᵗᵉ Prisque, vierge et martyre",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0634_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0634_ancien",
+      "articleTitle": "Sts Fabien, pape et Sébastien, martyrs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0638_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0638_ancien",
+      "articleTitle": "Sᵗᵉ Emérentienne, martyre",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0642_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0642_ancien",
+      "articleTitle": "St Pierre Nolasque, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0645_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0645_ancien",
+      "articleTitle": "St Jean Bosco, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0667_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0667_ancien",
+      "articleTitle": "Sᵗᵉ Agathe, vierge et martyre",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0890_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0890_ancien",
+      "articleTitle": "Saint Paul, évêque",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0673_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0673_ancien",
+      "articleTitle": "Sᵗᵉ Apolline, vierge et martyre",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0682_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0682_ancien",
+      "articleTitle": "Saint Vaast (Waast, Gaston), évêque et confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0679_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0679_ancien",
+      "articleTitle": "St Siméon, évêque et martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0700_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0700_ancien",
+      "articleTitle": "ou 24/02 Vigile de St Mathias, apôtre",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0712_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0712_ancien",
+      "articleTitle": "St Lucius Iᵉʳ, pape et martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0715_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0715_ancien",
+      "articleTitle": "St Jean de Dieu, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0719_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0719_ancien",
+      "articleTitle": "St Patrice (Patrick), évêque et confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0023_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0023_nouveau",
+      "articleTitle": "St Gabriel, Archange",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0742_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0742_ancien",
+      "articleTitle": "St François de Paule, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0745_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0745_ancien",
+      "articleTitle": "St Léon Iᵉʳ le Grand, pape, confesseur et docteur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0081_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0081_nouveau",
+      "articleTitle": "St Anicet, Pape et Martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0083_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0083_nouveau",
+      "articleTitle": "Sts Soter et Gaius, Papes et Martyrs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0086_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0086_nouveau",
+      "articleTitle": "St Marc, Evangéliste, Litanies Majeures",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0089_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0089_nouveau",
+      "articleTitle": "St Pierre Canisius, Confesseur et Docteur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0093_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0093_nouveau",
+      "articleTitle": "Sᵗᵉ Catherine de Sienne, Vierge, Docteur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0115_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0115_nouveau",
+      "articleTitle": "Invention de la sainte Croix",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0117_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0117_nouveau",
+      "articleTitle": "Sᵗᵉ Monique, Veuve",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0120_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0120_nouveau",
+      "articleTitle": "St Stanislas, Evêque et Martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0773_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0773_ancien",
+      "articleTitle": "Sts Gordien et Epimaque, martyrs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0126_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0126_nouveau",
+      "articleTitle": "Sts Nérée, Achillée et Domitille, Vierge, ainsi que Pancrace, Martyrs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0130_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0130_nouveau",
+      "articleTitle": "St Ubald, Evêque et Confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0993_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0993_ancien",
+      "articleTitle": "Saint Yves, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0299_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0299_ancien",
+      "articleTitle": "Saint Firmin, évêque",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0138_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0138_nouveau",
+      "articleTitle": "St Philippe Néri, Confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0143_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0143_nouveau",
+      "articleTitle": "Sᵗᵉ Marie-Madeleine de Pazzi, Vierge",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0145_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0145_nouveau",
+      "articleTitle": "Bhse Vierge Marie Reine",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0509_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0509_ancien",
+      "articleTitle": "Sts Marcellin et Pierre et Erasme, évêque, martyrs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0180_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0180_nouveau",
+      "articleTitle": "St François Caracciolo, Confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0697_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0697_ancien",
+      "articleTitle": "Translation de Sainte Scholastique, vierge",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0185_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0185_nouveau",
+      "articleTitle": "St Barnabé, Apôtre",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0189_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0189_nouveau",
+      "articleTitle": "St Basile le Grand, Evêque, Confesseur et Docteur de l’Eglise",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0191_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_nouveau",
+      "articleTitle": "St Grégoire Barbarigo, Evêque et Confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0522_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0522_ancien",
+      "articleTitle": "Sts Marc et Marcellien, martyrs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0196_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0196_nouveau",
+      "articleTitle": "St Sylvère, Pape et Martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0202_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0202_nouveau",
+      "articleTitle": "St Guillaume, Abbé",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a1002_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a1002_ancien",
+      "articleTitle": "St Joseph Cafasso, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0228_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0228_ancien",
+      "articleTitle": "Le Précieux Sang",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0776_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0776_ancien",
+      "articleTitle": "St Léon II, pape et confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0355_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0355_ancien",
+      "articleTitle": "St Antoine-Marie Zaccaria, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a1003_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a1003_ancien",
+      "articleTitle": "Sᵗᵉ Véronique Giuliani, vierge",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0360_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0360_ancien",
+      "articleTitle": "Sts Nabor et Félix, Martyrs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0367_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0367_ancien",
+      "articleTitle": "St Alexis, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0371_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0371_ancien",
+      "articleTitle": "St Jérôme Emilien, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0373_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0373_ancien",
+      "articleTitle": "Sᵗᵉ Praxède, vierge",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0377_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0377_ancien",
+      "articleTitle": "Sᵗᵉ Christine, vierge et martyre",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0382_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0382_ancien",
+      "articleTitle": "Sts Nazaire & Celse, martyrs, Victor, pape et martyr et Innocent Iᵉʳ, pape",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0386_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0386_ancien",
+      "articleTitle": "St Ignace de Loyola, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0533_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0533_ancien",
+      "articleTitle": "St Etienne I, pape et martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0393_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0393_ancien",
+      "articleTitle": "St Dominique, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0397_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0397_ancien",
+      "articleTitle": "St Gaétan de Thienne, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0435_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0435_ancien",
+      "articleTitle": "St Romain, martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0406_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0406_ancien",
+      "articleTitle": "Sᵗᵉ Claire, vierge",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0408_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0408_ancien",
+      "articleTitle": "Vigile de l’Assomption",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0411_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0411_ancien",
+      "articleTitle": "St Hyacinte, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0413_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0413_ancien",
+      "articleTitle": "St Jean Eudes, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0416_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0416_ancien",
+      "articleTitle": "Cœur Immaculé de la Bse Vierge Marie",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a1039_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a1039_ancien",
+      "articleTitle": "Vigile de St Barthélémy, apôtre",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0421_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0421_ancien",
+      "articleTitle": "St Zéphyrin, pape et martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0426_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0426_ancien",
+      "articleTitle": "Sᵗᵉ Sabine, martyre",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0429_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0429_ancien",
+      "articleTitle": "St Raymond Nonnat, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0437_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0437_ancien",
+      "articleTitle": "St Pie X, pape et confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0441_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0441_ancien",
+      "articleTitle": "St Gorgon, martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0447_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0447_ancien",
+      "articleTitle": "Exaltation de la Sᵗᵉ Croix",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0451_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0451_ancien",
+      "articleTitle": "Sts Euphémie, Vierge, Lucie et Géminien, Martyrs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0458_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0458_ancien",
+      "articleTitle": "St Eustache et ses compagnons, martyrs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0461_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0461_ancien",
+      "articleTitle": "St Maurice et ses Compagnons, martyrs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0464_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0464_ancien",
+      "articleTitle": "Notre-Dame de la Merci",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0468_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0468_ancien",
+      "articleTitle": "Dédicace de St Michel, archange",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0307_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0307_ancien",
+      "articleTitle": "Sᵗᵉ Thérèse de l’Enfant Jésus, vierge et docteur de l’Eglise",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0476_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0476_ancien",
+      "articleTitle": "Notre-Dame du Rosaire",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0480_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0480_ancien",
+      "articleTitle": "Sts Serge, Bacchus, Marcel et Apulée, martyrs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0485_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0485_ancien",
+      "articleTitle": "Maternité de la Vierge Marie",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0692_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0692_ancien",
+      "articleTitle": "Saint Baudry (Baldéric de Montfauçon), abbé",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0495_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0495_ancien",
+      "articleTitle": "St Pierre d’Alcantara, confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0499_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0499_ancien",
+      "articleTitle": "St Antoine-Marie Claret, évêque et confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0503_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0503_ancien",
+      "articleTitle": "St Evariste, pape et martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0541_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0541_ancien",
+      "articleTitle": "Fête de Tous les Saints",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0575_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0575_ancien",
+      "articleTitle": "Sts Vital et Agricola, Martyrs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0545_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0545_ancien",
+      "articleTitle": "Les Quatre Saints Couronnés, martyrs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0549_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0549_ancien",
+      "articleTitle": "Sts Tryphon, Respice et Nymphe, vierge, martyrs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0553_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0553_ancien",
+      "articleTitle": "St Didace (Diego), confesseur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0555_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0555_ancien",
+      "articleTitle": "St Albert le Grand, évêque, confesseur et docteur",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0560_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0560_ancien",
+      "articleTitle": "St Pontien, pape et martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0563_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0563_ancien",
+      "articleTitle": "Sᵗᵉ Cécile, vierge et martyre",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0568_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0568_ancien",
+      "articleTitle": "Sᵗᵉ Catherine, vierge et martyre",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0571_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0571_ancien",
+      "articleTitle": "St Saturnin, martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0597_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0597_ancien",
+      "articleTitle": "Sᵗᵉ Bibiane (Viviane), vierge et martyre",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0601_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0601_ancien",
+      "articleTitle": "St Sabbas, abbé",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0605_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0605_ancien",
+      "articleTitle": "Immaculée Conception de la Vierge Marie",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0613_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0613_ancien",
+      "articleTitle": "Octave de l’Immaculée Conception",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0616_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0616_ancien",
+      "articleTitle": "St Thomas, apôtre",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0761_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0761_ancien",
+      "articleTitle": "Mercredi de la 2ᵉ semaine après l’Oct. de Pâque, Solennité de St Joseph",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0098_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0098_nouveau",
+      "articleTitle": "Solennité de St Joseph, Patron de l’Église universelle",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0141_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0141_nouveau",
+      "articleTitle": "St Jean Iᵉʳ, Pape et Martyr",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0248_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0248_nouveau",
+      "articleTitle": "Sᵗᵉ Marguerite, Vierge et Martyre",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0195_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0195_nouveau",
+      "articleTitle": "Sts Gervais et Protais, Martyrs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0891_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0891_ancien",
+      "articleTitle": "Vendredi de la 1ʳᵉ semaine de la Passion Notre-Dame des Sept Douleurs",
+      "section": "sanctoral",
+      "route": "EXISTING_SAINTS_AND_CALENDAR",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0106_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0106_nouveau",
+      "articleTitle": "Lun. des Rogations",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "WEB_PAGE_DIRECTLY_READ_TOPIC_EXCERPT_ONLY",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0107_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0107_nouveau",
+      "articleTitle": "Mar. des Rogations",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "WEB_PAGE_DIRECTLY_READ_TOPIC_EXCERPT_ONLY",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0108_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0108_nouveau",
+      "articleTitle": "Mer. des Rogations",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "WEB_PAGE_DIRECTLY_READ_TOPIC_EXCERPT_ONLY",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0814_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0814_ancien",
+      "articleTitle": "Mar.",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0818_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0818_ancien",
+      "articleTitle": "Sam.",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0821_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0821_ancien",
+      "articleTitle": "Mer.",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0090_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0090_ancien",
+      "articleTitle": "3ᵉ dimanche de l’Avent",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0095_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0095_ancien",
+      "articleTitle": "Sam. Q.-T.",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0837_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0837_ancien",
+      "articleTitle": "O Oriens",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0828_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0828_ancien",
+      "articleTitle": "Lun.",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0092_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0092_ancien",
+      "articleTitle": "Vigile de la Nativité",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0099_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0099_ancien",
+      "articleTitle": "Sts Innocents (28 décembre, 4ᵉ jour dans l’Octave de la Nativité)",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0107_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0107_ancien",
+      "articleTitle": "Très saint Nom de Jésus (Dimanche du 2 au 5 janvier ou le 2 janvier)",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0113_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0113_ancien",
+      "articleTitle": "Messe du 1ᵉʳ dimanche après l’Epiphanie",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0623_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0623_ancien",
+      "articleTitle": "6ᵉ Dimanche restant après l’Épiphanie",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0139_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0139_ancien",
+      "articleTitle": "Mer. des Cendres",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0155_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0155_ancien",
+      "articleTitle": "1ᵉʳ Dimanche de Carême",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0002_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0002_nouveau",
+      "articleTitle": "Premier Dimanche de la Passion",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0034_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0034_ancien",
+      "articleTitle": "Lun. saint · av. 1955",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0015_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0015_nouveau",
+      "articleTitle": "Mer. saint",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0222_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_ancien",
+      "articleTitle": "Sam. saint · av. 1955",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0032_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0032_nouveau",
+      "articleTitle": "Lun. de l’octave",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0036_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0036_nouveau",
+      "articleTitle": "Ven. de l’octave",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0040_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0040_nouveau",
+      "articleTitle": "3ᵉ Dimanche après Pâques",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0109_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0109_nouveau",
+      "articleTitle": "Vigile de l’Ascension",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0281_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0281_ancien",
+      "articleTitle": "Vigile de la Pentecôte",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0170_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0170_nouveau",
+      "articleTitle": "Mer. Q.-T.",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0294_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0294_ancien",
+      "articleTitle": "Fête de la Trinité",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0975_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0975_ancien",
+      "articleTitle": "Octave de la Fête-Dieu (avant 1955)",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0452_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0452_ancien",
+      "articleTitle": "Mer. Q.-T.",
+      "section": "temporal",
+      "route": "EXISTING_CALENDAR_MASS_EXPLORER_SCRIPTURE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0095_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0095_nouveau",
+      "articleTitle": "St Léon IX, Evêque de Toul et Pape",
+      "section": "local_propers",
+      "route": "EXISTING_PARTICULAR_CALENDAR_REVIEW",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0150_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0150_nouveau",
+      "articleTitle": "St Yves, Confesseur",
+      "section": "local_propers",
+      "route": "EXISTING_PARTICULAR_CALENDAR_REVIEW",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0212_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0212_nouveau",
+      "articleTitle": "Sᵗᵉ Clotilde, Veuve",
+      "section": "local_propers",
+      "route": "EXISTING_PARTICULAR_CALENDAR_REVIEW",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0273_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0273_nouveau",
+      "articleTitle": "St Auspice, Evêque et Confesseur",
+      "section": "local_propers",
+      "route": "EXISTING_PARTICULAR_CALENDAR_REVIEW",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0481_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0481_ancien",
+      "articleTitle": "Bienheureux Antoine de Ravinel, martyr",
+      "section": "local_propers",
+      "route": "EXISTING_PARTICULAR_CALENDAR_REVIEW",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0434_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0434_ancien",
+      "articleTitle": "Notre-Dame de Sion",
+      "section": "local_propers",
+      "route": "EXISTING_PARTICULAR_CALENDAR_REVIEW",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0501_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0501_ancien",
+      "articleTitle": "Notre-Dame au Pied d’Argent",
+      "section": "local_propers",
+      "route": "EXISTING_PARTICULAR_CALENDAR_REVIEW",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0691_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0691_ancien",
+      "articleTitle": "Saint Elophe, martyr",
+      "section": "local_propers",
+      "route": "EXISTING_PARTICULAR_CALENDAR_REVIEW",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0728_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0728_ancien",
+      "articleTitle": "Saints Pient, Agent et Colombe, martyrs",
+      "section": "local_propers",
+      "route": "EXISTING_PARTICULAR_CALENDAR_REVIEW",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0591_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0591_ancien",
+      "articleTitle": "Saint Pierre Fourier, confesseur",
+      "section": "local_propers",
+      "route": "EXISTING_PARTICULAR_CALENDAR_REVIEW",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0097_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0097_nouveau",
+      "articleTitle": "Les Clous sacrés de Notre-Seigneur",
+      "section": "local_propers",
+      "route": "EXISTING_PARTICULAR_CALENDAR_REVIEW",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0215_nouveau",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0215_nouveau",
+      "articleTitle": "St Jacob, Evêque et Confesseur",
+      "section": "local_propers",
+      "route": "EXISTING_PARTICULAR_CALENDAR_REVIEW",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0258_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0258_ancien",
+      "articleTitle": "Baptême des petits enfants",
+      "section": "ritual",
+      "route": "EXISTING_CALENDAR_CUSTOMS_OR_RITUAL_REFERENCE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0690_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0690_ancien",
+      "articleTitle": "Bénédictions des Cierges et des Aliments en la Fête de Saint Blaise",
+      "section": "ritual",
+      "route": "EXISTING_CALENDAR_CUSTOMS_OR_RITUAL_REFERENCE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    },
+    {
+      "articleId": "a0924_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0924_ancien",
+      "articleTitle": "Célébration du Mariage",
+      "section": "ritual",
+      "route": "EXISTING_CALENDAR_CUSTOMS_OR_RITUAL_REFERENCE",
+      "sourceTextStatus": "METADATA_TRIAGED_COMMENTARY_PROSE_NOT_YET_READ",
+      "publicPromotionApproved": false
+    }
+  ],
+  "heldBoundaries": [
+    "Source website article label is not liturgical edition certification.",
+    "Pre-1955 named feasts and ritual histories are held separately from 1962 Calendar.",
+    "Saint biographies may contain legend; do not infer attested dates or historic identity.",
+    "No complete French commentary is reproduced or rights assumed.",
+    "Prioritize per-claim owner-parity against Saints, Calendar, Customs, Places, Scripture and Mass Explorer before any publication."
+  ]
+}

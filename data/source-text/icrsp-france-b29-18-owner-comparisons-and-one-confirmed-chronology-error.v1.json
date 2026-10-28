@@ -1,0 +1,362 @@
+{
+  "schema": "AO_ICRSP_B29_18_SCOPED_OWNER_DECISIONS_AND_CONFIRMED_CHRONOLOGY_ERROR_V1",
+  "asOf": "2026-10-26",
+  "ownerPr": 1666,
+  "scope": "Source passages compared against named existing Calendar, Saints, Mass, Customs or research-owner files. No exhaustive global feature-gap claim; no app changes.",
+  "cases": [
+    {
+      "caseId": "ICRSP-B29-PARITY-01",
+      "topicCode": "FIDELIS_622_SOURCE_ERROR",
+      "articleIds": [
+        "a0085_nouveau"
+      ],
+      "proposedExistingOwner": "SAINTS_EXISTING_PERSON_OWNER",
+      "checkedExistingFiles": [
+        "data/calendar/living-sanctoral-pilot.v1.json",
+        "data/saints/parallel-owner-identity-bridge-20261015.v1.json"
+      ],
+      "observedDifferential": "Confirmed correction: the ICRSP page says 622, while Vatican State 2026, the Sigmaringen Catholic parish and Baden-Württemberg State Archive give martyrdom on 24 April 1622. These checked app files define cross-owner identity governance but do not identify a canonical Fidelis person in this comparison.",
+      "releaseDisposition": "HARD_BLOCK_UNTIL_PERSON_ID_MATCH",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-02",
+      "topicCode": "CORPUS_CHRISTI_OLD_OCTAVE",
+      "articleIds": [
+        "a0970_ancien",
+        "a0971_ancien",
+        "a0973_ancien",
+        "a0974_ancien"
+      ],
+      "proposedExistingOwner": "CALENDAR_HISTORICAL_REFERENCE",
+      "checkedExistingFiles": [
+        "src/calendar/liturgical-year.js",
+        "src/learn/mass-explorer-selected-calendar-proper.js"
+      ],
+      "observedDifferential": "All four articles expressly report 1955 suppression. Calendar and Mass Explorer already own selected-year progression and resolved Proper; the old octave pages are historical supplements, not new feasts.",
+      "releaseDisposition": "REJECT_UNIVERSAL_1962_IMPORT",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-03",
+      "topicCode": "O_ANTIPHONS_ADVENT",
+      "articleIds": [
+        "a0834_ancien",
+        "a0835_ancien",
+        "a0836_ancien",
+        "a0838_ancien"
+      ],
+      "proposedExistingOwner": "CALENDAR_CONTEXT_OR_SCRIPTURE_PARALLELS",
+      "checkedExistingFiles": [
+        "src/calendar/liturgical-year.js"
+      ],
+      "observedDifferential": "All four are Office antiphon-themed Guéranger meditations. The liturgical-year owner already presents Advent but no Office experience should be built; Scripture typology belongs outside the chronological narrative.",
+      "releaseDisposition": "OFFICE_OUT_OF_SCOPE",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-04",
+      "topicCode": "MAJOR_LITANIES_ALIAS",
+      "articleIds": [
+        "a0777_ancien"
+      ],
+      "proposedExistingOwner": "CALENDAR_AND_CUSTOMS",
+      "checkedExistingFiles": [
+        "src/calendar/traditional-year-v384.js",
+        "src/calendar/customs-read-model.js"
+      ],
+      "observedDifferential": "Existing Calendar handles Rogation dates and published Custom distinguishes optional private prayer walk from actual priestly procession. a0777 duplicates the Major Litanies topic in earlier reviewed a0087_nouveau.",
+      "releaseDisposition": "ALREADY_OWNED_NO_NEW_PROCESSION_TRIGGER",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-05",
+      "topicCode": "ALEXANDER_FEAST_ALIAS",
+      "articleIds": [
+        "a0765_ancien",
+        "a0116_nouveau"
+      ],
+      "proposedExistingOwner": "SAINTS_PERSON_IDENTITY",
+      "checkedExistingFiles": [
+        "src/calendar/sanctoral-person-reconciliation.js"
+      ],
+      "observedDifferential": "These source pages reproduce the same introductory cult passage; a combined liturgical day cannot imply one person or prove that martyr Alexander was Pope Alexander I.",
+      "releaseDisposition": "MERGE_EDITORIAL_SUBJECT_NOT_PERSON_RECORDS",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-06",
+      "topicCode": "FELIX_I_PAGE_ALIAS",
+      "articleIds": [
+        "a0810_ancien",
+        "a0144_nouveau"
+      ],
+      "proposedExistingOwner": "SAINTS_PERSON_IDENTITY",
+      "checkedExistingFiles": [
+        "src/calendar/sanctoral-person-reconciliation.js"
+      ],
+      "observedDifferential": "These two pages reproduce the same historical introduction and Guéranger opening, including a conflict between Felix burial traditions and a different homonym.",
+      "releaseDisposition": "SOURCE_DEDUP_PERSON_HISTORY_HOLD",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-07",
+      "topicCode": "EARLY_PAPAL_MARTYR_TITLES",
+      "articleIds": [
+        "a0751_ancien",
+        "a0803_ancien",
+        "a0805_ancien",
+        "a0358_ancien"
+      ],
+      "proposedExistingOwner": "SAINTS_HISTORICAL_REFERENCE",
+      "checkedExistingFiles": [
+        "src/calendar/sanctoral-person-reconciliation.js"
+      ],
+      "observedDifferential": "Site presentations explicitly distinguish early papal history from later martyr titles or conflated martyr identities for Soter, Urban, Eleutherius and Pius I. No canonical saints identities certified.",
+      "releaseDisposition": "DO_NOT_CERTIFY_MARTYR_DEATH_FROM_LITURGICAL_TITLE",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-08",
+      "topicCode": "ANACLET_SUPPRESSED_DOUBLE",
+      "articleIds": [
+        "a0362_ancien"
+      ],
+      "proposedExistingOwner": "CALENDAR_HISTORICAL_NOTE",
+      "checkedExistingFiles": [
+        "src/calendar/liturgical-year.js",
+        "src/calendar/sanctoral-person-reconciliation.js"
+      ],
+      "observedDifferential": "The site says the July 13 Anaclet observance was suppressed under John XXIII because it appeared to duplicate Cletus. The 1962 Calendar must not revive a second feast.",
+      "releaseDisposition": "ABOLISHED_FEAST_NO_IMPORT",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-09",
+      "topicCode": "VINCENT_DE_PAUL_MISSAL_FORMS",
+      "articleIds": [
+        "a0370_ancien"
+      ],
+      "proposedExistingOwner": "MASS_PROPER_EXISTING_OWNER",
+      "checkedExistingFiles": [
+        "src/learn/mass-explorer-selected-calendar-proper.js",
+        "data/calendar/traditional-mass-formulary-review.v1.json"
+      ],
+      "observedDifferential": "The source explicitly distinguishes the Roman Missal formulary from French/Lazarist Pauperes Sion; the existing Mass Explorer requires resolved Proper source-path matching. Local or supplementary usage authority is not verified.",
+      "releaseDisposition": "SEPARATE_FORMULARIES_NO_AUTOMATIC_SELECTION",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-10",
+      "topicCode": "REGIS_PARTICULAR_ONLY",
+      "articleIds": [
+        "a0211_nouveau"
+      ],
+      "proposedExistingOwner": "PARTICULAR_CALENDAR_EXISTING_OWNER",
+      "checkedExistingFiles": [
+        "data/calendar/particular-traditional-calendar-witnesses.review.v1.json"
+      ],
+      "observedDifferential": "The source explicitly denies universal-calendar placement and points to pro aliquibus locis. Historical local reference only until exact authorized owner identity and liturgical scope are confirmed.",
+      "releaseDisposition": "PARTICULAR_NOT_UNIVERSAL",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-11",
+      "topicCode": "DISCOVERY_OF_ST_STEPHEN",
+      "articleIds": [
+        "a0392_ancien"
+      ],
+      "proposedExistingOwner": "PARTICULAR_CALENDAR_EXISTING_OWNER",
+      "checkedExistingFiles": [
+        "data/calendar/particular-traditional-calendar-witnesses.review.v1.json"
+      ],
+      "observedDifferential": "The source says August 3 discovery of relics feast was removed from general calendar but remains in the 1962 some-localities supplement. This is not universal August 3 Mass.",
+      "releaseDisposition": "PARTICULAR_NOT_UNIVERSAL",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-12",
+      "topicCode": "PARSCH_REPEATED_COMMONS",
+      "articleIds": [
+        "a0329_ancien",
+        "a0326_ancien",
+        "a0334_ancien"
+      ],
+      "proposedExistingOwner": "MASS_COMMONS_EDUCATION",
+      "checkedExistingFiles": [
+        "data/calendar/traditional-1962-common-formularies.review.v1.json",
+        "data/learn/mass-explorer-approved-studies.v1.json"
+      ],
+      "observedDifferential": "The 1962 Commons registry contains candidate formularies but no original text collation; approved Mass Explorer deep studies are empty. These Parsch Commons repeat topics from other hosted URLs, not release-ready text.",
+      "releaseDisposition": "DUPLICATE_SOURCE_LINKS_NO_COPYRIGHT_CLEARANCE",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-13",
+      "topicCode": "FEMALE_MARTYR_COMMON_DIFFERENCES",
+      "articleIds": [
+        "a0341_ancien",
+        "a0336_ancien",
+        "a0335_ancien",
+        "a0339_ancien"
+      ],
+      "proposedExistingOwner": "MASS_COMMONS_EDUCATION",
+      "checkedExistingFiles": [
+        "data/calendar/traditional-1962-common-formularies.review.v1.json"
+      ],
+      "observedDifferential": "Parsch distinguishes female martyrs, virgin martyrs and virgin formularies with similar incipits; sharing an Introit does not certify identical entire 1962 Proper.",
+      "releaseDisposition": "KEEP_NAMED_COMMON_FORMS_DISTINCT",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-14",
+      "topicCode": "QUINQUAGESIMA_OFFICE_OUTSIDE_PRODUCT",
+      "articleIds": [
+        "a0171_ancien",
+        "a0170_ancien"
+      ],
+      "proposedExistingOwner": "SOURCE_REFERENCE_ONLY",
+      "checkedExistingFiles": [
+        "src/calendar/liturgical-year.js"
+      ],
+      "observedDifferential": "Both indexed resources expressly concern Matins lessons/responsories, including pre-John XXIII Breviary material. The user's app scope excludes a Breviary/Office module.",
+      "releaseDisposition": "EXCLUDE_OFFICE_TEXT",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-15",
+      "topicCode": "BONIFACE_TWO_SAINTS",
+      "articleIds": [
+        "a0128_nouveau"
+      ],
+      "proposedExistingOwner": "SAINTS_PERSON_IDENTITY",
+      "checkedExistingFiles": [
+        "src/calendar/sanctoral-person-reconciliation.js"
+      ],
+      "observedDifferential": "The May Roman martyr Boniface in the hosted narrative is not Boniface bishop and missionary to Germany. One shared name does not license conflation.",
+      "releaseDisposition": "SEPARATE_PERSONS",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-16",
+      "topicCode": "LEGENDS_POLEMIC_QUARANTINE",
+      "articleIds": [
+        "a0203_nouveau",
+        "a0532_ancien",
+        "a0375_ancien"
+      ],
+      "proposedExistingOwner": "SAINTS_HISTORICAL_REFERENCE",
+      "checkedExistingFiles": [
+        "data/saints/holiness-first-editorial-pilot-20261015.v1.json"
+      ],
+      "observedDifferential": "ICRSP source commentary mixes legendary martyr narratives, St Margaret dragon imagery and polemics against modern historians. These cannot be published as dispassionate verified history.",
+      "releaseDisposition": "HAGIOGRAPHY_AND_PERIOD_POLEMIC_HOLD",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-17",
+      "topicCode": "BASILIDES_GROUPED_CULTS",
+      "articleIds": [
+        "a0516_ancien",
+        "a0179_nouveau"
+      ],
+      "proposedExistingOwner": "SAINTS_PERSON_IDENTITY",
+      "checkedExistingFiles": [
+        "src/calendar/sanctoral-person-reconciliation.js"
+      ],
+      "observedDifferential": "The source documents historically separate martyr cults grouped into a shared liturgical celebration. Distinct saints still require distinct canonical person records.",
+      "releaseDisposition": "ONE_CELEBRATION_MULTIPLE_PERSONS",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    },
+    {
+      "caseId": "ICRSP-B29-PARITY-18",
+      "topicCode": "MARTYRS_PATRISTIC_SOURCES",
+      "articleIds": [
+        "a0717_ancien",
+        "a0387_ancien",
+        "a0396_ancien"
+      ],
+      "proposedExistingOwner": "SCRIPTURE_PARALLELS_AND_CATENA",
+      "checkedExistingFiles": [
+        "data/source-text/icrsp-france-b11-51-crossdomain-content-handoff.v1.json"
+      ],
+      "observedDifferential": "The articles name Basil, Gregory of Nyssa, Ephrem, Leo the Great and Cyprian as potential original witnesses. Exact original work and passage is not established by the hosted commentary label.",
+      "releaseDisposition": "ORIGINAL_LOCUS_REQUIRED_NO_AI_PATROLOGY",
+      "exactCanonicalRecordIdConfirmed": false,
+      "criticalOriginalPrintCollation": false,
+      "translationRightsCleared": false,
+      "ownerPublicationApproval": false
+    }
+  ],
+  "independentlyCorroboratedError": {
+    "articleId": "a0085_nouveau",
+    "incorrectHostedValue": "Martyr en 622",
+    "correctedValue": "Martyred on 24 April 1622",
+    "independentSources": [
+      "https://www.vaticanstate.va/en/state-and-government/general-informations/saint-of-the-day/4061-april-24-saint-fidelis-of-sigmaringen-martyr.html",
+      "https://www.kath-sigmaringen.de/das-leben-feiern/patrozinien-und-feste/fidelisfest/",
+      "https://www.landesarchiv-bw.de/de/themen/praesentationen---themenzugaenge/73752"
+    ],
+    "sourceConfidence": "THREE_INDEPENDENT_AUTHORITIES_AGREE_ON_1622",
+    "allowedUse": "Source correction note only pending canonical Saint owner person ID and editorial acceptance",
+    "importedToLiveApp": false
+  },
+  "counts": {
+    "comparisons": 18,
+    "distinctCurrentTrancheSourceIds": 40,
+    "confirmedChronologyCorrections": 1,
+    "approvedContentAdds": 0,
+    "actualChangesToLiveCalendarOrSaintsOrMass": 0
+  }
+}

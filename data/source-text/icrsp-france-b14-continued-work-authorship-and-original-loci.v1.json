@@ -1,0 +1,339 @@
+{
+  "schema": "AO_ICRSP_B14_AUTHORSHIP_PROVENANCE_RECTIFICATION_V1",
+  "asOf": "2026-10-26",
+  "ownerIssue": 1665,
+  "scope": "Post-Pentecost pages from B10 and two Lent day source collations; no publication, no historical rite updates.",
+  "importance": "The Guéranger website label identifies L'Année liturgique as a collected work but it cannot be treated as proof that Prosper Guéranger authored its post-Pentecost continuations.",
+  "authoritySources": [
+    {
+      "role": "BENEDICTINE_EDITORIAL_HISTORY",
+      "url": "https://www.abbayedesolesmes.fr/produit/introduction-a-lannee-liturgique/",
+      "statement": "Solesmes says the original Guéranger text ends before Trinity Sunday and Dom Lucien Fromage completed the six post-Pentecost continuation volumes.",
+      "authorshipGrade": "PUBLISHED_INSTITUTIONAL_WORK_HISTORY"
+    },
+    {
+      "role": "NATIONAL_LIBRARY_BIBLIOGRAPHIC_RECORD",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb318196703",
+      "statement": "Bibliographic record describes Le Temps après la Pentecôte as Continuation par Dom L. Fromage, for the 1902-1908 multi-volume edition.",
+      "authorshipGrade": "NATIONAL_BIBLIOGRAPHIC_CATALOG"
+    },
+    {
+      "role": "NINETEENTH_CENTURY_SECONDARY_EDITION_NOTICE",
+      "url": "https://www.liberius.net/articles/Bibliographie_catholique_%28tome_67%29.pdf",
+      "statement": "1883 bibliographic review refers to the second continuation volume, covering fourth Sunday after Pentecost through end of liturgical year.",
+      "authorshipGrade": "HISTORICAL_BOOK_REVIEW_NOT_ORIGINAL_IMPRINT"
+    },
+    {
+      "role": "ORIGINAL_WORK_ONLINE_RETRANSCRIPTION_TITLE_EDITION",
+      "url": "https://www.domgueranger.net/lannee-liturgique-le-careme-historique-mystique-pratique-prieres/",
+      "statement": "Online cover transcription identifies Le Carême, 16th edition, Henri Oudin 1903. This site does not substitute for photographic printed-edition inspection.",
+      "authorshipGrade": "EDITION_LABELED_TRANSCRIPTION_ONLY"
+    },
+    {
+      "role": "COLLECTED_LENT_DAY_ONLINE_TRANSCRIPTION",
+      "url": "https://www.domgueranger.net/lannee-liturgique-le-careme-propre-du-temps/",
+      "statement": "The collected 1903-labeled Lent transcription contains Monday Lent III Naaman and Saturday Lent III Susanna text also present on ICRSP.",
+      "authorshipGrade": "SECONDARY_TRANSCRIPTION_TEXT_CONCORDANCE"
+    },
+    {
+      "role": "AMBROSE_LATIN_EDITION",
+      "url": "https://la.wikisource.org/wiki/De_mysteriis_(ed._Migne)",
+      "statement": "Latin edition labelled Migne, Patrologia Latina 16, paragraphs 16-18 describe Naaman and his cleansing, with baptismal application. This verifies Latin-locus text is available, not a modern critical apparatus.",
+      "authorshipGrade": "LATIN_TEXT_WITNESS_MIGNE_1845_NO_CRITICAL_APPARATUS"
+    }
+  ],
+  "attributionCohort": {
+    "source": "data/source-text/icrsp-france-b10-lent-pentecost51-content-screen.v1.json",
+    "articleCount": 22,
+    "websiteLabelledWorkFamily": "GUERANGER_ANNEE_LITURGIQUE",
+    "priorUse": "SITE_PRESENTED_AS_DOM_GUERANGER",
+    "correctedResearchRule": "GUERANGER_WORK_CONTINUATION_DOM_LUCIEN_FROMAGE_CANDIDATE_AUTHOR__VERIFY_ORIGINAL_VOLUME_TITLE_PAGE_BEFORE_DISPLAY",
+    "individualPrintedDayLociIndependentlyChecked": 0,
+    "items": [
+      {
+        "articleId": "a0221_nouveau",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0221_nouveau",
+        "existingMassSourcePath": "Tempora/Pent03-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0222_nouveau",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_nouveau",
+        "existingMassSourcePath": "Tempora/Pent04-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0223_nouveau",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0223_nouveau",
+        "existingMassSourcePath": "Tempora/Pent05-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0231_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0231_ancien",
+        "existingMassSourcePath": "Tempora/Pent06-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0241_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0241_ancien",
+        "existingMassSourcePath": "Tempora/Pent07-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0242_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0242_ancien",
+        "existingMassSourcePath": "Tempora/Pent08-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0243_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0243_ancien",
+        "existingMassSourcePath": "Tempora/Pent09-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0244_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0244_ancien",
+        "existingMassSourcePath": "Tempora/Pent10-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0364_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0364_ancien",
+        "existingMassSourcePath": "Tempora/Pent11-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0365_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0365_ancien",
+        "existingMassSourcePath": "Tempora/Pent12-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0391_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0391_ancien",
+        "existingMassSourcePath": "Tempora/Pent13-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0430_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0430_ancien",
+        "existingMassSourcePath": "Tempora/Pent14-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0431_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0431_ancien",
+        "existingMassSourcePath": "Tempora/Pent15-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0442_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0442_ancien",
+        "existingMassSourcePath": "Tempora/Pent16-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0443_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0443_ancien",
+        "existingMassSourcePath": "Tempora/Pent17-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0471_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0471_ancien",
+        "existingMassSourcePath": "Tempora/Pent18-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0478_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0478_ancien",
+        "existingMassSourcePath": "Tempora/Pent19-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0486_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0486_ancien",
+        "existingMassSourcePath": "Tempora/Pent20-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0487_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0487_ancien",
+        "existingMassSourcePath": "Tempora/Pent21-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0488_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0488_ancien",
+        "existingMassSourcePath": "Tempora/Pent22-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0245_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0245_ancien",
+        "existingMassSourcePath": "Tempora/Pent23-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      },
+      {
+        "articleId": "a0246_ancien",
+        "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0246_ancien",
+        "existingMassSourcePath": "Tempora/Pent24-0",
+        "websiteLabel": "Dom Guéranger, l'Année Liturgique",
+        "workTitle": "L'Année liturgique, Le Temps après la Pentecôte",
+        "workContinuationAuthorCandidate": "Dom Lucien Fromage",
+        "attributionGrade": "INSTITUTIONAL_AND_BNF_SERIES_LEVEL_CONFIRMATION__INDIVIDUAL_DAY_UNCOLLATED",
+        "publisherTitlePageForSpecificDayRead": false,
+        "appAttributionApproved": false
+      }
+    ]
+  },
+  "directSourceTextCrosschecks": [],
+  "patristicSourceUpgrade": {
+    "b13Source": "data/source-text/icrsp-france-b13-patristic-loci-crossbranch-handoff.v1.json",
+    "b13OriginalLanguageVerified": 0,
+    "ambroseDeMysteriis": {
+      "locus": "III.16-18",
+      "latinTextUrl": "https://la.wikisource.org/wiki/De_mysteriis_(ed._Migne)",
+      "edition": "PL 16 (Migne 1845), without modern critical apparatus",
+      "latinPassageLocated": true,
+      "descriptiveSubstance": "Naaman's healing in Jordan is interpreted in sacramental/baptismal context; cleansing attributed to grace rather than water alone",
+      "philologicalCriticalEditionApproved": false,
+      "originalScanCollated": false,
+      "quoteRightsCleared": false,
+      "possibleCrossdomainOwner": "SCRIPTURE_CORRESPONDENCES_PR_1553"
+    },
+    "hippolytusDaniel": {
+      "locus": "I.15.5-6",
+      "status": "HOLD_ORIGINAL_GREEK_AND_ATTRIBUTION_NOT_YET_COLLATED",
+      "remainsUnchangedFromB13": true
+    }
+  },
+  "guardrails": [
+    "Do not globally rename all 492 website-Guéranger-labelled panels Fromage: this cohort of 22 post-Pentecost records is an initial author-work exception; every work portion needs location-aware title-page collation.",
+    "Do not treat online 1903-labelled web transcription as inspected photographed 1903 printed edition.",
+    "Do not quote/reproduce post-Pentecost or Guéranger French passages, or modern translations, until rights certified.",
+    "The actual 1962 Calendar/reader/ritual authority remains independent of historical commentary.",
+    "Where authorship is uncertain, cite the work with an explicit continuation note, not misattribute words to Guéranger.",
+    "Do not recertify a0191 and a0198 Guéranger hosted-transcription concordance in this file; the existing B14 source-claim owner already covers them."
+  ],
+  "totals": {
+    "b10PostPentecostArticlesWithAuthorshipFlags": 22,
+    "originalIndividualVolumeDayLociCriticallyVerified": 0,
+    "guérangerLentHostedPassageConcordances": 0,
+    "ambroseLatinTextLocusLocated": 1,
+    "modernCriticalLatinEditionCertifications": 0,
+    "hippolytusGreekCriticalLociVerified": 0,
+    "canonicalAuthorAttributionsChangedInProduction": 0,
+    "publicationApprovals": 0,
+    "existingLentConcordancesOwnedInParallelB14": 2
+  },
+  "preexistingLentCollationOwner": "data/source-text/icrsp-france-b14-gueranger-aphrahat-source-claims.v1.json",
+  "nonDuplicateContribution": "Historical personal-authorship correction for 22 Pentecost pages and original-language Latin Ambrose witness; the two Lent online Guéranger transcription comparisons are already covered by parallel B14 owner."
+}

@@ -1,0 +1,245 @@
+{
+  "schema": "AO_ICRSP_B40_CANONICAL_PERSON_SNAPSHOT_MATCH_AND_SECONDARY_COMMON_WITNESS_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "purpose": "Validate exact existing Saints/Calendar identities and three high-priority 1962 Mass Common candidates against published existing owner snapshots and independent electronic Latin sources. No new app owner, saint ID, rite or universal feast is created.",
+  "mainOwnerFileBlobShas": {
+    "data/saints/holiness-first-editorial-pilot-20261015.v1.json": "15de6374ab766303cfc53b8b3a4585ae6f3c066f",
+    "data/calendar/living-sanctoral-pilot.v1.json": "b895db8acaaa5395953fa282da191377fb688b77",
+    "data/calendar/living-sanctoral-read-model.v1.json": "9d5948e63a379eca361e450b73c512ef9b8be767",
+    "data/calendar/post1960-canonizations.official-batch1.v1.json": "469deba7512592fe832a3918560ea7ae36043bc9",
+    "data/calendar/traditional-1962-common-formularies.review.v1.json": "5594a1c3a5d49f4d5377383ba2eace53f1c2c5d3",
+    "src/find/saints-release-policy.js": "b622fcf07b748bf3129406c6a1470078737cbefc",
+    "src/learn/mass-explorer-selected-calendar-proper.js": "a95d95fd1b01efc9fdf19a05498209ae534430a0",
+    "src/calendar/observance-title.js": "3b56cbe822f2f89522017e220362d33c26bf5f1a",
+    "data/calendar/traditional-mass-formulary-review.v1.json": "efe59b26f9b21a9269af1cfde691a05addf81422"
+  },
+  "scannedExistingIdentitySubsets": {
+    "saintsEditorialPilot": {
+      "path": "data/saints/holiness-first-editorial-pilot-20261015.v1.json",
+      "count": 6,
+      "idScheme": "saint:..."
+    },
+    "calendarPilot": {
+      "path": "data/calendar/living-sanctoral-pilot.v1.json",
+      "count": 6,
+      "idScheme": "saint...."
+    },
+    "livingSanctoralSnapshot": {
+      "path": "data/calendar/living-sanctoral-read-model.v1.json",
+      "pilotPersons": 5,
+      "censusPersons": 15
+    },
+    "post1960Census": {
+      "path": "data/calendar/post1960-canonizations.official-batch1.v1.json",
+      "persons": 258,
+      "scope": "POST1960_CANONIZATIONS_NOT_HISTORICAL_SAINT_MASTER"
+    },
+    "qualification": "These are finite, curated snapshots and research pilots. Absence from them does not prove a saint is absent from all v43/archive or canonical calendar source records."
+  },
+  "identityCrosswalk": [
+    {
+      "articleId": "a0889_ancien",
+      "subject": "St Bernadette Soubirous / Sainte Marie-Bernard",
+      "proposedId": "saint:bernadette-soubirous",
+      "searchedOwner": "SAINTS_SIX_PILOT",
+      "status": "EXACT_EXISTING_SAINTS_PILOT_ID",
+      "sourceIdentityEvidence": "ICRSP calls her Marie-Bernard Soubirous; corresponding existing pilot is Bernadette Soubirous.",
+      "ownerHasHistoricalErrorClaim": null
+    },
+    {
+      "articleId": "a0493_ancien",
+      "subject": "St Margaret Mary Alacoque",
+      "proposedId": "saint:margaret-mary-alacoque",
+      "searchedOwner": "SAINTS_SIX_PILOT",
+      "status": "EXACT_EXISTING_SAINTS_PILOT_ID",
+      "sourceIdentityEvidence": "ICRSP and Saints pilot refer to the same Margaret Mary Alacoque.",
+      "ownerHasHistoricalErrorClaim": null
+    },
+    {
+      "articleId": "a0491_ancien",
+      "subject": "St Teresa of Avila",
+      "proposedId": "saint.teresa-avila",
+      "searchedOwner": "CALENDAR_SIX_PILOT_AND_LIVING_SANCTORAL",
+      "status": "EXACT_EXISTING_CALENDAR_PILOT_ID",
+      "sourceIdentityEvidence": "ICRSP's October 15 Teresa (1515–1582) is Teresa of Avila, also present in the Calendar pilot.",
+      "ownerHasHistoricalErrorClaim": null
+    },
+    {
+      "articleId": "a0415_ancien",
+      "subject": "St Jane Frances de Chantal",
+      "proposedId": null,
+      "searchedOwner": "CHECKED_SAINTS_CALENDAR_AND_POST1960_SNAPSHOTS",
+      "status": "NO_EXACT_CANONICAL_PERSON_ID_IN_INSPECTED_OWNER_SUBSETS",
+      "sourceIdentityEvidence": "External ICRSP biography has two date/papal-authority errors, but no matching person ID in checked finite owner subsets.",
+      "ownerHasHistoricalErrorClaim": "NOT_ASSESSABLE_NO_PERSON_RECORD_MATCH"
+    },
+    {
+      "articleId": "a1037_ancien",
+      "subject": "St Jane Frances de Chantal, Annecy particular proper",
+      "proposedId": null,
+      "searchedOwner": "CHECKED_SAINTS_CALENDAR_AND_POST1960_SNAPSHOTS",
+      "status": "NO_EXACT_CANONICAL_PERSON_ID_IN_INSPECTED_OWNER_SUBSETS",
+      "sourceIdentityEvidence": "Same historical person as a0415; separate Annecy particular Mass/formulary witness, not a separate saint identity.",
+      "ownerHasHistoricalErrorClaim": "NOT_ASSESSABLE_NO_PERSON_RECORD_MATCH"
+    },
+    {
+      "articleId": "a0510_ancien",
+      "subject": "St Francis Caracciolo",
+      "proposedId": null,
+      "searchedOwner": "CHECKED_SAINTS_CALENDAR_AND_POST1960_SNAPSHOTS",
+      "status": "NO_EXACT_CANONICAL_PERSON_ID_IN_INSPECTED_OWNER_SUBSETS",
+      "sourceIdentityEvidence": "ICRSP host incorrectly dates founding before saint's birth; no canonical existing person ID in checked finite pilot/snapshot cohorts.",
+      "ownerHasHistoricalErrorClaim": "NOT_ASSESSABLE_NO_PERSON_RECORD_MATCH"
+    }
+  ],
+  "formulaComparison": [
+    {
+      "family": "MULTIPLE_VIRGIN_MARTYRS_COMPOSITE",
+      "articleIds": [
+        "a0064_nouveau",
+        "a0337_ancien"
+      ],
+      "secondElectronicWitness": "https://missale.online/proprium/en/commune/commune_plurium_virginum_martyrum",
+      "directlyComparedLiturgicalElements": [
+        {
+          "slot": "INTROIT",
+          "incipit": "Me exspectaverunt",
+          "witnessStatus": "MATCHED_LATIN_FORMULA_FAMILY"
+        },
+        {
+          "slot": "EPISTLE",
+          "reference": "1 Corinthians 7:25–34",
+          "incipit": "De virginibus",
+          "witnessStatus": "MATCHED_ELECTRONIC_LITURGICAL_COMPONENT"
+        },
+        {
+          "slot": "GOSPEL",
+          "reference": "Matthew 19:3–12",
+          "witnessStatus": "SEPARATE_READINGS_MUST_BE_VERIFIED_BY_1962_PRINT"
+        },
+        {
+          "slot": "COLLECT",
+          "latinIncipit": "Da nobis, quaesumus, Domine Deus noster, sanctarum Virginum et Martyrum",
+          "witnessStatus": "MATCHED_DISTINCT_PLURAL_VIRGIN_MARTYR_ORATION"
+        },
+        {
+          "slot": "SECRET",
+          "latinIncipit": "Intende, quaesumus, Domine, munera altaribus tuis",
+          "witnessStatus": "SECONDARY_ELECTRONIC_TEXT_PRESENT"
+        },
+        {
+          "slot": "POSTCOMMUNION",
+          "latinIncipit": "Praesta nobis, quaesumus, Domine, intercedentibus sanctis Virginibus et Martyribus",
+          "witnessStatus": "SECONDARY_ELECTRONIC_TEXT_PRESENT"
+        }
+      ],
+      "currentAppAdvisoryCommonId": null,
+      "existingProperRuntime": "CALENDAR_CERTIFIED_SELECTED_PROPER_ONLY",
+      "criticalPrint1962PageViewed": false,
+      "fullyMatched1962DiplomaticLatin": false,
+      "englishFrenchTranslationCertified": false,
+      "ownerSourcePathParity": false
+    },
+    {
+      "family": "MULTIPLE_NONVIRGIN_FEMALE_MARTYRS",
+      "articleIds": [
+        "a0067_nouveau",
+        "a0342_ancien"
+      ],
+      "secondElectronicWitness": "https://missale.online/proprium/en/commune/commune_plurimarum_non_virginum_martyrum",
+      "directlyComparedLiturgicalElements": [
+        {
+          "slot": "INTROIT",
+          "incipit": "Me exspectaverunt",
+          "witnessStatus": "SHARED_INCIPIT_NOT_SAME_MASS"
+        },
+        {
+          "slot": "COLLECT",
+          "latinIncipit": "Da nobis, quaesumus, Domine Deus noster, sanctarum Martyrum tuarum",
+          "witnessStatus": "NO_VIRGINUM__DISTINCT_PRAYER"
+        },
+        {
+          "slot": "SECRET_POSTCOMMUNION",
+          "witnessStatus": "SEPARATE_MARTYR_PRAYERS_NEED_PRINTED_1962_COLLATION"
+        }
+      ],
+      "currentAppAdvisoryCommonId": null,
+      "existingProperRuntime": "CALENDAR_CERTIFIED_SELECTED_PROPER_ONLY",
+      "criticalPrint1962PageViewed": false,
+      "fullyMatched1962DiplomaticLatin": false,
+      "englishFrenchTranslationCertified": false,
+      "ownerSourcePathParity": false
+    },
+    {
+      "family": "CONFESSOR_BISHOP_STATUIT",
+      "articleIds": [
+        "a0056_nouveau",
+        "a0330_ancien",
+        "a0470_ancien"
+      ],
+      "secondElectronicWitness": "https://missale.online/proprium/en/commune/commune_unius_confessoris_pontificis",
+      "directlyComparedLiturgicalElements": [
+        {
+          "slot": "INTROIT",
+          "incipit": "Statuit ei Dominus testamentum pacis",
+          "witnessStatus": "MATCHED_LATIN_FORMULA_FAMILY"
+        },
+        {
+          "slot": "COLLECT",
+          "latinIncipit": "Da, quaesumus, omnipotens Deus: ut beati N. Confessoris tui atque Pontificis",
+          "witnessStatus": "LATIN_PRAYER_PRESENT_ELECTRONIC_WITNESS"
+        },
+        {
+          "slot": "POSTCOMMUNION",
+          "latinIncipit": "Praesta, quaesumus, omnipotens Deus",
+          "witnessStatus": "LATIN_PRAYER_PRESENT_ELECTRONIC_WITNESS"
+        }
+      ],
+      "currentAppAdvisoryCommonId": null,
+      "existingProperRuntime": "CALENDAR_CERTIFIED_SELECTED_PROPER_ONLY",
+      "criticalPrint1962PageViewed": false,
+      "fullyMatched1962DiplomaticLatin": false,
+      "englishFrenchTranslationCertified": false,
+      "ownerSourcePathParity": false
+    }
+  ],
+  "independentElectronicWitnessScope": "ICRSP source and Missale Online public Latin Common text both directly read, but neither is independently verified visual 1962 original page facsimile in this pass.",
+  "secondaryWitnessTranslationWarning": "Some displayed English passages are marked untranslated; do not treat available English/French site text as certified complete or consistent bilingual Proper.",
+  "advisoryCommonIndex": {
+    "path": "data/calendar/traditional-1962-common-formularies.review.v1.json",
+    "existingIds": [
+      "commune:1962:doctor_non_pontiff",
+      "commune:1962:doctor_pontiff",
+      "commune:1962:confessor_non_pontiff"
+    ],
+    "candidateCount": 3,
+    "missingTargetCandidates": [
+      "MULTIPLE_VIRGIN_MARTYRS_COMPOSITE",
+      "MULTIPLE_NONVIRGIN_FEMALE_MARTYRS",
+      "CONFESSOR_BISHOP_STATUIT"
+    ],
+    "proofOfRuntimeMissingFormularies": false
+  },
+  "expectedFollowup": [
+    "Match Chantal and Caracciolo to actual canonical person registry, not just pilot snapshots; inspect whether any existing approved biography contains source-site errors.",
+    "Obtain visual printed 1962 Latin Common page for three families, record printed page number and inspect all chants/prayers/readings; identify whether locally permitted.",
+    "Compare resolved Calendar-selected sourcePath / bilingual sections before alleging runtime gaps; do not create a new Mass Explorer Proper resolver.",
+    "Check separate official French 1962 St Remigius local proper against Roman commemoration and confirm actual territorial jurisdiction."
+  ],
+  "counts": {
+    "exactPositivePilotPersonLinks": 3,
+    "sourcePagesWithPositivePersonLinks": 3,
+    "sourcePagesWithoutMatchInInspectedSubsets": 3,
+    "historicalPersonsStillUnmatchedInInspectedSubsets": 2,
+    "latinFormularyFamiliesExternallyCorroboratedElectronically": 3,
+    "print1962FormularyPagesVisuallyCertified": 0,
+    "sourceReproductionPermissions": 0,
+    "canonicalOwnerCorrections": 0,
+    "appPublications": 0
+  },
+  "publicationApproved": false,
+  "printedEditionFullyCollated": false,
+  "rightsCleared": false,
+  "productionChanged": false
+}

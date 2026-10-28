@@ -1,0 +1,106 @@
+name: ICRSP B29 next 200 genuinely unseen articles — source-body research
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: icrsp-b29-fresh-source-pass
+  cancel-in-progress: false
+
+jobs:
+  plan-fresh-200:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: governance/icrsp-source-inventory-1665
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Enforce 363 previously read, 81 old-wave, 200 fresh
+        run: python -m unittest discover -s tests -p 'test_icrsp_b29_363_81_200_nonoverlap.py' -v
+      - name: Plan 200 from exact durable 783 source IDs
+        run: |
+          python tools/icrsp/plan_b29_fresh_200.py \
+            --corpus data/source-text/icrsp-france-783-verified-commentary-labels.v1.json \
+            --ledger data/source-text/icrsp-france-b28-eight-stream-363-unique-topic-ledger.v1.json \
+            --older-wave data/source-text/icrsp-france-next250-metadata-reading-queue.v1.json \
+            --handoff data/source-text/icrsp-france-b29-unread81-and-fresh200-handoff.v1.json \
+            --out icrsp-b29-200-new-source-metadata.v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-b29-source-plan
+          path: icrsp-b29-200-new-source-metadata.v1.json
+          retention-days: 30
+
+  source-body-scan:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    needs: plan-fresh-200
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        shard: [0, 1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: governance/icrsp-source-inventory-1665
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: icrsp-b29-source-plan
+          path: /tmp/icrsp-b29
+      - name: Inspect 40 real page bodies, never copy prose
+        run: |
+          python tools/icrsp/scan_b29_fresh_200.py \
+            --manifest /tmp/icrsp-b29/icrsp-b29-200-new-source-metadata.v1.json \
+            --shard ${{ matrix.shard }} --shards 5 --delay 3.5 \
+            --out b29-source-${{ matrix.shard }}.json
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-b29-source-shard-${{ matrix.shard }}
+          path: b29-source-${{ matrix.shard }}.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  validate-and-archive-screen:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    needs: [source-body-scan]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: governance/icrsp-source-inventory-1665
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: icrsp-b29-source-plan
+          path: /tmp/icrsp-b29-plan
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: icrsp-b29-source-shard-*
+          path: /tmp/icrsp-b29-shards
+      - name: Validate exact 200 source-body IDs and SHA-256 metadata; publication blocked
+        run: |
+          cp /tmp/icrsp-b29-plan/icrsp-b29-200-new-source-metadata.v1.json \
+            data/source-text/icrsp-france-b29-200-new-source-metadata.v1.json
+          python tools/icrsp/consolidate_b29_fresh_200.py \
+            --manifest data/source-text/icrsp-france-b29-200-new-source-metadata.v1.json \
+            --shard-dir /tmp/icrsp-b29-shards \
+            --out data/source-text/icrsp-france-b29-200-automated-commentary-signals.v1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-b29-200-validated-source-signals
+          path: |
+            data/source-text/icrsp-france-b29-200-new-source-metadata.v1.json
+            data/source-text/icrsp-france-b29-200-automated-commentary-signals.v1.json
+          retention-days: 90

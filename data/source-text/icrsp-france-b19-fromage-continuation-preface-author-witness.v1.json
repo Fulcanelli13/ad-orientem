@@ -1,0 +1,69 @@
+{
+  "schema": "AO_ICRSP_B19_FROMAGE_SIGNED_PREFACE_CONTINUATION_WORK_AUTHORSHIP_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "predecessors": [
+    "data/source-text/icrsp-france-b14-continued-work-authorship-and-original-loci.v1.json",
+    "data/source-text/icrsp-france-b18-fourth-sunday-original-edition-ocr-witness.v1.json"
+  ],
+  "scope": "Original-voice edition-labelled printed-preface transcription for attribution history, no fourth-Sunday printed photograph or 1962 reader content.",
+  "directAuthorialWitness": {
+    "url": "https://www.societaslaudis.org/fr/JG-DG-AL15Pt6_complet/",
+    "work": "L’Année liturgique",
+    "section": "Le Temps après la Pentecôte",
+    "continuationVolume": 6,
+    "edition": 3,
+    "year": 1901,
+    "imprint": "Librairie religieuse H. Oudin, Paris / Poitiers",
+    "documentLocation": "Preface near opening, signed immediately before chapter I",
+    "exactSignedInitials": "Fr. L. F. O.S.B.",
+    "prefaceDate": "1900-11-22",
+    "prefacePlace": "Solesmes",
+    "authorSelfPlacement": "Author speaks as responsible for finishing Guéranger's undertaking, describes the assigned task and contrasts his labour with Dom Guéranger's achievement.",
+    "shortVerbatimMarkers": [
+      "Voici donc terminée cette Année liturgique",
+      "la tâche que nous imposait il y a vingt-cinq ans l’obéissance"
+    ],
+    "sourceEvidenceType": "1901_EDITION_LABELLED_PREFACE_FULL_TEXT_RETRANSCRIPTION",
+    "printedCoverPhotoRead": false,
+    "printedPrefacePagePhotoRead": false,
+    "contemporaryEditionIdentityFromTranscription": true,
+    "authorshipInference": "L. F. initials consistent with Dom Lucien Fromage named as continuator by Solesmes and BnF; not standalone full-name signature proof.",
+    "appAuthorAttributionReady": false
+  },
+  "independentAuthority": [
+    {
+      "url": "https://www.abbayedesolesmes.fr/produit/introduction-a-lannee-liturgique/",
+      "role": "MONASTIC_INSTITUTION_AUTHORSHIP_HISTORY",
+      "continuerNamed": "Dom Lucien Fromage"
+    },
+    {
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb318196703",
+      "role": "NATIONAL_LIBRARY_SERIES_AUTHOR_CONTINUATION",
+      "continuerNamed": "Dom Lucien Fromage"
+    }
+  ],
+  "websiteMisattributionExample": {
+    "url": "https://www.bibliotheque-catholique.com/liturgie/dom-gueranger/l-annee-liturgique-tome-11-le-temps-apres-la-pentecote-tome-2",
+    "labelOnPage": "Dom Guéranger O.S.B. as author of tome 11",
+    "correction": "Website describes the whole work and not verified authorship of the continuation; do not treat the displayed personal-author title as evidence of actual passage authorship."
+  },
+  "continuationSecondVolume": {
+    "target": "https://icrspfrance.fr/textes-liturgiques.php?article=a0222_nouveau",
+    "existingMassSourcePath": "Tempora/Pent04-0",
+    "linkToB18": "data/source-text/icrsp-france-b18-fourth-sunday-original-edition-ocr-witness.v1.json",
+    "actualPhotographedFourthSundayParagraphRead": false,
+    "xvXviVariant": "OCR-and-ICRSP support XVI; later source quotes XV; photographic certification remains pending",
+    "warning": "Volume VI preface confirms series completion and likely person, but cannot certify a specific line in Volume II."
+  },
+  "releaseGates": {
+    "historicallySignedAuthorPrefaceSourceFound": true,
+    "primaryPrintedPhotoCollations": 0,
+    "printVolumeIIExactPageVerified": false,
+    "all492WebsitePanelsPersonallyAuthorVerified": false,
+    "rightsClearedForHostReproduction": false,
+    "newMassExplorerContentApproved": false,
+    "productionChanges": 0
+  },
+  "publicationApproved": false
+}

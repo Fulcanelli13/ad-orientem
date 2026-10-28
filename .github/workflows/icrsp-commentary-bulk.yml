@@ -1,0 +1,141 @@
+name: ICRSP authenticated commentary container inventory
+on:
+  push:
+    branches: [governance/icrsp-source-inventory-1665]
+    paths: ['.github/workflows/icrsp-commentary-bulk.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  author-block-windows:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - { start: 0, count: 215 }
+          - { start: 215, count: 215 }
+          - { start: 430, count: 215 }
+          - { start: 645, count: 210 }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          run-id: 40202997017
+          github-token: ${{ github.token }}
+          repository: Fulcanelli13/ad-orientem
+          name: icrsp-855-metadata-verified
+          path: /tmp/icrsp
+      - name: Unit-test exact commentary label ownership
+        run: python -m unittest discover -s tests -p 'test_icrsp_commentary_boundaries.py' -v
+      - name: Screen only pages with confirmed commentary headings
+        run: |
+          python tools/icrsp/extract_commentary_blocks.py \
+            --manifest /tmp/icrsp/icrsp-france-index-screened.v1.json \
+            --only-commentary \
+            --start ${{ matrix.start }} \
+            --count ${{ matrix.count }} \
+            --delay 5.0 \
+            --out icrsp-commentary-${{ matrix.start }}.json
+      - name: Preserve per-window results (source labels only)
+        uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-commentary-window-${{ matrix.start }}
+          path: icrsp-commentary-${{ matrix.start }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  verified-merge:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    needs: [author-block-windows]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          run-id: 40202997017
+          github-token: ${{ github.token }}
+          repository: Fulcanelli13/ad-orientem
+          name: icrsp-855-metadata-verified
+          path: /tmp/verified-index
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: icrsp-commentary-window-*
+          path: /tmp/icrsp-commentary
+          merge-multiple: false
+      - name: Reconcile to the 855-source registry without changing app content
+        run: |
+          python - <<'PY'
+          import glob, json
+          from collections import Counter
+          from pathlib import Path
+          idx=json.loads(Path('/tmp/verified-index/icrsp-france-index-screened.v1.json').read_text(encoding='utf8'))
+          expected={
+              i:p for i,p in enumerate(idx['pages'])
+              if any(h.get('level')=='h3' and h.get('text')=='Commentaires'
+                     for h in p.get('headings',[]))
+          }
+          files=sorted(glob.glob('/tmp/icrsp-commentary/**/icrsp-commentary-*.json',recursive=True))
+          assert len(files)==4,(len(files),files)
+          records=[]
+          audits=[]
+          for fn in files:
+              d=json.loads(Path(fn).read_text(encoding='utf8'))
+              assert d['totals']['errors']==0,(fn,d['errors'])
+              assert d['totals']['requested']==d['totals']['inspected']
+              audits.append({'file':Path(fn).name,'totals':d['totals']})
+              records.extend(d['records'])
+          assert len(records)==len(expected)==783,(len(records),len(expected))
+          positions=[r['indexPosition'] for r in records]
+          assert len(set(positions))==783
+          assert set(positions)==set(expected)
+          for r in records:
+              p=expected[r['indexPosition']]
+              assert r['sourceUrl']==p['sourceUrl'] and r['articleId']==p['articleId']
+              assert r['editionCertification']=='NOT_CERTIFIED_1962'
+              for b in r['commentaryBlocks']:
+                  assert b['rights']=='NOT_CLEARED_LINK_AND_METADATA_ONLY'
+                  assert len(b['blockLabel'])<=180
+          records.sort(key=lambda r:r['indexPosition'])
+          works=Counter(b['workCandidate'] or 'OTHER_OR_ANONYMOUS'
+                        for r in records for b in r['commentaryBlocks'])
+          sections=Counter(r['indexSection'] for r in records)
+          summary={
+              'schema':'AO_ICRSP_783_COMMENTARY_INVENTORY_SUMMARY_V1',
+              'sourceIndexCount':len(idx['pages']),
+              'commentaryPageCount':len(records),
+              'pagesWithCommentaryBlock':sum(bool(r['commentaryBlocks']) for r in records),
+              'distinctCommentaryBlocks':sum(len(r['commentaryBlocks']) for r in records),
+              'workLabels':dict(works),
+              'sections':dict(sections),
+              'errors':0,
+              'editionCertified':0,
+              'rightsCleared':0,
+              'publicationPromoted':0,
+              'windowAudits':audits
+          }
+          root={'schema':'AO_ICRSP_783_COMMENTARY_BLOCKS_V1',
+                'status':'VERIFIED_SOURCE_LABELS_ONLY_NOT_ORIGINAL_WORK_CERTIFIED',
+                'summary':summary,'records':records}
+          Path('icrsp-commentary-783.v1.json').write_text(json.dumps(root,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+          Path('icrsp-commentary-summary.v1.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+          print(json.dumps(summary,ensure_ascii=False))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-commentary-783-merged
+          path: |
+            icrsp-commentary-783.v1.json
+            icrsp-commentary-summary.v1.json
+          retention-days: 90
+          if-no-files-found: error

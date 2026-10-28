@@ -1,0 +1,54 @@
+name: ICRSP consolidate verified article metadata
+on:
+  push:
+    branches: [governance/icrsp-source-inventory-1665]
+    paths: ['.github/workflows/icrsp-source-consolidate.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  combine-prior-successful-slices:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download four independently inspected slices from run 40201473021
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 40201473021
+          github-token: ${{ github.token }}
+          repository: Fulcanelli13/ad-orientem
+          pattern: icrsp-window-*
+          path: /tmp/icrsp-windows
+          merge-multiple: false
+      - name: Reconcile 855 identities and merge inspected metadata
+        run: |
+          python tools/icrsp/combine_source_windows.py \
+            --baseline data/source-text/icrsp-france-index-discovery.v1.json \
+            --windows '/tmp/icrsp-windows/**/icrsp-france-index-discovery.v1.json' \
+            --out icrsp-france-index-screened.v1.json
+      - name: Assert aggregate completion and nonpublication
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('icrsp-france-index-screened.v1.json', encoding='utf-8'))
+          assert d['totals']['metadataInspected']==855
+          assert d['totals']['fetchFailures']==0
+          assert d['indexSignatureEquivalentAcrossSnapshots']
+          assert d['totals']['canonicalRecordsPromoted']==0
+          assert all(p['authorAttributionCertification']=='NOT_CERTIFIED' for p in d['pages'])
+          print('PASS: all 855 metadata pages reconciled; publication gate still closed')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: icrsp-855-metadata-verified
+          path: icrsp-france-index-screened.v1.json
+          retention-days: 90
+          if-no-files-found: error

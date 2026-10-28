@@ -1,0 +1,2229 @@
+{
+  "schema": "AO_ICRSP_B32_B29_200_MACHINE_TOPICAL_PRIORITIES_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "source": "data/source-text/icrsp-france-b29-200-automated-commentary-signals.v1.json",
+  "definition": "Exact 200-source lexical-signal review order only. Never equate keyword matches with accurate historical claims, independent authors, publication rights or missing product content.",
+  "scoring": "Weighted distinct signal families across non-Office source panels (body >=150 normalized characters); capped 3 panels per topic; 1962-historic edition penalty, Office penalty, short-panel penalty. Not an accuracy score.",
+  "counts": {
+    "distinctSourceArticles": 200,
+    "sourcePanels": 551,
+    "metadataPanelDrifts": 24,
+    "retainedRankedRows": 80,
+    "sourcePanelDuplicateHashGroups": 39,
+    "sourcePanelExcessIdenticalHashOccurrences": 50,
+    "verifiedAppGaps": 0,
+    "appPublicationApprovals": 0
+  },
+  "rankedFirst80": [
+    {
+      "articleId": "a0029_nouveau",
+      "articleTitle": "Vendredi Saint après 1955",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0029_nouveau",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 52,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 3,
+        "PATRISTIC_REFERENCE": 4,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 2
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0030_nouveau",
+      "articleTitle": "Samedi Saint après 1951",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0030_nouveau",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 49,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 3,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 2
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0031_nouveau",
+      "articleTitle": "Dimanche de la Résurrection (Dimanche de Pâques)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0031_nouveau",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 46,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 3,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 2
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0180_ancien",
+      "articleTitle": "2ᵉ dimanche de Carême",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0180_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 46,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 3,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 1
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0013_nouveau",
+      "articleTitle": "Lundi Saint",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0013_nouveau",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 45,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 3,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 1
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0116_ancien",
+      "articleTitle": "2ᵉ dimanche après l’Epiphanie",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0116_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 44,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 3,
+        "PATRISTIC_REFERENCE": 4,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 4,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0014_nouveau",
+      "articleTitle": "Mardi Saint",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0014_nouveau",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 43,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 3,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 1
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0140_ancien",
+      "articleTitle": "Jeudi après les Cendres",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0140_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 43,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 4,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 4,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 2
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0093_ancien",
+      "articleTitle": "Mercredi des Quatre-Temps de l’Avent",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0093_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 41,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 3,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 2,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0008_nouveau",
+      "articleTitle": "Vendredi de la Passion",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0008_nouveau",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 40,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 3,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 4,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 3
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0088_ancien",
+      "articleTitle": "1ᵉʳ dimanche de l’Avent",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0088_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 40,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 3,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 2,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0389_ancien",
+      "articleTitle": "St Pierre aux Liens, apôtre",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0389_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 40,
+      "nonOfficePanelsWithBody": 5,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 4,
+        "CUSTOM_PROCESSION_BLESSING": 2,
+        "SAINTS_CULT_AND_HISTORY": 5,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED",
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0036_ancien",
+      "articleTitle": "Mercredi Saint (avant Pie XII)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0036_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 39,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 3,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 1
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED",
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0154_ancien",
+      "articleTitle": "Samedi après les Cendres",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0154_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 39,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 4,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0403_ancien",
+      "articleTitle": "St Laurent, martyr",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0403_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 39,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 4,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 4,
+        "LITURGICAL_CALENDAR_HISTORY": 4,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0438_ancien",
+      "articleTitle": "St Laurent Justinien, évêque et confesseur",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0438_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 39,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 4,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 4,
+        "LITURGICAL_CALENDAR_HISTORY": 4,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0089_ancien",
+      "articleTitle": "2ᵉ dimanche de l’Avent",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0089_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 38,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 3,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 2,
+        "SAINTS_CULT_AND_HISTORY": 4,
+        "LITURGICAL_CALENDAR_HISTORY": 0,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0035_ancien",
+      "articleTitle": "Mardi Saint (avant Pie XII)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0035_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 37,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 3,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 1
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED",
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0091_ancien",
+      "articleTitle": "4ᵉ dimanche de l’Avent",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0091_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 37,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 4,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 2,
+        "CUSTOM_PROCESSION_BLESSING": 4,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0352_ancien",
+      "articleTitle": "Visitation de la Vierge Marie",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0352_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 37,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 3,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 4,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0510_ancien",
+      "articleTitle": "St François Carraciolo, confesseur",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0510_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 37,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 3,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0630_ancien",
+      "articleTitle": "Chaire de St Pierre Apôtre à Rome",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0630_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 37,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0153_ancien",
+      "articleTitle": "Vendredi après les Cendres",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0153_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 36,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 3,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0199_ancien",
+      "articleTitle": "4ᵉ Dimanche de Carême",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0199_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 34,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 2,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 2
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0422_ancien",
+      "articleTitle": "St Joseph Calasance, confesseur",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0422_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 33,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0811_ancien",
+      "articleTitle": "Sᵗᵉ Pétronille, vierge",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0811_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 33,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 4,
+        "CUSTOM_PROCESSION_BLESSING": 2,
+        "SAINTS_CULT_AND_HISTORY": 4,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 2
+      },
+      "cautions": [],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0407_ancien",
+      "articleTitle": "Sts Hippolyte et Cassien, martyrs",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0407_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 30,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 4,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 4,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 1
+      },
+      "cautions": [],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0420_ancien",
+      "articleTitle": "St Louis, roi, confesseur",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0420_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 30,
+      "nonOfficePanelsWithBody": 5,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0658_ancien",
+      "articleTitle": "2ᵉ jour dans l’Octave de l’Épiphanie (7 janvier, avant 1955)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0658_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 30,
+      "nonOfficePanelsWithBody": 2,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 2,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 1
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED",
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0819_ancien",
+      "articleTitle": "Lundi de la 2ᵉ semaine de l’Avent",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0819_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 30,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 3,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 2,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0078_nouveau",
+      "articleTitle": "St Herménégilde, Martyr",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0078_nouveau",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 29,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0130_ancien",
+      "articleTitle": "Dimanche de la Septuagésime",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0130_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 29,
+      "nonOfficePanelsWithBody": 2,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 2,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0110_ancien",
+      "articleTitle": "La Sainte Famille (dimanche après l’Epiphanie)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0110_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 28,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 4,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0632_ancien",
+      "articleTitle": "Sts Marius, Marthe, Audifax et Abachus, martyrs",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0632_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 28,
+      "nonOfficePanelsWithBody": 2,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 2,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0127_nouveau",
+      "articleTitle": "St Robert Bellarmin, Evêque, Confesseur et Docteur",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0127_nouveau",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 27,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 2,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0359_ancien",
+      "articleTitle": "St Jean Gualbert, abbé",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0359_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 27,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 2,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0661_ancien",
+      "articleTitle": "5ᵉ jour dans l’Octave de l’Épiphanie (10 janvier, avant 1955)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0661_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 27,
+      "nonOfficePanelsWithBody": 2,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 2,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 1
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED",
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0663_ancien",
+      "articleTitle": "7ᵉ jour dans l’Octave de l’Épiphanie (12 janvier, avant 1955)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0663_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 27,
+      "nonOfficePanelsWithBody": 2,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 2,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED",
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0427_ancien",
+      "articleTitle": "Sᵗᵉ Rose de Lima, vierge",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0427_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 26,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 4,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0056_ancien",
+      "articleTitle": "L’Ordo missæ (par un groupe de théologiens)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0056_ancien",
+      "section": "votives_requiem",
+      "candidateExistingOwner": "EXISTING_MASS_FORMULARIES_REFERENCE",
+      "heuristicScore": 25,
+      "nonOfficePanelsWithBody": 1,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 1
+      },
+      "cautions": [],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0401_ancien",
+      "articleTitle": "Sts Cyriaque, Large et Smaragde, martyrs",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0401_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 25,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 2,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 4,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED",
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0428_ancien",
+      "articleTitle": "Sts Félix et Adauctus, martyrs",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0428_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 25,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 4,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 2
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0133_ancien",
+      "articleTitle": "Dimanche de la Sexagésime",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0133_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 24,
+      "nonOfficePanelsWithBody": 2,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 0,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0412_ancien",
+      "articleTitle": "St Agapit, martyr",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0412_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 24,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 2,
+        "SAINTS_CULT_AND_HISTORY": 4,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0660_ancien",
+      "articleTitle": "4ᵉ jour dans l’Octave de l’Épiphanie (9 janvier, avant 1955)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0660_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 24,
+      "nonOfficePanelsWithBody": 2,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 1
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED",
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0662_ancien",
+      "articleTitle": "6ᵉ jour dans l’Octave de l’Épiphanie (11 janvier, avant 1955)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0662_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 24,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED",
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0157_nouveau",
+      "articleTitle": "Samedi dans l’Octave de l’Ascension",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0157_nouveau",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 23,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED",
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0584_ancien",
+      "articleTitle": "Sainte Geneviève, vierge (propre de France)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0584_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 23,
+      "nonOfficePanelsWithBody": 2,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 2,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 0,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0659_ancien",
+      "articleTitle": "3ᵉ jour dans l’Octave de l’Épiphanie (8 janvier, avant 1955)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0659_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 23,
+      "nonOfficePanelsWithBody": 2,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED",
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0684_ancien",
+      "articleTitle": "St Eusèbe, confesseur",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0684_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 23,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 0,
+        "SAINTS_CULT_AND_HISTORY": 4,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0678_ancien",
+      "articleTitle": "Sts Faustin et Jovite, martyrs",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0678_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 22,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 0,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0839_ancien",
+      "articleTitle": "O Emmanuel",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0839_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 22,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0188_ancien",
+      "articleTitle": "3ᵉ dimanche de Carême",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0188_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 21,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 2,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0192_nouveau",
+      "articleTitle": "St Ephrem, Diacre, Confesseur et Docteur de l’Eglise",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0192_nouveau",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 21,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0384_ancien",
+      "articleTitle": "St Félix, pape, et les Sts Simplice, Faustin et Béatrice, martyrs",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0384_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 21,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0405_ancien",
+      "articleTitle": "St Tiburce et Sᵗᵉ Suzanne, vierge, martyrs",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0405_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 21,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 0,
+        "SAINTS_CULT_AND_HISTORY": 4,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 1
+      },
+      "cautions": [],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0512_ancien",
+      "articleTitle": "06/06, St Norbert, évêque et confesseur",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0512_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 21,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED",
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0521_ancien",
+      "articleTitle": "18/06, St Ephrem le Syrien, diacre, confesseur et docteur",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0521_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 21,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0822_ancien",
+      "articleTitle": "Jeudi de la 2ᵉ semaine de l’Avent",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0822_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 21,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 0,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0418_ancien",
+      "articleTitle": "St Philippe Béniti, confesseur",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0418_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 20,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 2,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0637_ancien",
+      "articleTitle": "St Raymond de Pegnafort, confesseur",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0637_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 20,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0656_ancien",
+      "articleTitle": "Octave de St Jean (3 janvier, avant 1955)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0656_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 20,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED",
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0676_ancien",
+      "articleTitle": "Les Sept Saints Fondateurs de l’ordre des Servites",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0676_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 20,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 3,
+        "SAINTS_CULT_AND_HISTORY": 3,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0815_ancien",
+      "articleTitle": "Mercredi de la 1ʳᵉ semaine de l’Avent",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0815_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 20,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 0,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0136_ancien",
+      "articleTitle": "4ᵉ dimanche après l’Epiphanie",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0136_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 19,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 2,
+        "SAINTS_CULT_AND_HISTORY": 0,
+        "LITURGICAL_CALENDAR_HISTORY": 0,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0303_ancien",
+      "articleTitle": "Sainte Clotilde, Reine et Veuve",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0303_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 19,
+      "nonOfficePanelsWithBody": 2,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 2,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 0,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0315_ancien",
+      "articleTitle": "St Télesphore, pape et martyr",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0315_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 19,
+      "nonOfficePanelsWithBody": 5,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 4,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED",
+        "PERIOD_RHETORIC_CONTEXT_REVIEW",
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0832_ancien",
+      "articleTitle": "Vendredi de la 4ᵉ semaine de l’Avent",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0832_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 19,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0415_ancien",
+      "articleTitle": "Sᵗᵉ Jeanne-Françoise Frémiot de Chantal, veuve",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0415_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 18,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 0,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0417_ancien",
+      "articleTitle": "Sts Timothée, Hippolyte et Symphorien, martyrs",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0417_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 18,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 2,
+        "CUSTOM_PROCESSION_BLESSING": 0,
+        "SAINTS_CULT_AND_HISTORY": 4,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 1
+      },
+      "cautions": [],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0677_ancien",
+      "articleTitle": "St Valentin, prêtre et martyr",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0677_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 18,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 3,
+        "CUSTOM_PROCESSION_BLESSING": 0,
+        "SAINTS_CULT_AND_HISTORY": 4,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0816_ancien",
+      "articleTitle": "Jeudi de la 1ʳᵉ semaine de l’Avent",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0816_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 18,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0410_ancien",
+      "articleTitle": "St Joachim, père de la T. Sᵗᵉ Vierge Marie",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0410_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 17,
+      "nonOfficePanelsWithBody": 4,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 4,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0439_ancien",
+      "articleTitle": "Nativité de la Bse Vierge Marie",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0439_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 17,
+      "nonOfficePanelsWithBody": 2,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 0,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "NEW_SALESIAN_PANEL_SOURCE_AUTHOR_CHECK"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0666_ancien",
+      "articleTitle": "St André Corsini, évêque et confesseur",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0666_ancien",
+      "section": "sanctoral",
+      "candidateExistingOwner": "EXISTING_1962_CALENDAR_AND_SAINTS",
+      "heuristicScore": 17,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 1,
+        "CUSTOM_PROCESSION_BLESSING": 2,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0791_ancien",
+      "articleTitle": "Messe pour la Propagation de la Foi",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0791_ancien",
+      "section": "votives_requiem",
+      "candidateExistingOwner": "EXISTING_MASS_FORMULARIES_REFERENCE",
+      "heuristicScore": 17,
+      "nonOfficePanelsWithBody": 2,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 0,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0813_ancien",
+      "articleTitle": "Lundi de la 1ʳᵉ semaine de l’Avent",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0813_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 17,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 0,
+        "LITURGICAL_CALENDAR_HISTORY": 3,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0939_ancien",
+      "articleTitle": "Samedi dans l’Octave de l’Ascension (avant 1955)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0939_ancien",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 17,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 2,
+        "PATRISTIC_REFERENCE": 1,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 1,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED",
+        "PERIOD_RHETORIC_CONTEXT_REVIEW"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0156_nouveau",
+      "articleTitle": "Vendredi dans l’Octave de l’Ascension",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0156_nouveau",
+      "section": "temporal",
+      "candidateExistingOwner": "EXISTING_CALENDAR_AND_MASS_EXPLORER",
+      "heuristicScore": 16,
+      "nonOfficePanelsWithBody": 3,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 0,
+        "PATRISTIC_REFERENCE": 2,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 0,
+        "SAINTS_CULT_AND_HISTORY": 2,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [
+        "HISTORICAL_RITE_OR_EDITION_CHECK_REQUIRED"
+      ],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0346_ancien",
+      "articleTitle": "Messes de la Sᵗᵉ Vierge au Samedi I : Avent",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0346_ancien",
+      "section": "votives_requiem",
+      "candidateExistingOwner": "EXISTING_MASS_FORMULARIES_REFERENCE",
+      "heuristicScore": 16,
+      "nonOfficePanelsWithBody": 2,
+      "topicSignalsByPanelFamily": {
+        "SCRIPTURAL_FIGURES_PARALLELS": 1,
+        "PATRISTIC_REFERENCE": 0,
+        "ROMAN_STATION_OR_CHURCH": 0,
+        "CUSTOM_PROCESSION_BLESSING": 1,
+        "SAINTS_CULT_AND_HISTORY": 1,
+        "LITURGICAL_CALENDAR_HISTORY": 2,
+        "SACRED_ART_HISTORY": 0
+      },
+      "cautions": [],
+      "exactContentOwnerParagraphCompared": false,
+      "sourceClaimVerified": false,
+      "criticalEditionVerified": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    }
+  ],
+  "heldRemainderUnrankedForCurrentReview": [
+    "a0817_ancien",
+    "a1036_ancien",
+    "a0670_ancien",
+    "a0675_ancien",
+    "a1031_ancien",
+    "a0102_ancien",
+    "a0398_ancien",
+    "a0316_ancien",
+    "a0714_ancien",
+    "a0820_ancien",
+    "a0123_nouveau",
+    "a0255_ancien",
+    "a0823_ancien",
+    "a0824_ancien",
+    "a0850_ancien",
+    "a0800_ancien",
+    "a1034_ancien",
+    "a0184_nouveau",
+    "a0444_ancien",
+    "a0514_ancien",
+    "a0812_ancien",
+    "a0884_ancien",
+    "a0762_ancien",
+    "a0088_nouveau",
+    "a0293_ancien",
+    "a0683_ancien",
+    "a0688_ancien",
+    "a0693_ancien",
+    "a0694_ancien",
+    "a0703_ancien",
+    "a0727_ancien",
+    "a0535_ancien",
+    "a0741_ancien",
+    "a1029_ancien",
+    "a0854_ancien",
+    "a1033_ancien",
+    "a0048_nouveau",
+    "a0050_nouveau",
+    "a0059_nouveau",
+    "a0063_nouveau",
+    "a0071_nouveau",
+    "a0072_nouveau",
+    "a0073_nouveau",
+    "a0257_ancien",
+    "a0322_ancien",
+    "a0324_ancien",
+    "a0737_ancien",
+    "a0792_ancien",
+    "a0885_ancien",
+    "a1023_ancien",
+    "a0068_nouveau",
+    "a0256_ancien",
+    "a0432_ancien",
+    "a0433_ancien",
+    "a0652_ancien",
+    "a0654_ancien",
+    "a0736_ancien",
+    "a0889_ancien",
+    "a0220_ancien",
+    "a0827_ancien",
+    "a0829_ancien",
+    "a0830_ancien",
+    "a0047_nouveau",
+    "a0049_nouveau",
+    "a0054_nouveau",
+    "a0057_nouveau",
+    "a0058_nouveau",
+    "a0061_nouveau",
+    "a0062_nouveau",
+    "a0066_nouveau",
+    "a0113_nouveau",
+    "a0254_ancien",
+    "a0321_ancien",
+    "a0323_ancien",
+    "a0328_ancien",
+    "a0331_ancien",
+    "a0332_ancien",
+    "a0369_ancien",
+    "a0400_ancien",
+    "a0436_ancien",
+    "a0540_ancien",
+    "a0578_ancien",
+    "a0595_ancien",
+    "a0653_ancien",
+    "a0685_ancien",
+    "a0686_ancien",
+    "a0687_ancien",
+    "a0689_ancien",
+    "a0699_ancien",
+    "a0622_ancien",
+    "a0020_nouveau",
+    "a0056_nouveau",
+    "a0064_nouveau",
+    "a0065_nouveau",
+    "a0067_nouveau",
+    "a0101_ancien",
+    "a0106_ancien",
+    "a0109_ancien",
+    "a0126_ancien",
+    "a0261_ancien",
+    "a0330_ancien",
+    "a0342_ancien",
+    "a0350_ancien",
+    "a0404_ancien",
+    "a0440_ancien",
+    "a0445_ancien",
+    "a0589_ancien",
+    "a0620_ancien",
+    "a0729_ancien",
+    "a0730_ancien",
+    "a0733_ancien",
+    "a1022_ancien",
+    "a1037_ancien",
+    "a0221_ancien",
+    "a0168_ancien",
+    "a0178_ancien",
+    "a0189_ancien",
+    "a0195_ancien",
+    "a0201_ancien",
+    "a0216_ancien"
+  ],
+  "sourceProseCopied": false,
+  "publicationApproved": false
+}

@@ -1,0 +1,195 @@
+{
+  "schema": "AO_ICRSP_B48_VII_IX_OPENINGS_INSTITUTIONAL_CITATIONS_AND_LX_DATE_GATE_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "branch": "governance/icrsp-source-inventory-1665",
+  "scope": "Targeted first-paragraph passage comparisons of all three Annecy IX work entries with ICRSP, plus independent institutional citation for IX IV and VII LI. Confirm VII LX two manuscript-derived plans have conjectural dates. No independent printed-volume OCR or photographic page verification for the remaining eleven.",
+  "previousResearch": [
+    "data/source-text/icrsp-france-b47-annecy-vol7-vol9-eleven-workitem-crosswalk.v1.json",
+    "data/source-text/icrsp-france-b40-three-salesian-opening-text-concordances.v1.json"
+  ],
+  "newOriginalEditionScansAuthenticated": 0,
+  "sourceWitnesses": [
+    {
+      "type": "DIGITAL_EDITED_EDITION_TRANSCRIPTION",
+      "volume": 9,
+      "url": "https://www.donboscosanto.eu/francesco_di_sales/Lexicon/Fontes/09-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20IX-Vol.3-Sermons.html",
+      "kind": "FIRST_PARAGRAPH_TEXTUAL_CROSSCHECK"
+    },
+    {
+      "type": "DIGITAL_EDITED_EDITION_TRANSCRIPTION",
+      "volume": 7,
+      "url": "https://www.donboscosanto.eu/francesco_di_sales/Lexicon/Fontes/07-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20VII-Vol.1-Sermons.html",
+      "kind": "EDITORIAL_NOTE_AND_PRINTED_PAGE_MARKER"
+    },
+    {
+      "type": "INDEPENDENT_MONASTERY_EDITION_PAGE_CITATIONS",
+      "url": "https://visitationannecy.org/lordre-de-la-visitation/saint-francois-de-sales/la-liturgie-de-chaque-jour-avec-saint-francois-de-sales/",
+      "kind": "SECONDARY_INSTITUTIONAL_TEXT_AND_PAGE_REFERENCE_NOT_1890S_FACSIMILE"
+    },
+    {
+      "type": "HOST",
+      "url": "https://icrspfrance.fr/textes-liturgiques.php",
+      "kind": "NONCANONICAL_HOSTED_EXTRACTS_NOT_RIGHTS_CLEAR"
+    }
+  ],
+  "volumeIXOpeningConcordances": [
+    {
+      "articleId": "a0180_ancien",
+      "volume": 9,
+      "entry": "IV",
+      "host": "https://icrspfrance.fr/textes-liturgiques.php?article=a0180_ancien",
+      "hostStart": 242,
+      "editionStart": 272,
+      "editionContentStart": 281,
+      "anchor": "Jesus' first-Lent temptation then second-Lent Transfiguration, Jacob's ladder and stages of prayer",
+      "hostNextHistoricalPiece": 269,
+      "independentInstitutionalCitation": {
+        "url": "https://visitationannecy.org/lordre-de-la-visitation/saint-francois-de-sales/la-liturgie-de-chaque-jour-avec-saint-francois-de-sales/",
+        "editionPage": 27,
+        "editorialDay": "Second Sunday of Lent",
+        "editorialDate": "1614-02-23",
+        "exactSourceRange": "web page section Deuxième dimanche de Carême"
+      },
+      "priorB40OpeningCompared": false,
+      "sourcePanelSha256": "5a4df685c2c60ab0ba89b66c1e94816ec5ae36e5a839d66334c94a8e8c1b0a3a",
+      "sourceWitnessGrade": "SELECTED_FIRST_PARAGRAPH_CORRESPONDENCE_DIGITIZED_ANNECY_TRANSCRIPTION_TO_ICRSP_HOST",
+      "wholeSermonCollated": false,
+      "printImageInspected": false,
+      "recordingManuscriptInspected": false,
+      "hostContentRightsCleared": false,
+      "appOwnerParityDone": false,
+      "published": false
+    },
+    {
+      "articleId": "a0562_ancien",
+      "volume": 9,
+      "entry": "XVI",
+      "host": "https://icrspfrance.fr/textes-liturgiques.php?article=a0562_ancien",
+      "hostStart": 238,
+      "editionStart": 883,
+      "editionContentStart": 888,
+      "anchor": "Presentation of Mary; Queen of Sheba incense and Saint Joachim/Anne offering imagery",
+      "hostNextHistoricalPiece": 312,
+      "independentInstitutionalCitation": null,
+      "priorB40OpeningCompared": true,
+      "sourcePanelSha256": "7aa6877d3b1792d459f97a95ef1462231113b3ebe10c4de20a7b4c523c84cea0",
+      "sourceWitnessGrade": "SELECTED_FIRST_PARAGRAPH_CORRESPONDENCE_DIGITIZED_ANNECY_TRANSCRIPTION_TO_ICRSP_HOST",
+      "wholeSermonCollated": false,
+      "printImageInspected": false,
+      "recordingManuscriptInspected": false,
+      "hostContentRightsCleared": false,
+      "appOwnerParityDone": false,
+      "published": false
+    },
+    {
+      "articleId": "a0352_ancien",
+      "volume": 9,
+      "entry": "XIX",
+      "host": "https://icrspfrance.fr/textes-liturgiques.php?article=a0352_ancien",
+      "hostStart": 357,
+      "editionStart": 1070,
+      "editionContentStart": 1078,
+      "anchor": "Luke 1:39 Exurgens Maria and Mary's journey to Elisabeth, original spelling maintained",
+      "hostNextHistoricalPiece": 426,
+      "independentInstitutionalCitation": null,
+      "priorB40OpeningCompared": false,
+      "sourcePanelSha256": "0d75c65abc91991885834247e6fea00ddacf5ebff278ab3dd432efcc152edf14",
+      "sourceWitnessGrade": "SELECTED_FIRST_PARAGRAPH_CORRESPONDENCE_DIGITIZED_ANNECY_TRANSCRIPTION_TO_ICRSP_HOST",
+      "wholeSermonCollated": false,
+      "printImageInspected": false,
+      "recordingManuscriptInspected": false,
+      "hostContentRightsCleared": false,
+      "appOwnerParityDone": false,
+      "published": false
+    }
+  ],
+  "independentInstitutionalEditionPageCitations": [
+    {
+      "volume": 9,
+      "entry": "IV",
+      "articleId": "a0180_ancien",
+      "monasteryPage": 27,
+      "status": "EXACT_INSTITUTIONAL_DATE_AND_EDITION_PAGE_CITATION_CORROBORATED",
+      "directScannedPageChecked": false
+    },
+    {
+      "volume": 7,
+      "entry": "LI",
+      "articleId": "a0206_ancien",
+      "monasteryPage": 373,
+      "status": "MULTI_WORK_COMPOSITE_MONASTERY_EXCERPT_LOCATION_CORROBORATED_ONLY",
+      "directScannedPageChecked": false
+    }
+  ],
+  "volumeVII1601LazarusMonasteryWitness": {
+    "articleId": "a0206_ancien",
+    "volume": 7,
+    "entry": "LI",
+    "host": "https://icrspfrance.fr/textes-liturgiques.php?article=a0206_ancien",
+    "independentInstitution": "https://visitationannecy.org/lordre-de-la-visitation/saint-francois-de-sales/la-liturgie-de-chaque-jour-avec-saint-francois-de-sales/",
+    "editedDate": "1601-04-06",
+    "monasteryPrintedPageReference": 373,
+    "editionTranscriptionPrintedPages": [
+      372,
+      376
+    ],
+    "editionHeadingLine": 3028,
+    "editionParticularPageLine": 3048,
+    "thematicAnchor": "John 11, illness of Lazarus, supplication of Martha and Mary; 1601 and 1612 sermons jointly selected on monastic website",
+    "cannotAssignAllMonasteryAdaptedWordingTo1601": true,
+    "scannedPrintedPagePhotographCompared": false,
+    "wholeTextCompared": false,
+    "interpretation": "Independent monastic editorial page references volume VII p.373 alongside VIII p.98. This corroborates the bibliographic location for VII LI, but anthology excerpt combines two historical works and is not a faithful witness to the entire 1601 work."
+  },
+  "volumeVIILXDateException": {
+    "articleId": "a0309_ancien",
+    "editionEntry": "VII.LX",
+    "sourceURL": "https://icrspfrance.fr/textes-liturgiques.php?article=a0309_ancien",
+    "editionURL": "https://www.donboscosanto.eu/francesco_di_sales/Lexicon/Fontes/07-Oeuvres%20de%20Saint%20Francois%20de%20Sales-Tome%20VII-Vol.1-Sermons.html",
+    "hostHeadingLine": 832,
+    "hostEditorialNoteLine": 837,
+    "editionHeadingLine": 3492,
+    "editionPartIStartLine": 3512,
+    "editionPartIIStartLine": 3540,
+    "editedDates": [
+      "1602-06-23",
+      "1602-06-24"
+    ],
+    "dateStatus": "CONJECTURED_FROM_HANDWRITING_BY_ANNECY_EDITORS",
+    "furtherConjecture": "Editors inferred first outline might have been preached on the preceding Sunday and second on Nativity; delivery dates not independently witnessed.",
+    "separateSubworkIDs": [
+      "ANNECY_VII_LX_I",
+      "ANNECY_VII_LX_II"
+    ],
+    "originalLatinAndEditorialFrenchLayerPresent": true,
+    "eitherSermonDeliveredOnSpecificDateCertified": false,
+    "independentPrintScanPhotographReviewed": false,
+    "reviewStatus": "EDITORIAL_DATE_WARNING_SHOULD_PROPAGATE_TO_ALL_DERIVED_DISPLAY_LABELS"
+  },
+  "counts": {
+    "volumeIXUniqueNamedEntries": 3,
+    "volumeIXOpeningParagraphsDirectlyCrossChecked": 3,
+    "volumeIXNewOpeningConcordancesBeyondB40": 2,
+    "independentMonasteryEditionPageCitations": 2,
+    "existingCrosswalkNamedWorks": 27,
+    "namedWorksWithIndependentHistoricalPrintedBookScanOCRStill": 16,
+    "remainingWithoutIndependentScanOCR": 11,
+    "volumeVIIEditorConjecturalDoublePlanDateCases": 1,
+    "printPagesPhotographicallyCertifiedThisPass": 0,
+    "fullWorkWordByWordCollationsThisPass": 0,
+    "rightsCleared": 0,
+    "appPublicationApproved": 0
+  },
+  "boundaries": {
+    "originalWorkItemNotEqualSiteArticle": true,
+    "sermonGenreNotOverwrittenByHostGenericPlanSuffix": true,
+    "hostCompositePageMustNotBecomeSingleAuthorWork": true,
+    "originalTextLanguageNotSameAsModernAnthology": true,
+    "liturgicalOrCurrentScriptureTruthNotProvedByHistoricalHomily": true,
+    "noCommercialReuseAssumed": true,
+    "noSourceProseStored": true,
+    "noProductionCodeChanged": true
+  },
+  "nextGate": "Acquire truly independent printed-volume VII and IX page images/OCR for the 11 pending entries; full cross-language text segmentation and independent source rights review next. Historical 1602 date labels must remain qualified."
+}

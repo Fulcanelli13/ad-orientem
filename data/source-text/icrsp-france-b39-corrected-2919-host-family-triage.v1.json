@@ -1,0 +1,119 @@
+{
+  "schema": "AO_ICRSP_B39_CORRECTED_LABEL_FAMILY_2919_TRIAGE_V1",
+  "asOf": "2026-10-26",
+  "ownerPR": 1666,
+  "inputCohorts": [
+    "B21_140",
+    "B23_233",
+    "B29_200",
+    "B32_210"
+  ],
+  "scope": "Independent second pass across all four persisted screen cohorts and B30/B33 exact 63 Salesian drift hashes. This supersedes the INITIAL B39 guessed author-family intake only. It does not alter SHA duplicates, original labels or any source text.",
+  "correctedFamilyCounts": [
+    {
+      "candidateFamily": "PARSCH_GUIDE_LITURGIQUE_EDITION_CHECK",
+      "panelOccurrences": 544,
+      "verifiedOriginalAuthor": false,
+      "verifiedPrintEdition": false
+    },
+    {
+      "candidateFamily": "GUERANGER_HOST_ATTRIBUTION_FROMAGE_CONTINUATION_CHECK",
+      "panelOccurrences": 493,
+      "verifiedOriginalAuthor": false,
+      "verifiedPrintEdition": false
+    },
+    {
+      "candidateFamily": "SCHUSTER_LIBER_SACRAMENTORUM_EDITION_CHECK",
+      "panelOccurrences": 472,
+      "verifiedOriginalAuthor": false,
+      "verifiedPrintEdition": false
+    },
+    {
+      "candidateFamily": "FRANCIS_DE_SALES_HOST_ATTRIBUTION_UNVERIFIED",
+      "panelOccurrences": 63,
+      "verifiedOriginalAuthor": false,
+      "verifiedPrintEdition": false
+    },
+    {
+      "candidateFamily": "LEFEBVRE_MISSAL_EDITION_CHECK",
+      "panelOccurrences": 13,
+      "verifiedOriginalAuthor": false,
+      "verifiedPrintEdition": false
+    },
+    {
+      "candidateFamily": "WEBSITE_PRESENTATION_UNATTRIBUTED",
+      "panelOccurrences": 654,
+      "verifiedOriginalAuthor": false,
+      "verifiedPrintEdition": false
+    },
+    {
+      "candidateFamily": "OFFICE_OR_LITURGICAL_TEXT_SCOPE_CHECK",
+      "panelOccurrences": 520,
+      "verifiedOriginalAuthor": false,
+      "verifiedPrintEdition": false
+    },
+    {
+      "candidateFamily": "LITURGICAL_FORMULARY_UNATTRIBUTED",
+      "panelOccurrences": 12,
+      "verifiedOriginalAuthor": false,
+      "verifiedPrintEdition": false
+    },
+    {
+      "candidateFamily": "OTHER_HOST_PANEL_PROVENANCE_CHECK",
+      "panelOccurrences": 148,
+      "verifiedOriginalAuthor": false,
+      "verifiedPrintEdition": false
+    }
+  ],
+  "totals": {
+    "panelOccurrences": 2919,
+    "distinctBodyHashes": 2616,
+    "duplicateNormalizedHashes": 223,
+    "extraDuplicateOccurrences": 303,
+    "newlyAddedSalesianPanelsIdentifiedByExactArticleHash": 63,
+    "genericSalesianAddedLabels": 34,
+    "namedSermonOrPlanAddedLabels": 29,
+    "mixedHostLabelShortPlaceholderGroups": 3,
+    "substantiveDifferentAuthorRepeatedBodyGroupsEstablished": 0,
+    "originalEditionCertified": 0,
+    "rightsCleared": 0,
+    "appContentApproved": 0
+  },
+  "shortCrossAuthorReferenceOnly": [
+    {
+      "articleId": "a0620_ancien",
+      "sourceTitle": "3ᵉ Dimanche restant après l’Épiphanie",
+      "bodySha256Prefix": "060afc99da97",
+      "normalizedBodyChars": 64,
+      "labels": [
+        "Guéranger",
+        "Schuster",
+        "Parsch"
+      ]
+    },
+    {
+      "articleId": "a0622_ancien",
+      "sourceTitle": "5ᵉ Dimanche restant après l’Épiphanie",
+      "bodySha256Prefix": "6cb3cc681dbe",
+      "normalizedBodyChars": 64,
+      "labels": [
+        "Guéranger",
+        "Schuster"
+      ]
+    },
+    {
+      "articleId": "a0623_ancien",
+      "sourceTitle": "6ᵉ Dimanche restant après l’Épiphanie",
+      "bodySha256Prefix": "b0e59176cf28",
+      "normalizedBodyChars": 64,
+      "labels": [
+        "Guéranger",
+        "Schuster"
+      ]
+    }
+  ],
+  "methodology": "Candidate work-family is inferred from ICRSP host label with Parsch precedence over the generic expression année liturgique; 63 site-added Salesian panels are reattributed only to a review queue by article ID plus exact SHA even where heading omits Francis de Sales. The attribution is not certified against printed originals.",
+  "initialAuditSupersession": "Replace initial familyEditorialIntake in icrsp-france-b39-2919-panel-duplicates-and-edition-intake.v1.json when revised B39 run completes. SHA duplicate groups remain correct.",
+  "sourceProseCopied": false,
+  "publicationApproved": false
+}

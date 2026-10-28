@@ -1,0 +1,237 @@
+name: ICRSP source gap register integrity
+# Includes B11–B13 source-subject, exact lection boundaries, historical holds and publication release guards.
+on:
+  push:
+    branches: [governance/icrsp-source-inventory-1665]
+    paths:
+      - '.github/workflows/icrsp-gap-integrity.yml'
+      - 'data/source-text/icrsp-france-39-major-content-gap-triage.v1.json'
+      - 'data/source-text/icrsp-france-temporal-193-gap-register.v1.json'
+      - 'data/source-text/icrsp-france-temporal-189-dedup-verified.v1.json'
+      - 'tests/test_icrsp_gap_register_integrity.py'
+      - 'tests/test_icrsp_mass_explorer_owner_parity.py'
+      - 'data/source-text/icrsp-france-mass-explorer-39-owner-parity.v1.json'
+      - 'data/source-text/icrsp-france-mass-moment-author-overlap.v1.json'
+      - 'data/source-text/icrsp-france-temporal-193-sourcepath-crosswalk.v1.json'
+      - 'data/source-text/icrsp-france-temporal-93-sourcepath-exceptions.v2.json'
+      - 'tests/test_icrsp_temporal_sourcepath_witnesses.py'
+      - 'data/source-text/icrsp-france-b10-lent-pentecost51-content-screen.v1.json'
+      - 'tests/test_icrsp_b10_lent_pentecost_content_screen.py'
+      - 'data/source-text/icrsp-france-b11-40-commentary-theme-review.v1.json'
+      - 'tests/test_icrsp_b11_commentary_theme_review.py'
+      - 'data/source-text/icrsp-france-b11-40-content-evidence-topics.v1.json'
+      - 'data/source-text/icrsp-france-b11-51-crossdomain-content-handoff.v1.json'
+      - 'tests/test_icrsp_b11_51_content_owner_handoff.py'
+      - 'data/source-text/icrsp-france-b12-atomic-claim-and-lection-boundaries.v1.json'
+      - 'tests/test_icrsp_b12_liturgical_claim_boundaries.py'
+      - 'data/source-text/icrsp-france-b13-patristic-loci-crossbranch-handoff.v1.json'
+      - 'tests/test_icrsp_b13_patristic_handoff.py'
+      - 'data/source-text/icrsp-france-b14-gueranger-aphrahat-source-claims.v1.json'
+      - 'tests/test_icrsp_b14_source_claims.py'
+      - 'data/source-text/icrsp-france-b14-continued-work-authorship-and-original-loci.v1.json'
+      - 'data/source-text/icrsp-france-commentary-783-verified-summary.v1.json'
+      - 'tests/test_icrsp_b14_fromage_personal_authorship.py'
+      - 'data/source-text/icrsp-france-b15-original-language-and-print-evidence.v1.json'
+      - 'tests/test_icrsp_b15_original_language_evidence.py'
+      - 'data/source-text/icrsp-france-b16-edition-divergence-crossdomain-parity.v1.json'
+      - 'tests/test_icrsp_b16_edition_claim_reconciliation.py'
+      - 'data/source-text/icrsp-france-b16-fromage-six-sunday-passage-crosscheck.v1.json'
+      - 'tests/test_icrsp_b16_fromage_six_sunday_passages.py'
+      - 'data/source-text/icrsp-france-b17-fromage-edition-ledger-and-two-more-text-matches.v1.json'
+      - 'tests/test_icrsp_b17_fromage_edition_evidence.py'
+      - 'data/source-text/icrsp-france-b18-fourth-sunday-original-edition-ocr-witness.v1.json'
+      - 'tests/test_icrsp_b18_fourth_sunday_scan_ocr_variant.py'
+      - 'data/source-text/icrsp-france-b19-fromage-continuation-preface-author-witness.v1.json'
+      - 'tests/test_icrsp_b19_signed_preface_edition_boundaries.py'
+      - 'data/source-text/icrsp-france-b20-sanctoral-temporal-160-content-selection.v1.json'
+      - 'data/source-text/icrsp-france-b20-ten-web-reviewed-claim-leads-and-owner-parity.v1.json'
+      - 'tests/test_icrsp_b20_source_content_selection.py'
+      - 'data/source-text/icrsp-france-855-verified-metadata.v1.json'
+      - 'data/source-text/icrsp-france-783-verified-commentary-labels.v1.json'
+      - 'data/source-text/icrsp-france-corpus-coverage-20261026.v1.json'
+      - 'data/source-text/icrsp-france-next250-metadata-reading-queue.v1.json'
+      - 'tests/test_icrsp_durable_855_783_250_coverage.py'
+      - 'data/source-text/icrsp-france-b22-relevance-exceptions-and-existing-owner-editorial-drafts.v1.json'
+      - 'tests/test_icrsp_b22_relevance_and_quarantine.py'
+      - 'tests/test_icrsp_b22_233_distinct_source_scan.py'
+      - 'tests/test_icrsp_b22_direct_11_source_topics.py'
+      - 'tests/test_icrsp_b22_cross_workstream_93_unique.py'
+      - 'data/source-text/icrsp-france-b23-233-automated-commentary-signals.v1.json'
+      - 'data/source-text/icrsp-france-b23-twenty-additional-direct-commentary-topics.v1.json'
+      - 'tests/test_icrsp_b23_233_persisted_signals.py'
+      - 'data/source-text/icrsp-france-b23-next100-human-editorial-priority.v1.json'
+      - 'data/source-text/icrsp-france-b24-25-direct-commentary-topic-observations.v1.json'
+      - 'tests/test_icrsp_b24_25_direct_topic_notes.py'
+      - 'data/source-text/icrsp-france-b25-75-direct-webpage-topic-passages.v1.json'
+      - 'data/source-text/icrsp-france-b25-scoped-owner-content-parity.v1.json'
+      - 'tests/test_icrsp_b25_75_direct_topic_and_owner_parity.py'
+      - 'tests/test_icrsp_b23_next100_editorial_priority.py'
+      - 'tests/test_icrsp_b23_twenty_source_topics.py'
+      - 'data/source-text/icrsp-france-b22-233-distinct-source-body-scan-queue.v1.json'
+      - 'data/source-text/icrsp-france-b22-eleven-direct-commentary-topics.v1.json'
+      - 'data/source-text/icrsp-france-b22-cross-workstream-93-direct-read-reconciliation.v1.json'
+      - 'data/source-text/icrsp-france-b26-twenty-direct-page-content-and-two-source-errors.v1.json'
+      - 'tests/test_icrsp_b26_real_page_claims_and_error_quarantine.py'
+      - 'data/source-text/icrsp-france-b27-47-source-paragraphs-and-owner-holds.v1.json'
+      - 'tests/test_icrsp_b27_47_source_page_reconciliation.py'
+      - 'data/source-text/icrsp-france-b27-reconciled-109-unread-article-queue.v1.json'
+      - 'data/source-text/icrsp-france-b27-28-direct-source-topic-readings.v1.json'
+      - 'data/source-text/icrsp-france-b27-12-scoped-owner-parity-and-two-drafts.v1.json'
+      - 'data/source-text/icrsp-france-b27-seven-stream-301-unique-direct-topic-ledger.v1.json'
+      - 'tests/test_icrsp_b27_reconciled_109_and_28_reviewed.py'
+      - 'data/source-text/icrsp-france-b28-eight-stream-363-unique-topic-ledger.v1.json'
+      - 'data/source-text/icrsp-france-b28-last62-complete-selected-excerpt-review.v1.json'
+      - 'tests/test_icrsp_b28_eight_stream_363_unique_and_b21_160.py'
+      - 'data/source-text/icrsp-france-b29-first30-direct-excerpts.v1.json'
+      - 'data/source-text/icrsp-france-b29-second30-direct-excerpts.v1.json'
+      - 'data/source-text/icrsp-france-b29-last21-20-direct-one-search.v1.json'
+      - 'data/source-text/icrsp-france-b29-nine-stream-443-unique-topic-ledger.v1.json'
+      - 'data/source-text/icrsp-france-b29-18-owner-comparisons-and-one-confirmed-chronology-error.v1.json'
+      - 'tests/test_icrsp_b29_80_direct_source_topics_and_owner_holds.py'
+      - 'data/source-text/icrsp-france-b28-last62-complete-selected-excerpt-review.v1.json'
+      - 'tests/test_icrsp_b28_160_selected_excerpt_completion.py'
+      - 'data/source-text/icrsp-france-b29-unread81-and-fresh200-handoff.v1.json'
+      - 'tools/icrsp/plan_b29_fresh_200.py'
+      - 'tools/icrsp/scan_b29_fresh_200.py'
+      - 'tools/icrsp/consolidate_b29_fresh_200.py'
+      - 'tests/test_icrsp_b29_363_81_200_nonoverlap.py'
+      - 'data/source-text/icrsp-france-b29-12-new-direct-topic-excerpts.v1.json'
+      - 'data/source-text/icrsp-france-b29-nine-stream-375-unique-topic-ledger.v1.json'
+      - 'tests/test_icrsp_b29_nine_stream_375_unique.py'
+      - 'data/source-text/icrsp-france-b30-30-direct-page-claims-and-source-duplication.v1.json'
+      - 'data/source-text/icrsp-france-b30-ten-stream-405-unique-topic-ledger.v1.json'
+      - 'tests/test_icrsp_b30_405_unique_source_and_fidelis_error.py'
+      - 'data/source-text/icrsp-france-b30-24-added-francis-de-sales-panel-labels.v1.json'
+      - 'tests/test_icrsp_b30_24_francis_de_sales_panel_drift.py'
+      - 'data/source-text/icrsp-france-b31-39-final-existing-queue-topical-review.v1.json'
+      - 'data/source-text/icrsp-france-b31-eleven-stream-444-unique-topic-ledger.v1.json'
+      - 'tests/test_icrsp_b31_444_unique_and_original_250_closed.py'
+      - 'data/source-text/icrsp-france-b31-eight-commons-owner-parity-hold.v1.json'
+      - 'tests/test_icrsp_b31_eight_commons_existing_owner_gate.py'
+      - 'data/source-text/icrsp-france-b32-five-selected-b29-direct-source-topics.v1.json'
+      - 'data/source-text/icrsp-france-b32-449-unique-direct-topic-ledger.v1.json'
+      - 'tests/test_icrsp_b32_five_real_source_topics.py'
+      - 'data/source-text/icrsp-france-b33-b32-last210-salesian-panel-drift.v1.json'
+      - 'tests/test_icrsp_b33_last210_salesian_drift.py'
+      - 'data/source-text/icrsp-france-b32-editorial20-fresh200.v1.json'
+      - 'data/source-text/icrsp-france-b32-464-unique-topical-ledger.v1.json'
+      - 'tests/test_icrsp_b32_editorial20_fresh200.py'
+      - 'data/source-text/icrsp-france-b33-twenty-two-direct-source-topics.v1.json'
+      - 'data/source-text/icrsp-france-b33-486-unique-topical-ledger.v1.json'
+      - 'tests/test_icrsp_b33_486_source_review.py'
+      - 'data/source-text/icrsp-france-b34-thirty-six-direct-commentary-observations.v1.json'
+      - 'data/source-text/icrsp-france-b34-522-unique-direct-topic-ledger.v1.json'
+      - 'tests/test_icrsp_b34_522_direct_topics.py'
+      - 'data/source-text/icrsp-france-b34-nineteen-direct-source-article-excerpts.v1.json'
+      - 'data/source-text/icrsp-france-b34-505-unique-topical-ledger.v1.json'
+      - 'tests/test_icrsp_b34_505_direct_and_source_error.py'
+      - 'data/source-text/icrsp-france-b34-541-two-workstream-direct-topic-ledger.v1.json'
+      - 'data/source-text/icrsp-france-b34-remaining278-priority120-owner-triage.v1.json'
+      - 'data/source-text/icrsp-france-b34-242-remaining120-priority-owner-queue.v1.json'
+      - 'tests/test_icrsp_b34_541_union_and_242_priority.py'
+      - 'data/source-text/icrsp-france-b35-35-direct-source-passages.v1.json'
+      - 'data/source-text/icrsp-france-b35-576-unique-direct-topic-ledger.v1.json'
+      - 'data/source-text/icrsp-france-b35-207-unreviewed-owner-priority-queue.v1.json'
+      - 'tests/test_icrsp_b35_576_direct_and_207_queue.py'
+      - 'data/source-text/icrsp-france-b36-50-direct-source-observations.v1.json'
+      - 'data/source-text/icrsp-france-b36-641-unique-direct-topic-ledger.v1.json'
+      - 'data/source-text/icrsp-france-b36-142-unread-priority20-and-other122.v1.json'
+      - 'tests/test_icrsp_b36_641_union_and_142_remain.py'
+      - 'data/source-text/icrsp-france-b35-first50-priority-direct-topic-excerpts.v1.json'
+      - 'data/source-text/icrsp-france-b35-591-unique-direct-topic-ledger.v1.json'
+      - 'data/source-text/icrsp-france-b35-after50-priority70-and-rest122.v1.json'
+      - 'tests/test_icrsp_b35_first50_exact_priority.py'
+      - 'data/source-text/icrsp-france-b35-parallel-35-50-dedup-and-holds.v1.json'
+      - 'tests/test_icrsp_b35_parallel_35_50_exact_dedup.py'
+      - 'data/source-text/icrsp-france-b36-final70-priority-direct-source-notes.v1.json'
+      - 'data/source-text/icrsp-france-b36-661-unique-direct-topic-ledger.v1.json'
+      - 'data/source-text/icrsp-france-b36-only122-left-owner-review.v1.json'
+      - 'tests/test_icrsp_b36_661_unique_last122.py'
+      - 'data/source-text/icrsp-france-b36-50-inside70-crossworkstream-dedup.v1.json'
+      - 'tests/test_icrsp_b36_parallel50_inside70.py'
+      - 'data/source-text/icrsp-france-b38-53-nonoffice-source-inspections.v1.json'
+      - 'data/source-text/icrsp-france-b38-nine-office-out-of-scope-reads.v1.json'
+      - 'data/source-text/icrsp-france-b38-783-unique-source-article-passages.v1.json'
+      - 'tests/test_icrsp_b38_all783_passage_coverage.py'
+      - 'data/source-text/icrsp-france-b39-eighteen-existing-owner-scoped-parity.v1.json'
+      - 'tests/test_icrsp_b39_eighteen_existing_owner_parity.py'
+      - 'data/source-text/icrsp-france-b40-three-commons-and-six-saints-snapshot-owner-check.v1.json'
+      - 'tests/test_icrsp_b40_saints_identity_three_commons_holds.py'
+      - 'data/source-text/icrsp-france-b41-1962-vatican-three-commons-print-image-collation.v1.json'
+      - 'tests/test_icrsp_b41_1962_printed_commons_visual_structure.py'
+      - 'data/source-text/icrsp-france-b38-783-all-selected-source-passages-ledger.v1.json'
+      - 'tests/test_icrsp_b38_all_783_article_passages_and_release_gates.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-source-gap-registry:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate all source, owner and release-gate contracts
+        run: |
+          python -m unittest discover -s tests -p 'test_icrsp_gap_register_integrity.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_mass_explorer_owner_parity.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_temporal_sourcepath_witnesses.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b10_lent_pentecost_content_screen.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b11_commentary_theme_review.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b11_51_content_owner_handoff.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b12_liturgical_claim_boundaries.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b13_patristic_handoff.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b14_source_claims.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b14_fromage_personal_authorship.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b15_original_language_evidence.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b16_edition_claim_reconciliation.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b16_fromage_six_sunday_passages.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b17_fromage_edition_evidence.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b18_fourth_sunday_scan_ocr_variant.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b19_signed_preface_edition_boundaries.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b20_source_content_selection.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_durable_855_783_250_coverage.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b22_relevance_and_quarantine.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b22_233_distinct_source_scan.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b22_direct_11_source_topics.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b22_cross_workstream_93_unique.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b23_233_persisted_signals.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b23_next100_editorial_priority.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b23_twenty_source_topics.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b24_25_direct_topic_notes.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b25_75_direct_topic_and_owner_parity.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b26_real_page_claims_and_error_quarantine.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b27_47_source_page_reconciliation.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b27_reconciled_109_and_28_reviewed.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b28_eight_stream_363_unique_and_b21_160.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b29_80_direct_source_topics_and_owner_holds.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b28_160_selected_excerpt_completion.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b29_363_81_200_nonoverlap.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b29_nine_stream_375_unique.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b30_405_unique_source_and_fidelis_error.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b30_24_francis_de_sales_panel_drift.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b31_444_unique_and_original_250_closed.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b31_eight_commons_existing_owner_gate.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b32_five_real_source_topics.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b33_last210_salesian_drift.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b32_editorial20_fresh200.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b33_486_source_review.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b34_522_direct_topics.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b35_first50_exact_priority.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b35_parallel_35_50_exact_dedup.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b36_661_unique_last122.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b36_parallel50_inside70.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b38_all783_passage_coverage.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b39_eighteen_existing_owner_parity.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b40_saints_identity_three_commons_holds.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b41_1962_printed_commons_visual_structure.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b38_all_783_article_passages_and_release_gates.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b34_505_direct_and_source_error.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b34_541_union_and_242_priority.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b35_576_direct_and_207_queue.py' -v
+          python -m unittest discover -s tests -p 'test_icrsp_b36_641_union_and_142_remain.py' -v

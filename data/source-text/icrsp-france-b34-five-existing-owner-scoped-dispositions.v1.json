@@ -1,0 +1,86 @@
+{
+  "schema": "AO_ICRSP_B34_FIVE_SCOPED_OWNER_DISPOSITIONS_V1",
+  "date": "2026-10-26",
+  "ownerPR": 1666,
+  "coverage": "Five directly read source articles checked against existing Calendar, Customs, Saints or Mass Explorer responsibility. This is a scoped owner finding, not an exhaustive repository paragraph-level comparison.",
+  "checkedRuntimeFiles": [
+    "src/calendar/liturgical-year.js",
+    "src/calendar/traditional-year-v384.js",
+    "src/calendar/customs-read-model.js",
+    "src/learn/mass-explorer-selected-calendar-proper.js",
+    "src/calendar/sanctoral-person-reconciliation.js"
+  ],
+  "counts": {
+    "cases": 5,
+    "confirmedExtraAppContent": 0,
+    "productionPublicationApprovals": 0
+  },
+  "rows": [
+    {
+      "articleId": "a0556_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0556_ancien",
+      "candidateExistingOwner": "SAINTS",
+      "issue": "GERTRUDE_1606_SOURCE_ANACHRONISM",
+      "sourceSpecificEvidence": "Source says Paul VI in 1606; Pope Paul V is correct.",
+      "editorialDisposition": "Hold original error; exact saint person ID unresolved.",
+      "originalEditionVerified": false,
+      "exactCanonicalOwnerRecordMatched": false,
+      "appGapConfirmed": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0562_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0562_ancien",
+      "candidateExistingOwner": "CALENDAR",
+      "issue": "MARY_PRESENTATION_APOCRYPHAL_ORIGIN",
+      "sourceSpecificEvidence": "Source identifies Protoevangelium of James as the originating narrative.",
+      "editorialDisposition": "Label as extra-biblical tradition, not a Gospel event.",
+      "originalEditionVerified": false,
+      "exactCanonicalOwnerRecordMatched": false,
+      "appGapConfirmed": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0572_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0572_ancien",
+      "candidateExistingOwner": "CALENDAR",
+      "issue": "ST_ANDREW_VIGIL_SUPPRESSED_1955",
+      "sourceSpecificEvidence": "Source explicitly notes abolition of the old St Andrew vigil.",
+      "editorialDisposition": "Historical note only; no generated 1962 vigil.",
+      "originalEditionVerified": false,
+      "exactCanonicalOwnerRecordMatched": false,
+      "appGapConfirmed": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0778_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0778_ancien",
+      "candidateExistingOwner": "PARTICULAR_CALENDAR",
+      "issue": "RELICS_FEAST_LOCAL_VARIANTS",
+      "sourceSpecificEvidence": "Source distinguishes diocesan variation and Nancy-Toul proper.",
+      "editorialDisposition": "Do not invent universal November 5 feast.",
+      "originalEditionVerified": false,
+      "exactCanonicalOwnerRecordMatched": false,
+      "appGapConfirmed": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    },
+    {
+      "articleId": "a0297_ancien",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0297_ancien",
+      "candidateExistingOwner": "CALENDAR_CUSTOMS",
+      "issue": "CORPUS_CHRISTI_PROCESSION_CONDITIONAL",
+      "sourceSpecificEvidence": "Source links feast and Eucharistic devotion; existing Calendar says procession where celebrated.",
+      "editorialDisposition": "Do not infer an actual procession or rebuild the existing Calendar.",
+      "originalEditionVerified": false,
+      "exactCanonicalOwnerRecordMatched": false,
+      "appGapConfirmed": false,
+      "rightsCleared": false,
+      "publicationApproved": false
+    }
+  ],
+  "publicationApproved": false
+}
