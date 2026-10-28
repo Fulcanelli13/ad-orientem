@@ -4,11 +4,11 @@ import {
  DAILY_PERSONAL_RULE_STORAGE_KEY,PERSONAL_DAILY_SOURCE_COVERAGE,
  defaultPersonalDailyPrefs,normalizePersonalDailyPrefs,loadPersonalDailyPrefs,
  savePersonalDailyPrefs,personalDailyOptions,buildPersonalDailyPlan,
- changePersonalDailyPrefs,PERSONAL_BRIEF_PRAYER_IDS,personalDailyBriefIds
+ changePersonalDailyPrefs,PERSONAL_BRIEF_PRAYER_IDS,personalDailyBriefIds,personalDailyDirectPlan
 } from "../src/pray/daily-personal-rule.js";
 import {DAILY_PERSONAL_PRAYER_SOURCE_V1 as CORPUS} from "../src/pray/daily-personal-prayer-source.js";
 import {APPROVED_DAILY_FORMULATION_MANIFEST_V1,DAILY_APPROVED_SEQUENCE_RELEASE_V1} from "../src/pray/daily-approved-formulations.js";
-import {personalDailyPrayerCard,dailyPersonalSettings,dailyPersonalList,dailyPersonalProvenance} from "../src/pray/daily-personal-prayer-view.js";
+import {personalDailyPrayerCard,dailyPersonalSettings,dailyPersonalPrayerCatalog,dailyPersonalList,dailyPersonalProvenance} from "../src/pray/daily-personal-prayer-view.js";
 
 assert.deepEqual(PERSONAL_DAILY_SOURCE_COVERAGE.languages,["la","en","fr"]);
 assert.equal(PERSONAL_DAILY_SOURCE_COVERAGE.manualOptions,45);
@@ -251,12 +251,41 @@ assert.equal(new Set(inManusPlan.rows.map(row=>row.id)).size,inManusPlan.rows.le
 assert.match(dailyPersonalList(first.rows,{...h,isFr:false}),/data-tp381-daily-card-index="0"/);
 assert.equal(APPROVED_DAILY_FORMULATION_MANIFEST_V1.witnesses&&Object.keys(APPROVED_DAILY_FORMULATION_MANIFEST_V1.witnesses).length,0,"Old unapproved historical profile path must remain fail closed");
 assert.equal(DAILY_APPROVED_SEQUENCE_RELEASE_V1.enabled,false,"Do not bypass historical profile approval through legacy gate");
+// Direct reading is independent of Personal Brief, saved extras and variants.
+for(const edition of ["1905","1913"])for(const daypart of ["morning","evening"])for(const language of ["en","fr","la"]){
+ const prefs={...defaultPersonalDailyPrefs(language),edition,length:"brief"};
+ const full=buildPersonalDailyPlan({daypart,prefs:{...prefs,length:"full",mode:"standard"}});
+ for(const row of full.rows){
+  const direct=personalDailyDirectPlan({daypart,prefs,sourceId:row.sourceId});
+  assert.equal(direct?.rows.length,1);
+  assert.equal(direct.rows[0].text,row.text,"Direct access keeps the full source edition prayer");
+  assert.equal(direct.rows[0].sourceUrl,row.sourceUrl);
+ }
+ const options=personalDailyOptions(daypart,language,edition).filter(x=>x.kind==="additional");
+ for(const item of options){
+  const direct=personalDailyDirectPlan({daypart,prefs,sourceId:item.id});
+  assert.equal(direct?.rows.length,1,"Direct historical prayer must be available without saved extras");
+  assert.equal(direct.rows[0].text,item.text,"Optional prayer wording is not rewritten");
+  assert.equal(direct.rows[0].sourceUrl,item.sourceUrl);
+ }
+ assert.equal(personalDailyDirectPlan({daypart,prefs,sourceId:"not-an-id"}),null);
+ assert.equal(personalDailyDirectPlan({daypart,prefs,sourceId:"de-profundis"}),null,"Printed supplements must not sneak into core");
+ const catalog=dailyPersonalPrayerCatalog(full,options,h);
+ assert.equal((catalog.match(/data-tp381-direct-prayer=/g)||[]).length,full.rows.length+options.length);
+ assert.match(catalog,/data-ao-daily-prayer-catalog/);
+}
+const directBrief=changePersonalDailyPrefs(defaultPersonalDailyPrefs("en"),{action:"length",value:"brief"});
+const directEd=changePersonalDailyPrefs(directBrief,{action:"brief-toggle",daypart:"morning",value:"hail-mary"});
+assert.ok(personalDailyDirectPlan({daypart:"morning",prefs:directEd,sourceId:"hail-mary"}),"Excluded Brief prayer must still be directly readable");
+const savedVariant=changePersonalDailyPrefs(defaultPersonalDailyPrefs("en"),{action:"variant",daypart:"morning",value:personalDailyOptions("morning","en","1913").find(x=>x.kind==="variant")?.id});
+assert.equal(personalDailyDirectPlan({daypart:"morning",prefs:savedVariant,sourceId:"daily-prayer"})?.rows[0].replacementId,null,"Direct St Pius X index must use original text, not user variant");
 const runtime=readFileSync(new URL("../src/pray/traditional-pray-runtime.js",import.meta.url),"utf8");
-assert.match(runtime,/buildPersonalDailyPlan\(\{daypart:S.daypart,prefs:personalDailyPrefs\(\)\}\)/);
+assert.match(runtime,/personalDailyDirectPlan\(\{daypart:S.daypart,prefs,sourceId:S.dailyDirectId\}\)/);
 assert.match(runtime,/data-tp381-personal-action/);
 assert.match(runtime,/personalDailyPrayerCard\(row,dailyReadingPlan\(\),/);
-assert.match(runtime,/dailyPersonalSettings\(plan,personalDailyPrefs\(\),/);
-assert.match(runtime,/\$\{choice\}\$\{dailyPersonalSettings\(plan,personalDailyPrefs\(\),/,"Daily rule controls must be in the opening screen, before the horizon");
+assert.match(runtime,/dailyPersonalSettings\(plan,prefs,/);
+assert.match(runtime,/\$\{choice\}\$\{nav\}/,"Prayer selection must be the primary navigation");
+assert.match(runtime,/\$\{body\}\$\{guided\?dailyTimerControls\(\):""\}\$\{dailyPersonalSettings\(plan,prefs,/,"Routine customization belongs after prayer, not in the reading path");
 assert.match(runtime,/previousId=previous\[previousStep\]\?\.id/,"Updating a daily rule must retain its active prayer ID");
 assert.match(runtime,/action==="length"/,"Changing routine length must restart visual progression from the opening stage");
 console.log("PASS: St Pius X 1905/1913 structure, 3 languages, 45 optional texts, source-ID privacy, variants, optional order and legacy gate");
