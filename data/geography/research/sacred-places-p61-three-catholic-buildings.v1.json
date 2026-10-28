@@ -1,0 +1,119 @@
+{
+  "schema": "AO_SACRED_PLACES_P61_THREE_CATHOLIC_CHURCH_BUILDINGS_V1",
+  "date": "2026-10-29",
+  "status": "PROPOSED_PRODUCTION_PR_NOT_MERGED",
+  "baseline": {
+    "places": 512,
+    "sources": 810,
+    "crosswalk": 512,
+    "unlinked": 253,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 515,
+    "sources": 816,
+    "crosswalk": 515,
+    "unlinked": 256,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "new_physical_locations": 3,
+  "photo_assets_approved": 0,
+  "tlm_schedule_links_added": 0,
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0200",
+      "place_id": "place:PL:p61-lichen-basilica",
+      "name": "Bazylika Matki Bożej Licheńskiej",
+      "place_type": "basilica",
+      "country": "PL",
+      "country_name": "Poland",
+      "city": "Licheń Stary",
+      "region": "Wielkopolskie",
+      "address": "Klasztorna 4, 62-563 Licheń Stary, Poland",
+      "lat": 52.32321,
+      "lng": 18.35794,
+      "geo_source_ref": "osm:way:208331549",
+      "geo_source_url": "https://www.openstreetmap.org/way/208331549",
+      "geometry_check_url": "https://mapcarta.com/W208331549",
+      "identity_source_url": "https://www.lichen.pl/bazylika/",
+      "identity_source_issuer": "Sanktuarium Matki Bożej Licheńskiej",
+      "scope_limit": "The named modern basilica, not the separate St Dorothy church or Grąblin church",
+      "source_ids": [
+        "AO-P61-ID-SG-INV-0200",
+        "AO-P61-GEO-SG-INV-0200"
+      ],
+      "precision": "site",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "candidate_id": "SG-INV-0410",
+      "place_id": "place:US:p61-san-francisco-asis-ranchos",
+      "name": "San Francisco de Asís Mission Church",
+      "place_type": "church",
+      "country": "US",
+      "country_name": "United States",
+      "city": "Ranchos de Taos",
+      "region": "New Mexico",
+      "address": "60 St Francis Plaza, Ranchos de Taos, NM 87557, United States",
+      "lat": 36.35845,
+      "lng": -105.60844,
+      "geo_source_ref": "osm:way:426943457",
+      "geo_source_url": "https://www.openstreetmap.org/way/426943457",
+      "geometry_check_url": "https://mapcarta.com/23324812",
+      "identity_source_url": "https://www.archdiosf.org/parishfinder",
+      "identity_source_issuer": "Roman Catholic Archdiocese of Santa Fe",
+      "scope_limit": "Original historic church; excludes satellite mission chapels. OSM has fixme location warning, so centre is OSM mapped feature not Plus Code",
+      "source_ids": [
+        "AO-P61-ID-SG-INV-0410",
+        "AO-P61-GEO-SG-INV-0410"
+      ],
+      "precision": "site",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "candidate_id": "SG-INV-0429",
+      "place_id": "place:MX:p61-basilica-ocotlan-tlaxcala",
+      "name": "Basílica de Nuestra Señora de Ocotlán",
+      "place_type": "basilica",
+      "country": "MX",
+      "country_name": "Mexico",
+      "city": "Ocotlán",
+      "region": "Tlaxcala",
+      "address": "Privada del Norte s/n, Ocotlán, Tlaxcala, Mexico",
+      "lat": 19.31792,
+      "lng": -98.22796,
+      "geo_source_ref": "osm:way:95827233",
+      "geo_source_url": "https://www.openstreetmap.org/way/95827233",
+      "geometry_check_url": "https://mapcarta.com/es/W95827233",
+      "identity_source_url": "https://diocesisdetlaxcala.mx/ntrasraocotlan/",
+      "identity_source_issuer": "Diócesis de Tlaxcala",
+      "scope_limit": "Individual basilica building; independent INAH church record 75076. Excludes nearby Pocito chapel",
+      "source_ids": [
+        "AO-P61-ID-SG-INV-0429",
+        "AO-P61-GEO-SG-INV-0429"
+      ],
+      "precision": "site",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    }
+  ],
+  "held": [
+    {
+      "candidate_id": "SG-INV-0512",
+      "reason": "OSM feature is church-related but building footprint unconfirmed; hold"
+    },
+    {
+      "candidate_id": "SG-INV-0650",
+      "reason": "Cebu OSM feature represents precinct, not specific church building; hold"
+    },
+    {
+      "candidate_id": "SG-INV-0049",
+      "reason": "Wrong proximity duplicate match to Scala Santa; reject"
+    }
+  ],
+  "policy": "Official Catholic site identity and matching OSM church building tag required. No TLM, current hours, photos, entrances or unrelated chapels inferred."
+}
