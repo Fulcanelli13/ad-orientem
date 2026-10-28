@@ -7,6 +7,7 @@ export const POSTURE_PROFILES = Object.freeze([
   "MY_LOCAL",
   "OCONNELL_1962_COMMUNITY",
   "TRADITIONAL_WALSH",
+  "REQUIEM_CHOIR_1962",
 ]);
 export const GESTURE_PROFILES = Object.freeze(["ESSENTIAL", "GUIDED_1962", "TRADITIONAL"]);
 export const SANCTUS_PERFORMANCES = Object.freeze(["UNSPECIFIED", "GREGORIAN", "POLYPHONIC"]);
