@@ -49,7 +49,8 @@ const runtime=createBrowserMassRuntime({
 });
 const entered=await runtime.enter();
 assert.ok(entered.session.plan.insertions.includes("RESOLVED_PREPARATORY_LESSONS"));
-assert.equal(runtime.getReaderModel().totalCards,33);
+assert.equal(runtime.getReaderModel().totalCards,42,
+  "Three exact-source Ember insertions must extend the 39-card source-first LIVE model");
 assert.deepEqual(runtime.getReaderModel().emberSourceOrder,order);
 assert.equal(runtime.getCurrentSectionId(),"AO.CARD.001");
 
