@@ -39,9 +39,11 @@ jobs:
           node --check scripts/office/audit-advent-vespers-text.mjs
           node --check scripts/office/audit-printed-rubrics-pilot.mjs
           node --check scripts/office/audit-translation-risks.mjs
+          node --check scripts/office/research-french-directive-overlay.mjs
+          node --check scripts/office/compare-french-directive-overlay.mjs
           node --check scripts/office/audit-all-souls-proper-prayers.mjs
       - name: Calendar, Tenebrae and composition probe contracts
-        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-printed-rubric-pilot.mjs tests/divine-office-translation-risk.mjs tests/divine-office-all-souls-prayers.mjs
+        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-printed-rubric-pilot.mjs tests/divine-office-translation-risk.mjs tests/divine-office-french-directive-overlay.mjs tests/divine-office-all-souls-prayers.mjs
       - name: Source-cell HTML normalizer unit tests
         run: python3 -m unittest discover -s tests -p 'test_divine_office_normalizer.py' -v
 
@@ -151,6 +153,24 @@ jobs:
           node scripts/office/audit-printed-rubrics-pilot.mjs \
             --main "$OUTPUT" --souls "$OUTPUT/all-souls" \
             --report "$OUTPUT/printed-rubric-audit.json"
+          # Phase J syntax-only candidate: baseline captured first.
+          # This mutates the PINNED upstream checkout's WORKTREE only in CI
+          # scratch, preserving its Git commit SHA but marking results as an
+          # experimental overlay. No source files or scores are published.
+          node scripts/office/research-french-directive-overlay.mjs \
+            --upstream "$UPSTREAM" --report "$OUTPUT/all-souls-syntax/overlay-source.json"
+          test "$(git -C "$UPSTREAM" diff --name-only)" = "web/www/horas/Francais/Sancti/11-02.txt"
+          node scripts/office/phase-b-generate.mjs \
+            --upstream "$UPSTREAM" --out "$OUTPUT/all-souls-syntax" \
+            --dates 2026-11-02 \
+            --hours MATINS,LAUDS,PRIME,TERCE,SEXT,NONE,VESPERS,COMPLINE \
+            --languages la,en,fr
+          python3 scripts/office/normalize_xhtml.py --out "$OUTPUT/all-souls-syntax"
+          node scripts/office/audit-translation-risks.mjs \
+            --out "$OUTPUT/all-souls-syntax" --report "$OUTPUT/all-souls-syntax/translation-risk.json"
+          node scripts/office/compare-french-directive-overlay.mjs \
+            --baseline "$OUTPUT/all-souls" --candidate "$OUTPUT/all-souls-syntax" \
+            --report "$OUTPUT/all-souls-syntax/comparison.json"
           node --input-type=module -e '
             import {readFileSync} from "node:fs";
             const p=JSON.parse(readFileSync(process.env.OUTPUT+"/manifest.json","utf8"));
@@ -233,6 +253,14 @@ jobs:
               assert all("UPSTREAM_PLACEHOLDER_MISSING_TEXT" in x["reason"] for x in risk["flags"])
               blocked={(x["hour"],cell) for x in souls_mass["blockedLocalePages"] for cell in x["missingSourceCellIds"]}
               assert blocked==expected_missing
+          syntax=json.loads((Path(os.environ["OUTPUT"])/"all-souls-syntax"/"overlay-source.json").read_text(encoding="utf8"))
+          assert syntax["schema"]=="ao.office.french-special-syntax-experiment.v1"
+          assert syntax["changedDirectives"]==15 and syntax["published"]==0
+          comparison=json.loads((Path(os.environ["OUTPUT"])/"all-souls-syntax"/"comparison.json").read_text(encoding="utf8"))
+          assert comparison["schema"]=="ao.office.french-syntax-candidate-comparison.v1"
+          assert comparison["originalMissingCount"]==11 and comparison["published"]==0
+          assert comparison["documentsCompared"]==24 and comparison["certifiedFrenchHours"]==0
+          assert comparison["newlyMissingCount"]==0 and not comparison["candidateSourceCellsReduced"]
           advent_mass=json.loads((Path(os.environ["OUTPUT"])/"advent-vespers"/"preview"/"mass"/"preview-manifest.json").read_text(encoding="utf8"))
           assert advent_mass["pages"]==4 and advent_mass["published"]==0
           assert advent_mass["hours"]==["VESPERS"] and not advent_mass["productionRouteRegistered"]
