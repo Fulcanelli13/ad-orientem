@@ -92,6 +92,22 @@ try{
    assert.match(await page.locator(priest+' .aoPriestsText').innerText(),/sole protection of human weakness/);
    await page.screenshot({path:resolve(out,"priestly-intercessions-"+width+".png"),animations:"disabled"});
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"Priest intercession must not clip horizontally");
+   // B20: one occasional reader, 2 sourced historical English prayers + a canonical bilingual/trilingual reuse.
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+   await page.locator(rootSel+' [data-p435930-family="devotions"]').click();
+   await page.locator(rootSel+' [data-p435930-own="pray.occasional_intercessions"]').click();
+   const occasional=rootSel+' [data-ao-occasional-intercession]';
+   assert.equal(await page.locator(occasional).count(),1);
+   assert.equal(await page.locator(occasional+' [data-p435930-occasional-purpose]').count(),3);
+   assert.match(await page.locator(occasional+' .aoOccasionalText').innerText(),/Most merciful Jesus/);
+   await page.locator(occasional+' [data-p435930-occasional-purpose="family"]').click();
+   assert.match(await page.locator(occasional+' .aoOccasionalText').innerText(),/O most loving Jesus/);
+   await page.locator(occasional+' [data-p435930-occasional-purpose="difficulties"]').click();
+   assert.match(await page.locator(occasional+' .aoOccasionalText').innerText(),/To thee, O blessed Joseph/i);
+   await page.locator(occasional+' [data-p435930-occasional-latin]').click();
+   assert.match(await page.locator(occasional+' .aoOccasionalText').innerText(),/Ad te, beate Ioseph/);
+   await page.screenshot({path:resolve(out,"occasional-intercessions-"+width+".png"),animations:"disabled"});
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"Occasional intercession must not clip horizontally");
    assert.deepEqual(errors,[],errors.join("; "));
    console.log("PASS "+width+"px Rosary & Chaplets discovery: original Rosary and methods routes unchanged, Five Wounds and Precious Blood source-owned guided readers; canonical Mercy preserved");
   }finally{await page.close()}
