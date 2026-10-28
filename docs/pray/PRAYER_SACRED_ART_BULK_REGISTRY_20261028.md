@@ -139,6 +139,22 @@ The exact Cortona and Frère Commons references are below the intended photo-res
 
 **Pristine photo releases: zero.** Screens and historic editorial approvals are unchanged.
 
+## Batch 2 — fourteen-group bulk native-source intake
+
+The acquisition manifest groups the **two missing original masters, three unsuitable primary photographs and ten distinct placement-level better-photo requests** into **14 unique artwork-source families**, because Jean Restout's *Pentecost* appears in both the primary and placement request queues.
+
+- **7/14** exact artwork-family native image candidates archived with original-byte SHA-256 records, pixels, source paths and preliminary visual evidence.
+- **6** of those seven were recovered through a separate six-worker source retry after Wikimedia's initial rate limiting; the other is the institutional Met original of Carracci's *The Burial of Christ* (3,122 × 3,875).
+- **3** named originals remain below quality minimum: Cortona *Guardian Angel* (694 × 1,100), Frère *The Prayer* OP6 (898 × 1,200), Gérôme *Age of Augustus* (1,600 × 990). They are reference images, **not** publishable replacements.
+- **4** artwork groups remain unresolved on exact identity or satisfactory photograph: Restout *Pentecost*, Tiepolo Prado *Burial*, Batoni *Sacred Heart* and Rubens *Holy Trinity*.
+- **0** new photos certified pristine; **0** primary artwork choices changed; **0** production images released.
+
+Preliminary quality triage of the seven secured originals: framed Reni Michael and paired Sacred Hearts must not be promoted; Tiepolo Station XII has severe native-corner noise; Carracci's dark painted boundary/mount needs an exact-edge review. Teniers *Agony*, Tiepolo *Descent* and Van Dyck *Outpouring* show no obvious separate frame in their small contact sheets, but do not yet meet the full rights, colour and sharpness acceptance gates.
+
+[Consolidated B2 source evidence](../../data/research/prayer-sacred-art-bulk-b2-consolidated-20261028.v1.json) · [B2 original intake](../../assets/staged/prayer-art-bulk-acquisition-b2-20261028/intake-results.json) · [B2B six-source retry and archive](../../assets/staged/prayer-art-bulk-acquisition-b2b-20261028/parallel-results.json).
+
+The remaining seven source groups form the next single acquisition queue. Do not spend another cycle on one-image app UI prototypes.
+
 ## Actual next batches
 
 **Source exceptions (5 primary artworks):** acquire an authentic, unrestricted Guardian Angel and exact Wolverhampton Frère master; research better photographs of Jean Restout's Pentecost, Gérôme's Age of Augustus and Guido Reni's Saint Michael. Do not change the editorial paintings to solve a photographic problem.
