@@ -1,0 +1,280 @@
+{
+  "schema": "ao.scripture.correspondences.thematic-seed.v1",
+  "status": "research_editorial_queue_not_published",
+  "purpose": "Themes are standalone; Historia Salutis narration is excluded",
+  "biblical_canon": "Catholic 73-book canon, edition-safe reference resolution pending",
+  "families": [
+    [
+      "christ-prefigured",
+      "Christ Prefigured"
+    ],
+    [
+      "blessed-virgin",
+      "The Blessed Virgin Mary"
+    ],
+    [
+      "covenants",
+      "Covenants and Promises"
+    ],
+    [
+      "sacrifice",
+      "Sacrifice and Redemption"
+    ],
+    [
+      "priesthood",
+      "Priesthood and Temple"
+    ],
+    [
+      "bread-water",
+      "Bread, Water and Life"
+    ],
+    [
+      "baptism",
+      "Baptism and Rebirth"
+    ],
+    [
+      "kingdom",
+      "The Messianic Kingdom"
+    ],
+    [
+      "passion",
+      "Passion and Resurrection"
+    ],
+    [
+      "spirit-church",
+      "Holy Spirit and Church"
+    ],
+    [
+      "last-things",
+      "Last Things and New Creation"
+    ]
+  ],
+  "review_outcomes": [
+    "evidence_collated_human_review_pending",
+    "candidate_link_unverified",
+    "rejected_wrong_classification"
+  ],
+  "topics": [
+    {
+      "id": "bread-by-the-word",
+      "family": "bread-water",
+      "name": "Man lives by the word of God",
+      "passages": [
+        "DEU.8.3",
+        "WIS.16.26",
+        "MAT.4.4",
+        "LUK.4.4"
+      ],
+      "relationships": [
+        {
+          "from": "DEU.8.3",
+          "to": "MAT.4.4",
+          "type": "explicit_nt_quotation",
+          "witness": "ubs:358"
+        },
+        {
+          "from": "DEU.8.3",
+          "to": "LUK.4.4",
+          "type": "explicit_nt_quotation",
+          "witness": "ubs:358"
+        },
+        {
+          "from": "WIS.16.26",
+          "to": "MAT.4.4",
+          "type": "shared_earlier_scriptural_teaching",
+          "witness": "catholic:WIS.16.26>MAT.4.4"
+        }
+      ],
+      "qualification": "Matthew 4:4 quotes Deuteronomy 8:3, NOT Wisdom 16:26. Wisdom expresses a related teaching; modern upstream description that Matthew directly quotes Wisdom is rejected.",
+      "status": "evidence_collated_human_review_pending"
+    },
+    {
+      "id": "passover-unbroken-bones",
+      "family": "sacrifice",
+      "name": "The Paschal Lamb's unbroken bones",
+      "passages": [
+        "EXO.12.46",
+        "NUM.9.12",
+        "JHN.19.36"
+      ],
+      "relationships": [
+        {
+          "from": "EXO.12.46",
+          "to": "JHN.19.36",
+          "type": "nt_explicit_scripture_fulfilment",
+          "witness": "ubs:92"
+        },
+        {
+          "from": "NUM.9.12",
+          "to": "JHN.19.36",
+          "type": "nt_explicit_scripture_fulfilment",
+          "witness": "ubs:92"
+        }
+      ],
+      "qualification": "John 19:36 applies the scriptural injunction; do not remove Numbers 9:12 from the evidential group.",
+      "status": "evidence_collated_human_review_pending"
+    },
+    {
+      "id": "righteous-one-mocked",
+      "family": "passion",
+      "name": "The mocked Righteous One",
+      "passages": [
+        "WIS.2.12-20",
+        "MAT.27.41-43"
+      ],
+      "relationships": [
+        {
+          "from": "WIS.2.18",
+          "to": "MAT.27.43",
+          "type": "literary_echo_and_historical_christological_reading",
+          "witness": "catholic:WIS.2.18>MAT.27.43"
+        }
+      ],
+      "historical_witness": {
+        "source": "original-douay-rheims",
+        "commit": "d82b2852d55a2ab8f0e57311ee42acde25740781",
+        "path": "bible/tagged/wisdom.json",
+        "book": "WIS",
+        "chapter": 2,
+        "verse": 12,
+        "note_label": "d",
+        "observation": "Historic annotation calls it a prophecy concerning Christ's persecutors and cites Matthew 27:41; this is interpretive testimony, not Matthew explicitly attributing a quotation to Wisdom."
+      },
+      "status": "evidence_collated_human_review_pending"
+    },
+    {
+      "id": "wisdom-recounts-joseph",
+      "family": "christ-prefigured",
+      "name": "Wisdom recounts Joseph's trials",
+      "passages": [
+        "WIS.10.13-14",
+        "GEN.37",
+        "GEN.41"
+      ],
+      "relationships": [
+        {
+          "from": "WIS.10.13",
+          "to": "GEN.37",
+          "type": "scripture_retells_scripture",
+          "witness": "catholic:WIS.10.13>GEN.37.1;chapter"
+        },
+        {
+          "from": "WIS.10.14",
+          "to": "GEN.41",
+          "type": "scripture_retells_scripture",
+          "witness": "catholic:WIS.10.14>GEN.41.1;chapter"
+        }
+      ],
+      "qualification": "Historical references point to Genesis CHAPTERS, not specifically verses 37:1 and 41:1.",
+      "status": "evidence_collated_human_review_pending"
+    },
+    {
+      "id": "angels-and-prayers",
+      "family": "spirit-church",
+      "name": "Angels and the prayers of the faithful",
+      "passages": [
+        "TOB.12.12",
+        "REV.8.3-4"
+      ],
+      "relationships": [
+        {
+          "from": "TOB.12.12",
+          "to": "REV.8.3",
+          "type": "thematic_visual_correspondence",
+          "witness": "catholic:TOB.12.12>REV.8.3"
+        }
+      ],
+      "qualification": "Related heavenly mediation imagery, not a formally cited fulfilment or direct quotation.",
+      "status": "evidence_collated_human_review_pending"
+    },
+    {
+      "id": "judith-blessing-mary",
+      "family": "blessed-virgin",
+      "name": "Blessed among women",
+      "passages": [
+        "JDT.13.18",
+        "LUK.1.42"
+      ],
+      "relationships": [
+        {
+          "from": "JDT.13.18",
+          "to": "LUK.1.42",
+          "type": "verbal_literary_echo_candidate",
+          "witness": "catholic:JDT.13.18>LUK.1.42"
+        }
+      ],
+      "qualification": "Do not silently assert Luke directly quotes Judith; Catholic Marian reception requires separate source witness.",
+      "status": "candidate_link_unverified"
+    },
+    {
+      "id": "dedication-of-temple",
+      "family": "priesthood",
+      "name": "The dedication of the Temple",
+      "passages": [
+        "1MA.4.59",
+        "JHN.10.22"
+      ],
+      "relationships": [
+        {
+          "from": "1MA.4.59",
+          "to": "JHN.10.22",
+          "type": "historical_festival_continuity",
+          "witness": "catholic:1MA.4.59>JHN.10.22"
+        }
+      ],
+      "qualification": "The passages refer to the feast's establishment and later observance; not a prophecy.",
+      "status": "evidence_collated_human_review_pending"
+    },
+    {
+      "id": "wisdom-recounts-exodus",
+      "family": "covenants",
+      "name": "Wisdom recounts the Exodus",
+      "passages": [
+        "WIS.10.20",
+        "EXO.12",
+        "EXO.15"
+      ],
+      "relationships": [
+        {
+          "from": "WIS.10.20",
+          "to": "EXO.12",
+          "type": "scripture_retells_scripture",
+          "witness": "catholic:WIS.10.20>EXO.12.1;chapter"
+        },
+        {
+          "from": "WIS.10.20",
+          "to": "EXO.15",
+          "type": "scripture_retells_scripture",
+          "witness": "catholic:WIS.10.20>EXO.15.1;chapter"
+        }
+      ],
+      "status": "evidence_collated_human_review_pending"
+    }
+  ],
+  "known_gaps": [
+    {
+      "subject": "Wisdom and the Logos",
+      "passages": [
+        "SIR.24",
+        "JHN.1"
+      ],
+      "finding": "No direct link at sampled Sirach 24:3, 24:8 or 24:12 anchors in first imported Catholic source; requires separate textual and Catholic commentary review"
+    },
+    {
+      "subject": "Resurrection and the martyrs",
+      "passages": [
+        "2MA.7.9",
+        "HEB.11.35"
+      ],
+      "finding": "Not present at 2 Maccabees 7:9 in this source; review contextual literary relationship"
+    },
+    {
+      "subject": "Baruch and the dwelling of Wisdom",
+      "passages": [
+        "BAR.3.37-38",
+        "JHN.1.14"
+      ],
+      "finding": "Absent at Baruch 3:37–38; verify verse numbering, patristic interpretation and translation before establishing a link"
+    }
+  ]
+}

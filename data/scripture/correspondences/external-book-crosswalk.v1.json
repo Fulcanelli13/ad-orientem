@@ -1,0 +1,544 @@
+{
+  "schema": "ao.scripture.correspondences.canonical-crosswalk.v1",
+  "status": "research_mapping_only",
+  "maintained_owner": "src/scripture/canon.js",
+  "purpose": "Map raw external book identifiers onto established Catholic CATHOLIC_BOOK_IDS without substituting Scripture editions or claiming verse equivalence.",
+  "count": 73,
+  "source_codes": {
+    "standard": "upstream Catholic Bible and UBS USFM-like book abbreviations",
+    "original_douay": "Original Douay–Rheims historical printed dataset; Esther ESG and Daniel DAG include their Catholic expanded material"
+  },
+  "excluded_appendix": [
+    {
+      "name": "3 Esdras",
+      "original_douay": "1ES"
+    },
+    {
+      "name": "4 Esdras",
+      "original_douay": "2ES"
+    },
+    {
+      "name": "Prayer of Manasses",
+      "original_douay": "MAN"
+    }
+  ],
+  "numbering_rules": [
+    "Preserve the source address and translation/edition whenever a cross-reference is read.",
+    "Explicitly gate chapter or verse mapping through a named certified edition.",
+    "Older historical margins may refer to differently numbered chapters, e.g. Sirach 29:13 to Exodus 22 vs upstream EXO.21.37.",
+    "Do not treat Esther / Daniel longer Catholic forms as separate noncanonical books, and do not include historical appendix books among the 73."
+  ],
+  "books": [
+    {
+      "book_id": "Genesis",
+      "standard_source_code": "GEN",
+      "original_douay_code": "GEN",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Exodus",
+      "standard_source_code": "EXO",
+      "original_douay_code": "EXO",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Leviticus",
+      "standard_source_code": "LEV",
+      "original_douay_code": "LEV",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Numbers",
+      "standard_source_code": "NUM",
+      "original_douay_code": "NUM",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Deuteronomy",
+      "standard_source_code": "DEU",
+      "original_douay_code": "DEU",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Joshua",
+      "standard_source_code": "JOS",
+      "original_douay_code": "JOS",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Judges",
+      "standard_source_code": "JDG",
+      "original_douay_code": "JDG",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Ruth",
+      "standard_source_code": "RUT",
+      "original_douay_code": "RUT",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "1Samuel",
+      "standard_source_code": "1SA",
+      "original_douay_code": "1SA",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "2Samuel",
+      "standard_source_code": "2SA",
+      "original_douay_code": "2SA",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "1Kings",
+      "standard_source_code": "1KI",
+      "original_douay_code": "1KI",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "2Kings",
+      "standard_source_code": "2KI",
+      "original_douay_code": "2KI",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "1Chronicles",
+      "standard_source_code": "1CH",
+      "original_douay_code": "1CH",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "2Chronicles",
+      "standard_source_code": "2CH",
+      "original_douay_code": "2CH",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Ezra",
+      "standard_source_code": "EZR",
+      "original_douay_code": "EZR",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Nehemiah",
+      "standard_source_code": "NEH",
+      "original_douay_code": "NEH",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Tobit",
+      "standard_source_code": "TOB",
+      "original_douay_code": "TOB",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Judith",
+      "standard_source_code": "JDT",
+      "original_douay_code": "JDT",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Esther",
+      "standard_source_code": "EST",
+      "original_douay_code": "ESG",
+      "testament": "OT",
+      "numbering_status": "edition_versification_review_required"
+    },
+    {
+      "book_id": "1Maccabees",
+      "standard_source_code": "1MA",
+      "original_douay_code": "1MA",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "2Maccabees",
+      "standard_source_code": "2MA",
+      "original_douay_code": "2MA",
+      "testament": "OT",
+      "numbering_status": "edition_versification_review_required"
+    },
+    {
+      "book_id": "Job",
+      "standard_source_code": "JOB",
+      "original_douay_code": "JOB",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Psalms",
+      "standard_source_code": "PSA",
+      "original_douay_code": "PSA",
+      "testament": "OT",
+      "numbering_status": "edition_versification_review_required"
+    },
+    {
+      "book_id": "Proverbs",
+      "standard_source_code": "PRO",
+      "original_douay_code": "PRO",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Ecclesiastes",
+      "standard_source_code": "ECC",
+      "original_douay_code": "ECC",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "SongOfSongs",
+      "standard_source_code": "SNG",
+      "original_douay_code": "SNG",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Wisdom",
+      "standard_source_code": "WIS",
+      "original_douay_code": "WIS",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Sirach",
+      "standard_source_code": "SIR",
+      "original_douay_code": "SIR",
+      "testament": "OT",
+      "numbering_status": "edition_versification_review_required"
+    },
+    {
+      "book_id": "Isaiah",
+      "standard_source_code": "ISA",
+      "original_douay_code": "ISA",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Jeremiah",
+      "standard_source_code": "JER",
+      "original_douay_code": "JER",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Lamentations",
+      "standard_source_code": "LAM",
+      "original_douay_code": "LAM",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Baruch",
+      "standard_source_code": "BAR",
+      "original_douay_code": "BAR",
+      "testament": "OT",
+      "numbering_status": "edition_versification_review_required"
+    },
+    {
+      "book_id": "Ezekiel",
+      "standard_source_code": "EZK",
+      "original_douay_code": "EZK",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Daniel",
+      "standard_source_code": "DAN",
+      "original_douay_code": "DAG",
+      "testament": "OT",
+      "numbering_status": "edition_versification_review_required"
+    },
+    {
+      "book_id": "Hosea",
+      "standard_source_code": "HOS",
+      "original_douay_code": "HOS",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Joel",
+      "standard_source_code": "JOL",
+      "original_douay_code": "JOL",
+      "testament": "OT",
+      "numbering_status": "edition_versification_review_required"
+    },
+    {
+      "book_id": "Amos",
+      "standard_source_code": "AMO",
+      "original_douay_code": "AMO",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Obadiah",
+      "standard_source_code": "OBA",
+      "original_douay_code": "OBA",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Jonah",
+      "standard_source_code": "JON",
+      "original_douay_code": "JON",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Micah",
+      "standard_source_code": "MIC",
+      "original_douay_code": "MIC",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Nahum",
+      "standard_source_code": "NAM",
+      "original_douay_code": "NAM",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Habakkuk",
+      "standard_source_code": "HAB",
+      "original_douay_code": "HAB",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Zephaniah",
+      "standard_source_code": "ZEP",
+      "original_douay_code": "ZEP",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Haggai",
+      "standard_source_code": "HAG",
+      "original_douay_code": "HAG",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Zechariah",
+      "standard_source_code": "ZEC",
+      "original_douay_code": "ZEC",
+      "testament": "OT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Malachi",
+      "standard_source_code": "MAL",
+      "original_douay_code": "MAL",
+      "testament": "OT",
+      "numbering_status": "edition_versification_review_required"
+    },
+    {
+      "book_id": "Matthew",
+      "standard_source_code": "MAT",
+      "original_douay_code": "MAT",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Mark",
+      "standard_source_code": "MRK",
+      "original_douay_code": "MRK",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Luke",
+      "standard_source_code": "LUK",
+      "original_douay_code": "LUK",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "John",
+      "standard_source_code": "JHN",
+      "original_douay_code": "JHN",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Acts",
+      "standard_source_code": "ACT",
+      "original_douay_code": "ACT",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Romans",
+      "standard_source_code": "ROM",
+      "original_douay_code": "ROM",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "1Corinthians",
+      "standard_source_code": "1CO",
+      "original_douay_code": "1CO",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "2Corinthians",
+      "standard_source_code": "2CO",
+      "original_douay_code": "2CO",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Galatians",
+      "standard_source_code": "GAL",
+      "original_douay_code": "GAL",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Ephesians",
+      "standard_source_code": "EPH",
+      "original_douay_code": "EPH",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Philippians",
+      "standard_source_code": "PHP",
+      "original_douay_code": "PHP",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Colossians",
+      "standard_source_code": "COL",
+      "original_douay_code": "COL",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "1Thessalonians",
+      "standard_source_code": "1TH",
+      "original_douay_code": "1TH",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "2Thessalonians",
+      "standard_source_code": "2TH",
+      "original_douay_code": "2TH",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "1Timothy",
+      "standard_source_code": "1TI",
+      "original_douay_code": "1TI",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "2Timothy",
+      "standard_source_code": "2TI",
+      "original_douay_code": "2TI",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Titus",
+      "standard_source_code": "TIT",
+      "original_douay_code": "TIT",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Philemon",
+      "standard_source_code": "PHM",
+      "original_douay_code": "PHM",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Hebrews",
+      "standard_source_code": "HEB",
+      "original_douay_code": "HEB",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "James",
+      "standard_source_code": "JAS",
+      "original_douay_code": "JAS",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "1Peter",
+      "standard_source_code": "1PE",
+      "original_douay_code": "1PE",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "2Peter",
+      "standard_source_code": "2PE",
+      "original_douay_code": "2PE",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "1John",
+      "standard_source_code": "1JN",
+      "original_douay_code": "1JN",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "2John",
+      "standard_source_code": "2JN",
+      "original_douay_code": "2JN",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "3John",
+      "standard_source_code": "3JN",
+      "original_douay_code": "3JN",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Jude",
+      "standard_source_code": "JUD",
+      "original_douay_code": "JUD",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    },
+    {
+      "book_id": "Revelation",
+      "standard_source_code": "REV",
+      "original_douay_code": "REV",
+      "testament": "NT",
+      "numbering_status": "book_id_only_edition_verification_pending"
+    }
+  ]
+}

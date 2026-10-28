@@ -1,0 +1,606 @@
+{
+  "schema": "ao.scripture.correspondences.thematic-source-leads.v1",
+  "status": "research_only_unverified_theme_candidates",
+  "policy": "Titles identify editorial research subjects, not independently verified quotations, fulfilments or theological judgments. UBS source independently provides word-aligned passage groups, not the theological classifications.",
+  "family_source": "thematic-seed.v1.json",
+  "research_topics": [
+    {
+      "id": "new-adam",
+      "family": "christ-prefigured",
+      "title": "Adam and Christ, the life-giving Adam",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        3
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "marriage-union",
+      "family": "christ-prefigured",
+      "title": "The primordial union and Christ's teaching on marriage",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        4
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "offspring-abraham",
+      "family": "christ-prefigured",
+      "title": "The offspring promised to Abraham",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        29
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "new-moses",
+      "family": "christ-prefigured",
+      "title": "A prophet like Moses",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        362,
+        363
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "jonah-sign",
+      "family": "christ-prefigured",
+      "title": "Jonah and the sign of three days",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1420
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "son-of-man",
+      "family": "christ-prefigured",
+      "title": "The Son of Man in Daniel and the Gospels",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1401
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "firstborn-son",
+      "family": "christ-prefigured",
+      "title": "You are my Son: the Messianic Psalm",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1163
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "abraham-all-nations",
+      "family": "covenants",
+      "title": "The promise of blessing for all nations",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        28
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "abraham-faith",
+      "family": "covenants",
+      "title": "Abraham believed God",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        32,
+        33
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "abraham-oath",
+      "family": "covenants",
+      "title": "God's oath to Abraham",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        42,
+        43
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "egyptian-sojourn",
+      "family": "covenants",
+      "title": "The foretold sojourn in a foreign land",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        34,
+        35
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "blood-covenant",
+      "family": "covenants",
+      "title": "The blood of the covenant",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        135
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "davidic-son",
+      "family": "covenants",
+      "title": "The promise to David's son",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        454
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "new-covenant",
+      "family": "covenants",
+      "title": "The promised new covenant",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1374,
+        1375,
+        1376,
+        1377,
+        1378
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "word-nearby",
+      "family": "covenants",
+      "title": "The word is near you",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        372,
+        373
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "passover-bones",
+      "family": "sacrifice",
+      "title": "The Paschal Lamb's unbroken bones",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        92
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "curse-of-the-tree",
+      "family": "sacrifice",
+      "title": "The one hanged on a tree and the curse",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        366
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "sacrifice-obedience",
+      "family": "sacrifice",
+      "title": "Sacrifice and the obedience of Christ",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1197
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "suffering-servant",
+      "family": "sacrifice",
+      "title": "The Servant's sufferings",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1334,
+        1335,
+        1336,
+        1337,
+        1338,
+        1339
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "offering-servant",
+      "family": "sacrifice",
+      "title": "The silent servant and the offered life",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1336,
+        1337
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "melchizedek-priest",
+      "family": "priesthood",
+      "title": "Melchizedek and priesthood",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        30,
+        31
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "heavenly-sanctuary",
+      "family": "priesthood",
+      "title": "The heavenly pattern of the sanctuary",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        161
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "priest-forever",
+      "family": "priesthood",
+      "title": "A priest for ever in the order of Melchizedek",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1251
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "royal-priesthood",
+      "family": "priesthood",
+      "title": "A kingdom of priests and a chosen people",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        100
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "house-of-prayer",
+      "family": "priesthood",
+      "title": "My house shall be a house of prayer",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1343
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "word-of-life",
+      "family": "bread-water",
+      "title": "Life from the word of God, not bread alone",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        358
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "manna-bread-heaven",
+      "family": "bread-water",
+      "title": "Manna and bread from heaven",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1233
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "manna-sharing",
+      "family": "bread-water",
+      "title": "The gathering of manna and sharing",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        93
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "virgin-emmanuel",
+      "family": "kingdom",
+      "title": "The sign of Emmanuel",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1296
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "bethlehem",
+      "family": "kingdom",
+      "title": "Bethlehem and the expected ruler",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1421
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "king-enters-jerusalem",
+      "family": "kingdom",
+      "title": "The king comes riding humbly",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1427
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "messiah-enthroned",
+      "family": "kingdom",
+      "title": "The Lord said to my Lord",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1249,
+        1250
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "stone-rejected",
+      "family": "kingdom",
+      "title": "The stone rejected by builders",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1261
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "nations-root-jesse",
+      "family": "kingdom",
+      "title": "The root of Jesse and the nations",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1305
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "light-nations",
+      "family": "kingdom",
+      "title": "A light to the nations",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1327
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "forerunner",
+      "family": "kingdom",
+      "title": "The messenger who prepares the way",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1432
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "son-of-david",
+      "family": "kingdom",
+      "title": "The promised son of David",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1263
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "cry-of-abandonment",
+      "family": "passion",
+      "title": "The cry from the Cross",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1184
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "divided-garments",
+      "family": "passion",
+      "title": "They divide my garments",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1185
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "commend-spirit",
+      "family": "passion",
+      "title": "Into thy hands I commend my spirit",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1190
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "betrayal-companion",
+      "family": "passion",
+      "title": "Betrayed by one who ate with him",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1203
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "thirty-silver",
+      "family": "passion",
+      "title": "The thirty pieces of silver",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1428
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "pierced-one",
+      "family": "passion",
+      "title": "They shall look upon the pierced one",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1429
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "struck-shepherd",
+      "family": "passion",
+      "title": "The shepherd struck and the sheep scattered",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1430
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "servant-sinless",
+      "family": "passion",
+      "title": "The righteous servant without deceit",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1338
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "pentecost-joel",
+      "family": "spirit-church",
+      "title": "The outpouring of the Spirit",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1408,
+        1409,
+        1410,
+        1411,
+        1412
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "spirit-anointing",
+      "family": "spirit-church",
+      "title": "The Spirit upon the Anointed One",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1347,
+        1348
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "imperishable-word",
+      "family": "spirit-church",
+      "title": "The word of the Lord endures",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1318,
+        1319
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "nations-praise",
+      "family": "spirit-church",
+      "title": "Praise the Lord, all nations",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1259
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "divine-rest",
+      "family": "spirit-church",
+      "title": "Today, if you hear his voice",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1238,
+        1239,
+        1240,
+        1241
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "death-swallowed",
+      "family": "last-things",
+      "title": "Death swallowed up",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1307
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "death-victory",
+      "family": "last-things",
+      "title": "O death, where is thy victory?",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1407
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "shaking-heaven-earth",
+      "family": "last-things",
+      "title": "Shaking heaven and earth",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1425
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "creation-passes",
+      "family": "last-things",
+      "title": "The heavens and earth wear out",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1242,
+        1243
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "all-under-his-feet",
+      "family": "last-things",
+      "title": "All things put beneath his feet",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        1169
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    },
+    {
+      "id": "sabbath-rest",
+      "family": "last-things",
+      "title": "God rested on the seventh day",
+      "source_type": "ubs_source_word_alignment",
+      "ubs_group_ids": [
+        2
+      ],
+      "status": "candidate_theme_requires_scripture_and_theological_review"
+    }
+  ],
+  "metrics": {
+    "subjects": 56,
+    "distinct_cross_testament_ubs_groups_covered": 80,
+    "total_cross_testament_ubs_groups": 249,
+    "unassigned_cross_testament_ubs_groups": 169
+  },
+  "limitations": [
+    "Two families have no UBS-derived thematic lead because a Protestant-canon original-language alignment source cannot supply many Marian and baptismal typologies. This is not evidence those theological subjects lack Catholic scriptural witnesses.",
+    "The same UBS group can inform multiple distinct subjects. Counts are distinct group indices, not sum of topic references.",
+    "Group labels do not claim an NT author consciously quoted each Old Testament text; citation status requires independent textual review."
+  ]
+}

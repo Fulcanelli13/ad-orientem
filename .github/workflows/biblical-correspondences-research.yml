@@ -1,0 +1,38 @@
+name: Biblical Correspondences research evidence
+
+on:
+  pull_request:
+    paths:
+      - 'data/scripture/correspondences/**'
+      - 'tests/scripture-biblical-correspondences-registry.mjs'
+      - 'tests/scripture-correspondences-bulk-discovery.mjs'
+      - 'tests/scripture-icrsp-atomic-editorial-review.mjs'
+      - 'tests/scripture-icrsp-four-source-and-first-preview.mjs'
+      - 'docs/research/BIBLICAL-CORRESPONDENCES-SOURCE-RECONCILIATION-20261021.md'
+      - '.github/workflows/biblical-correspondences-research.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'data/scripture/correspondences/**'
+      - 'tests/scripture-biblical-correspondences-registry.mjs'
+      - 'tests/scripture-correspondences-bulk-discovery.mjs'
+      - 'tests/scripture-icrsp-atomic-editorial-review.mjs'
+      - 'tests/scripture-icrsp-four-source-and-first-preview.mjs'
+      - '.github/workflows/biblical-correspondences-research.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  evidence-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/scripture-biblical-correspondences-registry.mjs
+      - run: node tests/scripture-correspondences-bulk-discovery.mjs
+      - run: node tests/scripture-icrsp-atomic-editorial-review.mjs
+      - run: node tests/scripture-icrsp-four-source-and-first-preview.mjs

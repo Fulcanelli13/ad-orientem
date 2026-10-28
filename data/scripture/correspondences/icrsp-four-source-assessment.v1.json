@@ -1,0 +1,200 @@
+{
+  "schema": "ao.scripture.correspondences.icrsp-four-source-assessment.v1",
+  "date": "2026-10-26",
+  "status": "source_text_assessed_not_human_approved",
+  "ownerPr": 1553,
+  "sourcePr": 1666,
+  "intake": "data/scripture/correspondences/icrsp-lent-atomic-editorial-review.v1.json",
+  "editorialPrinciple": "Record positively verified textual propositions separately from human theological acceptance, editorial critical apparatus and downstream publication. Ancient authorial words are linked; AI-generated paraphrases cannot be presented as quotations.",
+  "sourceReview": {
+    "assessedCandidateClaims": 4,
+    "directBiblicalReferenceSupported": 1,
+    "patristicTypologiesOrComparisonsWithLocatedWitness": 2,
+    "historicalDaySpecificPairingsWithLaterWitness": 1,
+    "humanTheologicalApprovals": 0,
+    "criticalPrintEditionCertifications": 0,
+    "publishedCompendiumEntries": 0
+  },
+  "assessments": [
+    {
+      "id": "ICRSP-B12-CLM-001",
+      "outcome": "scriptural_reference_text_confirmed",
+      "editorialReadiness": "candidate_for_textual_reference_only",
+      "basis": [
+        {
+          "kind": "original_biblical_text_in_public_domain_catholic_translation",
+          "book": "2KI",
+          "ref": "2KI.5.14",
+          "url": "https://studybible.info/DouayRheims/2%20Kings%205%3A10-14",
+          "observed": "Naaman immerses seven times in Jordan and is cleansed",
+          "edition": "Douay-Rheims, nineteenth-century Challoner-derived print family; online transcription witnessed, print not collated"
+        },
+        {
+          "kind": "new_testament_explicit_person_reference",
+          "book": "LUK",
+          "ref": "LUK.4.27",
+          "url": "https://www.biblegateway.com/passage/?search=Luke+4%3A23-30&version=DRA",
+          "observed": "Jesus names Naaman the Syrian and Elisha; the selected Mass Gospel includes v27",
+          "edition": "Douay-Rheims 1899 American public-domain edition"
+        }
+      ],
+      "verifiedStatement": "Luke 4:27 expressly names Naaman and refers to the Elisha-era purification; this is a directly observable Scripture-to-Scripture personal reference, not a New Testament declaration that Naaman's immersion was Baptism.",
+      "needs": [
+        "Local Scripture reference resolver proof for Vulgate IV Regum/English 2 Kings",
+        "edition-aware live-verse text and reproduction workflow",
+        "human editorial acceptance of packaging before publication"
+      ],
+      "notProven": [
+        "Biblical explicit baptismal typology",
+        "canonical source text is a prediction of Luke 4"
+      ]
+    },
+    {
+      "id": "ICRSP-B12-CLM-002",
+      "outcome": "early_christian_authorial_baptismal_typology_text_confirmed",
+      "editorialReadiness": "patristic_source_supported_requires_human_edition_review",
+      "basis": [
+        {
+          "kind": "original_language_latin_secondary_editional_transcription",
+          "author": "Ambrose of Milan",
+          "work": "De mysteriis",
+          "locus": "III.16–17",
+          "url": "https://la.wikisource.org/wiki/De_mysteriis_(ed._Migne)",
+          "observed": "Ambrose recounts Naaman and states cleansing is a matter of grace, not water in itself",
+          "literalAnchor": "non aquarum esse quod unusquisque mundatur, sed gratiae",
+          "sourceEdition": "Migne PL 16, 1845 Latin transcription; digitized Corpus Corporum, not modern critical edition",
+          "printPageInspected": false
+        },
+        {
+          "kind": "original_language_latin_explicit_baptism",
+          "author": "Ambrose of Milan",
+          "work": "De mysteriis",
+          "locus": "IV.21",
+          "url": "https://la.wikisource.org/wiki/De_mysteriis_(ed._Migne)",
+          "observed": "Following Naaman, Ambrose explicitly compares the Syrian's seven immersions under the Law with Christian baptism in the name of the Trinity",
+          "literalAnchor": "tu autem baptizatus es in nomine Trinitatis",
+          "sourceEdition": "Migne PL 16, 1845 Latin transcription; explicit baptismal locus is IV.21, not III.16–17 alone",
+          "printPageInspected": false
+        },
+        {
+          "kind": "historical_lenten_commentary",
+          "author": "Prosper Guéranger",
+          "work": "L'Année liturgique, Le Carême",
+          "locus": "Monday Lent III, lesson commentary",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0191_ancien",
+          "observed": "Later contextual sacramental typology; original 1903 edition day page not collated"
+        }
+      ],
+      "verifiedStatement": "Ambrose explicitly discusses Naaman within sacramental catechesis and, at IV.21, juxtaposes the Old Testament cleansing with Christian Trinitarian baptism. These are Ambrose's interpretive words, not a statement Jesus makes about Naaman in Luke 4:27.",
+      "needs": [
+        "Editorial review of complete Ambrose §§16–21 context",
+        "Published text attribution to Migne Latin witness rather than unverified modern critical original",
+        "theological reviewer approval and language/rights controls"
+      ],
+      "notProven": [
+        "Guéranger cited Ambrose directly",
+        "exact baptismal formula of a historical rite should be inferred from Naaman's seven washings"
+      ]
+    },
+    {
+      "id": "ICRSP-B12-CLM-005",
+      "outcome": "historical_lection_juxtaposition_and_general_patristic_resurrection_attested",
+      "editorialReadiness": "historical_exact_pair_requires_guéranger_print_and_human_review",
+      "basis": [
+        {
+          "kind": "historical_lenten_commentary",
+          "author": "Prosper Guéranger",
+          "work": "L'Année liturgique, Le Carême",
+          "locus": "Thursday Lent IV, lesson and Gospel commentary",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0205_ancien",
+          "observed": "Elisha's Shunammite miracle and Christ's Nain miracle paired for this liturgical day; 1903 original print not checked"
+        },
+        {
+          "kind": "fourth_century_syrian_author_transmitted_text",
+          "author": "Aphrahat",
+          "work": "Demonstration VIII",
+          "locus": "§11",
+          "url": "https://github.com/srophe/syriac-corpus/blob/main/data/tei/8.xml",
+          "observed": "Names Elijah and Elisha, mentions the Shunammite son's restored life; general resurrection witness only",
+          "digitalWitness": "Parisot 1894 based, uncorrected Syriac TEI",
+          "editionPrintInspected": false
+        }
+      ],
+      "verifiedStatement": "Guéranger's later liturgical commentary connects the selected Elisha and Nain texts. Aphrahat VIII.11 attests the Shunammite restoration as a resurrection witness, but does NOT independently state that exact Gospel pairing.",
+      "needs": [
+        "Do not attach Aphrahat VIII.11 as 'Elisha/Nain typology'",
+        "human theological classification of Guéranger's authorial comparison",
+        "original Guéranger printed-day collation for verbatim quotations"
+      ],
+      "notProven": [
+        "Aphrahat explicitly cites Luke 7:11–16 as parallel to 2 Kings 4:25–38",
+        "a direct Biblical Old-to-New quote exists"
+      ]
+    },
+    {
+      "id": "ICRSP-B12-CLM-006",
+      "outcome": "patristic_elijah_christ_resurrection_comparison_attested",
+      "editorialReadiness": "historical_analogy_supported_requires_full_syrian_edition_review",
+      "basis": [
+        {
+          "kind": "fourth_century_syriac_author_digital_original_text",
+          "author": "Aphrahat",
+          "work": "Demonstration XXI",
+          "locus": "§14",
+          "url": "https://github.com/srophe/syriac-corpus/blob/main/data/tei/21.xml",
+          "observed": "Original-language section contains names Elijah, Jesus and Lazarus in an explicit contrast/comparison; exact printed Syriac not collated",
+          "digitalWitness": "Parisot 1894-based CC BY 4.0 uncorrected transcription"
+        },
+        {
+          "kind": "historical_english_translation",
+          "author": "Aphrahat",
+          "work": "Demonstration XXI",
+          "locus": "§14",
+          "url": "https://www.newadvent.org/fathers/370121.htm",
+          "observed": "English transmission directly enumerates Elijah and Jesus' widow-son raisings plus Lazarus; NPNF2 1898 old translation"
+        },
+        {
+          "kind": "historical_lenten_commentary",
+          "author": "Prosper Guéranger",
+          "work": "L'Année liturgique, Le Carême",
+          "locus": "Friday Lent IV",
+          "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0206_ancien",
+          "observed": "Day pairs the Elijah story and Lazarus as separate 1962 readings"
+        }
+      ],
+      "verifiedStatement": "Aphrahat explicitly compares the works of Elijah with Jesus, including raising the widow's son and Lazarus; this is an attested historical Christological analogy, not a claim of direct quotation or precise fulfilment of 1 Kings 17 by John 11.",
+      "needs": [
+        "human theological review of Syriac context and authorial polemic",
+        "Syriac original print comparison or explicit digital transcription qualification",
+        "approval of authentic-source presentation without taking modern translations"
+      ],
+      "notProven": [
+        "Aphrahat gives an explicit John 11 verse-numbered citation (anachronistic)",
+        "Aphrahat XXI.15 is about the Shunammite child",
+        "historical interpretation is a dogmatically binding universal fulfilment"
+      ]
+    }
+  ],
+  "excludedClaims": [
+    {
+      "id": "ICRSP-B12-CLM-003",
+      "reason": "historical lection pairing with John 8 is Mass day-context only, no direct cross-testament quotation and Daniel 13 lesson is disjoint"
+    },
+    {
+      "id": "ICRSP-B12-CLM-004",
+      "reason": "Hippolytus Greek/Fabricius/Schmidt section-numbering and source-critical edition/attribution unresolved"
+    },
+    {
+      "id": "ICRSP-B12-CLM-007",
+      "reason": "Existing Wisdom/Genesis 37 chapter-retelling topic overlap; do not treat Genesis 37:28 as in Lent II Friday's 37:6–22 lesson"
+    }
+  ],
+  "release": {
+    "anyAutomaticHumanApproval": false,
+    "anyProductionTextPublished": false,
+    "anyModernCopyrightedTranslationImported": false,
+    "anyLiturgicalProperEdited": false
+  },
+  "presentationCandidate": "icrsp-naaman-source-first-demo.v1.json",
+  "scopeCaution": "Only four candidate texts were assessed. This is not a universal ecclesiastical approval or verification of all thematic relationships."
+}
