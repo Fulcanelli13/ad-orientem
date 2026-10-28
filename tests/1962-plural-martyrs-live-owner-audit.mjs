@@ -43,6 +43,7 @@ try {
    englishPresent:!!x?.en,frenchPresent:!!x?.fr,
    latinNamedMartyrs:/martyrum/i.test(String(x?.lat??x?.la??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")),
    frenchVirginLabel:/vierges et martyres/i.test(String(x?.fr??"")),
+   englishLeading:String(x?.en??"").slice(0,95),
    frenchNameCount:(String(x?.fr??"").match(/N\./g)||[]).length,
    latinNameCount:(String(x?.lat??x?.la??"").match(/N\./g)||[]).length,
    latinLeading:String(x?.lat??x?.la??"").slice(0,65),
@@ -62,8 +63,13 @@ try {
    }),
    readerSlots:(()=>{
      const r=properToReaderSlots(p,{language:lang});
+     const body=(slot)=>r.slots[slot]?.data?.paragraphs?.map(x=>({
+       latin:String(x.latin??"").slice(0,170),vernacular:String(x.vernacular??"").slice(0,170)
+     }))??[];
      return {collect:r.slots.COLLECT_SET.status,secret:r.slots.SECRET_SET.status,
-      postcommunion:r.slots.POSTCOMMUNION_SET.status,ready:r.ready,missing:r.missing};
+      postcommunion:r.slots.POSTCOMMUNION_SET.status,ready:r.ready,missing:r.missing,
+      correctionProof:r.sourceEditorialCorrections?.map(x=>({id:x.id,slot:x.slot,fields:x.fields}))??[],
+      displayCollect:body("COLLECT_SET"),displaySecret:body("SECRET_SET")};
    })()
   });
   const dates=["2026-03-06","2027-03-06","2026-11-11"];
@@ -141,16 +147,31 @@ for(const date of ["2026-03-06","2027-03-06"]){
   assert.equal(conflict?.status,"SOURCE_CONFLICT",date+" wrong French prayer identity escaped reader");
   assert.equal(conflict?.sourcePath,"Sancti/03-06",date+" attached source owner lost");
  }
- assert.equal(row.reader?.readerSlots?.collect,"MISSING",date+" invalid Collect published as READY");
- assert.equal(row.reader?.readerSlots?.secret,"MISSING",date+" invalid Secret published as READY");
+ assert.equal(row.reader?.readerSlots?.collect,"READY",date+" source-authenticated Collect not restored");
+ assert.equal(row.reader?.readerSlots?.secret,"READY",date+" source-authenticated Secret not restored");
  assert.equal(row.reader?.readerSlots?.postcommunion,"READY",
    date+" unrelated source-authentic named Postcommunion was dropped");
- assert.equal(row.readerEnglish?.readerSlots?.collect,"MISSING",
+ assert.equal(row.readerEnglish?.readerSlots?.collect,"READY",
    date+" English reader exposed the wrong source-Latin Collect");
- assert.equal(row.readerEnglish?.readerSlots?.secret,"MISSING",
+ assert.equal(row.readerEnglish?.readerSlots?.secret,"READY",
    date+" English reader exposed the wrong source-Latin Secret");
  assert.equal(row.readerEnglish?.readerSlots?.postcommunion,"READY",
    date+" correct Postcommunion disappeared in English reader");
+ for(const [lang,reader] of [["fr",row.reader],["en",row.readerEnglish]]){
+  const proof=reader.readerSlots.correctionProof??[];
+  assert.equal(proof.filter(x=>x.id==="1962_C7B_PERPETUA_FELICITY_NONVIRGIN_INHERITANCE").length,2,
+    date+":"+lang+" must trace BOTH named corrected Common orations");
+  for(const key of ["displayCollect","displaySecret"]){
+   const body=reader.readerSlots[key]??[];
+   const comm=body.at(-1);
+   assert.ok(comm?.latin&&comm?.vernacular,date+":"+lang+":"+key+" no bilingual text");
+   assert.doesNotMatch(comm.latin,/V[ií]rginum et M[áa]rtyrum/iu,
+     date+":"+lang+":"+key+" wrong Latin Common still visible");
+   assert.doesNotMatch(comm.vernacular,lang==="fr"?/Vierges et Martyres/iu:/Virgins and Martyrs/iu,
+     date+":"+lang+":"+key+" wrong vernacular Common still visible");
+  }
+ }
+
 }
 const martin=output.observedDays.find(x=>x.date==="2026-11-11");
 assert.equal(martin?.sourcePath,"Sancti/11-11");
