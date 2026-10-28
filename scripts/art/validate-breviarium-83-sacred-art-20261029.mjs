@@ -15,6 +15,9 @@ assert.equal(new Set(i.records.map(x=>x.breviarum_plate_id)).size,83);
 assert.equal(new Set(i.records.map(x=>x.commons_filename)).size,83);
 assert.equal(i.counts.hard_artist_exclusions,7);
 assert.equal(i.counts.commons_metadata_confirmed,83);
+assert.equal(i.counts.aesthetic_triage.PRIORITY_PHOTOGRAPHIC_QA,33);
+assert.equal(i.counts.aesthetic_triage.SECONDARY_VISUAL_REVIEW,14);
+assert.equal(i.counts.artist_name_normalization_corrections,5);
 assert.equal(g.counts.effectiveBannedIDRecords,103);
 assert.equal(prayer.primary_artworks.length,22);
 assert.equal(prayer.placement_records.length,118);
@@ -62,7 +65,7 @@ for(const sheet of w.native_review_sheets){
  assert.equal(createHash("sha256").update(raw).digest("hex"),sheet.sha256);
 }
 console.log(JSON.stringify({result:"PASS_BREVIARIUM_83_BULK_SOURCE_AND_W1_ORIGINAL_INTEGRITY",
- plates:83,commons_metadata:83,hard_artist_rejects:7,priority_photos:28,
+ plates:83,commons_metadata:83,hard_artist_rejects:7,priority_photos:33,
  final_user_rejections_preserved:103,prior_hero_identities_preserved:22,
  new_research_originals_SHA_VERIFIED:2,commons_rate_limited:11,
  image_rights_hold:1,photo_pristine_approvals:0,app_releases:0,cost_eur:0}));
