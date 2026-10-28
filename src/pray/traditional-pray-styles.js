@@ -162,7 +162,7 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
  outline:2px solid #dbb983;outline-offset:2px
 }
 
-/* Personal St Pius X daily prayer: one quiet local-control disclosure below cards. */
+/* Personal St Pius X daily prayer: a compact disclosure beside daypart. */
 #aoPray435930 .aoDailyPersonalSettings{
  margin:12px 14px 4px;padding:10px 13px;border:1px solid rgba(215,188,146,.24);
  border-radius:12px;background:rgba(18,26,35,.88);color:#eee7d8;
@@ -183,8 +183,8 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
  gap:clamp(6px,2vw,20px);margin:0!important;
 }
 #aoPray435930 .aoDailyOpeningRail>.aoDailyPersonalSettings{
- box-sizing:border-box;width:min(calc(100% - 16px),660px);max-width:660px;
- margin:2px auto 7px;padding:0 6px;
+ box-sizing:border-box;width:100%;min-width:0;max-width:660px;
+ margin:0;padding:0 4px;
  background:rgba(15,24,33,.34);border-color:rgba(215,188,146,.15);
 }
 #aoPray435930 .aoDailyOpeningRail>.aoDailyPersonalSettings>summary{
