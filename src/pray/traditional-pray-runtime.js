@@ -225,6 +225,19 @@ function syncDailyTimerView(){
   const value=b.dataset.tp381TimerTarget;
   b.setAttribute("aria-pressed",String(value===(tick.targetMs===null?"none":String(tick.targetMs/60000))));
  }
+ // Anchor the optional expanded timer above its *actual* trigger. The
+ // restored horizon changes the trigger's vertical position, so a fixed
+ // viewport-bottom offset is incorrect on phones.
+ const panel=m.querySelector(".aoDailyClockPanel");
+ const disclosure=m.querySelector("[data-tp381-timer-toggle]");
+ if(panel&&disclosure&&root()?.dataset.aoContemplativeDaily==="guided"){
+  const trigger=disclosure.getBoundingClientRect();
+  const room=Math.max(80,trigger.top-22);
+  panel.style.setProperty("max-height",Math.min(350,room)+"px");
+  panel.style.setProperty("bottom","auto","important");
+  const panelHeight=panel.getBoundingClientRect().height;
+  panel.style.setProperty("top",Math.max(8,trigger.top-panelHeight-9)+"px","important");
+ }
 }
 function startDailyTimerTick(){
  stopDailyTimerTick();
