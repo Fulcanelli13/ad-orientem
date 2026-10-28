@@ -42,6 +42,7 @@ import { prayCollationNotice } from "./source-collation-notices.v1.js";
 import { prayerCompendiumFrenchWitness } from "./compendium-french-witnesses.v1.js";
 import {christKingStages,CHRIST_KING_OPTION_DEFAULTS,CHRIST_KING_CONSECRATION,CHRIST_KING_ROYAL_PRAISES,CHRIST_KING_WITNESSES} from "./christ-king-benediction.js";
 import {benedictionAlleluiaStatus,benedictionVersiclesForDate,BENEDICTION_1962_WITNESS} from "./benediction-1962.js";
+import {FORTY_HOURS_SOLEMN_SOURCE,FORTY_HOURS_SOLEMN_STAGES,fortySolemnAt} from "./forty-hours-solemn.js";
 import {SACRED_HEART_DEVOTIONS_V382} from "./traditional-pray-data.js";
 
 // Locked v43.59.30 PRAY presentation runtime. Kept intact inside a browser-only
@@ -245,7 +246,7 @@ let FS={step:0,intention:false,communion:false,rosary:false,meditation:false,con
 let PEN={step:0,token:0};
 let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null};
 let SEVEN={step:0,sections:null,appendix:'',loading:false,error:'',srcToken:0,scriptToken:0};
-let FORTY={step:0};
+let FORTY={mode:'choose',step:0,solemnStep:0};
 let STATIONS={step:0,optionsOpen:false,publicPosture:false};
 // An explicitly selected public Stations method owns its local recitation/depth.
 // A shared Rosary or prayer-settings preference must not silently deactivate it.
@@ -397,7 +398,7 @@ function open(id,opts={}){
   else if(id==='pray.litany_saints'){view='litany';LIT.step=0}
   else if(id==='pray.seven_words'){view='sevenWords';SEVEN.step=0}
   else if(id==='pray.tenebrae'){view='tenebrae';TEN.day=0;TEN.hour='MATINS';TEN.step=0;TEN.guided=true;TEN.model=null;TEN.error=null;TEN.epoch++}
-  else if(id==='pray.forty_hours'){view='fortyHours';FORTY.step=0}
+  else if(id==='pray.forty_hours'){view='fortyHours';FORTY={mode:'choose',step:0,solemnStep:0}}
   else if(id==='pray.de_profundis'){view='prayerOnly';prayerReturnView='home';prayerId='dead_de_profundis'}
   else if(id==='pray.eternal_rest'){view='prayerOnly';prayerReturnView='home';prayerId='foundations_eternal_rest'}
   else if(id==='programme.first_friday')view='firstFriday';
@@ -1825,6 +1826,7 @@ function backToParent(){
  if(view==='mercy'||view==='rosaryMethods'){view='home';return render()}
  if(view==='family'){view='home';familyId=null;navStack=[];return render()}
  if(view==='adoration'&&ADOR.mode!=='home'){ADOR.quiet=false;ADOR.mode='home';return render()}
+ if(view==='fortyHours'&&FORTY.mode!=='choose'){FORTY.mode='choose';return render()}
  if(view==='library'&&LIB.open){LIB.open=null;return render()}
  if(view==='prayerOnly'){view=prayerReturnView||'library';return render()}
  if(view!=='home'&&navStack.length){popView();return render()}
@@ -2159,7 +2161,34 @@ function fortyStageBody(){
  if(i===4)return `${guideNow(L('When Benediction begins','Lorsque la Bénédiction commence'),L('Switch from private adoration to the live Benediction companion. Advance there only when the corresponding action happens in the church.','Passez de l’adoration privée au compagnon de Bénédiction en direct. N’avancez là-bas que lorsque l’action correspondante se produit dans l’église.'))}<button type="button" class="aoP435930Primary" data-p435930-forty-ben>${esc(L('Follow Benediction','Suivre la Bénédiction'))}</button>`;
  return `${guideNow(L('Leave recollected','Partir recueilli'),L('Before leaving, give thanks, make your final act of reverence, and carry the recollection of the visit back into your duties.','Avant de partir, rendez grâce, faites votre dernier acte de révérence et emportez le recueillement de la visite dans vos devoirs.'))}${guidePrayers([{id:'foundations_act_of_love'}])}${guideCue(L('RETURN TO DUTY','RETOUR AU DEVOIR'),L('Do not turn the exit into another checklist. Finish simply and go.','Ne transformez pas la sortie en nouvelle liste de contrôle. Terminez simplement et partez.'))}`
 }
+function renderFortySolemn(){
+ const total=FORTY_HOURS_SOLEMN_STAGES.length;
+ FORTY.solemnStep=Math.max(0,Math.min(total-1,FORTY.solemnStep));
+ const st=fortySolemnAt(FORTY.solemnStep),i=FORTY.solemnStep;
+ const label=L(st.titleEn,st.titleFr),desc=L(st.bodyEn,st.bodyFr);
+ const calendar=[1,2,3].map(day=>{
+  const first=FORTY_HOURS_SOLEMN_STAGES.findIndex(x=>x.day===day);
+  return `<button type="button" class="aoP435930Secondary" data-p435930-forty-solemn-jump="${first}" aria-pressed="${st.day===day}">${esc(L('Day ','Jour ')+day)}</button>`;
+ }).join("");
+ const next=i<total-1?`<button type="button" data-p435930-forty-solemn-next>${esc(L('Next actual stage','Étape suivante réelle'))}</button>`:`<button type="button" data-p435930-forty-choose>${esc(L('Back to choices','Retour aux choix'))}</button>`;
+ const actions=st.id==="day3-benediction"
+ ?`<button type="button" class="aoP435930Primary" data-p435930-forty-ben>${esc(L('Follow live Benediction','Suivre la Bénédiction en direct'))}</button>`
+ :st.kind==="participant"?`<button type="button" class="aoP435930Secondary" data-p435930-forty-own="pray.adoration" data-p435930-forty-ador="open">${esc(L('Open silent Adoration','Ouvrir l’adoration silencieuse'))}</button>`:"";
+ return `${head(L('Solemn Forty Hours','Quarante-Heures solennelles'),L('Participant’s three-day ceremonial reference','Repères des cérémonies publiques sur trois jours'))}
+ <main class="aoP435930Body aoP435930DevotionalGuidedReader" data-ao-devotional-owner="fortyHours" data-ao-forty-mode="solemn" data-ao-forty-day="${st.day}" data-ao-forty-stage="${esc(st.id)}">
+ <button type="button" class="aoP435930InlineBack" data-p435930-forty-choose>${esc(L('Choose another way to follow','Changer de parcours'))}</button>
+ <p>${esc(L('A sourced historical guide, not a parish timetable or a replacement for the clergy’s ceremonial book. The order shown is indicative; follow the local church whenever it differs.','Guide historique sourcé, non horaire paroissial ni substitut au cérémonial du clergé. L’ordre affiché est indicatif ; suivez votre église s’il diffère.'))}</p>
+ <nav class="aoP435930GuideNav" aria-label="${esc(L('Three days','Trois jours'))}">${calendar}</nav>
+ <section class="aoDevoCard" data-ao-devo-card="solemn-${esc(st.id)}">
+ <header class="aoDevoCardHead"><small>${esc(L('Day ','Jour ')+st.day)} · ${i+1} / ${total}</small><h2 class="aoDevoCardTitle">${esc(label)}</h2></header>
+ <div class="aoDevoCardScroll" role="region" aria-label="${esc(label)}"><p>${esc(desc)}</p><p><small>${esc(st.kind==="public"?L('Clergy-led public ceremony','Cérémonie publique du clergé'):st.kind==="participant"?L('Participant / private adoration','Fidèle / adoration privée'):L('Historical context','Contexte historique'))} ${st.conditional?L('· only if held locally','· si célébré localement'):''}</small></p>${actions}</div></section>
+ <nav class="aoP435930GuideNav" aria-label="${esc(L('Ceremonial navigation','Navigation cérémonielle'))}"><button type="button" data-p435930-forty-solemn-prev ${i===0?'disabled':''}>${esc(L('Previous','Précédent'))}</button>${next}</nav>
+ <p class="aoP435930FeastSource"><a href="${esc(FORTY_HOURS_SOLEMN_SOURCE.institute)}" target="_blank" rel="noopener noreferrer">${esc(L('ICKSP · Forty Hours historical structure','ICRSP · Déroulement historique des Quarante-Heures'))} ↗</a></p>
+ <details class="aoP435930PrayerOptions"><summary>${esc(L('Ceremonial source and limits','Sources et limites cérémonielles'))}</summary><p>${esc(L('The Institute describes opening and closing votive Masses, a Mass for Peace on the second day, public Litany and processions in the complete solemn observance. Exact order and proper prayers await a verified local ceremonial witness. The app never asks a lay person to perform the public blessing.','L’Institut décrit les messes votives d’ouverture et de clôture, la messe pour la paix au deuxième jour, les litanies et processions publiques dans la forme solennelle complète. L’ordre exact et les prières propres exigent un cérémonial local vérifié. L’application n’attribue jamais au fidèle la bénédiction publique.'))}</p></details></main>`;
+}
 function renderFortyHours(){
+ if(FORTY.mode==='choose')return `${head(L('Forty Hours','Quarante-Heures'),L('Choose the experience appropriate to your visit','Choisissez le parcours adapté à votre visite'))}<main class="aoP435930Body aoP435930AdorationReader" data-ao-forty-mode="choose"><div class="aoP435930BigGrid"><button type="button" data-p435930-forty-mode="visitor"><b>${esc(L('Visiting the Forty Hours','Visiter les Quarante-Heures'))}</b><span>${esc(L('The existing six-stage quiet companion for an individual visit.','Le parcours silencieux existant en six étapes pour une visite personnelle.'))}</span></button><button type="button" data-p435930-forty-mode="solemn"><b>${esc(L('Following the solemn Forty Hours','Suivre les Quarante-Heures solennelles'))}</b><span>${esc(L('Three-day guide to public ceremonies, with local variations.','Parcours sur trois jours des cérémonies publiques et variantes locales.'))}</span></button></div></main>`;
+ if(FORTY.mode==='solemn')return renderFortySolemn();
  FORTY.step=Math.max(0,Math.min(FORTY_STAGES.length-1,FORTY.step));
  const index=FORTY.step,title=L(FORTY_STAGES[index][0],FORTY_STAGES[index][1]);
  const card=sourcedDevotionalCard({kind:'fortyHours',id:'forty-'+index,title,index,total:FORTY_STAGES.length,
@@ -2739,6 +2768,11 @@ function onClick(e){
  if(b.dataset.p435930WordStep!=null){SEVEN.step=Math.max(0,Math.min(6,+b.dataset.p435930WordStep));return render()}
  if(b.matches('[data-p435930-word-done]')){popView('home');return render()}
  if(b.dataset.p435930FortyStep!=null){FORTY.step=Math.max(0,Math.min(FORTY_STAGES.length-1,+b.dataset.p435930FortyStep));return render()}
+ if(b.hasAttribute('data-p435930-forty-mode')){FORTY.mode=b.dataset.p435930FortyMode==='solemn'?'solemn':'visitor';FORTY.step=0;FORTY.solemnStep=0;return render()}
+ if(b.hasAttribute('data-p435930-forty-choose')){FORTY.mode='choose';return render()}
+ if(b.hasAttribute('data-p435930-forty-solemn-jump')){const i=Number(b.dataset.p435930FortySolemnJump);if(Number.isInteger(i)&&i>=0&&i<FORTY_HOURS_SOLEMN_STAGES.length){FORTY.solemnStep=i;return render()}return}
+ if(b.hasAttribute('data-p435930-forty-solemn-prev')){FORTY.solemnStep=Math.max(0,FORTY.solemnStep-1);return render()}
+ if(b.hasAttribute('data-p435930-forty-solemn-next')){FORTY.solemnStep=Math.min(FORTY_HOURS_SOLEMN_STAGES.length-1,FORTY.solemnStep+1);return render()}
  if(b.matches('[data-p435930-forty-done]')){FORTY.step=0;return backToParent()}
  if(b.matches('[data-p435930-forty-ben]')){pushView();view='benediction';BEN.step=0;return render()}
  if(b.dataset.p435930FortyOwn){const id=b.dataset.p435930FortyOwn;if(id==='pray.rosary'){launchRosaryPlayer(captureResume());return}pushView();if(id==='pray.adoration'){view='adoration';ADOR.mode=b.dataset.p435930FortyAdor||'open'}else if(id==='pray.litany_saints'){view='litany';LIT.step=0}else if(id==='pray.penitential_psalms'){view='penitential';PEN.step=b.dataset.p435930FortyPsalm!=null?+b.dataset.p435930FortyPsalm:0};return render()}
