@@ -6,7 +6,7 @@ import {availableOptionalMassRites,composeOptionalMassRites} from "./full-mass-o
 import {specialMassPresentation,renderSpecialMassContext} from "./full-mass-special-presentation.js";
 import {massCalendarPreflightContext,fillMassCalendarPreflight} from "./calendar-preflight-context.js";
 import {normalizeFolioExperience,experiencePrayerRoute,experiencePrayerDepth,mayOpenFolioPrayer} from "./full-mass-folio-options.js";
-import {is1962AllSoulsCalendarMass} from "./1962-all-souls-source.js";
+import {is1962AllSoulsCalendarMass,ALL_SOULS_1962_FORMULARIES} from "./1962-all-souls-source.js";
 
 const LABELS=Object.freeze({
   LOW:["Low Mass","Messe basse"],
@@ -462,9 +462,9 @@ export function mountFullMassPreflight({
          ...legacy,calendarDay:authoritativeDay.day?.main
        },authoritativeDay.proper)&&
        (!legacy?.properSource||legacy.properSource===chosenOriginal||
-         legacy.properSource==="Sancti/11-02m1")&&
+         ALL_SOULS_1962_FORMULARIES.includes(legacy.properSource))&&
        (!properPath||properPath===chosenOriginal||
-         properPath==="Sancti/11-02m1");
+         ALL_SOULS_1962_FORMULARIES.includes(properPath));
     const chosenAllSoulsMass=allSoulsDay?getAllSoulsMassChoice(legacy):1;
     if(allSoulsSuccession && (
       !allSoulsDay||allSoulsSuccession.date!==date||
