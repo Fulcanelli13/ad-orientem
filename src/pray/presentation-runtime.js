@@ -24,6 +24,7 @@ import {JOSEPH_SEVEN_SORROWS_SOURCE_B24,JOSEPH_SEVEN_PRAYERS_B24,JOSEPH_SEVEN_ST
 import "./st-joseph-seven-sorrows-styles-b24.js";
 import {MONTFORT_B26_SOURCE,MONTFORT_B26_PHASES,MONTFORT_B26_AVE_MARIS_LATIN,MONTFORT_B26_CONSECRATION_ACT_EN,montfortPhaseForDay,montfortSchedule,montfortTodayLocal,montfortNextFeast} from "./montfort-consecration-b26.js";
 import "./montfort-consecration-styles-b26.js";
+import {NIGHT_HOME_B29_SOURCE,NIGHT_HOME_B29_STAGES,nightHomeAsGuided} from "./night-home-adoration-b29.js";
 import {MONTFORT_B27_PRAYERS,MONTFORT_B27_SOURCE,montfortHistoricalPrayerRows,montfortB27RequiredForDay} from "./montfort-original-prayers-b27.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
 import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
@@ -282,7 +283,7 @@ let ROSARY_CHOOSER={method:'ordinary',decades:5,guide:S.rosary.mode==='guided'?'
 function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,contrition:"standard",since:''}}
 let CONF=freshConfessionState();
 let BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:"ordinary",feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};
-let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};
+let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,nightStep:0,timer:null,timerEnd:0,quiet:false};
 const ADOR_FOUR_CHOICES_KEY="ao.pray.adoration-four-choices.v1";
 let ADOR_FOUR_CHOICES=null;
 function adorationFourChoices(){
@@ -481,7 +482,7 @@ function close({silent=false,preserve=false}={}){
     praySessionLanguage=null;
     // Privacy-sensitive preparation is memory-only and is cleared on a true close.
     CONF=freshConfessionState();
-    BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};adorationQuietReturn=null;
+    BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,nightStep:0,timer:null,timerEnd:0,quiet:false};adorationQuietReturn=null;
     if(!silent){FF={step:0,intention:false,communion:false};FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0}}
   }
   const ret=returnContext;returnContext=null;if(!silent&&!preserve){navStack=[];externalResume=null}if(!silent&&ret)queueMicrotask(()=>{if(ret?.surface==='apostolate')void window?.AO_APP_SHELL_V1?.navigate?.('apostolate');else window.AO_NAV_V362?.restore?.(ret)});
@@ -1667,7 +1668,7 @@ function enterAdorationQuiet(){
  const m=mount();
  const card=m?.querySelector('.aoP435930AdorationReader .aoDevoCardScroll');
  adorationQuietReturn={
-  mode:ADOR.mode,visitStep:ADOR.visitStep,holyStep:ADOR.holyStep,fourStep:ADOR.fourStep,
+  mode:ADOR.mode,visitStep:ADOR.visitStep,holyStep:ADOR.holyStep,fourStep:ADOR.fourStep,nightStep:ADOR.nightStep,
   mountScroll:m?.scrollTop||0,cardScroll:card?.scrollTop||0
  };
  stopTimer();ADOR.quiet=true;render();
@@ -1772,9 +1773,13 @@ function renderAdoration(){
       <b>${esc(L('Eucharistic Treasury','Trésor eucharistique'))}</b>
       <span>${esc(L('Traditional Eucharistic prayers, available directly.','Prières eucharistiques traditionnelles, en accès direct.'))}</span>
      </button>
+     <button type="button" data-p435930-ador-mode="night">
+      <b>${esc(L('Night Adoration at Home · Fr Mateo','Adoration nocturne au foyer · P. Mateo'))}</b>
+      <span>${esc(L('A voluntary Sacred Heart night watch at home, without treating the image as the Blessed Sacrament.','Veillée facultative du Sacré-Cœur au foyer, sans confondre image et Saint-Sacrement.'))}</span>
+     </button>
     </div>
    </details>
-   <p class="aoAdorationChooserAfterword">${esc(L('If a public liturgical rite begins, follow the rite rather than a private guide.','Si un rite liturgique public commence, suivez le rite plutôt qu’un guide privé.'))}</p>
+   <p class="aoAdorationChooserAfterword'>${esc(L('If a public liturgical rite begins, follow the rite rather than a private guide.','Si un rite liturgique public commence, suivez le rite plutôt qu’un guide privé.'))}</p>
    ${adorationReturnFromBenediction?`<button type="button" class="aoP435930Secondary aoAdorationPublicRiteLink" data-p435930-go-ben>
      ${esc(L('Return to public Benediction','Revenir à la bénédiction eucharistique'))}
      <small>${esc(L('Includes optional Christ the King procession and prayers','Avec procession et prières facultatives du Christ-Roi'))}</small>
@@ -1798,9 +1803,9 @@ function renderAdoration(){
   const steps=fourSteps();content=`${presenceBar()}${guidedStage('four',steps,ADOR.fourStep,L('Return to silent adoration','Revenir à l’adoration silencieuse'))}${callout(esc(L('The Four Ends are a method for structuring prayer, not four tasks that earn completion.','Les quatre fins sont une méthode pour structurer la prière, non quatre tâches qui donnent un accomplissement.')),'rubric')}`;
  }
  if(ADOR.mode==='treasury')content=`<div class="aoP435930LibraryMini">${['foundations_prayer_of_adoration','adoration_anima_christi','adoration_spiritual_communion','adoration_lord_i_am_not_worthy','benediction_o_salutaris','benediction_tantum_ergo','adoration_litany_blessed_sacrament'].map(id=>{const p=P(id);return p?`<button data-p435930-open-prayer="${id}"><b>${esc(isFr()?(p.titleFr||p.title):p.title)}</b><span>${esc(['en','fr','la'].filter(k=>p[k]).map(k=>k.toUpperCase()).join(' · '))}</span></button>`:''}).join('')}</div>`+eucharisticWitnessTreasury()+batch02SourceLinks('adoration-optional');
- const isGuided=['visit','holy','four'].includes(ADOR.mode);
- const stage=isGuided?(ADOR.mode==='visit'?ADOR.visitStep:ADOR.mode==='holy'?ADOR.holyStep:ADOR.fourStep):-1;
- return `${head(L('Adoration & Visit','Adoration et visite'),ADOR.mode==='visit'?L('Guided Visit','Visite guidée'):ADOR.mode==='open'?L('Open-ended Adoration','Adoration libre'):ADOR.mode==='holy'?L('Guided Holy Hour','Heure Sainte guidée'):ADOR.mode==='four'?L('Four Ends method','Méthode des quatre fins'):L('Eucharistic Treasury','Trésor eucharistique'))}<main class="aoP435930Body aoP435930AdorationReader" data-ao-adoration-folio="v1" data-ao-adoration-mode="${esc(ADOR.mode)}" data-ao-adoration-step="${stage}"><button class="aoP435930InlineBack" data-p435930-ador-home>${assetIcon('ao-ui-back')} ${esc(L('Choose another mode','Choisir un autre mode'))}</button>${content}${devotionalGuide('adoration')} </main>`;
+ const isGuided=['visit','holy','four','night'].includes(ADOR.mode);
+ const stage=isGuided?(ADOR.mode==='visit'?ADOR.visitStep:ADOR.mode==='holy'?ADOR.holyStep:ADOR.mode==='night'?ADOR.nightStep:ADOR.fourStep):-1;
+ return `${head(L('Adoration & Visit','Adoration et visite'),ADOR.mode==='visit'?L('Guided Visit','Visite guidée'):ADOR.mode==='open'?L('Open-ended Adoration','Adoration libre'):ADOR.mode==='holy'?L('Guided Holy Hour','Heure Sainte guidée'):ADOR.mode==='four'?L('Four Ends method','Méthode des quatre fins'):ADOR.mode==='night'?L('Night Adoration in the Home · Fr Mateo','Adoration nocturne au foyer · P. Mateo'):L('Eucharistic Treasury','Trésor eucharistique'))}<main class="aoP435930Body aoP435930AdorationReader" data-ao-adoration-folio="v1" data-ao-adoration-mode="${esc(ADOR.mode)}" data-ao-adoration-step="${stage}"><button class="aoP435930InlineBack" data-p435930-ador-home>${assetIcon('ao-ui-back')} ${esc(L('Choose another mode','Choisir un autre mode'))}</button>${content}${devotionalGuide('adoration')} </main>`;
 }
 function familyOf(p){if(['litany_loreto_1962','litany_loreto_current'].includes(p.id))return'litany_loreto';if(['foundations_eternal_rest','dead_eternal_rest_singular'].includes(p.id))return'eternal_rest';return p.id}
 let LIB={q:'',cat:'all',open:null,language:null};
@@ -2236,7 +2241,7 @@ function reopenResume(snapshot){
  const r=shell();r.classList.add('open');r.setAttribute('aria-hidden','false');document.body.classList.add('aoP435930Open');render();
  queueMicrotask(()=>r.querySelector('button,[href],input,[tabindex]:not([tabindex="-1"])')?.focus?.());return true
 }
-function navigationSignature(){return [view,PRIESTS.purpose,PRIESTS.latin,OCCASIONAL.purpose,OCCASIONAL.latin,JOSEPH_SEVEN.step,JOSEPH_SEVEN.latin,MONTFORT.day,MONTFORT.target,MONTFORT.completed.join(','),MERCY.step,MERCY.includeClosing,MERCY.guide,FIVE_WOUNDS.index,FIVE_WOUNDS.latin,PRECIOUS_BLOOD.phase,PRECIOUS_BLOOD.bead,PRECIOUS_BLOOD.latin,TEN.day,TEN.hour,TEN.step,TEN.face,familyId||'',CONF.stage,CONF.path||'',CONF.examStep,CONF.riteStep,CONF.afterStep,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
+function navigationSignature(){return [view,PRIESTS.purpose,PRIESTS.latin,OCCASIONAL.purpose,OCCASIONAL.latin,JOSEPH_SEVEN.step,JOSEPH_SEVEN.latin,MONTFORT.day,MONTFORT.target,MONTFORT.completed.join(','),MERCY.step,MERCY.includeClosing,MERCY.guide,FIVE_WOUNDS.index,FIVE_WOUNDS.latin,PRECIOUS_BLOOD.phase,PRECIOUS_BLOOD.bead,PRECIOUS_BLOOD.latin,TEN.day,TEN.hour,TEN.step,TEN.face,familyId||'',CONF.stage,CONF.path||'',CONF.examStep,CONF.riteStep,CONF.afterStep,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,ADOR.nightStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
 function focusables(){const r=document.getElementById(ROOT_ID);if(!r?.classList.contains('open'))return [];return [...r.querySelectorAll('button:not([disabled]),[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(el=>el.offsetParent!==null&&!el.hidden)}
 
 
@@ -2989,10 +2994,10 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
   });
   if(reader)m.querySelector('.aoP435930ConfessionReader')?.setAttribute('data-ao-confession-dual-axis','true');
  });
- if(view==='adoration'&&['visit','holy','four'].includes(ADOR.mode))queueMicrotask(()=>{
+ if(view==='adoration'&&['visit','holy','four','night'].includes(ADOR.mode))queueMicrotask(()=>{
   const mode=ADOR.mode;
-  const steps=mode==='visit'?visitSteps():mode==='holy'?holySteps():fourSteps();
-  const index=mode==='visit'?ADOR.visitStep:mode==='holy'?ADOR.holyStep:ADOR.fourStep;
+  const steps=mode==='visit'?visitSteps():mode==='holy'?holySteps():mode==='night'?nightHomeAsGuided(lang()):fourSteps();
+  const index=mode==='visit'?ADOR.visitStep:mode==='holy'?ADOR.holyStep:mode==='night'?ADOR.nightStep:ADOR.fourStep;
   const chapters=steps.map((step,i)=>({id:mode+'-'+i,title:step.title}));
   const reader=installSequentialDevotionalReader({
    mount:m,kind:'adoration',chapters,activeIndex:index,
@@ -3002,6 +3007,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     if(ADOR.mode!==mode)return;
     if(mode==='visit')ADOR.visitStep=i;
     else if(mode==='holy')ADOR.holyStep=i;
+    else if(mode==='night')ADOR.nightStep=i;
     else ADOR.fourStep=i;
     render()
    }
@@ -3409,7 +3415,7 @@ function onClick(e){
  }
  if(b.matches('[data-p435930-ador-quiet-enter]'))return enterAdorationQuiet();
  if(b.matches('[data-p435930-ador-quiet-exit]'))return exitAdorationQuiet();
- if(b.dataset.p435930AdorMode){ADOR.quiet=false;ADOR.mode=b.dataset.p435930AdorMode;if(ADOR.mode==='visit')ADOR.visitStep=0;if(ADOR.mode==='holy')ADOR.holyStep=0;if(ADOR.mode==='four')ADOR.fourStep=0;return render()}
+ if(b.dataset.p435930AdorMode){ADOR.quiet=false;ADOR.mode=b.dataset.p435930AdorMode;if(ADOR.mode==='visit')ADOR.visitStep=0;if(ADOR.mode==='holy')ADOR.holyStep=0;if(ADOR.mode==='four')ADOR.fourStep=0;if(ADOR.mode==='night')ADOR.nightStep=0;return render()}
  if(b.matches('[data-p435930-ador-home]')){ADOR.quiet=false;ADOR.mode='home';stopTimer();return render()}
  if(b.dataset.p435930Timer)return startTimer(+b.dataset.p435930Timer);
  if(b.matches('[data-p435930-timer-stop]')){stopTimer();return render()}
@@ -3421,6 +3427,7 @@ function onClick(e){
  if(b.matches('[data-p435930-visit-finish]')&&ADOR.visitStep===visitSteps().length-1){ADOR.visitStep=0;ADOR.mode='home';return render()}
 
  if(b.matches('[data-p435930-holy-finish]')&&ADOR.holyStep===holySteps().length-1){ADOR.holyStep=0;ADOR.mode='home';return render()}
+  if(b.matches('[data-p435930-night-finish]')&&ADOR.nightStep===NIGHT_HOME_B29_STAGES.length-1){ADOR.nightStep=0;ADOR.mode='home';stopTimer();return render()}
 
  if(b.matches('[data-p435930-four-finish]')&&ADOR.fourStep===fourSteps().length-1){ADOR.fourStep=0;ADOR.mode='open';return render()}
 
@@ -3482,7 +3489,7 @@ function onClick(e){
   clearInternalPrayerRouteErrors();
   pushView();routeOwn(id);return;
  }
- if(b.matches('[data-p435930-ador-mode-direct]')){view='adoration';ADOR.mode=b.dataset.p435930AdorModeDirect;if(ADOR.mode==='visit')ADOR.visitStep=0;if(ADOR.mode==='holy')ADOR.holyStep=0;if(ADOR.mode==='four')ADOR.fourStep=0;return render()}
+ if(b.matches('[data-p435930-ador-mode-direct]')){view='adoration';ADOR.mode=b.dataset.p435930AdorModeDirect;if(ADOR.mode==='visit')ADOR.visitStep=0;if(ADOR.mode==='holy')ADOR.holyStep=0;if(ADOR.mode==='four')ADOR.fourStep=0;if(ADOR.mode==='night')ADOR.nightStep=0;return render()}
  if(b.hasAttribute('data-p435930-ff-direct-prayer')){
    if(view!=='firstFriday'||!P('sacred_heart_short_prayer'))return;
    prayerReturnView='firstFriday';prayerId='sacred_heart_short_prayer';
