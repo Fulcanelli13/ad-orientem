@@ -747,7 +747,7 @@ function render(){
     if(reader)m.dataset.aoTraditionalDualAxis=reader.kind;
   }
   if(S.screen==="module"&&S.route==="pray.sacred_hymns"){
-    const chapters=HYMN_KEYS.map(id=>({id:"hymn-"+id,title:SACRED_HYMNS_V381[id].title}));
+    const chapters=HYMN_KEYS.map(id=>({id:"hymn-"+id,title:hymnById(id).title}));
     const reader=installSequentialDevotionalReader({
       mount:m,kind:"hymns",chapters,activeIndex:HYMN_KEYS.indexOf(S.hymn),
       paragraphSelector:".aoTP381TextParagraph",
