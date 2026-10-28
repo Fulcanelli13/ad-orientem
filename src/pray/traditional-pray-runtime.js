@@ -2,6 +2,7 @@ import "./traditional-pray-styles.js";
 import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "./dying-companion-flow.js";
 import {JOSEPH_LITANY_1909_V1,JOSEPH_LITANY_2021_V1} from "./st-joseph-litany-1909.v1.js";
+import {B01_FULL_GRACE_1888,B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import {GOLDEN_ARROW_REPARATION_V1} from "./icksp-golden-arrow-reparation.v1.js";
 import {ICRSP_SEASONAL_HYMNS_V1,ICRSP_SEASONAL_HYMN_IDS_V1} from "./icrsp-seasonal-hymns.v1.js";
 import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabel} from "./guided-daily-cards.js";
@@ -108,7 +109,7 @@ function prayerRows(rows){
 }
 
 let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={},OPEN_RECEIPT=null,MASS_HANDOFF_BUSY=false;
-let S={dailyTimerOpen:false,dailyLength:"standard",litanyMode:"full",litanyStep:0,mealStep:0,route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",communionStep:0,goodDeathStep:0,goodDeathJosephEdition:"1909",dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false,massStep:0,massDepth:"brief"};
+let S={dailyTimerOpen:false,dailyLength:"standard",litanyMode:"full",litanyStep:0,mealStep:0,mealForm:"short",examenContrition:"standard",route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",communionStep:0,goodDeathStep:0,goodDeathJosephEdition:"1909",dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false,massStep:0,massDepth:"brief"};
 
 
 
@@ -421,7 +422,13 @@ function renderHolyName(){
 function renderNightlyExamen(){
  const steps=NIGHTLY_EXAMEN_CARDS,step=clampPrayerCardStep(S.examenStep,steps.length),item=steps[step];
  const focus=step===steps.length?"":`<p>${esc(isFr()?item.bodyFr:item.bodyEn)}</p>`;
- const prayer=(item?.id==="resolve"&&!S.returnToDaily)?prayerCard("sacrament_act_of_contrition",{focusParagraphs:true}):"";
+ const standaloneResolve=item?.id==="resolve"&&!S.returnToDaily;
+ const pChoice=standaloneResolve?`<nav class="aoTP381Tabs" role="group" aria-label="${esc(L("Act of Contrition edition","Version de l’acte de contrition"))}"><button type="button" data-tp381-b01-contrition="standard" aria-pressed="${S.examenContrition!=="piusx"}" class="${S.examenContrition!=="piusx"?"active":""}">${esc(L("Ordinary Act","Acte habituel"))}</button><button type="button" data-tp381-b01-contrition="piusx" aria-pressed="${S.examenContrition==="piusx"}" class="${S.examenContrition==="piusx"?"active":""}">${esc(L("St Pius X · 1905","Saint Pie X · 1905"))}</button></nav>`:"";
+ const selected=S.examenContrition==="piusx"?B01_PIUS_X_1905_CONTRITION:null;
+ const prayer=standaloneResolve?pChoice+(selected?
+   sourcedPrayerCard(selected,L(selected.title,selected.titleFr),{focusParagraphs:true})+
+   `<p class="aoTP381Intro" data-ao-b01-contrition-source-status>${esc(L("English and French are editorial renderings of the 1905 Italian Catechism, not certified printed translations.","L’anglais et le français sont des traductions éditoriales du catéchisme italien de 1905, et non des éditions imprimées certifiées."))}</p>`+source("St Pius X · Italian catechism · 1905",selected.provenance.url)
+   :prayerCard("sacrament_act_of_contrition",{focusParagraphs:true})):"";
  const after=step===steps.length
   ?S.returnToDaily
     ?`<button type="button" data-tp381-examen-return>${esc(L("Continue Evening Prayer","Poursuivre les prières du soir"))}</button>`
@@ -432,12 +439,15 @@ function renderNightlyExamen(){
  return `${head(L("Nightly Examination","Examen du soir"))}<main class="aoP435930Body aoTP381DonorBody"><section class="aoDevoCard" data-ao-devo-card="${esc(item?.id||"examen-finished")}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L("Examination of conscience","Examen de conscience"))}">${card}</div></section><details class="aoTP381SecondaryOptions" data-ao-examen-options><summary>${esc(L("About this examination","À propos de cet examen"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("Review the day before God in silence. This brief examen does not replace preparation for sacramental Confession; no answers are collected.","Examinez votre journée devant Dieu, dans le silence. Cet examen bref ne remplace pas la préparation à la Confession sacramentelle ; aucune réponse n’est recueillie."))}</p></div></details><div class="aoTP381PrayerList"><button type="button" data-tp381-route="pray.confession"><span><b>${esc(L("Preparing for sacramental Confession?","Vous préparez-vous à la Confession sacramentelle ?"))}</b><small>${esc(L("Open the full Confession examination","Ouvrir l’examen complet de Confession"))}</small></span><i aria-hidden="true">→</i></button></div></main>`;
 }
 function renderMealPrayers(){
-  const before=S.mealStep!==1;
-  const id=before?"foundations_grace_before_meals":"foundations_grace_after_meals";
-  const title=before?L("Before meals","Avant le repas"):L("After meals","Après le repas");
-  const card=`<section class="aoDevoCard" data-ao-devo-card="${before?"meal-before":"meal-after"}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(title)}">${prayerCard(id,{focusParagraphs:true})}</div></section>`;
-  const context=`<details class="aoTP381SecondaryOptions" data-ao-meal-options><summary>${esc(L("About these prayers","À propos de ces prières"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("These are the ordinary table prayers from the canonical Catholic prayer corpus.","Il s’agit des prières ordinaires des repas issues du corpus canonique de prières catholiques."))}</p></div></details>`;
-  return `${head(L("Grace at Meals","Prières des repas"))}<main class="aoP435930Body aoTP381DonorBody">${card}${context}</main>`;
+ const before=S.mealStep!==1,full=!before&&S.mealForm==="full";
+ const id=before?"foundations_grace_before_meals":"foundations_grace_after_meals";
+ const title=before?L("Before meals","Avant le repas"):L("After meals","Après le repas");
+ const choice=before?"":`<nav class="aoTP381Tabs" role="group" aria-label="${esc(L("Grace after Meals version","Version des grâces après le repas"))}"><button type="button" data-tp381-b01-meal="short" aria-pressed="${!full}" class="${!full?"active":""}">${esc(L("Ordinary","Habituel"))}</button><button type="button" data-tp381-b01-meal="full" aria-pressed="${full}" class="${full?"active":""}">${esc(L("Complete · 1888","Complète · 1888"))}</button></nav>`;
+ const prayer=full?
+   sourcedPrayerCard(B01_FULL_GRACE_1888,L(B01_FULL_GRACE_1888.title,B01_FULL_GRACE_1888.titleFr),{focusParagraphs:true}):prayerCard(id,{focusParagraphs:true});
+ const card=`<section class="aoDevoCard" data-ao-devo-card="${before?"meal-before":full?"meal-after-full":"meal-after"}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(title)}">${prayer}</div></section>`;
+ const context=`<details class="aoTP381SecondaryOptions" data-ao-meal-options><summary>${esc(L("About these prayers","À propos de ces prières"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("The ordinary short Grace stays the default. The complete 1888 Baltimore Manual response-form is an independent optional thanksgiving. Its French wording is an editorial rendering, not an attested historical French edition.","Les grâces habituelles brèves restent la formule par défaut. Le texte complet du Manuel de Baltimore (1888) est une option distincte avec répons ; son français est une traduction éditoriale, non une édition française historique attestée."))}</p>${source("Baltimore Manual · 1888 · Grace after Meals",B01_FULL_GRACE_1888.provenance.url)}</div></details>`;
+ return `${head(L("Grace at Meals","Prières des repas"))}<main class="aoP435930Body aoTP381DonorBody">${choice}${card}${context}</main>`;
 }
 function sourcedPrayerCard(item,label,{focusParagraphs=false,verseFocus=false}={}){
   const vern=isFr()?(item?.fr||item?.en||item?.la):(item?.en||item?.fr||item?.la),latin=item?.la||"",both=!!(vern&&latin);
@@ -844,7 +854,7 @@ function goHome(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-b01-meal],[data-tp381-b01-contrition],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-home]"))return goHome();
@@ -1058,6 +1068,8 @@ function handleClick(e){
 
   if(b.dataset.tp381LitanyMode){S.litanyMode=b.dataset.tp381LitanyMode==="guided"?"guided":"full";S.litanyStep=0;return render()}
   if(b.hasAttribute("data-tp381-litany-step")){S.litanyStep=Math.max(0,Math.min(6,Number(b.dataset.tp381LitanyStep)||0));return render()}
+  if(b.dataset.tp381B01Meal){if(S.route!=="pray.meal_prayers"||S.mealStep!==1)return;S.mealForm=b.dataset.tp381B01Meal==="full"?"full":"short";return render()}
+  if(b.dataset.tp381B01Contrition){if(S.route!=="pray.nightly_examen"||S.returnToDaily)return;S.examenContrition=b.dataset.tp381B01Contrition==="piusx"?"piusx":"standard";return render()}
   if(b.dataset.tp381Hymn){S.hymn=hymnById(b.dataset.tp381Hymn)?b.dataset.tp381Hymn:"te_deum";S.hymnLang=null;return render()}
   if(b.dataset.tp381HymnLang){S.hymnLang=["en","fr","la"].includes(b.dataset.tp381HymnLang)?b.dataset.tp381HymnLang:(isFr()?"fr":"en");return render()}
   if(b.dataset.tp381JosephEdition){if(S.route!=="pray.good_death")return;S.goodDeathJosephEdition=b.dataset.tp381JosephEdition==="2021"?"2021":"1909";return render()}
