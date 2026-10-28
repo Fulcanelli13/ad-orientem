@@ -428,7 +428,9 @@ try{
   const modeSwitchCue=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getActiveCue());
   assert.ok(["AO.SM.C0173","AO.SM.C0174"].includes(modeSwitchCue),
     "Mode switch started outside the sourced Host Consecration");
-  await tapMode("SIMPLE");
+  assert.equal(await page.locator('[data-reader-mode="SIMPLE"]').count(),0,
+    "Retired SIMPLE must not appear in Mass reader preferences");
+  await tapMode("MISSAL");
   let switched=await page.evaluate(()=>({
     mode:window.__AO_PHONE_PREVIEW.getPresentationMode(),
     card:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId??null,
@@ -437,20 +439,8 @@ try{
     source:window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null,
     progress:document.querySelector('[data-role="progress"]')?.textContent??"",
   }));
-  assert.deepEqual(switched,{mode:"SIMPLE",card:"AO.CARD.015",cue:modeSwitchCue,product:30,source:30,progress:"15 / 30"},
-    "LIVE -> SIMPLE did not preserve the actually selected canonical Host cue");
-
-  await tapMode("MISSAL");
-  switched=await page.evaluate(()=>({
-    mode:window.__AO_PHONE_PREVIEW.getPresentationMode(),
-    card:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId??null,
-    cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
-    product:window.__AO_PHONE_PREVIEW.model?.totalCards??null,
-    source:window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null,
-    progress:document.querySelector('[data-role="progress"]')?.textContent??"",
-  }));
   assert.deepEqual(switched,{mode:"MISSAL",card:"AO.CARD.015",cue:modeSwitchCue,product:67,source:30,progress:"34 / 67"},
-    "SIMPLE -> MISSAL changed the canonical Host source cue");
+    "LIVE -> MISSAL changed the canonical Host source cue");
   assert.equal(await page.locator('.ao-missal-prayer-heading[data-source-block-id="AO.SM.B052"]').count(),1,
     "Missal lacks its in-text canonical prayer title at the Host Consecration");
   assert.equal(await page.locator('[data-role="missal-faithful-gesture"]').count(),1,
