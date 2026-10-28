@@ -10,10 +10,11 @@
     "laterUpdatedAppendix": "Postconciliar redaction of prayer formulas published as a 1967 update is NOT an original 1905/1912 Pius X prayer witness"
   },
   "hierarchy": [
-    "Pius X catechism original or authorized source edition = routine sequence and primary common texts",
-    "Source-era EN/FR attested text with verified wording = language presentation only (no invented translation)",
-    "Other preconciliar manuals = optional extra complete devotional prayers only",
-    "Existing canonical reader remains unchanged until gated release"
+    "Pius X's original 1905 and revised 1912/authorized 1913 catechism: govern exact source-edition prayer order",
+    "Historically attested English witness 1914 Hagan is bibliographically identified; actual printed appendix requires image/text verification",
+    "Hagan-associated online Q972–985 English catechetical advice may be shown only as provisional English reference, never as certified original 1914 wording",
+    "Only edition-checked complete English/French source prayer bodies may be added to the future public approved registry",
+    "Other printed Catholic prayer manuals: clearly optional complementary devotions"
   ],
   "sources": [
     {
@@ -282,16 +283,112 @@
           ]
         }
       }
+    },
+    {
+      "id": "piusx-hagan-en-derived",
+      "name": "English Pius X daily-prayer catechesis — Hagan-associated English text, later digital presentation; original 1914 print NOT checked",
+      "lang": "en",
+      "date": "1910 Hagan translation tradition; online transcription date unknown",
+      "kind": "EARLY_ENGLISH_CATECHETICAL_PARAPHRASE_UNVERIFIED_ORIGINAL_PRINT",
+      "url": "https://sites.google.com/view/pius-x-catechism/on-daily-exercises-and-devotions",
+      "sourceEditionHold": "https://catalogue.nli.ie/Record/vtls000760522",
+      "imageChecked": false,
+      "sourceConflicts": "Q974 morning body is not identical to either 1905 Italian printed Morning Prayer or the 1913 French revised version. Q984 directs one to recite same prayers; it does not give a standalone distinct evening prayer body in this English witness.",
+      "note": "Transcribed from an Hagan-associated modern English web presentation of the Greater Catechism Q972–985, NOT compared with an original printed English edition. The 1914 Hagan translation has a reliable National Library of Ireland bibliographic record but its actual prayer appendix has not been inspected.",
+      "routines": {
+        "morning": {
+          "text": "I adore Thee, O my God, and I love Thee with all my heart. I give Thee thanks for having made me a Christian and keeping me through this night. I offer Thee all my acts. I pray Thee to keep me this day without sin and to deliver me from all evil. Amen.",
+          "textProvenance": "English Q974 as published in an online derivative; not original 1914 printed-text certified",
+          "stages": [
+            [
+              "sign-of-cross",
+              "Sign of the Cross — on waking",
+              "rubric"
+            ],
+            [
+              "daily-prayer",
+              "Morning act of adoration, thanksgiving and offering (Q974)",
+              "derived-text"
+            ],
+            [
+              "our-father",
+              "Our Father (Q974)",
+              "common"
+            ],
+            [
+              "hail-mary",
+              "Hail Mary (Q974)",
+              "common"
+            ],
+            [
+              "creed",
+              "Apostles' Creed (Q974)",
+              "common"
+            ],
+            [
+              "faith",
+              "Act of Faith (Q974)",
+              "common"
+            ],
+            [
+              "hope",
+              "Act of Hope (Q974)",
+              "common"
+            ],
+            [
+              "charity",
+              "Act of Charity (Q974)",
+              "common"
+            ]
+          ]
+        },
+        "evening": {
+          "text": "",
+          "textProvenance": "Q984 directs the same devotional prayers as in the morning; no distinct complete English Evening Prayer formula has been verified in the 1914 print",
+          "stages": [
+            [
+              "presence",
+              "Place yourself in God's presence (Q984)",
+              "rubric"
+            ],
+            [
+              "daily-prayer",
+              "Same prayers as Morning (Q984), not a separately printed English evening formula",
+              "rubric"
+            ],
+            [
+              "examen",
+              "Examine your conscience (Q984)",
+              "guided"
+            ],
+            [
+              "contrition",
+              "Ask pardon for sins committed that day (Q984)",
+              "rubric"
+            ],
+            [
+              "sign-of-cross",
+              "Sign of the Cross before sleep (Q985)",
+              "rubric"
+            ],
+            [
+              "jesus-mary-joseph",
+              "Bedtime commendation to the Trinity, Jesus, Mary and Joseph (Q985)",
+              "derived-text"
+            ]
+          ]
+        }
+      }
     }
   ],
   "caveats": [
     "1905 original Italian and 1912 revised/1913 French order differ; do not synthesize as one alleged original.",
     "The 1913 printed French text was visually checked on pages 117 and 118. The 1905 Italian appendix presently relies on proofread Wikisource transcription, not a direct image check in this pass.",
-    "English edition-matched Pius X Morning/Evening prayer text not yet independently verified; do not invent or translate one and label historical.",
     "1913 French appended De Profundis and deathbed invocations are adjacent devotions, not necessarily core prescribed evening list.",
     "Some older indulgence notes are historically situated and not current indulgence promises.",
     "All strings are research witnesses and guide labels; no rights clearance, user editorial choice or public manifest authorization is implied.",
-    "French printed-page transcriptions have been visually inspected but still need a second proofreader before clearing public copy."
+    "French printed-page transcriptions have been visually inspected but still need a second proofreader before clearing public copy.",
+    "An English Hagan 1914 bibliographic record is located, but the actual original 1914 pages are not yet available/checked. The online English Q972–985 reference is visibly marked derivative and research-only."
   ],
   "commonPrayers": {
     "piusx-1913-fr": {
@@ -357,7 +454,51 @@
         "text": "Gesù, Giuseppe e Maria, spiri in pace con voi l’anima mia.",
         "page": null
       }
+    },
+    "piusx-hagan-en-derived": {
+      "jesus-mary-joseph": {
+        "text": "My Lord and my God, I give Thee all my heart; Most Holy Trinity, give me grace to live a good life and to die a good death; Jesus, Mary, and Joseph, I give you my heart and my soul.",
+        "page": null,
+        "verification": "ONLINE_DERIVED_Q985_NOT_ORIGINAL_EDITION_PRINT_VERIFIED",
+        "sourceUrl": "https://sites.google.com/view/pius-x-catechism/on-daily-exercises-and-devotions"
+      }
     }
   },
-  "commonTextPolicy": "The French common-prayer text fields are independently transcribed from visually inspected early French printed pages 10–15 and 118. The 1905 Italian common prayer words remain unfilled until exact original-page witness checks; do not silently borrow the 1913 revision or current canonical app text."
+  "commonTextPolicy": "The French common-prayer text fields are independently transcribed from visually inspected early French printed pages 10–15 and 118. The 1905 Italian common prayer words remain unfilled until exact original-page witness checks; do not silently borrow the 1913 revision or current canonical app text.",
+  "englishResearch": {
+    "bibliographic1914": {
+      "work": "Catechism of Christian Doctrine: published by order of His Holiness Pius X",
+      "translator": "Rev. John Hagan",
+      "publisher": "M. H. Gill, Dublin",
+      "year": 1914,
+      "pages": 152,
+      "library": "National Library of Ireland",
+      "record": "https://catalogue.nli.ie/Record/vtls000760522",
+      "language": "English",
+      "translates": "Compendio della dottrina cristiana",
+      "editionPrintInspected": false,
+      "fullDailyPrayerTextRetrieved": false,
+      "reuseRights": "REVIEW_PENDING"
+    },
+    "englishCatechesisOnline": {
+      "reference": "Greater Catechism Q972–985; Hagan-associated online presentation",
+      "source": "https://sites.google.com/view/pius-x-catechism/on-daily-exercises-and-devotions",
+      "sourceTier": "SECONDARY_ONLINE_ENGLISH_TRANSCRIPTION",
+      "original1910PrintVerified": false,
+      "notEditionMatchedTo1914": true,
+      "entireMorningEveningSequenceAuthenticAs1914": false
+    },
+    "oldHaganCompendium": {
+      "title": "A Compendium of Catechetical Instruction",
+      "editor": "John Hagan",
+      "year": "c.1908–1911; later reprints",
+      "scope": "mixed Roman Catechism, Pius X catechism and Raineri material",
+      "notInterchangeableWith": "1914 English translation of revised catechism"
+    },
+    "blockedSubstitutions": [
+      "1974 Kevane edition revised from 1953 abridged Italian",
+      "Modern online Hagan-derived Q974 wording presented falsely as a 1914 printed-page facsimile",
+      "English text newly translated from 1913 French by Ad Orientem without labelling a modern translation"
+    ]
+  }
 }
