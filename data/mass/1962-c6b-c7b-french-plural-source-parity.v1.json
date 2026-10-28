@@ -87,7 +87,9 @@
       "ambiguous number/order of orations",
       "different source owner",
       "missing Latin or English plural",
-      "inconsistent Virgin-vs-nonVirgin classification"
+      "inconsistent Virgin-vs-nonVirgin classification",
+      "Nested Common inheritance not independently traced; do not infer its absence from the zero explicit-owner scan.",
+      "Do not infer selected votive/Requiem or local variant reachability without an actual user-selected source."
     ],
     "preserved": [
       "English reader",
@@ -97,7 +99,21 @@
       "all original donor source bytes"
     ]
   },
-  "reachability": "DIRECT_COMMON_SELECTED_CALENDAR_ROUTE_NOT_YET_PROVEN; source-authenticated projection tests do not imply any calendar date selects these Commons directly.",
+  "reachability": "ZERO_EXACT_DEFAULT_CALENDAR_SELECTION_2024_2029_WITH_2192_READY_DAYS",
   "validation": "Dedicated CI: tests/proper-reader-slots.mjs and tests/calendar-print-proper.mjs",
-  "priorFix": "PR #1788 (merged): Saints Perpetua and Felicity on March 6, separately and already corrected."
+  "priorFix": "PR #1788 (merged): Saints Perpetua and Felicity on March 6, separately and already corrected.",
+  "reachabilityAudit": {
+    "date": "2026-10-28",
+    "scope": "Default resolved 1962 Calendar all civil dates 2024 through 2029",
+    "checkedDays": 2192,
+    "readyDays": 2192,
+    "failedDays": 0,
+    "exactOwnerMatches": 0,
+    "latinPluralFrenchSingularMartyrsPlaceholderMismatches": 0,
+    "namedSaintsPerpetuaFelicityObservedYears": 6,
+    "sourceName": "Sancti/03-06",
+    "workflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40633701363",
+    "publishedAudit": "data/mass/1962-c6b-c7b-calendar-reachability-2024-2029.v1.json",
+    "interpretation": "No directly selected C6b/C7b Common owner in the audited default Calendar years, and no selected Secret/Postcommunion containing literal Latin N. et N. for Martyrs with one French N. Not a recursive @Common dependency audit, or a selected alternate Mass test."
+  }
 }
