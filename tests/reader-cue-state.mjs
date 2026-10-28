@@ -70,6 +70,10 @@ for(const requiemSelect of [
   registries,sungCorpus:sung,gestureMatrix,
   prepared:{session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE",...requiemSelect}}},
  });
+ const introit=req.project("AO.SM.C0042");
+ assert.match(introit.priestAction?.label??"",/Cross over the Missal/i,
+   "Sung Requiem Introit must trace the Cross over the book, not sign the priest");
+ assert.equal(introit.ownership.priestAction,"RITUS_XIII_1_REQUIEM_INTROIT");
  for(const cueId of ["AO.SM.C0040","AO.SM.C0041"]){
   const row=req.project(cueId);
   assert.equal(row.reason,"RITUS_XIII_2_REQUIEM_ENTRANCE_INCENSE_OMITTED");
@@ -90,6 +94,12 @@ for(const requiemSelect of [
    "Omitted final blessing also hid Last Gospel");
  assert.equal(req.project("AO.SM.C0124").priestAction?.label,"RECEIVES INCENSE",
   "Omitting initial Requiem incensation must not cancel permitted Offertory");
+ const kneel=req.project("AO.SM.C0226");
+ assert.equal(kneel.posture?.value,"KNEEL");
+ assert.equal(kneel.posture?.cueId,"AO.SM.C0226",
+   "Requiem posture change must land on the first surviving Communion prayer");
+ assert.equal(kneel.ownership.posture,"R17_REQUIEM_SOURCE_POSTURE_REANCHOR");
+ assert.equal(req.project("AO.SM.C0225").reason,"RITUS_XIII_1_REQUIEM_PEACE_PRAYER_OMITTED");
 }
 assert.equal(ctrl.project("AO.SM.C0041").priestAction?.label,"INCENSES ALTAR",
  "Ordinary incensed Sung Mass lost legitimate entrance incensation");

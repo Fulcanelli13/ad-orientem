@@ -33,6 +33,12 @@ assert.equal(lowRequiem.project("AO.SM.C0112").priestAction,null,
 assert.equal(lowRequiem.project("AO.SM.C0259").priestAction,null,
   "Requiem dismissal falsely turns to the people");
 assert.equal(lowRequiem.project("AO.SM.C0259").priestPosition.facing,"LITURGICAL_EAST");
+assert.equal(lowRequiem.project("AO.SM.C0225").reason,"RITUS_XIII_1_REQUIEM_PEACE_PRAYER_OMITTED");
+assert.equal(lowRequiem.project("AO.SM.C0226").posture?.value,"KNEEL");
+assert.equal(lowRequiem.project("AO.SM.C0226").posture?.cueId,"AO.SM.C0226",
+ "Low Requiem cannot place kneeling change on an omitted prayer");
+assert.equal(low.project("AO.SM.C0226").posture?.cueId,"AO.SM.C0225",
+ "Do not alter ordinary Low Mass posture timing");
 assert.equal(low.project("AO.SM.C0259").priestPosition.facing,"PEOPLE",
   "ordinary Low dismissal orientation changed");
 
@@ -123,6 +129,17 @@ assert.ok(sr("C0174").sacredMinister?.actor.includes("DEACON"),
   "Requiem exception must not remove Host elevation assistance");
 assert.ok(sr("C0181").sacredMinister?.actor.includes("SUBDEACON"),
   "Requiem exception must not remove chalice elevation assistance");
+for(const [cue,kind] of [["C0174","Host"],["C0181","Chalice"]]){
+ const minister=sr(cue).sacredMinister;
+ assert.match(minister?.label??"",/REQUIEM/,"Solemn Requiem elevation must have its own minister rubric");
+ assert.match(minister?.action??"",new RegExp("subdeacon.*kneel.*incenses.*"+kind,"i"),
+   "Subdeacon must incense the "+kind+" while kneeling at the Epistle side");
+ assert.match(minister?.action??"",/Epistle side/i);
+ assert.match(minister?.action??"",/three double swings/i);
+ const ordinary=solemn.project("AO.SM."+cue).sacredMinister;
+ assert.doesNotMatch(ordinary?.action??"",/subdeacon.*incenses/i,
+   "Requiem incensation must not leak into ordinary Solemn Mass");
+}
 assert.equal(sr("C0259").sacredMinister?.actor,"DEACON",
   "Requiem retains a deacon's dismissal role");
 assert.equal(sr("C0268").sacredMinister?.actor,"SUBDEACON",

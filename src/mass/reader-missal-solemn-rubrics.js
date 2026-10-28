@@ -35,6 +35,8 @@ const REQUIEM_FR=Object.freeze({
  "SMIN-004":"Après l’Épître, le sous-diacre revient sans recevoir la bénédiction du célébrant.",
  "SMIN-007":"À la procession de l’Évangile, on ne porte ni encens ni cierges allumés ; les acolytes entourent le livre des Évangiles.",
  "SMIN-009":"Les ministres sacrés assistent l’encensement de l’offertoire. Seul le célébrant est encensé, non le chœur ni les fidèles.",
+ "SMIN-010":"À l’élévation de l’Hostie, le sous-diacre, agenouillé du côté de l’épître, encense le Saint-Sacrement de trois coups doubles avec inclination avant et après ; le diacre assiste le célébrant.",
+ "SMIN-011":"À l’élévation du Calice, le sous-diacre, toujours agenouillé du côté de l’épître, encense le Saint-Sacrement de trois coups doubles avec inclination avant et après ; le diacre assiste le célébrant.",
 });
 const APPROVED_SOURCE="https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/";
 const isCue=x=>/^AO\.SM\.C\d{4}$/.test(String(x??""));
