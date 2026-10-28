@@ -360,6 +360,7 @@ function compactExploreItemSheet(vm){
   html+='<header><div><small>'+esc((lang==="fr"&&item.eyebrow_fr)||item.eyebrow||lensLabel(lang,item.lens))+'</small><h2>'+esc(title)+'</h2>';
   if(area)html+='<p>'+esc(area)+'</p>';
   html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(lang,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
+  if(isMass&&eligibleDirectoryImage(item.cover_media,item.place_id))html+='<img class="aoTlmPreviewPhoto" loading="lazy" decoding="async" src="'+esc(item.cover_media.asset_path)+'" alt="'+esc(lang==="fr"?item.cover_media.alt_fr:item.cover_media.alt_en)+'">';
   if(summary)html+='<p class="aoExplorePreviewSynopsis">'+esc(summary)+'</p>';
   if(isMass)html+='<p class="aoExplorePreviewCaution">'+esc(L(lang,
     "Provisional venue. Current Mass times, entrance and the una-cum status of individual celebrations are not verified.",
@@ -390,6 +391,7 @@ function detailSheet(vm){
   if(subtitle)html+='<p>'+esc(subtitle)+'</p>';
   html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
 
+  if(item.kind==="TLM_VENUE"&&eligibleDirectoryImage(item.cover_media,item.place_id))html+='<figure class="aoTlmDetailPhoto"><img loading="lazy" decoding="async" src="'+esc(item.cover_media.asset_path)+'" alt="'+esc(vm.language==="fr"?item.cover_media.alt_fr:item.cover_media.alt_en)+'"><figcaption>'+esc(item.cover_media.credit)+' · '+esc(item.cover_media.license)+'</figcaption></figure>';
   html+='<div class="aoExploreFullBack"><button type="button" data-explore-collapse-detail>'+esc(L(vm.language,"← Back to preview","← Retour à l’aperçu"))+'</button></div>';
   if(item.summary)html+='<p class="aoExploreLead">'+esc(translatedSummary(item,vm.language))+'</p>';
   if(item.geo?.indicative_only)html+='<p class="aoExploreLead">'+esc(L(vm.language,"Indicative map pin only — nearby reference point, not the shrine entrance.","Repère cartographique indicatif — point de référence à proximité, et non entrée du sanctuaire.")+(item.geo.reference_point_name?" · "+item.geo.reference_point_name:""))+"</p>";
