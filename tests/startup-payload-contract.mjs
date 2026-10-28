@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
+import {createHash} from "node:crypto";
 
 const html=readFileSync("index.html","utf8");
 const htmlBytes=Buffer.byteLength(html);
@@ -57,7 +58,15 @@ for(const path of ["index.html",...chunks]){
   const text=readFileSync(path,"utf8");
   assert.doesNotMatch(text,encoded,"Large inline raster image returned to "+path);
 }
-for(const chunk of chunks){
+// The original, unmodified boot is retained as a test donor for historical source
+// composition checks. It must not be linked into the live HTML or release output.
+const archivedBoot="ao-boot-4ef16d2b0e26d68c.js";
+const inactive=chunks.filter(chunk=>!html.includes("./"+chunk));
+assert.deepEqual(inactive,[archivedBoot],"Unexpected unlinked generated critical chunks");
+const donor=readFileSync(archivedBoot);
+const donorGitHash=createHash("sha1").update(Buffer.from("blob "+donor.length+"\0")).update(donor).digest("hex");
+assert.equal(donorGitHash,"a9c48542d74e9350b9e3f413ceab1030b04793fe","Historical boot donor changed");
+for(const chunk of chunks.filter(name=>name!==archivedBoot)){
   assert.ok(html.includes("./"+chunk),"Generated critical chunk is not linked from HTML: "+chunk);
 }
 const images=readdirSync("assets/generated-inline").filter(name=>/^art-[a-f0-9]{20}\.(?:webp|jpg|png|gif)$/.test(name));
