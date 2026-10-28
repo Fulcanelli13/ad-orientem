@@ -1,0 +1,81 @@
+{
+  "schema": "AO_1962_C6B_C7B_CALENDAR_REACHABILITY_2024_2029_V1",
+  "auditedAt": "2026-10-28",
+  "repository": "Fulcanelli13/ad-orientem",
+  "base": "main",
+  "scope": {
+    "start": "2024-01-01",
+    "end": "2029-12-31",
+    "days": 2192,
+    "useCase": "Default selected 1962 Calendar day, source-identified principal Mass, source and day commemorations, individual oration source rows; four existing form-specific commemoration projections inspected on relevant days.",
+    "targetSourcePaths": [
+      "Commune/C6b",
+      "Commune/C7b"
+    ]
+  },
+  "coverage": {
+    "checked": 2192,
+    "ready": 2192,
+    "failures": 0,
+    "directSourceMatches": 0,
+    "byYear": {
+      "2024": {
+        "checked": 366,
+        "ready": 366,
+        "directSourceMatches": 0,
+        "namedMarch6PerpetuaFelicity": 1
+      },
+      "2025": {
+        "checked": 365,
+        "ready": 365,
+        "directSourceMatches": 0,
+        "namedMarch6PerpetuaFelicity": 1
+      },
+      "2026": {
+        "checked": 365,
+        "ready": 365,
+        "directSourceMatches": 0,
+        "namedMarch6PerpetuaFelicity": 1
+      },
+      "2027": {
+        "checked": 365,
+        "ready": 365,
+        "directSourceMatches": 0,
+        "namedMarch6PerpetuaFelicity": 1
+      },
+      "2028": {
+        "checked": 366,
+        "ready": 366,
+        "directSourceMatches": 0,
+        "namedMarch6PerpetuaFelicity": 1
+      },
+      "2029": {
+        "checked": 365,
+        "ready": 365,
+        "directSourceMatches": 0,
+        "namedMarch6PerpetuaFelicity": 1
+      }
+    }
+  },
+  "evidence": {
+    "exactHeadWorkflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40633454451",
+    "test": "tests/1962-plural-martyrs-calendar-reachability.mjs",
+    "transientArtifact": "artifacts/mass/1962-c6b-c7b-calendar-reachability-2024-2029.json",
+    "sourceResolver": "globalThis.AO_RUNTIME_V8.resolver.resolveDay",
+    "sourceGate": "select1962CommemorationsForMassForm"
+  },
+  "interpretation": {
+    "finding": "No explicit exact C6b or C7b identity in the default selected Calendar principal, its source or day commemorations or an individual oration row across 2024–2029.",
+    "releaseImpact": "The deployed source-attested French Common fix is defensive for direct/Common source access. This six-year scan establishes no observed direct default Calendar exposure; do not claim the correction affected a selected Calendar day.",
+    "namedSaint": "Perpetua/Felicity are owned by Sancti/03-06, not the direct Commune/C7b path. Their separately deployed PR #1788 remains valid.",
+    "untested": [
+      "Indirect nested @Commune or vide C6b/C7b donor inheritance within a named Proper: the scan does not recursively expand internal source references.",
+      "Explicit user-selected votive, Requiem, nuptial, or observed-source alternate Mass; the default Calendar resolver does not select these without user choice.",
+      "Local or private calendar observances not represented in the production default resolver.",
+      "Dates after 2029 or changes to the source library after this audited head."
+    ]
+  },
+  "originalDonorChanged": false,
+  "applicationSelectionChanged": false,
+  "reading": "Zero exact matches is an observed bound on the default selected Calendar path, not a claim that these Commons are inaccessible in every app mode."
+}
