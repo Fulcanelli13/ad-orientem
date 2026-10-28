@@ -79,6 +79,38 @@ const SHELL_STYLE = `
   margin:7px 12px;padding:11px 12px;min-height:44px;border:1px solid rgba(230,236,224,.18);
   border-radius:9px;background:var(--ao-mass-panel);color:#eef1e9;font:500 14px var(--ao-font-ui,system-ui,sans-serif)}
 .ao-section-menu [hidden]{display:none!important}
+.ao-state-music-jump{
+  position:absolute;left:50%;top:13px;transform:translateX(-50%);z-index:16;
+  border:1px solid color-mix(in srgb,var(--ao-mass-accent) 35%,transparent);
+  border-radius:9px;background:rgba(19,29,23,.94);color:var(--ao-mass-accent-text);
+  font:700 10px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.05em;
+  min-height:37px;padding:8px 12px;cursor:pointer
+}
+.ao-state-music-jump[hidden]{display:none!important}
+.ao-schola-events-menu{
+  position:absolute;z-index:55;left:50%;top:119px;transform:translateX(-50%);
+  width:min(94vw,470px);max-height:min(68vh,580px);overflow-y:auto;overscroll-behavior:contain;
+  padding:9px;border:1px solid rgba(225,207,145,.30);border-radius:12px;
+  background:#142018;color:#eef1e9;box-shadow:0 16px 42px rgba(0,0,0,.58)
+}
+.ao-schola-events-menu[hidden]{display:none!important}
+.ao-schola-events-menu h3{margin:7px 9px 3px;font:600 15px var(--ao-font-ui,system-ui,sans-serif)}
+.ao-schola-events-menu p{margin:0 9px 10px;font:400 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:#a7b1a8}
+.ao-schola-events-menu button[data-schola-event-select]{
+  display:block;width:100%;text-align:left;padding:10px 12px;margin:2px 0;
+  border:0;border-radius:8px;background:rgba(255,255,255,.03);color:#ecf0e8;
+  font:500 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);min-height:44px
+}
+.ao-schola-events-menu button[data-schola-event-select] small{display:block;color:#a4b5a7;font-size:10px}
+.ao-schola-events-menu button[data-schola-event-select]:disabled{opacity:.46}
+.ao-schola-events-menu button[data-schola-event-select]:focus-visible{outline:2px solid var(--ao-mass-accent)}
+.ao-schola-dock[data-event-reference="true"]{display:block!important;height:82px!important;min-height:82px!important;padding:7px 11px!important}
+.ao-schola-dock[data-event-reference="true"] .ao-schola-meta,
+.ao-schola-dock[data-event-reference="true"] .ao-schola-toggle,
+.ao-schola-dock[data-event-reference="true"] .ao-schola-programme{display:none!important}
+.ao-schola-dock[data-event-reference="true"] .ao-schola-main{height:29px;margin-top:1px;cursor:default}
+.ao-schola-dock[data-event-reference="true"] [data-role="schola"]{font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+@media(max-width:760px){.ao-state-music-jump{font-size:9px;padding:7px 9px;min-height:34px}}
 .ao-schola-rejoin{grid-column:1/-1!important;min-height:30px;color:var(--ao-mass-accent-text)!important;
   border:1px solid rgba(223,229,212,.20)!important;letter-spacing:.055em}
 .ao-schola-rejoin[hidden]{display:none!important}
@@ -1830,6 +1862,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
 
   const schola = persist(moment.schola, previous.schola);
   const scholaCatchupPinned=moment.scholaCatchupPinned===true;
+  const scholaEventSelection=moment.scholaEventSelection??null;
   // Special-rite musical metadata is separate from the ordinary Schola
   // performance clock. It never supplies lyrics, tempo, or inferred sound.
   // A distinct-rite step can change chant/silence without replacing its
@@ -1894,6 +1927,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     priestVoice:persist(moment.priestVoice, previous.priestVoice),
     schola,
     scholaCatchupPinned,
+    scholaEventSelection,
     riteMusic,
     organPermission,
     priestQuietOffertory,
@@ -2022,6 +2056,7 @@ export function buildReaderShellMarkup(prepared = {}) {
       <span class="ao-guide-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4.75h10.5A2.5 2.5 0 0 1 18 7.25v12H7.5A2.5 2.5 0 0 1 5 16.75z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 8h6.5M8 11h6.5M8 14h4.5" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"/></svg></span>
       <span class="ao-guide-copy"><small>GUIDE</small><b class="ao-guide-short" data-role="guide-short">RUBRICS</b></span>
     </button>
+    <button type="button" class="ao-state-music-jump" data-schola-events-open aria-label="Find Schola chant, music or silence" aria-expanded="false" hidden>MUSIC</button>
     <div class="ao-state-cell" data-side="priest">
       <span class="ao-icon-mask" data-icon-slot="priest-position" hidden></span>
       <span class="ao-state-copy"><span class="ao-state-kicker">PRIEST</span><span class="ao-state-label" data-role="priest-position">—</span><span class="ao-priest-book-context" data-role="priest-book-context" hidden></span><span class="ao-missal-state-detail" data-role="missal-priest-action" hidden></span></span>
@@ -2031,6 +2066,7 @@ export function buildReaderShellMarkup(prepared = {}) {
   <div class="ao-progress-track" aria-hidden="true"><span data-role="progress-track"></span></div>
 
   <div class="ao-section-menu" data-role="section-menu" hidden></div>
+  <aside class="ao-schola-events-menu" data-role="schola-events-menu" aria-label="Schola music events" hidden></aside>
   <aside class="ao-mass-prefs" data-role="mass-preferences" data-open="false" aria-label="Mass preferences">
     <div class="ao-mass-prefs-head"><b>Mass preferences</b><button class="ao-mass-prefs-close" type="button" data-reader-preferences-close aria-label="Close preferences">×</button></div>
     <div class="ao-mass-prefs-group"><small>Reader mode</small><nav class="ao-mode-ribbon" aria-label="Reader mode">${["MISSAL","LIVE"].map(m => `<button type="button" data-reader-mode="${m}" aria-pressed="${String(m===mode)}"><span>${m}</span></button>`).join("")}</nav></div>
@@ -2465,6 +2501,7 @@ export function createReaderDomAdapter({
   onScholaPrevious = null,
   onScholaRelease = null,
   onScholaRejoin = null,
+  onScholaEventSelect = null,
   sections = [],
   scholaMusicItinerary = null,
   specialRiteMusicItinerary = null,
@@ -2865,6 +2902,14 @@ export function createReaderDomAdapter({
       if(sanctus)sanctus.value=setting;
     }
     const schola=current?.scholaVisible ? current.schola : null;
+    const eventReference=!schola?current?.scholaEventSelection:null;
+    dock.dataset.eventReference=String(Boolean(eventReference));
+    const eventOpen=root.querySelector("[data-schola-events-open]");
+    if(eventOpen){
+      const itinerary=typeof scholaMusicItinerary==="function"
+        ?scholaMusicItinerary():scholaMusicItinerary;
+      eventOpen.hidden=!(mode==="LIVE"&&itinerary?.supported===true);
+    }
     const identity=schola ? [schola.trackId,schola.segmentId,schola.cueId].filter(Boolean).join("|") : null;
     const changed=identity!==scholaIdentity;
     if(changed){
@@ -2892,21 +2937,22 @@ export function createReaderDomAdapter({
       // Do not repeat the generic three-chant heading over a 320px phone.
       const exactPreGospel=/^(?:Gradual|Alleluia|Tract|Sequence)$/.test(
         String(current?.cardTitle??""))?String(current.cardTitle):null;
-      title.textContent=schola
+      title.textContent=eventReference?"MUSIC · REFERENCE":schola
         ? (schola.trackId==="ALLELUIA_TRACT_SEQUENCE"&&exactPreGospel
           ? exactPreGospel.toUpperCase():scholaTitle(schola.trackId))
         : "SCHOLA";
     }
-    setText(root,"schola",schola
+    setText(root,"schola",eventReference?.label??(schola
       ? (scholaTranslationVisible && schola.english
           ? schola.english
           : (schola.latin??textValue(schola)))
-      : null);
+      : null));
     const status=root.querySelector('[data-role="schola-status"]');
     if(status){
-      status.textContent=schola ? "EXPECTED" : "";
-      status.hidden=!schola;
-      status.setAttribute?.("aria-label","Schola text expected; actual singing not detected");
+      status.textContent=eventReference?"NOT OBSERVED":schola?"EXPECTED":"";
+      status.hidden=!schola&&!eventReference;
+      status.setAttribute?.("aria-label",eventReference
+        ?"Manual music reference: neither heard nor timed":"Schola text expected; actual singing not detected");
     }
     // This is the NEXT possible source-owned chant in Mass order, NOT a
     // detection of the choir or an automatic advance of its private clock.
@@ -2915,13 +2961,13 @@ export function createReaderDomAdapter({
       const itinerary=typeof scholaMusicItinerary==="function"
         ? scholaMusicItinerary():scholaMusicItinerary;
       const upcoming=nextScholaMusicEvent(itinerary,current?.id);
-      upcomingNode.hidden=!upcoming;
+      upcomingNode.hidden=!upcoming||Boolean(eventReference);
       upcomingNode.textContent=upcoming?"NEXT · "+upcoming.label:"";
       upcomingNode.title=upcoming
         ? "Later in the Mass: "+upcoming.label+". Neither heard nor timed.":"";
       upcomingNode.setAttribute?.("aria-label",upcoming
         ? "Later in Mass order, not observed: "+upcoming.label:"No sourced next chant");
-      dock.dataset.upcomingOnly=String(Boolean(upcoming && !schola && mode==="LIVE"));
+      dock.dataset.upcomingOnly=String(Boolean(upcoming && !schola && !eventReference && mode==="LIVE"));
       if(dock.dataset.upcomingOnly==="true" && title)title.textContent="COMING UP";
       syncScholaChrome();
     }
@@ -2929,7 +2975,7 @@ export function createReaderDomAdapter({
       ?specialRiteMusicItinerary():specialRiteMusicItinerary;
     // A rite boundary is authoritative. Never keep the Palm/Asperges
     // forecast once the native controller hands back to ordinary Mass.
-    const specialActive=Boolean(!schola && special?.supported===true &&
+    const specialActive=Boolean(!schola && !eventReference && special?.supported===true &&
       special.stageId===current?.id && special.silentStage!==true);
     const riteCurrent=specialActive?special.current??[]:[];
     const riteNext=specialActive?special.upcoming:null;
@@ -2993,8 +3039,9 @@ export function createReaderDomAdapter({
     const scholaRelevant=Boolean(textValue(current?.schola)) && current?.scholaShared!==true;
     const forthcoming=dock.dataset.upcomingOnly==="true";
     const special=dock.dataset.specialOnly==="true";
-    const reserve=(scholaActive||scholaRelevant||scholaCollapsed||forthcoming||special)
-      ? (special?56:scholaCollapsed||forthcoming ? 44 :
+    const eventReference=dock.dataset.eventReference==="true";
+    const reserve=(scholaActive||scholaRelevant||scholaCollapsed||forthcoming||special||eventReference)
+      ? (eventReference?82:special?56:scholaCollapsed||forthcoming ? 44 :
           dock.dataset.shared==="true" && !scholaManuallyResized ? 132 : scholaHeight) : 0;
     if(shell){
       shell.dataset.scholaVisible=String(scholaActive);
@@ -3843,7 +3890,8 @@ export function createReaderDomAdapter({
     setText(root,"priest-position-rail",priestStationLabel(showContext
       ? current.priestPosition:null,root));
     setChannel(root,"schola-shared",current.scholaShared ? current.schola : null);
-    setChannel(root,"schola",current.scholaVisible ? current.schola : null);
+    setChannel(root,"schola",current.scholaVisible ? current.schola :
+      current.scholaEventSelection?.label?{label:current.scholaEventSelection.label}:null);
     syncScholaChrome();
     syncScholaContent();
     syncProgress();
