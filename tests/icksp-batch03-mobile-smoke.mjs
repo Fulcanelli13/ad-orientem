@@ -51,7 +51,7 @@ try{
 
  await open("pray.stations");
  const options=page.locator("[data-ao-stations-options]");
- await options.locator("summary").tap();
+ await options.locator(":scope > summary").tap();
  await options.locator("[data-p435930-seg='simple']").tap();
  assert.equal(await page.locator(".aoP435930VR").count(),0,"Simple Stations must not impose a vocal response");
  const opt=page.locator("[data-ao-stations-options] > summary");
