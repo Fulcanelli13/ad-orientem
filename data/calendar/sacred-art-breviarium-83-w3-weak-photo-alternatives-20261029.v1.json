@@ -1,0 +1,1668 @@
+{
+  "schema": "AO_SACRED_ART_BREVIARIUM_W3_35_WEAK_28_NATIVE_QA_SOURCE_V1",
+  "as_of": "2026-10-29",
+  "from_reconciliation": "data/calendar/sacred-art-breviarium-83-w2-cross-registry-institutional-leads-20261029.v1.json",
+  "source_gallery": "https://breviarium.ink/art/",
+  "immutable_policy": {
+    "reject_el_greco": true,
+    "reject_fra_angelico": true,
+    "preserve_existing_prayer_heroes": 22,
+    "preserve_global_rejected_artwork_ids": 103,
+    "no_substitute_inventories": true,
+    "no_painted_area_loss": true,
+    "zero_cost": true
+  },
+  "counts": {
+    "weak_full_cohort_processed": 35,
+    "photo_quality_eligible_cohort_processed": 28,
+    "new_distinct_source_files_checked": 10,
+    "exact_file_metadata_returned": 10,
+    "weak_cases_with_alternative_file_metadata": 7,
+    "alternative_file_short_edge_improved_without_oversize": 7,
+    "already_archived_native_full_originals_in_28": 2,
+    "file_photo_rights_not_final": 28,
+    "new_full_original_bytes_archived_in_wave3": 0,
+    "new_pristine_certifications": 0,
+    "new_releases": 0,
+    "expenditure_eur": 0
+  },
+  "commons_batch_imageinfo_error": null,
+  "weak_cohort": [
+    {
+      "id": "plate-batoni-sacredheart",
+      "title": "The Sacred Heart of Jesus",
+      "artist": "Pompeo Batoni",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        1034,
+        1441
+      ],
+      "breviarum_file_sha1": "433edbc0563c4dc1eedde0e6cec3bd5112b677fd",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:SacredHeartBatoni.jpg",
+      "original_photo_rights_label": "CC0",
+      "aesthetic_priority": "PRIORITY_PHOTOGRAPHIC_QA",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-bloch-sermon",
+      "title": "The Sermon on the Mount",
+      "artist": "Carl Bloch",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        1377,
+        1545
+      ],
+      "breviarum_file_sha1": "b4c59d84ba5d1867b38a931acc42b1652639aa61",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Bloch-SermonOnTheMount.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "CONTEXTUAL_PAINTING_CANDIDATE",
+      "alternatives": [],
+      "operational_status": "STYLE_OR_TASTE_EXCEPTION_RETAIN_METADATA_ONLY",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-botticini-archangels",
+      "title": "The Three Archangels and Tobias",
+      "artist": "Francesco Botticini",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        2000,
+        1741
+      ],
+      "breviarum_file_sha1": "7062f5cc4016feb3c0d16e6aa046e21f218b6c85",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Francesco_Botticini_-_I_tre_Arcangeli_e_Tobias.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "CONTEXTUAL_PAINTING_CANDIDATE",
+      "alternatives": [],
+      "operational_status": "STYLE_OR_TASTE_EXCEPTION_RETAIN_METADATA_ONLY",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-caravaggio-matthew",
+      "title": "The Calling of Saint Matthew",
+      "artist": "Caravaggio",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        1060,
+        1001
+      ],
+      "breviarum_file_sha1": "40eed7614ebe9dd99f669278227c569f208890cf",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Calling-of-st-matthew.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "PRIORITY_PHOTOGRAPHIC_QA",
+      "alternatives": [
+        {
+          "id": "plate-caravaggio-matthew",
+          "title": "File:The Calling of Saint Matthew-Caravaggo (1599-1600).jpg",
+          "object": "San Luigi dei Francesi, Contarelli Chapel original",
+          "identity": "MATCH_EXACT_COMPOSITION_INSTITUTION",
+          "issue": "Version reverted in April 2026; photo quality not guaranteed by large pixels",
+          "source": {
+            "commons_title": "File:The Calling of Saint Matthew-Caravaggo (1599-1600).jpg",
+            "file_page": "https://commons.wikimedia.org/wiki/File:The_Calling_of_Saint_Matthew-Caravaggo_(1599-1600).jpg"
+          },
+          "metadata_status": "VERIFIED_CURRENT_COMMS_IMAGEINFO",
+          "current_source_info": {
+            "width": 9770,
+            "height": 10039,
+            "size_bytes": 10852087,
+            "sha1": "28e24e3d5a5d87c85baf8b4b146f85ab197d15cc",
+            "mime": "image/jpeg",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:The_Calling_of_Saint_Matthew-Caravaggo_(1599-1600).jpg",
+            "licence": "Public domain",
+            "copyrighted": "False",
+            "source_page": "https://commons.wikimedia.org/wiki/File:The_Calling_of_Saint_Matthew-Caravaggo_(1599-1600).jpg"
+          },
+          "original_downloaded_in_w3": false,
+          "photographic_rights_final": false,
+          "painting_original_exact_photo_final_verified": false,
+          "native_photo_quality_final": false,
+          "production_allowed": false,
+          "breviarum_short_edge": 1001,
+          "short_edge_improvement_factor": 9.76,
+          "max_pixel_ratio": 9.471,
+          "download_gate": "SOURCE_PIXELS_IMPROVED_NEEDS_PHOTO_RIGHTS_AND_FIDELITY_REVIEW"
+        },
+        {
+          "id": "plate-caravaggio-matthew",
+          "title": "File:Caravaggio — The Calling of Saint Matthew.jpg",
+          "object": "San Luigi dei Francesi, Contarelli Chapel original",
+          "identity": "MATCH_EXACT_COMPOSITION_INSTITUTION",
+          "issue": "Photographer CC0 user file, 2025 colour correction, ISO6400; >40MB storage hold",
+          "source": {
+            "commons_title": "File:Caravaggio — The Calling of Saint Matthew.jpg",
+            "file_page": "https://commons.wikimedia.org/wiki/File:Caravaggio_%E2%80%94_The_Calling_of_Saint_Matthew.jpg"
+          },
+          "metadata_status": "VERIFIED_CURRENT_COMMS_IMAGEINFO",
+          "current_source_info": {
+            "width": 8792,
+            "height": 8304,
+            "size_bytes": 48638944,
+            "sha1": "db3c62db2aaec6670109b326dcb58f1920270d21",
+            "mime": "image/jpeg",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caravaggio_%E2%80%94_The_Calling_of_Saint_Matthew.jpg",
+            "licence": "CC0",
+            "copyrighted": "True",
+            "source_page": "https://commons.wikimedia.org/wiki/File:Caravaggio_%E2%80%94_The_Calling_of_Saint_Matthew.jpg"
+          },
+          "original_downloaded_in_w3": false,
+          "photographic_rights_final": false,
+          "painting_original_exact_photo_final_verified": false,
+          "native_photo_quality_final": false,
+          "production_allowed": false,
+          "breviarum_short_edge": 1001,
+          "short_edge_improvement_factor": 8.296,
+          "max_pixel_ratio": 8.294,
+          "download_gate": "HOLD_OVERSIZE_GT_30MB_NO_FREE_STORE_CERT"
+        }
+      ],
+      "operational_status": "IDENTIFIED_EXACT_FILE_ALTERNATIVE_PHOTO_QA_PENDING",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-champaigne-lastsupper",
+      "title": "The Last Supper",
+      "artist": "Philippe de Champaigne",
+      "original_institutional_lead": {
+        "institution": "Musée du Louvre",
+        "object_id": "INV 1124",
+        "url": "https://collections.louvre.fr/en/ark:/53355/cl010060521",
+        "exactness": "EXACT_BREVIARIUM_WGA_PHYSICAL_OBJECT",
+        "warning": "BREVIARIUM_SOURCE_IS_LA_GRANDE_CENE; user preferred different artwork La Petite Cène Louvre INV 1125, https://collections.louvre.fr/en/ark:/53355/cl010062076; never replace"
+      },
+      "breviarum_current_weak_pixels": [
+        1369,
+        900
+      ],
+      "breviarum_file_sha1": "6afead52c4efbffe91a80febb37ba04967ed1608",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_The_Last_Supper_-_WGA4710.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "PRIORITY_PHOTOGRAPHIC_QA",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-cossa-lucy",
+      "title": "Saint Lucy",
+      "artist": "Francesco del Cossa",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        1200,
+        1600
+      ],
+      "breviarum_file_sha1": "59570ae325a7ac23726dc8acae0510d6a264985d",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Francesco_del_Cossa_-_Saint_Lucy.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "STYLE_EXCEPTION_HOLD",
+      "alternatives": [],
+      "operational_status": "STYLE_OR_TASTE_EXCEPTION_RETAIN_METADATA_ONLY",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-domenichino-guardian",
+      "title": "The Guardian Angel",
+      "artist": "After Domenichino",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        938,
+        1200
+      ],
+      "breviarum_file_sha1": "b8f682eeb6a09e0ecc9c1806f2fcb7b6304b2cd9",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Domenichino_(1581-1641)_(after)_-_The_Guardian_Angel_-_732223_-_National_Trust.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "SECONDARY_VISUAL_REVIEW",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-giotto-lamentation",
+      "title": "The Lamentation of Christ",
+      "artist": "Giotto",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        1000,
+        925
+      ],
+      "breviarum_file_sha1": "c3f22627834b8c02979b5ecab826bbace57aaafc",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Giotto_-_Scrovegni_-_-36-_-_Lamentation_(The_Mourning_of_Christ)_adj.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "STYLE_EXCEPTION_HOLD",
+      "alternatives": [],
+      "operational_status": "STYLE_OR_TASTE_EXCEPTION_RETAIN_METADATA_ONLY",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-guadalupe-tilma",
+      "title": "Our Lady of Guadalupe",
+      "artist": "Unknown",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        480,
+        790
+      ],
+      "breviarum_file_sha1": "d5fa0c92ebf254774329cf334f088c3b8e7451fa",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Virgen_de_Guadalupe_1531.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "SECONDARY_VISUAL_REVIEW",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-honthorst-shepherds",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Gerard van Honthorst",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        2057,
+        1690
+      ],
+      "breviarum_file_sha1": "7c9c72d69d45129524a31f441cbe2ee47fcd248c",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Gerard_van_Honthorst_-_Adoration_of_the_Shepherds_(1622).jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "PRIORITY_PHOTOGRAPHIC_QA",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-kells-christ",
+      "title": "The Book of Kells: Christ Enthroned",
+      "artist": "Unknown",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        1484,
+        1934
+      ],
+      "breviarum_file_sha1": "20924c390fb4da187f5ae233202d3fb22a7fe1cf",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:KellsFol032vChristEnthroned.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "SECONDARY_VISUAL_REVIEW",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-liguori-engraving",
+      "title": "Saint Alphonsus Maria de’ Liguori",
+      "artist": "Unknown engraver",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        1256,
+        1403
+      ],
+      "breviarum_file_sha1": "0bdb5e2979fe239c1532d9dc1b8a0891ba8e0a24",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Alfonsoliguori.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "SECONDARY_VISUAL_REVIEW",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-masaccio-saintanne",
+      "title": "The Madonna and Child with Saint Anne",
+      "artist": "Masaccio and Masolino",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        800,
+        1321
+      ],
+      "breviarum_file_sha1": "5dc5a7e1877ff1ea1788856724b8dae4bf3078a3",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Masaccio_-_The_Madonna_and_Child_with_Saint_Anne_-_WGA14218.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "STYLE_EXCEPTION_HOLD",
+      "alternatives": [],
+      "operational_status": "STYLE_OR_TASTE_EXCEPTION_RETAIN_METADATA_ONLY",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-millet-shepherdess",
+      "title": "Shepherdess with her Flock",
+      "artist": "Jean-François Millet",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        850,
+        701
+      ],
+      "breviarum_file_sha1": "ce653b48af0848f3860d3638a72e4f0efe6bf817",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Millet_-_Berg%C3%A8re_avec_son_troupeau,_RF_1879.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "SECONDARY_VISUAL_REVIEW",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-murillo-anthony",
+      "title": "The Vision of Saint Anthony of Padua",
+      "artist": "Bartolomé Esteban Murillo",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        464,
+        685
+      ],
+      "breviarum_file_sha1": "f7b05a6fb0eb617c0cbc54bc54ad84ccaae709b1",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_(1617-1682)_-_The_Vision_of_Saint_Anthony_of_Padua_-_1974P24_-_Birmingham_Museums_Trust.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "PRIORITY_PHOTOGRAPHIC_QA",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-murillo-immaculate",
+      "title": "The Immaculate Conception",
+      "artist": "Bartolomé Esteban Murillo",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        655,
+        970
+      ],
+      "breviarum_file_sha1": "906e31faf699907476cda364261024bd5c2c145b",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Perez_Murillo_-_Immaculate_Conception_-_WGA16380.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "PRIORITY_PHOTOGRAPHIC_QA",
+      "alternatives": [
+        {
+          "id": "plate-murillo-immaculate",
+          "title": "File:Inmaculada Concepción (Murillo, El Escorial).jpg",
+          "object": "Museo del Prado P00972",
+          "identity": "MATCH_EXACT_INVENTORY",
+          "issue": "Prado photographic source with faithful 2D PD-Art label; do NOT reuse Cleveland Murillo 1959.189",
+          "source": {
+            "commons_title": "File:Inmaculada Concepción (Murillo, El Escorial).jpg",
+            "file_page": "https://commons.wikimedia.org/wiki/File:Inmaculada_Concepci%C3%B3n_(Murillo,_El_Escorial).jpg"
+          },
+          "metadata_status": "VERIFIED_CURRENT_COMMS_IMAGEINFO",
+          "current_source_info": {
+            "width": 1888,
+            "height": 2717,
+            "size_bytes": 6169375,
+            "sha1": "ec8b31af0348348ef3cca39519eb8b32a85cfcdd",
+            "mime": "image/jpeg",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inmaculada_Concepci%C3%B3n_(Murillo,_El_Escorial).jpg",
+            "licence": "Public domain",
+            "copyrighted": "False",
+            "source_page": "https://commons.wikimedia.org/wiki/File:Inmaculada_Concepci%C3%B3n_(Murillo,_El_Escorial).jpg"
+          },
+          "original_downloaded_in_w3": false,
+          "photographic_rights_final": false,
+          "painting_original_exact_photo_final_verified": false,
+          "native_photo_quality_final": false,
+          "production_allowed": false,
+          "breviarum_short_edge": 655,
+          "short_edge_improvement_factor": 2.882,
+          "max_pixel_ratio": 2.801,
+          "download_gate": "SOURCE_PIXELS_IMPROVED_NEEDS_PHOTO_RIGHTS_AND_FIDELITY_REVIEW"
+        },
+        {
+          "id": "plate-murillo-immaculate",
+          "title": "File:Imaculada - Murillo.jpg",
+          "object": "Museo del Prado P00972",
+          "identity": "MATCH_EXACT_INVENTORY",
+          "issue": "Second version of Prado object P00972; source and tonal differences require inspection",
+          "source": {
+            "commons_title": "File:Imaculada - Murillo.jpg",
+            "file_page": "https://commons.wikimedia.org/wiki/File:Imaculada_-_Murillo.jpg"
+          },
+          "metadata_status": "VERIFIED_CURRENT_COMMS_IMAGEINFO",
+          "current_source_info": {
+            "width": 2051,
+            "height": 2952,
+            "size_bytes": 1851420,
+            "sha1": "788dcad14a12d802e00dec041b89b3e5908b569d",
+            "mime": "image/jpeg",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Imaculada_-_Murillo.jpg",
+            "licence": "Public domain",
+            "copyrighted": "False",
+            "source_page": "https://commons.wikimedia.org/wiki/File:Imaculada_-_Murillo.jpg"
+          },
+          "original_downloaded_in_w3": false,
+          "photographic_rights_final": false,
+          "painting_original_exact_photo_final_verified": false,
+          "native_photo_quality_final": false,
+          "production_allowed": false,
+          "breviarum_short_edge": 655,
+          "short_edge_improvement_factor": 3.131,
+          "max_pixel_ratio": 3.043,
+          "download_gate": "SOURCE_PIXELS_IMPROVED_NEEDS_PHOTO_RIGHTS_AND_FIDELITY_REVIEW"
+        }
+      ],
+      "operational_status": "IDENTIFIED_EXACT_FILE_ALTERNATIVE_PHOTO_QA_PENDING",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-pereda-anthony",
+      "title": "Saint Anthony of Padua with the Christ Child",
+      "artist": "Antonio de Pereda",
+      "original_institutional_lead": {
+        "institution": "Szépművészeti Múzeum Budapest",
+        "object_id": null,
+        "url": "https://www.wga.hu/html/p/pereda/index.html",
+        "exactness": "WGA_MUSEUM_INVENTORY_LEAD",
+        "warning": "Current 973x842 WGA source not suitable; verify exact Budapest work before attempting alternative"
+      },
+      "breviarum_current_weak_pixels": [
+        973,
+        842
+      ],
+      "breviarum_file_sha1": "c81238f02586bcf0f16a1e7d02eb034a6e067b34",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Antonio_de_Pereda_y_Salgado_-_St_Anthony_of_Padua_with_Christ_Child_-_WGA17167.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "PRIORITY_PHOTOGRAPHIC_QA",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-piero-resurrection",
+      "title": "The Resurrection",
+      "artist": "Piero della Francesca",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        863,
+        960
+      ],
+      "breviarum_file_sha1": "e0215f5d6e5c2ab638ccd5434970efa602898202",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Resurrection_(Piero_della_Francesca).jpeg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "SECONDARY_VISUAL_REVIEW",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-raphael-michael",
+      "title": "Saint Michael Vanquishing Satan",
+      "artist": "Raphael",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        670,
+        1107
+      ],
+      "breviarum_file_sha1": "bed74cb221d0417657b8aa4aae35cae6f26057c0",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Raphael_-_St._Michael_Vanquishing_Satan.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "CONTEXTUAL_PAINTING_CANDIDATE",
+      "alternatives": [],
+      "operational_status": "STYLE_OR_TASTE_EXCEPTION_RETAIN_METADATA_ONLY",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-raphael-transfiguration",
+      "title": "The Transfiguration",
+      "artist": "Raphael",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        1067,
+        1608
+      ],
+      "breviarum_file_sha1": "bcab818d85610f8e0d3cdddb762bcd9e64e6b460",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Transfiguration_Raphael.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "CONTEXTUAL_PAINTING_CANDIDATE",
+      "alternatives": [
+        {
+          "id": "plate-raphael-transfiguration",
+          "title": "File:Raffael-verklärung-christi.jpg",
+          "object": "Vatican Museums, Pinacoteca, Raphael Transfiguration",
+          "identity": "MATCH_EXACT_COMPOSITION_INSTITUTION",
+          "issue": "Official object accession MV.40333; NOT a different Google Art Project Dulwich Raphael painting",
+          "source": {
+            "commons_title": "File:Raffael-verklärung-christi.jpg",
+            "file_page": "https://commons.wikimedia.org/wiki/File:Raffael-verkl%C3%A4rung-christi.jpg"
+          },
+          "metadata_status": "VERIFIED_CURRENT_COMMS_IMAGEINFO",
+          "current_source_info": {
+            "width": 3737,
+            "height": 5691,
+            "size_bytes": 5205139,
+            "sha1": "489fffc5a957e61fb4f46fcd758b3a126f39c187",
+            "mime": "image/jpeg",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Raffael-verkl%C3%A4rung-christi.jpg",
+            "licence": "Public domain",
+            "copyrighted": "False",
+            "source_page": "https://commons.wikimedia.org/wiki/File:Raffael-verkl%C3%A4rung-christi.jpg"
+          },
+          "original_downloaded_in_w3": false,
+          "photographic_rights_final": false,
+          "painting_original_exact_photo_final_verified": false,
+          "native_photo_quality_final": false,
+          "production_allowed": false,
+          "breviarum_short_edge": 1067,
+          "short_edge_improvement_factor": 3.502,
+          "max_pixel_ratio": 3.539,
+          "download_gate": "SOURCE_PIXELS_IMPROVED_NEEDS_PHOTO_RIGHTS_AND_FIDELITY_REVIEW"
+        },
+        {
+          "id": "plate-raphael-transfiguration",
+          "title": "File:Raphaël, La Transfiguration, 1518–1520, huile sur bois, 405 × 278 cm, Musées du Vatican, Pinacothèque, inv. 4.jpg",
+          "object": "Vatican Museums, Pinacoteca, Raphael Transfiguration",
+          "identity": "MATCH_EXACT_COMPOSITION_INSTITUTION",
+          "issue": "40MB version, needs quality, photographer rights and storage review",
+          "source": {
+            "commons_title": "File:Raphaël, La Transfiguration, 1518–1520, huile sur bois, 405 × 278 cm, Musées du Vatican, Pinacothèque, inv. 4.jpg",
+            "file_page": "https://commons.wikimedia.org/wiki/File:Rapha%C3%ABl,_La_Transfiguration,_1518%E2%80%931520,_huile_sur_bois,_405_%C3%97_278_cm,_Mus%C3%A9es_du_Vatican,_Pinacoth%C3%A8que,_inv._4.jpg"
+          },
+          "metadata_status": "VERIFIED_CURRENT_COMMS_IMAGEINFO",
+          "current_source_info": {
+            "width": 6349,
+            "height": 9381,
+            "size_bytes": 41674257,
+            "sha1": "ae9ab83aa9f8a0188b71a712d72d1d5f78f9551c",
+            "mime": "image/jpeg",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Rapha%C3%ABl,_La_Transfiguration,_1518%E2%80%931520,_huile_sur_bois,_405_%C3%97_278_cm,_Mus%C3%A9es_du_Vatican,_Pinacoth%C3%A8que,_inv._4.jpg",
+            "licence": "Public domain",
+            "copyrighted": "False",
+            "source_page": "https://commons.wikimedia.org/wiki/File:Rapha%C3%ABl,_La_Transfiguration,_1518%E2%80%931520,_huile_sur_bois,_405_%C3%97_278_cm,_Mus%C3%A9es_du_Vatican,_Pinacoth%C3%A8que,_inv._4.jpg"
+          },
+          "original_downloaded_in_w3": false,
+          "photographic_rights_final": false,
+          "painting_original_exact_photo_final_verified": false,
+          "native_photo_quality_final": false,
+          "production_allowed": false,
+          "breviarum_short_edge": 1067,
+          "short_edge_improvement_factor": 5.95,
+          "max_pixel_ratio": 5.834,
+          "download_gate": "HOLD_OVERSIZE_GT_30MB_NO_FREE_STORE_CERT"
+        }
+      ],
+      "operational_status": "IDENTIFIED_EXACT_FILE_ALTERNATIVE_PHOTO_QA_PENDING",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-rembrandt-emmaus",
+      "title": "The Supper at Emmaus",
+      "artist": "Rembrandt",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        1008,
+        1050
+      ],
+      "breviarum_file_sha1": "133dcef2c74e7c259e094e982abd2d26a0a4cc13",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Rembrandt_-_Supper_at_Emmaus_-_WGA19115.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "PRIORITY_PHOTOGRAPHIC_QA",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-reni-cecilia",
+      "title": "Saint Cecilia",
+      "artist": "Guido Reni",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        1172,
+        1589
+      ],
+      "breviarum_file_sha1": "125f43a963b819bd5bb003d0e5a2ae1d405c8706",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_Saint_Cecilia.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "PRIORITY_PHOTOGRAPHIC_QA",
+      "alternatives": [
+        {
+          "id": "plate-reni-cecilia",
+          "title": "File:St. Cecilia by Guido Reni.jpg",
+          "object": "Norton Simon Museum Saint Cecilia (1606)",
+          "identity": "MATCH_EXACT_COMPOSITION_INSTITUTION",
+          "issue": "2052×2574 file PD-Art; photographer provenance and frame-free edges pending",
+          "source": {
+            "commons_title": "File:St. Cecilia by Guido Reni.jpg",
+            "file_page": "https://commons.wikimedia.org/wiki/File:St._Cecilia_by_Guido_Reni.jpg"
+          },
+          "metadata_status": "VERIFIED_CURRENT_COMMS_IMAGEINFO",
+          "current_source_info": {
+            "width": 2052,
+            "height": 2574,
+            "size_bytes": 3475228,
+            "sha1": "3c0e4ccd918cfe1af0023bf07d77d1d3d2337598",
+            "mime": "image/jpeg",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:St._Cecilia_by_Guido_Reni.jpg",
+            "licence": "Public domain",
+            "copyrighted": "False",
+            "source_page": "https://commons.wikimedia.org/wiki/File:St._Cecilia_by_Guido_Reni.jpg"
+          },
+          "original_downloaded_in_w3": false,
+          "photographic_rights_final": false,
+          "painting_original_exact_photo_final_verified": false,
+          "native_photo_quality_final": false,
+          "production_allowed": false,
+          "breviarum_short_edge": 1172,
+          "short_edge_improvement_factor": 1.751,
+          "max_pixel_ratio": 1.62,
+          "download_gate": "SOURCE_PIXELS_IMPROVED_NEEDS_PHOTO_RIGHTS_AND_FIDELITY_REVIEW"
+        }
+      ],
+      "operational_status": "IDENTIFIED_EXACT_FILE_ALTERNATIVE_PHOTO_QA_PENDING",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-sassoferrato-virgin",
+      "title": "The Virgin in Prayer",
+      "artist": "Sassoferrato",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        1250,
+        1800
+      ],
+      "breviarum_file_sha1": "5107612b004ebe977825a8d481bd7ceb650f4e7e",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Sassoferrato_-_The_Virgin_In_Prayer_-_Walters_371861.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "CONTEXTUAL_PAINTING_CANDIDATE",
+      "alternatives": [],
+      "operational_status": "STYLE_OR_TASTE_EXCEPTION_RETAIN_METADATA_ONLY",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-scheffer-monica",
+      "title": "Saints Augustine and Monica",
+      "artist": "Ary Scheffer",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        556,
+        691
+      ],
+      "breviarum_file_sha1": "c31e882a9e69e70b15ce2c64d4f9daa484f5b4b3",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Scheffer_Saint_Augustine_and_Saint_Monica.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "SECONDARY_VISUAL_REVIEW",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-schmidtner-knots",
+      "title": "Mary, Undoer of Knots",
+      "artist": "Johann Georg Schmidtner",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        908,
+        1461
+      ],
+      "breviarum_file_sha1": "0e588d6361758a115cc2638452b638afd2b01e7b",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Mary-Untier-of-Knots-1.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "CONTEXTUAL_PAINTING_CANDIDATE",
+      "alternatives": [],
+      "operational_status": "STYLE_OR_TASTE_EXCEPTION_RETAIN_METADATA_ONLY",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-sodoma-catherine",
+      "title": "The Ecstasy of Saint Catherine of Siena",
+      "artist": "Il Sodoma",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        1386,
+        1920
+      ],
+      "breviarum_file_sha1": "16d82c22996deef81275bdc0c4a9c8203b00aced",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Sodoma_-_The_Ecstasy_of_Saint_Catherine_of_Siena_-_1871.90_-_Yale_University_Art_Gallery.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "SECONDARY_VISUAL_REVIEW",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-tiepolo-carmel",
+      "title": "The Apparition of the Virgin to Saint Simon Stock",
+      "artist": "Giovanni Battista Tiepolo",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        850,
+        1371
+      ],
+      "breviarum_file_sha1": "645eafbf2d11db96b15a62b4022e8c5029eefbae",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Tiepolo_-_Apparition_of_the_Virgin_to_St_Simon_Stock_-_WGA22299.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "PRIORITY_PHOTOGRAPHIC_QA",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-tiepolo-catherine",
+      "title": "Saint Catherine of Siena",
+      "artist": "Giovanni Battista Tiepolo",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        955,
+        1221
+      ],
+      "breviarum_file_sha1": "f5f702560063b3786b4d26e1fe4c854cdcdb9ea9",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Tiepolo_096.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "PRIORITY_PHOTOGRAPHIC_QA",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-titian-assumption",
+      "title": "The Assumption of the Virgin",
+      "artist": "Titian",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        1050,
+        1932
+      ],
+      "breviarum_file_sha1": "baaafcde9dfe0d9c38417aafe0ce7b5361eafecf",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Tizian_041.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "CONTEXTUAL_PAINTING_CANDIDATE",
+      "alternatives": [
+        {
+          "id": "plate-titian-assumption",
+          "title": "File:Assumption of the Virgin – Titian.jpg",
+          "object": "Santa Maria Gloriosa dei Frari, Venice, high altar",
+          "identity": "MATCH_EXACT_COMPOSITION_INSTITUTION",
+          "issue": "New October 2026 87MB very large claimed scan; scan authenticity, painted bounds, free permanent storage unresolved",
+          "source": {
+            "commons_title": "File:Assumption of the Virgin – Titian.jpg",
+            "file_page": "https://commons.wikimedia.org/wiki/File:Assumption_of_the_Virgin_%E2%80%93_Titian.jpg"
+          },
+          "metadata_status": "VERIFIED_CURRENT_COMMS_IMAGEINFO",
+          "current_source_info": {
+            "width": 12758,
+            "height": 23671,
+            "size_bytes": 91336683,
+            "sha1": "5c613fe28a0d920d3b455fb26edc0aed47218596",
+            "mime": "image/jpeg",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Assumption_of_the_Virgin_%E2%80%93_Titian.jpg",
+            "licence": "Public domain",
+            "copyrighted": "False",
+            "source_page": "https://commons.wikimedia.org/wiki/File:Assumption_of_the_Virgin_%E2%80%93_Titian.jpg"
+          },
+          "original_downloaded_in_w3": false,
+          "photographic_rights_final": false,
+          "painting_original_exact_photo_final_verified": false,
+          "native_photo_quality_final": false,
+          "production_allowed": false,
+          "breviarum_short_edge": 1050,
+          "short_edge_improvement_factor": 12.15,
+          "max_pixel_ratio": 12.252,
+          "download_gate": "HOLD_OVERSIZE_GT_30MB_NO_FREE_STORE_CERT"
+        }
+      ],
+      "operational_status": "IDENTIFIED_EXACT_FILE_ALTERNATIVE_PHOTO_QA_PENDING",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-titian-dolorosa",
+      "title": "Mater Dolorosa",
+      "artist": "Titian",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        950,
+        1167
+      ],
+      "breviarum_file_sha1": "6d134595731753f66a0392c82262ee4541d430ad",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Titian_-_Mater_Dolorosa_-_WGA22818.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "CONTEXTUAL_PAINTING_CANDIDATE",
+      "alternatives": [],
+      "operational_status": "STYLE_OR_TASTE_EXCEPTION_RETAIN_METADATA_ONLY",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-tojetti-lourdes",
+      "title": "Our Lady of Lourdes",
+      "artist": "Virgilio Tojetti",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        825,
+        960
+      ],
+      "breviarum_file_sha1": "5aa283cddce24b806957738389e31f3ec29760c5",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Virgilio_Tojetti_1877_Our_Lady_of_Lourdes.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "SECONDARY_VISUAL_REVIEW",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-vanderweyden-dymphna",
+      "title": "Saint Dymphna Baptised by Gerebernus",
+      "artist": "Goswin van der Weyden",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        1440,
+        2560
+      ],
+      "breviarum_file_sha1": "231c7c3282f02c12249a60e663d4193c8084770a",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Goswin_van_der_Weyden_-_Legende_van_het_leven_van_de_H._Dymphna_de_H._Dymphna_wordt_gedoopt_door_Gerebernus,_1503-1505,_58657.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "STYLE_EXCEPTION_HOLD",
+      "alternatives": [],
+      "operational_status": "STYLE_OR_TASTE_EXCEPTION_RETAIN_METADATA_ONLY",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-velazquez-crucified",
+      "title": "Christ Crucified",
+      "artist": "Diego Velázquez",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        588,
+        900
+      ],
+      "breviarum_file_sha1": "d70d1011703bf86664284a8086b73a6064aa0496",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Diego_Vel%C3%A1zquez_-_Christ_on_the_Cross_-_WGA24389.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "PRIORITY_PHOTOGRAPHIC_QA",
+      "alternatives": [
+        {
+          "id": "plate-velazquez-crucified",
+          "title": "File:Cristo crucificado.jpg",
+          "object": "Museo del Prado P01167",
+          "identity": "MATCH_EXACT_INVENTORY",
+          "issue": "Prado institution source 2046×3051; avoid inferior WGA 588×900",
+          "source": {
+            "commons_title": "File:Cristo crucificado.jpg",
+            "file_page": "https://commons.wikimedia.org/wiki/File:Cristo_crucificado.jpg"
+          },
+          "metadata_status": "VERIFIED_CURRENT_COMMS_IMAGEINFO",
+          "current_source_info": {
+            "width": 2046,
+            "height": 3051,
+            "size_bytes": 4816718,
+            "sha1": "7fb01853d58f6f71a3506d5d02f196660e6edecc",
+            "mime": "image/jpeg",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cristo_crucificado.jpg",
+            "licence": "Public domain",
+            "copyrighted": "False",
+            "source_page": "https://commons.wikimedia.org/wiki/File:Cristo_crucificado.jpg"
+          },
+          "original_downloaded_in_w3": false,
+          "photographic_rights_final": false,
+          "painting_original_exact_photo_final_verified": false,
+          "native_photo_quality_final": false,
+          "production_allowed": false,
+          "breviarum_short_edge": 588,
+          "short_edge_improvement_factor": 3.48,
+          "max_pixel_ratio": 3.39,
+          "download_gate": "SOURCE_PIXELS_IMPROVED_NEEDS_PHOTO_RIGHTS_AND_FIDELITY_REVIEW"
+        }
+      ],
+      "operational_status": "IDENTIFIED_EXACT_FILE_ALTERNATIVE_PHOTO_QA_PENDING",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-velazquez-immaculate",
+      "title": "The Immaculate Conception",
+      "artist": "Diego Velázquez",
+      "original_institutional_lead": null,
+      "breviarum_current_weak_pixels": [
+        514,
+        703
+      ],
+      "breviarum_file_sha1": "d3ecf7b294143cd46e885537e270596fd0175bfb",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Diego_Vel%C3%A1zquez_-_The_Immaculate_Conception_-_WGA24355.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "PRIORITY_PHOTOGRAPHIC_QA",
+      "alternatives": [],
+      "operational_status": "INSTITUTIONAL_EXACT_PHOTO_SOURCE_STILL_NEEDED",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-zurbaran-francis",
+      "title": "Saint Francis in Meditation",
+      "artist": "Francisco de Zurbarán",
+      "original_institutional_lead": {
+        "institution": "Timken Museum of Art",
+        "object_id": "2015:001",
+        "url": "https://www.timkenmuseum.org/art/saint-francis-in-meditation",
+        "exactness": "EXACT_BREVIARIUM_COMMONS_IMAGE_RECORD",
+        "warning": "Do not conflate with London National Gallery NG230 or NG5655, both different originals; 2847x3688 Commons photo File:Saint francis in meditation 075217.JPG is same Timken work but still needs frame/quality and rights QA",
+        "alternate_photo_url": "https://commons.wikimedia.org/wiki/File:Saint_francis_in_meditation_075217.JPG"
+      },
+      "breviarum_current_weak_pixels": [
+        400,
+        554
+      ],
+      "breviarum_file_sha1": "d899ad13addad4e549993f5e91332b3ebf613364",
+      "original_source_file_page": "https://commons.wikimedia.org/wiki/File:Saint_francis_in_meditation_-_Zurbaran.jpg",
+      "original_photo_rights_label": "Public domain",
+      "aesthetic_priority": "PRIORITY_PHOTOGRAPHIC_QA",
+      "alternatives": [
+        {
+          "id": "plate-zurbaran-francis",
+          "title": "File:Saint francis in meditation 075217.JPG",
+          "object": "Timken 2015:001",
+          "identity": "MATCH_EXACT_INVENTORY",
+          "issue": "Independent user camera JPG, ISO 1600 and edited; appearance must be inspected at native pixels",
+          "source": {
+            "commons_title": "File:Saint francis in meditation 075217.JPG",
+            "file_page": "https://commons.wikimedia.org/wiki/File:Saint_francis_in_meditation_075217.JPG"
+          },
+          "metadata_status": "VERIFIED_CURRENT_COMMS_IMAGEINFO",
+          "current_source_info": {
+            "width": 2847,
+            "height": 3688,
+            "size_bytes": 2102856,
+            "sha1": "5eb6188546a463af264726153f1ded8452c2054a",
+            "mime": "image/jpeg",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Saint_francis_in_meditation_075217.JPG",
+            "licence": "Public domain",
+            "copyrighted": "False",
+            "source_page": "https://commons.wikimedia.org/wiki/File:Saint_francis_in_meditation_075217.JPG"
+          },
+          "original_downloaded_in_w3": false,
+          "photographic_rights_final": false,
+          "painting_original_exact_photo_final_verified": false,
+          "native_photo_quality_final": false,
+          "production_allowed": false,
+          "breviarum_short_edge": 400,
+          "short_edge_improvement_factor": 7.117,
+          "max_pixel_ratio": 6.657,
+          "download_gate": "SOURCE_PIXELS_IMPROVED_NEEDS_PHOTO_RIGHTS_AND_FIDELITY_REVIEW"
+        }
+      ],
+      "operational_status": "IDENTIFIED_EXACT_FILE_ALTERNATIVE_PHOTO_QA_PENDING",
+      "no_substitution_of_different_physical_work": true,
+      "user_approval_still_required": true,
+      "pristine_certified": false,
+      "production_activated": false
+    }
+  ],
+  "native_quality_cohort": [
+    {
+      "id": "plate-bellini-agony",
+      "title": "The Agony in the Garden",
+      "artist": "Giovanni Bellini",
+      "pixels": [
+        6000,
+        3785
+      ],
+      "source_sha1": "fb273826095645efccd47667081891aa5d1bf2ff",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bellini,Giovanni_-_Agony_in_the_Garden_-_National_Gallery.jpg",
+      "file_bytes": 7863730,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-caravaggio-crowning",
+      "title": "The Crowning with Thorns",
+      "artist": "Caravaggio",
+      "pixels": [
+        5256,
+        3987
+      ],
+      "source_sha1": "30b23ad431a927d102384dbd1816a839b2aa2193",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Michelangelo_Merisi,_called_Caravaggio_-_The_Crowning_with_Thorns_-_Google_Art_Project.jpg",
+      "file_bytes": 2793278,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-caravaggio-emmaus",
+      "title": "The Supper at Emmaus",
+      "artist": "Caravaggio",
+      "pixels": [
+        11412,
+        8117
+      ],
+      "source_sha1": "72adc134bebed87eb8043e29f9844b1490ce0ad7",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Supper_at_Emmaus-Caravaggio_(1601).jpg",
+      "file_bytes": 8656377,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "EXACT_FILE_BYTES_SHA1_ARCHIVED_4_NATIVE_CORNERS_REVIEWED",
+      "registered_original_archive_path": "assets/staged/sacred-art-breviarium-wave1-native-20261029/plate-caravaggio-emmaus.jpg",
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-caravaggio-flagellation",
+      "title": "The Flagellation of Christ",
+      "artist": "Caravaggio",
+      "pixels": [
+        7913,
+        10695
+      ],
+      "source_sha1": "256b02ecb43ed3eb8a2a1f26bc34f63cf9f09166",
+      "source_page": "https://commons.wikimedia.org/wiki/File:The_Flagellation_of_Christ-Caravaggio_(1607).jpg",
+      "file_bytes": 12143356,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-caravaggio-rosary",
+      "title": "The Madonna of the Rosary",
+      "artist": "Caravaggio",
+      "pixels": [
+        9803,
+        14480
+      ],
+      "source_sha1": "289a9980d41f280da89bed2bed12dc3c59887d36",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Madonna_of_the_Rosary-Caravaggio_(1607).jpg",
+      "file_bytes": 20767267,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-caravaggio-thomas",
+      "title": "The Incredulity of Saint Thomas",
+      "artist": "Caravaggio",
+      "pixels": [
+        8550,
+        6325
+      ],
+      "source_sha1": "584797f8fb046593c4dc29d4b96118783689ac55",
+      "source_page": "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas-Caravaggio_(1601-2).jpg",
+      "file_bytes": 7293633,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "EXACT_FILE_BYTES_SHA1_ARCHIVED_4_NATIVE_CORNERS_REVIEWED",
+      "registered_original_archive_path": "assets/staged/sacred-art-breviarium-wave1-native-20261029/plate-caravaggio-thomas.jpg",
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-durer-doctors",
+      "title": "Jesus among the Doctors",
+      "artist": "Albrecht Dürer",
+      "pixels": [
+        4338,
+        3480
+      ],
+      "source_sha1": "8462470e28fe41ec066281766881cd742b55b9f0",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Jesus_among_the_Doctors_-_Google_Art_Project.jpg",
+      "file_bytes": 13397212,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-fernandez-blaise",
+      "title": "Saint Blaise",
+      "artist": "Pere Fernández",
+      "pixels": [
+        2101,
+        4668
+      ],
+      "source_sha1": "ee7b692a8322fa7fb405e53cad4f20c1775cbabc",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Pere_Fern%C3%A1ndez_-_Saint_Blaise_-_Google_Art_Project.jpg",
+      "file_bytes": 3735684,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-latour-newborn",
+      "title": "The Newborn",
+      "artist": "Georges de La Tour",
+      "pixels": [
+        4075,
+        3357
+      ],
+      "source_sha1": "a110c9c8dfb4c72eafad05f9b487add8501b901d",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Georges_de_La_Tour_-_Newlyborn_infant_-_Mus%C3%A9e_des_Beaux-Arts_de_Rennes.jpg",
+      "file_bytes": 9765800,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-leonardo-rocks",
+      "title": "The Virgin of the Rocks",
+      "artist": "Leonardo da Vinci",
+      "pixels": [
+        3460,
+        5487
+      ],
+      "source_sha1": "14d3eed789e4a45c1de84deac587e9b1ac41d172",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Leonardo_Da_Vinci_-_Vergine_delle_Rocce_(Louvre).jpg",
+      "file_bytes": 7057896,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-millet-angelus",
+      "title": "The Angelus",
+      "artist": "Jean-François Millet",
+      "pixels": [
+        7053,
+        5864
+      ],
+      "source_sha1": "42504539adbaad1a45066bd95a6dedb093b5288c",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Jean-Fran%C3%A7ois_Millet_-_The_Angelus_-_Google_Art_Project.jpg",
+      "file_bytes": 7099454,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-murillo-beggar",
+      "title": "The Young Beggar",
+      "artist": "Bartolomé Esteban Murillo",
+      "pixels": [
+        3225,
+        3913
+      ],
+      "source_sha1": "b1bc49cac4c2b2ae9008aac3be98f2779444873e",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Joven_mendigo_(1645-50).jpg",
+      "file_bytes": 2987797,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-perpetual-help",
+      "title": "Our Lady of Perpetual Help",
+      "artist": "Unknown",
+      "pixels": [
+        3864,
+        4800
+      ],
+      "source_sha1": "0afdbdfcc5a718d995c636bfc9fd11fb28326d7d",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Nossa_Senhora_do_Perpetuo_Socorro_HD.jpg",
+      "file_bytes": 5667088,
+      "source_rights_label": "CC BY-SA 4.0",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "CREATIVE_COMMONS_ATTRIBUTION_COMPLIANCE_AND_PHOTOGRAPH_RIGHTS_HOLD",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-poussin-rita",
+      "title": "The Translation of Saint Rita of Cascia",
+      "artist": "Nicolas Poussin",
+      "pixels": [
+        3802,
+        4922
+      ],
+      "source_sha1": "bcb6e79206c887be69c72a95e9a1a65e245b800a",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Poussin,_Nicolas_-_The_Translation_of_Saint_Rita_of_Cascia_-_Google_Art_Project.jpg",
+      "file_bytes": 6253525,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-raphael-george",
+      "title": "Saint George and the Dragon",
+      "artist": "Raphael",
+      "pixels": [
+        4152,
+        5454
+      ],
+      "source_sha1": "263e6d7a3999be5df4915ba7d9158a53ba41ceac",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Raphael_-_Saint_George_and_the_Dragon_-_Google_Art_Project.jpg",
+      "file_bytes": 6553147,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-raphael-sistine",
+      "title": "The Sistine Madonna",
+      "artist": "Raphael",
+      "pixels": [
+        3032,
+        4154
+      ],
+      "source_sha1": "5ed7e6985e987910715f494a4528f6c6b9ec8159",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Raphael_-_The_Sistine_Madonna_-_Google_Art_Project.jpg",
+      "file_bytes": 8316802,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-rembrandt-adulteress",
+      "title": "Christ and the Woman Taken in Adultery",
+      "artist": "Rembrandt",
+      "pixels": [
+        2024,
+        2567
+      ],
+      "source_sha1": "bb5a55a40d9cc81a8373b3bdb85a86a7cb4a2482",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rembrandt_Harmensz._van_Rijn_025.jpg",
+      "file_bytes": 601153,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-rembrandt-ascension",
+      "title": "The Ascension of Christ",
+      "artist": "Rembrandt",
+      "pixels": [
+        3456,
+        5184
+      ],
+      "source_sha1": "4a4eed28e1ff52d9867d3cbea20ed8ff9ccf820c",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ascensi%C3%B3n_Rembrandt_Munich.jpg",
+      "file_bytes": 7271531,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-rembrandt-christ",
+      "title": "Head of Christ",
+      "artist": "Rembrandt",
+      "pixels": [
+        3646,
+        4203
+      ],
+      "source_sha1": "3f66afbbcfa8b57fc6903f6ba07ce5c5edf3bf14",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rembrandt_Harmensz._van_Rijn,_Dutch_(active_Leiden_and_Amsterdam)_-_Head_of_Christ_-_Google_Art_Project.jpg",
+      "file_bytes": 2691570,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-rembrandt-jacob",
+      "title": "Jacob Wrestling with the Angel",
+      "artist": "Rembrandt",
+      "pixels": [
+        4000,
+        4771
+      ],
+      "source_sha1": "bc79abdaaceafe971a618bb12bd8055e58a38f95",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rembrandt_-_Jacob_Wrestling_with_the_Angel_-_Google_Art_Project.jpg",
+      "file_bytes": 13982370,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-rembrandt-presentation",
+      "title": "Simeon in the Temple",
+      "artist": "Rembrandt",
+      "pixels": [
+        3479,
+        4092
+      ],
+      "source_sha1": "bb8c1ee87b586b17afd1e2368afeea00b4aa369e",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rembrandt_-_Simeon_in_the_Temple_DSC6899.jpg",
+      "file_bytes": 17146211,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-rembrandt-storm",
+      "title": "Christ in the Storm on the Sea of Galilee",
+      "artist": "Rembrandt",
+      "pixels": [
+        3002,
+        3731
+      ],
+      "source_sha1": "f65e91cbcd5489fd0ce756ff540155c74ae2145d",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg",
+      "file_bytes": 6156633,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-reni-joseph",
+      "title": "Saint Joseph and the Christ Child",
+      "artist": "Guido Reni",
+      "pixels": [
+        1994,
+        2401
+      ],
+      "source_sha1": "294948f383cc1ce413f39dbed4b52914c257ebb7",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_Saint_Joseph_and_the_Christ_Child_-_Google_Art_Project.jpg",
+      "file_bytes": 611479,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-ribera-jerome",
+      "title": "Saint Jerome and the Angel of Judgment",
+      "artist": "Jusepe de Ribera",
+      "pixels": [
+        2075,
+        3344
+      ],
+      "source_sha1": "90196ffe8706bea05bfeec43c50d7d9b7afedca1",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_de_Ribera_016.jpg",
+      "file_bytes": 1902783,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-ulivelli-peregrine",
+      "title": "Christ Healing Saint Peregrine",
+      "artist": "Cosimo Ulivelli",
+      "pixels": [
+        2112,
+        2816
+      ],
+      "source_sha1": "3c23de4d9f561e2a829833a942f72c37f468fe66",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Annunziata,_cosimo_ulivelli,_Crocifisso_che_risana_da_cancrena_san_Pellegrino_Laziosi_(1675).JPG",
+      "file_bytes": 2961353,
+      "source_rights_label": "CC BY-SA 3.0",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "CREATIVE_COMMONS_ATTRIBUTION_COMPLIANCE_AND_PHOTOGRAPH_RIGHTS_HOLD",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-vaneyck-ghent",
+      "title": "Adoration of the Mystic Lamb (Ghent Altarpiece)",
+      "artist": "Jan van Eyck",
+      "pixels": [
+        6265,
+        4581
+      ],
+      "source_sha1": "7eb1af5563610cfbd346cb4db7f1eb14fcb6cbde",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Lamgods_open.jpg",
+      "file_bytes": 19985567,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-velazquez-coronation",
+      "title": "The Coronation of the Virgin",
+      "artist": "Diego Velázquez",
+      "pixels": [
+        2292,
+        3051
+      ],
+      "source_sha1": "efcd93fe9abe4169574ccdb2f334e587e0fb8210",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg",
+      "file_bytes": 8409852,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    },
+    {
+      "id": "plate-veronese-cana",
+      "title": "The Wedding at Cana",
+      "artist": "Paolo Veronese",
+      "pixels": [
+        10068,
+        6742
+      ],
+      "source_sha1": "c248939158a0c7968f113a115c3bfb1992934d47",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Les_Noces_de_Cana_-_Paolo_Veronese_-_Mus%C3%A9e_du_Louvre_Peintures_INV_142_;_MR_384.jpg",
+      "file_bytes": 16204142,
+      "source_rights_label": "Public domain",
+      "technical_workclass": "ORIGINAL_BYTES_NOT_ARCHIVED_NATIVE_PHOTO_QA_UNPERFORMED",
+      "registered_original_archive_path": null,
+      "full_native_edges_verified": false,
+      "painted_boundary_verified": false,
+      "tonal_fidelity_verified": false,
+      "rights_state": "COMMONS_PD_ART_NOT_JURISDICTIONALLY_CLEARED",
+      "pristine_certified": false,
+      "production_activated": false
+    }
+  ]
+}
