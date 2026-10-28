@@ -9,6 +9,7 @@ import {
 import { auditVenue } from "../src/find/contracts.js";
 import { isMapPublishableGeo } from "../src/find/geo-provenance.js";
 import { buildFindViewModel, renderFindToString } from "../src/find/presentation.js";
+import { applyIndicativeSspxLocations, applyIndicativeOtherCommunities } from "../src/find/sspx-indicative-geo.js";
 
 function readSnapshot(file){
   return JSON.parse(readFileSync(new URL("../data/directory/generated/v19/"+file,import.meta.url),"utf8"));
@@ -45,6 +46,10 @@ for(const item of additions){
   assert.equal(record.venue.geo.lat,null);
   assert.equal(record.venue.geo.lng,null);
   assert.equal(isMapPublishableGeo(record.venue.geo,record.venue.address.country_code),false,"address-only venue must not become a map pin");
+  const indicator=item.snapshot.provider==="SSPX_OCT26_POLAND"
+    ?applyIndicativeSspxLocations([record]):applyIndicativeOtherCommunities([record]);
+  assert.strictEqual(indicator.records[0],record,"indicative location pass must leave address-only entry untouched");
+  assert.equal(isMapPublishableGeo(indicator.records[0].venue.geo,record.venue.address.country_code),false);
   assert.equal(record.ministries.length,1);
   assert.equal(record.ministries[0].schedules.length,0,"no uncertified schedule asserted");
   assert.equal(expanded.schedules.filter(s=>s.ministry_id===record.ministries[0].ministry_id).length,0);
