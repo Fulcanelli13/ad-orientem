@@ -199,6 +199,28 @@ try{
       locale:"en-GB",
     });
     const page=await context.newPage();
+    // A deterministic whole-app acceptance run cannot rely on Wikisource's
+    // third-party CORS headers. Simulate its real source-unavailable state
+    // before the browser makes the request; the legacy reader must catch
+    // that rejection and retain provenance rather than invent source text.
+    // This test-owned fixture applies ONLY to the French MediaWiki endpoint.
+    // Every other network request and all app console errors remain audited.
+    await page.addInitScript(()=>{
+      const nativeFetch=window.fetch.bind(window);
+      window.fetch=(input,init)=>{
+        const raw=typeof input==="string" ? input : input?.url;
+        try{
+          const request=new URL(raw,window.location.href);
+          if(request.protocol==="https:" &&
+             request.hostname==="fr.wikisource.org" &&
+             request.pathname==="/w/api.php"){
+            (window.__aoRCWikisourceUnavailable??=[]).push(request.href);
+            return Promise.reject(new TypeError("Historical Wikisource source unavailable in RC network fixture"));
+          }
+        }catch{}
+        return nativeFetch(input,init);
+      };
+    });
     const pageErrors=[];
     const consoleErrors=[];
     const failedResources=[];
