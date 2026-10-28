@@ -94,6 +94,12 @@ for(const requiemSelect of [
    "Omitted final blessing also hid Last Gospel");
  assert.equal(req.project("AO.SM.C0124").priestAction?.label,"RECEIVES INCENSE",
   "Omitting initial Requiem incensation must not cancel permitted Offertory");
+ const kneel=req.project("AO.SM.C0226");
+ assert.equal(kneel.posture?.value,"KNEEL");
+ assert.equal(kneel.posture?.cueId,"AO.SM.C0226",
+   "Requiem posture change must land on the first surviving Communion prayer");
+ assert.equal(kneel.ownership.posture,"R17_REQUIEM_SOURCE_POSTURE_REANCHOR");
+ assert.equal(req.project("AO.SM.C0225").reason,"RITUS_XIII_1_REQUIEM_PEACE_PRAYER_OMITTED");
 }
 assert.equal(ctrl.project("AO.SM.C0041").priestAction?.label,"INCENSES ALTAR",
  "Ordinary incensed Sung Mass lost legitimate entrance incensation");
