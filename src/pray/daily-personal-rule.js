@@ -133,7 +133,7 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
  const native=p.length==="brief"?fullNative.filter(x=>briefIDs.includes(x.id)):fullNative;
  // Do not silently omit/reorder an invalid source ID.
  if(p.length==="brief"&&(native.length!==briefIDs.length||native.some((x,i)=>x.id!==briefIDs[i])))throw new Error("Invalid Personal Brief source selection");
- const variants=p.length==="full"?personalDailyOptions(daypart,language,p.edition).filter(x=>x.kind==="variant"):[];
+ const variants=personalDailyOptions(daypart,language,p.edition).filter(x=>x.kind==="variant");
  const chosen=Object.fromEntries(Object.entries(p.variants[daypart]).filter(([slot,id])=>variants.some(x=>x.id===id&&x.slot===slot)));
  const primary=native.filter(x=>x.kind!=="supplement").map((row,index)=>{
   if(row.kind==="guided")return {...row,id:"piusx-"+p.edition+"-"+daypart+"-examen",kind:"personal-examen",sourceId:"examen",index};
