@@ -24,7 +24,14 @@
     "new_full_original_bytes_archived_in_wave3": 0,
     "new_pristine_certifications": 0,
     "new_releases": 0,
-    "expenditure_eur": 0
+    "expenditure_eur": 0,
+    "w3b_new_verified_source_originals_archived": 2,
+    "w3b_native_photo_rejected_for_frame": 1,
+    "w3b_native_source_painting_only_preliminary": 1,
+    "w3b_http429_encountered": 1,
+    "w3b_not_attempted_after_429": 3,
+    "w3b_verified_original_bytes": 8272231,
+    "cumulative_breviarium_originals_archived": 4
   },
   "commons_batch_imageinfo_error": null,
   "weak_cohort": [
@@ -171,7 +178,20 @@
       "no_substitution_of_different_physical_work": true,
       "user_approval_still_required": true,
       "pristine_certified": false,
-      "production_activated": false
+      "production_activated": false,
+      "source_original_acquisition": {
+        "status": "NOT_ATTEMPTED_AFTER_COMMONS_429",
+        "source_file": "File:The Calling of Saint Matthew-Caravaggo (1599-1600).jpg",
+        "artifact_path": null,
+        "sha256": null,
+        "source_sha1": null,
+        "native_pixels": null,
+        "sha1_verified": false,
+        "first_http429_stop_rule_obeyed": true,
+        "research_photo_rights_final_certified": false,
+        "pristine_certified": false,
+        "production_activated": false
+      }
     },
     {
       "id": "plate-champaigne-lastsupper",
@@ -482,7 +502,33 @@
       "no_substitution_of_different_physical_work": true,
       "user_approval_still_required": true,
       "pristine_certified": false,
-      "production_activated": false
+      "production_activated": false,
+      "source_original_acquisition": {
+        "status": "ORIGINAL_SOURCE_EXACT_HASH_ARCHIVED_PENDING_NATIVE_PHOTO_REVIEW",
+        "source_file": "File:Inmaculada Concepción (Murillo, El Escorial).jpg",
+        "artifact_path": "assets/staged/sacred-art-breviarium-w3b-exact-originals-20261029/plate-murillo-immaculate.jpg",
+        "sha256": "fc324fbea27fcd8950c11b54176f061f1f9f2ddd1d279e24501c907edc16394f",
+        "source_sha1": "ec8b31af0348348ef3cca39519eb8b32a85cfcdd",
+        "native_pixels": [
+          1888,
+          2717
+        ],
+        "sha1_verified": true,
+        "first_http429_stop_rule_obeyed": true,
+        "research_photo_rights_final_certified": false,
+        "pristine_certified": false,
+        "production_activated": false,
+        "native_corner_review": {
+          "class": "PRELIMINARY_PAINTING_ONLY_PHOTOGRAPH_RIGHTS_FIDELITY_HOLD",
+          "visible_evidence": "Full El Escorial composition and four painted corners present; no obvious separate external frame in native-corner review. Surface textures and tonal calibration still require scrutiny.",
+          "painting_identity_unchanged": true,
+          "original_file_archive_preserved": true,
+          "alternate_unframed_original_needed": false,
+          "pristine_certified": false,
+          "production_approved": false,
+          "proof": "assets/staged/sacred-art-breviarium-w3b-exact-originals-20261029/plate-murillo-immaculate-native-corners.jpg"
+        }
+      }
     },
     {
       "id": "plate-pereda-anthony",
@@ -633,7 +679,20 @@
       "no_substitution_of_different_physical_work": true,
       "user_approval_still_required": true,
       "pristine_certified": false,
-      "production_activated": false
+      "production_activated": false,
+      "source_original_acquisition": {
+        "status": "NOT_ATTEMPTED_AFTER_COMMONS_429",
+        "source_file": "File:Raffael-verklärung-christi.jpg",
+        "artifact_path": null,
+        "sha256": null,
+        "source_sha1": null,
+        "native_pixels": null,
+        "sha1_verified": false,
+        "first_http429_stop_rule_obeyed": true,
+        "research_photo_rights_final_certified": false,
+        "pristine_certified": false,
+        "production_activated": false
+      }
     },
     {
       "id": "plate-rembrandt-emmaus",
@@ -706,7 +765,20 @@
       "no_substitution_of_different_physical_work": true,
       "user_approval_still_required": true,
       "pristine_certified": false,
-      "production_activated": false
+      "production_activated": false,
+      "source_original_acquisition": {
+        "status": "HTTP_SOURCE_HOLD",
+        "source_file": "File:St. Cecilia by Guido Reni.jpg",
+        "artifact_path": null,
+        "sha256": null,
+        "source_sha1": null,
+        "native_pixels": null,
+        "sha1_verified": false,
+        "first_http429_stop_rule_obeyed": true,
+        "research_photo_rights_final_certified": false,
+        "pristine_certified": false,
+        "production_activated": false
+      }
     },
     {
       "id": "plate-sassoferrato-virgin",
@@ -992,7 +1064,20 @@
       "no_substitution_of_different_physical_work": true,
       "user_approval_still_required": true,
       "pristine_certified": false,
-      "production_activated": false
+      "production_activated": false,
+      "source_original_acquisition": {
+        "status": "NOT_ATTEMPTED_AFTER_COMMONS_429",
+        "source_file": "File:Cristo crucificado.jpg",
+        "artifact_path": null,
+        "sha256": null,
+        "source_sha1": null,
+        "native_pixels": null,
+        "sha1_verified": false,
+        "first_http429_stop_rule_obeyed": true,
+        "research_photo_rights_final_certified": false,
+        "pristine_certified": false,
+        "production_activated": false
+      }
     },
     {
       "id": "plate-velazquez-immaculate",
@@ -1072,7 +1157,33 @@
       "no_substitution_of_different_physical_work": true,
       "user_approval_still_required": true,
       "pristine_certified": false,
-      "production_activated": false
+      "production_activated": false,
+      "source_original_acquisition": {
+        "status": "ORIGINAL_SOURCE_EXACT_HASH_ARCHIVED_PENDING_NATIVE_PHOTO_REVIEW",
+        "source_file": "File:Saint francis in meditation 075217.JPG",
+        "artifact_path": "assets/staged/sacred-art-breviarium-w3b-exact-originals-20261029/plate-zurbaran-francis.jpg",
+        "sha256": "113427179a174a8b4aa45c29c7243503add6e00629173081902bcea45bab69c5",
+        "source_sha1": "5eb6188546a463af264726153f1ded8452c2054a",
+        "native_pixels": [
+          2847,
+          3688
+        ],
+        "sha1_verified": true,
+        "first_http429_stop_rule_obeyed": true,
+        "research_photo_rights_final_certified": false,
+        "pristine_certified": false,
+        "production_activated": false,
+        "native_corner_review": {
+          "class": "REJECT_NEW_PHOTOGRAPH_FRAME_AND_WALL",
+          "visible_evidence": "Full image visibly includes a prominent gilt frame and gallery wall; every corner sample belongs to the frame or wall. Use only as physical-object identity reference.",
+          "painting_identity_unchanged": true,
+          "original_file_archive_preserved": true,
+          "alternate_unframed_original_needed": true,
+          "pristine_certified": false,
+          "production_approved": false,
+          "proof": "assets/staged/sacred-art-breviarium-w3b-exact-originals-20261029/plate-zurbaran-francis-native-corners.jpg"
+        }
+      }
     }
   ],
   "native_quality_cohort": [
@@ -1664,5 +1775,16 @@
       "pristine_certified": false,
       "production_activated": false
     }
-  ]
+  ],
+  "w3b_source_original_run": {
+    "results": "assets/staged/sacred-art-breviarium-w3b-exact-originals-20261029/source-original-results.json",
+    "workflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40783597162",
+    "archived_originals": 2,
+    "one_frame_rejected": true,
+    "one_painting_only_preliminary": true,
+    "originals_missing_from_other_35": 33,
+    "original_image_rights_final_certifications": 0,
+    "production_releases": 0,
+    "cost_eur": 0
+  }
 }
