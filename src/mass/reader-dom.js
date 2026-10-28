@@ -79,6 +79,9 @@ const SHELL_STYLE = `
   margin:7px 12px;padding:11px 12px;min-height:44px;border:1px solid rgba(230,236,224,.18);
   border-radius:9px;background:var(--ao-mass-panel);color:#eef1e9;font:500 14px var(--ao-font-ui,system-ui,sans-serif)}
 .ao-section-menu [hidden]{display:none!important}
+.ao-schola-rejoin{grid-column:1/-1!important;min-height:30px;color:var(--ao-mass-accent-text)!important;
+  border:1px solid rgba(223,229,212,.20)!important;letter-spacing:.055em}
+.ao-schola-rejoin[hidden]{display:none!important}
 
 .ao-mass-prefs{
   position:absolute;z-index:34;top:58px;right:8px;width:min(310px,calc(100% - 16px));
@@ -1826,6 +1829,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
   }) : (previous.paragraphs ?? Object.freeze([]));
 
   const schola = persist(moment.schola, previous.schola);
+  const scholaCatchupPinned=moment.scholaCatchupPinned===true;
   // Special-rite musical metadata is separate from the ordinary Schola
   // performance clock. It never supplies lyrics, tempo, or inferred sound.
   // A distinct-rite step can change chant/silence without replacing its
@@ -1889,6 +1893,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     sacredMinister:projectCertifiedSolemnMinisterRubric(moment.sacredMinister),
     priestVoice:persist(moment.priestVoice, previous.priestVoice),
     schola,
+    scholaCatchupPinned,
     riteMusic,
     organPermission,
     priestQuietOffertory,
@@ -2143,6 +2148,7 @@ export function buildReaderShellMarkup(prepared = {}) {
         <button type="button" class="ao-schola-control" data-schola-next aria-label="Next Schola phrase" title="Next Schola phrase">›</button>
         <button type="button" class="ao-schola-control" data-schola-release hidden aria-label="Start sung Benedictus when actually heard">BEGIN SUNG BENEDICTUS</button>
         <button type="button" class="ao-schola-control" data-schola-pause aria-label="Pause Schola text" aria-pressed="false">PAUSE</button>
+        <button type="button" class="ao-schola-control ao-schola-rejoin" data-schola-rejoin hidden aria-label="Rejoin expected Schola music based on Mass position" title="Only updates the expected music display; does not detect actual singing">REJOIN EXPECTED MUSIC</button>
       </div>
     </div>
   </div>
@@ -2458,6 +2464,7 @@ export function createReaderDomAdapter({
   onScholaAdvance = null,
   onScholaPrevious = null,
   onScholaRelease = null,
+  onScholaRejoin = null,
   sections = [],
   scholaMusicItinerary = null,
   specialRiteMusicItinerary = null,
@@ -2668,6 +2675,8 @@ export function createReaderDomAdapter({
     const source=current?.scholaVisible ? current.schola : null;
     const previous=root.querySelector("[data-schola-previous]");
     const next=root.querySelector("[data-schola-next]");
+    const rejoin=root.querySelector("[data-schola-rejoin]");
+    if(rejoin)rejoin.hidden=current?.scholaCatchupPinned!==true;
     if(previous)previous.disabled=!source || Number(source.index)<=0;
     if(next)next.disabled=!source || Boolean(source.complete) ||
       Boolean(source.benedictusHold) || Number(source.index)>=Number(source.total)-1;
@@ -3249,6 +3258,11 @@ export function createReaderDomAdapter({
         if(!scholaCollapsed)scholaHeight=scholaExpandedHeight;
         syncScholaChrome();
         ensureShortCardCueTravel();
+        return;
+      }
+      const scholaRejoin=event.target?.closest?.("[data-schola-rejoin]");
+      if(scholaRejoin){
+        if(current?.scholaCatchupPinned)onScholaRejoin?.(current,prepared);
         return;
       }
       const scholaPrevious=event.target?.closest?.("[data-schola-previous]");
