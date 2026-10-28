@@ -58,7 +58,7 @@ const researchSnapshots = [
 ];
 
 const expectedResearchCounts = new Map([
-  ["DIOCESAN",73],
+  ["DIOCESAN",74],
   ["SSPX_DISTRICT_SEED",34],
   ["SSPX_FRANCE_FIRST_PARTY",89],
   ["SSPX_FRANCE_SECOND_PASS",30],
@@ -70,7 +70,7 @@ const expectedResearchCounts = new Map([
   ["SSPX_OCT26_FOLLOWUP_65_20261009",7],
   ["SSPX_GLOBAL_COMPLETION_20261009",7],
   ["SSPX_OFFICIAL_ROUTE_OCT26_20261009",2],
-  ["SSPX_OCT26_POLAND",38],
+  ["SSPX_OCT26_POLAND",39],
   ["SSPX_ASIA_CENTRAL_AMERICAS_20261008",47],
   ["SSPX_NA_DISTRICTS_20261008",120],
   ["AASJMV",6],
@@ -91,7 +91,8 @@ for(const snapshot of researchSnapshots){
   const expectedExpandedCount=snapshot.provider==="ICKSP_FEDERATED_V13"?119:snapshot.records.length;
   assert.equal(expanded.venues.length,expectedExpandedCount,snapshot.provider+" physical venue expansion drift");
   assert.equal(expanded.ministries.length,expectedExpandedCount,snapshot.provider+" physical ministry expansion drift");
-  assert.equal(expanded.schedules.length,expectedExpandedCount,snapshot.provider+" physical schedule expansion drift");
+  const siteOnlyCount=snapshot.records.filter(r=>r.ps==="SITE_ONLY_SOURCE_CONFIRMED").length;
+  assert.equal(expanded.schedules.length,expectedExpandedCount-siteOnlyCount,snapshot.provider+" physical schedule expansion drift");
   researchVenueCount+=expanded.venues.length;
   for(const venue of expanded.venues){
     assert.equal(auditVenue(venue).length,0,venue.venue_id+" failed venue audit");
@@ -132,14 +133,16 @@ for(const snapshot of researchSnapshots){
     assert.equal(visible.length,30,"Held SSPX France source was incorrectly published or promoted venues disappeared");
   }
   if(["SSPX_OCT26_MULTIREGION","SSPX_OCT26_AMERICAS","SSPX_OCT26_POLAND"].includes(snapshot.provider)){
-    const expected={"SSPX_OCT26_MULTIREGION":61,"SSPX_OCT26_AMERICAS":44,"SSPX_OCT26_POLAND":38};
+    const expected={"SSPX_OCT26_MULTIREGION":61,"SSPX_OCT26_AMERICAS":44,"SSPX_OCT26_POLAND":39};
     assert.equal(expanded.venues.length,expected[snapshot.provider]);
-    assert.ok(expanded.venues.every(v=>["CURRENT_PUBLIC_MASS","CONDITIONAL_MASS"].includes(v.publication_state)));
+    assert.ok(expanded.venues.every(v=>["CURRENT_PUBLIC_MASS","CONDITIONAL_MASS","SITE_ONLY_SOURCE_CONFIRMED"].includes(v.publication_state)));
     assert.ok(expanded.ministries.every(m=>m.community_id==="SSPX" && m.liturgical_usage.books==="1962"));
     assert.ok(expanded.venues.every(v=>v.address.formatted && v.contact.schedule_url.some(u=>u.startsWith("https://"))));
     assert.ok(expanded.schedules.every(s=>s.service_type==="MASS" && s.payload?.raw?.length>=10));
+    const schedulesByMinistry=new Map(expanded.schedules.map(s=>[s.ministry_id,s]));
     const rows=expanded.venues.map((venue,i)=>({venue,
-      ministries:[{...expanded.ministries[i],schedules:[expanded.schedules[i]]}]}));
+      ministries:[{...expanded.ministries[i],schedules:[schedulesByMinistry.get(expanded.ministries[i].ministry_id)].filter(Boolean)}],
+      sources:expanded.sources}));
     assert.equal(publishableDirectoryRecords(rows).length,expected[snapshot.provider],
       "Source-backed 2026 district provider gate drift");
   }
@@ -227,7 +230,7 @@ for(const snapshot of researchSnapshots){
     assert.equal(byUpstream.get("ICKSP-STG-108")?.address?.line1??null,null,"Mouila locality-only chapel was falsely upgraded to street precision");
   }
 }
-assert.equal(researchVenueCount,1009,"research projection excludes the duplicated Le Laus Mass site and preserves its first-party France owner");
+assert.equal(researchVenueCount,1011,"research projection excludes the duplicated Le Laus Mass site and preserves its first-party France owner");
 const ickspReconciliation=readJson("../data/directory/research/icksp-v13-reconciliation.json");
 assert.equal(ickspReconciliation.research_unique_candidates,125);
 assert.equal(ickspReconciliation.live_runtime_records,27);
