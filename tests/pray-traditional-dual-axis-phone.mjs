@@ -58,6 +58,10 @@ try{
   node.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[t(230+dx,390+dy)]}));
  },{dx,dy});
  await open("pray.morning_evening");
+ // Current production default is Design B. This branch must integrate with it,
+ // not accidentally revive the pre-#1789 Daily reading presentation.
+ await page.waitForSelector('#aoPray435930[data-ao-contemplative-daily="guided"]',{timeout:12000});
+ assert.equal(await page.locator('#aoPray435930[data-ao-contemplative-daily="guided"]').count(),1);
  await page.screenshot({path:resolve(captures,"morning-390-fr.png"),animations:"disabled"});
  // Optional session timer stays subordinate to the existing prayer card.
  // No release-approved historical witnesses exist yet: source tabs stay hidden.
@@ -78,6 +82,9 @@ try{
  assert.equal(beforeTimerCard.before,true,"Prayer must appear before the optional timer");
  await page.locator("#aoPray435930 [data-tp381-timer-toggle]").evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 .aoDailyClockPanel").count(),1);
+ await page.screenshot({path:resolve(captures,"contemplative-morning-timer-open-390-fr.png"),animations:"disabled"});
+ assert.equal(await page.locator("#aoPray435930 .aoDailyFormulationChoices").count(),0,
+  "Historical witnesses must remain hidden while the timer is open");
  const afterTimerCard=await page.locator("#aoPray435930 .aoDevoCard").evaluate(el=>({
    index:el.dataset.aoDevoIndex,scroll:el.querySelector(".aoDevoCardScroll").scrollTop
  }));
