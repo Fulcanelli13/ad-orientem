@@ -161,8 +161,33 @@ try{
     "Mass explorer must retain identity/affiliation discovery");
    assert.ok(await root.locator(".aoAtlasTlmExtra summary").count()>0,
     "Mass source-affiliation filters must remain accessible");
+   const mapContext=root.locator("[data-tlm-viewport-count]");
+   await page.waitForFunction(fr=>{
+    const text=document.querySelector("#ao-find-modular-root [data-tlm-viewport-count]")?.textContent||"";
+    return fr?/Dans cette vue : \\d+ \\/ \\d+ lieux cartographiés/.test(text)
+      :/In this view: \\d+ \\/ \\d+ mapped venues/.test(text);
+   },language==="fr",{timeout:12000});
+   const initial=await mapContext.textContent();
+   const match=initial?.match(/(\\d+) \\/ (\\d+)/);
+   assert.ok(match&&Number(match[1])<=Number(match[2]),"Viewport count must be a subset of mapped records: "+initial);
+   const globe=root.locator("[data-explore-map-reset]");
+   assert.equal(await globe.count(),1,"There must be exactly one visible reset to all mapped venues");
+   assert.ok(await globe.isVisible(),"Map reset is hidden on "+width);
+   assert.ok((await globe.boundingBox())?.width>=88,"Map reset must have a readable label");
+   assert.ok((await globe.boundingBox())?.height>=44,"Map reset must be touch-accessible");
+   assert.match(await globe.innerText(),language==="fr"?/Tous les lieux/:/All mapped/);
+   const zoomIn=root.locator(".aoFindMap .maplibregl-ctrl-zoom-in");
+   await zoomIn.click();
+   await zoomIn.click();
+   await page.waitForTimeout(350);
+   const zoomed=await mapContext.textContent();
+   assert.match(zoomed,/\\d+ \\/ \\d+/,"Pan/zoom must keep a legible current-viewport count");
+   await globe.click();
+   await page.waitForTimeout(420);
+   const restored=await mapContext.textContent();
+   assert.match(restored,/\\d+ \\/ \\d+/,"All mapped reset must restore a valid viewport status");
    await capture("06-mass-map");
-   note.steps.push("Mass shortcut opens source-owned traditional Mass directory map");
+   note.steps.push("Mass shortcut opens source-owned traditional Mass directory map, dynamic in-view count and labeled global reset");
 
    // Back from Mass returns to Explore, never exits the app.
    await root.locator(".aoFindHeader [data-find-close]").click();
