@@ -7,6 +7,7 @@
 import {readFileSync,writeFileSync,mkdirSync} from "node:fs";
 import {resolve,join,dirname} from "node:path";
 import {DIVINUM_OFFICIUM_PIN} from "../../src/app/source-transport-compat.js";
+import {sourceCellHasMissingTranslation} from "../../src/office/research-reader.js";
 
 const tidy=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
   .toLowerCase().replace(/\s+/g," ").trim();
@@ -31,15 +32,17 @@ export function triLanguageRisks({latin,english,french}={}){
     const reference=tidy(a.text),e=tidy(b.text),f=tidy(c.text);
     const bodyBytes=[a,b,c].map(x=>x.text.length);
     for(const [language,value,cell] of [["en",e,b],["fr",f,c]]){
+      const placeholder=sourceCellHasMissingTranslation(cell.text);
       const sameLatin=reference.length>=150&&value===reference;
       const sameOther=value.length>=150&&(language==="en"?f:e)===value;
       const ratio=value.length/Math.max(1,reference.length);
       const extremeRatio=reference.length>=160&&(ratio<0.30||ratio>3.5);
-      if(sameLatin||sameOther||extremeRatio){
+      if(placeholder||sameLatin||sameOther||extremeRatio){
         risk.push({
           date:latin.date,hour:latin.hour,language,
           latinSourceCellId:a.sourceCellId,translationSourceCellId:cell.sourceCellId,
-          reason:[sameLatin?"LONG_CELL_IDENTICAL_TO_LATIN":null,
+          reason:[placeholder?"UPSTREAM_PLACEHOLDER_MISSING_TEXT":null,
+            sameLatin?"LONG_CELL_IDENTICAL_TO_LATIN":null,
             sameOther?"LONG_CELL_IDENTICAL_TO_OTHER_TRANSLATION":null,
             extremeRatio?"EXTREME_LENGTH_RATIO":null].filter(Boolean),
           lengths:{latin:bodyBytes[0],translation:cell.text.length},
