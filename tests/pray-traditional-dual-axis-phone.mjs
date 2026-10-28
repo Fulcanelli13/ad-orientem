@@ -494,6 +494,11 @@ try{
  assert.equal(before.id,"communion-before-sacrament_come_holy_spirit");
  assert.equal(before.overflow,"auto");assert.equal(before.active,1);
  assert.equal(await page.locator("#aoPray435930 [data-ao-communion-options]").evaluate(el=>el.open),false);
+ assert.equal(await page.locator("#aoPray435930 [data-ao-communion-direct-picker]").count(),0,"A direct Communion prayer choice must not be hidden under a catalogue");
+ const beforePicker=page.locator("#aoPray435930 [data-ao-communion-purpose-picker='before']");
+ assert.equal(await beforePicker.count(),1);
+ assert.equal(await beforePicker.locator("[data-tp381-communion-purpose]").count(),3);
+ assert.equal(await beforePicker.locator("[data-tp381-communion-source='sacrament_come_holy_spirit']").count(),1);
  await page.screenshot({path:resolve(captures,"communion-before-390-fr.png"),animations:"disabled"});
  const beforeIds=["sacrament_come_holy_spirit","foundations_act_of_faith","foundations_act_of_hope","foundations_act_of_love","sacrament_act_of_contrition","beforeThomas","beforeAmbrose"];
  for(let i=0;i<beforeIds.length;i++){
@@ -503,6 +508,26 @@ try{
   assert.equal(stage.active,1);
   assert.ok((await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText()).length>30,"Empty canonical preparation text "+beforeIds[i]);
  }
+ // B09: one-tap source choices, with distinct Acts kept distinct.
+ await page.locator("#aoPray435930 [data-tp381-communion-purpose='disposition']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"communion-before-foundations_act_of_faith");
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-communion-source]").count(),4);
+ await page.locator("#aoPray435930 [data-tp381-communion-source='foundations_act_of_hope']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"communion-before-foundations_act_of_hope");
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-communion-source='foundations_act_of_hope']").getAttribute("aria-pressed"),"true");
+ await page.locator("#aoPray435930 [data-tp381-communion-purpose='approach']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"communion-before-beforeThomas");
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-communion-source]").count(),2);
+ await page.locator("#aoPray435930 [data-tp381-communion-source='beforeAmbrose']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"communion-before-beforeAmbrose");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-communion-purpose-picker='before']").getAttribute("data-ao-active-purpose"),"approach");
+ assert.ok((await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText()).length>300,"Complete St Ambrose prayer retained");
+ await page.screenshot({path:resolve(captures,"communion-before-purpose-ambrose-390-fr.png"),animations:"disabled"});
+ await page.locator("#aoPray435930 [data-tp381-communion-purpose='disposition']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"communion-before-foundations_act_of_hope","Returning to a purpose must recall the user's selected complete prayer");
+ const selectedSource=await page.evaluate(()=>JSON.parse(localStorage.getItem("ao.pray.communion-purpose.v1")||"{}"));
+ assert.equal(selectedSource.before.approach,"beforeAmbrose");
+ assert.equal(selectedSource.before.disposition,"foundations_act_of_hope");
  await page.locator("#aoPray435930 [data-tp381-communion='after']").evaluate(el=>el.click());
  const after=await snapshot();
  assert.equal(after.stops,4);assert.equal(after.index,0);
@@ -516,6 +541,19 @@ try{
   assert.equal(stage.active,1);
   assert.ok((await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText()).length>30,"Missing canonical thanksgiving "+afterIds[i]);
  }
+ // Separate the thanksgiving act, Christ-centred prayers and En ego.
+ const afterPicker=page.locator("#aoPray435930 [data-ao-communion-purpose-picker='after']");
+ assert.equal(await afterPicker.locator("[data-tp381-communion-purpose]").count(),3);
+ await page.locator("#aoPray435930 [data-tp381-communion-purpose='union']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"communion-after-adoration_anima_christi");
+ await page.locator("#aoPray435930 [data-tp381-communion-source='afterBonaventure']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"communion-after-afterBonaventure");
+ assert.ok((await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText()).length>250);
+ await page.screenshot({path:resolve(captures,"communion-after-purpose-bonaventure-390-fr.png"),animations:"disabled"});
+ await page.locator("#aoPray435930 [data-tp381-communion-purpose='thanksgiving']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"communion-after-afterThomas","Real thanksgiving text cannot be conflated with En ego");
+ await page.locator("#aoPray435930 [data-tp381-communion-purpose='crucifix']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"communion-after-enEgo");
  await swipe(5,-135);
  assert.equal((await snapshot()).id,"communion-after-enEgo","Vertical scroll changed Communion prayer");
  await page.setViewportSize({width:320,height:720});
