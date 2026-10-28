@@ -125,7 +125,11 @@ try{
         latin:n?.children[0]?.textContent.length??0};
     });
     assert.ok(cols.latin>20&&cols.vernacular>20,file+" incomplete bilingual content");
-    if(width>=650)assert.ok(cols.rightX>cols.leftX+80,file+" MISSAL not side-by-side");
+    // Mass MISSAL parity: bilingual columns stay side by side even at 320px.
+    assert.ok(cols.style?.trim().split(/\\s+/).length===2,
+      file+" MISSAL grid is not two columns: "+cols.style);
+    assert.ok(cols.rightX>cols.leftX+(width<650?35:80),
+      file+" MISSAL is not Latin-left/vernacular-right: "+JSON.stringify(cols));
     await root.locator("[data-office-settings-toggle]").click();
     await root.locator('[data-office-mode-select="LIVE"]').click();
     assert.equal(await root.getAttribute("data-office-mode"),"LIVE");
