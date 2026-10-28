@@ -408,7 +408,12 @@ export async function mountExploreMap(container,items,{
     // Default heritage map only: improve OpenFreeMap Dark typography and
     // land/sea contrast before drawing source-owned Places and medallions.
     // The Bible Atlas, special-rite maps and custom styles remain untouched.
-    if(selectedStyle===DEFAULT_STYLE&&!styleOverride)applyExploreDarkCartography(map);
+    if(selectedStyle===DEFAULT_STYLE&&!styleOverride){
+      const palette=applyExploreDarkCartography(map);
+      // Exposes paint completion for real Chromium acceptance, not a user
+      // setting; no success claim for missing or changed provider layers.
+      if(palette.applied>=10)container.dataset.aoCartography="enhanced-dark";
+    }
     const sourceId="ao-explore-items",prefix="ao-explore";
     map.addSource(sourceId,{type:"geojson",data:{type:"FeatureCollection",features},
       cluster:true,clusterMaxZoom:12,clusterRadius:52,
