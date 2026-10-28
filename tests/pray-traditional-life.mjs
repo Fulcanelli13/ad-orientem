@@ -103,7 +103,7 @@ assert.match(runtime,/data-tp381-communion="after"/,"Communion thanksgiving tab 
 assert.match(runtime,/Come, Holy Ghost/,"Communion preparation lost Holy Ghost invocation");
 assert.match(runtime,/not a checklist to be completed before every Communion/,"Communion treasury again became a compulsory checklist");
 assert.match(runtime,/Historical days-or-years grants printed in old missals are not the current way indulgences are measured/,"Communion treasury indulgence guide lost current-vs-historical distinction");
-assert.match(runtime,/ROMAN_ST_JOSEPH_SOURCE_LOCKED/,"Good Death lost Roman St Joseph source lock");
+assert.match(runtime,/1909_HISTORICAL_DEFAULT_2021_EXPLICIT_ALTERNATIVE/,"Good Death must default to the 1909 St Joseph historical sequence and preserve the 2021 alternative");
 assert.match(runtime,/PASTORAL_NOT_SACRAMENT_SIMULATION/,"Dying Companion lost sacramental-boundary policy");
 assert.match(runtime,/seriousIllnessBridge:"learn\.rites\.sick"/,"Dying Companion lost Serious Illness formation bridge");
 assert.match(runtime,/data-tp381-route="learn\.rites\.sick"/,"Dying Companion no longer exposes the Serious Illness guide");
