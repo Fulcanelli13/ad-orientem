@@ -1,0 +1,95 @@
+{
+  "schema": "ao.pray.print-facsimile-leads.v1",
+  "date": "2026-10-28",
+  "status": "SOURCE_FILE_AND_PRINTED_PAGE_RANGE_LOCATED_SCAN_PAGES_NOT_INDEPENDENTLY_COLLATED",
+  "editorialRule": "A digitized scan file and book table of contents establish a candidate printed-page range, not a line-by-line text or original-edition certificate. Do not promote current sourceStatus until actual photographed pages are inspected and compared.",
+  "records": [
+    {
+      "id": "baltimore-manual-seven-words-1889",
+      "route": "pray.seven_words",
+      "type": "PRIMARY_EDITION_FACSIMILE_LEAD",
+      "authorAttribution": "Third Plenary Council of Baltimore; compiled and prepared under Clarence E. Woodman",
+      "title": "A Manual of Prayers for the Use of the Catholic Laity",
+      "publicationYear": 1889,
+      "publisher": "Catholic Publication Society Co., New York",
+      "internetArchiveId": "manualofprayersf00wood",
+      "commonsScanUrl": "https://commons.wikimedia.org/wiki/File:A_Manual_of_prayers_-_for_the_use_of_the_Catholic_laity_-_prepared_and_published_by_order_of_the_Third_Plenary_Council_of_Baltimore_(IA_manualofprayersf00wood).pdf",
+      "scanType": "PDF",
+      "scanFilePageCount": 804,
+      "printedPageStart": 361,
+      "printedPageEnd": 367,
+      "nextSectionPrintedPage": 368,
+      "printedPageRangeEvidence": "1889 Baltimore Manual contents: Seven Words upon the Cross begins p.361; Rosary begins p.368",
+      "readableTranscriptionUrl": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/The_Devotion_of_the_Seven_Words_upon_the_Cross",
+      "textIssueCandidates": [
+        {
+          "id": "word-2-you-shalt",
+          "asTranscribed": "you shalt",
+          "editorialReading": "Thou shalt",
+          "status": "SUPPORTED_BY_SEPARATE_1923_WITNESS_NOT_YET_VERIFIED_AGAINST_1889_SCAN"
+        },
+        {
+          "id": "word-5-burn-tli",
+          "asTranscribed": "burn tli the desire",
+          "editorialReading": "burn with the desire",
+          "status": "SUPPORTED_BY_SEPARATE_1923_WITNESS_NOT_YET_VERIFIED_AGAINST_1889_SCAN"
+        }
+      ],
+      "printScanVisuallyInspected": false,
+      "printEditionLineCollated": false,
+      "sourceTextModified": false,
+      "printedPageToDigitalImageIndex": null,
+      "identityWarning": "The 1888 684-page manualofprayersf00cath is a distinct edition and must not be substituted silently for this 1889 804-image scan.",
+      "nextGate": "Inspect printed pp.361–367 of the exact 1889 scan; record scanned-image leaf IDs, prayer line variants, punctuation, appendix boundary and two disputed readings."
+    },
+    {
+      "id": "moran-immaculate-conception-1883",
+      "route": "pray.novenas",
+      "novenaId": "immaculate_conception",
+      "type": "PRIMARY_EDITION_FACSIMILE_LEAD",
+      "authorAttribution": "Patrick Francis Moran, Bishop of Ossory",
+      "title": "The Catholic Prayer Book and Manual of Meditations",
+      "publicationYear": 1883,
+      "publisher": "Browne & Nolan, Dublin",
+      "commonsScanUrl": "https://commons.wikimedia.org/wiki/File:The_Catholic_prayer_book.djvu",
+      "scanType": "DJVU",
+      "scanFilePageCount": 648,
+      "printedPageStart": 566,
+      "printedPageEnd": 572,
+      "nextSectionPrintedPage": 573,
+      "printedPageRangeEvidence": "1883 Moran contents: Immaculate Conception Novena begins p.566; Our Lady's Nativity novena begins p.573",
+      "readableTranscriptionUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_in_Preparation_for_the_Feast_of_the_Immaculate_Conception",
+      "historicalSequenceWarning": "Historical Litany of the Blessed Virgin OR Tota pulchra; the app's canonical Litany is a selected branch, and Leonine historical collects are not modern papal prayers.",
+      "printScanVisuallyInspected": false,
+      "printEditionLineCollated": false,
+      "sourceTextModified": false,
+      "printedPageToDigitalImageIndex": null,
+      "nextGate": "Inspect the 1883 scan pp.566–572, compare all nine daily prayers and the litany/Tota pulchra alternatives, record image indices and each accept/reject discrepancy."
+    }
+  ],
+  "counts": {
+    "distinctPrimaryPrintedEditionScanLeads": 2,
+    "novenaSourceTargetsWithNewPrintScanLead": 1,
+    "sevenWordsSourceTargetsWithNewPrintScanLead": 1,
+    "originalPrintedEditionTextCertificatesEarnedThisPass": 0,
+    "printedPageImageComparisonsCompletedThisPass": 0
+  },
+  "sourcesChecked": [
+    {
+      "role": "BALTIMORE_SCAN_METADATA",
+      "url": "https://commons.wikimedia.org/wiki/File:A_Manual_of_prayers_-_for_the_use_of_the_Catholic_laity_-_prepared_and_published_by_order_of_the_Third_Plenary_Council_of_Baltimore_(IA_manualofprayersf00wood).pdf"
+    },
+    {
+      "role": "BALTIMORE_1889_CONTENTS",
+      "url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity"
+    },
+    {
+      "role": "MORAN_1883_SCAN_METADATA",
+      "url": "https://commons.wikimedia.org/wiki/File:The_Catholic_prayer_book.djvu"
+    },
+    {
+      "role": "MORAN_1883_CONTENTS",
+      "url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations"
+    }
+  ]
+}
