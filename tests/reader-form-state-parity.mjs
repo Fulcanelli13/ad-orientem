@@ -33,6 +33,12 @@ assert.equal(lowRequiem.project("AO.SM.C0112").priestAction,null,
 assert.equal(lowRequiem.project("AO.SM.C0259").priestAction,null,
   "Requiem dismissal falsely turns to the people");
 assert.equal(lowRequiem.project("AO.SM.C0259").priestPosition.facing,"LITURGICAL_EAST");
+assert.equal(lowRequiem.project("AO.SM.C0225").reason,"RITUS_XIII_1_REQUIEM_PEACE_PRAYER_OMITTED");
+assert.equal(lowRequiem.project("AO.SM.C0226").posture?.value,"KNEEL");
+assert.equal(lowRequiem.project("AO.SM.C0226").posture?.cueId,"AO.SM.C0226",
+ "Low Requiem cannot place kneeling change on an omitted prayer");
+assert.equal(low.project("AO.SM.C0226").posture?.cueId,"AO.SM.C0225",
+ "Do not alter ordinary Low Mass posture timing");
 assert.equal(low.project("AO.SM.C0259").priestPosition.facing,"PEOPLE",
   "ordinary Low dismissal orientation changed");
 
