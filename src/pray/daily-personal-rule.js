@@ -94,7 +94,7 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
   // Fail closed on source gaps; never fall back to a foreign language.
   return {id:"piusx-"+p.edition+"-"+daypart+"-"+row.id,
    sourceId:row.id,kind:"personal-prayer",title:replacement?replacement.title:(language==="fr"?row.titleFr:row.titleEn),
-   text:body||null,language,sourceLabel:replacement?.sourceLabel||row.sourceLabel,
+   text:body||null,latinText:replacement?null:row.text?.la||null,language,sourceLabel:replacement?.sourceLabel||row.sourceLabel,
    sourceUrl:replacement?.sourceUrl||row.sourceUrl,
    sourceStatus:replacement?"printed-manual-form":row.translationStatus||"source-edition-translation",
    replacementId:replacement?.id||null,
