@@ -1,0 +1,278 @@
+{
+  "schema": "AO_PRAY_ART_CORRECTIVE_RESEARCH_WAVE_20261028_V1",
+  "date": "2026-10-28",
+  "userDecisionPath": "data/research/pray-mosaic-user-decisions-20261028-060047.json",
+  "userDecisionCounts": {
+    "pools": 30,
+    "keptAssignments": 30,
+    "distinctKeptImages": 23,
+    "rejectedPlacementIds": 17,
+    "undecidedPlacementIds": 56,
+    "full3to5KeptPools": 4,
+    "zeroKeptPools": 14,
+    "archivedImageReferencesAmongKeeps": 13,
+    "unverifiedImageReferencesAmongKeeps": 15,
+    "rightsHeldAmongKeeps": 1,
+    "missingImageAmongKeeps": 1
+  },
+  "scope": "Research shortlist and corrections; NO editorial selection, source-image final pass or production promotion",
+  "policy": "User's exact decisions immutable by pool; rejected placement is not global rejection; only artistically approved placement + exact photo-rights/pristine gate can enter a rotation",
+  "candidateLeads": [
+    {
+      "key": "divine-mercy-kazimirowski-1934",
+      "artist": "Eugeniusz Kazimirowski",
+      "title": "Divine Mercy",
+      "kind": "oil on canvas",
+      "source": "https://commons.wikimedia.org/wiki/File:Divina_Misericordia_(Eugeniusz_Kazimirowski,_1934).jpg",
+      "imagePx": [
+        4553,
+        7680
+      ],
+      "origin": "CURRENT_NEW_RESEARCH",
+      "pools": [
+        "divine-mercy"
+      ],
+      "license": "Commons PD-Art with author died 1939; jurisdiction check remains",
+      "qa": "Native pixel inspection required; Commons source cites WordPress photo; confirm no overprocessing",
+      "priority": "P0",
+      "reason": "Exact historically commissioned 1934 Divine Mercy image; previously absent from all reviewed options."
+    },
+    {
+      "key": "communion-mary-egypt-franceschini-met-437977",
+      "artist": "Marcantonio Franceschini",
+      "title": "The Last Communion of Saint Mary of Egypt",
+      "kind": "oil on copper",
+      "source": "https://www.metmuseum.org/art/collection/search/437977",
+      "artworkId": "met-437977",
+      "origin": "HISTORIC_USER_RATED_5",
+      "pools": [
+        "communion",
+        "good-death"
+      ],
+      "license": "Met Open Access CC0 public domain marked",
+      "qa": "Download and inspect museum primary image, full painted surface, focus and mobile",
+      "priority": "P0",
+      "reason": "Exact Communion event; already rated 5 by the user; should have been offered before fresh substitutions."
+    },
+    {
+      "key": "communion-st-jerome-botticelli-met-435728",
+      "artist": "Sandro Botticelli",
+      "title": "The Last Communion of Saint Jerome",
+      "kind": "tempera and gold on wood",
+      "source": "https://www.metmuseum.org/art/collection/search/435728",
+      "artworkId": "met-435728",
+      "origin": "HISTORIC_USER_RATED_4",
+      "pools": [
+        "communion",
+        "good-death"
+      ],
+      "license": "Met Open Access CC0 public domain marked",
+      "qa": "Review painted and period framing; crop external frame only",
+      "priority": "P0",
+      "reason": "Exact Communion subject, already rated 4 by the user."
+    },
+    {
+      "key": "tenebrae-burial-carracci-met-438338",
+      "artist": "Annibale Carracci",
+      "title": "The Burial of Christ",
+      "kind": "oil on copper",
+      "source": "https://www.metmuseum.org/art/collection/search/438338",
+      "artworkId": "met-438338",
+      "origin": "HISTORIC_USER_RATED_4",
+      "pools": [
+        "tenebrae",
+        "stations",
+        "seven-words"
+      ],
+      "license": "Met Open Access CC0 public domain marked",
+      "qa": "Inspect whole artwork; no invented simultaneous approval for different rites",
+      "priority": "P0",
+      "reason": "Exact Holy Saturday Passion-burial relevance; source is pristine museum photography candidate."
+    },
+    {
+      "key": "passion-descent-master-holy-blood-met-437008",
+      "artist": "Master of the Holy Blood",
+      "title": "The Descent from the Cross",
+      "kind": "oil on wood triptych",
+      "source": "https://www.metmuseum.org/art/collection/search/437008",
+      "artworkId": "met-437008",
+      "origin": "HISTORIC_USER_RATED_4",
+      "pools": [
+        "seven-words",
+        "stations",
+        "tenebrae"
+      ],
+      "license": "Met Open Access CC0 public domain marked",
+      "qa": "Triptych physical identity and painted boundaries; conservation joins visible; no artificial repair",
+      "priority": "P1",
+      "reason": "One previously positively rated Passion artwork; placement proposed only."
+    },
+    {
+      "key": "good-death-altomonte-st-joseph",
+      "artist": "Bartolomeo Altomonte",
+      "title": "The Death of Saint Joseph",
+      "kind": "oil painting",
+      "source": "https://commons.wikimedia.org/wiki/File:Bartolomeo_Altomonte_-_Der_Tod_des_heiligen_Joseph.jpg",
+      "imagePx": [
+        4060,
+        5086
+      ],
+      "origin": "NEW_SOURCE_BACKED",
+      "pools": [
+        "good-death",
+        "dying"
+      ],
+      "license": "Commons PD-Art historical photograph; jurisdiction/reproduction review required",
+      "qa": "Photographic condition (glare, viewing angle, frame) not yet inspected at native size",
+      "priority": "P1",
+      "reason": "Direct Catholic iconography of Saint Joseph's death, rather than generic art of saints."
+    },
+    {
+      "key": "scripture-matthew-savoldo-met-437630",
+      "artist": "Giovanni Gerolamo Savoldo",
+      "title": "Saint Matthew and the Angel",
+      "kind": "oil on canvas",
+      "source": "https://www.metmuseum.org/art/collection/search/437630",
+      "artworkId": "met-437630",
+      "origin": "NEW_SOURCE_BACKED",
+      "pools": [
+        "scripture"
+      ],
+      "context": "MATTHEW",
+      "license": "Met Open Access CC0 public domain marked",
+      "qa": "Full-resolution and exact painted-boundary check pending",
+      "priority": "P0",
+      "reason": "Exact Matthew evangelist subject, luminous Baroque-compatible style. No El Greco."
+    },
+    {
+      "key": "scripture-mark-vasari-nga-159063",
+      "artist": "Giorgio Vasari",
+      "title": "Saint Mark",
+      "kind": "oil on panel",
+      "source": "https://www.nga.gov/artworks/159063-saint-mark",
+      "artworkId": "nga-159063",
+      "origin": "NEW_SOURCE_BACKED",
+      "pools": [
+        "scripture"
+      ],
+      "context": "MARK",
+      "license": "NGA Open Access public domain media marked",
+      "qa": "Inspect museum download for painted border/frame and original sharpness",
+      "priority": "P0",
+      "reason": "Direct Mark evangelist, part of a pair commissioned by Pope Pius V in 1569."
+    },
+    {
+      "key": "scripture-luke-vasari-nga-159064",
+      "artist": "Giorgio Vasari",
+      "title": "Saint Luke",
+      "kind": "oil on panel",
+      "source": "https://www.nga.gov/artworks/159064-saint-luke",
+      "artworkId": "nga-159064",
+      "origin": "NEW_SOURCE_BACKED",
+      "pools": [
+        "scripture"
+      ],
+      "context": "LUKE",
+      "license": "NGA Open Access public domain media marked",
+      "qa": "Inspect museum download for painted border/frame and original sharpness",
+      "priority": "P0",
+      "reason": "Luke matches Mark's Vatican-commissioned historical pair; exact saint/attribute confirmed."
+    },
+    {
+      "key": "scripture-john-ingres-met-436705",
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "title": "Head of Saint John the Evangelist",
+      "kind": "oil study on canvas mounted on wood",
+      "source": "https://www.metmuseum.org/art/collection/search/436705",
+      "artworkId": "met-436705",
+      "origin": "NEW_SOURCE_BACKED",
+      "pools": [
+        "scripture"
+      ],
+      "context": "JOHN",
+      "license": "Met Open Access CC0 public domain marked",
+      "qa": "Oil-study status: check whether study quality fits hero; head-only composition",
+      "priority": "P0",
+      "reason": "Exact evangelist identity, museum CC0; one option among a fuller John search."
+    }
+  ],
+  "blockedOrConditioned": [
+    {
+      "artist": "Jean-Baptiste Greuze",
+      "title": "La prière du matin",
+      "source": "https://parismuseescollections.paris.fr/fr/musee-cognacq-jay/oeuvres/la-priere-du-matin",
+      "reason": "Museum says work's theme was particularly commended by Reformed Church and may originate in Protestant milieu; not automatically suitable for a traditional Roman Catholic Prayer visual, regardless of CC0."
+    },
+    {
+      "artist": "Miguel Ballejo y Mandirano",
+      "title": "Heart of Mary",
+      "source": "https://collections.bowers.org/objects/89098/heart-of-mary",
+      "reason": "Exact 1750 oil painting, but Bowers museum says images may be copyrighted and asks permission, contrary to no-permission policy. Exclude until independently free photo found."
+    },
+    {
+      "artist": "Leopold Kupelwieser",
+      "title": "The Heart of Mary",
+      "source": "https://commons.wikimedia.org/wiki/File:Immaculate_Heart_of_Mary.jpg",
+      "reason": "Freely licensed CC BY-SA church photograph but 1470×1866, possibly not a pristine flat reproduction. Keep as lead, not release-ready master."
+    },
+    {
+      "artist": "Unknown chromolithographer",
+      "title": "Sacred Heart of Mary (1848)",
+      "source": "https://commons.wikimedia.org/wiki/File:Sacred_heart_of_Mary-_sacre_%CC%81coeur_de_Marie_-_sagrado_corazon_de_Maria_LCCN2001704236.jpg",
+      "reason": "High-resolution PD scan of a print, not oil painting. Can support historical illustration research but cannot count as pristine painting."
+    }
+  ],
+  "priorities": [
+    {
+      "tier": "P0",
+      "pools": [
+        "divine-mercy",
+        "communion",
+        "first-friday",
+        "first-saturday",
+        "good-death",
+        "dying"
+      ],
+      "task": "Rebuild from exact devotional subjects and prior 4/5 rating evidence, then verify original museum image sources"
+    },
+    {
+      "tier": "P0",
+      "pools": [
+        "stations",
+        "seven-words",
+        "tenebrae",
+        "penitential-psalms"
+      ],
+      "task": "Reconcile historic 14 Stations and 15 Rosary/Passion works; protect original station-specific approvals from module-level non-selections"
+    },
+    {
+      "tier": "P1",
+      "pools": [
+        "morning",
+        "meals",
+        "adoration",
+        "benediction",
+        "forty-hours",
+        "sacred-heart",
+        "hymns",
+        "holy-name"
+      ],
+      "task": "Find distinct museum-standard old-master oil paintings, not themes forced by keyword similarity"
+    },
+    {
+      "tier": "P1",
+      "pools": [
+        "scripture"
+      ],
+      "task": "Gospel-specific evangelist identity, paired Vasari Saint Mark/Saint Luke and museum-original Matthew/John, fallback for other readings"
+    }
+  ],
+  "safeguards": [
+    "Never equate 'undecided' to 'reject'.",
+    "Never equate 'ARCHIVED_SOURCE' to commercial image rights certification.",
+    "Never count multiple digital copies of one physical painting as multiple rotation artworks.",
+    "Exclude paid stock, noncommercial-only licensing and museums that require written rights permission.",
+    "Never treat a historical approval for a feast/subject as automatic approval for a different Prayer module.",
+    "Carry exact institution source URL, accession, image rendition URL, dimensions, legal evidence, and full painted-surface crop coordinates separately."
+  ]
+}
