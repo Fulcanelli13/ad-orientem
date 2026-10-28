@@ -312,7 +312,7 @@ def convert_tree(root: Path) -> dict:
                     **role, "latinSourceCellId": docs[0]["sections"][section["index"] - 1]["sourceCellId"]
                 }
             outfile = root / date / hour.lower() / (locale + ".research.json")
-            outfile.write_text(json.dumps(doc, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+            outfile.write_text(json.dumps(doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         for role in roles:
             semantic_stats[role["role"]] = semantic_stats.get(role["role"], 0) + 1
     summary = {
