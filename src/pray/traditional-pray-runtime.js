@@ -8,6 +8,8 @@ import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabe
 import {installSequentialDevotionalReader} from "./devotional-sequence-adapter.js";
 import {dailyHorizonState} from "./quiet-devotional-progression.js";
 import {createDailySessionTimer,sessionClockLabel} from "./daily-session-timer.js";
+import {createPrayerPurposeIndex,prayerPurposeFor,prayerPurposeDefault,normalizePrayerPurposeSelection} from "./prayer-purpose-index.js";
+import {COMMUNION_PRAYER_PURPOSES} from "./communion-prayer-purpose-map.js";
 import {buildPersonalDailyPlan,personalDailyOptions,personalDailyDirectPlan,loadPersonalDailyPrefs,savePersonalDailyPrefs,changePersonalDailyPrefs} from "./daily-personal-rule.js";
 import {personalDailyPrayerCard,personalDailyPurposeSection,dailyPersonalSettings,dailyPersonalPrayerCatalog,dailyPersonalList} from "./daily-personal-prayer-view.js";
 import {createDailyFormulationPreferenceStore} from "./daily-formulation-preferences.js";
@@ -533,7 +535,39 @@ function renderMassFolioPrayers(){
     '</main>';
 }
 
+const COMMUNION_PURPOSE_INDEX=createPrayerPurposeIndex(COMMUNION_PRAYER_PURPOSES,{
+ before:COMMUNION_BEFORE.map(row=>row[0]),after:COMMUNION_AFTER.map(row=>row[0])
+});
+const COMMUNION_PURPOSE_KEY="ao.pray.communion-purpose.v1";
+let COMMUNION_PURPOSE_SELECTED=null;
+function communionSavedChoices(){
+ if(COMMUNION_PURPOSE_SELECTED)return COMMUNION_PURPOSE_SELECTED;
+ let raw={};try{raw=JSON.parse(globalThis.localStorage?.getItem(COMMUNION_PURPOSE_KEY)||"{}")}catch{}
+ return COMMUNION_PURPOSE_SELECTED=normalizePrayerPurposeSelection(COMMUNION_PURPOSE_INDEX,raw);
+}
+function rememberCommunionPurpose(phase,group,id){
+ const existing=communionSavedChoices();
+ const next=normalizePrayerPurposeSelection(COMMUNION_PURPOSE_INDEX,{
+  ...existing,[phase]:{...existing[phase],[group]:id}
+ });
+ COMMUNION_PURPOSE_SELECTED=next;
+ try{globalThis.localStorage?.setItem(COMMUNION_PURPOSE_KEY,JSON.stringify(next))}catch{}
+}
 function communionStages(){return S.communion==="after"?COMMUNION_AFTER:COMMUNION_BEFORE}
+function communionPurposePicker(phase,stages,activeId){
+ const groups=COMMUNION_PURPOSE_INDEX[phase],current=prayerPurposeFor(COMMUNION_PURPOSE_INDEX,phase,activeId)||groups[0];
+ const idLabels=new Map(stages.map(([id,en,fr])=>[id,L(en,fr)]));
+ const tabs=groups.map(group=>'<button type="button" data-tp381-communion-purpose="'+esc(group.id)+'" aria-pressed="'+String(group.id===current.id)+'">'+esc(L(group.titleEn,group.titleFr))+'</button>').join("");
+ const choices=current.ids.map(id=>'<button type="button" data-tp381-communion-source="'+esc(id)+'" aria-pressed="'+String(id===activeId)+'">'+esc(idLabels.get(id)||id)+'</button>').join("");
+ const note=current.relationship==="distinct"
+  ?L("These are distinct complete prayers, not interchangeable passages. Choose whichever you wish to recite.","Ce sont des prières complètes et distinctes, non des passages interchangeables. Choisissez celle que vous souhaitez réciter.")
+  :L("These are different complete prayers for this devotional purpose, not variations assembled from one text.","Ce sont des prières intégrales différentes pour cette intention, non des variantes composées à partir d’un même texte.");
+ return '<section class="aoCommunionPurposePicker" data-ao-communion-purpose-picker="'+esc(phase)+'" data-ao-active-purpose="'+esc(current.id)+'">'+
+  '<p class="aoCommunionPurposeIntro">'+esc(L("Choose a prayer directly · no required sequence","Choisissez directement une prière · aucun ordre imposé"))+'</p>'+
+  '<nav class="aoCommunionPurposeGroups" aria-label="'+esc(L("Purpose of prayer","Intention de prière"))+'">'+tabs+'</nav>'+
+  '<nav class="aoCommunionPurposeOptions" aria-label="'+esc(L("Complete prayers for this purpose","Prières intégrales pour cette intention"))+'">'+choices+'</nav>'+
+  '<small class="aoCommunionPurposeNote">'+esc(note)+'</small></section>';
+}
 function renderCommunionTreasury(){
   const d=COMMUNION_TREASURY_V383,tab=S.communion==="after"?"after":"before";
   const stages=communionStages(),index=Math.max(0,Math.min(stages.length-1,Number(S.communionStep)||0));
@@ -550,7 +584,9 @@ function renderCommunionTreasury(){
   const formation=tab==="before"?`<div class="aoTP381PrayerList"><button type="button" data-tp381-route="learn.rites.first_communion"><span><b>${esc(L("Preparing a child for First Communion?","Préparez-vous un enfant à la première Communion ?"))}</b><small>${esc(L("Open the sacramental formation guide; these private prayers are not a substitute.","Ouvrir le guide de formation sacramentelle ; ces prières privées ne le remplacent pas."))}</small></span><i aria-hidden="true">→</i></button></div>`:"";
   const indulgence=tab==="after"?`<details class="aoTP381Source"><summary>${esc(L("Indulgences · current discipline","Indulgences · discipline actuelle"))}</summary><p>${esc(L("The current Enchiridion grants a partial indulgence for an approved act of thanksgiving after Communion and expressly gives Anima Christi and En ego as examples. It grants a plenary indulgence for devoutly reciting En ego before an image of Christ crucified after Communion on any Friday of Lent, under the usual conditions. Historical days-or-years grants printed in old missals are not the current way indulgences are measured.","L’Enchiridion actuel accorde une indulgence partielle pour une formule pieuse approuvée d’action de grâces après la Communion et donne expressément comme exemples l’Anima Christi et l’En ego. Il accorde une indulgence plénière à qui récite pieusement l’En ego devant une image du Christ crucifié après la Communion, un vendredi du Carême, aux conditions habituelles. Les anciennes concessions exprimées en jours ou en années dans les vieux missels ne constituent plus la manière actuelle de mesurer les indulgences."))}</p><p><a href="${esc(d.sources.currentIndulgences)}" target="_blank" rel="noopener">${esc(L("Apostolic Penitentiary · Enchiridion","Pénitencerie apostolique · Enchiridion"))} ↗</a></p></details>`:"";
   const tabs=`<nav class="aoTP381DaypartStrip" aria-label="${esc(L("Communion prayer phase","Temps de prière de Communion"))}"><button type="button" data-tp381-communion="before" aria-pressed="${tab==="before"}" class="${tab==="before"?"active":""}">${esc(L("Before Communion","Avant la Communion"))}</button><button type="button" data-tp381-communion="after" aria-pressed="${tab==="after"}" class="${tab==="after"?"active":""}">${esc(L("After Communion","Après la Communion"))}</button></nav>`;
-  const direct=`<details class="aoTP381SecondaryOptions aoCommunionDirectPicker" data-ao-communion-direct-picker><summary>${esc(L('Choose a prayer directly','Choisir directement une prière')+' · '+(index+1)+' / '+stages.length)}</summary><p>${esc(context)}</p><div class="aoTP381PrayerList" role="group" aria-label="${esc(L("Prayers in this phase","Prières de cette partie"))}">${stages.map(([prayerId,en,fr],position)=>`<button type="button" data-tp381-communion-pick="${position}" aria-current="${position===index?'step':'false'}"><span><b>${esc(L(en,fr))}</b><small>${position+1} / ${stages.length}</small></span></button>`).join('')}</div></details>`;
+  // Purpose-labelled source buttons are visible before the prayer; the
+  // existing timeline/swipes remain as secondary, non-compulsory navigation.
+  const direct=communionPurposePicker(tab,stages,id);
   const options=`<details class="aoTP381SecondaryOptions" data-ao-communion-options><summary>${esc(L("Sources and guidance","Sources et conseils"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("A sourced treasury of prayers long printed before and after Mass in the Roman-Missal tradition, retained only where the French Catholic tradition is also attested.","Un trésor de prières sourcées, longtemps imprimées avant et après la Messe dans la tradition du Missel romain, retenues seulement lorsqu’elles sont également attestées dans la tradition catholique française."))}</p><p>${esc(context)}</p>${traditionalContextGuide("communion")}${formation}${indulgence}${source(L("French & Latin traditional prayer witness","Témoin traditionnel français & latin"),commonSource)}</div></details>`;
   return `${head(L("Traditional Communion Prayers","Prières traditionnelles de Communion"))}<main class="aoP435930Body aoTP381DonorBody">${tabs}${direct}${card}${options}</main>`;
 }
@@ -844,7 +880,7 @@ function goHome(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-communion-purpose],[data-tp381-communion-source],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-home]"))return goHome();
@@ -1063,6 +1099,28 @@ function handleClick(e){
   if(b.dataset.tp381JosephEdition){if(S.route!=="pray.good_death")return;S.goodDeathJosephEdition=b.dataset.tp381JosephEdition==="2021"?"2021":"1909";return render()}
   if(b.hasAttribute("data-tp381-golden-arrow")){S.sacredHeart="golden_arrow";return open("pray.sacred_heart",{trigger:b})}
   if(b.dataset.tp381Heart){S.sacredHeart=HEART_STAGES.includes(b.dataset.tp381Heart)?b.dataset.tp381Heart:"litany";return render()}
+  if(b.hasAttribute("data-tp381-communion-purpose")||b.hasAttribute("data-tp381-communion-source")){
+    if(S.route!=="pray.communion_treasury"||S.screen!=="module")return;
+    const phase=S.communion,stages=communionStages();
+    const source=b.dataset.tp381CommunionSource;
+    const groupId=b.dataset.tp381CommunionPurpose;
+    let id=source;
+    let group=null;
+    if(source){
+      group=prayerPurposeFor(COMMUNION_PURPOSE_INDEX,phase,source);
+      if(!group)return;
+    }else{
+      group=COMMUNION_PURPOSE_INDEX[phase].find(x=>x.id===groupId);
+      if(!group)return;
+      id=communionSavedChoices()[phase]?.[groupId]||prayerPurposeDefault(COMMUNION_PURPOSE_INDEX,phase,groupId);
+    }
+    const position=stages.findIndex(x=>x[0]===id);
+    if(position<0)return;
+    if(source)rememberCommunionPurpose(phase,group.id,source);
+    if(position===S.communionStep)return;
+    S.communionStep=position;
+    return render();
+  }
   if(b.hasAttribute("data-tp381-communion-pick")){
     const position=Number(b.dataset.tp381CommunionPick);
     if(S.route!=="pray.communion_treasury"||!Number.isInteger(position)||position<0||position>=communionStages().length)return;

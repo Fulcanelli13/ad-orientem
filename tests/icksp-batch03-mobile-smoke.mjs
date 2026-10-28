@@ -75,15 +75,16 @@ try{
 
  const out=await page.evaluate(async()=>globalThis.AO_MODULES.open("pray.communion_treasury",{returnContext:null}));
  assert.notEqual(out?.ok,false);
- await page.locator("[data-ao-communion-direct-picker]").waitFor();
- assert.equal(await page.locator("[data-tp381-communion-pick]").count(),7);
- await page.locator("[data-ao-communion-direct-picker] > summary").tap();
- await page.locator("[data-tp381-communion-pick='5']").tap();
+ await page.locator("[data-ao-communion-purpose-picker='before']").waitFor();
+ assert.equal(await page.locator("[data-tp381-communion-purpose]").count(),3);
+ assert.equal(await page.locator("[data-tp381-communion-source='sacrament_come_holy_spirit']").count(),1);
+ await page.locator("[data-tp381-communion-purpose='approach']").evaluate(el=>el.click());
  assert.match(await page.locator("[data-ao-devo-card]").first().getAttribute("data-ao-devo-card"),/beforeThomas/);
- await page.locator("[data-tp381-communion='after']").tap();
- assert.equal(await page.locator("[data-tp381-communion-pick]").count(),4);
- await page.locator("[data-ao-communion-direct-picker] > summary").tap();
- await page.locator("[data-tp381-communion-pick='2']").tap();
+ await page.locator("[data-tp381-communion-source='beforeAmbrose']").evaluate(el=>el.click());
+ assert.match(await page.locator("[data-ao-devo-card]").first().getAttribute("data-ao-devo-card"),/beforeAmbrose/);
+ await page.locator("[data-tp381-communion='after']").evaluate(el=>el.click());
+ assert.equal(await page.locator("[data-tp381-communion-purpose]").count(),3);
+ await page.locator("[data-tp381-communion-source='afterBonaventure']").evaluate(el=>el.click());
  assert.match(await page.locator("[data-ao-devo-card]").first().getAttribute("data-ao-devo-card"),/afterBonaventure/);
  assert.deepEqual(errors,[],"Prayer module browser exceptions");
  console.log("PASS Batch 3 mobile: Litany use separation, seven Psalms, Simple/Guided Stations, Confession privacy, 11 direct Communion prayer choices");

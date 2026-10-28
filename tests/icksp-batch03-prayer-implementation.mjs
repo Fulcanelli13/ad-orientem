@@ -54,7 +54,7 @@ for(const x of ["batch03LitanyUseOptions","renderBatch03PublicLitanyReference","
 assert.ok(pres.includes("STATIONS.publicPosture?'guided':S.stations.mode"),"Public posture must preserve guided recitation");
 assert.ok(pres.includes("CONF=freshConfessionState()"),"No stored Confession answers");
 assert.ok(!pres.includes("LIT.sections=all1962"),"Never invent harmonized 1962 text");
-assert.ok(traditional.includes("data-ao-communion-direct-picker"));
+assert.ok(traditional.includes("data-ao-communion-purpose-picker"),"Historical complete Communion prayers must remain directly selectable without opening a catalogue");
 assert.ok(traditional.includes("data-tp381-communion-pick"));
 assert.ok(traditional.includes("position>=communionStages().length"));
 assert.ok(traditional.includes("COMMUNION_BEFORE=Object.freeze(["));
