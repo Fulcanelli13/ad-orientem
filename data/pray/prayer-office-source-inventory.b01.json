@@ -1839,10 +1839,10 @@
       },
       "b02_seed": {
         "filename": "data/pray/raccolta-1866-numbered-entry-seed.b02.json",
-        "confirmed_numbered_headings": 40,
-        "anomaly_count": 3,
+        "confirmed_numbered_headings": 52,
+        "anomaly_count": 4,
         "scope": "VERIFIED_SUBSET_NOT_COMPLETE",
-        "note": "Some numbered notices do not contain a prayer; composite sections require component decomposition"
+        "note": "Some numbered notices do not contain a prayer; composite sections require component decomposition Supplementary historical numbers §163–164 appear inside section II and §169 inside section V; section page numbering is noncontiguous."
       }
     },
     "sensus_fidelium_non_raccolta": {
@@ -2258,6 +2258,58 @@
           "url": "https://sensusfidelium.com/wp-sitemap.xml",
           "status": "DISCOVERED_XML_ENDPOINT_NOT_RENDERABLE_IN_CURRENT_READER"
         }
+      ],
+      "b02_additional_discovery": [
+        {
+          "inventory_row_id": "sensus-b02-extra:001",
+          "source_overlap": "NOT_DEDUPLICATED",
+          "id": "sensus-b02-pompeii-54-day",
+          "title": "54-day Rosary novena of Pompeii",
+          "source_url": "https://sensusfidelium.com/2021/11/07/the-54-day-novena-to-the-blessed-virgin-of-the-rosary-of-pompeii/",
+          "source_index": "https://sensusfidelium.com/tag/gospel/",
+          "status": "TITLE_AND_LINK_VERIFIED_BODY_UNAVAILABLE",
+          "form": "54_DAY_NOVENA"
+        },
+        {
+          "inventory_row_id": "sensus-b02-extra:002",
+          "source_overlap": "NOT_DEDUPLICATED",
+          "id": "sensus-b02-divine-maternity",
+          "title": "Novena to Our Lady's Divine Maternity",
+          "source_url": "https://sensusfidelium.com/2019/10/02/novena-in-honor-of-our-ladys-divine-maternity-beginning-october-2/",
+          "source_index": "https://sensusfidelium.com/tag/gospel/",
+          "status": "TITLE_AND_LINK_VERIFIED_ARTICLE_FETCH_TIMEOUT",
+          "form": "NOVENA"
+        },
+        {
+          "inventory_row_id": "sensus-b02-extra:003",
+          "source_overlap": "NOT_DEDUPLICATED",
+          "id": "sensus-b02-maria-bambina",
+          "title": "Devotion to Maria Bambina",
+          "source_url": "https://sensusfidelium.com/2022/09/08/devotion-to-the-maria-bambina/",
+          "source_index": "https://sensusfidelium.com/tag/religion/",
+          "status": "TITLE_PAGE_RENDERED_PRAYER_BODIES_NOT_SEPARATELY_EXTRACTED",
+          "form": "MARIAN_DEVOTION_WITH_HISTORICAL_TEXT"
+        },
+        {
+          "inventory_row_id": "sensus-b02-extra:004",
+          "source_overlap": "NOT_DEDUPLICATED",
+          "id": "sensus-b02-glories-of-mary",
+          "title": "Glories of Mary (St Alphonsus) with Purification novena and other prayers",
+          "source_url": "https://sensusfidelium.com/meditations/st-alphonsus/glories-of-mary-st-alphonsus/",
+          "source_index": "https://sensusfidelium.com/meditations/",
+          "status": "INDEX_AND_PRAYER_SECTION_CONFIRMED_COMPONENT_EXTRACTION_PENDING",
+          "form": "LARGE_SOURCE_WORK_WITH_EMBEDDED_PRAYERS"
+        },
+        {
+          "inventory_row_id": "sensus-b02-extra:005",
+          "source_overlap": "NOT_DEDUPLICATED",
+          "id": "sensus-b02-gueranger-lent",
+          "title": "Morning and Night Prayers for Lent (Dom Gueranger)",
+          "source_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/lent/morning-and-night-prayers-for-lent/",
+          "source_index": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+          "status": "PAGE_TEXT_FOUND_COMPONENT_PRAYERS_NOT_CATALOGUED",
+          "form": "SEASONAL_PRAYER_SEQUENCE"
+        }
       ]
     },
     "roman_divine_office_1960": {
@@ -2439,13 +2491,15 @@
       "icrsp_fr_magnificat",
       "icrsp_fr_benedictus"
     ],
-    "raccolta_confirmed_numbered_headings_b02": 40,
+    "raccolta_confirmed_numbered_headings_b02": 52,
     "raccolta_first_pass_page_links_confirmed": 40,
-    "raccolta_entry_type_exceptions_b02": 3,
+    "raccolta_entry_type_exceptions_b02": 4,
     "sensus_tag_post_bodies_read_b02": 6,
     "sensus_tag_post_bodies_unread_b02": 9,
     "full_site_crawl_completed": false,
-    "last_audit": "B02_2026-10-28"
+    "last_audit": "B02_2026-10-28",
+    "sensus_extra_discovery_b02": 5,
+    "total_source_observations": 214
   },
   "next_capture_gates": [
     "Retrieve a machine-accessible site sitemap/WordPress API or other pagination path to enumerate all Sensus pages; current novena tag page displays only 15 and Load More is not available in static fetch",
