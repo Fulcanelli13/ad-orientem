@@ -37,8 +37,9 @@ jobs:
           node --check src/office/sung-vespers-gate.js
           node --check scripts/office/audit-sunday-chant.mjs
           node --check scripts/office/audit-advent-vespers-text.mjs
+          node --check scripts/office/audit-printed-rubrics-pilot.mjs
       - name: Calendar, Tenebrae and composition probe contracts
-        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs
+        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-printed-rubric-pilot.mjs
       - name: Source-cell HTML normalizer unit tests
         run: python3 -m unittest discover -s tests -p 'test_divine_office_normalizer.py' -v
 
@@ -129,6 +130,19 @@ jobs:
           python3 scripts/office/normalize_xhtml.py --out "$OUTPUT/advent-vespers"
           node scripts/office/build-mass-style-preview.mjs --out "$OUTPUT/advent-vespers"
           node scripts/office/audit-advent-vespers-text.mjs --out "$OUTPUT/advent-vespers" --report "$OUTPUT/advent-text-audit.json"
+          # All Souls is an exceptional Office, not an ordinary Class I
+          # festive Office. Keep this 24-file supplementary cohort separate
+          # from the frozen original 96-file pilot and Advent sample.
+          node scripts/office/phase-b-generate.mjs \
+            --upstream "$UPSTREAM" --out "$OUTPUT/all-souls" \
+            --dates 2026-11-02 \
+            --hours MATINS,LAUDS,PRIME,TERCE,SEXT,NONE,VESPERS,COMPLINE \
+            --languages la,en,fr
+          python3 scripts/office/normalize_xhtml.py --out "$OUTPUT/all-souls"
+          node scripts/office/build-mass-style-preview.mjs --out "$OUTPUT/all-souls"
+          node scripts/office/audit-printed-rubrics-pilot.mjs \
+            --main "$OUTPUT" --souls "$OUTPUT/all-souls" \
+            --report "$OUTPUT/printed-rubric-audit.json"
           node --input-type=module -e '
             import {readFileSync} from "node:fs";
             const p=JSON.parse(readFileSync(process.env.OUTPUT+"/manifest.json","utf8"));
@@ -163,6 +177,15 @@ jobs:
           assert mass_preview["researchOnly"] and not mass_preview["productionRouteRegistered"]
           assert mass_preview["externalResources"]==0 and mass_preview["chantScoreAssets"]==0
           assert not mass_preview["chantButtonEnabled"]
+          souls=json.loads((Path(os.environ["OUTPUT"])/"all-souls"/"normalized-manifest.json").read_text(encoding="utf8"))
+          assert souls["count"]==24 and souls["alignmentSamples"]==8 and souls["published"]==0
+          souls_mass=json.loads((Path(os.environ["OUTPUT"])/"all-souls"/"preview"/"mass"/"preview-manifest.json").read_text(encoding="utf8"))
+          assert souls_mass["pages"]==16 and souls_mass["published"]==0 and not souls_mass["productionRouteRegistered"]
+          rubric=json.loads((Path(os.environ["OUTPUT"])/"printed-rubric-audit.json").read_text(encoding="utf8"))
+          assert rubric["schema"]=="ao.office.independent-1961-rubric-pilot.v1"
+          assert rubric["structuralChecksTotal"]==5
+          assert not rubric["canPublish"] and rubric["published"]==0 and rubric["verifiedOfficeDates"]==0
+          assert not rubric["allSoulsMatins"]["independentlyCheckedPrintedOfficeText"]
           advent_mass=json.loads((Path(os.environ["OUTPUT"])/"advent-vespers"/"preview"/"mass"/"preview-manifest.json").read_text(encoding="utf8"))
           assert advent_mass["pages"]==4 and advent_mass["published"]==0
           assert advent_mass["hours"]==["VESPERS"] and not advent_mass["productionRouteRegistered"]
