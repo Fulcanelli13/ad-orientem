@@ -42,7 +42,7 @@ EXPLICIT_OMITTED_PRECES = {
 # This is source labeling for navigation, NOT verse-level parsing.
 LATIN_CELL_PREFIXES = (
     (re.compile(r"^Incipit(?:$|\\n|\\s)", re.I), "OPENING"),
-    (re.compile(r"^(?:Psalmi|Psalmus|Ant\\.)\\b", re.I), "PSALMODY"),
+    (re.compile(r"^(?:Psalmi\\b|Psalmus\\b|Ant\\.)", re.I), "PSALMODY"),
     (re.compile(r"^Capitulum(?:\\s|$)", re.I), "CHAPTER_HYMN_VERSE"),
     (re.compile(r"^Canticum:\\s*(?:Benedictus|Magnificat)", re.I), "GOSPEL_CANTICLE"),
     (re.compile(r"^Canticum(?:\\s|$|:)", re.I), "CANTICLE"),
