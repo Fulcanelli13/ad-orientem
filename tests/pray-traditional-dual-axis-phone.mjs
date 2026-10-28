@@ -195,6 +195,7 @@ try{
  assert.equal(individualScroll.overflow,"auto","Individual prayer text needs its own scrollable region");
  assert.match(individualScroll.touchAction,/pan-y/,"Vertical touch reading must be enabled");
  if(individualScroll.extent>5)assert.ok(individualScroll.moved>0,"Long individual prayer did not scroll: "+JSON.stringify(individualScroll));
+ await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").evaluate(el=>el.click());
  await page.locator("#aoPray435930 [data-tp381-daily-mode='guided']").evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"11","Return to full guided prayer without source changes");
  // Curated Personal Brief has full sourced cards but a shorter horizon.
