@@ -1,6 +1,7 @@
 import "./traditional-pray-styles.js";
 import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "./dying-companion-flow.js";
+import {GOLDEN_ARROW_REPARATION_V1} from "./icksp-golden-arrow-reparation.v1.js";
 import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabel} from "./guided-daily-cards.js";
 import {installSequentialDevotionalReader} from "./devotional-sequence-adapter.js";
 import {dailyHorizonState} from "./quiet-devotional-progression.js";
@@ -413,14 +414,18 @@ function sourcedPrayerCard(item,label,{focusParagraphs=false,verseFocus=false}={
   const show=v=>verseFocus?String(v??"").split(/\n/).filter(t=>t.trim()).map(t=>'<p class="aoTP381TextParagraph">'+esc(t)+'</p>').join(""):focusParagraphs?prayerParagraphs(v):nl(v);
   return `<article class="aoTP381PrayerCard"><h3>${esc(label)}</h3>${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${show(vern)}</span><span data-face-la hidden>${show(latin)}</span></button>`:`<div class="aoTP381Reader">${show(vern||latin)}</div>`}</article>`;
 }
-const HEART_STAGES=Object.freeze(["litany","reparation","consecration"]);
-function heartTitle(id){return id==="litany"?L("Litany","Litanies"):id==="reparation"?L("Reparation","Réparation"):L("Consecration","Consécration")}
+const HEART_STAGES=Object.freeze(["litany","reparation","golden_arrow","consecration"]);
+function heartTitle(id){return id==="litany"?L("Litany","Litanies"):id==="reparation"?L("Pius XI · Reparation","Pie XI · Réparation"):id==="golden_arrow"?L("Golden Arrow","Flèche d’Or"):L("Consecration","Consécration")}
 function renderSacredHeart(){
   const d=SACRED_HEART_DEVOTIONS_V382,tab=HEART_STAGES.includes(S.sacredHeart)?S.sacredHeart:"litany";
   let prayer="",notes="";
   if(tab==="reparation"){
     prayer=prayerCard("sacred_heart_short_prayer",{focusParagraphs:true});
     notes=source("Pius XI · Miserentissimus Redemptor · 1928","https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280508_miserentissimus-redemptor.html");
+  }else if(tab==="golden_arrow"){
+    const g=GOLDEN_ARROW_REPARATION_V1;
+    prayer=sourcedPrayerCard(g,L(g.title,g.titleFr),{focusParagraphs:true});
+    notes=`<p class="aoTP381Intro">${esc(isFr()?g.warningFr:g.warningEn)}</p>${source(g.witnesses.en.edition,g.witnesses.en.url)}${source(g.witnesses.fr.edition,g.witnesses.fr.url)}${source(g.witnesses.institute.edition,g.witnesses.institute.url)}`;
   }else if(tab==="consecration"){
     const c=d.humanRaceConsecration;
     prayer=sourcedPrayerCard(c,L(c.title,c.titleFr),{focusParagraphs:true});
@@ -431,8 +436,10 @@ function renderSacredHeart(){
     notes=source("La Porte Latine · French & Latin traditional form",l.sources.frenchLatin);
   }
   const card=`<section class="aoDevoCard" data-ao-devo-card="heart-${esc(tab)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(heartTitle(tab))}">${prayer}</div></section>`;
-  const options=`<details class="aoTP381SecondaryOptions" data-ao-heart-options><summary>${esc(L("Sources and reading options","Sources et options de lecture"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("Pray the Litany, the Act of Reparation, or the consecration according to the time available. Their historical forms are identified in the source notes.","Récitez les Litanies, l’Acte de réparation ou la consécration selon le temps disponible. Leurs formes historiques sont identifiées dans les sources."))}</p>${traditionalContextGuide("heart")}<div class="aoTP381Tabs">${`<button type="button" data-tp381-heart="litany" class="${tab==="litany"?"active":""}">${esc(heartTitle("litany"))}</button><button type="button" data-tp381-heart="reparation" class="${tab==="reparation"?"active":""}">${esc(heartTitle("reparation"))}</button><button type="button" data-tp381-heart="consecration" class="${tab==="consecration"?"active":""}">${esc(heartTitle("consecration"))}</button>`}</div>${notes}</div></details>`;
-  return `${head(L("Sacred Heart of Jesus","Sacré-Cœur de Jésus"))}<main class="aoP435930Body aoTP381DonorBody">${card}${options}</main>`;
+  const choices=`<nav class="aoTP381Tabs" role="group" aria-label="${esc(L("Sacred Heart and related reparatory prayers","Prières du Sacré-Cœur et réparations associées"))}">${HEART_STAGES.map(id=>`<button type="button" data-tp381-heart="${esc(id)}" aria-pressed="${tab===id}" class="${tab===id?"active":""}">${esc(heartTitle(id))}</button>`).join("")}</nav>`;
+  const related=prayerRows([["devotion_consecration_christ_king",L("Dedication to Christ the King · existing prayer","Dédicace au Christ-Roi · prière existante"),L("Reuse the canonical prayer, not the human-race consecration","Réutilise la prière canonique, distincte de la consécration du genre humain")]]);
+  const options=`<details class="aoTP381SecondaryOptions" data-ao-heart-options><summary>${esc(L("Historical sources and related prayer","Sources historiques et prière associée"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("These prayers are independent choices, not stages of a compulsory rite. The Golden Arrow belongs to Holy Face and Holy Name reparation; Pius XI’s Iesu dulcissime remains unchanged.","Ces prières sont des choix indépendants, non les étapes d’un rite obligatoire. La Flèche d’Or relève de la réparation à la Sainte Face et au Saint Nom ; l’Iesu dulcissime de Pie XI demeure inchangé."))}</p>${traditionalContextGuide("heart")}${notes}${related}</div></details>`;
+  return `${head(L("Sacred Heart of Jesus","Sacré-Cœur de Jésus"))}<main class="aoP435930Body aoTP381DonorBody">${choices}${card}${options}</main>`;
 }
 const COMMUNION_BEFORE=Object.freeze([
   ["sacrament_come_holy_spirit","Come, Holy Ghost","Venez, Esprit Saint"],
@@ -599,7 +606,7 @@ function renderDyingCompanion(){
 }
 function renderPrayer(){
   const p=data().prayers?.[S.prayerId];
-  const parent=S.route==="pray.communion_treasury"?L("Traditional Communion Prayers","Prières traditionnelles de Communion"):S.route==="pray.good_death"?L("Preparation for a Good Death","Préparation à une bonne mort"):S.route==="pray.dying_companion"?L("Dying Companion","Accompagnement du mourant"):L("Morning & Evening Prayer","Prières du matin & du soir");
+  const parent=S.route==="pray.communion_treasury"?L("Traditional Communion Prayers","Prières traditionnelles de Communion"):S.route==="pray.good_death"?L("Preparation for a Good Death","Préparation à une bonne mort"):S.route==="pray.dying_companion"?L("Dying Companion","Accompagnement du mourant"):S.route==="pray.sacred_heart"?L("Sacred Heart of Jesus","Sacré-Cœur de Jésus"):L("Morning & Evening Prayer","Prières du matin & du soir");
   return `${head(prayerTitle(p,S.prayerId),parent)}<main class="aoP435930Body">${prayerCard(S.prayerId)}</main>`;
 }
 function glossaryTermsForState(){
@@ -933,7 +940,7 @@ function handleClick(e){
   if(b.hasAttribute("data-tp381-litany-step")){S.litanyStep=Math.max(0,Math.min(6,Number(b.dataset.tp381LitanyStep)||0));return render()}
   if(b.dataset.tp381Hymn){S.hymn=SACRED_HYMNS_V381[b.dataset.tp381Hymn]?b.dataset.tp381Hymn:"te_deum";return render()}
   if(b.dataset.tp381HymnLang){S.hymnLang=["en","fr","la"].includes(b.dataset.tp381HymnLang)?b.dataset.tp381HymnLang:(isFr()?"fr":"en");return render()}
-  if(b.dataset.tp381Heart){S.sacredHeart=["litany","reparation","consecration"].includes(b.dataset.tp381Heart)?b.dataset.tp381Heart:"litany";return render()}
+  if(b.dataset.tp381Heart){S.sacredHeart=HEART_STAGES.includes(b.dataset.tp381Heart)?b.dataset.tp381Heart:"litany";return render()}
   if(b.dataset.tp381Communion){S.communion=b.dataset.tp381Communion==="after"?"after":"before";S.communionStep=0;return render()}
   if(b.dataset.tp381Dying){S.dying=DYING_COMPANION_STAGES.includes(b.dataset.tp381Dying)?b.dataset.tp381Dying:"now";return render()}
   if(b.dataset.tp381DyingStep){const stage=nextDyingCompanionStage(S.dying,b.dataset.tp381DyingStep);if(stage){S.dying=stage;return render()}return;}
