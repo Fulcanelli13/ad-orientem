@@ -128,7 +128,7 @@ export function renderOfficeMassStyleResearchReader({
   if(!Array.isArray(availableHours)||!availableHours.includes(context.hour)||
     availableHours.some(h=>!OFFICE_HOURS.some(x=>x[0]===h))||
     !Array.isArray(availableDates)||!availableDates.includes(context.date)||
-    availableDates.some(d=>typeof d!=="string"||!/^\\d{4}-\\d{2}-\\d{2}$/.test(d)))
+    availableDates.some(d=>typeof d!=="string"||!/^\d{4}-\d{2}-\d{2}$/.test(d)))
     throw Error("OFFICE_MASS_RESEARCH_NAV_CONTEXT_INVALID");
   const h=headName(context.hour,locale);
   const first=cards[0];
@@ -144,7 +144,7 @@ export function renderOfficeMassStyleResearchReader({
     '<button type="button" class="ao-reader-top-action" data-office-hours-toggle aria-haspopup="true" aria-expanded="false" aria-label="'+
       esc(lo("Choose an Office hour","Choisir une heure",locale))+'">‹</button>'+
     '<button type="button" class="ao-section-jump" data-office-sections-toggle aria-haspopup="true" aria-expanded="false">'+
-      '<span data-office-section-title>'+esc(h)+'</span> <span class="ao-section-caret">⌄</span></button>'+
+      '<span data-office-section-title>'+esc(first.title)+'</span> <span class="ao-section-caret">⌄</span></button>'+
     '<button type="button" class="ao-reader-top-action" data-office-settings-toggle aria-haspopup="true" aria-expanded="false" aria-label="'+
       esc(lo("Reader settings","Réglages du lecteur",locale))+'">⚙</button></header>'+
     '<div class="aoOfficeRibbonMenus">'+
@@ -167,7 +167,7 @@ export function renderOfficeMassStyleResearchReader({
       '<label class="aoOfficeFontControl">'+esc(lo("Text size","Taille du texte",locale))+
         ' <input type="range" min="0.85" max="1.3" step="0.05" value="1" data-office-font-size></label></section></div>'+
     '<div class="ao-state-ribbon aoOfficeStateRibbon"><span class="aoOfficeObserved">'+
-      esc(title)+'</span><span class="aoOfficeEdition">ROMAN 1960 · '+esc(context.date)+'</span>'+
+      esc(h)+' · '+esc(title)+'</span><span class="aoOfficeEdition">ROMAN 1960 · '+esc(context.date)+'</span>'+
       '<span class="aoOfficeModeLabel" data-office-mode-label>LIVE · '+locale.toUpperCase()+'</span></div>'+
     '<div class="ao-progress-track aoOfficeProgressTop"><span data-office-progress-width style="width:'+100/cards.length+'%"></span></div>'+
     '<section class="ao-reader-stage aoOfficeMassStage" aria-label="'+esc(h)+'">'+
