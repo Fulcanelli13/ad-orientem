@@ -30,10 +30,50 @@ jobs:
           node --check scripts/office/phase-b-generate.mjs
           node --check scripts/office/build-research-preview.mjs
           node --check src/office/research-reader.js
+          node --check src/office/sung-vespers-gate.js
+          node --check scripts/office/audit-sunday-chant.mjs
       - name: Calendar, Tenebrae and composition probe contracts
-        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs
+        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-native-sung.mjs
       - name: Source-cell HTML normalizer unit tests
         run: python3 -m unittest discover -s tests -p 'test_divine_office_normalizer.py' -v
+
+  native-sung-vespers-source-audit:
+    needs: office-contracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Checkout pinned candidate Gregorian scores (research only)
+        env:
+          SOURCE: ${{ runner.temp }}/advent-vespers-chant
+        run: |
+          set -euo pipefail
+          PIN=5787df436f5cd432dd95bcacdc911b3488dc3a8a
+          mkdir -p "$SOURCE"
+          git -C "$SOURCE" init -q
+          git -C "$SOURCE" remote add origin https://github.com/asbloomf/gabc-chants.git
+          git -C "$SOURCE" fetch --no-tags --depth=1 origin "$PIN"
+          git -C "$SOURCE" checkout --detach FETCH_HEAD
+          test "$(git -C "$SOURCE" rev-parse HEAD)" = "$PIN"
+      - name: Audit real score files and psalm-tone descriptors without publishing
+        env:
+          SOURCE: ${{ runner.temp }}/advent-vespers-chant
+          REPORT: ${{ runner.temp }}/advent-chant-audit.json
+        run: |
+          node scripts/office/audit-sunday-chant.mjs --upstream "$SOURCE" --out "$REPORT"
+          node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            const d=JSON.parse(readFileSync(process.env.REPORT,"utf8"));
+            if(d.sundayDate!=="2026-11-29" || d.part!=="SECOND" ||
+               d.candidateCount!==10 || d.tones.psalms.length!==5 ||
+               d.publishedScores!==0 || d.chantButtonEnabled!==false ||
+               d.fullSundayVespersCertified!==false || d.copyrightStatus!=="UNRESOLVED_PER_FILE")
+              process.exit(1);
+            console.log("Native chant proof: 10 GABC candidates, 5 psalm-tone references; NOT certified or published.");
+          '
+      # No assets shipped, remote scores linked to users or artifact upload.
 
   original-composer-smoke:
     needs: office-contracts
@@ -74,6 +114,13 @@ jobs:
             --languages la,en,fr
           python3 scripts/office/normalize_xhtml.py --out "$OUTPUT"
           node scripts/office/build-research-preview.mjs --out "$OUTPUT"
+          # Liturgical witness for Advent I: FIRST Vespers on Saturday and
+          # SECOND on Sunday. This is a fresh six-file source sample, not
+          # six production scores and not part of the original 96-file pilot.
+          node scripts/office/phase-b-generate.mjs \
+            --upstream "$UPSTREAM" --out "$OUTPUT/advent-vespers" \
+            --dates 2026-11-28,2026-11-29 --hours VESPERS --languages la,en,fr
+          python3 scripts/office/normalize_xhtml.py --out "$OUTPUT/advent-vespers"
           node --input-type=module -e '
             import {readFileSync} from "node:fs";
             const p=JSON.parse(readFileSync(process.env.OUTPUT+"/manifest.json","utf8"));
