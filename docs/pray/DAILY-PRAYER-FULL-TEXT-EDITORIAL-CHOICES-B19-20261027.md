@@ -14,7 +14,7 @@ This is the first editorial decision sheet containing **all complete candidate w
 
 **Navigation:** Expand only the prayer category you wish to review; its full historical formulations and checkboxes are grouped immediately beneath the category title. This avoids scrolling past every source text at once.\n\n**How to mark decisions:** Check one choice where the group says *choose one*. For *complementary/sequential* groups, check each entire prayer you want included; do not treat Hope and Charity, or thanksgiving and examination, as interchangeable. Mark your chosen default with `DEFAULT` in review comments if needed. **A checkbox in a PR comment is an editorial request, not an automatic publication permission.**
 
-**Verification:** 42 complete historical bodies were previously reported as original-page-image-checked (27 EN and 15 FR). One additional complete Baltimore Evening light prayer is transcribed from proofread historical page text but awaits direct original-image inspection. The 14 groups below reference a subset of those 43; they do not imply 43 unique theological prayers. All sources require a separate rights/reuse decision before inclusion in the public app.
+**Verification update (28 October 2026):** All **43 complete historical form records** (28 EN, 15 FR) now have direct original printed-page image checks, including the 1888 Baltimore Evening prayer for light, verified at printed p.82. The 14 groups below reference 33 of these forms; the B20 supplement shows seven more optional forms. These are not all different theological prayer families. **Public reproduction/reuse rights and editorial selections remain unapproved.**
 
 ---
 
@@ -347,9 +347,9 @@ O my God, sovereign Judge of men, who desirest not the death of a sinner, but th
 
 </blockquote>
 
-**[Original scanned source page](https://en.wikisource.org/wiki/Page:Manualofprayersf00cath.djvu/94)** · **Source ID:** `b12-baltimore-evening-examination-light` · **Text check:** proofread transcription print image pending
+**[Original scanned source page](https://en.wikisource.org/wiki/Page:Manualofprayersf00cath.djvu/94)** · **Source ID:** `b12-baltimore-evening-examination-light` · **Text check:** original print-page image checked 28 October 2026
 
-**Mandatory hold:** visually inspect printed Baltimore p.82 original image and resolve reproduction rights before any release. Examination rubrics and the subsequent Act of Contrition are not part of the above recited text.
+**Original-page verification closed (28 October 2026):** printed Baltimore p.82 was directly inspected; full wording and boundary rubrics match this source transcription. **Still pending:** editorial default selection and public reproduction/reuse rights. The subsequent Act of Contrition is not part of this prayer.
 
 </details>
 
@@ -536,7 +536,7 @@ Nous Vous supplions, Seigneur, de visiter notre demeure, et d’en éloigner tou
 - [ ] Editorially approve complete English evening default(s) and separate examen/contrition/night prayers
 - [ ] Editorially approve original French evening sequence and distinct purpose of amendment
 - [ ] Confirm which common Catholic prayers remain obligatory versus optional in the Short/Complete composite
-- [ ] Direct-image verify Baltimore examination-light original p.82
+- [x] Direct-image verify Baltimore examination-light original p.82 (completed 28 October 2026; editorial and reuse clearance still pending)
 - [ ] Review source text and reuse/distribution rights by target territory
 - [ ] Review finalized Short/Complete stage order and human-readable titles in both languages
 - [ ] Only after approval, create a separately reviewed source manifest for PR #1786; never put unchecked texts in its live registry
