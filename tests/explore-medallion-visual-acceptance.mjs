@@ -75,6 +75,8 @@ try{
    assert.ok(measures.mapHeight>=300,"Map is too short at "+width+": "+JSON.stringify(measures));
    assert.ok(measures.documentOverflow<=1,"Document overflow at "+width+": "+JSON.stringify(measures));
    assert.equal(measures.status,"ready","Cannot certify an empty/loading basemap at "+width);
+   assert.equal(await map.getAttribute("data-ao-cartography"),"enhanced-dark",
+     "OpenFreeMap Dark map must apply the verified label and territory legibility palette");
    // Keep OpenStreetMap/OpenFreeMap attribution visible and operable, but
    // prevent the default bright strip from overpowering the dark atlas.
    const credits=await page.evaluate(()=>{
