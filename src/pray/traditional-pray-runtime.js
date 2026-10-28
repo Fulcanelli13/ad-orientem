@@ -11,6 +11,7 @@ import {dailyHorizonState} from "./quiet-devotional-progression.js";
 import {createDailySessionTimer,sessionClockLabel} from "./daily-session-timer.js";
 import {createPrayerPurposeIndex,prayerPurposeFor,prayerPurposeDefault,normalizePrayerPurposeSelection} from "./prayer-purpose-index.js";
 import {COMMUNION_PRAYER_PURPOSES} from "./communion-prayer-purpose-map.js";
+import {GOOD_DEATH_PRAYER_PURPOSES} from "./good-death-purpose-map.js";
 import {buildPersonalDailyPlan,personalDailyOptions,personalDailyDirectPlan,loadPersonalDailyPrefs,savePersonalDailyPrefs,changePersonalDailyPrefs} from "./daily-personal-rule.js";
 import {personalDailyPrayerCard,personalDailyPurposeSection,dailyPersonalSettings,dailyPersonalPrayerCatalog,dailyPersonalList} from "./daily-personal-prayer-view.js";
 import {createDailyFormulationPreferenceStore} from "./daily-formulation-preferences.js";
@@ -616,6 +617,38 @@ const GOOD_DEATH_STAGES=Object.freeze([
   ["foundations_hail_mary","Hail Mary","Je vous salue Marie"],
   ["aspirations","Traditional aspirations","Invocations traditionnelles"]
 ]);
+// B11: source-owned Good Death choices, without altering the nine devotional
+// reader cards or pretending that distinct acts are equivalent formulations.
+const GOOD_DEATH_PURPOSE_INDEX=createPrayerPurposeIndex(GOOD_DEATH_PRAYER_PURPOSES,{
+ ordinary:GOOD_DEATH_STAGES.map(row=>row[0])
+});
+const GOOD_DEATH_PURPOSE_KEY="ao.pray.good-death-purpose.v1";
+let GOOD_DEATH_PURPOSE_SELECTED=null;
+function goodDeathSavedChoices(){
+ if(GOOD_DEATH_PURPOSE_SELECTED)return GOOD_DEATH_PURPOSE_SELECTED;
+ let raw={};try{raw=JSON.parse(globalThis.localStorage?.getItem(GOOD_DEATH_PURPOSE_KEY)||"{}")}catch{}
+ return GOOD_DEATH_PURPOSE_SELECTED=normalizePrayerPurposeSelection(GOOD_DEATH_PURPOSE_INDEX,raw);
+}
+function rememberGoodDeathPurpose(group,id){
+ const current=goodDeathSavedChoices();
+ const next=normalizePrayerPurposeSelection(GOOD_DEATH_PURPOSE_INDEX,{
+  ...current,ordinary:{...current.ordinary,[group]:id}
+ });
+ GOOD_DEATH_PURPOSE_SELECTED=next;
+ try{globalThis.localStorage?.setItem(GOOD_DEATH_PURPOSE_KEY,JSON.stringify(next))}catch{}
+}
+function goodDeathPurposePicker(stages,activeId){
+ const groups=GOOD_DEATH_PURPOSE_INDEX.ordinary;
+ const current=prayerPurposeFor(GOOD_DEATH_PURPOSE_INDEX,"ordinary",activeId)||groups[0];
+ const labels=new Map(stages.map(([id,en,fr])=>[id,L(en,fr)]));
+ const tabs=groups.map(group=>'<button type="button" data-tp381-good-death-purpose="'+esc(group.id)+'" aria-pressed="'+String(group.id===current.id)+'">'+esc(L(group.titleEn,group.titleFr))+'</button>').join("");
+ const choices=current.ids.map(id=>'<button type="button" data-tp381-good-death-source="'+esc(id)+'" aria-pressed="'+String(id===activeId)+'">'+esc(labels.get(id)||id)+'</button>').join("");
+ return '<section class="aoCommunionPurposePicker aoGoodDeathPurposePicker" data-ao-good-death-purpose-picker="'+esc(current.id)+'">'+
+  '<p class="aoCommunionPurposeIntro">'+esc(L("Choose a complete prayer directly · no required sequence","Choisissez directement une prière complète · sans ordre imposé"))+'</p>'+
+  '<nav class="aoCommunionPurposeGroups" aria-label="'+esc(L("Devotional purpose","Intention de prière"))+'">'+tabs+'</nav>'+
+  '<nav class="aoCommunionPurposeOptions" aria-label="'+esc(L("Complete prayers for this purpose","Prières complètes pour cette intention"))+'">'+choices+'</nav>'+
+  '<small class="aoCommunionPurposeNote">'+esc(L("These are independent prayers, not interchangeable passages or mandatory stages.","Ce sont des prières distinctes, non des passages interchangeables ni des étapes obligatoires."))+'</small></section>';
+}
 function renderGoodDeath(){
   const d=GOOD_DEATH_DYING_V384;
   const step=Math.max(0,Math.min(GOOD_DEATH_STAGES.length-1,Number(S.goodDeathStep)||0));
@@ -640,7 +673,7 @@ function renderGoodDeath(){
   const card=`<section class="aoDevoCard" data-ao-devo-card="good-death-${esc(id)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L(en,fr))}">${josephPicker}${prayer}</div></section>`;
   const urgent=`<div class="aoTP381PrayerList aoTP381PastoralShortcut"><button type="button" data-tp381-route="pray.dying_companion"><span><b>${esc(L("Someone may be dying now","Une personne est peut-être mourante maintenant"))}</b><small>${esc(L("Open the bedside guide and seek a priest immediately.","Ouvrez le guide au chevet et contactez un prêtre sans tarder."))}</small></span><i aria-hidden="true">→</i></button></div>`;
   const options=`<details class="aoTP381SecondaryOptions" data-ao-good-death-options><summary>${esc(L("Practice, pastoral guidance and historical sources","Pratique, accompagnement et sources historiques"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("This is an ordinary devotional treasury for preparing throughout life for a holy death. It is not an emergency checklist and it does not replace the sacraments or the ministry of a priest.","Il s’agit d’un trésor dévotionnel ordinaire pour se préparer, durant la vie, à une sainte mort. Ce n’est pas une liste d’urgence et il ne remplace ni les sacrements ni le ministère d’un prêtre."))}</p>${traditionalContextGuide("goodDeath")}<p>${esc(L("Traditional Roman prayers for the dying invoke St Joseph as patron of the dying. His litany and familiar prayers may be recited in preparation for a holy death.","Les prières romaines pour les mourants invoquent saint Joseph comme patron des mourants. Ses litanies et les prières qui lui sont consacrées aident à se préparer à une sainte mort."))}</p><p>${esc(L("Final perseverance and readiness deepen the ordinary acts of faith, hope, charity, contrition and confidence in Our Lady at the hour of death.","La persévérance finale et la préparation approfondissent les actes ordinaires de foi, d’espérance, de charité, de contrition et la confiance en Notre-Dame à l’heure de la mort."))}</p>${source("Acta Apostolicae Sedis · 1922 · Ordo Commendationis Animae",GOOD_DEATH_DYING_SOURCES_V384.romanJoseph1922)}${source(L("Current customary invocations · Apostolic Penitentiary","Invocations usuelles actuelles · Pénitencerie apostolique"),GOOD_DEATH_DYING_SOURCES_V384.currentIndulgences)}<div class="aoTP381PrayerList"><button type="button" data-tp381-route="learn.rites.sick"><span><b>${esc(L("Serious illness · understand the sacraments","Maladie grave · comprendre les sacrements"))}</b><small>${esc(L("The priest and sacramental care belong to the Church, not to this devotion.","Le prêtre et les soins sacramentels relèvent de l’Église, non de cette dévotion."))}</small></span><i aria-hidden="true">→</i></button></div></div></details>`;
-  return `${head(L("Preparation for a Good Death","Préparation à une bonne mort"))}<main class="aoP435930Body aoTP381DonorBody">${urgent}${card}${options}</main>`;
+  return `${head(L("Preparation for a Good Death","Préparation à une bonne mort"))}<main class="aoP435930Body aoTP381DonorBody">${urgent}${goodDeathPurposePicker(GOOD_DEATH_STAGES,id)}${card}${options}</main>`;
 }
 function dyingCompanionStepNav(tab){
   const index=DYING_COMPANION_STAGES.indexOf(tab);
@@ -895,7 +928,7 @@ function goHome(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-b01-meal],[data-tp381-b01-hope],[data-tp381-b01-contrition],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-communion-purpose],[data-tp381-communion-source],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-b01-meal],[data-tp381-b01-hope],[data-tp381-b01-contrition],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-communion-purpose],[data-tp381-communion-source],[data-tp381-good-death-purpose],[data-tp381-good-death-source],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-home]"))return goHome();
@@ -1114,6 +1147,21 @@ function handleClick(e){
   if(b.dataset.tp381B01Contrition){if(S.route!=="pray.nightly_examen"||S.returnToDaily)return;S.examenContrition=b.dataset.tp381B01Contrition==="piusx"?"piusx":"standard";return render()}
   if(b.dataset.tp381Hymn){S.hymn=hymnById(b.dataset.tp381Hymn)?b.dataset.tp381Hymn:"te_deum";S.hymnLang=null;return render()}
   if(b.dataset.tp381HymnLang){S.hymnLang=["en","fr","la"].includes(b.dataset.tp381HymnLang)?b.dataset.tp381HymnLang:(isFr()?"fr":"en");return render()}
+  if(b.hasAttribute("data-tp381-good-death-purpose")||b.hasAttribute("data-tp381-good-death-source")){
+    if(S.route!=="pray.good_death"||S.screen!=="module")return;
+    const sourceId=b.dataset.tp381GoodDeathSource,groupId=b.dataset.tp381GoodDeathPurpose;
+    const group=sourceId
+      ?prayerPurposeFor(GOOD_DEATH_PURPOSE_INDEX,"ordinary",sourceId)
+      :GOOD_DEATH_PURPOSE_INDEX.ordinary.find(item=>item.id===groupId);
+    if(!group)return;
+    const id=sourceId||goodDeathSavedChoices().ordinary?.[group.id]||prayerPurposeDefault(GOOD_DEATH_PURPOSE_INDEX,"ordinary",group.id);
+    const position=GOOD_DEATH_STAGES.findIndex(row=>row[0]===id);
+    if(position<0)return;
+    if(sourceId)rememberGoodDeathPurpose(group.id,id);
+    if(position===S.goodDeathStep)return;
+    S.goodDeathStep=position;
+    return render();
+  }
   if(b.dataset.tp381JosephEdition){if(S.route!=="pray.good_death")return;S.goodDeathJosephEdition=b.dataset.tp381JosephEdition==="2021"?"2021":"1909";return render()}
   if(b.hasAttribute("data-tp381-golden-arrow")){S.sacredHeart="golden_arrow";return open("pray.sacred_heart",{trigger:b})}
   if(b.dataset.tp381Heart){S.sacredHeart=HEART_STAGES.includes(b.dataset.tp381Heart)?b.dataset.tp381Heart:"litany";return render()}

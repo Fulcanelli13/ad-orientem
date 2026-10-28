@@ -640,6 +640,28 @@ try{
  assert.equal(await page.locator("#aoPray435930 [data-tp381-route='pray.dying_companion']").isVisible(),true,
    "Someone dying now has no visible entry to the priest-first bedside guide");
  await page.screenshot({path:resolve(captures,"good-death-joseph-390-fr.png"),animations:"disabled"});
+ // B11: one-tap source selection by devotional purpose with original 9-card
+ // reader unchanged. Distinct acts stay distinct, and choices are remembered.
+ const goodDeathPicker=page.locator("#aoPray435930 [data-ao-good-death-purpose-picker]");
+ assert.equal(await goodDeathPicker.count(),1);
+ assert.equal(await goodDeathPicker.locator("[data-tp381-good-death-purpose]").count(),5);
+ assert.equal(await goodDeathPicker.locator("[data-tp381-good-death-source]").count(),3);
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-joseph-edition='1909']").getAttribute("aria-pressed"),"true");
+ await page.locator("#aoPray435930 [data-tp381-good-death-source='devotion_memorare_st_joseph']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"good-death-devotion_memorare_st_joseph");
+ assert.equal((await snapshot()).stops,9,"Direct selection invented an extra Good Death stage");
+ await page.locator("#aoPray435930 [data-tp381-good-death-purpose='virtues']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"good-death-foundations_act_of_faith");
+ await page.locator("#aoPray435930 [data-tp381-good-death-source='foundations_act_of_hope']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"good-death-foundations_act_of_hope");
+ await page.locator("#aoPray435930 [data-tp381-good-death-purpose='joseph']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"good-death-devotion_memorare_st_joseph",
+   "Returning to St Joseph did not recall the previously selected canonical prayer");
+ await page.locator("#aoPray435930 [data-tp381-good-death-source='devotion_litany_st_joseph']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).index,0);
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-joseph-edition='1909']").getAttribute("aria-pressed"),"true",
+   "Source choice must not silently change the historical St Joseph litany edition");
+ await page.screenshot({path:resolve(captures,"good-death-direct-purposes-390-fr.png"),animations:"disabled"});
  await swipe(6,-150);
  assert.equal((await snapshot()).index,0,"Good Death vertical reading leaked into card navigation");
  await swipe(-175,4);
