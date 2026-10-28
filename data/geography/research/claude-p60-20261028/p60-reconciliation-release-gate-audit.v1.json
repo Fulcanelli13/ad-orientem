@@ -1,0 +1,703 @@
+{
+  "schema": "AO_SACRED_PLACES_P60_CLAUDE_IMPORT_AUDIT_V1",
+  "date": "2026-10-28",
+  "mode": "RESEARCH_IMPORT_ONLY__NO_RELEASE_OR_GEOMETRY_CERTIFICATION",
+  "source_files": [
+    "completed_candidates_3.csv",
+    "completed_candidates_3.jsonl",
+    "new_sites_3.jsonl",
+    "source_evidence_3.csv",
+    "canonical_reuse_crosswalk_3.csv",
+    "geography_exceptions_3.csv",
+    "unresolved_exceptions_3.csv",
+    "field_coverage_3.json",
+    "summary_3.md"
+  ],
+  "counts": {
+    "historical_candidates": 750,
+    "complete_unique_ids": 750,
+    "frozen_canonical_links": 322,
+    "claude_additional_canonical_proposals": 34,
+    "claude_proposed_reuses_total": 356,
+    "p59_previously_research_confirmed_reuses": 8,
+    "claude_remaining_reuse_proposals_needing_review": 26,
+    "known_wrong_reuse_in_remaining": 1,
+    "new_distinct_candidate_rows": 302,
+    "geometry_uncertain_candidate_rows": 39,
+    "heritage_non_catholic": 29,
+    "heritage_historic_catholic": 20,
+    "out_of_scope": 1,
+    "landscape_route_not_place": 3,
+    "coordinate_coverage": 707,
+    "coordinates_missing": 43,
+    "source_evidence_rows": 1778,
+    "source_covered_candidate_rows": 717,
+    "osm_refs_all": 291,
+    "osm_refs_new": 27,
+    "osm_geometry_nominations_new": 27,
+    "new_with_only_gcatholic_or_no_primary_source": 252,
+    "new_with_source_tier_C_first": 259,
+    "photo_deliverables": 0,
+    "production_changes": 0,
+    "public_places_main": 512,
+    "release_authorized": 0,
+    "unresolved_issue_entries": 81,
+    "geo_exception_entries": 35
+  },
+  "file_inventory": [
+    {
+      "path": "data/geography/research/claude-p60-20261028/claude-completed-candidates.csv",
+      "rows": 750
+    },
+    {
+      "path": "data/geography/research/claude-p60-20261028/claude-completed-candidates-shard-01.jsonl",
+      "rows": 125
+    },
+    {
+      "path": "data/geography/research/claude-p60-20261028/claude-completed-candidates-shard-02.jsonl",
+      "rows": 125
+    },
+    {
+      "path": "data/geography/research/claude-p60-20261028/claude-completed-candidates-shard-03.jsonl",
+      "rows": 125
+    },
+    {
+      "path": "data/geography/research/claude-p60-20261028/claude-completed-candidates-shard-04.jsonl",
+      "rows": 125
+    },
+    {
+      "path": "data/geography/research/claude-p60-20261028/claude-completed-candidates-shard-05.jsonl",
+      "rows": 125
+    },
+    {
+      "path": "data/geography/research/claude-p60-20261028/claude-completed-candidates-shard-06.jsonl",
+      "rows": 125
+    },
+    {
+      "path": "data/geography/research/claude-p60-20261028/claude-new-sites.jsonl",
+      "rows": 302
+    },
+    {
+      "path": "data/geography/research/claude-p60-20261028/claude-source-evidence.csv",
+      "rows": 1778
+    },
+    {
+      "path": "data/geography/research/claude-p60-20261028/claude-canonical-reuse-crosswalk.csv",
+      "rows": 417
+    },
+    {
+      "path": "data/geography/research/claude-p60-20261028/claude-geography-exceptions.csv",
+      "rows": 35
+    },
+    {
+      "path": "data/geography/research/claude-p60-20261028/claude-unresolved-exceptions.csv",
+      "rows": 81
+    },
+    {
+      "path": "data/geography/research/claude-p60-20261028/claude-field-coverage.json",
+      "rows": null
+    },
+    {
+      "path": "data/geography/research/claude-p60-20261028/claude-source-summary.md",
+      "rows": null
+    }
+  ],
+  "source_policy": "Import original evidence unchanged. A lat/lng from GCatholic Plus Code is not a validated OSM building footprint. `EXACT_SITE_POINT` in source means point coordinates, not site-certified polygon.",
+  "qa_status": {
+    "raw_inventory_integrity": "PASS",
+    "canonical_targets_exist": "PASS",
+    "canonical_identity_matches_exhaustively_verified": false,
+    "geometry_subject_and_footprint_verified": false,
+    "photograph_assets_received": false,
+    "unresolved_review_holds": true
+  },
+  "hazards": [
+    {
+      "candidate_ids": [
+        "SG-INV-0049"
+      ],
+      "type": "WRONG_NEARBY_PLACE_CROSSWALK",
+      "decision": "REJECT_CLAUDE_CANONICAL_REUSE",
+      "current_claim": "St John Lateran archbasilica mapped to Scala Santa",
+      "reason": "Basilica of Saint John Lateran and Scala Santa are distinct buildings despite 149 m proximity",
+      "rescope": "Return to distinct/geometry review; preserve source and original candidate"
+    },
+    {
+      "candidate_ids": [
+        "SG-INV-0437",
+        "SG-INV-0441"
+      ],
+      "type": "INTRA_CANDIDATE_DUPLICATE",
+      "decision": "HOLD_DUPLICATE_MERGE",
+      "reason": "Atotonilco same point and GCatholic page; one site may include multiple chapels"
+    },
+    {
+      "candidate_ids": [
+        "SG-INV-0511",
+        "SG-INV-0515"
+      ],
+      "type": "INTRA_CANDIDATE_DUPLICATE",
+      "decision": "KEEP_SINGLE_EXISTING_CANONICAL",
+      "reason": "Both frozen candidates link same El Quinche basilica"
+    },
+    {
+      "candidate_ids": [
+        "SG-INV-0617",
+        "SG-INV-0619"
+      ],
+      "type": "INTRA_CANDIDATE_DUPLICATE",
+      "decision": "HOLD_PHYSICAL_IDENTITY",
+      "reason": "Nagasaki martyrs memorial/site overlap"
+    },
+    {
+      "candidate_ids": [
+        "SG-INV-0698",
+        "SG-INV-0700"
+      ],
+      "type": "INTRA_CANDIDATE_DUPLICATE",
+      "decision": "HOLD_PHYSICAL_IDENTITY",
+      "reason": "Abu Serga Coptic site overlap"
+    },
+    {
+      "candidate_ids": [
+        "SG-INV-0021"
+      ],
+      "type": "POSSIBLE_WRONG_IDENTITY_SOURCE",
+      "decision": "HOLD_PHOTO_AND_PUBLICATION",
+      "reason": "GCatholic Tours page not independently tied to Holy Face oratory"
+    },
+    {
+      "candidate_ids": [
+        "SG-INV-0530"
+      ],
+      "type": "AMBIGUOUS_EXISTING_CANONICAL_ID",
+      "decision": "HOLD_IDENTITY_MATCH",
+      "reason": "Assumption shrine candidate could describe oratory/Pantheon or metropolitan cathedral; name-only match"
+    },
+    {
+      "candidate_ids": [
+        "SG-INV-0562"
+      ],
+      "type": "OUT_OF_SCOPE_NON_CATHOLIC_CUSTODIAN",
+      "decision": "DO_NOT_PUBLISH_AS_CATHOLIC_SHRINE",
+      "reason": "Yardenit is kibbutz-run baptism site"
+    }
+  ],
+  "raw_errors": [],
+  "release_queue": {
+    "possible_osm_building_feature_cases": [
+      {
+        "candidate_id": "SG-INV-0125",
+        "name": "Sanctuary of Saint Ignatius of Loyola, Azpeitia",
+        "osm_ref": "osm:node:5172092452",
+        "confidence": "MEDIUM",
+        "catholic_status": "CURRENT_LATIN_CATHOLIC",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0165",
+        "name": "Marian sanctuary of Neviges",
+        "osm_ref": "osm:way:115768554",
+        "confidence": "MEDIUM",
+        "catholic_status": "CATHOLIC_IDENTITY_UNCERTAIN",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0171",
+        "name": "Basilica of Saint Boniface, Fulda",
+        "osm_ref": "osm:way:90756726",
+        "confidence": "MEDIUM",
+        "catholic_status": "CURRENT_LATIN_CATHOLIC",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0188",
+        "name": "Sanctuary of Mariastein, Tyrol",
+        "osm_ref": "osm:way:116857278",
+        "confidence": "MEDIUM",
+        "catholic_status": "CATHOLIC_IDENTITY_UNCERTAIN",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0190",
+        "name": "Sanctuary of Maria Wörth",
+        "osm_ref": "osm:way:124988035",
+        "confidence": "MEDIUM",
+        "catholic_status": "CATHOLIC_IDENTITY_UNCERTAIN",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0191",
+        "name": "Shrine of Saint Hemma, Gurk Cathedral",
+        "osm_ref": "osm:way:179181268",
+        "confidence": "MEDIUM",
+        "catholic_status": "CATHOLIC_IDENTITY_UNCERTAIN",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0192",
+        "name": "Basilica of Saint Wolfgang, St Wolfgang",
+        "osm_ref": "osm:way:29193203",
+        "confidence": "MEDIUM",
+        "catholic_status": "CATHOLIC_IDENTITY_UNCERTAIN",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0196",
+        "name": "Heiligenkreuz Abbey",
+        "osm_ref": "osm:way:1290734392",
+        "confidence": "MEDIUM",
+        "catholic_status": "CATHOLIC_IDENTITY_UNCERTAIN",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0200",
+        "name": "Basilica of Our Lady of Licheń",
+        "osm_ref": "osm:way:208331549",
+        "confidence": "MEDIUM",
+        "catholic_status": "CURRENT_LATIN_CATHOLIC",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0216",
+        "name": "Sanctuary of Blessed Jerzy Popiełuszko, Warsaw",
+        "osm_ref": "osm:way:173062160",
+        "confidence": "MEDIUM",
+        "catholic_status": "CATHOLIC_IDENTITY_UNCERTAIN",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0245",
+        "name": "Saint Patrick's Cathedral, Armagh",
+        "osm_ref": "osm:way:91239601",
+        "confidence": "MEDIUM",
+        "catholic_status": "CATHOLIC_IDENTITY_UNCERTAIN",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0250",
+        "name": "Carfin Grotto",
+        "osm_ref": "osm:way:597367593",
+        "confidence": "MEDIUM",
+        "catholic_status": "CURRENT_LATIN_CATHOLIC",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0305",
+        "name": "Sanctuary of Sveta Gora",
+        "osm_ref": "osm:way:524343947",
+        "confidence": "MEDIUM",
+        "catholic_status": "CURRENT_LATIN_CATHOLIC",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0364",
+        "name": "Church of Saint Polycarp, İzmir",
+        "osm_ref": "osm:way:547240859",
+        "confidence": "MEDIUM",
+        "catholic_status": "CATHOLIC_IDENTITY_UNCERTAIN",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0380",
+        "name": "National Shrine of Our Lady of the Snows, Belleville",
+        "osm_ref": "osm:node:354161188",
+        "confidence": "MEDIUM",
+        "catholic_status": "CURRENT_LATIN_CATHOLIC",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0410",
+        "name": "San Francisco de Asis Mission Church, Ranchos de Taos",
+        "osm_ref": "osm:way:426943457",
+        "confidence": "MEDIUM",
+        "catholic_status": "CURRENT_LATIN_CATHOLIC",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0429",
+        "name": "Basilica of Our Lady of Ocotlán, Tlaxcala",
+        "osm_ref": "osm:way:95827233",
+        "confidence": "MEDIUM",
+        "catholic_status": "CURRENT_LATIN_CATHOLIC",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0435",
+        "name": "Sanctuary of the Lord of Chalma",
+        "osm_ref": "osm:way:257681774",
+        "confidence": "MEDIUM",
+        "catholic_status": "CATHOLIC_IDENTITY_UNCERTAIN",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0448",
+        "name": "Church of Saint Francis the Great, Antigua Guatemala",
+        "osm_ref": "osm:way:196802619",
+        "confidence": "MEDIUM",
+        "catholic_status": "CATHOLIC_IDENTITY_UNCERTAIN",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0493",
+        "name": "Basilica of Our Lady of the Valley, Catamarca",
+        "osm_ref": "osm:way:36373669",
+        "confidence": "MEDIUM",
+        "catholic_status": "CURRENT_LATIN_CATHOLIC",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0497",
+        "name": "Sanctuary of Our Lady of Andacollo",
+        "osm_ref": "osm:way:87470035",
+        "confidence": "MEDIUM",
+        "catholic_status": "CURRENT_LATIN_CATHOLIC",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0512",
+        "name": "Sanctuary of Our Lady of El Cisne",
+        "osm_ref": "osm:way:126638428",
+        "confidence": "MEDIUM",
+        "catholic_status": "CURRENT_LATIN_CATHOLIC",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0524",
+        "name": "Basilica and Convent of Saint Rose of Lima",
+        "osm_ref": "osm:way:408470796",
+        "confidence": "MEDIUM",
+        "catholic_status": "CURRENT_LATIN_CATHOLIC",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0541",
+        "name": "Sanctuary of Our Lady of Copacabana",
+        "osm_ref": "osm:way:628685969",
+        "confidence": "MEDIUM",
+        "catholic_status": "CURRENT_LATIN_CATHOLIC",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0650",
+        "name": "Basilica Minore del Santo Niño, Cebu",
+        "osm_ref": "osm:way:413764505",
+        "confidence": "MEDIUM",
+        "catholic_status": "CURRENT_LATIN_CATHOLIC",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0720",
+        "name": "Sanctuary of Our Lady of Muxima",
+        "osm_ref": "osm:way:496341443",
+        "confidence": "MEDIUM",
+        "catholic_status": "CATHOLIC_IDENTITY_UNCERTAIN",
+        "publication_authorized": false
+      },
+      {
+        "candidate_id": "SG-INV-0727",
+        "name": "Basilica of Our Lady of Yagma",
+        "osm_ref": "osm:way:157591164",
+        "confidence": "MEDIUM",
+        "catholic_status": "CATHOLIC_IDENTITY_UNCERTAIN",
+        "publication_authorized": false
+      }
+    ],
+    "missing_locations": [
+      "SG-INV-0071",
+      "SG-INV-0131",
+      "SG-INV-0154",
+      "SG-INV-0193",
+      "SG-INV-0229",
+      "SG-INV-0230",
+      "SG-INV-0233",
+      "SG-INV-0239",
+      "SG-INV-0262",
+      "SG-INV-0290",
+      "SG-INV-0308",
+      "SG-INV-0329",
+      "SG-INV-0347",
+      "SG-INV-0360",
+      "SG-INV-0367",
+      "SG-INV-0371",
+      "SG-INV-0451",
+      "SG-INV-0454",
+      "SG-INV-0455",
+      "SG-INV-0461",
+      "SG-INV-0475",
+      "SG-INV-0509",
+      "SG-INV-0523",
+      "SG-INV-0525",
+      "SG-INV-0534",
+      "SG-INV-0535",
+      "SG-INV-0539",
+      "SG-INV-0542",
+      "SG-INV-0559",
+      "SG-INV-0562",
+      "SG-INV-0579",
+      "SG-INV-0622",
+      "SG-INV-0676",
+      "SG-INV-0679",
+      "SG-INV-0698",
+      "SG-INV-0699",
+      "SG-INV-0700",
+      "SG-INV-0702",
+      "SG-INV-0713",
+      "SG-INV-0716",
+      "SG-INV-0723",
+      "SG-INV-0745",
+      "SG-INV-0747"
+    ],
+    "ambiguous_ecclesiastical_status": [
+      "SG-INV-0033",
+      "SG-INV-0157",
+      "SG-INV-0159",
+      "SG-INV-0161",
+      "SG-INV-0165",
+      "SG-INV-0188",
+      "SG-INV-0190",
+      "SG-INV-0191",
+      "SG-INV-0192",
+      "SG-INV-0196",
+      "SG-INV-0216",
+      "SG-INV-0229",
+      "SG-INV-0230",
+      "SG-INV-0233",
+      "SG-INV-0239",
+      "SG-INV-0245",
+      "SG-INV-0299",
+      "SG-INV-0301",
+      "SG-INV-0313",
+      "SG-INV-0331",
+      "SG-INV-0347",
+      "SG-INV-0364",
+      "SG-INV-0435",
+      "SG-INV-0448",
+      "SG-INV-0530",
+      "SG-INV-0550",
+      "SG-INV-0560",
+      "SG-INV-0562",
+      "SG-INV-0565",
+      "SG-INV-0568",
+      "SG-INV-0572",
+      "SG-INV-0577",
+      "SG-INV-0580",
+      "SG-INV-0585",
+      "SG-INV-0621",
+      "SG-INV-0622",
+      "SG-INV-0676",
+      "SG-INV-0701",
+      "SG-INV-0720",
+      "SG-INV-0723",
+      "SG-INV-0727",
+      "SG-INV-0739",
+      "SG-INV-0747"
+    ],
+    "additional_reuse_proposals": [
+      {
+        "candidate_id": "SG-INV-0026",
+        "claimed_canonical_place_id": "place:FR:espace-bernadette-nevers",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0031",
+        "claimed_canonical_place_id": "place:FR:grottes-saint-antoine-brive",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0042",
+        "claimed_canonical_place_id": "place:FR:p42-sg-inv-0042",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0043",
+        "claimed_canonical_place_id": "place:FR:abbatiale-saint-pierre-solesmes",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0049",
+        "claimed_canonical_place_id": "place:IT:scala-santa-rome",
+        "p59_existing_confirmation": false,
+        "decision": "REJECT"
+      },
+      {
+        "candidate_id": "SG-INV-0078",
+        "claimed_canonical_place_id": "place:IT:basilica-santa-maria-degli-angeli-assisi",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0087",
+        "claimed_canonical_place_id": "place:IT:basilica-san-domenico-siena",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0088",
+        "claimed_canonical_place_id": "place:IT:amalfi-sant-andrea",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0091",
+        "claimed_canonical_place_id": "place:IT:p43-sg-0091-11888423",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0093",
+        "claimed_canonical_place_id": "place:IT:santuario-san-paolo-della-croce-ovada",
+        "p59_existing_confirmation": true,
+        "decision": "P59_CONFIRMATION"
+      },
+      {
+        "candidate_id": "SG-INV-0094",
+        "claimed_canonical_place_id": "place:IT:p43-sg-0094-144658381",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0100",
+        "claimed_canonical_place_id": "place:IT:cattedrale-santa-maria-del-fiore-firenze",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0101",
+        "claimed_canonical_place_id": "place:IT:duomo-siena",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0122",
+        "claimed_canonical_place_id": "place:ES:carmel-alba-tormes",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0127",
+        "claimed_canonical_place_id": "place:ES:basilica-san-isidoro-leon",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0135",
+        "claimed_canonical_place_id": "place:ES:p42-sg-inv-0135",
+        "p59_existing_confirmation": true,
+        "decision": "P59_CONFIRMATION"
+      },
+      {
+        "candidate_id": "SG-INV-0136",
+        "claimed_canonical_place_id": "place:ES:p42-sg-inv-0136",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0137",
+        "claimed_canonical_place_id": "place:ES:catedral-santa-maria-burgos",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0138",
+        "claimed_canonical_place_id": "place:ES:p42-sg-inv-0138",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0391",
+        "claimed_canonical_place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0402",
+        "claimed_canonical_place_id": "place:US:sacred-heart-shrine-hales-corners",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0403",
+        "claimed_canonical_place_id": "place:US:baltimore-basilica-assumption",
+        "p59_existing_confirmation": true,
+        "decision": "P59_CONFIRMATION"
+      },
+      {
+        "candidate_id": "SG-INV-0407",
+        "claimed_canonical_place_id": "place:US:carmel-mission-basilica-serra",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0416",
+        "claimed_canonical_place_id": "place:CA:oratoire-saint-joseph-montreal",
+        "p59_existing_confirmation": true,
+        "decision": "P59_CONFIRMATION"
+      },
+      {
+        "candidate_id": "SG-INV-0456",
+        "claimed_canonical_place_id": "place:NI:ermita-guadalupe-matagalpa",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0521",
+        "claimed_canonical_place_id": "place:PE:basilica-nuestra-senora-merced-lima",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0530",
+        "claimed_canonical_place_id": "place:PY:oratorio-nuestra-senora-asuncion-panteon",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0591",
+        "claimed_canonical_place_id": "place:IN:st-thomas-mount-shrine-chennai",
+        "p59_existing_confirmation": true,
+        "decision": "P59_CONFIRMATION"
+      },
+      {
+        "candidate_id": "SG-INV-0594",
+        "claimed_canonical_place_id": "place:IN:basilica-bom-jesus-old-goa",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0624",
+        "claimed_canonical_place_id": "place:KR:jeoldusan-martyrs-shrine-seoul",
+        "p59_existing_confirmation": true,
+        "decision": "P59_CONFIRMATION"
+      },
+      {
+        "candidate_id": "SG-INV-0724",
+        "claimed_canonical_place_id": "place:ZM:archdiocese-lusaka-marian-shrine",
+        "p59_existing_confirmation": true,
+        "decision": "P59_CONFIRMATION"
+      },
+      {
+        "candidate_id": "SG-INV-0734",
+        "claimed_canonical_place_id": "place:MU:pere-laval-sainte-croix",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0735",
+        "claimed_canonical_place_id": "place:MG:ilot-de-la-vierge-ampefy",
+        "p59_existing_confirmation": false,
+        "decision": "NEEDS_INDEPENDENT_REVIEW"
+      },
+      {
+        "candidate_id": "SG-INV-0748",
+        "claimed_canonical_place_id": "place:FJ:sacred-heart-cathedral-suva",
+        "p59_existing_confirmation": true,
+        "decision": "P59_CONFIRMATION"
+      }
+    ]
+  }
+}
