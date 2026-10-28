@@ -14,6 +14,10 @@ The six existing `data/shrines/illustrated-place-guides-*.v1.json` corpora alrea
 - `tools/export-sacred-editorial-claude-packet.mjs` exports **1–12 exact canonical Places**, offline, with only relevant existing Place, shrine, pilgrimage, sacred-object, Customs, Saints pilot and published guide metadata. It has no GitHub API calls, repository crawler, external API or model invocation.
 - `tests/sacred-places-p65-editorial-reuse.mjs` proves the above across Chartres, Paray-le-Monial, Sainte-Anne-d'Auray, Notre-Dame de Paris and Père Laval, plus strict limits and no duplicate biography production.
 
+## Ready-to-use first packet
+
+The first eight source-bounded rows are committed at `data/geography/research/sacred-editorial-p65-first-eight-claude-packet.jsonl` (Notre-Dame de Paris, Chartres, Paray, Sainte-Anne-d'Auray, Père Laval, Rue du Bac, Goa and Lisieux). **Six** sites already have published guides; Claude must not rewrite those. It focuses on two missing sanctuary introductions and targeted object/saint enrichment. This is a research input, not editorial approval.
+
 ## Export
 
 ```sh
