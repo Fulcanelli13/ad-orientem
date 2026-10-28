@@ -9,7 +9,6 @@ const excluded=[
  "assets/staged",
  "data/research",
  "data/geography/research",
- "data/directory/research",
 ];
 const required=[
  "index.html",
