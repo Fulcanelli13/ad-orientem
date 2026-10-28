@@ -264,6 +264,29 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 #aoPray435930 .aoDailyLengthChoices button[aria-pressed="true"]{color:var(--liturgical,#c7ae6d);border-color:var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.08))}
 @media(max-width:360px){#aoPray435930 .aoDailyLengthChoices button{flex:1;min-width:0}}
 
+/* B04: source-ID-only Personal Brief choices within the existing restrained settings rail. */
+#aoPray435930 .aoDailyPersonalBriefList{display:grid;gap:5px;width:100%}
+#aoPray435930 .aoDailyPersonalBriefOption{width:100%}
+#aoPray435930 .aoDailyPersonalButtons .aoDailyPersonalBriefOption>button{
+ display:flex;align-items:center;gap:10px;width:100%;min-height:49px;padding:7px 10px;
+ text-align:left;white-space:normal;flex:none
+}
+#aoPray435930 .aoDailyPersonalBriefMark{
+ display:grid;place-items:center;flex:0 0 25px;width:25px;height:25px;border-radius:7px;
+ border:1px solid rgba(214,190,144,.4);font-size:.83rem;color:#ddc6a0
+}
+#aoPray435930 .aoDailyPersonalBriefText{min-width:0;display:grid;gap:2px}
+#aoPray435930 .aoDailyPersonalBriefText>strong{font-size:.82rem;line-height:1.35;font-weight:550}
+#aoPray435930 .aoDailyPersonalBriefText>small{font-size:.69rem;line-height:1.35;color:#a6b6bd}
+#aoPray435930 .aoDailyPersonalButtons .aoDailyPersonalBriefOption>button:disabled{
+ opacity:.63;cursor:default
+}
+#aoPray435930 .aoDailyPersonalBriefRestore{
+ width:100%;min-height:42px;flex:none;text-align:center;
+ border:1px solid rgba(215,188,146,.27);background:transparent;color:#e2d2ba;
+ border-radius:8px;padding:9px 12px
+}
+#aoPray435930 .aoDailyPersonalBriefRestore:focus-visible{outline:2px solid #e7cb98;outline-offset:2px}
 `;
 
 export function installTraditionalPrayStyles(doc=globalThis.document){

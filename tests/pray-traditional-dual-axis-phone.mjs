@@ -32,7 +32,19 @@ try{
  await page.locator('[data-pref-path="general.uiLanguage"][data-pref-value="fr"]').click();
  await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr",null,{timeout:10000});
  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("home"));
- assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+ const launched=await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open());
+ if(launched!==true){
+  const diagnostic=await page.evaluate(()=>({
+   prayerStatus:globalThis.AO_PRAY_APP_V1?.status?.(),
+   prayerRuntime:typeof globalThis.AO_PRAY_V435930?.open,
+   loadedScripts:[...document.scripts].slice(-12).map(s=>s.src||s.id),
+   resources:performance.getEntriesByType("resource").filter(x=>/pray|p435930|traditional/.test(x.name)).slice(-20).map(x=>({url:x.name,status:x.responseStatus})),
+   shell:typeof globalThis.AO_APP_SHELL_V1?.navigate,
+   module:typeof globalThis.AO_MODULES?.open
+  }));
+  console.error("DAILY_PRAYER_BOOT_DIAGNOSTIC",JSON.stringify({diagnostic,errors}));
+ }
+ assert.equal(launched,true,"Prayer host failed before guided reader: check boot diagnostic");
  const open=async id=>{
   const result=await page.evaluate(route=>globalThis.AO_MODULES.open(route),id);
   assert.equal(result?.ok,true,"Module did not open: "+id+" "+JSON.stringify(result));
@@ -153,7 +165,32 @@ try{
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"6","1913 Morning Brief has six whole prayers");
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-phase"),"0","Brief sunrise starts at predawn");
  assert.match(await page.locator("#aoPray435930 [data-ao-personal-settings] summary").innerText(),/Brève personnelle/);
- assert.match(await page.locator("#aoPray435930 .aoDailyPersonalNote").innerText(),/Ce n’est pas une édition courte imprimée/);
+ assert.match(await page.locator("#aoPray435930 .aoDailyPersonalSettingsBody > .aoDailyPersonalNote").innerText(),/non une édition courte historique/);
+ const morningHail=page.locator("#aoPray435930 [data-tp381-personal-action='brief-toggle'][data-tp381-personal-value='hail-mary']");
+ assert.equal(await morningHail.getAttribute("aria-pressed"),"true");
+ await morningHail.evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"5","Removing an entire Morning prayer changes the sky horizon denominator");
+ assert.equal(await morningHail.getAttribute("aria-pressed"),"false");
+ const morningCreed=page.locator("#aoPray435930 [data-tp381-personal-action='brief-toggle'][data-tp381-personal-value='creed']");
+ await morningCreed.evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"6","Adding a different complete source prayer restores six cards");
+ assert.equal(await morningCreed.getAttribute("aria-pressed"),"true");
+ assert.ok(await page.locator("#aoPray435930 [data-tp381-personal-action='brief-reset']").count()===1,"Customized Brief requires restore-suggestion button");
+ for(const width of [320,390,768,1440]){
+  await page.setViewportSize({width,height:844});
+  const geometry=await page.locator("#aoPray435930 .aoDailyPersonalBriefList").evaluate(el=>{
+   const r=el.getBoundingClientRect(),p=el.closest(".aoDailyPersonalSettingsBody").getBoundingClientRect();
+   return {left:r.left,right:r.right,panelLeft:p.left,panelRight:p.right,scrollWidth:el.scrollWidth,clientWidth:el.clientWidth};
+  });
+  assert.ok(geometry.right<=width+2&&geometry.left>=-2&&geometry.scrollWidth<=geometry.clientWidth+2,
+   "Brief editor cannot overflow "+width+"px: "+JSON.stringify(geometry));
+  if(width===320||width===1440)await page.screenshot({path:resolve(captures,"brief-editor-"+width+"-fr.png"),animations:"disabled"});
+ }
+ await page.setViewportSize({width:390,height:844});
+ await page.locator("#aoPray435930 [data-tp381-personal-action='brief-reset']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-personal-action='brief-toggle'][data-tp381-personal-value='hail-mary']").getAttribute("aria-pressed"),"true");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"6","Restoring suggestions uses complete historical prayers");
+
  await page.locator("#aoPray435930 .aoDevoStop").nth(6).evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-phase"),"4","Brief Morning must reach daylight at final stage");
  await page.locator("#aoPray435930 [data-tp381-personal-action='length'][data-tp381-personal-value='full']").evaluate(el=>el.click());
@@ -237,6 +274,14 @@ try{
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"10","Reset restores the 1913 evening order");
  await page.locator("#aoPray435930 [data-tp381-personal-action='length'][data-tp381-personal-value='brief']").evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"5","1913 Evening Brief retains the guided examen");
+ await page.locator("#aoPray435930 [data-tp381-personal-action='brief-toggle'][data-tp381-personal-value='hail-mary']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"4","Evening Brief selection independent of Morning");
+ await page.locator("#aoPray435930 [data-tp381-personal-action='language'][data-tp381-personal-value='fr']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-personal-action='brief-toggle'][data-tp381-personal-value='hail-mary']").getAttribute("aria-pressed"),"false","Brief selection persists across source language changes");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"4");
+ await page.locator("#aoPray435930 [data-tp381-personal-action='brief-reset']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"5");
+
  await page.locator("#aoPray435930 .aoDevoStop").nth(3).evaluate(el=>el.click());
  assert.match(await page.locator("#aoPray435930 .aoTP381GuideCard").innerText(),/Examen|examination|conscience/i);
  await page.locator("#aoPray435930 [data-tp381-personal-action='length'][data-tp381-personal-value='full']").evaluate(el=>el.click());

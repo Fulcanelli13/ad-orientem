@@ -61,6 +61,25 @@ export function dailyPersonalSettings(plan,prefs,{esc,L,expanded=false}){
  const length=group(L("Length of my daily prayer","Durée de ma prière quotidienne"),
   choice("length","full","Complete edition","Édition intégrale",prefs.length!=="brief")+
   choice("length","brief","Personal Brief","Règle personnelle brève",prefs.length==="brief"));
+ const briefSelected=new Set(plan.briefIds);
+ const briefChoices='<div class="aoDailyPersonalBriefList" role="group" aria-label="'+esc(L("Choose complete prayers for my Brief rule","Choisir les prières intégrales de ma règle brève"))+'">'+
+ plan.briefCandidates.map(row=>{
+  const chosen=briefSelected.has(row.id);
+  // Brief must always be a nonempty subset, shorter than the full edition.
+  const locked=chosen&&briefSelected.size===1||!chosen&&briefSelected.size===plan.briefCandidates.length-1;
+  const description=row.kind==="guided"?L("Guided examination · not a spoken printed prayer","Examen guidé · non une prière imprimée à réciter"):
+   L("Complete prayer · original edition order","Prière intégrale · ordre de l’édition respecté");
+  return '<div class="aoDailyPersonalBriefOption"><button type="button" data-tp381-personal-action="brief-toggle" data-tp381-personal-value="'+esc(row.id)+
+   '" aria-pressed="'+String(chosen)+'" '+(locked?'disabled ':'')+'><span class="aoDailyPersonalBriefMark" aria-hidden="true">'+(chosen?'✓':'+')+'</span>'+
+   '<span class="aoDailyPersonalBriefText"><strong>'+esc(row.title)+'</strong><small>'+esc(description)+'</small></span></button></div>';
+ }).join("")+'</div>';
+ const briefEditor=group(L("Choose my Brief prayers","Choisir mes prières brèves"),
+  '<p class="aoDailyPersonalNote">'+esc(L(
+   "Editing "+(part==="morning"?"Morning":"Evening")+" · "+plan.edition+" · "+plan.briefIds.length+" of "+plan.briefCandidates.length+" stages. Tap complete prayers to include or exclude them. Keep at least one, and use Complete edition for the full order. The 1913 examination is a guided reflection, not a spoken prayer.",
+   "Modification du "+(part==="morning"?"matin":"soir")+" · "+plan.edition+" · "+plan.briefIds.length+" étapes sur "+plan.briefCandidates.length+". Touchez une prière intégrale pour l’inclure ou l’exclure. Conservez au moins une étape ; l’édition intégrale reste disponible. L’examen de 1913 est un temps de réflexion guidée, non une prière orale."
+  ))+'</p>'+briefChoices+
+  (plan.briefCustom?'<button type="button" class="aoDailyPersonalBriefRestore" data-tp381-personal-action="brief-reset" data-tp381-personal-value="">'+
+   esc(L("Restore suggested Brief selection","Rétablir la sélection brève suggérée"))+'</button>':""));
  const mode=group(L("Your prayer routine","Votre règle de prière"),
   choice("mode","standard","Standard · St Pius X","Standard · Saint Pie X",prefs.mode==="standard")+
   choice("mode","expanded","Expanded · My choices","Enrichie · Mes choix",prefs.mode==="expanded"));
@@ -84,9 +103,9 @@ export function dailyPersonalSettings(plan,prefs,{esc,L,expanded=false}){
  return '<details class="aoDailyPersonalSettings" data-ao-personal-settings '+(expanded?"open":"")+'> <summary><span class="aoDailyPersonalSettingsLabel">'+esc(L("Customize","Personnaliser"))+'</span><small class="aoDailyPersonalSettingsCurrent">'+esc(editionSummary+" · "+languageSummary+" · "+modeSummary+selectedSummary)+'</small></summary>'+
  '<div class="aoDailyPersonalSettingsBody">'+ed+lang+length+
  (plan.brief?'<p class="aoDailyPersonalNote">'+esc(L(
-  "Personal Brief is Ad Orientem’s selection of "+plan.rows.length+" complete prayers from this edition, in their original order—not a separately printed Short St Pius X. Switch to Complete edition to read every core prayer; your former additional choices remain saved.",
-  "La règle personnelle brève est une sélection Ad Orientem de "+plan.rows.length+" prières intégrales de cette édition, dans leur ordre initial. Ce n’est pas une édition courte imprimée de saint Pie X. Revenez à l’édition intégrale pour toutes les prières ; vos choix facultatifs restent enregistrés."
- ))+'</p>':mode+'<p class="aoDailyPersonalNote">'+esc(explanation)+'</p>'+
+  "Personal Brief is your selection of complete prayers from St Pius X, in the printed order, not a separately published Short edition. Saved additions to your Complete rule remain available when you switch back.",
+  "La règle brève est votre sélection de prières intégrales de saint Pie X, dans l’ordre imprimé, et non une édition courte historique. Les ajouts à votre règle intégrale demeurent enregistrés."
+ ))+'</p>'+briefEditor:mode+'<p class="aoDailyPersonalNote">'+esc(explanation)+'</p>'+
  group(L("Additional prayers & Office texts","Prières et textes de l’Office facultatifs"),adjacent+(items||'<p>'+esc(L("No original-language manual prayers in this reading language. Pius X remains available in all three languages.","Aucune prière de manuel dans cette langue. Saint Pie X demeure disponible en trois langues."))+'</p>')))+
  '<button type="button" class="aoDailyPersonalReset" data-tp381-personal-action="reset" data-tp381-personal-value="">'+esc(L("Restore St Pius X defaults","Rétablir les choix de saint Pie X"))+'</button></div></details>';
 }

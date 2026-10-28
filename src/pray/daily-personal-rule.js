@@ -25,6 +25,26 @@ export const PERSONAL_BRIEF_PRAYER_IDS=Object.freeze({
   evening:Object.freeze(["daily-prayer","our-father","hail-mary","contrition"])
  })
 });
+/** User selections are stored independently for each edition and daypart.
+ * An absent override means the published Personal Brief starter selection. */
+function briefCore(edition,daypart){
+ return CORPUS.editions[edition].dayparts[daypart].filter(row=>row.kind!=="supplement");
+}
+function normalizeBriefOverride(raw,edition,daypart){
+ if(!Array.isArray(raw))return null;
+ const core=briefCore(edition,daypart);
+ const known=new Set(core.map(row=>row.id));
+ // Reject malformed overrides rather than quietly dropping an unintended
+ // source, and never create an empty or full-length "Brief".
+ if(raw.length<1||raw.length>=core.length||new Set(raw).size!==raw.length||raw.some(id=>typeof id!=="string"||!known.has(id)))return null;
+ const chosen=new Set(raw);
+ return core.filter(row=>chosen.has(row.id)).map(row=>row.id);
+}
+export function personalDailyBriefIds(edition,daypart,prefs){
+ if(!EDITIONS.has(edition)||!PARTS.includes(daypart))throw new RangeError("Invalid Personal Brief source");
+ const chosen=normalizeBriefOverride(prefs?.briefSelections?.[edition]?.[daypart],edition,daypart);
+ return chosen||[...PERSONAL_BRIEF_PRAYER_IDS[edition][daypart]];
+}
 const EDITION_SUPPLEMENT_IDS=new Set(["piusx-1913-de-profundis","piusx-1913-jesus-joseph-mary"]);
 const ids=new Set([...CORPUS.additional.map(x=>x.id),...EDITION_SUPPLEMENT_IDS]);
 function editionSupplements(language){
@@ -44,6 +64,7 @@ const allowed=(arr,lang,daypart)=>arr.filter(x=>x.lang===lang && x.daypart===day
 export function defaultPersonalDailyPrefs(language="en"){
  return {version:1,edition:"1913",language:LANGS.has(language)?language:"en",
   mode:"standard",length:"full",variants:{morning:{},evening:{}},
+  briefSelections:{},
   extras:{morning:[],evening:[]}};
 }
 export function normalizePersonalDailyPrefs(raw,language="en"){
@@ -54,8 +75,16 @@ export function normalizePersonalDailyPrefs(raw,language="en"){
   language:LANGS.has(raw.language)?raw.language:fallback.language,
   mode:MODES.has(raw.mode)?raw.mode:fallback.mode,
   length:LENGTHS.has(raw.length)?raw.length:fallback.length,
-  variants:{},extras:{}
+  variants:{},extras:{},briefSelections:{}
  };
+ for(const edition of EDITIONS){
+  const selections={};
+  for(const part of PARTS){
+   const chosen=normalizeBriefOverride(raw.briefSelections?.[edition]?.[part],edition,part);
+   if(chosen)selections[part]=chosen;
+  }
+  if(Object.keys(selections).length)prefs.briefSelections[edition]=selections;
+ }
  for(const part of PARTS){
   const variants=raw.variants?.[part];
   prefs.variants[part]={};
@@ -100,7 +129,7 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
  const p=normalizePersonalDailyPrefs(prefs);
  const edition=personalDailyEdition(p.edition),language=p.language;
  const fullNative=edition.dayparts[daypart];
- const briefIDs=PERSONAL_BRIEF_PRAYER_IDS[p.edition][daypart];
+ const briefIDs=personalDailyBriefIds(p.edition,daypart,p);
  const native=p.length==="brief"?fullNative.filter(x=>briefIDs.includes(x.id)):fullNative;
  // Do not silently omit/reorder an invalid source ID.
  if(p.length==="brief"&&(native.length!==briefIDs.length||native.some((x,i)=>x.id!==briefIDs[i])))throw new Error("Invalid Personal Brief source selection");
@@ -134,6 +163,9 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
  // user. The printed catechism's mandatory stages retain their exact order.
  return {mode:"personal",daypart,edition:p.edition,language,length:p.length,brief:p.length==="brief",expanded:p.length==="full"&&p.mode==="expanded",
   rows:[...primary,...extras],selectedExtras:selected,
+  briefCandidates:fullNative.filter(row=>row.kind!=="supplement").map(row=>({id:row.id,kind:row.kind,
+    title:language==="fr"?row.titleFr:row.titleEn,sourceLabel:row.sourceLabel})),
+  briefIds:briefIDs,briefCustom:Boolean(p.briefSelections[p.edition]?.[daypart]),
   offeredExtras:[...extrasById.values()],availableVariants:variants,
   sourceLabel:edition.sourceLabel,sourceUrl:edition.sourceUrl};
 }
@@ -144,6 +176,27 @@ export function changePersonalDailyPrefs(prefs,{action,daypart="morning",value,l
  else if(action==="mode"&&MODES.has(value))p.mode=value;
  else if(action==="length"&&LENGTHS.has(value))p.length=value;
  else if(action==="reset")return defaultPersonalDailyPrefs(p.language);
+ else if(action==="brief-toggle"&&p.length==="brief"&&PARTS.includes(daypart)&&typeof value==="string"){
+  const core=briefCore(p.edition,daypart);
+  if(core.some(row=>row.id===value)){
+   const existing=personalDailyBriefIds(p.edition,daypart,p);
+   const chosen=new Set(existing);
+   if(chosen.has(value)){
+    if(chosen.size>1)chosen.delete(value);
+   }else if(chosen.size<core.length-1)chosen.add(value);
+   const ordered=core.filter(row=>chosen.has(row.id)).map(row=>row.id);
+   if(ordered.length!==existing.length||ordered.some((id,i)=>id!==existing[i])){
+    p.briefSelections[p.edition]??={};
+    p.briefSelections[p.edition][daypart]=ordered;
+   }
+  }
+ }
+ else if(action==="brief-reset"&&p.length==="brief"&&PARTS.includes(daypart)){
+  if(p.briefSelections[p.edition]){
+   delete p.briefSelections[p.edition][daypart];
+   if(!Object.keys(p.briefSelections[p.edition]).length)delete p.briefSelections[p.edition];
+  }
+ }
  else if(PARTS.includes(daypart)){
   const options=personalDailyOptions(daypart,p.language,p.edition);
   if(action==="variant"){
