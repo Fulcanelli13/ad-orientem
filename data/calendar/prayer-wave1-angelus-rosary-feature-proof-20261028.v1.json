@@ -1,0 +1,84 @@
+{
+  "schema": "AO_PRAYER_WAVE1_ANGELUS_ROSARY_REVIEW_INTEGRATION_V1",
+  "date": "2026-10-28",
+  "cost_eur": 0,
+  "changes_to_historical_approval_registers": 0,
+  "editorial_primary_reselections": 0,
+  "live_artwork_releases": 0,
+  "feature_branch": "feature/prayer-wave1-angelus-rosary-proof-20261028",
+  "first_principle": "Both artworks available only with explicit URL query; no default Angelus/Regina Cæli/Rosary difference",
+  "proof_modules": [
+    {
+      "module": "pray.angelus_regina",
+      "form": "angelus",
+      "artwork": "Philippe de Champaigne — The Annunciation",
+      "museum_accession": "Met 2004.31",
+      "original_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "original_dimensions": [
+        3741,
+        3658
+      ],
+      "image_change": "Research candidate painted-area v3 crop only",
+      "crop_box": [
+        106,
+        91,
+        3630,
+        3550
+      ],
+      "proof_files": [
+        {
+          "path": "assets/pray/hero-proof/angelus-v3-paint-only-720.webp",
+          "sha256": "b6564bf79fa27d8c0bca634ac40dd94dbcd372d081465385939ee52f2eb2c1bd"
+        },
+        {
+          "path": "assets/pray/hero-proof/angelus-v3-paint-only-1440.webp",
+          "sha256": "01f24b6654a7e7ebe737391da2eabba964a9a0a007ac2df14ca7da0bf8cf9e63"
+        }
+      ],
+      "source": "https://www.metmuseum.org/art/collection/search/438724",
+      "explicit_flag": "?aoPrayerArt=angelus-review",
+      "placement": "Existing Angelus Folio on initial entry; collapsed photographic disclosure after posture note; hidden on later cards and Regina Cæli",
+      "accessibility": "native details/summary, full painting contained, alt, link",
+      "no_alteration": "Folio cards, Latin/vernacular, posture, communicative recitation and Incarnation cinematic untouched",
+      "photo_final_approved": false,
+      "published": false
+    },
+    {
+      "module": "pray.rosary",
+      "artwork": "Lorenzo Lotto — Madonna del Rosario (1539)",
+      "source": "https://commons.wikimedia.org/wiki/File:Lorenzo_Lotto_057.jpg",
+      "original_sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+      "note": "Exact SHA agrees with the previously approved Rosary original master, recovered via Commons. No replacement of approved painting.",
+      "full_work_pixels": [
+        1880,
+        2886
+      ],
+      "proof_files": [
+        {
+          "path": "assets/pray/hero-proof/rosary-yorck-complete-720.webp",
+          "sha256": "6356b633f286357467f2e660afd5db2c1fcde72582037c0e751cb6c3648817c2"
+        },
+        {
+          "path": "assets/pray/hero-proof/rosary-yorck-complete-1440.webp",
+          "sha256": "2a57f7adca6db6f92ab6de841c735bfaa76fff385490b61282c02ba953dd12f2"
+        }
+      ],
+      "explicit_flag": "?aoPrayerArt=rosary-review",
+      "placement": "Only the existing canonical Rosary donor's preparation stage. After original launch action and optional settings; absent during active bead steps.",
+      "accessibility": "native details/summary, full work with all fifteen roundels contained, alt, source and attribution link",
+      "no_alteration": "Mystery chooser, default first action, full bead engine, Latin flip, named chapters, Scripture, modes and confessional privacy preserved",
+      "photo_final_approved": false,
+      "published": false
+    }
+  ],
+  "required_acceptance": [
+    "full browser 320,390,1440 px both readers + default-off regression",
+    "review saved screenshots",
+    "Angelus painted-boundary and colour signoff",
+    "Yorck original image source/reuse notice signoff",
+    "user/editorial photographic approval",
+    "separate production activation change"
+  ],
+  "connected_research_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/1861",
+  "separate_unreviewed_placement": "sacred-heart::heart-jesus--primary"
+}
