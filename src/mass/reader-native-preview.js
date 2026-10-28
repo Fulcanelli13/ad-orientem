@@ -1362,6 +1362,7 @@ export async function mountNativeReaderPreview({
   let activeCueId=null;
   let modeSwitchCueLock=null;
   let scholaPinnedByCatchup=false;
+  let selectedScholaEvent=null;
   let stopModeSwitchCueLock=()=>{};
   let enteredCanonicalCueSequence=false;
   // Explicit external observation only; neither scroll focus nor Schola audio
@@ -1861,6 +1862,7 @@ export async function mountNativeReaderPreview({
       priestQuietOffertory,
       schola:visibleSchola,
       scholaCatchupPinned:scholaPinnedByCatchup,
+      scholaEventSelection:selectedScholaEvent,
       priestAction,
       priestEntrance,
       independentlyObservedCanonStage:observedCanon,
@@ -2910,7 +2912,9 @@ export async function mountNativeReaderPreview({
       queue();
     },
     scholaMusicItinerary:()=>applyScholaLocalProgramme(buildScholaMusicItinerary({
-      cards:readerModel?.cards,
+      // An omitted Gloria, Credo, Requiem blessing, or optional Confiteor
+      // must not survive as a navigable music event for this Mass.
+      cards:readerModel?.cards.filter(visibleCardAllowed),
       form:prepared.session.resolvedMass.form,
       resolvedMass:prepared.session.resolvedMass,
       tracks:ready.scholaState?.trackIds??[],
@@ -2931,6 +2935,38 @@ export async function mountNativeReaderPreview({
         }
       }
       queue();
+    },
+    onScholaEventSelect:(eventId)=>{
+      const itinerary=applyScholaLocalProgramme(buildScholaMusicItinerary({
+        cards:readerModel?.cards.filter(visibleCardAllowed),
+        form:prepared.session.resolvedMass.form,
+        resolvedMass:prepared.session.resolvedMass,
+        tracks:ready.scholaState?.trackIds??[],
+        sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
+      }),scholaLocalProgramme);
+      const event=itinerary.supported
+        ? itinerary.events.find(item=>item.id===String(eventId)) : null;
+      if(!event || event.manualOnly || event.id==="BENEDICTUS_CONTINUOUS")return false;
+      if(event.kind==="ORGAN_OPTION" && (event.localPlan?.selected!==true ||
+        ["SOLO_FORBIDDEN","REQUIRES_EXACT_RITE_STAGE"].includes(event.organPermission?.status)))
+        return false;
+      if(event.kind==="LOCAL_OPTION" && event.localPlan?.selected!==true)return false;
+      // Explicit manual music selection, not priest-card movement or proof
+      // that the choir is currently performing this event.
+      scholaPinnedByCatchup=true;
+      if(event.kind==="CHANT"){
+        selectedScholaEvent=null;
+        ready.scholaState.selectTrack(event.trackId);
+      }else{
+        ready.scholaState.selectTrack(null);
+        selectedScholaEvent=Object.freeze({
+          id:event.id,kind:event.kind,label:event.localPlan?.title||event.label,
+          status:event.status,sourceRef:event.sourceRef,
+          observed:false,organPermission:event.organPermission?.status??null,
+        });
+      }
+      queue();
+      return true;
     },
     onScholaAdvance:()=>{
       const value=ready.scholaState.next();
@@ -2965,6 +3001,7 @@ export async function mountNativeReaderPreview({
       // Explicitly resume source-order expectations, not a claim that the
       // choir was heard starting or finishing a particular piece.
       scholaPinnedByCatchup=false;
+      selectedScholaEvent=null;
       const value=ready.scholaState.activateForCard(current);
       queue();return value;
     },
@@ -3322,6 +3359,7 @@ export async function mountNativeReaderPreview({
     getObservedPriestEvent:()=>currentObservedCuratedPriestEvent(),
     getCueState:()=>activeCueId ? ready.cueState.project(activeCueId) : null,
     getScholaState:()=>ready.scholaState.project(),
+    getSelectedScholaEvent:()=>selectedScholaEvent,
     getTransientState:()=>activeCueId ? ready.transientState.project(activeCueId) : ready.transientState.project(null),
     nextSchola:()=>{const value=ready.scholaState.next();queue();return value},
     previousSchola:()=>{const value=ready.scholaState.previous();queue();return value},
