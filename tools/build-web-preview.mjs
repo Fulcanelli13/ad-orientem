@@ -12,7 +12,6 @@ const disallowed=/^(?:\.|docs|tests|tools|research|legacy|review|reviews|node_mo
 // No source files are deleted; only copies inside dist/web-preview are omitted.
 const excludedResearchPaths=[
  "assets/staged",
- "data/research",
  "data/geography/research",
 ];
 
