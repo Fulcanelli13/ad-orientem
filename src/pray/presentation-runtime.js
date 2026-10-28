@@ -1802,6 +1802,20 @@ function renderAdoration(){
  if(ADOR.mode==='four'){
   const steps=fourSteps();content=`${presenceBar()}${guidedStage('four',steps,ADOR.fourStep,L('Return to silent adoration','Revenir à l’adoration silencieuse'))}${callout(esc(L('The Four Ends are a method for structuring prayer, not four tasks that earn completion.','Les quatre fins sont une méthode pour structurer la prière, non quatre tâches qui donnent un accomplissement.')),'rubric')}`;
  }
+ if(ADOR.mode==='night'){
+  const steps=nightHomeAsGuided(lang());
+  content=`<div class="aoNightHomeB29Opening" data-ao-home-night="fr-mateo">
+   <small>${esc(L('PRIVATE HOME · NOT THE RESERVED SACRAMENT','PRIÈRE AU FOYER · NON DEVANT LE SAINT-SACREMENT'))}</small>
+   <p>${esc(L('Fr Mateo’s voluntary monthly night watch: traditionally a private hour between 9 p.m. and 6 a.m. Use this guide when suitable; no membership, historical indulgence, or completed hour is certified.','Veillée mensuelle libre associée au père Mateo : historiquement une heure privée entre 21 h et 6 h. Utilisez ce guide selon vos circonstances ; aucune inscription, indulgence ancienne ou heure accomplie n’est certifiée.'))}</p>
+   <p>${esc(L('At home, an image of the Sacred Heart aids prayer. It is not Eucharistic exposition, Benediction or Christ sacramentally present in the picture.','Au foyer, une image du Sacré-Cœur soutient la prière. Elle ne constitue ni exposition eucharistique, ni Bénédiction, ni présence sacramentelle dans l’image.'))}</p>
+  </div>${guidedStage('night',steps,ADOR.nightStep,L('Return to Adoration choices','Revenir aux choix d’adoration'))}
+  ${adorationTimerDisclosure()}
+  <details class="aoAdorationOptionDisclosure" data-ao-night-home-source>
+   <summary>${esc(L('Historical practice, source and limits','Pratique historique, source et limites'))}</summary>
+   <p>${esc(L('These are Ad Orientem’s own English/French practical directions based on historical instructions, not a reproduction of the 1944 Holy Hour or invented words spoken by Christ. Father Mateo’s older enrollment/indulgence regulations are not current permissions. The original source recommends monthly night prayer, alone or together, but not under pain of sin. The time aid never certifies completion.','Il s’agit de conseils pratiques en anglais/français rédigés par Ad Orientem à partir des instructions historiques, non d’une reproduction de l’Heure Sainte de 1944 ni de paroles inventées du Christ. Les anciennes règles d’inscription et d’indulgences ne sont pas des autorisations actuelles. Le père Mateo propose la prière mensuelle de nuit, seul ou en famille, sans obligation sous peine de péché. Le minuteur ne certifie aucun accomplissement.'))}</p>
+   <p><a href="${esc(NIGHT_HOME_B29_SOURCE.onlineWitness)}" target="_blank" rel="noopener noreferrer">${esc(L('Read Father Mateo’s historical instructions and regulations','Lire les instructions et règlements historiques du père Mateo'))}</a></p>
+  </details>`;
+ }
  if(ADOR.mode==='treasury')content=`<div class="aoP435930LibraryMini">${['foundations_prayer_of_adoration','adoration_anima_christi','adoration_spiritual_communion','adoration_lord_i_am_not_worthy','benediction_o_salutaris','benediction_tantum_ergo','adoration_litany_blessed_sacrament'].map(id=>{const p=P(id);return p?`<button data-p435930-open-prayer="${id}"><b>${esc(isFr()?(p.titleFr||p.title):p.title)}</b><span>${esc(['en','fr','la'].filter(k=>p[k]).map(k=>k.toUpperCase()).join(' · '))}</span></button>`:''}).join('')}</div>`+eucharisticWitnessTreasury()+batch02SourceLinks('adoration-optional');
  const isGuided=['visit','holy','four','night'].includes(ADOR.mode);
  const stage=isGuided?(ADOR.mode==='visit'?ADOR.visitStep:ADOR.mode==='holy'?ADOR.holyStep:ADOR.mode==='night'?ADOR.nightStep:ADOR.fourStep):-1;
