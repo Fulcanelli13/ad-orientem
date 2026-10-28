@@ -379,7 +379,7 @@ try{
  await guidedChoice.tap();
  assert.equal(await page.locator("#aoPray435930.open .aoP435930StationConsider").count(),1,"Guided source prayer did not return");
  const stationOptions=page.locator("#aoPray435930.open details[data-ao-stations-options]");
- await stationOptions.locator("summary").tap();
+ await stationOptions.locator(":scope > summary").tap();
  await page.locator("#aoPray435930.open [data-p435930-station-public-posture]").evaluate(el=>{
   el.checked=true;el.dispatchEvent(new Event("change",{bubbles:true}));
  });
