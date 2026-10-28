@@ -25,11 +25,10 @@ const srv=http.createServer(async(req,res)=>{
 });
 await new Promise((ok,fail)=>{srv.once("error",fail);srv.listen(4295,"127.0.0.1",ok)});
 const cases=[
- {mode:"SIMPLE",lang:"en"},
- {mode:"SIMPLE",lang:"fr"},
+ {mode:"LIVE",lang:"en"},
+ {mode:"LIVE",lang:"fr"},
  {mode:"MISSAL",lang:"en"},
  {mode:"MISSAL",lang:"fr"},
- {mode:"LIVE",lang:"fr"}
 ];
 const findings={schema:"ao-reader-mode-language-parity-audit-v1",
  timestamp:new Date().toISOString(),scenarios:[],comparisons:[],limitations:[],errors:[]};
@@ -176,7 +175,7 @@ try{
   const localizedKyrie=test.lang==="fr"?"Seigneur, ayez pitié":"Lord, have mercy";
   assert.ok(kyrie.vernacular.includes(localizedKyrie),
     test.mode+"/"+test.lang+" did not render the expected translation");
-  if(test.mode==="SIMPLE"||test.mode==="LIVE"){
+  if(test.mode==="LIVE"){
    assert.equal(scenario.registered,scenario.focused,
      test.mode+"/"+test.lang+" contains unreadable source-cue paragraphs: "+JSON.stringify(scenario.focusGaps));
   }
@@ -191,7 +190,7 @@ try{
    dark:scenario.darkParagraphs,unpaired:scenario.unpaired.length,missalStateDrift:scenario.missalStateDrift.length}));
   await context.close();
  }
- for(const mode of ["SIMPLE","MISSAL"]){
+ for(const mode of ["LIVE","MISSAL"]){
   const en=findings.scenarios.find(x=>x.mode===mode&&x.lang==="en");
   const fr=findings.scenarios.find(x=>x.mode===mode&&x.lang==="fr");
   findings.comparisons.push({mode,enCards:en.modelCards,frCards:fr.modelCards,
@@ -202,9 +201,9 @@ try{
  }
  findings.limitations=[
   "This is a first-pass mode/language parity sweep for an ordinary sung Mass with a source-backed Proper fixture, not a certification of every liturgical day, local variant, or form.",
-  "LIVE English is certified in the separate exhaustive 259/259 audit; this run covers LIVE French and both languages in Simple/Missal.",
+  "LIVE English has a separate exhaustive source-cue audit; this run covers both reader modes in English and French.",
   "Missal is intentionally static; source cue progress must remain unchanged during scrolling, and visual brightness is assessed separately from ceremonial cues.",
-  "Simple/LIVE sampled scroll positions are a diagnostic screen, not proof every handoff pixel is traversed; any missing cues require a dense follow-up.",
+  "LIVE sampled scroll positions are a diagnostic screen, not proof every handoff pixel is traversed; any missing cues require a dense follow-up.",
   "Headings, rubrics and intentionally hidden translation faces are not interchangeable with reading paragraphs."
  ];
 } catch(e){findings.errors.push(String(e?.stack||e));throw e}
