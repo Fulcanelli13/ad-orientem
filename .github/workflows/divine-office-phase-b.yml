@@ -42,9 +42,10 @@ jobs:
           node --check scripts/office/research-french-directive-overlay.mjs
           node --check scripts/office/compare-french-directive-overlay.mjs
           node --check scripts/office/audit-recovered-french-allsouls.mjs
+          node --check scripts/office/audit-all-souls-prime-critical.mjs
           node --check scripts/office/audit-all-souls-proper-prayers.mjs
       - name: Calendar, Tenebrae and composition probe contracts
-        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-printed-rubric-pilot.mjs tests/divine-office-translation-risk.mjs tests/divine-office-french-directive-overlay.mjs tests/divine-office-french-provenance.mjs tests/divine-office-all-souls-prayers.mjs
+        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-printed-rubric-pilot.mjs tests/divine-office-translation-risk.mjs tests/divine-office-french-directive-overlay.mjs tests/divine-office-french-provenance.mjs tests/divine-office-all-souls-prime-critical.mjs tests/divine-office-all-souls-prayers.mjs
       - name: Source-cell HTML normalizer unit tests
         run: python3 -m unittest discover -s tests -p 'test_divine_office_normalizer.py' -v
 
@@ -178,6 +179,9 @@ jobs:
           node scripts/office/audit-recovered-french-allsouls.mjs \
             --baseline "$OUTPUT/all-souls" --candidate "$OUTPUT/all-souls-syntax" \
             --upstream "$UPSTREAM" --report "$OUTPUT/all-souls-syntax/provenance-review.json"
+          node scripts/office/audit-all-souls-prime-critical.mjs \
+            --candidate "$OUTPUT/all-souls-syntax" \
+            --report "$OUTPUT/all-souls-syntax/prime-critical-review.json"
           node --input-type=module -e '
             import {readFileSync} from "node:fs";
             const p=JSON.parse(readFileSync(process.env.OUTPUT+"/manifest.json","utf8"));
@@ -279,6 +283,13 @@ jobs:
           assert provenance["provenance"]["projectLicense"]=="MIT"
           assert provenance["independentlyCheckedPrintedTextCells"]==0
           assert provenance["verifiedTranslationCells"]==0 and provenance["published"]==0
+          prime=json.loads((Path(os.environ["OUTPUT"])/"all-souls-syntax"/"prime-critical-review.json").read_text(encoding="utf8"))
+          assert prime["schema"]=="ao.office.all-souls-prime-critical-review.v1"
+          assert prime["recipientScope"]["mismatch"]
+          assert not prime["martyrology2026_11_03TextVerified"]
+          assert not prime["martyrology1961VariationAppliedAndVerified"]
+          assert not prime["englishRecipientScopeReviewedAndApproved"]
+          assert not prime["readyForPublicReader"] and prime["published"]==0
           assert not provenance["textSuitableForPublicDeployment"]
           assert syntax_preview["published"]==0 and not syntax_preview["productionRouteRegistered"]
           syntax_risk=json.loads((Path(os.environ["OUTPUT"])/"all-souls-syntax"/"translation-risk.json").read_text(encoding="utf8"))
