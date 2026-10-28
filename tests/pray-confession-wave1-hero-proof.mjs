@@ -80,6 +80,20 @@ try{
   assert.ok(Math.abs(state.width/state.height-4096/3712)<.025,"painting aspect preserved "+width);
   assert.match(state.src,/confession-whole-(800|1600)-preview\.webp/,"verified reviewed file was loaded "+width);
   assert.equal(state.objectFit,"contain","no crop "+width);
+  const presentation=await page.locator(art).evaluate(el=>{
+    const figure=el.getBoundingClientRect();
+    const first=document.querySelector("#aoPray435930.open .aoP435930ConfessionReader [data-p435930-conf-path]");
+    const card=first?.getBoundingClientRect();
+    const caption=el.querySelector("figcaption")?.getBoundingClientRect();
+    return {figureHeight:figure.height,captionWidth:caption?.width||0,
+      firstChoiceTop:card?.top??Infinity,viewportHeight:innerHeight,
+      horizontalOverflow:document.documentElement.scrollWidth>innerWidth+2};
+  });
+  assert.ok(presentation.figureHeight<=(mobile?220:275),"artwork must not dominate opening "+width);
+  assert.ok(presentation.captionWidth>=(mobile?125:180),"credit cannot collapse "+width);
+  assert.ok(presentation.firstChoiceTop<(mobile?650:780),
+    "at least first actual Confession choice should start within opening viewport "+width);
+  assert.equal(presentation.horizontalOverflow,false,"no document horizontal overflow "+width);
   assert.ok(state.boxLeft>=-1&&state.boxRight<=state.viewport+1,"horizontal overflow "+width);
   assert.ok(!mobile||state.drawnHeight<=221,"hero must not monopolize mobile screen "+width);
   assert.equal(await page.locator(conf+" [data-p435930-conf-path]").count(),3);
