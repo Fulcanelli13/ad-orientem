@@ -2869,7 +2869,7 @@ function onClick(e){
   return;
  }
  const b=e.target.closest?.('button,[data-p435930-flip]');if(!b)return;
- if(b.hasAttribute('data-p435930-session-language')&&['adoration','benediction','stations','confession'].includes(view)||view==='fiveWounds'){
+ if(b.hasAttribute('data-p435930-session-language')&&(['adoration','benediction','stations','confession'].includes(view)||view==='fiveWounds')){
   const current=mount(),outerScroll=current?.scrollTop||0;
   const innerScroll=current?.querySelector('.aoDevoCardScroll')?.scrollTop||0;
   praySessionLanguage=isFr()?'en':'fr';
