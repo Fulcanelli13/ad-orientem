@@ -44,10 +44,15 @@ try {
    latinNamedMartyrs:/martyrum/i.test(String(x?.lat??x?.la??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")),
    frenchVirginLabel:/vierges et martyres/i.test(String(x?.fr??"")),
    frenchNameCount:(String(x?.fr??"").match(/N\./g)||[]).length,
-   latinNameCount:(String(x?.lat??x?.la??"").match(/N\./g)||[]).length
+   latinNameCount:(String(x?.lat??x?.la??"").match(/N\./g)||[]).length,
+   latinLeading:String(x?.lat??x?.la??"").slice(0,65),
+   frenchLeading:String(x?.fr??"").slice(0,70)
   });
   const inspect=(p,lang)=>({
    sourcePath:p?.sourcePath??null,
+   formDecision:p?.commemorationFormDecision??null,
+   appliedCommemorations:p?.appliedCommemorations?.map(x=>({path:x?.path,prayerSourcePath:x?.prayerSourcePath}))??null,
+   sourceCalendarCommemorations:p?.calendarCommemorations?.map(x=>({path:x?.path,prayerSourcePath:x?.prayerSourcePath,inseparable:x?.inseparable}))??null,
    collect:values(p,"collects").map(describeRow),
    secret:values(p,"secrets").map(describeRow),
    postcommunion:values(p,"postcommunions").map(describeRow),
@@ -105,6 +110,20 @@ try {
    note:"False means NOT ESTABLISHED by this read-only probe, not globally impossible."};
  });
 }finally{await browser?.close();await new Promise(ok=>server.close(ok));}
+await mkdir(resolve(root,"artifacts/mass"),{recursive:true});
+await writeFile(resolve(root,"artifacts/mass/1962-plural-martyrs-live-owner-audit.json"),
+ JSON.stringify(output,null,2)+"\n","utf8");
+for(const row of output.observedDays){
+ console.log("MARTYRS_OWNER_DIAGNOSTIC="+JSON.stringify({
+  date:row.date,mainId:row.mainId,sourcePath:row.sourcePath,
+  sourceCommemorations:row.calendarCommemorations,
+  decision:row.reader?.formDecision,
+  applied:row.reader?.appliedCommemorations,
+  sourceRows:row.reader?.sourceCalendarCommemorations,
+  collects:row.reader?.collect,secrets:row.reader?.secret,
+  conflict:row.reader?.sourceConflict
+ }));
+}
 assert.equal(output.schema,"AO_1962_PLURAL_MARTYRS_LIVE_OWNER_OBSERVATIONS_V1");
 assert.equal(output.observedDays.length,3);
 const mar6=output.observedDays.find(x=>x.date==="2026-03-06");
