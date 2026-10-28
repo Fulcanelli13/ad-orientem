@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {DIVINUM_OFFICIUM_OFFICE_PIN} from "../src/office/generator-probe-contract.js";
 import {SUNDAY_VESPERS_SLOTS,identifySundayVespers,auditNativeSungVespers} from "../src/office/sung-vespers-gate.js";
 import {SOURCES,PILOT_SUNDAY,inspectCandidateGabc,inspectAdventPsalmTemplate} from "../scripts/office/audit-sunday-chant.mjs";
+import {auditSundayPair,inspectVespersText} from "../scripts/office/audit-advent-vespers-text.mjs";
 
 const makeOffice=()=>({
   schema:"ao.office.source-cells.v1",language:"la",hour:"VESPERS",
@@ -96,4 +97,43 @@ test("Advent I candidate inventory includes scores but not presumed psalm-tone o
   assert.equal(result.magnificat.tone,8);
   assert.equal(result.psalms.every(x=>x.scoreVerified===false),true);
   assert.throws(()=>inspectAdventPsalmTemplate("\\definepsalm{1}{109}{8}{G}"),/INCOMPLETE/);
+});
+
+test("Second Advent Vespers score incipits match only the correct Sunday selection",()=>{
+  const latin=(date,psalms,magn)=>({
+    schema:"ao.office.source-cells.v1",date,language:"la",hour:"VESPERS",
+    status:"STRUCTURED_UNVERIFIED",publishable:false,
+    sourceRevision:DIVINUM_OFFICIUM_OFFICE_PIN,
+    headline:"Dominica I Adventus",
+    sections:[
+      {index:1,sourceCellId:"Vespera1",semantic:{role:"OPENING"},text:"Incipit"},
+      ...["In illa die","Iucundare","Ecce Dominus veniet","Omnes","Ecce veniet"].map((a,i)=>({
+        index:i+2,sourceCellId:"Vespera"+(i+2),semantic:{role:"PSALMODY"},
+        text:"Ant. "+a+" * laudamus.\\nPsalmus "+psalms[i][0]+(psalms[i][1]?"("+psalms[i][1]+")":"")+" [1]"
+      })),
+      {index:7,sourceCellId:"Vespera7",semantic:{role:"CHAPTER_HYMN_VERSE"},text:"Capitulum"},
+      {index:8,sourceCellId:"Vespera8",semantic:{role:"GOSPEL_CANTICLE"},
+        text:"Canticum: Magnificat\\nAnt. "+magn+" * gratia"},
+      {index:9,sourceCellId:"Vespera9",semantic:{role:"PRAYER"},text:"Oratio"},
+      {index:10,sourceCellId:"Vespera10",semantic:{role:"CONCLUSION"},text:"Conclusio"},
+    ]
+  });
+  const first=latin("2026-11-28",[[109,null],[143,"9-15"],[144,"1-9"],[144,"10-13"],[144,"13b-21"]],"Ecce nomen Domini");
+  const second=latin("2026-11-29",[[109,null],[110,null],[111,null],[112,null],[113,null]],"Ne timeas Maria");
+  const result=auditSundayPair({first,second});
+  assert.equal(result.textScoreCandidatesAligned,true);
+  assert.equal(result.requiresDistinctFirstVespersMusic,true);
+  assert.deepEqual(result.firstAntiphonsMatched,[true,true,true,true,true]);
+  assert.deepEqual(result.secondAntiphonsMatched,[true,true,true,true,true]);
+  assert.equal(result.scoresPublished,0);
+  assert.equal(result.sungButtonEnabled,false);
+  const wrong={...second,date:"2026-11-30"};
+  assert.throws(()=>auditSundayPair({first,second:wrong}),/DATES_MISMATCH/);
+  const mismatched=latin("2026-11-29",[[109,null],[110,null],[111,null],[112,null],[113,null]],"Different chant");
+  const incorrect=auditSundayPair({first,second:mismatched});
+  assert.equal(incorrect.secondMagnificatMatched,false);
+  assert.equal(incorrect.textScoreCandidatesAligned,false);
+  const missing={...second,sections:second.sections.map(s=>
+    s.sourceCellId==="Vespera3"?{...s,text:"Ant. Iucundare"}:s)};
+  assert.throws(()=>inspectVespersText(missing),/PSALM_NUMBER_MISSING/);
 });
