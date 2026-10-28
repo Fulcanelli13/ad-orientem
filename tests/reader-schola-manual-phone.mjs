@@ -123,6 +123,7 @@ try{
      "Last Schola phrase cannot be finished from the actual reader");
    await page.locator("[data-schola-next]").click();
    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.complete===true);
+   await page.waitForFunction(()=>document.querySelector("[data-schola-next]")?.disabled===true);
    assert.equal(await page.locator("[data-schola-next]").isDisabled(),true);
    assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId),
      atLastPhrase.card,"Finishing choir track moved the priest reader");
