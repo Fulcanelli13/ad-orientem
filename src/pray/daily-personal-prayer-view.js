@@ -9,6 +9,8 @@ export function personalDailyPrayerCard(row,plan,{esc,L,prayerParagraphs,source}
  L("Source edition; translations individually labelled in research","Édition de référence ; traductions attribuées dans la recherche");
  const body=row.text?prayerParagraphs(row.text):
  '<p class="aoTP381TextParagraph">'+esc(L("Exact text unavailable in the selected language; nothing substituted.","Texte exact indisponible dans cette langue ; aucune substitution."))+'</p>';
+ const twoFaces=Boolean(row.text&&row.latinText&&row.language!=="la"&&row.text!==row.latinText);
+ const prayerBody=twoFaces?'<button type="button" data-tp381-flip aria-label="'+esc(L("Switch prayer language","Changer la langue de la prière"))+'"><span data-face-v>'+body+'</span><span data-face-la hidden>'+prayerParagraphs(row.latinText)+'</span></button>':'<div class="aoTP381Reader">'+body+'</div>';
  const matches=plan.availableVariants.filter(x=>x.slot===row.sourceId);
  let variants="";
  if(matches.length){
@@ -20,7 +22,7 @@ export function personalDailyPrayerCard(row,plan,{esc,L,prayerParagraphs,source}
  }
  return '<article class="aoTP381PrayerCard" data-ao-personal-prayer="'+esc(row.sourceId)+'" data-ao-personal-source="'+esc(row.replacementId||row.sourceId)+'">'+
  '<h3>'+esc(row.title)+'</h3><small class="aoDailyPersonalProvenance">'+esc(note)+'</small>'+
- '<div class="aoTP381Reader">'+body+'</div>'+variants+source(row.sourceLabel,row.sourceUrl)+'</article>';
+ prayerBody+variants+source(row.sourceLabel,row.sourceUrl)+'</article>';
 }
 export function dailyPersonalList(rows,{esc,L,isFr}){
  return '<div class="aoTP381PrayerList" data-ao-personal-list>'+rows.map((r,i)=>
