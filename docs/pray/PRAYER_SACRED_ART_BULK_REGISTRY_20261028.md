@@ -212,3 +212,23 @@ Visual triage from the six sheets, not final pristine acceptance:
 **12** source photographs (ten primary, two supplemental) therefore form a *first visual-review cohort*, NOT 12 pristine photographs. None has undergone full curator-grade native-fidelity or photo-rights signoff. **0** pristine certifications, **0** production releases, **€0**. All 22 approved painting identities, 31 sections and 118 placement actions remain untouched. A registered Morlete Ruiz placement exception retains its historical decision.
 
 **Batch 5 priority**: process all four clean-boundary cases together, examine any available already-reviewed painting-only derivatives without cutting paint, and independently resolve photographer/source rights for the 12 first-cohort photographs. Research-only derivatives may be retained with full source SHA/crop provenance; nothing auto-activates in the app.
+
+## Batch 5 — four painted-boundary proofs and twelve photograph-rights source chains
+
+[Four-source boundary register](../../assets/staged/prayer-art-b5-four-boundary-candidates-20261028/boundary-proofs.json) · [Twelve-source rights evidence](../../data/research/prayer-art-b5-twelve-photo-source-rights-evidence-20261028.v1.json) · [four-case SHA/crop workflow PASS](https://github.com/Fulcanelli13/ad-orientem/actions/runs/40735267373).
+
+Four previously preserved original paintings were re-fetched from frozen refs, hash-validated and documented. The resulting 8 proposed rectangular crop coordinates include **three non-accepted insets each** for Champaigne's *Annunciation* and Ingres's *Virgin Adoring the Host*, **one lossless, native-size candidate** removing part of the non-art white surround around Benson's *Salvator Mundi*, and **one no-op rectangular proposal** for Lotto's *Madonna del Rosario*. The no-op is evidence that rectangular trim cannot solve Lotto's white upper corners without risking the arched painted field. All source SHA-256s remain unchanged; only the Benson rectangle reduced outer white space. **No proposed crop has been called pristine.** All proof contact sheets and derivative SHA-256 values are committed to research Git.
+
+The 12-source rights review recorded original image identifiers, source page URLs and rights-category leads:
+
+| Image source category | Count | Release implication |
+|---|---:|---|
+| Wikimedia Commons file-page PD-Art faithful two-dimensional reproduction | 10 | Source evidence exists, but exact-photo rights/jurisdictional review remains |
+| National Gallery of Art's object-specific Open Access policy (Murillo *Prodigal Son*) | 1 | Strong institutional image-use evidence; exact archived-byte chain and photo QA remain |
+| MNAC *Virgin of the Seven Sorrows*, object marked 'Domini públic' | 1 | Artwork status established; exact archived source-photo rights still need proof |
+
+Commons PD-Art notices rely on the Commons interpretation of faithful reproductions, with possible national-law differences; they are not a universal licence issued by each museum. All 12 photograph-source records therefore stay `photo_rights_final_certified=false`.
+
+**Release state remains unchanged:** 22 immutable primary hero choices, 20 pinned archived primary originals, two unarchived primary originals (Cortona and Frère), 118 review placements across 31 Prayer sections, seven outstanding acquisition/source groups, zero final pristine certifications, zero production activation and €0 spent.
+
+The next quality gate is actual painted-boundary signoff (not arbitrary inset cropping) and source-image fidelity. The curved Lotto altarpiece needs a conservative transparency matte with all fifteen medallions intact, not a rectangle trimming the arch.
