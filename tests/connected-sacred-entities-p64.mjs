@@ -42,7 +42,9 @@ assert.ok(has(editorial("place:FR:sanctuaire-sacre-coeur-paray"),
   "DOCUMENTED_PERSON_SHRINE_ASSOCIATION","saint:margaret-mary-alacoque"));
 
 const anne=place("place:FR:sainte-anne-d-auray");
-assert.ok(!has(anne,"PLACE_ATTESTED_CUSTOM","DEV-007"),\n  "Grand Pardon attestation is CONTEXT_ONLY, not a published Customs article");\nassert.equal(data.customs.customs.find(x=>x.custom_id==="DEV-007").publication_state,"CONTEXT_ONLY");
+assert.ok(!has(anne,"PLACE_ATTESTED_CUSTOM","DEV-007"),
+  "Grand Pardon attestation is CONTEXT_ONLY, not a published Customs article");
+assert.equal(data.customs.customs.find(x=>x.custom_id==="DEV-007").publication_state,"CONTEXT_ONLY");
 assert.ok(!anne.some(x=>x.to.type==="person"),
   "name in shrine text does not establish a canonical saint ID");
 
