@@ -1133,13 +1133,8 @@ button.ao-schola-control{cursor:pointer}
   }
   .ao-reader-shell[data-mode="MISSAL"]{--ao-missal-column-gap:14px}
 }
-/* LIVE: one illuminated reading paragraph; adjacent passages recede to 38%
-   and distant passages to 18%. Cue ownership is unchanged. */
-.ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph{opacity:.18}
-.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph{opacity:.18}
-.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"]{opacity:1}
-.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph{opacity:.38}
-.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:.38}
+/* LIVE illumination is determined only by data-reading-position below.
+   data-active remains independent source-event state and never lights text. */
 /* Fixed-height LIVE cards must have genuine paragraph runway, even when
    source text is shorter than the viewport. Percentage is relative to the
    scroller content box, not measured during transient ribbon/dock layout. */
@@ -1147,17 +1142,8 @@ button.ao-schola-control{cursor:pointer}
   min-height:calc(100% + var(--ao-min-reading-travel,72px));
 }
 
-/* One visible reading focus may be a Proper verse without a ceremonial
-   cue. Keep gesture/cinematic source state entirely in data-active, while
-   giving this uncued text a separate geometry-owned brightness channel. */
-.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body[data-ao-visual-focus="uncued"] .ao-reader-paragraph[data-active="true"]{
-  opacity:.18;color:var(--ao-text);transform:none;text-shadow:none
-}
-.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body[data-ao-visual-focus="uncued"] .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph,
-.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body[data-ao-visual-focus="uncued"] .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:.18}
-.ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-reading-active="true"]{
-  opacity:1!important;color:#f7f8f4;transform:translateX(2px);text-shadow:0 0 26px rgba(225,238,228,.065)
-}
+/* All prayer and Proper paragraphs share one reading-position channel.
+   Non-prayer rubrics are identified separately and stay readable. */
 
 /* Rubrics are identifiable by their quiet inset and rule, not a repeated
    seven-pixel RUBRIC heading on every paragraph. Keep the complete source. */
@@ -1239,7 +1225,6 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell .ao-approved-priest-head-bow-rubric-art[hidden]{display:none}
 
 
-.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-kind="RUBRIC"]:not([data-active="true"]){opacity:.64}
 
 /* Keep full-sized edge targets, but let prayer text rather than arrows own
    the resting state. Touch-focus/keyboard and edge-handoff remain salient. */
@@ -1289,35 +1274,33 @@ button.ao-schola-control{cursor:pointer}
   .ao-reader-paragraph,.ao-rail-item,.ao-reader-nav button{transition:none!important}.ao-prayer-card[data-card-arrival]{animation:none!important}
   .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner,.ao-rail-item[data-channel="bell"][data-major="true"] .ao-bell-icon{animation:none!important}
 }
-/* LIVE reading illumination. The current prayer is fully legible; the
-   following prayer remains readable in anticipation, the previous paragraph
-   recedes gently, and distant text never falls below 32% opacity.
-   Position is assigned to EVERY readable paragraph by one shared geometry
-   tracker. Ceremonial data-active only drives source-owned liturgical state. */
+/* The reading tracker owns exactly one visual focus. Keep its opacity
+   independent of data-active (priest/faithful ceremonial cue). This is the
+   single LIVE opacity contract: current 1, next .65, previous .55, distant
+   .32, source rubrics .64. No geometry-moving text transform on scroll. */
 #ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph{
-  opacity:.32
+  opacity:.32!important;
+  transform:none!important;
+  text-shadow:none;
+  transition:opacity .32s cubic-bezier(.22,.68,.26,1),color .16s ease,text-shadow .32s ease
 }
 #ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
-  .ao-reader-paragraph[data-active="true"]:not([data-reading-position="current"]){
-  opacity:.32;color:var(--ao-text);transform:none;text-shadow:none
-}
+  .ao-reader-paragraph[data-reading-position="distant"]{opacity:.32!important}
 #ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
-  .ao-reader-paragraph[data-reading-position="distant"]{opacity:.32}
+  .ao-reader-paragraph[data-reading-position="rubric"]{opacity:.64!important}
 #ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
-  .ao-reader-paragraph[data-reading-position="rubric"]{opacity:.64}
+  .ao-reader-paragraph[data-reading-position="previous"]{opacity:.55!important}
 #ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
-  .ao-reader-paragraph[data-reading-position="previous"]{opacity:.55}
-#ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
-  .ao-reader-paragraph[data-reading-position="next"]{opacity:.65}
+  .ao-reader-paragraph[data-reading-position="next"]{opacity:.65!important}
 #ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
   .ao-reader-paragraph[data-reading-position="current"]{
-  opacity:1;color:#f7f8f4;transform:translateX(1px);
+  opacity:1!important;color:#f7f8f4;
   text-shadow:0 0 26px rgba(225,238,228,.04)
 }
-/* Preserve a visible floor for instructions that do not participate in
-   reading focus, without giving them false source-event ownership. */
+/* Source directions remain independently legible, never promoted to the
+   active prayer simply because they carry a ceremonial source cue. */
 #ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
-  .ao-reader-paragraph[data-kind="RUBRIC"]:not([data-reading-position="current"]){opacity:.64}
+  .ao-reader-paragraph[data-kind="RUBRIC"]{opacity:.64!important}
 
 /* The persistent Schola panel may be resized/hidden, but it must not lie
    across prayer rows in the visual scroll window. Reserve real viewport
