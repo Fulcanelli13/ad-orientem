@@ -1,4 +1,4 @@
-name: Divine Office Phase B — pinned generator pilot
+name: Divine Office research — text, reader and native chant pilot
 
 on:
   pull_request:
@@ -7,6 +7,7 @@ on:
       - 'scripts/office/**'
       - 'tests/divine-office-*.mjs'
       - 'tests/test_divine_office_normalizer.py'
+      - 'docs/DIVINE-OFFICE-PHASE-A-2026-10-28.md'
       - '.github/workflows/divine-office-phase-b.yml'
   workflow_dispatch:
 
@@ -141,6 +142,9 @@ jobs:
           assert doc["alignmentSamples"]==32, doc["alignmentSamples"]
           assert doc["published"]==0 and doc["liturgicallyVerified"]==0
           from pathlib import Path
+          advent=json.loads((Path(os.environ["OUTPUT"])/"advent-vespers"/"normalized-manifest.json").read_text(encoding="utf8"))
+          assert advent["count"]==6 and advent["alignmentSamples"]==2 and advent["structurallyAligned"]==2
+          assert advent["published"]==0 and advent["liturgicallyVerified"]==0
           previews=json.loads((Path(os.environ["OUTPUT"])/"preview"/"preview-manifest.json").read_text(encoding="utf8"))
           assert previews["pages"]==64 and previews["published"]==0 and previews["researchOnly"]
           print("Office normalization research manifest valid: 96 documents, 32 trilingual groups, zero published.")
