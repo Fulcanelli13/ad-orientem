@@ -1,0 +1,177 @@
+{
+  "schema": "ao.pray.b23.st_joseph_seven_sorrows_joys.v1",
+  "asOf": "2026-10-28",
+  "candidateId": "AO-AQ-053",
+  "parallelCandidateId": "AO-AQ-064",
+  "sourceWork": "Seven Sorrows and Seven Joys of Saint Joseph",
+  "identity": "RACCOLTA_SEVEN_PAIRED_PRAYERS_NOT_ST_JOSEPH_NOVENA",
+  "sourceEditionCrosswalk": [
+    {
+      "edition": 1857,
+      "entryNo": 115,
+      "canonicalLabel": "Seven Dolours and Seven Joys",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Raccolta_(1857)/Index",
+      "evidenceStatus": "DIGITAL_INDEX_AND_HISTORICAL_TEXT_WITNESS_NOT_FACSIMILE_COLLATED"
+    },
+    {
+      "edition": 1910,
+      "entryNo": 300,
+      "canonicalLabel": "Seven Sorrows and Seven Joys",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Raccolta_(1910)",
+      "facsimileLead": "https://commons.wikimedia.org/wiki/File:Theraccoltaorcol00unknuoft.djvu",
+      "sourceUrlDigitalTypeset": "https://www.saintsbooks.net/books/The%20Raccolta%20-%201910.pdf",
+      "evidenceStatus": "COMPLETE_DIGITAL_TEXT_PLUS_REAL_SCAN_LOCATION_NOT_PAGE_IMAGE_COLLATED"
+    }
+  ],
+  "commentary": "The numbers 115 and 300 are edition-specific references to this devotion. Entry 301 in 1910 is a distinct generic Novena of St Joseph, not the seven-sorrow exercise. Never label the exercise a nine-day source form.",
+  "sevenPartBasis": "1910 §300, seven Roman-numeral prayer paragraphs followed individually by Pater, Ave, Gloria, then closing antiphon, ℣, ℟, collect.",
+  "recurringPrayerIds": [
+    "foundations_our_father",
+    "foundations_hail_mary",
+    "foundations_glory_be"
+  ],
+  "mysteries": [
+    {
+      "position": 1,
+      "sorrow": "Joseph's uncertainty about Mary's pregnancy",
+      "joy": "The angel reveals the Incarnation",
+      "anchors": [
+        "Matthew 1:18-25"
+      ],
+      "sourcePhrase": "PURE spouse of most holy Mary",
+      "sourceParagraph": "I",
+      "requiredPrayers": 3
+    },
+    {
+      "position": 2,
+      "sorrow": "The poverty of the Birth",
+      "joy": "The angelic hymn at Bethlehem",
+      "anchors": [
+        "Luke 2:1-14"
+      ],
+      "sourcePhrase": "MOST blessed Patriarch",
+      "sourceParagraph": "II",
+      "requiredPrayers": 3
+    },
+    {
+      "position": 3,
+      "sorrow": "The pain at the Circumcision",
+      "joy": "The holy Name of Jesus",
+      "anchors": [
+        "Luke 2:21"
+      ],
+      "sourcePhrase": "O THOU who wast ever most obedient",
+      "sourceParagraph": "III",
+      "requiredPrayers": 3
+    },
+    {
+      "position": 4,
+      "sorrow": "Simeon's prophecy of sufferings",
+      "joy": "Salvation and resurrection foretold",
+      "anchors": [
+        "Luke 2:22-35"
+      ],
+      "sourcePhrase": "MOST faithful Saint",
+      "sourceParagraph": "IV",
+      "requiredPrayers": 3
+    },
+    {
+      "position": 5,
+      "sorrow": "The flight into Egypt",
+      "joy": "Jesus' presence and the overthrow of Egypt's idols in the devotional text",
+      "anchors": [
+        "Matthew 2:13-15"
+      ],
+      "sourcePhrase": "MOST watchful Guardian",
+      "sourceParagraph": "V",
+      "requiredPrayers": 3,
+      "scripturalCaution": "The fall of the Egyptian idols is a devotional/hagiographic tradition, not stated in Matthew 2; do not display it as a direct biblical verse."
+    },
+    {
+      "position": 6,
+      "sorrow": "Fear of Archelaus after the return from Egypt",
+      "joy": "Reassurance and family life at Nazareth",
+      "anchors": [
+        "Matthew 2:19-23"
+      ],
+      "sourcePhrase": "ANGEL on earth",
+      "sourceParagraph": "VI",
+      "requiredPrayers": 3
+    },
+    {
+      "position": 7,
+      "sorrow": "Loss of the Child Jesus for three days",
+      "joy": "Finding Jesus in the Temple",
+      "anchors": [
+        "Luke 2:41-52"
+      ],
+      "sourcePhrase": "EXAMPLE of holy living",
+      "sourceParagraph": "VII",
+      "requiredPrayers": 3
+    }
+  ],
+  "originalClosure": {
+    "afterEachPart": [
+      "Pater noster",
+      "Ave Maria",
+      "Gloria Patri"
+    ],
+    "afterAllParts": [
+      "Antiphon: Jesus Himself was about thirty years old, being, as was supposed, the son of Joseph",
+      "Versicle: Pray for us, holy Joseph",
+      "Response: That we may be made worthy of the promises of Christ",
+      "Collect: O God, who in Thine ineffable providence didst vouchsafe to choose blessed Joseph ..."
+    ],
+    "originalTextSpan": "1910 English witness §300, printed p. 274–275 provisional, digital transcription PDF viewer pp.129–130",
+    "wholeSequenceRequired": true,
+    "indulgenceNote": "All printed 1910 indulgence conditions are historical and not evidence of current grants."
+  },
+  "useModes": {
+    "completeSequence": "Read all seven historical prayer paragraphs, each immediately followed by one canonical Our Father, Hail Mary and Glory Be, and original final antiphon/℣/℟/collect",
+    "sevenConsecutiveSundays": "Historical alternative repetition pattern; neither required nor equated to seven-day novena",
+    "genericNovena": "Distinct Raccolta §301 and existing Novenas.st_joseph owner; never overwrite"
+  },
+  "existingOwner": "Existing St Joseph novena + St Joseph canonical prayers; guide should be a contextual guided devotion or source-owned optional path, not a new top-level family",
+  "release": {
+    "status": "STRUCTURE_AND_DIGITAL_WITNESS_CHECKED_NO_PUBLICATION",
+    "completeSevenPrayerTextsImported": false,
+    "originalPrintImageCollation": false,
+    "frenchTextVerified": false,
+    "latinTextVerified": false,
+    "translationGenerated": false,
+    "uiRouteAdded": false,
+    "fullClosureImported": false,
+    "permissionsOrLicenseCertified": false
+  },
+  "comparisons": [
+    {
+      "witness": "1857 Raccolta §115",
+      "finding": "same seven-pair identity and prayer sequence; English wording belongs to different edition",
+      "status": "STRUCTURAL_MATCH_TEXT_VARIANTS_UNCOLLATED"
+    },
+    {
+      "witness": "1910 Raccolta §300",
+      "finding": "seven complete prayer paragraphs I–VII plus three repeated canonical prayers and original closing prayers",
+      "status": "DIGITAL_TEXT_COMPLETE_IMAGE_COLLATION_PENDING"
+    },
+    {
+      "witness": "Oblates of St Joseph web",
+      "url": "https://www.osjusa.org/prayers-to-st-joseph/seven-sorrows-and-joys-of-st.-joseph",
+      "finding": "modern leader-response paraphrase and different collect; cannot be substituted verbatim for 1910 text",
+      "status": "SEPARATE_FORM_NOT_SOURCE_OWNER"
+    },
+    {
+      "witness": "Pious Union illustrated seven Sundays PDF",
+      "url": "https://uploads.weconnect.com/mce/5994e39b009fc3e1a82400b36732a5b9ba86b9bf/PiousUnionofStJoseph/THE%20SEVEN%20SORROWS%20AND%20SEVEN%20JOYS%20OF%20ST.%20JOSEPH.pdf",
+      "finding": "modern illustrated seven-Sunday delivery with revised English diction; source identity cannot be presumed identical",
+      "status": "SECONDARY_REVIEW_ONLY"
+    }
+  ],
+  "pendingGates": [
+    "Open photographed 1910 original page at the numbered no. 300 in public-domain DjVu and certify all I–VII paragraph and final antiphon/collect text word-for-word",
+    "Confirm final collect and each Pater/Ave/Gloria link against current canonical 48 owner, not copied body text",
+    "Separate historical seven-consecutive-Sunday indulgence practice from free standalone prayer sequence and current canon law",
+    "Preserve original EN only until 1857/1910 verified French/Latin source witnesses found; no AI translations",
+    "Check existing St Joseph programme UI and launch this as one optional sequence without modifying existing nine-day programme"
+  ]
+}
