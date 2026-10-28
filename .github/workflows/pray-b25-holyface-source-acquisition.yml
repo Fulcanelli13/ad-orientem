@@ -6,6 +6,11 @@ on:
     paths:
       - tools/pray/collate-holy-face-novena-1887.py
       - .github/workflows/pray-b25-holyface-source-acquisition.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - tools/pray/collate-holy-face-novena-1887.py
+      - .github/workflows/pray-b25-holyface-source-acquisition.yml
 permissions:
   contents: write
 jobs:
@@ -16,6 +21,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
+          ref: research/pray-b25-holy-face-1887-full-text-acquisition-20261029
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
