@@ -39,7 +39,13 @@ for(const id of ids){
     assert.match(h.englishSource.witnessStatus,/1842_BILINGUAL_PRINTED/);
     assert.match(h.englishSource.editorialNote,/Good Friday/);
     assert.match(h.languageStatus,/1842_ENGLISH_PASSION_HYMN_EXCERPT/);
-  }else if(id==="o_sol_salutis"){
+  }else if(id==="ex_more_docti"||id==="lustra_sex"){
+      assert.match(h.fr,id==="ex_more_docti"?/Fidèles à la tradition mystérieuse/:/Après avoir vécu six lustres/);
+      assert.match(h.frenchSource.witnessStatus,/NOT_YET_PHYSICAL_PAGE_COLLATED/);
+      assert.match(h.frenchSource.secondaryWitness.pdf,/liberius\.net/);
+      if(id==="lustra_sex")assert.match(h.frenchSource.editorialNote,/Good Friday/);
+    }
+    if(id==="o_sol_salutis"){
     assert.equal(h.en.split(/\n\s*\n/).length,5);
     assert.match(h.en,/O Jesus, thou Sun of the world/);
     assert.equal(h.englishSource.translator,"Dom Laurence Shepherd");
@@ -53,8 +59,8 @@ for(const id of ids){
     assert.match(h.englishSource.editorialNote,/not a Catholic-authorized Office text/i);
     assert.equal(h.recension,"PRE_1632_CONDITIONAL");
   }else assert.equal(h.en,undefined,"Do not invent a modern English edition: "+id);
-  if(["audi_benigne","vexilla_regis","o_sol_salutis"].includes(id)){
-    assert.equal(h.fr.split(/\n\s*\n/).length,id==="vexilla_regis"?7:5);
+  if(["audi_benigne","vexilla_regis","o_sol_salutis","ex_more_docti","lustra_sex"].includes(id)){
+    assert.equal(h.fr.split(/\n\s*\n/).length,id==="vexilla_regis"?7:id==="ex_more_docti"?9:id==="lustra_sex"?6:5);
     assert.match(h.frenchSource.work,/Guéranger/);
     assert.match(h.frenchSource.witnessStatus,/(?:NOT_YET_PHYSICAL_PAGE_COLLATED|PRINTED_PAGE_UNCHECKED)/);
     if(id==="o_sol_salutis"){
@@ -74,7 +80,7 @@ for(const id of ids){
     assert.match(h.frenchSource.work,/Guéranger.*1903/);
     assert.match(h.frenchSource.witnessStatus,/NOT_YET_PHYSICAL_PAGE_COLLATED/);
     assert.equal(h.languageStatus,"HISTORIC_LATIN_CASWALL_1849_ENGLISH_GUERANGER_1903_FRENCH");
-  }else if(!["vexilla_regis","o_sol_salutis"].includes(id))assert.equal(h.fr,undefined,"Other historical French translations remain unverified: "+id);
+  }else if(!["vexilla_regis","o_sol_salutis","lustra_sex","ex_more_docti"].includes(id))assert.equal(h.fr,undefined,"Other historical French translations remain unverified: "+id);
   if(!h.en)assert.equal(h.languageStatus,"HISTORIC_LATIN_ONLY_EN_FR_SOURCE_REQUIRED");
   assert.ok(!Object.keys(SACRED_HYMNS_V381).includes(id),"Original title collision "+id);
 }

@@ -487,7 +487,17 @@ In Heaven be glory, praise,
 And honour given, alike to
 Father, and to Son, and Paraclete,
 The Three in One; yea, let the adoring world
-Proclaim of Three and One the glorious Name. Amen.`,englishSource:{"work":"Devotions commemorative of the Most Adorable Passion of Our Lord and Saviour Jesus Christ","imprint":"London: James Burns, 1842","location":"The Reproaches, sung on Good Friday; Pange lingua verses Lustra sex through doxology","printedPages":"lv–lvi","pdfPagesZeroBased":[126,127],"url":"https://upload.wikimedia.org/wikipedia/commons/e/ed/Devotions_commemorative_of_the_most_adorable_Passion_of_Our_Lord_and_Saviour_Jesus_Christ-_translated_from_Catholic_sources_%28IA_DevotionsCommemorativeOf%29.pdf","witnessStatus":"ORIGINAL_1842_BILINGUAL_PRINTED_PAGES_INSPECTED","editorialNote":"Historical English rendering extracted from the 1842 Good Friday hymn; repeated responses compressed into corresponding Crux fidelis stanza for reading, not an independently attested standalone Lauds setting; keep original source linked."},languageStatus:"HISTORICAL_LATIN_PLUS_1842_ENGLISH_PASSION_HYMN_EXCERPT_FRENCH_PENDING"}),
+Proclaim of Three and One the glorious Name. Amen.`,englishSource:{"work":"Devotions commemorative of the Most Adorable Passion of Our Lord and Saviour Jesus Christ","imprint":"London: James Burns, 1842","location":"The Reproaches, sung on Good Friday; Pange lingua verses Lustra sex through doxology","printedPages":"lv–lvi","pdfPagesZeroBased":[126,127],"url":"https://upload.wikimedia.org/wikipedia/commons/e/ed/Devotions_commemorative_of_the_most_adorable_Passion_of_Our_Lord_and_Saviour_Jesus_Christ-_translated_from_Catholic_sources_%28IA_DevotionsCommemorativeOf%29.pdf","witnessStatus":"ORIGINAL_1842_BILINGUAL_PRINTED_PAGES_INSPECTED","editorialNote":"Historical English rendering extracted from the 1842 Good Friday hymn; repeated responses compressed into corresponding Crux fidelis stanza for reading, not an independently attested standalone Lauds setting; keep original source linked."},fr:`Après avoir vécu six lustres, le temps de sa vie mortelle approche de son terme ; c’est librement qu’il est descendu pour être notre Rédempteur ; et le jour est venu où cet Agneau est élevé sur l’arbre de la Croix, pour y être immolé.
+
+C’est là qu’on l’abreuve de fiel dans son agonie ; là que les épines, les clous, la lance, déchirent son corps délicat ; l’eau et le sang s’épanchent de sa plaie ; la terre, la mer, les astres, le monde tout entier, reçoivent ce jet qui les purifie.
+
+O Croix, notre espérance, arbre le plus noble de tous ; nulle forêt n’a produit ton pareil pour le feuillage, la fleur et le fruit. Tu nous es cher, ô bois, et plus cher encore le doux fardeau suspendu à tes clous sacrés.
+
+Arbre auguste, laisse fléchir tes rameaux ; soulage, en pliant, les membres tendus de l’Agneau ; amollis cette dureté que la nature t’avait donnée, et sois un lit plus doux pour le corps du souverain Roi.
+
+Seule tu as été trouvée digne de porter entre tes bras la victime du monde ; pour ce monde naufragé, tu as été l’arche qui le ramène au port, toi qui fus inondée du sang divin de l’Agneau.
+
+Gloire éternelle à l’heureuse Trinité ; honneur égal au Père, au Fils, au Paraclet ; louange de la part de tous les êtres à celui qui réunit la Trinité à l’Unité. Amen.`,frenchSource:{"work":"Dom Prosper Guéranger, L’Année liturgique, Jeudi, vendredi et samedi saint","section":"Good Friday Adoration of the Cross · Pange lingua verses, not source-specific Lauds printing","url":"https://www.domgueranger.net/lannee-liturgique-jeudi-vendredi-et-samedi-saint-propre-du-temps/","witnessStatus":"HISTORIC_FRENCH_GOOD_FRIDAY_EXCERPT_ORIGINAL_PRINT_NOT_YET_PHYSICAL_PAGE_COLLATED","secondaryWitness":{"work":"P. Louis Gladu, Les Hymnes du Bréviaire, Québec 1913","pdf":"https://www.liberius.net/livres/Les_hymnes_du_Breviaire_000000919.pdf","pagesZeroBased":[19,20],"status":"PARSED_1913_LAUDS_BILINGUAL_SOURCE_NO_PAGE_IMAGE_CROSSCHECK"},"editorialNote":"Historical French is drawn from the Good Friday Pange lingua with its Crux fidelis refrain rather than an independently collated Lauds printing. Refrains were compressed into matching verse groups for comparison. This is not a critical word-for-word translation of the ICRSP 1962 Lauds recension."},languageStatus:"HISTORICAL_LATIN_1842_ENGLISH_GUERANGER_GOOD_FRIDAY_FRENCH"}),
   o_sol_salutis:h("o_sol_salutis","O sol salutis intimis","Lent","Lauds",
 `O sol salútis, íntimis,
 Iesu, refúlge méntibus,
@@ -622,7 +632,23 @@ Acceptance in thy sight.”
 Blest Trinity in Unity!
 Vouchsafe us, in thy love,
 To gather from these fasts below
-Immortal fruit above.`,englishSource:{work:"Edward Caswall, Lyra Catholica, London: James Burns, 1849",printedPages:"72–73",pdfPagesZeroBased:[109,110],url:"https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",witnessStatus:"COLLATED_AGAINST_1849_PRINTED_PAGE_IMAGES"},languageStatus:"HISTORIC_LATIN_AND_CASWALL_1849_ENGLISH_FRENCH_PENDING"})
+Immortal fruit above.`,englishSource:{work:"Edward Caswall, Lyra Catholica, London: James Burns, 1849",printedPages:"72–73",pdfPagesZeroBased:[109,110],url:"https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",witnessStatus:"COLLATED_AGAINST_1849_PRINTED_PAGE_IMAGES"},fr:`Fidèles à la tradition mystérieuse, gardons avec soin ce jeûne célèbre qui parcourt le cercle de quarante journées.
+
+La Loi et les Prophètes l’inaugurèrent autrefois ; auteur et roi de toutes les choses créées, le Christ daigna lui-même le consacrer.
+
+Il nous faut restreindre l’usage de la parole, du manger, du boire, du sommeil et des délassements ; veillons plus strictement sur la garde de nous-mêmes.
+
+Évitons ces périls où succombe l’âme inattentive ; gardons-nous de laisser la moindre entrée à notre tyran perfide.
+
+Fléchissons la colère vengeresse ; pleurons aux pieds de notre juge ; poussons des cris suppliants, et, prosternés devant notre juge, disons-lui :
+
+O Dieu ! par nos péchés, nous avons offensé votre clémence, daignez étendre sur nous votre pardon.
+
+Souvenez-vous que, malgré notre fragilité, nous sommes l’œuvre de vos mains ; ne cédez pas à un autre l’honneur de votre Nom.
+
+Pardonnez-nous le mal que nous avons fait ; donnez-nous avec abondance la grâce que nous implorons, afin que nous puissions vous plaire ici-bas et dans l’éternité.
+
+Trinité bienheureuse, Unité parfaite, rendez profitable à vos fidèles le bienfait du jeûne. Amen.`,frenchSource:{"work":"Dom Prosper Guéranger, L’Année liturgique, Le Carême · Propre du temps","section":"Lenten Matins hymn after Monday of first week","url":"https://www.domgueranger.net/lannee-liturgique-le-careme-propre-du-temps/?lang=en","witnessStatus":"HISTORIC_FRENCH_FULL_TRANSCRIPTION_ORIGINAL_PRINT_NOT_YET_PHYSICAL_PAGE_COLLATED","secondaryWitness":{"work":"P. Louis Gladu, Les Hymnes du Bréviaire, Québec 1913","pdf":"https://www.liberius.net/livres/Les_hymnes_du_Breviaire_000000919.pdf","pagesZeroBased":[12,13],"status":"PARSED_1913_BILINGUAL_PRINT_NO_PAGE_IMAGE_CROSSCHECK"},"editorialNote":"Guéranger's full original French prose corresponds to the historical Lenten Matins hymn. Gladu 1913 separately prints a related French rendering; not identical editorial translations."},languageStatus:"HISTORICAL_LATIN_CASWALL_1849_ENGLISH_GUERANGER_FRENCH"})
 });
 export const ICRSP_SEASONAL_HYMN_IDS_V1=F(Object.keys(ICRSP_SEASONAL_HYMNS_V1));
 export const ICRSP_HYMN_GROUPS_V1=F({

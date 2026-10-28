@@ -675,7 +675,7 @@
       "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
       "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
       "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
-      "app_coverage_label": "Complete Latin Office hymn available in Sacred Hymns draft",
+      "app_coverage_label": "Historical Latin, English and French available in Sacred Hymns draft; French source boundary disclosed",
       "app_match_refs": [],
       "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
       "review_group": "SEASONAL_OFFICE_HYMN",
@@ -690,7 +690,7 @@
         ]
       },
       "office_role": "Passiontide Lauds",
-      "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
+      "french_translation_status": "GUERANGER_GOOD_FRIDAY_FRENCH_EXCERPT_IN_DRAFT_NOT_LAUDS_LICENCE",
       "english_translation_status": "HISTORICAL_1842_CATHOLIC_GOOD_FRIDAY_PASSION_TEXT_EXTRACTED_IN_DRAFT",
       "liturgical_rubric": null,
       "historical_english_translation": {
@@ -706,6 +706,22 @@
         "witnessStatus": "ORIGINAL_1842_BILINGUAL_PRINTED_PAGES_INSPECTED",
         "editorialNote": "Historical English rendering extracted from the 1842 Good Friday hymn; repeated responses compressed into corresponding Crux fidelis stanza for reading, not an independently attested standalone Lauds setting; keep original source linked.",
         "language": "en"
+      },
+      "historical_french_translation": {
+        "work": "Dom Prosper Guéranger, L’Année liturgique, Jeudi, vendredi et samedi saint",
+        "section": "Good Friday Adoration of the Cross · Pange lingua verses, not source-specific Lauds printing",
+        "url": "https://www.domgueranger.net/lannee-liturgique-jeudi-vendredi-et-samedi-saint-propre-du-temps/",
+        "witnessStatus": "HISTORIC_FRENCH_GOOD_FRIDAY_EXCERPT_ORIGINAL_PRINT_NOT_YET_PHYSICAL_PAGE_COLLATED",
+        "secondaryWitness": {
+          "work": "P. Louis Gladu, Les Hymnes du Bréviaire, Québec 1913",
+          "pdf": "https://www.liberius.net/livres/Les_hymnes_du_Breviaire_000000919.pdf",
+          "pagesZeroBased": [
+            19,
+            20
+          ],
+          "status": "PARSED_1913_LAUDS_BILINGUAL_SOURCE_NO_PAGE_IMAGE_CROSSCHECK"
+        },
+        "editorialNote": "Historical French is drawn from the Good Friday Pange lingua with its Crux fidelis refrain rather than an independently collated Lauds printing. Refrains were compressed into matching verse groups for comparison. This is not a critical word-for-word translation of the ICRSP 1962 Lauds recension."
       }
     },
     {
@@ -775,7 +791,7 @@
       "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
       "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
       "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
-      "app_coverage_label": "Complete Latin Office hymn plus source-verified Caswall 1849 English version in draft",
+      "app_coverage_label": "Historical Latin, English and French available in Sacred Hymns draft; French source boundary disclosed",
       "app_match_refs": [],
       "next_action": "Verify 1962 hour/season and source recension applicability; secure historical French independently; run full Node/Playwright acceptance before merge",
       "review_group": "SEASONAL_OFFICE_HYMN",
@@ -790,7 +806,7 @@
         ]
       },
       "office_role": "Lent Matins",
-      "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
+      "french_translation_status": "GUERANGER_FRENCH_HISTORICAL_MATINS_IN_DRAFT",
       "english_translation_status": "HISTORICAL_ENGLISH_CASWALL_1849_IMPLEMENTED_IN_DRAFT",
       "liturgical_rubric": null,
       "historical_english_translation": {
@@ -804,6 +820,22 @@
         ],
         "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
         "verification": "VISUAL_COLLATED_FROM_ORIGINAL_PRINTED_PAGES"
+      },
+      "historical_french_translation": {
+        "work": "Dom Prosper Guéranger, L’Année liturgique, Le Carême · Propre du temps",
+        "section": "Lenten Matins hymn after Monday of first week",
+        "url": "https://www.domgueranger.net/lannee-liturgique-le-careme-propre-du-temps/?lang=en",
+        "witnessStatus": "HISTORIC_FRENCH_FULL_TRANSCRIPTION_ORIGINAL_PRINT_NOT_YET_PHYSICAL_PAGE_COLLATED",
+        "secondaryWitness": {
+          "work": "P. Louis Gladu, Les Hymnes du Bréviaire, Québec 1913",
+          "pdf": "https://www.liberius.net/livres/Les_hymnes_du_Breviaire_000000919.pdf",
+          "pagesZeroBased": [
+            12,
+            13
+          ],
+          "status": "PARSED_1913_BILINGUAL_PRINT_NO_PAGE_IMAGE_CROSSCHECK"
+        },
+        "editorialNote": "Guéranger's full original French prose corresponds to the historical Lenten Matins hymn. Gladu 1913 separately prints a related French rendering; not identical editorial translations."
       }
     },
     {
@@ -931,10 +963,10 @@
     "production_hymn_releases": 0,
     "full_historical_english_hymns_in_draft": 8,
     "other_english_hymns_unverified": 0,
-    "historical_french_seasonal_hymns_in_draft": 3,
+    "historical_french_seasonal_hymns_in_draft": 5,
     "caswall_1849_pages_collated": 4,
     "release_status": "DRAFT_BRANCH_ONLY_ACTIONS_GATES_REQUIRED",
-    "other_french_hymns_unverified": 5,
+    "other_french_hymns_unverified": 3,
     "english_with_primary_image_confirmation": 6,
     "english_with_historical_transcription_only": 2
   },
