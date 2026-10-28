@@ -1,0 +1,70 @@
+{
+  "schema": "AO_PRAYER_WAVE1_SEVEN_SORROWS_EVENING_RELEASE_GATES_V1",
+  "as_of": "2026-10-28",
+  "scope": "Editorially locked artworks only; no production publishing",
+  "cost_eur": 0,
+  "approved_primaries_changed": 0,
+  "historical_decisions_changed": 0,
+  "production_activated": 0,
+  "seven_sorrows": {
+    "locked_painting": "Master of the Female Half-Lengths (attributed) — Virgin of the Seven Sorrows",
+    "actual_canonical_owner": {
+      "route": "pray.novenas",
+      "opts": {
+        "novenaId": "seven_sorrows"
+      },
+      "source": "src/pray/novena-runtime.js",
+      "corpus": "src/pray/novena-corpus-v4.js",
+      "public_standalone_seven_sorrows_reader": false
+    },
+    "correction": "The work has an existing Nine-Day Novena owner. Prior statement that there is no Seven Sorrows canonical route was too broad; a separate chaplet reader is not established.",
+    "visual_preview_flag": "?aoPrayerArt=sorrows-review",
+    "display_scope": "Only the selected Seven Sorrows novena's detail/introduction, after the nine-day start button; never within nine prayer stages.",
+    "source_original": {
+      "repo_ref": "research/module-hero-museum-photos-20261026",
+      "path": "assets/staged/module-hero-masters/sorrows.jpg",
+      "sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+      "pixels": [
+        2220,
+        3000
+      ]
+    },
+    "source_image_identity": "https://commons.wikimedia.org/wiki/File:Master_of_the_Half_Lengths_-_Virgin_of_the_Seven_Sorrows_-_Google_Art_Project.jpg",
+    "institution": "Museu Nacional d'Art de Catalunya (MNAC) 008327-000",
+    "commons_notice": "Faithful photographic reproduction of public-domain two-dimensional work, PD-Art / Public Domain Mark; U.S. public domain position noted; other jurisdiction restrictions caveat persists.",
+    "image": "Full painted field with seven narrative medallions and one prominent central sword, not seven physical swords.",
+    "derivative_sha256": [
+      "4530434dd0cb16d9df395a5261f36c27362f1766891d3d4b33de5135f155ddac",
+      "82b5085c66d98dffe988ce69af17bc6a7515d5e529800e1e27e9997ac79a9e85"
+    ],
+    "preview_signoff": "HOLD_EDITORIAL_AND_BROWSER_FINAL_REVIEW",
+    "production": false
+  },
+  "evening": {
+    "locked_painting": "Pierre-Édouard Frère — The Prayer (1857), Wolverhampton Art Gallery OP6",
+    "institution_identity": "https://artuk.org/discover/artworks/the-prayer-19241",
+    "official_gallery": "https://www.wolverhamptonart.org.uk/collections",
+    "known_commons_original_px": [
+      898,
+      1200
+    ],
+    "known_photo_rights": "Art UK image-credit and linked site rights not equivalent to a high-resolution freely reusable original; verify source-file-specific terms before publication.",
+    "negative_search_result": "No higher-resolution original with clearly unrestricted reuse located in 2026-10-28 search. PICRYL claims 1796x2400 but explicitly labels this a 2x upscale of 898x1200.",
+    "forbidden": [
+      "Replace with different Frère painting (e.g. Rijksmuseum Evening Prayer)",
+      "Pay for Art UK image",
+      "Artificially upscale and mislabel as original",
+      "Infer production photo licence from public domain of historical painting"
+    ],
+    "source_gate": "HOLD_EXACT_WORK_NATIVE_REPRODUCTION_AND_REUSE",
+    "editorial_approval_preserved": true,
+    "production": false
+  },
+  "next_priority": "Complete Seven Sorrows canonical novena photo proof; Frère remains open zero-cost source exception rather than forcing an incorrect image or a licence.",
+  "references": [
+    "https://commons.wikimedia.org/wiki/File:Master_of_the_Half_Lengths_-_Virgin_of_the_Seven_Sorrows_-_Google_Art_Project.jpg",
+    "https://artuk.org/discover/artworks/the-prayer-19241",
+    "https://commons.wikimedia.org/wiki/Category:Pierre-%C3%89douard_Fr%C3%A8re",
+    "https://renopenrose.getarchive.net/amp/media/pierre-edouard-frere-1819-1886-the-prayer-op6-wolverhampton-art-gallery-ec39b5"
+  ]
+}
