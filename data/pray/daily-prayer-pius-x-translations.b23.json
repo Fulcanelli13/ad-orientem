@@ -13,7 +13,14 @@
     "en": "All English texts are new Ad Orientem draft translations; the historical edition did not publish these English words.",
     "fr": "1905 French translations are newly drafted by Ad Orientem; the 1913 French texts in B21 are printed originals of that authorized French edition, not modern translations.",
     "integrity": "Do not substitute these for the original source witness or conflate the 1905 original and the 1913 revision. Preserve whole prayer units and separate adjacent devotions.",
-    "copyStatus": "Pending bilingual expert proofreading, print-image collation and reuse/legal approval. Original wording must remain visible."
+    "copyStatus": "Pending bilingual expert proofreading, print-image collation and reuse/legal approval. Original wording must remain visible.",
+    "la": "Latin is an editorial reading language. Familiar common prayers use established Latin formulas; other Latin bodies are newly drafted translations from the stated edition. Neither may be mislabelled as a Latin Pius X printed source.",
+    "displayLanguages": [
+      "la",
+      "en",
+      "fr"
+    ],
+    "sourceLanguageInternalOnly": true
   },
   "sourceRegistry": "data/pray/daily-prayer-pius-x-primary-structure.b21.json",
   "translations": {
@@ -22,116 +29,184 @@
         "daily-prayer": {
           "en": "I adore You, my God, and love You with all my heart. I thank You for having created me, made me a Christian, and preserved me through this night. I offer You all my actions, and I pray You to preserve me this day from sin and deliver me from all evil. Amen.",
           "fr": "Je vous adore, ô mon Dieu, et je vous aime de tout mon cœur. Je vous remercie de m’avoir créé, fait chrétien et gardé pendant cette nuit. Je vous offre toutes mes actions et je vous prie de me préserver aujourd’hui du péché et de me délivrer de tout mal. Ainsi soit-il.",
-          "note": "The proofread Italian reads 'tutte la mie azioni' (possibly a typographical or transcription error); the intended meaning 'all my actions' is rendered without silently amending the original. Q974 prints 'tutte le mie azioni'."
+          "note": "The proofread Italian reads 'tutte la mie azioni' (possibly a typographical or transcription error); the intended meaning 'all my actions' is rendered without silently amending the original. Q974 prints 'tutte le mie azioni'.",
+          "la": "Adoro te, Deus meus, et amo te ex toto corde. Gratias tibi ago, quod me creavisti, christianum fecisti et hac nocte servavisti. Omnes actiones meas tibi offero; te oro, ut me hodie a peccato custodias et ab omni malo liberes. Amen.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         }
       },
       "evening": {
         "daily-prayer": {
           "en": "I adore You, my God, and love You with all my heart. I thank You for having created me, made me a Christian, and preserved me through this day. I offer You all the good I have done today, and I pray You to deliver me from all evil. Amen.",
-          "fr": "Je vous adore, ô mon Dieu, et je vous aime de tout mon cœur. Je vous remercie de m’avoir créé, fait chrétien et gardé pendant cette journée. Je vous offre tout le bien que j’ai fait aujourd’hui et je vous prie de me délivrer de tout mal. Ainsi soit-il."
+          "fr": "Je vous adore, ô mon Dieu, et je vous aime de tout mon cœur. Je vous remercie de m’avoir créé, fait chrétien et gardé pendant cette journée. Je vous offre tout le bien que j’ai fait aujourd’hui et je vous prie de me délivrer de tout mal. Ainsi soit-il.",
+          "la": "Adoro te, Deus meus, et amo te ex toto corde. Gratias tibi ago, quod me creavisti, christianum fecisti et per hunc diem servavisti. Omne bonum quod hodie feci tibi offero, et te oro, ut me ab omni malo liberes. Amen.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         },
         "jesus-joseph-mary-1": {
           "en": "Jesus, Joseph and Mary, I give you my heart and my soul.",
-          "fr": "Jésus, Joseph et Marie, je vous donne mon cœur et mon âme."
+          "fr": "Jésus, Joseph et Marie, je vous donne mon cœur et mon âme.",
+          "la": "Iesu, Ioseph et Maria, cor et animam meam vobis dono.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         },
         "jesus-joseph-mary-2": {
           "en": "Jesus, Joseph and Mary, assist me in my last agony.",
-          "fr": "Jésus, Joseph et Marie, assistez-moi dans ma dernière agonie."
+          "fr": "Jésus, Joseph et Marie, assistez-moi dans ma dernière agonie.",
+          "la": "Iesu, Ioseph et Maria, assistite mihi in ultima agonia.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         },
         "jesus-joseph-mary-3": {
           "en": "Jesus, Joseph and Mary, may my soul depart in peace with you.",
-          "fr": "Jésus, Joseph et Marie, que mon âme s’en aille en paix avec vous."
+          "fr": "Jésus, Joseph et Marie, que mon âme s’en aille en paix avec vous.",
+          "la": "Iesu, Ioseph et Maria, anima mea in pace vobiscum exspiret.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         }
       },
       "common": {
         "sign-of-cross": {
           "en": "In the name of the Father, and of the Son, and of the Holy Ghost. Amen.",
-          "fr": "Au nom du Père, et du Fils, et du Saint-Esprit. Ainsi soit-il."
+          "fr": "Au nom du Père, et du Fils, et du Saint-Esprit. Ainsi soit-il.",
+          "la": "In nomine Patris, et Filii, et Spiritus Sancti. Amen.",
+          "latinStatus": "STANDARD_TRADITIONAL_LATIN_FORM_MATCHED_TO_NAMED_COMMON_PRAYER_NOT_CLAIMED_AS_EDITION_LATIN_ORIGINAL",
+          "latinReference": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
         },
         "our-father": {
           "en": "Our Father, who art in heaven, hallowed be Thy name. Thy kingdom come. Thy will be done on earth as it is in heaven. Give us this day our daily bread. And forgive us our debts as we forgive our debtors. And lead us not into temptation. But deliver us from evil. Amen.",
           "fr": "Notre Père, qui êtes aux cieux, que votre nom soit sanctifié. Que votre règne arrive. Que votre volonté soit faite sur la terre comme au ciel. Donnez-nous aujourd’hui notre pain quotidien. Remettez-nous nos dettes comme nous les remettons à ceux qui nous doivent. Et ne nous induisez pas en tentation. Mais délivrez-nous du mal. Ainsi soit-il.",
-          "note": "The 1905 Italian source uses debiti/debitori (debts/debtors) and non c’indurre (lead us not), rather than the different 1913 French wording about offences and succumbing to temptation."
+          "note": "The 1905 Italian source uses debiti/debitori (debts/debtors) and non c’indurre (lead us not), rather than the different 1913 French wording about offences and succumbing to temptation.",
+          "la": "Pater noster, qui es in caelis, sanctificetur nomen tuum. Adveniat regnum tuum. Fiat voluntas tua, sicut in caelo et in terra. Panem nostrum quotidianum da nobis hodie, et dimitte nobis debita nostra, sicut et nos dimittimus debitoribus nostris. Et ne nos inducas in tentationem, sed libera nos a malo. Amen.",
+          "latinStatus": "STANDARD_TRADITIONAL_LATIN_FORM_MATCHED_TO_NAMED_COMMON_PRAYER_NOT_CLAIMED_AS_EDITION_LATIN_ORIGINAL",
+          "latinReference": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
         },
         "hail-mary": {
           "en": "God save thee, O Mary, full of grace. The Lord is with thee. Blessed art thou among women, and blessed is Jesus, the fruit of thy womb. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
           "fr": "Dieu vous salue, ô Marie, pleine de grâce. Le Seigneur est avec vous. Vous êtes bénie entre les femmes, et Jésus, le fruit de vos entrailles, est béni. Sainte Marie, Mère de Dieu, priez pour nous, pécheurs, maintenant et à l’heure de notre mort. Ainsi soit-il.",
-          "note": "1905 original literally begins 'Dio ti salvi, o Maria'; the English draft keeps that lexical choice instead of silently substituting a different source-era formula."
+          "note": "1905 original literally begins 'Dio ti salvi, o Maria'; the English draft keeps that lexical choice instead of silently substituting a different source-era formula.",
+          "la": "Ave, Maria, gratia plena, Dominus tecum. Benedicta tu in mulieribus, et benedictus fructus ventris tui, Iesus. Sancta Maria, Mater Dei, ora pro nobis peccatoribus, nunc et in hora mortis nostrae. Amen.",
+          "latinStatus": "STANDARD_TRADITIONAL_LATIN_FORM_MATCHED_TO_NAMED_COMMON_PRAYER_NOT_CLAIMED_AS_EDITION_LATIN_ORIGINAL",
+          "latinReference": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
         },
         "glory-be": {
           "en": "Glory be to the Father, and to the Son, and to the Holy Ghost, as it was in the beginning, is now, and ever shall be, world without end. Amen.",
-          "fr": "Gloire au Père, au Fils et au Saint-Esprit, comme il était au commencement, maintenant et toujours, et dans les siècles des siècles. Ainsi soit-il."
+          "fr": "Gloire au Père, au Fils et au Saint-Esprit, comme il était au commencement, maintenant et toujours, et dans les siècles des siècles. Ainsi soit-il.",
+          "la": "Gloria Patri, et Filio, et Spiritui Sancto. Sicut erat in principio, et nunc et semper, et in saecula saeculorum. Amen.",
+          "latinStatus": "STANDARD_TRADITIONAL_LATIN_FORM_MATCHED_TO_NAMED_COMMON_PRAYER_NOT_CLAIMED_AS_EDITION_LATIN_ORIGINAL",
+          "latinReference": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
         },
         "creed": {
           "en": "I believe in God the Father almighty, Creator of heaven and earth. And in Jesus Christ, His only Son, our Lord. Who was conceived by the Holy Ghost and born of the Virgin Mary. He suffered under Pontius Pilate, was crucified, died and was buried. He descended into hell; on the third day He rose again from the dead. He ascended into heaven and sitteth at the right hand of God the Father almighty. From thence He shall come to judge the living and the dead. I believe in the Holy Ghost. The holy Catholic Church; the communion of saints. The forgiveness of sins. The resurrection of the body. Life everlasting. Amen.",
-          "fr": "Je crois en Dieu le Père tout-puissant, créateur du ciel et de la terre. Et en Jésus-Christ, son Fils unique, Notre-Seigneur. Qui fut conçu du Saint-Esprit et naquit de la Vierge Marie. Il souffrit sous Ponce Pilate, fut crucifié, mourut et fut enseveli. Il descendit aux enfers; le troisième jour, il ressuscita d’entre les morts. Il monta au ciel et siège à la droite de Dieu le Père tout-puissant. De là, il viendra juger les vivants et les morts. Je crois au Saint-Esprit. À la sainte Église catholique; à la communion des saints. À la rémission des péchés. À la résurrection de la chair. À la vie éternelle. Ainsi soit-il."
+          "fr": "Je crois en Dieu le Père tout-puissant, créateur du ciel et de la terre. Et en Jésus-Christ, son Fils unique, Notre-Seigneur. Qui fut conçu du Saint-Esprit et naquit de la Vierge Marie. Il souffrit sous Ponce Pilate, fut crucifié, mourut et fut enseveli. Il descendit aux enfers; le troisième jour, il ressuscita d’entre les morts. Il monta au ciel et siège à la droite de Dieu le Père tout-puissant. De là, il viendra juger les vivants et les morts. Je crois au Saint-Esprit. À la sainte Église catholique; à la communion des saints. À la rémission des péchés. À la résurrection de la chair. À la vie éternelle. Ainsi soit-il.",
+          "la": "Credo in Deum Patrem omnipotentem, Creatorem caeli et terrae, et in Iesum Christum, Filium eius unicum, Dominum nostrum, qui conceptus est de Spiritu Sancto, natus ex Maria Virgine, passus sub Pontio Pilato, crucifixus, mortuus et sepultus, descendit ad inferos, tertia die resurrexit a mortuis, ascendit ad caelos, sedet ad dexteram Dei Patris omnipotentis, inde venturus est iudicare vivos et mortuos. Credo in Spiritum Sanctum, sanctam Ecclesiam catholicam, sanctorum communionem, remissionem peccatorum, carnis resurrectionem, vitam aeternam. Amen.",
+          "latinStatus": "STANDARD_TRADITIONAL_LATIN_FORM_MATCHED_TO_NAMED_COMMON_PRAYER_NOT_CLAIMED_AS_EDITION_LATIN_ORIGINAL",
+          "latinReference": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
         },
         "faith": {
           "en": "I firmly believe, because God, infallible Truth, has revealed it to the holy Catholic Church and through her reveals it also to us, that there is one God in three equal and distinct divine Persons, called the Father, the Son and the Holy Ghost; that the Son became man, taking human flesh and soul in the womb of the most pure Virgin Mary by the power of the Holy Ghost; that He died for us on the cross, rose again, ascended into heaven, and shall come thence at the end of the world to judge all the living and the dead, to give heaven for ever to the good and hell to the wicked. For the same reason I believe all that the holy Church herself believes and teaches.",
-          "fr": "Je crois fermement, parce que Dieu, Vérité infaillible, l’a révélé à la sainte Église catholique et, par elle, nous le révèle aussi, qu’il y a un seul Dieu en trois Personnes divines, égales et distinctes, appelées Père, Fils et Saint-Esprit; que le Fils s’est fait homme en prenant, par l’action du Saint-Esprit, un corps et une âme humains dans le sein de la très pure Vierge Marie; qu’il est mort pour nous sur la croix, qu’il est ressuscité, monté au ciel et qu’il en reviendra à la fin du monde pour juger tous les vivants et les morts, donnant pour toujours le paradis aux bons et l’enfer aux méchants. Pour la même raison, je crois tout ce que croit et enseigne cette même sainte Église."
+          "fr": "Je crois fermement, parce que Dieu, Vérité infaillible, l’a révélé à la sainte Église catholique et, par elle, nous le révèle aussi, qu’il y a un seul Dieu en trois Personnes divines, égales et distinctes, appelées Père, Fils et Saint-Esprit; que le Fils s’est fait homme en prenant, par l’action du Saint-Esprit, un corps et une âme humains dans le sein de la très pure Vierge Marie; qu’il est mort pour nous sur la croix, qu’il est ressuscité, monté au ciel et qu’il en reviendra à la fin du monde pour juger tous les vivants et les morts, donnant pour toujours le paradis aux bons et l’enfer aux méchants. Pour la même raison, je crois tout ce que croit et enseigne cette même sainte Église.",
+          "la": "Firmiter credo, quia Deus, veritas infallibilis, hoc sanctae Ecclesiae catholicae revelavit et per eam nobis quoque revelat, unum esse Deum in tribus Personis divinis aequalibus et distinctis, quae Pater, Filius et Spiritus Sanctus appellantur; Filium hominem factum esse, carne et anima humana in sinu purissimae Virginis Mariae virtute Spiritus Sancti assumptis; pro nobis in cruce mortuum esse, resurrexisse, in caelum ascendisse, atque inde in fine mundi venturum esse ad iudicandos vivos et mortuos, ut bonis paradisum et malis infernum in aeternum tribuat. Eadem de causa credo omnia quae eadem sancta Ecclesia credit et docet.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         },
         "hope": {
           "en": "My God, because You are almighty and infinitely good and merciful, I hope that through the merits of the Passion and death of Jesus Christ our Saviour You will give me eternal life, which You, ever faithful, have promised to those who perform the works of a good Christian, as I resolve to do with Your holy help.",
-          "fr": "Mon Dieu, parce que vous êtes tout-puissant et infiniment bon et miséricordieux, j’espère que, par les mérites de la Passion et de la mort de Jésus-Christ notre Sauveur, vous me donnerez la vie éternelle, que vous, toujours fidèle, avez promise à ceux qui accomplissent les œuvres d’un bon chrétien, comme je me propose de le faire avec votre saint secours."
+          "fr": "Mon Dieu, parce que vous êtes tout-puissant et infiniment bon et miséricordieux, j’espère que, par les mérites de la Passion et de la mort de Jésus-Christ notre Sauveur, vous me donnerez la vie éternelle, que vous, toujours fidèle, avez promise à ceux qui accomplissent les œuvres d’un bon chrétien, comme je me propose de le faire avec votre saint secours.",
+          "la": "Deus meus, quia omnipotens es et infinite bonus atque misericors, spero te per merita passionis et mortis Iesu Christi Salvatoris nostri mihi daturum esse vitam aeternam, quam tu fidelissimus promisisti iis qui opera boni christiani faciunt, sicut ego tuo sancto auxilio facere propono.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         },
         "charity": {
           "en": "My God, because You are the supreme and most perfect Good, I love You with all my heart and above all things; rather than offend You, I am ready to lose everything else, and for love of You I also love, and wish to love, my neighbour as myself.",
-          "fr": "Mon Dieu, parce que vous êtes le Bien suprême et souverainement parfait, je vous aime de tout mon cœur et par-dessus toutes choses; plutôt que de vous offenser, je suis prêt à tout perdre, et, pour l’amour de vous, j’aime aussi mon prochain et veux l’aimer comme moi-même."
+          "fr": "Mon Dieu, parce que vous êtes le Bien suprême et souverainement parfait, je vous aime de tout mon cœur et par-dessus toutes choses; plutôt que de vous offenser, je suis prêt à tout perdre, et, pour l’amour de vous, j’aime aussi mon prochain et veux l’aimer comme moi-même.",
+          "la": "Deus meus, quia summum et perfectissimum Bonum es, amo te ex toto corde super omnia; et potius omnia alia amittere paratus sum quam te offendere. Propter amorem tuum proximum meum sicut me ipsum diligo atque diligere volo.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         },
         "contrition": {
           "en": "My God, because You are supreme Goodness, and because I love You above all things, I repent and am truly sorry from my heart for having offended You; and I firmly resolve, with Your holy help, never to sin again in future, and in particular to flee the near occasions of sin.",
-          "fr": "Mon Dieu, parce que vous êtes la Bonté suprême et que je vous aime par-dessus toutes choses, je me repens et regrette sincèrement de tout mon cœur de vous avoir offensé; je prends la ferme résolution, avec votre saint secours, de ne plus jamais pécher à l’avenir et, en particulier, de fuir les occasions prochaines du péché."
+          "fr": "Mon Dieu, parce que vous êtes la Bonté suprême et que je vous aime par-dessus toutes choses, je me repens et regrette sincèrement de tout mon cœur de vous avoir offensé; je prends la ferme résolution, avec votre saint secours, de ne plus jamais pécher à l’avenir et, en particulier, de fuir les occasions prochaines du péché.",
+          "la": "Deus meus, quia summa Bonitas es et quia te super omnia amo, vere me paenitet ex toto corde quod te offendi; firmiter propono, sancto tuo auxilio, numquam amplius peccare et praesertim proximas peccandi occasiones fugere.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         }
       }
     },
     "piusx-1913-fr": {
       "morning": {
         "daily-prayer": {
-          "en": "I adore You, my God, and love You with all my heart. I thank You for having created me, made me a Christian, and preserved me through this night. I offer You the actions of this day; grant that they may all be according to Your holy will, for Your greater glory. Preserve me from sin and from all evil. May Your grace always be with me and with all those dear to me. Amen."
+          "en": "I adore You, my God, and love You with all my heart. I thank You for having created me, made me a Christian, and preserved me through this night. I offer You the actions of this day; grant that they may all be according to Your holy will, for Your greater glory. Preserve me from sin and from all evil. May Your grace always be with me and with all those dear to me. Amen.",
+          "la": "Adoro te, Deus meus, et amo te ex toto corde. Gratias tibi ago, quod me creavisti, christianum fecisti et hac nocte servavisti. Actiones huius diei tibi offero; fac ut omnes secundum sanctam voluntatem tuam sint, ad maiorem gloriam tuam. A peccato et ab omni malo me custodi. Gratia tua semper mecum sit et cum omnibus mihi caris. Amen.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         }
       },
       "evening": {
         "daily-prayer": {
-          "en": "I adore You, my God, and love You with all my heart. I thank You for having created me, made me a Christian, and preserved me through this day. Forgive me the wrong I have done today, and if I have done any good, accept it. Keep me safe in my rest and deliver me from dangers. May Your grace always be with me and with all those dear to me. Amen."
+          "en": "I adore You, my God, and love You with all my heart. I thank You for having created me, made me a Christian, and preserved me through this day. Forgive me the wrong I have done today, and if I have done any good, accept it. Keep me safe in my rest and deliver me from dangers. May Your grace always be with me and with all those dear to me. Amen.",
+          "la": "Adoro te, Deus meus, et amo te ex toto corde. Gratias tibi ago, quod me creavisti, christianum fecisti et per hunc diem servavisti. Ignosce mihi mala quae hodie commisi; et si quid boni egi, suscipe illud. In quiete me custodi et a periculis libera. Gratia tua semper mecum sit et cum omnibus mihi caris. Amen.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         }
       },
       "common": {
         "sign-of-cross": {
-          "en": "In the name of the Father, and of the Son, and of the Holy Ghost. Amen."
+          "en": "In the name of the Father, and of the Son, and of the Holy Ghost. Amen.",
+          "la": "In nomine Patris, et Filii, et Spiritus Sancti. Amen.",
+          "latinStatus": "STANDARD_TRADITIONAL_LATIN_FORM_MATCHED_TO_NAMED_COMMON_PRAYER_NOT_CLAIMED_AS_EDITION_LATIN_ORIGINAL",
+          "latinReference": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
         },
         "our-father": {
           "en": "Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread; forgive us our trespasses as we forgive those who trespass against us; and suffer us not to succumb to temptation, but deliver us from evil. Amen.",
-          "note": "The edition says 'ne nous laissez pas succomber à la tentation', rendered directly, not replaced with the different traditional English wording 'lead us not into temptation'."
+          "note": "The edition says 'ne nous laissez pas succomber à la tentation', rendered directly, not replaced with the different traditional English wording 'lead us not into temptation'.",
+          "la": "Pater noster, qui es in caelis, sanctificetur nomen tuum. Adveniat regnum tuum. Fiat voluntas tua, sicut in caelo et in terra. Panem nostrum quotidianum da nobis hodie, et dimitte nobis debita nostra, sicut et nos dimittimus debitoribus nostris. Et ne nos inducas in tentationem, sed libera nos a malo. Amen.",
+          "latinStatus": "STANDARD_TRADITIONAL_LATIN_FORM_MATCHED_TO_NAMED_COMMON_PRAYER_NOT_CLAIMED_AS_EDITION_LATIN_ORIGINAL",
+          "latinReference": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
         },
         "hail-mary": {
-          "en": "Hail Mary, full of grace; the Lord is with thee; blessed art thou among women, and blessed is Jesus, the fruit of thy womb. Holy Mary, Mother of God, pray for us poor sinners, now and at the hour of our death. Amen."
+          "en": "Hail Mary, full of grace; the Lord is with thee; blessed art thou among women, and blessed is Jesus, the fruit of thy womb. Holy Mary, Mother of God, pray for us poor sinners, now and at the hour of our death. Amen.",
+          "la": "Ave, Maria, gratia plena, Dominus tecum. Benedicta tu in mulieribus, et benedictus fructus ventris tui, Iesus. Sancta Maria, Mater Dei, ora pro nobis peccatoribus, nunc et in hora mortis nostrae. Amen.",
+          "latinStatus": "STANDARD_TRADITIONAL_LATIN_FORM_MATCHED_TO_NAMED_COMMON_PRAYER_NOT_CLAIMED_AS_EDITION_LATIN_ORIGINAL",
+          "latinReference": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
         },
         "glory-be": {
-          "en": "Glory be to the Father, and to the Son, and to the Holy Ghost, as it was in the beginning, is now and ever shall be, world without end. Amen."
+          "en": "Glory be to the Father, and to the Son, and to the Holy Ghost, as it was in the beginning, is now and ever shall be, world without end. Amen.",
+          "la": "Gloria Patri, et Filio, et Spiritui Sancto. Sicut erat in principio, et nunc et semper, et in saecula saeculorum. Amen.",
+          "latinStatus": "STANDARD_TRADITIONAL_LATIN_FORM_MATCHED_TO_NAMED_COMMON_PRAYER_NOT_CLAIMED_AS_EDITION_LATIN_ORIGINAL",
+          "latinReference": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
         },
         "creed": {
-          "en": "I believe in God, the Father almighty, Creator of heaven and earth; and in Jesus Christ, His only Son, our Lord, who was conceived by the Holy Ghost, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried, descended into hell; on the third day He rose again from the dead; He ascended into heaven and sitteth at the right hand of God the Father almighty, whence He shall come to judge the living and the dead. I believe in the Holy Ghost, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen."
+          "en": "I believe in God, the Father almighty, Creator of heaven and earth; and in Jesus Christ, His only Son, our Lord, who was conceived by the Holy Ghost, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried, descended into hell; on the third day He rose again from the dead; He ascended into heaven and sitteth at the right hand of God the Father almighty, whence He shall come to judge the living and the dead. I believe in the Holy Ghost, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen.",
+          "la": "Credo in Deum Patrem omnipotentem, Creatorem caeli et terrae, et in Iesum Christum, Filium eius unicum, Dominum nostrum, qui conceptus est de Spiritu Sancto, natus ex Maria Virgine, passus sub Pontio Pilato, crucifixus, mortuus et sepultus, descendit ad inferos, tertia die resurrexit a mortuis, ascendit ad caelos, sedet ad dexteram Dei Patris omnipotentis, inde venturus est iudicare vivos et mortuos. Credo in Spiritum Sanctum, sanctam Ecclesiam catholicam, sanctorum communionem, remissionem peccatorum, carnis resurrectionem, vitam aeternam. Amen.",
+          "latinStatus": "STANDARD_TRADITIONAL_LATIN_FORM_MATCHED_TO_NAMED_COMMON_PRAYER_NOT_CLAIMED_AS_EDITION_LATIN_ORIGINAL",
+          "latinReference": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
         },
         "faith": {
-          "en": "My God, I firmly believe all that You, infallible Truth, have revealed and that the Church proposes to us for belief. I believe expressly in You, the one true God in three equal and distinct Persons, Father, Son and Holy Ghost. I likewise believe in the Son made man and put to death for us, Jesus Christ, who will give to each person, according to his merits, eternal reward or punishment. I desire always to live according to this faith. Lord, increase my faith."
+          "en": "My God, I firmly believe all that You, infallible Truth, have revealed and that the Church proposes to us for belief. I believe expressly in You, the one true God in three equal and distinct Persons, Father, Son and Holy Ghost. I likewise believe in the Son made man and put to death for us, Jesus Christ, who will give to each person, according to his merits, eternal reward or punishment. I desire always to live according to this faith. Lord, increase my faith.",
+          "la": "Deus meus, firmiter credo omnia quae tu, Veritas infallibilis, revelasti et quae Ecclesia nobis credenda proponit. Expresse credo in te, unum verum Deum in tribus Personis aequalibus et distinctis, Patre, Filio et Spiritu Sancto. Credo item in Filium incarnatum et pro nobis mortuum, Iesum Christum, qui unicuique secundum merita aeterna praemia aut poenas tribuet. Semper secundum hanc fidem vivere volo. Domine, auge fidem meam.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         },
         "hope": {
-          "en": "My God, I hope, through Your goodness, because of the promises and merits of Jesus Christ our Saviour, for eternal life and the graces necessary to merit it by the good works which I ought to perform and wish to accomplish. Lord, let me not be confounded for ever."
+          "en": "My God, I hope, through Your goodness, because of the promises and merits of Jesus Christ our Saviour, for eternal life and the graces necessary to merit it by the good works which I ought to perform and wish to accomplish. Lord, let me not be confounded for ever.",
+          "la": "Deus meus, spero propter bonitatem tuam et promissiones atque merita Iesu Christi Salvatoris nostri vitam aeternam et gratias necessarias ad eam merendam per bona opera quae agere debeo et volo. Domine, ne confundar in aeternum.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         },
         "charity": {
-          "en": "My God, I love You with all my heart above all things, O infinite Good and our eternal happiness. For love of You I love my neighbour as myself and forgive the offences I have received. Lord, grant that I may love You ever more."
+          "en": "My God, I love You with all my heart above all things, O infinite Good and our eternal happiness. For love of You I love my neighbour as myself and forgive the offences I have received. Lord, grant that I may love You ever more.",
+          "la": "Deus meus, ex toto corde super omnia te amo, Bonum infinitum et beatitudinem nostram aeternam; propter amorem tui proximum meum sicut me ipsum diligo et offensas mihi illatas remitto. Domine, fac ut te semper magis amem.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         },
         "contrition": {
-          "en": "My God, I repent of my sins with all my heart. I hate and detest them because they offend Your infinite Majesty, are the cause of the death of Your divine Son Jesus, and bring about my spiritual ruin. I do not wish to commit them again, and I resolve to avoid their occasions. Lord, have mercy; forgive me."
+          "en": "My God, I repent of my sins with all my heart. I hate and detest them because they offend Your infinite Majesty, are the cause of the death of Your divine Son Jesus, and bring about my spiritual ruin. I do not wish to commit them again, and I resolve to avoid their occasions. Lord, have mercy; forgive me.",
+          "la": "Deus meus, ex toto corde me paenitet peccatorum meorum; ea odio habeo et detestor, quia infinitam Maiestatem tuam offendunt, causae mortis divini Filii tui Iesu sunt et ruinam animae meae afferunt. Ea in posterum committere nolo et occasiones eorum fugere propono. Domine, miserere mei; ignosce mihi.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         },
         "salve-regina": {
-          "en": "Hail, Queen, Mother of mercy; our life, our sweetness and our hope, hail. To you we raise our cries, exiled children of Eve. To you we sigh, weeping and groaning in this valley of tears. Hear us, then, O our Advocate; turn towards us those eyes so full of mercy. And at the end of this exile show us the blessed fruit of your womb, Jesus. O clement, O loving, O sweet Virgin Mary."
+          "en": "Hail, Queen, Mother of mercy; our life, our sweetness and our hope, hail. To you we raise our cries, exiled children of Eve. To you we sigh, weeping and groaning in this valley of tears. Hear us, then, O our Advocate; turn towards us those eyes so full of mercy. And at the end of this exile show us the blessed fruit of your womb, Jesus. O clement, O loving, O sweet Virgin Mary.",
+          "la": "Salve, Regina, mater misericordiae, vita, dulcedo et spes nostra, salve. Ad te clamamus, exsules filii Evae. Ad te suspiramus, gementes et flentes in hac lacrimarum valle. Eia ergo, advocata nostra, illos tuos misericordes oculos ad nos converte. Et Iesum, benedictum fructum ventris tui, nobis post hoc exsilium ostende. O clemens, o pia, o dulcis Virgo Maria.",
+          "latinStatus": "STANDARD_TRADITIONAL_LATIN_FORM_MATCHED_TO_NAMED_COMMON_PRAYER_NOT_CLAIMED_AS_EDITION_LATIN_ORIGINAL",
+          "latinReference": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
         },
         "guardian-angel": {
-          "en": "Angel of God, who art my guardian by the gift of divine charity, enlighten me, protect me, direct me and govern me. Amen."
+          "en": "Angel of God, who art my guardian by the gift of divine charity, enlighten me, protect me, direct me and govern me. Amen.",
+          "la": "Angele Dei, qui custos es mei, me tibi commissum pietate superna illumina, custodi, rege et guberna. Amen.",
+          "latinStatus": "STANDARD_TRADITIONAL_LATIN_FORM_MATCHED_TO_NAMED_COMMON_PRAYER_NOT_CLAIMED_AS_EDITION_LATIN_ORIGINAL",
+          "latinReference": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html"
         },
         "jesus-joseph-mary": {
-          "en": "Jesus, Joseph and Mary, I give you my heart, my mind and my life.\nJesus, Joseph and Mary, deign to assist me in my last agony.\nJesus, Joseph and Mary, grant me, I pray, to surrender my soul in peace in your company."
+          "en": "Jesus, Joseph and Mary, I give you my heart, my mind and my life.\nJesus, Joseph and Mary, deign to assist me in my last agony.\nJesus, Joseph and Mary, grant me, I pray, to surrender my soul in peace in your company.",
+          "la": "Iesu, Ioseph et Maria, cor meum, mentem et vitam vobis dono.\nIesu, Ioseph et Maria, dignamini mihi in ultima agonia assistere.\nIesu, Ioseph et Maria, concedite, quaeso, ut animam meam in pace in consortio vestro reddam.",
+          "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
         }
       }
     }
