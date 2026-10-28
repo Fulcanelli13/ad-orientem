@@ -140,6 +140,28 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoDailyClockPanel{transition:none}}
 
 
+/* The contemplative Daily reader keeps the timer collapsed below the prayer.
+   On expansion, display its controls visibly above the bottom Prayer navigation,
+   without replacing, advancing or scrolling the canonical prayer card. */
+#aoPray435930[data-ao-contemplative-daily="guided"] .aoDailyClockPanel{
+ position:fixed!important;
+ inset:auto auto calc(110px + env(safe-area-inset-bottom)) 50%!important;
+ transform:translateX(-50%);
+ z-index:40;
+ box-sizing:border-box;
+ width:min(490px,calc(100vw - 32px));
+ max-height:min(43dvh,350px);
+ overflow-y:auto!important;
+ overscroll-behavior:contain;
+ background:linear-gradient(160deg,#172431 0%,#111b26 100%)!important;
+ border:1px solid rgba(217,189,150,.30)!important;
+ box-shadow:0 20px 70px rgba(0,0,0,.58);
+ color:#eee9df;
+}
+#aoPray435930[data-ao-contemplative-daily="guided"] .aoDailyClockPanel button:focus-visible{
+ outline:2px solid #dbb983;outline-offset:2px
+}
+
 /* Approved source-form selector, shown only after the release manifest is populated. */
 #aoPray435930 .aoDailyFormulationChoices{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:0 0 12px}
 #aoPray435930 .aoDailyFormulationChoices button{min-height:40px;padding:8px 12px;border-radius:999px;border:1px solid var(--border,rgba(255,255,255,.2));background:transparent;color:var(--muted,#aeb2b8);font:500 .75rem/1.35 var(--ao-font-ui,system-ui,sans-serif)}
