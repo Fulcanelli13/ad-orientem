@@ -2,7 +2,8 @@
  * ICKSP-selected Marian devotion, sourced to independently historic editions.
  * Text identity: Fr Louis-Édouard Cestac's "Auguste Reine" (1863/64).
  * This is a private devotional prayer, NOT an exorcism rite.
- * 1890 English witness and early French original are distinct recensions.
+ * 1890 English witness and French original are distinct recensions.
+ * Other English invocations were printed as separate prayers and MUST NOT be silently appended.
  * No unsupported Latin translation is synthesized.
  * Historical indulgence notices are not current-law claims.
  */
@@ -11,15 +12,9 @@ export const ICKSP_MARIAN_PROTECTION_V1=Object.freeze({
     id:"icksp_august_queen_heaven",
     title:"August Queen of Heaven",
     titleFr:"Auguste Reine des cieux",
-    en:`August Queen of Heaven! Sovereign Mistress of the Angels! Thou, who from the beginning hast received from God the power and mission to crush the head of Satan; we humbly beseech thee to send thy holy legions that, under thy command and by thy power, they may pursue the evil spirits; encounter them on every side: resist their bold attacks, and drive them hence into the abyss of everlasting woe. Amen.
+    en:`AUGUST Queen of Heaven! Sovereign Mistress of the Angels! Thou, who from the beginning hast received from God the power and mission to crush the head of Satan; we humbly beseech thee to send thy holy legions that, under thy command and by thy power, they may pursue the evil spirits; encounter them on every side: resist their bold attacks, and drive them hence into the abyss of everlasting woe. Amen.
 
-Who is like unto God!
-
-O good and tender Mother! Thou shalt ever be our love and our hope.
-
-O Divine Mother! Send thy Angels to defend me, and drive the cruel enemy from me.
-
-All ye holy Angels and Archangels keep us and defend us. Amen.`,
+Who is like unto God!`,
     fr:`Auguste Reine des cieux et maîtresse des Anges,
 Vous qui avez reçu de Dieu
 le pouvoir et la mission d’écraser la tête de Satan,
@@ -36,7 +31,9 @@ vous serez toujours notre amour et notre espérance.
 O divine Mère, envoyez les Saints Anges
 pour me défendre et repousser loin de moi le cruel ennemi.
 
-Saints Anges et Archanges, défendez nous, gardez nous.`,
+Saints Anges et Archanges, défendez nous, gardez nous.
+
+Auguste Reine des cieux et maîtresse des Anges.`,
     editions:Object.freeze({
       english:Object.freeze({
         label:"The Month of Mary · Don Caspar Gilli · London, 1890 · pp. end matter",
@@ -55,8 +52,8 @@ Saints Anges et Archanges, défendez nous, gardez nous.`,
       })
     }),
     historicalNote:Object.freeze({
-      en:"The nineteenth-century English and French witnesses differ in wording and order. The English prayers are arranged into the same recitation without altering their words. Historical indulgence references do not imply a present-day grant.",
-      fr:"Les témoins anglais et français du XIXe siècle diffèrent légèrement dans leur formulation et leur ordre. Les anciennes mentions d’indulgences ne sont pas présentées comme des concessions actuellement en vigueur."
+      en:"The 1890 English printing marks its other Marian invocations as separate prayers. This reader contains only the printed Miraculous Prayer and its attached acclamation, not a reordered composite. The French witness includes a concluding refrain. Historical indulgence references do not imply a present-day grant.",
+      fr:"Le texte anglais de 1890 distingue la prière principale des autres invocations, qui ne sont pas ajoutées ici. Le texte français conserve sa reprise finale. Les anciennes indulgences ne sont pas présentées comme actuellement en vigueur."
     })
   })
 });
