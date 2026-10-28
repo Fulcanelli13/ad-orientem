@@ -98,7 +98,7 @@ try{
    await page.locator(rootSel+' [data-p435930-own="pray.occasional_intercessions"]').click();
    const occasional=rootSel+' [data-ao-occasional-intercession]';
    assert.equal(await page.locator(occasional).count(),1);
-   assert.equal(await page.locator(occasional+' [data-p435930-occasional-purpose]').count(),3);
+   assert.equal(await page.locator(occasional+' [data-p435930-occasional-purpose]').count(),6);
    assert.match(await page.locator(occasional+' .aoOccasionalText').innerText(),/Most merciful Jesus/);
    await page.locator(occasional+' [data-p435930-occasional-purpose="family"]').click();
    assert.match(await page.locator(occasional+' .aoOccasionalText').innerText(),/O most loving Jesus/);
@@ -106,6 +106,19 @@ try{
    assert.match(await page.locator(occasional+' .aoOccasionalText').innerText(),/To thee, O blessed Joseph/i);
    await page.locator(occasional+' [data-p435930-occasional-latin]').click();
    assert.match(await page.locator(occasional+' .aoOccasionalText').innerText(),/Ad te, beate Ioseph/);
+   // B21: three new distinct daily intentions; preserve B20 and their route.
+   await page.locator(occasional+' [data-p435930-occasional-purpose="peace"]').click();
+   assert.match(await page.locator(occasional+' .aoOccasionalText').innerText(),/Give peace, O Lord, in our days/);
+   await page.locator(occasional+' [data-p435930-occasional-latin]').click();
+   assert.match(await page.locator(occasional+' .aoOccasionalText').innerText(),/Da pacem, Domine/);
+   await page.locator(occasional+' [data-p435930-occasional-purpose="travel"]').click();
+   assert.match(await page.locator(occasional+' .aoOccasionalText').innerText(),/May the Archangel Raphael accompany us/);
+   assert.equal(await page.locator(occasional+' [data-p435930-occasional-latin]').count(),0,"Do not invent travel Latin");
+   await page.locator(occasional+' [data-p435930-occasional-purpose="discernment"]').click();
+   assert.match(await page.locator(occasional+' .aoOccasionalText').innerText(),/Almighty God!/);
+   assert.match(await page.locator(occasional+' .aoOccasionalText').innerText(),/choice of a state of life/);
+   assert.equal(await page.locator(occasional+' [data-p435930-occasional-purpose][aria-pressed="true"]').count(),1);
+   await page.screenshot({path:resolve(out,"occasional-six-purposes-"+width+".png"),animations:"disabled"});
    await page.screenshot({path:resolve(out,"occasional-intercessions-"+width+".png"),animations:"disabled"});
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"Occasional intercession must not clip horizontally");
    assert.deepEqual(errors,[],errors.join("; "));
