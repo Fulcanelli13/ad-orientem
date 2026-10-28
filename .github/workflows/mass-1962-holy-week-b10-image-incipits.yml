@@ -1,0 +1,36 @@
+name: 1962 original Holy Week image incipits B10
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/mass/independent-1962-holy-week-b09-original-image-witness.v1.json'
+      - 'data/mass/independent-1962-holy-week-b10-original-runtime-crosswalk.v1.json'
+      - 'data/presentation/reader-palm.v1.json'
+      - 'data/presentation/reader-good-friday.v1.json'
+      - 'data/presentation/reader-easter-vigil.v1.json'
+      - 'src/mass/reader-easter-vigil.js'
+      - 'tests/1962-holy-week-b10-original-image-incipit.mjs'
+      - '.github/workflows/mass-1962-holy-week-b10-image-incipits.yml'
+  push:
+    branches: ['fix/1962-easter-vigil-font-f10-printed-witness-b10-20261028']
+    paths:
+      - 'data/mass/independent-1962-holy-week-b10-original-runtime-crosswalk.v1.json'
+      - 'data/presentation/reader-easter-vigil.v1.json'
+      - 'tests/1962-holy-week-b10-original-image-incipit.mjs'
+      - '.github/workflows/mass-1962-holy-week-b10-image-incipits.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-original-incipit-parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check original 1962 source witness and test syntax
+        run: node --check tests/1962-holy-week-b10-original-image-incipit.mjs
+      - name: Verify all 29 held/matched source witnesses and active F10 projection
+        run: node tests/1962-holy-week-b10-original-image-incipit.mjs
