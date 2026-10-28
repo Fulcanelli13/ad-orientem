@@ -289,11 +289,12 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 #aoPray435930 .aoDailyPersonalBriefRestore:focus-visible{outline:2px solid #e7cb98;outline-offset:2px}
 
 /* Direct prayer access replaces the long configuration-first interaction. */
-#aoPray435930 .aoDailyOpeningRail{grid-template-columns:minmax(0,1fr);gap:5px;margin-bottom:0}
-#aoPray435930 .aoDailyOpeningRail>.aoTP381DaypartStrip{grid-row:auto;grid-column:auto;padding:1px 4px}
-#aoPray435930 .aoDailyAccessNav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:3px 4px 4px}
+#aoPray435930 .aoDailyOpeningRail{grid-template-columns:minmax(0,1fr) minmax(124px,.77fr);gap:4px;align-items:center;margin-bottom:0}
+#aoPray435930 .aoDailyOpeningRail>.aoTP381DaypartStrip{grid-row:1;grid-column:1;min-width:0;padding:1px 2px;gap:4px}
+#aoPray435930 .aoDailyOpeningRail>.aoTP381DaypartStrip button{min-width:0;flex:1 1 auto;padding:7px 5px}
+#aoPray435930 .aoDailyAccessNav{display:flex;grid-row:1;grid-column:2;min-width:0;padding:1px 2px}
 #aoPray435930 .aoDailyAccessNav button{
- min-width:0;min-height:44px;padding:9px 8px;border:1px solid rgba(215,188,146,.18);
+ width:100%;min-width:0;min-height:42px;padding:9px 8px;border:1px solid rgba(215,188,146,.18);
  background:transparent;border-radius:10px;color:var(--muted,#aeb2b8);
  font:600 .8rem/1.25 var(--ao-font-ui,system-ui,sans-serif)
 }
