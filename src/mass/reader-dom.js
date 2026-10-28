@@ -14,6 +14,7 @@ import { approvedPriestHeadBowRubricArt } from "./reader-approved-priest-head-bo
 import { actionMeaning } from "./reader-canonical-icons.js";
 import { CUE_SURFACE, resolveCueSurface, sourceActionRubricLabel } from "./reader-cue-visual-policy.js";
 import { nextScholaMusicEvent } from "./reader-schola-event-timeline.js";
+import { installSourceCueRailTracker } from "./reader-rail-anchors.js";
 import {SCHOLA_OPTIONAL_EVENT_IDS} from "./reader-schola-local-programme.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
@@ -364,6 +365,19 @@ const SHELL_STYLE = `
    Persistent posture/position belong to the upper ribbon, not ghost rail boxes. */
 .ao-rail .ao-rail-item[data-active="false"]{display:none}
 .ao-reader-shell:not([data-mode="LIVE"]) .ao-rail{display:none}
+/* LIVE icons follow the actual source paragraph, not a floating stack at
+   the top. Offscreen and unmatched source cues do not claim a guessed row. */
+.ao-reader-shell[data-mode="LIVE"] .ao-rail[data-source-anchored="true"]{
+  display:block;top:0;bottom:0
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-rail[data-source-anchored="true"][data-visible="false"]{
+  display:none
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-rail[data-source-anchored="true"] .ao-rail-item{
+  position:absolute;left:0;top:var(--ao-source-rail-top,0px);margin:0
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-rail[data-source-anchored="true"]
+  .ao-rail-item:not([data-source-rail-anchor="exact"]){display:none!important}
 .ao-rail-item{
   position:relative;flex:0 0 auto;width:52px;height:52px;min-height:52px;padding:0;
   display:grid;place-items:center;text-align:center;color:#8e978f;
@@ -2447,6 +2461,7 @@ export function createReaderDomAdapter({
 
   let prepared=null;
   let current=null;
+  let sourceRailTracker=null;
   let mode="LIVE";
   let bound=false;
   let rootClickListener=null;
@@ -2502,6 +2517,7 @@ export function createReaderDomAdapter({
       }
       if(pop){pop.hidden=true;pop.replaceChildren?.();}
       syncRailVisibility(root);
+      sourceRailTracker?.refresh();
     };
     mode=requested;
     applyChrome();
@@ -2953,6 +2969,7 @@ export function createReaderDomAdapter({
     dock.dataset.shared=String(current?.scholaShared===true && current?.sharedScholaControls===true);
     dock.dataset.resized=String(scholaManuallyResized);
     dock.style.setProperty?.("--ao-schola-height",scholaHeight+"px");
+    sourceRailTracker?.refresh();
     const shell=root.querySelector("[data-ao-reader-shell]");
     const scholaActive=dock.dataset.active==="true";
     const scholaRelevant=Boolean(textValue(current?.schola)) && current?.scholaShared!==true;
@@ -3059,6 +3076,8 @@ export function createReaderDomAdapter({
   }
 
   function unbind(){
+    sourceRailTracker?.destroy();
+    sourceRailTracker=null;
     if(rootClickListener)root.removeEventListener?.("click",rootClickListener);
     if(rootChangeListener)root.removeEventListener?.("change",rootChangeListener);
     if(rootInputListener)root.removeEventListener?.("input",rootInputListener);
@@ -3397,6 +3416,23 @@ export function createReaderDomAdapter({
     syncScholaContent();
     syncRailVisibility(root);
     bind();
+    sourceRailTracker=installSourceCueRailTracker(root,{getCueByChannel:()=>{
+      const cue=current?.nativeCueId??null;
+      const exact=x=>x?.cueId??cue;
+      return {
+        posture:exact(current?.posture),
+        "posture-change":exact(current?.postureCue),
+        attention:exact(current?.attention),
+        gesture:exact(current?.gesture),
+        response:exact(current?.response),
+        "priest-position":exact(current?.priestPosition),
+        "priest-voice":exact(current?.priestVoice),
+        "priest-action":exact(current?.priestAction),
+        "sacred-minister":exact(current?.sacredMinister),
+        bell:exact(current?.bell),
+        "schola-shared":exact(current?.scholaShared?current?.schola:null),
+      };
+    }});
     return prepared;
   }
 
@@ -4251,6 +4287,9 @@ export function createReaderDomAdapter({
       prepared?.session?.resolvedMass?.form??null,
       prepared?.readerPreferences?.language??"en");
     syncFaithfulParagraphIcons();
+    // Paragraphs may be replaced or reflowed after a card transition. Re-pin
+    // each visible icon only to the unchanged exact published cue row.
+    sourceRailTracker?.refresh();
     return current;
   }
 
