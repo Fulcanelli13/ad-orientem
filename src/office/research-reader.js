@@ -43,7 +43,7 @@ const blank=value=>typeof value==="string"&&value.trim().length>0;
 // placeholders as a source cell ("1 is missing", "2 is missing",
 // "special is missing"). They are NEVER Office prayer text.
 // Match the beginning of a source cell only; no broad "missing" search.
-export const OFFICE_UNRESOLVED_TRANSLATION_RE=/^\\s*(?:(?:[1-9][0-9]*)|special)\\s+is missing\\b/i;
+export const OFFICE_UNRESOLVED_TRANSLATION_RE=/^\s*(?:(?:[1-9][0-9]*)|special)\s+is missing\b/i;
 export const sourceCellHasMissingTranslation=text=>
   OFFICE_UNRESOLVED_TRANSLATION_RE.test(String(text??""));
 export function missingOfficeSourceCells(document){
