@@ -6,6 +6,12 @@ import {novenaStatusFor,novenaWindowFor} from "../src/calendar/intelligence.js";
 const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const original=read("../data/pray/research/pray-b25-holy-face-janvier-1887-nine-full-english-days.v1.json");
 const admission=read("../data/pray/pray-b25-holy-face-1887-admission.v1.json");
+const variants=read("../data/pray/research/pray-b25-holy-face-1887-variant-review.v1.json");
+const approvedDisplayEmendationIds=new Set(["B25-V01","B25-V03","B25-V04","B25-V05"]);
+assert.equal(variants.photographed1887ManualCompared,false,"Do not imply 1887 photograph collation");
+assert.equal(variants.sourceGates.publicNovenaApproved,false,"Variant audit is not print-edition certification");
+assert.equal(variants.rawDigitalWitness.htmlSha256,original.sourceWitness.contentSha256,"Original raw acquisition witness stays frozen");
+assert.equal(variants.variants.length,6,"All six reviewed variants remain accounted for");
 assert.equal(NOVENA_CORPUS_V4_IDS.length,16,"Original bilingual novena baseline unchanged");
 assert.equal(Object.keys(NOVENA_CORPUS_V4).length,16);
 assert.equal(n.id,"holy_face_1887");
@@ -28,7 +34,13 @@ for(let i=0;i<9;i++){
  assert.equal(d.originalSourceDay,i+1);
  assert.equal(source.day,i+1);
  assert.equal(text.fr,"","Do not fabricate French translated prayer body");
- assert.equal(text.en,original.sharedOpeningEnglish+"\n\n"+source.historicalMeditationEnglish,"Full original source exact-byte agreement, not an abbreviated meditation");
+ let expectedSourceText=original.sharedOpeningEnglish+"\n\n"+source.historicalMeditationEnglish;
+ const edits=variants.variants.filter(v=>v.day===i+1&&approvedDisplayEmendationIds.has(v.id));
+ for(const variant of edits){
+  assert.equal(expectedSourceText.split(variant.staged).length-1,1,"Each approved display emendation must match exactly once: "+variant.id);
+  expectedSourceText=expectedSourceText.replace(variant.staged,variant.editorialReading);
+ }
+ assert.equal(text.en,expectedSourceText,"Only four source-collated display corrections are permitted; all other original text must match exactly");
  assert.ok(text.en.length>3200,"Historical day's text must be complete");
  for(const roman of ["I.","II.","III."])assert.ok(text.en.includes(roman),"Three numbered reflections missing from "+(i+1));
  assert.match(text.en,/Spiritual Bouquet/i);
