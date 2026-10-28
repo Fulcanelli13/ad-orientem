@@ -5,7 +5,6 @@
 import { createMassReaderModel } from "./reader-model.js";
 import {loadMandatumSource, createMandatumEventController} from "./reader-holy-thursday-mandatum-events.js";
 import { assessMassTextPrint, renderMassTextPrintHtml } from "./reader-print-booklet.js";
-import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
 import { projectCuratedOrdinaryLiveCards, projectCuratedIntroitEntryLiveCards, visibleMassCardTitle } from "./reader-live-curated-cards.js";
 import {auditOrdinarySungPriestEventAlignment,projectObservedOrdinaryPriestEvent} from "./reader-priest-event-alignment.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
@@ -403,11 +402,9 @@ export async function prepareNativeReaderPreview({
     holyThursdayMandatumSource:mandatumSource,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
-  // SIMPLE and MISSAL have 30 source cards even for the very same Sung
-  // Mass whose LIVE source has 39. Eligibility must be measured against a
-  // separately constructed, source-authoritative LIVE model rather than
-  // the currently selected 30-card reading mode. This is only a read-only
-  // capability check; SIMPLE/MISSAL continue using their own presentation.
+  // MISSAL has 30 source cards even for a Sung Mass whose LIVE source
+  // has 39. Eligibility must be checked against the separate LIVE model,
+  // regardless of which of the two reader views is currently selected.
   const liveCapabilityModel=String(model.presentationMode)==="LIVE" ? model
     : reviewCuratedCards===true ? createMassReaderModel({
         resolvedMass:Object.freeze({...prepared.session.resolvedMass,
@@ -461,7 +458,7 @@ export async function prepareNativeReaderPreview({
     liveCapabilityModel.totalCards===39 &&
     String(liveCapabilityModel.corpusFamily)==="SUNG" &&
     // Eligibility is a property of the prepared Mass, not the initial mode:
-    // most production sessions open in SIMPLE, then select LIVE via ribbon.
+    // a session may open in MISSAL and then switch to LIVE.
     compatiblePrelude && compatibleFollowing &&
     (plan?.overlayGraphs??[]).every(id=>["VOTIVE_PROPER","REQUIEM"].includes(id));
   const curatedOrdinary=curatedEligible && String(model.presentationMode)==="LIVE"
@@ -472,7 +469,7 @@ export async function prepareNativeReaderPreview({
         : curatedOrdinary)
     : String(model.presentationMode??"").toUpperCase()==="MISSAL"
       ? projectGranularMissalCards(model)
-      : projectSourceFirst48Presentation(model);
+      : model;
   // Validate the separate 15-cue event crosswalk before mounting the opt-in reader.
   if(curatedEligible)auditOrdinarySungPriestEventAlignment(events);
   const eventState=createNativeEventStateController(events);
@@ -2769,8 +2766,8 @@ export async function mountNativeReaderPreview({
     const tr=target.getBoundingClientRect?.();
     if(!cr||!tr)return false;
     const exactRows=[...(scroll.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")??[])];
-    // The requested cue can be the final rubric on a 30-section SIMPLE
-    // card even though the 65-card LIVE model owns a separate elevation
+    // The requested cue may be the final rubric on a source-owned card
+    // even though the 65-card LIVE model owns a separate elevation
     // card. A center-based scroll target can land earlier in a short card;
     // the focus tracker deliberately assigns the last cue at the bottom
     // edge. Preserve the actual source cue, not a macro/card-number offset.
@@ -2835,11 +2832,9 @@ export async function mountNativeReaderPreview({
         transientGuard.resolveCue(desiredCue);
         focusCueAtReaderLine(desiredCue);
         root.dataset.r17NativeCue=desiredCue;
-        // SIMPLE can combine several exact source units in one text row.
-        // Its geometry then reports the row's opening cue (C0172), while
-        // the source-backed card still includes the selected elevation
-        // cue (C0174). Do not erase the explicit mode-switch source
-        // anchor until the user resumes scrolling.
+        // Source-owned cards can combine exact units in a text row. Preserve
+        // the explicit cue anchor until the user resumes scrolling; the row
+        // geometry may otherwise report an earlier source cue.
         modeSwitchCueLock=rebuilt.mode==="MISSAL"?null:{
           cueId:desiredCue,sectionId:current.sectionId,
         };
