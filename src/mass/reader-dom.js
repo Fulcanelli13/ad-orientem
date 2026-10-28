@@ -2024,6 +2024,7 @@ export function buildReaderShellMarkup(prepared = {}) {
         <option value="FOLLOW_CONGREGATION">Follow congregation</option>
         <option value="OCONNELL_1962_COMMUNITY">1962 guided</option>
         <option value="TRADITIONAL_WALSH">Traditional</option>
+        <option value="REQUIEM_CHOIR_1962">Requiem choir (1962; when applicable)</option>
         <option value="MY_LOCAL">Only saved cues</option>
       </select></label>
       <label>Gesture guidance<select data-reader-customary="gestureProfile" aria-label="Gesture guidance">
