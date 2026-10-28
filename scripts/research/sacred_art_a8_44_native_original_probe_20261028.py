@@ -85,7 +85,7 @@ def save_contact_sheet(path, original, label):
                 sheet.paste(seg,(600+(idx%2)*254,100+(idx//2)*290))
             d = ImageDraw.Draw(sheet)
             d.text((16,12),label[:90], fill=(245,245,233))
-            d.text((600,54),f"Unscaled corner samples: {edge} x {edge} original px", fill=(245,245,233))
+            d.text((600,54),f"Source corners {edge} x {edge} px; displayed resized to 250 px", fill=(245,245,233))
             d.text((16,860),"RESEARCH VISUAL EVIDENCE ONLY — edge/frame status NOT AUTOMATICALLY CERTIFIED", fill=(235,208,174))
             sheet.save(path,quality=77,optimize=True)
             return True
@@ -160,7 +160,7 @@ def main():
                   "MISMATCH",sum(x["source_byte_state"]=="SHA256_VERSION_MISMATCH" for x in results),
                   "FAILURE",sum(x["source_byte_state"] in ("DOWNLOAD_FAILED","API_METADATA_UNAVAILABLE") for x in results),flush=True)
         (OUTPUT/"results.json").write_text(json.dumps({"schema":"AO_A8_NATIVE_BYTE_AUDIT_RESEARCH_ONLY","records":results},indent=2)+"\n",encoding="utf-8")
-        time.sleep(0.25)
+        time.sleep(2.0)  # Reduce load on Commons; respect HTTP 429 and defer rate-limited files.
     summary = {
         "source_records":len(records),
         "metadata_available":sum(x["source_byte_state"]!="API_METADATA_UNAVAILABLE" for x in results),
