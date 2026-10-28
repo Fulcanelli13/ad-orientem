@@ -119,3 +119,95 @@ export function inspect1962PluralMartyrsFrenchOrationSource(proper,slot){
   }
   return null;
 }
+
+
+// Correct ONLY the exact failed inheritance of Common C7b for Saints
+// Perpetua/Felicity in the already-resolved Proper projection. The pinned
+// Latin/English C7b directives each remove "Virginum et "/"Virgins and "
+// from the C6b multiple Virgin Martyrs source. The French C7b directive
+// likewise removes "Vierges et ". Its application was lost by the host
+// source parser for Sancti/03-06; original 1962 C7b and SHA witness record
+// data/mass/1962-plural-martyrs-french-source-review.v1.json prove the intent.
+// This adds NO newly invented translation and NEVER mutates a host source.
+//
+// A correction requires the exact Calendar owner, two named Martyrs in Latin,
+// three populated languages, the expected inherited offending phrase,
+// and successful triplicate comparison after the three deletions.
+// Unrecognized variants remain under the existing fail-closed reader guard.
+const CORRECTION_ID="1962_C7B_PERPETUA_FELICITY_NONVIRGIN_INHERITANCE";
+const REMOVE=Object.freeze({
+ lat:/\bV[ií]rginum et (?=M[áa]rtyrum\b)/giu,
+ en:/\bVirgins and (?=Martyrs\b)/giu,
+ fr:/\bVierges et (?=Martyres\b)/giu,
+});
+const BAD=Object.freeze({
+ lat:/\bvirginum\s+et\s+martyrum\b/iu,
+ en:/\bvirgins\s+and\s+martyrs\b/iu,
+ fr:/\bvierges\s+et\s+martyres\b/iu,
+});
+const WORD_MARTYRS=Object.freeze({
+ lat:/\bmartyrum\b/iu,
+ en:/\bmartyrs\b/iu,
+ fr:/\bmartyres\b/iu,
+});
+const NAMED=Object.freeze({
+ lat:/\bperpetuae\s+et\s+felicitatis\b/iu,
+ en:/\bperpetua\s+and\s+felicit(?:as|y)\b/iu,
+ fr:/\bperpetue\s+et\s+felicite\b/iu,
+});
+
+export function reconcile1962PerpetuaFelicityNonVirginCommon(proper){
+  if(!proper||typeof proper!=="object")return proper;
+  let result=null,proof=[];
+  for(const [slot,plural,singular] of [
+    ["COLLECT_SET","collects","collect"],
+    ["SECRET_SET","secrets","secret"]]){
+    const rows=originalRows(proper,slot);
+    if(!rows.length)continue;
+    let nextRows=null;
+    for(const [index,row] of rows.entries()){
+      if(exactOrationRowOwner(proper,rows,index)!==PERPETUA_FELICITY)continue;
+      const old={lat:String(row?.lat??row?.la??""),
+        en:String(row?.en??""),fr:String(row?.fr??"")};
+      // Require complete, distinct, named source prayers; don't infer a
+      // correction from a calendar date or a coincidental Marian phrase.
+      if(Object.values(old).some(text=>text.trim().length<80) ||
+        !WORD_MARTYRS.lat.test(ascii(old.lat)) ||
+        !NAMED.lat.test(ascii(old.lat)) ||
+        !Object.entries(WORD_MARTYRS).every(([lang,rx])=>
+          rx.test(ascii(old[lang]))) ||
+        !Object.entries(NAMED).every(([lang,rx])=>rx.test(ascii(old[lang]))))
+        continue;
+      const bad=Object.fromEntries(Object.keys(old).map(lang=>
+        [lang,BAD[lang].test(ascii(old[lang]))]));
+      if(!Object.values(bad).some(Boolean))continue;
+      const replacement={...old};
+      let valid=true;
+      for(const lang of ["lat","en","fr"]){
+        if(bad[lang]){
+          const re=REMOVE[lang];
+          const count=[...old[lang].matchAll(re)].length;
+          if(count!==1){valid=false;break;}
+          replacement[lang]=old[lang].replace(re,"");
+          if(BAD[lang].test(ascii(replacement[lang]))){valid=false;break;}
+        }
+      }
+      if(!valid)continue; // Fail-closed source conflict still applies.
+      if(!nextRows)nextRows=rows.slice();
+      nextRows[index]=Object.freeze({...row,...replacement});
+      proof.push(Object.freeze({id:CORRECTION_ID,sourcePath:PERPETUA_FELICITY,
+        slot,orationIndex:index,fields:Object.freeze(
+          Object.keys(bad).filter(x=>bad[x])),originalSourcePreserved:true,
+        witness:"DivinumOfficium/divinum-officium@126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/horas/Latin/Commune/C7b.txt"}));
+    }
+    if(nextRows){
+      result??={...proper};
+      result[plural]=Object.freeze(nextRows);
+      result[singular]=nextRows[0];
+    }
+  }
+  if(!result)return proper;
+  return Object.freeze({...result,
+    sourceEditorialCorrections:Object.freeze([
+      ...(proper.sourceEditorialCorrections??[]),...proof])});
+}
