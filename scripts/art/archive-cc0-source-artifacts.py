@@ -20,13 +20,17 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 def github_artifact(repo, token, artifact_id, dest):
-    request = urllib.request.Request(
-        f"https://api.github.com/repos/{repo}/actions/artifacts/{artifact_id}/zip",
-        headers={"Authorization": f"Bearer {token}",
-                 "Accept": "application/vnd.github+json",
-                 "X-GitHub-Api-Version": "2026-03-10"})
-    with urllib.request.urlopen(request, timeout=180) as source, open(dest, "wb") as target:
-        shutil.copyfileobj(source, target, length=1024*1024)
+    # curl intentionally drops Authorization when GitHub redirects to signed
+    # Azure artifact-storage URLs. urllib forwards the header and gets HTTP 401.
+    url = f"https://api.github.com/repos/{repo}/actions/artifacts/{artifact_id}/zip"
+    subprocess.run([
+        "curl", "--fail", "--location", "--silent", "--show-error",
+        "--retry", "2", "--retry-all-errors",
+        "--header", f"Authorization: Bearer {token}",
+        "--header", "Accept: application/vnd.github+json",
+        "--header", "X-GitHub-Api-Version: 2026-03-10",
+        "--output", str(dest), url,
+    ], check=True)
     if not zipfile.is_zipfile(dest):
         raise RuntimeError("Artifact is not a ZIP: " + str(artifact_id))
 
