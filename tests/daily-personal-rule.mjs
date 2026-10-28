@@ -8,7 +8,7 @@ import {
 } from "../src/pray/daily-personal-rule.js";
 import {DAILY_PERSONAL_PRAYER_SOURCE_V1 as CORPUS} from "../src/pray/daily-personal-prayer-source.js";
 import {APPROVED_DAILY_FORMULATION_MANIFEST_V1,DAILY_APPROVED_SEQUENCE_RELEASE_V1} from "../src/pray/daily-approved-formulations.js";
-import {personalDailyPrayerCard,dailyPersonalSettings,dailyPersonalPrayerCatalog,dailyPersonalList,dailyPersonalProvenance} from "../src/pray/daily-personal-prayer-view.js";
+import {personalDailyPrayerCard,dailyPersonalSettings,dailyPersonalPrayerCatalog,dailyPersonalList,dailyPersonalProvenance,dailyFormulationLabel} from "../src/pray/daily-personal-prayer-view.js";
 
 assert.deepEqual(PERSONAL_DAILY_SOURCE_COVERAGE.languages,["la","en","fr"]);
 assert.equal(PERSONAL_DAILY_SOURCE_COVERAGE.manualOptions,45);
@@ -279,6 +279,38 @@ const directEd=changePersonalDailyPrefs(directBrief,{action:"brief-toggle",daypa
 assert.ok(personalDailyDirectPlan({daypart:"morning",prefs:directEd,sourceId:"hail-mary"}),"Excluded Brief prayer must still be directly readable");
 const savedVariant=changePersonalDailyPrefs(defaultPersonalDailyPrefs("en"),{action:"variant",daypart:"morning",value:personalDailyOptions("morning","en","1913").find(x=>x.kind==="variant")?.id});
 assert.equal(personalDailyDirectPlan({daypart:"morning",prefs:savedVariant,sourceId:"daily-prayer"})?.rows[0].replacementId,null,"Direct St Pius X index must use original text, not user variant");
+// B06: source-bound alternatives must be immediately available on the
+// active prayer card in BOTH Complete and Personal Brief, without new stages.
+assert.equal(dailyFormulationLabel("F. X. Lasance, With God (1911)"),"Lasance · 1911");
+assert.equal(dailyFormulationLabel("Patrick F. Moran, The Catholic Prayer Book (1883)"),"Moran · 1883");
+for(const language of ["en","fr","la"])for(const edition of ["1905","1913"]){
+ const base=defaultPersonalDailyPrefs(language);
+ base.edition=edition;
+ const opts=personalDailyOptions("morning",language,edition).filter(x=>x.kind==="variant");
+ for(const length of ["full","brief"]){
+  let prefs={...base,length};
+  if(length==="brief"&&opts.some(x=>x.slot==="faith"))prefs=changePersonalDailyPrefs(prefs,{action:"brief-toggle",daypart:"morning",value:"faith"});
+  const plan=buildPersonalDailyPlan({daypart:"morning",prefs});
+  assert.equal(plan.availableVariants.length,opts.length,"Brief and Complete expose the same verified source-language options");
+  const faith=plan.rows.find(row=>row.sourceId==="faith");
+  if(faith&&opts.some(x=>x.slot==="faith")){
+   const h={esc:x=>String(x).replaceAll("&","&amp;").replaceAll('"',"&quot;"),L:en=>en,prayerParagraphs:t=>'<p class="aoTP381TextParagraph">'+t+'</p>',source:()=>""};
+   const html=personalDailyPrayerCard(faith,plan,h);
+   assert.match(html,/aoDailyFormulationPicker/);
+   assert.match(html,/data-tp381-personal-variant="default:faith"/);
+   assert.doesNotMatch(html,/<details class="aoDailyPersonalAlternatives">/,"One-tap prayer choices must not hide inside settings");
+   assert.equal((html.match(/data-tp381-personal-variant=/g)||[]).length,1+opts.filter(x=>x.slot==="faith").length);
+   const selected=opts.find(x=>x.slot==="faith");
+   const next=changePersonalDailyPrefs(prefs,{action:"variant",daypart:"morning",value:selected.id});
+   const after=buildPersonalDailyPlan({daypart:"morning",prefs:next});
+   const translated=after.rows.find(row=>row.sourceId==="faith");
+   assert.equal(translated.text,selected.text);
+   assert.equal(translated.sourceUrl,selected.sourceUrl);
+   assert.equal(after.rows.length,plan.rows.length,"Selecting a different text must never add or remove a stage");
+   assert.equal(translated.replacementId,selected.id);
+  }
+ }
+}
 const runtime=readFileSync(new URL("../src/pray/traditional-pray-runtime.js",import.meta.url),"utf8");
 assert.match(runtime,/personalDailyDirectPlan\(\{daypart:S.daypart,prefs,sourceId:S.dailyDirectId\}\)/);
 assert.match(runtime,/data-tp381-personal-action/);

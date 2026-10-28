@@ -126,6 +126,49 @@ try{
   "Paused elapsed session must survive manual navigation");
  await page.locator("#aoPray435930 [data-tp381-timer-control='reset']").evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-daily-clock-readout]").innerText(),"00:00");
+ // One tap substitutes an attested historical prayer in the SAME stage.
+ // The full-screen atmospheric DOM, running/paused clock and card reader survive.
+ await page.locator("#aoPray435930 .aoDevoStop").nth(6).evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-personal-prayer='faith']").count(),1);
+ const alternativeButtons=page.locator("#aoPray435930 [data-ao-personal-prayer='faith'] [data-tp381-personal-variant]");
+ assert.ok(await alternativeButtons.count()>=2,"Faith must offer an in-card source switch without opening any settings");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-personal-prayer='faith'] .aoDailyPersonalAlternatives").count(),0);
+ const beforeAlternative=await page.evaluate(()=>{
+  const sky=document.querySelector("#aoPray435930 .aoQuietHorizonCanvas");
+  const scroll=document.querySelector("#aoPray435930 .aoDevoCardScroll");
+  sky.dataset.preservedAtmosphere="original";
+  scroll.dataset.preservedReader="original";
+  return {stage:document.querySelector("#aoPray435930 .aoDevoCard")?.dataset.aoDevoIndex,
+    source:document.querySelector("#aoPray435930 [data-ao-personal-prayer='faith']")?.dataset.aoPersonalSource,
+    sky:document.querySelector("#aoPray435930 [data-ao-quiet-daily-horizon]")?.dataset.aoHorizonPhase,
+    stopwatch:document.querySelector("#aoPray435930 [data-ao-daily-clock-readout]")?.textContent,
+    hostScroll:document.querySelector("#aoPray435930 .aoP435930Mount")?.scrollTop};
+ });
+ await alternativeButtons.nth(1).evaluate(el=>el.click());
+ const afterAlternative=await page.evaluate(()=>{
+  const sky=document.querySelector("#aoPray435930 .aoQuietHorizonCanvas");
+  const scroll=document.querySelector("#aoPray435930 .aoDevoCardScroll");
+  return {stage:document.querySelector("#aoPray435930 .aoDevoCard")?.dataset.aoDevoIndex,
+    source:document.querySelector("#aoPray435930 [data-ao-personal-prayer='faith']")?.dataset.aoPersonalSource,
+    sky:document.querySelector("#aoPray435930 [data-ao-quiet-daily-horizon]")?.dataset.aoHorizonPhase,
+    stopwatch:document.querySelector("#aoPray435930 [data-ao-daily-clock-readout]")?.textContent,
+    hostScroll:document.querySelector("#aoPray435930 .aoP435930Mount")?.scrollTop,
+    preservedSky:sky?.dataset.preservedAtmosphere,
+    preservedReader:scroll?.dataset.preservedReader,
+    activeChoices:[...document.querySelectorAll("#aoPray435930 .aoDailyFormulationPicker button[aria-pressed='true']")].length};
+ });
+ assert.notEqual(afterAlternative.source,beforeAlternative.source,"One tap must change the source prayer");
+ assert.equal(afterAlternative.stage,beforeAlternative.stage,"Source change must not advance to another prayer stage");
+ assert.equal(afterAlternative.sky,beforeAlternative.sky,"Source choice must not advance the sunrise");
+ assert.equal(afterAlternative.preservedSky,"original","Switching text must keep the immersive atmosphere mounted");
+ assert.equal(afterAlternative.preservedReader,"original","Switching text must not remount the scrollable reader");
+ assert.equal(afterAlternative.stopwatch,beforeAlternative.stopwatch,"Source choice must not reset the stopwatch");
+ assert.equal(afterAlternative.hostScroll,beforeAlternative.hostScroll,"Source choice must not jump the page scroll");
+ assert.equal(afterAlternative.activeChoices,1,"Exactly one formulation must be active");
+ await page.screenshot({path:resolve(captures,"morning-faith-formulation-switched-390-fr.png"),animations:"disabled"});
+ await page.locator("#aoPray435930 [data-tp381-personal-variant='default:faith']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-personal-prayer='faith']").getAttribute("data-ao-personal-source"),"faith");
+ assert.equal(await page.locator("#aoPray435930 .aoQuietHorizonCanvas").getAttribute("data-preserved-atmosphere"),"original");
  await page.locator("#aoPray435930 .aoDevoStop").first().evaluate(el=>el.click());
  const first=await snapshot();
  assert.equal(first.route,"pray.morning_evening");

@@ -318,6 +318,40 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
  min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-y:auto;touch-action:pan-y
 }
 
+
+/* B06 — one-tap alternatives belong to the current prayer, never settings. */
+#aoPray435930 .aoDailyFormulationPicker{
+ display:grid;gap:7px;min-width:0;margin:4px 0 13px;
+ padding:0 0 10px;border-bottom:1px solid rgba(215,188,146,.17)
+}
+#aoPray435930 .aoDailyFormulationLabel{
+ display:block;color:var(--muted,#b6b6ba);
+ font:500 .67rem/1.25 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPray435930 .aoDailyFormulationChoices{
+ display:flex;align-items:center;gap:7px;min-width:0;
+ overflow-x:auto;overscroll-behavior-x:contain;
+ -webkit-overflow-scrolling:touch;scrollbar-width:none;
+ padding:2px 2px 5px;touch-action:pan-x pan-y
+}
+#aoPray435930 .aoDailyFormulationChoices::-webkit-scrollbar{display:none}
+#aoPray435930 .aoDailyFormulationChoices>button{
+ flex:0 0 auto;min-height:42px;max-width:210px;
+ border:1px solid rgba(215,188,146,.29);border-radius:999px;
+ background:rgba(18,26,35,.34);color:#e3d7c6;padding:8px 13px;
+ font:500 .77rem/1.25 var(--ao-font-ui,system-ui,sans-serif);
+ white-space:normal;text-align:center;
+}
+#aoPray435930 .aoDailyFormulationChoices>button[aria-pressed="true"]{
+ color:#1d2024;border-color:#e0c79e;background:#e0c79e;font-weight:700
+}
+#aoPray435930 .aoDailyFormulationChoices>button:focus-visible{
+ outline:2px solid #e7cb98;outline-offset:2px
+}
+@media(max-width:360px){
+ #aoPray435930 .aoDailyFormulationChoices>button{padding-inline:10px;font-size:.73rem}
+}
+
 `;
 
 export function installTraditionalPrayStyles(doc=globalThis.document){
