@@ -131,6 +131,8 @@ function build(){
     quarantinedSourceHours:summary.quarantinedSourceHourCount,
     blockedLocalePages:summary.blockedLocalePageCount,
   }));
+  for(const block of blockedLocalePages)
+    console.log("OFFICE_MISSING_TRANSLATION_QUARANTINE",JSON.stringify(block));
   if(summary.pages+summary.blockedLocalePageCount!==eligibleGroups.size*2 ||
     summary.pages+summary.blockedLocalePageCount+summary.quarantinedSourceHourCount*2!==groups.size*2)
     throw Error("OFFICE_MASS_PREVIEW_COUNT_MISMATCH");
