@@ -656,6 +656,21 @@ try{
  assert.ok(hymn.paragraphCount>20,"Te Deum has no line-level focus");
  assert.equal(await page.locator("#aoPray435930 [data-ao-hymn-options]").evaluate(x=>x.open),false,
   "Hymn introduction and three language controls crowd the prayer card");
+ // B16: three principal sources are visible immediately, while all eight
+ // seasonal Office recensions remain secondary and independently sourced.
+ const coreHymns=page.locator("#aoPray435930 [data-ao-hymns-direct] [data-tp381-hymn]");
+ assert.equal(await coreHymns.count(),3,"Exactly three principal hymns should be visible before source text");
+ assert.equal(await coreHymns.first().getAttribute("aria-pressed"),"true");
+ await coreHymns.nth(1).evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"hymn-veni_creator","Direct hymn did not open its canonical prayer card");
+ assert.equal(await coreHymns.nth(1).getAttribute("aria-pressed"),"true");
+ const seasonalHymns=page.locator("#aoPray435930 [data-ao-hymn-catalogue] [data-tp381-hymn]");
+ assert.equal(await seasonalHymns.count(),8,"Historical seasonal Office hymns were dropped from the catalogue");
+ await page.locator("#aoPray435930 [data-ao-hymn-catalogue] > summary").evaluate(el=>el.click());
+ await seasonalHymns.first().evaluate(el=>el.click());
+ assert.match((await snapshot()).id,/^hymn-/,"Seasonal choice lost the original hymn reader");
+ await coreHymns.first().evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"hymn-te_deum","Principal hymn return was not exact");
  await page.screenshot({path:resolve(captures,"hymns-te-deum-390-fr.png"),animations:"disabled"});
  const sourceLineation=x=>String(x).split("\n").map(y=>y.trim()).filter(Boolean).join("\n");
  const renderedLines=async selector=>page.locator(selector+" .aoTP381TextParagraph").evaluateAll(nodes=>nodes.map(x=>x.textContent.trim()).filter(Boolean).join("\n"));
@@ -758,6 +773,17 @@ try{
  assert.equal(dying.active,1);assert.equal(dying.index,0);assert.equal(dying.id,"dying-now");
  assert.equal(dying.overflow,"auto");
  assert.equal(await page.locator("#aoPray435930 [data-ao-dying-companion-options]").evaluate(x=>x.open),false);
+ const bedside=page.locator("#aoPray435930 [data-ao-bedside-direct] [data-tp381-dying]");
+ assert.equal(await bedside.count(),3,"A bedside visitor should not open secondary settings to reach prayer");
+ assert.equal(await bedside.first().getAttribute("aria-pressed"),"true","Obtain priest must remain the default action");
+ await bedside.nth(1).evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"dying-pray","Direct quiet prayer action failed");
+ await bedside.nth(2).evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"dying-commend","Direct Commendation action failed");
+ await bedside.first().evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"dying-now","Urgent pastoral first action cannot be restored");
+ const bedsideWidth=await page.locator("#aoPray435930 [data-ao-bedside-direct]").evaluate(el=>({w:el.clientWidth,sw:el.scrollWidth}));
+ assert.ok(bedsideWidth.sw<=bedsideWidth.w+2,"320px immediate bedside action controls overflow");
  assert.match(await page.locator("#aoPray435930 .aoDevoCardScroll").innerText(),
    /Appelez un prêtre maintenant|Call a priest now/,
    "Dying Companion must put obtaining a priest in its reading card");
