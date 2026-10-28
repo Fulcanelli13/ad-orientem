@@ -1,0 +1,26 @@
+name: Explore P63 standalone approved Place gallery
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+    paths:
+      - 'src/find/explore-presentation.js'
+      - 'tests/explore-r69-multi-place-gallery.mjs'
+      - 'tests/explore-r68-photo-gallery.mjs'
+      - '.github/workflows/explore-p63-standalone-gallery.yml'
+permissions:
+  contents: read
+jobs:
+  approved-photo-gallery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: R69 existing photo rights and publication regressions
+        run: node tests/explore-r69-multi-place-gallery.mjs
+      - name: R68 Pontmain photo safety regressions
+        run: node tests/explore-r68-photo-gallery.mjs
