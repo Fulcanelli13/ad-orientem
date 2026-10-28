@@ -121,10 +121,10 @@
         3581
       ],
       "finding": "v1 removes most exposed oak but still leaves traces around borders, especially lower edge. The v2 proposal preserves Marian, angelic, dove and lily imagery, yet native pixel-edge check remains necessary to certify no support border or painted loss.",
-      "source_candidate_choice": "CROP_NATIVE_SUPPORT_ONLY_PENDING_EDGE_SIGNOFF",
+      "source_candidate_choice": "PREFER_ANGELUS_V3_FOR_FURTHER_PHONE_TEST",
       "display_policy": "natural aspect contain, not forced 3:4 or 16:9 cover (dove/lilies at risk)",
       "published": false,
-      "release_gate": "HOLD_PAINTED_EDGE_CERTIFICATION",
+      "release_gate": "HOLD_FINAL_ARTWORK_AND_READER_INTEGRATION_GATE",
       "candidate_cropped_previews": [
         {
           "path": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-paint-proposal-v2-720.webp",
@@ -151,7 +151,48 @@
       ],
       "v2_corner_evidence": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-v2-corner-grid.jpg",
       "v2_edge_review": "HOLD: TL and bottom-left 512-pixel tiles still show a narrow light/support strip; v2 is closer but not a fully frame-free painting-only crop. Do not release.",
-      "next_gate": "Derive next tiny-edge trim using native surface boundary; ensure physical painted-surface ratio and do not clip objects or painting, particularly signature, basket, dove and lilies."
+      "next_gate": "Test the natural-aspect v3 image at 320/390/tablet/desktop in the existing Angelus reader; confirm restored cropped shape and full source credit. No object-fit cover.",
+      "v3": {
+        "proposed_native_pixel_box_xyxy": [
+          106,
+          91,
+          3630,
+          3550
+        ],
+        "v3_corner_grid": {
+          "file": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-v3-four-corners.jpg",
+          "sha256": "fb81851cccea23190a726d9a4464f9b539a04edf7f0f5ff26a38c589a0b06f24",
+          "bytes": 299969
+        },
+        "responsive_previews": [
+          {
+            "file": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-v3-paint-only-720.webp",
+            "sha256": "b6564bf79fa27d8c0bca634ac40dd94dbcd372d081465385939ee52f2eb2c1bd",
+            "bytes": 113248,
+            "pixels": [
+              720,
+              707
+            ],
+            "production": false
+          },
+          {
+            "file": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-v3-paint-only-1440.webp",
+            "sha256": "01f24b6654a7e7ebe737391da2eabba964a9a0a007ac2df14ca7da0bf8cf9e63",
+            "bytes": 449394,
+            "pixels": [
+              1440,
+              1413
+            ],
+            "production": false
+          }
+        ],
+        "native_master_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+        "observed_result": "PRELIMINARY PAINTED-AREA VISUAL PASS: all four 512-pixel native corner tiles show painted image, no visible exposed oak frame; full 720px proof visibly retains Mary, Gabriel, dove, lilies, signed lectern and basket.",
+        "source_ratio_error": 0.000005431086200546886,
+        "same_locked_artwork": true,
+        "production_approved": false,
+        "human_final_edge_certification": false
+      }
     },
     {
       "module": "evening",
@@ -174,12 +215,13 @@
     "compared_modules": 4,
     "original_alternatives_archived": 2,
     "rosary_bad_crop_candidates_disqualified": 2,
-    "angelus_refinement_pending": 1,
+    "angelus_refinement_pending": 0,
     "evening_high_res_found": 0,
     "photo_released": 0,
     "rosary_clean_source_faithful_proofs": 2,
     "angelus_cropped_source_faithful_proofs": 2,
-    "angelus_v2_human_signoff": false
+    "angelus_v2_human_signoff": false,
+    "angelus_preliminary_painted_border_candidates": 1
   },
   "no_source_original_bytes_edited": true,
   "review_files": [
