@@ -1,0 +1,62 @@
+// Exact-identity, approved-media-only Traditional Mass venue cards.
+import { massInstitutionEmblem } from "./institution-emblems.js";
+const E=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+const A=v=>Array.isArray(v)?v:[];
+const L=(lang,en,fr)=>lang==="fr"?fr:en;
+const path=/^assets\/approved\/(?:place-media|place-gallery)\/[A-Za-z0-9_-]+\.webp$/;
+const licenses=new Set(["PUBLIC_DOMAIN","CC0","CC-BY-4.0","CC-BY-SA-2.0","CC-BY-SA-3.0","CC-BY-SA-4.0"]);
+const https=x=>/^https:\/\/[^\s<>"']+$/.test(String(x??""));
+
+export function eligibleDirectoryImage(img,placeId){
+  return Boolean(img&&img.place_id===placeId&&img.status==="APPROVED"&&
+    path.test(String(img.asset_path??""))&&licenses.has(String(img.license??""))&&
+    https(img.license_url)&&https(img.source_url)&&
+    img.rights_verified===true&&img.subject_verified===true&&img.crop_reviewed===true&&
+    /^[a-f0-9]{64}$/i.test(String(img.derivative_sha256??""))&&
+    String(img.credit??"").trim()&&String(img.alt_en??"").trim()&&String(img.alt_fr??"").trim());
+}
+
+// Source identity must be an exact, confirmed LOCATED_AT relation.
+// Never infer a Place from similar names, nearby provisional pins or an image query.
+export function attachApprovedDirectoryMedia(items,{directoryPlaceLinks=[],approved=[],gallery=[]}={}){
+  const exact=new Map();
+  for(const link of A(directoryPlaceLinks)){
+    if(link?.confidence!=="CONFIRMED"||link?.relationship!=="LOCATED_AT"||!link?.venue_id||!link?.place_id)continue;
+    if(exact.has(link.venue_id)&&exact.get(link.venue_id)!==link.place_id)exact.set(link.venue_id,null);
+    else if(!exact.has(link.venue_id))exact.set(link.venue_id,link.place_id);
+  }
+  return A(items).map(item=>{
+    if(item?.kind!=="TLM_VENUE")return item;
+    const placeId=exact.get(item.source_id);
+    if(!placeId)return item;
+    const covers=A(approved).filter(img=>eligibleDirectoryImage(img,placeId));
+    const photos=A(gallery).filter(img=>eligibleDirectoryImage(img,placeId));
+    if(!covers.length&&!photos.length)return item;
+    return {...item,place_id:placeId,cover_media:covers[0]??photos[0],gallery_media:photos};
+  });
+}
+const churchGlyph='<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 54h44M15 54V29l17-13 17 13v25M25 54V39a7 7 0 0 1 14 0v15M32 9V3M26 9h12M16 31h32"/><path d="M22 34h3m14 0h3"/></svg>';
+
+export function renderDirectoryVenueCard(item,language="en"){
+  const img=item?.cover_media;
+  const photo=Boolean(img&&eligibleDirectoryImage(img,item.place_id));
+  const emblem=massInstitutionEmblem(item?.community_id);
+  const sources=A(item?.source_links).filter(s=>https(s?.url)).length;
+  const status=String(item?.status??"");
+  const provisional=Boolean(item?.preliminary_group)||item?.map_state==="PROVISIONAL"||
+    ["SOURCE-REPORTED","UNCLASSIFIED","SCHEDULE UNVERIFIED","OFFICIAL · TIMES UNCONFIRMED"].includes(status);
+  const schedule=L(language,provisional?"Mass times not independently verified":A(item?.sections).length?"Mass details available · check official source":"Mass times not verified",
+    provisional?"Horaires non vérifiés indépendamment":A(item?.sections).length?"Horaires disponibles · vérifier à la source":"Horaires non vérifiés");
+  return '<button type="button" class="aoFindCard aoExploreCard aoTlmVenueCard" data-explore-item="'+E(item.item_id)+'" data-explore-lens="tlm">'
+    +'<span class="aoTlmVenueVisual">'
+    +(photo?'<img loading="lazy" decoding="async" src="'+E(img.asset_path)+'" alt="'+E(language==="fr"?img.alt_fr:img.alt_en)+'">':'<span class="aoTlmVenueGlyph">'+churchGlyph+'</span>')
+    +'</span><span class="aoTlmVenueContent"><span class="aoTlmVenueInstitution">'
+    +(emblem?'<img src="'+E(emblem.image)+'" alt="" loading="lazy" decoding="async">':'')
+    +'<span>'+E(item.eyebrow||item.community_id||L(language,"Church / chapel","Église / chapelle"))+'</span></span>'
+    +'<strong class="aoTlmVenueTitle">'+E(item.title||L(language,"Unnamed venue","Lieu sans nom"))+'</strong>'
+    +'<span class="aoTlmVenueLocality">'+E(item.subtitle||"")+'</span>'
+    +'<span class="aoTlmVenueSchedule">'+E(schedule)+'</span>'
+    +'<span class="aoTlmVenueFoot"><small>'+E(sources?L(language,"Source-backed listing","Fiche sourcée"):L(language,"Source review pending","Sources en cours d’examen"))+'</small><span>'+E(L(language,"View church","Voir l’église"))+' <span aria-hidden="true">→</span></span></span>'
+    +'</span></button>';
+}
+export const DIRECTORY_CARD_STYLE = ".aoFindList .aoTlmVenueCard{display:grid;grid-template-columns:116px minmax(0,1fr);align-items:stretch;gap:0;padding:0;overflow:hidden;min-height:174px;border-radius:16px;background:linear-gradient(145deg,#162633,#0d151f);border:1px solid rgba(217,197,154,.23);transition:border-color .15s ease,transform .15s ease}\n.aoFindList .aoTlmVenueCard:hover{border-color:rgba(217,197,154,.64);transform:translateY(-1px)}\n.aoFindList .aoTlmVenueCard:focus-visible{outline:2px solid #d9c59a;outline-offset:3px}\n.aoTlmVenueVisual{display:flex;align-items:center;justify-content:center;min-height:174px;background:linear-gradient(150deg,#294252,#15242f);overflow:hidden}\n.aoTlmVenueVisual>img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}\n.aoTlmVenueGlyph{display:grid;place-items:center;width:76px;height:76px;color:#b9a57b;opacity:.75}\n.aoTlmVenueGlyph svg{width:100%;height:100%}\n.aoTlmVenueContent{display:flex;flex-direction:column;gap:6px;padding:14px 14px 12px;min-width:0}\n.aoTlmVenueInstitution{display:flex;gap:7px;align-items:center;font:650 10px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.055em;color:#d0b78b}\n.aoTlmVenueInstitution img{width:23px;height:23px;object-fit:contain;flex:none}\n.aoFindList .aoTlmVenueTitle{font:600 19px/1.15 var(--ao-font-display,Georgia,serif);margin:0;color:#f3e8d8;overflow-wrap:anywhere}\n.aoTlmVenueLocality{font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:#adc0c9}\n.aoTlmVenueSchedule{margin-top:4px;font:500 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#d7d1c4}\n.aoTlmVenueFoot{display:flex;justify-content:space-between;gap:8px;margin-top:auto;padding-top:9px;border-top:1px solid #ccb17d20;color:#e1c590;font:650 11px/1.3 var(--ao-font-ui,system-ui,sans-serif)}\n.aoTlmVenueFoot small{font:500 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:#92a5ab}\n@media(max-width:420px){.aoFindList .aoTlmVenueCard{grid-template-columns:100px minmax(0,1fr);min-height:168px}.aoTlmVenueVisual{min-height:168px}.aoTlmVenueContent{padding:12px 11px;gap:6px}.aoFindList .aoTlmVenueTitle{font-size:17px}.aoTlmVenueFoot small{font-size:9px}}\n@media(prefers-reduced-motion:reduce){.aoFindList .aoTlmVenueCard{transition:none}}";
