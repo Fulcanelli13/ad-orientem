@@ -89,7 +89,13 @@
         }
       ],
       "source_candidate_quality_review": "PASS_AS_UNFRAMED_RESEARCH_PHOTO: 720px proof visibly includes complete top fifteen roundels, entire Madonna/Child and all lower angels, no physical clips. Darker and subdued than Sailko; do not recolor or claim source match until reference acceptance.",
-      "next_gate": "Attach exact PD single-reproduction attribution, source page and hashes to actual Rosary user journey under opt-in preview; no crop whatsoever."
+      "next_gate": "Attach exact PD single-reproduction attribution, source page and hashes to actual Rosary user journey under opt-in preview; no crop whatsoever.",
+      "historical_master_identity_reconciled": {
+        "historical_manifest_sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+        "reacquired_commons_original_sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+        "byte_identical": true,
+        "conclusion": "The clean Yorck full-work photo is not a new source substitution; its exact SHA-256 matches the historical Wave 1 Rosary master reference that was previously stranded on an unavailable research path."
+      }
     },
     {
       "module": "angelus",
