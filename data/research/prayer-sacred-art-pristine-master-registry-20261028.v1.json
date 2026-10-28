@@ -115,7 +115,13 @@
     "batch3_exact_source_groups_reconciled": 7,
     "batch3_institutional_metadata_checks": 1,
     "batch3_originals_archived": 0,
-    "batch3_pristine_certifications": 0
+    "batch3_pristine_certifications": 0,
+    "batch4_sources_native_centre_reviewed": 23,
+    "batch4_existing_heroes_reaudited": 20,
+    "batch4_additional_sources_reaudited": 3,
+    "batch4_source_checksum_and_dimensions_verified": 23,
+    "batch4_full_native_contact_sheets": 6,
+    "batch4_new_final_pristine_certifications": 0
   },
   "primary_artworks": [
     {
@@ -173,6 +179,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-01.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+          "native_pixels": [
+            3741,
+            3658
+          ],
+          "review_action": "PRECISE_PAINTED_BOUNDARY_REQUIRED",
+          "colour_profile_embedded": false,
+          "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              800,
+              782
+            ],
+            "dark_luma_fraction_0_to_4": 0.021571,
+            "light_luma_fraction_251_to_255": 0,
+            "edge_filter_variance_heuristic": 1027.116,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-01.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -248,6 +280,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-01.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "d632ea2012825ecdccc760f50b7cc9107a30bf4a2349541742ef6f66a4987f9b",
+          "native_pixels": [
+            4421,
+            6000
+          ],
+          "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+          "colour_profile_embedded": false,
+          "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              589,
+              800
+            ],
+            "dark_luma_fraction_0_to_4": 0,
+            "light_luma_fraction_251_to_255": 0,
+            "edge_filter_variance_heuristic": 419.112,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-01.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -321,6 +379,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-01.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "c32547f474f4908331c9e7a013809076a65bbbcdc2f8cec6c5b6af2f7e6a1b09",
+          "native_pixels": [
+            4037,
+            2444
+          ],
+          "review_action": "REPLACE_BAD_FRAME_GLARE_PHOTOGRAPH",
+          "colour_profile_embedded": false,
+          "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              800,
+              484
+            ],
+            "dark_luma_fraction_0_to_4": 0.000333,
+            "light_luma_fraction_251_to_255": 0,
+            "edge_filter_variance_heuristic": 963.98,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-01.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -411,6 +495,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-01.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+          "native_pixels": [
+            2345,
+            3045
+          ],
+          "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+          "colour_profile_embedded": false,
+          "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              616,
+              800
+            ],
+            "dark_luma_fraction_0_to_4": 0,
+            "light_luma_fraction_251_to_255": 0.000688,
+            "edge_filter_variance_heuristic": 990.946,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-01.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -483,6 +593,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-01.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "82e465f5600d0df4b2af32d22b8642a832bfc4cdd5d19d1f1c2b0baeec49649d",
+          "native_pixels": [
+            2277,
+            2960
+          ],
+          "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+          "colour_profile_embedded": false,
+          "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              615,
+              800
+            ],
+            "dark_luma_fraction_0_to_4": 0,
+            "light_luma_fraction_251_to_255": 0.00048,
+            "edge_filter_variance_heuristic": 1037.896,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-02.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -566,6 +702,32 @@
           "grade": "REJECT_PHOTO_EXTERNAL_GILDED_FRAME_AND_PERSPECTIVE",
           "note": "Church photograph shows ornate gilt frame and oblique camera perspective; native corners include physical frame. Although 2112×2816, it is not a suitable clean hero source.",
           "eligible_to_replace_current_primary_photo": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad",
+          "native_pixels": [
+            1657,
+            2441
+          ],
+          "review_action": "SHARPER_FAITHFUL_ORIGINAL_REQUIRED",
+          "colour_profile_embedded": false,
+          "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              543,
+              800
+            ],
+            "dark_luma_fraction_0_to_4": 0.024187,
+            "light_luma_fraction_251_to_255": 0,
+            "edge_filter_variance_heuristic": 477.558,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-02.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -750,6 +912,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-02.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+          "native_pixels": [
+            2144,
+            3000
+          ],
+          "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+          "colour_profile_embedded": true,
+          "preview_colour_handling": "PREVIEW_EMBEDDED_ICC_TO_SRGB",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              572,
+              800
+            ],
+            "dark_luma_fraction_0_to_4": 0.000127,
+            "light_luma_fraction_251_to_255": 0,
+            "edge_filter_variance_heuristic": 740.645,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-02.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -822,6 +1010,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-02.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+          "native_pixels": [
+            3122,
+            3813
+          ],
+          "review_action": "PRECISE_PAINTED_BOUNDARY_REQUIRED",
+          "colour_profile_embedded": false,
+          "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              655,
+              800
+            ],
+            "dark_luma_fraction_0_to_4": 0.024206,
+            "light_luma_fraction_251_to_255": 0,
+            "edge_filter_variance_heuristic": 859.868,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-02.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -894,6 +1108,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-02.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158",
+          "native_pixels": [
+            8708,
+            6212
+          ],
+          "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+          "colour_profile_embedded": false,
+          "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              800,
+              571
+            ],
+            "dark_luma_fraction_0_to_4": 0.187224,
+            "light_luma_fraction_251_to_255": 0.000037,
+            "edge_filter_variance_heuristic": 605.728,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-03.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -966,6 +1206,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-02.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "2a25ed08f0fc21825eb084e0f5a09de63e8bdcf13c42d8b008d1d3bc805d3cd5",
+          "native_pixels": [
+            2987,
+            3200
+          ],
+          "review_action": "NONPAINTED_MARGIN_BOUNDARY_REQUIRED",
+          "colour_profile_embedded": false,
+          "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              747,
+              800
+            ],
+            "dark_luma_fraction_0_to_4": 0,
+            "light_luma_fraction_251_to_255": 0.1079,
+            "edge_filter_variance_heuristic": 2159.563,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-03.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -1038,6 +1304,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-03.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "a2c3a6eda78b412da44d50197d853f01e1cd3ded5ebd5996816db451f11606b6",
+          "native_pixels": [
+            2393,
+            3200
+          ],
+          "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+          "colour_profile_embedded": true,
+          "preview_colour_handling": "PREVIEW_EMBEDDED_ICC_TO_SRGB",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              598,
+              800
+            ],
+            "dark_luma_fraction_0_to_4": 0.053161,
+            "light_luma_fraction_251_to_255": 0.000157,
+            "edge_filter_variance_heuristic": 682.294,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-03.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -1111,6 +1403,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-03.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "c5b8c147a0e75f1fe91279ceedd323fd246030e8bf0750f4a2b39811bac42102",
+          "native_pixels": [
+            6000,
+            4000
+          ],
+          "review_action": "REPLACE_GALLERY_INSTALLATION_PHOTOGRAPH",
+          "colour_profile_embedded": false,
+          "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              800,
+              533
+            ],
+            "dark_luma_fraction_0_to_4": 0.000106,
+            "light_luma_fraction_251_to_255": 0.000607,
+            "edge_filter_variance_heuristic": 2390.574,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-03.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -1202,6 +1520,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-03.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+          "native_pixels": [
+            2548,
+            3300
+          ],
+          "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+          "colour_profile_embedded": false,
+          "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              618,
+              800
+            ],
+            "dark_luma_fraction_0_to_4": 0,
+            "light_luma_fraction_251_to_255": 0,
+            "edge_filter_variance_heuristic": 333.989,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-04.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -1354,6 +1698,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-03.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "c6d06a9458658a6de9164895ca784e17ea70548ed090ae27987f28351694d077",
+          "native_pixels": [
+            3000,
+            3688
+          ],
+          "review_action": "POSTER_BOUNDARY_AND_REPRODUCTION_RIGHTS_REVIEW",
+          "colour_profile_embedded": true,
+          "preview_colour_handling": "PREVIEW_EMBEDDED_ICC_TO_SRGB",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              651,
+              800
+            ],
+            "dark_luma_fraction_0_to_4": 0.003026,
+            "light_luma_fraction_251_to_255": 0.001256,
+            "edge_filter_variance_heuristic": 5354.831,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-04.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -1426,6 +1796,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-03.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "137d3df4dee890524678cbd02b9690130c5550d22ca6778621b24fc6fe6ab5b2",
+          "native_pixels": [
+            4969,
+            5434
+          ],
+          "review_action": "ARCHED_PAINTED_BOUNDARY_REVIEW",
+          "colour_profile_embedded": false,
+          "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              732,
+              800
+            ],
+            "dark_luma_fraction_0_to_4": 0.006373,
+            "light_luma_fraction_251_to_255": 0,
+            "edge_filter_variance_heuristic": 1650.146,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-04.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -1498,6 +1894,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-04.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "347cf5d74cc575bcb082250a90dc64c54dc673e94fbc4e48efcd27fa2a3b09c1",
+          "native_pixels": [
+            3948,
+            3328
+          ],
+          "review_action": "VERIFY_POSSIBLE_OVERPRINT_OR_WATERMARK",
+          "colour_profile_embedded": true,
+          "preview_colour_handling": "PREVIEW_EMBEDDED_ICC_TO_SRGB",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              800,
+              674
+            ],
+            "dark_luma_fraction_0_to_4": 0.008876,
+            "light_luma_fraction_251_to_255": 0,
+            "edge_filter_variance_heuristic": 521.714,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-04.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -1570,6 +1992,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-04.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "909302874ecb137b75c3b97974e9a4b42ec3c4d10a6d3e83bc98c130057b760f",
+          "native_pixels": [
+            4424,
+            3399
+          ],
+          "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+          "colour_profile_embedded": false,
+          "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              800,
+              615
+            ],
+            "dark_luma_fraction_0_to_4": 0.005301,
+            "light_luma_fraction_251_to_255": 0.00689,
+            "edge_filter_variance_heuristic": 1850.292,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-05.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -1642,6 +2090,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-04.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+          "native_pixels": [
+            4096,
+            3712
+          ],
+          "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+          "colour_profile_embedded": true,
+          "preview_colour_handling": "PREVIEW_EMBEDDED_ICC_TO_SRGB",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              800,
+              725
+            ],
+            "dark_luma_fraction_0_to_4": 0,
+            "light_luma_fraction_251_to_255": 0.000002,
+            "edge_filter_variance_heuristic": 436.85,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-05.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -1728,6 +2202,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-04.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+          "native_pixels": [
+            1880,
+            2886
+          ],
+          "review_action": "NONPAINTED_MARGIN_BOUNDARY_REQUIRED",
+          "colour_profile_embedded": false,
+          "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              521,
+              800
+            ],
+            "dark_luma_fraction_0_to_4": 0,
+            "light_luma_fraction_251_to_255": 0.066622,
+            "edge_filter_variance_heuristic": 2168.629,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-05.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": {
@@ -1811,6 +2311,32 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-04.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "batch4_native_centre_pixel_review": {
+          "technical_status": "PASS_EXACT_PINNED_SHA_AND_DIMENSIONS_NATIVE_CENTRE_CORNER_CAPTURED",
+          "source_sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+          "native_pixels": [
+            2220,
+            3000
+          ],
+          "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+          "colour_profile_embedded": true,
+          "preview_colour_handling": "PREVIEW_EMBEDDED_ICC_TO_SRGB",
+          "noncertifying_raster_diagnostics": {
+            "sampled_analysis_pixels": [
+              592,
+              800
+            ],
+            "dark_luma_fraction_0_to_4": 0.124605,
+            "light_luma_fraction_251_to_255": 0,
+            "edge_filter_variance_heuristic": 1798.494,
+            "metrics_not_photo_certifications": true
+          },
+          "quality_report": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+          "proof_contact_sheet": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-05.jpg",
+          "pristine_final_certified": false,
+          "reproduction_rights_certified": false,
+          "production_authorized": false
         }
       },
       "alternative_source_candidate": null,
@@ -5761,6 +6287,41 @@
         "source_status": "HOLD_EXIF_CATHOLIC_NEWS_SERVICE_COPYRIGHT_CONFLICT"
       },
       "release_policy": "Photographic rights, selected exact painting identity and native-image quality still require independent gates. No automatic promotions."
+    },
+    "B4_TWENTY_THREE_PHOTOGRAPHIC_NATIVE_QUALITY": {
+      "status": "COMPLETE_23_SOURCE_NATIVE_DETAIL_QA_WITH_PHOTO_RIGHTS_HOLDS",
+      "source_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40728233200",
+      "source_results": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json",
+      "primary_heroes_checked": 20,
+      "supplementary_candidates_checked": 3,
+      "sha256_and_dimensions_confirmed": 23,
+      "technical_errors": 0,
+      "review_sheets": [
+        "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-01.jpg",
+        "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-02.jpg",
+        "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-03.jpg",
+        "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-04.jpg",
+        "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-05.jpg",
+        "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-06.jpg"
+      ],
+      "review_action_counts": {
+        "PRECISE_PAINTED_BOUNDARY_REQUIRED": 2,
+        "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION": 10,
+        "REPLACE_BAD_FRAME_GLARE_PHOTOGRAPH": 1,
+        "SHARPER_FAITHFUL_ORIGINAL_REQUIRED": 1,
+        "NONPAINTED_MARGIN_BOUNDARY_REQUIRED": 2,
+        "REPLACE_GALLERY_INSTALLATION_PHOTOGRAPH": 1,
+        "POSTER_BOUNDARY_AND_REPRODUCTION_RIGHTS_REVIEW": 1,
+        "ARCHED_PAINTED_BOUNDARY_REVIEW": 1,
+        "VERIFY_POSSIBLE_OVERPRINT_OR_WATERMARK": 1,
+        "CANDIDATE_PAINT_SURFACE_DETAIL_AND_RIGHTS_HOLD": 2,
+        "CANDIDATE_LIMITED_NATIVE_PIXELS_AND_RIGHTS_HOLD": 1
+      },
+      "subjective_photographic_final_certifications": 0,
+      "photo_reproduction_rights_final_certifications": 0,
+      "publications": 0,
+      "cost_eur": 0,
+      "warning": "The centre/corner capture and raster statistics are evidence, not curator decisions. Known unsatisfactory photographs remain rejected. No auto crop, tone correction, rights grant or publication."
     }
   },
   "protected_wave1_notes": {
@@ -5769,5 +6330,58 @@
     "sorrows": "Seven narrative medallions and one physical sword; canonical novena owner exists, no separate invented reader.",
     "evening": "Exact Frère Wolverhampton OP6 photo high-resolution reusable original unresolved; reject fake 2x upscales.",
     "note": "Five UI previews belong to separate draft feature PRs and are irrelevant to pristine-photo clearance."
-  }
+  },
+  "supplementary_photographic_candidates": [
+    {
+      "case_id": "tiepolo-prado-descent",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Descent from the Cross (Prado 1772)",
+      "source_sha256": "1cb5d8a9f420eddd32ffabc4713a49d27a6f39e664d2495c5852a34fa68723e7",
+      "native_dimensions": [
+        2705,
+        2362
+      ],
+      "review_action": "CANDIDATE_PAINT_SURFACE_DETAIL_AND_RIGHTS_HOLD",
+      "centre_native_evidence": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-06.jpg",
+      "source_original_unmodified": true,
+      "photo_rights_certified": false,
+      "pristine_certified": false,
+      "promoted_to_primary_hero": false,
+      "publication_allowed": false
+    },
+    {
+      "case_id": "teniers-agony-antwerp",
+      "artist": "David Teniers the Elder",
+      "title": "Agony in the Garden (Antwerp Rosary cycle)",
+      "source_sha256": "6a697614cfe96b9f62921af0015eeca08fbc26ed0103dbefe9abe98c5342658e",
+      "native_dimensions": [
+        1333,
+        1799
+      ],
+      "review_action": "CANDIDATE_LIMITED_NATIVE_PIXELS_AND_RIGHTS_HOLD",
+      "centre_native_evidence": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-06.jpg",
+      "source_original_unmodified": true,
+      "photo_rights_certified": false,
+      "pristine_certified": false,
+      "promoted_to_primary_hero": false,
+      "publication_allowed": false
+    },
+    {
+      "case_id": "vandyck-holy-spirit",
+      "artist": "Anthony van Dyck",
+      "title": "Outpouring of the Holy Spirit (Sanssouci)",
+      "source_sha256": "9ac5db7a32626fd6825e6d364f3fc48b034ba8282a6989cf24d3f368c0eafe63",
+      "native_dimensions": [
+        6064,
+        7368
+      ],
+      "review_action": "CANDIDATE_PAINT_SURFACE_DETAIL_AND_RIGHTS_HOLD",
+      "centre_native_evidence": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-06.jpg",
+      "source_original_unmodified": true,
+      "photo_rights_certified": false,
+      "pristine_certified": false,
+      "promoted_to_primary_hero": false,
+      "publication_allowed": false
+    }
+  ]
 }
