@@ -3116,6 +3116,9 @@ export function createReaderDomAdapter({
             ?"Not in your local music plan"
             :item.organPermission?.status==="SOLO_FORBIDDEN"
               ?"Solo organ forbidden"
+              :item.kind==="ORGAN_OPTION" &&
+                item.organPermission?.status!=="SOLO_POTENTIALLY_PERMITTED"
+                ?"Organ permission not verified · not playing observed"
               :"Reference only · not heard or timed");
       button.append(detail);
       if(item.id===current?.scholaEventSelection?.id)
