@@ -65,6 +65,10 @@ for(const token of [
   'data-schola-pause'
 ]) expect(html.includes(token),"reader shell missing "+token);
 expect(!html.includes('data-reader-mode="SIMPLE"'),"retired SIMPLE mode is still advertised");
+expect(html.includes('aria-label="Catch up with the priest: find a Mass prayer or moment"'),
+  "Priest recovery must be directly discoverable in LIVE/Missal");
+expect(html.includes('class="ao-section-catchup" aria-hidden="true">CATCH UP</span>'),
+  "Priest recovery affordance missing in top reader navigation");
 expect(html.includes('data-icon-slot="faithful-gesture-top"'),
   "Missal top ribbon must show a source-owned gesture glyph independently from posture");
 expect(html.includes('data-role="missal-faithful-gesture"'),
