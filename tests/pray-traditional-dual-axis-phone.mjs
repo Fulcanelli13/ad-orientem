@@ -302,6 +302,7 @@ try{
   assert.equal(await renderedLines(frame+" [data-face-la]"),sourceLineation(SACRED_HYMNS_V381[keys[i]].la),
     "Original Latin hymn witness changed: "+keys[i]);
  }
+ await page.screenshot({path:resolve(captures,"hymns-ave-maris-stella-la-390.png"),animations:"disabled"});
  // Eight additional ICRSP hymns must retain Latin source text and the
  // original three source-locked hymns must retain their own EN/FR editions.
  const seasonalIds=["vexilla_regis","audi_benigne","ad_regias_agni_dapes",
@@ -318,7 +319,7 @@ try{
      "English/French hymn not source verified; do not display empty translation as real text");
    assert.equal(await page.locator("#aoPray435930 .aoDevoCardScroll .aoTP381Reader").count(),1);
  }
- await page.screenshot({path:resolve(captures,"hymns-ave-maris-stella-la-390.png"),animations:"disabled"});
+
  await page.locator("#aoPray435930 .aoDevoStop").first().evaluate(x=>x.click());
  await swipe(6,-135);
  assert.equal((await snapshot()).id,"hymn-te_deum","Vertical hymn scroll changed the card");
