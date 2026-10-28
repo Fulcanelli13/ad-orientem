@@ -56,7 +56,7 @@ try{
       card=r?.querySelector(":scope > .aoDevoCard"),
       reader=card?.querySelector(":scope > .aoDevoCardScroll"),
       now=reader?.querySelector(":scope > .aoP435930GuideNow");
-    return {first:r?.firstElementChild===prefs,
+    return {first:r?.firstElementChild?.matches?.("[data-ao-stations-direct-reading]")===true&&prefs?.previousElementSibling===r.firstElementChild,
       prayerAfter:prefs?.nextElementSibling===card&&!!now,
       closed:!prefs?.open,count:r?.querySelectorAll("[data-ao-stations-options]").length,
       summaryHeight:prefs?.querySelector("summary")?.getBoundingClientRect().height,
@@ -69,7 +69,7 @@ try{
       step:r?.querySelector(".aoP435930GuideNow small")?.textContent||""};
    });
    assert.ok(stDetails.first&&stDetails.prayerAfter&&stDetails.closed,
-    "Stations should begin with one collapsed choice and the original prayer: "+JSON.stringify(stDetails));
+    "Stations should begin with direct reading depth, collapsed secondary options and the original prayer: "+JSON.stringify(stDetails));
    assert.equal(stDetails.count,1);
    assert.ok(stDetails.summaryHeight>=44&&stDetails.prayerText?.length>20&&
      stDetails.cardTitle?.length>5&&stDetails.cardScroll==="auto"&&stDetails.legacyNav===0&&stDetails.progress==="1",
@@ -77,19 +77,24 @@ try{
    assert.equal(await page.locator("#aoPray435930.open .aoP435930Stations [data-ao-recitation-control]").count(),0,
      "Global coherence is duplicating the canonical Stations recitation choice");
    await checkDoc("Stations opening");
-   assert.equal(await st.locator('[data-p435930-seg="simple"]').isVisible(),false,
-     "Stations controls are visible through a closed preferences drawer");
+   const direct=page.locator("#aoPray435930.open [data-ao-stations-direct-reading]");
+   assert.equal(await direct.locator('[data-p435930-station-reading="simple"]').isVisible(),true,
+     "Direct Stations simple reading choice should be visible without opening settings");
+   assert.equal(await st.locator('[data-p435930-seg="group"]').isVisible(),false,
+     "Optional group recitation should remain under closed secondary preferences");
    await page.screenshot({path:resolve(shots,"stations-first-"+width+".png"),animations:"disabled"});
    await st.locator(":scope > summary").click();
    await expanded(stations);
-   assert.ok(await st.locator(".aoP435930ModeRow [data-p435930-seg]").count()>=4,
-    "Guided/Simple or Individual/Group control lost");
+   assert.equal(await direct.locator("[data-p435930-station-reading]").count(),2,
+     "Direct guided/simple Stations choices missing");
+   assert.equal(await st.locator(".aoP435930ModeRow [data-p435930-seg]").count(),2,
+     "Secondary disclosure should contain only Individual/Group recitation, not duplicate depth");
    assert.equal(await st.locator("[data-p435930-station-stabat]").count(),1);
    assert.ok(await st.locator(".aoP435930GuideInfo").count()>=1,"Stations Guide lost");
    const firstBefore=await page.locator("#aoPray435930.open .aoP435930GuideNow").innerText();
-   await st.locator('[data-p435930-seg="simple"]').click();
+   await direct.locator('[data-p435930-station-reading="simple"]').click();
    await expanded(stations);
-   assert.equal(await st.locator('[data-p435930-seg="simple"]').getAttribute("aria-pressed"),"true");
+   assert.equal(await direct.locator('[data-p435930-station-reading="simple"]').getAttribute("aria-pressed"),"true");
    await st.locator('[data-p435930-seg="group"]').click();
    await expanded(stations);
    assert.equal(await st.locator('[data-p435930-seg="group"]').getAttribute("aria-pressed"),"true");

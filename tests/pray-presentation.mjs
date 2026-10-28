@@ -303,7 +303,7 @@ assert.match(runtime,/isReducedMotion\?\.\(\)/,"Stations transition no longer ho
 assert.doesNotMatch(runtime,/view===['"]stations['"][\s\S]{0,900}ao-live-(?:stand|kneel)/,"Stations semantic rails invented a universal posture");
 assert.match(runtime,/i===13\?'ao-refined-silence':'ao-live-look'/,"Stations XIV no longer changes from attention to donor silence");
 assert.match(runtime,/After the XIV Station/,"Stations XIV silence cue lost its donor context");
-assert.match(runtime,/Traditional prayers · St Alphonsus method/,"Stations lost the traditional-method grouping of the vocal prayers");
+assert.match(runtime,/Our Father · Hail Mary · Glory Be/,"Stations lost the directly named canonical trio of traditional method prayers");
 assert.match(runtime,/aoP435930StationOrdinary/,"Stations vocal prayers are no longer progressively disclosed");
 assert.match(runtime,/data-role="\$\{role\}"/,"Stations V\/R lines lost explicit semantic role markup");
 assert.match(runtime,/line\('leader',la\[0\],ve\[0\]\)/,"Stations lost explicit versicle ownership");
