@@ -90,12 +90,32 @@ try{
      "Attribution must use the dark atlas palette: "+JSON.stringify(credits));
    const rail=page.locator("#ao-find-modular-root [data-mapcn-discover-rail]");
    await rail.waitFor({state:"visible"});
+   assert.equal(await rail.getAttribute("data-discover-expanded"),"false",
+     "The immersive map must begin with Discover in compact mode");
    assert.ok(await rail.locator("button[data-explore-open-place]").count()>0,
      "MapCN Discover must contain canonical actionable Places");
+   assert.match(await rail.locator(".aoMapcnDiscoverTitle").innerText(),/In this area/i,
+     "MapCN Discover should describe the current map viewport");
    const railGeometry=await rail.evaluate(el=>{const r=el.getBoundingClientRect();return {
      width:r.width,height:r.height,left:r.left,right:r.right,top:r.top,bottom:r.bottom};});
-   assert.ok(railGeometry.width>280&&railGeometry.bottom<=844+(mobile?1:1000)&&railGeometry.height>150,
-     "Discover rail must remain inside the visual viewport: "+JSON.stringify(railGeometry));
+   assert.ok(railGeometry.width>280&&railGeometry.bottom<= (mobile?844:960)+1
+    &&railGeometry.height<=75&&railGeometry.height>=60,
+     "Collapsed Discover must leave the map visible: "+JSON.stringify(railGeometry));
+   await page.screenshot({path:resolve(out,"explore-"+width+"-compact-discovery.png"),fullPage:false});
+   await rail.locator("[data-mapcn-discover-toggle]").click();
+   assert.equal(await rail.getAttribute("data-discover-expanded"),"true");
+   assert.equal(await rail.locator("[data-mapcn-discover-toggle]").getAttribute("aria-expanded"),"true");
+   // Height animates from its compact state. Measure only once the actual
+   // expanded layout settles; an intermediate animation frame is not a defect.
+   await page.waitForFunction(()=>{
+     const rail=document.querySelector("#ao-find-modular-root [data-mapcn-discover-rail]");
+     return rail?.dataset?.discoverExpanded==="true" && rail.getBoundingClientRect().height>300;
+   },null,{timeout:4000});
+   const openedRail=await rail.evaluate(el=>{const r=el.getBoundingClientRect();return {
+     height:r.height,top:r.top,bottom:r.bottom,vh:innerHeight};});
+   assert.ok(openedRail.height>150&&openedRail.top>=0&&openedRail.bottom<=openedRail.vh+1,
+     "Expanded Discover must remain within the viewport: "+JSON.stringify(openedRail));
+   await page.screenshot({path:resolve(out,"explore-"+width+"-expanded-discovery.png"),fullPage:false});
    const guide=page.locator("#ao-find-modular-root .aoHeritageMapHint");
    if(mobile){
      assert.equal(await guide.isVisible(),false,
@@ -117,8 +137,15 @@ try{
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
    await page.screenshot({path:resolve(out,"explore-"+width+"-overview.png"),fullPage:false});
 
+   // Specialist tools are available through the secondary More navigation,
+   // not as a second row permanently covering the map.
+   const openMoreTool=async selector=>{
+     const more=page.locator("#ao-find-modular-root .aoHeritageMore");
+     await more.locator(":scope > summary").click();
+     await more.locator(selector).click();
+   };
    // P3 MapCN Uptime Monitor adaptation stays inside the SAME canonical map.
-   await page.locator("#ao-find-modular-root [data-explore-time-mass-toggle]").click();
+   await openMoreTool("[data-explore-time-mass-toggle]");
    const timeMass=page.locator("#ao-find-modular-root [data-explore-time-mass-panel]");
    await timeMass.waitFor({state:"visible",timeout:15000});
    assert.ok(await timeMass.locator("[data-explore-time-mass-date]").count()>0);
@@ -140,7 +167,7 @@ try{
    await timeMass.waitFor({state:"detached",timeout:10000});
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
    // P4 MapCN Heatmap + Choropleth · exact canonical coverage only.
-   await page.locator("#ao-find-modular-root .aoAtlasLayersLaunch").click();
+   await openMoreTool('[data-atlas-mode="heatmap"]');
    const atlas=page.locator("#ao-find-modular-root [data-atlas-coverage-panel]");
    await atlas.waitFor({state:"visible",timeout:15000});
    assert.equal(await atlas.getAttribute("data-atlas-mode"),"heatmap");
@@ -168,7 +195,7 @@ try{
    await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
    // P5 · provenance-bound relationship graph, never a second map.
-   await page.locator("#ao-find-modular-root button[data-network-toggle]").click();
+   await openMoreTool("[data-network-toggle]");
    const graph=page.locator("#ao-find-modular-root [data-network-panel]");
    await graph.waitFor({state:"visible",timeout:20000});
    assert.ok(Number(await graph.locator(".aoNetworkStats strong").first().textContent())>0,
@@ -217,7 +244,7 @@ try{
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
    // P5: custom CTA must open a grouped canonical custom, not a bare
    // geographic attestation. Verify this at all three accepted viewport sizes.
-   await page.locator("#ao-find-modular-root button[data-network-toggle]").click();
+   await openMoreTool("[data-network-toggle]");
    await graph.waitFor({state:"visible"});
    await graph.locator("select[data-network-kind]").selectOption("custom");
    const customCta=graph.locator(".aoNetworkCurrent [data-network-open-custom]");
@@ -251,7 +278,7 @@ try{
      return globalThis.AO_RUNTIME_V8.store.getState().language;
    });
    assert.equal(p6French,"fr");
-   await page.locator("#ao-find-modular-root button[data-network-toggle]").click();
+   await openMoreTool("[data-network-toggle]");
    await graph.waitFor({state:"visible"});
    await graph.locator("select[data-network-kind]").selectOption("person");
    assert.ok(await graph.locator("a[href^='https://']").count()>0);
@@ -265,7 +292,7 @@ try{
    await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
    // D is a same-map journey folio: no new page and no manufactured route
    // lines. Exercise a historical source-owned 3-stage pilgrimage.
-   await page.locator("#ao-find-modular-root [data-explore-journey-open]").click();
+   await openMoreTool("[data-explore-journey-open]");
    const journey=page.locator("#ao-find-modular-root [data-explore-journey-panel]");
    await journey.waitFor({state:"visible"});
    assert.equal(await journey.locator("[data-explore-journey-select]").count(),20,

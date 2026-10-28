@@ -52,17 +52,16 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
-      # Production uses the source-curated 65-family (64 when local second
-      # Confiteor is omitted). The frozen 48-card projection is a separately
-      # tested source/compatibility contract, not a URL-selectable live mode.
-      # Test both without changing Mass ownership or weakening production gates.
+      # The opt-in purpose of this workflow is the live Explore map
+      # screenshot review. Run it first so a bad mobile interaction fails
+      # promptly without spending CI time on unrelated Mass captures.
+      - run: node tests/explore-medallion-visual-acceptance.mjs
+      # Preserve existing Mass visual and source/compatibility checks after
+      # Explore; neither Mass reader ownership nor its release is modified.
       - run: node tests/mass-phase12-curated65-contract.mjs
       - run: node tests/reader-live-product48.mjs
       - run: node tests/reader-phone-curated65.mjs
       - run: node tests/reader-live-visual-focus-production-phone.mjs
-      # Explore captures before the broader app sweep, so source-backed map
-      # evidence is available even if an unrelated surface later fails.
-      - run: node tests/explore-medallion-visual-acceptance.mjs
       - run: node tests/app-visual-acceptance.mjs
       - run: node tests/catechism-guided-mode-e2e.mjs
       - run: node tests/nonmass-donor-reference-e2e.mjs
