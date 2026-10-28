@@ -1,0 +1,104 @@
+{
+  "register": "Ad Orientem — museum-issued prayer hero subgate decisions",
+  "date": "2026-10-28",
+  "in_scope_modules": [
+    "confession",
+    "angelus",
+    "adoration"
+  ],
+  "source_capture": "assets/staged/module-hero-institutional-review-20261028/institutional-review-manifest.json",
+  "independently_examined": {
+    "source_sha256_confirmed": 3,
+    "unchanged_native_pixel_crops": 18,
+    "all_native_pixel_crops_visually_inspected": true,
+    "subgate_photographic_detail": "PASS_PRELIMINARY",
+    "final_pristine_master_approval": 0,
+    "release_assets": 0
+  },
+  "controls": {
+    "immutable_source_required": true,
+    "original_painted_surface_preserved": true,
+    "physical_frame_forbidden": true,
+    "source_colour_management_required": true,
+    "master_applied_to_app": false
+  },
+  "records": [
+    {
+      "module_id": "confession",
+      "painting": "Bartolomé Esteban Murillo — The Return of the Prodigal Son",
+      "accession": "1948.12.1",
+      "institution": "National Gallery of Art",
+      "official_object_url": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "official_rights_url": "https://www.nga.gov/artworks/free-images-and-open-access",
+      "rights_documentation": "NGA object page says the object's media is free and in the public domain; NGA Open Access policy charges no image access/use fee for eligible paintings",
+      "rights_source_evidence_subgate": "PASS_PUBLIC_DOMAIN_DECLARATION",
+      "exact_archive_sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+      "detail_regions": 6,
+      "detail_fidelity_subgate": "PASS_PRELIMINARY",
+      "source_texture_observation": "Faces, hands, cloth, animal and edge detail preserve subtle painted modelling and crackle; no obvious flash glare or synthetic sharpening in inspected crops.",
+      "photo_frame_state": "Full archived overview contains no obvious museum frame or wall; verify actual entire perimeter at native resolution",
+      "hold": [
+        "Authoritative colour comparison",
+        "Whole painted-surface bounding geometry human signoff",
+        "Responsive full-view plus mobile compositions",
+        "Compare second NGA-supplied 12.32MB variant before image choice"
+      ],
+      "fully_pristine_approved": false
+    },
+    {
+      "module_id": "angelus",
+      "painting": "Philippe de Champaigne — The Annunciation",
+      "accession": "2004.31",
+      "institution": "The Metropolitan Museum of Art",
+      "official_object_url": "https://www.metmuseum.org/art/collection/search/438724",
+      "official_rights_url": "https://www.metmuseum.org/art/collection/search/438724",
+      "rights_documentation": "Met object page public domain and Met Open Access CC0 image; Commons has Met-donated DT5656.jpg marked CC0",
+      "rights_source_evidence_subgate": "PASS_CC0_DECLARATION",
+      "exact_archive_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "detail_regions": 6,
+      "detail_fidelity_subgate": "PASS_PRELIMINARY",
+      "source_texture_observation": "Faces, gestures, fabric, wings and lilies retain recognizable modelling without overt glare or synthetic enhancement.",
+      "museum_medium": "Oil on oak",
+      "museum_overall_cm": [
+        71.1,
+        73
+      ],
+      "museum_painted_surface_cm": [
+        69.2,
+        70.5
+      ],
+      "dimension_semantics": "height,width: painted surface smaller than oak-panel overall physical support; exact photo pixel crop cannot be guessed solely from catalogue dimensions",
+      "photo_frame_state": "Source includes brown rough wood perimeter photographed outside painted area. This is not a removable gilt museum frame, but final frameless derivative should stop at human-verified painted boundary; original kept unchanged.",
+      "hold": [
+        "Identify painted-surface pixel boundary on all four sides and approve its exact geometry",
+        "Create labelled frameless review derivative and verify no painted elements lost",
+        "Colour comparison against institutional display",
+        "Mobile framing includes both figures, dove and lilies"
+      ],
+      "fully_pristine_approved": false
+    },
+    {
+      "module_id": "adoration",
+      "painting": "Jean-Auguste-Dominique Ingres — The Virgin Adoring the Host",
+      "accession": "2005.186",
+      "institution": "The Metropolitan Museum of Art",
+      "official_object_url": "https://www.metmuseum.org/art/collection/search/438434",
+      "official_rights_url": "https://www.metmuseum.org/art/collection/search/438434",
+      "rights_documentation": "Met object record public domain and open-access programme permits public-domain photos freely",
+      "rights_source_evidence_subgate": "PASS_PUBLIC_DOMAIN_DECLARATION",
+      "exact_archive_sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "detail_regions": 6,
+      "detail_fidelity_subgate": "PASS_PRELIMINARY",
+      "source_texture_observation": "Three figures' facial modelling preserved; IHS host/cross and gilding legible; original-looking craquelure must not be smoothed.",
+      "museum_medium": "Oil on canvas",
+      "photo_frame_state": "Visible beige outer support and painted dark inner border; no exact painted-area dimensions published in retrieved object record, classify boundary through institution comparison, not arbitrary crop.",
+      "hold": [
+        "Verify perimeter support versus painted image for a strictly frame-free hero",
+        "Compare unprofiled JPG against institution's colour reference",
+        "Approve Host and both saints in desktop and phone layouts"
+      ],
+      "fully_pristine_approved": false
+    }
+  ],
+  "definitive_outcome": "3 preliminary native-detail photographic passes; 3 institutional open-access/public-domain declarations documented; 0 frameless crops signed off; 0 complete pristine masters; 0 app assets released"
+}
