@@ -99,7 +99,9 @@ try{
     await next.click();
     assert.equal(await root.getAttribute("data-office-card-index"),"1",file+" next failed");
     assert.equal(await root.locator(".aoOfficeMassCard:not([hidden])").count(),1);
-    assert.equal(await root.locator("[data-office-progress-width]").evaluate(el=>el.style.width),String(200/state.cardTotal)+"%");
+    const progressPct=await root.locator("[data-office-progress-width]").evaluate(el=>Number.parseFloat(el.style.width));
+    assert.ok(Math.abs(progressPct-200/state.cardTotal)<.001,
+      file+" progress bar incorrect: "+progressPct+"% vs "+(200/state.cardTotal)+"%");
     const active=await root.locator(".aoOfficeMassCard:not([hidden]) .aoOfficeLiveParagraph").count();
     assert.ok(active>0,file+" no source lines in active card");
     const title=await root.locator("[data-office-section-title]").innerText();
