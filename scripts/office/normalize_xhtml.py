@@ -377,6 +377,28 @@ if __name__ == "__main__":
         "sharedLongEnFr": summary["identicalLongEnglishFrenchBlocks"], "published": summary["published"],
     }))
     print("OFFICE_SEMANTIC_COUNTS", json.dumps(summary["semanticRolesInLatinGroups"]))
+    if summary["count"] == 6:
+        # Short source incipits only, for manual chant-text collation. All
+        # substantive text stays in CI scratch, not public/Git repository.
+        for date in ("2026-11-28", "2026-11-29"):
+            key = (date, "VESPERS", "la")
+            document = None
+            # The current pilot has 2 dates x 1 hour x 3 languages.
+            # Audit their numbered first-line anchors, never assert match.
+            for record in summary["records"]:
+                if record["date"] == date and record["hour"] == "VESPERS" and record["language"] == "la":
+                    path = args.out / record["file"]
+                    document = json.loads(path.read_text(encoding="utf-8"))
+            if document:
+                print("OFFICE_ADVENT_VESPERS_INCIPITS", json.dumps({
+                    "date": date, "headline": document["headline"],
+                    "cells": [{
+                        "index": s["index"],
+                        "heading": s["text"].split("\\n")[0][:100],
+                        "incipit": s["text"].split("\\n")[1][:110] if "\\n" in s["text"] else "",
+                    } for s in document["sections"]],
+                },ensure_ascii=False))
+
     for row in summary["comparisons"]:
         if not row["structurallyAligned"] or row["identicalLongEnglishFrenchBlocks"]:
             print("OFFICE_LANGUAGE_REVIEW", json.dumps(row))
