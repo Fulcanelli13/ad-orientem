@@ -121,6 +121,33 @@ try{
    await page.screenshot({path:resolve(out,"occasional-six-purposes-"+width+".png"),animations:"disabled"});
    await page.screenshot({path:resolve(out,"occasional-intercessions-"+width+".png"),animations:"disabled"});
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"Occasional intercession must not clip horizontally");
+   // B24: full original seven paired prayers within the existing Devotions Prayer family.
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+   await page.locator(rootSel+' [data-p435930-family="devotions"]').click();
+   await page.locator(rootSel+' [data-p435930-own="pray.st_joseph_seven_sorrows"]').click();
+   const joseph=rootSel+' [data-ao-st-joseph-seven-reader]';
+   assert.equal(await page.locator(joseph).count(),1,"St Joseph seven-pair owner must open");
+   assert.equal(await page.locator(joseph+' [data-p435930-joseph-step]').count(),8,"Seven prayers plus final antiphon/collect");
+   assert.match(await page.locator(joseph+' .aoJosephSevenOriginal').innerText(),/Pure spouse of most holy Mary/i);
+   assert.equal(await page.locator(joseph+' [data-ao-joseph-canonical]').count(),3,"Exactly Pater Ave Gloria after each historic prayer");
+   await page.locator(joseph+' [data-p435930-joseph-latin]').click();
+   assert.match(await page.locator(joseph+' [data-ao-joseph-canonical]').first().innerText(),/Pater noster/i);
+   assert.match(await page.locator(joseph+' .aoJosephSevenOriginal').innerText(),/Pure spouse of most holy Mary/i,"Switching canonical repetitions must not alter English historic supplication");
+   for(let part=1;part<=7;part++){
+     await page.locator(joseph+' [data-p435930-joseph-next]').click();
+     if(part<7){
+       assert.equal(await page.locator(joseph+' [data-ao-joseph-canonical]').count(),3);
+     }else{
+       assert.equal(await page.locator(joseph+' [data-ao-joseph-canonical]').count(),0,"No extra Pater Ave Gloria after closing collect");
+       assert.match(await page.locator(joseph+' .aoJosephSevenCard').innerText(),/O God, who in thine ineffable providence/i);
+       assert.match(await page.locator(joseph+' .aoJosephSevenCard').innerText(),/Pray for us, holy Joseph/i);
+     }
+   }
+   await page.screenshot({path:resolve(out,"joseph-seven-closure-"+width+".png"),animations:"disabled"});
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"St Joseph reader must not overflow on phone");
+   await page.locator(joseph+' [data-p435930-joseph-finish]').click();
+   assert.equal(await page.locator(joseph).count(),0,"Finish must return to existing Prayer family");
+   assert.deepEqual(errors,[],errors.join("; "));
    assert.deepEqual(errors,[],errors.join("; "));
    console.log("PASS "+width+"px Rosary & Chaplets discovery: original Rosary and methods routes unchanged, Five Wounds and Precious Blood source-owned guided readers; canonical Mercy preserved");
   }finally{await page.close()}
