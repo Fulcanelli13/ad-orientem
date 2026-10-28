@@ -418,7 +418,7 @@ if __name__ == "__main__":
                 sample[lang] = [
                     {"displayIndex": s["index"], "sourceIndex": s["sourceIndex"],
                      "sourceCellId": s["sourceCellId"],
-                     "heading": s["text"].split("\\n", 1)[0][:80]}
+                     "heading": s["text"].split("\n", 1)[0][:80]}
                     for s in document["sections"]
                 ]
             print("OFFICE_ALL_SOULS_SOURCE_HEADINGS", json.dumps({
