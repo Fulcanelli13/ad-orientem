@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import {attachApprovedDirectoryMedia,eligibleDirectoryImage,renderDirectoryVenueCard,renderDirectoryGallery,DIRECTORY_CARD_STYLE} from "../src/find/directory-card.js";
+import {attachApprovedDirectoryMedia,eligibleDirectoryImage,renderDirectoryVenueCard,renderDirectoryGallery,loadDirectoryCardMedia,DIRECTORY_CARD_STYLE} from "../src/find/directory-card.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 const hash="a".repeat(64);
 const photo={
@@ -17,6 +17,23 @@ const item={
   sections:[],status:"SCHEDULE UNVERIFIED"
 };
 const exact=[{venue_id:item.source_id,place_id:photo.place_id,confidence:"CONFIRMED",relationship:"LOCATED_AT"}];
+
+const requests=[];
+const mediaData=await loadDirectoryCardMedia({fetchImpl:async url=>{
+  requests.push(url);
+  const data=url.endsWith("/seed-registry.v1.json")
+    ?{schema:"EXPLORE_GEOGRAPHY_SEED_V1",directoryPlaceLinks:[{venue_id:"public-venue-1",place_id:"place:FR:test",confidence:"CONFIRMED",relationship:"LOCATED_AT"}]}
+    :url.endsWith("/approved-place-media.v1.json")
+      ?{schema:"AO_APPROVED_PLACE_MEDIA_V1",items:[photo]}
+      :{schema:"AO_APPROVED_PLACE_GALLERY_V1",items:[]};
+  return {ok:true,json:async()=>data};
+}});
+assert.equal(requests.length,3);
+assert.equal(mediaData.approved.length,1);
+assert.equal(mediaData.directoryPlaceLinks.length,1);
+const offline=await loadDirectoryCardMedia({fetchImpl:async()=>{throw new Error("offline")}});
+assert.deepEqual(offline,{directoryPlaceLinks:[],approved:[],gallery:[]});
+
 const args={directoryPlaceLinks:exact,approved:[photo],gallery:[]};
 const [linked]=attachApprovedDirectoryMedia([item],args);
 assert.equal(linked.place_id,photo.place_id);
