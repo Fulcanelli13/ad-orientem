@@ -320,6 +320,11 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 
 
 /* B06 — one-tap alternatives belong to the current prayer, never settings. */
+#aoPray435930 .aoDailyFormulationCoverageNote{
+ display:block;margin:0 0 12px;padding:0;
+ color:var(--muted,#acb1b4);
+ font:400 .72rem/1.42 var(--ao-font-ui,system-ui,sans-serif)
+}
 #aoPray435930 .aoDailyFormulationPicker{
  display:grid;gap:7px;min-width:0;margin:4px 0 13px;
  padding:0 0 10px;border-bottom:1px solid rgba(215,188,146,.17)
