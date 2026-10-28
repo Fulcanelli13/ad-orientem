@@ -1,0 +1,29 @@
+name: Prayer Sacred Art - bulk registry and protected editorial decisions
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/prayer-sacred-art-pristine-bulk-registry-20261028.yml
+      - scripts/art/validate-prayer-sacred-art-pristine-master-20261028.mjs
+      - data/research/prayer-sacred-art-pristine-master-registry-20261028.v1.json
+      - data/calendar/prayer-31-section-review-reconciliation-20261028.v1.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  safeguard-22-heroes-118-placements:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate 22 original editorial decisions, 118 placement actions and five source checksums
+        run: |
+          node --check scripts/art/validate-prayer-sacred-art-pristine-master-20261028.mjs
+          node scripts/art/validate-prayer-sacred-art-pristine-master-20261028.mjs
