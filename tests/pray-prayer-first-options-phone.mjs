@@ -155,7 +155,7 @@ try{
    await ag.locator('[data-p435930-seg="group"]').click();
    await expanded(angelus);
    assert.equal(await page.locator("#aoPray435930.open [data-ao-angelus-recitation]").getAttribute("data-ao-angelus-recitation"),"group");
-   assert.ok(await ag.locator(".aoAngelusGuideSection a[href^='https://']").count()===5);
+   assert.equal(await ag.locator(".aoAngelusGuideSection a[href^='https://']").count(),6);
    const guide=ag.locator(".aoAngelusGuide");
    await guide.locator(":scope > summary").click();
    assert.equal(await guide.evaluate(x=>x.open),true);
@@ -166,7 +166,7 @@ try{
    assert.equal(await page.locator("#aoPray435930.open [data-ao-angelus-form]").getAttribute("data-ao-angelus-form"),"regina");
    await settings.click();
    await expanded(angelus);
-   assert.equal(await ag.locator(".aoAngelusGuideSection a[href^='https://']").count(),4);
+   assert.equal(await ag.locator(".aoAngelusGuideSection a[href^='https://']").count(),5);
    await settings.click();
    assert.equal(await ag.getAttribute("open"),null);
    assert.equal(await ag.locator('[data-p435930-seg="group"]').isVisible(),false,
