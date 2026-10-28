@@ -13,7 +13,9 @@ const excluded=[
 // never production payload. The build copies only active content-addressed boot.
 const indexSource=readFileSync(join(root,"index.html"),"utf8");
 const activeBoot=[...indexSource.matchAll(/src=["']\.\/(ao-boot-[a-f0-9]{16}\.js)["']/g)].map(m=>m[1]);
-assert.equal(activeBoot.length,1,"Require exactly one active content-addressed boot");
+assert.ok(activeBoot.length>=1,"No active content-addressed boot");
+assert.equal(new Set(activeBoot).size,activeBoot.length,"Duplicate content-addressed boot links");
+assert.ok(activeBoot.includes("ao-boot-74ea99bfe3a49436.js"),"Advent-patched boot not active");
 const oldBoot="ao-boot-4ef16d2b0e26d68c.js";
 assert.ok(existsSync(join(root,oldBoot)),"Historical source-contract boot witness lost");
 const required=[
@@ -50,7 +52,7 @@ for(const path of excluded){
  assert.ok(existsSync(join(root,path)),"Build modified GitHub-owned research: "+path);
 }
 assert.equal(existsSync(join(output,oldBoot)),false,"Historical boot was deployed alongside active boot");
-assert.ok(existsSync(join(output,activeBoot[0])),"Active boot missing from release payload");
+for(const boot of activeBoot)assert.ok(existsSync(join(output,boot)),"Active boot missing from release: "+boot);
 for(const path of required){
  assert.ok(existsSync(join(output,path)),"Critical runtime file missing: "+path);
 }
