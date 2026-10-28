@@ -58,8 +58,10 @@ def metadata(info, key: str) -> str:
     return plain((info.get("extmetadata") or {}).get(key, {}).get("value"))
 
 def license_name(info):
-    label = " ".join(words(metadata(info, "LicenseShortName"))).upper()
-    label = label.replace("CC BY SA", "CC BY SA").strip()
+    label = re.sub(r"[^A-Z0-9]", "", metadata(info, "LicenseShortName").upper())
+    label = {"CCBY40":"CC BY 4.0","CCBYSA40":"CC BY SA 4.0",
+             "CCBYSA30":"CC BY SA 3.0","CCBYSA20":"CC BY SA 2.0",
+             "CC0":"CC0","PUBLICDOMAIN":"PUBLIC DOMAIN"}.get(label)
     license_url = metadata(info, "LicenseUrl")
     if label not in ACCEPTED:
         return None
