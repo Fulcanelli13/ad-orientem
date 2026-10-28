@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import {attachApprovedDirectoryMedia,eligibleDirectoryImage,renderDirectoryVenueCard,DIRECTORY_CARD_STYLE} from "../src/find/directory-card.js";
+import {attachApprovedDirectoryMedia,eligibleDirectoryImage,renderDirectoryVenueCard,renderDirectoryGallery,DIRECTORY_CARD_STYLE} from "../src/find/directory-card.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 const hash="a".repeat(64);
 const photo={
@@ -22,6 +22,21 @@ const [linked]=attachApprovedDirectoryMedia([item],args);
 assert.equal(linked.place_id,photo.place_id);
 assert.equal(linked.cover_media.asset_path,photo.asset_path);
 assert.equal(linked.gallery_media.length,0);
+
+const nave={...photo,asset_path:"assets/approved/place-gallery/FR-test-nave.webp",
+  media_role:"INTERIOR",label_en:"The nave",label_fr:"La nef",alt_en:"The church nave",alt_fr:"La nef de l'église"};
+const details={...linked,gallery_media:[nave,photo,{...nave,asset_path:"assets/approved/place-gallery/FR-test-nave.webp"}]};
+const galleryHtml=renderDirectoryGallery(details,"en");
+assert.match(galleryHtml,/aoTlmPhotoGallery/);
+assert.match(galleryHtml,/FR-test-nave\.webp/);
+assert.match(galleryHtml,/Interior/);
+assert.match(galleryHtml,/Example photographer/);
+assert.match(galleryHtml,/commons\.wikimedia\.org/);
+assert.doesNotMatch(galleryHtml,/FR-test\.webp/);
+assert.equal((galleryHtml.match(/<figure>/g)||[]).length,1);
+assert.match(renderDirectoryGallery(details,"fr"),/Intérieur/);
+assert.equal(renderDirectoryGallery({...details,place_id:"place:FR:unrelated"}),"");
+
 assert.equal(eligibleDirectoryImage(photo,photo.place_id),true);
 assert.equal(eligibleDirectoryImage(photo,"place:FR:another"),false);
 for(const invalid of [
