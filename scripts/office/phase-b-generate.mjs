@@ -76,6 +76,19 @@ async function main() {
       env:engineEnvironment,
     });
     const result=inspectGeneratedXhtml({xhtml:output,date,hour,language});
+    if ((date==="2026-10-31"||date==="2026-11-01") &&
+        hour==="VESPERS" && language==="la") {
+      const openings=[...output.matchAll(/<([a-z][a-z\d]*)\b([^>]*)>/gi)];
+      const tagCounts={};
+      for (const [,name] of openings) tagCounts[name.toLowerCase()]=(tagCounts[name.toLowerCase()]??0)+1;
+      const classes=[...new Set(openings.flatMap(([, ,attrs])=>
+        [...attrs.matchAll(/class\s*=\s*['"]([^'"]+)['"]/gi)].map(v=>v[1])))].slice(0,30);
+      const beforeBody=output.match(/<body\b[^>]*>/i);
+      console.log("OFFICE_XHTML_STRUCTURE "+JSON.stringify({
+        date,language,tagCounts,classes,head:output.slice(0,550),
+        bodyPrefix:beforeBody?output.slice(beforeBody.index,beforeBody.index+1000):null
+      }));
+    }
     const file=date+"/"+hour.toLowerCase()+"/"+language+".xhtml";
     // Preserve raw XHTML for human collation; never insert upstream HTML into
     // the public DOM. Conversion/sanitization requires another reviewed step.
