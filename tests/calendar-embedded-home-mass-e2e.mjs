@@ -177,7 +177,8 @@ try{
   assert.equal(await page.locator("[data-mass-calendar-context]").count(),1,"Calendar/selected Mass context missing");
   assert.ok(await page.locator("[data-full-mass-category]").count()>=5);
   await page.screenshot({path:resolve(shots,"mass-preflight-"+width+".png"),fullPage:true});
-  assert.equal(await page.locator("[data-full-mass-reader-mode]").count(),3);
+  assert.equal(await page.locator("[data-full-mass-reader-mode]").count(),2,
+    "Only LIVE and Missal should appear after Simple retirement");
   // A commemoration can auto-open the outer Calendar context.
   // An unconditional click would close it and hide the nested Calendar control.
   const outerCalendar=page.locator("[data-folio-calendar-details]");
