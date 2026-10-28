@@ -29,7 +29,29 @@ export const CONFESSION_PATHS=Object.freeze({
   situationEn:"I wish to prepare a general Confession",situationFr:"Je souhaite préparer une confession générale"
  })
 });
+export const CONFESSION_HISTORICAL_SOURCE_POLICY=Object.freeze({
+ piusX:Object.freeze({
+  name:"St Pius X · Compendio della dottrina cristiana (1905)",
+  source:"https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Prime_nozioni_di_catechismo/Capo_III",
+  status:"HISTORICAL_ITALIAN_REFERENCE_ONLY_NO_EN_FR_COLLATION",
+  role:"Doctrine of contrition and preparation; optional source access, not a new sacramental formula"
+ }),
+ romanRitual:Object.freeze({
+  name:"Rituale Romanum (1925) · Penance",
+  source:"https://www.traditio-op.org/Liturgica_Rito_Latino/Rituale_Romanum_1925.pdf",
+  status:"HISTORICAL_RITUAL_REFERENCE_NOT_A_LAY_SCRIPT",
+  role:"Priest's sacramental ritual; never rehearsed as an app-led absolution"
+ })
+});
 export const CONFESSION_SOURCE_LINKS=Object.freeze([
+ Object.freeze({label:"St Pius X · Compendio (1905), Italian historical source",
+  labelFr:"Saint Pie X · Compendio (1905), texte historique italien",
+  url:CONFESSION_HISTORICAL_SOURCE_POLICY.piusX.source,
+  edition:"1905-ITALIAN_NOT_TRILINGUAL_CERTIFIED"}),
+ Object.freeze({label:"Rituale Romanum (1925) · historical penance rubrics",
+  labelFr:"Rituel romain (1925) · rubriques historiques de la pénitence",
+  url:CONFESSION_HISTORICAL_SOURCE_POLICY.romanRitual.source,
+  edition:"PRIEST_RITUAL_NOT_LAY_FORMULA"}),
  Object.freeze({label:"Catechism §§1450–1460",labelFr:"Compendium du Catéchisme, nos 302–306 (CEC 1450–1460)",url:"https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vii_the_acts_of_the_penitent.html",urlFr:"https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"}),
  Object.freeze({label:"Canon law, can. 987–989",labelFr:"Code de droit canonique, can. 987–989",url:"https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html",urlFr:"https://press.vatican.va/archive/cod-iuris-canonici/fra/documents/cic_libro4_cann987-991_fr.html"})
 ]);

@@ -1,5 +1,5 @@
 import "./confession-path-styles.js";
-import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS } from "./confession-paths.js";
+import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS, CONFESSION_HISTORICAL_SOURCE_POLICY } from "./confession-paths.js";
 import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
@@ -36,6 +36,8 @@ import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { isFirstWeekday as calendarIsFirstWeekday } from "../calendar/intelligence.js";
 import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "./devotional-ux-contract.js";
 import { LITANY_SOURCE_WITNESSES, LITANY_WITNESS_REVIEW_V1, reviewLitanyTranscription, extractLitanyProper, paginateLitanyProper } from "./litany-source.js";
+import {BATCH03_LITANY_EDITION_POLICY,BATCH03_ICRSP_MAJOR_PROCESSION_STEPS,BATCH03_LITANY_SOURCE_STATUS,batch03LitanyUse} from "./litany-1962-use-policy.js";
+import {PENITENTIAL_PSALMS_VULGATE,penitentialPsalmReference,auditPenitentialPsalmResponse,PENITENTIAL_PSALMS_TEXT_STATUS} from "./penitential-psalms-source.js";
 import { DEVOTIONAL_WITNESSES, PRAYER_WITNESSED_VARIANTS } from "./devotional-witness-links.v1.js";
 import { parseSevenWordsHistoricalWitness } from "./seven-words-witness.v1.js";
 import { prayCollationNotice } from "./source-collation-notices.v1.js";
@@ -247,10 +249,11 @@ let adorationQuietReturn=null;
 let FF={step:0,intention:false,communion:false};
 let FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0};
 let PEN={step:0,token:0};
-let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null};
+let PEN_CACHE={busy:false,complete:false,checked:0,failed:[],audit:[],message:''};
+let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null,use:'private'};
 let SEVEN={step:0,sections:null,appendix:'',loading:false,error:'',srcToken:0,scriptToken:0};
 let FORTY={mode:'choose',step:0,solemnStep:0};
-let STATIONS={step:0,optionsOpen:false,publicPosture:false};
+let STATIONS={step:0,optionsOpen:false,publicPosture:false,simpleResponses:false};
 // An explicitly selected public Stations method owns its local recitation/depth.
 // A shared Rosary or prayer-settings preference must not silently deactivate it.
 const stationReaderMode=()=>STATIONS.publicPosture?'guided':S.stations.mode;
@@ -1437,6 +1440,13 @@ function renderConfession(){
     <div class="aoDevoCardScroll" role="region" aria-label="${esc(title)}">${body}</div>
   </section>`;
  }
+ const optionalPrayers=CONF.stage===2&&cardSequence&&cardIndex===cardSequence.length-1?
+ `<details class="aoP435930ConfHistoricalOptions" data-ao-batch03-conf-contrition><summary>${esc(L('Historical Act of Contrition · alternative source','Acte de contrition historique · source alternative'))}</summary>
+ <p>${esc(L('The established Act of Contrition remains available above. The St Pius X original is provided as an identified 1905 Italian historical comparison, not as an invented English or French translation; do not replace the sacramental rite with an app script.','L’acte de contrition établi reste proposé ci-dessus. L’original de saint Pie X est présenté comme témoin historique italien de 1905, sans traduction anglaise ou française inventée ; l’application ne remplace pas le rite sacramentel.'))}</p>
+ <a href="${esc(CONFESSION_HISTORICAL_SOURCE_POLICY.piusX.source)}" target="_blank" rel="noopener noreferrer">${esc(L('St Pius X · 1905 original','Saint Pie X · original de 1905'))} ↗</a></details>`:
+ CONF.stage===3&&cardSequence&&cardIndex===cardSequence.length-1?
+ `<details class="aoP435930ConfHistoricalOptions" data-ao-batch03-conf-thanks><summary>${esc(L('Optional thanksgiving prayer','Prière d’action de grâces facultative'))}</summary>
+ <p>${esc(L('This is private thanksgiving after an actual Confession, not proof of absolution or a substitute for assigned penance.','Action de grâces personnelle après une confession réelle, non preuve de l’absolution ni substitut à la pénitence imposée.'))}</p>${guidePrayers([{id:'foundations_glory_be',kicker:L('Glory Be','Gloire au Père')}])}</details>`:'';
  const lastCard=CONF.stage===3&&CONF.afterStep===confessionAfterCards().length-1;
  const stageBoundary=CONF.stage===0||(cardSequence&&cardIndex===cardSequence.length-1);
  // A step button is warranted at a section boundary, not within an
@@ -1445,7 +1455,7 @@ function renderConfession(){
  const navigation=stageBoundary?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-conf-next ${CONF.stage===0&&!path?'disabled aria-disabled="true"':''}>${esc(lastCard?L('Finish · clear and return','Terminer · effacer et revenir'):CONF.stage===2?L('After Confession · when ready','Après la confession · lorsque vous êtes prêt'):CONF.stage===0?L('Begin examination','Commencer l’examen'):L('Continue to next section','Passer à la section suivante'))}</button></div>`:'';
  const sectionRail=guideRail(stages,CONF.stage,'conf');
  const initialProgress=CONF.stage===0?devotionalProgressMarkup({index:0,total:stages.length,language:lang(),unit:'stage'}):'';
- return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${sectionRail}${initialProgress}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${body}${devotionalGuide('confession')}${sources}${navigation}</main>`;
+ return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${sectionRail}${initialProgress}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${body}${optionalPrayers}${devotionalGuide('confession')}${sources}${navigation}</main>`;
 }
 const BEN_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
@@ -2034,7 +2044,7 @@ function renderStations(){
       'Récit évangélique éclairant cette méditation, sans prétendre que tous les détails soient bibliques'))+'</small></div>':'';
  const action=i===0?L('Begin the Way of the Cross. If you are physically moving between stations, face or approach the first station; otherwise recollect yourself before beginning.','Commencez le Chemin de Croix. Si vous vous déplacez physiquement entre les stations, tournez-vous vers la première station ou approchez-vous-en ; sinon recueillez-vous avant de commencer.'):L('Come to this station and become still before reading. Let the movement between stations end before you begin the text.','Arrivez à cette station et demeurez immobile avant de lire. Laissez s’achever le déplacement entre les stations avant de commencer.');
  const ordinary=guided?`<details class="aoP435930StationOrdinary"><summary>${esc(L('Traditional prayers · St Alphonsus method','Prières traditionnelles · méthode de saint Alphonse'))}</summary><p>${esc(L('Pray the Our Father, Hail Mary and Glory Be before moving on.','Récitez le Notre Père, le Je vous salue Marie et le Gloire au Père avant de poursuivre.'))}</p>${guidePrayers([{id:'foundations_our_father'},{id:'foundations_hail_mary'},{id:'foundations_glory_be'}])}</details>`:'';
- return `${head(L('Stations of the Cross','Chemin de Croix'),L('XIV Stations · St Alphonsus','XIV Stations · saint Alphonse'))}${stationRail(i)}<main class="aoP435930Body aoP435930Stations"><details class="aoP435930PrayerOptions" data-ao-stations-options ${STATIONS.optionsOpen?'open':''}><summary><span>${esc(L('Reading and recitation options','Options de lecture et de récitation'))}</span><small>${esc((stationReaderMode()==='guided'?L('Guided','Guidé'):L('Simple','Simple'))+' · '+(stationRecitation()==='group'?L('Group','Groupe'):L('Individual','Individuel'))+(S.stations.stabat?' · Stabat Mater':''))}</small></summary><div class="aoP435930PrayerOptionsBody"><div class="aoP435930ModeRow">${nav(L('Depth','Profondeur'),[['guided','Guided','Guidé'],['simple','Simple','Simple']],stationReaderMode())}${nav(L('Recitation','Récitation'),[['individual','Individual','Individuel'],['group','Group','Groupe']],stationRecitation())}</div><label class="aoP435930Toggle aoP435930StationPublicPosture"><input type="checkbox" data-p435930-station-public-posture ${STATIONS.publicPosture?'checked':''}><span><b>${esc(L('Traditional public Stations posture','Postures du Chemin de Croix public traditionnel'))}</b><small>${esc(L('Optional public method: genuflect at the versicle, stand during meditation, kneel for prayer. Source: Catholic Worship (1872).','Méthode publique facultative : génuflexion au verset, debout pendant la méditation, à genoux pour la prière. Source : Catholic Worship (1872).'))}</small></span></label><a href="${STATIONS_PUBLIC_POSTURE_SOURCE.url}" target="_blank" rel="noopener noreferrer" class="aoP435930SourceLink">${esc(L('Read the historical source','Lire la source historique'))}</a><label class="aoP435930Toggle aoP435930StationStabat"><input type="checkbox" data-p435930-station-stabat ${S.stations.stabat?'checked':''}><span><b>Stabat Mater</b><small>${esc(L('Include one stanza while moving between stations','Inclure une strophe pendant le déplacement entre les stations'))}</small></span></label>${devotionalGuide('stations')}</div></details><section class="aoDevoCard" data-ao-devo-card="station-${i+1}"><header class="aoDevoCardHead"><small class="aoDevoCardNumber">${i+1} / 14</small><h2 class="aoDevoCardTitle">${esc(title)}</h2></header><div class="aoDevoCardScroll" role="region" tabindex="0" aria-label="${esc(title)}">${guideNow(title,action,L('Station '+(i+1)+' of 14','Station '+(i+1)+' sur 14'))}${stationResponse(vr)}${stationScripture}${consider}${alph}${ordinary}${stabat}${guideCue(i===13?L('FINISH','TERMINER'):L('MOVE TO THE NEXT STATION','ALLEZ À LA STATION SUIVANTE'),i===13?L('Remain briefly in silence after the Fourteenth Station.','Demeurez brièvement en silence après la quatorzième station.'):L('Move deliberately to the next station. If Stabat Mater is enabled, pray its stanza during the movement.','Allez délibérément à la station suivante. Si le Stabat Mater est activé, récitez sa strophe pendant le déplacement.'))}</div></section>${i===13?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-station-finish>${esc(L("Finish devotion","Terminer la dévotion"))}</button></div>`:""}${devotionalSource('St Alphonsus Liguori · traditional XIV Stations',L('Historical English printed method; French prayer rendering awaits independent comparison with a French edition.','Méthode conservée dans un livre anglais ancien ; le texte français reste à comparer avec une édition française.'),'stations')}</main>`
+ return `${head(L('Stations of the Cross','Chemin de Croix'),L('XIV Stations · St Alphonsus','XIV Stations · saint Alphonse'))}${stationRail(i)}<main class="aoP435930Body aoP435930Stations"><details class="aoP435930PrayerOptions" data-ao-stations-options ${STATIONS.optionsOpen?'open':''}><summary><span>${esc(L('Reading and recitation options','Options de lecture et de récitation'))}</span><small>${esc((stationReaderMode()==='guided'?L('Guided','Guidé'):L('Simple','Simple'))+' · '+(stationRecitation()==='group'?L('Group','Groupe'):L('Individual','Individuel'))+(S.stations.stabat?' · Stabat Mater':''))}</small></summary><div class="aoP435930PrayerOptionsBody"><div class="aoP435930ModeRow">${nav(L('Depth','Profondeur'),[['guided','Guided','Guidé'],['simple','Simple','Simple']],stationReaderMode())}${nav(L('Recitation','Récitation'),[['individual','Individual','Individuel'],['group','Group','Groupe']],stationRecitation())}</div><label class="aoP435930Toggle aoP435930StationPublicPosture"><input type="checkbox" data-p435930-station-public-posture ${STATIONS.publicPosture?'checked':''}><span><b>${esc(L('Traditional public Stations posture','Postures du Chemin de Croix public traditionnel'))}</b><small>${esc(L('Optional public method: genuflect at the versicle, stand during meditation, kneel for prayer. Source: Catholic Worship (1872).','Méthode publique facultative : génuflexion au verset, debout pendant la méditation, à genoux pour la prière. Source : Catholic Worship (1872).'))}</small></span></label><a href="${STATIONS_PUBLIC_POSTURE_SOURCE.url}" target="_blank" rel="noopener noreferrer" class="aoP435930SourceLink">${esc(L('Read the historical source','Lire la source historique'))}</a><label class="aoP435930Toggle aoP435930StationStabat"><input type="checkbox" data-p435930-station-stabat ${S.stations.stabat?'checked':''}><span><b>Stabat Mater</b><small>${esc(L('Include one stanza while moving between stations','Inclure une strophe pendant le déplacement entre les stations'))}</small></span></label><label class="aoP435930Toggle aoBatch03SimpleVersicles"><input type="checkbox" data-p435930-station-simple-responses ${STATIONS.simpleResponses?'checked':''}><span><b>${esc(L('Versicle and response in Simple mode','Verset et répons en mode simple'))}</b><small>${esc(L('Optional: contemplation alone does not require a fixed spoken formula. Guided St Alphonsus is unchanged.','Facultatif : la méditation n’exige pas une formule vocale unique. Le parcours guidé de saint Alphonse ne change pas.'))}</small></span></label><p class="aoP435930SourceNote">${esc(L('Praying privately before duly erected Stations, taking part in public Stations, and meditating elsewhere are not identical circumstances for indulgences. Follow the church and the current discipline; this app makes no indulgence determination.','Prier en privé devant un Chemin de Croix légitimement érigé, participer à un Chemin de Croix public et méditer ailleurs ne relèvent pas des mêmes conditions d’indulgences. Suivez les règles de l’Église ; cette application ne juge pas leur accomplissement.'))}</p>${devotionalGuide('stations')}</div></details><section class="aoDevoCard" data-ao-devo-card="station-${i+1}"><header class="aoDevoCardHead"><small class="aoDevoCardNumber">${i+1} / 14</small><h2 class="aoDevoCardTitle">${esc(title)}</h2></header><div class="aoDevoCardScroll" role="region" tabindex="0" aria-label="${esc(title)}">${guideNow(title,action,L('Station '+(i+1)+' of 14','Station '+(i+1)+' sur 14'))}${guided||STATIONS.simpleResponses?stationResponse(vr):''}${stationScripture}${consider}${alph}${ordinary}${stabat}${guideCue(i===13?L('FINISH','TERMINER'):L('MOVE TO THE NEXT STATION','ALLEZ À LA STATION SUIVANTE'),i===13?L('Remain briefly in silence after the Fourteenth Station.','Demeurez brièvement en silence après la quatorzième station.'):L('Move deliberately to the next station. If Stabat Mater is enabled, pray its stanza during the movement.','Allez délibérément à la station suivante. Si le Stabat Mater est activé, récitez sa strophe pendant le déplacement.'))}</div></section>${i===13?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-station-finish>${esc(L("Finish devotion","Terminer la dévotion"))}</button></div>`:""}${devotionalSource('St Alphonsus Liguori · traditional XIV Stations',L('Historical English printed method; French prayer rendering awaits independent comparison with a French edition.','Méthode conservée dans un livre anglais ancien ; le texte français reste à comparer avec une édition française.'),'stations')}</main>`
 }
 // Shared visual structure only. Scripture, historical texts, stage ownership
 // and completion/handoff remain with the original devotion modules.
@@ -2049,6 +2059,37 @@ function sourceWitnessParagraphs(value){
  // system. A line break inside a paragraph is not a new source text.
  return String(value||'').split(/\n\s*\n/).filter(s=>s.trim())
   .map(s=>`<p class="aoP435930WitnessParagraph">${nl(s)}</p>`).join('');
+}
+async function warmPenitentialPsalmCorpus(){
+ if(PEN_CACHE.busy)return;
+ PEN_CACHE={busy:true,complete:false,checked:0,failed:[],audit:[],message:''};render();
+ const svc=runtime()?.scriptureService;
+ for(const p of PENITENTIAL_PSALMS_VULGATE){
+  const ref=penitentialPsalmReference(p);
+  try{
+   if(typeof svc?.load!=='function')throw Error('Canonical Scripture service unavailable');
+   const data=await svc.load('psalm',{en:ref,fr:ref,lat:ref},{contextOnly:true});
+   const audit=auditPenitentialPsalmResponse(data);
+   const deficiencies=Object.entries(audit).filter(([_,x])=>x.verses<4||!x.uniqueOrdered||!x.nonempty||!x.contiguous).map(([name])=>name);
+   PEN_CACHE.audit.push({ref,audit});
+   if(deficiencies.length)PEN_CACHE.failed.push(ref+' ['+deficiencies.join(', ')+']');
+  }catch(e){PEN_CACHE.failed.push(ref+' · '+String(e?.message||e).slice(0,110))}
+  PEN_CACHE.checked++;
+ }
+ PEN_CACHE.busy=false;PEN_CACHE.complete=PEN_CACHE.failed.length===0;
+ PEN_CACHE.message=PEN_CACHE.complete?'verified-warm-cache':'incomplete-source-evidence';
+ if(view==='penitential')render();
+}
+function penitentialOfflineControls(){
+ const counts=PEN_CACHE.audit.map(x=>`${esc(x.ref)}: EN ${x.audit.en.verses}, FR ${x.audit.fr.verses}, LA ${x.audit.la.verses}`).join(' · ');
+ return `<details class="aoP435930PrayerOptions aoBatch03PsalmOffline" data-ao-penitential-offline>
+ <summary>${esc(L('All seven Psalms · source and offline access','Sept psaumes · sources et accès hors ligne'))}</summary>
+ <p>${esc(L('Only the canonical Catholic Scripture service supplies verses. To prepare these seven chapters for later offline access, load them once while connected. The verification checks verse order and available EN/FR/LA faces; no text is invented. Browser storage may be cleared by the device.',
+ 'Seul le service biblique catholique canonique fournit les versets. Pour préparer ces sept chapitres à une lecture ultérieure hors connexion, chargez-les d’abord avec Internet. La vérification examine l’ordre et les versions EN/FR/LA disponibles ; aucun texte n’est inventé. Le navigateur peut effacer son cache.'))}</p>
+ <button type="button" data-p435930-pen-cache ${PEN_CACHE.busy?'disabled':''}>${esc(PEN_CACHE.busy?L('Checking seven chapters…','Vérification des sept chapitres…'):L('Load and check all seven chapters','Charger et vérifier les sept chapitres'))}</button>
+ <p role="status" data-ao-pen-cache-status>${esc(PEN_CACHE.busy?L('Loading validated Scripture texts','Chargement des textes bibliques validés'):PEN_CACHE.checked?L('Chapters checked: ','Chapitres examinés : ')+PEN_CACHE.checked+'/7 · '+(PEN_CACHE.complete?L('All language faces present and ordered','Toutes les versions présentes et ordonnées'):L('Some language faces are missing or need review','Certaines versions manquent ou demandent une vérification')):'')}</p>
+ ${PEN_CACHE.audit.length?`<details><summary>${esc(L('Chapter coverage details','Couverture par chapitre'))}</summary><p>${counts}</p></details>`:''}
+ ${PEN_CACHE.failed.length?`<p class="aoP435930SourceNote">${esc(PEN_CACHE.failed.join(' · '))}</p>`:''}</details>`;
 }
 function renderPenitential(){
  const i=Math.max(0,Math.min(6,PEN.step)),p=PEN_PSALMS[i],ref=`Psalms ${p.trad}:1`,modern=p.modern!==p.trad?` (${p.modern})`:'';
@@ -2065,6 +2106,7 @@ function renderPenitential(){
  ${final?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-pen-litany>${esc(L("Continue with Litany of the Saints","Continuer avec les Litanies des saints"))}</button></div>`:""}
  <details class="aoP435930PrayerOptions aoP435930GuidedContext"><summary>${esc(L('Guide to the traditional sequence','Guide de la séquence traditionnelle'))}</summary>
  ${callout(esc(L('Pray the seven Psalms in their traditional order. The app guides the sequence; it does not add a new penitential prayer around them.','Priez les sept Psaumes dans leur ordre traditionnel. L’application guide la séquence ; elle n’ajoute pas une nouvelle prière pénitentielle autour d’eux.')),'rubric')}${devotionalGuide('penitential')}</details>
+ ${penitentialOfflineControls()}
  ${devotionalSource(L('Historical Seven Penitential Psalms sequence','Séquence historique des sept psaumes pénitentiels'),L('The historical books witness the order; the verses are displayed from the separately selected Catholic Scripture edition.','Les livres historiques attestent l’ordre ; les versets proviennent de l’édition biblique catholique choisie séparément.'),'penitential')}
  </main>`;
 }
@@ -2108,14 +2150,39 @@ function litanySourceDisclosure(){
  <p>${esc(L('Distinct historical witness; not a certified 1962 liturgical edition. Only the Litany proper is displayed, excluding the appended psalm and collects.','Témoin historique distinct ; il ne s’agit pas d’une édition liturgique de 1962 certifiée. Seules les litanies sont affichées, sans le psaume ni les oraisons qui suivent.'))}</p>
  ${note}</details>`;
 }
+function batch03LitanyUseOptions(){
+ const uses=Object.values(BATCH03_LITANY_EDITION_POLICY);
+ return `<nav class="aoP435930GuideNav aoBatch03LitanyUses" aria-label="${esc(L('Litany edition and use','Version et usage des litanies'))}">
+ ${uses.map(u=>`<button type="button" data-p435930-lit-use="${esc(u.id)}" aria-pressed="${LIT.use===u.id}" class="${LIT.use===u.id?'active':''}">${esc(isFr()?u.labelFr:u.labelEn)}</button>`).join('')}</nav>`;
+}
+function renderBatch03PublicLitanyReference(){
+ const selected=batch03LitanyUse(LIT.use),major=LIT.use==='major';
+ const title=L('Litany of the Saints','Litanies des saints');
+ const intro=major?
+  L('This ICRSP Latin–French witness includes the Major Litanies procession, invocations, prayers and collects. The liturgical text is not the 1883 English private edition nor the 1862 Corneille French edition. Complete line-by-line publication is held pending collation; use the identified original source, not an invented harmonisation.',
+    'Ce témoin latin–français de l’ICRSP comprend la procession des Litanies majeures, les invocations, prières et oraisons. Il n’est ni le livre privé anglais de 1883, ni le texte de Corneille de 1862. La publication intégrale attend une collation mot à mot ; consultez le texte original, sans harmonisation inventée.'):
+  LIT.use==='vigil'?
+   L('The restored Easter Vigil has a distinct shorter litany governed by its own order and responses. The private litany cannot stand in for that rite. Follow the existing Easter Vigil Mass reader when attending the liturgy.',
+     'La Vigile pascale restaurée possède ses litanies abrégées propres, régies par leur ordre et leurs répons. Les litanies privées ne remplacent pas ce rite ; suivez le lecteur de la Vigile pascale lors de la célébration.'):
+   L('The solemn Forty Hours rite has clergy-led public litanies, processions and prayers when celebrated locally. The existing three-day Forty Hours guide is the correct participant companion; it is not a substitute for the ceremonial book.',
+     'Les Quarante-Heures solennelles comportent, lorsqu’elles sont célébrées localement, des litanies, processions et prières publiques conduites par le clergé. Le parcours existant sur trois jours accompagne le fidèle sans remplacer le cérémonial.');
+ const sequence=major?`<ol class="aoP435930HistoricalSequence" data-ao-icrsp-major-sequence>${BATCH03_ICRSP_MAJOR_PROCESSION_STEPS.map(x=>`<li><b>${esc(x.id)}</b> · ${esc(isFr()?x.fr:x.en)} <small>${esc(x.role)}</small></li>`).join('')}</ol>`:'';
+ const links=major?`<a class="aoP435930SourceLink" href="${esc(BATCH03_LITANY_SOURCE_STATUS.source)}" target="_blank" rel="noopener noreferrer">${esc(L('Open complete ICRSP Latin–French Major Litanies','Ouvrir les Litanies majeures intégrales latin–français de l’ICRSP'))} ↗</a><a class="aoP435930SourceLink" href="${esc(BATCH03_LITANY_EDITION_POLICY.major.additionalSourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(L('Rogations: distinct accompanying rite','Rogations : rite connexe distinct'))} ↗</a>`:
+  LIT.use==='forty'? `<button type="button" class="aoP435930Primary" data-p435930-lit-forty>${esc(L('Open the existing Forty Hours guide','Ouvrir le parcours existant des Quarante-Heures'))}</button>`:'';
+ return `${head(title,L('Historical editions and liturgical uses','Éditions historiques et usages liturgiques'))}
+ <main class="aoP435930Body aoP435930DevotionalGuidedReader" data-ao-litany-use="${esc(selected.id)}">
+ ${batch03LitanyUseOptions()}<section class="aoDevoCard"><div class="aoDevoCardScroll"><h2>${esc(isFr()?selected.labelFr:selected.labelEn)}</h2><p>${esc(intro)}</p>
+ ${major?`<p class="aoP435930SourceNote">${esc(L('1960 Rubricae generales, n. 82: the Major Litany is not doubled. Historical commentary reproduced with the ICRSP source describes a different repetition practice; it must not automatically control a 1962 ceremony.','Rubriques générales de 1960, n° 82 : les Litanies majeures ne se redoublent pas. Un commentaire historique reproduit avec la source ICRSP décrit une autre pratique ; il ne régit pas automatiquement une cérémonie de 1962.'))}</p>`:''}${sequence}${links}<p><small>${esc(L('Status: distinct 1962 Latin–French public edition not yet locally transcribed or certified. No invented Latin, French or English prayers are displayed.','État : l’édition publique latin–français de 1962 n’est pas encore transcrite ni certifiée localement. Aucune prière latine, française ou anglaise n’est inventée.'))}</small></p></div></section></main>`;
+}
 function renderLitany(){
+ if(LIT.use!=='private')return renderBatch03PublicLitanyReference();
  // A preference change must not retain the other language's historical edition.
  if(LIT.language!==lang()){
   LIT.language=lang();LIT.token++;LIT.sections=null;LIT.review=null;LIT.loading=false;LIT.error='';LIT.step=0;
  }
  if(!LIT.sections&&!LIT.loading&&!LIT.error)setTimeout(ensureLitany,0);
- if(LIT.error)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body">${callout(esc(L('The historical text could not be verified or loaded. No substitute is displayed.','Le texte historique n’a pas pu être chargé ou vérifié. Aucun remplacement n’est affiché.')),'warn')}<button type="button" class="aoP435930Secondary" data-p435930-lit-retry>${esc(L('Try again','Réessayer'))}</button>${litanySourceDisclosure()}</main>`;
- if(!LIT.sections)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body"><p class="aoP435930Loading">${esc(L('Loading the Litany…','Chargement des Litanies…'))}</p></main>`;
+ if(LIT.error)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body">${batch03LitanyUseOptions()}${callout(esc(L('The historical text could not be verified or loaded. No substitute is displayed.','Le texte historique n’a pas pu être chargé ou vérifié. Aucun remplacement n’est affiché.')),'warn')}<button type="button" class="aoP435930Secondary" data-p435930-lit-retry>${esc(L('Try again','Réessayer'))}</button>${litanySourceDisclosure()}</main>`;
+ if(!LIT.sections)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body">${batch03LitanyUseOptions()}<p class="aoP435930Loading">${esc(L('Loading the Litany…','Chargement des Litanies…'))}</p></main>`;
  LIT.step=Math.max(0,Math.min(LIT.sections.length-1,LIT.step));
  const st=LIT.sections[LIT.step],final=LIT.step===LIT.sections.length-1;
  const text=st.lines.map(line=>`<p class="aoP435930LitanyLine">${esc(line)}</p>`).join('');
@@ -2125,6 +2192,7 @@ function renderLitany(){
  const card=sourcedDevotionalCard({kind:'litany',id:'litany-'+LIT.step,title:st.title,index:LIT.step,total:LIT.sections.length,body});
  return `${head(L('Litany of the Saints','Litanies des saints'),L('Call · response · guided in sections','Invocation · réponse · guidées par sections'))}
  <main class="aoP435930Body aoP435930DevotionalGuidedReader" data-ao-devotional-owner="litany" data-ao-devotional-final="${final}">
+ ${batch03LitanyUseOptions()}
  ${card}
  ${final?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-lit-done>${esc(L('Finish litany','Terminer les litanies'))}</button></div>`:''}
  <details class="aoP435930PrayerOptions aoP435930GuidedContext"><summary>${esc(L('Recitation and reading guide','Mode de récitation et guide'))}</summary>
@@ -2780,8 +2848,11 @@ function onClick(e){
   return;
  }
  if(b.dataset.p435930PenStep!=null){PEN.step=Math.max(0,Math.min(6,+b.dataset.p435930PenStep));return render()}
+ if(b.matches('[data-p435930-pen-cache]')){void warmPenitentialPsalmCorpus();return}
  if(b.matches('[data-p435930-pen-litany]')){pushView();view='litany';LIT.step=0;return render()}
  if(b.dataset.p435930LitStep!=null){LIT.step=Math.max(0,Math.min((LIT.sections?.length||1)-1,+b.dataset.p435930LitStep));return render()}
+ if(b.hasAttribute('data-p435930-lit-use')){const choice=b.dataset.p435930LitUse;if(!BATCH03_LITANY_EDITION_POLICY[choice])return;LIT.use=choice;LIT.step=0;return render()}
+ if(b.matches('[data-p435930-lit-forty]')){pushView('litany');routeOwn('pray.forty_hours');return render()}
  if(b.matches('[data-p435930-lit-retry]')){LIT.error='';LIT.sections=null;LIT.step=0;return render()}
  if(b.matches('[data-p435930-lit-done]')){if(navStack.at(-1)==='penitential'){navStack.pop();popView('home')}else popView('home');return render()}
  if(b.dataset.p435930WordStep!=null){SEVEN.step=Math.max(0,Math.min(6,+b.dataset.p435930WordStep));return render()}
@@ -2848,6 +2919,7 @@ function onChange(e){const x=e.target;
   }
   if(x.matches('[data-p435930-ben-praises]')){BEN.divinePraises=x.checked;return render()}
  if(x.matches('[data-p435930-ben-praises-form]')){BEN.praisesForm=x.value==='later'?'later':'1962';return render()}
+ if(x.matches('[data-p435930-station-simple-responses]')){STATIONS.simpleResponses=x.checked;return render()}
  if(x.matches('[data-p435930-station-stabat]')){S.stations.stabat=x.checked;save();return render()}
  if(x.matches('[data-p435930-station-public-posture]')){
   STATIONS.publicPosture=x.checked;
