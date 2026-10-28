@@ -1,0 +1,27 @@
+name: Sacred Art Breviarium - Wave 2 eighty-three source identity guards
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/breviarium-w2-83-source-gates-20261029.yml
+      - scripts/art/validate-breviarium-w2-83-cross-registry-20261029.mjs
+      - data/calendar/sacred-art-breviarium-83-w2-cross-registry-institutional-leads-20261029.v1.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  complete-83-source-reconciliation-and-frozen-identity-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Protect 83 artwork identities, 22 heroes and 103 bans
+        run: |
+          node --check scripts/art/validate-breviarium-w2-83-cross-registry-20261029.mjs
+          node scripts/art/validate-breviarium-w2-83-cross-registry-20261029.mjs
