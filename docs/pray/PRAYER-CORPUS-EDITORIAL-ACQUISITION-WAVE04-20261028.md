@@ -9,10 +9,10 @@ Do NOT become a prayer-book encyclopaedia. Support useful traditional Catholic p
 ## Registry summary
 
 - **97 source candidate groups** (not 97 prayers; some are multiple works, distinct recensions, prayers already owned, and non-prayers).
-- **ADD**: 8
+- **ADD**: 7
 - **ADD_LATER**: 6
 - **ALTERNATIVE**: 25
-- **DEFER**: 28
+- **DEFER**: 29
 - **EXCLUDE**: 4
 - **RETAIN**: 26
 - **No user editorial approval has been assumed**, beyond the user's principle of flexible alternatives and useful traditional prayers.
@@ -79,7 +79,7 @@ Do NOT become a prayer-book encyclopaedia. Support useful traditional Catholic p
 | AO-AQ-054 | Raccolta | Prayer for dying and in agony (§§130–133) | ALTERNATIVE | Good Death | Only if meaningful alternative to current nine-stage journey. | P2 | [source](https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Index) |
 | AO-AQ-055 | Raccolta | Office of the Dead (§135) | RETAIN | Divine Office / Dead | Place in Office; no complete copy inside Prayer hub. | P0 | [source](https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Index) |
 | AO-AQ-056 | Raccolta | De profundis (§136) | RETAIN | Prayers for Dead | Already canonical. | P0 | [source](https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Index) |
-| AO-AQ-057 | Raccolta | Heroic Act of Charity for Souls in Purgatory (§140) | ADD | Prayers for Dead | Distinct voluntary spiritual offering. | P1 | [source](https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Index) |
+| AO-AQ-057 | Raccolta | Heroic Act of Charity for Souls in Purgatory (§140) | DEFER | Prayers for Dead | This is a deliberate voluntary spiritual offering, not a mandatory standalone prayer or fixed historical formula. Preserve devotional context and historical distinctions; consider optional informed act within Prayers for the Dead only after theological and edition review. | P2 | [source](https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Index) |
 | AO-AQ-058 | Raccolta | Sacrosanctae after Divine Office (§142) | ALTERNATIVE | Divine Office conclusion | Useful as Office closing variant, not a new generic prayer. | P2 | [source](https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Index) |
 | AO-AQ-059 | Raccolta | Troubled times and calamity prayers (§§154–157) | ALTERNATIVE | Morning / Evening / Intercession | Select a concise prayer for distress, not all four historical formulas. | P2 | [source](https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Index) |
 | AO-AQ-060 | Raccolta | Prayer to implore Peace (§158) | ADD_LATER | Intercession / Evening | Specific practical use; one of several possible peace prayers. | P2 | [source](https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Index) |
@@ -140,3 +140,11 @@ Do NOT become a prayer-book encyclopaedia. Support useful traditional Catholic p
 ## Scope limitation
 
 This is the full **actionable shortlist from investigated candidate families**, not a claim to have enumerated ALL prayers on Sensus Fidelium, all Lasance editions, all Raccolta 1910 entries, or every ICKSP regional site. Future discovered items enter review as candidates, not automatic additions.
+
+## Source collation note — 28 October Wave 04 continuation
+
+The 1908 Lasance print page numbers have been corrected against the Wikisource book contents and individual page transcriptions: preparatory meditation prayer p.225 (DjVu/240), concluding meditation prayer p.226 (DjVu/241), Ignatian *Suscipe* p.227 (DjVu/242) and Aquinas's *Concede mihi* p.228 (DjVu/243). These are scanned-page LOCATORS; the image-level final proofread is not certified. The digitized transcription has `Ommia` where the research witness has normalized `Omnia`; source-image confirmation is still required before live use. No claimed printed Latin for *Suscipe* because the text's Latin transcription is visibly corrupted.
+
+The Five Wounds *Raccolta* §32 is five groups of five *Gloria Patri*, each with an *Ave Maria* (25+5). The full Precious Blood chaplet §35 uses 33 *Pater noster* across seven mysteries (5+5+5+5+5+5+3). The reproduced 1857 **short** form §40 says five *Pater* in each of seven mysteries, summing to 35, while relating itself to the 33-prayer devotion. This contradiction is an explicit HOLD, not a reason to silently correct a historical witness. Code: `src/pray/prayer-acquisition-chaplet-structures.v1.js`. No source-checked closing prayer for the full chaplet has been admitted yet.
+
+The Heroic Act for the souls in Purgatory (§140) is a voluntary offering, not an obligatory fixed-form prayer or vow. It is **deferred** for contextual study, rather than added as a standard one-tap prayer. The editorial count is now seven ADD and 29 DEFER.
