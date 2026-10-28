@@ -44,7 +44,8 @@ const runtime=createBrowserMassRuntime({
     properSource:"Tempora/Ember",canStart:true,insertedRites:[],conditions:[],rubricSources:["MR62","RG60"]
   })},
   resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Ember Saturday",proper,overlays:["EMBER_LESSONS"]}),
-  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  // Keep the 30+3 page-navigation contract in the supported Missal mode.
+  readReaderPreferences:()=>({mode:"missal",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
   loadPresentationData:async()=>presentationData,
 });
 const entered=await runtime.enter();

@@ -1142,7 +1142,7 @@ button.ao-schola-control{cursor:pointer}
 /* Fixed-height LIVE cards must have genuine paragraph runway, even when
    source text is shorter than the viewport. Percentage is relative to the
    scroller content box, not measured during transient ribbon/dock layout. */
-.ao-reader-shell:is([data-mode="LIVE"],[data-mode="SIMPLE"]) .ao-prayer-card .ao-prayer-body[data-ao-reading-runway="true"]{
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-card .ao-prayer-body[data-ao-reading-runway="true"]{
   min-height:calc(100% + var(--ao-min-reading-travel,72px));
 }
 
