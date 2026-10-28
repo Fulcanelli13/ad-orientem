@@ -1,0 +1,27 @@
+name: Prayer Hero Wave1 - user decisions and release gates
+on:
+  push:
+    branches:
+      - research/prayer-existing-sacred-art-mosaic-20261028
+    paths:
+      - .github/workflows/prayer-hero-wave1-decision-integrity-20261028.yml
+      - data/calendar/prayer-31-section-review-reconciliation-20261028.v1.json
+      - data/calendar/prayer-hero-wave1-release-manifest-20261028.v1.json
+      - scripts/art/validate-prayer-hero-wave1-review-20261028.mjs
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  assert-exact-decisions-and-blocked-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate frozen placement decisions and safety rules, research only
+        run: node scripts/art/validate-prayer-hero-wave1-review-20261028.mjs
