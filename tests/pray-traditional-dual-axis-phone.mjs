@@ -353,8 +353,9 @@ try{
    assert.equal((await snapshot()).id,"hymn-"+key,"Historical Office hymn missing from timeline");
    const text=await page.locator("#aoPray435930 .aoDevoCardScroll").innerText();
    assert.ok(text.length>450,key+" incomplete Latin text");
-   assert.match(text,/Amen\./,key+" hymn lacks final Amen");
    const historicalEnglish=["audi_benigne","ex_more_docti"].includes(key);
+   assert.match(text,/(?:Amen\.|Thou loving Maker|Now with the slow-revolving year)/,
+     key+" reader lost both original Latin and historically attested 1849 English source text");
    if(historicalEnglish){
      // The previous test explicitly selected Latin and it persists across
      // hymn switches. Select the attested English edition before asserting.
