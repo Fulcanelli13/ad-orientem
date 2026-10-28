@@ -51,6 +51,8 @@ const surface=renderHeritageToString(vm,{placeSheet:()=>"",detailSheet:()=>""});
 const categories=surface.match(/<nav class="aoHeritageCategories"[\s\S]*?<\/nav>/)?.[0]??"";
 const secondary=surface.match(/<nav class="aoHeritageSecondary"[\s\S]*?<\/nav>/)?.[0]??"";
 assert.ok(categories,"Primary map categories must be present");
+assert.match(categories,/data-find-filter="lens" data-find-filter-value="saints"/,
+ "Published Saints must remain a direct, visible map doorway");
 for(const category of ["ALL","shrines","pilgrimages","relics","apparitions"])
  assert.match(categories,new RegExp('data-heritage-category="'+category+'"'));
 for(const specialized of ["data-bible-atlas-open","data-explore-time-mass-toggle",
