@@ -327,6 +327,7 @@ function placeSheet(vm){
 const translatedTitle=(item,language)=>language==="fr"&&item?.title_fr?item.title_fr:item?.title;
 const translatedSummary=(item,language)=>language==="fr"&&item?.summary_fr?item.summary_fr:item?.summary;
 function itemCard(item,vm){
+  if(item.kind==="TLM_VENUE")return renderDirectoryVenueCard(item,vm.language);
   const full=(item.kind==="TLM_VENUE"?"":String(translatedSummary(item,vm.language)??"")).replace(/\s+/g," ").trim();
   const cut=full.length>170?full.slice(0,170).replace(/\s+\S*$/u,"").trimEnd()+"…":full;
   return '<button type="button" class="aoFindCard aoExploreCard" data-explore-item="'+esc(item.item_id)+'" data-explore-lens="'+esc(item.lens)+'">'
@@ -363,8 +364,8 @@ function compactExploreItemSheet(vm){
   if(isMass&&eligibleDirectoryImage(item.cover_media,item.place_id))html+='<img class="aoTlmPreviewPhoto" loading="lazy" decoding="async" src="'+esc(item.cover_media.asset_path)+'" alt="'+esc(lang==="fr"?item.cover_media.alt_fr:item.cover_media.alt_en)+'">';
   if(summary)html+='<p class="aoExplorePreviewSynopsis">'+esc(summary)+'</p>';
   if(isMass)html+='<p class="aoExplorePreviewCaution">'+esc(L(lang,
-    "Provisional venue. Current Mass times, entrance and the una-cum status of individual celebrations are not verified.",
-    "Lieu provisoire. Horaires actuels, entrée et caractère una cum de chaque célébration non vérifiés."))+'</p>';
+    "Check the source for current Mass times, exact entrance and the status of individual celebrations.",
+    "Vérifiez à la source les horaires actuels, l’entrée exacte et le statut de chaque célébration."))+'</p>';
   else if(item.geo?.approximate||item.geo?.indicative_only)html+='<p class="aoExplorePreviewCaution">'+esc(L(lang,
     "Map position is indicative, not a verified entrance.",
     "Position indicative, non une entrée vérifiée."))+'</p>';
