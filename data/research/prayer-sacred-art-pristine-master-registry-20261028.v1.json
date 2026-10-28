@@ -130,7 +130,13 @@
     "batch5_source_rights_evidence_documented": 12,
     "batch5_final_pristine_certifications": 0,
     "batch5b_lotto_transparent_candidate_count": 1,
-    "batch5b_lotto_painting_identity_changes": 0
+    "batch5b_lotto_painting_identity_changes": 0,
+    "batch6_source_fingerprints_verified": 12,
+    "batch6_exact_commons_binary_matches": 9,
+    "batch6_source_version_holds": 1,
+    "batch6_institutional_source_photo_rights_holds": 2,
+    "batch6_new_photo_rights_final_certifications": 0,
+    "batch6_new_pristine_certifications": 0
   },
   "primary_artworks": [
     {
@@ -399,6 +405,18 @@
           "source_photo_rights_certified": false,
           "pristine_photo_certified": false,
           "production_approved": false
+        },
+        "batch6_external_source_fingerprint": {
+          "archived_original_sha256": "d632ea2012825ecdccc760f50b7cc9107a30bf4a2349541742ef6f66a4987f9b",
+          "archived_sha1": "2b08a1ff9231833c73f3c1666de26f6505dacd4c",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "commons_file_metadata_status": "MATCH_EXACT_COMMONS_FILE_BYTES",
+          "file_metadata_rights_label": "Public domain",
+          "public_file_sha1": "2b08a1ff9231833c73f3c1666de26f6505dacd4c",
+          "exact_commons_file_bytes_verified": true,
+          "photo_rights_final_certified": false,
+          "pristine_final_certified": false,
+          "production_allowed": false
         }
       },
       "alternative_source_candidate": null,
@@ -637,6 +655,18 @@
           "source_photo_rights_certified": false,
           "pristine_photo_certified": false,
           "production_approved": false
+        },
+        "batch6_external_source_fingerprint": {
+          "archived_original_sha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+          "archived_sha1": "0c66eb897cd193ce77ab4fa0962084a64c2bca1f",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "commons_file_metadata_status": "MATCH_EXACT_COMMONS_FILE_BYTES",
+          "file_metadata_rights_label": "Public domain",
+          "public_file_sha1": "0c66eb897cd193ce77ab4fa0962084a64c2bca1f",
+          "exact_commons_file_bytes_verified": true,
+          "photo_rights_final_certified": false,
+          "pristine_final_certified": false,
+          "production_allowed": false
         }
       },
       "alternative_source_candidate": null,
@@ -751,6 +781,18 @@
           "source_photo_rights_certified": false,
           "pristine_photo_certified": false,
           "production_approved": false
+        },
+        "batch6_external_source_fingerprint": {
+          "archived_original_sha256": "82e465f5600d0df4b2af32d22b8642a832bfc4cdd5d19d1f1c2b0baeec49649d",
+          "archived_sha1": "d3da6eecacbbedb2bccbdef73d62b6e762634a88",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+          "commons_file_metadata_status": "MATCH_EXACT_COMMONS_FILE_BYTES",
+          "file_metadata_rights_label": "Public domain",
+          "public_file_sha1": "d3da6eecacbbedb2bccbdef73d62b6e762634a88",
+          "exact_commons_file_bytes_verified": true,
+          "photo_rights_final_certified": false,
+          "pristine_final_certified": false,
+          "production_allowed": false
         }
       },
       "alternative_source_candidate": null,
@@ -1093,6 +1135,18 @@
           "source_photo_rights_certified": false,
           "pristine_photo_certified": false,
           "production_approved": false
+        },
+        "batch6_external_source_fingerprint": {
+          "archived_original_sha256": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+          "archived_sha1": "86de2b5f40868bc29eb0010550733a03321f0b88",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+          "commons_file_metadata_status": "MATCH_EXACT_COMMONS_FILE_BYTES",
+          "file_metadata_rights_label": "Public domain",
+          "public_file_sha1": "86de2b5f40868bc29eb0010550733a03321f0b88",
+          "exact_commons_file_bytes_verified": true,
+          "photo_rights_final_certified": false,
+          "pristine_final_certified": false,
+          "production_allowed": false
         }
       },
       "alternative_source_candidate": null,
@@ -1373,6 +1427,18 @@
           "source_photo_rights_certified": false,
           "pristine_photo_certified": false,
           "production_approved": false
+        },
+        "batch6_external_source_fingerprint": {
+          "archived_original_sha256": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158",
+          "archived_sha1": "623158130d53ff152a4cffd24900250ddf0681ee",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Saint_Jerome_Writing-Caravaggio_(1605-6).jpg",
+          "commons_file_metadata_status": "MATCH_EXACT_COMMONS_FILE_BYTES",
+          "file_metadata_rights_label": "Public domain",
+          "public_file_sha1": "623158130d53ff152a4cffd24900250ddf0681ee",
+          "exact_commons_file_bytes_verified": true,
+          "photo_rights_final_certified": false,
+          "pristine_final_certified": false,
+          "production_allowed": false
         }
       },
       "alternative_source_candidate": null,
@@ -1623,6 +1689,18 @@
           "source_photo_rights_certified": false,
           "pristine_photo_certified": false,
           "production_approved": false
+        },
+        "batch6_external_source_fingerprint": {
+          "archived_original_sha256": "a2c3a6eda78b412da44d50197d853f01e1cd3ded5ebd5996816db451f11606b6",
+          "archived_sha1": "8a115df9edc829ddf29ba99a37f72cdfd6caa4ce",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg",
+          "commons_file_metadata_status": "MATCH_EXACT_COMMONS_FILE_BYTES",
+          "file_metadata_rights_label": "Public domain",
+          "public_file_sha1": "8a115df9edc829ddf29ba99a37f72cdfd6caa4ce",
+          "exact_commons_file_bytes_verified": true,
+          "photo_rights_final_certified": false,
+          "pristine_final_certified": false,
+          "production_allowed": false
         }
       },
       "alternative_source_candidate": null,
@@ -1862,6 +1940,20 @@
           "source_photo_rights_certified": false,
           "pristine_photo_certified": false,
           "production_approved": false
+        },
+        "batch6_external_source_fingerprint": {
+          "archived_original_sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+          "archived_sha1": "885e783c3a4cbb6b96f5b6da1072d9ba37c99f20",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Song_of_the_Lark_-_Jules_Breton.png",
+          "commons_file_metadata_status": "COMMONS_SOURCE_BYTES_DIFFER_OR_FILE_VERSION_REVIEW",
+          "file_metadata_rights_label": "Public domain",
+          "public_file_sha1": "f33c3d2ea2a4b173c784cf325d91fe16bf4527be",
+          "exact_commons_file_bytes_verified": false,
+          "photo_rights_final_certified": false,
+          "pristine_final_certified": false,
+          "production_allowed": false,
+          "source_provenance_exception": "PINNED_RESEARCH_IMAGE_2548x3300_IS_DIFFERENT_THAN_COMMONS_CURRENT_1019x1534_COLOUR_ENHANCED_PNG",
+          "prevent_auto_replace_with_commons_png": true
         }
       },
       "alternative_source_candidate": null,
@@ -2371,6 +2463,18 @@
           "source_photo_rights_certified": false,
           "pristine_photo_certified": false,
           "production_approved": false
+        },
+        "batch6_external_source_fingerprint": {
+          "archived_original_sha256": "909302874ecb137b75c3b97974e9a4b42ec3c4d10a6d3e83bc98c130057b760f",
+          "archived_sha1": "05b196b277ef85048f2c14f57e5ce2f695c33131",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Meirelles-primeiramissa2.jpg",
+          "commons_file_metadata_status": "MATCH_EXACT_COMMONS_FILE_BYTES",
+          "file_metadata_rights_label": "Public domain",
+          "public_file_sha1": "05b196b277ef85048f2c14f57e5ce2f695c33131",
+          "exact_commons_file_bytes_verified": true,
+          "photo_rights_final_certified": false,
+          "pristine_final_certified": false,
+          "production_allowed": false
         }
       },
       "alternative_source_candidate": null,
@@ -2485,6 +2589,18 @@
           "source_photo_rights_certified": false,
           "pristine_photo_certified": false,
           "production_approved": false
+        },
+        "batch6_external_source_fingerprint": {
+          "archived_original_sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+          "archived_sha1": "0c1b30ee9a649e68b1b7b43bc034685bee1fe50a",
+          "source_page": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+          "commons_file_metadata_status": "NOT_YET_QUERIED",
+          "file_metadata_rights_label": "NGA_OFFICIAL_OPEN_ACCESS",
+          "public_file_sha1": null,
+          "exact_commons_file_bytes_verified": false,
+          "photo_rights_final_certified": false,
+          "pristine_final_certified": false,
+          "production_allowed": false
         }
       },
       "alternative_source_candidate": null,
@@ -2787,6 +2903,18 @@
           "source_photo_rights_certified": false,
           "pristine_photo_certified": false,
           "production_approved": false
+        },
+        "batch6_external_source_fingerprint": {
+          "archived_original_sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+          "archived_sha1": "88fb54f76b5d70f0120d6fe2c14869ff33a83ef3",
+          "source_page": "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000",
+          "commons_file_metadata_status": "NOT_YET_QUERIED",
+          "file_metadata_rights_label": "MNAC_OBJECT_PUBLIC_DOMAIN_LABEL",
+          "public_file_sha1": null,
+          "exact_commons_file_bytes_verified": false,
+          "photo_rights_final_certified": false,
+          "pristine_final_certified": false,
+          "production_allowed": false
         }
       },
       "alternative_source_candidate": null,
@@ -6828,6 +6956,23 @@
       "pristine_final": 0,
       "release": 0,
       "cost_eur": 0
+    },
+    "B6_TWELVE_PUBLIC_SOURCE_FINGERPRINTS": {
+      "status": "ALL_12_ARCHIVES_VERIFIED_9_COMMONS_BYTE_IDENTITIES_CONFIRMED_ONE_VERSION_EXCEPTION_TWO_INSTITUTIONAL_RIGHTS_REFERENCES",
+      "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40739324719",
+      "source_evidence": "assets/staged/prayer-art-b6-twelve-source-fingerprint-20261028/source-fingerprints.json",
+      "archived_sha256_verified": 12,
+      "commons_file_titles_checked": 10,
+      "commons_exact_source_sha1_matches": 9,
+      "commons_source_different_version": 1,
+      "source_exception_id": "morning",
+      "source_exception_note": "Current Commons 1019x1534 PNG not byte-identical to better-resolution archived JPG; do not degrade or replace.",
+      "institutional_non_commons": 2,
+      "metadata_copyright_flags": 0,
+      "photo_rights_final_certifications": 0,
+      "pristine_photo_final_certifications": 0,
+      "releases": 0,
+      "cost_eur": 0
     }
   },
   "protected_wave1_notes": {
@@ -6869,6 +7014,18 @@
         "source_photo_rights_certified": false,
         "pristine_photo_certified": false,
         "production_approved": false
+      },
+      "batch6_external_source_fingerprint": {
+        "archived_original_sha256": "1cb5d8a9f420eddd32ffabc4713a49d27a6f39e664d2495c5852a34fa68723e7",
+        "archived_sha1": "6305d728e1f804b831ef784f6b9363f0e3fde678",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+        "commons_file_metadata_status": "MATCH_EXACT_COMMONS_FILE_BYTES",
+        "file_metadata_rights_label": "Public domain",
+        "public_file_sha1": "6305d728e1f804b831ef784f6b9363f0e3fde678",
+        "exact_commons_file_bytes_verified": true,
+        "photo_rights_final_certified": false,
+        "pristine_final_certified": false,
+        "production_allowed": false
       }
     },
     {
@@ -6926,6 +7083,18 @@
         "source_photo_rights_certified": false,
         "pristine_photo_certified": false,
         "production_approved": false
+      },
+      "batch6_external_source_fingerprint": {
+        "archived_original_sha256": "9ac5db7a32626fd6825e6d364f3fc48b034ba8282a6989cf24d3f368c0eafe63",
+        "archived_sha1": "40c7f08af139c771b7a5e023cd6b9a1568ae0e94",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Dyck,_Anthonis_van_-_Pouring_of_the_Holy_Ghost_-_Bildergalerie_Sanssouci.jpeg",
+        "commons_file_metadata_status": "MATCH_EXACT_COMMONS_FILE_BYTES",
+        "file_metadata_rights_label": "Public domain",
+        "public_file_sha1": "40c7f08af139c771b7a5e023cd6b9a1568ae0e94",
+        "exact_commons_file_bytes_verified": true,
+        "photo_rights_final_certified": false,
+        "pristine_final_certified": false,
+        "production_allowed": false
       }
     }
   ]
