@@ -10,10 +10,15 @@ assert.ok(decisions.records.every(x=>x.approved_by_user===false && x.text_import
 assert.equal(decisions.policy.no_fixed_ten_prayer_cap,true);
 assert.equal(decisions.policy.zero_new_top_level_modules,true);
 assert.deepEqual(Object.keys(decisions.summary.by_decision).sort(),["ADD","ADD_LATER","ALTERNATIVE","DEFER","EXCLUDE","RETAIN"]);
-assert.equal(decisions.records.filter(x=>x.decision==="ADD").length,8);
+assert.equal(decisions.records.filter(x=>x.decision==="ADD").length,7);
+assert.equal(decisions.records.filter(x=>x.decision==="DEFER").length,29);
+const heroic=decisions.records.find(x=>x.title.includes("Heroic Act of Charity"));
+assert.equal(heroic.decision,"DEFER");
 assert.equal(PRAYER_ACQUISITION_WITNESSES_V1.length,4);
 assert.equal(new Set(PRAYER_ACQUISITION_WITNESSES_V1.map(x=>x.id)).size,4);
 assert.ok(PRAYER_ACQUISITION_WITNESSES_V1.every(x=>x.source?.url==="https://en.wikisource.org/wiki/My_Prayer-Book/Prayers_During_the_Day"));
+assert.deepEqual(PRAYER_ACQUISITION_WITNESSES_V1.map(x=>x.source.page),["225","226","227","228"]);
+assert.deepEqual(PRAYER_ACQUISITION_WITNESSES_V1.map(x=>x.source.scanPageUrl.split("/").at(-1)),["240","241","242","243"]);
 assert.ok(PRAYER_ACQUISITION_WITNESSES_V1.every(x=>x.language==="en"&&x.text?.length>50));
 assert.ok(PRAYER_ACQUISITION_WITNESSES_V1.every(x=>x.release.status==="STAGED_RESEARCH_NOT_LIVE" && !x.release.allowed_in_prayer_hub && x.release.exact_print_verified===false));
 assert.ok(PRAYER_ACQUISITION_WITNESSES_V1.every(x=>x.release.translation_status.fr==="NOT_AVAILABLE" && x.release.translation_status.la==="NOT_ADMITTED"));
