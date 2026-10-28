@@ -2949,11 +2949,14 @@ export function createReaderDomAdapter({
           ? exactPreGospel.toUpperCase():scholaTitle(schola.trackId))
         : "SCHOLA";
     }
-    setText(root,"schola",eventReference?.label??(schola
+    const scholaDisplay=eventReference?.label??(schola
       ? (scholaTranslationVisible && schola.english
           ? schola.english
           : (schola.latin??textValue(schola)))
-      : null));
+      : null);
+    // The Schola vernacular and the non-performance event reference
+    // replace the very same text node; no second ticker is introduced.
+    setText(root,"schola",scholaDisplay);
     const status=root.querySelector('[data-role="schola-status"]');
     if(status){
       status.textContent=eventReference?"NOT OBSERVED":schola?"EXPECTED":"";
