@@ -14,7 +14,6 @@ const excludedResearchPaths=[
  "assets/staged",
  "data/research",
  "data/geography/research",
- "data/directory/research",
 ];
 
 await rm(output,{recursive:true,force:true});
