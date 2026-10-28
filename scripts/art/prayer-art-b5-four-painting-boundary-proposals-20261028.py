@@ -133,17 +133,23 @@ for key,category in CASES.items():
             box=list(box)
             if box[2]-box[0]<.7*img.width or box[3]-box[1]<.7*img.height:
                 raise ValueError("UNSAFE_LARGE_TRIM")
-            cropped=img.crop(tuple(box))
-            # Lossless PNG derivative avoids introducing new JPEG artefacts.
-            fname=key+"-"+name.lower()+".png"
-            path=OUT/fname
-            cropped.save(path,format="PNG",optimize=True)
-            record["candidate_files"].append({"label":name,"path":str(path.relative_to(ROOT)),
-                "source_crop_box":box,"candidate_pixels":list(cropped.size),
-                "sha256":hashlib.sha256(path.read_bytes()).hexdigest(),
-                "bytes":path.stat().st_size,
-                "source_original_not_modified":True,"status":"RESEARCH_DERIVATIVE_NOT_APPROVED"})
-            cropped.close()
+            # The source SHA and crop coordinates fully specify the original-pixel
+            # derivative. Archive only the strongest single white-surround crop
+            # as a full-size research proof; do not replicate large source
+            # rasters for speculative exposed-support insets.
+            proof={"label":name,"source_crop_box":box,
+                "candidate_pixels":[box[2]-box[0],box[3]-box[1]],
+                "source_original_not_modified":True,
+                "status":"RESEARCH_DERIVATIVE_NOT_APPROVED"}
+            if "WHITE" in category:
+                cropped=img.crop(tuple(box))
+                path=OUT/(key+"-full-size-conservative-boundary-proof.png")
+                cropped.save(path,format="PNG",optimize=True)
+                proof.update({"path":str(path.relative_to(ROOT)),
+                    "sha256":hashlib.sha256(path.read_bytes()).hexdigest(),
+                    "bytes":path.stat().st_size,"lossless_source_pixel_crop":True})
+                cropped.close()
+            record["candidate_files"].append(proof)
         record["proof_contact_sheet"]=make_montage(key,img,boxes)
         results.append(record)
         print("PASS BOUNDARY PROOFS",key,"variants",len(boxes)-1,flush=True)
