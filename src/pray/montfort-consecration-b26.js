@@ -75,7 +75,7 @@ export const MONTFORT_B26_CONSECRATION_ACT_EN=Object.freeze([
 ]);
 const DAY_MS=86400000;
 const pad=n=>String(n).padStart(2,"0");
-const validIso=x=>typeof x==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(x)&&new Date(x+"T12:00:00Z").toISOString().slice(0,10)===x;
+const validIso=x=>{if(typeof x!=="string"||!/^\d{4}-\d{2}-\d{2}$/.test(x))return false;const d=new Date(x+"T12:00:00Z");return Number.isFinite(d.valueOf())&&d.toISOString().slice(0,10)===x};
 export function montfortAddDays(iso,delta){
  if(!validIso(iso)||!Number.isInteger(delta))return null;
  const d=new Date(iso+"T12:00:00Z");d.setUTCDate(d.getUTCDate()+delta);return d.toISOString().slice(0,10)
