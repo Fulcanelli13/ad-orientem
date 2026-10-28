@@ -1,0 +1,28 @@
+name: Prayer Sacred Art B2 - 14-group intake integrity
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/prayer-art-b2-native-intake-validate-20261028.yml
+      - scripts/art/validate-prayer-art-b2-native-intake-20261028.mjs
+      - data/research/prayer-sacred-art-b2-reconciled-intake-20261028.v1.json
+      - data/research/prayer-sacred-art-pristine-master-registry-20261028.v1.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  seven-native-original-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Recheck seven original image SHA-256 files and no premature publication
+        run: |
+          node --check scripts/art/validate-prayer-art-b2-native-intake-20261028.mjs
+          node scripts/art/validate-prayer-art-b2-native-intake-20261028.mjs
