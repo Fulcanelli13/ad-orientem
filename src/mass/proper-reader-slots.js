@@ -336,6 +336,7 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
   return Object.freeze({
     schema:"ao-reader-proper-slots-v1",
     sourcePath:proper.sourcePath??null,
+    ...(proper.sourceEditorialCorrections?.length?{sourceEditorialCorrections:proper.sourceEditorialCorrections}:{}),
     ...(editorialApplied?{displayTranslationCorrections:
       Object.freeze([PS113_PENT21_ENGLISH_EDITORIAL])}:{}),
     slots:Object.freeze(presented),
