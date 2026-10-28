@@ -818,8 +818,20 @@ function handleClick(e){
   if(b.hasAttribute("data-tp381-personal-action")){
     if(S.route!=="pray.morning_evening"||S.screen!=="module")return;
     const action=b.dataset.tp381PersonalAction,value=b.dataset.tp381PersonalValue;
+    const previous=dailyReadingPlan().rows;
+    const previousStep=clampPrayerCardStep(S.dailyStep,previous.length);
+    const previousId=previous[previousStep]?.id;
     const next=changePersonalDailyPrefs(personalDailyPrefs(),{action,daypart:S.daypart,value});
-    S.dailyStep=0;S.dailyMode="guided";return savePersonalDailyChoice(next);
+    const nextRows=buildPersonalDailyPlan({daypart:S.daypart,prefs:next}).rows;
+    // An edition change starts a different printed sequence, but language,
+    // extra prayers and manual ordering must not reset the active card.
+    if(action==="edition"||action==="reset")S.dailyStep=0;
+    else if(previousStep===previous.length)S.dailyStep=nextRows.length;
+    else{
+      const match=nextRows.findIndex(row=>row.id===previousId);
+      S.dailyStep=match>=0?match:clampPrayerCardStep(previousStep,nextRows.length);
+    }
+    return savePersonalDailyChoice(next);
   }
   if(b.hasAttribute("data-tp381-personal-variant")){
     if(S.route!=="pray.morning_evening"||S.screen!=="module")return;
