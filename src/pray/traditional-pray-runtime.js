@@ -216,7 +216,7 @@ function syncDailyTimerView(){
  const readout=m.querySelector("[data-ao-daily-clock-readout]");
  if(readout)readout.textContent=value;
  const summary=m.querySelector("[data-ao-daily-clock-summary]");
- if(summary)summary.textContent=L("Timer","Minuteur")+(tick.running?" · "+value:"");
+ if(summary)summary.textContent=L("Stopwatch / timer","Chronomètre / minuteur")+(tick.running?" · "+value:"");
  const action=m.querySelector("[data-tp381-timer-control='toggle']");
  if(action){
    action.textContent=tick.running?L("Pause","Pause"):tick.elapsedMs>0?L("Resume","Reprendre"):L("Start","Démarrer");
