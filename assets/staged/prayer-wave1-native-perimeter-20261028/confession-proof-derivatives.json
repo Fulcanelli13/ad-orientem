@@ -1,0 +1,58 @@
+{
+  "schema": "AO_WAVE1_CONFESSION_FULL_IMAGE_PROOF_V1",
+  "asOf": "2026-10-28",
+  "status": "RESEARCH_OPT_IN_PREVIEW_ONLY",
+  "artwork": "Bartolom\u00e9 Esteban Murillo \u2014 The Return of the Prodigal Son",
+  "museum": "National Gallery of Art, Washington",
+  "accession": "1948.12.1",
+  "museum_url": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+  "museum_open_access_terms": "https://www.nga.gov/artworks/free-images-and-open-access",
+  "source_branch": "research/module-hero-museum-photos-20261026",
+  "source_original_path": "assets/staged/module-hero-masters/confession.jpg",
+  "source_sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+  "source_pixels": [
+    4096,
+    3712
+  ],
+  "source_bytes_unchanged": true,
+  "color_conversion": "embedded ICC converted to standard sRGB for display derivative",
+  "complete_painted_composition_preserved": true,
+  "phone_display": "object-fit: contain; never cover; do not lose dog, son, father, attendants",
+  "photo_preview_only": true,
+  "final_human_visual_acceptance": false,
+  "browser_phone_acceptance": false,
+  "production_activation": false,
+  "expense_eur": 0,
+  "derivatives": [
+    {
+      "file": "assets/staged/prayer-wave1-native-perimeter-20261028/confession-whole-800-preview.webp",
+      "sha256": "032856e2d0aece10be8d77868248ba35061302576ead5a740b2daa484a2503d1",
+      "pixels": [
+        800,
+        725
+      ],
+      "bytes": 85012,
+      "source_full_image_pixel_ratio_unchanged": true,
+      "crops": [],
+      "subject_parts_removed": [],
+      "quality": 90,
+      "retouching": false,
+      "upscaling": false
+    },
+    {
+      "file": "assets/staged/prayer-wave1-native-perimeter-20261028/confession-whole-1600-preview.webp",
+      "sha256": "0726d1a7c17c6ebdd6f63da93a54c4ecbddc1491458139d8569c73d4fb459d3d",
+      "pixels": [
+        1600,
+        1450
+      ],
+      "bytes": 339104,
+      "source_full_image_pixel_ratio_unchanged": true,
+      "crops": [],
+      "subject_parts_removed": [],
+      "quality": 92,
+      "retouching": false,
+      "upscaling": false
+    }
+  ]
+}
