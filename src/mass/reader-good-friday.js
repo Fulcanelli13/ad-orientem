@@ -112,11 +112,14 @@ function surfaceFor(record,payload,jewishPrayerVariant){
   });
   if(id==="GF-SOP-400")return freeze({
     key:"SOLEMN_PRAYERS_PREP",title:"The Solemn Prayers",
-    paragraphs:freeze([textRow("GF-SOP-PREP","Orationes solemnes.","TEXT",["GF-SOP-400"])])
+    // Printed 1962 p. 167 is a section heading, not a spoken text.
+    paragraphs:freeze([textRow("GF-SOP-PREP","Orationes solemnes.","RUBRIC",["GF-SOP-400"])])
   });
   if(id==="GF-SOP-410")return freeze({
     key:"SOLEMN_PRAYERS_BEGIN",title:"The Solemn Prayers",
-    paragraphs:freeze([textRow("GF-SOP-BEGIN","Oremus.","VERSICLE",["GF-SOP-410"],"CELEBRANT")])
+    // The first printed prayer starts "Oremus, dilectissimi nobis ...".
+    // Do not invent an earlier, separate spoken "Oremus" at this transition.
+    paragraphs:freeze([])
   });
   const sop=id.match(/^GF-SOP-(\d\d)-[KR]$/);
   if(sop){
