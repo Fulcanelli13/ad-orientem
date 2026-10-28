@@ -45,3 +45,17 @@ test("translation audit cannot accept a mismatched or promoted document",()=>{
   assert.throws(()=>triLanguageRisks({latin,english:{...english,sections:[]},french}),/SOURCE_INVALID/);
   assert.throws(()=>triLanguageRisks({latin,english:{...english,sections:english.sections.map(x=>({...x,semantic:{latinSourceCellId:"Vespera0"}}))},french}),/ALIGNMENT_INVALID/);
 });
+
+test("short upstream placeholder text must be flagged regardless of length ratio",()=>{
+  for(const [message,role] of [["special is missing","PRAYER"],["1 is missing","CONCLUSION"],["2 is missing","MARTYROLOGY"]]){
+    const translated=source("fr",message);
+    const flagged=triLanguageRisks({latin:source("la",latinBody),
+      english:source("en",normalEn),
+      french:{...translated,sections:translated.sections.map(s=>({...s,
+        semantic:{...s.semantic,role}}))}});
+    assert.equal(flagged.flagCount,1);
+    assert.equal(flagged.flags[0].language,"fr");
+    assert.ok(flagged.flags[0].reason.includes("UPSTREAM_PLACEHOLDER_MISSING_TEXT"));
+    assert.equal(flagged.translationCertified,false);
+  }
+});
