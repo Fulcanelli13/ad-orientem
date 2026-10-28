@@ -183,7 +183,7 @@ try{
           const cue=x.dataset.sourceRailCueId;
           const paragraphs=[...scroll.querySelectorAll(".ao-reader-paragraph")];
           const source=paragraphs.find(y=>y.dataset.cueId===cue||
-            String(y.dataset.sourceCueIds||"").split(/\\s+/).includes(cue));
+            String(y.dataset.sourceCueIds||"").split(/\s+/).includes(cue));
           const first=source?.querySelector(".ao-line-primary")||source;
           const rect=first?.getBoundingClientRect();
           const line=first?parseFloat(getComputedStyle(first).lineHeight)||28:28;
