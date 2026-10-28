@@ -4,12 +4,14 @@ on:
     branches: ['audit/1962-holy-week-b11-source-proper-structure-20261028']
     paths:
       - 'tests/1962-holy-week-b11-holy-thursday-original-selected-proper.mjs'
+      - 'tests/1962-holy-week-b11-original-structural-rubrics.mjs'
       - '.github/workflows/mass-1962-holy-week-b11-selected-proper.yml'
       - 'data/mass/independent-1962-holy-week-b11-structural-selected-proper.v1.json'
   pull_request:
     branches: [main]
     paths:
       - 'tests/1962-holy-week-b11-holy-thursday-original-selected-proper.mjs'
+      - 'tests/1962-holy-week-b11-original-structural-rubrics.mjs'
       - '.github/workflows/mass-1962-holy-week-b11-selected-proper.yml'
       - 'data/mass/independent-1962-holy-week-b11-structural-selected-proper.v1.json'
       - 'data/mass/independent-1962-holy-week-b09-original-image-witness.v1.json'
@@ -32,6 +34,9 @@ jobs:
           node-version: '22'
       - run: npm install --no-audit --no-fund
       - run: node --check tests/1962-holy-week-b11-holy-thursday-original-selected-proper.mjs
+      - run: node --check tests/1962-holy-week-b11-original-structural-rubrics.mjs
+      - name: Verify native source-owned 1962 Holy Week structural boundaries
+        run: node tests/1962-holy-week-b11-original-structural-rubrics.mjs
       - run: npx playwright install --with-deps chromium
       - name: Compare the 1962 source identity and Introit with the original printed missal
         run: node tests/1962-holy-week-b11-holy-thursday-original-selected-proper.mjs
