@@ -288,6 +288,10 @@ try{
      // circumstance; the choice of Mass II alone proves none of it.
      await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
      await container.locator('[data-ao-all-souls-mass][value="2"]').check();
+     const successionDetails=container.locator("[data-ao-all-souls-succession-details]");
+     if(await successionDetails.evaluate(el=>el.open))
+       throw Error("NOV02_OPTIONAL_CELEBRANT_CONTROLS_NOT_COLLAPSED");
+     await successionDetails.locator("summary").click();
      await container.locator('[data-ao-all-souls-succession="previous"]').selectOption("IMMEDIATE");
      await container.locator('[data-ao-all-souls-succession="next"]').selectOption("INTERRUPTED_LT3");
      out.succession=await page.evaluate(async()=>{
