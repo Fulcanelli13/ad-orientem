@@ -1871,6 +1871,15 @@
         "component_descriptions": 50,
         "full_source_text_authenticated": 0,
         "exception": "§40 short Precious Blood chaplet contains internally conflicting 33/35 Our Father instruction"
+      },
+      "b05_title_triage": {
+        "file": "data/pray/raccolta-189-entry-triage.b05.json",
+        "historical_entries_triaged": 189,
+        "source_component_structures_directly_verified": 17,
+        "index_only_component_structures": 172,
+        "source_witness_1857_file": "data/pray/raccolta-1857-cross-witness.b05.json",
+        "source_witness_1857_component_structures_read": 6,
+        "source_witness_1857_not_1866": true
       }
     },
     "sensus_fidelium_non_raccolta": {
@@ -2364,6 +2373,18 @@
           "Presentation of Our Lady: three distinct prayers cycled over nine days"
         ],
         "scope": "DEDICATED_NOVENA_INDEX_ONLY_NOT_ENTIRE_SENSUS_WEBSITE"
+      },
+      "b05_extra_index": {
+        "file": "data/pray/sensus-extra-collection-index.b05.json",
+        "additional_hierarchical_source_index_rows": 55,
+        "francis_named_prayers": 12,
+        "francis_named_canticles": 3,
+        "alphonsus_indexed_works": 18,
+        "montfort_indexed_works": 3,
+        "gueranger_seasons": 6,
+        "gueranger_months": 12,
+        "bartolo_longo_programmes": 1,
+        "source_site_total_unknown": true
       }
     },
     "roman_divine_office_1960": {
@@ -2529,6 +2550,27 @@
           "fr": null
         },
         "rubrical_resolution_verified": false
+      },
+      "b05_actual_git_tree": {
+        "file": "data/pray/divine-office-file-tree-census.b05.json",
+        "source_tree_sha": "47d2eb2d9441ad688d51648df5540768e6043722",
+        "tree_truncated": false,
+        "files_under_horas_tree": 25394,
+        "latin_files": 3950,
+        "english_files": 2010,
+        "francais_files": 1651,
+        "shared_ordinary_files": 6,
+        "file_level_paths_and_hashes_saved": 7617,
+        "core_lat_en_file_path_overlap": 1796,
+        "core_lat_fr_file_path_overlap": 1634,
+        "unit": "files, not texts or complete Office hours",
+        "status": "TREE_ENUMERATED_CONTENT_AND_RUBRICS_NOT_AUDITED",
+        "manifests": [
+          "data/pray/divine-office-source-files-latin.b05.tsv",
+          "data/pray/divine-office-source-files-english.b05.tsv",
+          "data/pray/divine-office-source-files-francais.b05.tsv",
+          "data/pray/divine-office-source-files-ordinarium.b05.tsv"
+        ]
       }
     }
   },
@@ -2563,7 +2605,7 @@
     "sensus_tag_post_bodies_read_b02": 6,
     "sensus_tag_post_bodies_unread_b02": 9,
     "full_site_crawl_completed": false,
-    "last_audit": "B04_COMPLETE_DEDICATED_NOVENA_STRUCTURE_2026-10-28",
+    "last_audit": "B05_2026-10-28",
     "sensus_extra_discovery_b02": 5,
     "total_source_observations": 214,
     "raccolta_historical_index_entries_b03": 189,
@@ -2588,13 +2630,33 @@
     "b04_sensus_novena_form_patterns": 11,
     "b04_sensus_novena_source_flagged_rows": 15,
     "b04_sensus_dedicated_index_form_audit_complete": true,
-    "b04_sensus_original_print_texts_fully_collated": 0
+    "b04_sensus_original_print_texts_fully_collated": 0,
+    "b05_raccolta_entry_title_level_triaged": 189,
+    "b05_raccolta_direct_1866_component_structures_reviewed": 17,
+    "b05_raccolta_direct_1866_component_structures_remaining": 172,
+    "b05_raccolta_1857_separate_witness_structures_read": 6,
+    "b05_sensus_other_source_index_items": 55,
+    "b05_sensus_francis_prayers_identified": 12,
+    "b05_sensus_francis_individual_pages_read": 4,
+    "b05_divine_office_latin_files": 3950,
+    "b05_divine_office_english_files": 2010,
+    "b05_divine_office_francais_files": 1651,
+    "b05_divine_office_shared_ordinary_files": 6,
+    "b05_divine_office_file_manifest_rows": 7617,
+    "b05_divine_office_core_latin_files": 2327,
+    "b05_divine_office_core_english_exact_path_matches": 1796,
+    "b05_divine_office_core_french_exact_path_matches": 1634,
+    "b05_full_git_tree_enumerated": true,
+    "b05_sensus_entire_site_crawled": false,
+    "b05_unique_prayers_source_authenticated": null
   },
   "next_capture_gates": [
+    "Office source file paths and blob SHA census DONE for Latin English Francais shared Ordinary (7617 rows); next parse and authenticate actual 1960 Roman Office text sections, fallback resolution, date/hour matrix and rights",
+    "Raccolta title triage DONE 189/189 but 172 component bodies still unread; use print facsimile or alternate authoritative witness per entry",
+    "Sensus extra spiritual-reading subindex +55 mixed source items, not unique prayers; continue exhaustive site map beyond 61 Novenas",
     "Dedicated Sensus Novenas form classification DONE 61/61; next authenticate historic editions and exact distinct texts for all 61",
     "Resolve novena text/date anomalies before schedule publication: St Valentine Feb5–14, St Clare Aug4–11, St Raymond Aug22 vs Aug23 start, St Catherine Nov16–25, Saint Lucy page '30Aug', modern litany additions in claimed 1910 witness",
     "Verify printed edition for Raccolta §40 short Precious Blood chaplet (seven 5-Pater mysteries vs 33 stated total) before classifying exact form",
-    "Enumerate actual Divinum Officium data files by language and section then collate 1960 liturgical resolving rules before calling Divine Office corpus coverage complete",
     "Split all 189 Raccolta historical entries into constituent prayers, notices and exercises with page-collated evidence; 157 is omitted in online 1866 index and is corroborated in 1857 index",
     "Reconcile 61 dedicated Sensus novenas with 15 dynamic tag rows and all calendar/site archives; individual text and translation completeness still unverified",
     "Retrieve a machine-accessible site sitemap/WordPress API or other pagination path to enumerate all Sensus pages; current novena tag page displays only 15 and Load More is not available in static fetch",
