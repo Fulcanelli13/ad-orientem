@@ -34,8 +34,8 @@ export function personalDailyPrayerCard(row,plan,{esc,L,prayerParagraphs,source}
  const note=dailyPersonalProvenance(row,L);
  const scopeNote=row.replacementScope==="narrower"?
   '<small class="aoDailyFormulationCoverageNote">'+esc(L(
-   "This is a complete historical prayer with a narrower focus than the St Pius X opening. It replaces that whole stage, not just one sentence. Return to St Pius X for the combined original.",
-   "Cette prière historique intégrale a un objet plus restreint que la prière d’ouverture de saint Pie X. Elle remplace toute cette étape, et non une seule phrase. Revenez à saint Pie X pour retrouver la prière originale complète."
+   "Narrower focus: this complete prayer replaces the entire St Pius X opening.",
+   "Cette variante a un objet plus restreint : elle remplace toute l’ouverture de saint Pie X."
   ))+'</small>':"";
  const context=row.sourceContextEn||row.sourceContextFr?'<small class="aoDailyPersonalContext">'+esc(L(row.sourceContextEn||"",row.sourceContextFr||""))+'</small>':"";
  const body=row.text?prayerParagraphs(row.text):
