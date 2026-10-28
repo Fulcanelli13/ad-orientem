@@ -454,7 +454,7 @@ function close({silent=false,preserve=false}={}){
 function head(title,sub=''){
  const settings=view==='angelus'?`<button type="button" class="aoFolioSettingsTrigger" data-p435930-angelus-settings aria-controls="aoAngelusOptions" aria-expanded="${angelusOptionsOpen?'true':'false'}" aria-label="${esc(L('Prayer parameters','Paramètres de prière'))}">${assetIcon('ao-ui-settings')||'⚙'}</button>`:'';
  // One in-session control serves all source-owned prayer card readers with real EN/FR text.
- const prayerLanguage=['adoration','benediction','stations','confession'].includes(view)||view==='fiveWounds'
+ const prayerLanguage=['adoration','benediction','stations','confession'].includes(view)
   ? `<button type="button" class="aoP435930SessionLanguage" data-p435930-session-language lang="${lang()}" aria-label="${esc(L('Prayer language: English. Switch to French','Langue de prière : français. Passer en anglais'))}" title="${esc(L('Switch to French','Passer en anglais'))}">${lang().toUpperCase()}</button>`
   :'';
  const trailing=settings+prayerLanguage+`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
@@ -2871,7 +2871,7 @@ function onClick(e){
   return;
  }
  const b=e.target.closest?.('button,[data-p435930-flip]');if(!b)return;
- if(b.hasAttribute('data-p435930-session-language')&&(['adoration','benediction','stations','confession'].includes(view)||view==='fiveWounds')){
+ if(b.hasAttribute('data-p435930-session-language')&&['adoration','benediction','stations','confession'].includes(view)){
   const current=mount(),outerScroll=current?.scrollTop||0;
   const innerScroll=current?.querySelector('.aoDevoCardScroll')?.scrollTop||0;
   praySessionLanguage=isFr()?'en':'fr';
