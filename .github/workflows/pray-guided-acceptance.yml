@@ -31,6 +31,7 @@ jobs:
       - run: node tests/pray-traditional-life.mjs
       - run: npx playwright install --with-deps chromium
       - run: node tests/pray-all-modules-mobile.mjs
+      - run: node tests/icksp-batch02-mobile-smoke.mjs
       - run: node tests/contemplative-daily-phone.mjs
       - name: Capture contemplative Prayer screens for review
         if: always()
