@@ -68,6 +68,16 @@ const SOLEMN_REQUIEM_MINISTER_VARIANTS=Object.freeze({
     actor:"DEACON + THURIFER",label:"OFFERTORY INCENSATION · REQUIEM",
     action:"The sacred ministers assist the Offertory incensation. The celebrant is incensed; the choir and people are not."
   }),
+  // Ritus XIII.2 and O'Connell 1962: unlike an ordinary Solemn Mass,
+  // the Requiem's subdeacon handles incense at both elevations.
+  "SMIN-010":Object.freeze({
+    actor:"DEACON · SUBDEACON · TORCHBEARERS",label:"HOST ELEVATION · REQUIEM",
+    action:"Deacon assists the elevation; the subdeacon kneels at the Epistle side, incenses the elevated Host with three double swings, and bows before and after. Torchbearers kneel."
+  }),
+  "SMIN-011":Object.freeze({
+    actor:"DEACON · SUBDEACON · TORCHBEARERS",label:"CHALICE ELEVATION · REQUIEM",
+    action:"Deacon assists the elevation; the subdeacon remains kneeling at the Epistle side, incenses the elevated Chalice with three double swings, and bows before and after. Torchbearers kneel."
+  }),
   "SMIN-012":null, // No ordinary subdeacon-to-deacon veiled-paten handoff.
   "SMIN-013":null, // Ritus X.4/XIII.1 omits the ministerial Pax.
 });
