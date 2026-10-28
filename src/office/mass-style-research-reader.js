@@ -164,6 +164,7 @@ export function renderOfficeMassStyleResearchReader({
       '<div class="aoOfficeLocaleControls" role="group" aria-label="Translation">'+
         availableLocales.map(l=>'<a href="'+slug(context.date,context.hour,l)+'"'+
           (locale===l?' aria-current="page"':'')+'>'+l.toUpperCase()+'</a>').join("")+
+        (availableLocales.includes("en")?"":'<span class="aoOfficeLocaleUnavailable" aria-disabled="true" title="English translation requires source review">EN review</span>')+
         (availableLocales.includes("fr")?"":'<span class="aoOfficeLocaleUnavailable" aria-disabled="true" title="French source incomplete">FR incomplete</span>')+
         '</div>'+
       '<div class="aoOfficeDateChoice" aria-label="'+esc(lo("Pilot dates","Dates de recherche",locale))+'">'+
