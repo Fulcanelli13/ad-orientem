@@ -36,7 +36,7 @@ try{
       serviceWorkers:"block",reducedMotion:"reduce"});
     const errors=[];page.on("pageerror",e=>errors.push(e.message));
     try{
-      await page.goto(base+"?aoPrayReader=contemplative",{waitUntil:"domcontentloaded",timeout:90000});
+      await page.goto(base,{waitUntil:"domcontentloaded",timeout:90000});
       await page.waitForFunction(()=>typeof window.AO_PRAY_APP_V1?.open==="function",null,{timeout:45000});
       assert.equal(await page.evaluate(()=>window.AO_PRAY_APP_V1.open()),true);
       assert.equal(await page.evaluate(()=>window.AO_PRAY_V435930.open("pray.morning_evening",{returnContext:null})),true);
@@ -109,14 +109,14 @@ try{
       await page.waitForFunction(()=>!document.querySelector("#aoPray435930")?.hasAttribute("data-ao-contemplative-daily"),null,{timeout:12000});
       assert.deepEqual(errors,[],"Browser errors at "+width+"px: "+errors.join(" | "));
       results.push({width,morningCount:initial.count,eveningCount:count,routeLeak:false,errors:0});
-      console.log("PASS "+width+"px: canonical 11/13 morning/evening, Latin flip, context isolation");
+      console.log("PASS "+width+"px default Design B: canonical 11/13, Latin flip and context isolation");
     }finally{await page.close();}
   }
   // French and Latin are exercised through the production settings UI, not mock text.
   const frenchPage=await browser.newPage({viewport:{width:390,height:844},
     isMobile:true,hasTouch:true,serviceWorkers:"block",locale:"fr-FR",reducedMotion:"reduce"});
   try{
-    await frenchPage.goto(base+"?aoPrayReader=contemplative",{waitUntil:"domcontentloaded",timeout:90000});
+    await frenchPage.goto(base,{waitUntil:"domcontentloaded",timeout:90000});
     await frenchPage.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().installed===true&&typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
     await frenchPage.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("settings"));
     await frenchPage.locator('#ao-settings-modular-root [data-settings-route="/settings/language-reading"]').click();
@@ -139,16 +139,16 @@ try{
     await frenchPage.screenshot({path:resolve(captures,"french-latin-390.png"),animations:"disabled"});
     console.log("PASS 390px French UI and French-to-Latin Prayer text");
   } finally { await frenchPage.close(); }
-  // Without the explicit flag, the live app must remain in its current design.
+  // Explicit classic rollback keeps the established presentation available.
   const defaultPage=await browser.newPage({viewport:{width:390,height:844},serviceWorkers:"block"});
   try{
-    await defaultPage.goto(base,{waitUntil:"domcontentloaded",timeout:90000});
+    await defaultPage.goto(base+"?aoPrayReader=classic",{waitUntil:"domcontentloaded",timeout:90000});
     await defaultPage.waitForFunction(()=>typeof window.AO_PRAY_APP_V1?.open==="function",null,{timeout:45000});
     assert.equal(await defaultPage.evaluate(()=>window.AO_PRAY_APP_V1.open()),true);
     assert.equal(await defaultPage.evaluate(()=>window.AO_PRAY_V435930.open("pray.morning_evening",{returnContext:null})),true);
     assert.equal(await defaultPage.locator("#aoPray435930[data-ao-contemplative-daily]").count(),0);
     assert.equal(await defaultPage.evaluate(()=>Boolean(window.AO_CONTEMPLATIVE_DAILY_PREVIEW_V1)),false);
-    console.log("PASS unflagged production Prayer reader unchanged");
+    console.log("PASS ?aoPrayReader=classic retains the previous Prayer reader");
   }finally{await defaultPage.close();}
   await writeFile(resolve(captures,"acceptance.json"),JSON.stringify(results,null,2));
 }finally{
