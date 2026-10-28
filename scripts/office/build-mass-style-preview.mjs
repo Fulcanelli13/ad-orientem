@@ -15,12 +15,13 @@ const HOURS=["MATINS","LAUDS","PRIME","TERCE","SEXT","NONE","VESPERS","COMPLINE"
 const safeDate=s=>typeof s==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(s);
 function pilotRoot(){
   const args=process.argv.slice(2);
-  if(args.length!==2||args[0]!=="--out"||!args[1])
+  if(!([2,3].includes(args.length))||args[0]!=="--out"||!args[1]||
+    (args.length===3&&args[2]!=="--quarantine-unaligned"))
     throw Error("OFFICE_MASS_PREVIEW_OUT_REQUIRED");
-  return resolve(args[1]);
+  return {root:resolve(args[1]),quarantineUnaligned:args[2]==="--quarantine-unaligned"};
 }
 function build(){
-  const root=pilotRoot();
+  const {root,quarantineUnaligned}=pilotRoot();
   const normalized=JSON.parse(readFileSync(join(root,"normalized-manifest.json"),"utf8"));
   if(normalized.schema!=="ao.office.normalization-audit.v1"||normalized.published!==0||
     normalized.liturgicallyVerified!==0)throw Error("OFFICE_MASS_PREVIEW_RESEARCH_ONLY");
@@ -37,6 +38,20 @@ function build(){
     groups.set(key,g);
   }
   const dates=[...new Set(records.map(r=>r.date))].sort();
+  const eligibleGroups=new Set(),quarantined=[];
+  for(const [key,group] of groups){
+    if(!["la","en","fr"].every(l=>group[l]))throw Error("OFFICE_MASS_PREVIEW_TRILINGUAL_GAP");
+    const counts=["la","en","fr"].map(l=>group[l].sectionCount);
+    const reasons=[];
+    if(new Set(counts).size!==1)reasons.push("SOURCE_CELL_COUNT_MISMATCH");
+    const rows=normalized.comparisons.find(x=>x.date===group.la.date&&x.hour===group.la.hour);
+    if(!rows||rows.structurallyAligned!==true)reasons.push("SOURCE_ALIGNMENT_NOT_CONFIRMED");
+    if(reasons.length){
+      if(!quarantineUnaligned)throw Error("OFFICE_MASS_PREVIEW_UNALIGNED:"+key+":"+reasons.join(","));
+      quarantined.push({date:group.la.date,hour:group.la.hour,
+        counts:{la:counts[0],en:counts[1],fr:counts[2]},reasons});
+    }else eligibleGroups.add(key);
+  }
   const target=join(root,"preview","mass");
   mkdirSync(target,{recursive:true});
   copyFileSync(new URL("../../src/office/mass-style-research.css",import.meta.url),
@@ -46,11 +61,10 @@ function build(){
   const locales=["en","fr"],byHour={},files=[];
   for(const date of dates)for(const hour of HOURS){
     const group=groups.get(date+":"+hour);
-    if(!group)continue;
-    if(!["la","en","fr"].every(l=>group[l]))throw Error("OFFICE_MASS_PREVIEW_TRILINGUAL_GAP");
+    if(!group||!eligibleGroups.has(date+":"+hour))continue;
     const latin=JSON.parse(readFileSync(join(root,date,hour.toLowerCase(),"la.research.json"),"utf8"));
-    const availableHours=HOURS.filter(h=>groups.has(date+":"+h));
-    const availableDates=dates.filter(d=>groups.has(d+":"+hour));
+    const availableHours=HOURS.filter(h=>eligibleGroups.has(date+":"+h));
+    const availableDates=dates.filter(d=>eligibleGroups.has(d+":"+hour));
     for(const locale of locales){
       const translation=JSON.parse(readFileSync(join(root,date,hour.toLowerCase(),locale+".research.json"),"utf8"));
       const article=renderOfficeMassStyleResearchReader({
@@ -74,7 +88,9 @@ function build(){
   const summary={
     schema:"ao.office.mass-style-research-preview.v1",
     dates,hours:HOURS.filter(h=>byHour[h]),
-    locales,files,
+    locales,files,quarantineEnabled:quarantineUnaligned,
+    quarantinedSourceHours:quarantined,
+    quarantinedSourceHourCount:quarantined.length,
     pages:files.length,byHour,
     researchOnly:true,passedIndependentRubricalReview:false,
     published:0,productionRouteRegistered:false,
@@ -86,7 +102,10 @@ function build(){
     dates:summary.dates,hours:summary.hours,pages:summary.pages,
     published:summary.published,externalResources:summary.externalResources,
     productionRouteRegistered:summary.productionRouteRegistered,
+    quarantinedSourceHours:summary.quarantinedSourceHourCount,
   }));
-  if(summary.pages!==groups.size*2)throw Error("OFFICE_MASS_PREVIEW_COUNT_MISMATCH");
+  if(summary.pages!==eligibleGroups.size*2 ||
+    summary.pages+summary.quarantinedSourceHourCount*2!==groups.size*2)
+    throw Error("OFFICE_MASS_PREVIEW_COUNT_MISMATCH");
 }
 try{build()}catch(e){console.error(e?.stack??String(e));process.exitCode=1}
