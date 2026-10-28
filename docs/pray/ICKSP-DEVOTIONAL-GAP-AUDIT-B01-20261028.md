@@ -85,3 +85,16 @@ The original 48-entry canonical-bank comparison **must not be interpreted as pro
 Compline and Vespers are complete Divine Offices, not individual prayer omissions. St Blaise candle/food blessings are priestly rituals for Calendar-context information. The other candidates remain potential additions, not globally proven absences.
 
 The **25 stable IDs are unchanged**, protecting prior rejection decisions. `app_coverage_status`, `app_match_refs` and `next_action` in the JSON register record this new evidence; `canonical_48_status` is retained as the narrowly scoped first-pass finding. No full body is released.
+
+### Review groups, after cross-module checking
+
+| Group | Count | Action |
+|---|---:|---|
+| Existing or related prayers | 7 | Reuse, collate or consider distinct alternate wording |
+| Potential personal devotional additions | 7 | Check exact text, historical EN/FR/Latin witnesses and further app coverage |
+| Institute-specific consecration | 1 | Preserve institutional identity; not general-personal by default |
+| Seasonal Office hymns | 7 | Compare hymn texts, recensions and seasonal modules |
+| Complete Divine Offices | 2 | Separate Office architecture, not single prayer cards |
+| Ritual reference | 1 | Calendar customs description, not private recitation |
+
+Total: **25**. The 7 potential personal additions and the Institute-specific consecration are not yet certified globally absent from Ad Orientem.
