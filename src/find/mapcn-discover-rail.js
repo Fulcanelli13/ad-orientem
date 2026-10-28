@@ -37,6 +37,17 @@ export function renderMapcnDiscoverRail(vm){
   .sort((a,b)=>Number(Boolean(b.profile?.editorial_feature))-Number(Boolean(a.profile?.editorial_feature))
    ||Number(Boolean(b.profile?.media?.asset_path))-Number(Boolean(a.profile?.media?.asset_path))
    ||clean(a.item.title).localeCompare(clean(b.item.title)));
+ // Editorial selections are separately labelled worldwide; they must
+ // never masquerade as suggestions inside the current camera bounds.
+ // Images and attribution come only from approved canonical Place profiles.
+ const categories=list(vm.filters?.heritageCategories);
+ const featured=list(vm.featuredPlaces).filter(p=>{
+  const media=p?.media;
+  return p?.editorial_feature&&p?.map_publishable&&list(p?.sources).length
+   &&clean(media?.asset_path)&&clean(media?.credit)&&clean(media?.license)
+   &&(!categories.length||categories.some(category=>Number(p?.counts?.[category])>0));
+ }).sort((a,b)=>Number(a.editorial_feature.ordinal)-Number(b.editorial_feature.ordinal))
+  .slice(0,5);
  const limit=Math.min(180,Math.max(24,Number(vm.filters?.mapcnDiscoverLimit)||36));
  const shown=entries.slice(0,limit),scoped=Boolean(vm.discoverViewport);
  const title=scoped?L(vm.language,"In this area","Dans cette région"):L(vm.language,"Explore places","Explorer les lieux");
@@ -46,6 +57,19 @@ export function renderMapcnDiscoverRail(vm){
  html+='<span class="aoMapcnDiscoverTitle">'+title+'</span></span>';
  html+='<span class="aoMapcnDiscoverCount" aria-label="'+esc(L(vm.language,"Mapped places in this view","Lieux cartographiés dans cette vue"))+'">'+entries.length+'</span>';
  html+='<span class="aoMapcnDiscoverChevron" aria-hidden="true">⌃</span></button></div>';
+ if(featured.length){
+  html+='<section class="aoMapcnEditorialStrip" aria-label="'+L(vm.language,"Featured documented places worldwide","Lieux documentés à découvrir dans le monde")+'">';
+  html+='<div class="aoMapcnEditorialHeading"><span>'+L(vm.language,"IN FOCUS · WORLDWIDE","À DÉCOUVRIR · MONDE")+'</span><small>'+L(vm.language,"Curated, source-backed places","Lieux sélectionnés et sourcés")+'</small></div>';
+  html+='<div class="aoMapcnEditorialCarousel">';
+  for(const p of featured){
+   const media=p.media,alt=vm.language==="fr"?(media.alt_fr||media.alt_en):(media.alt_en||media.alt_fr);
+   const location=[p?.address?.city,p?.address?.country].filter(Boolean).join(" · ");
+   html+='<button type="button" class="aoMapcnEditorialCard" data-explore-open-place="'+esc(p.place_id)+'" aria-current="'+String(vm.selectedPlace?.place_id===p.place_id)+'">';
+   html+='<img loading="lazy" decoding="async" data-photo-orientation="'+esc(media.orientation||"landscape")+'" src="'+esc(media.asset_path)+'" alt="'+esc(alt||p.name)+'">';
+   html+='<span class="aoMapcnEditorialLabel"><strong>'+esc(p.name)+'</strong><small>'+esc(location)+'</small></span></button>';
+  }
+  html+='</div></section>';
+ }
  html+='<div class="aoMapcnDiscoverEntries" role="list" id="ao-mapcn-discover-items">';
  if(!shown.length)html+='<p class="aoMapcnDiscoverEmpty">'+L(vm.language,"No documented place in this map view. Move or zoom the map.","Aucun lieu documenté dans cette vue. Déplacez ou agrandissez la carte.")+'</p>';
  for(const {item,profile} of shown){
