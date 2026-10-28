@@ -126,7 +126,7 @@ try{
     });
     assert.ok(cols.latin>20&&cols.vernacular>20,file+" incomplete bilingual content");
     // Mass MISSAL parity: bilingual columns stay side by side even at 320px.
-    assert.ok(cols.style?.trim().split(/\\s+/).length===2,
+    assert.ok(cols.style?.trim().split(/\s+/).length===2,
       file+" MISSAL grid is not two columns: "+cols.style);
     assert.ok(cols.rightX>cols.leftX+(width<650?35:80),
       file+" MISSAL is not Latin-left/vernacular-right: "+JSON.stringify(cols));
