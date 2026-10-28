@@ -188,7 +188,9 @@ try{
  await angelusRoot.locator("[data-ao-angelus-form]").waitFor({timeout:12000});
  assert.equal(await angelusRoot.locator("[data-ao-angelus-form]").getAttribute("data-ao-angelus-form"),"angelus",
   "Offline Angelus launched the wrong liturgical form");
- assert.equal(await angelusRoot.locator(".aoAngelusGuideSection").count(),5,
+ // The five historical guide paragraphs must remain independently sourced;
+ // an additional recitation aid may share this class without being a source.
+ assert.equal(await angelusRoot.locator(".aoAngelusGuideSection:has(a[href^='https://'])").count(),5,
   "Offline Angelus lost its five source-backed guide sections");
  assert.equal(await angelusRoot.locator(".aoAngelusGuideSection a[href^='https://']").count(),5,
   "Offline Angelus lost historical source links");
