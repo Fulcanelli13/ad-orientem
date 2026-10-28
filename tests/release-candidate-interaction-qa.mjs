@@ -186,18 +186,16 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-p435930-station-step]").count(),14,"Stations lost XIV-step rail");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-station-step][aria-current='step']").count(),1);
   assert.ok(await page.locator("#aoPray435930 .aoP435930StationConsider").count()>=1,"Guided Stations lost consideration");
-  const stationsOptions=page.locator("#aoPray435930 [data-ao-stations-options]");
-  if(await stationsOptions.getAttribute("open")===null)
-    await stationsOptions.locator(":scope > summary").click();
-  await page.locator("#aoPray435930 [data-p435930-seg='simple']").click();
+  const stationReading=page.locator("#aoPray435930 [data-ao-stations-direct-reading]");
+  assert.equal(await stationReading.locator("[data-p435930-station-reading]").count(),2,
+    "Source-owned guided and simple reading choices must be directly visible");
+  await stationReading.locator("[data-p435930-station-reading='simple']").click();
   assert.equal(await page.locator("#aoPray435930 .aoP435930StationConsider").count(),0,"Simple Stations still show guided consideration");
   await page.locator("#aoPray435930 [data-p435930-station-step='1']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 [data-p435930-station-step='1']")?.getAttribute("aria-current")==="step",null,{timeout:5000});
   const stationTwo=await page.locator("#aoP435930Title").textContent();
   assert.ok(stationTwo&&stationTwo.trim().length>5,"Second Station title is blank");
-  if(await stationsOptions.getAttribute("open")===null)
-    await stationsOptions.locator(":scope > summary").click();
-  await page.locator("#aoPray435930 [data-p435930-seg='guided']").click();
+  await stationReading.locator("[data-p435930-station-reading='guided']").click();
   assert.ok(await page.locator("#aoPray435930 .aoP435930StationConsider").count()>=1,"Guided Stations did not restore consideration");
 
   // First Friday: preserve exact programme stage across Around-Mass handoff/return.
