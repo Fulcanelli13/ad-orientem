@@ -191,17 +191,23 @@
       "category": "Marian protection",
       "target": "Marian; protection; St Michael related links",
       "editorial_notes": "August Queen of Heaven prayer attributed to Fr Cestac (1864); full parallel ICKSP UK witness exists. Source cites a historical indulgence in 1908: never present this as a current indulgence.",
-      "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY",
+      "full_text_import": "HISTORIC_ORIGINAL_LANGUAGE_WITNESSES_ADDED",
+      "release_status": "IMPLEMENTED_ON_PR_BRANCH_NOT_MERGED",
       "verified": "FULL_ENGLISH_BODY_FOUND_ON_ICKSP_UK",
       "alternative_source_url": "https://icksp.org.uk/newbrighton/consecration-to-our-lady/",
       "source_body_text_accessible": true,
-      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
-      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_coverage_status": "IMPLEMENTED_DRAFT_WITH_INDEPENDENT_HISTORICAL_WITNESSES",
+      "app_coverage_label": "English 1890 and French historical original added to prayer reader (draft branch)",
       "app_match_refs": [],
       "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
       "review_group": "POTENTIAL_PERSONAL_DEVOTION",
-      "source_selection_status": "ACCEPTED"
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.marian_protection",
+      "text_witnesses": {
+        "en": "https://www.gutenberg.org/cache/epub/48887/pg48887-images.html",
+        "fr": "https://servantesdemarie.com/fr/pages/pere-cestac-priere-spiritualite-accompagnement-soutien-vierge-marie-auguste-reine"
+      },
+      "translation_policy": "NO_ITALIAN_OR_UNVERIFIED_LATIN; historical EN and FR recensions individually attributed"
     },
     {
       "id": "icksp_us_novena_immaculate_conception",
