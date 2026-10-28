@@ -72,12 +72,13 @@ try{
       // the visible LIVE section navigator to jump many priest cards.
       const beforeCatchup=await page.evaluate(()=>{
         const api=window.__AO_PHONE_PREVIEW;
-        api.selectScholaTrack("OFFERTORY");
+        api.selectScholaTrack("GLORIA");
         api.nextSchola();
         const s=api.getScholaState();
         return {trackId:s.trackId,index:s.index,complete:s.complete};
       });
-      assert.equal(beforeCatchup.trackId,"OFFERTORY");
+      assert.equal(beforeCatchup.trackId,"GLORIA");
+      assert.equal(beforeCatchup.index,1,"Test must hold a noninitial choir phrase");
       await page.locator('#ao-r17-native-reader-preview [data-role="section-jump"]').click();
       const catchupMenu=page.locator('#ao-r17-native-reader-preview [data-role="section-menu"]');
       assert.equal(await catchupMenu.isVisible(),true,"Priest catch-up did not open");
