@@ -77,7 +77,7 @@ def extract(text,source_digest):
   # Bouquet, same aspirations and Collect. Refuse a short/contemporary novena.
   labels=[bool(re.search(rf"\b{roman}\.\s",dayBody)) for roman in ["I","II","III"]]
   acts=bool(re.search(r"\bAct of (love|confidence|hope|abandonment|contrition|offering|charity|generous love|desire)\b",dayBody,re.I))
-  virtues=bool(re.search(r"\bVirtue (?:to be practic(?:ed|e)|lo be practiced)\b",dayBody,re.I))
+  virtues=bool(re.search(r"\bVirtue\s+(?:(?:to|lo)\s+(?:be\s+)?)?practi[cs](?:e|ed)?\b",dayBody,re.I))
   bouquet=bool(re.search(r"\bSpiritual (?:Bouquet|bouquet)\b",dayBody))
   closing=bool(re.search(r"\bPRAYER\s*[-—]\s*(?:God all-powerful|Almighty and merciful God)",dayBody,re.I))
   if len(dayBody)<1100 or not all(labels) or not(acts and virtues and bouquet and closing):
