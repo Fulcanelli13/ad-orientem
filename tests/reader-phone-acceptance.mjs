@@ -264,9 +264,42 @@ try{
     return shell?.dataset.objectiveContext==="true" &&
       explanation&&!explanation.hidden&&explanation.dataset.blockId==="AO.SM.B052";
   },null,{timeout:5000});
+  // CDP touchend can leave kinetic scrolling active after the first C0174
+  // focus event. Wait for physical scroll quiescence, then anchor the exact
+  // elevation cue before checking its native state and painted rail.
+  await page.evaluate(async()=>{
+    const card=document.querySelector(".ao-prayer-card");
+    if(!card)throw Error("PHONE_PRAYER_CARD_MISSING");
+    let last=card.scrollTop,quietFrames=0;
+    for(let frame=0;frame<90&&quietFrames<8;frame++){
+      await new Promise(resolve=>requestAnimationFrame(resolve));
+      const next=card.scrollTop;
+      quietFrames=Math.abs(next-last)<0.5?quietFrames+1:0;
+      last=next;
+    }
+    const target=card.querySelector('[data-cue-id="AO.SM.C0174"]');
+    if(!target)throw Error("PHONE_ELEVATION_CUE_MISSING");
+    // Use the SAME geometry-based, source-only selector as production.
+    // A center-based target may fall outside the final cue's available
+    // scrolling territory on some headless browser/font metrics.
+    const {pickActiveCue,cueItemsFromScrollContainer}=await import(
+      "/src/mass/reader-cue-focus.js");
+    const items=cueItemsFromScrollContainer(card);
+    const max=Math.max(0,card.scrollHeight-card.clientHeight);
+    const steps=80,position=Array.from({length:steps+1},(_,i)=>
+      max*(steps-i)/steps).find(y=>pickActiveCue({
+        scrollTop:y,clientHeight:card.clientHeight,
+        scrollHeight:card.scrollHeight,items
+      })==="AO.SM.C0174");
+    if(position===undefined)throw Error(
+      "PHONE_ELEVATION_HAS_NO_READER_FOCUS_TERRITORY");
+    card.scrollTop=position;
+    // The scroller may already be at its final edge: explicitly notify
+    // the regular focus listener without modifying native source state.
+    card.dispatchEvent(new Event("scroll"));
+  });
   // B052 covers both C0173 (consecration words) and C0174 (elevation).
-  // Wait for the *same exact source cue* and rendered rail state together:
-  // touch momentum can move focus back to C0173 after the earlier check.
+  // Require the *same exact source cue* and rendered rail state together.
   const elevationPainted=await page.waitForFunction(()=>{
     const source=window.__AO_PHONE_PREVIEW?.getNativeEventState();
     const context=document.querySelector('[data-role="objective-context"]');
@@ -302,6 +335,7 @@ try{
     const actionText=action?.querySelector('[data-role="priest-action"]');
     return {
       context:box?.textContent??"",
+      nativeCueId:window.__AO_PHONE_PREVIEW?.getNativeEventState()?.nativeCueId??null,
       contextHeight:box?.getBoundingClientRect().height??0,
       ribbonHeight:box?.parentElement?.getBoundingClientRect().height??0,
       oldTopDisplay:top?getComputedStyle(top).display:null,
@@ -335,6 +369,8 @@ try{
     "Priest actions and position must remain on the right rail");
   assert.equal(objectiveVisual.positionActive,"true",
     "Context ribbon displaced the priest's active station");
+  assert.equal(objectiveVisual.nativeCueId,"AO.SM.C0174",
+    "The stationary visual audit must still be on the Host elevation cue");
   assert.equal(objectiveVisual.sourceActionFallback,"true",
     "The legacy objective context still identifies the unpainted elevation");
   assert.equal(objectiveVisual.sourceActionTextDisplay,"none",

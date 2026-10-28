@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+// The opt-in contemplative skin is validated by the existing Prayer CI gate.
+import "./contemplative-daily-preview.mjs";
 import {DAILY_GUIDED_STEPS,NIGHTLY_EXAMEN_CARDS,guidedDailyCards,clampPrayerCardStep,guidedStepLabel} from "../src/pray/guided-daily-cards.js";
 import {MORNING_PRAYER_SEQUENCE_V381,EVENING_PRAYER_SEQUENCE_V381} from "../src/pray/traditional-pray-data.js";
 assert.deepEqual(guidedDailyCards("morning").map(x=>x.id),MORNING_PRAYER_SEQUENCE_V381.map(x=>x[0]));

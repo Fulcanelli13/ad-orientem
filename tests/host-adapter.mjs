@@ -74,6 +74,70 @@ const req=prepareMassSessionFromV346({
 expect(req.resolvedMass.overlays.includes("REQUIEM"),"Requiem overlay not inferred");
 expect(req.plan.blessingAllowed===false,"Requiem blessing survived");
 
+// All Souls' principal 1962 CALENDAR Mass is actually a Requiem.
+const soulsLegacy={...base,date:"2026-11-02",
+  calendarDay:{id:"sancti:11-02m1:1:b",title:"Commemoration of All Souls"},
+  properSource:"Sancti/11-02m1"};
+const soulsProper={sourcePath:"Sancti/11-02m1",introit:{lat:"Requiem aeternam"}};
+const souls=prepareMassSessionFromV346(soulsLegacy,{
+  form:"solemn",proper:soulsProper});
+expect(souls.resolvedMass.overlays.includes("REQUIEM"),
+  "All Souls calendar Mass lost its authenticated Requiem overlay");
+expect(souls.plan.blessingAllowed===false,
+  "All Souls calendar Mass wrongly has final blessing");
+expect(souls.plan.dismissal==="REQUIESCANT_IN_PACE",
+  "All Souls calendar Mass wrongly uses ordinary dismissal");
+expect(souls.plan.normalLastGospel===true,
+  "Unaccompanied Requiem Mass must retain Last Gospel");
+const actualAllSouls={status:"ready",date:"2026-11-02",
+  day:{main:{id:"sancti:11-02m1:1:b",title:"All Souls"}}};
+const hostLegacyAlias={...soulsLegacy,
+  calendarDay:{id:"Sancti/11-02m1",title:"All Souls — old host identity"}};
+const sourceBound=prepareMassSessionFromV346(hostLegacyAlias,{
+  form:"solemn",proper:soulsProper,calendarResolution:actualAllSouls});
+expect(sourceBound.resolvedMass.overlays.includes("REQUIEM"),
+  "Actual Calendar resolver identity must override obsolete legacy host identity");
+// Three existing 1962 All Souls Mass formularies are independently selected
+// by the canonical resolver. All three must activate the same Requiem ritual
+// rules, but never inherit one another's Proper.
+for(const index of [1,2,3]){
+  const path="Sancti/11-02m"+index,id="sancti:11-02m"+index+":1:b";
+  const variantCalendar={...actualAllSouls,day:{main:{id}}};
+  const variant=prepareMassSessionFromV346(hostLegacyAlias,{
+    form:"solemn",proper:{...soulsProper,sourcePath:path},
+    calendarResolution:variantCalendar});
+  expect(variant.resolvedMass.overlays.includes("REQUIEM"),
+    "All Souls Mass "+index+" lost its Requiem rules");
+  expect(variant.plan.blessingAllowed===false,
+    "All Souls Mass "+index+" incorrectly has a final blessing");
+  expect(variant.plan.dismissal==="REQUIESCANT_IN_PACE",
+    "All Souls Mass "+index+" incorrectly has Ite missa est");
+  const wrong=prepareMassSessionFromV346(hostLegacyAlias,{
+    form:"solemn",proper:{...soulsProper,sourcePath:"Sancti/11-02m"+(index%3+1)},
+    calendarResolution:variantCalendar});
+  expect(!wrong.resolvedMass.overlays.includes("REQUIEM"),
+    "Mismatched All Souls Mass "+index+" donor promoted to Requiem");
+}
+for(const corruptedCalendar of [
+  {...actualAllSouls,date:"2026-11-03"},
+  {...actualAllSouls,day:{main:{id:"sancti:11-03:3:w"}}},
+  {...actualAllSouls,status:"failed"}
+]){
+  const declined=prepareMassSessionFromV346(hostLegacyAlias,{
+    form:"solemn",proper:soulsProper,calendarResolution:corruptedCalendar});
+  expect(!declined.resolvedMass.overlays.includes("REQUIEM"),
+    "Stale/failed/mismatched actual Calendar source falsely activated Requiem");
+}
+for(const [label,variant,selectedProper] of [
+  ["unrelated day",{...soulsLegacy,calendarDay:{id:"sancti:11-03:3:w"}},soulsProper],
+  ["unrelated donor",soulsLegacy,{...soulsProper,sourcePath:"Sancti/11-02m2"}],
+  ["votive override",{...soulsLegacy,requestedCelebrationId:"votive",
+    celebrationId:"votive",celebrationType:"VOTIVE"},soulsProper]
+]){
+  const candidate=prepareMassSessionFromV346(variant,{form:"solemn",proper:selectedProper});
+  expect(!candidate.resolvedMass.overlays.includes("REQUIEM"),
+    "All Souls source-specific overlay leaked to "+label);
+}
 const reqAbs=prepareMassSessionFromV346({
   ...base,
   requestedCelebrationId:"requiem",

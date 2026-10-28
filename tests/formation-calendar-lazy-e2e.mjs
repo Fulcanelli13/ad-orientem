@@ -360,7 +360,13 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setMonthView("major")),true);
  await page.locator("#ao-calendar-modular-root .aoCalHybridMajorSection").waitFor({state:"visible",timeout:12000});
  await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthReady===true,null,{timeout:45000});
- const transferred=await page.locator("#ao-calendar-modular-root [data-cal-month-index-date='2027-04-05']").textContent();
+ // The Ordo action and the observed Major index share a valid date key.
+ // Only inspect the unique observed Major feast button here.
+ const majorAnnunciation=page.locator(
+   "#ao-calendar-modular-root .aoCalHybridMajorSection .aoCalHybridMajor[data-cal-month-index-date='2027-04-05']");
+ assert.equal(await majorAnnunciation.count(),1,
+   "April 2027 must have exactly one observed Annunciation Major entry");
+ const transferred=await majorAnnunciation.textContent();
  assert.match(transferred||"",/Annunciation|Annonciation/i,"Transferred Annunciation absent from April's observed Major index");
  // A first-class sanctoral feast that falls on Sunday must not be
  // misclassified as an ordinary Sunday of the temporal cycle.

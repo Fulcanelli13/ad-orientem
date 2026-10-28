@@ -100,6 +100,75 @@ try{
      "Calendar horizontal month rail has invalid scroll geometry");
    await page.screenshot({path:resolve(output,"calendar-month-"+lang+"-"+width+".png"),
      fullPage:false,animations:"disabled"});
+   // The Ordo uses the same resolved month, without replacing the 42-date grid.
+   await cal.locator('[data-cal-month-layout="ordo"]').click();
+   const ordoPanel=cal.locator('[data-cal-month-presentation="ordo"]');
+   assert.equal(await ordoPanel.isVisible(),true,"Ordo presentation must be visible");
+   assert.equal(await cal.locator('[data-cal-month-presentation="grid"]').isHidden(),true,
+     "Grid remains mounted but is hidden in Ordo mode");
+   const ordoCount=await cal.locator('.aoCalOrdoEntry').count();
+   assert.ok(ordoCount>=28&&ordoCount<=31,"Ordo must list every in-month day: "+ordoCount);
+   // Capture actual resolved liturgical content, not a frame of loading skeletons.
+   // A few resolved entries are not a visual acceptance baseline: the
+   // prior capture showed several "Day awaiting resolution" placeholders
+   // beside Christ the King. Require the entire week in view to resolve
+   // before taking evidence, without inventing missing day identities.
+   await page.waitForFunction(()=>[
+     "2026-10-21","2026-10-22","2026-10-23","2026-10-24",
+     "2026-10-25","2026-10-26","2026-10-27"
+   ].every(date=>document.querySelector(
+     '#ao-calendar-modular-root [data-cal-ordo-date="'+date+'"]')?.dataset.ready==="1"),
+   null,{timeout:90000});
+   const kingLabel=await cal.locator(
+     '[data-cal-ordo-date="2026-10-25"] .aoCalOrdoIdentity strong').innerText();
+   assert.equal(kingLabel,lang==="fr"?"Fête de Notre-Seigneur Jésus-Christ Roi":"Christ the King",
+     "Original source-bound French King feast heading lost");
+   const firstResolvedDate=await cal.locator('.aoCalOrdoEntry[data-ready="1"]').first()
+     .getAttribute('data-cal-ordo-date');
+   const firstOrdo=cal.locator('[data-cal-ordo-date="'+firstResolvedDate+'"]');
+   await firstOrdo.locator(':scope > summary').click();
+   assert.equal(await firstOrdo.getAttribute('open'),"",
+     "Resolved Ordo day must expand without navigating away");
+   assert.equal(await firstOrdo.locator('.aoCalOrdoVerified').count(),1,
+     "Resolved Ordo must show only source-backed Mass availability");
+   const latinFacts=firstOrdo.locator('.aoCalOrdoFact dd[lang="la"]');
+   if(await latinFacts.count()){
+     const firstLatin=await latinFacts.first().innerText();
+     assert.doesNotMatch(firstLatin,/^(?:Ps|Psalm)\\.?\\s*\\d+/i,
+       "An Introit source reference is not its Latin incipit: "+firstLatin);
+   }
+   assert.equal(await firstOrdo.locator('[data-cal-month-index-date]').count(),1,
+     "Expanded Ordo day must link to the canonical Day");
+   if(width===390&&lang==="en"){
+     // Independent 365-day audit identifies 26 October 2026 as the
+     // 1962 general-calendar green IV-class feria, with no Gloria/Credo.
+     const dateId="2026-10-26";
+     await page.waitForFunction(date=>
+       document.querySelector('[data-cal-ordo-date="'+date+'"]')?.dataset.ready==="1",
+       dateId,{timeout:45000});
+     const feria=cal.locator('[data-cal-ordo-date="'+dateId+'"]');
+     if(await feria.getAttribute("open")===null)await feria.locator(':scope > summary').click();
+     const facts=await feria.locator('.aoCalOrdoFact').allTextContents();
+     assert.ok(facts.some(t=>/Gloria/.test(t)&&/Omitted/.test(t)),
+       "Resolved Oct 26 feria must omit Gloria under Breviary 238c");
+     assert.ok(facts.some(t=>/Credo/.test(t)&&/Omitted/.test(t)),
+       "Resolved Oct 26 feria must omit Credo under RGMR 475-476");
+     const evidence=feria.locator(".aoCalOrdoBasis");
+     assert.equal(await evidence.count(),1,
+       "Displayed source-supported rules need reviewable rubrical provenance");
+     assert.ok(await evidence.locator('a[href^="https://isidore.co/"]').count()>=2);
+   }
+   await page.screenshot({path:resolve(output,"calendar-ordo-"+lang+"-"+width+".png"),
+     fullPage:false,animations:"disabled"});
+   await cal.locator('[data-cal-month-view="temporale"]').click();
+   assert.equal(await cal.locator('.aoCalOrdoList').getAttribute("data-cal-month-filter"),"temporale",
+     "Existing source-cycle filter must apply to Ordo too");
+   await cal.locator('[data-cal-month-view="calendar"]').click();
+   await cal.locator('[data-cal-month-layout="grid"]').click();
+   assert.equal(await cal.locator('[data-cal-month-presentation="grid"]').isVisible(),true,
+     "Switching back must restore the original grid");
+   assert.equal(await cal.locator('[data-cal-pick-date]').count(),42,
+     "Grid switch must retain 42 cells");
    await cal.locator('[data-cal-month-view="temporale"]').click();
    assert.equal(await cal.locator(".aoCalV2MonthGrid").getAttribute("data-cal-month-filter"),"temporale",
      "Temporale should filter the existing grid, not open a second page");
@@ -118,6 +187,19 @@ try{
       document.querySelector(".aoTodayV2CalendarInline .aoCalV2YearHeading h2")?.textContent!==previous,
      original,{timeout:10000});
    assert.equal(await cal.locator("[data-cal-pick-date]").count(),42);
+   // November I-class and All Souls principal Masses must display actual
+   // original French Officium headings, not the English host nameFr field.
+   // These assertions use the real 2026 resolver, not synthetic strings.
+   await page.waitForFunction(()=>["2026-11-01","2026-11-02"].every(date=>
+     document.querySelector('[data-cal-pick-date="'+date+'"]')?.dataset.ready==="1"),
+     null,{timeout:90000});
+   for(const [date,en,frTitle] of [
+     ["2026-11-01","All Saints","Tous les Saints"],
+     ["2026-11-02","Commemoration of All Souls","Commémoraison de tous les fidèles défunts"]
+   ]){
+     const title=await cal.locator('[data-cal-pick-date="'+date+'"] .aoCalMonthName').innerText();
+     assert.equal(title,lang==="fr"?frTitle:en,date+" original selected feast in "+lang);
+   }
    // Inspect actual published Calendar customs, not only the shell/month grid.
    // The first month shift from October 2026 lands in November.
    if((width===320&&lang==="en")||(width===390&&lang==="fr")){

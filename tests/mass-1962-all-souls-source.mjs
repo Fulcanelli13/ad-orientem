@@ -50,4 +50,17 @@ assert.equal(is1962AllSoulsCalendarMass({...mass,date:"2027-11-02"}),true,
 assert.deepEqual(deriveHostOptions({resolvedMass:mass,
  assemblyStatus:{proper:{data:{sourcePath:"Tempora/Pent23-0"}}}}).overlays,[],
  "Contradictory selected Proper must not inherit the calendar Requiem overlay");
+
+for(const number of [1,2,3]){
+ const selected={...mass,calendarDay:{id:"sancti:11-02m"+number+":1:b"},
+   proper:{status:"ready",data:{sourcePath:"Sancti/11-02m"+number}}};
+ assert.equal(is1962AllSoulsCalendarMass(selected),true,
+   "Authenticated All Souls Mass "+number+" must survive Home-to-Folio handoff");
+ assert.deepEqual(deriveHostOptions({resolvedMass:selected}).overlays,["REQUIEM"]);
+ for(const wrong of [1,2,3].filter(other=>other!==number)){
+  assert.equal(is1962AllSoulsCalendarMass({...selected,
+    proper:{data:{sourcePath:"Sancti/11-02m"+wrong}}}),false,
+    "Wrong Mass "+wrong+" donor was accepted for Mass "+number);
+ }
+}
 console.log("All Souls calendar Requiem overlay source-owner gate: PASS");
