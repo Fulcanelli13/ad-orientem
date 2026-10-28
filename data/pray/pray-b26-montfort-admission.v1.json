@@ -1,0 +1,121 @@
+{
+  "schema": "ao.pray.b26-montfort-consecration-programme.v1",
+  "date": "2026-10-29",
+  "historicalCandidateId": "AO-AQ-065",
+  "programmeId": "pray.montfort_consecration",
+  "inAppOwner": "Existing Pray > Devotions & Novenas family; no new top-level module",
+  "authorship": {
+    "author": "Louis-Marie Grignion de Montfort",
+    "work": "True Devotion to the Blessed Virgin",
+    "relevantParagraphs": "§§227–233",
+    "originallyPrescribedDays": [
+      12,
+      7,
+      7,
+      7
+    ],
+    "originalAuthorWrote33DistinctDailyMeditations": false,
+    "originalConsecrationAct": "Consecration of Ourselves to Jesus Christ, the Incarnate Wisdom, by the Hands of Mary"
+  },
+  "translation": {
+    "sourceEdition": "F. W. Faber, English, 1863",
+    "actSource": "https://1765regina.com/prayers/act-of-consecration-to-mary/",
+    "instructionSource": "https://www.ecatholic2000.com/montfort/true/devotion.shtml",
+    "modern1987TranslationReused": false,
+    "modern1987CopyrightOwner": "Montfort Missionaries",
+    "historicalEnglishPrintImageCollated": false,
+    "historicalFrenchActVerified": false,
+    "latinActVerified": false,
+    "latinateAveMarisStellaTraditionalWitness": true
+  },
+  "programme": {
+    "firstPhase": {
+      "days": "1–12",
+      "theme": "Spirit of the World",
+      "source": "§227"
+    },
+    "secondPhase": {
+      "days": "13–19",
+      "theme": "Knowledge of Self",
+      "source": "§228"
+    },
+    "thirdPhase": {
+      "days": "20–26",
+      "theme": "Knowledge of Mary",
+      "source": "§229"
+    },
+    "fourthPhase": {
+      "days": "27–33",
+      "theme": "Knowledge of Jesus Christ",
+      "source": "§230"
+    },
+    "actDay": 34,
+    "interval": "Selected consecration day minus 33 days through day before",
+    "historicalMeaning": "Phase structure Montfort; day-specific labels/editorial navigation are application selections",
+    "sacredCalendar": "Suggested fixed Marian dates private; 1962 transferred feast dates not automatically verified",
+    "savedProgress": "Browser localStorage keyed by chosen target, manual marking only, no sync",
+    "automaticallyConductsSacraments": false,
+    "autoSignsConsecration": false
+  },
+  "prayersIncluded": [
+    {
+      "id": "sacrament_come_holy_spirit",
+      "owner": "Existing canonical prayer",
+      "status": "AVAILABLE",
+      "warning": "Short prayer is NOT substitute for Litany of Holy Spirit"
+    },
+    {
+      "id": "litany_loreto_1962",
+      "owner": "Existing canonical 1962-era Loreto litany",
+      "status": "AVAILABLE"
+    },
+    {
+      "id": "ave_maris_stella",
+      "owner": "Traditional public-domain Latin seven-stanza hymn",
+      "status": "AVAILABLE_LATIN_ONLY"
+    },
+    {
+      "id": "holy_rosary",
+      "owner": "Existing five-decade Rosary player",
+      "status": "AVAILABLE_VIA_OWNED_PRAY_ROUTE"
+    },
+    {
+      "id": "litany_holy_spirit",
+      "owner": "Montfort §§228–230 direction; required original-text recension not admitted here",
+      "status": "SOURCE_TEXT_HELD"
+    },
+    {
+      "id": "litany_holy_name",
+      "owner": "Montfort §230 direction; 1910 Raccolta §56 source lead not yet imported",
+      "status": "SOURCE_TEXT_HELD"
+    },
+    {
+      "id": "augustine_prayer",
+      "owner": "Montfort §230 attributes a longer prayer to Augustine",
+      "status": "SOURCE_TEXT_HELD"
+    },
+    {
+      "id": "faber_consecration_act",
+      "owner": "Faber public-domain 1863 historical English digital witness",
+      "status": "AVAILABLE_EN_ORIGINAL_PRINT_IMAGE_UNCOLLATED"
+    }
+  ],
+  "releaseScope": {
+    "webSourceNotFetchedAtRuntime": true,
+    "noNewTopLevelModule": true,
+    "frozen48CanonicalPrayerIds": true,
+    "frozen16NovenaIds": true,
+    "noInventedDailyTexts": true,
+    "noInventedFrenchPrayerTranslation": true,
+    "noRecurringSubscription": true,
+    "euros": 0,
+    "notFullySelfContainedOriginalLitanies": true
+  },
+  "editorialGates": [
+    "Collate Faber 1863 act against actual printed-page facsimile before marking PRINT_CERTIFIED",
+    "Admit a historical English Litany of Holy Spirit and following collect, and separate Holy Name Litany, before declaring all phases fully self-contained",
+    "Confirm specific 1962 Marian feast transfers before automatically presenting calendar-aligned start dates",
+    "Do not attribute 1958 or later numbered daily readings to Montfort",
+    "If a user changes consecration date, current version resets tracked day marks; progress is device local only"
+  ]
+}
