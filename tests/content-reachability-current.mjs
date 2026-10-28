@@ -37,13 +37,13 @@ assert.ok(first>=0&&last>first,"Canonical Prayer family projection moved");
 const familySource=pray.slice(first,last);
 const published=[...familySource.matchAll(/\['(?:own|external)','([^']+)'/g)].map(x=>x[1]);
 const external=[...familySource.matchAll(/\['external','([^']+)'/g)].map(x=>x[1]);
-assert.equal(published.length,26,"Prayer family must retain the original 23 entries plus three chaplet discovery links");
+assert.equal(published.length,27,"Prayer family must retain the frozen 23 original entries plus four curated chaplet options");
 const chapletStart=familySource.indexOf("chaplets:Object.freeze(");
 const chapletEnd=familySource.indexOf("eucharistic:Object.freeze(",chapletStart);
 assert.ok(chapletStart>=0&&chapletEnd>chapletStart,"Shared Rosary & Chaplets family missing");
 const chapletSource=familySource.slice(chapletStart,chapletEnd);
 const chapletRoutes=[...chapletSource.matchAll(/\['own','([^']+)'/g)].map(x=>x[1]);
-assert.deepEqual(chapletRoutes,["pray.rosary","pray.rosary_methods","pray.divine_mercy"],
+assert.deepEqual(chapletRoutes,["pray.rosary","pray.rosary_methods","pray.divine_mercy","pray.five_wounds"],
   "Rosary, its methods and Divine Mercy must remain distinct canonical readers");
 const coreFamilySource=familySource.slice(0,chapletStart)+familySource.slice(chapletEnd);
 const originalPublished=[...coreFamilySource.matchAll(/\['(?:own|external)','([^']+)'/g)].map(x=>x[1]);
@@ -65,4 +65,4 @@ assert.equal(new Set(EXPLORE_LENSES).size,7);
 for(const lens of ["tlm","shrines","apparitions","relics","traditions","pilgrimages","saints"]){
   assert.ok(EXPLORE_LENSES.includes(lens),"Explore missing published lens "+lens);
 }
-console.log("PASS current app reachability: 23 preserved Prayer family items plus 3 Rosary/Chaplet discovery entries, no duplicate engine or route owner");
+console.log("PASS current app reachability: 23 preserved Prayer family items plus 4 Rosary/Chaplet discovery entries, no duplicate engine or route owner");

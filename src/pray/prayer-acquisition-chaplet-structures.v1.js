@@ -18,23 +18,25 @@ export const HISTORICAL_CHAPLET_SOURCE_CANDIDATES_V1=Object.freeze([
    title:"Chaplet of the Five Wounds",
    sourceWork:"The Raccolta (1857)",historicalEntry:32,
    sourceUrls:Object.freeze([
-     "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Index",
+     "https://passionistarchives.org/chaplet-of-the-five-wounds-its-history-blessing-and-indulgences/",
      "https://www.liturgialatina.org/raccolta/crucified.htm",
      "https://www.saintsbooks.net/books/The%20Raccolta%20-%201910.pdf"
    ]),
    editionWitnesses:Object.freeze(["1857 index and later transcription","1910 independent confirmation (entry 126)"]),
-   structureStatus:"REPEAT_STRUCTURE_SOURCE_SUPPORTED_EDITION_TEXT_UNCOLLATED",
+   structureStatus:"PASSIONIST_AND_RACCOLTA_RECENSION_CONFIRMED",
    groups:Object.freeze(Array.from({length:5},(_,i)=>Object.freeze({
      number:i+1,meditation:"One of the Five Wounds of Our Lord",
      repeatedPrayerId:"foundations_glory_be",repetitions:5,
      concludingPrayerId:"foundations_hail_mary",concludingRepetitions:1
    }))),
    derivedCounts:Object.freeze({glory_be:25,hail_mary:5}),
+   historicalIndulgencesCurrent:false,
+   originalPrintScanCertified:false,
    exactRubricalMeaning:"Five decades of five Glory Bes with a Hail Mary at the end of each; historical special chaplet blessing mentioned for indulgences, which are not asserted to apply today.",
    displayGroup:"passion",existingCanonicalTextsOnly:true,
-   sourceTextStatus:"FORMULA_AND_STRUCTURE_ATTESTED_PRINT_PAGE_IMAGE_NOT_CERTIFIED",
-   releaseStatus:"HOLD_PRINT_COLLATION_AND_EDITORIAL",
-   userFacing:false
+   sourceTextStatus:"FORMULA_AND_STRUCTURE_CORROBORATED_BY_PASSIONIST_ARCHIVE_AND_RACCOLTA_TRANSCRIPTION",
+   releaseStatus:"PUBLISHED_GUIDED_FORM_SOURCE_RECONCILED",
+   userFacing:true
  }),
  Object.freeze({
    id:"raccolta_1857_precious_blood_full",
