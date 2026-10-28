@@ -29,7 +29,7 @@ The reviewed whitelist `src/pray/daily-stage-alternative-review.js` intentionall
 - One-tap source-labelled alternative appears in the **current** prayer's existing source picker, next to the standard St Pius X form. The historical prayer is shown complete, with correct language, source URL and printed book attribution.
 - The **entire stage text** changes. This is explicitly disclosed for narrower-focus replacements rather than pretending to replace just one sentence of the original St Pius X composite.
 - Keep edition/daypart and language constraints, active card index, full-screen progressive sky and stopwatch/timer unchanged; no automatic navigation.
-- Previous saved optional-extras remain persisted and valid. If an optional prayer is also selected as the current stage replacement, **display it only once**; it reappears in extras when the St Pius X form is restored.
+- Previous saved optional-extras remain persisted and visible as independent prayer stages. Selecting the same source for a different stage **does not suppress, reorder or delete** an explicitly saved optional prayer. The user may intentionally place the same text twice; deduplicating automatically would change the card count and atmospheric timeline.
 - Persist **IDs only**, independent Morning and Evening, with schema v1 intact. Unavailable language choices fail closed, not translated by software.
 - Full and Personal Brief show the same alternatives when that printed stage is present. No new "Short edition".
 - Test source identity and provenance, all 12 options, source-language gating, printed stage counts and revert, deduplication with saved extras, mobile one-tap and atmospheric/clock DOM preservation.
