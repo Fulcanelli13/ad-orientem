@@ -38,7 +38,7 @@ for(const id of ids){
     assert.match(h.en,/O faithful Cross, thou peerless Tree/);
     assert.match(h.englishSource.witnessStatus,/1842_BILINGUAL_PRINTED/);
     assert.match(h.englishSource.editorialNote,/Good Friday/);
-    assert.match(h.languageStatus,/1842_ENGLISH_PASSION_HYMN_EXCERPT/);
+    assert.match(h.languageStatus,/1842_ENGLISH_GUERANGER_GOOD_FRIDAY_FRENCH/);
   }else if(id==="ex_more_docti"||id==="lustra_sex"){
       assert.match(h.fr,id==="ex_more_docti"?/Fidèles à la tradition mystérieuse/:/Après avoir vécu six lustres/);
       assert.match(h.frenchSource.witnessStatus,/NOT_YET_PHYSICAL_PAGE_COLLATED/);
