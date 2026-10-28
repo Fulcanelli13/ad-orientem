@@ -199,7 +199,7 @@ export const ADORATION_FOLIO_CSS=String.raw`
 }
 /* User-requested silence must cover both rails and global navigation, not merely
    create an empty panel surrounded by navigation controls. */
-#aoPray435930:has(.aoAdorationQuietScreen){z-index:2147482000!important}
+/* An explicitly entered quiet screen must outrank even the boot overlay\n   if a late bootstrap status repaint occurs during a long prayer session. */\n#aoPray435930:has(.aoAdorationQuietScreen){z-index:2147483100!important}
 /* The shared app ribbon deliberately has a z-index above prayer surfaces.
    Hide it only while the user's explicit untimed stillness view is active. */
 body:has(#aoPray435930 .aoAdorationQuietScreen) #ao-global-ribbon{
@@ -209,7 +209,7 @@ body:has(#aoPray435930 .aoAdorationQuietScreen) #ao-global-ribbon{
 #aoPray435930 .aoAdorationQuietScreen{
  position:fixed!important;inset:0!important;width:100vw!important;
  max-width:none!important;max-height:none!important;min-height:100dvh!important;
- z-index:2147482001!important;box-sizing:border-box!important;
+ z-index:2147483101!important;box-sizing:border-box!important;
  padding:clamp(36px,7dvh,80px) 17px!important;
  background:radial-gradient(ellipse 42% 28% at 50% 46%,
   color-mix(in srgb,var(--liturgical,#bb9f78) 6%,#080c12),#080c12 83%)!important;
