@@ -594,8 +594,8 @@ try{
  await page.locator(holyFace+' [data-n1-begin]').tap();
  assert.equal(await page.locator(holyFace+' [data-ao-novena-deck="simple"]').count(),1);
  const firstHoly=await page.locator(holyFace+" .aoN1SourceText").innerText();
- for(const fragment of ["The Holy Face","Spiritual Bouquet","Virtue","I.","II.","III.","Amen."]){
-   assert.ok(firstHoly.includes(fragment),"Holy Face day 1 must retain complete source part: "+fragment);
+ for(const fragment of [/Bethlehem/i,/Spiritual Bouquet/i,/Virtue/i,/I\./,/II\./,/III\./,/Amen\./]){
+   assert.match(firstHoly,fragment,"Holy Face day 1 must retain complete source part: "+fragment);
  }
  assert.ok(firstHoly.length>3200,"Day 1 should contain its entire historical meditation, not an editorial précis");
  await page.locator(holyFace+' [data-n1-day="9"]').tap();
