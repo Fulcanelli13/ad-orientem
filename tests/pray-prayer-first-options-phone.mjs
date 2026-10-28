@@ -132,8 +132,9 @@ try{
    assert.ok(angelusDom.one===1&&angelusDom.closed&&angelusDom.settings&&angelusDom.abovePrayer&&angelusDom.hasVR&&
       angelusDom.paragraphs>=3&&angelusDom.labelHeight>=44&&angelusDom.warningsVisible,
     "Angelus canonical prayer hierarchy damaged: "+JSON.stringify(angelusDom));
-   assert.ok([4,5].includes(angelusDom.guideSources),
+   assert.ok([5,6].includes(angelusDom.guideSources),
     "Angelus/Regina source-linked Guide was removed");
+   assert.equal(await ag.locator("[data-ao-b01-august-queen] a[href*='icksp.org.uk']").count(),1,"ICKSP August Queen must be a separate related-source link within Angelus Guide");
    assert.equal(await ag.locator('[data-p435930-seg="group"]').isVisible(),false,
      "Angelus recitation controls leak through the closed preferences drawer");
    assert.equal(await ag.locator('[data-p435930-seg="regina"]').isVisible(),false,
