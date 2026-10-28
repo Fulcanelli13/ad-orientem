@@ -186,16 +186,25 @@
       "category": "Novena to the Divine Infant King",
       "target": "Novenas; Infant Jesus",
       "editorial_notes": "A complete prayer attributed on the ICKSP page to Venerable Father Cyril, OCD; the article calls it a novena, but does not itself prove nine distinct day texts. Model a repeated prayer with days 1–9 only after practice validation.",
-      "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY",
+      "full_text_import": "HISTORICAL_LASANCE_1904_EN_AND_FRENCH_1885_NOTICE_TRANSCRIPTION",
+      "release_status": "IMPLEMENTED_ON_PR_BRANCH_NOT_MERGED",
       "verified": "ENGLISH_COMPLETE_BODY_READ",
       "source_body_text_accessible": true,
-      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
-      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_coverage_status": "IMPLEMENTED_IN_DRAFT_IN_EXISTING_NOVENA_READER",
+      "app_coverage_label": "Divine Infant King nine-day prayer available in Novenas draft, historical EN/FR witnesses and monthly 17–25",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "next_action": "Perform full Node/Playwright regression before merge; preserve original 16 canonical novenas and 1904 English text, French transcription's 1885 Vidi note",
       "review_group": "POTENTIAL_PERSONAL_DEVOTION",
-      "source_selection_status": "ACCEPTED"
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.novenas?novenaId=divine_infant_king",
+      "practice": "REPEAT_SAME_PRAYER_NINE_DAYS; ICKSP_MONTHLY_17_25",
+      "text_witnesses": {
+        "en": "https://en.wikisource.org/wiki/Prayer-book_for_Religious/Book_4",
+        "fr": "https://prieresetdevotions.blogspot.com/2007/07/prire-efficace-lenfant-jsus-rvle-par-la.html",
+        "frInstitute": "https://icrspfrance.fr/?page=child-jesus-prayers",
+        "icksp": "https://institute-christ-king.org/resources/devotions-prayers/616-devotions-prayer-infant-king",
+        "practice": "https://institute-christ-king.org/kansascity-home"
+      }
     },
     {
       "id": "icksp_us_august_queen_heaven",
@@ -637,10 +646,12 @@
     "as_of": "2026-10-28",
     "initial_review_items": 25,
     "source_selections_accepted": 25,
-    "full_prayer_readers_implemented_in_draft": 2,
+    "full_prayer_readers_implemented_in_draft": 3,
     "full_new_prayers_published_to_production": 0,
     "source_held_second_priest_prayer": 1,
     "languages": "August Queen historically attested EN/FR; Eternal Priest ICKSP EN only; no invented Latin or Italian",
-    "test_status": "STATIC_JS_PARSE_AND_SOURCE_ROUTE_INVARIANTS_PASS; NODE_PLAYWRIGHT_NOT_EXECUTED"
+    "test_status": "NOVENA_DATE_ROLLOVER_AND_STATIC_JS_CHECKS_PASS; FULL NODE_PLAYWRIGHT_NOT_EXECUTED",
+    "added_novena_forms": 1,
+    "original_canonical_novena_count_preserved": 16
   }
 }
