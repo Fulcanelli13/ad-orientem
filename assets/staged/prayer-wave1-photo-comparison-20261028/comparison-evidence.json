@@ -1,0 +1,171 @@
+{
+  "schema": "AO_PRAYER_WAVE1_PHOTO_COMPARISON_V1",
+  "created": "2026-10-28",
+  "review_only": true,
+  "photo_releases": 0,
+  "editorial_changes": 0,
+  "cost_eur": 0,
+  "source_images": {
+    "sorrows_old": {
+      "source_url": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-museum-photos-20261026/assets/staged/module-hero-masters/sorrows.jpg",
+      "sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+      "bytes": 1454827,
+      "pixels": [
+        2220,
+        3000
+      ],
+      "prior_hash_matched": true,
+      "source_file_reused_unchanged": true
+    },
+    "sorrows_new": {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Master_of_the_Half_Lengths_-_Virgin_of_the_Seven_Sorrows_-_Google_Art_Project.jpg",
+      "sha256": "9ac17078b83f2cf6031aa70a86917929cdeea16927e66c4bb7c0f7671ec89667",
+      "bytes": 5215174,
+      "pixels": [
+        3250,
+        4391
+      ],
+      "prior_hash_matched": false,
+      "source_file_reused_unchanged": true,
+      "archived_source_original": "assets/staged/prayer-wave1-photo-comparison-20261028/sorrows_new-new-commons-original.jpg"
+    },
+    "angelus": {
+      "source_url": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-wave2-20261026/assets/staged/module-hero-wave2/angelus-met.jpg",
+      "sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "bytes": 3055151,
+      "pixels": [
+        3741,
+        3658
+      ],
+      "prior_hash_matched": true,
+      "source_file_reused_unchanged": true
+    },
+    "rosary_sailko": {
+      "source_url": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-open-photo-candidates-20261027/module-rosary-lotto-original.jpg",
+      "sha256": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
+      "bytes": 3355634,
+      "pixels": [
+        1772,
+        2652
+      ],
+      "prior_hash_matched": true,
+      "source_file_reused_unchanged": true
+    },
+    "rosary_yorck": {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Lorenzo_Lotto_057.jpg",
+      "sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+      "bytes": 3259819,
+      "pixels": [
+        1880,
+        2886
+      ],
+      "prior_hash_matched": false,
+      "source_file_reused_unchanged": true,
+      "archived_source_original": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary_yorck-new-commons-original.jpg"
+    }
+  },
+  "evidence": [
+    {
+      "file": "assets/staged/prayer-wave1-photo-comparison-20261028/seven-sorrows-source-comparison.jpg",
+      "sha256": "56c87724f817bcff856de1bb3611ef16f70d00307d21caaf01f5ead95e8e9734",
+      "pixels": [
+        968,
+        1172
+      ]
+    },
+    {
+      "file": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary-source-comparison.jpg",
+      "sha256": "eea8e19096c451d930cadc16c4483e6dfc9e119ed920f8351f2a2ba6a3071bf1",
+      "pixels": [
+        968,
+        1172
+      ]
+    },
+    {
+      "file": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-painted-perimeter-proposal.jpg",
+      "sha256": "c8506d8a72f5b022f62ee10366557a6f88998dd817a6668d735e1c0a5844f842",
+      "pixels": [
+        968,
+        1172
+      ]
+    },
+    {
+      "file": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-paint-only-UNAPPROVED.jpg",
+      "sha256": "eeaf4969ef92c7f42f16da0081e99121d5532797cb84186ffcb45935176628e7",
+      "pixels": [
+        1500,
+        1473
+      ]
+    },
+    {
+      "file": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary-conservative-perimeter-proposal.jpg",
+      "sha256": "4f50936b036ab56fb344a663af4af04b7c090712359734db8a42984c411ad01e",
+      "pixels": [
+        968,
+        1172
+      ]
+    },
+    {
+      "file": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary-conservative-UNAPPROVED.jpg",
+      "sha256": "1203da2d9aefb16948c793dbebeafc45f93802bca84335b5d1f2586402b51fa7",
+      "pixels": [
+        1100,
+        1644
+      ]
+    },
+    {
+      "file": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary-tighter-perimeter-proposal.jpg",
+      "sha256": "3dca97d5685199a64b7aaf0a83ca510c5596972529de5d081769b2c3b4ec2455",
+      "pixels": [
+        968,
+        1172
+      ]
+    },
+    {
+      "file": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary-tighter-UNAPPROVED.jpg",
+      "sha256": "1e12dcdb389acee85ddc8b1c9f68dd85054e37eac21045691610c14ed608f9a2",
+      "pixels": [
+        1100,
+        1637
+      ]
+    }
+  ],
+  "provisional_crop_rects": {
+    "angelus": [
+      82,
+      77,
+      3660,
+      3590
+    ],
+    "rosary": {
+      "conservative": [
+        14,
+        28,
+        1758,
+        2635
+      ],
+      "tighter": [
+        24,
+        44,
+        1748,
+        2609
+      ]
+    }
+  },
+  "rights": {
+    "angelus": "Met 2004.31 institutional Public Domain; attribution still required by product policy",
+    "sorrows_new": "Wikimedia Commons PD-Art / PDM 1.0 notice; verify exact file and relevant jurisdiction before release",
+    "rosary_yorck": "Commons public-domain reproduced artwork; Yorck compilation GFDL metadata is distinct from single-image status",
+    "rosary_sailko": "Sailko CC BY 3.0, attribution/license URL/change notice required for any derived crop"
+  },
+  "release_policy": "All crops/alternates unapproved; review native painted boundaries and detail, do not crop any mystery roundels, do not switch master without documented quality grounds.",
+  "evening": {
+    "approved_work": "Frere The Prayer Wolverhampton OP6",
+    "action": "HOLD_SOURCE_RIGHTS_AND_QUALITY",
+    "known_commons_pixels": [
+      898,
+      1200
+    ],
+    "substitute_allowed": false
+  }
+}
