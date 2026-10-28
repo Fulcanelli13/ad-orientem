@@ -9,6 +9,8 @@ on:
       - 'src/mass/reader-good-friday.js'
       - 'src/mass/reader-native-preview.js'
       - 'tests/good-friday-1962-passion-voices-b13.mjs'
+      - 'data/mass/independent-1962-holy-week-b05-text-audit.v1.json'
+      - 'tools/calendar/independent-1962-holy-week-b05-text-audit.mjs'
       - '.github/workflows/mass-1962-good-friday-b13-passion-voices.yml'
   pull_request:
     branches: [main]
@@ -18,6 +20,8 @@ on:
       - 'src/mass/reader-good-friday.js'
       - 'src/mass/reader-native-preview.js'
       - 'tests/good-friday-1962-passion-voices-b13.mjs'
+      - 'data/mass/independent-1962-holy-week-b05-text-audit.v1.json'
+      - 'tools/calendar/independent-1962-holy-week-b05-text-audit.mjs'
       - '.github/workflows/mass-1962-good-friday-b13-passion-voices.yml'
   workflow_dispatch:
 permissions:
@@ -40,3 +44,5 @@ jobs:
         run: node tests/good-friday-1962-solemn-prayers-b12.mjs
       - name: Preserve Good Friday source cards, 56 graph states and Passion death pause
         run: node tests/reader-good-friday.mjs
+      - name: Require 17 existing Holy Week printed-text debt items to stay open
+        run: node tools/calendar/independent-1962-holy-week-b05-text-audit.mjs --strict
