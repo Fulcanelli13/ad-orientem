@@ -47,6 +47,11 @@ export const LIVE_LATIN_FIRST_INVITATION_CUES=Object.freeze([
 ]);
 const LIVE_INVITATION_SET=new Set(LIVE_LATIN_FIRST_INVITATION_CUES);
 
+const REQUIEM_FOOT_PSALM_CUES=Object.freeze(
+ Array.from({length:10},(_,i)=>"AO.SM.C"+String(i+4).padStart(4,"0"))
+);
+const REQUIEM_LAVABO_DOXOLOGY_CUES=Object.freeze(["AO.SM.C0126","AO.SM.C0127"]);
+
 const SUNG_PUBLIC_PRAYER_BLOCKS=new Set([
   "AO.SM.B016", // Gloria intonation
   "AO.SM.B027", // Credo intonation
@@ -288,6 +293,34 @@ export function buildReaderSectionCard({
   const paragraphs=[];
   const blockMeta=[];
   for(const block of blocks){
+    // XIII.1: Requiem begins with the first Introibo/response and proceeds
+    // directly to Adjutorium. Psalm 42 (B003, ten exact source cues) is
+    // omitted, not merely hidden behind a visible blank prayer.
+    if(block.Block_ID==="AO.SM.B003"&&
+       REQUIEM_FOOT_PSALM_CUES.some(id=>omittedOrdinaryCues.includes(id))){
+      if(block.units?.length!==REQUIEM_FOOT_PSALM_CUES.length||
+         block.units.some((u,i)=>u.cue_id!==REQUIEM_FOOT_PSALM_CUES[i])||
+         !REQUIEM_FOOT_PSALM_CUES.every(id=>omittedOrdinaryCues.includes(id)))
+        throw new Error("REQUIEM_JUDICA_SOURCE_IDENTITY_MISMATCH");
+      blockMeta.push(Object.freeze({
+        blockId:block.Block_ID,title:block.Title,properSlot:block.Proper_Slot,
+        stateOnly:false,firstParagraphIndex:null,paragraphCount:0,
+        omittedByRite:"RITUS_XIII_1_REQUIEM",
+      }));
+      continue;
+    }
+    // XIII.1: at the Lavabo the Psalm remains but the two final doxology
+    // cues are omitted. Work from a display-only copy of the frozen block.
+    let projectedBlock=block;
+    if(block.Block_ID==="AO.SM.B037"&&
+       REQUIEM_LAVABO_DOXOLOGY_CUES.some(id=>omittedOrdinaryCues.includes(id))){
+      const expected=["AO.SM.C0125",...REQUIEM_LAVABO_DOXOLOGY_CUES];
+      if(block.units?.length!==expected.length||
+         block.units.some((u,i)=>u.cue_id!==expected[i])||
+         !REQUIEM_LAVABO_DOXOLOGY_CUES.every(id=>omittedOrdinaryCues.includes(id)))
+        throw new Error("REQUIEM_LAVABO_SOURCE_IDENTITY_MISMATCH");
+      projectedBlock={...block,units:Object.freeze([block.units[0]])};
+    }
     // Incense is not used at LOW or MISSA_CANTATA_SIMPLE. The source's
     // two CONDITIONAL_1962 incensation blocks must not appear as prayers
     // merely because the frozen donor holds their content. This is a
@@ -361,7 +394,7 @@ export function buildReaderSectionCard({
     );
     const raw=block.Proper_Slot
       ? properParagraphs(block,properSlots,{language:vernacularLanguage,form:actualForm??corpus.form})
-      : ordinaryParagraphs(block,{language:vernacularLanguage,frenchOrdinary,ordinaryVariants,form:actualForm??corpus.form});
+      : ordinaryParagraphs(projectedBlock,{language:vernacularLanguage,frenchOrdinary,ordinaryVariants,form:actualForm??corpus.form});
     const stateOnly=stateOnlyBlock(block);
     if(raw.length===0 && !explicitNotApplicable && !stateOnly && block.Branch_Status!=="OPTIONAL_LOCAL_CUSTOM") {
       throw new Error(block.Block_ID+": block contains no reader text");

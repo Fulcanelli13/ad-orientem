@@ -18,6 +18,22 @@ export function isExplicitRequiemMass(prepared,conditions=null){
   ].some(x=>["REQUIEM","MASS_FOR_THE_DEAD"].includes(token(x)));
 }
 
+// Ritus servandus XIII.1: in Masses for the Dead the entire Psalm 42
+// (Judica me) with its repeated Introibo dialogue is omitted, but the FIRST
+// Introibo/Ad Deum and the subsequent Adjutorium/Confiteor remain.
+// XIII.1 also omits Gloria Patri + Sicut erat at the Lavabo; the Psalm
+// Lavabo itself remains. Suppress only exact donor cues, not the canonical
+// Ordinary or its underlying archival source files.
+// https://usus-antiquior.github.io/ritus-servandus.html#XIII
+const REQUIEM_FOOT_PSALM_AND_LAVABO_OMISSIONS=Object.freeze([
+ ...Array.from({length:10},(_,i)=>"AO.SM.C"+String(i+4).padStart(4,"0")),
+ "AO.SM.C0126","AO.SM.C0127",
+]);
+export function requiemFootPsalmAndLavaboOmittedCuesForResolvedMass(resolvedMass){
+ return isExplicitRequiemMass({session:{resolvedMass}})
+   ?REQUIEM_FOOT_PSALM_AND_LAVABO_OMISSIONS:Object.freeze([]);
+}
+
 // Ritus servandus XIII.2: at a Requiem the INITIAL altar incensation
 // at the Introit is omitted, even in a form using incense at the Offertory.
 // These are exact fixed-Ordinary source identities; never globally disable
