@@ -37,6 +37,7 @@ import { isFirstWeekday as calendarIsFirstWeekday } from "../calendar/intelligen
 import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "./devotional-ux-contract.js";
 import { LITANY_SOURCE_WITNESSES, LITANY_WITNESS_REVIEW_V1, reviewLitanyTranscription, extractLitanyProper, paginateLitanyProper } from "./litany-source.js";
 import {BATCH03_LITANY_EDITION_POLICY,BATCH03_ICRSP_MAJOR_PROCESSION_STEPS,BATCH03_LITANY_SOURCE_STATUS,batch03LitanyUse} from "./litany-1962-use-policy.js";
+import {PENITENTIAL_PSALMS_VULGATE,penitentialPsalmReference,auditPenitentialPsalmResponse,PENITENTIAL_PSALMS_TEXT_STATUS} from "./penitential-psalms-source.js";
 import { DEVOTIONAL_WITNESSES, PRAYER_WITNESSED_VARIANTS } from "./devotional-witness-links.v1.js";
 import { parseSevenWordsHistoricalWitness } from "./seven-words-witness.v1.js";
 import { prayCollationNotice } from "./source-collation-notices.v1.js";
@@ -248,6 +249,7 @@ let adorationQuietReturn=null;
 let FF={step:0,intention:false,communion:false};
 let FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0};
 let PEN={step:0,token:0};
+let PEN_CACHE={busy:false,complete:false,checked:0,failed:[],audit:[],message:''};
 let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null,use:'private'};
 let SEVEN={step:0,sections:null,appendix:'',loading:false,error:'',srcToken:0,scriptToken:0};
 let FORTY={mode:'choose',step:0,solemnStep:0};
@@ -2051,6 +2053,37 @@ function sourceWitnessParagraphs(value){
  return String(value||'').split(/\n\s*\n/).filter(s=>s.trim())
   .map(s=>`<p class="aoP435930WitnessParagraph">${nl(s)}</p>`).join('');
 }
+async function warmPenitentialPsalmCorpus(){
+ if(PEN_CACHE.busy)return;
+ PEN_CACHE={busy:true,complete:false,checked:0,failed:[],audit:[],message:''};render();
+ const svc=runtime()?.scriptureService;
+ for(const p of PENITENTIAL_PSALMS_VULGATE){
+  const ref=penitentialPsalmReference(p);
+  try{
+   if(typeof svc?.load!=='function')throw Error('Canonical Scripture service unavailable');
+   const data=await svc.load('psalm',{en:ref,fr:ref,lat:ref},{contextOnly:true});
+   const audit=auditPenitentialPsalmResponse(data);
+   const deficiencies=Object.entries(audit).filter(([_,x])=>x.verses<4||!x.uniqueOrdered||!x.nonempty||!x.contiguous).map(([name])=>name);
+   PEN_CACHE.audit.push({ref,audit});
+   if(deficiencies.length)PEN_CACHE.failed.push(ref+' ['+deficiencies.join(', ')+']');
+  }catch(e){PEN_CACHE.failed.push(ref+' · '+String(e?.message||e).slice(0,110))}
+  PEN_CACHE.checked++;
+ }
+ PEN_CACHE.busy=false;PEN_CACHE.complete=PEN_CACHE.failed.length===0;
+ PEN_CACHE.message=PEN_CACHE.complete?'verified-warm-cache':'incomplete-source-evidence';
+ if(view==='penitential')render();
+}
+function penitentialOfflineControls(){
+ const counts=PEN_CACHE.audit.map(x=>`${esc(x.ref)}: EN ${x.audit.en.verses}, FR ${x.audit.fr.verses}, LA ${x.audit.la.verses}`).join(' · ');
+ return `<details class="aoP435930PrayerOptions aoBatch03PsalmOffline" data-ao-penitential-offline>
+ <summary>${esc(L('All seven Psalms · source and offline access','Sept psaumes · sources et accès hors ligne'))}</summary>
+ <p>${esc(L('Only the canonical Catholic Scripture service supplies verses. To prepare these seven chapters for later offline access, load them once while connected. The verification checks verse order and available EN/FR/LA faces; no text is invented. Browser storage may be cleared by the device.',
+ 'Seul le service biblique catholique canonique fournit les versets. Pour préparer ces sept chapitres à une lecture ultérieure hors connexion, chargez-les d’abord avec Internet. La vérification examine l’ordre et les versions EN/FR/LA disponibles ; aucun texte n’est inventé. Le navigateur peut effacer son cache.'))}</p>
+ <button type="button" data-p435930-pen-cache ${PEN_CACHE.busy?'disabled':''}>${esc(PEN_CACHE.busy?L('Checking seven chapters…','Vérification des sept chapitres…'):L('Load and check all seven chapters','Charger et vérifier les sept chapitres'))}</button>
+ <p role="status" data-ao-pen-cache-status>${esc(PEN_CACHE.busy?L('Loading validated Scripture texts','Chargement des textes bibliques validés'):PEN_CACHE.checked?L('Chapters checked: ','Chapitres examinés : ')+PEN_CACHE.checked+'/7 · '+(PEN_CACHE.complete?L('All language faces present and ordered','Toutes les versions présentes et ordonnées'):L('Some language faces are missing or need review','Certaines versions manquent ou demandent une vérification')):'')}</p>
+ ${PEN_CACHE.audit.length?`<details><summary>${esc(L('Chapter coverage details','Couverture par chapitre'))}</summary><p>${counts}</p></details>`:''}
+ ${PEN_CACHE.failed.length?`<p class="aoP435930SourceNote">${esc(PEN_CACHE.failed.join(' · '))}</p>`:''}</details>`;
+}
 function renderPenitential(){
  const i=Math.max(0,Math.min(6,PEN.step)),p=PEN_PSALMS[i],ref=`Psalms ${p.trad}:1`,modern=p.modern!==p.trad?` (${p.modern})`:'';
  setTimeout(()=>{const t=++PEN.token;loadScriptureInto('[data-p435930-pen-scripture]','psalm',ref,true,()=>PEN.token)},0);
@@ -2066,6 +2099,7 @@ function renderPenitential(){
  ${final?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-pen-litany>${esc(L("Continue with Litany of the Saints","Continuer avec les Litanies des saints"))}</button></div>`:""}
  <details class="aoP435930PrayerOptions aoP435930GuidedContext"><summary>${esc(L('Guide to the traditional sequence','Guide de la séquence traditionnelle'))}</summary>
  ${callout(esc(L('Pray the seven Psalms in their traditional order. The app guides the sequence; it does not add a new penitential prayer around them.','Priez les sept Psaumes dans leur ordre traditionnel. L’application guide la séquence ; elle n’ajoute pas une nouvelle prière pénitentielle autour d’eux.')),'rubric')}${devotionalGuide('penitential')}</details>
+ ${penitentialOfflineControls()}
  ${devotionalSource(L('Historical Seven Penitential Psalms sequence','Séquence historique des sept psaumes pénitentiels'),L('The historical books witness the order; the verses are displayed from the separately selected Catholic Scripture edition.','Les livres historiques attestent l’ordre ; les versets proviennent de l’édition biblique catholique choisie séparément.'),'penitential')}
  </main>`;
 }
@@ -2807,6 +2841,7 @@ function onClick(e){
   return;
  }
  if(b.dataset.p435930PenStep!=null){PEN.step=Math.max(0,Math.min(6,+b.dataset.p435930PenStep));return render()}
+ if(b.matches('[data-p435930-pen-cache]')){void warmPenitentialPsalmCorpus();return}
  if(b.matches('[data-p435930-pen-litany]')){pushView();view='litany';LIT.step=0;return render()}
  if(b.dataset.p435930LitStep!=null){LIT.step=Math.max(0,Math.min((LIT.sections?.length||1)-1,+b.dataset.p435930LitStep));return render()}
  if(b.hasAttribute('data-p435930-lit-use')){const choice=b.dataset.p435930LitUse;if(!BATCH03_LITANY_EDITION_POLICY[choice])return;LIT.use=choice;LIT.step=0;return render()}
