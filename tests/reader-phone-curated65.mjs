@@ -98,6 +98,30 @@ try{
       });
       assert.deepEqual(afterCatchup,beforeCatchup,
         "Selecting a priest catch-up destination changed independently heard Schola progress");
+      const rejoin=page.locator("#ao-r17-native-reader-preview [data-schola-rejoin]");
+      assert.equal(await rejoin.isVisible(),true,
+        "Priest catch-up must expose an explicit way back to expected music");
+      // Continuing to scroll, or visiting more priest cards, cannot resume
+      // automatic Schola selection while choir position is intentionally held.
+      await page.evaluate(()=>{
+        const scroll=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+        scroll.scrollTop=scroll.scrollHeight;
+        scroll.dispatchEvent(new Event("scroll",{bubbles:true}));
+      });
+      await page.waitForTimeout(180);
+      const duringCatchup=await page.evaluate(()=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        const collect=api.model.cards.find(c=>c.sourceSectionId==="AO.CARD.004");
+        if(!collect)throw new Error("Missing Collect for catch-up continuity");
+        api.showSequence(collect.sequence);
+        const s=api.getScholaState();
+        return {trackId:s.trackId,index:s.index,complete:s.complete};
+      });
+      assert.deepEqual(duringCatchup,beforeCatchup,
+        "Subsequent priest scrolling/card navigation advanced choir position after catch-up");
+      await rejoin.click();
+      assert.equal(await rejoin.isVisible(),false,
+        "Explicit Schola rejoin should restore automatic expected-music preview");
       const collect=await page.evaluate(()=>{
         const api=window.__AO_PHONE_PREVIEW;
         const target=api.model.cards.find(c=>c.sourceSectionId==="AO.CARD.004");
