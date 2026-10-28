@@ -89,6 +89,32 @@ The [bulk native audit](../../assets/staged/prayer-pristine-bulk-native-audit-20
 
 **No master has been declared pristine.** All observations and follow-up actions are attached to their source-original IDs in the master registry. The contact sheets make it possible to inspect the full batch without reopening user editorial choices.
 
+## Batch 2 — 14-source high-volume acquisition
+
+**14 distinct artwork groups investigated in two bulk acquisition passes.** After Wikimedia initially rate-limited several large downloads (HTTP 429), the six pinned Commons images were downloaded successfully in separate workers. The acquisition evidence and unmodified originals have been preserved directly in Git; the temporary Actions artifact is not the sole archive.
+
+- **7 new native originals archived**: six Wikimedia Commons works plus the official Met Carracci *Burial of Christ* 3,122×3,875. All have per-original SHA-256 records and contact-sheet evidence.
+- **8 historically requested placement records** now link to an archived source candidate (including shared Carracci and paired-Hearts photos).
+- **3 promising painting-only photographs** from the new batch for detailed colour/rights review: Van Dyck *Outpouring*, Prado Tiepolo *Descent*, Teniers *Agony*. They are not certified pristine.
+- **3 photographs rejected as presentation sources**: the new Guido Reni Michael and Vicente López workshop Hearts contain external gilt/wood framing; even the public-domain Met Carracci original includes a substantial physical frame.
+- **1 high-res source held for quality**: San Polo Station XII has no obvious frame but extreme ISO/noise in dark corners, so dimension count alone is insufficient.
+- **4 distinct user-requested works still have no suitable clean source**: Prado *Burial*, Batoni Sacred Heart, Restout Pentecost and Rubens Trinity (the last has multiple different works with that title). The two missing primary hero masters remain Cortona Guardian Angel and Wolverhampton Frère OP6.
+
+### Six additional unmodified original files
+
+| No. | Exact work | Native dimensions | Preliminary result |
+|---:|---|---:|---|
+| 1 | Sacred Hearts of Jesus and Mary | 1725 × 2560 | REJECT PHOTO EXTERNAL FRAME |
+| 2 | Archangel Michael Defeating Satan | 2112 × 2816 | REJECT PHOTO EXTERNAL GILDED FRAME AND PERSPECTIVE |
+| 3 | Agony in the Garden — Antwerp Rosary cycle | 1333 × 1799 | PRELIMINARY PAINTING ONLY FULL WORK |
+| 4 | The Descent from the Cross — Prado P000361 | 2705 × 2362 | PRELIMINARY PAINTING ONLY FULL WORK |
+| 5 | San Polo Station XII | 3277 × 4316 | HOLD PAINTING ONLY BUT HIGH NOISE RISK |
+| 6 | Outpouring of the Holy Spirit — Sanssouci | 6064 × 7368 | PRELIMINARY PAINTING ONLY HIGH RES |
+
+Read `assets/staged/prayer-art-bulk-acquisition-b2b-20261028/parallel-results.json` for six source SHA-256s, image identifiers, rights links and native-corner QA. The Met Carracci original is documented in `assets/staged/prayer-art-bulk-acquisition-b2-20261028/intake-results.json`.
+
+**Do not publish yet:** zero certified pristine/photo-source releases. Promote only after the complete painted field, external-frame removal where relevant, original-photo fidelity and file-specific reuse rights are verified.
+
 ## Actual next batches
 
 **Source exceptions (5 primary artworks):** acquire an authentic, unrestricted Guardian Angel and exact Wolverhampton Frère master; research better photographs of Jean Restout's Pentecost, Gérôme's Age of Augustus and Guido Reni's Saint Michael. Do not change the editorial paintings to solve a photographic problem.
