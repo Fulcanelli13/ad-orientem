@@ -38,7 +38,7 @@ if (!online) {
 }
 function hash(buf,algorithm){return createHash(algorithm).update(buf).digest('hex')}
 function gitBlobSha(buf){
-  const head=Buffer.concat([Buffer.from('blob '+buf.length+' ','utf8'),Buffer.from([0])]);
+  const head=Buffer.concat([Buffer.from('blob '+buf.length,'utf8'),Buffer.from([0])]);
   return createHash('sha1').update(head).update(buf).digest('hex');
 }
 function jpegDimensions(b){
