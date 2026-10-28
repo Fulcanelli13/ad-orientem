@@ -10,7 +10,7 @@ import {loadCatenaForPassage,isCatenaGospel} from "./catena-inline.js";
 import {scriptureChapterLimit} from "./chapter-counts.js";
 import {scriptureSegments,scriptureSegmentsReference} from "./segments.js";
 import {hasScriptureWitness} from "./witness-loader.js";
-import {prayerAcquisitionCandidates} from "../pray/prayer-acquisition-historical-witnesses.v1.js";
+import {scriptureMeditationPrayers} from "../pray/scripture-meditation-prayers.v1.js";
 import {scriptureWitnessEmptySlots} from "./witness-gaps.js";
 
 const L={
@@ -118,17 +118,7 @@ export function mountScriptureLibrary(root,{
   * These optional prayers are visually secondary to the Scripture reading.
   */
  function readingPrayerOptions(phase){
-   if(phase==="before"){
-     const latin=prayerAcquisitionCandidates("prepare_spiritual_reading",{language:"la"});
-     if(lang==="fr")return latin;
-     return [
-       ...prayerAcquisitionCandidates("prepare_spiritual_reading",{language:"en"}),
-       ...latin
-     ];
-   }
-   return lang==="en"
-     ?prayerAcquisitionCandidates("conclude_spiritual_reading",{language:"en"})
-     :[];
+   return scriptureMeditationPrayers(phase,{language:lang});
  }
  function readingPrayerDisclosure(phase){
    const options=readingPrayerOptions(phase);
