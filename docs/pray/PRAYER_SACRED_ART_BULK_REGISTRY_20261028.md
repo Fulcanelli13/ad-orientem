@@ -115,6 +115,30 @@ Read `assets/staged/prayer-art-bulk-acquisition-b2b-20261028/parallel-results.js
 
 **Do not publish yet:** zero certified pristine/photo-source releases. Promote only after the complete painted field, external-frame removal where relevant, original-photo fidelity and file-specific reuse rights are verified.
 
+## Batch 2 — 14 exact-work groups, seven native originals archived
+
+This batch deduplicates the two missing hero masters, three known unusable/weak primary photographs and ten better-photo requests, counting Restout's *Pentecost* only once. A [reconciled intake register](../../data/research/prayer-sacred-art-b2-reconciled-intake-20261028.v1.json) records all 14 groups, exact native-source checksums, pixel dimensions, failed searches and photographic holds.
+
+**Seven source originals preserved**, not yet labelled pristine:
+
+| Artist / work | Native resolution | Preliminary photographic gate |
+|---|---:|---|
+| Annibale Carracci, *Burial of Christ* (Met) | 3,122 × 3,875 | Reject as-is: external black frame |
+| Guido Reni, *Saint Michael* | 2,112 × 2,816 | Reject as-is: gilded frame and perspective |
+| Giandomenico Tiepolo, San Polo Station XII | 3,277 × 4,316 | Reject as-is: strong chromatic noise in corners |
+| Giandomenico Tiepolo, Prado *Descent* | 2,705 × 2,362 | Preliminary painted-surface candidate |
+| David Teniers the Elder, Antwerp Rosary *Agony* | 1,333 × 1,799 | Original Antwerp cycle identified; painted-surface and rights review pending |
+| Workshop Vicente López Portaña, paired Hearts | 1,725 × 2,560 | Reject as-is: wooden gilded frame |
+| Anthony van Dyck, *Outpouring of the Holy Spirit* | 6,064 × 7,368 | Preliminary full-painting source candidate |
+
+**Seven source groups remain without an accepted archived native candidate:** Cortona Guardian Angel, Frère's Wolverhampton OP6, Restout Pentecost, Gérôme's *Age of Augustus*, Tiepolo Prado *Burial*, Batoni Sacred Heart and Rubens Trinity.
+
+The exact Cortona and Frère Commons references are below the intended photo-resolution floor. Restout's original Louvre image is framed and has Rmn photographic rights. Gérôme's clean painting is available only at 1,600 × 990 pixels in the original Commons file; the high-resolution installation photograph is not an acceptable substitute. The specific Prado Burial is P000362, distinct from P000361 *Descent*. For Batoni, a larger 3,543 × 5,231 Commons image exists but its EXIF names Catholic News Service despite a public-domain designation: **source-specific reuse rights must be resolved before promotion**. The Rubens *Holy Trinity* is ambiguous in the original review, so the Antwerp KMSKA painting (inventory 314, CC0 metadata) is an identity candidate, **not an automatic editorial substitution**.
+
+**Technical acceptance:** GitHub Actions first fetched one original from the Met; a separate six-worker Commons acquisition recovered all six other files after the first request sequence encountered rate limiting. The first sequence's failed results were reconciled with successful retries by exact case ID, and a dedicated guard rehashes seven native files and ensures all final-photo approvals remain false.
+
+**Pristine photo releases: zero.** Screens and historic editorial approvals are unchanged.
+
 ## Actual next batches
 
 **Source exceptions (5 primary artworks):** acquire an authentic, unrestricted Guardian Angel and exact Wolverhampton Frère master; research better photographs of Jean Restout's Pentecost, Gérôme's Age of Augustus and Guido Reni's Saint Michael. Do not change the editorial paintings to solve a photographic problem.
