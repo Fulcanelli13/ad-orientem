@@ -89,8 +89,8 @@ export function moveOfficeCard({index=0,total,delta=0}={}){
 const headName=(hour,locale)=>OFFICE_HOURS.find(h=>h[0]===hour)?.[locale==="fr"?2:1]??hour;
 const slug=(date,hour,locale)=>
   date+"-"+hour.toLowerCase()+"-"+locale+".html";
-function hourMenu(date,selected,locale){
-  return OFFICE_HOURS.map(([id,en,fr])=>
+function hourMenu(date,selected,locale,availableHours){
+  return OFFICE_HOURS.filter(([id])=>availableHours.includes(id)).map(([id,en,fr])=>
     '<a class="aoOfficeHourChoice" href="'+slug(date,id,locale)+'" data-office-hour-link="'+id+
     '" '+(selected===id?'aria-current="page"':'')+'>'+esc(locale==="fr"?fr:en)+'</a>').join("");
 }
@@ -119,8 +119,17 @@ function renderCard(card,locale){
     '<div class="aoOfficeSourceText">'+esc(card.vernacular)+'</div></section></div></div>'+
     '</article>';
 }
-export function renderOfficeMassStyleResearchReader({latin,translation,locale="en"}={}){
+export function renderOfficeMassStyleResearchReader({
+  latin,translation,locale="en",
+  availableHours=OFFICE_HOURS.map(x=>x[0]),
+  availableDates=[latin?.date],
+}={}){
   const {cards,context}=projectOfficeMassStyleCards({latin,translation,locale});
+  if(!Array.isArray(availableHours)||!availableHours.includes(context.hour)||
+    availableHours.some(h=>!OFFICE_HOURS.some(x=>x[0]===h))||
+    !Array.isArray(availableDates)||!availableDates.includes(context.date)||
+    availableDates.some(d=>typeof d!=="string"||!/^\\d{4}-\\d{2}-\\d{2}$/.test(d)))
+    throw Error("OFFICE_MASS_RESEARCH_NAV_CONTEXT_INVALID");
   const h=headName(context.hour,locale);
   const first=cards[0];
   const progress=cards.map((c,i)=>'<button type="button" data-office-jump="'+i+
@@ -140,7 +149,7 @@ export function renderOfficeMassStyleResearchReader({latin,translation,locale="e
       esc(lo("Reader settings","Réglages du lecteur",locale))+'">⚙</button></header>'+
     '<div class="aoOfficeRibbonMenus">'+
     '<nav class="aoOfficeHourMenu" data-office-hours-menu hidden aria-label="'+esc(lo("Canonical hours","Heures canoniales",locale))+'">'+
-      hourMenu(context.date,context.hour,locale)+'</nav>'+
+      hourMenu(context.date,context.hour,locale,availableHours)+'</nav>'+
     '<nav class="ao-section-menu aoOfficeSectionMenu" data-office-sections-menu hidden aria-label="'+
       esc(lo("Office sections","Sections de l’Office",locale))+'">'+
       cards.map(c=>'<button type="button" data-office-section-select="'+c.index+'">'+esc(c.title)+'</button>').join("")+'</nav>'+
@@ -152,6 +161,9 @@ export function renderOfficeMassStyleResearchReader({latin,translation,locale="e
       '<div class="aoOfficeLocaleControls" role="group" aria-label="Translation">'+
         '<a href="'+slug(context.date,context.hour,"en")+'"'+(locale==="en"?' aria-current="page"':'')+'>EN</a>'+
         '<a href="'+slug(context.date,context.hour,"fr")+'"'+(locale==="fr"?' aria-current="page"':'')+'>FR</a></div>'+
+      '<div class="aoOfficeDateChoice" aria-label="'+esc(lo("Pilot dates","Dates de recherche",locale))+'">'+
+      availableDates.map(d=>'<a href="'+slug(d,context.hour,locale)+'"'+
+        (d===context.date?' aria-current="page"':'')+'>'+d+'</a>').join("")+'</div>'+
       '<label class="aoOfficeFontControl">'+esc(lo("Text size","Taille du texte",locale))+
         ' <input type="range" min="0.85" max="1.3" step="0.05" value="1" data-office-font-size></label></section></div>'+
     '<div class="ao-state-ribbon aoOfficeStateRibbon"><span class="aoOfficeObserved">'+
