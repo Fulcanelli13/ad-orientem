@@ -27,9 +27,14 @@ for(const id of ids){
   assert.ok(h.la.trim().endsWith("Amen."),id+" source hymn lacks final Amen");
   assert.match(h.sourceUrl,/^https:\/\/icrspfrance\.fr\/textes-liturgiques\.php\?article=/);
   assert.ok(h.season&&h.office&&h.title);
-  assert.equal(h.en,undefined,"Do not invent a modern English edition: "+id);
+  if(["audi_benigne","ex_more_docti"].includes(id)){
+    assert.match(h.en,/^[A-Z]/,"Missing the 1849 original English edition");
+    assert.match(h.englishSource.work,/Edward Caswall.*1849/);
+    assert.match(h.englishSource.url,/wikimedia\.org/);
+    assert.match(h.languageStatus,/CASWALL_1849_ENGLISH/);
+  }else assert.equal(h.en,undefined,"Do not invent a modern English edition: "+id);
   assert.equal(h.fr,undefined,"Do not reproduce modern ICRSP French translation: "+id);
-  assert.equal(h.languageStatus,"HISTORIC_LATIN_ONLY_EN_FR_SOURCE_REQUIRED");
+  if(!h.en)assert.equal(h.languageStatus,"HISTORIC_LATIN_ONLY_EN_FR_SOURCE_REQUIRED");
   assert.ok(!Object.keys(SACRED_HYMNS_V381).includes(id),"Original title collision "+id);
 }
 assert.equal(Object.values(groups).reduce((n,variants)=>n+variants.length,0),8);
@@ -40,7 +45,7 @@ assert.match(runtime,/seasonalHymns:ICRSP_SEASONAL_HYMNS_V1/);
 assert.match(runtime,/seasonalHymnCount:ICRSP_SEASONAL_HYMN_IDS_V1\.length/);
 assert.match(runtime,/data-ao-hymn-catalogue/);
 assert.match(runtime,/data-tp381-hymn=/);
-assert.match(runtime,/seasonal\?"la":requested/,"Unsupported translation must not be silently displayed as Latin");
-assert.match(runtime,/The French translation on the ICRSP site has not been copied/);
+assert.match(runtime,/seasonal\?\(h\[requested\]\?requested:"la"\)/,"Select historic English when attested; fallback to explicitly labelled Latin otherwise");
+assert.match(runtime,/The French translation on the ICRSP site has not been copied/);\nassert.equal(hymns.audi_benigne.en.split(/\\n\\s*\\n/).length,5);\nassert.equal(hymns.ex_more_docti.en.split(/\\n\\s*\\n/).length,9);
 assert.match(runtime,/SACRED_HYMNS_V381\[id\]\|\|ICRSP_SEASONAL_HYMNS_V1/);
 console.log("ICRSP seasonal hymns: 7 selections / 8 complete Latin versions / 3 canonical hymns unchanged PASS");

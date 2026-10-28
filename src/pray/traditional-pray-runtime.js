@@ -341,7 +341,7 @@ function renderHymns(){
   const seasonal=Boolean(ICRSP_SEASONAL_HYMNS_V1[key]);
   const requested=["en","fr","la"].includes(S.hymnLang)?S.hymnLang:(isFr()?"fr":"en");
   // Never silently substitute Latin while claiming an English/French hymn.
-  const lang=seasonal?"la":requested;
+  const lang=seasonal?(h[requested]?requested:"la"):requested;
   if(!h?.la||(!seasonal&&!h[lang]))throw new Error("Sacred hymn language missing: "+key+" · "+lang);
   const frenchSources={
     te_deum:["Divinum Officium · French Ordo witness",TRADITIONAL_PRAY_SOURCES_V381.teDeumFrench],
@@ -352,14 +352,15 @@ function renderHymns(){
   const text=lang==="la"?`<div class="aoTP381Reader">${hymnLineMarkup(h.la)}</div>`:
     `<button type="button" data-tp381-flip aria-label="${esc(L("Switch hymn language","Changer la langue de l’hymne"))}"><span data-face-v>${hymnLineMarkup(h[lang])}</span><span data-face-la hidden>${hymnLineMarkup(h.la)}</span></button>`;
   const provenance=seasonal
-    ?`<p class="aoTP381Intro">${esc(L("Historical Latin original · Office placement: ","Original latin historique · Office : ")+h.office+" · "+h.season)}. ${esc(L("The French translation on the ICRSP site has not been copied; no English or French wording has been invented.","La traduction française du site ICRSP n’a pas été copiée ; aucun texte anglais ou français n’a été inventé."))}</p>`
+    ?`<p class="aoTP381Intro">${esc(L("Historical Latin original · Office placement: ","Original latin historique · Office : ")+h.office+" · "+h.season)}. ${esc(L("The French translation on the ICRSP site has not been copied. Where supplied, English is credited to an 1849 printed edition.","La traduction française du site ICRSP n’a pas été copiée. L’anglais éventuel provient d’une édition imprimée de 1849 dûment citée."))}</p>`
     :"";
   const rubric=seasonal&&h.rubric?`<p class="aoTP381Intro">${esc(L(h.rubric,h.rubricFr))}</p>`:"";
   const card=`<section class="aoDevoCard" data-ao-devo-card="hymn-${esc(key)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(h.title)}"><article class="aoTP381PrayerCard"><h3>${esc(h.title)}</h3><p class="aoTP381HymnSubtitle">${esc(L(h.subtitle,h.subtitleFr))}</p>${provenance}${rubric}${text}</article></div></section>`;
   const languageControls=seasonal
-    ?`<p class="aoTP381Intro">${esc(L("Full text available in historical Latin. English and French translations require independently usable historical editions.","Texte intégral disponible en latin historique. Les traductions anglaise et française exigent des éditions historiques réutilisables."))}</p>`
+    ?h.en?`<div class="aoTP381Lang" role="group" aria-label="${esc(L("Text language","Langue du texte"))}"><button type="button" data-tp381-hymn-lang="en" aria-pressed="${lang==="en"}" class="${lang==="en"?"active":""}">${esc(L("English · 1849","Anglais · 1849"))}</button><button type="button" data-tp381-hymn-lang="la" aria-pressed="${lang==="la"}" class="${lang==="la"?"active":""}">Latin</button></div><p>${esc(L("French original translation not yet sourced.","Traduction française historique non encore vérifiée."))}</p>`
+      :`<p class="aoTP381Intro">${esc(L("Historical Latin text; independently attested English and French editions are pending.","Latin historique ; traductions anglaise et française historiques à vérifier."))}</p>`
     :`<div class="aoTP381Lang" role="group" aria-label="${esc(L("Text language","Langue du texte"))}"><button type="button" data-tp381-hymn-lang="en" aria-pressed="${lang==="en"}" class="${lang==="en"?"active":""}">${esc(L("English","Anglais"))}</button><button type="button" data-tp381-hymn-lang="fr" aria-pressed="${lang==="fr"}" class="${lang==="fr"?"active":""}">Français</button><button type="button" data-tp381-hymn-lang="la" aria-pressed="${lang==="la"}" class="${lang==="la"?"active":""}">Latin</button></div>`;
-  const historicalSources=seasonal?source(h.sourceLabel,h.sourceUrl):
+  const historicalSources=seasonal?source(h.sourceLabel,h.sourceUrl)+(h.englishSource?source(h.englishSource.work+" · pp. "+h.englishSource.printedPages,h.englishSource.url):""):
     source("The Daily Prayer-Book · Burns & Oates · 1882",TRADITIONAL_PRAY_SOURCES_V381.dailybook)+source(frSource[0],frSource[1]);
   const editionNote=seasonal&&h.recension? `<p>${esc(L("Edition: ","Édition : ")+h.recension)}</p>`:"";
   const options=`<details class="aoTP381SecondaryOptions" data-ao-hymn-options><summary>${esc(L("Language and historical sources","Langue et sources historiques"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("Historical hymn texts with identified sources and explicitly labelled language editions.","Hymnes historiques avec sources identifiées et éditions linguistiques clairement indiquées."))}</p>${languageControls}${editionNote}${historicalSources}</div></details>`;

@@ -1,6 +1,6 @@
 /**
  * ICRSP France seven accepted Office hymn selections / eight Latin recensions.
- * Hymn Latin is historical public-domain liturgical text. No current ICRSP
+ * Historical English editions derive from Caswall 1849 where explicitly attributed.\n * Hymn Latin is historical public-domain liturgical text. No current ICRSP
  * French translation is reproduced. Hours are indications of traditional
  * Office placement, not unconditional calendar scheduling.
  * PRE-1632 Ad cenam: 1912 Antiphonale notes use where right/custom/indult allows.
@@ -79,7 +79,30 @@ Ut fructuósa sint tuis
 Ieiuniórum múnera.
 Amen.`,
 "https://icrspfrance.fr/textes-liturgiques.php?article=x9ef3247f_lisible",
-{subtitleFr:"Vêpres du Carême"}),
+{subtitleFr:"Vêpres du Carême",en:`Thou loving Maker of mankind,
+Before thy throne we pray and weep;
+Oh, strengthen us with grace divine,
+Duly this sacred Lent to keep.
+
+Searcher of hearts! Thou dost our ills
+Discern, and all our weakness know:
+Again to Thee with tears we turn;
+Again to us thy mercy shew.
+
+Much have we sinn'd; but we confess
+Our guilt, and all our faults deplore:
+Oh, for the praise of thy great Name,
+Our fainting souls to health restore!
+
+And grant us, while by fasts we strive
+This mortal body to control,
+To fast from all the food of sin,
+And so to purify the soul.
+
+Hear us, O Trinity thrice blest!
+Sole Unity! to Thee we cry:
+Vouchsafe us from these fasts below
+To reap immortal fruit on high.`,englishSource:{work:"Edward Caswall, Lyra Catholica, London: James Burns, 1849",printedPages:"70–71",pdfPagesZeroBased:[107,108],url:"https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",witnessStatus:"COLLATED_AGAINST_1849_PRINTED_PAGE_IMAGES"},languageStatus:"HISTORIC_LATIN_AND_CASWALL_1849_ENGLISH_FRENCH_PENDING"}),
   ad_regias_agni_dapes:h("ad_regias_agni_dapes","Ad regias Agni dapes","Eastertide","Vespers · Roman Breviary version",
 `Ad régias Agni dapes,
 Stolis amícti cándidis,
@@ -331,7 +354,50 @@ Ut fructuósa sint tuis
 Ieiuniórum múnera.
 Amen.`,
 "https://icrspfrance.fr/textes-liturgiques.php?article=xd82464db_lisible",
-{subtitleFr:"Matines du Carême"})
+{subtitleFr:"Matines du Carême",en:`Now with the slow-revolving year,
+Again the Fast we greet;
+Which in its mystic circle moves
+Of forty days complete.
+
+That Fast, by Law and Prophets taught,
+By Jesus Christ restor'd;
+Jesus, of seasons and of times
+The Maker and the Lord.
+
+Henceforth more sparing let us be
+Of food, of words, of sleep;
+Henceforth beneath a stricter guard
+The roving senses keep.
+
+And let us shun whatever things
+Distract the careless heart;
+And let us shut the soul against
+The tyrant Tempter's art;
+
+And weep before the Judge, and strive
+His vengeance to appease;
+Saying to Him with contrite voice,
+Upon our bended knees:
+
+“Much have we sinn'd, O Lord! and still
+We sin each day we live;
+Yet pour thy pity from on high,
+And of thy grace forgive.
+
+Remember that we still are thine,
+Though of a fallen frame;
+And take not from us in thy wrath
+The glory of thy name.
+
+Undo past evil; grant us, Lord,
+More grace to do aright;
+So may we now and ever find
+Acceptance in thy sight.”
+
+Blest Trinity in Unity!
+Vouchsafe us, in thy love,
+To gather from these fasts below
+Immortal fruit above.`,englishSource:{work:"Edward Caswall, Lyra Catholica, London: James Burns, 1849",printedPages:"72–73",pdfPagesZeroBased:[109,110],url:"https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",witnessStatus:"COLLATED_AGAINST_1849_PRINTED_PAGE_IMAGES"},languageStatus:"HISTORIC_LATIN_AND_CASWALL_1849_ENGLISH_FRENCH_PENDING"})
 });
 export const ICRSP_SEASONAL_HYMN_IDS_V1=F(Object.keys(ICRSP_SEASONAL_HYMNS_V1));
 export const ICRSP_HYMN_GROUPS_V1=F({
