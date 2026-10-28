@@ -3,7 +3,13 @@ import {CONFESSION_PATHS,CONFESSION_SOURCE_LINKS,confessionExaminationCards,conf
 assert.deepEqual(Object.keys(CONFESSION_PATHS),["regular","returning","general"]);
 assert.equal(confessionPath("general").id,"general");
 assert.equal(confessionPath("unknown"),null);
-assert.ok(CONFESSION_SOURCE_LINKS.every(x=>x.url.startsWith("https://www.vatican.va/")));
+const doctrinal=CONFESSION_SOURCE_LINKS.filter(x=>!x.edition);
+assert.equal(doctrinal.length,2,"Keep Vatican doctrine and canonical law authorities unchanged");
+assert.ok(doctrinal.every(x=>x.url.startsWith("https://www.vatican.va/")));
+const historical=CONFESSION_SOURCE_LINKS.filter(x=>x.edition);
+assert.equal(historical.length,2,"Only two separately identified preconciliar comparative witnesses");
+assert.ok(historical.some(x=>x.edition==="1905-ITALIAN_NOT_TRILINGUAL_CERTIFIED"&&x.url.includes("wikisource.org")));
+assert.ok(historical.some(x=>x.edition==="PRIEST_RITUAL_NOT_LAY_FORMULA"&&x.url.includes("Rituale_Romanum_1925.pdf")));
 for(const [key,value] of Object.entries(CONFESSION_PATHS)){
  assert.equal(value.id,key);
  for(const lang of ["titleEn","titleFr","descriptionEn","descriptionFr"])assert.ok(value[lang].length>12);
