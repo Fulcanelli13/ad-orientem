@@ -8,7 +8,9 @@
  *
  * A later separately reviewed change can add a source-bound immutable
  * witnesses/profiles manifest only after the editorial and rights gates.
- * Existing canonical Morning 11 / Evening 13 prayers remain default.
+ * The live personal reader defaults to St Pius X 1913 (Morning 11 / Evening
+ * 10 core cards). The historical legacy 11 / 13 reader was a different,
+ * earlier canonical structure; it is not the printed Pius X sequence.
  */
 export const APPROVED_DAILY_FORMULATION_MANIFEST_V1=Object.freeze({
   witnesses:Object.freeze({}),
