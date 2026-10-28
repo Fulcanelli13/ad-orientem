@@ -279,7 +279,45 @@ Cum Patre et almo Spíritu,
 In sempitérna sǽcula.
 Amen.`,
 "https://icrspfrance.fr/textes-liturgiques.php?article=a0920_ancien",
-{subtitleFr:"Vêpres du Temps Pascal · hymne antérieure à 1632",recension:"PRE_1632_CONDITIONAL",
+{en:`The Lamb's high banquet we await
+In snow-white robes of royal state:
+And now, the Red Sea's channel past,
+To Christ our Prince we sing at last.
+
+Upon the Altar of the Cross
+His Body hath redeemed our loss:
+And tasting of his roseate Blood,
+Our life is hid with Him in God.
+
+That Paschal Eve God's arm was bared,
+The devastating Angel spared:
+By strength of hand our hosts went free
+From Pharaoh's ruthless tyranny.
+
+Now Christ, our Paschal Lamb, is slain,
+The Lamb of God that knows no stain,
+The true Oblation offered here,
+Our own unleavened Bread sincere.
+
+O Thou, from whom hell's monarch flies,
+O great, O very Sacrifice,
+Thy captive people are set free,
+And endless life restored in Thee.
+
+For Christ, arising from the dead,
+From conquered hell victorious sped,
+And thrust the tyrant down to chains,
+And Paradise for man regains.
+
+We pray Thee, King with glory decked,
+In this our Paschal joy, protect
+From all that death would fain effect
+Thy ransomed flock, Thine own elect.
+
+To Thee who, dead, again dost live,
+All glory, Lord, Thy people give;
+All glory, as is ever meet,
+To Father and to Paraclete. Amen.`,englishSource:{"work":"The Hymnal Noted, Part I · historical Ad cenam Agni providi rendering","translator":"John Mason Neale (Anglican; 1818–1866)","editionYear":1851,"originalPublication":"The Hymnal Noted, Part I, 1851; 1852 version documents wording changes","sourceTextUrl":"https://www.preces-latinae.org/thesaurus/Hymni/AdCenamAgni.html","url":"https://www.preces-latinae.org/thesaurus/Hymni/AdCenamAgni.html","secondaryHistoricalEvidence":"https://www.hymnologyarchive.com/john-mason-neale","witnessStatus":"HISTORIC_PUBLIC_DOMAIN_ENGLISH_NONCATHOLIC_TRANSLATOR_ORIGINAL_1851_PAGES_NOT_COLLATED","editorialNote":"Historical English devotional rendering of the earlier Latin hymn tradition. Some source Latin verses differ from the exact ICRSP pre-1632 recension. Not a Catholic-authorized Office text and not an English translation of the ordinary post-1632 hymn. Original 1851 pages not visually inspected.","license":"Author died 1866; public-domain historical English translation, not modern editorial arrangement"},languageStatus:"HISTORIC_NEAL_1851_ENGLISH_UNAPPROVED_LITURGICAL_TEXT",subtitleFr:"Vêpres du Temps Pascal · hymne antérieure à 1632",recension:"PRE_1632_CONDITIONAL",
 rubric:"The 1912 Antiphonale presents this form only for communities entitled by right, custom or indult. Do not treat it as the ordinary 1962 Roman recension.",
 rubricFr:"L’Antiphonaire de 1912 réserve cette forme à ceux qui y ont droit, par coutume ou indult. Ce n’est pas la rédaction ordinaire de 1962."}),
   aeterne_rex_altissime:h("aeterne_rex_altissime","Æterne Rex altissime","Ascension","Matins",

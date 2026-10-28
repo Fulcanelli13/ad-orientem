@@ -45,6 +45,13 @@ for(const id of ids){
     assert.equal(h.englishSource.translator,"Dom Laurence Shepherd");
     assert.equal(h.englishSource.editionYear,1870);
     assert.match(h.englishSource.witnessStatus,/PAGE_IMAGES_NOT_CHECKED/);
+  }else if(id==="ad_cenam_agni_providi"){
+    assert.equal(h.en.split(/\n\s*\n/).length,8);
+    assert.match(h.en,/The Lamb's high banquet we await/);
+    assert.match(h.englishSource.translator,/John Mason Neale.*Anglican/);
+    assert.match(h.englishSource.witnessStatus,/ORIGINAL_1851_PAGES_NOT_COLLATED/);
+    assert.match(h.englishSource.editorialNote,/not a Catholic-authorized Office text/i);
+    assert.equal(h.recension,"PRE_1632_CONDITIONAL");
   }else assert.equal(h.en,undefined,"Do not invent a modern English edition: "+id);
   if(["audi_benigne","vexilla_regis"].includes(id)){
     assert.equal(h.fr.split(/\n\s*\n/).length,id==="vexilla_regis"?7:5);

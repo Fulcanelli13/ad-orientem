@@ -587,7 +587,7 @@
       },
       "office_role": "Eastertide Vespers",
       "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
-      "english_translation_status": "ATTESTED_REVISED_AD_REGIAS_ONLY_PRE1632_NOT_TRANSFERRED",
+      "english_translation_status": "TWO_DISTINCT_HISTORICAL_ENGLISH_WITNESSES_ONE_NONCATHOLIC_1851_NEEDS_PRIMARY_COLLATION",
       "liturgical_rubric": "Distinct ordinary Roman Breviary post-1632 and restricted historical pre-1632 recensions; 1912 Antiphonale conditional usage",
       "historical_english_translation": {
         "for_hymn_id": "ad_regias_agni_dapes",
@@ -601,6 +601,19 @@
         ],
         "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
         "status": "ORIGINAL_PRINTED_IMAGES_INSPECTED"
+      },
+      "historical_older_recension_english": {
+        "work": "The Hymnal Noted, Part I · historical Ad cenam Agni providi rendering",
+        "translator": "John Mason Neale (Anglican; 1818–1866)",
+        "editionYear": 1851,
+        "originalPublication": "The Hymnal Noted, Part I, 1851; 1852 version documents wording changes",
+        "sourceTextUrl": "https://www.preces-latinae.org/thesaurus/Hymni/AdCenamAgni.html",
+        "url": "https://www.preces-latinae.org/thesaurus/Hymni/AdCenamAgni.html",
+        "secondaryHistoricalEvidence": "https://www.hymnologyarchive.com/john-mason-neale",
+        "witnessStatus": "HISTORIC_PUBLIC_DOMAIN_ENGLISH_NONCATHOLIC_TRANSLATOR_ORIGINAL_1851_PAGES_NOT_COLLATED",
+        "editorialNote": "Historical English devotional rendering of the earlier Latin hymn tradition. Some source Latin verses differ from the exact ICRSP pre-1632 recension. Not a Catholic-authorized Office text and not an English translation of the ordinary post-1632 hymn. Original 1851 pages not visually inspected.",
+        "license": "Author died 1866; public-domain historical English translation, not modern editorial arrangement",
+        "for_hymn_id": "ad_cenam_agni_providi"
       }
     },
     {
@@ -908,12 +921,14 @@
     "hymn_original_corpus_preserved": 3,
     "hymns_reader_total": 11,
     "production_hymn_releases": 0,
-    "full_historical_english_hymns_in_draft": 7,
-    "other_english_hymns_unverified": 1,
+    "full_historical_english_hymns_in_draft": 8,
+    "other_english_hymns_unverified": 0,
     "historical_french_seasonal_hymns_in_draft": 2,
     "caswall_1849_pages_collated": 4,
     "release_status": "DRAFT_BRANCH_ONLY_ACTIONS_GATES_REQUIRED",
-    "other_french_hymns_unverified": 6
+    "other_french_hymns_unverified": 6,
+    "english_with_primary_image_confirmation": 6,
+    "english_with_historical_transcription_only": 2
   },
   "reconciliation_pass3": {
     "date": "2026-10-28",
