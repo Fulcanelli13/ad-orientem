@@ -1,0 +1,1796 @@
+{
+  "schema": "AO_PRAYER_EXISTING_SACRED_ART_MOSAIC_RESEARCH_V1",
+  "asOf": "2026-10-28",
+  "owner": "Sacred Art research only",
+  "originalBranch": "platform/885-sacred-art-candidates",
+  "sourceFiles": [
+    {
+      "path": "data/calendar/sacred-art-review-uploads/20261016-unified-review-embedded-data.v1.json",
+      "sha": "6e118c1c88c136de2394c78fc5d030339cb27d3d"
+    },
+    {
+      "path": "data/calendar/sacred-art-w78-oct12-preferred-paintings-recovery-20261016.v1.json",
+      "sha": "72394b0798cfbf8ea516033ea345ec9b57cf7cd9"
+    }
+  ],
+  "counts": {
+    "sourceEntries": 253,
+    "distinctArtworkIds": 241,
+    "historicalSubjectSelections": 101,
+    "matchedHistoricalSubjectSelections": 101,
+    "historicalSelectionsWithPhoto": 17,
+    "firstPassModules": 14,
+    "firstPassPlacements": 67,
+    "distinctProposedArtworks": 48,
+    "candidatePlacementsWithImage": 24
+  },
+  "policy": {
+    "priorApproval": "Artwork previously selected for its original subject remains approved there, NOT automatically approved for a new Prayer placement",
+    "photos": "Reference previews only. Per-photo public-domain licensing, object match, frame-free reproduction, sharpness, colour fidelity and crop remain production release gates",
+    "exclusions": "Never infer approval from photo availability; never substitute lookalike originals, reject user-chosen images, or promote Prado photo-rights holds",
+    "protection": "Historical 101 selections, existing 57+30 Keeps and 52+17 rejections from later reviews must remain intact; the newer decisions have not yet been imported into this specific 2026-10-16 archive."
+  },
+  "protectedLaterModuleHeroes": [
+    {
+      "module": "confession",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "The Return of the Prodigal Son",
+      "status": "FINAL_HERO_APPROVED_2026_10_26",
+      "photo": "NOT_CROSSWALKED_HERE"
+    },
+    {
+      "module": "rosary",
+      "artist": "Lorenzo Lotto",
+      "title": "Madonna del Rosario",
+      "status": "FINAL_HERO_APPROVED",
+      "photo": "NOT_CROSSWALKED_HERE"
+    },
+    {
+      "module": "sorrows",
+      "artist": "Master of the Female Half-Lengths (attributed)",
+      "title": "Virgin of the Seven Sorrows",
+      "status": "FINAL_HERO_APPROVED",
+      "photo": "NOT_CROSSWALKED_HERE"
+    }
+  ],
+  "modules": [
+    {
+      "id": "morning",
+      "title": "Morning Prayer",
+      "candidateIds": [
+        "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
+        "ART-hilippe-de-hampaigne-he-nnunciation",
+        "met-437849",
+        "met-816629",
+        "cma-137195"
+      ]
+    },
+    {
+      "id": "evening",
+      "title": "Evening Prayer",
+      "candidateIds": [
+        "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+        "ART-uido-eni-aint-ary-agdalene",
+        "C32:gustavevanaisemagdaleneinchriststombjpg",
+        "W40-012",
+        "nga-34956"
+      ]
+    },
+    {
+      "id": "angelus",
+      "title": "Angelus & Regina Cæli",
+      "candidateIds": [
+        "ART-hilippe-de-hampaigne-he-nnunciation",
+        "ART-eter-aul-ubens-esurrection-of-hrist",
+        "ART-eter-aul-ubens-ssumption-of-the-irgin",
+        "ART-eter-aul-ubens-oronation-of-the-irgin-oil-sketch"
+      ]
+    },
+    {
+      "id": "rosary",
+      "title": "Holy Rosary",
+      "candidateIds": [
+        "ART-hilippe-de-hampaigne-he-nnunciation",
+        "ART-aphael-and-iulio-omano-he-isitation",
+        "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
+        "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+        "ART-eter-aul-ubens-esurrection-of-hrist"
+      ]
+    },
+    {
+      "id": "stations",
+      "title": "Stations of the Cross",
+      "candidateIds": [
+        "ART-nthony-van-yck-he-ance-hrust",
+        "ART-itian-hrist-arrying-the-ross",
+        "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+        "ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+        "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series"
+      ]
+    },
+    {
+      "id": "sorrows",
+      "title": "Seven Sorrows",
+      "candidateIds": [
+        "ART-nthony-van-yck-amentation-of-hrist",
+        "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
+        "ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+        "ART-nthony-van-yck-he-ance-hrust",
+        "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple"
+      ]
+    },
+    {
+      "id": "confession",
+      "title": "Confession",
+      "candidateIds": [
+        "nga-34956",
+        "B02-PRODIGAL-REMBRANDT",
+        "1948.12.1",
+        "ART-uido-eni-aint-ary-agdalene",
+        "C32:gustavevanaisemagdaleneinchriststombjpg"
+      ]
+    },
+    {
+      "id": "adoration",
+      "title": "Eucharistic Adoration",
+      "candidateIds": [
+        "met-438434",
+        "ART-hilippe-de-hampaigne-a-etite-ne",
+        "B02-FOOTWASH-TINTORETTO",
+        "ART-eter-aul-ubens-eeting-of-braham-and-elchizedek"
+      ]
+    },
+    {
+      "id": "communion",
+      "title": "Holy Communion",
+      "candidateIds": [
+        "ART-hilippe-de-hampaigne-a-etite-ne",
+        "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+        "met-437871",
+        "cma-112626",
+        "met-436801"
+      ]
+    },
+    {
+      "id": "sacred-heart",
+      "title": "Sacred Heart",
+      "candidateIds": [
+        "commons-morlete-sacred-heart-1759",
+        "podesti-margaret-mary-source",
+        "ART-nthony-van-yck-he-ance-hrust",
+        "G17-006",
+        "paris-pm75001042-halle-sales"
+      ]
+    },
+    {
+      "id": "immaculate-heart",
+      "title": "Immaculate Heart",
+      "candidateIds": [
+        "B02-HEART-MARY-MORLETE",
+        "ART-nthony-van-yck-amentation-of-hrist",
+        "ART-hilippe-de-hampaigne-he-nnunciation",
+        "ART-eter-aul-ubens-ssumption-of-the-irgin"
+      ]
+    },
+    {
+      "id": "joseph",
+      "title": "Saint Joseph",
+      "candidateIds": [
+        "W04-009",
+        "C32:guidoreni042jpg",
+        "W40-006",
+        "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+        "met-437849"
+      ]
+    },
+    {
+      "id": "angels",
+      "title": "Guardian Angels",
+      "candidateIds": [
+        "ART-ietro-da-ortona-he-uardian-ngel",
+        "ART-uido-eni-rchangel-ichael-efeating-atan",
+        "G26-005",
+        "C35:arcangelsanrafaeldealonsomigueldetovarayuntamientodesevillaj",
+        "ART-os-de-ibera-acob-s-ream"
+      ]
+    },
+    {
+      "id": "souls",
+      "title": "Holy Souls & Good Death",
+      "candidateIds": [
+        "met-437542",
+        "met-747199",
+        "ART-uido-eni-aint-ary-agdalene",
+        "C32:gustavevanaisemagdaleneinchriststombjpg",
+        "W40-012"
+      ]
+    }
+  ],
+  "proposedWorks": [
+    {
+      "id": "G17-006",
+      "title": "Saint François de Sales",
+      "artist": "School of Philippe de Champaigne",
+      "category": "Saint Francis de Sales",
+      "source": "https://pop.culture.gouv.fr/notice/palissy/PM75000591",
+      "rating": 5,
+      "hold": "",
+      "needsPhotoUpgrade": true,
+      "sourceType": "batch1",
+      "approvedFor": [],
+      "image": {
+        "id": "Saint François de Sales.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Fran%C3%A7ois_de_Sales.jpg?width=1050",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Fran%C3%A7ois_de_Sales.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Saint_Fran%C3%A7ois_de_Sales.jpg",
+        "px": "",
+        "status": "",
+        "score": 4,
+        "rights": "Consult this exact file page; no automatic production release",
+        "sourceStatus": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL"
+      }
+    },
+    {
+      "id": "paris-pm75001042-halle-sales",
+      "title": "Saint François de Sales donnant la règle de la Visitation à sainte Jeanne de Chantal",
+      "artist": "Noël Hallé",
+      "category": "Saint Francis de Sales",
+      "source": "https://pop.culture.gouv.fr/notice/palissy/PM75001042",
+      "rating": 5,
+      "hold": "",
+      "needsPhotoUpgrade": true,
+      "sourceType": "batch1",
+      "approvedFor": [],
+      "image": {
+        "id": "Saint François de Sales donnant à sainte Jeanne de Chantal la règle de l'ordre de la Visitation Noël Hallé.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Fran%C3%A7ois_de_Sales_donnant_%C3%A0_sainte_Jeanne_de_Chantal_la_r%C3%A8gle_de_l'ordre_de_la_Visitation_No%C3%ABl_Hall%C3%A9.jpg?width=1050",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Fran%C3%A7ois_de_Sales_donnant_%C3%A0_sainte_Jeanne_de_Chantal_la_r%C3%A8gle_de_l'ordre_de_la_Visitation_No%C3%ABl_Hall%C3%A9.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Saint_Fran%C3%A7ois_de_Sales_donnant_%C3%A0_sainte_Jeanne_de_Chantal_la_r%C3%A8gle_de_l'ordre_de_la_Visitation_No%C3%ABl_Hall%C3%A9.jpg",
+        "px": "",
+        "status": "",
+        "score": 4,
+        "rights": "Consult this exact file page; no automatic production release",
+        "sourceStatus": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL"
+      }
+    },
+    {
+      "id": "W04-009",
+      "title": "Le songe de saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "category": "Saint Joseph",
+      "source": "https://collections.louvre.fr/ark:/53355/cl010060517",
+      "rating": 5,
+      "hold": "",
+      "needsPhotoUpgrade": true,
+      "sourceType": "batch1",
+      "approvedFor": [],
+      "image": {
+        "id": "The Dream of Saint Joseph.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Dream_of_Saint_Joseph.jpg?width=1050",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Dream_of_Saint_Joseph.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:The_Dream_of_Saint_Joseph.jpg",
+        "px": "",
+        "status": "",
+        "score": 4,
+        "rights": "Consult this exact file page; no automatic production release",
+        "sourceStatus": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL"
+      }
+    },
+    {
+      "id": "W40-006",
+      "title": "San José con el Niño Jesús",
+      "artist": "Francisco Camilo",
+      "category": "Saint Joseph",
+      "source": "https://www.museodelprado.es/coleccion/obra-de-arte/san-jose-con-el-nio-jesus/a659fbad-c561-42bc-8249-042be39f4a72",
+      "rating": 5,
+      "hold": "MURILLO_JOSEPH_PHOTO_ON_CAMILO_RECORD",
+      "needsPhotoUpgrade": false,
+      "sourceType": "batch1",
+      "approvedFor": [],
+      "image": null
+    },
+    {
+      "id": "C32:guidoreni042jpg",
+      "title": "Guido Reni 042.jpg",
+      "artist": "Guido Reni (verify exact iconography)",
+      "category": "Saint Joseph",
+      "source": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
+      "rating": 5,
+      "hold": "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING",
+      "needsPhotoUpgrade": true,
+      "sourceType": "batch1",
+      "approvedFor": [],
+      "image": {
+        "id": "Guido Reni 042.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_Reni_042.jpg?width=1050",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_Reni_042.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Guido_Reni_042.jpg",
+        "px": "",
+        "status": "",
+        "score": 4,
+        "rights": "Consult this exact file page; no automatic production release",
+        "sourceStatus": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED"
+      }
+    },
+    {
+      "id": "G26-005",
+      "title": "Saint Michael Vanquishing Satan (Grand Saint Michel)",
+      "artist": "Raphael",
+      "category": "Saint Michael Archangel",
+      "source": "https://collections.louvre.fr/ark:/53355/cl010060771",
+      "rating": 5,
+      "hold": "",
+      "needsPhotoUpgrade": true,
+      "sourceType": "batch1",
+      "approvedFor": [],
+      "image": {
+        "id": "Le Grand Saint Michel, by Raffaello Sanzio, from C2RMF retouched.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Le_Grand_Saint_Michel%2C_by_Raffaello_Sanzio%2C_from_C2RMF_retouched.jpg?width=1050",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Le_Grand_Saint_Michel%2C_by_Raffaello_Sanzio%2C_from_C2RMF_retouched.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Le_Grand_Saint_Michel%2C_by_Raffaello_Sanzio%2C_from_C2RMF_retouched.jpg",
+        "px": "",
+        "status": "",
+        "score": 4,
+        "rights": "Consult this exact file page; no automatic production release",
+        "sourceStatus": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL"
+      }
+    },
+    {
+      "id": "ART-uido-eni-rchangel-ichael-efeating-atan",
+      "title": "Archangel Michael Defeating Satan",
+      "artist": "Guido Reni",
+      "category": "Saint Michael Archangel",
+      "source": "",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Saint Michael",
+          "category": "Devotions",
+          "subjectId": "DEV-16"
+        },
+        {
+          "subject": "Guardian prayer / Heavenly angels",
+          "category": "Devotions",
+          "subjectId": "DEV-20"
+        },
+        {
+          "subject": "Saint Michael Archangel",
+          "category": "Calendar saints",
+          "subjectId": "SNT-OT-02"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "C35:arcangelsanrafaeldealonsomigueldetovarayuntamientodesevillaj",
+      "title": "Arcángel San Rafael, de Alonso Miguel de Tovar (Ayuntamiento de Sevilla).jpg",
+      "artist": "Attribution not recorded",
+      "category": "Saint Raphael Archangel",
+      "source": "https://commons.wikimedia.org/wiki/File:Arc%C3%A1ngel_San_Rafael%2C_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg",
+      "rating": 5,
+      "hold": "",
+      "needsPhotoUpgrade": true,
+      "sourceType": "batch1",
+      "approvedFor": [],
+      "image": {
+        "id": "Arcángel San Rafael, de Alonso Miguel de Tovar (Ayuntamiento de Sevilla).jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Arc%C3%A1ngel_San_Rafael%2C_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg?width=1050",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Arc%C3%A1ngel_San_Rafael%2C_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Arc%C3%A1ngel_San_Rafael%2C_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg",
+        "px": "",
+        "status": "",
+        "score": 4,
+        "rights": "Consult this exact file page; no automatic production release",
+        "sourceStatus": "EXISTING_OWNER_SOURCE_FILE_METADATA_NOT_PIXEL_CERTIFIED"
+      }
+    },
+    {
+      "id": "podesti-margaret-mary-source",
+      "title": "Apparizione a Marguerite Marie Alacoque",
+      "artist": "Attributed on Commons to Francesco Podesti",
+      "category": "Saint Margaret Mary Alacoque",
+      "source": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+      "rating": 5,
+      "hold": "",
+      "needsPhotoUpgrade": false,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": {
+        "id": "Apparizione a Marguerite Marie Alacoque.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Apparizione_a_Marguerite_Marie_Alacoque.jpg?width=950",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+        "px": "",
+        "status": "keep",
+        "score": 5,
+        "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT",
+        "sourceStatus": "EXACT_SOURCE_FILE_NAME"
+      }
+    },
+    {
+      "id": "C32:gustavevanaisemagdaleneinchriststombjpg",
+      "title": "Gustave Vanaise - Magdalene in Christ's tomb.jpg",
+      "artist": "Gustave Vanaise",
+      "category": "Saint Mary Magdalene",
+      "source": "https://commons.wikimedia.org/wiki/File:Gustave_Vanaise_-_Magdalene_in_Christ's_tomb.jpg",
+      "rating": 5,
+      "hold": "",
+      "needsPhotoUpgrade": true,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": {
+        "id": "Gustave Vanaise - Magdalene in Christ's tomb.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Gustave_Vanaise_-_Magdalene_in_Christ's_tomb.jpg?width=950",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Gustave_Vanaise_-_Magdalene_in_Christ's_tomb.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Gustave_Vanaise_-_Magdalene_in_Christ's_tomb.jpg",
+        "px": "",
+        "status": "",
+        "score": 4,
+        "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT",
+        "sourceStatus": "EXACT_SOURCE_FILE_NAME"
+      }
+    },
+    {
+      "id": "W40-012",
+      "title": "Saint Mary Magdalene",
+      "artist": "Guido Reni",
+      "category": "Saint Mary Magdalene",
+      "source": "https://www.nationalgallery.org.uk/paintings/guido-reni-saint-mary-magdalene",
+      "rating": 5,
+      "hold": "",
+      "needsPhotoUpgrade": false,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": {
+        "id": "Guido Reni - The Penitent Magdalene - Google Art ProjectFXD.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_Reni_-_The_Penitent_Magdalene_-_Google_Art_ProjectFXD.jpg?width=950",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido_Reni_-_The_Penitent_Magdalene_-_Google_Art_ProjectFXD.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Guido_Reni_-_The_Penitent_Magdalene_-_Google_Art_ProjectFXD.jpg",
+        "px": "",
+        "status": "keep",
+        "score": 5,
+        "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT",
+        "sourceStatus": "USER_PREVIEW_NOT_MASTER"
+      }
+    },
+    {
+      "id": "ART-uido-eni-aint-ary-agdalene",
+      "title": "Saint Mary Magdalene",
+      "artist": "Guido Reni",
+      "category": "Saint Mary Magdalene",
+      "source": "https://www.nationalgallery.org.uk/paintings/guido-reni-saint-mary-magdalene",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Saint Mary Magdalene",
+          "category": "Calendar saints",
+          "subjectId": "SNT-OT-25"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "commons-morlete-sacred-heart-1759",
+      "title": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "category": "Sacred Heart of Jesus",
+      "source": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "rating": null,
+      "hold": "",
+      "needsPhotoUpgrade": false,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": {
+        "id": "Juan Patricio Morlete Ruiz - The Heart of Jesus - Google Art Project.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg?width=950",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+        "px": "2345 × 3045",
+        "status": "keep",
+        "score": 5,
+        "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT",
+        "sourceStatus": "SOURCE_FILE_METADATA_INDEXED"
+      }
+    },
+    {
+      "id": "B02-HEART-MARY-MORLETE",
+      "title": "The Heart of Mary",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "category": "Immaculate Heart of Mary",
+      "source": "https://artsandculture.google.com/asset/the-heart-of-mary/TAFcx9ThkUZqHw",
+      "rating": null,
+      "hold": "SOURCE_ORIGINAL_AND_OPEN_PHOTO_NEEDED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": {
+        "id": "Juan Patricio Morlete Ruiz - The Heart of Mary - Google Art Project.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg?width=950",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+        "px": "2277 × 2960",
+        "status": "keep",
+        "score": 5,
+        "rights": "SOURCE_FILE_RIGHTS_REVIEW_REQUIRED",
+        "sourceStatus": "COMMONS_FILE_PAGE_EXACT_PAINTING"
+      }
+    },
+    {
+      "id": "met-438434",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "category": "Blessed Sacrament / Eucharistic Adoration",
+      "source": "https://www.metmuseum.org/art/collection/search/438434",
+      "rating": 5,
+      "hold": "",
+      "needsPhotoUpgrade": false,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": {
+        "id": "The Virgin Adoring the Host.PNG",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Virgin_Adoring_the_Host.PNG?width=950",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Virgin_Adoring_the_Host.PNG",
+        "page": "https://commons.wikimedia.org/wiki/File:The_Virgin_Adoring_the_Host.PNG",
+        "px": "1379 × 1854",
+        "status": "keep",
+        "score": 5,
+        "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT",
+        "sourceStatus": "SOURCE_FILE_METADATA_INDEXED"
+      }
+    },
+    {
+      "id": "met-437542",
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "artist": "Workshop of Peter Paul Rubens",
+      "category": "Holy Souls in Purgatory",
+      "source": "https://www.metmuseum.org/art/collection/search/437542",
+      "rating": null,
+      "hold": "",
+      "needsPhotoUpgrade": true,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": {
+        "id": "Saint Teresa of Ávila Interceding for Souls in Purgatory MET DT206354.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Teresa_of_%C3%81vila_Interceding_for_Souls_in_Purgatory_MET_DT206354.jpg?width=950",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Teresa_of_%C3%81vila_Interceding_for_Souls_in_Purgatory_MET_DT206354.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Saint_Teresa_of_%C3%81vila_Interceding_for_Souls_in_Purgatory_MET_DT206354.jpg",
+        "px": "2857 × 3722",
+        "status": "",
+        "score": 4,
+        "rights": "CHECK_SOURCE_FILE_TERMS_BEFORE_DEPLOYMENT",
+        "sourceStatus": "EXACT_MUSEUM_ORIGINAL_IDENTIFIED_ON_COMMONS"
+      }
+    },
+    {
+      "id": "met-747199",
+      "title": "The Virgin of Carmen and the Souls of Purgatory with St. Joseph and the Prophet Elijah",
+      "artist": "Juan Francisco de Aguilera",
+      "category": "Holy Souls in Purgatory",
+      "source": "https://www.metmuseum.org/art/collection/search/747199",
+      "rating": null,
+      "hold": "",
+      "needsPhotoUpgrade": false,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": null
+    },
+    {
+      "id": "met-437849",
+      "title": "The Flight into Egypt",
+      "artist": "Cosmè Tura",
+      "category": "Flight into Egypt",
+      "source": "https://www.metmuseum.org/art/collection/search/437849",
+      "rating": null,
+      "hold": "",
+      "needsPhotoUpgrade": false,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": {
+        "id": "The Flight into Egypt MET DT7231.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Flight_into_Egypt_MET_DT7231.jpg?width=950",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Flight_into_Egypt_MET_DT7231.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:The_Flight_into_Egypt_MET_DT7231.jpg",
+        "px": "3578 × 3665",
+        "status": "",
+        "score": 3,
+        "rights": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT",
+        "sourceStatus": "SOURCE_FILE_METADATA_INDEXED"
+      }
+    },
+    {
+      "id": "met-816629",
+      "title": "The Flight into Egypt",
+      "artist": "Carlo Maratti",
+      "category": "Flight into Egypt",
+      "source": "https://www.metmuseum.org/art/collection/search/816629",
+      "rating": null,
+      "hold": "",
+      "needsPhotoUpgrade": false,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": null
+    },
+    {
+      "id": "cma-137195",
+      "title": "Rest on the Flight into Egypt",
+      "artist": "Claude Lorrain",
+      "category": "Flight into Egypt",
+      "source": "https://clevelandart.org/art/1962.151",
+      "rating": null,
+      "hold": "",
+      "needsPhotoUpgrade": false,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": null
+    },
+    {
+      "id": "met-436801",
+      "title": "The Marriage Feast at Cana",
+      "artist": "Juan de Flandes",
+      "category": "Wedding at Cana",
+      "source": "https://www.metmuseum.org/art/collection/search/436801",
+      "rating": null,
+      "hold": "",
+      "needsPhotoUpgrade": false,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": {
+        "id": "Juan de Flandes - The Marriage Feast at Cana - WGA12055.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_de_Flandes_-_The_Marriage_Feast_at_Cana_-_WGA12055.jpg?width=950",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_de_Flandes_-_The_Marriage_Feast_at_Cana_-_WGA12055.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Juan_de_Flandes_-_The_Marriage_Feast_at_Cana_-_WGA12055.jpg",
+        "px": "2693 × 3601",
+        "status": "",
+        "score": 3,
+        "rights": "CHECK_SOURCE_FILE_TERMS_BEFORE_DEPLOYMENT",
+        "sourceStatus": "EXACT_MUSEUM_ORIGINAL_IDENTIFIED_ON_COMMONS"
+      }
+    },
+    {
+      "id": "nga-34956",
+      "title": "The Return of the Prodigal Son",
+      "artist": "Bartolomé Esteban Murillo",
+      "category": "The Prodigal Son",
+      "source": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "rating": null,
+      "hold": "",
+      "needsPhotoUpgrade": false,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": {
+        "id": "Return of the Prodigal Son 1667-1670 Murillo.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Return_of_the_Prodigal_Son_1667-1670_Murillo.jpg?width=950",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Return_of_the_Prodigal_Son_1667-1670_Murillo.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Return_of_the_Prodigal_Son_1667-1670_Murillo.jpg",
+        "px": "4000 × 3611",
+        "status": "keep",
+        "score": 5,
+        "rights": "CHECK_FILE_PAGE_BEFORE_APP_RELEASE",
+        "sourceStatus": "FILE_PAGE_SOURCE_EVIDENCE"
+      }
+    },
+    {
+      "id": "B02-PRODIGAL-REMBRANDT",
+      "title": "The Return of the Prodigal Son",
+      "artist": "Rembrandt",
+      "category": "The Prodigal Son",
+      "source": "https://commons.wikimedia.org/wiki/File:Rembrandt-The_return_of_the_prodigal_son.jpg",
+      "rating": null,
+      "hold": "",
+      "needsPhotoUpgrade": false,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": {
+        "id": "Rembrandt-The return of the prodigal son.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt-The_return_of_the_prodigal_son.jpg?width=950",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt-The_return_of_the_prodigal_son.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Rembrandt-The_return_of_the_prodigal_son.jpg",
+        "px": "",
+        "status": "",
+        "score": 3,
+        "rights": "CHECK_FILE_PAGE_BEFORE_APP_RELEASE",
+        "sourceStatus": "FILE_PAGE_SOURCE_EVIDENCE"
+      }
+    },
+    {
+      "id": "1948.12.1",
+      "title": "The Return of the Prodigal Son",
+      "artist": "Bartolomé Esteban Murillo",
+      "category": "The Prodigal Son",
+      "source": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "rating": null,
+      "hold": "RESEARCH_CANDIDATE_NO_VERIFIED_PHOTO",
+      "needsPhotoUpgrade": false,
+      "sourceType": "research3",
+      "approvedFor": [],
+      "image": null
+    },
+    {
+      "id": "met-437871",
+      "title": "The Supper at Emmaus",
+      "artist": "Diego Velázquez",
+      "category": "Road to Emmaus",
+      "source": "https://www.metmuseum.org/art/collection/search/437871",
+      "rating": null,
+      "hold": "",
+      "needsPhotoUpgrade": false,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": {
+        "id": "La cena de Emaús, by Diego Velázquez.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/La_cena_de_Ema%C3%BAs%2C_by_Diego_Vel%C3%A1zquez.jpg?width=950",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/La_cena_de_Ema%C3%BAs%2C_by_Diego_Vel%C3%A1zquez.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:La_cena_de_Ema%C3%BAs%2C_by_Diego_Vel%C3%A1zquez.jpg",
+        "px": "3479 × 3261",
+        "status": "keep",
+        "score": 5,
+        "rights": "CHECK_SOURCE_FILE_TERMS_BEFORE_DEPLOYMENT",
+        "sourceStatus": "EXACT_MUSEUM_ORIGINAL_IDENTIFIED_ON_COMMONS"
+      }
+    },
+    {
+      "id": "cma-112626",
+      "title": "The Supper at Emmaus",
+      "artist": "Giovanni Battista Piazzetta",
+      "category": "Road to Emmaus",
+      "source": "https://clevelandart.org/art/1931.245",
+      "rating": null,
+      "hold": "",
+      "needsPhotoUpgrade": false,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": null
+    },
+    {
+      "id": "B02-FOOTWASH-TINTORETTO",
+      "title": "Christ Washing the Disciples' Feet",
+      "artist": "Jacopo Tintoretto",
+      "category": "Washing of the Feet",
+      "source": "https://www.nationalgallery.org.uk/paintings/jacopo-tintoretto-christ-washing-the-disciples-feet",
+      "rating": null,
+      "hold": "",
+      "needsPhotoUpgrade": true,
+      "sourceType": "batch2",
+      "approvedFor": [],
+      "image": {
+        "id": "Tintoretto, Jacopo - Christ washing the Feet of the Disciples - National Gallery London.jpg",
+        "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%2C_Jacopo_-_Christ_washing_the_Feet_of_the_Disciples_-_National_Gallery_London.jpg?width=950",
+        "original": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%2C_Jacopo_-_Christ_washing_the_Feet_of_the_Disciples_-_National_Gallery_London.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Tintoretto%2C_Jacopo_-_Christ_washing_the_Feet_of_the_Disciples_-_National_Gallery_London.jpg",
+        "px": "6935 × 3404",
+        "status": "",
+        "score": 4,
+        "rights": "CHECK_FILE_PAGE_BEFORE_APP_RELEASE",
+        "sourceStatus": "FILE_PAGE_SOURCE_EVIDENCE"
+      }
+    },
+    {
+      "id": "ART-hilippe-de-hampaigne-he-nnunciation",
+      "title": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "category": "Annunciation",
+      "source": "https://www.metmuseum.org/art/collection/search/438724",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Annunciation",
+          "category": "Rosary",
+          "subjectId": "ROS-01"
+        },
+        {
+          "subject": "Annunciation devotion",
+          "category": "Devotions",
+          "subjectId": "DEV-07"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-aphael-and-iulio-omano-he-isitation",
+      "title": "The Visitation",
+      "artist": "Raphael and Giulio Romano",
+      "category": "Visitation",
+      "source": "https://www.museodelprado.es/en/the-collection/art-work/the-visitation/c02d195f-fdc4-4c61-bedf-e19216dd7335",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Visitation",
+          "category": "Rosary",
+          "subjectId": "ROS-02"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
+      "title": "The Age of Augustus: Birth of Christ",
+      "artist": "Jean-Léon Gérôme",
+      "category": "Nativity",
+      "source": "",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Nativity",
+          "category": "Rosary",
+          "subjectId": "ROS-03"
+        },
+        {
+          "subject": "Nativity / Christmas Novena",
+          "category": "Devotions",
+          "subjectId": "DEV-04"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+      "title": "Presentation of Jesus at the Temple",
+      "artist": "Philippe de Champaigne",
+      "category": "Presentation of Jesus",
+      "source": "",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Presentation of Jesus",
+          "category": "Rosary",
+          "subjectId": "ROS-04"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+      "title": "Agony in the Garden — Antwerp Rosary cycle",
+      "artist": "David Teniers the Elder",
+      "category": "Agony in the Garden",
+      "source": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Agony in the Garden",
+          "category": "Rosary",
+          "subjectId": "ROS-06"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-itian-hrist-arrying-the-ross",
+      "title": "Christ Carrying the Cross",
+      "artist": "Titian",
+      "category": "Carrying of the Cross",
+      "source": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000438",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Carrying of the Cross",
+          "category": "Rosary",
+          "subjectId": "ROS-09"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-nthony-van-yck-he-ance-hrust",
+      "title": "The Lance Thrust",
+      "artist": "Anthony van Dyck",
+      "category": "Crucifixion",
+      "source": "",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Crucifixion",
+          "category": "Rosary",
+          "subjectId": "ROS-10"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-eter-aul-ubens-esurrection-of-hrist",
+      "title": "Resurrection of Christ",
+      "artist": "Peter Paul Rubens",
+      "category": "Resurrection",
+      "source": "",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Resurrection",
+          "category": "Rosary",
+          "subjectId": "ROS-11"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+      "title": "Assumption of the Virgin",
+      "artist": "Peter Paul Rubens",
+      "category": "Assumption",
+      "source": "",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Assumption",
+          "category": "Rosary",
+          "subjectId": "ROS-14"
+        },
+        {
+          "subject": "Assumption devotion",
+          "category": "Devotions",
+          "subjectId": "DEV-08"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-eter-aul-ubens-oronation-of-the-irgin-oil-sketch",
+      "title": "Coronation of the Virgin — oil sketch",
+      "artist": "Peter Paul Rubens",
+      "category": "Coronation of Mary",
+      "source": "https://www.metmuseum.org/art/collection/search/437524",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Coronation of Mary",
+          "category": "Rosary",
+          "subjectId": "ROS-15"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
+      "title": "San Polo Via Crucis — Station 04: Jesus Meets His Mother",
+      "artist": "Giandomenico Tiepolo",
+      "category": "Station 4: Jesus Meets His Mother",
+      "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Station 4: Jesus Meets His Mother",
+          "category": "Stations",
+          "subjectId": "STN-04"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+      "title": "San Polo Via Crucis — Station 12: Death on the Cross",
+      "artist": "Giandomenico Tiepolo",
+      "category": "Station 12: Death on the Cross",
+      "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Station 12: Death on the Cross",
+          "category": "Stations",
+          "subjectId": "STN-12"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+      "title": "Descent from the Cross — Prado Passion series",
+      "artist": "Giandomenico Tiepolo",
+      "category": "Station 13: Descent from the Cross",
+      "source": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000361",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Station 13: Descent from the Cross",
+          "category": "Stations",
+          "subjectId": "STN-13"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+      "title": "Burial of Christ — Prado Passion series",
+      "artist": "Giandomenico Tiepolo",
+      "category": "Station 14: Burial of Christ",
+      "source": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000362",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Station 14: Burial of Christ",
+          "category": "Stations",
+          "subjectId": "STN-14"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-nthony-van-yck-amentation-of-hrist",
+      "title": "Lamentation of Christ",
+      "artist": "Anthony van Dyck",
+      "category": "Seven Sorrows of Mary",
+      "source": "",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Seven Sorrows of Mary",
+          "category": "Devotions",
+          "subjectId": "DEV-09"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-ietro-da-ortona-he-uardian-ngel",
+      "title": "The Guardian Angel",
+      "artist": "Pietro da Cortona",
+      "category": "Guardian Angel",
+      "source": "",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Guardian Angel",
+          "category": "Devotions",
+          "subjectId": "DEV-17"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-eter-aul-ubens-eeting-of-braham-and-elchizedek",
+      "title": "Meeting of Abraham and Melchizedek",
+      "artist": "Peter Paul Rubens",
+      "category": "Melchizedek Blesses Abram",
+      "source": "",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Melchizedek Blesses Abram",
+          "category": "Bible Atlas",
+          "subjectId": "BIB-PA03"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-os-de-ibera-acob-s-ream",
+      "title": "Jacob’s Dream",
+      "artist": "José de Ribera",
+      "category": "Jacob’s Dream",
+      "source": "",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Jacob’s Dream",
+          "category": "Bible Atlas",
+          "subjectId": "BIB-PA07"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "title": "The Dream of Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "category": "Joseph’s Dream",
+      "source": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Joseph’s Dream",
+          "category": "Bible Atlas",
+          "subjectId": "BIB-G02"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "title": "Miracle of Loaves and Fishes",
+      "artist": "Giovanni Lanfranco",
+      "category": "Multiplication of Loaves",
+      "source": "",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Multiplication of Loaves",
+          "category": "Bible Atlas",
+          "subjectId": "BIB-G14"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "ART-hilippe-de-hampaigne-a-etite-ne",
+      "title": "La Petite Cène",
+      "artist": "Philippe de Champaigne",
+      "category": "Last Supper / Institution of Eucharist",
+      "source": "",
+      "rating": null,
+      "hold": "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+      "needsPhotoUpgrade": false,
+      "sourceType": "oct12",
+      "approvedFor": [
+        {
+          "subject": "Last Supper / Institution of Eucharist",
+          "category": "Bible Atlas",
+          "subjectId": "BIB-G24"
+        }
+      ],
+      "image": null
+    }
+  ],
+  "historicalSelections": [
+    {
+      "originalId": "ART-hilippe-de-hampaigne-he-nnunciation",
+      "subjectId": "ROS-01",
+      "subject": "Annunciation",
+      "category": "Rosary"
+    },
+    {
+      "originalId": "ART-aphael-and-iulio-omano-he-isitation",
+      "subjectId": "ROS-02",
+      "subject": "Visitation",
+      "category": "Rosary"
+    },
+    {
+      "originalId": "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
+      "subjectId": "ROS-03",
+      "subject": "Nativity",
+      "category": "Rosary"
+    },
+    {
+      "originalId": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+      "subjectId": "ROS-04",
+      "subject": "Presentation of Jesus",
+      "category": "Rosary"
+    },
+    {
+      "originalId": "ART-udovico-azzolino-hrist-isputing-with-the-octors",
+      "subjectId": "ROS-05",
+      "subject": "Finding in the Temple",
+      "category": "Rosary"
+    },
+    {
+      "originalId": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+      "subjectId": "ROS-06",
+      "subject": "Agony in the Garden",
+      "category": "Rosary"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle",
+      "subjectId": "ROS-07",
+      "subject": "Scourging at the Pillar",
+      "category": "Rosary"
+    },
+    {
+      "originalId": "ART-nthony-van-yck-rowning-with-horns",
+      "subjectId": "ROS-08",
+      "subject": "Crowning with Thorns",
+      "category": "Rosary"
+    },
+    {
+      "originalId": "ART-itian-hrist-arrying-the-ross",
+      "subjectId": "ROS-09",
+      "subject": "Carrying of the Cross",
+      "category": "Rosary"
+    },
+    {
+      "originalId": "ART-nthony-van-yck-he-ance-hrust",
+      "subjectId": "ROS-10",
+      "subject": "Crucifixion",
+      "category": "Rosary"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-esurrection-of-hrist",
+      "subjectId": "ROS-11",
+      "subject": "Resurrection",
+      "category": "Rosary"
+    },
+    {
+      "originalId": "ART-rtus-olffort-scension-ntwerp-osary-cycle",
+      "subjectId": "ROS-12",
+      "subject": "Ascension",
+      "category": "Rosary"
+    },
+    {
+      "originalId": "ART-ean-estout-entecost",
+      "subjectId": "ROS-13",
+      "subject": "Pentecost",
+      "category": "Rosary"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+      "subjectId": "ROS-14",
+      "subject": "Assumption",
+      "category": "Rosary"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-oronation-of-the-irgin-oil-sketch",
+      "subjectId": "ROS-15",
+      "subject": "Coronation of Mary",
+      "category": "Rosary"
+    },
+    {
+      "originalId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-01-hrist-ondemned-to-eath",
+      "subjectId": "STN-01",
+      "subject": "Station 1: Christ Condemned to Death",
+      "category": "Stations"
+    },
+    {
+      "originalId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+      "subjectId": "STN-02",
+      "subject": "Station 2: Jesus Takes Up the Cross",
+      "category": "Stations"
+    },
+    {
+      "originalId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-03-irst-all",
+      "subjectId": "STN-03",
+      "subject": "Station 3: First Fall",
+      "category": "Stations"
+    },
+    {
+      "originalId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
+      "subjectId": "STN-04",
+      "subject": "Station 4: Jesus Meets His Mother",
+      "category": "Stations"
+    },
+    {
+      "originalId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-05-imon-of-yrene-elps",
+      "subjectId": "STN-05",
+      "subject": "Station 5: Simon of Cyrene Helps",
+      "category": "Stations"
+    },
+    {
+      "originalId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-06-eronica-ipes-is-ace",
+      "subjectId": "STN-06",
+      "subject": "Station 6: Veronica Wipes His Face",
+      "category": "Stations"
+    },
+    {
+      "originalId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-07-econd-all",
+      "subjectId": "STN-07",
+      "subject": "Station 7: Second Fall",
+      "category": "Stations"
+    },
+    {
+      "originalId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-08-esus-ddresses-the-omen-of-erusalem",
+      "subjectId": "STN-08",
+      "subject": "Station 8: Jesus Addresses the Women of Jerusalem",
+      "category": "Stations"
+    },
+    {
+      "originalId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-09-hird-all",
+      "subjectId": "STN-09",
+      "subject": "Station 9: Third Fall",
+      "category": "Stations"
+    },
+    {
+      "originalId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-10-tripping-of-is-arments",
+      "subjectId": "STN-10",
+      "subject": "Station 10: Stripping of His Garments",
+      "category": "Stations"
+    },
+    {
+      "originalId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-11-ailing-to-the-ross",
+      "subjectId": "STN-11",
+      "subject": "Station 11: Nailing to the Cross",
+      "category": "Stations"
+    },
+    {
+      "originalId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+      "subjectId": "STN-12",
+      "subject": "Station 12: Death on the Cross",
+      "category": "Stations"
+    },
+    {
+      "originalId": "ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+      "subjectId": "STN-13",
+      "subject": "Station 13: Descent from the Cross",
+      "category": "Stations"
+    },
+    {
+      "originalId": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+      "subjectId": "STN-14",
+      "subject": "Station 14: Burial of Christ",
+      "category": "Stations"
+    },
+    {
+      "originalId": "ART-ean-estout-entecost",
+      "subjectId": "DEV-03",
+      "subject": "Holy Ghost / Pentecost",
+      "category": "Devotions"
+    },
+    {
+      "originalId": "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
+      "subjectId": "DEV-04",
+      "subject": "Nativity / Christmas Novena",
+      "category": "Devotions"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-mmaculate-onception",
+      "subjectId": "DEV-06",
+      "subject": "Immaculate Conception",
+      "category": "Devotions"
+    },
+    {
+      "originalId": "ART-hilippe-de-hampaigne-he-nnunciation",
+      "subjectId": "DEV-07",
+      "subject": "Annunciation devotion",
+      "category": "Devotions"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+      "subjectId": "DEV-08",
+      "subject": "Assumption devotion",
+      "category": "Devotions"
+    },
+    {
+      "originalId": "ART-nthony-van-yck-amentation-of-hrist",
+      "subjectId": "DEV-09",
+      "subject": "Seven Sorrows of Mary",
+      "category": "Devotions"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+      "subjectId": "DEV-14",
+      "subject": "Saint Anthony of Padua",
+      "category": "Devotions"
+    },
+    {
+      "originalId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+      "subjectId": "DEV-16",
+      "subject": "Saint Michael",
+      "category": "Devotions"
+    },
+    {
+      "originalId": "ART-ietro-da-ortona-he-uardian-ngel",
+      "subjectId": "DEV-17",
+      "subject": "Guardian Angel",
+      "category": "Devotions"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-he-oly-rinity",
+      "subjectId": "DEV-18",
+      "subject": "Most Holy Trinity",
+      "category": "Devotions"
+    },
+    {
+      "originalId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+      "subjectId": "DEV-20",
+      "subject": "Guardian prayer / Heavenly angels",
+      "category": "Devotions"
+    },
+    {
+      "originalId": "ART-usepe-de-ibera-aint-eter-postolate",
+      "subjectId": "SNT-AP-01",
+      "subject": "Saint Peter",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-artyrdom-of-aint-ndrew",
+      "subjectId": "SNT-AP-02",
+      "subject": "Saint Andrew",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-aravaggio-nspiration-of-aint-atthew",
+      "subjectId": "SNT-AP-08",
+      "subject": "Saint Matthew",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-aint-atthias-postolate",
+      "subjectId": "SNT-AP-11",
+      "subject": "Saint Matthias",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-usepe-de-ibera-aint-aul-postolate",
+      "subjectId": "SNT-AP-12",
+      "subject": "Saint Paul",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-usepe-de-ibera-aint-udas-haddeus",
+      "subjectId": "SNT-AP-13",
+      "subject": "Saint Jude Thaddeus",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+      "subjectId": "SNT-DC-01",
+      "subject": "Saint Ambrose",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-hilippe-de-hampaigne-aint-ugustine",
+      "subjectId": "SNT-DC-02",
+      "subject": "Saint Augustine",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-usepe-de-ibera-aint-erome-riting",
+      "subjectId": "SNT-DC-03",
+      "subject": "Saint Jerome",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-arlo-rivelli-aint-homas-quinas",
+      "subjectId": "SNT-DC-05",
+      "subject": "Saint Thomas Aquinas",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-rancisco-de-urbar-n-aint-onaventure-at-ouncil-of-yon",
+      "subjectId": "SNT-DC-06",
+      "subject": "Saint Bonaventure",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-iambattista-iepolo-aint-atherine-of-iena",
+      "subjectId": "SNT-DC-09",
+      "subject": "Saint Catherine of Siena",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-ierre-ubert-ubleyras-he-ass-of-aint-asil-oil-modello",
+      "subjectId": "SNT-DC-14",
+      "subject": "Saint Basil the Great",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-artolom-steban-urillo-aint-sidore-of-eville",
+      "subjectId": "SNT-DC-17",
+      "subject": "Saint Isidore of Seville",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+      "subjectId": "SNT-DC-28",
+      "subject": "Saint Hilary of Poitiers",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+      "subjectId": "SNT-OT-02",
+      "subject": "Saint Michael Archangel",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-ierre-ignard-aint-ohn-the-aptist",
+      "subjectId": "SNT-OT-04",
+      "subject": "Saint John the Baptist",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles",
+      "subjectId": "SNT-OT-07",
+      "subject": "Saint Joan of Arc",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+      "subjectId": "SNT-OT-10",
+      "subject": "Saint Stephen",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence",
+      "subjectId": "SNT-OT-11",
+      "subject": "Saint Lawrence",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-nthony-van-yck-aint-rancis-in-cstasy",
+      "subjectId": "SNT-OT-12",
+      "subject": "Saint Francis of Assisi",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-laudio-oello-aint-ominic-of-uzm-n",
+      "subjectId": "SNT-OT-13",
+      "subject": "Saint Dominic",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-iracles-of-aint-rancis-avier",
+      "subjectId": "SNT-OT-15",
+      "subject": "Saint Francis Xavier",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+      "subjectId": "SNT-OT-16",
+      "subject": "Saint Ignatius of Loyola",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-aint-ebastian",
+      "subjectId": "SNT-OT-19",
+      "subject": "Saint Sebastian",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-ietro-da-ortona-aint-ecilia",
+      "subjectId": "SNT-OT-23",
+      "subject": "Saint Cecilia",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-aravaggio-aint-atherine-of-lexandria",
+      "subjectId": "SNT-OT-24",
+      "subject": "Saint Catherine of Alexandria",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-uido-eni-aint-ary-agdalene",
+      "subjectId": "SNT-OT-25",
+      "subject": "Saint Mary Magdalene",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-abriel-ran-ois-oyen-iracle-des-rdents",
+      "subjectId": "SNT-OT-26",
+      "subject": "Saint Geneviève",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-nthony-van-yck-aint-artin-ividing-is-loak",
+      "subjectId": "SNT-OT-29",
+      "subject": "Saint Martin of Tours",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "subjectId": "SNT-OT-30",
+      "subject": "Saint Anne",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo",
+      "subjectId": "SNT-OT-31",
+      "subject": "Saint Rosalia",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
+      "subjectId": "SNT-OT-32",
+      "subject": "Saint Francis of Paola",
+      "category": "Calendar saints"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-and-an-rueghel-the-lder-arden-of-den-with-the-all",
+      "subjectId": "BIB-OR01",
+      "subject": "Creation",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-ain-and-bel",
+      "subjectId": "BIB-OR03",
+      "subject": "Cain and Abel",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-ieter-ruegel-the-lder-ower-of-abel",
+      "subjectId": "BIB-OR06",
+      "subject": "Tower of Babel",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-uan-ern-ndez-de-avarrete-braham-and-the-hree-ngels",
+      "subjectId": "BIB-PA02",
+      "subject": "Abraham and Three Angels at Mamre",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-eeting-of-braham-and-elchizedek",
+      "subjectId": "BIB-PA03",
+      "subject": "Melchizedek Blesses Abram",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-aravaggio-he-acrifice-of-saac",
+      "subjectId": "BIB-PA06",
+      "subject": "Sacrifice of Isaac",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-os-de-ibera-acob-s-ream",
+      "subjectId": "BIB-PA07",
+      "subject": "Jacob’s Dream",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-ug-ne-elacroix-acob-restling-with-the-ngel",
+      "subjectId": "BIB-PA08",
+      "subject": "Jacob Wrestles with the Angel",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-bastien-ourdon-he-inding-of-oses",
+      "subjectId": "BIB-EX01",
+      "subject": "Birth of Moses",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-omenico-etti-oses-before-the-urning-ush",
+      "subjectId": "BIB-EX02",
+      "subject": "The Burning Bush",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-he-razen-erpent",
+      "subjectId": "BIB-EX12",
+      "subject": "The Bronze Serpent",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-aravaggio-avid-with-the-ead-of-oliath",
+      "subjectId": "BIB-IS03",
+      "subject": "David and Goliath",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-aspard-ughet-lijah-and-the-ngel",
+      "subjectId": "BIB-IS08",
+      "subject": "Elijah at Horeb",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-aniel-in-the-ions-en",
+      "subjectId": "BIB-XL05",
+      "subject": "Daniel in the Lions’ Den",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-acopo-intoretto-udith-and-olofernes",
+      "subjectId": "BIB-XL07",
+      "subject": "Judith and Holofernes",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-ebastiano-icci-sther-before-hasuerus",
+      "subjectId": "BIB-XL08",
+      "subject": "Esther Intercedes",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-uido-eni-usannah-and-the-lders",
+      "subjectId": "BIB-XL09",
+      "subject": "Susanna Vindicated",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-ug-ne-elacroix-eliodorus-riven-from-the-emple",
+      "subjectId": "BIB-XL15",
+      "subject": "Heliodorus Expelled from Temple",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-eter-aul-ubens-doration-of-the-agi",
+      "subjectId": "BIB-G01",
+      "subject": "Adoration of the Magi",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "subjectId": "BIB-G02",
+      "subject": "Joseph’s Dream",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "subjectId": "BIB-G14",
+      "subject": "Multiplication of Loaves",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-ean-ouvenet-aising-of-azarus",
+      "subjectId": "BIB-G16",
+      "subject": "Raising of Lazarus",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-hilippe-de-hampaigne-a-etite-ne",
+      "subjectId": "BIB-G24",
+      "subject": "Last Supper / Institution of Eucharist",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-ean-estout-entecost",
+      "subjectId": "BIB-A01",
+      "subject": "Pentecost",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+      "subjectId": "BIB-A03",
+      "subject": "Martyrdom of Stephen",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-artolom-steban-urillo-onversion-of-aint-aul",
+      "subjectId": "BIB-A05",
+      "subject": "Conversion of Saul",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-ustache-e-ueur-aint-aul-reaching-at-phesus",
+      "subjectId": "BIB-A15",
+      "subject": "Paul at Ephesus",
+      "category": "Bible Atlas"
+    },
+    {
+      "originalId": "ART-uccio-di-uoninsegna-ealing-of-the-an-orn-lind",
+      "subjectId": "BIB-G27",
+      "subject": "Healing of the Man Born Blind",
+      "category": "Bible Atlas"
+    }
+  ]
+}
