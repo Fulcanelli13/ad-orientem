@@ -224,6 +224,49 @@ try{
    await page.waitForFunction(()=>document.querySelector("[data-schola-release]")?.hidden===true,
      null,{timeout:7000});
    assert.equal(await release.isVisible(),false);
+   // Navigate the source-owned Schola itinerary independently of priest
+   // catch-up. No chant/organ/silence event implies that music was heard.
+   const priestBeforeMusicPick=await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+   }));
+   const musicButton=page.locator("[data-schola-events-open]");
+   assert.equal(await musicButton.isVisible(),true,
+     "Sung LIVE must expose a music-event navigator independent of priest cards");
+   await musicButton.click();
+   const musicMenu=page.locator('[data-role="schola-events-menu"]');
+   assert.equal(await musicMenu.isVisible(),true);
+   assert.ok(await musicMenu.locator("[data-schola-event-select]").count()>=25,
+     "Schola source itinerary did not populate navigable events");
+   const unselectedMotet=musicMenu.locator('[data-schola-event-select="OFFERTORY_LOCAL_MOTET"]');
+   assert.equal(await unselectedMotet.isDisabled(),true,
+     "Unplanned local motet must not be presented as a selectable performance");
+   assert.equal(await musicMenu.locator('[data-schola-event-select="BENEDICTUS_AFTER_CHALICE"]').isDisabled(),
+     true,"Manual Benedictus barrier must never be skipped via event navigator");
+   await musicMenu.locator('[data-schola-event-select="KYRIE"]').click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.trackId==="KYRIE");
+   assert.equal(await musicMenu.isVisible(),false);
+   const afterChantPick=await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+   }));
+   assert.deepEqual(afterChantPick,priestBeforeMusicPick,
+     "Selecting a source-backed chant moved the priest reader");
+   await musicButton.click();
+   await musicMenu.locator('[data-schola-event-select="CANON"]').click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getSelectedScholaEvent()?.id==="CANON");
+   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState().trackId),
+     null,"Selecting a quiet-interval reference left an invented choir chant active");
+   const referenceLabel=await page.locator('[data-role="schola"]').textContent();
+   assert.match(referenceLabel,/Canon/i,"Quiet event reference is not visible");
+   assert.equal((await page.locator('[data-role="schola-status"]').textContent()).trim(),
+     "NOT OBSERVED","Quiet interval reference should not claim observed music");
+   const priestAfterMusicPick=await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+   }));
+   assert.deepEqual(priestAfterMusicPick,priestBeforeMusicPick,
+     "Selecting a source-owned quiet interval moved the priest's focus");
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
    assert.equal(overflow,false,"Schola controls overflow narrow phone");
    assert.deepEqual(errors,[],"Runtime page errors");
