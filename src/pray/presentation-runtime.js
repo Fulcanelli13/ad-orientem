@@ -1870,12 +1870,21 @@ function renderMontfortHistoricalB27(id){
  if(!p||!rows?.length)return '<p class="aoMontfortB26Note">'+esc(L('Historical prayer source unavailable.','Source de la prière historique indisponible.'))+'</p>';
  const title=isFr()?p.titleFr:p.titleEn;
  const optional=id==='augustine';
+ // Editorial chapter breaks only: leave every historical invocation and collect
+ // in its original ordered source row; never treat headings as litany text.
+ const chapterAt=id==='holySpirit'?{
+  0:L('Opening','Ouverture'),9:L('Invocations','Invocations'),30:L('Petitions','Supplications'),44:L('Lamb of God, versicle and collect','Agneau de Dieu, verset et oraison')
+ }:{
+  0:L('Opening','Ouverture'),5:L('Invocations of Jesus','Invocations de Jésus'),47:L('Appeals for mercy','Appels à la miséricorde'),
+  49:L('Deliverance petitions','Demandes de délivrance'),69:L('Lamb of God and closing responses','Agneau de Dieu et réponses finales'),
+  74:L('Concluding prayers','Oraisons finales')
+ };
  const texts=id==='augustine'
   ?'<div lang="en">'+rows.filter(r=>r.kind==='original').map(r=>'<p class="aoMontfortB26Original">'+esc(r.leader)+'</p>').join('')+'</div><details class="aoMontfortB26Details"><summary>'+esc(L('Montfort’s transmitted Latin prayer','Prière latine transmise par Montfort'))+'</summary><div lang="la">'+rows.filter(r=>r.kind==='originalLatin').map(r=>'<p class="aoMontfortB26Original">'+esc(r.leader)+'</p>').join('')+'</div></details>'
-  :'<div lang="en" class="aoMontfortB27Litany">'+rows.map(r=>r.kind==='collect'
+  :'<div lang="en" class="aoMontfortB27Litany">'+rows.map((r,i)=>(Object.hasOwn(chapterAt,i)?'<h4 class="aoMontfortB27Chapter">'+esc(chapterAt[i])+'</h4>':'')+(r.kind==='collect'
    ?'<p class="aoMontfortB27Collect">'+esc(r.leader)+'</p>'
-   :'<p class="aoMontfortB27Response" data-ao-montfort-original-row><span>'+esc(r.kind==='versicle'?'℣ '+r.leader:r.leader)+'</span>'+(r.response?'<strong>'+esc(r.kind==='versicle'?'℟ '+r.response:r.response)+'</strong>':'')+'</p>').join('')+'</div>';
- return '<details class="aoMontfortB26Details aoMontfortB27Prayer" data-ao-montfort-b27-original="'+esc(id)+'"><summary>'+esc(title)+(optional?' · '+esc(L('optional','facultatif')):'')+'</summary><p class="aoMontfortB26Note">'+esc(L('Historical English source, not a verified French translation. Original printed-page collation outstanding.','Témoin historique anglais ; aucune traduction française vérifiée. Collation des pages imprimées encore en attente.'))+'</p>'+texts+'<p class="aoMontfortB26Note">'+esc(p.note)+'</p><a href="'+esc(p.witnessUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(L('View the historical source','Consulter la source historique'))+'</a></details>';
+   :'<p class="aoMontfortB27Response" data-ao-montfort-original-row><span>'+esc(r.kind==='versicle'?'℣ '+r.leader:r.leader)+'</span>'+(r.response?'<strong>'+esc(r.kind==='versicle'?'℟ '+r.response:r.response)+'</strong>':'')+'</p>')).join('')+'</div>';
+ return '<details class="aoMontfortB26Details aoMontfortB27Prayer" data-ao-montfort-b27-original="'+esc(id)+'"><summary>'+esc(title)+(optional?' · '+esc(L('optional','facultatif')):'')+'</summary><p class="aoMontfortB26Note">'+esc(L('Historical English source, not a verified French translation. Original printed-page collation outstanding.','Témoin historique anglais ; aucune traduction française vérifiée. Collation des pages imprimées encore en attente.'))+'</p><p class="aoMontfortB26Note" data-ao-montfort-witness-caution>'+esc(p.note)+'</p><a href="'+esc(p.witnessUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(L('View the actual digital source','Consulter le véritable témoin numérique'))+'</a>'+texts+'</details>';
 }
 
 function renderMontfortB26(){
