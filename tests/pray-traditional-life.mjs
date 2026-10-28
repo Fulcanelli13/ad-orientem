@@ -84,7 +84,7 @@ assert.match(styles,/\.aoTP381Source summary\{[^\n]*min-height:44px/,
 assert.match(styles,/aoTP381Reader/);
 assert.match(styles,/aoTP381PrayerList/);
 assert.match(runtime,/Foundational prayers may recur later in the Rosary or another devotion/,"Morning\/Evening repetition guide disappeared");
-assert.match(runtime,/A deliberately small traditional collection with identified sources/,"Sacred Hymns user-facing introduction drifted");
+assert.match(runtime,/Historical hymn texts with identified sources and explicitly labelled language editions/,"Sacred Hymns user-facing introduction drifted");
 assert.match(runtime,/Historical approved Roman form, stored locally for complete offline prayer/,"Holy Name offline donor introduction drifted");
 assert.doesNotMatch(runtime,/Traditional · source-locked · offline|A source-locked treasury|are source-locked historical forms/,"Traditional PRAY leaked pipeline source-lock wording into the UI");
 assert.match(runtime,/ao-ui-back/,"Traditional PRAY Back control is not using the canonical utility asset");
