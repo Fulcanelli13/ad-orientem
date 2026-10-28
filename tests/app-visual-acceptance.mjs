@@ -1352,13 +1352,18 @@ try{
          "Secondary options cannot be opened from the finished prayer card");
        await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").click();
       const rowGeometry=await page.evaluate(()=>{
-        const row=document.querySelector("#aoPray435930 .aoTP381PrayerList button");
-        const title=row?.querySelector("b")?.getBoundingClientRect();
-        const note=row?.querySelector("small")?.getBoundingClientRect();
-        return title&&note?{titleBottom:title.bottom,noteTop:note.top,titleRight:title.right,noteLeft:note.left}:null;
+        const rows=[...document.querySelectorAll("#aoPray435930 .aoDailyPrayerCatalog .aoDailyCatalogRows button")];
+        const visible=rows.filter(row=>row.getClientRects().length>0);
+        const titlesPresent=visible.length>0&&visible.every(row=>Boolean(row.querySelector("b")?.textContent?.trim()));
+        const subtitlesSeparate=visible.every(row=>{
+          const title=row.querySelector("b"),note=row.querySelector("small");
+          // Named prayers do not require a subtitle. When supplied, keep it below the title.
+          return !note||!title||note.getBoundingClientRect().top>=title.getBoundingClientRect().bottom+2;
+        });
+        return {count:visible.length,titlesPresent,subtitlesSeparate};
       });
-      assert.ok(rowGeometry&&rowGeometry.noteTop>=rowGeometry.titleBottom+2,
-        "Morning/Evening prayer-row subtitle overlaps the title instead of occupying its donor second line");
+      assert.ok(rowGeometry.count>0&&rowGeometry.titlesPresent&&rowGeometry.subtitlesSeparate,
+        "Morning/Evening named prayer catalog lost readable titles or overlaps source subtitles");
     }
     await shot(name);
   }
