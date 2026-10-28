@@ -39,6 +39,35 @@ function originalRows(proper,slot){
  * An approved source with two plural placeholders is allowed; authenticated
  * distinct named saints no longer matching the Latin pattern are untouched.
  */
+// Resolve an oration's owner through the *actual* 1962 Calendar source
+// declaration when the host Proper flattener drops individual row.sourcePath.
+// Never infer ownership solely from a date or position: accept index mapping
+// only with exact prayer row count, attested Calendar sources and no
+// multi-oration one-conclusion composition whose rows have different owners.
+function exactOrationRowOwner(proper,rows,index){
+  const row=rows[index];
+  if(!row)return null;
+  if(row.sourcePath)return String(row.sourcePath)
+    .replace(/:(?:Oratio|Secreta|Postcommunio)$/iu,"")
+    .replace(/\.txt$/iu,"");
+  const base=String(proper?.sourcePath??"").replace(/\.txt$/iu,"");
+  if(!base)return null;
+  const decision=proper?.commemorationFormDecision;
+  const applied=decision?.status==="CERTIFIED"&&
+    decision?.source==="1962_PROPER_RESOLVER"&&
+    Array.isArray(proper?.appliedCommemorations)&&
+    decision.appliedCount===proper.appliedCommemorations.length
+      ?proper.appliedCommemorations:null;
+  const listed=(applied??proper?.calendarCommemorations??[])
+    .filter(x=>x&&!x.inseparable);
+  if(rows.length!==listed.length+1||
+    rows.some(x=>x?.oneConclusion))return null;
+  const owner=index===0?base:
+    String(listed[index-1]?.prayerSourcePath??listed[index-1]?.path??"");
+  return owner.replace(/:(?:Oratio|Secreta|Postcommunio)$/iu,"")
+    .replace(/\.txt$/iu,"")||null;
+}
+
 export function inspect1962PluralMartyrsFrenchOrationSource(proper,slot){
   const path=String(proper?.sourcePath??"").replace(/\.txt$/iu,"");
   const rows=originalRows(proper,slot);
@@ -47,7 +76,7 @@ export function inspect1962PluralMartyrsFrenchOrationSource(proper,slot){
   // the calendar date matches another Mass.
   if(slot==="COLLECT_SET"||slot==="SECRET_SET"){
     for(const [index,row] of rows.entries()){
-      const rowPath=String(row?.sourcePath??path).replace(/:(?:Oratio|Secreta)$/iu,"");
+      const rowPath=exactOrationRowOwner(proper,rows,index);
       if(rowPath!==PERPETUA_FELICITY)continue;
       const latin=String(row?.lat??row?.la??"");
       const french=String(row?.fr??"");
