@@ -3,7 +3,8 @@
  * An index heading is not a full witnessed devotional text.
  *
  * The Five Wounds (1857 Raccolta 32) is a stable five-group repetition.
- * The full Precious Blood (1857 Raccolta 35) totals 33 Pater noster.
+ * Full Precious Blood (1857 §35 / 1910 §138): 33 Pater noster, complete
+ * historical closing English witness; period page-image not certified.
  * The short Precious Blood (1857 Raccolta 40) is ON HOLD: a reproduced
  * historical text lists five Pater for all seven mysteries (35 total),
  * despite invoking the 33-Pater chaplet indulgence. Never silently
@@ -43,7 +44,7 @@ export const HISTORICAL_CHAPLET_SOURCE_CANDIDATES_V1=Object.freeze([
    title:"Chaplet of the Precious Blood — seven mysteries",
    sourceWork:"The Raccolta (1857)",historicalEntry:35,
    sourceUrls:Object.freeze([
-     "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Index",
+     "https://www.saintsbooks.net/books/The%20Raccolta%20-%201910.pdf",
      "https://www.liturgialatina.org/raccolta/blood.htm"
    ]),
    structureStatus:"SEVEN_MYSTERIES_SOURCE_SUPPORTED",
@@ -59,11 +60,13 @@ export const HISTORICAL_CHAPLET_SOURCE_CANDIDATES_V1=Object.freeze([
    repeatedPrayerIds:Object.freeze({pater:"foundations_our_father",gloria:"foundations_glory_be"}),
    interMysteryVersicle:"Te ergo quaesumus tuis famulis subveni, quos pretioso Sanguine redemisti.",
    openingVersicle:"Deus in adjutorium meum intende.",
-   closingPrayer:"MOST_PRECIOUS_BLOOD_PRAYER_HISTORICAL_TEXT_NOT_YET_COLLATED",
+   closingPrayer:"historical:precious_blood_most_precious_blood_1910_en",
+   historicalIndulgencesCurrent:false,originalPrintScanCertified:false,
    displayGroup:"passion",existingCanonicalTextsOnly:false,
-   sourceTextStatus:"STRUCTURE_ATTESTED_CLOSING_PRAYER_REQUIRES_EXACT_TEXT",
-   releaseStatus:"HOLD_COMPLETE_TEXT_AND_PRINT_COLLATION",
-   userFacing:false
+   interpretation:"Seven complete historical English mystery meditations optional; canonical Our Father and Glory Be in their verified existing languages. English period closing prayer is never silently translated.",
+   sourceTextStatus:"1910_ENG_TRANSCRIPT_CROSSWITNESSED_1857_NOT_IMAGE_CERTIFIED",
+   releaseStatus:"PUBLISHED_GUIDED_FULL_FORM_TEXTUAL_WITNESSES",
+   userFacing:true
  }),
  Object.freeze({
    id:"raccolta_1857_precious_blood_short",

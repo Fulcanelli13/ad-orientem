@@ -1,6 +1,7 @@
 import "./confession-path-styles.js";
 import "./stations-direct-access-styles.js";
 import "./five-wounds-chaplet-styles.js";
+import "./precious-blood-chaplet-styles.js";
 import "./first-monthly-direct-prayers-styles.js";
 import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS, CONFESSION_HISTORICAL_SOURCE_POLICY } from "./confession-paths.js";
 import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
@@ -13,6 +14,7 @@ import {updateDevotionalProgress,devotionalProgressMarkup} from "./devotional-pr
 import {angelusCommunalParts} from "./angelus-folio-recitation.js";
 import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-owner.js";
 import {FIVE_WOUNDS_SOURCE_V1,FIVE_WOUNDS_WOUNDS_V1,FIVE_WOUNDS_CHAPLET_V1,fiveWoundsStep,fiveWoundsGroupProgress} from "./five-wounds-chaplet.v1.js";
+import {PRECIOUS_BLOOD_HISTORICAL_SOURCE_V1,PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1,PRECIOUS_BLOOD_MYSTERIES_V1,PRECIOUS_BLOOD_TOTALS_V1,preciousBloodMystery,preciousBloodPrayerAt} from "./precious-blood-chaplet.v1.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
 import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
 import {monthlyDevotionalRegister} from "./quiet-devotional-progression.js";
@@ -243,6 +245,7 @@ let S=load();
 let view='home',familyId=null,returnContext=null,returnFocus=null,navStack=[],externalResume=null,rosaryDonorReturnSnapshot=null,lastRenderSignature='';
 let MERCY={step:0,includeClosing:false,guide:'guided',optionsOpen:false};
 let FIVE_WOUNDS={index:0,latin:false};
+let PRECIOUS_BLOOD={phase:0,bead:0,latin:false,showMeditation:false};
 let ROSARY_FIFTEEN={active:false};
 // Only a source-launched exact Rosary object owns this temporary return receipt.
 let rosaryScriptureReturn=null;
@@ -615,7 +618,8 @@ function prayFamilies(){
     ['own','pray.rosary',L('The Holy Rosary','Le Saint Rosaire'),L('Pray the five decades with today’s mysteries.','Priez les cinq dizaines avec les mystères du jour.')],
     ['own','pray.rosary_methods',L('Ways to pray the Rosary','Manières de prier le Rosaire'),L('Dominican, Montfort or Scripture-linked methods.','Méthodes dominicaine, de Montfort ou avec les Écritures.')],
     ['own','pray.divine_mercy',L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('A distinct five-decade chaplet with its own prayers.','Un chapelet distinct de cinq dizaines avec ses propres prières.')],
-    ['own','pray.five_wounds',L('Chaplet of the Five Wounds','Chapelet des Cinq Plaies'),L('Five short meditations · Glory Be and Hail Mary.','Cinq courtes méditations · Gloria Patri et Ave Maria.')]
+    ['own','pray.five_wounds',L('Chaplet of the Five Wounds','Chapelet des Cinq Plaies'),L('Five short meditations · Glory Be and Hail Mary.','Cinq courtes méditations · Gloria Patri et Ave Maria.')],
+    ['own','pray.precious_blood',L('Chaplet of the Precious Blood','Chapelet du Précieux Sang'),L('Seven mysteries · thirty-three Our Fathers.','Sept mystères · trente-trois Notre Père.')]
    ])
   }),
   eucharistic:Object.freeze({
@@ -2035,7 +2039,7 @@ function reopenResume(snapshot){
  const r=shell();r.classList.add('open');r.setAttribute('aria-hidden','false');document.body.classList.add('aoP435930Open');render();
  queueMicrotask(()=>r.querySelector('button,[href],input,[tabindex]:not([tabindex="-1"])')?.focus?.());return true
 }
-function navigationSignature(){return [view,MERCY.step,MERCY.includeClosing,MERCY.guide,FIVE_WOUNDS.index,FIVE_WOUNDS.latin,TEN.day,TEN.hour,TEN.step,TEN.face,familyId||'',CONF.stage,CONF.path||'',CONF.examStep,CONF.riteStep,CONF.afterStep,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
+function navigationSignature(){return [view,MERCY.step,MERCY.includeClosing,MERCY.guide,FIVE_WOUNDS.index,FIVE_WOUNDS.latin,PRECIOUS_BLOOD.phase,PRECIOUS_BLOOD.bead,PRECIOUS_BLOOD.latin,TEN.day,TEN.hour,TEN.step,TEN.face,familyId||'',CONF.stage,CONF.path||'',CONF.examStep,CONF.riteStep,CONF.afterStep,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
 function focusables(){const r=document.getElementById(ROOT_ID);if(!r?.classList.contains('open'))return [];return [...r.querySelectorAll('button:not([disabled]),[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(el=>el.offsetParent!==null&&!el.hidden)}
 
 
@@ -2431,6 +2435,98 @@ function renderTenebrae(){
   renderTenebraeBody({day:TEN.day,hour:TEN.hour,index:TEN.step,face:TEN.face,
    french:isFr(),data:TEN.model,loading:TEN.loading,error:TEN.error,guided:TEN.guided,ceremony:TEN.ceremony});
 }
+/**
+ * Historical full Precious Blood (Raccolta 1857 §35 / 1910 §138).
+ * Nine discreet cards: opening, seven sheddings, concluding prayer/collect.
+ * The optional long English meditation is not silently translated.
+ * This is not the contradictory 35-Pater short form or a modern variant.
+ */
+function renderPreciousBlood(){
+ const s=PRECIOUS_BLOOD;
+ s.phase=Math.max(0,Math.min(8,s.phase));
+ const fr=isFr(),appLang=s.latin?"la":(fr?"fr":"en");
+ const hist=PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1;
+ const common=DATA.prayers;
+ const source=PRECIOUS_BLOOD_HISTORICAL_SOURCE_V1;
+ const name=L("Chaplet of the Precious Blood","Chapelet du Précieux Sang");
+ const latin='<button type="button" data-p435930-blood-latin aria-pressed="'+String(s.latin)+'">'+
+  esc(s.latin?L("EN / FR","EN / FR"):L("LATIN","LATIN"))+'</button>';
+ const steps=PRECIOUS_BLOOD_MYSTERIES_V1.map((m,i)=>
+  '<button type="button" data-p435930-blood-mystery="'+i+'" '+
+   (s.phase===i+1?'aria-current="step"':'')+' aria-label="'+esc(fr?m.fr:m.en)+'" title="'+esc(fr?m.fr:m.en)+'">'+
+   '<span aria-hidden="true">'+String(i+1)+'</span></button>').join('');
+ const nav='<nav class="aoPreciousBloodRail" aria-label="'+esc(L("Seven mysteries","Sept mystères"))+'">'+steps+'</nav>';
+ let contents='';
+ if(s.phase===0){
+  const v=s.latin||fr?hist.opening.la:hist.opening.en;
+  const vLang=s.latin||fr?'la':'en';
+  const gloria=common.foundations_glory_be?.[appLang]||'';
+  contents='<header><small>'+esc(L("PREPARATION","PRÉPARATION"))+'</small><h2>'+esc(L("Opening prayers","Prières initiales"))+'</h2></header>'+
+   '<article class="aoPreciousBloodCard"><p lang="'+vLang+'">'+esc('℣. '+v[0])+'</p><p lang="'+vLang+'">'+esc('℟. '+v[1])+
+   '</p><h3>'+esc(L("Glory Be","Gloire au Père"))+'</h3><p lang="'+appLang+'">'+nl(gloria)+'</p></article>';
+ }else if(s.phase<=7){
+  const mystery=preciousBloodMystery(s.phase-1,appLang);
+  const prayer=preciousBloodPrayerAt(s.phase-1,s.bead,appLang);
+  if(!mystery||!prayer)return callout(esc(L("Source prayer unavailable","Prière source indisponible")),"warn");
+  const count=mystery.pater;
+  const kind=prayer.kind;
+  const caption=kind==="pater"
+   ?L("Our Father","Notre Père")+" "+prayer.repeatNumber+" / "+count
+   :kind==="gloria"?L("Glory Be","Gloire au Père"):L("Historical response","Répons historique");
+  const hasEngMeditation=Boolean(mystery.meditationEn);
+  const meditation=hasEngMeditation?'<details class="aoPreciousBloodMeditation" '+(s.showMeditation?'open':'')+
+   '><summary>'+esc(L("Read the 1910 meditation (historical English)","Méditation de 1910 (anglais historique)"))+
+   '</summary><p lang="en">'+esc(mystery.meditationEn)+'</p></details>':'';
+  const prayerNote=kind==='versicle'
+   ?'<small class="aoPreciousBloodLang">'+esc(prayer.language==='la'?L("Original Latin","Latin original"):L("Historical English","Anglais historique"))+'</small>':'';
+  contents='<header><small>'+esc(L("MYSTERY","MYSTÈRE"))+' '+s.phase+' / 7</small>'+
+   '<h2>'+esc(mystery.title)+'</h2><p>'+esc(L("Five Our Fathers for the first six mysteries; three for the seventh.","Cinq Notre Père pour les six premiers mystères ; trois pour le dernier."))+'</p></header>'+
+   meditation+
+   '<article class="aoPreciousBloodCard" aria-label="'+esc(caption)+'">'+
+   '<div class="aoPreciousBloodPrayerHead"><h3>'+esc(caption)+'</h3>'+prayerNote+'</div>'+
+   '<p lang="'+prayer.language+'">'+nl(prayer.text)+'</p>'+
+   '</article>'+
+   '<div class="aoPreciousBloodBeads">'+Array.from({length:count+2},(_,i)=>
+    '<span class="'+(i===s.bead?'current ':'')+(i===count?'gloria ':i===count+1?'response ':'')+
+    '" title="'+esc(i<count?L("Our Father","Notre Père")+" "+(i+1):i===count?L("Glory Be","Gloire au Père"):L("Response","Répons"))+'"></span>').join('')+'</div>';
+ }else{
+  const closingEng=hist.closingBloodPrayerEn;
+  const verse=s.latin||fr?hist.finalVersicle.la:hist.finalVersicle.en;
+  const vLang=s.latin||fr?'la':'en';
+  const collect=s.latin||fr?hist.collect.la:hist.collect.en;
+  contents='<header><small>'+esc(L("CONCLUSION","CONCLUSION"))+'</small><h2>'+
+  esc(L("Prayer to the Precious Blood","Prière au Précieux Sang"))+'</h2></header>'+
+  '<article class="aoPreciousBloodCard aoPreciousBloodClosing">'+
+  '<small class="aoPreciousBloodLang">'+esc(L("1910 historical English witness","Témoin historique anglais de 1910"))+'</small>'+
+  '<p lang="en">'+nl(closingEng)+'</p>'+
+  '<div class="aoPreciousBloodDivider"></div><p lang="'+vLang+'">'+esc("℣. "+verse[0])+'</p>'+
+  '<p lang="'+vLang+'">'+esc("℟. "+verse[1])+'</p>'+
+  '<h3>'+esc(L("Let us pray","Prions"))+'</h3>'+
+  '<p lang="'+vLang+'">'+nl(collect)+'</p>'+
+  '<small>'+esc(L("The 1910 printed source abbreviates the usual closing doxology with 'etc.'; no unsourced expansion is supplied.",
+  "Le témoin de 1910 abrège la doxologie finale par « etc. » ; aucune expansion non sourcée n’est ajoutée."))+'</small>'+
+  '</article>';
+ }
+ const finish=s.phase===8;
+ const previous=s.phase>0||s.bead>0?
+   '<button type="button" data-p435930-blood-prev>'+esc(L("Previous","Précédent"))+'</button>':'';
+ const next='<button type="button" class="primary" '+(finish?'data-p435930-blood-finish':'data-p435930-blood-next')+'>'+
+ esc(finish?L("Finish chaplet","Terminer le chapelet"):L("Continue","Continuer"))+'</button>';
+ const history='<details class="aoPreciousBloodProvenance"><summary>'+esc(L("Historical form & sources","Forme et sources historiques"))+'</summary>'+
+ '<p>'+esc(L("The full 1857 Raccolta §35 and 1910 §138 agree on thirty-three Our Fathers across seven mysteries. The contradictory short-form transcription is withheld.",
+ "La Raccolta (1857, § 35 ; 1910, § 138) prescrit trente-trois Notre Père pour sept mystères. La transcription abrégée contradictoire n’est pas utilisée."))+'</p>'+
+ '<p>'+esc(L("Original page-image collation is not certified. Former indulgence grants are not asserted as current.",
+ "La vérification sur image originale n’est pas certifiée. Les anciennes indulgences ne sont pas présentées comme actuelles."))+'</p>'+
+ source.works.map(x=>'<a target="_blank" rel="noopener noreferrer" href="'+esc(x.url)+'">'+
+ esc("Raccolta · "+x.edition+" · §"+x.entry)+'</a>').join('')+'</details>';
+ return head(name,L("Seven sheddings · thirty-three Our Fathers","Sept effusions · trente-trois Notre Père"))+
+ '<main class="aoP435930Body aoPreciousBlood" data-ao-precious-blood-reader>'+
+ '<div class="aoPreciousBloodTop"><span>'+esc(L("Step","Étape"))+' '+(s.phase+1)+' / 9</span>'+latin+'</div>'+
+ nav+'<div class="aoPreciousBloodProgress" role="progressbar" aria-valuemin="0" aria-valuemax="9" aria-valuenow="'+
+ (s.phase+1)+'" aria-label="'+esc(L("Devotion progress","Progression"))+'"><span style="width:'+
+ Math.round((s.phase+1)/9*100)+'%"></span></div>'+
+ contents+'<footer class="aoPreciousBloodActions">'+previous+next+'</footer>'+history+'</main>';
+}
 function renderFiveWounds(){
  const index=Math.max(0,Math.min(29,FIVE_WOUNDS.index));FIVE_WOUNDS.index=index;
  const langCode=FIVE_WOUNDS.latin?'la':(isFr()?'fr':'en');
@@ -2576,7 +2672,7 @@ function installLibraryParagraphFocus(m,id){
   if(event.target.closest("[data-p435930-flip]"))queueMicrotask(()=>reader?.focus?.());
  });
 }
-function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='fiveWounds')html=renderFiveWounds();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=(view==='adoration'&&ADOR.quiet?'':semanticRails())+(homeNavigationError
+function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='fiveWounds')html=renderFiveWounds();else if(view==='preciousBlood')html=renderPreciousBlood();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=(view==='adoration'&&ADOR.quiet?'':semanticRails())+(homeNavigationError
  ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});
  // Source-owned public rite stages and private Visit arrival are projected,
  // never interpreted as observed acts or additional liturgical requirements.
@@ -2786,6 +2882,7 @@ function routeOwn(id){
  if(next==='angelus'){ANGELUS_CARD_INDEX=0;resetDevotionalCinematicSession({mount:mount(),win:window});}
  if(next==='mercy')MERCY.step=0;
  if(next==='fiveWounds'){FIVE_WOUNDS.index=0;FIVE_WOUNDS.latin=false}
+ if(next==='preciousBlood'){PRECIOUS_BLOOD={phase:0,bead:0,latin:false,showMeditation:false}}
  if(next==='rosaryMethods')ROSARY_CHOOSER.optionsOpen=false;
  if(id==='pray.visit_blessed_sacrament')ADOR.mode='visit';
  if(id==='pray.de_profundis'||id==='pray.eternal_rest'){
@@ -2881,6 +2978,38 @@ function onClick(e){
   const detail=mount()?.querySelector?.('#aoAngelusOptions');
   if(detail){detail.open=!detail.open;angelusOptionsOpen=detail.open;b.setAttribute('aria-expanded',String(detail.open))}
   return;
+ }
+ if(view==='preciousBlood'){
+   if(b.hasAttribute('data-p435930-blood-mystery')){
+     const k=Number(b.dataset.p435930BloodMystery);
+     if(Number.isInteger(k)&&k>=0&&k<7){PRECIOUS_BLOOD.phase=k+1;PRECIOUS_BLOOD.bead=0;return render()}
+     return;
+   }
+   if(b.hasAttribute('data-p435930-blood-latin')){
+     PRECIOUS_BLOOD.latin=!PRECIOUS_BLOOD.latin;return render();
+   }
+   if(b.hasAttribute('data-p435930-blood-prev')){
+     if(PRECIOUS_BLOOD.phase===8){PRECIOUS_BLOOD.phase=7;PRECIOUS_BLOOD.bead=PRECIOUS_BLOOD_MYSTERIES_V1[6].pater+1;return render()}
+     if(PRECIOUS_BLOOD.phase>0&&PRECIOUS_BLOOD.bead===0){
+       PRECIOUS_BLOOD.phase--;
+       PRECIOUS_BLOOD.bead=PRECIOUS_BLOOD.phase>0?PRECIOUS_BLOOD_MYSTERIES_V1[PRECIOUS_BLOOD.phase-1].pater+1:0;
+       return render();
+     }
+     PRECIOUS_BLOOD.bead=Math.max(0,PRECIOUS_BLOOD.bead-1);return render();
+   }
+   if(b.hasAttribute('data-p435930-blood-next')){
+     if(PRECIOUS_BLOOD.phase===0){PRECIOUS_BLOOD.phase=1;PRECIOUS_BLOOD.bead=0;return render()}
+     if(PRECIOUS_BLOOD.phase<8){
+       const m=PRECIOUS_BLOOD_MYSTERIES_V1[PRECIOUS_BLOOD.phase-1];
+       if(PRECIOUS_BLOOD.bead<m.pater+1)PRECIOUS_BLOOD.bead++;
+       else{PRECIOUS_BLOOD.phase++;PRECIOUS_BLOOD.bead=0}
+       return render();
+     }
+   }
+   if(b.hasAttribute('data-p435930-blood-finish')&&PRECIOUS_BLOOD.phase===8){
+     PRECIOUS_BLOOD.phase=0;PRECIOUS_BLOOD.bead=0;PRECIOUS_BLOOD.latin=false;
+     return backToParent();
+   }
  }
  if(view==='fiveWounds'){
    if(b.hasAttribute('data-p435930-five-wound')){
@@ -3282,6 +3411,7 @@ const TARGET={
  'pray.adoration':{id:'pray.adoration',type:'module',domain:'pray',category:'eucharistic',title:'Adoration'},
  'pray.stations':{id:'pray.stations',type:'module',domain:'pray',category:'penance-passion',title:'Stations of the Cross'},
  'pray.five_wounds':{id:'pray.five_wounds',type:'module',domain:'pray',category:'penance-passion',title:'Chaplet of the Five Wounds'},
+ 'pray.precious_blood':{id:'pray.precious_blood',type:'module',domain:'pray',category:'penance-passion',title:'Chaplet of the Precious Blood'},
  'pray.visit_blessed_sacrament':{id:'pray.visit_blessed_sacrament',type:'module',domain:'pray',category:'eucharistic',title:'Visit to the Blessed Sacrament'},
  'pray.library':{id:'pray.library',type:'module',domain:'pray',category:'library',title:'Prayer Library'},
  'pray.penitential_psalms':{id:'pray.penitential_psalms',type:'module',domain:'pray',category:'penance-passion',title:'Seven Penitential Psalms'},

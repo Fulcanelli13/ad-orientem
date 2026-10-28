@@ -50,10 +50,13 @@ assert.equal(historical.userFacing,true);
 assert.equal(historical.originalPrintScanCertified,false);
 assert.equal(historical.derivedCounts.glory_be,25);
 assert.equal(historical.derivedCounts.hail_mary,5);
-for(const id of ["raccolta_1857_precious_blood_full","raccolta_1857_precious_blood_short"]){
- const record=historicalChapletCandidate(id);
- assert.ok(record.releaseStatus.startsWith("HOLD_") && !record.userFacing);
-}
+const bloodFull=historicalChapletCandidate("raccolta_1857_precious_blood_full");
+assert.equal(bloodFull.releaseStatus,"PUBLISHED_GUIDED_FULL_FORM_TEXTUAL_WITNESSES",
+ "The source-reconciled full form may now be independently published");
+assert.equal(bloodFull.userFacing,true);
+const bloodShort=historicalChapletCandidate("raccolta_1857_precious_blood_short");
+assert.ok(bloodShort.releaseStatus.startsWith("HOLD_") && !bloodShort.userFacing,
+ "The contradictory short form must remain excluded");
 const runtime=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
 const style=readFileSync(new URL("../src/pray/five-wounds-chaplet-styles.js",import.meta.url),"utf8");
 assert.ok(runtime.includes('function renderFiveWounds()'));

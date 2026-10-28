@@ -35,7 +35,7 @@ const start=familySource.indexOf("chaplets:Object.freeze(");
 const end=familySource.indexOf("eucharistic:Object.freeze(",start);
 assert.ok(start>=0&&end>start,"New Rosary & Chaplets family missing");
 const additional=[...familySource.slice(start,end).matchAll(/\['own','([^']+)'/g)].map(x=>x[1]);
-assert.deepEqual(additional,["pray.rosary","pray.rosary_methods","pray.divine_mercy","pray.five_wounds"]);
+assert.deepEqual(additional,["pray.rosary","pray.rosary_methods","pray.divine_mercy","pray.five_wounds","pray.precious_blood"]);
 const originalFamily=familySource.slice(0,start)+familySource.slice(end);
 const srcPray=[...originalFamily.matchAll(/\['(?:own|external)','([^']+)'/g)].map(x=>x[1]);
 assert.equal(srcPray.length,23,"Prayer runtime source family count changed unexpectedly: 22 historical + Tenebrae");

@@ -6,6 +6,7 @@ export const INTERNAL_PRAYER_VIEWS=Object.freeze({
   "pray.angelus_regina":"angelus",
   "pray.divine_mercy":"mercy",
   "pray.five_wounds":"fiveWounds",
+  "pray.precious_blood":"preciousBlood",
   "pray.rosary_methods":"rosaryMethods",
   "pray.confession":"confession",
   "pray.benediction":"benediction",
