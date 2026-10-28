@@ -36,21 +36,21 @@ export const MONTFORT_B26_PHASES=Object.freeze([
   emphasisFr:"Demander la connaissance de soi, l’humilité et la contrition.",
   sourceSection:"§228",dailyDirectionEn:"Litany of the Holy Spirit with its prayer; Ave Maris Stella; Litany of the Blessed Virgin (Loreto). These are Montfort’s week-one directions, not a separately authored prayer for each day.",
   dailyDirectionFr:"Litanies du Saint-Esprit et oraison ; Ave Maris Stella ; litanies de la Sainte Vierge (Lorette). Ce sont les prescriptions de la première semaine, non des prières différentes chaque jour.",
-  sources:["§228"],canonicalIds:["sacrament_come_holy_spirit","litany_loreto_1962"]}),
+  sources:["§228"],canonicalIds:["litany_loreto_1962"]}),
  Object.freeze({id:"mary",first:20,last:26,
   titleEn:"Knowledge of Mary",titleFr:"Connaissance de Marie",
   emphasisEn:"Seek to know the Blessed Virgin better through prayer and meditation.",
   emphasisFr:"Chercher à mieux connaître la Sainte Vierge par la prière et la méditation.",
   sourceSection:"§229",dailyDirectionEn:"Litany of the Holy Spirit, Ave Maris Stella, and at least five decades of the Rosary each day.",
   dailyDirectionFr:"Litanies du Saint-Esprit, Ave Maris Stella et au moins cinq dizaines du Rosaire chaque jour.",
-  sources:["§229"],canonicalIds:["sacrament_come_holy_spirit"],ownRosary:true}),
+  sources:["§229"],canonicalIds:[],ownRosary:true}),
  Object.freeze({id:"jesus",first:27,last:33,
   titleEn:"Knowledge of Jesus Christ",titleFr:"Connaissance de Jésus-Christ",
   emphasisEn:"Meditate on the Lord Jesus Christ and seek to know Him more intimately.",
   emphasisFr:"Méditer sur Notre-Seigneur Jésus-Christ et chercher à le connaître davantage.",
   sourceSection:"§230",dailyDirectionEn:"Litany of the Holy Spirit and Ave Maris Stella daily, adding the Litany of the Holy Name of Jesus. Montfort also recommends the prayer of St Augustine.",
   dailyDirectionFr:"Litanies du Saint-Esprit et Ave Maris Stella chaque jour, ainsi que les litanies du Saint Nom de Jésus. Montfort recommande aussi la prière de saint Augustin.",
-  sources:["§230"],canonicalIds:["sacrament_come_holy_spirit"]})
+  sources:["§230"],canonicalIds:[]})
 ]);
 export const MONTFORT_B26_AVE_MARIS_LATIN=Object.freeze([
 "Ave, maris stella,\nDei Mater alma,\nAtque semper Virgo,\nFelix caeli porta.",
