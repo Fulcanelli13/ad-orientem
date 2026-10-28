@@ -63,6 +63,22 @@ assert.deepEqual({keep:count("keep"),reject:count("reject"),photo:count("better-
 assert.equal(r.totals.locked_primary_paintings,22);
 assert.equal(r.totals.masters_archived,20);
 assert.equal(r.totals.masters_missing,2);
+const parallel=read("assets/staged/prayer-art-bulk-acquisition-b2b-20261028/parallel-results.json");
+assert.equal(parallel.attempted,6);
+assert.equal(parallel.summary.ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING,6);
+assert.equal(parallel.production_releases,0);
+assert.equal(parallel.pristine_certifications,0);
+for(const entry of parallel.cases){
+ assert.equal(entry.status,"ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING");
+ assert.equal(entry.pristine_publication_approved,false);
+ const buffer=readFileSync(entry.native_archive.path);
+ assert.equal(createHash("sha256").update(buffer).digest("hex"),entry.native_archive.sha256,
+  "B2b exact full original drift "+entry.id);
+ assert.ok(entry.native_archive.pixels.every(x=>x>=1000),"Below accepted candidate pixel floor "+entry.id);
+}
+assert.equal(r.batch_execution.B1_IMAGE_ACQUISITION.phase2_parallel_recovery.source_originals_archived,6);
+assert.equal(r.batch_execution.B1_IMAGE_ACQUISITION.previously_open_photo_placements_with_archived_candidate,8);
+assert.equal(r.totals.batch2_new_original_photographs_archived,7);
 assert.equal(r.totals.pristine_publication_ready,0);
 assert.equal(r.totals.production_activated,0);
 assert.equal(r.totals.request_better_photo,13);
