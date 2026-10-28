@@ -16,15 +16,17 @@ function rows(prefix,values,sourceIds=[]){
   return freeze((values??[]).map((v,i)=>textRow(prefix+String(i+1),v,"TEXT",sourceIds)));
 }
 function prayerRows(prefix,intention,prayer){
-  // K/R state records own only their respective spoken formulas, not
-  // the intention, Oremus or entire following collect. Both records share
-  // one visible card; its exact cue identities remain independently usable.
+  // 1962 Vatican Missale Romanum printed p. 167, rubric 14: "Celebrans
+  // dicit Oremus, Flectamus genua ... dicit Levate ... dicit orationem".
+  // Spoken liturgical rows are celebrant-owned, not congregational replies.
+  // The shared K/R graph alone owns the faithful's kneel/rise posture.
+  // Preserve the original prayer wording and exact source event IDs.
   return freeze([
-    textRow(prefix+"-I",intention,"TEXT"),
-    textRow(prefix+"-O","Oremus.","VERSICLE"),
-    textRow(prefix+"-K","Flectamus genua.","VERSICLE",[prefix+"-K"]),
-    textRow(prefix+"-R","Levate.","RESPONSE",[prefix+"-R"]),
-    textRow(prefix+"-P",prayer,"TEXT"),
+    textRow(prefix+"-I",intention,"TEXT",[],"CELEBRANT"),
+    textRow(prefix+"-O","Oremus.","VERSICLE",[],"CELEBRANT"),
+    textRow(prefix+"-K","Flectamus genua.","VERSICLE",[prefix+"-K"],"CELEBRANT"),
+    textRow(prefix+"-R","Levate.","VERSICLE",[prefix+"-R"],"CELEBRANT"),
+    textRow(prefix+"-P",prayer,"TEXT",[],"CELEBRANT"),
   ]);
 }
 function recordMap(graph){return new Map(graph.map(x=>[x.id,x]))}
@@ -114,7 +116,7 @@ function surfaceFor(record,payload,jewishPrayerVariant){
   });
   if(id==="GF-SOP-410")return freeze({
     key:"SOLEMN_PRAYERS_BEGIN",title:"The Solemn Prayers",
-    paragraphs:freeze([textRow("GF-SOP-BEGIN","Oremus.","VERSICLE",["GF-SOP-410"])])
+    paragraphs:freeze([textRow("GF-SOP-BEGIN","Oremus.","VERSICLE",["GF-SOP-410"],"CELEBRANT")])
   });
   const sop=id.match(/^GF-SOP-(\d\d)-[KR]$/);
   if(sop){
