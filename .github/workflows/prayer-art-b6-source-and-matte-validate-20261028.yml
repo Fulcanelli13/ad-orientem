@@ -1,0 +1,27 @@
+name: Prayer Sacred Art B6 - exact source and Lotto matte integrity
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/prayer-art-b6-source-and-matte-validate-20261028.yml
+      - scripts/art/validate-prayer-art-b6-sources-and-lotto-20261028.mjs
+      - data/research/prayer-sacred-art-pristine-master-registry-20261028.v1.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-twelve-sources-and-full-arch-with-no-publication:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Enforce 12 source fingerprints and unchanged selected arch
+        run: |
+          node --check scripts/art/validate-prayer-art-b6-sources-and-lotto-20261028.mjs
+          node scripts/art/validate-prayer-art-b6-sources-and-lotto-20261028.mjs
