@@ -107,6 +107,20 @@ assert.equal(m[0].placement_key,"sacred-heart::heart-jesus--primary");
 assert.equal(r.editorial_exceptions.separate_22_final_primary_approvals_unmodified,true);
 assert.equal(visual.summary.released_to_app,0);
 assert.equal(native.scope.app_images_released,0);
+const intake=read("assets/staged/prayer-art-bulk-acquisition-b2-20261028/intake-results.json");
+assert.equal(intake.attempted,14);
+assert.equal(intake.original_native_sources_archived,1);
+assert.equal(intake.production_releases,0);
+assert.equal(intake.pristine_photo_final_certifications,0);
+const carracci=intake.cases.find(x=>x.case_id==="carracci-burial-met");
+assert.equal(carracci.status,"RESEARCH_SOURCE_ARCHIVED_NOT_PRISTINE");
+assert.deepEqual([carracci.native_archive.width,carracci.native_archive.height],[3122,3875]);
+const carracciRaw=readFileSync(carracci.native_archive.path);
+assert.equal(createHash("sha256").update(carracciRaw).digest("hex"),carracci.native_archive.sha256);
+assert.equal(r.batch_execution.B1_IMAGE_ACQUISITION.archive_new_source_master.original_is_pristine,false);
+assert.equal(r.batch_execution.B1_IMAGE_ACQUISITION.archive_new_source_master.master_sha256,
+ carracci.native_archive.sha256);
+assert.equal(r.totals.pristine_publication_ready,0);
 assert.equal(r.evidence_sources.length,6);
 assert.ok(r.evidence_sources.every(x=>x.git_blob_sha?.length===40));
 console.log(JSON.stringify({
