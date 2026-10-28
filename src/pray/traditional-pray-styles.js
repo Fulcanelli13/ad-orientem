@@ -172,6 +172,32 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
  font:600 .79rem/1.5 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.014em;
  color:#e9d3a8;padding:8px 4px;
 }
+/* Source rule is visible without opening secondary panels or scrolling
+   beyond the final prayer. The disclosure stays small when collapsed. */
+#aoPray435930 .aoTP381DonorBody>.aoDailyPersonalSettings{
+ box-sizing:border-box;width:min(calc(100% - 16px),660px);max-width:660px;
+ margin:2px auto 7px;padding:0 6px;
+ background:rgba(15,24,33,.34);border-color:rgba(215,188,146,.15);
+}
+#aoPray435930 .aoTP381DonorBody>.aoDailyPersonalSettings>summary{
+ display:flex;align-items:center;justify-content:space-between;
+ gap:6px;min-height:44px;padding:5px 8px;list-style:none;
+}
+#aoPray435930 .aoTP381DonorBody>.aoDailyPersonalSettings>summary::-webkit-details-marker{display:none}
+#aoPray435930 .aoDailyPersonalSettingsLabel{
+ flex:0 0 auto;color:#e4cda5;font:600 .75rem/1.3 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPray435930 .aoDailyPersonalSettingsCurrent{
+ min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+ color:#b1b6bc;font:400 .66rem/1.3 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPray435930 .aoTP381DonorBody>.aoDailyPersonalSettings[open]{
+ border-color:rgba(215,188,146,.28);
+ background:rgba(15,24,33,.9);
+}
+#aoPray435930 .aoTP381DonorBody>.aoDailyPersonalSettings>summary:focus-visible{
+ outline:2px solid #dbb983;outline-offset:2px;
+}
 #aoPray435930 .aoDailyPersonalSettingsBody{display:grid;gap:13px;padding:13px 0 7px;max-height:55dvh;overflow-y:auto;overscroll-behavior:contain}
 #aoPray435930 .aoDailyPersonalGroup{display:grid;gap:9px;padding:10px 0;border-bottom:1px solid rgba(215,188,146,.12)}
 #aoPray435930 .aoDailyPersonalGroup>strong{font:600 .83rem/1.3 var(--ao-font-ui,system-ui,sans-serif);color:#f0e3c8}
