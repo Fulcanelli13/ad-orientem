@@ -123,12 +123,15 @@ export function renderOfficeMassStyleResearchReader({
   latin,translation,locale="en",
   availableHours=OFFICE_HOURS.map(x=>x[0]),
   availableDates=[latin?.date],
+  availableLocales=["en","fr"],
 }={}){
   const {cards,context}=projectOfficeMassStyleCards({latin,translation,locale});
   if(!Array.isArray(availableHours)||!availableHours.includes(context.hour)||
     availableHours.some(h=>!OFFICE_HOURS.some(x=>x[0]===h))||
     !Array.isArray(availableDates)||!availableDates.includes(context.date)||
-    availableDates.some(d=>typeof d!=="string"||!/^\d{4}-\d{2}-\d{2}$/.test(d)))
+    availableDates.some(d=>typeof d!=="string"||!/^\d{4}-\d{2}-\d{2}$/.test(d))||
+    !Array.isArray(availableLocales)||!availableLocales.includes(locale)||
+    availableLocales.some(l=>!["en","fr"].includes(l)))
     throw Error("OFFICE_MASS_RESEARCH_NAV_CONTEXT_INVALID");
   const h=headName(context.hour,locale);
   const first=cards[0];
@@ -159,8 +162,10 @@ export function renderOfficeMassStyleResearchReader({
         '<button type="button" data-office-mode-select="LIVE" aria-pressed="true">LIVE</button>'+
         '<button type="button" data-office-mode-select="MISSAL" aria-pressed="false">MISSAL</button></div>'+
       '<div class="aoOfficeLocaleControls" role="group" aria-label="Translation">'+
-        '<a href="'+slug(context.date,context.hour,"en")+'"'+(locale==="en"?' aria-current="page"':'')+'>EN</a>'+
-        '<a href="'+slug(context.date,context.hour,"fr")+'"'+(locale==="fr"?' aria-current="page"':'')+'>FR</a></div>'+
+        availableLocales.map(l=>'<a href="'+slug(context.date,context.hour,l)+'"'+
+          (locale===l?' aria-current="page"':'')+'>'+l.toUpperCase()+'</a>').join("")+
+        (availableLocales.includes("fr")?"":'<span class="aoOfficeLocaleUnavailable" aria-disabled="true" title="French source incomplete">FR incomplete</span>')+
+        '</div>'+
       '<div class="aoOfficeDateChoice" aria-label="'+esc(lo("Pilot dates","Dates de recherche",locale))+'">'+
       availableDates.map(d=>'<a href="'+slug(d,context.hour,locale)+'"'+
         (d===context.date?' aria-current="page"':'')+'>'+d+'</a>').join("")+'</div>'+
