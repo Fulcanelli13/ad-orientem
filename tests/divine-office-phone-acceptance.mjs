@@ -101,6 +101,32 @@ try{
       assert.ok(nav.height>=44&&nav.width>=44,file+" navigation hit target under 44px: "+JSON.stringify(nav));
     }
     const root=page.locator(".aoOfficeMassReader");
+    if(bucket==="syntax"&&file==="2026-11-02-prime-fr.html"){
+      const reading=root.locator('[data-office-source-part="MARTYROLOGY_READING"]');
+      const prayer=root.locator('[data-office-source-part="POST_MARTYROLOGY_PRAYER"]');
+      assert.equal(await reading.count(),1,file+" missing Martyrology source part");
+      assert.equal(await prayer.count(),1,file+" missing post-reading prayer");
+      const readingIndex=Number(await reading.getAttribute("data-office-card"));
+      assert.equal(Number(await prayer.getAttribute("data-office-card")),readingIndex+1);
+      assert.equal(await reading.getAttribute("data-source-cell-la"),"Prima5");
+      assert.equal(await prayer.getAttribute("data-source-cell-la"),"Prima5");
+      assert.equal(await reading.locator("[data-office-omit-martyrology]").count(),1);
+      await root.locator('[data-office-jump="'+readingIndex+'"]').click();
+      const omit=root.locator('.aoOfficeMassCard:not([hidden]) [data-office-omit-martyrology]');
+      assert.ok((await omit.getAttribute("aria-label")).includes("Hors du chœur"));
+      const hit=await omit.boundingBox();
+      assert.ok(hit.height>=44,file+" omit button below 44px");
+      await omit.click();
+      assert.equal(await root.getAttribute("data-office-card-index"),String(readingIndex+1),
+        file+" skipping Martyrology did not reach the following prayer");
+      assert.equal(await prayer.isVisible(),true,file+" following prayer hidden");
+      const post=await prayer.locator(".aoOfficeLatinLines").innerText();
+      assert.ok(/Deus,?\s+véniæ/i.test(post),file+" mandatory following prayer lost");
+      assert.equal(await prayer.locator("[data-office-omit-martyrology]").count(),0);
+      await root.locator('[data-office-nav="-1"]').click();
+      assert.equal(await reading.isVisible(),true,file+" Martyrology not retrievable");
+      await root.locator('[data-office-jump="0"]').click();
+    }
     const next=root.locator('[data-office-nav="1"]');
     await next.click();
     assert.equal(await root.getAttribute("data-office-card-index"),"1",file+" next failed");
