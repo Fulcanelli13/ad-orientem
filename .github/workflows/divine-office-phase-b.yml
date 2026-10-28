@@ -56,18 +56,20 @@ jobs:
           git -C "$UPSTREAM" -c protocol.version=2 fetch --no-tags --filter=blob:none --depth=1 origin "$PIN"
           git -C "$UPSTREAM" checkout --detach FETCH_HEAD
           test "$(git -C "$UPSTREAM" rev-parse HEAD)" = "$PIN"
-      - name: Generate one real 1960 Roman Vespers hour in three languages
+      - name: Generate four dates × eight real 1960 Roman Office hours × three languages
         env:
           UPSTREAM: ${{ runner.temp }}/divinum-officium
           OUTPUT: ${{ runner.temp }}/ao-office-probe
         run: |
           node scripts/office/phase-b-generate.mjs \
             --upstream "$UPSTREAM" --out "$OUTPUT" \
-            --dates 2026-10-28 --hours VESPERS --languages la,en,fr
+            --dates 2026-10-28,2026-10-31,2026-11-01,2026-11-03 \
+            --hours MATINS,LAUDS,PRIME,TERCE,SEXT,NONE,VESPERS,COMPLINE \
+            --languages la,en,fr
           node --input-type=module -e '
             import {readFileSync} from "node:fs";
             const p=JSON.parse(readFileSync(process.env.OUTPUT+"/manifest.json","utf8"));
-            if (p.counts.requested!==3 || p.counts.captured!==3 ||
+            if (p.counts.requested!==96 || p.counts.captured!==96 ||
               p.counts.failed || p.counts.published!==0 || p.researchOnly!==true)
               process.exit(1);
             console.log("Research-only envelope captures:",p.counts);
