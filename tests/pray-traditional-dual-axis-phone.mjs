@@ -354,13 +354,24 @@ try{
    const text=await page.locator("#aoPray435930 .aoDevoCardScroll").innerText();
    assert.ok(text.length>450,key+" incomplete Latin text");
    const historicalEnglish=["audi_benigne","ex_more_docti","vexilla_regis","ad_regias_agni_dapes","aeterne_rex_altissime"].includes(key);
-   assert.match(text,/(?:Amen\.|Thou loving Maker|Now with the slow-revolving year)/,
-     key+" reader lost both original Latin and historically attested 1849 English source text");
+   if(!historicalEnglish)assert.match(text,/Amen\./,
+     key+" Latin-only historical hymn has lost its original conclusion");
    if(historicalEnglish){
      // The previous test explicitly selected Latin and it persists across
      // hymn switches. Select the attested English edition before asserting.
      await page.locator("#aoPray435930 [data-ao-hymn-options] > summary").evaluate(el=>el.click());
      await page.locator("#aoPray435930 [data-tp381-hymn-lang='en']").evaluate(el=>el.click());
+   }
+   if(historicalEnglish){
+     const opening={
+       vexilla_regis:"Forth comes the Standard of the King",
+       audi_benigne:"Thou loving Maker of mankind",
+       ad_regias_agni_dapes:"Now at the Lamb's high royal feast",
+       aeterne_rex_altissime:"O Thou eternal King most high",
+       ex_more_docti:"Now with the slow-revolving year",
+     }[key];
+     assert.ok((await page.locator("#aoPray435930 .aoDevoCardScroll").innerText()).includes(opening),
+       key+" must render the sourced 1849 English original after language selection");
    }
    assert.equal(await page.locator("#aoPray435930 .aoDevoCardScroll [data-face-v]").count(),historicalEnglish?1:0,
      "1849 English edition should be available only where source-collated");
