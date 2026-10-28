@@ -72,11 +72,11 @@ export function dailyPersonalSettings(plan,prefs,{esc,L,expanded=false}){
  }).join("");
  const explanation=L("The St Pius X recitation order is the baseline. Complete additional prayers may be added or removed, and saved on this device. Only source-language texts are offered; no English/French manual prayer is presented as a Latin translation.","L’ordre de saint Pie X demeure la base. Ajoutez ou retirez des prières complètes, avec sauvegarde locale. Les prières des autres manuels ne sont présentées que dans leur langue d’origine.");
  const adjacent=plan.edition==="1913"&&part==="evening"?'<p>'+esc(L("De profundis and Jesus–Joseph–Mary follow the 1913 printed order as separate, optional devotions; they are not part of the obligatory core.","Le De profundis et les invocations à Jésus, Joseph et Marie suivent la règle de 1913 comme dévotions facultatives, hors du noyau."))+'</p>':"";
- const editionSummary="St Pius X · "+prefs.edition;
- const languageSummary={la:"Latin",en:L("English","Anglais"),fr:L("French","Français")}[prefs.language]||"English";
+ const editionSummary=prefs.edition;
+ const languageSummary={la:"LA",en:"EN",fr:"FR"}[prefs.language]||"EN";
  const modeSummary=prefs.mode==="expanded"?L("Expanded","Enrichie"):L("Standard","Standard");
- const selectedSummary=prefs.extras[part].length&&prefs.mode==="expanded"?" · +"+prefs.extras[part].length:"";
- return '<details class="aoDailyPersonalSettings" data-ao-personal-settings '+(expanded?"open":"")+'> <summary><span class="aoDailyPersonalSettingsLabel">'+esc(L("Customize my prayers","Personnaliser mes prières"))+'</span><small class="aoDailyPersonalSettingsCurrent">'+esc(editionSummary+" · "+languageSummary+" · "+modeSummary+selectedSummary)+'</small></summary>'+
+ const selectedSummary=plan.selectedExtras.length&&prefs.mode==="expanded"?" · +"+plan.selectedExtras.length:"";
+ return '<details class="aoDailyPersonalSettings" data-ao-personal-settings '+(expanded?"open":"")+'> <summary><span class="aoDailyPersonalSettingsLabel">'+esc(L("Customize","Personnaliser"))+'</span><small class="aoDailyPersonalSettingsCurrent">'+esc(editionSummary+" · "+languageSummary+" · "+modeSummary+selectedSummary)+'</small></summary>'+
  '<div class="aoDailyPersonalSettingsBody">'+ed+lang+mode+'<p class="aoDailyPersonalNote">'+esc(explanation)+'</p>'+
  group(L("Additional complete prayers","Prières complètes facultatives"),adjacent+(items||'<p>'+esc(L("No original-language manual prayers in this reading language. Pius X remains available in all three languages.","Aucune prière de manuel dans cette langue. Saint Pie X demeure disponible en trois langues."))+'</p>'))+
  '<button type="button" class="aoDailyPersonalReset" data-tp381-personal-action="reset" data-tp381-personal-value="">'+esc(L("Restore St Pius X defaults","Rétablir les choix de saint Pie X"))+'</button></div></details>';
