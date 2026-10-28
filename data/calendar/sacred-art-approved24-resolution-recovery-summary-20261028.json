@@ -1,0 +1,42 @@
+{
+  "schema": "AO_ART_APPROVED_24_LOW_RES_RESOLUTION_NATIVE_ALT_RESEARCH_20261028_V1",
+  "date": "2026-10-28",
+  "sourceCSV": "data/calendar/sacred-art-bulk-approved-107-photo-gates-20261028.csv",
+  "sourceGitBlob": "64bfea77f74753c6e0d948f4abaf7fee14ec11fe",
+  "records": 24,
+  "shaRecordsPreviouslyArchived": 24,
+  "sourceMetadataVersionMatched": 24,
+  "resolution_bucket": {
+    "TIER_1_BELOW_1200": 3,
+    "TIER_2_1200_TO_1799": 11,
+    "TIER_3_1800_TO_2399": 10
+  },
+  "zeroNewAlternativeOriginalsDownloaded": true,
+  "fullPhotoReleaseCertification": 0,
+  "priorPaintingApprovalsChanged": 0,
+  "sourceResearchHighlights": {
+    "ART-ean-estout-entecost": {
+      "kind": "LOUVRE_RMN_FRAMED_SOURCE_NOT_CLEAR",
+      "official": "https://collections.louvre.fr/en/ark:/53355/cl010062538",
+      "note": "Exact Restout Pentecost INV20303 1732; Louvre catalogue image explicitly shows frame and RMN photographer; do not treat gallery image as free frameless source. Archived WGA 1240x730 inadequate."
+    },
+    "ART-uido-eni-usannah-and-the-lders": {
+      "kind": "NATIONAL_GALLERY_EXACT_OBJECT_NO_FREE_PHOTO_PROOF",
+      "official": "https://www.nationalgallery.org.uk/paintings/guido-reni-susannah-and-the-elders",
+      "note": "NG196 exact historic painting; official listing states original decorative frame exists separately. Source photo rights and source-frame crop unverified."
+    },
+    "ART-ustache-e-ueur-aint-aul-reaching-at-phesus": {
+      "kind": "SKETCH_NOT_EQUIVALENT_TO_LARGE_ORIGINAL",
+      "official": "https://collections.louvre.fr/en/ark:/53355/cl010061650",
+      "other": "https://www.nationalgallery.org.uk/paintings/eustache-le-sueur-saint-paul-preaching-at-ephesus",
+      "note": "Louvre INV8020 original 394x328cm; National Gallery NG6299 is a distinct preparatory sketch and cannot replace frozen Louvre composition."
+    }
+  },
+  "rules": [
+    "Exact artwork original ID must match, not only artist and title.",
+    "Louvre RMN framed catalogue image does not provide no-fee reuse evidence.",
+    "NG London Saint Paul sketch NG6299 is not the same original Louvre painting INV8020.",
+    "Any new high-resolution photograph must have unrestricted or clearly compatible photo licensing, clean artwork-only edges, and adequate quality; metadata-only evidence cannot promote.",
+    "No fee, no external contact, no automatic app deployment."
+  ]
+}
