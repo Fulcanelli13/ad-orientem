@@ -1,4 +1,4 @@
-import {cp, readdir, rm, mkdir, writeFile, stat, access} from "node:fs/promises";
+import {cp, readdir, rm, mkdir, writeFile, stat, access, readFile} from "node:fs/promises";
 import {resolve, dirname, join, basename} from "node:path";
 import {fileURLToPath} from "node:url";
 
@@ -8,6 +8,10 @@ const folders=["assets","data","src"];
 const rootFiles=["index.html","sw.js","mass-bg.png","Ad-Orientem-v43.19.webmanifest"];
 const generated=/^ao-(?:boot|inline|packed)-[\w.-]+\.(?:css|js)$/;
 const disallowed=/^(?:\.|docs|tests|tools|research|legacy|review|reviews|node_modules)(?:\/|$)/;
+// An older boot may remain under version control as a pinned source-contract witness.
+// Only root boot scripts actually linked by the active HTML belong in the release.
+const entryHtml=await readFile(join(root,"index.html"),"utf8");
+const activeEntrypointAssets=new Set([...entryHtml.matchAll(/(?:src|href)=["']\.\/([^"'?#]+)["']/g)].map(x=>x[1]));
 // Deploy only release assets. These source-owned review/audit records stay in GitHub.
 // No source files are deleted; only copies inside dist/web-preview are omitted.
 const excludedResearchPaths=[
@@ -20,7 +24,10 @@ await mkdir(output,{recursive:true});
 const entries=await readdir(root,{withFileTypes:true});
 let files=[...rootFiles];
 for(const entry of entries){
- if(entry.isFile()&&generated.test(entry.name))files.push(entry.name);
+ if(entry.isFile()&&generated.test(entry.name)){
+  if(/^ao-boot-[a-f0-9]{16}\.js$/.test(entry.name)&&!activeEntrypointAssets.has(entry.name))continue;
+  files.push(entry.name);
+ }
 }
 files=[...new Set(files)];
 for(const name of files){
