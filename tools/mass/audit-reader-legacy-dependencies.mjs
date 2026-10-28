@@ -46,12 +46,10 @@ for(const [path,referrers] of reverse){
  if(retired.has(path) && (present||runtime.length||tests.length)){
    throw new Error("OBSOLETE_READER_REINTRODUCED:"+path+" referenced by "+referrers.join(","));
  }
- if(path==="src/mass/reader-live-product48.js"&&
-    (!present||!runtime.includes("src/mass/reader-mode-switch.js")||
-     !runtime.includes("src/mass/reader-native-preview.js"))){
-   throw new Error("HISTORICAL_48_INTERNAL_DEPENDENCY_CHANGED: certify exceptions before deleting");
+ if(path==="src/mass/reader-live-product48.js" && runtime.length){
+   throw new Error("RETIRED_48_PROJECTOR_REINTRODUCED_IN_RUNTIME:"+runtime.join(","));
  }
  console.log(JSON.stringify({path,present,classification:retired.has(path)?"RETIRED_DELETED":
-   runtime.length?"ACTIVE_IMPORTS_OR_REFERENCES":tests.length?"TEST_REFERENCED_ONLY":"NO_SCANNED_IMPORTERS",
+   runtime.length?"ACTIVE_IMPORTS_OR_REFERENCES":tests.length?"HISTORICAL_TEST_REFERENCED_ONLY":"NO_SCANNED_IMPORTERS",
    runtime,tests,others}));
 }

@@ -49,6 +49,18 @@ const proper={
   postcommunions:[t("Postcommunio Rosarii","Postcommunion of the Rosary")],
 };
 function rootFixture(){return {innerHTML:"",querySelector(){return null},querySelectorAll(){return []},addEventListener(){}}}
+function showSourcePlaceat(runtime){
+  const card=runtime.getReaderModel()?.cards?.find(x=>
+    x.macroId==="AO.SM.M29" && x.paragraphs.some(p=>
+      p.sourceCueIds?.includes("AO.SM.C0261")));
+  assert.ok(card,"Required source-owned Placeat macro is absent");
+  return runtime.showSection(card.sectionId);
+}
+function showSourceLastGospel(runtime){
+  const card=runtime.getReaderModel()?.cards?.find(x=>x.title==="Last Gospel");
+  assert.ok(card,"Required source-owned Last Gospel card is absent");
+  return runtime.showSection(card.sectionId);
+}
 function celebration(overrides={}){return {
   date:"2026-10-04",calendarDay:{id:"Tempora/Pent18-0",title:"Sunday"},
   requestedCelebrationId:"holy_rosary",celebrationId:"holy_rosary",celebrationType:"votive",
@@ -70,26 +82,26 @@ assert.equal(loaded,true); assert.equal(mounted,true);
 assert.ok(root.innerHTML.includes('data-ao-reader-shell'));
 assert.ok(root.innerHTML.includes("Holy Rosary"));
 assert.equal(entered.session.resolvedMass.form,"MISSA_CANTATA_INCENSE");
-assert.equal(entered.session.resolvedMass.presentationMode,"SIMPLE");
-assert.equal(runtime.getReaderMode(),"SIMPLE");
-assert.equal(runtime.setMode("LIVE"),"SIMPLE","standalone runtime allowed an uncertified LIVE mode switch");
+assert.equal(entered.session.resolvedMass.presentationMode,"LIVE");
+assert.equal(runtime.getReaderMode(),"LIVE");
+assert.equal(runtime.setMode("MISSAL"),"LIVE","standalone runtime allowed an uncertified mode switch");
 const model=runtime.getReaderModel();
-assert.equal(model.totalCards,30);
+assert.equal(model.totalCards,39,"legacy SIMPLE session must use the source-owned LIVE model");
 assert.equal(model.properSource,"Sancti/10-07");
 assert.equal(runtime.getCurrentSectionId(),"AO.CARD.001");
 assert.equal(runtime.getReaderState().cardTitle,"Introit & Preparatory Prayers");
 assert.ok(runtime.getReaderState().paragraphs.some(p=>p.primary==="Introit of the Rosary"));
 
 const host=runtime.showCanonicalEvent("MC-CNS-010",{priestPosition:{label:"ALTAR CENTER"},priestVoice:{label:"SILENT"}});
-assert.equal(host.card.sectionId,"AO.CARD.015");
+assert.equal(host.card.sectionId,"AO.CANON.06");
 assert.equal(runtime.getReaderState().cardTitle,"Consecration of the Sacred Host");
 const same=runtime.showCanonicalEvent("MC-CNS-040",{gesture:{label:"GENUFLECT"}});
-assert.equal(same.card.sectionId,"AO.CARD.015");
+assert.equal(same.card.sectionId,"AO.CANON.06");
 assert.ok(runtime.getReaderState().paragraphs.length>0);
 const chalice=runtime.showCanonicalEvent("MC-CNS-080");
-assert.equal(chalice.card.sectionId,"AO.CARD.016");
-runtime.previous(); assert.equal(runtime.getCurrentSectionId(),"AO.CARD.015");
-runtime.next(); assert.equal(runtime.getCurrentSectionId(),"AO.CARD.016");
+assert.equal(chalice.card.sectionId,"AO.CANON.07");
+runtime.previous(); assert.equal(runtime.getCurrentSectionId(),"AO.CANON.06");
+runtime.next(); assert.equal(runtime.getCurrentSectionId(),"AO.CANON.07");
 runtime.destroy(); assert.equal(root.innerHTML,""); assert.equal(runtime.getReaderModel(),null);
 
 
@@ -158,7 +170,7 @@ assert.ok(palmRuntime.getReaderState().paragraphs.length>0);
 palmRuntime.previous();
 assert.equal(palmRuntime.getPalmState().card.id,"PALM-R07");
 palmRuntime.next();
-palmRuntime.showSection(29);
+showSourcePlaceat(palmRuntime);
 const beforeLastGospel=palmRuntime.getCurrentSectionId();
 const palmLifecycle=palmRuntime.next();
 assert.equal(palmRuntime.getCurrentSectionId(),beforeLastGospel);
@@ -303,7 +315,7 @@ assert.equal(planAwareLow.showCanonicalEvent("MC-OFF-110"),null,
   "Low browser runtime accepted Solemn offertory incensation outside its planned traversal");
 assert.ok(planAwareLow.showCanonicalEvent("MC-CNS-010"),
   "Low browser runtime rejected a certified planned canonical event");
-planAwareLow.showSection(30);
+showSourceLastGospel(planAwareLow);
 const lowBoundary=planAwareLow.next();
 assert.equal(lowBoundary.stage,"LEONINE_OFFER","ordinary Low Mass did not route through the Leonine resolver");
 assert.equal(lowBoundary.massComplete,true);
@@ -488,8 +500,8 @@ const requiemEntered=await requiem.enter();
 assert.equal(requiemEntered.session.plan.normalLastGospel,false);
 assert.equal(requiemEntered.session.plan.blessingAllowed,false);
 assert.deepEqual([...requiemEntered.session.plan.followingGraphs],["REQUIEM_ABSOLUTION"]);
-assert.equal(requiem.getReaderModel().totalCards,30,"Requiem variance duplicated the Mass reader surface");
-requiem.showSection(29);
+assert.equal(requiem.getReaderModel().totalCards,39,"Requiem variance must remain source-first without duplicated cards");
+showSourcePlaceat(requiem);
 assert.equal(requiem.getReaderState().cardTitle,"Placeat tibi, sancta Trinitas");
 assert.ok(requiem.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0261")));
 assert.ok(!requiem.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0264")),
@@ -529,7 +541,7 @@ assert.equal(corpusEntered.session.plan.dismissal,"BENEDICAMUS_DOMINO");
 assert.equal(corpusEntered.session.plan.blessingAllowed,false);
 assert.equal(corpusEntered.session.plan.normalLastGospel,false);
 assert.deepEqual([...corpusEntered.session.plan.followingGraphs],["CORPUS_CHRISTI_PROCESSION"]);
-corpus.showSection(29);
+showSourcePlaceat(corpus);
 assert.equal(corpus.getReaderState().cardTitle,"Placeat tibi, sancta Trinitas");
 assert.ok(corpus.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0261")));
 assert.ok(!corpus.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0264")),
@@ -570,7 +582,7 @@ const holyThursdayEntered=await holyThursday.enter();
 assert.equal(holyThursdayEntered.session.plan.blessingAllowed,false);
 assert.equal(holyThursdayEntered.session.plan.normalLastGospel,false);
 assert.deepEqual([...holyThursdayEntered.session.plan.followingGraphs],["HOLY_THURSDAY_POST"]);
-holyThursday.showSection(29);
+showSourcePlaceat(holyThursday);
 assert.equal(holyThursday.getReaderState().cardTitle,"Placeat tibi, sancta Trinitas");
 assert.ok(holyThursday.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0261")));
 assert.ok(!holyThursday.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0264")),

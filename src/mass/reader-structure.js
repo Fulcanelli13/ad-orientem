@@ -2,7 +2,7 @@
 // Owns only presentation structure: mode, card identity, current section and navigation.
 // It does not own Mass text, rubrics, rails, Schola, cinematics or canonical event mutation.
 //
-// MISSAL/SIMPLE retain the proven 30-macro presentation model. LIVE uses the
+// MISSAL retains the proven 30-macro presentation model. LIVE uses the
 // certified source-first Canon segmentation rather than the historical v1.65
 // 20-group donor or unrecovered v1.83 48-card archaeology.
 
@@ -117,11 +117,13 @@ function liveCardsFromSource(canonSourceMap){
   return Object.freeze(cards);
 }
 
-export const READER_PRESENTATION_MODES=Object.freeze(["MISSAL","SIMPLE","LIVE"]);
+export const READER_PRESENTATION_MODES=Object.freeze(["MISSAL","LIVE"]);
 
 function normalizeMode(value){
   const raw=String(value??"LIVE").toUpperCase();
   if(raw==="READ")return "MISSAL";
+  // A historical saved SIMPLE selection is treated as LIVE.
+  if(raw==="SIMPLE")return "LIVE";
   if(!READER_PRESENTATION_MODES.includes(raw))throw new Error("Unsupported reader presentation mode: "+value);
   return raw;
 }

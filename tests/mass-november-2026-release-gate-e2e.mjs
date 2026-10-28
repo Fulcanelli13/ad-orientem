@@ -270,7 +270,7 @@ try{
        await input.check();
        const readerTab=page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]');
        await readerTab.click();
-       for(const mode of ["MISSAL","SIMPLE","LIVE"]){
+       for(const mode of ["MISSAL","LIVE"]){
          await page.locator('[data-full-mass-reader-mode][value="'+mode+'"]').check();
          const output=await page.evaluate(async()=>{
            const prepared=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
@@ -327,7 +327,7 @@ try{
              primary:"Corpus tuum, Dómine, quod sumpsi",
              sourceCueIds:["AO.SM.C0248"]},
          ];
-         for(const mode of ["MISSAL","SIMPLE","LIVE"]){
+         for(const mode of ["MISSAL","LIVE"]){
            adapter.mount({...prepared,readerPreferences:{...prepared.readerPreferences,mode}});
            adapter.renderMoment({
              id:"AO.CARD.026",sectionTitle:"Ablutions",cardTitle:"Ablutions",
@@ -429,7 +429,7 @@ try{
      check(row.sourceProof?.status==="SOURCE_VERIFIED",
        "NOV02_NATIVE_ALTERNATE_SOURCE_PROOF_MISSING:"+row.massNumber);
  }
- check(massUi.cases.length===9,"NOV02_NATIVE_NINE_FORMULARY_MODE_COMBINATIONS_INCOMPLETE");
+ check(massUi.cases.length===6,"NOV02_NATIVE_SIX_FORMULARY_MODE_COMBINATIONS_INCOMPLETE");
  check(massUi.succession?.decision?.contextualStatus==="EXPLICIT_CIRCUMSTANCES" &&
    massUi.succession?.decision?.massNumber===2,
    "NOV02_RITUS_XIV_PREPARED_PROVENANCE_MISSING");
@@ -437,18 +437,15 @@ try{
        massUi.succession?.purification?.length===1 &&
        massUi.succession?.nextPurification?.length===0,
    "NOV02_RITUS_XIV_EXPLICIT_CONDITIONAL_CUES_NOT_MATCHED");
- check(massUi.mobileDisplay?.checks?.length===3 &&
+ check(massUi.mobileDisplay?.checks?.length===2 &&
    massUi.mobileDisplay.checks.every(row=>{
      if(row.modeApplied!==row.mode||row.selectedCueRoot!==3)return false;
-     const displayed=row.mode==="SIMPLE"
-       ?row.paragraphNotes:row.rubrics;
+     const displayed=row.rubrics;
      return displayed.length===2 &&
        displayed.some(x=>x.cue==="AO.SM.C0112" && /épître/i.test(x.text)) &&
        displayed.some(x=>x.cue==="AO.SM.C0247" && /eau seulement/i.test(x.text)) &&
        !displayed.some(x=>x.cue==="AO.SM.C0248") &&
-       (row.mode==="SIMPLE"
-         ?row.rubrics.length===0
-         :row.paragraphNotes.length===0);
+       row.paragraphNotes.length===0;
    }),
    "NOV02_RITUS_XIV_MOBILE_NATIVE_RENDERER_ALL_MODES_NOT_VERIFIED");
  const c=evaluated.ceremonial;

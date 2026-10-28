@@ -66,7 +66,7 @@ assert.equal(model.nextCard("AO.CANON.06").sectionId,"AO.CANON.07");
 assert.equal(model.cardForEvent("MC-UNKNOWN"),null);
 
 const lowModel=createMassReaderModel({
-  resolvedMass:{...base,form:"LOW",presentationMode:"SIMPLE",overlays:[]},
+  resolvedMass:{...base,form:"LOW",presentationMode:"MISSAL",overlays:[]},
   sectionMap,lowCorpus:low,sungCorpus:sung
 });
 assert.equal(lowModel.corpusFamily,"LOW");
@@ -138,7 +138,7 @@ for(const [form,enModel] of [
 ]){
   const frModel=createMassReaderModel({
     resolvedMass:{...base,form,
-      presentationMode:form==="LOW"?"SIMPLE":"LIVE",
+      presentationMode:form==="LOW"?"MISSAL":"LIVE",
       overlays:form==="LOW"?[]:base.overlays,
       proper:{...base.proper,data:frenchSpeakerProper}},
     sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
@@ -254,7 +254,7 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
     ]){
       const r=createMassReaderModel({
         resolvedMass:{...selectedRequiem,
-          presentationMode:form==="LOW"?"SIMPLE":"LIVE",
+          presentationMode:form==="LOW"?"MISSAL":"LIVE",
           proper:language==="fr"?{...base.proper,data:frenchSpeakerProper}:base.proper},
         sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
         frenchOrdinary,vernacularLanguage:language
@@ -282,7 +282,7 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
       }
     }
     const ordinary=createMassReaderModel({
-      resolvedMass:{...base,form,overlays:[],presentationMode:form==="LOW"?"SIMPLE":"LIVE",
+      resolvedMass:{...base,form,overlays:[],presentationMode:form==="LOW"?"MISSAL":"LIVE",
         proper:language==="fr"?{...base.proper,data:frenchSpeakerProper}:base.proper},
       sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
       frenchOrdinary,vernacularLanguage:language
@@ -331,7 +331,7 @@ assert.throws(()=>createMassReaderModel({
   resolvedMass:{...base,distinctRite:"UNSUPPORTED_TEST_RITE"},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
 }),/distinct rite UNSUPPORTED_TEST_RITE/);
 
-console.log("Mass reader model: PASS — 39-step source-first LIVE and 30-card SIMPLE/MISSAL models remain Proper-safe.");
+console.log("Mass reader model: PASS — 39-step source-first LIVE and 30-card MISSAL source models remain Proper-safe.");
 
 
 const holyThursdayResolved={

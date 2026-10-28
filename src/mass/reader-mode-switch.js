@@ -1,6 +1,5 @@
 import { normalizePresentationMode } from "./session-engine.js";
 import { createMassReaderModel } from "./reader-model.js";
-import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
 import { projectCuratedOrdinaryLiveCards } from "./reader-live-curated-cards.js";
 import { projectGranularMissalCards } from "./reader-missal-granularity.js";
 
@@ -12,7 +11,7 @@ function modeResolvedMass(prepared,mode){
   });
 }
 
-export function buildReaderModeModels({prepared,data,mode,reviewExpandedCards=false}={}){
+export function buildReaderModeModels({prepared,data,mode,reviewExpandedCards=true}={}){
   if(!prepared?.session?.resolvedMass)throw new TypeError("Prepared Mass session required");
   if(!data?.sectionMap||!data?.lowCorpus||!data?.sungCorpus)throw new TypeError("Reader presentation data required");
   const normalized=normalizePresentationMode(mode);
@@ -27,11 +26,13 @@ export function buildReaderModeModels({prepared,data,mode,reviewExpandedCards=fa
     holyThursdayMandatumSource:data.mandatumSource??null,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
+  // No public 48-card fallback. Uncertified variants retain their untouched
+  // source-owned LIVE cards; certified ordinary Sung Mass uses curated 65.
   const presentationModel=normalized==="MISSAL"
     ? projectGranularMissalCards(sourceModel)
     : reviewExpandedCards
       ? projectCuratedOrdinaryLiveCards(sourceModel)
-      : projectSourceFirst48Presentation(sourceModel);
+      : sourceModel;
   return Object.freeze({mode:normalized,sourceModel,presentationModel});
 }
 

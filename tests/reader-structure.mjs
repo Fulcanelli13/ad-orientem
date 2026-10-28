@@ -18,7 +18,8 @@ const ordinary={
 };
 
 assert.equal(makeStructureCards("MISSAL").length,30);
-assert.equal(makeStructureCards("SIMPLE").length,30);
+assert.equal(makeStructureCards("SIMPLE",canonSourceMap).length,39,
+  "legacy SIMPLE must resolve to source-owned LIVE structure");
 assert.equal(makeStructureCards("LIVE",canonSourceMap).length,39);
 
 const live=makeStructureCards("LIVE",canonSourceMap);

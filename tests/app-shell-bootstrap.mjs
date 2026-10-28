@@ -32,10 +32,10 @@ const controller=createMassEntryController({
 const prepared=await controller.prepare();
 expect(prepared.schema==="ao-mass-entry-bootstrap-v1","bootstrap schema changed");
 expect(prepared.session.resolvedMass.form==="MISSA_CANTATA_SIMPLE","Mass form was not preserved");
-expect(prepared.session.resolvedMass.presentationMode==="SIMPLE","reader mode did not own presentation mode");
+expect(prepared.session.resolvedMass.presentationMode==="LIVE","legacy reader mode did not migrate to LIVE");
 expect(prepared.session.resolvedMass.actualCelebration.id==="holy_rosary","manual actual celebration lost");
 expect(prepared.session.resolvedMass.overlays.includes("VOTIVE_PROPER"),"Votive overlay missing");
-expect(prepared.readerPreferences.mode==="SIMPLE","reader preferences not normalized");
+expect(prepared.readerPreferences.mode==="LIVE","legacy reader preferences not migrated to LIVE");
 expect(opened===null,"prepare() opened the reader");
 
 const entered=await controller.enter();

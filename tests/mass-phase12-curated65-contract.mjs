@@ -32,8 +32,8 @@ assert.match(native,/prepared,reviewCuratedCards:true,presentationData/,
   "Only the certified 65-family may be requested by the user-facing native mount");
 assert.match(native,/projectCuratedOrdinaryLiveCards\(model\)/,
   "65-family projector must remain source-owned");
-assert.match(native,/projectSourceFirst48Presentation\(model\)/,
-  "Historical projector still supplies internal noncurated exception paths; do not delete without parity");
+assert.doesNotMatch(native,/projectSourceFirst48Presentation\(model\)/,
+  "Historical 48-card projector must not be reachable from the native Mass entry");
 const pre=assertV183PreGospelLiveContract();
 assert.deepEqual(pre.order,["AO.SM.B021","AO.SM.B022","AO.SM.B023"]);
 assert.equal(pre.alleluiaTract.mayMergeIntoGradual,false);
@@ -98,7 +98,7 @@ assert.equal(certifiedLiveCanonActionOverride({
 for(const mode of ["MISSAL","SIMPLE"]){
  assert.equal(certifiedLiveCanonActionOverride({
   presentationMode:mode,curatedPresentation:true,cueId:"AO.SM.C0185",matrixAction:sourceAction,
- }),null,"Other modes must retain their existing presentation contracts");
+ }),null,"MISSAL and legacy SIMPLE must not borrow LIVE-only Canon actions");
 }
 for(const incorrect of [
  {...sourceAction,sourceGestureId:"EDITORIAL_CANDIDATE"},
@@ -116,4 +116,4 @@ assert.equal(certifiedLiveCanonActionOverride({
 assert.match(native,/originalPriestAction=canonLiveAction\?\?/,
  "LIVE projector must use the certified correction before the frozen cue label");
 
-console.log("PASS Phase 1/2: 39-source/65-curated production, 64-visible condition, no public 48/65 URL rollback; noncurated exceptional source path remains isolated.");
+console.log("PASS Phase 1/2: 39-source/65-curated production, 64-visible condition, no public rollback and no native 48-card fallback; exceptional source paths stay source-owned.");

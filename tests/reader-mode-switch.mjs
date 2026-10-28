@@ -49,12 +49,11 @@ const prepared={
 
 const live=buildReaderModeModels({prepared,data,mode:"LIVE"});
 assert.equal(live.sourceModel.totalCards,39);
-assert.equal(live.presentationModel.totalCards,48);
-assert.equal(live.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_PRODUCT_48");
+assert.equal(live.presentationModel.totalCards,65);
+assert.equal(live.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 assert.equal(prepared.session.resolvedMass.presentationMode,"LIVE","mode rebuild mutated canonical resolved Mass");
 
-// Explicit review mode uses curated liturgical turns, not one card per block.
-// The production 48-card reader is untouched.
+// The optional legacy review flag now uses the same production 65-card projection.
 const expandedReview=buildReaderModeModels({prepared,data,mode:"LIVE",reviewExpandedCards:true});
 assert.equal(expandedReview.presentationModel.totalCards,65,
   "curated LIVE should have 65 cards with one complete Sanctus–Benedictus");
@@ -245,7 +244,7 @@ assert.equal(
 assert.equal(
   findReaderModeAnchorCard(live.presentationModel,curatedHostAnchor)?.paragraphs.some(
     p=>(p.sourceCueIds??[]).includes("AO.SM.C0173")),true,
-  "switching curated review to 48-card LIVE lost the same Host cue");
+  "switching between curated LIVE models lost the same Host cue");
 assert.equal(
   expandedReview.presentationModel.previousCard(expandedReview.presentationModel.cards[1].sectionId)?.sectionId,
   expandedReview.presentationModel.cards[0].sectionId,
@@ -282,13 +281,13 @@ const host=live.presentationModel.cards.find(card=>
 assert.ok(host,"LIVE Host elevation cue not found");
 const anchor=captureReaderModeAnchor(host,{activeCueId:"AO.SM.C0174"});
 
-const simple=buildReaderModeModels({prepared,data,mode:"SIMPLE"});
-assert.equal(simple.sourceModel.totalCards,30);
-assert.equal(simple.presentationModel.totalCards,30);
-assert.equal(simple.sourceModel.presentationMode,"SIMPLE");
-const simpleHost=findReaderModeAnchorCard(simple.presentationModel,anchor);
-assert.equal(simpleHost.sectionId,"AO.CARD.015","Host cue did not remain anchored when switching LIVE -> SIMPLE");
-assert.ok(simpleHost.paragraphs.some(p=>(p.sourceCueIds??[]).includes("AO.SM.C0174")));
+// Old saved SIMPLE preference migrates to LIVE, without a third presentation.
+const migrated=buildReaderModeModels({prepared,data,mode:"SIMPLE"});
+assert.equal(migrated.mode,"LIVE");
+assert.equal(migrated.sourceModel.totalCards,39);
+assert.equal(migrated.presentationModel.totalCards,65);
+assert.equal(migrated.sourceModel.presentationMode,"LIVE");
+assert.equal(findReaderModeAnchorCard(migrated.presentationModel,anchor)?.sectionId,host.sectionId);
 
 const missal=buildReaderModeModels({prepared,data,mode:"MISSAL"});
 assert.equal(missal.sourceModel.totalCards,30);
@@ -312,8 +311,8 @@ for(const card of missal.presentationModel.cards){
     }
   }
 }
-assert.equal(simple.presentationModel.totalCards,30,
-  "Simple mode must remain untouched by Missal-only expansion");
+assert.equal(migrated.presentationModel.totalCards,65,
+  "Legacy SIMPLE selection must never restore a third reader or 30-card fallback");
 const missalHost=findReaderModeAnchorCard(missal.presentationModel,anchor);
 assert.equal(missalHost.sectionId,"AO.CARD.015","Host cue did not remain anchored when switching LIVE -> MISSAL");
 const offertoryPage=missal.presentationModel.cards.find(c=>
@@ -378,14 +377,15 @@ assert.ok(live.presentationModel.cards.some(c=>c.blocks?.some(b=>b.blockId==="AO
 assert.equal(missal.sourceModel.cards.find(c=>c.blocks.some(b=>b.blockId==="AO.SM.B031")).sectionId,
   "AO.CARD.010","canonical source section identity must remain the owner");
 
-const backLive=findReaderModeAnchorCard(live.presentationModel,captureReaderModeAnchor(simpleHost,{activeCueId:"AO.SM.C0174"}));
+const backLive=findReaderModeAnchorCard(live.presentationModel,captureReaderModeAnchor(missalHost,{activeCueId:"AO.SM.C0174"}));
 assert.equal(backLive.sectionId,host.sectionId,"Host cue did not return to the exact LIVE card");
 
-const split=live.presentationModel.cards.find(card=>card.sectionId==="AO.LIVE48.020.C");
-assert.ok(split,"Pax Domini split card missing");
+const split=live.presentationModel.cards.find(card=>card.title==="Pax Domini");
+assert.ok(split,"Pax Domini curated LIVE card missing");
 const splitAnchor=captureReaderModeAnchor(split);
-const simplePax=findReaderModeAnchorCard(simple.presentationModel,splitAnchor);
-assert.equal(simplePax.sectionId,"AO.CARD.020","split LIVE card did not collapse to its source macro without guessing");
+const missalPax=findReaderModeAnchorCard(missal.presentationModel,splitAnchor);
+assert.equal(missalPax?.sourceSectionId??missalPax?.sectionId,"AO.CARD.020",
+  "LIVE Pax Domini anchor did not resolve to its MISSAL source section");
 
 const nuptialPrepared={
   ...prepared,
@@ -397,14 +397,16 @@ const nuptialPrepared={
 };
 const nuptialLive=buildReaderModeModels({prepared:nuptialPrepared,data,mode:"LIVE"});
 assert.equal(nuptialLive.sourceModel.totalCards,42);
-assert.equal(nuptialLive.presentationModel.totalCards,51);
+assert.equal(nuptialLive.presentationModel.totalCards,42,
+  "Uncertified special overlays must retain source-owned cards, not a historical 48-card split");
 const insertion=nuptialLive.presentationModel.cards.find(card=>card.sectionId==="AO.NUPTIAL.02");
 assert.ok(insertion);
 const insertionAnchor=captureReaderModeAnchor(insertion);
-const nuptialSimple=buildReaderModeModels({prepared:nuptialPrepared,data,mode:"SIMPLE"});
-assert.equal(nuptialSimple.sourceModel.totalCards,33);
-assert.equal(findReaderModeAnchorCard(nuptialSimple.presentationModel,insertionAnchor).sectionId,"AO.NUPTIAL.02",
-  "Nuptial insertion identity was lost across mode switch");
+const nuptialMissal=buildReaderModeModels({prepared:nuptialPrepared,data,mode:"MISSAL"});
+assert.equal(nuptialMissal.sourceModel.totalCards,33);
+const nuptialInsertion=findReaderModeAnchorCard(nuptialMissal.presentationModel,insertionAnchor);
+assert.equal(nuptialInsertion?.sourceSectionId??nuptialInsertion?.sectionId,"AO.NUPTIAL.02",
+  "Nuptial insertion identity was lost across LIVE/MISSAL switch");
 
 // French mode-switch used to lose the required certified French Ordinary map.
 // Preserve its explicit source pin in every reader presentation rebuild.
@@ -429,4 +431,4 @@ assert.ok(frenchMissal.sourceModel.cards.some(card=>(card.paragraphs??[]).some(p
   String(p.primary??"").includes(sourceFrench)||String(p.secondary??"").includes(sourceFrench)
 )),"French cue vanished when switching LIVE to MISSAL");
 
-console.log("reader mode switch: PASS — MISSAL/SIMPLE/LIVE rebuild presentation only and preserve exact source anchors.");
+console.log("reader mode switch: PASS — MISSAL/LIVE with legacy preference migration and exact source anchors.");

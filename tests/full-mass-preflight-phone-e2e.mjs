@@ -118,11 +118,12 @@ try{
  await page.evaluate(()=>__observed.dispose());
  await page.waitForSelector("[data-ao-full-mass-preflight]");
  assert.equal(await page.locator("[data-full-mass-form]").count(),4);
- assert.equal(await page.locator("[data-full-mass-reader-mode]").count(),3);
+ assert.equal(await page.locator("[data-full-mass-reader-mode]").count(),2);
+  assert.equal(await page.locator('[data-full-mass-reader-mode][value="SIMPLE"]').count(),0);
  assert.equal(await page.locator('[data-full-mass-reader-mode][value="LIVE"]').isChecked(),true);
  assert.equal(await page.locator(".aoGuidedMassFolio").count(),1,"One Guided Folio");
  await page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]').click();
- for(const mode of ["MISSAL","SIMPLE","LIVE"]){
+ for(const mode of ["MISSAL","LIVE"]){
   await page.locator('[data-full-mass-reader-mode][value="'+mode+'"]').check();
   assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).readerMode,mode);
   assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-chosen-reader-mode"),mode);

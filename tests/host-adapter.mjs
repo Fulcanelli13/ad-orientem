@@ -48,7 +48,8 @@ const rosary=prepareMassSessionFromV346({
 });
 expect(rosary.resolvedMass.actualCelebration.id==="holy_rosary","manual celebration identity lost");
 expect(rosary.resolvedMass.overlays.includes("VOTIVE_PROPER"),"Votive Proper overlay not inferred");
-expect(rosary.resolvedMass.form==="MISSA_CANTATA_SIMPLE","MC simple mapping lost");
+expect(rosary.resolvedMass.form==="MISSA_CANTATA_SIMPLE","MC simple Mass form mapping lost");
+expect(rosary.resolvedMass.presentationMode==="LIVE","retired SIMPLE presentation did not migrate to LIVE");
 
 let missingProper=false;
 try{

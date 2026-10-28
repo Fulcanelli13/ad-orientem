@@ -691,7 +691,13 @@ export function createBrowserMassRuntime({
     const card=direction==="previous"
       ? readerModel.previousCard(currentSectionId)
       : readerModel.nextCard(currentSectionId);
-    if(direction==="next" && (card?.sourceSequence===30 || card?.sequence===30) && currentPrepared?.session?.plan?.normalLastGospel===false){
+    // The canonical source-first LIVE projection has more than 30 sections.
+    // A Requiem/exceptional plan's Last Gospel omission belongs to the
+    // actual Last Gospel source card, never to an obsolete sequence number.
+    const ordinaryLastGospel=card?.title==="Last Gospel" ||
+      card?.sourceSectionId==="AO.CARD.030" || card?.sectionId==="AO.CARD.030";
+    if(direction==="next" && ordinaryLastGospel &&
+       currentPrepared?.session?.plan?.normalLastGospel===false){
       return enterLifecycleBoundary();
     }
     if(direction==="next" && !card && currentPrepared?.session?.plan?.kind==="COMPOSITE_DISTINCT_RITE" && currentPrepared?.session?.plan?.rite==="EASTER_VIGIL"){

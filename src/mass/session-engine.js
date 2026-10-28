@@ -12,7 +12,7 @@ export const MASS_FORMS = Object.freeze([
   "SOLEMN",
 ]);
 
-export const PRESENTATION_MODES = Object.freeze(["MISSAL", "SIMPLE", "LIVE"]);
+export const PRESENTATION_MODES = Object.freeze(["MISSAL", "LIVE"]);
 
 export const PRECEDING_RITES = Object.freeze([
   "ASPERGES",
@@ -53,7 +53,9 @@ export function normalizeMassForm(value) {
 }
 
 export function normalizePresentationMode(value = "LIVE") {
-  const mode = String(value).toUpperCase();
+  const legacyMode = String(value ?? "LIVE").toUpperCase();
+  // Existing saved Mass sessions may still contain the retired SIMPLE view.
+  const mode = legacyMode === "SIMPLE" ? "LIVE" : legacyMode;
   if (!PRESENTATION_MODES.includes(mode)) throw new Error("Unsupported presentation mode: " + value);
   return mode;
 }

@@ -612,7 +612,7 @@ async function exerciseRealShellFollowingAction(browser,spec){
       const root=document.getElementById("ao-r17-native-reader-preview");
       return {
         id:card.sectionId,
-        product48:api?.model?.structureOwner==="SOURCE_FIRST_LIVE_PRODUCT_48",
+        curatedPresentation:curated,
         sourceChildCount:cards.length,
         blessingCardId:blessingCard?.sectionId??null,
         blessingRendered:Boolean(blessingRendered),
@@ -625,13 +625,13 @@ async function exerciseRealShellFollowingAction(browser,spec){
       };
     },{exitSourceSequence:spec.exitSourceSequence,kind:spec.kind});
     if(spec.filteredExitTitle){
-      const expectedExitTitle=exit.product48?spec.filteredExitTitle
-        :"Placeat tibi · Closing Prayer";
+      const expectedExitTitle=exit.curatedPresentation
+        ?"Placeat tibi · Closing Prayer":spec.filteredExitTitle;
       assert.equal(exit.renderedTitle,expectedExitTitle,
         spec.kind+" public reader API did not return the plan-aware exit card");
       assert.equal(exit.domTitle,expectedExitTitle,
         spec.kind+" actual DOM did not show the plan-aware exit card title");
-      if(exit.product48 || exit.renderedTitle==="Placeat tibi · Closing Prayer"){
+      if(exit.curatedPresentation){
         assert.ok(exit.sourceChildCount>=2,
           spec.kind+" exit lost the source-owned Placeat and independently indexed blessing");
         assert.ok(exit.blessingCardId,

@@ -72,7 +72,7 @@ try{
   assert.equal(data.visible,true,"Mass preparation layout not visible: "+JSON.stringify(data));
   assert.ok(data.categories>=5,"Mass category selection missing: "+JSON.stringify(data));
   assert.ok(data.forms>=3,"Low/Sung/Solemn choices missing: "+JSON.stringify(data));
-  assert.deepEqual(data.modes,["MISSAL","SIMPLE","LIVE"]);
+  assert.deepEqual(data.modes,["MISSAL","LIVE"]);
   assert.equal(data.readerPresent,false,"Follow Mass started LIVE without preparation");
   assert.ok(data.startButtons>0,"No explicit Start Mass control");
 
