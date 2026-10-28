@@ -69,7 +69,7 @@ async function main() {
     const request=makeGeneratorRequest({date,hour,language});
     const output=execFileSync("perl",[entry,request.query],{
       cwd,encoding:"utf8",timeout:120000,maxBuffer:24*1024*1024,
-      env:{...process.env,TZ:"UTC",REQUEST_METHOD:"GET"},
+      env:{...process.env,TZ:"UTC",REQUEST_METHOD:"",QUERY_STRING:""},
     });
     const result=inspectGeneratedXhtml({xhtml:output,date,hour,language});
     const file=date+"/"+hour.toLowerCase()+"/"+language+".xhtml";
