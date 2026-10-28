@@ -11,7 +11,20 @@ const LANGS=new Set(["la","en","fr"]);
 const EDITIONS=new Set(["1905","1913"]);
 const PARTS=["morning","evening"];
 const MODES=new Set(["standard","expanded"]);
-const ids=new Set(CORPUS.additional.map(x=>x.id));
+const EDITION_SUPPLEMENT_IDS=new Set(["piusx-1913-de-profundis","piusx-1913-jesus-joseph-mary"]);
+const ids=new Set([...CORPUS.additional.map(x=>x.id),...EDITION_SUPPLEMENT_IDS]);
+function editionSupplements(language){
+ const original=CORPUS.editions["1913"],list=original.dayparts.evening.filter(x=>x.kind==="supplement");
+ return list.map(row=>({
+  id:row.id==="de-profundis"?"piusx-1913-de-profundis":"piusx-1913-jesus-joseph-mary",
+  lang:language,daypart:"evening",kind:"additional",slot:"supplement",
+  title:language==="fr"?row.titleFr:row.titleEn,
+  sourceLabel:row.sourceLabel,sourceUrl:row.sourceUrl,
+  text:row.text?.[language]||null,
+  legacyPrayerId:row.id==="de-profundis"?"dead_de_profundis":null,
+  sourceExact:row.sourceExact
+ }));
+}
 const allowed=(arr,lang,daypart)=>arr.filter(x=>x.lang===lang && x.daypart===daypart);
 
 export function defaultPersonalDailyPrefs(language="en"){
@@ -39,7 +52,7 @@ export function normalizePersonalDailyPrefs(raw,language="en"){
    }
   }
   const original=raw.extras?.[part];
-  prefs.extras[part]=Array.isArray(original)?[...new Set(original.filter(id=>ids.has(id)&&CORPUS.additional.some(x=>x.id===id&&x.daypart===part&&x.kind==="additional")))].slice(0,40):[];
+  prefs.extras[part]=Array.isArray(original)?[...new Set(original.filter(id=>ids.has(id)&&CORPUS.additional.some(x=>x.id===id&&x.daypart===part&&x.kind==="additional"||EDITION_SUPPLEMENT_IDS.has(id)&&part==="evening")))].slice(0,40):[];
  }
  return prefs;
 }
@@ -54,9 +67,9 @@ export function savePersonalDailyPrefs(storage,prefs,language="en"){
  const validated=normalizePersonalDailyPrefs(prefs,language);
  try{storage?.setItem?.(DAILY_PERSONAL_RULE_STORAGE_KEY,JSON.stringify(validated));return true}catch{return false}
 }
-export function personalDailyOptions(daypart,language){
+export function personalDailyOptions(daypart,language,edition="1913"){
  if(!PARTS.includes(daypart)||!LANGS.has(language))return [];
- return allowed(CORPUS.additional,language,daypart);
+ return [...allowed(CORPUS.additional,language,daypart),...(edition==="1913"&&daypart==="evening"?editionSupplements(language):[])];
 }
 export function personalDailyEdition(edition){
  return CORPUS.editions[EDITIONS.has(edition)?edition:"1913"];
@@ -72,7 +85,7 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
  const p=normalizePersonalDailyPrefs(prefs);
  const edition=personalDailyEdition(p.edition),language=p.language;
  const native=edition.dayparts[daypart];
- const variants=personalDailyOptions(daypart,language).filter(x=>x.kind==="variant");
+ const variants=personalDailyOptions(daypart,language,p.edition).filter(x=>x.kind==="variant");
  const chosen=Object.fromEntries(Object.entries(p.variants[daypart]).filter(([slot,id])=>variants.some(x=>x.id===id&&x.slot===slot)));
  const primary=native.filter(x=>x.kind!=="supplement").map((row,index)=>{
   if(row.kind==="guided")return {...row,id:"piusx-"+p.edition+"-"+daypart+"-examen",kind:"personal-examen",sourceId:"examen",index};
@@ -87,11 +100,11 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
    replacementId:replacement?.id||null,
    missing:!body,index,sourceExact:replacement?true:row.sourceExact};
  });
- const extrasById=new Map(personalDailyOptions(daypart,language).filter(x=>x.kind==="additional").map(x=>[x.id,x]));
+ const extrasById=new Map(personalDailyOptions(daypart,language,p.edition).filter(x=>x.kind==="additional").map(x=>[x.id,x]));
  const selected=p.mode==="expanded"?p.extras[daypart].filter(id=>extrasById.has(id)):[];
  const extras=selected.map(id=>{
   const item=extrasById.get(id);
-  return {id:"personal-extra-"+id,sourceId:id,kind:"personal-prayer",
+  return {id:"personal-extra-"+id,sourceId:id,kind:item.legacyPrayerId?"personal-legacy":"personal-prayer",legacyId:item.legacyPrayerId||null,
    title:item.title,language,text:item.text,sourceLabel:item.sourceLabel,
    sourceUrl:item.sourceUrl,sourceStatus:"complete-additional-manual-prayer",
    optional:true,sourceExact:true};
@@ -110,7 +123,7 @@ export function changePersonalDailyPrefs(prefs,{action,daypart="morning",value,l
  else if(action==="mode"&&MODES.has(value))p.mode=value;
  else if(action==="reset")return defaultPersonalDailyPrefs(p.language);
  else if(PARTS.includes(daypart)){
-  const options=personalDailyOptions(daypart,p.language);
+  const options=personalDailyOptions(daypart,p.language,p.edition);
   if(action==="variant"){
    const item=options.find(x=>x.id===value&&x.kind==="variant");
    if(item){
