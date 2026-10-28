@@ -2,9 +2,12 @@
  * Wave 04 historical witness mining — NOT the locked 48-prayer canonical bank.
  * These pre-1931 English witnesses are extracted from Lasance (1908),
  * My Prayer-Book / Prayers During the Day. Each has a visible text page.
- * Print-image collation, exact recensional agreement, and French/Latin
- * witnesses are NOT yet cleared. Nothing in this file changes user-facing
- * Prayer readers or the daily historical release switch.
+ * Release is PER WITNESS and PER LANGUAGE, never per source website.
+ * Cleared witnesses: Suscipe EN/Latin (Morning Offering); Aquinas
+ * Concede mihi EN/Latin and Lasance's after-meditation EN (Scripture reader).
+ * The longer before-meditation EN witness remains held for image collation.
+ * No French version is asserted. Neither locked canonical prayer identity
+ * nor the printed Pius X Morning/Evening order is changed.
  */
 export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
   {
@@ -47,7 +50,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
     "work_kind": "PRAYER",
     "text": "O my God, I give Thee heartfelt thanks for all the graces Thou hast conferred on me during this meditation. Pardon me, I beseech Thee, all the negligence and all the distractions of which I have been guilty. Give me strength to carry out the resolutions that I have made. Fortify me, that from henceforth I may diligently practise this virtue . . . avoid this fault . . . perform this action . . . to Thy honor.\n\nHelp me to keep my good resolutions, O sweet Virgin Mary; and do thou, my good angel, recall them to my memory, if I should ever forget or neglect them. Omnia ad majorem Dei gloriam!",
     "source_page": "226",
-    "notes": "Transcription normalizes obvious OCR error in printed Latin motto 'Ommia' to 'Omnia'; substantive editorial correction must be confirmed against page image before publication. Printed page 226 has the correct motto Omnia; do not attribute OCR Ommia to printed text.",
+    "notes": "Printed 1908 page 226 independently checked; the motto is 'Omnia', whereas the incomplete online transcription reads 'Ommia'. No historical French translation asserted. Printed page 226 has the correct motto Omnia; do not attribute OCR Ommia to printed text.",
     "source": {
       "work": "F.X. Lasance, My Prayer-Book: Happiness in Goodness",
       "edition": "Benziger Brothers, 1908",
