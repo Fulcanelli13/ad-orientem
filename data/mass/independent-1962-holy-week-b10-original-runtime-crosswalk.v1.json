@@ -1,0 +1,237 @@
+{
+  "schema": "AO_MR1962_HOLY_WEEK_B10_ORIGINAL_IMAGE_TO_RUNTIME_INCIPIT_V1",
+  "version": 1,
+  "editorialDate": "2026-10-28",
+  "ownerIssue": 894,
+  "kind": "RESEARCH_AND_CI_SOURCE_COMPARISON_ONLY",
+  "primaryWitness": "data/mass/independent-1962-holy-week-b09-original-image-witness.v1.json",
+  "original1962ImageIndex": "https://gregobase.selapa.net/source.php?id=42&images=1",
+  "scope": "Twenty-two exact canonical Latin incipit checks, six printed-structure holds, and one Holy Thursday selected-Proper browser hold. No line-by-line or translation certification.",
+  "specialCorrection": {
+    "id": "FONT_BLESSING_EXTENDED",
+    "readerSegment": "F10",
+    "printedPage": 205,
+    "scanId": 287,
+    "sourceImage": "https://gregobase.selapa.net/sources/42/287.png",
+    "change": "Restore omitted Latin 'de' before 'paradisi fonte' in original 1962 four-directions blessing; English and French unchanged."
+  },
+  "counts": {
+    "witnesses": 29,
+    "matchedLatinIncipits": 22,
+    "structuralHolds": 6,
+    "selectedProperHold": 1,
+    "fullLatinTextsCertified": 0,
+    "englishFrenchTextsCertified": 0
+  },
+  "nonClaims": [
+    "No complete or line-by-line 1962 typica certification",
+    "No Holy Week rite completeness certification",
+    "No English/French liturgical translation approval",
+    "No Holy Thursday selected-Proper or all-calendar-day coverage"
+  ],
+  "records": [
+    {
+      "id": "BEGIN_PALM_BLESSING",
+      "printedPage": 130,
+      "scanId": 212,
+      "status": "STRUCTURAL_WITNESS_NO_DIRECT_TEXT_LEAF",
+      "holdReason": "Independent printed structural heading; not a standalone textual field in the sampled special-rite payload."
+    },
+    {
+      "id": "PALM_OPENING_ANTIPHON",
+      "printedPage": 130,
+      "scanId": 212,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "palm.texts.openingAntiphon"
+    },
+    {
+      "id": "PALM_BLESSING_ORATION",
+      "printedPage": 130,
+      "scanId": 212,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "palm.texts.blessingPrayer"
+    },
+    {
+      "id": "PALM_GOSPEL_MATTHEW_21",
+      "printedPage": 132,
+      "scanId": 214,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "palm.texts.gospel"
+    },
+    {
+      "id": "PALM_PROCEED",
+      "printedPage": 133,
+      "scanId": 215,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "palm.texts.procedamus"
+    },
+    {
+      "id": "PALM_GLORIA_LAUS",
+      "printedPage": 133,
+      "scanId": 215,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "palm.texts.gloriaLaus"
+    },
+    {
+      "id": "CHRISM_MASS_DISTINCT",
+      "printedPage": 153,
+      "scanId": 235,
+      "status": "STRUCTURAL_WITNESS_NO_DIRECT_TEXT_LEAF",
+      "holdReason": "Independent printed structural heading; not a standalone textual field in the sampled special-rite payload."
+    },
+    {
+      "id": "EVENING_MASS_DISTINCT",
+      "printedPage": 154,
+      "scanId": 236,
+      "status": "STRUCTURAL_WITNESS_NO_DIRECT_TEXT_LEAF",
+      "holdReason": "Independent printed structural heading; not a standalone textual field in the sampled special-rite payload."
+    },
+    {
+      "id": "HOLY_THURSDAY_INTROIT",
+      "printedPage": 154,
+      "scanId": 236,
+      "status": "PENDING_SELECTED_PROPER_BROWSER",
+      "holdReason": "Holy Thursday selected Proper is a shared runtime projection, not a static special-rite leaf."
+    },
+    {
+      "id": "GOOD_FRIDAY_NOT_AN_ORDINARY_MASS",
+      "printedPage": 161,
+      "scanId": 243,
+      "status": "STRUCTURAL_WITNESS_NO_DIRECT_TEXT_LEAF",
+      "holdReason": "Independent printed structural heading; not a standalone textual field in the sampled special-rite payload."
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_CHURCH",
+      "printedPage": 167,
+      "scanId": 249,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "friday.solemnPrayers[0].intention"
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_NEEDS",
+      "printedPage": 172,
+      "scanId": 254,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "friday.solemnPrayers[5].intention"
+    },
+    {
+      "id": "CROSS_UNVEILING",
+      "printedPage": 176,
+      "scanId": 258,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "friday.cross.unveiling.versicle"
+    },
+    {
+      "id": "CROSS_BEFORE_COMMUNION",
+      "printedPage": 179,
+      "scanId": 261,
+      "status": "STRUCTURAL_WITNESS_NO_DIRECT_TEXT_LEAF",
+      "holdReason": "Independent printed structural heading; not a standalone textual field in the sampled special-rite payload."
+    },
+    {
+      "id": "FRIDAY_PATERNOSTER",
+      "printedPage": 180,
+      "scanId": 262,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "friday.communion.pater"
+    },
+    {
+      "id": "FRIDAY_EMBOLISM",
+      "printedPage": 180,
+      "scanId": 262,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "friday.communion.libera"
+    },
+    {
+      "id": "VIGIL_BLESSING_FIRE",
+      "printedPage": 182,
+      "scanId": 264,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "vigil.donor.newFire.lat"
+    },
+    {
+      "id": "VIGIL_HEADING",
+      "printedPage": 182,
+      "scanId": 264,
+      "status": "STRUCTURAL_WITNESS_NO_DIRECT_TEXT_LEAF",
+      "holdReason": "Independent printed structural heading; not a standalone textual field in the sampled special-rite payload."
+    },
+    {
+      "id": "EXSULTET_O_FELIX_CULPA",
+      "printedPage": 190,
+      "scanId": 272,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "vigil.donor.exsultet.lat"
+    },
+    {
+      "id": "EXSULTET_O_VERE_BEATA",
+      "printedPage": 192,
+      "scanId": 274,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "vigil.donor.exsultet.lat"
+    },
+    {
+      "id": "FONT_BLESSING_EXTENDED",
+      "printedPage": 205,
+      "scanId": 287,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "vigil.font1962.segments[9].latin"
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_POPE",
+      "printedPage": 168,
+      "scanId": 250,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "friday.solemnPrayers[1].intention"
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_ORDERS",
+      "printedPage": 169,
+      "scanId": 251,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "friday.solemnPrayers[2].intention"
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_MAGISTRATES",
+      "printedPage": 170,
+      "scanId": 252,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "friday.solemnPrayers[3].intention"
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_CATECHUMENS",
+      "printedPage": 171,
+      "scanId": 253,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "friday.solemnPrayers[4].intention"
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_CHURCH_UNITY",
+      "printedPage": 173,
+      "scanId": 255,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "friday.solemnPrayers[6].intention"
+    },
+    {
+      "id": "SOLEMN_PRAYER_1962_FOR_JEWS",
+      "printedPage": 173,
+      "scanId": 255,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "friday.solemnPrayers[7].variants.PRINTED_1962.intention"
+    },
+    {
+      "id": "SOLEMN_PRAYER_1962_FOR_JEWS_COLLECT",
+      "printedPage": 174,
+      "scanId": 256,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "friday.solemnPrayers[7].variants.PRINTED_1962.prayer"
+    },
+    {
+      "id": "SOLEMN_PRAYER_FOR_NONCHRISTIANS",
+      "printedPage": 174,
+      "scanId": 256,
+      "status": "MATCHED_LATIN_INCIPIT",
+      "canonicalPath": "friday.solemnPrayers[8].intention"
+    }
+  ]
+}
