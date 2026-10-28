@@ -21,6 +21,8 @@ CASES = {
         "basis": "All four observed perimeter regions appear to be painting. No artificial frame detected; no crop proposed.",
         "frame_class": "apparently_frame_free_verify_full_perimeter",
         "focal": (0.43, 0.46),
+        "required_anchors": {"father": (0.445, 0.325), "son": (0.380, 0.465),
+                             "dog": (0.512, 0.824), "restoration_garments": (0.760, 0.495)},
     },
     "angelus": {
         "root": "wave2", "source": "assets/staged/module-hero-wave2/angelus-met.jpg",
@@ -31,6 +33,8 @@ CASES = {
         "frame_class": "unpainted_oak_perimeter_visible",
         "museum_painted_ratio_width_over_height": 70.5 / 69.2,
         "focal": (0.53, 0.44),
+        "required_anchors": {"mary": (0.282, 0.400), "gabriel": (0.662, 0.245),
+                             "dove": (0.657, 0.079), "lilies": (0.957, 0.205)},
     },
     "adoration": {
         "root": "museum", "source": "assets/staged/module-hero-masters/adoration.jpg",
@@ -41,6 +45,8 @@ CASES = {
         "frame_class": "outer_support_plus_painted_inner_border",
         "museum_overall_ratio_width_over_height": 32.7 / 40.3,
         "focal": (0.5, 0.43),
+        "required_anchors": {"mary": (0.507, 0.334), "host": (0.490, 0.750),
+                             "left_saint": (0.200, 0.332), "right_saint": (0.791, 0.323)},
     },
 }
 
@@ -90,6 +96,41 @@ def contact_sheet(im, cut, box, focus, module):
         draw.text((x+5, 427), title, fill="white")
     return canvas
 
+
+def cover_visibility(image_size, crop_box, focal, target_size, required_anchors):
+    """Calculate exact PIL ImageOps.fit source window; reject clipped subject anchors.
+
+    Point anchors are conservative composition proxies, not proof that an entire
+    figure is preserved. This function never grants final human composition QA.
+    """
+    x0, y0, x1, y1 = crop_box
+    w, h = x1 - x0, y1 - y0
+    aspect = target_size[0] / target_size[1]
+    if w / h > aspect:
+        view_w, view_h = h * aspect, h
+        left = x0 + (w - view_w) * focal[0]
+        top = y0
+    else:
+        view_w, view_h = w, w / aspect
+        left = x0
+        top = y0 + (h - view_h) * focal[1]
+    right, bottom = left + view_w, top + view_h
+    # Reserve 1% of the native dimension inside each visible edge.
+    margin_x, margin_y = image_size[0] * .01, image_size[1] * .01
+    clipped = [
+        name for name, (px, py) in required_anchors.items()
+        if not (left+margin_x <= px*image_size[0] <= right-margin_x
+                and top+margin_y <= py*image_size[1] <= bottom-margin_y)
+    ]
+    return {
+        "viewport": list(target_size),
+        "source_window_xyxy": [round(v, 1) for v in (left, top, right, bottom)],
+        "required_anchor_count": len(required_anchors),
+        "clipped_or_edge_risk_anchors": clipped,
+        "automatic_cover_eligible": len(clipped) == 0,
+        "warning": "Point check only: full figure and painted details still need human signoff",
+    }
+
 def run(roots, out):
     out.mkdir(parents=True, exist_ok=True)
     manifest = {
@@ -129,6 +170,13 @@ def run(roots, out):
         overview.save(out / (name + "-boundary-overlay.jpg"), "JPEG", quality=92)
         contact_sheet(im, cut, spec["proposed_box"], spec["focal"], name).save(
             out / (name + "-responsive-comparison.jpg"), "JPEG", quality=92)
+        viewports = {"square_1x1": (320, 320), "phone_3x4": (270, 360),
+                     "wide_16x9": (1600, 900)}
+        coverage = {
+            kind: cover_visibility(im.size, spec["proposed_box"], spec["focal"],
+                                   dimensions, spec["required_anchors"])
+            for kind, dimensions in viewports.items()
+        }
         record = {
             "module_id": name, "accession": spec["accession"],
             "original_branch_role": spec["root"], "original_path": spec["source"],
@@ -142,6 +190,11 @@ def run(roots, out):
             "evidence_and_limitations": spec["basis"],
             "review_colour_note": colour,
             "focal_for_test_only": list(spec["focal"]),
+            "required_subject_anchors_original_normalized": {
+                label: list(point) for label, point in spec["required_anchors"].items()
+            },
+            "cover_subject_visibility_checks": coverage,
+            "full_work_display_policy": "contain_or_natural_aspect_preferred_for_full_composition",
             "boundary_overlay": name + "-boundary-overlay.jpg",
             "candidate_preview": basename + ".jpg",
             "responsive_comparison": name + "-responsive-comparison.jpg",
@@ -152,6 +205,8 @@ def run(roots, out):
             "app_released": False,
         }
         manifest["paintings"].append(record)
+    if manifest["paintings"][1]["cover_subject_visibility_checks"]["phone_3x4"]["automatic_cover_eligible"]:
+        raise AssertionError("Angelus mobile cover unexpectedly passed despite lilies being off-screen")
     (out / "frame-review-manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return manifest
