@@ -6,15 +6,15 @@
  */
 const SOURCE="https://www.institute-christ-king.org/pittsburgh-gallery/1633-tenebrae2024";
 const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-export const freshTenebraeCeremony=()=>({enabled:false,extinguished:0,hidden:false,strepitus:false,returned:false});
+export const freshTenebraeCeremony=()=>({enabled:false,extinguished:0,observedPsalms:[],hidden:false,strepitus:false,returned:false});
 export function tenebraeCeremonialAction(old,action,step){
  const state={...freshTenebraeCeremony(),...old};
  if(action==="reset")return freshTenebraeCeremony();
  if(action==="enable")return {...state,enabled:true};
  if(action==="disable")return {...state,enabled:false};
  if(!state.enabled)return state;
- if(action==="extinguish"&&step?.kind==="PSALM"&&state.extinguished<14&&!state.hidden)return {...state,extinguished:state.extinguished+1};
- if(action==="undo"&&state.extinguished>0&&!state.hidden)return {...state,extinguished:state.extinguished-1};
+ if(action==="extinguish"&&step?.kind==="PSALM"&&/^(M\.N[1-3]\.P[1-3]|L\.P[1-5])$/.test(step.id||"")&&state.extinguished<14&&!state.hidden&&!state.observedPsalms.includes(step.id))return {...state,extinguished:state.extinguished+1,observedPsalms:[...state.observedPsalms,step.id]};
+ if(action==="undo"&&state.extinguished>0&&!state.hidden)return {...state,extinguished:state.extinguished-1,observedPsalms:state.observedPsalms.slice(0,-1)};
  if(action==="hide"&&state.extinguished===14&&!state.hidden&&step?.id==="L.BENEDICTUS")return {...state,hidden:true};
  if(action==="strepitus"&&state.hidden&&!state.strepitus)return {...state,strepitus:true};
  if(action==="return"&&state.strepitus&&!state.returned)return {...state,returned:true};
@@ -28,8 +28,8 @@ export function renderTenebraeCeremony({ceremony,step,french=false}={}){
   const lit=i===14?!s.hidden||s.returned:i>=number;
   return '<span role="img" aria-label="'+esc(L("Candle ","Cierge ")+(i+1)+(lit?L(" lit"," allumé"):L(" extinguished or concealed"," éteint ou caché")))+'" style="height:40px;width:8px;margin:3px;background:'+(lit?'#ddab58':'#5e6065')+';border-radius:6px;display:inline-block;opacity:'+(lit?'1':'.37')+'"></span>';
  }).join("");
- const psalm=step?.kind==="PSALM";
- const cue=psalm?L("Psalm reading: mark the extinguishing only when it occurs at the actual service.","Psaume : marquez l’extinction seulement lorsqu’elle a effectivement lieu."):L("Follow the current Office passage. Ceremonial events are recorded manually, not triggered by navigation.","Suivez la lecture de l’Office. Les événements sont constatés manuellement, non déclenchés par la navigation.");
+ const psalm=step?.kind==="PSALM"&&!s.observedPsalms.includes(step.id||"");
+ const cue=psalm?L("Psalm reading: record at most one extinguishing for this distinct psalm, and only if observed at the service.","Psaume : notez au plus une extinction pour ce psaume distinct, et seulement si elle est observée."):L("Follow the current Office passage. Ceremonial events are recorded manually, not triggered by navigation.","Suivez la lecture de l’Office. Les événements sont constatés manuellement, non déclenchés par la navigation.");
  const button=(action,en,fr,disabled=false)=>'<button type="button" data-p435930-tenebrae-ceremony="'+action+'" '+(disabled?'disabled ':'')+'>'+esc(L(en,fr))+'</button>';
  return '<aside class="aoTenebCeremony" aria-label="'+esc(L("Observed local Tenebrae ceremony","Cérémonial local des Ténèbres observé"))+'" style="padding:1rem;border:1px solid currentColor;border-radius:12px;margin:1rem 0">'+
  '<h3>'+esc(L("Solemn Tenebrae · local ceremony","Ténèbres solennelles · cérémonial local"))+'</h3>'+
