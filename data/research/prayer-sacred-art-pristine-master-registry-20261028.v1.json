@@ -110,7 +110,8 @@
     "batch2_artwork_groups_processed": 14,
     "batch2_native_source_candidates_archived": 7,
     "batch2_photo_candidates_pristine": 0,
-    "batch2_source_only_duplicates_avoided": 1
+    "batch2_source_only_duplicates_avoided": 1,
+    "additional_native_source_candidates_archived_not_primary_promoted": 7
   },
   "primary_artworks": [
     {
@@ -341,6 +342,15 @@
         "native_candidate_qualitative_grade": "NO_NATIVE_PHOTO_INSPECTION",
         "photo_identity_and_rights_still_hold": true,
         "no_promotion_into_current_approved_master": true
+      },
+      "batch2_acquisition": {
+        "case_id": "restout-pentecost",
+        "source_status": "DISCOVERY_PENDING_EXACT_OBJECT_IDENTIFICATION",
+        "archived_candidate": null,
+        "quality_preliminary": null,
+        "original_selected_master_replaced": false,
+        "release_allowed": false,
+        "notes": []
       }
     },
     {
@@ -580,6 +590,29 @@
         "native_candidate_qualitative_grade": "REJECT_AS_PRISTINE_EXTERNAL_GILT_FRAME_AND_PERSPECTIVE",
         "photo_identity_and_rights_still_hold": true,
         "no_promotion_into_current_approved_master": true
+      },
+      "batch2_acquisition": {
+        "case_id": "reni-michael",
+        "source_status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+        "archived_candidate": {
+          "path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/reni-michael/reni-michael-native.jpg",
+          "sha256": "d376bbf82b9978223eb8968fda988ae7d61ebc84cf50d72bb5f5fd868fbb23ce",
+          "pixels": [
+            2112,
+            2816
+          ],
+          "bytes": 1570300,
+          "source_original_unchanged": true
+        },
+        "quality_preliminary": {
+          "category": "EXTERNAL_FRAME_AND_PERSPECTIVE_CONFIRMED",
+          "observation": "Photograph includes gilded gallery frame and oblique perspective; higher resolution does not solve pristine requirement.",
+          "pristine_certified": false,
+          "source_rights_certified": false
+        },
+        "original_selected_master_replaced": false,
+        "release_allowed": false,
+        "notes": []
       }
     },
     {
@@ -647,6 +680,15 @@
         "native_candidate_qualitative_grade": "NO_NATIVE_PHOTO_INSPECTION",
         "photo_identity_and_rights_still_hold": true,
         "no_promotion_into_current_approved_master": true
+      },
+      "batch2_acquisition": {
+        "case_id": "guardian-angel-cortona",
+        "source_status": "REFERENCE_ONLY_BELOW_SOURCE_QUALITY_FLOOR",
+        "archived_candidate": null,
+        "quality_preliminary": null,
+        "original_selected_master_replaced": false,
+        "release_allowed": false,
+        "notes": []
       }
     },
     {
@@ -1090,6 +1132,15 @@
         "native_candidate_qualitative_grade": "NO_NATIVE_PHOTO_INSPECTION",
         "photo_identity_and_rights_still_hold": true,
         "no_promotion_into_current_approved_master": true
+      },
+      "batch2_acquisition": {
+        "case_id": "gerome-age-augustus",
+        "source_status": "REFERENCE_ONLY_BELOW_SOURCE_QUALITY_FLOOR",
+        "archived_candidate": null,
+        "quality_preliminary": null,
+        "original_selected_master_replaced": false,
+        "release_allowed": false,
+        "notes": []
       }
     },
     {
@@ -1233,6 +1284,15 @@
         "native_candidate_qualitative_grade": "NO_NATIVE_PHOTO_INSPECTION",
         "photo_identity_and_rights_still_hold": true,
         "no_promotion_into_current_approved_master": true
+      },
+      "batch2_acquisition": {
+        "case_id": "evening-frere-op6",
+        "source_status": "REFERENCE_ONLY_BELOW_SOURCE_QUALITY_FLOOR",
+        "archived_candidate": null,
+        "quality_preliminary": null,
+        "original_selected_master_replaced": false,
+        "release_allowed": false,
+        "notes": []
       }
     },
     {
@@ -2280,7 +2340,15 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": "hero::holy-spirit",
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "batch2_acquisition": {
+        "case_id": "restout-pentecost",
+        "status": "DISCOVERY_PENDING_EXACT_OBJECT_IDENTIFICATION",
+        "archived_candidate": null,
+        "preliminary_quality": null,
+        "user_placement_action_retained": "reject",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "seven-sorrows::protected-hero--seven-sorrows-mnac-008327-000",
@@ -2943,7 +3011,29 @@
           "source_licence_link": "https://creativecommons.org/licenses/by-sa/4.0/",
           "source_quality_hold_reason": "High ISO 2000 and strong corner chroma-noise; credit and share-alike apply to publication/derived versions."
         }
-      ]
+      ],
+      "batch2_acquisition": {
+        "case_id": "tiepolo-station12",
+        "status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+        "archived_candidate": {
+          "path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/tiepolo-station12/tiepolo-station12-native.jpg",
+          "sha256": "4d59307c2553be1b7103d5e9642631f3025fc4cad929e3ed4fdd7348a5cfbeec",
+          "pixels": [
+            3277,
+            4316
+          ],
+          "bytes": 11118115,
+          "source_original_unchanged": true
+        },
+        "preliminary_quality": {
+          "category": "HIGH_NOISE_AND_GLARE_CONCERN",
+          "observation": "Visible uneven texture/compression and severe blue noise in bottom-right native corner; may be unsuitable despite 3277 x 4316 pixels.",
+          "pristine_certified": false,
+          "source_rights_certified": false
+        },
+        "user_placement_action_retained": "better-photo",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "stations::historic:giandomenico tiepolo:descent from the cross prado passion series",
@@ -2979,7 +3069,29 @@
           "source_licence_link": "https://creativecommons.org/publicdomain/mark/1.0/",
           "source_quality_hold_reason": "Museo Prado exact inventory P000361, 1772. Source photo rights differ by jurisdiction."
         }
-      ]
+      ],
+      "batch2_acquisition": {
+        "case_id": "tiepolo-prado-descent",
+        "status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+        "archived_candidate": {
+          "path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/tiepolo-prado-descent/tiepolo-prado-descent-native.jpg",
+          "sha256": "1cb5d8a9f420eddd32ffabc4713a49d27a6f39e664d2495c5852a34fa68723e7",
+          "pixels": [
+            2705,
+            2362
+          ],
+          "bytes": 7491294,
+          "source_original_unchanged": true
+        },
+        "preliminary_quality": {
+          "category": "PRELIMINARY_NO_EXTERNAL_FRAME_VISIBLE",
+          "observation": "Whole painted area present with no obvious surrounding frame; colour and reuse rights pending. User's editorial status is retained unchanged.",
+          "pristine_certified": false,
+          "source_rights_certified": false
+        },
+        "user_placement_action_retained": "better-photo",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "stations::historic:giandomenico tiepolo:burial of christ prado passion series",
@@ -2998,7 +3110,15 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "batch2_acquisition": {
+        "case_id": "tiepolo-prado-burial",
+        "status": "DISCOVERY_PENDING_EXACT_OBJECT_IDENTIFICATION",
+        "archived_candidate": null,
+        "preliminary_quality": null,
+        "user_placement_action_retained": "better-photo",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "stations::w5-carracci",
@@ -3031,7 +3151,29 @@
           "publisher_photo_pristine": false,
           "rights_checked_for_specific_file": false
         }
-      ]
+      ],
+      "batch2_acquisition": {
+        "case_id": "carracci-burial-met",
+        "status": "RESEARCH_SOURCE_ARCHIVED_NOT_PRISTINE",
+        "archived_candidate": {
+          "path": "assets/staged/prayer-art-bulk-acquisition-b2-20261028/carracci-burial-met-met-native.jpg",
+          "sha256": "6146de5ad9544812623cee4499e7cc717d1b0c152500be72c73103a781fc5757",
+          "width": 3122,
+          "height": 3875,
+          "bytes": 2111362,
+          "original_unmodified": true,
+          "origin": "https://images.metmuseum.org/CRDImages/ep/original/DP312834.jpg",
+          "rights_basis": "Met API isPublicDomain=true; review exact file terms at release"
+        },
+        "preliminary_quality": {
+          "category": "BORDER_OR_MOUNT_CONCERN",
+          "observation": "Met original has broad dark perimeter and visible rectilinear margin at native corners. Do not label as frame-free without painted-area check.",
+          "pristine_certified": false,
+          "source_rights_certified": false
+        },
+        "user_placement_action_retained": "better-photo",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "stations::w6-holy-blood",
@@ -3107,7 +3249,29 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "batch2_acquisition": {
+        "case_id": "tiepolo-station12",
+        "status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+        "archived_candidate": {
+          "path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/tiepolo-station12/tiepolo-station12-native.jpg",
+          "sha256": "4d59307c2553be1b7103d5e9642631f3025fc4cad929e3ed4fdd7348a5cfbeec",
+          "pixels": [
+            3277,
+            4316
+          ],
+          "bytes": 11118115,
+          "source_original_unchanged": true
+        },
+        "preliminary_quality": {
+          "category": "HIGH_NOISE_AND_GLARE_CONCERN",
+          "observation": "Visible uneven texture/compression and severe blue noise in bottom-right native corner; may be unsuitable despite 3277 x 4316 pixels.",
+          "pristine_certified": false,
+          "source_rights_certified": false
+        },
+        "user_placement_action_retained": "reject",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "seven-words::w5-carracci",
@@ -3126,7 +3290,29 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "batch2_acquisition": {
+        "case_id": "carracci-burial-met",
+        "status": "RESEARCH_SOURCE_ARCHIVED_NOT_PRISTINE",
+        "archived_candidate": {
+          "path": "assets/staged/prayer-art-bulk-acquisition-b2-20261028/carracci-burial-met-met-native.jpg",
+          "sha256": "6146de5ad9544812623cee4499e7cc717d1b0c152500be72c73103a781fc5757",
+          "width": 3122,
+          "height": 3875,
+          "bytes": 2111362,
+          "original_unmodified": true,
+          "origin": "https://images.metmuseum.org/CRDImages/ep/original/DP312834.jpg",
+          "rights_basis": "Met API isPublicDomain=true; review exact file terms at release"
+        },
+        "preliminary_quality": {
+          "category": "BORDER_OR_MOUNT_CONCERN",
+          "observation": "Met original has broad dark perimeter and visible rectilinear margin at native corners. Do not label as frame-free without painted-area check.",
+          "pristine_certified": false,
+          "source_rights_certified": false
+        },
+        "user_placement_action_retained": "reject",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "seven-words::w6-holy-blood",
@@ -3200,7 +3386,29 @@
           "source_licence_link": "https://creativecommons.org/publicdomain/mark/1.0/",
           "source_quality_hold_reason": "Commons English structured title says Death of Christ incorrectly; image/description depict Agony in the Garden."
         }
-      ]
+      ],
+      "batch2_acquisition": {
+        "case_id": "teniers-agony-antwerp",
+        "status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+        "archived_candidate": {
+          "path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/teniers-agony-antwerp/teniers-agony-antwerp-native.jpg",
+          "sha256": "6a697614cfe96b9f62921af0015eeca08fbc26ed0103dbefe9abe98c5342658e",
+          "pixels": [
+            1333,
+            1799
+          ],
+          "bytes": 1916709,
+          "source_original_unchanged": true
+        },
+        "preliminary_quality": {
+          "category": "PRELIMINARY_NO_EXTERNAL_FRAME_VISIBLE",
+          "observation": "Full painted image appears to extend to edges; bottom border may require painted-surface inspection.",
+          "pristine_certified": false,
+          "source_rights_certified": false
+        },
+        "user_placement_action_retained": "better-photo",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "tenebrae::historic:anthony van dyck:the lance thrust",
@@ -3238,7 +3446,15 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "batch2_acquisition": {
+        "case_id": "tiepolo-prado-burial",
+        "status": "DISCOVERY_PENDING_EXACT_OBJECT_IDENTIFICATION",
+        "archived_candidate": null,
+        "preliminary_quality": null,
+        "user_placement_action_retained": "better-photo",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "tenebrae::w5-carracci",
@@ -3271,7 +3487,29 @@
           "publisher_photo_pristine": false,
           "rights_checked_for_specific_file": false
         }
-      ]
+      ],
+      "batch2_acquisition": {
+        "case_id": "carracci-burial-met",
+        "status": "RESEARCH_SOURCE_ARCHIVED_NOT_PRISTINE",
+        "archived_candidate": {
+          "path": "assets/staged/prayer-art-bulk-acquisition-b2-20261028/carracci-burial-met-met-native.jpg",
+          "sha256": "6146de5ad9544812623cee4499e7cc717d1b0c152500be72c73103a781fc5757",
+          "width": 3122,
+          "height": 3875,
+          "bytes": 2111362,
+          "original_unmodified": true,
+          "origin": "https://images.metmuseum.org/CRDImages/ep/original/DP312834.jpg",
+          "rights_basis": "Met API isPublicDomain=true; review exact file terms at release"
+        },
+        "preliminary_quality": {
+          "category": "BORDER_OR_MOUNT_CONCERN",
+          "observation": "Met original has broad dark perimeter and visible rectilinear margin at native corners. Do not label as frame-free without painted-area check.",
+          "pristine_certified": false,
+          "source_rights_certified": false
+        },
+        "user_placement_action_retained": "better-photo",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "tenebrae::w6-holy-blood",
@@ -3328,7 +3566,15 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": "hero::holy-spirit",
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "batch2_acquisition": {
+        "case_id": "restout-pentecost",
+        "status": "DISCOVERY_PENDING_EXACT_OBJECT_IDENTIFICATION",
+        "archived_candidate": null,
+        "preliminary_quality": null,
+        "user_placement_action_retained": "reject",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "novenas::historic:jean l on g r me:the age of augustus birth of christ",
@@ -3516,7 +3762,29 @@
           "source_licence_link": null,
           "source_quality_hold_reason": "The original shows a wide outer frame on all sides, not suitable for source promotion."
         }
-      ]
+      ],
+      "batch2_acquisition": {
+        "case_id": "paired-hearts-lopez",
+        "status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+        "archived_candidate": {
+          "path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/paired-hearts-lopez/paired-hearts-lopez-native.jpg",
+          "sha256": "1b990f88d8d8a9a6a74a9a3cba598eef1fe2d33dc188c45cd924a8f8d3e4059d",
+          "pixels": [
+            1725,
+            2560
+          ],
+          "bytes": 394056,
+          "source_original_unchanged": true
+        },
+        "preliminary_quality": {
+          "category": "EXTERNAL_FRAME_CONFIRMED",
+          "observation": "Gold outer frame visible along all four native corners; crop only after painted boundary proof.",
+          "pristine_certified": false,
+          "source_rights_certified": false
+        },
+        "user_placement_action_retained": "better-photo",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "first-friday::king--caravaggio-ecce",
@@ -3647,7 +3915,29 @@
           "source_licence_link": null,
           "source_quality_hold_reason": "The original shows a wide outer frame on all sides, not suitable for source promotion."
         }
-      ]
+      ],
+      "batch2_acquisition": {
+        "case_id": "paired-hearts-lopez",
+        "status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+        "archived_candidate": {
+          "path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/paired-hearts-lopez/paired-hearts-lopez-native.jpg",
+          "sha256": "1b990f88d8d8a9a6a74a9a3cba598eef1fe2d33dc188c45cd924a8f8d3e4059d",
+          "pixels": [
+            1725,
+            2560
+          ],
+          "bytes": 394056,
+          "source_original_unchanged": true
+        },
+        "preliminary_quality": {
+          "category": "EXTERNAL_FRAME_CONFIRMED",
+          "observation": "Gold outer frame visible along all four native corners; crop only after painted boundary proof.",
+          "pristine_certified": false,
+          "source_rights_certified": false
+        },
+        "user_placement_action_retained": "better-photo",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "sacred-heart::heart-jesus--primary",
@@ -3685,7 +3975,15 @@
       "review_note": "we can do better than that one",
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "batch2_acquisition": {
+        "case_id": "batoni-sacred-heart",
+        "status": "SOURCE_FETCH_FAILED",
+        "archived_candidate": null,
+        "preliminary_quality": null,
+        "user_placement_action_retained": "better-photo",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "sacred-heart::heart-jesus--moroder",
@@ -3723,7 +4021,29 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "batch2_acquisition": {
+        "case_id": "paired-hearts-lopez",
+        "status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+        "archived_candidate": {
+          "path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/paired-hearts-lopez/paired-hearts-lopez-native.jpg",
+          "sha256": "1b990f88d8d8a9a6a74a9a3cba598eef1fe2d33dc188c45cd924a8f8d3e4059d",
+          "pixels": [
+            1725,
+            2560
+          ],
+          "bytes": 394056,
+          "source_original_unchanged": true
+        },
+        "preliminary_quality": {
+          "category": "EXTERNAL_FRAME_CONFIRMED",
+          "observation": "Gold outer frame visible along all four native corners; crop only after painted boundary proof.",
+          "pristine_certified": false,
+          "source_rights_certified": false
+        },
+        "user_placement_action_retained": "reject",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "holy-name::king--primary",
@@ -3799,7 +4119,15 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": "hero::holy-spirit",
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "batch2_acquisition": {
+        "case_id": "restout-pentecost",
+        "status": "DISCOVERY_PENDING_EXACT_OBJECT_IDENTIFICATION",
+        "archived_candidate": null,
+        "preliminary_quality": null,
+        "user_placement_action_retained": "better-photo",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "hymns::holy-spirit--vandyck",
@@ -3835,7 +4163,29 @@
           "source_licence_link": "https://creativecommons.org/publicdomain/mark/1.0/",
           "source_quality_hold_reason": "Source Commons file derives from Google Arts & Culture; exact 6064×7368 work displayed."
         }
-      ]
+      ],
+      "batch2_acquisition": {
+        "case_id": "vandyck-holy-spirit",
+        "status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+        "archived_candidate": {
+          "path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/vandyck-holy-spirit/vandyck-holy-spirit-native.jpg",
+          "sha256": "9ac5db7a32626fd6825e6d364f3fc48b034ba8282a6989cf24d3f368c0eafe63",
+          "pixels": [
+            6064,
+            7368
+          ],
+          "bytes": 3321156,
+          "source_original_unchanged": true
+        },
+        "preliminary_quality": {
+          "category": "PRELIMINARY_NO_EXTERNAL_FRAME_VISIBLE",
+          "observation": "Painting extends through all sampled corners; centre-pixel, institutional colour and exact reuse rights remain open.",
+          "pristine_certified": false,
+          "source_rights_certified": false
+        },
+        "user_placement_action_retained": "better-photo",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "hymns::historic:peter paul rubens:the holy trinity",
@@ -3854,7 +4204,15 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "batch2_acquisition": {
+        "case_id": "rubens-trinity",
+        "status": "DISCOVERY_PENDING_EXACT_OBJECT_IDENTIFICATION",
+        "archived_candidate": null,
+        "preliminary_quality": null,
+        "user_placement_action_retained": "better-photo",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "hymns::historic:peter paul rubens:assumption of the virgin",
@@ -4120,7 +4478,15 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "batch2_acquisition": {
+        "case_id": "rubens-trinity",
+        "status": "DISCOVERY_PENDING_EXACT_OBJECT_IDENTIFICATION",
+        "archived_candidate": null,
+        "preliminary_quality": null,
+        "user_placement_action_retained": "reject",
+        "approval_to_publish": false
+      }
     },
     {
       "placement_key": "library::adoration--champaigne",
@@ -4793,7 +5159,7 @@
       }
     },
     "B1_IMAGE_ACQUISITION": {
-      "status": "B2_BULK_RESEARCH_SOURCES_COLLECTED_PRISTINE_STILL_HOLD",
+      "status": "B2_14_CASE_SOURCE_INTAKE_COMPLETE_UNRESOLVED_STILL_HELD",
       "exact_original_missing": [
         {
           "module_id": "angel",
@@ -4955,7 +5321,7 @@
         "holy-spirit--vandyck",
         "historic:peter paul rubens:the holy trinity"
       ],
-      "done_in_this_pass": 0,
+      "done_in_this_pass": 14,
       "workflow": "Research all image exceptions in one 15+ artwork batch, archive native bytes and independent checksum; no subjective approval by file size alone.",
       "additional_review_flags": [
         "Ingres Adoration: exposed wooden support",
@@ -5239,7 +5605,12 @@
         "PRELIMINARY_PAINTED_SURFACE_HOLD": 3,
         "REJECT_AS_PRISTINE_EXTERNAL_BLACK_FRAME": 1,
         "REJECT_AS_PRISTINE_EXTERNAL_GILT_FRAME": 1
-      }
+      },
+      "source_candidates_retrieved": 7,
+      "low_res_sources_rejected_as_pristine": 3,
+      "discovery_or_identity_unresolved": 4,
+      "technical_archival_not_quality_approval": true,
+      "candidate_provenance_file": "data/research/prayer-sacred-art-bulk-b2-consolidated-20261028.v1.json"
     },
     "B2_MASTER_QUALITY": {
       "status": "WHOLE_WORK_AND_CORNER_PRELIMINARY_SCANNED_NOT_PRISTINE_SIGNED_OFF",
