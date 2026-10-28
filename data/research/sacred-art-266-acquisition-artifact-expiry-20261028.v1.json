@@ -1,0 +1,2769 @@
+{
+  "schema": "AO_SACRED_ART_266_ACQUISITION_EXPIRY_AUDIT_V1",
+  "date": "2026-10-28",
+  "caveat": "GitHub Actions artifact metadata only: ZIP bytes NOT downloaded or checksum-verified. Exact original SHA metadata retained for later check.",
+  "github": "Fulcanelli13/ad-orientem",
+  "metrics": {
+    "recordedAcquisitions": 266,
+    "uniqueRecordedOriginalSha": 266,
+    "uniqueArtifactIds": 35,
+    "artifactIdsListedAndNotExpired": 35,
+    "missingOrMismatchedReferences": 0,
+    "missingRecordedArchivePath": 0,
+    "uniqueArtifactArchiveBytes": 1386664686,
+    "uniqueArtifactArchiveGiB": 1.291,
+    "earliestExpiry": "2026-11-09T08:43:46Z",
+    "latestExpiry": "2026-11-10T16:05:03Z",
+    "permanentBackupsVerified": 0
+  },
+  "preservation": "URGENT: artifacts expire 9–10 Nov 2026. A Github Actions retention listing is not a permanent archive. Preserve without € costs and without publishing unlicensed content.",
+  "artifactIndex": [
+    {
+      "runId": 38038829532,
+      "artifactId": 11664124885,
+      "zipBytes": 125908252,
+      "expiresAt": "2026-11-09T08:43:46Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38041653701,
+      "artifactId": 11666321660,
+      "zipBytes": 66451418,
+      "expiresAt": "2026-11-09T09:31:32Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38042094354,
+      "artifactId": 11666277565,
+      "zipBytes": 33066888,
+      "expiresAt": "2026-11-09T09:39:05Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38042295260,
+      "artifactId": 11666222904,
+      "zipBytes": 42707061,
+      "expiresAt": "2026-11-09T09:42:19Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38040772457,
+      "artifactId": 11665744037,
+      "zipBytes": 125168681,
+      "expiresAt": "2026-11-09T09:44:38Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38042604394,
+      "artifactId": 11665808910,
+      "zipBytes": 50934148,
+      "expiresAt": "2026-11-09T09:47:42Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38043276943,
+      "artifactId": 11665734963,
+      "zipBytes": 32532620,
+      "expiresAt": "2026-11-09T09:58:56Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38043542975,
+      "artifactId": 11666499648,
+      "zipBytes": 18722786,
+      "expiresAt": "2026-11-09T10:03:37Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38044853035,
+      "artifactId": 11667422693,
+      "zipBytes": 10184572,
+      "expiresAt": "2026-11-09T10:30:22Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38044853035,
+      "artifactId": 11666577879,
+      "zipBytes": 116548990,
+      "expiresAt": "2026-11-09T10:32:31Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38044853035,
+      "artifactId": 11667353162,
+      "zipBytes": 118285106,
+      "expiresAt": "2026-11-09T10:33:24Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38044853035,
+      "artifactId": 11667368146,
+      "zipBytes": 12474419,
+      "expiresAt": "2026-11-09T10:33:45Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38044853035,
+      "artifactId": 11666852705,
+      "zipBytes": 30045599,
+      "expiresAt": "2026-11-09T10:35:27Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38045727698,
+      "artifactId": 11666649062,
+      "zipBytes": 55610565,
+      "expiresAt": "2026-11-09T10:49:06Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38052449434,
+      "artifactId": 11669761734,
+      "zipBytes": 60819468,
+      "expiresAt": "2026-11-09T12:34:47Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38053123235,
+      "artifactId": 11670601250,
+      "zipBytes": 3333939,
+      "expiresAt": "2026-11-09T12:45:32Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38054107621,
+      "artifactId": 11670573051,
+      "zipBytes": 5495995,
+      "expiresAt": "2026-11-09T13:01:18Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38054264962,
+      "artifactId": 11669918762,
+      "zipBytes": 11446312,
+      "expiresAt": "2026-11-09T13:03:49Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38056121980,
+      "artifactId": 11671671828,
+      "zipBytes": 5582951,
+      "expiresAt": "2026-11-09T13:36:08Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38056121980,
+      "artifactId": 11671681939,
+      "zipBytes": 9204078,
+      "expiresAt": "2026-11-09T13:38:23Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38056121980,
+      "artifactId": 11671012741,
+      "zipBytes": 32204398,
+      "expiresAt": "2026-11-09T13:39:03Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38056121980,
+      "artifactId": 11671777204,
+      "zipBytes": 59823660,
+      "expiresAt": "2026-11-09T13:41:09Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38056121980,
+      "artifactId": 11671567582,
+      "zipBytes": 29570964,
+      "expiresAt": "2026-11-09T13:42:13Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38058367058,
+      "artifactId": 11672059807,
+      "zipBytes": 3038290,
+      "expiresAt": "2026-11-09T14:07:40Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38064988279,
+      "artifactId": 11674142020,
+      "zipBytes": 2017695,
+      "expiresAt": "2026-11-09T15:47:03Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38064643844,
+      "artifactId": 11674716775,
+      "zipBytes": 4464903,
+      "expiresAt": "2026-11-09T15:47:25Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38064988174,
+      "artifactId": 11674661988,
+      "zipBytes": 62800419,
+      "expiresAt": "2026-11-09T15:47:26Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38064643844,
+      "artifactId": 11674612193,
+      "zipBytes": 17857545,
+      "expiresAt": "2026-11-09T15:48:14Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38064643844,
+      "artifactId": 11674197227,
+      "zipBytes": 20672925,
+      "expiresAt": "2026-11-09T15:50:16Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38064643844,
+      "artifactId": 11674137520,
+      "zipBytes": 29493514,
+      "expiresAt": "2026-11-09T15:52:49Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38064643844,
+      "artifactId": 11674893079,
+      "zipBytes": 1642448,
+      "expiresAt": "2026-11-09T16:00:12Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38066565193,
+      "artifactId": 11674423687,
+      "zipBytes": 15735496,
+      "expiresAt": "2026-11-09T16:10:36Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38066732920,
+      "artifactId": 11675199108,
+      "zipBytes": 6048501,
+      "expiresAt": "2026-11-09T16:12:53Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38093287797,
+      "artifactId": 11684723858,
+      "zipBytes": 160155080,
+      "expiresAt": "2026-11-09T22:58:00Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    },
+    {
+      "runId": 38153953954,
+      "artifactId": 11707214604,
+      "zipBytes": 6615000,
+      "expiresAt": "2026-11-10T16:05:03Z",
+      "apiReportedExpired": false,
+      "verifiedOn": "2026-10-28",
+      "archiveBytesDownloadedAndHashChecked": false,
+      "permanentBackupVerified": false
+    }
+  ],
+  "sourceAcquisitionReferences": [
+    {
+      "artworkId": "met-438724",
+      "originalSha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "recordedArchivePath": "museum-originals/met-438724.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-441233",
+      "originalSha256": "72c2c54a263ee67a0b7ed8ffc99474b64ce5c45096d75be0da16ca95ccab92d6",
+      "recordedArchivePath": "museum-originals/met-441233.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436791",
+      "originalSha256": "f294a91e54d1e073bbabf9c5d5ce4d8576febe145dff2ce5d278fc47dfb43d15",
+      "recordedArchivePath": "museum-originals/met-436791.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436502",
+      "originalSha256": "a76e00046346849d284e777072cff343a60faefa218178663071a08a10dc74b8",
+      "recordedArchivePath": "museum-originals/met-436502.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436570",
+      "originalSha256": "dc658c1e75ce659518a0c96d39874b07a273189716bfdecfe0635bb1fb9fe65f",
+      "recordedArchivePath": "museum-originals/met-436570.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437231",
+      "originalSha256": "3a736ed3e0f57755e1872ec4726de232c2d82e2f5ec873811007978f9e548e09",
+      "recordedArchivePath": "museum-originals/met-437231.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-769294",
+      "originalSha256": "fa268c569f69ee456946c71742199a1b85ebd082f27f68630184a9d33f293078",
+      "recordedArchivePath": "museum-originals/met-769294.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-435859",
+      "originalSha256": "2826fdfe6d5f1fd990d133889326d95b6655b17607b70d2f7cb81e4ce9ca2119",
+      "recordedArchivePath": "museum-originals/met-435859.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-435584",
+      "originalSha256": "f9293a3fe3c493805a59c912651cfbdc6ec6decbc75d0cf5c460638c1ad862e4",
+      "recordedArchivePath": "museum-originals/met-435584.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436984",
+      "originalSha256": "254e94beee4b50c8d61e9f214cfee1663bb31bedd0cc51a47164a3717c1515c7",
+      "recordedArchivePath": "museum-originals/met-436984.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436104",
+      "originalSha256": "c1cef22d2294b0f8574e30e0e90e2f9db8e70e7c226793ef1578fa1b6c79306b",
+      "recordedArchivePath": "museum-originals/met-436104.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437212",
+      "originalSha256": "33ee04b680360b08047e09e6f9f0b72cdb886a2ba663d7f133c79b9b2ed80fcb",
+      "recordedArchivePath": "museum-originals/met-437212.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437457",
+      "originalSha256": "7519c33f727e462fc1b1f9ecb6cc7316105a35d68a212a9c984cd475a8d0de55",
+      "recordedArchivePath": "museum-originals/met-437457.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-435755",
+      "originalSha256": "44529c53ef6f8d3643a391a9b49f28b01145fed9fd6fd2abe451265ff1b9e32a",
+      "recordedArchivePath": "museum-originals/met-435755.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459087",
+      "originalSha256": "2220c79ddf9ae2ccc23a9853a8055217079a52e6c1eb8f921a627eb8a858ee26",
+      "recordedArchivePath": "museum-originals/met-459087.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-439977",
+      "originalSha256": "ccc9e8353e3b9803a02852cab64e8d8d1dad6711f23af5b91e8b84448e556111",
+      "recordedArchivePath": "museum-originals/met-439977.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436098",
+      "originalSha256": "5a6de0cc6c1a3e16c9a52d2bbe39dde87202fd678f3f029aeef472bdab5881fb",
+      "recordedArchivePath": "museum-originals/met-436098.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-652416",
+      "originalSha256": "dc5b87d8f35213f971f5baea844a43aaef6d05b1eacd5eeea3e7442a52f0116f",
+      "recordedArchivePath": "museum-originals/met-652416.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437338",
+      "originalSha256": "ccc4a3b12d18a15af2ff47fc6f30ba404e86e3a98764758aa7ac9ea94d9e0ba0",
+      "recordedArchivePath": "museum-originals/met-437338.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437272",
+      "originalSha256": "a19493cf951a720a556bbf8fd880a5ab9d094739a8ac865a7ee5e8e3164b5c09",
+      "recordedArchivePath": "museum-originals/met-437272.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436416",
+      "originalSha256": "3adec9e8348ff88ef3dd7e88aa88e074802ecf807887bce30c9dc1ba823db3e3",
+      "recordedArchivePath": "museum-originals/met-436416.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436835",
+      "originalSha256": "889c57548f01237cb9031d81650832e74ac9f89112131a5bf32ded0317353a90",
+      "recordedArchivePath": "museum-originals/met-436835.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-702752",
+      "originalSha256": "855b6176890e6dde6bac386b28aaea39470725df5ae74b1b234b7cd8f40ec910",
+      "recordedArchivePath": "museum-originals/met-702752.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437403",
+      "originalSha256": "3c748a4137bae35764fa9fb607bf4af21366436db4c18594ec7aaba72427d108",
+      "recordedArchivePath": "museum-originals/met-437403.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-438561",
+      "originalSha256": "c69f9767527a3ea7249d8a2523bc8eec50810dd147dfcfb4bd0cdf7e3babc2ca",
+      "recordedArchivePath": "museum-originals/met-438561.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436102",
+      "originalSha256": "3a9ca2b198d9d8cb1bb4ec7651961bcd855346b7a98b7f5a9b0c0f3272a5037b",
+      "recordedArchivePath": "museum-originals/met-436102.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-439327",
+      "originalSha256": "cd131e409fc0b83366df017d216e2085ad21776fba13503a3cc300e37a57117f",
+      "recordedArchivePath": "museum-originals/met-439327.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459131",
+      "originalSha256": "5d19d31a2a213a80e81bffe2c195a1e9b3ae810c0b3428a69ae94685fd73c502",
+      "recordedArchivePath": "museum-originals/met-459131.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437213",
+      "originalSha256": "c5831a7dd244e516abd5ed14623cd472df83fe26a520bf6d9d64c50e65ded3d2",
+      "recordedArchivePath": "museum-originals/met-437213.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-458998",
+      "originalSha256": "3dd3b3ef433e7d549e34ff2383a18a061de42ebb0b1207bbbd3cffb1d60ec725",
+      "recordedArchivePath": "museum-originals/met-458998.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437298",
+      "originalSha256": "d89337600ea0e5702e68cf17ef7caf1d59755195da78c04313a6faff2bc598d9",
+      "recordedArchivePath": "museum-originals/met-437298.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436513",
+      "originalSha256": "7728e97a8b99a4a79cd27175311024f2b081b5739c445eba59df9be58bb44984",
+      "recordedArchivePath": "museum-originals/met-436513.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436793",
+      "originalSha256": "ede2bd3ed5c747b59e84921f06d0fe7ca4a855a577e2345f63680707f5b0f113",
+      "recordedArchivePath": "museum-originals/met-436793.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-647338",
+      "originalSha256": "ea1999a8bf70a3eedf2a1d3a059fbed4d6623c3970bf813645572a379c084f5a",
+      "recordedArchivePath": "museum-originals/met-647338.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-712946",
+      "originalSha256": "9d0fff62d386d550b93e99c399857d120c629f614b5b7870c4d4049e29efb668",
+      "recordedArchivePath": "museum-originals/met-712946.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-441971",
+      "originalSha256": "d3575d5455b46be66e0fc14e7ee1e7daf9194d2e8f68bd29d99608fea4a6e68e",
+      "recordedArchivePath": "museum-originals/met-441971.jpg",
+      "artifactId": 11664124885,
+      "runId": 38038829532,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-128075",
+      "originalSha256": "8aa5c6f68dac839907b00f72a5ac44903c47c41b59b990384b306977dd468415",
+      "recordedArchivePath": "museum-originals/cma-128075.jpg",
+      "artifactId": 11666321660,
+      "runId": 38041653701,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-124118",
+      "originalSha256": "7fc3fbae0f44af0029f9b29b22b62210b933ab6b7bd5a881b5844200f355dfb6",
+      "recordedArchivePath": "museum-originals/cma-124118.jpg",
+      "artifactId": 11666321660,
+      "runId": 38041653701,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-124117",
+      "originalSha256": "04d7836ce5aa7a3b77d93afb274fcd4047dbd7235aa33db43551c77c42bdd71f",
+      "recordedArchivePath": "museum-originals/cma-124117.jpg",
+      "artifactId": 11666321660,
+      "runId": 38041653701,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-111435",
+      "originalSha256": "ca3477cec38703486c8a9d050e79d48d94bbda9668035a7d3447690da00b76ee",
+      "recordedArchivePath": "museum-originals/cma-111435.jpg",
+      "artifactId": 11666321660,
+      "runId": 38041653701,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-124076",
+      "originalSha256": "5477d80f450d3e4b4f22fec263bcbb7482094f61412a8a12e0e77c927854a6fc",
+      "recordedArchivePath": "museum-originals/cma-124076.jpg",
+      "artifactId": 11666321660,
+      "runId": 38041653701,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-125248",
+      "originalSha256": "a0e5686b8293d3d2567260a2900e1a7cf7fbf50046e55fb1ddb6a75f0b7e6873",
+      "recordedArchivePath": "museum-originals/cma-125248.jpg",
+      "artifactId": 11666321660,
+      "runId": 38041653701,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-78982",
+      "originalSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+      "recordedArchivePath": "museum-originals/cma-78982.jpg",
+      "artifactId": 11666321660,
+      "runId": 38041653701,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-112626",
+      "originalSha256": "8e839b5a58229decac79b7f6d9458f6713043c0fc5c9ca6dbf565839d0746d48",
+      "recordedArchivePath": "museum-originals/cma-112626.jpg",
+      "artifactId": 11666321660,
+      "runId": 38041653701,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436672",
+      "originalSha256": "36b3bed7dbe53ac4c32d2627c68f3d8bee159814d1b3105c42433e82e869a3f6",
+      "recordedArchivePath": "museum-originals/met-436672.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-41656",
+      "originalSha256": "3b3b11cba6e16eff2535fdd9655d598f617c29f7f9e50d9356972681c2f1e4e6",
+      "recordedArchivePath": "nga-originals/nga-41656.jpg",
+      "artifactId": 11666277565,
+      "runId": 38042094354,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-41661",
+      "originalSha256": "90278d47f17cd2b153f62688e6d91e20f9c9c891a262c42a0b5bac440e98511e",
+      "recordedArchivePath": "nga-originals/nga-41661.jpg",
+      "artifactId": 11666277565,
+      "runId": 38042094354,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-12134",
+      "originalSha256": "b25871f518f5c0c12128e177b6d53981404fd9886a06666febd5a03181196cdf",
+      "recordedArchivePath": "nga-originals/nga-12134.jpg",
+      "artifactId": 11666277565,
+      "runId": 38042094354,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-41696",
+      "originalSha256": "8dbcab042b04848af2eaf8ff0a723f4d38b8da9c933987ae83dd7c42145271ea",
+      "recordedArchivePath": "nga-originals/nga-41696.jpg",
+      "artifactId": 11666222904,
+      "runId": 38042295260,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-46470",
+      "originalSha256": "361e092842eae79c1bccf7a3552c09a52a210c5d0aa14c49d4407fd01aa1a0be",
+      "recordedArchivePath": "nga-originals/nga-46470.jpg",
+      "artifactId": 11666222904,
+      "runId": 38042295260,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-46145",
+      "originalSha256": "f80258023f805c42c7b255fcbc8debdaed57005f027afd6193ff285ace00aeea",
+      "recordedArchivePath": "nga-originals/nga-46145.jpg",
+      "artifactId": 11666222904,
+      "runId": 38042295260,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437371",
+      "originalSha256": "f8d08f533183a99c36d021f8e4bf089cc91204a5c5694bfd22676b1dd787e35f",
+      "recordedArchivePath": "museum-originals/met-437371.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-442488",
+      "originalSha256": "acc13b2f34ed893edb300bbebd0dea66ddd95d824b8bd9fb94bc1e2a9d17abaf",
+      "recordedArchivePath": "museum-originals/met-442488.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436721",
+      "originalSha256": "69fe6aae9e565c621b05515ed4205044b216be63a5bcff6d7fe87163deb97623",
+      "recordedArchivePath": "museum-originals/met-436721.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436839",
+      "originalSha256": "408b6ed786d8a1bb24a9f407c0a0fa8bf6f4211c2d30dd0f4d14b9bea9047d18",
+      "recordedArchivePath": "museum-originals/met-436839.jpg",
+      "artifactId": 11666499648,
+      "runId": 38043542975,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-505",
+      "originalSha256": "f3a7a3e350821593959bba5441953d9684810243d2db8b6848d47dd1ba01c014",
+      "recordedArchivePath": "nga-originals/nga-505.jpg",
+      "artifactId": 11665808910,
+      "runId": 38042604394,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-45890",
+      "originalSha256": "34f2926591360e82a617888cee1dd7707462998f03e85ac71aab72239787f208",
+      "recordedArchivePath": "nga-originals/nga-45890.jpg",
+      "artifactId": 11665808910,
+      "runId": 38042604394,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437423",
+      "originalSha256": "db8e29b4bd81ab1481b32564b69ec6e40056cf28a3184fb0ba4da2bbe86e697a",
+      "recordedArchivePath": "museum-originals/met-437423.jpg",
+      "artifactId": 11666499648,
+      "runId": 38043542975,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437156",
+      "originalSha256": "6825656670d25b88c12aa833984db007876698c7d6fbdbdadeb6d020cf1bbb67",
+      "recordedArchivePath": "museum-originals/met-437156.jpg",
+      "artifactId": 11666499648,
+      "runId": 38043542975,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437342",
+      "originalSha256": "1ee5a9ab525bb63b42b49d346dd1b6029a3d4f50cd8bcf268e92dabc764602f0",
+      "recordedArchivePath": "museum-originals/met-437342.jpg",
+      "artifactId": 11666499648,
+      "runId": 38043542975,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437458",
+      "originalSha256": "6c980df07e2fd9ddc2bfc4b00b913fb6b60890f06fee9f11a8d640f8488b3abe",
+      "recordedArchivePath": "museum-originals/met-437458.jpg",
+      "artifactId": 11666499648,
+      "runId": 38043542975,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-458966",
+      "originalSha256": "93850d35216a47f7fb14613a31efe7885720992f7b8fe4f2b465a2d401923d2c",
+      "recordedArchivePath": "museum-originals/met-458966.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459055",
+      "originalSha256": "944c9aa2d96068087c3015c2c134fe9707163e5a0662e3e90116499653382a1c",
+      "recordedArchivePath": "museum-originals/met-459055.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-435899",
+      "originalSha256": "08375c7fbd4b1a7106f4bc0a4cd5070c38f5caf12d589599f33fff60451210ef",
+      "recordedArchivePath": "museum-originals/met-435899.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436096",
+      "originalSha256": "a5868af6037f575d05076c409bca27784cff735252bf3d7d2e6af2d01b13dbee",
+      "recordedArchivePath": "museum-originals/met-436096.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459066",
+      "originalSha256": "f4957572be074bff636115310541f9d0c62df701cfe0b101a573d5c97003bb46",
+      "recordedArchivePath": "museum-originals/met-459066.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-435766",
+      "originalSha256": "3222b992841b7c4434e16f8c79c8baa55020f592310966de3aefe3f49df58cb9",
+      "recordedArchivePath": "museum-originals/met-435766.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436100",
+      "originalSha256": "755de619133017096650118dba3c96f3cb0f1b6cca903baaaa057c94b7e8e4e0",
+      "recordedArchivePath": "museum-originals/met-436100.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459007",
+      "originalSha256": "31726ed6902185cc8d487659c331308d5072d412e33d5c4283e22c812161b681",
+      "recordedArchivePath": "museum-originals/met-459007.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-435828",
+      "originalSha256": "25091337842cffb185da13e54cab3d9807545b00b8f0ab2b3f6a8a989f8ca4a5",
+      "recordedArchivePath": "museum-originals/met-435828.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437736",
+      "originalSha256": "5442eb65643196738cf1654a30e81b083351fdc06069069d0c2addffe08ede5c",
+      "recordedArchivePath": "museum-originals/met-437736.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-438466",
+      "originalSha256": "b7d5f85771e4e270adb5fae5e01061f52004d195278c8705bde2482e8f0341c6",
+      "recordedArchivePath": "museum-originals/met-438466.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459021",
+      "originalSha256": "877feffce162f92b440e65fe030ba5efc3d402d514e9aad8a033e8209f2c02f9",
+      "recordedArchivePath": "museum-originals/met-459021.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459061",
+      "originalSha256": "1af708834e149b6544a0e038ce187eeb99bbf86bc7e696f16f0ee49e89022fa0",
+      "recordedArchivePath": "museum-originals/met-459061.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-435577",
+      "originalSha256": "8b885462c192a6f8de151801f722b9c790b4c9c652122dc9a8331e16ee09b1a8",
+      "recordedArchivePath": "museum-originals/met-435577.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459005",
+      "originalSha256": "c26c02b5aa57caaf0ffde33b539977e332eb6b9c2a72e2e6b35ae6259d6ff724",
+      "recordedArchivePath": "museum-originals/met-459005.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437639",
+      "originalSha256": "6fb88aa0ef9d71a8fcf21bc0ba8d1897afcc172ed76b4fcd3da99ecefa63a72d",
+      "recordedArchivePath": "museum-originals/met-437639.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-435656",
+      "originalSha256": "2cbb4291867ff44d99e3e81b8ed99b0f239ed212497e5502cb5c729453c6b19b",
+      "recordedArchivePath": "museum-originals/met-435656.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437673",
+      "originalSha256": "4dad30dbf33803fd4c79d07a1eed242bd757a8677bf72fdc91d1b05d502b2ff8",
+      "recordedArchivePath": "museum-originals/met-437673.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-458978",
+      "originalSha256": "45c3740f8ed373e46e9fb40b06dc7fe3bb42d1ce9ec1280ac5b4e9a1ce2d8b85",
+      "recordedArchivePath": "museum-originals/met-458978.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-458961",
+      "originalSha256": "23e130e69d12b38c6e414d4e1d521b0c1a638cdab3ced14206f8fa75cd7fc778",
+      "recordedArchivePath": "museum-originals/met-458961.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437524",
+      "originalSha256": "9416f3a1f193c5fb5cf9e65bc329feb73fbc07187d0a11b09e5087579d0c9ab6",
+      "recordedArchivePath": "museum-originals/met-437524.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459065",
+      "originalSha256": "b330d826719f69c1cceac4888c7d0eb71b44ce133488df07f30a818d963a0ce1",
+      "recordedArchivePath": "museum-originals/met-459065.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459053",
+      "originalSha256": "3b7d1a76ca63b3bd2fae1901d4e448c0efc75181501dde05ca73c4d8aee4c5d9",
+      "recordedArchivePath": "museum-originals/met-459053.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437698",
+      "originalSha256": "d2de9b64a4490a9feafab89ae621e4f8f129923ea16be47073ae9b52041bd68c",
+      "recordedArchivePath": "museum-originals/met-437698.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436797",
+      "originalSha256": "0de98139856e52e8f517d67cb3b12daa794fde71ce112ff5afa32e1fe61e6414",
+      "recordedArchivePath": "museum-originals/met-436797.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459059",
+      "originalSha256": "08bc8d4fec61ce91dcfb961f3b9587b347e63737203af8a44bb200f405520992",
+      "recordedArchivePath": "museum-originals/met-459059.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459063",
+      "originalSha256": "fddbdac3ac431af8ef0470922e20cd266ca482cc9602473626be9c89810b5e1c",
+      "recordedArchivePath": "museum-originals/met-459063.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-724811",
+      "originalSha256": "9eac04d11fbab1ce0e2b6cf8303591ff1e44d27c3fabd8dcfa2ab6e592db6751",
+      "recordedArchivePath": "museum-originals/met-724811.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459044",
+      "originalSha256": "55c27ba75d4760c142ad975b7550650664839c8b08d37db65858c1bb9b291be6",
+      "recordedArchivePath": "museum-originals/met-459044.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436801",
+      "originalSha256": "45fa890f6d70b6a1aa4d22a120fe4c86deb752a4290740154385e177a1656400",
+      "recordedArchivePath": "museum-originals/met-436801.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-440393",
+      "originalSha256": "240532f3efec68b9d606873fde65b0978b1f7333c8b5c5a1f460df3d208a6c64",
+      "recordedArchivePath": "museum-originals/met-440393.jpg",
+      "artifactId": 11665744037,
+      "runId": 38040772457,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "commons-multscher-pentecost",
+      "originalSha256": "662be382f179c06ca7e4e061d2a346b5df3c2671a7ed0d3d63db9fbc6c07e14d",
+      "recordedArchivePath": "originals/commons-multscher-pentecost.jpg",
+      "artifactId": 11665734963,
+      "runId": 38043276943,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "commons-debray-pentecost",
+      "originalSha256": "8c7e68d71f4fb477be62ad877acbaaabad17833799e0b3ff675e13438acd620f",
+      "recordedArchivePath": "originals/commons-debray-pentecost.jpg",
+      "artifactId": 11665734963,
+      "runId": 38043276943,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "commons-baroncelli-pentecost",
+      "originalSha256": "1cbd9f1f47143245a4336a4ecd4dfa0d637f93ce2f5ebfbfb5409aebc46e4f49",
+      "recordedArchivePath": "originals/commons-baroncelli-pentecost.jpg",
+      "artifactId": 11665734963,
+      "runId": 38043276943,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437542",
+      "originalSha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+      "recordedArchivePath": "museum-originals/met-437542.jpg",
+      "artifactId": 11666499648,
+      "runId": 38043542975,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-148758",
+      "originalSha256": "ee2b7edf0e0d1b731e6f57e8a8434a079bcd51717da1bd1af8c2c018bcda4833",
+      "recordedArchivePath": "originals/cma-148758.jpg",
+      "artifactId": 11667422693,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-910391",
+      "originalSha256": "b192547889db56e37f3a46d49fca02c78bbbc60b981380c309c8106696c8bb35",
+      "recordedArchivePath": "originals/met-910391.jpg",
+      "artifactId": 11667422693,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437008",
+      "originalSha256": "d1b9128deb55d1df3de1bd4b751d042f99e8bac5639e22938954a43531a67b11",
+      "recordedArchivePath": "originals/met-437008.jpg",
+      "artifactId": 11667422693,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-438338",
+      "originalSha256": "6146de5ad9544812623cee4499e7cc717d1b0c152500be72c73103a781fc5757",
+      "recordedArchivePath": "originals/met-438338.jpg",
+      "artifactId": 11667422693,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-137195",
+      "originalSha256": "8144d44e89b100a991a12c1bffbccb5665eb505a1f6087286a27063550d928db",
+      "recordedArchivePath": "originals/cma-137195.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437849",
+      "originalSha256": "a4c2c2f6c7e1a844658f941a0fc1c14c58821db58e8be5f29c9390ef3c6f74e6",
+      "recordedArchivePath": "originals/met-437849.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-816629",
+      "originalSha256": "61630e0254184d4bf79c36a24d6cf1707b9aa60fbc308584436b7955fd0bd9c7",
+      "recordedArchivePath": "originals/met-816629.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-435728",
+      "originalSha256": "fe7bee03b4a23f8b9c3edf491e4d2ab6e711f39600759b8be0473611d35771ea",
+      "recordedArchivePath": "originals/met-435728.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437977",
+      "originalSha256": "62e1b85b4afa6301eac6a8d6b9974384729f43563c08c3f2ed4e2af80574b90e",
+      "recordedArchivePath": "originals/met-437977.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-150389",
+      "originalSha256": "4d3e81096c456cb1b5ad9d36c69e82cba0e14655a1cd0a68a1d4776b4b1f55aa",
+      "recordedArchivePath": "originals/cma-150389.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-160143",
+      "originalSha256": "6edb1762e9001a78a19efb71173959befeb9cf7f90a9538bab62b6bffd3f3814",
+      "recordedArchivePath": "originals/cma-160143.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-170814",
+      "originalSha256": "cca07856c983260deb9bf9c9e1bf637e648efd9b5cfcebcf86e9918d88325f9a",
+      "recordedArchivePath": "originals/cma-170814.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-135659",
+      "originalSha256": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
+      "recordedArchivePath": "originals/cma-135659.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437743",
+      "originalSha256": "93690bf1b31ed4b7459bacec00017dc9642a005744002dd57e9348e4ab106924",
+      "recordedArchivePath": "originals/met-437743.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436035",
+      "originalSha256": "acb7948243971ebd7d97fb4a4ad4f626b17b5662771efc98d3277d613f9ba723",
+      "recordedArchivePath": "originals/met-436035.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437466",
+      "originalSha256": "f3108896cae02f1d8cf3b46960d5c7121940278a6425507215dc508dfd908944",
+      "recordedArchivePath": "originals/met-437466.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437649",
+      "originalSha256": "93b45b9525945bd4beb57131b87984df40db23cfa353ac6fa1fadfd54578c42d",
+      "recordedArchivePath": "originals/met-437649.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-132367",
+      "originalSha256": "b0f9f949e793d804fd6708106212c6bfbdf77a89faddc8a81f5c6d438c0eef35",
+      "recordedArchivePath": "originals/cma-132367.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436795",
+      "originalSha256": "e2d8035c55d43581b922a5428470afde12637bc8f94a98c2c41ca98250dcada6",
+      "recordedArchivePath": "originals/met-436795.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-112856",
+      "originalSha256": "90c986e166f476ebcdee174e0560a7d795f708004095e2eb13393dfeb02ad78e",
+      "recordedArchivePath": "originals/cma-112856.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-114684",
+      "originalSha256": "e756ee46553f51efcc009b2200cd5ffe2adebc047e03523a9dc754e26727e54a",
+      "recordedArchivePath": "originals/cma-114684.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-142472",
+      "originalSha256": "114ef56e52c0f6a8ddc1c86afb91b888616b8d439d737aec6c1c85a004716871",
+      "recordedArchivePath": "originals/cma-142472.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-97166",
+      "originalSha256": "91ccd2eb8d41170cefc15cfbe0891f9aae50218344a9a7c7efcfa8cddd1bce0c",
+      "recordedArchivePath": "originals/cma-97166.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-162322",
+      "originalSha256": "2c25e59ad6f8e0b4c5a2cdd1210b8a1b076ba1a410be8971b68cfe2bf1bfd8cb",
+      "recordedArchivePath": "originals/cma-162322.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-94846",
+      "originalSha256": "e76eab273a2ce74b4b0077ff517fbb94906ada94735a86225fe12f0e6c955415",
+      "recordedArchivePath": "originals/cma-94846.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-108541",
+      "originalSha256": "6d0e62e90be1ef3513474a309b983d2e2101b6781c62ed40acbcfa2db07111b3",
+      "recordedArchivePath": "originals/cma-108541.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-113202",
+      "originalSha256": "93fe169c654cac0a872d2db89ee955facf9ca66c2e996327eeaacad11fcafc05",
+      "recordedArchivePath": "originals/cma-113202.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-130392",
+      "originalSha256": "87c75f556071d28bbda0584a070886d9704cd8ad68245dd1942ef4030ed5b414",
+      "recordedArchivePath": "originals/cma-130392.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-140148",
+      "originalSha256": "9c4b503b069961ed89570b47bb527bab36c2d6b0d16a1f0aa0a9cc2f3f548b2f",
+      "recordedArchivePath": "originals/cma-140148.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-140149",
+      "originalSha256": "44de90f8daafa474561384874236bb65ca6efbcdda6e0840c032c31427c16f7d",
+      "recordedArchivePath": "originals/cma-140149.jpg",
+      "artifactId": 11666577879,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-122338",
+      "originalSha256": "aa6178b97052ec2dff5ad2f9da58269a23cabfd311983fce7c1f9d2b66b4075a",
+      "recordedArchivePath": "originals/cma-122338.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-127572",
+      "originalSha256": "07bceb9a3161ea2cbf10bbe19c26a3e37b95696df261804565cb7a325f64f9ab",
+      "recordedArchivePath": "originals/cma-127572.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437250",
+      "originalSha256": "97d061e06bda7f3f564f8b7997c3bc60fbc21ca1ccbda76514ee3466756cd3d3",
+      "recordedArchivePath": "originals/met-437250.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437490",
+      "originalSha256": "4a5b21d087c1c827c792b89b0c37c689e1c72b0779cc1a3b8bea92a1de69a36a",
+      "recordedArchivePath": "originals/met-437490.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-143644",
+      "originalSha256": "115e78e0c096c9274051fa89f277d93392cec097474d183c1e4f20a371960268",
+      "recordedArchivePath": "originals/cma-143644.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-143784",
+      "originalSha256": "5de97b5cb76dbbaaf40dad652b5788667fa1e41a65327db10363e7d675eef2cc",
+      "recordedArchivePath": "originals/cma-143784.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-97143",
+      "originalSha256": "bbd7a0d0f59e9accc3b5cf45017709895ef5b8e7e49f242d2f9c0f959241776d",
+      "recordedArchivePath": "originals/cma-97143.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459064",
+      "originalSha256": "5474002be1752a93ac6eec116dda10b986a7ec121faa7e06cd65afe4508da9fb",
+      "recordedArchivePath": "originals/met-459064.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459133",
+      "originalSha256": "5a8b5c708e272daf9a34241c7f10489decc35236beb9534ef66887145b353fbb",
+      "recordedArchivePath": "originals/met-459133.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-458971",
+      "originalSha256": "dbaf467f7769710340bd1f095c6a7317c7fba1420039ea66d2594ad23c8de4e0",
+      "recordedArchivePath": "originals/met-458971.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-97136",
+      "originalSha256": "e1d7ba6a79efa8d179b40131a5a70a9e370dbf48083738cd49dedfd88be3b0b3",
+      "recordedArchivePath": "originals/cma-97136.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-97181",
+      "originalSha256": "944ba04f66faaf903df9b945dc32952b8bf0b0f5e606eb45f7073c0739c7cc74",
+      "recordedArchivePath": "originals/cma-97181.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-119698",
+      "originalSha256": "5fbf39792f104c04a9327100e65cf4628db32fd9909e235a1704246bb4154c05",
+      "recordedArchivePath": "originals/cma-119698.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-136864",
+      "originalSha256": "0ffc0c53a851034486d2a442ba47f27f4ada34389eccd9b505da4dfc286ea6df",
+      "recordedArchivePath": "originals/cma-136864.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437738",
+      "originalSha256": "6bb2c3a5fa32367eb211a25c222a3c54294fb7055ab4fc0a09060ccc09693f2b",
+      "recordedArchivePath": "originals/met-437738.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-435618",
+      "originalSha256": "6a8c4112b9309924182d3e665e59ac0e8ba7bdadf565020ffad6a7480e55a0a1",
+      "recordedArchivePath": "originals/met-435618.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-159488",
+      "originalSha256": "1880866ce9b1cfc27c59a177fbe16689d6d2a595aa69b3cf2fbf9a62c59f49a7",
+      "recordedArchivePath": "originals/cma-159488.jpg",
+      "artifactId": 11667353162,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436982",
+      "originalSha256": "285097a579f880e4478e10353b4d036fcecec7ff3111c27cda549e97d80990db",
+      "recordedArchivePath": "originals/met-436982.jpg",
+      "artifactId": 11666852705,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437970",
+      "originalSha256": "79a8500d9cca058ac4c68160a6f401ba7920244a70bb3271072a017f22701d61",
+      "recordedArchivePath": "originals/met-437970.jpg",
+      "artifactId": 11666852705,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436054",
+      "originalSha256": "cc552dd61308c10b3b12d85771ffc882ea609aff4cbe6a208eaeb0ab9218f7b5",
+      "recordedArchivePath": "originals/met-436054.jpg",
+      "artifactId": 11666852705,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-692597",
+      "originalSha256": "9cdcf81fc3c217099dfc937947cb858dd26d5e937690c866d6922c616ed84b78",
+      "recordedArchivePath": "originals/met-692597.jpg",
+      "artifactId": 11666852705,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437729",
+      "originalSha256": "26be17aa91fd738b87c38204430e9cff8333197c585fd4f95706d25e43fc3b4e",
+      "recordedArchivePath": "originals/met-437729.jpg",
+      "artifactId": 11666852705,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437065",
+      "originalSha256": "31af0f43daff866992d72ca5e7867bcde227f3740156205c52a6fbcb46a6759c",
+      "recordedArchivePath": "originals/met-437065.jpg",
+      "artifactId": 11666852705,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-458955",
+      "originalSha256": "d5aed7ea083d8d8dbcd606cbebe95d2251547af8c577e81e54f423a5774cd4a5",
+      "recordedArchivePath": "originals/met-458955.jpg",
+      "artifactId": 11666852705,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-435617",
+      "originalSha256": "34c851d253479b7346294ce68f908c637c3b01ab69115fb248c15a0c844b76cb",
+      "recordedArchivePath": "originals/met-435617.jpg",
+      "artifactId": 11666852705,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436572",
+      "originalSha256": "6dddac60d8641a92dfa2d193409b58e44d766ed160b67d8e79a9724d925ec7d7",
+      "recordedArchivePath": "originals/met-436572.jpg",
+      "artifactId": 11667368146,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436115",
+      "originalSha256": "22350106ae8a847e74a056f073b93be650796ba0e28e068e9ff0b5d022aa9e36",
+      "recordedArchivePath": "originals/met-436115.jpg",
+      "artifactId": 11667368146,
+      "runId": 38044853035,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-127746",
+      "originalSha256": "3ec7f722c11141337c98a884cd34c87cf09ed4f22e648603136bca0239ba046e",
+      "recordedArchivePath": "originals/cma-127746.jpg",
+      "artifactId": 11666649062,
+      "runId": 38045727698,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-130377",
+      "originalSha256": "0f76159593f7007b32959f94fd4db4b7b501bed04d7b19e4e6c1aa854c01b153",
+      "recordedArchivePath": "originals/cma-130377.jpg",
+      "artifactId": 11666649062,
+      "runId": 38045727698,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436794",
+      "originalSha256": "a96c2979bbce3032a6fa7c0a1213833c645ec3586e612ae814080808838bedeb",
+      "recordedArchivePath": "originals/met-436794.jpg",
+      "artifactId": 11666649062,
+      "runId": 38045727698,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-136680",
+      "originalSha256": "0b876319f895d7758a7bdac6e7c0c9a247054d825f4800991146daf1709a8bcd",
+      "recordedArchivePath": "originals/cma-136680.jpg",
+      "artifactId": 11666649062,
+      "runId": 38045727698,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459041",
+      "originalSha256": "61639d005dcb7e409c6e9b3452dafe384ffccc1062d4289aed09784a0401f53f",
+      "recordedArchivePath": "originals/met-459041.jpg",
+      "artifactId": 11666649062,
+      "runId": 38045727698,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459088",
+      "originalSha256": "778eee7dc5dce7aca07c3e118e78a7b18203952f2bfa72624408858168fdabcf",
+      "recordedArchivePath": "originals/met-459088.jpg",
+      "artifactId": 11666649062,
+      "runId": 38045727698,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437722",
+      "originalSha256": "666c631f181f2ea3a096a2c0ccad76f37c7f68087a77a0fd96cd31678eaa321a",
+      "recordedArchivePath": "originals/met-437722.jpg",
+      "artifactId": 11666649062,
+      "runId": 38045727698,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-150046",
+      "originalSha256": "a8aa262ef0dedc4836b9944b4990560ed118a75001c6e2f6fa38ec8da677a0c5",
+      "recordedArchivePath": "originals/cma-150046.jpg",
+      "artifactId": 11666649062,
+      "runId": 38045727698,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436565",
+      "originalSha256": "d7ef90f5dfd3545d7fc64e7347891c1bff79b3415fa5909dbab975871b85b494",
+      "recordedArchivePath": "originals/met-436565.jpg",
+      "artifactId": 11666649062,
+      "runId": 38045727698,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-442750",
+      "originalSha256": "49073f2dae187f36439ba06a8832a872469bfa8b698b94233aa552ec0c3fa79c",
+      "recordedArchivePath": "originals/met-442750.jpg",
+      "artifactId": 11666649062,
+      "runId": 38045727698,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-136507",
+      "originalSha256": "161aa1edd73d63709ed835e5e20e3ee5e7a175358d0a52a00a8c0ea86840a050",
+      "recordedArchivePath": "originals/cma-136507.jpg",
+      "artifactId": 11666649062,
+      "runId": 38045727698,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-150040",
+      "originalSha256": "50b5483495666044ea418c187ee3a987e1e593ae54939cdd9d0eb109406453ee",
+      "recordedArchivePath": "originals/cma-150040.jpg",
+      "artifactId": 11666649062,
+      "runId": 38045727698,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436302",
+      "originalSha256": "9fc2875bc115caf055b8816a1519489a50651963b04bf5a37e445f0d6e93e0da",
+      "recordedArchivePath": "originals/met-436302.jpg",
+      "artifactId": 11666649062,
+      "runId": 38045727698,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "kress-k2017",
+      "originalSha256": "f3922cf491cb80e66db98abe25d7b4e1960469be631ce5c1972e2430d7adfbff",
+      "recordedArchivePath": "originals/kress-k2017.jpg",
+      "artifactId": 11669761734,
+      "runId": 38052449434,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "kress-k2016",
+      "originalSha256": "977f1dabcfa0adbcb21c9386fdf40f3eaf06754f348f1ba1d592c70146b13882",
+      "recordedArchivePath": "originals/kress-k2016.jpg",
+      "artifactId": 11669761734,
+      "runId": 38052449434,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "kress-k1782",
+      "originalSha256": "09cd71f37399cf68435086b2bee3df1f8ef90d074d6d4c94b52875914d9b9c27",
+      "recordedArchivePath": "originals/kress-k1782.jpg",
+      "artifactId": 11669761734,
+      "runId": 38052449434,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-438462",
+      "originalSha256": "315d83f40ce37d5a5816eb493c9b114295693cca1f1fffdc31164934fe57728f",
+      "recordedArchivePath": "originals/met-438462.jpg",
+      "artifactId": 11669761734,
+      "runId": 38052449434,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "kress-k0355",
+      "originalSha256": "91c7a4fd4e5ed93721fddf45a4c17f2775afe2d6e95a6a007948e18d19105e09",
+      "recordedArchivePath": "originals/kress-k0355.jpg",
+      "artifactId": 11669761734,
+      "runId": 38052449434,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "kress-k2027",
+      "originalSha256": "691f5f14d4a5242e6e316db34304301e170c42732f92dbf01f739775cb015ff7",
+      "recordedArchivePath": "originals/kress-k2027.jpg",
+      "artifactId": 11669761734,
+      "runId": 38052449434,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-442491",
+      "originalSha256": "68d501d009183a6aca17628e8323a8edaedf676cc4d7293b97f1afa3380470bc",
+      "recordedArchivePath": "originals/met-442491.jpg",
+      "artifactId": 11670601250,
+      "runId": 38053123235,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437336",
+      "originalSha256": "934a14aa1e9c3efe31a9170825f24bf37b5bd6083953ebeb5c91cdc7265baf27",
+      "recordedArchivePath": "originals/met-437336.jpg",
+      "artifactId": 11670573051,
+      "runId": 38054107621,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437578",
+      "originalSha256": "9b937183a1b0b65db29b1fca25b3337fbcb0618d42050e7496d37c06d724ee33",
+      "recordedArchivePath": "originals/met-437578.jpg",
+      "artifactId": 11670573051,
+      "runId": 38054107621,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437216",
+      "originalSha256": "5f3f6c1b4c9f74d0defe77bf286adc8f36c4dfcc4c86b4a22f8121ba11d00b99",
+      "recordedArchivePath": "originals/met-437216.jpg",
+      "artifactId": 11669918762,
+      "runId": 38054264962,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-458984",
+      "originalSha256": "2b4133fcf6012c34796fae2c134b0b9baeb804952675565e85c2e61007a717eb",
+      "recordedArchivePath": "originals/met-458984.jpg",
+      "artifactId": 11669918762,
+      "runId": 38054264962,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-438467",
+      "originalSha256": "2ed2f5a5294815d7332c713eef824d2f616db12e5636ff5253908d87469832df",
+      "recordedArchivePath": "originals/met-438467.jpg",
+      "artifactId": 11669918762,
+      "runId": 38054264962,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436567",
+      "originalSha256": "ae83f3ea09efd0540a86716d7bf215ad8251aad83b55d2842518e3aaa25bd852",
+      "recordedArchivePath": "originals/met-436567.jpg",
+      "artifactId": 11669918762,
+      "runId": 38054264962,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-130980",
+      "originalSha256": "918b2bb2ac6aa5cd5fcfc52e463d14c1c831db7da53895addfd49ef77953161f",
+      "recordedArchivePath": "originals/cma-130980.jpg",
+      "artifactId": 11671777204,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-131820",
+      "originalSha256": "2f8a22e7f3e9dffd9d70da4d490f2be318687da96ce1dfec41cdb4d104ae9c6f",
+      "recordedArchivePath": "originals/cma-131820.jpg",
+      "artifactId": 11671777204,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436199",
+      "originalSha256": "f68a9d408b8d03554f26cd84aa31a9c4f7f4eafd0693482bdba2ce69d7536a97",
+      "recordedArchivePath": "originals/met-436199.jpg",
+      "artifactId": 11671777204,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-515375",
+      "originalSha256": "5a10a6e845a77b3bc1c383af115d004308d745822ed526d0312611c558957655",
+      "recordedArchivePath": "originals/cma-515375.jpg",
+      "artifactId": 11671777204,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459016",
+      "originalSha256": "054284b4a8e2e5d6cc89696f5ec6a9d7d3d8f44df0d23f08069fcc9d08ac1bf8",
+      "recordedArchivePath": "originals/met-459016.jpg",
+      "artifactId": 11671777204,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-97142",
+      "originalSha256": "593e798652fc21dd2ca886e1bb6163f36a294c3445590fb4e8fe0ea00f9cc932",
+      "recordedArchivePath": "originals/cma-97142.jpg",
+      "artifactId": 11671777204,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-115394",
+      "originalSha256": "4eaeeb997a94d719c1c77b958100895438017d0c209c429493899b98ed897324",
+      "recordedArchivePath": "originals/cma-115394.jpg",
+      "artifactId": 11671777204,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-122223",
+      "originalSha256": "6055f95de874861bf78662655a689bf4c293b9331b9fe7cbf7363ead48342347",
+      "recordedArchivePath": "originals/cma-122223.jpg",
+      "artifactId": 11671777204,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-127664",
+      "originalSha256": "75cc02fe448b99a04a5a4ec5c43a8aae753e8c981008cbff8d32609b29eb6f19",
+      "recordedArchivePath": "originals/cma-127664.jpg",
+      "artifactId": 11671777204,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-97147",
+      "originalSha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
+      "recordedArchivePath": "originals/cma-97147.jpg",
+      "artifactId": 11671777204,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-458974",
+      "originalSha256": "c035bc36e358f71e0f48dac67ee2bcf7024d252d7dc9481eb4bfcd4f5571a9bb",
+      "recordedArchivePath": "originals/met-458974.jpg",
+      "artifactId": 11671567582,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-435616",
+      "originalSha256": "72a40ba5f4f3136162e19ff40eb81d1f6562f25a64be325bd6791f1570892b38",
+      "recordedArchivePath": "originals/met-435616.jpg",
+      "artifactId": 11671567582,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-142293",
+      "originalSha256": "4dcee3822142655e6b1cb7286c7fe68f5f4d036bf6951a0ed1be8b3f9534cb02",
+      "recordedArchivePath": "originals/cma-142293.jpg",
+      "artifactId": 11671567582,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-128842",
+      "originalSha256": "69c46448fb6c915bcc285774411afb77a16ae26a3b7ec1ad98a1a0c61ddcf772",
+      "recordedArchivePath": "originals/cma-128842.jpg",
+      "artifactId": 11671567582,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-129386",
+      "originalSha256": "a495cd94f5477d47f86a0ae9ed72c9c4bbf085c246ea7c2c5f0f0e93ca307505",
+      "recordedArchivePath": "originals/cma-129386.jpg",
+      "artifactId": 11671671828,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437871",
+      "originalSha256": "a95fc8ee98280bf7e29c191ecdec02f5e7a8bdb4b6596b9c125794e47f1ab1fc",
+      "recordedArchivePath": "originals/met-437871.jpg",
+      "artifactId": 11671681939,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-143138",
+      "originalSha256": "36fcfd50c6b19294fb5f240fcf5ec9953d91a60c82baa7d9f535ee62c876bf5d",
+      "recordedArchivePath": "originals/cma-143138.jpg",
+      "artifactId": 11671681939,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-126768",
+      "originalSha256": "ad354b41cb5b18f54f1362c6bbee187b4d03859b6f8c0cc7dcd6078cf66698ad",
+      "recordedArchivePath": "originals/cma-126768.jpg",
+      "artifactId": 11671012741,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-370119",
+      "originalSha256": "f0e2a6a0727d4c323bf78ab9b999b1ad4c2240c79a696cc0e8b250ec58fc2d10",
+      "recordedArchivePath": "originals/cma-370119.jpg",
+      "artifactId": 11671012741,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-136922",
+      "originalSha256": "bbe1f62fabdd4018dc99cb8ca8bcca662451cd566a237ecd4834a84052afbf60",
+      "recordedArchivePath": "originals/cma-136922.jpg",
+      "artifactId": 11671012741,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-142473",
+      "originalSha256": "8d23530f7c24d1a9b16bf6faa1584bee8fc283796af64e6de377ccd169acf17e",
+      "recordedArchivePath": "originals/cma-142473.jpg",
+      "artifactId": 11671012741,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-142474",
+      "originalSha256": "51625dce30cd831bc6e74f86cf12227b98ab4a46b4860aa48fa1ee27d63e7bd1",
+      "recordedArchivePath": "originals/cma-142474.jpg",
+      "artifactId": 11671671828,
+      "runId": 38056121980,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "commons-morlete-sacred-heart-1759",
+      "originalSha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+      "recordedArchivePath": "originals/commons-morlete-sacred-heart-1759.jpg",
+      "artifactId": 11672059807,
+      "runId": 38058367058,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "commons-el-paso-sacred-heart-retablo",
+      "originalSha256": "dc2bff1f0b3601394da268703bbd655e316bdf02e5d3471b49195967cf024681",
+      "recordedArchivePath": "originals/commons-el-paso-sacred-heart-retablo.jpg",
+      "artifactId": 11672059807,
+      "runId": 38058367058,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-50726",
+      "originalSha256": "a9225bb7ebdcabbd9b8610d88576b8d24aa7e382173078e7181ae192be34d9a6",
+      "recordedArchivePath": "nga-originals/nga-50726.jpg",
+      "artifactId": 11674661988,
+      "runId": 38064988174,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437821",
+      "originalSha256": "ce43ad89383b7d1526b2763d03638e6b9d17adbb4b8ee24a557fc09186c638ea",
+      "recordedArchivePath": "originals/met-437821.jpg",
+      "artifactId": 11674142020,
+      "runId": 38064988279,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436050",
+      "originalSha256": "db90c9082a8701fbccb7f0271a1bb14026a7d7dbe59ca156341fd414cf20288e",
+      "recordedArchivePath": "originals/met-436050.jpg",
+      "artifactId": 11674137520,
+      "runId": 38064643844,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436411",
+      "originalSha256": "94f832160df265e6ceeb8757955557f9d783c5dcbf1d7cd5440ff60596094312",
+      "recordedArchivePath": "originals/met-436411.jpg",
+      "artifactId": 11674137520,
+      "runId": 38064643844,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-436198",
+      "originalSha256": "95566ebeb14d227a44c2464864556ad0049b40a1ce5128fbb8a065713027bc7f",
+      "recordedArchivePath": "originals/met-436198.jpg",
+      "artifactId": 11674137520,
+      "runId": 38064643844,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437273",
+      "originalSha256": "0fb05964bc93c6dd84bd41affd5cf380fc0603f60eb347bfc9e417986af5a28c",
+      "recordedArchivePath": "originals/met-437273.jpg",
+      "artifactId": 11674137520,
+      "runId": 38064643844,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-459258",
+      "originalSha256": "bd63753b81300d6cd2e8d6c096ad689cae090c3df9e7aa28c2cb09333981941b",
+      "recordedArchivePath": "originals/met-459258.jpg",
+      "artifactId": 11674137520,
+      "runId": 38064643844,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-712539",
+      "originalSha256": "667ad6757d2356e03f6e3629c854861eabdde8f91deeec76c3808cabcd9fc75a",
+      "recordedArchivePath": "originals/met-712539.jpg",
+      "artifactId": 11674137520,
+      "runId": 38064643844,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-153406",
+      "originalSha256": "a04db8f1205a0aeee237d29f17db19856c2beba06ecf6ad0e7da5075a92803b9",
+      "recordedArchivePath": "originals/cma-153406.jpg",
+      "artifactId": 11674137520,
+      "runId": 38064643844,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-438824",
+      "originalSha256": "2cf40d7d5fe0c8a513b3054281d60ee5c31ce03adcb53be40f79d2d588b2929a",
+      "recordedArchivePath": "originals/met-438824.jpg",
+      "artifactId": 11674197227,
+      "runId": 38064643844,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-120995",
+      "originalSha256": "e15a3643d991df6caaa4ee0d97602d7592347082f008ae438d9a7589c5ae8cf7",
+      "recordedArchivePath": "originals/cma-120995.jpg",
+      "artifactId": 11674197227,
+      "runId": 38064643844,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-128389",
+      "originalSha256": "142317fe996175274c0611e0a354f0cfba21d8bce30be1a5b4af6608e98bab12",
+      "recordedArchivePath": "originals/cma-128389.jpg",
+      "artifactId": 11674197227,
+      "runId": 38064643844,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-122339",
+      "originalSha256": "6f78edf12f936f48c61687ae974cf1947caa9c802a91b3d0bf46c5dab96877b0",
+      "recordedArchivePath": "originals/cma-122339.jpg",
+      "artifactId": 11674612193,
+      "runId": 38064643844,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-97139",
+      "originalSha256": "311931317c549e5440aac67b48c79ac83bffa7b74063fab5ba881c16739ffaaa",
+      "recordedArchivePath": "originals/cma-97139.jpg",
+      "artifactId": 11674612193,
+      "runId": 38064643844,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-138444",
+      "originalSha256": "7b18fe56cecdd6ceb29cfe5824334dddbb98c35f1364119458e69aff086c5af5",
+      "recordedArchivePath": "originals/cma-138444.jpg",
+      "artifactId": 11674716775,
+      "runId": 38064643844,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437986",
+      "originalSha256": "566616872ca68aa9301a91f4e8ebd7631433cc42358f963e3230cbe6dd913dea",
+      "recordedArchivePath": "originals/met-437986.jpg",
+      "artifactId": 11674893079,
+      "runId": 38064643844,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-458963",
+      "originalSha256": "8a1138126560ff5087bfc2f9632b0f526171b7200e658652b504d03b0d968563",
+      "recordedArchivePath": "originals/met-458963.jpg",
+      "artifactId": 11674423687,
+      "runId": 38066565193,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-438134",
+      "originalSha256": "263c9e06dbc7f5ef80325def8bae06f2369ee79c41f4b04930c610771d0a0fa7",
+      "recordedArchivePath": "originals/met-438134.jpg",
+      "artifactId": 11674423687,
+      "runId": 38066565193,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-435900",
+      "originalSha256": "71735160551b379138067a3386e5559bad881566959e2b039fc11bb2feddd839",
+      "recordedArchivePath": "originals/met-435900.jpg",
+      "artifactId": 11674423687,
+      "runId": 38066565193,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-435863",
+      "originalSha256": "b4d8bc59fb81f7db5d5622dc67240bd33bedd7dc199333030d74ddbf0ab1b26a",
+      "recordedArchivePath": "originals/met-435863.jpg",
+      "artifactId": 11674423687,
+      "runId": 38066565193,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "cma-150955",
+      "originalSha256": "d738e33cf352a13f1bc8e4178449c0938cc59f6d149f4cfb2477d7dd93ccc71a",
+      "recordedArchivePath": "cma-150955.jpg",
+      "artifactId": 11675199108,
+      "runId": 38066732920,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-12205",
+      "originalSha256": "3723b116592415bd2538d6e64e53897d374223b489b2e6ce2506716014fc39b2",
+      "recordedArchivePath": "originals/nga-12205.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-129283",
+      "originalSha256": "f5a7e4abe01ca01d26759e3ccac7300d85a0620ef8edf913c28f7a777f8501f9",
+      "recordedArchivePath": "originals/nga-129283.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-33",
+      "originalSha256": "27a3a0bbdc229034805fa4ff322b3b29df755e7fc59c02e5d6faf4c76614f776",
+      "recordedArchivePath": "originals/nga-33.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-46131",
+      "originalSha256": "4644923c39a6170ef8d2d9c81fe9e0638942bd67f8d1720f6061ef145938776d",
+      "recordedArchivePath": "originals/nga-46131.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-106787",
+      "originalSha256": "03c0742ec06fba4e6f59191c48286109ceb881dac7ff49a27ab9454c1a9406d1",
+      "recordedArchivePath": "originals/nga-106787.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-12130",
+      "originalSha256": "699b5a374b42ae683f5802501df56c164f055cdda0dea75046e49244f57eb7bf",
+      "recordedArchivePath": "originals/nga-12130.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-41667",
+      "originalSha256": "aa6811b8cf2a30934849e75ee21859b6ddbba3269d5580379498a3cd902a760b",
+      "recordedArchivePath": "originals/nga-41667.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-401",
+      "originalSha256": "107243d3abfa8b90b1bb39d4ec73c87987815bf2238d62127e06f2297e7d4a7d",
+      "recordedArchivePath": "originals/nga-401.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-364",
+      "originalSha256": "84932116d6da6c1f2beb96f18e5fa629303b36c20d062b9450fca4b70859487c",
+      "recordedArchivePath": "originals/nga-364.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-41582",
+      "originalSha256": "a0dac54ea77edf5c116fb490281fbe779b100939bb93743e8320e553cc3066f3",
+      "recordedArchivePath": "originals/nga-41582.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-1165",
+      "originalSha256": "4b128cebc648104cba13538f9c207926704a4561c9a26f9be77b63b5fe2ec45d",
+      "recordedArchivePath": "originals/nga-1165.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-37635",
+      "originalSha256": "50983c77d756e9fcacf799cf0fbba9a7da8cdc4ee8a71b8f28ab17a5f8760929",
+      "recordedArchivePath": "originals/nga-37635.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-12118",
+      "originalSha256": "7d8c7a8c2935861433057f7215d4f2b91f250fc03187c843c219a9e8335b97c1",
+      "recordedArchivePath": "originals/nga-12118.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-106362",
+      "originalSha256": "b86ccb14d2ba44302c83a1c8a244f712a14ef8c29d7628064a357fa8dea11148",
+      "recordedArchivePath": "originals/nga-106362.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-369",
+      "originalSha256": "10f17de2bed32d8e564cabd2f60d80dba19dae4df32a26574b2b7699bb91eb8d",
+      "recordedArchivePath": "originals/nga-369.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-41644",
+      "originalSha256": "79288aef1a922ed49acc40312676d25daca19e4f35fa18c26a2779be1ce7bc74",
+      "recordedArchivePath": "originals/nga-41644.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-195513",
+      "originalSha256": "f97ed5494eb80330a30f8881c99291dfb1c23d75e783ce86e52936840f57145d",
+      "recordedArchivePath": "originals/nga-195513.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-1163",
+      "originalSha256": "d0ea6e04cdec7e478508700297d4c610ecbfada4e05301aa71e699e013a0c974",
+      "recordedArchivePath": "originals/nga-1163.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-96688",
+      "originalSha256": "33a71aea55a154469b961e128b5a766510d08693fdc41724547ccf256cd18248",
+      "recordedArchivePath": "originals/nga-96688.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-46127",
+      "originalSha256": "f2fa7157db6d5c2b210cff8cfb960f51a7c691f0fe77a7a5c91bbb00c1d277a5",
+      "recordedArchivePath": "originals/nga-46127.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-42494",
+      "originalSha256": "1c6ff113797c015b4136a63a20fc2c1c45fc230c2aa463094f077c824f6eb73f",
+      "recordedArchivePath": "originals/nga-42494.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-357",
+      "originalSha256": "d15af56ed1e568af7aeeda47251f0ab825ec4cc58d240d530ae9354a0b637803",
+      "recordedArchivePath": "originals/nga-357.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-50280",
+      "originalSha256": "39b453f320609288e56c361c26c05721a4761ccc0cd6e3096ba51ced6ee57bc9",
+      "recordedArchivePath": "originals/nga-50280.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-432",
+      "originalSha256": "3de350a364b46457544009f02ac19a92a17ef28f1f9eec63ddb33d2f2c800b49",
+      "recordedArchivePath": "originals/nga-432.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-43198",
+      "originalSha256": "20ec33ceacf49a101efb7f9b57bdeeceb0d6c78e1cf58e82c30fb88df1cded45",
+      "recordedArchivePath": "originals/nga-43198.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-137505",
+      "originalSha256": "698cb5de63454dbced72c21716ae6101e156ea49031210653d7b5252a478c580",
+      "recordedArchivePath": "originals/nga-137505.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-206072",
+      "originalSha256": "1f54124deae173160b0d95a92f122e2414cb5a335c5f22e865fefe23ba8bea04",
+      "recordedArchivePath": "originals/nga-206072.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-41627",
+      "originalSha256": "838c18059447e42812f4987c615ca7c28e7702207cb8e3a6e9d0f5e58c261c2f",
+      "recordedArchivePath": "originals/nga-41627.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-440",
+      "originalSha256": "600c3870d71812f4ff57abbcfdb34d47b51a7fffcddad2a75bdbadb52b8eec98",
+      "recordedArchivePath": "originals/nga-440.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-12209",
+      "originalSha256": "c7962ee0819947968da7858da6d928c1b37fc52d209a9634e4d30b76cb3e7b9b",
+      "recordedArchivePath": "originals/nga-12209.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-18",
+      "originalSha256": "d7b4db7f94ee9432d250082edadd4b716e94002d00d157e55769594e9ffbde72",
+      "recordedArchivePath": "originals/nga-18.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-46170",
+      "originalSha256": "9618fd9bb9bf44ff28352323108001e40edbf56657db0445c33866f3a8192f8f",
+      "recordedArchivePath": "originals/nga-46170.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-46185",
+      "originalSha256": "15b39e8c36d0592c95487e8675ac3322296bfd332bb3e3dcb5e32779b4ff1d03",
+      "recordedArchivePath": "originals/nga-46185.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-167923",
+      "originalSha256": "971668734c33e005b3afd0cf873faeb43434ed002a32f33d543da410fdfe62ed",
+      "recordedArchivePath": "originals/nga-167923.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-198424",
+      "originalSha256": "f8fcb663be18b80aff466618caf66ae10143e676ecff20a5cfc5f7ab650ab490",
+      "recordedArchivePath": "originals/nga-198424.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-6",
+      "originalSha256": "7a98d8ad05454bf9ef5a3e9c43629b67f8962a3a703fb355e6f1a71bb15ebcab",
+      "recordedArchivePath": "originals/nga-6.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-171695",
+      "originalSha256": "b21e70b7138d6286f8c97521953adf5266d841d6f28ac23155c1ee64f976dbe8",
+      "recordedArchivePath": "originals/nga-171695.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-46147",
+      "originalSha256": "a29bad9c8b788982ea97609894d8d9cf6c9a6d5ec0d23ac4527956e17bcfd8c5",
+      "recordedArchivePath": "originals/nga-46147.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-46",
+      "originalSha256": "defa94673a9416aa51a524e37cf939ebb0825d8a838279c835e9270681ea7167",
+      "recordedArchivePath": "originals/nga-46.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "nga-56668",
+      "originalSha256": "067c3f50117571d565ddd39f12fe494a8a935c6705d3580962e219fd099d13cd",
+      "recordedArchivePath": "originals/nga-56668.jpg",
+      "artifactId": 11684723858,
+      "runId": 38093287797,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-438434",
+      "originalSha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "recordedArchivePath": "originals/met-438434.jpg",
+      "artifactId": 11707214604,
+      "runId": 38153953954,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    },
+    {
+      "artworkId": "met-437527",
+      "originalSha256": "521b3051abc5f86aa0d069f884fb731cbd339160f1667d8472ee6b35dc72ca65",
+      "recordedArchivePath": "originals/met-437527.jpg",
+      "artifactId": 11707214604,
+      "runId": 38153953954,
+      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
+      "masterVerified": false
+    }
+  ],
+  "unmatchedReferences": []
+}
