@@ -1,0 +1,112 @@
+{
+  "schema": "AO_DIRECTORY_OPEN_PHOTO_PILOT_AUDIT_V1",
+  "source_run_id": 40790465668,
+  "source_commit": "a232918337d2fa95c6619ecaac6b6ec22598aef3",
+  "source_artifact_id": 12861631093,
+  "source_artifact_sha256": "f344060e415380083f44dcd622735e63039eadba8e496e894935568bb5c471fb",
+  "generated_at": "2026-10-28T23:55:15Z",
+  "audited_at": "2026-10-29",
+  "source_snapshot": "AO_PRELIMINARY_TLM_MAP_R49",
+  "offset": 2,
+  "records_processed": 6,
+  "api_errors": 0,
+  "candidate_totals": {
+    "EXTERIOR": 2,
+    "INTERIOR": 0,
+    "SACRED_DETAIL": 0
+  },
+  "confirmed_correct_site": 0,
+  "publications": 0,
+  "image_downloads": 0,
+  "publication": "RESEARCH_ONLY_NEVER_APP_VISIBLE",
+  "venues": [
+    {
+      "source_id": "ao-fssp-st-benedict-s-catholic-church-2-fagans-road-arcadia-nsw-2159-australia",
+      "name": "St Benedict's Catholic Church",
+      "country": "AU",
+      "candidates": {
+        "EXTERIOR": 2,
+        "INTERIOR": 0,
+        "SACRED_DETAIL": 0
+      }
+    },
+    {
+      "source_id": "ao-fssp-st-john-the-baptist-oratory-cathedral-st-maitland-2-cathedral-st-maitland-nsw-2320-australia",
+      "name": "St John the Baptist Oratory",
+      "country": "AU",
+      "candidates": {
+        "EXTERIOR": 0,
+        "INTERIOR": 0,
+        "SACRED_DETAIL": 0
+      }
+    },
+    {
+      "source_id": "ao-fssp-sts-peter-and-paul-church-2-boake-place-garran-act-2605-australia",
+      "name": "Sts Peter and Paul Church",
+      "country": "AU",
+      "candidates": {
+        "EXTERIOR": 0,
+        "INTERIOR": 0,
+        "SACRED_DETAIL": 0
+      }
+    },
+    {
+      "source_id": "ao-fssp-church-of-the-holy-name-80-payneham-rd-stepney-sa-5069-australia",
+      "name": "Church of the Holy Name",
+      "country": "AU",
+      "candidates": {
+        "EXTERIOR": 0,
+        "INTERIOR": 0,
+        "SACRED_DETAIL": 0
+      }
+    },
+    {
+      "source_id": "ao-fssp-eglise-saints-jean-et-etienne-aux-minimes-rue-des-minimes-62-b-1000-bruxelles-belgique",
+      "name": "Église Saints-Jean-et-Étienne-aux-Minimes",
+      "country": "BE",
+      "candidates": {
+        "EXTERIOR": 0,
+        "INTERIOR": 0,
+        "SACRED_DETAIL": 0
+      }
+    },
+    {
+      "source_id": "ao-fssp-notre-dame-de-l-assomption-nd-de-la-licourt-place-de-la-licourt-52-b-4040-herstal-belgique",
+      "name": "Notre-Dame de l'Assomption",
+      "country": "BE",
+      "candidates": {
+        "EXTERIOR": 0,
+        "INTERIOR": 0,
+        "SACRED_DETAIL": 0
+      }
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "target_venue_id": "ao-fssp-st-benedict-s-catholic-church-2-fagans-road-arcadia-nsw-2159-australia",
+      "commons_title": "File:St. Benedict's Catholic Church, Nebraska City.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St._Benedict%27s_Catholic_Church%2C_Nebraska_City.jpg",
+      "source_sha1": "4ae0c29cc18b32f88c358fd1d2208b79ff3165f6",
+      "subject_country": "US",
+      "target_country": "AU",
+      "decision": "WRONG_COUNTRY_NOT_SAME_SITE",
+      "reason": "Description explicitly locates this church in Nebraska City, Nebraska, United States; target is Arcadia, NSW, Australia"
+    },
+    {
+      "target_venue_id": "ao-fssp-st-benedict-s-catholic-church-2-fagans-road-arcadia-nsw-2159-australia",
+      "commons_title": "File:St. Benedict's Cathedral in Evansville.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St._Benedict%27s_Cathedral_in_Evansville.jpg",
+      "source_sha1": "778a28bb2bafa31d6e28317de7653c6b123b0cd2",
+      "subject_country": "US",
+      "target_country": "AU",
+      "decision": "WRONG_COUNTRY_NOT_SAME_SITE",
+      "reason": "Description explicitly locates this cathedral in Evansville, Indiana, United States; target is Arcadia, NSW, Australia"
+    }
+  ],
+  "next_gate": "Implement country-aware queries, coordinate/identity signals and exact-source candidate filtering before any bulk photo acquisition.",
+  "notes": [
+    "Persistent research summary only; candidate source images have not been downloaded or approved.",
+    "Original workflow diagnostic artifact expires after 2 days; this audit and the two negative match examples are permanently versioned.",
+    "No automatic placement on public cards is authorized by this audit."
+  ]
+}
