@@ -123,11 +123,11 @@ Do NOT become a prayer-book encyclopaedia. Support useful traditional Catholic p
 
 ## The actual first text-mining addition
 
-- `src/pray/prayer-acquisition-historical-witnesses.v1.js` now contains FOUR complete English historical witness texts from Lasance's 1908 *My Prayer-Book*: **Prayer before Meditation**, **Prayer after Meditation**, **Suscipe**, and **St Thomas Aquinas's Concede mihi** short prayer.
+- `src/pray/prayer-acquisition-historical-witnesses.v1.js` now contains FOUR complete English historical witness texts and TWO separately collated Latin witnesses from Lasance's 1908 *My Prayer-Book*: **Prayer before Meditation**, **Prayer after Meditation**, **Suscipe**, and **St Thomas Aquinas's Concede mihi** short prayer.
 - They are immutable source-bound objects with real wording and text visibility checks, matched to the moment of prayer. Two provide a one-tap **before reading/study** choice.
-- **Staged, NOT live.** The locked 48-prayer bank remains untouched; neither existing morning/evening readers nor source-release profiles were changed. No invented French or Latin translations, no modern copyrighted text.
-- The 1908 HTML transcription has visibly corrupted OCR words in some Latin material and at least one motto. Print-image collation and editorial source QA are still required to mark a witness for release. These textual uncertainties are disclosed in each record.
-- `tests/prayer-corpus-editorial-acquisition-wave04.mjs` guards all these boundaries.
+- **Source-qualified first reader integration:** The 1908 Ignatian *Suscipe* in English and Latin has been collated against scanned printed p.227, and added as a one-tap *optional Morning Offering* in the existing Personal Daily Prayer reader. The printed St Pius X opening, stage count, existing selections, and other prayers remain unchanged. The new choice becomes user-visible only upon merge/deployment. French is absent until a source-authenticated French text is independently selected; no foreign-language fallback.
+- The historical page images for p.226–228 were inspected. Printed *Omnia* is correct (the Wikisource OCR says *Ommia*). The *Suscipe* Latin and St Thomas's *Concede mihi* Latin have been independently entered as separate printed-language witnesses. The before-meditation page p.225 and other unopened release gates remain held.
+- `tests/prayer-corpus-editorial-acquisition-wave04.mjs`, `tests/prayer-acquisition-historical-chaplets-wave04.mjs`, and `tests/prayer-acquisition-suscipe-morning-integration.mjs` guard source, release, language and historical chaplet boundaries. All three are included in the existing Prayer-owner test suite while preserving the concurrently released B15 command.
 
 ## Release order
 
@@ -143,8 +143,15 @@ This is the full **actionable shortlist from investigated candidate families**, 
 
 ## Source collation note — 28 October Wave 04 continuation
 
-The 1908 Lasance print page numbers have been corrected against the Wikisource book contents and individual page transcriptions: preparatory meditation prayer p.225 (DjVu/240), concluding meditation prayer p.226 (DjVu/241), Ignatian *Suscipe* p.227 (DjVu/242) and Aquinas's *Concede mihi* p.228 (DjVu/243). These are scanned-page LOCATORS; the image-level final proofread is not certified. The digitized transcription has `Ommia` where the research witness has normalized `Omnia`; source-image confirmation is still required before live use. No claimed printed Latin for *Suscipe* because the text's Latin transcription is visibly corrupted.
+The 1908 Lasance print page numbers have been corrected against the Wikisource book contents and individual page transcriptions: preparatory meditation prayer p.225 (DjVu/240), concluding meditation prayer p.226 (DjVu/241), Ignatian *Suscipe* p.227 (DjVu/242) and Aquinas's *Concede mihi* p.228 (DjVu/243). Printed page images p.226–228 were examined, including actual ink-level wording of *Omnia*, the *Suscipe* Latin and English, and St Thomas's bilingual text. Only p.225 remains unconfirmed at image level. The archived Wikisource transcription contains OCR corruption, but the independently checked Latin *Suscipe* is now retained with explicit p.227 provenance.
 
 The Five Wounds *Raccolta* §32 is five groups of five *Gloria Patri*, each with an *Ave Maria* (25+5). The full Precious Blood chaplet §35 uses 33 *Pater noster* across seven mysteries (5+5+5+5+5+5+3). The reproduced 1857 **short** form §40 says five *Pater* in each of seven mysteries, summing to 35, while relating itself to the 33-prayer devotion. This contradiction is an explicit HOLD, not a reason to silently correct a historical witness. Code: `src/pray/prayer-acquisition-chaplet-structures.v1.js`. No source-checked closing prayer for the full chaplet has been admitted yet.
 
 The Heroic Act for the souls in Purgatory (§140) is a voluntary offering, not an obligatory fixed-form prayer or vow. It is **deferred** for contextual study, rather than added as a standard one-tap prayer. The editorial count is now seven ADD and 29 DEFER.
+
+## First app integration (source-collated)
+
+- `src/pray/daily-personal-rule.js` now imports ONLY approved `prayerAcquisitionCandidates("self_offering")` and adds *Suscipe* p.227 to the existing source-owned Morning Offering options in the language actually available (EN or LA). The St Pius X original combined daily prayer is immutable, always present; *Suscipe* is an optional **separate offering**, not a replacement.
+- `src/pray/daily-stage-alternative-review.js` maps the source IDs to the already-existing `morning/offering` purpose. Users select with one tap in the existing Morning/Evening reader, and the same source-ID preference persistence handles the choice. Switching to FR hides the option, rather than substituting English.
+- The other Lasance texts (two before/after meditation and Aquinas *Concede mihi*, EN/LA) are still staged; they require placement in the appropriate Scripture/meditation reader and further editorial QA. Five Wounds and Precious Blood guided sequences remain unpublished until complete original edition and rite checks.
+- The PR branch is draft; intended feature is **not** yet deployed. No new route, standalone module, external fee or modern text imported.
