@@ -77,10 +77,13 @@ function sourceDetails(n){
    ?`<p><a class="aoN1SourcePrimary" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(L('Read the cited text','Consulter le texte cité'))} ↗</a></p>`
    :`<p class="aoN1Fine">${esc(L('A direct source link is unavailable.','Aucun lien direct vers la source n’est disponible.'))}</p>`;
  const note=section?`<p class="aoN1Fine aoN1SourceSection"><b>${esc(txt(section.heading))}</b></p><p class="aoN1Fine">${esc(txt(section.note))}</p>`:'';
+ const facsimile=section?.printFacsimile;
+ const facsimileLink=facsimile?.status==="PRINT_SCAN_LOCATED_COLLATION_PENDING"&&/^https:\/\/commons\.wikimedia\.org\//.test(facsimile.url||"")
+  ?`<p data-n1-novena-original-scan><a href="${esc(facsimile.url)}" target="_blank" rel="noopener noreferrer">${esc(L("Original printed-volume scan · printed pp. ","Fac-similé de l’édition imprimée · p. ")+facsimile.printedPages)} ↗</a><br><small>${esc(L("Scan located; individual prayer lines have not been independently certified.","Fac-similé identifié ; les lignes de chaque prière restent à collationner."))}</small></p>`:"";
  const printStatus=novenaPrintQualification(n.id,{french:isFr()});
  const printNotice=printStatus?`<p class="aoN1Fine" data-n1-novena-print-audit="${esc(printStatus.status)}">${esc(printStatus.text)}</p>`:'';
  const links=(n.historySources||[]).filter(x=>/^https:\/\//i.test(x.url||'')).map(x=>`<li><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.label)} ↗</a></li>`).join('');
- return `<details class="aoN1Details aoN1SourceDetails"><summary>${esc(L('Sources & edition','Sources et édition'))}</summary><p><b>${esc(s.work||n.id)}</b><br>${esc(s.authors||'')}<br>${esc(s.edition||'')}<br>${esc(s.approval||'')}</p>${direct}${note}${printNotice}${s.adaptation?`<p>${esc(s.adaptation)}</p>`:''}${links?`<ul>${links}</ul>`:''}<p class="aoN1Fine">${esc(L('An identified source or translation is not in itself proof of complete word-for-word collation.', 'Un texte source identifié ou une traduction ne constitue pas, à lui seul, une vérification intégrale mot à mot.'))}</p></details>`;
+ return `<details class="aoN1Details aoN1SourceDetails"><summary>${esc(L('Sources & edition','Sources et édition'))}</summary><p><b>${esc(s.work||n.id)}</b><br>${esc(s.authors||'')}<br>${esc(s.edition||'')}<br>${esc(s.approval||'')}</p>${direct}${note}${facsimileLink}${printNotice}${s.adaptation?`<p>${esc(s.adaptation)}</p>`:''}${links?`<ul>${links}</ul>`:''}<p class="aoN1Fine">${esc(L('An identified source or translation is not in itself proof of complete word-for-word collation.', 'Un texte source identifié ou une traduction ne constitue pas, à lui seul, une vérification intégrale mot à mot.'))}</p></details>`;
 }
 function contextSource(id){return (NOVENA_CONTEXT_V1.sourceRegistry||[]).find(x=>x.id===id)||null}
 function contextDetails(n){

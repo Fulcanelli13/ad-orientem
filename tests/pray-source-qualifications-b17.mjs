@@ -29,7 +29,7 @@ assert.equal(novenaPrintQualification("institute_therese_weekly"),null,
  "Supplemental Institute devotion is not part of the 16-record print audit");
 assert.match(novena,/novenaPrintQualification\(n\.id,\{french:isFr\(\)\}\)/);
 assert.match(novena,/data-n1-novena-print-audit=/);
-assert.match(novena,/\$\{direct\}\$\{note\}\$\{printNotice\}/);
+assert.match(novena,/\$\{direct\}\$\{note\}\$\{facsimileLink\}\$\{printNotice\}/);
 assert.match(novena,/aoN1SourcePrimary/);
 assert.match(novena,/novenaSourceAccess\(n\.id\)/);
 assert.equal(SEVEN_WORDS_LOCAL_EN_1889_V1.words.length,7);
