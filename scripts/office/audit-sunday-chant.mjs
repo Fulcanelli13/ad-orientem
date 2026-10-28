@@ -35,7 +35,7 @@ export function inspectCandidateGabc({id,path,content}={}){
   const separator=content.indexOf("\n%%\n");
   if(separator<0)throw Error("CHANT_GABC_HEADER_DELIMITER_MISSING:"+path);
   const score=content.slice(separator+4);
-  if(score.trim().length<25||!/\([a-n][1-4]\)/i.test(score))throw Error("CHANT_GABC_SCORE_NOT_DETECTED:"+path);
+  if(score.trim().length<25||!/\([c-f][1-4][^)]*\)/i.test(score))throw Error("CHANT_GABC_SCORE_NOT_DETECTED:"+path);
   const suspectedMacros=[...new Set([
     ...score.matchAll(/\\(?:gre[a-zA-Z]+|TeX[a-zA-Z]+|char\b)/g),
   ].map(x=>x[0]))];
