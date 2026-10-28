@@ -76,7 +76,9 @@ try{
     src:el.currentSrc};
   });
   assert.equal(state.loaded,true,"image must load "+width);
-  assert.ok(state.width>=800 && state.height>=725,"source dimensions "+width);
+  assert.ok(state.width>0 && state.height>0,"decoded image dimensions "+width);
+  assert.ok(Math.abs(state.width/state.height-4096/3712)<.025,"painting aspect preserved "+width);
+  assert.match(state.src,/confession-whole-(800|1600)-preview\.webp/,"verified reviewed file was loaded "+width);
   assert.equal(state.objectFit,"contain","no crop "+width);
   assert.ok(state.boxLeft>=-1&&state.boxRight<=state.viewport+1,"horizontal overflow "+width);
   assert.ok(!mobile||state.drawnHeight<=221,"hero must not monopolize mobile screen "+width);
