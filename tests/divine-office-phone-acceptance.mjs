@@ -19,6 +19,7 @@ const locations={
   main:resolve(root,"preview/mass"),
   advent:resolve(root,"advent-vespers/preview/mass"),
   souls:resolve(root,"all-souls/preview/mass"),
+  syntax:resolve(root,"all-souls-syntax/preview/mass"),
 };
 for(const dir of Object.values(locations))
   if(!existsSync(join(dir,"preview-manifest.json")))throw Error("OFFICE_PHONE_MISSING_PREVIEW:"+dir);
@@ -50,6 +51,8 @@ const cases=[
   {width:390,height:844,isMobile:true,hasTouch:true,bucket:"advent",file:"2026-11-29-vespers-fr.html"},
   {width:320,height:568,isMobile:true,hasTouch:true,bucket:"souls",file:"2026-11-02-prime-en.html"},
   {width:390,height:844,isMobile:true,hasTouch:true,bucket:"souls",file:"2026-11-02-vespers-fr.html"},
+  {width:320,height:568,isMobile:true,hasTouch:true,bucket:"syntax",file:"2026-11-02-prime-fr.html"},
+  {width:390,height:844,isMobile:true,hasTouch:true,bucket:"syntax",file:"2026-11-02-compline-fr.html"},
   {width:768,height:1024,isMobile:false,hasTouch:true,bucket:"main",file:"2026-10-31-vespers-en.html"},
   {width:1200,height:900,isMobile:false,hasTouch:false,bucket:"main",file:"2026-11-03-matins-fr.html"},
 ];
@@ -115,6 +118,17 @@ try{
     assert.equal(await root.getAttribute("data-office-card-index"),"0");
     await root.locator("[data-office-settings-toggle]").click();
     assert.equal(await root.locator("[data-office-settings-menu]").isVisible(),true);
+    if(bucket==="syntax"){
+      assert.equal(await root.locator('.aoOfficeLocaleControls a[href*="-fr.html"]').count(),1,
+        file+" corrected French local navigation missing");
+      assert.equal(await root.locator(".aoOfficeLocaleUnavailable").count(),0,
+        file+" corrected Office still marked unavailable");
+      const missingCount=await root.locator(".aoOfficeMassCard").evaluateAll(cards=>
+        cards.filter(card=>/^(?:\\d+|special)\\s+is missing\\b/i.test(
+          card.querySelector(".aoOfficeFullTranslation .aoOfficeSourceText")?.textContent?.trim()??""
+        )).length);
+      assert.equal(missingCount,0,file+" unresolved text still displayed");
+    }
     if(bucket==="souls"&&file.includes("-prime-en.")){
       assert.equal(await root.locator(".aoOfficeLocaleUnavailable").count(),1,
         file+" missing French must not have a clickable link");
