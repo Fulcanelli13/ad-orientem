@@ -1,0 +1,575 @@
+{
+  "schema": "ao.raccolta-1866-component-evidence.b04",
+  "date": "2026-10-28",
+  "parent_index": "data/pray/raccolta-1866-complete-index.b03.json",
+  "source_corpus_indexed": 189,
+  "entries_with_component_boundaries_directly_reviewed": 17,
+  "entries_not_component_reviewed": 172,
+  "named_component_descriptions": 50,
+  "component_descriptions_are_not_unique_prayer_counts": true,
+  "full_verified_transcriptions": 0,
+  "source_warning": {
+    "entry": 40,
+    "issue": "The short chaplet printed directions say five Our Fathers at all seven mysteries (35), but the introduction explicitly claims 33. Source contradiction; verify actual printed 1866 before marking a working 33-prayer pattern",
+    "source_url": "https://staging2.sensusfidelium.com/the-raccolta/precious-blood-of-jesus/",
+    "content_status": "OPEN_INCOMPLETE"
+  },
+  "records": [
+    {
+      "entry_id": "raccolta-1866-001",
+      "number": 1,
+      "section": "I",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/the-most-holy-trinity/",
+      "title": "Angelic Trisagion",
+      "classification": "SINGLE_SHORT_PRAYER",
+      "component_summary": [
+        {
+          "component_id": "raccolta-1-part-1",
+          "label": "Latin Sanctus/Gloria doxology with English equivalent",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "NONE",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-002",
+      "number": 2,
+      "section": "I",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/the-most-holy-trinity/",
+      "title": "Seven Gloria Patri thrice daily with one Ave Maria",
+      "classification": "DEVOTIONAL_INSTRUCTION",
+      "component_summary": [
+        {
+          "component_id": "raccolta-2-part-1",
+          "label": "standard Gloria Patri seven times",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-2-part-2",
+          "label": "standard Ave Maria once",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-2-part-3",
+          "label": "historical conditions for a three-person devotional union",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "NONE",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-003",
+      "number": 3,
+      "section": "I",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/the-most-holy-trinity/",
+      "title": "Three Gloria Patri thrice daily",
+      "classification": "DEVOTIONAL_INSTRUCTION",
+      "component_summary": [
+        {
+          "component_id": "raccolta-3-part-1",
+          "label": "Gloria Patri repeated three times at morning noon evening",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "NONE",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-004",
+      "number": 4,
+      "section": "I",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/the-most-holy-trinity/",
+      "title": "Thanksgiving after Mass to the Holy Trinity for Marian privileges",
+      "classification": "COMPOSITE_SEQUENCE",
+      "component_summary": [
+        {
+          "component_id": "raccolta-4-part-1",
+          "label": "seven distinct Marian-privilege thanksgiving petitions to Trinity",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-4-part-2",
+          "label": "three Gloria Patri and one Ave after each",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-4-part-3",
+          "label": "closing prayer to Blessed Virgin",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-4-part-4",
+          "label": "Salve Regina",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-4-part-5",
+          "label": "Benedicamus Patrem versicle and response",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-4-part-6",
+          "label": "Trinity collect",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "REUSE_SALVE_REGINA",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-005",
+      "number": 5,
+      "section": "I",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/the-most-holy-trinity/",
+      "title": "Other Trinity thanksgiving prayers",
+      "classification": "COMPOSITE_SEQUENCE",
+      "component_summary": [
+        {
+          "component_id": "raccolta-5-part-1",
+          "label": "adoration to Eternal Father",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-5-part-2",
+          "label": "adoration to Eternal Son",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-5-part-3",
+          "label": "adoration to Holy Ghost",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-5-part-4",
+          "label": "standard Pater Ave Gloria repeated before each",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "NONE",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-035",
+      "number": 35,
+      "section": "VII",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/precious-blood-of-jesus/",
+      "title": "Chaplet of the Precious Blood",
+      "classification": "SEVEN_MYSTERY_CHAPLET",
+      "component_summary": [
+        {
+          "component_id": "raccolta-35-part-1",
+          "label": "opening Deus in adjutorium versicle and Gloria",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-35-part-2",
+          "label": "seven distinct meditation passages on bloodshed",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-35-part-3",
+          "label": "Our Father 5 each for mysteries 1-6, 3 in mystery 7 (33 total)",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-35-part-4",
+          "label": "Gloria Patri and Te ergo quaesumus after each",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-35-part-5",
+          "label": "Most Precious Blood concluding prayer",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-35-part-6",
+          "label": "Redemisti nos versicle and Precious Blood collect in Latin/English",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "CANONICAL_PATER_GLORIA_REFERENCES",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-036",
+      "number": 36,
+      "section": "VII",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/precious-blood-of-jesus/",
+      "title": "Seven Offerings with Seven Gloria Patri",
+      "classification": "SEVEN_PART_OFFERING",
+      "component_summary": [
+        {
+          "component_id": "raccolta-36-part-1",
+          "label": "seven distinct offers to Eternal Father for Church, nations, conversion, souls",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-36-part-2",
+          "label": "seven Gloria Patri",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-36-part-3",
+          "label": "repeated Blessed and praised aspiration",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "CANONICAL_GLORIA_REFERENCE",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-037",
+      "number": 37,
+      "section": "VII",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/precious-blood-of-jesus/",
+      "title": "Prayer and devout aspirations",
+      "classification": "HYMN_WITH_CROSS_REFERENCE",
+      "component_summary": [
+        {
+          "component_id": "raccolta-37-part-1",
+          "label": "link to same Most Precious Blood closing prayer in entry 35",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-37-part-2",
+          "label": "separate poetic aspirations Viva Viva Jesu",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "REUSES_ENTRY_35_CLOSING",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-038",
+      "number": 38,
+      "section": "VII",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/precious-blood-of-jesus/",
+      "title": "Ejaculation or offering",
+      "classification": "SINGLE_SHORT_PRAYER",
+      "component_summary": [
+        {
+          "component_id": "raccolta-38-part-1",
+          "label": "one Eternal Father Precious Blood offering",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "NONE",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-039",
+      "number": 39,
+      "section": "VII",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/precious-blood-of-jesus/",
+      "title": "Offering with Pater Ave Gloria",
+      "classification": "SINGLE_PRAYER_WITH_STANDARD_REPETITIONS",
+      "component_summary": [
+        {
+          "component_id": "raccolta-39-part-1",
+          "label": "one Precious Blood offering",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-39-part-2",
+          "label": "one Pater one Ave one Gloria",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-39-part-3",
+          "label": "blessing invocation reproduced within prayer, not a priestly rite",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "CANONICAL_PATER_AVE_GLORIA",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-040",
+      "number": 40,
+      "section": "VII",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/precious-blood-of-jesus/",
+      "title": "Short Chaplet of the Precious Blood",
+      "classification": "SHORT_SEVEN_MYSTERY_CHAPLET",
+      "component_summary": [
+        {
+          "component_id": "raccolta-40-part-1",
+          "label": "opening versicles",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-40-part-2",
+          "label": "seven short mystery invocations",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-40-part-3",
+          "label": "one Glory and one Te ergo quaesumus response after each",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-40-part-4",
+          "label": "printed 5 Pater for all seven mysteries (35), while introductory prose calls for 33",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-40-part-5",
+          "label": "repeat closing prayer and collect by cross-reference to 35",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "INTERNAL_33_V_35_CONFLICT_HOLD",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-041",
+      "number": 41,
+      "section": "VII",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/precious-blood-of-jesus/",
+      "title": "Month Consecrated to Precious Blood",
+      "classification": "DEVOTIONAL_HISTORICAL_NOTICE",
+      "component_summary": [
+        {
+          "component_id": "raccolta-41-part-1",
+          "label": "historical permission for a month devotion",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-41-part-2",
+          "label": "no one fixed complete daily text given",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "NO_DISTINCT_FULL_TEXT",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-042",
+      "number": 42,
+      "section": "VII",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/precious-blood-of-jesus/",
+      "title": "Feast of the Most Precious Blood",
+      "classification": "LITURGICAL_HISTORICAL_NOTICE",
+      "component_summary": [
+        {
+          "component_id": "raccolta-42-part-1",
+          "label": "historical indulgence and feast day context",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-42-part-2",
+          "label": "not a self-contained devotional prayer",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "NO_DISTINCT_FULL_TEXT",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-043",
+      "number": 43,
+      "section": "VII",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/precious-blood-of-jesus/",
+      "title": "Three Offerings of Precious Blood",
+      "classification": "COMPOSITE_SEQUENCE",
+      "component_summary": [
+        {
+          "component_id": "raccolta-43-part-1",
+          "label": "three distinct offerings to Father, Son and Holy Ghost",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-43-part-2",
+          "label": "Gloria Patri with each",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-43-part-3",
+          "label": "closing Prayer to the Most Holy Virgin",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "CANONICAL_GLORIA_REFERENCE",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-070",
+      "number": 70,
+      "section": "X",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/most-holy-mary/",
+      "title": "Office of the Blessed Virgin",
+      "classification": "OFFICE_HISTORICAL_NOTICE",
+      "component_summary": [
+        {
+          "component_id": "raccolta-70-part-1",
+          "label": "Office of Blessed Virgin referenced with historical indulgence conditions",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-70-part-2",
+          "label": "Office text not reproduced here",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "REFERENCE_TO_DISTINCT_OFFICE",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-071",
+      "number": 71,
+      "section": "X",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/most-holy-mary/",
+      "title": "Rosary",
+      "classification": "ROSARY_DESCRIPTION_WITH_FIFTEEN_MEDITATIONS",
+      "component_summary": [
+        {
+          "component_id": "raccolta-71-part-1",
+          "label": "fifteen distinct Joyful Sorrowful Glorious mystery meditations",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-71-part-2",
+          "label": "Our Father Hail Mary Glory repeated",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-71-part-3",
+          "label": "optional Loreto litany cross-reference",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "CANONICAL_ROSARY_CONCEPT_NOT_NEW_PRAYER",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "raccolta-1866-073",
+      "number": 73,
+      "section": "X",
+      "source_url": "https://staging2.sensusfidelium.com/the-raccolta/most-holy-mary/",
+      "title": "St Bridget's Rosary or chaplet",
+      "classification": "DEVOTIONAL_CHAPLET_STRUCTURE",
+      "component_summary": [
+        {
+          "component_id": "raccolta-73-part-1",
+          "label": "six decades each Pater + ten Ave + Credo",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-73-part-2",
+          "label": "additional Pater and three Ave",
+          "verbatim_text_captured": false
+        },
+        {
+          "component_id": "raccolta-73-part-3",
+          "label": "historical indulgence conditions",
+          "verbatim_text_captured": false
+        }
+      ],
+      "shared_prayer_policy": "REUSE_PATER_AVE_CREDO",
+      "source_witness": "SENSUS_1866_MIRROR_SECTION_PAGE_BODY_READ",
+      "historical_print_page_collation": "PENDING",
+      "original_latin_collation": "PENDING",
+      "english_text_bodies_available_on_source": true,
+      "complete_components_text_authenticated": false,
+      "rights": "NOT_ASSESSED",
+      "publication": "RESEARCH_ONLY"
+    }
+  ]
+}
