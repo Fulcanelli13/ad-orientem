@@ -81,8 +81,8 @@
     },
     {
       "id": "litany_holy_spirit",
-      "owner": "B27 historical digital English witness: 1897 Manual of Adoration pp.235–239",
-      "status": "AVAILABLE_EN_DIGITAL_PRINT_UNCOLLATED"
+      "owner": "B27 English litany from eCatholic2000 supplementary consecration text; 1897 Adoration Manual listed but identical wording NOT verified",
+      "status": "AVAILABLE_EN_DIGITAL_RECENSION_1897_UNCONFIRMED"
     },
     {
       "id": "litany_holy_name",
@@ -115,10 +115,10 @@
   },
   "editorialGates": [
     "Collate Faber 1863 act against actual printed-page facsimile before marking PRINT_CERTIFIED",
-    "B27 now admits English digital historical litanies with original collects and Faber §67; printed-page exact collation remains pending",
+    "B27 admits full online supplementary Holy Ghost litany, Hammer 1909 Holy Name litany and Faber §67; do not attribute the Holy Ghost form as 1897 Manual without original printed-page comparison",
     "Confirm specific 1962 Marian feast transfers before automatically presenting calendar-aligned start dates",
     "Do not attribute 1958 or later numbered daily readings to Montfort",
     "If a user changes consecration date, current version resets tracked day marks; progress is device local only"
   ],
-  "supersededBy": "B27 full source-owned English litanies and Montfort §67 prayer; no canonical 48/16 mutation"
+  "supersededBy": "B28 provenance correction: Holy Ghost online supplemental litany is available, but matching the 1897 original's exact wording is unverified. Holy Name Hammer 1909 digital witness and Faber §67 remain."
 }
