@@ -105,6 +105,12 @@ try{
    await rail.locator("[data-mapcn-discover-toggle]").click();
    assert.equal(await rail.getAttribute("data-discover-expanded"),"true");
    assert.equal(await rail.locator("[data-mapcn-discover-toggle]").getAttribute("aria-expanded"),"true");
+   // Height animates from its compact state. Measure only once the actual
+   // expanded layout settles; an intermediate animation frame is not a defect.
+   await page.waitForFunction(()=>{
+     const rail=document.querySelector("#ao-find-modular-root [data-mapcn-discover-rail]");
+     return rail?.dataset?.discoverExpanded==="true" && rail.getBoundingClientRect().height>300;
+   },null,{timeout:4000});
    const openedRail=await rail.evaluate(el=>{const r=el.getBoundingClientRect();return {
      height:r.height,top:r.top,bottom:r.bottom,vh:innerHeight};});
    assert.ok(openedRail.height>150&&openedRail.top>=0&&openedRail.bottom<=openedRail.vh+1,
