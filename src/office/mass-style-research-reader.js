@@ -173,7 +173,7 @@ export function renderOfficeMassStyleResearchReader({
     '<section class="ao-reader-stage aoOfficeMassStage" aria-label="'+esc(h)+'">'+
       '<div class="aoOfficeRail aoOfficeRailLeft" aria-hidden="true"><span data-office-source-role>'+
       esc(first.role.replaceAll("_"," "))+'</span></div>'+
-      '<div class="ao-card-viewport aoOfficeMassViewport" data-office-card-scroll>'+
+      '<div class="ao-card-viewport aoOfficeMassViewport" data-office-card-scroll tabindex="0" aria-label="Office prayer text">'+
         cards.map(c=>renderCard(c,locale)).join("")+'</div>'+
     '</section>'+
     '<nav class="ao-reader-nav aoOfficeBottomNav" aria-label="'+esc(lo("Office card navigation","Navigation de l’Office",locale))+'">'+
