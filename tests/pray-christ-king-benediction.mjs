@@ -6,8 +6,11 @@ const canonical=[["exposition"],["adoration"],["hymn"],["prayer"],["blessing"],[
 const ids=stages=>stages.map(s=>s[0]);
 assert.strictEqual(christKingStages(canonical,"ordinary"),canonical,"Ordinary source sequence identity must not change");
 assert.deepEqual(ids(christKingStages(canonical,"christKing")),
+ ["exposition","adoration","hymn","prayer","blessing","praises","reposition"],
+ "Selecting the Christ the King feast must not assert that any local optional ceremony is taking place");
+assert.deepEqual(ids(christKingStages(canonical,"christKing",{procession:true,royalPraises:true,sacredHeartLitany:false,consecration:true})),
  ["exposition","adoration","king-procession","king-royal-praises","king-consecration","hymn","prayer","blessing","praises","reposition"],
- "The witnessed procession and feast prayers must precede Tantum Ergo");
+ "Explicitly selected local ceremonies must still precede Tantum Ergo");
 assert.deepEqual(ids(christKingStages(canonical,"christKing",{procession:false,royalPraises:false,sacredHeartLitany:true,consecration:false})),
  ["exposition","adoration","king-sacred-heart-litany","hymn","prayer","blessing","praises","reposition"]);
 assert.equal(CHRIST_KING_OPTION_DEFAULTS.sacredHeartLitany,false,"Unconfirmed local litany must not be selected by default");
