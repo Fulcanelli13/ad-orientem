@@ -11,12 +11,12 @@ import {APPROVED_DAILY_FORMULATION_MANIFEST_V1,DAILY_APPROVED_SEQUENCE_RELEASE_V
 import {personalDailyPrayerCard,dailyPersonalSettings,dailyPersonalList,dailyPersonalProvenance} from "../src/pray/daily-personal-prayer-view.js";
 
 assert.deepEqual(PERSONAL_DAILY_SOURCE_COVERAGE.languages,["la","en","fr"]);
-assert.equal(PERSONAL_DAILY_SOURCE_COVERAGE.manualOptions,40);
-assert.equal(CORPUS.additional.length,40);
-assert.equal(new Set(CORPUS.additional.map(x=>x.id)).size,40);
+assert.equal(PERSONAL_DAILY_SOURCE_COVERAGE.manualOptions,44);
+assert.equal(CORPUS.additional.length,44);
+assert.equal(new Set(CORPUS.additional.map(x=>x.id)).size,44);
 for(const record of CORPUS.additional){
- assert.ok(["en","fr"].includes(record.lang));
- assert.equal(record.sourceImageChecked,true);
+ assert.ok(["la","en","fr"].includes(record.lang));
+ assert.ok(record.sourceImageChecked===true||record.sourceWebChecked===true,"Every optional item needs verified original print/page source");
  assert.match(record.sourceUrl,/^https:\/\//);
  assert.ok(record.text.length>30);
  assert.ok(record.sourceLabel);
@@ -40,9 +40,30 @@ assert.equal(initial.mode,"standard");
 assert.equal(buildPersonalDailyPlan({daypart:"evening",prefs:initial}).rows.length,10);
 const english=personalDailyOptions("morning","en","1913");
 assert.ok(english.some(x=>x.sourceLabel.includes("Lasance")));
-assert.equal(personalDailyOptions("morning","la","1913").length,0,"Latin cannot import English source text");
+assert.equal(personalDailyOptions("morning","la","1913").length,0,"Latin must not import English-language morning texts");
 assert.ok(personalDailyOptions("evening","fr","1913").some(x=>x.id==="piusx-1913-jesus-joseph-mary"));
 assert.ok(!personalDailyOptions("evening","fr","1905").some(x=>x.id==="piusx-1913-jesus-joseph-mary"));
+const nightSourceIds=["roman-compline-latin-in-manus","roman-compline-french-in-manus","roman-compline-latin-visita-quaesumus","roman-compline-latin-salva-nos"];
+for(const id of nightSourceIds){
+ const item=CORPUS.additional.find(x=>x.id===id);
+ assert.ok(item&&item.kind==="additional"&&item.daypart==="evening"&&item.sourceWebChecked);
+ assert.equal(item.sourceContextEn.length>60,true,"Seasonal and Office context must remain attached");
+ assert.ok(!CORPUS.editions["1913"].dayparts.evening.some(x=>x.id===id));
+}
+assert.equal(personalDailyOptions("evening","la","1913").filter(x=>x.id.startsWith("roman-compline-")).length,3);
+assert.equal(personalDailyOptions("evening","fr","1913").filter(x=>x.id.startsWith("roman-compline-")).length,1);
+assert.equal(personalDailyOptions("evening","en","1913").filter(x=>x.id.startsWith("roman-compline-")).length,0,"Never infer an English translation for ICRSP Latin/French source");
+for(const language of ["la","fr"]){
+ const id=language==="la"?"roman-compline-latin-in-manus":"roman-compline-french-in-manus";
+ const prefs=changePersonalDailyPrefs(defaultPersonalDailyPrefs(language),{action:"extra",daypart:"evening",value:id});
+ const plan=buildPersonalDailyPlan({daypart:"evening",prefs});
+ assert.equal(plan.rows.length,11);
+ assert.equal(plan.rows.at(-1).sourceStatus,"complete-optional-liturgical-selection");
+ assert.match(plan.rows.at(-1).text,/Redemísti nos|rachetés/);
+ assert.match(plan.rows.at(-1).sourceContextEn,/Passiontide/);
+ assert.equal(plan.rows.at(-1).id,"personal-extra-"+id);
+}
+
 const variant=english.find(x=>x.kind==="variant"&&x.slot==="faith");
 assert.ok(variant);
 let prefs=changePersonalDailyPrefs(initial,{action:"variant",daypart:"morning",value:variant.id});
@@ -94,6 +115,13 @@ assert.match(dailyPersonalProvenance(latinSource,h.L),/Editorial Latin translati
 assert.match(dailyPersonalProvenance(first.rows[0],h.L),/Traditional Latin parallel/);
 const sourceExtra=buildPersonalDailyPlan({daypart:"morning",prefs:changePersonalDailyPrefs(initial,{action:"extra",daypart:"morning",value:extra.id})}).rows.at(-1);
 assert.match(dailyPersonalProvenance(sourceExtra,h.L),/Optional · complete historical source-language prayer/);
+const inManusPrefs=changePersonalDailyPrefs(defaultPersonalDailyPrefs("la"),{action:"extra",daypart:"evening",value:"roman-compline-latin-in-manus"});
+const inManusPlan=buildPersonalDailyPlan({daypart:"evening",prefs:inManusPrefs});
+const inManusCard=personalDailyPrayerCard(inManusPlan.rows.at(-1),inManusPlan,h);
+assert.match(inManusCard,/Passiontide and Eastertide/);
+assert.match(inManusCard,/In manus tuas/);
+assert.match(dailyPersonalProvenance(inManusPlan.rows.at(-1),h.L),/Optional historical Office text/);
+assert.equal(new Set(inManusPlan.rows.map(row=>row.id)).size,inManusPlan.rows.length);
 assert.match(dailyPersonalList(first.rows,{...h,isFr:false}),/data-tp381-daily-card-index="0"/);
 assert.equal(APPROVED_DAILY_FORMULATION_MANIFEST_V1.witnesses&&Object.keys(APPROVED_DAILY_FORMULATION_MANIFEST_V1.witnesses).length,0,"Old unapproved historical profile path must remain fail closed");
 assert.equal(DAILY_APPROVED_SEQUENCE_RELEASE_V1.enabled,false,"Do not bypass historical profile approval through legacy gate");
@@ -104,4 +132,4 @@ assert.match(runtime,/personalDailyPrayerCard\(row,dailyReadingPlan\(\),/);
 assert.match(runtime,/dailyPersonalSettings\(plan,personalDailyPrefs\(\),/);
 assert.match(runtime,/\$\{choice\}\$\{dailyPersonalSettings\(plan,personalDailyPrefs\(\),/,"Daily rule controls must be in the opening screen, before the horizon");
 assert.match(runtime,/previousId=previous\[previousStep\]\?\.id/,"Updating a daily rule must retain its active prayer ID");
-console.log("PASS: St Pius X 1905/1913 structure, 3 languages, 40 optional texts, source-ID privacy, variants, optional order and legacy gate");
+console.log("PASS: St Pius X 1905/1913 structure, 3 languages, 44 optional texts, source-ID privacy, variants, optional order and legacy gate");

@@ -237,6 +237,11 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 #aoPray435930 .aoDailyPersonalAlternatives>p{font-size:.77rem;color:#aab5bd}
 #aoPray435930 .aoDailyPersonalAlternatives button{display:block;text-align:left;margin:6px 0;width:100%}
 #aoPray435930 .aoDailyPersonalProvenance{display:block;color:#b9aa95;font-size:.68rem;line-height:1.45}
+#aoPray435930 .aoDailyPersonalContext{
+ display:block;margin:8px 0 4px;color:#aab5bd;
+ font:400 .73rem/1.48 var(--ao-font-ui,system-ui,sans-serif);
+}
+
 #aoPray435930 .aoDailyPersonalSettings button:focus-visible,
 #aoPray435930 .aoDailyPersonalAlternatives button:focus-visible{
  outline:2px solid #f5cf87;outline-offset:2px;

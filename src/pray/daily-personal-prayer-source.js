@@ -1173,6 +1173,66 @@ export const DAILY_PERSONAL_PRAYER_SOURCE_V1=Object.freeze({
       "sourceUrl": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_du_saint_concile_de_Trente,_1905.djvu/44",
       "text": "Âmes très heureuses, qui avez eu le bonheur de parvenir à la Gloire, obtenez-nous deux choses de Celui qui est notre commun Dieu et Père: que nous ne L’offensions jamais mortellement, et qu’Il ôte de nous tout ce qui Lui déplaît. Ainsi soit-il.",
       "sourceImageChecked": true
+    },
+    {
+      "id": "roman-compline-latin-in-manus",
+      "lang": "la",
+      "daypart": "evening",
+      "kind": "additional",
+      "slot": "protection",
+      "purpose": "historical-office-excerpt",
+      "title": "In manus tuas · Répons bref de Complies",
+      "sourceLabel": "Bréviaire romain, répons bref de Complies (forme ordinaire); ICRSP France, édition latine",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0141_ancien",
+      "text": "℟. In manus tuas, Dómine, comméndo spíritum meum.\n℟. In manus tuas, Dómine, comméndo spíritum meum.\n℣. Redemísti nos, Dómine, Deus veritátis.\n℟. Comméndo spíritum meum.\n℣. Glória Patri, et Fílio, et Spirítui Sancto.\n℟. In manus tuas, Dómine, comméndo spíritum meum.",
+      "sourceContextEn": "Complete ordinary Compline short responsory, offered as an optional excerpt, not the entire Office. Passiontide and Eastertide have different forms.",
+      "sourceContextFr": "Répons bref ordinaire complet de Complies, facultatif et distinct de l’office entier. Les formes du temps de la Passion et du temps pascal diffèrent.",
+      "sourceWebChecked": true
+    },
+    {
+      "id": "roman-compline-french-in-manus",
+      "lang": "fr",
+      "daypart": "evening",
+      "kind": "additional",
+      "slot": "protection",
+      "purpose": "historical-office-excerpt",
+      "title": "En vos mains · Répons bref de Complies",
+      "sourceLabel": "Bréviaire romain, Complies, texte français publié par ICRSP France (traducteur non établi)",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0141_ancien",
+      "text": "℟. En vos mains, Seigneur : je remets mon esprit.\n℟. En vos mains, Seigneur : je remets mon esprit.\n℣. C’est vous qui nous avez rachetés, Seigneur, Dieu de vérité.\n℟. Je remets mon esprit.\n℣. Gloire au Père et au Fils et au Saint-Esprit.\n℟. En vos mains, Seigneur : je remets mon esprit.",
+      "sourceContextEn": "Historical French ordinary Compline short responsory, offered as an optional excerpt; the Passiontide and Eastertide responses differ.",
+      "sourceContextFr": "Répons bref ordinaire complet de Complies en français historique ; choix facultatif, non l’office entier. Le temps de la Passion et le temps pascal ont des formes distinctes.",
+      "sourceWebChecked": true
+    },
+    {
+      "id": "roman-compline-latin-visita-quaesumus",
+      "lang": "la",
+      "daypart": "evening",
+      "kind": "additional",
+      "slot": "protection",
+      "purpose": "historical-office-collect",
+      "title": "Visita, quæsumus · Prière de protection nocturne",
+      "sourceLabel": "Office romain de Complies, collecte Visita quæsumus; P. Corneille, Vêpres et Complies (éd. Marty-Laveaux)",
+      "sourceUrl": "https://fr.wikisource.org/wiki/%C5%92uvres_de_P._Corneille_%28Marty-Laveaux%29/Tome_9/V%C3%AApres_des_dimanches_et_complies",
+      "text": "Visita, quæsumus, Domine, habitationem istam, et omnes insidias inimici ab ea longe repelle; angeli tui sancti habitent in ea, qui nos in pace custodiant, et benedictio tua sit super nos semper. Per Dominum nostrum Iesum Christum, Filium tuum, qui tecum vivit et regnat in unitate Spiritus Sancti, Deus, per omnia sæcula sæculorum. Amen.",
+      "sourceContextEn": "Complete historic Compline collect, optionally prayed privately; not the entire Office. English and French night-protection forms are already in the personal prayer bank.",
+      "sourceContextFr": "Collecte historique complète de Complies, proposée pour une récitation privée facultative, sans remplacer l’office entier. Des formes anglaises et françaises figurent déjà dans la banque.",
+      "sourceWebChecked": true
+    },
+    {
+      "id": "roman-compline-latin-salva-nos",
+      "lang": "la",
+      "daypart": "evening",
+      "kind": "additional",
+      "slot": "protection",
+      "purpose": "historical-office-excerpt",
+      "title": "Salva nos · Antienne de Complies",
+      "sourceLabel": "Bréviaire romain, antienne de Nunc dimittis aux Complies; ICRSP France",
+      "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0141_ancien",
+      "text": "Salva nos, Dómine, vigilántes, custódi nos dormiéntes; ut vigilémus cum Christo, et requiescámus in pace.",
+      "sourceContextEn": "Complete Compline antiphon, optionally prayed privately; traditionally frames the Nunc dimittis, not the whole Office. Eastertide adds Alleluia.",
+      "sourceContextFr": "Antienne complète de Complies, proposée comme prière privée facultative ; elle encadre traditionnellement le Nunc dimittis, sans constituer l’office entier. Alléluia s’ajoute au temps pascal.",
+      "sourceWebChecked": true
     }
   ]
 });
