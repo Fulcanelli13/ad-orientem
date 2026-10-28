@@ -16,6 +16,25 @@ s=low.project("AO.SM.C0075");assert.equal(s.priestPosition.station,"ALTAR_EPISTL
 s=low.project("AO.SM.C0082");assert.equal(s.priestPosition.station,"ALTAR_GOSPEL_MISSAL");assert.equal(s.priestVoice.value,"CLEAR SPOKEN");
 s=low.project("AO.SM.C0259");assert.equal(s.priestVoice.value,"CLEAR SPOKEN");assert.equal(s.priestPosition.facing,"PEOPLE");
 s=low.project("AO.SM.C0268");assert.equal(s.response,null);assert.equal(s.ownership.response,"R18_LOW_SERVER_RESPONSE_SUPPRESSED");
+const lowRequiem=createReaderFormCueStateController({
+ formStateData:formState,registries,lowCorpus,sungCorpus,
+ prepared:{session:{resolvedMass:{form:"LOW",overlays:["REQUIEM"],
+   actualCelebration:{id:"requiem",type:"REQUIEM"}}},
+   readerPreferences:{mode:"LIVE",postureProfile:"FOLLOW_CONGREGATION"}},
+});
+assert.match(lowRequiem.project("AO.SM.C0042").priestAction?.label??"",
+ /Cross over the Missal/,"Requiem Introit must sign above the book");
+assert.doesNotMatch(lowRequiem.project("AO.SM.C0042").priestAction?.label??"",
+ /Signs Himself/i);
+assert.equal(lowRequiem.project("AO.SM.C0080").priestAction,null);
+assert.equal(lowRequiem.project("AO.SM.C0088").priestAction,null);
+assert.equal(lowRequiem.project("AO.SM.C0112").priestAction,null,
+ "Requiem Offertory water must not be blessed");
+assert.match(low.project("AO.SM.C0042").priestAction?.label??"",
+ /Sign of the Cross/,"Ordinary Introit source must remain unmodified");
+assert.ok(low.project("AO.SM.C0088").priestAction,
+ "Ordinary Gospel kiss must remain available");
+
 const lowIds=new Set(lowCorpus.blocks.flatMap(b=>(b.units??[]).map(u=>u.cue_id)).filter(id=>/^AO\.SM\.C\d{4}$/.test(String(id))&&Number(String(id).slice(-4))<=275));assert.equal(lowIds.size,275);
 for(const cueId of lowIds){const x=low.project(cueId);for(const ch of ["gesture","response","priestVoice","priestPosition","priestAction","sacredMinister"])assert.ok(!String(x.ownership?.[ch]??"").includes("LEGACY"),cueId+" Low "+ch);}
 const solemn=createReaderFormCueStateController({formStateData:formState,registries,lowCorpus,sungCorpus,prepared:prepared("SOLEMN",{gestureProfile:"TRADITIONAL"})});assert.equal(solemn.supported,true);
@@ -62,6 +81,12 @@ const solemnRequiem=createReaderFormCueStateController({
   }},readerPreferences:{mode:"LIVE",gestureProfile:"GUIDED_1962"}}
 });
 const sr=cue=>solemnRequiem.project("AO.SM."+cue);
+// Requiem has no deacon's blessing nor private Gospel-book kiss.
+assert.equal(solemnRequiem.project("AO.SM.C0080").priestAction,null);
+assert.equal(solemnRequiem.project("AO.SM.C0088").priestAction,null);
+assert.ok(solemn.project("AO.SM.C0080").priestAction,
+ "Ordinary Solemn pre-Gospel action was lost");
+
 assert.match(sr("C0076").sacredMinister?.action??"",/without receiving.*blessing/i);
 assert.equal(sr("C0080").sacredMinister,null,"Requiem deacon pre-Gospel blessing must be omitted");
 assert.match(sr("C0081").sacredMinister?.action??"",/neither incense nor lighted candles/i);

@@ -34,6 +34,33 @@ export function requiemFootPsalmAndLavaboOmittedCuesForResolvedMass(resolvedMass
    ?REQUIEM_FOOT_PSALM_AND_LAVABO_OMISSIONS:Object.freeze([]);
 }
 
+// XIII.1: the private Jube, Domine / Dominus sit in corde meo before
+// the Gospel and the Per evangelica dicta with Gospel-book kiss are omitted.
+// Munda cor meum, the Gospel proclamation and Laus tibi remain unchanged.
+// Neither calendar date nor the generic burial following-action is authority.
+const REQUIEM_GOSPEL_OMISSIONS=Object.freeze([
+ "AO.SM.C0080","AO.SM.C0088",
+]);
+export function requiemGospelOmittedCuesForResolvedMass(resolvedMass){
+ return isExplicitRequiemMass({session:{resolvedMass}})
+   ?REQUIEM_GOSPEL_OMISSIONS:Object.freeze([]);
+}
+export function isRequiemGospelCeremonyOmitted(cueId,prepared,conditions=null){
+ return REQUIEM_GOSPEL_OMISSIONS.includes(String(cueId??"")) &&
+   isExplicitRequiemMass(prepared,conditions);
+}
+// XIII.1: at the Introit the celebrant does NOT sign himself; he makes
+// a Cross above the Missal with his extended right hand.
+export function requiemIntroitCrossActionForResolvedMass(resolvedMass){
+ if(!isExplicitRequiemMass({session:{resolvedMass}}))return null;
+ return Object.freeze({
+   cueId:"AO.SM.C0042",
+   action:"Traces the sign of the Cross over the Missal, without signing himself.",
+   source:"RITUS_SERVANDUS_XIII_1",
+   observedNow:false,
+ });
+}
+
 // Ritus servandus XIII.2: at a Requiem the INITIAL altar incensation
 // at the Introit is omitted, even in a form using incense at the Offertory.
 // These are exact fixed-Ordinary source identities; never globally disable

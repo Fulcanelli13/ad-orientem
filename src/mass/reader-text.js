@@ -230,7 +230,7 @@ function properSpeaker(slot,form){
   return null;
 }
 
-function properParagraphs(block,properSlots,{language="en",form="SUNG"}={}){
+function properParagraphs(block,properSlots,{language="en",form="SUNG",omitFixedCueIds=[]}={}){
   const slot=block.Proper_Slot;
   const envelope=properSlots?.[slot] ?? null;
   if(envelope?.status==="NOT_APPLICABLE") return [];
@@ -254,7 +254,7 @@ function properParagraphs(block,properSlots,{language="en",form="SUNG"}={}){
       liturgicalGroup:p.liturgicalGroup??null,
       sourcePath:p.sourcePath??null,
     }));
-    return composeProperReaderParagraphs(block.Block_ID,resolved,{language,form})
+    return composeProperReaderParagraphs(block.Block_ID,resolved,{language,form,omitFixedCueIds})
       .map(p=>Object.freeze({...p,displayLanguage:"VERNACULAR"}));
   }
   const latin=data.latin ?? data.Latin_Text ?? null;
@@ -268,7 +268,7 @@ function properParagraphs(block,properSlots,{language="en",form="SUNG"}={}){
     vernacular:english,
     speakerRole:properSpeaker(slot,form)?.role??null,
     speakerEvidence:properSpeaker(slot,form)?.evidence??null,
-  }],{language,form}).map(p=>Object.freeze({...p,displayLanguage:"VERNACULAR"}));
+  }],{language,form,omitFixedCueIds}).map(p=>Object.freeze({...p,displayLanguage:"VERNACULAR"}));
 }
 
 export function buildReaderSectionCard({
@@ -309,9 +309,32 @@ export function buildReaderSectionCard({
       }));
       continue;
     }
+    // XIII.1: the Gospel preparation keeps Munda cor meum and the
+    // movement to the Gospel side, but not the two private blessing
+    // petitions. Validate the 3 original source cue identities strictly.
+    const omitGospelPreparation=block.Block_ID==="AO.SM.B023" &&
+      omittedOrdinaryCues.includes("AO.SM.C0080");
+    if(omitGospelPreparation){
+      const ids=["AO.SM.C0079","AO.SM.C0080","AO.SM.C0081"];
+      if(block.units?.length!==ids.length||
+         block.units.some((u,i)=>u.cue_id!==ids[i]))
+        throw new Error("REQUIEM_GOSPEL_PREPARATION_SOURCE_IDENTITY_MISMATCH");
+    }
+    // The Gospel text + Laus tibi remain; only Per evangelica dicta and
+    // its accompanying kiss are omitted from the fixed source followups.
+    const omitGospelBookKiss=block.Block_ID==="AO.SM.B026"&&
+      omittedOrdinaryCues.includes("AO.SM.C0088");
+    if(omitGospelBookKiss){
+      const ids=["AO.SM.C0086","AO.SM.C0087","AO.SM.C0088"];
+      if(block.units?.length!==ids.length||
+         block.units.some((u,i)=>u.cue_id!==ids[i]))
+        throw new Error("REQUIEM_GOSPEL_FOLLOWUP_SOURCE_IDENTITY_MISMATCH");
+    }
     // XIII.1: at the Lavabo the Psalm remains but the two final doxology
     // cues are omitted. Work from a display-only copy of the frozen block.
-    let projectedBlock=block;
+    let projectedBlock=omitGospelPreparation
+      ? {...block,units:Object.freeze(block.units.filter(u=>u.cue_id!=="AO.SM.C0080"))}
+      : block;
     if(block.Block_ID==="AO.SM.B037"&&
        REQUIEM_LAVABO_DOXOLOGY_CUES.some(id=>omittedOrdinaryCues.includes(id))){
       const expected=["AO.SM.C0125",...REQUIEM_LAVABO_DOXOLOGY_CUES];
@@ -393,7 +416,8 @@ export function buildReaderSectionCard({
       block.Proper_Slot && properSlots?.[block.Proper_Slot]?.status==="NOT_APPLICABLE"
     );
     const raw=block.Proper_Slot
-      ? properParagraphs(block,properSlots,{language:vernacularLanguage,form:actualForm??corpus.form})
+      ? properParagraphs(block,properSlots,{language:vernacularLanguage,form:actualForm??corpus.form,
+          omitFixedCueIds:omitGospelBookKiss?["AO.SM.C0088"]:[]})
       : ordinaryParagraphs(projectedBlock,{language:vernacularLanguage,frenchOrdinary,ordinaryVariants,form:actualForm??corpus.form});
     const stateOnly=stateOnlyBlock(block);
     if(raw.length===0 && !explicitNotApplicable && !stateOnly && block.Branch_Status!=="OPTIONAL_LOCAL_CUSTOM") {
