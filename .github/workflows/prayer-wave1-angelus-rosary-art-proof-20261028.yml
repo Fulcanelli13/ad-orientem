@@ -1,0 +1,46 @@
+name: Prayer Wave 1 - Angelus and Rosary photo proof
+on:
+  push:
+    branches:
+      - feature/prayer-wave1-angelus-rosary-proof-20261028
+    paths:
+      - .github/workflows/prayer-wave1-angelus-rosary-art-proof-20261028.yml
+      - src/pray/wave1-angelus-rosary-art-proof.js
+      - src/pray/presentation-runtime.js
+      - assets/pray/hero-proof/angelus-v3-paint-only-*
+      - assets/pray/hero-proof/rosary-yorck-complete-*
+      - tests/pray-wave1-angelus-rosary-art-proof.mjs
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-real-existing-readers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install zero-cost existing browser test tooling
+        run: npm install --no-save --package-lock=false --ignore-scripts --no-audit --no-fund @playwright/test@1.55.0
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Validate JS and both original reader experiences at 320, 390 and 1440 px
+        run: |
+          node --check src/pray/wave1-angelus-rosary-art-proof.js
+          node --check src/pray/presentation-runtime.js
+          node --check tests/pray-wave1-angelus-rosary-art-proof.mjs
+          node tests/pray-wave1-angelus-rosary-art-proof.mjs
+      - name: Review-only screenshots (secondary copy)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-wave1-angelus-rosary-qa-${{ github.run_id }}
+          path: artifacts/prayer-wave1-angelus-rosary-proof/
+          retention-days: 3
+          if-no-files-found: warn
