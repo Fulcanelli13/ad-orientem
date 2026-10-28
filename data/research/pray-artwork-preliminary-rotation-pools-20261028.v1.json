@@ -14,7 +14,8 @@
     "Latest 57 keeps and 52 rejects are scoped to original review placements; a cross-placement can be reconsidered",
     "Some historical subject approvals have unresolved image master and commercial reuse rights; licensing and pristine crop must pass before publication",
     "No paid images, licences, cloud costs, or rights-permission requests",
-    "The Rosary 15 mystery paintings and Stations 14 station paintings are content-specific and independent of 3–5 landing hero target"
+    "The Rosary 15 mystery paintings and Stations 14 station paintings are content-specific and independent of 3–5 landing hero target",
+    "Gallery reference counts are unverified physical-artwork counts, not licence- or photographic-quality approvals. Deduplicate by object ID before using count for final release."
   ],
   "currentPrayerRouteCount": 26,
   "visualPoolCount": 29,
@@ -242,24 +243,6 @@
               "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
             },
             {
-              "subjectId": "ROS-13",
-              "subject": "Pentecost",
-              "artist": "Jean Restout",
-              "title": "Pentecost",
-              "originalArtworkId": "ART-ean-estout-entecost",
-              "source": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
-              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
-            },
-            {
-              "subjectId": "ROS-14",
-              "subject": "Assumption",
-              "artist": "Peter Paul Rubens",
-              "title": "Assumption of the Virgin",
-              "originalArtworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
-              "source": null,
-              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
-            },
-            {
               "subjectId": "ROS-15",
               "subject": "Coronation of Mary",
               "artist": "Peter Paul Rubens",
@@ -269,12 +252,12 @@
               "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
             }
           ],
-          "uniqueReferenceCountEstimate": 7,
+          "uniqueReferenceCountEstimate": 5,
           "targetMin": 3,
           "targetMax": 5,
           "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
           "gap": 0,
-          "note": null
+          "note": "These five are preliminary module hero references; all 15 historical approved mystery illustrations are preserved in the separate authority register, not discarded. Caravaggio's two photos of one painting remain one artwork, not two rotation entries."
         }
       ],
       "curatorialNotes": "15 traditional mystery illustrations independently retained. Alternate Caravaggio photographs are not distinct artworks."
@@ -1544,5 +1527,11 @@
       ],
       "curatorialNotes": "No random global hero: choose three to five approved images for the currently opened prayer category/subject."
     }
-  ]
+  ],
+  "poolStatistics": {
+    "total": 29,
+    "referenceTarget3to5": 24,
+    "belowReferenceTarget": 5,
+    "allPhotoAndRightsCertified": 0
+  }
 }
