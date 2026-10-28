@@ -399,6 +399,31 @@ if __name__ == "__main__":
                     } for s in document["sections"]],
                 },ensure_ascii=False))
 
+    # Exception register only: compare numbered source-cell headings for the
+    # three All Souls Office hours whose localized source structures diverge.
+    # Never discard or zip source cells to force a false bilingual match.
+    if summary["count"] == 24:
+        for hour in ("MATINS", "LAUDS", "VESPERS"):
+            records = {
+                lang: next(
+                    (x for x in summary["records"] if x["date"] == "2026-11-02"
+                     and x["hour"] == hour and x["language"] == lang), None
+                ) for lang in LANGS
+            }
+            if not all(records.values()):
+                continue
+            sample = {}
+            for lang, record in records.items():
+                document = json.loads((args.out / record["file"]).read_text(encoding="utf8"))
+                sample[lang] = [
+                    {"displayIndex": s["index"], "sourceIndex": s["sourceIndex"],
+                     "sourceCellId": s["sourceCellId"],
+                     "heading": s["text"].split("\\n", 1)[0][:80]}
+                    for s in document["sections"]
+                ]
+            print("OFFICE_ALL_SOULS_SOURCE_HEADINGS", json.dumps({
+                "date": "2026-11-02", "hour": hour, "languages": sample
+            }, ensure_ascii=False))
     for row in summary["comparisons"]:
         if not row["structurallyAligned"] or row["identicalLongEnglishFrenchBlocks"]:
             print("OFFICE_LANGUAGE_REVIEW", json.dumps(row))
