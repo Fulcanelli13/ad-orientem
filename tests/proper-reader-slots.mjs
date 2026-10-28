@@ -334,6 +334,38 @@ const frenchOnlyCorrected=properToReaderSlots({...namedProper,
  secrets:[{lat:"sanctárum Vírginum et Mártyrum Perpétuæ et Felicitátis",
    fr:incorrectFrench.replace("Vierges et ","")}]
 },{language:"fr"});
+const badLatinEnglish=properToReaderSlots({...proper,sourcePath:"Sancti/03-06",
+ collects:[{lat:"sanctárum Vírginum et Mártyrum Perpétuæ et Felicitátis",
+   en:"Martyrs Perpetua and Felicity",fr:incorrectFrench}],
+ secrets:[{lat:"sanctárum Vírginum et Mártyrum Perpétuæ et Felicitátis",
+   en:"Holy Martyrs Perpetua and Felicity",fr:incorrectFrench}]
+},{language:"en"});
+assert.equal(badLatinEnglish.slots.COLLECT_SET.status,"MISSING",
+ "The English reader must not display the source-wrong Latin 6 March Collect");
+assert.equal(badLatinEnglish.slots.SECRET_SET.status,"MISSING",
+ "The English reader must not display the source-wrong Latin 6 March Secret");
+const englishNamedCommemoration=properToReaderSlots({
+ ...realistic2026Commemoration,
+ collects:[realistic2026Commemoration.collects[0],
+   {...realistic2026Commemoration.collects[1],
+     lat:"sanctárum Vírginum et Mártyrum Perpétuæ et Felicitátis",
+     en:"Holy Martyrs Perpetua and Felicity"}],
+ secrets:[realistic2026Commemoration.secrets[0],
+   {...realistic2026Commemoration.secrets[1],
+     lat:"sanctárum Vírginum et Mártyrum Perpétuæ et Felicitátis",
+     en:"Holy Martyrs Perpetua and Felicity"}]
+},{language:"en"});
+assert.equal(englishNamedCommemoration.slots.COLLECT_SET.status,"MISSING",
+ "Actual source-owned March 6 Latin mismatch must be blocked in English mode");
+assert.equal(englishNamedCommemoration.slots.SECRET_SET.status,"MISSING");
+const frenchOnlyDirectCommon=properToReaderSlots({...proper,sourcePath:"Commune/C6b",
+ secrets:[{lat:martyrLatin,en:"Holy Virgins and Martyrs N. and N.",fr:badFrench}],
+ postcommunions:[{lat:martyrLatin,en:"Holy Virgins and Martyrs N. and N.",fr:badFrench}]
+},{language:"en"});
+assert.equal(frenchOnlyDirectCommon.slots.SECRET_SET.status,"READY",
+ "French-only C6b transcription problem cannot suppress accurate Latin/English");
+assert.equal(frenchOnlyDirectCommon.slots.POSTCOMMUNION_SET.status,"READY");
+
 assert.equal(frenchOnlyCorrected.slots.COLLECT_SET.status,"MISSING",
   "Correct French must not conceal a source-inconsistent Latin Virgin designation");
 assert.equal(namedProper.collects[0].fr,incorrectFrench,
