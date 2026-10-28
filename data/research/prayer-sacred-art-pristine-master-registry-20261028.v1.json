@@ -94,7 +94,9 @@
       "REVIEW_PRINT_POSTER_BOUNDARY": 1,
       "CHECK_ARCHED_PANEL_BOUNDS": 1,
       "CHECK_SUSPECT_RED_CORNER_MARK": 1
-    }
+    },
+    "batch2_new_original_photographs_archived": 1,
+    "batch2_source_groups_attempted": 14
   },
   "primary_artworks": [
     {
@@ -4753,6 +4755,71 @@
         "Perpetual Help: source poster/border",
         "Lotto Rosary: white outside curved altarpiece",
         "Wallraf Honthorst: suspicious lower-right red round overprint"
+      ],
+      "phase2_bulk_acquisition": {
+        "phase": "B2_14_CASE_INITIAL",
+        "status": "COMPLETE_WITH_UPSTREAM_429_EXCEPTIONS",
+        "evidence_path": "assets/staged/prayer-art-bulk-acquisition-b2-20261028/intake-results.json",
+        "run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40713711506",
+        "cases_attempted": 14,
+        "distinct_source_cases": 14,
+        "originals_archived": 1,
+        "source_readiness": {
+          "REFERENCE_ONLY_BELOW_SOURCE_QUALITY_FLOOR": 3,
+          "DISCOVERY_PENDING_EXACT_OBJECT_IDENTIFICATION": 4,
+          "SOURCE_FETCH_FAILED": 6,
+          "RESEARCH_SOURCE_ARCHIVED_NOT_PRISTINE": 1
+        },
+        "site_429_caused_retrieval_failures": true,
+        "original_photo_publication_approved": 0,
+        "source_policy": "Archive technical source evidence; 429 means download blocked, not absence of artwork."
+      },
+      "archive_new_source_master": {
+        "case_id": "carracci-burial-met",
+        "source_site": "The Met",
+        "artwork": "Annibale Carracci — The Burial of Christ (1998.188)",
+        "object_id": 438338,
+        "dimensions_px": [
+          3122,
+          3875
+        ],
+        "source_file": "assets/staged/prayer-art-bulk-acquisition-b2-20261028/carracci-burial-met-met-native.jpg",
+        "master_sha256": "6146de5ad9544812623cee4499e7cc717d1b0c152500be72c73103a781fc5757",
+        "photo_quality_critical_note": "Original source image includes the museum physical frame. Archive as authentic original only; a frame-free painted-surface derivative requires independent crop QA.",
+        "original_is_pristine": false,
+        "production_release": false
+      },
+      "discovery_findings": [
+        {
+          "id": "restout-pentecost",
+          "item": "Louvre INV 20303, 1732",
+          "result": "Commons gallery alternatives found only 1000x589 and 1240x730; larger 4037x2444 existing image has frame/glare and photographer metadata discrepancy; continue searching exact museum clean reproduction."
+        },
+        {
+          "id": "guardian-angel-cortona",
+          "item": "Pietro da Cortona 1656 Galleria Nazionale d'Arte Antica",
+          "result": "Known exact source only 694x1100; below pristine floor, no unapproved copy replacement."
+        },
+        {
+          "id": "evening-frere-op6",
+          "item": "The Prayer, Wolverhampton Art Gallery OP6",
+          "result": "Known exact file 898x1200; below native quality floor; no fake 2x enlargement."
+        },
+        {
+          "id": "gerome-age-augustus",
+          "item": "Musée de Picardie original",
+          "result": "Clean full painting source indexed at 1600x990, inadequate for detailed gallery painting. Getty 2824x1820 is a distinct Gérôme study, NOT the selected Picardie original."
+        },
+        {
+          "id": "tiepolo-prado-burial",
+          "item": "Museo del Prado P000362",
+          "result": "Exact museum object verified but accessible clean source image unresolved; do not confuse with San Polo Station XIV."
+        },
+        {
+          "id": "rubens-trinity",
+          "item": "Holy Trinity",
+          "result": "Basel G 1988.24 (1160x1624) and Antwerp KMSKA #314 (19178x19721) are separate Rubens works sharing the title; preserve target artwork identity as unresolved, do not select automatically."
+        }
       ]
     },
     "B2_MASTER_QUALITY": {
