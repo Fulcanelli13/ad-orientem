@@ -68,6 +68,11 @@
       "ref": "conversation",
       "path": "Ad_Orientem_Expanded_Artwork_Decisions.json",
       "purpose": "earlier 22-module 57 kept and 52 rejected placements"
+    },
+    {
+      "ref": "research/module-hero-pd-masters-20261026",
+      "path": "data/research/sacred-art-historical-101-archive-crosswalk-20261028.v1.json",
+      "purpose": "exact original approval IDs linked into 253-work review archive"
     }
   ],
   "metrics": {
@@ -108,7 +113,12 @@
     "exactCategoryPhotosAttachedToMuseumObjects": 16,
     "canonicalObjectsWithVisibleCategoryPreview": 11,
     "previousReviewKeptAssignments": 57,
-    "previousReviewRejectedAssignments": 52
+    "previousReviewRejectedAssignments": 52,
+    "historicalArchiveExactWorkIdAndSubjectMatches": 101,
+    "historicalArchiveApprovalWithDirectPhotoLeads": 16,
+    "historicalArchiveDirectPhotoLeads": 18,
+    "historicalArchiveSelectedWorksWithoutDirectPhotoLeads": 85,
+    "historicalExactMuseumObjectMatchesStill": 3
   },
   "museumObjects": [
     {
@@ -11629,7 +11639,14 @@
       "matchConfidence": "EXACT_SOURCE_OBJECT_URL",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "ROS-02",
@@ -11645,7 +11662,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-aphael-and-iulio-omano-he-isitation",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "ROS-03",
@@ -11661,7 +11685,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "ROS-04",
@@ -11677,7 +11708,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "ROS-05",
@@ -11693,7 +11731,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-udovico-azzolino-hrist-isputing-with-the-octors",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "ROS-06",
@@ -11709,7 +11754,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "ROS-07",
@@ -11725,7 +11777,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "ROS-08",
@@ -11741,7 +11800,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-nthony-van-yck-rowning-with-horns",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "ROS-09",
@@ -11757,7 +11823,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-itian-hrist-arrying-the-ross",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "ROS-10",
@@ -11773,7 +11846,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-nthony-van-yck-he-ance-hrust",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "ROS-11",
@@ -11789,7 +11869,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-esurrection-of-hrist",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "ROS-12",
@@ -11805,7 +11892,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-rtus-olffort-scension-ntwerp-osary-cycle",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "ROS-13",
@@ -11821,7 +11915,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ean-estout-entecost",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "ROS-14",
@@ -11837,7 +11938,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "ROS-15",
@@ -11853,7 +11961,14 @@
       "matchConfidence": "EXACT_SOURCE_OBJECT_URL",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-oronation-of-the-irgin-oil-sketch",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "STN-01",
@@ -11869,7 +11984,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-01-hrist-ondemned-to-eath",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "STN-02",
@@ -11885,7 +12007,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "STN-03",
@@ -11901,7 +12030,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-03-irst-all",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "STN-04",
@@ -11917,7 +12053,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "STN-05",
@@ -11933,7 +12076,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-05-imon-of-yrene-elps",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "STN-06",
@@ -11949,7 +12099,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-06-eronica-ipes-is-ace",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "STN-07",
@@ -11965,7 +12122,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-07-econd-all",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "STN-08",
@@ -11981,7 +12145,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-08-esus-ddresses-the-omen-of-erusalem",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "STN-09",
@@ -11997,7 +12168,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-09-hird-all",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "STN-10",
@@ -12013,7 +12191,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-10-tripping-of-is-arments",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "STN-11",
@@ -12029,7 +12214,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-11-ailing-to-the-ross",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "STN-12",
@@ -12045,7 +12237,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "STN-13",
@@ -12061,7 +12260,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "STN-14",
@@ -12077,7 +12283,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "DEV-03",
@@ -12093,7 +12306,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ean-estout-entecost",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "DEV-04",
@@ -12109,7 +12329,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "DEV-06",
@@ -12125,7 +12352,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-mmaculate-onception",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "DEV-07",
@@ -12141,7 +12375,14 @@
       "matchConfidence": "EXACT_SOURCE_OBJECT_URL",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "DEV-08",
@@ -12157,7 +12398,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "DEV-09",
@@ -12173,7 +12421,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-nthony-van-yck-amentation-of-hrist",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "DEV-14",
@@ -12189,7 +12444,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "DEV-16",
@@ -12205,7 +12467,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "DEV-17",
@@ -12221,7 +12490,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ietro-da-ortona-he-uardian-ngel",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "DEV-18",
@@ -12237,7 +12513,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-he-oly-rinity",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "DEV-20",
@@ -12253,7 +12536,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-AP-01",
@@ -12269,7 +12559,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-usepe-de-ibera-aint-eter-postolate",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-AP-02",
@@ -12285,7 +12582,39 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-artyrdom-of-aint-ndrew",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "The Martyrdom of Saint Andrew. P.P. Rubens.jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Martyrdom_of_Saint_Andrew._P.P._Rubens.jpg?width=800",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Martyrdom_of_Saint_Andrew._P.P._Rubens.jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Martyrdom_of_Saint_Andrew._P.P._Rubens.jpg",
+            "pixelsReported": "4720 × 5901",
+            "rightsClaim": "CC BY-SA; verify exact file before publication",
+            "status": "PHOTO_SOURCE_FOUND_OBJECT_IDENTIFIED",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          },
+          {
+            "fileId": "El Martirio del apóstol San Andrés, PPRubens, Fundación Carlos de Amberes.jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/El_Martirio_del_ap%C3%B3stol_San_Andr%C3%A9s%2C_PPRubens%2C_Fundaci%C3%B3n_Carlos_de_Amberes.jpg?width=800",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:El_Martirio_del_ap%C3%B3stol_San_Andr%C3%A9s%2C_PPRubens%2C_Fundaci%C3%B3n_Carlos_de_Amberes.jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/El_Martirio_del_ap%C3%B3stol_San_Andr%C3%A9s%2C_PPRubens%2C_Fundaci%C3%B3n_Carlos_de_Amberes.jpg",
+            "pixelsReported": "2026 × 2711",
+            "rightsClaim": "CC BY-SA 4.0; photographer attribution required",
+            "status": "PHOTO_SOURCE_FOUND_OBJECT_IDENTIFIED",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 2,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-AP-08",
@@ -12301,7 +12630,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-aravaggio-nspiration-of-aint-atthew",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-AP-11",
@@ -12317,7 +12653,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-aint-atthias-postolate",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-AP-12",
@@ -12333,7 +12676,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-usepe-de-ibera-aint-aul-postolate",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-AP-13",
@@ -12349,7 +12699,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-usepe-de-ibera-aint-udas-haddeus",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-DC-01",
@@ -12365,7 +12722,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-DC-02",
@@ -12381,7 +12745,27 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-hilippe-de-hampaigne-aint-ugustine",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "Saint Augustine by Philippe de Champaigne.jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Augustine_by_Philippe_de_Champaigne.jpg?width=800",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Augustine_by_Philippe_de_Champaigne.jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Augustine_by_Philippe_de_Champaigne.jpg",
+            "pixelsReported": "3135 × 4000",
+            "rightsClaim": "Commons PD-Art; file-level release QA required",
+            "status": "PHOTO_SOURCE_FOUND_OLD_SELECTION_OBJECT_CROSSWALK_PENDING",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 1,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-DC-03",
@@ -12397,7 +12781,27 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-usepe-de-ibera-aint-erome-riting",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "Ribera - San Jerónimo escribiendo, P005201.jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Ribera_-_San_Jer%C3%B3nimo_escribiendo%2C_P005201.jpg?width=800",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Ribera_-_San_Jer%C3%B3nimo_escribiendo%2C_P005201.jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/Ribera_-_San_Jer%C3%B3nimo_escribiendo%2C_P005201.jpg",
+            "pixelsReported": "1426 × 1920",
+            "rightsClaim": "Commons PD-Art; under 2K high side, seek improved reproduction",
+            "status": "PHOTO_SOURCE_FOUND_OBJECT_IDENTIFIED",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 1,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-DC-05",
@@ -12413,7 +12817,27 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-arlo-rivelli-aint-homas-quinas",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "Saint Thomas Aquinas (Crivelli, 15th-century).jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg?width=1050",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+            "pixelsReported": null,
+            "rightsClaim": "Consult this exact file page; no automatic production release",
+            "status": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 1,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-DC-06",
@@ -12429,7 +12853,27 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-rancisco-de-urbar-n-aint-onaventure-at-ouncil-of-yon",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "Saint Bonaventure au concile de Lyon, par Francisco de Zurbarán.jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Bonaventure_au_concile_de_Lyon%2C_par_Francisco_de_Zurbar%C3%A1n.jpg?width=800",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Bonaventure_au_concile_de_Lyon%2C_par_Francisco_de_Zurbar%C3%A1n.jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Bonaventure_au_concile_de_Lyon%2C_par_Francisco_de_Zurbar%C3%A1n.jpg",
+            "pixelsReported": "1378 × 1500",
+            "rightsClaim": "Commons PD mark; small file, seek larger source",
+            "status": "PHOTO_SOURCE_FOUND_OBJECT_IDENTIFIED",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 1,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-DC-09",
@@ -12445,7 +12889,27 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iambattista-iepolo-aint-atherine-of-iena",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "Giambattista Tiepolo, Kunsthistorisches Museum Wien, Gemäldegalerie - Hl. Katharina von Siena - GG 348 - Kunsthistorisches Museum.jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg?width=800",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/Giambattista_Tiepolo%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Hl._Katharina_von_Siena_-_GG_348_-_Kunsthistorisches_Museum.jpg",
+            "pixelsReported": "1239 × 1573",
+            "rightsClaim": "Commons PD-Art; small derivative, seek full museum master",
+            "status": "PHOTO_SOURCE_FOUND_OBJECT_IDENTIFIED",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 1,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-DC-14",
@@ -12461,7 +12925,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ierre-ubert-ubleyras-he-ass-of-aint-asil-oil-modello",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-DC-17",
@@ -12477,7 +12948,27 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-artolom-steban-urillo-aint-sidore-of-eville",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "Isidor von Sevilla.jpeg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Isidor_von_Sevilla.jpeg?width=1050",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Isidor_von_Sevilla.jpeg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/Isidor_von_Sevilla.jpeg",
+            "pixelsReported": null,
+            "rightsClaim": "Consult this exact file page; no automatic production release",
+            "status": "W49_W73_DISPLAY_PHOTO_UNCHECKED_PHYSICAL_ORIGINAL",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 1,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-DC-28",
@@ -12493,7 +12984,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-02",
@@ -12509,7 +13007,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-04",
@@ -12525,7 +13030,27 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ierre-ignard-aint-ohn-the-aptist",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "Saint Jean Baptiste Mignard.jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Jean_Baptiste_Mignard.jpg?width=800",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Jean_Baptiste_Mignard.jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Jean_Baptiste_Mignard.jpg",
+            "pixelsReported": "2130 × 2952",
+            "rightsClaim": "Commons PD-Art; exact original file QA required",
+            "status": "PHOTO_SOURCE_FOUND_OBJECT_IDENTIFIED",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 1,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-07",
@@ -12541,7 +13066,27 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "Ingres coronation charles vii.jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Ingres_coronation_charles_vii.jpg?width=800",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Ingres_coronation_charles_vii.jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/Ingres_coronation_charles_vii.jpg",
+            "pixelsReported": null,
+            "rightsClaim": "Commons file terms require inspection",
+            "status": "PHOTO_SOURCE_FOUND_OBJECT_IDENTIFIED",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 1,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-10",
@@ -12557,7 +13102,27 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "Martirio de San Esteban, de Juan de Juanes (Museo del Prado).jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Martirio_de_San_Esteban%2C_de_Juan_de_Juanes_(Museo_del_Prado).jpg?width=950",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Martirio_de_San_Esteban%2C_de_Juan_de_Juanes_(Museo_del_Prado).jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/Martirio_de_San_Esteban%2C_de_Juan_de_Juanes_(Museo_del_Prado).jpg",
+            "pixelsReported": null,
+            "rightsClaim": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT",
+            "status": "USER_PREVIEW_NOT_MASTER",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 1,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-11",
@@ -12573,7 +13138,27 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "Jean-Baptiste de Champaigne, The Martyrdom of Saint Lawrence, c. 1660, NGA 106362.jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Baptiste_de_Champaigne%2C_The_Martyrdom_of_Saint_Lawrence%2C_c._1660%2C_NGA_106362.jpg?width=800",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Jean-Baptiste_de_Champaigne%2C_The_Martyrdom_of_Saint_Lawrence%2C_c._1660%2C_NGA_106362.jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Baptiste_de_Champaigne%2C_The_Martyrdom_of_Saint_Lawrence%2C_c._1660%2C_NGA_106362.jpg",
+            "pixelsReported": "3351 × 4000",
+            "rightsClaim": "NGA CC0 donated to Commons",
+            "status": "PHOTO_SOURCE_FOUND_OBJECT_IDENTIFIED_CORRECTED_OLD_WRONG_SOURCE",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 1,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-12",
@@ -12589,7 +13174,39 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-nthony-van-yck-aint-rancis-in-cstasy",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "Anton van Dyck - Saint Francis of Assisi in Ecstasy.jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Anton_van_Dyck_-_Saint_Francis_of_Assisi_in_Ecstasy.jpg?width=950",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Anton_van_Dyck_-_Saint_Francis_of_Assisi_in_Ecstasy.jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/Anton_van_Dyck_-_Saint_Francis_of_Assisi_in_Ecstasy.jpg",
+            "pixelsReported": "2549 × 3051",
+            "rightsClaim": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT",
+            "status": "SOURCE_FILE_METADATA_INDEXED",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          },
+          {
+            "fileId": "St Francis in Ecstasy.jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Francis_in_Ecstasy.jpg?width=950",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:St_Francis_in_Ecstasy.jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Francis_in_Ecstasy.jpg",
+            "pixelsReported": null,
+            "rightsClaim": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT",
+            "status": "USER_PREVIEW_NOT_MASTER",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 2,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-13",
@@ -12605,7 +13222,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-laudio-oello-aint-ominic-of-uzm-n",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-15",
@@ -12621,7 +13245,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-iracles-of-aint-rancis-avier",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-16",
@@ -12637,7 +13268,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-19",
@@ -12653,7 +13291,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-aint-ebastian",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-23",
@@ -12669,7 +13314,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ietro-da-ortona-aint-ecilia",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-24",
@@ -12685,7 +13337,27 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-aravaggio-aint-atherine-of-lexandria",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "Caravaggio - Saint Catherine of Alexandria (post-restoration image).jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio_-_Saint_Catherine_of_Alexandria_(post-restoration_image).jpg?width=800",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Caravaggio_-_Saint_Catherine_of_Alexandria_(post-restoration_image).jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio_-_Saint_Catherine_of_Alexandria_(post-restoration_image).jpg",
+            "pixelsReported": "2134 × 2750",
+            "rightsClaim": "Commons file license to be confirmed before release",
+            "status": "PHOTO_SOURCE_FOUND_OBJECT_IDENTIFIED",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 1,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-25",
@@ -12701,7 +13373,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-uido-eni-aint-ary-agdalene",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-26",
@@ -12717,7 +13396,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-abriel-ran-ois-oyen-iracle-des-rdents",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-29",
@@ -12733,7 +13419,27 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-nthony-van-yck-aint-artin-ividing-is-loak",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "Van Dyck, Anthony - St Martin Dividing his Cloak - 1620-1621.JPG",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Van_Dyck%2C_Anthony_-_St_Martin_Dividing_his_Cloak_-_1620-1621.JPG?width=950",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Van_Dyck%2C_Anthony_-_St_Martin_Dividing_his_Cloak_-_1620-1621.JPG",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/Van_Dyck%2C_Anthony_-_St_Martin_Dividing_his_Cloak_-_1620-1621.JPG",
+            "pixelsReported": null,
+            "rightsClaim": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT",
+            "status": "USER_PREVIEW_NOT_MASTER",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 1,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-30",
@@ -12749,7 +13455,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-31",
@@ -12765,7 +13478,27 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "Saint Rosalie Interceding for the Plague-stricken of Palermo MET DT2728.jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo_MET_DT2728.jpg?width=950",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo_MET_DT2728.jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Rosalie_Interceding_for_the_Plague-stricken_of_Palermo_MET_DT2728.jpg",
+            "pixelsReported": "2755 × 3722",
+            "rightsClaim": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT",
+            "status": "SOURCE_FILE_METADATA_INDEXED",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 1,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "SNT-OT-32",
@@ -12781,7 +13514,27 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [
+          {
+            "fileId": "Peter Paul Rubens - The Miracles of Saint Francis of Paola - 91.PB.50 - J. Paul Getty Museum.jpg",
+            "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg?width=950",
+            "sourcePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg",
+            "originalSource": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg",
+            "pixelsReported": null,
+            "rightsClaim": "CHECK_EXACT_FILE_PAGE_BEFORE_DEPLOYMENT",
+            "status": "USER_PREVIEW_NOT_MASTER",
+            "fileLicenseVerified": false,
+            "pristineVerified": false,
+            "productionQualified": false
+          }
+        ],
+        "previewCount": 1,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-OR01",
@@ -12797,7 +13550,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-and-an-rueghel-the-lder-arden-of-den-with-the-all",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-OR03",
@@ -12813,7 +13573,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-ain-and-bel",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-OR06",
@@ -12829,7 +13596,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ieter-ruegel-the-lder-ower-of-abel",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-PA02",
@@ -12845,7 +13619,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-uan-ern-ndez-de-avarrete-braham-and-the-hree-ngels",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-PA03",
@@ -12861,7 +13642,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-eeting-of-braham-and-elchizedek",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-PA06",
@@ -12877,7 +13665,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-aravaggio-he-acrifice-of-saac",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-PA07",
@@ -12893,7 +13688,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-os-de-ibera-acob-s-ream",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-PA08",
@@ -12909,7 +13711,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ug-ne-elacroix-acob-restling-with-the-ngel",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-EX01",
@@ -12925,7 +13734,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-bastien-ourdon-he-inding-of-oses",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-EX02",
@@ -12941,7 +13757,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-omenico-etti-oses-before-the-urning-ush",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-EX12",
@@ -12957,7 +13780,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-he-razen-erpent",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-IS03",
@@ -12973,7 +13803,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-aravaggio-avid-with-the-ead-of-oliath",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-IS08",
@@ -12989,7 +13826,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-aspard-ughet-lijah-and-the-ngel",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-XL05",
@@ -13005,7 +13849,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-aniel-in-the-ions-en",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-XL07",
@@ -13021,7 +13872,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-acopo-intoretto-udith-and-olofernes",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-XL08",
@@ -13037,7 +13895,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ebastiano-icci-sther-before-hasuerus",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-XL09",
@@ -13053,7 +13918,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-uido-eni-usannah-and-the-lders",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-XL15",
@@ -13069,7 +13941,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ug-ne-elacroix-eliodorus-riven-from-the-emple",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-G01",
@@ -13085,7 +13964,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-eter-aul-ubens-doration-of-the-agi",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-G02",
@@ -13101,7 +13987,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-G14",
@@ -13117,7 +14010,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-G16",
@@ -13133,7 +14033,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ean-ouvenet-aising-of-azarus",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-G24",
@@ -13149,7 +14056,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-A01",
@@ -13165,7 +14079,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ean-estout-entecost",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-A03",
@@ -13181,7 +14102,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-A05",
@@ -13197,7 +14125,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-artolom-steban-urillo-onversion-of-aint-aul",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-A15",
@@ -13213,7 +14148,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-ustache-e-ueur-aint-aul-reaching-at-phesus",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     },
     {
       "subjectId": "BIB-G27",
@@ -13229,7 +14171,14 @@
       "matchConfidence": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "decision": "USER_HISTORICALLY_SELECTED_FOR_ORIGINAL_SUBJECT",
       "crossModuleApproved": false,
-      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json"
+      "sourceFile": "sacred-art-user-235-subject-decisions-20261012.v1.json",
+      "historicalReviewMatch": {
+        "sourceArtworkId": "ART-uccio-di-uoninsegna-ealing-of-the-an-orn-lind",
+        "matchType": "EXACT_ARTWORK_ID_AND_SUBJECT_ID",
+        "previewLeads": [],
+        "previewCount": 0,
+        "correctApprovalScope": "APPROVED_FOR_THIS_SUBJECT_ONLY"
+      }
     }
   ],
   "oldPrimaryModuleSelections": [
@@ -25237,7 +26186,8 @@
     "Historical subject selection uses a constructed ART-... ID that does not directly equal museum ID; name-only joins remain tentative.",
     "Some older historical preview URLs are artist-mismatched; this reconciliation deliberately does not auto-attach them to approved artworks.",
     "Negative ratings 0–2 are globally excluded for those exact artwork IDs; other placement rejections remain local.",
-    "No invented photo licence, source access, cropped master, or app deployment is certified here."
+    "No invented photo licence, source access, cropped master, or app deployment is certified here.",
+    "Correction 2026-10-28: all 101 original approvals are matched by immutable artwork ID AND subject ID in the 253-work historical archive. The older 98/101 unresolved metric applies ONLY to separate 281-object museum registry."
   ],
   "identityIndexValidation": {
     "keyMethod": "Regex-extracted museum stable URL only, never V8 URL constructor; independent checks for Commons and unattached works",
