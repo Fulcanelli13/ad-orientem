@@ -1,5 +1,5 @@
 import { validateReaderGestureMatrix } from "./reader-gesture-matrix.js";
-import { isRequiemAgnusBreastStrikeOmitted, isRequiemFirstPeacePrayerOmitted, isRequiemEntranceIncensationOmitted, isRequiemFinalBlessingOmitted, isRequiemGospelCeremonyOmitted, isRequiemAltarFacingDismissal } from "./reader-requiem-conditions.js";
+import { isRequiemAgnusBreastStrikeOmitted, isRequiemFirstPeacePrayerOmitted, isRequiemEntranceIncensationOmitted, isRequiemFinalBlessingOmitted, isRequiemGospelCeremonyOmitted, isRequiemAltarFacingDismissal, requiemIntroitCrossActionForResolvedMass } from "./reader-requiem-conditions.js";
 import { ORDINARY_SUNG_GESTURE_ANCHORS } from "./faithful-gesture-cues.js";
 // R17 cue-scoped reader state projection.
 // Source-backed only: exact cue IDs from the certified Sung Mass blueprint.
@@ -442,7 +442,12 @@ export function createReaderCueStateController({
 
     const actionItem=actions.get(cueId);
     const requiemDismissal=isRequiemAltarFacingDismissal(cueId,prepared,activeConditions);
-    const priestAction=actionItem && !requiemDismissal && !omitRequiemAgnusStrike &&
+    const requiemIntroit=cueId==="AO.SM.C0042"
+      ?requiemIntroitCrossActionForResolvedMass(prepared?.session?.resolvedMass):null;
+    const priestAction=requiemIntroit
+      ?Object.freeze({label:requiemIntroit.action,action:requiemIntroit.action,
+        cueId,owner:"RITUS_XIII_1_REQUIEM_INTROIT",observedNow:false})
+      :actionItem && !requiemDismissal && !omitRequiemAgnusStrike &&
       !isRequiemGospelCeremonyOmitted(cueId,prepared,activeConditions) && conditionPasses(actionItem.condition,activeConditions)
       ? sourcePriestAction(actionItem) : null;
 
@@ -476,7 +481,9 @@ export function createReaderCueStateController({
       ownership:Object.freeze({
         gesture:gesture?.label ? (gesture.owner==="GESTURE_MATRIX_SOT"?"GESTURE_MATRIX_SOT":"R17_CUE_NATIVE") : gesture ? (gesture.owner==="GESTURE_MATRIX_SOT_ADVISORY"?"GESTURE_MATRIX_SOT_ADVISORY_FAIL_CLOSED":"R17_SOURCE_ADVISORY_FAIL_CLOSED") : "R17_EXACT_CUE_NONE",
         response:response ? "R17_CUE_NATIVE" : "R17_EXACT_CUE_NONE",
-        priestAction:priestAction ? "R17_V180_EXACT_CUE_ACTION" : "R17_EXACT_CUE_NONE",
+        priestAction:priestAction?.owner==="RITUS_XIII_1_REQUIEM_INTROIT"
+          ?"RITUS_XIII_1_REQUIEM_INTROIT"
+          :priestAction ? "R17_V180_EXACT_CUE_ACTION" : "R17_EXACT_CUE_NONE",
         priestPosition:positionItem ? "R17_CUE_NATIVE_PERSISTENT" : "R17_FAIL_CLOSED",
         priestVoice:voiceItem ? "R17_CUE_NATIVE_RUN" : "R17_FAIL_CLOSED",
         posture:postureItem ? "R17_CUE_NATIVE_PERSISTENT" : "R17_PROFILE_OR_ANCHOR_UNRESOLVED",
