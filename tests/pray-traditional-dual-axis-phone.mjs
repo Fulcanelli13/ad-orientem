@@ -178,7 +178,10 @@ try{
  await page.locator("#aoPray435930 .aoDevoStop").nth(1).evaluate(el=>el.click());
  const morningOpening=page.locator("#aoPray435930 [data-ao-personal-prayer='daily-prayer']");
  assert.equal(await morningOpening.count(),1);
- assert.equal(await morningOpening.locator("[data-tp381-personal-variant='fr-1905-morning-thanks-offering']").count(),1);
+ assert.equal(await morningOpening.locator("[data-tp381-personal-variant='fr-1905-morning-thanks-offering']").count(),0,"Offering is no longer a replacement for the printed complete opening");
+ assert.equal(await morningOpening.locator("[data-tp381-personal-purpose='offering:fr-1905-morning-thanks-offering']").count(),1);
+ const printedOpeningText=await morningOpening.locator("[data-face-v],.aoTP381Reader").first().innerText();
+ assert.equal(await morningOpening.getAttribute("data-ao-personal-source"),"daily-prayer");
  const ambientBefore=await page.evaluate(()=>{
   const sky=document.querySelector("#aoPray435930 .aoQuietHorizonCanvas");
   const card=document.querySelector("#aoPray435930 .aoDevoCardScroll");
@@ -187,7 +190,7 @@ try{
    horizon:document.querySelector("#aoPray435930 [data-ao-quiet-daily-horizon]")?.dataset.aoHorizonPhase,
    stopwatch:document.querySelector("#aoPray435930 [data-ao-daily-clock-readout]")?.textContent};
  });
- await morningOpening.locator("[data-tp381-personal-variant='fr-1905-morning-thanks-offering']").evaluate(el=>el.click());
+ await morningOpening.locator("[data-tp381-personal-purpose='offering:fr-1905-morning-thanks-offering']").evaluate(el=>el.click());
  const ambientAfter=await page.evaluate(()=>({
   step:document.querySelector("#aoPray435930 .aoDevoCard")?.dataset.aoDevoIndex,
   horizon:document.querySelector("#aoPray435930 [data-ao-quiet-daily-horizon]")?.dataset.aoHorizonPhase,
@@ -200,11 +203,15 @@ try{
   "One-tap opening option must keep stage/atmosphere/stopwatch");
  assert.equal(ambientAfter.preservedSky,"same");
  assert.equal(ambientAfter.preservedReader,"same");
- assert.equal(await morningOpening.getAttribute("data-ao-personal-source"),"fr-1905-morning-thanks-offering");
- assert.match(await morningOpening.innerText(),/objet plus restreint/,"Narrower opening focus must be disclosed, not misrepresented as like-for-like");
+ assert.equal(await morningOpening.getAttribute("data-ao-personal-source"),"daily-prayer","The original source ID must be untouched");
+ assert.equal(await morningOpening.locator("[data-face-v],.aoTP381Reader").first().innerText(),printedOpeningText,"The printed complete opening must stay verbatim");
+ assert.equal(await morningOpening.locator("[data-ao-purpose-source='fr-1905-morning-thanks-offering']").count(),1);
+ assert.match(await morningOpening.innerText(),/prière distincte facultative/i,"The second devotion is visibly identified as optional and separate");
  await page.screenshot({path:resolve(captures,"morning-opening-offering-choice-390-fr.png"),animations:"disabled"});
- await morningOpening.locator("[data-tp381-personal-variant='default:daily-prayer']").evaluate(el=>el.click());
+ await morningOpening.locator("[data-tp381-personal-purpose='offering:none']").evaluate(el=>el.click());
+ assert.equal(await morningOpening.locator("[data-ao-purpose-source]").count(),0,"The additional purpose prayer must disappear when None is tapped");
  assert.equal(await morningOpening.getAttribute("data-ao-personal-source"),"daily-prayer");
+ assert.equal(await morningOpening.locator("[data-face-v],.aoTP381Reader").first().innerText(),printedOpeningText);
  await page.locator("#aoPray435930 .aoDevoStop").first().evaluate(el=>el.click());
  const openingSky=await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").evaluate(el=>({
   mode:el.dataset.aoQuietDailyHorizon,phase:el.dataset.aoHorizonPhase,

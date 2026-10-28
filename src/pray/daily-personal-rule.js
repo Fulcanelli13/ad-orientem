@@ -6,7 +6,7 @@
  * Saves only source IDs/edition/language; no prayer content or examination.
  */
 import {DAILY_PERSONAL_PRAYER_SOURCE_V1 as CORPUS} from "./daily-personal-prayer-source.js";
-import {reviewedDailyAlternative} from "./daily-stage-alternative-review.js";
+import {reviewedDailyAlternative,reviewedDailyPurpose,DAILY_PURPOSES,REVIEWED_DAILY_STAGE_ALTERNATIVES} from "./daily-stage-alternative-review.js";
 
 export const DAILY_PERSONAL_RULE_STORAGE_KEY="ao.pray.personal-rule.v1";
 const LANGS=new Set(["la","en","fr"]);
@@ -64,7 +64,7 @@ const allowed=(arr,lang,daypart)=>arr.filter(x=>x.lang===lang && x.daypart===day
 
 export function defaultPersonalDailyPrefs(language="en"){
  return {version:1,edition:"1913",language:LANGS.has(language)?language:"en",
-  mode:"standard",length:"full",variants:{morning:{},evening:{}},
+  mode:"standard",length:"full",variants:{morning:{},evening:{}},purposeSelections:{morning:{},evening:{}},
   briefSelections:{},
   extras:{morning:[],evening:[]}};
 }
@@ -76,7 +76,7 @@ export function normalizePersonalDailyPrefs(raw,language="en"){
   language:LANGS.has(raw.language)?raw.language:fallback.language,
   mode:MODES.has(raw.mode)?raw.mode:fallback.mode,
   length:LENGTHS.has(raw.length)?raw.length:fallback.length,
-  variants:{},extras:{},briefSelections:{}
+  variants:{},extras:{},purposeSelections:{},briefSelections:{}
  };
  for(const edition of EDITIONS){
   const selections={};
@@ -89,6 +89,7 @@ export function normalizePersonalDailyPrefs(raw,language="en"){
  for(const part of PARTS){
   const variants=raw.variants?.[part];
   prefs.variants[part]={};
+  prefs.purposeSelections[part]={};
   if(variants&&typeof variants==="object"&&!Array.isArray(variants)){
    for(const [slot,id] of Object.entries(variants)){
     if(!/^(daily-prayer|faith|hope|charity|contrition)$/.test(slot))continue;
@@ -96,6 +97,23 @@ export function normalizePersonalDailyPrefs(raw,language="en"){
       (x.kind==="variant"&&x.slot===slot||
        x.kind==="additional"&&reviewedDailyAlternative(x.id,part,slot)));
     if(item)prefs.variants[part][slot]=id;
+    else{
+     // Non-destructive B07 migration: a saved Offering/Thanksgiving selection
+     // is moved to its own purpose, not silently erased or left replacing
+     // the complete St Pius X combined opening.
+     const rule=REVIEWED_DAILY_STAGE_ALTERNATIVES[id];
+     if(slot==="daily-prayer"&&rule?.scope==="narrower"&&rule.daypart===part)
+      prefs.purposeSelections[part][rule.purpose]=id;
+    }
+   }
+  }
+  // Explicit B08 purpose choices take precedence over B07 migration.
+  const sourcePurposes=raw.purposeSelections?.[part];
+  if(sourcePurposes&&typeof sourcePurposes==="object"&&!Array.isArray(sourcePurposes)){
+   for(const purpose of DAILY_PURPOSES[part]){
+    const id=sourcePurposes[purpose];
+    if(typeof id==="string"&&reviewedDailyPurpose(id,part,purpose))
+     prefs.purposeSelections[part][purpose]=id;
    }
   }
   const original=raw.extras?.[part];
@@ -136,13 +154,24 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
  const native=p.length==="brief"?fullNative.filter(x=>briefIDs.includes(x.id)):fullNative;
  // Do not silently omit/reorder an invalid source ID.
  if(p.length==="brief"&&(native.length!==briefIDs.length||native.some((x,i)=>x.id!==briefIDs[i])))throw new Error("Invalid Personal Brief source selection");
- const variants=personalDailyOptions(daypart,language,p.edition).flatMap(item=>{
-   if(item.kind==="variant")return [item];
-   const rule=item.kind==="additional"&&reviewedDailyAlternative(item.id,daypart,"daily-prayer")||
-     item.kind==="additional"&&reviewedDailyAlternative(item.id,daypart,"contrition");
-   return rule?[{...item,kind:"reviewed-variant",slot:rule.slot,choiceLabel:rule.label,
-     replacementFocus:rule.focus,replacementScope:rule.scope}]:[];
-  });
+ const options=personalDailyOptions(daypart,language,p.edition);
+ const variants=options.flatMap(item=>{
+  if(item.kind==="variant")return [item];
+  const rule=item.kind==="additional"&&reviewedDailyAlternative(item.id,daypart,"contrition");
+  return rule?[{...item,kind:"reviewed-variant",slot:rule.slot,choiceLabel:rule.label,
+    replacementFocus:rule.purpose,replacementScope:rule.scope}]:[];
+ });
+ const purposeChoices=DAILY_PURPOSES[daypart].map(purpose=>({
+  purpose,
+  options:options.flatMap(item=>{
+   const rule=item.kind==="additional"&&reviewedDailyPurpose(item.id,daypart,purpose);
+   return rule?[{...item,kind:"purpose-prayer",purpose,choiceLabel:rule.label}]:[];
+  })
+ })).filter(x=>x.options.length>0);
+ const selectedPurposes=Object.fromEntries(purposeChoices.flatMap(({purpose,options})=>{
+  const id=p.purposeSelections[daypart][purpose];
+  return options.some(x=>x.id===id)?[[purpose,id]]:[];
+ }));
  const chosen=Object.fromEntries(Object.entries(p.variants[daypart]).filter(([slot,id])=>variants.some(x=>x.id===id&&x.slot===slot)));
  const primary=native.filter(x=>x.kind!=="supplement").map((row,index)=>{
   if(row.kind==="guided")return {...row,id:"piusx-"+p.edition+"-"+daypart+"-examen",kind:"personal-examen",sourceId:"examen",index};
@@ -177,7 +206,7 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
   briefCandidates:fullNative.filter(row=>row.kind!=="supplement").map(row=>({id:row.id,kind:row.kind,
     title:language==="fr"?row.titleFr:row.titleEn,sourceLabel:row.sourceLabel})),
   briefIds:briefIDs,briefCustom:Boolean(p.briefSelections[p.edition]?.[daypart]),
-  offeredExtras:[...extrasById.values()],availableVariants:variants,
+  offeredExtras:[...extrasById.values()],availableVariants:variants,purposeChoices,selectedPurposes,
   sourceLabel:edition.sourceLabel,sourceUrl:edition.sourceUrl};
 }
 /** Read one unmodified source prayer without adding it to the daily rule.
@@ -231,14 +260,23 @@ export function changePersonalDailyPrefs(prefs,{action,daypart="morning",value,l
   const options=personalDailyOptions(daypart,p.language,p.edition);
   if(action==="variant"){
    const item=options.find(x=>x.id===value&&(x.kind==="variant"||
-    x.kind==="additional"&&Boolean(reviewedDailyAlternative(x.id,daypart,"daily-prayer")||
-      reviewedDailyAlternative(x.id,daypart,"contrition"))));
+    x.kind==="additional"&&Boolean(reviewedDailyAlternative(x.id,daypart,"contrition"))));
    if(item){
-    const rule=item.kind==="additional"?reviewedDailyAlternative(item.id,daypart,"daily-prayer")||
-     reviewedDailyAlternative(item.id,daypart,"contrition"):null;
+    const rule=item.kind==="additional"?reviewedDailyAlternative(item.id,daypart,"contrition"):null;
     const slot=rule?.slot||item.slot;
     if(p.variants[daypart][slot]===value)delete p.variants[daypart][slot];
     else p.variants[daypart][slot]=value;
+   }
+  }
+  if(action==="purpose"){
+   if(typeof value==="string"&&value.startsWith("none:")){
+    const purpose=value.slice(5);
+    if(DAILY_PURPOSES[daypart].includes(purpose))delete p.purposeSelections[daypart][purpose];
+   }else{
+    const item=options.find(x=>x.id===value&&x.kind==="additional");
+    const rule=item&&REVIEWED_DAILY_STAGE_ALTERNATIVES[item.id];
+    if(rule?.scope==="narrower"&&rule.daypart===daypart&&DAILY_PURPOSES[daypart].includes(rule.purpose))
+     p.purposeSelections[daypart][rule.purpose]=item.id;
    }
   }
   if(action==="extra"){
