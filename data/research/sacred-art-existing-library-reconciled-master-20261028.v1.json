@@ -63,6 +63,11 @@
     {
       "ref": "conversation",
       "path": "Ad_Orientem_Prayer_Art_Corrective_Wave01_Catalogue.json"
+    },
+    {
+      "ref": "conversation",
+      "path": "Ad_Orientem_Expanded_Artwork_Decisions.json",
+      "purpose": "earlier 22-module 57 kept and 52 rejected placements"
     }
   ],
   "metrics": {
@@ -101,7 +106,9 @@
     "newWave01ResearchWorks": 12,
     "reviewCategoryWorksMatchedExactCanonical": 27,
     "exactCategoryPhotosAttachedToMuseumObjects": 16,
-    "canonicalObjectsWithVisibleCategoryPreview": 11
+    "canonicalObjectsWithVisibleCategoryPreview": 11,
+    "previousReviewKeptAssignments": 57,
+    "previousReviewRejectedAssignments": 52
   },
   "museumObjects": [
     {
@@ -13551,7 +13558,12 @@
       "possibleArtworkIds": [],
       "matchType": "EXACT_SOURCE_OBJECT_URL",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "angelus",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "joseph--primary",
@@ -13569,7 +13581,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "joseph",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "holy-spirit--primary",
@@ -13587,7 +13604,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "holy-spirit",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "heart-jesus--primary",
@@ -13605,7 +13627,12 @@
       "possibleArtworkIds": [],
       "matchType": "EXACT_SOURCE_OBJECT_URL",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "heart-jesus",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "heart-mary--primary",
@@ -13623,7 +13650,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "heart-mary",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "michael--primary",
@@ -13641,7 +13673,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "michael",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "angel--primary",
@@ -13659,7 +13696,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "angel",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "regina--primary",
@@ -13677,7 +13719,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "regina",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "adoration--primary",
@@ -13695,7 +13742,12 @@
       "possibleArtworkIds": [],
       "matchType": "EXACT_SOURCE_OBJECT_URL",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "adoration",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "scripture--primary",
@@ -13713,7 +13765,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "scripture",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "king--primary",
@@ -13731,7 +13788,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "king",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "souls--primary",
@@ -13749,7 +13811,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "souls",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "salvation--primary",
@@ -13767,7 +13834,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "salvation",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "morning--primary",
@@ -13785,7 +13857,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "morning",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "evening--primary",
@@ -13803,7 +13880,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "evening",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "perpetual--primary",
@@ -13821,7 +13903,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "perpetual",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "saints--primary",
@@ -13839,7 +13926,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "saints",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "visit--primary",
@@ -13857,7 +13949,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "visit",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "mass--primary",
@@ -13875,7 +13972,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "mass",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "confession--primary",
@@ -13893,7 +13995,12 @@
       "possibleArtworkIds": [],
       "matchType": "EXACT_SOURCE_OBJECT_URL",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "confession",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "rosary--primary",
@@ -13911,7 +14018,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "rosary",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "sorrows--primary",
@@ -13929,7 +14041,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "sorrows",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "angelus--caravaggio",
@@ -13947,7 +14064,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "angelus",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "angelus--gentileschi",
@@ -13965,7 +14087,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "angelus",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "holy-spirit--vandyck",
@@ -13983,7 +14110,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "holy-spirit",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "holy-spirit--titian",
@@ -14001,7 +14133,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "holy-spirit",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "adoration--caravaggio",
@@ -14019,7 +14156,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "adoration",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "king--bellini",
@@ -14037,7 +14179,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "king",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "king--previtali",
@@ -14055,7 +14202,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "king",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "king--massys",
@@ -14073,7 +14225,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "king",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "salvation--caravaggio",
@@ -14091,7 +14248,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "salvation",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "salvation--rubens",
@@ -14109,7 +14271,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "salvation",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "saints--rubens",
@@ -14127,7 +14294,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "saints",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "saints--vaneyck",
@@ -14145,7 +14317,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "saints",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "rosary--caravaggio",
@@ -14163,7 +14340,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "rosary",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "rosary--domenichino",
@@ -14181,7 +14363,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "rosary",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "holy-spirit--restout-newphoto",
@@ -14199,7 +14386,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "holy-spirit",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "adoration--champaigne",
@@ -14217,7 +14409,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "adoration",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "adoration--domenichino",
@@ -14235,7 +14432,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "adoration",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "salvation--raphael",
@@ -14253,7 +14455,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "salvation",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "saints--saraceni",
@@ -14271,7 +14478,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "saints",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "angelus--murillo-virgin",
@@ -14289,7 +14501,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "angelus",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "angelus--murillo-annunciation",
@@ -14307,7 +14524,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "angelus",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "joseph--latour-dream",
@@ -14325,7 +14547,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "joseph",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "joseph--moretto",
@@ -14343,7 +14570,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "joseph",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "joseph--murillo-flight",
@@ -14361,7 +14593,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "joseph",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "joseph--murillo-nativity",
@@ -14379,7 +14616,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "joseph",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "holy-spirit--vignali",
@@ -14397,7 +14639,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "holy-spirit",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "holy-spirit--ayala",
@@ -14415,7 +14662,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "holy-spirit",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "holy-spirit--durer",
@@ -14433,7 +14685,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "holy-spirit",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "michael--vignali-purgatory",
@@ -14451,7 +14708,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "michael",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "michael--archangels",
@@ -14469,7 +14731,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "michael",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "angel--strozzi",
@@ -14487,7 +14754,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "angel",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "angel--franceschini",
@@ -14505,7 +14777,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "angel",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "angel--dolci",
@@ -14523,7 +14800,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "angel",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "angel--giordano",
@@ -14541,7 +14823,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "angel",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "angel--piazzetta",
@@ -14559,7 +14846,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "angel",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "regina--murillo-resurrection",
@@ -14577,7 +14869,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "regina",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "regina--benson-resurrection",
@@ -14595,7 +14892,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "regina",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "regina--jan-janssens",
@@ -14613,7 +14915,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "regina",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "adoration--francken",
@@ -14631,7 +14938,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "adoration",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "adoration--quellinus",
@@ -14649,7 +14961,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "adoration",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "adoration--allegory",
@@ -14667,7 +14984,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "adoration",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "adoration--communion-jerome",
@@ -14685,7 +15007,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "adoration",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "scripture--caravaggio-malta",
@@ -14703,7 +15030,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "scripture",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "scripture--champaigne-moses",
@@ -14721,7 +15053,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "scripture",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "scripture--ferrer-jerome",
@@ -14739,7 +15076,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "scripture",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "scripture--rubens-evangelists",
@@ -14757,7 +15099,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "scripture",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "scripture--reni-jerome",
@@ -14775,7 +15122,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "scripture",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "king--murillo-good-shepherd",
@@ -14793,7 +15145,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "king",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "king--caravaggio-ecce",
@@ -14811,7 +15168,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "king",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "souls--vignali-michael",
@@ -14829,7 +15191,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "souls",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "souls--taio",
@@ -14847,7 +15214,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "souls",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "souls--trinity-souls",
@@ -14865,7 +15237,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "souls",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "salvation--rubens-hagar",
@@ -14883,7 +15260,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "salvation",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "salvation--murillo-flight",
@@ -14901,7 +15283,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "salvation",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "salvation--champaigne-moses",
@@ -14919,7 +15306,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "salvation",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "salvation--rubens-sacred",
@@ -14937,7 +15329,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "salvation",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "salvation--caravaggio-mercy",
@@ -14955,7 +15352,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "salvation",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "morning--millet-angelus",
@@ -14973,7 +15375,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "morning",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "morning--millet-sower",
@@ -14991,7 +15398,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "morning",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "morning--millet-shepherd",
@@ -15009,7 +15421,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "morning",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "evening--millet-lamplight",
@@ -15027,7 +15444,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "evening",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "evening--millet-moonlight",
@@ -15045,7 +15467,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "evening",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "evening--rubens-evening",
@@ -15063,7 +15490,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "evening",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "evening--moretto-praying",
@@ -15081,7 +15513,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "evening",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "saints--rubens-livinus",
@@ -15099,7 +15536,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "saints",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "saints--murillo-rose",
@@ -15117,7 +15559,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "saints",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "saints--murillo-justa-rufina",
@@ -15135,7 +15582,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "saints",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "saints--rubens-amandus",
@@ -15153,7 +15605,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "saints",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "saints--vandyck-mary",
@@ -15171,7 +15628,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "saints",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "visit--rubens-lyon",
@@ -15189,7 +15651,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "visit",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "visit--ribalta-shepherds",
@@ -15207,7 +15674,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "visit",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "visit--murillo-magi",
@@ -15225,7 +15697,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "visit",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "visit--murillo-nativity",
@@ -15243,7 +15720,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "visit",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "mass--ysenbrandt-mass",
@@ -15261,7 +15743,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "mass",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "mass--diego-gregory",
@@ -15279,7 +15766,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "mass",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "mass--marmion-gregory",
@@ -15297,7 +15789,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "mass",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "mass--portillo-gregory",
@@ -15315,7 +15812,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "mass",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "confession--latour-magdalen",
@@ -15335,7 +15837,12 @@
       ],
       "matchType": "TENTATIVE_UNIQUE_ARTIST_AND_TITLE",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "confession",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "confession--champaigne-magdalen",
@@ -15353,7 +15860,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "confession",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "confession--murillo-peter",
@@ -15371,7 +15883,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "confession",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "confession--murillo-magdalen",
@@ -15389,7 +15906,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "confession",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "rosary--caravaggio-gart",
@@ -15407,7 +15929,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "rosary",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "rosary--lotto-madonna",
@@ -15425,7 +15952,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "rosary",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "rosary--vandyck-madonna",
@@ -15443,7 +15975,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "rosary",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "sorrows--vandyck-lament",
@@ -15461,7 +15998,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "sorrows",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "sorrows--rubens-entomb",
@@ -15479,7 +16021,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "KEPT_IN_EARLIER_REVIEW",
+        "moduleId": "sorrows",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "sorrows--durer-deposition",
@@ -15497,7 +16044,12 @@
       "possibleArtworkIds": [],
       "matchType": "NO_CONFIRMED_GALLERY_OBJECT_MATCH",
       "userSource": "109_and_119_review_gallery",
-      "photoQualityCertified": false
+      "photoQualityCertified": false,
+      "priorUserDecision": {
+        "status": "REJECTED_IN_EARLIER_MODULE_REVIEW_NOT_GLOBAL",
+        "moduleId": "sorrows",
+        "source": "Ad_Orientem_Expanded_Artwork_Decisions.json"
+      }
     },
     {
       "reviewId": "heart-jesus--moroder",
@@ -24701,5 +25253,871 @@
       }
     ],
     "unexpectedCatchallMatchForbidden": true
+  },
+  "previous22ModuleDecisions": {
+    "source": "Ad_Orientem_Expanded_Artwork_Decisions.json",
+    "reviewDate": "2026-10-28T04:51:30.566Z",
+    "counts": {
+      "total": 109,
+      "kept": 57,
+      "rejected": 52,
+      "modules": 22
+    },
+    "scope": "PER_ORIGINAL_22_MODULE_EDITORIAL_CHOICES_USER_2026_10_28",
+    "modules": [
+      {
+        "moduleId": "angelus",
+        "module": "Angelus",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "angelus--primary",
+            "artist": "Philippe de Champaigne",
+            "title": "The Annunciation",
+            "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-wave2-20261026/assets/staged/module-hero-wave2/angelus-met.jpg"
+          },
+          {
+            "reviewId": "angelus--caravaggio",
+            "artist": "Caravaggio",
+            "title": "The Annunciation",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Annunciation-Caravaggio.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Annunciation-Caravaggio.jpg?width=2000"
+          },
+          {
+            "reviewId": "angelus--gentileschi",
+            "artist": "Orazio Gentileschi",
+            "title": "The Annunciation",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Annunciazione%20%281623%20circa%29%20-%20Orazio%20Gentileschi.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Annunciazione%20%281623%20circa%29%20-%20Orazio%20Gentileschi.jpg?width=2000"
+          },
+          {
+            "reviewId": "angelus--murillo-annunciation",
+            "artist": "Bartolomé Esteban Murillo",
+            "title": "The Annunciation (Prado)",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bartolome_murillo-anunciacion.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bartolome%20murillo-anunciacion.jpg?width=2000"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "angelus--murillo-virgin",
+            "artist": "Bartolomé Esteban Murillo",
+            "title": "The Virgin of the Annunciation"
+          }
+        ]
+      },
+      {
+        "moduleId": "joseph",
+        "module": "Saint Joseph",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "joseph--primary",
+            "artist": "Philippe de Champaigne",
+            "title": "The Dream of Saint Joseph",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-joseph-original-20261026/assets/staged/module-hero-masters/joseph.jpg"
+          },
+          {
+            "reviewId": "joseph--latour-dream",
+            "artist": "Georges de La Tour",
+            "title": "The Dream of Saint Joseph",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Le_Songe_de_saint_Joseph_de_Georges_de_La_Tour_-_Mus%C3%A9e_d%27Art_de_Nantes.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Songe%20de%20saint%20Joseph%20de%20Georges%20de%20La%20Tour%20-%20Mus%C3%A9e%20d%27Art%20de%20Nantes.jpg?width=2000"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "joseph--moretto",
+            "artist": "Moretto da Brescia",
+            "title": "Saint Joseph"
+          },
+          {
+            "reviewId": "joseph--murillo-flight",
+            "artist": "Bartolomé Esteban Murillo",
+            "title": "The Flight into Egypt"
+          },
+          {
+            "reviewId": "joseph--murillo-nativity",
+            "artist": "Bartolomé Esteban Murillo",
+            "title": "The Nativity"
+          }
+        ]
+      },
+      {
+        "moduleId": "holy-spirit",
+        "module": "Holy Spirit",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "holy-spirit--primary",
+            "artist": "Jean Restout",
+            "title": "Pentecost",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-wave2-20261026/assets/staged/module-hero-wave2/holy-spirit.jpg"
+          },
+          {
+            "reviewId": "holy-spirit--vandyck",
+            "artist": "Anthony van Dyck",
+            "title": "The Outpouring of the Holy Spirit",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dyck%2C%20Anthonis%20van%20-%20Pouring%20of%20the%20Holy%20Ghost%20-%20Bildergalerie%20Sanssouci.jpeg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dyck%2C%20Anthonis%20van%20-%20Pouring%20of%20the%20Holy%20Ghost%20-%20Bildergalerie%20Sanssouci.jpeg?width=2000"
+          },
+          {
+            "reviewId": "holy-spirit--titian",
+            "artist": "Titian",
+            "title": "Pentecost",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tiziano%20Pentecost%C3%A9s.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiziano%20Pentecost%C3%A9s.jpg?width=2000"
+          },
+          {
+            "reviewId": "holy-spirit--restout-newphoto",
+            "artist": "Jean Restout II",
+            "title": "Pentecost (new photographic source)",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Restout%20-%20La%20Pentec%C3%B4te%2001.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Restout%20-%20La%20Pentec%C3%B4te%2001.jpg?width=2000"
+          },
+          {
+            "reviewId": "holy-spirit--vignali",
+            "artist": "Jacopo Vignali",
+            "title": "Pentecost (1648)",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jacopo_vignali,_pentecoste,_1648,_dalla_distrutta_chiesa_di_Sant%E2%80%99Antonio_dei_Mugnai_a_borgo_san_lorenzo.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo%20vignali%2C%20pentecoste%2C%201648%2C%20dalla%20distrutta%20chiesa%20di%20Sant%E2%80%99Antonio%20dei%20Mugnai%20a%20borgo%20san%20lorenzo.jpg?width=2000"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "holy-spirit--ayala",
+            "artist": "Josefa de Óbidos",
+            "title": "Pentecost (c. 1660–70)"
+          },
+          {
+            "reviewId": "holy-spirit--durer",
+            "artist": "Albrecht Dürer",
+            "title": "Pentecost (Little Passion, print)"
+          }
+        ]
+      },
+      {
+        "moduleId": "heart-jesus",
+        "module": "Sacred Heart",
+        "rotate": false,
+        "kept": [
+          {
+            "reviewId": "heart-jesus--primary",
+            "artist": "Juan Patricio Morlete Ruiz",
+            "title": "The Heart of Jesus",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-masters/heart-jesus.jpg"
+          }
+        ],
+        "rejected": []
+      },
+      {
+        "moduleId": "heart-mary",
+        "module": "Immaculate Heart",
+        "rotate": false,
+        "kept": [
+          {
+            "reviewId": "heart-mary--primary",
+            "artist": "Juan Patricio Morlete Ruiz",
+            "title": "The Heart of Mary",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-masters/heart-mary.jpg"
+          }
+        ],
+        "rejected": []
+      },
+      {
+        "moduleId": "michael",
+        "module": "Saint Michael",
+        "rotate": false,
+        "kept": [
+          {
+            "reviewId": "michael--primary",
+            "artist": "Guido Reni",
+            "title": "Archangel Michael Defeating Satan",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-masters/michael.jpg"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "michael--vignali-purgatory",
+            "artist": "Jacopo Vignali",
+            "title": "Saint Michael Liberating Souls from Purgatory"
+          },
+          {
+            "reviewId": "michael--archangels",
+            "artist": "Miguel de Paiva",
+            "title": "Archangels Michael and Raphael with Guardian Angel"
+          }
+        ]
+      },
+      {
+        "moduleId": "angel",
+        "module": "Guardian Angel",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "angel--primary",
+            "artist": "Pietro da Cortona",
+            "title": "The Guardian Angel",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cortona_Guardian_Angel_01.jpg"
+          },
+          {
+            "reviewId": "angel--strozzi",
+            "artist": "Bernardo Strozzi",
+            "title": "The Guardian Angel",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bernardo_Strozzi_-_The_Guardian_Angel_-_76.256_-_Museum_of_Fine_Arts.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bernardo%20Strozzi%20-%20The%20Guardian%20Angel%20-%2076.256%20-%20Museum%20of%20Fine%20Arts.jpg?width=2000"
+          },
+          {
+            "reviewId": "angel--franceschini",
+            "artist": "Marcantonio Franceschini",
+            "title": "The Guardian Angel",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Franceschini,_Marcantonio_-_The_Guardian_Angel_-_Google_Art_Project.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Franceschini%2C%20Marcantonio%20-%20The%20Guardian%20Angel%20-%20Google%20Art%20Project.jpg?width=2000"
+          },
+          {
+            "reviewId": "angel--giordano",
+            "artist": "Luca Giordano",
+            "title": "The Guardian Angel",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:El_%C3%81ngel_de_la_Guarda,_Luca_Giordano.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20%C3%81ngel%20de%20la%20Guarda%2C%20Luca%20Giordano.jpg?width=2000"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "angel--dolci",
+            "artist": "Carlo Dolci",
+            "title": "The Guardian Angel"
+          },
+          {
+            "reviewId": "angel--piazzetta",
+            "artist": "Giovanni Battista Piazzetta",
+            "title": "The Madonna Appears to the Guardian Angel"
+          }
+        ]
+      },
+      {
+        "moduleId": "regina",
+        "module": "Regina Cæli",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "regina--primary",
+            "artist": "Peter Paul Rubens",
+            "title": "Resurrection of Christ",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-masters/regina.jpg"
+          },
+          {
+            "reviewId": "regina--murillo-resurrection",
+            "artist": "Bartolomé Esteban Murillo",
+            "title": "The Resurrection of Christ",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Resurrecci%C3%B3n_del_Se%C3%B1or_-_Google_Art_Project.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bartolom%C3%A9%20Esteban%20Murillo%20-%20Resurrecci%C3%B3n%20del%20Se%C3%B1or%20-%20Google%20Art%20Project.jpg?width=2000"
+          },
+          {
+            "reviewId": "regina--jan-janssens",
+            "artist": "Jan Janssens",
+            "title": "The Resurrection",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jan_Janssens_-_Resurrection.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan%20Janssens%20-%20Resurrection.jpg?width=2000"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "regina--benson-resurrection",
+            "artist": "Ambrosius Benson",
+            "title": "The Resurrection"
+          }
+        ]
+      },
+      {
+        "moduleId": "adoration",
+        "module": "Adoration & Benediction",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "adoration--primary",
+            "artist": "Jean-Auguste-Dominique Ingres",
+            "title": "The Virgin Adoring the Host",
+            "sourceUrl": "https://www.metmuseum.org/art/collection/search/438434",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-museum-photos-20261026/assets/staged/module-hero-masters/adoration.jpg"
+          },
+          {
+            "reviewId": "adoration--allegory",
+            "artist": "Unknown Flemish school",
+            "title": "Allegory of the Eucharist",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Allegory_of_the_Eucharist_-_Google_Art_Project.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Allegory%20of%20the%20Eucharist%20-%20Google%20Art%20Project.jpg?width=2000"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "adoration--caravaggio",
+            "artist": "Caravaggio",
+            "title": "The Supper at Emmaus"
+          },
+          {
+            "reviewId": "adoration--champaigne",
+            "artist": "Philippe de Champaigne",
+            "title": "La Petite Cène"
+          },
+          {
+            "reviewId": "adoration--domenichino",
+            "artist": "Domenichino",
+            "title": "The Last Communion of Saint Jerome"
+          },
+          {
+            "reviewId": "adoration--francken",
+            "artist": "Frans Francken II",
+            "title": "Disputation of the Holy Sacrament"
+          },
+          {
+            "reviewId": "adoration--quellinus",
+            "artist": "Erasmus Quellinus II",
+            "title": "Church Fathers Disputing the Holy Sacrament"
+          },
+          {
+            "reviewId": "adoration--communion-jerome",
+            "artist": "Anonymous Italian painter",
+            "title": "Communion of Saint Jerome"
+          }
+        ]
+      },
+      {
+        "moduleId": "scripture",
+        "module": "Sacred Scripture",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "scripture--primary",
+            "artist": "Caravaggio",
+            "title": "Saint Jerome Writing",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint_Jerome_Writing-Caravaggio_(1605-6).jpg",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-masters/scripture.jpg"
+          },
+          {
+            "reviewId": "scripture--caravaggio-malta",
+            "artist": "Caravaggio",
+            "title": "Saint Jerome Writing (Malta)",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint_Jerome_Writing-Caravaggio_(c._1607).jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Jerome%20Writing-Caravaggio%20%28c.%201607%29.jpg?width=2000"
+          },
+          {
+            "reviewId": "scripture--champaigne-moses",
+            "artist": "Philippe de Champaigne",
+            "title": "Moses Presenting the Tablets of the Law",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_Moses_Presenting_the_Tablets_of_the_Law_-_c._1648.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Philippe%20de%20Champaigne%20-%20Moses%20Presenting%20the%20Tablets%20of%20the%20Law%20-%20c.%201648.jpg?width=2000"
+          },
+          {
+            "reviewId": "scripture--rubens-evangelists",
+            "artist": "Peter Paul Rubens",
+            "title": "The Four Evangelists",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_four_Evangelists_(1614).jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20The%20four%20Evangelists%20%281614%29.jpg?width=2000"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "scripture--ferrer-jerome",
+            "artist": "Jaume Ferrer",
+            "title": "Saint Jerome in His Study"
+          },
+          {
+            "reviewId": "scripture--reni-jerome",
+            "artist": "Guido Reni",
+            "title": "Saint Jerome"
+          }
+        ]
+      },
+      {
+        "moduleId": "king",
+        "module": "Christ the King",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "king--primary",
+            "artist": "Ambrosius Benson",
+            "title": "Salvator Mundi",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ambrosius%20Benson%20-%20Salvator%20Mundi.jpeg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ambrosius%20Benson%20-%20Salvator%20Mundi.jpeg?width=1800"
+          },
+          {
+            "reviewId": "king--previtali",
+            "artist": "Andrea Previtali",
+            "title": "Salvator Mundi",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andrea%20Previtali%20-%20Salvator%20Mundi%20-%20Google%20Art%20Project.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Andrea%20Previtali%20-%20Salvator%20Mundi%20-%20Google%20Art%20Project.jpg?width=2000"
+          },
+          {
+            "reviewId": "king--caravaggio-ecce",
+            "artist": "Caravaggio",
+            "title": "Ecce Homo",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caravaggio_(Michelangelo_Merisi)_-_Ecce_Homo_-_Google_Art_Project.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio%20%28Michelangelo%20Merisi%29%20-%20Ecce%20Homo%20-%20Google%20Art%20Project.jpg?width=2000"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "king--bellini",
+            "artist": "Giovanni Bellini",
+            "title": "Christ Blessing"
+          },
+          {
+            "reviewId": "king--massys",
+            "artist": "Quentin Massys and Studio (attributed)",
+            "title": "Salvator Mundi"
+          },
+          {
+            "reviewId": "king--murillo-good-shepherd",
+            "artist": "Bartolomé Esteban Murillo",
+            "title": "The Infant Christ as the Good Shepherd"
+          }
+        ]
+      },
+      {
+        "moduleId": "souls",
+        "module": "Holy Souls",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "souls--primary",
+            "artist": "Luca Giordano",
+            "title": "Madonna and Child with Souls in Purgatory",
+            "sourceUrl": "https://emuseum.mfah.org/objects/64360/madonna-and-child-with-souls-in-purgatory",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-masters/souls.jpg"
+          },
+          {
+            "reviewId": "souls--vignali-michael",
+            "artist": "Jacopo Vignali",
+            "title": "Saint Michael Frees the Souls of Purgatory",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jacopo_vignali,_san_michele_arcangelo_libera_le_anime_del_purgatorio.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo%20vignali%2C%20san%20michele%20arcangelo%20libera%20le%20anime%20del%20purgatorio.jpg?width=2000"
+          },
+          {
+            "reviewId": "souls--taio",
+            "artist": "Anonymous Italian school",
+            "title": "The Souls in Purgatory with the Holy Family and Angels",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Taio,_chiesa_di_San_Vittore_-_Le_anime_del_purgatorio_con_la_Sacra_Famiglia_e_angeli.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Taio%2C%20chiesa%20di%20San%20Vittore%20-%20Le%20anime%20del%20purgatorio%20con%20la%20Sacra%20Famiglia%20e%20angeli.jpg?width=2000"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "souls--trinity-souls",
+            "artist": "Anonymous Italian school",
+            "title": "Trinity, Saints and Souls in Purgatory"
+          }
+        ]
+      },
+      {
+        "moduleId": "salvation",
+        "module": "Historia Salutis",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "salvation--primary",
+            "artist": "Jean-Léon Gérôme",
+            "title": "The Age of Augustus: The Birth of Christ",
+            "sourceUrl": "https://www.museedepicardie.fr/",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-rescue-20261026/assets/staged/module-hero-rescue/salvation.jpg"
+          },
+          {
+            "reviewId": "salvation--caravaggio",
+            "artist": "Caravaggio",
+            "title": "The Sacrifice of Isaac",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sacrifice%20of%20Isaac-Caravaggio%20%28Uffizi%29.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sacrifice%20of%20Isaac-Caravaggio%20%28Uffizi%29.jpg?width=2000"
+          },
+          {
+            "reviewId": "salvation--rubens-sacred",
+            "artist": "Peter Paul Rubens",
+            "title": "The Entombment",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_(Flemish_-_The_Entombment_-_Google_Art_Project.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%28Flemish%20-%20The%20Entombment%20-%20Google%20Art%20Project.jpg?width=2000"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "salvation--rubens",
+            "artist": "Peter Paul Rubens",
+            "title": "The Brazen Serpent"
+          },
+          {
+            "reviewId": "salvation--raphael",
+            "artist": "Raphael",
+            "title": "The Transfiguration"
+          },
+          {
+            "reviewId": "salvation--rubens-hagar",
+            "artist": "Peter Paul Rubens",
+            "title": "Hagar in the Desert"
+          },
+          {
+            "reviewId": "salvation--murillo-flight",
+            "artist": "Bartolomé Esteban Murillo",
+            "title": "The Flight into Egypt"
+          },
+          {
+            "reviewId": "salvation--champaigne-moses",
+            "artist": "Philippe de Champaigne",
+            "title": "Moses and the Tablets of the Law"
+          },
+          {
+            "reviewId": "salvation--caravaggio-mercy",
+            "artist": "Caravaggio",
+            "title": "The Seven Works of Mercy"
+          }
+        ]
+      },
+      {
+        "moduleId": "morning",
+        "module": "Morning Prayer",
+        "rotate": false,
+        "kept": [
+          {
+            "reviewId": "morning--primary",
+            "artist": "Jules Breton",
+            "title": "The Song of the Lark",
+            "sourceUrl": "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-rescue-20261026/assets/staged/module-hero-rescue/morning.jpg"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "morning--millet-angelus",
+            "artist": "Jean-François Millet",
+            "title": "The Angelus"
+          },
+          {
+            "reviewId": "morning--millet-sower",
+            "artist": "Jean-François Millet",
+            "title": "The Sower"
+          },
+          {
+            "reviewId": "morning--millet-shepherd",
+            "artist": "Jean-François Millet",
+            "title": "Shepherd Tending His Flock"
+          }
+        ]
+      },
+      {
+        "moduleId": "evening",
+        "module": "Evening Prayer",
+        "rotate": false,
+        "kept": [
+          {
+            "reviewId": "evening--primary",
+            "artist": "Pierre-Édouard Frère",
+            "title": "The Prayer",
+            "sourceUrl": "https://artuk.org/discover/artworks/the-prayer-19241",
+            "imageUrl": "https://d3d00swyhr67nd.cloudfront.net/w1200h1200/collection/STF/WAG/STF_WAG_OP6-001.jpg"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "evening--millet-lamplight",
+            "artist": "Jean-François Millet",
+            "title": "Woman Sewing by Lamplight"
+          },
+          {
+            "reviewId": "evening--millet-moonlight",
+            "artist": "Jean-François Millet",
+            "title": "The Sheepfold, Moonlight"
+          },
+          {
+            "reviewId": "evening--rubens-evening",
+            "artist": "Peter Paul Rubens",
+            "title": "Evening Landscape"
+          },
+          {
+            "reviewId": "evening--moretto-praying",
+            "artist": "Moretto da Brescia",
+            "title": "Praying Man with a Long Beard"
+          }
+        ]
+      },
+      {
+        "moduleId": "perpetual",
+        "module": "Our Lady of Perpetual Help",
+        "rotate": false,
+        "kept": [
+          {
+            "reviewId": "perpetual--primary",
+            "artist": "Traditional devotional image",
+            "title": "Our Holy Mother of Perpetual Succour",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Our_Holy_Mother_Of_Perpetual_Succour.jpg",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-wave2-20261026/assets/staged/module-hero-wave2/perpetual.jpg"
+          }
+        ],
+        "rejected": []
+      },
+      {
+        "moduleId": "saints",
+        "module": "Saints",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "saints--vaneyck",
+            "artist": "Hubert and Jan van Eyck",
+            "title": "Adoration of the Mystic Lamb",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ghent%20Altarpiece%20-%20Adoration%20of%20the%20Mystic%20Lamb.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ghent%20Altarpiece%20-%20Adoration%20of%20the%20Mystic%20Lamb.jpg?width=2000"
+          },
+          {
+            "reviewId": "saints--saraceni",
+            "artist": "Carlo Saraceni",
+            "title": "Paradise",
+            "sourceUrl": "https://www.metmuseum.org/art/collection/search/437607",
+            "imageUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/437607/2100377/main-image"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "saints--primary",
+            "artist": "Albrecht Dürer",
+            "title": "Adoration of the Trinity (Landauer Altarpiece)"
+          },
+          {
+            "reviewId": "saints--rubens",
+            "artist": "Peter Paul Rubens",
+            "title": "All Saints"
+          },
+          {
+            "reviewId": "saints--rubens-livinus",
+            "artist": "Peter Paul Rubens",
+            "title": "The Martyrdom of Saint Livinus"
+          },
+          {
+            "reviewId": "saints--murillo-rose",
+            "artist": "Bartolomé Esteban Murillo",
+            "title": "Saint Rose of Lima"
+          },
+          {
+            "reviewId": "saints--murillo-justa-rufina",
+            "artist": "Bartolomé Esteban Murillo",
+            "title": "Saints Justa and Rufina"
+          },
+          {
+            "reviewId": "saints--rubens-amandus",
+            "artist": "Peter Paul Rubens",
+            "title": "Saints Amandus, Walburga, Catherine and Eligius"
+          },
+          {
+            "reviewId": "saints--vandyck-mary",
+            "artist": "Anthony van Dyck",
+            "title": "Mary as Mater Dei"
+          }
+        ]
+      },
+      {
+        "moduleId": "visit",
+        "module": "Visit to the Blessed Sacrament",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "visit--primary",
+            "artist": "Gerrit van Honthorst",
+            "title": "The Adoration of the Shepherds",
+            "sourceUrl": "https://www.wallraf.museum/2017-11-17-honthorst/",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-masters/visit.jpg"
+          },
+          {
+            "reviewId": "visit--rubens-lyon",
+            "artist": "Peter Paul Rubens",
+            "title": "The Adoration of the Magi (Lyon)",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Adoration_of_the_Magi_(Lyon).jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20The%20Adoration%20of%20the%20Magi%20%28Lyon%29.jpg?width=2000"
+          },
+          {
+            "reviewId": "visit--ribalta-shepherds",
+            "artist": "Juan Ribalta",
+            "title": "The Adoration of the Shepherds",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Ribalta_-_The_Adoration_of_the_Shepherds_-_Google_Art_Project.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan%20Ribalta%20-%20The%20Adoration%20of%20the%20Shepherds%20-%20Google%20Art%20Project.jpg?width=2000"
+          },
+          {
+            "reviewId": "visit--murillo-magi",
+            "artist": "Bartolomé Esteban Murillo",
+            "title": "Adoration of the Magi",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bartolom%C3%A9%20Esteban%20Murillo%20-%20Adoration%20of%20the%20Magi%20-%20Google%20Art%20Project.jpg?width=2000"
+          },
+          {
+            "reviewId": "visit--murillo-nativity",
+            "artist": "Bartolomé Esteban Murillo",
+            "title": "The Nativity",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_The_Nativity_-_Google_Art_Project.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bartolom%C3%A9%20Esteban%20Murillo%20-%20The%20Nativity%20-%20Google%20Art%20Project.jpg?width=2000"
+          }
+        ],
+        "rejected": []
+      },
+      {
+        "moduleId": "mass",
+        "module": "Mass Explorer",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "mass--primary",
+            "artist": "Victor Meirelles",
+            "title": "The First Mass in Brazil",
+            "sourceUrl": "https://artsandculture.google.com/asset/first-mass-in-brazil-0027/IQFUWbm_Wu1XaA",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-pd-masters-20261026/assets/staged/module-hero-masters/mass.jpg"
+          },
+          {
+            "reviewId": "mass--ysenbrandt-mass",
+            "artist": "Adriaen Ysenbrandt",
+            "title": "The Mass of Saint Gregory the Great",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adriaen_Ysenbrandt_(Netherlandish,_active_1510_-_1551)_-_The_Mass_of_Saint_Gregory_the_Great_-_Google_Art_Project.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Adriaen%20Ysenbrandt%20%28Netherlandish%2C%20active%201510%20-%201551%29%20-%20The%20Mass%20of%20Saint%20Gregory%20the%20Great%20-%20Google%20Art%20Project.jpg?width=2000"
+          },
+          {
+            "reviewId": "mass--diego-gregory",
+            "artist": "Diego de la Cruz",
+            "title": "The Mass of Saint Gregory",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diego_de_la_Cruz_-_The_Mass_of_Saint_Gregory_-_Google_Art_Project.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Diego%20de%20la%20Cruz%20-%20The%20Mass%20of%20Saint%20Gregory%20-%20Google%20Art%20Project.jpg?width=2000"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "mass--marmion-gregory",
+            "artist": "Simon Marmion",
+            "title": "The Mass of Saint Gregory"
+          },
+          {
+            "reviewId": "mass--portillo-gregory",
+            "artist": "Master of Portillo",
+            "title": "The Mass of Saint Gregory"
+          }
+        ]
+      },
+      {
+        "moduleId": "confession",
+        "module": "Confession",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "confession--primary",
+            "artist": "Bartolomé Esteban Murillo",
+            "title": "The Return of the Prodigal Son",
+            "sourceUrl": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-museum-photos-20261026/assets/staged/module-hero-masters/confession.jpg"
+          },
+          {
+            "reviewId": "confession--latour-magdalen",
+            "artist": "Georges de La Tour",
+            "title": "The Penitent Magdalen",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Penitent_Magdalen_MET_DT7252.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Penitent%20Magdalen%20MET%20DT7252.jpg?width=2000"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "confession--champaigne-magdalen",
+            "artist": "Philippe de Champaigne",
+            "title": "The Repentant Magdalen"
+          },
+          {
+            "reviewId": "confession--murillo-peter",
+            "artist": "Bartolomé Esteban Murillo",
+            "title": "Saint Peter in Tears"
+          },
+          {
+            "reviewId": "confession--murillo-magdalen",
+            "artist": "Bartolomé Esteban Murillo",
+            "title": "The Penitent Magdalene"
+          }
+        ]
+      },
+      {
+        "moduleId": "rosary",
+        "module": "The Holy Rosary",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "rosary--primary",
+            "artist": "Lorenzo Lotto",
+            "title": "Madonna del Rosario",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lorenzo_lotto%2C_madonna_del_rosario%2C_1539%2C_01.jpg"
+          },
+          {
+            "reviewId": "rosary--caravaggio",
+            "artist": "Caravaggio",
+            "title": "Madonna of the Rosary",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Madonna%20of%20the%20Rosary-Caravaggio%20%281607%29.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Madonna%20of%20the%20Rosary-Caravaggio%20%281607%29.jpg?width=2000"
+          },
+          {
+            "reviewId": "rosary--caravaggio-gart",
+            "artist": "Caravaggio",
+            "title": "Madonna of the Rosary (Vienna)",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michelangelo_Merisi,_called_Caravaggio_-_Madonna_of_the_Rosary_-_Google_Art_Project.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo%20Merisi%2C%20called%20Caravaggio%20-%20Madonna%20of%20the%20Rosary%20-%20Google%20Art%20Project.jpg?width=2000"
+          },
+          {
+            "reviewId": "rosary--vandyck-madonna",
+            "artist": "Anthony van Dyck",
+            "title": "The Madonna and Child",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sir_Anthony_van_Dyck_-_The_Madonna_and_Child_-_Google_Art_Project.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sir%20Anthony%20van%20Dyck%20-%20The%20Madonna%20and%20Child%20-%20Google%20Art%20Project.jpg?width=2000"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "rosary--domenichino",
+            "artist": "Domenichino",
+            "title": "Madonna del Rosario"
+          },
+          {
+            "reviewId": "rosary--lotto-madonna",
+            "artist": "Lorenzo Lotto",
+            "title": "Madonna and Child with Saints Catherine and Thomas"
+          }
+        ]
+      },
+      {
+        "moduleId": "sorrows",
+        "module": "Seven Sorrows",
+        "rotate": true,
+        "kept": [
+          {
+            "reviewId": "sorrows--primary",
+            "artist": "Master of the Female Half-Lengths (attributed)",
+            "title": "Virgin of the Seven Sorrows",
+            "sourceUrl": "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000",
+            "imageUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/research/module-hero-museum-photos-20261026/assets/staged/module-hero-masters/sorrows.jpg"
+          },
+          {
+            "reviewId": "sorrows--rubens-entomb",
+            "artist": "Peter Paul Rubens",
+            "title": "The Entombment",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_(Flemish_-_The_Entombment_-_Google_Art_Project.jpg",
+            "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%28Flemish%20-%20The%20Entombment%20-%20Google%20Art%20Project.jpg?width=2000"
+          }
+        ],
+        "rejected": [
+          {
+            "reviewId": "sorrows--vandyck-lament",
+            "artist": "Anthony van Dyck",
+            "title": "Lamentation over the Dead Christ"
+          },
+          {
+            "reviewId": "sorrows--durer-deposition",
+            "artist": "Master of Delft",
+            "title": "The Deposition of Christ"
+          }
+        ]
+      }
+    ]
   }
 }
