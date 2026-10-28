@@ -344,12 +344,18 @@
       "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
       "app_coverage_label": "Potential addition — wider-app comparison still open",
       "app_match_refs": [],
-      "next_action": "Find pre-1923 original or historically attested translation, preserve own distinct prayer ID; do not merge with perpetual novena",
+      "next_action": "Locate and collate the 1926 Taylor printed edition; confirm or qualify Benedict XV attribution in source metadata before publishing. All prayers remain accepted.",
       "review_group": "POTENTIAL_PERSONAL_DEVOTION",
       "source_selection_status": "ACCEPTED",
       "text_identity": "PRAYER_ATTRIBUTED_TO_POPE_BENEDICT_XV",
       "source_body_url": "https://www.institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
-      "source_attribution_status": "ICKSP attributes to Benedict XV; independent original Latin or dated historical printed English witness not yet collated"
+      "source_attribution_status": "ICKSP attributes to Benedict XV; independent original Latin or dated historical printed English witness not yet collated",
+      "attribution_conflict": {
+        "icksp": "Prayers selected under 'Prayer by Pope Benedict XV'",
+        "historical_lead": "Fr T N Taylor, 1926 English Story of a Soul novena appendix allegedly prints essentially same prayer as 'From the Novena to St Therese' without clear Benedict XV attribution",
+        "source_url": "https://1765regina.com/prayers/prayer-to-st-therese/",
+        "status": "ATTRIBUTION_UNRESOLVED_NO_PAPAL_AUTHORSHIP_CLAIM"
+      }
     },
     {
       "id": "icrsp_fr_office_complies",
@@ -678,6 +684,7 @@
     "monthlyPractice": "ICKSP Kansas City 17–25 monthly",
     "stThereseSourceItemsRetained": 3,
     "infantJesusVotivePrayerSeparate": true,
-    "policy": "ALL_ACCEPTED_FOR_COVERAGE_AND_CONTEXTUAL_CORRECTNESS"
+    "policy": "ALL_ACCEPTED_FOR_COVERAGE_AND_CONTEXTUAL_CORRECTNESS",
+    "stThereseBenedictAttribution": "ICKSP names Benedict XV; separate 1926 historical reference does not establish that authorship; hold final credit"
   }
 }
