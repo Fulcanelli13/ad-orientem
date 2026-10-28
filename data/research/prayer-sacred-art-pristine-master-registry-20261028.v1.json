@@ -105,7 +105,8 @@
       "PRELIMINARY_PAINTING_ONLY_FULL_WORK": 2,
       "HOLD_PAINTING_ONLY_BUT_HIGH_NOISE_RISK": 1,
       "PRELIMINARY_PAINTING_ONLY_HIGH_RES": 1
-    }
+    },
+    "batch2_pristine_ready": 0
   },
   "primary_artworks": [
     {
@@ -2880,7 +2881,10 @@
           ],
           "grade": "HOLD_PAINTING_ONLY_BUT_HIGH_NOISE_RISK",
           "publisher_photo_pristine": false,
-          "rights_checked_for_specific_file": false
+          "rights_checked_for_specific_file": false,
+          "source_licence": "CC BY-SA 4.0",
+          "source_licence_link": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "source_quality_hold_reason": "High ISO 2000 and strong corner chroma-noise; credit and share-alike apply to publication/derived versions."
         }
       ]
     },
@@ -2913,7 +2917,10 @@
           ],
           "grade": "PRELIMINARY_PAINTING_ONLY_FULL_WORK",
           "publisher_photo_pristine": false,
-          "rights_checked_for_specific_file": false
+          "rights_checked_for_specific_file": false,
+          "source_licence": "PD-Art / Public Domain Mark",
+          "source_licence_link": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "source_quality_hold_reason": "Museo Prado exact inventory P000361, 1772. Source photo rights differ by jurisdiction."
         }
       ]
     },
@@ -3131,7 +3138,10 @@
           ],
           "grade": "PRELIMINARY_PAINTING_ONLY_FULL_WORK",
           "publisher_photo_pristine": false,
-          "rights_checked_for_specific_file": false
+          "rights_checked_for_specific_file": false,
+          "source_licence": "PD-Art / Public Domain Mark",
+          "source_licence_link": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "source_quality_hold_reason": "Commons English structured title says Death of Christ incorrectly; image/description depict Agony in the Garden."
         }
       ]
     },
@@ -3444,7 +3454,10 @@
           ],
           "grade": "REJECT_PHOTO_EXTERNAL_FRAME",
           "publisher_photo_pristine": false,
-          "rights_checked_for_specific_file": false
+          "rights_checked_for_specific_file": false,
+          "source_licence": "UNVERIFIED_FILE_SPECIFIC",
+          "source_licence_link": null,
+          "source_quality_hold_reason": "The original shows a wide outer frame on all sides, not suitable for source promotion."
         }
       ]
     },
@@ -3572,7 +3585,10 @@
           ],
           "grade": "REJECT_PHOTO_EXTERNAL_FRAME",
           "publisher_photo_pristine": false,
-          "rights_checked_for_specific_file": false
+          "rights_checked_for_specific_file": false,
+          "source_licence": "UNVERIFIED_FILE_SPECIFIC",
+          "source_licence_link": null,
+          "source_quality_hold_reason": "The original shows a wide outer frame on all sides, not suitable for source promotion."
         }
       ]
     },
@@ -3757,7 +3773,10 @@
           ],
           "grade": "PRELIMINARY_PAINTING_ONLY_HIGH_RES",
           "publisher_photo_pristine": false,
-          "rights_checked_for_specific_file": false
+          "rights_checked_for_specific_file": false,
+          "source_licence": "PD-Art / Public Domain Mark",
+          "source_licence_link": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "source_quality_hold_reason": "Source Commons file derives from Google Arts & Culture; exact 6064×7368 work displayed."
         }
       ]
     },
@@ -4979,7 +4998,15 @@
             "preliminary_observation": "All four corners contain broad wooden/gilded external frame; native 1725×2560 is authentic research evidence but not a pristine painting-only reproduction.",
             "next_quality_action": "Locate same workshop painting without frame, preserve two-section placement decisions",
             "final_pristine": false,
-            "production": false
+            "production": false,
+            "verified_rights_source_observation": {
+              "licence": "UNVERIFIED_FILE_SPECIFIC",
+              "credit": "Workshop of Vicente López Portaña, via Wikimedia Commons / source museum",
+              "licence_url": null,
+              "status": "REJECT_FRAMED_SOURCE_SEEK_BETTER",
+              "special": "The original shows a wide outer frame on all sides, not suitable for source promotion."
+            },
+            "file_rights_final_for_release": false
           },
           {
             "case_id": "reni-michael",
@@ -4996,7 +5023,15 @@
             "preliminary_observation": "Church photograph shows ornate gilt frame and oblique camera perspective; native corners include physical frame. Although 2112×2816, it is not a suitable clean hero source.",
             "next_quality_action": "Find original painting-only flat source, artist remains Guido Reni",
             "final_pristine": false,
-            "production": false
+            "production": false,
+            "verified_rights_source_observation": {
+              "licence": "UNVERIFIED_FILE_SPECIFIC",
+              "credit": "Guido Reni, Saint Michael, Santa Maria della Concezione, Rome",
+              "licence_url": null,
+              "status": "REJECT_FRAMED_SOURCE_SEEK_BETTER",
+              "special": "Alternative photo includes gilded frame, perspectival skew and apparent glare; worse for frameless hero, despite higher dimensions."
+            },
+            "file_rights_final_for_release": false
           },
           {
             "case_id": "teniers-agony-antwerp",
@@ -5013,7 +5048,15 @@
             "preliminary_observation": "Full Antwerp cycle panel visible, outer corners mostly contain pictorial field with narrow natural painted surface; no large separate frame evident on contact sheet.",
             "next_quality_action": "Full-native central paint texture, source photographer credits and institutional colour verification",
             "final_pristine": false,
-            "production": false
+            "production": false,
+            "verified_rights_source_observation": {
+              "licence": "PD-Art / Public Domain Mark",
+              "credit": "David Teniers the Elder, Agony in the Garden (Sint-Pauluskerk Antwerp Rosary cycle)",
+              "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+              "status": "SOURCE_PD_ART_IDENTIFIED_QUALITY_HOLD",
+              "special": "Commons English structured title says Death of Christ incorrectly; image/description depict Agony in the Garden."
+            },
+            "file_rights_final_for_release": false
           },
           {
             "case_id": "tiepolo-prado-descent",
@@ -5030,7 +5073,15 @@
             "preliminary_observation": "Prado Descent pictured as a standalone painting; all four corners show pictorial material rather than external museum mount. Natural paint texture/cracks visible.",
             "next_quality_action": "Source-photo colour, exact Prado attribution/rights and centre-native sharpness",
             "final_pristine": false,
-            "production": false
+            "production": false,
+            "verified_rights_source_observation": {
+              "licence": "PD-Art / Public Domain Mark",
+              "credit": "Museo Nacional del Prado, The Descent from the Cross, P000361",
+              "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+              "status": "SOURCE_PD_ART_IDENTIFIED_QUALITY_HOLD",
+              "special": "Museo Prado exact inventory P000361, 1772. Source photo rights differ by jurisdiction."
+            },
+            "file_rights_final_for_release": false
           },
           {
             "case_id": "tiepolo-station12",
@@ -5047,7 +5098,15 @@
             "preliminary_observation": "Full San Polo Station XII composition visible with no obvious outer frame; dark original corners show strong digital noise/texture, unsuitable to call pristine without detailed tonal check.",
             "next_quality_action": "Compare realistic 100% details, glare and noise against another exact Station XII photograph",
             "final_pristine": false,
-            "production": false
+            "production": false,
+            "verified_rights_source_observation": {
+              "licence": "CC BY-SA 4.0",
+              "credit": "Photo: Didier Descouens (Archaeodontosaurus), Chiesa di San Polo, Venice",
+              "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "status": "SOURCE_FILE_LICENCE_IDENTIFIED_QUALITY_HOLD",
+              "special": "High ISO 2000 and strong corner chroma-noise; credit and share-alike apply to publication/derived versions."
+            },
+            "file_rights_final_for_release": false
           },
           {
             "case_id": "vandyck-holy-spirit",
@@ -5064,8 +5123,35 @@
             "preliminary_observation": "Source-faithful 6064×7368 Sanssouci work displays full painting without an obvious separate frame; native corners show pictorial surface.",
             "next_quality_action": "Validate PD-Art source metadata, museum tonal colour and centre-detail integrity before pristine promotion",
             "final_pristine": false,
-            "production": false
+            "production": false,
+            "verified_rights_source_observation": {
+              "licence": "PD-Art / Public Domain Mark",
+              "credit": "Anthony van Dyck, Outpouring of the Holy Spirit, Sanssouci / via Wikimedia Commons",
+              "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+              "status": "SOURCE_PD_ART_IDENTIFIED_QUALITY_HOLD",
+              "special": "Source Commons file derives from Google Arts & Culture; exact 6064×7368 work displayed."
+            },
+            "file_rights_final_for_release": false
           }
+        ],
+        "preliminary_best_clean_photo_candidates": [
+          "tiepolo-prado-descent",
+          "teniers-agony-antwerp",
+          "vandyck-holy-spirit"
+        ],
+        "immediately_rejected_photo_sources": [
+          "reni-michael",
+          "paired-hearts-lopez",
+          "carracci-burial-met"
+        ],
+        "quality_hold_noise_photo": [
+          "tiepolo-station12"
+        ],
+        "remaining_distinct_user_requested_photo_objects_without_quality_candidate": [
+          "historic:giandomenico tiepolo:burial of christ prado passion series",
+          "heart-jesus--batoni-cc0",
+          "holy-spirit--primary",
+          "historic:peter paul rubens:the holy trinity"
         ]
       },
       "previously_open_photo_placements_with_archived_candidate": 8,
