@@ -46,9 +46,9 @@ jobs:
             --out assets/staged/module-hero-institutional-review-20261028
       - name: Generate museum-grounded but unsigned frame and responsive proposals
         run: |
-          python scripts/art/prepare-institutional-frame-review.py \\
-            --museum-root source-museum \\
-            --wave2-root source-wave2 \\
+          python scripts/art/prepare-institutional-frame-review.py \
+            --museum-root source-museum \
+            --wave2-root source-wave2 \
             --out assets/staged/module-hero-institutional-frame-review-20261028
       - name: Keep every tentative crop review-only and fail closed
         run: |
