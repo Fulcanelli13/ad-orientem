@@ -1,0 +1,89 @@
+{
+  "schema": "AO_SACRED_ART_BREVIARIUM_W3B_BOUNDED_NATIVE_ACQUISITION_V1",
+  "date": "2026-10-29",
+  "first_429_stops_all_further_fetches": true,
+  "attempts_after_429": 0,
+  "original_sources_unchanged": true,
+  "processed_cases": 6,
+  "originals_verified_and_archived": 0,
+  "not_attempted_after_429": 0,
+  "http_429_received": 0,
+  "research_git_original_bytes": 0,
+  "new_pristine_certifications": 0,
+  "production_released": 0,
+  "cost_eur": 0,
+  "cases": [
+    {
+      "plate_id": "plate-zurbaran-francis",
+      "source_file": "File:Saint francis in meditation 075217.JPG",
+      "physical_object_identity_basis": "Timken 2015:001",
+      "expected_sha1": "5eb6188546a463af264726153f1ded8452c2054a",
+      "photo_rights_final_certified": false,
+      "native_quality_final_certified": false,
+      "pristine_certified": false,
+      "production_allowed": false,
+      "status": "SOURCE_OR_STORAGE_HOLD",
+      "error": "AttributeError: 'list' object has no attribute 'values'"
+    },
+    {
+      "plate_id": "plate-murillo-immaculate",
+      "source_file": "File:Inmaculada Concepción (Murillo, El Escorial).jpg",
+      "physical_object_identity_basis": "Museo del Prado P00972",
+      "expected_sha1": "ec8b31af0348348ef3cca39519eb8b32a85cfcdd",
+      "photo_rights_final_certified": false,
+      "native_quality_final_certified": false,
+      "pristine_certified": false,
+      "production_allowed": false,
+      "status": "SOURCE_OR_STORAGE_HOLD",
+      "error": "AttributeError: 'list' object has no attribute 'values'"
+    },
+    {
+      "plate_id": "plate-reni-cecilia",
+      "source_file": "File:St. Cecilia by Guido Reni.jpg",
+      "physical_object_identity_basis": "Norton Simon Museum Saint Cecilia (1606)",
+      "expected_sha1": "3c0e4ccd918cfe1af0023bf07d77d1d3d2337598",
+      "photo_rights_final_certified": false,
+      "native_quality_final_certified": false,
+      "pristine_certified": false,
+      "production_allowed": false,
+      "status": "SOURCE_OR_STORAGE_HOLD",
+      "error": "AttributeError: 'list' object has no attribute 'values'"
+    },
+    {
+      "plate_id": "plate-velazquez-crucified",
+      "source_file": "File:Cristo crucificado.jpg",
+      "physical_object_identity_basis": "Museo del Prado P01167",
+      "expected_sha1": "7fb01853d58f6f71a3506d5d02f196660e6edecc",
+      "photo_rights_final_certified": false,
+      "native_quality_final_certified": false,
+      "pristine_certified": false,
+      "production_allowed": false,
+      "status": "SOURCE_OR_STORAGE_HOLD",
+      "error": "AttributeError: 'list' object has no attribute 'values'"
+    },
+    {
+      "plate_id": "plate-raphael-transfiguration",
+      "source_file": "File:Raffael-verklärung-christi.jpg",
+      "physical_object_identity_basis": "Vatican Museums, Pinacoteca, Raphael Transfiguration",
+      "expected_sha1": "489fffc5a957e61fb4f46fcd758b3a126f39c187",
+      "photo_rights_final_certified": false,
+      "native_quality_final_certified": false,
+      "pristine_certified": false,
+      "production_allowed": false,
+      "status": "SOURCE_OR_STORAGE_HOLD",
+      "error": "AttributeError: 'list' object has no attribute 'values'"
+    },
+    {
+      "plate_id": "plate-caravaggio-matthew",
+      "source_file": "File:The Calling of Saint Matthew-Caravaggo (1599-1600).jpg",
+      "physical_object_identity_basis": "San Luigi dei Francesi, Contarelli Chapel original",
+      "expected_sha1": "28e24e3d5a5d87c85baf8b4b146f85ab197d15cc",
+      "photo_rights_final_certified": false,
+      "native_quality_final_certified": false,
+      "pristine_certified": false,
+      "production_allowed": false,
+      "status": "SOURCE_OR_STORAGE_HOLD",
+      "error": "AttributeError: 'list' object has no attribute 'values'"
+    }
+  ]
+}
