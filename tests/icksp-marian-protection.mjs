@@ -6,7 +6,7 @@ const prayer=ICKSP_MARIAN_PROTECTION_V1.augustQueen;
 assert.equal(prayer.id,"icksp_august_queen_heaven");
 assert.ok(Object.isFrozen(prayer));
 assert.ok(prayer.en.length>350 && prayer.fr.length>400,"Both historical language witnesses must be complete");
-assert.match(prayer.en,/August Queen of Heaven/);
+assert.match(prayer.en,/AUGUST Queen of Heaven/);
 assert.match(prayer.en,/Who is like unto God!/);
 assert.doesNotMatch(prayer.en,/All ye holy Angels and Archangels keep us and defend us/,"Separate invocations must not be silently appended");
 assert.match(prayer.fr,/Auguste Reine des cieux/);
