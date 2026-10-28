@@ -408,7 +408,8 @@ const insertionAnchor=captureReaderModeAnchor(insertion);
 const nuptialSimple=buildReaderModeModels({prepared:nuptialPrepared,data,mode:"SIMPLE"});
 assert.equal(nuptialSimple.mode,"LIVE");
 assert.equal(nuptialSimple.sourceModel.totalCards,42);
-assert.equal(nuptialSimple.sourceModel.totalCards,33);
+assert.equal(nuptialSimple.sourceModel.totalCards,42,
+  "saved Simple mode must not revert the Nuptial source structure");
 assert.equal(findReaderModeAnchorCard(nuptialSimple.presentationModel,insertionAnchor).sectionId,"AO.NUPTIAL.02",
   "Nuptial insertion identity was lost across mode switch");
 
