@@ -15,6 +15,62 @@ function textRow(id,latin,kind="TEXT",sourceIds=[],speaker=null,repetitions=1){
 function rows(prefix,values,sourceIds=[]){
   return freeze((values??[]).map((v,i)=>textRow(prefix+String(i+1),v,"TEXT",sourceIds)));
 }
+
+// The 1962 Good Friday Passio uses distinct voices within a SINGLE
+// source paragraph: C. Chronista, + Christus, S. Synagoga (other speakers).
+// Source-reviewed literal anchors identify each change; the intervening
+// narrative is Chronista. We split only display rows: the canonical Latin
+// source, 24/4 source blocks and GF death boundary remain byte-for-byte.
+// A named vocal part is never assumed to be a priest/deacon/schola in every
+// local Mass form. All speech boundaries fail closed on source drift.
+function passionRoleRows(prefix,blocks,turnSets,sourceIds=[]){
+  if(!Array.isArray(blocks)||!Array.isArray(turnSets)||blocks.length!==turnSets.length)
+    throw new Error("1962 Good Friday Passion voice source parity required");
+  const result=[];
+  for(const [blockIndex,source] of blocks.entries()){
+    const original=String(source??"");
+    if(!original.trim())throw new Error("Missing 1962 Passion block "+(blockIndex+1));
+    const spans=turnSets[blockIndex];
+    if(!Array.isArray(spans))throw new Error("Unverified Passion voice block "+(blockIndex+1));
+    let cursor=0;
+    const parts=[];
+    function add(latin,speaker){
+      if(!latin)return;
+      if(!latin.trim()){
+        if(parts.length)parts[parts.length-1].latin+=latin;
+        else parts.push({latin,speaker:"CHRONISTA"});
+        return;
+      }
+      if(parts.length&&parts.at(-1).speaker===speaker)parts.at(-1).latin+=latin;
+      else parts.push({latin,speaker});
+    }
+    for(const [turnIndex,span] of spans.entries()){
+      if(!["CHRISTUS","SYNAGOGA"].includes(span?.role)||!span.start||!span.end)
+        throw new Error("Unverified Passion speaker "+(blockIndex+1)+":"+(turnIndex+1));
+      const start=original.indexOf(span.start,cursor);
+      if(start<cursor)throw new Error("Passion voice onset changed "+prefix+(blockIndex+1));
+      const endStart=original.indexOf(span.end,start);
+      if(endStart<start)throw new Error("Passion voice end changed "+prefix+(blockIndex+1));
+      const end=endStart+span.end.length;
+      if(end<=start)throw new Error("Empty Passion voice phrase "+prefix+(blockIndex+1));
+      add(original.slice(cursor,start),"CHRONISTA");
+      add(original.slice(start,end),span.role);
+      cursor=end;
+    }
+    add(original.slice(cursor),"CHRONISTA");
+    if(parts.map(p=>p.latin).join("")!==original||parts.some(p=>!p.latin.trim()))
+      throw new Error("Good Friday Passion voice alignment lost original Latin "+prefix+(blockIndex+1));
+    for(const [partIndex,part] of parts.entries()){
+      result.push(freeze({
+        id:prefix+(blockIndex+1)+(partIndex?"-V"+String(partIndex+1).padStart(2,"0"):""),
+        kind:"TEXT",latin:part.latin,speaker:part.speaker,
+        sourceBlockIndex:blockIndex+1,voiceSegmentIndex:partIndex+1,
+        sourceIds:freeze([...sourceIds]),
+      }));
+    }
+  }
+  return freeze(result);
+}
 function prayerRows(prefix,intention,prayer){
   // 1962 Vatican Missale Romanum printed p. 167, rubric 14: "Celebrans
   // dicit Oremus, Flectamus genua ... dicit Levate ... dicit orationem".
@@ -46,6 +102,10 @@ function validateGraph(graph){
 
 function validatePayload(payload){
   if(payload?.schema!=="ao-r28-good-friday-payload-v1")throw new Error("Pinned Good Friday payload required");
+  if((payload.passion?.preDeath??[]).length!==24||(payload.passion?.postDeath??[]).length!==4||
+     payload.passion?.voiceTurns?.schema!=="AO_MR1962_GOOD_FRIDAY_PASSION_B13_VOICES_V1"||
+     payload.passion.voiceTurns.preDeath?.length!==24||payload.passion.voiceTurns.postDeath?.length!==4)
+    throw new Error("Source-owned 1962 Passion 24/4 blocks and exact voice crosswalk required");
   if((payload.solemnPrayers??[]).length!==9)throw new Error("Good Friday requires nine Solemn Prayers");
   if((payload.cross?.unveiling?.repetitions??0)!==3)throw new Error("Good Friday requires three Ecce lignum unveilings");
   if(!(payload.passion?.preDeath??[]).length || !(payload.passion?.postDeath??[]).length)throw new Error("Good Friday Passion split required");
@@ -104,11 +164,13 @@ function surfaceFor(record,payload,jewishPrayerVariant){
   });
   if(id==="GF-PASS-310"||id==="GF-PASS-320")return freeze({
     key:"PASSION_BEFORE_DEATH",title:"Passion according to St John",
-    paragraphs:rows("GF-PASS-A",payload.passion.preDeath,["GF-PASS-310","GF-PASS-320"])
+    paragraphs:passionRoleRows("GF-PASS-A",payload.passion.preDeath,
+      payload.passion.voiceTurns.preDeath,["GF-PASS-310","GF-PASS-320"])
   });
   if(id==="GF-PASS-330")return freeze({
     key:"PASSION_AFTER_DEATH",title:"Passion according to St John · Continued",
-    paragraphs:rows("GF-PASS-B",payload.passion.postDeath,["GF-PASS-330"])
+    paragraphs:passionRoleRows("GF-PASS-B",payload.passion.postDeath,
+      payload.passion.voiceTurns.postDeath,["GF-PASS-330"])
   });
   if(id==="GF-SOP-400")return freeze({
     key:"SOLEMN_PRAYERS_PREP",title:"The Solemn Prayers",
