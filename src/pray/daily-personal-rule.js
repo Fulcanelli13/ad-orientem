@@ -169,6 +169,25 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
   offeredExtras:[...extrasById.values()],availableVariants:variants,
   sourceLabel:edition.sourceLabel,sourceUrl:edition.sourceUrl};
 }
+/** Read one unmodified source prayer without adding it to the daily rule.
+ * Both the printed edition and optional source-language corpus are searchable.
+ * Personal Brief inclusions and saved extras are never changed here. */
+export function personalDailyDirectPlan({daypart="morning",prefs=defaultPersonalDailyPrefs(),sourceId}={}){
+ if(!PARTS.includes(daypart)||typeof sourceId!=="string")return null;
+ const p=normalizePersonalDailyPrefs(prefs);
+ const full={...p,length:"full",mode:"standard"};
+ const base=buildPersonalDailyPlan({daypart,prefs:full});
+ let selected=base.rows.find(row=>row.sourceId===sourceId);
+ if(!selected){
+  const item=personalDailyOptions(daypart,p.language,p.edition).find(row=>row.id===sourceId&&row.kind==="additional");
+  if(!item)return null;
+  const single=buildPersonalDailyPlan({daypart,prefs:{
+   ...full,mode:"expanded",extras:{...full.extras,[daypart]:[item.id]}
+  }});
+  selected=single.rows.find(row=>row.sourceId===item.id);
+ }
+ return selected?{...base,rows:[selected],direct:true,sourceId,selectedExtras:[]}:null;
+}
 export function changePersonalDailyPrefs(prefs,{action,daypart="morning",value,language}={}){
  const p=normalizePersonalDailyPrefs(prefs,language);
  if(action==="edition"&&EDITIONS.has(value))p.edition=value;
