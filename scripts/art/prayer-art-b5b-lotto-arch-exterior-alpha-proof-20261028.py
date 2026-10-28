@@ -77,7 +77,7 @@ for cutoff,spread in [(248,20),(238,32),(224,45)]:
             "pixels":[img.width,img.height],"bytes":target.stat().st_size,
             "not_approved_for_app":True}
     records.append(record)
-    a.close();rgba.close();matte.close()
+    a.close();rgba.close()
 W=1350;H=675
 sheet=Image.new("RGB",(W,H),(23,26,30));d=ImageDraw.Draw(sheet)
 d.text((20,12),"LOTTO ROSARY: FULL ARCH, ALL FIFTEEN ROUNDELS | EXTERIOR WHITE-CORNER MATTE PROOFS",fill=(232,221,190))
