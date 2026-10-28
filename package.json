@@ -46,7 +46,7 @@
     "test:v183-reader-parity": "node tests/v1.83-reader-parity.mjs",
     "test:postcommunion-exit": "node tests/postcommunion-exit.mjs",
     "test:reader-cue-state": "node tests/reader-cue-state.mjs",
-    "test:reader-cue-focus": "node tests/reader-cue-focus.mjs && node tests/reader-live-reading-sections.mjs",
+    "test:reader-cue-focus": "node tests/reader-cue-focus.mjs && node tests/reader-live-reading-sections.mjs && node tests/reader-rail-anchors.mjs",
     "test:reader-posture-profile": "node tests/reader-posture-profile.mjs",
     "test:reader-lockdown": "node tests/reader-regression-lockdown.mjs",
     "check:reader-release": "node tests/reader-release-certification.mjs",
