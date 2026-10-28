@@ -134,6 +134,11 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
   html+='<button type="button" class="aoHeritageMassShortcut" data-find-filter="lens" data-find-filter-value="tlm" aria-label="'+L(vm.language,"Find a traditional Mass","Trouver une messe traditionnelle")+'">'+L(vm.language,"Mass","Messe")+'</button>';
   html+='<details class="aoHeritageMore"><summary aria-label="'+L(vm.language,"Explore other sections","Explorer d’autres rubriques")+'">'+L(vm.language,"More","Plus")+'</summary><div><strong>'+L(vm.language,"Explore further","Pour approfondir")+'</strong><nav class="aoHeritageSecondary">';
   html+='<button type="button" data-bible-atlas-open>'+L(vm.language,"Biblical Atlas · map through time","Atlas biblique · carte et chronologie")+'</button>';
+  html+='<button type="button" data-find-filter="lens" data-find-filter-value="saints">'+L(vm.language,"Saints and their places","Saints et leurs lieux")+'</button>';
+  html+='<button type="button" data-explore-journey-open aria-pressed="'+String(vm.journeyOpen)+'">'+L(vm.language,"Pilgrimage journeys","Parcours de pèlerinage")+'</button>';
+  html+='<button type="button" data-explore-time-mass-toggle aria-pressed="'+String(Boolean(vm.timeMass))+'">'+L(vm.language,"Time & Mass","Temps & Messes")+'</button>';
+  html+='<button type="button" data-atlas-mode="heatmap" aria-pressed="'+String(Boolean(vm.atlasCoverage))+'">'+L(vm.language,"Geographical layers","Couches géographiques")+'</button>';
+  html+='<button type="button" data-network-toggle aria-pressed="'+String(Boolean(vm.network))+'">'+L(vm.language,"Sacred connections","Réseau des lieux sacrés")+'</button>';
   for(const [key,en,fr] of [["shrines","Shrine records","Fiches des sanctuaires"],["relics","Relic records","Fiches des reliques"],["pilgrimages","Pilgrimage records","Fiches des pèlerinages"],["apparitions","Apparition records","Fiches des apparitions"]]){
     html+='<button type="button" data-find-filter="lens" data-find-filter-value="'+key+'">'+L(vm.language,en,fr)+'</button>';
   }
@@ -150,21 +155,13 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
   html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';
   html+='<div class="aoHeritageTools"><div class="aoFindSearch"><input type="search" data-find-query value="'+esc(vm.filters?.query||"")+'" aria-label="'+L(vm.language,"Search sacred places","Chercher un lieu sacré")+'" placeholder="'+L(vm.language,"Search place, saint or devotion","Lieu, saint ou dévotion")+'" autocomplete="off" spellcheck="false"></div><button type="button" class="aoHeritageGlossaryButton" data-find-glossary aria-label="'+L(vm.language,"Definitions","Définitions")+'">?</button></div>';
   html+='<nav class="aoHeritageCategories" aria-label="'+L(vm.language,"Filter places on the map","Filtrer les lieux sur la carte")+'">';
-  html+='<button type="button" data-find-filter="lens" data-find-filter-value="saints" aria-label="'+esc(L(vm.language,"Open Map of Saints","Ouvrir la carte des saints"))+'">'+esc(L(vm.language,"Saints","Saints"))+"</button>";
-  html+='<button type="button" class="aoJourneyLaunch'+(vm.journeyOpen?' active':'')+
-    '" data-explore-journey-open aria-pressed="'+String(vm.journeyOpen)+'">'+
-    L(vm.language,"Journeys","Parcours")+'</button>';
-  html+='<button type="button" class="aoTimeMassLaunch'+(vm.timeMass?' active':'')+
-    '" data-explore-time-mass-toggle aria-pressed="'+String(Boolean(vm.timeMass))+'">'+
-    L(vm.language,"Time & Mass","Temps & Messes")+'</button>';
-  html+='<button type="button" class="aoAtlasLayersLaunch'+(vm.atlasCoverage?' active':'')+
-    '" data-atlas-mode="heatmap" aria-pressed="'+String(Boolean(vm.atlasCoverage))+'">'+
-    L(vm.language,"Layers","Couches")+'</button>';
-  html+='<button type="button" class="aoNetworkLaunch'+(vm.network?' active':'')+
-    '" data-network-toggle aria-pressed="'+String(Boolean(vm.network))+'">'+
-    L(vm.language,"Network","Réseau")+'</button>';
+
+
+
+
+
   html+='<button type="button" data-heritage-category="ALL" aria-pressed="'+String(all)+'" class="'+(all?"active":"")+'">'+L(vm.language,"All places","Tous les lieux")+'</button>';
-  for(const key of publicKeys)html+='<button type="button" data-heritage-category="'+key+'" data-category="'+key+'" class="'+(!vm.journeyOpen&&active.length===1&&active.includes(key)?"active":"")+'" aria-pressed="'+String(!vm.journeyOpen&&active.length===1&&active.includes(key))+'">'+esc(label(vm.language,key))+'</button>';
+  for(const key of ["shrines","pilgrimages","relics","apparitions"])html+='<button type="button" data-heritage-category="'+key+'" data-category="'+key+'" class="'+(!vm.journeyOpen&&active.length===1&&active.includes(key)?"active":"")+'" aria-pressed="'+String(!vm.journeyOpen&&active.length===1&&active.includes(key))+'">'+esc(label(vm.language,key))+'</button>';
   html+='</nav>';
   html+='<p class="aoHeritageLocationStatus" data-heritage-location-status role="status" aria-live="polite" hidden></p>';
   html+='<div class="aoFindBody aoHeritageBody" data-find-view="map" data-explore-lens="heritage"><div class="aoFindMap" data-find-map><div class="aoFindMapFallback"><strong>'+L(vm.language,"Sacred places","Lieux sacrés")+'</strong><span>'+(vm.items.length?L(vm.language,"Loading documented places…","Chargement des lieux documentés…"):L(vm.language,"No places match. Change the search or category.","Aucun lieu trouvé. Modifiez le thème ou la recherche."))+'</span></div></div>';
