@@ -37,6 +37,16 @@ The existing self-contained HTML at `docs/pray/DAILY-PRAYER-REJECTION-REVIEW-202
 
 The primary French 1913 prayer and common-form texts are in their original French, checked against printed pages but requiring a separate final copyedit before any public text release. The 1905 Italian common prayers, other than specifically transcribed source bodies, are not silently imported from a later Italian/French edition. Do not manufacture an English Pius X primary "historical translation": a verified source-era English witness is still needed.
 
+## B22 English witness discovery — 1914 original located bibliographically, textual witness still pending (28 October 2026)
+
+**Confirmed primary English edition:** *Catechism of Christian Doctrine: published by order of His Holiness Pius X*, translated by **Rev. John Hagan**, Dublin, M. H. Gill, **1914**, 152 pp., translation of `Compendio della dottrina cristiana`. The National Library of Ireland catalogue independently identifies the language, translator, publisher, date and original work: https://catalogue.nli.ie/Record/vtls000760522 . Its catalog record establishes **a historical English edition exists**, but **NOT** that its actual prayer text was read, transcribed or checked against printed images.
+
+**Distinct English supplementary witness:** the Greater Catechism's daily devotions Q972–985 survive online in an Hagan-associated English rendering at https://sites.google.com/view/pius-x-catechism/on-daily-exercises-and-devotions . The daily advice includes a short Morning act (Q974), the associated Our Father/Hail Mary/Creed/Acts, and evening examination, pardon and bedtime commendation (Q984–985). **This is not proof of the original 1914 wording.** These words are catalogued as `SECONDARY_ONLINE_ENGLISH_TRANSCRIPTION`, visibly flagged as provisional in the HTML, and cannot populate the production release manifest. In particular Q984's direction to repeat the same prayers cannot be relabeled a distinct, source-authenticated English Evening Prayer printed in 1914.
+
+The Hagan `Compendium of Catechetical Instruction` (an earlier multi-volume collection combining Roman Catechism/Pius X/Raineri) and the separate Hagan **1914 English Catechism translation** must not be interchanged. Equally, postconciliar Kevane (1974) and translations of the later 1953 shortened Italian catechism are not edition-matched replacements for either original source.
+
+**Research status:** English 1914 print existence = VERIFIED; original-page English 1914 daily formulae = **NOT YET VERIFIED**; Hagan-associated Q974/Q984–985 derivative online text = PROVISIONAL; English approved historical source bodies = **0**; public release gate remains OFF.
+
 ## Publication and implementation gates
 
 - The current LIVE Morning 11 / Evening 13 card reader in main remains **unchanged**.
