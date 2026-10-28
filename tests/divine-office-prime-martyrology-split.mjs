@@ -25,6 +25,7 @@ const source=(lang,date="2026-11-02")=>({
   headline:"Commemoratio omnium fidelium defunctorum",
   sourceRevision:DIVINUM_OFFICIUM_PIN,
   status:"STRUCTURED_UNVERIFIED",publishable:false,
+  verification:{rubrical:false,languageCompleteness:false},
   sections:[
     {index:1,sourceIndex:1,sourceCellId:"Prima1",
       text:"Prima Opening\n℣. Deus in adiutorium.",semantic:{role:"OPENING",latinSourceCellId:"Prima1"}},
