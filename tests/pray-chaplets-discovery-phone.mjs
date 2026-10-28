@@ -227,7 +227,7 @@ try{
    assert.equal(await page.locator(night+' [data-ao-devo-card="prepare"]').count(),1);
    assert.match(await page.locator(night+' .aoP435930GuideNow').innerText(),/image of the Sacred Heart/i);
    await page.locator(night+' [data-ao-night-home-source] > summary').tap();
-   assert.match(await page.locator(night+' [data-ao-night-home-source]').innerText(),/not a reproduction of the extended 1944 Holy Hour/i);
+   assert.match(await page.locator(night+' [data-ao-night-home-source]').innerText(),/not a reproduction of the 1944 Holy Hour/i);
    assert.match(await page.locator(night+' [data-ao-night-home-source] a').getAttribute('href'),/sensusfidelium.com/);
    await page.locator(night+' .aoDevoTimeline [data-ao-devo-chapter="2"]').tap();
    assert.equal(await page.locator(night+' [data-ao-devo-card="reparation"]').count(),1);
