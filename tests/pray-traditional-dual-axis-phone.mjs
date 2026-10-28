@@ -202,6 +202,18 @@ try{
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"11","Latin optional Compline responsory must add exactly one card");
  await inManus.evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"10","Deselecting the Compline excerpt restores the printed core count");
+ await page.locator("#aoPray435930 [data-tp381-personal-action='language'][data-tp381-personal-value='en']").evaluate(el=>el.click());
+ const englishInManus=page.locator("#aoPray435930 [data-tp381-personal-action='extra'][data-tp381-personal-value='baltimore-1889-evening-in-manus']");
+ assert.equal(await englishInManus.count(),1,"Historically attested English responsory must appear once and only in English");
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-personal-action='extra'][data-tp381-personal-value='roman-compline-latin-in-manus']").count(),0,"Latin Office text cannot be silently labelled English");
+ await englishInManus.evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"11","English historical responsory must be a complete optional card");
+ await page.locator("#aoPray435930 [data-tp381-daily-card-index='10']").evaluate(el=>el.click());
+ assert.match(await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText(),/Thou hast redeemed us, O Lord, God of truth/);
+ assert.match(await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText(),/not the complete Office/);
+ await englishInManus.evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"10","Removing English responsory restores baseline without residual stage");
+
  assert.equal(await page.locator("#aoPray435930 [data-tp381-personal-action='edition'][data-tp381-personal-value='1905']").evaluate(el=>el.click()),undefined);
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"8","1905 printed evening order must be distinct");
  await page.locator("#aoPray435930 [data-tp381-personal-action='reset']").evaluate(el=>el.click());
