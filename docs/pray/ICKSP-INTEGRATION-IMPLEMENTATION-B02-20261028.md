@@ -34,3 +34,15 @@ The user accepts all works selected by the Institute as relevant to Ad Orientem.
 4. Run Node, Playwright, language parity, mobile, regression and release tests before merging and deploying.
 
 **Do not claim production completion from this draft.**
+
+## B03 follow-on — priest prayer and reader corrections (28 October 2026)
+
+- Corrected **August Queen of Heaven**: the 1890 Gilli appendix distinguishes the main prayer from other separately printed invocations. The EN reader now contains only the original *Miraculous Prayer* and its acclamation, without combining separate prayers. The French Cestac prayer retains the concluding repeated address visible in the Servantes de Marie source. Regression tests guard those boundaries.
+- Added a **Prayers for Priests** reader under Pray → Devotions & Novenas. The first ICKSP prayer, *O Jesus, Eternal Priest*, is available in its source English only, with clear French-language explanatory UI. No invented French, Latin or Italian prayer text.
+- The Institute's **second priest prayer** remains accepted, linked and explicitly held because its present webpage contains an erroneous inserted fragment. It has not been silently repaired or published.
+- A related *O Jesus, Eternal Priest* prayer appeared in *The American Ecclesiastical Review*, vol. 50 (1914), pp. 608–609, but the original primary page has **not been independently collated**. Attribution to St Thérèse is disputed and is not asserted.
+- Added both new routes to `src/pray/lazy-module-registry.js` so external/cold launches can load the canonical existing Prayer runtime. Updated Prayer-family route parity to retain the original 23-route baseline plus Tenebrae and the two new entries (26 visible entries).
+- Added `tests/icksp-prayers-for-priests.mjs`, extended the Marian test, and attached them both to `npm run test:icksp-prayers` and the existing `test:pray-traditional` suite.
+- Source bodies, runtime and navigation modules passed offline **JavaScript parse validation and explicit data/route invariant checks**. Full Node + Playwright suites have **not** been executed; no deployment approval may be inferred.
+
+**Cumulative B03:** 25/25 accepted source selections; 2 full prayer readers implemented on draft branch (one bilingual original and one source-English only), 1 distinct second priest prayer held for corrupted text; 98 Office index records including 86 additional beyond the initial audit; **zero newly published production prayers**.
