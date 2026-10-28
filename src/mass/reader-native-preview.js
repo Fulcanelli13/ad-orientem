@@ -1361,6 +1361,7 @@ export async function mountNativeReaderPreview({
   let cueTracker=null;
   let activeCueId=null;
   let modeSwitchCueLock=null;
+  let scholaPinnedByCatchup=false;
   let stopModeSwitchCueLock=()=>{};
   let enteredCanonicalCueSequence=false;
   // Explicit external observation only; neither scroll focus nor Schola audio
@@ -1859,6 +1860,7 @@ export async function mountNativeReaderPreview({
       priestVoice,
       priestQuietOffertory,
       schola:visibleSchola,
+      scholaCatchupPinned:scholaPinnedByCatchup,
       priestAction,
       priestEntrance,
       independentlyObservedCanonStage:observedCanon,
@@ -2655,7 +2657,8 @@ export async function mountNativeReaderPreview({
     // A manual priest catch-up is different: the user has only changed
     // which priest prayer is on screen and has NOT heard the choir move.
     // Preserve its exact track, phrase, completion and Benedictus state.
-    if(!preserveSchola)ready.scholaState.activateForCard(visibleCard);
+    if(!preserveSchola&&!scholaPinnedByCatchup)
+      ready.scholaState.activateForCard(visibleCard);
     const state=projectedState();
     reader.renderMoment({
       id:visibleCard.sectionId,
@@ -2951,8 +2954,18 @@ export async function mountNativeReaderPreview({
     },
     onSectionSelect:(sectionId)=>{
       const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
-      // This selection is a reader recovery action, not a choir observation.
-      return showCard(visibleCardAllowed(card)?card:null,{directJump:true,preserveSchola:true});
+      if(!visibleCardAllowed(card))return null;
+      // Catch-up pins the choir's position through further priest scrolling
+      // and card navigation, not only through the initial selected jump.
+      scholaPinnedByCatchup=true;
+      return showCard(card,{directJump:true,preserveSchola:true});
+    },
+    onScholaRejoin:()=>{
+      // Explicitly resume source-order expectations, not a claim that the
+      // choir was heard starting or finishing a particular piece.
+      scholaPinnedByCatchup=false;
+      const value=ready.scholaState.activateForCard(current);
+      queue();return value;
     },
     onPrevious:previousReaderCard,
     onNext:nextReaderCard,
@@ -3119,7 +3132,8 @@ export async function mountNativeReaderPreview({
         // An independently sung chant is not synchronized to the priest's
         // scroll or textual focus. The public Secret conclusion only closes
         // the Offertory music window; it is not proof of heard completion.
-        ready.scholaState.reachLiturgicalBoundary?.(cueId);
+        if(!scholaPinnedByCatchup)
+          ready.scholaState.reachLiturgicalBoundary?.(cueId);
         transientGuard.resolveCue(cueId);
         const transientProjection=cueId ? ready.transientState.project(cueId) : null;
         armEventCinematic(transientProjection?.cinematic??null,cueId);
