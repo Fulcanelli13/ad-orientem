@@ -6,7 +6,7 @@
     "https://institute-christ-king.org/resources/devotions-prayers",
     "https://icrspfrance.fr/textes-liturgiques.php"
   ],
-  "comparison_scope": "48 canonical entries in src/pray/canonical-data.js on current main, plus title probes of traditional-pray-data.js and traditional-pray-runtime.js; DOES NOT establish global absence across all modules",
+  "comparison_scope": "48 canonical entries in src/pray/canonical-data.js on current main, plus title probes of traditional-pray-data.js and traditional-pray-runtime.js; DOES NOT establish global absence across all modules; pass 2 checked active traditional hymns and runtime, novena corpus and runtime, and Christ the King supplemental forms.",
   "total_source_categories": {
     "us_index": 9,
     "french_office_selected": 13
@@ -28,7 +28,11 @@
       "release_status": "RESEARCH_ONLY",
       "verified": "FULL_TEXT_FOUND_ON_ICKSP_UK",
       "alternative_source_url": "https://icksp.org.uk/newbrighton/consecration-to-our-lady/",
-      "source_body_text_accessible": true
+      "source_body_text_accessible": true,
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
     },
     {
       "id": "icksp_us_dedication_to_christ_king",
@@ -47,7 +51,13 @@
       "canonical_matches": [
         "devotion_consecration_christ_king"
       ],
-      "source_body_text_accessible": true
+      "source_body_text_accessible": true,
+      "app_coverage_status": "EXISTING_SAME_UNDERLYING_PRAYER",
+      "app_coverage_label": "Already in Pray — same Latin prayer, English wording variant",
+      "app_match_refs": [
+        "canonical-data.js#devotion_consecration_christ_king"
+      ],
+      "next_action": "Reuse the canonical prayer; collate wording and source attribution, not a duplicate card."
     },
     {
       "id": "icksp_us_prayer_reparation",
@@ -66,7 +76,14 @@
       "canonical_matches": [
         "sacred_heart_short_prayer"
       ],
-      "source_body_text_accessible": false
+      "source_body_text_accessible": false,
+      "app_coverage_status": "EXISTING_RELATED_UNVERIFIED_EXACT",
+      "app_coverage_label": "Related Act of Reparation already in Pray — exact ICKSP text unverified",
+      "app_match_refs": [
+        "canonical-data.js#sacred_heart_short_prayer",
+        "traditional-pray-runtime.js#renderSacredHeart"
+      ],
+      "next_action": "Locate ICKSP wording before deciding whether a distinct translation exists."
     },
     {
       "id": "icksp_us_prayer_for_priests_sacred_heart",
@@ -82,7 +99,11 @@
       "full_text_import": "NOT_AUTHORIZED",
       "release_status": "RESEARCH_ONLY",
       "verified": "ENGLISH_BODY_READ",
-      "source_body_text_accessible": true
+      "source_body_text_accessible": true,
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
     },
     {
       "id": "icksp_us_prayer_for_priests_second",
@@ -99,7 +120,11 @@
       "release_status": "RESEARCH_ONLY",
       "verified": "ENGLISH_BODY_WITH_COPY_ERROR",
       "source_body_text_accessible": true,
-      "relation": "SECOND_PRAYER_SAME_PAGE"
+      "relation": "SECOND_PRAYER_SAME_PAGE",
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
     },
     {
       "id": "icksp_us_prayer_infant_jesus",
@@ -115,7 +140,11 @@
       "full_text_import": "NOT_AUTHORIZED",
       "release_status": "RESEARCH_ONLY",
       "verified": "INDEX_ONLY_PAGE_403",
-      "source_body_text_accessible": false
+      "source_body_text_accessible": false,
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
     },
     {
       "id": "icksp_us_novena_divine_infant_king",
@@ -131,7 +160,11 @@
       "full_text_import": "NOT_AUTHORIZED",
       "release_status": "RESEARCH_ONLY",
       "verified": "ENGLISH_COMPLETE_BODY_READ",
-      "source_body_text_accessible": true
+      "source_body_text_accessible": true,
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
     },
     {
       "id": "icksp_us_august_queen_heaven",
@@ -148,7 +181,11 @@
       "release_status": "RESEARCH_ONLY",
       "verified": "FULL_ENGLISH_BODY_FOUND_ON_ICKSP_UK",
       "alternative_source_url": "https://icksp.org.uk/newbrighton/consecration-to-our-lady/",
-      "source_body_text_accessible": true
+      "source_body_text_accessible": true,
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
     },
     {
       "id": "icksp_us_novena_immaculate_conception",
@@ -165,7 +202,13 @@
       "release_status": "RESEARCH_ONLY",
       "verified": "ALT_ICKSP_FULL_TEXT_CONFIRMED",
       "alternative_source_url": "https://institute-christ-king.org/news/1017-immaculate-conception-novena-tota-pulchra-es-o-maria",
-      "source_body_text_accessible": true
+      "source_body_text_accessible": true,
+      "app_coverage_status": "EXISTING_NOVENA_DIFFERENT_WITNESS",
+      "app_coverage_label": "Novena already in Pray — compare ICKSP source form",
+      "app_match_refs": [
+        "novena-corpus.js#immaculate_conception"
+      ],
+      "next_action": "Compare ICKSP novena to the Moran 1883 day-specific form rather than duplicate automatically."
     },
     {
       "id": "icksp_us_therese_perpetual_novena",
@@ -186,7 +229,13 @@
         "st_therese_novena_collect",
         "st_therese_missionaries",
         "st_therese_benedict_xv"
-      ]
+      ],
+      "app_coverage_status": "EXISTING_DIFFERENT_NOVENA_FORM",
+      "app_coverage_label": "St Thérèse novena already in Pray — ICKSP perpetual form differs",
+      "app_match_refs": [
+        "novena-corpus.js#st_therese"
+      ],
+      "next_action": "Keep the Twenty-Four Glory Bes novena; assess the Institute's perpetual Tuesday sequence as a distinct optional variant."
     },
     {
       "id": "icksp_us_therese_for_missionaries",
@@ -203,7 +252,11 @@
       "release_status": "RESEARCH_ONLY",
       "verified": "COMPLETE_PAGE_READ",
       "source_body_text_accessible": true,
-      "relation": "CHILD_PRAYER_OF_NOVENA_PAGE"
+      "relation": "CHILD_PRAYER_OF_NOVENA_PAGE",
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
     },
     {
       "id": "icksp_us_therese_benedict_xv",
@@ -220,7 +273,11 @@
       "release_status": "RESEARCH_ONLY",
       "verified": "COMPLETE_PAGE_READ",
       "source_body_text_accessible": true,
-      "relation": "CHILD_PRAYER_OF_NOVENA_PAGE"
+      "relation": "CHILD_PRAYER_OF_NOVENA_PAGE",
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
     },
     {
       "id": "icrsp_fr_office_complies",
@@ -234,7 +291,11 @@
       "target": "Traditional Compline / Night Prayer",
       "editorial_notes": "Full Office sequence, not an ordinary morning/evening devotion. Compare with the existing evening examen and standard prayer reader without replacing the St Pius X framework.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY"
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "DISTINCT_DIVINE_OFFICE",
+      "app_coverage_label": "Divine Office — not an ordinary prayer",
+      "app_match_refs": [],
+      "next_action": "Build complete 1962 Compline context separately from St Pius X evening prayer."
     },
     {
       "id": "icrsp_fr_sunday_vespers",
@@ -248,7 +309,11 @@
       "target": "Sunday Vespers / liturgical time",
       "editorial_notes": "Office cycles must use actual rubrics and liturgical day; treat as Office experience, not generic standalone text.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY"
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "DISTINCT_DIVINE_OFFICE",
+      "app_coverage_label": "Divine Office — not an ordinary prayer",
+      "app_match_refs": [],
+      "next_action": "Build Sunday Vespers as an Office; reuse Magnificat rather than duplicate it."
     },
     {
       "id": "icrsp_fr_te_deum",
@@ -262,7 +327,14 @@
       "target": "Thanksgiving; liturgical calendar; Office",
       "editorial_notes": "High-value standalone traditional thanksgiving canticle, with Latin and verified French/English witnesses; Office context separate.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY"
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "EXISTING_LIVE_HYMN",
+      "app_coverage_label": "Already in Pray — Sacred Hymns & Canticles",
+      "app_match_refs": [
+        "traditional-pray-data.js#SACRED_HYMNS_V381.te_deum",
+        "traditional-pray-runtime.js#renderHymns"
+      ],
+      "next_action": "Use ICRSP Latin/French for source collation; do not add another Te Deum card."
     },
     {
       "id": "icrsp_fr_vexilla_regis",
@@ -276,7 +348,11 @@
       "target": "Passiontide; Holy Week",
       "editorial_notes": "Passion Vespers hymn, not the Eucharistic Pange Lingua.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY"
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
     },
     {
       "id": "icrsp_fr_audi_benigne_conditor",
@@ -290,7 +366,11 @@
       "target": "Lent Vespers",
       "editorial_notes": "Liturgical Latin hymn; translate only from attested historical text.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY"
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
     },
     {
       "id": "icrsp_fr_ad_cenam_agni",
@@ -304,7 +384,11 @@
       "target": "Easter Vespers",
       "editorial_notes": "Two historical recensions; mark versions explicitly and do not conflate.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY"
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
     },
     {
       "id": "icrsp_fr_aeterne_rex_altissime",
@@ -318,7 +402,11 @@
       "target": "Ascension Matins",
       "editorial_notes": "Source indicates Matins of Ascension.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY"
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
     },
     {
       "id": "icrsp_fr_lustra_sex",
@@ -332,7 +420,11 @@
       "target": "Passiontide Lauds",
       "editorial_notes": "Part of Passion hymn tradition; preserve exact text identity.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY"
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
     },
     {
       "id": "icrsp_fr_o_sol_salutis",
@@ -346,7 +438,11 @@
       "target": "Lent Lauds",
       "editorial_notes": "Seasonal Office hymn.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY"
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
     },
     {
       "id": "icrsp_fr_ex_more_docti",
@@ -360,7 +456,11 @@
       "target": "Lent Matins",
       "editorial_notes": "Seasonal Office hymn.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY"
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
     },
     {
       "id": "icrsp_fr_magnificat",
@@ -374,7 +474,13 @@
       "target": "Office Vespers",
       "editorial_notes": "Canonical id weekday_magnificat already exists; compare exact Psalm/Luke version, not a missing prayer.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY"
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "EXISTING_LIVE_CANTICLE",
+      "app_coverage_label": "Already in canonical Pray bank",
+      "app_match_refs": [
+        "canonical-data.js#weekday_magnificat"
+      ],
+      "next_action": "Reuse the existing canticle in Vespers, and collate source edition."
     },
     {
       "id": "icrsp_fr_benedictus",
@@ -388,7 +494,13 @@
       "target": "Office Lauds",
       "editorial_notes": "Canonical id weekday_benedictus already exists; verify source translation and placement.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY"
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "EXISTING_LIVE_CANTICLE",
+      "app_coverage_label": "Already in canonical Pray bank",
+      "app_match_refs": [
+        "canonical-data.js#weekday_benedictus"
+      ],
+      "next_action": "Reuse existing canticle in Lauds, and collate source edition."
     },
     {
       "id": "icrsp_fr_st_blaise_candles_food",
@@ -402,7 +514,11 @@
       "target": "Calendar Feb 3 customs; ritual reference",
       "editorial_notes": "A priest's ritual blessing, not a lay prayer to present for DIY use; calendar-associated ritual note only.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY"
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "RITUAL_NOT_LAY_PRAYER",
+      "app_coverage_label": "Priestly ritual — Calendar information only",
+      "app_match_refs": [],
+      "next_action": "Reference St Blaise blessing in Calendar customs; do not treat as a personal lay prayer."
     }
   ],
   "policies": [
@@ -418,5 +534,19 @@
     "approved_texts": 0,
     "publicly_released_texts": 0
   },
-  "source_capture_status": "INDEX_AND_SELECTED_BODIES_CONFIRMED_TEXT_IMPORT_NONE"
+  "source_capture_status": "INDEX_AND_SELECTED_BODIES_CONFIRMED_TEXT_IMPORT_NONE",
+  "coverage_pass2": {
+    "date": "2026-10-28",
+    "claim_scope": "CODE-EXPLICIT_MATCHES_ONLY_NOT_GLOBAL_NEGATIVE_PROOF",
+    "inspected_paths": [
+      "src/pray/canonical-data.js",
+      "src/pray/traditional-pray-data.js",
+      "src/pray/traditional-pray-runtime.js",
+      "src/pray/novena-corpus.js",
+      "src/pray/novena-corpus-v4.js",
+      "src/pray/novena-runtime.js",
+      "src/pray/christ-king-benediction.js"
+    ],
+    "warning": "A no-match in sampled code is not proof of global absence; same subject does not mean same prayer."
+  }
 }
