@@ -19,6 +19,7 @@ const NON_RUNTIME_PREFIXES=[
  ".github/","docs/","research/","reviews/","review/","tests/",
  "scripts/","legacy/","labs/","previews/",
 ];
+const NON_RUNTIME_ROOTS=new Set(["README.md",".gitignore"]);
 const BUILD_TOOL_FILES=new Set([
  "tools/build-web-preview.mjs",
  "tools/vercel-build-eligibility.mjs",
@@ -29,6 +30,7 @@ export function needsProductionBuild(changedPaths){
   if(typeof raw!=="string"||!raw.trim()||raw.startsWith("/")||raw.includes("\\"))
    return true;
   const path=raw.trim();
+  if(NON_RUNTIME_ROOTS.has(path))continue;
   if(LIVE_RESEARCH_FILES.has(path))return true;
   if(RESEARCH_ONLY_PREFIXES.some(prefix=>path.startsWith(prefix)))continue;
   if(NON_RUNTIME_PREFIXES.some(prefix=>path.startsWith(prefix)))continue;
