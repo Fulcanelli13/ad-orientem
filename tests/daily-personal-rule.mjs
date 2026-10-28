@@ -7,7 +7,7 @@ import {
  changePersonalDailyPrefs,PERSONAL_BRIEF_PRAYER_IDS,personalDailyBriefIds,personalDailyDirectPlan
 } from "../src/pray/daily-personal-rule.js";
 import {DAILY_PERSONAL_PRAYER_SOURCE_V1 as CORPUS} from "../src/pray/daily-personal-prayer-source.js";
-import {REVIEWED_DAILY_STAGE_ALTERNATIVES,reviewedDailyAlternative} from "../src/pray/daily-stage-alternative-review.js";
+import {REVIEWED_DAILY_STAGE_ALTERNATIVES,reviewedDailyAlternative,reviewedDailyPurpose,DAILY_PURPOSES} from "../src/pray/daily-stage-alternative-review.js";
 import {APPROVED_DAILY_FORMULATION_MANIFEST_V1,DAILY_APPROVED_SEQUENCE_RELEASE_V1} from "../src/pray/daily-approved-formulations.js";
 import {personalDailyPrayerCard,dailyPersonalSettings,dailyPersonalPrayerCatalog,dailyPersonalList,dailyPersonalProvenance,dailyFormulationLabel} from "../src/pray/daily-personal-prayer-view.js";
 
@@ -313,73 +313,103 @@ for(const language of ["en","fr","la"])for(const edition of ["1905","1913"]){
   }
  }
 }
-// B07: source registry is a strict whitelist; existing optional status remains.
+// B08: each distinct purpose owns its own optional choices. A narrower
+// historical prayer can NEVER replace the combined printed St Pius X opening.
 assert.equal(Object.keys(REVIEWED_DAILY_STAGE_ALTERNATIVES).length,12);
-assert.equal(CORPUS.additional.length,45,"Do not change, rename or discard source corpus entries");
+assert.equal(CORPUS.additional.length,45);
+assert.equal(new Set(CORPUS.additional.map(x=>x.id)).size,45);
+const narrow=Object.entries(REVIEWED_DAILY_STAGE_ALTERNATIVES).filter(([,rule])=>rule.scope==="narrower");
+assert.equal(narrow.length,11);
+assert.equal(Object.values(REVIEWED_DAILY_STAGE_ALTERNATIVES).filter(x=>x.scope==="same-act").length,1);
+assert.deepEqual(DAILY_PURPOSES.morning,["offering","thanksgiving"]);
+assert.deepEqual(DAILY_PURPOSES.evening,["thanksgiving","adoration"]);
 for(const [id,rule] of Object.entries(REVIEWED_DAILY_STAGE_ALTERNATIVES)){
  const item=CORPUS.additional.find(x=>x.id===id);
- assert.ok(item,"Every reviewed option must originate in the existing source corpus");
- assert.equal(item.kind,"additional","Do not silently migrate source records or stored extras");
- assert.equal(item.daypart,rule.daypart);
+ assert.ok(item&&item.kind==="additional"&&item.daypart===rule.daypart);
  assert.ok(item.sourceWebChecked===true||item.sourceImageChecked===true);
- assert.ok(item.sourceUrl?.startsWith("https://"));
- assert.equal(reviewedDailyAlternative(id,rule.daypart,rule.slot),rule);
- assert.equal(reviewedDailyAlternative(id,rule.daypart==="morning"?"evening":"morning",rule.slot),null);
+ assert.match(item.sourceUrl,/^https:\/\//);
+ assert.equal(reviewedDailyAlternative(id,rule.daypart,rule.slot),rule.scope==="same-act"?rule:null);
+ assert.equal(reviewedDailyPurpose(id,rule.daypart,rule.purpose),rule.scope==="narrower"?rule:null);
+ assert.equal(reviewedDailyPurpose(id,rule.daypart==="morning"?"evening":"morning",rule.purpose),null);
  assert.equal(reviewedDailyAlternative(id,rule.daypart,"our-father"),null);
- assert.ok(["narrower","same-act"].includes(rule.scope));
 }
-assert.equal(reviewedDailyAlternative("user-forged-id","morning","daily-prayer"),null);
+assert.equal(reviewedDailyPurpose("forged","morning","offering"),null);
 for(const edition of ["1905","1913"])for(const daypart of ["morning","evening"])for(const language of ["en","fr","la"]){
- const baseline={...defaultPersonalDailyPrefs(language),edition};
- const legal=personalDailyOptions(daypart,language,edition);
- const reviewed=legal.filter(x=>reviewedDailyAlternative(x.id,daypart,"daily-prayer")||
-   reviewedDailyAlternative(x.id,daypart,"contrition"));
- const plan=buildPersonalDailyPlan({daypart,prefs:baseline});
- assert.equal(plan.availableVariants.filter(x=>x.kind==="reviewed-variant").length,reviewed.length,
-  "Every reviewed source-language candidate must be available, without foreign-language fallbacks");
- const originalById=Object.fromEntries(plan.rows.map(x=>[x.sourceId,x]));
- for(const candidate of reviewed){
-  const slot=reviewedDailyAlternative(candidate.id,daypart,"daily-prayer")?"daily-prayer":"contrition";
-  assert.ok(originalById[slot],"No candidate may create a stage missing from source edition");
+ const base={...defaultPersonalDailyPrefs(language),edition};
+ const original=buildPersonalDailyPlan({daypart,prefs:base});
+ const originalOpening=original.rows.find(x=>x.sourceId==="daily-prayer");
+ const valid=personalDailyOptions(daypart,language,edition).filter(x=>narrow.some(([id])=>id===x.id));
+ const listed=original.purposeChoices.flatMap(group=>group.options);
+ assert.equal(listed.length,valid.length,"Only existing attested prayer text in its actual source language");
+ assert.equal(original.availableVariants.some(x=>x.slot==="daily-prayer"),false,
+  "Never offer a narrower devotion as an interchangeable St Pius X opening");
+ for(const candidate of valid){
+  const rule=REVIEWED_DAILY_STAGE_ALTERNATIVES[candidate.id];
   for(const length of ["full","brief"]){
-   let prefs=changePersonalDailyPrefs({...baseline,length},{action:"variant",daypart,value:candidate.id});
-   if(length==="brief"&&!personalDailyBriefIds(edition,daypart,prefs).includes(slot))
-    prefs=changePersonalDailyPrefs(prefs,{action:"brief-toggle",daypart,value:slot});
-   const resolved=buildPersonalDailyPlan({daypart,prefs});
-   const row=resolved.rows.find(x=>x.sourceId===slot);
-   assert.equal(row?.text,candidate.text,"One tap must show one complete attested historical prayer, not a stitched composition");
-   assert.equal(row?.sourceUrl,candidate.sourceUrl);
-   assert.equal(row?.replacementId,candidate.id);
-   assert.equal(resolved.rows.length,buildPersonalDailyPlan({daypart,prefs:{...prefs,variants:{morning:{},evening:{}}}}).rows.length,
-    "Stage count and sunrise denominator cannot change when switching a prayer");
-   assert.equal(row?.replacementScope,reviewedDailyAlternative(candidate.id,daypart,slot).scope);
-   const html=personalDailyPrayerCard(row,resolved,h);
-   assert.match(html,new RegExp('data-tp381-personal-variant="'+candidate.id+'"'));
-   if(row.replacementScope==="narrower")assert.match(html,/aoDailyFormulationCoverageNote/);
+   const initial={...base,length};
+   const before=buildPersonalDailyPlan({daypart,prefs:initial});
+   const selected=changePersonalDailyPrefs(initial,{action:"purpose",daypart,value:candidate.id});
+   const plan=buildPersonalDailyPlan({daypart,prefs:selected});
+   const opening=plan.rows.find(x=>x.sourceId==="daily-prayer");
+   assert.equal(opening?.text,originalOpening.text,"Original combined St Pius X prayer must be unchanged");
+   assert.equal(opening?.sourceUrl,originalOpening.sourceUrl);
+   assert.equal(opening?.replacementId,null);
+   assert.deepEqual(plan.rows.map(x=>x.id),before.rows.map(x=>x.id),"Selection cannot change stage count, chronology or atmosphere");
+   assert.equal(plan.selectedPurposes[rule.purpose],candidate.id);
+   const html=personalDailyPrayerCard(opening,plan,h);
+   assert.match(html,new RegExp('data-tp381-personal-purpose="'+rule.purpose+':'+candidate.id+'"'));
+   assert.match(html,/aoDailyPurposeSection/);
+   assert.match(html,/Pius X opening above remains unchanged/,"Clarify that source is an additional, not substituted, prayer");
+   assert.match(html,new RegExp('data-ao-purpose-source="'+candidate.id+'"'));
+   assert.ok(html.includes(candidate.text),"The complete historical prayer is rendered, not a synopsis");
    const stored=new Map(),storage={setItem:(k,v)=>stored.set(k,v),getItem:k=>stored.get(k)};
-   assert.equal(savePersonalDailyPrefs(storage,prefs),true);
-   assert.equal(buildPersonalDailyPlan({daypart,prefs:loadPersonalDailyPrefs(storage,language)}).rows.find(x=>x.sourceId===slot)?.text,candidate.text);
-   const restored=changePersonalDailyPrefs(prefs,{action:"variant",daypart,value:candidate.id});
-   const original=buildPersonalDailyPlan({daypart,prefs:restored}).rows.find(x=>x.sourceId===slot);
-   assert.equal(original?.text,originalById[slot].text,"One tap must restore the original unmodified St Pius X prayer");
+   assert.equal(savePersonalDailyPrefs(storage,selected),true);
+   const loaded=loadPersonalDailyPrefs(storage,language);
+   assert.equal(buildPersonalDailyPlan({daypart,prefs:loaded}).selectedPurposes[rule.purpose],candidate.id);
+   const removed=changePersonalDailyPrefs(selected,{action:"purpose",daypart,value:"none:"+rule.purpose});
+   const restored=buildPersonalDailyPlan({daypart,prefs:removed});
+   assert.equal(restored.selectedPurposes[rule.purpose],undefined);
+   assert.equal(restored.rows.find(x=>x.sourceId==="daily-prayer")?.text,originalOpening.text);
   }
  }
 }
-// An optional prayer and a stage formulation are independent user choices.
-// The reader must not silently remove a saved optional card, since that would
-// change the stage count, horizon denominator, and future navigation.
+// Old B07 saved offering-as-replacement selections are migrated to a
+// distinct optional purpose. Both their text and the St Pius X source remain.
+for(const [id,rule] of narrow){
+ const row=CORPUS.additional.find(x=>x.id===id);
+ const legacy=defaultPersonalDailyPrefs(row.lang);
+ legacy.variants[rule.daypart]["daily-prayer"]=id;
+ const migrated=normalizePersonalDailyPrefs(legacy,row.lang);
+ assert.equal(migrated.variants[rule.daypart]["daily-prayer"],undefined);
+ assert.equal(migrated.purposeSelections[rule.daypart][rule.purpose],id);
+ const plan=buildPersonalDailyPlan({daypart:rule.daypart,prefs:migrated});
+ assert.equal(plan.rows.find(x=>x.sourceId==="daily-prayer")?.replacementId,null);
+ assert.equal(plan.selectedPurposes[rule.purpose],id);
+ const persisted=normalizePersonalDailyPrefs(migrated,row.lang);
+ assert.deepEqual(persisted,migrated,"Migration is idempotent");
+}
+// A true same-act historical Contrition remains an immediate alternative.
+const fr=defaultPersonalDailyPrefs("fr");
+const contrition=changePersonalDailyPrefs(fr,{action:"variant",daypart:"evening",value:"b09-fr1905-evening-contrition"});
+const eveningPlan=buildPersonalDailyPlan({daypart:"evening",prefs:contrition});
+assert.equal(eveningPlan.rows.find(x=>x.sourceId==="contrition")?.replacementId,"b09-fr1905-evening-contrition");
+assert.equal(eveningPlan.rows.find(x=>x.sourceId==="daily-prayer")?.replacementId,null);
+// Saved optional stages remain independent; never suppress or duplicate stages
+// automatically when a source is also selected as an extra purpose prayer.
 let overlap=defaultPersonalDailyPrefs("en");
 overlap=changePersonalDailyPrefs(overlap,{action:"extra",daypart:"morning",value:"b10-bbg-1925-apostleship-morning-offering"});
 assert.equal(buildPersonalDailyPlan({daypart:"morning",prefs:overlap}).rows.length,12);
-overlap=changePersonalDailyPrefs(overlap,{action:"variant",daypart:"morning",value:"b10-bbg-1925-apostleship-morning-offering"});
-assert.equal(buildPersonalDailyPlan({daypart:"morning",prefs:overlap}).rows.length,12,"Selecting a formulation must leave all saved optional stages untouched");
-assert.deepEqual(overlap.extras.morning,["b10-bbg-1925-apostleship-morning-offering"],"Stored optional preference must not be deleted");
-overlap=changePersonalDailyPrefs(overlap,{action:"variant",daypart:"morning",value:"b10-bbg-1925-apostleship-morning-offering"});
-assert.equal(buildPersonalDailyPlan({daypart:"morning",prefs:overlap}).rows.length,12,"Reverting must preserve stage count and saved optional prayers");
-// Existing 1913/1905 and English/French/Latin source controls remain independent.
-const noEnglish=buildPersonalDailyPlan({daypart:"morning",prefs:changePersonalDailyPrefs(
- defaultPersonalDailyPrefs("fr"),{action:"variant",daypart:"morning",value:"b10-bbg-1925-apostleship-morning-offering"})});
-assert.equal(noEnglish.rows.find(x=>x.sourceId==="daily-prayer")?.replacementId,null);
+overlap=changePersonalDailyPrefs(overlap,{action:"purpose",daypart:"morning",value:"b10-bbg-1925-apostleship-morning-offering"});
+assert.equal(buildPersonalDailyPlan({daypart:"morning",prefs:overlap}).rows.length,12);
+assert.deepEqual(overlap.extras.morning,["b10-bbg-1925-apostleship-morning-offering"]);
+overlap=changePersonalDailyPrefs(overlap,{action:"purpose",daypart:"morning",value:"none:offering"});
+assert.equal(buildPersonalDailyPlan({daypart:"morning",prefs:overlap}).rows.length,12);
+// A French or Latin session never displays an unverified English choice.
+for(const lang of ["fr","la"]){
+ const forbidden=changePersonalDailyPrefs(defaultPersonalDailyPrefs(lang),{action:"purpose",
+  daypart:"morning",value:"b10-bbg-1925-apostleship-morning-offering"});
+ assert.equal(buildPersonalDailyPlan({daypart:"morning",prefs:forbidden}).selectedPurposes.offering,undefined);
+}
 const runtime=readFileSync(new URL("../src/pray/traditional-pray-runtime.js",import.meta.url),"utf8");
 assert.match(runtime,/personalDailyDirectPlan\(\{daypart:S.daypart,prefs,sourceId:S.dailyDirectId\}\)/);
 assert.match(runtime,/data-tp381-personal-action/);
