@@ -270,7 +270,7 @@ try{
        await input.check();
        const readerTab=page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]');
        await readerTab.click();
-       for(const mode of ["MISSAL","LIVE"]{
+       for(const mode of ["MISSAL","LIVE"]){
          await page.locator('[data-full-mass-reader-mode][value="'+mode+'"]').check();
          const output=await page.evaluate(async()=>{
            const prepared=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
@@ -327,7 +327,7 @@ try{
              primary:"Corpus tuum, Dómine, quod sumpsi",
              sourceCueIds:["AO.SM.C0248"]},
          ];
-         for(const mode of ["MISSAL","LIVE"]{
+         for(const mode of ["MISSAL","LIVE"]){
            adapter.mount({...prepared,readerPreferences:{...prepared.readerPreferences,mode}});
            adapter.renderMoment({
              id:"AO.CARD.026",sectionTitle:"Ablutions",cardTitle:"Ablutions",
