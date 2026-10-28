@@ -1,6 +1,7 @@
 import {attachAtlasCoverageLayers} from "./mapcn-atlas-controller.js";
 import { isApproximateDirectoryGeo, isMapPublishableGeo } from "./geo-provenance.js";
 import { attachExploreMapStatus } from "./map-status.js";
+import { mappedVenueViewportStats } from "./mass-map-viewport-context.js";
 import { applyExploreDarkCartography } from "./explore-cartography-style.js";
 import { registerMassInstitutionImages, massInstitutionEmblem } from "./institution-emblems.js";
 import { installMassMapEmblemOverlays } from "./institution-map-overlay.js";
@@ -393,8 +394,8 @@ export async function mountExploreMap(container,items,{
     reset.type="button";reset.className="aoExploreMapReset";
     reset.setAttribute("data-explore-map-reset","");
     const fr=win.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr";
-    reset.textContent=fr?"↗ Tous les résultats":"↗ All results";
-    reset.setAttribute("aria-label",fr?"Recentrer la carte sur tous les résultats visibles":"Fit map to all visible results");
+    reset.textContent=fr?"Tous les lieux":"All mapped";
+    reset.setAttribute("aria-label",fr?"Afficher tous les lieux cartographiés correspondant aux filtres":"Show all matching mapped venues");
     reset.addEventListener("click",()=>{
       const bounds=mapFitBounds(features);
       const duration=reducedMotion?0:360;
@@ -614,6 +615,7 @@ export async function mountExploreMap(container,items,{
     }
   };
   return Object.freeze({map,
+    viewportVenueStats(){return mappedVenueViewportStats(features,map.getBounds?.())},
     setAtlasOverlay(mode,coverage){return atlasLayers?.setMode(mode,coverage)??false},
     focusAtlasCountry(code){return atlasLayers?.focusCountry(code)??false},
     atlasStatus(){return atlasLayers?.status()??null},
