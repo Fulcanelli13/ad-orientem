@@ -44,8 +44,14 @@ try{
    reducedMotion:"reduce",
   });
   const page=await context.newPage();
-  const errors=[];
+  const errors=[],offRouteScripture=[];
   page.on("pageerror",e=>errors.push(String(e?.message??e)));
+  page.on("request",request=>{
+   const url=request.url();
+   if(url.startsWith("https://raw.githubusercontent.com/")&&
+     (/\/sources\/(?:fr\/FreCrampon|la\/VulgClementine)\//.test(url)||
+      /\/AlvaroBalbin\/catena\/.*\/john\.jsonl/.test(url)))offRouteScripture.push(url);
+  });
   const note={width,language,steps:[]};
   const capture=async name=>page.screenshot({
    path:resolve(output,"explore-journey-"+width+"-"+language+"-"+name+".png"),fullPage:false,
@@ -199,6 +205,9 @@ try{
    note.steps.push("Mass back returns to Explore rather than Home");
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
    assert.ok(overflow<=1,"Visit flow created horizontal viewport overflow: "+overflow);
+   await page.waitForTimeout(400);
+   assert.deepEqual(offRouteScripture,[],
+    "Map-only visitor must not download complete Latin/French Bible or Catena source corpora");
    assert.equal(errors.length,0,"Actual visitor flow JS exceptions: "+errors.join(" | "));
    results.push({...note,passed:true});
    console.log("PASS end-to-end Explore visitor "+width+"px "+language+": "+note.steps.join("; "));
