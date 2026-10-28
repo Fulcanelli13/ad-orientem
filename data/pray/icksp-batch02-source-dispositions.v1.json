@@ -1,0 +1,311 @@
+{
+  "version": "2026-10-28-batch02-v1",
+  "scope": "pray Batch 2 only",
+  "ownership": {
+    "runtime": "src/pray/presentation-runtime.js",
+    "canonical": "src/pray/canonical-data.js",
+    "cost": "EUR0",
+    "publication": "subject to automated and device acceptance"
+  },
+  "items": [
+    {
+      "id": "benediction_versicles",
+      "incipit": "Panem de caelo praestitisti eis",
+      "kind": "liturgical-versicle-and-collect",
+      "existing": true,
+      "source": "https://media.musicasacra.com/pdf/ordinarium_Missae1961.pdf",
+      "languages": [
+        "la",
+        "en",
+        "fr"
+      ],
+      "rights": "historical source; current canonical translations preserved except French direct-address conclusion",
+      "disposition": "UPDATED_CANONICAL_FR_AND_SEASONAL_RUNTIME",
+      "minister": "minister-versicle-and-collect, congregation-response",
+      "applicability": "Paschal time + Corpus Christi feast Alleluia",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "christ_king_royal_praises",
+      "incipit": "Christus vincit",
+      "kind": "local-chant",
+      "existing": true,
+      "source": "https://www.vatican.va/news_services/liturgy/libretti/2012/20121007.pdf",
+      "languages": [
+        "la",
+        "en",
+        "fr"
+      ],
+      "rights": "2012 witness; not proof of 1962 local performance",
+      "disposition": "EXPLICIT_LOCAL_OPT_IN",
+      "minister": "schola and congregation",
+      "applicability": "optional local Christ the King services",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "benediction_divine_praises",
+      "incipit": "Benedictus Deus",
+      "kind": "litany-of-praises",
+      "existing": true,
+      "source": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
+      "languages": [
+        "la",
+        "en",
+        "fr"
+      ],
+      "rights": "historical witness comparative collation pending",
+      "disposition": "PRESERVE_EXISTING_OPTIONAL_PENDING_LINE_COLLATION",
+      "minister": "congregation",
+      "applicability": "only if recited locally",
+      "tests": "existing Benediction tests"
+    },
+    {
+      "id": "eucharistic_pange_lingua_full",
+      "incipit": "Pange lingua gloriosi Corporis mysterium",
+      "kind": "eucharistic-hymn",
+      "existing": false,
+      "source": "https://icrspfrance.fr/textes-liturgiques.php?article=a0297_ancien",
+      "languages": [
+        "la"
+      ],
+      "rights": "Latin original thirteenth-century public domain; EN/FR modern reuse pending",
+      "disposition": "PUBLISHED_SOURCE_BOUND_LATIN_TREASURY",
+      "minister": "participant",
+      "applicability": "Corpus Christi Eucharistic context; not mandatory Benediction",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "eucharistic_lauda_sion_full",
+      "incipit": "Lauda Sion Salvatorem",
+      "kind": "Corpus Christi Mass sequence",
+      "existing": false,
+      "source": "https://icrspfrance.fr/textes-liturgiques.php?article=a0297_ancien",
+      "languages": [
+        "la"
+      ],
+      "rights": "Latin original thirteenth-century public domain; EN/FR modern reuse pending",
+      "disposition": "PUBLISHED_SOURCE_BOUND_LATIN_TREASURY",
+      "minister": "participant",
+      "applicability": "Corpus Christi Mass sequence",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "eucharistic_o_sacrum_convivium",
+      "incipit": "O sacrum convivium",
+      "kind": "Corpus Christi Office antiphon",
+      "existing": false,
+      "source": "https://icrspfrance.fr/textes-liturgiques.php?article=a0297_ancien",
+      "languages": [
+        "la"
+      ],
+      "rights": "Latin original thirteenth-century public domain; EN/FR modern reuse pending",
+      "disposition": "PUBLISHED_SOURCE_BOUND_LATIN_TREASURY",
+      "minister": "participant",
+      "applicability": "Vespers of Corpus Christi",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "benediction_tantum_ergo",
+      "incipit": "Tantum ergo Sacramentum",
+      "kind": "hymn-stanzas-existing",
+      "existing": true,
+      "source": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
+      "languages": [
+        "la",
+        "en",
+        "fr"
+      ],
+      "rights": "existing historic witness",
+      "disposition": "REUSED_FOR_FULL_PANGE_LINGUA_ENDING",
+      "minister": "congregation",
+      "applicability": "when actually sung",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "benediction_o_salutaris",
+      "incipit": "O salutaris Hostia",
+      "kind": "Eucharistic-hymn-existing",
+      "existing": true,
+      "source": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
+      "languages": [
+        "la",
+        "en",
+        "fr"
+      ],
+      "rights": "existing historic witness",
+      "disposition": "RETAIN_EXISTING",
+      "minister": "congregation",
+      "applicability": "when actually sung",
+      "tests": "existing Benediction tests"
+    },
+    {
+      "id": "mercy_you_expired",
+      "incipit": "You expired, Jesus",
+      "kind": "optional-opening-devotion",
+      "existing": false,
+      "source": "https://www.usccb.org/prayers/chaplet-divine-mercy",
+      "diary": "1319",
+      "languages": [
+        "en-link"
+      ],
+      "rights": "modern published English translation reproduction not cleared",
+      "disposition": "SOURCE_LINK_ONLY_NO_BEAD_ADDITION",
+      "minister": "participant",
+      "applicability": "optional before Divine Mercy Chaplet",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "mercy_blood_water",
+      "incipit": "O Blood and Water",
+      "kind": "optional-opening-devotion",
+      "existing": false,
+      "source": "https://www.usccb.org/prayers/chaplet-divine-mercy",
+      "diary": "84",
+      "languages": [
+        "en-link"
+      ],
+      "rights": "modern published English translation reproduction not cleared",
+      "disposition": "SOURCE_LINK_ONLY_NO_BEAD_ADDITION",
+      "minister": "participant",
+      "applicability": "optional before Divine Mercy Chaplet",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "rosary_scripture_linked",
+      "incipit": null,
+      "kind": "editorial-Rosary-method",
+      "existing": true,
+      "source": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/pray/rosary-guided-bead-evidence.v1.js",
+      "languages": [
+        "DR/CPDV-en",
+        "Crampon-1923-fr"
+      ],
+      "rights": "internal approved biblical corpus, 2002 letter later commentary only",
+      "disposition": "PROVENANCE_CORRECTED_NO_BEAD_OWNER_CHANGE",
+      "minister": "participant",
+      "applicability": "five-decade method",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "icksp_spiritual_communion",
+      "incipit": null,
+      "kind": "source-specific-variant",
+      "existing": false,
+      "source": "https://institute-christ-king.org/videostreamprayers",
+      "languages": [
+        "en-link"
+      ],
+      "rights": "modern translation reuse pending",
+      "disposition": "SOURCE_LINK_ONLY",
+      "minister": "participant",
+      "applicability": "optional Adoration",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "icksp_reparation",
+      "incipit": null,
+      "kind": "eucharistic-reparation",
+      "existing": false,
+      "source": "https://institute-christ-king.org/resources/devotions-prayers",
+      "languages": [
+        "source-link"
+      ],
+      "rights": "exact wording/source rights pending",
+      "disposition": "SOURCE_LINK_ONLY",
+      "minister": "participant",
+      "applicability": "optional reparation and First Friday",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "icksp_priests_jesus",
+      "incipit": "O Jesus, Eternal Priest",
+      "kind": "intercession",
+      "existing": false,
+      "source": "https://institute-christ-king.org/resources/devotions-prayers",
+      "languages": [
+        "source-link"
+      ],
+      "rights": "exact wording/source rights pending",
+      "disposition": "SOURCE_LINK_ONLY",
+      "minister": "participant",
+      "applicability": "optional Adoration",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "icksp_priests_heart",
+      "incipit": "Sacred Heart, Eternal High Priest",
+      "kind": "intercession",
+      "existing": false,
+      "source": "https://institute-christ-king.org/resources/devotions-prayers",
+      "languages": [
+        "source-link"
+      ],
+      "rights": "exact wording/source rights pending",
+      "disposition": "SOURCE_LINK_ONLY",
+      "minister": "participant",
+      "applicability": "optional Adoration",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "icksp_stella_caeli",
+      "incipit": "Stella caeli extirpavit",
+      "kind": "optional-Marian-chant",
+      "existing": false,
+      "source": "https://www.institute-christ-king.org/images/chicago/Files/Prayer_to_Our_Lady_and_Benediction.pdf",
+      "languages": [
+        "la-link"
+      ],
+      "rights": "independent source text collation pending",
+      "disposition": "SOURCE_LINK_ONLY",
+      "minister": "congregation",
+      "applicability": "optional local prayers in times of pestilence",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "icksp_parce_domine",
+      "incipit": "Parce Domine",
+      "kind": "optional-penitential-chant",
+      "existing": false,
+      "source": "https://www.institute-christ-king.org/images/chicago/Files/Prayer_to_Our_Lady_and_Benediction.pdf",
+      "languages": [
+        "la-link"
+      ],
+      "rights": "independent text collation pending",
+      "disposition": "SOURCE_LINK_ONLY",
+      "minister": "congregation",
+      "applicability": "optional local Benediction context",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "icksp_loreto_booklet",
+      "incipit": "Kyrie eleison",
+      "kind": "Marian-litany-version",
+      "existing": true,
+      "source": "https://www.institute-christ-king.org/images/chicago/Files/Prayer_to_Our_Lady_and_Benediction.pdf",
+      "languages": [
+        "source-link"
+      ],
+      "rights": "newer invocations distinct from 1962 recension",
+      "disposition": "BOOKLET_LINK_ONLY_NO_1962_OVERWRITE",
+      "minister": "congregation",
+      "applicability": "local Marian devotion",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    },
+    {
+      "id": "forty_hours_solemn",
+      "incipit": null,
+      "kind": "historical-ceremonial-reference",
+      "existing": false,
+      "source": "https://icksp.org.uk/institute/frequent-questions/",
+      "languages": [
+        "en-editorial",
+        "fr-editorial"
+      ],
+      "rights": "original short bilingual explanatory descriptions, no liturgical prayers copied",
+      "disposition": "THREE_DAY_SOURCE_BOUND_PARTICIPANT_REFERENCE",
+      "minister": "clergy for public Mass/Litany/procession/Benediction, participant for private prayer",
+      "applicability": "local Forty Hours observances; no fixed times",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs"
+    }
+  ]
+}
