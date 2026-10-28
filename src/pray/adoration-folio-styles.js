@@ -228,6 +228,46 @@ body:has(#aoPray435930 .aoAdorationQuietScreen) #ao-global-ribbon{
  #aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio=v1] *,
  #aoPray435930 .aoAdorationQuietScreen *{animation:none!important;transition:none!important}
 }
+
+/* B10: optional, whole historical source prayer inside a fixed Four Ends stage.
+   Distinct devotions never replace canonical texts or become extra stages. */
+#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode="four"] .aoFourPurposeOption{
+ margin:14px 0 7px;padding:13px 0 0;
+ border-top:1px solid color-mix(in srgb,var(--liturgical,#c3a77e) 19%,transparent);
+ display:grid;gap:8px;min-width:0
+}
+#aoPray435930 .aoFourPurposeCaption{
+ font:italic 12px/1.55 Georgia,serif;
+ color:var(--muted,#b0a49b)
+}
+#aoPray435930 .aoFourPurposeChoices{
+ display:flex;gap:7px;min-width:0;padding:1px 0 7px;
+ overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;
+ scrollbar-width:none
+}
+#aoPray435930 .aoFourPurposeChoices::-webkit-scrollbar{display:none}
+#aoPray435930 .aoFourPurposeChoices>button{
+ flex:0 0 auto;min-height:44px;max-width:220px;
+ padding:9px 12px;border-radius:10px;
+ border:1px solid var(--border,rgba(255,255,255,.17));
+ background:transparent;color:var(--text,#ece2d4);
+ font:500 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+ text-align:center;white-space:normal
+}
+#aoPray435930 .aoFourPurposeChoices>button[aria-pressed="true"]{
+ border-color:var(--liturgical,#c3a77e);
+ background:color-mix(in srgb,var(--liturgical,#c3a77e) 12%,transparent);
+ color:var(--liturgical,#dfc895)
+}
+#aoPray435930 .aoFourPurposeChoices>button:focus-visible{
+ outline:2px solid var(--liturgical,#c3a77e);outline-offset:2px
+}
+#aoPray435930 .aoFourPurposeReading{margin:7px 0 0}
+#aoPray435930 .aoFourPurposeReading .aoP435930Prayer{
+ margin:0!important;padding:11px 0!important;
+ border-top:1px solid var(--border,rgba(255,255,255,.1))!important
+}
+
 `;
 export function installAdorationFolioStyles(doc=globalThis.document){
  if(!doc?.head)return false;
