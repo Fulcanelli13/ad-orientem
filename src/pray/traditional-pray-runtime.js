@@ -6,7 +6,7 @@ import {installSequentialDevotionalReader} from "./devotional-sequence-adapter.j
 import {dailyHorizonState} from "./quiet-devotional-progression.js";
 import {createDailySessionTimer,sessionClockLabel} from "./daily-session-timer.js";
 import {buildPersonalDailyPlan,personalDailyOptions,personalDailyDirectPlan,loadPersonalDailyPrefs,savePersonalDailyPrefs,changePersonalDailyPrefs} from "./daily-personal-rule.js";
-import {personalDailyPrayerCard,dailyPersonalSettings,dailyPersonalPrayerCatalog,dailyPersonalList} from "./daily-personal-prayer-view.js";
+import {personalDailyPrayerCard,personalDailyPurposeSection,dailyPersonalSettings,dailyPersonalPrayerCatalog,dailyPersonalList} from "./daily-personal-prayer-view.js";
 import {createDailyFormulationPreferenceStore} from "./daily-formulation-preferences.js";
 import {APPROVED_DAILY_FORMULATION_MANIFEST_V1,DAILY_APPROVED_SEQUENCE_RELEASE_V1} from "./daily-approved-formulations.js";
 import {resolveDailyReaderSequence,approvedDailySlotOptions} from "./daily-source-sequence-adapter.js";
@@ -802,7 +802,7 @@ function goHome(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-home]"))return goHome();
@@ -890,6 +890,37 @@ function handleClick(e){
     const active=[...newArticle.querySelectorAll("[data-tp381-personal-variant]")]
       .find(button=>button.getAttribute("aria-pressed")==="true");
     active?.focus?.({preventScroll:true});
+    return true;
+  }
+  if(b.hasAttribute("data-tp381-personal-purpose")){
+    if(S.route!=="pray.morning_evening"||S.screen!=="module"||S.dailyMode!=="guided")return;
+    const raw=String(b.dataset.tp381PersonalPurpose||""),separator=raw.indexOf(":");
+    if(separator<=0)return;
+    const purpose=raw.slice(0,separator),id=raw.slice(separator+1);
+    const before=dailyReadingPlan(),row=before.rows[S.dailyStep];
+    if(row?.sourceId!=="daily-prayer"||row.kind!=="personal-prayer")return;
+    const group=before.purposeChoices?.find(x=>x.purpose===purpose);
+    if(!group||id!=="none"&&!group.options.some(x=>x.id===id))return;
+    if((before.selectedPurposes?.[purpose]||null)===(id==="none"?null:id))return;
+    const prefs=personalDailyPrefs();
+    const next=changePersonalDailyPrefs(prefs,{action:"purpose",daypart:S.daypart,value:id==="none"?"none:"+purpose:id});
+    const plan=buildPersonalDailyPlan({daypart:S.daypart,prefs:next});
+    const nextGroup=plan.purposeChoices.find(x=>x.purpose===purpose);
+    if(!nextGroup)return;
+    const scroll=mount()?.querySelector(".aoDevoCardScroll");
+    const section=scroll?.querySelector('.aoDailyPurposeSection[data-ao-daily-purpose="'+purpose+'"]');
+    if(!section)return;
+    // Replace only this distinct-purpose reading; the original printed
+    // St Pius X opening, sky, stage navigation and stopwatch stay mounted.
+    const holder=section.ownerDocument.createElement("div");
+    holder.innerHTML=personalDailyPurposeSection(nextGroup,plan,{esc,L,prayerParagraphs,source});
+    const replacement=holder.firstElementChild;
+    if(!replacement)return;
+    PERSONAL_DAILY_PREFS=next;
+    let storage=null;try{storage=globalThis.localStorage||null}catch{}
+    savePersonalDailyPrefs(storage,next,isFr()?"fr":"en");
+    section.replaceWith(replacement);
+    replacement.querySelector('[data-tp381-personal-purpose="'+raw+'"]')?.focus?.({preventScroll:true});
     return true;
   }
   if(b.hasAttribute("data-tp381-daily-length")){
