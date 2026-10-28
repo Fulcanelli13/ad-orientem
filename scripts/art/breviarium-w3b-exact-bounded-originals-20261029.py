@@ -36,7 +36,8 @@ def checked_source(q):
     with urllib.request.urlopen(req,timeout=35) as f:
         payload=json.loads(f.read(450000))
     pages=payload.get("query",{}).get("pages",{})
-    listing=[p["imageinfo"][0] for p in pages.values() if p.get("imageinfo")]
+    entries=pages.values() if isinstance(pages,dict) else pages
+    listing=[p["imageinfo"][0] for p in entries if p.get("imageinfo")]
     if len(listing)!=1:raise ValueError("NO_EXACT_FILE")
     info=listing[0]
     if info.get("sha1")!=known["sha1"] or info.get("size")!=known["size_bytes"]:
