@@ -90,8 +90,15 @@ export function anchorRailToSourceParagraphs(root,{cueByChannel={}}={}){
         const line=Number.parseFloat(win?.getComputedStyle?.(reference)?.lineHeight)||28;
         // Attach to the *first textual baseline*, not the centre of a
         // potentially hundred-line Gospel or the top of the entire card.
-        const anchorY=rect.top-sr.top+Math.min(23,Math.max(9,line/2));
-        if(anchorY>=0&&anchorY<=sr.height)
+        // The stage can extend above/below the clipped prayer scroller:
+        // an offscreen line must never leave a floating icon in the rail.
+        const baseline=rect.top+Math.min(23,Math.max(9,line/2));
+        const scrollRect=scroll.getBoundingClientRect();
+        const visibleTop=Math.max(sr.top,scrollRect.top);
+        const visibleBottom=Math.min(sr.bottom,scrollRect.bottom);
+        const anchorY=baseline-sr.top;
+        if(baseline>=visibleTop&&baseline<=visibleBottom &&
+          anchorY>=0&&anchorY<=sr.height)
           items.push({id:index,side,cueId,anchorY,
             height:tile.offsetHeight||Number.parseFloat(win?.getComputedStyle?.(tile)?.height)||48});
       }
