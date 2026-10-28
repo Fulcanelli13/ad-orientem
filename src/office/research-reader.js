@@ -70,9 +70,9 @@ export function validateResearchOfficePair({latin,translation,locale="en"}={}){
     required(missingOfficeSourceCells(document).length===0,"UPSTREAM_MISSING_TEXT");
   }
   required(latin.language==="la"&&translation.language===locale,"LANGUAGE_MISMATCH");
-  required(officeTranslationContentBlockers({latin,translation}).length===0,"CONTENT_SCOPE_MISMATCH");
   required(latin.date===translation.date&&latin.hour===translation.hour&&latin.sourceRevision===translation.sourceRevision,
     "SOURCE_CONTEXT_MISMATCH");
+  required(officeTranslationContentBlockers({latin,translation}).length===0,"CONTENT_SCOPE_MISMATCH");
   required(Object.hasOwn(HOUR_NAMES,latin.hour),"HOUR_INVALID");
   required(latin.sections.length===translation.sections.length,"SECTION_COUNT_MISMATCH");
   for(let i=0;i<latin.sections.length;i++){
