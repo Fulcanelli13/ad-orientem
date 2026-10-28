@@ -4,6 +4,7 @@
  * All upstream material is normalized plaintext, escaped again at rendering.
  */
 import {DIVINUM_OFFICIUM_PIN} from "../app/source-transport-compat.js";
+import {officeTranslationContentBlockers} from "./source-content-gate.js";
 
 export const OFFICE_RESEARCH_READER_VERSION="ao.office.research-reader.v1";
 const TITLES=Object.freeze({
@@ -69,6 +70,7 @@ export function validateResearchOfficePair({latin,translation,locale="en"}={}){
     required(missingOfficeSourceCells(document).length===0,"UPSTREAM_MISSING_TEXT");
   }
   required(latin.language==="la"&&translation.language===locale,"LANGUAGE_MISMATCH");
+  required(officeTranslationContentBlockers({latin,translation}).length===0,"CONTENT_SCOPE_MISMATCH");
   required(latin.date===translation.date&&latin.hour===translation.hour&&latin.sourceRevision===translation.sourceRevision,
     "SOURCE_CONTEXT_MISMATCH");
   required(Object.hasOwn(HOUR_NAMES,latin.hour),"HOUR_INVALID");
