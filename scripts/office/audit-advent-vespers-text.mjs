@@ -18,8 +18,7 @@ const PILOT=Object.freeze({first:"2026-11-28",second:"2026-11-29",
 });
 function fold(s){
   return String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
-    .replaceAll("æ","ae").replaceAll("ǽ","ae").replaceAll("j","i")
-    .toLowerCase().replace(/[^a-z ]/g," ").replace(/\s+/g," ").trim();
+    .toLowerCase().replaceAll("æ","ae").replaceAll("ǽ","ae").replaceAll("j","i").replace(/[^a-z ]/g," ").replace(/\s+/g," ").trim();
 }
 function firstAntiphon(text){
   const line=String(text).split("\n").find(x=>/^Ant\./i.test(x.trim()));
