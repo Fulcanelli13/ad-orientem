@@ -168,6 +168,10 @@ try{
    assert.equal(await spirit.count(),1,"Full Holy Ghost litany must be present on day 13");
    await spirit.locator("summary").click();
    assert.equal(await spirit.locator("[data-ao-montfort-original-row]").count(),48,"Full Holy Ghost petitions, Lamb of God and versicle");
+   assert.equal(await spirit.locator(".aoMontfortB27Chapter").count(),4,"B28 source-neutral chapter bands: opening, invocations, petitions, conclusion");
+   assert.match(await spirit.locator("[data-ao-montfort-witness-caution]").innerText(),/1897.*NOT been compared/i);
+   assert.equal(await spirit.locator("[data-ao-montfort-witness-caution]").evaluate(el=>!!(el.compareDocumentPosition(el.closest("details").querySelector("[data-ao-montfort-original-row]"))&Node.DOCUMENT_POSITION_FOLLOWING)),true,"Witness caution before first Holy Ghost invocation");
+   assert.match(await spirit.locator('a').first().getAttribute('href'),/ecatholic2000\.com/,"Digital appendix rather than unverified 1897 facsimile is primary citation");
    assert.match(await spirit.innerText(),/Grant, O merciful Father/i);
    assert.match(await spirit.innerText(),/Holy Ghost, make us persevere in justice/i);
    await page.screenshot({path:resolve(out,"montfort-holy-ghost-litany-"+width+".png"),animations:"disabled"});
@@ -183,6 +187,8 @@ try{
    assert.equal(await augustine.count(),1,"Montfort's optional Augustine prayer in Week 3");
    await holyName.locator("summary").click();
    assert.equal(await holyName.locator("[data-ao-montfort-original-row]").count(),74,"Holy Name full mercy/deliverance/Lamb invocations");
+   assert.equal(await holyName.locator(".aoMontfortB27Chapter").count(),6,"B28 source-neutral chapters including both closing collects");
+   assert.match(await holyName.locator(".aoMontfortB27Chapter").last().innerText(),/Concluding prayers/i);
    assert.match(await holyName.innerText(),/perpetual fear and love of Thy holy name/i);
    await page.screenshot({path:resolve(out,"montfort-holy-name-litany-"+width+".png"),animations:"disabled"});
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"Full Holy Name litany must not overflow");
