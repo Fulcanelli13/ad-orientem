@@ -32,7 +32,7 @@ jobs:
           python -m py_compile tools/directory/discover-open-place-media.py
           node tests/directory-media-card-contract.mjs
           node tests/preliminary-world-mass-map-r49.mjs
-          python -m unittest discover -s tests -p 'directory-photo-discovery-test.py' -v
+          python tests/directory-photo-discovery-test.py -v
       - name: Explore and publication guard regressions
         run: |
           node tests/explore-surface.mjs
