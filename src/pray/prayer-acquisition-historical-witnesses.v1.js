@@ -22,6 +22,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
       "edition": "Benziger Brothers, 1908",
       "url": "https://en.wikisource.org/wiki/My_Prayer-Book/Prayers_During_the_Day",
       "page": "225",
+      "scanPageUrl": "https://en.wikisource.org/wiki/Page:MyPrayerBookHappinessInGoodness.djvu/240",
       "material": "HISTORICAL_ENGLISH_EDITION",
       "witness_status": "HTML_TRANSCRIPTION_VISUALLY_REVIEWED_PRINT_IMAGE_NOT_CERTIFIED"
     },
@@ -45,13 +46,14 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
     "language": "en",
     "work_kind": "PRAYER",
     "text": "O my God, I give Thee heartfelt thanks for all the graces Thou hast conferred on me during this meditation. Pardon me, I beseech Thee, all the negligence and all the distractions of which I have been guilty. Give me strength to carry out the resolutions that I have made. Fortify me, that from henceforth I may diligently practise this virtue . . . avoid this fault . . . perform this action . . . to Thy honor.\n\nHelp me to keep my good resolutions, O sweet Virgin Mary; and do thou, my good angel, recall them to my memory, if I should ever forget or neglect them. Omnia ad majorem Dei gloriam!",
-    "source_page": "225-226",
+    "source_page": "226",
     "notes": "Transcription normalizes obvious OCR error in printed Latin motto 'Ommia' to 'Omnia'; substantive editorial correction must be confirmed against page image before publication.",
     "source": {
       "work": "F.X. Lasance, My Prayer-Book: Happiness in Goodness",
       "edition": "Benziger Brothers, 1908",
       "url": "https://en.wikisource.org/wiki/My_Prayer-Book/Prayers_During_the_Day",
-      "page": "225-226",
+      "page": "226",
+      "scanPageUrl": "https://en.wikisource.org/wiki/Page:MyPrayerBookHappinessInGoodness.djvu/241",
       "material": "HISTORICAL_ENGLISH_EDITION",
       "witness_status": "HTML_TRANSCRIPTION_VISUALLY_REVIEWED_PRINT_IMAGE_NOT_CERTIFIED"
     },
@@ -75,13 +77,14 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
     "language": "en",
     "work_kind": "PRAYER",
     "text": "Take, O Lord, and receive all my liberty, my memory, my understanding and my whole will.\n\nThou hast given me all that I am and all that I possess; I surrender it all to Thee that Thou mayest dispose of it according to Thy will. Give me only Thy love and Thy grace; with these I will be rich enough, and will have no more to desire.",
-    "source_page": "226",
+    "source_page": "227",
     "notes": "Lasance's historical English witness; its adjacent Latin OCR has evident corruption, so Latin is deliberately withheld until Latin printed-text collation.",
     "source": {
       "work": "F.X. Lasance, My Prayer-Book: Happiness in Goodness",
       "edition": "Benziger Brothers, 1908",
       "url": "https://en.wikisource.org/wiki/My_Prayer-Book/Prayers_During_the_Day",
-      "page": "226",
+      "page": "227",
+      "scanPageUrl": "https://en.wikisource.org/wiki/Page:MyPrayerBookHappinessInGoodness.djvu/242",
       "material": "HISTORICAL_ENGLISH_EDITION",
       "witness_status": "HTML_TRANSCRIPTION_VISUALLY_REVIEWED_PRINT_IMAGE_NOT_CERTIFIED"
     },
@@ -105,13 +108,14 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
     "language": "en",
     "work_kind": "PRAYER",
     "text": "Grant me grace, O merciful God, to desire ardently all that is pleasing to Thee, to examine it prudently, to acknowledge it truthfully, and to accomplish it perfectly, for the praise and glory of Thy name. Amen.",
-    "source_page": "226",
+    "source_page": "228",
     "notes": "Short English form of prayer attributed to St Thomas in Lasance; different purpose and length from full meditation opening.",
     "source": {
       "work": "F.X. Lasance, My Prayer-Book: Happiness in Goodness",
       "edition": "Benziger Brothers, 1908",
       "url": "https://en.wikisource.org/wiki/My_Prayer-Book/Prayers_During_the_Day",
-      "page": "226",
+      "page": "228",
+      "scanPageUrl": "https://en.wikisource.org/wiki/Page:MyPrayerBookHappinessInGoodness.djvu/243",
       "material": "HISTORICAL_ENGLISH_EDITION",
       "witness_status": "HTML_TRANSCRIPTION_VISUALLY_REVIEWED_PRINT_IMAGE_NOT_CERTIFIED"
     },
@@ -127,7 +131,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
       "allowed_in_prayer_hub": false
     }
   }
-].replace(/^[/,"[")});
+]);
 /**
  * Runtime access defaults to a fail-closed, published-only list. Researchers
  * must explicitly request `research:true`; merely importing this module
