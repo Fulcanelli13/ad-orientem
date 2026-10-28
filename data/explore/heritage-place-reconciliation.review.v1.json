@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 512,
+    "places": 516,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 253,
+    "places_without_direct_claim": 257,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -281,7 +281,11 @@
       "place:AT:p48-sg-0197-239345806",
       "place:AU:p48-sg-0743-155809136",
       "place:CA:p48-sg-0424-103862161",
-      "place:PT:p48-sg-0156-96319696"
+      "place:PT:p48-sg-0156-96319696",
+      "place:PL:lichen-marian-basilica",
+      "place:MX:ocotlan-basilica-tlaxcala",
+      "place:US:san-francisco-de-asis-ranchos-taos",
+      "place:AR:catamarca-cathedral-valle"
     ],
     "customs_without_exact_place": [
       {
@@ -5839,6 +5843,30 @@
     {
       "place_id": "place:PT:p48-sg-0156-96319696",
       "display_name": "Igreja de Santo António de Lisboa",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:lichen-marian-basilica",
+      "display_name": "Bazylika Najświętszej Maryi Panny Licheńskiej",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:MX:ocotlan-basilica-tlaxcala",
+      "display_name": "Basílica de Nuestra Señora de Ocotlán",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:san-francisco-de-asis-ranchos-taos",
+      "display_name": "San Francisco de Asís Mission Church — Ranchos de Taos",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:AR:catamarca-cathedral-valle",
+      "display_name": "Catedral Basílica de Nuestra Señora del Valle — Catamarca",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }
