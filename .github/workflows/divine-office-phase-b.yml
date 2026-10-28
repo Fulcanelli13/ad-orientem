@@ -166,6 +166,7 @@ jobs:
             --hours MATINS,LAUDS,PRIME,TERCE,SEXT,NONE,VESPERS,COMPLINE \
             --languages la,en,fr
           python3 scripts/office/normalize_xhtml.py --out "$OUTPUT/all-souls-syntax"
+          node scripts/office/build-mass-style-preview.mjs --out "$OUTPUT/all-souls-syntax"
           node scripts/office/audit-translation-risks.mjs \
             --out "$OUTPUT/all-souls-syntax" --report "$OUTPUT/all-souls-syntax/translation-risk.json"
           node scripts/office/compare-french-directive-overlay.mjs \
@@ -260,7 +261,15 @@ jobs:
           assert comparison["schema"]=="ao.office.french-syntax-candidate-comparison.v1"
           assert comparison["originalMissingCount"]==11 and comparison["published"]==0
           assert comparison["documentsCompared"]==24 and comparison["certifiedFrenchHours"]==0
+          assert comparison["originalMissingCount"]==11 and comparison["candidateMissingCount"]==0
+          assert comparison["recoveredCount"]==11 and comparison["fullyRecovered"] is True
           assert comparison["newlyMissingCount"]==0 and not comparison["candidateSourceCellsReduced"]
+          syntax_preview=json.loads((Path(os.environ["OUTPUT"])/"all-souls-syntax"/"preview"/"mass"/"preview-manifest.json").read_text(encoding="utf8"))
+          assert syntax_preview["pages"]==16 and syntax_preview["blockedLocalePageCount"]==0
+          assert syntax_preview["published"]==0 and not syntax_preview["productionRouteRegistered"]
+          syntax_risk=json.loads((Path(os.environ["OUTPUT"])/"all-souls-syntax"/"translation-risk.json").read_text(encoding="utf8"))
+          assert syntax_risk["flaggedTranslationCells"]==0 and syntax_risk["verifiedTranslations"]==0
+          assert syntax_risk["published"]==0 and not syntax_risk["canPublish"]
           advent_mass=json.loads((Path(os.environ["OUTPUT"])/"advent-vespers"/"preview"/"mass"/"preview-manifest.json").read_text(encoding="utf8"))
           assert advent_mass["pages"]==4 and advent_mass["published"]==0
           assert advent_mass["hours"]==["VESPERS"] and not advent_mass["productionRouteRegistered"]
