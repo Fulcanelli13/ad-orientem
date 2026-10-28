@@ -1,0 +1,241 @@
+{
+  "schema": "AO_PRAYER_WAVE1_REMAINING_PHOTO_QA_DECISIONS_V1",
+  "date": "2026-10-28",
+  "branch": "research/prayer-wave1-photo-comparison-20261028",
+  "stage": "RESEARCH_PHOTOGRAPHIC_CANDIDATES_NOT_APP_RELEASED",
+  "immutable_contract": {
+    "approved_primary_paintings": 6,
+    "primaries_changed": 0,
+    "previous_approval_registers_changed": 0,
+    "cost_eur": 0,
+    "app_releases": 0,
+    "morlete_ruiz_approval": "protected, separate unresolved placement"
+  },
+  "photo_reviews": [
+    {
+      "module": "seven-sorrows",
+      "locked_painting": "Master of the Female Half-Lengths (attributed) — Virgin of the Seven Sorrows",
+      "source_master": {
+        "path": "research/module-hero-museum-photos-20261026:assets/staged/module-hero-masters/sorrows.jpg",
+        "pixels": [
+          2220,
+          3000
+        ],
+        "sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a"
+      },
+      "alternative": {
+        "file": "assets/staged/prayer-wave1-photo-comparison-20261028/sorrows_new-new-commons-original.jpg",
+        "pixels": [
+          3250,
+          4391
+        ],
+        "sha256": "9ac17078b83f2cf6031aa70a86917929cdeea16927e66c4bb7c0f7671ec89667",
+        "commons": "https://commons.wikimedia.org/wiki/File:Master_of_the_Half_Lengths_-_Virgin_of_the_Seven_Sorrows_-_Google_Art_Project.jpg",
+        "licence": "Wikimedia Commons PD-Art / PDM designation; jurisdiction caveat"
+      },
+      "finding": "The larger exact-work file preserves all seven roundels, the prominent central sword and whole painted field. It may show modestly more native detail but does not demonstrate sufficiently material improvement to supersede the staged selected proof without further colour/reference evaluation.",
+      "source_candidate_choice": "KEEP_VERIFIED_EXISTING_FOR_NOW",
+      "do_not": "Do not invent seven literal swords, over-retouch craquelure, crop narrative roundels, or equate larger dimensions to better art.",
+      "release_gate": "HOLD_FINAL_SOURCE_AND_MODULE_ROUTE",
+      "published": false
+    },
+    {
+      "module": "rosary",
+      "locked_painting": "Lorenzo Lotto — Madonna del Rosario (1539)",
+      "rejected_photo_candidates": [
+        "Sailko full-work crop (14,28,1758,2635) retains mounting clips",
+        "Sailko full-work tighter crop (24,44,1748,2609) retains some mounting hardware"
+      ],
+      "recommend_photo": {
+        "file": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary_yorck-new-commons-original.jpg",
+        "pixels": [
+          1880,
+          2886
+        ],
+        "sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+        "source": "https://commons.wikimedia.org/wiki/File:Lorenzo_Lotto_057.jpg",
+        "author_credits": "Lorenzo Lotto, via Wikimedia Commons / The Yorck Project",
+        "licence": "Single artwork reproduction labelled public domain; Yorck compiled collection metadata separately notes GFDL."
+      },
+      "alternative_photo": "Sailko 1772x2652, 5563d323..., CC BY 3.0 and mounting clips visible",
+      "finding": "The entire 1539 altarpiece with all fifteen Rosary mystery roundels, Virgin and Child, saints and lower angels is visible. Yorck source is cleaner along its edges and removes the problem of physical mounting clips without an artificial object-erasure edit. Its darker/less warm colour should be checked before final signoff.",
+      "source_candidate_choice": "PREFER_CLEAN_YORCK_PHOTO_FOR_REVIEW",
+      "no_artwork_reselection": true,
+      "display_policy": "object-fit contain at natural portrait ratio; no detail-substitution or cropping out any mystery",
+      "published": false,
+      "release_gate": "HOLD_FINAL_COLOR_AND_ATTRIBUTION",
+      "candidate_original_previews": [
+        {
+          "path": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary-yorck-complete-720.webp",
+          "sha256": "6356b633f286357467f2e660afd5db2c1fcde72582037c0e751cb6c3648817c2",
+          "pixels": [
+            720,
+            1105
+          ],
+          "bytes": 222636,
+          "retouched": false,
+          "upscaled": false
+        },
+        {
+          "path": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary-yorck-complete-1440.webp",
+          "sha256": "2a57f7adca6db6f92ab6de841c735bfaa76fff385490b61282c02ba953dd12f2",
+          "pixels": [
+            1440,
+            2211
+          ],
+          "bytes": 565774,
+          "retouched": false,
+          "upscaled": false
+        }
+      ],
+      "source_candidate_quality_review": "PASS_AS_UNFRAMED_RESEARCH_PHOTO: 720px proof visibly includes complete top fifteen roundels, entire Madonna/Child and all lower angels, no physical clips. Darker and subdued than Sailko; do not recolor or claim source match until reference acceptance.",
+      "next_gate": "Attach exact PD single-reproduction attribution, source page and hashes to actual Rosary user journey under opt-in preview; no crop whatsoever.",
+      "historical_master_identity_reconciled": {
+        "historical_manifest_sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+        "reacquired_commons_original_sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+        "byte_identical": true,
+        "conclusion": "The clean Yorck full-work photo is not a new source substitution; its exact SHA-256 matches the historical Wave 1 Rosary master reference that was previously stranded on an unavailable research path."
+      }
+    },
+    {
+      "module": "angelus",
+      "locked_painting": "Philippe de Champaigne — The Annunciation, Met 2004.31",
+      "source_master": {
+        "path": "research/module-hero-wave2-20261026:assets/staged/module-hero-wave2/angelus-met.jpg",
+        "pixels": [
+          3741,
+          3658
+        ],
+        "sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6"
+      },
+      "institutional_source": "https://www.metmuseum.org/art/collection/search/438724",
+      "rights": "The Met identifies work as public domain",
+      "painted_surface_reference_cm": [
+        70.5,
+        69.2
+      ],
+      "reviewed_v1_box": [
+        82,
+        77,
+        3660,
+        3590
+      ],
+      "next_v2_box": [
+        88,
+        87,
+        3648,
+        3581
+      ],
+      "finding": "v1 removes most exposed oak but still leaves traces around borders, especially lower edge. The v2 proposal preserves Marian, angelic, dove and lily imagery, yet native pixel-edge check remains necessary to certify no support border or painted loss.",
+      "source_candidate_choice": "PREFER_ANGELUS_V3_FOR_FURTHER_PHONE_TEST",
+      "display_policy": "natural aspect contain, not forced 3:4 or 16:9 cover (dove/lilies at risk)",
+      "published": false,
+      "release_gate": "HOLD_FINAL_ARTWORK_AND_READER_INTEGRATION_GATE",
+      "candidate_cropped_previews": [
+        {
+          "path": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-paint-proposal-v2-720.webp",
+          "sha256": "ec572953cd37d878fd346f5f9f6d611cd5874cf9bbd2d08b1bab6f4e161c8738",
+          "pixels": [
+            720,
+            707
+          ],
+          "bytes": 98464,
+          "retouched": false,
+          "upscaled": false
+        },
+        {
+          "path": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-paint-proposal-v2-1440.webp",
+          "sha256": "b49675aeababae29b9fad5b833ee5c68cff8a0b1fc3c20095670f9a9e65a7169",
+          "pixels": [
+            1440,
+            1413
+          ],
+          "bytes": 380774,
+          "retouched": false,
+          "upscaled": false
+        }
+      ],
+      "v2_corner_evidence": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-v2-corner-grid.jpg",
+      "v2_edge_review": "HOLD: TL and bottom-left 512-pixel tiles still show a narrow light/support strip; v2 is closer but not a fully frame-free painting-only crop. Do not release.",
+      "next_gate": "Test the natural-aspect v3 image at 320/390/tablet/desktop in the existing Angelus reader; confirm restored cropped shape and full source credit. No object-fit cover.",
+      "v3": {
+        "proposed_native_pixel_box_xyxy": [
+          106,
+          91,
+          3630,
+          3550
+        ],
+        "v3_corner_grid": {
+          "file": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-v3-four-corners.jpg",
+          "sha256": "fb81851cccea23190a726d9a4464f9b539a04edf7f0f5ff26a38c589a0b06f24",
+          "bytes": 299969
+        },
+        "responsive_previews": [
+          {
+            "file": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-v3-paint-only-720.webp",
+            "sha256": "b6564bf79fa27d8c0bca634ac40dd94dbcd372d081465385939ee52f2eb2c1bd",
+            "bytes": 113248,
+            "pixels": [
+              720,
+              707
+            ],
+            "production": false
+          },
+          {
+            "file": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-v3-paint-only-1440.webp",
+            "sha256": "01f24b6654a7e7ebe737391da2eabba964a9a0a007ac2df14ca7da0bf8cf9e63",
+            "bytes": 449394,
+            "pixels": [
+              1440,
+              1413
+            ],
+            "production": false
+          }
+        ],
+        "native_master_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+        "observed_result": "PRELIMINARY PAINTED-AREA VISUAL PASS: all four 512-pixel native corner tiles show painted image, no visible exposed oak frame; full 720px proof visibly retains Mary, Gabriel, dove, lilies, signed lectern and basket.",
+        "source_ratio_error": 0.000005431086200546886,
+        "same_locked_artwork": true,
+        "production_approved": false,
+        "human_final_edge_certification": false
+      }
+    },
+    {
+      "module": "evening",
+      "locked_painting": "Pierre-Édouard Frère — The Prayer, Wolverhampton OP6",
+      "exact_identity_url": "https://artuk.org/discover/artworks/the-prayer-19241",
+      "known_open_file": {
+        "source": "https://commons.wikimedia.org/wiki/Category:Pierre-%C3%89douard_Fr%C3%A8re",
+        "pixels": [
+          898,
+          1200
+        ]
+      },
+      "finding": "No verifiably open higher-resolution reproduction of this exact OP6 was found. Art UK image usage may carry additional terms. A different artist's Evening Prayer or the Rijksmuseum Frère photo is not the approved painting.",
+      "source_candidate_choice": "HOLD_NO_IMAGE_SWAP",
+      "published": false,
+      "release_gate": "HOLD_REUSABLE_FILE_AND_QUALITY"
+    }
+  ],
+  "aggregate": {
+    "compared_modules": 4,
+    "original_alternatives_archived": 2,
+    "rosary_bad_crop_candidates_disqualified": 2,
+    "angelus_refinement_pending": 0,
+    "evening_high_res_found": 0,
+    "photo_released": 0,
+    "rosary_clean_source_faithful_proofs": 2,
+    "angelus_cropped_source_faithful_proofs": 2,
+    "angelus_v2_human_signoff": false,
+    "angelus_preliminary_painted_border_candidates": 1
+  },
+  "no_source_original_bytes_edited": true,
+  "review_files": [
+    "assets/staged/prayer-wave1-photo-comparison-20261028/comparison-evidence.json",
+    "assets/staged/prayer-wave1-photo-comparison-20261028/rosary-source-comparison.jpg",
+    "assets/staged/prayer-wave1-photo-comparison-20261028/seven-sorrows-source-comparison.jpg",
+    "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-painted-perimeter-proposal.jpg",
+    "assets/staged/prayer-wave1-photo-comparison-20261028/candidate-proof-manifest.json",
+    "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-v2-corner-grid.jpg"
+  ]
+}

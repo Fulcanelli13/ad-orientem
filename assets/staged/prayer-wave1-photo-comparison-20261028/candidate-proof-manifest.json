@@ -1,0 +1,109 @@
+{
+  "schema": "AO_WAVE1_BEST_PHOTO_PROOF_V1",
+  "date": "2026-10-28",
+  "scope": "Research preview candidates ONLY; zero released artwork",
+  "production_releases": 0,
+  "cost_eur": 0,
+  "editorial_primaries_unchanged": true,
+  "entries": [
+    {
+      "module": "angelus",
+      "artwork": "Philippe de Champaigne — The Annunciation",
+      "museum": "The Met",
+      "accession": "2004.31",
+      "source_url": "https://www.metmuseum.org/art/collection/search/438724",
+      "master_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "original_dimensions": [
+        3741,
+        3658
+      ],
+      "proposed_crop_xyxy": [
+        88,
+        87,
+        3648,
+        3581
+      ],
+      "painted_surface_reference_cm": [
+        70.5,
+        69.2
+      ],
+      "painted_boundary_exactly_certified": false,
+      "dove_and_lilies_policy": "Natural-aspect contain only; no widescreen/portrait cover crop",
+      "rights": "Institutional public domain notice confirmed; final product provenance gate pending",
+      "previews": [
+        {
+          "path": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-paint-proposal-v2-720.webp",
+          "sha256": "ec572953cd37d878fd346f5f9f6d611cd5874cf9bbd2d08b1bab6f4e161c8738",
+          "pixels": [
+            720,
+            707
+          ],
+          "bytes": 98464,
+          "retouched": false,
+          "upscaled": false
+        },
+        {
+          "path": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-paint-proposal-v2-1440.webp",
+          "sha256": "b49675aeababae29b9fad5b833ee5c68cff8a0b1fc3c20095670f9a9e65a7169",
+          "pixels": [
+            1440,
+            1413
+          ],
+          "bytes": 380774,
+          "retouched": false,
+          "upscaled": false
+        }
+      ],
+      "original_master_bytes_modified": false,
+      "final_photo_approved": false
+    },
+    {
+      "module": "rosary",
+      "artwork": "Lorenzo Lotto — Madonna del Rosario",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lorenzo_Lotto_057.jpg",
+      "master_sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+      "original_dimensions": [
+        1880,
+        2886
+      ],
+      "proposed_crop_xyxy": null,
+      "all_fifteen_roundels_and_lower_angels_preserved": true,
+      "sailko_clip_crops_rejected": true,
+      "rights": "Commons single painting reproduction PD Mark; original compiled Yorck Project collection has GFDL metadata",
+      "suggested_credit": "Lorenzo Lotto, Madonna del Rosario, 1539 — reproduction via Wikimedia Commons / The Yorck Project",
+      "previews": [
+        {
+          "path": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary-yorck-complete-720.webp",
+          "sha256": "6356b633f286357467f2e660afd5db2c1fcde72582037c0e751cb6c3648817c2",
+          "pixels": [
+            720,
+            1105
+          ],
+          "bytes": 222636,
+          "retouched": false,
+          "upscaled": false
+        },
+        {
+          "path": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary-yorck-complete-1440.webp",
+          "sha256": "2a57f7adca6db6f92ab6de841c735bfaa76fff385490b61282c02ba953dd12f2",
+          "pixels": [
+            1440,
+            2211
+          ],
+          "bytes": 565774,
+          "retouched": false,
+          "upscaled": false
+        }
+      ],
+      "original_master_bytes_modified": false,
+      "final_photo_approved": false
+    }
+  ],
+  "next_gates": [
+    "human check Met native perimeter v2",
+    "institutional photo provenance",
+    "source-correct attribution",
+    "phone/desktop containment test",
+    "formal editorial approval"
+  ]
+}
