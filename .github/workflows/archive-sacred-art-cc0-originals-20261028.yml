@@ -1,0 +1,43 @@
+name: Archive expiring CC0 Sacred Art originals to free GitHub Release
+on:
+  push:
+    branches:
+      - research/module-hero-pd-masters-20261026
+    paths:
+      - scripts/art/archive-cc0-source-artifacts.py
+      - data/research/sacred-art-source-backup-cc0-eligibility-20261028.json
+      - .github/workflows/archive-sacred-art-cc0-originals-20261028.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: cc0-sacred-art-source-backup-20261028
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    name: Verify source originals then preserve eligible CC0 subset
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Python source compiles
+        run: python -m py_compile scripts/art/archive-cc0-source-artifacts.py
+      - name: Download 33 temporary artifact ZIPs and verify all 256 eligible SHA256 values
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/art/archive-cc0-source-artifacts.py \
+            --manifest data/research/sacred-art-source-backup-cc0-eligibility-20261028.json \
+            --output "$RUNNER_TEMP/cc0-verified" \
+            --cache "$RUNNER_TEMP/cc0-artifact-zips" \
+            --publish
+      - name: Report retained sources without deleting any artifacts
+        if: success()
+        run: |
+          echo "CC0 source backup complete; GitHub Release asset sizes were verified."
+          echo "Review https://github.com/${{ github.repository }}/releases/tag/sacred-art-cc0-sources-20261028"
