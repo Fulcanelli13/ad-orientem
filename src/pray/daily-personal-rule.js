@@ -209,15 +209,7 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
  });
  const extrasById=new Map(personalDailyOptions(daypart,language,p.edition).filter(x=>x.kind==="additional").map(x=>[x.id,x]));
  const selected=p.length==="full"&&p.mode==="expanded"?p.extras[daypart].filter(id=>extrasById.has(id)):[];
- const extras=selected.map(id=>{
-  const item=extrasById.get(id);
-  return {id:"personal-extra-"+id,sourceId:id,kind:item.legacyPrayerId?"personal-legacy":"personal-prayer",legacyId:item.legacyPrayerId||null,
-   title:item.title,language,text:item.text,sourceLabel:item.sourceLabel,
-   sourceUrl:item.sourceUrl,
-   sourceStatus:item.purpose?.startsWith("historical-office-")?"complete-optional-liturgical-selection":"complete-additional-manual-prayer",
-   sourceContextEn:item.sourceContextEn||null,sourceContextFr:item.sourceContextFr||null,
-   optional:true,sourceExact:true};
- });
+ const extras=selected.map(id=>optionalPersonalPrayerRow(extrasById.get(id),language));
  // Append selected complete optional devotions in the order saved by the
  // user. The printed catechism's mandatory stages retain their exact order.
  return {mode:"personal",daypart,edition:p.edition,language,length:p.length,brief:p.length==="brief",expanded:p.length==="full"&&p.mode==="expanded",
@@ -227,6 +219,20 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
   briefIds:briefIDs,briefCustom:Boolean(p.briefSelections[p.edition]?.[daypart]),
   offeredExtras:[...extrasById.values()],availableVariants:variants,purposeChoices,selectedPurposes,
   sourceLabel:edition.sourceLabel,sourceUrl:edition.sourceUrl};
+}
+/** One immutable source-owned view for both a saved optional extra and
+ * direct reading. Direct entry must not require recording a purpose choice
+ * or adding an optional text to St Pius X's fixed printed sequence.
+ */
+function optionalPersonalPrayerRow(item,language){
+ return {id:"personal-extra-"+item.id,sourceId:item.id,
+  kind:item.legacyPrayerId?"personal-legacy":"personal-prayer",
+  legacyId:item.legacyPrayerId||null,title:item.title,language,text:item.text,
+  sourceLabel:item.sourceLabel,sourceUrl:item.sourceUrl,
+  sourceStatus:item.purpose?.startsWith("historical-office-")
+   ?"complete-optional-liturgical-selection":"complete-additional-manual-prayer",
+  sourceContextEn:item.sourceContextEn||null,sourceContextFr:item.sourceContextFr||null,
+  optional:true,sourceExact:true};
 }
 /** Read one unmodified source prayer without adding it to the daily rule.
  * Both the printed edition and optional source-language corpus are searchable.
@@ -240,10 +246,7 @@ export function personalDailyDirectPlan({daypart="morning",prefs=defaultPersonal
  if(!selected){
   const item=personalDailyOptions(daypart,p.language,p.edition).find(row=>row.id===sourceId&&row.kind==="additional");
   if(!item)return null;
-  const single=buildPersonalDailyPlan({daypart,prefs:{
-   ...full,mode:"expanded",extras:{...full.extras,[daypart]:[item.id]}
-  }});
-  selected=single.rows.find(row=>row.sourceId===item.id);
+  selected=optionalPersonalPrayerRow(item,p.language);
  }
  return selected?{...base,rows:[selected],direct:true,sourceId,selectedExtras:[]}:null;
 }
