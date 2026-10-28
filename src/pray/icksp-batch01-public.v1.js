@@ -50,3 +50,23 @@ export const B01_AUGUST_QUEEN_SOURCE=Object.freeze({
  status:'OFFICIAL_INSTITUTE_PAGE_SOURCE_LINK_NO_NEW_TRANSLATION',
  relation:'RELATED_TO_ANGELUS_AND_ROSARY_NOT_PART_OF_EITHER'
 });
+// Completely separate French prayer witness; never mutate the published
+// 2005 French Compendium text (which actually prints "Dans cette foi" here).
+export const B01_FRENCH_HOPE_TRADITION=Object.freeze({
+ id:"act_of_hope_traditional_fr_related",
+ title:"Act of Hope · traditional French witness",
+ titleFr:"Acte d'espérance · version française traditionnelle",
+ fr:"Mon Dieu, j’espère avec une ferme confiance, que vous me donnerez, par les mérites de Jésus-Christ, votre grâce en ce monde et, si j’observe vos commandements, le bonheur éternel dans l’autre, parce que vous l’avez promis et que vous êtes fidèle dans vos promesses. Dans cette Espérance, je veux vivre et mourir.",
+ en:null,la:null,
+ provenance:Object.freeze({original:"FRENCH_INDEPENDENT_DEVOTIONAL_WITNESS",url:"https://merescatholiques.org/prieres/",note:"Independent complete Act of Hope; not a verbatim emendation of the official printed 2005 French Compendium; no English or Latin translation inferred."})
+});
+export const B01_SHORT_GRACE_CATECHISM=Object.freeze({
+ id:"grace_after_meals_baltimore_catechism_short",
+ title:"Grace after Meals · Baltimore Catechism No. 3",
+ titleFr:"Grâces après le repas · Catéchisme de Baltimore",
+ en:"We give Thee thanks for all Thy benefits, O Almighty God, who livest and reignest for ever; and may the souls of the faithful departed, through the mercy of God, rest in peace. Amen.",
+ fr:"Nous vous rendons grâce pour tous vos bienfaits, Dieu tout-puissant, qui vivez et régnez pour les siècles des siècles ; et que les âmes des fidèles défunts, par la miséricorde de Dieu, reposent en paix. Amen.",
+ la:null,
+ provenance:Object.freeze({en:"HISTORICAL_CATECHISM_EN_TRANSCRIPTION",fr:"EDITORIAL_TRANSLATION",la:"NOT_INFERRED",work:"Baltimore Catechism No. 3 · Grace After Meals",url:"https://novenaregina.com/catechism/prayers-and-christian-doctrine",note:"Do not conflate this short Catechism form with the canonical shortened composite or the longer 1888 Baltimore Manual."})
+});
+
