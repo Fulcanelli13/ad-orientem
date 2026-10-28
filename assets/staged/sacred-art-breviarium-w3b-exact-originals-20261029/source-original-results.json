@@ -5,10 +5,10 @@
   "attempts_after_429": 0,
   "original_sources_unchanged": true,
   "processed_cases": 6,
-  "originals_verified_and_archived": 0,
-  "not_attempted_after_429": 0,
-  "http_429_received": 0,
-  "research_git_original_bytes": 0,
+  "originals_verified_and_archived": 2,
+  "not_attempted_after_429": 3,
+  "http_429_received": 1,
+  "research_git_original_bytes": 8272231,
   "new_pristine_certifications": 0,
   "production_released": 0,
   "cost_eur": 0,
@@ -22,8 +22,24 @@
       "native_quality_final_certified": false,
       "pristine_certified": false,
       "production_allowed": false,
-      "status": "SOURCE_OR_STORAGE_HOLD",
-      "error": "AttributeError: 'list' object has no attribute 'values'"
+      "status": "ORIGINAL_SOURCE_EXACT_HASH_ARCHIVED_PENDING_NATIVE_PHOTO_REVIEW",
+      "source_file_page": "https://commons.wikimedia.org/wiki/File:Saint_francis_in_meditation_075217.JPG",
+      "path": "assets/staged/sacred-art-breviarium-w3b-exact-originals-20261029/plate-zurbaran-francis.jpg",
+      "sha256": "113427179a174a8b4aa45c29c7243503add6e00629173081902bcea45bab69c5",
+      "sha1": "5eb6188546a463af264726153f1ded8452c2054a",
+      "bytes": 2102856,
+      "native_pixels": [
+        2847,
+        3688
+      ],
+      "metadata": {
+        "has_embedded_icc": false,
+        "exif_tags": 16
+      },
+      "inspection_proof": {
+        "path": "assets/staged/sacred-art-breviarium-w3b-exact-originals-20261029/plate-zurbaran-francis-native-corners.jpg",
+        "sha256": "1936cd02022cfcb51e95a485a6c5a265a344f4aadad995cd18196e73af6761d0"
+      }
     },
     {
       "plate_id": "plate-murillo-immaculate",
@@ -34,8 +50,24 @@
       "native_quality_final_certified": false,
       "pristine_certified": false,
       "production_allowed": false,
-      "status": "SOURCE_OR_STORAGE_HOLD",
-      "error": "AttributeError: 'list' object has no attribute 'values'"
+      "status": "ORIGINAL_SOURCE_EXACT_HASH_ARCHIVED_PENDING_NATIVE_PHOTO_REVIEW",
+      "source_file_page": "https://commons.wikimedia.org/wiki/File:Inmaculada_Concepci%C3%B3n_(Murillo,_El_Escorial).jpg",
+      "path": "assets/staged/sacred-art-breviarium-w3b-exact-originals-20261029/plate-murillo-immaculate.jpg",
+      "sha256": "fc324fbea27fcd8950c11b54176f061f1f9f2ddd1d279e24501c907edc16394f",
+      "sha1": "ec8b31af0348348ef3cca39519eb8b32a85cfcdd",
+      "bytes": 6169375,
+      "native_pixels": [
+        1888,
+        2717
+      ],
+      "metadata": {
+        "has_embedded_icc": true,
+        "exif_tags": 14
+      },
+      "inspection_proof": {
+        "path": "assets/staged/sacred-art-breviarium-w3b-exact-originals-20261029/plate-murillo-immaculate-native-corners.jpg",
+        "sha256": "f9cfcb6483a0ce06cc449bdcd5023bb8f06d1c7dd35749b580d3063448cb8672"
+      }
     },
     {
       "plate_id": "plate-reni-cecilia",
@@ -46,8 +78,9 @@
       "native_quality_final_certified": false,
       "pristine_certified": false,
       "production_allowed": false,
-      "status": "SOURCE_OR_STORAGE_HOLD",
-      "error": "AttributeError: 'list' object has no attribute 'values'"
+      "status": "HTTP_SOURCE_HOLD",
+      "http_status": 429,
+      "error": "HTTP Error 429: Too many requests (f061ab2)"
     },
     {
       "plate_id": "plate-velazquez-crucified",
@@ -58,8 +91,7 @@
       "native_quality_final_certified": false,
       "pristine_certified": false,
       "production_allowed": false,
-      "status": "SOURCE_OR_STORAGE_HOLD",
-      "error": "AttributeError: 'list' object has no attribute 'values'"
+      "status": "NOT_ATTEMPTED_AFTER_COMMONS_429"
     },
     {
       "plate_id": "plate-raphael-transfiguration",
@@ -70,8 +102,7 @@
       "native_quality_final_certified": false,
       "pristine_certified": false,
       "production_allowed": false,
-      "status": "SOURCE_OR_STORAGE_HOLD",
-      "error": "AttributeError: 'list' object has no attribute 'values'"
+      "status": "NOT_ATTEMPTED_AFTER_COMMONS_429"
     },
     {
       "plate_id": "plate-caravaggio-matthew",
@@ -82,8 +113,7 @@
       "native_quality_final_certified": false,
       "pristine_certified": false,
       "production_allowed": false,
-      "status": "SOURCE_OR_STORAGE_HOLD",
-      "error": "AttributeError: 'list' object has no attribute 'values'"
+      "status": "NOT_ATTEMPTED_AFTER_COMMONS_429"
     }
   ]
 }
