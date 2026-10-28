@@ -9,6 +9,7 @@ const TRADITIONAL=[
   ["pray.sacred_hymns","Sacred Hymns & Canticles","traditional-devotion"],
   ["pray.marian_protection","Marian Protection Prayer","traditional-devotion"],
   ["pray.prayers_for_priests","Prayers for Priests","traditional-devotion"],
+  ["pray.st_therese_devotions","St Therese Institute Devotions","traditional-devotion"],
   ["pray.holy_name_litany","Litany of the Holy Name","traditional-devotion"],
   ["pray.nightly_examen","Nightly Examination","daily-prayer"],
   ["pray.meal_prayers","Grace at Meals","daily-prayer"],
