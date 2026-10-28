@@ -1,0 +1,27 @@
+name: Prayer Sacred Art B7 - source pointer and candidate integrity
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/prayer-art-b7-integrity-20261029.yml
+      - scripts/art/validate-prayer-art-b7-source-recovery-20261029.mjs
+      - data/research/prayer-sacred-art-pristine-master-registry-20261028.v1.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  assert-zero-releases-and-verify-new-source-originals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Recheck 22 approvals and B7 source images at original binary hashes
+        run: |
+          node --check scripts/art/validate-prayer-art-b7-source-recovery-20261029.mjs
+          node scripts/art/validate-prayer-art-b7-source-recovery-20261029.mjs
