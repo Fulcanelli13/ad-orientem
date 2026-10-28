@@ -1340,7 +1340,11 @@ try{
     if(route==="pray.morning_evening"){
        assert.equal(await page.locator("#aoPray435930 [data-ao-pray-guide-card]").count(),1,
          "Morning/Evening must open as a single guided prayer card");
-       assert.equal(await page.locator("#aoPray435930 [data-tp381-daily-mode='guided']").getAttribute("aria-pressed"),"true");
+       assert.equal(await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").count(),1,
+         "Morning/Evening guided prayer must offer the direct named-prayer chooser");
+       assert.match(await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").innerText(),
+         /Choose a prayer|Choisir une prière/,
+         "Morning/Evening should expose the current direct prayer access control");
        await shot("03g-pray-morning-guided");
        const details=page.locator("#aoPray435930 [data-ao-daily-options]");
        await details.locator("summary").click();
