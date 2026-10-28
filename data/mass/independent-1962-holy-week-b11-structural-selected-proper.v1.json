@@ -3,7 +3,7 @@
   "version": 1,
   "editorialDate": "2026-10-28",
   "ownerIssue": 894,
-  "status": "SOURCE_AND_BROWSER_CI_PROOF_REQUIRED",
+  "status": "B11_CROSSWALK_RUNTIME_SOURCE_VERIFIED_WITH_ONE_CHRISM_HOLD",
   "primaryWitness": "data/mass/independent-1962-holy-week-b09-original-image-witness.v1.json",
   "precedingCrosswalk": "data/mass/independent-1962-holy-week-b10-original-runtime-crosswalk.v1.json",
   "sourceYears": [
@@ -17,16 +17,16 @@
     "remainingB10Observations": 7,
     "structuralRiteMatches": 5,
     "structuralHolds": 1,
-    "sourceSelectedIntroitReadyForBrowserCheck": 1,
     "fullyCollatedLatinTexts": 0,
-    "certifiedEnglishFrenchTranslations": 0
+    "certifiedEnglishFrenchTranslations": 0,
+    "sourceSelectedIntroitMatches": 1
   },
   "nonClaims": [
     "No Chrism Mass full formulary or autonomous choice certification",
     "No full 1962 Holy Week text transcription",
     "No English/French critical certification",
-    "No 2024–2029 annual liturgical projection",
-    "No modification to the 65-card Ordinary or any distinct-rite graph"
+    "No modification to the 65-card Ordinary or any distinct-rite graph",
+    "Only two exact Holy Thursday production calendar dates (2026-04-02 and 2027-03-25) were tested; no full-year critical collation"
   ],
   "records": [
     {
@@ -73,9 +73,9 @@
     },
     {
       "id": "HOLY_THURSDAY_INTROIT",
-      "status": "ACTUAL_SELECTED_1962_PROPER_MATCH_PENDING_CI",
+      "status": "MATCHED_NATIVE_SELECTED_LATIN_INTROIT",
       "owner": "AO_RUNTIME_V8.resolver.resolveDay(2026-04-02 and 2027-03-25) / properToReaderSlots",
-      "proof": "Compare the selected Tempora/Quad6-4r Introit source in original Latin and the actual EN/FR Reader projection against the Vatican 1962 p.154 scan 236. This exact browser probe is the gating test, not a source-text self comparison.",
+      "proof": "Actual normal production AO_RUNTIME_V8.resolver.resolveDay on 2026-04-02 and 2027-03-25 selects first-class Tempora/Quad6-4r. Its full source Latin Introit contains the Vatican 1962 printed p.154 scan 236 incipit; EN/FR Proper and Latin paragraphs in both native Reader slots are READY. Verified by source browser test CI #40642776094.",
       "printedPage": 154
     }
   ]
