@@ -381,6 +381,45 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
  #aoPray435930 .aoDailyFormulationChoices>button{padding-inline:10px;font-size:.73rem}
 }
 
+
+/* B09: direct source-owned Communion choices; the actual prayer stays primary. */
+#aoPray435930 .aoCommunionPurposePicker{display:grid;min-width:0;gap:9px;margin:4px 0 13px}
+#aoPray435930 .aoCommunionPurposeIntro{margin:0;color:var(--muted,#bbb4aa);
+ font:500 .73rem/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoCommunionPurposeGroups,#aoPray435930 .aoCommunionPurposeOptions{
+ display:flex;min-width:0;align-items:stretch;gap:6px;padding:2px 1px 6px;
+ overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;
+ scrollbar-width:none;touch-action:pan-x pan-y
+}
+#aoPray435930 .aoCommunionPurposeGroups::-webkit-scrollbar,
+#aoPray435930 .aoCommunionPurposeOptions::-webkit-scrollbar{display:none}
+#aoPray435930 .aoCommunionPurposeGroups button,
+#aoPray435930 .aoCommunionPurposeOptions button{
+ flex:0 0 auto;min-height:44px;max-width:220px;padding:9px 12px;
+ border:1px solid var(--liturgical-border,rgba(199,174,109,.32));
+ border-radius:11px;background:rgba(18,26,35,.15);color:var(--text,#eee9df);
+ font:500 .76rem/1.3 var(--ao-font-ui,system-ui,sans-serif);text-align:center;
+ white-space:normal
+}
+#aoPray435930 .aoCommunionPurposeGroups button[aria-pressed="true"]{
+ border-color:var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.12));
+ color:var(--liturgical,#dfc98f)
+}
+#aoPray435930 .aoCommunionPurposeOptions button[aria-pressed="true"]{
+ border-color:var(--liturgical,#c7ae6d);background:var(--liturgical,#c7ae6d);
+ color:#202125;font-weight:650
+}
+#aoPray435930 .aoCommunionPurposePicker button:focus-visible{
+ outline:2px solid var(--liturgical,#e7cb98);outline-offset:2px
+}
+#aoPray435930 .aoCommunionPurposeNote{
+ color:var(--muted,#aab0b5);font:400 .69rem/1.48 var(--ao-font-ui,system-ui,sans-serif)
+}
+@media(max-width:360px){
+ #aoPray435930 .aoCommunionPurposeGroups button,
+ #aoPray435930 .aoCommunionPurposeOptions button{padding:8px 10px;max-width:170px}
+}
+
 `;
 
 export function installTraditionalPrayStyles(doc=globalThis.document){
