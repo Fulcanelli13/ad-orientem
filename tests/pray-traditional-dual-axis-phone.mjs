@@ -161,14 +161,35 @@ try{
  const evening=await snapshot();
  assert.equal(evening.index,0);assert.equal(evening.kind,"daily");
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-quiet-daily-horizon"),"evening");
- assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"13");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"10");
  await page.locator("#aoPray435930 .aoDevoStop").nth(8).evaluate(b=>b.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-phase"),"3",
   "Evening atmosphere must pass from blue hour to nightfall");
- await page.locator("#aoPray435930 .aoDevoStop").nth(13).evaluate(b=>b.click());
+ await page.locator("#aoPray435930 .aoDevoStop").nth(10).evaluate(b=>b.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-phase"),"4");
  await page.screenshot({path:resolve(captures,"evening-night-390-fr.png"),animations:"disabled"});
 
+
+ // Personal rule: full St Pius X order and source-owned flexibility are
+ // integrated into this same live dual-axis reader, not a second app.
+ await page.locator("#aoPray435930 [data-ao-personal-settings] summary").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-personal-action='edition'][data-tp381-personal-value='1913']").getAttribute("aria-pressed"),"true");
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-personal-action='language'][data-tp381-personal-value='fr']").getAttribute("aria-pressed"),"true");
+ const extras=page.locator("#aoPray435930 [data-tp381-personal-action='extra']");
+ assert.ok(await extras.count()>=10,"French evening must have sourced optional complete prayers");
+ const firstExtra=await extras.first().getAttribute("data-tp381-personal-value");
+ await extras.first().evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-personal-settings]").evaluate(el=>el.open),true,"Customizer should stay open across saved choices");
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-personal-action='mode'][data-tp381-personal-value='expanded']").getAttribute("aria-pressed"),"true");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"11","Selected complete extra appended once");
+ await page.locator("#aoPray435930 [data-tp381-personal-action='language'][data-tp381-personal-value='la']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"10","French-only extra must never appear as a Latin translation");
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-personal-action='edition'][data-tp381-personal-value='1905']").evaluate(el=>el.click()),undefined);
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"8","1905 printed evening order must be distinct");
+ await page.locator("#aoPray435930 [data-tp381-personal-action='reset']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"10","Reset restores the 1913 evening order");
+ const saved=await page.evaluate(()=>localStorage.getItem("ao.pray.personal-rule.v1"));
+ assert.ok(saved&&saved.includes('"edition":"1913"')&&!saved.includes("De profundis"));
  await open("pray.nightly_examen");
  await page.screenshot({path:resolve(captures,"examen-390-fr.png"),animations:"disabled"});
  const exam=await snapshot();
