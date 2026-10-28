@@ -1,0 +1,1548 @@
+{
+  "schema": "AO_PRAY_ARTWORK_PRELIMINARY_MODULE_PROPOSALS_V1",
+  "date": "2026-10-28",
+  "status": "RESEARCH_CROSS_MODULE_CANDIDATES_NOT_FINAL_USER_ASSIGNMENTS",
+  "target": {
+    "distinctPaintingsPerVisualPoolMin": 3,
+    "distinctPaintingsPerVisualPoolMax": 5,
+    "dedup": "canonical physical artwork ID, not photograph filename",
+    "targetIsAdvisory": true
+  },
+  "source": "data/research/pray-artwork-historical-authority-20261028.v1.json",
+  "notes": [
+    "User-approved art from other contexts appears as cross-placement proposal, not auto-granted module approval",
+    "Latest 57 keeps and 52 rejects are scoped to original review placements; a cross-placement can be reconsidered",
+    "Some historical subject approvals have unresolved image master and commercial reuse rights; licensing and pristine crop must pass before publication",
+    "No paid images, licences, cloud costs, or rights-permission requests",
+    "The Rosary 15 mystery paintings and Stations 14 station paintings are content-specific and independent of 3–5 landing hero target"
+  ],
+  "currentPrayerRouteCount": 26,
+  "visualPoolCount": 29,
+  "preliminaryPools": [
+    {
+      "routeId": "pray.morning_evening",
+      "name": "Morning & Evening Prayer",
+      "family": "daily",
+      "rotation": "TIME_OF_DAY_AND_USER_SESSION",
+      "proposals": [
+        {
+          "key": "morning",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "morning--primary",
+              "originalModule": "Morning Prayer",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Song of the Lark",
+                "artist": "Jules Breton",
+                "source": "https://www.artic.edu/artworks/94841/the-song-of-the-lark"
+              }
+            }
+          ],
+          "protectedHistoricSubjectSelections": [],
+          "uniqueReferenceCountEstimate": 1,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 2,
+          "note": "Morning-only approved pool; do not include Millet's Angelus"
+        },
+        {
+          "key": "evening",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "evening--primary",
+              "originalModule": "Evening Prayer",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Prayer",
+                "artist": "Pierre-Édouard Frère",
+                "source": "https://artuk.org/discover/artworks/the-prayer-19241"
+              }
+            },
+            {
+              "imageReviewId": "morning--millet-angelus",
+              "originalModule": "morning",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "PREVIOUSLY_SELECTED_FOR_EVENING_RESTORED",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            },
+            {
+              "imageReviewId": "angelus--primary",
+              "originalModule": "Angelus",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Annunciation",
+                "artist": "Philippe de Champaigne",
+                "source": "https://www.metmuseum.org/art/collection/search/438724"
+              }
+            }
+          ],
+          "protectedHistoricSubjectSelections": [],
+          "uniqueReferenceCountEstimate": 3,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": "Millet's Angelus is restored here from prior Evening Prayer approval; Champaigne is proposed for contextual reuse"
+        }
+      ],
+      "curatorialNotes": null
+    },
+    {
+      "routeId": "pray.angelus_regina",
+      "name": "Angelus / Regina Cæli",
+      "family": "daily",
+      "rotation": "PASCHAL_SEASON_THEN_DAILY",
+      "proposals": [
+        {
+          "key": "angelus",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "angelus--primary",
+              "originalModule": "Angelus",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Annunciation",
+                "artist": "Philippe de Champaigne",
+                "source": "https://www.metmuseum.org/art/collection/search/438724"
+              }
+            },
+            {
+              "imageReviewId": "angelus--caravaggio",
+              "originalModule": "angelus",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            },
+            {
+              "imageReviewId": "angelus--gentileschi",
+              "originalModule": "angelus",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            },
+            {
+              "imageReviewId": "angelus--murillo-annunciation",
+              "originalModule": "angelus",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            }
+          ],
+          "protectedHistoricSubjectSelections": [],
+          "uniqueReferenceCountEstimate": 4,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        },
+        {
+          "key": "regina_caeli",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "regina--primary",
+              "originalModule": "Regina Cæli",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "Resurrection of Christ",
+                "artist": "Peter Paul Rubens",
+                "source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg"
+              }
+            },
+            {
+              "imageReviewId": "regina--murillo-resurrection",
+              "originalModule": "regina",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            },
+            {
+              "imageReviewId": "regina--jan-janssens",
+              "originalModule": "regina",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            }
+          ],
+          "protectedHistoricSubjectSelections": [],
+          "uniqueReferenceCountEstimate": 3,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": null
+    },
+    {
+      "routeId": "pray.rosary",
+      "name": "The Holy Rosary",
+      "family": "chaplets",
+      "rotation": "ROSARY_MYSTERY_AND_WEEKDAY",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "rosary--primary",
+              "originalModule": "The Holy Rosary",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "Madonna del Rosario",
+                "artist": "Lorenzo Lotto",
+                "source": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/47818/Lotto%20Lorenzo%2C%20Madonna%20del%20Rosario"
+              }
+            },
+            {
+              "imageReviewId": "rosary--caravaggio",
+              "originalModule": "rosary",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            },
+            {
+              "imageReviewId": "rosary--vandyck-madonna",
+              "originalModule": "rosary",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "ROS-01",
+              "subject": "Annunciation",
+              "artist": "Philippe de Champaigne",
+              "title": "The Annunciation",
+              "originalArtworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+              "source": "https://www.metmuseum.org/art/collection/search/438724",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "ROS-13",
+              "subject": "Pentecost",
+              "artist": "Jean Restout",
+              "title": "Pentecost",
+              "originalArtworkId": "ART-ean-estout-entecost",
+              "source": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "ROS-14",
+              "subject": "Assumption",
+              "artist": "Peter Paul Rubens",
+              "title": "Assumption of the Virgin",
+              "originalArtworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "ROS-15",
+              "subject": "Coronation of Mary",
+              "artist": "Peter Paul Rubens",
+              "title": "Coronation of the Virgin — oil sketch",
+              "originalArtworkId": "ART-eter-aul-ubens-oronation-of-the-irgin-oil-sketch",
+              "source": "https://www.metmuseum.org/art/collection/search/437524",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 7,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": "15 traditional mystery illustrations independently retained. Alternate Caravaggio photographs are not distinct artworks."
+    },
+    {
+      "routeId": "pray.meal_prayers",
+      "name": "Grace at Meals",
+      "family": "daily",
+      "rotation": "BEFORE_AFTER_MEAL",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "BIB-G14",
+              "subject": "Multiplication of Loaves",
+              "artist": "Giovanni Lanfranco",
+              "title": "Miracle of Loaves and Fishes",
+              "originalArtworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "BIB-G24",
+              "subject": "Last Supper / Institution of Eucharist",
+              "artist": "Philippe de Champaigne",
+              "title": "La Petite Cène",
+              "originalArtworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 2,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 1,
+          "note": null
+        }
+      ],
+      "curatorialNotes": "Do not replace traditional prayer iconography with unrelated banquet scenes."
+    },
+    {
+      "routeId": "pray.nightly_examen",
+      "name": "Nightly Examination",
+      "family": "daily",
+      "rotation": "EVENING_FIXED_OR_DAILY",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "confession--primary",
+              "originalModule": "Confession",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Return of the Prodigal Son",
+                "artist": "Bartolomé Esteban Murillo",
+                "source": "https://www.nga.gov/artworks/34956-return-prodigal-son"
+              }
+            },
+            {
+              "imageReviewId": "confession--latour-magdalen",
+              "originalModule": "confession",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "SNT-AP-01",
+              "subject": "Saint Peter",
+              "artist": "Jusepe de Ribera",
+              "title": "Saint Peter — Apostolate",
+              "originalArtworkId": "ART-usepe-de-ibera-aint-eter-postolate",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 3,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": null
+    },
+    {
+      "routeId": "pray.rosary_methods",
+      "name": "Ways to pray the Rosary",
+      "family": "chaplets",
+      "rotation": "METHOD_SELECTION",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "rosary--primary",
+              "originalModule": "The Holy Rosary",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "Madonna del Rosario",
+                "artist": "Lorenzo Lotto",
+                "source": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/47818/Lotto%20Lorenzo%2C%20Madonna%20del%20Rosario"
+              }
+            },
+            {
+              "imageReviewId": "rosary--caravaggio",
+              "originalModule": "rosary",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            },
+            {
+              "imageReviewId": "rosary--vandyck-madonna",
+              "originalModule": "rosary",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            }
+          ],
+          "protectedHistoricSubjectSelections": [],
+          "uniqueReferenceCountEstimate": 3,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": "Shared painting inventory with Rosary; no duplicate original registrations."
+    },
+    {
+      "routeId": "pray.divine_mercy",
+      "name": "Chaplet of Divine Mercy",
+      "family": "chaplets",
+      "rotation": "DAILY_APPROVED_ONLY",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "confession--primary",
+              "originalModule": "Confession",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Return of the Prodigal Son",
+                "artist": "Bartolomé Esteban Murillo",
+                "source": "https://www.nga.gov/artworks/34956-return-prodigal-son"
+              }
+            },
+            {
+              "imageReviewId": "sorrows--primary",
+              "originalModule": "Seven Sorrows",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "Virgin of the Seven Sorrows (Mare de Déu dels Set Dolors)",
+                "artist": "Attributed to the Master of the Female Half-Lengths",
+                "source": "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000"
+              }
+            }
+          ],
+          "protectedHistoricSubjectSelections": [],
+          "uniqueReferenceCountEstimate": 2,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 1,
+          "note": null
+        }
+      ],
+      "curatorialNotes": "Traditional Catholic context and actual subject match require explicit curation; no false exact Divine Mercy image attribution."
+    },
+    {
+      "routeId": "pray.adoration",
+      "name": "Adoration & Visit",
+      "family": "eucharistic",
+      "rotation": "SUBMODE_THEN_DAILY",
+      "proposals": [
+        {
+          "key": "adoration",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "adoration--primary",
+              "originalModule": "Adoration & Benediction",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Virgin Adoring the Host",
+                "artist": "Jean Auguste Dominique Ingres",
+                "source": "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg"
+              }
+            },
+            {
+              "imageReviewId": "adoration--allegory",
+              "originalModule": "adoration",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "BIB-G24",
+              "subject": "Last Supper / Institution of Eucharist",
+              "artist": "Philippe de Champaigne",
+              "title": "La Petite Cène",
+              "originalArtworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 3,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        },
+        {
+          "key": "visit",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "visit--primary",
+              "originalModule": "Visit to the Blessed Sacrament",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Adoration of the Shepherds",
+                "artist": "Gerrit van Honthorst",
+                "source": "https://www.wallraf.museum/2017-11-17-honthorst/"
+              }
+            },
+            {
+              "imageReviewId": "visit--ribalta-shepherds",
+              "originalModule": "visit",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            },
+            {
+              "imageReviewId": "visit--murillo-magi",
+              "originalModule": "visit",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            },
+            {
+              "imageReviewId": "visit--murillo-nativity",
+              "originalModule": "visit",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            }
+          ],
+          "protectedHistoricSubjectSelections": [],
+          "uniqueReferenceCountEstimate": 4,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": "Nativity paintings in Visit are thematic, not literal exposition."
+    },
+    {
+      "routeId": "pray.benediction",
+      "name": "Benediction",
+      "family": "eucharistic",
+      "rotation": "DAILY_WITHIN_RITE",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "adoration--primary",
+              "originalModule": "Adoration & Benediction",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Virgin Adoring the Host",
+                "artist": "Jean Auguste Dominique Ingres",
+                "source": "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg"
+              }
+            },
+            {
+              "imageReviewId": "adoration--allegory",
+              "originalModule": "adoration",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "BIB-G24",
+              "subject": "Last Supper / Institution of Eucharist",
+              "artist": "Philippe de Champaigne",
+              "title": "La Petite Cène",
+              "originalArtworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 3,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": null
+    },
+    {
+      "routeId": "pray.forty_hours",
+      "name": "Forty Hours",
+      "family": "eucharistic",
+      "rotation": "SESSION_SEGMENT",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "adoration--primary",
+              "originalModule": "Adoration & Benediction",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Virgin Adoring the Host",
+                "artist": "Jean Auguste Dominique Ingres",
+                "source": "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg"
+              }
+            },
+            {
+              "imageReviewId": "adoration--allegory",
+              "originalModule": "adoration",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "BIB-G24",
+              "subject": "Last Supper / Institution of Eucharist",
+              "artist": "Philippe de Champaigne",
+              "title": "La Petite Cène",
+              "originalArtworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 3,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": null
+    },
+    {
+      "routeId": "pray.communion_treasury",
+      "name": "Traditional Communion Prayers",
+      "family": "eucharistic",
+      "rotation": "BEFORE_AFTER_COMMUNION",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "adoration--primary",
+              "originalModule": "Adoration & Benediction",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Virgin Adoring the Host",
+                "artist": "Jean Auguste Dominique Ingres",
+                "source": "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg"
+              }
+            },
+            {
+              "imageReviewId": "visit--primary",
+              "originalModule": "Visit to the Blessed Sacrament",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Adoration of the Shepherds",
+                "artist": "Gerrit van Honthorst",
+                "source": "https://www.wallraf.museum/2017-11-17-honthorst/"
+              }
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "BIB-G24",
+              "subject": "Last Supper / Institution of Eucharist",
+              "artist": "Philippe de Champaigne",
+              "title": "La Petite Cène",
+              "originalArtworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 3,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": null
+    },
+    {
+      "routeId": "pray.confession",
+      "name": "Confession",
+      "family": "penance",
+      "rotation": "DAILY_APPROVED_ONLY",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "confession--primary",
+              "originalModule": "Confession",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Return of the Prodigal Son",
+                "artist": "Bartolomé Esteban Murillo",
+                "source": "https://www.nga.gov/artworks/34956-return-prodigal-son"
+              }
+            },
+            {
+              "imageReviewId": "confession--latour-magdalen",
+              "originalModule": "confession",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "SNT-AP-01",
+              "subject": "Saint Peter",
+              "artist": "Jusepe de Ribera",
+              "title": "Saint Peter — Apostolate",
+              "originalArtworkId": "ART-usepe-de-ibera-aint-eter-postolate",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 3,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": null
+    },
+    {
+      "routeId": "pray.penitential_psalms",
+      "name": "Seven Penitential Psalms",
+      "family": "penance",
+      "rotation": "PSALM_OR_SESSION",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "confession--latour-magdalen",
+              "originalModule": "confession",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            },
+            {
+              "imageReviewId": "confession--primary",
+              "originalModule": "Confession",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Return of the Prodigal Son",
+                "artist": "Bartolomé Esteban Murillo",
+                "source": "https://www.nga.gov/artworks/34956-return-prodigal-son"
+              }
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "SNT-AP-01",
+              "subject": "Saint Peter",
+              "artist": "Jusepe de Ribera",
+              "title": "Saint Peter — Apostolate",
+              "originalArtworkId": "ART-usepe-de-ibera-aint-eter-postolate",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 3,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": null
+    },
+    {
+      "routeId": "pray.litany_saints",
+      "name": "Litany of the Saints",
+      "family": "penance",
+      "rotation": "LITURGICAL_SAINT_CONTEXT",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "saints--vaneyck",
+              "originalModule": "saints",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            },
+            {
+              "imageReviewId": "saints--saraceni",
+              "originalModule": "saints",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "DEV-16",
+              "subject": "Saint Michael",
+              "artist": "Guido Reni",
+              "title": "Archangel Michael Defeating Satan",
+              "originalArtworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "SNT-OT-02",
+              "subject": "Saint Michael Archangel",
+              "artist": "Guido Reni",
+              "title": "Archangel Michael Defeating Satan",
+              "originalArtworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "SNT-OT-23",
+              "subject": "Saint Cecilia",
+              "artist": "Pietro da Cortona",
+              "title": "Saint Cecilia",
+              "originalArtworkId": "ART-ietro-da-ortona-aint-ecilia",
+              "source": "https://www.nationalgallery.org.uk/paintings/pietro-da-cortona-saint-cecilia",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 4,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": null
+    },
+    {
+      "routeId": "pray.stations",
+      "name": "Stations of the Cross",
+      "family": "passion",
+      "rotation": "STATION_NUMBER",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "STN-01",
+              "subject": "Station 1: Christ Condemned to Death",
+              "artist": "Giandomenico Tiepolo",
+              "title": "San Polo Via Crucis — Station 01: Christ Condemned to Death",
+              "originalArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-01-hrist-ondemned-to-eath",
+              "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "STN-06",
+              "subject": "Station 6: Veronica Wipes His Face",
+              "artist": "Giandomenico Tiepolo",
+              "title": "San Polo Via Crucis — Station 06: Veronica Wipes His Face",
+              "originalArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-06-eronica-ipes-is-ace",
+              "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "STN-12",
+              "subject": "Station 12: Death on the Cross",
+              "artist": "Giandomenico Tiepolo",
+              "title": "San Polo Via Crucis — Station 12: Death on the Cross",
+              "originalArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+              "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "STN-13",
+              "subject": "Station 13: Descent from the Cross",
+              "artist": "Giandomenico Tiepolo",
+              "title": "Descent from the Cross — Prado Passion series",
+              "originalArtworkId": "ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+              "source": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000361",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "STN-14",
+              "subject": "Station 14: Burial of Christ",
+              "artist": "Giandomenico Tiepolo",
+              "title": "Burial of Christ — Prado Passion series",
+              "originalArtworkId": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+              "source": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000362",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 5,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": "All 14 already-selected station artworks remain associated with their own stations; the five shown are hero candidates only."
+    },
+    {
+      "routeId": "pray.seven_words",
+      "name": "Seven Words of Our Lord",
+      "family": "passion",
+      "rotation": "SAYING_SEQUENCE",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "sorrows--rubens-entomb",
+              "originalModule": "sorrows",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "ROS-10",
+              "subject": "Crucifixion",
+              "artist": "Anthony van Dyck",
+              "title": "The Lance Thrust",
+              "originalArtworkId": "ART-nthony-van-yck-he-ance-hrust",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "STN-12",
+              "subject": "Station 12: Death on the Cross",
+              "artist": "Giandomenico Tiepolo",
+              "title": "San Polo Via Crucis — Station 12: Death on the Cross",
+              "originalArtworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+              "source": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 3,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": null
+    },
+    {
+      "routeId": "pray.tenebrae",
+      "name": "Office of Tenebrae",
+      "family": "passion",
+      "rotation": "HOLY_WEEK_DAY_AND_HOUR",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "sorrows--rubens-entomb",
+              "originalModule": "sorrows",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "ROS-06",
+              "subject": "Agony in the Garden",
+              "artist": "David Teniers the Elder",
+              "title": "Agony in the Garden — Antwerp Rosary cycle",
+              "originalArtworkId": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+              "source": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "ROS-10",
+              "subject": "Crucifixion",
+              "artist": "Anthony van Dyck",
+              "title": "The Lance Thrust",
+              "originalArtworkId": "ART-nthony-van-yck-he-ance-hrust",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "STN-14",
+              "subject": "Station 14: Burial of Christ",
+              "artist": "Giandomenico Tiepolo",
+              "title": "Burial of Christ — Prado Passion series",
+              "originalArtworkId": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
+              "source": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000362",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 4,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": null
+    },
+    {
+      "routeId": "pray.novenas",
+      "name": "Novenas",
+      "family": "devotions",
+      "rotation": "ACTIVE_NOVENA_SAINT_OR_SUBJECT",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "joseph--primary",
+              "originalModule": "Saint Joseph",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Dream of Saint Joseph",
+                "artist": "Philippe de Champaigne",
+                "source": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg"
+              }
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "DEV-03",
+              "subject": "Holy Ghost / Pentecost",
+              "artist": "Jean Restout",
+              "title": "Pentecost",
+              "originalArtworkId": "ART-ean-estout-entecost",
+              "source": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "DEV-04",
+              "subject": "Nativity / Christmas Novena",
+              "artist": "Jean-Léon Gérôme",
+              "title": "The Age of Augustus: Birth of Christ",
+              "originalArtworkId": "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "DEV-08",
+              "subject": "Assumption devotion",
+              "artist": "Peter Paul Rubens",
+              "title": "Assumption of the Virgin",
+              "originalArtworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "DEV-14",
+              "subject": "Saint Anthony of Padua",
+              "artist": "Peter Paul Rubens",
+              "title": "Saint Anthony of Padua with the Christ Child",
+              "originalArtworkId": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 5,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": null
+    },
+    {
+      "routeId": "programme.first_friday",
+      "name": "Nine First Fridays",
+      "family": "devotions",
+      "rotation": "FIRST_FRIDAY_STATE",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "heart-jesus--primary",
+              "originalModule": "Sacred Heart",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Heart of Jesus",
+                "artist": "Juan Patricio Morlete Ruiz",
+                "source": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
+              }
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "ROS-10",
+              "subject": "Crucifixion",
+              "artist": "Anthony van Dyck",
+              "title": "The Lance Thrust",
+              "originalArtworkId": "ART-nthony-van-yck-he-ance-hrust",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 2,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 1,
+          "note": null
+        }
+      ],
+      "curatorialNotes": "Direct Sacred Heart iconography is mandatory for primary hero; Passion scene is optional supplementary context."
+    },
+    {
+      "routeId": "programme.first_saturday",
+      "name": "Five First Saturdays",
+      "family": "devotions",
+      "rotation": "FIRST_SATURDAY_STATE",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "heart-mary--primary",
+              "originalModule": "Immaculate Heart",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Heart of Mary",
+                "artist": "Juan Patricio Morlete Ruiz",
+                "source": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg"
+              }
+            },
+            {
+              "imageReviewId": "sorrows--primary",
+              "originalModule": "Seven Sorrows",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "Virgin of the Seven Sorrows (Mare de Déu dels Set Dolors)",
+                "artist": "Attributed to the Master of the Female Half-Lengths",
+                "source": "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000"
+              }
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "DEV-06",
+              "subject": "Immaculate Conception",
+              "artist": "Peter Paul Rubens",
+              "title": "Immaculate Conception",
+              "originalArtworkId": "ART-eter-aul-ubens-mmaculate-onception",
+              "source": "https://www.museodelprado.es/en/the-collection/art-work/the-immaculate-conception/abea9a48-3712-4068-a0dd-c669005430d5",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 3,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": "Immaculate Conception and Seven Sorrows do not depict Immaculate Heart; contextual reuse only."
+    },
+    {
+      "routeId": "pray.sacred_heart",
+      "name": "Sacred Heart of Jesus",
+      "family": "devotions",
+      "rotation": "DAILY_APPROVED_ONLY",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "heart-jesus--primary",
+              "originalModule": "Sacred Heart",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Heart of Jesus",
+                "artist": "Juan Patricio Morlete Ruiz",
+                "source": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
+              }
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "ROS-10",
+              "subject": "Crucifixion",
+              "artist": "Anthony van Dyck",
+              "title": "The Lance Thrust",
+              "originalArtworkId": "ART-nthony-van-yck-he-ance-hrust",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 2,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 1,
+          "note": null
+        }
+      ],
+      "curatorialNotes": "Explicit Heart iconography only for lead images; separate licensing and pristine master screen."
+    },
+    {
+      "routeId": "pray.holy_name_litany",
+      "name": "Litany of the Holy Name",
+      "family": "devotions",
+      "rotation": "DAILY_APPROVED_ONLY",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "king--primary",
+              "originalModule": "Christ the King",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "Salvator Mundi",
+                "artist": "Ambrosius Benson",
+                "source": "https://www.christies.com/en/lot/lot-6223948"
+              }
+            },
+            {
+              "imageReviewId": "king--previtali",
+              "originalModule": "king",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            },
+            {
+              "imageReviewId": "king--caravaggio-ecce",
+              "originalModule": "king",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            }
+          ],
+          "protectedHistoricSubjectSelections": [],
+          "uniqueReferenceCountEstimate": 3,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": "Christological theme, not every image is a literal Holy Name inscription."
+    },
+    {
+      "routeId": "pray.sacred_hymns",
+      "name": "Sacred Hymns & Canticles",
+      "family": "devotions",
+      "rotation": "HYMN_SUBJECT",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "holy-spirit--primary",
+              "originalModule": "Holy Spirit",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "Pentecost",
+                "artist": "Jean Restout",
+                "source": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg"
+              }
+            },
+            {
+              "imageReviewId": "holy-spirit--vandyck",
+              "originalModule": "holy-spirit",
+              "sourceAuthority": "USER_LATEST_KEPT_OR_RECLASSIFIED",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": null
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "DEV-18",
+              "subject": "Most Holy Trinity",
+              "artist": "Peter Paul Rubens",
+              "title": "The Holy Trinity",
+              "originalArtworkId": "ART-eter-aul-ubens-he-oly-rinity",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "DEV-08",
+              "subject": "Assumption devotion",
+              "artist": "Peter Paul Rubens",
+              "title": "Assumption of the Virgin",
+              "originalArtworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 4,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": null
+    },
+    {
+      "routeId": "pray.good_death",
+      "name": "Preparation for a Good Death",
+      "family": "devotions",
+      "rotation": "PRAYER_STAGE",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "joseph--primary",
+              "originalModule": "Saint Joseph",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Dream of Saint Joseph",
+                "artist": "Philippe de Champaigne",
+                "source": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg"
+              }
+            },
+            {
+              "imageReviewId": "souls--primary",
+              "originalModule": "Holy Souls",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "Madonna and Child with Souls in Purgatory",
+                "artist": "Luca Giordano",
+                "source": "https://emuseum.mfah.org/objects/64360/madonna-and-child-with-souls-in-purgatory"
+              }
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "BIB-G02",
+              "subject": "Joseph’s Dream",
+              "artist": "Philippe de Champaigne",
+              "title": "The Dream of Saint Joseph",
+              "originalArtworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+              "source": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 3,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": "Saint Joseph, Holy Souls and final perseverance themes; none is certified an exact dying-room scene."
+    },
+    {
+      "routeId": "pray.dying_companion",
+      "name": "Dying Companion",
+      "family": "devotions",
+      "rotation": "CARE_STAGE",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [
+            {
+              "imageReviewId": "souls--primary",
+              "originalModule": "Holy Souls",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "Madonna and Child with Souls in Purgatory",
+                "artist": "Luca Giordano",
+                "source": "https://emuseum.mfah.org/objects/64360/madonna-and-child-with-souls-in-purgatory"
+              }
+            },
+            {
+              "imageReviewId": "joseph--primary",
+              "originalModule": "Saint Joseph",
+              "sourceAuthority": "OCT26_SELECTED_MODULE_HERO",
+              "status": "USER_LATEST_KEEP_IN_ORIGINAL_MODULE",
+              "currentPrayPlacement": "PROPOSED_USER_TO_DECIDE",
+              "artworkMetadata": {
+                "title": "The Dream of Saint Joseph",
+                "artist": "Philippe de Champaigne",
+                "source": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg"
+              }
+            }
+          ],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "BIB-G02",
+              "subject": "Joseph’s Dream",
+              "artist": "Philippe de Champaigne",
+              "title": "The Dream of Saint Joseph",
+              "originalArtworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+              "source": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 3,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": "No visual must replace the pastoral emergency guidance."
+    },
+    {
+      "routeId": "pray.library",
+      "name": "Prayer Library",
+      "family": "library",
+      "rotation": "SELECTED_PRAYER_SUBJECT",
+      "proposals": [
+        {
+          "key": "main",
+          "latestReviewImages": [],
+          "protectedHistoricSubjectSelections": [
+            {
+              "subjectId": "DEV-07",
+              "subject": "Annunciation devotion",
+              "artist": "Philippe de Champaigne",
+              "title": "The Annunciation",
+              "originalArtworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+              "source": "https://www.metmuseum.org/art/collection/search/438724",
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "DEV-17",
+              "subject": "Guardian Angel",
+              "artist": "Pietro da Cortona",
+              "title": "The Guardian Angel",
+              "originalArtworkId": "ART-ietro-da-ortona-he-uardian-ngel",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "DEV-18",
+              "subject": "Most Holy Trinity",
+              "artist": "Peter Paul Rubens",
+              "title": "The Holy Trinity",
+              "originalArtworkId": "ART-eter-aul-ubens-he-oly-rinity",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            },
+            {
+              "subjectId": "BIB-G24",
+              "subject": "Last Supper / Institution of Eucharist",
+              "artist": "Philippe de Champaigne",
+              "title": "La Petite Cène",
+              "originalArtworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
+              "source": null,
+              "status": "HISTORICALLY_APPROVED_FOR_ORIGINAL_SUBJECT_ONLY_NEW_PRAY_PLACEMENT_PROPOSED"
+            }
+          ],
+          "uniqueReferenceCountEstimate": 4,
+          "targetMin": 3,
+          "targetMax": 5,
+          "reviewStatus": "PROPOSALS_NOT_FINAL_MODULE_ASSIGNMENTS",
+          "gap": 0,
+          "note": null
+        }
+      ],
+      "curatorialNotes": "No random global hero: choose three to five approved images for the currently opened prayer category/subject."
+    }
+  ]
+}
