@@ -1,0 +1,119 @@
+{
+  "schema": "ad-orientem.pius-x-daily-prayer-editorial-translations.b23.v1",
+  "version": 1,
+  "created": "2026-10-28",
+  "status": "EDITORIAL_DRAFT_TRANSLATIONS_NOT_HISTORICAL_PRINTED_ENGLISH",
+  "publication": {
+    "userApproved": false,
+    "proofread": false,
+    "enabled": false,
+    "manifestsUnchanged": true
+  },
+  "policy": {
+    "en": "All English texts are new Ad Orientem draft translations; the historical edition did not publish these English words.",
+    "fr": "1905 French translations are newly drafted by Ad Orientem; the 1913 French texts in B21 are printed originals of that authorized French edition, not modern translations.",
+    "integrity": "Do not substitute these for the original source witness or conflate the 1905 original and the 1913 revision. Preserve whole prayer units and separate adjacent devotions.",
+    "copyStatus": "Pending bilingual expert proofreading, print-image collation and reuse/legal approval. Original wording must remain visible."
+  },
+  "sourceRegistry": "data/pray/daily-prayer-pius-x-primary-structure.b21.json",
+  "translations": {
+    "piusx-1905-it": {
+      "morning": {
+        "daily-prayer": {
+          "en": "I adore You, my God, and love You with all my heart. I thank You for having created me, made me a Christian, and preserved me through this night. I offer You all my actions, and I pray You to preserve me this day from sin and deliver me from all evil. Amen.",
+          "fr": "Je vous adore, ô mon Dieu, et je vous aime de tout mon cœur. Je vous remercie de m’avoir créé, fait chrétien et gardé pendant cette nuit. Je vous offre toutes mes actions et je vous prie de me préserver aujourd’hui du péché et de me délivrer de tout mal. Ainsi soit-il.",
+          "note": "The proofread Italian reads 'tutte la mie azioni' (possibly a typographical or transcription error); the intended meaning 'all my actions' is rendered without silently amending the original. Q974 prints 'tutte le mie azioni'."
+        }
+      },
+      "evening": {
+        "daily-prayer": {
+          "en": "I adore You, my God, and love You with all my heart. I thank You for having created me, made me a Christian, and preserved me through this day. I offer You all the good I have done today, and I pray You to deliver me from all evil. Amen.",
+          "fr": "Je vous adore, ô mon Dieu, et je vous aime de tout mon cœur. Je vous remercie de m’avoir créé, fait chrétien et gardé pendant cette journée. Je vous offre tout le bien que j’ai fait aujourd’hui et je vous prie de me délivrer de tout mal. Ainsi soit-il."
+        },
+        "jesus-joseph-mary-1": {
+          "en": "Jesus, Joseph and Mary, I give you my heart and my soul.",
+          "fr": "Jésus, Joseph et Marie, je vous donne mon cœur et mon âme."
+        },
+        "jesus-joseph-mary-2": {
+          "en": "Jesus, Joseph and Mary, assist me in my last agony.",
+          "fr": "Jésus, Joseph et Marie, assistez-moi dans ma dernière agonie."
+        },
+        "jesus-joseph-mary-3": {
+          "en": "Jesus, Joseph and Mary, may my soul depart in peace with you.",
+          "fr": "Jésus, Joseph et Marie, que mon âme s’en aille en paix avec vous."
+        }
+      }
+    },
+    "piusx-1913-fr": {
+      "morning": {
+        "daily-prayer": {
+          "en": "I adore You, my God, and love You with all my heart. I thank You for having created me, made me a Christian, and preserved me through this night. I offer You the actions of this day; grant that they may all be according to Your holy will, for Your greater glory. Preserve me from sin and from all evil. May Your grace always be with me and with all those dear to me. Amen."
+        }
+      },
+      "evening": {
+        "daily-prayer": {
+          "en": "I adore You, my God, and love You with all my heart. I thank You for having created me, made me a Christian, and preserved me through this day. Forgive me the wrong I have done today, and if I have done any good, accept it. Keep me safe in my rest and deliver me from dangers. May Your grace always be with me and with all those dear to me. Amen."
+        }
+      },
+      "common": {
+        "sign-of-cross": {
+          "en": "In the name of the Father, and of the Son, and of the Holy Ghost. Amen."
+        },
+        "our-father": {
+          "en": "Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread; forgive us our trespasses as we forgive those who trespass against us; and suffer us not to succumb to temptation, but deliver us from evil. Amen.",
+          "note": "The edition says 'ne nous laissez pas succomber à la tentation', rendered directly, not replaced with the different traditional English wording 'lead us not into temptation'."
+        },
+        "hail-mary": {
+          "en": "Hail Mary, full of grace; the Lord is with thee; blessed art thou among women, and blessed is Jesus, the fruit of thy womb. Holy Mary, Mother of God, pray for us poor sinners, now and at the hour of our death. Amen."
+        },
+        "glory-be": {
+          "en": "Glory be to the Father, and to the Son, and to the Holy Ghost, as it was in the beginning, is now and ever shall be, world without end. Amen."
+        },
+        "creed": {
+          "en": "I believe in God, the Father almighty, Creator of heaven and earth; and in Jesus Christ, His only Son, our Lord, who was conceived by the Holy Ghost, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried, descended into hell; on the third day He rose again from the dead; He ascended into heaven and sitteth at the right hand of God the Father almighty, whence He shall come to judge the living and the dead. I believe in the Holy Ghost, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen."
+        },
+        "faith": {
+          "en": "My God, I firmly believe all that You, infallible Truth, have revealed and that the Church proposes to us for belief. I believe expressly in You, the one true God in three equal and distinct Persons, Father, Son and Holy Ghost. I likewise believe in the Son made man and put to death for us, Jesus Christ, who will give to each person, according to his merits, eternal reward or punishment. I desire always to live according to this faith. Lord, increase my faith."
+        },
+        "hope": {
+          "en": "My God, I hope, through Your goodness, because of the promises and merits of Jesus Christ our Saviour, for eternal life and the graces necessary to merit it by the good works which I ought to perform and wish to accomplish. Lord, let me not be confounded for ever."
+        },
+        "charity": {
+          "en": "My God, I love You with all my heart above all things, O infinite Good and our eternal happiness. For love of You I love my neighbour as myself and forgive the offences I have received. Lord, grant that I may love You ever more."
+        },
+        "contrition": {
+          "en": "My God, I repent of my sins with all my heart. I hate and detest them because they offend Your infinite Majesty, are the cause of the death of Your divine Son Jesus, and bring about my spiritual ruin. I do not wish to commit them again, and I resolve to avoid their occasions. Lord, have mercy; forgive me."
+        },
+        "salve-regina": {
+          "en": "Hail, Queen, Mother of mercy; our life, our sweetness and our hope, hail. To you we raise our cries, exiled children of Eve. To you we sigh, weeping and groaning in this valley of tears. Hear us, then, O our Advocate; turn towards us those eyes so full of mercy. And at the end of this exile show us the blessed fruit of your womb, Jesus. O clement, O loving, O sweet Virgin Mary."
+        },
+        "guardian-angel": {
+          "en": "Angel of God, who art my guardian by the gift of divine charity, enlighten me, protect me, direct me and govern me. Amen."
+        },
+        "jesus-joseph-mary": {
+          "en": "Jesus, Joseph and Mary, I give you my heart, my mind and my life.\nJesus, Joseph and Mary, deign to assist me in my last agony.\nJesus, Joseph and Mary, grant me, I pray, to surrender my soul in peace in your company."
+        }
+      }
+    }
+  },
+  "missingOriginals": {
+    "piusx-1905-it": [
+      "sign-of-cross",
+      "our-father",
+      "hail-mary",
+      "creed",
+      "faith",
+      "hope",
+      "charity",
+      "salve-regina",
+      "guardian-angel",
+      "glory-be",
+      "contrition"
+    ],
+    "reason": "The 1905 original edition names common prayers; B21 has not transcribed their exact printed Italian wording, so do not present the 1913 French texts as 1905 originals."
+  },
+  "incompleteGuidance": {
+    "examen": "The 1913 examination of conscience is a guided practice, not a specified verbatim prayer; show a sourced rubric without inventing a historical recitation.",
+    "deProfundis": "Adjacent supplementary De profundis is its own prayer. Do not attribute a freshly translated Psalm to this edition unless source text and version have been collated."
+  }
+}
