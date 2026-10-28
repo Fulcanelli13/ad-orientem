@@ -87,7 +87,7 @@ export function renderDirectoryVenueCard(item,language="en"){
     +'<strong class="aoTlmVenueTitle">'+E(item.title||L(language,"Unnamed venue","Lieu sans nom"))+'</strong>'
     +'<span class="aoTlmVenueLocality">'+inlineIcon('place')+'<span>'+E(item.subtitle||"")+'</span></span>'
     +'<span class="aoTlmVenueSchedule">'+inlineIcon('schedule')+'<span>'+E(schedule)+'</span></span>'
-    +(status==="SCHEDULE UNVERIFIED"?'<span class="aoTlmVenueStatus">'+E(L(language,"SCHEDULE UNVERIFIED","HORAIRES NON VÉRIFIÉS"))+'</span>':'')
+    +(status?'<span class="aoTlmVenueStatus">'+E(status==="SCHEDULE UNVERIFIED"?L(language,"SCHEDULE UNVERIFIED","HORAIRES NON VÉRIFIÉS"):status==="OFFICIAL · TIMES UNCONFIRMED"?L(language,"OFFICIAL · TIMES UNCONFIRMED","OFFICIEL · HORAIRES NON CONFIRMÉS"):status)+'</span>':'')
     +'<span class="aoTlmVenueFoot"><small>'+E(sources?L(language,"Source-backed listing","Fiche sourcée"):L(language,"Source review pending","Sources en cours d’examen"))+'</small><span>'+E(L(language,"View church","Voir l’église"))+' <span aria-hidden="true">→</span></span></span>'
     +'</span></button>';
 }
