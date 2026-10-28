@@ -625,6 +625,13 @@ function injectGlossaryAction(){
 }
 function render(){
   const m=mount();if(!m)return false;
+  // The native disclosure can be opened or closed directly. Preserve its
+  // actual state across prayer-card navigation rather than a stale cached
+  // value from the last saved preference change.
+  if(S.screen==="module"&&S.route==="pray.morning_evening"){
+    const existingSettings=m.querySelector("[data-ao-personal-settings]");
+    if(existingSettings)PERSONAL_DAILY_SETTINGS_OPEN=Boolean(existingSettings.open);
+  }
   m.dataset.aoPrayView="traditional-pray";
   // A route change or Full Text mode must not inherit another reader’s stage owner.
   delete m.dataset.aoTraditionalDualAxis;
