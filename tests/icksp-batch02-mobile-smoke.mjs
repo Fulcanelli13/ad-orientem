@@ -65,7 +65,7 @@ try{
  await first.locator("summary").tap();
  assert.match(await first.locator("[lang='la']").innerText(),/Pange, lingua, gloriosi/);
  assert.match(await first.locator("[lang='la']").innerText(),/Tantum ergo/);
- assert.equal(await page.locator(".aoBatch02OptionalSources a").count(),0,"Modern linked alternatives are in a collapsed disclosure");
+ assert.equal(await page.locator(".aoBatch02OptionalSources a").first().isVisible(),false,"Modern linked alternatives must remain collapsed by default");
  await page.locator(".aoBatch02OptionalSources > summary").tap();
  assert.equal(await page.locator(".aoBatch02OptionalSources a").count(),4);
  await page.screenshot({path:resolve(captures,"adoration-treasury-390.png"),animations:"disabled"});
