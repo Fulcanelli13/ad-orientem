@@ -18,7 +18,9 @@ export const ROSARY_METHODS=Object.freeze({
   status:"source-verified-active",source:"https://www.montfort.org/content/uploads/pdf/PDF_FR_30_1.pdf#page=3",
   policy:"One original French mystery clause follows Jesus in all ten Hail Marys of each decade. English and Latin are editorial translations; a group prayer concludes five decades."}),
  scriptural:Object.freeze({id:"scriptural",label:{en:"Scripture-linked Rosary",fr:"Rosaire relié aux Écritures"},
-  status:"editorial-meditations-active",source:"https://www.vatican.va/content/john-paul-ii/en/apost_letters/2002/documents/hf_jp-ii_apl_20021016_rosarium-virginis-mariae.html",
+  status:"editorial-meditations-active",source:"https://github.com/Fulcanelli13/ad-orientem/blob/main/src/pray/rosary-guided-bead-evidence.v1.js",
+  laterCommentarySource:"https://www.vatican.va/content/john-paul-ii/en/apost_letters/2002/documents/hf_jp-ii_apl_20021016_rosarium-virginis-mariae.html",
+  provenance:"Editorial method · Douay–Rheims/CPDV English and Crampon 1923 French, source-linked in the internal verse registry",
   policy:"Uses the existing guided editorial meditations with linked Douay–Rheims and Crampon readings, not unverified biblical quotations."}),
  clausules:Object.freeze({id:"clausules",label:{en:"With clausules",fr:"Avec clausules"},
   status:"traditional-text-verification",source:"https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
@@ -107,6 +109,22 @@ export const MERCY_WITNESSES=Object.freeze({
  en:"https://www.vaticannews.va/en/prayers/divine-mercy-chaplet.html",
  fr:"https://www.vaticannews.va/fr/priere/chapelet-de-la-divine-misericorde.html"
 });
+/**
+ * Diary references are verified against the USCCB chaplet prayer page.
+ * Its modern English translation has no identified blanket reuse licence:
+ * expose direct official source access, not a falsely public-domain copy or
+ * an invented Latin/French prayer. These never enter divineMercySteps().
+ */
+export const MERCY_OPTIONAL_OPENINGS=Object.freeze([
+ Object.freeze({id:"mercy_you_expired",title:"You expired, Jesus",
+   diary:"Diary 1319",source:"https://www.usccb.org/prayers/chaplet-divine-mercy",
+   availability:"EN_LINK_ONLY",rights:"MODERN_TRANSLATION_REUSE_PENDING",
+   kind:"optional-before-chaplet"}),
+ Object.freeze({id:"mercy_blood_water",title:"O Blood and Water",
+   diary:"Diary 84",source:"https://www.usccb.org/prayers/chaplet-divine-mercy",
+   availability:"EN_LINK_ONLY",rights:"MODERN_TRANSLATION_REUSE_PENDING",
+   kind:"optional-before-chaplet"})
+]);
 export const MERCY_PRAYERS=Object.freeze({
  cross:Object.freeze({en:"In the name of the Father, and of the Son, and of the Holy Spirit. Amen.",
   fr:"Au nom du Père, et du Fils, et du Saint-Esprit. Amen."}),
