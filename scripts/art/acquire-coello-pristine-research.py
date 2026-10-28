@@ -115,7 +115,7 @@ def acquire_toledo():
         dims = EXPECTED_MUSEUM[identifier]
         if (canvas['width'], canvas['height']) != dims:
             raise ValueError(f'Museum IIIF metadata changed for {identifier}')
-        fallback = 'https://emuseum.toledomuseum.org/internal/media/dispatcher/' + identifier
+        fallback = 'https://emuseum.toledomuseum.org/internal/media/dispatcher/' + identifier + '/full?download='
         attempts = [image_url, fallback]
         chosen = None
         for candidate in attempts:
