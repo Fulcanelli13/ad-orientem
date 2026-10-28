@@ -6,6 +6,7 @@ on:
       - 'src/office/**'
       - 'scripts/office/**'
       - 'tests/divine-office-*.mjs'
+      - 'tests/test_divine_office_normalizer.py'
       - '.github/workflows/divine-office-phase-b.yml'
   workflow_dispatch:
 
@@ -28,6 +29,8 @@ jobs:
         run: node --check scripts/office/phase-b-generate.mjs
       - name: Calendar, Tenebrae and composition probe contracts
         run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs
+      - name: Source-cell HTML normalizer unit tests
+        run: python3 -m unittest discover -s tests -p 'test_divine_office_normalizer.py' -v
 
   original-composer-smoke:
     needs: office-contracts
@@ -66,6 +69,7 @@ jobs:
             --dates 2026-10-28,2026-10-31,2026-11-01,2026-11-03 \
             --hours MATINS,LAUDS,PRIME,TERCE,SEXT,NONE,VESPERS,COMPLINE \
             --languages la,en,fr
+          python3 scripts/office/normalize_xhtml.py --out "$OUTPUT"
           node --input-type=module -e '
             import {readFileSync} from "node:fs";
             const p=JSON.parse(readFileSync(process.env.OUTPUT+"/manifest.json","utf8"));
@@ -74,5 +78,18 @@ jobs:
               process.exit(1);
             console.log("Research-only envelope captures:",p.counts);
           '
+      - name: Assert normalization manifest coverage (no publication)
+        env:
+          OUTPUT: ${{ runner.temp }}/ao-office-probe
+        run: |
+          python3 - <<'PY'
+          import json, os
+          with open(os.path.join(os.environ["OUTPUT"],"normalized-manifest.json"),encoding="utf8") as f:
+            doc=json.load(f)
+          assert doc["count"]==96, doc["count"]
+          assert doc["alignmentSamples"]==32, doc["alignmentSamples"]
+          assert doc["published"]==0 and doc["liturgicallyVerified"]==0
+          print("Office normalization research manifest valid: 96 documents, 32 trilingual groups, zero published.")
+          PY
       # Deliberately no artifact upload and no source-text publication.
       # This smoke test is reproducible and has no permanent-storage dependencies.
