@@ -290,6 +290,74 @@
     "English edition-matched Pius X Morning/Evening prayer text not yet independently verified; do not invent or translate one and label historical.",
     "1913 French appended De Profundis and deathbed invocations are adjacent devotions, not necessarily core prescribed evening list.",
     "Some older indulgence notes are historically situated and not current indulgence promises.",
-    "All strings are research witnesses and guide labels; no rights clearance, user editorial choice or public manifest authorization is implied."
-  ]
+    "All strings are research witnesses and guide labels; no rights clearance, user editorial choice or public manifest authorization is implied.",
+    "French printed-page transcriptions have been visually inspected but still need a second proofreader before clearing public copy."
+  ],
+  "commonPrayers": {
+    "piusx-1913-fr": {
+      "sign-of-cross": {
+        "text": "Au nom du Père et du Fils et du Saint-Esprit. Ainsi soit-il.",
+        "page": 10
+      },
+      "our-father": {
+        "text": "Notre Père qui êtes aux cieux, que votre nom soit sanctifié, que votre règne arrive, que votre volonté soit faite sur la terre comme au ciel. Donnez-nous aujourd’hui notre pain quotidien, pardonnez-nous nos offenses comme nous pardonnons à ceux qui nous ont offensés, et ne nous laissez pas succomber à la tentation, mais délivrez-nous du mal. Ainsi soit-il.",
+        "page": 11
+      },
+      "hail-mary": {
+        "text": "Je vous salue, Marie pleine de grâce; le Seigneur est avec vous; vous êtes bénie entre toutes les femmes, et Jésus, le fruit de vos entrailles, est béni. Sainte Marie, Mère de Dieu, priez pour nous, pauvres pécheurs, maintenant et à l’heure de notre mort. Ainsi soit-il.",
+        "page": 12
+      },
+      "glory-be": {
+        "text": "Gloire au Père, et au Fils et au Saint-Esprit, comme il était au commencement, maintenant et toujours, dans les siècles des siècles. Ainsi soit-il.",
+        "page": 12
+      },
+      "creed": {
+        "text": "Je crois en Dieu le Père tout-puissant, créateur du ciel et de la terre, et en Jésus-Christ, son Fils unique Notre-Seigneur, qui a été conçu du Saint-Esprit, est né de la Vierge Marie, a souffert sous Ponce-Pilate, a été crucifié, est mort et a été enseveli, est descendu aux enfers; le troisième jour est ressuscité d’entre les morts, est monté au ciel, est assis à la droite de Dieu le Père tout-puissant, d’où il viendra juger les vivants et les morts. Je crois au Saint-Esprit, à la sainte Eglise catholique, à la communion des saints, à la rémission des péchés, à la résurrection de la chair, à la vie éternelle. Ainsi soit-il.",
+        "page": 10
+      },
+      "faith": {
+        "text": "Mon Dieu, je crois fermement tout ce que vous, infaillible Vérité, avez révélé et que l’Eglise nous propose à croire. Je crois expressément en vous, unique vrai Dieu en trois personnes égales et distinctes, Père, Fils et Saint-Esprit. Je crois de même au Fils incarné et mort pour nous, Jésus-Christ, qui donnera à chacun, selon ses mérites, la récompense ou la peine éternelle. Je veux toujours vivre conformément à cette foi. — Seigneur, augmentez ma foi.",
+        "page": 14
+      },
+      "hope": {
+        "text": "Mon Dieu, j’espère de votre bonté, à cause des promesses et des mérites de Jésus-Christ notre Sauveur, la vie éternelle et les grâces nécessaires pour la mériter par les bonnes œuvres que je dois et veux accomplir. — Seigneur, que je ne sois pas éternellement confondu.",
+        "page": 14
+      },
+      "charity": {
+        "text": "Mon Dieu, je vous aime de tout mon cœur par-dessus toutes choses, ô Bien infini et notre éternelle félicité; par amour pour vous j’aime mon prochain comme moi-même et je pardonne les offenses reçues. — Seigneur, faites que je vous aime toujours davantage.",
+        "page": 14
+      },
+      "contrition": {
+        "text": "Mon Dieu, je me repens de mes péchés de tout mon cœur; je les hais et les déteste parce qu’ils offensent votre Majesté infinie, sont la cause de la mort de votre divin Fils Jésus, et constituent ma ruine spirituelle. Je ne veux plus en commettre à l’avenir, et je me propose d’en fuir les occasions. — Seigneur, miséricorde, pardonnez-moi.",
+        "page": 14
+      },
+      "salve-regina": {
+        "text": "Salut, Reine, Mère de miséricorde; notre vie, notre douceur et notre espérance, salut. Nous élevons nos cris vers vous, enfants d’Eve exilés. Nous soupirons vers vous avec pleurs et gémissements, en cette vallée de larmes. Ecoutez-nous donc, ô notre Avocate; tournez vers nous ces regards pleins de vos miséricordes. Et au terme de cet exil, montrez-nous le fruit béni de vos entrailles, Jésus. O clémente, ô pieuse, ô douce Vierge Marie.",
+        "page": 13
+      },
+      "guardian-angel": {
+        "text": "Ange de Dieu, qui êtes mon gardien, par un bienfait de la divine charité, éclairez-moi, protégez-moi, dirigez-moi et gouvernez-moi. Ainsi soit-il.",
+        "page": 13
+      },
+      "jesus-joseph-mary": {
+        "text": "Jésus, Joseph, Marie, je vous donne mon cœur, mon esprit et ma vie.\nJésus, Joseph, Marie, daignez m’assister dans ma dernière agonie.\nJésus, Joseph, Marie, donnez-moi, je vous prie, de rendre l’âme en paix dans votre compagnie.",
+        "page": 118
+      }
+    },
+    "piusx-1905-it": {
+      "jesus-joseph-mary-1": {
+        "text": "Gesù, Giuseppe e Maria, vi dono il cuore e l’anima mia.",
+        "page": null
+      },
+      "jesus-joseph-mary-2": {
+        "text": "Gesù, Giuseppe e Maria, assistetemi nell’ultima agonia.",
+        "page": null
+      },
+      "jesus-joseph-mary-3": {
+        "text": "Gesù, Giuseppe e Maria, spiri in pace con voi l’anima mia.",
+        "page": null
+      }
+    }
+  },
+  "commonTextPolicy": "The French common-prayer text fields are independently transcribed from visually inspected early French printed pages 10–15 and 118. The 1905 Italian common prayer words remain unfilled until exact original-page witness checks; do not silently borrow the 1913 revision or current canonical app text."
 }
