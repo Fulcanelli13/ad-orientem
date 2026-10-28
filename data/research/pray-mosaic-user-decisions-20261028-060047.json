@@ -1,0 +1,577 @@
+{
+  "version": "2026-10-28.pray-mosaic-decisions",
+  "decided_at": "2026-10-28T06:00:47.684Z",
+  "previous_approval_baseline": 101,
+  "choices": [
+    {
+      "pool_id": "morning",
+      "route": "daily",
+      "trigger": "TIME_OF_DAY",
+      "kept": [
+        {
+          "id": "morning--primary",
+          "artist": "Jules Breton",
+          "title": "The Song of the Lark",
+          "source": "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+          "source_image_status": "ARCHIVED_SOURCE"
+        }
+      ],
+      "rejected": [],
+      "undecided": []
+    },
+    {
+      "pool_id": "evening",
+      "route": "daily",
+      "trigger": "TIME_OF_DAY",
+      "kept": [
+        {
+          "id": "morning--millet-angelus",
+          "artist": "Jean-François Millet",
+          "title": "The Angelus",
+          "source": "https://commons.wikimedia.org/wiki/File:Jean-Fran%C3%A7ois_Millet_-_The_Angelus_-_Google_Art_Project.jpg",
+          "source_image_status": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        },
+        {
+          "id": "evening--primary",
+          "artist": "Pierre-Édouard Frère",
+          "title": "The Prayer",
+          "source": "https://artuk.org/discover/artworks/the-prayer-19241",
+          "source_image_status": "RIGHTS_HOLD"
+        },
+        {
+          "id": "confession--latour-magdalen",
+          "artist": "Georges de La Tour",
+          "title": "The Penitent Magdalen",
+          "source": "https://commons.wikimedia.org/wiki/File:The_Penitent_Magdalen_MET_DT7252.jpg",
+          "source_image_status": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        }
+      ],
+      "rejected": [],
+      "undecided": []
+    },
+    {
+      "pool_id": "angelus",
+      "route": "daily",
+      "trigger": "SEASON_AND_DAILY",
+      "kept": [
+        {
+          "id": "angelus--primary",
+          "artist": "Philippe de Champaigne",
+          "title": "The Annunciation",
+          "source": "https://www.metmuseum.org/art/collection/search/438724",
+          "source_image_status": "ARCHIVED_SOURCE"
+        },
+        {
+          "id": "angelus--caravaggio",
+          "artist": "Caravaggio",
+          "title": "The Annunciation",
+          "source": "https://commons.wikimedia.org/wiki/File:Annunciation-Caravaggio.jpg",
+          "source_image_status": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        },
+        {
+          "id": "angelus--gentileschi",
+          "artist": "Orazio Gentileschi",
+          "title": "The Annunciation",
+          "source": "https://commons.wikimedia.org/wiki/File:Annunciazione%20%281623%20circa%29%20-%20Orazio%20Gentileschi.jpg",
+          "source_image_status": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        },
+        {
+          "id": "angelus--murillo-annunciation",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Annunciation (Prado)",
+          "source": "https://commons.wikimedia.org/wiki/File:Bartolome_murillo-anunciacion.jpg",
+          "source_image_status": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        }
+      ],
+      "rejected": [],
+      "undecided": []
+    },
+    {
+      "pool_id": "regina",
+      "route": "daily",
+      "trigger": "PASCHAL_AND_DAILY",
+      "kept": [
+        {
+          "id": "regina--primary",
+          "artist": "Peter Paul Rubens",
+          "title": "Resurrection of Christ",
+          "source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+          "source_image_status": "ARCHIVED_SOURCE"
+        },
+        {
+          "id": "regina--murillo-resurrection",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Resurrection of Christ",
+          "source": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Resurrecci%C3%B3n_del_Se%C3%B1or_-_Google_Art_Project.jpg",
+          "source_image_status": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        },
+        {
+          "id": "regina--jan-janssens",
+          "artist": "Jan Janssens",
+          "title": "The Resurrection",
+          "source": "https://commons.wikimedia.org/wiki/File:Jan_Janssens_-_Resurrection.jpg",
+          "source_image_status": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        }
+      ],
+      "rejected": [],
+      "undecided": []
+    },
+    {
+      "pool_id": "meals",
+      "route": "daily",
+      "trigger": "PRAYER_PART",
+      "kept": [
+        {
+          "id": "historic:giovanni lanfranco:miracle of loaves and fishes",
+          "artist": "Giovanni Lanfranco",
+          "title": "Miracle of Loaves and Fishes",
+          "source": "",
+          "source_image_status": "SOURCE_IMAGE_PENDING"
+        }
+      ],
+      "rejected": [
+        "adoration--champaigne",
+        "historic:peter paul rubens:adoration of the magi"
+      ],
+      "undecided": []
+    },
+    {
+      "pool_id": "examen",
+      "route": "daily",
+      "trigger": "EVENING",
+      "kept": [
+        {
+          "id": "confession--primary",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Return of the Prodigal Son",
+          "source": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+          "source_image_status": "ARCHIVED_SOURCE"
+        },
+        {
+          "id": "confession--latour-magdalen",
+          "artist": "Georges de La Tour",
+          "title": "The Penitent Magdalen",
+          "source": "https://commons.wikimedia.org/wiki/File:The_Penitent_Magdalen_MET_DT7252.jpg",
+          "source_image_status": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        }
+      ],
+      "rejected": [],
+      "undecided": [
+        "historic:jusepe de ribera:saint peter apostolate"
+      ]
+    },
+    {
+      "pool_id": "rosary",
+      "route": "chaplets",
+      "trigger": "MYSTERY",
+      "kept": [
+        {
+          "id": "rosary--primary",
+          "artist": "Lorenzo Lotto",
+          "title": "Madonna del Rosario",
+          "source": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+          "source_image_status": "ARCHIVED_SOURCE"
+        },
+        {
+          "id": "rosary--caravaggio",
+          "artist": "Caravaggio",
+          "title": "Madonna of the Rosary",
+          "source": "https://commons.wikimedia.org/wiki/File:Madonna%20of%20the%20Rosary-Caravaggio%20%281607%29.jpg",
+          "source_image_status": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        },
+        {
+          "id": "rosary--vandyck-madonna",
+          "artist": "Anthony van Dyck",
+          "title": "The Madonna and Child",
+          "source": "https://commons.wikimedia.org/wiki/File:Sir_Anthony_van_Dyck_-_The_Madonna_and_Child_-_Google_Art_Project.jpg",
+          "source_image_status": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        }
+      ],
+      "rejected": [],
+      "undecided": [
+        "angelus--primary",
+        "historic:peter paul rubens:coronation of the virgin oil sketch"
+      ]
+    },
+    {
+      "pool_id": "rosary-methods",
+      "route": "chaplets",
+      "trigger": "METHOD",
+      "kept": [
+        {
+          "id": "rosary--primary",
+          "artist": "Lorenzo Lotto",
+          "title": "Madonna del Rosario",
+          "source": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+          "source_image_status": "ARCHIVED_SOURCE"
+        },
+        {
+          "id": "rosary--caravaggio",
+          "artist": "Caravaggio",
+          "title": "Madonna of the Rosary",
+          "source": "https://commons.wikimedia.org/wiki/File:Madonna%20of%20the%20Rosary-Caravaggio%20%281607%29.jpg",
+          "source_image_status": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        }
+      ],
+      "rejected": [],
+      "undecided": [
+        "rosary--vandyck-madonna",
+        "holy-spirit--primary"
+      ]
+    },
+    {
+      "pool_id": "divine-mercy",
+      "route": "chaplets",
+      "trigger": "DAILY",
+      "kept": [],
+      "rejected": [
+        "confession--primary"
+      ],
+      "undecided": [
+        "sorrows--primary"
+      ]
+    },
+    {
+      "pool_id": "adoration",
+      "route": "eucharistic",
+      "trigger": "DAILY",
+      "kept": [
+        {
+          "id": "adoration--primary",
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "source": "https://www.metmuseum.org/art/collection/search/438434",
+          "source_image_status": "ARCHIVED_SOURCE"
+        }
+      ],
+      "rejected": [
+        "adoration--allegory",
+        "adoration--champaigne"
+      ],
+      "undecided": []
+    },
+    {
+      "pool_id": "visit",
+      "route": "eucharistic",
+      "trigger": "DAILY",
+      "kept": [
+        {
+          "id": "visit--primary",
+          "artist": "Gerrit van Honthorst",
+          "title": "The Adoration of the Shepherds",
+          "source": "https://www.wallraf.museum/2017-11-17-honthorst/",
+          "source_image_status": "ARCHIVED_SOURCE"
+        },
+        {
+          "id": "visit--murillo-magi",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "Adoration of the Magi",
+          "source": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg",
+          "source_image_status": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        }
+      ],
+      "rejected": [
+        "visit--ribalta-shepherds",
+        "visit--murillo-nativity"
+      ],
+      "undecided": []
+    },
+    {
+      "pool_id": "benediction",
+      "route": "eucharistic",
+      "trigger": "RITE",
+      "kept": [
+        {
+          "id": "adoration--primary",
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "source": "https://www.metmuseum.org/art/collection/search/438434",
+          "source_image_status": "ARCHIVED_SOURCE"
+        }
+      ],
+      "rejected": [
+        "adoration--champaigne"
+      ],
+      "undecided": [
+        "adoration--allegory"
+      ]
+    },
+    {
+      "pool_id": "forty-hours",
+      "route": "eucharistic",
+      "trigger": "SESSION",
+      "kept": [
+        {
+          "id": "adoration--primary",
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "source": "https://www.metmuseum.org/art/collection/search/438434",
+          "source_image_status": "ARCHIVED_SOURCE"
+        }
+      ],
+      "rejected": [
+        "adoration--allegory",
+        "adoration--champaigne"
+      ],
+      "undecided": []
+    },
+    {
+      "pool_id": "communion",
+      "route": "eucharistic",
+      "trigger": "BEFORE_AFTER",
+      "kept": [],
+      "rejected": [],
+      "undecided": [
+        "adoration--primary",
+        "visit--primary",
+        "adoration--champaigne"
+      ]
+    },
+    {
+      "pool_id": "confession",
+      "route": "penance",
+      "trigger": "DAILY",
+      "kept": [
+        {
+          "id": "confession--primary",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Return of the Prodigal Son",
+          "source": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+          "source_image_status": "ARCHIVED_SOURCE"
+        },
+        {
+          "id": "confession--latour-magdalen",
+          "artist": "Georges de La Tour",
+          "title": "The Penitent Magdalen",
+          "source": "https://commons.wikimedia.org/wiki/File:The_Penitent_Magdalen_MET_DT7252.jpg",
+          "source_image_status": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        }
+      ],
+      "rejected": [],
+      "undecided": [
+        "historic:jusepe de ribera:saint peter apostolate"
+      ]
+    },
+    {
+      "pool_id": "penitential-psalms",
+      "route": "penance",
+      "trigger": "PSALM",
+      "kept": [],
+      "rejected": [],
+      "undecided": [
+        "confession--latour-magdalen",
+        "confession--primary",
+        "historic:jusepe de ribera:saint peter apostolate"
+      ]
+    },
+    {
+      "pool_id": "saints-litany",
+      "route": "penance",
+      "trigger": "FEAST",
+      "kept": [
+        {
+          "id": "saints--saraceni",
+          "artist": "Carlo Saraceni",
+          "title": "Paradise",
+          "source": "https://www.metmuseum.org/art/collection/search/437607",
+          "source_image_status": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        }
+      ],
+      "rejected": [
+        "michael--primary",
+        "historic:pietro da cortona:saint cecilia"
+      ],
+      "undecided": [
+        "saints--vaneyck"
+      ]
+    },
+    {
+      "pool_id": "stations",
+      "route": "passion",
+      "trigger": "STATION",
+      "kept": [],
+      "rejected": [
+        "historic:giandomenico tiepolo:san polo via crucis station 01 christ condemned to death",
+        "historic:giandomenico tiepolo:san polo via crucis station 06 veronica wipes his face"
+      ],
+      "undecided": [
+        "historic:giandomenico tiepolo:san polo via crucis station 12 death on the cross",
+        "historic:giandomenico tiepolo:descent from the cross prado passion series",
+        "historic:giandomenico tiepolo:burial of christ prado passion series"
+      ]
+    },
+    {
+      "pool_id": "seven-words",
+      "route": "passion",
+      "trigger": "PASSAGE",
+      "kept": [],
+      "rejected": [],
+      "undecided": [
+        "sorrows--rubens-entomb",
+        "historic:anthony van dyck:the lance thrust",
+        "historic:giandomenico tiepolo:san polo via crucis station 12 death on the cross"
+      ]
+    },
+    {
+      "pool_id": "tenebrae",
+      "route": "passion",
+      "trigger": "HOLY_WEEK",
+      "kept": [],
+      "rejected": [],
+      "undecided": [
+        "sorrows--rubens-entomb",
+        "historic:david teniers the elder:agony in the garden antwerp rosary cycle",
+        "historic:anthony van dyck:the lance thrust",
+        "historic:giandomenico tiepolo:burial of christ prado passion series"
+      ]
+    },
+    {
+      "pool_id": "novenas",
+      "route": "devotions",
+      "trigger": "NOVENA",
+      "kept": [],
+      "rejected": [],
+      "undecided": [
+        "joseph--primary",
+        "holy-spirit--primary",
+        "historic:jean l on g r me:the age of augustus birth of christ",
+        "historic:peter paul rubens:assumption of the virgin",
+        "historic:peter paul rubens:saint anthony of padua with the christ child"
+      ]
+    },
+    {
+      "pool_id": "first-friday",
+      "route": "devotions",
+      "trigger": "FIRST_FRIDAY",
+      "kept": [],
+      "rejected": [
+        "heart-jesus--batoni-cc0",
+        "heart-jesus--moroder",
+        "historic:anthony van dyck:the lance thrust"
+      ],
+      "undecided": [
+        "heart-jesus--primary"
+      ]
+    },
+    {
+      "pool_id": "first-saturday",
+      "route": "devotions",
+      "trigger": "FIRST_SATURDAY",
+      "kept": [],
+      "rejected": [],
+      "undecided": [
+        "heart-mary--primary",
+        "sorrows--primary",
+        "heart-mary--kupelwieser",
+        "historic:peter paul rubens:immaculate conception"
+      ]
+    },
+    {
+      "pool_id": "sacred-heart",
+      "route": "devotions",
+      "trigger": "DAILY",
+      "kept": [
+        {
+          "id": "heart-jesus--primary",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Jesus",
+          "source": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "source_image_status": "ARCHIVED_SOURCE"
+        }
+      ],
+      "rejected": [],
+      "undecided": [
+        "heart-jesus--batoni-cc0",
+        "heart-jesus--moroder"
+      ]
+    },
+    {
+      "pool_id": "holy-name",
+      "route": "devotions",
+      "trigger": "DAILY",
+      "kept": [],
+      "rejected": [],
+      "undecided": [
+        "king--primary",
+        "king--previtali",
+        "king--caravaggio-ecce"
+      ]
+    },
+    {
+      "pool_id": "hymns",
+      "route": "devotions",
+      "trigger": "HYMN",
+      "kept": [],
+      "rejected": [],
+      "undecided": [
+        "holy-spirit--primary",
+        "holy-spirit--vandyck",
+        "historic:peter paul rubens:the holy trinity",
+        "historic:peter paul rubens:assumption of the virgin"
+      ]
+    },
+    {
+      "pool_id": "good-death",
+      "route": "devotions",
+      "trigger": "PRAYER_STAGE",
+      "kept": [],
+      "rejected": [],
+      "undecided": [
+        "joseph--primary",
+        "souls--primary"
+      ]
+    },
+    {
+      "pool_id": "dying",
+      "route": "devotions",
+      "trigger": "CARE_STAGE",
+      "kept": [],
+      "rejected": [],
+      "undecided": [
+        "souls--primary",
+        "joseph--primary"
+      ]
+    },
+    {
+      "pool_id": "library",
+      "route": "library",
+      "trigger": "OPENED_PRAYER",
+      "kept": [],
+      "rejected": [],
+      "undecided": [
+        "angelus--primary",
+        "angel--primary",
+        "historic:peter paul rubens:the holy trinity",
+        "adoration--champaigne"
+      ]
+    },
+    {
+      "pool_id": "scripture",
+      "route": "additional",
+      "trigger": "GOSPEL_BOOK",
+      "kept": [
+        {
+          "id": "scripture--primary",
+          "artist": "Caravaggio",
+          "title": "Saint Jerome Writing",
+          "source": "https://commons.wikimedia.org/wiki/File:Saint_Jerome_Writing-Caravaggio_(1605-6).jpg",
+          "source_image_status": "ARCHIVED_SOURCE"
+        },
+        {
+          "id": "scripture--rubens-evangelists",
+          "artist": "Peter Paul Rubens",
+          "title": "The Four Evangelists",
+          "source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_four_Evangelists_(1614).jpg",
+          "source_image_status": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        }
+      ],
+      "rejected": [],
+      "undecided": [
+        "scripture--mark-wolffort",
+        "scripture--luke-veronese",
+        "scripture--john-wolffort",
+        "historic:caravaggio:inspiration of saint matthew"
+      ]
+    }
+  ]
+}
