@@ -33,6 +33,7 @@ jobs:
           node --check src/office/research-reader.js
           node --check src/office/source-content-gate.js
           node --check src/office/mass-style-research-reader.js
+          node --check src/office/prime-martyrology-split.js
           node --check src/office/mass-style-research-ui.js
           node --check scripts/office/build-mass-style-preview.mjs
           node --check src/office/sung-vespers-gate.js
@@ -46,7 +47,7 @@ jobs:
           node --check scripts/office/audit-all-souls-prime-critical.mjs
           node --check scripts/office/audit-all-souls-proper-prayers.mjs
       - name: Calendar, Tenebrae and composition probe contracts
-        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-content-scope-gate.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-printed-rubric-pilot.mjs tests/divine-office-translation-risk.mjs tests/divine-office-french-directive-overlay.mjs tests/divine-office-french-provenance.mjs tests/divine-office-all-souls-prime-critical.mjs tests/divine-office-all-souls-prayers.mjs
+        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-content-scope-gate.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-prime-martyrology-split.mjs tests/divine-office-printed-rubric-pilot.mjs tests/divine-office-translation-risk.mjs tests/divine-office-french-directive-overlay.mjs tests/divine-office-french-provenance.mjs tests/divine-office-all-souls-prime-critical.mjs tests/divine-office-all-souls-prayers.mjs
       - name: Source-cell HTML normalizer unit tests
         run: python3 -m unittest discover -s tests -p 'test_divine_office_normalizer.py' -v
 
