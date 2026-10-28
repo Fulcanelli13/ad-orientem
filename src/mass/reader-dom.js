@@ -2908,7 +2908,8 @@ export function createReaderDomAdapter({
     if(eventOpen){
       const itinerary=typeof scholaMusicItinerary==="function"
         ?scholaMusicItinerary():scholaMusicItinerary;
-      eventOpen.hidden=!(mode==="LIVE"&&itinerary?.supported===true);
+      eventOpen.hidden=!(mode==="LIVE"&&itinerary?.supported===true &&
+        itinerary.cardOrder?.includes(current?.id));
     }
     const identity=schola ? [schola.trackId,schola.segmentId,schola.cueId].filter(Boolean).join("|") : null;
     const changed=identity!==scholaIdentity;
