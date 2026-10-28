@@ -1,0 +1,74 @@
+{
+  "schema": "ao.prayer.admissions-b20.v1",
+  "asOf": "2026-10-28",
+  "scope": "One compact three-choice occasional intercessions reader inside existing Pray > Devotions; no new top-level module.",
+  "canonicalPrayerBankUnchanged": true,
+  "baselineCanonicalPrayerCount": 48,
+  "newDistinctPublishedWorkCount": 2,
+  "reusedExistingWorkCount": 1,
+  "published": [
+    {
+      "id": "occasional_for_sick_lasance_1911_en",
+      "purpose": "sick",
+      "work": "Prayer for a Sick Person",
+      "edition": "Lasance, With God (1911), pp. 826-827",
+      "languages": [
+        "en"
+      ],
+      "status": "STAGED_TEXT_NOT_YET_MERGED",
+      "printPhotoVerified": false,
+      "sourceUrl": "https://novenaregina.com/prayers/prayer-for-a-sick-person"
+    },
+    {
+      "id": "occasional_holy_family_lasance_1910_en",
+      "purpose": "family",
+      "work": "Prayer to the Holy Family",
+      "edition": "Lasance, The Young Man's Guide (1910), X: Various Prayers",
+      "languages": [
+        "en"
+      ],
+      "status": "STAGED_TEXT_NOT_YET_MERGED",
+      "printPhotoVerified": false,
+      "sourceUrl": "https://en.wikisource.org/wiki/The_young_man%27s_guide/X._VARIOUS_PRAYERS"
+    }
+  ],
+  "reused": [
+    {
+      "id": "devotion_ad_te_beate_ioseph",
+      "purpose": "difficulties",
+      "status": "EXISTING_CANONICAL_WORK_NO_DUPLICATE",
+      "languages": [
+        "en",
+        "fr",
+        "la"
+      ]
+    }
+  ],
+  "deferred": [
+    {
+      "id": "AO-AQ-025",
+      "why": "Infant Jesus sick prayer is narrower than selected general intercession"
+    },
+    {
+      "id": "AO-AQ-059",
+      "why": "Troubled-times source is a cluster and not an automatically publishable single prayer"
+    },
+    {
+      "id": "AO-AQ-069",
+      "why": "Holy Family novena is a different longer practice, not required for occasional prayer"
+    },
+    {
+      "id": "AO-AQ-091",
+      "why": "Sick/dying bedside belongs to existing Good Death / Dying Companion"
+    }
+  ],
+  "policy": {
+    "noNewTopLevelModule": true,
+    "noInventedTranslations": true,
+    "originalPrintedImageCertified": false,
+    "historicIndulgencesNotCurrent": true,
+    "zeroCost": true,
+    "noDuplicates": true,
+    "noPersonalMedicalStorage": true
+  }
+}

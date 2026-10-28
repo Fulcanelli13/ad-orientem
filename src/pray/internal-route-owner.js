@@ -15,6 +15,7 @@ export const INTERNAL_PRAYER_VIEWS=Object.freeze({
   "pray.stations":"stations",
   "pray.library":"library",
   "pray.for_priests":"priests",
+  "pray.occasional_intercessions":"occasionals",
   "pray.penitential_psalms":"penitential",
   "pray.litany_saints":"litany",
   "pray.seven_words":"sevenWords",
