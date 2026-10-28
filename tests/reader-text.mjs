@@ -201,7 +201,7 @@ for(const corpus of [low,sung]){
   const opts={corpus,properSlots,vernacularLanguage:language,
     frenchOrdinary:gospelFrench};
   const reqPrep=buildReaderSectionCard({
-    ...opts,section:sections.sectionById("AO.CARD.006"),
+    ...opts,section:sections.sectionById("AO.CARD.007"),
     omittedOrdinaryCues:gospelOmissions,
   });
   const reqGospel=buildReaderSectionCard({
@@ -217,7 +217,7 @@ for(const corpus of [low,sung]){
   assert.ok(ids(reqGospel).includes("AO.SM.C0087"),"Requiem lost Laus tibi");
   assert.ok(!ids(reqGospel).includes("AO.SM.C0088"),"Requiem retained Per evangelica dicta");
   const normalPrep=buildReaderSectionCard({
-    ...opts,section:sections.sectionById("AO.CARD.006"),
+    ...opts,section:sections.sectionById("AO.CARD.007"),
   });
   const normalGospel=buildReaderSectionCard({
     ...opts,section:sections.sectionById("AO.CARD.007"),
