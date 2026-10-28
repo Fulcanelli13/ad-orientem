@@ -20,6 +20,14 @@ assert.equal(review.export_only_records_preserved.length,3);
 assert.equal(review.relocation_instructions.filter(x=>!x.destination_module_id).length,1);
 assert.equal(review.counts.sections_with_keep,27);
 assert.equal(heroes.modules.length,6);
+/* AO_WAVE1_PHOTO_SOURCE_GUARD: protects source/photo release from editorial drift. */
+assert.deepEqual(review.remaining_unreviewed.map(x=>x.placement_key),
+  ['sacred-heart::heart-jesus--primary']);
+assert.equal(heroes.photo_source_evidence_update.editorial_primaries_changed,0);
+assert.equal(heroes.photo_source_evidence_update.historic_approvals_changed,0);
+assert.equal(heroes.photo_source_evidence_update.cost_eur,0);
+assert.equal(heroes.photo_source_evidence_update.photography_cleared_for_production_in_this_update,0);
+
 const byKey=new Map(rows.map(x=>[x.placement_key,x]));
 for(const d of user.decisions){
   const row=byKey.get(d.placement_key);
@@ -30,6 +38,13 @@ for(const d of user.decisions){
 assert.deepEqual(heroes.modules.map(x=>x.hero_register_module),['morning','evening','angelus','rosary','confession','sorrows']);
 for(const h of heroes.modules){
   assert.equal(h.editorial_primary.user_final,true);
+  assert.ok(h.photo_source_recheck,'no exact source QA record for '+h.section);
+  assert.match(h.photo_source_recheck.source_page,/^https:\/\//);
+  assert.ok(h.photo_source_recheck.source_photo_rights);
+  assert.ok(h.photo_source_recheck.first_action);
+  assert.ok(h.photo_source_recheck.mobile_critical_content.length);
+  assert.ok(h.photo_source_recheck.forbid.length);
+
   assert.ok(h.editorial_primary.title&&h.editorial_primary.artist);
   if(h.photo.existing_master_acquired_by_previous_manifest)
     assert.match(h.photo.original_sha256_recorded,/^[a-f0-9]{64}$/i);
