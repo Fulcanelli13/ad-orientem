@@ -1,0 +1,35 @@
+name: Sacred editorial P65 source-owned reuse
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/find/place-editorial-reuse.js'
+      - 'tools/export-sacred-editorial-claude-packet.mjs'
+      - 'tests/sacred-places-p65-editorial-reuse.mjs'
+      - 'data/shrines/illustrated-place-guides-*.v1.json'
+      - 'data/saints/**'
+      - 'data/customs/customs-atlas-seed.v1.json'
+      - 'data/explore/sacred-phenomena-seed.v1.json'
+      - 'docs/SACRED-EDITORIAL-P65-CLAUDE-BOUNDED-REUSE-20261029.md'
+      - '.github/workflows/sacred-editorial-p65-source-reuse.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'src/find/place-editorial-reuse.js'
+      - 'tools/export-sacred-editorial-claude-packet.mjs'
+      - 'tests/sacred-places-p65-editorial-reuse.mjs'
+      - 'data/shrines/illustrated-place-guides-*.v1.json'
+      - 'data/saints/**'
+permissions:
+  contents: read
+jobs:
+  editorial-owner-and-claude-pack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Reuse published guides and validate capped research exporter
+        run: node tests/sacred-places-p65-editorial-reuse.mjs
