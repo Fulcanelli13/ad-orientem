@@ -126,7 +126,14 @@ try{
       {waitUntil:"networkidle"});
     await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",
       null,{timeout:25000});
-    assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards),48);
+    const liveModel=await page.evaluate(()=>({
+      count:window.__AO_PHONE_PREVIEW.model.totalCards,
+      owner:window.__AO_PHONE_PREVIEW.model.structureOwner,
+    }));
+    assert.equal(liveModel.count,65,
+      "Solemn Requiem must use the source-owned 65-card LIVE family");
+    assert.equal(liveModel.owner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW",
+      "Solemn Requiem regressed to the historical compatibility renderer");
     for(const [cue,expectVisible,part] of [
       ["AO.SM.C0076",true,/without receiving.*blessing/i],
       ["AO.SM.C0080",false,null],
