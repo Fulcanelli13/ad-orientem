@@ -36,6 +36,22 @@ EXPLICIT_OMITTED_PRECES = {
     "fr": re.compile(r"^Prières fériales\s*\{omises\}$", re.IGNORECASE),
 }
 
+# All Souls' Office (2 November 2026) has legitimate vernacular-only
+# *status* rows that the Latin engine does not emit: "Start{omit}" at
+# Matins/Lauds/Vespers and "Hymn{omit}" at Matins. The source explicitly
+# marks these as omitted, with NO prayer or rubric inside the row.
+# Whitelist only exact whole-cell status markers, never generic "{omit}".
+EXPLICIT_OMITTED_STATUS = {
+    "en": {
+        "Start{omit}": "UPSTREAM_EXPLICIT_START_OMISSION",
+        "Hymn{omit}": "UPSTREAM_EXPLICIT_HYMN_OMISSION",
+    },
+    "fr": {
+        "Début{omises}": "UPSTREAM_EXPLICIT_START_OMISSION",
+        "Hymne{omises}": "UPSTREAM_EXPLICIT_HYMN_OMISSION",
+    },
+}
+
 
 # Grouped content is kept together: a Psalm cell may contain both its
 # antiphon and psalm, and a Chapter cell may include hymn and versicle.
@@ -200,18 +216,24 @@ def normalize_xhtml(xhtml: str, *, date: str, hour: str, language: str, source_r
     if not headline:
         raise ValueError("OFFICE_NORMALIZE_DAY_HEADLINE_MISSING")
     # Source cells are intact and consecutive; presentation cells may exclude
-    # only source-proven, explicitly omitted preces markers.
+    # only exact source-proven, whole-cell status markers. Every omission is
+    # logged with original source ID, index, wording and specific reason.
     source_cells = sections
     sections = []
     omitted = []
     omission_rule = EXPLICIT_OMITTED_PRECES.get(language)
     for cell in source_cells:
-        if omission_rule and omission_rule.fullmatch(cell["text"]):
+        reason = (
+            "UPSTREAM_EXPLICIT_PRECES_OMISSION"
+            if omission_rule and omission_rule.fullmatch(cell["text"])
+            else EXPLICIT_OMITTED_STATUS.get(language, {}).get(cell["text"])
+        )
+        if reason:
             omitted.append({
                 "sourceCellId": cell["sourceCellId"],
                 "sourceIndex": cell["index"],
                 "text": cell["text"],
-                "reason": "UPSTREAM_EXPLICIT_PRECES_OMISSION",
+                "reason": reason,
             })
             continue
         sections.append({
