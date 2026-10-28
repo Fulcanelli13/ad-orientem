@@ -8,6 +8,30 @@ const review=read('prayer-31-section-review-reconciliation-20261028.v1.json');
 const heroes=read('prayer-hero-wave1-release-manifest-20261028.v1.json');
 /* AO_NATIVE_MASTER_AUDIT_PRESERVATION: separate byte integrity from human photo clearance. */
 const byteQA=read('prayer-wave1-post-ci-photo-quality-gates-20261028.v1.json');
+/* VISUAL_REVIEW_GATE_V1 */
+const visual=read('prayer-wave1-visual-composition-review-20261028.v1.json');
+assert.equal(visual.editorial_primaries_changed,0);
+assert.equal(visual.originals_changed,0);
+assert.equal(visual.release_granted,0);
+assert.equal(visual.summary.preliminary_visually_good_with_restrictions,3);
+assert.equal(visual.summary.blocked_photographic_source_or_crop,3);
+assert.equal(visual.summary.quality_final_passes,0);
+assert.equal(visual.summary.released_to_app,0);
+assert.deepEqual(
+ visual.review_records.map(x=>x.module).sort(),
+ ['morning','evening','angelus','rosary','confession','seven-sorrows'].sort());
+for(const v of visual.review_records){
+ assert.equal(v.photo_released,false);
+ assert.ok(v.final_qa_open.length>0,'premature visual release '+v.module);
+ assert.ok(v.phone_display_policy,'missing mobile photo policy '+v.module);
+}
+const sorrowsVisual=visual.review_records.find(x=>x.module==='seven-sorrows');
+assert.match(sorrowsVisual.iconography_correction,/seven narrative medallions/);
+const rosaryVisual=visual.review_records.find(x=>x.module==='rosary');
+assert.equal(rosaryVisual.photo_file_rights.credit_required,true);
+assert.equal(rosaryVisual.photo_file_rights.modification_notice_required_for_crop,true);
+assert.match(rosaryVisual.phone_display_policy,/FIFTEEN ROUNDELS/);
+
 assert.equal(byteQA.scope.editorial_primary_selected,6);
 assert.equal(byteQA.scope.native_byte_sha256_and_gitblob_verified,5);
 assert.equal(byteQA.scope.human_photo_quality_approved,0);
