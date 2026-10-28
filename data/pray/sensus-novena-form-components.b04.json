@@ -1,0 +1,837 @@
+{
+  "schema": "ao.sensus-novena-form-component-b04",
+  "as_of": "2026-10-28",
+  "scope": "24 of the 61 dedicated Novenas index page bodies",
+  "method": "Directly read the entire relevant HTML article body; transcribed structure only, no full prayer texts copied",
+  "status": "SOURCE_PAGE_FORM_AUDIT_PARTIAL",
+  "source_index": "https://sensusfidelium.com/calendar/novenas/",
+  "parent_index": "data/pray/sensus-calendar-novena-collection.b03.json",
+  "total_indexed_pages": 61,
+  "reviewed_bodies": 24,
+  "unreviewed_bodies": 37,
+  "component_records": 54,
+  "component_counts_not_unique_prayer_totals": true,
+  "form_counts": {
+    "REPEAT_9_DAY": 8,
+    "DISTINCT_9_DAY_COMPOSITE": 5,
+    "DISTINCT_9_DAY": 4,
+    "NINE_HOURS_ONE_DAY": 1,
+    "REPEAT_9_DAY_COMPOSITE": 3,
+    "TWO_DISTINCT_REPEAT_9_DAY_FORMS": 1,
+    "REPEAT_9_DAY_NINE_TIMES_DAILY": 1,
+    "EXTENDED_ADVENT_25_DAY_FIFTEEN_DAILY": 1
+  },
+  "notation": "Distinct dated prayers are 9 only where nine day headings or dates were found. Shared Our Father etc. are references, not duplicates. Historical print witnesses and text variants remain unverified.",
+  "records": [
+    {
+      "inventory_row_id": "sensus-calendar-novena:001",
+      "link_id": 104,
+      "title": "Novena to the Sacred Heart",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-the-sacred-heart/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "REPEAT_9_DAY",
+      "calendar_days": 9,
+      "numbered_daily_texts": 0,
+      "components": [
+        {
+          "component_id": "sensus-novena-104-c01",
+          "description": "one repeatable Sacred Heart prayer",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": "sacred_heart",
+      "relationship_note": "SAME_SUBJECT_DIFFERENT_OPENING_THAN_CANONICAL",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:002",
+      "link_id": 105,
+      "title": "Novena to the Holy Face of Jesus",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-the-holy-face/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "DISTINCT_9_DAY_COMPOSITE",
+      "calendar_days": 9,
+      "numbered_daily_texts": 9,
+      "components": [
+        {
+          "component_id": "sensus-novena-105-c01",
+          "description": "daily preparatory prayer",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-105-c02",
+          "description": "nine Psalm excerpts",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-105-c03",
+          "description": "nine Holy Face day-prayers",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-105-c04",
+          "description": "additional prayers to Father, Holy Spirit, Joseph, Michael and Mary",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-105-c05",
+          "description": "common closing recitations and aspiration",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": null,
+      "relationship_note": "NO_CANONICAL_NOVENA_SUBJECT_MATCH",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:003",
+      "link_id": 106,
+      "title": "Novena to the Holy Name",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-the-holy-name/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "REPEAT_9_DAY",
+      "calendar_days": 9,
+      "numbered_daily_texts": 0,
+      "components": [
+        {
+          "component_id": "sensus-novena-106-c01",
+          "description": "one repeatable Holy Name prayer",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": null,
+      "relationship_note": "NO_CANONICAL_NOVENA_SUBJECT_MATCH",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:004",
+      "link_id": 107,
+      "title": "Novena to the Magi (Epiphany)",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-the-magi-in-anticipation-of-the-epiphany/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "DISTINCT_9_DAY",
+      "calendar_days": 9,
+      "numbered_daily_texts": 9,
+      "components": [
+        {
+          "component_id": "sensus-novena-107-c01",
+          "description": "nine Magi prayers with Glory Be",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": null,
+      "relationship_note": "NO_CANONICAL_NOVENA_SUBJECT_MATCH",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:005",
+      "link_id": 108,
+      "title": "Novena to the Infant of Prague",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-the-infant-of-prague/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "NINE_HOURS_ONE_DAY",
+      "calendar_days": null,
+      "numbered_daily_texts": 0,
+      "components": [
+        {
+          "component_id": "sensus-novena-108-c01",
+          "description": "three petitions repeated each hour",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-108-c02",
+          "description": "nine hourly recitations on one day",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": null,
+      "relationship_note": "SEPARATE_FROM_ICSKP_INFANT_KING_AND_CANONICAL_CHRISTMAS",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:006",
+      "link_id": 109,
+      "title": "Novena to the Holy Family",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-the-holy-family/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "REPEAT_9_DAY_COMPOSITE",
+      "calendar_days": 9,
+      "numbered_daily_texts": 0,
+      "components": [
+        {
+          "component_id": "sensus-novena-109-c01",
+          "description": "five Holy Family petitions",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-109-c02",
+          "description": "Our Father, Hail Mary and Glory after each",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-109-c03",
+          "description": "sixth concluding intention",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": null,
+      "relationship_note": "NO_CANONICAL_NOVENA_SUBJECT_MATCH",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:013",
+      "link_id": 116,
+      "title": "Novena of St Thomas Aquinas",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-of-st-thomas-aquinas/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "DISTINCT_9_DAY_COMPOSITE",
+      "calendar_days": 9,
+      "numbered_daily_texts": 9,
+      "components": [
+        {
+          "component_id": "sensus-novena-116-c01",
+          "description": "nine themed Saint Thomas reflections and petitions",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-116-c02",
+          "description": "repeated concluding prayer to St Thomas",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": null,
+      "relationship_note": "NO_CANONICAL_NOVENA_SUBJECT_MATCH",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:017",
+      "link_id": 120,
+      "title": "Novena to St Joseph",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-st-joseph/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "TWO_DISTINCT_REPEAT_9_DAY_FORMS",
+      "calendar_days": 9,
+      "numbered_daily_texts": 0,
+      "components": [
+        {
+          "component_id": "sensus-novena-120-c01",
+          "description": "traditional extended Joseph novena",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-120-c02",
+          "description": "separate Unfailing Novena to St Joseph",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": "st_joseph",
+      "relationship_note": "SAME_SUBJECT_TWO_DIFFERENT_FORMS_FROM_CANONICAL_DAY_SPECIFIC",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:020",
+      "link_id": 123,
+      "title": "Novena to the Divine Mercy of Jesus Christ",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-the-divine-mercy-of-jesus-christ/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "DISTINCT_9_DAY_COMPOSITE",
+      "calendar_days": 9,
+      "numbered_daily_texts": 9,
+      "components": [
+        {
+          "component_id": "sensus-novena-123-c01",
+          "description": "nine distinct day petitions",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-123-c02",
+          "description": "repeated Divine Mercy chaplet instruction",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": null,
+      "relationship_note": "SOURCE_TEXT_20TH_CENTURY_RIGHTS_ATTESTATION_REQUIRED",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:021",
+      "link_id": 124,
+      "title": "Novena to the Holy Ghost",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-the-holy-ghost/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "DISTINCT_9_DAY",
+      "calendar_days": 9,
+      "numbered_daily_texts": 9,
+      "components": [
+        {
+          "component_id": "sensus-novena-124-c01",
+          "description": "nine distinct Holy Ghost gifts and fruits prayers",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-124-c02",
+          "description": "each day Our Father, Hail Mary, seven Glory Be",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": "holy_ghost",
+      "relationship_note": "SAME_SUBJECT_CANONICAL_1925_TEXT_DIFFERS",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:027",
+      "link_id": 130,
+      "title": "Novena of St Aloysius Gonzaga",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-of-st-aloysius-gonzaga/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "REPEAT_9_DAY_COMPOSITE",
+      "calendar_days": 9,
+      "numbered_daily_texts": 0,
+      "components": [
+        {
+          "component_id": "sensus-novena-130-c01",
+          "description": "prayer to St Aloysius in versicle/response form",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-130-c02",
+          "description": "Marian prayer attributed to St Aloysius",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-130-c03",
+          "description": "novena prayer",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-130-c04",
+          "description": "collect",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-130-c05",
+          "description": "opening and closing",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": null,
+      "relationship_note": "NO_CANONICAL_NOVENA_SUBJECT_MATCH",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:028",
+      "link_id": 131,
+      "title": "Novena to Our Lady of Perpetual Help",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-our-lady-of-perpetual-help/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "REPEAT_9_DAY",
+      "calendar_days": 9,
+      "numbered_daily_texts": 0,
+      "components": [
+        {
+          "component_id": "sensus-novena-131-c01",
+          "description": "one long repeated prayer to Our Lady of Perpetual Help",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": "perpetual_help",
+      "relationship_note": "SAME_SUBJECT_CANONICAL_1911_TEXT_DIFFERS",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:029",
+      "link_id": 132,
+      "title": "Novena to the Precious Blood",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-the-precious-blood/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "REPEAT_9_DAY",
+      "calendar_days": 9,
+      "numbered_daily_texts": 0,
+      "components": [
+        {
+          "component_id": "sensus-novena-132-c01",
+          "description": "one repeated Precious Blood prayer",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": null,
+      "relationship_note": "NO_CANONICAL_NOVENA_SUBJECT_MATCH",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:032",
+      "link_id": 135,
+      "title": "Novena to St Alphonsus",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-saint-alphonsus/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "REPEAT_9_DAY_NINE_TIMES_DAILY",
+      "calendar_days": 9,
+      "numbered_daily_texts": 0,
+      "components": [
+        {
+          "component_id": "sensus-novena-135-c01",
+          "description": "one St Alphonsus patron-of-the-sick prayer",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-135-c02",
+          "description": "Our Father Hail Mary Glory",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": null,
+      "relationship_note": "SCHEDULE_NINE_TIMES_PER_DAY_SOURCE_SAYS",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:034",
+      "link_id": 137,
+      "title": "Novena to St Philomena",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-st-philomena/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "REPEAT_9_DAY",
+      "calendar_days": 9,
+      "numbered_daily_texts": 0,
+      "components": [
+        {
+          "component_id": "sensus-novena-137-c01",
+          "description": "one St Philomena prayer",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": null,
+      "relationship_note": "NO_CANONICAL_NOVENA_SUBJECT_MATCH",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:038",
+      "link_id": 141,
+      "title": "Novena to the Nativity of Mary",
+      "source_url": "https://staging2.sensusfidelium.com/2019/08/30/novena-in-honor-of-our-ladys-nativity-beginning-august-30/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "REPEAT_9_DAY_COMPOSITE",
+      "calendar_days": 9,
+      "numbered_daily_texts": 0,
+      "components": [
+        {
+          "component_id": "sensus-novena-141-c01",
+          "description": "Veni Sancte Spiritus with versicle and collect",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-141-c02",
+          "description": "daily Marian preparatory prayer",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-141-c03",
+          "description": "nine distinct Marian salutations as an intra-day sequence",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-141-c04",
+          "description": "concluding collect",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": null,
+      "relationship_note": "1910_RACCOLTA_PRINTED_WITNESS_SPECIFIC_NOT_NINE_DAY_SPECIFIC_PRAYERS",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "PAGE_IDENTIFIES_RACCOLTA_1910_HISTORICAL_CITATION_INDEPENDENT_PRINT_CHECK_PENDING",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:042",
+      "link_id": 145,
+      "title": "Novena to St Therese of Lisieux",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-st-therese-of-lisieux-the-little-flower/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "REPEAT_9_DAY",
+      "calendar_days": 9,
+      "numbered_daily_texts": 0,
+      "components": [
+        {
+          "component_id": "sensus-novena-145-c01",
+          "description": "one St Therese rose petition prayer",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": "st_therese",
+      "relationship_note": "SAME_SUBJECT_CANONICAL_24_GLORIA_FORM_DIFFERS",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:049",
+      "link_id": 152,
+      "title": "Novena to St Jude",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-st-jude/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "REPEAT_9_DAY",
+      "calendar_days": 9,
+      "numbered_daily_texts": 0,
+      "components": [
+        {
+          "component_id": "sensus-novena-152-c01",
+          "description": "one St Jude petition prayer",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-152-c02",
+          "description": "three sets of Our Father Hail Mary Glory",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": null,
+      "relationship_note": "NO_CANONICAL_NOVENA_SUBJECT_MATCH",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:050",
+      "link_id": 153,
+      "title": "Novena to Christ the King",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-christ-the-king/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "REPEAT_9_DAY",
+      "calendar_days": 9,
+      "numbered_daily_texts": 0,
+      "components": [
+        {
+          "component_id": "sensus-novena-153-c01",
+          "description": "one Christ the King petition",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-153-c02",
+          "description": "Our Father Hail Mary Glory before prayer",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": "christ_the_king",
+      "relationship_note": "SAME_SUBJECT_CANONICAL_MAY_BE_DISTINCT_VARIANT",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:051",
+      "link_id": 154,
+      "title": "Novena for the Holy Souls",
+      "source_url": "https://staging2.sensusfidelium.com/2019/10/26/novena-for-the-holy-souls-in-purgatory-beginning-october-24/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "DISTINCT_9_DAY_COMPOSITE",
+      "calendar_days": 9,
+      "numbered_daily_texts": 9,
+      "components": [
+        {
+          "component_id": "sensus-novena-154-c01",
+          "description": "nine distinct Holy Souls prayer days",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-154-c02",
+          "description": "Our Father Hail Mary",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-154-c03",
+          "description": "common Prayer to Our Suffering Saviour",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": "holy_souls",
+      "relationship_note": "SAME_DAY1_OPENING_AS_CANONICAL_NEEDS_FULL_COLLATION",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "PAGE_IDENTIFIES_RACCOLTA_1910_HISTORICAL_CITATION_INDEPENDENT_PRINT_CHECK_PENDING",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:056",
+      "link_id": 159,
+      "title": "Christmas Novena I (St Andrew Novena)",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/christmas-novena-i-st-andrew-novena/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "EXTENDED_ADVENT_25_DAY_FIFTEEN_DAILY",
+      "calendar_days": 25,
+      "numbered_daily_texts": 0,
+      "components": [
+        {
+          "component_id": "sensus-novena-159-c01",
+          "description": "one St Andrew Christmas aspiration said 15 times per day from 30 November to 24 December",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": "christmas",
+      "relationship_note": "SAME_FEAST_BUT_NOT_CANONICAL_9_DAY_CHRISTMAS",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:058",
+      "link_id": 161,
+      "title": "Novena to the Immaculate Conception",
+      "source_url": "https://staging2.sensusfidelium.com/2019/11/29/novena-in-honor-of-our-ladys-immaculate-conception-beginning-november-29/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "DISTINCT_9_DAY_COMPOSITE",
+      "calendar_days": 9,
+      "numbered_daily_texts": 9,
+      "components": [
+        {
+          "component_id": "sensus-novena-161-c01",
+          "description": "Veni Sancte Spiritus and collect",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-161-c02",
+          "description": "daily preparatory Marian prayer",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-161-c03",
+          "description": "nine Hail Mary and Glory per day",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-161-c04",
+          "description": "nine different dated day-prayers",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-161-c05",
+          "description": "optional Loreto litany or Tota Pulchra versicle",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-161-c06",
+          "description": "concluding collect",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": "immaculate_conception",
+      "relationship_note": "DAY1_CLOSE_TO_CANONICAL_1883_BUT_1910_WITNESS_MUST_COLLATE",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "PAGE_IDENTIFIES_RACCOLTA_1910_HISTORICAL_CITATION_INDEPENDENT_PRINT_CHECK_PENDING",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:059",
+      "link_id": 162,
+      "title": "Novena to Our Lady of Guadalupe",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/novena-to-our-lady-of-guadalupe/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "DISTINCT_9_DAY",
+      "calendar_days": 9,
+      "numbered_daily_texts": 9,
+      "components": [
+        {
+          "component_id": "sensus-novena-162-c01",
+          "description": "nine distinct Guadalupe daily prayers",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-162-c02",
+          "description": "Our Father Hail Mary Glory",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": null,
+      "relationship_note": "NO_CANONICAL_NOVENA_SUBJECT_MATCH",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "inventory_row_id": "sensus-calendar-novena:061",
+      "link_id": 164,
+      "title": "Christmas Novena II",
+      "source_url": "https://staging2.sensusfidelium.com/calendar/novenas/christmas-novena-ii/",
+      "source_index": "https://sensusfidelium.com/calendar/novenas/",
+      "form_type": "DISTINCT_9_DAY",
+      "calendar_days": 9,
+      "numbered_daily_texts": 9,
+      "components": [
+        {
+          "component_id": "sensus-novena-164-c01",
+          "description": "nine December 16-24 Antiphon-inspired invocations",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        },
+        {
+          "component_id": "sensus-novena-164-c02",
+          "description": "Our Father Hail Mary Glory",
+          "text_copied": false,
+          "text_witness": "SOURCE_PAGE_READ_COMPONENT_BOUNDARIES_IDENTIFIED",
+          "exact_translation_verification": "NOT_DONE"
+        }
+      ],
+      "canonical_topic_match": "christmas",
+      "relationship_note": "DAY1_OPENING_MATCHES_CANONICAL_1925_CHRISTMAS_WITNESS",
+      "certainty": "BODY_STRUCTURE_DIRECTLY_INSPECTED_SOURCE_INDEX_URL_2026-10-28",
+      "translation_completeness": "NOT_COLLATED",
+      "edition_verification": "NOT_ESTABLISHED",
+      "publication_status": "RESEARCH_ONLY"
+    }
+  ]
+}
