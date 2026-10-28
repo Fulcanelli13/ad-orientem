@@ -31,6 +31,8 @@ jobs:
           node tests/shrines-pilgrimages-contracts.mjs
       - name: P61 exact Catholic building release verification
         run: node tests/sacred-places-p61-four-catholic-buildings.mjs
+      - name: P62 reuse and multi-subject photography research safety
+        run: node tests/sacred-places-p62-reuse-and-subject-gallery.mjs
       - name: Earlier sacred-geography wave regression
         run: |
           node tests/sacred-geography-r72-world-anchors.mjs
