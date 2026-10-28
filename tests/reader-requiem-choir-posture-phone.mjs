@@ -72,11 +72,22 @@ try{
          return Math.max(0,Math.min(max,scroller.scrollTop+b.top-a.top+
            b.height/2-scroller.clientHeight*.39));
        };
-       const options=[position(),Math.max(0,position()-50),Math.min(max,position()+50),0,max];
+       // Tiny Oremus/response paragraphs can own only a narrow scroll
+       // interval near the first-edge guard. Check that reachable interval
+       // rather than testing five arbitrary offsets; never force cue state.
+       const candidates=[
+         position(),Math.max(0,position()-50),Math.min(max,position()+50),
+         ...Array.from({length:Math.ceil(Math.min(max,192)/6)+1},(_,i)=>Math.min(max,i*6)),
+         ...Array.from({length:Math.ceil(max/32)+1},(_,i)=>Math.min(max,i*32)),
+         0,max,
+       ];
+       const options=[...new Set(candidates.map(v=>Math.max(0,Math.min(max,v))))];
+       const observed=new Set();
        for(const scrollTop of options){
          scroller.scrollTop=scrollTop;
          scroller.dispatchEvent(new Event("scroll",{bubbles:true}));
          await frames();
+         observed.add(api.getActiveCue());
          if(api.getActiveCue()===target){
            const state=api.getNativeEventState();
            return {ok:true,posture:state?.posture?.value??state?.posture?.label,
@@ -87,7 +98,9 @@ try{
          }
        }
        return {ok:false,reason:"FOCUS_UNREACHABLE",current:api.getActiveCue(),
-         cue:target,cardId:card.sectionId};
+         cue:target,cardId:card.sectionId,maxScroll:max,
+         cardCues:[...scroller.querySelectorAll(".ao-reader-paragraph[data-cue-id]")].map(n=>n.dataset.cueId),
+         observed:[...observed]};
      },cueId);
      assert.equal(result.ok,true,JSON.stringify(result));
      return result;
