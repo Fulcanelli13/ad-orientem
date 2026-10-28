@@ -44,7 +44,7 @@ export function dailyPersonalSettings(plan,prefs,{esc,L}){
  const mode=group(L("Your prayer routine","Votre règle de prière"),
   choice("mode","standard","Standard · St Pius X","Standard · Saint Pie X",prefs.mode==="standard")+
   choice("mode","expanded","Expanded · My choices","Enrichie · Mes choix",prefs.mode==="expanded"));
- const options=personalDailyOptions(part,prefs.language).filter(x=>x.kind==="additional");
+ const options=personalDailyOptions(part,prefs.language,prefs.edition).filter(x=>x.kind==="additional");
  const selected=new Set(prefs.extras[part]);
  const items=options.map(x=>{
   const on=selected.has(x.id),pos=prefs.extras[part].indexOf(x.id);
