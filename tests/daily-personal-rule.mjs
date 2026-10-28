@@ -365,16 +365,17 @@ for(const edition of ["1905","1913"])for(const daypart of ["morning","evening"])
   }
  }
 }
-// An existing optional prayer may also be selected as a replacement, but never
-// appear twice. The original optional preference survives when the variant is reverted.
+// An optional prayer and a stage formulation are independent user choices.
+// The reader must not silently remove a saved optional card, since that would
+// change the stage count, horizon denominator, and future navigation.
 let overlap=defaultPersonalDailyPrefs("en");
 overlap=changePersonalDailyPrefs(overlap,{action:"extra",daypart:"morning",value:"b10-bbg-1925-apostleship-morning-offering"});
 assert.equal(buildPersonalDailyPlan({daypart:"morning",prefs:overlap}).rows.length,12);
 overlap=changePersonalDailyPrefs(overlap,{action:"variant",daypart:"morning",value:"b10-bbg-1925-apostleship-morning-offering"});
-assert.equal(buildPersonalDailyPlan({daypart:"morning",prefs:overlap}).rows.length,11,"A chosen replacement cannot also be appended as an extra");
+assert.equal(buildPersonalDailyPlan({daypart:"morning",prefs:overlap}).rows.length,12,"Selecting a formulation must leave all saved optional stages untouched");
 assert.deepEqual(overlap.extras.morning,["b10-bbg-1925-apostleship-morning-offering"],"Stored optional preference must not be deleted");
 overlap=changePersonalDailyPrefs(overlap,{action:"variant",daypart:"morning",value:"b10-bbg-1925-apostleship-morning-offering"});
-assert.equal(buildPersonalDailyPlan({daypart:"morning",prefs:overlap}).rows.length,12,"Reverting exposes the independently saved optional prayer again");
+assert.equal(buildPersonalDailyPlan({daypart:"morning",prefs:overlap}).rows.length,12,"Reverting must preserve stage count and saved optional prayers");
 // Existing 1913/1905 and English/French/Latin source controls remain independent.
 const noEnglish=buildPersonalDailyPlan({daypart:"morning",prefs:changePersonalDailyPrefs(
  defaultPersonalDailyPrefs("fr"),{action:"variant",daypart:"morning",value:"b10-bbg-1925-apostleship-morning-offering"})});
