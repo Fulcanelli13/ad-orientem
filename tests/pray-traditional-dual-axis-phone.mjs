@@ -208,9 +208,9 @@ try{
  assert.equal(await page.locator("#aoPray435930 [data-tp381-personal-action='extra'][data-tp381-personal-value='roman-compline-latin-in-manus']").count(),0,"Latin Office text cannot be silently labelled English");
  await englishInManus.evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"11","English historical responsory must be a complete optional card");
- await page.locator("#aoPray435930 [data-tp381-daily-card-index='10']").evaluate(el=>el.click());
+ await page.locator("#aoPray435930 .aoDevoStop").nth(10).evaluate(el=>el.click());
  assert.match(await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText(),/Thou hast redeemed us, O Lord, God of truth/);
- assert.match(await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText(),/not the complete Office/);
+ assert.match(await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText(),/non l’office entier|not the complete Office/);
  await englishInManus.evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"10","Removing English responsory restores baseline without residual stage");
 
