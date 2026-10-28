@@ -441,7 +441,8 @@ export function createReaderCueStateController({
       ? sourceResponse(responseItem) : null;
 
     const actionItem=actions.get(cueId);
-    const priestAction=actionItem && !omitRequiemAgnusStrike &&\n      !isRequiemGospelCeremonyOmitted(cueId,prepared,activeConditions) && conditionPasses(actionItem.condition,activeConditions)
+    const priestAction=actionItem && !omitRequiemAgnusStrike &&
+      !isRequiemGospelCeremonyOmitted(cueId,prepared,activeConditions) && conditionPasses(actionItem.condition,activeConditions)
       ? sourcePriestAction(actionItem) : null;
 
     const positionItem=latestPassing(positions,activeSort,activeConditions);
