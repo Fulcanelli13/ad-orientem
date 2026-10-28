@@ -39,6 +39,19 @@ const label=(en,fr,locale)=>locale==="fr"?fr:en;
 const required=(ok,code)=>{if(!ok)throw new Error("OFFICE_RESEARCH_READER_"+code)};
 const blank=value=>typeof value==="string"&&value.trim().length>0;
 
+// Pinned Divinum Officium can return literal unresolved translation
+// placeholders as a source cell ("1 is missing", "2 is missing",
+// "special is missing"). They are NEVER Office prayer text.
+// Match the beginning of a source cell only; no broad "missing" search.
+export const OFFICE_UNRESOLVED_TRANSLATION_RE=/^\\s*(?:(?:[1-9][0-9]*)|special)\\s+is missing\\b/i;
+export const sourceCellHasMissingTranslation=text=>
+  OFFICE_UNRESOLVED_TRANSLATION_RE.test(String(text??""));
+export function missingOfficeSourceCells(document){
+  return (document?.sections??[]).filter(s=>sourceCellHasMissingTranslation(s?.text))
+    .map(s=>Object.freeze({sourceCellId:s.sourceCellId,sourceIndex:s.sourceIndex,
+      language:document.language,date:document.date,hour:document.hour}));
+}
+
 /**
  * Read-only contract for paired, source-aligned *research* material.
  * No document is asserted to be liturgically complete or authoritative.
@@ -53,6 +66,7 @@ export function validateResearchOfficePair({latin,translation,locale="en"}={}){
     required(document?.sourceRevision===DIVINUM_OFFICIUM_PIN,"SOURCE_PIN_MISMATCH");
     required(Array.isArray(document?.sections)&&document.sections.length>0,"SECTIONS_MISSING");
     required(blank(document?.headline),"HEADLINE_MISSING");
+    required(missingOfficeSourceCells(document).length===0,"UPSTREAM_MISSING_TEXT");
   }
   required(latin.language==="la"&&translation.language===locale,"LANGUAGE_MISMATCH");
   required(latin.date===translation.date&&latin.hour===translation.hour&&latin.sourceRevision===translation.sourceRevision,
