@@ -1,16 +1,23 @@
 /**
- * Opt-in contemplative presentation for the source-owned Morning/Evening Prayer.
+ * Contemplative presentation for the source-owned Morning/Evening Prayer.
  *
- * Preview: ?aoPrayReader=contemplative
- * Default: unchanged. Never rewrites prayer texts, sequences, routes or reader state.
+ * Default: contemplative. Classic rollback: ?aoPrayReader=classic.
+ * Explicit preview URL ?aoPrayReader=contemplative remains compatible.
+ * Never rewrites prayer texts, sequences, routes or reader state.
  * Existing source-gated formulation and timer work remains independently owned.
  */
 export const CONTEMPLATIVE_DAILY_PREVIEW_VERSION = "contemplative-daily-preview-v1";
 export const CONTEMPLATIVE_DAILY_PREVIEW_FLAG = "aoPrayReader=contemplative";
+export const CONTEMPLATIVE_DAILY_CLASSIC_FALLBACK_FLAG = "aoPrayReader=classic";
+
+// The rollback is URL-local; no persistent preference or migration is written.
+export function contemplativeDailyEnabled(search) {
+  const params = new URLSearchParams(String(search || "").replace(/^\?/, ""));
+  return !["classic", "regular", "legacy"].includes(params.get("aoPrayReader"));
+}
 
 export function contemplativeDailyMode(search, mount) {
-  const params = new URLSearchParams(String(search || "").replace(/^\?/, ""));
-  if (params.get("aoPrayReader") !== "contemplative") return null;
+  if (!contemplativeDailyEnabled(search)) return null;
   if (mount?.dataset?.aoTraditionalPrayRoute !== "pray.morning_evening") return null;
   if (mount?.dataset?.aoPrayView !== "traditional-pray" || !mount.querySelector?.(".aoTP381DaypartStrip")) return null;
   // Full-text mode retains the subdued theme but not the guided-stage treatment.
@@ -64,7 +71,7 @@ export const CONTEMPLATIVE_DAILY_PREVIEW_CSS = [
  */
 export function installContemplativeDailyPreview(win = globalThis) {
   const doc = win.document;
-  if (!doc || new URLSearchParams(win.location?.search || "").get("aoPrayReader") !== "contemplative") return false;
+  if (!doc || !contemplativeDailyEnabled(win.location?.search || "")) return false;
   if (win.AO_CONTEMPLATIVE_DAILY_PREVIEW_V1) return true;
   const style = doc.createElement("style");
   style.id = "ao-contemplative-daily-preview-css";
