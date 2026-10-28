@@ -455,140 +455,234 @@
       "title": "Vexilla Regis",
       "source": "ICRSP_FR_LITURGICAL_INDEX",
       "source_url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0901_ancien",
-      "source_verified": "ARTICLE_LATIN_AND_FRENCH_TEXT_FOUND",
+      "source_verified": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
       "canonical_48_status": "not-present-in-48-canonical-bank",
       "priority": "P1",
       "category": "Seasonal hymn",
       "target": "Passiontide; Holy Week",
       "editorial_notes": "Passion Vespers hymn, not the Eucharistic Pange Lingua.",
-      "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY",
-      "app_coverage_status": "HISTORIC_HYMN_NEEDS_SOURCE_AND_ROUTE_CHECK",
-      "app_coverage_label": "Seasonal Office hymn — assess existing coverage and editions",
+      "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
+      "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+      "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+      "app_coverage_label": "Complete Latin Office hymn available in Sacred Hymns draft",
       "app_match_refs": [],
-      "next_action": "Match to existing Office/Mass hymn registries and 1962 text recension; if new, integrate in seasonal hymn/Office context rather than daily prayer bank.",
+      "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
       "review_group": "SEASONAL_OFFICE_HYMN",
-      "source_selection_status": "ACCEPTED"
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.sacred_hymns",
+      "historical_hymn_ids": [
+        "vexilla_regis"
+      ],
+      "text_witnesses": {
+        "la": [
+          "https://icrspfrance.fr/textes-liturgiques.php?article=a0901_ancien"
+        ]
+      },
+      "office_role": "Passiontide Vespers",
+      "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
+      "english_translation_status": "HISTORICAL_EDITION_REQUIRED",
+      "liturgical_rubric": "Kneel during O Crux ave stanza according to ICRSP witness"
     },
     {
       "id": "icrsp_fr_audi_benigne_conditor",
       "title": "Audi, benigne Conditor",
       "source": "ICRSP_FR_LITURGICAL_INDEX",
       "source_url": "https://icrspfrance.fr/textes-liturgiques.php?article=x9ef3247f_lisible",
-      "source_verified": "ARTICLE_LATIN_AND_FRENCH_TEXT_FOUND",
+      "source_verified": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
       "canonical_48_status": "not-present-in-48-canonical-bank",
       "priority": "P1",
       "category": "Seasonal hymn",
       "target": "Lent Vespers",
       "editorial_notes": "Liturgical Latin hymn; translate only from attested historical text.",
-      "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY",
-      "app_coverage_status": "HISTORIC_HYMN_NEEDS_SOURCE_AND_ROUTE_CHECK",
-      "app_coverage_label": "Seasonal Office hymn — assess existing coverage and editions",
+      "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
+      "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+      "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+      "app_coverage_label": "Complete Latin Office hymn available in Sacred Hymns draft",
       "app_match_refs": [],
-      "next_action": "Match to existing Office/Mass hymn registries and 1962 text recension; if new, integrate in seasonal hymn/Office context rather than daily prayer bank.",
+      "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
       "review_group": "SEASONAL_OFFICE_HYMN",
-      "source_selection_status": "ACCEPTED"
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.sacred_hymns",
+      "historical_hymn_ids": [
+        "audi_benigne"
+      ],
+      "text_witnesses": {
+        "la": [
+          "https://icrspfrance.fr/textes-liturgiques.php?article=x9ef3247f_lisible"
+        ]
+      },
+      "office_role": "Lent Vespers",
+      "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
+      "english_translation_status": "HISTORICAL_EDITION_REQUIRED",
+      "liturgical_rubric": null
     },
     {
       "id": "icrsp_fr_ad_cenam_agni",
       "title": "Ad cenam Agni providi / Ad regias Agni dapes",
       "source": "ICRSP_FR_LITURGICAL_INDEX",
       "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
-      "source_verified": "LISTING_CONFIRMED",
+      "source_verified": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
       "canonical_48_status": "not-present-in-48-canonical-bank",
       "priority": "P1",
       "category": "Seasonal hymn",
       "target": "Easter Vespers",
       "editorial_notes": "Two historical recensions; mark versions explicitly and do not conflate.",
-      "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY",
-      "app_coverage_status": "HISTORIC_HYMN_NEEDS_SOURCE_AND_ROUTE_CHECK",
-      "app_coverage_label": "Seasonal Office hymn — assess existing coverage and editions",
+      "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
+      "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+      "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+      "app_coverage_label": "Two historical Easter Vespers Latin hymn recensions available in Sacred Hymns draft",
       "app_match_refs": [],
-      "next_action": "Match to existing Office/Mass hymn registries and 1962 text recension; if new, integrate in seasonal hymn/Office context rather than daily prayer bank.",
+      "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
       "review_group": "SEASONAL_OFFICE_HYMN",
-      "source_selection_status": "ACCEPTED"
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.sacred_hymns",
+      "historical_hymn_ids": [
+        "ad_regias_agni_dapes",
+        "ad_cenam_agni_providi"
+      ],
+      "text_witnesses": {
+        "la": [
+          "https://icrspfrance.fr/textes-liturgiques.php?article=a0913_ancien",
+          "https://icrspfrance.fr/textes-liturgiques.php?article=a0920_ancien"
+        ]
+      },
+      "office_role": "Eastertide Vespers",
+      "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
+      "english_translation_status": "HISTORICAL_EDITION_REQUIRED",
+      "liturgical_rubric": "Distinct ordinary Roman Breviary post-1632 and restricted historical pre-1632 recensions; 1912 Antiphonale conditional usage"
     },
     {
       "id": "icrsp_fr_aeterne_rex_altissime",
       "title": "Aeterne Rex altissime",
       "source": "ICRSP_FR_LITURGICAL_INDEX",
       "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
-      "source_verified": "LISTING_CONFIRMED",
+      "source_verified": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
       "canonical_48_status": "not-present-in-48-canonical-bank",
       "priority": "P1",
       "category": "Seasonal hymn",
       "target": "Ascension Matins",
       "editorial_notes": "Source indicates Matins of Ascension.",
-      "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY",
-      "app_coverage_status": "HISTORIC_HYMN_NEEDS_SOURCE_AND_ROUTE_CHECK",
-      "app_coverage_label": "Seasonal Office hymn — assess existing coverage and editions",
+      "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
+      "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+      "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+      "app_coverage_label": "Complete Latin Office hymn available in Sacred Hymns draft",
       "app_match_refs": [],
-      "next_action": "Match to existing Office/Mass hymn registries and 1962 text recension; if new, integrate in seasonal hymn/Office context rather than daily prayer bank.",
+      "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
       "review_group": "SEASONAL_OFFICE_HYMN",
-      "source_selection_status": "ACCEPTED"
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.sacred_hymns",
+      "historical_hymn_ids": [
+        "aeterne_rex_altissime"
+      ],
+      "text_witnesses": {
+        "la": [
+          "https://icrspfrance.fr/textes-liturgiques.php?article=a0938_ancien"
+        ]
+      },
+      "office_role": "Ascension Matins",
+      "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
+      "english_translation_status": "HISTORICAL_EDITION_REQUIRED",
+      "liturgical_rubric": null
     },
     {
       "id": "icrsp_fr_lustra_sex",
       "title": "Lustra sex",
       "source": "ICRSP_FR_LITURGICAL_INDEX",
       "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
-      "source_verified": "LISTING_CONFIRMED",
+      "source_verified": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
       "canonical_48_status": "not-present-in-48-canonical-bank",
       "priority": "P1",
       "category": "Seasonal hymn",
       "target": "Passiontide Lauds",
       "editorial_notes": "Part of Passion hymn tradition; preserve exact text identity.",
-      "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY",
-      "app_coverage_status": "HISTORIC_HYMN_NEEDS_SOURCE_AND_ROUTE_CHECK",
-      "app_coverage_label": "Seasonal Office hymn — assess existing coverage and editions",
+      "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
+      "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+      "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+      "app_coverage_label": "Complete Latin Office hymn available in Sacred Hymns draft",
       "app_match_refs": [],
-      "next_action": "Match to existing Office/Mass hymn registries and 1962 text recension; if new, integrate in seasonal hymn/Office context rather than daily prayer bank.",
+      "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
       "review_group": "SEASONAL_OFFICE_HYMN",
-      "source_selection_status": "ACCEPTED"
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.sacred_hymns",
+      "historical_hymn_ids": [
+        "lustra_sex"
+      ],
+      "text_witnesses": {
+        "la": [
+          "https://icrspfrance.fr/textes-liturgiques.php?article=x628ec868_lisible"
+        ]
+      },
+      "office_role": "Passiontide Lauds",
+      "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
+      "english_translation_status": "HISTORICAL_EDITION_REQUIRED",
+      "liturgical_rubric": null
     },
     {
       "id": "icrsp_fr_o_sol_salutis",
       "title": "O sol salutis intimis",
       "source": "ICRSP_FR_LITURGICAL_INDEX",
       "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
-      "source_verified": "LISTING_CONFIRMED",
+      "source_verified": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
       "canonical_48_status": "not-present-in-48-canonical-bank",
       "priority": "P1",
       "category": "Seasonal hymn",
       "target": "Lent Lauds",
       "editorial_notes": "Seasonal Office hymn.",
-      "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY",
-      "app_coverage_status": "HISTORIC_HYMN_NEEDS_SOURCE_AND_ROUTE_CHECK",
-      "app_coverage_label": "Seasonal Office hymn — assess existing coverage and editions",
+      "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
+      "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+      "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+      "app_coverage_label": "Complete Latin Office hymn available in Sacred Hymns draft",
       "app_match_refs": [],
-      "next_action": "Match to existing Office/Mass hymn registries and 1962 text recension; if new, integrate in seasonal hymn/Office context rather than daily prayer bank.",
+      "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
       "review_group": "SEASONAL_OFFICE_HYMN",
-      "source_selection_status": "ACCEPTED"
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.sacred_hymns",
+      "historical_hymn_ids": [
+        "o_sol_salutis"
+      ],
+      "text_witnesses": {
+        "la": [
+          "https://icrspfrance.fr/textes-liturgiques.php?article=a0155_ancien"
+        ]
+      },
+      "office_role": "Lent Lauds",
+      "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
+      "english_translation_status": "HISTORICAL_EDITION_REQUIRED",
+      "liturgical_rubric": null,
+      "provenance_note": "Complete liturgical text embedded within ICRSP First Sunday of Lent Office; exact standalone hymn article URL not yet captured"
     },
     {
       "id": "icrsp_fr_ex_more_docti",
       "title": "Ex more docti mystico",
       "source": "ICRSP_FR_LITURGICAL_INDEX",
       "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
-      "source_verified": "LISTING_CONFIRMED",
+      "source_verified": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
       "canonical_48_status": "not-present-in-48-canonical-bank",
       "priority": "P2",
       "category": "Seasonal hymn",
       "target": "Lent Matins",
       "editorial_notes": "Seasonal Office hymn.",
-      "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY",
-      "app_coverage_status": "HISTORIC_HYMN_NEEDS_SOURCE_AND_ROUTE_CHECK",
-      "app_coverage_label": "Seasonal Office hymn — assess existing coverage and editions",
+      "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
+      "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+      "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+      "app_coverage_label": "Complete Latin Office hymn available in Sacred Hymns draft",
       "app_match_refs": [],
-      "next_action": "Match to existing Office/Mass hymn registries and 1962 text recension; if new, integrate in seasonal hymn/Office context rather than daily prayer bank.",
+      "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
       "review_group": "SEASONAL_OFFICE_HYMN",
-      "source_selection_status": "ACCEPTED"
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.sacred_hymns",
+      "historical_hymn_ids": [
+        "ex_more_docti"
+      ],
+      "text_witnesses": {
+        "la": [
+          "https://icrspfrance.fr/textes-liturgiques.php?article=xd82464db_lisible"
+        ]
+      },
+      "office_role": "Lent Matins",
+      "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
+      "english_translation_status": "HISTORICAL_EDITION_REQUIRED",
+      "liturgical_rubric": null
     },
     {
       "id": "icrsp_fr_magnificat",
@@ -702,12 +796,17 @@
     "full_new_prayers_published_to_production": 0,
     "source_held_second_priest_prayer": 1,
     "languages": "August Queen historically attested EN/FR; Eternal Priest ICKSP EN only; no invented Latin or Italian",
-    "test_status": "ST_THERESE_STATIC_RUNTIME_AND_PRIMARY_PRINTED_SOURCE_CHECK_IN_PROGRESS; FULL NODE_PLAYWRIGHT_NOT_EXECUTED",
+    "test_status": "STATIC_JS_SYNTAX_AND_EN_FR_RENDERING_SMOKE_PASS; FULL NODE_PLAYWRIGHT_NOT_EXECUTED",
     "added_novena_forms": 1,
     "original_canonical_novena_count_preserved": 16,
     "therese_1925_en_prayer_implemented": 1,
     "therese_source_links": 2,
-    "canonical_salve_regina_reused": true
+    "canonical_salve_regina_reused": true,
+    "icrsp_seasonal_groups_accepted": 7,
+    "historical_latin_hymns_in_draft": 8,
+    "hymn_original_corpus_preserved": 3,
+    "hymns_reader_total": 11,
+    "production_hymn_releases": 0
   },
   "reconciliation_pass3": {
     "date": "2026-10-28",
