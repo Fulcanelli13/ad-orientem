@@ -54,12 +54,16 @@ for(const id of ["SMIN-001","SMIN-002","SMIN-006","SMIN-012","SMIN-013"]){
  assert.equal(byId(deadFr,id),undefined,id+" French rubric leaks into Requiem");
  assert.ok(byId(ordinaryEn,id),"Ordinary Solemn Mass suppressed "+id);
 }
-for(const id of ["SMIN-004","SMIN-007","SMIN-009"]){
+for(const id of ["SMIN-004","SMIN-007","SMIN-009","SMIN-010","SMIN-011"]){
  assert.ok(byId(deadEn,id));
  assert.notEqual(byId(deadEn,id).displayText,byId(ordinaryEn,id).displayText);
  assert.notEqual(byId(deadFr,id).displayText,byId(ordinaryFr,id).displayText);
 }
 assert.equal(deadEn.flatMap(x=>x.publishedMissalRubrics??[]).length,14);
+for(const [id,object] of [["SMIN-010","Host"],["SMIN-011","Chalice"]]){
+ assert.match(byId(deadEn,id)?.displayText??"",new RegExp("subdeacon.*incenses.*"+object,"i"));
+ assert.match(byId(deadFr,id)?.displayText??"",/sous-diacre.*encense/i);
+}
 assert.ok(byId(deadEn,"SMIN-009"),"Requiem Offertory incense must remain permitted");
 for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE"]){
  const rows=mk(sources);
