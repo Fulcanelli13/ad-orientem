@@ -25,7 +25,7 @@ await new Promise((resolve,reject)=>{
 let browser;
 try{
   browser=await chromium.launch({headless:true});
-  let sampledActive=0,sampledEmpty=0;
+  let sampledActive=0,sampledEmpty=0,sampledScroll=0;
   const configurations=[
     {name:"production64",query:"production=1",cards:65,visible:64},
     {name:"optional65",query:"production=1&secondConfiteor=1",cards:65,visible:65},
@@ -41,7 +41,14 @@ try{
     assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards),variant.cards);
     const checkpoints=await page.evaluate(()=>{
       const cards=window.__AO_PHONE_PREVIEW.model.cards;
-      return [...new Set([0,.18,.4,.62,.84].map(p=>cards[Math.floor(p*(cards.length-1))]?.sequence))].filter(x=>x!=null);
+      const samples=[0,.18,.4,.62,.84].map(p=>cards[Math.floor(p*(cards.length-1))]?.sequence);
+      // Also inspect the text-densest prayers. A short-card-only sample
+      // cannot expose rail icons floating after an internal scroll.
+      const longCards=cards.filter(c=>c.stateOnly!==true&&
+        !String(c.title??"").startsWith("Second Confiteor"))
+        .sort((a,b)=>(b.paragraphs?.length??0)-(a.paragraphs?.length??0))
+        .slice(0,5).map(c=>c.sequence);
+      return [...new Set([...samples,...longCards])].filter(x=>x!=null);
     });
     assert.ok(checkpoints.length>=4,"Not enough canonical LIVE card checkpoints");
     for(const sequence of checkpoints){
@@ -158,6 +165,61 @@ try{
           assert.equal(cue.title,null,cue.channel+" stale hover title survived");
         }
       }
+      // Move through the actual prayer scroll, not merely between cards.
+      // A source line outside this clipped viewport must not paint an icon
+      // over the card header, footer or empty stage, even when the line's
+      // DOM node still has a measurable bounding rectangle.
+      const scrollAudit=await page.evaluate(async()=>{
+        const scroll=document.querySelector(".ao-reader-stage .ao-prayer-card");
+        const overflow=scroll.scrollHeight-scroll.clientHeight;
+        if(overflow<=16)return null;
+        const before=window.__AO_PHONE_PREVIEW.getScholaState?.();
+        scroll.scrollTop=Math.round(overflow*.67);
+        await new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok)));
+        const viewport=scroll.getBoundingClientRect();
+        const tiles=[...document.querySelectorAll(".ao-reader-stage .ao-rail-item")];
+        const anchored=tiles.filter(x=>x.dataset.sourceRailAnchor==="exact");
+        const invalid=anchored.map(x=>{
+          const cue=x.dataset.sourceRailCueId;
+          const paragraphs=[...scroll.querySelectorAll(".ao-reader-paragraph")];
+          const source=paragraphs.find(y=>y.dataset.cueId===cue||
+            String(y.dataset.sourceCueIds||"").split(/\\s+/).includes(cue));
+          const first=source?.querySelector(".ao-line-primary")||source;
+          const rect=first?.getBoundingClientRect();
+          const line=first?parseFloat(getComputedStyle(first).lineHeight)||28:28;
+          const baseline=rect?.top+Math.min(23,Math.max(9,line/2));
+          return {cue,channel:x.dataset.channel,sourceFound:Boolean(source),
+            baseline,top:viewport.top,bottom:viewport.bottom,
+            visible:getComputedStyle(x).display!=="none",
+            ariaHidden:x.getAttribute("aria-hidden"),
+            role:x.getAttribute("role"),
+            offset:Number(x.dataset.sourceRailOffset)};
+        }).filter(x=>!x.sourceFound||!x.visible||x.ariaHidden==="true"||
+          x.role!=="img"||!Number.isFinite(x.baseline)||
+          x.baseline<x.top-1||x.baseline>x.bottom+1||
+          !Number.isFinite(x.offset)||Math.abs(x.offset)>65);
+        const offscreenVisible=tiles.filter(x=>x.dataset.active==="true"&&
+          x.dataset.iconVisible==="true"&&x.dataset.sourceRailAnchor!=="exact"&&
+          getComputedStyle(x).display!=="none").map(x=>x.dataset.channel);
+        const after=window.__AO_PHONE_PREVIEW.getScholaState?.();
+        return {scrollTop:scroll.scrollTop,overflow,invalid,offscreenVisible,
+          trackBefore:before?.trackId??null,trackAfter:after?.trackId??null,
+          segmentBefore:before?.schola?.segmentId??null,
+          segmentAfter:after?.schola?.segmentId??null};
+      });
+      if(scrollAudit){
+        sampledScroll++;
+        assert.ok(scrollAudit.scrollTop>0,
+          width+" "+snap.card+" long prayer did not scroll");
+        assert.deepEqual(scrollAudit.invalid,[],
+          width+" "+snap.card+" rail icon detached from its visible source after scroll");
+        assert.deepEqual(scrollAudit.offscreenVisible,[],
+          width+" "+snap.card+" offscreen source icon remained painted");
+        assert.equal(scrollAudit.trackAfter,scrollAudit.trackBefore,
+          "Scrolling a LIVE prayer advanced the independent Schola track");
+        assert.equal(scrollAudit.segmentAfter,scrollAudit.segmentBefore,
+          "Scrolling a LIVE prayer advanced the independent Schola phrase");
+      }
       // Contextual presentation may place sourced posture in the left rail;
       // otherwise posture belongs to the top ribbon and must not create an
       // additional transient icon. Follow the canonical current layout owner.
@@ -172,6 +234,7 @@ try{
     await context.close();
   }
   assert(sampledActive>0,"No active icon cue was sampled; test did not exercise semantic labelling");
+  assert(sampledScroll>0,"No long prayer was scrolled; source-rail viewport test did not execute");
   console.log("PASS LIVE rails 320/360/390px: 65-card source reader, exact paragraph anchors, no floating or overlapping cue icons, labels preserved.");
 }finally{
   await browser?.close();
