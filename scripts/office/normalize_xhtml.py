@@ -53,6 +53,16 @@ LATIN_CELL_PREFIXES = (
     (re.compile(r"^(?:Oratio|Preces)\b", re.I), "PRAYER"),
     (re.compile(r"^Conclusio(?:$|\n|\s)", re.I), "CONCLUSION"),
     (re.compile(r"^(?:Nocturnus|Nocturnum)\b", re.I), "NOCTURN"),
+    # These are literal first-line headings observed in the 96-hour pilot.
+    # The Iube cell can include blessing AND lesson; do not call it merely a blessing.
+    (re.compile(r"^℣\.\s*Iube,\s*Dómine,\s*benedícere", re.I), "LESSON_WITH_BLESSING"),
+    (re.compile(r"^Pater Noster dicitur secreto", re.I), "MATINS_PREPARATION"),
+    (re.compile(r"^Antiphona finalis B\.M\.V\.", re.I), "MARIAN_ANTIPHON"),
+    (re.compile(r"^Martyrologium\b", re.I), "MARTYROLOGY"),
+    (re.compile(r"^De Officio Capituli\b", re.I), "PRIME_CHAPTER_OFFICE"),
+    (re.compile(r"^Reliqua omittuntur", re.I), "RUBRICAL_NOTE"),
+    (re.compile(r"^℣\.\s*Deus\s*✠\s*in adiutórium", re.I), "OPENING"),
+    (re.compile(r"^℣\.", re.I), "VERSICLE_RESPONSE"),
 )
 def classify_latin_cell(text: str) -> dict:
     # Never classify an arbitrary verse in the middle of the cell.
