@@ -1,0 +1,39 @@
+name: Connected Sacred Entities P64 read-only contracts
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/find/connected-sacred-entities.js'
+      - 'tests/connected-sacred-entities-p64.mjs'
+      - 'docs/CONNECTED-SACRED-ENTITIES-P64-ARCHITECTURE-20261029.md'
+      - 'data/geography/seed-registry.v1.json'
+      - 'data/saints/**'
+      - 'data/customs/customs-atlas-seed.v1.json'
+      - 'data/explore/sacred-phenomena-seed.v1.json'
+      - 'data/shrines/shrines-pilgrimages-seed.v1.json'
+      - 'src/calendar/intelligence.js'
+      - '.github/workflows/connected-sacred-entities-p64.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'src/find/connected-sacred-entities.js'
+      - 'tests/connected-sacred-entities-p64.mjs'
+      - 'data/geography/seed-registry.v1.json'
+      - 'data/saints/**'
+      - 'data/customs/customs-atlas-seed.v1.json'
+      - 'data/explore/sacred-phenomena-seed.v1.json'
+      - 'data/shrines/shrines-pilgrimages-seed.v1.json'
+      - 'src/calendar/intelligence.js'
+permissions:
+  contents: read
+jobs:
+  connected-source-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Existing canonical owners, identity scope and Calendar protection
+        run: node tests/connected-sacred-entities-p64.mjs
