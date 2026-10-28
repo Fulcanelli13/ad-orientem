@@ -1,26 +1,26 @@
 /** B27 historical Montfort prerequisite prayers.
- * Source authority: 1897 Adoration Manual Litany of the Holy Ghost,
- * Bonaventure Hammer 1909 Holy Name litany (compared to Raccolta 1910 §56),
+ * Holy Ghost source authority: eCatholic2000 supplemental digital prayer; the
+ * 1897 Manual of Adoration litany may differ (wording not yet collated).\n * Bonaventure Hammer 1909 Holy Name litany (cf. Raccolta 1910 §56),
  * and F.W. Faber's 1863 translation of Montfort True Devotion §67.
  * These are historical DIGITAL witnesses, NOT original print photographs.
  * No modern 1987 translation and no manufactured French prayer text.
  */
 export const MONTFORT_B27_SOURCE=Object.freeze({
   schema:"ao.pray.montfort-b27-three-historical-prayers.v1",
-  witnessState:"HISTORICAL_DIGITAL_ENGLISH_NOT_ORIGINAL_FACSIMILE_CERTIFIED",
+  witnessState:"DIGITAL_HISTORICAL_ENGLISH_WITNESS_EXPLICIT_UNVERIFIED_1897_RECENSION",
   originalPrintImageCollated:false,frenchHistoricalWitnessVerified:false,
   invalidCurrentIndulgenceClaims:true,
-  historicalPrayersCount:3
+  historicalPrayersCount:3,holySpirit1897IdenticalRecensionVerified:false
 });
 export const MONTFORT_B27_PRAYERS=Object.freeze({
   "holySpirit": {
     "id": "holy_spirit_litany",
     "titleEn": "Litany of the Holy Ghost",
     "titleFr": "Litanies du Saint-Esprit",
-    "witness": "1897 Manual of Adoration of the Most Blessed Sacrament, pp.235–239; historical English digital witness corroborated with a later traditional consecration edition",
-    "witnessUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Manual_of_adoration_of_the_most_Blessed_Sacrament.._%28IA_manualofadoratio00schm%29.pdf",
-    "comparisonUrl": "https://www.ecatholic2000.com/montfort/true/devotion.shtml",
-    "note": "Historic prayer-form text in English; original photographed 1897 page-level exact collation pending, witness spelling/punctuation normalized. This is the full litany, NOT the shorter Come Holy Spirit invocation.",
+    "witness": "Traditional English Litany of the Holy Ghost from the online supplementary consecration prayers in eCatholic2000; identity with the 1897 Manual of Adoration litany has NOT been verified",
+    "witnessUrl": "https://www.ecatholic2000.com/montfort/true/devotion.shtml",
+    "comparisonUrl": "https://www.sing-prayer.org/manual-of-adoration-of-the-most-blessed-sacrament-1897",
+    "note": "This complete English litany matches the online supplemental consecration-prayers transcription. A 1897 Manual of Adoration lists a Litany of the Holy Ghost on printed p.235, but its complete wording has NOT been compared; do not attribute this recension to that book. The source prayer is not the shorter Come Holy Spirit invocation. No historical French translation or original photographed edition is certified.",
     "opening": [
       [
         "Lord, have mercy on us.",
