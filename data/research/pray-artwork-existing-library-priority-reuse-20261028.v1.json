@@ -1,0 +1,1374 @@
+{
+  "schema": "AO_PRAYER_PRIOR_ARCHIVE_FIRST_SHORTLIST_V1",
+  "date": "2026-10-28",
+  "scope": "EXISTING_APPROVALS_AND_EXISTING_MUSEUM_OBJECTS_ONLY",
+  "sourceAuthority": {
+    "historicalArchive": "data/research/sacred-art-historical-101-archive-crosswalk-20261028.v1.json",
+    "museumRegistry": "data/calendar/sacred-art-candidates.v1.json",
+    "userChoices": "data/research/pray-mosaic-user-decisions-20261028-060047.json"
+  },
+  "policy": "Unselected physical works are suggestions only; exact existing historical approval stays in its original subject; no new painting sources introduced.",
+  "stats": {
+    "pools": 21,
+    "emptyUserPoolsCovered": 14,
+    "proposedExistingPaintingPlacements": 63,
+    "poolsWithNoSuitableExistingWork": [
+      "divine-mercy",
+      "library"
+    ],
+    "rejectedProposalConflictsBlocked": 0,
+    "photoMastersReleased": 0
+  },
+  "recommendations": [
+    {
+      "pool": "divine-mercy",
+      "existingUserKeeps": [],
+      "previousPoolRejections": [
+        "confession--primary"
+      ],
+      "undecided": [
+        "sorrows--primary"
+      ],
+      "proposalsFromExistingLibrary": [],
+      "proposalsCount": 0,
+      "scopeNote": "No exact, old-gallery-approved Divine Mercy oil painting in the verified existing registry. Original Kazimirowski image is a later research lead; do not pad with unrelated penitential imagery."
+    },
+    {
+      "pool": "communion",
+      "existingUserKeeps": [],
+      "previousPoolRejections": [],
+      "undecided": [
+        "adoration--primary",
+        "visit--primary",
+        "adoration--champaigne"
+      ],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437977",
+          "subjectId": null,
+          "artist": "Marcantonio Franceschini",
+          "title": "The Last Communion of Saint Mary of Egypt",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437977",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-435728",
+          "subjectId": null,
+          "artist": "Sandro Botticelli",
+          "title": "The Last Communion of Saint Jerome",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/435728",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437527",
+          "subjectId": null,
+          "artist": "Peter Paul Rubens",
+          "title": "The Glorification of the Eucharist",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437527",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437722",
+          "subjectId": null,
+          "artist": "Spanish Painter",
+          "title": "The Mass of Saint Gregory",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437722",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "nga-12130",
+          "subjectId": null,
+          "artist": "Sebastiano Ricci",
+          "title": "The Last Supper",
+          "originSourceUrl": "https://www.nga.gov/artworks/12130-last-supper",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 5,
+      "scopeNote": "All proposed cross-module placements require the user's approval and exact photographic checks."
+    },
+    {
+      "pool": "penitential-psalms",
+      "existingUserKeeps": [],
+      "previousPoolRejections": [],
+      "undecided": [
+        "confession--latour-magdalen",
+        "confession--primary",
+        "historic:jusepe de ribera:saint peter apostolate"
+      ],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-436839",
+          "subjectId": null,
+          "artist": "Georges de La Tour",
+          "title": "The Penitent Magdalen",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/436839",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437986",
+          "subjectId": null,
+          "artist": "Caravaggio (Michelangelo Merisi)",
+          "title": "The Denial of Saint Peter",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437986",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-438561",
+          "subjectId": null,
+          "artist": "Ludovico Carracci",
+          "title": "The Denial of Saint Peter",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/438561",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "nga-34956",
+          "subjectId": null,
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Return of the Prodigal Son",
+          "originSourceUrl": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 4,
+      "scopeNote": "All proposed cross-module placements require the user's approval and exact photographic checks."
+    },
+    {
+      "pool": "stations",
+      "existingUserKeeps": [],
+      "previousPoolRejections": [
+        "historic:giandomenico tiepolo:san polo via crucis station 01 christ condemned to death",
+        "historic:giandomenico tiepolo:san polo via crucis station 06 veronica wipes his face"
+      ],
+      "undecided": [
+        "historic:giandomenico tiepolo:san polo via crucis station 12 death on the cross",
+        "historic:giandomenico tiepolo:descent from the cross prado passion series",
+        "historic:giandomenico tiepolo:burial of christ prado passion series"
+      ],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-itian-hrist-arrying-the-ross",
+          "subjectId": "ROS-09",
+          "artist": "Titian",
+          "title": "Christ Carrying the Cross",
+          "originSourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P000438",
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_ROS-09",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-nthony-van-yck-he-ance-hrust",
+          "subjectId": "ROS-10",
+          "artist": "Anthony van Dyck",
+          "title": "The Lance Thrust",
+          "originSourceUrl": null,
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_ROS-10",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437008",
+          "subjectId": null,
+          "artist": "Master of the Holy Blood",
+          "title": "The Descent from the Cross",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437008",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-438338",
+          "subjectId": null,
+          "artist": "Annibale Carracci",
+          "title": "The Burial of Christ",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/438338",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-910391",
+          "subjectId": null,
+          "artist": "Cecco del Caravaggio (Francesco Buoneri)",
+          "title": "Christ on the Cross",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/910391",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 5,
+      "scopeNote": "These are generic module-hero proposals. Every previously approved Stations picture keeps its own station assignment even if rejected in the separate module-hero review."
+    },
+    {
+      "pool": "seven-words",
+      "existingUserKeeps": [],
+      "previousPoolRejections": [],
+      "undecided": [
+        "sorrows--rubens-entomb",
+        "historic:anthony van dyck:the lance thrust",
+        "historic:giandomenico tiepolo:san polo via crucis station 12 death on the cross"
+      ],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-nthony-van-yck-he-ance-hrust",
+          "subjectId": "ROS-10",
+          "artist": "Anthony van Dyck",
+          "title": "The Lance Thrust",
+          "originSourceUrl": null,
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_ROS-10",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-910391",
+          "subjectId": null,
+          "artist": "Cecco del Caravaggio (Francesco Buoneri)",
+          "title": "Christ on the Cross",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/910391",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-652416",
+          "subjectId": null,
+          "artist": "Pedro Orrente",
+          "title": "The Crucifixion",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/652416",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "cma-112856",
+          "subjectId": null,
+          "artist": "Rogier van der Weyden",
+          "title": "The Crucifixion with a Carthusian Monk",
+          "originSourceUrl": "https://clevelandart.org/art/1931.449",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 4,
+      "scopeNote": "All proposed cross-module placements require the user's approval and exact photographic checks."
+    },
+    {
+      "pool": "tenebrae",
+      "existingUserKeeps": [],
+      "previousPoolRejections": [],
+      "undecided": [
+        "sorrows--rubens-entomb",
+        "historic:david teniers the elder:agony in the garden antwerp rosary cycle",
+        "historic:anthony van dyck:the lance thrust",
+        "historic:giandomenico tiepolo:burial of christ prado passion series"
+      ],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+          "subjectId": "ROS-06",
+          "artist": "David Teniers the Elder",
+          "title": "Agony in the Garden — Antwerp Rosary cycle",
+          "originSourceUrl": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_ROS-06",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437986",
+          "subjectId": null,
+          "artist": "Caravaggio (Michelangelo Merisi)",
+          "title": "The Denial of Saint Peter",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437986",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-nthony-van-yck-he-ance-hrust",
+          "subjectId": "ROS-10",
+          "artist": "Anthony van Dyck",
+          "title": "The Lance Thrust",
+          "originSourceUrl": null,
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_ROS-10",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437008",
+          "subjectId": null,
+          "artist": "Master of the Holy Blood",
+          "title": "The Descent from the Cross",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437008",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-438338",
+          "subjectId": null,
+          "artist": "Annibale Carracci",
+          "title": "The Burial of Christ",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/438338",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 5,
+      "scopeNote": "All proposed cross-module placements require the user's approval and exact photographic checks."
+    },
+    {
+      "pool": "novenas",
+      "existingUserKeeps": [],
+      "previousPoolRejections": [],
+      "undecided": [
+        "joseph--primary",
+        "holy-spirit--primary",
+        "historic:jean l on g r me:the age of augustus birth of christ",
+        "historic:peter paul rubens:assumption of the virgin",
+        "historic:peter paul rubens:saint anthony of padua with the christ child"
+      ],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-ean-estout-entecost",
+          "subjectId": "DEV-03",
+          "artist": "Jean Restout",
+          "title": "Pentecost",
+          "originSourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_DEV-03",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+          "subjectId": "BIB-G02",
+          "artist": "Philippe de Champaigne",
+          "title": "The Dream of Saint Joseph",
+          "originSourceUrl": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph",
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_BIB-G02",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-eter-aul-ubens-aint-nthony-of-adua-with-the-hrist-hild",
+          "subjectId": "DEV-14",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Anthony of Padua with the Christ Child",
+          "originSourceUrl": null,
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_DEV-14",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+          "subjectId": "DEV-08",
+          "artist": "Peter Paul Rubens",
+          "title": "Assumption of the Virgin",
+          "originSourceUrl": null,
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_DEV-08",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-ietro-da-ortona-he-uardian-ngel",
+          "subjectId": "DEV-17",
+          "artist": "Pietro da Cortona",
+          "title": "The Guardian Angel",
+          "originSourceUrl": null,
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_DEV-17",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 5,
+      "scopeNote": "All proposed cross-module placements require the user's approval and exact photographic checks."
+    },
+    {
+      "pool": "first-friday",
+      "existingUserKeeps": [],
+      "previousPoolRejections": [
+        "heart-jesus--batoni-cc0",
+        "heart-jesus--moroder",
+        "historic:anthony van dyck:the lance thrust"
+      ],
+      "undecided": [
+        "heart-jesus--primary"
+      ],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "commons-morlete-sacred-heart-1759",
+          "subjectId": null,
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Jesus",
+          "originSourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "photoPreviewLeads": [],
+          "rightsState": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 1,
+      "scopeNote": "Only the existing Morlete Ruiz work has direct relevant iconography in the canonical 281; other already shown options were rejected or undecided. More pristine heart paintings needed."
+    },
+    {
+      "pool": "first-saturday",
+      "existingUserKeeps": [],
+      "previousPoolRejections": [],
+      "undecided": [
+        "heart-mary--primary",
+        "sorrows--primary",
+        "heart-mary--kupelwieser",
+        "historic:peter paul rubens:immaculate conception"
+      ],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-eter-aul-ubens-mmaculate-onception",
+          "subjectId": "DEV-06",
+          "artist": "Peter Paul Rubens",
+          "title": "Immaculate Conception",
+          "originSourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/the-immaculate-conception/abea9a48-3712-4068-a0dd-c669005430d5",
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_DEV-06",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-nthony-van-yck-amentation-of-hrist",
+          "subjectId": "DEV-09",
+          "artist": "Anthony van Dyck",
+          "title": "Lamentation of Christ",
+          "originSourceUrl": null,
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_DEV-09",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-eter-aul-ubens-oronation-of-the-irgin-oil-sketch",
+          "subjectId": "ROS-15",
+          "artist": "Peter Paul Rubens",
+          "title": "Coronation of the Virgin — oil sketch",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437524",
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_ROS-15",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 3,
+      "scopeNote": "Immaculate Conception, Seven Sorrows and Coronation scenes remain CONTEXTUAL, not paintings of the actual Immaculate Heart; no automatic substitution."
+    },
+    {
+      "pool": "holy-name",
+      "existingUserKeeps": [],
+      "previousPoolRejections": [],
+      "undecided": [
+        "king--primary",
+        "king--previtali",
+        "king--caravaggio-ecce"
+      ],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-910391",
+          "subjectId": null,
+          "artist": "Cecco del Caravaggio (Francesco Buoneri)",
+          "title": "Christ on the Cross",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/910391",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-436199",
+          "subjectId": null,
+          "artist": "Christian Wilhelm Ernst Dietrich",
+          "title": "Christ Healing the Sick",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/436199",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 2,
+      "scopeNote": "All proposed cross-module placements require the user's approval and exact photographic checks."
+    },
+    {
+      "pool": "hymns",
+      "existingUserKeeps": [],
+      "previousPoolRejections": [],
+      "undecided": [
+        "holy-spirit--primary",
+        "holy-spirit--vandyck",
+        "historic:peter paul rubens:the holy trinity",
+        "historic:peter paul rubens:assumption of the virgin"
+      ],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-436198",
+          "subjectId": null,
+          "artist": "Abraham van Diepenbeeck",
+          "title": "Saint Cecilia",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/436198",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-ean-estout-entecost",
+          "subjectId": "DEV-03",
+          "artist": "Jean Restout",
+          "title": "Pentecost",
+          "originSourceUrl": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_DEV-03",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-eter-aul-ubens-he-oly-rinity",
+          "subjectId": "DEV-18",
+          "artist": "Peter Paul Rubens",
+          "title": "The Holy Trinity",
+          "originSourceUrl": null,
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_DEV-18",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+          "subjectId": "DEV-08",
+          "artist": "Peter Paul Rubens",
+          "title": "Assumption of the Virgin",
+          "originSourceUrl": null,
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_DEV-08",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-ietro-da-ortona-aint-ecilia",
+          "subjectId": "SNT-OT-23",
+          "artist": "Pietro da Cortona",
+          "title": "Saint Cecilia",
+          "originSourceUrl": "https://www.nationalgallery.org.uk/paintings/pietro-da-cortona-saint-cecilia",
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_SNT-OT-23",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 5,
+      "scopeNote": "All proposed cross-module placements require the user's approval and exact photographic checks."
+    },
+    {
+      "pool": "good-death",
+      "existingUserKeeps": [],
+      "previousPoolRejections": [],
+      "undecided": [
+        "joseph--primary",
+        "souls--primary"
+      ],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437977",
+          "subjectId": null,
+          "artist": "Marcantonio Franceschini",
+          "title": "The Last Communion of Saint Mary of Egypt",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437977",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-435728",
+          "subjectId": null,
+          "artist": "Sandro Botticelli",
+          "title": "The Last Communion of Saint Jerome",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/435728",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-ietro-da-ortona-he-uardian-ngel",
+          "subjectId": "DEV-17",
+          "artist": "Pietro da Cortona",
+          "title": "The Guardian Angel",
+          "originSourceUrl": null,
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_DEV-17",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 3,
+      "scopeNote": "Last Communion and Guardian Angel are thematically relevant but are not literal deathbed scenes; Saint Joseph's death is a new-research lead, not historical approval."
+    },
+    {
+      "pool": "dying",
+      "existingUserKeeps": [],
+      "previousPoolRejections": [],
+      "undecided": [
+        "souls--primary",
+        "joseph--primary"
+      ],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437977",
+          "subjectId": null,
+          "artist": "Marcantonio Franceschini",
+          "title": "The Last Communion of Saint Mary of Egypt",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437977",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-435728",
+          "subjectId": null,
+          "artist": "Sandro Botticelli",
+          "title": "The Last Communion of Saint Jerome",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/435728",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-ietro-da-ortona-he-uardian-ngel",
+          "subjectId": "DEV-17",
+          "artist": "Pietro da Cortona",
+          "title": "The Guardian Angel",
+          "originSourceUrl": null,
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_DEV-17",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+          "subjectId": "SNT-OT-02",
+          "artist": "Guido Reni",
+          "title": "Archangel Michael Defeating Satan",
+          "originSourceUrl": null,
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_SNT-OT-02",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 4,
+      "scopeNote": "Last Communion and Guardian Angel are thematically relevant but are not literal deathbed scenes; Saint Joseph's death is a new-research lead, not historical approval."
+    },
+    {
+      "pool": "library",
+      "existingUserKeeps": [],
+      "previousPoolRejections": [],
+      "undecided": [
+        "angelus--primary",
+        "angel--primary",
+        "historic:peter paul rubens:the holy trinity",
+        "adoration--champaigne"
+      ],
+      "proposalsFromExistingLibrary": [],
+      "proposalsCount": 0,
+      "scopeNote": "Library image must depend on the particular prayer opened. A single global 3–5 pool would misrepresent individual prayers."
+    },
+    {
+      "pool": "morning",
+      "existingUserKeeps": [
+        {
+          "id": "morning--primary",
+          "artist": "Jules Breton",
+          "title": "The Song of the Lark"
+        }
+      ],
+      "previousPoolRejections": [],
+      "undecided": [],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-435859",
+          "subjectId": null,
+          "artist": "Vincenzo Catena",
+          "title": "The Adoration of the Shepherds",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/435859",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 1,
+      "scopeNote": "The only existing candidate here is a contextual Adoration of Shepherds, not a direct Morning Prayer icon; keep Breton's established choice and do not move Millet's Angelus here."
+    },
+    {
+      "pool": "meals",
+      "existingUserKeeps": [
+        {
+          "id": "historic:giovanni lanfranco:miracle of loaves and fishes",
+          "artist": "Giovanni Lanfranco",
+          "title": "Miracle of Loaves and Fishes"
+        }
+      ],
+      "previousPoolRejections": [
+        "adoration--champaigne",
+        "historic:peter paul rubens:adoration of the magi"
+      ],
+      "undecided": [],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437821",
+          "subjectId": null,
+          "artist": "Jacopo Tintoretto (Jacopo Robusti)",
+          "title": "The Miracle of the Loaves and Fishes",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437821",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437871",
+          "subjectId": null,
+          "artist": "Diego Velázquez",
+          "title": "The Supper at Emmaus",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437871",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "nga-12130",
+          "subjectId": null,
+          "artist": "Sebastiano Ricci",
+          "title": "The Last Supper",
+          "originSourceUrl": "https://www.nga.gov/artworks/12130-last-supper",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 3,
+      "scopeNote": "All proposed cross-module placements require the user's approval and exact photographic checks."
+    },
+    {
+      "pool": "sacred-heart",
+      "existingUserKeeps": [
+        {
+          "id": "heart-jesus--primary",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Jesus"
+        }
+      ],
+      "previousPoolRejections": [],
+      "undecided": [
+        "heart-jesus--batoni-cc0",
+        "heart-jesus--moroder"
+      ],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "commons-morlete-sacred-heart-1759",
+          "subjectId": null,
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Jesus",
+          "originSourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "photoPreviewLeads": [],
+          "rightsState": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 1,
+      "scopeNote": "Only the existing Morlete Ruiz work has direct relevant iconography in the canonical 281; other already shown options were rejected or undecided. More pristine heart paintings needed."
+    },
+    {
+      "pool": "adoration",
+      "existingUserKeeps": [
+        {
+          "id": "adoration--primary",
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "The Virgin Adoring the Host"
+        }
+      ],
+      "previousPoolRejections": [
+        "adoration--allegory",
+        "adoration--champaigne"
+      ],
+      "undecided": [],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437527",
+          "subjectId": null,
+          "artist": "Peter Paul Rubens",
+          "title": "The Glorification of the Eucharist",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437527",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437722",
+          "subjectId": null,
+          "artist": "Spanish Painter",
+          "title": "The Mass of Saint Gregory",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437722",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-438434",
+          "subjectId": null,
+          "artist": "Jean Auguste Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/438434",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 3,
+      "scopeNote": "All proposed cross-module placements require the user's approval and exact photographic checks."
+    },
+    {
+      "pool": "benediction",
+      "existingUserKeeps": [
+        {
+          "id": "adoration--primary",
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "The Virgin Adoring the Host"
+        }
+      ],
+      "previousPoolRejections": [
+        "adoration--champaigne"
+      ],
+      "undecided": [
+        "adoration--allegory"
+      ],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437527",
+          "subjectId": null,
+          "artist": "Peter Paul Rubens",
+          "title": "The Glorification of the Eucharist",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437527",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437722",
+          "subjectId": null,
+          "artist": "Spanish Painter",
+          "title": "The Mass of Saint Gregory",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437722",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-438434",
+          "subjectId": null,
+          "artist": "Jean Auguste Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/438434",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 3,
+      "scopeNote": "All proposed cross-module placements require the user's approval and exact photographic checks."
+    },
+    {
+      "pool": "forty-hours",
+      "existingUserKeeps": [
+        {
+          "id": "adoration--primary",
+          "artist": "Jean-Auguste-Dominique Ingres",
+          "title": "The Virgin Adoring the Host"
+        }
+      ],
+      "previousPoolRejections": [
+        "adoration--allegory",
+        "adoration--champaigne"
+      ],
+      "undecided": [],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437527",
+          "subjectId": null,
+          "artist": "Peter Paul Rubens",
+          "title": "The Glorification of the Eucharist",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437527",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-437722",
+          "subjectId": null,
+          "artist": "Spanish Painter",
+          "title": "The Mass of Saint Gregory",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437722",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-438434",
+          "subjectId": null,
+          "artist": "Jean Auguste Dominique Ingres",
+          "title": "The Virgin Adoring the Host",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/438434",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 3,
+      "scopeNote": "All proposed cross-module placements require the user's approval and exact photographic checks."
+    },
+    {
+      "pool": "scripture",
+      "existingUserKeeps": [
+        {
+          "id": "scripture--primary",
+          "artist": "Caravaggio",
+          "title": "Saint Jerome Writing"
+        },
+        {
+          "id": "scripture--rubens-evangelists",
+          "artist": "Peter Paul Rubens",
+          "title": "The Four Evangelists"
+        }
+      ],
+      "previousPoolRejections": [],
+      "undecided": [
+        "scripture--mark-wolffort",
+        "scripture--luke-veronese",
+        "scripture--john-wolffort",
+        "historic:caravaggio:inspiration of saint matthew"
+      ],
+      "proposalsFromExistingLibrary": [
+        {
+          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
+          "referenceId": "ART-aravaggio-nspiration-of-aint-atthew",
+          "subjectId": "SNT-AP-08",
+          "artist": "Caravaggio",
+          "title": "Inspiration of Saint Matthew",
+          "originSourceUrl": null,
+          "photoPreviewLeads": [],
+          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
+          "previousApproval": "PRESERVED_FOR_SNT-AP-08",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-712946",
+          "subjectId": null,
+          "artist": "Giovanni Battista Caracciolo",
+          "title": "The Calling of Saint Matthew",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/712946",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        },
+        {
+          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
+          "referenceId": "met-459044",
+          "subjectId": null,
+          "artist": "Follower of Giotto",
+          "title": "Saints John the Evangelist and Mary Magdalene",
+          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/459044",
+          "photoPreviewLeads": [],
+          "rightsState": "CC0",
+          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
+          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
+          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
+          "photoMasterPassed": false,
+          "exactCommercialLicencePassed": false,
+          "mobileFrameFreePassed": false
+        }
+      ],
+      "proposalsCount": 3,
+      "scopeNote": "Mark, Luke and John still need exact individual Gospel-specific hero approvals; Saint Jerome and the Four Evangelists are preserved in the current Keep."
+    }
+  ],
+  "conflict": []
+}
