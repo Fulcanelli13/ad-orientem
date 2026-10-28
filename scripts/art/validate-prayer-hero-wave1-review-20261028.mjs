@@ -6,6 +6,23 @@ const user=read('prayer-art-reviewed117-user-decisions-20261028.v1.json');
 const catalog=read('prayer-module-original-31-review-catalog-20261028.v1.json');
 const review=read('prayer-31-section-review-reconciliation-20261028.v1.json');
 const heroes=read('prayer-hero-wave1-release-manifest-20261028.v1.json');
+/* AO_NATIVE_MASTER_AUDIT_PRESERVATION: separate byte integrity from human photo clearance. */
+const byteQA=read('prayer-wave1-post-ci-photo-quality-gates-20261028.v1.json');
+assert.equal(byteQA.scope.editorial_primary_selected,6);
+assert.equal(byteQA.scope.native_byte_sha256_and_gitblob_verified,5);
+assert.equal(byteQA.scope.human_photo_quality_approved,0);
+assert.equal(byteQA.scope.responsive_crops_approved,0);
+assert.equal(byteQA.scope.app_images_released,0);
+assert.equal(byteQA.scope.cost_eur,0);
+assert.equal(byteQA.recorded_from.conclusion,'success');
+assert.deepEqual(byteQA.entries.map(x=>x.module_id),
+  ['morning','evening','angelus','rosary','confession','seven-sorrows']);
+for(const entry of byteQA.entries){
+  assert.equal(entry.production_allowed,false);
+  assert.equal(entry.photo_quality_status,'HOLD_NOT_HUMAN_CERTIFIED');
+  assert.equal(Boolean(entry.native_asset),entry.module_id!=='evening');
+}
+
 const rows=review.modules.flatMap(x=>x.placements);
 const actions=['keep','reject','better-photo','elsewhere'];
 const counts=Object.fromEntries(actions.map(x=>[x,rows.filter(y=>y.action===x).length]));
