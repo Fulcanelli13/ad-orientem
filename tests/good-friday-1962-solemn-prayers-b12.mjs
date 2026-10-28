@@ -29,13 +29,18 @@ assert.equal(built.sourceRecordCount,56);
 assert.equal(built.jewishPrayerVariant,"PRINTED_1962");
 assert.equal(built.ordinaryMassGraphActive,false);
 
+const preparation=built.steps.find(x=>x.recordId==="GF-SOP-400");
 const opening=built.steps.find(x=>x.recordId==="GF-SOP-410");
-assert.ok(opening);
-const preliminary=opening.paragraphs.find(x=>x.id==="GF-SOP-BEGIN");
-assert.equal(preliminary.latin,"Oremus.");
-assert.equal(preliminary.kind,"VERSICLE");
-assert.equal(preliminary.speaker,"CELEBRANT","Printed 1962 rubric does not assign the opening cue to the assembly");
-assert.deepEqual([...preliminary.sourceIds],["GF-SOP-410"]);
+assert.ok(preparation&&opening);
+assert.deepEqual(preparation.paragraphs.map(x=>x.kind),["RUBRIC"],
+  "Printed 1962 section heading must not be projected as spoken prayer");
+assert.equal(preparation.paragraphs[0].speaker,undefined);
+assert.deepEqual(opening.paragraphs,[],
+  "The printed first intention already begins Oremus; standalone preceding cue is fabricated");
+assert.ok(!built.steps.some(step=>step.paragraphs.some(x=>x.id==="GF-SOP-BEGIN")),
+  "Duplicate preparatory Oremus must not re-enter via another card");
+assert.ok(payload.solemnPrayers[0].intention.startsWith("Oremus, dilectissimi"),
+  "Source-owned first invitation was lost when removing duplicate opening cue");
 
 let anchored=0,rows=0;
 for(const witness of audit.prayers){
