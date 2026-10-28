@@ -43,11 +43,11 @@ export function confessionHeroProofMarkup({search="",stage=0,french=false}={}){
 const CSS=[
 '#aoPray435930 .aoP435930ConfHeroProof{box-sizing:border-box;max-width:900px;width:min(100%,900px);margin:14px auto 16px;padding:0;overflow:hidden;border-radius:13px;background:rgba(0,0,0,.14);border:1px solid rgba(230,203,164,.17)}',
 '#aoPray435930 .aoP435930ConfHeroProof picture{display:block;width:100%;line-height:0}',
-'#aoPray435930 .aoP435930ConfHeroProof img{display:block;width:100%;max-width:100%;height:auto;object-fit:contain;object-position:center center;aspect-ratio:4096 / 3712;background:#161612}',
+'#aoPray435930 .aoP435930ConfHeroProof img{display:block;width:100%;max-width:100%;height:min(34dvh,320px);max-height:320px;object-fit:contain;object-position:center center;background:#161612}',
 '#aoPray435930 .aoP435930ConfHeroProof figcaption{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:10px;row-gap:4px;padding:11px 14px;color:var(--text,#eee9df);font:400 .78rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}',
 '#aoPray435930 .aoP435930ConfHeroProof figcaption a{color:var(--liturgical,#dec791)}',
 '#aoPray435930 .aoP435930ConfHeroProof figcaption small{font-size:.70rem;color:var(--muted,#aeb2b8)}',
-'@media(max-width:420px){#aoPray435930 .aoP435930ConfHeroProof{margin:8px auto 10px;border-radius:10px}#aoPray435930 .aoP435930ConfHeroProof figcaption{padding:8px 10px;font-size:.72rem}}',
+'@media(max-width:420px){#aoPray435930 .aoP435930ConfHeroProof{margin:8px auto 10px;border-radius:10px}#aoPray435930 .aoP435930ConfHeroProof img{height:min(29dvh,220px);max-height:220px}#aoPray435930 .aoP435930ConfHeroProof figcaption{padding:8px 10px;font-size:.72rem}}',
 '@media(prefers-reduced-motion:reduce){#aoPray435930 .aoP435930ConfHeroProof *{animation:none!important;transition:none!important}}'
 ].join('\n');
 export function installConfessionHeroProofStyles(doc=globalThis.document){
