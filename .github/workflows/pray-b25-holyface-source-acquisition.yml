@@ -1,0 +1,47 @@
+name: Pray B25 historical Holy Face transcription capture
+on:
+  push:
+    branches:
+      - research/pray-b25-holy-face-1887-full-text-acquisition-20261029
+    paths:
+      - tools/pray/collate-holy-face-novena-1887.py
+      - .github/workflows/pray-b25-holyface-source-acquisition.yml
+permissions:
+  contents: write
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch and validate complete 9-day public-domain digital witness
+        run: python3 tools/pray/collate-holy-face-novena-1887.py
+      - name: Verify strict provenance and all 9 original meditation bodies
+        run: |
+          python3 - <<'PY'
+          import json
+          p='data/pray/research/pray-b25-holy-face-janvier-1887-nine-full-english-days.v1.json'
+          x=json.load(open(p,encoding='utf8'))
+          assert len(x['days'])==9
+          assert all(len(d['fullDailyReadingEnglish'])>1200 for d in x['days'])
+          assert x['sourceReleaseGate']['original1887PageImageCollation']==False
+          assert x['sourceReleaseGate']['publicReaderEnabled']==False
+          assert x['sourceReleaseGate']['modern2022AppendicesIncluded']==False
+          print('PASS: nine source sections, held original-print certification, no modern appendices')
+          PY
+      - name: Commit reviewed-source *candidate* only to this research branch
+        run: |
+          git config user.name "ad-orientem-source-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pray/research/pray-b25-holy-face-janvier-1887-nine-full-english-days.v1.json
+          if git diff --cached --quiet; then
+            echo "No source corpus changes"
+          else
+            git commit -m "Research B25: stage complete nine-day Janvier digital English witness (not print certified)"
+            git push origin HEAD:research/pray-b25-holy-face-1887-full-text-acquisition-20261029
+          fi
