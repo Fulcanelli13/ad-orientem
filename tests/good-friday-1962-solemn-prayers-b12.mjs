@@ -35,8 +35,20 @@ assert.ok(preparation&&opening);
 assert.deepEqual(preparation.paragraphs.map(x=>x.kind),["RUBRIC"],
   "Printed 1962 section heading must not be projected as spoken prayer");
 assert.equal(preparation.paragraphs[0].speaker,undefined);
-assert.deepEqual(opening.paragraphs,[],
-  "The printed first intention already begins Oremus; standalone preceding cue is fabricated");
+assert.equal(opening.surfaceKey,"SOLEMN_PRAYER_01",
+  "The standing transition must show the first printed intention on the shared prayer card");
+assert.ok(opening.paragraphs.length>0,
+  "A focusable Good Friday state must not become an empty source card");
+assert.equal(opening.paragraphs[0].latin,payload.solemnPrayers[0].intention,
+  "First Holy Church invitation must begin at the standing transition");
+assert.equal(opening.paragraphs[0].speaker,"CELEBRANT");
+assert.equal(opening.paragraphs[0].id,"GF-SOP-01-I");
+assert.equal(opening.cardUpdate,true,"Standing transition introduces the first prayer card");
+const firstK=built.steps.find(x=>x.recordId==="GF-SOP-01-K");
+assert.equal(firstK.surfaceKey,opening.surfaceKey);
+assert.equal(firstK.cardUpdate,false,"Flectamus changes posture, not the prayer card");
+assert.deepEqual(opening.paragraphs,firstK.paragraphs,
+  "First prayer must retain its exact source event anchors through K/R");
 assert.ok(!built.steps.some(step=>step.paragraphs.some(x=>x.id==="GF-SOP-BEGIN")),
   "Duplicate preparatory Oremus must not re-enter via another card");
 assert.ok(payload.solemnPrayers[0].intention.startsWith("Oremus, dilectissimi"),
