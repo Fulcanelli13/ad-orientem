@@ -44,7 +44,16 @@
     "new_photo_originals_downloaded": 0,
     "new_pristine_certifications": 0,
     "production_activated": 0,
-    "cost_eur": 0
+    "cost_eur": 0,
+    "w1_source_originals_targeted": 14,
+    "w1_source_originals_archived": 2,
+    "w1_archived_original_bytes": 15950010,
+    "w1_source_holds": 12,
+    "w1_http429_source_holds": 11,
+    "w1_file_rights_metadata_holds": 1,
+    "w1_native_review_sheets": 1,
+    "w1_new_pristine_certifications": 0,
+    "w1_production_activated": 0
   },
   "commons_metadata_batch_errors": [
     null,
@@ -91,7 +100,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-angelico-annunciation",
@@ -133,7 +146,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-duccio-rucellai",
@@ -175,7 +192,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-murillo-immaculate",
@@ -226,7 +247,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-millet-angelus",
@@ -268,7 +293,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-titian-assumption",
@@ -310,7 +339,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-leonardo-rocks",
@@ -352,7 +385,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-velazquez-coronation",
@@ -394,7 +431,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-botticelli-nativity",
@@ -436,7 +477,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-latour-newborn",
@@ -478,7 +523,18 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "SOURCE_OR_PHOTOGRAPHIC_QA_HOLD",
+        "archive_path": null,
+        "archive_sha256": null,
+        "native_pixels": null,
+        "hold_reason": "HTTPError: HTTP Error 429: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1)",
+        "photo_qa_sheet": null,
+        "pristine_certified": false,
+        "production_allowed": false,
+        "rights_final_certified": false
+      }
     },
     {
       "breviarum_plate_id": "plate-masaccio-saintanne",
@@ -520,7 +576,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-ghirlandaio-visitation",
@@ -562,7 +622,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-tojetti-lourdes",
@@ -604,7 +668,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-sassoferrato-virgin",
@@ -646,7 +714,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-caravaggio-rosary",
@@ -688,7 +760,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-tiepolo-carmel",
@@ -730,7 +806,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-titian-dolorosa",
@@ -772,7 +852,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-velazquez-immaculate",
@@ -814,7 +898,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-angelico-coronation",
@@ -865,7 +953,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-guadalupe-tilma",
@@ -907,7 +999,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-millet-shepherdess",
@@ -949,7 +1045,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-schmidtner-knots",
@@ -991,7 +1091,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-perpetual-help",
@@ -1033,7 +1137,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": true,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-honthorst-shepherds",
@@ -1075,7 +1183,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-batoni-sacredheart",
@@ -1117,7 +1229,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-bloch-sermon",
@@ -1159,7 +1275,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-angelico-sermon",
@@ -1201,7 +1321,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": true,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-elgreco-baptism",
@@ -1243,7 +1367,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-caravaggio-matthew",
@@ -1285,7 +1413,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-raphael-transfiguration",
@@ -1327,7 +1459,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-rembrandt-christ",
@@ -1369,7 +1505,18 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "SOURCE_OR_PHOTOGRAPHIC_QA_HOLD",
+        "archive_path": null,
+        "archive_sha256": null,
+        "native_pixels": null,
+        "hold_reason": "HTTPError: HTTP Error 429: Too many requests (f061ab2)",
+        "photo_qa_sheet": null,
+        "pristine_certified": false,
+        "production_allowed": false,
+        "rights_final_certified": false
+      }
     },
     {
       "breviarum_plate_id": "plate-rembrandt-adulteress",
@@ -1411,7 +1558,18 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "SOURCE_OR_PHOTOGRAPHIC_QA_HOLD",
+        "archive_path": null,
+        "archive_sha256": null,
+        "native_pixels": null,
+        "hold_reason": "HTTPError: HTTP Error 429: Too many requests (f061ab2)",
+        "photo_qa_sheet": null,
+        "pristine_certified": false,
+        "production_allowed": false,
+        "rights_final_certified": false
+      }
     },
     {
       "breviarum_plate_id": "plate-rembrandt-prodigal",
@@ -1453,7 +1611,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-rembrandt-storm",
@@ -1495,7 +1657,18 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "SOURCE_OR_PHOTOGRAPHIC_QA_HOLD",
+        "archive_path": null,
+        "archive_sha256": null,
+        "native_pixels": null,
+        "hold_reason": "HTTPError: HTTP Error 429: Too many requests (f061ab2)",
+        "photo_qa_sheet": null,
+        "pristine_certified": false,
+        "production_allowed": false,
+        "rights_final_certified": false
+      }
     },
     {
       "breviarum_plate_id": "plate-giotto-lamentation",
@@ -1537,7 +1710,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-velazquez-crucified",
@@ -1579,7 +1756,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-piero-resurrection",
@@ -1621,7 +1802,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-caravaggio-thomas",
@@ -1663,7 +1848,21 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "SOURCE_EXACT_ORIGINAL_ARCHIVED_PHOTOGRAPHIC_QA_PENDING",
+        "archive_path": "assets/staged/sacred-art-breviarium-wave1-native-20261029/plate-caravaggio-thomas.jpg",
+        "archive_sha256": "878f6d726f2e38acbe36ba4fedf3bbd388150f69615f51424a243834e005982c",
+        "native_pixels": [
+          8550,
+          6325
+        ],
+        "hold_reason": null,
+        "photo_qa_sheet": "assets/staged/sacred-art-breviarium-wave1-native-20261029/full-and-four-native-corners-01.jpg",
+        "pristine_certified": false,
+        "production_allowed": false,
+        "rights_final_certified": false
+      }
     },
     {
       "breviarum_plate_id": "plate-champaigne-lastsupper",
@@ -1705,7 +1904,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-caravaggio-emmaus",
@@ -1747,7 +1950,21 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "SOURCE_EXACT_ORIGINAL_ARCHIVED_PHOTOGRAPHIC_QA_PENDING",
+        "archive_path": "assets/staged/sacred-art-breviarium-wave1-native-20261029/plate-caravaggio-emmaus.jpg",
+        "archive_sha256": "0ad5e515781f1ef52e5d60b43002a98ff0dceaf8707f9c9b8e944d97feea824f",
+        "native_pixels": [
+          11412,
+          8117
+        ],
+        "hold_reason": null,
+        "photo_qa_sheet": "assets/staged/sacred-art-breviarium-wave1-native-20261029/full-and-four-native-corners-01.jpg",
+        "pristine_certified": false,
+        "production_allowed": false,
+        "rights_final_certified": false
+      }
     },
     {
       "breviarum_plate_id": "plate-rembrandt-emmaus",
@@ -1789,7 +2006,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-vaneyck-ghent",
@@ -1831,7 +2052,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-sassetta-magi",
@@ -1873,7 +2098,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-rembrandt-presentation",
@@ -1915,7 +2144,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-durer-doctors",
@@ -1957,7 +2190,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-veronese-cana",
@@ -1999,7 +2236,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-bellini-agony",
@@ -2041,7 +2282,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-caravaggio-flagellation",
@@ -2083,7 +2328,18 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "SOURCE_OR_PHOTOGRAPHIC_QA_HOLD",
+        "archive_path": null,
+        "archive_sha256": null,
+        "native_pixels": null,
+        "hold_reason": "HTTPError: HTTP Error 429: Too many requests (f061ab2)",
+        "photo_qa_sheet": null,
+        "pristine_certified": false,
+        "production_allowed": false,
+        "rights_final_certified": false
+      }
     },
     {
       "breviarum_plate_id": "plate-caravaggio-crowning",
@@ -2125,7 +2381,18 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "SOURCE_OR_PHOTOGRAPHIC_QA_HOLD",
+        "archive_path": null,
+        "archive_sha256": null,
+        "native_pixels": null,
+        "hold_reason": "HTTPError: HTTP Error 429: Too many requests (f061ab2)",
+        "photo_qa_sheet": null,
+        "pristine_certified": false,
+        "production_allowed": false,
+        "rights_final_certified": false
+      }
     },
     {
       "breviarum_plate_id": "plate-elgreco-carrying-cross",
@@ -2176,7 +2443,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-rembrandt-ascension",
@@ -2218,7 +2489,18 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "SOURCE_OR_PHOTOGRAPHIC_QA_HOLD",
+        "archive_path": null,
+        "archive_sha256": null,
+        "native_pixels": null,
+        "hold_reason": "HTTPError: HTTP Error 429: Too many requests (f061ab2)",
+        "photo_qa_sheet": null,
+        "pristine_certified": false,
+        "production_allowed": false,
+        "rights_final_certified": false
+      }
     },
     {
       "breviarum_plate_id": "plate-kells-christ",
@@ -2260,7 +2542,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-greco-trinity",
@@ -2302,7 +2588,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-elgreco-pentecost",
@@ -2344,7 +2634,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-reni-michael",
@@ -2392,7 +2686,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-domenichino-guardian",
@@ -2434,7 +2732,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-raphael-george",
@@ -2476,7 +2778,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-rembrandt-jacob",
@@ -2518,7 +2824,18 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "SOURCE_OR_PHOTOGRAPHIC_QA_HOLD",
+        "archive_path": null,
+        "archive_sha256": null,
+        "native_pixels": null,
+        "hold_reason": "HTTPError: HTTP Error 429: Too many requests (f061ab2)",
+        "photo_qa_sheet": null,
+        "pristine_certified": false,
+        "production_allowed": false,
+        "rights_final_certified": false
+      }
     },
     {
       "breviarum_plate_id": "plate-raphael-michael",
@@ -2560,7 +2877,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-botticini-archangels",
@@ -2602,7 +2923,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-reni-joseph",
@@ -2644,7 +2969,18 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "SOURCE_OR_PHOTOGRAPHIC_QA_HOLD",
+        "archive_path": null,
+        "archive_sha256": null,
+        "native_pixels": null,
+        "hold_reason": "HTTPError: HTTP Error 429: Too many requests (f061ab2)",
+        "photo_qa_sheet": null,
+        "pristine_certified": false,
+        "production_allowed": false,
+        "rights_final_certified": false
+      }
     },
     {
       "breviarum_plate_id": "plate-pereda-anthony",
@@ -2686,7 +3022,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-reni-cecilia",
@@ -2728,7 +3068,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-ribera-jerome",
@@ -2770,7 +3114,18 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "SOURCE_OR_PHOTOGRAPHIC_QA_HOLD",
+        "archive_path": null,
+        "archive_sha256": null,
+        "native_pixels": null,
+        "hold_reason": "HTTPError: HTTP Error 429: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1)",
+        "photo_qa_sheet": null,
+        "pristine_certified": false,
+        "production_allowed": false,
+        "rights_final_certified": false
+      }
     },
     {
       "breviarum_plate_id": "plate-tiepolo-catherine",
@@ -2812,7 +3167,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-liguori-engraving",
@@ -2854,7 +3213,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-fernandez-blaise",
@@ -2896,7 +3259,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-poussin-rita",
@@ -2938,7 +3305,18 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "SOURCE_OR_PHOTOGRAPHIC_QA_HOLD",
+        "archive_path": null,
+        "archive_sha256": null,
+        "native_pixels": null,
+        "hold_reason": "HTTPError: HTTP Error 429: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1)",
+        "photo_qa_sheet": null,
+        "pristine_certified": false,
+        "production_allowed": false,
+        "rights_final_certified": false
+      }
     },
     {
       "breviarum_plate_id": "plate-murillo-anthony",
@@ -2980,7 +3358,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-scheffer-monica",
@@ -3022,7 +3404,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-bellini-francis",
@@ -3064,7 +3450,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-zurbaran-francis",
@@ -3106,7 +3496,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-tiepolo-cajetan",
@@ -3148,7 +3542,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-cabrera-gertrude",
@@ -3190,7 +3588,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-botticelli-augustine",
@@ -3232,7 +3634,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": true,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-crivelli-aquinas",
@@ -3274,7 +3680,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-sodoma-catherine",
@@ -3316,7 +3726,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-vanderweyden-dymphna",
@@ -3358,7 +3772,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-ulivelli-peregrine",
@@ -3400,7 +3818,18 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": true,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "SOURCE_OR_PHOTOGRAPHIC_QA_HOLD",
+        "archive_path": null,
+        "archive_sha256": null,
+        "native_pixels": null,
+        "hold_reason": "ValueError: NO_SOURCE_SPECIFIC_PD_RIGHTS_EVIDENCE",
+        "photo_qa_sheet": null,
+        "pristine_certified": false,
+        "production_allowed": false,
+        "rights_final_certified": false
+      }
     },
     {
       "breviarum_plate_id": "plate-verrocchio-tobias",
@@ -3442,7 +3871,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-monaco-benedict",
@@ -3484,7 +3917,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-cossa-lucy",
@@ -3535,7 +3972,11 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": true
+      "low_native_resolution_candidate": true,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     },
     {
       "breviarum_plate_id": "plate-murillo-beggar",
@@ -3577,7 +4018,17 @@
       "source_metadata_status": "COMMONS_CURRENT_FILE_METADATA_CAPTURED",
       "source_metadata_rights_hold": false,
       "source_photo_pixel_quality_review": "NOT_CHECKED",
-      "low_native_resolution_candidate": false
+      "low_native_resolution_candidate": false,
+      "bulk_photo_firstwave": {
+        "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
+        "not_rejected": true
+      }
     }
-  ]
+  ],
+  "image_acquisition_wave1": {
+    "source_results": "assets/staged/sacred-art-breviarium-wave1-native-20261029/wave1-source-intake-results.json",
+    "source_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40777265561",
+    "notes": "2 byte-identical whole originals captured, 11 Commons HTTP 429 holds, one independent image CC BY-SA attribution/rights hold. No blind retries or lower-resolution substitutions.",
+    "released": 0
+  }
 }
