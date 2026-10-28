@@ -135,7 +135,11 @@ assert.equal(initial.mode,"standard");
 assert.equal(buildPersonalDailyPlan({daypart:"evening",prefs:initial}).rows.length,10);
 const english=personalDailyOptions("morning","en","1913");
 assert.ok(english.some(x=>x.sourceLabel.includes("Lasance")));
-assert.equal(personalDailyOptions("morning","la","1913").length,0,"Latin must not import English-language morning texts");
+const latinMorning=personalDailyOptions("morning","la","1913");
+assert.deepEqual(latinMorning.map(x=>x.id),["ignatius_suscipe_lasance_1908_la"],
+ "Only the original 1908 Latin Suscipe is newly authorized for Latin Morning Offering");
+assert.ok(latinMorning.every(x=>x.lang==="la"&&!/Take, O Lord/.test(x.text)),
+ "Latin must not import English-language morning texts");
 assert.ok(personalDailyOptions("evening","fr","1913").some(x=>x.id==="piusx-1913-jesus-joseph-mary"));
 assert.ok(!personalDailyOptions("evening","fr","1905").some(x=>x.id==="piusx-1913-jesus-joseph-mary"));
 const nightSourceIds=["roman-compline-latin-in-manus","roman-compline-french-in-manus","roman-compline-latin-visita-quaesumus","roman-compline-latin-salva-nos"];
