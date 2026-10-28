@@ -1,5 +1,6 @@
+import {DIVINUM_OFFICIUM_PIN} from "../app/source-transport-compat.js";
 // Source-generator PROBE contracts. Never make a source-text certification claim.
-export const DIVINUM_OFFICIUM_OFFICE_PIN = "126a07f91ede04664108abb6fb20ace3f4de14b9";
+export const DIVINUM_OFFICIUM_OFFICE_PIN = DIVINUM_OFFICIUM_PIN;
 export const OFFICE_GENERATOR_EDITION = "Rubrics 1960 - 1960";
 export const GENERATOR_HOUR_COMMANDS = Object.freeze({
   MATINS: "Matutinum",
