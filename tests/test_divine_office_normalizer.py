@@ -38,6 +38,32 @@ class NormalizerTests(unittest.TestCase):
         self.assertNotIn("Matutinum", doc["headline"])
         self.assertFalse(doc["verification"]["crossLanguageAlignment"])
 
+    def test_vernacular_omitted_preces_only_is_not_a_prayer_card(self):
+        for lang, label in (("en", "Weekday Intercessions{omit}"),
+                            ("fr", "Prières fériales{omises}")):
+            with_omitted = HTML.replace(
+                "<TR><TD ID='Vespera2'>",
+                "<TR><TD ID='Vespera2'><p>" + label + "</p></TD></TR>"
+                "<TR><TD ID='Vespera3'>")
+            doc = normalize_xhtml(with_omitted, date=DAY, hour="VESPERS",
+                                  language=lang, source_revision=PIN)
+            self.assertEqual(len(doc["sections"]), 2)
+            self.assertEqual(doc["sections"][1]["sourceCellId"], "Vespera3")
+            self.assertEqual(doc["sections"][1]["sourceIndex"], 3)
+            self.assertEqual(doc["sections"][1]["index"], 2)
+            self.assertEqual(doc["metrics"]["rawSourceCellCount"], 3)
+            self.assertEqual(doc["metrics"]["explicitlyOmittedSourceCellCount"], 1)
+            self.assertEqual(doc["omittedSourceCells"][0]["sourceCellId"], "Vespera2")
+            self.assertEqual(doc["omittedSourceCells"][0]["reason"],
+                             "UPSTREAM_EXPLICIT_PRECES_OMISSION")
+            # If the marker includes even one actual prayer, it must NOT be
+            # automatically dropped.
+            with_prayer = with_omitted.replace(label, label + "\\n℣. Deus")
+            not_omitted = normalize_xhtml(with_prayer, date=DAY, hour="VESPERS",
+                                         language=lang, source_revision=PIN)
+            self.assertEqual(len(not_omitted["sections"]), 3)
+            self.assertEqual(not_omitted["omittedSourceCells"], [])
+
     def test_reject_duplicate_or_noncontiguous_cells(self):
         malformed = HTML.replace("Vespera2", "Vespera3")
         with self.assertRaisesRegex(ValueError, "NONCONTIGUOUS"):
