@@ -4,6 +4,7 @@ on:
     branches: [research/module-hero-pd-masters-20261026]
     paths:
       - 'scripts/art/review-institutional-hero-sources.py'
+      - 'scripts/art/prepare-institutional-frame-review.py'
       - '.github/workflows/research-institutional-pristine-qa-20261028.yml'
   workflow_dispatch:
 permissions:
@@ -43,6 +44,32 @@ jobs:
             --museum-root source-museum \
             --wave2-root source-wave2 \
             --out assets/staged/module-hero-institutional-review-20261028
+      - name: Generate museum-grounded but unsigned frame and responsive proposals
+        run: |
+          python scripts/art/prepare-institutional-frame-review.py \\
+            --museum-root source-museum \\
+            --wave2-root source-wave2 \\
+            --out assets/staged/module-hero-institutional-frame-review-20261028
+      - name: Keep every tentative crop review-only and fail closed
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('assets/staged/module-hero-institutional-frame-review-20261028')
+          m=json.loads((p/'frame-review-manifest.json').read_text())
+          assert m['scope']=='NON_PRODUCTION_REVIEW_ONLY'
+          assert m['painted_boundaries_certified']==0
+          assert m['pristine_masters_approved']==0 and m['app_released']==0
+          assert {x['module_id'] for x in m['paintings']}=={'confession','angelus','adoration'}
+          for x in m['paintings']:
+              assert x['source_bytes_unchanged']
+              assert not x['human_edge_signoff'] and not x['colour_signoff']
+              assert not x['responsive_signoff'] and not x['pristine_master_approved']
+              assert not x['app_released']
+              for key in ('boundary_overlay','candidate_preview','responsive_comparison'):
+                  assert (p/x[key]).is_file()
+          print('Three framing comparators generated; zero approvals or release assets')
+          PY
       - name: Strictly research outputs; never auto-grant photographic approval
         shell: bash
         run: |
@@ -73,6 +100,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -f assets/staged/module-hero-institutional-review-20261028/
+          git add -f assets/staged/module-hero-institutional-frame-review-20261028/
           if ! git diff --cached --quiet; then
             git commit -m 'research(art): preserve three museum source-authenticated QA contact atlases'
             git pull --rebase origin research/module-hero-pd-masters-20261026
