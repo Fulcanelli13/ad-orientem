@@ -411,7 +411,43 @@ try{
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"10","1913 printed Evening must remain intact after Brief");
  const saved=await page.evaluate(()=>localStorage.getItem("ao.pray.personal-rule.v1"));
  assert.ok(saved&&saved.includes('"edition":"1913"')&&!saved.includes("De profundis"));
+ // Confession is a separate, existing source-owned four-phase reader.
+ // The optional Act changes the written preparatory prayer, never the priest's rite.
+ const confessionOpen=await page.evaluate(()=>globalThis.AO_MODULES.open("pray.confession"));
+ assert.equal(confessionOpen?.ok,true,"Native sacramental Confession route unavailable");
+ await page.waitForSelector("#aoPray435930 .aoP435930ConfPathCards",{timeout:10000});
+ assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-path]").count(),3,
+   "Keep all three different Confession preparation paths");
+ await page.locator("#aoPray435930 [data-p435930-conf-path='regular']").evaluate(el=>el.click());
+ await page.locator("#aoPray435930 [data-p435930-conf-step='2']").evaluate(el=>el.click());
+ await page.waitForSelector("#aoPray435930 .aoDevoStop",{timeout:10000});
+ assert.equal(await page.locator("#aoPray435930 .aoDevoStop").count(),3);
+ await page.locator("#aoPray435930 .aoDevoStop").nth(2).evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-conf-contrition-picker] button").count(),2);
+ assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-contrition='standard']").getAttribute("aria-pressed"),"true");
+ await page.locator("#aoPray435930 [data-p435930-conf-contrition='piusx']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-contrition='piusx']").getAttribute("aria-pressed"),"true");
+ assert.match(await page.locator("#aoPray435930 [data-ao-confession-act]").innerText(),/bonté souveraine|bonté.*souveraine/i,
+  "Confession must display pre-existing Pius X editorial French prayer");
+ assert.match(await page.locator("#aoPray435930 [data-ao-conf-contrition-source-status]").innerText(),/éditoriale|éditorial/i);
+ const confState=await page.evaluate(()=>globalThis.AO_PRAY_V435930.state());
+ assert.equal(confState.confessionStage,2);
+ assert.equal(confState.confessionPath,"regular");
+ await page.setViewportSize({width:320,height:720});
+ const confChoiceWidth=await page.locator("#aoPray435930 [data-ao-conf-contrition-picker]").evaluate(e=>({client:e.clientWidth,scroll:e.scrollWidth}));
+ assert.ok(confChoiceWidth.scroll<=confChoiceWidth.client+2,"320px Confession contrition choices overflow");
+ await page.screenshot({path:resolve(captures,"confession-contrition-piusx-320-fr.png"),animations:"disabled"});
+ await page.locator("#aoPray435930 [data-p435930-conf-contrition='standard']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-contrition='standard']").getAttribute("aria-pressed"),"true");
+ await page.setViewportSize({width:390,height:844});
+ await page.locator("#aoPray435930 [data-p435930-conf-step='1']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-conf-contrition-picker]").count(),0,"Confession source chooser must not interrupt commandment examination");
  await open("pray.nightly_examen");
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-examen-contrition-open]").count(),1,
+  "Standalone nightly reader must expose its closing Act directly");
+ await page.locator("#aoPray435930 [data-tp381-examen-contrition-open]").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"resolve","Nightly closing prayer shortcut changed the examination structure");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-examen-contrition-choices] button").count(),2);
  await page.locator("#aoPray435930 .aoDevoStop").nth(4).evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-tp381-b01-contrition='standard']").count(),1,"Ordinary contrition choice missing");
  assert.equal(await page.locator("#aoPray435930 [data-tp381-b01-contrition='piusx']").count(),1,"1905 Pius X source choice missing");
