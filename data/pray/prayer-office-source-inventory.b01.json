@@ -1,0 +1,2049 @@
+{
+  "schema": "ao-prayer-office-source-inventory.b01",
+  "date": "2026-10-28",
+  "purpose": "COMPLETE_INTAKE_FIRST_NO_SELECTION_NO_IMPORT",
+  "exhaustiveness": "BASELINE_SOURCE_DISCOVERY_ONLY_NOT_A_COMPLETE_ITEM_INVENTORY",
+  "rules": {
+    "no_prioritization": true,
+    "no_canonical_dedup_at_intake": true,
+    "preserve_historical_edition_witnesses": true,
+    "separate_source_page_entry_and_component_prayer": true,
+    "record_verses_unchanged": true,
+    "distinguish_liturgical_from_devotional": true,
+    "publication_requires_separate_text_source_and_rights_gates": true,
+    "all_items_keep_status_and_source": true,
+    "existing_app_content_is_not_replaced": true
+  },
+  "unit_model": [
+    "source_family",
+    "site_collection",
+    "edition",
+    "source_page",
+    "historical_numbered_entry",
+    "component_prayer",
+    "historical_text_witness",
+    "canonical_work_identity",
+    "liturgical_instance"
+  ],
+  "source_families": {
+    "icksp_us_and_fr": {
+      "source_index_urls": [
+        "https://institute-christ-king.org/resources/devotions-prayers",
+        "https://icrspfrance.fr/textes-liturgiques.php"
+      ],
+      "existing_register": "https://github.com/Fulcanelli13/ad-orientem/blob/research/icksp-devotions-pray-gap-audit-20261028/data/pray/icksp-devotional-gap-register.b01.json",
+      "source_records": [
+        {
+          "id": "icksp_us_immaculate_conception_consecration",
+          "title": "Consecration to the Immaculate Conception",
+          "source": "ICKSP_US_DEVOTIONS",
+          "source_url": "https://institute-christ-king.org/resources/devotions-prayers/610-devotions-consecration-immaculate-conception",
+          "category": "Marian consecration",
+          "source_verification": "FULL_TEXT_FOUND_ON_ICKSP_UK",
+          "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+          "release_status": "RESEARCH_ONLY",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icksp_us_dedication_to_christ_king",
+          "title": "Dedication to Christ the King",
+          "source": "ICKSP_US_DEVOTIONS",
+          "source_url": "https://institute-christ-king.org/resources/devotions-prayers/611-devotions-dedication-christ-king",
+          "category": "Christ the King",
+          "source_verification": "ENGLISH_AND_LATIN_PAGE_READ",
+          "app_coverage_status": "EXISTING_SAME_UNDERLYING_PRAYER",
+          "release_status": "RESEARCH_ONLY",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icksp_us_prayer_reparation",
+          "title": "Prayer of Reparation",
+          "source": "ICKSP_US_DEVOTIONS",
+          "source_url": "https://institute-christ-king.org/resources/devotions-prayers/613-devotions-reparation",
+          "category": "Sacred Heart; reparation",
+          "source_verification": "INDEX_ONLY_PAGE_403",
+          "app_coverage_status": "EXISTING_RELATED_UNVERIFIED_EXACT",
+          "release_status": "RESEARCH_ONLY",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icksp_us_prayer_for_priests_sacred_heart",
+          "title": "Prayer for Priests — O Jesus, Eternal Priest",
+          "source": "ICKSP_US_DEVOTIONS",
+          "source_url": "https://institute-christ-king.org/resources/devotions-prayers/614-devotions-prayer-priests",
+          "category": "Prayer for priests",
+          "source_verification": "ENGLISH_BODY_READ",
+          "app_coverage_status": "IMPLEMENTED_IN_DRAFT_ENGLISH_ONLY",
+          "release_status": "IMPLEMENTED_ON_PR_BRANCH_NOT_MERGED",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icksp_us_prayer_for_priests_second",
+          "title": "Prayer for Priests — Sacred Heart, Eternal High Priest",
+          "source": "ICKSP_US_DEVOTIONS",
+          "source_url": "https://institute-christ-king.org/resources/devotions-prayers/614-devotions-prayer-priests",
+          "category": "Prayer for priests",
+          "source_verification": "ENGLISH_BODY_WITH_COPY_ERROR",
+          "app_coverage_status": "INDEXED_LINKED_NOT_PUBLISHED_CORRUPT",
+          "release_status": "SOURCE_CORRUPTION_HOLD",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icksp_us_prayer_infant_jesus",
+          "title": "Prayer to the Infant Jesus",
+          "source": "ICKSP_US_DEVOTIONS",
+          "source_url": "https://institute-christ-king.org/resources/devotions-prayers/615-devotions-prayer-infant-jesus",
+          "category": "Holy Childhood",
+          "source_verification": "INDEX_ONLY_PAGE_403",
+          "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+          "release_status": "RESEARCH_ONLY",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icksp_us_novena_divine_infant_king",
+          "title": "Novena to the Divine Infant King",
+          "source": "ICKSP_US_DEVOTIONS",
+          "source_url": "https://institute-christ-king.org/resources/devotions-prayers/616-devotions-prayer-infant-king",
+          "category": "Novena to the Divine Infant King",
+          "source_verification": "ENGLISH_COMPLETE_BODY_READ",
+          "app_coverage_status": "IMPLEMENTED_IN_DRAFT_IN_EXISTING_NOVENA_READER",
+          "release_status": "IMPLEMENTED_ON_PR_BRANCH_NOT_MERGED",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icksp_us_august_queen_heaven",
+          "title": "Prayer to the Virgin: Remedy Against Evil Spirits",
+          "source": "ICKSP_US_DEVOTIONS",
+          "source_url": "https://institute-christ-king.org/resources/devotions-prayers/617-devotions-prayer-virgin-remedy",
+          "category": "Marian protection",
+          "source_verification": "FULL_ENGLISH_BODY_FOUND_ON_ICKSP_UK",
+          "app_coverage_status": "IMPLEMENTED_IN_DRAFT_CORRECTED_SOURCE_BOUNDARIES",
+          "release_status": "IMPLEMENTED_ON_PR_BRANCH_NOT_MERGED",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icksp_us_novena_immaculate_conception",
+          "title": "Novena to the Immaculate Conception",
+          "source": "ICKSP_US_DEVOTIONS",
+          "source_url": "https://institute-christ-king.org/resources/devotions-prayers/619-devotions-novena-immaculate-conception",
+          "category": "Marian novena",
+          "source_verification": "ALT_ICKSP_FULL_TEXT_CONFIRMED",
+          "app_coverage_status": "EXISTING_NOVENA_DIFFERENT_WITNESS",
+          "release_status": "RESEARCH_ONLY",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icksp_us_therese_perpetual_novena",
+          "title": "Perpetual Novena in Honor of St Thérèse of the Child Jesus",
+          "source": "ICKSP_US_DEVOTIONS",
+          "source_url": "https://institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
+          "category": "St Thérèse novena",
+          "source_verification": "COMPLETE_PAGE_READ",
+          "app_coverage_status": "INDEXED_SOURCE_LINKED_IN_DRAFT",
+          "release_status": "SOURCE_LINK_ROUTED_IN_DRAFT",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icksp_us_therese_for_missionaries",
+          "title": "Prayer to St Thérèse for Missionaries",
+          "source": "ICKSP_US_DEVOTIONS",
+          "source_url": "https://institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
+          "category": "Missionaries",
+          "source_verification": "COMPLETE_PAGE_READ",
+          "app_coverage_status": "INDEXED_SOURCE_LINKED_IN_DRAFT",
+          "release_status": "SOURCE_LINK_ROUTED_IN_DRAFT",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icksp_us_therese_benedict_xv",
+          "title": "Prayer by Pope Benedict XV to St Thérèse",
+          "source": "ICKSP_US_DEVOTIONS",
+          "source_url": "https://institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
+          "category": "St Thérèse intercession",
+          "source_verification": "COMPLETE_PAGE_READ",
+          "app_coverage_status": "IMPLEMENTED_IN_DRAFT_1925_HISTORICAL_ENGLISH",
+          "release_status": "IMPLEMENTED_ON_PR_BRANCH_NOT_MERGED",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icrsp_fr_office_complies",
+          "title": "Office des Complies",
+          "source": "ICRSP_FR_LITURGICAL_INDEX",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "category": "Divine Office",
+          "source_verification": "LISTING_CONFIRMED",
+          "app_coverage_status": "DISTINCT_DIVINE_OFFICE",
+          "release_status": "RESEARCH_ONLY",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icrsp_fr_sunday_vespers",
+          "title": "1res Vêpres / Vêpres du Dimanche",
+          "source": "ICRSP_FR_LITURGICAL_INDEX",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "category": "Divine Office",
+          "source_verification": "LISTING_CONFIRMED",
+          "app_coverage_status": "DISTINCT_DIVINE_OFFICE",
+          "release_status": "RESEARCH_ONLY",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icrsp_fr_te_deum",
+          "title": "Te Deum",
+          "source": "ICRSP_FR_LITURGICAL_INDEX",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php?article=x479a8dcc_lisible",
+          "category": "Hymn/Canticle",
+          "source_verification": "ARTICLE_LATIN_AND_FRENCH_TEXT_FOUND",
+          "app_coverage_status": "EXISTING_LIVE_HYMN",
+          "release_status": "RESEARCH_ONLY",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icrsp_fr_vexilla_regis",
+          "title": "Vexilla Regis",
+          "source": "ICRSP_FR_LITURGICAL_INDEX",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0901_ancien",
+          "category": "Seasonal hymn",
+          "source_verification": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
+          "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+          "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icrsp_fr_audi_benigne_conditor",
+          "title": "Audi, benigne Conditor",
+          "source": "ICRSP_FR_LITURGICAL_INDEX",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php?article=x9ef3247f_lisible",
+          "category": "Seasonal hymn",
+          "source_verification": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
+          "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+          "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icrsp_fr_ad_cenam_agni",
+          "title": "Ad cenam Agni providi / Ad regias Agni dapes",
+          "source": "ICRSP_FR_LITURGICAL_INDEX",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "category": "Seasonal hymn",
+          "source_verification": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
+          "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+          "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icrsp_fr_aeterne_rex_altissime",
+          "title": "Aeterne Rex altissime",
+          "source": "ICRSP_FR_LITURGICAL_INDEX",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "category": "Seasonal hymn",
+          "source_verification": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
+          "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+          "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icrsp_fr_lustra_sex",
+          "title": "Lustra sex",
+          "source": "ICRSP_FR_LITURGICAL_INDEX",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "category": "Seasonal hymn",
+          "source_verification": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
+          "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+          "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icrsp_fr_o_sol_salutis",
+          "title": "O sol salutis intimis",
+          "source": "ICRSP_FR_LITURGICAL_INDEX",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "category": "Seasonal hymn",
+          "source_verification": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
+          "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+          "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icrsp_fr_ex_more_docti",
+          "title": "Ex more docti mystico",
+          "source": "ICRSP_FR_LITURGICAL_INDEX",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "category": "Seasonal hymn",
+          "source_verification": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
+          "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+          "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icrsp_fr_magnificat",
+          "title": "Magnificat",
+          "source": "ICRSP_FR_LITURGICAL_INDEX",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "category": "Canticle",
+          "source_verification": "LISTING_CONFIRMED",
+          "app_coverage_status": "EXISTING_LIVE_CANTICLE",
+          "release_status": "RESEARCH_ONLY",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icrsp_fr_benedictus",
+          "title": "Benedictus",
+          "source": "ICRSP_FR_LITURGICAL_INDEX",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "category": "Canticle",
+          "source_verification": "LISTING_CONFIRMED",
+          "app_coverage_status": "EXISTING_LIVE_CANTICLE",
+          "release_status": "RESEARCH_ONLY",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        },
+        {
+          "id": "icrsp_fr_st_blaise_candles_food",
+          "title": "Bénédictions des cierges et des aliments en la Fête de Saint Blaise",
+          "source": "ICRSP_FR_LITURGICAL_INDEX",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "category": "Ritual blessing",
+          "source_verification": "LISTING_CONFIRMED",
+          "app_coverage_status": "RITUAL_NOT_LAY_PRAYER",
+          "release_status": "RESEARCH_ONLY",
+          "capture_state": "EXISTING_RESEARCH_RECORD_IMPORTED_FOR_RECONCILIATION",
+          "historical_edition": "VERIFY_PER_ITEM"
+        }
+      ],
+      "scope_note": "25 curated initial source records are not a full crawl of ICKSP/ICRSP worldwide sites"
+    },
+    "icrsp_office_index": {
+      "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+      "existing_register": "https://github.com/Fulcanelli13/ad-orientem/blob/research/icksp-devotions-pray-gap-audit-20261028/data/pray/icrsp-divine-office-index.b02.json",
+      "source_records": [
+        {
+          "id": "icrsp_fr_office_complies",
+          "title": "Office des Complies",
+          "group": "COMPLETE_OFFICE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_fr_sunday_vespers",
+          "title": "1res Vêpres / Vêpres du Dimanche",
+          "group": "COMPLETE_OFFICE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_fr_te_deum",
+          "title": "Te Deum",
+          "group": "ALREADY_IN_APP",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php?article=x479a8dcc_lisible",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_fr_vexilla_regis",
+          "title": "Vexilla Regis",
+          "group": "HYMN",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0901_ancien",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_fr_audi_benigne_conditor",
+          "title": "Audi, benigne Conditor",
+          "group": "HYMN",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php?article=x9ef3247f_lisible",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_fr_ad_cenam_agni",
+          "title": "Ad cenam Agni providi / Ad regias Agni dapes",
+          "group": "HYMN",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_fr_aeterne_rex_altissime",
+          "title": "Aeterne Rex altissime",
+          "group": "HYMN",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_fr_lustra_sex",
+          "title": "Lustra sex",
+          "group": "HYMN",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_fr_o_sol_salutis",
+          "title": "O sol salutis intimis",
+          "group": "HYMN",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_fr_ex_more_docti",
+          "title": "Ex more docti mystico",
+          "group": "HYMN",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_fr_magnificat",
+          "title": "Magnificat",
+          "group": "ALREADY_IN_APP",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_fr_benedictus",
+          "title": "Benedictus",
+          "group": "ALREADY_IN_APP",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_001_cantique_des_trois_enfants",
+          "title": "Cantique des trois Enfants",
+          "group": "CANTICLE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_002_introduction_des_matines_et_psaumes_du",
+          "title": "Introduction des Matines et psaumes du 1er nocturne du Dimanche per annum en été",
+          "group": "COMPLETE_OFFICE_SECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_003_laudes_du_dimanche_per_annum_en_ete",
+          "title": "Laudes du Dimanche per annum en été",
+          "group": "COMPLETE_OFFICE_SECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_004_matines_de_la_1re_semaine_de_careme",
+          "title": "Matines de la 1re semaine de Carême",
+          "group": "COMPLETE_OFFICE_SECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_005_matines_de_la_1re_semaine_de_la_passio",
+          "title": "Matines de la 1re semaine de la Passion",
+          "group": "COMPLETE_OFFICE_SECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_006_matines_de_la_2e_semaine_de_careme",
+          "title": "Matines de la 2e semaine de Carême",
+          "group": "COMPLETE_OFFICE_SECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_007_matines_de_la_3e_semaine_de_careme",
+          "title": "Matines de la 3e semaine de Carême",
+          "group": "COMPLETE_OFFICE_SECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_008_matines_de_la_4e_semaine_de_careme",
+          "title": "Matines de la 4e semaine de Carême",
+          "group": "COMPLETE_OFFICE_SECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_009_matines_de_la_semaine_de_la_quinquages",
+          "title": "Matines de la semaine de la Quinquagésime (leçons et répons) : après les cendres",
+          "group": "COMPLETE_OFFICE_SECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_010_matines_de_la_semaine_de_la_quinquages",
+          "title": "Matines de la semaine de la Quinquagésime (leçons et répons) : avant les cendres",
+          "group": "COMPLETE_OFFICE_SECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_011_matines_de_la_semaine_de_la_septuagesi",
+          "title": "Matines de la semaine de la Septuagésime (leçons et répons)",
+          "group": "COMPLETE_OFFICE_SECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_012_matines_de_la_semaine_de_la_sexagesime",
+          "title": "Matines de la semaine de la Sexagésime (leçons et répons)",
+          "group": "COMPLETE_OFFICE_SECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_013_pange_lingua_gloriosi_matines_de_la_pa",
+          "title": "Pange, Lingua, gloriosi (matines de la Passion)",
+          "group": "HYMN",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_014_prudence_passion_de_sainte_agnes",
+          "title": "Prudence, Passion de sainte Agnès",
+          "group": "HISTORICAL_POETRY",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_015_prudence_passion_des_apotres_pierre_et",
+          "title": "Prudence, Passion des Apôtres Pierre et Paul",
+          "group": "HISTORICAL_POETRY",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_016_psaumes_des_vepres_du_dimanche",
+          "title": "Psaumes des Vêpres du Dimanche",
+          "group": "PSALM_COLLECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_017_psaumes_du_2d_nocturne_du_dimanche_per",
+          "title": "Psaumes du 2d nocturne du Dimanche per annum",
+          "group": "PSALM_COLLECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_018_psaumes_du_3e_nocturne_du_dimanche_per",
+          "title": "Psaumes du 3e nocturne du Dimanche per annum",
+          "group": "PSALM_COLLECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_019_vepres_du_2d_dimanche_apres_l_epiphani",
+          "title": "Vêpres du 2d dimanche après l’Epiphanie",
+          "group": "COMPLETE_OFFICE_SECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_020_vepres_du_2d_dimanche_de_l_avent",
+          "title": "Vêpres du 2d dimanche de l’Avent",
+          "group": "COMPLETE_OFFICE_SECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_office_021_vepres_du_dimanche_per_annum",
+          "title": "Vêpres du Dimanche per annum",
+          "group": "COMPLETE_OFFICE_SECTION",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_001",
+          "title": "Psaume 1",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_002",
+          "title": "Psaume 2",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_003",
+          "title": "Psaume 3",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_004",
+          "title": "Psaume 5",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_005",
+          "title": "Psaume 8",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_006",
+          "title": "Psaume 9, i",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_007",
+          "title": "Psaume 9, ii",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_008",
+          "title": "Psaume 9, iii",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_009",
+          "title": "Psaume 9, iv",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_010",
+          "title": "Psaume 10",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_011",
+          "title": "Psaume 14",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_012",
+          "title": "Psaume 15",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_013",
+          "title": "Psaume 18",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_014",
+          "title": "Psaume 19",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_015",
+          "title": "Psaume 20",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_016",
+          "title": "Psaume 22",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_017",
+          "title": "Psaume 23",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_018",
+          "title": "Psaume 28",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_019",
+          "title": "Psaume 29",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_020",
+          "title": "Psaume 32",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_021",
+          "title": "Psaume 33",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_022",
+          "title": "Psaume 35",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_023",
+          "title": "Psaume 40",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_024",
+          "title": "Psaume 41",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_025",
+          "title": "Psaume 44",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_026",
+          "title": "Psaume 46",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_027",
+          "title": "Psaume 47",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_028",
+          "title": "Psaume 60",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_029",
+          "title": "Psaume 63",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_030",
+          "title": "Psaume 67",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_031",
+          "title": "Psaume 71",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_032",
+          "title": "Psaume 73",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_033",
+          "title": "Psaume 74",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_034",
+          "title": "Psaume 75",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_035",
+          "title": "Psaume 83",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_036",
+          "title": "Psaume 86",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_037",
+          "title": "Psaume 87",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_038",
+          "title": "Psaume 88",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_039",
+          "title": "Psaume 92",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_040",
+          "title": "Psaume 93",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_041",
+          "title": "Psaume 94 (Invitatoire)",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_042",
+          "title": "Psaume 95",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_043",
+          "title": "Psaume 96",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_044",
+          "title": "Psaume 97",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_045",
+          "title": "Psaume 98",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_046",
+          "title": "Psaume 102",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_047",
+          "title": "Psaume 107",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_048",
+          "title": "Psaume 109",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_049",
+          "title": "Psaume 110",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_050",
+          "title": "Psaume 111",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_051",
+          "title": "Psaume 112",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_052",
+          "title": "Psaume 113",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_053",
+          "title": "Psaume 115",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_054",
+          "title": "Psaume 121",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_055",
+          "title": "Psaume 125",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_056",
+          "title": "Psaume 126",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_057",
+          "title": "Psaume 127",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_058",
+          "title": "Psaume 129",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_059",
+          "title": "Psaume 143, i",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_060",
+          "title": "Psaume 143, ii",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_061",
+          "title": "Psaume 144, i",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_062",
+          "title": "Psaume 144, ii",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_063",
+          "title": "Psaume 144, iii",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_064",
+          "title": "Psaume 147",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        },
+        {
+          "id": "icrsp_b02_psalm_065",
+          "title": "Psaume 148",
+          "group": "PSALM_REFERENCE",
+          "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+          "capture_state": "INDEXED_FROM_ICRSP_OFFICE_SUBSECTION",
+          "text_verified": false
+        }
+      ],
+      "scope_note": "98 subsection entries not 98 distinct prayers; 65 are psalm references"
+    },
+    "raccolta_1866": {
+      "edition": "1866 Ambrose St John translation",
+      "index_url": "https://sensusfidelium.com/the-raccolta/",
+      "sections": [
+        {
+          "id": "raccolta-1866-section-01",
+          "section": 1,
+          "title": "The Most Holy Trinity",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/the-most-holy-trinity/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-02",
+          "section": 2,
+          "title": "Almighty God",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/almighty-god/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-03",
+          "section": 3,
+          "title": "The Holy Ghost",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/the-holy-ghost/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-04",
+          "section": 4,
+          "title": "Jesus",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/jesus/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-05",
+          "section": 5,
+          "title": "The Child Jesus",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/the-child-jesus/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-06",
+          "section": 6,
+          "title": "Jesus Crucified",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/jesus-crucified/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-07",
+          "section": 7,
+          "title": "Precious Blood",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/precious-blood-of-jesus/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-08",
+          "section": 8,
+          "title": "Jesus in the Blessed Sacrament",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/jesus-in-the-blessed-sacrament/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-09",
+          "section": 9,
+          "title": "Sacred Heart of Jesus",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/sacred-heart-of-jesus/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-10",
+          "section": 10,
+          "title": "Most Holy Mary",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/most-holy-mary/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-11",
+          "section": 11,
+          "title": "Mary Sorrowing",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/mary-sorrowing/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-12",
+          "section": 12,
+          "title": "Novenas of the Blessed Virgin",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/novenas-of-most-holy-mary/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-13",
+          "section": 13,
+          "title": "St Michael the Archangel",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/st-michael-the-archangel/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-14",
+          "section": 14,
+          "title": "Angel Guardian",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/the-angel-guardian/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-15",
+          "section": 15,
+          "title": "St Joseph",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/st-joseph/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-16",
+          "section": 16,
+          "title": "Holy Apostles Peter and Paul",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/the-holy-apostles-peter-and-paul/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-17",
+          "section": 17,
+          "title": "St Pius V",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/st-pius-v/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-18",
+          "section": 18,
+          "title": "St Nicholas of Bari",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/st-nicholas-of-bari/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-19",
+          "section": 19,
+          "title": "St Francis of Paola",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/st-francis-of-paola/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-20",
+          "section": 20,
+          "title": "St Aloysius Gonzaga",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/st-aloysius-gonzaga/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-21",
+          "section": 21,
+          "title": "St Stanislas Kostka",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/st-stanislas-kostka/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-22",
+          "section": 22,
+          "title": "St Philip Neri",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/st-philip-neri/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-23",
+          "section": 23,
+          "title": "St Camillus of Lellis",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/st-camillus-of-lellis/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-24",
+          "section": 24,
+          "title": "For the Faithful in their Agony",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/for-the-faithful-in-their-agony/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-25",
+          "section": 25,
+          "title": "For a Good Death",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/for-a-good-death/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-26",
+          "section": 26,
+          "title": "For the Faithful Departed",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/for-the-faithful-departed/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-27",
+          "section": 27,
+          "title": "The Divine Office and Office of the Blessed Virgin",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/the-divine-office-and-the-office-of-the-blessed-virgin/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-28",
+          "section": 28,
+          "title": "Gradual and Penitential Psalms",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/the-gradual-and-penitential-psalms/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-29",
+          "section": 29,
+          "title": "Mental Prayer",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/mental-prayer/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-30",
+          "section": 30,
+          "title": "Devout Visits",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/devout-visits/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-31",
+          "section": 31,
+          "title": "Christian Doctrine",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/christian-doctrine/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-32",
+          "section": 32,
+          "title": "Explanation of the Gospel",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/explanation-of-the-gospel/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-33",
+          "section": 33,
+          "title": "Works of Mercy",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/works-of-mercy/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-34",
+          "section": 34,
+          "title": "Times of Calamity",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/times-of-calamity/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-35",
+          "section": 35,
+          "title": "Troubled Times",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/for-troubled-times/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-36",
+          "section": 36,
+          "title": "To Implore Peace",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/to-implore-peace/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-37",
+          "section": 37,
+          "title": "Spiritual Canticles",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/spiritual-canticles/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-38",
+          "section": 38,
+          "title": "Blessed Crosses, Crucifixes, Rosaries, Medals",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/blessed-crosses-crucifixes-rosaries-medals-etc/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-39",
+          "section": 39,
+          "title": "Appendix: Indulgences for Religious",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/appendix-of-indulgences-for-religious-persons-of-both-sexes/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        },
+        {
+          "id": "raccolta-1866-section-40",
+          "section": 40,
+          "title": "Decretum",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/decretum/",
+          "edition": "St John translation 1866",
+          "capture_state": "SECTION_PAGE_VERIFIED_ENTRY_LEVEL_PENDING",
+          "historical_numbered_entries": [],
+          "full_text_capture": false
+        }
+      ],
+      "supplementary": [
+        {
+          "id": "raccolta-1866-appendix-propagation-faith",
+          "title": "Pious Exercises for the Propagation of the Faith",
+          "source_url": "https://staging2.sensusfidelium.com/the-raccolta/pious-exercises-for-the-propagation-of-the-faith/",
+          "capture_state": "PAGE_VERIFIED_ENTRY_EXTRACTION_PENDING"
+        }
+      ],
+      "observed_numbering": {
+        "first": 1,
+        "highest_seen": 189,
+        "claim": "Historical item numbers, NOT count of independent prayer texts"
+      },
+      "state": "40_OF_40_SECTION_PAGES_LINK_VERIFIED_ENTRY_AND_COMPONENT_EXTRACTION_PENDING"
+    },
+    "sensus_fidelium_non_raccolta": {
+      "tagged_novena_index": {
+        "source_url": "https://sensusfidelium.com/tag/novena/",
+        "index_first_page_rows": [
+          {
+            "id": "sensus-novena-tag-01",
+            "title": "Novena to St Peter of Verona",
+            "source_url": "https://sensusfidelium.com/2023/04/19/novena-to-st-peter-of-verona-feast-day-29-april/",
+            "source_index": "https://sensusfidelium.com/tag/novena/",
+            "capture_state": "INDEX_LINK_VERIFIED_TEXT_FETCH_PENDING",
+            "edition": "UNCLASSIFIED_UNTIL_TEXT_WITNESS_CHECK",
+            "prayer_or_exercise": "UNCLASSIFIED",
+            "source_overlap": "UNKNOWN",
+            "full_text_capture": false
+          },
+          {
+            "id": "sensus-novena-tag-02",
+            "title": "Seven Sorrows and Joys of St Joseph",
+            "source_url": "https://sensusfidelium.com/2023/03/12/seven-sorrows-and-joys-of-saint-joseph/",
+            "source_index": "https://sensusfidelium.com/tag/novena/",
+            "capture_state": "INDEX_LINK_VERIFIED_SAMPLE_TEXT_FETCHED",
+            "edition": "UNCLASSIFIED_UNTIL_TEXT_WITNESS_CHECK",
+            "prayer_or_exercise": "UNCLASSIFIED",
+            "source_overlap": "UNKNOWN",
+            "full_text_capture": false
+          },
+          {
+            "id": "sensus-novena-tag-03",
+            "title": "Novena to the Holy Face of Jesus",
+            "source_url": "https://sensusfidelium.com/2022/02/18/novena-to-the-holy-face-of-jesus-february-20-28/",
+            "source_index": "https://sensusfidelium.com/tag/novena/",
+            "capture_state": "INDEX_LINK_VERIFIED_SAMPLE_TEXT_FETCHED",
+            "edition": "UNCLASSIFIED_UNTIL_TEXT_WITNESS_CHECK",
+            "prayer_or_exercise": "UNCLASSIFIED",
+            "source_overlap": "UNKNOWN",
+            "full_text_capture": false
+          },
+          {
+            "id": "sensus-novena-tag-04",
+            "title": "Holy Cloak of St Joseph (30 days)",
+            "source_url": "https://sensusfidelium.com/2021/06/21/holy-cloak-of-st-joseph-30-day-novena/",
+            "source_index": "https://sensusfidelium.com/tag/novena/",
+            "capture_state": "INDEX_LINK_VERIFIED_SAMPLE_TEXT_FETCHED",
+            "edition": "UNCLASSIFIED_UNTIL_TEXT_WITNESS_CHECK",
+            "prayer_or_exercise": "UNCLASSIFIED",
+            "source_overlap": "UNKNOWN",
+            "full_text_capture": false
+          },
+          {
+            "id": "sensus-novena-tag-05",
+            "title": "Novena to St Teresa of Jesus",
+            "source_url": "https://sensusfidelium.com/2020/10/08/novena-to-st-teresa-of-jesus-begins-6-october/",
+            "source_index": "https://sensusfidelium.com/tag/novena/",
+            "capture_state": "INDEX_LINK_VERIFIED_TEXT_FETCH_PENDING",
+            "edition": "UNCLASSIFIED_UNTIL_TEXT_WITNESS_CHECK",
+            "prayer_or_exercise": "UNCLASSIFIED",
+            "source_overlap": "UNKNOWN",
+            "full_text_capture": false
+          },
+          {
+            "id": "sensus-novena-tag-06",
+            "title": "Novena to Our Lady of the Rosary",
+            "source_url": "https://sensusfidelium.com/2020/09/28/novena-in-honor-of-our-lady-of-the-rosary-beginning-september-28/",
+            "source_index": "https://sensusfidelium.com/tag/novena/",
+            "capture_state": "INDEX_LINK_VERIFIED_SAMPLE_TEXT_FETCHED",
+            "edition": "UNCLASSIFIED_UNTIL_TEXT_WITNESS_CHECK",
+            "prayer_or_exercise": "UNCLASSIFIED",
+            "source_overlap": "UNKNOWN",
+            "full_text_capture": false
+          },
+          {
+            "id": "sensus-novena-tag-07",
+            "title": "Pentecost Supernovena",
+            "source_url": "https://sensusfidelium.com/2020/05/22/supernovena-in-honor-of-the-coming-of-the-holy-spirit-on-pentecost/",
+            "source_index": "https://sensusfidelium.com/tag/novena/",
+            "capture_state": "INDEX_LINK_VERIFIED_SAMPLE_TEXT_FETCHED",
+            "edition": "UNCLASSIFIED_UNTIL_TEXT_WITNESS_CHECK",
+            "prayer_or_exercise": "UNCLASSIFIED",
+            "source_overlap": "UNKNOWN",
+            "full_text_capture": false
+          },
+          {
+            "id": "sensus-novena-tag-08",
+            "title": "Novena to St Gabriel",
+            "source_url": "https://sensusfidelium.com/2020/03/15/novena-in-honor-of-st-gabriel-the-archangel-beginning-march-15/",
+            "source_index": "https://sensusfidelium.com/tag/novena/",
+            "capture_state": "INDEX_LINK_VERIFIED_TEXT_FETCH_PENDING",
+            "edition": "UNCLASSIFIED_UNTIL_TEXT_WITNESS_CHECK",
+            "prayer_or_exercise": "UNCLASSIFIED",
+            "source_overlap": "UNKNOWN",
+            "full_text_capture": false
+          },
+          {
+            "id": "sensus-novena-tag-09",
+            "title": "Novena to St Joseph",
+            "source_url": "https://sensusfidelium.com/2020/03/09/novena-in-honor-of-st-joseph-spouse-of-our-lady-beginning-march-10/",
+            "source_index": "https://sensusfidelium.com/tag/novena/",
+            "capture_state": "INDEX_LINK_VERIFIED_SAMPLE_TEXT_FETCHED",
+            "edition": "UNCLASSIFIED_UNTIL_TEXT_WITNESS_CHECK",
+            "prayer_or_exercise": "UNCLASSIFIED",
+            "source_overlap": "UNKNOWN",
+            "full_text_capture": false
+          },
+          {
+            "id": "sensus-novena-tag-10",
+            "title": "Novena to St Thomas",
+            "source_url": "https://sensusfidelium.com/2020/02/28/novena-to-st-thomas-for-7-march/",
+            "source_index": "https://sensusfidelium.com/tag/novena/",
+            "capture_state": "INDEX_LINK_VERIFIED_SAMPLE_TEXT_FETCHED",
+            "edition": "UNCLASSIFIED_UNTIL_TEXT_WITNESS_CHECK",
+            "prayer_or_exercise": "UNCLASSIFIED",
+            "source_overlap": "UNKNOWN",
+            "full_text_capture": false
+          },
+          {
+            "id": "sensus-novena-tag-11",
+            "title": "Litany of Jesus Christ Priest and Victim",
+            "source_url": "https://sensusfidelium.com/2020/02/04/the-litany-of-jesus-christ-priest-and-victim-pray-for-priests/",
+            "source_index": "https://sensusfidelium.com/tag/novena/",
+            "capture_state": "INDEX_LINK_VERIFIED_SAMPLE_TEXT_FETCHED",
+            "edition": "UNCLASSIFIED_UNTIL_TEXT_WITNESS_CHECK",
+            "prayer_or_exercise": "UNCLASSIFIED",
+            "source_overlap": "UNKNOWN",
+            "full_text_capture": false
+          },
+          {
+            "id": "sensus-novena-tag-12",
+            "title": "Novena to the Purification of Our Lady",
+            "source_url": "https://sensusfidelium.com/2020/01/25/novena-in-honor-of-our-ladys-purification-beginning-january-24/",
+            "source_index": "https://sensusfidelium.com/tag/novena/",
+            "capture_state": "INDEX_LINK_VERIFIED_SAMPLE_TEXT_FETCHED",
+            "edition": "UNCLASSIFIED_UNTIL_TEXT_WITNESS_CHECK",
+            "prayer_or_exercise": "UNCLASSIFIED",
+            "source_overlap": "UNKNOWN",
+            "full_text_capture": false
+          },
+          {
+            "id": "sensus-novena-tag-13",
+            "title": "Novena to the Epiphany",
+            "source_url": "https://sensusfidelium.com/2019/12/28/novena-in-honor-of-our-lords-epiphany-beginning-december-28/",
+            "source_index": "https://sensusfidelium.com/tag/novena/",
+            "capture_state": "INDEX_LINK_VERIFIED_SAMPLE_TEXT_FETCHED",
+            "edition": "UNCLASSIFIED_UNTIL_TEXT_WITNESS_CHECK",
+            "prayer_or_exercise": "UNCLASSIFIED",
+            "source_overlap": "UNKNOWN",
+            "full_text_capture": false
+          },
+          {
+            "id": "sensus-novena-tag-14",
+            "title": "Novena to the Immaculate Conception",
+            "source_url": "https://sensusfidelium.com/2019/11/29/novena-in-honor-of-our-ladys-immaculate-conception-beginning-november-29/",
+            "source_index": "https://sensusfidelium.com/tag/novena/",
+            "capture_state": "INDEX_LINK_VERIFIED_TEXT_FETCH_PENDING",
+            "edition": "UNCLASSIFIED_UNTIL_TEXT_WITNESS_CHECK",
+            "prayer_or_exercise": "UNCLASSIFIED",
+            "source_overlap": "UNKNOWN",
+            "full_text_capture": false
+          },
+          {
+            "id": "sensus-novena-tag-15",
+            "title": "Novena to the Presentation of Mary",
+            "source_url": "https://sensusfidelium.com/2019/11/11/novena-in-honor-of-the-presentation-of-the-blessed-virgin-mary-beginning-november-12/",
+            "source_index": "https://sensusfidelium.com/tag/novena/",
+            "capture_state": "INDEX_LINK_VERIFIED_SAMPLE_TEXT_FETCHED",
+            "edition": "UNCLASSIFIED_UNTIL_TEXT_WITNESS_CHECK",
+            "prayer_or_exercise": "UNCLASSIFIED",
+            "source_overlap": "UNKNOWN",
+            "full_text_capture": false
+          }
+        ],
+        "pagination_status": "LOAD_MORE_EXISTS_NOT_EXHAUSTED"
+      },
+      "spiritual_reading_index": {
+        "source_url": "https://sensusfidelium.com/meditations/",
+        "collections": [
+          {
+            "id": "sensus-spiritual-reading-01",
+            "title": "St Alphonsus Liguori",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-02",
+            "title": "St John Climacus",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-03",
+            "title": "Venerable Louis of Granada",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-04",
+            "title": "St Bonaventure",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-05",
+            "title": "St Basil the Great",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-06",
+            "title": "Mary of Agreda, Mystical City of God",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-07",
+            "title": "Philokalia",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-08",
+            "title": "The Fairest Flower of Paradise",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-09",
+            "title": "St Robert Bellarmine",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-10",
+            "title": "St Thérèse of Lisieux",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-11",
+            "title": "Fr Michael Muller",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-12",
+            "title": "Works of St Francis of Assisi",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-13",
+            "title": "Fifteen Saturdays of the Holy Rosary",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-14",
+            "title": "St Francis de Sales",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-15",
+            "title": "St Louis de Montfort",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-16",
+            "title": "St Ignatius Spiritual Exercises",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-17",
+            "title": "Practice of the Presence of God (Brother Lawrence)",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-18",
+            "title": "Miraculous Medal (Fr Jean-Marie Aladel)",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          },
+          {
+            "id": "sensus-spiritual-reading-19",
+            "title": "Flowers of the Passion (St Paul of the Cross)",
+            "source_index": "https://sensusfidelium.com/meditations/",
+            "capture_state": "COLLECTION_LINK_IDENTIFIED_INTERNAL_PRAYERS_NOT_ENUMERATED",
+            "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
+          }
+        ]
+      },
+      "other_source_groups": [
+        {
+          "id": "sensus-de-montfort-33-day",
+          "title": "St Louis de Montfort 33-day preparation",
+          "source_url": "https://sensusfidelium.com/calendar/st-louis-de-montforts-total-consecration-to-mary/",
+          "capture_state": "PAGE_IDENTIFIED_TEXT_EXTRACTION_PENDING"
+        },
+        {
+          "id": "sensus-miller-conscience",
+          "title": "Fr Donald F Miller Examination of Conscience",
+          "source_url": "https://sensusfidelium.com/calendar/examination-of-conscience-for-adults-a-comprehensive-examination-of-conscience-by-rev-donald-f-miller-c-ss-r/",
+          "capture_state": "PAGE_IDENTIFIED_TEXT_EXTRACTION_PENDING"
+        },
+        {
+          "id": "sensus-gueranger",
+          "title": "The Liturgical Year of Dom Gueranger",
+          "source_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+          "capture_state": "INDEX_IDENTIFIED_INDIVIDUAL_DAY_PRAYERS_NOT_ENUMERATED"
+        }
+      ],
+      "scope_note": "Separate from the 1866 Raccolta mirror; standalone novenas may cite the distinct 1910 Raccolta and must not be conflated"
+    },
+    "roman_divine_office_1960": {
+      "rubrical_authority": "https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html",
+      "source_data_repo": "https://github.com/DivinumOfficium/divinum-officium",
+      "source_data_guide": "https://divinumofficium.hu/www/horas/Help/technical.html",
+      "hour_definitions": [
+        {
+          "id": "roman-office-1960-matins",
+          "hour_order": 1,
+          "title": "Matins",
+          "authority": "1960 Roman Breviary rubrics",
+          "status": "CANONICAL_HOUR_SCOPE_VERIFIED_DAY_BY_DAY_TEXT_EXTRACTION_PENDING",
+          "required_parts": [
+            "ordinary",
+            "psalter",
+            "proper of season",
+            "proper of saints",
+            "common of saints",
+            "rubrical variants"
+          ]
+        },
+        {
+          "id": "roman-office-1960-lauds",
+          "hour_order": 2,
+          "title": "Lauds",
+          "authority": "1960 Roman Breviary rubrics",
+          "status": "CANONICAL_HOUR_SCOPE_VERIFIED_DAY_BY_DAY_TEXT_EXTRACTION_PENDING",
+          "required_parts": [
+            "ordinary",
+            "psalter",
+            "proper of season",
+            "proper of saints",
+            "common of saints",
+            "rubrical variants"
+          ]
+        },
+        {
+          "id": "roman-office-1960-prime",
+          "hour_order": 3,
+          "title": "Prime",
+          "authority": "1960 Roman Breviary rubrics",
+          "status": "CANONICAL_HOUR_SCOPE_VERIFIED_DAY_BY_DAY_TEXT_EXTRACTION_PENDING",
+          "required_parts": [
+            "ordinary",
+            "psalter",
+            "proper of season",
+            "proper of saints",
+            "common of saints",
+            "rubrical variants"
+          ]
+        },
+        {
+          "id": "roman-office-1960-terce",
+          "hour_order": 4,
+          "title": "Terce",
+          "authority": "1960 Roman Breviary rubrics",
+          "status": "CANONICAL_HOUR_SCOPE_VERIFIED_DAY_BY_DAY_TEXT_EXTRACTION_PENDING",
+          "required_parts": [
+            "ordinary",
+            "psalter",
+            "proper of season",
+            "proper of saints",
+            "common of saints",
+            "rubrical variants"
+          ]
+        },
+        {
+          "id": "roman-office-1960-sext",
+          "hour_order": 5,
+          "title": "Sext",
+          "authority": "1960 Roman Breviary rubrics",
+          "status": "CANONICAL_HOUR_SCOPE_VERIFIED_DAY_BY_DAY_TEXT_EXTRACTION_PENDING",
+          "required_parts": [
+            "ordinary",
+            "psalter",
+            "proper of season",
+            "proper of saints",
+            "common of saints",
+            "rubrical variants"
+          ]
+        },
+        {
+          "id": "roman-office-1960-none",
+          "hour_order": 6,
+          "title": "None",
+          "authority": "1960 Roman Breviary rubrics",
+          "status": "CANONICAL_HOUR_SCOPE_VERIFIED_DAY_BY_DAY_TEXT_EXTRACTION_PENDING",
+          "required_parts": [
+            "ordinary",
+            "psalter",
+            "proper of season",
+            "proper of saints",
+            "common of saints",
+            "rubrical variants"
+          ]
+        },
+        {
+          "id": "roman-office-1960-vespers",
+          "hour_order": 7,
+          "title": "Vespers",
+          "authority": "1960 Roman Breviary rubrics",
+          "status": "CANONICAL_HOUR_SCOPE_VERIFIED_DAY_BY_DAY_TEXT_EXTRACTION_PENDING",
+          "required_parts": [
+            "ordinary",
+            "psalter",
+            "proper of season",
+            "proper of saints",
+            "common of saints",
+            "rubrical variants"
+          ]
+        },
+        {
+          "id": "roman-office-1960-compline",
+          "hour_order": 8,
+          "title": "Compline",
+          "authority": "1960 Roman Breviary rubrics",
+          "status": "CANONICAL_HOUR_SCOPE_VERIFIED_DAY_BY_DAY_TEXT_EXTRACTION_PENDING",
+          "required_parts": [
+            "ordinary",
+            "psalter",
+            "proper of season",
+            "proper of saints",
+            "common of saints",
+            "rubrical variants"
+          ]
+        }
+      ],
+      "source_collections": [
+        "Ordinarium",
+        "Psalterium",
+        "Psalmi",
+        "Tempora",
+        "Sancti",
+        "Commune",
+        "Martyrologium"
+      ],
+      "additional_office_paths": [
+        "Office of the Dead",
+        "Little Office of the Blessed Virgin",
+        "Tenebrae/Holy Triduum",
+        "Saturday Office of the Blessed Virgin",
+        "proper First and Second Vespers",
+        "local or institute-specific propers"
+      ],
+      "scope_note": "Every date/hour/form depends on rubrics; file count, unique Latin rows, EN/FR coverage and day-by-day outputs not yet measured"
+    }
+  },
+  "progress": {
+    "icksp_initial_source_records": 25,
+    "icrsp_office_subsection_records": 98,
+    "raccolta_section_pages_verified": 40,
+    "raccolta_supplementary_pages_verified": 1,
+    "sensus_novena_tag_visible_first_page_rows": 15,
+    "sensus_spiritual_reading_collections_identified": 19,
+    "roman_office_hours_scoped": 8,
+    "unique_prayer_total": null,
+    "missing_source_denominator": true
+  },
+  "next_capture_gates": [
+    "Enumerate all site pages including pagination and archives",
+    "Extract 1866 Raccolta numbered entries and composite prayers",
+    "Reconcile 1910 versus 1866 Raccolta separately",
+    "Enumerate ICKSP/ICRSP other national sites beyond the 25-item curated sample",
+    "Enumerate each Office source file, per-language coverage, per-day hour resolution",
+    "Inspect Ad Orientem all prayer modules for canonical identity comparison",
+    "Run exact/near text dedup without deleting source witness rows",
+    "Report unique canonical works, witnessed versions, coverage percentage and unresolved source holds"
+  ]
+}
