@@ -5,7 +5,7 @@ import {auditVenue,auditSchedule} from "../src/find/contracts.js";
 const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const dir="data/directory/generated/v19/";
 const existingNames=["sspx-asia-central-americas","sspx-district-seed","sspx-four-district-bulk","sspx-france-first-party","sspx-france-second-pass","sspx-north-america-20261008","sspx-oct26-americas","sspx-oct26-europe","sspx-oct26-poland","sspx-mexico-completion-20261009","sspx-priority-europe-pacific-20261009"];
-const previous=existingNames.flatMap(n=>read(dir+n+".v1.json").records);
+const previous=existingNames.flatMap(n=>read(dir+n+".v1.json").records.filter(r=>r.ps!=="SITE_ONLY_SOURCE_CONFIRMED"));
 const added=read(dir+"sspx-oct26-followup-65.v1.json");
 const review=read("data/directory/research/sspx-six-district-65-review-20261009.v1.json");
 const worldwide=read("data/directory/research/sspx-worldwide-210-case-disposition-20261009.v4.json");
