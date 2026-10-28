@@ -36,6 +36,19 @@ class NormalizerTests(unittest.TestCase):
         }
         for text, expected in examples.items():
             self.assertEqual(classify_latin_cell(text)["role"], expected, text)
+        further = {
+            "℣. Iube, Dómine, benedícere.": "LESSON_WITH_BLESSING",
+            "Pater Noster dicitur secreto usque ad Et ne nos": "MATINS_PREPARATION",
+            "Antiphona finalis B.M.V.": "MARIAN_ANTIPHON",
+            "Martyrologium {anticipatur}": "MARTYROLOGY",
+            "De Officio Capituli": "PRIME_CHAPTER_OFFICE",
+            "Reliqua omittuntur, nisi Laudes separandæ sint.": "RUBRICAL_NOTE",
+            "℣. Deus ✠ in adiutórium meum inténde.": "OPENING",
+            "℣. Pretiósa in conspéctu Dómini.": "VERSICLE_RESPONSE",
+            "℣. Constítues eos príncipes super omnem terram.": "VERSICLE_RESPONSE",
+        }
+        for text, expected in further.items():
+            self.assertEqual(classify_latin_cell(text)["role"], expected, text)
         unknown = classify_latin_cell("Textus sine titulo")
         self.assertEqual(unknown["role"], "SOURCE_SECTION")
         self.assertEqual(unknown["certainty"], "NONE")
