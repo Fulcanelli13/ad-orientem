@@ -1,0 +1,102 @@
+{
+  "register": "Ad Orientem sacred-art museum original-photo 1:1 pixel examination",
+  "review_date": "2026-10-28",
+  "source_manifest": "assets/staged/module-hero-institutional-review-20261028/institutional-review-manifest.json",
+  "assessed_against": "actual source-derived 540×540 unscaled PNGs; original source SHA256 and dimensions checked by archived research workflow",
+  "counts": {
+    "original_images_source_verified": 3,
+    "native_pixel_regions_produced": 18,
+    "native_pixel_regions_visually_examined": 18,
+    "preliminary_photo_detail_pass": 3,
+    "pristine_masters_fully_approved": 0,
+    "app_assets_released": 0
+  },
+  "photo_gate_semantics": {
+    "preliminary_photo_detail_pass": "Original-derived native-pixel subject samples show adequate brushwork/subject structure, but this does not certify full-resolution print fidelity, institutional colour, image-rights or approved frameless crops",
+    "pristine_approved": "All physical photographic, colour, rights, framing and screen-size gates human verified. No painting has this status in this batch."
+  },
+  "assessments": [
+    {
+      "module_id": "confession",
+      "artwork": "Bartolomé Esteban Murillo — The Return of the Prodigal Son",
+      "object": "NGA 1948.12.1",
+      "source_sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+      "subject_crops_reviewed": [
+        "father-face",
+        "son-face",
+        "embrace-hands",
+        "foreground-dog",
+        "servants-fabric",
+        "top-edge"
+      ],
+      "photographic_detail_preliminary": "PASS",
+      "observations": [
+        "Father and son expressions, fingers and clothing are clearly differentiated without overt synthetic sharpening or glare",
+        "Fine painterly structure and natural-looking crackle visible, though overall colour cannot be calibrated from crops",
+        "White dog and servants remain detailed; complete whole image was earlier screened"
+      ],
+      "remaining": [
+        "Compare museum colour reference to original photo output using colour-managed environment",
+        "Confirm painting perimeter on all four sides, not merely top",
+        "Compare 12.32MB NGA-donated alternative original if accessible",
+        "Approve mobile and desktop crops against entire composition"
+      ],
+      "pristine_master_approved": false
+    },
+    {
+      "module_id": "angelus",
+      "artwork": "Philippe de Champaigne — The Annunciation",
+      "object": "Met 2004.31",
+      "source_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "subject_crops_reviewed": [
+        "mary-face",
+        "mary-hands",
+        "gabriel-face",
+        "gabriel-wing",
+        "white-lilies",
+        "genuine-panel-edge"
+      ],
+      "photographic_detail_preliminary": "PASS",
+      "observations": [
+        "Mary and Gabriel facial modelling, lilied stem, feathers, hands and blue drapery remain intelligible at original pixel scale",
+        "No obvious glossy glare or mechanical sharpening evident in selected figure details",
+        "Right and bottom brown borders are visibly photographed and must not be removed before historical support versus external frame identification"
+      ],
+      "remaining": [
+        "Verify the rough surrounding painted support and final whole-painted-surface bounds against Met object conservation information",
+        "Complete independent colour fidelity comparison",
+        "Approve mobile/desktop focal layouts without clipping Mary, Gabriel, dove or lilies"
+      ],
+      "pristine_master_approved": false
+    },
+    {
+      "module_id": "adoration",
+      "artwork": "Jean-Auguste-Dominique Ingres — The Virgin Adoring the Host",
+      "object": "Met 2005.186",
+      "source_sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "subject_crops_reviewed": [
+        "mary-face",
+        "communion-host",
+        "left-saint-face",
+        "right-saint-face",
+        "blue-fabric",
+        "panel-edge"
+      ],
+      "photographic_detail_preliminary": "PASS",
+      "observations": [
+        "Mary and flanking figures retain face modelling; Host contains readable IHS and cross",
+        "Paint surface shows pronounced authentic-looking craquelure; do not smooth it digitally",
+        "Side and upper border contains apparent painted perimeter and physical edge; crop boundary is unresolved",
+        "No embedded ICC in archived source (reported earlier); colour fidelity pending institutional comparison"
+      ],
+      "remaining": [
+        "Verify whether dark and beige outer lines constitute intrinsic art/support rather than an external photographic border",
+        "Colour reference comparison before a frame-free derivative",
+        "Preserve full Host, both saints and support in mobile crop"
+      ],
+      "pristine_master_approved": false
+    }
+  ],
+  "unchanged_critical_policy": "Research originals immutable. No paid image sources, no artificial restoration or AI fill, no output release from automatic quality checks.",
+  "release_authorization": false
+}
