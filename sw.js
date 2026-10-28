@@ -14,6 +14,7 @@ const ROOT=new URL("index.html",BASE).href;
 const KEY=new URL("__ao_bootstrap_state__",BASE).href;
 const READY=new URL("__ao_bootstrap_completed__",BASE).href;
 // Keep a hard byte ceiling, but allow the expanded canonical module graph.
+// Refresh offline bootstrap after content-addressed daily Scripture on-demand pack update.
 // Measured 2026-10-28 bootstrap: 388 unique files, 9,204,785 bytes.
 // 416 files permits limited growth while retaining the original 35 MB ceiling.
 const MAX_ITEMS=416,MAX_BYTES=35_000_000;

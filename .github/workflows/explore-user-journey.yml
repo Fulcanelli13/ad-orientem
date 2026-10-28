@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - "src/find/**"
+      - "ao-packed-*.js"
+      - "index.html"
+      - "data/presentation/startup-thin-shell.v1.json"
+      - "sw.js"
       - "tests/explore-user-journey-acceptance.mjs"
       - ".github/workflows/explore-user-journey.yml"
   workflow_dispatch:

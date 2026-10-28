@@ -45,6 +45,9 @@ for(const entry of entries){
  }
 }
 files=[...new Set(files)];
+// Only the active content-addressed parser-order pack is shipped. Keep
+// superseded bundles in Git history, never duplicate their runtime bytes.
+files=files.filter(name=>!/^ao-packed-[a-f0-9]{20}\.js$/.test(name)||activeEntrypointAssets.has(name));
 for(const name of files){
  await access(join(root,name));
  await cp(join(root,name),join(output,name));

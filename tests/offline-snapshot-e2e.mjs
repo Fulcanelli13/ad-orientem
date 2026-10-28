@@ -188,10 +188,14 @@ try{
  await angelusRoot.locator("[data-ao-angelus-form]").waitFor({timeout:12000});
  assert.equal(await angelusRoot.locator("[data-ao-angelus-form]").getAttribute("data-ao-angelus-form"),"angelus",
   "Offline Angelus launched the wrong liturgical form");
- assert.equal(await angelusRoot.locator(".aoAngelusGuideSection").count(),5,
-  "Offline Angelus lost its five source-backed guide sections");
- assert.equal(await angelusRoot.locator(".aoAngelusGuideSection a[href^='https://']").count(),5,
-  "Offline Angelus lost historical source links");
+ // The related August Queen prayer has its own sourced card. Keep the five
+ // Angelus-history paragraphs distinct from that separate Marian devotion.
+ assert.equal(await angelusRoot.locator(".aoAngelusGuideSection:not([data-ao-b01-august-queen])").count(),5,
+  "Offline Angelus lost its five historical guide sections");
+ assert.equal(await angelusRoot.locator(".aoAngelusGuideSection:not([data-ao-b01-august-queen]) a[href^='https://']").count(),5,
+  "Offline Angelus lost its five historical source links");
+ assert.equal(await angelusRoot.locator("[data-ao-b01-august-queen] a[href^='https://']").count(),1,
+  "Related August Queen prayer must retain its own source, not become part of the Angelus");
  const angelusText=await angelusRoot.locator(".aoP435930Mount").innerText();
  assert.ok(angelusText.length>80,"Offline Angelus prayer rendered blank");
  await angelusRoot.locator("[data-p435930-seg='group']").first().evaluate(x=>x.click());
@@ -203,7 +207,7 @@ try{
  },null,{timeout:10000});
  await angelusRoot.locator("[data-p435930-seg='regina']").first().evaluate(x=>x.click());
  await page.waitForFunction(()=>document.querySelector("#aoPray435930.open [data-ao-angelus-form]")?.dataset?.aoAngelusForm==="regina",null,{timeout:10000});
- assert.equal(await angelusRoot.locator(".aoAngelusGuideSection").count(),4,
+ assert.equal(await angelusRoot.locator(".aoAngelusGuideSection:not([data-ao-b01-august-queen])").count(),4,
   "Offline Regina Cæli did not show its four source-backed guide sections");
  assert.equal(await angelusRoot.locator("[data-p435930-angelus-appendix]").count(),0,
   "Angelus-only appendix leaked into offline Regina Cæli");
