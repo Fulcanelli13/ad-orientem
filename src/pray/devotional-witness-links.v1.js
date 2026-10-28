@@ -16,7 +16,8 @@ export const DEVOTIONAL_WITNESSES=Object.freeze({
   sevenWords:Object.freeze({
     type:"HISTORICAL_ENGLISH_MEDITATION_FRENCH_TRANSLATION_UNVERIFIED",
     links:Object.freeze([
-      Object.freeze({title:"The Devotion of the Seven Words upon the Cross · Baltimore Manual (1889)",url:"https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/The_Devotion_of_the_Seven_Words_upon_the_Cross"})
+      Object.freeze({title:"The Devotion of the Seven Words upon the Cross · Baltimore Manual (1889)",url:"https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/The_Devotion_of_the_Seven_Words_upon_the_Cross"}),
+      Object.freeze({title:"1889 printed volume facsimile · Seven Words printed pp. 361–367 · scan located, exact text not yet collated",url:"https://commons.wikimedia.org/wiki/File:A_Manual_of_prayers_-_for_the_use_of_the_Catholic_laity_-_prepared_and_published_by_order_of_the_Third_Plenary_Council_of_Baltimore_(IA_manualofprayersf00wood).pdf"})
     ])
   }),
   fortyHours:Object.freeze({
