@@ -1,0 +1,76 @@
+{
+  "schema": "ao.pray.b24-st-joseph-seven-sorrows-release.v1",
+  "asOf": "2026-10-29",
+  "historicalCandidateId": "AO-AQ-053",
+  "workId": "raccolta_1910_300_seven_sorrows_joys",
+  "originalPrayersAsOneDevotion": 7,
+  "concludingSectionCount": 1,
+  "canonicalPrayersPerPart": 3,
+  "totalCanonicalInvocations": 21,
+  "historicalSource": "The Raccolta 1910 no. 300, printed pp. 274–275 (Ambrose St John translation)",
+  "provenance": [
+    {
+      "url": "https://www.saintsbooks.net/books/The%20Raccolta%20-%201910.pdf",
+      "kind": "1910 digitally typeset English wording",
+      "pageIndicesZeroBased": [
+        129,
+        130
+      ],
+      "note": "Digital secondary rendition, NOT source page photograph"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Theraccoltaorcol00unknuoft.djvu",
+      "kind": "1910 photographed original, 458 pages",
+      "note": "Located; no.300 original-page image visually uncollated"
+    },
+    {
+      "url": "https://liturgialatina.org/raccolta/joseph.htm",
+      "kind": "1857 English edition §115 cross-check",
+      "note": "Distinct edition not silently substituted"
+    }
+  ],
+  "releaseLanguage": "en",
+  "allowFrenchReaderUI": true,
+  "allowCanonicalFrench": true,
+  "allowCanonicalLatin": true,
+  "importedFrenchOrLatinHistoricalText": false,
+  "sourceState": "1910_COMPLETE_EN_DIGITAL_WITNESS_WITH_EXPLICIT_PRINT_COLLATION_HOLD",
+  "sourceTextStatus": {
+    "sevenCompleteSupplications": true,
+    "finalAntiphon": true,
+    "finalVersicle": true,
+    "finalResponse": true,
+    "finalCollect": true,
+    "printedPagePhotoCertified": false
+  },
+  "originalWorkAddedCount": 1,
+  "notAdded": [
+    {
+      "id": "st_joseph_novena_1910_301",
+      "why": "Different source work; existing Novena programme unchanged"
+    },
+    {
+      "id": "raccolta_1857_115_as_second_work",
+      "why": "Cross-edition parallel witness, not a second text"
+    }
+  ],
+  "destinations": [
+    "Existing Pray > Devotions & Novenas contextual link",
+    "Existing Prayer presentation owner internal route pray.st_joseph_seven_sorrows"
+  ],
+  "protect": {
+    "canonicalCoreCount": 48,
+    "originalNovenaCount": 16,
+    "noTopLevelFamily": true,
+    "originalOrderUnchanged": true,
+    "zeroCost": true,
+    "indulgencesNotCurrent": true,
+    "noGeneratedFrenchOrLatin": true
+  },
+  "remainingGates": [
+    "Check 1910 photographed original no.300 pages word-for-word; until then clearly source-label digital transcription and do not mark PRINT_CERTIFIED",
+    "Check any original historical French/Latin translations separately before enablement",
+    "Do not merge source edition status into 1857 or existing nine-day Joseph programme"
+  ],
+  "releaseDecision": "DIGITAL_WITNESS_SOURCE_QUALIFIED_EN_READER_PENDING_CI_MOBILE"
+}
