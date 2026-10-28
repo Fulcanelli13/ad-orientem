@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "../src/pray/dying-companion-flow.js";
+import {GOLDEN_ARROW_REPARATION_V1} from "../src/pray/icksp-golden-arrow-reparation.v1.js";
 import { readFileSync } from "node:fs";
 import {
   SACRED_HYMNS_V381,
@@ -123,6 +124,14 @@ assert.match(runtime,/devotion_memorare_st_joseph/,"Good Death stopped reusing t
 assert.match(runtime,/data-tp381-heart="litany"/,"Sacred Heart litany tab disappeared");
 assert.match(runtime,/data-tp381-heart="reparation"/,"Sacred Heart reparation tab disappeared");
 assert.match(runtime,/data-tp381-heart="consecration"/,"Sacred Heart consecration tab disappeared");
+assert.match(runtime,/data-tp381-heart="golden_arrow"/,"Distinct ICKSP Golden Arrow was removed from Sacred Heart reader");
+assert.match(runtime,/GOLDEN_ARROW_REPARATION_V1/,"Golden Arrow text lost canonical reader integration");
+assert.match(runtime,/devotion_consecration_christ_king/,"Already canonical Christ the King dedication is no longer reused");
+assert.equal(GOLDEN_ARROW_REPARATION_V1.id,"holy_face_golden_arrow");
+assert.equal(GOLDEN_ARROW_REPARATION_V1.la,null,"Never invent an unverified Latin version of the Golden Arrow");
+assert.ok(GOLDEN_ARROW_REPARATION_V1.en.includes("most unknown")&&GOLDEN_ARROW_REPARATION_V1.fr.includes("très inconnu"),"Historical English/French wording lost");
+assert.ok(GOLDEN_ARROW_REPARATION_V1.witnesses.en.url.startsWith("https://")&&GOLDEN_ARROW_REPARATION_V1.witnesses.fr.url.startsWith("https://"),"Independent source attestations missing");
+assert.ok(GOLDEN_ARROW_REPARATION_V1.distinctFrom.includes("sacred_heart_short_prayer"),"Golden Arrow wrongly folded into Pius XI Act");
 assert.match(runtime,/current Enchiridion prints an abbreviated form/,"Traditional/current Sacred Heart version distinction disappeared");
 assert.doesNotMatch(runtime,/aoTP381Hero/,"v38.1 traditional PRAY regained non-donor hero cards");
 assert.doesNotMatch(styles,/aoTP381Hero/,"v38.1 traditional PRAY regained non-donor hero styling");
