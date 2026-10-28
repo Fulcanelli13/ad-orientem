@@ -95,8 +95,17 @@
       "CHECK_ARCHED_PANEL_BOUNDS": 1,
       "CHECK_SUSPECT_RED_CORNER_MARK": 1
     },
-    "batch2_new_original_photographs_archived": 1,
-    "batch2_source_groups_attempted": 14
+    "batch2_new_original_photographs_archived": 7,
+    "batch2_source_groups_attempted": 14,
+    "batch2_attempted_source_groups": 14,
+    "batch2_successfully_archived_distinct_originals": 7,
+    "batch2_preliminary_source_grades": {
+      "REJECT_PHOTO_EXTERNAL_FRAME": 1,
+      "REJECT_PHOTO_EXTERNAL_GILDED_FRAME_AND_PERSPECTIVE": 1,
+      "PRELIMINARY_PAINTING_ONLY_FULL_WORK": 2,
+      "HOLD_PAINTING_ONLY_BUT_HIGH_NOISE_RISK": 1,
+      "PRELIMINARY_PAINTING_ONLY_HIGH_RES": 1
+    }
   },
   "primary_artworks": [
     {
@@ -517,6 +526,17 @@
           "contact_sheet": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-02.jpg",
           "no_frame_or_pristine_publication_signoff": false,
           "source_photo_publication_approved": false
+        },
+        "b2b_photo_comparison": {
+          "candidate_sha256": "d376bbf82b9978223eb8968fda988ae7d61ebc84cf50d72bb5f5fd868fbb23ce",
+          "pixels": [
+            2112,
+            2816
+          ],
+          "source": "https://commons.wikimedia.org/wiki/File:Cappouccini,_guido_reni,_san_michele_arcangelo_02.JPG",
+          "grade": "REJECT_PHOTO_EXTERNAL_GILDED_FRAME_AND_PERSPECTIVE",
+          "note": "Church photograph shows ornate gilt frame and oblique camera perspective; native corners include physical frame. Although 2112×2816, it is not a suitable clean hero source.",
+          "eligible_to_replace_current_primary_photo": false
         }
       },
       "alternative_source_candidate": null,
@@ -2848,7 +2868,21 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "photographic_research_candidates": [
+        {
+          "candidate_id": "tiepolo-station12",
+          "source_path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/tiepolo-station12/tiepolo-station12-native.jpg",
+          "sha256": "4d59307c2553be1b7103d5e9642631f3025fc4cad929e3ed4fdd7348a5cfbeec",
+          "dimensions_px": [
+            3277,
+            4316
+          ],
+          "grade": "HOLD_PAINTING_ONLY_BUT_HIGH_NOISE_RISK",
+          "publisher_photo_pristine": false,
+          "rights_checked_for_specific_file": false
+        }
+      ]
     },
     {
       "placement_key": "stations::historic:giandomenico tiepolo:descent from the cross prado passion series",
@@ -2867,7 +2901,21 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "photographic_research_candidates": [
+        {
+          "candidate_id": "tiepolo-prado-descent",
+          "source_path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/tiepolo-prado-descent/tiepolo-prado-descent-native.jpg",
+          "sha256": "1cb5d8a9f420eddd32ffabc4713a49d27a6f39e664d2495c5852a34fa68723e7",
+          "dimensions_px": [
+            2705,
+            2362
+          ],
+          "grade": "PRELIMINARY_PAINTING_ONLY_FULL_WORK",
+          "publisher_photo_pristine": false,
+          "rights_checked_for_specific_file": false
+        }
+      ]
     },
     {
       "placement_key": "stations::historic:giandomenico tiepolo:burial of christ prado passion series",
@@ -2905,7 +2953,21 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "photographic_research_candidates": [
+        {
+          "candidate_id": "carracci-burial-met",
+          "source_path": "assets/staged/prayer-art-bulk-acquisition-b2-20261028/carracci-burial-met-met-native.jpg",
+          "sha256": "6146de5ad9544812623cee4499e7cc717d1b0c152500be72c73103a781fc5757",
+          "dimensions_px": [
+            3122,
+            3875
+          ],
+          "grade": "REJECT_PHOTO_EXTERNAL_FRAME",
+          "publisher_photo_pristine": false,
+          "rights_checked_for_specific_file": false
+        }
+      ]
     },
     {
       "placement_key": "stations::w6-holy-blood",
@@ -3057,7 +3119,21 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "photographic_research_candidates": [
+        {
+          "candidate_id": "teniers-agony-antwerp",
+          "source_path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/teniers-agony-antwerp/teniers-agony-antwerp-native.jpg",
+          "sha256": "6a697614cfe96b9f62921af0015eeca08fbc26ed0103dbefe9abe98c5342658e",
+          "dimensions_px": [
+            1333,
+            1799
+          ],
+          "grade": "PRELIMINARY_PAINTING_ONLY_FULL_WORK",
+          "publisher_photo_pristine": false,
+          "rights_checked_for_specific_file": false
+        }
+      ]
     },
     {
       "placement_key": "tenebrae::historic:anthony van dyck:the lance thrust",
@@ -3114,7 +3190,21 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "photographic_research_candidates": [
+        {
+          "candidate_id": "carracci-burial-met",
+          "source_path": "assets/staged/prayer-art-bulk-acquisition-b2-20261028/carracci-burial-met-met-native.jpg",
+          "sha256": "6146de5ad9544812623cee4499e7cc717d1b0c152500be72c73103a781fc5757",
+          "dimensions_px": [
+            3122,
+            3875
+          ],
+          "grade": "REJECT_PHOTO_EXTERNAL_FRAME",
+          "publisher_photo_pristine": false,
+          "rights_checked_for_specific_file": false
+        }
+      ]
     },
     {
       "placement_key": "tenebrae::w6-holy-blood",
@@ -3342,7 +3432,21 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "photographic_research_candidates": [
+        {
+          "candidate_id": "paired-hearts-lopez",
+          "source_path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/paired-hearts-lopez/paired-hearts-lopez-native.jpg",
+          "sha256": "1b990f88d8d8a9a6a74a9a3cba598eef1fe2d33dc188c45cd924a8f8d3e4059d",
+          "dimensions_px": [
+            1725,
+            2560
+          ],
+          "grade": "REJECT_PHOTO_EXTERNAL_FRAME",
+          "publisher_photo_pristine": false,
+          "rights_checked_for_specific_file": false
+        }
+      ]
     },
     {
       "placement_key": "first-friday::king--caravaggio-ecce",
@@ -3456,7 +3560,21 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "photographic_research_candidates": [
+        {
+          "candidate_id": "paired-hearts-lopez",
+          "source_path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/paired-hearts-lopez/paired-hearts-lopez-native.jpg",
+          "sha256": "1b990f88d8d8a9a6a74a9a3cba598eef1fe2d33dc188c45cd924a8f8d3e4059d",
+          "dimensions_px": [
+            1725,
+            2560
+          ],
+          "grade": "REJECT_PHOTO_EXTERNAL_FRAME",
+          "publisher_photo_pristine": false,
+          "rights_checked_for_specific_file": false
+        }
+      ]
     },
     {
       "placement_key": "sacred-heart::heart-jesus--primary",
@@ -3627,7 +3745,21 @@
       "review_note": null,
       "linked_locked_primary_if_exact_identity": null,
       "linked_identity_only_not_placement_approval": true,
-      "pristine_photo_verified": false
+      "pristine_photo_verified": false,
+      "photographic_research_candidates": [
+        {
+          "candidate_id": "vandyck-holy-spirit",
+          "source_path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/vandyck-holy-spirit/vandyck-holy-spirit-native.jpg",
+          "sha256": "9ac5db7a32626fd6825e6d364f3fc48b034ba8282a6989cf24d3f368c0eafe63",
+          "dimensions_px": [
+            6064,
+            7368
+          ],
+          "grade": "PRELIMINARY_PAINTING_ONLY_HIGH_RES",
+          "publisher_photo_pristine": false,
+          "rights_checked_for_specific_file": false
+        }
+      ]
     },
     {
       "placement_key": "hymns::historic:peter paul rubens:the holy trinity",
@@ -4820,7 +4952,124 @@
           "item": "Holy Trinity",
           "result": "Basel G 1988.24 (1160x1624) and Antwerp KMSKA #314 (19178x19721) are separate Rubens works sharing the title; preserve target artwork identity as unresolved, do not select automatically."
         }
-      ]
+      ],
+      "phase2_parallel_recovery": {
+        "phase": "B2B_SIX_PINNED_COMMONS_WORKERS",
+        "run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40714325345",
+        "evidence_path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/parallel-results.json",
+        "statuses": {
+          "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING": 6
+        },
+        "source_originals_archived": 6,
+        "source_originals_pristine_final": 0,
+        "source_photo_gates_blocked": 6,
+        "cases": [
+          {
+            "case_id": "paired-hearts-lopez",
+            "title": "Sacred Hearts of Jesus and Mary",
+            "source_file": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/paired-hearts-lopez/paired-hearts-lopez-native.jpg",
+            "sha256": "1b990f88d8d8a9a6a74a9a3cba598eef1fe2d33dc188c45cd924a8f8d3e4059d",
+            "native_pixels": [
+              1725,
+              2560
+            ],
+            "source_page": "https://commons.wikimedia.org/wiki/File:Sagrados_corazones_de_Jes%C3%BAs_y_Mar%C3%ADa_(Sacred_Hearts_of_Jesus_and_Mary),_workshop_of_Vicente_L%C3%B3pez_Porta%C3%B1a.jpg",
+            "rights_status": "HOLD_FILE_SPECIFIC_SOURCE_TERMS",
+            "preliminary_contact_grade": "REJECT_PHOTO_EXTERNAL_FRAME",
+            "preliminary_observation": "All four corners contain broad wooden/gilded external frame; native 1725×2560 is authentic research evidence but not a pristine painting-only reproduction.",
+            "next_quality_action": "Locate same workshop painting without frame, preserve two-section placement decisions",
+            "final_pristine": false,
+            "production": false
+          },
+          {
+            "case_id": "reni-michael",
+            "title": "Archangel Michael Defeating Satan",
+            "source_file": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/reni-michael/reni-michael-native.jpg",
+            "sha256": "d376bbf82b9978223eb8968fda988ae7d61ebc84cf50d72bb5f5fd868fbb23ce",
+            "native_pixels": [
+              2112,
+              2816
+            ],
+            "source_page": "https://commons.wikimedia.org/wiki/File:Cappouccini,_guido_reni,_san_michele_arcangelo_02.JPG",
+            "rights_status": "HOLD_FILE_SPECIFIC_SOURCE_TERMS",
+            "preliminary_contact_grade": "REJECT_PHOTO_EXTERNAL_GILDED_FRAME_AND_PERSPECTIVE",
+            "preliminary_observation": "Church photograph shows ornate gilt frame and oblique camera perspective; native corners include physical frame. Although 2112×2816, it is not a suitable clean hero source.",
+            "next_quality_action": "Find original painting-only flat source, artist remains Guido Reni",
+            "final_pristine": false,
+            "production": false
+          },
+          {
+            "case_id": "teniers-agony-antwerp",
+            "title": "Agony in the Garden — Antwerp Rosary cycle",
+            "source_file": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/teniers-agony-antwerp/teniers-agony-antwerp-native.jpg",
+            "sha256": "6a697614cfe96b9f62921af0015eeca08fbc26ed0103dbefe9abe98c5342658e",
+            "native_pixels": [
+              1333,
+              1799
+            ],
+            "source_page": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
+            "rights_status": "HOLD_FILE_SPECIFIC_SOURCE_TERMS",
+            "preliminary_contact_grade": "PRELIMINARY_PAINTING_ONLY_FULL_WORK",
+            "preliminary_observation": "Full Antwerp cycle panel visible, outer corners mostly contain pictorial field with narrow natural painted surface; no large separate frame evident on contact sheet.",
+            "next_quality_action": "Full-native central paint texture, source photographer credits and institutional colour verification",
+            "final_pristine": false,
+            "production": false
+          },
+          {
+            "case_id": "tiepolo-prado-descent",
+            "title": "The Descent from the Cross — Prado P000361",
+            "source_file": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/tiepolo-prado-descent/tiepolo-prado-descent-native.jpg",
+            "sha256": "1cb5d8a9f420eddd32ffabc4713a49d27a6f39e664d2495c5852a34fa68723e7",
+            "native_pixels": [
+              2705,
+              2362
+            ],
+            "source_page": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+            "rights_status": "HOLD_FILE_SPECIFIC_SOURCE_TERMS",
+            "preliminary_contact_grade": "PRELIMINARY_PAINTING_ONLY_FULL_WORK",
+            "preliminary_observation": "Prado Descent pictured as a standalone painting; all four corners show pictorial material rather than external museum mount. Natural paint texture/cracks visible.",
+            "next_quality_action": "Source-photo colour, exact Prado attribution/rights and centre-native sharpness",
+            "final_pristine": false,
+            "production": false
+          },
+          {
+            "case_id": "tiepolo-station12",
+            "title": "San Polo Station XII",
+            "source_file": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/tiepolo-station12/tiepolo-station12-native.jpg",
+            "sha256": "4d59307c2553be1b7103d5e9642631f3025fc4cad929e3ed4fdd7348a5cfbeec",
+            "native_pixels": [
+              3277,
+              4316
+            ],
+            "source_page": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XII_-_Jesus_dies_on_the_cross.jpg",
+            "rights_status": "HOLD_FILE_SPECIFIC_SOURCE_TERMS",
+            "preliminary_contact_grade": "HOLD_PAINTING_ONLY_BUT_HIGH_NOISE_RISK",
+            "preliminary_observation": "Full San Polo Station XII composition visible with no obvious outer frame; dark original corners show strong digital noise/texture, unsuitable to call pristine without detailed tonal check.",
+            "next_quality_action": "Compare realistic 100% details, glare and noise against another exact Station XII photograph",
+            "final_pristine": false,
+            "production": false
+          },
+          {
+            "case_id": "vandyck-holy-spirit",
+            "title": "Outpouring of the Holy Spirit — Sanssouci",
+            "source_file": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/vandyck-holy-spirit/vandyck-holy-spirit-native.jpg",
+            "sha256": "9ac5db7a32626fd6825e6d364f3fc48b034ba8282a6989cf24d3f368c0eafe63",
+            "native_pixels": [
+              6064,
+              7368
+            ],
+            "source_page": "https://commons.wikimedia.org/wiki/File:Dyck,_Anthonis_van_-_Pouring_of_the_Holy_Ghost_-_Bildergalerie_Sanssouci.jpeg",
+            "rights_status": "HOLD_FILE_SPECIFIC_SOURCE_TERMS",
+            "preliminary_contact_grade": "PRELIMINARY_PAINTING_ONLY_HIGH_RES",
+            "preliminary_observation": "Source-faithful 6064×7368 Sanssouci work displays full painting without an obvious separate frame; native corners show pictorial surface.",
+            "next_quality_action": "Validate PD-Art source metadata, museum tonal colour and centre-detail integrity before pristine promotion",
+            "final_pristine": false,
+            "production": false
+          }
+        ]
+      },
+      "previously_open_photo_placements_with_archived_candidate": 8,
+      "originals_not_automatically_promoted_to_public_gallery": true
     },
     "B2_MASTER_QUALITY": {
       "status": "WHOLE_WORK_AND_CORNER_PRELIMINARY_SCANNED_NOT_PRISTINE_SIGNED_OFF",
