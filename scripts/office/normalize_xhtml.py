@@ -28,6 +28,13 @@ LANGS = ("la", "en", "fr")
 SECTION_LIMIT = 300
 UNRESOLVED_MACRO = re.compile(r"(?:^|\n)\s*[@$&][A-Za-z][A-Za-z0-9_/-]*")
 ELEMENT_ID = re.compile(r"^([A-Za-z]+)([1-9][0-9]*)$")
+# 1960-rubrics output sometimes emits a vernacular-only status cell whose
+# entire contents explicitly say that ferial preces are omitted. Preserve it
+# as provenance, not as a prayer card. Do NOT drop a cell containing prayers.
+EXPLICIT_OMITTED_PRECES = {
+    "en": re.compile(r"^Weekday Intercessions\s*\{omit\}$", re.IGNORECASE),
+    "fr": re.compile(r"^Prières fériales\s*\{omises\}$", re.IGNORECASE),
+}
 
 
 def clean_text(parts: list[str]) -> str:
@@ -156,6 +163,27 @@ def normalize_xhtml(xhtml: str, *, date: str, hour: str, language: str, source_r
     headline = clean_text(parser.headline)
     if not headline:
         raise ValueError("OFFICE_NORMALIZE_DAY_HEADLINE_MISSING")
+    # Source cells are intact and consecutive; presentation cells may exclude
+    # only source-proven, explicitly omitted preces markers.
+    source_cells = sections
+    sections = []
+    omitted = []
+    omission_rule = EXPLICIT_OMITTED_PRECES.get(language)
+    for cell in source_cells:
+        if omission_rule and omission_rule.fullmatch(cell["text"]):
+            omitted.append({
+                "sourceCellId": cell["sourceCellId"],
+                "sourceIndex": cell["index"],
+                "text": cell["text"],
+                "reason": "UPSTREAM_EXPLICIT_PRECES_OMISSION",
+            })
+            continue
+        sections.append({
+            **cell, "sourceIndex": cell["index"],
+            "index": len(sections) + 1,
+        })
+    if not sections:
+        raise ValueError("OFFICE_NORMALIZE_ALL_CONTENT_OMITTED")
     return {
         "schema": "ao.office.source-cells.v1",
         "date": date,
@@ -165,7 +193,10 @@ def normalize_xhtml(xhtml: str, *, date: str, hour: str, language: str, source_r
         "sourceEngine": "DivinumOfficium/EofficiumXhtml.pl",
         "headline": headline,
         "sections": sections,
+        "omittedSourceCells": omitted,
         "metrics": {
+            "rawSourceCellCount": len(source_cells),
+            "explicitlyOmittedSourceCellCount": len(omitted),
             "sectionCount": len(sections),
             "characters": sum(len(s["text"]) for s in sections),
             "textSha256": hashlib.sha256("\n\n".join(s["text"] for s in sections).encode("utf-8")).hexdigest(),
@@ -210,6 +241,7 @@ def convert_tree(root: Path) -> dict:
             "characters": doc["metrics"]["characters"],
             "textSha256": doc["metrics"]["textSha256"],
             "headline": doc["headline"],
+            "explicitOmissions": [x["sourceCellId"] for x in doc["omittedSourceCells"]],
             "file": str(outfile.relative_to(root)), "status": doc["status"],
         })
 
