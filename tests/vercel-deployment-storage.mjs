@@ -10,6 +10,7 @@ const excluded=[
  "data/geography/research",
 ];
 const historicalSpritePath="assets/generated-sprites";
+const offlineOnlyCatenaPaths=["matthew","mark","luke","john"].map(name=>"data/scripture/catena/"+name+".json");
 const historicalSpriteNames=readdirSync(join(process.cwd(),historicalSpritePath)).filter(name=>name.endsWith(".svg"));
 assert.ok(historicalSpriteNames.length>=3,"Historical sprite bank unexpectedly empty");
 const retainedRuntimeResearch={
@@ -30,7 +31,11 @@ const required=[
  "sw.js",
  "src/mass/browser-entry.js",
  "src/pray/browser-entry.js",
- "data/scripture/catena/matthew.json",
+ "data/scripture/catena/chunks/manifest.v1.json",
+ "data/scripture/catena/chunks/matthew-01-04.json",
+ "data/scripture/catena/chunks/luke-01-04.json",
+ "data/scripture/catena/chunks/mark-01-04.json",
+ "data/scripture/catena/chunks/john-01-04.json",
  "data/explore/atlas-physical-land-50m.geojson",
  "assets/active/mass-v46",
 ];
@@ -60,6 +65,7 @@ const report=JSON.parse(run.stdout.trim().split("\n").at(-1));
 assert.deepEqual(report.excludedResearchPaths,excluded);
 assert.deepEqual(report.retainedRuntimeResearch,retainedRuntimeResearch);
 assert.equal(report.excludedHistoricalSpritePath,historicalSpritePath);
+assert.deepEqual(report.excludedOfflineOnlyCatenaPaths,offlineOnlyCatenaPaths);
 
 for(const path of excluded){
  assert.equal(existsSync(join(output,path)),false,"Non-runtime research unexpectedly published: "+path);
@@ -74,6 +80,12 @@ for(const [path,kept] of Object.entries(retainedRuntimeResearch)){
    "Runtime research fixture has changed: "+path+"/"+name);
  }
 }
+for(const path of offlineOnlyCatenaPaths){
+ assert.equal(existsSync(join(output,path)),false,"Old full-Gospel Catena archive copied into production: "+path);
+ assert.ok(existsSync(join(root,path)),"Original Catena source was lost: "+path);
+}
+const chunkFiles=readdirSync(join(output,"data/scripture/catena/chunks")).filter(f=>/^(?:matthew|mark|luke|john)-\d{2}-\d{2}\.json$/.test(f));
+assert.equal(chunkFiles.length,23,"Live Catena chapter-pack census changed");
 assert.equal(existsSync(join(output,historicalSpritePath)),false,"Historical sprites were copied into production");
 assert.equal(existsSync(join(root,historicalSpritePath)),true,"Historical SVG sprite source bank was deleted");
 assert.equal(existsSync(join(output,oldBoot)),false,"Historical boot was deployed alongside active boot");
@@ -116,6 +128,15 @@ for(const file of runtimeSourceFiles){
 }
 assert.deepEqual(historicalSpriteReferences,[],
  "First-party runtime still references a historical sprite: preserve source and block deploy");
+const directCatenaFetchReferences=[];
+for(const file of runtimeSourceFiles){
+ const source=readFileSync(file,"utf8");
+ for(const path of offlineOnlyCatenaPaths){
+  if(source.includes(path))directCatenaFetchReferences.push(relative(root,file)+": "+path);
+ }
+}
+assert.deepEqual(directCatenaFetchReferences,[],
+ "A deployed script directly references an archival full-Gospel Catena URL");
 const unresolvedResearchRefs=[];
 for(const file of runtimeSourceFiles){
  const source=readFileSync(file,"utf8");
@@ -134,4 +155,4 @@ assert.deepEqual(unresolvedResearchRefs,[],
  "Runtime refers to a research file that would be missing from deployment");
 console.log("PASS — "+Math.round(sourcePrunedBytes/1e5)/10+
  " MB excluded by original rules; "+Math.round(slimmedBytes/1e5)/10+
- " MB of additional research audit data omitted; historical sprites omitted; runtime fixtures intact");
+ " MB of additional research audit data omitted; historical sprites and archival Catena duplicates omitted; runtime fixtures intact");
