@@ -81,18 +81,18 @@
     },
     {
       "id": "litany_holy_spirit",
-      "owner": "Montfort §§228–230 direction; required original-text recension not admitted here",
-      "status": "SOURCE_TEXT_HELD"
+      "owner": "B27 historical digital English witness: 1897 Manual of Adoration pp.235–239",
+      "status": "AVAILABLE_EN_DIGITAL_PRINT_UNCOLLATED"
     },
     {
       "id": "litany_holy_name",
-      "owner": "Montfort §230 direction; 1910 Raccolta §56 source lead not yet imported",
-      "status": "SOURCE_TEXT_HELD"
+      "owner": "B27 1909 Hammer Approved Litanies EN, 1910 Raccolta §56 comparison",
+      "status": "AVAILABLE_EN_DIGITAL_PRINT_UNCOLLATED"
     },
     {
       "id": "augustine_prayer",
-      "owner": "Montfort §230 attributes a longer prayer to Augustine",
-      "status": "SOURCE_TEXT_HELD"
+      "owner": "B27 Faber 1863 historical English and Montfort-transmitted Latin, True Devotion §67",
+      "status": "AVAILABLE_EN_LA_DIGITAL_PRINT_UNCOLLATED"
     },
     {
       "id": "faber_consecration_act",
@@ -109,13 +109,16 @@
     "noInventedFrenchPrayerTranslation": true,
     "noRecurringSubscription": true,
     "euros": 0,
-    "notFullySelfContainedOriginalLitanies": true
+    "notFullySelfContainedOriginalLitanies": false,
+    "historicalEnglishTwoCompleteLitaniesAvailable": true,
+    "historicalEnglishAugustinePrayerAvailable": true
   },
   "editorialGates": [
     "Collate Faber 1863 act against actual printed-page facsimile before marking PRINT_CERTIFIED",
-    "Admit a historical English Litany of Holy Spirit and following collect, and separate Holy Name Litany, before declaring all phases fully self-contained",
+    "B27 now admits English digital historical litanies with original collects and Faber §67; printed-page exact collation remains pending",
     "Confirm specific 1962 Marian feast transfers before automatically presenting calendar-aligned start dates",
     "Do not attribute 1958 or later numbered daily readings to Montfort",
     "If a user changes consecration date, current version resets tracked day marks; progress is device local only"
-  ]
+  ],
+  "supersededBy": "B27 full source-owned English litanies and Montfort §67 prayer; no canonical 48/16 mutation"
 }
