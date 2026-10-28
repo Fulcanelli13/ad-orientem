@@ -187,9 +187,9 @@ try{
    await page.screenshot({path:resolve(out,"montfort-holy-name-litany-"+width+".png"),animations:"disabled"});
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"Full Holy Name litany must not overflow");
    await holyName.locator("summary").click();
-   await augustine.locator("summary").click();
+   await augustine.locator(":scope > summary").click();
    assert.match(await augustine.innerText(),/Thou art Christ, my holy Father/i);
-   await augustine.locator("summary").click();
+   await augustine.locator(":scope > summary").click();
 
    for(let n=0;n<7;n++)await page.locator(mont+' [data-p435930-montfort-next]').click();
    const act=page.locator(mont+' [data-ao-montfort-day="34"]');
