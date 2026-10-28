@@ -1,0 +1,43 @@
+name: 1962 plural Martyrs actual reader source audit
+
+on:
+  push:
+    branches:
+      - fix/1962-plural-martyrs-french-source-gate-20261027
+    paths:
+      - 'src/mass/1962-plural-martyr-french-source.js'
+      - 'src/mass/proper-reader-slots.js'
+      - 'tests/1962-plural-martyrs-live-owner-audit.mjs'
+      - '.github/workflows/1962-plural-martyrs-live-owner.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: plural-martyrs-reader-source-${{ github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  real-production-source-and-reader:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install existing browser testing dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Read actual selected calendar and French Reader source ownership
+        run: node tests/1962-plural-martyrs-live-owner-audit.mjs
+      - name: Transient source trace for editorial review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: plural-martyrs-real-source-observation
+          path: artifacts/mass/1962-plural-martyrs-live-owner-audit.json
+          retention-days: 7
+          if-no-files-found: warn
