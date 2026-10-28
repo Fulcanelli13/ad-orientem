@@ -12,6 +12,6 @@ for(const lang of ["la","en","fr"]){
 assert.match(runtime,/data-ao-holy-name-music/);
 assert.match(runtime,/Downside and Solesmes/);
 assert.match(runtime,/data-tp381-golden-arrow/);
-assert.match(runtime,/S\.sacredHeart="golden_arrow"/);
+assert.match(runtime,/open\("pray.sacred_heart",\{trigger:b,prayer:"golden_arrow"\}\)/,"Holy Name crosslink must arrive at Golden Arrow rather than reset to Litany");
 assert.doesNotMatch(l.la,/Flèche d’Or|Golden Arrow/,"Never insert the Golden Arrow as a litany invocation");
 console.log("B05 Holy Name: seven parallel LA/EN/FR sections and response counts, chant source and related prayer separated PASS");

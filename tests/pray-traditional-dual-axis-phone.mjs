@@ -492,6 +492,17 @@ try{
  assert.equal(heart.id,"heart-litany");assert.equal(heart.overflow,"auto");
  assert.ok(heart.paragraphCount>=20,"Sacred Heart litany lost line-by-line reading focus");
  assert.equal(await page.locator("#aoPray435930 [data-ao-heart-options]").evaluate(el=>el.open),false);
+ assert.equal(await page.locator("#aoPray435930 [data-ao-heart-direct-choices]").count(),1);
+ assert.equal(await page.locator("#aoPray435930 .aoHeartChoiceGrid [data-tp381-heart]").count(),4,
+   "The original four devotional purposes must remain direct and visible");
+ assert.equal(await page.locator("#aoPray435930 .aoHeartChoiceGrid [aria-pressed='true']").count(),1);
+ assert.match(await page.locator("#aoPray435930 [data-ao-heart-selected-context]").innerText(),/invocations|invocation/i);
+ assert.equal(await page.locator("#aoPray435930 [data-ao-heart-related-direct] [data-tp381-prayer='devotion_consecration_christ_king']").count(),1,
+   "Distinct Christ-the-King dedication must be reachable without opening source settings");
+ await page.locator("#aoPray435930 [data-tp381-heart='golden_arrow']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"heart-golden_arrow","Visible Golden Arrow selection chose a different Sacred Heart devotion");
+ assert.match(await page.locator("#aoPray435930 [data-ao-heart-selected-context]").innerText(),/1884/);
+ await page.locator("#aoPray435930 [data-tp381-heart='litany']").evaluate(el=>el.click());
  await page.screenshot({path:resolve(captures,"sacred-heart-litany-390-fr.png"),animations:"disabled"});
  await swipe(0,-146);
  assert.equal((await snapshot()).id,"heart-litany","Vertical Sacred Heart reading advanced a card");
@@ -509,6 +520,23 @@ try{
  await page.locator("#aoPray435930 [data-tp381-flip]").first().evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-face-la]").isVisible(),true);
  await page.screenshot({path:resolve(captures,"sacred-heart-consecration-la-390.png"),animations:"disabled"});
+ await page.locator("#aoPray435930 [data-ao-heart-related-direct] [data-tp381-prayer='devotion_consecration_christ_king']").evaluate(el=>el.click());
+ assert.match(await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText(),/Christ|Roi/i,
+   "Separate canonical dedication was not opened directly");
+ await page.locator("#aoPray435930 [data-tp381-back]").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"heart-consecration","Related dedication did not return to its original Heart devotion");
+ await page.setViewportSize({width:320,height:720});
+ await page.screenshot({path:resolve(captures,"sacred-heart-direct-320-fr.png"),animations:"disabled"});
+ const heartGridBounds=await page.locator("#aoPray435930 .aoHeartChoiceGrid").evaluate(el=>({
+  client:el.clientWidth,scroll:el.scrollWidth,buttons:[...el.querySelectorAll('button')].map(b=>b.getBoundingClientRect().width)
+ }));
+ assert.ok(heartGridBounds.scroll<=heartGridBounds.client+2,"320px Sacred Heart direct choices overflowed the reader");
+ assert.ok(heartGridBounds.buttons.every(w=>w>80),"320px heart choices collapsed");
+ await page.setViewportSize({width:390,height:844});
+ await open("pray.holy_name_litany");
+ await page.locator("#aoPray435930 [data-tp381-golden-arrow]").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"heart-golden_arrow","Holy Name shortcut must directly open the Golden Arrow, not the Litany");
+ assert.equal((await snapshot()).stops,4,"Golden Arrow deep link changed the four named Heart reader stages");
  await open("pray.communion_treasury");
  const before=await snapshot();
  assert.equal(before.route,"pray.communion_treasury");

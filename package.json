@@ -108,7 +108,7 @@
     "test:icksp-batch03": "node tests/icksp-batch03-prayer-implementation.mjs",
     "test:icksp-batch04": "node tests/icksp-batch04-prayer-implementation.mjs",
     "test:seven-words-offline": "node tests/icksp-seven-words-offline.mjs",
-    "test:icksp-batch05": "node tests/icksp-batch05-st-joseph.mjs && node tests/icksp-batch05-golden-arrow.mjs && node tests/icrsp-seasonal-hymns.mjs && node tests/icksp-batch05-bedside.mjs && node tests/icksp-batch05-holy-name.mjs",
+    "test:icksp-batch05": "node tests/icksp-batch05-st-joseph.mjs && node tests/icksp-batch05-golden-arrow.mjs && node tests/icrsp-seasonal-hymns.mjs && node tests/icksp-batch05-bedside.mjs && node tests/icksp-batch05-holy-name.mjs && node tests/sacred-heart-direct-access-b12.mjs",
     "test:pray-owner": "npm run test:pray-corpus-ownership && npm run test:icksp-batch01-reconcile && npm run test:icksp-batch05 && node tests/icksp-seven-words-offline.mjs && npm run test:pray-novenas && node tests/icksp-batch04-prayer-implementation.mjs && node tests/icksp-batch03-prayer-implementation.mjs && node tests/icksp-batch02-prayer-implementation.mjs && node tests/devotional-methods-v1.mjs && node tests/pray-presentation.mjs && npm run test:devotional-action-cinematics && node tests/pray-novenas.mjs && node tests/novena-context-sot.mjs && node tests/pray-focus.mjs && node tests/pray-traditional-life.mjs && node tests/pray-owner.mjs && npm run test:rosary-scripture-policy && node tests/pray-editorial-editions.mjs && node tests/pray-guided-cards.mjs && node tests/pray-confession-paths.mjs",
     "test:home-presentation": "node tests/home-presentation.mjs && node tests/home-sacred-art-legacy-exclusions.mjs",
     "test:nonmass-convergence": "node tests/nonmass-d3-d6-convergence.mjs",
