@@ -139,7 +139,10 @@ assert.match(owner,/ao-v37-root/,"modular Learn no longer explicitly retires its
 assert.doesNotMatch(presentation,/utility\.sources|data-v37-domain|aoV37DomainDock/,"obsolete donor navigation leaked into modular Learn presentation");
 assert.doesNotMatch(presentation,/id:"learn\.seasonal_rites"/,"final v38.4 duplicate seasonal discovery card returned");
 assert.doesNotMatch(owner,/openDomain\?\.\("learn"\)|openDomain\("learn"\)/,"modular Learn revives the historical Learn domain");
-assert.match(appEntry,/import "\.\.\/learn\/browser-entry\.js";/);
+assert.doesNotMatch(appEntry,/import "\.\.\/learn\/browser-entry\.js";/,
+ "Formation owner must not enter the initial ESM startup graph");
+assert.match(host,/import\("\.\.\/learn\/browser-entry\.js"\)/,
+ "Formation still needs its real first-use owner, not the legacy domain");
 assert.match(host,/domain === "learn"[\s\S]*AO_LEARN_APP_V1/);
 
 {
