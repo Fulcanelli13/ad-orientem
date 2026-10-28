@@ -6,6 +6,9 @@ export function installFiveWoundsChapletStyles(doc=globalThis.document){
  if(!doc?.createElement||doc.getElementById?.("ao-five-wounds-chaplet-style"))return;
  const s=doc.createElement("style");s.id="ao-five-wounds-chaplet-style";
  s.textContent=`
+#aoPray435930 .aoFiveWoundsFamilyAside{margin:12px 0 4px;text-align:center}
+#aoPray435930 .aoFiveWoundsFamilyAside button{min-height:48px;padding:9px 16px;border:1px solid rgba(198,169,115,.35);border-radius:999px;background:transparent;color:inherit;cursor:pointer}
+#aoPray435930 .aoFiveWoundsFamilyAside button:focus-visible{outline:2px solid #dec291;outline-offset:3px}
 #aoPray435930 .aoFiveWounds{max-width:760px;margin:0 auto;padding:clamp(18px,4vw,38px) clamp(12px,4vw,28px) 45px;color:var(--ao-text,#e8dfd1)}
 #aoPray435930 .aoFiveWounds header{text-align:center;margin:10px 0 22px}
 #aoPray435930 .aoFiveWoundsEyebrow{letter-spacing:.09em;text-transform:uppercase;font-size:11px;color:var(--ao-muted,#bead93)}
