@@ -164,10 +164,33 @@ try{
    await page.locator(mont+' [data-p435930-montfort-phase="13"]').click();
    assert.match(await page.locator(mont+' [data-ao-montfort-day="13"]').innerText(),/Knowledge of self/i);
    assert.match(await page.locator(mont+' [data-ao-montfort-prayer="litany_loreto_1962"]').innerText(),/Litany of Loreto/i);
+   const spirit=page.locator(mont+' [data-ao-montfort-b27-original="holySpirit"]');
+   assert.equal(await spirit.count(),1,"Full Holy Ghost litany must be present on day 13");
+   await spirit.locator("summary").click();
+   assert.equal(await spirit.locator("[data-ao-montfort-original-row]").count(),48,"Full Holy Ghost petitions, Lamb of God and versicle");
+   assert.match(await spirit.innerText(),/Grant, O merciful Father/i);
+   assert.match(await spirit.innerText(),/Holy Ghost, make us persevere in justice/i);
+   await page.screenshot({path:resolve(out,"montfort-holy-ghost-litany-"+width+".png"),animations:"disabled"});
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"Full Holy Spirit litany must not overflow");
+
    await page.locator(mont+' [data-p435930-montfort-phase="20"]').click();
    assert.equal(await page.locator(mont+' [data-p435930-montfort-rosary]').count(),1,"Existing Rosary available in Marian phase");
    await page.locator(mont+' [data-p435930-montfort-phase="27"]').click();
    assert.match(await page.locator(mont+' [data-ao-montfort-day="27"]').innerText(),/Holy Name of Jesus/i);
+   const holyName=page.locator(mont+' [data-ao-montfort-b27-original="holyName"]');
+   const augustine=page.locator(mont+' [data-ao-montfort-b27-original="augustine"]');
+   assert.equal(await holyName.count(),1,"Holy Name litany must be source-owned in Week 3");
+   assert.equal(await augustine.count(),1,"Montfort's optional Augustine prayer in Week 3");
+   await holyName.locator("summary").click();
+   assert.equal(await holyName.locator("[data-ao-montfort-original-row]").count(),74,"Holy Name full mercy/deliverance/Lamb invocations");
+   assert.match(await holyName.innerText(),/perpetual fear and love of Thy holy name/i);
+   await page.screenshot({path:resolve(out,"montfort-holy-name-litany-"+width+".png"),animations:"disabled"});
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"Full Holy Name litany must not overflow");
+   await holyName.locator("summary").click();
+   await augustine.locator(":scope > summary").click();
+   assert.match(await augustine.innerText(),/Thou art Christ, my holy Father/i);
+   await augustine.locator(":scope > summary").click();
+
    for(let n=0;n<7;n++)await page.locator(mont+' [data-p435930-montfort-next]').click();
    const act=page.locator(mont+' [data-ao-montfort-day="34"]');
    assert.equal(await act.count(),1,"34th day is the actual consecration, distinct from 33 days preparation");

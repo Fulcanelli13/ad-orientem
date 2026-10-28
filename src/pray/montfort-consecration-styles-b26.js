@@ -29,6 +29,13 @@ export function installMontfortStyles(doc=globalThis.document){
 #aoPray435930 .aoMontfortB26Details{border-top:1px solid rgba(203,180,134,.28);margin-top:19px}
 #aoPray435930 .aoMontfortB26Details summary{cursor:pointer;min-height:48px;padding:11px 0;font:500 14px/1.5 var(--ao-font-ui,Georgia,serif)}
 #aoPray435930 .aoMontfortB26Details a{color:#c5a875;overflow-wrap:anywhere}
+#aoPray435930 .aoMontfortB27Prayer{margin:10px 0 12px;border:1px solid rgba(200,175,125,.26);border-radius:10px;padding:0 14px}
+#aoPray435930 .aoMontfortB27Litany{padding-bottom:8px}
+#aoPray435930 .aoMontfortB27Response{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px 14px;padding:9px 0;border-bottom:1px solid rgba(205,183,143,.1);font:400 clamp(16px,2.5vw,19px)/1.6 var(--ao-font-liturgical,Georgia,serif);overflow-wrap:anywhere}
+#aoPray435930 .aoMontfortB27Response strong{font:400 16px/1.7 var(--ao-font-liturgical,Georgia,serif);color:var(--ao-muted,#cbbda1)}
+#aoPray435930 .aoMontfortB27Collect{font:400 clamp(18px,3vw,20px)/1.85 var(--ao-font-liturgical,Georgia,serif);margin:19px 0;overflow-wrap:anywhere}
+#aoPray435930 .aoMontfortB27Prayer a{display:inline-block;min-height:44px;padding:10px 0}
+@media(max-width:390px){#aoPray435930 .aoMontfortB27Response{grid-template-columns:minmax(0,1fr)}#aoPray435930 .aoMontfortB27Response strong{padding-left:12px}}
 #aoPray435930 .aoMontfortB26Note{color:var(--ao-muted,#c1b69f);font:13px/1.65 var(--ao-font-ui,Georgia,serif)}
 #aoPray435930 .aoMontfortB26 :focus-visible{outline:2px solid #d8bc8f;outline-offset:3px}
 @media(max-width:360px){#aoPray435930 .aoMontfortB26PhaseRail{grid-template-columns:repeat(2,minmax(0,1fr))}}

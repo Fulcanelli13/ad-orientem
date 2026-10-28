@@ -1,0 +1,256 @@
+/** B27 historical Montfort prerequisite prayers.
+ * Source authority: 1897 Adoration Manual Litany of the Holy Ghost,
+ * Bonaventure Hammer 1909 Holy Name litany (compared to Raccolta 1910 §56),
+ * and F.W. Faber's 1863 translation of Montfort True Devotion §67.
+ * These are historical DIGITAL witnesses, NOT original print photographs.
+ * No modern 1987 translation and no manufactured French prayer text.
+ */
+export const MONTFORT_B27_SOURCE=Object.freeze({
+  schema:"ao.pray.montfort-b27-three-historical-prayers.v1",
+  witnessState:"HISTORICAL_DIGITAL_ENGLISH_NOT_ORIGINAL_FACSIMILE_CERTIFIED",
+  originalPrintImageCollated:false,frenchHistoricalWitnessVerified:false,
+  invalidCurrentIndulgenceClaims:true,
+  historicalPrayersCount:3
+});
+export const MONTFORT_B27_PRAYERS=Object.freeze({
+  "holySpirit": {
+    "id": "holy_spirit_litany",
+    "titleEn": "Litany of the Holy Ghost",
+    "titleFr": "Litanies du Saint-Esprit",
+    "witness": "1897 Manual of Adoration of the Most Blessed Sacrament, pp.235–239; historical English digital witness corroborated with a later traditional consecration edition",
+    "witnessUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Manual_of_adoration_of_the_most_Blessed_Sacrament.._%28IA_manualofadoratio00schm%29.pdf",
+    "comparisonUrl": "https://www.ecatholic2000.com/montfort/true/devotion.shtml",
+    "note": "Historic prayer-form text in English; original photographed 1897 page-level exact collation pending, witness spelling/punctuation normalized. This is the full litany, NOT the shorter Come Holy Spirit invocation.",
+    "opening": [
+      [
+        "Lord, have mercy on us.",
+        ""
+      ],
+      [
+        "Christ, have mercy on us.",
+        ""
+      ],
+      [
+        "Lord, have mercy on us.",
+        ""
+      ],
+      [
+        "Father all-powerful,",
+        "have mercy on us."
+      ],
+      [
+        "Jesus, Eternal Son of the Father, Redeemer of the world,",
+        "save us."
+      ],
+      [
+        "Spirit of the Father and the Son, boundless life of both,",
+        "sanctify us."
+      ],
+      [
+        "Holy Trinity,",
+        "hear us."
+      ],
+      [
+        "Holy Ghost, Who proceedest from the Father and the Son,",
+        "enter our hearts."
+      ],
+      [
+        "Holy Ghost, Who art equal to the Father and the Son,",
+        "enter our hearts."
+      ]
+    ],
+    "mercy": [
+      "Promise of God the Father",
+      "Ray of heavenly light",
+      "Author of all good",
+      "Source of heavenly water",
+      "Consuming fire",
+      "Ardent charity",
+      "Spiritual unction",
+      "Spirit of love and truth",
+      "Spirit of wisdom and understanding",
+      "Spirit of counsel and fortitude",
+      "Spirit of knowledge and piety",
+      "Spirit of the fear of the Lord",
+      "Spirit of grace and prayer",
+      "Spirit of peace and meekness",
+      "Spirit of modesty and innocence",
+      "Holy Ghost, the Comforter",
+      "Holy Ghost, the Sanctifier",
+      "Holy Ghost, Who governest the Church",
+      "Gift of God, the Most High",
+      "Spirit Who fillest the universe",
+      "Spirit of the adoption of the children of God"
+    ],
+    "petitions": [
+      "inspire us with horror of sin",
+      "come and renew the face of the earth",
+      "shed Thy light in our souls",
+      "engrave Thy law in our hearts",
+      "inflame us with the flame of Thy love",
+      "open to us the treasures of Thy graces",
+      "teach us to pray well",
+      "enlighten us with Thy heavenly inspirations",
+      "lead us in the way of salvation",
+      "grant us the only necessary knowledge",
+      "inspire in us the practice of good",
+      "grant us the merits of all virtues",
+      "make us persevere in justice",
+      "be Thou our everlasting reward"
+    ],
+    "lamb": [
+      "Send us Thy Holy Ghost.",
+      "Pour down into our souls the gifts of the Holy Ghost.",
+      "Grant us the Spirit of wisdom and piety."
+    ],
+    "versicle": "Come, Holy Ghost! Fill the hearts of Thy faithful.",
+    "response": "And enkindle in them the fire of Thy love.",
+    "collect": "Grant, O merciful Father, that Thy Divine Spirit may enlighten, inflame, and purify us, that He may penetrate us with His heavenly dew and make us fruitful in good works; through Our Lord Jesus Christ, Thy Son, Who with Thee, in the unity of the same Spirit, liveth and reigneth for ever and ever. Amen."
+  },
+  "holyName": {
+    "id": "holy_name_litany",
+    "titleEn": "Litany of the Most Holy Name of Jesus",
+    "titleFr": "Litanies du très saint Nom de Jésus",
+    "witness": "Bonaventure Hammer, Mary, Help of Christians (1909), The Four Approved Litanies; compared with 1910 Raccolta no.56",
+    "witnessUrl": "https://en.wikisource.org/wiki/Mary,_help_of_Christians/The_four_Approved_Litanies",
+    "comparisonUrl": "https://www.saintsbooks.net/books/The%20Raccolta%20-%201910.pdf",
+    "note": "Historic preconciliar English witness. Original 1910 print-photo collation not complete. Historical indulgence statements are not current grants. No optional local additions presented as universal.",
+    "opening": [
+      "Lord, have mercy on us.",
+      "Christ, have mercy on us.",
+      "Lord, have mercy on us.",
+      "Jesus, hear us.",
+      "Jesus, graciously hear us."
+    ],
+    "mercy": [
+      "God the Father of heaven",
+      "God the Son, Redeemer of the world",
+      "God the Holy Ghost",
+      "Holy Trinity, one God",
+      "Jesus, Son of the living God",
+      "Jesus, splendor of the Father",
+      "Jesus, brightness of eternal light",
+      "Jesus, king of glory",
+      "Jesus, sun of justice",
+      "Jesus, Son of the Virgin Mary",
+      "Jesus amiable",
+      "Jesus admirable",
+      "Jesus, powerful God",
+      "Jesus, Father of the world to come",
+      "Jesus, angel of the great council",
+      "Jesus most powerful",
+      "Jesus most patient",
+      "Jesus most obedient",
+      "Jesus meek and humble of heart",
+      "Jesus, lover of chastity",
+      "Jesus, lover of us",
+      "Jesus, God of peace",
+      "Jesus, author of life",
+      "Jesus, model of all virtues",
+      "Jesus, zealous for souls",
+      "Jesus, our God",
+      "Jesus, our refuge",
+      "Jesus, father of the poor",
+      "Jesus, treasure of the faithful",
+      "Jesus, good shepherd",
+      "Jesus, true light",
+      "Jesus, eternal wisdom",
+      "Jesus, infinite goodness",
+      "Jesus, our way and our life",
+      "Jesus, joy of angels",
+      "Jesus, king of patriarchs",
+      "Jesus, master of the apostles",
+      "Jesus, teacher of the evangelists",
+      "Jesus, strength of martyrs",
+      "Jesus, light of confessors",
+      "Jesus, purity of virgins",
+      "Jesus, crown of all saints"
+    ],
+    "mercyShort": [
+      "Be merciful, spare us, O Jesus.",
+      "Be merciful, graciously hear us, O Jesus."
+    ],
+    "deliver": [
+      "From all evil",
+      "From all sin",
+      "From Thy wrath",
+      "From the snares of the devil",
+      "From the spirit of fornication",
+      "From eternal death",
+      "From the neglect of Thy inspirations",
+      "By the mystery of Thy holy incarnation",
+      "By Thy nativity",
+      "By Thy infancy",
+      "By Thy most divine life",
+      "By Thy labors",
+      "By Thy agony and passion",
+      "By Thy cross and dereliction",
+      "By Thy languors",
+      "By Thy death and burial",
+      "By Thy resurrection",
+      "By Thy ascension",
+      "By Thy joys",
+      "By Thy glory"
+    ],
+    "lamb": [
+      "Spare us, O Jesus.",
+      "Graciously hear us, O Jesus.",
+      "Have mercy on us, O Jesus."
+    ],
+    "close": [
+      "Jesus, hear us.",
+      "Jesus, graciously hear us."
+    ],
+    "collects": [
+      "O Lord Jesus Christ, who hast said: Ask, and ye shall receive; seek, and ye shall find; knock, and it shall be opened unto you: mercifully attend to our supplications, and grant us the gift of Thy divine charity, that we may ever love Thee with our whole hearts, and never desist from Thy praise.",
+      "Give us, O Lord, a perpetual fear and love of Thy holy name, for Thou never ceasest to direct and govern by Thy grace those whom Thou instructest in the solidity of Thy love; who livest and reignest world without end. Amen."
+    ]
+  },
+  "augustine": {
+    "id": "augustine_prayer",
+    "titleEn": "Prayer with St Augustine (True Devotion §67)",
+    "titleFr": "Prière avec saint Augustin (Vraie Dévotion §67)",
+    "witness": "St Louis de Montfort, True Devotion §67, public-domain Frederick William Faber translation (1863), English version printed by Faber after the Latin",
+    "witnessUrl": "https://www.ecatholic2000.com/montfort/true/devotion.shtml",
+    "note": "Attributed by Montfort to St Augustine; this is Montfort’s transmitted text, not an independently authenticated Augustinian autograph. Latin in original and Faber’s 1863 English rendering.",
+    "english": [
+      "Thou art Christ, my holy Father, my tender God, my great King, my good Shepherd, my one Master, my best Helper, my most Beautiful and my Beloved, my living Bread, my Priest for ever, my Leader to my country, my true Light, my holy Sweetness, my straight Way, my excellent Wisdom, my pure Simplicity, my pacific Harmony, my whole Guard, my good Portion, my everlasting Salvation.",
+      "Christ Jesus, sweet Lord, why have I ever loved, why in my whole life have I ever desired, anything except Thee, Jesus my God? Where was I, when I was not in Thy mind with Thee? Now, from this time forth, do ye, all my desires, grow hot, and flow out upon the Lord Jesus; run—ye have been tardy so far; hasten whither ye are going; seek whom ye are seeking.",
+      "O Jesus, may he who loves Thee not be anathema; may he who loves Thee not be filled with bitterness! O sweet Jesus, may every good feeling that is fitted for Thy praise love Thee, delight in Thee, admire Thee, God of my heart, and my Portion! Christ Jesus, may my heart faint away in spirit, and mayest Thou be my life within me! May the live coal of Thy love grow hot within my spirit, and break forth into a perfect fire; may it burn incessantly on the altar of my heart; may it glow in my innermost being; may it blaze in hidden recesses of my soul; and in the day of my consummation may I be found consummated with Thee! Amen."
+    ],
+    "latin": [
+      "Tu es Christus, pater meus sanctus, Deus meus pius, rex meus magnus, pastor meus bonus, magister meus unus, adjutor meus optimus, dilectus meus pulcherrimus, panis meus vivus, sacerdos meus in aeternum, dux meus ad patriam, lux mea vera, dulcedo mea sancta, via mea recta, sapientia mea praeclara, simplicitas mea pura, concordia mea pacifica, custodia mea tota, portio mea bona, salus mea sempiterna.",
+      "Christe Jesu, amabilis Domine, cur amavi, quare concupivi in omni vita mea quidquam praeter te Jesum Deum meum? Ubi eram quando tecum mente non eram? Jam ex hoc nunc, omnia desideria mea, incalescite et effluite in Dominum Jesum; currite, satis hactenus tardastis; properate, quo pergitis; quaerite quam quaeritis. Jesu, qui non amat te, anathema sit; qui te non amat, amaritudinibus repleatur.",
+      "O dulcis Jesu, te amet, in te delectetur, te admiretur omnis sensus bonus tuae conveniens laudi; Deus cordis mei et pars mea, Christe Jesu, deficiat cor meum spiritu suo, et vivas tu in me, et concalescat spiritu meo vivus carbo amoris tui, et excrescat in ignem perfectum, ardeat jugiter in ara cordis mei, ferveat in medullis meis, flagret in absconditis animae meae; in die consummationis meae consummatus inveniar apud te. Amen."
+    ]
+  }
+});
+export function montfortHistoricalPrayerRows(id){
+ const p=MONTFORT_B27_PRAYERS[id];
+ if(!p)return null;
+ const rows=[];
+ if(id==="holySpirit"){
+  for(const [q,a] of p.opening)rows.push({kind:"invocation",leader:q,response:a});
+  for(const q of p.mercy)rows.push({kind:"invocation",leader:q+",",response:"have mercy on us."});
+  for(const q of p.petitions)rows.push({kind:"invocation",leader:"Holy Ghost, "+q+".",response:""});
+  for(const a of p.lamb)rows.push({kind:"invocation",leader:"Lamb of God, Who takest away the sins of the world,",response:a});
+  rows.push({kind:"versicle",leader:p.versicle,response:p.response});
+  rows.push({kind:"collect",leader:p.collect,response:""});
+ }else if(id==="holyName"){
+  for(const q of p.opening)rows.push({kind:"invocation",leader:q,response:""});
+  for(const q of p.mercy)rows.push({kind:"invocation",leader:q+",",response:"have mercy on us."});
+  for(const q of p.mercyShort)rows.push({kind:"invocation",leader:q,response:""});
+  for(const q of p.deliver)rows.push({kind:"invocation",leader:q+",",response:"deliver us, O Jesus."});
+  for(const a of p.lamb)rows.push({kind:"invocation",leader:"Lamb of God, who takest away the sins of the world,",response:a});
+  for(const q of p.close)rows.push({kind:"invocation",leader:q,response:""});
+  for(const q of p.collects)rows.push({kind:"collect",leader:q,response:""});
+ }else if(id==="augustine"){
+  for(const q of p.english)rows.push({kind:"original",leader:q,response:"",language:"en"});
+  for(const q of p.latin)rows.push({kind:"originalLatin",leader:q,response:"",language:"la"});
+ }
+ return Object.freeze(rows.map(x=>Object.freeze(x)));
+}
+export function montfortB27RequiredForDay(day){
+ return !Number.isInteger(day)||day<13||day>33?[]:
+  day<=26?["holySpirit"]:["holySpirit","holyName","augustine"];
+}
