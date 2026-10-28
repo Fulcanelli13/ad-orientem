@@ -1,0 +1,115 @@
+{
+  "schema": "AO_SACRED_PLACES_P52_GEOMETRY_ADJUDICATION_5_V1",
+  "as_of": "2026-10-28",
+  "status": "RESEARCH_ONLY_0_PUBLISHED",
+  "baseline_published_places": 512,
+  "feature_matching_corroborated_new_site_candidates": 2,
+  "already_published_reuses": 1,
+  "osm_features_disqualified_as_individual_church_footprint": 2,
+  "publication_authorized": false,
+  "rules": [
+    "Site has explicit custodian or official civic institutional identity plus separately named mapped worship footprint, but QA and a separate release approval remain required.",
+    "OSM landuse=religious does not mean church polygon; nearby pilgrim centre and shrine facilities cannot substitute for the church.",
+    "A published Place with same exact OSM ID must not be duplicated.",
+    "Verify no existing release branch/PR publication overlaps before any future batch merge."
+  ],
+  "rows": [
+    {
+      "candidate_id": "SG-INV-0190",
+      "country": "AT",
+      "canonical_place_id": null,
+      "site": "Maria Wörth pilgrimage church of St Primus and Felician",
+      "source_url": "https://www.kath-kirche-kaernten.at/pfarren/kirche/C3061/pfarrkirche-maria-woerth",
+      "source_owner": "Roman Catholic Diocese of Gurk-Klagenfurt",
+      "osm": "osm:way:124988035",
+      "osm_url": "https://www.openstreetmap.org/way/124988035",
+      "osm_evidence": "https://mapcarta.com/de/W124988035",
+      "tags": {
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic"
+      },
+      "lat": 46.6175,
+      "lng": 14.16453,
+      "status": "FEATURE_CORROBORATED_RESEARCH_ONLY",
+      "scope": "Not neighboring winter church way 124988055 or ossuary chapel way 124988034"
+    },
+    {
+      "candidate_id": "SG-INV-0493",
+      "country": "AR",
+      "canonical_place_id": null,
+      "site": "Catedral Basílica Nuestra Señora del Valle, Catamarca",
+      "source_url": "https://www.catamarcaciudad.gob.ar/conociendo-la-ciudad/",
+      "source_owner": "Catamarca municipal heritage authority",
+      "osm": "osm:way:36373669",
+      "osm_url": "https://www.openstreetmap.org/way/36373669",
+      "osm_evidence": "https://mapcarta.com/W36373669",
+      "tags": {
+        "amenity": "place_of_worship",
+        "building": "cathedral",
+        "denomination": "catholic"
+      },
+      "lat": -28.46893,
+      "lng": -65.78019,
+      "status": "FEATURE_CORROBORATED_RESEARCH_ONLY",
+      "scope": "Not neighboring Camarín de la Virgen or bishop's office"
+    },
+    {
+      "candidate_id": "SG-INV-0175",
+      "country": "DE",
+      "canonical_place_id": "place:DE:trierer-dom-heiliger-rock",
+      "site": "Trier Cathedral / Holy Tunic",
+      "source_url": "https://www.bistum-trier.de/kultur-musik/trierer-dom/index.html",
+      "source_owner": "Roman Catholic Diocese of Trier",
+      "osm": "osm:way:50284360",
+      "osm_url": "https://www.openstreetmap.org/way/50284360",
+      "osm_evidence": "https://mapcarta.com/W50284360",
+      "tags": {
+        "amenity": "place_of_worship",
+        "building": "cathedral",
+        "denomination": "roman_catholic"
+      },
+      "lat": 49.75625,
+      "lng": 6.64366,
+      "status": "ALREADY_PUBLISHED_SAME_OSM",
+      "scope": "No second Place"
+    },
+    {
+      "candidate_id": "SG-INV-0650",
+      "country": "PH",
+      "canonical_place_id": null,
+      "site": "Basilica Minore Santo Niño Cebu",
+      "source_url": "https://thearchdioceseofcebu.com/parish/basilica-minore-del-santo-nino-de-cebu/",
+      "source_owner": "Roman Catholic Archdiocese of Cebu",
+      "osm": "osm:way:413764505",
+      "osm_url": "https://www.openstreetmap.org/way/413764505",
+      "osm_evidence": "https://ph.geoview.info/basilica_minore_del_santo_nino%2C20413764505w",
+      "tags": {
+        "landuse": "religious",
+        "denomination": "roman_catholic"
+      },
+      "lat": 10.29439,
+      "lng": 123.90186,
+      "status": "REJECTED_AS_EXACT_CHURCH_FOOTPRINT",
+      "scope": "Land-use polygon around precinct; OSM node 10757993558 is Pilgrim Center, distinct from basilica"
+    },
+    {
+      "candidate_id": "SG-INV-0448",
+      "country": "GT",
+      "canonical_place_id": null,
+      "site": "San Francisco El Grande, Antigua Guatemala",
+      "source_url": "https://directorio.arzobispadodeguatemala.org/directorio/santuario-arquidiocesano-del-santo-hermano-pedro-templo-de-san-francisco-el-grande-2M9L4J8V7Y6K",
+      "source_owner": "Catholic Archdiocese of Guatemala",
+      "osm": "osm:way:196802619",
+      "osm_url": "https://www.openstreetmap.org/way/196802619",
+      "osm_evidence": "https://mapcarta.com/W196802619",
+      "tags": {
+        "landuse": "religious"
+      },
+      "lat": 14.55341,
+      "lng": -90.7296,
+      "status": "REJECTED_AS_EXACT_CHURCH_FOOTPRINT",
+      "scope": "OSM polygon is religious complex land-use; nearby sanctuary church, tomb and Calvary chapels require separate map feature"
+    }
+  ]
+}
