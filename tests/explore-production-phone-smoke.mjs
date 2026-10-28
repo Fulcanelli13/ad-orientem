@@ -25,7 +25,7 @@ try{
    locale,reducedMotion:"reduce",permissions:[],
   });
   const page=await context.newPage();
-  const record={width,locale,passed:false,steps:[],errors:[],failedResponses:[],bytesByType:{},timingsMs:{}};
+  const record={width,locale,passed:false,steps:[],errors:[],failedResponses:[],bytesByType:{},bytesByHost:{},largestResources:[],timingsMs:{}};
   const capture=async name=>page.screenshot({
    path:resolve(root,"explore-production-"+width+"-"+locale.slice(0,2)+"-"+name+".png"),
    fullPage:false,
@@ -34,14 +34,22 @@ try{
   page.on("response",response=>{
    if(response.status()>=400&&record.failedResponses.length<30){
     const url=new URL(response.url());
-    record.failedResponses.push({status:response.status(),host:url.hostname,resourceType:response.request().resourceType()});
+    record.failedResponses.push({status:response.status(),host:url.hostname,path:url.pathname.slice(0,180),resourceType:response.request().resourceType()});
    }
   });
   page.on("requestfinished",async request=>{
    try{
     const sizes=await request.sizes();
     const type=request.resourceType();
-    record.bytesByType[type]=(record.bytesByType[type]??0)+Math.max(0,sizes.responseBodySize??0);
+    const bytes=Math.max(0,sizes.responseBodySize??0);
+    record.bytesByType[type]=(record.bytesByType[type]??0)+bytes;
+    const url=new URL(request.url());
+    record.bytesByHost[url.hostname]=(record.bytesByHost[url.hostname]??0)+bytes;
+    if(bytes>=100000){
+     record.largestResources.push({host:url.hostname,path:url.pathname.slice(0,150),type,bytes});
+     record.largestResources.sort((a,b)=>b.bytes-a.bytes);
+     record.largestResources.length=Math.min(12,record.largestResources.length);
+    }
    }catch{}
   });
   const mark=(step)=>{record.steps.push(step);record.timingsMs[step]=Math.round(performance.now()-started)};
