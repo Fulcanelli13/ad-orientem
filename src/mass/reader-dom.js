@@ -370,6 +370,9 @@ const SHELL_STYLE = `
 .ao-reader-shell[data-mode="LIVE"] .ao-rail[data-source-anchored="true"]{
   display:block;top:0;bottom:0
 }
+.ao-reader-shell[data-mode="LIVE"] .ao-rail[data-source-anchored="true"][data-visible="false"]{
+  display:none
+}
 .ao-reader-shell[data-mode="LIVE"] .ao-rail[data-source-anchored="true"] .ao-rail-item{
   position:absolute;left:0;top:var(--ao-source-rail-top,0px);margin:0
 }
