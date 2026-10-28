@@ -110,8 +110,10 @@ export function pickReadingParagraph({
   for(const item of usable){
     // A long prayer remains lit while the reading line is within it.
     if(focus>=item.top&&focus<=item.bottom)return item;
-    const center=(item.top+item.bottom)/2;
-    const distance=Math.abs(center-focus);
+    // In inter-paragraph whitespace, measure distance to the *nearest edge*
+    // rather than the middle of a long prayer. Centre-distance favoured long
+    // adjacent paragraphs and could erase a short response's focus interval.
+    const distance=focus<item.top?item.top-focus:focus-item.bottom;
     if(distance<bestDistance){selected=item;bestDistance=distance}
   }
   return selected;
@@ -127,7 +129,9 @@ export function markUncuedReadingFocus(container,{focusRatio=.39}={}){
   if(!body?.querySelectorAll)return null;
   const all=[...body.querySelectorAll(".ao-reader-paragraph")];
   const candidate=all.filter(node=>node.dataset.kind!=="RUBRIC"&&
-    node.getBoundingClientRect?.()&&node.getClientRects?.().length>0&&!node.hidden);
+    node.getBoundingClientRect?.()&&node.getClientRects?.().length>0&&!node.hidden&&
+    !node.closest?.("[hidden],[aria-hidden=true]")&&
+    (typeof node.textContent!=="string"||node.textContent.trim().length>0));
   if(!candidate.length){
     for(const node of all)if(node.dataset.readingActive==="true")node.dataset.readingActive="false";
     delete body.dataset.aoVisualFocus;
@@ -168,7 +172,7 @@ export function installCueFocusTracker({
 }={}){
   if(!container?.addEventListener)throw new TypeError("Scrollable reader card required");
   if(typeof onChange!=="function")throw new TypeError("onChange callback required");
-  let current=null,raf=0,destroyed=false,resizeObserver=null;
+  let current=null,raf=0,destroyed=false,resizeObserver=null,mutationObserver=null;
 
   function run(){
     raf=0;
@@ -196,6 +200,16 @@ export function installCueFocusTracker({
   if(typeof ResizeObserverImpl==="function"){
     resizeObserver=new ResizeObserverImpl(queue);
     resizeObserver.observe(container);
+    const body=container.querySelector?.('[data-role="paragraphs"]');
+    if(body)resizeObserver.observe(body);
+  }
+  // A Proper translation, source paragraph, or Schola-sized stage can change
+  // geometry without changing the scroller box itself. Watch *content* only;
+  // never watch the data-active/data-reading-* attributes this tracker writes.
+  const MutationObserverImpl=win?.MutationObserver??globalThis.MutationObserver;
+  if(typeof MutationObserverImpl==="function"){
+    mutationObserver=new MutationObserverImpl(queue);
+    mutationObserver.observe(container,{childList:true,subtree:true,characterData:true});
   }
   queue();
 
@@ -206,6 +220,7 @@ export function installCueFocusTracker({
       destroyed=true;
       container.removeEventListener?.("scroll",queue);
       resizeObserver?.disconnect?.();
+      mutationObserver?.disconnect?.();
       if(raf){
         const cancel=win?.cancelAnimationFrame;
         if(typeof cancel==="function")cancel.call(win,raf);

@@ -113,6 +113,31 @@ for(let y=0;y<=570;y++){
 }
 assert.deepEqual(reached,readingItems.map(x=>x.id),
  "Every paragraph must illuminate once in canonical source order");
+// Between two prayer rows, focus the physically nearest text edge, not
+// the centre of a preceding long prayer or the centre of a tiny response.
+const gapRows=[{id:"long-prayer",top:0,bottom:200},
+  {id:"short-response",top:220,bottom:225},
+  {id:"following",top:245,bottom:420}];
+assert.equal(pickReadingParagraph({
+  scrollTop:166,clientHeight:100,scrollHeight:600,items:gapRows
+})?.id,"long-prayer","short response lit too early in inter-paragraph whitespace");
+assert.equal(pickReadingParagraph({
+  scrollTop:178,clientHeight:100,scrollHeight:600,items:gapRows
+})?.id,"short-response","short response never acquired its nearest-edge reading territory");
+
+// An omitted or hidden paragraph cannot steal illumination from actual text.
+const emptyRow={...makeRow(48,null),textContent:"",closest:()=>null};
+const hiddenRow={...makeRow(64,null),textContent:"Hidden",closest:()=>({hidden:true})};
+const realRow={...makeRow(80,null),textContent:"A source-backed prayer",closest:()=>null};
+const filteredBody={dataset:{},querySelectorAll:()=>[emptyRow,hiddenRow,realRow]};
+const filteredScroll={scrollTop:0,scrollHeight:300,clientHeight:100,
+  querySelector:()=>filteredBody,getBoundingClientRect:()=>({top:0})};
+markUncuedReadingFocus(filteredScroll);
+assert.equal(realRow.dataset.readingActive,"true",
+  "Empty/hidden rows displaced actual prayer focus");
+assert.equal(emptyRow.dataset.readingActive,"false");
+assert.equal(hiddenRow.dataset.readingActive,"false");
+
 assert.equal(pickReadingParagraph({items:[]}),null);
 
 console.log("reader cue focus: PASS — 39% focus zone and no redundant DOM mutations.");
