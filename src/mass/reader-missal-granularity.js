@@ -116,6 +116,18 @@ export function missalChalicePreparationDescription(resolvedMass,{language="en"}
   return rows[locale==="fr"?1:0];
 }
 
+// Ritus servandus XIII.1: static Missal direction, never a sensed gesture.
+export function missalRequiemIntroitCrossDescription(resolvedMass,{language="en"}={}){
+ const explicit=resolvedMass?.isRequiem===true||
+   resolvedMass?.provenance?.isRequiem===true||
+   ["REQUIEM","MASS_FOR_THE_DEAD"].includes(
+     String(resolvedMass?.actualCelebration?.type??"").toUpperCase())||
+   (resolvedMass?.overlays??[]).includes("REQUIEM");
+ if(!explicit)return null;
+ return String(language).toLowerCase().startsWith("fr")
+   ?"À l’Introït, le prêtre ne se signe pas : de la main droite étendue, il trace une croix au-dessus du missel."
+   :"At the Introit the priest does not sign himself; with his right hand extended he traces a Cross over the Missal.";
+}
 /** Brief prayer identity and form-specific practical context; no history or inferred live events. */
 export function missalPrayerHeadingsForCard(card,{language="en",resolvedMass=null}={}){
   const locale=String(language).toLowerCase().startsWith("fr")?"fr":"en";
@@ -125,7 +137,10 @@ export function missalPrayerHeadingsForCard(card,{language="en",resolvedMass=nul
       blockId:block.blockId,
       paragraphIndex:block.firstParagraphIndex,
       title:labelFor(block,locale),
-      description:block.blockId==="AO.SM.B032"
+      description:block.blockId==="AO.SM.B014"
+        ? missalRequiemIntroitCrossDescription(resolvedMass,{language:locale})
+          ??shortDescriptions.B014?.[locale==="fr"?1:0]??null
+        :block.blockId==="AO.SM.B032"
         ? missalChalicePreparationDescription(resolvedMass,{language:locale})
           ??shortDescriptions.B032[locale==="fr"?1:0]
         : shortDescriptions[block.blockId.replace("AO.SM.","")]?.[locale==="fr"?1:0]??null,
