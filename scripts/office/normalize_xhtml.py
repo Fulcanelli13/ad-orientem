@@ -37,6 +37,32 @@ EXPLICIT_OMITTED_PRECES = {
 }
 
 
+# Grouped content is kept together: a Psalm cell may contain both its
+# antiphon and psalm, and a Chapter cell may include hymn and versicle.
+# This is source labeling for navigation, NOT verse-level parsing.
+LATIN_CELL_PREFIXES = (
+    (re.compile(r"^Incipit(?:$|\\n|\\s)", re.I), "OPENING"),
+    (re.compile(r"^(?:Psalmi|Psalmus|Ant\\.)\\b", re.I), "PSALMODY"),
+    (re.compile(r"^Capitulum(?:\\s|$)", re.I), "CHAPTER_HYMN_VERSE"),
+    (re.compile(r"^Canticum:\\s*(?:Benedictus|Magnificat)", re.I), "GOSPEL_CANTICLE"),
+    (re.compile(r"^Canticum(?:\\s|$|:)", re.I), "CANTICLE"),
+    (re.compile(r"^(?:Lectio|Lectiónes|Lectiones|Absolutio)\\b", re.I), "LESSON_OR_ABSOLUTION"),
+    (re.compile(r"^(?:Responsorium|Resp\\.)\\b", re.I), "RESPONSORY"),
+    (re.compile(r"^(?:Invitatorium|Invit\\.)\\b", re.I), "INVITATORY"),
+    (re.compile(r"^(?:Hymnus|Hymn\\.)\\b", re.I), "HYMN"),
+    (re.compile(r"^(?:Oratio|Preces)\\b", re.I), "PRAYER"),
+    (re.compile(r"^Conclusio(?:$|\\n|\\s)", re.I), "CONCLUSION"),
+    (re.compile(r"^(?:Nocturnus|Nocturnum)\\b", re.I), "NOCTURN"),
+)
+def classify_latin_cell(text: str) -> dict:
+    # Never classify an arbitrary verse in the middle of the cell.
+    first = str(text).split("\\n", 1)[0].strip()
+    for pattern, role in LATIN_CELL_PREFIXES:
+        if pattern.search(first):
+            return {"role": role, "basis": "LATIN_SOURCE_PREFIX", "certainty": "HEURISTIC"}
+    return {"role": "SOURCE_SECTION", "basis": "UNCLASSIFIED_LATIN_SOURCE", "certainty": "NONE"}
+
+
 def clean_text(parts: list[str]) -> str:
     raw = "".join(parts).replace("\r\n", "\n").replace("\xa0", " ")
     lines = [re.sub(r"[ \t\v\f]+", " ", line).strip() for line in raw.split("\n")]
@@ -270,6 +296,25 @@ def convert_tree(root: Path) -> dict:
             "identicalLongEnglishFrenchBlocks": len(exact_nontrivial),
             "translationVerified": False,
         })
+    # Semantic roles are derived solely from the canonical Latin source cell
+    # at the SAME display index, and projected to the matching EN/FR cells.
+    # Unaligned groups stay unclassified and are not reader-ready.
+    semantic_stats = {}
+    for date, hour in sorted(groups):
+        docs = [normalized[(date, hour, locale)] for locale in LANGS]
+        section_ids = [[s["index"] for s in doc["sections"]] for doc in docs]
+        if not all(v == section_ids[0] for v in section_ids[1:]):
+            continue
+        roles = [classify_latin_cell(s["text"]) for s in docs[0]["sections"]]
+        for locale, doc in zip(LANGS, docs):
+            for section, role in zip(doc["sections"], roles):
+                section["semantic"] = {
+                    **role, "latinSourceCellId": docs[0]["sections"][section["index"] - 1]["sourceCellId"]
+                }
+            outfile = root / date / hour.lower() / (locale + ".research.json")
+            outfile.write_text(json.dumps(doc, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+        for role in roles:
+            semantic_stats[role["role"]] = semantic_stats.get(role["role"], 0) + 1
     summary = {
         "schema": "ao.office.normalization-audit.v1",
         "sourceRevision": revision, "records": records,
@@ -278,6 +323,7 @@ def convert_tree(root: Path) -> dict:
         "alignmentSamples": len(comparisons),
         "identicalLongEnglishFrenchBlocks": sum(x["identicalLongEnglishFrenchBlocks"] for x in comparisons),
         "comparisons": comparisons,
+        "semanticRolesInLatinGroups": semantic_stats,
         "liturgicallyVerified": 0, "published": 0,
     }
     (root / "normalized-manifest.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -305,6 +351,7 @@ if __name__ == "__main__":
         "aligned": summary["structurallyAligned"], "compared": summary["alignmentSamples"],
         "sharedLongEnFr": summary["identicalLongEnglishFrenchBlocks"], "published": summary["published"],
     }))
+    print("OFFICE_SEMANTIC_COUNTS", json.dumps(summary["semanticRolesInLatinGroups"]))
     for row in summary["comparisons"]:
         if not row["structurallyAligned"] or row["identicalLongEnglishFrenchBlocks"]:
             print("OFFICE_LANGUAGE_REVIEW", json.dumps(row))
