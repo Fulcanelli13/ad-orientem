@@ -76,6 +76,22 @@ try{
    await page.locator(rootSel+' [data-p435930-own="pray.divine_mercy"]').click();
    assert.equal(await page.locator(rootSel+" .aoMercyReader [data-ao-mercy-bead-navigation]").count(),1);
    await page.screenshot({path:resolve(out,"chaplet-from-family-"+width+".png"),animations:"disabled"});
+   // B19: practical priestly intercession in the original Eucharistic family.
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+   await page.locator(rootSel+' [data-p435930-family="eucharistic"]').click();
+   await page.locator(rootSel+' [data-p435930-own="pray.for_priests"]').click();
+   const priest=rootSel+' [data-ao-priests-intercession]';
+   assert.equal(await page.locator(priest).count(),1);
+   assert.match(await page.locator(priest+' .aoPriestsText').innerText(),/O Jesus, Eternal Priest/);
+   assert.equal(await page.locator(priest+' [data-p435930-priests-purpose]').count(),3);
+   await page.locator(priest+' [data-p435930-priests-purpose="vocations"]').click();
+   assert.match(await page.locator(priest+' .aoPriestsText').innerText(),/labourers for Thy Church/i);
+   await page.locator(priest+' [data-p435930-priests-latin]').click();
+   assert.match(await page.locator(priest+' .aoPriestsText').innerText(),/Deus, qui non vis/i);
+   await page.locator(priest+' [data-p435930-priests-purpose="perseverance"]').click();
+   assert.match(await page.locator(priest+' .aoPriestsText').innerText(),/sole protection of human weakness/);
+   await page.screenshot({path:resolve(out,"priestly-intercessions-"+width+".png"),animations:"disabled"});
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"Priest intercession must not clip horizontally");
    assert.deepEqual(errors,[],errors.join("; "));
    console.log("PASS "+width+"px Rosary & Chaplets discovery: original Rosary and methods routes unchanged, Five Wounds and Precious Blood source-owned guided readers; canonical Mercy preserved");
   }finally{await page.close()}
