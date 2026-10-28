@@ -68,3 +68,20 @@ This comparison uses the **48 prayer entries in the current canonical `src/pray/
 6. Publication and merge only after text-identity/source-rights clearance. No copyright guesswork, no paid tools or owner contact.
 
 **Current outcome:** 12 US atomic candidate prayers (across 9 source categories) + 13 selected French Office/hymn/ritual candidates = **25 source-backed metadata records**. This is a high-value review queue, **not 25 confirmed new distinct prayers**. **Zero full text bodies imported or released.**
+
+## Cross-module correction — pass 2 (28 October 2026)
+
+The original 48-entry canonical-bank comparison **must not be interpreted as proof of global absence**. A second code review finds these existing forms:
+
+| ICKSP / ICRSP candidate | Existing Ad Orientem form | Disposition |
+|---|---|---|
+| Dedication to Christ the King | `canonical-data.js`: `devotion_consecration_christ_king` | Same underlying Latin prayer, English wording variant. Reuse, do not duplicate. |
+| Prayer of Reparation | `sacred_heart_short_prayer` via `renderSacredHeart` | Related Pius XI Act of Reparation is live; exact ICKSP text unverified. Compare. |
+| Immaculate Conception novena | `novena-corpus.js`: `immaculate_conception` | 1883 Moran day-specific novena, 29 Nov–7 Dec, already implemented; evaluate ICKSP as an alternate form. |
+| Perpetual novena of St Thérèse | `novena-corpus.js`: `st_therese` | Existing Twenty-Four Glory Bes novena is a different form; ICKSP Tuesday perpetual sequence may be optional alternative. |
+| Te Deum | `SACRED_HYMNS_V381.te_deum` via live `renderHymns` | Already available in Sacred Hymns & Canticles with Latin and vernacular. Collate ICRSP text, do not duplicate. |
+| Magnificat and Benedictus | `weekday_magnificat` and `weekday_benedictus` | Already available; connect to Office where appropriate. |
+
+Compline and Vespers are complete Divine Offices, not individual prayer omissions. St Blaise candle/food blessings are priestly rituals for Calendar-context information. The other candidates remain potential additions, not globally proven absences.
+
+The **25 stable IDs are unchanged**, protecting prior rejection decisions. `app_coverage_status`, `app_match_refs` and `next_action` in the JSON register record this new evidence; `canonical_48_status` is retained as the narrowly scoped first-pass finding. No full body is released.
