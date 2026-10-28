@@ -1,7 +1,7 @@
 {
   "schema": "AO_SACRED_ART_266_ACQUISITION_EXPIRY_AUDIT_V1",
   "date": "2026-10-28",
-  "caveat": "GitHub Actions artifact metadata only: ZIP bytes NOT downloaded or checksum-verified. Exact original SHA metadata retained for later check.",
+  "caveat": "GitHub Actions artifact metadata only: ZIP bytes NOT downloaded or checksum-verified. Exact original SHA metadata retained for later check. The one original verified locally is a temporary working copy, not a persistent backup.",
   "github": "Fulcanelli13/ad-orientem",
   "metrics": {
     "recordedAcquisitions": 266,
@@ -14,7 +14,11 @@
     "uniqueArtifactArchiveGiB": 1.291,
     "earliestExpiry": "2026-11-09T08:43:46Z",
     "latestExpiry": "2026-11-10T16:05:03Z",
-    "permanentBackupsVerified": 0
+    "permanentBackupsVerified": 0,
+    "testZipDownloadComplete": true,
+    "originalsActuallyDownloadedAndSHA256Verified": 1,
+    "originalsOutstandingByteLevelVerification": 265,
+    "uniqueArtifactsFullContentVerified": 1
   },
   "preservation": "URGENT: artifacts expire 9–10 Nov 2026. A Github Actions retention listing is not a permanent archive. Preserve without € costs and without publishing unlicensed content.",
   "artifactIndex": [
@@ -2212,8 +2216,11 @@
       "recordedArchivePath": "originals/met-437821.jpg",
       "artifactId": 11674142020,
       "runId": 38064988279,
-      "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
-      "masterVerified": false
+      "artifactAvailability": "ZIP_DOWNLOADED_AND_SPECIFIC_ORIGINAL_HASH_VERIFIED",
+      "masterVerified": true,
+      "verifiedOriginalSizeBytes": 1976664,
+      "verifiedOriginalPathInZip": "originals/met-437821.jpg",
+      "verificationMethod": "ZIP opened in runtime and SHA-256 computed on decompressed JPEG bytes"
     },
     {
       "artworkId": "met-436050",
