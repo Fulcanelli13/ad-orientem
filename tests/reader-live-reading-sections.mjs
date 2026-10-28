@@ -72,6 +72,10 @@ assert.deepEqual(withLiveReadingSections(omitted).map(p=>p.sourceBlockId),
  ["AO.SM.B091","AO.SM.B093"],
  "Omitted blessing may not retain a phantom reading boundary");
 assert.equal(omitSourceBlockForPresentation(closing,"AO.SM.B999"),closing);
+const sourceOmitted={paragraphs:[],stateOnly:true,omittedByRite:"RITUS_XIII_1_REQUIEM",
+ blocks:[{blockId:"AO.SM.B092",firstParagraphIndex:null,paragraphCount:0}]};
+assert.equal(omitSourceBlockForPresentation(sourceOmitted,"AO.SM.B092"),sourceOmitted,
+ "A blessing already omitted by the source must not be treated as malformed");
 assert.equal(omitSourceBlockForPresentation({
  paragraphs:[row("Blessing")],
  blocks:[{blockId:"AO.SM.B092",firstParagraphIndex:0,paragraphCount:1}],

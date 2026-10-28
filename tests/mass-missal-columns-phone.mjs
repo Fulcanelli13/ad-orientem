@@ -32,7 +32,9 @@ try{
   const page=await context.newPage(),errors=[];
   page.on("pageerror",e=>errors.push(String(e?.message??e)));
   await page.goto(`http://127.0.0.1:4288/tests/fixtures/reader-phone-harness.html?mode=MISSAL&lang=${lang}`,{waitUntil:"domcontentloaded",timeout:90000});
-  await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",null,{timeout:60000});
+  await page.waitForFunction(()=>["true","error"].includes(document.documentElement.dataset.harnessReady),null,{timeout:60000});
+  const startupError=await page.evaluate(()=>window.__AO_PHONE_HARNESS_ERROR??null);
+  assert.equal(startupError,null,"Solemn/Missal source fixture failed before rendering: "+startupError);
   const measure=await page.evaluate(()=>{
    const shell=document.querySelector("[data-ao-reader-shell]");
    const paired=[...document.querySelectorAll(".ao-reader-paragraph[data-missal-paired='true']")];
@@ -217,7 +219,9 @@ try{
   const page=await context.newPage(),errors=[];
   page.on("pageerror",e=>errors.push(e.message));
   await page.goto(`http://127.0.0.1:4288/tests/fixtures/reader-phone-harness.html?mode=MISSAL&form=SOLEMN&lang=${lang}&requiem=${requiem?1:0}`,{waitUntil:"domcontentloaded",timeout:90000});
-  await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",null,{timeout:60000});
+  await page.waitForFunction(()=>["true","error"].includes(document.documentElement.dataset.harnessReady),null,{timeout:60000});
+  const startupError=await page.evaluate(()=>window.__AO_PHONE_HARNESS_ERROR??null);
+  assert.equal(startupError,null,"Solemn/Missal source fixture failed before rendering: "+startupError);
   const source=await page.evaluate(()=>{
     const preview=window.__AO_PHONE_PREVIEW;
     preview.showSection("AO.MISSAL.010.6");

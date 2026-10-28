@@ -12,7 +12,8 @@ export function omitSourceBlockForPresentation(card,blockId){
   const source=Array.isArray(card?.paragraphs)?card.paragraphs:[];
   const blocks=Array.isArray(card?.blocks)?card.blocks:[];
   const removed=blocks.find(block=>block.blockId===blockId);
-  if(!removed)return card;
+  if(!removed || removed.firstParagraphIndex==null || !removed.paragraphCount)
+    return card; // Already source-omitted: no visible words or offset to remove.
   const start=removed.firstParagraphIndex;
   const count=removed.paragraphCount;
   const end=start+count;
