@@ -10,6 +10,7 @@
  * source cells in parallel, without manufacturing verse correspondence.
  */
 import {validateResearchOfficePair} from "./research-reader.js";
+import {primeSplitRequired,splitAllSoulsPrimeMartyrologyCell} from "./prime-martyrology-split.js";
 
 export const OFFICE_MASS_RESEARCH_VERSION="ao.office.mass-style-research.v1";
 export const OFFICE_HOURS=Object.freeze([
@@ -36,6 +37,7 @@ const ROLE_LABELS=Object.freeze({
   MATINS_PREPARATION:["Matins preparation","Préparation des matines"],
   MARIAN_ANTIPHON:["Marian antiphon","Antienne mariale"],
   MARTYROLOGY:["Martyrology","Martyrologe"],
+  POST_MARTYROLOGY_PRAYER:["Versicle and prayer","Verset et oraison"],
   PRIME_CHAPTER_OFFICE:["Chapter office","Office du chapitre"],
   RUBRICAL_NOTE:["Rubric","Rubrique"],
   VERSICLE_RESPONSE:["Versicle / response","Verset / répons"],
@@ -55,28 +57,49 @@ const par=(line,i,card)=>{
 };
 
 /**
- * Section IDs and indexes are the source-authored card identity. Do not
- * split source cells into fabricated cards; text remains byte-equal after
- * extraction except for HTML escaping, while all source line breaks remain.
+ * Most source cells map to one card. One explicit source-attested exception:
+ * All Souls Prime Prima5 contains the anticipated Martyrology AND the
+ * following versicle and prayer. Present two navigable PARTS of that same
+ * immutable source cell, with exact reversibility, instead of omitting the
+ * mandatory prayer whenever the reading is omitted outside choir.
  */
 export function projectOfficeMassStyleCards({latin,translation,locale="en"}={}){
   const ctx=validateResearchOfficePair({latin,translation,locale});
-  const cards=latin.sections.map((s,i)=>{
-    const t=translation.sections[i];
+  const projected=[];
+  for(let i=0;i<latin.sections.length;i++){
+    const s=latin.sections[i],t=translation.sections[i];
     const role=s.semantic.role;
     const label=ROLE_LABELS[role]?.[locale==="fr"?1:0];
     if(!label)throw Error("OFFICE_MASS_STYLE_UNCLASSIFIED_ROLE");
-    return Object.freeze({
-      id:s.sourceCellId,index:i,sourceIndex:s.sourceIndex,
-      translationSourceIndex:t.sourceIndex,
-      sourceCellId:s.sourceCellId,vernacularSourceCellId:t.sourceCellId,
-      role,title:label,latin:s.text,vernacular:t.text,
-      latinLines:Object.freeze(lines(s.text)),
-      // This is a whole aligned source-cell translation, NOT a line-by-line
-      // translation. Per-line comparison must wait for verified verse IDs.
-      translationAlignment:"SOURCE_CELL_ONLY",
-    });
-  });
+    const add=(r,title,a,b,part="WHOLE_SOURCE_CELL")=>{
+      projected.push(Object.freeze({
+        id:s.sourceCellId+(part==="WHOLE_SOURCE_CELL"?"":":"+part),
+        index:projected.length,sourceIndex:s.sourceIndex,
+        translationSourceIndex:t.sourceIndex,
+        sourceCellId:s.sourceCellId,vernacularSourceCellId:t.sourceCellId,
+        sourcePart:part,role:r,title,latin:a,vernacular:b,
+        latinLines:Object.freeze(lines(a)),
+        // Never claim source-cell PARTS are line-aligned across languages.
+        translationAlignment:part==="WHOLE_SOURCE_CELL"?
+          "SOURCE_CELL_ONLY":"SOURCE_ATTESTED_SEGMENT_ONLY",
+      }));
+    };
+    if(primeSplitRequired({date:ctx.date,hour:ctx.hour,role,
+       sourceCellId:s.sourceCellId})){
+      const a=splitAllSoulsPrimeMartyrologyCell(s.text,"la");
+      const b=splitAllSoulsPrimeMartyrologyCell(t.text,locale);
+      // Exact original text must remain reconstructible independently for
+      // each language. Latin and translation have different line counts.
+      if(a.martyrology+"\n"+a.postPrayer!==s.text||
+         b.martyrology+"\n"+b.postPrayer!==t.text)
+        throw Error("OFFICE_MASS_PRIME_SOURCE_RECONSTRUCTION_FAILED");
+      add("MARTYROLOGY",lo("Martyrology reading","Lecture du martyrologe",locale),
+        a.martyrology,b.martyrology,"MARTYROLOGY_READING");
+      add("POST_MARTYROLOGY_PRAYER",lo("Versicle and prayer","Verset et oraison",locale),
+        a.postPrayer,b.postPrayer,"POST_MARTYROLOGY_PRAYER");
+    }else add(role,label,s.text,t.text);
+  }
+  const cards=projected;
   return Object.freeze({version:OFFICE_MASS_RESEARCH_VERSION,context:ctx,
     cards:Object.freeze(cards)});
 }
@@ -101,10 +124,17 @@ function renderCard(card,locale){
     "data-source-cell-la":card.sourceCellId,
     "data-source-cell-vernacular":card.vernacularSourceCellId,
     "data-office-translation-alignment":card.translationAlignment,
+    "data-office-source-part":card.sourcePart,
   });
   return '<article class="aoOfficeMassCard"'+sourceAttrs+' '+(card.index===0?'':'hidden')+'>'+
     '<header class="aoOfficeCardHead"><span class="aoOfficeCardKicker">'+esc(card.role.replaceAll("_"," "))+'</span>'+
-    '<h2 class="ao-prayer-title">'+esc(card.title)+'</h2></header>'+
+    '<h2 class="ao-prayer-title">'+esc(card.title)+'</h2>'+
+    (card.sourcePart==="MARTYROLOGY_READING"?
+      '<button type="button" class="aoOfficeSkipMartyrology" data-office-omit-martyrology '+
+      'aria-label="'+esc(lo("Outside choir: omit Martyrology reading, continue with versicle and prayer",
+        "Hors du chœur : omettre le martyrologe, continuer avec le verset et l’oraison",locale))+'">'+
+      esc(lo("Outside choir · Continue to prayer","Hors du chœur · Aller à l’oraison",locale))+
+      '</button>':"")+'</header>'+
     '<div class="aoOfficeLiveFace" data-office-face="LIVE" >'+
     '<div class="aoOfficeLatinLines ao-prayer-body" lang="la">'+
     card.latinLines.map((line,i)=>par(line,i,card)).join("")+'</div>'+
