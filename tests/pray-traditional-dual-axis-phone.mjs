@@ -32,7 +32,19 @@ try{
  await page.locator('[data-pref-path="general.uiLanguage"][data-pref-value="fr"]').click();
  await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr",null,{timeout:10000});
  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("home"));
- assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+ const launched=await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open());
+ if(launched!==true){
+  const diagnostic=await page.evaluate(()=>({
+   prayerStatus:globalThis.AO_PRAY_APP_V1?.status?.(),
+   prayerRuntime:typeof globalThis.AO_PRAY_V435930?.open,
+   loadedScripts:[...document.scripts].slice(-12).map(s=>s.src||s.id),
+   resources:performance.getEntriesByType("resource").filter(x=>/pray|p435930|traditional/.test(x.name)).slice(-20).map(x=>({url:x.name,status:x.responseStatus})),
+   shell:typeof globalThis.AO_APP_SHELL_V1?.navigate,
+   module:typeof globalThis.AO_MODULES?.open
+  }));
+  console.error("DAILY_PRAYER_BOOT_DIAGNOSTIC",JSON.stringify({diagnostic,errors}));
+ }
+ assert.equal(launched,true,"Prayer host failed before guided reader: check boot diagnostic");
  const open=async id=>{
   const result=await page.evaluate(route=>globalThis.AO_MODULES.open(route),id);
   assert.equal(result?.ok,true,"Module did not open: "+id+" "+JSON.stringify(result));
