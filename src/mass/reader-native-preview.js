@@ -436,12 +436,20 @@ export async function prepareNativeReaderPreview({
     (preceding.length===1 && preceding[0]==="ASPERGES" && Boolean(loadedAsperges) &&
       String(plan?.massEntry??"FOOT_CLUSTER").toUpperCase()==="FOOT_CLUSTER") ||
     explicitIntroitEntry;
-  // Requiem and Holy Thursday retain their special-form reading ownership.
+  // Requiem uses the SAME curated source-owned Mass cards, with the
+  // Requiem-only omissions/text variants applied by reader-model and
+  // planAwareCard. Its optional Absolution is a distinct following rite.
+  // Holy Thursday retains its independent special-form ownership.
   // Generic following processions change no Ordinary Mass ending. Corpus
   // Christi has a sourced Benedicamus, blessing/Last Gospel suppression.
   // No mixed preceding+following graph is automatically certified here.
   const singleFollowing=following.length===1 ? following[0] : null;
   const compatibleFollowing=following.length===0 ||
+    (preceding.length===0 && singleFollowing==="REQUIEM_ABSOLUTION" &&
+      Boolean(loadedRequiemAbsolution) &&
+      (plan?.overlayGraphs??[]).includes("REQUIEM") &&
+      plan?.dismissal==="REQUIESCANT_IN_PACE" &&
+      plan?.blessingAllowed===false && plan?.normalLastGospel===false) ||
     (preceding.length===0 && singleFollowing==="GENERIC_PROCESSION" &&
       Boolean(loadedGenericProcession) && plan?.blessingAllowed!==false &&
       plan?.normalLastGospel!==false) ||
@@ -455,7 +463,7 @@ export async function prepareNativeReaderPreview({
     // Eligibility is a property of the prepared Mass, not the initial mode:
     // most production sessions open in SIMPLE, then select LIVE via ribbon.
     compatiblePrelude && compatibleFollowing &&
-    (plan?.overlayGraphs??[]).every(id=>id==="VOTIVE_PROPER");
+    (plan?.overlayGraphs??[]).every(id=>["VOTIVE_PROPER","REQUIEM"].includes(id));
   const curatedOrdinary=curatedEligible && String(model.presentationMode)==="LIVE"
     ? projectCuratedOrdinaryLiveCards(model):null;
   const presentationModel=curatedOrdinary

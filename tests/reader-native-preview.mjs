@@ -114,6 +114,83 @@ assert.equal(curatedReady.model.totalCards,39);
 assert.equal(curatedReady.presentationModel.totalCards,65,
   "the real native preview must show one combined Sanctus–Benedictus");
 assert.equal(curatedReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+// Requiem uses the same curated 65-family rather than the historical 48-step
+// fallback. This synthetic Proper tests a real Sequence slot and all source-
+// specific omissions; the separate November gate validates authentic m1/m2/m3.
+const requiemPrepared={
+  ...livePrepared,
+  session:{
+    ...livePrepared.session,
+    resolvedMass:{...livePrepared.session.resolvedMass,
+      date:"2026-11-02",
+      actualCelebration:{id:"sancti:11-02m1:1:b",type:"REQUIEM",title:"All Souls"},
+      overlays:["REQUIEM"],
+      provenance:{gloria:false,credo:false},
+      proper:{status:"READY",data:{...proper,sourcePath:"Sancti/11-02m1",
+        sequence:t("Dies irae", "Day of wrath")}},
+    },
+    plan:{...livePrepared.session.plan,overlayGraphs:["REQUIEM"],
+      dismissal:"REQUIESCANT_IN_PACE",blessingAllowed:false},
+  },
+};
+const requiemCurated=await prepareNativeReaderPreview({
+  prepared:requiemPrepared,reviewCuratedCards:true,
+  presentationData:data,eventData,cueRegistries,guideData,
+});
+assert.equal(requiemCurated.curatedEligible,true,
+  "explicit Requiem was incorrectly forced to historical 48-step LIVE");
+assert.equal(requiemCurated.presentationModel.structureOwner,
+  "SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+assert.equal(requiemCurated.presentationModel.totalCards,66,
+  "a source-attested Dies irae adds one card to the 65-card family");
+const reqCards=requiemCurated.presentationModel.cards;
+const reqOpening=reqCards[0];
+assert.equal(reqOpening.title,"At the Foot of the Altar · Introibo");
+assert.ok(reqOpening.paragraphs.length>0,"Requiem opening became a blank card");
+assert.ok(!reqCards.some(c=>c.paragraphs.some(p=>
+  (p.sourceCueIds??[]).includes("AO.SM.C0004"))),"Judica leaked into curated LIVE");
+const reqDismissalCard=reqCards.find(c=>
+  c.paragraphs.some(p=>(p.sourceCueIds??[]).includes("AO.SM.C0259")));
+assert.ok(reqDismissalCard,"Requiem LIVE lost its source dismissal");
+assert.match(reqDismissalCard.paragraphs.map(p=>p.primary).join(" "),
+  /Requiéscant in pace/);
+assert.ok(reqCards.some(c=>c.title==="Requiem · No final blessing" &&
+  c.stateOnly===true),"omitted blessing marker must remain nonspoken and nonrenderable");
+assert.equal(curatedReady.presentationModel.totalCards,65,
+  "Requiem overlay changed normal Ordinary curated presentation");
+
+// Absolution is a distinct following action, not a reason to replace the
+// source-owned Requiem Mass with an obsolete 48-step presentation. Its
+// last-Gospel suppression and dismissal must agree with the compiled plan.
+const absolutionPrepared={
+  ...requiemPrepared,
+  session:{...requiemPrepared.session,
+    resolvedMass:{...requiemPrepared.session.resolvedMass,
+      followingActions:["REQUIEM_ABSOLUTION"]},
+    plan:{...requiemPrepared.session.plan,
+      followingGraphs:["REQUIEM_ABSOLUTION"],normalLastGospel:false},
+  },
+};
+const requiemWithAbsolution=await prepareNativeReaderPreview({
+  prepared:absolutionPrepared,reviewCuratedCards:true,
+  presentationData:data,eventData,cueRegistries,guideData,
+  requiemAbsolutionData,
+});
+assert.equal(requiemWithAbsolution.curatedEligible,true);
+assert.equal(requiemWithAbsolution.presentationModel.structureOwner,
+  "SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+assert.ok(requiemWithAbsolution.requiemAbsolutionController,
+  "Requiem absolution following-action was lost");
+const invalidAbsolution=await prepareNativeReaderPreview({
+  prepared:{...absolutionPrepared,session:{...absolutionPrepared.session,
+    plan:{...absolutionPrepared.session.plan,normalLastGospel:true}}},
+  reviewCuratedCards:true,presentationData:data,eventData,cueRegistries,guideData,
+  requiemAbsolutionData,
+});
+assert.equal(invalidAbsolution.curatedEligible,false,
+  "unsupported Absolution/Last Gospel combination should remain gated");
+
+
 assert.equal(curatedReady.presentationModel.sourceAuthorityModel,curatedReady.model);
 const previewIntroit=curatedReady.presentationModel.cards.find(c=>
   c.blocks.some(b=>b.blockId==="AO.SM.B014"));

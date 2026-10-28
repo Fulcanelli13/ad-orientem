@@ -233,12 +233,14 @@ export function mountFullMassPreflight({
           ' name="ao-all-souls-formulary" value="'+n+'" data-ao-all-souls-mass>'+ 
           '<span data-ao-all-souls-mass-label="'+n+'"></span></label>').join('')+
         '</div><p data-ao-all-souls-note></p>'+ 
+        '<details data-ao-all-souls-succession-details>'+ 
+        '<summary data-ao-all-souls-succession-summary></summary>'+ 
         '<div data-ao-all-souls-succession-controls>'+ 
         '<label data-ao-all-souls-previous-label></label>'+ 
         '<select data-ao-all-souls-succession="previous"></select>'+ 
         '<label data-ao-all-souls-next-label></label>'+ 
         '<select data-ao-all-souls-succession="next"></select>'+ 
-        '</div><p data-ao-all-souls-succession-note></p></fieldset>'+ 
+        '</div><p data-ao-all-souls-succession-note></p></details></fieldset>'+ 
         '<p data-full-mass-category-error role="alert" hidden></p>'+
         '<details data-full-mass-review><summary data-full-mass-review-summary></summary>'+
         '<div data-full-mass-review-body></div></details>'+
@@ -477,6 +479,9 @@ export function mountFullMassPreflight({
       selector.querySelector("[data-ao-all-souls-note]").textContent=l(
         "Choose the Mass actually celebrated. The Second and Third have distinct readings and prayers.",
         "Choisissez la messe réellement célébrée. Les deuxième et troisième ont des lectures et prières distinctes.");
+      selector.querySelector("[data-ao-all-souls-succession-summary]").textContent=l(
+        "Celebrant's other Masses · optional",
+        "Autres messes du célébrant · facultatif");
       const context=successionFor(legacy);
       const labels={
         previous:[["UNKNOWN","Not known","Non précisé"],

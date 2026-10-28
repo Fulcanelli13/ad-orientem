@@ -7,7 +7,7 @@ import { projectEmberInsertionModel } from "./reader-ember-lessons.js";
 import { projectNuptialInsertionModel } from "./reader-nuptial.js";
 import { holyThursdayCanonVariantsForProper } from "./reader-holy-thursday-canon.js";
 import { gospelHeadingVariantForProper } from "./reader-gospel-heading.js";
-import { requiemAgnusVariantsForResolvedMass, requiemOmittedOrdinaryCuesForResolvedMass, requiemEntranceIncensationOmittedCuesForResolvedMass, requiemFinalBlessingOmittedCuesForResolvedMass, requiemOffertoryIncensationVariantsForResolvedMass, requiemFootPsalmAndLavaboOmittedCuesForResolvedMass, requiemGospelOmittedCuesForResolvedMass } from "./reader-requiem-conditions.js";
+import { requiemAgnusVariantsForResolvedMass, requiemOmittedOrdinaryCuesForResolvedMass, requiemEntranceIncensationOmittedCuesForResolvedMass, requiemFinalBlessingOmittedCuesForResolvedMass, requiemOffertoryIncensationVariantsForResolvedMass, requiemFootPsalmAndLavaboOmittedCuesForResolvedMass, requiemGospelOmittedCuesForResolvedMass, requiemDismissalVariantsForResolvedMass } from "./reader-requiem-conditions.js";
 import { projectHolyThursdayMass } from "./reader-holy-thursday-mandatum.js";
 
 const SUPPORTED_OVERLAYS=new Set(["VOTIVE_PROPER","REQUIEM","EMBER_LESSONS","NUPTIAL"]);
@@ -75,6 +75,7 @@ export function createMassReaderModel({
     ...(holyThursdayCanonVariantsForProper(resolvedMass)??{}),
     ...(requiemAgnusVariantsForResolvedMass(resolvedMass)??{}),
     ...(requiemOffertoryIncensationVariantsForResolvedMass(resolvedMass)??{}),
+    ...(requiemDismissalVariantsForResolvedMass(resolvedMass)??{}),
     "AO.SM.C0084":gospelHeadingVariantForProper(proper,{
       sourcePath:resolvedMass.proper?.sourcePath??proper.sourcePath??null,
     }),

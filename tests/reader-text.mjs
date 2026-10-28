@@ -8,7 +8,7 @@ import {
   LIVE_LATIN_FIRST_INVITATION_CUES,
 } from "../src/mass/reader-text.js";
 import { properToReaderSlots } from "../src/mass/proper-reader-slots.js";
-import { requiemFootPsalmAndLavaboOmittedCuesForResolvedMass, requiemGospelOmittedCuesForResolvedMass } from "../src/mass/reader-requiem-conditions.js";
+import { requiemFootPsalmAndLavaboOmittedCuesForResolvedMass, requiemGospelOmittedCuesForResolvedMass, requiemDismissalVariantsForResolvedMass } from "../src/mass/reader-requiem-conditions.js";
 import { missalRequiemIntroitCrossDescription, missalChalicePreparationDescription } from "../src/mass/reader-missal-granularity.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
@@ -338,6 +338,37 @@ for(const corpus of [low,sung]){
  }),/REQUIEM_LAVABO_SOURCE_IDENTITY_MISMATCH/);
 }
 console.log("1962 All Souls Judica/Lavabo exclusions: PASS — LOW/SUNG EN/FR and ordinary donor untouched.");
+
+// Rubricae generales 507(c): Requiescant in pace / Amen is the Mass for
+// the Dead dismissal. Verify source-owned rendered bilingual cue variants in
+// BOTH Ordinary donor families; ordinary Mass retains its original dialogue.
+const requiemDismissal=requiemDismissalVariantsForResolvedMass({overlays:["REQUIEM"]});
+assert.deepEqual(Object.keys(requiemDismissal).sort(),["AO.SM.C0259","AO.SM.C0260"]);
+assert.equal(requiemDismissalVariantsForResolvedMass({overlays:[]}),null);
+const normalized=s=>String(s??"").normalize("NFD").replace(/\p{M}/gu,"");
+for(const corpus of [low,sung]){
+  for(const language of ["en","fr"]){
+    const options={corpus,section:sections.sectionById("AO.CARD.028"),
+      properSlots,vernacularLanguage:language,frenchOrdinary:requiemFrench};
+    const req=buildReaderSectionCard({...options,ordinaryVariants:requiemDismissal});
+    const normal=buildReaderSectionCard(options);
+    const phrase=(card,id)=>{
+      const row=card.paragraphs.find(p=>(p.sourceCueIds??[]).includes(id));
+      assert.ok(row,corpus.form+"/"+language+" missing dismissal cue "+id);
+      return normalized([row.primary,row.secondary,row.alternate].filter(Boolean).join(" "));
+    };
+    const reqDismissal=phrase(req,"AO.SM.C0259");
+    assert.match(reqDismissal,/Requiescant in pace/);
+    assert.match(reqDismissal,language==="fr"?/reposent en paix/:/rest in peace/);
+    assert.doesNotMatch(reqDismissal,/Ite, missa est/i);
+    assert.match(phrase(req,"AO.SM.C0260"),/Amen/);
+    assert.doesNotMatch(phrase(req,"AO.SM.C0260"),/Deo gratias/i);
+    assert.match(phrase(normal,"AO.SM.C0259"),/Ite, missa est/i);
+    assert.match(phrase(normal,"AO.SM.C0260"),/Deo gratias/i);
+  }
+}
+console.log("1962 Requiem dismissal: PASS — Requiescant/Amen in LOW/SUNG EN/FR, Ordinary unchanged.");
+
 
 const credo=buildReaderSectionCard({
   corpus:sung,

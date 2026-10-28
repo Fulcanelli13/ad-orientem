@@ -288,6 +288,10 @@ try{
      // circumstance; the choice of Mass II alone proves none of it.
      await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
      await container.locator('[data-ao-all-souls-mass][value="2"]').check();
+     const successionDetails=container.locator("[data-ao-all-souls-succession-details]");
+     if(await successionDetails.evaluate(el=>el.open))
+       throw Error("NOV02_OPTIONAL_CELEBRANT_CONTROLS_NOT_COLLAPSED");
+     await successionDetails.locator("summary").click();
      await container.locator('[data-ao-all-souls-succession="previous"]').selectOption("IMMEDIATE");
      await container.locator('[data-ao-all-souls-succession="next"]').selectOption("INTERRUPTED_LT3");
      out.succession=await page.evaluate(async()=>{
@@ -367,6 +371,12 @@ try{
        form&&!form.hidden&&Boolean(form.querySelector(
        '[data-ao-all-souls-mass][value="'+number+'"]')?.checked);
    },originalNumber,{timeout:45000});
+   // A Home-to-Folio jump opens a fresh preflight. The advanced Ritus XIV
+   // circumstance is intentionally collapsed on that new screen.
+   const succession=page.locator("[data-ao-all-souls-succession-details]");
+   if(await succession.evaluate(el=>el.open))
+     throw Error("NOV02_HOME_PREFLIGHT_ADVANCED_CONTROLS_NOT_COLLAPSED");
+   await succession.locator("summary").click();
    await page.locator('[data-ao-all-souls-succession="previous"]')
      .selectOption("IMMEDIATE");
    const active=await page.evaluate(async number=>{

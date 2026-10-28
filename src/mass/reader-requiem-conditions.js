@@ -132,6 +132,34 @@ export function requiemAgnusVariantsForResolvedMass(resolvedMass){
   return REQUIEM_AGNUS;
 }
 
+// 1962 Missal General Rubrics 507(c) and Ritus servandus XIII.1:
+// every Mass for the Dead has Requiescant in pace / Amen, not the ordinary
+// Ite, missa est / Deo gratias. Keep the original two cue identities and
+// donor text untouched; this is a source-selected reader display variant.
+// https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html
+const REQUIEM_DISMISSAL=Object.freeze({
+  "AO.SM.C0259":Object.freeze({
+    lat:"℣. Requiéscant in pace.",
+    en:"℣. May they rest in peace.",
+    fr:"℣. Qu'ils reposent en paix.",
+  }),
+  "AO.SM.C0260":Object.freeze({
+    lat:"℟. Amen.",en:"℟. Amen.",fr:"℟. Amen.",
+  }),
+});
+export function requiemDismissalVariantsForResolvedMass(resolvedMass){
+  return isExplicitRequiemMass({session:{resolvedMass}})
+    ?REQUIEM_DISMISSAL:null;
+}
+
+// Ritus servandus XI.1: after Dominus vobiscum the Requiem dismissal is
+// delivered facing the altar; the ordinary-facing-people source action is
+// inapplicable. Return an exact cue guard for Low and Sung state channels.
+export function isRequiemAltarFacingDismissal(cueId,prepared,conditions=null){
+  return String(cueId??"")==="AO.SM.C0259" &&
+    isExplicitRequiemMass(prepared,conditions);
+}
+
 // In the 1962 Requiem the FIRST pre-Communion peace prayer is omitted,
 // but the two following priest-Communion prayers remain. Exact canonical
 // cue ownership must be preserved for LIVE / SIMPLE / MISSAL navigation.
