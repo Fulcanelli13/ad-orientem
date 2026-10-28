@@ -1,0 +1,32 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {PRAY_CANONICAL_DATA_V435930 as canonical} from "../src/pray/canonical-data.js";
+import {JOSEPH_LITANY_1909_V1 as old,JOSEPH_LITANY_2021_V1 as expanded,JOSEPH_2021_ADDITIONS_V1 as added} from "../src/pray/st-joseph-litany-1909.v1.js";
+const existing=canonical.prayers.devotion_litany_st_joseph;
+assert.equal(existing.id,expanded.id,"The 2021 canonical ID must remain stable");
+assert.equal(old.id,"devotion_litany_st_joseph_1909");
+for(const lang of ["la","en","fr"]){
+ assert.equal(added[lang].length,7);
+ assert.equal(expanded[lang],existing[lang],"Do not edit the existing 2021 canonical prayer");
+ assert.ok(old[lang].length>1000,"Each historical form must be complete: "+lang);
+ const match=lang==="la"?/, ora pro nobis\./g:lang==="en"?/, pray for us\./g:/, priez pour nous\./g;
+ assert.equal((old[lang].match(match)||[]).length,26,"1909 25 St Joseph + Holy Mary: "+lang);
+ assert.equal((expanded[lang].match(match)||[]).length,33,"2021 32 St Joseph + Holy Mary: "+lang);
+ for(const id of added[lang])assert.equal(old[lang].toLowerCase().includes(id.toLowerCase()),false,"2021 insertion remains in 1909: "+lang+" "+id);
+ assert.match(old[lang],lang==="la"?/Oremus\. Deus,/:(lang==="fr"?/Prions?\.|l'établi/:/Let us pray\./),"Old concluding prayer not preserved: "+lang);
+ assert.ok(old[lang].includes(lang==="la"?"Protector sanctæ Ecclesiæ":lang==="en"?"Protector of the Holy Church":"Protecteur de la sainte Église"),"Historic concluding litany invocation missing");
+}
+const js=readFileSync(new URL("../src/pray/traditional-pray-runtime.js",import.meta.url),"utf8");
+assert.match(js,/goodDeathJosephEdition:"1909"/);
+assert.match(js,/data-tp381-joseph-edition="1909"/);
+assert.match(js,/data-tp381-joseph-edition="2021"/);
+assert.match(js,/sourcedPrayerCard\(joseph/);
+assert.match(js,/data-tp381-route="pray\.dying_companion"/);
+assert.match(js,/const GOOD_DEATH_STAGES=Object\.freeze/);
+assert.match(js,/if\(b\.dataset\.tp381JosephEdition\)/);
+assert.match(js,/1909_HISTORICAL_DEFAULT_2021_EXPLICIT_ALTERNATIVE/);
+assert.match(old.sources.english1910,/traditionalrosary/);
+assert.match(old.sources.frenchTraditional,/laportelatine/);
+assert.match(old.sources.decree,/vatican/);
+assert.match(old.edition,/FACSIMILES NOT CLAIMED/);
+console.log("B05 St Joseph: 24 older + 7 new invocations, full LA/EN/FR and collects, edition switch, existing 2021 and bedside handoff PASS");

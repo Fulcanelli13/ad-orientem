@@ -84,7 +84,7 @@ assert.match(styles,/\.aoTP381Source summary\{[^\n]*min-height:44px/,
 assert.match(styles,/aoTP381Reader/);
 assert.match(styles,/aoTP381PrayerList/);
 assert.match(runtime,/Foundational prayers may recur later in the Rosary or another devotion/,"Morning\/Evening repetition guide disappeared");
-assert.match(runtime,/A deliberately small traditional collection with identified sources/,"Sacred Hymns user-facing introduction drifted");
+assert.match(runtime,/Historical hymn texts with identified sources and explicitly labelled language editions/,"Sacred Hymns user-facing introduction drifted");
 assert.match(runtime,/Historical approved Roman form, stored locally for complete offline prayer/,"Holy Name offline donor introduction drifted");
 assert.doesNotMatch(runtime,/Traditional · source-locked · offline|A source-locked treasury|are source-locked historical forms/,"Traditional PRAY leaked pipeline source-lock wording into the UI");
 assert.match(runtime,/ao-ui-back/,"Traditional PRAY Back control is not using the canonical utility asset");
@@ -103,7 +103,7 @@ assert.match(runtime,/data-tp381-communion="after"/,"Communion thanksgiving tab 
 assert.match(runtime,/Come, Holy Ghost/,"Communion preparation lost Holy Ghost invocation");
 assert.match(runtime,/not a checklist to be completed before every Communion/,"Communion treasury again became a compulsory checklist");
 assert.match(runtime,/Historical days-or-years grants printed in old missals are not the current way indulgences are measured/,"Communion treasury indulgence guide lost current-vs-historical distinction");
-assert.match(runtime,/ROMAN_ST_JOSEPH_SOURCE_LOCKED/,"Good Death lost Roman St Joseph source lock");
+assert.match(runtime,/1909_HISTORICAL_DEFAULT_2021_EXPLICIT_ALTERNATIVE/,"Good Death must default to the 1909 St Joseph historical sequence and preserve the 2021 alternative");
 assert.match(runtime,/PASTORAL_NOT_SACRAMENT_SIMULATION/,"Dying Companion lost sacramental-boundary policy");
 assert.match(runtime,/seriousIllnessBridge:"learn\.rites\.sick"/,"Dying Companion lost Serious Illness formation bridge");
 assert.match(runtime,/data-tp381-route="learn\.rites\.sick"/,"Dying Companion no longer exposes the Serious Illness guide");
