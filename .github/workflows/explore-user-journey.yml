@@ -1,0 +1,36 @@
+name: Explore complete visitor journey
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, labeled]
+    branches: [main]
+    paths:
+      - "src/find/**"
+      - "tests/explore-user-journey-acceptance.mjs"
+      - ".github/workflows/explore-user-journey.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  complete-visitor-journey:
+    # Keep browser costs opt-in while a PR remains a draft.
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false || contains(github.event.pull_request.labels.*.name, 'visual-review')
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/explore-user-journey-acceptance.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: explore-complete-visitor-journey
+          path: artifacts/explore-user-journey
+          if-no-files-found: warn
+          retention-days: 14
