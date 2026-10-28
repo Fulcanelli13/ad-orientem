@@ -4,7 +4,7 @@
 
 **76 additional source units** from 16 individual source pages / PDFs. Previous batch 40; combined 116. **Not 116 unique prayers.**
 
-Evidence: 68 units on readable HTML pages, 3 in all four inspected Saint Philomena PDF page images, 2 partial association formulas, 2 unanalysed PDF booklet bodies (only covers inspected). Historic edition certified 0. Unique added works confirmed 0. Canonical imports 0.
+Evidence: 69 units on readable HTML pages, 3 in all four inspected Saint Philomena PDF page images, 2 partial association formulas, 2 unanalysed PDF booklet bodies (only covers inspected). Historic edition certified 0. Unique added works confirmed 0. Canonical imports 0.
 
 - Source segments include **14** stations of ONE St Alphonsus programme and **10** concluding collects in ONE Rogations litany. Never equate these segments with standalone prayer identities.
 - Direct source links for US *August Queen of Heaven* and *Novena to the Immaculate Conception* are now found, resolving two first-pass index-only entries without rewriting that historical first-pass ledger.
