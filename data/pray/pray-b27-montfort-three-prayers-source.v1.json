@@ -1,7 +1,7 @@
 {
   "schema": "ao.pray.montfort-b27-three-historical-prayers.v1",
   "sourceDate": "2026-10-29",
-  "sourceStatus": "HISTORICAL_DIGITAL_ENGLISH_NOT_ORIGINAL_FACSIMILE_CERTIFIED",
+  "sourceStatus": "DIGITAL_HISTORICAL_ENGLISH_WITNESS_EXPLICIT_UNVERIFIED_1897_RECENSION",
   "originalPrintImageCollated": false,
   "frenchSourceWitnessVerified": false,
   "modernCopyrightedTranslationIncluded": false,
@@ -10,10 +10,10 @@
       "id": "holy_spirit_litany",
       "titleEn": "Litany of the Holy Ghost",
       "titleFr": "Litanies du Saint-Esprit",
-      "witness": "1897 Manual of Adoration of the Most Blessed Sacrament, pp.235–239; historical English digital witness corroborated with a later traditional consecration edition",
-      "witnessUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Manual_of_adoration_of_the_most_Blessed_Sacrament.._%28IA_manualofadoratio00schm%29.pdf",
-      "comparisonUrl": "https://www.ecatholic2000.com/montfort/true/devotion.shtml",
-      "note": "Historic prayer-form text in English; original photographed 1897 page-level exact collation pending, witness spelling/punctuation normalized. This is the full litany, NOT the shorter Come Holy Spirit invocation.",
+      "witness": "Traditional English Litany of the Holy Ghost from the online supplementary consecration prayers in eCatholic2000; identity with the 1897 Manual of Adoration litany has NOT been verified",
+      "witnessUrl": "https://www.ecatholic2000.com/montfort/true/devotion.shtml",
+      "comparisonUrl": "https://www.sing-prayer.org/manual-of-adoration-of-the-most-blessed-sacrament-1897",
+      "note": "This complete English litany matches the online supplemental consecration-prayers transcription. A 1897 Manual of Adoration lists a Litany of the Holy Ghost on printed p.235, but its complete wording has NOT been compared; do not attribute this recension to that book. The source prayer is not the shorter Come Holy Spirit invocation. No historical French translation or original photographed edition is certified.",
       "opening": [
         [
           "Lord, have mercy on us.",
@@ -217,5 +217,13 @@
         "O dulcis Jesu, te amet, in te delectetur, te admiretur omnis sensus bonus tuae conveniens laudi; Deus cordis mei et pars mea, Christe Jesu, deficiat cor meum spiritu suo, et vivas tu in me, et concalescat spiritu meo vivus carbo amoris tui, et excrescat in ignem perfectum, ardeat jugiter in ara cordis mei, ferveat in medullis meis, flagret in absconditis animae meae; in die consummationis meae consummatus inveniar apud te. Amen."
       ]
     }
+  },
+  "witnessReviewB28": {
+    "sourceAttributionCorrection": "Holy Ghost litany is grounded in eCatholic2000 appended prayer section, not proven identical to 1897 Manual of Adoration p.235",
+    "actual1897BookEvidence": "Historical manual index identifies a Litany of the Holy Ghost at printed p.235; occurrence is not a verified textual collation",
+    "holyNameDigitalWitness": "Bonaventure Hammer 1909 via Wikisource and Gutenberg; invocation and two-collect structure checked",
+    "originalPrintedPageCollation": false,
+    "modernSupplementAuthorship": "Not claimed as Faber 1863 or Montfort autographic wording",
+    "readerTerminology": "Traditional English witness; no falsely claimed original 1897 exact text"
   }
 }
