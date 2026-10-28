@@ -39,7 +39,8 @@ for(const [date,alleluia] of dates){
  assert.equal(st.alleluia,alleluia,"Alleluia calendar exception "+date);
  const text=benedictionVersiclesForDate(verses,date);
  for(const locale of ["en","fr","la"]){
-  assert.equal((text[locale].match(/allel(?:u|ú|élu)ia/gi)||[]).length,alleluia?2:0,locale+" date "+date);
+  const expectedWord=locale==="fr"?"alléluia":locale==="la"?"allelúia":"alleluia";
+  assert.equal(text[locale].split(expectedWord).length-1,alleluia?2:0,locale+" date "+date);
   assert.ok(text[locale].includes(verses[locale].split("\n\n")[1]),"Collect unchanged in "+locale);
  }
 }
