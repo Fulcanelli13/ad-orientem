@@ -64,16 +64,30 @@ function main(){
     manifest.published!==0||manifest.liturgicallyVerified!==0)
     throw Error("OFFICE_TRANSLATION_RISK_MANIFEST_INVALID");
   const groups=[...new Set(manifest.records.map(r=>r.date+":"+r.hour))].sort();
-  const data=groups.map(group=>{
+  const quarantined=[],data=[];
+  for(const group of groups){
     const [date,hour]=group.split(":");
     const read=l=>JSON.parse(readFileSync(join(root,date,hour.toLowerCase(),l+".research.json"),"utf8"));
-    return triLanguageRisks({latin:read("la"),english:read("en"),french:read("fr")});
-  });
+    const docs={latin:read("la"),english:read("en"),french:read("fr")};
+    try{data.push(triLanguageRisks(docs));}
+    catch(error){
+      // Never coerce different numbers of Latin, English and French source
+      // cells into aligned translations. Isolate the entire Office hour.
+      if(!/OFFICE_TRANSLATION_RISK_(?:CELL_COUNT_MISMATCH|ALIGNMENT_INVALID)/.test(String(error)))
+        throw error;
+      quarantined.push({date,hour,reason:"SOURCE_ALIGNMENT_UNVERIFIED",
+        sectionCounts:{la:docs.latin.sections.length,en:docs.english.sections.length,fr:docs.french.sections.length},
+        allTranslationsRequireManualReview:true});
+    }
+  }
   const report={
     schema:"ao.office.translation-risk-screening.v1",
     sourceRevision:DIVINUM_OFFICIUM_PIN,
     dateCount:new Set(data.map(d=>d.date)).size,
-    trilingualHourCount:data.length,
+    trilingualHourCount:groups.length,
+    structurallyScreenedHourCount:data.length,
+    quarantinedSourceHourCount:quarantined.length,
+    quarantinedSourceHours:quarantined,
     alignedLatinCells:data.reduce((s,x)=>s+x.sourceCellCount,0),
     translationCellsScreened:data.reduce((s,x)=>s+x.localeCellsScreened,0),
     flaggedTranslationCells:data.reduce((s,x)=>s+x.flagCount,0),
@@ -86,6 +100,8 @@ function main(){
   writeFileSync(dest,JSON.stringify(report,null,2)+"\n","utf8");
   console.log("OFFICE_TRANSLATION_RISK_SUMMARY",JSON.stringify({
     trilingualHours:report.trilingualHourCount,
+    alignedHours:report.structurallyScreenedHourCount,
+    quarantinedHours:report.quarantinedSourceHourCount,
     alignedLatinCells:report.alignedLatinCells,
     translationCellsScreened:report.translationCellsScreened,
     flaggedCells:report.flaggedTranslationCells,
