@@ -211,7 +211,41 @@ try{
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.montfort_consecration",{returnContext:null}));
    assert.match(await page.locator(mont).innerText(),/1 \/ 33/,"Montfort progress must survive route reopening on device");
 
-   assert.deepEqual(errors,[],errors.join("; "));
+   // B29: same Adoration reader; at-home prayer is not sacramental exposition.
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.adoration",{returnContext:null}));
+   const aRoot=rootSel+' [data-ao-adoration-chooser]';
+   assert.equal(await page.locator(aRoot).count(),1,"Adoration owner must show existing chooser");
+   await page.locator(aRoot+' details.aoAdorationMethodsDisclosure > summary').tap();
+   const nightChoice=page.locator(aRoot+' [data-p435930-ador-mode="night"]');
+   assert.equal(await nightChoice.count(),1,"Fr Mateo night mode must be nested in existing Adoration choices");
+   await nightChoice.tap();
+   const night=rootSel+' [data-ao-adoration-mode="night"]';
+   assert.equal(await page.locator(night).count(),1,"At-home watch must use existing Adoration reader");
+   assert.equal(await page.locator(night+' [data-ao-home-night]').count(),1);
+   assert.match(await page.locator(night+' [data-ao-home-night]').innerText(),/NOT THE RESERVED SACRAMENT/);
+   assert.equal(await page.locator(night+' .aoDevoTimeline [data-ao-devo-chapter]').count(),6,"Six horizontal private home cards");
+   assert.equal(await page.locator(night+' [data-ao-devo-card="prepare"]').count(),1);
+   assert.match(await page.locator(night+' .aoP435930GuideNow').innerText(),/image of the Sacred Heart/i);
+   await page.locator(night+' [data-ao-night-home-source] > summary').tap();
+   assert.match(await page.locator(night+' [data-ao-night-home-source]').innerText(),/not a reproduction of the 1944 Holy Hour/i);
+   assert.match(await page.locator(night+' [data-ao-night-home-source] a').getAttribute('href'),/sensusfidelium.com/);
+   await page.locator(night+' .aoDevoTimeline [data-ao-devo-chapter="2"]').tap();
+   assert.equal(await page.locator(night+' [data-ao-devo-card="reparation"]').count(),1);
+   assert.match(await page.locator(night+' .aoP435930GuidePrayers').innerText(),/Most Sweet Jesus/i,"Reuse full Pius XI canonical reparation");
+   await page.locator(night+' .aoDevoTimeline [data-ao-devo-chapter="3"]').tap();
+   assert.equal(await page.locator(night+' [data-ao-devo-card="family"]').count(),1);
+   assert.match(await page.locator(night+' .aoP435930GuideNow').innerText(),/five Our Fathers, five Hail Marys/i);
+   await page.locator(night+' .aoDevoTimeline [data-ao-devo-chapter="4"]').tap();
+   assert.equal(await page.locator(night+' [data-ao-devo-card="communion"]').count(),1);
+   assert.match(await page.locator(night+' .aoP435930GuidePrayers').innerText(),/Spiritual Communion/i);
+   await page.locator(night+' [data-ao-adoration-timer] > summary').tap();
+   assert.equal(await page.locator(night+' [data-p435930-timer="60"]').count(),1,"One-hour aid only when optionally opened");
+   await page.screenshot({path:resolve(out,"fr-mateo-home-night-"+width+".png"),animations:"disabled"});
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"At-home night mode horizontal overflow");
+   await page.locator(night+' .aoDevoTimeline [data-ao-devo-chapter="5"]').tap();
+   assert.equal(await page.locator(night+' [data-ao-devo-card="close"]').count(),1);
+   await page.locator(night+' [data-p435930-night-finish]').tap();
+   assert.equal(await page.locator(aRoot).count(),1,"Finish returns to established Adoration chooser");
    assert.deepEqual(errors,[],errors.join("; "));
    console.log("PASS "+width+"px Rosary & Chaplets discovery: original Rosary and methods routes unchanged, Five Wounds and Precious Blood source-owned guided readers; canonical Mercy preserved");
   }finally{await page.close()}

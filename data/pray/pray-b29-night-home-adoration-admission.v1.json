@@ -1,0 +1,58 @@
+{
+  "schema": "ao.pray.b29-night-home-adoration-fr-mateo.v1",
+  "date": "2026-10-29",
+  "candidateId": "AO-AQ-066",
+  "state": "B29_IMPLEMENTED_PENDING_REQUIRED_CI",
+  "existingParentRoute": "pray.adoration",
+  "implementation": "Existing Adoration chooser guided form, six source-directed cards, no additional Prayer top-level route",
+  "historical": {
+    "person": "Father Mateo Crawley-Boevey SS.CC.",
+    "originalPublication": "English historical pamphlet, reprinted online; transcription references 1944 printing",
+    "onlineWitness": "https://sensusfidelium.com/2020/03/21/night-adoration-in-the-home-fr-mateo/",
+    "correspondence1929": "4 April 1929, letter conveyed by Cardinal Gasparri",
+    "correspondence1930": "25 October 1930, letter conveyed by Cardinal Pacelli",
+    "pattern": "Voluntary monthly hour of private night prayer at home, traditionally between 9 p.m. and 6 a.m.; may be solitary or shared among household"
+  },
+  "historicalOriginalTextReproduced": false,
+  "sourceTextCopyrightReleaseVerified": false,
+  "sourceScope": "Only historical practical instructions are used; bilingual step text is Ad Orientem's original editorial writing, not original 1944 booklet copy or speech of Christ",
+  "retainedCanonicalPrayerIds": [
+    "foundations_sign_of_cross",
+    "foundations_act_of_faith",
+    "foundations_prayer_of_adoration",
+    "sacrament_act_of_contrition",
+    "sacred_heart_short_prayer",
+    "foundations_our_father",
+    "foundations_hail_mary",
+    "foundations_glory_be",
+    "adoration_spiritual_communion",
+    "foundations_act_of_love"
+  ],
+  "features": {
+    "stages": 6,
+    "mode": "private at home, never presence at tabernacle",
+    "oneHourTimerOptional": true,
+    "automaticCompletion": false,
+    "monthlyCalendarObligation": false,
+    "noExternalRuntimeTextFetch": true,
+    "sourceDisclosure": true,
+    "originalENFREditorialDirections": true
+  },
+  "historicalIndulgencesClaimedAsCurrent": false,
+  "historicalNightPatternEnforcedByTimer": false,
+  "historicalMembershipEnrollmentImitated": false,
+  "performanceCountersOrFamilyTracking": false,
+  "canonicalPrayersChanged": 0,
+  "novenaIDsChanged": 0,
+  "keyDistinctness": [
+    "Not physical Eucharistic adoration before a tabernacle or exposed Sacrament",
+    "Not public Benediction or Mass Canon spoken as minister",
+    "Not auto-applicable historical indulgence or enrollment",
+    "Not copied or adapted full 1944 literary dialogue",
+    "Existing Holy Hour and Four Ends remain unchanged"
+  ],
+  "editorialLimits": [
+    "Original 1944 historical printed booklet page-image collation not done; no original prose is republished",
+    "Rights review mandatory if importing full dialogue; current implementation does not reproduce it"
+  ]
+}
