@@ -6,6 +6,10 @@
 
 **NOT APPROVED · NOT A PUBLIC PRAYER READER · NOT CLEARED FOR DISTRIBUTION**
 
+**Review coverage update (B20):** This B19 volume has **33 complete historical texts**. The [B20 supplemental choicebook](./DAILY-PRAYER-FULL-TEXT-SUPPLEMENT-B20-20261028.md) restores **7 further complete, optional texts used by the eight proposed routines**. For the actual eight Short/Complete proposals, consult the [source-to-stage readiness audit](./DAILY-PRAYER-PRESET-READINESS-B20-20261028.md). **40 distinct texts are now visible across the paired choicebooks**; no default or public text is approved.
+
+
+
 This is the first editorial decision sheet containing **all complete candidate wordings** rather than only opening phrases and source IDs. Each checked form retains its recorded print-edition transcription and a direct original page link. Selection boxes are **blank** deliberately; historical source verification is *not* approval as an Ad Orientem default. Printed prayer headings and instruction rubrics remain distinct from recited words.
 
 **Navigation:** Expand only the prayer category you wish to review; its full historical formulations and checkboxes are grouped immediately beneath the category title. This avoids scrolling past every source text at once.\n\n**How to mark decisions:** Check one choice where the group says *choose one*. For *complementary/sequential* groups, check each entire prayer you want included; do not treat Hope and Charity, or thanksgiving and examination, as interchangeable. Mark your chosen default with `DEFAULT` in review comments if needed. **A checkbox in a PR comment is an editorial request, not an automatic publication permission.**
