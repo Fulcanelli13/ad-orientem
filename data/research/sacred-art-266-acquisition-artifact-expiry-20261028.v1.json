@@ -14,19 +14,24 @@
     "uniqueArtifactArchiveGiB": 1.291,
     "earliestExpiry": "2026-11-09T08:43:46Z",
     "latestExpiry": "2026-11-10T16:05:03Z",
-    "permanentBackupsVerified": 256,
+    "permanentBackupsVerified": 266,
     "testZipDownloadComplete": true,
-    "originalsActuallyDownloadedAndSHA256Verified": 256,
-    "originalsOutstandingByteLevelVerification": 10,
+    "originalsActuallyDownloadedAndSHA256Verified": 266,
+    "originalsOutstandingByteLevelVerification": 0,
     "uniqueArtifactsFullContentVerified": 33,
     "publicBackupReleaseAssets": 33,
     "publicBackupReleaseTotalAssetCountIncludingManifests": 35,
     "publicBackupReleaseByteSizeIncludingManifests": 1004976665,
     "backupReleaseURL": "https://github.com/Fulcanelli13/ad-orientem/releases/tag/sacred-art-cc0-sources-20261028",
     "backupActionRunURL": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40648374452",
-    "remainingRightsConditionedSourceOriginals": 10
+    "remainingRightsConditionedSourceOriginals": 10,
+    "publicCc0SourceBackups": 256,
+    "unpublishedRightsHeldSourceBackups": 10,
+    "unpublishedDraftReleaseAssetsIncludingIndex": 4,
+    "unpublishedDraftBackupActionRunURL": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40648765567",
+    "rightsHeldNotClearedForProduction": 10
   },
-  "preservation": "256 CC0 sources preserved as SHA256-verified original bytes in a GitHub Release; 10 non-CC0 original acquisitions remain in expiring artifacts. Production untouched.",
+  "preservation": "All 266 original acquisition bytes SHA256-verified and preserved: 256 CC0 in public research Release (33 ZIPs), 10 rights-conditioned in unpublished GitHub draft (3 ZIPs). Commercial production approval still independent; no old artifacts deleted.",
   "artifactIndex": [
     {
       "runId": 38038829532,
@@ -1583,9 +1588,13 @@
       "artifactId": 11665734963,
       "runId": 38043276943,
       "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
-      "masterVerified": false,
-      "backupVerification": "NOT_BACKED_UP_NON_CC0_OR_RIGHTS_HOLD",
-      "backupInPublicGitHubRelease": false
+      "masterVerified": true,
+      "backupVerification": "SHA256_VERIFIED_IN_SUCCESSFUL_GITHUB_ACTIONS_RUN_UNPUBLISHED_RELEASE_DRAFT",
+      "backupInPublicGitHubRelease": false,
+      "backupReleaseTag": "sacred-art-rights-held-draft-20261028",
+      "backupReleaseAsset": "research-hold-11665734963.zip",
+      "backupStoredAsUnpublishedDraft": true,
+      "originalResearchBytesPreserved": true
     },
     {
       "artworkId": "commons-debray-pentecost",
@@ -1594,9 +1603,13 @@
       "artifactId": 11665734963,
       "runId": 38043276943,
       "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
-      "masterVerified": false,
-      "backupVerification": "NOT_BACKED_UP_NON_CC0_OR_RIGHTS_HOLD",
-      "backupInPublicGitHubRelease": false
+      "masterVerified": true,
+      "backupVerification": "SHA256_VERIFIED_IN_SUCCESSFUL_GITHUB_ACTIONS_RUN_UNPUBLISHED_RELEASE_DRAFT",
+      "backupInPublicGitHubRelease": false,
+      "backupReleaseTag": "sacred-art-rights-held-draft-20261028",
+      "backupReleaseAsset": "research-hold-11665734963.zip",
+      "backupStoredAsUnpublishedDraft": true,
+      "originalResearchBytesPreserved": true
     },
     {
       "artworkId": "commons-baroncelli-pentecost",
@@ -1605,9 +1618,13 @@
       "artifactId": 11665734963,
       "runId": 38043276943,
       "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
-      "masterVerified": false,
-      "backupVerification": "NOT_BACKED_UP_NON_CC0_OR_RIGHTS_HOLD",
-      "backupInPublicGitHubRelease": false
+      "masterVerified": true,
+      "backupVerification": "SHA256_VERIFIED_IN_SUCCESSFUL_GITHUB_ACTIONS_RUN_UNPUBLISHED_RELEASE_DRAFT",
+      "backupInPublicGitHubRelease": false,
+      "backupReleaseTag": "sacred-art-rights-held-draft-20261028",
+      "backupReleaseAsset": "research-hold-11665734963.zip",
+      "backupStoredAsUnpublishedDraft": true,
+      "originalResearchBytesPreserved": true
     },
     {
       "artworkId": "met-437542",
@@ -2539,9 +2556,13 @@
       "artifactId": 11669761734,
       "runId": 38052449434,
       "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
-      "masterVerified": false,
-      "backupVerification": "NOT_BACKED_UP_NON_CC0_OR_RIGHTS_HOLD",
-      "backupInPublicGitHubRelease": false
+      "masterVerified": true,
+      "backupVerification": "SHA256_VERIFIED_IN_SUCCESSFUL_GITHUB_ACTIONS_RUN_UNPUBLISHED_RELEASE_DRAFT",
+      "backupInPublicGitHubRelease": false,
+      "backupReleaseTag": "sacred-art-rights-held-draft-20261028",
+      "backupReleaseAsset": "research-hold-11669761734.zip",
+      "backupStoredAsUnpublishedDraft": true,
+      "originalResearchBytesPreserved": true
     },
     {
       "artworkId": "kress-k2016",
@@ -2550,9 +2571,13 @@
       "artifactId": 11669761734,
       "runId": 38052449434,
       "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
-      "masterVerified": false,
-      "backupVerification": "NOT_BACKED_UP_NON_CC0_OR_RIGHTS_HOLD",
-      "backupInPublicGitHubRelease": false
+      "masterVerified": true,
+      "backupVerification": "SHA256_VERIFIED_IN_SUCCESSFUL_GITHUB_ACTIONS_RUN_UNPUBLISHED_RELEASE_DRAFT",
+      "backupInPublicGitHubRelease": false,
+      "backupReleaseTag": "sacred-art-rights-held-draft-20261028",
+      "backupReleaseAsset": "research-hold-11669761734.zip",
+      "backupStoredAsUnpublishedDraft": true,
+      "originalResearchBytesPreserved": true
     },
     {
       "artworkId": "kress-k1782",
@@ -2561,9 +2586,13 @@
       "artifactId": 11669761734,
       "runId": 38052449434,
       "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
-      "masterVerified": false,
-      "backupVerification": "NOT_BACKED_UP_NON_CC0_OR_RIGHTS_HOLD",
-      "backupInPublicGitHubRelease": false
+      "masterVerified": true,
+      "backupVerification": "SHA256_VERIFIED_IN_SUCCESSFUL_GITHUB_ACTIONS_RUN_UNPUBLISHED_RELEASE_DRAFT",
+      "backupInPublicGitHubRelease": false,
+      "backupReleaseTag": "sacred-art-rights-held-draft-20261028",
+      "backupReleaseAsset": "research-hold-11669761734.zip",
+      "backupStoredAsUnpublishedDraft": true,
+      "originalResearchBytesPreserved": true
     },
     {
       "artworkId": "met-438462",
@@ -2585,9 +2614,13 @@
       "artifactId": 11669761734,
       "runId": 38052449434,
       "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
-      "masterVerified": false,
-      "backupVerification": "NOT_BACKED_UP_NON_CC0_OR_RIGHTS_HOLD",
-      "backupInPublicGitHubRelease": false
+      "masterVerified": true,
+      "backupVerification": "SHA256_VERIFIED_IN_SUCCESSFUL_GITHUB_ACTIONS_RUN_UNPUBLISHED_RELEASE_DRAFT",
+      "backupInPublicGitHubRelease": false,
+      "backupReleaseTag": "sacred-art-rights-held-draft-20261028",
+      "backupReleaseAsset": "research-hold-11669761734.zip",
+      "backupStoredAsUnpublishedDraft": true,
+      "originalResearchBytesPreserved": true
     },
     {
       "artworkId": "kress-k2027",
@@ -2596,9 +2629,13 @@
       "artifactId": 11669761734,
       "runId": 38052449434,
       "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
-      "masterVerified": false,
-      "backupVerification": "NOT_BACKED_UP_NON_CC0_OR_RIGHTS_HOLD",
-      "backupInPublicGitHubRelease": false
+      "masterVerified": true,
+      "backupVerification": "SHA256_VERIFIED_IN_SUCCESSFUL_GITHUB_ACTIONS_RUN_UNPUBLISHED_RELEASE_DRAFT",
+      "backupInPublicGitHubRelease": false,
+      "backupReleaseTag": "sacred-art-rights-held-draft-20261028",
+      "backupReleaseAsset": "research-hold-11669761734.zip",
+      "backupStoredAsUnpublishedDraft": true,
+      "originalResearchBytesPreserved": true
     },
     {
       "artworkId": "met-442491",
@@ -2984,9 +3021,13 @@
       "artifactId": 11672059807,
       "runId": 38058367058,
       "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
-      "masterVerified": false,
-      "backupVerification": "NOT_BACKED_UP_NON_CC0_OR_RIGHTS_HOLD",
-      "backupInPublicGitHubRelease": false
+      "masterVerified": true,
+      "backupVerification": "SHA256_VERIFIED_IN_SUCCESSFUL_GITHUB_ACTIONS_RUN_UNPUBLISHED_RELEASE_DRAFT",
+      "backupInPublicGitHubRelease": false,
+      "backupReleaseTag": "sacred-art-rights-held-draft-20261028",
+      "backupReleaseAsset": "research-hold-11672059807.zip",
+      "backupStoredAsUnpublishedDraft": true,
+      "originalResearchBytesPreserved": true
     },
     {
       "artworkId": "commons-el-paso-sacred-heart-retablo",
@@ -2995,9 +3036,13 @@
       "artifactId": 11672059807,
       "runId": 38058367058,
       "artifactAvailability": "METADATA_AVAILABLE_NOT_DOWNLOADED",
-      "masterVerified": false,
-      "backupVerification": "NOT_BACKED_UP_NON_CC0_OR_RIGHTS_HOLD",
-      "backupInPublicGitHubRelease": false
+      "masterVerified": true,
+      "backupVerification": "SHA256_VERIFIED_IN_SUCCESSFUL_GITHUB_ACTIONS_RUN_UNPUBLISHED_RELEASE_DRAFT",
+      "backupInPublicGitHubRelease": false,
+      "backupReleaseTag": "sacred-art-rights-held-draft-20261028",
+      "backupReleaseAsset": "research-hold-11672059807.zip",
+      "backupStoredAsUnpublishedDraft": true,
+      "originalResearchBytesPreserved": true
     },
     {
       "artworkId": "nga-50726",
