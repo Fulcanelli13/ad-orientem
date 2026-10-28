@@ -3,10 +3,23 @@
  * No global DOM hooks; the existing PRAY runtime retains navigation/gesture ownership.
  */
 import {personalDailyOptions} from "./daily-personal-rule.js";
+/** Provenance reflects the exact visible language and distinguishes the
+ * printed witness from Latin readings supplied editorially by Ad Orientem. */
+export function dailyPersonalProvenance(row,L=(en)=>en){
+ if(row.replacementId)return L("Alternative · complete historical source-language prayer","Variante · prière historique complète dans sa langue d’origine");
+ if(row.optional)return L("Optional · complete historical source-language prayer","Facultative · prière historique complète dans sa langue d’origine");
+ if(row.sourceStatus==="AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"){
+  return row.language==="la"
+   ?L("Editorial Latin translation · not printed Latin of St Pius X","Traduction latine éditoriale · non tirée d’un original latin de saint Pie X")
+   :L("St Pius X source · Latin version on tap is an editorial translation","Source saint Pie X · version latine accessible par toucher : traduction éditoriale");
+ }
+ if(row.sourceStatus?.startsWith("STANDARD_TRADITIONAL"))
+  return L("Traditional Latin parallel · not attributed to the printed St Pius X edition","Parallèle latin traditionnel · non attribué à l’édition imprimée de saint Pie X");
+ return L("Historical source reading · consult the edition reference","Texte issu d’une source historique · consulter la référence de l’édition");
+}
+
 export function personalDailyPrayerCard(row,plan,{esc,L,prayerParagraphs,source}){
- const note=row.optional?L("Optional complete preconciliar prayer","Prière traditionnelle complète et facultative"):
- row.sourceStatus?.startsWith("STANDARD_TRADITIONAL")?L("Traditional Latin form; no edition-original claim","Forme latine traditionnelle ; non attribuée à l'édition"):
- L("Source edition; translations individually labelled in research","Édition de référence ; traductions attribuées dans la recherche");
+ const note=dailyPersonalProvenance(row,L);
  const body=row.text?prayerParagraphs(row.text):
  '<p class="aoTP381TextParagraph">'+esc(L("Exact text unavailable in the selected language; nothing substituted.","Texte exact indisponible dans cette langue ; aucune substitution."))+'</p>';
  const twoFaces=Boolean(row.text&&row.latinText&&row.language!=="la"&&row.text!==row.latinText);
@@ -59,7 +72,11 @@ export function dailyPersonalSettings(plan,prefs,{esc,L,expanded=false}){
  }).join("");
  const explanation=L("The St Pius X recitation order is the baseline. Complete additional prayers may be added or removed, and saved on this device. Only source-language texts are offered; no English/French manual prayer is presented as a Latin translation.","L’ordre de saint Pie X demeure la base. Ajoutez ou retirez des prières complètes, avec sauvegarde locale. Les prières des autres manuels ne sont présentées que dans leur langue d’origine.");
  const adjacent=plan.edition==="1913"&&part==="evening"?'<p>'+esc(L("De profundis and Jesus–Joseph–Mary follow the 1913 printed order as separate, optional devotions; they are not part of the obligatory core.","Le De profundis et les invocations à Jésus, Joseph et Marie suivent la règle de 1913 comme dévotions facultatives, hors du noyau."))+'</p>':"";
- return '<details class="aoDailyPersonalSettings" data-ao-personal-settings '+(expanded?"open":"")+'> <summary>'+esc(L("Customize & save my prayers","Personnaliser et enregistrer mes prières"))+'</summary>'+
+ const editionSummary="St Pius X · "+prefs.edition;
+ const languageSummary={la:"Latin",en:L("English","Anglais"),fr:L("French","Français")}[prefs.language]||"English";
+ const modeSummary=prefs.mode==="expanded"?L("Expanded","Enrichie"):L("Standard","Standard");
+ const selectedSummary=prefs.extras[part].length&&prefs.mode==="expanded"?" · +"+prefs.extras[part].length:"";
+ return '<details class="aoDailyPersonalSettings" data-ao-personal-settings '+(expanded?"open":"")+'> <summary><span class="aoDailyPersonalSettingsLabel">'+esc(L("Customize my prayers","Personnaliser mes prières"))+'</span><small class="aoDailyPersonalSettingsCurrent">'+esc(editionSummary+" · "+languageSummary+" · "+modeSummary+selectedSummary)+'</small></summary>'+
  '<div class="aoDailyPersonalSettingsBody">'+ed+lang+mode+'<p class="aoDailyPersonalNote">'+esc(explanation)+'</p>'+
  group(L("Additional complete prayers","Prières complètes facultatives"),adjacent+(items||'<p>'+esc(L("No original-language manual prayers in this reading language. Pius X remains available in all three languages.","Aucune prière de manuel dans cette langue. Saint Pie X demeure disponible en trois langues."))+'</p>'))+
  '<button type="button" class="aoDailyPersonalReset" data-tp381-personal-action="reset" data-tp381-personal-value="">'+esc(L("Restore St Pius X defaults","Rétablir les choix de saint Pie X"))+'</button></div></details>';
