@@ -18,6 +18,7 @@ const root=resolve(args[1]);
 const locations={
   main:resolve(root,"preview/mass"),
   advent:resolve(root,"advent-vespers/preview/mass"),
+  souls:resolve(root,"all-souls/preview/mass"),
 };
 for(const dir of Object.values(locations))
   if(!existsSync(join(dir,"preview-manifest.json")))throw Error("OFFICE_PHONE_MISSING_PREVIEW:"+dir);
@@ -47,6 +48,8 @@ const cases=[
   {width:390,height:844,isMobile:true,hasTouch:true,bucket:"main",file:"2026-11-01-vespers-fr.html"},
   {width:390,height:844,isMobile:true,hasTouch:true,bucket:"advent",file:"2026-11-28-vespers-en.html"},
   {width:390,height:844,isMobile:true,hasTouch:true,bucket:"advent",file:"2026-11-29-vespers-fr.html"},
+  {width:320,height:568,isMobile:true,hasTouch:true,bucket:"souls",file:"2026-11-02-prime-en.html"},
+  {width:390,height:844,isMobile:true,hasTouch:true,bucket:"souls",file:"2026-11-02-vespers-fr.html"},
   {width:768,height:1024,isMobile:false,hasTouch:true,bucket:"main",file:"2026-10-31-vespers-en.html"},
   {width:1200,height:900,isMobile:false,hasTouch:false,bucket:"main",file:"2026-11-03-matins-fr.html"},
 ];
@@ -112,6 +115,12 @@ try{
     assert.equal(await root.getAttribute("data-office-card-index"),"0");
     await root.locator("[data-office-settings-toggle]").click();
     assert.equal(await root.locator("[data-office-settings-menu]").isVisible(),true);
+    if(bucket==="souls"&&file.includes("-prime-en.")){
+      assert.equal(await root.locator(".aoOfficeLocaleUnavailable").count(),1,
+        file+" missing French must not have a clickable link");
+      assert.equal(await root.locator('.aoOfficeLocaleControls a[href*="-fr.html"]').count(),0,
+        file+" blocked French page must not be linked");
+    }
     await root.locator('[data-office-mode-select="MISSAL"]').click();
     assert.equal(await root.getAttribute("data-office-mode"),"MISSAL");
     assert.equal(await root.locator('.aoOfficeMassCard:not([hidden]) [data-office-face="LIVE"]').isVisible(),false);
@@ -143,9 +152,10 @@ try{
     await root.locator("[data-office-hours-toggle]").click();
     assert.equal(await root.locator("[data-office-hours-menu]").isVisible(),false);
     if(bucket==="advent"){
-      // Only Vespers exists for these dates. Local navigation must not
-      // advertise missing research documents for the other seven hours.
       assert.equal(await root.locator("[data-office-hour-link]").count(),1,file);
+    }else if(bucket==="souls"&&file.endsWith("-fr.html")){
+      // The five source-incomplete French hours are not navigable.
+      assert.equal(await root.locator("[data-office-hour-link]").count(),3,file);
     }else{
       assert.equal(await root.locator("[data-office-hour-link]").count(),8,file);
     }
