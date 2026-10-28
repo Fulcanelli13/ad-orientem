@@ -1,7 +1,17 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {createHash} from "node:crypto";
 const read=path=>JSON.parse(readFileSync(path,"utf8"));
 const r=read("data/research/prayer-sacred-art-pristine-master-registry-20261028.v1.json");
+for(const tag of ["editorial22","readiness22"]){
+ const evidence=r.evidence_sources.find(x=>x.key===tag);
+ assert.ok(evidence,"Missing historical source anchor "+tag);
+ const bytes=readFileSync(evidence.path);
+ const header=Buffer.from("blob "+bytes.length+"\0","utf8");
+ const sha=createHash("sha1").update(header).update(bytes).digest("hex");
+ assert.equal(sha,evidence.git_blob_sha,
+  "Canonical main source diverged since 28 Oct bulk reconciliation: "+tag);
+}
 const final=read("data/research/module-hero-editorial-decision-ledger-2026-10-26.review19.json");
 const old=read("data/research/module-hero-artwork-production-readiness-2026-10-26.audit1.json");
 const decision=read("data/calendar/prayer-31-section-review-reconciliation-20261028.v1.json");
