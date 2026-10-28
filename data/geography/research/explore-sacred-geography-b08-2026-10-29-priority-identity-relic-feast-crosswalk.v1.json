@@ -6,14 +6,15 @@
   "target_branch": "research/major-sacred-sites-coverage-reconciliation-20261015",
   "reconciliation": {
     "main_registry_path": "data/geography/seed-registry.v1.json",
-    "main_registry_blob_sha": "070bf5301445845b28cbc8abc02b29ffecbc56ca",
-    "main_place_count": 512,
+    "main_registry_blob_sha": "c6357b4bbabf15dbf5611e9abb8344a75a127a83",
+    "main_place_count": 516,
     "previous_b07_place_count": 512,
-    "delta_since_b07": 0,
+    "delta_since_b07": 4,
     "prior_philippines_checkpoint": "347 Places / 20 verified research / 4 provisional / 1 held / 1 Quiapo enrichment: historical, not additive",
     "prior_latest_batch": "B07",
     "r70_candidate_count": 750,
-    "source_queue": "sacred-geography-r70-worldwide-coverage-queue.v1.json"
+    "source_queue": "sacred-geography-r70-worldwide-coverage-queue.v1.json",
+    "concurrent_registry_advance": "Main advanced from 512 to 516 during this research execution. Four unrelated new canonical Places: place:PL:lichen-marian-basilica, place:MX:ocotlan-basilica-tlaxcala, place:US:san-francisco-de-asis-ranchos-taos, place:AR:catamarca-cathedral-valle. These are not B08 promotions."
   },
   "counts": {
     "dossiers": 10,
