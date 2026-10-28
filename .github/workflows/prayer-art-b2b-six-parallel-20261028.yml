@@ -1,0 +1,89 @@
+name: Prayer Sacred Art - B2B six parallel native source checks
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/prayer-art-b2b-six-parallel-20261028.yml
+      - scripts/art/prayer-art-b2b-six-originals-parallel-20261028.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-b2b-parallel-source-intake-20261028
+  cancel-in-progress: false
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+          - reni-michael
+          - tiepolo-station12
+          - tiepolo-prado-descent
+          - teniers-agony-antwerp
+          - paired-hearts-lopez
+          - vandyck-holy-spirit
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow (for byte and corner evidence only)
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Source-specific isolated full original acquisition, no transforms
+        run: python scripts/art/prayer-art-b2b-six-originals-parallel-20261028.py ${{ matrix.target }}
+      - name: Pass each native file to permanent repository archive step
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.target }}
+          path: assets/staged/prayer-art-bulk-acquisition-b2b-20261028/${{ matrix.target }}/
+          retention-days: 2
+          if-no-files-found: warn
+  persist:
+    needs: acquire
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: "*"
+          path: assets/staged/prayer-art-bulk-acquisition-b2b-20261028/
+          merge-multiple: false
+      - name: Summarise six independent source checks
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          p=pathlib.Path("assets/staged/prayer-art-bulk-acquisition-b2b-20261028")
+          rows=[]
+          for f in sorted(p.glob("*/source-result.json")):
+            rows.append(json.loads(f.read_text()))
+          summary={}
+          for x in rows:
+            summary[x["status"]]=summary.get(x["status"],0)+1
+          out={"schema":"AO_PRAYER_B2B_SIX_PARALLEL_SOURCE_RESULTS_V1","cases":rows,
+               "attempted":len(rows),"summary":summary,"source_bytes_retained_in_git":True,
+               "production_releases":0,"pristine_certifications":0,"cost_eur":0}
+          (p/"parallel-results.json").write_text(json.dumps(out,indent=2,ensure_ascii=False)+"\n")
+          print(json.dumps({"attempted":len(rows),"summary":summary,"released":0}))
+          if len(rows)<6:raise SystemExit("Some worker artifacts are absent: no complete batch claim")
+          PY
+      - name: Preserve research originals, source provenance and native QA in Git
+        run: |
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/staged/prayer-art-bulk-acquisition-b2b-20261028/
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(prayer art): archive six independently retrieved exact artwork photo sources"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028
