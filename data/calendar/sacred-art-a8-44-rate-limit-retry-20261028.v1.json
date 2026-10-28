@@ -1,0 +1,48 @@
+{
+  "schema": "AO_A8_TWO_WIKIMEDIA_RATE_LIMIT_RETRY_V1",
+  "asOf": "2026-10-28",
+  "records": [
+    {
+      "artwork_id": "ART-hilippe-de-hampaigne-aint-ugustine",
+      "title": "Saint Augustine",
+      "source_commons": "https://commons.wikimedia.org/wiki/File:Saint_Augustine_by_Philippe_de_Champaigne.jpg",
+      "previous_error": "HTTP_429",
+      "expected_sha256": "71aacc33afedd79c4fd6f51805989d444708cf8a58fc5c2662f63d8c583ceeba",
+      "new_original_bytes_downloaded": true,
+      "production_ready": false,
+      "current_image_sha256": "71aacc33afedd79c4fd6f51805989d444708cf8a58fc5c2662f63d8c583ceeba",
+      "sha256_matches_old_archive": true,
+      "dimensions": [
+        3135,
+        4000
+      ],
+      "current_size_matches_source_metadata": true,
+      "result": "SHA_MATCH"
+    },
+    {
+      "artwork_id": "ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+      "title": "Descent from the Cross \u2014 Prado Passion series",
+      "source_commons": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+      "previous_error": "HTTP_429",
+      "expected_sha256": "1cb5d8a9f420eddd32ffabc4713a49d27a6f39e664d2495c5852a34fa68723e7",
+      "new_original_bytes_downloaded": true,
+      "production_ready": false,
+      "current_image_sha256": "1cb5d8a9f420eddd32ffabc4713a49d27a6f39e664d2495c5852a34fa68723e7",
+      "sha256_matches_old_archive": true,
+      "dimensions": [
+        2705,
+        2362
+      ],
+      "current_size_matches_source_metadata": true,
+      "result": "SHA_MATCH"
+    }
+  ],
+  "summary": {
+    "attempted": 2,
+    "current_sha_exact_matches": 2,
+    "still_held": 0,
+    "app_images_released": 0,
+    "fee_eur": 0
+  },
+  "policy": "Single retry, no repeated HTTP429, source-only hash verification; no user painting decisions changed."
+}

@@ -1,0 +1,86 @@
+{
+  "schema": "AO_SACRED_ART_APPROVED_LOW_RES_PHOTO_QUAL_HOLDS_V1",
+  "date": "2026-10-28",
+  "scope": "Research-only photographed alternative exclusions; artwork selections remain frozen and approved",
+  "records": [
+    {
+      "artwork_id": "ART-ean-estout-entecost",
+      "artwork": "Jean II Restout — Pentecost (1732)",
+      "museum": "Louvre",
+      "accession": "INV 20303",
+      "prior_source_dimensions": [
+        1240,
+        730
+      ],
+      "alternative_page": "https://commons.wikimedia.org/wiki/File:Restout_-_La_Pentec%C3%B4te_01.jpg",
+      "alternative_dimensions": [
+        4037,
+        2444
+      ],
+      "alternative_source_rights": "Commons PD-Art/PDM page; photographic EXIF also records photographer's Creative Commons attribution statement, reconcile exact file rights if reused",
+      "same_physical_original": "CONFIRMED_LOUVRE_INV20303",
+      "photographic_assessment": "REJECT_ALTERNATIVE_PHOTOGRAPH_AS_MASTER_VISIBLE_FRAME_AND_GLARE",
+      "visual_findings": "Large golden frame visibly retained along all four sides, extensive glazed reflections/glare over upper painting; no artistic image substitution. Photo is unsuitable despite excellent pixel count.",
+      "photo_only_rejected": true,
+      "painting_approval_unchanged": true,
+      "needed": "Full painted-surface no-frame no-glare alternative, clean source provenance and licence. Do not treat trimming as automatic restoration."
+    },
+    {
+      "artwork_id": "B01-MARK-RENI-GENOA",
+      "artwork": "Guido Reni — Saint Mark the Evangelist",
+      "museum": "Palazzo Rosso, Genoa",
+      "prior_source_dimensions": [
+        1309,
+        1435
+      ],
+      "alternatives": [
+        {
+          "source_page": "https://commons.wikimedia.org/wiki/File:San_Marco_Evangelista_di_Guido_Reni.JPG",
+          "dimensions": [
+            4352,
+            3264
+          ],
+          "photographer": "Mongolo1984 (Matteo Bimonte)",
+          "rights": "CC BY-SA 3.0",
+          "photo_assessment": "REJECT_FOR_FULL_HERO_PHYSICAL_GILT_FRAME_AND_GALLERY_WALL_VISIBLE"
+        },
+        {
+          "source_page": "https://commons.wikimedia.org/wiki/File:Guido_reni,_san_marco_evangelista,_genova.JPG",
+          "dimensions": [
+            2154,
+            2304
+          ],
+          "photographer": "Sailko",
+          "rights": "CC BY-SA 3.0",
+          "photo_assessment": "REJECT_AS_FRAME_FREE_MASTER; all four gilt frame edges retained, despite tighter crop"
+        }
+      ],
+      "same_physical_original": "PALAZZO_ROSSO_INSTITUTION_CONFIRMED_FROM_FILES",
+      "photo_only_rejected": true,
+      "painting_approval_unchanged": true,
+      "needed": "A clean complete work photograph without any external gilt frame; don't upsample"
+    },
+    {
+      "artwork_id": "ART-ean-ouvenet-aising-of-azarus",
+      "artwork": "Jean Jouvenet — The Raising of Lazarus",
+      "frozen_photo_source": "https://commons.wikimedia.org/wiki/File:The_Raising_of_Lazarus_LACMA_M.2000.179.4.jpg",
+      "physical_original": "LACMA M.2000.179.4",
+      "candidate_to_avoid": "https://commons.wikimedia.org/wiki/File:Jouvenet_-_La_R%C3%A9surrection_de_Lazare_01.jpg",
+      "other_physical_original": "Louvre INV 5489",
+      "photo_assessment": "DISALLOW_DIFFERENT_PHYSICAL_ARTWORK_SUBSTITUTION",
+      "photo_only_rejected": true,
+      "painting_approval_unchanged": true,
+      "needed": "Find exact LACMA accession M.2000.179.4 licensed image at higher pixels. A 4037px Louvre photograph is not the same painting."
+    }
+  ],
+  "strict_rules": [
+    "Do not reject or replace user-selected artwork based on rejecting an inferior photo",
+    "Visible museum frame, mounting hardware, glazing reflections, wall and room are not acceptable in the final master",
+    "A higher pixel count does not imply higher usable photographic quality",
+    "The user excludes Prado as preferred photo source and refuses paid access or permission contacts",
+    "Do not substitute matching artist and subject across distinct institution/accession objects"
+  ],
+  "production_images_approved": 0,
+  "editorial_changes": 0,
+  "cost_eur": 0
+}

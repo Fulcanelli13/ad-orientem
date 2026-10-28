@@ -1,0 +1,37 @@
+name: Sacred Art 24 - preserve audited source candidates in research branch
+
+on:
+  push:
+    branches:
+      - research/prayer-existing-sacred-art-mosaic-20261028
+    paths:
+      - .github/workflows/sacred-art-24-highres-persist-reviewed-candidates-20261028.yml
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  persist-existing-research-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout permitted research branch
+        uses: actions/checkout@v4
+        with:
+          ref: research/prayer-existing-sacred-art-mosaic-20261028
+      - name: Reuse completed metadata-only run; no new image acquisition
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p artifacts/24-source-input
+          gh run download 40668302895 --repo Fulcanelli13/ad-orientem --name ao-art-24-highres-candidates-40668302895 --dir artifacts/24-source-input
+          python scripts/research/persist_sacred_art_24_candidate_research_20261028.py
+      - name: Commit only 24-work source metadata, never masters or app assets
+        run: |
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-approved24-highres-source-candidates-20261028.v1.json
+          git diff --cached --check
+          git commit -m "research(art): archive 24-work search leads with framed and wrong-artwork holds"
+          git push origin HEAD:research/prayer-existing-sacred-art-mosaic-20261028

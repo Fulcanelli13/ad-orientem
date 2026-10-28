@@ -1,0 +1,157 @@
+{
+  "schema": "AO_PRAYER_WAVE1_POST_CI_NATIVE_BYTE_EVIDENCE_V1",
+  "asOf": "2026-10-28",
+  "recorded_from": {
+    "workflow": "Prayer Wave 1 - native original byte verification",
+    "run_id": 40685269314,
+    "run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40685269314",
+    "head_sha": "1fd7d9481a1efbf8b07518eb7ea57d2ad3d36631",
+    "conclusion": "success",
+    "source_manifest_git_blob_sha": "e583b03705f6c02d710a2f6145809f74e48361b6"
+  },
+  "scope": {
+    "editorial_primary_selected": 6,
+    "github_staged_native_sources_present": 5,
+    "native_byte_sha256_and_gitblob_verified": 5,
+    "evening_native_master_present": 0,
+    "human_photo_quality_approved": 0,
+    "responsive_crops_approved": 0,
+    "app_images_released": 0,
+    "cost_eur": 0
+  },
+  "immutable": [
+    "117 existing decisions preserved",
+    "31-section placement reconciliation unchanged",
+    "Six final primary artworks unchanged",
+    "Morlete Ruiz Sacred Heart unreviewed placement still separately protected",
+    "No paid rights, outreach, photo substitutions, production images or runtime edits"
+  ],
+  "entries": [
+    {
+      "module_id": "morning",
+      "editorial_primary": "The Song of the Lark",
+      "native_asset": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "ref": "research/module-hero-rescue-20261026",
+        "path": "assets/staged/module-hero-rescue/morning.jpg",
+        "expected_git_blob_sha": "eb9497278df2630a4c05642eb2c1b63eaefc9084",
+        "sha256_verified_by_workflow": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+        "native_size_verified_bytes": 2080000,
+        "dimensions_verified": [
+          2548,
+          3300
+        ],
+        "status": "PASS_FILE_INTEGRITY_ONLY"
+      },
+      "photo_quality_status": "HOLD_NOT_HUMAN_CERTIFIED",
+      "image_rights_status": "SOURCE_FILE_RIGHTS_HOLD",
+      "perimeter_status": "UNREVIEWED",
+      "responsive_crop_status": "UNREVIEWED",
+      "photoresearch_note": "Original color, border and tonal sharpness need manual signoff; existing preview is not acceptance evidence.",
+      "production_allowed": false
+    },
+    {
+      "module_id": "evening",
+      "editorial_primary": "The Prayer",
+      "native_asset": null,
+      "photo_quality_status": "HOLD_NOT_HUMAN_CERTIFIED",
+      "image_rights_status": "ART_UK_PHOTO_REUSE_HOLD",
+      "perimeter_status": "NO_HIGH_RES_ORIGINAL",
+      "responsive_crop_status": "NOT_APPLICABLE",
+      "photoresearch_note": "Exact OP6 Wolverhampton photo found only at 898×1200 with source-specific terms unresolved; print shop is not a permitted free master; do not replace primary.",
+      "production_allowed": false
+    },
+    {
+      "module_id": "angelus",
+      "editorial_primary": "The Annunciation",
+      "native_asset": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "ref": "research/module-hero-wave2-20261026",
+        "path": "assets/staged/module-hero-wave2/angelus-met.jpg",
+        "expected_git_blob_sha": "d5e92365196b361c29e3f3d5cc8b5cca2926c2ed",
+        "sha256_verified_by_workflow": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+        "native_size_verified_bytes": 3055151,
+        "dimensions_verified": [
+          3741,
+          3658
+        ],
+        "status": "PASS_FILE_INTEGRITY_ONLY"
+      },
+      "photo_quality_status": "HOLD_NOT_HUMAN_CERTIFIED",
+      "image_rights_status": "MET_OPEN_ACCESS_CC0_OBJECT",
+      "perimeter_status": "EXTERNAL_OAK_VISIBLE",
+      "responsive_crop_status": "PORTRAIT_LILIES_AND_WIDE_DOVE_LILIES_RISK",
+      "photoresearch_note": "Explicit painted-surface boundary on Met object differs from full oak support. Full-image review and protected crop required.",
+      "production_allowed": false
+    },
+    {
+      "module_id": "rosary",
+      "editorial_primary": "Madonna del Rosario",
+      "native_asset": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "ref": "research/module-hero-pd-masters-20261026",
+        "path": "assets/staged/module-hero-open-photo-candidates-20261027/module-rosary-lotto-original.jpg",
+        "expected_git_blob_sha": "2d66e9d970b8f93a7e63acc49b97e50eccf1d853",
+        "sha256_verified_by_workflow": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
+        "native_size_verified_bytes": 3355634,
+        "dimensions_verified": [
+          1772,
+          2652
+        ],
+        "status": "PASS_FILE_INTEGRITY_ONLY"
+      },
+      "photo_quality_status": "HOLD_NOT_HUMAN_CERTIFIED",
+      "image_rights_status": "SAILKO_CC_BY_3_ATTRIBUTION",
+      "perimeter_status": "MOUNTING_HARDWARE_VISIBLE",
+      "responsive_crop_status": "KEEP_ALL_FIFTEEN_MYSTERY_ROUNDELS",
+      "photoresearch_note": "Full photo 1772×2652 has top mounting hardware; 2304×3456 alternative is only a detail and must not replace full painting.",
+      "production_allowed": false
+    },
+    {
+      "module_id": "confession",
+      "editorial_primary": "The Return of the Prodigal Son",
+      "native_asset": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "ref": "research/module-hero-museum-photos-20261026",
+        "path": "assets/staged/module-hero-masters/confession.jpg",
+        "expected_git_blob_sha": "c0904b5d2a6a4bd99b224194217ce45c6a9fe676",
+        "sha256_verified_by_workflow": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+        "native_size_verified_bytes": 3022309,
+        "dimensions_verified": [
+          4096,
+          3712
+        ],
+        "status": "PASS_FILE_INTEGRITY_ONLY"
+      },
+      "photo_quality_status": "HOLD_NOT_HUMAN_CERTIFIED",
+      "image_rights_status": "NGA_OPEN_ACCESS_PUBLIC_DOMAIN",
+      "perimeter_status": "APPARENTLY_FRAMELESS_PENDING_PERSON_REVIEW",
+      "responsive_crop_status": "WIDE_LOSES_SMALL_DOG",
+      "photoresearch_note": "Square and portrait preliminary crop point tests pass; 16:9 cover is not eligible unless the small dog is preserved.",
+      "production_allowed": false
+    },
+    {
+      "module_id": "seven-sorrows",
+      "editorial_primary": "Virgin of the Seven Sorrows (Mare de Déu dels Set Dolors)",
+      "native_asset": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "ref": "research/module-hero-museum-photos-20261026",
+        "path": "assets/staged/module-hero-masters/sorrows.jpg",
+        "expected_git_blob_sha": "f57231e8a7539a70bcb19a33765348f86572a511",
+        "sha256_verified_by_workflow": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+        "native_size_verified_bytes": 1454827,
+        "dimensions_verified": [
+          2220,
+          3000
+        ],
+        "status": "PASS_FILE_INTEGRITY_ONLY"
+      },
+      "photo_quality_status": "HOLD_NOT_HUMAN_CERTIFIED",
+      "image_rights_status": "COMMONS_PD_ART_RECHECK_FILE_TERMS",
+      "perimeter_status": "UNREVIEWED",
+      "responsive_crop_status": "PRESERVE_SEVEN_SWORDS_AND_FULL_FIELD",
+      "photoresearch_note": "Staged 2220×3000 is checksum verified; Commons lists a larger 3250×4391 exact work source, not yet separately byte-audited.",
+      "production_allowed": false
+    }
+  ]
+}

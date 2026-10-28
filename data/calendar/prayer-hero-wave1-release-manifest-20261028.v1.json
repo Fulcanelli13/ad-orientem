@@ -1,0 +1,560 @@
+{
+  "schema": "AO_PRAYER_WAVE1_6_HERO_RELEASE_MANIFEST_V1",
+  "asOf": "2026-10-28",
+  "source": {
+    "reconciliation_path": "data/calendar/prayer-31-section-review-reconciliation-20261028.v1.json",
+    "hero_main_ledger_path": "data/research/module-hero-editorial-decision-ledger-2026-10-26.review19.json",
+    "hero_main_ledger_sha": "afb09129f52e336df64c7f1782446e7cfb6861dc",
+    "hero_main_readiness_path": "data/research/module-hero-artwork-production-readiness-2026-10-26.audit1.json",
+    "hero_main_readiness_sha": "de2c48abdf1ab226e7c7b152e30f37576e3f35b7"
+  },
+  "counts": {
+    "primary_heroes_selected": 6,
+    "old_manifest_masters_marked_acquired": 5,
+    "photo_qa_master_pass": 0,
+    "frameless_pass": 0,
+    "mobile_crops_approved": 0,
+    "app_released": 0
+  },
+  "policy": [
+    "Preserve locked primary paintings; other Keeps are alternative placements, not a randomized primary replacement.",
+    "No active runtime photo URL or production switch without exact license, full native edge, framing/painted perimeter, visual quality and responsive crop PASS.",
+    "Do not edit existing Prayer layout or breathing atmosphere; adapt to existing view slots.",
+    "No paid access, no contacting owners, no external fees, no merging this stale research branch into main without cherry-pick/reconciliation."
+  ],
+  "modules": [
+    {
+      "section": "morning",
+      "hero_register_module": "morning",
+      "runtime_route_id": "pray.morning_evening",
+      "route_origin": "main src/pray/lazy-module-registry.js",
+      "runtime_surface": "daily-morning",
+      "editorial_primary": {
+        "title": "The Song of the Lark",
+        "artist": "Jules Breton",
+        "artwork_id": "new:jules-breton-song-of-the-lark-artic-94841",
+        "source_url": "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+        "user_final": true
+      },
+      "latest_review_keeps": [
+        {
+          "artwork_id": "morning--primary",
+          "title": "The Song of the Lark",
+          "artist": "Jules Breton",
+          "source_quality_hint": "ARCHIVED_SOURCE"
+        }
+      ],
+      "photo": {
+        "existing_master_acquired_by_previous_manifest": true,
+        "original_sha256_recorded": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+        "staged_original_path": "assets/staged/module-hero-rescue/morning.jpg",
+        "rights_claim": "Commons file terms to verify; AIC official artwork is public domain",
+        "source_status": "master_rights_pending",
+        "quality_verdict": "NOT_RELEASED",
+        "framing_pass": false,
+        "responsive_crop_approved": false,
+        "app_release": "BLOCKED",
+        "source_repo_file": {
+          "repository": "Fulcanelli13/ad-orientem",
+          "ref": "research/module-hero-rescue-20261026",
+          "path": "assets/staged/module-hero-rescue/morning.jpg",
+          "git_blob_sha": "eb9497278df2630a4c05642eb2c1b63eaefc9084",
+          "repo_listing_bytes": 2080000,
+          "previously_reported_sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+          "previously_reported_dimensions": [
+            2548,
+            3300
+          ],
+          "git_path_verified": "YES_BY_DIRECTORY_LISTING",
+          "byte_level_recomputed_this_pass": false,
+          "photo_release_cleared": false
+        },
+        "legacy_staged_original_path": "assets/staged/module-hero-rescue/morning.jpg",
+        "staged_original_ref": "research/module-hero-rescue-20261026"
+      },
+      "blockers": [
+        "SOURCE_PHOTOGRAPHIC_QUALITY_NOT_CERTIFIED",
+        "EXTERNAL_FRAME_AND_PAINTED_BOUNDARY_GATE",
+        "RESPONSIVE_FOCAL_CROP_NOT_APPROVED",
+        "SOURCE_RIGHTS_OR_APP_RELEASE_NOT_CLEARED"
+      ],
+      "asset_id": null,
+      "approved_crops": {
+        "portrait": null,
+        "landscape": null
+      },
+      "code_activated": false,
+      "photo_source_recheck": {
+        "source_page": "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+        "corroboration": "Institutional artwork record pinned in existing hero ledger; direct institutional photo-file licence and native-byte review not independently closed in this pass.",
+        "source_photo_rights": "HOLD_EXACT_FILE",
+        "photo_master_state": "PREVIOUS_MANIFEST_SHA_ONLY",
+        "first_action": "Whole and native surface details show the original sunrise, tiny lark, fieldworker and aged canvas detail: keep whole image in a portrait/contain surface; reject any tight sky or wide cover crop cutting the bird/sun. Verify full native edges and correct ICC/colour.",
+        "mobile_critical_content": [
+          "lark/songbird context",
+          "fieldworker silhouette",
+          "horizon"
+        ],
+        "forbid": [
+          "preview-only release",
+          "frame inclusion",
+          "AI enlargement"
+        ]
+      }
+    },
+    {
+      "section": "evening",
+      "hero_register_module": "evening",
+      "runtime_route_id": "pray.morning_evening",
+      "route_origin": "main src/pray/lazy-module-registry.js",
+      "runtime_surface": "daily-evening",
+      "editorial_primary": {
+        "title": "The Prayer",
+        "artist": "Pierre-Édouard Frère",
+        "artwork_id": "artuk:op6-prayer-frere",
+        "source_url": "https://artuk.org/discover/artworks/the-prayer-19241",
+        "user_final": true
+      },
+      "latest_review_keeps": [
+        {
+          "artwork_id": "morning--millet-angelus",
+          "title": "The Angelus",
+          "artist": "Jean-François Millet",
+          "source_quality_hint": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        },
+        {
+          "artwork_id": "evening--primary",
+          "title": "The Prayer",
+          "artist": "Pierre-Édouard Frère",
+          "source_quality_hint": "RIGHTS_HOLD"
+        },
+        {
+          "artwork_id": "confession--latour-magdalen",
+          "title": "The Penitent Magdalen",
+          "artist": "Georges de La Tour",
+          "source_quality_hint": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        }
+      ],
+      "photo": {
+        "existing_master_acquired_by_previous_manifest": false,
+        "original_sha256_recorded": null,
+        "staged_original_path": null,
+        "rights_claim": "Art UK display is restricted to private/research without separate licence; Commons file PD-Art review required",
+        "source_status": "rights_conflict_manual",
+        "quality_verdict": "NOT_RELEASED",
+        "framing_pass": false,
+        "responsive_crop_approved": false,
+        "app_release": "BLOCKED",
+        "source_repo_file": null,
+        "source_repo_resolution": "NO_REUSABLE_HIGH_RES_MASTER_VERIFIED; 898x1200 Commons/Art UK reference not licensed for app."
+      },
+      "blockers": [
+        "NATIVE_PHOTO_MASTER_NOT_ACQUIRED",
+        "SOURCE_PHOTOGRAPHIC_QUALITY_NOT_CERTIFIED",
+        "EXTERNAL_FRAME_AND_PAINTED_BOUNDARY_GATE",
+        "RESPONSIVE_FOCAL_CROP_NOT_APPROVED",
+        "SOURCE_RIGHTS_OR_APP_RELEASE_NOT_CLEARED",
+        "ART_UK_PHOTO_TERMS_OR_CLEAN_FREE_SOURCE_NEEDED"
+      ],
+      "asset_id": null,
+      "approved_crops": {
+        "portrait": null,
+        "landscape": null
+      },
+      "code_activated": false,
+      "photo_source_recheck": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Pierre_Edouard_Fr%C3%A8re_(1819-1886)_-_The_Prayer_-_OP6_-_Wolverhampton_Art_Gallery.jpg",
+        "identity_page": "https://artuk.org/discover/artworks/the-prayer-19241",
+        "corroboration": "Exact OP6 Wolverhampton source appears on Wikimedia Commons at 898x1200; the Art UK reproduction licensing has not been cleared for production.",
+        "source_photo_rights": "HOLD_ART_UK_PHOTO_RIGHTS",
+        "photo_master_state": "LOW_RES_PREVIEW_ONLY",
+        "first_action": "Search only higher-res openly reusable exact Wolverhampton OP6 image (two praying children by a bed); 898x1200 CC claims or Art UK display availability do not establish high-quality photo rights for production. Preserve Frère as final hero without substitution.",
+        "mobile_critical_content": [
+          "praying figure",
+          "surrounding interior"
+        ],
+        "forbid": [
+          "paid licence",
+          "unlicensed Art UK copy",
+          "different Frère painting",
+          "synthetic upscale"
+        ]
+      }
+    },
+    {
+      "section": "angelus",
+      "hero_register_module": "angelus",
+      "runtime_route_id": "pray.angelus_regina",
+      "route_origin": "main src/pray/lazy-module-registry.js",
+      "runtime_surface": "angelus",
+      "editorial_primary": {
+        "title": "The Annunciation",
+        "artist": "Philippe de Champaigne",
+        "artwork_id": "ART-hilippe-de-hampaigne-he-nnunciation",
+        "source_url": "https://www.metmuseum.org/art/collection/search/438724",
+        "user_final": true
+      },
+      "latest_review_keeps": [
+        {
+          "artwork_id": "angelus--primary",
+          "title": "The Annunciation",
+          "artist": "Philippe de Champaigne",
+          "source_quality_hint": "ARCHIVED_SOURCE"
+        },
+        {
+          "artwork_id": "angelus--caravaggio",
+          "title": "The Annunciation",
+          "artist": "Caravaggio",
+          "source_quality_hint": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        },
+        {
+          "artwork_id": "angelus--gentileschi",
+          "title": "The Annunciation",
+          "artist": "Orazio Gentileschi",
+          "source_quality_hint": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        },
+        {
+          "artwork_id": "angelus--murillo-annunciation",
+          "title": "The Annunciation (Prado)",
+          "artist": "Bartolomé Esteban Murillo",
+          "source_quality_hint": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        }
+      ],
+      "photo": {
+        "existing_master_acquired_by_previous_manifest": true,
+        "original_sha256_recorded": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+        "staged_original_path": "assets/staged/module-hero-wave2/angelus-met.jpg",
+        "rights_claim": "Met Open Access, public domain / CC0",
+        "source_status": "museum_public_domain",
+        "quality_verdict": "NOT_RELEASED",
+        "framing_pass": false,
+        "responsive_crop_approved": false,
+        "app_release": "BLOCKED",
+        "source_repo_file": {
+          "repository": "Fulcanelli13/ad-orientem",
+          "ref": "research/module-hero-wave2-20261026",
+          "path": "assets/staged/module-hero-wave2/angelus-met.jpg",
+          "git_blob_sha": "d5e92365196b361c29e3f3d5cc8b5cca2926c2ed",
+          "repo_listing_bytes": 3055151,
+          "previously_reported_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+          "previously_reported_dimensions": [
+            3741,
+            3658
+          ],
+          "git_path_verified": "YES_BY_DIRECTORY_LISTING",
+          "byte_level_recomputed_this_pass": false,
+          "photo_release_cleared": false
+        },
+        "legacy_staged_original_path": "assets/staged/module-hero-wave2/angelus-met.jpg",
+        "staged_original_ref": "research/module-hero-wave2-20261026"
+      },
+      "blockers": [
+        "SOURCE_PHOTOGRAPHIC_QUALITY_NOT_CERTIFIED",
+        "EXTERNAL_FRAME_AND_PAINTED_BOUNDARY_GATE",
+        "RESPONSIVE_FOCAL_CROP_NOT_APPROVED",
+        "SOURCE_RIGHTS_OR_APP_RELEASE_NOT_CLEARED",
+        "RECONCILE_EXISTING_TANNER_STORYBOARD_WITH_CHAMPAIGNE_LOCKED_HERO"
+      ],
+      "asset_id": null,
+      "approved_crops": {
+        "portrait": null,
+        "landscape": null
+      },
+      "code_activated": false,
+      "photo_source_recheck": {
+        "source_page": "https://www.metmuseum.org/art/collection/search/438724",
+        "institution_accession": "2004.31",
+        "corroboration": "The Met identifies The Annunciation by Philippe de Champaigne as Public Domain and offers Download Image; overall oak-panel dimensions differ from painted-surface dimensions.",
+        "source_photo_rights": "PUBLIC_DOMAIN_MUSEUM_PAGE_CONFIRMED",
+        "photo_master_state": "EXISTING_NATIVE_SHA_INHERITED",
+        "first_action": "Check the archived 3741x3658 master byte hash and four native edges to determine exact painted boundary, then test phone portrait and wide crop without losing the dove or lilies.",
+        "mobile_critical_content": [
+          "dove",
+          "lilies",
+          "Virgin Mary",
+          "Gabriel"
+        ],
+        "forbid": [
+          "crop into painted edge",
+          "remove painted content",
+          "image replacement with Tanner storyboard"
+        ]
+      }
+    },
+    {
+      "section": "rosary",
+      "hero_register_module": "rosary",
+      "runtime_route_id": null,
+      "route_origin": "UNVERIFIED",
+      "runtime_surface": "rosary",
+      "editorial_primary": {
+        "title": "Madonna del Rosario",
+        "artist": "Lorenzo Lotto",
+        "artwork_id": "fondazione-zeri:47818",
+        "source_url": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/47818/Lotto%20Lorenzo%2C%20Madonna%20del%20Rosario",
+        "user_final": true
+      },
+      "latest_review_keeps": [
+        {
+          "artwork_id": "rosary--primary",
+          "title": "Madonna del Rosario",
+          "artist": "Lorenzo Lotto",
+          "source_quality_hint": "ARCHIVED_SOURCE"
+        },
+        {
+          "artwork_id": "rosary--caravaggio",
+          "title": "Madonna of the Rosary",
+          "artist": "Caravaggio",
+          "source_quality_hint": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        }
+      ],
+      "photo": {
+        "existing_master_acquired_by_previous_manifest": true,
+        "original_sha256_recorded": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+        "staged_original_path": "assets/staged/module-hero-open-photo-candidates-20261027/module-rosary-lotto-original.jpg",
+        "rights_claim": "Sailko photograph CC BY 3.0 Unported—requires attribution and licence link, disclose crop/transform",
+        "source_status": "attribution_required",
+        "quality_verdict": "NOT_RELEASED",
+        "framing_pass": false,
+        "responsive_crop_approved": false,
+        "app_release": "BLOCKED",
+        "source_repo_file": {
+          "repository": "Fulcanelli13/ad-orientem",
+          "ref": "research/module-hero-pd-masters-20261026",
+          "path": "assets/staged/module-hero-open-photo-candidates-20261027/module-rosary-lotto-original.jpg",
+          "git_blob_sha": "2d66e9d970b8f93a7e63acc49b97e50eccf1d853",
+          "repo_listing_bytes": 3355634,
+          "previously_reported_sha256": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
+          "previously_reported_dimensions": [
+            1772,
+            2652
+          ],
+          "git_path_verified": "YES_BY_DIRECTORY_LISTING",
+          "byte_level_recomputed_this_pass": false,
+          "photo_release_cleared": false,
+          "note": "This is Sailko full-work candidate, not retired/missing yorck branch. The earlier 595c... hash belongs to superseded historical path and remains recorded separately; candidate source hash 5563... does not automatically replace it."
+        },
+        "legacy_staged_original_path": "assets/staged/module-hero-comparisons/rosary-lotto-yorck.jpg",
+        "staged_original_ref": "research/module-hero-pd-masters-20261026"
+      },
+      "blockers": [
+        "SOURCE_PHOTOGRAPHIC_QUALITY_NOT_CERTIFIED",
+        "EXTERNAL_FRAME_AND_PAINTED_BOUNDARY_GATE",
+        "RESPONSIVE_FOCAL_CROP_NOT_APPROVED",
+        "SOURCE_RIGHTS_OR_APP_RELEASE_NOT_CLEARED",
+        "CANONICAL_PRAYER_ROUTE_NEEDS_REVIEW",
+        "LOTT0_SOURCE_HARDWARE_OR_INCOMPLETE_DETAIL_PHOTO; FINAL_WHOLE_PAINTING"
+      ],
+      "asset_id": null,
+      "approved_crops": {
+        "portrait": null,
+        "landscape": null
+      },
+      "code_activated": false,
+      "photo_source_recheck": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+        "institution_accession": "Fondazione Zeri 47818 / Cingoli Madonna del Rosario",
+        "corroboration": "Complete work photo 1772x2652 by Sailko is CC BY 3.0 and must credit Sailko and disclose changes; earlier native review notes mounting hardware visible at top. The higher-resolution file ending _11 is only a detail.",
+        "source_photo_rights": "CC_BY_3_0_ATTRIBUTION_REQUIRED",
+        "photo_master_state": "WHOLE_PHOTO_HARDWARE_VISIBLE",
+        "first_action": "Evaluate a tight painted-surface-only crop of the Sailko 1772x2652 complete photograph to exclude visible top/bottom mounting clips without removing painted composition, and test colour/detail; retain CC BY 3.0 attribution and modification notice. Do not substitute a close-up/detail image.",
+        "mobile_critical_content": [
+          "complete altarpiece",
+          "fifteen Rosary mystery roundels",
+          "Virgin with Child",
+          "lower angel group"
+        ],
+        "forbid": [
+          "detail-only photo as complete hero",
+          "omit any mystery roundels",
+          "leave top/bottom mounting hardware in final",
+          "omit photographer credit and crop notice"
+        ]
+      }
+    },
+    {
+      "section": "confession",
+      "hero_register_module": "confession",
+      "runtime_route_id": null,
+      "route_origin": "UNVERIFIED",
+      "runtime_surface": "confession",
+      "editorial_primary": {
+        "title": "The Return of the Prodigal Son",
+        "artist": "Bartolomé Esteban Murillo",
+        "artwork_id": "nga:34956",
+        "source_url": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+        "user_final": true
+      },
+      "latest_review_keeps": [
+        {
+          "artwork_id": "confession--primary",
+          "title": "The Return of the Prodigal Son",
+          "artist": "Bartolomé Esteban Murillo",
+          "source_quality_hint": "ARCHIVED_SOURCE"
+        },
+        {
+          "artwork_id": "confession--latour-magdalen",
+          "title": "The Penitent Magdalen",
+          "artist": "Georges de La Tour",
+          "source_quality_hint": "IMAGE_SOURCE_NEEDS_VERIFICATION"
+        }
+      ],
+      "photo": {
+        "existing_master_acquired_by_previous_manifest": true,
+        "original_sha256_recorded": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+        "staged_original_path": "assets/staged/module-hero-masters/confession.jpg",
+        "rights_claim": "NGA explicit public domain open access",
+        "source_status": "museum_public_domain",
+        "quality_verdict": "NOT_RELEASED",
+        "framing_pass": false,
+        "responsive_crop_approved": false,
+        "app_release": "BLOCKED",
+        "source_repo_file": {
+          "repository": "Fulcanelli13/ad-orientem",
+          "ref": "research/module-hero-museum-photos-20261026",
+          "path": "assets/staged/module-hero-masters/confession.jpg",
+          "git_blob_sha": "c0904b5d2a6a4bd99b224194217ce45c6a9fe676",
+          "repo_listing_bytes": 3022309,
+          "previously_reported_sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+          "previously_reported_dimensions": [
+            4096,
+            3712
+          ],
+          "git_path_verified": "YES_BY_DIRECTORY_LISTING",
+          "byte_level_recomputed_this_pass": false,
+          "photo_release_cleared": false
+        },
+        "legacy_staged_original_path": "assets/staged/module-hero-masters/confession.jpg",
+        "staged_original_ref": "research/module-hero-museum-photos-20261026"
+      },
+      "blockers": [
+        "SOURCE_PHOTOGRAPHIC_QUALITY_NOT_CERTIFIED",
+        "EXTERNAL_FRAME_AND_PAINTED_BOUNDARY_GATE",
+        "RESPONSIVE_FOCAL_CROP_NOT_APPROVED",
+        "SOURCE_RIGHTS_OR_APP_RELEASE_NOT_CLEARED",
+        "CANONICAL_PRAYER_ROUTE_NEEDS_REVIEW"
+      ],
+      "asset_id": null,
+      "approved_crops": {
+        "portrait": null,
+        "landscape": null
+      },
+      "code_activated": false,
+      "photo_source_recheck": {
+        "source_page": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+        "institution_accession": "NGA 1948.12.1",
+        "corroboration": "The NGA says this specific work's media is free and in the public domain; the visual description independently identifies the small dog at the kneeling son's feet.",
+        "source_photo_rights": "PUBLIC_DOMAIN_MUSEUM_PAGE_CONFIRMED",
+        "photo_master_state": "EXISTING_NATIVE_SHA_INHERITED",
+        "first_action": "Inspected native face/hands/dog/top-edge tiles and whole/phone previews: mark strong preliminary visual result, allow full/contain and test 3:4 phone with dog visible, disallow 16:9 cover which clips dog; final QA of all painted borders, sRGB and actual reader remains.",
+        "mobile_critical_content": [
+          "father and son embrace",
+          "dog fully visible at feet",
+          "right attendants as composition context"
+        ],
+        "forbid": [
+          "wide crop removing the dog",
+          "frame inclusion",
+          "identity substitution"
+        ]
+      }
+    },
+    {
+      "section": "seven-sorrows",
+      "hero_register_module": "sorrows",
+      "runtime_route_id": null,
+      "route_origin": "UNVERIFIED",
+      "runtime_surface": "seven-sorrows",
+      "editorial_primary": {
+        "title": "Virgin of the Seven Sorrows (Mare de Déu dels Set Dolors)",
+        "artist": "Attributed to the Master of the Female Half-Lengths",
+        "artwork_id": "mnac:008327-000",
+        "source_url": "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000",
+        "user_final": true
+      },
+      "latest_review_keeps": [
+        {
+          "artwork_id": "protected-hero--seven-sorrows-mnac-008327-000",
+          "title": "Virgin of the Seven Sorrows",
+          "artist": "Master of the Female Half-Lengths (attributed)",
+          "source_quality_hint": "EXACT_SOURCE_FOUND_FULL_NATIVE_PIXEL_QA_PENDING"
+        }
+      ],
+      "photo": {
+        "existing_master_acquired_by_previous_manifest": true,
+        "original_sha256_recorded": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+        "staged_original_path": "assets/staged/module-hero-masters/sorrows.jpg",
+        "rights_claim": "MNAC lists artwork as Domini públic; direct downloadable image terms/master bytes not yet checked",
+        "source_status": "museum_public_domain_object",
+        "quality_verdict": "NOT_RELEASED",
+        "framing_pass": false,
+        "responsive_crop_approved": false,
+        "app_release": "BLOCKED",
+        "source_repo_file": {
+          "repository": "Fulcanelli13/ad-orientem",
+          "ref": "research/module-hero-museum-photos-20261026",
+          "path": "assets/staged/module-hero-masters/sorrows.jpg",
+          "git_blob_sha": "f57231e8a7539a70bcb19a33765348f86572a511",
+          "repo_listing_bytes": 1454827,
+          "previously_reported_sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+          "previously_reported_dimensions": null,
+          "git_path_verified": "YES_BY_DIRECTORY_LISTING",
+          "byte_level_recomputed_this_pass": false,
+          "photo_release_cleared": false
+        },
+        "legacy_staged_original_path": "assets/staged/module-hero-masters/sorrows.jpg",
+        "staged_original_ref": "research/module-hero-museum-photos-20261026"
+      },
+      "blockers": [
+        "SOURCE_PHOTOGRAPHIC_QUALITY_NOT_CERTIFIED",
+        "EXTERNAL_FRAME_AND_PAINTED_BOUNDARY_GATE",
+        "RESPONSIVE_FOCAL_CROP_NOT_APPROVED",
+        "SOURCE_RIGHTS_OR_APP_RELEASE_NOT_CLEARED",
+        "CANONICAL_PRAYER_ROUTE_NEEDS_REVIEW"
+      ],
+      "asset_id": null,
+      "approved_crops": {
+        "portrait": null,
+        "landscape": null
+      },
+      "code_activated": false,
+      "photo_source_recheck": {
+        "source_page": "https://commons.wikimedia.org/wiki/File:Master_of_the_Half_Lengths_-_Virgin_of_the_Seven_Sorrows_-_Google_Art_Project.jpg",
+        "institution_accession": "MNAC 008327-000",
+        "corroboration": "Previously linked exact work source reports 3250x4391 and Commons PD-Art/PDM; this pass has not reverified native bytes, the museum download terms or image colour.",
+        "source_photo_rights": "HOLD_FILE_AND_JURISDICTION_CONFIRMATION",
+        "photo_master_state": "EXISTING_NATIVE_SHA_INHERITED",
+        "first_action": "Compare the staged 2220x3000 full photograph with accession MNAC 008327-000 at four edges; ensure all seven episode medallions and the central sword remain complete. Recheck source-file licensing, native sharpness and colour.",
+        "mobile_critical_content": [
+          "Virgin Mary seated in grief",
+          "seven surrounding narrative medallions",
+          "central sword and full painted field"
+        ],
+        "forbid": [
+          "frame inclusion",
+          "unverified restoration",
+          "cropping out any of seven medallions",
+          "falsely describing seven physical swords"
+        ],
+        "correction_20261028": "Image has seven episode medallions and one dominant physical sword; earlier seven-swords phrasing inaccurately described this specific composition."
+      }
+    }
+  ],
+  "photo_source_evidence_update": {
+    "date": "2026-10-28",
+    "character": "RESEARCH_ONLY_NOT_PUBLISHED",
+    "cost_eur": 0,
+    "photo_work_rights_distinct_from_photo_file_rights": true,
+    "native_byte_sha256_recomputed_in_this_update": false,
+    "pixel_edge_qa_performed_in_this_update": false,
+    "photography_cleared_for_production_in_this_update": 0,
+    "editorial_primaries_changed": 0,
+    "historic_approvals_changed": 0,
+    "separate_unreviewed_placement": "sacred-heart::heart-jesus--primary",
+    "rule": "Rights-page and source metadata are evidence, not permission to activate an image; no master, crop, attribution or live URL may be promoted until independently checked.",
+    "git_repo_path_repair": "2026-10-28",
+    "git_listings_rechecked": 5,
+    "native_file_sha256_recomputed_in_this_update": false,
+    "artwork_selection_changed": 0
+  }
+}

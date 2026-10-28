@@ -1,0 +1,182 @@
+{
+  "schema": "AO_PRAYER_WAVE1_THREE_NATIVE_PERIMETER_INSPECTION_V1",
+  "date": "2026-10-28",
+  "scope": "three already approved source artworks",
+  "no_edits_to_originals": true,
+  "cost_eur": 0,
+  "production_approved": 0,
+  "note": "The stitched sheets are visual inspection evidence only. Full-sized pixels appear unscaled in four 512px corner tiles; whole painting is downsampled for context.",
+  "records": [
+    {
+      "module": "morning",
+      "title": "Jules Breton — The Song of the Lark",
+      "ref": "research/module-hero-rescue-20261026",
+      "source_repo_path": "assets/staged/module-hero-rescue/morning.jpg",
+      "original_sha256_verified": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+      "native_dimensions_verified": [
+        2548,
+        3300
+      ],
+      "icc_preview_handling": "no embedded ICC; source RGB numeric values retained for preview only",
+      "perimeter_preview_path": "assets/staged/prayer-wave1-native-perimeter-20261028/morning-perimeter-grid.jpg",
+      "native_corner_coordinates": [
+        {
+          "name": "top-left",
+          "xyxy": [
+            0,
+            0,
+            512,
+            512
+          ]
+        },
+        {
+          "name": "top-right",
+          "xyxy": [
+            2036,
+            0,
+            2548,
+            512
+          ]
+        },
+        {
+          "name": "bottom-left",
+          "xyxy": [
+            0,
+            2788,
+            512,
+            3300
+          ]
+        },
+        {
+          "name": "bottom-right",
+          "xyxy": [
+            2036,
+            2788,
+            2548,
+            3300
+          ]
+        }
+      ],
+      "perimeter_certified": false,
+      "color_approved": false,
+      "responsive_crop_approved": false,
+      "human_quality_approved": false,
+      "production_activated": false,
+      "original_image_bytes_modified": false
+    },
+    {
+      "module": "confession",
+      "title": "Bartolomé Esteban Murillo — The Return of the Prodigal Son",
+      "ref": "research/module-hero-museum-photos-20261026",
+      "source_repo_path": "assets/staged/module-hero-masters/confession.jpg",
+      "original_sha256_verified": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+      "native_dimensions_verified": [
+        4096,
+        3712
+      ],
+      "icc_preview_handling": "ICC converted to sRGB for comparison preview only",
+      "perimeter_preview_path": "assets/staged/prayer-wave1-native-perimeter-20261028/confession-perimeter-grid.jpg",
+      "native_corner_coordinates": [
+        {
+          "name": "top-left",
+          "xyxy": [
+            0,
+            0,
+            512,
+            512
+          ]
+        },
+        {
+          "name": "top-right",
+          "xyxy": [
+            3584,
+            0,
+            4096,
+            512
+          ]
+        },
+        {
+          "name": "bottom-left",
+          "xyxy": [
+            0,
+            3200,
+            512,
+            3712
+          ]
+        },
+        {
+          "name": "bottom-right",
+          "xyxy": [
+            3584,
+            3200,
+            4096,
+            3712
+          ]
+        }
+      ],
+      "perimeter_certified": false,
+      "color_approved": false,
+      "responsive_crop_approved": false,
+      "human_quality_approved": false,
+      "production_activated": false,
+      "original_image_bytes_modified": false
+    },
+    {
+      "module": "seven-sorrows",
+      "title": "Master of the Female Half-Lengths — Virgin of the Seven Sorrows",
+      "ref": "research/module-hero-museum-photos-20261026",
+      "source_repo_path": "assets/staged/module-hero-masters/sorrows.jpg",
+      "original_sha256_verified": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+      "native_dimensions_verified": [
+        2220,
+        3000
+      ],
+      "icc_preview_handling": "ICC converted to sRGB for comparison preview only",
+      "perimeter_preview_path": "assets/staged/prayer-wave1-native-perimeter-20261028/seven-sorrows-perimeter-grid.jpg",
+      "native_corner_coordinates": [
+        {
+          "name": "top-left",
+          "xyxy": [
+            0,
+            0,
+            512,
+            512
+          ]
+        },
+        {
+          "name": "top-right",
+          "xyxy": [
+            1708,
+            0,
+            2220,
+            512
+          ]
+        },
+        {
+          "name": "bottom-left",
+          "xyxy": [
+            0,
+            2488,
+            512,
+            3000
+          ]
+        },
+        {
+          "name": "bottom-right",
+          "xyxy": [
+            1708,
+            2488,
+            2220,
+            3000
+          ]
+        }
+      ],
+      "perimeter_certified": false,
+      "color_approved": false,
+      "responsive_crop_approved": false,
+      "human_quality_approved": false,
+      "production_activated": false,
+      "original_image_bytes_modified": false
+    }
+  ]
+}

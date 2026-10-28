@@ -1,0 +1,91 @@
+{
+  "schema": "AO_SACRED_ART_383_BULK_EVIDENCE_CROSSWALK_V1",
+  "date": "2026-10-28",
+  "processing_type": "Automated, exact-ID, full-corpus document evidence screening of all 383 active frozen paintings; NOT new manual native-pixel inspections or new rights grants",
+  "source": {
+    "branch": "research/sacred-art-b56-classi-53-hero-selector-20261024",
+    "files": [
+      "data/research/sacred-art-b48-383-photo-preservation-ledger.csv",
+      "data/research/sacred-art-b49-383-release-photo-rights-and-repo-mapping.csv",
+      "data/research/sacred-art-b54-383-aesthetic-biblical-review-ledger.csv"
+    ],
+    "gitBlobSHAs": [
+      "162cc86bfd559bfd84f83ebcf615647fabf8acd6",
+      "131e18096bbde302020fa13c4161fff8cecfe705",
+      "cc1ff94f9fbf95405c47dbd924e008b65b84f469"
+    ]
+  },
+  "totals": {
+    "reconciled_artworks": 383,
+    "match_rate": "383/383",
+    "source_lane": {
+      "NO_PHYSICAL_ORIGINAL": 23,
+      "PARTIAL_WORK_ONLY": 2,
+      "FULL_WORK_RIGHTS_EVIDENCE_GAP": 99,
+      "FULL_WORK_OPEN_METADATA": 259
+    },
+    "editorial_state": {
+      "APPROVED_LOCKED": 90,
+      "UNREVIEWED": 151,
+      "PREVIOUSLY_RATED_ACCEPTABLE": 123,
+      "APPROVED_5": 17,
+      "IMAGE_REPLACEMENT_HOLD": 1,
+      "ACCEPTABLE_UNFINALIZED": 1
+    },
+    "priority": {
+      "P0": 108,
+      "P2": 151,
+      "P1": 124
+    },
+    "user_approved_locked": 107,
+    "open_license_metadata_claims": 261,
+    "sha_conflicts": 0,
+    "photo_rights_clearance_complete": 0,
+    "production_ready": 0
+  },
+  "batches": [
+    {
+      "id": "BULK_A_200",
+      "start": 1,
+      "end": 200,
+      "count": 200,
+      "editorially_approved": 88,
+      "lane": {
+        "NO_PHYSICAL_ORIGINAL": 23,
+        "PARTIAL_WORK_ONLY": 2,
+        "FULL_WORK_RIGHTS_EVIDENCE_GAP": 99,
+        "FULL_WORK_OPEN_METADATA": 76
+      },
+      "priority": {
+        "P0": 88,
+        "P2": 83,
+        "P1": 29
+      },
+      "sha_conflicts": 0
+    },
+    {
+      "id": "BULK_B_183",
+      "start": 1,
+      "end": 183,
+      "count": 183,
+      "editorially_approved": 19,
+      "lane": {
+        "FULL_WORK_OPEN_METADATA": 183
+      },
+      "priority": {
+        "P0": 20,
+        "P1": 95,
+        "P2": 68
+      },
+      "sha_conflicts": 0
+    }
+  ],
+  "hard_rules": [
+    "Not a new art discovery count; reclassifies existing 383 research records with provenance.",
+    "No explicit user selections, approval statuses, or production assets changed.",
+    "These 383 canonical gallery IDs are not interchangeable with the separate 101/101 recovered historical subject ID archive.",
+    "A source SHA or Commons public domain tag alone does NOT imply approved master photo, full quality, no visible external frame, or commercial reuse approval.",
+    "All statuses frozen to legacy source as of Oct 24, 2026; later Prayer photo findings are separate overlays, not silently backfilled.",
+    "No paid services, rights requests, image copying, AI enhancement or automatic asset publication."
+  ]
+}

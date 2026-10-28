@@ -1,0 +1,34 @@
+name: Sacred Art 24 protected paintings - high-res source discovery
+
+on:
+  push:
+    branches:
+      - research/prayer-existing-sacred-art-mosaic-20261028
+    paths:
+      - .github/workflows/sacred-art-24-highres-original-source-discovery-20261028.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  highres-source-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout research-only branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Inspect Wikimedia Commons source metadata for 24 originals
+        run: |
+          python -m py_compile scripts/research/sacred_art_24_highres_commons_discovery_20261028.py
+          python scripts/research/sacred_art_24_highres_commons_discovery_20261028.py
+      - name: Save research evidence only (no image binaries)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-art-24-highres-candidates-${{ github.run_id }}
+          path: artifacts/sacred-art-24-highres-discovery/
+          retention-days: 3
+          if-no-files-found: warn

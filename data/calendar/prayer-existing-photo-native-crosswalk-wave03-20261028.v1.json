@@ -1,0 +1,126 @@
+{
+  "schema": "AO_PRAYER_EXISTING_ART_NATIVE_QUALITY_CROSSWALK_WAVE03_V1",
+  "date": "2026-10-28",
+  "scope": "23 kept painting identities, 30 kept placements, 17 rejected placements, 101 protected historic approvals; plus previously final Seven Sorrows hero not in 23 Keeps",
+  "immutability": {
+    "editorialKeepsChanged": 0,
+    "editorialRejectionsChanged": 0,
+    "productionImagesReleased": 0,
+    "costEUR": 0
+  },
+  "existingResearchPreserved": {
+    "sourceRepoBranch": "research/module-hero-pd-masters-20261026",
+    "nativeRegionSource": "data/research/module-hero-museum-subgate-decisions-2026-10-28.json",
+    "alreadyExaminedNativeRegionCount": 18,
+    "preliminaryDetailPasses": 3,
+    "fullyApprovedPristineMasters": 0,
+    "masterSha256Source": "assets/staged/module-hero-preview-jpegs/preview-manifest.json",
+    "nativeMasterKnownRecordCount": 8
+  },
+  "protectedHeroRecovered": {
+    "artwork": "Virgin of the Seven Sorrows",
+    "artist": "Master of the Female Half-Lengths (attributed)",
+    "status": "USER_FINAL_APPROVAL_RETAINED",
+    "institution": "Museu Nacional d'Art de Catalunya",
+    "accession": "008327-000",
+    "institutionPage": "https://www.museunacional.cat/en/colleccio/virgin-seven-sorrows/mestre-de-les-mitges-figures/008327-000",
+    "completeImageSource": "https://commons.wikimedia.org/wiki/File:Master_of_the_Half_Lengths_-_Virgin_of_the_Seven_Sorrows_-_Google_Art_Project.jpg",
+    "sourceDimensions": [
+      3250,
+      4391
+    ],
+    "sourceReportedBytes": 5215174,
+    "sourceReportedSha1": "03c6d507851e439df31dfaf0fec390b6e55c86db",
+    "rights": "MNAC public domain; Commons PD-Art/PD Mark reproduction with jurisdictional caution",
+    "nativeFileByteHashRecheckedThisPass": false,
+    "frameFreeAndColorSignoff": false,
+    "productionReady": false
+  },
+  "rosaryLotto": {
+    "artwork": "Lorenzo Lotto — Madonna del Rosario, Cingoli (1539)",
+    "status": "USER_FINAL_APPROVAL_RETAINED",
+    "existingPhotoSourceRecord": "assets/staged/module-hero-open-photo-candidates-20261027/four-source-acquisition-status.json",
+    "photos": [
+      {
+        "role": "COMPLETE_WORK",
+        "source": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+        "dimensions": [
+          1772,
+          2652
+        ],
+        "sha256Inherited": "5563d32307c7b479e86b0060dc8bc17f9b699c938d293ff5bd6f4555ee1f7045",
+        "qa": "HOLD_PHOTOGRAPHIC_MOUNTING_HARDWARE_VISIBLE_AT_TOP",
+        "notReady": true
+      },
+      {
+        "role": "PARTIAL_DETAIL_NOT_COMPLETE_WORK",
+        "source": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_11.jpg",
+        "dimensions": [
+          2304,
+          3456
+        ],
+        "sha256Inherited": "352ec3f397d6f5de89dd824cd0542b157ccea617d2521a83102d84b6adff106d",
+        "qa": "DISALLOWED_AS_COMPLETE_HERO_BECAUSE_OMITS_MYSTERY_ROUNDELS",
+        "notReady": true
+      }
+    ],
+    "photographer": "Sailko",
+    "license": "CC BY 3.0 (attribution and change notice required)",
+    "rule": "Do not substitute detail image for complete painting. Preserve user editorial work selection."
+  },
+  "threeNativeSourceHolds": [
+    {
+      "id": "confession--primary",
+      "institution": "NGA",
+      "accession": "1948.12.1",
+      "originalSha256Inherited": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+      "dimensions": [
+        4096,
+        3712
+      ],
+      "nativeDetailPass": "PRELIMINARY",
+      "hold": "Full edge, colour, wide crop preserving dog"
+    },
+    {
+      "id": "angelus--primary",
+      "institution": "Met",
+      "accession": "2004.31",
+      "originalSha256Inherited": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "dimensions": [
+        3741,
+        3658
+      ],
+      "nativeDetailPass": "PRELIMINARY",
+      "hold": "Remove oak support only on exact painted boundary, retain dove and lilies"
+    },
+    {
+      "id": "adoration--primary",
+      "institution": "Met",
+      "accession": "2005.186",
+      "originalSha256Inherited": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "dimensions": [
+        3122,
+        3813
+      ],
+      "nativeDetailPass": "PRELIMINARY",
+      "hold": "Distinguish beige support vs painted border, keep Host inscription"
+    }
+  ],
+  "reusedPreviouslyRecordedSha256": {
+    "heart-jesus--primary": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+    "regina--primary": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+    "visit--primary": "347cf5d74cc575bcb082250a90dc64c54dc673e94fbc4e48efcd27fa2a3b09c1",
+    "scripture--primary": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158",
+    "morning--primary": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c"
+  },
+  "holds": [
+    "24 artworks presented in local QA: 23 existing Keep identities + 1 separately protected Seven Sorrows final hero",
+    "Only 3 review DERIVATIVE JPEG byte hashes independently rerun Wave02; source original hash values above inherited research evidence",
+    "No image master may be promoted without four-edge native review, source rights and colour/size inspection",
+    "No automatic paid acquisitions, requests for permissions, app deploys or editorial changes"
+  ],
+  "localDeliverables": [
+    "Ad_Orientem_Prayer_Art_Native_Source_Review_Wave03_20261028.html",
+    "Ad_Orientem_Prayer_Art_Native_Source_Reconciliation_Wave03_20261028.json"
+  ]
+}

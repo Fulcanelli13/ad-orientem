@@ -1,0 +1,123 @@
+{
+  "schema": "AO_SACRED_ART_107_APPROVED_SOURCE_AND_25_IMAGE_EXCEPTION_BULK_REVIEW_20261028",
+  "date": "2026-10-28",
+  "scope": "All 107 frozen approved artworks plus all 25 partial/missing image exceptions, exact-ID evidence consolidation and eight externally located object-source leads; research-only, not new native pixel verification",
+  "sources": {
+    "branch": "research/sacred-art-b56-classi-53-hero-selector-20261024",
+    "paths": [
+      "data/research/sacred-art-b49-383-release-photo-rights-and-repo-mapping.csv",
+      "data/research/sacred-art-b48-383-photo-preservation-ledger.csv",
+      "data/research/sacred-art-b50-95-exact-photo-version-evidence.csv",
+      "data/research/sacred-art-b53-383-review-image-audit.json",
+      "data/research/sacred-art-b49-107-approved-95-firstpass-12-exceptions.json",
+      "data/research/sacred-art-b51-batch01-50-source-sha-and-thumb-audit.json"
+    ],
+    "blobs": [
+      "131e18096bbde302020fa13c4161fff8cecfe705",
+      "162cc86bfd559bfd84f83ebcf615647fabf8acd6",
+      "a216628cd148da5c21d10674b52b77c12abfed6f",
+      "c4a864b48ddec4b1800a2b78be12c383613eee01",
+      "745eb0cc3f969084d261c4fd55938188402f2e16",
+      "2c7be6fb6b5899ce43721ebd44ccd8db1cb051ea"
+    ]
+  },
+  "summary": {
+    "approved_artwork_count": 107,
+    "full_prior_B50_rights_review": 95,
+    "approved_without_B50": 12,
+    "approved_draft_archive_sha_rechecked_as_existing_B53": 106,
+    "approved_prior_B51_file_verified": 50,
+    "approved_photo_over2400pixels": 69,
+    "approved_95_with_historical_selected_sha_match": 12,
+    "approved_rights_licence_open_claim_live_20261024": 71,
+    "approved_commons_version_size_dimensions_match": 68,
+    "approved_gate_distribution": {
+      "A1_MISSING_ORIGINAL": 1,
+      "A3_APPROVED_NO_DEEP_RIGHTS_RECORD": 11,
+      "A4_SOURCE_SHA_NOT_MATCHED": 2,
+      "A5_RESOLUTION_OR_DIMENSION_HOLD": 24,
+      "A6_EXACT_FILE_RIGHTS_EVIDENCE_PENDING": 22,
+      "A7_VERSION_OR_METADATA_RECONCILIATION": 3,
+      "A8_SOURCE_METADATA_PRESENT_PHOTO_VISUAL_QA": 44
+    },
+    "exceptions_count": 25,
+    "missing_originals": 23,
+    "partial_only": 2,
+    "new_publication_ready": 0,
+    "new_image_byte_downloads": 0,
+    "new_perwork_native_four_edge_certifications": 0,
+    "new_editorial_selections": 0,
+    "cost_eur": 0,
+    "externally_researched_exception_records": 8,
+    "institutional_exact_object_or_existing_casebook_candidates": 6,
+    "false_equivalent_or_identity_ambiguous": 2
+  },
+  "blocking_policies": [
+    "The selected 107 are counted separately from the 101 historically recovered prayer-art subject approvals; never sum or equate those baselines.",
+    "The 25 exceptions overlap with the 383 catalogue and one approved item; sum 107+25 is review workload, not distinct painting count.",
+    "Existing B50 Commons licence claims do not certify the exact archived/selected image for app commercial reuse.",
+    "B53 SHA-in-archive preview validity is not a new full resolution byte check, visual art correctness or native edge QA.",
+    "An institutional catalogue page confirms object identity, NOT licensed museum photography or frameless reproduction.",
+    "Do not substitute distinct museum painting, engraving, detail crop or framed photograph.",
+    "No money, contact/permission requests or automatic production release."
+  ],
+  "exceptions_external_source_links": [
+    {
+      "id": "G25-003",
+      "title": "Saint Augustine",
+      "lead_status": "REJECTED_FALSE_EQUIVALENT_PRINT",
+      "url": "https://commons.wikimedia.org/wiki/File:Saint_Augustine_of_Hippo_with_Saint_William,_and_Christ_crow_Wellcome_V0033169.jpg",
+      "explanation": "Wellcome source is Baudet engraving AFTER Lanfranco and also different subject; cannot be promoted as exact oil painting; no clean source identified"
+    },
+    {
+      "id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
+      "title": "Holy Family with Saint Anne",
+      "lead_status": "AMBIGUOUS_DIFFERENT_MUSEUM_ORIGINALS",
+      "url": "https://www.museodelprado.es/en/the-collection/art-work/the-holy-family-with-saint-anne/b8d2f1b1-e0e4-4f3c-931e-5ca70207751c",
+      "explanation": "Prado P001639 Rubens painting and NCMA 52.9.107 Rubens-and-workshop painting are distinct physical works; frozen generic ID cannot be auto matched; Prado image commercial-use gate shown; avoid Prado photo under no-permission policy"
+    },
+    {
+      "id": "G17-006",
+      "title": "Saint François de Sales",
+      "lead_status": "NATIONAL_CATALOGUE_EXACT_OBJECT_FOUND",
+      "url": "https://pop.culture.gouv.fr/notice/palissy/PM75000591",
+      "explanation": "French POP notice PM75000591: Saint François de Sales, school of Philippe de Champaigne, 17th century, 160x125 cm, Saint-Jean-Saint-François church Paris; no clean source photo approval"
+    },
+    {
+      "id": "G29-001",
+      "title": "Saint Hilaire de Poitiers écrivant contre l'arianisme",
+      "lead_status": "NATIONAL_CATALOGUE_EXACT_OBJECT_FOUND",
+      "url": "https://pop.culture.gouv.fr/notice/palissy/IM33002267",
+      "explanation": "Palissy IM33002267: Jérôme-Martin Langlois Saint Hilaire writing against Arianism, dated 1823, Bordeaux Cathedral; document explicitly measures separate 16cm frame; source photograph crop and rights unknown"
+    },
+    {
+      "id": "celine-1894-john-cross",
+      "title": "Saint John of the Cross",
+      "lead_status": "INSTITUTION_EXACT_OBJECT_FOUND",
+      "url": "https://archives.carmeldelisieux.fr/en/environnement-familial/tableaux-et-fusains/tableaux-de-celine-martin/",
+      "explanation": "Carmel archives identifies Céline Martin original oil Saint John of the Cross, 1894, 92x76 cm; verify linked photo, exact file rights and edges before use"
+    },
+    {
+      "id": "italy-banchero-0700031704",
+      "title": "San Lorenzo da Brindisi",
+      "lead_status": "NATIONAL_CATALOGUE_EXACT_OBJECT_FOUND",
+      "url": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700031704",
+      "explanation": "Italian national catalogue 0700031704 confirms Angelo Giacinto Banchero San Lorenzo da Brindisi in Genoa; clean reusable photo unresolved"
+    },
+    {
+      "id": "zeri-45874-peter-damian",
+      "title": "San Pier Damiano",
+      "lead_status": "CATALOGUE_EXACT_OBJECT_FOUND_ARCHIVE_PRINT",
+      "url": "https://catalogo.fondazionezeri.unibo.it/entry/work/49155/Venanzio%20l%27Eremita%2C%20San%20Pier%20Damiano",
+      "explanation": "Zeri work no.45874, Venanzio l'Eremita, 180x130cm, Eremo del SS. Salvatore ai Camaldoli, Naples; associated 1951 gelatin silver photograph unsuitable as unverified app master"
+    },
+    {
+      "id": "ART-eter-aul-ubens-he-oly-rinity",
+      "title": "The Holy Trinity",
+      "lead_status": "EXACT_OBJECT_LEAD_ALREADY_IN_B48_CASEBOOK_NOT_FINAL_MAPPED",
+      "url": "https://vlaamsekunstcollectie.be/en/collectie/314",
+      "explanation": "Antwerp KMSKA inv314 exact Rubens The Holy Trinity painting, Flemish Art Collection marks image CC0, museum own page separately requests contact for professional use; editorial exact-ID match unapproved and image rights need source-specific reconciliation"
+    }
+  ],
+  "sources_20261028_live_verified_not_photo_assets": "Institutional object identification or candidate source-page evidence only; no native image bytes, actual framed/cropped source or licensed exact reproduction verified. Six exact-object/candidate records, one false-equivalent engraving and one ambiguous different-museum pair."
+}

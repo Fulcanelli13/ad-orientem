@@ -1,0 +1,114 @@
+{
+  "schema": "AO_SACRED_ART_APPROVED_107_BULK_20261028_RELEASE_GATES_V1",
+  "asOf": "2026-10-28",
+  "scope": {
+    "frozen_editorial_artwork_ID_records": 107,
+    "other_historical_subject_approvals_separately_frozen": 101,
+    "active_gallery_artworks": 383,
+    "originals_complete_research_source_before_this_wave": 358,
+    "originals_partial_only": 2,
+    "originals_missing": 23
+  },
+  "cohortProcessing": {
+    "approved_107_exact_source_gates_processed": 107,
+    "main_photo_source_and_quality_channels": [
+      {
+        "group": "A8",
+        "size": 44,
+        "result": "44 current Commons original source files independently byte-hashed and matched exactly to historical archived source SHA-256/dimensions. Initial 42/44 successful run; two earlier HTTP 429 holdings retried once successfully. Original-file verification complete, but contact-sheet visual screen is only 42/44; 2 new retry images have NOT been visually assessed at four edges.",
+        "current_full_file_byte_checked": 44,
+        "current_print_variant_checked": 0,
+        "final_photos_approved": 0,
+        "source": "data/calendar/sacred-art-a8-44-original-byte-audit-20261028.v1.json",
+        "visual": "data/calendar/sacred-art-a8-44-visual-contact-screen-20261028.v1.json",
+        "retry_source": "data/calendar/sacred-art-a8-44-rate-limit-retry-20261028.v1.json"
+      },
+      {
+        "group": "A6",
+        "size": 22,
+        "result": "22 official museum OA objects checked; all 22 official current images SHA computed, 18 match historical SHA, four are lower-resolution CMA official JPEG variants",
+        "current_full_file_byte_checked": 15,
+        "current_print_variant_checked": 7,
+        "final_photos_approved": 0,
+        "source": "data/calendar/sacred-art-22-museum-official-cc0-photo-sha-20261028.v1.json"
+      },
+      {
+        "group": "A5",
+        "size": 24,
+        "result": "24 resolution holds split 3 below1200px, 11 1200-1799px, 10 1800-2399px; source alternative research and false-equivalent warnings",
+        "current_full_file_byte_checked": 0,
+        "current_print_variant_checked": 0,
+        "final_photos_approved": 0,
+        "source": "data/calendar/sacred-art-approved24-resolution-recovery-20261028.csv"
+      },
+      {
+        "group": "A1/A3/A4/A7",
+        "size": 17,
+        "result": "17 missing/source-version exception records, including cross-ID same Met object for Champaigne and Maratti MET 816629 exact CC0 identity",
+        "current_full_file_byte_checked": 0,
+        "current_print_variant_checked": 0,
+        "final_photos_approved": 0,
+        "source": "data/calendar/sacred-art-approved17-identity-and-licence-exceptions-20261028.v1.json"
+      }
+    ],
+    "current_image_byte_hash_checks_total": 66,
+    "exact_same_as_legacy_image_SHA": 62,
+    "current_official_museum_JPEG_different_variant_4": 4,
+    "not_downloaded_due_wikimedia_rate_limit_2": 0,
+    "open_access_object_file_source_verified_by_official_Met_CMA_APIs_22": 22,
+    "new_full_native_four_edge_certs": 0,
+    "new_production_art_image_acceptances": 0,
+    "rate_limit_hold_resolution": {
+      "attempted": 2,
+      "matching_archive_shas": 2,
+      "remaining_download_holds": 0,
+      "run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40669214311"
+    }
+  },
+  "countsAreNotIndependent": "A8/A6/A5/remainder are disjoint partitions of 107 frozen IDs, but the 25 earlier physical-image exceptions contain one of those approved IDs and are not additional artworks. 101 historically recovered subject approvals are a different archive.",
+  "zeroCostConditions": [
+    "Public research branch only, no app production merge or deploy",
+    "No paid image access, no external contact, no permission requests",
+    "Preliminary contact screen is not full original-pixel frame review",
+    "CMA print JPEGs not interchangeable with archived larger original TIFF-derived versions",
+    "A historical source SHA matching current official source does not imply photographic aesthetics, crop acceptability or production publishability"
+  ],
+  "preReleaseWork": [
+    "Review full painted edges of 44/44 now byte-identical originals (42 prior reduced-scale sheets; remaining two retry originals still lack visual sheet), resolve photographed borders on Crivelli/Vignon, and keep photographer rights and colour gates distinct.",
+    "Verify actual full-resolution institutional master/perimeter/color for the 22 official Met/CMA CC0 sources; four CMA print variants need version selection.",
+    "Find free, high-quality, exact-original source photographs for 24 low-res holds; do not upscale, use framed RMN/Prado, or substitute sketches.",
+    "Resolve 17 other source/identity gates, including Met Champaigne same-object IDs and Caravaggio Incredulity physically different versions.",
+    "Preserve all accepted works, rejected placement decisions, CC BY/SA attributions, and archival original checksums."
+  ],
+  "provenance_runs": [
+    {
+      "run": 40663961265,
+      "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40663961265",
+      "evidence_artifact_id": 12804459691
+    },
+    {
+      "run": 40665853170,
+      "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40665853170",
+      "evidence_artifact_id": 12806266945
+    },
+    {
+      "run": 40666301707,
+      "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40666301707",
+      "evidence_artifact_id": 12805768280
+    }
+  ],
+  "performance_scope": "100% of approved 107 IDs triaged, 66 current actual photo-file hashes recomputed in source batch and retry (44 Commons originals, 15 Met originals, 7 Cleveland print JPEGs); 62 exact archived SHA matches, four official different CMA JPEG variants. No full native frame certifications or production releases.",
+  "high_resolution_alternative_search_wave": {
+    "run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40668302895",
+    "source": "data/calendar/sacred-art-approved24-highres-source-candidates-20261028.v1.json",
+    "paintings": 24,
+    "raw_file_search_results": 118,
+    "paintings_with_results": 16,
+    "paintings_without_results": 8,
+    "exact_painting_candidate_identified": 1,
+    "exact_candidate_rejected_as_photo_for_frame_and_glare": true,
+    "production_photo_replacements_accepted": 0,
+    "manual_exclusions": "data/calendar/sacred-art-lowres-exact-photo-rejection-review-20261028.v1.json"
+  },
+  "summary_updated_at": "2026-10-28"
+}

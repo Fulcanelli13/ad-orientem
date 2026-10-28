@@ -1,0 +1,36 @@
+name: Sacred Art 22 museum photos - official OA and byte evidence
+
+on:
+  push:
+    branches:
+      - research/prayer-existing-sacred-art-mosaic-20261028
+    paths:
+      - .github/workflows/sacred-art-22-museum-open-access-source-audit-20261028.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  museum-22-exact-image-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout research-only branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install Pillow for offline byte inspection
+        run: python -m pip install --disable-pip-version-check pillow==11.3.0
+      - name: Verify 15 Met and 7 Cleveland exact institution object image records
+        run: |
+          python -m py_compile scripts/research/sacred_art_22_museum_originals_20261028.py
+          python scripts/research/sacred_art_22_museum_originals_20261028.py
+      - name: Save evidence only, never original photos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-art-museum-22-evidence-${{ github.run_id }}
+          path: artifacts/sacred-art-museum22-api-originals/
+          if-no-files-found: warn
+          retention-days: 3

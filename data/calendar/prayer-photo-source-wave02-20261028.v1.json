@@ -1,0 +1,231 @@
+{
+  "schema": "AO_PRAYER_23_KEEP_PHOTO_SOURCE_WAVE02_EVIDENCE",
+  "asOf": "2026-10-28",
+  "policy": "No new paintings; 101 subject approvals, 30 kept placements, 17 rejected placements unchanged; no production image release",
+  "counts": {
+    "artworks": 23,
+    "external_existing_leads": 14,
+    "exact_external_pages_verified": 13,
+    "newly_recovered_exact_low_resolution_source": 1,
+    "identity_collisions": 1,
+    "derivative_jpeg_sha256_recomputed": 3,
+    "production_approved": 0
+  },
+  "notes": [
+    "External page dimensions are source-page metadata, not personally rechecked native image bytes.",
+    "Three GitHub review derivatives SHA-256 computed from exact JPEG bytes; do not confuse 1400px derivatives with native masters.",
+    "Frère OP6 exact original source recovered but only 898x1200.",
+    "Janssens candidate pages refer to two distinct original artworks; no auto substitution.",
+    "Lotto source photographer Sailko uses CC BY 3.0, not CC0; full photo edge certification pending.",
+    "Image-preview HTML built locally and browser tested, not included in the public GitHub research branch."
+  ],
+  "records": [
+    {
+      "artwork_id": "morning--millet-angelus",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Jean-Fran%C3%A7ois_Millet_-_The_Angelus_-_Google_Art_Project.jpg",
+      "pixels": "7053x5864",
+      "source_rights_evidence": "PD-Art/PDM",
+      "qa_hold": "Wikimedia Commons exact file confirmed",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "confession--latour-magdalen",
+      "source_page": "https://commons.wikimedia.org/wiki/File:The_Penitent_Magdalen_MET_DT7252.jpg",
+      "pixels": "2515x3633",
+      "source_rights_evidence": "CC0 1.0",
+      "qa_hold": "Met-contributed photo; cropped derivative in Commons; verify painted edges",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "angelus--caravaggio",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Annunciation-Caravaggio.jpg",
+      "pixels": "7880x10994",
+      "source_rights_evidence": "PD-scan/PDM",
+      "qa_hold": "exact self-scan page",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "angelus--gentileschi",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Annunciazione_(1623_circa)_-_Orazio_Gentileschi.jpg",
+      "pixels": "4706x6898",
+      "source_rights_evidence": "PD-Art + CC BY-SA 4.0",
+      "qa_hold": "dual licensing recorded, review conditions",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "angelus--murillo-annunciation",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bartolome_murillo-anunciacion.jpg",
+      "pixels": "2524x3051",
+      "source_rights_evidence": "Commons PD-Art; Prado caution",
+      "qa_hold": "retain institutional/photo rights hold",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "regina--murillo-resurrection",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Resurrecci%C3%B3n_del_Se%C3%B1or_-_Google_Art_Project.jpg",
+      "pixels": "2051x3001",
+      "source_rights_evidence": "PD-Art/PDM",
+      "qa_hold": "exact existing source page",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "regina--jan-janssens",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Jan_Janssens_-_The_resurrection.jpg",
+      "pixels": null,
+      "source_rights_evidence": "IDENTITY HOLD",
+      "qa_hold": "Two distinct works: Bruges St Salvator and 2000x2000 auction painting; no substitute",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "historic:giovanni lanfranco:miracle of loaves and fishes",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+      "pixels": "1285x683",
+      "source_rights_evidence": "PD-Art/PDM",
+      "qa_hold": "exact source page recovered; low resolution",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "rosary--primary",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Lorenzo_lotto,_madonna_del_rosario,_1539,_01.jpg",
+      "pixels": "1772x2652",
+      "source_rights_evidence": "CC BY 3.0 Sailko",
+      "qa_hold": "exact approved Cingoli altarpiece; credit required and frame-free inspection pending",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "rosary--caravaggio",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Madonna_of_the_Rosary-Caravaggio_(1607).jpg",
+      "pixels": "9803x14480",
+      "source_rights_evidence": "PD-scan/PDM",
+      "qa_hold": "exact existing source page",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "rosary--vandyck-madonna",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Van_Dyck,_Sir_Anthony_-_The_Madonna_and_Child_-_Google_Art_Project.jpg",
+      "pixels": "3807x4976",
+      "source_rights_evidence": "PD-Art/PDM",
+      "qa_hold": "corrected same-object Dulwich No.90 filename alias",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "visit--murillo-magi",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg",
+      "pixels": "3865x4935",
+      "source_rights_evidence": "PD-Art/PDM",
+      "qa_hold": "same-object exact source page",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "saints--saraceni",
+      "source_page": "https://www.metmuseum.org/art/collection/search/437607",
+      "pixels": null,
+      "source_rights_evidence": "Met Open Access Public Domain",
+      "qa_hold": "Met accession 437607; full pixel dimensions pending",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "scripture--rubens-evangelists",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_four_Evangelists_(1614).jpg",
+      "pixels": "7395x6079",
+      "source_rights_evidence": "PD-Art/PDM",
+      "qa_hold": "source page exact",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "evening--primary",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Pierre_Edouard_Fr%C3%A8re_(1819-1886)_-_The_Prayer_-_OP6_-_Wolverhampton_Art_Gallery.jpg",
+      "pixels": "898x1200",
+      "source_rights_evidence": "rights not yet certified",
+      "qa_hold": "exact OP6 Wolverhampton object image found; no alternate painting substitution; resolution HOLD",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "angelus--primary",
+      "source_page": "https://www.metmuseum.org/art/collection/search/438724",
+      "pixels": "1400x1375",
+      "source_rights_evidence": "Met Open Access underlying work",
+      "qa_hold": "exact staged derivative JPEG byte SHA independent; master painted edges not certified",
+      "review_derivative_sha256": "f50b57a5db7f90bf8d21463d001e36b6d5ebea1cf0c7d430d3ef207687e233ec",
+      "production_certified": false
+    },
+    {
+      "artwork_id": "confession--primary",
+      "source_page": null,
+      "pixels": "1400x1269",
+      "source_rights_evidence": "NGA image rights/source metadata pending",
+      "qa_hold": "exact staged derivative JPEG byte SHA independent; wide crop loses dog",
+      "review_derivative_sha256": "c989bba87c4e273e58c978460d3bfa171800d7b226bba71d88470462928db040",
+      "production_certified": false
+    },
+    {
+      "artwork_id": "adoration--primary",
+      "source_page": "https://www.metmuseum.org/art/collection/search/438434",
+      "pixels": "1129x1400",
+      "source_rights_evidence": "Met Open Access underlying work",
+      "qa_hold": "exact staged derivative JPEG byte SHA independent; Host and painted inscription must remain",
+      "review_derivative_sha256": "993ad41cc6ee0b45bd1f49ab5c90e912e622a75e9d359975ff3324509ce6bd69",
+      "production_certified": false
+    },
+    {
+      "artwork_id": "morning--primary",
+      "source_page": null,
+      "pixels": null,
+      "source_rights_evidence": "rights pending",
+      "qa_hold": "GitHub preview only, master native bytes not rechecked",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "regina--primary",
+      "source_page": null,
+      "pixels": null,
+      "source_rights_evidence": "rights pending",
+      "qa_hold": "GitHub staged whole, native bytes >1MB inaccessible via current read",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "visit--primary",
+      "source_page": null,
+      "pixels": null,
+      "source_rights_evidence": "rights pending",
+      "qa_hold": "GitHub staged whole, native bytes >1MB inaccessible via current read",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "heart-jesus--primary",
+      "source_page": null,
+      "pixels": null,
+      "source_rights_evidence": "rights pending",
+      "qa_hold": "GitHub staged whole, native bytes >1MB inaccessible via current read",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    },
+    {
+      "artwork_id": "scripture--primary",
+      "source_page": null,
+      "pixels": null,
+      "source_rights_evidence": "rights pending",
+      "qa_hold": "GitHub staged whole, native bytes >1MB inaccessible via current read",
+      "review_derivative_sha256": null,
+      "production_certified": false
+    }
+  ]
+}
