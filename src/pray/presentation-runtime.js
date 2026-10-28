@@ -42,6 +42,7 @@ import { prayCollationNotice } from "./source-collation-notices.v1.js";
 import { prayerCompendiumFrenchWitness } from "./compendium-french-witnesses.v1.js";
 import {christKingStages,CHRIST_KING_OPTION_DEFAULTS,CHRIST_KING_CONSECRATION,CHRIST_KING_ROYAL_PRAISES,CHRIST_KING_WITNESSES} from "./christ-king-benediction.js";
 import {benedictionAlleluiaStatus,benedictionVersiclesForDate,BENEDICTION_1962_WITNESS} from "./benediction-1962.js";
+import {divinePraisesForForm,DIVINE_PRAISES_EDITION} from "./benediction-divine-praises.js";
 import {FORTY_HOURS_SOLEMN_SOURCE,FORTY_HOURS_SOLEMN_STAGES,fortySolemnAt} from "./forty-hours-solemn.js";
 import {EUCHARISTIC_WITNESS_IDS,getEucharisticWitness,EUCHARISTIC_SOURCE} from "./eucharistic-witnesses.js";
 import {instituteOptionalFor} from "./icksp-batch02-optional.js";
@@ -236,7 +237,7 @@ let rosaryScriptureReturn=null;
 let ROSARY_CHOOSER={method:'ordinary',decades:5,guide:S.rosary.mode==='guided'?'guided':'simple',optionsOpen:false};
 function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,since:''}}
 let CONF=freshConfessionState();
-let BEN={step:0,divinePraises:false,celebration:"ordinary",feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};
+let BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:"ordinary",feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};
 let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};
 // Adoration preserves an explicit, secondary handoff to the distinct public
 // Benediction reader. The wording indicates whether this is a first visit or
@@ -391,7 +392,7 @@ function open(id,opts={}){
   else if(id==='pray.divine_mercy'){view='mercy';MERCY.step=0;}
   else if(id==='pray.rosary_methods'){view='rosaryMethods';}
   else if(id==='pray.confession'){view='confession';CONF=freshConfessionState();}
-  else if(id==='pray.benediction'){view='benediction';BEN={step:0,divinePraises:false,celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};}
+  else if(id==='pray.benediction'){view='benediction';BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};}
   else if(id==='pray.adoration')view='adoration';
   else if(id==='pray.stations'){view='stations';STATIONS.step=0}
   else if(id==='pray.visit_blessed_sacrament'){view='adoration';ADOR.mode='visit'}
@@ -418,7 +419,7 @@ function close({silent=false,preserve=false}={}){
     praySessionLanguage=null;
     // Privacy-sensitive preparation is memory-only and is cleared on a true close.
     CONF=freshConfessionState();
-    BEN={step:0,divinePraises:false,celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};adorationQuietReturn=null;
+    BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};adorationQuietReturn=null;
     if(!silent){FF={step:0,intention:false,communion:false};FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0}}
   }
   const ret=returnContext;returnContext=null;if(!silent&&!preserve){navStack=[];externalResume=null}if(!silent&&ret)queueMicrotask(()=>{if(ret?.surface==='apostolate')void window?.AO_APP_SHELL_V1?.navigate?.('apostolate');else window.AO_NAV_V362?.restore?.(ret)});
@@ -1494,7 +1495,10 @@ function renderBenediction(){
  if(id==='hymn')body=`${guideNow(L('Pray or sing Tantum Ergo','Priez ou chantez Tantum Ergo'),L('Follow the congregation and local posture. Keep your attention on the Blessed Sacrament rather than on the screen.','Suivez l’assemblée et la posture locale. Gardez votre attention sur le Saint-Sacrement plutôt que sur l’écran.'))}${prayerBlock('benediction_tantum_ergo',{kicker:L('Traditional hymn','Hymne traditionnel')})}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when the minister begins Panem de caelo and the collect that follows.','Avancez lorsque le ministre commence Panem de caelo et l’oraison qui suit.'))}`;
  if(id==='prayer')body=`${guideNow(L('Answer the versicle; listen to the collect','Répondez au verset ; écoutez l’oraison'),L('Make the response with the congregation. The minister then says the collect; do not race ahead of the public rite.','Faites le répons avec l’assemblée. Le ministre récite ensuite l’oraison ; ne devancez pas le rite public.'))}${prayerBlock('benediction_versicles',{kicker:L('Panem de caelo · Deus qui nobis','Panem de caelo · Deus qui nobis'),record:{...P('benediction_versicles'),...benedictionVersiclesForDate(P('benediction_versicles'),selectedDateKey())}})}${benFeastSource(L('1961 Graduale · seasonal Alleluia (Paschal time or Corpus Christi feast)','Graduel 1961 · Alleluia saisonnier (temps pascal ou Fête-Dieu)'),BENEDICTION_1962_WITNESS.url)}${!benedictionAlleluiaStatus(selectedDateKey()).known?callout(esc(L('A canonical calendar date was not available; no seasonal Alleluia has been assumed.','Date du calendrier canonique indisponible : l’Alléluia saisonnier n’a pas été présumé.')),'warn'):''}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when the minister prepares to give the Eucharistic blessing.','Avancez lorsque le ministre se prépare à donner la bénédiction eucharistique.'))}`;
  if(id==='blessing')body=`${guideNow(L('Receive the Eucharistic blessing','Recevez la bénédiction eucharistique'),L('Stop interacting with the phone. Attend to the blessing being given with the Blessed Sacrament.','Cessez d’interagir avec le téléphone. Soyez attentif à la bénédiction donnée avec le Saint-Sacrement.'))}${guideCue(L('WAIT UNTIL IT ENDS','ATTENDEZ LA FIN'),L('Do not advance during the blessing. Continue only after it has ended and the service moves on.','N’avancez pas pendant la bénédiction. Continuez seulement lorsqu’elle est terminée et que l’office se poursuit.'))}`;
- if(id==='praises')body=`${guideNow(L('Follow what is actually prayed next','Suivez ce qui est réellement prié ensuite'),L('If the Divine Praises are said here, pray them with the church. If they are omitted, leave them off and continue when Reposition begins.','Si les Louanges divines sont récitées ici, priez-les avec l’assemblée. Si elles sont omises, ne les ajoutez pas et continuez lorsque commence la reposition.'))}<label class="aoP435930Toggle"><input type="checkbox" data-p435930-ben-praises ${BEN.divinePraises?'checked':''}><span><b>${esc(L('The Divine Praises are being said','Les Louanges divines sont récitées'))}</b><small>${esc(L('Show the text only when it belongs to this service','Afficher le texte seulement lorsqu’il appartient à cet office'))}</small></span></label>${BEN.divinePraises?prayerBlock('benediction_divine_praises',{kicker:L('Pray with the church','Prier avec l’assemblée')}):''}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when the Blessed Sacrament is being returned to the tabernacle.','Avancez lorsque le Saint-Sacrement est reporté au tabernacle.'))}`;
+ if(id==='praises')body=`${guideNow(L('Follow what is actually prayed next','Suivez ce qui est réellement prié ensuite'),L('If the Divine Praises are said here, pray them with the church. If they are omitted, leave them off and continue when Reposition begins.','Si les Louanges divines sont récitées ici, priez-les avec l’assemblée. Si elles sont omises, ne les ajoutez pas et continuez lorsque commence la reposition.'))}
+ <label class="aoP435930Toggle"><input type="checkbox" data-p435930-ben-praises ${BEN.divinePraises?'checked':''}><span><b>${esc(L('The Divine Praises are being said','Les Louanges divines sont récitées'))}</b><small>${esc(L('Show the text only when it belongs to this service','Afficher le texte seulement lorsqu’il appartient à cet office'))}</small></span></label>
+ ${BEN.divinePraises?`<div class="aoP435930GuideMode" role="group" aria-label="${esc(L('Divine Praises edition','Version des Louanges divines'))}"><label><input type="radio" name="ao-ben-praises-edition" value="1962" data-p435930-ben-praises-form ${BEN.praisesForm==='1962'?'checked':''}>${esc(L('1962 · 13 invocations','1962 · 13 invocations'))}</label><label><input type="radio" name="ao-ben-praises-edition" value="later" data-p435930-ben-praises-form ${BEN.praisesForm==='later'?'checked':''}>${esc(L('After 1964 · 14 invocations','Après 1964 · 14 invocations'))}</label></div>`+prayerBlock('benediction_divine_praises',{kicker:L('Pray with the church','Prier avec l’assemblée'),record:divinePraisesForForm(P('benediction_divine_praises'),BEN.praisesForm)})+benFeastSource(L('AAS 56 (1964), p. 338 · Holy Spirit invocation added after 1962','AAS 56 (1964), p. 338 · invocation au Saint-Esprit ajoutée après 1962'),DIVINE_PRAISES_EDITION.witness):''}
+ ${guideCue(L('WAIT FOR','ATTENDEZ'),L('Advance when the Blessed Sacrament is being returned to the tabernacle.','Avancez lorsque le Saint-Sacrement est reporté au tabernacle.'))}`;
  if(id==='reposition')body=`${guideNow(L('Follow the Reposition','Suivez la reposition'),L('Follow the chant and movement actually used as the Blessed Sacrament is returned to the tabernacle. The app does not force Psalm 116 or another local custom.','Suivez le chant et le mouvement réellement utilisés lorsque le Saint-Sacrement est reporté au tabernacle. L’application n’impose ni le psaume 116 ni un autre usage local.'))}${guideCue(L('FINISH WHEN','TERMINEZ LORSQUE'),L('The Blessed Sacrament has been reposed and the public service has actually ended.','Le Saint-Sacrement a été replacé au tabernacle et l’office public est réellement terminé.'))}`;
  return `${head(L('Benediction','Bénédiction'),L('Live companion · the church determines the pace','Compagnon en direct · l’église détermine le rythme'))}<main class="aoP435930Body aoP435930BenedictionReader" data-ao-benediction-step="${i}" data-ao-benediction-celebration="${esc(BEN.celebration)}" data-ao-benediction-final="${i===stages.length-1}">
   ${benFeastOptions()}${batch02SourceLinks('benediction-optional-local')}
@@ -2736,7 +2740,7 @@ function onClick(e){
  if(b.matches('[data-p435930-conf-clear]')){CONF=freshConfessionState();return render()}
  if(b.dataset.p435930BenStep!=null){BEN.step=+b.dataset.p435930BenStep;return render()}
  if(b.matches('[data-p435930-ben-finish]')&&BEN.step===benStages().length-1){
-  setAdorationPresence('reserved');BEN={step:0,divinePraises:false,celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};popView('home');return render()
+  setAdorationPresence('reserved');BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};popView('home');return render()
  }
  if(b.matches('[data-p435930-ador-quiet-enter]'))return enterAdorationQuiet();
  if(b.matches('[data-p435930-ador-quiet-exit]'))return exitAdorationQuiet();
@@ -2843,6 +2847,7 @@ function onChange(e){const x=e.target;
    render();queueMicrotask(()=>{const d=mount()?.querySelector('[data-ao-ben-feast-options]');if(d)d.open=true});return;
   }
   if(x.matches('[data-p435930-ben-praises]')){BEN.divinePraises=x.checked;return render()}
+ if(x.matches('[data-p435930-ben-praises-form]')){BEN.praisesForm=x.value==='later'?'later':'1962';return render()}
  if(x.matches('[data-p435930-station-stabat]')){S.stations.stabat=x.checked;save();return render()}
  if(x.matches('[data-p435930-station-public-posture]')){
   STATIONS.publicPosture=x.checked;
