@@ -1,0 +1,36 @@
+name: Sacred Art CMA seven official print photo check
+
+on:
+  push:
+    branches:
+      - research/prayer-existing-sacred-art-mosaic-20261028
+    paths:
+      - .github/workflows/sacred-art-cma7-official-print-check-20261028.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  official-cc0-jpeg:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout research branch, no writes
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install Pillow
+        run: python -m pip install --disable-pip-version-check pillow==11.3.0
+      - name: Verify exactly seven official Cleveland print JPEGs
+        run: |
+          python -m py_compile scripts/research/sacred_art_cma7_official_print_photo_20261028.py
+          python scripts/research/sacred_art_cma7_official_print_photo_20261028.py
+      - name: Upload evidence JSON only (no masters)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-art-cma7-print-evidence-${{ github.run_id }}
+          path: artifacts/sacred-art-cma7-print-check
+          retention-days: 3
+          if-no-files-found: warn
