@@ -115,12 +115,17 @@ function surfaceFor(record,payload,jewishPrayerVariant){
     // Printed 1962 p. 167 is a section heading, not a spoken text.
     paragraphs:freeze([textRow("GF-SOP-PREP","Orationes solemnes.","RUBRIC",["GF-SOP-400"])])
   });
-  if(id==="GF-SOP-410")return freeze({
-    key:"SOLEMN_PRAYERS_BEGIN",title:"The Solemn Prayers",
-    // The first printed prayer starts "Oremus, dilectissimi nobis ...".
-    // Do not invent an earlier, separate spoken "Oremus" at this transition.
-    paragraphs:freeze([])
-  });
+  if(id==="GF-SOP-410"){
+    // The first printed prayer begins "Oremus, dilectissimi nobis ...".
+    // The standalone section transition shows that *same* first prayer,
+    // not an invented earlier Oremus nor an empty card. K/R subsequently
+    // retain this same source-owned surface while posture advances.
+    const first=solemnPrayer(payload,payload.solemnPrayers[0].key,jewishPrayerVariant);
+    return freeze({
+      key:"SOLEMN_PRAYER_01",title:"1. "+first.title,
+      paragraphs:prayerRows("GF-SOP-01",first.intention,first.prayer)
+    });
+  }
   const sop=id.match(/^GF-SOP-(\d\d)-[KR]$/);
   if(sop){
     const n=Number(sop[1]);
