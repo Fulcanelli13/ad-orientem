@@ -1,0 +1,104 @@
+{
+  "schema": "ao.pray.b25-holy-face-variant-review.v1",
+  "asOf": "2026-10-29",
+  "purpose": "Secondary-witness triage only. Preserve the captured League full text and original HTML hash; no automatic or public text substitution.",
+  "rawDigitalWitness": {
+    "path": "data/pray/research/pray-b25-holy-face-janvier-1887-nine-full-english-days.v1.json",
+    "htmlSha256": "d999ceff56b953ff3416cefa36d8fd252ebdf12eb5c630b9aed4004a5e0bb642",
+    "source": "league"
+  },
+  "sourceWitnesses": {
+    "league": "https://www.martinians.org/novena-to-the-holy-face",
+    "carmelite": "https://holyfacechapel.org/manual-of-the-archconfraternity-of-the-holy-face-novena-to-the-holy-face/",
+    "missionaries": "https://sjmoftheholyface.org/wp-content/uploads/2024/01/Original-Novena-To-the-Holy-Face.pdf",
+    "facsimileLead": "https://holyfacechapel.org/wp-content/uploads/2025/09/ManualoftheArchconfraternityoftheHolyFace.pdf"
+  },
+  "photographed1887ManualCompared": false,
+  "note": "Holy Face Chapel HTML is presented as a transcription of the 1887 Manual; the St Joseph Missionaries PDF is a modern typeset reprint, not the 1887 page-image. Source witnesses may share textual ancestry and are not guaranteed fully independent.",
+  "variants": [
+    {
+      "id": "B25-V01",
+      "day": 5,
+      "section": "Virtue heading",
+      "staged": "Virtue lo be practiced",
+      "chapel": "Virtue to be practiced",
+      "reprint": "Virtue to be practised",
+      "editorialReading": "Virtue to be practiced",
+      "decision": "PROVISIONAL_TYPO_CORRECTION",
+      "reason": "`lo` is implausible, both additional digital witnesses have `to`; British spelling variation is not substantive."
+    },
+    {
+      "id": "B25-V02",
+      "day": 6,
+      "section": "Virtue sentence",
+      "staged": "ill-regulated movements",
+      "chapel": "ill regulated movements",
+      "reprint": "all regulated movements",
+      "editorialReading": "ill-regulated movements",
+      "decision": "PROVISIONAL_SUBSTANTIVE_WITNESS_MAJORITY",
+      "reason": "Chapel and League agree on ill-regulated; modern reprint `all regulated` reverses sense. Hyphen differences not material."
+    },
+    {
+      "id": "B25-V03",
+      "day": 7,
+      "section": "Reflection III",
+      "staged": "perverse and sacrilegious deeds",
+      "chapel": "perverse and sacrilegious sects",
+      "reprint": "perverse and sacrilegious sects",
+      "editorialReading": "perverse and sacrilegious sects",
+      "decision": "PROVISIONAL_SUBSTANTIVE_WITNESS_MAJORITY",
+      "reason": "Two independent secondary text reproductions agree against staged witness; printed edition still required for definitive reading."
+    },
+    {
+      "id": "B25-V04",
+      "day": 7,
+      "section": "Reflection III",
+      "staged": "oh sweet Peace of my Saviour",
+      "chapel": "oh sweet Face of my Saviour",
+      "reprint": "oh sweet Face of my Saviour",
+      "editorialReading": "oh sweet Face of my Saviour",
+      "decision": "PROVISIONAL_SUBSTANTIVE_WITNESS_MAJORITY",
+      "reason": "The paired references to the Holy Face and the two additional digital witnesses support Face; preserve staged source unchanged."
+    },
+    {
+      "id": "B25-V05",
+      "day": 8,
+      "section": "Reflection I",
+      "staged": "Paler, dimitte illis",
+      "chapel": "Pater, dimitte illis",
+      "reprint": "Pater, dimitte illis",
+      "editorialReading": "Pater, dimitte illis",
+      "decision": "PROVISIONAL_LATIN_TYPO_CORRECTION",
+      "reason": "Pater is the grammatical Latin form and is supported by both additional witnesses, but original printed edition is still uncollated."
+    },
+    {
+      "id": "B25-V06",
+      "day": 8,
+      "section": "Virtue heading",
+      "staged": "Virtue to practice",
+      "chapel": "Virtue to practise",
+      "reprint": "Virtue to practise",
+      "editorialReading": "Virtue to practise",
+      "decision": "SPELLING_ONLY_NO_SOURCE_OVERRIDE",
+      "reason": "The variant that initially caused the parser failure is a legitimate heading; British/American spelling differences require no correction for completeness."
+    }
+  ],
+  "sourceGates": {
+    "rawHistoricalDigitalTextUnmodified": true,
+    "variantCount": 6,
+    "sourceEditionSelectedForPublication": false,
+    "original1887PageImageCollation": false,
+    "englishEditionEditoriallyCertified": false,
+    "frenchTranslationProvided": false,
+    "latinTranslationProvided": false,
+    "publicNovenaApproved": false,
+    "noHistoricalIndulgenceClaim": true
+  },
+  "nextSteps": [
+    "Verify the 1887 original printed pages 108–142 using page photographs and record printed page number and crop per disputed reading.",
+    "Run a full day-by-day collation for all nine meditation bodies and shared material; six flagged readings are not proof there are only six differences.",
+    "Adjudicate each variant separately in a versioned edited English witness; never rewrite the raw acquisition JSON or claim 1887 print certification.",
+    "Treat scriptureContext tags as related scenes, not claims that Veronica or an appearance to the Blessed Virgin occurs in the cited passages.",
+    "Only after edition approval evaluate integration with existing Novena owner and mobile/CI checks."
+  ]
+}
