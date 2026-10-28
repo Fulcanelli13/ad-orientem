@@ -41,7 +41,7 @@ try {
   const describeRow=(x,i)=>({
    index:i,sourcePath:x?.sourcePath??null,latinPresent:!!(x?.lat??x?.la),
    englishPresent:!!x?.en,frenchPresent:!!x?.fr,
-   latinNamedMartyrs:/mart[yý]rum/i.test(String(x?.lat??x?.la??"")),
+   latinNamedMartyrs:/martyrum/i.test(String(x?.lat??x?.la??"").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"")),
    frenchVirginLabel:/vierges et martyres/i.test(String(x?.fr??"")),
    frenchNameCount:(String(x?.fr??"").match(/N\./g)||[]).length,
    latinNameCount:(String(x?.lat??x?.la??"").match(/N\./g)||[]).length
@@ -109,6 +109,29 @@ assert.equal(output.schema,"AO_1962_PLURAL_MARTYRS_LIVE_OWNER_OBSERVATIONS_V1");
 assert.equal(output.observedDays.length,3);
 const mar6=output.observedDays.find(x=>x.date==="2026-03-06");
 assert.equal(mar6?.sourcePath,"Tempora/Quad2-5","6 March default Mass is the Lenten feria, never silently replace with a Common");
+
+for(const date of ["2026-03-06","2027-03-06"]){
+ const row=output.observedDays.find(x=>x.date===date);
+ assert.equal(row?.status,"ready",date+" selected 1962 day");
+ assert.equal(row?.calendarCommemorations?.length,1,date+" actual source commemoration count");
+ assert.equal(row.calendarCommemorations[0]?.prayerSourcePath,"Sancti/03-06",
+   date+" named source required; never infer from the civil day");
+ for(const slot of ["COLLECT_SET","SECRET_SET"]){
+  const conflict=row.reader?.sourceConflict?.find(x=>x.slot===slot);
+  assert.equal(conflict?.status,"SOURCE_CONFLICT",date+" wrong French prayer identity escaped reader");
+  assert.equal(conflict?.sourcePath,"Sancti/03-06",date+" attached source owner lost");
+ }
+ assert.equal(row.reader?.readerSlots?.collect,"MISSING",date+" invalid Collect published as READY");
+ assert.equal(row.reader?.readerSlots?.secret,"MISSING",date+" invalid Secret published as READY");
+ assert.equal(row.reader?.readerSlots?.postcommunion,"READY",
+   date+" unrelated source-authentic named Postcommunion was dropped");
+}
+const martin=output.observedDays.find(x=>x.date==="2026-11-11");
+assert.equal(martin?.sourcePath,"Sancti/11-11");
+assert.equal(martin.reader?.readerSlots?.collect,"READY");
+assert.equal(martin.reader?.readerSlots?.secret,"READY");
+assert.equal(martin.reader?.readerSlots?.postcommunion,"READY");
+
 for(const d of output.observedDays){
  console.log("MARTYRS_LIVE_DAY="+JSON.stringify({date:d.date,status:d.status,mainId:d.mainId,
   selectedPath:d.sourcePath,commemorations:d.calendarCommemorations??null,
