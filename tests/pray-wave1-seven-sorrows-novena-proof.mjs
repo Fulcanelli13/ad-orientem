@@ -51,9 +51,11 @@ try{
   const errors=[];page.on("pageerror",e=>errors.push(e.message));
   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html"+flag,
    {waitUntil:"domcontentloaded",timeout:90000});
-  await page.waitForFunction(()=>window.AO_NOVENAS_V3?.open&&window.AO_PRAY_APP_V1?.open,
-   null,{timeout:45000});
+  await page.waitForFunction(()=>typeof window.AO_PRAY_APP_V1?.open==="function",null,{timeout:45000});
   assert.equal(await page.evaluate(()=>window.AO_PRAY_APP_V1.open()),true);
+  await page.waitForFunction(()=>typeof window.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
+  await page.evaluate(()=>window.AO_MODULES.open("pray.novenas",{returnContext:null}));
+  await page.waitForFunction(()=>typeof window.AO_NOVENAS_V3?.open==="function",null,{timeout:15000});
   assert.equal(await page.evaluate(()=>window.AO_NOVENAS_V3.open({novenaId:"seven_sorrows"})),true);
   assert.equal(await page.evaluate(()=>window.AO_NOVENAS_V3.state().id),"seven_sorrows");
   assert.equal(await page.evaluate(()=>window.AO_NOVENAS_V3.state().screen),"detail");
@@ -109,8 +111,11 @@ try{
  }
  const plain=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
  await plain.goto("http://127.0.0.1:"+server.address().port+"/index.html",{waitUntil:"domcontentloaded"});
- await plain.waitForFunction(()=>window.AO_NOVENAS_V3?.open&&window.AO_PRAY_APP_V1?.open);
+ await plain.waitForFunction(()=>typeof window.AO_PRAY_APP_V1?.open==="function");
  assert.equal(await plain.evaluate(()=>window.AO_PRAY_APP_V1.open()),true);
+ await plain.waitForFunction(()=>typeof window.AO_PRAY_V435930?.open==="function");
+ await plain.evaluate(()=>window.AO_MODULES.open("pray.novenas",{returnContext:null}));
+ await plain.waitForFunction(()=>typeof window.AO_NOVENAS_V3?.open==="function");
  assert.equal(await plain.evaluate(()=>window.AO_NOVENAS_V3.open({novenaId:"seven_sorrows"})),true);
  assert.equal(await plain.locator("[data-ao-seven-sorrows-art-proof]").count(),0,
    "default novena route changed");
