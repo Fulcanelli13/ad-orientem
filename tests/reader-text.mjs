@@ -9,6 +9,7 @@ import {
 } from "../src/mass/reader-text.js";
 import { properToReaderSlots } from "../src/mass/proper-reader-slots.js";
 import { requiemFootPsalmAndLavaboOmittedCuesForResolvedMass, requiemGospelOmittedCuesForResolvedMass } from "../src/mass/reader-requiem-conditions.js";
+import { missalRequiemIntroitCrossDescription, missalChalicePreparationDescription } from "../src/mass/reader-missal-granularity.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const low=load("../data/presentation/reader-text-low.v1.json");
@@ -174,6 +175,19 @@ assert.ok(gospelCard.paragraphs.some(p=>p.id==="AO.SM.C0088" && /sins be blotted
   "priest-private Per evangelica dicta disappeared behind Proper replacement");
 assert.equal(gospelCard.paragraphs.filter(p=>/ENGLISH GOSPEL/.test(p.primary)).length,1,
   "Gospel Proper payload was duplicated during fixed-tail composition");
+
+// The Requiem Introit book-cross is a static source instruction, not a
+// claimed observation. Offertory water's already-correct restriction remains.
+const resolvedRequiem={form:"SOLEMN",overlays:["REQUIEM"],
+  actualCelebration:{type:"REQUIEM"}};
+assert.match(missalRequiemIntroitCrossDescription(resolvedRequiem,{language:"en"}),
+  /Cross over the Missal/);
+assert.match(missalRequiemIntroitCrossDescription(resolvedRequiem,{language:"fr"}),
+  /croix au-dessus du missel/);
+assert.equal(missalRequiemIntroitCrossDescription({
+  form:"SOLEMN",overlays:[],actualCelebration:{type:"CALENDAR"}}),null);
+assert.match(missalChalicePreparationDescription(resolvedRequiem,{language:"en"}),
+  /without blessing the water/);
 
 // XIII.1: Requiem Gospel does not include the private Jube/Dominus-sit
 // petition or the book-kiss Per evangelica dicta, but retains Munda cor
