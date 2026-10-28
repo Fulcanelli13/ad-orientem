@@ -108,7 +108,7 @@
     },
     "batch2_pristine_ready": 0,
     "batch2_artwork_groups_processed": 14,
-    "batch2_native_source_candidates_archived": 1,
+    "batch2_native_source_candidates_archived": 7,
     "batch2_photo_candidates_pristine": 0,
     "batch2_source_only_duplicates_avoided": 1
   },
@@ -338,7 +338,7 @@
         "newly_archived_original_candidate": false,
         "source_sha256": null,
         "candidate_pixels": null,
-        "native_candidate_qualitative_grade": "NO_NATIVE_IMAGE_REVIEW_POSSIBLE",
+        "native_candidate_qualitative_grade": "NO_NATIVE_PHOTO_INSPECTION",
         "photo_identity_and_rights_still_hold": true,
         "no_promotion_into_current_approved_master": true
       }
@@ -570,10 +570,13 @@
       ],
       "batch2_source_search": {
         "case_id": "reni-michael",
-        "acquisition_status": "SOURCE_FETCH_FAILED",
-        "newly_archived_original_candidate": false,
-        "source_sha256": null,
-        "candidate_pixels": null,
+        "acquisition_status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+        "newly_archived_original_candidate": true,
+        "source_sha256": "d376bbf82b9978223eb8968fda988ae7d61ebc84cf50d72bb5f5fd868fbb23ce",
+        "candidate_pixels": [
+          2112,
+          2816
+        ],
         "native_candidate_qualitative_grade": "REJECT_AS_PRISTINE_EXTERNAL_GILT_FRAME_AND_PERSPECTIVE",
         "photo_identity_and_rights_still_hold": true,
         "no_promotion_into_current_approved_master": true
@@ -641,7 +644,7 @@
         "newly_archived_original_candidate": false,
         "source_sha256": null,
         "candidate_pixels": null,
-        "native_candidate_qualitative_grade": "NO_NATIVE_IMAGE_REVIEW_POSSIBLE",
+        "native_candidate_qualitative_grade": "NO_NATIVE_PHOTO_INSPECTION",
         "photo_identity_and_rights_still_hold": true,
         "no_promotion_into_current_approved_master": true
       }
@@ -1084,7 +1087,7 @@
         "newly_archived_original_candidate": false,
         "source_sha256": null,
         "candidate_pixels": null,
-        "native_candidate_qualitative_grade": "NO_NATIVE_IMAGE_REVIEW_POSSIBLE",
+        "native_candidate_qualitative_grade": "NO_NATIVE_PHOTO_INSPECTION",
         "photo_identity_and_rights_still_hold": true,
         "no_promotion_into_current_approved_master": true
       }
@@ -1227,7 +1230,7 @@
         "newly_archived_original_candidate": false,
         "source_sha256": null,
         "candidate_pixels": null,
-        "native_candidate_qualitative_grade": "NO_NATIVE_IMAGE_REVIEW_POSSIBLE",
+        "native_candidate_qualitative_grade": "NO_NATIVE_PHOTO_INSPECTION",
         "photo_identity_and_rights_still_hold": true,
         "no_promotion_into_current_approved_master": true
       }
@@ -5218,32 +5221,24 @@
         "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40714325345",
         "native_archived": 6
       },
-      "native_sources_total": 1,
+      "native_sources_total": 7,
       "next_qa": "Bulk review 7 sources against full painted boundaries, museum original/colour and per-file reuse terms; reject framed Carracci/Reni/paired hearts and noisy Station XII as pristine, explore non-framed institutional alternatives.",
       "remaining_exact_groups_not_native_archived": [
         "guardian-angel-cortona",
         "evening-frere-op6",
         "restout-pentecost",
-        "reni-michael",
         "gerome-age-augustus",
-        "tiepolo-station12",
-        "tiepolo-prado-descent",
         "tiepolo-prado-burial",
-        "teniers-agony-antwerp",
-        "paired-hearts-lopez",
         "batoni-sacred-heart",
-        "vandyck-holy-spirit",
         "rubens-trinity"
       ],
       "photo_source_grade_counts": {
-        "NO_NATIVE_IMAGE_REVIEW_POSSIBLE": 7,
+        "NO_NATIVE_PHOTO_INSPECTION": 7,
         "REJECT_AS_PRISTINE_EXTERNAL_GILT_FRAME_AND_PERSPECTIVE": 1,
-        "RESEARCH_SOURCE_HIGH_PIXEL_BUT_VISIBLE_COLOR_NOISE": 1,
-        "PRELIMINARY_FRAME_FREE_PAINTED_SURFACE_MUSEUM_COLOR_HOLD": 1,
+        "REJECT_AS_PRISTINE_SEVERE_CORNER_CHROMA_NOISE": 1,
+        "PRELIMINARY_PAINTED_SURFACE_HOLD": 3,
         "REJECT_AS_PRISTINE_EXTERNAL_BLACK_FRAME": 1,
-        "PRELIMINARY_FRAME_FREE_NATIVE_COMPRESS_DETAIL_HOLD": 1,
-        "REJECT_AS_PRISTINE_EXTERNAL_GILT_FRAME": 1,
-        "PRELIMINARY_FRAME_FREE_NATIVE_COLOR_AND_RIGHTS_HOLD": 1
+        "REJECT_AS_PRISTINE_EXTERNAL_GILT_FRAME": 1
       }
     },
     "B2_MASTER_QUALITY": {
