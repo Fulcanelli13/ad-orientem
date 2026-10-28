@@ -12,7 +12,7 @@ on:
       - tools/pray/collate-holy-face-novena-1887.py
       - .github/workflows/pray-b25-holyface-source-acquisition.yml
 permissions:
-  contents: write
+  contents: read
 jobs:
   acquire:
     runs-on: ubuntu-latest
@@ -40,14 +40,10 @@ jobs:
           assert x['sourceReleaseGate']['modern2022AppendicesIncluded']==False
           print('PASS: nine source sections, held original-print certification, no modern appendices')
           PY
-      - name: Commit reviewed-source *candidate* only to this research branch
-        run: |
-          git config user.name "ad-orientem-source-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/pray/research/pray-b25-holy-face-janvier-1887-nine-full-english-days.v1.json
-          if git diff --cached --quiet; then
-            echo "No source corpus changes"
-          else
-            git commit -m "Research B25: stage complete nine-day Janvier digital English witness (not print certified)"
-            git push origin HEAD:research/pray-b25-holy-face-1887-full-text-acquisition-20261029
-          fi
+      - name: Upload short-lived research witness for reviewed GitHub connector admission
+        uses: actions/upload-artifact@v4
+        with:
+          name: pray-b25-holy-face-nine-day-digital-english
+          path: data/pray/research/pray-b25-holy-face-janvier-1887-nine-full-english-days.v1.json
+          if-no-files-found: error
+          retention-days: 1
