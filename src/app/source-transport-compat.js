@@ -59,6 +59,29 @@ export function rewriteResolvedSourceUrl(input){
   return raw;
 }
 
+// The legacy ScriptureService still requests three historical French
+// witnesses through the MediaWiki parse API from a browser origin. That
+// endpoint currently rejects CORS, so attempting it generates browser errors
+// before ScriptureService can fall back to its linked original witness.
+// Never supply edition text from a different Bible, Catena or language.
+// Report an explicit upstream-source error in the original parser's expected
+// envelope, preserving its own SOURCE_UNAVAILABLE/link-only presentation.
+// Ordinary Wikisource hyperlinks and unrelated MediaWiki requests are untouched.
+export function isLegacyFrenchWikisourceParserUrl(input){
+  try{
+    const url=new URL(String(input??""));
+    if(url.protocol!=="https:"||url.hostname!=="fr.wikisource.org"||
+       url.pathname!=="/w/api.php"||
+       url.searchParams.get("action")!=="parse"||
+       !String(url.searchParams.get("prop")??"").split("|").includes("text"))
+      return false;
+    const page=url.searchParams.get("page")??"";
+    return /^Chaîne d.or sur l.évangile de saint (Matthieu|Marc|Luc|Jean)\/Chapitre \d+$/iu.test(page) ||
+      /^La sainte Bible selon la Vulgate \(J\.-B\. Glaire\)\/.+$/u.test(page) ||
+      /^Discours sur les psaumes \(Augustin\)\/Psaumes [IVXLCDM]+ à [IVXLCDM]+$/u.test(page);
+  }catch{return false;}
+}
+
 function requestUrl(input){
   if(typeof input==="string")return input;
   if(typeof URL!=="undefined"&&input instanceof URL)return input.href;
@@ -74,6 +97,20 @@ export function installSourceTransportCompat(win=globalThis){
     const raw=requestUrl(input);
     const rewritten=rewriteResolvedSourceUrl(raw);
     const target=rewritten||raw;
+    if(isLegacyFrenchWikisourceParserUrl(target)&&typeof win.Response==="function"){
+      return Promise.resolve(new win.Response(JSON.stringify({
+        error:{
+          code:"HISTORICAL_SOURCE_UNAVAILABLE_IN_BROWSER",
+          info:"French Wikisource parse API unavailable cross-origin; use the linked original edition.",
+        },
+      }),{
+        status:200,
+        headers:{
+          "content-type":"application/json; charset=utf-8",
+          "x-ao-source-compat":"historical-wikisource-source-unavailable",
+        },
+      }));
+    }
     if(isKnownAbsentResolvedSourceUrl(target)&&typeof win.Response==="function"){
       return Promise.resolve(new win.Response("",{
         status:404,
