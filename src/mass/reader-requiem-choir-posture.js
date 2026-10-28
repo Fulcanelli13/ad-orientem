@@ -28,7 +28,7 @@ export function projectRequiemChoirPosture(cueId,resolvedMass,{reason=null}={}){
   const spans=[
     {from:72,to:75,value:"KNEEL",start:"AO.SM.C0072",rule:"COLLECTS"},
     {from:150,to:208,value:"KNEEL",start:"AO.SM.C0150",rule:"AFTER_SANCTUS_TO_PATERNOSTER"},
-    {from:208,to:2222,value:"STAND",start:"AO.SM.C0208",rule:"PATERNOSTER_INTRODUCTION"},
+    {from:208,to:222,value:"STAND",start:"AO.SM.C0208",rule:"PATERNOSTER_INTRODUCTION"},
     {from:253,to:257,value:"KNEEL",start:"AO.SM.C0253",rule:"POSTCOMMUNIONS"},
     {from:257,to:267,value:"STAND",start:"AO.SM.C0257",rule:"AFTER_POSTCOMMUNIONS"},
   ];
