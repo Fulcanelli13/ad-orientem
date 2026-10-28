@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {
   HARDENED_CROSS_CUES,
+  READER_MODES,
   resolveReaderPreferences,
   resolvePosture,
   resolveMomentState,
@@ -23,6 +24,10 @@ expect(HARDENED_CROSS_CUES.every(id=>contract.hardening.crossSourceMismatchCues.
 expect(contract.ownershipRepairs.ordinaryIncarnatusPersistentKneel===false,"Persistent Incarnatus kneel reintroduced");
 expect(contract.ownershipRepairs.currentColorIconsUseMasks===true,"currentColor mask contract lost");
 
+expect(READER_MODES.join(",")==="MISSAL,LIVE","retired Simple leaked into reader-state modes");
+const saved=resolveReaderPreferences({mode:"SIMPLE",postureProfile:"MY_LOCAL"});
+expect(saved.mode==="LIVE" && saved.postureProfile==="MY_LOCAL",
+  "saved Simple preference migration must preserve local posture");
 const prefs=resolveReaderPreferences({mode:"live",postureProfile:"MY_LOCAL",gestureProfile:"guided_1962"});
 const noLocal=resolvePosture({sourcedPosture:{value:"KNEEL",fixed:false},preferences:prefs});
 expect(noLocal.value===null && noLocal.owner==="LOCAL_FAIL_CLOSED","Empty local posture invented a command");

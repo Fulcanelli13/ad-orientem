@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import {
   createReaderStructureController,
   LIVE_STRUCTURE_STATUS,
+  READER_PRESENTATION_MODES,
   makeStructureCards,
   structureSupport,
 } from "../src/mass/reader-structure.js";
@@ -18,7 +19,9 @@ const ordinary={
 };
 
 assert.equal(makeStructureCards("MISSAL").length,30);
-assert.equal(makeStructureCards("SIMPLE").length,30);
+assert.deepEqual(READER_PRESENTATION_MODES,["MISSAL","LIVE"]);
+assert.equal(makeStructureCards("SIMPLE",canonSourceMap).length,39,
+  "legacy Simple preference must select source-first LIVE Canon");
 assert.equal(makeStructureCards("LIVE",canonSourceMap).length,39);
 
 const live=makeStructureCards("LIVE",canonSourceMap);
