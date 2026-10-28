@@ -93,6 +93,51 @@ class NormalizerTests(unittest.TestCase):
             self.assertEqual(len(not_omitted["sections"]), 3)
             self.assertEqual(not_omitted["omittedSourceCells"], [])
 
+    def test_all_souls_exact_status_only_markers_preserve_source_ids(self):
+        for language, labels in (
+            ("en", ("Start{omit}", "Hymn{omit}")),
+            ("fr", ("Début{omises}", "Hymne{omises}")),
+        ):
+            def fixture(first, second):
+                rows = [
+                    first, "Invitatorium {ex Proprio}",
+                    second, "Lectio 1\\nVerbum Domini",
+                ]
+                cells = "".join(
+                    f"<tr><td id='Matutinum{i}'><p>{row}</p></td></tr>"
+                    for i, row in enumerate(rows, 1)
+                )
+                return (
+                    "<html><body><p class='cen'>In Commemoratione Defunctorum</p>"
+                    "<h2>Matutinum</h2><table>" + cells + "</table></body></html>"
+                )
+
+            data = normalize_xhtml(
+                fixture(*labels), date="2026-11-02", hour="MATINS",
+                language=language, source_revision=PIN,
+            )
+            self.assertEqual(len(data["sections"]), 2)
+            self.assertEqual(data["metrics"]["rawSourceCellCount"], 4)
+            self.assertEqual(data["metrics"]["explicitlyOmittedSourceCellCount"], 2)
+            self.assertEqual([x["sourceIndex"] for x in data["sections"]], [2, 4])
+            self.assertEqual([x["index"] for x in data["sections"]], [1, 2])
+            self.assertEqual(
+                [x["sourceCellId"] for x in data["omittedSourceCells"]],
+                ["Matutinum1", "Matutinum3"],
+            )
+            self.assertEqual(
+                [x["reason"] for x in data["omittedSourceCells"]],
+                ["UPSTREAM_EXPLICIT_START_OMISSION", "UPSTREAM_EXPLICIT_HYMN_OMISSION"],
+            )
+            # Never remove a real source sentence or a loosely matched marker.
+            contaminated = fixture(labels[0] + " V. Domine exaudi", labels[1])
+            not_omitted = normalize_xhtml(
+                contaminated, date="2026-11-02", hour="MATINS",
+                language=language, source_revision=PIN,
+            )
+            self.assertEqual(len(not_omitted["sections"]), 3)
+            self.assertEqual(len(not_omitted["omittedSourceCells"]), 1)
+
     def test_reject_duplicate_or_noncontiguous_cells(self):
         malformed = HTML.replace("Vespera2", "Vespera3")
         with self.assertRaisesRegex(ValueError, "NONCONTIGUOUS"):
