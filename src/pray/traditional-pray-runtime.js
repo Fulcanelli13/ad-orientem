@@ -857,16 +857,40 @@ function handleClick(e){
     return savePersonalDailyChoice(next);
   }
   if(b.hasAttribute("data-tp381-personal-variant")){
-    if(S.route!=="pray.morning_evening"||S.screen!=="module")return;
+    if(S.route!=="pray.morning_evening"||S.screen!=="module"||S.dailyMode!=="guided")return;
     const value=b.dataset.tp381PersonalVariant,prefs=personalDailyPrefs();
+    const before=dailyReadingPlan(),oldRow=before.rows[S.dailyStep];
+    if(oldRow?.kind!=="personal-prayer"||!before.availableVariants.some(x=>x.slot===oldRow.sourceId))return;
+    let selected=value;
     if(value?.startsWith("default:")){
-      const slot=value.slice("default:".length);
-      if(!Object.prototype.hasOwnProperty.call(prefs.variants?.[S.daypart]||{},slot))return;
-      const next=changePersonalDailyPrefs(prefs,{action:"variant",daypart:S.daypart,value:prefs.variants[S.daypart][slot]});
-      return savePersonalDailyChoice(next);
-    }
-    const next=changePersonalDailyPrefs(prefs,{action:"variant",daypart:S.daypart,value});
-    return savePersonalDailyChoice(next);
+      if(value!=="default:"+oldRow.sourceId)return;
+      selected=prefs.variants[S.daypart]?.[oldRow.sourceId];
+      if(!selected)return;
+    }else if(!before.availableVariants.some(x=>x.slot===oldRow.sourceId&&x.id===value))return;
+    const next=changePersonalDailyPrefs(prefs,{action:"variant",daypart:S.daypart,value:selected});
+    const plan=buildPersonalDailyPlan({daypart:S.daypart,prefs:next});
+    const updated=plan.rows.find(x=>x.id===oldRow.id);
+    if(!updated||updated.replacementId===oldRow.replacementId)return;
+    const scroll=mount()?.querySelector('.aoDevoCardScroll');
+    const article=scroll?.querySelector('.aoTP381PrayerCard[data-ao-personal-prayer]');
+    if(!article)return;
+    // Surgical text substitution: the existing full-screen atmospheric scene,
+    // navigation, active stage and running stopwatch are not re-created.
+    PERSONAL_DAILY_PREFS=next;
+    let storage=null;try{storage=globalThis.localStorage||null}catch{}
+    savePersonalDailyPrefs(storage,next,isFr()?"fr":"en");
+    const holder=article.ownerDocument.createElement("div");
+    holder.innerHTML=personalDailyPrayerCard(updated,plan,{esc,L,prayerParagraphs,source});
+    const newArticle=holder.firstElementChild;
+    if(!newArticle)return;
+    article.replaceWith(newArticle);
+    // A new complete prayer begins at its first paragraph; neither the
+    // parent screen scroll nor the contemplative horizon is reset.
+    scroll.scrollTop=0;
+    const active=[...newArticle.querySelectorAll("[data-tp381-personal-variant]")]
+      .find(button=>button.getAttribute("aria-pressed")==="true");
+    active?.focus?.({preventScroll:true});
+    return true;
   }
   if(b.hasAttribute("data-tp381-daily-length")){
     if(S.route!=="pray.morning_evening"||S.screen!=="module")return;
