@@ -39,8 +39,9 @@ jobs:
           node --check scripts/office/audit-advent-vespers-text.mjs
           node --check scripts/office/audit-printed-rubrics-pilot.mjs
           node --check scripts/office/audit-translation-risks.mjs
+          node --check scripts/office/audit-all-souls-proper-prayers.mjs
       - name: Calendar, Tenebrae and composition probe contracts
-        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-printed-rubric-pilot.mjs tests/divine-office-translation-risk.mjs
+        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-printed-rubric-pilot.mjs tests/divine-office-translation-risk.mjs tests/divine-office-all-souls-prayers.mjs
       - name: Source-cell HTML normalizer unit tests
         run: python3 -m unittest discover -s tests -p 'test_divine_office_normalizer.py' -v
 
@@ -131,6 +132,7 @@ jobs:
             --dates 2026-11-28,2026-11-29 --hours VESPERS --languages la,en,fr
           python3 scripts/office/normalize_xhtml.py --out "$OUTPUT/advent-vespers"
           node scripts/office/build-mass-style-preview.mjs --out "$OUTPUT/advent-vespers"
+          node scripts/office/audit-translation-risks.mjs --out "$OUTPUT/advent-vespers" --report "$OUTPUT/advent-vespers/translation-risk.json"
           node scripts/office/audit-advent-vespers-text.mjs --out "$OUTPUT/advent-vespers" --report "$OUTPUT/advent-text-audit.json"
           # All Souls is an exceptional Office, not an ordinary Class I
           # festive Office. Keep this 24-file supplementary cohort separate
@@ -143,6 +145,9 @@ jobs:
           python3 scripts/office/normalize_xhtml.py --out "$OUTPUT/all-souls"
           node scripts/office/build-mass-style-preview.mjs --out "$OUTPUT/all-souls" --quarantine-unaligned
           node scripts/office/audit-translation-risks.mjs --out "$OUTPUT/all-souls" --report "$OUTPUT/all-souls/translation-risk.json"
+          node scripts/office/audit-all-souls-proper-prayers.mjs \
+            --souls "$OUTPUT/all-souls" --main "$OUTPUT" \
+            --report "$OUTPUT/all-souls/exception-collect-audit.json"
           node scripts/office/audit-printed-rubrics-pilot.mjs \
             --main "$OUTPUT" --souls "$OUTPUT/all-souls" \
             --report "$OUTPUT/printed-rubric-audit.json"
@@ -199,7 +204,11 @@ jobs:
           assert rubric["structuralChecksTotal"]==5
           assert not rubric["canPublish"] and rubric["published"]==0 and rubric["verifiedOfficeDates"]==0
           assert not rubric["allSoulsMatins"]["independentlyCheckedPrintedOfficeText"]
-          for folder,count in [(".",64),("all-souls",16)]:
+          exception=json.loads((Path(os.environ["OUTPUT"])/"all-souls"/"exception-collect-audit.json").read_text(encoding="utf8"))
+          assert exception["schema"]=="ao.office.all-souls-exception-collect-audit.v1"
+          assert exception["total"]==2 and not exception["canPublish"] and exception["published"]==0
+          assert {x["hour"] for x in exception["comparisons"]}=={"PRIME","COMPLINE"}
+          for folder,count in [(".",64),("all-souls",16),("advent-vespers",4)]:
             risk=json.loads((Path(os.environ["OUTPUT"])/folder/"translation-risk.json").read_text(encoding="utf8"))
             assert risk["schema"]=="ao.office.translation-risk-screening.v1"
             assert risk["trilingualHourCount"]==count//2
@@ -207,6 +216,8 @@ jobs:
             assert risk["quarantinedSourceHourCount"]==0
             assert risk["translationCellsScreened"]==risk["alignedLatinCells"]*2
             assert risk["verifiedTranslations"]==0 and risk["published"]==0 and not risk["canPublish"]
+            if folder=="all-souls":
+              assert risk["flaggedTranslationCells"]==6, risk["flags"]
           advent_mass=json.loads((Path(os.environ["OUTPUT"])/"advent-vespers"/"preview"/"mass"/"preview-manifest.json").read_text(encoding="utf8"))
           assert advent_mass["pages"]==4 and advent_mass["published"]==0
           assert advent_mass["hours"]==["VESPERS"] and not advent_mass["productionRouteRegistered"]
