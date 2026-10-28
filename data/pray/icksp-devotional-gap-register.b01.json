@@ -497,9 +497,9 @@
       "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
       "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
       "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
-      "app_coverage_label": "Complete Latin Office hymn available in Sacred Hymns draft",
+      "app_coverage_label": "Complete Latin Office hymn plus source-verified Caswall 1849 English version in draft",
       "app_match_refs": [],
-      "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
+      "next_action": "Verify 1962 hour/season and source recension applicability; secure historical French independently; run full Node/Playwright acceptance before merge",
       "review_group": "SEASONAL_OFFICE_HYMN",
       "source_selection_status": "ACCEPTED",
       "app_integration_route": "pray.sacred_hymns",
@@ -513,8 +513,20 @@
       },
       "office_role": "Lent Vespers",
       "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
-      "english_translation_status": "HISTORICAL_EDITION_REQUIRED",
-      "liturgical_rubric": null
+      "english_translation_status": "HISTORICAL_ENGLISH_CASWALL_1849_IMPLEMENTED_IN_DRAFT",
+      "liturgical_rubric": null,
+      "historical_english_translation": {
+        "translator": "Edward Caswall",
+        "work": "Lyra Catholica: Containing All the Breviary and Missal Hymns",
+        "year": 1849,
+        "printed_pages": "70–71",
+        "pdf_pages_zero_based": [
+          107,
+          108
+        ],
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+        "verification": "VISUAL_COLLATED_FROM_ORIGINAL_PRINTED_PAGES"
+      }
     },
     {
       "id": "icrsp_fr_ad_cenam_agni",
@@ -665,9 +677,9 @@
       "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
       "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
       "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
-      "app_coverage_label": "Complete Latin Office hymn available in Sacred Hymns draft",
+      "app_coverage_label": "Complete Latin Office hymn plus source-verified Caswall 1849 English version in draft",
       "app_match_refs": [],
-      "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
+      "next_action": "Verify 1962 hour/season and source recension applicability; secure historical French independently; run full Node/Playwright acceptance before merge",
       "review_group": "SEASONAL_OFFICE_HYMN",
       "source_selection_status": "ACCEPTED",
       "app_integration_route": "pray.sacred_hymns",
@@ -681,8 +693,20 @@
       },
       "office_role": "Lent Matins",
       "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
-      "english_translation_status": "HISTORICAL_EDITION_REQUIRED",
-      "liturgical_rubric": null
+      "english_translation_status": "HISTORICAL_ENGLISH_CASWALL_1849_IMPLEMENTED_IN_DRAFT",
+      "liturgical_rubric": null,
+      "historical_english_translation": {
+        "translator": "Edward Caswall",
+        "work": "Lyra Catholica: Containing All the Breviary and Missal Hymns",
+        "year": 1849,
+        "printed_pages": "72–73",
+        "pdf_pages_zero_based": [
+          109,
+          110
+        ],
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+        "verification": "VISUAL_COLLATED_FROM_ORIGINAL_PRINTED_PAGES"
+      }
     },
     {
       "id": "icrsp_fr_magnificat",
@@ -806,7 +830,12 @@
     "historical_latin_hymns_in_draft": 8,
     "hymn_original_corpus_preserved": 3,
     "hymns_reader_total": 11,
-    "production_hymn_releases": 0
+    "production_hymn_releases": 0,
+    "full_historical_english_hymns_in_draft": 2,
+    "other_english_hymns_unverified": 6,
+    "historical_french_seasonal_hymns_in_draft": 0,
+    "caswall_1849_pages_collated": 4,
+    "release_status": "DRAFT_BRANCH_ONLY_ACTIONS_GATES_REQUIRED"
   },
   "reconciliation_pass3": {
     "date": "2026-10-28",

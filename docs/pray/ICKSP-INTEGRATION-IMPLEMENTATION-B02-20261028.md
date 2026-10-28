@@ -129,3 +129,19 @@ The Institute's three texts have been preserved as **three distinct source ident
 - https://icrspfrance.fr/textes-liturgiques.php?article=xd82464db_lisible
 
 **Cumulative after B06:** 25/25 Institute selections accepted; 4 drafted new prayer/novena experiences plus 2 separate St Thérèse source-linked works; **7 ICRSP hymn groups, 8 complete Latin historical hymn versions** in the existing 11-item hymn reader; 98 Office index entries (12 overlap the first inventory); **0 published production additions**. The full 1962 Office, remaining prayer/novena variants, and EN/FR hymn witnesses are not yet complete.
+
+## B07 — Caswall 1849 English hymn witnesses and CI conflict repair
+
+**Historic textual collation:** Edward Caswall, *Lyra Catholica* (London, James Burns, 1849), inspected via original scanned pages. These are independent pre-copyright-expiry nineteenth-century translations, not copied from the current ICRSP site:
+- *Audi, benigne Conditor* (Lenten Vespers), five English stanzas opening “Thou loving Maker of mankind”, original printed pp. 70–71, PDF zero-index 107–108.
+- *Ex more docti mystico* (Lenten Matins), nine English stanzas opening “Now with the slow-revolving year”, printed pp. 72–73, PDF zero-index 109–110.
+
+Source scan: https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf
+
+The two hymns now have independently labelled **Latin / English (1849)** choices in the existing Sacred Hymns reader and direct Caswall source links. French viewers continue to see clearly labelled Latin (not mislabeled as French). No unsupported historical French has been fabricated, and six other English hymn witnesses remain awaiting collation. The original eleven-text reader still has **eight historical Latin seasonal hymns plus three previously source-locked items**.
+
+**Real GitHub Actions results, PR #1800:** Initial 9cdd63d merge-head workflows passed Prayer 23-route parity, Novena Scripture, historical Prayer sources and other checks, but identified stale historical count assertions in Prayer reachability, Pray/Formation crosswalk, organisational map, and existing mobile route audit, plus an outdated “deliberately small” hymn introduction. The three new ICKSP Prayer routes must be added **without rewriting the frozen original 23 Prayer cards/24 historical IA entrances**. Corrections were committed in 50d3791 and cb94a3a, and new mobile/Node gates were triggered. Full suite and merge are pending. A separate Adoration mobile test observed a cinematic boot overlay intercepting pointer events: this is not assumed to be caused by the hymn changes.
+
+**Branch synchronization:** the PR was merged against current main snapshot in two-parent commit 9cdd63d, retaining existing Morning/Evening Prayer customization. The main branch continues to change while this draft is being tested. Recheck divergence/mergeability and current user-facing daily-prayer changes immediately before any merge.
+
+All integration content remains **draft only**. No production release or historical French claim follows from this source audit.
