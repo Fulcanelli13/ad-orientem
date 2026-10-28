@@ -360,7 +360,16 @@
           "historical_edition": "VERIFY_PER_ITEM"
         }
       ],
-      "scope_note": "25 curated initial source records are not a full crawl of ICKSP/ICRSP worldwide sites"
+      "scope_note": "25 curated initial source records are not a full crawl of ICKSP/ICRSP worldwide sites",
+      "b04_source_category_check": {
+        "us_index": "https://institute-christ-king.org/resources/devotions-prayers",
+        "us_visible_headings": 9,
+        "fr_index": "https://icrspfrance.fr/textes-liturgiques.php",
+        "fr_liturgical_reference_docs_seen": true,
+        "fr_office_subsection_records_remain": 98,
+        "source_level_discovery_only": true,
+        "full_site_crawl": false
+      }
     },
     "icrsp_office_index": {
       "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
@@ -1855,6 +1864,13 @@
         "full_individual_text_verified": 0,
         "component_prayer_count": null,
         "completeness": "NUMBERED_INDEX_CENSUS_COMPLETED_SOURCE_TEXT_AUDIT_NOT_COMPLETE"
+      },
+      "b04_component_audit": {
+        "file": "data/pray/raccolta-1866-component-evidence.b04.json",
+        "numbered_entry_structures_inspected": 17,
+        "component_descriptions": 50,
+        "full_source_text_authenticated": 0,
+        "exception": "§40 short Precious Blood chaplet contains internally conflicting 33/35 Our Father instruction"
       }
     },
     "sensus_fidelium_non_raccolta": {
@@ -2332,6 +2348,16 @@
         "full_prayer_text_verification": 0,
         "unique_after_comparison": null,
         "scope": "DEDICATED_NOVENAS_COLLECTION_ONLY"
+      },
+      "b04_novena_form_audit": {
+        "file": "data/pray/sensus-novena-form-components.b04.json",
+        "source_page_structures_reviewed": 24,
+        "source_page_structures_remaining": 37,
+        "component_descriptions": 54,
+        "non_nine_day_novena_forms_identified": [
+          "Infant of Prague: 9 hours / 1 day",
+          "St Andrew: 15 recitations daily over 25 days"
+        ]
       }
     },
     "roman_divine_office_1960": {
@@ -2485,7 +2511,19 @@
         "proper First and Second Vespers",
         "local or institute-specific propers"
       ],
-      "scope_note": "Every date/hour/form depends on rubrics; file count, unique Latin rows, EN/FR coverage and day-by-day outputs not yet measured"
+      "scope_note": "Every date/hour/form depends on rubrics; file count, unique Latin rows, EN/FR coverage and day-by-day outputs not yet measured",
+      "b04_source_scope": {
+        "file": "data/pray/divine-office-1960-source-scope.b04.json",
+        "source_folder_classes_documented": 8,
+        "canonical_hours": 8,
+        "all_localized_source_files_enumerated": 0,
+        "language_file_coverage": {
+          "la": null,
+          "en": null,
+          "fr": null
+        },
+        "rubrical_resolution_verified": false
+      }
     }
   },
   "progress": {
@@ -2519,7 +2557,7 @@
     "sensus_tag_post_bodies_read_b02": 6,
     "sensus_tag_post_bodies_unread_b02": 9,
     "full_site_crawl_completed": false,
-    "last_audit": "B03_2026-10-28",
+    "last_audit": "B04_2026-10-28",
     "sensus_extra_discovery_b02": 5,
     "total_source_observations": 214,
     "raccolta_historical_index_entries_b03": 189,
@@ -2532,9 +2570,20 @@
     "sensus_site_wide_total": null,
     "raccolta_numbered_index_complete": true,
     "sensus_novenas_dedicated_index_complete": true,
-    "all_source_families_complete": false
+    "all_source_families_complete": false,
+    "b04_raccolta_entries_component_structure_inspected": 17,
+    "b04_raccolta_component_structure_descriptors": 50,
+    "b04_sensus_novena_page_bodies_structurally_classified": 24,
+    "b04_sensus_novena_components_described": 54,
+    "b04_sensus_novena_pages_remain_to_classify": 37,
+    "b04_divine_office_source_folders_mapped": 8,
+    "b04_divine_office_source_files_enumerated": 0,
+    "b04_raccolta_33_vs_35_short_chaplet_discrepancy_open": true
   },
   "next_capture_gates": [
+    "Verify printed edition for Raccolta §40 short Precious Blood chaplet (seven 5-Pater mysteries vs 33 stated total) before classifying exact form",
+    "Finish component-structure review of the other 37 dedicated Sensus novenas; authenticated source texts and translations remain distinct subsequent gates",
+    "Enumerate actual Divinum Officium data files by language and section then collate 1960 liturgical resolving rules before calling Divine Office corpus coverage complete",
     "Split all 189 Raccolta historical entries into constituent prayers, notices and exercises with page-collated evidence; 157 is omitted in online 1866 index and is corroborated in 1857 index",
     "Reconcile 61 dedicated Sensus novenas with 15 dynamic tag rows and all calendar/site archives; individual text and translation completeness still unverified",
     "Retrieve a machine-accessible site sitemap/WordPress API or other pagination path to enumerate all Sensus pages; current novena tag page displays only 15 and Load More is not available in static fetch",
