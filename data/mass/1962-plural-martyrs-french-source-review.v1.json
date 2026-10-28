@@ -1,0 +1,101 @@
+{
+  "schema": "AO_1962_PLURAL_MARTYRS_FRENCH_SOURCE_REVIEW_V1",
+  "recordedAt": "2026-10-27",
+  "release": "SOURCE_CONFLICT_FAIL_CLOSED_DRAFT_NO_NEW_TRANSLATIONS",
+  "sourceEdition": "DivinumOfficium/divinum-officium",
+  "gitCommit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+  "sourceWitnesses": [
+    {
+      "role": "ORIGINAL_LATIN_PLURAL_VIRGIN_MARTYRS",
+      "path": "web/www/horas/Latin/Commune/C6b.txt",
+      "gitBlobSha": "49ba7690a3043419ecc673abac6ec229554ab78d",
+      "url": "https://github.com/DivinumOfficium/divinum-officium/blob/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/horas/Latin/Commune/C6b.txt"
+    },
+    {
+      "role": "SINGULAR_FRENCH_SECRET_POSTCOMMUNION_SOURCE_ERROR",
+      "path": "web/www/horas/Francais/Commune/C6b.txt",
+      "gitBlobSha": "7807147ed57e87b4bbda1bcef7d0ab4bada46aa7",
+      "url": "https://github.com/DivinumOfficium/divinum-officium/blob/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/horas/Francais/Commune/C6b.txt"
+    },
+    {
+      "role": "ORIGINAL_LATIN_NONVIRGIN_MARTYR_INHERITANCE",
+      "path": "web/www/horas/Latin/Commune/C7b.txt",
+      "gitBlobSha": "e87cd5cf73c353b8916fd1b6db126fda0362feaa",
+      "url": "https://github.com/DivinumOfficium/divinum-officium/blob/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/horas/Latin/Commune/C7b.txt"
+    },
+    {
+      "role": "FRENCH_NONVIRGIN_MARTYR_INHERITED_CONFLICT",
+      "path": "web/www/horas/Francais/Commune/C7b.txt",
+      "gitBlobSha": "5e67d7a19475985fd1a4e8ea329e1127fbd17c78",
+      "url": "https://github.com/DivinumOfficium/divinum-officium/blob/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/horas/Francais/Commune/C7b.txt"
+    },
+    {
+      "role": "PERPETUA_FELICITY_LATIN_NONVIRGIN_COMMON_IDENTITY",
+      "path": "web/www/missa/Latin/Sancti/03-06.txt",
+      "gitBlobSha": "18f15984a80925387013942fdd72356599e3476a",
+      "url": "https://github.com/DivinumOfficium/divinum-officium/blob/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/missa/Latin/Sancti/03-06.txt"
+    },
+    {
+      "role": "PERPETUA_FELICITY_FRENCH_COLLECT_SECRET_WRONG_VIRGIN_DESIGNATION",
+      "path": "web/www/missa/Francais/Sancti/03-06.txt",
+      "gitBlobSha": "9fef03b6c1cd0d648709a46e65b73c2e28b4c35f",
+      "url": "https://github.com/DivinumOfficium/divinum-officium/blob/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/missa/Francais/Sancti/03-06.txt"
+    }
+  ],
+  "defects": [
+    {
+      "id": "PLURAL_VIRGIN_MARTYRS_FRENCH_SINGULAR_ORATIONS",
+      "candidatePaths": [
+        "Commune/C6b",
+        "Commune/C7b"
+      ],
+      "kind": "SINGULAR_FRENCH_BODY_IN_PLURAL_LATIN_SOURCE",
+      "sourceSlots": [
+        "SECRET_SET",
+        "POSTCOMMUNION_SET"
+      ],
+      "printed1962Reference": "ICRSP_B41_MULTIPLE_VIRGIN_MARTYRS_AND_NONVIRGIN_FEMALE_MARTYRS",
+      "evidence": "Latin C6b secret/postcommunion carry N. et N.; French C6b text contains singular N. only; C7b French inherits C6b by substitution.",
+      "selectionReachability": "DIRECT_SELECTED_COMMON_ROUTE_NOT_YET_VERIFIED",
+      "action": "Fail closed only on exact source-path plus still-plural Latin placeholders with deficient French name count; do not infer that Sanctoral or feria inherited this wording."
+    },
+    {
+      "id": "PERPETUA_FELICITY_NONVIRGIN_FRENCH_IDENTITY",
+      "candidatePaths": [
+        "Sancti/03-06"
+      ],
+      "kind": "INCORRECT_VIRGIN_LABEL_IN_NAMED_LATIN_AND_FRENCH_RESOLVED_SOURCE",
+      "sourceSlots": [
+        "COLLECT_SET",
+        "SECRET_SET"
+      ],
+      "printed1962Reference": "ICRSP_B41_MULTIPLE_NONVIRGIN_FEMALE_MARTYRS",
+      "evidence": "Latin Sancti/03-06 declares vide C7b; French Sancti/03-06 Collect and Secret label Perpetua and Felicity as Vierges et Martyres, contrary to their non-Virgin Latin Common. Named Postcommunion has proper plural martyrs. Live browser additionally proves the normalizer leaves 'Virginum et Martyrum' in the selected Latin commemorative prayer, not only incorrect French 'Vierges et Martyres'.",
+      "selected2026CalendarDay": "Tempora/Quad2-5",
+      "selectionReachability": "ACTUAL_FERIA_COMMEMORATION_RENDERED_IN_2026_AND_2027_READY_BEFORE_FIX",
+      "action": "Fail closed for both inherited incorrect Latin and French phrase using an attested Sancti/03-06 owner: explicit row source or unambiguous Calendar commemoration prayer list and count. Corrected source must be separately approved."
+    }
+  ],
+  "limitations": [
+    "No master-language correction was written to the pinned external donor.",
+    "Current reader projection guards affected French prayer bodies; the separate printable Calendar Proper renderer has not been changed.",
+    "No English/French user-facing translation is created, copied, or approved.",
+    "1962 rite and local oration-selection status are entirely owned by existing DayResolver and Mass form source.",
+    "Original 1962 printed Common evidence is structural, not a complete photographed full-year Missal collation.",
+    "Exact 6 March 2026 and 2027 selected Calendar source and French Reader exposure was proven by real browser trace; preventing it is pending latest CI retest."
+  ],
+  "published": false,
+  "evidenceAdded": "2026-10-28",
+  "actualBrowserEvidence": {
+    "workflow": "1962-plural-martyrs-live-owner.yml",
+    "initialReadOnlyRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40624538664",
+    "firstFinding": "Unannotated app Proper oration arrays on 6 March 2026 and 2027 visibly contain French 'Vierges et Martyres' despite legitimate Latin source C7b non-Virgin Common.",
+    "secondReadOnlyRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40624978820",
+    "secondFinding": "Live calendar Commemorations explicitly identify Sancti/03-06, but flattened rows have no individual sourcePath. Both resolved Latin and French commemorative Collect and Secret still say Virginum et Martyrum/Vierges et Martyres; all formerly labelled READY.",
+    "verifiedSelectedMain2026": "Tempora/Quad2-5",
+    "verifiedSelectedMain2027": "Tempora/Quad3-6",
+    "selectedPrincipalReplaced": false,
+    "correctDisplayAtCurrentPRHead": "PENDING_LIVE_RETEST",
+    "translatedPrayersAdded": 0
+  }
+}

@@ -2,6 +2,7 @@ import {validatedPreGospelChantParts} from "./reader-pre-gospel-chant-source.js"
 import {correct1962ProperEditorialReferences} from "./1962-proper-editorial-corrections.js";
 import {project1962Pent21AlleluiaDisplayRows,PS113_PENT21_ENGLISH_EDITORIAL} from "./1962-ps113-alleluia-editorial.js";
 import {inspect1962PrefaceSelection} from "./1962-preface-decision.js";
+import {inspect1962PluralMartyrsFrenchOrationSource, reconcile1962PerpetuaFelicityNonVirginCommon} from "./1962-plural-martyr-french-source.js";
 const REQUIRED_SLOTS = Object.freeze([
   "INTROIT","COLLECT_SET","EPISTLE_OR_LESSON","GRADUAL",
   "GOSPEL","OFFERTORY","SECRET_SET","PREFACE","COMMUNION","POSTCOMMUNION_SET"
@@ -158,6 +159,7 @@ function readyEnvelope(slot,value,{language="en"}={}){
 export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}={}){
   if(!proper || typeof proper!=="object") throw new TypeError("Resolved Proper object required");
   proper=correct1962ProperEditorialReferences(proper);
+  proper=reconcile1962PerpetuaFelicityNonVirginCommon(proper);
   const locale=String(language??"en").toLowerCase().startsWith("fr") ? "fr" : "en";
   const opts={language:locale};
 
@@ -176,6 +178,25 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
     COMMUNION:readyEnvelope("COMMUNION",proper.communion,opts),
     POSTCOMMUNION_SET:readyEnvelope("POSTCOMMUNION_SET",proper.postcommunions?.length?proper.postcommunions:proper.postcommunion,opts),
   };
+
+  // A few hosted Commune/C6b and C7b French donor prayers have singular
+  // N. wording under the Latin plural N. et N. rubric. Non-empty French is
+  // not sufficient: fail closed for exactly these two source identities,
+  // without overwriting text or applying the hold to English/other Masses.
+  for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+    const hold=inspect1962PluralMartyrsFrenchOrationSource(proper,slot);
+    if(!hold)continue;
+    // An erroneous Latin *named* Proper reaches the bilingual reader in
+    // BOTH language modes. A donor's French-only defect must still leave
+    // otherwise correct Latin/English Common prayers unaffected.
+    if(locale!=="fr"&&!(
+      hold.sourceLatinIncorrect===true&&hold.sourcePath==="Sancti/03-06"
+    ))continue;
+    slots[slot]=Object.freeze({
+      status:"MISSING",slot,data:null,reason:hold.reason,
+      sourceConflict:hold
+    });
+  }
 
   if(proper.inseparableOrationsDecision?.status==="UNVERIFIED"){
     for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
@@ -315,6 +336,7 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
   return Object.freeze({
     schema:"ao-reader-proper-slots-v1",
     sourcePath:proper.sourcePath??null,
+    ...(proper.sourceEditorialCorrections?.length?{sourceEditorialCorrections:proper.sourceEditorialCorrections}:{}),
     ...(editorialApplied?{displayTranslationCorrections:
       Object.freeze([PS113_PENT21_ENGLISH_EDITORIAL])}:{}),
     slots:Object.freeze(presented),

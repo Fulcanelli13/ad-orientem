@@ -3,6 +3,7 @@
 import {calendarMassColour} from "./colour-projection.js";
 import {select1962CommemorationsForMassForm} from "../mass/1962-commemoration-form-source.js";
 import {correct1962ProperEditorialReferences} from "../mass/1962-proper-editorial-corrections.js";
+import {reconcile1962PerpetuaFelicityNonVirginCommon,inspect1962PluralMartyrsFrenchOrationSource} from "../mass/1962-plural-martyr-french-source.js";
 import {project1962Pent21AlleluiaDisplayRows,PS113_PENT21_ENGLISH_EDITORIAL} from "../mass/1962-ps113-alleluia-editorial.js";
 
 const escapeHtml=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
@@ -53,8 +54,20 @@ function sectionsFromProper(p,lang){
  */
 export function assessResolvedProperTextSections(proper,{language="en"}={}){
   if(!["en","fr"].includes(language))return {ok:false,reason:"Unsupported vernacular"};
-  const p=proper?.data&&proper?.status?proper.data:proper;
+  let p=proper?.data&&proper?.status?proper.data:proper;
   if(!p||typeof p!=="object")return {ok:false,reason:"Resolved Proper unavailable"};
+  // Print must use the SAME exact-source, non-Virgin C7b editorial
+  // inheritance already verified in the LIVE Reader, not the raw host
+  // Common fallback. This is a display projection only; original data is
+  // preserved. Any still-invalid named Latin (either print language), or
+  // deficient French-only plural Common, must be withheld.
+  p=reconcile1962PerpetuaFelicityNonVirginCommon(p);
+  for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+    const hold=inspect1962PluralMartyrsFrenchOrationSource(p,slot);
+    if(hold&&(language==="fr"||hold.sourceLatinIncorrect===true))
+      return {ok:false,reason:"1962 source-owned Common inheritance conflict",
+        missing:[slot],sourceConflict:hold};
+  }
   if(!["ordinary_mass","ordinary_mass_1962"].includes(String(p.riteProfile||"ordinary_mass").toLowerCase())||
     (p.preparatoryLessons||[]).length||(p.specialSections||[]).length)
     return {ok:false,reason:"Special structure requires the native Missal reader"};
@@ -65,7 +78,8 @@ export function assessResolvedProperTextSections(proper,{language="en"}={}){
   if(sections.some(x=>!x.latin||!x.vernacular))
     return {ok:false,reason:"Incomplete bilingual source passages"};
   if(!String(p.sourcePath||"").trim())return {ok:false,reason:"Canonical source identity unavailable"};
-  return {ok:true,reason:null,sections,proper:p};
+  return {ok:true,reason:null,sections,proper:p,
+    sourceEditorialCorrections:p.sourceEditorialCorrections??[]};
 }
 export function assessPrintableProper(resolved,{language="en",massForm=null}={}){
   if(!["en","fr"].includes(language))return {ok:false,reason:"Unsupported vernacular"};
@@ -81,8 +95,9 @@ export function assessPrintableProper(resolved,{language="en",massForm=null}={})
   const p=correct1962ProperEditorialReferences(selected?.proper??raw);
   const audit=assessResolvedProperTextSections(p,{language});
   if(!audit.ok)return audit;
+  const prepared=audit.proper;
   const sections=project1962Pent21AlleluiaDisplayRows(
-    p,audit.sections,{language});
+    prepared,audit.sections,{language});
   return sections===audit.sections?audit:{
     ...audit,sections,displayTranslationCorrections:
       Object.freeze([PS113_PENT21_ENGLISH_EDITORIAL]),
