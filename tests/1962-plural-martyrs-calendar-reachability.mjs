@@ -93,7 +93,8 @@ try {
          const english=String(oration?.en??"");
          const frenchCount=[...french.matchAll(placeholderFrench)].length;
          if(twoLatin.test(latin)&&frenchCount===1&&
-           /\bmartyr/iu.test(latin)&&/\bmartyr/iu.test(french)){
+           /\bmartyr/iu.test(latin.normalize("NFD").replace(/[\u0300-\u036f]/g,""))&&
+           /\bmartyr/iu.test(french)){
            donorTextMismatches.push({field,index,
              latinTwoNamed:true,frenchPlaceholders:frenchCount,
              englishTwoNamed:/\bN\s*\.\s*and\s*N\s*\./iu.test(english),
