@@ -314,8 +314,8 @@ for(const card of missal.presentationModel.cards){
     }
   }
 }
-assert.equal(simple.presentationModel.totalCards,30,
-  "Simple mode must remain untouched by Missal-only expansion");
+assert.equal(simple.presentationModel.totalCards,39,
+  "saved Simple choice must migrate to the canonical LIVE source structure");
 const missalHost=findReaderModeAnchorCard(missal.presentationModel,anchor);
 assert.equal(missalHost.sectionId,"AO.CARD.015","Host cue did not remain anchored when switching LIVE -> MISSAL");
 const offertoryPage=missal.presentationModel.cards.find(c=>
