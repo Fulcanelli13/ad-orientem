@@ -51,7 +51,40 @@ Quibus Crucis victóriam
 Largíris, adde prǽmium.
 Amen.`,
 "https://icrspfrance.fr/textes-liturgiques.php?article=a0901_ancien",
-{subtitleFr:"Vêpres du Temps de la Passion",rubric:"Kneel for O Crux, ave in the source rubric.",rubricFr:"La strophe « O Crux, ave » se dit à genoux selon la rubrique donnée.",fr:`L’étendard du Roi s’avance; voici briller le mystère de la Croix, sur laquelle Celui qui est la Vie a souffert la mort, et par cette mort nous a donne la vie.
+{en:`Forth comes the Standard of the King:
+All hail, thou Mystery ador'd!
+Hail, Cross! on which the Life Himself
+Died, and by death our life restor'd.
+
+On which our Saviour's holy side,
+Rent open with a cruel spear,
+Of blood and water pour'd a stream,
+To wash us from defilement clear.
+
+O sacred Wood! in thee fulfill'd
+Was holy David's truthful lay;
+Which told the world, that from a Tree
+The Lord should all the nations sway.
+
+Most royally empurpled o'er,
+How beauteously thy stem doth shine!
+How glorious was its lot to touch
+Those limbs so holy and divine!
+
+Thrice blest, upon whose arms outstretch'd
+The Saviour of the world reclin'd;
+Balance sublime! upon whose beam
+Was weigh'd the ransom of mankind.
+
+Hail, Cross! thou only hope of man,
+Hail on this holy Passion-day!
+To saints increase the grace they have;
+From sinners purge their guilt away.
+
+Salvation's spring, blest Trinity,
+Be praise to Thee through earth and skies:
+Thou through the Cross the victory
+Dost give; oh, also give the prize!`,englishSource:{"work":"Edward Caswall, Lyra Catholica, London: James Burns, 1849","printedPages":"89–90","pdfPagesZeroBased":[126,127],"url":"https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf","witnessStatus":"ORIGINAL_1849_PRINTED_PAGE_IMAGES_INSPECTED"},subtitleFr:"Vêpres du Temps de la Passion",rubric:"Kneel for O Crux, ave in the source rubric.",rubricFr:"La strophe « O Crux, ave » se dit à genoux selon la rubrique donnée.",fr:`L’étendard du Roi s’avance; voici briller le mystère de la Croix, sur laquelle Celui qui est la Vie a souffert la mort, et par cette mort nous a donne la vie.
 
 C’est là que, transpercé du fer cruel d’une lance, son côté épancha l’eau et le sang, pour laver la souillure de nos crimes.
 
@@ -63,7 +96,7 @@ Heureux es-tu d’avoir porté, suspendu à tes bras, celui qui fut le prix du m
 
 Salut, ô Croix, notre unique espérance ! En ces jours de la Passion du Sauveur, accrois la grâce dans le juste, efface le crime du pécheur.
 
-Que toute âme vous glorifie, ô Trinité, principe de notre salut ; vous nous donnez la victoire par la Croix : daignez y ajouter la récompense. Amen.`,frenchSource:{"work":"Dom Prosper Guéranger, L’Année liturgique, La Passion et la Semaine Sainte, 19e édition (1904)","editionYear":1904,"section":"Prière du soir / Office de Vêpres · Vexilla Regis","url":"https://www.domgueranger.net/lannee-liturgique-passion-et-semaine-sainte-historique-mystique-pratique-et-prieres/","witnessStatus":"TRANSCRIPTION_OF_1904_EDITION_NOT_YET_PHYSICAL_PAGE_COLLATED"},languageStatus:"HISTORIC_LATIN_GUERANGER_1904_FRENCH_ENGLISH_PENDING"}),
+Que toute âme vous glorifie, ô Trinité, principe de notre salut ; vous nous donnez la victoire par la Croix : daignez y ajouter la récompense. Amen.`,frenchSource:{"work":"Dom Prosper Guéranger, L’Année liturgique, La Passion et la Semaine Sainte, 19e édition (1904)","editionYear":1904,"section":"Prière du soir / Office de Vêpres · Vexilla Regis","url":"https://www.domgueranger.net/lannee-liturgique-passion-et-semaine-sainte-historique-mystique-pratique-et-prieres/","witnessStatus":"TRANSCRIPTION_OF_1904_EDITION_NOT_YET_PHYSICAL_PAGE_COLLATED"},languageStatus:"HISTORIC_LATIN_CASWALL_1849_ENGLISH_GUERANGER_1904_FRENCH"}),
   audi_benigne:h("audi_benigne","Audi, benigne Conditor","Lent","Vespers",
 `Audi, benígne Cónditor,
 Nostras preces cum flétibus,
@@ -165,7 +198,45 @@ Surréxit ac Paráclito,
 In sempitérna sǽcula.
 Amen.`,
 "https://icrspfrance.fr/textes-liturgiques.php?article=a0913_ancien",
-{subtitleFr:"Vêpres du Temps Pascal · révision du Bréviaire romain",recension:"ROMAN_BREVIARY_AFTER_1632"}),
+{en:`Now at the Lamb's high royal feast
+In robes of saintly white we sing,
+Through the Red Sea in safety brought
+By Jesus our immortal King.
+
+O depth of love! for us He drinks
+The chalice of his agony;
+For us a Victim on the Cross
+He meekly lays Him down to die.
+
+And as the avenging Angel pass'd
+Of old the blood-besprinkled door;
+As the cleft sea a passage gave,
+Then clos'd to whelm th' Egyptians o'er:
+
+So Christ, our Paschal Sacrifice,
+Has brought us safe all perils through;
+While for unleaven'd bread we need
+But heart sincere and purpose true.
+
+Hail, purest Victim Heav'n could find,
+The powers of Hell to overthrow!
+Who didst the chains of Death destroy;
+Who dost the prize of Life bestow.
+
+Hail, victor Christ! hail, risen King!
+To Thee alone belongs the crown;
+Who hast the heavenly gates unbarr'd,
+And dragg'd the Prince of darkness down.
+
+O Jesu! from the death of sin
+Keep us, we pray; so shalt Thou be
+The everlasting paschal joy
+Of all the souls new-born in Thee.
+
+Now to the Father, and the Son,
+Who rose from death, be glory given;
+With Thee, O holy Comforter,
+Henceforth by all in earth and Heaven.`,englishSource:{"work":"Edward Caswall, Lyra Catholica, London: James Burns, 1849","printedPages":"94–96","pdfPagesZeroBased":[131,132,133],"url":"https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf","witnessStatus":"ORIGINAL_1849_PRINTED_PAGE_IMAGES_INSPECTED"},subtitleFr:"Vêpres du Temps Pascal · révision du Bréviaire romain",recension:"ROMAN_BREVIARY_AFTER_1632",languageStatus:"HISTORIC_LATIN_AND_CASWALL_1849_ENGLISH_FRENCH_PENDING"}),
   ad_cenam_agni_providi:h("ad_cenam_agni_providi","Ad cenam Agni providi","Eastertide","Vespers · historical pre-1632 form",
 `Ad cenam Agni próvidi,
 Et stolis albis cándidi,
@@ -253,7 +324,45 @@ Cum Patre, et almo Spíritu,
 In sempitérna sǽcula.
 Amen.`,
 "https://icrspfrance.fr/textes-liturgiques.php?article=a0938_ancien",
-{subtitleFr:"Matines de l’Ascension"}),
+{en:`O Thou eternal King most high!
+Who didst the world redeem;
+And conquering Death and Hell, receive
+A dignity supreme.
+
+Thou, through the starry orbs, this day,
+Didst to thy throne ascend;
+Thenceforth to reign in sovereign power,
+And glory without end.
+
+There, seated in thy majesty,
+To Thee submissive bow
+The Heav'n of Heav'ns, the spacious earth,
+The depths of Hell below.
+
+With trembling there the angels see
+The chang'd estate of men;
+The flesh which sinn'd by Flesh redeem'd;
+Man in the Godhead reign.
+
+There, waiting for thy faithful souls,
+Be Thou to us, O Lord!
+Our peerless joy while here we stay,
+In Heav'n our great reward.
+
+Renew our strength; our sins forgive;
+Our miseries efface;
+And lift our souls aloft to Thee,
+By thy celestial grace.
+
+So, when Thou shinest on the clouds,
+With thy angelic train,
+May we be sav'd from vengeance due,
+And our lost crowns regain.
+
+Glory to Jesus, who returns
+Triumphantly to Heaven;
+Praise to the Father evermore,
+And Holy Ghost be given.`,englishSource:{"work":"Edward Caswall, Lyra Catholica, London: James Burns, 1849","printedPages":"101–102","pdfPagesZeroBased":[138,139],"url":"https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf","witnessStatus":"ORIGINAL_1849_PRINTED_PAGE_IMAGES_INSPECTED"},subtitleFr:"Matines de l’Ascension",languageStatus:"HISTORIC_LATIN_AND_CASWALL_1849_ENGLISH_FRENCH_PENDING"}),
   lustra_sex:h("lustra_sex","Lustra sex","Passiontide","Lauds",
 `Lustra sex qui iam peregit,
 Tempus implens córporis,

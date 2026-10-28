@@ -27,7 +27,7 @@ for(const id of ids){
   assert.ok(h.la.trim().endsWith("Amen."),id+" source hymn lacks final Amen");
   assert.match(h.sourceUrl,/^https:\/\/icrspfrance\.fr\/textes-liturgiques\.php\?article=/);
   assert.ok(h.season&&h.office&&h.title);
-  if(["audi_benigne","ex_more_docti"].includes(id)){
+  if(["audi_benigne","ex_more_docti","vexilla_regis","ad_regias_agni_dapes","aeterne_rex_altissime"].includes(id)){
     assert.match(h.en,/^[A-Z]/,"Missing the 1849 original English edition");
     assert.match(h.englishSource.work,/Edward Caswall.*1849/);
     assert.match(h.englishSource.url,/wikimedia\.org/);
@@ -52,6 +52,10 @@ for(const id of ids){
   }else if(id!=="vexilla_regis")assert.equal(h.fr,undefined,"Other historical French translations remain unverified: "+id);
   if(!h.en)assert.equal(h.languageStatus,"HISTORIC_LATIN_ONLY_EN_FR_SOURCE_REQUIRED");
   assert.ok(!Object.keys(SACRED_HYMNS_V381).includes(id),"Original title collision "+id);
+}
+for(const [id,count] of Object.entries({vexilla_regis:7,ad_regias_agni_dapes:8,aeterne_rex_altissime:8})){
+ assert.equal(hymns[id].en.split(/\n\s*\n/).length,count);
+ assert.match(hymns[id].englishSource.witnessStatus,/ORIGINAL_1849_PRINTED/);
 }
 assert.equal(Object.values(groups).reduce((n,variants)=>n+variants.length,0),8);
 const runtime=readFileSync(new URL("../src/pray/traditional-pray-runtime.js",import.meta.url),"utf8");

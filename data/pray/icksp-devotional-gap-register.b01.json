@@ -480,7 +480,7 @@
       },
       "office_role": "Passiontide Vespers",
       "french_translation_status": "GUERANGER_1904_FRENCH_IMPLEMENTED_IN_DRAFT",
-      "english_translation_status": "HISTORICAL_ENGLISH_EDITION_REQUIRED",
+      "english_translation_status": "HISTORICAL_ENGLISH_1849_INTEGRATED_DRAFT",
       "liturgical_rubric": "Kneel during O Crux ave stanza according to ICRSP witness",
       "historical_french_translation": {
         "work": "Dom Prosper Guéranger, L’Année liturgique, La Passion et la Semaine Sainte, 19e édition (1904)",
@@ -489,6 +489,18 @@
         "url": "https://www.domgueranger.net/lannee-liturgique-passion-et-semaine-sainte-historique-mystique-pratique-et-prieres/",
         "witnessStatus": "TRANSCRIPTION_OF_1904_EDITION_NOT_YET_PHYSICAL_PAGE_COLLATED",
         "sourceComparison": "The historical Guéranger prose is distinct from the ICRSP contemporary French rendering; published original 1904 page images not yet checked"
+      },
+      "historical_english_translation": {
+        "for_hymn_id": "vexilla_regis",
+        "translator": "Edward Caswall",
+        "work": "Lyra Catholica (1849)",
+        "printed_pages": "89–90",
+        "pdf_pages_zero_based": [
+          126,
+          127
+        ],
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+        "status": "ORIGINAL_PRINTED_IMAGES_INSPECTED"
       }
     },
     {
@@ -575,8 +587,21 @@
       },
       "office_role": "Eastertide Vespers",
       "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
-      "english_translation_status": "HISTORICAL_EDITION_REQUIRED",
-      "liturgical_rubric": "Distinct ordinary Roman Breviary post-1632 and restricted historical pre-1632 recensions; 1912 Antiphonale conditional usage"
+      "english_translation_status": "ATTESTED_REVISED_AD_REGIAS_ONLY_PRE1632_NOT_TRANSFERRED",
+      "liturgical_rubric": "Distinct ordinary Roman Breviary post-1632 and restricted historical pre-1632 recensions; 1912 Antiphonale conditional usage",
+      "historical_english_translation": {
+        "for_hymn_id": "ad_regias_agni_dapes",
+        "translator": "Edward Caswall",
+        "work": "Lyra Catholica (1849)",
+        "printed_pages": "94–96",
+        "pdf_pages_zero_based": [
+          131,
+          132,
+          133
+        ],
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+        "status": "ORIGINAL_PRINTED_IMAGES_INSPECTED"
+      }
     },
     {
       "id": "icrsp_fr_aeterne_rex_altissime",
@@ -608,8 +633,20 @@
       },
       "office_role": "Ascension Matins",
       "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
-      "english_translation_status": "HISTORICAL_EDITION_REQUIRED",
-      "liturgical_rubric": null
+      "english_translation_status": "HISTORICAL_ENGLISH_1849_INTEGRATED_DRAFT",
+      "liturgical_rubric": null,
+      "historical_english_translation": {
+        "for_hymn_id": "aeterne_rex_altissime",
+        "translator": "Edward Caswall",
+        "work": "Lyra Catholica (1849)",
+        "printed_pages": "101–102",
+        "pdf_pages_zero_based": [
+          138,
+          139
+        ],
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+        "status": "ORIGINAL_PRINTED_IMAGES_INSPECTED"
+      }
     },
     {
       "id": "icrsp_fr_lustra_sex",
@@ -846,8 +883,8 @@
     "hymn_original_corpus_preserved": 3,
     "hymns_reader_total": 11,
     "production_hymn_releases": 0,
-    "full_historical_english_hymns_in_draft": 2,
-    "other_english_hymns_unverified": 6,
+    "full_historical_english_hymns_in_draft": 5,
+    "other_english_hymns_unverified": 3,
     "historical_french_seasonal_hymns_in_draft": 2,
     "caswall_1849_pages_collated": 4,
     "release_status": "DRAFT_BRANCH_ONLY_ACTIONS_GATES_REQUIRED",

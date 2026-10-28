@@ -153,3 +153,14 @@ Added the complete seven-paragraph French rendering of *Vexilla Regis* from Dom 
 Source: https://www.domgueranger.net/lannee-liturgique-passion-et-semaine-sainte-historique-mystique-pratique-et-prieres/ . See the first evening-prayer hymn and the subsequent office exposition. ICRSP places *Vexilla Regis* at Passiontide Vespers: https://icrspfrance.fr/textes-liturgiques.php?article=a0901_ancien . It is **not** imported as a universally scheduled hymn for every Lenten day.
 
 The shared Sacred Hymns renderer now supports a **historical French-only** translation alongside Latin (Vexilla) just as it supports historical English-only or all three witnesses (Audi), with the correct edition year in the language selector. Original three source-locked hymns and all eight Latin seasonal records remain unchanged. English *Vexilla Regis*, six other French editions and final complete 1962 Office rubrical coverage remain unverified. CI release tests remain mandatory.
+
+## B10 — Caswall 1849: further three full English hymn editions
+
+From the original *Lyra Catholica* (London: James Burns, 1849) printed pages, three independently collated complete English editions have been added to the existing hymn reader:
+- *Vexilla Regis*: seven stanzas, pp. 89–90, PDF pages 127–128 (zero-index 126–127); available with Latin and separately attributed Guéranger 1904 French.
+- Revised *Ad regias Agni dapes*: eight stanzas, pp. 94–96, PDF pages 132–134 (zero-index 131–133). The historically distinct pre-1632 *Ad cenam Agni providi* receives **no** borrowed translation.
+- *Æterne Rex altissime*: eight stanzas, pp. 101–102, PDF pages 139–140 (zero-index 138–139), Ascension Matins.
+
+Source scan: https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf
+
+Each English edition is credited, separated by stanzas, and guarded in Node/mobile tests. Seasonal hymn witness coverage now stands at **8/8 Latin, 5/8 historical English, 2/8 historic French**. The remaining historic English searches concern *Ad cenam Agni providi* (the restricted pre-1632 recension), *Lustra sex* and *O sol salutis*. These texts are not silently reconstructed.
