@@ -20,7 +20,7 @@ import { GLORIA_CREDO_FAITHFUL_GESTURES, isGloriaCredoGestureSourceCue, resolveF
 import { loadReaderCueRegistries } from "./reader-cue-state.js";
 import { loadReaderFormStateData, createReaderFormCueStateController } from "./reader-form-state.js";
 import { installCueFocusTracker } from "./reader-cue-focus.js";
-import { withLiveReadingSections } from "./reader-live-reading-sections.js";
+import { withLiveReadingSections, omitSourceBlockForPresentation } from "./reader-live-reading-sections.js";
 import { projectReaderObjectiveContext } from "./reader-objective-context.js";
 
 // The certified Good Friday state graph carries nine kneel/rise formula
@@ -2499,13 +2499,9 @@ export async function mountNativeReaderPreview({
     if(sourceSection==="AO.CARD.009" && (isRequiem||prov.credo===false))return null;
     const plan=prepared?.session?.plan;
     if(plan?.blessingAllowed!==false)return card;
-    const blessing=card.blocks?.find?.(value=>value.blockId==="AO.SM.B092");
-    if(!blessing || blessing.firstParagraphIndex==null || !blessing.paragraphCount)return card;
-    const start=blessing.firstParagraphIndex;
-    const end=start+blessing.paragraphCount;
-    const paragraphs=card.paragraphs.filter((_,index)=>index<start||index>=end);
-    if(!paragraphs.length && !card.stateOnly)return null;
-    return Object.freeze({...card,title:"Placeat tibi, sancta Trinitas",paragraphs:Object.freeze(paragraphs),planFilteredBlocks:Object.freeze(["AO.SM.B092"])});
+    const visible=omitSourceBlockForPresentation(card,"AO.SM.B092");
+    if(!visible)return null;
+    return visible===card?card:Object.freeze({...visible,title:"Placeat tibi, sancta Trinitas"});
   }
 
   function isLastGospelCard(card){

@@ -5,8 +5,40 @@
 const groupOf=row=>String(row?.liturgicalGroup??"").trim();
 const prayerGroup=group=>/^R17\.ORATION\.(?:COLLECT|POSTCOMMUNION)\.G\d+$/.test(group);
 
+// Remove an omitted rite from the *display* card, never the canonical model.
+// Rebase surviving source-block offsets to the surviving paragraph sequence;
+// leaving original offsets would make LIVE focus misidentify the next prayer.
+export function omitSourceBlockForPresentation(card,blockId){
+  const source=Array.isArray(card?.paragraphs)?card.paragraphs:[];
+  const blocks=Array.isArray(card?.blocks)?card.blocks:[];
+  const removed=blocks.find(block=>block.blockId===blockId);
+  if(!removed)return card;
+  const start=removed.firstParagraphIndex;
+  const count=removed.paragraphCount;
+  const end=start+count;
+  if(!Number.isInteger(start)||!Number.isInteger(count)||count<=0||
+     start<0||end>source.length)
+    throw new Error("Invalid source-block omission "+blockId);
+  const surviving=blocks.filter(block=>block.blockId!==blockId).map(block=>{
+    const first=block.firstParagraphIndex,n=block.paragraphCount;
+    if(first==null||!Number.isInteger(n)||n<=0)return block;
+    if(!Number.isInteger(first)||first<0||first+n>source.length)
+      throw new Error("Invalid surviving source-block boundary "+block.blockId);
+    if(first>=end)return {...block,firstParagraphIndex:first-count};
+    if(first+n<=start)return block;
+    throw new Error("Overlapping omitted source-block boundary "+block.blockId);
+  });
+  const paragraphs=source.filter((_,index)=>index<start||index>=end);
+  if(!paragraphs.length&&!card.stateOnly)return null;
+  return Object.freeze({...card,
+    paragraphs:Object.freeze(paragraphs),
+    blocks:Object.freeze(surviving),
+    planFilteredBlocks:Object.freeze([...(card.planFilteredBlocks??[]),blockId]),
+  });
+}
+
 export function withLiveReadingSections(card,paragraphs=card?.paragraphs??[],{mode="LIVE"}={}){
-  // Missal columns and Simple scrolling retain their existing geometry.
+  // Missal columns retain their independent geometry.
   if(String(mode).toUpperCase()!=="LIVE")return paragraphs;
   const source=Array.isArray(card?.paragraphs)?card.paragraphs:[];
   if(!Array.isArray(paragraphs))throw new TypeError("Reader paragraphs required");
