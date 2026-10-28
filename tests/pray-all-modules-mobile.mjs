@@ -506,9 +506,13 @@ try{
  await page.locator("#aoPray435930.open [data-n1-begin]").tap();
  const infantText=await page.locator("#aoPray435930.open [data-ao-novena-deck='simple']").innerText();
  assert.match(infantText,/O CHILD Jesus|O Enfant Jésus/,"Original bilingual Infant Jesus prayer absent");
- await page.locator("#aoPray435930.open [data-n1-day='9']").tap();
- assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3?.state?.()?.day),9,
-   "The supplemental nine-day prayer cannot navigate to day nine");
+ // The day list is collapsed once the prayer reader opens. Use
+ // the visible Next day control to verify all nine recitations.
+ for(let day=2;day<=9;day++){
+   await page.locator("#aoPray435930.open [data-n1-day-next]").tap({timeout:9000});
+   assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3?.state?.()?.day),day,
+     "The supplemental prayer cannot advance to day "+day);
+ }
  await page.locator("#aoPray435930.open [data-n1-back]").tap();
  await page.locator("#aoPray435930.open [data-n1-back]").tap();
  await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.screen==="overview",null,{timeout:10000});
