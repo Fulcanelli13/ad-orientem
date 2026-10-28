@@ -1,0 +1,90 @@
+{
+  "schema": "ao.prayer.admissions-b19.v1",
+  "asOf": "2026-10-28",
+  "scope": "One reader within existing Eucharistic Prayer family: three purpose-specific work identities. NOT a new top-level module.",
+  "underlyingEditorialMaster": "data/pray/prayer-corpus-editorial-acquisition-master.v1.json",
+  "preserveEditorialMasterCandidates": 97,
+  "newWorkCount": 3,
+  "duplicateCanonicalWorksCreated": 0,
+  "published": [
+    {
+      "id": "priest_intercession_eternal_priest_1914_en",
+      "sourceLeadAlias": "icksp_priests_jesus",
+      "editorialCandidateId": "AO-AQ-001",
+      "purpose": "priests",
+      "source": "The Ecclesiastical Review v.50 (1914) / ICKSP US digital witness",
+      "lang": [
+        "en"
+      ],
+      "authorship": "ANONYMOUS; disputed attribution to St Thérèse must NOT be claimed",
+      "status": "PUBLISHED_TEXT_WITH_PRINT_IMAGE_HOLD",
+      "printPhotoVerified": false
+    },
+    {
+      "id": "priest_intercession_vocations_raccolta_1910",
+      "sourceLeadAlias": null,
+      "editorialCandidateId": null,
+      "purpose": "vocations",
+      "source": "The Raccolta 1910 §464.I",
+      "lang": [
+        "en",
+        "la"
+      ],
+      "authorship": "historical traditional prayer",
+      "status": "PUBLISHED_TEXT_WITH_PRINT_IMAGE_HOLD",
+      "printPhotoVerified": false
+    },
+    {
+      "id": "priest_intercession_perseverance_raccolta_1910",
+      "sourceLeadAlias": null,
+      "editorialCandidateId": null,
+      "purpose": "perseverance",
+      "source": "The Raccolta 1910 §464.II",
+      "lang": [
+        "en",
+        "la"
+      ],
+      "authorship": "historical traditional prayer",
+      "status": "PUBLISHED_TEXT_WITH_PRINT_IMAGE_HOLD",
+      "printPhotoVerified": false
+    }
+  ],
+  "held": [
+    {
+      "id": "icksp_priests_heart",
+      "decision": "DEFER",
+      "reason": "Corrupt duplicated clause in web transcript, not a trustworthy text for independent public reading"
+    },
+    {
+      "id": "icksp_new_brighton_prayer_jesus_high_priest",
+      "decision": "DEFER",
+      "reason": "Distinct British priestly ministry prayer, lower marginal value than existing three"
+    },
+    {
+      "id": "icksp_father_thevenin",
+      "decision": "DEFER",
+      "reason": "Modern author/translation rights not cleared"
+    },
+    {
+      "id": "icksp_benedict_xvi",
+      "decision": "DEFER",
+      "reason": "Modern rights and alternate historical wording unresolved"
+    },
+    {
+      "id": "raccolta_1910_463",
+      "decision": "DEFER",
+      "reason": "Longer sanctification petition of lower everyday utility; includes historic Marian expression needing context"
+    }
+  ],
+  "policy": {
+    "noNewTopLevelModule": true,
+    "oneTapPurposeSelection": true,
+    "noCurrentIndulgences": true,
+    "noInventedTranslations": true,
+    "neverAttribute1914TextToTherese": true,
+    "sourceURLPerWork": true,
+    "zeroCost": true,
+    "printImageCertification": false,
+    "doNotConflateWithICKSPBritishFirstThursdayComposite": true
+  }
+}
