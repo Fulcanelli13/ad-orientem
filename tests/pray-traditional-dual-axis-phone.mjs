@@ -131,7 +131,7 @@ try{
  });
  assert.ok(openingRule.summaryVisible&&openingRule.settingsTop<openingRule.horizonTop&&!openingRule.open,
    "Daily customization must be visible and collapsed before the cinematic stage: "+JSON.stringify(openingRule));
- assert.match(openingRule.label,/1913.*FR.*Standard/,"Saved rule identity should be readable at entry");
+ assert.match(openingRule.label,/1913.*Français.*Standard/,"Saved rule identity should be readable at entry");
  assert.ok(openingSky.height>=85&&openingSky.height<=135,
   "Quiet sky must be a minor editorial accent, not the dominant screen: "+JSON.stringify(openingSky));
 
