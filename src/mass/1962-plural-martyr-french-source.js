@@ -256,8 +256,7 @@ export function reconcile1962PluralFemaleMartyrsCommonFrench(proper){
     const fr=String(row.fr??"");
     const latin=ascii(lat),english=ascii(en);
     if(!latinPluralNames.test(lat)||!BOTH_PLACEHOLDERS_EN.test(en)||
-      !LAT_MARTYRS.test(latin)||!MARTYRS_LATIN.test(latin)&&
-      slot==="SECRET_SET"||!en.trim()||!fr.trim())continue;
+      !LAT_MARTYRS.test(latin)||!en.trim()||!fr.trim())continue;
     const virginLatin=LAT_VIRGINS.test(latin);
     if((owner===C6B_1962_SOURCE)!==virginLatin)continue;
     if(owner===C6B_1962_SOURCE&&!ENG_VIRGINS.test(english))continue;
