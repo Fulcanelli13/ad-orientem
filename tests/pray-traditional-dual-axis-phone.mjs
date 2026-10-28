@@ -172,6 +172,39 @@ try{
  await page.locator("#aoPray435930 .aoDevoStop").first().evaluate(el=>el.click());
  const first=await snapshot();
  assert.equal(first.route,"pray.morning_evening");
+ // The French 1905 thanksgiving-and-offering witness is sourced and selectable
+ // with one tap within the 1913 Morning opening. No second stage or sky reset.
+ await page.locator("#aoPray435930 .aoDevoStop").nth(1).evaluate(el=>el.click());
+ const morningOpening=page.locator("#aoPray435930 [data-ao-personal-prayer='daily-prayer']");
+ assert.equal(await morningOpening.count(),1);
+ assert.equal(await morningOpening.locator("[data-tp381-personal-variant='fr-1905-morning-thanks-offering']").count(),1);
+ const ambientBefore=await page.evaluate(()=>{
+  const sky=document.querySelector("#aoPray435930 .aoQuietHorizonCanvas");
+  const card=document.querySelector("#aoPray435930 .aoDevoCardScroll");
+  sky.dataset.b07Ambient="same";card.dataset.b07Reader="same";
+  return {step:document.querySelector("#aoPray435930 .aoDevoCard")?.dataset.aoDevoIndex,
+   horizon:document.querySelector("#aoPray435930 [data-ao-quiet-daily-horizon]")?.dataset.aoHorizonPhase,
+   stopwatch:document.querySelector("#aoPray435930 [data-ao-daily-clock-readout]")?.textContent};
+ });
+ await morningOpening.locator("[data-tp381-personal-variant='fr-1905-morning-thanks-offering']").evaluate(el=>el.click());
+ const ambientAfter=await page.evaluate(()=>({
+  step:document.querySelector("#aoPray435930 .aoDevoCard")?.dataset.aoDevoIndex,
+  horizon:document.querySelector("#aoPray435930 [data-ao-quiet-daily-horizon]")?.dataset.aoHorizonPhase,
+  stopwatch:document.querySelector("#aoPray435930 [data-ao-daily-clock-readout]")?.textContent,
+  preservedSky:document.querySelector("#aoPray435930 .aoQuietHorizonCanvas")?.dataset.b07Ambient,
+  preservedReader:document.querySelector("#aoPray435930 .aoDevoCardScroll")?.dataset.b07Reader
+ }));
+ assert.deepEqual([ambientAfter.step,ambientAfter.horizon,ambientAfter.stopwatch],
+  [ambientBefore.step,ambientBefore.horizon,ambientBefore.stopwatch],
+  "One-tap opening option must keep stage/atmosphere/stopwatch");
+ assert.equal(ambientAfter.preservedSky,"same");
+ assert.equal(ambientAfter.preservedReader,"same");
+ assert.equal(await morningOpening.getAttribute("data-ao-personal-source"),"fr-1905-morning-thanks-offering");
+ assert.match(await morningOpening.innerText(),/objet plus restreint/,"Narrower opening focus must be disclosed, not misrepresented as like-for-like");
+ await page.screenshot({path:resolve(captures,"morning-opening-offering-choice-390-fr.png"),animations:"disabled"});
+ await morningOpening.locator("[data-tp381-personal-variant='default:daily-prayer']").evaluate(el=>el.click());
+ assert.equal(await morningOpening.getAttribute("data-ao-personal-source"),"daily-prayer");
+ await page.locator("#aoPray435930 .aoDevoStop").first().evaluate(el=>el.click());
  const openingSky=await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").evaluate(el=>({
   mode:el.dataset.aoQuietDailyHorizon,phase:el.dataset.aoHorizonPhase,
   total:el.dataset.aoHorizonTotal,height:el.querySelector(".aoQuietHorizonCanvas")?.getBoundingClientRect().height
