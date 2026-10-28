@@ -1,7 +1,8 @@
 /**
  * User-owned daily rule over exact-edition St Pius X texts.
- * Complete preconciliar manual prayers are optional, never silently
- * presented as St Pius X or machine-translated into another language.
+ * Complete preconciliar prayers and separately identified traditional
+ * liturgical excerpts are optional, never silently presented as St Pius X
+ * or machine-translated into another language.
  * Saves only source IDs/edition/language; no prayer content or examination.
  */
 import {DAILY_PERSONAL_PRAYER_SOURCE_V1 as CORPUS} from "./daily-personal-prayer-source.js";
@@ -106,7 +107,9 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
   const item=extrasById.get(id);
   return {id:"personal-extra-"+id,sourceId:id,kind:item.legacyPrayerId?"personal-legacy":"personal-prayer",legacyId:item.legacyPrayerId||null,
    title:item.title,language,text:item.text,sourceLabel:item.sourceLabel,
-   sourceUrl:item.sourceUrl,sourceStatus:"complete-additional-manual-prayer",
+   sourceUrl:item.sourceUrl,
+   sourceStatus:item.purpose?.startsWith("historical-office-")?"complete-optional-liturgical-selection":"complete-additional-manual-prayer",
+   sourceContextEn:item.sourceContextEn||null,sourceContextFr:item.sourceContextFr||null,
    optional:true,sourceExact:true};
  });
  // Append selected complete optional devotions in the order saved by the
