@@ -7,6 +7,7 @@ import {personalDailyOptions} from "./daily-personal-rule.js";
  * printed witness from Latin readings supplied editorially by Ad Orientem. */
 export function dailyPersonalProvenance(row,L=(en)=>en){
  if(row.replacementId)return L("Alternative · complete historical source-language prayer","Variante · prière historique complète dans sa langue d’origine");
+ if(row.sourceStatus==="complete-optional-liturgical-selection")return L("Optional historical Office text · not the complete Office","Texte facultatif de l’Office historique · non l’office complet");
  if(row.optional)return L("Optional · complete historical source-language prayer","Facultative · prière historique complète dans sa langue d’origine");
  if(row.sourceStatus==="AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"){
   return row.language==="la"
@@ -20,6 +21,7 @@ export function dailyPersonalProvenance(row,L=(en)=>en){
 
 export function personalDailyPrayerCard(row,plan,{esc,L,prayerParagraphs,source}){
  const note=dailyPersonalProvenance(row,L);
+ const context=row.sourceContextEn||row.sourceContextFr?'<small class="aoDailyPersonalContext">'+esc(L(row.sourceContextEn||"",row.sourceContextFr||""))+'</small>':"";
  const body=row.text?prayerParagraphs(row.text):
  '<p class="aoTP381TextParagraph">'+esc(L("Exact text unavailable in the selected language; nothing substituted.","Texte exact indisponible dans cette langue ; aucune substitution."))+'</p>';
  const twoFaces=Boolean(row.text&&row.latinText&&row.language!=="la"&&row.text!==row.latinText);
@@ -35,7 +37,7 @@ export function personalDailyPrayerCard(row,plan,{esc,L,prayerParagraphs,source}
  }
  return '<article class="aoTP381PrayerCard" data-ao-personal-prayer="'+esc(row.sourceId)+'" data-ao-personal-source="'+esc(row.replacementId||row.sourceId)+'">'+
  '<h3>'+esc(row.title)+'</h3><small class="aoDailyPersonalProvenance">'+esc(note)+'</small>'+
- prayerBody+variants+source(row.sourceLabel,row.sourceUrl)+'</article>';
+ prayerBody+context+variants+source(row.sourceLabel,row.sourceUrl)+'</article>';
 }
 export function dailyPersonalList(rows,{esc,L,isFr}){
  return '<div class="aoTP381PrayerList" data-ao-personal-list>'+rows.map((r,i)=>
@@ -70,7 +72,7 @@ export function dailyPersonalSettings(plan,prefs,{esc,L,expanded=false}){
   choice("extra",x.id,(on?"✓ ":"+ ")+x.title,(on?"✓ ":"+ ")+x.title,on)+
   '<small>'+esc(x.sourceLabel)+'</small>'+move+'</div>';
  }).join("");
- const explanation=L("The St Pius X recitation order is the baseline. Complete additional prayers may be added or removed, and saved on this device. Only source-language texts are offered; no English/French manual prayer is presented as a Latin translation.","L’ordre de saint Pie X demeure la base. Ajoutez ou retirez des prières complètes, avec sauvegarde locale. Les prières des autres manuels ne sont présentées que dans leur langue d’origine.");
+ const explanation=L("The printed St Pius X order remains intact. Add or remove complete historical prayers or separately labelled Office selections; no Office excerpt constitutes the full Compline service. Your choices remain on this device. Only the attested source language is offered.","L’ordre imprimé de saint Pie X demeure intact. Ajoutez ou retirez des prières historiques complètes ou des textes de l’Office expressément signalés ; un extrait ne constitue pas l’office entier de Complies. Vos choix restent sur cet appareil. Seule la langue attestée est proposée.");
  const adjacent=plan.edition==="1913"&&part==="evening"?'<p>'+esc(L("De profundis and Jesus–Joseph–Mary follow the 1913 printed order as separate, optional devotions; they are not part of the obligatory core.","Le De profundis et les invocations à Jésus, Joseph et Marie suivent la règle de 1913 comme dévotions facultatives, hors du noyau."))+'</p>':"";
  const editionSummary=prefs.edition;
  const languageSummary={la:"LA",en:"EN",fr:"FR"}[prefs.language]||"EN";
@@ -78,6 +80,6 @@ export function dailyPersonalSettings(plan,prefs,{esc,L,expanded=false}){
  const selectedSummary=plan.selectedExtras.length&&prefs.mode==="expanded"?" · +"+plan.selectedExtras.length:"";
  return '<details class="aoDailyPersonalSettings" data-ao-personal-settings '+(expanded?"open":"")+'> <summary><span class="aoDailyPersonalSettingsLabel">'+esc(L("Customize","Personnaliser"))+'</span><small class="aoDailyPersonalSettingsCurrent">'+esc(editionSummary+" · "+languageSummary+" · "+modeSummary+selectedSummary)+'</small></summary>'+
  '<div class="aoDailyPersonalSettingsBody">'+ed+lang+mode+'<p class="aoDailyPersonalNote">'+esc(explanation)+'</p>'+
- group(L("Additional complete prayers","Prières complètes facultatives"),adjacent+(items||'<p>'+esc(L("No original-language manual prayers in this reading language. Pius X remains available in all three languages.","Aucune prière de manuel dans cette langue. Saint Pie X demeure disponible en trois langues."))+'</p>'))+
+ group(L("Additional prayers & Office texts","Prières et textes de l’Office facultatifs"),adjacent+(items||'<p>'+esc(L("No original-language manual prayers in this reading language. Pius X remains available in all three languages.","Aucune prière de manuel dans cette langue. Saint Pie X demeure disponible en trois langues."))+'</p>'))+
  '<button type="button" class="aoDailyPersonalReset" data-tp381-personal-action="reset" data-tp381-personal-value="">'+esc(L("Restore St Pius X defaults","Rétablir les choix de saint Pie X"))+'</button></div></details>';
 }
