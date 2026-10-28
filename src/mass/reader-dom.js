@@ -68,6 +68,20 @@ const SHELL_STYLE = `
 }
 .ao-section-jump [data-role="section-title"]{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ao-section-caret{font:500 16px/1 var(--ao-font-ui,system-ui,sans-serif);color:#78867b}
+.ao-section-catchup{flex:none;font:700 9px/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.06em;
+  color:var(--ao-mass-accent-text);border:1px solid rgba(225,228,211,.18);border-radius:8px;padding:6px 7px}
+.ao-section-menu .ao-catchup-heading{padding:12px 14px 5px;color:#e2e8df;
+  font:600 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-section-menu .ao-catchup-hint,.ao-section-menu .ao-catchup-group-label{
+  display:block;padding:3px 14px 9px;color:#a5b0a5;font:500 11px/1.35 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-section-menu .ao-catchup-group-label{padding-top:12px;text-transform:uppercase;letter-spacing:.07em}
+.ao-section-menu .ao-catchup-search{display:block;position:sticky;top:0;z-index:1;width:calc(100% - 24px);
+  margin:7px 12px;padding:11px 12px;min-height:44px;border:1px solid rgba(230,236,224,.18);
+  border-radius:9px;background:var(--ao-mass-panel);color:#eef1e9;font:500 14px var(--ao-font-ui,system-ui,sans-serif)}
+.ao-section-menu [hidden]{display:none!important}
+.ao-schola-rejoin{grid-column:1/-1!important;min-height:30px;color:var(--ao-mass-accent-text)!important;
+  border:1px solid rgba(223,229,212,.20)!important;letter-spacing:.055em}
+.ao-schola-rejoin[hidden]{display:none!important}
 
 .ao-mass-prefs{
   position:absolute;z-index:34;top:58px;right:8px;width:min(310px,calc(100% - 16px));
@@ -1815,6 +1829,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
   }) : (previous.paragraphs ?? Object.freeze([]));
 
   const schola = persist(moment.schola, previous.schola);
+  const scholaCatchupPinned=moment.scholaCatchupPinned===true;
   // Special-rite musical metadata is separate from the ordinary Schola
   // performance clock. It never supplies lyrics, tempo, or inferred sound.
   // A distinct-rite step can change chant/silence without replacing its
@@ -1878,6 +1893,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     sacredMinister:projectCertifiedSolemnMinisterRubric(moment.sacredMinister),
     priestVoice:persist(moment.priestVoice, previous.priestVoice),
     schola,
+    scholaCatchupPinned,
     riteMusic,
     organPermission,
     priestQuietOffertory,
@@ -1987,7 +2003,7 @@ export function buildReaderShellMarkup(prepared = {}) {
 <section class="ao-reader-shell" data-ao-reader-shell data-mode="${mode}" data-liturgical-colour="${liturgicalTheme.key}" data-liturgical-source="${liturgicalTheme.source}" style="${massThemeCssVariables(liturgicalTheme)}">
   <header class="ao-reader-top-ribbon" aria-label="Mass navigation">
     <button class="ao-reader-top-action" type="button" data-reader-home aria-label="Back to Ad Orientem home">${topNavSvg("home")}</button>
-    <button class="ao-section-jump" type="button" data-role="section-jump" aria-expanded="false" disabled><span data-role="section-title">${section}</span><span class="ao-section-caret" aria-hidden="true">⌄</span></button>
+    <button class="ao-section-jump" type="button" data-role="section-jump" aria-label="Catch up with the priest: find a Mass prayer or moment" aria-expanded="false" disabled><span data-role="section-title">${section}</span><span class="ao-section-catchup" aria-hidden="true">CATCH UP</span><span class="ao-section-caret" aria-hidden="true">⌄</span></button>
     <button class="ao-reader-top-action" type="button" data-reader-preferences aria-label="Mass preferences" aria-expanded="false">${topNavSvg("preferences")}</button>
   </header>
 
@@ -2132,6 +2148,7 @@ export function buildReaderShellMarkup(prepared = {}) {
         <button type="button" class="ao-schola-control" data-schola-next aria-label="Next Schola phrase" title="Next Schola phrase">›</button>
         <button type="button" class="ao-schola-control" data-schola-release hidden aria-label="Start sung Benedictus when actually heard">BEGIN SUNG BENEDICTUS</button>
         <button type="button" class="ao-schola-control" data-schola-pause aria-label="Pause Schola text" aria-pressed="false">PAUSE</button>
+        <button type="button" class="ao-schola-control ao-schola-rejoin" data-schola-rejoin hidden aria-label="Rejoin expected Schola music based on Mass position" title="Only updates the expected music display; does not detect actual singing">REJOIN EXPECTED MUSIC</button>
       </div>
     </div>
   </div>
@@ -2447,6 +2464,7 @@ export function createReaderDomAdapter({
   onScholaAdvance = null,
   onScholaPrevious = null,
   onScholaRelease = null,
+  onScholaRejoin = null,
   sections = [],
   scholaMusicItinerary = null,
   specialRiteMusicItinerary = null,
@@ -2657,6 +2675,8 @@ export function createReaderDomAdapter({
     const source=current?.scholaVisible ? current.schola : null;
     const previous=root.querySelector("[data-schola-previous]");
     const next=root.querySelector("[data-schola-next]");
+    const rejoin=root.querySelector("[data-schola-rejoin]");
+    if(rejoin)rejoin.hidden=current?.scholaCatchupPinned!==true;
     if(previous)previous.disabled=!source || Number(source.index)<=0;
     if(next)next.disabled=!source || Boolean(source.complete) ||
       Boolean(source.benedictusHold) || Number(source.index)>=Number(source.total)-1;
@@ -2999,13 +3019,50 @@ export function createReaderDomAdapter({
     jump.disabled=values.length===0;
     const doc=menu.ownerDocument??globalThis.document;
     if(!doc?.createElement)return;
-    for(const item of values){
+    menu.setAttribute?.("aria-label","Catch up with the priest");
+    const heading=doc.createElement("div");
+    heading.className="ao-catchup-heading";
+    heading.textContent="Where is the priest now?";
+    menu.append(heading);
+    const hint=doc.createElement("small");
+    hint.className="ao-catchup-hint";
+    hint.textContent="Choosing a prayer moves your reader, not the choir.";
+    menu.append(hint);
+    const search=doc.createElement("input");
+    search.type="search";
+    search.className="ao-catchup-search";
+    search.dataset.readerSectionSearch="";
+    search.setAttribute("aria-label","Search Mass prayers to catch up with the priest");
+    search.placeholder="Find a prayer or moment";
+    menu.append(search);
+    const nearby=doc.createElement("div");
+    nearby.dataset.readerSectionNearby="";
+    const nearLabel=doc.createElement("small");
+    nearLabel.className="ao-catchup-group-label";
+    nearLabel.textContent="Around your place";
+    nearby.append(nearLabel);
+    const all=doc.createElement("div");
+    all.dataset.readerSectionAll="";
+    const allLabel=doc.createElement("small");
+    allLabel.className="ao-catchup-group-label";
+    allLabel.textContent="All Mass prayers";
+    all.append(allLabel);
+    const makeButton=item=>{
       const button=doc.createElement("button");
       button.type="button";
       button.dataset.readerSection=String(item.id);
       button.textContent=String(item.label);
-      menu.append(button);
+      if(item.id===current?.id)button.setAttribute("aria-current","true");
+      return button;
+    };
+    const index=values.findIndex(item=>item.id===current?.id);
+    if(index>=0){
+      values.slice(Math.max(0,index-2),Math.min(values.length,index+7))
+        .forEach(item=>nearby.append(makeButton(item)));
+      menu.append(nearby);
     }
+    values.forEach(item=>all.append(makeButton(item)));
+    menu.append(all);
   }
 
   function activeScrollCard(){return root.querySelector?.(".ao-prayer-card")??null;}
@@ -3094,6 +3151,16 @@ export function createReaderDomAdapter({
     // event loses text when source-cue re-projections repaint the dock.
     rootInputListener=event=>{
       const field=event.target;
+      if(field?.matches?.("[data-reader-section-search]")){
+        const menu=root.querySelector?.('[data-role="section-menu"]');
+        const query=String(field.value??"").trim().toLocaleLowerCase();
+        const nearby=menu?.querySelector?.("[data-reader-section-nearby]");
+        if(nearby)nearby.hidden=Boolean(query);
+        for(const button of menu?.querySelectorAll?.("[data-reader-section-all] [data-reader-section]")??[]){
+          button.hidden=Boolean(query) && !String(button.textContent??"").toLocaleLowerCase().includes(query);
+        }
+        return;
+      }
       if(field?.matches?.("[data-schola-local-parish]")){
         onScholaLocalProgrammeChange?.({kind:"parishLabel",value:field.value});return;
       }
@@ -3168,7 +3235,11 @@ export function createReaderDomAdapter({
       const sectionJump=event.target?.closest?.('[data-role="section-jump"]');
       if(sectionJump && !sectionJump.disabled){
         const menu=root.querySelector('[data-role="section-menu"]');
-        if(menu){menu.hidden=!menu.hidden;sectionJump.setAttribute("aria-expanded",String(!menu.hidden));}
+        if(menu){
+          if(menu.hidden)populateSections();
+          menu.hidden=!menu.hidden;
+          sectionJump.setAttribute("aria-expanded",String(!menu.hidden));
+        }
         setPreferencesOpen(false);
         return;
       }
@@ -3187,6 +3258,11 @@ export function createReaderDomAdapter({
         if(!scholaCollapsed)scholaHeight=scholaExpandedHeight;
         syncScholaChrome();
         ensureShortCardCueTravel();
+        return;
+      }
+      const scholaRejoin=event.target?.closest?.("[data-schola-rejoin]");
+      if(scholaRejoin){
+        if(current?.scholaCatchupPinned)onScholaRejoin?.(current,prepared);
         return;
       }
       const scholaPrevious=event.target?.closest?.("[data-schola-previous]");
