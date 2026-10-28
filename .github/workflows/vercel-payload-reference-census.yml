@@ -1,0 +1,21 @@
+name: Vercel payload reference census
+on:
+  push:
+    branches:
+      - research/vercel-payload-census-20261028
+    paths:
+      - tools/vercel-payload-census.mjs
+      - .github/workflows/vercel-payload-reference-census.yml
+permissions:
+  contents: read
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Inventory release asset references
+        run: node tools/vercel-payload-census.mjs
