@@ -188,8 +188,15 @@ try {
   assert.ok(hits.some(row=>row.path==="/src/find/browser-entry.js"),"Explore dynamic import not requested");
   const findLoaded=await page.evaluate(()=>globalThis.AO_FIND_APP_V1?.status?.()?.installed===true);
   assert.equal(findLoaded,true,"Explore modular owner not installed");
-  // First-use contextual Glossary must work before visiting Formation.
-  await page.locator("#ao-find-modular-root [data-find-glossary]").click();
+  // The current Sacred Places entry view places its Glossary link under
+  // the real, collapsed "More" disclosure. Open that visible menu first:
+  // direct-clicking a hidden descendant is not a valid first-use action.
+  // Non-heritage Explore lenses still expose the header action directly.
+  const heritageMore=page.locator("#ao-find-modular-root .aoHeritageMore > summary");
+  if(await heritageMore.count())await heritageMore.click();
+  const findGlossary=page.locator("#ao-find-modular-root [data-find-glossary]");
+  await findGlossary.waitFor({state:"visible",timeout:12000});
+  await findGlossary.click();
   await page.waitForFunction(()=>globalThis.AO_GLOSSARY_V1?.status?.()?.open===true,null,{timeout:30000});
   await page.waitForFunction(()=>globalThis.AO_GLOSSARY_V1?.status?.()?.loaded===true
     &&globalThis.AO_GLOSSARY_V1?.status?.()?.view==="context",null,{timeout:30000});
