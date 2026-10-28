@@ -19,7 +19,7 @@ for(const r of audit.records){
   actual[r.decision]=(actual[r.decision]||0)+1;
   assert.ok(!r.publish_new_place && !r.replace_existing_geometry && !r.add_tlm_association && !r.link_subject_as_separate_map_pin);
   assert.ok(canonical.has(r.claimed_canonical_place_id));
-  assert.match(r.candidate_id,/^SG-INV-\\d{4}$/);
+  assert.equal(/^SG-INV-[0-9]{4}$/.test(r.candidate_id),true);
   assert.ok(r.notes.length>40);
 }
 assert.deepEqual(actual,audit.dispositions);
@@ -54,7 +54,7 @@ for(const p of gallery.places){
    assert.equal(f.asset_path,null);
    assert.equal(f.original_sha1,null);
    assert.equal(f.derivative_sha256,null);
-   assert.match(f.source_url,/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/);
+   assert.equal(f.source_url.startsWith("https://commons.wikimedia.org/wiki/File:"),true);
    assert.ok(f.photographer.length>2 && f.license_url.startsWith("https://"));
    assert.ok(!photoIds.has(f.commons_file));photoIds.add(f.commons_file);
   }
