@@ -136,11 +136,13 @@ try{
    await page.waitForFunction(()=>document.querySelector("[data-ao-reader-shell]")?.dataset.mode==="MISSAL");
    assert.equal(await trigger.isVisible(),false,"Missal mode must not show manual LIVE control");
    await page.evaluate(()=>window.__AO_PHONE_PREVIEW.setPresentationMode("SIMPLE"));
-   assert.equal(await trigger.isVisible(),false,"Simple mode must not show manual LIVE control");
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getPresentationMode()==="LIVE");
+   assert.equal(await trigger.isVisible(),true,
+     "A saved Simple mode must migrate back to LIVE and restore the source-owned manual Canon control");
    assert.deepEqual(errors,[],"LIVE Canon manual browser errors");
   }finally{await context.close();}
  }
- console.log("PASS LIVE 64 manual Canon control: mobile 320/390 EN/FR, Host and Chalice options, independent server bell, reset, Escape, Missal/Simple hidden.");
+ console.log("PASS LIVE 64 manual Canon control: mobile 320/390 EN/FR, Host and Chalice options, independent server bell, reset, Escape, Missal hidden, saved Simple migrated to LIVE.");
 }finally{
  await browser?.close();
  await new Promise(ok=>server.close(()=>ok()));
