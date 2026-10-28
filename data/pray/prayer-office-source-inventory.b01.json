@@ -2350,14 +2350,20 @@
         "scope": "DEDICATED_NOVENAS_COLLECTION_ONLY"
       },
       "b04_novena_form_audit": {
-        "file": "data/pray/sensus-novena-form-components.b04.json",
-        "source_page_structures_reviewed": 24,
-        "source_page_structures_remaining": 37,
-        "component_descriptions": 54,
+        "file": "data/pray/sensus-novena-form-master.b04.json",
+        "source_page_structures_reviewed": 61,
+        "source_page_structures_remaining": 0,
+        "component_descriptions": 141,
+        "form_patterns": 11,
+        "recorded_anomalies_and_witness_holds": 15,
+        "original_historical_print_witnesses_fully_collated": 0,
         "non_nine_day_novena_forms_identified": [
           "Infant of Prague: 9 hours / 1 day",
-          "St Andrew: 15 recitations daily over 25 days"
-        ]
+          "St Andrew: 15 recitations daily over 25 days",
+          "St Martha: nine consecutive Tuesdays",
+          "Presentation of Our Lady: three distinct prayers cycled over nine days"
+        ],
+        "scope": "DEDICATED_NOVENA_INDEX_ONLY_NOT_ENTIRE_SENSUS_WEBSITE"
       }
     },
     "roman_divine_office_1960": {
@@ -2557,7 +2563,7 @@
     "sensus_tag_post_bodies_read_b02": 6,
     "sensus_tag_post_bodies_unread_b02": 9,
     "full_site_crawl_completed": false,
-    "last_audit": "B04_2026-10-28",
+    "last_audit": "B04_COMPLETE_DEDICATED_NOVENA_STRUCTURE_2026-10-28",
     "sensus_extra_discovery_b02": 5,
     "total_source_observations": 214,
     "raccolta_historical_index_entries_b03": 189,
@@ -2573,16 +2579,21 @@
     "all_source_families_complete": false,
     "b04_raccolta_entries_component_structure_inspected": 17,
     "b04_raccolta_component_structure_descriptors": 50,
-    "b04_sensus_novena_page_bodies_structurally_classified": 24,
-    "b04_sensus_novena_components_described": 54,
-    "b04_sensus_novena_pages_remain_to_classify": 37,
+    "b04_sensus_novena_page_bodies_structurally_classified": 61,
+    "b04_sensus_novena_components_described": 141,
+    "b04_sensus_novena_pages_remain_to_classify": 0,
     "b04_divine_office_source_folders_mapped": 8,
     "b04_divine_office_source_files_enumerated": 0,
-    "b04_raccolta_33_vs_35_short_chaplet_discrepancy_open": true
+    "b04_raccolta_33_vs_35_short_chaplet_discrepancy_open": true,
+    "b04_sensus_novena_form_patterns": 11,
+    "b04_sensus_novena_source_flagged_rows": 15,
+    "b04_sensus_dedicated_index_form_audit_complete": true,
+    "b04_sensus_original_print_texts_fully_collated": 0
   },
   "next_capture_gates": [
+    "Dedicated Sensus Novenas form classification DONE 61/61; next authenticate historic editions and exact distinct texts for all 61",
+    "Resolve novena text/date anomalies before schedule publication: St Valentine Feb5–14, St Clare Aug4–11, St Raymond Aug22 vs Aug23 start, St Catherine Nov16–25, Saint Lucy page '30Aug', modern litany additions in claimed 1910 witness",
     "Verify printed edition for Raccolta §40 short Precious Blood chaplet (seven 5-Pater mysteries vs 33 stated total) before classifying exact form",
-    "Finish component-structure review of the other 37 dedicated Sensus novenas; authenticated source texts and translations remain distinct subsequent gates",
     "Enumerate actual Divinum Officium data files by language and section then collate 1960 liturgical resolving rules before calling Divine Office corpus coverage complete",
     "Split all 189 Raccolta historical entries into constituent prayers, notices and exercises with page-collated evidence; 157 is omitted in online 1866 index and is corroborated in 1857 index",
     "Reconcile 61 dedicated Sensus novenas with 15 dynamic tag rows and all calendar/site archives; individual text and translation completeness still unverified",
