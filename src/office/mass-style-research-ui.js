@@ -119,7 +119,12 @@
           root.style.setProperty("--ao-office-size",String(size));
       }
     });
-    viewport.addEventListener("scroll",focusLine,{passive:true});
+    let focusQueued=false;
+    viewport.addEventListener("scroll",()=>{
+      if(focusQueued)return;
+      focusQueued=true;
+      requestAnimationFrame(()=>{focusQueued=false;focusLine();});
+    },{passive:true});
     viewport.addEventListener("click",e=>{
       const line=e.target.closest(".aoOfficeLiveParagraph");
       if(!line||mode!=="LIVE")return;
