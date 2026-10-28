@@ -1,5 +1,6 @@
 import "./confession-path-styles.js";
 import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS, CONFESSION_HISTORICAL_SOURCE_POLICY } from "./confession-paths.js";
+import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
@@ -241,7 +242,7 @@ let ROSARY_FIFTEEN={active:false};
 // Only a source-launched exact Rosary object owns this temporary return receipt.
 let rosaryScriptureReturn=null;
 let ROSARY_CHOOSER={method:'ordinary',decades:5,guide:S.rosary.mode==='guided'?'guided':'simple',optionsOpen:false};
-function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,since:''}}
+function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,contrition:"standard",since:''}}
 let CONF=freshConfessionState();
 let BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:"ordinary",feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};
 let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};
@@ -1393,6 +1394,25 @@ function confessionSingleCard(card,pos,count,context){
    <h2 tabindex="-1">${esc(title)}</h2>${body}
    </section>`;
 }
+function confessionContritionPicker(kicker){
+ // Source alternatives are prayer texts *before* entering, never an app-led rite.
+ const pius=CONF.contrition==="piusx",record=B01_PIUS_X_1905_CONTRITION;
+ const chooser='<nav class="aoP435930ConfContritionChoices" data-ao-conf-contrition-picker role="group" aria-label="'+
+   esc(L("Choose an Act of Contrition","Choisir un acte de contrition"))+'">'+
+   '<button type="button" data-p435930-conf-contrition="standard" aria-pressed="'+String(!pius)+'">'+
+     esc(L("Established Act","Acte habituel"))+'</button>'+
+   '<button type="button" data-p435930-conf-contrition="piusx" aria-pressed="'+String(pius)+'">'+
+     esc(L("St Pius X · 1905","Saint Pie X · 1905"))+'</button></nav>';
+ const prayer=pius?prayerBlock(record.id,{record,kicker}):guidePrayers([{id:"sacrament_act_of_contrition",kicker}]);
+ const note=pius?'<p class="aoP435930ConfContritionSourceStatus" data-ao-conf-contrition-source-status>'+
+   esc(L("This is an editorial English rendering of the attested 1905 Italian catechism, not a certified historical English edition. It is a private preparatory prayer, not a priest’s sacramental formula.",
+   "Cette traduction française est une adaptation éditoriale du catéchisme italien de 1905, non une édition française historique certifiée. Il s’agit d’une prière préparatoire personnelle, non d’une formule sacramentelle du prêtre."))+
+   ' <a href="'+esc(record.provenance.url)+'" target="_blank" rel="noopener noreferrer">'+
+   esc(L("1905 Italian original","Original italien de 1905"))+'</a></p>':'';
+ return '<section class="aoP435930ConfContrition" data-ao-confession-act aria-label="'+
+   esc(L("Prayer before entering the confessional","Prière avant d’entrer au confessionnal"))+'">'+
+   '<h3>'+esc(L("Act of Contrition · private preparation","Acte de contrition · préparation personnelle"))+'</h3>'+chooser+note+prayer+'</section>';
+}
 function confessionExaminationView(ex){
  const cards=confessionExaminationCards(CONF.path,ex?.sections);
  const pos=confessionStepAt(CONF.examStep,cards.length);
@@ -1401,7 +1421,7 @@ function confessionExaminationView(ex){
   :L("Read one step at a time. A diligent but reasonable examination is enough; the confessor can help with uncertainty.","Avancez étape par étape. Un examen diligent mais raisonnable suffit ; le confesseur peut vous aider en cas de doute.");
  return `${guideNow(L('Examine your conscience','Examinez votre conscience'),note)}
  ${confessionSingleCard(cards[pos],pos,cards.length,"exam")}
- ${pos===cards.length-1?guidePrayers([{id:'sacrament_act_of_contrition',kicker:L('Act of Contrition','Acte de contrition')}]):''}`;
+ ${pos===cards.length-1?confessionContritionPicker(L("Act of Contrition","Acte de contrition")):""}`;
 }
 
 function renderConfession(){
@@ -1425,7 +1445,7 @@ function renderConfession(){
   const cards=confessionRiteCards(CONF.path),pos=confessionStepAt(CONF.riteStep,cards.length);
   body=`${guideNow(L('Before you enter the confessional','Avant d\'entrer au confessionnal'),L('Review these simple steps, then put your phone away. The sacrament takes place with the priest, not in this app.','Relisez ces étapes, puis rangez votre téléphone. Le sacrement a lieu avec le prêtre, non dans cette application.'))}
   ${confessionSingleCard(cards[pos],pos,cards.length,"rite")}
-  ${pos===cards.length-1?guidePrayers([{id:'sacrament_act_of_contrition',kicker:L('Act of Contrition · read before entering','Acte de contrition · à relire avant d\'entrer')}]):''}
+  ${pos===cards.length-1?confessionContritionPicker(L("Read before entering","À relire avant d’entrer")):""}
   ${callout(esc(L('No audio recording, transcript, stored sins or simulated absolution.','Aucun enregistrement audio, aucune transcription, aucun péché conservé, aucune absolution simulée.')),'privacy')}`;
  }
  if(CONF.stage===3){
@@ -1461,7 +1481,7 @@ function renderConfession(){
  }
  const optionalPrayers=CONF.stage===2&&cardSequence&&cardIndex===cardSequence.length-1?
  `<details class="aoP435930ConfHistoricalOptions" data-ao-batch03-conf-contrition><summary>${esc(L('Historical Act of Contrition · alternative source','Acte de contrition historique · source alternative'))}</summary>
- <p>${esc(L('The established Act of Contrition remains available above. The St Pius X original is provided as an identified 1905 Italian historical comparison, not as an invented English or French translation; do not replace the sacramental rite with an app script.','L’acte de contrition établi reste proposé ci-dessus. L’original de saint Pie X est présenté comme témoin historique italien de 1905, sans traduction anglaise ou française inventée ; l’application ne remplace pas le rite sacramentel.'))}</p>
+ <p>${esc(L('The established canonical Act and optional St Pius X prayer are distinct sources. English and French renderings of the 1905 Italian original are editorial and not certified published translations. Read before entering; follow the priest during the sacrament.','L’acte canonique habituel et la prière facultative de saint Pie X proviennent de sources distinctes. Les versions française et anglaise du texte italien de 1905 sont éditoriales, non des traductions imprimées certifiées. Lisez-les avant d’entrer ; suivez le prêtre pendant le sacrement.'))}</p>
  <a href="${esc(CONFESSION_HISTORICAL_SOURCE_POLICY.piusX.source)}" target="_blank" rel="noopener noreferrer">${esc(L('St Pius X · 1905 original','Saint Pie X · original de 1905'))} ↗</a></details>`:
  CONF.stage===3&&cardSequence&&cardIndex===cardSequence.length-1?
  `<details class="aoP435930ConfHistoricalOptions" data-ao-batch03-conf-thanks><summary>${esc(L('Optional thanksgiving prayer','Prière d’action de grâces facultative'))}</summary>
@@ -2819,6 +2839,17 @@ function onClick(e){
  if(b.matches('[data-p435930-card-flip]')){if(b===suppressPrayerFlipTarget){suppressPrayerFlipTarget=null;return;}const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}
  const seg=b.dataset.p435930Seg;if(seg){if(view==='angelus'){if(['individual','group'].includes(seg))setRecitationMode(seg);else if(['simple','guided'].includes(seg)){S.angelusGuided=seg==='guided';save()}else if(['auto','angelus','regina'].includes(seg)){S.angelusMode=seg;ANGELUS_CARD_INDEX=0;angelusOptionsOpen=false;save()}}else if(view==='rosary'){if(['standard','devotional'].includes(seg)){S.rosary.form=seg;save()}else if(['simple','guided'].includes(seg)){S.rosary.mode=seg;save()}else if(['individual','group'].includes(seg)){setRecitationMode(seg);try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(seg)}catch{}}}else if(view==='adoration'&&['reserved','exposed'].includes(seg)){setAdorationPresence(seg)}else if(view==='stations'&&['guided','simple'].includes(seg)){S.stations.mode=seg;if(seg==='simple')STATIONS.publicPosture=false;save()}else if(view==='stations'&&['individual','group'].includes(seg)){setRecitationMode(seg);if(seg==='individual')STATIONS.publicPosture=false}else if(view==='litany'&&['individual','group'].includes(seg)){setRecitationMode(seg)}else if(view==='library'&&LIB.open){LIB.language=seg}return render()}
  if(b.matches('[data-p435930-launch-rosary]')){launchRosaryPlayer(captureResume());return}
+ if(b.hasAttribute("data-p435930-conf-contrition")){
+   if(view!=="confession"||!CONF.path||![1,2].includes(CONF.stage))return;
+   const selected=b.dataset.p435930ConfContrition;
+   if(selected!=="standard"&&selected!=="piusx")return;
+   const last=CONF.stage===1
+     ?confessionExaminationCards(CONF.path,(isFr()?DATA.examFr:DATA.exam)?.sections).length-1
+     :confessionRiteCards(CONF.path).length-1;
+   if((CONF.stage===1?CONF.examStep:CONF.riteStep)!==last)return;
+   if(CONF.contrition===selected)return;
+   CONF.contrition=selected;return render();
+ }
  if(b.dataset.p435930ConfPath!=null){
    if(!confessionPath(b.dataset.p435930ConfPath))return;
    CONF.path=b.dataset.p435930ConfPath;
