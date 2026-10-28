@@ -150,10 +150,12 @@ verify(titled("Communion Antiphon"),"COMMUNION",
   "a direct jump to B085 must still offer the resolved Proper without an observed sound claim");
 verify(titled("Final Blessing"),null,"silent/priest-only final blessing must not activate choir");
 
-// Source-aware API also works for existing production 48 model.
+// Source-aware Schola cues also work on the original 39-card source model.
 const {p}=fixture();
 const live=buildReaderModeModels({prepared:p,data,mode:"LIVE"});
-assert.equal(live.presentationModel.totalCards,48);
+assert.equal(live.presentationModel.totalCards,39);
+assert.equal(live.presentationModel,live.sourceModel,
+  "Schola source traversal must not resurrect the retired 48-card presentation");
 const productionSchola=createNativeScholaController({
   sungCorpus:data.sungCorpus,properSlots:live.sourceModel.properSlots,
   prepared:p,frenchOrdinary:data.frenchOrdinary,
@@ -181,4 +183,4 @@ assert.ok(low.review.presentationModel.totalCards!==65,
 assert.equal(low.schola.project().structuralAbsence,true);
 assert.equal(low.schola.activateForCard(solemnGloria).schola,null);
 
-console.log("Mass Schola source-aware cards PASS — 65 curated, 48 rollback, Solemn, Low, no false progress/rewinds.");
+console.log("Mass Schola source-aware cards PASS — 65 curated, source-native 39, Solemn, Low, no false progress/rewinds.");

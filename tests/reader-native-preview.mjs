@@ -75,11 +75,12 @@ assert.equal(liveReady.rubricState.project("AO.SM.C0058").primaryPriestAction.la
 assert.equal(liveReady.rubricState.project("AO.SM.C0174").events.length,6);
 assert.equal(liveReady.rubricState.project("AO.SM.C0204").activeStates.THUMB_INDEX_JOINED.value,true);
 assert.equal(liveReady.model.structureOwner,"SOURCE_FIRST_LIVE");
-assert.equal(liveReady.presentationModel.totalCards,48);
-assert.equal(liveReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_PRODUCT_48");
-assert.equal(liveReady.presentationModel.sourceModelTotalCards,39);
+assert.equal(liveReady.presentationModel.totalCards,39);
+assert.equal(liveReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE");
+assert.equal(liveReady.presentationModel,liveReady.model,
+  "uncurated diagnostics must retain canonical source model");
 
-// Test the actual frozen 48-card presentation rather than only synthetic
+// Test the source-native presentation rather than only synthetic
 // one-paragraph examples. Context is source-cue owned, not card-number owned.
 for(const row of READER_OBJECTIVE_CONTEXT_ROWS){
   const sourceBlock=data.sungCorpus.blocks.find(b=>b.Block_ID===row.blockId);
@@ -103,8 +104,8 @@ for(const row of READER_OBJECTIVE_CONTEXT_ROWS){
   }),null,"Context leaked onto an unrelated cue");
 }
 
-assert.equal(liveReady.presentationModel.historicalV183IdentityClaim,false);
-assert.equal(liveReady.presentationModel.sourceAuthorityModel,liveReady.model);
+assert.ok(liveReady.presentationModel.cards.every(c=>!c.sectionId.startsWith("AO.LIVE48.")));
+assert.equal(liveReady.presentationModel,liveReady.model);
 const curatedReady=await prepareNativeReaderPreview({
   prepared:livePrepared,reviewCuratedCards:true,
   presentationData:data,eventData,cueRegistries,guideData,
@@ -235,8 +236,8 @@ assert.equal(musicReady.riteMusicSources.ASPERGES.schema,"ao-r20-asperges-payloa
 assert.equal(musicReady.aspergesController.project().formulaState.formula,"ORDINARY");
 assert.equal(musicReady.model.totalCards,39,
   "The special music authority must not create new Mass source cards");
-assert.equal(musicReady.presentationModel.totalCards,48,
-  "The indexed music authority must not change the 48-card rollback");
+assert.equal(musicReady.presentationModel.totalCards,39,
+  "Music authority must not alter canonical source card count");
 const aspergesCuratedAttempt=await prepareNativeReaderPreview({
   prepared:aspergesPrepared,reviewCuratedCards:true,
   presentationData:data,eventData,cueRegistries,guideData,aspergesData,
@@ -253,8 +254,8 @@ assert.equal(aspergesCuratedAttempt.presentationModel.cards[0].title,
 assert.equal(aspergesCuratedAttempt.aspergesController.project().card.id,"ASP-R01",
   "the pre-Mass six-record R20 rite must remain the opening surface");
 assert.equal(aspergesReady.curatedEligible,false,
-  "the explicitly non-curated direct native preview remains source-first 48");
-assert.equal(aspergesReady.presentationModel.totalCards,48);
+  "the explicitly non-curated direct native preview remains source-native model");
+assert.equal(aspergesReady.presentationModel.totalCards,39);
 
 assert.equal(aspergesReady.aspergesController.project().card.id,"ASP-R01");
 assert.equal(aspergesReady.aspergesController.project().formulaState.formula,"ORDINARY");
@@ -459,10 +460,12 @@ assert.equal(ready.guide.registry.entryCount,32);
 assert.equal(ready.guide.registry.entries["AO.CARD.001"].moment,"Introit & Preparatory Prayers");
 assert.equal(ready.scholaState.supported,true);
 assert.equal(ready.scholaState.activateForCard(2).schola.cueId,"AO.SM.C0044");
-assert.equal(ready.model.totalCards,30);
-assert.equal(ready.presentationModel,ready.model,"non-LIVE native preview should not receive the 48-step Sung presentation");
-assert.equal(ready.model.cards[14].title,"Consecration of the Sacred Host");
-assert.equal(ready.model.cards[15].title,"Consecration of the Chalice");
+assert.equal(ready.prepared.readerPreferences.mode,"LIVE");
+assert.equal(ready.model.presentationMode,"LIVE");
+assert.equal(ready.model.totalCards,39);
+assert.equal(ready.presentationModel,ready.model,"non-LIVE native preview should not receive the retired 48-step projection");
+assert.ok(ready.model.cards.some(c=>c.title==="Consecration of the Sacred Host"));
+assert.ok(ready.model.cards.some(c=>c.title==="Consecration of the Chalice"));
 assert.equal(ready.cueState.supported,true);
 assert.equal(ready.transientState.supported,true);
 assert.equal(ready.transientState.audit.bellCueCount,5);
@@ -676,7 +679,8 @@ const palmReady=await prepareNativeReaderPreview({
 });
 assert.ok(palmReady.palmController,"Palm native preview controller missing");
 assert.equal(palmReady.palmController.project().card.id,"PALM-R01");
-assert.equal(palmReady.model.totalCards,30,"Palm prelude mutated Mass card identity");
+assert.equal(palmReady.model.totalCards,39,
+  "Palm prelude must preserve canonical LIVE source identity after legacy preference migration");
 
 const ashPrepared={
   ...prepared,
@@ -691,7 +695,8 @@ const ashReady=await prepareNativeReaderPreview({
 });
 assert.ok(ashReady.ashController,"Ash native preview controller missing");
 assert.equal(ashReady.ashController.project().card.id,"ASH-R01");
-assert.equal(ashReady.model.totalCards,30,"Ash prelude mutated Mass card identity");
+assert.equal(ashReady.model.totalCards,39,
+  "Ash prelude must preserve canonical LIVE source identity after legacy preference migration");
 
 // 1962 special-day preludes ending at the Introit omit the entire Foot cluster.
 // The revised 65-piece Mass projection contains four such display cards;
@@ -733,21 +738,21 @@ for(const {kind,loaded,source,omitsLastGospel} of [
   assert.equal(new Set(allIds).size,allIds.length,kind+" repeated canonical source paragraphs");
   const noCurator=await prepareNativeReaderPreview({...opts,reviewCuratedCards:false});
   assert.equal(noCurator.curatedEligible,false);
-  assert.equal(noCurator.presentationModel.totalCards,48,kind+" 48 rollback missing");
+  assert.equal(noCurator.presentationModel.totalCards,39,kind+" source-native retention missing");
   const wrongEntry=await prepareNativeReaderPreview({
     ...opts,prepared:{...specialPrepared,session:{...specialPrepared.session,
       plan:{...specialPrepared.session.plan,massEntry:"FOOT_CLUSTER"}}},
   });
   assert.equal(wrongEntry.curatedEligible,false,
     kind+" must never infer Introit-entry merely because a rite name was selected");
-  assert.equal(wrongEntry.presentationModel.totalCards,48);
+  assert.equal(wrongEntry.presentationModel.totalCards,39);
 }
 
 
 // Full LIVE source coverage beyond the ordinary Sundays: a source-owned
 // Rogation immediately before Mass ends at INTROIT (never at the Foot).
 // Crucially, the mere word 'Rogations' without explicit Mass-entry authority
-// must remain on the separately validated 48 fallback.
+// must remain on the separately validated source-native model.
 const rogationIntroitPrepared={
   ...livePrepared,session:{
     ...livePrepared.session,
@@ -768,14 +773,14 @@ assert.equal(rogationCurated.presentationModel.cards[0].title,"Introit");
 assert.equal(rogationCurated.rogationsController.project().card.id,"ROG-R01");
 const rogationLegacy=await prepareNativeReaderPreview({
   ...rogationCuratedOptions,reviewCuratedCards:false});
-assert.equal(rogationLegacy.presentationModel.totalCards,48);
+assert.equal(rogationLegacy.presentationModel.totalCards,39);
 const rogationWrongHandoff=await prepareNativeReaderPreview({
   ...rogationCuratedOptions,
   prepared:{...rogationIntroitPrepared,session:{...rogationIntroitPrepared.session,
     plan:{...rogationIntroitPrepared.session.plan,massEntry:"FOOT_CLUSTER"}}},
 });
 assert.equal(rogationWrongHandoff.curatedEligible,false);
-assert.equal(rogationWrongHandoff.presentationModel.totalCards,48);
+assert.equal(rogationWrongHandoff.presentationModel.totalCards,39);
 
 // Following actions must be explicitly selected and their independent
 // controllers loaded. An ordinary 39-source Sung Mass is allowed to use
@@ -812,7 +817,7 @@ for(const [followingAction,loaded,controllerKey,firstId,policy] of [
   assert.equal(curated.lifecycleRuntime.contract.followingAction.active,true);
   const legacy=await prepareNativeReaderPreview({...args,reviewCuratedCards:false});
   assert.equal(legacy.curatedEligible,false);
-  assert.equal(legacy.presentationModel.totalCards,48,followingAction+" rollback");
+  assert.equal(legacy.presentationModel.totalCards,39,followingAction+" rollback");
   // Only Corpus changes the Mass end; incomplete ownership must fall back.
   const unsafe={...fPrepared.session.plan,followingGraphs:[followingAction],
     ...(followingAction==="CORPUS_CHRISTI_PROCESSION"
@@ -822,7 +827,7 @@ for(const [followingAction,loaded,controllerKey,firstId,policy] of [
   });
   assert.equal(guarded.curatedEligible,false,
     followingAction+" should require coherent Mass-ending policy");
-  assert.equal(guarded.presentationModel.totalCards,48);
+  assert.equal(guarded.presentationModel.totalCards,39);
   // Composite prelude + following action remains outside certified set.
   const mixed=await prepareNativeReaderPreview({
     ...args,aspergesData,
@@ -830,8 +835,8 @@ for(const [followingAction,loaded,controllerKey,firstId,policy] of [
       resolvedMass:{...fPrepared.session.resolvedMass,precedingRites:["ASPERGES"]},
       plan:{...fPrepared.session.plan,precedingGraphs:["ASPERGES"]}}},
   });
-  assert.equal(mixed.curatedEligible,false,"untested composite must remain 48");
-  assert.equal(mixed.presentationModel.totalCards,48);
+  assert.equal(mixed.curatedEligible,false,"untested composite must stay source-native");
+  assert.equal(mixed.presentationModel.totalCards,39);
 }
 
 

@@ -29,7 +29,9 @@ async function walk(browser, query) {
     const page = await ctx.newPage(); const errors = [];
     page.on("pageerror", e => errors.push(String(e.message ?? e)));
     await page.goto(`http://127.0.0.1:4311/tests/fixtures/reader-phone-harness.html?${query}`, { waitUntil: "networkidle", timeout: 90000 });
-    await page.waitForFunction(() => document.documentElement.dataset.harnessReady === "true", {}, { timeout: 45000 });
+    await page.waitForFunction(() => ["true","error"].includes(document.documentElement.dataset.harnessReady), {}, { timeout: 45000 });
+    const startupError=await page.evaluate(()=>window.__AO_PHONE_HARNESS_ERROR??null);
+    assert.equal(startupError,null,query+": source-owned reader fixture failed: "+startupError);
     const visited = await page.evaluate(async () => {
       const api = window.__AO_PHONE_PREVIEW; const seen = [];
       api.showSequence(api.model.cards[0].sequence);

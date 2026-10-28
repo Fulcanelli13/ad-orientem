@@ -5,6 +5,7 @@ import {
   compileMassPlan,
   MASS_FORMS,
   PRESENTATION_MODES,
+  normalizePresentationMode,
 } from "../src/mass/session-engine.js";
 import { projectPractice, assertPracticeProjection } from "../src/mass/practice-projection.js";
 
@@ -28,7 +29,8 @@ expect(phoneCommand.includes("node tests/mass-missal-columns-phone.mjs"),
 
 
 expect(MASS_FORMS.length === 4, "four Mass forms required");
-expect(PRESENTATION_MODES.join(",") === "MISSAL,SIMPLE,LIVE", "presentation mode contract changed");
+expect(PRESENTATION_MODES.join(",") === "MISSAL,LIVE", "reader must expose only two modes");
+expect(normalizePresentationMode("SIMPLE")==="LIVE", "saved Simple preference did not migrate");
 expect(forms.forms.MISSA_CANTATA_SIMPLE.certifiedBindings === 189, "MC simple 189 bindings lost");
 expect(forms.forms.MISSA_CANTATA_INCENSE.certifiedBindings === 189, "MC incense 189 bindings lost");
 expect(forms.forms.MISSA_CANTATA_SIMPLE.sacredMinisters === false, "MC simple sacred minister leak");

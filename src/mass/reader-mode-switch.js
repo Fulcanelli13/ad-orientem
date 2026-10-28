@@ -1,6 +1,5 @@
 import { normalizePresentationMode } from "./session-engine.js";
 import { createMassReaderModel } from "./reader-model.js";
-import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
 import { projectCuratedOrdinaryLiveCards } from "./reader-live-curated-cards.js";
 import { projectGranularMissalCards } from "./reader-missal-granularity.js";
 
@@ -27,11 +26,13 @@ export function buildReaderModeModels({prepared,data,mode,reviewExpandedCards=fa
     holyThursdayMandatumSource:data.mandatumSource??null,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
+  // Uncertified special Masses retain their canonical source structure;
+  // historic 48-step product stages must never enter a mounted reader.
+  const curated=normalized==="LIVE" && reviewExpandedCards===true &&
+    sourceModel.totalCards===39 && String(sourceModel.corpusFamily)==="SUNG";
   const presentationModel=normalized==="MISSAL"
     ? projectGranularMissalCards(sourceModel)
-    : reviewExpandedCards
-      ? projectCuratedOrdinaryLiveCards(sourceModel)
-      : projectSourceFirst48Presentation(sourceModel);
+    : curated ? projectCuratedOrdinaryLiveCards(sourceModel) : sourceModel;
   return Object.freeze({mode:normalized,sourceModel,presentationModel});
 }
 

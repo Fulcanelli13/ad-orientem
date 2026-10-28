@@ -49,7 +49,7 @@ export function resolveHostIconAssets(_win=globalThis){
 export function mapLegacyFollowMode(value) {
   const raw = String(value ?? "vox").toLowerCase();
   if (raw === "missal" || raw === "read") return "MISSAL";
-  if (raw === "simple") return "SIMPLE";
+  if (raw === "simple") return "LIVE"; // Retired saved host setting.
   return "LIVE";
 }
 

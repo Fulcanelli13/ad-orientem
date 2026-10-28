@@ -22,6 +22,9 @@ const proper={sourcePath:"Tempora/Pent18-0",introit:{lat:"x"}};
 const ordinary=prepareMassSessionFromV346(base,{form:"sung",followMode:"vox",proper});
 expect(ordinary.resolvedMass.form==="MISSA_CANTATA_INCENSE","legacy sung form mapping changed");
 expect(ordinary.resolvedMass.presentationMode==="LIVE","legacy vox mode mapping changed");
+const migrated=prepareMassSessionFromV346(base,{form:"sung",followMode:"simple",proper});
+expect(migrated.resolvedMass.presentationMode==="LIVE",
+  "legacy Simple host preference must map directly to LIVE");
 expect(ordinary.resolvedMass.explicitlySelectedCelebration===false,"Mass of day became manual override");
 expect(ordinary.plan.massEntry==="FOOT_CLUSTER","ordinary plan changed");
 

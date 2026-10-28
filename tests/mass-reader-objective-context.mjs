@@ -50,7 +50,7 @@ assert.equal(projectReaderObjectiveContext({...proper,blocks:[{
  cueId:"AO.SM.C0086",form:"MISSA_CANTATA_INCENSE",language:"fr",sourceBlocks:sung.blocks
 }),null,"A Gospel anchor is not evidence of Postcommunion content");
 // Integration guards: no competing Guide, no prayer suggestions and no
-// premature retirement of SIMPLE; retain all existing Missal ownership.
+// retired Simple selector; retain the independent Missal reader.
 const domSource=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
 const nativeSource=readFileSync(new URL("../src/mass/reader-native-preview.js",import.meta.url),"utf8");
 assert.ok(nativeSource.includes('import { projectReaderObjectiveContext } from "./reader-objective-context.js"'));
@@ -67,6 +67,9 @@ assert.equal((domSource.match(/<span class="ao-icon-mask" data-icon-slot="priest
   "The original top priest icon and contextual rail must never share a slot");
 assert.ok(domSource.includes('syncExactIconBackedRubrics(root,current,mode,iconResolver)'),
   "The main registry remains the only approved LIVE icon-backed duplicate owner");
-assert.ok(domSource.includes('["MISSAL","SIMPLE","LIVE"]'));
+assert.ok(domSource.includes('["MISSAL","LIVE"]'),
+  "Mass reader must expose only LIVE and Missal");
+assert.ok(!domSource.includes('["MISSAL","SIMPLE","LIVE"]'),
+  "Retired Simple selector leaked into the source UI");
 assert.ok(!nativeSource.includes("pray.communion_treasury"));
-console.log("PASS: Objective LIVE ribbon copy, source block/cue ownership, EN/FR, guarded rails, no devotional suggestions and SIMPLE/Missal compatibility.");
+console.log("PASS: Objective LIVE ribbon copy, source block/cue ownership, EN/FR, guarded rails, no devotional suggestions and two-mode LIVE/Missal compatibility.");

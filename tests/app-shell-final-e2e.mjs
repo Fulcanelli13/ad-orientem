@@ -612,7 +612,10 @@ async function exerciseRealShellFollowingAction(browser,spec){
       const root=document.getElementById("ao-r17-native-reader-preview");
       return {
         id:card.sectionId,
-        product48:api?.model?.structureOwner==="SOURCE_FIRST_LIVE_PRODUCT_48",
+        curatedExit:String(card.sectionId).startsWith("AO.LIVECURATED."),
+        sourceOmittedBlessing:(card.blocks??[]).some(b=>b.blockId==="AO.SM.B092"&&
+          (b.omittedByRite||b.firstParagraphIndex==null||!b.paragraphCount)),
+        renderedCueIds:(rendered?.paragraphs??[]).flatMap(p=>p.sourceCueIds??[]),
         sourceChildCount:cards.length,
         blessingCardId:blessingCard?.sectionId??null,
         blessingRendered:Boolean(blessingRendered),
@@ -625,13 +628,13 @@ async function exerciseRealShellFollowingAction(browser,spec){
       };
     },{exitSourceSequence:spec.exitSourceSequence,kind:spec.kind});
     if(spec.filteredExitTitle){
-      const expectedExitTitle=exit.product48?spec.filteredExitTitle
-        :"Placeat tibi · Closing Prayer";
+      const expectedExitTitle=exit.curatedExit
+        ?"Placeat tibi · Closing Prayer":spec.filteredExitTitle;
       assert.equal(exit.renderedTitle,expectedExitTitle,
         spec.kind+" public reader API did not return the plan-aware exit card");
       assert.equal(exit.domTitle,expectedExitTitle,
         spec.kind+" actual DOM did not show the plan-aware exit card title");
-      if(exit.product48 || exit.renderedTitle==="Placeat tibi · Closing Prayer"){
+      if(exit.curatedExit){
         assert.ok(exit.sourceChildCount>=2,
           spec.kind+" exit lost the source-owned Placeat and independently indexed blessing");
         assert.ok(exit.blessingCardId,
@@ -640,6 +643,11 @@ async function exerciseRealShellFollowingAction(browser,spec){
           spec.kind+" allowed omitted Final Blessing by direct jump");
         assert.equal(exit.renderedParagraphCount,exit.originalParagraphCount,
           spec.kind+" must not mutate closing prayer text");
+      }else if(exit.sourceOmittedBlessing){
+        assert.ok(!exit.renderedCueIds.includes("AO.SM.C0263"),
+          spec.kind+" displayed a blessing omitted by its canonical rite");
+        assert.equal(exit.renderedParagraphCount,exit.originalParagraphCount,
+          spec.kind+" must preserve source-native Placeat paragraphs when the blessing is already omitted");
       }else{
         assert.ok(exit.planFilteredBlocks.includes("AO.SM.B092"),
           spec.kind+" final blessing was not marked as omitted");
