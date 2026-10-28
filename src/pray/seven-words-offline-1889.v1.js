@@ -8,7 +8,7 @@ export const SEVEN_WORDS_LOCAL_EN_1889_V1=Object.freeze({
   "source": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/The_Devotion_of_the_Seven_Words_upon_the_Cross",
   "sourceStatus": "COMPLETE_WIKISOURCE_TRANSCRIPTION_PRINT_FACSIMILE_COLLATION_PENDING",
   "secondaryFifthWord": "https://distantreader.org/stacks/pamphlets/pdf/005197338.pdf",
-  "editorialCorrection": "The Wikisource Fifth Word transcription prints 'burn tli the desire'; an independently printed historical witness supports 'burn with the desire'. The latter is used, not silently.",
+  "editorialCorrection": "Wikisource has apparent transcription errors: Second Word you shalt and Fifth Word burn tli the desire. An independent 1923 printed historical witness supports Thou shalt and burn with the desire. Both corrections are disclosed; critical printed-image collation is still pending.",
   "opening": "Come unto my help, O God.\nR. O Lord, make haste to help me.\nGlory be to the Father, etc.",
   "commonVersicles": "V. We adore Thee, O Christ, and we bless Thee.\nR. Because by Thy holy Cross Thou hast redeemed the world.",
   "words": [
@@ -20,7 +20,7 @@ export const SEVEN_WORDS_LOCAL_EN_1889_V1=Object.freeze({
     },
     {
       "title": "The Second Word.",
-      "utterance": "This day you shalt be with Me in Paradise.",
+      "utterance": "This day Thou shalt be with Me in Paradise.",
       "meditation": "O beloved Jesus, who for the love of me didst agonize on the Cross, and with such readiness and bounty didst respond to the faith of the Good Thief, who in the midst of Thy humiliation acknowledged Thee to be the Son of God: O Thou who didst assure him of Paradise, have mercy on all the faithful in their agony, and on me also when I shall be in that extremity, and, through the merits of Thy most Precious Blood, revive in our souls a faith so firm and constant that it may not waver at any suggestion of the devil, so that we also may obtain the blessed reward of Heaven.",
       "after": "Glory be to the Father, three times.\nHave mercy, etc."
     },
