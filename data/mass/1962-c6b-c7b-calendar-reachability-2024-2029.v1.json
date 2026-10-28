@@ -55,24 +55,29 @@
         "directSourceMatches": 0,
         "namedMarch6PerpetuaFelicity": 1
       }
-    }
+    },
+    "inheritedDonorTextMismatchCount": 0,
+    "inheritedDonorTextMismatchCandidates": []
   },
   "evidence": {
     "exactHeadWorkflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40633454451",
     "test": "tests/1962-plural-martyrs-calendar-reachability.mjs",
     "transientArtifact": "artifacts/mass/1962-c6b-c7b-calendar-reachability-2024-2029.json",
     "sourceResolver": "globalThis.AO_RUNTIME_V8.resolver.resolveDay",
-    "sourceGate": "select1962CommemorationsForMassForm"
+    "sourceGate": "select1962CommemorationsForMassForm",
+    "extendedExactHeadWorkflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40633701363",
+    "extendedChecks": "On every selected 2024–2029 Mass's Secret and Postcommunion, look for explicit plural Latin N. et N., French one N., and Martyr category after accent normalization."
   },
   "interpretation": {
-    "finding": "No explicit exact C6b or C7b identity in the default selected Calendar principal, its source or day commemorations or an individual oration row across 2024–2029.",
-    "releaseImpact": "The deployed source-attested French Common fix is defensive for direct/Common source access. This six-year scan establishes no observed direct default Calendar exposure; do not claim the correction affected a selected Calendar day.",
+    "finding": "No explicit exact C6b or C7b identity in the default selected Calendar principal, its source or day commemorations or an individual oration row across 2024–2029. The selected Secret/Postcommunion row bodies also yielded zero cases with Latin plural N. et N. but one French N. in a Martyrs prayer.",
+    "releaseImpact": "The deployed source-attested French Common fix is defensive for direct/Common source access. This six-year scan establishes no observed direct default Calendar exposure; do not claim the correction affected a selected Calendar day. Text-level inherited donor mismatch candidates: zero for the exact two-name Latin placeholder / one-name French signature.",
     "namedSaint": "Perpetua/Felicity are owned by Sancti/03-06, not the direct Commune/C7b path. Their separately deployed PR #1788 remains valid.",
     "untested": [
       "Indirect nested @Commune or vide C6b/C7b donor inheritance within a named Proper: the scan does not recursively expand internal source references.",
       "Explicit user-selected votive, Requiem, nuptial, or observed-source alternate Mass; the default Calendar resolver does not select these without user choice.",
       "Local or private calendar observances not represented in the production default resolver.",
-      "Dates after 2029 or changes to the source library after this audited head."
+      "Dates after 2029 or changes to the source library after this audited head.",
+      "French singular named saint references after full name substitution; the signature scan specifically targets Latin/French N. placeholders."
     ]
   },
   "originalDonorChanged": false,
