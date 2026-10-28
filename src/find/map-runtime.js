@@ -1,6 +1,7 @@
 import {attachAtlasCoverageLayers} from "./mapcn-atlas-controller.js";
 import { isApproximateDirectoryGeo, isMapPublishableGeo } from "./geo-provenance.js";
 import { attachExploreMapStatus } from "./map-status.js";
+import { applyExploreDarkCartography } from "./explore-cartography-style.js";
 import { registerMassInstitutionImages, massInstitutionEmblem } from "./institution-emblems.js";
 import { installMassMapEmblemOverlays } from "./institution-map-overlay.js";
 import {
@@ -365,9 +366,10 @@ export async function mountExploreMap(container,items,{
     camera.zoom=phoneOverview.zoom;
   }
   const compactAttribution=phoneWidth>0&&phoneWidth<=430&&typeof maplibre.AttributionControl==="function";
+  const selectedStyle=styleOverride??win.AO_EXPLORE_MAP_STYLE_URL??win.AO_DIRECTORY_MAP_STYLE_URL??DEFAULT_STYLE;
   const map=new maplibre.Map({
     container,
-    style:styleOverride??win.AO_EXPLORE_MAP_STYLE_URL??win.AO_DIRECTORY_MAP_STYLE_URL??DEFAULT_STYLE,
+    style:selectedStyle,
     ...camera,
     attributionControl:!compactAttribution,
   });
@@ -403,6 +405,10 @@ export async function mountExploreMap(container,items,{
     container.append?.(reset);
   }
   map.on("load",()=>{
+    // Default heritage map only: improve OpenFreeMap Dark typography and
+    // land/sea contrast before drawing source-owned Places and medallions.
+    // The Bible Atlas, special-rite maps and custom styles remain untouched.
+    if(selectedStyle===DEFAULT_STYLE&&!styleOverride)applyExploreDarkCartography(map);
     const sourceId="ao-explore-items",prefix="ao-explore";
     map.addSource(sourceId,{type:"geojson",data:{type:"FeatureCollection",features},
       cluster:true,clusterMaxZoom:12,clusterRadius:52,
