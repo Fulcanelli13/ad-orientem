@@ -1,0 +1,28 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {ICKSP_MARIAN_PROTECTION_V1} from "../src/pray/icksp-marian-protection.v1.js";
+
+const prayer=ICKSP_MARIAN_PROTECTION_V1.augustQueen;
+assert.equal(prayer.id,"icksp_august_queen_heaven");
+assert.ok(Object.isFrozen(prayer));
+assert.ok(prayer.en.length>500 && prayer.fr.length>400,"Both historical language witnesses must be complete");
+assert.match(prayer.en,/August Queen of Heaven/);
+assert.match(prayer.en,/All ye holy Angels and Archangels keep us and defend us/);
+assert.match(prayer.fr,/Auguste Reine des cieux/);
+assert.match(prayer.fr,/Saints Anges et Archanges/);
+assert.ok(!("la" in prayer),"Never generate unsupported Latin text");
+assert.match(prayer.editions.english.url,/gutenberg\.org/);
+assert.match(prayer.editions.french.url,/servantesdemarie\.com/);
+assert.match(prayer.editions.institute.url,/institute-christ-king\.org/);
+assert.match(prayer.historicalNote.en,/Historical indulgence references|Historical indulgence/);
+const runtime=readFileSync(new URL("../src/pray/traditional-pray-runtime.js",import.meta.url),"utf8");
+const hub=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
+assert.match(runtime,/"pray\.marian_protection":Object\.freeze/,"Route must be registered");
+assert.match(runtime,/S\.route==="pray\.marian_protection"\?renderMarianProtection\(\)/,"Reader must render on route");
+assert.match(runtime,/function renderMarianProtection\(\)/);
+assert.match(runtime,/source\(ed\.english\.label,ed\.english\.url\)/);
+assert.match(runtime,/source\(ed\.french\.label,ed\.french\.url\)/);
+assert.match(hub,/\['external','pray\.marian_protection'/,"Prayer must appear in Pray navigation");
+const original=readFileSync(new URL("../src/pray/traditional-pray-data.js",import.meta.url),"utf8");
+assert.match(original,/te_deum:Object\.freeze/,"Existing Te Deum must remain");
+console.log("ICKSP Marian protection: historical EN/FR source + route + live Pray navigation PASS");
