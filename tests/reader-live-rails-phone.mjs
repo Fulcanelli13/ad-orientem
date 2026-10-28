@@ -52,8 +52,15 @@ try{
         const root=document.querySelector('[data-ao-reader-shell]');
         const stage=root?.querySelector(".ao-reader-stage");
         const rails=[...root.querySelectorAll(".ao-rail")].map(rail=>{
-          const active=[...rail.querySelectorAll('.ao-rail-item[data-active="true"][data-icon-visible="true"]')]
+          const candidates=[...rail.querySelectorAll('.ao-rail-item[data-active="true"][data-icon-visible="true"]')]
             .filter(x=>root.dataset.objectiveContext==="true"||x.dataset.channel!=="posture");
+          const active=candidates.filter(x=>x.dataset.sourceRailAnchor==="exact"&&
+            getComputedStyle(x).display!=="none");
+          const sourceRows=[...stage.querySelectorAll(".ao-prayer-body .ao-reader-paragraph")];
+          const unanchored=candidates.filter(x=>!active.includes(x)).map(x=>({
+            cueId:x.dataset.sourceRailCueId,channel:x.dataset.channel,
+            anchor:x.dataset.sourceRailAnchor,display:getComputedStyle(x).display
+          }));
           const hiddenSource=[...rail.querySelectorAll('.ao-rail-item[data-active="true"][data-icon-visible="false"]')];
           const inactive=[...rail.querySelectorAll('.ao-rail-item[data-active="false"]')];
           return {
@@ -61,13 +68,26 @@ try{
             visible:rail.dataset.visible,
             stageVisible:rail.classList.contains("ao-rail-left")?stage.dataset.leftRail:stage.dataset.rightRail,
             display:getComputedStyle(rail).display,
-            active:active.map(x=>({
-              channel:x.dataset.channel,
+            anchored:rail.dataset.sourceAnchored,unanchored,
+            active:active.map(x=>{
+              const cueId=x.dataset.sourceRailCueId;
+              const source=sourceRows.find(y=>y.dataset.cueId===cueId||
+                String(y.dataset.sourceCueIds||"").split(/\s+/).includes(cueId));
+              const first=source?.querySelector(".ao-line-primary")||source;
+              const firstRect=first?.getBoundingClientRect();
+              const stageRect=stage.getBoundingClientRect();
+              const line=first?parseFloat(getComputedStyle(first).lineHeight)||28:28;
+              const paragraphY=firstRect?.top-stageRect.top+Math.min(23,Math.max(9,line/2));
+              const iconY=x.offsetTop+x.offsetHeight/2;
+              return {
+              channel:x.dataset.channel,cueId,paragraphId:source?.dataset.paragraphId,
+              offsetY:x.offsetTop,height:x.offsetHeight,
+              delta:Math.abs(iconY-paragraphY),
               label:x.getAttribute("aria-label"),
               title:x.getAttribute("title"),
               role:x.getAttribute("role"),
               ariaHidden:x.getAttribute("aria-hidden")
-            })),
+            };}),
             hiddenSource:hiddenSource.map(x=>({
               channel:x.dataset.channel,
               display:getComputedStyle(x).display,
@@ -100,6 +120,9 @@ try{
       assert(snap.scrollCard>0);
       for(const rail of snap.rails){
         const expectVisible=rail.active.length>0;
+        assert.equal(rail.anchored,"true",width+" source rail tracker did not mount");
+        assert.ok(rail.unanchored.every(x=>x.display==="none"),
+          width+" "+snap.card+" icon without an exact visible source row is still painted");
         assert.equal(rail.visible,String(expectVisible),
           width+" "+snap.card+" "+rail.side+" empty rail visibility");
         assert.equal(rail.stageVisible,String(expectVisible),
@@ -113,7 +136,15 @@ try{
           assert.equal(cue.title,cue.label,cue.channel+" lost long-press meaning");
           assert.equal(cue.role,"img",cue.channel+" is not labelled as a pictogram");
           assert.notEqual(cue.ariaHidden,"true");
+          assert.match(cue.cueId,/^AO\.SM\.C\d{4}$/,
+            cue.channel+" was anchored to an invented paragraph identity");
+          assert.ok(cue.paragraphId&&cue.delta<=65,
+            cue.channel+" drifted from its source paragraph: "+JSON.stringify(cue));
         }
+        const geometries=[...rail.active].sort((a,b)=>a.offsetY-b.offsetY);
+        for(let i=1;i<geometries.length;i++)
+          assert.ok(geometries[i-1].offsetY+geometries[i-1].height<=geometries[i].offsetY+1,
+            rail.side+" source-anchored icon boxes overlap");
         for(const cue of rail.hiddenSource){
           assert.equal(cue.display,"none",cue.channel+" text-only source appeared inside a rail icon box");
           assert.equal(cue.ariaHidden,"true",cue.channel+" missing art exposed a false pictogram");
@@ -140,7 +171,7 @@ try{
     await context.close();
   }
   assert(sampledActive>0,"No active icon cue was sampled; test did not exercise semantic labelling");
-  console.log("PASS LIVE rails 320/360/390px: 65 source cards (64 normally visible); obsolete 48 URL ignored, faithful posture correctly owned, active cues accessible.");
+  console.log("PASS LIVE rails 320/360/390px: 65-card source reader, exact paragraph anchors, no floating or overlapping cue icons, labels preserved.");
 }finally{
   await browser?.close();
   await new Promise(ok=>server.close(ok));
