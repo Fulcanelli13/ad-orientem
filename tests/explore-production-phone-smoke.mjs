@@ -25,7 +25,27 @@ try{
    locale,reducedMotion:"reduce",permissions:[],
   });
   const page=await context.newPage();
-  const record={width,locale,passed:false,steps:[],errors:[],failedResponses:[],bytesByType:{},bytesByHost:{},largestResources:[],timingsMs:{}};
+  const record={width,locale,passed:false,steps:[],errors:[],failedResponses:[],bytesByType:{},bytesByHost:{},largestResources:[],timingsMs:{},scriptureInitiators:[]};
+  const cdp=await context.newCDPSession(page);
+  await cdp.send("Network.enable");
+  let phase="bootstrap";
+  cdp.on("Network.requestWillBeSent",event=>{
+   try{
+    const url=new URL(event.request.url);
+    if(url.hostname!=="raw.githubusercontent.com")return;
+    const stack=event.initiator?.stack;
+    const frames=[];
+    for(let frame=stack;frame&&frames.length<8;frame=frame.parent){
+     for(const f of frame.callFrames??[]){
+      const src=new URL(f.url||origin.href);
+      frames.push({file:src.pathname,function:f.functionName,line:f.lineNumber,column:f.columnNumber});
+      if(frames.length>=8)break;
+     }
+    }
+    record.scriptureInitiators.push({phase,host:url.hostname,path:url.pathname.slice(0,220),
+     initiatorType:event.initiator?.type,frames});
+   }catch{}
+  });
   const capture=async name=>page.screenshot({
    path:resolve(root,"explore-production-"+width+"-"+locale.slice(0,2)+"-"+name+".png"),
    fullPage:false,
@@ -66,14 +86,17 @@ try{
    const response=await page.goto(origin.href,{waitUntil:"domcontentloaded",timeout:90000});
    assert.equal(response?.status(),200,"Production index is not HTTP 200");
    mark("document");
+   phase="before-explore";
    const find=page.locator('[data-ao-app-surface="find"]');
    await find.waitFor({state:"visible",timeout:35000});
    await find.click({timeout:15000});
+   phase="explore-open";
    await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().loadState==="ready"
      &&Boolean(document.querySelector(".aoHeritageSurface")),null,{timeout:85000});
    mark("explore-data");
    await mapReady("heritage");
    mark("sacred-map-ready");
+   phase="map-ready";
    const rootEl=page.locator("#ao-find-modular-root");
    assert.equal(await rootEl.locator(".aoHeritageSurface [data-find-map] canvas").count(),1);
    assert.ok(await rootEl.locator("[data-heritage-world]").count()>0);
@@ -114,6 +137,7 @@ try{
    assert.ok(await reader.locator("details.aoPlaceAccordion").count()>0);
    assert.ok(await reader.locator('a[href^="https://"]').count()>0);
    mark("sourced-place-reader");
+   phase="place-reader";
    await capture("sourced-place");
    await reader.locator("[data-explore-collapse-place]").click({timeout:12000});
    await preview.waitFor({state:"visible",timeout:12000});
