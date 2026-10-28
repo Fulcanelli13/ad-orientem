@@ -25,6 +25,7 @@ import "./st-joseph-seven-sorrows-styles-b24.js";
 import {MONTFORT_B26_SOURCE,MONTFORT_B26_PHASES,MONTFORT_B26_AVE_MARIS_LATIN,MONTFORT_B26_CONSECRATION_ACT_EN,montfortPhaseForDay,montfortSchedule,montfortTodayLocal,montfortNextFeast} from "./montfort-consecration-b26.js";
 import "./montfort-consecration-styles-b26.js";
 import {NIGHT_HOME_B29_SOURCE,NIGHT_HOME_B29_STAGES,nightHomeAsGuided} from "./night-home-adoration-b29.js";
+import "./night-home-adoration-styles-b29.js";
 import {MONTFORT_B27_PRAYERS,MONTFORT_B27_SOURCE,montfortHistoricalPrayerRows,montfortB27RequiredForDay} from "./montfort-original-prayers-b27.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
 import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
