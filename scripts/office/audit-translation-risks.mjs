@@ -43,6 +43,12 @@ export function triLanguageRisks({latin,english,french}={}){
             sameOther?"LONG_CELL_IDENTICAL_TO_OTHER_TRANSLATION":null,
             extremeRatio?"EXTREME_LENGTH_RATIO":null].filter(Boolean),
           lengths:{latin:bodyBytes[0],translation:cell.text.length},
+          translationToLatinRatio:Number(ratio.toFixed(3)),
+          sourceRole:a.semantic?.role??"UNCLASSIFIED",
+          sourceHeadings:{latin:a.text.split("\n",1)[0].slice(0,85),
+            translation:cell.text.split("\n",1)[0].slice(0,85)},
+          review:"PENDING_HUMAN_SOURCE_COLLATION",
+          isDefiniteTranslationError:false,
         });
       }
     }
@@ -98,6 +104,11 @@ function main(){
   };
   mkdirSync(dirname(dest),{recursive:true});
   writeFileSync(dest,JSON.stringify(report,null,2)+"\n","utf8");
+  for(const flag of report.flags){
+    // Publish only short incipits/identifiers for the six suspected errors;
+    // substantive text remains in ephemeral pinned source files in CI.
+    console.log("OFFICE_TRANSLATION_FLAG",JSON.stringify(flag));
+  }
   console.log("OFFICE_TRANSLATION_RISK_SUMMARY",JSON.stringify({
     trilingualHours:report.trilingualHourCount,
     alignedHours:report.structurallyScreenedHourCount,
