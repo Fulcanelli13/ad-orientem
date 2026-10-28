@@ -162,6 +162,53 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
  outline:2px solid #dbb983;outline-offset:2px
 }
 
+/* Personal St Pius X daily prayer: one quiet local-control disclosure below cards. */
+#aoPray435930 .aoDailyPersonalSettings{
+ margin:12px 14px 4px;padding:10px 13px;border:1px solid rgba(215,188,146,.24);
+ border-radius:12px;background:rgba(18,26,35,.88);color:#eee7d8;
+}
+#aoPray435930 .aoDailyPersonalSettings>summary{
+ list-style-position:inside;min-height:40px;cursor:pointer;
+ font:600 .79rem/1.5 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.014em;
+ color:#e9d3a8;padding:8px 4px;
+}
+#aoPray435930 .aoDailyPersonalSettingsBody{display:grid;gap:13px;padding:13px 0 7px;max-height:55dvh;overflow-y:auto;overscroll-behavior:contain}
+#aoPray435930 .aoDailyPersonalGroup{display:grid;gap:9px;padding:10px 0;border-bottom:1px solid rgba(215,188,146,.12)}
+#aoPray435930 .aoDailyPersonalGroup>strong{font:600 .83rem/1.3 var(--ao-font-ui,system-ui,sans-serif);color:#f0e3c8}
+#aoPray435930 .aoDailyPersonalButtons{display:flex;flex-wrap:wrap;gap:8px}
+#aoPray435930 .aoDailyPersonalButtons button,
+#aoPray435930 .aoDailyPersonalAlternatives button,
+#aoPray435930 .aoDailyPersonalReset{
+ min-height:42px;border:1px solid rgba(215,188,146,.28);
+ border-radius:9px;padding:10px 12px;background:#1c2833;color:#f0e9dd;
+ font:500 .81rem/1.4 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPray435930 .aoDailyPersonalButtons button[aria-pressed="true"],
+#aoPray435930 .aoDailyPersonalAlternatives button[aria-pressed="true"]{
+ color:#201d17;background:#dac19a;border-color:#dac19a;font-weight:700;
+}
+#aoPray435930 .aoDailyPersonalNote,
+#aoPray435930 .aoDailyPersonalGroup p{font-size:.8rem;line-height:1.5;color:#b4b7b7;margin:0}
+#aoPray435930 .aoDailyPersonalOption{display:grid;gap:4px;width:100%;padding:7px 0;border-bottom:1px solid rgba(215,188,146,.13)}
+#aoPray435930 .aoDailyPersonalOption>button{text-align:left;width:100%;white-space:normal}
+#aoPray435930 .aoDailyPersonalOption small{font-size:.71rem;color:#a9b5bd;overflow-wrap:anywhere}
+#aoPray435930 .aoDailyPersonalReorder{display:flex;gap:8px}
+#aoPray435930 .aoDailyPersonalReorder button{min-height:40px;padding:8px 12px;border:1px solid rgba(215,188,146,.24);background:transparent;color:#e4d5b9;border-radius:7px}
+#aoPray435930 .aoDailyPersonalReorder button:disabled{opacity:.37}
+#aoPray435930 .aoDailyPersonalAlternatives{margin:12px 0;padding:10px;border:1px solid rgba(215,188,146,.22);border-radius:10px}
+#aoPray435930 .aoDailyPersonalAlternatives>summary{cursor:pointer;color:#dac19a;font-size:.78rem;min-height:30px}
+#aoPray435930 .aoDailyPersonalAlternatives>p{font-size:.77rem;color:#aab5bd}
+#aoPray435930 .aoDailyPersonalAlternatives button{display:block;text-align:left;margin:6px 0;width:100%}
+#aoPray435930 .aoDailyPersonalProvenance{display:block;color:#b9aa95;font-size:.68rem;line-height:1.45}
+#aoPray435930 .aoDailyPersonalSettings button:focus-visible,
+#aoPray435930 .aoDailyPersonalAlternatives button:focus-visible{
+ outline:2px solid #f5cf87;outline-offset:2px;
+}
+@media (max-width:390px){
+ #aoPray435930 .aoDailyPersonalSettings{margin-inline:8px}
+ #aoPray435930 .aoDailyPersonalButtons button{flex:1 1 110px}
+}
+
 /* Approved source-form selector, shown only after the release manifest is populated. */
 #aoPray435930 .aoDailyFormulationChoices{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:0 0 12px}
 #aoPray435930 .aoDailyFormulationChoices button{min-height:40px;padding:8px 12px;border-radius:999px;border:1px solid var(--border,rgba(255,255,255,.2));background:transparent;color:var(--muted,#aeb2b8);font:500 .75rem/1.35 var(--ao-font-ui,system-ui,sans-serif)}
