@@ -1,0 +1,487 @@
+{
+  "schema": "AO_MR1962_GOOD_FRIDAY_PASSION_B13_VOICES_V1",
+  "version": 1,
+  "editorialDate": "2026-10-28",
+  "ownerIssue": 894,
+  "scope": {
+    "rite": "1962 restored Good Friday",
+    "sourceTextFile": "data/presentation/reader-good-friday.v1.json",
+    "preDeathBlocks": 24,
+    "postDeathBlocks": 4,
+    "voiceAnnotatedDialogueTurns": 49,
+    "christusTurns": 15,
+    "synagogaTurns": 34,
+    "baseChronistaSegments": "ALL_UNQUOTED_NARRATIVE_BETWEEN_SOURCE_ANNOTATED_TURNS",
+    "originalLatinTextAltered": false,
+    "deathBoundary": "GF-PASS-320 / GF-PASS-330",
+    "currentVocalMinister": "UNDETERMINED_DEPENDS_ON_RITE_FORM_AND_LOCAL_MINISTERS"
+  },
+  "sources": {
+    "rubric": "https://icrspfrance.fr/textes-liturgiques.php?article=a0029_nouveau",
+    "rubricLines": "10–11; 1962-restored Good Friday Passion, full John 18:1–19:42; inline C., S. and + markers",
+    "choralSource": "https://forum.musicasacra.com/forum/discussion/13567/passion-of-st.-john-chants-1962-missal/p1",
+    "chronistaPDF": "https://forum.musicasacra.com/forum/uploads/FileUpload/94/74c19b2399c353ae2413055a492402.pdf",
+    "christusPDF": "https://forum.musicasacra.com/forum/uploads/FileUpload/0b/0f81d3c3fd160020541fcbd4714988.pdf",
+    "synagogaPDF": "https://forum.musicasacra.com/forum/uploads/FileUpload/11/318f3f80085a4ed570161a5b4e8dd3.pdf",
+    "printedOriginalMissal": "https://gregobase.selapa.net/source.php?id=42&images=1",
+    "authorityNote": "1955-restored 1962 textual/voice witness and 2016 Cantus Passionis role source. Original printed Vatican Missal folio-by-folio complete collation remains separate; do not claim independent diplomatic proof."
+  },
+  "voiceDefinitions": {
+    "CHRONISTA": "Narrative / all words not marked as direct Christus or Synagoga singing in the checked 1962-based source",
+    "CHRISTUS": "Words spoken directly by Christ marked + in the source",
+    "SYNAGOGA": "Other voiced participants, including Pilate, Peter, soldiers and crowds, marked S.; this does NOT imply a choir sings every individual line"
+  },
+  "rules": [
+    "Never assign the entire current 28-block paragraph to a single voice when it contains mixed roles.",
+    "Every source dialogue turn must match the existing original Latin block by literal start/end anchors in reading order.",
+    "All intervening Latin is assigned CHRONISTA; the app's source Latin must reconstruct exactly without inserted or dropped characters.",
+    "Vocal role does NOT establish whether the priest, deacon, three clerics, or schola renders the part in a particular local liturgical form.",
+    "Synagoga is a traditional liturgical voice-part label, not a claim about the identity, ethnicity or religion of every character.",
+    "No additional Gospel or Munda cor meum cue; death genuflection and resumption preserve original graph ownership."
+  ],
+  "preDeath": [
+    {
+      "sourceBlock": 1,
+      "sourceRowId": "GF-PASS-A1",
+      "narrativeDefault": "CHRONISTA",
+      "turns": []
+    },
+    {
+      "sourceBlock": 2,
+      "sourceRowId": "GF-PASS-A2",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Quem quaeritis?",
+          "end": "Quem quaeritis?",
+          "role": "CHRISTUS"
+        },
+        {
+          "start": "Iesum Nazarenum.",
+          "end": "Iesum Nazarenum.",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Ego sum.",
+          "end": "Ego sum.",
+          "role": "CHRISTUS"
+        },
+        {
+          "start": "Quem quaeritis?",
+          "end": "Quem quaeritis?",
+          "role": "CHRISTUS"
+        },
+        {
+          "start": "Iesum Nazarenum.",
+          "end": "Iesum Nazarenum.",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Dixi vobis, quia ego sum:",
+          "end": "sinite hos abire.",
+          "role": "CHRISTUS"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 3,
+      "sourceRowId": "GF-PASS-A3",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Mitte gladium tuum in vaginam.",
+          "end": "non bibam illum?",
+          "role": "CHRISTUS"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 4,
+      "sourceRowId": "GF-PASS-A4",
+      "narrativeDefault": "CHRONISTA",
+      "turns": []
+    },
+    {
+      "sourceBlock": 5,
+      "sourceRowId": "GF-PASS-A5",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Numquid et tu ex discipulis es hominis istius?",
+          "end": "Numquid et tu ex discipulis es hominis istius?",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Non sum.",
+          "end": "Non sum.",
+          "role": "SYNAGOGA"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 6,
+      "sourceRowId": "GF-PASS-A6",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Ego palam locutus sum mundo:",
+          "end": "quae dixerim ego.",
+          "role": "CHRISTUS"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 7,
+      "sourceRowId": "GF-PASS-A7",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Sic respondes pontifici?",
+          "end": "Sic respondes pontifici?",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Si male locutus sum,",
+          "end": "quid me caedis?",
+          "role": "CHRISTUS"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 8,
+      "sourceRowId": "GF-PASS-A8",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Numquid et tu ex discipulis eius es?",
+          "end": "Numquid et tu ex discipulis eius es?",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Non sum.",
+          "end": "Non sum.",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Nonne ego te vidi in horto cum illo?",
+          "end": "Nonne ego te vidi in horto cum illo?",
+          "role": "SYNAGOGA"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 9,
+      "sourceRowId": "GF-PASS-A9",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Quam accusationem affertis adversus hominem hunc?",
+          "end": "Quam accusationem affertis adversus hominem hunc?",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Si non esset hic malefactor,",
+          "end": "non tibi tradidissemus eum.",
+          "role": "SYNAGOGA"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 10,
+      "sourceRowId": "GF-PASS-A10",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Accipite eum vos,",
+          "end": "iudicate eum.",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Nobis non licet interficere quemquam.",
+          "end": "Nobis non licet interficere quemquam.",
+          "role": "SYNAGOGA"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 11,
+      "sourceRowId": "GF-PASS-A11",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Tu es Rex Iudaeorum?",
+          "end": "Tu es Rex Iudaeorum?",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "A temetipso hoc dicis,",
+          "end": "dixerunt tibi de me?",
+          "role": "CHRISTUS"
+        },
+        {
+          "start": "Numquid ego Iudaeus sum?",
+          "end": "quid fecisti?",
+          "role": "SYNAGOGA"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 12,
+      "sourceRowId": "GF-PASS-A12",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Regnum meum non est de hoc mundo.",
+          "end": "regnum meum non est hinc.",
+          "role": "CHRISTUS"
+        },
+        {
+          "start": "Ergo Rex es tu?",
+          "end": "Ergo Rex es tu?",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Tu dicis quia Rex sum ego.",
+          "end": "audit vocem meam.",
+          "role": "CHRISTUS"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 13,
+      "sourceRowId": "GF-PASS-A13",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Quid est veritas?",
+          "end": "Quid est veritas?",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Ego nullam invenio in eo causam.",
+          "end": "dimittam vobis Regem Iudaeorum?",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Non hunc, sed Barabbam.",
+          "end": "Non hunc, sed Barabbam.",
+          "role": "SYNAGOGA"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 14,
+      "sourceRowId": "GF-PASS-A14",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Ave Rex Iudaeorum.",
+          "end": "Ave Rex Iudaeorum.",
+          "role": "SYNAGOGA"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 15,
+      "sourceRowId": "GF-PASS-A15",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Ecce adduco vobis eum foras,",
+          "end": "nullam invenio in eo causam.",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Ecce homo.",
+          "end": "Ecce homo.",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Crucifige, crucifige eum.",
+          "end": "Crucifige, crucifige eum.",
+          "role": "SYNAGOGA"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 16,
+      "sourceRowId": "GF-PASS-A16",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Accipite eum vos,",
+          "end": "non invenio in eo causam.",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Nos legem habemus,",
+          "end": "Filium Dei se fecit.",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Unde es tu?",
+          "end": "Unde es tu?",
+          "role": "SYNAGOGA"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 17,
+      "sourceRowId": "GF-PASS-A17",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Mihi non loqueris?",
+          "end": "habeo dimittere te?",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Non haberes potestatem adversum me ullam,",
+          "end": "maius peccatum habet.",
+          "role": "CHRISTUS"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 18,
+      "sourceRowId": "GF-PASS-A18",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Si hunc dimittis,",
+          "end": "contradicit Caesari.",
+          "role": "SYNAGOGA"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 19,
+      "sourceRowId": "GF-PASS-A19",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Ecce Rex vester.",
+          "end": "Ecce Rex vester.",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Tolle, tolle, crucifige eum.",
+          "end": "Tolle, tolle, crucifige eum.",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Regem vestrum crucifigam?",
+          "end": "Regem vestrum crucifigam?",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Non habemus regem, nisi Caesarem.",
+          "end": "Non habemus regem, nisi Caesarem.",
+          "role": "SYNAGOGA"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 20,
+      "sourceRowId": "GF-PASS-A20",
+      "narrativeDefault": "CHRONISTA",
+      "turns": []
+    },
+    {
+      "sourceBlock": 21,
+      "sourceRowId": "GF-PASS-A21",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Noli scribere, Rex Iudaeorum,",
+          "end": "Rex sum Iudaeorum.",
+          "role": "SYNAGOGA"
+        },
+        {
+          "start": "Quod scripsi, scripsi.",
+          "end": "Quod scripsi, scripsi.",
+          "role": "SYNAGOGA"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 22,
+      "sourceRowId": "GF-PASS-A22",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Non scindamus eam,",
+          "end": "cuius sit.",
+          "role": "SYNAGOGA"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 23,
+      "sourceRowId": "GF-PASS-A23",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Mulier, ecce filius tuus.",
+          "end": "Mulier, ecce filius tuus.",
+          "role": "CHRISTUS"
+        },
+        {
+          "start": "Ecce mater tua.",
+          "end": "Ecce mater tua.",
+          "role": "CHRISTUS"
+        }
+      ]
+    },
+    {
+      "sourceBlock": 24,
+      "sourceRowId": "GF-PASS-A24",
+      "narrativeDefault": "CHRONISTA",
+      "turns": [
+        {
+          "start": "Sitio.",
+          "end": "Sitio.",
+          "role": "CHRISTUS"
+        },
+        {
+          "start": "Consummatum est.",
+          "end": "Consummatum est.",
+          "role": "CHRISTUS"
+        }
+      ]
+    }
+  ],
+  "postDeath": [
+    {
+      "sourceBlock": 1,
+      "sourceRowId": "GF-PASS-B1",
+      "narrativeDefault": "CHRONISTA",
+      "turns": []
+    },
+    {
+      "sourceBlock": 2,
+      "sourceRowId": "GF-PASS-B2",
+      "narrativeDefault": "CHRONISTA",
+      "turns": []
+    },
+    {
+      "sourceBlock": 3,
+      "sourceRowId": "GF-PASS-B3",
+      "narrativeDefault": "CHRONISTA",
+      "turns": []
+    },
+    {
+      "sourceBlock": 4,
+      "sourceRowId": "GF-PASS-B4",
+      "narrativeDefault": "CHRONISTA",
+      "turns": []
+    }
+  ],
+  "uncertified": [
+    "Original 1962 Vatican Passio page-by-page full textual collation",
+    "Personal/minister (celebrant, deacon, schola) assignment by Mass form",
+    "English and French alignment to Latin speech turns",
+    "Palm Sunday Matthew Passion voice-turn parity",
+    "Any claimed full Good Friday Passion proof beyond the current 28 source blocks and dialogue markers"
+  ]
+}
