@@ -12,7 +12,8 @@
     "distinguish_liturgical_from_devotional": true,
     "publication_requires_separate_text_source_and_rights_gates": true,
     "all_items_keep_status_and_source": true,
-    "existing_app_content_is_not_replaced": true
+    "existing_app_content_is_not_replaced": true,
+    "inventory_row_id_unique_across_source_observations": true
   },
   "unit_model": [
     "source_family",
@@ -34,6 +35,7 @@
       "existing_register": "https://github.com/Fulcanelli13/ad-orientem/blob/research/icksp-devotions-pray-gap-audit-20261028/data/pray/icksp-devotional-gap-register.b01.json",
       "source_records": [
         {
+          "inventory_row_id": "icksp-initial:001",
           "id": "icksp_us_immaculate_conception_consecration",
           "title": "Consecration to the Immaculate Conception",
           "source": "ICKSP_US_DEVOTIONS",
@@ -46,6 +48,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:002",
           "id": "icksp_us_dedication_to_christ_king",
           "title": "Dedication to Christ the King",
           "source": "ICKSP_US_DEVOTIONS",
@@ -58,6 +61,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:003",
           "id": "icksp_us_prayer_reparation",
           "title": "Prayer of Reparation",
           "source": "ICKSP_US_DEVOTIONS",
@@ -70,6 +74,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:004",
           "id": "icksp_us_prayer_for_priests_sacred_heart",
           "title": "Prayer for Priests — O Jesus, Eternal Priest",
           "source": "ICKSP_US_DEVOTIONS",
@@ -82,6 +87,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:005",
           "id": "icksp_us_prayer_for_priests_second",
           "title": "Prayer for Priests — Sacred Heart, Eternal High Priest",
           "source": "ICKSP_US_DEVOTIONS",
@@ -94,6 +100,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:006",
           "id": "icksp_us_prayer_infant_jesus",
           "title": "Prayer to the Infant Jesus",
           "source": "ICKSP_US_DEVOTIONS",
@@ -106,6 +113,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:007",
           "id": "icksp_us_novena_divine_infant_king",
           "title": "Novena to the Divine Infant King",
           "source": "ICKSP_US_DEVOTIONS",
@@ -118,6 +126,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:008",
           "id": "icksp_us_august_queen_heaven",
           "title": "Prayer to the Virgin: Remedy Against Evil Spirits",
           "source": "ICKSP_US_DEVOTIONS",
@@ -130,6 +139,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:009",
           "id": "icksp_us_novena_immaculate_conception",
           "title": "Novena to the Immaculate Conception",
           "source": "ICKSP_US_DEVOTIONS",
@@ -142,6 +152,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:010",
           "id": "icksp_us_therese_perpetual_novena",
           "title": "Perpetual Novena in Honor of St Thérèse of the Child Jesus",
           "source": "ICKSP_US_DEVOTIONS",
@@ -154,6 +165,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:011",
           "id": "icksp_us_therese_for_missionaries",
           "title": "Prayer to St Thérèse for Missionaries",
           "source": "ICKSP_US_DEVOTIONS",
@@ -166,6 +178,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:012",
           "id": "icksp_us_therese_benedict_xv",
           "title": "Prayer by Pope Benedict XV to St Thérèse",
           "source": "ICKSP_US_DEVOTIONS",
@@ -178,6 +191,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:013",
           "id": "icrsp_fr_office_complies",
           "title": "Office des Complies",
           "source": "ICRSP_FR_LITURGICAL_INDEX",
@@ -190,6 +204,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:014",
           "id": "icrsp_fr_sunday_vespers",
           "title": "1res Vêpres / Vêpres du Dimanche",
           "source": "ICRSP_FR_LITURGICAL_INDEX",
@@ -202,6 +217,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:015",
           "id": "icrsp_fr_te_deum",
           "title": "Te Deum",
           "source": "ICRSP_FR_LITURGICAL_INDEX",
@@ -214,6 +230,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:016",
           "id": "icrsp_fr_vexilla_regis",
           "title": "Vexilla Regis",
           "source": "ICRSP_FR_LITURGICAL_INDEX",
@@ -226,6 +243,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:017",
           "id": "icrsp_fr_audi_benigne_conditor",
           "title": "Audi, benigne Conditor",
           "source": "ICRSP_FR_LITURGICAL_INDEX",
@@ -238,6 +256,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:018",
           "id": "icrsp_fr_ad_cenam_agni",
           "title": "Ad cenam Agni providi / Ad regias Agni dapes",
           "source": "ICRSP_FR_LITURGICAL_INDEX",
@@ -250,6 +269,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:019",
           "id": "icrsp_fr_aeterne_rex_altissime",
           "title": "Aeterne Rex altissime",
           "source": "ICRSP_FR_LITURGICAL_INDEX",
@@ -262,6 +282,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:020",
           "id": "icrsp_fr_lustra_sex",
           "title": "Lustra sex",
           "source": "ICRSP_FR_LITURGICAL_INDEX",
@@ -274,6 +295,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:021",
           "id": "icrsp_fr_o_sol_salutis",
           "title": "O sol salutis intimis",
           "source": "ICRSP_FR_LITURGICAL_INDEX",
@@ -286,6 +308,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:022",
           "id": "icrsp_fr_ex_more_docti",
           "title": "Ex more docti mystico",
           "source": "ICRSP_FR_LITURGICAL_INDEX",
@@ -298,6 +321,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:023",
           "id": "icrsp_fr_magnificat",
           "title": "Magnificat",
           "source": "ICRSP_FR_LITURGICAL_INDEX",
@@ -310,6 +334,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:024",
           "id": "icrsp_fr_benedictus",
           "title": "Benedictus",
           "source": "ICRSP_FR_LITURGICAL_INDEX",
@@ -322,6 +347,7 @@
           "historical_edition": "VERIFY_PER_ITEM"
         },
         {
+          "inventory_row_id": "icksp-initial:025",
           "id": "icrsp_fr_st_blaise_candles_food",
           "title": "Bénédictions des cierges et des aliments en la Fête de Saint Blaise",
           "source": "ICRSP_FR_LITURGICAL_INDEX",
@@ -341,6 +367,7 @@
       "existing_register": "https://github.com/Fulcanelli13/ad-orientem/blob/research/icksp-devotions-pray-gap-audit-20261028/data/pray/icrsp-divine-office-index.b02.json",
       "source_records": [
         {
+          "inventory_row_id": "icrsp-index:001",
           "id": "icrsp_fr_office_complies",
           "title": "Office des Complies",
           "group": "COMPLETE_OFFICE",
@@ -349,6 +376,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:002",
           "id": "icrsp_fr_sunday_vespers",
           "title": "1res Vêpres / Vêpres du Dimanche",
           "group": "COMPLETE_OFFICE",
@@ -357,6 +385,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:003",
           "id": "icrsp_fr_te_deum",
           "title": "Te Deum",
           "group": "ALREADY_IN_APP",
@@ -365,6 +394,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:004",
           "id": "icrsp_fr_vexilla_regis",
           "title": "Vexilla Regis",
           "group": "HYMN",
@@ -373,6 +403,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:005",
           "id": "icrsp_fr_audi_benigne_conditor",
           "title": "Audi, benigne Conditor",
           "group": "HYMN",
@@ -381,6 +412,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:006",
           "id": "icrsp_fr_ad_cenam_agni",
           "title": "Ad cenam Agni providi / Ad regias Agni dapes",
           "group": "HYMN",
@@ -389,6 +421,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:007",
           "id": "icrsp_fr_aeterne_rex_altissime",
           "title": "Aeterne Rex altissime",
           "group": "HYMN",
@@ -397,6 +430,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:008",
           "id": "icrsp_fr_lustra_sex",
           "title": "Lustra sex",
           "group": "HYMN",
@@ -405,6 +439,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:009",
           "id": "icrsp_fr_o_sol_salutis",
           "title": "O sol salutis intimis",
           "group": "HYMN",
@@ -413,6 +448,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:010",
           "id": "icrsp_fr_ex_more_docti",
           "title": "Ex more docti mystico",
           "group": "HYMN",
@@ -421,6 +457,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:011",
           "id": "icrsp_fr_magnificat",
           "title": "Magnificat",
           "group": "ALREADY_IN_APP",
@@ -429,6 +466,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:012",
           "id": "icrsp_fr_benedictus",
           "title": "Benedictus",
           "group": "ALREADY_IN_APP",
@@ -437,6 +475,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:013",
           "id": "icrsp_b02_office_001_cantique_des_trois_enfants",
           "title": "Cantique des trois Enfants",
           "group": "CANTICLE",
@@ -445,6 +484,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:014",
           "id": "icrsp_b02_office_002_introduction_des_matines_et_psaumes_du",
           "title": "Introduction des Matines et psaumes du 1er nocturne du Dimanche per annum en été",
           "group": "COMPLETE_OFFICE_SECTION",
@@ -453,6 +493,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:015",
           "id": "icrsp_b02_office_003_laudes_du_dimanche_per_annum_en_ete",
           "title": "Laudes du Dimanche per annum en été",
           "group": "COMPLETE_OFFICE_SECTION",
@@ -461,6 +502,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:016",
           "id": "icrsp_b02_office_004_matines_de_la_1re_semaine_de_careme",
           "title": "Matines de la 1re semaine de Carême",
           "group": "COMPLETE_OFFICE_SECTION",
@@ -469,6 +511,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:017",
           "id": "icrsp_b02_office_005_matines_de_la_1re_semaine_de_la_passio",
           "title": "Matines de la 1re semaine de la Passion",
           "group": "COMPLETE_OFFICE_SECTION",
@@ -477,6 +520,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:018",
           "id": "icrsp_b02_office_006_matines_de_la_2e_semaine_de_careme",
           "title": "Matines de la 2e semaine de Carême",
           "group": "COMPLETE_OFFICE_SECTION",
@@ -485,6 +529,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:019",
           "id": "icrsp_b02_office_007_matines_de_la_3e_semaine_de_careme",
           "title": "Matines de la 3e semaine de Carême",
           "group": "COMPLETE_OFFICE_SECTION",
@@ -493,6 +538,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:020",
           "id": "icrsp_b02_office_008_matines_de_la_4e_semaine_de_careme",
           "title": "Matines de la 4e semaine de Carême",
           "group": "COMPLETE_OFFICE_SECTION",
@@ -501,6 +547,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:021",
           "id": "icrsp_b02_office_009_matines_de_la_semaine_de_la_quinquages",
           "title": "Matines de la semaine de la Quinquagésime (leçons et répons) : après les cendres",
           "group": "COMPLETE_OFFICE_SECTION",
@@ -509,6 +556,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:022",
           "id": "icrsp_b02_office_010_matines_de_la_semaine_de_la_quinquages",
           "title": "Matines de la semaine de la Quinquagésime (leçons et répons) : avant les cendres",
           "group": "COMPLETE_OFFICE_SECTION",
@@ -517,6 +565,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:023",
           "id": "icrsp_b02_office_011_matines_de_la_semaine_de_la_septuagesi",
           "title": "Matines de la semaine de la Septuagésime (leçons et répons)",
           "group": "COMPLETE_OFFICE_SECTION",
@@ -525,6 +574,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:024",
           "id": "icrsp_b02_office_012_matines_de_la_semaine_de_la_sexagesime",
           "title": "Matines de la semaine de la Sexagésime (leçons et répons)",
           "group": "COMPLETE_OFFICE_SECTION",
@@ -533,6 +583,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:025",
           "id": "icrsp_b02_office_013_pange_lingua_gloriosi_matines_de_la_pa",
           "title": "Pange, Lingua, gloriosi (matines de la Passion)",
           "group": "HYMN",
@@ -541,6 +592,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:026",
           "id": "icrsp_b02_office_014_prudence_passion_de_sainte_agnes",
           "title": "Prudence, Passion de sainte Agnès",
           "group": "HISTORICAL_POETRY",
@@ -549,6 +601,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:027",
           "id": "icrsp_b02_office_015_prudence_passion_des_apotres_pierre_et",
           "title": "Prudence, Passion des Apôtres Pierre et Paul",
           "group": "HISTORICAL_POETRY",
@@ -557,6 +610,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:028",
           "id": "icrsp_b02_office_016_psaumes_des_vepres_du_dimanche",
           "title": "Psaumes des Vêpres du Dimanche",
           "group": "PSALM_COLLECTION",
@@ -565,6 +619,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:029",
           "id": "icrsp_b02_office_017_psaumes_du_2d_nocturne_du_dimanche_per",
           "title": "Psaumes du 2d nocturne du Dimanche per annum",
           "group": "PSALM_COLLECTION",
@@ -573,6 +628,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:030",
           "id": "icrsp_b02_office_018_psaumes_du_3e_nocturne_du_dimanche_per",
           "title": "Psaumes du 3e nocturne du Dimanche per annum",
           "group": "PSALM_COLLECTION",
@@ -581,6 +637,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:031",
           "id": "icrsp_b02_office_019_vepres_du_2d_dimanche_apres_l_epiphani",
           "title": "Vêpres du 2d dimanche après l’Epiphanie",
           "group": "COMPLETE_OFFICE_SECTION",
@@ -589,6 +646,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:032",
           "id": "icrsp_b02_office_020_vepres_du_2d_dimanche_de_l_avent",
           "title": "Vêpres du 2d dimanche de l’Avent",
           "group": "COMPLETE_OFFICE_SECTION",
@@ -597,6 +655,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:033",
           "id": "icrsp_b02_office_021_vepres_du_dimanche_per_annum",
           "title": "Vêpres du Dimanche per annum",
           "group": "COMPLETE_OFFICE_SECTION",
@@ -605,6 +664,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:034",
           "id": "icrsp_b02_psalm_001",
           "title": "Psaume 1",
           "group": "PSALM_REFERENCE",
@@ -613,6 +673,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:035",
           "id": "icrsp_b02_psalm_002",
           "title": "Psaume 2",
           "group": "PSALM_REFERENCE",
@@ -621,6 +682,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:036",
           "id": "icrsp_b02_psalm_003",
           "title": "Psaume 3",
           "group": "PSALM_REFERENCE",
@@ -629,6 +691,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:037",
           "id": "icrsp_b02_psalm_004",
           "title": "Psaume 5",
           "group": "PSALM_REFERENCE",
@@ -637,6 +700,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:038",
           "id": "icrsp_b02_psalm_005",
           "title": "Psaume 8",
           "group": "PSALM_REFERENCE",
@@ -645,6 +709,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:039",
           "id": "icrsp_b02_psalm_006",
           "title": "Psaume 9, i",
           "group": "PSALM_REFERENCE",
@@ -653,6 +718,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:040",
           "id": "icrsp_b02_psalm_007",
           "title": "Psaume 9, ii",
           "group": "PSALM_REFERENCE",
@@ -661,6 +727,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:041",
           "id": "icrsp_b02_psalm_008",
           "title": "Psaume 9, iii",
           "group": "PSALM_REFERENCE",
@@ -669,6 +736,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:042",
           "id": "icrsp_b02_psalm_009",
           "title": "Psaume 9, iv",
           "group": "PSALM_REFERENCE",
@@ -677,6 +745,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:043",
           "id": "icrsp_b02_psalm_010",
           "title": "Psaume 10",
           "group": "PSALM_REFERENCE",
@@ -685,6 +754,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:044",
           "id": "icrsp_b02_psalm_011",
           "title": "Psaume 14",
           "group": "PSALM_REFERENCE",
@@ -693,6 +763,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:045",
           "id": "icrsp_b02_psalm_012",
           "title": "Psaume 15",
           "group": "PSALM_REFERENCE",
@@ -701,6 +772,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:046",
           "id": "icrsp_b02_psalm_013",
           "title": "Psaume 18",
           "group": "PSALM_REFERENCE",
@@ -709,6 +781,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:047",
           "id": "icrsp_b02_psalm_014",
           "title": "Psaume 19",
           "group": "PSALM_REFERENCE",
@@ -717,6 +790,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:048",
           "id": "icrsp_b02_psalm_015",
           "title": "Psaume 20",
           "group": "PSALM_REFERENCE",
@@ -725,6 +799,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:049",
           "id": "icrsp_b02_psalm_016",
           "title": "Psaume 22",
           "group": "PSALM_REFERENCE",
@@ -733,6 +808,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:050",
           "id": "icrsp_b02_psalm_017",
           "title": "Psaume 23",
           "group": "PSALM_REFERENCE",
@@ -741,6 +817,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:051",
           "id": "icrsp_b02_psalm_018",
           "title": "Psaume 28",
           "group": "PSALM_REFERENCE",
@@ -749,6 +826,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:052",
           "id": "icrsp_b02_psalm_019",
           "title": "Psaume 29",
           "group": "PSALM_REFERENCE",
@@ -757,6 +835,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:053",
           "id": "icrsp_b02_psalm_020",
           "title": "Psaume 32",
           "group": "PSALM_REFERENCE",
@@ -765,6 +844,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:054",
           "id": "icrsp_b02_psalm_021",
           "title": "Psaume 33",
           "group": "PSALM_REFERENCE",
@@ -773,6 +853,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:055",
           "id": "icrsp_b02_psalm_022",
           "title": "Psaume 35",
           "group": "PSALM_REFERENCE",
@@ -781,6 +862,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:056",
           "id": "icrsp_b02_psalm_023",
           "title": "Psaume 40",
           "group": "PSALM_REFERENCE",
@@ -789,6 +871,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:057",
           "id": "icrsp_b02_psalm_024",
           "title": "Psaume 41",
           "group": "PSALM_REFERENCE",
@@ -797,6 +880,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:058",
           "id": "icrsp_b02_psalm_025",
           "title": "Psaume 44",
           "group": "PSALM_REFERENCE",
@@ -805,6 +889,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:059",
           "id": "icrsp_b02_psalm_026",
           "title": "Psaume 46",
           "group": "PSALM_REFERENCE",
@@ -813,6 +898,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:060",
           "id": "icrsp_b02_psalm_027",
           "title": "Psaume 47",
           "group": "PSALM_REFERENCE",
@@ -821,6 +907,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:061",
           "id": "icrsp_b02_psalm_028",
           "title": "Psaume 60",
           "group": "PSALM_REFERENCE",
@@ -829,6 +916,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:062",
           "id": "icrsp_b02_psalm_029",
           "title": "Psaume 63",
           "group": "PSALM_REFERENCE",
@@ -837,6 +925,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:063",
           "id": "icrsp_b02_psalm_030",
           "title": "Psaume 67",
           "group": "PSALM_REFERENCE",
@@ -845,6 +934,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:064",
           "id": "icrsp_b02_psalm_031",
           "title": "Psaume 71",
           "group": "PSALM_REFERENCE",
@@ -853,6 +943,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:065",
           "id": "icrsp_b02_psalm_032",
           "title": "Psaume 73",
           "group": "PSALM_REFERENCE",
@@ -861,6 +952,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:066",
           "id": "icrsp_b02_psalm_033",
           "title": "Psaume 74",
           "group": "PSALM_REFERENCE",
@@ -869,6 +961,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:067",
           "id": "icrsp_b02_psalm_034",
           "title": "Psaume 75",
           "group": "PSALM_REFERENCE",
@@ -877,6 +970,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:068",
           "id": "icrsp_b02_psalm_035",
           "title": "Psaume 83",
           "group": "PSALM_REFERENCE",
@@ -885,6 +979,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:069",
           "id": "icrsp_b02_psalm_036",
           "title": "Psaume 86",
           "group": "PSALM_REFERENCE",
@@ -893,6 +988,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:070",
           "id": "icrsp_b02_psalm_037",
           "title": "Psaume 87",
           "group": "PSALM_REFERENCE",
@@ -901,6 +997,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:071",
           "id": "icrsp_b02_psalm_038",
           "title": "Psaume 88",
           "group": "PSALM_REFERENCE",
@@ -909,6 +1006,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:072",
           "id": "icrsp_b02_psalm_039",
           "title": "Psaume 92",
           "group": "PSALM_REFERENCE",
@@ -917,6 +1015,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:073",
           "id": "icrsp_b02_psalm_040",
           "title": "Psaume 93",
           "group": "PSALM_REFERENCE",
@@ -925,6 +1024,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:074",
           "id": "icrsp_b02_psalm_041",
           "title": "Psaume 94 (Invitatoire)",
           "group": "PSALM_REFERENCE",
@@ -933,6 +1033,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:075",
           "id": "icrsp_b02_psalm_042",
           "title": "Psaume 95",
           "group": "PSALM_REFERENCE",
@@ -941,6 +1042,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:076",
           "id": "icrsp_b02_psalm_043",
           "title": "Psaume 96",
           "group": "PSALM_REFERENCE",
@@ -949,6 +1051,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:077",
           "id": "icrsp_b02_psalm_044",
           "title": "Psaume 97",
           "group": "PSALM_REFERENCE",
@@ -957,6 +1060,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:078",
           "id": "icrsp_b02_psalm_045",
           "title": "Psaume 98",
           "group": "PSALM_REFERENCE",
@@ -965,6 +1069,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:079",
           "id": "icrsp_b02_psalm_046",
           "title": "Psaume 102",
           "group": "PSALM_REFERENCE",
@@ -973,6 +1078,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:080",
           "id": "icrsp_b02_psalm_047",
           "title": "Psaume 107",
           "group": "PSALM_REFERENCE",
@@ -981,6 +1087,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:081",
           "id": "icrsp_b02_psalm_048",
           "title": "Psaume 109",
           "group": "PSALM_REFERENCE",
@@ -989,6 +1096,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:082",
           "id": "icrsp_b02_psalm_049",
           "title": "Psaume 110",
           "group": "PSALM_REFERENCE",
@@ -997,6 +1105,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:083",
           "id": "icrsp_b02_psalm_050",
           "title": "Psaume 111",
           "group": "PSALM_REFERENCE",
@@ -1005,6 +1114,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:084",
           "id": "icrsp_b02_psalm_051",
           "title": "Psaume 112",
           "group": "PSALM_REFERENCE",
@@ -1013,6 +1123,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:085",
           "id": "icrsp_b02_psalm_052",
           "title": "Psaume 113",
           "group": "PSALM_REFERENCE",
@@ -1021,6 +1132,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:086",
           "id": "icrsp_b02_psalm_053",
           "title": "Psaume 115",
           "group": "PSALM_REFERENCE",
@@ -1029,6 +1141,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:087",
           "id": "icrsp_b02_psalm_054",
           "title": "Psaume 121",
           "group": "PSALM_REFERENCE",
@@ -1037,6 +1150,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:088",
           "id": "icrsp_b02_psalm_055",
           "title": "Psaume 125",
           "group": "PSALM_REFERENCE",
@@ -1045,6 +1159,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:089",
           "id": "icrsp_b02_psalm_056",
           "title": "Psaume 126",
           "group": "PSALM_REFERENCE",
@@ -1053,6 +1168,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:090",
           "id": "icrsp_b02_psalm_057",
           "title": "Psaume 127",
           "group": "PSALM_REFERENCE",
@@ -1061,6 +1177,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:091",
           "id": "icrsp_b02_psalm_058",
           "title": "Psaume 129",
           "group": "PSALM_REFERENCE",
@@ -1069,6 +1186,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:092",
           "id": "icrsp_b02_psalm_059",
           "title": "Psaume 143, i",
           "group": "PSALM_REFERENCE",
@@ -1077,6 +1195,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:093",
           "id": "icrsp_b02_psalm_060",
           "title": "Psaume 143, ii",
           "group": "PSALM_REFERENCE",
@@ -1085,6 +1204,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:094",
           "id": "icrsp_b02_psalm_061",
           "title": "Psaume 144, i",
           "group": "PSALM_REFERENCE",
@@ -1093,6 +1213,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:095",
           "id": "icrsp_b02_psalm_062",
           "title": "Psaume 144, ii",
           "group": "PSALM_REFERENCE",
@@ -1101,6 +1222,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:096",
           "id": "icrsp_b02_psalm_063",
           "title": "Psaume 144, iii",
           "group": "PSALM_REFERENCE",
@@ -1109,6 +1231,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:097",
           "id": "icrsp_b02_psalm_064",
           "title": "Psaume 147",
           "group": "PSALM_REFERENCE",
@@ -1117,6 +1240,7 @@
           "text_verified": false
         },
         {
+          "inventory_row_id": "icrsp-index:098",
           "id": "icrsp_b02_psalm_065",
           "title": "Psaume 148",
           "group": "PSALM_REFERENCE",
@@ -1132,6 +1256,7 @@
       "index_url": "https://sensusfidelium.com/the-raccolta/",
       "sections": [
         {
+          "inventory_row_id": "raccolta-1866:001",
           "id": "raccolta-1866-section-01",
           "section": 1,
           "title": "The Most Holy Trinity",
@@ -1142,6 +1267,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:002",
           "id": "raccolta-1866-section-02",
           "section": 2,
           "title": "Almighty God",
@@ -1152,6 +1278,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:003",
           "id": "raccolta-1866-section-03",
           "section": 3,
           "title": "The Holy Ghost",
@@ -1162,6 +1289,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:004",
           "id": "raccolta-1866-section-04",
           "section": 4,
           "title": "Jesus",
@@ -1172,6 +1300,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:005",
           "id": "raccolta-1866-section-05",
           "section": 5,
           "title": "The Child Jesus",
@@ -1182,6 +1311,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:006",
           "id": "raccolta-1866-section-06",
           "section": 6,
           "title": "Jesus Crucified",
@@ -1192,6 +1322,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:007",
           "id": "raccolta-1866-section-07",
           "section": 7,
           "title": "Precious Blood",
@@ -1202,6 +1333,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:008",
           "id": "raccolta-1866-section-08",
           "section": 8,
           "title": "Jesus in the Blessed Sacrament",
@@ -1212,6 +1344,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:009",
           "id": "raccolta-1866-section-09",
           "section": 9,
           "title": "Sacred Heart of Jesus",
@@ -1222,6 +1355,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:010",
           "id": "raccolta-1866-section-10",
           "section": 10,
           "title": "Most Holy Mary",
@@ -1232,6 +1366,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:011",
           "id": "raccolta-1866-section-11",
           "section": 11,
           "title": "Mary Sorrowing",
@@ -1242,6 +1377,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:012",
           "id": "raccolta-1866-section-12",
           "section": 12,
           "title": "Novenas of the Blessed Virgin",
@@ -1252,6 +1388,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:013",
           "id": "raccolta-1866-section-13",
           "section": 13,
           "title": "St Michael the Archangel",
@@ -1262,6 +1399,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:014",
           "id": "raccolta-1866-section-14",
           "section": 14,
           "title": "Angel Guardian",
@@ -1272,6 +1410,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:015",
           "id": "raccolta-1866-section-15",
           "section": 15,
           "title": "St Joseph",
@@ -1282,6 +1421,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:016",
           "id": "raccolta-1866-section-16",
           "section": 16,
           "title": "Holy Apostles Peter and Paul",
@@ -1292,6 +1432,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:017",
           "id": "raccolta-1866-section-17",
           "section": 17,
           "title": "St Pius V",
@@ -1302,6 +1443,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:018",
           "id": "raccolta-1866-section-18",
           "section": 18,
           "title": "St Nicholas of Bari",
@@ -1312,6 +1454,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:019",
           "id": "raccolta-1866-section-19",
           "section": 19,
           "title": "St Francis of Paola",
@@ -1322,6 +1465,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:020",
           "id": "raccolta-1866-section-20",
           "section": 20,
           "title": "St Aloysius Gonzaga",
@@ -1332,6 +1476,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:021",
           "id": "raccolta-1866-section-21",
           "section": 21,
           "title": "St Stanislas Kostka",
@@ -1342,6 +1487,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:022",
           "id": "raccolta-1866-section-22",
           "section": 22,
           "title": "St Philip Neri",
@@ -1352,6 +1498,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:023",
           "id": "raccolta-1866-section-23",
           "section": 23,
           "title": "St Camillus of Lellis",
@@ -1362,6 +1509,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:024",
           "id": "raccolta-1866-section-24",
           "section": 24,
           "title": "For the Faithful in their Agony",
@@ -1372,6 +1520,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:025",
           "id": "raccolta-1866-section-25",
           "section": 25,
           "title": "For a Good Death",
@@ -1382,6 +1531,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:026",
           "id": "raccolta-1866-section-26",
           "section": 26,
           "title": "For the Faithful Departed",
@@ -1392,6 +1542,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:027",
           "id": "raccolta-1866-section-27",
           "section": 27,
           "title": "The Divine Office and Office of the Blessed Virgin",
@@ -1402,6 +1553,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:028",
           "id": "raccolta-1866-section-28",
           "section": 28,
           "title": "Gradual and Penitential Psalms",
@@ -1412,6 +1564,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:029",
           "id": "raccolta-1866-section-29",
           "section": 29,
           "title": "Mental Prayer",
@@ -1422,6 +1575,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:030",
           "id": "raccolta-1866-section-30",
           "section": 30,
           "title": "Devout Visits",
@@ -1432,6 +1586,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:031",
           "id": "raccolta-1866-section-31",
           "section": 31,
           "title": "Christian Doctrine",
@@ -1442,6 +1597,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:032",
           "id": "raccolta-1866-section-32",
           "section": 32,
           "title": "Explanation of the Gospel",
@@ -1452,6 +1608,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:033",
           "id": "raccolta-1866-section-33",
           "section": 33,
           "title": "Works of Mercy",
@@ -1462,6 +1619,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:034",
           "id": "raccolta-1866-section-34",
           "section": 34,
           "title": "Times of Calamity",
@@ -1472,6 +1630,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:035",
           "id": "raccolta-1866-section-35",
           "section": 35,
           "title": "Troubled Times",
@@ -1482,6 +1641,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:036",
           "id": "raccolta-1866-section-36",
           "section": 36,
           "title": "To Implore Peace",
@@ -1492,6 +1652,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:037",
           "id": "raccolta-1866-section-37",
           "section": 37,
           "title": "Spiritual Canticles",
@@ -1502,6 +1663,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:038",
           "id": "raccolta-1866-section-38",
           "section": 38,
           "title": "Blessed Crosses, Crucifixes, Rosaries, Medals",
@@ -1512,6 +1674,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:039",
           "id": "raccolta-1866-section-39",
           "section": 39,
           "title": "Appendix: Indulgences for Religious",
@@ -1522,6 +1685,7 @@
           "full_text_capture": false
         },
         {
+          "inventory_row_id": "raccolta-1866:040",
           "id": "raccolta-1866-section-40",
           "section": 40,
           "title": "Decretum",
@@ -1537,7 +1701,8 @@
           "id": "raccolta-1866-appendix-propagation-faith",
           "title": "Pious Exercises for the Propagation of the Faith",
           "source_url": "https://staging2.sensusfidelium.com/the-raccolta/pious-exercises-for-the-propagation-of-the-faith/",
-          "capture_state": "PAGE_VERIFIED_ENTRY_EXTRACTION_PENDING"
+          "capture_state": "PAGE_VERIFIED_ENTRY_EXTRACTION_PENDING",
+          "inventory_row_id": "raccolta-supplement:001"
         }
       ],
       "observed_numbering": {
@@ -1552,6 +1717,7 @@
         "source_url": "https://sensusfidelium.com/tag/novena/",
         "index_first_page_rows": [
           {
+            "inventory_row_id": "sensus-tag:001",
             "id": "sensus-novena-tag-01",
             "title": "Novena to St Peter of Verona",
             "source_url": "https://sensusfidelium.com/2023/04/19/novena-to-st-peter-of-verona-feast-day-29-april/",
@@ -1563,6 +1729,7 @@
             "full_text_capture": false
           },
           {
+            "inventory_row_id": "sensus-tag:002",
             "id": "sensus-novena-tag-02",
             "title": "Seven Sorrows and Joys of St Joseph",
             "source_url": "https://sensusfidelium.com/2023/03/12/seven-sorrows-and-joys-of-saint-joseph/",
@@ -1574,6 +1741,7 @@
             "full_text_capture": false
           },
           {
+            "inventory_row_id": "sensus-tag:003",
             "id": "sensus-novena-tag-03",
             "title": "Novena to the Holy Face of Jesus",
             "source_url": "https://sensusfidelium.com/2022/02/18/novena-to-the-holy-face-of-jesus-february-20-28/",
@@ -1585,6 +1753,7 @@
             "full_text_capture": false
           },
           {
+            "inventory_row_id": "sensus-tag:004",
             "id": "sensus-novena-tag-04",
             "title": "Holy Cloak of St Joseph (30 days)",
             "source_url": "https://sensusfidelium.com/2021/06/21/holy-cloak-of-st-joseph-30-day-novena/",
@@ -1596,6 +1765,7 @@
             "full_text_capture": false
           },
           {
+            "inventory_row_id": "sensus-tag:005",
             "id": "sensus-novena-tag-05",
             "title": "Novena to St Teresa of Jesus",
             "source_url": "https://sensusfidelium.com/2020/10/08/novena-to-st-teresa-of-jesus-begins-6-october/",
@@ -1607,6 +1777,7 @@
             "full_text_capture": false
           },
           {
+            "inventory_row_id": "sensus-tag:006",
             "id": "sensus-novena-tag-06",
             "title": "Novena to Our Lady of the Rosary",
             "source_url": "https://sensusfidelium.com/2020/09/28/novena-in-honor-of-our-lady-of-the-rosary-beginning-september-28/",
@@ -1618,6 +1789,7 @@
             "full_text_capture": false
           },
           {
+            "inventory_row_id": "sensus-tag:007",
             "id": "sensus-novena-tag-07",
             "title": "Pentecost Supernovena",
             "source_url": "https://sensusfidelium.com/2020/05/22/supernovena-in-honor-of-the-coming-of-the-holy-spirit-on-pentecost/",
@@ -1629,6 +1801,7 @@
             "full_text_capture": false
           },
           {
+            "inventory_row_id": "sensus-tag:008",
             "id": "sensus-novena-tag-08",
             "title": "Novena to St Gabriel",
             "source_url": "https://sensusfidelium.com/2020/03/15/novena-in-honor-of-st-gabriel-the-archangel-beginning-march-15/",
@@ -1640,6 +1813,7 @@
             "full_text_capture": false
           },
           {
+            "inventory_row_id": "sensus-tag:009",
             "id": "sensus-novena-tag-09",
             "title": "Novena to St Joseph",
             "source_url": "https://sensusfidelium.com/2020/03/09/novena-in-honor-of-st-joseph-spouse-of-our-lady-beginning-march-10/",
@@ -1651,6 +1825,7 @@
             "full_text_capture": false
           },
           {
+            "inventory_row_id": "sensus-tag:010",
             "id": "sensus-novena-tag-10",
             "title": "Novena to St Thomas",
             "source_url": "https://sensusfidelium.com/2020/02/28/novena-to-st-thomas-for-7-march/",
@@ -1662,6 +1837,7 @@
             "full_text_capture": false
           },
           {
+            "inventory_row_id": "sensus-tag:011",
             "id": "sensus-novena-tag-11",
             "title": "Litany of Jesus Christ Priest and Victim",
             "source_url": "https://sensusfidelium.com/2020/02/04/the-litany-of-jesus-christ-priest-and-victim-pray-for-priests/",
@@ -1673,6 +1849,7 @@
             "full_text_capture": false
           },
           {
+            "inventory_row_id": "sensus-tag:012",
             "id": "sensus-novena-tag-12",
             "title": "Novena to the Purification of Our Lady",
             "source_url": "https://sensusfidelium.com/2020/01/25/novena-in-honor-of-our-ladys-purification-beginning-january-24/",
@@ -1684,6 +1861,7 @@
             "full_text_capture": false
           },
           {
+            "inventory_row_id": "sensus-tag:013",
             "id": "sensus-novena-tag-13",
             "title": "Novena to the Epiphany",
             "source_url": "https://sensusfidelium.com/2019/12/28/novena-in-honor-of-our-lords-epiphany-beginning-december-28/",
@@ -1695,6 +1873,7 @@
             "full_text_capture": false
           },
           {
+            "inventory_row_id": "sensus-tag:014",
             "id": "sensus-novena-tag-14",
             "title": "Novena to the Immaculate Conception",
             "source_url": "https://sensusfidelium.com/2019/11/29/novena-in-honor-of-our-ladys-immaculate-conception-beginning-november-29/",
@@ -1706,6 +1885,7 @@
             "full_text_capture": false
           },
           {
+            "inventory_row_id": "sensus-tag:015",
             "id": "sensus-novena-tag-15",
             "title": "Novena to the Presentation of Mary",
             "source_url": "https://sensusfidelium.com/2019/11/11/novena-in-honor-of-the-presentation-of-the-blessed-virgin-mary-beginning-november-12/",
@@ -1723,6 +1903,7 @@
         "source_url": "https://sensusfidelium.com/meditations/",
         "collections": [
           {
+            "inventory_row_id": "sensus-reading:001",
             "id": "sensus-spiritual-reading-01",
             "title": "St Alphonsus Liguori",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1730,6 +1911,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:002",
             "id": "sensus-spiritual-reading-02",
             "title": "St John Climacus",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1737,6 +1919,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:003",
             "id": "sensus-spiritual-reading-03",
             "title": "Venerable Louis of Granada",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1744,6 +1927,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:004",
             "id": "sensus-spiritual-reading-04",
             "title": "St Bonaventure",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1751,6 +1935,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:005",
             "id": "sensus-spiritual-reading-05",
             "title": "St Basil the Great",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1758,6 +1943,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:006",
             "id": "sensus-spiritual-reading-06",
             "title": "Mary of Agreda, Mystical City of God",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1765,6 +1951,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:007",
             "id": "sensus-spiritual-reading-07",
             "title": "Philokalia",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1772,6 +1959,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:008",
             "id": "sensus-spiritual-reading-08",
             "title": "The Fairest Flower of Paradise",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1779,6 +1967,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:009",
             "id": "sensus-spiritual-reading-09",
             "title": "St Robert Bellarmine",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1786,6 +1975,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:010",
             "id": "sensus-spiritual-reading-10",
             "title": "St Thérèse of Lisieux",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1793,6 +1983,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:011",
             "id": "sensus-spiritual-reading-11",
             "title": "Fr Michael Muller",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1800,6 +1991,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:012",
             "id": "sensus-spiritual-reading-12",
             "title": "Works of St Francis of Assisi",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1807,6 +1999,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:013",
             "id": "sensus-spiritual-reading-13",
             "title": "Fifteen Saturdays of the Holy Rosary",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1814,6 +2007,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:014",
             "id": "sensus-spiritual-reading-14",
             "title": "St Francis de Sales",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1821,6 +2015,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:015",
             "id": "sensus-spiritual-reading-15",
             "title": "St Louis de Montfort",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1828,6 +2023,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:016",
             "id": "sensus-spiritual-reading-16",
             "title": "St Ignatius Spiritual Exercises",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1835,6 +2031,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:017",
             "id": "sensus-spiritual-reading-17",
             "title": "Practice of the Presence of God (Brother Lawrence)",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1842,6 +2039,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:018",
             "id": "sensus-spiritual-reading-18",
             "title": "Miraculous Medal (Fr Jean-Marie Aladel)",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1849,6 +2047,7 @@
             "material_type": "MIXED_SPIRITUAL_WORK_AND_PRAYER"
           },
           {
+            "inventory_row_id": "sensus-reading:019",
             "id": "sensus-spiritual-reading-19",
             "title": "Flowers of the Passion (St Paul of the Cross)",
             "source_index": "https://sensusfidelium.com/meditations/",
@@ -1862,19 +2061,22 @@
           "id": "sensus-de-montfort-33-day",
           "title": "St Louis de Montfort 33-day preparation",
           "source_url": "https://sensusfidelium.com/calendar/st-louis-de-montforts-total-consecration-to-mary/",
-          "capture_state": "PAGE_IDENTIFIED_TEXT_EXTRACTION_PENDING"
+          "capture_state": "PAGE_IDENTIFIED_TEXT_EXTRACTION_PENDING",
+          "inventory_row_id": "sensus-other:001"
         },
         {
           "id": "sensus-miller-conscience",
           "title": "Fr Donald F Miller Examination of Conscience",
           "source_url": "https://sensusfidelium.com/calendar/examination-of-conscience-for-adults-a-comprehensive-examination-of-conscience-by-rev-donald-f-miller-c-ss-r/",
-          "capture_state": "PAGE_IDENTIFIED_TEXT_EXTRACTION_PENDING"
+          "capture_state": "PAGE_IDENTIFIED_TEXT_EXTRACTION_PENDING",
+          "inventory_row_id": "sensus-other:002"
         },
         {
           "id": "sensus-gueranger",
           "title": "The Liturgical Year of Dom Gueranger",
           "source_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
-          "capture_state": "INDEX_IDENTIFIED_INDIVIDUAL_DAY_PRAYERS_NOT_ENUMERATED"
+          "capture_state": "INDEX_IDENTIFIED_INDIVIDUAL_DAY_PRAYERS_NOT_ENUMERATED",
+          "inventory_row_id": "sensus-other:003"
         }
       ],
       "scope_note": "Separate from the 1866 Raccolta mirror; standalone novenas may cite the distinct 1910 Raccolta and must not be conflated"
@@ -1885,6 +2087,7 @@
       "source_data_guide": "https://divinumofficium.hu/www/horas/Help/technical.html",
       "hour_definitions": [
         {
+          "inventory_row_id": "roman-office:001",
           "id": "roman-office-1960-matins",
           "hour_order": 1,
           "title": "Matins",
@@ -1900,6 +2103,7 @@
           ]
         },
         {
+          "inventory_row_id": "roman-office:002",
           "id": "roman-office-1960-lauds",
           "hour_order": 2,
           "title": "Lauds",
@@ -1915,6 +2119,7 @@
           ]
         },
         {
+          "inventory_row_id": "roman-office:003",
           "id": "roman-office-1960-prime",
           "hour_order": 3,
           "title": "Prime",
@@ -1930,6 +2135,7 @@
           ]
         },
         {
+          "inventory_row_id": "roman-office:004",
           "id": "roman-office-1960-terce",
           "hour_order": 4,
           "title": "Terce",
@@ -1945,6 +2151,7 @@
           ]
         },
         {
+          "inventory_row_id": "roman-office:005",
           "id": "roman-office-1960-sext",
           "hour_order": 5,
           "title": "Sext",
@@ -1960,6 +2167,7 @@
           ]
         },
         {
+          "inventory_row_id": "roman-office:006",
           "id": "roman-office-1960-none",
           "hour_order": 6,
           "title": "None",
@@ -1975,6 +2183,7 @@
           ]
         },
         {
+          "inventory_row_id": "roman-office:007",
           "id": "roman-office-1960-vespers",
           "hour_order": 7,
           "title": "Vespers",
@@ -1990,6 +2199,7 @@
           ]
         },
         {
+          "inventory_row_id": "roman-office:008",
           "id": "roman-office-1960-compline",
           "hour_order": 8,
           "title": "Compline",
@@ -2034,7 +2244,22 @@
     "sensus_spiritual_reading_collections_identified": 19,
     "roman_office_hours_scoped": 8,
     "unique_prayer_total": null,
-    "missing_source_denominator": true
+    "missing_source_denominator": true,
+    "known_overlaps_between_25_item_icksp_register_and_98_item_icrsp_index": 12,
+    "overlap_source_ids": [
+      "icrsp_fr_office_complies",
+      "icrsp_fr_sunday_vespers",
+      "icrsp_fr_te_deum",
+      "icrsp_fr_vexilla_regis",
+      "icrsp_fr_audi_benigne_conditor",
+      "icrsp_fr_ad_cenam_agni",
+      "icrsp_fr_aeterne_rex_altissime",
+      "icrsp_fr_lustra_sex",
+      "icrsp_fr_o_sol_salutis",
+      "icrsp_fr_ex_more_docti",
+      "icrsp_fr_magnificat",
+      "icrsp_fr_benedictus"
+    ]
   },
   "next_capture_gates": [
     "Enumerate all site pages including pagination and archives",
