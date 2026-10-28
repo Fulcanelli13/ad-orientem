@@ -54,7 +54,10 @@
     "w1_native_review_sheets": 1,
     "w1_new_pristine_certifications": 0,
     "w1_production_activated": 0,
-    "artist_name_normalization_corrections": 5
+    "artist_name_normalization_corrections": 5,
+    "w3b_new_originals_archived": 2,
+    "breviarium_total_originals_archived": 4,
+    "w3b_photo_rejected_for_external_frame": 1
   },
   "commons_metadata_batch_errors": [
     null,
@@ -252,6 +255,28 @@
       "bulk_photo_firstwave": {
         "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
         "not_rejected": true
+      },
+      "w3b_photo_alternative": {
+        "status": "ORIGINAL_SOURCE_EXACT_HASH_ARCHIVED_PENDING_NATIVE_PHOTO_REVIEW",
+        "source_file": "File:Inmaculada Concepción (Murillo, El Escorial).jpg",
+        "archive_path": "assets/staged/sacred-art-breviarium-w3b-exact-originals-20261029/plate-murillo-immaculate.jpg",
+        "sha256": "fc324fbea27fcd8950c11b54176f061f1f9f2ddd1d279e24501c907edc16394f",
+        "native_pixels": [
+          1888,
+          2717
+        ],
+        "rights_final_certified": false,
+        "pristine_certified": false,
+        "production_activated": false,
+        "visual_review": {
+          "class": "PRELIMINARY_PAINTING_ONLY_PHOTOGRAPH_RIGHTS_FIDELITY_HOLD",
+          "visible_evidence": "Full El Escorial composition and four painted corners present; no obvious separate external frame in native-corner review. Surface textures and tonal calibration still require scrutiny.",
+          "painting_identity_unchanged": true,
+          "original_file_archive_preserved": true,
+          "alternate_unframed_original_needed": false,
+          "pristine_certified": false,
+          "production_approved": false
+        }
       }
     },
     {
@@ -1418,6 +1443,17 @@
       "bulk_photo_firstwave": {
         "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
         "not_rejected": true
+      },
+      "w3b_photo_alternative": {
+        "status": "NOT_ATTEMPTED_AFTER_COMMONS_429",
+        "source_file": "File:The Calling of Saint Matthew-Caravaggo (1599-1600).jpg",
+        "archive_path": null,
+        "sha256": null,
+        "native_pixels": null,
+        "rights_final_certified": false,
+        "pristine_certified": false,
+        "production_activated": false,
+        "visual_review": null
       }
     },
     {
@@ -1464,6 +1500,17 @@
       "bulk_photo_firstwave": {
         "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
         "not_rejected": true
+      },
+      "w3b_photo_alternative": {
+        "status": "NOT_ATTEMPTED_AFTER_COMMONS_429",
+        "source_file": "File:Raffael-verklärung-christi.jpg",
+        "archive_path": null,
+        "sha256": null,
+        "native_pixels": null,
+        "rights_final_certified": false,
+        "pristine_certified": false,
+        "production_activated": false,
+        "visual_review": null
       }
     },
     {
@@ -1761,6 +1808,17 @@
       "bulk_photo_firstwave": {
         "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
         "not_rejected": true
+      },
+      "w3b_photo_alternative": {
+        "status": "NOT_ATTEMPTED_AFTER_COMMONS_429",
+        "source_file": "File:Cristo crucificado.jpg",
+        "archive_path": null,
+        "sha256": null,
+        "native_pixels": null,
+        "rights_final_certified": false,
+        "pristine_certified": false,
+        "production_activated": false,
+        "visual_review": null
       }
     },
     {
@@ -3073,6 +3131,17 @@
       "bulk_photo_firstwave": {
         "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
         "not_rejected": true
+      },
+      "w3b_photo_alternative": {
+        "status": "HTTP_SOURCE_HOLD",
+        "source_file": "File:St. Cecilia by Guido Reni.jpg",
+        "archive_path": null,
+        "sha256": null,
+        "native_pixels": null,
+        "rights_final_certified": false,
+        "pristine_certified": false,
+        "production_activated": false,
+        "visual_review": null
       }
     },
     {
@@ -3501,6 +3570,28 @@
       "bulk_photo_firstwave": {
         "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
         "not_rejected": true
+      },
+      "w3b_photo_alternative": {
+        "status": "ORIGINAL_SOURCE_EXACT_HASH_ARCHIVED_PENDING_NATIVE_PHOTO_REVIEW",
+        "source_file": "File:Saint francis in meditation 075217.JPG",
+        "archive_path": "assets/staged/sacred-art-breviarium-w3b-exact-originals-20261029/plate-zurbaran-francis.jpg",
+        "sha256": "113427179a174a8b4aa45c29c7243503add6e00629173081902bcea45bab69c5",
+        "native_pixels": [
+          2847,
+          3688
+        ],
+        "rights_final_certified": false,
+        "pristine_certified": false,
+        "production_activated": false,
+        "visual_review": {
+          "class": "REJECT_NEW_PHOTOGRAPH_FRAME_AND_WALL",
+          "visible_evidence": "Full image visibly includes a prominent gilt frame and gallery wall; every corner sample belongs to the frame or wall. Use only as physical-object identity reference.",
+          "painting_identity_unchanged": true,
+          "original_file_archive_preserved": true,
+          "alternate_unframed_original_needed": true,
+          "pristine_certified": false,
+          "production_approved": false
+        }
       }
     },
     {
