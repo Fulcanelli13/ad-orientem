@@ -257,7 +257,7 @@ export function installSequentialDevotionalReader({
   // The canonical Scripture service inserts real psalm/Gospel verses after
   // the shell has mounted. Reconcile only source-owned DOM additions; do not
   // synthesize verses or replace the Scripture text with a second copy.
-  if(["penitential","sevenWords"].includes(kind)&&doc.defaultView?.MutationObserver){
+  if(["penitential","sevenWords","daily"].includes(kind)&&doc.defaultView?.MutationObserver){
     const observer=new doc.defaultView.MutationObserver(()=>{
       if(!card.isConnected){observer.disconnect();return}
       const current=selectParagraphs();
