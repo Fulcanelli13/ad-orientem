@@ -57,7 +57,10 @@
       "printed1962Reference": "ICRSP_B41_MULTIPLE_VIRGIN_MARTYRS_AND_NONVIRGIN_FEMALE_MARTYRS",
       "evidence": "Latin C6b secret/postcommunion carry N. et N.; French C6b text contains singular N. only; C7b French inherits C6b by substitution.",
       "selectionReachability": "DIRECT_SELECTED_COMMON_ROUTE_NOT_YET_VERIFIED",
-      "action": "Fail closed only on exact source-path plus still-plural Latin placeholders with deficient French name count; do not infer that Sanctoral or feria inherited this wording."
+      "action": "ICRSP traditional 1962 edition independently confirms plural French Secret and Postcommunion. New draft PR #1795 corrects only exact grammatical singular donor phrase to source-backed plural category when Latin/English/owner agree. Otherwise fail closed.",
+      "remediation": "SOURCE_BACKED_PROJECTION_ON_PR_1795",
+      "sourceReference": "https://icrspfrance.fr/textes-liturgiques.php?article=a0337_ancien",
+      "additionalReference": "https://icrspfrance.fr/textes-liturgiques.php?article=a0342_ancien"
     },
     {
       "id": "PERPETUA_FELICITY_NONVIRGIN_FRENCH_IDENTITY",
@@ -73,16 +76,17 @@
       "evidence": "Latin Sancti/03-06 declares vide C7b; French Sancti/03-06 Collect and Secret label Perpetua and Felicity as Vierges et Martyres, contrary to their non-Virgin Latin Common. Named Postcommunion has proper plural martyrs. Live browser additionally proves the normalizer leaves 'Virginum et Martyrum' in the selected Latin commemorative prayer, not only incorrect French 'Vierges et Martyres'.",
       "selected2026CalendarDay": "Tempora/Quad2-5",
       "selectionReachability": "ACTUAL_FERIA_COMMEMORATION_RENDERED_IN_2026_AND_2027_READY_BEFORE_FIX",
-      "action": "Fail closed for both inherited incorrect Latin and French phrase using an attested Sancti/03-06 owner: explicit row source or unambiguous Calendar commemoration prayer list and count. Corrected source must be separately approved."
+      "action": "Already corrected in merged PR #1788 and deployed in commit ae9e90bc714a7296f584d4b6ec7b742399233cd1, with both-language actual reader tests for 6 March 2026/2027 and eligible print parity. Do not reopen in this PR.",
+      "remediation": "MERGED_PR_1788_DEPLOYED"
     }
   ],
   "limitations": [
-    "No master-language correction was written to the pinned external donor.",
-    "Current reader projection guards affected French prayer bodies; the separate printable Calendar Proper renderer has not been changed.",
-    "No English/French user-facing translation is created, copied, or approved.",
-    "1962 rite and local oration-selection status are entirely owned by existing DayResolver and Mass form source.",
-    "Original 1962 printed Common evidence is structural, not a complete photographed full-year Missal collation.",
-    "Exact 6 March 2026 and 2027 selected Calendar source and French Reader exposure was proven by real browser trace; preventing it is pending latest CI retest."
+    "Original pinned Divinum Officium donor files are unchanged. Source-editorial corrections are immutable display projections, not rewrites.",
+    "Direct C6b/C7b selected-Calendar user route has not yet been demonstrated; source-identity and renderable fixture coverage must not be represented as live reachability.",
+    "Named Saints Perpetua/Felicity March 6 LAT/EN/FR display is separately corrected in merged PR #1788; no duplicate fix made.",
+    "Eligible printable Propers now receive the same vetted source projections, but special Lenten forms remain withheld by their existing print restriction.",
+    "1962 rite, form, commemoration ownership and local ritual differences remain with the existing canonical DayResolver and source rules.",
+    "ICRSP older Missal's plural French category and saint placeholders have been checked against both the pinned Latin and English Commons. No wholesale new French prayer is copied."
   ],
   "published": false,
   "evidenceAdded": "2026-10-28",
@@ -95,7 +99,18 @@
     "verifiedSelectedMain2026": "Tempora/Quad2-5",
     "verifiedSelectedMain2027": "Tempora/Quad3-6",
     "selectedPrincipalReplaced": false,
-    "correctDisplayAtCurrentPRHead": "PENDING_LIVE_RETEST",
+    "correctDisplayAtCurrentPRHead": "VERIFIED_IN_MERGED_PR_1788_AND_GITHUB_PAGES_DEPLOYMENT",
     "translatedPrayersAdded": 0
+  },
+  "releaseStatusUpdate": {
+    "recordedAt": "2026-10-28",
+    "pr": 1795,
+    "scope": "C6b_C7b_ONLY",
+    "status": "DRAFT_PR_SOURCE_PARITY",
+    "priorCompleted": "PR_1788_MERGED",
+    "sourceUrls": [
+      "https://icrspfrance.fr/textes-liturgiques.php?article=a0337_ancien",
+      "https://icrspfrance.fr/textes-liturgiques.php?article=a0342_ancien"
+    ]
   }
 }
