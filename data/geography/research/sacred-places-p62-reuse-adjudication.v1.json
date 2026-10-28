@@ -1,0 +1,493 @@
+{
+  "schema": "AO_SACRED_PLACES_P62_P60_ADDITIONAL_REUSE_ADJUDICATION_V1",
+  "as_of": "2026-10-29",
+  "status": "RESEARCH_RECONCILIATION_NO_CANONICAL_MUTATION",
+  "input": {
+    "p60_pr": 1892,
+    "p60_additional_reuse_proposals": 34,
+    "already_accounted_p59": 8,
+    "reviewed_now": 26
+  },
+  "baseline": {
+    "canonical_places": 516,
+    "typed_sources": 818,
+    "approved_place_media": 31
+  },
+  "dispositions": {
+    "REUSE_EXISTING_PLACE_SITE_SCOPE": 19,
+    "REJECT_WRONG_BUILDING": 1,
+    "HOLD_MULTI_BUILDING_SCOPE": 1,
+    "NESTED_SUBJECT_NOT_SEPARATE_PLACE": 3,
+    "ALIAS_ONLY_NO_NEW_EVIDENCE": 2
+  },
+  "records": [
+    {
+      "candidate_id": "SG-INV-0026",
+      "candidate_name": "Sanctuaire Sainte Bernadette Soubirous — Nevers (former Convent of Saint-Gildard)",
+      "claimed_canonical_place_id": "place:FR:espace-bernadette-nevers",
+      "existing_place_name": "Sanctuaire Sainte Bernadette Soubirous — Nevers",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Former Saint-Gildard convent and Bernadette sanctuary belong to the same Nevers site; do not claim an individually verified convent footprint from P60 Plus Code.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/france/58577"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0031",
+      "candidate_name": "Sanctuaire des Grottes de Saint-Antoine, Brive",
+      "claimed_canonical_place_id": "place:FR:grottes-saint-antoine-brive",
+      "existing_place_name": "Sanctuaire des Grottes de Saint-Antoine, Brive",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Same named Franciscan grotto sanctuary in Brive; reuse established site scope only, not a specific grotto polygon.",
+      "candidate_source_urls": [
+        "https://www.brive-tourisme.com"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0042",
+      "candidate_name": "Cathedral of Notre-Dame de Strasbourg",
+      "claimed_canonical_place_id": "place:FR:p42-sg-inv-0042",
+      "existing_place_name": "Cathédrale Notre-Dame de Strasbourg",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Same cathedral in Strasbourg; keep existing relation-level geometry rather than transplanting the P60 decoded Plus Code.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/france/1849",
+        "http://www.cathedrale-strasbourg.fr"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0043",
+      "candidate_name": "Abbey of Solesmes",
+      "claimed_canonical_place_id": "place:FR:abbatiale-saint-pierre-solesmes",
+      "existing_place_name": "Église abbatiale Saint-Pierre de Solesmes",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "The Abbey of Solesmes includes the mapped abbatial church; retain the church Place, not a new abbey-campus footprint.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/france/6080",
+        "http://www.solesmes.com"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0049",
+      "candidate_name": "Archbasilica of Saint John Lateran, Rome",
+      "claimed_canonical_place_id": "place:IT:scala-santa-rome",
+      "existing_place_name": "Pontificio Santuario della Scala Santa e Sancta Sanctorum",
+      "decision": "REJECT_WRONG_BUILDING",
+      "notes": "REJECT: Basilica of St John Lateran and Scala Santa are adjacent, different buildings; the P60 proposed canonical owner is false.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/urbis/0001",
+        "https://www.basilicasangiovanni.va/it.html",
+        "https://whc.unesco.org/en/list/91/"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0078",
+      "candidate_name": "Basilica of Saint Mary of the Angels, Assisi",
+      "claimed_canonical_place_id": "place:IT:basilica-santa-maria-degli-angeli-assisi",
+      "existing_place_name": "Basilica Papale di Santa Maria degli Angeli in Porziuncola",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Same papal basilica in Santa Maria degli Angeli/Assisi; the Porziuncola chapel inside is a separately describable component, not a second basilica Place.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/italy/0007",
+        "https://www.porziuncola.org/",
+        "https://whc.unesco.org/en/list/990/"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0087",
+      "candidate_name": "Basilica of Saint Catherine, Siena",
+      "claimed_canonical_place_id": "place:IT:basilica-san-domenico-siena",
+      "existing_place_name": "Basilica Cateriniana di San Domenico",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Basilica of Saint Catherine is the alternate devotional designation of the mapped Basilica Cateriniana di San Domenico in Siena.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/italy/0438"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0088",
+      "candidate_name": "Basilica of Saint Andrew, Amalfi",
+      "claimed_canonical_place_id": "place:IT:amalfi-sant-andrea",
+      "existing_place_name": "Duomo Sant'Andrea, Amalfi",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Amalfi's Sant'Andrea cathedral/basilica is one mapped church; retain canonical cathedral identity.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/italy/1639",
+        "https://www.italia.it/it/campania/salerno/amalfi/duomo-di-sant-andrea"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0091",
+      "candidate_name": "Sanctuary of Saint Gabriel of Our Lady of Sorrows, Isola del Gran Sasso",
+      "claimed_canonical_place_id": "place:IT:p43-sg-0091-11888423",
+      "existing_place_name": "Nuovo Santuario di San Gabriele dell'Addolorata",
+      "decision": "HOLD_MULTI_BUILDING_SCOPE",
+      "notes": "HOLD: official Italian cultural authority says the St Gabriel sanctuary comprises two basilicas; the generic sanctuary label cannot be assigned to the existing Nuovo Santuario building without scope-specific evidence.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/italy/0490",
+        "https://sangabriele.org/wp-content/uploads/2025/01/Guida-Sant2.pdf"
+      ],
+      "review_source_urls": [
+        "https://cultura.gov.it/luogo/santuario-di-san-gabriele-dell-addolorata"
+      ],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0094",
+      "candidate_name": "Sanctuary of Saint Joseph of Cupertino, Osimo",
+      "claimed_canonical_place_id": "place:IT:p43-sg-0094-144658381",
+      "existing_place_name": "Basilica Santuario di San Giuseppe da Copertino",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Same San Giuseppe da Copertino basilica-shrine, Osimo; retain existing OSM way and provenance.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/italia/51508"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0100",
+      "candidate_name": "Cathedral of Florence (Santa Maria del Fiore)",
+      "claimed_canonical_place_id": "place:IT:cattedrale-santa-maria-del-fiore-firenze",
+      "existing_place_name": "Cattedrale di Santa Maria del Fiore, Firenze",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Same Santa Maria del Fiore cathedral in Florence; keep existing building way.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/italy/0068",
+        "https://www.duomofirenze.it/"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0101",
+      "candidate_name": "Cathedral of Siena",
+      "claimed_canonical_place_id": "place:IT:duomo-siena",
+      "existing_place_name": "Cattedrale Metropolitana di Santa Maria Assunta, Siena",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Same Metropolitan Cathedral of Siena; keep the mapped cathedral, not inferred adjacent monuments.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/italy/1687",
+        "https://operaduomo.siena.it/en/"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0122",
+      "candidate_name": "Convento de la Anunciación (Carmelitas Descalzas), Alba de Tormes",
+      "claimed_canonical_place_id": "place:ES:carmel-alba-tormes",
+      "existing_place_name": "Monasterio de la Anunciación — Carmelitas Descalzas",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Convento/Monasterio de la Anunciación at Alba de Tormes is the mapped Carmel; the P60 GCatholic reference to a Santa Teresa basilica must not be used as direct proof of the convent building.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/spain/0175"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0127",
+      "candidate_name": "Basilica of Saint Isidore, León",
+      "claimed_canonical_place_id": "place:ES:basilica-san-isidoro-leon",
+      "existing_place_name": "Real Basílica Colegiata de San Isidoro, León",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Same Royal Collegiate Basilica of San Isidoro in León.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/spain/0595"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0136",
+      "candidate_name": "Cathedral of Toledo",
+      "claimed_canonical_place_id": "place:ES:p42-sg-inv-0136",
+      "existing_place_name": "Catedral Primada de Santa María de Toledo",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Same Primatial Cathedral of Toledo; P60's Plus Code does not supersede existing relation geometry.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/spain/1953"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0137",
+      "candidate_name": "Burgos Cathedral",
+      "claimed_canonical_place_id": "place:ES:catedral-santa-maria-burgos",
+      "existing_place_name": "Catedral de Santa María de Burgos",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Same cathedral of Burgos; no duplicate footprint.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/spain/1782"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0138",
+      "candidate_name": "Seville Cathedral",
+      "claimed_canonical_place_id": "place:ES:p42-sg-inv-0138",
+      "existing_place_name": "Catedral de Santa María de la Sede de Sevilla",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Same cathedral of Seville; no duplicate footprint.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/spain/1751"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0391",
+      "candidate_name": "Shrine of Saint Katharine Drexel (Cathedral Basilica of Saints Peter and Paul), Philadelphia",
+      "claimed_canonical_place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+      "existing_place_name": "Cathedral Basilica of Saints Peter and Paul, Philadelphia",
+      "decision": "NESTED_SUBJECT_NOT_SEPARATE_PLACE",
+      "notes": "The tomb and shrine of St Katharine Drexel are physically inside Philadelphia's Cathedral Basilica; they are subjects within the Place, not a second Place or a different cathedral.",
+      "candidate_source_urls": [
+        "https://cathedralphila.org/drexel/about",
+        "https://gcatholic.org/churches/northamerica/1082"
+      ],
+      "review_source_urls": [
+        "https://cathedralphila.org/drexel/about/history/"
+      ],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0402",
+      "candidate_name": "Monastery and Shrine of the Sacred Heart, Hales Corners",
+      "claimed_canonical_place_id": "place:US:sacred-heart-shrine-hales-corners",
+      "existing_place_name": "Sacred Heart Shrine, Hales Corners",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Same named Sacred Heart shrine/monastery campus at Hales Corners; do not assert a separately surveyed chapel footprint.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/usa-07/152268"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0407",
+      "candidate_name": "San Carlos Borromeo de Carmelo Mission, Carmel",
+      "claimed_canonical_place_id": "place:US:carmel-mission-basilica-serra",
+      "existing_place_name": "Carmel Mission Basilica — Saint Junípero Serra",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "San Carlos Borromeo de Carmelo, Carmel Mission and Serra basilica refer to the same mission church; avoid duplicating ancillary mission buildings.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/northamerica/0844"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0456",
+      "candidate_name": "Ermita de Guadalupe, Matagalpa",
+      "claimed_canonical_place_id": "place:NI:ermita-guadalupe-matagalpa",
+      "existing_place_name": "Ermita de Guadalupe, Matagalpa",
+      "decision": "ALIAS_ONLY_NO_NEW_EVIDENCE",
+      "notes": "Alias/identity match to canonical Matagalpa Ermita de Guadalupe, but P60 only cites its own canonical registry; retain existing ID without upgrading coordinates, sources or publication confidence.",
+      "candidate_source_urls": [],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0521",
+      "candidate_name": "Shrine of Our Lady of Mercy, Lima",
+      "claimed_canonical_place_id": "place:PE:basilica-nuestra-senora-merced-lima",
+      "existing_place_name": "Basílica Menor de Nuestra Señora de la Merced, Lima",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Shrine of Our Lady of Mercy refers to the existing La Merced basilica in Lima; no new church point.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/southamerica/0425"
+      ],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0530",
+      "candidate_name": "Oratorio Nuestra Señora de la Asunción y Panteón Nacional de los Héroes",
+      "claimed_canonical_place_id": "place:PY:oratorio-nuestra-senora-asuncion-panteon",
+      "existing_place_name": "Oratorio Nuestra Señora de la Asunción y Panteón Nacional de los Héroes",
+      "decision": "REUSE_EXISTING_PLACE_SITE_SCOPE",
+      "notes": "Archdiocese and Paraguayan National Culture Secretariat confirm that Oratorio Nuestra Señora de la Asunción and Panteón Nacional de los Héroes name the same Palma/Chile building; do not confuse with the Metropolitan Cathedral.",
+      "candidate_source_urls": [
+        "https://gcatholic.org/churches/data/all-PY"
+      ],
+      "review_source_urls": [
+        "https://arzobispado.org.py/la-arquidiocesis/parroquias/decanato-1/",
+        "https://cultura.gov.py/2018/08/cultura-declara-patrimonio-cultural-nacional-al-panteon-nacional-de-los-heroes/"
+      ],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0594",
+      "candidate_name": "Shrine of Saint Francis Xavier, Goa",
+      "claimed_canonical_place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "existing_place_name": "Basilica of Bom Jesus, Old Goa",
+      "decision": "NESTED_SUBJECT_NOT_SEPARATE_PLACE",
+      "notes": "St Francis Xavier's relic shrine is housed normally in the Basilica of Bom Jesus, Old Goa; the temporary 2024–25 exposition at Sé Cathedral must not change its permanent Place owner.",
+      "candidate_source_urls": [
+        "https://vaticannews.va/en/church/news/2024-11/18th-exposition-of-st-francis-xavier-s-sacred-relics-goa-india.html",
+        "https://gcatholic.org/churches/asia/0612"
+      ],
+      "review_source_urls": [
+        "https://www.vaticannews.va/en/church/news/2024-11/18th-exposition-of-st-francis-xavier-s-sacred-relics-goa-india.html"
+      ],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0734",
+      "candidate_name": "Tomb of Blessed Jacques-Désiré Laval, Sainte-Croix",
+      "claimed_canonical_place_id": "place:MU:pere-laval-sainte-croix",
+      "existing_place_name": "Centre Père Laval",
+      "decision": "NESTED_SUBJECT_NOT_SEPARATE_PLACE",
+      "notes": "The tomb of Blessed Père Laval belongs in the existing Centre Père Laval site at Sainte-Croix; do not duplicate it as a separate church pin.",
+      "candidate_source_urls": [
+        "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/"
+      ],
+      "review_source_urls": [
+        "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/"
+      ],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    },
+    {
+      "candidate_id": "SG-INV-0735",
+      "candidate_name": "Ilot de la sainte vierge (Our Lady of Itasy), Ampefy",
+      "claimed_canonical_place_id": "place:MG:ilot-de-la-vierge-ampefy",
+      "existing_place_name": "Ilot de la sainte vierge, Ampefy",
+      "decision": "ALIAS_ONLY_NO_NEW_EVIDENCE",
+      "notes": "Name and coordinates align with existing Îlot de la Vierge at Ampefy, but P60 adds inference only; retain canonical identity without asserting newly verified geometry or Catholic status.",
+      "candidate_source_urls": [],
+      "review_source_urls": [],
+      "retain_existing_place_id": true,
+      "replace_existing_geometry": false,
+      "publish_new_place": false,
+      "add_tlm_association": false,
+      "link_subject_as_separate_map_pin": false
+    }
+  ],
+  "global_rules": [
+    "Keep frozen existing physical Place IDs and geometry",
+    "A sanctuary campus and its component shrine/tomb/artwork are not separate canonical Place pins by default",
+    "Reject same-place joins based solely on radius, title similarity or Plus Codes",
+    "An existing canonical place is not recertified by this research reconciliation",
+    "No publishing new Place records, photos, TLM schedules or canonical crosswalk changes from this audit"
+  ]
+}
