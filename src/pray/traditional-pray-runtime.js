@@ -1,6 +1,7 @@
 import "./traditional-pray-styles.js";
 import {ICKSP_MARIAN_PROTECTION_V1} from "./icksp-marian-protection.v1.js";
 import {ICKSP_PRIEST_PRAYERS_V1} from "./icksp-prayers-for-priests.v1.js";
+import {ICKSP_THERESE_DEVOTIONS_V1} from "./icksp-therese-devotions.v1.js";
 import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "./dying-companion-flow.js";
 import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabel} from "./guided-daily-cards.js";
@@ -36,6 +37,7 @@ const ROUTES=Object.freeze({
   "pray.sacred_hymns":Object.freeze({id:"pray.sacred_hymns",type:"module",domain:"pray",category:"traditional-devotion",title:"Sacred Hymns & Canticles"}),
   "pray.marian_protection":Object.freeze({id:"pray.marian_protection",type:"module",domain:"pray",category:"traditional-devotion",title:"Marian Protection Prayer"}),
   "pray.prayers_for_priests":Object.freeze({id:"pray.prayers_for_priests",type:"module",domain:"pray",category:"traditional-devotion",title:"Prayers for Priests"}),
+  "pray.st_therese_devotions":Object.freeze({id:"pray.st_therese_devotions",type:"module",domain:"pray",category:"traditional-devotion",title:"St Thérèse · Institute Devotions"}),
   "pray.holy_name_litany":Object.freeze({id:"pray.holy_name_litany",type:"module",domain:"pray",category:"traditional-devotion",title:"Litany of the Holy Name"}),
   "pray.nightly_examen":Object.freeze({id:"pray.nightly_examen",type:"module",domain:"pray",category:"daily-prayer",title:"Nightly Examination"}),
   "pray.meal_prayers":Object.freeze({id:"pray.meal_prayers",type:"module",domain:"pray",category:"daily-prayer",title:"Grace at Meals"}),
@@ -303,6 +305,25 @@ function renderHymns(){
   return `${head(L("Sacred Hymns & Canticles","Hymnes & cantiques sacrés"))}<main class="aoP435930Body aoTP381DonorBody">${card}${options}</main>`;
 }
 
+function renderThereseDevotions(){
+ const a=ICKSP_THERESE_DEVOTIONS_V1;
+ const t=a.prayerFromNovena;
+ const original=sourcedPrayerCard(t,L(t.title,t.titleFr),{focusParagraphs:true});
+ const notice=isFr()?t.sourceNote.fr:t.sourceNote.en;
+ // The Institute's perpetual Tuesday novena and missionary intercession must
+ // retain their literal institutional intent. Link original bodies directly,
+ // rather than silently stripping Society or Institute missionary references.
+ const institute=L("Perpetual Tuesday novena · official text","Neuvaine perpétuelle du mardi · texte officiel");
+ const missions=L("Prayer for missionaries · Institute wording","Prière pour les missionnaires · texte de l’Institut");
+ const sourceLink=(label,url)=>`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`;
+ return `${head(L("St Thérèse · Institute Devotions","Sainte Thérèse · Dévotions de l’Institut"),L("Three distinct historical and institutional selections","Trois textes distincts, historiques et propres à l’Institut"))}<main class="aoP435930Body aoTP381DonorBody">
+ <section class="aoTP381SecondaryOptions"><h2>${esc(institute)}</h2><p>${esc(L("The Institute prays this perpetual novena each Tuesday. The original text explicitly names the Little Flower Recurring Gift Society; these intentions belong to the Institute's prayer and are not a condition for personal participation.","L’Institut prie cette neuvaine perpétuelle chaque mardi. Le texte original nomme expressément la Little Flower Recurring Gift Society : ces intentions propres à l’Institut ne sont pas une condition pour prier."))}</p>${sourceLink(L("Read the Institute's complete perpetual novena","Lire la neuvaine complète de l’Institut"),a.perennialInstituteNovena.source_url)}<p>${esc(L("This Tuesday observance is distinct from Ad Orientem's existing Twenty-Four Glory Bes novena.","Cette dévotion du mardi est distincte de la neuvaine déjà disponible des vingt-quatre Gloria Patri."))}</p></section>
+ <section class="aoTP381SecondaryOptions"><h2>${esc(missions)}</h2><p>${esc(L("The historical Raccolta prayer and the Institute's edition have different explicit missionary intentions. Both are relevant; the Institute-specific wording is preserved at its source.","La prière historique du Raccolta et la forme de l’Institut ont des intentions missionnaires explicites différentes. La forme propre à l’Institut est conservée à la source."))}</p>${sourceLink(L("Read the Institute's missionary prayer","Lire la prière missionnaire de l’Institut"),a.missionaryIntercession.source_url)}${source("Raccolta no. 573 · historical-form evidence",a.missionaryIntercession.historicalLead)}</section>
+ <section class="aoDevoCard" data-ao-devo-card="therese-1925"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L(t.title,t.titleFr))}">${original}</div></section>
+ <p class="aoTP381Intro">${esc(L("Historical conclusion: say the Hail, Holy Queen (Salve Regina). The 1925 printed source places it after the prayer; it is not part of the preceding paragraph.","Conclusion indiquée par l’édition de 1925 : réciter le Salve Regina. Cette antienne suit la prière et ne fait pas partie de son paragraphe final."))}</p>
+ <details class="aoTP381SecondaryOptions"><summary>${esc(L("Historical editions and attribution","Éditions historiques et attribution"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(notice)}</p>${source("Garesche · A Novena to the Little Flower · 1925 · pp. 38–39",t.source_url)}${source("ICKSP · a related prayer attributed to Benedict XV",t.instituteSourceUrl)}</div></details>
+ </main>`;
+}
 function renderPrayersForPriests(){
   const prayer=ICKSP_PRIEST_PRAYERS_V1.eternalPriest;
   const held=ICKSP_PRIEST_PRAYERS_V1.sacredHeartHighPriest;
@@ -582,6 +603,7 @@ function glossaryTermsForState(){
   if(S.route==="pray.sacred_hymns")return ["G326","G321"];
   if(S.route==="pray.marian_protection")return ["G326","G324"];
   if(S.route==="pray.prayers_for_priests")return ["G326","G331"];
+  if(S.route==="pray.st_therese_devotions")return ["G326","G324"];
   if(S.route==="pray.holy_name_litany")return ["G096","G154","G326"];
   if(S.route==="pray.nightly_examen")return ["G328","G019","G011","G012"];
   if(S.route==="pray.meal_prayers")return ["G326","G237"];
@@ -596,7 +618,7 @@ function injectGlossaryAction(){
   const button=document.createElement("button");
   button.type="button";button.className="aoTP381Glossary";button.dataset.tp381Glossary="true";
   button.textContent=L("Terms & explanations","Termes & explications");
-  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen","pray.meal_prayers","pray.holy_name_litany","pray.sacred_heart","pray.communion_treasury","pray.sacred_hymns","pray.marian_protection","pray.prayers_for_priests","pray.good_death","pray.dying_companion"].includes(S.route))body.append(button);
+  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen","pray.meal_prayers","pray.holy_name_litany","pray.sacred_heart","pray.communion_treasury","pray.sacred_hymns","pray.marian_protection","pray.prayers_for_priests","pray.st_therese_devotions","pray.good_death","pray.dying_companion"].includes(S.route))body.append(button);
   else body.insertAdjacentElement("afterbegin",button);
   return true;
 }
@@ -606,7 +628,7 @@ function render(){
   // A route change or Full Text mode must not inherit another reader’s stage owner.
   delete m.dataset.aoTraditionalDualAxis;
   m.dataset.aoTraditionalPrayRoute=S.route;
-  m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="mass.prepare"||S.route==="mass.thanksgiving"?renderMassFolioPrayers():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.marian_protection"?renderMarianProtection():S.route==="pray.prayers_for_priests"?renderPrayersForPriests():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
+  m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="mass.prepare"||S.route==="mass.thanksgiving"?renderMassFolioPrayers():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.marian_protection"?renderMarianProtection():S.route==="pray.prayers_for_priests"?renderPrayersForPriests():S.route==="pray.st_therese_devotions"?renderThereseDevotions():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
   if(S.screen==="module"&&S.route==="pray.morning_evening")syncDailyTimerView();
   if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen"].includes(S.route)){
     const daily=S.route==="pray.morning_evening";
@@ -950,6 +972,7 @@ function mountRuntime(){
     hymns:SACRED_HYMNS_V381,
     marianProtection:ICKSP_MARIAN_PROTECTION_V1,
     prayersForPriests:ICKSP_PRIEST_PRAYERS_V1,
+    thereseDevotions:ICKSP_THERESE_DEVOTIONS_V1,
     open,
     close:BASE_CLOSE,
     state:()=>({...S}),
