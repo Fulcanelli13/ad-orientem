@@ -36,7 +36,7 @@ function historicalLanguage(lang) {
  const old=lines.join("\n");
  const oldInvocations=lines.filter(line=>lang==="la"?line.includes(", ora pro nobis."):(lang==="en"?line.endsWith(", pray for us."):line.endsWith(", priez pour nous.")));
  const expanded=all.filter(line=>lang==="la"?line.includes(", ora pro nobis."):(lang==="en"?line.endsWith(", pray for us."):line.endsWith(", priez pour nous.")));
- if(oldInvocations.length!==25||expanded.length!==32)
+ if(oldInvocations.length!==26||expanded.length!==33)
    throw Error("St Joseph litany invocation count mismatch (including Holy Mary): "+lang+" "+oldInvocations.length+"/"+expanded.length);
  if(!old.includes(lang==="la"?"Oremus.":lang==="fr"?"℣. Il l'a établi":"Let us pray."))
    throw Error("St Joseph prayer conclusion missing: "+lang);
@@ -55,7 +55,7 @@ export const JOSEPH_LITANY_1909_V1=Object.freeze({
   english1910:"https://traditionalrosary.org/litanies/litany-of-saint-joseph/",
   frenchTraditional:"https://laportelatine.org/spiritualite/prieres-et-devotions/litanies/litanies-de-saint-joseph"
  }),
- collation:"24 Saint Joseph invocations + Holy Mary; three-language pre-2021 sequence cross-checked against independent witnesses; existing unchanged concluding collects remain full; lexical wording en/fr still derives from the 2021 canonical translation where historical equivalents differ."
+ collation:"25 Saint Joseph invocations + Holy Mary; three-language pre-2021 sequence cross-checked against independent witnesses; existing unchanged concluding collects remain full; lexical wording en/fr still derives from the 2021 canonical translation where historical equivalents differ."
 });
 export const JOSEPH_LITANY_2021_V1=Object.freeze({
  id:BASE.id,title:BASE.title,titleFr:BASE.titleFr,la:BASE.la,en:BASE.en,fr:BASE.fr,
