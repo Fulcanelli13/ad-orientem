@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   verify-real-existing-readers:
@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          persist-credentials: true
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -36,6 +36,29 @@ jobs:
           node --check src/pray/presentation-runtime.js
           node --check tests/pray-wave1-angelus-rosary-art-proof.mjs
           node tests/pray-wave1-angelus-rosary-art-proof.mjs
+      - name: Permanently archive the twelve device screenshots and SHA-256 hashes
+        if: success()
+        run: |
+          mkdir -p assets/staged/prayer-wave1-angelus-rosary-device-qa-20261028
+          for which in angelus rosary; do
+            for state in collapsed expanded; do
+              for width in 320 390 1440; do
+                cp "artifacts/prayer-wave1-angelus-rosary-proof/${which}-${state}-${width}.png" "assets/staged/prayer-wave1-angelus-rosary-device-qa-20261028/${which}-${state}-${width}.png"
+              done
+            done
+          done
+          (
+            cd assets/staged/prayer-wave1-angelus-rosary-device-qa-20261028
+            sha256sum *.png > SCREENSHOT-SHA256.txt
+          )
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/staged/prayer-wave1-angelus-rosary-device-qa-20261028
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(pray art): archive Angelus and Rosary real device screenshots"
+          git pull --rebase origin feature/prayer-wave1-angelus-rosary-proof-20261028
+          git push origin HEAD:feature/prayer-wave1-angelus-rosary-proof-20261028
       - name: Review-only screenshots (secondary copy)
         if: always()
         uses: actions/upload-artifact@v4
