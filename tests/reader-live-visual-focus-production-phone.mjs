@@ -27,7 +27,8 @@ let browser;
 const frame=()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
 try{
  browser=await chromium.launch({headless:true});
- const viewports=[{width:390,height:844,isMobile:true,lang:"en"},
+ const viewports=[{width:320,height:720,isMobile:true,lang:"en"},
+  {width:390,height:844,isMobile:true,lang:"en"},
   {width:390,height:844,isMobile:true,lang:"fr"},
   {width:1280,height:800,isMobile:false,lang:"en"}];
  for(const spec of viewports){
@@ -90,6 +91,9 @@ try{
       previousOpacities:rows.filter(x=>x.dataset.readingPosition==="previous")
         .map(x=>Number(getComputedStyle(x).opacity)),
       unclassified:rows.filter(x=>!["current","next","previous","distant"].includes(x.dataset.readingPosition)).length,
+      ceremonialButUnlit:rows.filter(x=>x.dataset.active==="true"&&x.dataset.readingActive!=="true")
+        .map(x=>({id:x.dataset.cueId,opacity:Number(getComputedStyle(x).opacity)})),
+      positionTransforms:rows.map(x=>getComputedStyle(x).transform).filter(x=>x!=="none"),
       focusMarker:root.dataset.r17NativeCue,
       visualFocus:scroll.querySelector("[data-role='paragraphs']")?.dataset.aoVisualFocus||null,
       physicalOverflow:document.documentElement.scrollWidth-innerWidth};
@@ -111,6 +115,10 @@ try{
    assert.ok(data.nextOpacities.length+data.previousOpacities.length>=1,
       spec.lang+"/"+card.title+" missing adjacent reading paragraph");
    assert.ok(data.physicalOverflow<=2,spec.lang+"/"+card.title+" document horizontal overflow");
+   assert.deepEqual(data.positionTransforms,[],
+     spec.lang+"/"+card.title+" reading highlight must not physically move the prayer rows");
+   assert.ok(data.ceremonialButUnlit.every(x=>x.opacity<=.72),
+     spec.lang+"/"+card.title+" source-ceremonial cue overrode visual reading opacity");
    return data;
   };
   for(const card of cards.slice(0,3)){
@@ -125,7 +133,7 @@ try{
   // Source cue/ribbon state is explicitly not the oracle for visual focus.
   const readingAudit=[];
   const structuralAudit={sectionBreaks:0,invitationRows:0,invitationCueIds:[]};
-  if(spec.isMobile&&spec.lang==="en"){
+  if(spec.isMobile&&spec.lang==="en"&&spec.width===390){
     for(const item of initial.named){
       const present=await page.evaluate(async sequence=>{
         const card=window.__AO_PHONE_PREVIEW?.showSequence(sequence);
