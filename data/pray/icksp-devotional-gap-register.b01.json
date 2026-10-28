@@ -464,7 +464,7 @@
       "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
       "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
       "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
-      "app_coverage_label": "Complete Latin Office hymn available in Sacred Hymns draft",
+      "app_coverage_label": "Complete Latin hymn and Guéranger 1904 French version available in draft, English pending",
       "app_match_refs": [],
       "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
       "review_group": "SEASONAL_OFFICE_HYMN",
@@ -479,9 +479,17 @@
         ]
       },
       "office_role": "Passiontide Vespers",
-      "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
-      "english_translation_status": "HISTORICAL_EDITION_REQUIRED",
-      "liturgical_rubric": "Kneel during O Crux ave stanza according to ICRSP witness"
+      "french_translation_status": "GUERANGER_1904_FRENCH_IMPLEMENTED_IN_DRAFT",
+      "english_translation_status": "HISTORICAL_ENGLISH_EDITION_REQUIRED",
+      "liturgical_rubric": "Kneel during O Crux ave stanza according to ICRSP witness",
+      "historical_french_translation": {
+        "work": "Dom Prosper Guéranger, L’Année liturgique, La Passion et la Semaine Sainte, 19e édition (1904)",
+        "editionYear": 1904,
+        "section": "Prière du soir / Office de Vêpres · Vexilla Regis",
+        "url": "https://www.domgueranger.net/lannee-liturgique-passion-et-semaine-sainte-historique-mystique-pratique-et-prieres/",
+        "witnessStatus": "TRANSCRIPTION_OF_1904_EDITION_NOT_YET_PHYSICAL_PAGE_COLLATED",
+        "sourceComparison": "The historical Guéranger prose is distinct from the ICRSP contemporary French rendering; published original 1904 page images not yet checked"
+      }
     },
     {
       "id": "icrsp_fr_audi_benigne_conditor",
@@ -840,10 +848,10 @@
     "production_hymn_releases": 0,
     "full_historical_english_hymns_in_draft": 2,
     "other_english_hymns_unverified": 6,
-    "historical_french_seasonal_hymns_in_draft": 1,
+    "historical_french_seasonal_hymns_in_draft": 2,
     "caswall_1849_pages_collated": 4,
     "release_status": "DRAFT_BRANCH_ONLY_ACTIONS_GATES_REQUIRED",
-    "other_french_hymns_unverified": 7
+    "other_french_hymns_unverified": 6
   },
   "reconciliation_pass3": {
     "date": "2026-10-28",

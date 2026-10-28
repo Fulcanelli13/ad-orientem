@@ -33,13 +33,23 @@ for(const id of ids){
     assert.match(h.englishSource.url,/wikimedia\.org/);
     assert.match(h.languageStatus,/CASWALL_1849_ENGLISH/);
   }else assert.equal(h.en,undefined,"Do not invent a modern English edition: "+id);
+  if(["audi_benigne","vexilla_regis"].includes(id)){
+    assert.equal(h.fr.split(/\n\s*\n/).length,id==="vexilla_regis"?7:5);
+    assert.match(h.frenchSource.work,/Guéranger/);
+    assert.match(h.frenchSource.witnessStatus,/NOT_YET_PHYSICAL_PAGE_COLLATED/);
+    if(id==="vexilla_regis"){
+      assert.equal(h.frenchSource.editionYear,1904);
+      assert.match(h.fr,/Salut, ô Croix, notre unique espérance/);
+      assert.match(h.languageStatus,/GUERANGER_1904_FRENCH/);
+    }
+  }
   if(id==="audi_benigne"){
     assert.equal(h.fr.split(/\n\s*\n/).length,5);
     assert.match(h.fr,/Créateur plein de bonté/);
     assert.match(h.frenchSource.work,/Guéranger.*1903/);
     assert.match(h.frenchSource.witnessStatus,/NOT_YET_PHYSICAL_PAGE_COLLATED/);
     assert.equal(h.languageStatus,"HISTORIC_LATIN_CASWALL_1849_ENGLISH_GUERANGER_1903_FRENCH");
-  }else assert.equal(h.fr,undefined,"Other historical French translations remain unverified: "+id);
+  }else if(id!=="vexilla_regis")assert.equal(h.fr,undefined,"Other historical French translations remain unverified: "+id);
   if(!h.en)assert.equal(h.languageStatus,"HISTORIC_LATIN_ONLY_EN_FR_SOURCE_REQUIRED");
   assert.ok(!Object.keys(SACRED_HYMNS_V381).includes(id),"Original title collision "+id);
 }

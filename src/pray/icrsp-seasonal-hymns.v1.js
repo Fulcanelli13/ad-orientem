@@ -51,7 +51,19 @@ Quibus Crucis victóriam
 Largíris, adde prǽmium.
 Amen.`,
 "https://icrspfrance.fr/textes-liturgiques.php?article=a0901_ancien",
-{subtitleFr:"Vêpres du Temps de la Passion",rubric:"Kneel for O Crux, ave in the source rubric.",rubricFr:"La strophe « O Crux, ave » se dit à genoux selon la rubrique donnée."}),
+{subtitleFr:"Vêpres du Temps de la Passion",rubric:"Kneel for O Crux, ave in the source rubric.",rubricFr:"La strophe « O Crux, ave » se dit à genoux selon la rubrique donnée.",fr:`L’étendard du Roi s’avance; voici briller le mystère de la Croix, sur laquelle Celui qui est la Vie a souffert la mort, et par cette mort nous a donne la vie.
+
+C’est là que, transpercé du fer cruel d’une lance, son côté épancha l’eau et le sang, pour laver la souillure de nos crimes.
+
+Il s’est accompli, l’oracle de David qui, dans ses vers inspirés, avait dit aux nations : « Dieu régnera par le bois. »
+
+Tu es beau, tu es éclatant, arbre paré de la pourpre du Roi; noble tronc appelé à l’honneur de toucher des membres si sacrés.
+
+Heureux es-tu d’avoir porté, suspendu à tes bras, celui qui fut le prix du monde ! Tu es la balance où fut pesé ce corps, notre rançon; tu as enlevé à l’enfer sa proie.
+
+Salut, ô Croix, notre unique espérance ! En ces jours de la Passion du Sauveur, accrois la grâce dans le juste, efface le crime du pécheur.
+
+Que toute âme vous glorifie, ô Trinité, principe de notre salut ; vous nous donnez la victoire par la Croix : daignez y ajouter la récompense. Amen.`,frenchSource:{"work":"Dom Prosper Guéranger, L’Année liturgique, La Passion et la Semaine Sainte, 19e édition (1904)","editionYear":1904,"section":"Prière du soir / Office de Vêpres · Vexilla Regis","url":"https://www.domgueranger.net/lannee-liturgique-passion-et-semaine-sainte-historique-mystique-pratique-et-prieres/","witnessStatus":"TRANSCRIPTION_OF_1904_EDITION_NOT_YET_PHYSICAL_PAGE_COLLATED"},languageStatus:"HISTORIC_LATIN_GUERANGER_1904_FRENCH_ENGLISH_PENDING"}),
   audi_benigne:h("audi_benigne","Audi, benigne Conditor","Lent","Vespers",
 `Audi, benígne Cónditor,
 Nostras preces cum flétibus,

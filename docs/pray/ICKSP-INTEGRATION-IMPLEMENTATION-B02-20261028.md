@@ -145,3 +145,11 @@ The two hymns now have independently labelled **Latin / English (1849)** choices
 **Branch synchronization:** the PR was merged against current main snapshot in two-parent commit 9cdd63d, retaining existing Morning/Evening Prayer customization. The main branch continues to change while this draft is being tested. Recheck divergence/mergeability and current user-facing daily-prayer changes immediately before any merge.
 
 All integration content remains **draft only**. No production release or historical French claim follows from this source audit.
+
+## B09 — Vexilla Regis historical French and conditional Office context (28 October 2026)
+
+Added the complete seven-paragraph French rendering of *Vexilla Regis* from Dom Prosper Guéranger, *L’Année liturgique — La Passion et la Semaine Sainte*, nineteenth edition (1904), where the source places the hymn in **Passiontide evening prayer / Vespers** alongside the original Latin. Its French text is from a historical transcription, not ICRSP’s contemporary French translation. The original physical 1904 pages still require image collation and the metadata explicitly says so.
+
+Source: https://www.domgueranger.net/lannee-liturgique-passion-et-semaine-sainte-historique-mystique-pratique-et-prieres/ . See the first evening-prayer hymn and the subsequent office exposition. ICRSP places *Vexilla Regis* at Passiontide Vespers: https://icrspfrance.fr/textes-liturgiques.php?article=a0901_ancien . It is **not** imported as a universally scheduled hymn for every Lenten day.
+
+The shared Sacred Hymns renderer now supports a **historical French-only** translation alongside Latin (Vexilla) just as it supports historical English-only or all three witnesses (Audi), with the correct edition year in the language selector. Original three source-locked hymns and all eight Latin seasonal records remain unchanged. English *Vexilla Regis*, six other French editions and final complete 1962 Office rubrical coverage remain unverified. CI release tests remain mandatory.
