@@ -182,10 +182,16 @@ jobs:
           assert not mass_preview["chantButtonEnabled"]
           souls=json.loads((Path(os.environ["OUTPUT"])/"all-souls"/"normalized-manifest.json").read_text(encoding="utf8"))
           assert souls["count"]==24 and souls["alignmentSamples"]==8 and souls["published"]==0
-          assert souls["structurallyAligned"]==5 and souls["alignmentSamples"]-souls["structurallyAligned"]==3
+          assert souls["structurallyAligned"]==8 and souls["alignmentSamples"]==8
           souls_mass=json.loads((Path(os.environ["OUTPUT"])/"all-souls"/"preview"/"mass"/"preview-manifest.json").read_text(encoding="utf8"))
-          assert souls_mass["pages"]==10 and souls_mass["quarantinedSourceHourCount"]==3
-          assert {x["hour"] for x in souls_mass["quarantinedSourceHours"]}=={"MATINS","LAUDS","VESPERS"}
+          assert souls_mass["pages"]==16 and souls_mass["quarantinedSourceHourCount"]==0
+          # Source-level status markers are explicitly logged, never prayer-card material.
+          expected={"MATINS":{"en":2,"fr":2},"LAUDS":{"en":1,"fr":1},"VESPERS":{"en":1,"fr":1}}
+          for hour,languages in expected.items():
+            for lang,number in languages.items():
+              d=json.loads((Path(os.environ["OUTPUT"])/"all-souls"/"2026-11-02"/hour.lower()/(lang+".research.json")).read_text(encoding="utf8"))
+              assert len(d["omittedSourceCells"])==number,(hour,lang,d["omittedSourceCells"])
+              assert all(x["reason"] in {"UPSTREAM_EXPLICIT_START_OMISSION","UPSTREAM_EXPLICIT_HYMN_OMISSION"} for x in d["omittedSourceCells"])
           assert souls_mass["published"]==0 and not souls_mass["productionRouteRegistered"]
           rubric=json.loads((Path(os.environ["OUTPUT"])/"printed-rubric-audit.json").read_text(encoding="utf8"))
           assert rubric["schema"]=="ao.office.independent-1961-rubric-pilot.v1"
@@ -196,8 +202,8 @@ jobs:
             risk=json.loads((Path(os.environ["OUTPUT"])/folder/"translation-risk.json").read_text(encoding="utf8"))
             assert risk["schema"]=="ao.office.translation-risk-screening.v1"
             assert risk["trilingualHourCount"]==count//2
-            assert risk["structurallyScreenedHourCount"]==count//2-(3 if folder=="all-souls" else 0)
-            assert risk["quarantinedSourceHourCount"]==(3 if folder=="all-souls" else 0)
+            assert risk["structurallyScreenedHourCount"]==count//2
+            assert risk["quarantinedSourceHourCount"]==0
             assert risk["translationCellsScreened"]==risk["alignedLatinCells"]*2
             assert risk["verifiedTranslations"]==0 and risk["published"]==0 and not risk["canPublish"]
           advent_mass=json.loads((Path(os.environ["OUTPUT"])/"advent-vespers"/"preview"/"mass"/"preview-manifest.json").read_text(encoding="utf8"))
