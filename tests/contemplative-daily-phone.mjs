@@ -69,6 +69,24 @@ try{
       // The approved cinematic mood follows the source-owned stage progression.
       const startingLight=await page.locator("#aoPray435930").evaluate(el=>el.style.getPropertyValue("--ao-contemplative-light"));
       assert.ok(startingLight,"Opening morning phase did not reach contemplative horizon");
+      const initialHorizon=await page.locator(target+" .aoQuietHorizon").evaluate(el=>{
+        const b=el.getBoundingClientRect(),canvas=el.querySelector(".aoQuietHorizonCanvas");
+        return {height:b.height,visible:getComputedStyle(el).opacity,
+          canvasHeight:canvas?.getBoundingClientRect().height,
+          phase:el.dataset.aoHorizonPhase};
+      });
+      assert.ok(initialHorizon.height>70&&initialHorizon.canvasHeight>65&&initialHorizon.visible==="1",
+        "Progressive sunrise was visually hidden: "+JSON.stringify(initialHorizon));
+      await page.locator(target+" .aoDevoStop[data-ao-devo-chapter='1']").click();
+      await page.waitForFunction(previous=>
+        document.querySelector("#aoPray435930")?.style.getPropertyValue("--ao-contemplative-light")!==previous,
+        startingLight,{timeout:6000});
+      const secondLight=await page.locator("#aoPray435930").evaluate(el=>el.style.getPropertyValue("--ao-contemplative-light"));
+      assert.notEqual(secondLight,startingLight,"Sky must change on every manually advanced prayer, not only five phase jumps");
+      await page.locator(target+" .aoDevoStop[data-ao-devo-chapter='0']").click();
+      await page.waitForFunction(previous=>
+        document.querySelector("#aoPray435930")?.style.getPropertyValue("--ao-contemplative-light")===previous,
+        startingLight,{timeout:6000});
       await page.locator(target+" .aoDevoStop[data-ao-devo-chapter='9']").click();
       await page.waitForFunction(previous=>{
         const root=document.querySelector("#aoPray435930");
