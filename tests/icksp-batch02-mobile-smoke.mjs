@@ -69,6 +69,50 @@ try{
  await page.locator(".aoBatch02OptionalSources > summary").tap();
  assert.equal(await page.locator(".aoBatch02OptionalSources a").count(),4);
  await page.screenshot({path:resolve(captures,"adoration-treasury-390.png"),animations:"disabled"});
+ // B10: the Four Ends always keep their canonical core prayer and silence.
+ // Reopening Adoration retains the last-used Treasury mode; explicitly
+ // return to the chooser before beginning a different devotional method.
+ await open("pray.adoration");
+ if(await page.locator("[data-p435930-ador-home]").count())
+  await page.locator("[data-p435930-ador-home]").evaluate(el=>el.click());
+ await page.locator(".aoAdorationMethodsDisclosure > summary").evaluate(el=>el.click());
+ await page.locator("[data-p435930-ador-mode='four']").evaluate(el=>el.click());
+ const four="#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode='four']";
+ assert.equal(await page.locator(four).getAttribute("data-ao-adoration-step"),"0");
+ assert.equal(await page.locator(four+" [data-ao-four-purpose='adoration']").count(),1);
+ assert.equal(await page.locator(four+" [data-p435930-four-choice='adoration:adoration_litany_blessed_sacrament']").count(),1);
+ const core=await page.locator(four+" .aoP435930GuidePrayers").first().innerText();
+ const silence=await page.locator(four+" .aoP435930GuideCue").first().innerText();
+ const reader=page.locator(four+" .aoDevoCardScroll");
+ await reader.evaluate(el=>{el.dataset.preservedB10Reader="same"});
+ await page.locator(four+" [data-p435930-four-choice='adoration:adoration_litany_blessed_sacrament']").evaluate(el=>el.click());
+ assert.equal(await page.locator(four+" [data-ao-four-source='adoration_litany_blessed_sacrament']").count(),1);
+ assert.match(await page.locator(four+" [data-ao-four-source]").innerText(),/Lord, have mercy|Seigneur, ayez pitié/);
+ assert.equal(await page.locator(four+" .aoP435930GuidePrayers").first().innerText(),core);
+ assert.equal(await page.locator(four+" .aoP435930GuideCue").first().innerText(),silence);
+ assert.equal(await reader.getAttribute("data-preserved-b10-reader"),"same");
+ assert.equal(await page.locator(four).getAttribute("data-ao-adoration-step"),"0","Prayer choice is not devotional progress");
+ await page.screenshot({path:resolve(captures,"adoration-four-adoration-litany-390.png"),animations:"disabled"});
+ await page.locator(four+" [data-p435930-four-choice='adoration:none']").evaluate(el=>el.click());
+ assert.equal(await page.locator(four+" [data-ao-four-source]").count(),0);
+ assert.equal(await page.locator(four+" .aoP435930GuidePrayers").first().innerText(),core);
+ await page.locator(four+" .aoDevoSequenceTimeline .aoDevoStop").nth(2).evaluate(el=>el.click());
+ assert.equal(await page.locator(four).getAttribute("data-ao-adoration-step"),"2");
+ assert.equal(await page.locator(four+" [data-p435930-four-choice='reparation:sacred_heart_short_prayer']").count(),1);
+ await page.locator(four+" [data-p435930-four-choice='reparation:sacred_heart_short_prayer']").evaluate(el=>el.click());
+ assert.equal(await page.locator(four+" [data-ao-four-source='sacred_heart_short_prayer']").count(),1);
+ assert.equal(await page.locator(four+" .aoP435930GuidePrayers .aoP435930Prayer").count(),1,"Existing Act of Contrition must remain intact");
+ await page.screenshot({path:resolve(captures,"adoration-four-reparation-390.png"),animations:"disabled"});
+ await page.locator(four+" .aoDevoSequenceTimeline .aoDevoStop").nth(3).evaluate(el=>el.click());
+ await page.locator(four+" [data-p435930-four-choice='petition:church_prayer_for_pope']").evaluate(el=>el.click());
+ assert.equal(await page.locator(four+" [data-ao-four-source='church_prayer_for_pope']").count(),1);
+ await page.locator(four+" .aoDevoSequenceTimeline .aoDevoStop").nth(1).evaluate(el=>el.click());
+ assert.equal(await page.locator(four+" [data-ao-four-purpose]").count(),0,"Thanksgiving must not use a misclassified meal/Communion prayer");
+ assert.equal(await page.locator(four+" .aoP435930GuidePrayers .aoP435930Prayer").count(),1,"Original Glory Be remains");
+ await page.locator(four+" .aoDevoSequenceTimeline .aoDevoStop").nth(4).evaluate(el=>el.click());
+ assert.equal(await page.locator(four+" [data-ao-four-purpose]").count(),0,"Final silence must be free from prayer chooser");
+ assert.equal(await page.locator(four+" [data-p435930-ador-quiet-enter]").count(),1);
+
 
  await open("pray.divine_mercy");
  const mercy="#aoPray435930.open [data-ao-mercy-bead-reader]";
