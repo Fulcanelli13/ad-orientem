@@ -13,7 +13,7 @@ import {buildTimeMassBoard,validTimeMassDate} from "./mapcn-time-mass-board.js";
 import { HERITAGE_STYLE } from "./heritage-style.js";
 import { EXPLORE_ATLAS_LAYOUT_STYLE } from "./explore-atlas-layout-style.js";
 import { EXPLORE_MAP_FIRST_V2_STYLE } from "./explore-map-first-v2-style.js";
-import { DIRECTORY_CARD_STYLE, attachApprovedDirectoryMedia } from "./directory-card.js";
+import { DIRECTORY_CARD_STYLE, attachApprovedDirectoryMedia,loadDirectoryCardMedia } from "./directory-card.js";
 import { discoverItemsWithinMapBounds, renderMapcnDiscoverRail } from "./mapcn-discover-rail.js";
 import { SAINTS_SHEET_CSS } from "./saints-presentation.js";
 import { projectSaintCatalogueItems } from "./saints-catalogue.js";
@@ -141,6 +141,7 @@ export function createFindOwner(win=globalThis){
   let bibleProgrammaticScrollUntil=0;
   const atlasDeviceStorage=()=>{try{return win?.localStorage??null;}catch{return null;}};
   let openState=false,dataset=null,projection=null,mapHandle=null,loading=null,preliminary=null,preliminaryLoading=null;
+  let directoryCardMedia=null,directoryCardMediaLoading=null;
   // A transient source-reader return token; never persists Atlas event progress.
   let atlasScriptureReturn=null;
   let paintToken=0,lastLoadError=null;
@@ -292,6 +293,16 @@ export function createFindOwner(win=globalThis){
     return preliminaryLoading;
   }
 
+  async function ensureDirectoryCardMedia(){
+    if(directoryCardMedia)return directoryCardMedia;
+    if(!directoryCardMediaLoading){
+      directoryCardMediaLoading=loadDirectoryCardMedia({fetchImpl:win?.fetch?.bind?.(win)??fetch})
+        .then(value=>{directoryCardMedia=value;return value})
+        .finally(()=>{directoryCardMediaLoading=null;});
+    }
+    return directoryCardMediaLoading;
+  }
+
   function filtered(){
     if(state.lens==="tlm")return filterPreliminaryR49(preliminary??[],state);
     if(!dataset||!projection)return [];
@@ -390,7 +401,7 @@ export function createFindOwner(win=globalThis){
       : null;
     let data=null;
     const preliminaryMode=state.lens==="tlm";
-    try{if(preliminaryMode)await ensurePreliminary();else data=await ensureData()}catch(error){
+    try{if(preliminaryMode)await Promise.all([ensurePreliminary(),ensureDirectoryCardMedia()]);else data=await ensureData()}catch(error){
       if(token!==paintToken||!openState)return false;
       lastLoadError=error;
       try{win?.console?.error?.("Explore data unavailable",error)}catch{}
@@ -459,9 +470,7 @@ export function createFindOwner(win=globalThis){
     const baseItems=state.lens==="traditions"&&state.view==="list"
       ?groupTraditionsForBrowse(rawItems,{includeNovenaContext:Boolean(state.query.trim())||state.atlasCalendar==="NOVENA"})
       :rawItems;
-    const items=state.lens==="tlm"?attachApprovedDirectoryMedia(baseItems,{
-      directoryPlaceLinks:data?.geography?.directoryPlaceLinks,approved:data?.media?.approved,
-      gallery:data?.media?.gallery}):baseItems;
+    const items=state.lens==="tlm"?attachApprovedDirectoryMedia(baseItems,directoryCardMedia??{}):baseItems;
     const canonical=projection?groupTraditionsForBrowse(projection.byLens.traditions):[];
     const selectedOverride=state.lens==="traditions"
       ?projection.byLens.traditions.find(item=>item.item_id===state.selectedId)??null
