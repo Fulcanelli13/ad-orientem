@@ -486,6 +486,27 @@ try{
    assert.equal(await page.locator("#aoPray435930.open [data-n1-select]").count(),16,
      "A detail Back tap must restore the source-backed Novena overview: "+id);
  }
+ // ICKSP source is supplementary: keep 16 historical donor targets intact while
+ // proving the added bilingual nine-day devotion is actually tappable on mobile.
+ await page.waitForSelector("#aoPray435930.open [data-n1-supplement='divine_infant_king']",{timeout:10000});
+ assert.equal(await page.locator("#aoPray435930.open [data-n1-select]").count(),16);
+ await page.locator("#aoPray435930.open [data-n1-supplement='divine_infant_king']").tap();
+ await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.id==="divine_infant_king"
+   &&globalThis.AO_NOVENAS_V3?.state?.()?.screen==="detail",null,{timeout:10000});
+ assert.equal(await page.locator("#aoPray435930.open [data-n1-day]").count(),9,
+   "The Institute's monthly novena must display exactly nine daily leaves");
+ await page.locator("#aoPray435930.open [data-n1-mode='simple']").tap();
+ await page.locator("#aoPray435930.open [data-n1-begin]").tap();
+ const infantText=await page.locator("#aoPray435930.open [data-ao-novena-deck='simple']").innerText();
+ assert.match(infantText,/O CHILD Jesus|O Enfant Jésus/,"Original bilingual Infant Jesus prayer absent");
+ await page.locator("#aoPray435930.open [data-n1-day='9']").tap();
+ assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3?.state?.()?.day),9,
+   "The supplemental nine-day prayer cannot navigate to day nine");
+ await page.locator("#aoPray435930.open [data-n1-back]").tap();
+ await page.locator("#aoPray435930.open [data-n1-back]").tap();
+ await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.screen==="overview",null,{timeout:10000});
+ assert.equal(await page.locator("#aoPray435930.open [data-n1-select]").count(),16,
+   "The ICKSP additional entry displaced an original novena");
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
  await page.waitForSelector("#aoPray435930 [data-p435930-lib-open]",{timeout:10000});
  const ids=await page.locator("#aoPray435930 [data-p435930-lib-open]").evaluateAll(nodes=>nodes.map(x=>x.dataset.p435930LibOpen));
