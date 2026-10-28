@@ -5,6 +5,8 @@ on:
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "tools/build-web-preview.mjs"
+      - "tools/vercel-build-eligibility.mjs"
+      - "tests/vercel-build-eligibility.mjs"
       - "tests/vercel-deployment-storage.mjs"
       - ".github/workflows/vercel-deployment-storage.yml"
   workflow_dispatch:
@@ -23,3 +25,5 @@ jobs:
           node-version: 24
       - name: Verify release output excludes only research and staging
         run: node tests/vercel-deployment-storage.mjs
+      - name: Verify deployment skip decisions preserve runtime changes
+        run: node tests/vercel-build-eligibility.mjs
