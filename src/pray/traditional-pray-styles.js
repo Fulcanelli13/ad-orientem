@@ -287,6 +287,37 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
  border-radius:8px;padding:9px 12px
 }
 #aoPray435930 .aoDailyPersonalBriefRestore:focus-visible{outline:2px solid #e7cb98;outline-offset:2px}
+
+/* Direct prayer access replaces the long configuration-first interaction. */
+#aoPray435930 .aoDailyOpeningRail{grid-template-columns:minmax(0,1fr) minmax(124px,.77fr);gap:4px;align-items:center;margin-bottom:0}
+#aoPray435930 .aoDailyOpeningRail>.aoTP381DaypartStrip{grid-row:1;grid-column:1;min-width:0;padding:1px 2px;gap:4px}
+#aoPray435930 .aoDailyOpeningRail>.aoTP381DaypartStrip button{min-width:0;flex:1 1 auto;padding:7px 5px}
+#aoPray435930 .aoDailyAccessNav{display:flex;grid-row:1;grid-column:2;min-width:0;padding:1px 2px}
+#aoPray435930 .aoDailyAccessNav button{
+ width:100%;min-width:0;min-height:42px;padding:9px 8px;border:1px solid rgba(215,188,146,.18);
+ background:transparent;border-radius:10px;color:var(--muted,#aeb2b8);
+ font:600 .8rem/1.25 var(--ao-font-ui,system-ui,sans-serif)
+}
+#aoPray435930 .aoDailyAccessNav button[aria-pressed="true"]{
+ color:var(--text,#eee9dd);border-color:rgba(215,188,146,.5);background:rgba(215,188,146,.09)
+}
+#aoPray435930 .aoDailyPrayerCatalog{width:100%;min-width:0;display:grid;gap:9px}
+#aoPray435930 .aoDailyPrayerCatalog h2{font:600 1.05rem/1.3 var(--ao-font-display,Georgia,serif);margin:10px 0 0}
+#aoPray435930 .aoDailyCatalogIntro{font-size:.81rem;color:var(--muted,#aeb2b8);line-height:1.5;margin:0}
+#aoPray435930 .aoDailyCatalogRows{margin:0 0 6px}
+#aoPray435930 .aoDailyCatalogRows button{min-height:48px;padding:12px 4px}
+#aoPray435930 .aoDailyCatalogAdditional{margin:8px 0 2px;border-top:1px solid rgba(215,188,146,.2)}
+#aoPray435930 .aoDailyCatalogAdditional>summary{min-height:48px;cursor:pointer;padding:13px 4px;color:#e8d3af;font:600 .9rem/1.35 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoDailyCatalogAdditional>summary small{margin-left:5px;font-weight:400;color:var(--muted,#aeb2b8)}
+#aoPray435930 .aoDailyDirectHint{margin:0 4px;color:var(--muted,#aeb2b8);font-size:.72rem}
+#aoPray435930 .aoTP381DonorBody>.aoDailyPersonalSettings{margin:14px 4px 0}
+#aoPray435930 .aoDailyPersonalSettingsBody{
+ max-height:none;overflow:visible;overscroll-behavior-y:auto;touch-action:pan-y
+}
+#aoPray435930 .aoTP381DonorBody .aoDevoCardScroll{
+ min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-y:auto;touch-action:pan-y
+}
+
 `;
 
 export function installTraditionalPrayStyles(doc=globalThis.document){

@@ -273,7 +273,8 @@ try{
  assert.equal(await dailyOptions.evaluate(node=>node.open),true,
    "Real phone cannot expand secondary daily prayer options");
  await page.locator("#aoPray435930.open [data-tp381-daily-mode='list']").tap();
- assert.equal(await page.locator("#aoPray435930.open .aoTP381PrayerList button").count(),10,"Revised St Pius X evening overview must contain its ten core stages");
+ assert.equal(await page.locator("#aoPray435930.open .aoDailyPrayerCatalog > .aoTP381PrayerList [data-tp381-direct-prayer]").count(),10,
+   "Revised St Pius X Evening direct index must contain ten core prayers, with additions separate");
  const reopenedOptions=page.locator("#aoPray435930.open [data-ao-daily-options]");
  await reopenedOptions.locator("summary").tap();
  assert.equal(await reopenedOptions.evaluate(node=>node.open),true);

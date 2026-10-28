@@ -67,8 +67,8 @@ try{
   assert.equal(home.ok,true);
   await openModule("pray.morning_evening");
   await page.locator("#aoPray435930.open [data-tp381-back]").waitFor({state:"visible",timeout:15000});
-  assert.equal(await page.locator('#aoPray435930.open [data-tp381-daily-mode="guided"]').getAttribute("aria-pressed"),
-   "true");
+  assert.equal(await page.locator('#aoPray435930.open [data-tp381-daily-mode="list"]').count(),1,
+   "Guided Prayer should offer a direct prayer index without opening it");
   await page.locator("#aoPray435930.open [data-tp381-back]").click();
   await page.waitForFunction(()=>window.AO_APP_SHELL_V1?.getActive?.()==="home"&&
    document.querySelector("#aoPray435930.open")==null,null,{timeout:15000});

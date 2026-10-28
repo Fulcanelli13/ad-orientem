@@ -46,6 +46,22 @@ export function dailyPersonalList(rows,{esc,L,isFr}){
  '</b><small>'+esc(r.sourceLabel||L("Reflection","Méditation"))+'</small></span><i aria-hidden="true">→</i></button>'
  ).join("")+'</div>';
 }
+/** Accessible direct prayer index, separate from routine customization. */
+export function dailyPersonalPrayerCatalog(plan,optional,{esc,L}){
+ const entry=(id,title,meta)=>'<button type="button" data-tp381-direct-prayer="'+esc(id)+'"><span><b>'+esc(title)+'</b>'+
+  (meta?'<small>'+esc(meta)+'</small>':'')+'</span><i aria-hidden="true">›</i></button>';
+ const primary=plan.rows.map(row=>entry(row.sourceId,row.title||row.titleEn||row.sourceId,
+   row.kind==="personal-examen"?L("Guided reflection","Examen guidé"):"")).join("");
+ const additional=optional.map(row=>entry(row.id,row.title,row.sourceLabel)).join("");
+ return '<section class="aoDailyPrayerCatalog" data-ao-daily-prayer-catalog aria-label="'+esc(L("Choose a prayer","Choisir une prière"))+'">'+
+  '<p class="aoDailyCatalogIntro">'+esc(L("Open any complete prayer directly. This does not change your Morning or Evening routine.",
+   "Ouvrez directement une prière intégrale, sans modifier votre règle du matin ou du soir."))+'</p>'+
+  '<h2>'+esc(L("St Pius X · "+plan.edition,"Saint Pie X · "+plan.edition))+'</h2>'+
+  '<div class="aoTP381PrayerList aoDailyCatalogRows">'+primary+'</div>'+
+  (additional?'<details class="aoDailyCatalogAdditional"><summary>'+esc(L("Other traditional prayers","Autres prières traditionnelles"))+
+   ' <small>'+optional.length+'</small></summary><div class="aoTP381PrayerList aoDailyCatalogRows">'+additional+'</div></details>':"")+
+ '</section>';
+}
 export function dailyPersonalSettings(plan,prefs,{esc,L,expanded=false}){
  const part=plan.daypart;
  const choice=(action,id,en,fr,on)=>
