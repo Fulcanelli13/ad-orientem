@@ -6,6 +6,7 @@
  * Saves only source IDs/edition/language; no prayer content or examination.
  */
 import {DAILY_PERSONAL_PRAYER_SOURCE_V1 as CORPUS} from "./daily-personal-prayer-source.js";
+import {prayerAcquisitionCandidates} from "./prayer-acquisition-historical-witnesses.v1.js";
 import {reviewedDailyAlternative,reviewedDailyPurpose,DAILY_PURPOSES,REVIEWED_DAILY_STAGE_ALTERNATIVES} from "./daily-stage-alternative-review.js";
 
 export const DAILY_PERSONAL_RULE_STORAGE_KEY="ao.pray.personal-rule.v1";
@@ -132,9 +133,27 @@ export function savePersonalDailyPrefs(storage,prefs,language="en"){
  const validated=normalizePersonalDailyPrefs(prefs,language);
  try{storage?.setItem?.(DAILY_PERSONAL_RULE_STORAGE_KEY,JSON.stringify(validated));return true}catch{return false}
 }
+/** Publish independently verified 1908 source-language alternatives without
+ * altering St Pius X's printed 1905/1913 dayparts or the locked prayer bank.
+ * Unreleased witnesses, and English text in a French session, fail closed.
+ */
+function clearedMorningOfferings(daypart,language){
+ if(daypart!=="morning")return [];
+ return prayerAcquisitionCandidates("self_offering",{language}).map(w=>Object.freeze({
+  id:w.id,lang:w.language,daypart:"morning",kind:"additional",
+  slot:"offering",purpose:"offering",title:w.title,
+  sourceLabel:"F. X. Lasance, My Prayer-Book (1908), p. "+w.source.page,
+  sourceUrl:w.source.scanPageUrl,
+  sourceImageChecked:true,text:w.text
+ }));
+}
 export function personalDailyOptions(daypart,language,edition="1913"){
  if(!PARTS.includes(daypart)||!LANGS.has(language))return [];
- return [...allowed(CORPUS.additional,language,daypart),...(edition==="1913"&&daypart==="evening"?editionSupplements(language):[])];
+ return [
+  ...allowed(CORPUS.additional,language,daypart),
+  ...clearedMorningOfferings(daypart,language),
+  ...(edition==="1913"&&daypart==="evening"?editionSupplements(language):[])
+ ];
 }
 export function personalDailyEdition(edition){
  return CORPUS.editions[EDITIONS.has(edition)?edition:"1913"];
