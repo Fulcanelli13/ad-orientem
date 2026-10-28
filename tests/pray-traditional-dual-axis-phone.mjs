@@ -462,6 +462,10 @@ try{
  assert.equal((await snapshot()).id,"meal-after","Historical Grace must not change the two-card timeline identity");
  assert.match(await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText(),/Daignez, Seigneur, récompenser.*vie éternelle/s,"Complete 1888 editorial French grace unavailable");
  assert.equal(await page.locator("#aoPray435930 [data-tp381-b01-meal='full']").getAttribute("aria-pressed"),"true");
+ await page.locator("#aoPray435930 [data-tp381-b01-meal='catechism']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"meal-after");
+ assert.match(await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText(),/Nous vous rendons grâce pour tous vos bienfaits/,"Historical short Baltimore Catechism alternative missing");
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-b01-meal='catechism']").getAttribute("aria-pressed"),"true");
  await page.locator("#aoPray435930 [data-tp381-b01-meal='short']").evaluate(el=>el.click());
  assert.equal((await snapshot()).id,"meal-after");
  assert.equal(await page.locator("#aoPray435930 [data-tp381-b01-meal='short']").getAttribute("aria-pressed"),"true");
