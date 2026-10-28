@@ -276,7 +276,7 @@
       "target": "Novenas; saints; user-opt-in recurrence",
       "editorial_notes": "ICKSP holds a Tuesday 7:30pm ET perpetual novena. Do not display local U.S. time as universal or enable automatic recurring reminders. Includes the prayer, versicles, collect and traditional basic prayers; should be one guided set with no duplicated Our Father/Hail Mary/Glory Be.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY",
+      "release_status": "SOURCE_LINK_ROUTED_IN_DRAFT",
       "verified": "COMPLETE_PAGE_READ",
       "source_body_text_accessible": true,
       "child_sources": [
@@ -284,19 +284,21 @@
         "st_therese_missionaries",
         "st_therese_benedict_xv"
       ],
-      "app_coverage_status": "EXISTING_DIFFERENT_NOVENA_FORM",
-      "app_coverage_label": "St Thérèse novena already in Pray — ICKSP perpetual form differs",
+      "app_coverage_status": "INDEXED_SOURCE_LINKED_IN_DRAFT",
+      "app_coverage_label": "Institute perpetual Tuesday novena linked in St Thérèse reader; member intentions preserved at source",
       "app_match_refs": [
         "novena-corpus.js#st_therese"
       ],
-      "next_action": "Integrate as separate variant of St Thérèse novena without altering 24 Glory Bes source and without forcing Institute donations or U.S. session time",
+      "next_action": "Find source-backed reusable original booklet or institutional permission-free edition to embed full exact prayer; no user selection approval required.",
       "review_group": "EXISTING_OR_RELATED",
       "source_selection_status": "ACCEPTED",
-      "text_identity": "ICKSP_PERPETUAL_NOVENA_DISTINCT_FROM_TWENTY_FOUR_GLORY_BES",
+      "text_identity": "INSTITUTE_PERPETUAL_TUESDAY_PRAYER_INCLUDES_MEMBERSHIP_INTENTIONS",
       "source_body_url": "https://www.institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
       "institution_specific_embedded_intentions": "Little Flower Recurring Gift Society included in published novena; not genericized",
       "historical_source_gate": "Need an earlier/public-domain authentic prayer witness or licensable formula before importing complete current ICKSP text; link remains accepted",
-      "practice": "ICKSP Tuesday shared novena; 7:30 pm ET session time not universal prayer requirement"
+      "practice": "ICKSP Tuesday shared novena; 7:30 pm ET session time not universal prayer requirement",
+      "app_integration_route": "pray.st_therese_devotions",
+      "notes": "Source link only, text not reproduced or genericized. Tuesday service time specific to US venue, not required universally."
     },
     {
       "id": "icksp_us_therese_for_missionaries",
@@ -310,20 +312,21 @@
       "target": "St Thérèse; missions",
       "editorial_notes": "Separate prayer on same novena page. Keep as an independently navigable prayer and optionally connect to the novena.",
       "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY",
+      "release_status": "SOURCE_LINK_ROUTED_IN_DRAFT",
       "verified": "COMPLETE_PAGE_READ",
       "source_body_text_accessible": true,
       "relation": "CHILD_PRAYER_OF_NOVENA_PAGE",
-      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
-      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_coverage_status": "INDEXED_SOURCE_LINKED_IN_DRAFT",
+      "app_coverage_label": "Missionary prayer linked, with historical Raccolta no. 573 witness and ICKSP-specific wording separately identified",
       "app_match_refs": [],
-      "next_action": "Collate original historic text, retain contextual Institute missionary intention, then publish as optional Saint Thérèse missionary prayer",
+      "next_action": "Verify direct early source, exact copyright status of translation; retain institutional wording and link in app until safe in-app body.",
       "review_group": "POTENTIAL_PERSONAL_DEVOTION",
       "source_selection_status": "ACCEPTED",
-      "text_identity": "ST_THERESE_MISSIONARY_INTERCESSION_RACCOLTA_FAMILY",
+      "text_identity": "RACCOLTA_573_HISTORICAL_FAMILY_PLUS_INSTITUTE_MISSION_INTENTION",
       "source_body_url": "https://www.institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
       "source_variance": "ICKSP formula includes explicit Institute missionaries; traditional Raccolta form has broader missionary wording. Preserve both witness identities.",
-      "source_comparison_lead": "Raccolta No. 573 · prayer for Mission Sunday, older indulgence notes historical only"
+      "source_comparison_lead": "Raccolta No. 573 · prayer for Mission Sunday, older indulgence notes historical only",
+      "app_integration_route": "pray.st_therese_devotions"
     },
     {
       "id": "icksp_us_therese_benedict_xv",
@@ -336,25 +339,29 @@
       "category": "St Thérèse intercession",
       "target": "St Thérèse",
       "editorial_notes": "Separate attested text on the same page, attributed to Benedict XV. Do not present a later translation as the pope's own English words without original witness verification.",
-      "full_text_import": "NOT_AUTHORIZED",
-      "release_status": "RESEARCH_ONLY",
+      "full_text_import": "GARESCHE_1925_PRIMARY_PRINTED_P38_39_ENGLISH_ONLY",
+      "release_status": "IMPLEMENTED_ON_PR_BRANCH_NOT_MERGED",
       "verified": "COMPLETE_PAGE_READ",
       "source_body_text_accessible": true,
       "relation": "CHILD_PRAYER_OF_NOVENA_PAGE",
-      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
-      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_coverage_status": "IMPLEMENTED_IN_DRAFT_1925_HISTORICAL_ENGLISH",
+      "app_coverage_label": "Garesche 1925 English prayer in new St Thérèse reader, canonical Salve Regina conclusion, papal authorship unverified",
       "app_match_refs": [],
-      "next_action": "Locate and collate the 1926 Taylor printed edition; confirm or qualify Benedict XV attribution in source metadata before publishing. All prayers remain accepted.",
+      "next_action": "Full Node and mobile browser test, source-body page proof; avoid falsely attributing composition to Benedict XV, locate authenticated historic French if available",
       "review_group": "POTENTIAL_PERSONAL_DEVOTION",
       "source_selection_status": "ACCEPTED",
       "text_identity": "PRAYER_ATTRIBUTED_TO_POPE_BENEDICT_XV",
       "source_body_url": "https://www.institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
       "source_attribution_status": "ICKSP attributes to Benedict XV; independent original Latin or dated historical printed English witness not yet collated",
       "attribution_conflict": {
-        "icksp": "Prayers selected under 'Prayer by Pope Benedict XV'",
-        "historical_lead": "Fr T N Taylor, 1926 English Story of a Soul novena appendix allegedly prints essentially same prayer as 'From the Novena to St Therese' without clear Benedict XV attribution",
-        "source_url": "https://1765regina.com/prayers/prayer-to-st-therese/",
-        "status": "ATTRIBUTION_UNRESOLVED_NO_PAPAL_AUTHORSHIP_CLAIM"
+        "icksp": "Prayer by Pope Benedict XV",
+        "primary_1925": "Source notes name Cardinal Della Chiesa (later Benedict XV), but don't establish prayer authorship; non-current indulgence note not displayed",
+        "status": "PAPAL_AUTHORSHIP_UNVERIFIED"
+      },
+      "app_integration_route": "pray.st_therese_devotions",
+      "text_witnesses": {
+        "en": "https://distantreader.org/stacks/pamphlets/pdf/005457174.pdf",
+        "pages": "PDF zero-index 39–40 = printed 38–39"
       }
     },
     {
@@ -668,13 +675,16 @@
     "as_of": "2026-10-28",
     "initial_review_items": 25,
     "source_selections_accepted": 25,
-    "full_prayer_readers_implemented_in_draft": 3,
+    "full_prayer_readers_implemented_in_draft": 4,
     "full_new_prayers_published_to_production": 0,
     "source_held_second_priest_prayer": 1,
     "languages": "August Queen historically attested EN/FR; Eternal Priest ICKSP EN only; no invented Latin or Italian",
-    "test_status": "NOVENA_DATE_ROLLOVER_AND_STATIC_JS_CHECKS_PASS; FULL NODE_PLAYWRIGHT_NOT_EXECUTED",
+    "test_status": "ST_THERESE_STATIC_RUNTIME_AND_PRIMARY_PRINTED_SOURCE_CHECK_IN_PROGRESS; FULL NODE_PLAYWRIGHT_NOT_EXECUTED",
     "added_novena_forms": 1,
-    "original_canonical_novena_count_preserved": 16
+    "original_canonical_novena_count_preserved": 16,
+    "therese_1925_en_prayer_implemented": 1,
+    "therese_source_links": 2,
+    "canonical_salve_regina_reused": true
   },
   "reconciliation_pass3": {
     "date": "2026-10-28",
