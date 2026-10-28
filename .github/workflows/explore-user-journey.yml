@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "src/find/**"
+      - "ao-packed-4d23011372cb8f3d8eda.js"
       - "tests/explore-user-journey-acceptance.mjs"
       - ".github/workflows/explore-user-journey.yml"
   workflow_dispatch:
