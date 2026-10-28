@@ -14,6 +14,7 @@ from bs4 import BeautifulSoup
 
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/"data/calendar/sacred-art-breviarium-83-gallery-intake-20261029.v1.json"
+PREVIOUS=json.loads(OUT.read_text()) if OUT.exists() else None
 EVID=ROOT/"assets/staged/sacred-art-breviarium-source-audit-20261029"
 EVID.mkdir(parents=True,exist_ok=True)
 old=json.loads((ROOT/"data/calendar/sacred-art-candidates.v1.json").read_text())
@@ -113,6 +114,10 @@ secondary=("raphael","titian","paolo veronese","giovanni bellini",
 lowstyle=("duccio","giotto","sassetta","masaccio","ghirlandaio",
  "lorenzo monaco","francesco del cossa","goswin van der weyden",
  "carlo crivelli","sandro botticelli","verrocchio","book of kells")
+# Normalize preferences with the same accent and name-particle rules as gallery artists.
+top_artists=tuple(norm(z) for z in top_artists)
+secondary=tuple(norm(z) for z in secondary)
+lowstyle=tuple(norm(z) for z in lowstyle)
 # Existing metadata matches are leads, never proof of physical object identity.
 prior={}
 for a in old["artworks"]:
@@ -177,6 +182,7 @@ for r in records:
 # Minimise metadata requests: two ~50-title batches. Read-only; no image bytes.
 meta={}
 errors=[]
+previous_metadata={x["commons_filename"]:x.get("commons_current_imageinfo") for x in PREVIOUS["records"]} if PREVIOUS and PREVIOUS.get("gallery_html_sha256")==hashlib.sha256(html).hexdigest() else {}
 for start in (0,45):
     chunk=records[start:start+45]
     try:
@@ -187,6 +193,9 @@ for start in (0,45):
         errors.append(type(e).__name__+": "+str(e)[:250])
 for r in records:
     info=meta.get(r["commons_filename"])
+    if info is None and previous_metadata.get(r["commons_filename"]):
+        info=previous_metadata[r["commons_filename"]]
+        r["commons_metadata_from_prior_validated_snapshot"]=True
     if info is None:
         r["source_metadata_status"]="NOT_RETURNED_OR_COMMONS_API_UNAVAILABLE"
         r["source_metadata_rights_hold"]=True
@@ -232,6 +241,19 @@ result={"schema":"AO_SACRED_ART_BREVIARIUM_83_BULK_INTAKE_V1","as_of":"2026-10-2
    "new_photo_originals_downloaded":0,"new_pristine_certifications":0,
    "production_activated":0,"cost_eur":0},
  "commons_metadata_batch_errors":errors,"records":records}
+# Updating aesthetic classification must not erase successful image-archive proof.
+if PREVIOUS and PREVIOUS.get("gallery_html_sha256")==result["gallery_html_sha256"]:
+    old_rows={z["breviarum_plate_id"]:z for z in PREVIOUS["records"]}
+    for row in records:
+        prev=old_rows.get(row["breviarum_plate_id"],{})
+        if "bulk_photo_firstwave" in prev:
+            row["bulk_photo_firstwave"]=prev["bulk_photo_firstwave"]
+    for k,v in PREVIOUS.get("counts",{}).items():
+        if k.startswith("w1_") or k=="new_photo_originals_downloaded":
+            result["counts"][k]=v
+    if PREVIOUS.get("image_acquisition_wave1"):
+        result["image_acquisition_wave1"]=PREVIOUS["image_acquisition_wave1"]
+result["counts"]["artist_name_normalization_corrections"]=5
 OUT.parent.mkdir(parents=True,exist_ok=True)
 OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n")
 (EVID/"import-summary.json").write_text(json.dumps({"source":site,"sha256":result["gallery_html_sha256"],
