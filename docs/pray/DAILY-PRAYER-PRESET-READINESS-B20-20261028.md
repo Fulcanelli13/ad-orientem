@@ -31,6 +31,17 @@ The eight routines listed below are **editorial compositions by Ad Orientem** fr
 
 The proposed standard/common prayers in these profiles use three canonical IDs: `foundations_sign_of_cross`, `foundations_our_father`, `foundations_guardian_angel`. Their currently displayed wordings and translation/provenance **must be individually audited**. Having found an 1888/1905 counterpart does not mean the precise current canonical text has been copychecked to that edition.
 
+## Machine identifiers for review and tests
+
+- `morning-short-en` — EN morning short, 5 stages
+- `morning-complete-en` — EN morning complete, 9 stages
+- `evening-short-en` — EN evening short, 5 stages
+- `evening-complete-en` — EN evening complete, 11 stages
+- `morning-short-fr` — FR morning court, 2 stages
+- `morning-complete-fr` — FR morning complet, 7 stages
+- `evening-short-fr` — FR evening court, 6 stages
+- `evening-complete-fr` — FR evening complet, 11 stages
+
 ## Per-routine source stage maps
 
 <details>
