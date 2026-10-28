@@ -14,6 +14,12 @@ import { MASS_CLUSTER_GROUPS,CLUSTER_PAGE_SIZE,exploreClusterProperties,
 const MAPLIBRE_MODULE="https://unpkg.com/maplibre-gl@^6.13.0/dist/maplibre-gl.mjs";
 const MAPLIBRE_CSS="https://unpkg.com/maplibre-gl@^6.13.0/dist/maplibre-gl.css";
 const DEFAULT_STYLE="https://tiles.openfreemap.org/styles/dark";
+// OpenFreeMap Dark serves Noto Sans glyphs. MapLibre’s implicit default
+// requests an absent Open Sans/Arial Unicode font stack (HTTP 404), delaying
+// our own labels and cluster counts even though the provider labels work.
+export function defaultExploreGlyphStack(style,styleOverride=null){
+  return style===DEFAULT_STYLE&&!styleOverride?["Noto Sans Regular"]:null;
+}
 // Web Mercator has finite latitude, and the atlas intentionally has one world.
 // MapLibre's default wrapped copies make multiple apparent Europes/Africas at
 // low zoom. Keep every physical Place on a single world, including after re-renders.
@@ -368,6 +374,7 @@ export async function mountExploreMap(container,items,{
   }
   const compactAttribution=phoneWidth>0&&phoneWidth<=430&&typeof maplibre.AttributionControl==="function";
   const selectedStyle=styleOverride??win.AO_EXPLORE_MAP_STYLE_URL??win.AO_DIRECTORY_MAP_STYLE_URL??DEFAULT_STYLE;
+  const glyphStack=defaultExploreGlyphStack(selectedStyle,styleOverride);
   const map=new maplibre.Map({
     container,
     style:selectedStyle,
@@ -431,6 +438,7 @@ export async function mountExploreMap(container,items,{
         "circle-opacity":clusterBadgeReady?0.005:0.94}});
     map.addLayer({id:prefix+"-cluster-count",type:"symbol",source:sourceId,filter:["has","point_count"],
       layout:{"text-field":["get","point_count_abbreviated"],"text-size":12,
+        ...(glyphStack?{"text-font":glyphStack}:{}),
         "visibility":clusterBadgeReady?"none":"visible"},
       paint:{"text-color":"#F0DEB5"}});
     if(clusterBadgeReady){
@@ -442,6 +450,7 @@ export async function mountExploreMap(container,items,{
         layout:{"icon-image":["concat","ao-explore-cluster-badge-",clusterKind],
           "icon-size":1,"icon-allow-overlap":true,"icon-ignore-placement":true,
           "text-field":["get","point_count_abbreviated"],
+          ...(glyphStack?{"text-font":glyphStack}:{}),
           "text-size":12,"text-anchor":"center",
           "text-allow-overlap":true,"text-ignore-placement":true},
         paint:{"text-color":"#F0DEB5","text-halo-color":"#10212C","text-halo-width":0.5}});
@@ -497,6 +506,7 @@ export async function mountExploreMap(container,items,{
     map.addLayer({id:prefix+"-place-labels",type:"symbol",source:sourceId,
       minzoom:9,filter:["all",["!",["has","point_count"]],["==",["get","lens"],"heritage"]],
       layout:{"text-field":["get","name"],"text-size":11,"text-max-width":12,
+        ...(glyphStack?{"text-font":glyphStack}:{}),
         "text-variable-anchor":["top","bottom"],"text-radial-offset":1.5,
         "text-optional":true},
       paint:{"text-color":"#e9dfcc","text-halo-color":"#08121b",
@@ -508,6 +518,7 @@ export async function mountExploreMap(container,items,{
         minzoom:4.5,
         filter:["all",["!",["has","point_count"]],["has","atlas_label"]],
         layout:{"text-field":["get","atlas_label"],
+          ...(glyphStack?{"text-font":glyphStack}:{}),
           "text-size":["interpolate",["linear"],["zoom"],4.5,10,8,13],
           "text-anchor":"top","text-offset":[0,1.1],
           "text-allow-overlap":false,"text-ignore-placement":false,
