@@ -464,6 +464,26 @@ function sourcedPrayerCard(item,label,{focusParagraphs=false,verseFocus=false}={
 }
 const HEART_STAGES=Object.freeze(["litany","reparation","golden_arrow","consecration"]);
 function heartTitle(id){return id==="litany"?L("Litany","Litanies"):id==="reparation"?L("Pius XI · Reparation","Pie XI · Réparation"):id==="golden_arrow"?L("Golden Arrow","Flèche d’Or"):L("Consecration","Consécration")}
+const HEART_DIRECT_CHOICES=Object.freeze({
+ litany:Object.freeze({scopeEn:"Sacred Heart · Litany",scopeFr:"Sacré-Cœur · Litanies",detailEn:"Traditional complete invocation",detailFr:"Invocations traditionnelles intégrales"}),
+ reparation:Object.freeze({scopeEn:"Sacred Heart · Reparation",scopeFr:"Sacré-Cœur · Réparation",detailEn:"Pius XI · Iesu dulcissime · 1928",detailFr:"Pie XI · Iesu dulcissime · 1928"}),
+ golden_arrow:Object.freeze({scopeEn:"Related · Holy Face / Holy Name",scopeFr:"Associée · Sainte Face / Saint Nom",detailEn:"The Golden Arrow · historical 1884 / 1887",detailFr:"La Flèche d’Or · témoins 1884 / 1887"}),
+ consecration:Object.freeze({scopeEn:"Sacred Heart · Consecration",scopeFr:"Sacré-Cœur · Consécration",detailEn:"Human race · Christ the King",detailFr:"Genre humain · Christ-Roi"})
+});
+function sacredHeartDirectChoices(active){
+ const buttons=HEART_STAGES.map(id=>{
+  const item=HEART_DIRECT_CHOICES[id];
+  return '<button type="button" data-tp381-heart="'+esc(id)+'" aria-pressed="'+String(id===active)+'"'+
+   ' class="aoHeartChoice'+(id===active?' active':'')+'">'+
+   '<span class="aoHeartChoiceName">'+esc(heartTitle(id))+'</span>'+
+   '<span class="aoHeartChoiceScope">'+esc(L(item.scopeEn,item.scopeFr))+'</span></button>';
+ }).join("");
+ const item=HEART_DIRECT_CHOICES[active];
+ return '<section class="aoHeartDirectAccess" data-ao-heart-direct-choices aria-label="'+esc(L("Choose a complete devotion","Choisir une dévotion intégrale"))+'">'+
+  '<p class="aoHeartChoiceInstruction">'+esc(L("Choose one devotion · no required sequence","Choisissez une dévotion · aucun ordre imposé"))+'</p>'+
+  '<nav class="aoHeartChoiceGrid" aria-label="'+esc(L("Sacred Heart devotions and related Holy Face prayer","Prières du Sacré-Cœur et prière associée à la Sainte Face"))+'">'+buttons+'</nav>'+
+  '<p class="aoHeartChoiceContext" data-ao-heart-selected-context>'+esc(L(item.detailEn,item.detailFr))+'</p></section>';
+}
 function renderSacredHeart(){
   const d=SACRED_HEART_DEVOTIONS_V382,tab=HEART_STAGES.includes(S.sacredHeart)?S.sacredHeart:"litany";
   let prayer="",notes="";
@@ -484,10 +504,14 @@ function renderSacredHeart(){
     notes=source("La Porte Latine · French & Latin traditional form",l.sources.frenchLatin);
   }
   const card=`<section class="aoDevoCard" data-ao-devo-card="heart-${esc(tab)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(heartTitle(tab))}">${prayer}</div></section>`;
-  const choices=`<nav class="aoTP381Tabs" role="group" aria-label="${esc(L("Sacred Heart and related reparatory prayers","Prières du Sacré-Cœur et réparations associées"))}"><button type="button" data-tp381-heart="litany" aria-pressed="${tab==="litany"}" class="${tab==="litany"?"active":""}">${esc(heartTitle("litany"))}</button><button type="button" data-tp381-heart="reparation" aria-pressed="${tab==="reparation"}" class="${tab==="reparation"?"active":""}">${esc(heartTitle("reparation"))}</button><button type="button" data-tp381-heart="golden_arrow" aria-pressed="${tab==="golden_arrow"}" class="${tab==="golden_arrow"?"active":""}">${esc(heartTitle("golden_arrow"))}</button><button type="button" data-tp381-heart="consecration" aria-pressed="${tab==="consecration"}" class="${tab==="consecration"?"active":""}">${esc(heartTitle("consecration"))}</button></nav>`;
-  const related=prayerRows([["devotion_consecration_christ_king",L("Dedication to Christ the King · existing prayer","Dédicace au Christ-Roi · prière existante"),L("Reuse the canonical prayer, not the human-race consecration","Réutilise la prière canonique, distincte de la consécration du genre humain")]]);
-  const options=`<details class="aoTP381SecondaryOptions" data-ao-heart-options><summary>${esc(L("Historical sources and related prayer","Sources historiques et prière associée"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("These prayers are independent choices, not stages of a compulsory rite. The Golden Arrow belongs to Holy Face and Holy Name reparation; Pius XI’s Iesu dulcissime remains unchanged.","Ces prières sont des choix indépendants, non les étapes d’un rite obligatoire. La Flèche d’Or relève de la réparation à la Sainte Face et au Saint Nom ; l’Iesu dulcissime de Pie XI demeure inchangé."))}</p>${traditionalContextGuide("heart")}${notes}${related}</div></details>`;
-  return `${head(L("Sacred Heart of Jesus","Sacré-Cœur de Jésus"))}<main class="aoP435930Body aoTP381DonorBody">${choices}${card}${options}</main>`;
+  const choices=sacredHeartDirectChoices(tab);
+  const related='<div class="aoHeartRelatedDirect" data-ao-heart-related-direct><span>'+
+  esc(L("Related · a different complete prayer","Prière associée · texte complet distinct"))+'</span>'+
+  '<button type="button" data-tp381-prayer="devotion_consecration_christ_king">'+
+  esc(L("Dedication to Christ the King · existing prayer","Dédicace au Christ-Roi · prière existante"))+'</button>'+
+  '<small>'+esc(L("Reuse the canonical prayer, not the human-race consecration","Réutilise la prière canonique, distincte de la consécration du genre humain"))+'</small></div>';
+  const options=`<details class="aoTP381SecondaryOptions" data-ao-heart-options><summary>${esc(L("Historical sources and related prayer","Sources historiques et prière associée"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("These prayers are independent choices, not stages of a compulsory rite. The Golden Arrow belongs to Holy Face and Holy Name reparation; Pius XI’s Iesu dulcissime remains unchanged.","Ces prières sont des choix indépendants, non les étapes d’un rite obligatoire. La Flèche d’Or relève de la réparation à la Sainte Face et au Saint Nom ; l’Iesu dulcissime de Pie XI demeure inchangé."))}</p>${traditionalContextGuide("heart")}${notes}</div></details>`;
+  return `${head(L("Sacred Heart of Jesus","Sacré-Cœur de Jésus"))}<main class="aoP435930Body aoTP381DonorBody">${choices}${card}${related}${options}</main>`;
 }
 const COMMUNION_BEFORE=Object.freeze([
   ["sacrament_come_holy_spirit","Come, Holy Ghost","Venez, Esprit Saint"],
@@ -884,7 +908,7 @@ function open(route,opts={}){
     ...(route==="pray.sacred_hymns"?{hymn:"te_deum",hymnLang:null}:{}),
     ...(route==="pray.good_death"?{goodDeathStep:0}:{}),
     ...(route==="pray.meal_prayers"?{mealStep:0}:{}),
-    ...(route==="pray.sacred_heart"?{sacredHeart:"litany"}:{}),
+    ...(route==="pray.sacred_heart"?{sacredHeart:HEART_STAGES.includes(opts.prayer) ? opts.prayer : "litany"}:{}),
     ...(route==="pray.communion_treasury"?{communion:"before",communionStep:0}:{}),
     ...(route==="pray.holy_name_litany"?{litanyMode:"guided",litanyStep:0}:{})};
   BASE_OPEN("pray.hub",opts);
@@ -1163,7 +1187,7 @@ function handleClick(e){
     return render();
   }
   if(b.dataset.tp381JosephEdition){if(S.route!=="pray.good_death")return;S.goodDeathJosephEdition=b.dataset.tp381JosephEdition==="2021"?"2021":"1909";return render()}
-  if(b.hasAttribute("data-tp381-golden-arrow")){S.sacredHeart="golden_arrow";return open("pray.sacred_heart",{trigger:b})}
+  if(b.hasAttribute("data-tp381-golden-arrow"))return open("pray.sacred_heart",{trigger:b,prayer:"golden_arrow"})
   if(b.dataset.tp381Heart){S.sacredHeart=HEART_STAGES.includes(b.dataset.tp381Heart)?b.dataset.tp381Heart:"litany";return render()}
   if(b.hasAttribute("data-tp381-communion-purpose")||b.hasAttribute("data-tp381-communion-source")){
     if(S.route!=="pray.communion_treasury"||S.screen!=="module")return;
