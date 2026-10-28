@@ -165,7 +165,7 @@ try{
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"6","1913 Morning Brief has six whole prayers");
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-phase"),"0","Brief sunrise starts at predawn");
  assert.match(await page.locator("#aoPray435930 [data-ao-personal-settings] summary").innerText(),/Brève personnelle/);
- assert.match(await page.locator("#aoPray435930 .aoDailyPersonalNote").innerText(),/non une édition courte historique/);
+ assert.match(await page.locator("#aoPray435930 .aoDailyPersonalSettingsBody > .aoDailyPersonalNote").innerText(),/non une édition courte historique/);
  const morningHail=page.locator("#aoPray435930 [data-tp381-personal-action='brief-toggle'][data-tp381-personal-value='hail-mary']");
  assert.equal(await morningHail.getAttribute("aria-pressed"),"true");
  await morningHail.evaluate(el=>el.click());
