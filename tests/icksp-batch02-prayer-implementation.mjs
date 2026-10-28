@@ -4,6 +4,7 @@ import {execFileSync} from "node:child_process";
 import {PRAY_CANONICAL_DATA_V435930} from "../src/pray/canonical-data.js";
 import {benedictionAlleluiaStatus,benedictionVersiclesForDate,BENEDICTION_1962_WITNESS} from "../src/pray/benediction-1962.js";
 import {CHRIST_KING_OPTION_DEFAULTS,christKingStages,CHRIST_KING_LAUDES_SECTIONS} from "../src/pray/christ-king-benediction.js";
+import {divinePraisesForForm,DIVINE_PRAISES_EDITION} from "../src/pray/benediction-divine-praises.js";
 import {MERCY_OPTIONAL_OPENINGS,divineMercySteps,ROSARY_METHODS,rosaryPlan} from "../src/pray/devotional-methods-v1.js";
 import {FORTY_HOURS_SOLEMN_STAGES,fortySolemnAt,FORTY_HOURS_SOLEMN_SOURCE} from "../src/pray/forty-hours-solemn.js";
 import {EUCHARISTIC_WITNESSES,EUCHARISTIC_WITNESS_IDS,getEucharisticWitness,EUCHARISTIC_SOURCE} from "../src/pray/eucharistic-witnesses.js";
@@ -12,6 +13,7 @@ import {BATCH02_INSTITUTE_OPTIONAL,instituteOptionalFor} from "../src/pray/icksp
 const read=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 const files=[
  "src/pray/benediction-1962.js",
+ "src/pray/benediction-divine-praises.js",
  "src/pray/canonical-data.js",
  "src/pray/christ-king-benediction.js",
  "src/pray/devotional-methods-v1.js",
@@ -27,6 +29,19 @@ assert.match(verses.la,/Qui vivis et regnas/);
 assert.match(verses.fr,/Vous qui vivez et régnez dans les siècles des siècles/);
 assert.doesNotMatch(verses.fr,/Par le Christ notre Seigneur/);
 assert.match(BENEDICTION_1962_WITNESS.rubric,/Tempus Paschale/);
+const canonicalPraises=PRAY_CANONICAL_DATA_V435930.prayers.benediction_divine_praises;
+assert.ok(canonicalPraises,"Canonical 14-line prayer remains unchanged");
+const praises1962=divinePraisesForForm(canonicalPraises,"1962");
+const praisesLater=divinePraisesForForm(canonicalPraises,"later");
+for(const lang of ["en","fr","la"]){
+ assert.equal(canonicalPraises[lang].split("\n").length,14);
+ assert.equal(praisesLater[lang].split("\n").length,14);
+ assert.equal(praises1962[lang].split("\n").length,13);
+}
+assert.doesNotMatch(praises1962.en,/Holy Spirit, the Paraclete/);
+assert.match(praisesLater.en,/Holy Spirit, the Paraclete/);
+assert.equal(DIVINE_PRAISES_EDITION.historical,"1962-thirteen-invocations");
+
 const dates=[
  ["2026-02-18",false],["2026-04-04",false],["2026-04-05",true],
  ["2026-05-17",true],["2026-05-24",true],["2026-05-30",true],
@@ -101,7 +116,7 @@ for(const m of [
  "MERCY_OPTIONAL_OPENINGS.map","data-ao-mercy-opening-options",
  "batch02SourceLinks('benediction-optional-local')",
  "benedictionVersiclesForDate(P('benediction_versicles'),selectedDateKey())",
- "benFeastOptions()","CHRIST_KING_OPTION_DEFAULTS",
+ "benFeastOptions()","CHRIST_KING_OPTION_DEFAULTS","data-p435930-ben-praises-form","divinePraisesForForm",
  "method==='montfort_short'","method==='scriptural'"
 ])assert.ok(runtime.includes(m),"Missing existing-reader integration "+m);
 assert.ok(!runtime.includes("BENEDICTION_OPTION_DEFAULTS_LEGACY"),"Do not introduce second Benediction owner");
