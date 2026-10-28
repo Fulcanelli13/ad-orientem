@@ -53,10 +53,15 @@ for(const id of ids){
     assert.match(h.englishSource.editorialNote,/not a Catholic-authorized Office text/i);
     assert.equal(h.recension,"PRE_1632_CONDITIONAL");
   }else assert.equal(h.en,undefined,"Do not invent a modern English edition: "+id);
-  if(["audi_benigne","vexilla_regis"].includes(id)){
+  if(["audi_benigne","vexilla_regis","o_sol_salutis"].includes(id)){
     assert.equal(h.fr.split(/\n\s*\n/).length,id==="vexilla_regis"?7:5);
     assert.match(h.frenchSource.work,/Guéranger/);
     assert.match(h.frenchSource.witnessStatus,/NOT_YET_PHYSICAL_PAGE_COLLATED/);
+    if(id==="o_sol_salutis"){
+      assert.equal(h.frenchSource.editionYear,1903);
+      assert.match(h.fr,/O Jésus, soleil de salut/);
+      assert.match(h.languageStatus,/GUERANGER_1903_FRENCH/);
+    }
     if(id==="vexilla_regis"){
       assert.equal(h.frenchSource.editionYear,1904);
       assert.match(h.fr,/Salut, ô Croix, notre unique espérance/);
