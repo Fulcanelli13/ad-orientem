@@ -1,0 +1,282 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B41_SOURCE_PRECISION_V1",
+  "asOf": "2026-10-29",
+  "status": "ADDITIVE_RESEARCH_ONLY_NOT_CERTIFIED",
+  "continuity": {
+    "baseline": "2026-10-21 consolidated 68 contexts/65 improved/130 answer units/64 human-certification packets; historical not additive",
+    "latestRead": "B40 2026-10-28 on same branch; B39 Chanoine on research/chanoine-cse-source-dialogue-20261019",
+    "scope": "Existing source-question identities P712–721; no canonical IDs created",
+    "caution": "Exact existing draft text for batch11/12 was not fetched in this pass; proposals are source-anchored candidate replacements, NOT verified corrections of existing answers. Human reviewer must compare against canonical drafts and suppress already-satisfied proposals.",
+    "authorship": "1905 preface says Pius X adopted an existing regional catechism with minor retouches; Q&A is documentary teaching, not a verbatim personal conversation.",
+    "originalEnglishChanoine": "STILL_BLOCKED; no reconstructed witness",
+    "originalPrinted1905": "NOT_COLLATED"
+  },
+  "sources": [
+    {
+      "id": "PX1905",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "loci": "Q710–723",
+      "kind": "Italian online witness, not original print scan"
+    },
+    {
+      "id": "PX1905_PREFACE",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/lezione-preliminare/",
+      "loci": "14 June 1905 preface: adoption of existing regional catechism with minor changes"
+    },
+    {
+      "id": "CCC",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vii_the_acts_of_the_penitent.index.html",
+      "loci": "§§1451–1453",
+      "kind": "later magisterial cross-reference; never attributed to Pius X"
+    }
+  ],
+  "proposals": [
+    {
+      "id": "SPX-1905-P-712",
+      "sourceQuestionId": "PX1905-Q712",
+      "topic": "charity_not_emotion",
+      "proposedOpening": {
+        "en": "Perfect contrition reconciles us with God because it springs from charity. It does not abolish the duty to confess.",
+        "fr": "La contrition parfaite nous réconcilie avec Dieu parce qu'elle naît de la charité. Elle ne supprime pas le devoir de se confesser."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does perfect contrition depend on how strongly I feel sorrow?",
+          "fr": "La contrition parfaite dépend-elle de l'intensité du sentiment de regret ?"
+        },
+        "answer": {
+          "en": "The 1905 answer connects perfect contrition to charity, not to a special intensity of feeling. The sacramental confession obligation in Q710–711 remains in force.",
+          "fr": "La réponse de 1905 rattache la contrition parfaite à la charité, non à l'intensité d'un sentiment. L'obligation de confession rappelée aux questions 710–711 demeure."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q710–712",
+        "CCC §1452 (later only)"
+      ],
+      "sourceWitness": "ITALIAN_1905_CATECHISM_ONLINE_TRANSCRIPTION_NOT_PRINT_COLLATED",
+      "wordingClass": "EN_FR_EDITORIAL_PARAPHRASE_NOT_VERBATIM_POPE_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_DRAFT_TRANSLATION_AND_VOICE_REVIEW_NOT_CERTIFIED",
+      "release": {
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false,
+        "original1905PrintCollated": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-714",
+      "sourceQuestionId": "PX1905-Q714",
+      "topic": "four_qualities_of_sorrow",
+      "proposedOpening": {
+        "en": "The Catechism requires sorrow to be interior, supernatural, supreme and universal; it explains each term in the following questions.",
+        "fr": "Le Catéchisme demande une douleur intérieure, surnaturelle, souveraine et universelle ; il explique ensuite chacune de ces qualités."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Are those four different requirements?",
+          "fr": "S'agit-il de quatre qualités distinctes ?"
+        },
+        "answer": {
+          "en": "Question 714 names four qualities: interior, supernatural, supreme and universal. Questions 715–723 explain them separately; no one quality should silently replace the others.",
+          "fr": "La question 714 énumère quatre qualités : intérieure, surnaturelle, souveraine et universelle. Les questions 715–723 les expliquent séparément ; aucune ne doit remplacer silencieusement les autres."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q714–723"
+      ],
+      "sourceWitness": "ITALIAN_1905_CATECHISM_ONLINE_TRANSCRIPTION_NOT_PRINT_COLLATED",
+      "wordingClass": "EN_FR_EDITORIAL_PARAPHRASE_NOT_VERBATIM_POPE_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_DRAFT_TRANSLATION_AND_VOICE_REVIEW_NOT_CERTIFIED",
+      "release": {
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false,
+        "original1905PrintCollated": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-717",
+      "sourceQuestionId": "PX1905-Q717",
+      "topic": "supernatural_motive_and_end",
+      "proposedOpening": {
+        "en": "Repentance is supernatural when awakened by God's grace and conceived from motives of faith, not merely from concern for earthly consequences.",
+        "fr": "Le repentir est surnaturel lorsqu'il est suscité par la grâce de Dieu et inspiré par des motifs de foi, non par le seul souci des conséquences terrestres."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "What distinction does the following question add?",
+          "fr": "Quelle précision apporte la question suivante ?"
+        },
+        "answer": {
+          "en": "Question 717 names grace and motives of faith. Question 718 separately explains the supernatural end of repentance. Neither question makes tears a condition.",
+          "fr": "La question 717 mentionne la grâce et les motifs de foi. La question 718 explique séparément la fin surnaturelle du repentir. Aucune ne fait des larmes une condition."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q717–719",
+        "CCC §§1451–1453 (later only)"
+      ],
+      "sourceWitness": "ITALIAN_1905_CATECHISM_ONLINE_TRANSCRIPTION_NOT_PRINT_COLLATED",
+      "wordingClass": "EN_FR_EDITORIAL_PARAPHRASE_NOT_VERBATIM_POPE_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_DRAFT_TRANSLATION_AND_VOICE_REVIEW_NOT_CERTIFIED",
+      "release": {
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false,
+        "original1905PrintCollated": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-719",
+      "sourceQuestionId": "PX1905-Q719",
+      "topic": "natural_vs_supernatural_sorrow",
+      "proposedOpening": {
+        "en": "Sorrow for sin differs according to its motive: faith in God and His judgment is not the same as regret caused solely by disgrace or temporal loss.",
+        "fr": "La douleur du péché se distingue par son motif : la foi en Dieu et en son jugement n'est pas la même chose que le regret dû uniquement au déshonneur ou à une perte temporelle."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Is fear of God's judgment only natural sorrow?",
+          "fr": "La crainte du jugement de Dieu n'est-elle qu'une douleur naturelle ?"
+        },
+        "answer": {
+          "en": "The catechism contrasts motives arising from faith with exclusively human motives such as reputation or temporal loss. Fear of divine judgment is not thereby reduced to a merely natural motive (Q713, Q719).",
+          "fr": "Le Catéchisme distingue les motifs fondés sur la foi des seuls motifs humains, comme la réputation ou une perte temporelle. La crainte du jugement divin n'est donc pas un motif simplement naturel (Q713, Q719)."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q713, Q717–719",
+        "CCC §1453 (later only)"
+      ],
+      "sourceWitness": "ITALIAN_1905_CATECHISM_ONLINE_TRANSCRIPTION_NOT_PRINT_COLLATED",
+      "wordingClass": "EN_FR_EDITORIAL_PARAPHRASE_NOT_VERBATIM_POPE_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_DRAFT_TRANSLATION_AND_VOICE_REVIEW_NOT_CERTIFIED",
+      "release": {
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false,
+        "original1905PrintCollated": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-720",
+      "sourceQuestionId": "PX1905-Q720",
+      "topic": "supreme_not_maximum_emotional_intensity",
+      "proposedOpening": {
+        "en": "To call sorrow 'supreme' means placing the offence against God above every merely earthly misfortune in our judgment.",
+        "fr": "Dire que la douleur est « souveraine », c'est tenir l'offense faite à Dieu pour un mal plus grand que tout malheur purement terrestre."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Must this produce the strongest possible emotion?",
+          "fr": "Cela doit-il provoquer l'émotion la plus intense possible ?"
+        },
+        "answer": {
+          "en": "The text's 'supreme' refers to treating sin as the greatest evil because it offends God, not to measuring one's tears or emotional distress; question 721 explicitly says physical weeping is unnecessary.",
+          "fr": "Le terme « souveraine » signifie que le péché est tenu pour le plus grand mal parce qu'il offense Dieu, non qu'il faut mesurer ses larmes ou son émotion ; la question 721 précise que les pleurs matériels ne sont pas nécessaires."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q720–721"
+      ],
+      "sourceWitness": "ITALIAN_1905_CATECHISM_ONLINE_TRANSCRIPTION_NOT_PRINT_COLLATED",
+      "wordingClass": "EN_FR_EDITORIAL_PARAPHRASE_NOT_VERBATIM_POPE_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_DRAFT_TRANSLATION_AND_VOICE_REVIEW_NOT_CERTIFIED",
+      "release": {
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false,
+        "original1905PrintCollated": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-721",
+      "sourceQuestionId": "PX1905-Q721",
+      "topic": "tears_not_required",
+      "proposedOpening": {
+        "en": "Tears are not required for true contrition. What matters is sincere repentance in the heart and will.",
+        "fr": "Les larmes ne sont pas nécessaires à la vraie contrition. Ce qui importe est le repentir sincère du cœur et de la volonté."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does not crying prove that I am unrepentant?",
+          "fr": "L'absence de larmes prouve-t-elle que je ne suis pas repentant ?"
+        },
+        "answer": {
+          "en": "No. The 1905 Catechism explicitly says material tears are not necessary. The decisive comparison concerns the heart's judgment of having offended God, not outward crying.",
+          "fr": "Non. Le Catéchisme de 1905 précise que les larmes matérielles ne sont pas nécessaires. Il s'agit du jugement intérieur sur l'offense faite à Dieu, et non de pleurs visibles."
+        }
+      },
+      "sourceRefs": [
+        "PX1905 Q720–721",
+        "CCC §1451 (later only)"
+      ],
+      "sourceWitness": "ITALIAN_1905_CATECHISM_ONLINE_TRANSCRIPTION_NOT_PRINT_COLLATED",
+      "wordingClass": "EN_FR_EDITORIAL_PARAPHRASE_NOT_VERBATIM_POPE_SPEECH",
+      "reviewGate": "READY_FOR_HUMAN_SOURCE_DRAFT_TRANSLATION_AND_VOICE_REVIEW_NOT_CERTIFIED",
+      "release": {
+        "sourceSentenceHumanCertified": false,
+        "translationApproved": false,
+        "personaVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false,
+        "original1905PrintCollated": false
+      }
+    }
+  ],
+  "scopeOnlyNoOverwrite": [
+    "SPX-1905-P-713",
+    "SPX-1905-P-715",
+    "SPX-1905-P-716",
+    "SPX-1905-P-718"
+  ],
+  "chanoine": {
+    "proposedNewFamilies": 0,
+    "reason": "B39 completed CSE141–147 source-first pass; CSE142–143 remain clinical/safeguarding specialist holds, original English historical witness blocked; no new authoritative evidence warrants speculative revision.",
+    "specialistHolds": [
+      "CSE142",
+      "CSE143"
+    ],
+    "historicalEnglishSourceBlocked": true
+  },
+  "nextQueue": [
+    "Compare six P712/P714/P717/P719/P720/P721 proposals with original batch11/12 canonical draft texts; drop redundant proposals before human certification",
+    "Review P718 source-to-draft parity and Q718 cross-reference (Italian HTML explicitly includes question and answer)",
+    "Source-first P722–730 on next pass; avoid duplicating existing batch12 entries",
+    "Chanoine CSE142–143 specialist safeguarding/clinical review only; original English witness remains blocked",
+    "Print-collate Italian 1905 edition when an authentic facsimile is available"
+  ],
+  "counts": {
+    "familiesSourceScoped": 10,
+    "distinctFamiliesWithConditionalProposals": 6,
+    "bilingualAnswerUnitsDrafted": 12,
+    "canonicalDraftsCompared": 0,
+    "certified": 0,
+    "productionChanged": 0
+  },
+  "release": {
+    "sourceSentenceHumanCertified": false,
+    "translationApproved": false,
+    "personaVoiceApproved": false,
+    "claimCertified": false,
+    "publicationApproved": false,
+    "routingEnabled": false,
+    "original1905PrintCollated": false
+  }
+}
