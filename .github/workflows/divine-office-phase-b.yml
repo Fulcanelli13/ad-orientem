@@ -38,8 +38,9 @@ jobs:
           node --check scripts/office/audit-sunday-chant.mjs
           node --check scripts/office/audit-advent-vespers-text.mjs
           node --check scripts/office/audit-printed-rubrics-pilot.mjs
+          node --check scripts/office/audit-translation-risks.mjs
       - name: Calendar, Tenebrae and composition probe contracts
-        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-printed-rubric-pilot.mjs
+        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-printed-rubric-pilot.mjs tests/divine-office-translation-risk.mjs
       - name: Source-cell HTML normalizer unit tests
         run: python3 -m unittest discover -s tests -p 'test_divine_office_normalizer.py' -v
 
@@ -121,6 +122,7 @@ jobs:
           python3 scripts/office/normalize_xhtml.py --out "$OUTPUT"
           node scripts/office/build-research-preview.mjs --out "$OUTPUT"
           node scripts/office/build-mass-style-preview.mjs --out "$OUTPUT"
+          node scripts/office/audit-translation-risks.mjs --out "$OUTPUT" --report "$OUTPUT/translation-risk.json"
           # Liturgical witness for Advent I: FIRST Vespers on Saturday and
           # SECOND on Sunday. This is a fresh six-file source sample, not
           # six production scores and not part of the original 96-file pilot.
@@ -140,6 +142,7 @@ jobs:
             --languages la,en,fr
           python3 scripts/office/normalize_xhtml.py --out "$OUTPUT/all-souls"
           node scripts/office/build-mass-style-preview.mjs --out "$OUTPUT/all-souls"
+          node scripts/office/audit-translation-risks.mjs --out "$OUTPUT/all-souls" --report "$OUTPUT/all-souls/translation-risk.json"
           node scripts/office/audit-printed-rubrics-pilot.mjs \
             --main "$OUTPUT" --souls "$OUTPUT/all-souls" \
             --report "$OUTPUT/printed-rubric-audit.json"
@@ -186,6 +189,12 @@ jobs:
           assert rubric["structuralChecksTotal"]==5
           assert not rubric["canPublish"] and rubric["published"]==0 and rubric["verifiedOfficeDates"]==0
           assert not rubric["allSoulsMatins"]["independentlyCheckedPrintedOfficeText"]
+          for folder,count in [(".",64),("all-souls",16)]:
+            risk=json.loads((Path(os.environ["OUTPUT"])/folder/"translation-risk.json").read_text(encoding="utf8"))
+            assert risk["schema"]=="ao.office.translation-risk-screening.v1"
+            assert risk["trilingualHourCount"]==count//2
+            assert risk["translationCellsScreened"]==risk["alignedLatinCells"]*2
+            assert risk["verifiedTranslations"]==0 and risk["published"]==0 and not risk["canPublish"]
           advent_mass=json.loads((Path(os.environ["OUTPUT"])/"advent-vespers"/"preview"/"mass"/"preview-manifest.json").read_text(encoding="utf8"))
           assert advent_mass["pages"]==4 and advent_mass["published"]==0
           assert advent_mass["hours"]==["VESPERS"] and not advent_mass["productionRouteRegistered"]
