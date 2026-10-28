@@ -345,7 +345,7 @@ console.log("1962 All Souls Judica/Lavabo exclusions: PASS — LOW/SUNG EN/FR an
 const requiemDismissal=requiemDismissalVariantsForResolvedMass({overlays:["REQUIEM"]});
 assert.deepEqual(Object.keys(requiemDismissal).sort(),["AO.SM.C0259","AO.SM.C0260"]);
 assert.equal(requiemDismissalVariantsForResolvedMass({overlays:[]}),null);
-const normalized=s=>String(s??"").normalize("NFD").replace(/\\p{M}/gu,"");
+const normalized=s=>String(s??"").normalize("NFD").replace(/\p{M}/gu,"");
 for(const corpus of [low,sung]){
   for(const language of ["en","fr"]){
     const options={corpus,section:sections.sectionById("AO.CARD.028"),
