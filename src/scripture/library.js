@@ -167,7 +167,7 @@ export function mountScriptureLibrary(root,{
      body.append(choices);
    }
    body.append(element("h4",selected.title,"aoScriptureOptionalPrayerTitle"));
-   for(const paragraph of selected.text.split(/\\n\\s*\\n/).filter(Boolean))
+   for(const paragraph of selected.text.split(/\n\s*\n/).filter(Boolean))
      body.append(element("p",paragraph,"aoScriptureOptionalPrayerText"));
    const source=element("a",lang==="fr"?"Lasance (1908) · source imprimée ↗":"Lasance (1908) · printed source ↗");
    source.href=selected.source.scanPageUrl;source.target="_blank";source.rel="noopener noreferrer";
