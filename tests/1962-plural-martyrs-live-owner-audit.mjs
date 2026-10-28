@@ -41,7 +41,7 @@ try {
   const describeRow=(x,i)=>({
    index:i,sourcePath:x?.sourcePath??null,latinPresent:!!(x?.lat??x?.la),
    englishPresent:!!x?.en,frenchPresent:!!x?.fr,
-   latinNamedMartyrs:/martyrum/i.test(String(x?.lat??x?.la??"").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"")),
+   latinNamedMartyrs:/martyrum/i.test(String(x?.lat??x?.la??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")),
    frenchVirginLabel:/vierges et martyres/i.test(String(x?.fr??"")),
    frenchNameCount:(String(x?.fr??"").match(/N\./g)||[]).length,
    latinNameCount:(String(x?.lat??x?.la??"").match(/N\./g)||[]).length
