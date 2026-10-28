@@ -147,6 +147,19 @@ try{
  assert.ok(opening.cardTop<390&&opening.optionsAfter&&opening.glossaryAfter,
    "Prayer must precede secondary descriptions and controls: "+JSON.stringify(opening));
  assert.match(await page.locator("#aoPray435930 .aoTP381DaypartStrip").innerText(),/Matin\s+Soir/);
+ // Curated Personal Brief has full sourced cards but a shorter horizon.
+ await page.locator("#aoPray435930 [data-ao-personal-settings] summary").evaluate(el=>el.click());
+ await page.locator("#aoPray435930 [data-tp381-personal-action='length'][data-tp381-personal-value='brief']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"6","1913 Morning Brief has six whole prayers");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-phase"),"0","Brief sunrise starts at predawn");
+ assert.match(await page.locator("#aoPray435930 [data-ao-personal-settings] summary").innerText(),/Brève personnelle/);
+ assert.match(await page.locator("#aoPray435930 .aoDailyPersonalNote").innerText(),/Ce n’est pas une édition courte imprimée/);
+ await page.locator("#aoPray435930 .aoDevoStop").nth(6).evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-phase"),"4","Brief Morning must reach daylight at final stage");
+ await page.locator("#aoPray435930 [data-tp381-personal-action='length'][data-tp381-personal-value='full']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"11","Full Morning St Pius X must be restored without text loss");
+ assert.equal((await snapshot()).index,0,"Switching from Brief restarts from the first original prayer");
+ await page.locator("#aoPray435930 [data-ao-personal-settings] summary").evaluate(el=>el.click());
  assert.equal(first.kind,"daily");
  assert.ok(first.stops>=4,"No titled daily prayer card timeline");
  assert.equal(first.index,0);assert.equal(first.active,1);assert.equal(first.overflow,"auto");
@@ -216,8 +229,18 @@ try{
 
  assert.equal(await page.locator("#aoPray435930 [data-tp381-personal-action='edition'][data-tp381-personal-value='1905']").evaluate(el=>el.click()),undefined);
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"8","1905 printed evening order must be distinct");
+ await page.locator("#aoPray435930 [data-tp381-personal-action='length'][data-tp381-personal-value='brief']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"4","1905 Evening Brief cannot invent a 1905 examen stage");
+ await page.locator("#aoPray435930 [data-tp381-personal-action='length'][data-tp381-personal-value='full']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"8","1905 source sequence must be restored");
  await page.locator("#aoPray435930 [data-tp381-personal-action='reset']").evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"10","Reset restores the 1913 evening order");
+ await page.locator("#aoPray435930 [data-tp381-personal-action='length'][data-tp381-personal-value='brief']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"5","1913 Evening Brief retains the guided examen");
+ await page.locator("#aoPray435930 .aoDevoStop").nth(4).evaluate(el=>el.click());
+ assert.match(await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText(),/Examen|examination|conscience/);
+ await page.locator("#aoPray435930 [data-tp381-personal-action='length'][data-tp381-personal-value='full']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"10","1913 printed Evening must remain intact after Brief");
  const saved=await page.evaluate(()=>localStorage.getItem("ao.pray.personal-rule.v1"));
  assert.ok(saved&&saved.includes('"edition":"1913"')&&!saved.includes("De profundis"));
  await open("pray.nightly_examen");
