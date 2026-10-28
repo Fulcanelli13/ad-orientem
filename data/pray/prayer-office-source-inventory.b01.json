@@ -1843,6 +1843,18 @@
         "anomaly_count": 4,
         "scope": "VERIFIED_SUBSET_NOT_COMPLETE",
         "note": "Some numbered notices do not contain a prayer; composite sections require component decomposition Supplementary historical numbers §163–164 appear inside section II and §169 inside section V; section page numbering is noncontiguous."
+      },
+      "b03_full_numbered_index": {
+        "file": "data/pray/raccolta-1866-complete-index.b03.json",
+        "historical_numbered_entries": 189,
+        "numbered_index_page_witness": "https://www.liturgialatina.org/raccolta/index.htm",
+        "mirror_index_identified": 188,
+        "missing_mirror_index_number": 157,
+        "earlier_witness_index_corrob_number_157": "https://en.wikisource.org/wiki/The_Raccolta_(1857)/Index",
+        "source_page_heading_checked": 52,
+        "full_individual_text_verified": 0,
+        "component_prayer_count": null,
+        "completeness": "NUMBERED_INDEX_CENSUS_COMPLETED_SOURCE_TEXT_AUDIT_NOT_COMPLETE"
       }
     },
     "sensus_fidelium_non_raccolta": {
@@ -2310,7 +2322,17 @@
           "status": "PAGE_TEXT_FOUND_COMPONENT_PRAYERS_NOT_CATALOGUED",
           "form": "SEASONAL_PRAYER_SEQUENCE"
         }
-      ]
+      ],
+      "b03_dedicated_novena_index": {
+        "file": "data/pray/sensus-calendar-novena-collection.b03.json",
+        "source": "https://sensusfidelium.com/calendar/novenas/",
+        "items_indexed": 61,
+        "items_links_resolved": 61,
+        "page_bodies_accessed": 61,
+        "full_prayer_text_verification": 0,
+        "unique_after_comparison": null,
+        "scope": "DEDICATED_NOVENAS_COLLECTION_ONLY"
+      }
     },
     "roman_divine_office_1960": {
       "rubrical_authority": "https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html",
@@ -2497,11 +2519,24 @@
     "sensus_tag_post_bodies_read_b02": 6,
     "sensus_tag_post_bodies_unread_b02": 9,
     "full_site_crawl_completed": false,
-    "last_audit": "B02_2026-10-28",
+    "last_audit": "B03_2026-10-28",
     "sensus_extra_discovery_b02": 5,
-    "total_source_observations": 214
+    "total_source_observations": 214,
+    "raccolta_historical_index_entries_b03": 189,
+    "raccolta_1866_mirror_index_entries_without_gap": 188,
+    "raccolta_exception_number_157_earlier_index_only": 1,
+    "raccolta_source_headings_independently_inspected": 52,
+    "raccolta_individual_texts_fully_collated": 0,
+    "sensus_novenas_collection_items_b03": 61,
+    "sensus_novenas_collection_links_resolved_b03": 61,
+    "sensus_site_wide_total": null,
+    "raccolta_numbered_index_complete": true,
+    "sensus_novenas_dedicated_index_complete": true,
+    "all_source_families_complete": false
   },
   "next_capture_gates": [
+    "Split all 189 Raccolta historical entries into constituent prayers, notices and exercises with page-collated evidence; 157 is omitted in online 1866 index and is corroborated in 1857 index",
+    "Reconcile 61 dedicated Sensus novenas with 15 dynamic tag rows and all calendar/site archives; individual text and translation completeness still unverified",
     "Retrieve a machine-accessible site sitemap/WordPress API or other pagination path to enumerate all Sensus pages; current novena tag page displays only 15 and Load More is not available in static fetch",
     "Enumerate all site pages including pagination and archives",
     "Extract 1866 Raccolta numbered entries and composite prayers",
