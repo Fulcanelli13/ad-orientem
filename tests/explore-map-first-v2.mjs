@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {discoverItemsWithinMapBounds,renderMapcnDiscoverRail} from "../src/find/mapcn-discover-rail.js";
+import {discoverCenterDistanceKm,discoverItemsWithinMapBounds,renderMapcnDiscoverRail} from "../src/find/mapcn-discover-rail.js";
 import {renderHeritageToString} from "../src/find/heritage-presentation.js";
 
 const places=[
@@ -35,6 +35,15 @@ const vm={
  lens:"heritage",network:null,timeMass:null,atlasCoverage:null,
  journeyOpen:false,counts:{heritage:1},
 };
+assert.equal(discoverCenterDistanceKm(places[0],{lat:43.2,lng:5.1}),0,
+ "Map-centred relevance must not depend on device geolocation");
+assert.ok(discoverCenterDistanceKm(places[0],{lat:43.2,lng:5.1})<
+ discoverCenterDistanceKm(places[1],{lat:43.2,lng:5.1}),
+ "Nearby map places should outrank distant ones on otherwise equal records");
+const ranked=renderMapcnDiscoverRail({...vm,items:[places[1],places[0]],
+ placeProfiles:[],featuredPlaces:[],discoverCenter:{lat:43.2,lng:5.1}});
+assert.ok(ranked.indexOf("Documented One")<ranked.indexOf("Documented Two"),
+ "Visible-area discovery should rank by current camera proximity, not alphabetical title");
 const rail=renderMapcnDiscoverRail({...vm,discoverViewport:true});
 assert.match(rail,/data-mapcn-discover-toggle/,"Discovery must have an accessible toggle");
 assert.match(rail,/aria-expanded="false"/,"Map should initially remain unobstructed");
