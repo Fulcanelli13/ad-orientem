@@ -679,7 +679,8 @@ const palmReady=await prepareNativeReaderPreview({
 });
 assert.ok(palmReady.palmController,"Palm native preview controller missing");
 assert.equal(palmReady.palmController.project().card.id,"PALM-R01");
-assert.equal(palmReady.model.totalCards,30,"Palm prelude mutated Mass card identity");
+assert.equal(palmReady.model.totalCards,39,
+  "Palm prelude must preserve canonical LIVE source identity after legacy preference migration");
 
 const ashPrepared={
   ...prepared,
@@ -694,7 +695,8 @@ const ashReady=await prepareNativeReaderPreview({
 });
 assert.ok(ashReady.ashController,"Ash native preview controller missing");
 assert.equal(ashReady.ashController.project().card.id,"ASH-R01");
-assert.equal(ashReady.model.totalCards,30,"Ash prelude mutated Mass card identity");
+assert.equal(ashReady.model.totalCards,39,
+  "Ash prelude must preserve canonical LIVE source identity after legacy preference migration");
 
 // 1962 special-day preludes ending at the Introit omit the entire Foot cluster.
 // The revised 65-piece Mass projection contains four such display cards;

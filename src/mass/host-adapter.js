@@ -34,7 +34,7 @@ function legacyForm(value) {
 function legacyMode(value) {
   const raw=String(value??"vox").toLowerCase();
   if(raw==="missal"||raw==="read") return "MISSAL";
-  if(raw==="simple") return "SIMPLE";
+  if(raw==="simple") return "LIVE"; // Migrate the former host preference.
   return "LIVE";
 }
 
