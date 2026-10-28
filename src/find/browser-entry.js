@@ -13,6 +13,7 @@ import {buildTimeMassBoard,validTimeMassDate} from "./mapcn-time-mass-board.js";
 import { HERITAGE_STYLE } from "./heritage-style.js";
 import { EXPLORE_ATLAS_LAYOUT_STYLE } from "./explore-atlas-layout-style.js";
 import { EXPLORE_MAP_FIRST_V2_STYLE } from "./explore-map-first-v2-style.js";
+import { DIRECTORY_CARD_STYLE, attachApprovedDirectoryMedia } from "./directory-card.js";
 import { discoverItemsWithinMapBounds, renderMapcnDiscoverRail } from "./mapcn-discover-rail.js";
 import { SAINTS_SHEET_CSS } from "./saints-presentation.js";
 import { projectSaintCatalogueItems } from "./saints-catalogue.js";
@@ -455,9 +456,12 @@ export function createFindOwner(win=globalThis){
     const rawItems=filtered();
     // Canonical practice cards are a reading view over the immutable attestation
     // corpus. Site-backed map pins and Place-page deep links keep original IDs.
-    const items=state.lens==="traditions"&&state.view==="list"
+    const baseItems=state.lens==="traditions"&&state.view==="list"
       ?groupTraditionsForBrowse(rawItems,{includeNovenaContext:Boolean(state.query.trim())||state.atlasCalendar==="NOVENA"})
       :rawItems;
+    const items=state.lens==="tlm"?attachApprovedDirectoryMedia(baseItems,{
+      directoryPlaceLinks:data?.geography?.directoryPlaceLinks,approved:data?.media?.approved,
+      gallery:data?.media?.gallery}):baseItems;
     const canonical=projection?groupTraditionsForBrowse(projection.byLens.traditions):[];
     const selectedOverride=state.lens==="traditions"
       ?projection.byLens.traditions.find(item=>item.item_id===state.selectedId)??null
