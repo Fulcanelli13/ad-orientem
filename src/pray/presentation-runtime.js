@@ -36,6 +36,7 @@ import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { isFirstWeekday as calendarIsFirstWeekday } from "../calendar/intelligence.js";
 import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "./devotional-ux-contract.js";
 import { LITANY_SOURCE_WITNESSES, LITANY_WITNESS_REVIEW_V1, reviewLitanyTranscription, extractLitanyProper, paginateLitanyProper } from "./litany-source.js";
+import {BATCH03_LITANY_EDITION_POLICY,BATCH03_ICRSP_MAJOR_PROCESSION_STEPS,BATCH03_LITANY_SOURCE_STATUS,batch03LitanyUse} from "./litany-1962-use-policy.js";
 import { DEVOTIONAL_WITNESSES, PRAYER_WITNESSED_VARIANTS } from "./devotional-witness-links.v1.js";
 import { parseSevenWordsHistoricalWitness } from "./seven-words-witness.v1.js";
 import { prayCollationNotice } from "./source-collation-notices.v1.js";
@@ -247,7 +248,7 @@ let adorationQuietReturn=null;
 let FF={step:0,intention:false,communion:false};
 let FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0};
 let PEN={step:0,token:0};
-let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null};
+let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null,use:'private'};
 let SEVEN={step:0,sections:null,appendix:'',loading:false,error:'',srcToken:0,scriptToken:0};
 let FORTY={mode:'choose',step:0,solemnStep:0};
 let STATIONS={step:0,optionsOpen:false,publicPosture:false,simpleResponses:false};
@@ -2108,14 +2109,39 @@ function litanySourceDisclosure(){
  <p>${esc(L('Distinct historical witness; not a certified 1962 liturgical edition. Only the Litany proper is displayed, excluding the appended psalm and collects.','Témoin historique distinct ; il ne s’agit pas d’une édition liturgique de 1962 certifiée. Seules les litanies sont affichées, sans le psaume ni les oraisons qui suivent.'))}</p>
  ${note}</details>`;
 }
+function batch03LitanyUseOptions(){
+ const uses=Object.values(BATCH03_LITANY_EDITION_POLICY);
+ return `<nav class="aoP435930GuideNav aoBatch03LitanyUses" aria-label="${esc(L('Litany edition and use','Version et usage des litanies'))}">
+ ${uses.map(u=>`<button type="button" data-p435930-lit-use="${esc(u.id)}" aria-pressed="${LIT.use===u.id}" class="${LIT.use===u.id?'active':''}">${esc(isFr()?u.labelFr:u.labelEn)}</button>`).join('')}</nav>`;
+}
+function renderBatch03PublicLitanyReference(){
+ const selected=batch03LitanyUse(LIT.use),major=LIT.use==='major';
+ const title=L('Litany of the Saints','Litanies des saints');
+ const intro=major?
+  L('This ICRSP Latin–French witness includes the Major Litanies procession, invocations, prayers and collects. The liturgical text is not the 1883 English private edition nor the 1862 Corneille French edition. Complete line-by-line publication is held pending collation; use the identified original source, not an invented harmonisation.',
+    'Ce témoin latin–français de l’ICRSP comprend la procession des Litanies majeures, les invocations, prières et oraisons. Il n’est ni le livre privé anglais de 1883, ni le texte de Corneille de 1862. La publication intégrale attend une collation mot à mot ; consultez le texte original, sans harmonisation inventée.'):
+  LIT.use==='vigil'?
+   L('The restored Easter Vigil has a distinct shorter litany governed by its own order and responses. The private litany cannot stand in for that rite. Follow the existing Easter Vigil Mass reader when attending the liturgy.',
+     'La Vigile pascale restaurée possède ses litanies abrégées propres, régies par leur ordre et leurs répons. Les litanies privées ne remplacent pas ce rite ; suivez le lecteur de la Vigile pascale lors de la célébration.'):
+   L('The solemn Forty Hours rite has clergy-led public litanies, processions and prayers when celebrated locally. The existing three-day Forty Hours guide is the correct participant companion; it is not a substitute for the ceremonial book.',
+     'Les Quarante-Heures solennelles comportent, lorsqu’elles sont célébrées localement, des litanies, processions et prières publiques conduites par le clergé. Le parcours existant sur trois jours accompagne le fidèle sans remplacer le cérémonial.');
+ const sequence=major?`<ol class="aoP435930HistoricalSequence" data-ao-icrsp-major-sequence>${BATCH03_ICRSP_MAJOR_PROCESSION_STEPS.map(x=>`<li><b>${esc(x.id)}</b> · ${esc(isFr()?x.fr:x.en)} <small>${esc(x.role)}</small></li>`).join('')}</ol>`:'';
+ const links=major?`<a class="aoP435930SourceLink" href="${esc(BATCH03_LITANY_SOURCE_STATUS.source)}" target="_blank" rel="noopener noreferrer">${esc(L('Open complete ICRSP Latin–French Major Litanies','Ouvrir les Litanies majeures intégrales latin–français de l’ICRSP'))} ↗</a><a class="aoP435930SourceLink" href="${esc(BATCH03_LITANY_EDITION_POLICY.major.additionalSourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(L('Rogations: distinct accompanying rite','Rogations : rite connexe distinct'))} ↗</a>`:
+  LIT.use==='forty'? `<button type="button" class="aoP435930Primary" data-p435930-lit-forty>${esc(L('Open the existing Forty Hours guide','Ouvrir le parcours existant des Quarante-Heures'))}</button>`:'';
+ return `${head(title,L('Historical editions and liturgical uses','Éditions historiques et usages liturgiques'))}
+ <main class="aoP435930Body aoP435930DevotionalGuidedReader" data-ao-litany-use="${esc(selected.id)}">
+ ${batch03LitanyUseOptions()}<section class="aoDevoCard"><div class="aoDevoCardScroll"><h2>${esc(isFr()?selected.labelFr:selected.labelEn)}</h2><p>${esc(intro)}</p>
+ ${sequence}${links}<p><small>${esc(L('Status: distinct 1962 Latin–French public edition not yet locally transcribed or certified. No invented Latin, French or English prayers are displayed.','État : l’édition publique latin–français de 1962 n’est pas encore transcrite ni certifiée localement. Aucune prière latine, française ou anglaise n’est inventée.'))}</small></p></div></section></main>`;
+}
 function renderLitany(){
+ if(LIT.use!=='private')return renderBatch03PublicLitanyReference();
  // A preference change must not retain the other language's historical edition.
  if(LIT.language!==lang()){
   LIT.language=lang();LIT.token++;LIT.sections=null;LIT.review=null;LIT.loading=false;LIT.error='';LIT.step=0;
  }
  if(!LIT.sections&&!LIT.loading&&!LIT.error)setTimeout(ensureLitany,0);
- if(LIT.error)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body">${callout(esc(L('The historical text could not be verified or loaded. No substitute is displayed.','Le texte historique n’a pas pu être chargé ou vérifié. Aucun remplacement n’est affiché.')),'warn')}<button type="button" class="aoP435930Secondary" data-p435930-lit-retry>${esc(L('Try again','Réessayer'))}</button>${litanySourceDisclosure()}</main>`;
- if(!LIT.sections)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body"><p class="aoP435930Loading">${esc(L('Loading the Litany…','Chargement des Litanies…'))}</p></main>`;
+ if(LIT.error)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body">${batch03LitanyUseOptions()}${callout(esc(L('The historical text could not be verified or loaded. No substitute is displayed.','Le texte historique n’a pas pu être chargé ou vérifié. Aucun remplacement n’est affiché.')),'warn')}<button type="button" class="aoP435930Secondary" data-p435930-lit-retry>${esc(L('Try again','Réessayer'))}</button>${litanySourceDisclosure()}</main>`;
+ if(!LIT.sections)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body">${batch03LitanyUseOptions()}<p class="aoP435930Loading">${esc(L('Loading the Litany…','Chargement des Litanies…'))}</p></main>`;
  LIT.step=Math.max(0,Math.min(LIT.sections.length-1,LIT.step));
  const st=LIT.sections[LIT.step],final=LIT.step===LIT.sections.length-1;
  const text=st.lines.map(line=>`<p class="aoP435930LitanyLine">${esc(line)}</p>`).join('');
@@ -2125,6 +2151,7 @@ function renderLitany(){
  const card=sourcedDevotionalCard({kind:'litany',id:'litany-'+LIT.step,title:st.title,index:LIT.step,total:LIT.sections.length,body});
  return `${head(L('Litany of the Saints','Litanies des saints'),L('Call · response · guided in sections','Invocation · réponse · guidées par sections'))}
  <main class="aoP435930Body aoP435930DevotionalGuidedReader" data-ao-devotional-owner="litany" data-ao-devotional-final="${final}">
+ ${batch03LitanyUseOptions()}
  ${card}
  ${final?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-lit-done>${esc(L('Finish litany','Terminer les litanies'))}</button></div>`:''}
  <details class="aoP435930PrayerOptions aoP435930GuidedContext"><summary>${esc(L('Recitation and reading guide','Mode de récitation et guide'))}</summary>
@@ -2782,6 +2809,8 @@ function onClick(e){
  if(b.dataset.p435930PenStep!=null){PEN.step=Math.max(0,Math.min(6,+b.dataset.p435930PenStep));return render()}
  if(b.matches('[data-p435930-pen-litany]')){pushView();view='litany';LIT.step=0;return render()}
  if(b.dataset.p435930LitStep!=null){LIT.step=Math.max(0,Math.min((LIT.sections?.length||1)-1,+b.dataset.p435930LitStep));return render()}
+ if(b.hasAttribute('data-p435930-lit-use')){const choice=b.dataset.p435930LitUse;if(!BATCH03_LITANY_EDITION_POLICY[choice])return;LIT.use=choice;LIT.step=0;return render()}
+ if(b.matches('[data-p435930-lit-forty]')){pushView('litany');routeOwn('pray.forty_hours');return render()}
  if(b.matches('[data-p435930-lit-retry]')){LIT.error='';LIT.sections=null;LIT.step=0;return render()}
  if(b.matches('[data-p435930-lit-done]')){if(navStack.at(-1)==='penitential'){navStack.pop();popView('home')}else popView('home');return render()}
  if(b.dataset.p435930WordStep!=null){SEVEN.step=Math.max(0,Math.min(6,+b.dataset.p435930WordStep));return render()}
