@@ -152,6 +152,14 @@ export function requiemDismissalVariantsForResolvedMass(resolvedMass){
     ?REQUIEM_DISMISSAL:null;
 }
 
+// Ritus servandus XI.1: after Dominus vobiscum the Requiem dismissal is
+// delivered facing the altar; the ordinary-facing-people source action is
+// inapplicable. Return an exact cue guard for Low and Sung state channels.
+export function isRequiemAltarFacingDismissal(cueId,prepared,conditions=null){
+  return String(cueId??"")==="AO.SM.C0259" &&
+    isExplicitRequiemMass(prepared,conditions);
+}
+
 // In the 1962 Requiem the FIRST pre-Communion peace prayer is omitted,
 // but the two following priest-Communion prayers remain. Exact canonical
 // cue ownership must be preserved for LIVE / SIMPLE / MISSAL navigation.
