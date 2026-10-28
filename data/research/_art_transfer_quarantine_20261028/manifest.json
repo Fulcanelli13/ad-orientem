@@ -1,0 +1,44 @@
+{
+  "schema": "AO_ART_SOURCE_TEMPORARY_TRANSFER_V1",
+  "created_at_utc": "2026-10-28T03:17:40.616207+00:00",
+  "status": "QUARANTINE_NOT_PUBLISHED",
+  "frame_free_certified": false,
+  "publication": false,
+  "purpose": "Move approved exact-source bytes into PRIVATE archive; remove this staging copy after transfer",
+  "sources": [
+    {
+      "id": "murillo-immaculate-conception",
+      "accession": "1959.189",
+      "url": "https://openaccess-cdn.clevelandart.org/1959.189/1959.189_print.jpg",
+      "sha256": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
+      "size": 4691706,
+      "pixels": [
+        1951,
+        3400
+      ],
+      "editorial": "APPROVED",
+      "binary_file": "data/research/_art_transfer_quarantine_20261028/murillo-immaculate-conception.jpg",
+      "qa_sheet_file": "data/research/_art_transfer_quarantine_20261028/murillo-immaculate-conception__QA_EDGES.jpg",
+      "sha256_verified": true,
+      "frame_four_edge_manual": "PENDING",
+      "permanently_archived_in_private_repo": false
+    },
+    {
+      "id": "cavallino-adoration-shepherds",
+      "accession": "1968.100",
+      "url": "https://openaccess-cdn.clevelandart.org/1968.100/1968.100_print.jpg",
+      "sha256": "115e78e0c096c9274051fa89f277d93392cec097474d183c1e4f20a371960268",
+      "size": 6445697,
+      "pixels": [
+        3400,
+        2905
+      ],
+      "editorial": "APPROVED",
+      "binary_file": "data/research/_art_transfer_quarantine_20261028/cavallino-adoration-shepherds.jpg",
+      "qa_sheet_file": "data/research/_art_transfer_quarantine_20261028/cavallino-adoration-shepherds__QA_EDGES.jpg",
+      "sha256_verified": true,
+      "frame_four_edge_manual": "PENDING",
+      "permanently_archived_in_private_repo": false
+    }
+  ]
+}
