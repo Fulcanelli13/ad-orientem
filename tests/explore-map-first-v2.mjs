@@ -25,11 +25,12 @@ assert.equal(discoverItemsWithinMapBounds(places,null),places,
 const profile={
  place_id:"place:FR:one",name:"Documented One",place_type:"shrine",
  address:{city:"Example City",country:"France"},
- editorial_feature:{ordinal:1},
- media:{asset_path:"/approved-place.jpg",alt_en:"Church exterior",alt_fr:"Église",credit:"Owner",license:"CC0"}
+ editorial_feature:{ordinal:1},map_publishable:true,counts:{shrines:1,relics:0},
+ sources:[{url:"https://example.org/verified"}],
+ media:{asset_path:"/approved-place.jpg",alt_en:"Church exterior",alt_fr:"Église",credit:"Owner",license:"CC0",orientation:"landscape"}
 };
 const vm={
- language:"en",items:subset,filters:{mapcnDiscoverLimit:36},placeProfiles:[profile],
+ language:"en",items:subset,filters:{mapcnDiscoverLimit:36,heritageCategories:["shrines"]},placeProfiles:[profile],
  featuredPlaces:[profile],nearby:[],selectedPlace:null,selected:null,
  lens:"heritage",network:null,timeMass:null,atlasCoverage:null,
  journeyOpen:false,counts:{heritage:1},
@@ -41,9 +42,16 @@ assert.match(rail,/data-discover-expanded="false"/);
 assert.match(rail,/In this area/);
 assert.match(rail,/Documented One/);
 assert.match(rail,/approved-place\.jpg/,"Approved documented image should remain accessible");
+assert.match(rail,/aoMapcnEditorialStrip/,"Expanded discovery should include a separate licensed editorial selection");
+assert.match(rail,/IN FOCUS · WORLDWIDE/,"Worldwide editorial choices must not be mislabelled as local results");
+const nonEditorial=renderMapcnDiscoverRail({...vm,featuredPlaces:[{...profile,sources:[]}]});
+assert.doesNotMatch(nonEditorial,/aoMapcnEditorialStrip/,"Editorial choices require source-backed Place profiles");
+const restricted=renderMapcnDiscoverRail({...vm,filters:{mapcnDiscoverLimit:36,heritageCategories:["relics"]}});
+assert.doesNotMatch(restricted,/aoMapcnEditorialStrip/,"Global curation must not override the selected thematic filter");
 assert.doesNotMatch(rail,/Documented Two|Unpublished|Without coordinates/);
 const french=renderMapcnDiscoverRail({...vm,language:"fr",discoverViewport:true});
 assert.match(french,/Dans cette région/);
+assert.match(french,/À DÉCOUVRIR · MONDE/);
 const noMatches=renderMapcnDiscoverRail({...vm,items:[],discoverViewport:true});
 assert.match(noMatches,/No documented place in this map view/);
 assert.doesNotMatch(noMatches,/data-mapcn-discover-more/);
