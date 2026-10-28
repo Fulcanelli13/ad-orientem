@@ -32,8 +32,8 @@
       "CONTEXTUAL_PAINTING_CANDIDATE": 17,
       "EXCLUDE_ARTIST": 7,
       "STYLE_EXCEPTION_HOLD": 12,
-      "PRIORITY_PHOTOGRAPHIC_QA": 28,
-      "SECONDARY_VISUAL_REVIEW": 19
+      "PRIORITY_PHOTOGRAPHIC_QA": 33,
+      "SECONDARY_VISUAL_REVIEW": 14
     },
     "hard_artist_exclusions": 7,
     "possible_global_rejected_identity_collisions": 0,
@@ -53,7 +53,8 @@
     "w1_file_rights_metadata_holds": 1,
     "w1_native_review_sheets": 1,
     "w1_new_pristine_certifications": 0,
-    "w1_production_activated": 0
+    "w1_production_activated": 0,
+    "artist_name_normalization_corrections": 5
   },
   "commons_metadata_batch_errors": [
     null,
@@ -494,9 +495,9 @@
       "commons_filename": "Georges de La Tour - Newlyborn infant - Musée des Beaux-Arts de Rennes.jpg",
       "original_source_discovery": "BREVIARIUM_GALLERY_TO_COMMONS_FILEPATH",
       "notes_from_gallery": [],
-      "aesthetic_triage": "SECONDARY_VISUAL_REVIEW",
-      "preliminary_reason": "SINGLE_PAINTING_MAY_FIT_AESTHETIC_DESPITE_ARTIST_NOT_BEING_PRIORITY",
-      "next_action": "REVIEW_FULL_IMAGE_AND_OBJECT_BEFORE_PROMOTION",
+      "aesthetic_triage": "PRIORITY_PHOTOGRAPHIC_QA",
+      "preliminary_reason": "STRONG_AESTHETIC_ALIGNMENT_ARTIST_ONLY_NOT_PAINTING_APPROVAL",
+      "next_action": "CHECK_NATIVE_SOURCE_AND_PRIOR_EDITORIAL_OWNER_BEFORE_STAGING",
       "user_editorial_approval_for_this_work": false,
       "hard_artist_exclusion": false,
       "possible_global_rejected_identity_collisions": [],
@@ -534,7 +535,8 @@
         "pristine_certified": false,
         "production_allowed": false,
         "rights_final_certified": false
-      }
+      },
+      "normalization_correction": "RECONCILED_PARTICLES_IN_FRENCH_SPANISH_ARTIST_NAME"
     },
     {
       "breviarum_plate_id": "plate-masaccio-saintanne",
@@ -1875,9 +1877,9 @@
       "commons_filename": "Philippe de Champaigne - The Last Supper - WGA4710.jpg",
       "original_source_discovery": "BREVIARIUM_GALLERY_TO_COMMONS_FILEPATH",
       "notes_from_gallery": [],
-      "aesthetic_triage": "SECONDARY_VISUAL_REVIEW",
-      "preliminary_reason": "SINGLE_PAINTING_MAY_FIT_AESTHETIC_DESPITE_ARTIST_NOT_BEING_PRIORITY",
-      "next_action": "REVIEW_FULL_IMAGE_AND_OBJECT_BEFORE_PROMOTION",
+      "aesthetic_triage": "PRIORITY_PHOTOGRAPHIC_QA",
+      "preliminary_reason": "STRONG_AESTHETIC_ALIGNMENT_ARTIST_ONLY_NOT_PAINTING_APPROVAL",
+      "next_action": "CHECK_NATIVE_SOURCE_AND_PRIOR_EDITORIAL_OWNER_BEFORE_STAGING",
       "user_editorial_approval_for_this_work": false,
       "hard_artist_exclusion": false,
       "possible_global_rejected_identity_collisions": [],
@@ -1908,7 +1910,8 @@
       "bulk_photo_firstwave": {
         "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
         "not_rejected": true
-      }
+      },
+      "normalization_correction": "RECONCILED_PARTICLES_IN_FRENCH_SPANISH_ARTIST_NAME"
     },
     {
       "breviarum_plate_id": "plate-caravaggio-emmaus",
@@ -2993,9 +2996,9 @@
       "commons_filename": "Antonio de Pereda y Salgado - St Anthony of Padua with Christ Child - WGA17167.jpg",
       "original_source_discovery": "BREVIARIUM_GALLERY_TO_COMMONS_FILEPATH",
       "notes_from_gallery": [],
-      "aesthetic_triage": "SECONDARY_VISUAL_REVIEW",
-      "preliminary_reason": "SINGLE_PAINTING_MAY_FIT_AESTHETIC_DESPITE_ARTIST_NOT_BEING_PRIORITY",
-      "next_action": "REVIEW_FULL_IMAGE_AND_OBJECT_BEFORE_PROMOTION",
+      "aesthetic_triage": "PRIORITY_PHOTOGRAPHIC_QA",
+      "preliminary_reason": "STRONG_AESTHETIC_ALIGNMENT_ARTIST_ONLY_NOT_PAINTING_APPROVAL",
+      "next_action": "CHECK_NATIVE_SOURCE_AND_PRIOR_EDITORIAL_OWNER_BEFORE_STAGING",
       "user_editorial_approval_for_this_work": false,
       "hard_artist_exclusion": false,
       "possible_global_rejected_identity_collisions": [],
@@ -3026,7 +3029,8 @@
       "bulk_photo_firstwave": {
         "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
         "not_rejected": true
-      }
+      },
+      "normalization_correction": "RECONCILED_PARTICLES_IN_FRENCH_SPANISH_ARTIST_NAME"
     },
     {
       "breviarum_plate_id": "plate-reni-cecilia",
@@ -3085,9 +3089,9 @@
       "commons_filename": "José de Ribera 016.jpg",
       "original_source_discovery": "BREVIARIUM_GALLERY_TO_COMMONS_FILEPATH",
       "notes_from_gallery": [],
-      "aesthetic_triage": "SECONDARY_VISUAL_REVIEW",
-      "preliminary_reason": "SINGLE_PAINTING_MAY_FIT_AESTHETIC_DESPITE_ARTIST_NOT_BEING_PRIORITY",
-      "next_action": "REVIEW_FULL_IMAGE_AND_OBJECT_BEFORE_PROMOTION",
+      "aesthetic_triage": "PRIORITY_PHOTOGRAPHIC_QA",
+      "preliminary_reason": "STRONG_AESTHETIC_ALIGNMENT_ARTIST_ONLY_NOT_PAINTING_APPROVAL",
+      "next_action": "CHECK_NATIVE_SOURCE_AND_PRIOR_EDITORIAL_OWNER_BEFORE_STAGING",
       "user_editorial_approval_for_this_work": false,
       "hard_artist_exclusion": false,
       "possible_global_rejected_identity_collisions": [],
@@ -3125,7 +3129,8 @@
         "pristine_certified": false,
         "production_allowed": false,
         "rights_final_certified": false
-      }
+      },
+      "normalization_correction": "RECONCILED_PARTICLES_IN_FRENCH_SPANISH_ARTIST_NAME"
     },
     {
       "breviarum_plate_id": "plate-tiepolo-catherine",
@@ -3467,9 +3472,9 @@
       "commons_filename": "Saint francis in meditation - Zurbaran.jpg",
       "original_source_discovery": "BREVIARIUM_GALLERY_TO_COMMONS_FILEPATH",
       "notes_from_gallery": [],
-      "aesthetic_triage": "SECONDARY_VISUAL_REVIEW",
-      "preliminary_reason": "SINGLE_PAINTING_MAY_FIT_AESTHETIC_DESPITE_ARTIST_NOT_BEING_PRIORITY",
-      "next_action": "REVIEW_FULL_IMAGE_AND_OBJECT_BEFORE_PROMOTION",
+      "aesthetic_triage": "PRIORITY_PHOTOGRAPHIC_QA",
+      "preliminary_reason": "STRONG_AESTHETIC_ALIGNMENT_ARTIST_ONLY_NOT_PAINTING_APPROVAL",
+      "next_action": "CHECK_NATIVE_SOURCE_AND_PRIOR_EDITORIAL_OWNER_BEFORE_STAGING",
       "user_editorial_approval_for_this_work": false,
       "hard_artist_exclusion": false,
       "possible_global_rejected_identity_collisions": [],
@@ -3500,7 +3505,8 @@
       "bulk_photo_firstwave": {
         "status": "NOT_SELECTED_FOR_W1_NATIVE_IMAGE_ACQUISITION",
         "not_rejected": true
-      }
+      },
+      "normalization_correction": "RECONCILED_PARTICLES_IN_FRENCH_SPANISH_ARTIST_NAME"
     },
     {
       "breviarum_plate_id": "plate-tiepolo-cajetan",
