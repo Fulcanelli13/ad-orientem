@@ -1,0 +1,80 @@
+name: Museum-issued heroes — immutable native-pixel QA research
+on:
+  push:
+    branches: [research/module-hero-pd-masters-20261026]
+    paths:
+      - 'scripts/art/review-institutional-hero-sources.py'
+      - '.github/workflows/research-institutional-pristine-qa-20261028.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: institutional-pristine-native-20261028
+  cancel-in-progress: false
+jobs:
+  institution-original-pixel-review:
+    if: github.ref == 'refs/heads/research/module-hero-pd-masters-20261026'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/module-hero-pd-masters-20261026
+          persist-credentials: true
+      - name: Read preserved NGA and Met original photographs
+        uses: actions/checkout@v4
+        with:
+          ref: research/module-hero-museum-photos-20261026
+          path: source-museum
+          persist-credentials: false
+      - name: Read preserved Met Annunciation original
+        uses: actions/checkout@v4
+        with:
+          ref: research/module-hero-wave2-20261026
+          path: source-wave2
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Assert authentic exact SHA256, inspect key subjects at source pixels
+        run: |
+          python scripts/art/review-institutional-hero-sources.py \
+            --museum-root source-museum \
+            --wave2-root source-wave2 \
+            --out assets/staged/module-hero-institutional-review-20261028
+      - name: Strictly research outputs; never auto-grant photographic approval
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=Path('assets/staged/module-hero-institutional-review-20261028')
+          m=json.loads((r/'institutional-review-manifest.json').read_text())
+          assert m['source_checks_passed']==3 and m['pristine_approved']==0
+          assert m['app_released']==0
+          assert {x['module_id'] for x in m['paintings']}=={'confession','angelus','adoration'}
+          for x in m['paintings']:
+              assert x['source_original_unmodified']
+              assert not x['pristine_master_approved'] and not x['app_released']
+              assert x['frame_and_painted_boundary_gate']=='human_review_required'
+              assert (r/x['overview']).is_file()
+              assert len(x['crops'])==6
+              for c in x['crops']:
+                  assert c['native_pixels_not_rescaled'] and (r/c['file']).is_file()
+          print('3/3 SHA256 verified; 18 native subject crops; no master release')
+          PY
+      - name: Preserve reviewer assets on research branch only
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "${GITHUB_REF}" = 'refs/heads/research/module-hero-pd-masters-20261026'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f assets/staged/module-hero-institutional-review-20261028/
+          if ! git diff --cached --quiet; then
+            git commit -m 'research(art): preserve three museum source-authenticated QA contact atlases'
+            git pull --rebase origin research/module-hero-pd-masters-20261026
+            git push origin HEAD:research/module-hero-pd-masters-20261026
+          fi
