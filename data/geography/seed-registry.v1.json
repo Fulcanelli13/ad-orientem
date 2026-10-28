@@ -21569,6 +21569,165 @@
       "source_ids": [
         "AO-P48-SITE-SG-INV-0156-96319696"
       ]
+    },
+    {
+      "place_id": "place:PL:lichen-marian-basilica",
+      "name": {
+        "official": "Bazylika Najświętszej Maryi Panny Licheńskiej",
+        "aliases": [
+          "Basilica of Our Lady of Licheń",
+          "Basilica of Our Lady of Sorrows, Queen of Poland"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:PL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 52.32321,
+        "lng": 18.35794,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/208331549",
+        "source_ref": "osm:way:208331549",
+        "matched_country_code": "PL",
+        "verified_at": "2026-10-29",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "Klasztorna 4",
+        "line2": null,
+        "postal_code": "62-563",
+        "city": "Licheń Stary",
+        "region": "Wielkopolskie",
+        "country_code": "PL",
+        "country": "Poland",
+        "formatted": "Klasztorna 4, 62-563, Licheń Stary, Wielkopolskie, Poland"
+      },
+      "source_ids": [
+        "AO-P61-SITE-SG-INV-0200",
+        "AO-P61-GEO-SG-INV-0200"
+      ]
+    },
+    {
+      "place_id": "place:MX:ocotlan-basilica-tlaxcala",
+      "name": {
+        "official": "Basílica de Nuestra Señora de Ocotlán",
+        "aliases": [
+          "Basilica of Our Lady of Ocotlán"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:MX"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 19.31792,
+        "lng": -98.22796,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/95827233",
+        "source_ref": "osm:way:95827233",
+        "matched_country_code": "MX",
+        "verified_at": "2026-10-29",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Tlaxcala de Xicohténcatl",
+        "region": "Tlaxcala",
+        "country_code": "MX",
+        "country": "Mexico",
+        "formatted": "Tlaxcala de Xicohténcatl, Tlaxcala, Mexico"
+      },
+      "source_ids": [
+        "AO-P61-SITE-SG-INV-0429",
+        "AO-P61-GEO-SG-INV-0429"
+      ]
+    },
+    {
+      "place_id": "place:US:san-francisco-de-asis-ranchos-taos",
+      "name": {
+        "official": "San Francisco de Asís Mission Church — Ranchos de Taos",
+        "aliases": [
+          "San Francisco de Asis Catholic Parish",
+          "Ranchos de Taos Church"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 36.35845,
+        "lng": -105.60844,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/426943457",
+        "source_ref": "osm:way:426943457",
+        "matched_country_code": "US",
+        "verified_at": "2026-10-29",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "60 St Francis Plaza",
+        "line2": null,
+        "postal_code": "87557",
+        "city": "Ranchos de Taos",
+        "region": "New Mexico",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "60 St Francis Plaza, 87557, Ranchos de Taos, New Mexico, United States"
+      },
+      "source_ids": [
+        "AO-P61-SITE-SG-INV-0410",
+        "AO-P61-GEO-SG-INV-0410"
+      ]
+    },
+    {
+      "place_id": "place:AR:catamarca-cathedral-valle",
+      "name": {
+        "official": "Catedral Basílica de Nuestra Señora del Valle — Catamarca",
+        "aliases": [
+          "Catedral Basílica del Santísimo Sacramento",
+          "Basilica of Our Lady of the Valley, Catamarca"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:AR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -28.46893,
+        "lng": -65.78019,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/36373669",
+        "source_ref": "osm:way:36373669",
+        "matched_country_code": "AR",
+        "verified_at": "2026-10-29",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "Calle Sarmiento",
+        "line2": null,
+        "postal_code": "K4700EMM",
+        "city": "San Fernando del Valle de Catamarca",
+        "region": "Catamarca",
+        "country_code": "AR",
+        "country": "Argentina",
+        "formatted": "Calle Sarmiento, K4700EMM, San Fernando del Valle de Catamarca, Catamarca, Argentina"
+      },
+      "source_ids": [
+        "AO-P61-SITE-SG-INV-0493",
+        "AO-P61-GEO-SG-INV-0493"
+      ]
     }
   ],
   "directoryPlaceLinks": [
