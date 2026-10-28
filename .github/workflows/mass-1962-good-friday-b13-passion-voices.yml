@@ -1,0 +1,42 @@
+name: 1962 Good Friday Passion original voice turns B13
+on:
+  push:
+    branches:
+      - 'fix/1962-good-friday-passion-voices-b13-20261028'
+    paths:
+      - 'data/presentation/reader-good-friday.v1.json'
+      - 'data/mass/independent-1962-good-friday-b13-passion-voice-turns.v1.json'
+      - 'src/mass/reader-good-friday.js'
+      - 'src/mass/reader-native-preview.js'
+      - 'tests/good-friday-1962-passion-voices-b13.mjs'
+      - '.github/workflows/mass-1962-good-friday-b13-passion-voices.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/presentation/reader-good-friday.v1.json'
+      - 'data/mass/independent-1962-good-friday-b13-passion-voice-turns.v1.json'
+      - 'src/mass/reader-good-friday.js'
+      - 'src/mass/reader-native-preview.js'
+      - 'tests/good-friday-1962-passion-voices-b13.mjs'
+      - '.github/workflows/mass-1962-good-friday-b13-passion-voices.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  canonical-voice-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check src/mass/reader-good-friday.js
+      - run: node --check src/mass/reader-native-preview.js
+      - run: node --check tests/good-friday-1962-passion-voices-b13.mjs
+      - name: Verify 1962 Passion C/+/S voice boundaries and full 28-block literal source parity
+        run: node tests/good-friday-1962-passion-voices-b13.mjs
+      - name: Preserve nine Good Friday Solemn Prayers and original 1962/2008 variants
+        run: node tests/good-friday-1962-solemn-prayers-b12.mjs
+      - name: Preserve Good Friday source cards, 56 graph states and Passion death pause
+        run: node tests/reader-good-friday.mjs
