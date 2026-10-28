@@ -80,7 +80,11 @@ export function anchorRailToSourceParagraphs(root,{cueByChannel={}}={}){
     const cueId=cueByChannel[channel]??null;
     tile.dataset.sourceRailCueId=SOURCE_CUE.test(String(cueId||""))?cueId:"";
     let state="inactive";
-    if(tile.dataset.active==="true"&&tile.dataset.iconVisible==="true"){
+    // Posture normally belongs to the top ribbon, not the transient
+    // paragraph rail. Only objective-context presentation may show a
+    // source-backed posture tile at paragraph level.
+    if(tile.dataset.active==="true"&&tile.dataset.iconVisible==="true"&&
+      (channel!=="posture"||shell?.dataset?.objectiveContext==="true")){
       const row=byCue.get(cueId);
       state=row?"offscreen":"unresolved";
       if(row){
