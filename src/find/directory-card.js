@@ -16,6 +16,30 @@ export function eligibleDirectoryImage(img,placeId){
     String(img.credit??"").trim()&&String(img.alt_en??"").trim()&&String(img.alt_fr??"").trim());
 }
 
+// TLM uses a lightweight map loader. These three small, existing registries
+// provide approved media without downloading the entire Explore data corpus.
+const MEDIA_URLS=Object.freeze({
+  places:new URL("../../data/geography/seed-registry.v1.json",import.meta.url).href,
+  approved:new URL("../../data/geography/approved-place-media.v1.json",import.meta.url).href,
+  gallery:new URL("../../data/geography/approved-place-gallery.v1.json",import.meta.url).href,
+});
+export async function loadDirectoryCardMedia({fetchImpl=fetch}={}){
+  const json=async url=>{
+    try{
+      const response=await fetchImpl(url,{headers:{accept:"application/json"}});
+      return response?.ok?await response.json():null;
+    }catch{return null;}
+  };
+  const [places,images,galleries]=await Promise.all([
+    json(MEDIA_URLS.places),json(MEDIA_URLS.approved),json(MEDIA_URLS.gallery),
+  ]);
+  return Object.freeze({
+    directoryPlaceLinks:places?.schema==="EXPLORE_GEOGRAPHY_SEED_V1"?A(places.directoryPlaceLinks):[],
+    approved:images?.schema==="AO_APPROVED_PLACE_MEDIA_V1"?A(images.items):[],
+    gallery:galleries?.schema==="AO_APPROVED_PLACE_GALLERY_V1"?A(galleries.items):[],
+  });
+}
+
 // Source identity must be an exact, confirmed LOCATED_AT relation.
 // Never infer a Place from similar names, nearby provisional pins or an image query.
 export function attachApprovedDirectoryMedia(items,{directoryPlaceLinks=[],approved=[],gallery=[]}={}){
