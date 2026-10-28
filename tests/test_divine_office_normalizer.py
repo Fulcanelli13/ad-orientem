@@ -26,13 +26,13 @@ HTML = """<?xml version="1.0" encoding="UTF-8"?><html><head><title>Office</title
 class NormalizerTests(unittest.TestCase):
     def test_semantic_navigation_labels_never_split_source_content(self):
         examples = {
-            "Incipit\\n℣. Deus": "OPENING",
-            "Psalmi {ex Psalterio}\\nAnt.": "PSALMODY",
-            "Ant. Vidi turbam\\nPsalmus 109": "PSALMODY",
+            "Incipit\n℣. Deus": "OPENING",
+            "Psalmi {ex Psalterio}\nAnt.": "PSALMODY",
+            "Ant. Vidi turbam\nPsalmus 109": "PSALMODY",
             "Capitulum Hymnus Versus {ex Proprio}": "CHAPTER_HYMN_VERSE",
             "Canticum: Magnificat": "GOSPEL_CANTICLE",
             "Oratio {ex Proprio}": "PRAYER",
-            "Conclusio\\n℣.": "CONCLUSION",
+            "Conclusio\n℣.": "CONCLUSION",
         }
         for text, expected in examples.items():
             self.assertEqual(classify_latin_cell(text)["role"], expected, text)
