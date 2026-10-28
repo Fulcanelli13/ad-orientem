@@ -200,8 +200,12 @@ assert.equal(guarded.slots.COLLECT_SET.status,"READY","Other proper prayers unch
 assert.equal(JSON.stringify(affected),untouched,"Never modify the resolved Proper source");
 
 const inheritedNonVirgin=properToReaderSlots({...affected,sourcePath:"Commune/C7b"},{language:"fr"});
-assert.equal(inheritedNonVirgin.slots.SECRET_SET.status,"MISSING");
-assert.equal(inheritedNonVirgin.slots.POSTCOMMUNION_SET.status,"MISSING");
+assert.equal(inheritedNonVirgin.slots.SECRET_SET.status,"READY",
+  "C7b non-Virgin Common has certified French plural source restoration");
+assert.equal(inheritedNonVirgin.slots.POSTCOMMUNION_SET.status,"READY");
+assert.equal(inheritedNonVirgin.sourceEditorialCorrections?.length,2);
+assert.match(inheritedNonVirgin.slots.SECRET_SET.data.paragraphs[0].vernacular,
+  /vos saintes Martyres N\. et N\./);
 const exactPlural=properToReaderSlots({...affected,
   secrets:[{lat:martyrLatin,fr:goodFrench}],
   postcommunions:[{lat:martyrLatin,fr:goodFrench}],
