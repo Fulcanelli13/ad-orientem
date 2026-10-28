@@ -30,6 +30,12 @@ assert.equal(lowRequiem.project("AO.SM.C0080").priestAction,null);
 assert.equal(lowRequiem.project("AO.SM.C0088").priestAction,null);
 assert.equal(lowRequiem.project("AO.SM.C0112").priestAction,null,
  "Requiem Offertory water must not be blessed");
+assert.equal(lowRequiem.project("AO.SM.C0259").priestAction,null,
+  "Requiem dismissal falsely turns to the people");
+assert.equal(lowRequiem.project("AO.SM.C0259").priestPosition.facing,"LITURGICAL_EAST");
+assert.equal(low.project("AO.SM.C0259").priestPosition.facing,"PEOPLE",
+  "ordinary Low dismissal orientation changed");
+
 assert.match(low.project("AO.SM.C0042").priestAction?.label??"",
  /Sign of the Cross/,"Ordinary Introit source must remain unmodified");
 assert.ok(low.project("AO.SM.C0088").priestAction,
@@ -81,6 +87,18 @@ const solemnRequiem=createReaderFormCueStateController({
   }},readerPreferences:{mode:"LIVE",gestureProfile:"GUIDED_1962"}}
 });
 const sr=cue=>solemnRequiem.project("AO.SM."+cue);
+assert.equal(sr("C0259").priestPosition.facing,"LITURGICAL_EAST",
+  "Solemn Requiem dismissal must face altar");
+const cantataRequiem=createReaderFormCueStateController({
+  formStateData:formState,registries,lowCorpus,sungCorpus,
+  prepared:{session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE",overlays:["REQUIEM"],
+    actualCelebration:{id:"requiem",type:"REQUIEM"}}},
+    readerPreferences:{mode:"LIVE",gestureProfile:"GUIDED_1962"}},
+});
+assert.equal(cantataRequiem.project("AO.SM.C0259").priestPosition.facing,
+  "LITURGICAL_EAST");
+assert.equal(cantataRequiem.project("AO.SM.C0259").priestAction,null);
+
 // Requiem has no deacon's blessing nor private Gospel-book kiss.
 assert.equal(solemnRequiem.project("AO.SM.C0080").priestAction,null);
 assert.equal(solemnRequiem.project("AO.SM.C0088").priestAction,null);
