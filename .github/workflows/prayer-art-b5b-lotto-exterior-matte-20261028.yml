@@ -1,0 +1,42 @@
+name: Prayer Sacred Art B5B - Lotto complete arch matte proof
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/prayer-art-b5b-lotto-exterior-matte-20261028.yml
+      - scripts/art/prayer-art-b5b-lotto-arch-exterior-alpha-proof-20261028.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-prayer-b5b-lotto-exterior-matte
+  cancel-in-progress: false
+jobs:
+  transparent-white-only-paint-preserving-research-proofs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free raster and array dependencies
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0 numpy==2.2.6
+      - name: Produce three arch silhouette proofs preserving source original
+        run: |
+          python -m py_compile scripts/art/prayer-art-b5b-lotto-arch-exterior-alpha-proof-20261028.py
+          python scripts/art/prayer-art-b5b-lotto-arch-exterior-alpha-proof-20261028.py
+      - name: Preserve permanent artwork proof bytes and QA
+        if: always()
+        run: |
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/staged/prayer-art-b5b-lotto-exterior-matte-20261028/
+          git diff --cached --check
+          if git diff --cached --quiet; then echo "No changed QA evidence"; exit 0; fi
+          git commit -m "research(prayer art): archive lossless Lotto Rosary arch transparency proof and QA"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028
