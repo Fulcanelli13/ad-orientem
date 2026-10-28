@@ -460,7 +460,13 @@ assert.equal(ready.guide.registry.entries["AO.CARD.001"].moment,"Introit & Prepa
 assert.equal(ready.scholaState.supported,true);
 assert.equal(ready.scholaState.activateForCard(2).schola.cueId,"AO.SM.C0044");
 assert.equal(ready.model.totalCards,30);
-assert.equal(ready.presentationModel,ready.model,"MISSAL preview should retain its source-owned 30-step structure");
+assert.equal(ready.presentationModel.structureOwner,"CANONICAL_MISSAL_PRAYER_BLOCK_PRESENTATION",
+  "MISSAL must retain the source-backed, prayer-by-prayer book presentation");
+assert.equal(ready.presentationModel.sourceAuthorityModel,ready.model,
+  "MISSAL granularity must preserve the underlying canonical source model");
+assert.equal(ready.presentationModel.sourceModelTotalCards,30);
+assert.ok(ready.presentationModel.totalCards>ready.model.totalCards,
+  "MISSAL prayer pages must not collapse back to the 30 source cards");
 assert.equal(ready.model.cards[14].title,"Consecration of the Sacred Host");
 assert.equal(ready.model.cards[15].title,"Consecration of the Chalice");
 assert.equal(ready.cueState.supported,true);
