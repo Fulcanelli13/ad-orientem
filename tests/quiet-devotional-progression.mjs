@@ -18,6 +18,21 @@ assert.equal(morning[2].phase,0,"Atmosphere should not jump for every individual
 assert.equal(morning[5].en,"Dawn");
 assert.equal(evening[6].en,"Blue hour");
 assert.ok(evening[13].low!==morning[11].low);
+// The atmosphere now changes with every manually selected card, not only
+// after crossing one of the five named mood intervals. It is deterministic
+// for arbitrary source-backed routine lengths and perfectly reversible.
+for(const [daypart,total] of [["morning",11],["evening",10],["morning",17],["evening",7]]){
+ const frames=Array.from({length:total+1},(_,step)=>dailyHorizonState(daypart,step,total));
+ for(let step=1;step<frames.length;step++){
+  assert.notEqual(frames[step].top+"|"+frames[step].mid+"|"+frames[step].low+"|"+frames[step].light,
+   frames[step-1].top+"|"+frames[step-1].mid+"|"+frames[step-1].low+"|"+frames[step-1].light,
+   daypart+" sky must move on card "+step);
+  assert.deepEqual(dailyHorizonState(daypart,step-1,total),frames[step-1],
+   "Backwards navigation must reconstruct the prior sky exactly");
+ }
+ assert.equal(frames[0].fraction,0);
+ assert.equal(frames.at(-1).fraction,1);
+}
 assert.throws(()=>dailyHorizonState("stations",0,14),RangeError);
 const three=monthlyDevotionalRegister([
  {date:"2026-01-02",complete:true},
