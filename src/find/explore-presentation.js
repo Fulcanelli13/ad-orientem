@@ -3,6 +3,7 @@ import { MASS_EMBLEM_GROUPS, massInstitutionEmblem } from "./institution-emblems
 import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
 import { renderPilgrimageJourneyPanel, journeysForCanonicalPlace } from "./pilgrimage-journey.js";
 import { renderSaintPlaceSheet,renderSaintSourceIndexSheet } from "./saints-presentation.js";
+import { renderPlaceEditorialOpening,renderPlaceSacredTreasures,renderPlaceCustoms } from "./place-editorial-presentation.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const uiIcon=id=>{const url=resolveCanonicalAssetUrl(id);return url?`<span data-ao-asset-id="${esc(id)}" aria-hidden="true" style="display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`:"";};
 const arr=value=>Array.isArray(value)?value:[];
@@ -210,13 +211,20 @@ function placeSheet(vm){
     ?arr(profile.story_chapters).filter(row=>row.kind===storyKindForFilter[restricted])
     :arr(profile.story_chapters);
   const hasGuide=Boolean(profile.illustrated_guide);
+  const hasEditorialIntro=Boolean(profile.editorial_intro);
+  const hasTreasures=arr(profile.sacred_treasures).length>0;
+  const hasSiteCustoms=arr(profile.site_customs).length>0;
+  const publicTreasureIds=new Set(arr(profile.sacred_treasures).map(x=>x.id));
+  const residualRelicRecords=arr(profile.relics).filter(item=>!publicTreasureIds.has(item.source_id));
   const hasGallery=arr(profile.gallery).length>0;
   const hasNovenas=arr(profile.novenas).length>0;
   const hasCalendar=arr(profile.calendar).length>0||arr(profile.seasonal_pilgrimages).length>0;
   const hasSources=arr(profile.sources).some(source=>source?.url);
-  if(profile.editorial_feature||chapters.length||hasGuide||hasGallery){
+  if(profile.editorial_feature||chapters.length||hasGuide||hasGallery||hasTreasures||hasSiteCustoms){
     html+='<nav class="aoExplorePlaceChapters" aria-label="'+esc(L(vm.language,"Explore this place","Explorer ce lieu"))+'">';
-    if(chapters.length||synopsis)html+='<button type="button" data-explore-place-jump="story">'+esc(L(vm.language,"The place","Le lieu"))+'</button>';
+    if(chapters.length||synopsis||hasEditorialIntro)html+='<button type="button" data-explore-place-jump="story">'+esc(L(vm.language,"The place","Le lieu"))+'</button>';
+    if(hasTreasures)html+='<button type="button" data-explore-place-jump="treasures">'+esc(L(vm.language,"Sacred treasures","Trésors sacrés"))+'</button>';
+    if(hasSiteCustoms)html+='<button type="button" data-explore-place-jump="customs">'+esc(L(vm.language,"Local customs","Coutumes locales"))+'</button>';
     if(hasGallery)html+='<button type="button" data-explore-place-jump="gallery">'+esc(L(vm.language,"Photographs","Photographies"))+'</button>';
     if(hasGuide)html+='<button type="button" data-explore-place-jump="guide">'+esc(L(vm.language,"Pilgrimage guide","Guide du pèlerin"))+'</button>';
     if(hasNovenas)html+='<button type="button" data-explore-place-jump="pray">'+esc(L(vm.language,"Pray","Prier"))+'</button>';
@@ -225,7 +233,11 @@ function placeSheet(vm){
     if(hasSources)html+='<button type="button" data-explore-place-jump="sources">'+esc(L(vm.language,"Sources","Sources"))+'</button>';
     html+='</nav>';
   }
-  if(chapters.length){
+  if(hasEditorialIntro)html+=renderPlaceEditorialOpening(profile.editorial_intro,vm.language);
+  // Avoid repeating the same historical introduction already supplied by the
+  // published guide; preserve the other separately sourced chapters.
+  const visibleChapters=hasEditorialIntro&&!restricted?chapters.filter(x=>x.kind!=="ORIGIN"):chapters;
+  if(visibleChapters.length){
     const KIND_LABELS={
       ORIGIN:["The sanctuary","Le sanctuaire"],
       PILGRIMAGE:["Pilgrimage","Pèlerinage"],
@@ -234,21 +246,23 @@ function placeSheet(vm){
       TRADITION:["Devotional practice","Pratique dévotionnelle"],
     };
     html+='<section class="aoExplorePlaceOpening aoExploreSourcedStory" data-explore-place-chapter="story"><small>'+esc(L(vm.language,"THE PLACE","LE LIEU"))+'</small>';
-    for(const [index,chapter] of chapters.entries()){
+    for(const [index,chapter] of visibleChapters.entries()){
       const caption=KIND_LABELS[chapter.kind]??["Record","Fiche"];
       const narrative=vm.language==="fr"?chapter.body_fr:chapter.body_en;
       html+='<article class="aoExploreStoryChapter" data-story-kind="'+esc(chapter.kind)+'">'
-        +'<h3>'+esc(L(vm.language,...caption))+(chapter.kind==="PILGRIMAGE"&&chapters.filter(row=>row.kind==="PILGRIMAGE").length>1?' · '+String(chapters.slice(0,index+1).filter(row=>row.kind==="PILGRIMAGE").length):"")+'</h3>'
+        +'<h3>'+esc(L(vm.language,...caption))+(chapter.kind==="PILGRIMAGE"&&visibleChapters.filter(row=>row.kind==="PILGRIMAGE").length>1?' · '+String(visibleChapters.slice(0,index+1).filter(row=>row.kind==="PILGRIMAGE").length):"")+'</h3>'
         +'<p>'+esc(narrative)+'</p><div class="aoExploreStoryEvidence" aria-label="'+esc(L(vm.language,"Sources for this paragraph","Sources de ce paragraphe"))+'">';
       for(const source of arr(chapter.sources))html+='<a href="'+esc(source.url)+'" target="_blank" rel="noopener noreferrer" title="'+esc(source.title)+'">'+esc(source.issuer||source.title||L(vm.language,"Original source","Source originale"))+' <span aria-hidden="true">↗</span></a>';
       html+='</div></article>';
     }
     html+='</section>';
-  }else if(synopsis)html+='<section class="aoExplorePlaceOpening" data-explore-place-chapter="story"><small>'+esc(L(vm.language,"THE PLACE","LE LIEU"))+'</small><p class="aoHeritageOverview">'+esc(synopsis)+'</p></section>';
+  }else if(!hasEditorialIntro&&synopsis)html+='<section class="aoExplorePlaceOpening" data-explore-place-chapter="story"><small>'+esc(L(vm.language,"THE PLACE","LE LIEU"))+'</small><p class="aoHeritageOverview">'+esc(synopsis)+'</p></section>';
+  if(hasTreasures)html+=renderPlaceSacredTreasures(profile,vm.language);
+  if(hasSiteCustoms)html+=renderPlaceCustoms(profile,vm.language);
   if(hasGallery)html+=placeGalleryHtml(profile,vm.language);
   if(hasGuide)html+=illustratedGuideHtml(profile,vm.language);
   if(profile.directions_url)html+='<div class="aoFindActions aoExplorePlaceVisit" data-explore-place-chapter="visit"><a href="'+esc(profile.directions_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Directions","Itinéraire"))+'</a></div>';
-  if(!chapters.length&&!synopsis)html+='<p class="aoHeritageMeta">'+esc(L(vm.language,"Explore original records and their sources below.","Consultez les fiches originales et leurs sources ci-dessous."))+'</p>';
+  if(!chapters.length&&!synopsis&&!hasEditorialIntro&&!hasTreasures)html+='<p class="aoHeritageMeta">'+esc(L(vm.language,"Explore original records and their sources below.","Consultez les fiches originales et leurs sources ci-dessous."))+'</p>';
 
   if(arr(profile.related_places).length){
     html+='<section class="aoExplorePlaceGroup" data-explore-related-places><small>'+esc(L(vm.language,"RELATED PLACES","LIEUX ASSOCIÉS"))+'</small><div class="aoExplorePlaceRows">';
@@ -297,8 +311,8 @@ function placeSheet(vm){
   if(arr(profile.apparitions).length){
     html+='<section class="aoExplorePlaceGroup"><details class="aoPlaceAccordion"><summary>'+esc(L(vm.language,"APPARITION HISTORIES","HISTOIRE DES APPARITIONS"))+' · '+arr(profile.apparitions).length+'</summary>'+placeRecordRows(profile.apparitions,vm.language)+'</details></section>';
   }
-  if(arr(profile.relics).length){
-    html+='<section class="aoExplorePlaceGroup"><details class="aoPlaceAccordion"><summary>'+esc(L(vm.language,"RELICS & CUSTODY","RELIQUES ET LIEUX DE CONSERVATION"))+' · '+arr(profile.relics).length+'</summary>'+placeRecordRows(profile.relics,vm.language)+'</details></section>';
+  if(residualRelicRecords.length){
+    html+='<section class="aoExplorePlaceGroup"><details class="aoPlaceAccordion"><summary>'+esc(L(vm.language,"ADDITIONAL RELIC RECORDS","AUTRES FICHES DE RELIQUES"))+' · '+residualRelicRecords.length+'</summary>'+placeRecordRows(residualRelicRecords,vm.language)+'</details></section>';
   }
   if(arr(profile.shrines).length){
     html+='<section class="aoExplorePlaceGroup"><details class="aoPlaceAccordion"><summary>'+esc(L(vm.language,"SACRED SITE","LIEU SACRÉ"))+' · '+arr(profile.shrines).length+'</summary>'+placeRecordRows(profile.shrines,vm.language)+'</details></section>';
