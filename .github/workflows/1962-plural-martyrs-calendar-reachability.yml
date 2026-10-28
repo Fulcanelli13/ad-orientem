@@ -1,0 +1,43 @@
+name: 1962 C6b C7b actual Calendar reachability
+
+on:
+  push:
+    branches:
+      - audit/1962-c6b-c7b-calendar-reachability-20261028
+    paths:
+      - 'tests/1962-plural-martyrs-calendar-reachability.mjs'
+      - '.github/workflows/1962-plural-martyrs-calendar-reachability.yml'
+  pull_request:
+    paths:
+      - 'tests/1962-plural-martyrs-calendar-reachability.mjs'
+      - '.github/workflows/1962-plural-martyrs-calendar-reachability.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: c6b-c7b-calendar-reachability-${{ github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  actual-calendar-source-owner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Sweep 2024–2029 actual source-selected Calendar owners
+        run: node tests/1962-plural-martyrs-calendar-reachability.mjs
+      - name: Keep bounded runtime evidence for editorial decision
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: martyrs-calendar-source-reachability-2024-2029
+          path: artifacts/mass/1962-c6b-c7b-calendar-reachability-2024-2029.json
+          retention-days: 7
+          if-no-files-found: warn
