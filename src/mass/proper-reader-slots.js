@@ -182,14 +182,19 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
   // N. wording under the Latin plural N. et N. rubric. Non-empty French is
   // not sufficient: fail closed for exactly these two source identities,
   // without overwriting text or applying the hold to English/other Masses.
-  if(locale==="fr"){
-    for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
-      const hold=inspect1962PluralMartyrsFrenchOrationSource(proper,slot);
-      if(hold)slots[slot]=Object.freeze({
-        status:"MISSING",slot,data:null,reason:hold.reason,
-        sourceConflict:hold
-      });
-    }
+  for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+    const hold=inspect1962PluralMartyrsFrenchOrationSource(proper,slot);
+    if(!hold)continue;
+    // An erroneous Latin *named* Proper reaches the bilingual reader in
+    // BOTH language modes. A donor's French-only defect must still leave
+    // otherwise correct Latin/English Common prayers unaffected.
+    if(locale!=="fr"&&!(
+      hold.sourceLatinIncorrect===true&&hold.sourcePath==="Sancti/03-06"
+    ))continue;
+    slots[slot]=Object.freeze({
+      status:"MISSING",slot,data:null,reason:hold.reason,
+      sourceConflict:hold
+    });
   }
 
   if(proper.inseparableOrationsDecision?.status==="UNVERIFIED"){
