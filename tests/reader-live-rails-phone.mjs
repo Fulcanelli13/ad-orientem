@@ -59,7 +59,8 @@ try{
           const sourceRows=[...stage.querySelectorAll(".ao-prayer-body .ao-reader-paragraph")];
           const unanchored=candidates.filter(x=>!active.includes(x)).map(x=>({
             cueId:x.dataset.sourceRailCueId,channel:x.dataset.channel,
-            anchor:x.dataset.sourceRailAnchor,display:getComputedStyle(x).display
+            anchor:x.dataset.sourceRailAnchor,display:getComputedStyle(x).display,
+            ariaHidden:x.getAttribute("aria-hidden"),role:x.getAttribute("role")
           }));
           const hiddenSource=[...rail.querySelectorAll('.ao-rail-item[data-active="true"][data-icon-visible="false"]')];
           const inactive=[...rail.querySelectorAll('.ao-rail-item[data-active="false"]')];
@@ -121,8 +122,8 @@ try{
       for(const rail of snap.rails){
         const expectVisible=rail.active.length>0;
         assert.equal(rail.anchored,"true",width+" source rail tracker did not mount");
-        assert.ok(rail.unanchored.every(x=>x.display==="none"),
-          width+" "+snap.card+" icon without an exact visible source row is still painted");
+        assert.ok(rail.unanchored.every(x=>x.display==="none"&&x.ariaHidden==="true"&&x.role===null),
+          width+" "+snap.card+" source-unmatched icon remains visible or accessible");
         assert.equal(rail.visible,String(expectVisible),
           width+" "+snap.card+" "+rail.side+" empty rail visibility");
         assert.equal(rail.stageVisible,String(expectVisible),
