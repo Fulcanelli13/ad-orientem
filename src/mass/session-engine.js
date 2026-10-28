@@ -12,7 +12,7 @@ export const MASS_FORMS = Object.freeze([
   "SOLEMN",
 ]);
 
-export const PRESENTATION_MODES = Object.freeze(["MISSAL", "SIMPLE", "LIVE"]);
+export const PRESENTATION_MODES = Object.freeze(["MISSAL", "LIVE"]);
 
 export const PRECEDING_RITES = Object.freeze([
   "ASPERGES",
@@ -54,6 +54,8 @@ export function normalizeMassForm(value) {
 
 export function normalizePresentationMode(value = "LIVE") {
   const mode = String(value).toUpperCase();
+  // Old saved SIMPLE preferences migrate to LIVE; it is no longer a mode.
+  if (mode === "SIMPLE") return "LIVE";
   if (!PRESENTATION_MODES.includes(mode)) throw new Error("Unsupported presentation mode: " + value);
   return mode;
 }

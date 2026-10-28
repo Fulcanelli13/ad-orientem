@@ -142,7 +142,7 @@ export function mountFullMassPreflight({
   }
   function activeReaderMode(){
     const mode=String(explicitMode?selectedMode:getDefaultReaderMode()??"LIVE").toUpperCase();
-    if(mode==="MISSAL"||mode==="SIMPLE")return mode;
+    if(mode==="MISSAL")return mode;
     return "LIVE";
   }
   function selectionFor(legacy){
@@ -252,7 +252,7 @@ export function mountFullMassPreflight({
         '</div></fieldset>'+
         '<fieldset data-full-mass-reader-fieldset><legend data-full-mass-reader-heading></legend>'+
         '<div class="aoFullMassReaderModes">'+
-        [["MISSAL","Missal","Missel"],["SIMPLE","Simple","Simple"],["LIVE","LIVE","LIVE"]].map(([id,en,fr])=>
+        [["MISSAL","Missal","Missel"],["LIVE","LIVE","LIVE"]].map(([id,en,fr])=>
           '<label class="aoFullMassChoice"><input type="radio" name="ao-native-reader-mode" value="'+id+'" data-full-mass-reader-mode>'+
           '<span data-full-mass-reader-label="'+id+'" data-label-en="'+en+'" data-label-fr="'+fr+'">'+en+'</span></label>').join("")+
         '</div></fieldset>'+
@@ -439,7 +439,7 @@ export function mountFullMassPreflight({
           riteOverrides={...riteOverrides,[id]:el.checked};
           refresh();return;
         }
-        if(el?.matches?.("[data-full-mass-reader-mode]")&&["MISSAL","SIMPLE","LIVE"].includes(el.value)){
+        if(el?.matches?.("[data-full-mass-reader-mode]")&&["MISSAL","LIVE"].includes(el.value)){
           selectedMode=el.value;explicitMode=true;refresh();return;
         }
         if(el?.matches?.("[data-full-mass-form]")&&MASS_FORMS.includes(el.value)){
@@ -640,8 +640,8 @@ export function mountFullMassPreflight({
     essentialNote.textContent=
       summary.kind==="GOOD_FRIDAY"?
         l("Good Friday is a distinct liturgy, not Low or Sung Mass.","Le Vendredi saint possède un office distinct : ce n’est pas une messe basse ou chantée.") :
-      l("This choice applies to this Mass only. Reader views (Missal, Simple, Live) are separate.",
-        "Ce choix concerne uniquement cette messe. Les modes de lecture (Missel, Simple, LIVE) sont distincts.");
+      l("This choice applies to this Mass only. Reader views (Missal and LIVE) are separate.",
+        "Ce choix concerne uniquement cette messe. Les modes de lecture (Missel et LIVE) sont distincts.");
     root.querySelectorAll("[data-full-mass-form]").forEach(input=>{
       input.checked=input.value===summary.form;
       input.disabled=!summary.formChangeAllowed;
