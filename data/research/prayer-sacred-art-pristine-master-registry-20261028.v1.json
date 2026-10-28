@@ -111,7 +111,11 @@
     "batch2_native_source_candidates_archived": 7,
     "batch2_photo_candidates_pristine": 0,
     "batch2_source_only_duplicates_avoided": 1,
-    "additional_native_source_candidates_archived_not_primary_promoted": 7
+    "additional_native_source_candidates_archived_not_primary_promoted": 7,
+    "batch3_exact_source_groups_reconciled": 7,
+    "batch3_institutional_metadata_checks": 1,
+    "batch3_originals_archived": 0,
+    "batch3_pristine_certifications": 0
   },
   "primary_artworks": [
     {
@@ -5734,6 +5738,29 @@
       "status": "NOT_STARTED_DO_NOT_ACTIVATE",
       "module_preview_work_is_not_a_publication_gate": true,
       "pristine_eligible_currently": 0
+    },
+    "B3_SEVEN_GROUP_SOURCE_GATES": {
+      "status": "COMPLETE_REVIEW_WITH_ZERO_NEW_SOURCE_IMAGES",
+      "source_gate_register": "data/research/prayer-sacred-art-b3-seven-group-source-gates-20261028.v1.json",
+      "actual_run_results": "assets/staged/prayer-art-b3-institutional-source-20261028/seven-group-intake-results.json",
+      "run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40727223776",
+      "exact_work_groups_reconciled": 7,
+      "institutional_iiif_metadata_checked": 1,
+      "new_originals_archived": 0,
+      "new_pristine_certifications": 0,
+      "production_releases": 0,
+      "rights_discovery": {
+        "candidate": "Rubens Holy Trinity (KMSKA object 314), identity still unselected",
+        "institution_collection_page": "https://vlaamsekunstcollectie.be/en/collectie/314",
+        "cached_public_page_claim": "CC0",
+        "live_manifest_license": "https://rightsstatements.org/page/UND/1.0/",
+        "source_status": "HOLD_CONFLICTING_PHOTOGRAPHIC_RIGHTS_NOT_ACQUIRED"
+      },
+      "other_critical_rights_hold": {
+        "candidate": "Batoni Sacred Heart Commons 3543x5231",
+        "source_status": "HOLD_EXIF_CATHOLIC_NEWS_SERVICE_COPYRIGHT_CONFLICT"
+      },
+      "release_policy": "Photographic rights, selected exact painting identity and native-image quality still require independent gates. No automatic promotions."
     }
   },
   "protected_wave1_notes": {
