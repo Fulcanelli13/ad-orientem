@@ -106,7 +106,11 @@
       "HOLD_PAINTING_ONLY_BUT_HIGH_NOISE_RISK": 1,
       "PRELIMINARY_PAINTING_ONLY_HIGH_RES": 1
     },
-    "batch2_pristine_ready": 0
+    "batch2_pristine_ready": 0,
+    "batch2_artwork_groups_processed": 14,
+    "batch2_native_source_candidates_archived": 1,
+    "batch2_photo_candidates_pristine": 0,
+    "batch2_source_only_duplicates_avoided": 1
   },
   "primary_artworks": [
     {
@@ -327,7 +331,17 @@
       "evidence_keys": [
         "editorial22",
         "readiness22"
-      ]
+      ],
+      "batch2_source_search": {
+        "case_id": "restout-pentecost",
+        "acquisition_status": "DISCOVERY_PENDING_EXACT_OBJECT_IDENTIFICATION",
+        "newly_archived_original_candidate": false,
+        "source_sha256": null,
+        "candidate_pixels": null,
+        "native_candidate_qualitative_grade": "NO_NATIVE_IMAGE_REVIEW_POSSIBLE",
+        "photo_identity_and_rights_still_hold": true,
+        "no_promotion_into_current_approved_master": true
+      }
     },
     {
       "key": "hero::heart-jesus",
@@ -553,7 +567,17 @@
       "evidence_keys": [
         "editorial22",
         "readiness22"
-      ]
+      ],
+      "batch2_source_search": {
+        "case_id": "reni-michael",
+        "acquisition_status": "SOURCE_FETCH_FAILED",
+        "newly_archived_original_candidate": false,
+        "source_sha256": null,
+        "candidate_pixels": null,
+        "native_candidate_qualitative_grade": "REJECT_AS_PRISTINE_EXTERNAL_GILT_FRAME_AND_PERSPECTIVE",
+        "photo_identity_and_rights_still_hold": true,
+        "no_promotion_into_current_approved_master": true
+      }
     },
     {
       "key": "hero::angel",
@@ -610,7 +634,17 @@
       "evidence_keys": [
         "editorial22",
         "readiness22"
-      ]
+      ],
+      "batch2_source_search": {
+        "case_id": "guardian-angel-cortona",
+        "acquisition_status": "REFERENCE_ONLY_BELOW_SOURCE_QUALITY_FLOOR",
+        "newly_archived_original_candidate": false,
+        "source_sha256": null,
+        "candidate_pixels": null,
+        "native_candidate_qualitative_grade": "NO_NATIVE_IMAGE_REVIEW_POSSIBLE",
+        "photo_identity_and_rights_still_hold": true,
+        "no_promotion_into_current_approved_master": true
+      }
     },
     {
       "key": "hero::regina",
@@ -1043,7 +1077,17 @@
       "evidence_keys": [
         "editorial22",
         "readiness22"
-      ]
+      ],
+      "batch2_source_search": {
+        "case_id": "gerome-age-augustus",
+        "acquisition_status": "REFERENCE_ONLY_BELOW_SOURCE_QUALITY_FLOOR",
+        "newly_archived_original_candidate": false,
+        "source_sha256": null,
+        "candidate_pixels": null,
+        "native_candidate_qualitative_grade": "NO_NATIVE_IMAGE_REVIEW_POSSIBLE",
+        "photo_identity_and_rights_still_hold": true,
+        "no_promotion_into_current_approved_master": true
+      }
     },
     {
       "key": "hero::morning",
@@ -1176,7 +1220,17 @@
         "native6",
         "visual6",
         "comparison4"
-      ]
+      ],
+      "batch2_source_search": {
+        "case_id": "evening-frere-op6",
+        "acquisition_status": "REFERENCE_ONLY_BELOW_SOURCE_QUALITY_FLOOR",
+        "newly_archived_original_candidate": false,
+        "source_sha256": null,
+        "candidate_pixels": null,
+        "native_candidate_qualitative_grade": "NO_NATIVE_IMAGE_REVIEW_POSSIBLE",
+        "photo_identity_and_rights_still_hold": true,
+        "no_promotion_into_current_approved_master": true
+      }
     },
     {
       "key": "hero::perpetual",
@@ -4736,7 +4790,7 @@
       }
     },
     "B1_IMAGE_ACQUISITION": {
-      "status": "QUEUE_READY",
+      "status": "B2_BULK_RESEARCH_SOURCES_COLLECTED_PRISTINE_STILL_HOLD",
       "exact_original_missing": [
         {
           "module_id": "angel",
@@ -5155,7 +5209,42 @@
         ]
       },
       "previously_open_photo_placements_with_archived_candidate": 8,
-      "originals_not_automatically_promoted_to_public_gallery": true
+      "originals_not_automatically_promoted_to_public_gallery": true,
+      "first_source_pass": {
+        "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40713711506",
+        "native_archived": 1
+      },
+      "second_source_pass": {
+        "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40714325345",
+        "native_archived": 6
+      },
+      "native_sources_total": 1,
+      "next_qa": "Bulk review 7 sources against full painted boundaries, museum original/colour and per-file reuse terms; reject framed Carracci/Reni/paired hearts and noisy Station XII as pristine, explore non-framed institutional alternatives.",
+      "remaining_exact_groups_not_native_archived": [
+        "guardian-angel-cortona",
+        "evening-frere-op6",
+        "restout-pentecost",
+        "reni-michael",
+        "gerome-age-augustus",
+        "tiepolo-station12",
+        "tiepolo-prado-descent",
+        "tiepolo-prado-burial",
+        "teniers-agony-antwerp",
+        "paired-hearts-lopez",
+        "batoni-sacred-heart",
+        "vandyck-holy-spirit",
+        "rubens-trinity"
+      ],
+      "photo_source_grade_counts": {
+        "NO_NATIVE_IMAGE_REVIEW_POSSIBLE": 7,
+        "REJECT_AS_PRISTINE_EXTERNAL_GILT_FRAME_AND_PERSPECTIVE": 1,
+        "RESEARCH_SOURCE_HIGH_PIXEL_BUT_VISIBLE_COLOR_NOISE": 1,
+        "PRELIMINARY_FRAME_FREE_PAINTED_SURFACE_MUSEUM_COLOR_HOLD": 1,
+        "REJECT_AS_PRISTINE_EXTERNAL_BLACK_FRAME": 1,
+        "PRELIMINARY_FRAME_FREE_NATIVE_COMPRESS_DETAIL_HOLD": 1,
+        "REJECT_AS_PRISTINE_EXTERNAL_GILT_FRAME": 1,
+        "PRELIMINARY_FRAME_FREE_NATIVE_COLOR_AND_RIGHTS_HOLD": 1
+      }
     },
     "B2_MASTER_QUALITY": {
       "status": "WHOLE_WORK_AND_CORNER_PRELIMINARY_SCANNED_NOT_PRISTINE_SIGNED_OFF",
