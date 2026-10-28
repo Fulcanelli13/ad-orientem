@@ -325,6 +325,30 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
  color:var(--muted,#acb1b4);
  font:400 .72rem/1.42 var(--ao-font-ui,system-ui,sans-serif)
 }
+/* Distinct optional prayer purposes retain original St Pius X opening intact. */
+#aoPray435930 .aoDailyPurposeSection{
+ display:grid;gap:8px;min-width:0;
+ margin:18px 0 8px;padding:15px 0 0;
+ border-top:1px solid rgba(215,188,146,.2);
+}
+#aoPray435930 .aoDailyPurposeSection>h4{
+ margin:0;color:var(--text,#eee9df);
+ font:500 clamp(1rem,3vw,1.14rem)/1.4 var(--ao-font-liturgical,Georgia,serif)
+}
+#aoPray435930 .aoDailyPurposeNote{
+ color:var(--muted,#aab0b5);
+ font:400 .71rem/1.5 var(--ao-font-ui,system-ui,sans-serif)
+}
+#aoPray435930 .aoDailyPurposeReading{
+ display:grid;gap:8px;min-width:0;padding:12px 0 4px
+}
+#aoPray435930 .aoDailyPurposeReading>h5{
+ margin:0;color:var(--text,#eee9df);
+ font:500 .94rem/1.4 var(--ao-font-liturgical,Georgia,serif)
+}
+#aoPray435930 .aoDailyPurposeSection .aoDailyFormulationChoices{
+ padding:2px 2px 6px;margin:0
+}
 #aoPray435930 .aoDailyFormulationPicker{
  display:grid;gap:7px;min-width:0;margin:4px 0 13px;
  padding:0 0 10px;border-bottom:1px solid rgba(215,188,146,.17)
