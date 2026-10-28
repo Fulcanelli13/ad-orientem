@@ -10,6 +10,7 @@ import {loadCatenaForPassage,isCatenaGospel} from "./catena-inline.js";
 import {scriptureChapterLimit} from "./chapter-counts.js";
 import {scriptureSegments,scriptureSegmentsReference} from "./segments.js";
 import {hasScriptureWitness} from "./witness-loader.js";
+import {prayerAcquisitionCandidates} from "../pray/prayer-acquisition-historical-witnesses.v1.js";
 import {scriptureWitnessEmptySlots} from "./witness-gaps.js";
 
 const L={
@@ -65,6 +66,11 @@ export function mountScriptureLibrary(root,{
  const relatedTrail=[];
  let browseExpanded=false;
  let toolsExpanded=false;
+ // Optional reader-local devotional choices, never saved as Bible verses,
+ // additional Scripture sections or replacements for canonical prayers.
+ const readingPrayerOpen={before:false,after:false};
+ const readingPrayerChoice={before:null,after:null};
+
  let editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];
  const editionLocations=new Map([[editionId,location]]);
  function moveEdition(nextEdition){
@@ -104,6 +110,70 @@ export function mountScriptureLibrary(root,{
    if(parsed.protocol!=="https:" || !["www.biblegateway.com","fr.wikisource.org","sacredbible.org"].includes(parsed.hostname))
      throw new Error("Untrusted Scripture source URL");
    openExternal(parsed.href);
+ }
+ /**
+  * Only source-cleared prayers appear, in their actual language. The
+  * French reader may offer the expressly labelled original Latin prayer,
+  * never substitute a fabricated French or unlabelled English text.
+  * These optional prayers are visually secondary to the Scripture reading.
+  */
+ function readingPrayerOptions(phase){
+   if(phase==="before"){
+     const latin=prayerAcquisitionCandidates("prepare_spiritual_reading",{language:"la"});
+     if(lang==="fr")return latin;
+     return [
+       ...prayerAcquisitionCandidates("prepare_spiritual_reading",{language:"en"}),
+       ...latin
+     ];
+   }
+   return lang==="en"
+     ?prayerAcquisitionCandidates("conclude_spiritual_reading",{language:"en"})
+     :[];
+ }
+ function readingPrayerDisclosure(phase){
+   const options=readingPrayerOptions(phase);
+   if(!options.length)return null;
+   const before=phase==="before";
+   const label=before
+     ?(lang==="fr"?"Prière avant la lecture · latin":"Prayer before reading")
+     :(lang==="fr"?"Prière après la lecture":"Prayer after reading");
+   const details=element("details",null,"aoScriptureOptionalPrayer");
+   details.dataset.scripturePrayer=phase;
+   details.open=readingPrayerOpen[phase];
+   const summary=element("summary",label);
+   details.append(summary);
+   details.addEventListener("toggle",()=>{readingPrayerOpen[phase]=details.open});
+   const selected=options.find(x=>x.id===readingPrayerChoice[phase])||options[0];
+   readingPrayerChoice[phase]=selected.id;
+   const body=element("div",null,"aoScriptureOptionalPrayerBody");
+   if(options.length>1){
+     const choices=element("div",null,"aoScriptureOptionalPrayerChoices");
+     for(const option of options){
+       const languageLabel=option.language==="la"?"Latin": "English";
+       const control=element("button",languageLabel);
+       control.type="button";
+       control.setAttribute("aria-pressed",String(option.id===selected.id));
+       control.dataset.scripturePrayerChoice=option.id;
+       control.addEventListener("click",()=>{
+         readingPrayerChoice[phase]=option.id;
+         const fresh=readingPrayerDisclosure(phase);
+         if(!fresh)return;
+         fresh.open=true;readingPrayerOpen[phase]=true;
+         details.replaceWith(fresh);
+         fresh.querySelector('[data-scripture-prayer-choice="'+option.id+'"]')?.focus?.({preventScroll:true});
+       });
+       choices.append(control);
+     }
+     body.append(choices);
+   }
+   body.append(element("h4",selected.title,"aoScriptureOptionalPrayerTitle"));
+   for(const paragraph of selected.text.split(/\\n\\s*\\n/).filter(Boolean))
+     body.append(element("p",paragraph,"aoScriptureOptionalPrayerText"));
+   const source=element("a",lang==="fr"?"Lasance (1908) · source imprimée ↗":"Lasance (1908) · printed source ↗");
+   source.href=selected.source.scanPageUrl;source.target="_blank";source.rel="noopener noreferrer";
+   body.append(source);
+   details.append(body);
+   return details;
  }
  function draw(){
    const t=L[lang];
@@ -334,6 +404,8 @@ export function mountScriptureLibrary(root,{
    }
    const main=element("div",null,"aoScriptureReading");
    main.append(element("h3",passageReference(location)));
+   const beforePrayer=readingPrayerDisclosure("before");
+   if(beforePrayer)main.append(beforePrayer);
    const chapterEntries=records.filter(r=>validatedRecord(r,editionId)&&r.book===location.book&&r.chapter===location.chapter)
      .sort((a,b)=>a.verseStart-b.verseStart);
    // Display a source witness only with an explicit unreviewed notice; approved text uses its separate contract.
@@ -387,6 +459,8 @@ export function mountScriptureLibrary(root,{
    } else textBlock.append(element("p",t.unavailable));
    if(textBlock._sourceDisclosure)textBlock.append(textBlock._sourceDisclosure);
    main.append(textBlock);
+   const afterPrayer=readingPrayerDisclosure("after");
+   if(afterPrayer)main.append(afterPrayer);
    const textualNotes=cpdvTextualNotesFor(editionId,location);
    for(const note of textualNotes){
      const details=element("details",null,"aoScriptureSourceNote");
