@@ -1,5 +1,5 @@
 import { validateReaderGestureMatrix } from "./reader-gesture-matrix.js";
-import { isRequiemAgnusBreastStrikeOmitted, isRequiemFirstPeacePrayerOmitted, isRequiemEntranceIncensationOmitted, isRequiemFinalBlessingOmitted, isRequiemGospelCeremonyOmitted } from "./reader-requiem-conditions.js";
+import { isRequiemAgnusBreastStrikeOmitted, isRequiemFirstPeacePrayerOmitted, isRequiemEntranceIncensationOmitted, isRequiemFinalBlessingOmitted, isRequiemGospelCeremonyOmitted, isRequiemAltarFacingDismissal } from "./reader-requiem-conditions.js";
 import { ORDINARY_SUNG_GESTURE_ANCHORS } from "./faithful-gesture-cues.js";
 // R17 cue-scoped reader state projection.
 // Source-backed only: exact cue IDs from the certified Sung Mass blueprint.
@@ -441,7 +441,8 @@ export function createReaderCueStateController({
       ? sourceResponse(responseItem) : null;
 
     const actionItem=actions.get(cueId);
-    const priestAction=actionItem && !omitRequiemAgnusStrike &&
+    const requiemDismissal=isRequiemAltarFacingDismissal(cueId,prepared,activeConditions);
+    const priestAction=actionItem && !requiemDismissal && !omitRequiemAgnusStrike &&
       !isRequiemGospelCeremonyOmitted(cueId,prepared,activeConditions) && conditionPasses(actionItem.condition,activeConditions)
       ? sourcePriestAction(actionItem) : null;
 
@@ -464,7 +465,11 @@ export function createReaderCueStateController({
       gestureAdvisory:gesture && !gesture.label ? gesture : null,
       response,
       priestAction,
-      priestPosition:sourcePosition(positionItem),
+      priestPosition:requiemDismissal
+        ?Object.freeze({...sourcePosition(positionItem),
+          station:"ALTAR_CENTER",facing:"LITURGICAL_EAST",
+          cueId,owner:"RITUS_XI_1_REQUIEM_DISMISSAL",persistent:true})
+        :sourcePosition(positionItem),
       priestVoice:sourceVoice(voiceItem),
       posture:sourcePosture(postureItem),
       postureTransition,
