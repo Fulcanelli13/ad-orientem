@@ -36,24 +36,21 @@ records=[]
 panels=[]
 for cutoff,spread in [(248,20),(238,32),(224,45)]:
     near=(pixel_high>=cutoff)&(pixel_low<=spread)
-    # Connected-components of near-white, but restricted to outside corners.
-    matte=Image.fromarray(np.where(near,255,0).astype("uint8"),"L")
-    candidate_seeds=[]
-    for y0,x0 in [(0,0),(0,img.width-1),(100,0),(100,img.width-1)]:
-        ymin=max(0,y0-30);ymax=min(img.height,y0+31)
-        xmin=max(0,x0-30);xmax=min(img.width,x0+31)
-        patch=near[ymin:ymax,xmin:xmax]
-        yy,xx=np.where(patch)
-        if len(yy):
-            # Seed a genuinely light, neutral region despite JPEG noise at
-            # the very image corner.
-            candidate_seeds.append((int(xmin+xx[len(xx)//2]),int(ymin+yy[len(yy)//2])))
-    for seed in candidate_seeds:
-        if matte.getpixel(seed)==255:
-            ImageDraw.floodfill(matte,seed,128,thresh=0)
-    flood=np.asarray(matte)==128
-    alpha=np.where(flood,0,255).astype("uint8")
-    # This candidate must never cut into the central arch or lower scenes.
+    # Only the contiguous neutral-white prefix/suffix of each row can be
+    # removed. Stop at the first darker/coloured pixel on either side. This
+    # avoids general background segmentation and cannot leap across pigment
+    # to erase a bright patch inside the painting.
+    alpha=np.full((img.height,img.width),255,dtype=np.uint8)
+    for y in range(img.height):
+        dark=np.where(~near[y])[0]
+        if not len(dark):
+            continue
+        first,last=int(dark[0]),int(dark[-1])
+        if first>4 and near[y,0]:
+            alpha[y,:first-3]=0
+        if last<img.width-5 and near[y,-1]:
+            alpha[y,last+4:]=0
+    # The selected arch crown, centre medallions and lower scene must remain.
     assert alpha[0,img.width//2]==255,"ARCH_CROWN_LOST"
     assert alpha[img.height//2,img.width//2]==255,"CENTRAL_SCENES_LOST"
     assert alpha[-1,img.width//2]==255,"BOTTOM_ALTARPIECE_LOST"
@@ -61,13 +58,13 @@ for cutoff,spread in [(248,20),(238,32),(224,45)]:
     a=Image.fromarray(alpha,"L")
     rgba=img.copy().convert("RGBA");rgba.putalpha(a)
     fraction=round(float((alpha==0).sum()/alpha.size),6)
-    assert 0.0001<fraction<.30,f"FLOOD_MASK_OUT_OF_RANGE fraction={fraction} corner_pixels={[rgb[0,0].tolist(),rgb[0,-1].tolist()]} seeds={candidate_seeds}"
+    assert 0.0001<fraction<.30,f"EXTERIOR_WHITE_MASK_OUT_OF_RANGE fraction={fraction}"
     thumb=rgba.copy();thumb.thumbnail((380,520),Image.Resampling.LANCZOS)
     panels.append((cutoff,spread,thumb,fraction))
     record={"threshold_min_channel":cutoff,"max_channel_spread":spread,
         "external_near_white_connected_pixels_transparent":int((alpha==0).sum()),
         "transparent_pixel_fraction":fraction,
-        "method":"EXTERNAL_NEARWHITE_ONLY_FLOODFILL","all_original_rgb_pixels_unchanged":True,
+        "method":"ROW_EDGE_NEARWHITE_PREFIX_SUFFIX_ONLY","all_original_rgb_pixels_unchanged":True,
         "full_painting_rectangular_bounds":[0,0,img.width,img.height],
         "central_column_all_opaque":True,"15_ROUNDELS_VISUALLY_PENDING":True,
         "painted_silhouette_fidelity_final_accepted":False,
