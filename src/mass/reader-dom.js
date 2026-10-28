@@ -3057,6 +3057,60 @@ export function createReaderDomAdapter({
     }
   }
 
+  function closeScholaEventMenu(){
+    const menu=root.querySelector('[data-role="schola-events-menu"]');
+    if(menu)menu.hidden=true;
+    root.querySelector?.('[data-schola-events-open]')?.setAttribute?.("aria-expanded","false");
+  }
+
+  function populateScholaEvents(){
+    const menu=root.querySelector('[data-role="schola-events-menu"]');
+    if(!menu)return false;
+    menu.replaceChildren?.();
+    const itinerary=typeof scholaMusicItinerary==="function"
+      ?scholaMusicItinerary():scholaMusicItinerary;
+    if(mode!=="LIVE" || !itinerary?.supported)return false;
+    const doc=menu.ownerDocument??globalThis.document;
+    if(!doc?.createElement)return false;
+    const heading=doc.createElement("h3");
+    heading.textContent="Schola · music order";
+    menu.append(heading);
+    const note=doc.createElement("p");
+    note.textContent="Select the music or interval to display. This never moves the priest or detects singing.";
+    menu.append(note);
+    for(const item of itinerary.events){
+      const button=doc.createElement("button");
+      button.type="button";
+      button.dataset.scholaEventSelect=item.id;
+      const unavailable=(item.manualOnly===true ||
+        item.id==="BENEDICTUS_CONTINUOUS" ||
+        (["ORGAN_OPTION","LOCAL_OPTION"].includes(item.kind) &&
+          item.localPlan?.selected!==true) ||
+        (item.kind==="ORGAN_OPTION" &&
+          ["SOLO_FORBIDDEN","REQUIRES_EXACT_RITE_STAGE"].includes(item.organPermission?.status)));
+      button.disabled=unavailable;
+      const caption=doc.createElement("span");
+      caption.textContent=item.localPlan?.title||item.label;
+      button.append(caption);
+      const detail=doc.createElement("small");
+      const type=item.kind.replaceAll("_"," ").toLowerCase();
+      detail.textContent=type+" · "+(item.manualOnly
+        ?"Use observed Benedictus release after the Chalice"
+        :item.id==="BENEDICTUS_CONTINUOUS"
+          ?"Continuous with the Gregorian Sanctus"
+          :item.localPlan?.selected===false
+            ?"Not in your local music plan"
+            :item.organPermission?.status==="SOLO_FORBIDDEN"
+              ?"Solo organ forbidden"
+              :"Reference only · not heard or timed");
+      button.append(detail);
+      if(item.id===current?.scholaEventSelection?.id)
+        button.setAttribute("aria-current","true");
+      menu.append(button);
+    }
+    return true;
+  }
+
   function populateSections(){
     const menu=root.querySelector('[data-role="section-menu"]');
     const jump=root.querySelector('[data-role="section-jump"]');
@@ -3272,7 +3326,7 @@ export function createReaderDomAdapter({
       if(preferencesButton){
         const panel=root.querySelector('[data-role="mass-preferences"]');
         setPreferencesOpen(panel?.dataset?.open!=="true");
-        closeSectionMenu();
+        closeSectionMenu();closeScholaEventMenu();
         return;
       }
       const preferencesClose=event.target?.closest?.("[data-reader-preferences-close]");
@@ -3282,6 +3336,7 @@ export function createReaderDomAdapter({
       const sectionJump=event.target?.closest?.('[data-role="section-jump"]');
       if(sectionJump && !sectionJump.disabled){
         const menu=root.querySelector('[data-role="section-menu"]');
+        closeScholaEventMenu();
         if(menu){
           if(menu.hidden)populateSections();
           menu.hidden=!menu.hidden;
@@ -3297,6 +3352,25 @@ export function createReaderDomAdapter({
           onSectionSelect?.(sectionButton.dataset.readerSection,current,prepared);
         }
         closeSectionMenu();
+        return;
+      }
+      const scholaEventsOpen=event.target?.closest?.("[data-schola-events-open]");
+      if(scholaEventsOpen){
+        const menu=root.querySelector('[data-role="schola-events-menu"]');
+        if(menu){
+          const opening=menu.hidden;
+          if(opening && !populateScholaEvents())return;
+          menu.hidden=!opening;
+          scholaEventsOpen.setAttribute("aria-expanded",String(opening));
+          closeSectionMenu();setPreferencesOpen(false);
+        }
+        return;
+      }
+      const scholaEventSelect=event.target?.closest?.("[data-schola-event-select]");
+      if(scholaEventSelect){
+        if(!scholaEventSelect.disabled &&
+          onScholaEventSelect?.(scholaEventSelect.dataset.scholaEventSelect,current,prepared)===true)
+          closeScholaEventMenu();
         return;
       }
       const scholaToggle=event.target?.closest?.("[data-schola-toggle]");
@@ -3423,8 +3497,13 @@ export function createReaderDomAdapter({
       const key=event.key;
       const pop=root.querySelector?.('[data-role="guide-popover"]');
       const sectionMenu=root.querySelector?.('[data-role="section-menu"]');
+      const musicMenu=root.querySelector?.('[data-role="schola-events-menu"]');
       const prefs=root.querySelector?.('[data-role="mass-preferences"]');
       if(key==="Escape"){
+        if(musicMenu?.hidden===false){
+          event.preventDefault?.();closeScholaEventMenu();
+          root.querySelector?.("[data-schola-events-open]")?.focus?.();return;
+        }
         if(pop?.hidden===false){event.preventDefault?.();closeGuide();return;}
         if(sectionMenu?.hidden===false){
           event.preventDefault?.();
@@ -3458,7 +3537,8 @@ export function createReaderDomAdapter({
       }
       if(["INPUT","SELECT","TEXTAREA"].includes(tag))return;
       if(event.target?.isContentEditable)return;
-      if(pop?.hidden===false || sectionMenu?.hidden===false || prefs?.dataset?.open==="true")return;
+      if(pop?.hidden===false || sectionMenu?.hidden===false || musicMenu?.hidden===false ||
+         prefs?.dataset?.open==="true")return;
       // Arrow keys inside controls belong to those controls, not Mass navigation.
       if(["BUTTON","A"].includes(tag) || event.target?.closest?.("button,a,[role=button]"))return;
       if(key==="ArrowRight"){event.preventDefault?.();navigateBy(1,"keyboard");}
