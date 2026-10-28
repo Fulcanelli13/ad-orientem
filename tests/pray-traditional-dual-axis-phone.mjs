@@ -355,6 +355,12 @@ try{
    assert.ok(text.length>450,key+" incomplete Latin text");
    assert.match(text,/Amen\./,key+" hymn lacks final Amen");
    const historicalEnglish=["audi_benigne","ex_more_docti"].includes(key);
+   if(historicalEnglish){
+     // The previous test explicitly selected Latin and it persists across
+     // hymn switches. Select the attested English edition before asserting.
+     await page.locator("#aoPray435930 [data-ao-hymn-options] > summary").evaluate(el=>el.click());
+     await page.locator("#aoPray435930 [data-tp381-hymn-lang='en']").evaluate(el=>el.click());
+   }
    assert.equal(await page.locator("#aoPray435930 .aoDevoCardScroll [data-face-v]").count(),historicalEnglish?1:0,
      "1849 English edition should be available only where source-collated");
    assert.equal(await page.locator("#aoPray435930 .aoDevoCardScroll .aoTP381Reader").count(),historicalEnglish?0:1);
