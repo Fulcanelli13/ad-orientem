@@ -122,6 +122,16 @@ try{
   total:el.dataset.aoHorizonTotal,height:el.querySelector(".aoQuietHorizonCanvas")?.getBoundingClientRect().height
  }));
  assert.deepEqual([openingSky.mode,openingSky.phase,openingSky.total],["morning","0","11"]);
+ const openingRule=await page.locator("#aoPray435930 [data-ao-personal-settings]").evaluate(el=>{
+   const summary=el.querySelector("summary");
+   const horizon=document.querySelector("#aoPray435930 [data-ao-quiet-daily-horizon]");
+   return {settingsTop:el.getBoundingClientRect().top,horizonTop:horizon.getBoundingClientRect().top,
+     summaryVisible:summary.getBoundingClientRect().height>=40,
+     label:summary.innerText,open:el.open};
+ });
+ assert.ok(openingRule.summaryVisible&&openingRule.settingsTop<openingRule.horizonTop&&!openingRule.open,
+   "Daily customization must be visible and collapsed before the cinematic stage: "+JSON.stringify(openingRule));
+ assert.match(openingRule.label,/1913.*FR.*Standard/,"Saved rule identity should be readable at entry");
  assert.ok(openingSky.height>=85&&openingSky.height<=135,
   "Quiet sky must be a minor editorial accent, not the dominant screen: "+JSON.stringify(openingSky));
 
@@ -182,6 +192,7 @@ try{
  assert.equal(await page.locator("#aoPray435930 [data-ao-personal-settings]").evaluate(el=>el.open),true,"Customizer should stay open across saved choices");
  assert.equal(await page.locator("#aoPray435930 [data-tp381-personal-action='mode'][data-tp381-personal-value='expanded']").getAttribute("aria-pressed"),"true");
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"11","Selected complete extra appended once");
+ assert.equal((await snapshot()).index,11,"Adding an evening prayer must preserve completion, not restart the sequence");
  await page.locator("#aoPray435930 [data-tp381-personal-action='language'][data-tp381-personal-value='la']").evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"10","French-only extra must never appear as a Latin translation");
  assert.equal(await page.locator("#aoPray435930 [data-tp381-personal-action='edition'][data-tp381-personal-value='1905']").evaluate(el=>el.click()),undefined);

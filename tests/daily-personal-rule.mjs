@@ -8,7 +8,7 @@ import {
 } from "../src/pray/daily-personal-rule.js";
 import {DAILY_PERSONAL_PRAYER_SOURCE_V1 as CORPUS} from "../src/pray/daily-personal-prayer-source.js";
 import {APPROVED_DAILY_FORMULATION_MANIFEST_V1,DAILY_APPROVED_SEQUENCE_RELEASE_V1} from "../src/pray/daily-approved-formulations.js";
-import {personalDailyPrayerCard,dailyPersonalSettings,dailyPersonalList} from "../src/pray/daily-personal-prayer-view.js";
+import {personalDailyPrayerCard,dailyPersonalSettings,dailyPersonalList,dailyPersonalProvenance} from "../src/pray/daily-personal-prayer-view.js";
 
 assert.deepEqual(PERSONAL_DAILY_SOURCE_COVERAGE.languages,["la","en","fr"]);
 assert.equal(PERSONAL_DAILY_SOURCE_COVERAGE.manualOptions,40);
@@ -87,6 +87,13 @@ const card=personalDailyPrayerCard(first.rows[1],first,h);
 assert.match(card,/data-ao-personal-prayer="daily-prayer"/);
 assert.match(card,/created me, made me a Christian/);
 assert.match(dailyPersonalSettings(first,initial,h),/data-tp381-personal-action="language"/);
+assert.match(dailyPersonalSettings(first,initial,h),/1913 · EN · Standard/,"The opening settings summary must identify the effective rule");
+assert.match(dailyPersonalProvenance(first.rows[1],h.L),/Latin version on tap is an editorial translation/);
+const latinSource=buildPersonalDailyPlan({daypart:"morning",prefs:defaultPersonalDailyPrefs("la")}).rows[1];
+assert.match(dailyPersonalProvenance(latinSource,h.L),/Editorial Latin translation · not printed Latin/);
+assert.match(dailyPersonalProvenance(first.rows[0],h.L),/Traditional Latin parallel/);
+const sourceExtra=buildPersonalDailyPlan({daypart:"morning",prefs:changePersonalDailyPrefs(initial,{action:"extra",daypart:"morning",value:extra.id})}).rows.at(-1);
+assert.match(dailyPersonalProvenance(sourceExtra,h.L),/Optional · complete historical source-language prayer/);
 assert.match(dailyPersonalList(first.rows,{...h,isFr:false}),/data-tp381-daily-card-index="0"/);
 assert.equal(APPROVED_DAILY_FORMULATION_MANIFEST_V1.witnesses&&Object.keys(APPROVED_DAILY_FORMULATION_MANIFEST_V1.witnesses).length,0,"Old unapproved historical profile path must remain fail closed");
 assert.equal(DAILY_APPROVED_SEQUENCE_RELEASE_V1.enabled,false,"Do not bypass historical profile approval through legacy gate");
@@ -95,4 +102,6 @@ assert.match(runtime,/buildPersonalDailyPlan\(\{daypart:S.daypart,prefs:personal
 assert.match(runtime,/data-tp381-personal-action/);
 assert.match(runtime,/personalDailyPrayerCard\(row,dailyReadingPlan\(\),/);
 assert.match(runtime,/dailyPersonalSettings\(plan,personalDailyPrefs\(\),/);
+assert.match(runtime,/\$\{choice\}\$\{dailyPersonalSettings\(plan,personalDailyPrefs\(\),/,"Daily rule controls must be in the opening screen, before the horizon");
+assert.match(runtime,/previousId=previous\[previousStep\]\?\.id/,"Updating a daily rule must retain its active prayer ID");
 console.log("PASS: St Pius X 1905/1913 structure, 3 languages, 40 optional texts, source-ID privacy, variants, optional order and legacy gate");

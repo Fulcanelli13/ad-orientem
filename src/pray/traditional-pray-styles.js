@@ -162,7 +162,7 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
  outline:2px solid #dbb983;outline-offset:2px
 }
 
-/* Personal St Pius X daily prayer: one quiet local-control disclosure below cards. */
+/* Personal St Pius X daily prayer: a compact disclosure beside daypart. */
 #aoPray435930 .aoDailyPersonalSettings{
  margin:12px 14px 4px;padding:10px 13px;border:1px solid rgba(215,188,146,.24);
  border-radius:12px;background:rgba(18,26,35,.88);color:#eee7d8;
@@ -171,6 +171,43 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
  list-style-position:inside;min-height:40px;cursor:pointer;
  font:600 .79rem/1.5 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.014em;
  color:#e9d3a8;padding:8px 4px;
+}
+/* Source rule is visible without opening secondary panels or scrolling
+   beyond the final prayer. The disclosure stays small when collapsed. */
+#aoPray435930 .aoDailyOpeningRail{
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(158px,.85fr);
+ gap:4px;align-items:start;max-width:660px;margin:0 auto 5px;
+}
+#aoPray435930 .aoDailyOpeningRail>.aoTP381DaypartStrip{
+ grid-row:1;grid-column:1;min-width:0;justify-content:flex-start;
+ gap:clamp(6px,2vw,20px);margin:0!important;
+}
+#aoPray435930 .aoDailyOpeningRail>.aoDailyPersonalSettings{
+ box-sizing:border-box;width:100%;min-width:0;max-width:660px;
+ margin:0;padding:0 4px;
+ background:rgba(15,24,33,.34);border-color:rgba(215,188,146,.15);
+}
+#aoPray435930 .aoDailyOpeningRail>.aoDailyPersonalSettings>summary{
+ display:grid;align-content:center;justify-content:stretch;
+ gap:1px;min-height:44px;padding:4px 8px;list-style:none;
+}
+#aoPray435930 .aoDailyOpeningRail>.aoDailyPersonalSettings>summary::-webkit-details-marker{display:none}
+#aoPray435930 .aoDailyPersonalSettingsLabel{
+ min-width:0;color:#e4cda5;font:600 .75rem/1.25 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPray435930 .aoDailyPersonalSettingsCurrent{
+ min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+ color:#b1b6bc;font:400 .66rem/1.3 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPray435930 .aoDailyOpeningRail>.aoDailyPersonalSettings[open]{
+ grid-row:2;grid-column:1 / -1;width:100%;
+}
+#aoPray435930 .aoDailyOpeningRail>.aoDailyPersonalSettings[open]{
+ border-color:rgba(215,188,146,.28);
+ background:rgba(15,24,33,.9);
+}
+#aoPray435930 .aoDailyOpeningRail>.aoDailyPersonalSettings>summary:focus-visible{
+ outline:2px solid #dbb983;outline-offset:2px;
 }
 #aoPray435930 .aoDailyPersonalSettingsBody{display:grid;gap:13px;padding:13px 0 7px;max-height:55dvh;overflow-y:auto;overscroll-behavior:contain}
 #aoPray435930 .aoDailyPersonalGroup{display:grid;gap:9px;padding:10px 0;border-bottom:1px solid rgba(215,188,146,.12)}
