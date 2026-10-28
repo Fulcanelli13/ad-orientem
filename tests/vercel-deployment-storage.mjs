@@ -9,6 +9,10 @@ const excluded=[
  "assets/staged",
  "data/geography/research",
 ];
+const retainedRuntimeResearch={
+ "data/research":["mass-special-rite-music-events-20261019.v1.json"],
+ "data/directory/research":["canonical-g0-site-admissions-b84-b90-20261026.v1.json"],
+};
 // Boot files not referenced by current index are historical Git-only witnesses,
 // never production payload. The build copies only active content-addressed boot.
 const indexSource=readFileSync(join(root,"index.html"),"utf8");
@@ -39,6 +43,11 @@ const sourcePrunedBytes=excluded.reduce((total,path)=>{
  return total+sizeOf(absolute);
 },0);
 assert.ok(sourcePrunedBytes>0,"No source-owned records were excluded");
+const slimmedBytes=Object.entries(retainedRuntimeResearch).reduce((sum,[path,files])=>{
+ const retained=files.reduce((total,name)=>total+sizeOf(join(root,path,name)),0);
+ return sum+sizeOf(join(root,path))-retained;
+},0);
+assert.ok(slimmedBytes>8000000,"Research output pruning lost expected savings");
 
 const run=spawnSync(process.execPath,["tools/build-web-preview.mjs"],{
  cwd:root,encoding:"utf8",maxBuffer:1024*1024
@@ -46,10 +55,20 @@ const run=spawnSync(process.execPath,["tools/build-web-preview.mjs"],{
 assert.equal(run.status,0,run.stderr+"\n"+run.stdout);
 const report=JSON.parse(run.stdout.trim().split("\n").at(-1));
 assert.deepEqual(report.excludedResearchPaths,excluded);
+assert.deepEqual(report.retainedRuntimeResearch,retainedRuntimeResearch);
 
 for(const path of excluded){
  assert.equal(existsSync(join(output,path)),false,"Non-runtime research unexpectedly published: "+path);
  assert.ok(existsSync(join(root,path)),"Build modified GitHub-owned research: "+path);
+}
+for(const [path,kept] of Object.entries(retainedRuntimeResearch)){
+ const out=join(output,path);
+ assert.deepEqual(readdirSync(out).sort(),[...kept].sort(),
+  "Research output includes unapproved audit files or is missing a required fixture: "+path);
+ for(const name of kept){
+  assert.deepEqual(readFileSync(join(out,name)),readFileSync(join(root,path,name)),
+   "Runtime research fixture has changed: "+path+"/"+name);
+ }
 }
 assert.equal(existsSync(join(output,oldBoot)),false,"Historical boot was deployed alongside active boot");
 for(const boot of activeBoot)assert.ok(existsSync(join(output,boot)),"Active boot missing from release: "+boot);
@@ -68,6 +87,9 @@ const scan=dir=>{
  }
 };
 scan(join(root,"src"));
+for(const name of readdirSync(root)){
+ if(/^ao-(?:boot|inline|packed)-[\\w.-]+\\.js$/.test(name))runtimeSourceFiles.push(join(root,name));
+}
 const runtimeReferences=[];
 for(const file of runtimeSourceFiles){
  const source=readFileSync(file,"utf8");
@@ -76,5 +98,22 @@ for(const file of runtimeSourceFiles){
  }
 }
 assert.deepEqual(runtimeReferences,[],"Runtime files reference excluded deployment paths");
+const unresolvedResearchRefs=[];
+for(const file of runtimeSourceFiles){
+ const source=readFileSync(file,"utf8");
+ for(const [path,kept] of Object.entries(retainedRuntimeResearch)){
+  const marker=path+"/";
+  let i=0;
+  while((i=source.indexOf(marker,i))!==-1){
+   const suffix=source.slice(i+marker.length,i+marker.length+150);
+   if(!kept.some(name=>suffix.startsWith(name)))
+    unresolvedResearchRefs.push(relative(root,file)+": "+marker+suffix.slice(0,90));
+   i+=marker.length;
+  }
+ }
+}
+assert.deepEqual(unresolvedResearchRefs,[],
+ "Runtime refers to a research file that would be missing from deployment");
 console.log("PASS — "+Math.round(sourcePrunedBytes/1e5)/10+
- " MB of research/staging source preserved but omitted from deployment; key runtime assets intact");
+ " MB excluded by original rules; "+Math.round(slimmedBytes/1e5)/10+
+ " MB of additional research audit data omitted; runtime fixtures intact");
