@@ -193,7 +193,7 @@ jobs:
           assert souls_mass["blockedLocalePageCount"]==5
           assert {(x["hour"],x["locale"]) for x in souls_mass["blockedLocalePages"]}=={
             ("PRIME","fr"),("TERCE","fr"),("SEXT","fr"),("NONE","fr"),("COMPLINE","fr")}
-          assert sum(len(x["missingSourceCellIds"]) for x in souls_mass["blockedLocalePages"])==6
+          assert sum(len(x["missingSourceCellIds"]) for x in souls_mass["blockedLocalePages"])==11
           # Source-level status markers are explicitly logged, never prayer-card material.
           expected={"MATINS":{"en":2,"fr":2},"LAUDS":{"en":1,"fr":1},"VESPERS":{"en":1,"fr":1}}
           for hour,languages in expected.items():
@@ -221,12 +221,18 @@ jobs:
             assert risk["translationCellsScreened"]==risk["alignedLatinCells"]*2
             assert risk["verifiedTranslations"]==0 and risk["published"]==0 and not risk["canPublish"]
             if folder=="all-souls":
-              assert risk["flaggedTranslationCells"]==6, risk["flags"]
+              assert risk["flaggedTranslationCells"]==11, risk["flags"]
               assert {x["language"] for x in risk["flags"]}=={"fr"}
-              assert {(x["hour"],x["translationSourceCellId"]) for x in risk["flags"]}=={
-                ("PRIME","Prima4"),("PRIME","Prima5"),
-                ("TERCE","Tertia4"),("SEXT","Sexta4"),("NONE","Nona4"),
-                ("COMPLINE","Completorium6")}
+              expected_missing={
+                ("PRIME","Prima4"),("PRIME","Prima5"),("PRIME","Prima6"),
+                ("TERCE","Tertia4"),("TERCE","Tertia5"),
+                ("SEXT","Sexta4"),("SEXT","Sexta5"),
+                ("NONE","Nona4"),("NONE","Nona5"),
+                ("COMPLINE","Completorium6"),("COMPLINE","Completorium7")}
+              assert {(x["hour"],x["translationSourceCellId"]) for x in risk["flags"]}==expected_missing
+              assert all("UPSTREAM_PLACEHOLDER_MISSING_TEXT" in x["reason"] for x in risk["flags"])
+              blocked={(x["hour"],cell) for x in souls_mass["blockedLocalePages"] for cell in x["missingSourceCellIds"]}
+              assert blocked==expected_missing
           advent_mass=json.loads((Path(os.environ["OUTPUT"])/"advent-vespers"/"preview"/"mass"/"preview-manifest.json").read_text(encoding="utf8"))
           assert advent_mass["pages"]==4 and advent_mass["published"]==0
           assert advent_mass["hours"]==["VESPERS"] and not advent_mass["productionRouteRegistered"]
