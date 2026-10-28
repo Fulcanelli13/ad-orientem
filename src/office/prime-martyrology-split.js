@@ -31,8 +31,16 @@ export function splitAllSoulsPrimeMartyrologyCell(text,language){
   const matches=[];
   for(let i=0;i<lines.length;i++)
     if(ANCHORS[language].test(fold(lines[i])))matches.push(i);
-  if(matches.length!==1||matches[0]===0||matches[0]===lines.length-1)
-    throw Error("OFFICE_PRIME_SPLIT_VERSICLE_BOUNDARY_AMBIGUOUS:"+language);
+  if(matches.length!==1||matches[0]===0||matches[0]===lines.length-1){
+    // The pinned composer can transform punctuation and glyphs. Report only
+    // bounded nearby candidate verses, never silently guess a boundary.
+    // This diagnostic is needed to reconcile an exact live source witness.
+    const candidates=lines.map((line,index)=>({line,index})).filter(({line})=>
+      /memori|souvenir|remembrance|venia|pardon|justi|iusti/u.test(fold(line)))
+      .slice(-8).map(({line,index})=>({index,text:line.slice(0,110)}));
+    throw Error("OFFICE_PRIME_SPLIT_VERSICLE_BOUNDARY_AMBIGUOUS:"+
+      language+":matches="+matches.length+":candidates="+JSON.stringify(candidates));
+  }
   const boundary=matches[0];
   const martyrology=lines.slice(0,boundary).join("\n");
   const postPrayer=lines.slice(boundary).join("\n");
