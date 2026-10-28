@@ -1,0 +1,156 @@
+/**
+ * User-owned daily rule over exact-edition St Pius X texts.
+ * Complete preconciliar prayers and separately identified traditional
+ * liturgical excerpts are optional, never silently presented as St Pius X
+ * or machine-translated into another language.
+ * Saves only source IDs/edition/language; no prayer content or examination.
+ */
+import {DAILY_PERSONAL_PRAYER_SOURCE_V1 as CORPUS} from "./daily-personal-prayer-source.js";
+
+export const DAILY_PERSONAL_RULE_STORAGE_KEY="ao.pray.personal-rule.v1";
+const LANGS=new Set(["la","en","fr"]);
+const EDITIONS=new Set(["1905","1913"]);
+const PARTS=["morning","evening"];
+const MODES=new Set(["standard","expanded"]);
+const EDITION_SUPPLEMENT_IDS=new Set(["piusx-1913-de-profundis","piusx-1913-jesus-joseph-mary"]);
+const ids=new Set([...CORPUS.additional.map(x=>x.id),...EDITION_SUPPLEMENT_IDS]);
+function editionSupplements(language){
+ const original=CORPUS.editions["1913"],list=original.dayparts.evening.filter(x=>x.kind==="supplement");
+ return list.map(row=>({
+  id:row.id==="de-profundis"?"piusx-1913-de-profundis":"piusx-1913-jesus-joseph-mary",
+  lang:language,daypart:"evening",kind:"additional",slot:"supplement",
+  title:language==="fr"?row.titleFr:row.titleEn,
+  sourceLabel:row.sourceLabel,sourceUrl:row.sourceUrl,
+  text:row.text?.[language]||null,
+  legacyPrayerId:row.id==="de-profundis"?"dead_de_profundis":null,
+  sourceExact:row.sourceExact
+ }));
+}
+const allowed=(arr,lang,daypart)=>arr.filter(x=>x.lang===lang && x.daypart===daypart);
+
+export function defaultPersonalDailyPrefs(language="en"){
+ return {version:1,edition:"1913",language:LANGS.has(language)?language:"en",
+  mode:"standard",variants:{morning:{},evening:{}},
+  extras:{morning:[],evening:[]}};
+}
+export function normalizePersonalDailyPrefs(raw,language="en"){
+ const fallback=defaultPersonalDailyPrefs(language);
+ if(!raw||raw.version!==1||typeof raw!=="object"||Array.isArray(raw))return fallback;
+ const prefs={
+  version:1,edition:EDITIONS.has(raw.edition)?raw.edition:fallback.edition,
+  language:LANGS.has(raw.language)?raw.language:fallback.language,
+  mode:MODES.has(raw.mode)?raw.mode:fallback.mode,
+  variants:{},extras:{}
+ };
+ for(const part of PARTS){
+  const variants=raw.variants?.[part];
+  prefs.variants[part]={};
+  if(variants&&typeof variants==="object"&&!Array.isArray(variants)){
+   for(const [slot,id] of Object.entries(variants)){
+    if(!/^(daily-prayer|faith|hope|charity|contrition)$/.test(slot))continue;
+    const item=CORPUS.additional.find(x=>x.id===id&&x.kind==="variant"&&x.slot===slot&&x.daypart===part);
+    if(item)prefs.variants[part][slot]=id;
+   }
+  }
+  const original=raw.extras?.[part];
+  prefs.extras[part]=Array.isArray(original)?[...new Set(original.filter(id=>ids.has(id)&&CORPUS.additional.some(x=>x.id===id&&x.daypart===part&&x.kind==="additional"||EDITION_SUPPLEMENT_IDS.has(id)&&part==="evening")))].slice(0,40):[];
+ }
+ return prefs;
+}
+export function loadPersonalDailyPrefs(storage,language="en"){
+ try{
+  const text=storage?.getItem?.(DAILY_PERSONAL_RULE_STORAGE_KEY);
+  if(!text||text.length>8192)return defaultPersonalDailyPrefs(language);
+  return normalizePersonalDailyPrefs(JSON.parse(text),language);
+ }catch{return defaultPersonalDailyPrefs(language)}
+}
+export function savePersonalDailyPrefs(storage,prefs,language="en"){
+ const validated=normalizePersonalDailyPrefs(prefs,language);
+ try{storage?.setItem?.(DAILY_PERSONAL_RULE_STORAGE_KEY,JSON.stringify(validated));return true}catch{return false}
+}
+export function personalDailyOptions(daypart,language,edition="1913"){
+ if(!PARTS.includes(daypart)||!LANGS.has(language))return [];
+ return [...allowed(CORPUS.additional,language,daypart),...(edition==="1913"&&daypart==="evening"?editionSupplements(language):[])];
+}
+export function personalDailyEdition(edition){
+ return CORPUS.editions[EDITIONS.has(edition)?edition:"1913"];
+}
+/**
+ * The 1913 De Profundis and Jesus/Joseph/Mary are labelled "supplement"
+ * in that edition; only selected optional complete prayers follow the core.
+ * No cross-language fallback: a choice unavailable in Latin is invisible in
+ * Latin rather than shown with English words.
+ */
+export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalDailyPrefs()}={}){
+ if(!PARTS.includes(daypart))throw new RangeError("Invalid daily prayer daypart");
+ const p=normalizePersonalDailyPrefs(prefs);
+ const edition=personalDailyEdition(p.edition),language=p.language;
+ const native=edition.dayparts[daypart];
+ const variants=personalDailyOptions(daypart,language,p.edition).filter(x=>x.kind==="variant");
+ const chosen=Object.fromEntries(Object.entries(p.variants[daypart]).filter(([slot,id])=>variants.some(x=>x.id===id&&x.slot===slot)));
+ const primary=native.filter(x=>x.kind!=="supplement").map((row,index)=>{
+  if(row.kind==="guided")return {...row,id:"piusx-"+p.edition+"-"+daypart+"-examen",kind:"personal-examen",sourceId:"examen",index};
+  const replacement=variants.find(x=>x.slot===row.id&&x.id===chosen[row.id]);
+  const body=replacement?.text||row.text?.[language];
+  // Fail closed on source gaps; never fall back to a foreign language.
+  return {id:"piusx-"+p.edition+"-"+daypart+"-"+row.id,
+   sourceId:row.id,kind:"personal-prayer",title:replacement?replacement.title:(language==="fr"?row.titleFr:row.titleEn),
+   text:body||null,latinText:replacement?null:row.text?.la||null,language,sourceLabel:replacement?.sourceLabel||row.sourceLabel,
+   sourceUrl:replacement?.sourceUrl||row.sourceUrl,
+   sourceStatus:replacement?"printed-manual-form":row.translationStatus||"source-edition-translation",
+   replacementId:replacement?.id||null,
+   missing:!body,index,sourceExact:replacement?true:row.sourceExact};
+ });
+ const extrasById=new Map(personalDailyOptions(daypart,language,p.edition).filter(x=>x.kind==="additional").map(x=>[x.id,x]));
+ const selected=p.mode==="expanded"?p.extras[daypart].filter(id=>extrasById.has(id)):[];
+ const extras=selected.map(id=>{
+  const item=extrasById.get(id);
+  return {id:"personal-extra-"+id,sourceId:id,kind:item.legacyPrayerId?"personal-legacy":"personal-prayer",legacyId:item.legacyPrayerId||null,
+   title:item.title,language,text:item.text,sourceLabel:item.sourceLabel,
+   sourceUrl:item.sourceUrl,
+   sourceStatus:item.purpose?.startsWith("historical-office-")?"complete-optional-liturgical-selection":"complete-additional-manual-prayer",
+   sourceContextEn:item.sourceContextEn||null,sourceContextFr:item.sourceContextFr||null,
+   optional:true,sourceExact:true};
+ });
+ // Append selected complete optional devotions in the order saved by the
+ // user. The printed catechism's mandatory stages retain their exact order.
+ return {mode:"personal",daypart,edition:p.edition,language,expanded:p.mode==="expanded",
+  rows:[...primary,...extras],selectedExtras:selected,
+  offeredExtras:[...extrasById.values()],availableVariants:variants,
+  sourceLabel:edition.sourceLabel,sourceUrl:edition.sourceUrl};
+}
+export function changePersonalDailyPrefs(prefs,{action,daypart="morning",value,language}={}){
+ const p=normalizePersonalDailyPrefs(prefs,language);
+ if(action==="edition"&&EDITIONS.has(value))p.edition=value;
+ else if(action==="language"&&LANGS.has(value))p.language=value;
+ else if(action==="mode"&&MODES.has(value))p.mode=value;
+ else if(action==="reset")return defaultPersonalDailyPrefs(p.language);
+ else if(PARTS.includes(daypart)){
+  const options=personalDailyOptions(daypart,p.language,p.edition);
+  if(action==="variant"){
+   const item=options.find(x=>x.id===value&&x.kind==="variant");
+   if(item){
+    if(p.variants[daypart][item.slot]===value)delete p.variants[daypart][item.slot];
+    else p.variants[daypart][item.slot]=value;
+   }
+  }
+  if(action==="extra"){
+   const item=options.find(x=>x.id===value&&x.kind==="additional");
+   if(item){
+    const arr=p.extras[daypart];
+    if(arr.includes(value))p.extras[daypart]=arr.filter(x=>x!==value);
+    else p.extras[daypart]=[...arr,value];
+    if(p.extras[daypart].length)p.mode="expanded";
+   }
+  }
+  if(action==="move"&&typeof value==="string"){
+   const [id,direction]=value.split("|"),arr=p.extras[daypart];
+   const from=arr.indexOf(id),to=from+(direction==="up"?-1:direction==="down"?1:0);
+   if(from>=0&&to>=0&&to<arr.length&&from!==to)[arr[from],arr[to]]=[arr[to],arr[from]];
+  }
+ }
+ return p;
+}
+export const PERSONAL_DAILY_SOURCE_COVERAGE=Object.freeze({
+ editions:["1905","1913"],languages:["la","en","fr"],manualOptions:CORPUS.additional.length
+});

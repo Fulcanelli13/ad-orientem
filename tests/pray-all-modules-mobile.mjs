@@ -254,9 +254,9 @@ try{
  assert.match(await page.locator(daily).innerText(),/Prayer completed/);
  await tapStep("#aoPray435930.open [data-tp381-daily-step='0']",0);
  await page.locator("#aoPray435930.open [data-tp381-daypart='evening']").tap();
- assert.equal(await page.locator(daily+" .aoTP381GuideCount").innerText(),"Step 1 of 13");
+ assert.equal(await page.locator(daily+" .aoTP381GuideCount").innerText(),"Step 1 of 10");
  for(let step=1;step<=8;step++)await tapStep("#aoPray435930.open [data-tp381-daily-step='"+step+"']",step);
- assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"pray.nightly_examen");
+ assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"piusx-1913-evening-examen");
  await page.locator("#aoPray435930.open [data-tp381-daily-examen]").tap();
  assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"recollect");
  assert.equal(await page.locator(daily+" .aoTP381GuideCount").innerText(),"Step 1 of 5");
@@ -267,13 +267,13 @@ try{
  assert.match(await page.locator(daily).innerText(),/Prayer completed/);
  await page.locator("#aoPray435930.open [data-tp381-examen-return]").tap();
  assert.equal(await page.locator(daily).getAttribute("data-guide-step"),"9","Examen must resume Evening Prayer at contrition");
- assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"sacrament_act_of_contrition");
+ assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"piusx-1913-evening-contrition");
  const dailyOptions=page.locator("#aoPray435930.open [data-ao-daily-options]");
  await dailyOptions.locator("summary").tap();
  assert.equal(await dailyOptions.evaluate(node=>node.open),true,
    "Real phone cannot expand secondary daily prayer options");
  await page.locator("#aoPray435930.open [data-tp381-daily-mode='list']").tap();
- assert.equal(await page.locator("#aoPray435930.open .aoTP381PrayerList button").count(),13,"Traditional unabridged overview must survive guided mode");
+ assert.equal(await page.locator("#aoPray435930.open .aoTP381PrayerList button").count(),10,"Revised St Pius X evening overview must contain its ten core stages");
  const reopenedOptions=page.locator("#aoPray435930.open [data-ao-daily-options]");
  await reopenedOptions.locator("summary").tap();
  assert.equal(await reopenedOptions.evaluate(node=>node.open),true);

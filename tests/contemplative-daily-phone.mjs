@@ -59,7 +59,7 @@ try{
           background:getComputedStyle(r.querySelector(".aoP435930Sheet")).backgroundImage};
       });
       assert.deepEqual([initial.route,initial.mode,initial.kind,initial.count,initial.dots,initial.active,initial.current],
-        ["pray.morning_evening","guided","daily",12,12,1,0],"Canonical Morning sequence/progress or accessibility lost");
+        ["pray.morning_evening","guided","daily",12,12,1,0],"St Pius X Morning source order/progress or accessibility lost");
       assert.ok(initial.rect.left>=-1&&initial.rect.right<=width+1,"Daily prayer overflows viewport "+JSON.stringify(initial.rect));
       assert.ok(initial.rootScroll<=width+1,"Page overflow at "+width+"px");
       assert.ok(initial.touchTarget>=43,"Stage navigation target below 44px: "+initial.touchTarget);
@@ -69,6 +69,24 @@ try{
       // The approved cinematic mood follows the source-owned stage progression.
       const startingLight=await page.locator("#aoPray435930").evaluate(el=>el.style.getPropertyValue("--ao-contemplative-light"));
       assert.ok(startingLight,"Opening morning phase did not reach contemplative horizon");
+      const initialHorizon=await page.locator(target+" .aoQuietHorizon").evaluate(el=>{
+        const b=el.getBoundingClientRect(),canvas=el.querySelector(".aoQuietHorizonCanvas");
+        return {height:b.height,visible:getComputedStyle(el).opacity,
+          canvasHeight:canvas?.getBoundingClientRect().height,
+          phase:el.dataset.aoHorizonPhase};
+      });
+      assert.ok(initialHorizon.height>70&&initialHorizon.canvasHeight>65&&initialHorizon.visible==="1",
+        "Progressive sunrise was visually hidden: "+JSON.stringify(initialHorizon));
+      await page.locator(target+" .aoDevoStop[data-ao-devo-chapter='1']").click();
+      await page.waitForFunction(previous=>
+        document.querySelector("#aoPray435930")?.style.getPropertyValue("--ao-contemplative-light")!==previous,
+        startingLight,{timeout:6000});
+      const secondLight=await page.locator("#aoPray435930").evaluate(el=>el.style.getPropertyValue("--ao-contemplative-light"));
+      assert.notEqual(secondLight,startingLight,"Sky must change on every manually advanced prayer, not only five phase jumps");
+      await page.locator(target+" .aoDevoStop[data-ao-devo-chapter='0']").click();
+      await page.waitForFunction(previous=>
+        document.querySelector("#aoPray435930")?.style.getPropertyValue("--ao-contemplative-light")===previous,
+        startingLight,{timeout:6000});
       await page.locator(target+" .aoDevoStop[data-ao-devo-chapter='9']").click();
       await page.waitForFunction(previous=>{
         const root=document.querySelector("#aoPray435930");
@@ -99,9 +117,9 @@ try{
 
       await page.screenshot({path:resolve(captures,"our-father-"+width+".png"),animations:"disabled"});
       await page.locator(target+" [data-tp381-daypart='evening']").click();
-      await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoDevoSequenceTimeline")?.querySelectorAll(".aoDevoStop").length===14);
+      await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoDevoSequenceTimeline")?.querySelectorAll(".aoDevoStop").length===11);
       const count=await page.locator(target+" .aoDevoSequenceTimeline .aoDevoStop").count();
-      assert.equal(count,14,"Canonical Evening sequence altered");
+      assert.equal(count,11,"Revised Pius X Evening ten-stage order plus completion must remain intact");
       await page.locator(target+" .aoDevoStop[data-ao-devo-chapter='9']").click();
       assert.equal(await page.locator(target+" .aoDevoCard").getAttribute("data-ao-devo-index"),"9");
       await page.screenshot({path:resolve(captures,"evening-"+width+".png"),animations:"disabled"});
@@ -109,7 +127,7 @@ try{
       await page.waitForFunction(()=>!document.querySelector("#aoPray435930")?.hasAttribute("data-ao-contemplative-daily"),null,{timeout:12000});
       assert.deepEqual(errors,[],"Browser errors at "+width+"px: "+errors.join(" | "));
       results.push({width,morningCount:initial.count,eveningCount:count,routeLeak:false,errors:0});
-      console.log("PASS "+width+"px default Design B: canonical 11/13, Latin flip and context isolation");
+      console.log("PASS "+width+"px default Design B: Pius X 11/10, Latin flip and context isolation");
     }finally{await page.close();}
   }
   // French and Latin are exercised through the production settings UI, not mock text.

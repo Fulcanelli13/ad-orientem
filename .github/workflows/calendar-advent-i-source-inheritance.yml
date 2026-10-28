@@ -1,0 +1,45 @@
+name: Calendar 1962 four-week Advent Proper inheritance
+on:
+  push:
+    branches:
+      - 'fix/1962-advent-feria-proper-current-main-20261028'
+    paths:
+      - 'index.html'
+      - 'ao-boot-74ea99bfe3a49436.js'
+      - 'tests/calendar-advent-i-real-weekday-inheritance.mjs'
+      - '.github/workflows/calendar-advent-i-source-inheritance.yml'
+  pull_request:
+    branches: ['main']
+    paths:
+      - 'index.html'
+      - 'ao-boot-74ea99bfe3a49436.js'
+      - 'tests/calendar-advent-i-real-weekday-inheritance.mjs'
+      - '.github/workflows/calendar-advent-i-source-inheritance.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: calendar-advent-i-real-${{ github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  native-resolver-advent-i:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check exact canonical boot bundle syntax
+        run: |
+          node --check ao-boot-74ea99bfe3a49436.js
+          node --check tests/calendar-advent-i-real-weekday-inheritance.mjs
+      - name: Install existing browser dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Validate four Advent weeks in real 1962 resolver, 2026-27 and Ember exclusions
+        run: node tests/calendar-advent-i-real-weekday-inheritance.mjs
