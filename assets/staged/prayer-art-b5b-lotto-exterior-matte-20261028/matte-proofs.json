@@ -1,0 +1,91 @@
+{
+  "schema": "AO_PRAYER_B5B_LOTTO_WHOLE_ARCH_ALPHA_MATTE_V1",
+  "date": "2026-10-28",
+  "painting": "Lorenzo Lotto, Madonna del Rosario",
+  "source_sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+  "source_ref": "research/prayer-wave1-photo-comparison-20261028",
+  "source_path": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary_yorck-new-commons-original.jpg",
+  "unchanged_full_native_dimensions": [
+    1880,
+    2886
+  ],
+  "original_bytes_never_modified": true,
+  "all_fifteen_roundels_required": true,
+  "external_near_white_only_not_general_background_removal": true,
+  "research_variants": [
+    {
+      "threshold_min_channel": 248,
+      "max_channel_spread": 20,
+      "external_near_white_connected_pixels_transparent": 357873,
+      "transparent_pixel_fraction": 0.065959,
+      "method": "ROW_EDGE_NEARWHITE_PREFIX_SUFFIX_ONLY",
+      "all_original_rgb_pixels_unchanged": true,
+      "full_painting_rectangular_bounds": [
+        0,
+        0,
+        1880,
+        2886
+      ],
+      "central_column_all_opaque": true,
+      "15_ROUNDELS_VISUALLY_PENDING": true,
+      "painted_silhouette_fidelity_final_accepted": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "threshold_min_channel": 238,
+      "max_channel_spread": 32,
+      "external_near_white_connected_pixels_transparent": 358884,
+      "transparent_pixel_fraction": 0.066145,
+      "method": "ROW_EDGE_NEARWHITE_PREFIX_SUFFIX_ONLY",
+      "all_original_rgb_pixels_unchanged": true,
+      "full_painting_rectangular_bounds": [
+        0,
+        0,
+        1880,
+        2886
+      ],
+      "central_column_all_opaque": true,
+      "15_ROUNDELS_VISUALLY_PENDING": true,
+      "painted_silhouette_fidelity_final_accepted": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false,
+      "full_native_alpha_proof": {
+        "path": "assets/staged/prayer-art-b5b-lotto-exterior-matte-20261028/lotto-exterior-nearwhite-matte-research-only.png",
+        "sha256": "9b3fc17972cb55877b91572276f3c59621612dd14d9ccc90ccc57e2f99c17f2a",
+        "pixels": [
+          1880,
+          2886
+        ],
+        "bytes": 8202104,
+        "not_approved_for_app": true
+      }
+    },
+    {
+      "threshold_min_channel": 224,
+      "max_channel_spread": 45,
+      "external_near_white_connected_pixels_transparent": 360239,
+      "transparent_pixel_fraction": 0.066395,
+      "method": "ROW_EDGE_NEARWHITE_PREFIX_SUFFIX_ONLY",
+      "all_original_rgb_pixels_unchanged": true,
+      "full_painting_rectangular_bounds": [
+        0,
+        0,
+        1880,
+        2886
+      ],
+      "central_column_all_opaque": true,
+      "15_ROUNDELS_VISUALLY_PENDING": true,
+      "painted_silhouette_fidelity_final_accepted": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    }
+  ],
+  "overview_proof_path": "assets/staged/prayer-art-b5b-lotto-exterior-matte-20261028/lotto-white-exterior-matte-three-thresholds.jpg",
+  "overview_sha256": "0bd163003d862d5192ee9f06097dd633937b39f6f36d63f91fda5febd658e191",
+  "rights_cleared": false,
+  "painted_edges_accepted": false,
+  "pristine_final_certified": false,
+  "production_activated": false,
+  "cost_eur": 0
+}
