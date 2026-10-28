@@ -70,6 +70,10 @@ for(const requiemSelect of [
   registries,sungCorpus:sung,gestureMatrix,
   prepared:{session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE",...requiemSelect}}},
  });
+ const introit=req.project("AO.SM.C0042");
+ assert.match(introit.priestAction?.label??"",/Cross over the Missal/i,
+   "Sung Requiem Introit must trace the Cross over the book, not sign the priest");
+ assert.equal(introit.ownership.priestAction,"RITUS_XIII_1_REQUIEM_INTROIT");
  for(const cueId of ["AO.SM.C0040","AO.SM.C0041"]){
   const row=req.project(cueId);
   assert.equal(row.reason,"RITUS_XIII_2_REQUIEM_ENTRANCE_INCENSE_OMITTED");
