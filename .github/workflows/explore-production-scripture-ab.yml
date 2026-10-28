@@ -1,0 +1,38 @@
+name: Explore startup A-B production performance
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, labeled]
+    branches: [main]
+    paths:
+      - "tests/explore-production-scripture-ab.mjs"
+      - ".github/workflows/explore-production-scripture-ab.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  compare-production-builds:
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false || contains(github.event.pull_request.labels.*.name, 'visual-review')
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Compare adjacent READY production deployments without modifying either
+        run: node tests/explore-production-scripture-ab.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: explore-scripture-ab-performance
+          path: artifacts/explore-ab-performance
+          if-no-files-found: warn
+          retention-days: 7
