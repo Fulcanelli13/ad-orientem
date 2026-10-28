@@ -1,5 +1,8 @@
 # B07 — historical opening/thanksgiving/offering alternatives, 28 October 2026
 
+> **Superseded interaction (B08, 28 October 2026).** The B07 classification of narrower-focus prayers as replacements for the combined St Pius X opening has been corrected. These eleven prayers are now distinct, optional Offering/Thanksgiving/Adoration purposes; the original combined St Pius X opening always remains intact. The single true same-act Contrition replacement stays one-tap. See `docs/pray/DAILY-B08-PURPOSE-CORRECTION-20261028.md` for the authoritative UX contract. The B07 document remains as historical provenance, not an implementation guide.
+
+
 ## Decision / scope
 Only the existing source-attested corpus is used. No new translations, invented texts, stage-count changes, or composite assembled from unrelated prayer pieces.
 
