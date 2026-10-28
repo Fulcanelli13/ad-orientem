@@ -133,6 +133,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
   html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+L(vm.language,"Back","Retour")+'">←</button><div><small>'+L(vm.language,"EXPLORE","EXPLORER")+'</small><h1>'+L(vm.language,"Sacred places","Lieux sacrés")+'</h1></div>';
   html+='<button type="button" class="aoHeritageMassShortcut" data-find-filter="lens" data-find-filter-value="tlm" aria-label="'+L(vm.language,"Find a traditional Mass","Trouver une messe traditionnelle")+'">'+L(vm.language,"Mass","Messe")+'</button>';
   html+='<details class="aoHeritageMore"><summary aria-label="'+L(vm.language,"Explore other sections","Explorer d’autres rubriques")+'">'+L(vm.language,"More","Plus")+'</summary><div><strong>'+L(vm.language,"Explore further","Pour approfondir")+'</strong><nav class="aoHeritageSecondary">';
+  html+='<button type="button" data-find-glossary>'+L(vm.language,"Terms and definitions","Termes et définitions")+'</button>';
   html+='<button type="button" data-bible-atlas-open>'+L(vm.language,"Biblical Atlas · map through time","Atlas biblique · carte et chronologie")+'</button>';
 
   html+='<button type="button" data-explore-journey-open aria-pressed="'+String(vm.journeyOpen)+'">'+L(vm.language,"Pilgrimage journeys","Parcours de pèlerinage")+'</button>';
@@ -153,7 +154,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
   }
   html+='</div></details></header>';
   html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';
-  html+='<div class="aoHeritageTools"><div class="aoFindSearch"><input type="search" data-find-query value="'+esc(vm.filters?.query||"")+'" aria-label="'+L(vm.language,"Search sacred places","Chercher un lieu sacré")+'" placeholder="'+L(vm.language,"Search place, saint or devotion","Lieu, saint ou dévotion")+'" autocomplete="off" spellcheck="false"></div><button type="button" class="aoHeritageGlossaryButton" data-find-glossary aria-label="'+L(vm.language,"Definitions","Définitions")+'">?</button></div>';
+  html+='<div class="aoHeritageTools"><div class="aoFindSearch"><input type="search" data-find-query value="'+esc(vm.filters?.query||"")+'" aria-label="'+L(vm.language,"Search sacred places","Chercher un lieu sacré")+'" placeholder="'+L(vm.language,"Search place, saint or devotion","Lieu, saint ou dévotion")+'" autocomplete="off" spellcheck="false"></div></div>';
   html+='<nav class="aoHeritageCategories" aria-label="'+L(vm.language,"Filter places on the map","Filtrer les lieux sur la carte")+'">';
   html+='<button type="button" data-find-filter="lens" data-find-filter-value="saints" aria-label="'+esc(L(vm.language,"Open Map of Saints","Ouvrir la carte des saints"))+'">'+esc(L(vm.language,"Saints","Saints"))+"</button>";
   if(vm.journeyOpen)html+='<button type="button" class="aoJourneyModeExit active" data-explore-journey-close aria-label="'+esc(L(vm.language,"Exit pilgrimage journey mode","Quitter le mode pèlerinage"))+'">'+esc(L(vm.language,"Journeys ×","Parcours ×"))+'</button>';
