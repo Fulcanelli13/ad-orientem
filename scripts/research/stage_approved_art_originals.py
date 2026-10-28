@@ -8,6 +8,7 @@ No files can be marked frame-free merely by automated inspection.
 """
 from __future__ import annotations
 import hashlib
+import base64
 import json
 from pathlib import Path
 from urllib.parse import urlparse
@@ -97,9 +98,18 @@ def main():
     for item in FILES:
         original=download_exact(item)
         sheet=make_review_sheet(original,item)
+        payload=base64.b64encode(original.read_bytes()).decode("ascii")
+        chunks=[payload[j:j+500000] for j in range(0,len(payload),500000)]
+        transfer_names=[]
+        for k,part in enumerate(chunks):
+            chunk_file=DEST/(item["id"]+f".b64.part{k:03d}.txt")
+            chunk_file.write_text(part,encoding="ascii")
+            transfer_names.append(chunk_file.as_posix())
         manifest["sources"].append({**item,
             "binary_file":original.as_posix(),
             "qa_sheet_file":sheet.as_posix(),
+            "base64_transfer_chunks":transfer_names,
+            "base64_transfer_chunk_count":len(chunks),
             "sha256_verified":True,"frame_four_edge_manual":"PENDING",
             "permanently_archived_in_private_repo":False})
     (DEST/"manifest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
