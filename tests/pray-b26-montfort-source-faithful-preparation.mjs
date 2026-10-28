@@ -88,5 +88,5 @@ for(const token of ["function renderMontfortB26()", "data-ao-montfort-b26-reader
 assert.ok(!ui.includes("const MONTFORT_33_DAILY_PRAYERS"),"No invented 33 authorial daily prayers");
 assert.match(style,/min-height:48px/);
 assert.match(style,/prefers-reduced-motion/);
-assert.match(ui,/The Litany of the Holy Spirit and of the Holy Name need independent original-form admission/);
+assert.match(ui,/Full English historical litanies are included below/);
 console.log("PASS B26 Montfort: 12+7+7+7, Faber 1863 original act, canonical 48, fixed and leap dates, no invented daily readings or translations");
