@@ -1,3 +1,11 @@
+# Editorial decision — 28 October 2026
+
+All items chosen by the Institute of Christ the King are considered relevant to Ad Orientem by default. No per-item rejection or user approval is needed. Keep existing forms without duplication, present genuinely different formulations as options, and route hymns, Offices, and blessings to their proper modules. Historical text, translation rights, and correct liturgical presentation remain release checks.
+
+The 25 records are an initial audit, not a complete inventory of either website. All 25 are accepted for coverage; none is a published new prayer in this draft.
+
+---
+
 # Ad Orientem — ICKSP / ICRSP devotional gap audit B01
 
 **28 October 2026 · Research-only; no prayer text published.**
