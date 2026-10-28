@@ -1,0 +1,34 @@
+name: Mass 1962 Good Friday original Solemn Prayers B12
+on:
+  push:
+    branches: ['fix/1962-good-friday-solemn-orations-actor-source-b12-20261028']
+    paths:
+      - 'src/mass/reader-good-friday.js'
+      - 'tests/good-friday-1962-solemn-prayers-b12.mjs'
+      - 'data/mass/independent-1962-good-friday-b12-solemn-prayers-speaker-and-anchors.v1.json'
+      - '.github/workflows/mass-1962-good-friday-b12-original-prayers.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/mass/reader-good-friday.js'
+      - 'tests/good-friday-1962-solemn-prayers-b12.mjs'
+      - 'data/mass/independent-1962-good-friday-b12-solemn-prayers-speaker-and-anchors.v1.json'
+      - '.github/workflows/mass-1962-good-friday-b12-original-prayers.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  printed-1962-good-friday:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check src/mass/reader-good-friday.js
+      - run: node --check tests/good-friday-1962-solemn-prayers-b12.mjs
+      - name: Verify nine prayer source anchors, original speaker and posture/event separation
+        run: node tests/good-friday-1962-solemn-prayers-b12.mjs
+      - name: Preserve existing Good Friday reader branches and 1962 alternative version
+        run: node tests/reader-good-friday.mjs

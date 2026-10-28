@@ -16,15 +16,17 @@ function rows(prefix,values,sourceIds=[]){
   return freeze((values??[]).map((v,i)=>textRow(prefix+String(i+1),v,"TEXT",sourceIds)));
 }
 function prayerRows(prefix,intention,prayer){
-  // K/R state records own only their respective spoken formulas, not
-  // the intention, Oremus or entire following collect. Both records share
-  // one visible card; its exact cue identities remain independently usable.
+  // 1962 Vatican Missale Romanum printed p. 167, rubric 14: "Celebrans
+  // dicit Oremus, Flectamus genua ... dicit Levate ... dicit orationem".
+  // Spoken liturgical rows are celebrant-owned, not congregational replies.
+  // The shared K/R graph alone owns the faithful's kneel/rise posture.
+  // Preserve the original prayer wording and exact source event IDs.
   return freeze([
-    textRow(prefix+"-I",intention,"TEXT"),
-    textRow(prefix+"-O","Oremus.","VERSICLE"),
-    textRow(prefix+"-K","Flectamus genua.","VERSICLE",[prefix+"-K"]),
-    textRow(prefix+"-R","Levate.","RESPONSE",[prefix+"-R"]),
-    textRow(prefix+"-P",prayer,"TEXT"),
+    textRow(prefix+"-I",intention,"TEXT",[],"CELEBRANT"),
+    textRow(prefix+"-O","Oremus.","VERSICLE",[],"CELEBRANT"),
+    textRow(prefix+"-K","Flectamus genua.","VERSICLE",[prefix+"-K"],"CELEBRANT"),
+    textRow(prefix+"-R","Levate.","VERSICLE",[prefix+"-R"],"CELEBRANT"),
+    textRow(prefix+"-P",prayer,"TEXT",[],"CELEBRANT"),
   ]);
 }
 function recordMap(graph){return new Map(graph.map(x=>[x.id,x]))}
@@ -110,12 +112,20 @@ function surfaceFor(record,payload,jewishPrayerVariant){
   });
   if(id==="GF-SOP-400")return freeze({
     key:"SOLEMN_PRAYERS_PREP",title:"The Solemn Prayers",
-    paragraphs:freeze([textRow("GF-SOP-PREP","Orationes solemnes.","TEXT",["GF-SOP-400"])])
+    // Printed 1962 p. 167 is a section heading, not a spoken text.
+    paragraphs:freeze([textRow("GF-SOP-PREP","Orationes solemnes.","RUBRIC",["GF-SOP-400"])])
   });
-  if(id==="GF-SOP-410")return freeze({
-    key:"SOLEMN_PRAYERS_BEGIN",title:"The Solemn Prayers",
-    paragraphs:freeze([textRow("GF-SOP-BEGIN","Oremus.","VERSICLE",["GF-SOP-410"])])
-  });
+  if(id==="GF-SOP-410"){
+    // The first printed prayer begins "Oremus, dilectissimi nobis ...".
+    // The standalone section transition shows that *same* first prayer,
+    // not an invented earlier Oremus nor an empty card. K/R subsequently
+    // retain this same source-owned surface while posture advances.
+    const first=solemnPrayer(payload,payload.solemnPrayers[0].key,jewishPrayerVariant);
+    return freeze({
+      key:"SOLEMN_PRAYER_01",title:"1. "+first.title,
+      paragraphs:prayerRows("GF-SOP-01",first.intention,first.prayer)
+    });
+  }
   const sop=id.match(/^GF-SOP-(\d\d)-[KR]$/);
   if(sop){
     const n=Number(sop[1]);
