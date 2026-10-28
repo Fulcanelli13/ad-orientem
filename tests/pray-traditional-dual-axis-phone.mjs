@@ -421,6 +421,7 @@ try{
  assert.equal(await page.locator("#aoPray435930 [data-tp381-b01-contrition='piusx']").getAttribute("aria-pressed"),"true");
  await page.locator("#aoPray435930 [data-tp381-b01-contrition='standard']").evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-tp381-b01-contrition='standard']").getAttribute("aria-pressed"),"true");
+ await page.locator("#aoPray435930 .aoDevoStop").nth(0).evaluate(el=>el.click());
  await page.screenshot({path:resolve(captures,"examen-390-fr.png"),animations:"disabled"});
  const exam=await snapshot();
  assert.equal(exam.route,"pray.nightly_examen");
