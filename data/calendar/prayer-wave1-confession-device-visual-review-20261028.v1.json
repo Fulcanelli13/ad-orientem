@@ -1,0 +1,58 @@
+{
+  "schema": "AO_PRAYER_WAVE1_CONFESSION_VISUAL_BROWSER_REVIEW_V1",
+  "date": "2026-10-28",
+  "module": "pray.confession",
+  "artwork": "Bartolomé Esteban Murillo — The Return of the Prodigal Son",
+  "museum": "National Gallery of Art (Washington), accession 1948.12.1",
+  "official_source": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+  "master_source_sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+  "review_branch": "feature/prayer-wave1-confession-hero-proof-20261028",
+  "pull_request": "https://github.com/Fulcanelli13/ad-orientem/pull/1853",
+  "test_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40692793268",
+  "browser_test_result": "PASS",
+  "widths_px": [
+    320,
+    390,
+    1440
+  ],
+  "status": "OPT_IN_REVIEW_APPROVED_FOR_USER_VISUAL_DECISION_ONLY",
+  "production_release": false,
+  "user_final_photographic_approval": false,
+  "manual_review_method": "Inspected the actual Playwright screenshot captures at 320, 390, and 1440px, comparing the original full-width banner to the new compact split artwork+attribution card. Also checked full-work and native corner previews of original master separately.",
+  "findings": {
+    "image_integrity": "PASS_PRELIMINARY: faithful 800px and 1600px source-downsampled WebP files, full painted composition, father/son embrace, small white dog, assistants and both edges visible; no crop and no upscaling.",
+    "layout_320": "PASS_PRELIMINARY: initial banner consumed disproportionate vertical space. Revised split card makes first two path choices visible within initial 844px-high capture, with painting and credit legible and no document horizontal overflow.",
+    "layout_390": "PASS_PRELIMINARY: all three preparation-path cards begin within initial 844px capture, painting no longer occupies most opening screen.",
+    "layout_1440": "PASS_PRELIMINARY: artwork sits beside credit rather than centered with large black sidebars; first Confession options visible and interface hierarchy retained.",
+    "confidentiality": "PASS_AUTOMATED: normal path selection remains source-owned; the preview is exclusively behind aoPrayerArt=confession-review and disappears after entering examination; default URL has no hero.",
+    "navigation": "PASS_AUTOMATED: same three preparation paths, session-only last-confession estimate, and existing prayer navigation.",
+    "rights": "OFFICIAL_NGA_OPEN_ACCESS_PAGE_NOT_YET_MARKED_FINAL_APP_RELEASE; no third-party licensing fee or paid services.",
+    "remaining": "Human editorial signoff on these QA screenshots, final source-file credit/publishing audit and full real deployment check required before live activation."
+  },
+  "screenshot_proofs": [
+    {
+      "width": 320,
+      "path": "assets/staged/prayer-wave1-confession-qa-20261028/flagged-320.png",
+      "sha256": "1e9906d2fcdce63bebeb58b069321e36b8e819a32d4d0b202269d56812517ba3"
+    },
+    {
+      "width": 390,
+      "path": "assets/staged/prayer-wave1-confession-qa-20261028/flagged-390.png",
+      "sha256": "d0ac3e3f5d5fb6658dd1a2607a5fafbb9a821c9fdddbfe65fc78b09685da5d78"
+    },
+    {
+      "width": 1440,
+      "path": "assets/staged/prayer-wave1-confession-qa-20261028/flagged-1440.png",
+      "sha256": "c0ba45ff73acdc33d229c1f5e6bffdd6bae2b90ebb388b7f7ea8d7b667b502f7"
+    }
+  ],
+  "unapproved_and_unmodified": [
+    "other five Wave 1 artworks",
+    "31-section prayer artwork decisions",
+    "Morlete Ruiz Sacred Heart placement exception",
+    "normal Confession route production artwork",
+    "prayer text and private confessional workflow"
+  ],
+  "cost_eur": 0,
+  "screenshots_permanently_preserved_in_git": true
+}
