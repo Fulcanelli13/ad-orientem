@@ -1,0 +1,605 @@
+{
+  "schema": "ao.sensus-non-novena-index-catalog.b05",
+  "as_of": "2026-10-28",
+  "scope": "Directly inspected named Sensus Fidelium spiritual and liturgical index branches outside dedicated Novenas collection; NOT complete website crawl",
+  "row_count": 55,
+  "unit_warning": "Mixed: 12 specifically named prayers, 3 canticles, 18 works by Alphonsus, 3 Montfort works, 18 seasonal/month indices, 1 Fifteen Saturdays programme. 55 SOURCE INDEX ITEMS not 55 new prayers. 18 season/month Guéranger source categories may overlap each other.",
+  "sources": [
+    {
+      "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+      "status": "CONTENTS_PAGE_READ",
+      "prayers_indexed": 12,
+      "canticles_indexed": 3,
+      "prayer_bodies_read": 4,
+      "individual_body_fetch_timeouts": 8
+    },
+    {
+      "source_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+      "status": "CONTENTS_PAGE_READ",
+      "works_indexed": 18
+    },
+    {
+      "source_url": "https://sensusfidelium.com/meditations/st-louis-de-montfort/",
+      "status": "CONTENTS_PAGE_READ",
+      "works_indexed": 3
+    },
+    {
+      "source_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+      "status": "CONTENTS_PAGE_READ",
+      "season_indices": 6,
+      "month_indices": 12
+    },
+    {
+      "source_url": "https://sensusfidelium.com/meditations/the-fifteen-saturdays-of-the-holy-rosary-by-blessed-bartolo-longo/",
+      "status": "BODY_READ",
+      "practice_unit": "15 Saturdays or days"
+    }
+  ],
+  "groups": {
+    "francis_prayers": [
+      {
+        "inventory_row_id": "sensus-francis-prayer:001",
+        "source_index_id": 167,
+        "title": "Praises of the Most High",
+        "material_type": "INDIVIDUAL_PRAYER",
+        "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/praises-of-the-most-high/",
+        "source_verified_status": "INDEX_ONLY_BODY_FETCH_TIMEOUT",
+        "parent_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+        "translation_witness": "1848 Cologne works, later English translation (attribution still requires collation)",
+        "original_print_verified": false,
+        "prayer_body_saved": false
+      },
+      {
+        "inventory_row_id": "sensus-francis-prayer:002",
+        "source_index_id": 168,
+        "title": "Prayer before the Divine Office",
+        "material_type": "INDIVIDUAL_PRAYER",
+        "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/prayer-to-be-said-before-the-divine-office/",
+        "source_verified_status": "INDEX_ONLY_BODY_FETCH_TIMEOUT",
+        "parent_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+        "translation_witness": "1848 Cologne works, later English translation (attribution still requires collation)",
+        "original_print_verified": false,
+        "prayer_body_saved": false
+      },
+      {
+        "inventory_row_id": "sensus-francis-prayer:003",
+        "source_index_id": 169,
+        "title": "Prayer at the Beginning of his Conversion",
+        "material_type": "INDIVIDUAL_PRAYER",
+        "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/prayer-used-by-the-holy-father-at-the-beginning-of-his-conversion/",
+        "source_verified_status": "INDEX_ONLY_BODY_FETCH_TIMEOUT",
+        "parent_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+        "translation_witness": "1848 Cologne works, later English translation (attribution still requires collation)",
+        "original_print_verified": false,
+        "prayer_body_saved": false
+      },
+      {
+        "inventory_row_id": "sensus-francis-prayer:004",
+        "source_index_id": 170,
+        "title": "Prayer to obtain Divine Love",
+        "material_type": "INDIVIDUAL_PRAYER",
+        "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/to-obtain-divine-love/",
+        "source_verified_status": "BODY_READ",
+        "parent_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+        "translation_witness": "1848 Cologne works, later English translation (attribution still requires collation)",
+        "original_print_verified": false,
+        "prayer_body_saved": false
+      },
+      {
+        "inventory_row_id": "sensus-francis-prayer:005",
+        "source_index_id": 171,
+        "title": "Prayer at the Elevation",
+        "material_type": "INDIVIDUAL_PRAYER",
+        "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/prayer-the-holy-father-was-accustomed-to-say-at-the-elevation-of-the-most-holy-body-of-christ/",
+        "source_verified_status": "INDEX_ONLY_BODY_FETCH_TIMEOUT",
+        "parent_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+        "translation_witness": "1848 Cologne works, later English translation (attribution still requires collation)",
+        "original_print_verified": false,
+        "prayer_body_saved": false
+      },
+      {
+        "inventory_row_id": "sensus-francis-prayer:006",
+        "source_index_id": 172,
+        "title": "Prayer in Time of Sickness",
+        "material_type": "INDIVIDUAL_PRAYER",
+        "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/prayer-in-time-of-sickness/",
+        "source_verified_status": "INDEX_ONLY_BODY_FETCH_TIMEOUT",
+        "parent_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+        "translation_witness": "1848 Cologne works, later English translation (attribution still requires collation)",
+        "original_print_verified": false,
+        "prayer_body_saved": false
+      },
+      {
+        "inventory_row_id": "sensus-francis-prayer:007",
+        "source_index_id": 173,
+        "title": "Prayer upon Resigning the Generalship",
+        "material_type": "INDIVIDUAL_PRAYER",
+        "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/prayer-when-he-resigned-the-generalship/",
+        "source_verified_status": "INDEX_ONLY_BODY_FETCH_TIMEOUT",
+        "parent_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+        "translation_witness": "1848 Cologne works, later English translation (attribution still requires collation)",
+        "original_print_verified": false,
+        "prayer_body_saved": false
+      },
+      {
+        "inventory_row_id": "sensus-francis-prayer:008",
+        "source_index_id": 174,
+        "title": "Prayer said Daily",
+        "material_type": "INDIVIDUAL_PRAYER",
+        "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/prayer-the-holy-father-said-daily/",
+        "source_verified_status": "INDEX_ONLY_BODY_FETCH_TIMEOUT",
+        "parent_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+        "translation_witness": "1848 Cologne works, later English translation (attribution still requires collation)",
+        "original_print_verified": false,
+        "prayer_body_saved": false
+      },
+      {
+        "inventory_row_id": "sensus-francis-prayer:009",
+        "source_index_id": 175,
+        "title": "Salutation to the Blessed Virgin",
+        "material_type": "INDIVIDUAL_PRAYER",
+        "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/salutation-to-the-blessed-virgin-mary/",
+        "source_verified_status": "BODY_READ",
+        "parent_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+        "translation_witness": "1848 Cologne works, later English translation (attribution still requires collation)",
+        "original_print_verified": false,
+        "prayer_body_saved": false
+      },
+      {
+        "inventory_row_id": "sensus-francis-prayer:010",
+        "source_index_id": 176,
+        "title": "Prayer to Our Blessed Lady",
+        "material_type": "INDIVIDUAL_PRAYER",
+        "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/prayer-to-our-blessed-lady/",
+        "source_verified_status": "INDEX_ONLY_BODY_FETCH_TIMEOUT",
+        "parent_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+        "translation_witness": "1848 Cologne works, later English translation (attribution still requires collation)",
+        "original_print_verified": false,
+        "prayer_body_saved": false
+      },
+      {
+        "inventory_row_id": "sensus-francis-prayer:011",
+        "source_index_id": 177,
+        "title": "Paraphrase of the Lord's Prayer",
+        "material_type": "INDIVIDUAL_PRAYER",
+        "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/paraphrase-of-the-lords-prayer/",
+        "source_verified_status": "BODY_READ",
+        "parent_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+        "translation_witness": "1848 Cologne works, later English translation (attribution still requires collation)",
+        "original_print_verified": false,
+        "prayer_body_saved": false
+      },
+      {
+        "inventory_row_id": "sensus-francis-prayer:012",
+        "source_index_id": 178,
+        "title": "Prayer to obtain Poverty",
+        "material_type": "INDIVIDUAL_PRAYER",
+        "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/prayer-of-the-blessed-father-to-obtain-poverty/",
+        "source_verified_status": "BODY_READ",
+        "parent_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+        "translation_witness": "1848 Cologne works, later English translation (attribution still requires collation)",
+        "original_print_verified": false,
+        "prayer_body_saved": false
+      }
+    ],
+    "francis_canticles": [
+      {
+        "inventory_row_id": "sensus-francis-canticle:001",
+        "source_index_id": 164,
+        "title": "Canticle of the Sun",
+        "material_type": "CANTICLE_INDEX_ENTRY",
+        "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+        "source_verified_status": "CONTENTS_ONLY",
+        "prayer_body_saved": false
+      },
+      {
+        "inventory_row_id": "sensus-francis-canticle:002",
+        "source_index_id": 165,
+        "title": "Love sets me all on Fire",
+        "material_type": "CANTICLE_INDEX_ENTRY",
+        "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+        "source_verified_status": "CONTENTS_ONLY",
+        "prayer_body_saved": false
+      },
+      {
+        "inventory_row_id": "sensus-francis-canticle:003",
+        "source_index_id": 166,
+        "title": "Amor de Caritate",
+        "material_type": "CANTICLE_INDEX_ENTRY",
+        "source_url": "https://sensusfidelium.com/meditations/works-of-st-francis-of-assisi/",
+        "source_verified_status": "CONTENTS_ONLY",
+        "prayer_body_saved": false
+      }
+    ],
+    "alphonsus_works": [
+      {
+        "inventory_row_id": "sensus-alphonsus-work:001",
+        "source_index_id": 104,
+        "title": "Daily Meditations For Everyday of the Year",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:002",
+        "source_index_id": 105,
+        "title": "Sermons for Every Sunday of the Year",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:003",
+        "source_index_id": 106,
+        "title": "Sermons on Various Subjects",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:004",
+        "source_index_id": 107,
+        "title": "Uniformity to God's Will",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:005",
+        "source_index_id": 108,
+        "title": "Preparation for Death",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:006",
+        "source_index_id": 109,
+        "title": "Pious Reflections",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:007",
+        "source_index_id": 110,
+        "title": "Prayer — The Great Means of Salvation and of Perfection",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:008",
+        "source_index_id": 111,
+        "title": "School of Christian Perfection",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:009",
+        "source_index_id": 112,
+        "title": "Glories of Mary",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:010",
+        "source_index_id": 113,
+        "title": "Dignity and Duties of the Priest",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:011",
+        "source_index_id": 114,
+        "title": "Meditations for Advent & Christmas",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:012",
+        "source_index_id": 115,
+        "title": "Practice of the Love of Jesus Christ",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:013",
+        "source_index_id": 116,
+        "title": "Vocation to the Religious State",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:014",
+        "source_index_id": 117,
+        "title": "Spiritual Treatises",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:015",
+        "source_index_id": 118,
+        "title": "Hearing Holy Mass",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:016",
+        "source_index_id": 119,
+        "title": "Novena to the Holy Ghost",
+        "material_type": "PRAYER_COLLECTION_OR_NOVENA_SOURCE",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:017",
+        "source_index_id": 120,
+        "title": "Prayers for Gifts of the Holy Ghost",
+        "material_type": "PRAYER_COLLECTION_OR_NOVENA_SOURCE",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-alphonsus-work:018",
+        "source_index_id": 121,
+        "title": "The Passion and the Death of Jesus Christ",
+        "material_type": "SPIRITUAL_WORK_WITH_POSSIBLE_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-alphonsus/",
+        "body_enumeration": "NOT_DONE",
+        "unique_prayer_units": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      }
+    ],
+    "montfort_works": [
+      {
+        "inventory_row_id": "sensus-montfort-work:001",
+        "source_index_id": 104,
+        "title": "The Secret of the Rosary",
+        "material_type": "SPIRITUAL_WORK_WITH_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-louis-de-montfort/",
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED",
+        "text_enumeration": "NOT_DONE"
+      },
+      {
+        "inventory_row_id": "sensus-montfort-work:002",
+        "source_index_id": 105,
+        "title": "True Devotion to the Blessed Virgin Mary",
+        "material_type": "SPIRITUAL_WORK_WITH_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-louis-de-montfort/",
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED",
+        "text_enumeration": "NOT_DONE"
+      },
+      {
+        "inventory_row_id": "sensus-montfort-work:003",
+        "source_index_id": 106,
+        "title": "A Letter to Friends of the Cross",
+        "material_type": "SPIRITUAL_WORK_WITH_EMBEDDED_PRAYERS",
+        "source_index_url": "https://sensusfidelium.com/meditations/st-louis-de-montfort/",
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED",
+        "text_enumeration": "NOT_DONE"
+      }
+    ],
+    "gueranger_seasons": [
+      {
+        "inventory_row_id": "sensus-gueranger-season:001",
+        "source_index_id": 116,
+        "title": "Advent",
+        "material_type": "LITURGICAL_SEASON_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-season:002",
+        "source_index_id": 117,
+        "title": "Christmas & Epiphany",
+        "material_type": "LITURGICAL_SEASON_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-season:003",
+        "source_index_id": 118,
+        "title": "Septuagesima",
+        "material_type": "LITURGICAL_SEASON_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-season:004",
+        "source_index_id": 119,
+        "title": "Lent",
+        "material_type": "LITURGICAL_SEASON_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-season:005",
+        "source_index_id": 120,
+        "title": "Paschal Tide",
+        "material_type": "LITURGICAL_SEASON_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-season:006",
+        "source_index_id": 121,
+        "title": "After Pentecost",
+        "material_type": "LITURGICAL_SEASON_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      }
+    ],
+    "gueranger_months": [
+      {
+        "inventory_row_id": "sensus-gueranger-month:001",
+        "source_index_id": 104,
+        "title": "January",
+        "material_type": "SAINT_DAY_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-month:002",
+        "source_index_id": 105,
+        "title": "February",
+        "material_type": "SAINT_DAY_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-month:003",
+        "source_index_id": 106,
+        "title": "March",
+        "material_type": "SAINT_DAY_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-month:004",
+        "source_index_id": 107,
+        "title": "April",
+        "material_type": "SAINT_DAY_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-month:005",
+        "source_index_id": 108,
+        "title": "May",
+        "material_type": "SAINT_DAY_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-month:006",
+        "source_index_id": 109,
+        "title": "June",
+        "material_type": "SAINT_DAY_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-month:007",
+        "source_index_id": 110,
+        "title": "July",
+        "material_type": "SAINT_DAY_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-month:008",
+        "source_index_id": 111,
+        "title": "August",
+        "material_type": "SAINT_DAY_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-month:009",
+        "source_index_id": 112,
+        "title": "September",
+        "material_type": "SAINT_DAY_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-month:010",
+        "source_index_id": 113,
+        "title": "October",
+        "material_type": "SAINT_DAY_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-month:011",
+        "source_index_id": 114,
+        "title": "November",
+        "material_type": "SAINT_DAY_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      },
+      {
+        "inventory_row_id": "sensus-gueranger-month:012",
+        "source_index_id": 115,
+        "title": "December",
+        "material_type": "SAINT_DAY_SOURCE_INDEX",
+        "source_index_url": "https://sensusfidelium.com/the-liturgical-year-dom-prosper-gueranger/",
+        "prayer_count": null,
+        "source_verified_status": "DIRECT_INDEX_TITLE_VERIFIED"
+      }
+    ],
+    "bartolo_longo": [
+      {
+        "inventory_row_id": "sensus-bartolo-longo-fifteen-saturdays:001",
+        "title": "The Fifteen Saturdays of the Holy Rosary",
+        "source_url": "https://sensusfidelium.com/meditations/the-fifteen-saturdays-of-the-holy-rosary-by-blessed-bartolo-longo/",
+        "material_type": "FIFTEEN_WEEK_OR_FIFTEEN_DAY_ROSARY_DEVOTIONAL_GUIDE",
+        "structure_observed": "15 mysteries used over 15 successive Saturdays, optionally 15 days; each with virtue, meditations and Rosary",
+        "text_unit_count": null,
+        "body_read": true
+      }
+    ]
+  },
+  "source_language_uncertainty": "Individual English translations and modern editorial additions require per-work provenance; page index alone does not certify authorship, historical contents, copyrights or translation completeness.",
+  "release": "RESEARCH_ONLY_NO_APP_IMPORT"
+}
