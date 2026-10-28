@@ -80,12 +80,22 @@ export function inspect1962PluralMartyrsFrenchOrationSource(proper,slot){
       if(rowPath!==PERPETUA_FELICITY)continue;
       const latin=String(row?.lat??row?.la??"");
       const french=String(row?.fr??"");
-      if(WITNESS_FRENCH.test(ascii(french))&&MARTYRS_LATIN.test(ascii(latin))&&
-         !VIRGINS_LATIN.test(ascii(latin))){
+      const frWrong=WITNESS_FRENCH.test(ascii(french));
+      const latWrong=/\\bvirginum\\s+et\\s+martyrum\\b/iu.test(ascii(latin));
+      // The pinned source itself specifies C7b, the Common of female
+      // NON-Virgin Martyrs. The production host currently retains
+      // "Virginum et Martyrum" even in the LATIN commemorative prayer.
+      // French and Latin may therefore be wrong *together*. Comparing them
+      // for agreement is not enough; check their original source ownership.
+      const identifiedLatin=MARTYRS_LATIN.test(ascii(latin))&&
+        /\\bperpetuae\\s+et\\s+felicitatis\\b/iu.test(ascii(latin));
+      if(identifiedLatin&&(frWrong||latWrong)){
         return Object.freeze({
-          status:"SOURCE_CONFLICT",reason:"1962 Perpetua and Felicity: French wrongly identifies the non-Virgin martyrs as Virgins",
+          status:"SOURCE_CONFLICT",
+          reason:"1962 Perpetua and Felicity: C7b non-Virgin Martyrs Common incorrectly rendered as Virgins",
           sourcePath:rowPath,slot,orationIndex:index,
           rule:"ICRSP_B41_NONVIRGIN_COMMON_SANCTI_03_06_SOURCE_PARITY",
+          sourceLatinIncorrect:latWrong,sourceFrenchIncorrect:frWrong,
           sourceTextAltered:false
         });
       }
