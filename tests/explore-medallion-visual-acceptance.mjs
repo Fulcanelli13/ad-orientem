@@ -278,7 +278,7 @@ try{
      return globalThis.AO_RUNTIME_V8.store.getState().language;
    });
    assert.equal(p6French,"fr");
-   await page.locator("#ao-find-modular-root button[data-network-toggle]").click();
+   await openMoreTool("[data-network-toggle]");
    await graph.waitFor({state:"visible"});
    await graph.locator("select[data-network-kind]").selectOption("person");
    assert.ok(await graph.locator("a[href^='https://']").count()>0);
