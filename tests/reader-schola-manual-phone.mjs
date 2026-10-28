@@ -267,6 +267,16 @@ try{
    }));
    assert.deepEqual(priestAfterMusicPick,priestBeforeMusicPick,
      "Selecting a source-owned quiet interval moved the priest's focus");
+   await musicButton.click();
+   const rejoinButton=musicMenu.locator("[data-schola-events-rejoin]");
+   assert.equal(await rejoinButton.isVisible(),true,
+     "Quiet or optional reference must have an explicit exit to expected Mass music");
+   await rejoinButton.click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getSelectedScholaEvent()===null);
+   assert.deepEqual(await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+   })),priestBeforeMusicPick,"Rejoining expected music moved priest focus");
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
    assert.equal(overflow,false,"Schola controls overflow narrow phone");
    assert.deepEqual(errors,[],"Runtime page errors");
