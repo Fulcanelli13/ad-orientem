@@ -128,6 +128,17 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
     }
   }
 ].replace(/^[/,"[")});
-export function prayerAcquisitionCandidates(purpose){
- return PRAYER_ACQUISITION_WITNESSES_V1.filter(w=>w.purpose===purpose);
+/**
+ * Runtime access defaults to a fail-closed, published-only list. Researchers
+ * must explicitly request `research:true`; merely importing this module
+ * must never expose a draft prayer in Prayer's direct-choice controls.
+ * A missing historical source-language witness never becomes a translation.
+ */
+export function prayerAcquisitionCandidates(purpose,{language="en",research=false}={}){
+ return PRAYER_ACQUISITION_WITNESSES_V1.filter(w=>
+  w.purpose===purpose && w.language===language &&
+  (research===true || (w.release.status==="LIVE_CLEARED" &&
+                       w.release.allowed_in_prayer_hub===true &&
+                       w.release.exact_print_verified===true))
+ );
 }
