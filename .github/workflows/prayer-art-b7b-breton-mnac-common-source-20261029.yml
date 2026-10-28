@@ -1,0 +1,43 @@
+name: Prayer Sacred Art B7B - two exact Commons image recoveries
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/prayer-art-b7b-breton-mnac-common-source-20261029.yml
+      - scripts/art/prayer-art-b7b-two-commons-source-photo-recovery-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-prayer-b7b-breton-mnac-source
+  cancel-in-progress: false
+jobs:
+  exact-breton-photo-and-higher-resolution-seven-sorrows:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free original-image decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Verify the two exact Commons files and preserve viable candidates
+        run: |
+          python -m py_compile scripts/art/prayer-art-b7b-two-commons-source-photo-recovery-20261029.py
+          python scripts/art/prayer-art-b7b-two-commons-source-photo-recovery-20261029.py
+      - name: Archive source-file bytes, checksums and evidence permanently
+        if: always()
+        run: |
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ ! -d assets/staged/prayer-art-b7b-breton-mnac-exact-commons-20261029 ]; then exit 0; fi
+          git add assets/staged/prayer-art-b7b-breton-mnac-exact-commons-20261029/
+          git diff --cached --check
+          if git diff --cached --quiet; then echo "No new source evidence"; exit 0; fi
+          git commit -m "research(prayer art): preserve Breton exact-source proof and MNAC larger exact-work image"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028
