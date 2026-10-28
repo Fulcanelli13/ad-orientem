@@ -1,0 +1,376 @@
+{
+  "register": "Ad Orientem museum-issued photo original pixel QA",
+  "scope": "research review only, not production",
+  "source_checks_passed": 3,
+  "pristine_approved": 0,
+  "app_released": 0,
+  "method": "unchanged source SHA256; 1:1 target PNG crops; sRGB review derivatives",
+  "paintings": [
+    {
+      "module_id": "confession",
+      "object": "NGA 1948.12.1",
+      "original_path": "assets/staged/module-hero-masters/confession.jpg",
+      "original_branch_role": "museum",
+      "sha256_verified": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+      "dimensions_verified": [
+        4096,
+        3712
+      ],
+      "source_bytes": 3022309,
+      "source_format": "JPEG_family",
+      "photo_rights_evidence": "NGA public domain open-access photograph",
+      "review_colour_processing": "embedded_ICC_to_sRGB",
+      "overview": "confession-whole-review.jpg",
+      "crops": [
+        {
+          "label": "father-face",
+          "normalized_point": [
+            0.445,
+            0.325
+          ],
+          "source_rectangle_px": [
+            1553,
+            936,
+            540,
+            540
+          ],
+          "file": "confession-father-face-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        },
+        {
+          "label": "son-face",
+          "normalized_point": [
+            0.38,
+            0.465
+          ],
+          "source_rectangle_px": [
+            1286,
+            1456,
+            540,
+            540
+          ],
+          "file": "confession-son-face-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        },
+        {
+          "label": "embrace-hands",
+          "normalized_point": [
+            0.38,
+            0.525
+          ],
+          "source_rectangle_px": [
+            1286,
+            1679,
+            540,
+            540
+          ],
+          "file": "confession-embrace-hands-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        },
+        {
+          "label": "foreground-dog",
+          "normalized_point": [
+            0.512,
+            0.824
+          ],
+          "source_rectangle_px": [
+            1827,
+            2789,
+            540,
+            540
+          ],
+          "file": "confession-foreground-dog-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        },
+        {
+          "label": "servants-fabric",
+          "normalized_point": [
+            0.76,
+            0.495
+          ],
+          "source_rectangle_px": [
+            2843,
+            1567,
+            540,
+            540
+          ],
+          "file": "confession-servants-fabric-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        },
+        {
+          "label": "top-edge",
+          "normalized_point": [
+            0.55,
+            0.02
+          ],
+          "source_rectangle_px": [
+            1983,
+            0,
+            540,
+            540
+          ],
+          "file": "confession-top-edge-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        }
+      ],
+      "source_original_unmodified": true,
+      "identity_provenance_gate": "source_record_verified",
+      "frame_and_painted_boundary_gate": "human_review_required",
+      "photographic_fidelity_gate": "human_review_required",
+      "responsive_crop_gate": "human_review_required",
+      "rights_publication_gate": "review_pending",
+      "pristine_master_approved": false,
+      "app_released": false
+    },
+    {
+      "module_id": "angelus",
+      "object": "Met 2004.31",
+      "original_path": "assets/staged/module-hero-wave2/angelus-met.jpg",
+      "original_branch_role": "wave2",
+      "sha256_verified": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "dimensions_verified": [
+        3741,
+        3658
+      ],
+      "source_bytes": 3055151,
+      "source_format": "JPEG_family",
+      "photo_rights_evidence": "Met Open Access CC0 photograph",
+      "review_colour_processing": "UNPROFILED_RGB_ASSUMED_NOT_CALIBRATED",
+      "overview": "angelus-whole-review.jpg",
+      "crops": [
+        {
+          "label": "mary-face",
+          "normalized_point": [
+            0.282,
+            0.4
+          ],
+          "source_rectangle_px": [
+            785,
+            1193,
+            540,
+            540
+          ],
+          "file": "angelus-mary-face-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        },
+        {
+          "label": "mary-hands",
+          "normalized_point": [
+            0.334,
+            0.495
+          ],
+          "source_rectangle_px": [
+            979,
+            1541,
+            540,
+            540
+          ],
+          "file": "angelus-mary-hands-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        },
+        {
+          "label": "gabriel-face",
+          "normalized_point": [
+            0.662,
+            0.245
+          ],
+          "source_rectangle_px": [
+            2207,
+            626,
+            540,
+            540
+          ],
+          "file": "angelus-gabriel-face-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        },
+        {
+          "label": "gabriel-wing",
+          "normalized_point": [
+            0.86,
+            0.19
+          ],
+          "source_rectangle_px": [
+            2947,
+            425,
+            540,
+            540
+          ],
+          "file": "angelus-gabriel-wing-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        },
+        {
+          "label": "white-lilies",
+          "normalized_point": [
+            0.957,
+            0.205
+          ],
+          "source_rectangle_px": [
+            3201,
+            480,
+            540,
+            540
+          ],
+          "file": "angelus-white-lilies-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        },
+        {
+          "label": "genuine-panel-edge",
+          "normalized_point": [
+            0.96,
+            0.967
+          ],
+          "source_rectangle_px": [
+            3201,
+            3118,
+            540,
+            540
+          ],
+          "file": "angelus-genuine-panel-edge-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        }
+      ],
+      "source_original_unmodified": true,
+      "identity_provenance_gate": "source_record_verified",
+      "frame_and_painted_boundary_gate": "human_review_required",
+      "photographic_fidelity_gate": "human_review_required",
+      "responsive_crop_gate": "human_review_required",
+      "rights_publication_gate": "review_pending",
+      "pristine_master_approved": false,
+      "app_released": false
+    },
+    {
+      "module_id": "adoration",
+      "object": "Met 2005.186",
+      "original_path": "assets/staged/module-hero-masters/adoration.jpg",
+      "original_branch_role": "museum",
+      "sha256_verified": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "dimensions_verified": [
+        3122,
+        3813
+      ],
+      "source_bytes": 2467303,
+      "source_format": "JPEG_family",
+      "photo_rights_evidence": "Met Open Access CC0 photograph",
+      "review_colour_processing": "UNPROFILED_RGB_ASSUMED_NOT_CALIBRATED",
+      "overview": "adoration-whole-review.jpg",
+      "crops": [
+        {
+          "label": "mary-face",
+          "normalized_point": [
+            0.507,
+            0.334
+          ],
+          "source_rectangle_px": [
+            1313,
+            1004,
+            540,
+            540
+          ],
+          "file": "adoration-mary-face-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        },
+        {
+          "label": "communion-host",
+          "normalized_point": [
+            0.49,
+            0.75
+          ],
+          "source_rectangle_px": [
+            1260,
+            2590,
+            540,
+            540
+          ],
+          "file": "adoration-communion-host-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        },
+        {
+          "label": "left-saint-face",
+          "normalized_point": [
+            0.2,
+            0.332
+          ],
+          "source_rectangle_px": [
+            354,
+            996,
+            540,
+            540
+          ],
+          "file": "adoration-left-saint-face-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        },
+        {
+          "label": "right-saint-face",
+          "normalized_point": [
+            0.791,
+            0.323
+          ],
+          "source_rectangle_px": [
+            2200,
+            962,
+            540,
+            540
+          ],
+          "file": "adoration-right-saint-face-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        },
+        {
+          "label": "blue-fabric",
+          "normalized_point": [
+            0.548,
+            0.645
+          ],
+          "source_rectangle_px": [
+            1441,
+            2189,
+            540,
+            540
+          ],
+          "file": "adoration-blue-fabric-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        },
+        {
+          "label": "panel-edge",
+          "normalized_point": [
+            0.012,
+            0.06
+          ],
+          "source_rectangle_px": [
+            0,
+            0,
+            540,
+            540
+          ],
+          "file": "adoration-panel-edge-native.png",
+          "native_pixels_not_rescaled": true,
+          "target_validated_by_human": false
+        }
+      ],
+      "source_original_unmodified": true,
+      "identity_provenance_gate": "source_record_verified",
+      "frame_and_painted_boundary_gate": "human_review_required",
+      "photographic_fidelity_gate": "human_review_required",
+      "responsive_crop_gate": "human_review_required",
+      "rights_publication_gate": "review_pending",
+      "pristine_master_approved": false,
+      "app_released": false
+    }
+  ]
+}
