@@ -264,21 +264,6 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 #aoPray435930 .aoDailyLengthChoices button[aria-pressed="true"]{color:var(--liturgical,#c7ae6d);border-color:var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.08))}
 @media(max-width:360px){#aoPray435930 .aoDailyLengthChoices button{flex:1;min-width:0}}
 
-`;
-
-export function installTraditionalPrayStyles(doc=globalThis.document){
-  if(!doc?.head)return false;
-  let style=doc.getElementById("ao-v381-traditional-pray-css");
-  if(!style){
-    style=doc.createElement("style");
-    style.id="ao-v381-traditional-pray-css";
-    style.textContent=TRADITIONAL_PRAY_V381_CSS;
-    doc.head.appendChild(style);
-  }
-  return true;
-}
-if(typeof document!=="undefined")installTraditionalPrayStyles(document);
-
 /* B04: source-ID-only Personal Brief choices within the existing restrained settings rail. */
 #aoPray435930 .aoDailyPersonalBriefList{display:grid;gap:5px;width:100%}
 #aoPray435930 .aoDailyPersonalBriefOption{width:100%}
@@ -302,3 +287,17 @@ if(typeof document!=="undefined")installTraditionalPrayStyles(document);
  border-radius:8px;padding:9px 12px
 }
 #aoPray435930 .aoDailyPersonalBriefRestore:focus-visible{outline:2px solid #e7cb98;outline-offset:2px}
+`;
+
+export function installTraditionalPrayStyles(doc=globalThis.document){
+  if(!doc?.head)return false;
+  let style=doc.getElementById("ao-v381-traditional-pray-css");
+  if(!style){
+    style=doc.createElement("style");
+    style.id="ao-v381-traditional-pray-css";
+    style.textContent=TRADITIONAL_PRAY_V381_CSS;
+    doc.head.appendChild(style);
+  }
+  return true;
+}
+if(typeof document!=="undefined")installTraditionalPrayStyles(document);
