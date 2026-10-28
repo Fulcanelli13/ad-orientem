@@ -371,6 +371,12 @@ try{
        form&&!form.hidden&&Boolean(form.querySelector(
        '[data-ao-all-souls-mass][value="'+number+'"]')?.checked);
    },originalNumber,{timeout:45000});
+   // A Home-to-Folio jump opens a fresh preflight. The advanced Ritus XIV
+   // circumstance is intentionally collapsed on that new screen.
+   const succession=page.locator("[data-ao-all-souls-succession-details]");
+   if(await succession.evaluate(el=>el.open))
+     throw Error("NOV02_HOME_PREFLIGHT_ADVANCED_CONTROLS_NOT_COLLAPSED");
+   await succession.locator("summary").click();
    await page.locator('[data-ao-all-souls-succession="previous"]')
      .selectOption("IMMEDIATE");
    const active=await page.evaluate(async number=>{
