@@ -62,8 +62,10 @@ for(const p of gallery.places){
 }
 assert.equal(gallery.places.length,8);
 assert.equal(subjectids.size,13);
-assert.equal(count,2);
+assert.equal(count,6);
+const nd=gallery.places.find(x=>x.place_id==="place:FR:notre-dame-paris");
+assert.deepEqual(new Set(nd.subjects.filter(s=>s.photographs.length).map(s=>s.kind)),new Set(["exterior","interior","relic","reliquary"]));
 assert.ok(subjectids.has("ndp-holy-crown")&&subjectids.has("ndp-dubuisson-2024-reliquary"));
 assert.ok(gallery.places.find(x=>x.place_id==="place:FR:notre-dame-paris").subjects.find(x=>x.subject_id==="ndp-true-cross"));
 assert.ok(!media.items.some(x=>x.place_id==="place:FR:notre-dame-paris"));
-console.log("PASS P62: 26 adjudications, rejected Lateran merge, protected two-basilica hold, 13 multi-subject records, 2 unapproved Commons photo candidates; 516 Places and 31 approved media unchanged.");
+console.log("PASS P62: 26 adjudications, rejected Lateran merge, protected two-basilica hold, 13 multi-subject records, 6 unapproved Commons photo candidates; 516 Places and 31 approved media unchanged.");
