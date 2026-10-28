@@ -675,6 +675,9 @@ export async function mountNativeReaderPreview({
       DEACON:"Deacon",
       ALL:"All present",
       COMMUNICANTS:"Communicants",
+      CHRONISTA:"Chronista · Narrator",
+      CHRISTUS:"Christus · Christ",
+      SYNAGOGA:"Synagoga · Other speakers",
     });
 
     function installCommunionSpeakerStyles(){

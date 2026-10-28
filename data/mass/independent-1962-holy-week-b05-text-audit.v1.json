@@ -11,8 +11,8 @@
     "imageVerifiedHolyWeekTypicaPages": 21,
     "lineByLinePrintedCollationsCertified": 0,
     "statusPolicy": "A passing B05 CI documents open textual deficits; it must never be presented as complete Latin/English/French certification. A partial text, heading, rubric or ellipsis is not the full prescribed prayer.",
-    "safety": "Retain original graph/Canon/48-card product; prohibit speculative text insertions. Source variants are separate authorities and not interpolated.",
-    "sourceEditedTextVersion": "B10 Good Friday deacon's 1962 Confiteor from canonical Ordinary minister AO.SM.B007; Latin/English row parity tested. Earlier B08 Holy Thursday proper Canon and partial Mandatum preserved. No full printed Holy Week Latin/EN/FR certification.",
+    "safety": "Retain original graph/Canon/65-card curated Ordinary; prohibit speculative text insertions. Source variants are separate authorities and not interpolated.",
+    "sourceEditedTextVersion": "B10 Good Friday deacon's 1962 Confiteor from canonical Ordinary minister AO.SM.B007; Latin/English row parity tested. Earlier B08 Holy Thursday proper Canon and partial Mandatum preserved. No full printed Holy Week Latin/EN/FR certification. B13 maps Latin Passion vocal roles without altering any canonical biblical source words; printed critical collation remains open.",
     "imageWitnessScope": "B09 merged PR #1135: 21 unique printed folios with 29 partial anchors, NOT 21 fully collated pages."
   },
   "sourceWitnesses": [
@@ -118,10 +118,10 @@
     {
       "id": "FRIDAY_PASSION_SPEAKERS",
       "rite": "GOOD_FRIDAY_1962",
-      "appPath": "src/mass/reader-good-friday.js",
+      "appPath": "data/presentation/reader-good-friday.v1.json#passion.voiceTurns + src/mass/reader-good-friday.js",
       "surface": "Passion Latin spoken/sung roles",
-      "status": "ROLE_ANNOTATIONS_MISSING",
-      "evidence": "The Good Friday reader turns undifferentiated Latin Passion paragraphs into TEXT rows; performer/voice ownership (Christus, Chronista, Synagoga) is not represented in the payload.",
+      "status": "B13_49_SOURCE_MARKED_LATIN_VOICE_TURNS__MINISTERS_AND_FULL_PRINTED_COLLATION_OPEN",
+      "evidence": "B13 maps the 1962-restored Good Friday John 18:1–19:42 Passion's 24 pre-death and four post-death original Latin blocks into 49 exact source-marked dialogues (15 Christus, 34 Synagoga), with Chronista narration between, preserving every Latin character and the original death cue. ICKSP France 1955-restored Latin voice signs C./+ / S. and 2016 1962-based Cantus Passionis are source-checked; the independent Vatican 1962 page-by-page text, EN/FR translations and local celebrant/deacon/schola allocation remain unresolved, so this remains a B05 audit HOLD.",
       "source": "FRIDAY_EDITORIAL"
     },
     {
