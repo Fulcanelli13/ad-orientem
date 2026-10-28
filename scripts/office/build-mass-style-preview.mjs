@@ -10,18 +10,22 @@
 import {readFileSync,mkdirSync,writeFileSync,copyFileSync} from "node:fs";
 import {resolve,join} from "node:path";
 import {renderOfficeMassStyleResearchReader} from "../../src/office/mass-style-research-reader.js";
+import {missingOfficeSourceCells} from "../../src/office/research-reader.js";
 
 const HOURS=["MATINS","LAUDS","PRIME","TERCE","SEXT","NONE","VESPERS","COMPLINE"];
 const safeDate=s=>typeof s==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(s);
 function pilotRoot(){
   const args=process.argv.slice(2);
-  if(!([2,3].includes(args.length))||args[0]!=="--out"||!args[1]||
-    (args.length===3&&args[2]!=="--quarantine-unaligned"))
+  const flags=args.slice(2);
+  const permitted=["--quarantine-unaligned","--quarantine-missing-translations"];
+  if(args.length<2||args[0]!=="--out"||!args[1]||
+    flags.length!==new Set(flags).size||flags.some(flag=>!permitted.includes(flag)))
     throw Error("OFFICE_MASS_PREVIEW_OUT_REQUIRED");
-  return {root:resolve(args[1]),quarantineUnaligned:args[2]==="--quarantine-unaligned"};
+  return {root:resolve(args[1]),quarantineUnaligned:flags.includes("--quarantine-unaligned"),
+    quarantineMissingTranslations:flags.includes("--quarantine-missing-translations")};
 }
 function build(){
-  const {root,quarantineUnaligned}=pilotRoot();
+  const {root,quarantineUnaligned,quarantineMissingTranslations}=pilotRoot();
   const normalized=JSON.parse(readFileSync(join(root,"normalized-manifest.json"),"utf8"));
   if(normalized.schema!=="ao.office.normalization-audit.v1"||normalized.published!==0||
     normalized.liturgicallyVerified!==0)throw Error("OFFICE_MASS_PREVIEW_RESEARCH_ONLY");
@@ -52,23 +56,42 @@ function build(){
         counts:{la:counts[0],en:counts[1],fr:counts[2]},reasons});
     }else eligibleGroups.add(key);
   }
+  const allowedLocalePages=new Set(),blockedLocalePages=[];
+  const locales=["en","fr"];
+  for(const [key,group] of groups){
+    if(!eligibleGroups.has(key))continue;
+    for(const locale of locales){
+      const d=JSON.parse(readFileSync(join(root,group.la.date,group.la.hour.toLowerCase(),
+        locale+".research.json"),"utf8"));
+      const missing=missingOfficeSourceCells(d);
+      if(missing.length){
+        if(!quarantineMissingTranslations)
+          throw Error("OFFICE_MASS_PREVIEW_MISSING_TRANSLATION:"+key+":"+locale);
+        blockedLocalePages.push({date:group.la.date,hour:group.la.hour,locale,
+          reason:"UPSTREAM_UNRESOLVED_TRANSLATION",
+          missingSourceCellIds:missing.map(x=>x.sourceCellId)});
+      }else allowedLocalePages.add(key+":"+locale);
+    }
+  }
   const target=join(root,"preview","mass");
   mkdirSync(target,{recursive:true});
   copyFileSync(new URL("../../src/office/mass-style-research.css",import.meta.url),
     join(target,"office-research.css"));
   copyFileSync(new URL("../../src/office/mass-style-research-ui.js",import.meta.url),
     join(target,"office-research-ui.js"));
-  const locales=["en","fr"],byHour={},files=[];
+  const byHour={},files=[];
   for(const date of dates)for(const hour of HOURS){
     const group=groups.get(date+":"+hour);
     if(!group||!eligibleGroups.has(date+":"+hour))continue;
     const latin=JSON.parse(readFileSync(join(root,date,hour.toLowerCase(),"la.research.json"),"utf8"));
-    const availableHours=HOURS.filter(h=>eligibleGroups.has(date+":"+h));
-    const availableDates=dates.filter(d=>eligibleGroups.has(d+":"+hour));
     for(const locale of locales){
+      if(!allowedLocalePages.has(date+":"+hour+":"+locale))continue;
+      const availableHours=HOURS.filter(h=>allowedLocalePages.has(date+":"+h+":"+locale));
+      const availableDates=dates.filter(d=>allowedLocalePages.has(d+":"+hour+":"+locale));
+      const availableLocales=locales.filter(l=>allowedLocalePages.has(date+":"+hour+":"+l));
       const translation=JSON.parse(readFileSync(join(root,date,hour.toLowerCase(),locale+".research.json"),"utf8"));
       const article=renderOfficeMassStyleResearchReader({
-        latin,translation,locale,availableHours,availableDates,
+        latin,translation,locale,availableHours,availableDates,availableLocales,
       });
       const filename=date+"-"+hour.toLowerCase()+"-"+locale+".html";
       const html='<!doctype html><html lang="'+locale+'"><head><meta charset="utf-8">'+
@@ -91,6 +114,9 @@ function build(){
     locales,files,quarantineEnabled:quarantineUnaligned,
     quarantinedSourceHours:quarantined,
     quarantinedSourceHourCount:quarantined.length,
+    missingTranslationQuarantineEnabled:quarantineMissingTranslations,
+    blockedLocalePageCount:blockedLocalePages.length,
+    blockedLocalePages:blockedLocalePages,
     pages:files.length,byHour,
     researchOnly:true,passedIndependentRubricalReview:false,
     published:0,productionRouteRegistered:false,
@@ -103,9 +129,10 @@ function build(){
     published:summary.published,externalResources:summary.externalResources,
     productionRouteRegistered:summary.productionRouteRegistered,
     quarantinedSourceHours:summary.quarantinedSourceHourCount,
+    blockedLocalePages:summary.blockedLocalePageCount,
   }));
-  if(summary.pages!==eligibleGroups.size*2 ||
-    summary.pages+summary.quarantinedSourceHourCount*2!==groups.size*2)
+  if(summary.pages+summary.blockedLocalePageCount!==eligibleGroups.size*2 ||
+    summary.pages+summary.blockedLocalePageCount+summary.quarantinedSourceHourCount*2!==groups.size*2)
     throw Error("OFFICE_MASS_PREVIEW_COUNT_MISMATCH");
 }
 try{build()}catch(e){console.error(e?.stack??String(e));process.exitCode=1}
