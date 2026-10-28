@@ -88,7 +88,7 @@
       "exact_image_url": "https://openaccess-cdn.clevelandart.org/1959.189/1959.189_print.jpg",
       "rights": "Cleveland CC0 confirmed",
       "approved": true,
-      "acquisition_state": "ORIGINAL_PRIMARY_JPEG_BYTES_SHA256_VERIFIED_20261027",
+      "acquisition_state": "SOURCE_JPEG_NOW_STORED_IN_GIT_RESEARCH_QUARANTINE; PRIVATE_ARCHIVE_MIGRATION_PENDING",
       "frame_status": "PRIMARY_SOURCE_NO_AUTOMATED_BORDER_FLAGS; FULL_RES_HUMAN_REVIEW_REQUIRED",
       "photo_approved": false,
       "verified_source_exclusion": {
@@ -124,6 +124,18 @@
         "permanently_archived_binary": false,
         "publication_authorized": false,
         "checksum_report": "data/research/sacred-art-20261027-museum-origin-source-byte-report.v1.json"
+      },
+      "image_20261028_progress": {
+        "acquired_original_full_bytes": true,
+        "verified_sha256": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
+        "public_research_quarantine_binary": "data/research/_art_transfer_quarantine_20261028/murillo-immaculate-conception.jpg",
+        "qa_contact": "data/research/_art_transfer_quarantine_20261028/murillo-immaculate-conception__QA_EDGES.jpg",
+        "frame_visual": "PRELIMINARY_NO_VISIBLE_FRAME_IN_9_TILE_QA_SHEET",
+        "quality_review": "NO_OBVIOUS_GLARE_OR_WATERMARK_AT_CONTACT_REVIEW_SCALE",
+        "full_native_pixel_acceptance": false,
+        "private_permanent_archive": false,
+        "ready_to_publish": false,
+        "qa_record": "https://github.com/Fulcanelli13/folio-core/blob/research/sacred-art-private-quarantine-20261028/research/sacred-art/quarantine/manifests/class-i-approved-visual-contact-review.20261028.json"
       }
     },
     {
@@ -138,7 +150,7 @@
       "exact_image_url": "https://openaccess-cdn.clevelandart.org/1968.100/1968.100_print.jpg",
       "rights": "Cleveland CC0 confirmed",
       "approved": true,
-      "acquisition_state": "ORIGINAL_PRIMARY_JPEG_BYTES_SHA256_VERIFIED_20261027",
+      "acquisition_state": "SOURCE_JPEG_NOW_STORED_IN_GIT_RESEARCH_QUARANTINE; PRIVATE_ARCHIVE_MIGRATION_PENDING",
       "frame_status": "PRIMARY_SOURCE_NO_AUTOMATED_BORDER_FLAGS; FULL_RES_HUMAN_REVIEW_REQUIRED",
       "photo_approved": false,
       "preferred_primary_candidate": {
@@ -167,6 +179,18 @@
         "permanently_archived_binary": false,
         "publication_authorized": false,
         "checksum_report": "data/research/sacred-art-20261027-museum-origin-source-byte-report.v1.json"
+      },
+      "image_20261028_progress": {
+        "acquired_original_full_bytes": true,
+        "verified_sha256": "115e78e0c096c9274051fa89f277d93392cec097474d183c1e4f20a371960268",
+        "public_research_quarantine_binary": "data/research/_art_transfer_quarantine_20261028/cavallino-adoration-shepherds.jpg",
+        "qa_contact": "data/research/_art_transfer_quarantine_20261028/cavallino-adoration-shepherds__QA_EDGES.jpg",
+        "frame_visual": "PRELIMINARY_NO_VISIBLE_FRAME_IN_9_TILE_QA_SHEET",
+        "quality_review": "HOLD_SPECKLING_OR_SURFACE_WEAR_VISIBLE_AT_PAINTED_EDGES_UNDETERMINED_ORIGIN",
+        "full_native_pixel_acceptance": false,
+        "private_permanent_archive": false,
+        "ready_to_publish": false,
+        "qa_record": "https://github.com/Fulcanelli13/folio-core/blob/research/sacred-art-private-quarantine-20261028/research/sacred-art/quarantine/manifests/class-i-approved-visual-contact-review.20261028.json"
       }
     }
   ],
@@ -186,5 +210,18 @@
     "approved_bytes_verified": 2,
     "approved_publication_ready": 0,
     "note": "Reports actual bytes, SHA256, pixel-decoded JPEG and canvas ratio sanity. Four-edge heuristic found no suspicious uniform bands. It cannot prove zero physical frames; human full-resolution inspection and permanent originals remain unmet."
+  },
+  "milestone_20261028": {
+    "achieved": "Exact two Cleveland approved originals are not merely hashes; their unchanged JPEG binaries have now been committed to a non-production public Git research quarantine, with QA corner contact sheets. Visual contact review found no picture frame. No app integration or public Calendar selection changes.",
+    "rejected_framed_sources": [
+      "Murillo Cleveland alt0 physical gold frame still prohibited"
+    ],
+    "limitations": [
+      "Final native 100% pixel inspection not signed",
+      "Cavallino painting shows speckling at artwork edges; quality source review remains open",
+      "Private folio-core holds metadata only, not actual JPEG binaries",
+      "Guido Reni Michael source unresolved"
+    ],
+    "scope": "Research quarantine is public source-controlled storage, not the PRIVATE permanent archive target or released art."
   }
 }
