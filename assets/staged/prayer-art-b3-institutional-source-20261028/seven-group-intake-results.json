@@ -1,0 +1,90 @@
+{
+  "schema": "AO_PRAYER_B3_SEVEN_GROUP_INTAKE_RESULTS_V1",
+  "date": "2026-10-28",
+  "case_count": 7,
+  "source_candidate_count": 1,
+  "research_images_acquired": 0,
+  "pristine_certifications": 0,
+  "production_activations": 0,
+  "cost_eur": 0,
+  "cases": [
+    {
+      "case_id": "guardian-angel-cortona",
+      "object": "Pietro da Cortona, The Guardian Angel, 1656",
+      "source": "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg",
+      "status": "HOLD_BELOW_NATIVE_QUALITY",
+      "archived_image": false,
+      "pristine_certified": false,
+      "photo_rights_final_certified": false,
+      "publication_allowed": false,
+      "gate_evidence": "694x1100 source only; no higher-resolution authentic photo verified"
+    },
+    {
+      "case_id": "evening-frere-op6",
+      "object": "Pierre-Édouard Frère, The Prayer, Wolverhampton Art Gallery OP6",
+      "source": "https://commons.wikimedia.org/wiki/File:Pierre_Edouard_Fr%C3%A8re_(1819-1886)_-_The_Prayer_-_OP6_-_Wolverhampton_Art_Gallery.jpg",
+      "status": "HOLD_BELOW_NATIVE_QUALITY",
+      "archived_image": false,
+      "pristine_certified": false,
+      "photo_rights_final_certified": false,
+      "publication_allowed": false,
+      "gate_evidence": "898x1200 only; 2x upscaled PICRYL derivative excluded"
+    },
+    {
+      "case_id": "restout-pentecost",
+      "object": "Jean Restout, Pentecost, Louvre INV 20303",
+      "source": "https://collections.louvre.fr/en/ark:/53355/cl010062538",
+      "status": "HOLD_MUSEUM_PHOTO_RIGHTS_AND_FRAME",
+      "archived_image": false,
+      "pristine_certified": false,
+      "photo_rights_final_certified": false,
+      "publication_allowed": false,
+      "gate_evidence": "GrandPalaisRmn / René-Gabriel Ojéda credited by museum; existing 4037x2444 Commons source contains exterior gilt frame"
+    },
+    {
+      "case_id": "gerome-age-augustus",
+      "object": "Jean-Léon Gérôme, The Age of Augustus: Birth of Christ, Musée de Picardie",
+      "source": "https://www.amiens.fr/Vivre-a-Amiens/Culture-Patrimoine/Etablissements-culturels/Musee-de-Picardie/Collections/XIX/Notices/Notice-Jean-Leon-Gerome-Siecle-d-Auguste",
+      "status": "HOLD_NO_CLEAN_NATIVE_PHOTO",
+      "archived_image": false,
+      "pristine_certified": false,
+      "photo_rights_final_certified": false,
+      "publication_allowed": false,
+      "gate_evidence": "Existing 6000x4000 source is gallery installation, not pristine; low-resolution alternative exists"
+    },
+    {
+      "case_id": "tiepolo-prado-burial",
+      "object": "Giandomenico Tiepolo, Burial of Christ, Prado P000362",
+      "source": "https://www.museodelprado.es/en/the-collection/art-work/burial-of-christ/fca27623-6bb0-4bca-9856-b7c23a6651a3",
+      "status": "HOLD_SOURCE_FILE_AND_PHOTO_RIGHTS",
+      "archived_image": false,
+      "pristine_certified": false,
+      "photo_rights_final_certified": false,
+      "publication_allowed": false,
+      "gate_evidence": "Museum confirms exact P000362 identity; no suitable rights-checked source original acquired"
+    },
+    {
+      "case_id": "batoni-sacred-heart",
+      "object": "Pompeo Batoni, Sacred Heart of Jesus, Il Gesù",
+      "source": "https://commons.wikimedia.org/wiki/File:Sacred_Heart_of_Jesus,_Gesu_Church,_Rome.jpg",
+      "status": "QUARANTINE_3543PX_COPYRIGHT_CONFLICT",
+      "archived_image": false,
+      "pristine_certified": false,
+      "photo_rights_final_certified": false,
+      "publication_allowed": false,
+      "gate_evidence": "3543x5231 file Commons PD tag conflicts with embedded Catholic News Service copyright holder; independent CC0 photo 1034x1441 below quality floor"
+    },
+    {
+      "case_id": "rubens-trinity",
+      "object": "Peter Paul Rubens, The Holy Trinity, KMSKA object 314, 1620",
+      "source": "https://vlaamsekunstcollectie.be/en/collectie/314",
+      "status": "RESEARCH_IIIF_FETCH_OR_VALIDATION_FAILED_HOLD",
+      "archived_image": false,
+      "pristine_certified": false,
+      "photo_rights_final_certified": false,
+      "publication_allowed": false,
+      "failure_type": "AssertionError",
+      "failure_detail": "NO_PUBLIC_DOMAIN_MARK"
+    }
+  ]
+}
