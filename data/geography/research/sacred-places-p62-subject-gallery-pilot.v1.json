@@ -1,0 +1,226 @@
+{
+  "schema": "AO_SACRED_PLACES_P62_SUBJECT_PHOTOGRAPHY_PILOT_V1",
+  "date": "2026-10-29",
+  "status": "RESEARCH_ONLY_NO_PHOTO_APPROVAL_NO_UI_CHANGE",
+  "live_media_contract": "data/geography/approved-place-media.v1.json",
+  "sources_of_truth": [
+    "Catholic custodian/diocesan institution for relic identity, display and location",
+    "Wikimedia Commons original file page for photographer, licence and original-resolution check",
+    "Existing approved media registry plus local archived source SHA1 and derived WebP SHA256 before rendering"
+  ],
+  "subject_types": [
+    "exterior",
+    "interior",
+    "altar",
+    "chapel",
+    "relic",
+    "reliquary",
+    "tomb",
+    "sacred_artwork",
+    "statue",
+    "liturgical_object",
+    "stained_glass"
+  ],
+  "policy": [
+    "One canonical Place can have multiple subject records and multiple licensed images per subject",
+    "Subjects, artifacts, artworks and relics are NOT new Place pins",
+    "An object may have a temporary or historical location: keep custody, photographed_location, photographed_at and current_display separate",
+    "Do not treat a reliquary photograph as proof that the enclosed relic is visibly shown",
+    "Distinguish photographs of 1806/19th-century reliquaries and the modern Dubuisson installation; never label an old display photo as current",
+    "Verify photographer, source original hash, derivative hash, original subject, rights, image quality, bilingual captions and crops before approving",
+    "Never hotlink third-party images in published Places; keep permanent free archive and provenance; never commit photos with unconfirmed licences",
+    "No invented TLM liturgy, visitation hours, opening hours, artifact authenticity or rights"
+  ],
+  "places": [
+    {
+      "place_id": "place:FR:notre-dame-paris",
+      "subjects": [
+        {
+          "subject_id": "ndp-building-exterior",
+          "kind": "exterior",
+          "name_en": "Notre-Dame cathedral exterior",
+          "name_fr": "Façade de la cathédrale Notre-Dame",
+          "source_url": "https://www.notredamedeparis.fr/",
+          "photographs": []
+        },
+        {
+          "subject_id": "ndp-nave-interior",
+          "kind": "interior",
+          "name_en": "Notre-Dame nave and interior",
+          "name_fr": "Nef et intérieur de Notre-Dame",
+          "source_url": "https://www.notredamedeparis.fr/",
+          "photographs": []
+        },
+        {
+          "subject_id": "ndp-holy-crown",
+          "kind": "relic",
+          "name_en": "Holy Crown of Thorns",
+          "name_fr": "Sainte Couronne d'épines",
+          "source_url": "https://www.notredamedeparis.fr/prier/messes-et-offices-nd/veneration-de-la-couronne-depines/",
+          "location_label_en": "Notre-Dame de Paris; Passion relics kept in axial chapel reliquary",
+          "location_label_fr": "Notre-Dame de Paris ; reliques de la Passion conservées dans la châsse de la chapelle axiale",
+          "photographs": [
+            {
+              "commons_file": "File:Notre Dame de Paris Crown of Thorns.jpg",
+              "source_url": "https://commons.wikimedia.org/wiki/File:Notre_Dame_de_Paris_Crown_of_Thorns.jpg",
+              "photographer": "Adam Bishop",
+              "date_taken": "2011-11-22",
+              "license": "CC-BY-SA-3.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+              "original_width": 1080,
+              "original_height": 1920,
+              "depicts": "Historic 2011 presentation of the Crown of Thorns reliquary (not the modern installation)",
+              "actual_relic_visible": "NOT_YET_VISUALLY_CERTIFIED",
+              "rights_review": "SOURCE_PAGE_LICENSE_RECORDED__ORIGINAL_BYTES_NOT_CHECKED",
+              "original_sha1": null,
+              "derivative_sha256": null,
+              "asset_path": null,
+              "visual_crop_reviewed": false,
+              "approved": false,
+              "publish_authorized": false
+            }
+          ]
+        },
+        {
+          "subject_id": "ndp-true-cross",
+          "kind": "relic",
+          "name_en": "Fragment of the True Cross",
+          "name_fr": "Fragment du bois de la Croix",
+          "source_url": "https://www.notredamedeparis.fr/comprendre/histoire/saint-louis-et-les-reliques-de-la-passion/",
+          "photographs": []
+        },
+        {
+          "subject_id": "ndp-holy-nail",
+          "kind": "relic",
+          "name_en": "Nail of the Passion",
+          "name_fr": "Clou de la Passion",
+          "source_url": "https://www.notredamedeparis.fr/comprendre/histoire/saint-louis-et-les-reliques-de-la-passion/",
+          "photographs": []
+        },
+        {
+          "subject_id": "ndp-dubuisson-2024-reliquary",
+          "kind": "reliquary",
+          "name_en": "Sylvain Dubuisson's modern Crown of Thorns reliquary",
+          "name_fr": "Châsse contemporaine de la Sainte Couronne par Sylvain Dubuisson",
+          "source_url": "https://www.notredamedeparis.fr/mgr-laurent-ulrich-amenagements/",
+          "photographs": [
+            {
+              "commons_file": "File:Crown of Thorns reliquary by Sylvain Dubuisson - Notre-Dame de Paris.jpg",
+              "source_url": "https://commons.wikimedia.org/wiki/File:Crown_of_Thorns_reliquary_by_Sylvain_Dubuisson_-_Notre-Dame_de_Paris.jpg",
+              "photographer": "Aliva Sahoo",
+              "date_taken": "2026-10-04",
+              "license": "CC-BY-SA-4.0__VISIBLE_FILE_LICENSE",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "original_width": 3568,
+              "original_height": 4008,
+              "depicts": "Modern installation/reliquary interior at Notre-Dame, not a close-up authentication of relic",
+              "rights_review": "PENDING_STRUCTURED_DATA_LICENSE_MISMATCH_RECONCILIATION__ORIGINAL_BYTES_NOT_CHECKED",
+              "original_sha1": null,
+              "derivative_sha256": null,
+              "asset_path": null,
+              "visual_crop_reviewed": false,
+              "approved": false,
+              "publish_authorized": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "place_id": "place:PL:lichen-marian-basilica",
+      "subjects": [
+        {
+          "subject_id": "p61-lichen-exterior",
+          "kind": "exterior",
+          "name_en": "Basilica of Our Lady of Licheń exterior",
+          "name_fr": "Extérieur de la basilique Notre-Dame de Licheń",
+          "source_url": "https://www.lichen.pl/bazylika/",
+          "reuse_existing_photo_candidate_id": "SG-INV-0200",
+          "photographs": []
+        }
+      ]
+    },
+    {
+      "place_id": "place:MX:ocotlan-basilica-tlaxcala",
+      "subjects": [
+        {
+          "subject_id": "p61-ocotlan-exterior",
+          "kind": "exterior",
+          "name_en": "Our Lady of Ocotlán basilica facade",
+          "name_fr": "Façade de la basilique Notre-Dame d'Ocotlán",
+          "source_url": "https://diocesisdetlaxcala.mx/ntrasraocotlan/",
+          "reuse_existing_photo_candidate_id": "SG-INV-0429",
+          "photographs": []
+        }
+      ]
+    },
+    {
+      "place_id": "place:US:san-francisco-de-asis-ranchos-taos",
+      "subjects": [
+        {
+          "subject_id": "p61-ranchos-exterior",
+          "kind": "exterior",
+          "name_en": "San Francisco de Asís mission church adobe exterior",
+          "name_fr": "Façade en adobe de l'église-mission Saint-François-d'Assise",
+          "source_url": "https://www.archdiosf.org/parishfinder",
+          "reuse_existing_photo_candidate_id": "SG-INV-0410",
+          "photographs": []
+        }
+      ]
+    },
+    {
+      "place_id": "place:AR:catamarca-cathedral-valle",
+      "subjects": [
+        {
+          "subject_id": "p61-catamarca-exterior",
+          "kind": "exterior",
+          "name_en": "Catamarca cathedral-basilica facade",
+          "name_fr": "Façade de la cathédrale-basilique de Catamarca",
+          "source_url": "https://episcopado.org/diocesis/ver/52",
+          "reuse_existing_photo_candidate_id": "SG-INV-0493",
+          "photographs": []
+        }
+      ]
+    },
+    {
+      "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+      "subjects": [
+        {
+          "subject_id": "phl-katharine-drexel-tomb",
+          "kind": "tomb",
+          "name_en": "Tomb and shrine of Saint Katharine Drexel",
+          "name_fr": "Tombeau et sanctuaire de sainte Katharine Drexel",
+          "source_url": "https://cathedralphila.org/drexel/about/history/",
+          "photographs": []
+        }
+      ]
+    },
+    {
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "subjects": [
+        {
+          "subject_id": "goa-francis-xavier-relics",
+          "kind": "relic",
+          "name_en": "Relics of Saint Francis Xavier",
+          "name_fr": "Reliques de saint François Xavier",
+          "source_url": "https://www.vaticannews.va/en/church/news/2024-11/18th-exposition-of-st-francis-xavier-s-sacred-relics-goa-india.html",
+          "note_en": "Usually housed at the Basilica of Bom Jesus; 2024–2025 exposition at Sé Cathedral was temporary.",
+          "photographs": []
+        }
+      ]
+    },
+    {
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "subjects": [
+        {
+          "subject_id": "mu-pere-laval-tomb",
+          "kind": "tomb",
+          "name_en": "Tomb of Blessed Jacques-Désiré Laval",
+          "name_fr": "Caveau du bienheureux Jacques-Désiré Laval",
+          "source_url": "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/",
+          "photographs": []
+        }
+      ]
+    }
+  ]
+}
