@@ -6,7 +6,6 @@ on:
     paths:
       - .github/workflows/prayer-artwork-20-master-bulk-native-pass-20261028.yml
       - scripts/art/bulk-verify-prayer-hero-native-images-20261028.py
-      - data/research/prayer-sacred-art-pristine-master-registry-20261028.v1.json
   workflow_dispatch:
 permissions:
   contents: write
