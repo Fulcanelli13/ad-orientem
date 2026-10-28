@@ -14,9 +14,9 @@ const ROOT=new URL("index.html",BASE).href;
 const KEY=new URL("__ao_bootstrap_state__",BASE).href;
 const READY=new URL("__ao_bootstrap_completed__",BASE).href;
 // Keep a hard byte ceiling, but allow the expanded canonical module graph.
-// Bounded graph-measurement cap: the byte ceiling and transactional
-// validation remain unchanged; see offline restart acceptance before release.
-const MAX_ITEMS=512,MAX_BYTES=35_000_000;
+// Measured 2026-10-28 bootstrap: 388 unique files, 9,204,785 bytes.
+// 416 files permits limited growth while retaining the original 35 MB ceiling.
+const MAX_ITEMS=416,MAX_BYTES=35_000_000;
 let stagedJob=null,activeVersion=null;
 const liveClients=new Map();
  // Only the first-use Prayer graph is promoted from a lazy module graph into
