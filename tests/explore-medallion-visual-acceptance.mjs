@@ -141,7 +141,7 @@ try{
    // not as a second row permanently covering the map.
    const openMoreTool=async selector=>{
      const more=page.locator("#ao-find-modular-root .aoHeritageMore");
-     await more.locator("> summary").click();
+     await more.locator(":scope > summary").click();
      await more.locator(selector).click();
    };
    // P3 MapCN Uptime Monitor adaptation stays inside the SAME canonical map.
