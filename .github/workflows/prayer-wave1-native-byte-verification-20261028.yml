@@ -1,0 +1,31 @@
+name: Prayer Wave 1 - native original byte verification
+on:
+  push:
+    branches:
+      - research/prayer-existing-sacred-art-mosaic-20261028
+    paths:
+      - .github/workflows/prayer-wave1-native-byte-verification-20261028.yml
+      - scripts/art/verify-prayer-wave1-native-masters-20261028.mjs
+      - data/calendar/prayer-hero-wave1-release-manifest-20261028.v1.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-five-research-originals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and research-only editorial protections
+        run: |
+          node --check scripts/art/verify-prayer-wave1-native-masters-20261028.mjs
+          node scripts/art/verify-prayer-wave1-native-masters-20261028.mjs
+      - name: Download only existing GitHub originals and independently rehash bytes
+        run: node scripts/art/verify-prayer-wave1-native-masters-20261028.mjs --verify-online
