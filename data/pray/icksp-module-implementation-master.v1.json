@@ -32,8 +32,8 @@
     {
       "repo": "Fulcanelli13/ad-orientem",
       "pr": 1818,
-      "state": "OPEN_DRAFT",
-      "scope": "Related English bedside Morning/Evening option, not full Compline; not merged"
+      "state": "MERGED_TO_PUBLIC_MAIN",
+      "scope": "Related English bedside Morning/Evening historical option merged 28 October 2026; this does not certify private Batch 1 PR #59 or full Compline."
     }
   ],
   "statuses": {
@@ -59,7 +59,7 @@
       "priority": "P1",
       "audit_state": "REVIEWED",
       "implementation_state": "OPEN_IMPLEMENTATION_PR",
-      "implementation_owner": "folio-core #59; supplement ad-orientem #1800, #1818",
+      "implementation_owner": "folio-core #59; supplement ad-orientem #1800, #1818 (merged related bedtime work)",
       "action": "Preserve St Pius X 1913 default and 1905 alternative; audit historical prayer variants, independent Compline/bedtime links, and sunrise/sunset behavior.",
       "unresolved_gate": "Historic 1913/Hagan language-source collation and owner-level acceptance remain; integrate private canonical PR safely.",
       "acceptance_gate": "1913 11/10 and 1905 10/8 unchanged; user selections, LA/EN/FR and progressive horizon tested.",
@@ -126,7 +126,7 @@
       "priority": "P1",
       "audit_state": "REVIEWED",
       "implementation_state": "OPEN_IMPLEMENTATION_PR",
-      "implementation_owner": "folio-core #59; related ad-orientem #1818",
+      "implementation_owner": "folio-core #59; related ad-orientem #1818 (merged related bedtime work)",
       "action": "Offer attested historic contrition variant, avoid double contrition when returning to Evening Prayer, and keep Compline a distinct Office.",
       "unresolved_gate": "Historic source/edition checks and non-overlap with bedtime/Compline branch remain.",
       "acceptance_gate": "Examen privacy, five-step flow, optional return and source-labelled contrition tested.",
@@ -564,7 +564,10 @@
     "Canonical Prayer, Rosary, Mass, Devotions, Office, and Calendar reuse single text identity rather than copy blocks.",
     "Targeted Node/source and state regression plus Playwright mobile/language/low-connectivity tests pass.",
     "Merged pull request is on current main and exact deployed Vercel commit is verified against live navigation, with protected rollback retained.",
-    "No paid services, hosting migration, artificial timeline/sacramental completion, or new parallel Calendar."
+    "No paid services, hosting migration, artificial timeline/sacramental completion, or new parallel Calendar.",
+    "Cross-project CI must run actual job steps and show retrievable logs; 14 private instant failures are not acceptance evidence.",
+    "The standalone Explore content-reachability source-contract must remain intact; a metadata-count fix is not clearance to release 251 new unlinked Place leads.",
+    "The offline PWA restart must complete a transactional snapshot within verified item/byte safeguards; avoid simply suppressing OFFLINE_SNAPSHOT_ITEM_LIMIT."
   ],
   "secondary_coverage_holds": [
     "Prayer Library and its entire canonical text bank",
@@ -572,5 +575,57 @@
     "My Customs and other non-Pray module routes",
     "Full Office Compline, Holy Week public ceremonial and special rites",
     "External connected canonical folio-core implementation and published deployment state"
-  ]
+  ],
+  "latest_reconciliation": {
+    "checked_at": "2026-10-28T07:17:00Z",
+    "source": "GitHub PR metadata, changed-file diffs and Actions check logs (same-session).",
+    "git_main_initial_sha": "744cc6de848c698d173d11afc8eb4c6cb4cd02af",
+    "current_release_decision": "HOLD_UNMERGED_PR_STACK",
+    "blockers": [
+      {
+        "repo": "Fulcanelli13/folio-core",
+        "pr": 59,
+        "status": "OPEN_UNMERGED",
+        "severity": "CRITICAL",
+        "type": "CHECKS_HAVE_NO_EXECUTED_STEPS",
+        "evidence": "14/14 check runs failed in ~5 seconds, zero job steps, Actions logs returned BlobNotFound; cause unproven",
+        "action": "Fix/identify private Actions execution availability within zero-cost constraints; rerun actual source and phone acceptance; preserve St Pius X 1913 source gate."
+      },
+      {
+        "repo": "Fulcanelli13/ad-orientem",
+        "pr": 1800,
+        "status": "OPEN_DRAFT_CONFLICTS",
+        "severity": "CRITICAL",
+        "type": "MERGE_CONFLICT_AND_BASELINE_CONTENT_CENSUS",
+        "evidence": "Head cb94a3... mergeable false; content navigation expected 261 places versus 512 current; #1821 fixes metadata but then separate unlinked-place contract fails.",
+        "action": "Do not discard staged Marian/novena/hymn work. Reconcile newer main, inspect shared Prayer files, retain Explore unlinked-place checks and obtain real CI."
+      },
+      {
+        "repo": "Fulcanelli13/ad-orientem",
+        "pr": 1813,
+        "status": "OPEN_UNMERGED",
+        "severity": "HIGH",
+        "type": "OFFLINE_PWA_RESTART_FAILURE",
+        "evidence": "Required-main and most phone checks passed; offline restart job 122679711604 failed OFFLINE_SNAPSHOT_ITEM_LIMIT before its Prayer test. sw.js limit 384 items, 35,000,000 bytes.",
+        "action": "Investigate needed first-use offline graph and source-owned bootstrap limits; keep fail-closed integrity; rerun offline restart plus full tests before merge."
+      },
+      {
+        "repo": "Fulcanelli13/ad-orientem",
+        "pr": 1821,
+        "status": "OPEN_UNMERGED",
+        "severity": "HIGH",
+        "type": "CONTENT_REACHABILITY_UNLINKED_PLACES",
+        "evidence": "Metadata-only exact diff 261→512 places, 13→38 customs, 71→97 attestations. Navigation registry and content item census pass; independent reachability contract fails on expanded unlinked Place records.",
+        "action": "Explore identity/linkage research must reconcile added Place records against approved registry; do not whitelist blindly or imply PR solves all CI."
+      }
+    ],
+    "newly_merged_reference": [
+      {
+        "repo": "Fulcanelli13/ad-orientem",
+        "pr": 1818,
+        "status": "MERGED",
+        "scope": "English historical In manus tuas bedtime choice; other Batch 1 source gates remain"
+      }
+    ]
+  }
 }
