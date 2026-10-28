@@ -47,7 +47,8 @@ assert.match(dom,/@media\(max-width:760px\)[\s\S]*?\.ao-prayer-card\{padding:22p
 assert.match(dom,/@media\(max-width:760px\)[\s\S]*?\.ao-schola-dock\{width:calc\(100% - 32px\)/,"mobile Schola dock no longer preserves the v1.64 width retained by v1.80");
 
 assert.match(rendered,/data-reader-mode="MISSAL"/);
-assert.match(rendered,/data-reader-mode="SIMPLE"/);
+assert.doesNotMatch(rendered,/data-reader-mode="SIMPLE"/,
+  "Historical donor SIMPLE button must not return to the 1962 Mass reader");
 assert.match(rendered,/data-reader-mode="LIVE"/);
 
 assert.match(dom,/>YOU</);
