@@ -141,11 +141,26 @@ function personalDailyPrefs(){
  }
  return PERSONAL_DAILY_PREFS;
 }
+let PERSONAL_DAILY_SETTINGS_OPEN=false;
 function savePersonalDailyChoice(next){
+ const settings=mount()?.querySelector("[data-ao-personal-settings]");
+ const wasOpen=Boolean(settings?.open);
+ const oldScroll=settings?.querySelector(".aoDailyPersonalSettingsBody")?.scrollTop||0;
  PERSONAL_DAILY_PREFS=next;
  let storage=null;try{storage=globalThis.localStorage||null}catch{}
  savePersonalDailyPrefs(storage,next,isFr()?"fr":"en");
- return render();
+ PERSONAL_DAILY_SETTINGS_OPEN=wasOpen;
+ const result=render();
+ if(wasOpen){
+  const newPanel=mount()?.querySelector("[data-ao-personal-settings]");
+  if(newPanel){
+   newPanel.open=true;
+   const content=newPanel.querySelector(".aoDailyPersonalSettingsBody");
+   if(content)content.scrollTop=oldScroll;
+   newPanel.scrollIntoView?.({block:"nearest"});
+  }
+ }
+ return result;
 }
 function dailyReadingPlan(){
  return buildPersonalDailyPlan({daypart:S.daypart,prefs:personalDailyPrefs()});
@@ -291,7 +306,7 @@ function renderMorningEvening(){
  const guided=S.dailyMode==="guided";
  const choice=`<nav class="aoTP381DaypartStrip" aria-label="${esc(L("Time of prayer","Moment de prière"))}"><button type="button" data-tp381-daypart="morning" aria-pressed="${S.daypart==="morning"}" class="${S.daypart==="morning"?"active":""}">${esc(L("Morning","Matin"))}</button><button type="button" data-tp381-daypart="evening" aria-pressed="${S.daypart==="evening"}" class="${S.daypart==="evening"?"active":""}">${esc(L("Evening","Soir"))}</button></nav>`;
  const options=`<details class="aoTP381SecondaryOptions" data-ao-daily-options><summary>${esc(L("Reading options and guidance","Options de lecture et guide"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(intro)}</p><div class="aoTP381GuideMode" role="group" aria-label="${esc(L("Prayer view","Présentation des prières"))}"><button type="button" data-tp381-daily-mode="guided" aria-pressed="${guided}">${esc(L("Guided","Guidé"))}</button><button type="button" data-tp381-daily-mode="list" aria-pressed="${!guided}">${esc(L("All prayers","Toutes les prières"))}</button></div></div></details>`;
- return `${head(L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body aoTP381DonorBody">${choice}${guided?dailyHorizonMarkup(rows.length):""}${guided?renderDailyGuided(rows):plan.mode==="personal"?dailyPersonalList(rows,{esc,L,isFr:isFr()}):plan.mode==="approved"?dailyApprovedSequenceList(rows):prayerRows(rows.map(x=>[x.id,x.title,x.note]))}${dailyTimerControls()}${dailyPersonalSettings(plan,personalDailyPrefs(),{esc,L})}${options}${source(plan.sourceLabel,plan.sourceUrl)}</main>`;
+ return `${head(L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body aoTP381DonorBody">${choice}${guided?dailyHorizonMarkup(rows.length):""}${guided?renderDailyGuided(rows):plan.mode==="personal"?dailyPersonalList(rows,{esc,L,isFr:isFr()}):plan.mode==="approved"?dailyApprovedSequenceList(rows):prayerRows(rows.map(x=>[x.id,x.title,x.note]))}${dailyTimerControls()}${dailyPersonalSettings(plan,personalDailyPrefs(),{esc,L,expanded:PERSONAL_DAILY_SETTINGS_OPEN})}${options}${source(plan.sourceLabel,plan.sourceUrl)}</main>`;
 }
 const HYMN_KEYS=Object.freeze(["te_deum","veni_creator","ave_maris_stella"]);
 function hymnLineMarkup(value){
