@@ -272,8 +272,27 @@ export function joinDirectoryRecords({venues=[],ministries=[],schedules=[],sourc
     });
   });
 }
+// Research and review-only sources must never become public solely because
+// their physical address passes auditVenue. Existing approved provider records
+// may omit publication_state, so do not introduce a blanket allowlist.
+export function isHeldDirectoryPublication(record){
+  const venue=record?.venue;
+  if(venue?.research_only===true||record?.research_only===true)return true;
+  const origin=[venue?.upstream?.provider,venue?.upstream?.provider_id]
+    .some(value=>/^AO_B(?:91|88|92|93|94)_RESEARCH(?:_|$)/i.test(text(value)));
+  if(origin)return true;
+  const held=value=>{
+    const state=text(value).toUpperCase().replace(/[^A-Z0-9]+/g,"_").replace(/^_+|_+$/g,"");
+    return /^(?:RESEARCH|DRAFT|STAGING|HOLD|INTERNAL_ONLY|PROVISIONAL|NEEDS_REVIEW|REVIEW_REQUIRED|UNVERIFIED|SOURCE_ONLY)(?:_|$)/.test(state)
+      || /(?:^|_)(?:RESEARCH_ONLY|SOURCE_ONLY|NOT_PUBLIC|NO_PUBLIC|DO_NOT_PUBLISH|NOT_FOR_PUBLICATION|PUBLICATION_HOLD|UNCONFIRMED)(?:_|$)/.test(state);
+  };
+  return [venue?.publication_state,record?.publication_state].some(held);
+}
+
 export function publishableDirectoryRecords(records){
+  // Universal fail-closed publication guard, before provider-specific filters.
   return safeArray(records).filter(record=>{
+    if(isHeldDirectoryPublication(record))return false;
     if(auditVenue(record?.venue).length!==0)return false;
     if(["SSPX_DISTRICT_SEED","SSPX_FRANCE_FIRST_PARTY","SSPX_FRANCE_SECOND_PASS","SSPX_FOUR_DISTRICT_BULK","SSPX_OCT26_MULTIREGION","SSPX_OCT26_AMERICAS","SSPX_OCT26_POLAND","SSPX_ASIA_CENTRAL_AMERICAS_20261008","SSPX_NA_DISTRICTS_20261008"].includes(record?.venue?.upstream?.provider_id)){
       if(!["CURRENT_PUBLIC_MASS","CONDITIONAL_MASS"].includes(record?.venue?.publication_state))return false;
