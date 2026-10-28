@@ -238,7 +238,7 @@ try{
  await page.locator("#aoPray435930 [data-tp381-personal-action='length'][data-tp381-personal-value='brief']").evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"5","1913 Evening Brief retains the guided examen");
  await page.locator("#aoPray435930 .aoDevoStop").nth(4).evaluate(el=>el.click());
- assert.match(await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText(),/Examen|examination|conscience/);
+ assert.match(await page.locator("#aoPray435930 .aoTP381GuideCard").innerText(),/Examen|examination|conscience/);
  await page.locator("#aoPray435930 [data-tp381-personal-action='length'][data-tp381-personal-value='full']").evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"10","1913 printed Evening must remain intact after Brief");
  const saved=await page.evaluate(()=>localStorage.getItem("ao.pray.personal-rule.v1"));
