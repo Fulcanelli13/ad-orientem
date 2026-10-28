@@ -211,3 +211,75 @@ export function reconcile1962PerpetuaFelicityNonVirginCommon(proper){
     sourceEditorialCorrections:Object.freeze([
       ...(proper.sourceEditorialCorrections??[]),...proof])});
 }
+
+
+// The Institute of Christ the King Sovereign Priest's traditional Latin/French
+// Missal documents the *plural* prayers for each of these two 1962 Commons.
+// https://icrspfrance.fr/textes-liturgiques.php?article=a0337_ancien
+// https://icrspfrance.fr/textes-liturgiques.php?article=a0342_ancien
+//
+// The pinned C6b French donor instead retains "votre sainte Vierge et
+// Martyre N." from the single Martyr Common in its Secret/Postcommunion.
+// The C7b French source inherits C6b with substitution rules that cannot
+// restore the missing second name, and may leave that singular Virgin text.
+// Make ONLY the source-attested grammatical plural/category substitution
+// in the existing donor wording. Do NOT transplant a new prayer or
+// alter the canonical source text. Unrecognized variants remain withheld.
+const C6B_1962_SOURCE="Commune/C6b";
+const C7B_1962_SOURCE="Commune/C7b";
+const COMMON_FR_FIX="1962_ICRSP_MULTIPLE_FEMALE_MARTYRS_FRENCH_PLURAL";
+const SINGULAR_FR_MARTYR=/\bvotre sainte (?:Vierge et )?Martyre N\./giu;
+const BOTH_PLACEHOLDERS_FR=/\bN\.\s+et\s+N\./iu;
+const BOTH_PLACEHOLDERS_EN=/\bN\.\s+and\s+N\./iu;
+const LAT_MARTYRS=/\bmartyr(?:um|ibus)\b/iu;
+const LAT_VIRGINS=/\bvirgin(?:um|ibus)\b/iu;
+const ENG_VIRGINS=/\bvirgins?\s+and\s+martyrs\b/iu;
+
+export function reconcile1962PluralFemaleMartyrsCommonFrench(proper){
+  if(!proper||typeof proper!=="object")return proper;
+  const owner=String(proper.sourcePath??"").replace(/\.txt$/iu,"");
+  if(owner!==C6B_1962_SOURCE&&owner!==C7B_1962_SOURCE)return proper;
+  let next=null,proof=[];
+  for(const [slot,plural,singular] of [
+    ["SECRET_SET","secrets","secret"],
+    ["POSTCOMMUNION_SET","postcommunions","postcommunion"]]){
+    const rows=originalRows(proper,slot);
+    // Direct source Common only. Multi-prayer owners require separate
+    // calendar provenance reconciliation; do not map by position.
+    if(rows.length!==1)continue;
+    const row=rows[0];
+    const rowOwner=row?.sourcePath?String(row.sourcePath)
+      .replace(/:(?:Secreta|Postcommunio)$/iu,"").replace(/\.txt$/iu,""):owner;
+    if(rowOwner!==owner||row?.oneConclusion)continue;
+    const lat=String(row.lat??row.la??"");
+    const en=String(row.en??"");
+    const fr=String(row.fr??"");
+    const latin=ascii(lat),english=ascii(en);
+    if(!latinPluralNames.test(lat)||!BOTH_PLACEHOLDERS_EN.test(en)||
+      !LAT_MARTYRS.test(latin)||!en.trim()||!fr.trim())continue;
+    const virginLatin=LAT_VIRGINS.test(latin);
+    if((owner===C6B_1962_SOURCE)!==virginLatin)continue;
+    if(owner===C6B_1962_SOURCE&&!ENG_VIRGINS.test(english))continue;
+    if(owner===C7B_1962_SOURCE&&ENG_VIRGINS.test(english))continue;
+    if(BOTH_PLACEHOLDERS_FR.test(fr)||[...fr.matchAll(SINGULAR_FR_MARTYR)].length!==1)
+      continue;
+    const replacement=owner===C6B_1962_SOURCE
+      ?"vos saintes Vierges et Martyres N. et N."
+      :"vos saintes Martyres N. et N.";
+    const corrected=fr.replace(SINGULAR_FR_MARTYR,replacement);
+    if(corrected===fr||!BOTH_PLACEHOLDERS_FR.test(corrected)||
+      /votre sainte (?:Vierge et )?Martyre\b/iu.test(corrected))continue;
+    next??={...proper};
+    next[plural]=Object.freeze([Object.freeze({...row,fr:corrected})]);
+    next[singular]=next[plural][0];
+    proof.push(Object.freeze({id:COMMON_FR_FIX,sourcePath:owner,slot,
+      orationIndex:0,fields:Object.freeze(["fr"]),originalSourcePreserved:true,
+      authority:"ICRSP_1962_MULTIPLE_MARTYRS_COMMON_OLD_MISSAL",
+      authorityUrl:owner===C6B_1962_SOURCE
+        ?"https://icrspfrance.fr/textes-liturgiques.php?article=a0337_ancien"
+        :"https://icrspfrance.fr/textes-liturgiques.php?article=a0342_ancien"}));
+  }
+  return next?Object.freeze({...next,
+    sourceEditorialCorrections:Object.freeze([
+      ...(proper.sourceEditorialCorrections??[]),...proof])}):proper;
+}

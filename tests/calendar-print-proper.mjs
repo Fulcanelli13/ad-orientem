@@ -114,3 +114,54 @@ assert.equal(assessPrintableProper(directCommon,{language:"en"}).ok,true,
  "French-only defect must not block good Latin/English printable source");
 
 console.log("PASS printable bilingual 1962 Proper: 11 ordered sections, canonical provenance, EN/FR, escaped text, incomplete and special-rite exclusion");
+
+
+// Public Calendar printable Proper must agree with the Reader's old-Missal
+// French plural Common reconstruction; both original donor file owners
+// remain unchanged. These are *eligible ordinary Proper* fixtures.
+for(const kind of ["C6b","C7b"]){
+  const multipleVirgin=kind==="C6b";
+  const source="Commune/"+kind;
+  const latinLabel=multipleVirgin?"Vírginum et Mártyrum":"Mártyrum";
+  const latinPost=multipleVirgin?"Virgínibus et Martýribus":"Martýribus";
+  const englishLabel=multipleVirgin?"Virgins and Martyrs":"Martyrs";
+  const singular="votre sainte Vierge et Martyre N.";
+  const printable=structuredClone(r);
+  printable.proper.data.sourcePath=source;
+  printable.proper.data.calendarCommemorations=[];
+  printable.proper.data.secrets=[{
+    lat:"Inténde, Dómine, múnera pro sanctárum "+latinLabel+
+      " N. et N. festivitáte: concede.",
+    en:"Look upon these gifts for thy holy "+englishLabel+
+      " N. and N., and grant us pardon.",
+    fr:"Seigneur, voyez nos dons pour "+singular+" et pardonnez-nous."
+  }];
+  printable.proper.data.postcommunions=[{
+    lat:"Præsta nobis, Dómine, intercedéntibus sanctis "+latinPost+
+      " N. et N.: ut pura mente capiámus.",
+    en:"Grant at the intercession of thy holy "+englishLabel+
+      " N. and N. that we may receive with pure minds.",
+    fr:"Accordez-nous par l’intercession de "+singular+
+      " de recevoir avec un cœur pur."
+  }];
+  const snapshot=JSON.stringify(printable.proper.data);
+  const evaluated=assessPrintableProper(printable,{language:"fr"});
+  assert.equal(evaluated.ok,true,source+": complete French Common must print");
+  assert.equal(evaluated.sourceEditorialCorrections.length,2);
+  const expected=multipleVirgin?"vos saintes Vierges et Martyres N. et N.":
+    "vos saintes Martyres N. et N.";
+  for(const type of ["secret","postcommunion"]){
+    const row=evaluated.sections.find(x=>x.kind===type);
+    assert.ok(row?.latin&&row?.vernacular);
+    assert.ok(row.vernacular.includes(expected),type+": source-matched plural wrong");
+    assert.doesNotMatch(row.vernacular,/votre sainte Vierge et Martyre N\./u);
+  }
+  const html=renderPrintableProperHtml(printable,{language:"fr"});
+  assert.ok(html.includes(expected),source+": real print HTML lacks correction");
+  assert.match(html,/N\. et N\./);
+  const englishPrint=renderPrintableProperHtml(printable,{language:"en"});
+  assert.ok(englishPrint.includes("N. and N."));
+  assert.equal(JSON.stringify(printable.proper.data),snapshot,
+    source+": original source changed by print projection");
+}
+console.log("PASS eligible 1962 printable Commons C6b/C7b French plural (ICKSP source)");

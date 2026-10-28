@@ -1,0 +1,31 @@
+name: 1962 female Martyrs Commons French source parity
+
+on:
+  push:
+    branches:
+      - fix/1962-c6b-c7b-french-plural-source-parity-20261028
+  pull_request:
+    paths:
+      - 'src/mass/1962-plural-martyr-french-source.js'
+      - 'src/mass/proper-reader-slots.js'
+      - 'src/calendar/print-proper.js'
+      - 'tests/proper-reader-slots.mjs'
+      - 'tests/calendar-print-proper.mjs'
+      - '.github/workflows/1962-female-martyrs-commons-source.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  source-parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reader exact-source Commons and unrelated negatives
+        run: node tests/proper-reader-slots.mjs
+      - name: Printable 1962 Common French source and negative gates
+        run: node tests/calendar-print-proper.mjs

@@ -3,7 +3,7 @@
 import {calendarMassColour} from "./colour-projection.js";
 import {select1962CommemorationsForMassForm} from "../mass/1962-commemoration-form-source.js";
 import {correct1962ProperEditorialReferences} from "../mass/1962-proper-editorial-corrections.js";
-import {reconcile1962PerpetuaFelicityNonVirginCommon,inspect1962PluralMartyrsFrenchOrationSource} from "../mass/1962-plural-martyr-french-source.js";
+import {reconcile1962PerpetuaFelicityNonVirginCommon,reconcile1962PluralFemaleMartyrsCommonFrench,inspect1962PluralMartyrsFrenchOrationSource} from "../mass/1962-plural-martyr-french-source.js";
 import {project1962Pent21AlleluiaDisplayRows,PS113_PENT21_ENGLISH_EDITORIAL} from "../mass/1962-ps113-alleluia-editorial.js";
 
 const escapeHtml=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
@@ -62,6 +62,7 @@ export function assessResolvedProperTextSections(proper,{language="en"}={}){
   // preserved. Any still-invalid named Latin (either print language), or
   // deficient French-only plural Common, must be withheld.
   p=reconcile1962PerpetuaFelicityNonVirginCommon(p);
+  p=reconcile1962PluralFemaleMartyrsCommonFrench(p);
   for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
     const hold=inspect1962PluralMartyrsFrenchOrationSource(p,slot);
     if(hold&&(language==="fr"||hold.sourceLatinIncorrect===true))

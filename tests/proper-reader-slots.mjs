@@ -200,8 +200,12 @@ assert.equal(guarded.slots.COLLECT_SET.status,"READY","Other proper prayers unch
 assert.equal(JSON.stringify(affected),untouched,"Never modify the resolved Proper source");
 
 const inheritedNonVirgin=properToReaderSlots({...affected,sourcePath:"Commune/C7b"},{language:"fr"});
-assert.equal(inheritedNonVirgin.slots.SECRET_SET.status,"MISSING");
-assert.equal(inheritedNonVirgin.slots.POSTCOMMUNION_SET.status,"MISSING");
+assert.equal(inheritedNonVirgin.slots.SECRET_SET.status,"READY",
+  "C7b non-Virgin Common has certified French plural source restoration");
+assert.equal(inheritedNonVirgin.slots.POSTCOMMUNION_SET.status,"READY");
+assert.equal(inheritedNonVirgin.sourceEditorialCorrections?.length,2);
+assert.match(inheritedNonVirgin.slots.SECRET_SET.data.paragraphs[0].vernacular,
+  /vos saintes Martyres N\. et N\./);
 const exactPlural=properToReaderSlots({...affected,
   secrets:[{lat:martyrLatin,fr:goodFrench}],
   postcommunions:[{lat:martyrLatin,fr:goodFrench}],
@@ -372,3 +376,95 @@ assert.equal(namedProper.collects[0].fr,incorrectFrench,
   "Actual source text immutable under read-only editor guard");
 
 console.log("Proper → reader slots: PASS — EN/FR vernacular projection, certified suppressions, no duplicate Gradual/Alleluia.");
+
+
+// ICKSP traditional (pre-1970) Missal gives plural French texts for C6b/C7b.
+// The pinned Divinum Officium French donor instead carries singular "N." in
+// Secreta/Postcommunio. This is the only source-verified direct Common fix.
+// https://icrspfrance.fr/textes-liturgiques.php?article=a0337_ancien
+// https://icrspfrance.fr/textes-liturgiques.php?article=a0342_ancien
+const pluralMartyrCommons=Object.freeze([
+  {path:"Commune/C6b",latinCategory:"Vírginum et Mártyrum",
+    latinPost:"Virgínibus et Martýribus",
+    englishCategory:"Virgins and Martyrs",
+    expectedFrench:"vos saintes Vierges et Martyres N. et N."},
+  {path:"Commune/C7b",latinCategory:"Mártyrum",
+    latinPost:"Martýribus",
+    englishCategory:"Martyrs",
+    expectedFrench:"vos saintes Martyres N. et N."},
+]);
+for(const entry of pluralMartyrCommons){
+  const singular="votre sainte Vierge et Martyre N.";
+  const direct={...frenchProper,sourcePath:entry.path,
+    secrets:[{lat:"Inténde, Dómine, múnera pro sanctárum "+entry.latinCategory+
+      " tuárum N. et N. festivitáte: ut veniam largiáris.",
+      en:"O Lord, look upon gifts for thy holy "+entry.englishCategory+
+      " N. and N., and grant us pardon.",
+      fr:"Prêtez attention, Seigneur, aux offrandes de "+singular+
+      " pour nous accorder votre pardon."}],
+    postcommunions:[{lat:"Præsta nobis, Dómine, intercedéntibus sanctis "+
+      entry.latinPost+" tuis N. et N.: pura mente capiámus.",
+      en:"Grant, O Lord, at the intercession of thy holy "+
+      entry.englishCategory+" N. and N., to receive with pure minds.",
+      fr:"Accordez-nous, Seigneur, par l’intercession de "+singular+
+      " de recevoir avec un cœur pur."}]
+  };
+  const original=JSON.stringify(direct);
+  const revised=properToReaderSlots(direct,{language:"fr"});
+  for(const slot of ["SECRET_SET","POSTCOMMUNION_SET"]){
+    assert.equal(revised.slots[slot].status,"READY",
+      entry.path+": source-backed French prayer still withheld "+slot);
+    assert.match(revised.slots[slot].data.paragraphs[0].vernacular,
+      /vos saintes (?:Vierges et )?Martyres N\. et N\./u,
+      entry.path+": plural French text missing "+slot);
+    assert.ok(revised.slots[slot].data.paragraphs[0].vernacular.includes(
+      entry.expectedFrench),entry.path+": wrong 1962 Common category");
+    assert.doesNotMatch(revised.slots[slot].data.paragraphs[0].vernacular,
+      /votre sainte Vierge et Martyre N\./u);
+  }
+  assert.equal(revised.sourceEditorialCorrections?.length,2,
+    entry.path+": two ICKSP authoritative corrections must be proved");
+  assert.ok(revised.sourceEditorialCorrections.every(x=>
+    x.sourcePath===entry.path&&x.fields.length===1&&x.fields[0]==="fr"&&
+    x.authority==="ICRSP_1962_MULTIPLE_MARTYRS_COMMON_OLD_MISSAL"&&
+    x.originalSourcePreserved===true));
+  assert.equal(JSON.stringify(direct),original,entry.path+" source modified");
+  const english=properToReaderSlots(direct,{language:"en"});
+  assert.equal(english.slots.SECRET_SET.status,"READY");
+  assert.equal(english.slots.POSTCOMMUNION_SET.status,"READY");
+  assert.match(english.slots.SECRET_SET.data.paragraphs[0].vernacular,/N\. and N\./);
+  const alreadyPlural={...direct,
+    secrets:[{...direct.secrets[0],fr:direct.secrets[0].fr.replace(
+      singular,entry.expectedFrench)}],
+    postcommunions:[{...direct.postcommunions[0],
+      fr:direct.postcommunions[0].fr.replace(singular,entry.expectedFrench)}]
+  };
+  const allowed=properToReaderSlots(alreadyPlural,{language:"fr"});
+  assert.equal(allowed.slots.SECRET_SET.status,"READY");
+  assert.equal(allowed.slots.POSTCOMMUNION_SET.status,"READY");
+  assert.equal(allowed.sourceEditorialCorrections?.length??0,0,
+    "Already-correct source cannot acquire a new editorial correction");
+  const missingSecondLatin={...direct,
+    secrets:[{...direct.secrets[0],lat:direct.secrets[0].lat.replace(
+      "N. et N.","N.")}]};
+  assert.equal(properToReaderSlots(missingSecondLatin,{language:"fr"})
+    .sourceEditorialCorrections?.length,1,
+    "Never derive a plural French Secret when Latin lacks both saints");
+  assert.equal(properToReaderSlots(missingSecondLatin,{language:"fr"})
+    .slots.SECRET_SET.status,"READY",
+    "Do not rewrite unrelated one-name text without an authenticated Latin plural");
+  const wrongEnglish={...direct,
+    secrets:[{...direct.secrets[0],en:"Single Martyr N."}]};
+  assert.equal(properToReaderSlots(wrongEnglish,{language:"fr"})
+    .sourceEditorialCorrections?.length,1,
+    "Do not pluralize without an independently matching English source");
+  const nested={...direct,sourcePath:"Sancti/11-11"};
+  assert.equal(properToReaderSlots(nested,{language:"fr"})
+    .sourceEditorialCorrections?.length??0,0,
+    "Never apply direct Common correction to a named Proper");
+  const ambiguous={...direct,secrets:[...direct.secrets,direct.secrets[0]]};
+  assert.equal(properToReaderSlots(ambiguous,{language:"fr"})
+    .sourceEditorialCorrections?.length,1,
+    "Multiple oration rows cannot be projected as one source");
+}
+console.log("PASS ICKSP 1962 plural French Common C6b/C7b: source-owner, bilingual, idempotent, immutability and negative cases");

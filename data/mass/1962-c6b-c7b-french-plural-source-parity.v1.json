@@ -1,0 +1,103 @@
+{
+  "schema": "AO_1962_C6B_C7B_FRENCH_PLURAL_SOURCE_PARITY_V1",
+  "date": "2026-10-28",
+  "edition": "ICRSP_OLD_MISSAL_1962",
+  "purpose": "Repair only the singular saint-reference phrase in C6b/C7b French Secret and Postcommunion when original Latin/English independently attest two female Martyrs.",
+  "authoritativeFrenchSources": [
+    {
+      "common": "Commune/C6b",
+      "title": "Pour plusieurs Vierges Martyres",
+      "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0337_ancien",
+      "sections": [
+        "Secreta",
+        "Postcommunio"
+      ],
+      "sourceAuthority": "ICRSP_FRANCE_TRADITIONAL_1962"
+    },
+    {
+      "common": "Commune/C7b",
+      "title": "Commun des Saintes Femmes I : pour plusieurs Martyres",
+      "url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0342_ancien",
+      "sections": [
+        "Secreta",
+        "Postcommunio"
+      ],
+      "sourceAuthority": "ICRSP_FRANCE_TRADITIONAL_1962"
+    }
+  ],
+  "pinnedDonor": {
+    "repo": "DivinumOfficium/divinum-officium",
+    "commit": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+    "witnesses": [
+      {
+        "path": "web/www/horas/Latin/Commune/C6b.txt",
+        "blobSha": "49ba7690a3043419ecc673abac6ec229554ab78d"
+      },
+      {
+        "path": "web/www/horas/Francais/Commune/C6b.txt",
+        "blobSha": "7807147ed57e87b4bbda1bcef7d0ab4bada46aa7"
+      },
+      {
+        "path": "web/www/horas/English/Commune/C6b.txt",
+        "blobSha": "d6f8214cd34addcab70795b3506b09587e90b5e4"
+      },
+      {
+        "path": "web/www/horas/Latin/Commune/C7b.txt",
+        "blobSha": "e87cd5cf73c353b8916fd1b6db126fda0362feaa"
+      },
+      {
+        "path": "web/www/horas/Francais/Commune/C7b.txt",
+        "blobSha": "5e67d7a19475985fd1a4e8ea329e1127fbd17c78"
+      },
+      {
+        "path": "web/www/horas/English/Commune/C7b.txt",
+        "blobSha": "9f15a2920898dc53aab1850211510469d40fa86a"
+      }
+    ]
+  },
+  "sourceConflict": {
+    "issue": "C6b French donor Secreta/Postcommunio are for one Virgin Martyr N., whereas Latin and English explicitly specify N. et N./N. and N. French C7b references C6b with substitutions that cannot create the absent second saint.",
+    "requiredC6b": "vos saintes Vierges et Martyres N. et N.",
+    "requiredC7b": "vos saintes Martyres N. et N.",
+    "correctionScope": "Exact old singular grammatical phrase only, never rewrite entire prayer. Historical ICRSP publication independently confirms the plural category and both names.",
+    "foreignBodyRewritten": false,
+    "donorMutated": false
+  },
+  "safety": {
+    "exactOwners": [
+      "Commune/C6b",
+      "Commune/C7b"
+    ],
+    "slots": [
+      "SECRET_SET",
+      "POSTCOMMUNION_SET"
+    ],
+    "languages": [
+      "fr"
+    ],
+    "requiredEvidence": [
+      "single directly-owned oration row",
+      "Latin and English each explicitly plural N. and N.",
+      "Latin female Martyr category matches specified Common",
+      "English category independently matches",
+      "single exact French singular donor phrase"
+    ],
+    "failClosed": [
+      "unrecognized wording",
+      "ambiguous number/order of orations",
+      "different source owner",
+      "missing Latin or English plural",
+      "inconsistent Virgin-vs-nonVirgin classification"
+    ],
+    "preserved": [
+      "English reader",
+      "Latin prayer",
+      "Sanctoral selection",
+      "existing 65-card Mass architecture",
+      "all original donor source bytes"
+    ]
+  },
+  "reachability": "DIRECT_COMMON_SELECTED_CALENDAR_ROUTE_NOT_YET_PROVEN; source-authenticated projection tests do not imply any calendar date selects these Commons directly.",
+  "validation": "Dedicated CI: tests/proper-reader-slots.mjs and tests/calendar-print-proper.mjs",
+  "priorFix": "PR #1788 (merged): Saints Perpetua and Felicity on March 6, separately and already corrected."
+}
