@@ -11,21 +11,23 @@ import {readFileSync,mkdirSync,writeFileSync,copyFileSync} from "node:fs";
 import {resolve,join} from "node:path";
 import {renderOfficeMassStyleResearchReader} from "../../src/office/mass-style-research-reader.js";
 import {missingOfficeSourceCells} from "../../src/office/research-reader.js";
+import {officeTranslationContentBlockers} from "../../src/office/source-content-gate.js";
 
 const HOURS=["MATINS","LAUDS","PRIME","TERCE","SEXT","NONE","VESPERS","COMPLINE"];
 const safeDate=s=>typeof s==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(s);
 function pilotRoot(){
   const args=process.argv.slice(2);
   const flags=args.slice(2);
-  const permitted=["--quarantine-unaligned","--quarantine-missing-translations"];
+  const permitted=["--quarantine-unaligned","--quarantine-missing-translations","--quarantine-content-scope"];
   if(args.length<2||args[0]!=="--out"||!args[1]||
     flags.length!==new Set(flags).size||flags.some(flag=>!permitted.includes(flag)))
     throw Error("OFFICE_MASS_PREVIEW_OUT_REQUIRED");
   return {root:resolve(args[1]),quarantineUnaligned:flags.includes("--quarantine-unaligned"),
-    quarantineMissingTranslations:flags.includes("--quarantine-missing-translations")};
+    quarantineMissingTranslations:flags.includes("--quarantine-missing-translations"),
+    quarantineContentScope:flags.includes("--quarantine-content-scope")};
 }
 function build(){
-  const {root,quarantineUnaligned,quarantineMissingTranslations}=pilotRoot();
+  const {root,quarantineUnaligned,quarantineMissingTranslations,quarantineContentScope}=pilotRoot();
   const normalized=JSON.parse(readFileSync(join(root,"normalized-manifest.json"),"utf8"));
   if(normalized.schema!=="ao.office.normalization-audit.v1"||normalized.published!==0||
     normalized.liturgicallyVerified!==0)throw Error("OFFICE_MASS_PREVIEW_RESEARCH_ONLY");
@@ -60,16 +62,23 @@ function build(){
   const locales=["en","fr"];
   for(const [key,group] of groups){
     if(!eligibleGroups.has(key))continue;
+    const latin=JSON.parse(readFileSync(join(root,group.la.date,group.la.hour.toLowerCase(),
+      "la.research.json"),"utf8"));
     for(const locale of locales){
       const d=JSON.parse(readFileSync(join(root,group.la.date,group.la.hour.toLowerCase(),
         locale+".research.json"),"utf8"));
       const missing=missingOfficeSourceCells(d);
-      if(missing.length){
-        if(!quarantineMissingTranslations)
+      const semantic=officeTranslationContentBlockers({latin,translation:d});
+      if(missing.length||semantic.length){
+        if(missing.length&&!quarantineMissingTranslations)
           throw Error("OFFICE_MASS_PREVIEW_MISSING_TRANSLATION:"+key+":"+locale);
+        if(semantic.length&&!quarantineContentScope)
+          throw Error("OFFICE_MASS_PREVIEW_CONTENT_SCOPE_MISMATCH:"+key+":"+locale);
         blockedLocalePages.push({date:group.la.date,hour:group.la.hour,locale,
-          reason:"UPSTREAM_UNRESOLVED_TRANSLATION",
-          missingSourceCellIds:missing.map(x=>x.sourceCellId)});
+          reason:semantic.length?"SOURCE_TRANSLATION_SEMANTIC_MISMATCH":"UPSTREAM_UNRESOLVED_TRANSLATION",
+          missingSourceCellIds:missing.map(x=>x.sourceCellId),
+          semanticBlockerSourceIds:semantic.map(x=>x.translationSourceCellId),
+          semanticBlockerReasons:semantic.map(x=>x.reason)});
       }else allowedLocalePages.add(key+":"+locale);
     }
   }
@@ -115,6 +124,7 @@ function build(){
     quarantinedSourceHours:quarantined,
     quarantinedSourceHourCount:quarantined.length,
     missingTranslationQuarantineEnabled:quarantineMissingTranslations,
+    contentScopeQuarantineEnabled:quarantineContentScope,
     blockedLocalePageCount:blockedLocalePages.length,
     blockedLocalePages:blockedLocalePages,
     pages:files.length,byHour,
