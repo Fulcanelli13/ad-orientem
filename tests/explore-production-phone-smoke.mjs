@@ -25,7 +25,28 @@ try{
    locale,reducedMotion:"reduce",permissions:[],
   });
   const page=await context.newPage();
-  const record={width,locale,passed:false,steps:[],errors:[],failedResponses:[],bytesByType:{},bytesByHost:{},largestResources:[],timingsMs:{},scriptureInitiators:[]};
+  // Diagnostic-only: observe legacy ScriptureService invocation, delegate unchanged.
+  // Installed before app boot; does not alter sources or returned documents.
+  await page.addInitScript(()=>{
+    let current;
+    const history=[];
+    Object.defineProperty(window,"__AO_TRACE_SVC_CALLS",{value:history});
+    Object.defineProperty(window,"AO_RUNTIME_V8",{configurable:true,enumerable:true,
+      get(){return current},set(next){
+        current=next;
+        const svc=next?.scriptureService;
+        if(!svc||typeof svc.load!=="function"||svc.__aoTraceInstalled)return;
+        const original=svc.load;
+        svc.load=function(...args){
+          history.push({kind:String(args[0]??""),text:String(args[1]??"").slice(0,100),
+           contextOnly:Boolean(args[2]?.contextOnly),stack:String(new Error().stack||"").split("\n").slice(1,10)});
+          return original.apply(this,args);
+        };
+        Object.defineProperty(svc,"__aoTraceInstalled",{value:true});
+      }
+    });
+  });
+  const record={width,locale,passed:false,steps:[],errors:[],failedResponses:[],bytesByType:{},bytesByHost:{},largestResources:[],timingsMs:{},scriptureInitiators:[],scriptureCalls:[]};
   const cdp=await context.newCDPSession(page);
   await cdp.send("Network.enable");
   let phase="bootstrap";
@@ -178,6 +199,7 @@ try{
    assert.equal(record.errors.length,0,"Production JS errors: "+record.errors.join(" | "));
    // Failed external image/tiles requests are recorded for human diagnosis;
    // they do not automatically imply the whole app is broken.
+   record.scriptureCalls=await page.evaluate(()=>globalThis.__AO_TRACE_SVC_CALLS??[]);
    record.passed=true;
    record.viewportCount=label;
    record.dimensions=dimensions;
