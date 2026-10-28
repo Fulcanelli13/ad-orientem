@@ -1,0 +1,1044 @@
+{
+  "schema": "ad-orientem.icksp-devotional-gaps.b01",
+  "date": "2026-10-28",
+  "state": "RESEARCH_CANDIDATES_ONLY_NO_TEXT_LICENSED",
+  "input_sources": [
+    "https://institute-christ-king.org/resources/devotions-prayers",
+    "https://icrspfrance.fr/textes-liturgiques.php"
+  ],
+  "comparison_scope": "48 canonical entries in src/pray/canonical-data.js on current main, plus title probes of traditional-pray-data.js and traditional-pray-runtime.js; DOES NOT establish global absence across all modules; pass 2 checked active traditional hymns and runtime, novena corpus and runtime, and Christ the King supplemental forms.",
+  "total_source_categories": {
+    "us_index": 9,
+    "french_office_selected": 13
+  },
+  "item_count": 25,
+  "items": [
+    {
+      "id": "icksp_us_immaculate_conception_consecration",
+      "title": "Consecration to the Immaculate Conception",
+      "source": "ICKSP_US_DEVOTIONS",
+      "source_url": "https://institute-christ-king.org/resources/devotions-prayers/610-devotions-consecration-immaculate-conception",
+      "source_verified": "FULL_TEXT_FOUND_ON_ICKSP_UK",
+      "canonical_48_status": "distinct-from-existing-immaculate-heart-consecration",
+      "priority": "P1",
+      "category": "Marian consecration",
+      "target": "Marian devotions; calendar 8 December",
+      "editorial_notes": "The posted wording consecrates the Institute, its families, apostolates and works. Do NOT silently turn into a generic personal consecration; retain Institute context. Exact source preserved as link.",
+      "full_text_import": "NOT_AUTHORIZED",
+      "release_status": "RESEARCH_ONLY",
+      "verified": "FULL_TEXT_FOUND_ON_ICKSP_UK",
+      "alternative_source_url": "https://icksp.org.uk/newbrighton/consecration-to-our-lady/",
+      "source_body_text_accessible": true,
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Institute-specific consecration — not a generic personal prayer",
+      "app_match_refs": [],
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "review_group": "INSTITUTE_SPECIFIC_DEVOTION",
+      "source_selection_status": "ACCEPTED"
+    },
+    {
+      "id": "icksp_us_dedication_to_christ_king",
+      "title": "Dedication to Christ the King",
+      "source": "ICKSP_US_DEVOTIONS",
+      "source_url": "https://institute-christ-king.org/resources/devotions-prayers/611-devotions-dedication-christ-king",
+      "source_verified": "ENGLISH_AND_LATIN_PAGE_READ",
+      "canonical_48_status": "close-existing-form-compare",
+      "priority": "P2",
+      "category": "Christ the King",
+      "target": "Christ the King devotional; calendar feast",
+      "editorial_notes": "Canonical prayer id devotion_consecration_christ_king already exists and begins O Jesus Christ I acknowledge Thee as universal King; compare the full ICKSP English/Latin version word-for-word before adding a separate tab. Not a missing category.",
+      "full_text_import": "NOT_AUTHORIZED",
+      "release_status": "RESEARCH_ONLY",
+      "verified": "ENGLISH_AND_LATIN_PAGE_READ",
+      "canonical_matches": [
+        "devotion_consecration_christ_king"
+      ],
+      "source_body_text_accessible": true,
+      "app_coverage_status": "EXISTING_SAME_UNDERLYING_PRAYER",
+      "app_coverage_label": "Already in Pray — same Latin prayer, English wording variant",
+      "app_match_refs": [
+        "canonical-data.js#devotion_consecration_christ_king"
+      ],
+      "next_action": "Reuse the canonical prayer; collate wording and source attribution, not a duplicate card.",
+      "review_group": "EXISTING_OR_RELATED",
+      "source_selection_status": "ACCEPTED"
+    },
+    {
+      "id": "icksp_us_prayer_reparation",
+      "title": "Prayer of Reparation",
+      "source": "ICKSP_US_DEVOTIONS",
+      "source_url": "https://institute-christ-king.org/resources/devotions-prayers/613-devotions-reparation",
+      "source_verified": "INDEX_ONLY_PAGE_403",
+      "canonical_48_status": "related-existing-form-text-unverified",
+      "priority": "P2",
+      "category": "Sacred Heart; reparation",
+      "target": "Sacred Heart devotions; First Friday contextual suggestion",
+      "editorial_notes": "Canonical prayer sacred_heart_short_prayer is Pius XI-era Act of Reparation. Source page returned 403; no evidence the ICKSP wording is identical, so classify as comparison pending, not a new missing text.",
+      "full_text_import": "NOT_AUTHORIZED",
+      "release_status": "RESEARCH_ONLY",
+      "verified": "INDEX_ONLY_PAGE_403",
+      "canonical_matches": [
+        "sacred_heart_short_prayer"
+      ],
+      "source_body_text_accessible": false,
+      "app_coverage_status": "EXISTING_RELATED_UNVERIFIED_EXACT",
+      "app_coverage_label": "Related Act of Reparation already in Pray — exact ICKSP text unverified",
+      "app_match_refs": [
+        "canonical-data.js#sacred_heart_short_prayer",
+        "traditional-pray-runtime.js#renderSacredHeart"
+      ],
+      "next_action": "Locate ICKSP wording before deciding whether a distinct translation exists.",
+      "review_group": "EXISTING_OR_RELATED",
+      "source_selection_status": "ACCEPTED"
+    },
+    {
+      "id": "icksp_us_prayer_for_priests_sacred_heart",
+      "title": "Prayer for Priests — O Jesus, Eternal Priest",
+      "source": "ICKSP_US_DEVOTIONS",
+      "source_url": "https://institute-christ-king.org/resources/devotions-prayers/614-devotions-prayer-priests",
+      "source_verified": "ENGLISH_BODY_READ",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P0",
+      "category": "Prayer for priests",
+      "target": "Priesthood, vocations, optional First Thursday",
+      "editorial_notes": "Distinct prayer for priests under the Sacred Heart of Jesus. The ICKSP webpage contains a formatting glitch in its second prayer; do not ingest uncorrected verbatim web text.",
+      "full_text_import": "ENGLISH_ORIGINAL_ONLY",
+      "release_status": "IMPLEMENTED_ON_PR_BRANCH_NOT_MERGED",
+      "verified": "ENGLISH_BODY_READ",
+      "source_body_text_accessible": true,
+      "app_coverage_status": "IMPLEMENTED_IN_DRAFT_ENGLISH_ONLY",
+      "app_coverage_label": "O Jesus Eternal Priest implemented from ICKSP English; verified French/Latin not available",
+      "app_match_refs": [],
+      "next_action": "Run full Node/Playwright tests, collate 1914 original, locate independently attested French translation if available",
+      "review_group": "POTENTIAL_PERSONAL_DEVOTION",
+      "source_selection_status": "ACCEPTED",
+      "historical_witness_candidate": {
+        "work": "The American Ecclesiastical Review",
+        "volume": 50,
+        "pages": "608–609",
+        "year": 1914,
+        "secondary_evidence_url": "https://fauxtations.wordpress.com/2016/10/01/st-therese-and-praying-for-priests/",
+        "primary_copy_url": "https://books.google.com/books?id=2tPNAAAAMAAJ",
+        "status": "HISTORICAL_DATE_LOCATED_PRIMARY_PAGE_IMAGE_NOT_COLLATED",
+        "attribution_warning": "Frequently attributed to St Thérèse, but the 1914 printed witness associates the published prayer with a Sister of the Holy Child in Pennsylvania, not with St Thérèse. Do not attribute authorship to the saint without primary evidence.",
+        "next_gate": "Inspect 1914 issue page image and compare the exact English form to ICKSP text before importing."
+      },
+      "app_integration_route": "pray.prayers_for_priests",
+      "text_witnesses": {
+        "en": "https://institute-christ-king.org/resources/devotions-prayers/614-devotions-prayer-priests",
+        "historicalLead": "American Ecclesiastical Review, vol. 50 (1914), pp. 608-609; original page remains uncollated"
+      }
+    },
+    {
+      "id": "icksp_us_prayer_for_priests_second",
+      "title": "Prayer for Priests — Sacred Heart, Eternal High Priest",
+      "source": "ICKSP_US_DEVOTIONS",
+      "source_url": "https://institute-christ-king.org/resources/devotions-prayers/614-devotions-prayer-priests",
+      "source_verified": "ENGLISH_BODY_WITH_COPY_ERROR",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P1",
+      "category": "Prayer for priests",
+      "target": "Priesthood, vocations",
+      "editorial_notes": "Second distinct prayer on same ICKSP page. Text has a likely copy/paste error ('on here'); exact historical witness and editorial correction required before publishing.",
+      "full_text_import": "NOT_AUTHORIZED",
+      "release_status": "SOURCE_CORRUPTION_HOLD",
+      "verified": "ENGLISH_BODY_WITH_COPY_ERROR",
+      "source_body_text_accessible": true,
+      "relation": "SECOND_PRAYER_SAME_PAGE",
+      "app_coverage_status": "INDEXED_LINKED_NOT_PUBLISHED_CORRUPT",
+      "app_coverage_label": "Second priest prayer distinct, linked as held source; corrupted published line",
+      "app_match_refs": [],
+      "next_action": "Find independent authoritative form and remove source corruption without conjectural repair",
+      "review_group": "POTENTIAL_PERSONAL_DEVOTION",
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.prayers_for_priests"
+    },
+    {
+      "id": "icksp_us_prayer_infant_jesus",
+      "title": "Prayer to the Infant Jesus",
+      "source": "ICKSP_US_DEVOTIONS",
+      "source_url": "https://institute-christ-king.org/resources/devotions-prayers/615-devotions-prayer-infant-jesus",
+      "source_verified": "INDEX_ONLY_PAGE_403",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P1",
+      "category": "Holy Childhood",
+      "target": "Infant Jesus; Christmas season",
+      "editorial_notes": "ICKSP index confirms distinct prayer but direct body was inaccessible (403). Need a reliable source text witness; no fabricated prayer text.",
+      "full_text_import": "NOT_AUTHORIZED",
+      "release_status": "RESEARCH_ONLY",
+      "verified": "INDEX_ONLY_PAGE_403",
+      "source_body_text_accessible": false,
+      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
+      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_match_refs": [],
+      "next_action": "Identify original Latin collect or approved votive formulary, check denomination and date, then surface in Infant Jesus devotions if lawful source text available",
+      "review_group": "POTENTIAL_PERSONAL_DEVOTION",
+      "source_selection_status": "ACCEPTED",
+      "text_identity": "SEPARATE_VOTIVE_MASS_PRAYER_NOT_CYRIL_NOVENA",
+      "source_origin": "ICKSP page explicitly says 'From the Votive Mass to the Infant Jesus'",
+      "source_body_url": "https://institute-christ-king.org/resources/devotions-prayers/615-devotions-prayer-infant-jesus",
+      "rubrical_hold": "Source article does not establish authority or edition as part of the universal 1962 Roman Missal; do not add to Mass Proper automatically"
+    },
+    {
+      "id": "icksp_us_novena_divine_infant_king",
+      "title": "Novena to the Divine Infant King",
+      "source": "ICKSP_US_DEVOTIONS",
+      "source_url": "https://institute-christ-king.org/resources/devotions-prayers/616-devotions-prayer-infant-king",
+      "source_verified": "ENGLISH_COMPLETE_BODY_READ",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P0",
+      "category": "Novena to the Divine Infant King",
+      "target": "Novenas; Infant Jesus",
+      "editorial_notes": "A complete prayer attributed on the ICKSP page to Venerable Father Cyril, OCD; the article calls it a novena, but does not itself prove nine distinct day texts. Model a repeated prayer with days 1–9 only after practice validation.",
+      "full_text_import": "HISTORICAL_LASANCE_1904_EN_AND_FRENCH_1885_NOTICE_TRANSCRIPTION",
+      "release_status": "IMPLEMENTED_ON_PR_BRANCH_NOT_MERGED",
+      "verified": "ENGLISH_COMPLETE_BODY_READ",
+      "source_body_text_accessible": true,
+      "app_coverage_status": "IMPLEMENTED_IN_DRAFT_IN_EXISTING_NOVENA_READER",
+      "app_coverage_label": "Divine Infant King nine-day prayer available in Novenas draft, historical EN/FR witnesses and monthly 17–25",
+      "app_match_refs": [],
+      "next_action": "Perform full Node/Playwright regression before merge; preserve original 16 canonical novenas and 1904 English text, French transcription's 1885 Vidi note",
+      "review_group": "POTENTIAL_PERSONAL_DEVOTION",
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.novenas?novenaId=divine_infant_king",
+      "practice": "REPEAT_SAME_PRAYER_NINE_DAYS; ICKSP_MONTHLY_17_25",
+      "text_witnesses": {
+        "en": "https://en.wikisource.org/wiki/Prayer-book_for_Religious/Book_4",
+        "fr": "https://prieresetdevotions.blogspot.com/2007/07/prire-efficace-lenfant-jsus-rvle-par-la.html",
+        "frInstitute": "https://icrspfrance.fr/?page=child-jesus-prayers",
+        "icksp": "https://institute-christ-king.org/resources/devotions-prayers/616-devotions-prayer-infant-king",
+        "practice": "https://institute-christ-king.org/kansascity-home"
+      }
+    },
+    {
+      "id": "icksp_us_august_queen_heaven",
+      "title": "Prayer to the Virgin: Remedy Against Evil Spirits",
+      "source": "ICKSP_US_DEVOTIONS",
+      "source_url": "https://institute-christ-king.org/resources/devotions-prayers/617-devotions-prayer-virgin-remedy",
+      "source_verified": "FULL_ENGLISH_BODY_FOUND_ON_ICKSP_UK",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P0",
+      "category": "Marian protection",
+      "target": "Marian; protection; St Michael related links",
+      "editorial_notes": "August Queen of Heaven prayer attributed to Fr Cestac (1864); full parallel ICKSP UK witness exists. Source cites a historical indulgence in 1908: never present this as a current indulgence.",
+      "full_text_import": "HISTORIC_ORIGINAL_LANGUAGE_WITNESSES_ADDED",
+      "release_status": "IMPLEMENTED_ON_PR_BRANCH_NOT_MERGED",
+      "verified": "FULL_ENGLISH_BODY_FOUND_ON_ICKSP_UK",
+      "alternative_source_url": "https://icksp.org.uk/newbrighton/consecration-to-our-lady/",
+      "source_body_text_accessible": true,
+      "app_coverage_status": "IMPLEMENTED_IN_DRAFT_CORRECTED_SOURCE_BOUNDARIES",
+      "app_coverage_label": "Historical English and French prayer implemented; original language boundaries corrected",
+      "app_match_refs": [],
+      "next_action": "Run full Node/Playwright tests before release; verify English/French full text and source punctuation in reader",
+      "review_group": "POTENTIAL_PERSONAL_DEVOTION",
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.marian_protection",
+      "text_witnesses": {
+        "en": "https://www.gutenberg.org/cache/epub/48887/pg48887-images.html",
+        "fr": "https://servantesdemarie.com/fr/pages/pere-cestac-priere-spiritualite-accompagnement-soutien-vierge-marie-auguste-reine"
+      },
+      "translation_policy": "NO_ITALIAN_OR_UNVERIFIED_LATIN; historical EN and FR recensions individually attributed"
+    },
+    {
+      "id": "icksp_us_novena_immaculate_conception",
+      "title": "Novena to the Immaculate Conception",
+      "source": "ICKSP_US_DEVOTIONS",
+      "source_url": "https://institute-christ-king.org/resources/devotions-prayers/619-devotions-novena-immaculate-conception",
+      "source_verified": "ALT_ICKSP_FULL_TEXT_CONFIRMED",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P0",
+      "category": "Marian novena",
+      "target": "Novenas; calendar 29 November–7 December contextual",
+      "editorial_notes": "Link from index is inaccessible (403), but official ICKSP 2020 and 2019 novena sources provide the full independent prayer and its context. Keep novena prayer separate from the consecration and Marian hymns.",
+      "full_text_import": "NOT_AUTHORIZED",
+      "release_status": "RESEARCH_ONLY",
+      "verified": "ALT_ICKSP_FULL_TEXT_CONFIRMED",
+      "alternative_source_url": "https://institute-christ-king.org/news/1017-immaculate-conception-novena-tota-pulchra-es-o-maria",
+      "source_body_text_accessible": true,
+      "app_coverage_status": "EXISTING_NOVENA_DIFFERENT_WITNESS",
+      "app_coverage_label": "Novena already in Pray — compare ICKSP source form",
+      "app_match_refs": [
+        "novena-corpus.js#immaculate_conception"
+      ],
+      "next_action": "Compare ICKSP novena to the Moran 1883 day-specific form rather than duplicate automatically.",
+      "review_group": "EXISTING_OR_RELATED",
+      "source_selection_status": "ACCEPTED"
+    },
+    {
+      "id": "icksp_us_therese_perpetual_novena",
+      "title": "Perpetual Novena in Honor of St Thérèse of the Child Jesus",
+      "source": "ICKSP_US_DEVOTIONS",
+      "source_url": "https://institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
+      "source_verified": "COMPLETE_PAGE_READ",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P0",
+      "category": "St Thérèse novena",
+      "target": "Novenas; saints; user-opt-in recurrence",
+      "editorial_notes": "ICKSP holds a Tuesday 7:30pm ET perpetual novena. Do not display local U.S. time as universal or enable automatic recurring reminders. Includes the prayer, versicles, collect and traditional basic prayers; should be one guided set with no duplicated Our Father/Hail Mary/Glory Be.",
+      "full_text_import": "NOT_AUTHORIZED",
+      "release_status": "SOURCE_LINK_ROUTED_IN_DRAFT",
+      "verified": "COMPLETE_PAGE_READ",
+      "source_body_text_accessible": true,
+      "child_sources": [
+        "st_therese_novena_collect",
+        "st_therese_missionaries",
+        "st_therese_benedict_xv"
+      ],
+      "app_coverage_status": "INDEXED_SOURCE_LINKED_IN_DRAFT",
+      "app_coverage_label": "Institute perpetual Tuesday novena linked in St Thérèse reader; member intentions preserved at source",
+      "app_match_refs": [
+        "novena-corpus.js#st_therese"
+      ],
+      "next_action": "Find source-backed reusable original booklet or institutional permission-free edition to embed full exact prayer; no user selection approval required.",
+      "review_group": "EXISTING_OR_RELATED",
+      "source_selection_status": "ACCEPTED",
+      "text_identity": "INSTITUTE_PERPETUAL_TUESDAY_PRAYER_INCLUDES_MEMBERSHIP_INTENTIONS",
+      "source_body_url": "https://www.institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
+      "institution_specific_embedded_intentions": "Little Flower Recurring Gift Society included in published novena; not genericized",
+      "historical_source_gate": "Need an earlier/public-domain authentic prayer witness or licensable formula before importing complete current ICKSP text; link remains accepted",
+      "practice": "ICKSP Tuesday shared novena; 7:30 pm ET session time not universal prayer requirement",
+      "app_integration_route": "pray.st_therese_devotions",
+      "notes": "Source link only, text not reproduced or genericized. Tuesday service time specific to US venue, not required universally."
+    },
+    {
+      "id": "icksp_us_therese_for_missionaries",
+      "title": "Prayer to St Thérèse for Missionaries",
+      "source": "ICKSP_US_DEVOTIONS",
+      "source_url": "https://institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
+      "source_verified": "COMPLETE_PAGE_READ",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P1",
+      "category": "Missionaries",
+      "target": "St Thérèse; missions",
+      "editorial_notes": "Separate prayer on same novena page. Keep as an independently navigable prayer and optionally connect to the novena.",
+      "full_text_import": "NOT_AUTHORIZED",
+      "release_status": "SOURCE_LINK_ROUTED_IN_DRAFT",
+      "verified": "COMPLETE_PAGE_READ",
+      "source_body_text_accessible": true,
+      "relation": "CHILD_PRAYER_OF_NOVENA_PAGE",
+      "app_coverage_status": "INDEXED_SOURCE_LINKED_IN_DRAFT",
+      "app_coverage_label": "Missionary prayer linked, with historical Raccolta no. 573 witness and ICKSP-specific wording separately identified",
+      "app_match_refs": [],
+      "next_action": "Verify direct early source, exact copyright status of translation; retain institutional wording and link in app until safe in-app body.",
+      "review_group": "POTENTIAL_PERSONAL_DEVOTION",
+      "source_selection_status": "ACCEPTED",
+      "text_identity": "RACCOLTA_573_HISTORICAL_FAMILY_PLUS_INSTITUTE_MISSION_INTENTION",
+      "source_body_url": "https://www.institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
+      "source_variance": "ICKSP formula includes explicit Institute missionaries; traditional Raccolta form has broader missionary wording. Preserve both witness identities.",
+      "source_comparison_lead": "Raccolta No. 573 · prayer for Mission Sunday, older indulgence notes historical only",
+      "app_integration_route": "pray.st_therese_devotions",
+      "historical_source_date_evidence": {
+        "origin": "Raccolta no. 573 (historical version)",
+        "date": "1928-07-09",
+        "evidence_type": "French collection retrospective cites brief dated 9 July 1928; not original 1928 primary image",
+        "source_url": "https://fr.scribd.com/document/683942201/Thesaurisons-Pour-Le-Ciel",
+        "rights_status": "Historical origination date does not establish reuse rights of a later English or French translation.",
+        "accuracy": "ICKSP adds explicitly institute-targeted missionary intention"
+      }
+    },
+    {
+      "id": "icksp_us_therese_benedict_xv",
+      "title": "Prayer by Pope Benedict XV to St Thérèse",
+      "source": "ICKSP_US_DEVOTIONS",
+      "source_url": "https://institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
+      "source_verified": "COMPLETE_PAGE_READ",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P1",
+      "category": "St Thérèse intercession",
+      "target": "St Thérèse",
+      "editorial_notes": "Separate attested text on the same page, attributed to Benedict XV. Do not present a later translation as the pope's own English words without original witness verification.",
+      "full_text_import": "GARESCHE_1925_PRIMARY_PRINTED_P38_39_ENGLISH_ONLY",
+      "release_status": "IMPLEMENTED_ON_PR_BRANCH_NOT_MERGED",
+      "verified": "COMPLETE_PAGE_READ",
+      "source_body_text_accessible": true,
+      "relation": "CHILD_PRAYER_OF_NOVENA_PAGE",
+      "app_coverage_status": "IMPLEMENTED_IN_DRAFT_1925_HISTORICAL_ENGLISH",
+      "app_coverage_label": "Garesche 1925 English prayer in new St Thérèse reader, canonical Salve Regina conclusion, papal authorship unverified",
+      "app_match_refs": [],
+      "next_action": "Full Node and mobile browser test, source-body page proof; avoid falsely attributing composition to Benedict XV, locate authenticated historic French if available",
+      "review_group": "POTENTIAL_PERSONAL_DEVOTION",
+      "source_selection_status": "ACCEPTED",
+      "text_identity": "PRAYER_ATTRIBUTED_TO_POPE_BENEDICT_XV",
+      "source_body_url": "https://www.institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
+      "source_attribution_status": "ICKSP attributes to Benedict XV; independent original Latin or dated historical printed English witness not yet collated",
+      "attribution_conflict": {
+        "icksp": "Prayer by Pope Benedict XV",
+        "primary_1925": "Source notes name Cardinal Della Chiesa (later Benedict XV), but don't establish prayer authorship; non-current indulgence note not displayed",
+        "status": "PAPAL_AUTHORSHIP_UNVERIFIED"
+      },
+      "app_integration_route": "pray.st_therese_devotions",
+      "text_witnesses": {
+        "en": "https://distantreader.org/stacks/pamphlets/pdf/005457174.pdf",
+        "pages": "PDF zero-index 39–40 = printed 38–39"
+      },
+      "primary_printed_source": {
+        "work": "Rev. Edward F. Garesche, S.J., A Novena to the Little Flower",
+        "publication": "Diederich-Schaefer, Milwaukee, 1925",
+        "printed_pages": [
+          38,
+          39
+        ],
+        "pdf_pages_zero_based": [
+          39,
+          40
+        ],
+        "pdf_url": "https://distantreader.org/stacks/pamphlets/pdf/005457174.pdf",
+        "verified_via_original_page_images": true,
+        "ending": "The printed text instructs Hail, holy Queen after the prayer; the app uses existing canonical Salve Regina."
+      }
+    },
+    {
+      "id": "icrsp_fr_office_complies",
+      "title": "Office des Complies",
+      "source": "ICRSP_FR_LITURGICAL_INDEX",
+      "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+      "source_verified": "LISTING_CONFIRMED",
+      "canonical_48_status": "not-present-as-canonical-prayer-card",
+      "priority": "P0",
+      "category": "Divine Office",
+      "target": "Traditional Compline / Night Prayer",
+      "editorial_notes": "Full Office sequence, not an ordinary morning/evening devotion. Compare with the existing evening examen and standard prayer reader without replacing the St Pius X framework.",
+      "full_text_import": "NOT_AUTHORIZED",
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "DISTINCT_DIVINE_OFFICE",
+      "app_coverage_label": "Divine Office — not an ordinary prayer",
+      "app_match_refs": [],
+      "next_action": "Build complete 1962 Compline context separately from St Pius X evening prayer.",
+      "review_group": "COMPLETE_DIVINE_OFFICE",
+      "source_selection_status": "ACCEPTED"
+    },
+    {
+      "id": "icrsp_fr_sunday_vespers",
+      "title": "1res Vêpres / Vêpres du Dimanche",
+      "source": "ICRSP_FR_LITURGICAL_INDEX",
+      "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+      "source_verified": "LISTING_CONFIRMED",
+      "canonical_48_status": "not-present-as-canonical-prayer-card",
+      "priority": "P1",
+      "category": "Divine Office",
+      "target": "Sunday Vespers / liturgical time",
+      "editorial_notes": "Office cycles must use actual rubrics and liturgical day; treat as Office experience, not generic standalone text.",
+      "full_text_import": "NOT_AUTHORIZED",
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "DISTINCT_DIVINE_OFFICE",
+      "app_coverage_label": "Divine Office — not an ordinary prayer",
+      "app_match_refs": [],
+      "next_action": "Build Sunday Vespers as an Office; reuse Magnificat rather than duplicate it.",
+      "review_group": "COMPLETE_DIVINE_OFFICE",
+      "source_selection_status": "ACCEPTED"
+    },
+    {
+      "id": "icrsp_fr_te_deum",
+      "title": "Te Deum",
+      "source": "ICRSP_FR_LITURGICAL_INDEX",
+      "source_url": "https://icrspfrance.fr/textes-liturgiques.php?article=x479a8dcc_lisible",
+      "source_verified": "ARTICLE_LATIN_AND_FRENCH_TEXT_FOUND",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P0",
+      "category": "Hymn/Canticle",
+      "target": "Thanksgiving; liturgical calendar; Office",
+      "editorial_notes": "High-value standalone traditional thanksgiving canticle, with Latin and verified French/English witnesses; Office context separate.",
+      "full_text_import": "NOT_AUTHORIZED",
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "EXISTING_LIVE_HYMN",
+      "app_coverage_label": "Already in Pray — Sacred Hymns & Canticles",
+      "app_match_refs": [
+        "traditional-pray-data.js#SACRED_HYMNS_V381.te_deum",
+        "traditional-pray-runtime.js#renderHymns"
+      ],
+      "next_action": "Use ICRSP Latin/French for source collation; do not add another Te Deum card.",
+      "review_group": "EXISTING_OR_RELATED",
+      "source_selection_status": "ACCEPTED"
+    },
+    {
+      "id": "icrsp_fr_vexilla_regis",
+      "title": "Vexilla Regis",
+      "source": "ICRSP_FR_LITURGICAL_INDEX",
+      "source_url": "https://icrspfrance.fr/textes-liturgiques.php?article=a0901_ancien",
+      "source_verified": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P1",
+      "category": "Seasonal hymn",
+      "target": "Passiontide; Holy Week",
+      "editorial_notes": "Passion Vespers hymn, not the Eucharistic Pange Lingua.",
+      "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
+      "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+      "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+      "app_coverage_label": "Complete Latin hymn and Guéranger 1904 French version available in draft, English pending",
+      "app_match_refs": [],
+      "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
+      "review_group": "SEASONAL_OFFICE_HYMN",
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.sacred_hymns",
+      "historical_hymn_ids": [
+        "vexilla_regis"
+      ],
+      "text_witnesses": {
+        "la": [
+          "https://icrspfrance.fr/textes-liturgiques.php?article=a0901_ancien"
+        ]
+      },
+      "office_role": "Passiontide Vespers",
+      "french_translation_status": "GUERANGER_1904_FRENCH_IMPLEMENTED_IN_DRAFT",
+      "english_translation_status": "HISTORICAL_ENGLISH_1849_INTEGRATED_DRAFT",
+      "liturgical_rubric": "Kneel during O Crux ave stanza according to ICRSP witness",
+      "historical_french_translation": {
+        "work": "Dom Prosper Guéranger, L’Année liturgique, La Passion et la Semaine Sainte, 19e édition (1904)",
+        "editionYear": 1904,
+        "section": "Prière du soir / Office de Vêpres · Vexilla Regis",
+        "url": "https://www.domgueranger.net/lannee-liturgique-passion-et-semaine-sainte-historique-mystique-pratique-et-prieres/",
+        "witnessStatus": "TRANSCRIPTION_OF_1904_EDITION_NOT_YET_PHYSICAL_PAGE_COLLATED",
+        "sourceComparison": "The historical Guéranger prose is distinct from the ICRSP contemporary French rendering; published original 1904 page images not yet checked"
+      },
+      "historical_english_translation": {
+        "for_hymn_id": "vexilla_regis",
+        "translator": "Edward Caswall",
+        "work": "Lyra Catholica (1849)",
+        "printed_pages": "89–90",
+        "pdf_pages_zero_based": [
+          126,
+          127
+        ],
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+        "status": "ORIGINAL_PRINTED_IMAGES_INSPECTED"
+      }
+    },
+    {
+      "id": "icrsp_fr_audi_benigne_conditor",
+      "title": "Audi, benigne Conditor",
+      "source": "ICRSP_FR_LITURGICAL_INDEX",
+      "source_url": "https://icrspfrance.fr/textes-liturgiques.php?article=x9ef3247f_lisible",
+      "source_verified": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P1",
+      "category": "Seasonal hymn",
+      "target": "Lent Vespers",
+      "editorial_notes": "Liturgical Latin hymn; translate only from attested historical text.",
+      "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
+      "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+      "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+      "app_coverage_label": "Complete Latin Office hymn plus source-verified Caswall 1849 English version in draft",
+      "app_match_refs": [],
+      "next_action": "Verify 1962 hour/season and source recension applicability; secure historical French independently; run full Node/Playwright acceptance before merge",
+      "review_group": "SEASONAL_OFFICE_HYMN",
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.sacred_hymns",
+      "historical_hymn_ids": [
+        "audi_benigne"
+      ],
+      "text_witnesses": {
+        "la": [
+          "https://icrspfrance.fr/textes-liturgiques.php?article=x9ef3247f_lisible"
+        ]
+      },
+      "office_role": "Lent Vespers",
+      "french_translation_status": "GUERANGER_1903_FRENCH_IMPLEMENTED_IN_DRAFT",
+      "english_translation_status": "HISTORICAL_ENGLISH_CASWALL_1849_IMPLEMENTED_IN_DRAFT",
+      "liturgical_rubric": null,
+      "historical_english_translation": {
+        "translator": "Edward Caswall",
+        "work": "Lyra Catholica: Containing All the Breviary and Missal Hymns",
+        "year": 1849,
+        "printed_pages": "70–71",
+        "pdf_pages_zero_based": [
+          107,
+          108
+        ],
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+        "verification": "VISUAL_COLLATED_FROM_ORIGINAL_PRINTED_PAGES"
+      },
+      "historical_french_translation": {
+        "author": "Dom Prosper Guéranger",
+        "work": "L’Année liturgique, Le Carême, 16e édition (1903)",
+        "section": "Lenten Vespers hymn, five paragraphs",
+        "url": "https://www.domgueranger.net/lannee-liturgique-le-careme-historique-mystique-pratique-prieres/",
+        "verification": "Historical 1903 edition transcription; original printed pages not visually collated"
+      }
+    },
+    {
+      "id": "icrsp_fr_ad_cenam_agni",
+      "title": "Ad cenam Agni providi / Ad regias Agni dapes",
+      "source": "ICRSP_FR_LITURGICAL_INDEX",
+      "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+      "source_verified": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P1",
+      "category": "Seasonal hymn",
+      "target": "Easter Vespers",
+      "editorial_notes": "Two historical recensions; mark versions explicitly and do not conflate.",
+      "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
+      "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+      "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+      "app_coverage_label": "Two historical Easter Vespers Latin hymn recensions available in Sacred Hymns draft",
+      "app_match_refs": [],
+      "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
+      "review_group": "SEASONAL_OFFICE_HYMN",
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.sacred_hymns",
+      "historical_hymn_ids": [
+        "ad_regias_agni_dapes",
+        "ad_cenam_agni_providi"
+      ],
+      "text_witnesses": {
+        "la": [
+          "https://icrspfrance.fr/textes-liturgiques.php?article=a0913_ancien",
+          "https://icrspfrance.fr/textes-liturgiques.php?article=a0920_ancien"
+        ]
+      },
+      "office_role": "Eastertide Vespers",
+      "french_translation_status": "PARTIAL_1913_GLADU_WITNESS_HELD_NOT_PUBLISHED",
+      "english_translation_status": "TWO_DISTINCT_HISTORICAL_ENGLISH_WITNESSES_ONE_NONCATHOLIC_1851_NEEDS_PRIMARY_COLLATION",
+      "liturgical_rubric": "Distinct ordinary Roman Breviary post-1632 and restricted historical pre-1632 recensions; 1912 Antiphonale conditional usage",
+      "historical_english_translation": {
+        "for_hymn_id": "ad_regias_agni_dapes",
+        "translator": "Edward Caswall",
+        "work": "Lyra Catholica (1849)",
+        "printed_pages": "94–96",
+        "pdf_pages_zero_based": [
+          131,
+          132,
+          133
+        ],
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+        "status": "ORIGINAL_PRINTED_IMAGES_INSPECTED"
+      },
+      "historical_older_recension_english": {
+        "work": "The Hymnal Noted, Part I · historical Ad cenam Agni providi rendering",
+        "translator": "John Mason Neale (Anglican; 1818–1866)",
+        "editionYear": 1851,
+        "originalPublication": "The Hymnal Noted, Part I, 1851; 1852 version documents wording changes",
+        "sourceTextUrl": "https://www.preces-latinae.org/thesaurus/Hymni/AdCenamAgni.html",
+        "url": "https://www.preces-latinae.org/thesaurus/Hymni/AdCenamAgni.html",
+        "secondaryHistoricalEvidence": "https://www.hymnologyarchive.com/john-mason-neale",
+        "witnessStatus": "HISTORIC_PUBLIC_DOMAIN_ENGLISH_NONCATHOLIC_TRANSLATOR_ORIGINAL_1851_PAGES_NOT_COLLATED",
+        "editorialNote": "Historical English devotional rendering of the earlier Latin hymn tradition. Some source Latin verses differ from the exact ICRSP pre-1632 recension. Not a Catholic-authorized Office text and not an English translation of the ordinary post-1632 hymn. Original 1851 pages not visually inspected.",
+        "license": "Author died 1866; public-domain historical English translation, not modern editorial arrangement",
+        "for_hymn_id": "ad_cenam_agni_providi"
+      },
+      "french_source_candidates": [
+        {
+          "source": "Fr Louis Gladu, O.M.I., Les Hymnes du Bréviaire, second corrected edition, Québec 1913",
+          "source_url": "https://www.liberius.net/livres/Les_hymnes_du_Breviaire_000000919.pdf",
+          "format": "Latin/French side-by-side printed PDF",
+          "pdf_screenshot_status": "WEB_SCREENSHOT_TIMED_OUT_NO_VISUAL_COLLATION",
+          "copyright_verification": "Author death and cross-jurisdiction reuse status not independently established",
+          "revised": {
+            "hymn": "ad_regias_agni_dapes",
+            "pdfPagesZeroBased": [
+              28,
+              29
+            ],
+            "publication": "Gladu 1913 pp. 28–29",
+            "availableVerses": 7,
+            "appRequiredVerses": 8,
+            "mismatch": "Printed 1913 French edition stops before the doxology of the current eight-stanza 1962-aligned Latin register; not a complete one-to-one French witness."
+          },
+          "pre1632": {
+            "hymn": "ad_cenam_agni_providi",
+            "status": "NOT_IN_1913_REVISED_ROMAN_BREVIARY",
+            "why": "Do not substitute the revised Ad regias translation for the pre-1632 text; preserve right/custom/indult restriction."
+          }
+        }
+      ],
+      "french_release_gate": "Check source image pages, 1913 publisher's exact wording, missing final doxology, translation reuse rights and 1962 recension; no invented completion or source substitution."
+    },
+    {
+      "id": "icrsp_fr_aeterne_rex_altissime",
+      "title": "Aeterne Rex altissime",
+      "source": "ICRSP_FR_LITURGICAL_INDEX",
+      "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+      "source_verified": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P1",
+      "category": "Seasonal hymn",
+      "target": "Ascension Matins",
+      "editorial_notes": "Source indicates Matins of Ascension.",
+      "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
+      "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+      "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+      "app_coverage_label": "Complete Latin Office hymn available in Sacred Hymns draft",
+      "app_match_refs": [],
+      "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
+      "review_group": "SEASONAL_OFFICE_HYMN",
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.sacred_hymns",
+      "historical_hymn_ids": [
+        "aeterne_rex_altissime"
+      ],
+      "text_witnesses": {
+        "la": [
+          "https://icrspfrance.fr/textes-liturgiques.php?article=a0938_ancien"
+        ]
+      },
+      "office_role": "Ascension Matins",
+      "french_translation_status": "PARTIAL_1913_GLADU_WITNESS_HELD_NOT_PUBLISHED",
+      "english_translation_status": "HISTORICAL_ENGLISH_1849_INTEGRATED_DRAFT",
+      "liturgical_rubric": null,
+      "historical_english_translation": {
+        "for_hymn_id": "aeterne_rex_altissime",
+        "translator": "Edward Caswall",
+        "work": "Lyra Catholica (1849)",
+        "printed_pages": "101–102",
+        "pdf_pages_zero_based": [
+          138,
+          139
+        ],
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+        "status": "ORIGINAL_PRINTED_IMAGES_INSPECTED"
+      },
+      "french_source_candidates": [
+        {
+          "source": "Fr Louis Gladu, O.M.I., Les Hymnes du Bréviaire, second corrected edition, Québec 1913",
+          "source_url": "https://www.liberius.net/livres/Les_hymnes_du_Breviaire_000000919.pdf",
+          "format": "Latin/French side-by-side printed PDF",
+          "pdf_screenshot_status": "WEB_SCREENSHOT_TIMED_OUT_NO_VISUAL_COLLATION",
+          "copyright_verification": "Author death and cross-jurisdiction reuse status not independently established",
+          "hymn": "aeterne_rex_altissime",
+          "pdfPagesZeroBased": [
+            65,
+            66
+          ],
+          "publication": "Gladu 1913 pp. 65–66",
+          "availableVerses": 7,
+          "appRequiredVerses": 8,
+          "mismatch": "French 1913 witness ends at the judge/crowns stanza, before the Latin doxology retained in the canonical eight-stanza record."
+        }
+      ],
+      "french_release_gate": "Check source image pages, 1913 publisher's exact wording, missing final doxology, translation reuse rights and 1962 recension; no invented completion or source substitution."
+    },
+    {
+      "id": "icrsp_fr_lustra_sex",
+      "title": "Lustra sex",
+      "source": "ICRSP_FR_LITURGICAL_INDEX",
+      "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+      "source_verified": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P1",
+      "category": "Seasonal hymn",
+      "target": "Passiontide Lauds",
+      "editorial_notes": "Part of Passion hymn tradition; preserve exact text identity.",
+      "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
+      "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+      "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+      "app_coverage_label": "Historical Latin, English and French available in Sacred Hymns draft; French source boundary disclosed",
+      "app_match_refs": [],
+      "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
+      "review_group": "SEASONAL_OFFICE_HYMN",
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.sacred_hymns",
+      "historical_hymn_ids": [
+        "lustra_sex"
+      ],
+      "text_witnesses": {
+        "la": [
+          "https://icrspfrance.fr/textes-liturgiques.php?article=x628ec868_lisible"
+        ]
+      },
+      "office_role": "Passiontide Lauds",
+      "french_translation_status": "GUERANGER_GOOD_FRIDAY_FRENCH_EXCERPT_IN_DRAFT_NOT_LAUDS_LICENCE",
+      "english_translation_status": "HISTORICAL_1842_CATHOLIC_GOOD_FRIDAY_PASSION_TEXT_EXTRACTED_IN_DRAFT",
+      "liturgical_rubric": null,
+      "historical_english_translation": {
+        "work": "Devotions commemorative of the Most Adorable Passion of Our Lord and Saviour Jesus Christ",
+        "imprint": "London: James Burns, 1842",
+        "location": "The Reproaches, sung on Good Friday; Pange lingua verses Lustra sex through doxology",
+        "printedPages": "lv–lvi",
+        "pdfPagesZeroBased": [
+          126,
+          127
+        ],
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Devotions_commemorative_of_the_most_adorable_Passion_of_Our_Lord_and_Saviour_Jesus_Christ-_translated_from_Catholic_sources_%28IA_DevotionsCommemorativeOf%29.pdf",
+        "witnessStatus": "ORIGINAL_1842_BILINGUAL_PRINTED_PAGES_INSPECTED",
+        "editorialNote": "Historical English rendering extracted from the 1842 Good Friday hymn; repeated responses compressed into corresponding Crux fidelis stanza for reading, not an independently attested standalone Lauds setting; keep original source linked.",
+        "language": "en"
+      },
+      "historical_french_translation": {
+        "work": "Dom Prosper Guéranger, L’Année liturgique, Jeudi, vendredi et samedi saint",
+        "section": "Good Friday Adoration of the Cross · Pange lingua verses, not source-specific Lauds printing",
+        "url": "https://www.domgueranger.net/lannee-liturgique-jeudi-vendredi-et-samedi-saint-propre-du-temps/",
+        "witnessStatus": "HISTORIC_FRENCH_GOOD_FRIDAY_EXCERPT_ORIGINAL_PRINT_NOT_YET_PHYSICAL_PAGE_COLLATED",
+        "secondaryWitness": {
+          "work": "P. Louis Gladu, Les Hymnes du Bréviaire, Québec 1913",
+          "pdf": "https://www.liberius.net/livres/Les_hymnes_du_Breviaire_000000919.pdf",
+          "pagesZeroBased": [
+            19,
+            20
+          ],
+          "status": "PARSED_1913_LAUDS_BILINGUAL_SOURCE_NO_PAGE_IMAGE_CROSSCHECK"
+        },
+        "editorialNote": "Historical French is drawn from the Good Friday Pange lingua with its Crux fidelis refrain rather than an independently collated Lauds printing. Refrains were compressed into matching verse groups for comparison. This is not a critical word-for-word translation of the ICRSP 1962 Lauds recension."
+      }
+    },
+    {
+      "id": "icrsp_fr_o_sol_salutis",
+      "title": "O sol salutis intimis",
+      "source": "ICRSP_FR_LITURGICAL_INDEX",
+      "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+      "source_verified": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P1",
+      "category": "Seasonal hymn",
+      "target": "Lent Lauds",
+      "editorial_notes": "Seasonal Office hymn.",
+      "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
+      "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+      "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+      "app_coverage_label": "Complete Latin Office hymn available in Sacred Hymns draft",
+      "app_match_refs": [],
+      "next_action": "Run Node + Playwright mobile acceptance and release gates; locate licence-free historical EN/FR editions without changing Latin or edition identities.",
+      "review_group": "SEASONAL_OFFICE_HYMN",
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.sacred_hymns",
+      "historical_hymn_ids": [
+        "o_sol_salutis"
+      ],
+      "text_witnesses": {
+        "la": [
+          "https://icrspfrance.fr/textes-liturgiques.php?article=a0155_ancien"
+        ]
+      },
+      "office_role": "Lent Lauds",
+      "french_translation_status": "GUERANGER_1903_FRENCH_HISTORICAL_IN_DRAFT",
+      "english_translation_status": "SHEPHERD_1870_ENGLISH_HISTORICAL_IN_DRAFT",
+      "liturgical_rubric": null,
+      "provenance_note": "Complete liturgical text embedded within ICRSP First Sunday of Lent Office; exact standalone hymn article URL not yet captured",
+      "historical_english_translation": {
+        "work": "Dom Prosper Guéranger, The Liturgical Year, Vol. V: Lent",
+        "translator": "Dom Laurence Shepherd",
+        "editionYear": 1870,
+        "imprint": "Dublin: James Duffy, 1870",
+        "section": "Chapter IV · Morning and Night Prayers for Lent · Lenten Lauds hymn",
+        "url": "https://lyp.network/lyp/497-commentary-on-the-seasons/501-lent/3639-chapter-4-morning-and-night-prayers-for-lent",
+        "originalEdition": "https://en.wikisource.org/wiki/Index:The_liturgical_year_(IA_liturgicalyear05gura).pdf",
+        "witnessStatus": "1870_EDITION_COMPLETE_TRANSCRIPTION_PAGE_IMAGES_NOT_CHECKED",
+        "textForm": "FIVE_PROSE_PARAGRAPHS"
+      },
+      "historical_french_translation": {
+        "work": "Dom Prosper Guéranger, L’Année liturgique, Le Carême, seizième édition (1903)",
+        "section": "Chapitre IV · Prières du matin et du soir · Laudes du Carême",
+        "editionYear": 1903,
+        "url": "https://www.domgueranger.net/lannee-liturgique-le-careme-historique-mystique-pratique-prieres/",
+        "witnessStatus": "1903_HISTORICAL_EDITION_TRANSCRIPTION_PRINTED_PAGE_UNCHECKED",
+        "sourceLines": "Chapter IV, morning prayer, five paragraphs immediately following O sol salutis Latin"
+      }
+    },
+    {
+      "id": "icrsp_fr_ex_more_docti",
+      "title": "Ex more docti mystico",
+      "source": "ICRSP_FR_LITURGICAL_INDEX",
+      "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+      "source_verified": "COMPLETE_HISTORICAL_LATIN_WITH_DIRECT_ICRSP_WITNESS",
+      "canonical_48_status": "not-present-in-48-canonical-bank",
+      "priority": "P2",
+      "category": "Seasonal hymn",
+      "target": "Lent Matins",
+      "editorial_notes": "Seasonal Office hymn.",
+      "full_text_import": "COMPLETE_PUBLIC_DOMAIN_HISTORICAL_LATIN_NO_EN_FR",
+      "release_status": "LATIN_HYMN_INTEGRATED_ON_PR_BRANCH_NOT_MERGED",
+      "app_coverage_status": "FULL_LATIN_HYMN_IN_DRAFT",
+      "app_coverage_label": "Historical Latin, English and French available in Sacred Hymns draft; French source boundary disclosed",
+      "app_match_refs": [],
+      "next_action": "Verify 1962 hour/season and source recension applicability; secure historical French independently; run full Node/Playwright acceptance before merge",
+      "review_group": "SEASONAL_OFFICE_HYMN",
+      "source_selection_status": "ACCEPTED",
+      "app_integration_route": "pray.sacred_hymns",
+      "historical_hymn_ids": [
+        "ex_more_docti"
+      ],
+      "text_witnesses": {
+        "la": [
+          "https://icrspfrance.fr/textes-liturgiques.php?article=xd82464db_lisible"
+        ]
+      },
+      "office_role": "Lent Matins",
+      "french_translation_status": "GUERANGER_FRENCH_HISTORICAL_MATINS_IN_DRAFT",
+      "english_translation_status": "HISTORICAL_ENGLISH_CASWALL_1849_IMPLEMENTED_IN_DRAFT",
+      "liturgical_rubric": null,
+      "historical_english_translation": {
+        "translator": "Edward Caswall",
+        "work": "Lyra Catholica: Containing All the Breviary and Missal Hymns",
+        "year": 1849,
+        "printed_pages": "72–73",
+        "pdf_pages_zero_based": [
+          109,
+          110
+        ],
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+        "verification": "VISUAL_COLLATED_FROM_ORIGINAL_PRINTED_PAGES"
+      },
+      "historical_french_translation": {
+        "work": "Dom Prosper Guéranger, L’Année liturgique, Le Carême · Propre du temps",
+        "section": "Lenten Matins hymn after Monday of first week",
+        "url": "https://www.domgueranger.net/lannee-liturgique-le-careme-propre-du-temps/?lang=en",
+        "witnessStatus": "HISTORIC_FRENCH_FULL_TRANSCRIPTION_ORIGINAL_PRINT_NOT_YET_PHYSICAL_PAGE_COLLATED",
+        "secondaryWitness": {
+          "work": "P. Louis Gladu, Les Hymnes du Bréviaire, Québec 1913",
+          "pdf": "https://www.liberius.net/livres/Les_hymnes_du_Breviaire_000000919.pdf",
+          "pagesZeroBased": [
+            12,
+            13
+          ],
+          "status": "PARSED_1913_BILINGUAL_PRINT_NO_PAGE_IMAGE_CROSSCHECK"
+        },
+        "editorialNote": "Guéranger's full original French prose corresponds to the historical Lenten Matins hymn. Gladu 1913 separately prints a related French rendering; not identical editorial translations."
+      }
+    },
+    {
+      "id": "icrsp_fr_magnificat",
+      "title": "Magnificat",
+      "source": "ICRSP_FR_LITURGICAL_INDEX",
+      "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+      "source_verified": "LISTING_CONFIRMED",
+      "canonical_48_status": "existing-identical-work-text-check",
+      "priority": "P3",
+      "category": "Canticle",
+      "target": "Office Vespers",
+      "editorial_notes": "Canonical id weekday_magnificat already exists; compare exact Psalm/Luke version, not a missing prayer.",
+      "full_text_import": "NOT_AUTHORIZED",
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "EXISTING_LIVE_CANTICLE",
+      "app_coverage_label": "Already in canonical Pray bank",
+      "app_match_refs": [
+        "canonical-data.js#weekday_magnificat"
+      ],
+      "next_action": "Reuse the existing canticle in Vespers, and collate source edition.",
+      "review_group": "EXISTING_OR_RELATED",
+      "source_selection_status": "ACCEPTED"
+    },
+    {
+      "id": "icrsp_fr_benedictus",
+      "title": "Benedictus",
+      "source": "ICRSP_FR_LITURGICAL_INDEX",
+      "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+      "source_verified": "LISTING_CONFIRMED",
+      "canonical_48_status": "existing-identical-work-text-check",
+      "priority": "P3",
+      "category": "Canticle",
+      "target": "Office Lauds",
+      "editorial_notes": "Canonical id weekday_benedictus already exists; verify source translation and placement.",
+      "full_text_import": "NOT_AUTHORIZED",
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "EXISTING_LIVE_CANTICLE",
+      "app_coverage_label": "Already in canonical Pray bank",
+      "app_match_refs": [
+        "canonical-data.js#weekday_benedictus"
+      ],
+      "next_action": "Reuse existing canticle in Lauds, and collate source edition.",
+      "review_group": "EXISTING_OR_RELATED",
+      "source_selection_status": "ACCEPTED"
+    },
+    {
+      "id": "icrsp_fr_st_blaise_candles_food",
+      "title": "Bénédictions des cierges et des aliments en la Fête de Saint Blaise",
+      "source": "ICRSP_FR_LITURGICAL_INDEX",
+      "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+      "source_verified": "LISTING_CONFIRMED",
+      "canonical_48_status": "liturgical-ritual-not-lay-prayer",
+      "priority": "P2",
+      "category": "Ritual blessing",
+      "target": "Calendar Feb 3 customs; ritual reference",
+      "editorial_notes": "A priest's ritual blessing, not a lay prayer to present for DIY use; calendar-associated ritual note only.",
+      "full_text_import": "NOT_AUTHORIZED",
+      "release_status": "RESEARCH_ONLY",
+      "app_coverage_status": "RITUAL_NOT_LAY_PRAYER",
+      "app_coverage_label": "Priestly ritual — Calendar information only",
+      "app_match_refs": [],
+      "next_action": "Reference St Blaise blessing in Calendar customs; do not treat as a personal lay prayer.",
+      "review_group": "RITUAL_REFERENCE",
+      "source_selection_status": "ACCEPTED"
+    }
+  ],
+  "policies": [
+    "St Pius X's Catechism remains the Morning/Evening source-order authority; ICKSP texts are supplementary topical devotions unless part of a distinct Office",
+    "Existing close-match canonical entries must receive full-wording comparison before duplication",
+    "The ICKSP website is a contemporary publication; source display and historical original rights/reuse must be reviewed before adding full text to the public app",
+    "Institute-specific consecrations stay identified as Institute prayers, not a universal personal formula",
+    "Historical indulgences are historical context only, never current grants",
+    "Novena/Office composite sequences should reuse common prayer IDs without duplication and preserve their source order",
+    "No paid services or source-owner contact; no deployment/merge in this inventory pass"
+  ],
+  "editorial_counts": {
+    "approved_texts": 0,
+    "publicly_released_texts": 0
+  },
+  "source_capture_status": "INDEX_AND_SELECTED_BODIES_CONFIRMED_TEXT_IMPORT_NONE",
+  "coverage_pass2": {
+    "date": "2026-10-28",
+    "claim_scope": "CODE-EXPLICIT_MATCHES_ONLY_NOT_GLOBAL_NEGATIVE_PROOF",
+    "inspected_paths": [
+      "src/pray/canonical-data.js",
+      "src/pray/traditional-pray-data.js",
+      "src/pray/traditional-pray-runtime.js",
+      "src/pray/novena-corpus.js",
+      "src/pray/novena-corpus-v4.js",
+      "src/pray/novena-runtime.js",
+      "src/pray/christ-king-benediction.js"
+    ],
+    "warning": "A no-match in sampled code is not proof of global absence; same subject does not mean same prayer.",
+    "review_groups": {
+      "INSTITUTE_SPECIFIC_DEVOTION": 1,
+      "EXISTING_OR_RELATED": 7,
+      "POTENTIAL_PERSONAL_DEVOTION": 7,
+      "COMPLETE_DIVINE_OFFICE": 2,
+      "SEASONAL_OFFICE_HYMN": 7,
+      "RITUAL_REFERENCE": 1
+    }
+  },
+  "editorial_selection_policy": "ALL_INSTITUTE_SELECTED_ITEMS_ACCEPTED",
+  "editorial_approval_required": false,
+  "editorial_note": "Institute selection establishes relevance. Route without duplicating existing identities; verify exact text, translations and ritual context before release. First 25 items are not exhaustive.",
+  "integration_progress": {
+    "as_of": "2026-10-28",
+    "initial_review_items": 25,
+    "source_selections_accepted": 25,
+    "full_prayer_readers_implemented_in_draft": 4,
+    "full_new_prayers_published_to_production": 0,
+    "source_held_second_priest_prayer": 1,
+    "languages": "August Queen historically attested EN/FR; Eternal Priest ICKSP EN only; no invented Latin or Italian",
+    "test_status": "STATIC_JS_SYNTAX_AND_EN_FR_RENDERING_SMOKE_PASS; FULL NODE_PLAYWRIGHT_NOT_EXECUTED",
+    "added_novena_forms": 1,
+    "original_canonical_novena_count_preserved": 16,
+    "therese_1925_en_prayer_implemented": 1,
+    "therese_source_links": 2,
+    "canonical_salve_regina_reused": true,
+    "icrsp_seasonal_groups_accepted": 7,
+    "historical_latin_hymns_in_draft": 8,
+    "hymn_original_corpus_preserved": 3,
+    "hymns_reader_total": 11,
+    "production_hymn_releases": 0,
+    "full_historical_english_hymns_in_draft": 8,
+    "other_english_hymns_unverified": 0,
+    "historical_french_seasonal_hymns_in_draft": 5,
+    "caswall_1849_pages_collated": 4,
+    "release_status": "DRAFT_BRANCH_ONLY_ACTIONS_GATES_REQUIRED",
+    "other_french_hymns_unverified": 3,
+    "english_with_primary_image_confirmation": 6,
+    "english_with_historical_transcription_only": 2,
+    "partial_french_1913_witnesses_held": 2,
+    "older_easter_french_witness_missing": 1,
+    "latest_test_status": "2026-10-28 PR#1800 previous head 25/28 CI pass; newest changes awaiting full workflow completion; draft only",
+    "gladu_1913_source_rights": "PUBLIC_DOMAIN_STATUS_NOT_INDEPENDENTLY_VERIFIED_FOR_ALL_JURISDICTIONS"
+  },
+  "reconciliation_pass3": {
+    "date": "2026-10-28",
+    "novenaImplemented": "divine_infant_king",
+    "divineInfantHistoricalEnglish": "F X Lasance 1904",
+    "divineInfantHistoricalFrench": "2007 transcription citing 1885 Ghent Vidi (original edition not inspected)",
+    "monthlyPractice": "ICKSP Kansas City 17–25 monthly",
+    "stThereseSourceItemsRetained": 3,
+    "infantJesusVotivePrayerSeparate": true,
+    "policy": "ALL_ACCEPTED_FOR_COVERAGE_AND_CONTEXTUAL_CORRECTNESS",
+    "stThereseBenedictAttribution": "ICKSP names Benedict XV; separate 1926 historical reference does not establish that authorship; hold final credit"
+  },
+  "reconciliation_pass4": {
+    "date": "2026-10-28",
+    "stThereseSelected": 3,
+    "fullHistoricallyPrintedPrayer": 1,
+    "sourceLinkedIntact": 2,
+    "existing24GloriesUnchanged": true,
+    "verified1925Printed": "Garesche pp. 38-39",
+    "missionary1928IndirectWitness": "Raccolta no 573 retrospective source",
+    "authorship": "Papal composition not demonstrated by Garesche note",
+    "testEvidence": "Static JS parse, English/French rendered route smoke; Node browser suites not yet run"
+  }
+}

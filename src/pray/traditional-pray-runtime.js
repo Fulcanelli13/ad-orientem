@@ -1,4 +1,8 @@
 import "./traditional-pray-styles.js";
+import {ICKSP_MARIAN_PROTECTION_V1} from "./icksp-marian-protection.v1.js";
+import {ICKSP_PRIEST_PRAYERS_V1} from "./icksp-prayers-for-priests.v1.js";
+import {ICKSP_THERESE_DEVOTIONS_V1} from "./icksp-therese-devotions.v1.js";
+import {ICRSP_SEASONAL_HYMNS_V1,ICRSP_SEASONAL_HYMN_IDS_V1} from "./icrsp-seasonal-hymns.v1.js";
 import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "./dying-companion-flow.js";
 import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabel} from "./guided-daily-cards.js";
@@ -34,6 +38,9 @@ const VERSION="38.4-good-death-dying-companion";
 const ROUTES=Object.freeze({
   "pray.morning_evening":Object.freeze({id:"pray.morning_evening",type:"module",domain:"pray",category:"daily-prayer",title:"Morning & Evening Prayer"}),
   "pray.sacred_hymns":Object.freeze({id:"pray.sacred_hymns",type:"module",domain:"pray",category:"traditional-devotion",title:"Sacred Hymns & Canticles"}),
+  "pray.marian_protection":Object.freeze({id:"pray.marian_protection",type:"module",domain:"pray",category:"traditional-devotion",title:"Marian Protection Prayer"}),
+  "pray.prayers_for_priests":Object.freeze({id:"pray.prayers_for_priests",type:"module",domain:"pray",category:"traditional-devotion",title:"Prayers for Priests"}),
+  "pray.st_therese_devotions":Object.freeze({id:"pray.st_therese_devotions",type:"module",domain:"pray",category:"traditional-devotion",title:"St Thérèse · Institute Devotions"}),
   "pray.holy_name_litany":Object.freeze({id:"pray.holy_name_litany",type:"module",domain:"pray",category:"traditional-devotion",title:"Litany of the Holy Name"}),
   "pray.nightly_examen":Object.freeze({id:"pray.nightly_examen",type:"module",domain:"pray",category:"daily-prayer",title:"Nightly Examination"}),
   "pray.meal_prayers":Object.freeze({id:"pray.meal_prayers",type:"module",domain:"pray",category:"daily-prayer",title:"Grace at Meals"}),
@@ -321,7 +328,8 @@ function renderMorningEvening(){
  const options=`<details class="aoTP381SecondaryOptions" data-ao-daily-options><summary>${esc(L("Reading options and guidance","Options de lecture et guide"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(intro)}</p><div class="aoTP381GuideMode" role="group" aria-label="${esc(L("Prayer view","Présentation des prières"))}"><button type="button" data-tp381-daily-mode="guided" aria-pressed="${guided}">${esc(L("Guided","Guidé"))}</button><button type="button" data-tp381-daily-mode="list" aria-pressed="${!guided}">${esc(L("All prayers","Toutes les prières"))}</button></div></div></details>`;
  return `${head(L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body aoTP381DonorBody"><div class="aoDailyOpeningRail">${choice}${dailyPersonalSettings(plan,personalDailyPrefs(),{esc,L,expanded:PERSONAL_DAILY_SETTINGS_OPEN})}</div>${guided?dailyHorizonMarkup(rows.length):""}${guided?renderDailyGuided(rows):plan.mode==="personal"?dailyPersonalList(rows,{esc,L,isFr:isFr()}):plan.mode==="approved"?dailyApprovedSequenceList(rows):prayerRows(rows.map(x=>[x.id,x.title,x.note]))}${dailyTimerControls()}${options}${source(plan.sourceLabel,plan.sourceUrl)}</main>`;
 }
-const HYMN_KEYS=Object.freeze(["te_deum","veni_creator","ave_maris_stella"]);
+const HYMN_KEYS=Object.freeze(["te_deum","veni_creator","ave_maris_stella",...ICRSP_SEASONAL_HYMN_IDS_V1]);
+const hymnById=id=>SACRED_HYMNS_V381[id]||ICRSP_SEASONAL_HYMNS_V1[id]||null;
 function hymnLineMarkup(value){
   // Preserve original stanza breaks and verse lines. Do not infer a matching
   // Latin/French line where source-edition lineation differs.
@@ -329,22 +337,75 @@ function hymnLineMarkup(value){
     .map(stanza=>`<div class="aoTP381HymnStanza">${stanza.split("\n").filter(x=>x.trim()).map(line=>`<p class="aoTP381TextParagraph">${esc(line)}</p>`).join("")}</div>`).join("");
 }
 function renderHymns(){
-  const key=HYMN_KEYS.includes(S.hymn)?S.hymn:"te_deum",h=SACRED_HYMNS_V381[key];
-  const lang=["en","fr","la"].includes(S.hymnLang)?S.hymnLang:(isFr()?"fr":"en");
-  if(!h[lang]||!h.la)throw new Error("Sacred hymn language missing: "+key+" · "+lang);
+  const key=HYMN_KEYS.includes(S.hymn)?S.hymn:"te_deum",h=hymnById(key);
+  const seasonal=Boolean(ICRSP_SEASONAL_HYMNS_V1[key]);
+  const requested=["en","fr","la"].includes(S.hymnLang)?S.hymnLang:(isFr()?"fr":"en");
+  // Never silently substitute Latin while claiming an English/French hymn.
+  const lang=seasonal?(h[requested]?requested:"la"):requested;
+  if(!h?.la||(!seasonal&&!h[lang]))throw new Error("Sacred hymn language missing: "+key+" · "+lang);
   const frenchSources={
     te_deum:["Divinum Officium · French Ordo witness",TRADITIONAL_PRAY_SOURCES_V381.teDeumFrench],
     veni_creator:["Comtesse de Ségur · Livre de messe des petits enfants · 1858",TRADITIONAL_PRAY_SOURCES_V381.veniCreatorFrench],
     ave_maris_stella:["Pierre Corneille · Office de la sainte Vierge · historical French witness",TRADITIONAL_PRAY_SOURCES_V381.aveMarisFrench],
   };
   const frSource=frenchSources[key];
-  // Hymns remain their original source witnesses. Latin replaces the selected
-  // vernacular face on tap, except when Latin was explicitly selected.
   const text=lang==="la"?`<div class="aoTP381Reader">${hymnLineMarkup(h.la)}</div>`:
     `<button type="button" data-tp381-flip aria-label="${esc(L("Switch hymn language","Changer la langue de l’hymne"))}"><span data-face-v>${hymnLineMarkup(h[lang])}</span><span data-face-la hidden>${hymnLineMarkup(h.la)}</span></button>`;
-  const card=`<section class="aoDevoCard" data-ao-devo-card="hymn-${esc(key)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(h.title)}"><article class="aoTP381PrayerCard"><h3>${esc(h.title)}</h3><p class="aoTP381HymnSubtitle">${esc(L(h.subtitle,h.subtitleFr))}</p>${text}</article></div></section>`;
-  const options=`<details class="aoTP381SecondaryOptions" data-ao-hymn-options><summary>${esc(L("Language and historical sources","Langue et sources historiques"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("A deliberately small traditional collection with identified sources. Latin, English and French witnesses are identified rather than silently substituted.","Une collection traditionnelle volontairement réduite, avec ses sources clairement identifiées. Les témoins latin, anglais et français sont identifiés plutôt que remplacés silencieusement."))}</p><div class="aoTP381Lang" role="group" aria-label="${esc(L("Text language","Langue du texte"))}"><button type="button" data-tp381-hymn-lang="en" aria-pressed="${lang==="en"}" class="${lang==="en"?"active":""}">${esc(L("English","Anglais"))}</button><button type="button" data-tp381-hymn-lang="fr" aria-pressed="${lang==="fr"}" class="${lang==="fr"?"active":""}">Français</button><button type="button" data-tp381-hymn-lang="la" aria-pressed="${lang==="la"}" class="${lang==="la"?"active":""}">Latin</button></div>${source("The Daily Prayer-Book · Burns & Oates · 1882",TRADITIONAL_PRAY_SOURCES_V381.dailybook)}${source(frSource[0],frSource[1])}</div></details>`;
-  return `${head(L("Sacred Hymns & Canticles","Hymnes & cantiques sacrés"))}<main class="aoP435930Body aoTP381DonorBody">${card}${options}</main>`;
+  const provenance=seasonal
+    ?`<p class="aoTP381Intro">${esc(L("Historical Latin original · Office placement: ","Original latin historique · Office : ")+h.office+" · "+h.season)}. ${esc(L("Modern ICRSP French translations are not copied. Historical English and French witnesses have separate edition credits; comparative editions are labelled.","Les traductions françaises modernes de l’ICRSP ne sont pas reproduites. Les témoins historiques portent leurs sources et les versions comparatives sont signalées."))}</p>`
+    :"";
+  const rubric=seasonal&&h.rubric?`<p class="aoTP381Intro">${esc(L(h.rubric,h.rubricFr))}</p>`:"";
+  const witnessNotice=seasonal&&h.englishSource?.editorialNote?`<p class="aoTP381Intro" data-ao-hymn-edition-warning>${esc(h.englishSource.editorialNote)}</p>`:"";
+  const frenchWitnessNotice=seasonal&&h.frenchSource?.editorialNote?`<p class="aoTP381Intro" data-ao-hymn-french-edition-warning>${esc(L(h.frenchSource.editorialNote,h.frenchSource.editorialNoteFr||h.frenchSource.editorialNote))}</p>`:"";
+  const card=`<section class="aoDevoCard" data-ao-devo-card="hymn-${esc(key)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(h.title)}"><article class="aoTP381PrayerCard"><h3>${esc(h.title)}</h3><p class="aoTP381HymnSubtitle">${esc(L(h.subtitle,h.subtitleFr))}</p>${provenance}${rubric}${witnessNotice}${frenchWitnessNotice}${text}</article></div></section>`;
+  const languageControls=seasonal
+    ?(h.en||h.fr)?`<div class="aoTP381Lang" role="group" aria-label="${esc(L("Text language","Langue du texte"))}">${h.en?`<button type="button" data-tp381-hymn-lang="en" aria-pressed="${lang==="en"}" class="${lang==="en"?"active":""}">${esc(L("English · ","Anglais · ")+String(h.englishSource?.editionYear||h.englishSource?.work?.match(/18\d\d/)?.[0]||h.englishSource?.imprint?.match(/18\d\d/)?.[0]||"historical"))}</button>`:""}${h.fr?`<button type="button" data-tp381-hymn-lang="fr" aria-pressed="${lang==="fr"}" class="${lang==="fr"?"active":""}">${esc(L("French · ","Français · ")+String(h.frenchSource?.editionYear||"historical"))}</button>`:""}<button type="button" data-tp381-hymn-lang="la" aria-pressed="${lang==="la"}" class="${lang==="la"?"active":""}">Latin</button></div>${h.fr?"":`<p>${esc(L("French historic edition pending.","Édition française historique à vérifier."))}</p>`}`
+      :`<p class="aoTP381Intro">${esc(L("Historical Latin text; independently attested English and French editions are pending.","Latin historique ; traductions anglaise et française historiques à vérifier."))}</p>`
+    :`<div class="aoTP381Lang" role="group" aria-label="${esc(L("Text language","Langue du texte"))}"><button type="button" data-tp381-hymn-lang="en" aria-pressed="${lang==="en"}" class="${lang==="en"?"active":""}">${esc(L("English","Anglais"))}</button><button type="button" data-tp381-hymn-lang="fr" aria-pressed="${lang==="fr"}" class="${lang==="fr"?"active":""}">Français</button><button type="button" data-tp381-hymn-lang="la" aria-pressed="${lang==="la"}" class="${lang==="la"?"active":""}">Latin</button></div>`;
+  const historicalSources=seasonal?source(h.sourceLabel,h.sourceUrl)+(h.englishSource?source(h.englishSource.work+" · pp. "+h.englishSource.printedPages,h.englishSource.url):"")+(h.frenchSource?source(h.frenchSource.work+" · "+h.frenchSource.section,h.frenchSource.url):"")+(h.frenchSource?.secondaryWitness?.pdf?source(h.frenchSource.secondaryWitness.work+" · secondary bilingual edition",h.frenchSource.secondaryWitness.pdf):""):
+    source("The Daily Prayer-Book · Burns & Oates · 1882",TRADITIONAL_PRAY_SOURCES_V381.dailybook)+source(frSource[0],frSource[1]);
+  const editionNote=seasonal&&h.recension? `<p>${esc(L("Edition: ","Édition : ")+h.recension)}</p>`:"";
+  const options=`<details class="aoTP381SecondaryOptions" data-ao-hymn-options><summary>${esc(L("Language and historical sources","Langue et sources historiques"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("Historical hymn texts with identified sources and explicitly labelled language editions.","Hymnes historiques avec sources identifiées et éditions linguistiques clairement indiquées."))}</p>${languageControls}${editionNote}${historicalSources}</div></details>`;
+  const browse=`<details class="aoTP381SecondaryOptions" data-ao-hymn-catalogue><summary>${esc(L("Choose hymn · eleven traditional texts","Choisir une hymne · onze textes traditionnels"))}</summary><div class="aoTP381SecondaryOptionsBody"><div class="aoTP381PrayerList">${HYMN_KEYS.map(id=>{const item=hymnById(id);return `<button type="button" data-tp381-hymn="${esc(id)}" aria-current="${id===key?"true":"false"}"><span><b>${esc(item.title)}</b><small>${esc(L(item.subtitle,item.subtitleFr))}</small></span></button>`}).join("")}</div></div></details>`;
+  return `${head(L("Sacred Hymns & Canticles","Hymnes & cantiques sacrés"))}<main class="aoP435930Body aoTP381DonorBody">${card}${browse}${options}</main>`;
+}
+
+function renderThereseDevotions(){
+ const a=ICKSP_THERESE_DEVOTIONS_V1;
+ const t=a.prayerFromNovena;
+ const original=sourcedPrayerCard(t,L(t.title,t.titleFr),{focusParagraphs:true});
+ const notice=isFr()?t.sourceNote.fr:t.sourceNote.en;
+ // The Institute's perpetual Tuesday novena and missionary intercession must
+ // retain their literal institutional intent. Link original bodies directly,
+ // rather than silently stripping Society or Institute missionary references.
+ const institute=L("Perpetual Tuesday novena · official text","Neuvaine perpétuelle du mardi · texte officiel");
+ const missions=L("Prayer for missionaries · Institute wording","Prière pour les missionnaires · texte de l’Institut");
+ const sourceLink=(label,url)=>`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`;
+ return `${head(L("St Thérèse · Institute Devotions","Sainte Thérèse · Dévotions de l’Institut"),L("Three distinct historical and institutional selections","Trois textes distincts, historiques et propres à l’Institut"))}<main class="aoP435930Body aoTP381DonorBody">
+ <section class="aoTP381SecondaryOptions"><h2>${esc(institute)}</h2><p>${esc(L("The Institute prays this perpetual novena each Tuesday. The original text explicitly names the Little Flower Recurring Gift Society; these intentions belong to the Institute's prayer and are not a condition for personal participation.","L’Institut prie cette neuvaine perpétuelle chaque mardi. Le texte original nomme expressément la Little Flower Recurring Gift Society : ces intentions propres à l’Institut ne sont pas une condition pour prier."))}</p>${sourceLink(L("Read the Institute's complete perpetual novena","Lire la neuvaine complète de l’Institut"),a.perennialInstituteNovena.source_url)}<p>${esc(L("This Tuesday observance is distinct from Ad Orientem's existing Twenty-Four Glory Bes novena.","Cette dévotion du mardi est distincte de la neuvaine déjà disponible des vingt-quatre Gloria Patri."))}</p></section>
+ <section class="aoTP381SecondaryOptions"><h2>${esc(missions)}</h2><p>${esc(L("The historical Raccolta prayer and the Institute's edition have different explicit missionary intentions. Both are relevant; the Institute-specific wording is preserved at its source.","La prière historique du Raccolta et la forme de l’Institut ont des intentions missionnaires explicites différentes. La forme propre à l’Institut est conservée à la source."))}</p>${sourceLink(L("Read the Institute's missionary prayer","Lire la prière missionnaire de l’Institut"),a.missionaryIntercession.source_url)}${source("Raccolta no. 573 · historical-form evidence",a.missionaryIntercession.historicalLead)}</section>
+ <section class="aoDevoCard" data-ao-devo-card="therese-1925"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L(t.title,t.titleFr))}">${original}</div></section>
+ <p class="aoTP381Intro">${esc(L("Historical conclusion: say the Hail, Holy Queen (Salve Regina). The 1925 printed source places it after the prayer; it is not part of the preceding paragraph.","Conclusion indiquée par l’édition de 1925 : réciter le Salve Regina. Cette antienne suit la prière et ne fait pas partie de son paragraphe final."))}</p><section class="aoTP381SecondaryOptions" data-icksp-therese-salve-regina>${prayerCard("marian_hail_holy_queen",{focusParagraphs:true})}</section>
+ <details class="aoTP381SecondaryOptions"><summary>${esc(L("Historical editions and attribution","Éditions historiques et attribution"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(notice)}</p>${source("Garesche · A Novena to the Little Flower · 1925 · pp. 38–39",t.source_url)}${source("ICKSP · a related prayer attributed to Benedict XV",t.instituteSourceUrl)}</div></details>
+ </main>`;
+}
+function renderPrayersForPriests(){
+  const prayer=ICKSP_PRIEST_PRAYERS_V1.eternalPriest;
+  const held=ICKSP_PRIEST_PRAYERS_V1.sacredHeartHighPriest;
+  const languageNote=L(
+    "The verified source text is English; a historically authenticated French translation is not yet available. No translation has been invented.",
+    "Le texte source vérifié est en anglais ; aucune traduction française historiquement attestée n’a encore été trouvée. Aucune traduction n’a été inventée."
+  );
+  const card=sourcedPrayerCard(prayer,L(prayer.title,prayer.titleFr),{focusParagraphs:true});
+  const note=isFr()?prayer.note.fr:prayer.note.en;
+  return `${head(L("Prayers for Priests","Prières pour les prêtres"),L("Traditional ICKSP selection","Choix traditionnel de l’Institut"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(languageNote)}</p><section class="aoDevoCard" data-ao-devo-card="priest-prayer"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L(prayer.title,prayer.titleFr))}">${card}</div></section><details class="aoTP381SecondaryOptions"><summary>${esc(L("Source editions and second prayer","Sources et seconde prière"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(note)}</p>${source(prayer.editions.institute.label,prayer.editions.institute.url)}${source(prayer.editions.historicalLead.label,prayer.editions.historicalLead.url)}<p>${esc(L("The Institute also lists a second prayer to the Eternal High Priest. Its published transcription contains an apparent error; that separate prayer is retained in the source register until its words can be verified.", "L’Institut propose également une deuxième prière au Souverain Prêtre. Sa transcription publiée présente une anomalie ; la prière demeure distincte dans le registre des sources jusqu’à vérification."))}</p>${source(held.title,held.source_url)}</div></details></main>`;
+}
+function renderMarianProtection(){
+  const prayer=ICKSP_MARIAN_PROTECTION_V1.augustQueen;
+  const ed=prayer.editions;
+  const text=sourcedPrayerCard(prayer,L(prayer.title,prayer.titleFr),{focusParagraphs:true});
+  const note=isFr()?prayer.historicalNote.fr:prayer.historicalNote.en;
+  return `${head(L("Marian Protection Prayer","Prière à la Reine des Anges"),L("An Institute-selected historical devotion","Dévotion historique choisie par l’Institut"))}<main class="aoP435930Body aoTP381DonorBody"><section class="aoDevoCard" data-ao-devo-card="marian-protection"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L(prayer.title,prayer.titleFr))}">${text}</div></section><details class="aoTP381SecondaryOptions"><summary>${esc(L("Editions and sources","Éditions et sources"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(note)}</p>${source(ed.english.label,ed.english.url)}${source(ed.french.label,ed.french.url)}${source(ed.institute.label,ed.institute.url)}</div></details></main>`;
 }
 function traditionalContextGuide(kind){
  const info={
@@ -605,6 +666,9 @@ function renderPrayer(){
 function glossaryTermsForState(){
   if(S.screen==="prayer")return ["G326"];
   if(S.route==="pray.sacred_hymns")return ["G326","G321"];
+  if(S.route==="pray.marian_protection")return ["G326","G324"];
+  if(S.route==="pray.prayers_for_priests")return ["G326","G331"];
+  if(S.route==="pray.st_therese_devotions")return ["G326","G324"];
   if(S.route==="pray.holy_name_litany")return ["G096","G154","G326"];
   if(S.route==="pray.nightly_examen")return ["G328","G019","G011","G012"];
   if(S.route==="pray.meal_prayers")return ["G326","G237"];
@@ -619,7 +683,7 @@ function injectGlossaryAction(){
   const button=document.createElement("button");
   button.type="button";button.className="aoTP381Glossary";button.dataset.tp381Glossary="true";
   button.textContent=L("Terms & explanations","Termes & explications");
-  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen","pray.meal_prayers","pray.holy_name_litany","pray.sacred_heart","pray.communion_treasury","pray.sacred_hymns","pray.good_death","pray.dying_companion"].includes(S.route))body.append(button);
+  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen","pray.meal_prayers","pray.holy_name_litany","pray.sacred_heart","pray.communion_treasury","pray.sacred_hymns","pray.marian_protection","pray.prayers_for_priests","pray.st_therese_devotions","pray.good_death","pray.dying_companion"].includes(S.route))body.append(button);
   else body.insertAdjacentElement("afterbegin",button);
   return true;
 }
@@ -636,7 +700,7 @@ function render(){
   // A route change or Full Text mode must not inherit another reader’s stage owner.
   delete m.dataset.aoTraditionalDualAxis;
   m.dataset.aoTraditionalPrayRoute=S.route;
-  m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="mass.prepare"||S.route==="mass.thanksgiving"?renderMassFolioPrayers():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
+  m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="mass.prepare"||S.route==="mass.thanksgiving"?renderMassFolioPrayers():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.marian_protection"?renderMarianProtection():S.route==="pray.prayers_for_priests"?renderPrayersForPriests():S.route==="pray.st_therese_devotions"?renderThereseDevotions():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
   if(S.screen==="module"&&S.route==="pray.morning_evening")syncDailyTimerView();
   if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen"].includes(S.route)){
     const daily=S.route==="pray.morning_evening";
@@ -693,7 +757,7 @@ function render(){
     if(reader)m.dataset.aoTraditionalDualAxis=reader.kind;
   }
   if(S.screen==="module"&&S.route==="pray.sacred_hymns"){
-    const chapters=HYMN_KEYS.map(id=>({id:"hymn-"+id,title:SACRED_HYMNS_V381[id].title}));
+    const chapters=HYMN_KEYS.map(id=>({id:"hymn-"+id,title:hymnById(id).title}));
     const reader=installSequentialDevotionalReader({
       mount:m,kind:"hymns",chapters,activeIndex:HYMN_KEYS.indexOf(S.hymn),
       paragraphSelector:".aoTP381TextParagraph",
@@ -938,7 +1002,7 @@ function handleClick(e){
 
   if(b.dataset.tp381LitanyMode){S.litanyMode=b.dataset.tp381LitanyMode==="guided"?"guided":"full";S.litanyStep=0;return render()}
   if(b.hasAttribute("data-tp381-litany-step")){S.litanyStep=Math.max(0,Math.min(6,Number(b.dataset.tp381LitanyStep)||0));return render()}
-  if(b.dataset.tp381Hymn){S.hymn=SACRED_HYMNS_V381[b.dataset.tp381Hymn]?b.dataset.tp381Hymn:"te_deum";return render()}
+  if(b.dataset.tp381Hymn){S.hymn=HYMN_KEYS.includes(b.dataset.tp381Hymn)?b.dataset.tp381Hymn:"te_deum";return render()}
   if(b.dataset.tp381HymnLang){S.hymnLang=["en","fr","la"].includes(b.dataset.tp381HymnLang)?b.dataset.tp381HymnLang:(isFr()?"fr":"en");return render()}
   if(b.dataset.tp381Heart){S.sacredHeart=["litany","reparation","consecration"].includes(b.dataset.tp381Heart)?b.dataset.tp381Heart:"litany";return render()}
   if(b.dataset.tp381Communion){S.communion=b.dataset.tp381Communion==="after"?"after":"before";S.communionStep=0;return render()}
@@ -1008,10 +1072,14 @@ function mountRuntime(){
     version:VERSION,
     routes:ROUTES,
     hymns:SACRED_HYMNS_V381,
+    seasonalHymns:ICRSP_SEASONAL_HYMNS_V1,
+    marianProtection:ICKSP_MARIAN_PROTECTION_V1,
+    prayersForPriests:ICKSP_PRIEST_PRAYERS_V1,
+    thereseDevotions:ICKSP_THERESE_DEVOTIONS_V1,
     open,
     close:BASE_CLOSE,
     state:()=>({...S}),
-    qa:()=>({pass:true,routeCount:Object.keys(ROUTES).length,hymnCount:Object.keys(SACRED_HYMNS_V381).length,morningCount:MORNING_PRAYER_SEQUENCE_V381.length,eveningCount:EVENING_PRAYER_SEQUENCE_V381.length,holyNamePolicy:"OFFLINE_SOURCE_LOCKED",sacredHeartPolicy:"SOURCE_LOCKED_TRADITIONAL",communionTreasuryPolicy:"FRENCH_WORLD_SOURCE_LOCKED",goodDeathPolicy:"ROMAN_ST_JOSEPH_SOURCE_LOCKED",dyingCompanionPolicy:"PASTORAL_NOT_SACRAMENT_SIMULATION",seriousIllnessBridge:"learn.rites.sick",legacyTraditionOwner:false})
+    qa:()=>({pass:true,routeCount:Object.keys(ROUTES).length,hymnCount:Object.keys(SACRED_HYMNS_V381).length,seasonalHymnCount:ICRSP_SEASONAL_HYMN_IDS_V1.length,morningCount:MORNING_PRAYER_SEQUENCE_V381.length,eveningCount:EVENING_PRAYER_SEQUENCE_V381.length,holyNamePolicy:"OFFLINE_SOURCE_LOCKED",marianProtectionPolicy:"HISTORIC_EN_1890_FR_1864_SOURCE_LOCKED",sacredHeartPolicy:"SOURCE_LOCKED_TRADITIONAL",communionTreasuryPolicy:"FRENCH_WORLD_SOURCE_LOCKED",goodDeathPolicy:"ROMAN_ST_JOSEPH_SOURCE_LOCKED",dyingCompanionPolicy:"PASTORAL_NOT_SACRAMENT_SIMULATION",seriousIllnessBridge:"learn.rites.sick",legacyTraditionOwner:false})
   });
   return window.AO_TRADITIONAL_PRAY_V381;
 }

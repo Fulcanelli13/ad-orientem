@@ -79,7 +79,10 @@ try{
  discovered.set("pray.library",{id:"pray.library",kind:"own",family:null});
  for(const id of canonical)assert.ok(discovered.has(id),"Canonical route missing visible Prayer launcher: "+id);
  assert.ok(discovered.has("pray.tenebrae"),"Tenebrae optional Prayer route no longer exists");
- assert.equal(discovered.size,24,"Prayer catalogue contains duplicated/orphan module entry");
+ assert.ok(discovered.has("pray.marian_protection"),"ICKSP Marian Protection Prayer was not listed under Devotions");
+ assert.ok(discovered.has("pray.prayers_for_priests"),"ICKSP Prayers for Priests was not listed under Devotions");
+ assert.ok(discovered.has("pray.st_therese_devotions"),"ICKSP St Therese devotions were not listed");
+ assert.equal(discovered.size,27,"Prayer catalogue must retain 23 baseline items, Tenebrae, and three ICKSP additions");
  const order=canonical.filter(x=>x!=="pray.rosary").concat("pray.rosary");
  const results=[];
  for(const id of order){
@@ -106,6 +109,18 @@ try{
    results.push({id,owner:expected,stops:fromContext.timeline||0});
  }
  assert.equal(results.length,23);
+ await hub();
+ await page.locator('#aoPray435930.open [data-p435930-family="devotions"]').tap();
+ await page.locator('#aoPray435930.open [data-p435930-external="pray.marian_protection"]').tap();
+ await waitOwner("traditional:pray.marian_protection","ICKSP Marian Protection Prayer navigation");
+ await hub();
+ await page.locator('#aoPray435930.open [data-p435930-family="devotions"]').tap();
+ await page.locator('#aoPray435930.open [data-p435930-external="pray.prayers_for_priests"]').tap();
+ await waitOwner("traditional:pray.prayers_for_priests","ICKSP priest prayer navigation");
+ await hub();
+ await page.locator('#aoPray435930.open [data-p435930-family="devotions"]').tap();
+ await page.locator('#aoPray435930.open [data-p435930-external="pray.st_therese_devotions"]').tap();
+ await waitOwner("traditional:pray.st_therese_devotions","ICKSP St Therese source navigation");
  assert.deepEqual(errors.filter(x=>/SyntaxError|TypeError|ReferenceError|Unhandled/i.test(x)),[],"Prayer entry page errors: "+JSON.stringify(errors));
  console.log("PASS all 23 canonical Prayer catalogue taps agree with context/calendar registry on their one visible reader owner");
  console.log("PRAY_OWNER_PARITY="+JSON.stringify(results));

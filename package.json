@@ -125,10 +125,10 @@
     "test:rc-field-qa": "node tests/release-candidate-field-qa.mjs",
     "test:presentation-fx": "node tests/presentation-fx.mjs",
     "test:rc-interaction-qa": "node tests/release-candidate-interaction-qa.mjs",
-    "test:pray-novenas": "node tests/pray-novenas.mjs",
+    "test:pray-novenas": "node tests/pray-novenas.mjs && node tests/icksp-divine-infant-king-novena.mjs",
     "test:pray-focus": "node tests/pray-focus.mjs",
     "test:devotional-action-cinematics": "node tests/devotional-action-cinematics.mjs",
-    "test:pray-traditional": "node tests/pray-traditional-life.mjs",
+    "test:pray-traditional": "node tests/pray-traditional-life.mjs && npm run test:icksp-prayers && npm run test:icrsp-hymns",
     "test:learn-traditional": "node tests/learn-traditional-life.mjs",
     "test:donor-visual": "node tests/nonmass-donor-reference-e2e.mjs",
     "test:calendar": "node tests/calendar-month-preview-cache.mjs && node tests/calendar-liturgical-year.mjs && node tests/calendar-intelligence.mjs && node tests/calendar-ics-export.mjs && node tests/calendar-print-proper.mjs && node tests/calendar-editorial-reconciliation.mjs && node tests/calendar-source-feria-projection.mjs && npm run test:calendar-coverage && node tests/calendar-native-rite-scripture-handoff.mjs && node tests/calendar-customs-context.mjs && node tests/my-customs-prayers.mjs && node --test tests/calendar-class-i-approved-heroes-2026.mjs",
@@ -311,7 +311,9 @@
     "test:sacred-places-p46": "node tests/sacred-places-p46-four-exact-catholic-buildings.mjs",
     "test:sacred-places-p48": "node tests/sacred-places-p48-eight-global-buildings.mjs",
     "test:daily-formulation-engine": "node tests/daily-formulation-engine.mjs && node tests/daily-personal-rule.mjs",
-    "test:daily-personal-rule": "node tests/daily-personal-rule.mjs"
+    "test:daily-personal-rule": "node tests/daily-personal-rule.mjs",
+    "test:icksp-prayers": "node tests/icksp-marian-protection.mjs && node tests/icksp-prayers-for-priests.mjs && node tests/icksp-divine-infant-king-novena.mjs && node tests/icksp-therese-devotions.mjs",
+    "test:icrsp-hymns": "node tests/icrsp-seasonal-hymns.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"

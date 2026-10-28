@@ -354,7 +354,7 @@ try{
  await open("pray.sacred_hymns");
  let hymn=await snapshot();
  assert.equal(hymn.kind,"hymns");assert.equal(hymn.route,"pray.sacred_hymns");
- assert.equal(hymn.stops,3);assert.equal(hymn.active,1);
+ assert.equal(hymn.stops,11);assert.equal(hymn.active,1);
  assert.equal(hymn.id,"hymn-te_deum");assert.equal(hymn.overflow,"auto");
  assert.ok(hymn.paragraphCount>20,"Te Deum has no line-level focus");
  assert.equal(await page.locator("#aoPray435930 [data-ao-hymn-options]").evaluate(x=>x.open),false,
@@ -377,6 +377,45 @@ try{
     "Original Latin hymn witness changed: "+keys[i]);
  }
  await page.screenshot({path:resolve(captures,"hymns-ave-maris-stella-la-390.png"),animations:"disabled"});
+ // Eight additional ICRSP hymns must retain Latin source text and the
+ // original three source-locked hymns must retain their own EN/FR editions.
+ const seasonalIds=["vexilla_regis","audi_benigne","ad_regias_agni_dapes",
+   "ad_cenam_agni_providi","aeterne_rex_altissime","lustra_sex",
+   "o_sol_salutis","ex_more_docti"];
+ for(let i=0;i<seasonalIds.length;i++){
+   await page.locator("#aoPray435930 .aoDevoStop").nth(i+3).evaluate(b=>b.click());
+   const key=seasonalIds[i];
+   assert.equal((await snapshot()).id,"hymn-"+key,"Historical Office hymn missing from timeline");
+   const text=await page.locator("#aoPray435930 .aoDevoCardScroll").innerText();
+   assert.ok(text.length>450,key+" incomplete Latin text");
+   const historicalEnglish=["audi_benigne","ex_more_docti","vexilla_regis","ad_regias_agni_dapes","ad_cenam_agni_providi","aeterne_rex_altissime","lustra_sex","o_sol_salutis"].includes(key);
+   if(!historicalEnglish)assert.match(text,/Amen\./,
+     key+" Latin-only historical hymn has lost its original conclusion");
+   if(historicalEnglish){
+     // The previous test explicitly selected Latin and it persists across
+     // hymn switches. Select the attested English edition before asserting.
+     await page.locator("#aoPray435930 [data-ao-hymn-options] > summary").evaluate(el=>el.click());
+     await page.locator("#aoPray435930 [data-tp381-hymn-lang='en']").evaluate(el=>el.click());
+   }
+   if(historicalEnglish){
+     const opening={
+       vexilla_regis:"Forth comes the Standard of the King",
+       audi_benigne:"Thou loving Maker of mankind",
+       ad_regias_agni_dapes:"Now at the Lamb's high royal feast",
+       aeterne_rex_altissime:"O Thou eternal King most high",
+       ex_more_docti:"Now with the slow-revolving year",
+       lustra_sex:"And now, six lustral courses run",
+       o_sol_salutis:"O Jesus, thou Sun of the world",
+       ad_cenam_agni_providi:"The Lamb\'s high banquet we await",
+     }[key];
+     assert.ok((await page.locator("#aoPray435930 .aoDevoCardScroll").innerText()).includes(opening),
+       key+" must render the sourced 1849 English original after language selection");
+   }
+   assert.equal(await page.locator("#aoPray435930 .aoDevoCardScroll [data-face-v]").count(),historicalEnglish?1:0,
+     "1849 English edition should be available only where source-collated");
+   assert.equal(await page.locator("#aoPray435930 .aoDevoCardScroll .aoTP381Reader").count(),historicalEnglish?0:1);
+ }
+
  await page.locator("#aoPray435930 .aoDevoStop").first().evaluate(x=>x.click());
  await swipe(6,-135);
  assert.equal((await snapshot()).id,"hymn-te_deum","Vertical hymn scroll changed the card");

@@ -41,8 +41,10 @@ try{
  // Reachability acceptance: open every *external* Prayer-family card
  // from its visible button and return to the same family. The native readers,
  // 48 prayer texts and Rosary have independent mobile acceptance below.
- const expectedFamilyIds=JSON.parse(readFileSync("data/app/content-reachability-audit.v1.json","utf8"))
+ const historicalFamilyIds=JSON.parse(readFileSync("data/app/content-reachability-audit.v1.json","utf8"))
    .routes.filter(x=>x.kind==="PRAY_FAMILY_ITEM").map(x=>x.id).concat("pray.tenebrae").sort();
+ const instituteIds=["pray.marian_protection","pray.prayers_for_priests","pray.st_therese_devotions"];
+ const expectedFamilyIds=[...historicalFamilyIds,...instituteIds].sort();
  const visibleFamilyIds=[],externalRoutes=[];
  for(const family of ["daily","eucharistic","penance","passion","devotions"]){
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
@@ -87,11 +89,12 @@ try{
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
  assert.equal(await page.locator('#aoPray435930.open [data-p435930-own="pray.library"]').count(),1,"Missing Prayer Library direct door");
  visibleFamilyIds.push("pray.library");
- assert.equal(visibleFamilyIds.length,24,"Prayer family entry count drifted");
- assert.equal(new Set(visibleFamilyIds).size,24,"Duplicate Prayer family entry");
+ assert.equal(visibleFamilyIds.length,27,"Historical 24 Prayer entries plus three new Institute readers");
+ assert.equal(new Set(visibleFamilyIds).size,27,"Duplicate Prayer family entry");
+ assert.deepEqual(visibleFamilyIds.filter(id=>!instituteIds.includes(id)).sort(),historicalFamilyIds,"Original 24 Prayer entries must remain unchanged");
  assert.deepEqual(visibleFamilyIds.sort(),expectedFamilyIds,"Production Prayer family cards are not the declared routes");
- assert.equal(externalRoutes.length,10,"Expected ten external first-use Prayer buttons");
- console.log("PASS Prayer family reachability: all 24 visible routes, ten external first-use taps and exact-family returns");
+ assert.equal(externalRoutes.length,13,"Ten historical external cards plus three new Institute readers");
+ console.log("PASS Prayer family reachability: 24 original + 3 Institute routes; 13 external tap-and-return checks");
  // Exercise the real Holy Name Guide on a touch-sized screen. The complete
  // source text remains available; guided reading only separates seven
  // original paragraphs and must preserve Latin replacement in each stage.
@@ -469,6 +472,10 @@ try{
    const href=await primary.getAttribute("href");
    assert.match(href,/^https:\/\//,"Non-HTTPS Novena source for "+id);
    assert.equal(await primary.getAttribute("rel"),"noopener noreferrer");
+   if(id==="st_therese"){
+     assert.equal(await detail.locator("[data-n1-icksp-therese]").count(),1,
+       "Existing 24 Glory Bes novena must cross-link the distinct ICKSP forms");
+   }
    if(id==="holy_ghost")assert.match(await source.textContent(),/NOVENA FOR PENTECOST/,"Source points to Christmas page without Pentecost section identity");
    if(id==="perpetual_help")assert.match(await source.textContent(),/not proofread/i,"Unproofread source transcription is represented as certified");
    if(["annunciation","seven_sorrows","assumption"].includes(id)){
@@ -491,6 +498,31 @@ try{
    assert.equal(await page.locator("#aoPray435930.open [data-n1-select]").count(),16,
      "A detail Back tap must restore the source-backed Novena overview: "+id);
  }
+ // ICKSP source is supplementary: keep 16 historical donor targets intact while
+ // proving the added bilingual nine-day devotion is actually tappable on mobile.
+ await page.waitForSelector("#aoPray435930.open [data-n1-supplement='divine_infant_king']",{timeout:10000});
+ assert.equal(await page.locator("#aoPray435930.open [data-n1-select]").count(),16);
+ await page.locator("#aoPray435930.open [data-n1-supplement='divine_infant_king']").tap();
+ await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.id==="divine_infant_king"
+   &&globalThis.AO_NOVENAS_V3?.state?.()?.screen==="detail",null,{timeout:10000});
+ assert.equal(await page.locator("#aoPray435930.open [data-n1-day]").count(),9,
+   "The Institute's monthly novena must display exactly nine daily leaves");
+ await page.locator("#aoPray435930.open [data-n1-mode='simple']").tap();
+ await page.locator("#aoPray435930.open [data-n1-begin]").tap();
+ const infantText=await page.locator("#aoPray435930.open [data-ao-novena-deck='simple']").innerText();
+ assert.match(infantText,/O CHILD Jesus|O Enfant Jésus/,"Original bilingual Infant Jesus prayer absent");
+ // The day list is collapsed once the prayer reader opens. Use
+ // the visible Next day control to verify all nine recitations.
+ for(let day=2;day<=9;day++){
+   await page.locator("#aoPray435930.open [data-n1-day-next]").tap({timeout:9000});
+   assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3?.state?.()?.day),day,
+     "The supplemental prayer cannot advance to day "+day);
+ }
+ await page.locator("#aoPray435930.open [data-n1-back]").tap();
+ await page.locator("#aoPray435930.open [data-n1-back]").tap();
+ await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.screen==="overview",null,{timeout:10000});
+ assert.equal(await page.locator("#aoPray435930.open [data-n1-select]").count(),16,
+   "The ICKSP additional entry displaced an original novena");
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
  await page.waitForSelector("#aoPray435930 [data-p435930-lib-open]",{timeout:10000});
  const ids=await page.locator("#aoPray435930 [data-p435930-lib-open]").evaluateAll(nodes=>nodes.map(x=>x.dataset.p435930LibOpen));

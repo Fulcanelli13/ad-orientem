@@ -42,7 +42,9 @@ const sameIds=(actual,expected,label)=>{
  assert.deepEqual([...actual].sort(),[...expected].sort(),label+" IDs must match current source");
  assert.equal(new Set(expected).size,expected.length,label+" duplicated mapping");
 };
-sameIds(livePrayerIds,crosswalk.prayer.map(x=>x.id),"Prayer 24 historical entrances");
+const instituteIds=["pray.marian_protection","pray.prayers_for_priests","pray.st_therese_devotions"];
+assert.deepEqual(livePrayerIds.filter(id=>instituteIds.includes(id)).sort(),[...instituteIds].sort());
+sameIds(livePrayerIds.filter(id=>!instituteIds.includes(id)),crosswalk.prayer.map(x=>x.id),"Prayer 24 historical entrances");
 // 10 October audit stays immutable; P1 adds exactly one new, separate public child.
 sameIds(liveFormationIds.filter(id=>id!=="learn.mass_explorer"),crosswalk.formation.map(x=>x.id),"Formation 15 historical launchers");
 assert.ok(liveFormationIds.includes("learn.mass_explorer"),"New Mass Explorer must be a distinct route");
@@ -50,7 +52,7 @@ sameIds(scenarioIdSet,crosswalk.apostolate.scenarios.map(x=>x.id),"Apostolate 36
 sameIds(liveEdges,crosswalk.apostolate.handoff_edges.map(x=>x.from+"->"+x.to),"Apostolate scenario handoffs");
 assert.equal(crosswalk.apostolate.skills.length,9);
 assert.equal(crosswalk.cross_surface_handoff_types.length,15);
-assert.equal(livePrayerIds.length,24);
+assert.equal(livePrayerIds.length,27,"Frozen historical 24 plus three Institute readers");
 assert.equal(liveFormationIds.length,16);
 assert.equal(scenarioIdSet.size,36);
 assert.equal(liveEdges.length,72);
@@ -64,4 +66,4 @@ assert.ok(crosswalk.navigation.formation.landing_views.some(v=>v.id==="questions
 assert.ok(crosswalk.navigation.formation.landing_views.some(v=>v.id==="questions"&&v.gated?.includes("learn.church_crisis")));
 for(const x of crosswalk.prayer)assert.ok(x.primary_entrance&&x.content_owner==="pray");
 for(const x of crosswalk.formation)assert.ok(x.primary_view&&x.canonical_owner);
-console.log("Pray/Formation IA static parity OK: 24 historical Prayer entrances + 3 Rosary/Chaplet discovery aliases, 15 legacy Formation + Mass Explorer, 36 Apostolate, 72 scenario handoffs, 2 unresolved Calendar router blocks; 4 repaired Prayer handoffs awaiting phone verification");
+console.log("Pray/Formation IA: original 24 preserved, three new Institute readers, legacy Formation and Apostolate unchanged");

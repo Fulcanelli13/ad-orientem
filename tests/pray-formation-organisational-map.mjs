@@ -38,12 +38,16 @@ const additional=[...familySource.slice(start,end).matchAll(/\['own','([^']+)'/g
 assert.deepEqual(additional,["pray.rosary","pray.rosary_methods","pray.divine_mercy"]);
 const originalFamily=familySource.slice(0,start)+familySource.slice(end);
 const srcPray=[...originalFamily.matchAll(/\['(?:own|external)','([^']+)'/g)].map(x=>x[1]);
-assert.equal(srcPray.length,23,"Prayer runtime source family count changed unexpectedly: 22 historical + Tenebrae");
+const instituteIds=["pray.marian_protection","pray.prayers_for_priests","pray.st_therese_devotions"];
+assert.deepEqual(srcPray.filter(id=>instituteIds.includes(id)).sort(),[...instituteIds].sort());
+const historicalPray=srcPray.filter(id=>!instituteIds.includes(id));
+assert.equal(historicalPray.length,23,"Historical 22 + Tenebrae Prayer entries must remain unchanged");
+assert.equal(srcPray.length,26,"Historical Prayer entries plus three new Institute readers");
 assert.ok(srcPray.includes("pray.tenebrae"),"New seasonal Tenebrae Prayer route unavailable");
 const srcLazy=[...familySource.matchAll(/\['external','([^']+)'/g)].map(x=>x[1]);
-assert.equal(srcLazy.length,10,"Prayer lazy routes changed");
+assert.equal(srcLazy.length,13,"Ten historic lazy Prayer routes plus three new Institute readers");
 assert.ok(familySource.includes("direct:'pray.library'"));
-assert.deepEqual(sort(unique(prayerEntries,"Prayer")),sort([...srcPray.filter(x=>x!=="pray.tenebrae"),"pray.library"]));
+assert.deepEqual(sort(unique(prayerEntries,"Prayer")),sort([...historicalPray.filter(x=>x!=="pray.tenebrae"),"pray.library"]));
 assert.deepEqual(sort(map.pray.landing.families.map(x=>x.id)),sort(["daily_marian","before_the_blessed_sacrament","penance_and_passion","devotions_and_novenas","prayer_library"]));
 for(const item of prayerEntries){
   assert.ok(map.pray.landing.families.some(x=>x.id===item.proposed_group),item.id+" is ungrouped");
