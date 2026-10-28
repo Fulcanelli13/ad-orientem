@@ -124,6 +124,57 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 #aoPray435930 .aoMassFolioPrayerNav .aoTP381GuideCount{margin-inline-end:auto}
 #aoPray435930 [data-tp381-mass-error]:not([hidden]){color:#e6b9aa;padding:10px}
 
+
+/* Session clock: discreet and independent of the existing 11/13 prayer navigation. */
+#aoPray435930 .aoDailyClockShell{padding:0 14px 6px;display:grid;gap:10px}
+#aoPray435930 .aoDailyClockDisclosure{justify-self:start;min-height:36px;min-width:90px;padding:7px 12px;border:1px solid var(--border,rgba(255,255,255,.17));border-radius:999px;background:transparent;color:var(--muted,#aeb2b8);font:500 .76rem/1.25 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoDailyClockDisclosure[aria-expanded="true"]{border-color:var(--liturgical-border,rgba(199,174,109,.5));color:var(--liturgical,#c7ae6d)}
+#aoPray435930 .aoDailyClockPanel{display:grid;gap:12px;padding:14px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:12px;background:rgba(255,255,255,.025)}
+#aoPray435930 .aoDailyClockPanel output{font:400 clamp(1.35rem,5vw,1.75rem)/1 var(--ao-font-display,Georgia,serif);font-variant-numeric:tabular-nums;color:var(--text,#eee)}
+#aoPray435930 .aoDailyClockActions,#aoPray435930 .aoDailyClockTargets{display:flex;gap:8px;flex-wrap:wrap}
+#aoPray435930 .aoDailyClockActions button,#aoPray435930 .aoDailyClockTargets button{padding:8px 12px;min-height:42px;border:1px solid var(--border,rgba(255,255,255,.19));background:transparent;border-radius:8px;color:inherit;font:500 .77rem/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoDailyClockActions button:first-child,#aoPray435930 .aoDailyClockTargets button[aria-pressed="true"]{border-color:var(--liturgical,#c7ae6d);color:var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.08))}
+#aoPray435930 .aoDailyClockPanel p{margin:0;color:var(--liturgical,#c7ae6d);font-size:.8rem}
+#aoPray435930 .aoDailyClockPanel [hidden]{display:none}
+#aoPray435930 .aoDailyClockPanel small{color:var(--muted,#aeb2b8);line-height:1.5}
+@media(prefers-reduced-motion:reduce){#aoPray435930 .aoDailyClockPanel{transition:none}}
+
+
+/* The contemplative Daily reader keeps the timer collapsed below the prayer.
+   On expansion, display its controls visibly above the bottom Prayer navigation,
+   without replacing, advancing or scrolling the canonical prayer card. */
+#aoPray435930[data-ao-contemplative-daily="guided"] .aoDailyClockPanel{
+ position:fixed!important;
+ inset:auto auto calc(122px + env(safe-area-inset-bottom)) 50%!important;
+ transform:translateX(-50%);
+ z-index:40;
+ box-sizing:border-box;
+ width:min(490px,calc(100vw - 32px));
+ max-height:min(43dvh,350px);
+ overflow-y:auto!important;
+ overscroll-behavior:contain;
+ background:linear-gradient(160deg,#172431 0%,#111b26 100%)!important;
+ border:1px solid rgba(217,189,150,.30)!important;
+ box-shadow:0 20px 70px rgba(0,0,0,.58);
+ color:#eee9df;
+}
+#aoPray435930[data-ao-contemplative-daily="guided"] .aoDailyClockPanel button:focus-visible{
+ outline:2px solid #dbb983;outline-offset:2px
+}
+
+/* Approved source-form selector, shown only after the release manifest is populated. */
+#aoPray435930 .aoDailyFormulationChoices{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:0 0 12px}
+#aoPray435930 .aoDailyFormulationChoices button{min-height:40px;padding:8px 12px;border-radius:999px;border:1px solid var(--border,rgba(255,255,255,.2));background:transparent;color:var(--muted,#aeb2b8);font:500 .75rem/1.35 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoDailyFormulationChoices button[aria-pressed="true"]{color:var(--liturgical,#c7ae6d);border-color:var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.07))}
+#aoPray435930 .aoTP381GuideCard .aoDailyFormulationChoices+.aoTP381PrayerCard{padding:0}
+
+
+/* Future Short/Complete source profiles: invisible until an entire profile is approved. */
+#aoPray435930 .aoDailyLengthChoices{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:8px 14px 4px}
+#aoPray435930 .aoDailyLengthChoices button{padding:8px 12px;min-height:42px;border-radius:999px;border:1px solid var(--border,rgba(255,255,255,.17));background:transparent;color:var(--muted,#aeb2b8);font:500 .78rem/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoDailyLengthChoices button[aria-pressed="true"]{color:var(--liturgical,#c7ae6d);border-color:var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.08))}
+@media(max-width:360px){#aoPray435930 .aoDailyLengthChoices button{flex:1;min-width:0}}
+
 `;
 
 export function installTraditionalPrayStyles(doc=globalThis.document){

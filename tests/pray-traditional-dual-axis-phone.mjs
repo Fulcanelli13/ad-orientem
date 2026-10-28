@@ -58,7 +58,63 @@ try{
   node.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[t(230+dx,390+dy)]}));
  },{dx,dy});
  await open("pray.morning_evening");
+ // Current production default is Design B. This branch must integrate with it,
+ // not accidentally revive the pre-#1789 Daily reading presentation.
+ await page.waitForSelector('#aoPray435930[data-ao-contemplative-daily="guided"]',{timeout:12000});
+ assert.equal(await page.locator('#aoPray435930[data-ao-contemplative-daily="guided"]').count(),1);
  await page.screenshot({path:resolve(captures,"morning-390-fr.png"),animations:"disabled"});
+ // Optional session timer stays subordinate to the existing prayer card.
+ // No release-approved historical witnesses exist yet: source tabs stay hidden.
+ assert.equal(await page.locator("#aoPray435930 .aoDailyFormulationChoices").count(),0);
+ assert.equal(await page.locator("#aoPray435930 .aoDailyLengthChoices").count(),0,
+  "An unapproved Short/Complete profile must not appear on the real phone reader");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-daily-formulation]").count(),0,
+  "No unapproved historical prayer should render in the existing reader");
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-timer-toggle]").count(),1);
+ assert.equal(await page.locator("#aoPray435930 .aoDailyClockPanel").count(),0);
+ const beforeTimerCard=await page.locator("#aoPray435930 .aoDevoCard").evaluate(el=>{
+   const outer=document.querySelector("#aoPray435930 .aoDailyClockShell");
+   const reader=el.querySelector(".aoDevoCardScroll");
+   reader.scrollTop=45;
+   return {index:el.dataset.aoDevoIndex,scroll:reader.scrollTop,
+     before:!!(el.compareDocumentPosition(outer)&Node.DOCUMENT_POSITION_FOLLOWING)};
+ });
+ assert.equal(beforeTimerCard.before,true,"Prayer must appear before the optional timer");
+ await page.locator("#aoPray435930 [data-tp381-timer-toggle]").tap();
+ assert.equal(await page.locator("#aoPray435930 .aoDailyClockPanel").count(),1);
+ const timerGeometry=await page.locator("#aoPray435930 .aoDailyClockPanel").evaluate(panel=>{
+   const r=panel.getBoundingClientRect(),toggle=document.querySelector("#aoPray435930 [data-tp381-timer-toggle]").getBoundingClientRect();
+   return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,triggerTop:toggle.top,width:innerWidth,height:innerHeight};
+ });
+ assert.ok(timerGeometry.top>=0&&timerGeometry.bottom<timerGeometry.triggerTop-2&&
+  timerGeometry.left>=0&&timerGeometry.right<=timerGeometry.width,
+  "Expanded timer must be fully visible ABOVE its toggle: "+JSON.stringify(timerGeometry));
+ await page.screenshot({path:resolve(captures,"contemplative-morning-timer-open-390-fr.png"),animations:"disabled"});
+ assert.equal(await page.locator("#aoPray435930 .aoDailyFormulationChoices").count(),0,
+  "Historical witnesses must remain hidden while the timer is open");
+ const afterTimerCard=await page.locator("#aoPray435930 .aoDevoCard").evaluate(el=>({
+   index:el.dataset.aoDevoIndex,scroll:el.querySelector(".aoDevoCardScroll").scrollTop
+ }));
+ assert.deepEqual(afterTimerCard,{index:beforeTimerCard.index,scroll:beforeTimerCard.scroll},
+  "Expanding optional timer must not replace or scroll the prayer card");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-daily-clock-readout]").innerText(),"00:00");
+ await page.locator("#aoPray435930 [data-tp381-timer-target='5']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-timer-target='5']").getAttribute("aria-pressed"),"true");
+ await page.locator("#aoPray435930 [data-tp381-timer-control='toggle']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-timer-control='toggle']").getAttribute("aria-pressed"),"true");
+ assert.equal((await snapshot()).index,0,"Starting timer must not advance the prayer");
+ await page.waitForTimeout(1250);
+ await page.locator("#aoPray435930 [data-tp381-timer-control='toggle']").evaluate(el=>el.click());
+ const pausedClock=await page.locator("#aoPray435930 [data-ao-daily-clock-readout]").innerText();
+ assert.match(pausedClock,/^00:0[1-9]$/,"Elapsed timer failed to advance");
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-timer-control='toggle']").getAttribute("aria-pressed"),"false");
+ await page.locator("#aoPray435930 .aoDevoStop").nth(1).evaluate(el=>el.click());
+ assert.equal((await snapshot()).index,1);
+ assert.equal(await page.locator("#aoPray435930 [data-ao-daily-clock-readout]").innerText(),pausedClock,
+  "Paused elapsed session must survive manual navigation");
+ await page.locator("#aoPray435930 [data-tp381-timer-control='reset']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-daily-clock-readout]").innerText(),"00:00");
+ await page.locator("#aoPray435930 .aoDevoStop").first().evaluate(el=>el.click());
  const first=await snapshot();
  assert.equal(first.route,"pray.morning_evening");
  const openingSky=await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").evaluate(el=>({
