@@ -10,8 +10,8 @@ for(const lang of ["la","en","fr"]){
  assert.equal(expanded[lang],existing[lang],"Do not edit the existing 2021 canonical prayer");
  assert.ok(old[lang].length>1000,"Each historical form must be complete: "+lang);
  const match=lang==="la"?/, ora pro nobis\./g:lang==="en"?/, pray for us\./g:/, priez pour nous\./g;
- assert.equal((old[lang].match(match)||[]).length,25,"1909 24 St Joseph + Holy Mary: "+lang);
- assert.equal((expanded[lang].match(match)||[]).length,32,"2021 31 St Joseph + Holy Mary: "+lang);
+ assert.equal((old[lang].match(match)||[]).length,26,"1909 25 St Joseph + Holy Mary: "+lang);
+ assert.equal((expanded[lang].match(match)||[]).length,33,"2021 32 St Joseph + Holy Mary: "+lang);
  for(const id of added[lang])assert.equal(old[lang].toLowerCase().includes(id.toLowerCase()),false,"2021 insertion remains in 1909: "+lang+" "+id);
  assert.match(old[lang],lang==="la"?/Oremus\. Deus,/:(lang==="fr"?/Prions?\.|l'établi/:/Let us pray\./),"Old concluding prayer not preserved: "+lang);
  assert.ok(old[lang].includes(lang==="la"?"Protector sanctæ Ecclesiæ":lang==="en"?"Protector of the Holy Church":"Protecteur de la sainte Église"),"Historic concluding litany invocation missing");
