@@ -20,7 +20,8 @@
       "en",
       "fr"
     ],
-    "sourceLanguageInternalOnly": true
+    "sourceLanguageInternalOnly": true,
+    "unverifiedCommonForms": "The 1905 Salve Regina and Angele Dei are available as conventional Latin/English/French reading forms, while original-edition wording remains a separate unverified source flag. Do not mark them 1905-exact printed forms."
   },
   "sourceRegistry": "data/pray/daily-prayer-pius-x-primary-structure.b21.json",
   "translations": {
@@ -121,6 +122,24 @@
           "fr": "Mon Dieu, parce que vous êtes la Bonté suprême et que je vous aime par-dessus toutes choses, je me repens et regrette sincèrement de tout mon cœur de vous avoir offensé; je prends la ferme résolution, avec votre saint secours, de ne plus jamais pécher à l’avenir et, en particulier, de fuir les occasions prochaines du péché.",
           "la": "Deus meus, quia summa Bonitas es et quia te super omnia amo, vere me paenitet ex toto corde quod te offendi; firmiter propono, sancto tuo auxilio, numquam amplius peccare et praesertim proximas peccandi occasiones fugere.",
           "latinStatus": "AD_ORIENTEM_EDITORIAL_LATIN_DRAFT_NOT_PRINTED_PIUS_X"
+        },
+        "salve-regina": {
+          "en": "Hail, Queen, Mother of mercy; our life, our sweetness and our hope, hail. To you we raise our cries, exiled children of Eve. To you we sigh, weeping and groaning in this valley of tears. Hear us, then, O our Advocate; turn towards us those eyes so full of mercy. And at the end of this exile show us the blessed fruit of your womb, Jesus. O clement, O loving, O sweet Virgin Mary.",
+          "fr": "Salut, Reine, Mère de miséricorde; notre vie, notre douceur et notre espérance, salut. Vers vous nous élevons nos cris, enfants d’Ève exilés. Vers vous nous soupirons, gémissant et pleurant dans cette vallée de larmes. Ô notre Avocate, tournez donc vers nous vos regards miséricordieux. Et après cet exil, montrez-nous Jésus, le fruit béni de vos entrailles. Ô clémente, ô pieuse, ô douce Vierge Marie.",
+          "la": "Salve, Regina, mater misericordiae, vita, dulcedo et spes nostra, salve. Ad te clamamus, exsules filii Evae. Ad te suspiramus, gementes et flentes in hac lacrimarum valle. Eia ergo, advocata nostra, illos tuos misericordes oculos ad nos converte. Et Iesum, benedictum fructum ventris tui, nobis post hoc exsilium ostende. O clemens, o pia, o dulcis Virgo Maria.",
+          "latinReference": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "latinStatus": "STANDARD_TRADITIONAL_LATIN_FORM_MATCHED_TO_NAMED_COMMON_PRAYER_NOT_CLAIMED_AS_EDITION_LATIN_ORIGINAL",
+          "textStatus": "STANDARD_TRADITIONAL_FORM_AS_PROVISIONAL_READING_NOT_VERIFIED_1905_WORDING",
+          "note": "The 1905 Appendix names this prayer but its exact original-edition common prayer formula is not yet transcribed. These are conventional complete prayer texts for editorial reading, NOT the authenticated 1905 source wording."
+        },
+        "guardian-angel": {
+          "en": "Angel of God, who art my guardian by the gift of divine charity, enlighten me, protect me, direct me and govern me. Amen.",
+          "fr": "Ange de Dieu, mon gardien, à qui m’a confié la bonté divine, éclairez-moi, gardez-moi, conduisez-moi et gouvernez-moi. Ainsi soit-il.",
+          "la": "Angele Dei, qui custos es mei, me tibi commissum pietate superna illumina, custodi, rege et guberna. Amen.",
+          "latinReference": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "latinStatus": "STANDARD_TRADITIONAL_LATIN_FORM_MATCHED_TO_NAMED_COMMON_PRAYER_NOT_CLAIMED_AS_EDITION_LATIN_ORIGINAL",
+          "textStatus": "STANDARD_TRADITIONAL_FORM_AS_PROVISIONAL_READING_NOT_VERIFIED_1905_WORDING",
+          "note": "The 1905 Appendix names this prayer but its exact original-edition common prayer formula is not yet transcribed. These are conventional complete prayer texts for editorial reading, NOT the authenticated 1905 source wording."
         }
       }
     },
