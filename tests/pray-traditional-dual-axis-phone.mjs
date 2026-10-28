@@ -80,8 +80,15 @@ try{
      before:!!(el.compareDocumentPosition(outer)&Node.DOCUMENT_POSITION_FOLLOWING)};
  });
  assert.equal(beforeTimerCard.before,true,"Prayer must appear before the optional timer");
- await page.locator("#aoPray435930 [data-tp381-timer-toggle]").evaluate(el=>el.click());
+ await page.locator("#aoPray435930 [data-tp381-timer-toggle]").tap();
  assert.equal(await page.locator("#aoPray435930 .aoDailyClockPanel").count(),1);
+ const timerGeometry=await page.locator("#aoPray435930 .aoDailyClockPanel").evaluate(panel=>{
+   const r=panel.getBoundingClientRect(),toggle=document.querySelector("#aoPray435930 [data-tp381-timer-toggle]").getBoundingClientRect();
+   return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,triggerTop:toggle.top,width:innerWidth,height:innerHeight};
+ });
+ assert.ok(timerGeometry.top>=0&&timerGeometry.bottom<timerGeometry.triggerTop-2&&
+  timerGeometry.left>=0&&timerGeometry.right<=timerGeometry.width,
+  "Expanded timer must be fully visible ABOVE its toggle: "+JSON.stringify(timerGeometry));
  await page.screenshot({path:resolve(captures,"contemplative-morning-timer-open-390-fr.png"),animations:"disabled"});
  assert.equal(await page.locator("#aoPray435930 .aoDailyFormulationChoices").count(),0,
   "Historical witnesses must remain hidden while the timer is open");
