@@ -1860,10 +1860,11 @@
       "editorial_approval_round": "2026-10-26",
       "approved_alternatives_are_not_replacements": true,
       "source": {
-        "page": "https://commons.wikimedia.org/wiki/File:Song_of_the_Lark_-_Jules_Breton.png",
-        "reported_image_rights": "Commons file terms to verify; AIC official artwork is public domain",
-        "source_status": "master_rights_pending",
-        "reproduction_origin_claim": "research/module-hero-rescue-20261026"
+        "page": "https://commons.wikimedia.org/wiki/File:Jules_Breton,_le_chant_de_l'alouette.1884.jpg",
+        "reported_image_rights": "Commons PD-Art faithful 2D reproduction; photo fidelity and target-jurisdiction final rights review still pending",
+        "source_status": "COMMONS_PD_ART_EXACT_ARCHIVED_FILE_SHA256_VERIFIED",
+        "reproduction_origin_claim": "research/module-hero-rescue-20261026",
+        "previously_mislinked_nonidentical_commons_page": "https://commons.wikimedia.org/wiki/File:Song_of_the_Lark_-_Jules_Breton.png"
       },
       "original": {
         "archived": true,
@@ -1974,7 +1975,8 @@
           "master_original_untouched": true,
           "source_photo_rights_final_certified": false,
           "pristine_certified": false,
-          "production_activated": false
+          "production_activated": false,
+          "canonical_source_pointer_repaired": true
         }
       },
       "alternative_source_candidate": null,
