@@ -132,7 +132,7 @@
     "test:pray-novenas": "node tests/pray-novenas.mjs && node tests/icksp-divine-infant-king-novena.mjs && node tests/icksp-immaculate-conception-novena.mjs && node tests/icksp-therese-weekly-b04.mjs",
     "test:pray-focus": "node tests/pray-focus.mjs",
     "test:devotional-action-cinematics": "node tests/devotional-action-cinematics.mjs",
-    "test:pray-traditional": "node tests/pray-traditional-life.mjs && npm run test:icksp-batch01-reconcile",
+    "test:pray-traditional": "node tests/pray-traditional-life.mjs && node tests/confession-nightly-contrition-b13.mjs && npm run test:icksp-batch01-reconcile",
     "test:learn-traditional": "node tests/learn-traditional-life.mjs",
     "test:donor-visual": "node tests/nonmass-donor-reference-e2e.mjs",
     "test:calendar": "node tests/calendar-month-preview-cache.mjs && node tests/calendar-liturgical-year.mjs && node tests/calendar-intelligence.mjs && node tests/calendar-ics-export.mjs && node tests/calendar-print-proper.mjs && node tests/calendar-editorial-reconciliation.mjs && node tests/calendar-source-feria-projection.mjs && npm run test:calendar-coverage && node tests/calendar-native-rite-scripture-handoff.mjs && node tests/calendar-customs-context.mjs && node tests/my-customs-prayers.mjs && node --test tests/calendar-class-i-approved-heroes-2026.mjs",
