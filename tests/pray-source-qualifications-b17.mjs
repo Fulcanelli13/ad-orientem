@@ -33,7 +33,7 @@ assert.match(novena,/\$\{direct\}\$\{note\}\$\{printNotice\}/);
 assert.match(novena,/aoN1SourcePrimary/);
 assert.match(novena,/novenaSourceAccess\(n\.id\)/);
 assert.equal(SEVEN_WORDS_LOCAL_EN_1889_V1.words.length,7);
-assert.match(SEVEN_WORDS_LOCAL_EN_1889_V1.editorialCorrection,/two corrections/i);
+assert.match(SEVEN_WORDS_LOCAL_EN_1889_V1.editorialCorrection,/Both corrections are disclosed/);
 assert.match(wordReader,/“you shalt” and “burn tli the desire”/);
 assert.match(wordReader,/Independent print-page collation remains pending/);
 assert.match(wordReader,/the Marian conclusion is an appendix, not an eighth Word/);
