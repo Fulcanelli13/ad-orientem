@@ -26,6 +26,17 @@ class PhotoDiscoveryTests(unittest.TestCase):
         self.assertGreater(mod.match_score("St John Cantius Church","Chicago","St John Cantius Church, Chicago","Interior nave"),0.8)
         self.assertEqual(mod.classify_evidence("INTERIOR","Inside the nave",""),"CATEGORY_TEXT_MATCH")
         self.assertEqual(mod.classify_evidence("SACRED_DETAIL","Unrelated picture",""),"CATEGORY_UNCONFIRMED")
+    def test_country_evidence(self):
+        self.assertEqual(mod.country_signal("AU","St Benedict Church","Nebraska City, United States"),
+                         "FOREIGN_COUNTRY_MENTIONED")
+        self.assertEqual(mod.country_signal("AU","Church of St Benedict","Exterior of a Catholic church in Sydney, Australia"),
+                         "TARGET_COUNTRY_MENTIONED")
+        self.assertEqual(mod.country_signal("BE","Église Saint Jean","Photographie prise en Belgique"),
+                         "TARGET_COUNTRY_MENTIONED")
+        self.assertEqual(mod.country_signal("AU","Church of St Benedict","Exterior church"),
+                         "COUNTRY_NOT_ESTABLISHED")
+        self.assertEqual(mod.country_signal("ZZ","Church","in Rome"),
+                         "COUNTRY_NOT_EVALUATED")
     def test_all_categories(self):
         self.assertEqual(set(mod.CATEGORIES),{"EXTERIOR","INTERIOR","SACRED_DETAIL"})
     def test_discovery_only(self):

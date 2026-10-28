@@ -33,6 +33,48 @@ CATEGORIES = {
     "INTERIOR": "church interior nave",
     "SACRED_DETAIL": "church high altar reliquary",
 }
+
+# Search context, never automatic proof of church identity. Prefer spelling
+# variants across source languages. Unknown codes simply leave this hint empty.
+COUNTRY_TERMS = {
+    "AU": ("Australia", "australia", "australie"),
+    "BE": ("Belgium", "belgium", "belgique", "belgie"),
+    "BR": ("Brazil", "brazil", "brasil", "bresil"),
+    "CA": ("Canada", "canada"),
+    "CH": ("Switzerland", "switzerland", "suisse", "schweiz", "svizzera"),
+    "CZ": ("Czechia", "czechia", "czech republic", "cesko"),
+    "DE": ("Germany", "germany", "deutschland", "allemagne"),
+    "ES": ("Spain", "spain", "espana", "espagne"),
+    "FR": ("France", "france"),
+    "GB": ("United Kingdom", "united kingdom", "great britain", "england", "scotland", "wales"),
+    "IE": ("Ireland", "ireland", "irlande", "eire"),
+    "IT": ("Italy", "italy", "italia", "italie"),
+    "MX": ("Mexico", "mexico", "mexique"),
+    "NG": ("Nigeria", "nigeria"),
+    "NZ": ("New Zealand", "new zealand"),
+    "PH": ("Philippines", "philippines"),
+    "PL": ("Poland", "poland", "polska", "pologne"),
+    "PT": ("Portugal", "portugal"),
+    "US": ("United States", "united states", "united states of america", "usa"),
+    "ZA": ("South Africa", "south africa"),
+}
+
+def country_signal(country, title, description):
+    """Reject explicitly foreign-location captions; missing location stays held."""
+    corpus = " " + " ".join(words(title + " " + description)) + " "
+    termsets = COUNTRY_TERMS.get(str(country).upper(), ())
+    if not termsets:
+        return "COUNTRY_NOT_EVALUATED"
+    target = any(" " + " ".join(words(term)) + " " in corpus for term in termsets)
+    foreign = any(
+        " " + " ".join(words(term)) + " " in corpus
+        for code, terms in COUNTRY_TERMS.items() if code != str(country).upper()
+        for term in terms
+    )
+    if target:
+        return "TARGET_COUNTRY_MENTIONED"
+    return "FOREIGN_COUNTRY_MENTIONED" if foreign else "COUNTRY_NOT_ESTABLISHED"
+
 MIN_EDGE = 640
 MAX_CANDIDATES_PER_CATEGORY = 4
 MAX_API_RESULTS = 12
@@ -162,7 +204,8 @@ class WikimediaClient:
 def discover(client, venue, kind):
     name = plain(venue["name"])[:120]
     locality = plain(venue["locality"])[:80]
-    query = " ".join(filter(None, [name, locality, CATEGORIES[kind]]))
+    country_hint = COUNTRY_TERMS.get(str(venue["country"]).upper(), ("",))[0]
+    query = " ".join(filter(None, [name, locality, country_hint, CATEGORIES[kind]]))
     data = client.request({
         "action": "query", "format": "json", "formatversion": 2,
         "generator": "search", "gsrsearch": query, "gsrnamespace": 6,
@@ -181,6 +224,9 @@ def discover(client, venue, kind):
             continue
         title = str(page.get("title") or "")
         description = metadata(info, "ImageDescription")[:1800]
+        location_signal = country_signal(venue["country"], title, description)
+        if location_signal == "FOREIGN_COUNTRY_MENTIONED":
+            continue
         score = match_score(name, locality, title, description)
         url = "https://commons.wikimedia.org/wiki/" + urllib.parse.quote(title.replace(" ", "_"), safe=":/_()-")
         found.append({
@@ -192,6 +238,7 @@ def discover(client, venue, kind):
             "description": description[:500],
             "category_requested": kind,
             "category_evidence": classify_evidence(kind, title, description),
+            "country_evidence": location_signal,
             "discovery_score_only": score,
             "publication_state": "HOLD_IDENTITY_CATEGORY_AND_RIGHTS_REVIEW",
         })
