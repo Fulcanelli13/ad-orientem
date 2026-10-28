@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "generated_at": "2026-10-08T10:34:00Z",
   "provider": "SSPX_OCT26_POLAND",
-  "purpose": "Polish SSPX official printable chapel schedule, not the dynamic map. Named public physical chapels with Sunday Mass schedules. Irregular and not yet located missions excluded.",
+  "purpose": "Polish SSPX first-party named Mass sites: 38 existing provider records plus one approved address-only Kraków chapel. Unlocated missions excluded; no new Mass times or coordinates in the site-only admission.",
   "defaults": {
     "c": "SSPX",
     "f": "ROMAN",
@@ -17,7 +17,7 @@
     "svc": "MASS"
   },
   "review_summary": {
-    "records": 38,
+    "records": 39,
     "conditional": 1,
     "source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
     "held_irregular_cities": [
@@ -522,6 +522,21 @@
       "ps": "CURRENT_PUBLIC_MASS",
       "review_flag": "OFFICIAL_PRINTABLE_SUNDAY_SCHEDULE",
       "source_checked_on": "2026-10-08"
+    },
+    {
+      "u": "SSPX-OCT26-PL-KRAKOW-KAPLICA-SW-PIUSA-X",
+      "cc": "PL",
+      "l": "Kraków",
+      "n": "Kaplica św. Piusa X",
+      "vt": "chapel",
+      "a": "ul. płk. Dąbka 10, Kraków, Polska",
+      "sr": "",
+      "su": "https://www.piusx.org.pl/kaplice/krakow",
+      "ps": "SITE_ONLY_SOURCE_CONFIRMED",
+      "soa": "FIRST_PARTY_SITE_APPROVED_2026_10_29",
+      "rg": "RG-CB2AF398310E",
+      "review_flag": "SITE_ADDRESS_ONLY_NO_SCHEDULE_OR_COORDINATES",
+      "source_checked_on": "2026-10-29"
     }
   ]
 }
