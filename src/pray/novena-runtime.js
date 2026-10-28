@@ -11,6 +11,7 @@ import { hammerHistoricalDayWitness } from "./novena-hammer-day-witness.v1.js";
 import { hammerHistoricalDayText } from "./novena-hammer-original-texts.v1.js";
 import { NOVENA_CONTEXT_V1, novenaContext } from "./novena-context-v1.js";
 import { installNovenaStyles } from "./novena-styles.js";
+import {sevenSorrowsArtMarkup} from "./seven-sorrows-novena-hero-proof.js";
 import { installSequentialDevotionalReader,novenaStageChapters } from "./devotional-sequence-adapter.js";
 import { novenaStatusFor } from "../calendar/intelligence.js";
 import { formatDisplayDate } from "../app/date-format.js";
@@ -119,6 +120,7 @@ function renderDetail(n){
    ${modeNav()}
    ${novenaDayFolio(n,suggest)}
    <button type="button" class="aoP435930Primary aoN1PrayDay" data-n1-begin="${suggest}">${esc(c.kind==='active'?L('Pray today · Day '+suggest,'Prier aujourd’hui · Jour '+suggest):L('Pray day '+suggest,'Prier le jour '+suggest))}</button>
+   ${sevenSorrowsArtMarkup({search:globalThis.location?.search||"",novenaId:n.id,screen:"detail",french:isFr()})}
    ${n.id==="st_therese"?`<div class="aoN1Info" data-n1-therese-source><h3>${esc(L("Institute of Christ the King · St Thérèse","Institut du Christ-Roi · Sainte Thérèse"))}</h3><p>${esc(L("The Institute’s perpetual Tuesday novena, prayer for missionaries and historical prayer to St Thérèse are separate from the existing Twenty-Four Glory Bes novena.","La neuvaine perpétuelle du mardi, la prière pour les missionnaires et la prière historique de l’Institut sont distinctes de la présente neuvaine des vingt-quatre Gloria Patri."))}</p><button type="button" data-n1-icksp-therese>${esc(L("Open Institute devotions","Ouvrir les dévotions de l’Institut"))}</button></div>`:""}
    <details class="aoN1AboutDisclosure">
     <summary>${esc(L('About this novena · history, practice and sources','À propos de cette neuvaine · histoire, pratique et sources'))}</summary>
