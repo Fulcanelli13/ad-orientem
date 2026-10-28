@@ -19,6 +19,13 @@ const TITLES=Object.freeze({
   PRAYER:["Prayers","Prières"],
   CONCLUSION:["Conclusion","Conclusion"],
   NOCTURN:["Nocturn","Nocturne"],
+  LESSON_WITH_BLESSING:["Lesson with blessing","Leçon et bénédiction"],
+  MATINS_PREPARATION:["Matins preparation","Préparation des matines"],
+  MARIAN_ANTIPHON:["Final Marian antiphon","Antienne mariale finale"],
+  MARTYROLOGY:["Martyrology","Martyrologe"],
+  PRIME_CHAPTER_OFFICE:["Chapter office","Office du chapitre"],
+  RUBRICAL_NOTE:["Rubrical instruction","Rubrique"],
+  VERSICLE_RESPONSE:["Versicle and response","Verset et répons"],
   SOURCE_SECTION:["Source section","Section source"],
 });
 const HOUR_NAMES=Object.freeze({
