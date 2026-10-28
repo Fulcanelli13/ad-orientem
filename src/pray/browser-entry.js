@@ -26,11 +26,11 @@ export function ensurePrayReader({win=globalThis}={}){
     await import("./novena-runtime.js");
     await import("./traditional-pray-runtime.js");
     await import("./focus-installer.js");
-    // Preview-only: source corpus, liturgical readers, Home and Mass are untouched.
-    if(new URLSearchParams(win.location?.search||"").get("aoPrayReader")==="contemplative"){
-      const preview=await import("./contemplative-daily-preview.js");
-      preview.installContemplativeDailyPreview(win);
-    }
+    // Default contemplative only for Morning/Evening Prayer; the module
+    // guards all other routes and supports ?aoPrayReader=classic rollback.
+    // This lazy import occurs after entering Pray; cold Home stays unchanged.
+    const contemplative=await import("./contemplative-daily-preview.js");
+    contemplative.installContemplativeDailyPreview(win);
     // All of these modules install via their original production side-effects.
     // Preserve their original API globals instead of introducing a new owner.
     const coherence=win?.AO_PRAY_COHERENCE_V435930;
