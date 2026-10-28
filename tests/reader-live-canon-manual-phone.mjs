@@ -135,12 +135,15 @@ try{
    await page.evaluate(()=>window.__AO_PHONE_PREVIEW.setPresentationMode("MISSAL"));
    await page.waitForFunction(()=>document.querySelector("[data-ao-reader-shell]")?.dataset.mode==="MISSAL");
    assert.equal(await trigger.isVisible(),false,"Missal mode must not show manual LIVE control");
+   // Legacy saved SIMPLE now resolves to LIVE; it must not produce a third reader.
    await page.evaluate(()=>window.__AO_PHONE_PREVIEW.setPresentationMode("SIMPLE"));
-   assert.equal(await trigger.isVisible(),false,"Simple mode must not show manual LIVE control");
+   await page.waitForFunction(()=>document.querySelector("[data-ao-reader-shell]")?.dataset.mode==="LIVE");
+   assert.equal(await page.locator('[data-reader-mode="SIMPLE"]').count(),0,
+     "Retired SIMPLE should not appear in Mass preferences");
    assert.deepEqual(errors,[],"LIVE Canon manual browser errors");
   }finally{await context.close();}
  }
- console.log("PASS LIVE 64 manual Canon control: mobile 320/390 EN/FR, Host and Chalice options, independent server bell, reset, Escape, Missal/Simple hidden.");
+ console.log("PASS LIVE 64 manual Canon control: mobile 320/390 EN/FR, Host and Chalice options, independent server bell, reset, Escape, Missal hidden and legacy SIMPLE migration.");
 }finally{
  await browser?.close();
  await new Promise(ok=>server.close(()=>ok()));
