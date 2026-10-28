@@ -84,5 +84,5 @@ console.log(JSON.stringify({status:"PASS_BREVIARIUM_W3_63_AND_W3B_EXACT_ARCHIVES
   weak:35,quality_cohort:28,verified_alternate_files:10,
   improved_bounded_candidate_files:7,physically_archived_four_cumulative:4,
   newly_archived_source_bytes_qa:2,explicit_frame_rejected:1,
-  429_stop_obeyed:true,approved_prayer_heroes_unchanged:22,
+  "429_stop_obeyed":true,approved_prayer_heroes_unchanged:22,
   rejected_work_ids_protected:103,pristine_certifications:0,production_releases:0,cost_eur:0}));
