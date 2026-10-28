@@ -1,0 +1,117 @@
+{
+  "schema": "AO_WAVE1_MORNING_SORROWS_REVIEW_ONLY_V1",
+  "created": "2026-10-28",
+  "no_editorial_reselection": true,
+  "no_publication": true,
+  "cost_eur": 0,
+  "note": "Full image, natural aspect, sRGB only; proves file production, not licensing, artistic approval, or app compatibility.",
+  "records": [
+    {
+      "module": "morning",
+      "editorial_primary": "Jules Breton — The Song of the Lark",
+      "source": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "ref": "research/module-hero-rescue-20261026",
+        "path": "assets/staged/module-hero-rescue/morning.jpg",
+        "sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+        "pixels": [
+          2548,
+          3300
+        ],
+        "source_page": "https://www.artic.edu/artworks/94841/the-song-of-the-lark"
+      },
+      "color_transform": "untagged_RGB_as_is_no_auto_colouring",
+      "rights_status": "EXACT_REPRODUCTION_TERMS_PENDING_PRODUCTION_CHECK",
+      "files": [
+        {
+          "path": "assets/pray/hero-proof/morning-whole-720-proof.webp",
+          "sha256": "2fe0a6396f65e24aada6362dc19f81a85e8b44228d8b93dd440aabe78f70ffcb",
+          "bytes": 108602,
+          "pixels": [
+            720,
+            932
+          ],
+          "full_original_composition": true,
+          "cropped": false,
+          "retouched": false,
+          "upscaled": false,
+          "production": false,
+          "staged_proof_path": "assets/staged/prayer-wave1-morning-sorrows-proof-20261028/morning-whole-720-proof.webp"
+        },
+        {
+          "path": "assets/pray/hero-proof/morning-whole-1440-proof.webp",
+          "sha256": "9e01d8460c5c70e293db1714f69b65dfa89280ff0213aaa2f143eb023bc9e93e",
+          "bytes": 498664,
+          "pixels": [
+            1440,
+            1865
+          ],
+          "full_original_composition": true,
+          "cropped": false,
+          "retouched": false,
+          "upscaled": false,
+          "production": false,
+          "staged_proof_path": "assets/staged/prayer-wave1-morning-sorrows-proof-20261028/morning-whole-1440-proof.webp"
+        }
+      ],
+      "final_photographic_clearance": false,
+      "app_published": false
+    },
+    {
+      "module": "seven-sorrows",
+      "editorial_primary": "Master of the Female Half-Lengths (attributed) — Virgin of the Seven Sorrows",
+      "source": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "ref": "research/module-hero-museum-photos-20261026",
+        "path": "assets/staged/module-hero-masters/sorrows.jpg",
+        "sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+        "pixels": [
+          2220,
+          3000
+        ],
+        "source_page": "https://commons.wikimedia.org/wiki/File:Master_of_the_Half_Lengths_-_Virgin_of_the_Seven_Sorrows_-_Google_Art_Project.jpg"
+      },
+      "color_transform": "embedded_icc_to_sRGB",
+      "rights_status": "SOURCE_FILE_AND_JURISDICTION_RECHECK_BEFORE_PRODUCTION",
+      "files": [
+        {
+          "path": "assets/pray/hero-proof/seven-sorrows-whole-720-proof.webp",
+          "sha256": "4530434dd0cb16d9df395a5261f36c27362f1766891d3d4b33de5135f155ddac",
+          "bytes": 236688,
+          "pixels": [
+            720,
+            973
+          ],
+          "full_original_composition": true,
+          "cropped": false,
+          "retouched": false,
+          "upscaled": false,
+          "production": false,
+          "staged_proof_path": "assets/staged/prayer-wave1-morning-sorrows-proof-20261028/seven-sorrows-whole-720-proof.webp"
+        },
+        {
+          "path": "assets/pray/hero-proof/seven-sorrows-whole-1440-proof.webp",
+          "sha256": "82b5085c66d98dffe988ce69af17bc6a7515d5e529800e1e27e9997ac79a9e85",
+          "bytes": 1018200,
+          "pixels": [
+            1440,
+            1946
+          ],
+          "full_original_composition": true,
+          "cropped": false,
+          "retouched": false,
+          "upscaled": false,
+          "production": false,
+          "staged_proof_path": "assets/staged/prayer-wave1-morning-sorrows-proof-20261028/seven-sorrows-whole-1440-proof.webp"
+        }
+      ],
+      "final_photographic_clearance": false,
+      "app_published": false
+    }
+  ],
+  "code_integration_state": {
+    "morning": "ONLY_OPT_IN_GUIDED_FIRST_STEP",
+    "seven_sorrows": "ASSET_STAGED_NO_CANONICAL_ROUTE_ON_MAIN",
+    "app_release_count": 0
+  }
+}
