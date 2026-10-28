@@ -11,6 +11,17 @@ function vicinity(profile,item){
  return [...new Set(fragments)].join(" · ")||clean(item?.subtitle)||"";
 }
 
+// Relevance is measured from the MAP CAMERA, not the user's device location.
+// This never asserts walking/driving distance or invents geographic evidence.
+export function discoverCenterDistanceKm(item,center){
+ const a=Number(item?.geo?.lat),b=Number(item?.geo?.lng);
+ const c=Number(center?.lat),d=Number(center?.lng);
+ if(![a,b,c,d].every(Number.isFinite)||Math.abs(a)>90||Math.abs(c)>90)return Infinity;
+ const rad=Math.PI/180,phi1=a*rad,phi2=c*rad,dPhi=(c-a)*rad;
+ const dLambda=Math.atan2(Math.sin((d-b)*rad),Math.cos((d-b)*rad));
+ const h=Math.sin(dPhi/2)**2+Math.cos(phi1)*Math.cos(phi2)*Math.sin(dLambda/2)**2;
+ return 6371*2*Math.asin(Math.sqrt(Math.max(0,Math.min(1,h))));
+}
 // A map-bound discovery result must already pass the ordinary publication gate.
 // MapLibre owns longitude wrapping and antimeridian checks via bounds.contains.
 export function discoverItemsWithinMapBounds(items,bounds){
@@ -36,6 +47,7 @@ export function renderMapcnDiscoverRail(vm){
  }).map(item=>({item,profile:byPlace.get(item.place_id)}))
   .sort((a,b)=>Number(Boolean(b.profile?.editorial_feature))-Number(Boolean(a.profile?.editorial_feature))
    ||Number(Boolean(b.profile?.media?.asset_path))-Number(Boolean(a.profile?.media?.asset_path))
+   ||(vm.discoverCenter?discoverCenterDistanceKm(a.item,vm.discoverCenter)-discoverCenterDistanceKm(b.item,vm.discoverCenter):0)
    ||clean(a.item.title).localeCompare(clean(b.item.title)));
  // Editorial selections are separately labelled worldwide; they must
  // never masquerade as suggestions inside the current camera bounds.
