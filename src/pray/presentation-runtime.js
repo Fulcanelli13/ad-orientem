@@ -19,6 +19,7 @@ import {FIVE_WOUNDS_SOURCE_V1,FIVE_WOUNDS_WOUNDS_V1,FIVE_WOUNDS_CHAPLET_V1,fiveW
 import {PRECIOUS_BLOOD_HISTORICAL_SOURCE_V1,PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1,PRECIOUS_BLOOD_MYSTERIES_V1,PRECIOUS_BLOOD_TOTALS_V1,preciousBloodMystery,preciousBloodPrayerAt} from "./precious-blood-chaplet.v1.js";
 import {PRIESTLY_INTERCESSION_PURPOSES_B19,priestlyIntercessionFor} from "./priestly-intercessions-b19.js";
 import {OCCASIONAL_PURPOSES_B20,occasionalIntercessionFor} from "./occasional-intercessions-b20.js";
+import {OCCASIONAL_PURPOSES_ALL_B21,occasionalIntercessionB21For} from "./occasional-intercessions-b21.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
 import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
 import {monthlyDevotionalRegister} from "./quiet-devotional-progression.js";
@@ -1835,20 +1836,22 @@ function renderPriestIntercessions(){
 }
 function renderOccasionalIntercessions(){
  const lc=isFr()?'fr':'en';
- const purpose=OCCASIONAL_PURPOSES_B20.includes(OCCASIONAL.purpose)?OCCASIONAL.purpose:'sick';
+ const purpose=OCCASIONAL_PURPOSES_ALL_B21.includes(OCCASIONAL.purpose)?OCCASIONAL.purpose:'sick';
  const canonical=P('devotion_ad_te_beate_ioseph');
- const p=occasionalIntercessionFor(purpose,lc,OCCASIONAL.latin,canonical);
+ const p=OCCASIONAL_PURPOSES_B20.includes(purpose)
+  ?occasionalIntercessionFor(purpose,lc,OCCASIONAL.latin,canonical)
+  :occasionalIntercessionB21For(purpose,lc,OCCASIONAL.latin,canonical);
  if(!p)return callout(esc(L('Historical prayer unavailable.','Prière historique indisponible.')),'warn');
- const labels={sick:L('For the sick','Pour les malades'),family:L('For families','Pour les familles'),difficulties:L('In difficulties','Dans les difficultés')};
- const choices=OCCASIONAL_PURPOSES_B20.map(id=>'<button type="button" data-p435930-occasional-purpose="'+esc(id)+'" aria-pressed="'+String(id===purpose)+'">'+esc(labels[id])+'</button>').join('');
+ const labels={sick:L('For the sick','Pour les malades'),family:L('For families','Pour les familles'),difficulties:L('In difficulties','Dans les difficultés'),peace:L('For peace','Pour la paix'),travel:L('Before a journey','Avant un voyage'),discernment:L('For a life choice','Pour un choix de vie')};
+ const choices=OCCASIONAL_PURPOSES_ALL_B21.map(id=>'<button type="button" data-p435930-occasional-purpose="'+esc(id)+'" aria-pressed="'+String(id===purpose)+'">'+esc(labels[id])+'</button>').join('');
  const language=p.labelOriginal?L('Historical English · no verified French translation','Anglais historique · sans traduction française vérifiée'):p.language==='la'?'Latin':p.language==='fr'?'Français':L('Historical English','Anglais historique');
  const links=p.sourceLinks.map((u,i)=>'<a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">'+esc(i===0?L('Historical source','Source historique'):L('Related source witness','Autre témoin historique'))+'</a>').join('');
- return head(L('Occasional Intercessions','Intercessions occasionnelles'),L('Three practical occasions','Trois besoins concrets'))+
- '<main class="aoP435930Body aoOccasionalIntercession" data-ao-occasional-intercession>'+
- '<p class="aoOccasionalIntro">'+esc(L('Name the person or family silently as you pray.','Nommez intérieurement la personne ou la famille concernée.'))+'</p>'+
+ return head(L('Occasional Intercessions','Intercessions occasionnelles'),L('Six distinct everyday intentions','Six intentions distinctes du quotidien'))+
+ '<main class="aoP435930Body aoOccasionalIntercession" data-ao-occasional-intercession data-ao-occasional-purpose-count="6">'+
+ '<p class="aoOccasionalIntro">'+esc(L('Choose the intention for this moment.','Choisissez l’intention qui convient à ce moment.'))+'</p>'+
  '<div class="aoOccasionalChoices" role="group" aria-label="'+esc(L('Prayer intention','Intention de prière'))+'">'+choices+'</div>'+
  '<article class="aoOccasionalCard"><div class="aoOccasionalTitle"><h2>'+esc(p.title)+'</h2>'+
- (p.canLatin?'<button type="button" class="aoOccasionalLangButton" data-p435930-occasional-latin aria-pressed="'+String(OCCASIONAL.latin)+'">'+esc(OCCASIONAL.latin?L('Return','Retour'):'LATIN')+'</button>':'')+
+ (p.canLatin?'<button type="button" class="aoOccasionalLangButton" data-p435930-occasional-latin aria-pressed="'+String(OCCASIONAL.latin)+'">'+esc(p.language==='la'?L('ENGLISH','ANGLAIS'):'LATIN')+'</button>':'')+
  '</div><small class="aoOccasionalLanguage">'+esc(language)+'</small><p class="aoOccasionalText" lang="'+esc(p.language)+'">'+nl(p.text)+'</p></article>'+
  '<details class="aoOccasionalSource"><summary>'+esc(L('Historical source and limitations','Source historique et limites'))+'</summary><p>'+esc(p.sourceNote)+'</p>'+
  (!p.canonical?'<p>'+esc(L('The original printed page has not been independently collated. Historical indulgence claims are not represented as current.','La page originale imprimée reste à collationner. Aucune indulgence historique n’est présentée comme actuelle.'))+'</p>':'')+
@@ -3103,7 +3106,7 @@ function onClick(e){
  if(view==='occasionals'){
   if(b.hasAttribute('data-p435930-occasional-purpose')){
    const selected=b.dataset.p435930OccasionalPurpose;
-   if(OCCASIONAL_PURPOSES_B20.includes(selected)){OCCASIONAL.purpose=selected;OCCASIONAL.latin=false;return render()}
+   if(OCCASIONAL_PURPOSES_ALL_B21.includes(selected)){OCCASIONAL.purpose=selected;OCCASIONAL.latin=false;return render()}
    return;
   }
   if(b.hasAttribute('data-p435930-occasional-latin')){OCCASIONAL.latin=!OCCASIONAL.latin;return render()}

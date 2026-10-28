@@ -1,0 +1,83 @@
+{
+  "schema": "ao.prayer.admissions-b21.v1",
+  "asOf": "2026-10-28",
+  "parentBatch": "b20",
+  "ownerRoute": "pray.occasional_intercessions",
+  "scope": "Three distinct everyday purposes added to the existing contextual reader; same top-level Prayer families, no new public module.",
+  "newWorkCount": 3,
+  "reusedB20PurposeCount": 3,
+  "reusedCanonicalPrayerCount": 1,
+  "availablePurposeCount": 6,
+  "canonicalPrayerBankUnchanged": true,
+  "admitted": [
+    {
+      "id": "occasional_peace_raccolta_1910_18",
+      "purpose": "peace",
+      "source": "Raccolta 1910 §18, Ant. Da pacem, Domine",
+      "languages": [
+        "en",
+        "la"
+      ],
+      "sourceUrls": [
+        "https://traditionalrosary.org/other-prayers/prayer-for-peace/",
+        "https://www.liturgialatina.org/raccolta/calamity.htm"
+      ],
+      "originalPrintImageVerified": false,
+      "status": "STAGED_NOT_MERGED"
+    },
+    {
+      "id": "occasional_travel_lasance_1911_en",
+      "purpose": "travel",
+      "source": "Lasance, With God (1911), p.754, shortened Itinerary",
+      "languages": [
+        "en"
+      ],
+      "sourceUrls": [
+        "https://en.wikisource.org/wiki/With_God/Various_Other_Devotions",
+        "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/768"
+      ],
+      "originalPrintImageVerified": false,
+      "status": "STAGED_NOT_MERGED"
+    },
+    {
+      "id": "occasional_discernment_lasance_1911_en",
+      "purpose": "discernment",
+      "source": "Lasance, With God (1911), p.753, Prayer for Divine Direction in Choice of State of Life",
+      "languages": [
+        "en"
+      ],
+      "sourceUrls": [
+        "https://en.wikisource.org/wiki/With_God/Various_Other_Devotions",
+        "https://www.latinmasswedding.com/prayers/"
+      ],
+      "originalPrintImageVerified": false,
+      "textNormalization": "Corroborated 'Almighty God' corrects Wikisource 'A lmight God' apparent defect",
+      "status": "STAGED_NOT_MERGED"
+    }
+  ],
+  "excluded": [
+    {
+      "id": "multiple_raphael_variants",
+      "status": "DEFER_OVERLAP"
+    },
+    {
+      "id": "ordinary_work",
+      "status": "RETAIN_EXISTING_DAILY_PRAYER"
+    },
+    {
+      "id": "calamity_1857_154_157",
+      "status": "DEFER_COLLATION"
+    }
+  ],
+  "policy": {
+    "canonical48Untouched": true,
+    "existingB20ReaderReused": true,
+    "existingB20ModuleUnmodified": true,
+    "oneSourceWorkPerNewPurpose": true,
+    "noInventedTranslations": true,
+    "notPrayerEncyclopedia": true,
+    "indulgencesHistoricalNotCurrent": true,
+    "zeroCost": true,
+    "printPhotoCertification": false
+  }
+}
