@@ -22,6 +22,8 @@ import {OCCASIONAL_PURPOSES_B20,occasionalIntercessionFor} from "./occasional-in
 import {OCCASIONAL_PURPOSES_ALL_B21,occasionalIntercessionB21For} from "./occasional-intercessions-b21.js";
 import {JOSEPH_SEVEN_SORROWS_SOURCE_B24,JOSEPH_SEVEN_PRAYERS_B24,JOSEPH_SEVEN_STEP_COUNT_B24,JOSEPH_SEVEN_CLOSURE_B24,josephSevenStepAt} from "./st-joseph-seven-sorrows-joys-b24.js";
 import "./st-joseph-seven-sorrows-styles-b24.js";
+import {MONTFORT_B26_SOURCE,MONTFORT_B26_PHASES,MONTFORT_B26_AVE_MARIS_LATIN,MONTFORT_B26_CONSECRATION_ACT_EN,montfortPhaseForDay,montfortSchedule,montfortTodayLocal,montfortNextFeast} from "./montfort-consecration-b26.js";
+import "./montfort-consecration-styles-b26.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
 import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
 import {monthlyDevotionalRegister} from "./quiet-devotional-progression.js";
@@ -256,6 +258,22 @@ let PRECIOUS_BLOOD={phase:0,bead:0,latin:false,showMeditation:false};
 let PRIESTS={purpose:"priests",latin:false};
 let OCCASIONAL={purpose:"sick",latin:false};
 let JOSEPH_SEVEN={step:0,latin:false};
+
+const MONTFORT_STORAGE="ao:pray:montfort-b26:v1";
+function montfortLoadProgress(){
+ const initialTarget=montfortNextFeast()?.date||"2026-12-08";
+ try{
+  const obj=JSON.parse(localStorage.getItem(MONTFORT_STORAGE)||"{}");
+  const target=montfortSchedule(obj?.target)?obj.target:initialTarget;
+  const marked=Array.isArray(obj?.completed)?[...new Set(obj.completed.filter(n=>Number.isInteger(n)&&n>=1&&n<=34))]:[];
+  return {target,day:null,completed:marked};
+ }catch{return {target:initialTarget,day:null,completed:[]}}
+}
+function montfortSaveProgress(){
+ try{localStorage.setItem(MONTFORT_STORAGE,JSON.stringify({target:MONTFORT.target,completed:MONTFORT.completed}))}catch{}
+}
+let MONTFORT=montfortLoadProgress();
+
 let ROSARY_FIFTEEN={active:false};
 // Only a source-launched exact Rosary object owns this temporary return receipt.
 let rosaryScriptureReturn=null;
@@ -439,6 +457,7 @@ function open(id,opts={}){
   else if(id==='pray.for_priests'){view='priests';PRIESTS={purpose:'priests',latin:false}}
   else if(id==='pray.occasional_intercessions'){view='occasionals';OCCASIONAL={purpose:'sick',latin:false}}
   else if(id==='pray.st_joseph_seven_sorrows'){view='josephSeven';JOSEPH_SEVEN={step:0,latin:false}}
+  else if(id==='pray.montfort_consecration'){view='montfort';const w=montfortSchedule(MONTFORT.target);MONTFORT.day=w?.dayIndex||1}
   else if(id==='pray.penitential_psalms'){view='penitential';PEN.step=0}
   else if(id==='pray.litany_saints'){view='litany';LIT.step=0}
   else if(id==='pray.seven_words'){view='sevenWords';SEVEN.step=0}
@@ -728,7 +747,7 @@ function renderPrayFamily(){
  esc(L('Also: Chaplet of the Five Wounds','Également : chapelet des Cinq Plaies'))+'</button></div>'
  :''}${familyId==='devotions'
  ?'<div class="aoOccasionalFamilyAside"><button type="button" data-p435930-own="pray.occasional_intercessions">'+
- esc(L('Occasional intercessions','Intercessions occasionnelles'))+'</button> <button type="button" data-p435930-own="pray.st_joseph_seven_sorrows">'+esc(L('St Joseph · Seven Sorrows and Joys','Saint Joseph · Sept douleurs et sept joies'))+'</button></div>'
+ esc(L('Occasional intercessions','Intercessions occasionnelles'))+'</button> <button type="button" data-p435930-own="pray.st_joseph_seven_sorrows">'+esc(L('St Joseph · Seven Sorrows and Joys','Saint Joseph · Sept douleurs et sept joies'))+'</button> <button type="button" data-p435930-own="pray.montfort_consecration">'+esc(L('Montfort · 33-day consecration preparation','Montfort · préparation de 33 jours à la consécration'))+'</button></div>'
  :''}${familyId==='eucharistic'
  ?'<div class="aoPriestsFamilyAside"><button type="button" data-p435930-own="pray.for_priests">'+
  esc(L('Pray for priests and vocations','Prier pour les prêtres et les vocations'))+'</button></div>'
@@ -1844,6 +1863,49 @@ function renderPriestIntercessions(){
  * canonical prayers. The final antiphon, ℣, ℟ and collect are an eighth step,
  * never silently omitted. This is NOT the St Joseph Novena (§301).
  */
+
+function renderMontfortB26(){
+ const w=montfortSchedule(MONTFORT.target);
+ if(!w)return callout(esc(L('This preparation date is invalid.','Cette date de préparation est invalide.')),'warn');
+ const day=Number.isInteger(MONTFORT.day)?Math.max(1,Math.min(34,MONTFORT.day)):w.dayIndex;
+ const ending=day===34,phase=ending?null:montfortPhaseForDay(day);
+ const date=w.calendarDateForDay(day);
+ const done=MONTFORT.completed.includes(day);
+ const count=MONTFORT.completed.filter(n=>n>=1&&n<=33).length;
+ const pct=Math.round(count*100/33);
+ const title=L('Montfort · Consecration to Jesus through Mary','Montfort · Consécration à Jésus par Marie');
+ const phaseRail=MONTFORT_B26_PHASES.map((p,i)=>'<button type="button" data-p435930-montfort-phase="'+p.first+'" '+(phase?.id===p.id?'aria-current="step"':'')+'><span>'+esc(i===0?L('12 days','12 jours'):L('Week ','Semaine ')+i)+'</span><br>'+esc(isFr()?p.titleFr:p.titleEn)+'</button>').join('');
+ const prayer=(id)=>{
+  const p=DATA.prayers?.[id];if(!p)return '<p class="aoMontfortB26Note">'+esc(L('Canonical prayer text unavailable in this edition.','Texte de la prière canonique indisponible.'))+'</p>';
+  return '<div class="aoMontfortB26Action" data-ao-montfort-prayer="'+esc(id)+'"><h3>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</h3><p class="aoMontfortB26Canonical">'+nl(isFr()?p.fr:p.en)+'</p></div>';
+ };
+ const originalAct=ending?'<p class="aoMontfortB26Note">'+esc(L('Historical English text: F. W. Faber (1863). No certified historical French translation has been substituted. The act is personal; the app does not sign it for you.','Texte historique anglais : F. W. Faber (1863). Aucune traduction française historique non vérifiée ne lui est substituée. Cet acte est personnel ; l’application ne le signe pas à votre place.'))+'</p>'+MONTFORT_B26_CONSECRATION_ACT_EN.map(p=>'<p class="aoMontfortB26Original" lang="en">'+esc(p)+'</p>').join(''):'';
+ const hymn=day>=13&&day<=33?'<details class="aoMontfortB26Details" data-ao-montfort-hymn><summary>'+esc(L('Ave Maris Stella · traditional Latin hymn','Ave Maris Stella · hymne latin traditionnel'))+'</summary><div lang="la">'+MONTFORT_B26_AVE_MARIS_LATIN.map(p=>'<p class="aoMontfortB26Original">'+nl(p)+'</p>').join('')+'</div></details>':'';
+ const todayNote=w.inPreparation?L('Your current day in this preparation: ','Jour actuel de cette préparation : ')+w.dayIndex:w.onConsecrationDay?L('Today is your chosen consecration date.','Aujourd’hui est la date choisie pour la consécration.'):w.daysBeforeStart>0?L('Preparation begins in ','La préparation commence dans ')+w.daysBeforeStart+L(' days.',' jours.'):L('This selected programme is outside its 33-day window.','Cette préparation choisie se situe hors de sa période de 33 jours.');
+ const cues=ending
+  ?'<p>'+esc(L('Montfort directs confession and Holy Communion with this intention; after Communion, recite and sign the act of consecration personally (True Devotion §231). An offering or penance according to one’s means is recommended, not obligatory (§232).','Montfort recommande la confession et la sainte Communion avec cette intention, puis la récitation et la signature personnelle de l’acte après la Communion (§231). Une offrande ou pénitence selon ses moyens est conseillée sans être obligatoire (§232).'))+'</p>'+originalAct
+  :'<p>'+esc(isFr()?phase.dailyDirectionFr:phase.dailyDirectionEn)+'</p>'+
+   (day>=13?'<p class="aoMontfortB26Note">'+esc(L('Source-required litanies are named below. The Litany of the Holy Spirit and of the Holy Name need independent original-form admission; the shorter “Come, Holy Spirit” is not labelled as a substitute.','Les litanies prescrites sont identifiées ci-dessous. Les litanies du Saint-Esprit et du Saint Nom nécessitent encore une admission de leur version historique ; « Venez, Esprit-Saint » n’est pas présenté comme leur remplacement.'))+'</p>':'')+
+   (phase.id==='self'?'<p class="aoMontfortB26Note">'+esc(L('Prescribed: Litany of the Holy Spirit, Ave Maris Stella, Litany of Loreto.','Prescrit : litanies du Saint-Esprit, Ave Maris Stella, litanies de Lorette.'))+'</p>':phase.id==='mary'?'<p class="aoMontfortB26Note">'+esc(L('Prescribed: Litany of the Holy Spirit, Ave Maris Stella, at least five decades of the Rosary.','Prescrit : litanies du Saint-Esprit, Ave Maris Stella, au moins cinq dizaines du Rosaire.'))+'</p>':phase.id==='jesus'?'<p class="aoMontfortB26Note">'+esc(L('Prescribed: Litany of the Holy Spirit, Ave Maris Stella, Litany of the Holy Name of Jesus.','Prescrit : litanies du Saint-Esprit, Ave Maris Stella, litanies du Saint Nom de Jésus.'))+'</p>':'')+
+   (phase.canonicalIds||[]).map(prayer).join('')+
+   (phase.ownRosary?'<button type="button" class="aoMontfortB26Jump" data-p435930-montfort-rosary>'+esc(L('Open the existing Holy Rosary','Ouvrir le Saint Rosaire existant'))+'</button>':'')+hymn;
+ const sourceLinks=[MONTFORT_B26_SOURCE.instructionsWitness,MONTFORT_B26_SOURCE.originalActWitness,MONTFORT_B26_SOURCE.originalScanWitness].map((url,i)=>'<p><a href="'+esc(url)+'" rel="noopener noreferrer" target="_blank">'+esc(i===0?L('Original 1863 instructions (digital)','Instructions originales de 1863 (numériques)'):i===1?L('Faber 1863 consecration act','Acte de consécration, Faber 1863'):L('Historical book edition and provenance','Édition historique et provenance'))+'</a></p>').join('');
+ return head(title,L('12 days + three weeks · original source-directed programme','12 jours + trois semaines · programme conforme à la source'))+
+  '<main class="aoP435930Body aoMontfortB26" data-ao-montfort-b26-reader>'+
+  '<p class="aoMontfortB26Intro">'+esc(L('33 days of preparation, followed by the act on the chosen consecration day. Montfort gives four phases, not 33 distinct authored daily meditations.','33 jours de préparation, suivis de l’acte à la date choisie. Montfort décrit quatre périodes, non 33 méditations quotidiennes de sa composition.'))+'</p>'+
+  '<div class="aoMontfortB26Picker"><label for="ao-montfort-b26-date">'+esc(L('Consecration date','Date de consécration'))+'</label><input id="ao-montfort-b26-date" type="date" value="'+esc(MONTFORT.target)+'" data-p435930-montfort-target aria-label="'+esc(L('Choose consecration date','Choisir la date de consécration'))+'"/></div>'+
+  '<p class="aoMontfortB26Note">'+esc(L('Preparation: ','Préparation : ')+w.start+L(' to ',' au ')+w.lastPreparationDay+L(' · Consecration: ',' · Consécration : ')+w.target)+'. '+esc(todayNote)+'</p>'+
+  '<p class="aoMontfortB26Note">'+esc(L('Dates are chosen for private devotion. Transfers in the 1962 liturgical calendar must be checked separately; changing this date does not change the public liturgical Calendar.','Les dates sont choisies pour une dévotion privée. Les transferts du calendrier liturgique de 1962 doivent être vérifiés séparément ; ce choix ne modifie pas le Calendrier.'))+'</p>'+
+  '<div class="aoMontfortB26Progress" role="progressbar" aria-label="'+esc(L('Completed preparation days','Jours de préparation accomplis'))+'" aria-valuenow="'+pct+'" aria-valuemin="0" aria-valuemax="100"><span style="width:'+pct+'%"></span></div><p class="aoMontfortB26Note">'+esc(L('Days marked completed: ','Jours marqués accomplis : ')+count+' / 33')+'</p>'+
+  '<div class="aoMontfortB26PhaseRail" role="group" aria-label="'+esc(L('Four periods','Quatre périodes'))+'">'+phaseRail+'</div>'+
+  '<section class="aoMontfortB26Card" data-ao-montfort-day="'+day+'"><small class="aoMontfortB26Kicker">'+esc(ending?L('Consecration day','Jour de consécration'):L('Day ','Jour ')+day+' / 33')+' · '+date+'</small><h2>'+esc(ending?L('Act of Consecration','Acte de consécration'):isFr()?phase.titleFr:phase.titleEn)+'</h2>'+
+  (ending?'':('<p>'+esc(isFr()?phase.emphasisFr:phase.emphasisEn)+'</p>'))+cues+'</section>'+
+  '<label class="aoMontfortB26Check"><input type="checkbox" data-p435930-montfort-mark '+(done?'checked':'')+'/>'+esc(ending?L('I have personally made this consecration','J’ai personnellement fait cette consécration'):L('I have completed this day’s preparation','J’ai accompli la préparation de ce jour'))+'</label>'+
+  '<div class="aoMontfortB26Nav"><button type="button" data-p435930-montfort-prev '+(day===1?'disabled':'')+'>'+esc(L('Previous','Précédent'))+'</button><button type="button" data-p435930-montfort-today>'+esc(L('Current day','Jour actuel'))+'</button><button type="button" data-p435930-montfort-next '+(ending?'disabled':'')+'>'+esc(ending?L('Complete','Terminé'):day===33?L('Consecration act','Acte de consécration'):L('Next','Suivant'))+'</button></div>'+
+  '<details class="aoMontfortB26Details"><summary>'+esc(L('Source, historical limits and required prayers','Sources, limites historiques et prières prescrites'))+'</summary>'+
+  '<p class="aoMontfortB26Note">'+esc(L('True Devotion §§227–233 and Faber’s 1863 public-domain consecration act. This reader reproduces Montfort’s phase structure, not the later 1958-and-after thirty-three daily reading schemes. The printed original has not undergone page-image collation. Historical litanies not yet source-admitted in Ad Orientem are explicitly identified rather than silently omitted or replaced. No copyrighted 1987 translation is used.','Vraie Dévotion §§227–233 et acte de consécration de Faber (1863, domaine public). Ce lecteur reprend les quatre périodes de Montfort, sans attribuer au saint les lectures quotidiennes élaborées postérieurement. Les pages imprimées originales restent à collationner. Les litanies historiques non encore admises sont signalées, jamais remplacées silencieusement. La traduction de 1987 n’est pas reproduite.'))+'</p>'+sourceLinks+'</details></main>';
+}
+
 function renderJosephSeven(){
  const step=josephSevenStepAt(JOSEPH_SEVEN.step,DATA.prayers);
  if(!step)return callout(esc(L('Historical prayer unavailable.','Prière historique indisponible.')),'warn');
@@ -2150,7 +2212,7 @@ function reopenResume(snapshot){
  const r=shell();r.classList.add('open');r.setAttribute('aria-hidden','false');document.body.classList.add('aoP435930Open');render();
  queueMicrotask(()=>r.querySelector('button,[href],input,[tabindex]:not([tabindex="-1"])')?.focus?.());return true
 }
-function navigationSignature(){return [view,PRIESTS.purpose,PRIESTS.latin,OCCASIONAL.purpose,OCCASIONAL.latin,JOSEPH_SEVEN.step,JOSEPH_SEVEN.latin,MERCY.step,MERCY.includeClosing,MERCY.guide,FIVE_WOUNDS.index,FIVE_WOUNDS.latin,PRECIOUS_BLOOD.phase,PRECIOUS_BLOOD.bead,PRECIOUS_BLOOD.latin,TEN.day,TEN.hour,TEN.step,TEN.face,familyId||'',CONF.stage,CONF.path||'',CONF.examStep,CONF.riteStep,CONF.afterStep,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
+function navigationSignature(){return [view,PRIESTS.purpose,PRIESTS.latin,OCCASIONAL.purpose,OCCASIONAL.latin,JOSEPH_SEVEN.step,JOSEPH_SEVEN.latin,MONTFORT.day,MONTFORT.target,MONTFORT.completed.join(','),MERCY.step,MERCY.includeClosing,MERCY.guide,FIVE_WOUNDS.index,FIVE_WOUNDS.latin,PRECIOUS_BLOOD.phase,PRECIOUS_BLOOD.bead,PRECIOUS_BLOOD.latin,TEN.day,TEN.hour,TEN.step,TEN.face,familyId||'',CONF.stage,CONF.path||'',CONF.examStep,CONF.riteStep,CONF.afterStep,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
 function focusables(){const r=document.getElementById(ROOT_ID);if(!r?.classList.contains('open'))return [];return [...r.querySelectorAll('button:not([disabled]),[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(el=>el.offsetParent!==null&&!el.hidden)}
 
 
@@ -2783,7 +2845,7 @@ function installLibraryParagraphFocus(m,id){
   if(event.target.closest("[data-p435930-flip]"))queueMicrotask(()=>reader?.focus?.());
  });
 }
-function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='fiveWounds')html=renderFiveWounds();else if(view==='preciousBlood')html=renderPreciousBlood();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='priests')html=renderPriestIntercessions();else if(view==='occasionals')html=renderOccasionalIntercessions();else if(view==='josephSeven')html=renderJosephSeven();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=(view==='adoration'&&ADOR.quiet?'':semanticRails())+(homeNavigationError
+function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='fiveWounds')html=renderFiveWounds();else if(view==='preciousBlood')html=renderPreciousBlood();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='priests')html=renderPriestIntercessions();else if(view==='occasionals')html=renderOccasionalIntercessions();else if(view==='josephSeven')html=renderJosephSeven();else if(view==='montfort')html=renderMontfortB26();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=(view==='adoration'&&ADOR.quiet?'':semanticRails())+(homeNavigationError
  ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});
  // Source-owned public rite stages and private Visit arrival are projected,
  // never interpreted as observed acts or additional liturgical requirements.
@@ -3137,6 +3199,15 @@ function onClick(e){
      FIVE_WOUNDS.index=0;FIVE_WOUNDS.latin=false;return backToParent();
    }
  }
+
+ if(view==='montfort'){
+  const w=montfortSchedule(MONTFORT.target);
+  if(b.hasAttribute('data-p435930-montfort-prev')){MONTFORT.day=Math.max(1,(MONTFORT.day||1)-1);return render()}
+  if(b.hasAttribute('data-p435930-montfort-next')){MONTFORT.day=Math.min(34,(MONTFORT.day||1)+1);return render()}
+  if(b.hasAttribute('data-p435930-montfort-today')){MONTFORT.day=w?.dayIndex||1;return render()}
+  if(b.hasAttribute('data-p435930-montfort-phase')){const day=Number(b.dataset.p435930MontfortPhase);if(MONTFORT_B26_PHASES.some(p=>p.first===day)){MONTFORT.day=day;return render()};return}
+  if(b.hasAttribute('data-p435930-montfort-rosary'))return open('pray.rosary',{returnContext:null});
+ }
  if(view==='josephSeven'){
   if(b.hasAttribute('data-p435930-joseph-step')){
    const next=Number(b.dataset.p435930JosephStep);
@@ -3423,6 +3494,17 @@ function onClick(e){
  if(b.matches('[data-p435930-fs-interrupt]')){const date=selectedDateKey();if(!isFirstWeekday(date,6))return;upsert(S.firstSaturday.records,{date,intention:!!FS.intention,communion:!!FS.communion,rosary:!!FS.rosary,meditation:!!FS.meditation,confessionDate:FS.confessionDate||'',complete:false,interrupted:true,reportedAt:nowIso()});save();FS.step=5;return render()}
 }
 function onChange(e){const x=e.target;
+ if(view==='montfort'&&x.matches('[data-p435930-montfort-target]')){
+  const w=montfortSchedule(x.value);
+  if(!w)return;
+  MONTFORT={target:x.value,day:w.dayIndex,completed:[]};montfortSaveProgress();return render();
+ }
+ if(view==='montfort'&&x.matches('[data-p435930-montfort-mark]')){
+  const day=MONTFORT.day,marked=new Set(MONTFORT.completed);
+  if(!Number.isInteger(day)||day<1||day>34)return;
+  if(x.checked)marked.add(day);else marked.delete(day);
+  MONTFORT.completed=[...marked].sort((a,b)=>a-b);montfortSaveProgress();return render();
+ }
  if(x.matches('[data-p435930-ff-tracking]')){const expanded=!!x.closest('details.aoQuietSeriesDisclosure')?.open;S.firstFriday.tracking=x.checked;save();render();if(expanded)mount()?.querySelector('details.aoQuietSeriesDisclosure')?.setAttribute('open','');return}
  if(x.matches('[data-p435930-fs-tracking]')){const expanded=!!x.closest('details.aoQuietSeriesDisclosure')?.open;S.firstSaturday.tracking=x.checked;save();render();if(expanded)mount()?.querySelector('details.aoQuietSeriesDisclosure')?.setAttribute('open','');return}
  if(x.matches('[data-p435930-angelus-appendix]')){S.angelusHistoricalConclusion=x.checked;save();return render()}
@@ -3561,6 +3643,7 @@ const TARGET={
  'pray.for_priests':{id:'pray.for_priests',type:'module',domain:'pray',category:'eucharistic',title:'Pray for Priests'},
   'pray.occasional_intercessions':{id:'pray.occasional_intercessions',type:'module',domain:'pray',category:'devotions',title:'Occasional Intercessions'},
  'pray.st_joseph_seven_sorrows':{id:'pray.st_joseph_seven_sorrows',type:'module',domain:'pray',category:'devotions',title:'Seven Sorrows and Joys of St Joseph'},
+ 'pray.montfort_consecration':{id:'pray.montfort_consecration',type:'module',domain:'pray',category:'devotions',title:'Montfort · Consecration Preparation'},
  'pray.penitential_psalms':{id:'pray.penitential_psalms',type:'module',domain:'pray',category:'penance-passion',title:'Seven Penitential Psalms'},
  'pray.litany_saints':{id:'pray.litany_saints',type:'module',domain:'pray',category:'penance-passion',title:'Litany of the Saints'},
  'pray.seven_words':{id:'pray.seven_words',type:'module',domain:'pray',category:'penance-passion',title:'Seven Words of Our Lord'},
