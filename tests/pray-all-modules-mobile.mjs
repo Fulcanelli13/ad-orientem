@@ -394,14 +394,15 @@ try{
  assert.equal(await page.locator("#aoPray435930.open [data-p435930-fs-save]").count(),0,
    "No completion record button may appear when tracking is off");
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("programme.first_saturday",{returnContext:null}));
+ const beforeDirectRosary=await page.locator("#aoPray435930.open [data-p435930-fs-stage][aria-current='step']").getAttribute("data-p435930-fs-stage");
  await saturdayDirect.locator("[data-p435930-fs-direct-rosary]").evaluate(el=>el.click());
  await page.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:15000});
  await page.locator("#aoPrayerBookRoot.open .lab-back").first().evaluate(el=>el.click());
  await page.waitForFunction(()=>
    document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset?.aoPrayView==="firstSaturday",
    null,{timeout:15000});
- assert.equal(await page.locator("#aoPray435930.open [data-p435930-fs-stage='0']").getAttribute("aria-current"),"step",
-   "Rosary shortcut should restore the stage from which it was opened");
+ assert.equal(await page.locator("#aoPray435930.open [data-p435930-fs-stage][aria-current='step']").getAttribute("data-p435930-fs-stage"),beforeDirectRosary,
+   "Rosary shortcut should restore the exact current stage rather than reset to intention");
  await page.setViewportSize({width:320,height:720});
  const fsDirectWidth=await saturdayDirect.evaluate(el=>({width:el.clientWidth,scroll:el.scrollWidth}));
  assert.ok(fsDirectWidth.scroll<=fsDirectWidth.width+2,"320px First Saturday direct controls overflow");
