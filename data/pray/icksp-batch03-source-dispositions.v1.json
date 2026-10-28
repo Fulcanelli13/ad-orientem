@@ -1,0 +1,81 @@
+{
+  "version": "2026-10-28-batch03-implementation-v1",
+  "baseline": "main 5a5197ea6715f35e2894311ac6532d63dfdc3468",
+  "owner": "Existing Prayer presentation + traditional Prayer readers; no replacement Mass Reader",
+  "zeroCost": true,
+  "modules": [
+    {
+      "id": "pray.litany_saints",
+      "priority": "P0",
+      "delivered": [
+        "Explicit private/Major-Rogations/Easter Vigil/Forty Hours use chooser",
+        "ICRSP Latin/French original-source link and documented 5-stage public procession context",
+        "1883 English and 1862 French historical text remains isolated"
+      ],
+      "outstanding": [
+        "Full Latin invocation-by-invocation verification against a 1962 ritual edition",
+        "Independent English and French equivalent editions",
+        "Local authenticated trilingual 1962 corpus and offline first-use certification"
+      ],
+      "release": "REFERENCE_ONLY_UNTIL_FULL_TEXT_COLLATED",
+      "source": "https://icrspfrance.fr/textes-liturgiques.php?article=a0087_nouveau"
+    },
+    {
+      "id": "pray.communion_treasury",
+      "priority": "P1",
+      "delivered": [
+        "Direct-access chooser to 7 existing preparations and 4 thanksgivings",
+        "Existing prayer and Mass folio text owners preserved"
+      ],
+      "outstanding": [
+        "Line-by-line St Thomas and St Bonaventure EN/FR/Latin source collation"
+      ],
+      "release": "INTERFACE_ONLY_SOURCE_COLLATION_PENDING",
+      "source": "https://opusdei.org/fr/prayers/section/?section1=157&section2=36"
+    },
+    {
+      "id": "pray.penitential_psalms",
+      "priority": "P1",
+      "delivered": [
+        "Preserves Vulgate 6,31,37,50,101,129,142",
+        "Explicit voluntary seven-chapter warm-cache preparation through existing Scripture service",
+        "Checks each chapter EN/FR/LA row counts, verse order, missing text and gaps"
+      ],
+      "outstanding": [
+        "Full independent canonical edition concordance of all verses",
+        "Offline recovery after browser storage eviction cannot be guaranteed"
+      ],
+      "release": "CACHE_CHECKS_NOT_CANONICAL_BIBLE_EDITION",
+      "source": "Existing AO_RUNTIME_V8.scriptureService"
+    },
+    {
+      "id": "pray.stations",
+      "priority": "P1",
+      "delivered": [
+        "Simple mode no longer imposes versicle/response; user can explicitly enable it",
+        "Guided St Alphonsus and 14 stations preserved",
+        "Private/public/elsewhere indulgence distinction"
+      ],
+      "outstanding": [
+        "St Alphonsus original French historical edition line-by-line collation",
+        "Physical-device practice acceptance"
+      ],
+      "release": "READER_CHANGE_VERIFIED_BY_TESTS_ONLY",
+      "source": "Existing stations-posture-policy.js historical witness"
+    },
+    {
+      "id": "pray.confession",
+      "priority": "P1",
+      "delivered": [
+        "St Pius X 1905 Italian and 1925 Roman Ritual source access",
+        "Optional historical contrition source and existing Glory Be thanksgiving",
+        "Regular, returning, general paths and no-sins privacy retained"
+      ],
+      "outstanding": [
+        "Collated historical EN/FR Act of Contrition variant; coordinate with Batch 1 before adding"
+      ],
+      "release": "HISTORICAL_LINK_ONLY_NOT_NEW_PRAYER_TEXT",
+      "source": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Prime_nozioni_di_catechismo/Capo_III"
+    }
+  ]
+}
