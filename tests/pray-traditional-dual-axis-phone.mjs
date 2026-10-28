@@ -5,6 +5,7 @@ import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {SACRED_HYMNS_V381} from "../src/pray/traditional-pray-data.js";
+import {GOLDEN_ARROW_REPARATION_V1} from "../src/pray/icksp-golden-arrow-reparation.v1.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const captures=resolve(root,"artifacts/pray-traditional-daily");
@@ -458,7 +459,7 @@ try{
  await open("pray.sacred_heart");
  const heart=await snapshot();
  assert.equal(heart.route,"pray.sacred_heart");
- assert.equal(heart.kind,"sacredHeart");assert.equal(heart.stops,3);assert.equal(heart.active,1);
+ assert.equal(heart.kind,"sacredHeart");assert.equal(heart.stops,4);assert.equal(heart.active,1);
  assert.equal(heart.id,"heart-litany");assert.equal(heart.overflow,"auto");
  assert.ok(heart.paragraphCount>=20,"Sacred Heart litany lost line-by-line reading focus");
  assert.equal(await page.locator("#aoPray435930 [data-ao-heart-options]").evaluate(el=>el.open),false);
@@ -468,6 +469,11 @@ try{
  await swipe(-165,5);
  assert.equal((await snapshot()).id,"heart-reparation","Sacred Heart horizontal swipe skipped a stage");
  await page.locator("#aoPray435930 .aoDevoStop").nth(2).evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"heart-golden_arrow");
+ assert.ok((await page.locator("#aoPray435930 .aoTP381Reader").innerText()).includes(GOLDEN_ARROW_REPARATION_V1.fr.slice(0,55)),"Historical French Golden Arrow unavailable");
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-flip]").count(),0,"No invented Latin Golden Arrow");
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-heart='golden_arrow']").count(),1);
+ await page.locator("#aoPray435930 .aoDevoStop").nth(3).evaluate(el=>el.click());
  assert.equal((await snapshot()).id,"heart-consecration");
  assert.equal(await page.locator("#aoPray435930 .aoDevoSequenceTimeline [aria-current='step']").count(),1);
  assert.ok((await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText()).length>150,"Consecration text missing");
