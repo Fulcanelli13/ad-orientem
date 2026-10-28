@@ -1,5 +1,5 @@
 import { validateReaderGestureMatrix } from "./reader-gesture-matrix.js";
-import { isRequiemAgnusBreastStrikeOmitted, isRequiemFirstPeacePrayerOmitted, isRequiemEntranceIncensationOmitted, isRequiemFinalBlessingOmitted } from "./reader-requiem-conditions.js";
+import { isRequiemAgnusBreastStrikeOmitted, isRequiemFirstPeacePrayerOmitted, isRequiemEntranceIncensationOmitted, isRequiemFinalBlessingOmitted, isRequiemGospelCeremonyOmitted } from "./reader-requiem-conditions.js";
 import { ORDINARY_SUNG_GESTURE_ANCHORS } from "./faithful-gesture-cues.js";
 // R17 cue-scoped reader state projection.
 // Source-backed only: exact cue IDs from the certified Sung Mass blueprint.
@@ -441,7 +441,7 @@ export function createReaderCueStateController({
       ? sourceResponse(responseItem) : null;
 
     const actionItem=actions.get(cueId);
-    const priestAction=actionItem && !omitRequiemAgnusStrike && conditionPasses(actionItem.condition,activeConditions)
+    const priestAction=actionItem && !omitRequiemAgnusStrike &&\n      !isRequiemGospelCeremonyOmitted(cueId,prepared,activeConditions) && conditionPasses(actionItem.condition,activeConditions)
       ? sourcePriestAction(actionItem) : null;
 
     const positionItem=latestPassing(positions,activeSort,activeConditions);
