@@ -9,6 +9,9 @@ const excluded=[
  "assets/staged",
  "data/geography/research",
 ];
+const historicalSpritePath="assets/generated-sprites";
+const historicalSpriteNames=readdirSync(join(process.cwd(),historicalSpritePath)).filter(name=>name.endsWith(".svg"));
+assert.ok(historicalSpriteNames.length>=3,"Historical sprite bank unexpectedly empty");
 const retainedRuntimeResearch={
  "data/research":["mass-special-rite-music-events-20261019.v1.json"],
  "data/directory/research":["canonical-g0-site-admissions-b84-b90-20261026.v1.json"],
@@ -56,6 +59,7 @@ assert.equal(run.status,0,run.stderr+"\n"+run.stdout);
 const report=JSON.parse(run.stdout.trim().split("\n").at(-1));
 assert.deepEqual(report.excludedResearchPaths,excluded);
 assert.deepEqual(report.retainedRuntimeResearch,retainedRuntimeResearch);
+assert.equal(report.excludedHistoricalSpritePath,historicalSpritePath);
 
 for(const path of excluded){
  assert.equal(existsSync(join(output,path)),false,"Non-runtime research unexpectedly published: "+path);
@@ -70,6 +74,8 @@ for(const [path,kept] of Object.entries(retainedRuntimeResearch)){
    "Runtime research fixture has changed: "+path+"/"+name);
  }
 }
+assert.equal(existsSync(join(output,historicalSpritePath)),false,"Historical sprites were copied into production");
+assert.equal(existsSync(join(root,historicalSpritePath)),true,"Historical SVG sprite source bank was deleted");
 assert.equal(existsSync(join(output,oldBoot)),false,"Historical boot was deployed alongside active boot");
 for(const boot of activeBoot)assert.ok(existsSync(join(output,boot)),"Active boot missing from release: "+boot);
 for(const path of required){
@@ -98,6 +104,18 @@ for(const file of runtimeSourceFiles){
  }
 }
 assert.deepEqual(runtimeReferences,[],"Runtime files reference excluded deployment paths");
+const historicalSpriteReferences=[];
+for(const file of runtimeSourceFiles){
+ const source=readFileSync(file,"utf8");
+ if(source.includes(historicalSpritePath+"/"))
+  historicalSpriteReferences.push(relative(root,file)+": historical sprite directory");
+ for(const name of historicalSpriteNames){
+  if(source.includes(name))
+   historicalSpriteReferences.push(relative(root,file)+": "+name);
+ }
+}
+assert.deepEqual(historicalSpriteReferences,[],
+ "First-party runtime still references a historical sprite: preserve source and block deploy");
 const unresolvedResearchRefs=[];
 for(const file of runtimeSourceFiles){
  const source=readFileSync(file,"utf8");
@@ -116,4 +134,4 @@ assert.deepEqual(unresolvedResearchRefs,[],
  "Runtime refers to a research file that would be missing from deployment");
 console.log("PASS — "+Math.round(sourcePrunedBytes/1e5)/10+
  " MB excluded by original rules; "+Math.round(slimmedBytes/1e5)/10+
- " MB of additional research audit data omitted; runtime fixtures intact");
+ " MB of additional research audit data omitted; historical sprites omitted; runtime fixtures intact");
