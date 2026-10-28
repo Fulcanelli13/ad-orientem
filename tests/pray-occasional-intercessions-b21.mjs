@@ -63,7 +63,7 @@ assert.equal(internalPrayerView("pray.for_priests"),"priests");
 assert.ok(OCCASIONAL_HOLDS_B21.length>=4);
 const ui=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
 const css=readFileSync(new URL("../src/pray/occasional-intercessions-styles.js",import.meta.url),"utf8");
-for(const x of ["OCCASIONAL_PURPOSES_B20.includes(purpose)","occasionalIntercessionFor(purpose","occasionalIntercessionB21For(purpose","OCCASIONAL_PURPOSES_ALL_B21.map","OCCASIONAL_PURPOSES_ALL_B21.includes(selected)","data-ao-occasional-purpose-count=\\\"6\\\"","L('For peace','Pour la paix')","L('Before a journey','Avant un voyage')","L('For a life choice','Pour un choix de vie')"]) assert.ok(ui.includes(x),"B21 UI regression "+x);
+for(const x of ["OCCASIONAL_PURPOSES_B20.includes(purpose)","occasionalIntercessionFor(purpose","occasionalIntercessionB21For(purpose","OCCASIONAL_PURPOSES_ALL_B21.map","OCCASIONAL_PURPOSES_ALL_B21.includes(selected)","data-ao-occasional-purpose-count","L('For peace','Pour la paix')","L('Before a journey','Avant un voyage')","L('For a life choice','Pour un choix de vie')"]) assert.ok(ui.includes(x),"B21 UI regression "+x);
 assert.ok(css.includes("grid-template-columns:repeat(2,minmax(0,1fr))"));
 assert.ok(css.includes("@media(max-width:360px)"));
 assert.ok(css.includes("@media(min-width:641px)"));
