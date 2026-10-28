@@ -187,3 +187,28 @@ Research-only bulk source register: [B3 seven-case gates](../../data/research/pr
 - **0** new master images acquired in this specific B3 pass, **0** newly pristine-certified, **0** released. The previously archived seven Batch 2 originals remain intact; all 22 selected heroes and 118 placement decisions remain unchanged. Cost **€0**.
 
 Next: perform final photographic and file-specific rights QA on the existing high-quality candidates as a consolidated group, seek genuinely independent clean masters for the seven exceptions, and do not treat contradictory licence labels or artificially enlarged files as solved cases.
+
+## Batch 4 — 23 exact original photos inspected in one pass
+
+[Full 23-case image and source audit](../../assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/batch4-23-photo-source-inspection.json) · [successful workflow #40728233200](https://github.com/Fulcanelli13/ad-orientem/actions/runs/40728233200) · six permanently archived native-centre/four-corner contact sheets in `assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/`.
+
+**23/23 exact sources verified against pinned SHA-256 and native dimensions, zero retrieval or checksum failures.** 20 are existing primary hero masters; three are B2 supplemental photo candidates (Tiepolo *Descent*, Teniers *Agony*, Van Dyck *Outpouring*). Composite sheets show a whole-work reduction plus a true native 310-pixel central cut and native four-corner samples. EXIF and colour-profile presence recorded; focal-detail proxies and luma fractions are NON-decisive instrumentation, not evidence of faithful colour or photo rights.
+
+Visual triage from the six sheets, not final pristine acceptance:
+
+| Cohort | Count | Disposition |
+|---|---:|---|
+| Existing primary originals with no obvious external frame in sampled areas | 10 | Examine full native focal regions, institution colour, exact photograph rights |
+| Existing primary photos with exposed physical unpainted support | 2 | Prove crop against complete painted boundaries (Champaigne Annunciation; Ingres Adoration) |
+| Existing originals with substantial white non-art margins | 2 | Prove painting-only boundary (Benson Salvator Mundi; Lotto Rosary, preserving 15 roundels) |
+| Existing photographs fundamentally unsuitable | 2 | Replace Restout framed/glare photo and Gérôme museum-gallery photograph |
+| Existing Reni Michael requiring better detail | 1 | Higher-fidelity independent exact-work photo needed |
+| Existing Perpetual Help poster | 1 | Boundaries / original reproduction / photographer rights need review |
+| Existing Dürer arched painting | 1 | Preserve curved painted field; exclude only genuine external surround |
+| Existing Honthorst Shepherds | 1 | A red circular mark is visible in lower-right; identify origin before photo acceptance |
+| Additional Tiepolo/Van Dyck photographs with preliminary painting-only field | 2 | Advance to colour/focal-detail/rights examination, not final acceptance |
+| Additional Teniers photograph, limited native pixels | 1 | 1333×1799 source retained; better exact-work source desirable |
+
+**12** source photographs (ten primary, two supplemental) therefore form a *first visual-review cohort*, NOT 12 pristine photographs. None has undergone full curator-grade native-fidelity or photo-rights signoff. **0** pristine certifications, **0** production releases, **€0**. All 22 approved painting identities, 31 sections and 118 placement actions remain untouched. A registered Morlete Ruiz placement exception retains its historical decision.
+
+**Batch 5 priority**: process all four clean-boundary cases together, examine any available already-reviewed painting-only derivatives without cutting paint, and independently resolve photographer/source rights for the 12 first-cohort photographs. Research-only derivatives may be retained with full source SHA/crop provenance; nothing auto-activates in the app.
