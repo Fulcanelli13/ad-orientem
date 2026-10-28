@@ -48,7 +48,7 @@ export const CONTEMPLATIVE_DAILY_PREVIEW_CSS = [
   '#aoPray435930[data-ao-contemplative-daily] .aoTP381DaypartStrip button[aria-pressed="true"]{box-shadow:inset 0 -2px #c6a67a!important;color:#eee9df!important}',
   // Restore the original compact horizon; the entire reading sky also changes.
   '#aoPray435930[data-ao-contemplative-daily="guided"] .aoQuietHorizon{position:relative!important;width:min(100%,660px)!important;height:auto!important;margin:5px auto 12px!important;overflow:visible!important;clip-path:none!important;opacity:1!important;pointer-events:auto!important}',
-  '#aoPray435930[data-ao-contemplative-daily="guided"] .aoQuietHorizonCanvas{height:clamp(76px,10dvh,106px)!important}',
+  '#aoPray435930[data-ao-contemplative-daily="guided"] .aoQuietHorizonCanvas{height:clamp(88px,10dvh,106px)!important}',
   '#aoPray435930[data-ao-contemplative-daily="guided"] .aoDevoTimeline.aoDevoSequenceTimeline{position:relative!important;top:auto!important;min-height:0!important;border:0!important;padding:2px 7px 14px!important;margin:0 auto!important;background:transparent!important;width:min(100%,560px)!important;gap:2px!important}',
   '#aoPray435930[data-ao-contemplative-daily="guided"] .aoDevoStops{gap:3px!important;justify-content:flex-start!important;overflow-x:auto!important;scroll-snap-type:none!important}',
   '#aoPray435930[data-ao-contemplative-daily="guided"] .aoDevoStop{display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 44px!important;min-width:44px!important;width:44px!important;min-height:44px!important;height:44px!important;border:0!important;padding:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#aeb3ba!important}',
