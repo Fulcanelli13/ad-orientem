@@ -52,7 +52,7 @@ try{
  await open("pray.stations");
  const options=page.locator("[data-ao-stations-options]");
  await options.locator(":scope > summary").tap();
- await options.locator("[data-p435930-seg='simple']").tap();
+ await page.locator("[data-ao-stations-direct-reading] [data-p435930-station-reading='simple']").tap();
  assert.equal(await page.locator(".aoP435930VR").count(),0,"Simple Stations must not impose a vocal response");
  const opt=page.locator("[data-ao-stations-options] > summary");
  if(!await options.evaluate(el=>el.open))await opt.tap();
@@ -60,7 +60,7 @@ try{
  assert.equal(await page.locator("[data-p435930-station-simple-responses]").isChecked(),true);
  assert.equal(await page.locator(".aoP435930VR").count(),1,"Explicit versicle request must display traditional prayer");
  if(!await options.evaluate(el=>el.open))await opt.tap();
- await page.locator("[data-ao-stations-options] [data-p435930-seg='guided']").tap();
+ await page.locator("[data-ao-stations-direct-reading] [data-p435930-station-reading='guided']").tap();
  assert.equal(await page.locator(".aoP435930VR").count(),1);
  assert.equal(await page.locator("[data-p435930-station-step]").count(),14);
 
