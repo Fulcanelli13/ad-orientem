@@ -1,7 +1,7 @@
 // R17 reader convergence contract.
 // Pure state resolution only: no DOM, no icon SVG, no canonical Mass mutation.
 
-export const READER_MODES = Object.freeze(["MISSAL", "SIMPLE", "LIVE"]);
+export const READER_MODES = Object.freeze(["MISSAL", "LIVE"]);
 export const POSTURE_PROFILES = Object.freeze([
   "FOLLOW_CONGREGATION",
   "MY_LOCAL",
@@ -18,7 +18,9 @@ export const HARDENED_CROSS_CUES = Object.freeze([
 ]);
 
 export function resolveReaderPreferences(input = {}) {
-  const mode = String(input.mode ?? "LIVE").toUpperCase();
+  const legacyMode = String(input.mode ?? "LIVE").toUpperCase();
+  // Migrate persisted preferences without re-exposing retired SIMPLE in the UI.
+  const mode = legacyMode === "SIMPLE" ? "LIVE" : legacyMode;
   if (!READER_MODES.includes(mode)) throw new Error("Unknown reader mode: " + mode);
 
   const postureProfile = String(input.postureProfile ?? "FOLLOW_CONGREGATION").toUpperCase();
