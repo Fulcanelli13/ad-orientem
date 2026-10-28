@@ -83,7 +83,7 @@ jobs:
   original-composer-smoke:
     needs: office-contracts
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -168,5 +168,13 @@ jobs:
           assert advent_mass["hours"]==["VESPERS"] and not advent_mass["productionRouteRegistered"]
           print("Office Mass-style preview valid: 64 main + 4 Advent I bilingual interactive pages, zero published.")
           PY
+      - name: Install pinned Playwright browser for mobile layout QA
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Exercise real Office source cells in LIVE and MISSAL at phone sizes
+        env:
+          OUTPUT: ${{ runner.temp }}/ao-office-probe
+        run: node tests/divine-office-phone-acceptance.mjs --out "$OUTPUT"
       # Deliberately no artifact upload and no source-text publication.
-      # This smoke test is reproducible and has no permanent-storage dependencies.
+      # This browser test is reproducible and has no permanent-storage dependencies.
