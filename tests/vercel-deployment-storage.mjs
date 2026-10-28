@@ -84,7 +84,7 @@ for(const path of offlineOnlyCatenaPaths){
  assert.equal(existsSync(join(output,path)),false,"Old full-Gospel Catena archive copied into production: "+path);
  assert.ok(existsSync(join(root,path)),"Original Catena source was lost: "+path);
 }
-const chunkFiles=readdirSync(join(output,"data/scripture/catena/chunks")).filter(f=>/^(?:matthew|mark|luke|john)-\\d{2}-\\d{2}\\.json$/.test(f));
+const chunkFiles=readdirSync(join(output,"data/scripture/catena/chunks")).filter(f=>/^(?:matthew|mark|luke|john)-\d{2}-\d{2}\.json$/.test(f));
 assert.equal(chunkFiles.length,23,"Live Catena chapter-pack census changed");
 assert.equal(existsSync(join(output,historicalSpritePath)),false,"Historical sprites were copied into production");
 assert.equal(existsSync(join(root,historicalSpritePath)),true,"Historical SVG sprite source bank was deleted");
