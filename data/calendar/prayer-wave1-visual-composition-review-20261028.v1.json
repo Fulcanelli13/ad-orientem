@@ -32,7 +32,19 @@
         "real-app 320/390px rendering",
         "source-file licence closure"
       ],
-      "photo_released": false
+      "photo_released": false,
+      "native_perimeter_proof": {
+        "workflow_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40689069715",
+        "research_file": "assets/staged/prayer-wave1-native-perimeter-20261028/morning-perimeter-grid.jpg",
+        "method": "4 exact 512px source-native corner crops and downsampled whole contextual reference",
+        "original_sha256_reverified_again": true,
+        "preliminary_status": "PASS_PRELIMINARY_NATIVE_PERIMETER",
+        "edge_observation": "Four 512x512 source-native corners contain painted picture surface through outer edges; no external wooden/gilt frame or clipping visible.",
+        "painterly_surface_observation": "Natural visible grain/age, signature near lower left, saturated reddish rising sun; no AI smoothing observed in sampled native corners.",
+        "outstanding": "Institution-source colour proof and 320/390/desktop hero placement remain unreviewed; no final photographic release.",
+        "final_photo_signoff": false,
+        "production_release": false
+      }
     },
     {
       "module": "confession",
@@ -57,7 +69,19 @@
         "colour and licence-file confirmation",
         "phone/live route tests"
       ],
-      "photo_released": false
+      "photo_released": false,
+      "native_perimeter_proof": {
+        "workflow_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40689069715",
+        "research_file": "assets/staged/prayer-wave1-native-perimeter-20261028/confession-perimeter-grid.jpg",
+        "method": "4 exact 512px source-native corner crops and downsampled whole contextual reference",
+        "original_sha256_reverified_again": true,
+        "preliminary_status": "PASS_PRELIMINARY_NATIVE_PERIMETER",
+        "edge_observation": "Four 512x512 native corners continue the picture: architectural wall at top, painted dark shadow upper right, stone/ground lower left, servant sandal lower right; no exterior frame.",
+        "painterly_surface_observation": "Whole image preserves dog, son/father embrace, calf and attendants; 16:9 cover crop was previously rejected, so contain remains required.",
+        "outstanding": "Natural edge acceptance is preliminary; actual app + screen-reader and site right attribution review remain for preview branch PR #1853.",
+        "final_photo_signoff": false,
+        "production_release": false
+      }
     },
     {
       "module": "seven-sorrows",
@@ -82,7 +106,19 @@
         "colour compare",
         "320/390px real app"
       ],
-      "photo_released": false
+      "photo_released": false,
+      "native_perimeter_proof": {
+        "workflow_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40689069715",
+        "research_file": "assets/staged/prayer-wave1-native-perimeter-20261028/seven-sorrows-perimeter-grid.jpg",
+        "method": "4 exact 512px source-native corner crops and downsampled whole contextual reference",
+        "original_sha256_reverified_again": true,
+        "preliminary_status": "PASS_PRELIMINARY_NATIVE_PERIMETER",
+        "edge_observation": "Four 512x512 native corners show original painted pictorial field with partial outer roundels, full lower cloak/foreground; no external frame.",
+        "painterly_surface_observation": "Heavy historical craquelure apparent in all corner tiles, especially dark upper field; do not denoise or repaint this natural painting texture.",
+        "outstanding": "Source-file rights and institution colour match require final reconciliation; all seven narrative medallions and central sword must be fully presented.",
+        "final_photo_signoff": false,
+        "production_release": false
+      }
     },
     {
       "module": "angelus",
@@ -158,7 +194,11 @@
     "quality_final_passes": 0,
     "source_qa_runs": [
       "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40685269314"
-    ]
+    ],
+    "preliminary_native_four_corner_frameless_evidence": 3,
+    "final_photo_signoffs_after_corner_review": 0,
+    "confession_real_module_opt_in_preview_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/1853",
+    "confession_preview_not_default_release": true
   },
   "zero_euro_policy": true,
   "reviewer_may_not_change_approved_painting": true
