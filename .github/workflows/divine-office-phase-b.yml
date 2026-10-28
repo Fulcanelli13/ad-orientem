@@ -1,0 +1,76 @@
+name: Divine Office Phase B — pinned generator pilot
+
+on:
+  pull_request:
+    paths:
+      - 'src/office/**'
+      - 'scripts/office/**'
+      - 'tests/divine-office-*.mjs'
+      - '.github/workflows/divine-office-phase-b.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ao-divine-office-probe-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  office-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check source-generator JavaScript syntax
+        run: node --check scripts/office/phase-b-generate.mjs
+      - name: Calendar, Tenebrae and composition probe contracts
+        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs
+
+  original-composer-smoke:
+    needs: office-contracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install minimum upstream Perl CGI dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends libcgi-pm-perl libcgi-session-perl libwww-perl
+      - name: Fetch exact upstream revision using sparse checkout
+        env:
+          UPSTREAM: ${{ runner.temp }}/divinum-officium
+        run: |
+          set -euo pipefail
+          PIN="$(sed -n 's/^export const DIVINUM_OFFICIUM_PIN="\([^"]*\)";/\1/p' src/app/source-transport-compat.js)"
+          test "${#PIN}" -eq 40
+          mkdir -p "$UPSTREAM"
+          git -C "$UPSTREAM" init -q
+          git -C "$UPSTREAM" remote add origin https://github.com/DivinumOfficium/divinum-officium.git
+          git -C "$UPSTREAM" sparse-checkout init --cone
+          git -C "$UPSTREAM" sparse-checkout set web/cgi-bin web/www/horas web/www/Tabulae standalone/tools/epubgen2
+          git -C "$UPSTREAM" -c protocol.version=2 fetch --no-tags --filter=blob:none --depth=1 origin "$PIN"
+          git -C "$UPSTREAM" checkout --detach FETCH_HEAD
+          test "$(git -C "$UPSTREAM" rev-parse HEAD)" = "$PIN"
+      - name: Generate one real 1960 Roman Vespers hour in three languages
+        env:
+          UPSTREAM: ${{ runner.temp }}/divinum-officium
+          OUTPUT: ${{ runner.temp }}/ao-office-probe
+        run: |
+          node scripts/office/phase-b-generate.mjs \
+            --upstream "$UPSTREAM" --out "$OUTPUT" \
+            --dates 2026-10-28 --hours VESPERS --languages la,en,fr
+          node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            const p=JSON.parse(readFileSync(process.env.OUTPUT+"/manifest.json","utf8"));
+            if (p.counts.requested!==3 || p.counts.captured!==3 ||
+              p.counts.failed || p.counts.published!==0 || p.researchOnly!==true)
+              process.exit(1);
+            console.log("Research-only envelope captures:",p.counts);
+          '
+      # Deliberately no artifact upload and no source-text publication.
+      # This smoke test is reproducible and has no permanent-storage dependencies.
