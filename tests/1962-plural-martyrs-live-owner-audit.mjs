@@ -36,6 +36,7 @@ try {
   const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
   const {recoverReaderProperOmissions}=await import("/src/mass/reader-proper-runtime-recovery.js");
   const {adaptV346ResolvedMass}=await import("/src/mass/host-adapter.js");
+  const {assessPrintableProper,renderPrintableProperHtml}=await import("/src/calendar/print-proper.js");
   const {inspect1962PluralMartyrsFrenchOrationSource}=await import("/src/mass/1962-plural-martyr-french-source.js");
   const values=(p,k)=>Array.isArray(p?.[k])?p[k]:[];
   const describeRow=(x,i)=>({
@@ -72,6 +73,24 @@ try {
       displayCollect:body("COLLECT_SET"),displaySecret:body("SECRET_SET")};
    })()
   });
+  const inspectPrint=(d,lang)=>{
+    const audit=assessPrintableProper(d,{language:lang});
+    if(!audit.ok)return {ok:false,reason:audit.reason,
+      sourceConflict:audit.sourceConflict??null,missing:audit.missing??[]};
+    const prayer=kind=>audit.sections.filter(x=>x.kind===kind).map(x=>({
+      latin:x.latin.slice(0,240),vernacular:x.vernacular.slice(0,240)
+    }));
+    const html=renderPrintableProperHtml(d,{language:lang});
+    return {ok:true,sourcePath:audit.proper.sourcePath,
+      correctionProof:audit.sourceEditorialCorrections?.map(x=>({
+        id:x.id,slot:x.slot,fields:x.fields
+      }))??[],
+      htmlContainsUncorrectedVirgin:/Virginum et Martyrum|Virgins and Martyrs|Vierges et Martyres/iu.test(html),
+      htmlContainsSource:html.includes("Sancti/03-06"),
+      printedSections:audit.sections.length,
+      collect:prayer("collect"),secret:prayer("secret"),
+      postcommunion:prayer("postcommunion")};
+  };
   const dates=["2026-03-06","2027-03-06","2026-11-11"];
   const observedDays=[];
   for(const date of dates){
@@ -89,7 +108,8 @@ try {
       })), calendarCommemorations:(p?.calendarCommemorations??[]).map(x=>({
         name:x?.name??null,path:x?.path??null,prayerSourcePath:x?.prayerSourcePath??null
       })), raw:p?inspect(p,"fr"):null, reader:a?.proper?.data?inspect(a.proper.data,"fr"):null,
-      readerEnglish:a?.proper?.data?inspect(a.proper.data,"en"):null});
+      readerEnglish:a?.proper?.data?inspect(a.proper.data,"en"):null,
+      printFrench:inspectPrint(d,"fr"),printEnglish:inspectPrint(d,"en")});
    }catch(error){observedDays.push({date,error:String(error?.message??error)});}
   }
   const sourceObservations=[];
@@ -157,6 +177,24 @@ for(const date of ["2026-03-06","2027-03-06"]){
    date+" English reader exposed the wrong source-Latin Secret");
  assert.equal(row.readerEnglish?.readerSlots?.postcommunion,"READY",
    date+" correct Postcommunion disappeared in English reader");
+ for(const [language,print,reader] of [
+   ["fr",row.printFrench,row.reader],["en",row.printEnglish,row.readerEnglish]]){
+   assert.equal(print?.ok,true,date+":"+language+" must print the selected bilingual Proper: "+print?.reason);
+   assert.equal(print?.sourcePath,row.sourcePath,date+":"+language+" printing selected wrong principal");
+   assert.equal(print?.correctionProof?.length,2,date+":"+language+" missing C7b print source proof");
+   assert.equal(print?.htmlContainsUncorrectedVirgin,false,
+     date+":"+language+" still prints incorrect Virgin Martyres designation");
+   assert.equal(print?.htmlContainsSource,true,date+":"+language+" omitted the named commemoration");
+   for(const [kind,readKey] of [["collect","displayCollect"],["secret","displaySecret"]]){
+     const printed=print[kind].at(-1),display=reader.readerSlots[readKey].at(-1);
+     assert.ok(printed?.latin&&printed?.vernacular,date+":"+language+" printed blank commemoration");
+     assert.equal(printed.latin.slice(0,100),display.latin.slice(0,100),
+       date+":"+language+":"+kind+" Latin Reader/print divergence");
+     assert.equal(printed.vernacular.slice(0,100),display.vernacular.slice(0,100),
+       date+":"+language+":"+kind+" vernacular Reader/print divergence");
+   }
+ }
+
  for(const [lang,reader] of [["fr",row.reader],["en",row.readerEnglish]]){
   const proof=reader.readerSlots.correctionProof??[];
   assert.equal(proof.filter(x=>x.id==="1962_C7B_PERPETUA_FELICITY_NONVIRGIN_INHERITANCE").length,2,
@@ -180,6 +218,9 @@ assert.equal(martin.reader?.readerSlots?.secret,"READY");
 assert.equal(martin.reader?.readerSlots?.postcommunion,"READY");
 assert.equal(martin.readerEnglish?.readerSlots?.collect,"READY");
 assert.equal(martin.readerEnglish?.readerSlots?.secret,"READY");
+assert.equal(martin.printFrench?.ok,true,"St Martin French print regressed");
+assert.equal(martin.printEnglish?.ok,true,"St Martin English print regressed");
+assert.equal(martin.printFrench?.correctionProof?.length,0,"Unrelated saint obtained C7b correction");
 
 for(const d of output.observedDays){
  console.log("MARTYRS_LIVE_DAY="+JSON.stringify({date:d.date,status:d.status,mainId:d.mainId,
