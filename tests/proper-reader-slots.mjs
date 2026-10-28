@@ -324,8 +324,18 @@ const latinActuallyVirgin=properToReaderSlots({...namedProper,
   secrets:[{lat:"sanctárum Vírginum et Mártyrum Perpétuæ et Felicitátis",
     fr:incorrectFrench}],
 },{language:"fr"});
-assert.equal(latinActuallyVirgin.ready,true,
-  "No invented correction if the identified Latin itself says Virgin");
+assert.equal(latinActuallyVirgin.slots.COLLECT_SET.status,"MISSING",
+  "The identified 1962 non-Virgin Common takes precedence over an erroneous Latin Virgin label");
+assert.equal(latinActuallyVirgin.slots.SECRET_SET.status,"MISSING",
+  "Wrong Latin and French inheritance must be held together");
+const frenchOnlyCorrected=properToReaderSlots({...namedProper,
+ collects:[{lat:"sanctárum Vírginum et Mártyrum Perpétuæ et Felicitátis",
+   fr:incorrectFrench.replace("Vierges et ","")}],
+ secrets:[{lat:"sanctárum Vírginum et Mártyrum Perpétuæ et Felicitátis",
+   fr:incorrectFrench.replace("Vierges et ","")}]
+},{language:"fr"});
+assert.equal(frenchOnlyCorrected.slots.COLLECT_SET.status,"MISSING",
+  "Correct French must not conceal a source-inconsistent Latin Virgin designation");
 assert.equal(namedProper.collects[0].fr,incorrectFrench,
   "Actual source text immutable under read-only editor guard");
 
