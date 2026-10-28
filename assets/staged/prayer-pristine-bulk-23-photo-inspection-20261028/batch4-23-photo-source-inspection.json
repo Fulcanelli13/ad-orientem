@@ -1,0 +1,1061 @@
+{
+  "schema": "AO_PRAYER_B4_23_ORIGINAL_CENTRE_PIXEL_BULK_AUDIT_V1",
+  "date": "2026-10-28",
+  "scope": {
+    "frozen_primary_originals": 20,
+    "additional_B2_photo_candidates": 3,
+    "unarchived_primary_heroes": 2
+  },
+  "checked_total": 23,
+  "hash_and_dimensions_verified": 23,
+  "verification_failures": 0,
+  "review_actions": {
+    "PRECISE_PAINTED_BOUNDARY_REQUIRED": 2,
+    "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION": 10,
+    "REPLACE_BAD_FRAME_GLARE_PHOTOGRAPH": 1,
+    "SHARPER_FAITHFUL_ORIGINAL_REQUIRED": 1,
+    "NONPAINTED_MARGIN_BOUNDARY_REQUIRED": 2,
+    "REPLACE_GALLERY_INSTALLATION_PHOTOGRAPH": 1,
+    "POSTER_BOUNDARY_AND_REPRODUCTION_RIGHTS_REVIEW": 1,
+    "ARCHED_PAINTED_BOUNDARY_REVIEW": 1,
+    "VERIFY_POSSIBLE_OVERPRINT_OR_WATERMARK": 1,
+    "CANDIDATE_PAINT_SURFACE_DETAIL_AND_RIGHTS_HOLD": 2,
+    "CANDIDATE_LIMITED_NATIVE_PIXELS_AND_RIGHTS_HOLD": 1
+  },
+  "pristine_certified": 0,
+  "rights_cleared": 0,
+  "production_activated": 0,
+  "cost_eur": 0,
+  "do_not_equate_sha_or_dpi_with_photo_quality": true,
+  "does_not_reopen_editorial_choices": true,
+  "no_unapproved_cropping_or_upscaling": true,
+  "rows": [
+    {
+      "id": "angelus",
+      "kind": "PRIMARY_HERO",
+      "artist": "Philippe de Champaigne",
+      "title": "The Annunciation",
+      "source_ref": "research/module-hero-wave2-20261026",
+      "source_path": "assets/staged/module-hero-wave2/angelus-met.jpg",
+      "source_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "native_pixels": [
+        3741,
+        3658
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "TRIM_EXPOSED_SUPPORT",
+      "review_action": "PRECISE_PAINTED_BOUNDARY_REQUIRED",
+      "previous_visual_observation": "Rough unpainted wooden support appears along the native edges; use the separately reviewed Met painting-boundary derivative, not the full support.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 0,
+        "original_bytes": 3055151
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          800,
+          782
+        ],
+        "dark_luma_fraction_0_to_4": 0.021571,
+        "light_luma_fraction_251_to_255": 0.0,
+        "edge_filter_variance_heuristic": 1027.116,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "joseph",
+      "kind": "PRIMARY_HERO",
+      "artist": "Philippe de Champaigne",
+      "title": "The Dream of Saint Joseph",
+      "source_ref": "research/module-hero-joseph-original-20261026",
+      "source_path": "assets/staged/module-hero-masters/joseph.jpg",
+      "source_sha256": "d632ea2012825ecdccc760f50b7cc9107a30bf4a2349541742ef6f66a4987f9b",
+      "native_pixels": [
+        4421,
+        6000
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+      "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+      "previous_visual_observation": "Whole painting and native corners show dark painted areas without a clearly separate physical frame; granularity needs full-size centre assessment.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 0,
+        "original_bytes": 19749000
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          589,
+          800
+        ],
+        "dark_luma_fraction_0_to_4": 0.0,
+        "light_luma_fraction_251_to_255": 0.0,
+        "edge_filter_variance_heuristic": 419.112,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "holy-spirit",
+      "kind": "PRIMARY_HERO",
+      "artist": "Jean Restout",
+      "title": "Pentecost",
+      "source_ref": "research/module-hero-wave2-20261026",
+      "source_path": "assets/staged/module-hero-wave2/holy-spirit.jpg",
+      "source_sha256": "c32547f474f4908331c9e7a013809076a65bbbcdc2f8cec6c5b6af2f7e6a1b09",
+      "native_pixels": [
+        4037,
+        2444
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "REPLACE_PHOTOGRAPH_EXTERNAL_FRAME",
+      "review_action": "REPLACE_BAD_FRAME_GLARE_PHOTOGRAPH",
+      "previous_visual_observation": "Gilt moulding and brown gallery surround visibly enter all four corners; the source photograph is not acceptable as a frame-free hero.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 12,
+        "original_bytes": 4430258
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          800,
+          484
+        ],
+        "dark_luma_fraction_0_to_4": 0.000333,
+        "light_luma_fraction_251_to_255": 0.0,
+        "edge_filter_variance_heuristic": 963.98,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "heart-jesus",
+      "kind": "PRIMARY_HERO",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "title": "The Heart of Jesus",
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/heart-jesus.jpg",
+      "source_sha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+      "native_pixels": [
+        2345,
+        3045
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+      "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+      "previous_visual_observation": "The decorated pictorial border appears integral to the work; no separate outer frame obvious in four corners. Source has uneven texture/noise.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 0,
+        "original_bytes": 2012474
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          616,
+          800
+        ],
+        "dark_luma_fraction_0_to_4": 0.0,
+        "light_luma_fraction_251_to_255": 0.000688,
+        "edge_filter_variance_heuristic": 990.946,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "heart-mary",
+      "kind": "PRIMARY_HERO",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "title": "The Heart of Mary",
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/heart-mary.jpg",
+      "source_sha256": "82e465f5600d0df4b2af32d22b8642a832bfc4cdd5d19d1f1c2b0baeec49649d",
+      "native_pixels": [
+        2277,
+        2960
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+      "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+      "previous_visual_observation": "Decorative margins appear integral to the work; no separate external frame obvious, but fine texture/noise needs review.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 0,
+        "original_bytes": 1951966
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          615,
+          800
+        ],
+        "dark_luma_fraction_0_to_4": 0.0,
+        "light_luma_fraction_251_to_255": 0.00048,
+        "edge_filter_variance_heuristic": 1037.896,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "michael",
+      "kind": "PRIMARY_HERO",
+      "artist": "Guido Reni",
+      "title": "Archangel Michael Defeating Satan",
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/michael.jpg",
+      "source_sha256": "4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad",
+      "native_pixels": [
+        1657,
+        2441
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "BETTER_NATIVE_DETAIL_REQUESTED",
+      "review_action": "SHARPER_FAITHFUL_ORIGINAL_REQUIRED",
+      "previous_visual_observation": "No strong external frame in the four corners; native image may be too soft/compressed for pristine use.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 7,
+        "original_bytes": 513396
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          543,
+          800
+        ],
+        "dark_luma_fraction_0_to_4": 0.024187,
+        "light_luma_fraction_251_to_255": 0.0,
+        "edge_filter_variance_heuristic": 477.558,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "regina",
+      "kind": "PRIMARY_HERO",
+      "artist": "Peter Paul Rubens",
+      "title": "Resurrection of Christ",
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/regina.jpg",
+      "source_sha256": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+      "native_pixels": [
+        2144,
+        3000
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+      "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+      "previous_visual_observation": "Painting surface extends to natural edges in sampled corners; visible aging/paint texture should not be digitally repaired.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": true,
+        "exif_tag_count": 7,
+        "original_bytes": 4593377
+      },
+      "preview_colour_handling": "PREVIEW_EMBEDDED_ICC_TO_SRGB",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          572,
+          800
+        ],
+        "dark_luma_fraction_0_to_4": 0.000127,
+        "light_luma_fraction_251_to_255": 0.0,
+        "edge_filter_variance_heuristic": 740.645,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "adoration",
+      "kind": "PRIMARY_HERO",
+      "artist": "Jean Auguste Dominique Ingres",
+      "title": "The Virgin Adoring the Host",
+      "source_ref": "research/module-hero-museum-photos-20261026",
+      "source_path": "assets/staged/module-hero-masters/adoration.jpg",
+      "source_sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "native_pixels": [
+        3122,
+        3813
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "TRIM_EXPOSED_SUPPORT",
+      "review_action": "PRECISE_PAINTED_BOUNDARY_REQUIRED",
+      "previous_visual_observation": "Thick light-brown unpainted support or wooden edge visible around the painting in the native corners.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 0,
+        "original_bytes": 2467303
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          655,
+          800
+        ],
+        "dark_luma_fraction_0_to_4": 0.024206,
+        "light_luma_fraction_251_to_255": 0.0,
+        "edge_filter_variance_heuristic": 859.868,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "scripture",
+      "kind": "PRIMARY_HERO",
+      "artist": "Caravaggio",
+      "title": "Saint Jerome Writing (Borghese original)",
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/scripture.jpg",
+      "source_sha256": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158",
+      "native_pixels": [
+        8708,
+        6212
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+      "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+      "previous_visual_observation": "Very dark canvas reaches all four native corners; no external frame obvious; some corners contain little illuminated detail.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 0,
+        "original_bytes": 7423474
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          800,
+          571
+        ],
+        "dark_luma_fraction_0_to_4": 0.187224,
+        "light_luma_fraction_251_to_255": 3.7e-05,
+        "edge_filter_variance_heuristic": 605.728,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "king",
+      "kind": "PRIMARY_HERO",
+      "artist": "Ambrosius Benson",
+      "title": "Salvator Mundi",
+      "source_ref": "research/module-hero-wave2-20261026",
+      "source_path": "assets/staged/module-hero-wave2/king.jpg",
+      "source_sha256": "2a25ed08f0fc21825eb084e0f5a09de63e8bdcf13c42d8b008d1d3bc805d3cd5",
+      "native_pixels": [
+        2987,
+        3200
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "REMOVE_WHITE_NONART_SURROUND",
+      "review_action": "NONPAINTED_MARGIN_BOUNDARY_REQUIRED",
+      "previous_visual_observation": "Large white rectangular background/print margin surrounds the dark painted panel in top and bottom native corner samples.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 0,
+        "original_bytes": 7773073
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          747,
+          800
+        ],
+        "dark_luma_fraction_0_to_4": 0.0,
+        "light_luma_fraction_251_to_255": 0.1079,
+        "edge_filter_variance_heuristic": 2159.563,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "souls",
+      "kind": "PRIMARY_HERO",
+      "artist": "Luca Giordano",
+      "title": "Madonna and Child with Souls in Purgatory",
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/souls.jpg",
+      "source_sha256": "a2c3a6eda78b412da44d50197d853f01e1cd3ded5ebd5996816db451f11606b6",
+      "native_pixels": [
+        2393,
+        3200
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+      "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+      "previous_visual_observation": "Colourful painted surface continues through all sampled corners; no obvious external frame in contact sheet.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": true,
+        "exif_tag_count": 3,
+        "original_bytes": 1789923
+      },
+      "preview_colour_handling": "PREVIEW_EMBEDDED_ICC_TO_SRGB",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          598,
+          800
+        ],
+        "dark_luma_fraction_0_to_4": 0.053161,
+        "light_luma_fraction_251_to_255": 0.000157,
+        "edge_filter_variance_heuristic": 682.294,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "salvation",
+      "kind": "PRIMARY_HERO",
+      "artist": "Jean-Léon Gérôme",
+      "title": "The Age of Augustus: The Birth of Christ",
+      "source_ref": "research/module-hero-rescue-20261026",
+      "source_path": "assets/staged/module-hero-rescue/salvation.jpg",
+      "source_sha256": "c5b8c147a0e75f1fe91279ceedd323fd246030e8bf0750f4a2b39811bac42102",
+      "native_pixels": [
+        6000,
+        4000
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "REPLACE_PHOTOGRAPH_GALLERY_INSTALLATION",
+      "review_action": "REPLACE_GALLERY_INSTALLATION_PHOTOGRAPH",
+      "previous_visual_observation": "Whole image shows Gérôme painting hanging amid multiple other framed works in gallery; this is not a direct photograph of the approved painting.",
+      "raw_photo_metadata": {
+        "original_raster_format": "MPO",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 11,
+        "original_bytes": 7530116
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          800,
+          533
+        ],
+        "dark_luma_fraction_0_to_4": 0.000106,
+        "light_luma_fraction_251_to_255": 0.000607,
+        "edge_filter_variance_heuristic": 2390.574,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "morning",
+      "kind": "PRIMARY_HERO",
+      "artist": "Jules Breton",
+      "title": "The Song of the Lark",
+      "source_ref": "research/module-hero-rescue-20261026",
+      "source_path": "assets/staged/module-hero-rescue/morning.jpg",
+      "source_sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+      "native_pixels": [
+        2548,
+        3300
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+      "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+      "previous_visual_observation": "Whole Breton painting and native corners show painting surface, no external frame obvious.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 0,
+        "original_bytes": 2080000
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          618,
+          800
+        ],
+        "dark_luma_fraction_0_to_4": 0.0,
+        "light_luma_fraction_251_to_255": 0.0,
+        "edge_filter_variance_heuristic": 333.989,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "perpetual",
+      "kind": "PRIMARY_HERO",
+      "artist": "Traditional iconography of Our Lady of Perpetual Help; photograph of Redemptorist Baclaran poster",
+      "title": "Our Holy Mother of Perpetual Succour — clean full-length devotional reproduction",
+      "source_ref": "research/module-hero-wave2-20261026",
+      "source_path": "assets/staged/module-hero-wave2/perpetual.jpg",
+      "source_sha256": "c6d06a9458658a6de9164895ca784e17ea70548ed090ae27987f28351694d077",
+      "native_pixels": [
+        3000,
+        3688
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "REVIEW_PRINT_POSTER_BOUNDARY",
+      "review_action": "POSTER_BOUNDARY_AND_REPRODUCTION_RIGHTS_REVIEW",
+      "previous_visual_observation": "Current source shows visible bright poster/printed border and potential mounting/background; not proven to be pristine photographic reproduction of the devotional image.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": true,
+        "exif_tag_count": 0,
+        "original_bytes": 2764032
+      },
+      "preview_colour_handling": "PREVIEW_EMBEDDED_ICC_TO_SRGB",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          651,
+          800
+        ],
+        "dark_luma_fraction_0_to_4": 0.003026,
+        "light_luma_fraction_251_to_255": 0.001256,
+        "edge_filter_variance_heuristic": 5354.831,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "saints",
+      "kind": "PRIMARY_HERO",
+      "artist": "Albrecht Dürer",
+      "title": "Adoration of the Trinity (Landauer Altarpiece)",
+      "source_ref": "research/module-hero-wave2-20261026",
+      "source_path": "assets/staged/module-hero-wave2/saints-gart.jpg",
+      "source_sha256": "137d3df4dee890524678cbd02b9690130c5550d22ca6778621b24fc6fe6ab5b2",
+      "native_pixels": [
+        4969,
+        5434
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "CHECK_ARCHED_PANEL_BOUNDS",
+      "review_action": "ARCHED_PAINTED_BOUNDARY_REVIEW",
+      "previous_visual_observation": "Arch-shaped Dürer work has dark surrounding regions; cannot infer if all dark border belongs to the painting from corners.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 0,
+        "original_bytes": 5931350
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          732,
+          800
+        ],
+        "dark_luma_fraction_0_to_4": 0.006373,
+        "light_luma_fraction_251_to_255": 0.0,
+        "edge_filter_variance_heuristic": 1650.146,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "visit",
+      "kind": "PRIMARY_HERO",
+      "artist": "Gerrit van Honthorst",
+      "title": "The Adoration of the Shepherds",
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/visit.jpg",
+      "source_sha256": "347cf5d74cc575bcb082250a90dc64c54dc673e94fbc4e48efcd27fa2a3b09c1",
+      "native_pixels": [
+        3948,
+        3328
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "CHECK_SUSPECT_RED_CORNER_MARK",
+      "review_action": "VERIFY_POSSIBLE_OVERPRINT_OR_WATERMARK",
+      "previous_visual_observation": "Whole-photo miniature shows a reddish round mark in the lower-right margin; may be logo/watermark or photographic overlay. Cannot certify pristine until source recheck.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": true,
+        "exif_tag_count": 28,
+        "original_bytes": 9588163
+      },
+      "preview_colour_handling": "PREVIEW_EMBEDDED_ICC_TO_SRGB",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          800,
+          674
+        ],
+        "dark_luma_fraction_0_to_4": 0.008876,
+        "light_luma_fraction_251_to_255": 0.0,
+        "edge_filter_variance_heuristic": 521.714,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "mass",
+      "kind": "PRIMARY_HERO",
+      "artist": "Victor Meirelles",
+      "title": "The First Mass in Brazil",
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/mass.jpg",
+      "source_sha256": "909302874ecb137b75c3b97974e9a4b42ec3c4d10a6d3e83bc98c130057b760f",
+      "native_pixels": [
+        4424,
+        3399
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+      "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+      "previous_visual_observation": "Whole composition and native corners show continuous painted scene without an obvious surrounding frame.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 4,
+        "original_bytes": 3421164
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          800,
+          615
+        ],
+        "dark_luma_fraction_0_to_4": 0.005301,
+        "light_luma_fraction_251_to_255": 0.00689,
+        "edge_filter_variance_heuristic": 1850.292,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "confession",
+      "kind": "PRIMARY_HERO",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "The Return of the Prodigal Son",
+      "source_ref": "research/module-hero-museum-photos-20261026",
+      "source_path": "assets/staged/module-hero-masters/confession.jpg",
+      "source_sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+      "native_pixels": [
+        4096,
+        3712
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+      "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+      "previous_visual_observation": "Full Murillo scene and sampled corners contain painted image, not a separate frame; dog remains fully visible.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": true,
+        "exif_tag_count": 0,
+        "original_bytes": 3022309
+      },
+      "preview_colour_handling": "PREVIEW_EMBEDDED_ICC_TO_SRGB",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          800,
+          725
+        ],
+        "dark_luma_fraction_0_to_4": 0.0,
+        "light_luma_fraction_251_to_255": 2e-06,
+        "edge_filter_variance_heuristic": 436.85,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "rosary",
+      "kind": "PRIMARY_HERO",
+      "artist": "Lorenzo Lotto",
+      "title": "Madonna del Rosario",
+      "source_ref": "research/prayer-wave1-photo-comparison-20261028",
+      "source_path": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary_yorck-new-commons-original.jpg",
+      "source_sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+      "native_pixels": [
+        1880,
+        2886
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "REMOVE_WHITE_NONART_SURROUND",
+      "review_action": "NONPAINTED_MARGIN_BOUNDARY_REQUIRED",
+      "previous_visual_observation": "Clean Yorck master has broad white surround outside the arched altarpiece at top/side; no physical mounting clips, and all fifteen roundels visible.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 0,
+        "original_bytes": 3259819
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          521,
+          800
+        ],
+        "dark_luma_fraction_0_to_4": 0.0,
+        "light_luma_fraction_251_to_255": 0.066622,
+        "edge_filter_variance_heuristic": 2168.629,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "sorrows",
+      "kind": "PRIMARY_HERO",
+      "artist": "Attributed to the Master of the Female Half-Lengths",
+      "title": "Virgin of the Seven Sorrows (Mare de Déu dels Set Dolors)",
+      "source_ref": "research/module-hero-museum-photos-20261026",
+      "source_path": "assets/staged/module-hero-masters/sorrows.jpg",
+      "source_sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+      "native_pixels": [
+        2220,
+        3000
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "NO_OBVIOUS_EXTERNAL_FRAME",
+      "review_action": "FOCAL_DETAIL_COLOUR_RIGHTS_EXAMINATION",
+      "previous_visual_observation": "Whole MNAC image and four original corners show historical painted surface and craquelure, no obvious external frame.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": true,
+        "exif_tag_count": 16,
+        "original_bytes": 1454827
+      },
+      "preview_colour_handling": "PREVIEW_EMBEDDED_ICC_TO_SRGB",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          592,
+          800
+        ],
+        "dark_luma_fraction_0_to_4": 0.124605,
+        "light_luma_fraction_251_to_255": 0.0,
+        "edge_filter_variance_heuristic": 1798.494,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "tiepolo-prado-descent",
+      "kind": "B2_PHOTO_CANDIDATE",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Descent from the Cross (Prado 1772)",
+      "source_ref": "research/prayer-artwork-pristine-registry-bulk-20261028",
+      "source_path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/tiepolo-prado-descent/tiepolo-prado-descent-native.jpg",
+      "source_sha256": "1cb5d8a9f420eddd32ffabc4713a49d27a6f39e664d2495c5852a34fa68723e7",
+      "native_pixels": [
+        2705,
+        2362
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "PRELIMINARY_PAINTED_SURFACE_HOLD",
+      "review_action": "CANDIDATE_PAINT_SURFACE_DETAIL_AND_RIGHTS_HOLD",
+      "previous_visual_observation": "No clear external frame, check physical edges, native colour, rights.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": true,
+        "exif_tag_count": 12,
+        "original_bytes": 7491294
+      },
+      "preview_colour_handling": "PREVIEW_EMBEDDED_ICC_TO_SRGB",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          800,
+          699
+        ],
+        "dark_luma_fraction_0_to_4": 0.002348,
+        "light_luma_fraction_251_to_255": 0.00024,
+        "edge_filter_variance_heuristic": 1423.482,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "teniers-agony-antwerp",
+      "kind": "B2_PHOTO_CANDIDATE",
+      "artist": "David Teniers the Elder",
+      "title": "Agony in the Garden (Antwerp Rosary cycle)",
+      "source_ref": "research/prayer-artwork-pristine-registry-bulk-20261028",
+      "source_path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/teniers-agony-antwerp/teniers-agony-antwerp-native.jpg",
+      "source_sha256": "6a697614cfe96b9f62921af0015eeca08fbc26ed0103dbefe9abe98c5342658e",
+      "native_pixels": [
+        1333,
+        1799
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "PRELIMINARY_PAINTED_SURFACE_HOLD",
+      "review_action": "CANDIDATE_LIMITED_NATIVE_PIXELS_AND_RIGHTS_HOLD",
+      "previous_visual_observation": "Exact St Paul's Antwerp Teniers Agony identity cross-confirmed; no clear external frame, check surface edges and rights.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 0,
+        "original_bytes": 1916709
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          593,
+          800
+        ],
+        "dark_luma_fraction_0_to_4": 0.025445,
+        "light_luma_fraction_251_to_255": 0.0,
+        "edge_filter_variance_heuristic": 1004.46,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    },
+    {
+      "id": "vandyck-holy-spirit",
+      "kind": "B2_PHOTO_CANDIDATE",
+      "artist": "Anthony van Dyck",
+      "title": "Outpouring of the Holy Spirit (Sanssouci)",
+      "source_ref": "research/prayer-artwork-pristine-registry-bulk-20261028",
+      "source_path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/vandyck-holy-spirit/vandyck-holy-spirit-native.jpg",
+      "source_sha256": "9ac5db7a32626fd6825e6d364f3fc48b034ba8282a6989cf24d3f368c0eafe63",
+      "native_pixels": [
+        6064,
+        7368
+      ],
+      "checksum_valid": true,
+      "previous_issue_class": "PRELIMINARY_PAINTED_SURFACE_HOLD",
+      "review_action": "CANDIDATE_PAINT_SURFACE_DETAIL_AND_RIGHTS_HOLD",
+      "previous_visual_observation": "No obvious frame, full painting visible; colour/focal detail and rights pending.",
+      "raw_photo_metadata": {
+        "original_raster_format": "JPEG",
+        "native_mode": "RGB",
+        "has_embedded_icc": false,
+        "exif_tag_count": 0,
+        "original_bytes": 3321156
+      },
+      "preview_colour_handling": "PREVIEW_UNTAGGED_RGB_NO_COLOUR_CERTIFICATION",
+      "nondecisive_raster_diagnostics": {
+        "sampled_analysis_pixels": [
+          658,
+          800
+        ],
+        "dark_luma_fraction_0_to_4": 0.0,
+        "light_luma_fraction_251_to_255": 0.000648,
+        "edge_filter_variance_heuristic": 717.588,
+        "metrics_not_photo_certifications": true
+      },
+      "source_bytes_unmodified": true,
+      "colour_fidelity_certified": false,
+      "painted_surface_boundaries_certified": false,
+      "native_detail_curator_accepted": false,
+      "photo_reproduction_rights_certified": false,
+      "pristine_certified": false,
+      "production_approved": false
+    }
+  ],
+  "contact_sheets": [
+    {
+      "path": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-01.jpg",
+      "sha256": "9e7c6e727f2e4d6865671d8389d6acf3c6df10946a5e28339f9fdf95a5023096",
+      "cases": [
+        "angelus",
+        "joseph",
+        "holy-spirit",
+        "heart-jesus"
+      ]
+    },
+    {
+      "path": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-02.jpg",
+      "sha256": "6751c687a2bd8b2006a3133cce1c8782897b0f38019fe2f3fcf77796e9285ca2",
+      "cases": [
+        "heart-mary",
+        "michael",
+        "regina",
+        "adoration"
+      ]
+    },
+    {
+      "path": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-03.jpg",
+      "sha256": "b9923fdb9ad54ad2665a2f64fd8be034597f19d976bcb4e037f8724190226ed2",
+      "cases": [
+        "scripture",
+        "king",
+        "souls",
+        "salvation"
+      ]
+    },
+    {
+      "path": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-04.jpg",
+      "sha256": "d1a490c199abe65643248b359fe29897aa1df84ac88522ebaa420dbd40d525f7",
+      "cases": [
+        "morning",
+        "perpetual",
+        "saints",
+        "visit"
+      ]
+    },
+    {
+      "path": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-05.jpg",
+      "sha256": "4c2f5751e74dbade5f54fcc9dba69ad272a5c739256dd2f52ebab12760c364c3",
+      "cases": [
+        "mass",
+        "confession",
+        "rosary",
+        "sorrows"
+      ]
+    },
+    {
+      "path": "assets/staged/prayer-pristine-bulk-23-photo-inspection-20261028/native-full-center-corners-06.jpg",
+      "sha256": "cf9c0187968f31250d65abe9ca76ba06199f5cf656349deda5d17b0da51d1ce6",
+      "cases": [
+        "tiepolo-prado-descent",
+        "teniers-agony-antwerp",
+        "vandyck-holy-spirit"
+      ]
+    }
+  ]
+}
