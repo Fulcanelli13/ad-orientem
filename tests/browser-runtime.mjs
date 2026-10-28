@@ -489,7 +489,10 @@ assert.equal(requiemEntered.session.plan.normalLastGospel,false);
 assert.equal(requiemEntered.session.plan.blessingAllowed,false);
 assert.deepEqual([...requiemEntered.session.plan.followingGraphs],["REQUIEM_ABSOLUTION"]);
 assert.equal(requiem.getReaderModel().totalCards,39,"Requiem variance must remain source-first without duplicated cards");
-requiem.showSection(29);
+const requiemPlaceat=requiem.getReaderModel().cards.find(card=>
+  card.title==="Placeat tibi, sancta Trinitas");
+assert.ok(requiemPlaceat,"The Plan-owned Requiem lost its real source Placeat card");
+requiem.showSection(requiemPlaceat.sectionId);
 assert.equal(requiem.getReaderState().cardTitle,"Placeat tibi, sancta Trinitas");
 assert.ok(requiem.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0261")));
 assert.ok(!requiem.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0264")),
