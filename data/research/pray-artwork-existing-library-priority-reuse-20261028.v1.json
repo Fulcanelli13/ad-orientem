@@ -7,14 +7,15 @@
     "museumRegistry": "data/calendar/sacred-art-candidates.v1.json",
     "userChoices": "data/research/pray-mosaic-user-decisions-20261028-060047.json"
   },
-  "policy": "Unselected physical works are suggestions only; exact existing historical approval stays in its original subject; no new painting sources introduced.",
+  "policy": "Unselected physical works are suggestions only; exact existing historical approval stays in its original subject; no new painting sources introduced. Weak morning, Holy Name, and First Saturday filler eliminated after thematic relevance check.",
   "stats": {
     "pools": 21,
     "emptyUserPoolsCovered": 14,
-    "proposedExistingPaintingPlacements": 63,
+    "proposedExistingPaintingPlacements": 60,
     "poolsWithNoSuitableExistingWork": [
       "divine-mercy",
-      "library"
+      "library",
+      "morning"
     ],
     "rejectedProposalConflictsBlocked": 0,
     "photoMastersReleased": 0
@@ -645,26 +646,10 @@
           "photoMasterPassed": false,
           "exactCommercialLicencePassed": false,
           "mobileFrameFreePassed": false
-        },
-        {
-          "source": "HISTORIC_USER_APPROVED_ARTWORK_FOR_OTHER_SUBJECT",
-          "referenceId": "ART-eter-aul-ubens-oronation-of-the-irgin-oil-sketch",
-          "subjectId": "ROS-15",
-          "artist": "Peter Paul Rubens",
-          "title": "Coronation of the Virgin — oil sketch",
-          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/437524",
-          "photoPreviewLeads": [],
-          "rightsState": "EXACT_REPRODUCTION_UNVERIFIED",
-          "previousApproval": "PRESERVED_FOR_ROS-15",
-          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
-          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
-          "photoMasterPassed": false,
-          "exactCommercialLicencePassed": false,
-          "mobileFrameFreePassed": false
         }
       ],
-      "proposalsCount": 3,
-      "scopeNote": "Immaculate Conception, Seven Sorrows and Coronation scenes remain CONTEXTUAL, not paintings of the actual Immaculate Heart; no automatic substitution."
+      "proposalsCount": 2,
+      "scopeNote": "Selected Immaculate Conception and Seven Sorrows images are contextual, NOT depictions of the actual Immaculate Heart. Existing Morlete heart source is separately preserved in unpublished rights-review draft."
     },
     {
       "pool": "holy-name",
@@ -691,26 +676,10 @@
           "photoMasterPassed": false,
           "exactCommercialLicencePassed": false,
           "mobileFrameFreePassed": false
-        },
-        {
-          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
-          "referenceId": "met-436199",
-          "subjectId": null,
-          "artist": "Christian Wilhelm Ernst Dietrich",
-          "title": "Christ Healing the Sick",
-          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/436199",
-          "photoPreviewLeads": [],
-          "rightsState": "CC0",
-          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
-          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
-          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
-          "photoMasterPassed": false,
-          "exactCommercialLicencePassed": false,
-          "mobileFrameFreePassed": false
         }
       ],
-      "proposalsCount": 2,
-      "scopeNote": "All proposed cross-module placements require the user's approval and exact photographic checks."
+      "proposalsCount": 1,
+      "scopeNote": "Only a broad Christological Crucifixion source remains as optional context. None is exact IHS/Holy Name imagery; require better existing iconography before final hero assignment."
     },
     {
       "pool": "hymns",
@@ -970,26 +939,9 @@
       ],
       "previousPoolRejections": [],
       "undecided": [],
-      "proposalsFromExistingLibrary": [
-        {
-          "source": "EXISTING_MUSEUM_REGISTRY_PAINTING",
-          "referenceId": "met-435859",
-          "subjectId": null,
-          "artist": "Vincenzo Catena",
-          "title": "The Adoration of the Shepherds",
-          "originSourceUrl": "https://www.metmuseum.org/art/collection/search/435859",
-          "photoPreviewLeads": [],
-          "rightsState": "CC0",
-          "previousApproval": "CURATORIAL_REVIEW_NEEDED",
-          "priorCurrentPoolState": "NOT_SELECTED_IN_THIS_POOL",
-          "proposedPlacementState": "NEW_CROSS_MODULE_PROPOSAL_NOT_USER_APPROVAL",
-          "photoMasterPassed": false,
-          "exactCommercialLicencePassed": false,
-          "mobileFrameFreePassed": false
-        }
-      ],
-      "proposalsCount": 1,
-      "scopeNote": "The only existing candidate here is a contextual Adoration of Shepherds, not a direct Morning Prayer icon; keep Breton's established choice and do not move Millet's Angelus here."
+      "proposalsFromExistingLibrary": [],
+      "proposalsCount": 0,
+      "scopeNote": "Keep Jules Breton's previously accepted Song of the Lark. Do not force a Nativity painting into Morning Prayer, and do not move Millet's Angelus out of Evening Prayer."
     },
     {
       "pool": "meals",
