@@ -21,6 +21,11 @@ const excludedResearchPaths=[
 // Historical sprite bundles are retained in GitHub only. The active HTML
 // uses standalone assets/generated-symbols/* per-icon geometry instead.
 const historicalSpritePath="assets/generated-sprites";
+// Four original full-Gospel Catena corpus files remain in GitHub for editorial
+// provenance and regression tests. The live reader fetches only 23 chapter
+// packs; its old full-Gospel cache fallback reads browser CacheStorage, not HTTP.
+const offlineOnlyCatenaGospels=["matthew","mark","luke","john"];
+const offlineOnlyCatenaPaths=offlineOnlyCatenaGospels.map(name=>"data/scripture/catena/"+name+".json");
 // These two research directories have one explicitly referenced runtime fixture
 // apiece. Preserve the exact fixture; omit other review records only from
 // deployment output. Git source and evidence are untouched.
@@ -52,6 +57,9 @@ for(const relativePath of excludedResearchPaths){
  await rm(join(output,relativePath),{recursive:true,force:true});
 }
 await rm(join(output,historicalSpritePath),{recursive:true,force:true});
+for(const path of offlineOnlyCatenaPaths){
+ await rm(join(output,path),{force:true});
+}
 for(const [relativePath,keepFiles] of Object.entries(retainedRuntimeResearch)){
  const dest=join(output,relativePath);
  await rm(dest,{recursive:true,force:true});
@@ -80,10 +88,14 @@ for(const relativePath of excludedResearchPaths){
 }
 try{await access(join(output,historicalSpritePath));throw new Error("Historical icon sprite bundles leaked into deployed output");}
 catch(e){if(e?.code!=="ENOENT")throw e;}
+for(const path of offlineOnlyCatenaPaths){
+ try{await access(join(output,path));throw new Error("Legacy Catena full-Gospel file leaked into deployment: "+path);}
+ catch(e){if(e?.code!=="ENOENT")throw e;}
+}
 const count=await (async function sizeOf(path){
  const nodes=await readdir(path,{withFileTypes:true});let size=0,count=0;
  for(const n of nodes){const p=join(path,n.name);if(n.isDirectory()){const item=await sizeOf(p);size+=item.size;count+=item.count;}
  else if(n.isFile()){size+=(await stat(p)).size;count++}}
  return {size,count};
 })(output);
-console.log(JSON.stringify({previewRoot:"dist/web-preview",files:count.count,megabytes:Math.round(count.size/1e6*10)/10,checkedEntrypointAssets:new Set(links).size,excludedDevelopmentFiles:true,excludedResearchPaths,retainedRuntimeResearch,excludedHistoricalSpritePath:historicalSpritePath}));
+console.log(JSON.stringify({previewRoot:"dist/web-preview",files:count.count,megabytes:Math.round(count.size/1e6*10)/10,checkedEntrypointAssets:new Set(links).size,excludedDevelopmentFiles:true,excludedResearchPaths,retainedRuntimeResearch,excludedHistoricalSpritePath:historicalSpritePath,excludedOfflineOnlyCatenaPaths:offlineOnlyCatenaPaths}));
