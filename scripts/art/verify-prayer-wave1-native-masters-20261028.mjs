@@ -38,7 +38,7 @@ if (!online) {
 }
 function hash(buf,algorithm){return createHash(algorithm).update(buf).digest('hex')}
 function gitBlobSha(buf){
-  const head=Buffer.from('blob '+buf.length+'\\0','utf8');
+  const head=Buffer.concat([Buffer.from('blob '+buf.length+' ','utf8'),Buffer.from([0])]);
   return createHash('sha1').update(head).update(buf).digest('hex');
 }
 function jpegDimensions(b){
@@ -101,9 +101,9 @@ console.log(JSON.stringify(report,null,2));
 if(process.env.GITHUB_STEP_SUMMARY){
   const {appendFileSync}=await import('node:fs');
   appendFileSync(process.env.GITHUB_STEP_SUMMARY,
-    '## Prayer Wave 1 — native photo bytes\\n'+
-    '| Module | Native bytes | File integrity |\\n|---|---:|---|\\n'+
-    results.map(r=>'| '+r.module+' | '+(r.bytes??'–')+' | '+(r.byte_integrity_pass?'PASS':'HOLD')+' |').join('\\n')+
-    '\\n\\n**No photographic release or rights clearance is implied.**\\n');
+    '## Prayer Wave 1 — native photo bytes\n'+
+    '| Module | Native bytes | File integrity |\n|---|---:|---|\n'+
+    results.map(r=>'| '+r.module+' | '+(r.bytes??'–')+' | '+(r.byte_integrity_pass?'PASS':'HOLD')+' |').join('\n')+
+    '\n\n**No photographic release or rights clearance is implied.**\n');
 }
 if(!all)process.exitCode=1;
