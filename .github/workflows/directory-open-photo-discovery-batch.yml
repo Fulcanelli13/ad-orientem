@@ -1,0 +1,76 @@
+name: Directory open church photos - permanent research batch
+on:
+  workflow_dispatch:
+    inputs:
+      offset:
+        description: "Frozen R49 starting record (0 to 1878)"
+        required: true
+        type: number
+        default: 0
+      limit:
+        description: "How many source records, 1 to 500"
+        required: true
+        type: number
+        default: 50
+permissions:
+  contents: write
+concurrency:
+  group: directory-free-photo-discovery
+  cancel-in-progress: false
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Enforce bounds and compile
+        env:
+          OFFSET: ${{ inputs.offset }}
+          LIMIT: ${{ inputs.limit }}
+        run: |
+          python -m py_compile tools/directory/discover-open-place-media.py
+          python -m unittest discover -s tests -p 'directory-photo-discovery-test.py' -v
+          python -c 'import os; a=int(os.environ["OFFSET"]); n=int(os.environ["LIMIT"]); assert 0<=a<1879 and 1<=n<=500 and a+n<=1879'
+      - name: Discover only (no image downloads, no app publication)
+        env:
+          OFFSET: ${{ inputs.offset }}
+          LIMIT: ${{ inputs.limit }}
+        run: |
+          mkdir -p /tmp/ad-orientem-photo-research
+          python tools/directory/discover-open-place-media.py \
+            --offset "$OFFSET" --limit "$LIMIT" \
+            --output "/tmp/ad-orientem-photo-research/r49-$OFFSET-$LIMIT.json"
+      - name: Require a usable result; refuse widespread API failure
+        env:
+          OFFSET: ${{ inputs.offset }}
+          LIMIT: ${{ inputs.limit }}
+        run: |
+          python -c 'import json,os; a=json.load(open("/tmp/ad-orientem-photo-research/r49-"+os.environ["OFFSET"]+"-"+os.environ["LIMIT"]+".json")); total=sum(len(row["errors"]) for row in a["venues"]); assert a["publication"]=="RESEARCH_ONLY_NEVER_APP_VISIBLE" and a["image_downloads"]==0 and a["publications"]==0 and total<len(a["venues"])*3, "Commons search failed for every category"'
+      - name: Commit metadata to permanent research-only branch
+        env:
+          OFFSET: ${{ inputs.offset }}
+          LIMIT: ${{ inputs.limit }}
+        run: |
+          set -euo pipefail
+          git fetch origin 'refs/heads/research/directory-photo-candidates:refs/remotes/origin/research/directory-photo-candidates' || true
+          if git show-ref --verify --quiet refs/remotes/origin/research/directory-photo-candidates; then
+            git switch -C research/directory-photo-candidates origin/research/directory-photo-candidates
+          else
+            git switch -c research/directory-photo-candidates
+          fi
+          target="data/directory/research/photo-candidates"
+          mkdir -p "$target"
+          cp "/tmp/ad-orientem-photo-research/r49-$OFFSET-$LIMIT.json" "$target/r49-$OFFSET-$LIMIT.json"
+          git add "$target/r49-$OFFSET-$LIMIT.json"
+          if git diff --cached --quiet; then
+            echo "Research metadata unchanged"
+            exit 0
+          fi
+          git -c user.name='ad-orientem-research-bot' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): Commons photo candidates R49 $OFFSET-$LIMIT (no images)"
+          git push origin HEAD:refs/heads/research/directory-photo-candidates
