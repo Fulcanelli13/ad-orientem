@@ -1,5 +1,6 @@
 import "./confession-path-styles.js";
 import "./stations-direct-access-styles.js";
+import "./first-monthly-direct-prayers-styles.js";
 import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS, CONFESSION_HISTORICAL_SOURCE_POLICY } from "./confession-paths.js";
 import {B01_PIUS_X_1905_CONTRITION} from "./icksp-batch01-public.v1.js";
 import "./canonical-data.js";
@@ -1856,6 +1857,32 @@ const FS_MYSTERIES={
  glorious:{en:'Glorious Mysteries',fr:'Mystères glorieux',items:{en:['The Resurrection','The Ascension','The Descent of the Holy Spirit','The Assumption of Our Lady','The Coronation of Our Lady'],fr:["La Résurrection","L’Ascension","La Descente du Saint-Esprit","L’Assomption de la Sainte Vierge","Le Couronnement de la Sainte Vierge"]}},
  luminous:{en:'Luminous Mysteries · optional 2002 set',fr:'Mystères lumineux · série facultative de 2002',items:{en:['The Baptism of the Lord','The Wedding at Cana','The Proclamation of the Kingdom','The Transfiguration','The Institution of the Eucharist'],fr:["Le Baptême du Seigneur","Les Noces de Cana","L’Annonce du Royaume","La Transfiguration","L’Institution de l’Eucharistie"]}}
 };
+function firstMonthlyDirectPrayers(kind){
+ // These are source-owned entry points, not claims of sacramental participation
+ // or substitute conditions for the First Friday / First Saturday devotions.
+ const friday=kind==="friday";
+ const cards=friday
+  ?'<button type="button" data-p435930-ff-direct-prayer><strong>'+
+    esc(L("Pray the Act of Reparation","Prier l’Acte de réparation"))+
+    '</strong><small>'+esc(L("Sacred Heart · canonical prayer text","Sacré-Cœur · texte canonique"))+'</small></button>'
+  :'<button type="button" data-p435930-fs-direct-rosary><strong>'+
+    esc(L("Pray five decades","Prier cinq dizaines"))+
+    '</strong><small>'+esc(L("Open the existing Rosary","Ouvrir le Rosaire existant"))+'</small></button>'+
+   '<button type="button" data-p435930-fs-direct-meditate><strong>'+
+    esc(L("Meditate for 15 minutes","Méditer pendant 15 minutes"))+
+    '</strong><small>'+esc(L("Separate Rosary mystery meditation","Méditation distincte des mystères"))+'</small></button>';
+ const note=friday
+  ?L("This associated prayer does not replace reparatory Holy Communion.",
+     "Cette prière associée ne remplace pas la Communion réparatrice.")
+  :L("The Rosary and fifteen-minute meditation are distinct acts; Confession and Communion also remain necessary.",
+     "Le Rosaire et la méditation de quinze minutes sont deux actes distincts ; la Confession et la Communion restent également nécessaires.");
+ return '<section class="aoFirstMonthlyDirect" data-ao-first-monthly-direct="'+kind+'" aria-label="'+
+  esc(L("Open prayer directly","Ouvrir directement la prière"))+'">'+
+  '<div class="aoFirstMonthlyDirectTop"><strong>'+esc(L("Prayer & meditation","Prière et méditation"))+
+  '</strong><small>'+esc(L("Direct access · no month recorded","Accès direct · aucun mois enregistré"))+
+  '</small></div><div class="aoFirstMonthlyDirectChoices">'+cards+'</div>'+
+  '<p>'+esc(note)+'</p></section>';
+}
 function firstFridayStage(date,valid){
  const s=FF.step;
  if(s===4&&!S.firstFriday.tracking)return `${guideNow(L('Finish simply','Terminez simplement'),L('No record is required. Give thanks and conclude the devotion without turning it into a completion test.','Aucun enregistrement n’est requis. Rendez grâce et concluez la dévotion sans la transformer en test d’accomplissement.'))}${programmeNav('ff',s,FF_STAGES.length,L('Done · return','Terminé · retour'))}`;
@@ -1870,9 +1897,10 @@ function renderFirstFriday(){
  const date=selectedDateKey(),valid=isFirstWeekday(date,5),records=S.firstFriday.records,tracking=!!S.firstFriday.tracking;
  return `${head(L('Nine First Fridays','Neuf premiers vendredis'),L('Guided Sacred Heart reparation','Réparation guidée au Sacré-Cœur'))}${programmeRail('ff',FF.step,FF_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}" tabindex="0" aria-label="${esc(L('First Friday stage content','Contenu de l’étape du premier vendredi'))}">
   <section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Friday','Premier vendredi'):tracking?L('Not the First Friday · guide available, recording disabled','Ce n’est pas le premier vendredi · guide disponible, enregistrement désactivé'):L('Not the First Friday · you may still preview the guide','Ce n’est pas le premier vendredi · vous pouvez quand même consulter le guide'))}</span></section>
-  ${devotionalMonthSummary('friday',records,tracking,date)}
+  ${firstMonthlyDirectPrayers('friday')}
   ${firstFridayStage(date,valid)}
   ${devotionalGuide('firstFriday')}
+  ${devotionalMonthSummary('friday',records,tracking,date)}
   ${tracking&&FF.step===4?history(records,L('Private history','Historique privé')):''}
  </main>`;
 }
@@ -1892,9 +1920,10 @@ function renderFirstSaturday(){
  const date=selectedDateKey(),valid=isFirstWeekday(date,6),records=S.firstSaturday.records,tracking=!!S.firstSaturday.tracking;
  return `${head(L('Five First Saturdays','Cinq premiers samedis'),L('Guided reparation to the Immaculate Heart','Réparation guidée au Cœur Immaculé'))}${programmeRail('fs',FS.step,FS_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}" tabindex="0" aria-label="${esc(L('First Saturday stage content','Contenu de l’étape du premier samedi'))}">
   <section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Saturday','Premier samedi'):tracking?L('Not the First Saturday · guide available, recording disabled','Ce n’est pas le premier samedi · guide disponible, enregistrement désactivé'):L('Not the First Saturday · you may still preview the guide','Ce n’est pas le premier samedi · vous pouvez quand même consulter le guide'))}</span></section>
-  ${devotionalMonthSummary('saturday',records,tracking,date)}
+  ${firstMonthlyDirectPrayers('saturday')}
   ${firstSaturdayStage(date,valid)}
   ${devotionalGuide('firstSaturday')}
+  ${devotionalMonthSummary('saturday',records,tracking,date)}
   ${tracking&&FS.step===5?history(records,L('Private history','Historique privé')):''}
  </main>`;
 }
@@ -1905,7 +1934,7 @@ function renderFSMeditation(){
  const mystery=selectedMystery();
  return `${head(L('First Saturday meditation','Méditation du premier samedi'),L('Fifteen minutes with one or more Rosary mysteries · distinct from the five decades','Quinze minutes avec un ou plusieurs mystères du Rosaire · distinctes des cinq dizaines'))}<main class="aoP435930Body"><section class="aoP435930MeditationIntro"><small>${esc(L('CHOOSE A MYSTERY','CHOISISSEZ UN MYSTÈRE'))}</small><h2>${esc(mystery)}</h2><p>${esc(L('You may remain with this mystery for the whole period or deliberately move to another mystery. Do not turn this into another decade of vocal prayer.','Vous pouvez demeurer avec ce mystère pendant toute la période ou passer délibérément à un autre mystère. Ne transformez pas cela en une nouvelle dizaine de prière vocale.'))}</p></section>${mysterySetButtons()}${mysteryButtons()}<section class="aoP435930MeditationFlow"><div>${guideNow(L('Place the mystery before you','Placez le mystère devant vous'),L('Recall the Gospel event simply. Who is present? What is happening? Do not rush to applications yet.','Rappelez simplement l’événement évangélique. Qui est présent ? Que se passe-t-il ? Ne vous hâtez pas encore vers les applications.'))}</div><div>${guideNow(L('Stay with Our Lady’s place in the mystery','Demeurez avec la place de Notre-Dame dans le mystère'),L('Consider what Mary receives, does, suffers, offers, or witnesses here. Remain with what belongs to this mystery rather than inventing a separate scene.','Considérez ce que Marie reçoit, fait, souffre, offre ou contemple ici. Demeurez avec ce qui appartient à ce mystère plutôt que d’inventer une scène distincte.'))}</div><div>${guideNow(L('Turn the mystery toward your own life','Tournez le mystère vers votre propre vie'),L('Ask what grace, conversion, imitation, patience, faith, charity, or fidelity this mystery calls for in you today.','Demandez quelle grâce, conversion, imitation, patience, foi, charité ou fidélité ce mystère appelle en vous aujourd’hui.'))}</div><div>${guideNow(L('Speak briefly, then remain silent','Parlez brièvement, puis demeurez en silence'),L('Speak to God or Our Lady in your own words, then stop adding words and remain with the mystery. Return gently when distracted.','Parlez à Dieu ou à Notre-Dame avec vos propres mots, puis cessez d’ajouter des paroles et demeurez avec le mystère. Revenez-y doucement en cas de distraction.'))}</div></section>${ADOR.timerEnd?timerMarkup():`<div class="aoP435930Timer aoP435930MeditationTimer"><b>${esc(L('15-minute timer aid','Minuteur de 15 minutes'))}</b><span>${esc(L('Start it when you are ready to begin the actual meditation. It never marks the act complete automatically.','Démarrez-le lorsque vous êtes prêt à commencer la méditation proprement dite. Il ne valide jamais automatiquement l’acte.'))}</span><button type="button" data-p435930-timer="15">15 min</button></div>`}<div class="aoP435930MeditationActions"><button class="aoP435930Primary" data-p435930-fs-meditation-complete>${esc(L('I completed fifteen minutes · return','J’ai accompli quinze minutes · retour'))}</button><button class="aoP435930Secondary" data-p435930-fs-meditation-return>${esc(L('Return without marking complete','Retour sans marquer comme accompli'))}</button></div></main>`
 }
-function renderPrayerOnly(id){const p=P(id);return `${head(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'),L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader" data-ao-library-card="single"><button class="aoP435930InlineBack" data-p435930-prayer-return>${assetIcon('ao-ui-back')} ${esc(L('Return','Retour'))}</button><section class="aoDevoCard" data-ao-devo-card="${esc(id)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'))}">${prayerBlock(id,{scriptureContext:true})}</div></section>${p?libraryContextMarkup(p):""}</main>`}
+function renderPrayerOnly(id){const p=P(id);return `${head(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'),prayerReturnView==='firstFriday'?L('First Friday · Sacred Heart','Premier vendredi · Sacré-Cœur'):L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader" data-ao-library-card="single"><button class="aoP435930InlineBack" data-p435930-prayer-return>${assetIcon('ao-ui-back')} ${esc(L('Return','Retour'))}</button><section class="aoDevoCard" data-ao-devo-card="${esc(id)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'))}">${prayerBlock(id,{scriptureContext:true})}</div></section>${p?libraryContextMarkup(p):""}</main>`}
 let prayerReturnView=null,prayerId=null;
 function pushView(v=view){if(v)navStack.push(v);return navStack.length}
 function popView(fallback='home'){view=navStack.length?navStack.pop():fallback;return view}
@@ -3015,6 +3044,23 @@ function onClick(e){
   pushView();routeOwn(id);return;
  }
  if(b.matches('[data-p435930-ador-mode-direct]')){view='adoration';ADOR.mode=b.dataset.p435930AdorModeDirect;if(ADOR.mode==='visit')ADOR.visitStep=0;if(ADOR.mode==='holy')ADOR.holyStep=0;if(ADOR.mode==='four')ADOR.fourStep=0;return render()}
+ if(b.hasAttribute('data-p435930-ff-direct-prayer')){
+   if(view!=='firstFriday'||!P('sacred_heart_short_prayer'))return;
+   prayerReturnView='firstFriday';prayerId='sacred_heart_short_prayer';
+   view='prayerOnly';return render();
+ }
+ if(b.hasAttribute('data-p435930-fs-direct-rosary')){
+   if(view!=='firstSaturday')return;
+   // Reuse the canonical Rosary owner and its exact programme return snapshot.
+   // Opening the player never sets FS.rosary or records a month.
+   launchRosaryPlayer(captureResume());return;
+ }
+ if(b.hasAttribute('data-p435930-fs-direct-meditate')){
+   if(view!=='firstSaturday')return;
+   // Same meditation reader as the programme's stage-four handoff; it never
+   // sets FS.meditation until the user explicitly reports completion there.
+   stopTimer();view='fsMeditation';return render();
+ }
  if(b.dataset.p435930FfStage!=null){FF.step=Math.max(0,Math.min(FF_STAGES.length-1,+b.dataset.p435930FfStage));return render()}
  if(b.matches('[data-p435930-ff-prev]')){FF.step=Math.max(0,FF.step-1);return render()}
  if(b.matches('[data-p435930-ff-next]')){FF.step=Math.min(FF_STAGES.length-1,FF.step+1);return render()}
