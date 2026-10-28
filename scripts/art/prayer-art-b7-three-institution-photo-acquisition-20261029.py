@@ -133,8 +133,8 @@ try:
     c["source_checks"].append("MNAC_OBJECT_PAGE_COPYRIGHT_DOMINI_PUBLIC" if c["object_public_domain_label_found"] else "OBJECT_PD_LABEL_NOT_FETCHED")
     # Extract only the museum HTML's possible image sources for subsequent exact-byte
     # matching. Do not scrape/download a lower-res thumbnail as a claimed original.
-    found=re.findall(r'(?:content|src|href)=["\\']([^"\\']+\.(?:jpg|jpeg|png)(?:\?[^"\\']*)?)',page,re.I)
-    c["museum_html_image_url_leads"]=[html.unescape(s)[:400] for s in found if "008327" in s][:12]
+    found=re.findall(r'008327[^"<> ]{0,140}[.]((?:jpg|jpeg|png))',page,re.I)
+    c["museum_html_image_extensions_detected"]=list(sorted(set(y.lower() for y in found)))
     c["status"]="OFFICIAL_MNAC_OBJECT_IMAGE_REFERENCE_CONFIRMED_BINARY_NOT_YET_MAPPED"
 except Exception as e:
     c["status"]="MNAC_CATALOGUE_FETCH_HOLD"
