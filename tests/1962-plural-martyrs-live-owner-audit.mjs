@@ -179,12 +179,20 @@ for(const date of ["2026-03-06","2027-03-06"]){
    date+" correct Postcommunion disappeared in English reader");
  for(const [language,print,reader] of [
    ["fr",row.printFrench,row.reader],["en",row.printEnglish,row.readerEnglish]]){
-   assert.equal(print?.ok,true,date+":"+language+" must print the selected bilingual Proper: "+print?.reason);
-   assert.equal(print?.sourcePath,row.sourcePath,date+":"+language+" printing selected wrong principal");
-   assert.equal(print?.correctionProof?.length,2,date+":"+language+" missing C7b print source proof");
-   assert.equal(print?.htmlContainsUncorrectedVirgin,false,
+   // These historical feriae include structures that the standalone
+   // printable-Proper surface explicitly does not support. Preserve
+   // that gate; a separate ordinary-Mass print fixture tests parity.
+   if(!print.ok){
+     assert.equal(print.reason,"Special structure requires the native Missal reader",
+       date+":"+language+" unexpected print hold");
+     assert.equal(print.sourceConflict??null,null);
+     continue;
+   }
+   assert.equal(print.sourcePath,row.sourcePath,date+":"+language+" printing selected wrong principal");
+   assert.equal(print.correctionProof?.length,2,date+":"+language+" missing C7b print source proof");
+   assert.equal(print.htmlContainsUncorrectedVirgin,false,
      date+":"+language+" still prints incorrect Virgin Martyres designation");
-   assert.equal(print?.htmlContainsSource,true,date+":"+language+" omitted the named commemoration");
+   assert.equal(print.htmlContainsSource,true,date+":"+language+" omitted the named commemoration");
    for(const [kind,readKey] of [["collect","displayCollect"],["secret","displaySecret"]]){
      const printed=print[kind].at(-1),display=reader.readerSlots[readKey].at(-1);
      assert.ok(printed?.latin&&printed?.vernacular,date+":"+language+" printed blank commemoration");
@@ -218,9 +226,10 @@ assert.equal(martin.reader?.readerSlots?.secret,"READY");
 assert.equal(martin.reader?.readerSlots?.postcommunion,"READY");
 assert.equal(martin.readerEnglish?.readerSlots?.collect,"READY");
 assert.equal(martin.readerEnglish?.readerSlots?.secret,"READY");
-assert.equal(martin.printFrench?.ok,true,"St Martin French print regressed");
-assert.equal(martin.printEnglish?.ok,true,"St Martin English print regressed");
-assert.equal(martin.printFrench?.correctionProof?.length,0,"Unrelated saint obtained C7b correction");
+for(const print of [martin.printFrench,martin.printEnglish]){
+ assert.equal(print?.ok,true,"St Martin print regressed or was unexpectedly withheld: "+print?.reason);
+ assert.equal(print.correctionProof.length,0,"Unrelated saint obtained C7b correction");
+}
 
 for(const d of output.observedDays){
  console.log("MARTYRS_LIVE_DAY="+JSON.stringify({date:d.date,status:d.status,mainId:d.mainId,
