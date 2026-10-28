@@ -12,13 +12,15 @@
     "count": 44,
     "unique": 44,
     "station": 12,
-    "prado": 4,
+    "prado": 6,
     "short_edge_under_1600": 1,
     "exact_file_license_checked_20261028": 4,
     "file_references_normalized": 4,
     "priorSelectedSourceSHA": 7,
     "photoFullEdgeReviewed": 0,
-    "publicationReady": 0
+    "publicationReady": 0,
+    "prado_explicit_filename": 4,
+    "prado_additional_origin_verified": 2
   },
   "licenceEvidence": [
     {
@@ -60,7 +62,7 @@
       "id": "ART-acopo-intoretto-udith-and-olofernes",
       "title": "Judith and Holofernes",
       "artist": "Jacopo Tintoretto",
-      "group": "Other approved",
+      "group": "Prado-linked",
       "source_page": "https://commons.wikimedia.org/wiki/File:Judit_y_Holofernes%2C_por_Tintoretto.jpg",
       "source_file": "Judit y Holofernes, por Tintoretto.jpg",
       "prior_ref": "https://commons.wikimedia.org/wiki/File:Judit_y_Holofernes%2C_por_Tintoretto.jpg",
@@ -73,7 +75,9 @@
       "source_prior_licence_claim": "Public domain",
       "source_version_meta_match": true,
       "special_flags": [
-        "SHORT_EDGE_UNDER_1600"
+        "SHORT_EDGE_UNDER_1600",
+        "PRADO_PHOTO_SOURCE",
+        "PRADO_SOURCE_CONFIRMED"
       ],
       "license_specific_status": "UNASSESSED_EXACT_FILE_RIGHTS_AFTER_BASELINE",
       "attribution": "Review exact photo file licence and attribution before use",
@@ -89,7 +93,10 @@
       "publication_allowed": false,
       "manual_photo_decision": "UNREVIEWED",
       "manual_photo_note": "",
-      "source_date": "2026-10-28"
+      "source_date": "2026-10-28",
+      "object_source_exposure": "Source photograph explicitly credited to Museo del Prado. Physical original P00389, 58 × 119 cm; photograph 3051 × 1445 px has compatible panoramically wide aspect ratio, so low short edge does not by itself mean cropped composition. Framed alternate is separately listed, and must not be used.",
+      "object_source_evidence": "https://commons.wikimedia.org/wiki/File:Judit_y_Holofernes,_por_Tintoretto.jpg",
+      "specific_visual_aspect_note": "Painting 58×119 cm, source 3051×1445 px; both panoramic; full composition not certified from aspect ratio alone."
     },
     {
       "id": "ART-aravaggio-avid-with-the-ead-of-oliath",
@@ -194,7 +201,7 @@
       "id": "ART-artolom-steban-urillo-onversion-of-aint-aul",
       "title": "Conversion of Saint Paul",
       "artist": "Bartolomé Esteban Murillo",
-      "group": "Other approved",
+      "group": "Prado-linked",
       "source_page": "https://commons.wikimedia.org/wiki/File:La_conversi%C3%B3n_de_san_Pablo_(Murillo).jpg",
       "source_file": "La conversión de san Pablo (Murillo).jpg",
       "prior_ref": "https://commons.wikimedia.org/wiki/File:La_conversi%C3%B3n_de_san_Pablo_(Murillo).jpg",
@@ -206,7 +213,10 @@
       "photos_archived_verified_in_prior_review": true,
       "source_prior_licence_claim": "Public domain",
       "source_version_meta_match": true,
-      "special_flags": [],
+      "special_flags": [
+        "PRADO_PHOTO_SOURCE",
+        "PRADO_OBJECT_CONFIRMED"
+      ],
       "license_specific_status": "UNASSESSED_EXACT_FILE_RIGHTS_AFTER_BASELINE",
       "attribution": "Review exact photo file licence and attribution before use",
       "quality_gates": {
@@ -221,7 +231,9 @@
       "publication_allowed": false,
       "manual_photo_decision": "UNREVIEWED",
       "manual_photo_note": "",
-      "source_date": "2026-10-28"
+      "source_date": "2026-10-28",
+      "object_source_exposure": "Institutional original page confirms Murillo Conversion of Saint Paul belongs to Prado; Commons source needs independent reuse clearance; don't buy or request a paid museum image.",
+      "object_source_evidence": "https://www.museodelprado.es/coleccion/obra-de-arte/la-conversion-de-san-pablo/70a89a74-c1ed-4de2-9b55-bd40898e4ad3"
     },
     {
       "id": "ART-bastien-ourdon-he-inding-of-oses",
@@ -1552,6 +1564,19 @@
       "manual_photo_decision": "UNREVIEWED",
       "manual_photo_note": "",
       "source_date": "2026-10-28"
+    }
+  ],
+  "notes_update": "Prado-linked count increased from four filename-only cases to six after authoritative source-page checks on Murillo Conversion and Tintoretto Judith. These six are confirmed minimum, not global Prado source completeness.",
+  "newSourceVerifications": [
+    {
+      "status": "VERIFIED_SOURCE_REPRODUCTION_CONTEXT_NOT_FINAL_APP_RIGHTS",
+      "artwork_id": "ART-acopo-intoretto-udith-and-olofernes",
+      "source": "https://commons.wikimedia.org/wiki/File:Judit_y_Holofernes,_por_Tintoretto.jpg"
+    },
+    {
+      "status": "VERIFIED_EXACT_INSTITUTIONAL_ORIGINAL_NOT_FINAL_APP_PHOTO_RIGHTS",
+      "artwork_id": "ART-artolom-steban-urillo-onversion-of-aint-aul",
+      "source": "https://www.museodelprado.es/coleccion/obra-de-arte/la-conversion-de-san-pablo/70a89a74-c1ed-4de2-9b55-bd40898e4ad3"
     }
   ]
 }
