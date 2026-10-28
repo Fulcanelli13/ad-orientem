@@ -1,0 +1,25 @@
+name: Vercel deployment storage budget
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "tools/build-web-preview.mjs"
+      - "tests/vercel-deployment-storage.mjs"
+      - ".github/workflows/vercel-deployment-storage.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  output-payload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Verify release output excludes only research and staging
+        run: node tests/vercel-deployment-storage.mjs
