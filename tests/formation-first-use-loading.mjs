@@ -62,8 +62,11 @@ try{
      "Explore must not fetch Formation browser entry");
    record.loadedBefore=[...modules];
    record.stages.push("explore-no-formation-import");
-   await page.locator('[data-ao-app-surface="home"]').click({timeout:18000});
-   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",
+   // Immersive Explore overlays the persistent ribbon on a narrow phone.
+   // Use its real close/back affordance, not an occluded underlying tab.
+   await page.locator('#ao-find-modular-root .aoFindHeader [data-find-close]').click({timeout:18000});
+   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home"
+     &&globalThis.AO_FIND_APP_V1?.status?.().open===false,
     null,{timeout:15000});
    await page.locator('[data-ao-app-surface="learn"]').click({timeout:18000});
    await page.locator("#ao-learn-modular-root .aoLearnFamilyGrid").waitFor({state:"visible",timeout:24000});
