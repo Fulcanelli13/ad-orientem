@@ -4,6 +4,7 @@
 // congregation-state source exists. MY_LOCAL fails closed when no saved override exists.
 
 import { resolvePosture } from "./reader-state.js";
+import { projectRequiemChoirPosture } from "./reader-requiem-choir-posture.js";
 
 function clean(value){
   const v=String(value??"").trim();
@@ -61,6 +62,7 @@ export function resolveReaderPostureChannel({
   cueId=null,
   sectionId=null,
   macroId=null,
+  resolvedMass=null,
 }={}){
   if(!preferences) throw new TypeError("Reader preferences required");
 
@@ -83,6 +85,35 @@ export function resolveReaderPostureChannel({
       posture:Object.freeze({label:local.value,value:local.value,owner:"LOCAL_OVERRIDE",
         localKey:local.key,persistent:true}),
       owner:"LOCAL_OVERRIDE",localKey:local.key,sourcePostureId:null,
+    });
+  }
+
+  if(profile==="REQUIEM_CHOIR_1962"){
+    // Only an explicitly selected choir profile may project §521(c).
+    // Local overrides and sourced fixed instructions already took precedence.
+    const choir=projectRequiemChoirPosture(cueId,resolvedMass,{
+      reason:cueProjection?.reason??null,
+    });
+    if(choir)return Object.freeze({
+      posture:choir,owner:"REQUIEM_CHOIR_1962",
+      localKey:null,sourcePostureId:choir.sourcePostureId,
+    });
+    // Outside the three choir intervals (or outside a Sung/Solemn
+    // Requiem) retain the existing observed/source-driven participation.
+    if(legacyPosture)return Object.freeze({
+      posture:legacyPosture,owner:"REQUIEM_CHOIR_OBSERVED_FALLBACK",
+      localKey:null,sourcePostureId:null,
+    });
+    if(sourced?.value)return Object.freeze({
+      posture:Object.freeze({...cueProjection.posture,
+        label:sourced.value,value:sourced.value,
+        owner:"REQUIEM_CHOIR_SOURCE_FALLBACK",persistent:true}),
+      owner:"REQUIEM_CHOIR_SOURCE_FALLBACK",
+      localKey:null,sourcePostureId:sourced.sourcePostureId??null,
+    });
+    return Object.freeze({
+      posture:null,owner:"REQUIEM_CHOIR_OUTSIDE_SOURCE_FAIL_CLOSED",
+      localKey:null,sourcePostureId:null,
     });
   }
 
