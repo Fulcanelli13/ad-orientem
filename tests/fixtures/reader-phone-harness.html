@@ -21,7 +21,8 @@ import { CANONICAL_ICON_ASSETS } from "../../src/mass/reader-canonical-icons.js"
 const params=new URLSearchParams(location.search);
 const lang=params.get("lang")==="fr"?"fr":"en";
 const requestedMode=String(params.get("mode")||"LIVE").toUpperCase();
-const mode=["MISSAL","SIMPLE","LIVE"].includes(requestedMode)?requestedMode:"LIVE";
+// Include legacy SIMPLE URLs in migration coverage, never as a third reader.
+const mode=requestedMode==="MISSAL"?"MISSAL":"LIVE";
 const t=(lat,en,fr)=>lang==="fr"?({lat,en:"",fr}):({lat,en,fr:""});
 // Test-only source proof; deliberately distinct from production Proper.
 const separatelyNamedChants=params.get("sourceChants")==="1";
