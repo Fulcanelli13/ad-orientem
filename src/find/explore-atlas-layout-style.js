@@ -364,6 +364,15 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   position:absolute;inset:0;width:100%;height:100%!important;
   margin:0!important;min-height:0!important;border:0!important;border-radius:0!important;
 }
+/* Keep native MapLibre zoom/fullscreen controls below the floating section menu
+   and source filter strip. On phones the old top-right placement was occluded
+   by "Other sections", making actual map zoom buttons unclickable. */
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoFindMap .maplibregl-ctrl-top-right{
+  top:184px;right:9px;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoFindMap .maplibregl-ctrl-top-right button{
+  min-width:44px;min-height:44px;
+}
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreMapReset{
   top:184px;left:14px;display:inline-flex;align-items:center;gap:7px;
   width:auto;height:auto;min-height:44px;max-width:160px;padding:8px 12px;
