@@ -23,6 +23,7 @@ await new Promise((ok,no)=>{server.once("error",no);server.listen(4308,"127.0.0.
 let browser;
 try{
  browser=await chromium.launch({headless:true});
+ // SIMPLE here is deliberately a legacy saved URL/mode migration case.
  for(const startMode of ["SIMPLE","MISSAL","LIVE"]){
   const ctx=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:1});
   try{
@@ -44,6 +45,8 @@ try{
        cardNames,visibleTitle,current:a.getCurrentCard()?.title};
    });
    assert.equal(result.mode,"LIVE");
+    if(startMode==="SIMPLE")assert.equal(result.initial,65,
+      "legacy SIMPLE must immediately enter curated LIVE, not a third mode");
    assert.equal(result.after,65,
      startMode+" -> LIVE fell back to coarse cards: "+JSON.stringify(result));
    for(const title of ["Confiteor of the Celebrant","Te igitur","Hanc igitur",
