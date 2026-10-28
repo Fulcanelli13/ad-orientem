@@ -175,7 +175,7 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
 export function personalDailyDirectPlan({daypart="morning",prefs=defaultPersonalDailyPrefs(),sourceId}={}){
  if(!PARTS.includes(daypart)||typeof sourceId!=="string")return null;
  const p=normalizePersonalDailyPrefs(prefs);
- const full={...p,length:"full",mode:"standard"};
+ const full={...p,length:"full",mode:"standard",variants:{morning:{},evening:{}}};
  const base=buildPersonalDailyPlan({daypart,prefs:full});
  let selected=base.rows.find(row=>row.sourceId===sourceId);
  if(!selected){
