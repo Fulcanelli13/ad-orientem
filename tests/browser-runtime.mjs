@@ -49,6 +49,18 @@ const proper={
   postcommunions:[t("Postcommunio Rosarii","Postcommunion of the Rosary")],
 };
 function rootFixture(){return {innerHTML:"",querySelector(){return null},querySelectorAll(){return []},addEventListener(){}}}
+function showSourcePlaceat(runtime){
+  const card=runtime.getReaderModel()?.cards?.find(x=>
+    x.macroId==="AO.SM.M29" && x.paragraphs.some(p=>
+      p.sourceCueIds?.includes("AO.SM.C0261")));
+  assert.ok(card,"Required source-owned Placeat macro is absent");
+  return runtime.showSection(card.sectionId);
+}
+function showSourceLastGospel(runtime){
+  const card=runtime.getReaderModel()?.cards?.find(x=>x.title==="Last Gospel");
+  assert.ok(card,"Required source-owned Last Gospel card is absent");
+  return runtime.showSection(card.sectionId);
+}
 function celebration(overrides={}){return {
   date:"2026-10-04",calendarDay:{id:"Tempora/Pent18-0",title:"Sunday"},
   requestedCelebrationId:"holy_rosary",celebrationId:"holy_rosary",celebrationType:"votive",
@@ -158,7 +170,7 @@ assert.ok(palmRuntime.getReaderState().paragraphs.length>0);
 palmRuntime.previous();
 assert.equal(palmRuntime.getPalmState().card.id,"PALM-R07");
 palmRuntime.next();
-palmRuntime.showSection(29);
+showSourcePlaceat(palmRuntime);
 const beforeLastGospel=palmRuntime.getCurrentSectionId();
 const palmLifecycle=palmRuntime.next();
 assert.equal(palmRuntime.getCurrentSectionId(),beforeLastGospel);
@@ -303,7 +315,7 @@ assert.equal(planAwareLow.showCanonicalEvent("MC-OFF-110"),null,
   "Low browser runtime accepted Solemn offertory incensation outside its planned traversal");
 assert.ok(planAwareLow.showCanonicalEvent("MC-CNS-010"),
   "Low browser runtime rejected a certified planned canonical event");
-planAwareLow.showSection(30);
+showSourceLastGospel(planAwareLow);
 const lowBoundary=planAwareLow.next();
 assert.equal(lowBoundary.stage,"LEONINE_OFFER","ordinary Low Mass did not route through the Leonine resolver");
 assert.equal(lowBoundary.massComplete,true);
@@ -489,11 +501,7 @@ assert.equal(requiemEntered.session.plan.normalLastGospel,false);
 assert.equal(requiemEntered.session.plan.blessingAllowed,false);
 assert.deepEqual([...requiemEntered.session.plan.followingGraphs],["REQUIEM_ABSOLUTION"]);
 assert.equal(requiem.getReaderModel().totalCards,39,"Requiem variance must remain source-first without duplicated cards");
-const requiemPlaceat=requiem.getReaderModel().cards.find(card=>
-  card.macroId==="AO.SM.M29" && card.paragraphs.some(p=>
-    p.sourceCueIds?.includes("AO.SM.C0261")));
-assert.ok(requiemPlaceat,"The Plan-owned Requiem lost its real source Placeat card");
-requiem.showSection(requiemPlaceat.sectionId);
+showSourcePlaceat(requiem);
 assert.equal(requiem.getReaderState().cardTitle,"Placeat tibi, sancta Trinitas");
 assert.ok(requiem.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0261")));
 assert.ok(!requiem.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0264")),
@@ -533,7 +541,7 @@ assert.equal(corpusEntered.session.plan.dismissal,"BENEDICAMUS_DOMINO");
 assert.equal(corpusEntered.session.plan.blessingAllowed,false);
 assert.equal(corpusEntered.session.plan.normalLastGospel,false);
 assert.deepEqual([...corpusEntered.session.plan.followingGraphs],["CORPUS_CHRISTI_PROCESSION"]);
-corpus.showSection(29);
+showSourcePlaceat(corpus);
 assert.equal(corpus.getReaderState().cardTitle,"Placeat tibi, sancta Trinitas");
 assert.ok(corpus.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0261")));
 assert.ok(!corpus.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0264")),
@@ -574,7 +582,7 @@ const holyThursdayEntered=await holyThursday.enter();
 assert.equal(holyThursdayEntered.session.plan.blessingAllowed,false);
 assert.equal(holyThursdayEntered.session.plan.normalLastGospel,false);
 assert.deepEqual([...holyThursdayEntered.session.plan.followingGraphs],["HOLY_THURSDAY_POST"]);
-holyThursday.showSection(29);
+showSourcePlaceat(holyThursday);
 assert.equal(holyThursday.getReaderState().cardTitle,"Placeat tibi, sancta Trinitas");
 assert.ok(holyThursday.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0261")));
 assert.ok(!holyThursday.getReaderState().paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0264")),
