@@ -420,6 +420,36 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
  #aoPray435930 .aoCommunionPurposeOptions button{padding:8px 10px;max-width:170px}
 }
 
+/* B12: four different devotions are direct choices, not interchangeable texts.
+   Keep the source-owned four-card reading timeline and vertical scrolling. */
+#aoPray435930 .aoHeartDirectAccess{display:grid;gap:8px;min-width:0;margin:5px 12px 12px}
+#aoPray435930 .aoHeartChoiceInstruction{margin:0 1px 2px;color:var(--muted,#bbb4aa);font:500 .74rem/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoHeartChoiceGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;min-width:0}
+#aoPray435930 .aoHeartChoice{display:grid;align-content:center;gap:4px;min-width:0;min-height:66px;padding:10px 9px;
+ border:1px solid var(--liturgical-border,rgba(199,174,109,.27));border-radius:12px;
+ background:rgba(18,26,35,.12);color:var(--text,#eee9df);text-align:left;cursor:pointer}
+#aoPray435930 .aoHeartChoice[aria-pressed="true"]{border-color:var(--liturgical,#c7ae6d);
+ background:var(--liturgical-soft,rgba(199,174,109,.12))}
+#aoPray435930 .aoHeartChoiceName{font:600 clamp(.79rem,3.1vw,.92rem)/1.22 var(--ao-font-display,Georgia,serif);
+ color:inherit;overflow-wrap:anywhere}
+#aoPray435930 .aoHeartChoiceScope{font:400 .67rem/1.32 var(--ao-font-ui,system-ui,sans-serif);
+ color:var(--muted,#aeb2b8);overflow-wrap:anywhere}
+#aoPray435930 .aoHeartChoice[aria-pressed="true"] .aoHeartChoiceName{color:var(--liturgical,#dec791)}
+#aoPray435930 .aoHeartChoice:focus-visible,#aoPray435930 .aoHeartRelatedDirect button:focus-visible{
+ outline:2px solid var(--liturgical,#dec791);outline-offset:2px}
+#aoPray435930 .aoHeartChoiceContext{margin:0;padding:0 1px;color:var(--muted,#aeb2b8);
+ font:400 .72rem/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPray435930 .aoHeartRelatedDirect{display:grid;gap:6px;min-width:0;margin:14px 12px 5px;
+ padding:12px 0 4px;border-top:1px solid var(--liturgical-border,rgba(199,174,109,.2))}
+#aoPray435930 .aoHeartRelatedDirect>span{font:500 .71rem/1.4 var(--ao-font-ui,system-ui,sans-serif);
+ color:var(--muted,#aeb2b8)}
+#aoPray435930 .aoHeartRelatedDirect button{display:block;min-height:44px;border:1px solid var(--liturgical-border,rgba(199,174,109,.3));
+ background:transparent;border-radius:10px;padding:9px 12px;color:var(--text,#eee9df);
+ font:500 .84rem/1.35 var(--ao-font-display,Georgia,serif);text-align:left}
+#aoPray435930 .aoHeartRelatedDirect small{font:400 .69rem/1.43 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#aeb2b8)}
+@media(max-width:350px){#aoPray435930 .aoHeartChoice{padding:9px 7px;min-height:70px}
+ #aoPray435930 .aoHeartChoiceScope{font-size:.63rem}}
+
 `;
 
 export function installTraditionalPrayStyles(doc=globalThis.document){
