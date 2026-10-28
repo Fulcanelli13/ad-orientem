@@ -65,6 +65,10 @@
       }
       root.dataset.officeCardIndex=String(current);
       title.textContent=cards[current].querySelector(".ao-prayer-title")?.textContent??"";
+      const ribbonTitle=root.querySelector("[data-office-section-title]");
+      if(ribbonTitle)ribbonTitle.textContent=title.textContent;
+      const rail=root.querySelector("[data-office-source-role]");
+      if(rail)rail.textContent=(cards[current].dataset.officeRole??"").replaceAll("_"," ");
       position.textContent=(current+1)+" / "+cards.length;
       progress.style.width=((current+1)/cards.length*100)+"%";
       for(const button of navButtons){
