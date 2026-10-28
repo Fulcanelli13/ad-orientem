@@ -12,6 +12,19 @@ const LANGS=new Set(["la","en","fr"]);
 const EDITIONS=new Set(["1905","1913"]);
 const PARTS=["morning","evening"];
 const MODES=new Set(["standard","expanded"]);
+const LENGTHS=new Set(["full","brief"]);
+/** Ad Orientem-curated personal subsets of the existing whole, ordered prayers.
+ * These are not independent historical editions of St Pius X. */
+export const PERSONAL_BRIEF_PRAYER_IDS=Object.freeze({
+ "1913":Object.freeze({
+  morning:Object.freeze(["sign-of-cross","daily-prayer","our-father","hail-mary","salve-regina","guardian-angel"]),
+  evening:Object.freeze(["daily-prayer","our-father","hail-mary","examen","contrition"])
+ }),
+ "1905":Object.freeze({
+  morning:Object.freeze(["sign-of-cross","daily-prayer","our-father","hail-mary","salve-regina","guardian-angel"]),
+  evening:Object.freeze(["daily-prayer","our-father","hail-mary","contrition"])
+ })
+});
 const EDITION_SUPPLEMENT_IDS=new Set(["piusx-1913-de-profundis","piusx-1913-jesus-joseph-mary"]);
 const ids=new Set([...CORPUS.additional.map(x=>x.id),...EDITION_SUPPLEMENT_IDS]);
 function editionSupplements(language){
@@ -30,7 +43,7 @@ const allowed=(arr,lang,daypart)=>arr.filter(x=>x.lang===lang && x.daypart===day
 
 export function defaultPersonalDailyPrefs(language="en"){
  return {version:1,edition:"1913",language:LANGS.has(language)?language:"en",
-  mode:"standard",variants:{morning:{},evening:{}},
+  mode:"standard",length:"full",variants:{morning:{},evening:{}},
   extras:{morning:[],evening:[]}};
 }
 export function normalizePersonalDailyPrefs(raw,language="en"){
@@ -40,6 +53,7 @@ export function normalizePersonalDailyPrefs(raw,language="en"){
   version:1,edition:EDITIONS.has(raw.edition)?raw.edition:fallback.edition,
   language:LANGS.has(raw.language)?raw.language:fallback.language,
   mode:MODES.has(raw.mode)?raw.mode:fallback.mode,
+  length:LENGTHS.has(raw.length)?raw.length:fallback.length,
   variants:{},extras:{}
  };
  for(const part of PARTS){
@@ -85,8 +99,12 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
  if(!PARTS.includes(daypart))throw new RangeError("Invalid daily prayer daypart");
  const p=normalizePersonalDailyPrefs(prefs);
  const edition=personalDailyEdition(p.edition),language=p.language;
- const native=edition.dayparts[daypart];
- const variants=personalDailyOptions(daypart,language,p.edition).filter(x=>x.kind==="variant");
+ const fullNative=edition.dayparts[daypart];
+ const briefIDs=PERSONAL_BRIEF_PRAYER_IDS[p.edition][daypart];
+ const native=p.length==="brief"?fullNative.filter(x=>briefIDs.includes(x.id)):fullNative;
+ // Do not silently omit/reorder an invalid source ID.
+ if(p.length==="brief"&&(native.length!==briefIDs.length||native.some((x,i)=>x.id!==briefIDs[i])))throw new Error("Invalid Personal Brief source selection");
+ const variants=p.length==="full"?personalDailyOptions(daypart,language,p.edition).filter(x=>x.kind==="variant"):[];
  const chosen=Object.fromEntries(Object.entries(p.variants[daypart]).filter(([slot,id])=>variants.some(x=>x.id===id&&x.slot===slot)));
  const primary=native.filter(x=>x.kind!=="supplement").map((row,index)=>{
   if(row.kind==="guided")return {...row,id:"piusx-"+p.edition+"-"+daypart+"-examen",kind:"personal-examen",sourceId:"examen",index};
@@ -102,7 +120,7 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
    missing:!body,index,sourceExact:replacement?true:row.sourceExact};
  });
  const extrasById=new Map(personalDailyOptions(daypart,language,p.edition).filter(x=>x.kind==="additional").map(x=>[x.id,x]));
- const selected=p.mode==="expanded"?p.extras[daypart].filter(id=>extrasById.has(id)):[];
+ const selected=p.length==="full"&&p.mode==="expanded"?p.extras[daypart].filter(id=>extrasById.has(id)):[];
  const extras=selected.map(id=>{
   const item=extrasById.get(id);
   return {id:"personal-extra-"+id,sourceId:id,kind:item.legacyPrayerId?"personal-legacy":"personal-prayer",legacyId:item.legacyPrayerId||null,
@@ -114,7 +132,7 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
  });
  // Append selected complete optional devotions in the order saved by the
  // user. The printed catechism's mandatory stages retain their exact order.
- return {mode:"personal",daypart,edition:p.edition,language,expanded:p.mode==="expanded",
+ return {mode:"personal",daypart,edition:p.edition,language,length:p.length,brief:p.length==="brief",expanded:p.length==="full"&&p.mode==="expanded",
   rows:[...primary,...extras],selectedExtras:selected,
   offeredExtras:[...extrasById.values()],availableVariants:variants,
   sourceLabel:edition.sourceLabel,sourceUrl:edition.sourceUrl};
@@ -124,6 +142,7 @@ export function changePersonalDailyPrefs(prefs,{action,daypart="morning",value,l
  if(action==="edition"&&EDITIONS.has(value))p.edition=value;
  else if(action==="language"&&LANGS.has(value))p.language=value;
  else if(action==="mode"&&MODES.has(value))p.mode=value;
+ else if(action==="length"&&LENGTHS.has(value))p.length=value;
  else if(action==="reset")return defaultPersonalDailyPrefs(p.language);
  else if(PARTS.includes(daypart)){
   const options=personalDailyOptions(daypart,p.language,p.edition);
