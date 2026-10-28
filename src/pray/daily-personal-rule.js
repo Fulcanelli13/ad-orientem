@@ -160,8 +160,7 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
    missing:!body,index,sourceExact:replacement?true:row.sourceExact};
  });
  const extrasById=new Map(personalDailyOptions(daypart,language,p.edition).filter(x=>x.kind==="additional").map(x=>[x.id,x]));
- const selected=p.length==="full"&&p.mode==="expanded"?p.extras[daypart].filter(id=>
-   extrasById.has(id)&&!Object.values(chosen).includes(id)):[];
+ const selected=p.length==="full"&&p.mode==="expanded"?p.extras[daypart].filter(id=>extrasById.has(id)):[];
  const extras=selected.map(id=>{
   const item=extrasById.get(id);
   return {id:"personal-extra-"+id,sourceId:id,kind:item.legacyPrayerId?"personal-legacy":"personal-prayer",legacyId:item.legacyPrayerId||null,
