@@ -364,7 +364,7 @@
       "stage": "Light before Examination",
       "language": "en",
       "period": "evening",
-      "relationship": "ONE_STANDALONE_IMAGE_PENDING",
+      "relationship": "ONE_STANDALONE_COMPLETE_PRINT_IMAGE_CHECKED",
       "provisional_recommendation": "b12-baltimore-evening-examination-light",
       "candidate_ids": [
         "b12-baltimore-evening-examination-light"
@@ -380,8 +380,8 @@
           "source_page": "https://en.wikisource.org/wiki/Page:Manualofprayersf00cath.djvu/94",
           "full_text": "O my God, sovereign Judge of men, who desirest not the death of a sinner, but that he should be converted and saved, enlighten my mind, that I may know the sins which I have this day committed in thought, word, or deed, and give me the grace of true contrition.",
           "review_status": "NOT_SELECTED",
-          "image_status": "PROOFREAD_TRANSCRIPTION_PRINT_IMAGE_PENDING",
-          "publication_status": "UNCLEARED"
+          "image_status": "ORIGINAL_PRINT_IMAGE_DIRECTLY_CHECKED_2026_10_28",
+          "publication_status": "UNCLEARED_USER_EDITORIAL_AND_REUSE_RIGHTS"
         }
       ]
     },
@@ -584,5 +584,6 @@
   ],
   "gate": "NO_PUBLICATION_WITHOUT_USER_EDITORIAL_RIGHTS_ORIGINAL_PAGE_REVIEW",
   "cleared_release_profiles": 0,
-  "approved_defaults": 0
+  "approved_defaults": 0,
+  "b20_update": "All 33 historical candidate source bodies in B19 now have direct original-print-image checks, including Baltimore 1888 Evening light. 7 further image-checked optional forms in B20 supplement; zero user defaults or publication approvals."
 }
