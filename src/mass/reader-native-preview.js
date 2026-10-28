@@ -2597,7 +2597,7 @@ export async function mountNativeReaderPreview({
     return state;
   }
 
-  function showCard(card,{directJump=false}={}){
+  function showCard(card,{directJump=false,preserveSchola=false}={}){
     if(!card) return null;
     inAsperges=false;
     inPalm=false;
@@ -2651,9 +2651,11 @@ export async function mountNativeReaderPreview({
       activeCueId=firstSourceCue;
       if(firstSourceCue)transientGuard.resolveCue(firstSourceCue);
     }
-    // Card navigation selects an *expected* musical scene, never an actual
-    // phrase. Only explicit Schola controls can advance the independent lane.
-    ready.scholaState.activateForCard(visibleCard);
+    // Normal linear navigation may update the expected musical scene.
+    // A manual priest catch-up is different: the user has only changed
+    // which priest prayer is on screen and has NOT heard the choir move.
+    // Preserve its exact track, phrase, completion and Benedictus state.
+    if(!preserveSchola)ready.scholaState.activateForCard(visibleCard);
     const state=projectedState();
     reader.renderMoment({
       id:visibleCard.sectionId,
@@ -2949,7 +2951,8 @@ export async function mountNativeReaderPreview({
     },
     onSectionSelect:(sectionId)=>{
       const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
-      return showCard(visibleCardAllowed(card)?card:null,{directJump:true});
+      // This selection is a reader recovery action, not a choir observation.
+      return showCard(visibleCardAllowed(card)?card:null,{directJump:true,preserveSchola:true});
     },
     onPrevious:previousReaderCard,
     onNext:nextReaderCard,
