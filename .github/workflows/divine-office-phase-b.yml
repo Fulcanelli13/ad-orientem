@@ -31,11 +31,14 @@ jobs:
           node --check scripts/office/phase-b-generate.mjs
           node --check scripts/office/build-research-preview.mjs
           node --check src/office/research-reader.js
+          node --check src/office/mass-style-research-reader.js
+          node --check src/office/mass-style-research-ui.js
+          node --check scripts/office/build-mass-style-preview.mjs
           node --check src/office/sung-vespers-gate.js
           node --check scripts/office/audit-sunday-chant.mjs
           node --check scripts/office/audit-advent-vespers-text.mjs
       - name: Calendar, Tenebrae and composition probe contracts
-        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-native-sung.mjs
+        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs
       - name: Source-cell HTML normalizer unit tests
         run: python3 -m unittest discover -s tests -p 'test_divine_office_normalizer.py' -v
 
@@ -116,6 +119,7 @@ jobs:
             --languages la,en,fr
           python3 scripts/office/normalize_xhtml.py --out "$OUTPUT"
           node scripts/office/build-research-preview.mjs --out "$OUTPUT"
+          node scripts/office/build-mass-style-preview.mjs --out "$OUTPUT"
           # Liturgical witness for Advent I: FIRST Vespers on Saturday and
           # SECOND on Sunday. This is a fresh six-file source sample, not
           # six production scores and not part of the original 96-file pilot.
@@ -123,6 +127,7 @@ jobs:
             --upstream "$UPSTREAM" --out "$OUTPUT/advent-vespers" \
             --dates 2026-11-28,2026-11-29 --hours VESPERS --languages la,en,fr
           python3 scripts/office/normalize_xhtml.py --out "$OUTPUT/advent-vespers"
+          node scripts/office/build-mass-style-preview.mjs --out "$OUTPUT/advent-vespers"
           node scripts/office/audit-advent-vespers-text.mjs --out "$OUTPUT/advent-vespers" --report "$OUTPUT/advent-text-audit.json"
           node --input-type=module -e '
             import {readFileSync} from "node:fs";
@@ -153,7 +158,15 @@ jobs:
           assert pair["scoresPublished"]==0 and pair["sungButtonEnabled"] is False
           previews=json.loads((Path(os.environ["OUTPUT"])/"preview"/"preview-manifest.json").read_text(encoding="utf8"))
           assert previews["pages"]==64 and previews["published"]==0 and previews["researchOnly"]
-          print("Office normalization research manifest valid: 96 documents, 32 trilingual groups, zero published.")
+          mass_preview=json.loads((Path(os.environ["OUTPUT"])/"preview"/"mass"/"preview-manifest.json").read_text(encoding="utf8"))
+          assert mass_preview["pages"]==64 and mass_preview["published"]==0
+          assert mass_preview["researchOnly"] and not mass_preview["productionRouteRegistered"]
+          assert mass_preview["externalResources"]==0 and mass_preview["chantScoreAssets"]==0
+          assert not mass_preview["chantButtonEnabled"]
+          advent_mass=json.loads((Path(os.environ["OUTPUT"])/"advent-vespers"/"preview"/"mass"/"preview-manifest.json").read_text(encoding="utf8"))
+          assert advent_mass["pages"]==4 and advent_mass["published"]==0
+          assert advent_mass["hours"]==["VESPERS"] and not advent_mass["productionRouteRegistered"]
+          print("Office Mass-style preview valid: 64 main + 4 Advent I bilingual interactive pages, zero published.")
           PY
       # Deliberately no artifact upload and no source-text publication.
       # This smoke test is reproducible and has no permanent-storage dependencies.
