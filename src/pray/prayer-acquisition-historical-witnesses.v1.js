@@ -55,7 +55,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
       "page": "226",
       "scanPageUrl": "https://en.wikisource.org/wiki/Page:MyPrayerBookHappinessInGoodness.djvu/241",
       "material": "HISTORICAL_ENGLISH_EDITION",
-      "witness_status": "HTML_TRANSCRIPTION_VISUALLY_REVIEWED_PRINT_IMAGE_NOT_CERTIFIED"
+      "witness_status": "HISTORICAL_ENGLISH_SCAN_IMAGE_COLLATED"
     },
     "release": {
       "status": "STAGED_RESEARCH_NOT_LIVE",
@@ -64,7 +64,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
         "fr": "NOT_AVAILABLE",
         "la": "NOT_ADMITTED"
       },
-      "exact_print_verified": false,
+      "exact_print_verified": true,
       "modern_rights_clearance": "ORIGINAL_1908_TEXT_ONLY",
       "allowed_in_prayer_hub": false
     }
@@ -78,7 +78,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
     "work_kind": "PRAYER",
     "text": "Take, O Lord, and receive all my liberty, my memory, my understanding and my whole will.\n\nThou hast given me all that I am and all that I possess; I surrender it all to Thee that Thou mayest dispose of it according to Thy will. Give me only Thy love and Thy grace; with these I will be rich enough, and will have no more to desire.",
     "source_page": "227",
-    "notes": "Lasance's historical English witness; its adjacent Latin OCR has evident corruption, so Latin is deliberately withheld until Latin printed-text collation.",
+    "notes": "The English and Latin are printed side by side on Lasance's 1908 page 227. Both transcribed from the page image; no historical French witness is asserted.",
     "source": {
       "work": "F.X. Lasance, My Prayer-Book: Happiness in Goodness",
       "edition": "Benziger Brothers, 1908",
@@ -86,18 +86,18 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
       "page": "227",
       "scanPageUrl": "https://en.wikisource.org/wiki/Page:MyPrayerBookHappinessInGoodness.djvu/242",
       "material": "HISTORICAL_ENGLISH_EDITION",
-      "witness_status": "HTML_TRANSCRIPTION_VISUALLY_REVIEWED_PRINT_IMAGE_NOT_CERTIFIED"
+      "witness_status": "HISTORICAL_ENGLISH_SCAN_IMAGE_COLLATED"
     },
     "release": {
-      "status": "STAGED_RESEARCH_NOT_LIVE",
+      "status": "LIVE_CLEARED",
       "translation_status": {
         "en": "HISTORICAL_ENGLISH",
         "fr": "NOT_AVAILABLE",
         "la": "NOT_ADMITTED"
       },
-      "exact_print_verified": false,
+      "exact_print_verified": true,
       "modern_rights_clearance": "ORIGINAL_1908_TEXT_ONLY",
-      "allowed_in_prayer_hub": false
+      "allowed_in_prayer_hub": true
     }
   },
   {
@@ -109,7 +109,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
     "work_kind": "PRAYER",
     "text": "Grant me grace, O merciful God, to desire ardently all that is pleasing to Thee, to examine it prudently, to acknowledge it truthfully, and to accomplish it perfectly, for the praise and glory of Thy name. Amen.",
     "source_page": "228",
-    "notes": "Short English form of prayer attributed to St Thomas in Lasance; different purpose and length from full meditation opening.",
+    "notes": "English translation collated with printed image p.228. The same image contains the Latin original; preserved in a separate, source-identified Latin witness.",
     "source": {
       "work": "F.X. Lasance, My Prayer-Book: Happiness in Goodness",
       "edition": "Benziger Brothers, 1908",
@@ -117,7 +117,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
       "page": "228",
       "scanPageUrl": "https://en.wikisource.org/wiki/Page:MyPrayerBookHappinessInGoodness.djvu/243",
       "material": "HISTORICAL_ENGLISH_EDITION",
-      "witness_status": "HTML_TRANSCRIPTION_VISUALLY_REVIEWED_PRINT_IMAGE_NOT_CERTIFIED"
+      "witness_status": "HISTORICAL_ENGLISH_SCAN_IMAGE_COLLATED"
     },
     "release": {
       "status": "STAGED_RESEARCH_NOT_LIVE",
@@ -126,7 +126,69 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
         "fr": "NOT_AVAILABLE",
         "la": "NOT_ADMITTED"
       },
-      "exact_print_verified": false,
+      "exact_print_verified": true,
+      "modern_rights_clearance": "ORIGINAL_1908_TEXT_ONLY",
+      "allowed_in_prayer_hub": false
+    }
+  },
+  {
+    "id": "ignatius_suscipe_lasance_1908_la",
+    "title": "Suscipe — St Ignatius (Latin)",
+    "titleFr": "Suscipe — saint Ignace (latin)",
+    "purpose": "self_offering",
+    "language": "la",
+    "work_kind": "PRAYER",
+    "text": "Suscipe, Domine, universam meam libertatem. Accipe memoriam, intellectum atque voluntatem omnem. Quidquid habeo vel possideo, mihi largitus es; id tibi totum restituo ac tuae prorsus voluntati trado gubernandum. Amorem tui solum cum gratia tua mihi dones et dives sum satis, nec aliud quidquam ultra posco.",
+    "source_page": "227",
+    "notes": "The English and Latin are printed side by side on Lasance's 1908 page 227. Both transcribed from the page image; no historical French witness is asserted.",
+    "source": {
+      "work": "F.X. Lasance, My Prayer-Book: Happiness in Goodness",
+      "edition": "Benziger Brothers, 1908",
+      "url": "https://en.wikisource.org/wiki/My_Prayer-Book/Prayers_During_the_Day",
+      "page": "227",
+      "scanPageUrl": "https://en.wikisource.org/wiki/Page:MyPrayerBookHappinessInGoodness.djvu/242",
+      "material": "HISTORICAL_LATIN_EDITION",
+      "witness_status": "LATIN_SCAN_IMAGE_COLLATED"
+    },
+    "release": {
+      "status": "LIVE_CLEARED",
+      "translation_status": {
+        "en": "NOT_APPLICABLE",
+        "fr": "NOT_AVAILABLE",
+        "la": "PRINTED_LATIN_1908"
+      },
+      "exact_print_verified": true,
+      "modern_rights_clearance": "ORIGINAL_1908_TEXT_ONLY",
+      "allowed_in_prayer_hub": true
+    }
+  },
+  {
+    "id": "thomas_aquinas_concede_mihi_lasance_1908_la",
+    "title": "Concede mihi — St Thomas Aquinas (Latin)",
+    "titleFr": "Concede mihi — saint Thomas d'Aquin (latin)",
+    "purpose": "prepare_spiritual_reading",
+    "language": "la",
+    "work_kind": "PRAYER",
+    "text": "Concede mihi, misericors Deus, quae tibi placita sunt ardenter concupiscere, prudenter investigare, veraciter agnoscere et perfecte adimplere, ad laudem et gloriam nominis tui. Amen.",
+    "source_page": "228",
+    "notes": "Latin transcription verified against printed page 228. Preserved separately from the English translation and not silently substituted for French.",
+    "source": {
+      "work": "F.X. Lasance, My Prayer-Book: Happiness in Goodness",
+      "edition": "Benziger Brothers, 1908",
+      "url": "https://en.wikisource.org/wiki/My_Prayer-Book/Prayers_During_the_Day",
+      "page": "228",
+      "scanPageUrl": "https://en.wikisource.org/wiki/Page:MyPrayerBookHappinessInGoodness.djvu/243",
+      "material": "HISTORICAL_LATIN_EDITION",
+      "witness_status": "LATIN_SCAN_IMAGE_COLLATED"
+    },
+    "release": {
+      "status": "STAGED_RESEARCH_NOT_LIVE",
+      "translation_status": {
+        "en": "NOT_APPLICABLE",
+        "fr": "NOT_AVAILABLE",
+        "la": "PRINTED_LATIN_1908"
+      },
+      "exact_print_verified": true,
       "modern_rights_clearance": "ORIGINAL_1908_TEXT_ONLY",
       "allowed_in_prayer_hub": false
     }
