@@ -18,6 +18,13 @@ const excludedResearchPaths=[
  "assets/staged",
  "data/geography/research",
 ];
+// These two research directories have one explicitly referenced runtime fixture
+// apiece. Preserve the exact fixture; omit other review records only from
+// deployment output. Git source and evidence are untouched.
+const retainedRuntimeResearch=Object.freeze({
+ "data/research":["mass-special-rite-music-events-20261019.v1.json"],
+ "data/directory/research":["canonical-g0-site-admissions-b84-b90-20261026.v1.json"],
+});
 
 await rm(output,{recursive:true,force:true});
 await mkdir(output,{recursive:true});
@@ -40,6 +47,14 @@ for(const folder of folders){
 }
 for(const relativePath of excludedResearchPaths){
  await rm(join(output,relativePath),{recursive:true,force:true});
+}
+for(const [relativePath,keepFiles] of Object.entries(retainedRuntimeResearch)){
+ const dest=join(output,relativePath);
+ await rm(dest,{recursive:true,force:true});
+ await mkdir(dest,{recursive:true});
+ for(const filename of keepFiles){
+  await cp(join(root,relativePath,filename),join(dest,filename));
+ }
 }
 await writeFile(join(output,"robots.txt"),"User-agent: *\nDisallow: /\n");
 const html=await import("node:fs/promises").then(fs=>fs.readFile(join(output,"index.html"),"utf8"));
@@ -65,4 +80,4 @@ const count=await (async function sizeOf(path){
  else if(n.isFile()){size+=(await stat(p)).size;count++}}
  return {size,count};
 })(output);
-console.log(JSON.stringify({previewRoot:"dist/web-preview",files:count.count,megabytes:Math.round(count.size/1e6*10)/10,checkedEntrypointAssets:new Set(links).size,excludedDevelopmentFiles:true,excludedResearchPaths}));
+console.log(JSON.stringify({previewRoot:"dist/web-preview",files:count.count,megabytes:Math.round(count.size/1e6*10)/10,checkedEntrypointAssets:new Set(links).size,excludedDevelopmentFiles:true,excludedResearchPaths,retainedRuntimeResearch}));
