@@ -129,7 +129,7 @@
     "test:rc-field-qa": "node tests/release-candidate-field-qa.mjs",
     "test:presentation-fx": "node tests/presentation-fx.mjs",
     "test:rc-interaction-qa": "node tests/release-candidate-interaction-qa.mjs",
-    "test:pray-novenas": "node tests/pray-novenas.mjs && node tests/icksp-divine-infant-king-novena.mjs && node tests/icksp-immaculate-conception-novena.mjs && node tests/icksp-therese-weekly-b04.mjs",
+    "test:pray-novenas": "node tests/pray-novenas.mjs && node tests/pray-b25-holy-face-full-novena.mjs && node tests/icksp-divine-infant-king-novena.mjs && node tests/icksp-immaculate-conception-novena.mjs && node tests/icksp-therese-weekly-b04.mjs",
     "test:pray-focus": "node tests/pray-focus.mjs",
     "test:devotional-action-cinematics": "node tests/devotional-action-cinematics.mjs",
     "test:pray-traditional": "node tests/pray-traditional-life.mjs && node tests/confession-nightly-contrition-b13.mjs && npm run test:icksp-batch01-reconcile",
