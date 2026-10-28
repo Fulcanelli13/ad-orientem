@@ -96,6 +96,12 @@ const SHELL_STYLE = `
 .ao-schola-events-menu[hidden]{display:none!important}
 .ao-schola-events-menu h3{margin:7px 9px 3px;font:600 15px var(--ao-font-ui,system-ui,sans-serif)}
 .ao-schola-events-menu p{margin:0 9px 10px;font:400 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:#a7b1a8}
+.ao-schola-events-menu button[data-schola-events-rejoin]{
+  display:block;width:100%;min-height:42px;margin:5px 0 12px;padding:8px 12px;
+  border:1px solid rgba(225,207,145,.34);border-radius:8px;
+  background:rgba(225,207,145,.08);color:var(--ao-mass-accent-text);
+  font:600 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);text-align:left
+}
 .ao-schola-events-menu button[data-schola-event-select]{
   display:block;width:100%;text-align:left;padding:10px 12px;margin:2px 0;
   border:0;border-radius:8px;background:rgba(255,255,255,.03);color:#ecf0e8;
@@ -3079,6 +3085,13 @@ export function createReaderDomAdapter({
     const note=doc.createElement("p");
     note.textContent="Select the music or interval to display. This never moves the priest or detects singing.";
     menu.append(note);
+    if(current?.scholaCatchupPinned){
+      const rejoin=doc.createElement("button");
+      rejoin.type="button";
+      rejoin.dataset.scholaEventsRejoin="";
+      rejoin.textContent="Return to expected music for current Mass position";
+      menu.append(rejoin);
+    }
     for(const item of itinerary.events){
       const button=doc.createElement("button");
       button.type="button";
@@ -3366,6 +3379,10 @@ export function createReaderDomAdapter({
           closeSectionMenu();setPreferencesOpen(false);
         }
         return;
+      }
+      const musicRejoin=event.target?.closest?.("[data-schola-events-rejoin]");
+      if(musicRejoin){
+        onScholaRejoin?.(current,prepared);closeScholaEventMenu();return;
       }
       const scholaEventSelect=event.target?.closest?.("[data-schola-event-select]");
       if(scholaEventSelect){
