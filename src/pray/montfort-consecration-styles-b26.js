@@ -33,6 +33,8 @@ export function installMontfortStyles(doc=globalThis.document){
 #aoPray435930 .aoMontfortB27Litany{padding-bottom:8px}
 #aoPray435930 .aoMontfortB27Response{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px 14px;padding:9px 0;border-bottom:1px solid rgba(205,183,143,.1);font:400 clamp(16px,2.5vw,19px)/1.6 var(--ao-font-liturgical,Georgia,serif);overflow-wrap:anywhere}
 #aoPray435930 .aoMontfortB27Response strong{font:400 16px/1.7 var(--ao-font-liturgical,Georgia,serif);color:var(--ao-muted,#cbbda1)}
+#aoPray435930 .aoMontfortB27Chapter{margin:26px 0 6px;padding:10px 0 5px;border-bottom:1px solid rgba(200,175,125,.36);font:500 13px/1.4 var(--ao-font-ui,Georgia,serif);letter-spacing:.04em;text-transform:uppercase;color:var(--ao-muted,#cbbda1)}
+#aoPray435930 .aoMontfortB27Prayer [data-ao-montfort-witness-caution]{border-left:2px solid rgba(195,166,114,.55);padding:6px 0 6px 12px;margin-bottom:8px}
 #aoPray435930 .aoMontfortB27Collect{font:400 clamp(18px,3vw,20px)/1.85 var(--ao-font-liturgical,Georgia,serif);margin:19px 0;overflow-wrap:anywhere}
 #aoPray435930 .aoMontfortB27Prayer a{display:inline-block;min-height:44px;padding:10px 0}
 @media(max-width:390px){#aoPray435930 .aoMontfortB27Response{grid-template-columns:minmax(0,1fr)}#aoPray435930 .aoMontfortB27Response strong{padding-left:12px}}
