@@ -7,6 +7,8 @@ on:
       - .github/workflows/prayer-wave1-remaining-photo-comparison-20261028.yml
       - scripts/art/prayer-wave1-remaining-photo-comparison-20261028.py
       - scripts/art/prayer-wave1-final-photo-candidate-proof-20261028.py
+      - scripts/art/validate-prayer-wave1-photo-proposals-20261028.mjs
+      - data/calendar/prayer-wave1-remaining-photo-decisions-20261028.v1.json
   workflow_dispatch:
 
 permissions:
@@ -32,6 +34,10 @@ jobs:
           python scripts/art/prayer-wave1-remaining-photo-comparison-20261028.py
           python -m py_compile scripts/art/prayer-wave1-final-photo-candidate-proof-20261028.py
           python scripts/art/prayer-wave1-final-photo-candidate-proof-20261028.py
+      - name: Assert locked artwork decisions and pinned photo-file evidence
+        run: |
+          node --check scripts/art/validate-prayer-wave1-photo-proposals-20261028.mjs
+          node scripts/art/validate-prayer-wave1-photo-proposals-20261028.mjs
       - name: Archive original candidates and QA contact sheets permanently
         run: |
           git config user.name "Ad Orientem research audit"
