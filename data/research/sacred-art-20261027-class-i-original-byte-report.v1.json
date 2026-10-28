@@ -1,0 +1,85 @@
+{
+  "schema": "AO_ART_CLASS_I_ORIGINAL_BINARY_AUDIT_V1",
+  "checked_at": "2026-10-27T18:57:28.547507+00:00",
+  "results": [
+    {
+      "id": "stom-epiphany",
+      "accession": "Nationalmuseum NM 1792",
+      "source_original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/The_Adoration_of_the_Magi_%28Matthias_Stom%29_-_Nationalmuseum_-_18796.jpg",
+      "source_rights_lead": "Nationalmuseum PD",
+      "expected_pixels": [
+        3650,
+        3747
+      ],
+      "source_byte_status": "FAILED",
+      "frame_status": "UNVERIFIED_FULL_RESOLUTION_HUMAN_REVIEW",
+      "publication_ready": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests (015d12c)"
+    },
+    {
+      "id": "koenig-resurrection",
+      "accession": "Cleveland 2017.192",
+      "source_original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Clevelandart_2017.192.jpg",
+      "source_rights_lead": "Cleveland CC0",
+      "expected_pixels": [
+        2561,
+        3400
+      ],
+      "source_byte_status": "FAILED",
+      "frame_status": "UNVERIFIED_FULL_RESOLUTION_HUMAN_REVIEW",
+      "publication_ready": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests (015d12c)"
+    },
+    {
+      "id": "beuckelaer-easter-wednesday",
+      "accession": "Getty 71.PB.59",
+      "source_original_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Joachim_Beuckelaer_%28Netherlandish_-_The_Miraculous_Draught_of_Fishes_-_Google_Art_Project.jpg",
+      "source_rights_lead": "Commons PD-Art; jurisdiction review",
+      "expected_pixels": [
+        4166,
+        2137
+      ],
+      "source_byte_status": "FAILED",
+      "frame_status": "UNVERIFIED_FULL_RESOLUTION_HUMAN_REVIEW",
+      "publication_ready": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests (015d12c)"
+    },
+    {
+      "id": "netherlandish-ember-friday",
+      "accession": "NGA 1943.7.7",
+      "source_original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Netherlandish_16th_Century%2C_The_Healing_of_the_Paralytic%2C_c._1560-1590%2C_NGA_12205.jpg",
+      "source_rights_lead": "NGA CC0",
+      "expected_pixels": [
+        2222,
+        3147
+      ],
+      "source_byte_status": "FAILED",
+      "frame_status": "UNVERIFIED_FULL_RESOLUTION_HUMAN_REVIEW",
+      "publication_ready": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests (015d12c)"
+    },
+    {
+      "id": "champaigne-christmas-vigil",
+      "accession": "National Gallery NG6276",
+      "source_original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Philippe_de_Champaigne_%281602-1674%29_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "source_rights_lead": "Commons PD-Art; jurisdiction review",
+      "expected_pixels": [
+        4421,
+        6000
+      ],
+      "source_byte_status": "FAILED",
+      "frame_status": "UNVERIFIED_FULL_RESOLUTION_HUMAN_REVIEW",
+      "publication_ready": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests (015d12c)"
+    }
+  ],
+  "counts": {
+    "source_attempted": 5,
+    "bytes_sha256_verified": 0,
+    "failed": 5,
+    "frame_visually_certified": 0,
+    "publication_ready": 0
+  },
+  "restrictions": "Source originals discarded after checking; no image binary, artifact ZIP or artwork published. Full-resolution manual four-edge inspection and separate rights/editorial approval still required.",
+  "free_public_runner_only": true
+}

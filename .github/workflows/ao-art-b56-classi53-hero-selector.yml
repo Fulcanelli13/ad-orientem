@@ -1,0 +1,78 @@
+name: B56 Class I feast heroes — 53 dates 3-4 verified painting options private review
+on:
+  push:
+    branches: [research/sacred-art-b56-classi-53-hero-selector-20261024]
+    paths:
+      - .github/workflows/ao-art-b56-classi53-hero-selector.yml
+      - scripts/research/sacred_art_b56_53_hero_selector.py
+      - previews/sacred-art-b56-classi-hero-template.html
+      - tests/sacred-art-b56-classi53-hero-selector-integrity.mjs
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-art-b56-53-classi-hero-selection
+  cancel-in-progress: true
+jobs:
+  private-class-i-hero-selector:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b56-classi-53-hero-selector-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Source provenance, correct protected dates, and image processor
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          python -m py_compile scripts/research/sacred_art_b56_53_hero_selector.py scripts/research/sacred_art_b56_publish_private_hero_selector.py
+          node tests/sacred-art-b55-classi-protected-approval-reconciliation.mjs
+          test -f tests/sacred-art-b56-classi53-hero-selector-integrity.mjs
+          test ! -f previews/sacred-art-b56-classi-53-hero-selection-offline.html
+      - name: Exact-source Commons and Met previews + 383 preserved original images; create 53-date 3-4-option viewer
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_b56_53_hero_selector.py
+      - name: Independently validate 53 dates, 10 protected prior approvals, all available imagery, selections and SHA checks
+        run: node tests/sacred-art-b56-classi53-hero-selector-integrity.mjs
+      - name: Temporary private review transport (7-day artifact, NOT permanent archive)
+        uses: actions/upload-artifact@v4
+        with:
+          name: class-i-53-bulk-editorial-review-${{ github.run_id }}
+          path: previews/sacred-art-b56-classi-53-hero-selection-offline.html
+          retention-days: 7
+          if-no-files-found: error
+      - name: Try archival transport in UNPUBLISHED draft Release
+        id: draft_release
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_b56_publish_private_hero_selector.py
+      - name: Clarify temporary transport if draft Release write not permitted
+        if: steps.draft_release.outcome == 'failure'
+        run: |
+          echo 'Draft Release asset unavailable due to repository token permissions.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Verified HTML is available only through the 7-day Actions artifact; this is not the permanent source archive.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'No additional privileges, paid services, or rights-holder outreach will be requested.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit research indexes only, never embed unapproved art in public Git
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b56-53-hero-selection-verified-summary.json data/research/sacred-art-b56-53-hero-candidate-list.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'research: B56 53 Class I date candidates and protected approvals, non-release evidence'
+          else
+            echo 'Research indexes unchanged' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b56-classi-53-hero-selector-20261024
+            git rebase origin/research/sacred-art-b56-classi-53-hero-selector-20261024
+            git push origin HEAD:research/sacred-art-b56-classi-53-hero-selector-20261024 && exit 0
+            sleep 3
+          done
+          exit 1

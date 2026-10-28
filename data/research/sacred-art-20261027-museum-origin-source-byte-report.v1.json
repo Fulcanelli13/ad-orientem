@@ -1,0 +1,270 @@
+{
+  "schema": "AO_MUSEUM_IMAGE_BYTES_AUDIT_V3",
+  "permanently_banned_photographs": [
+    "https://openaccess-cdn.clevelandart.org/alternate/1959.189/1959.189_alt0_print.jpg"
+  ],
+  "canvas_aspect_ratio_gate": "Sanity check for framed/cropped alternate, NOT sufficient as no-frame certification",
+  "checked_utc": "2026-10-27T20:54:16.189643+00:00",
+  "source_count": 4,
+  "museum_bytes_verified": 4,
+  "approved_source_count": 2,
+  "approved_bytes_verified": 2,
+  "approved_failed": [],
+  "frame_visually_certified": 0,
+  "release_count": 0,
+  "note": "Independent museum-origin sources, including two previously user-approved Class I paintings. Hash applies ONLY to this downloaded variant. Source images deleted on completion; manual four-edge inspection still mandatory.",
+  "results": [
+    {
+      "id": "koenig-resurrection",
+      "museum": "Cleveland Museum of Art",
+      "accession": "2017.192",
+      "editorial_status": "BATCH3_EDITORIAL_PENDING",
+      "frame_status": "UNVERIFIED_FOUR_EDGE_HUMAN_INSPECTION",
+      "release": false,
+      "source_byte_status": "MUSEUM_IMAGE_VERIFIED",
+      "url": "https://openaccess-cdn.clevelandart.org/2017.192/2017.192_print.jpg",
+      "sha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+      "bytes": 1932047,
+      "pixels": [
+        2561,
+        3400
+      ],
+      "format": "JPEG",
+      "image_diagnostics": {
+        "method": "Pillow downsampled 1200px edge-band texture+tone scan, not visual approval",
+        "sample_dimensions": [
+          904,
+          1200
+        ],
+        "edge_strips": {
+          "top": {
+            "outer_rgb_std_average": 36.51,
+            "inner_rgb_std_average": 37.08,
+            "outer_luminance_proxy": 60.18,
+            "inner_luminance_proxy": 69.82,
+            "uniform_external_band_heuristic_flag": false
+          },
+          "bottom": {
+            "outer_rgb_std_average": 20.35,
+            "inner_rgb_std_average": 24.62,
+            "outer_luminance_proxy": 46.29,
+            "inner_luminance_proxy": 48.68,
+            "uniform_external_band_heuristic_flag": false
+          },
+          "left": {
+            "outer_rgb_std_average": 37.29,
+            "inner_rgb_std_average": 42.2,
+            "outer_luminance_proxy": 68.56,
+            "inner_luminance_proxy": 75.82,
+            "uniform_external_band_heuristic_flag": false
+          },
+          "right": {
+            "outer_rgb_std_average": 26.3,
+            "inner_rgb_std_average": 24.13,
+            "outer_luminance_proxy": 41.92,
+            "inner_luminance_proxy": 46.3,
+            "uniform_external_band_heuristic_flag": false
+          }
+        },
+        "heuristic_flags": [],
+        "image_dark_pixels_pct": 0.355,
+        "image_bright_pixels_pct": 0.0,
+        "edge_intensity_mean": 11.886,
+        "full_resolution_four_edge_visual_result": "NOT_DONE",
+        "frame_clearance": "BLOCKED",
+        "automated_no_frame_claim": false
+      },
+      "image_variant": "OFFICIAL_PRIMARY_ONLY_NEVER_ALTERNATE_FRAMED_PHOTO",
+      "source_variant": "CLEVELAND_API_PRINT_OR_WEB_NOT_COMMONS_JPEG"
+    },
+    {
+      "id": "murillo-immaculate-conception",
+      "museum": "Cleveland Museum of Art",
+      "accession": "1959.189",
+      "editorial_status": "BATCH2_EDITORIAL_APPROVED",
+      "frame_status": "UNVERIFIED_FOUR_EDGE_HUMAN_INSPECTION",
+      "release": false,
+      "source_byte_status": "MUSEUM_IMAGE_VERIFIED",
+      "url": "https://openaccess-cdn.clevelandart.org/1959.189/1959.189_print.jpg",
+      "sha256": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
+      "bytes": 4691706,
+      "pixels": [
+        1951,
+        3400
+      ],
+      "format": "JPEG",
+      "image_diagnostics": {
+        "method": "Pillow downsampled 1200px edge-band texture+tone scan, not visual approval",
+        "sample_dimensions": [
+          689,
+          1200
+        ],
+        "edge_strips": {
+          "top": {
+            "outer_rgb_std_average": 11.35,
+            "inner_rgb_std_average": 12.58,
+            "outer_luminance_proxy": 98.82,
+            "inner_luminance_proxy": 104.61,
+            "uniform_external_band_heuristic_flag": false
+          },
+          "bottom": {
+            "outer_rgb_std_average": 31.25,
+            "inner_rgb_std_average": 33.59,
+            "outer_luminance_proxy": 109.03,
+            "inner_luminance_proxy": 108.62,
+            "uniform_external_band_heuristic_flag": false
+          },
+          "left": {
+            "outer_rgb_std_average": 19.89,
+            "inner_rgb_std_average": 25.93,
+            "outer_luminance_proxy": 111.02,
+            "inner_luminance_proxy": 114.84,
+            "uniform_external_band_heuristic_flag": false
+          },
+          "right": {
+            "outer_rgb_std_average": 14.36,
+            "inner_rgb_std_average": 18.14,
+            "outer_luminance_proxy": 98.87,
+            "inner_luminance_proxy": 105.79,
+            "uniform_external_band_heuristic_flag": false
+          }
+        },
+        "heuristic_flags": [],
+        "image_dark_pixels_pct": 0.0,
+        "image_bright_pixels_pct": 0.0,
+        "edge_intensity_mean": 10.67,
+        "full_resolution_four_edge_visual_result": "NOT_DONE",
+        "frame_clearance": "BLOCKED",
+        "automated_no_frame_claim": false
+      },
+      "canvas_ratio_error": 0.00762,
+      "image_variant": "OFFICIAL_PRIMARY_ONLY_NEVER_ALTERNATE_FRAMED_PHOTO",
+      "source_variant": "CLEVELAND_API_PRINT_OR_WEB_NOT_COMMONS_JPEG"
+    },
+    {
+      "id": "cavallino-christmas",
+      "museum": "Cleveland Museum of Art",
+      "accession": "1968.100",
+      "editorial_status": "BATCH2_EDITORIAL_APPROVED",
+      "frame_status": "UNVERIFIED_FOUR_EDGE_HUMAN_INSPECTION",
+      "release": false,
+      "source_byte_status": "MUSEUM_IMAGE_VERIFIED",
+      "url": "https://openaccess-cdn.clevelandart.org/1968.100/1968.100_print.jpg",
+      "sha256": "115e78e0c096c9274051fa89f277d93392cec097474d183c1e4f20a371960268",
+      "bytes": 6445697,
+      "pixels": [
+        3400,
+        2905
+      ],
+      "format": "JPEG",
+      "image_diagnostics": {
+        "method": "Pillow downsampled 1200px edge-band texture+tone scan, not visual approval",
+        "sample_dimensions": [
+          1200,
+          1025
+        ],
+        "edge_strips": {
+          "top": {
+            "outer_rgb_std_average": 20.32,
+            "inner_rgb_std_average": 27.64,
+            "outer_luminance_proxy": 50.71,
+            "inner_luminance_proxy": 58.29,
+            "uniform_external_band_heuristic_flag": false
+          },
+          "bottom": {
+            "outer_rgb_std_average": 7.35,
+            "inner_rgb_std_average": 4.76,
+            "outer_luminance_proxy": 21.59,
+            "inner_luminance_proxy": 18.72,
+            "uniform_external_band_heuristic_flag": false
+          },
+          "left": {
+            "outer_rgb_std_average": 9.45,
+            "inner_rgb_std_average": 7.33,
+            "outer_luminance_proxy": 24.89,
+            "inner_luminance_proxy": 23.68,
+            "uniform_external_band_heuristic_flag": false
+          },
+          "right": {
+            "outer_rgb_std_average": 11.0,
+            "inner_rgb_std_average": 9.0,
+            "outer_luminance_proxy": 28.84,
+            "inner_luminance_proxy": 26.61,
+            "uniform_external_band_heuristic_flag": false
+          }
+        },
+        "heuristic_flags": [],
+        "image_dark_pixels_pct": 0.004,
+        "image_bright_pixels_pct": 0.0,
+        "edge_intensity_mean": 7.394,
+        "full_resolution_four_edge_visual_result": "NOT_DONE",
+        "frame_clearance": "BLOCKED",
+        "automated_no_frame_claim": false
+      },
+      "canvas_ratio_error": 0.00072,
+      "image_variant": "OFFICIAL_PRIMARY_ONLY_NEVER_ALTERNATE_FRAMED_PHOTO",
+      "source_variant": "CLEVELAND_API_PRINT_OR_WEB_NOT_COMMONS_JPEG"
+    },
+    {
+      "id": "netherlandish-ember-friday",
+      "museum": "National Gallery of Art",
+      "accession": "1943.7.7",
+      "frame_status": "UNVERIFIED_FOUR_EDGE_HUMAN_INSPECTION",
+      "release": false,
+      "source_byte_status": "MUSEUM_IMAGE_VERIFIED",
+      "url": "https://api.nga.gov/iiif/294e57e7-14ef-4e2e-8b3d-081b4cc05fd6/full/full/0/default.jpg",
+      "sha256": "3723b116592415bd2538d6e64e53897d374223b489b2e6ce2506716014fc39b2",
+      "bytes": 3850458,
+      "pixels": [
+        2892,
+        4096
+      ],
+      "format": "JPEG",
+      "image_diagnostics": {
+        "method": "Pillow downsampled 1200px edge-band texture+tone scan, not visual approval",
+        "sample_dimensions": [
+          847,
+          1200
+        ],
+        "edge_strips": {
+          "top": {
+            "outer_rgb_std_average": 32.4,
+            "inner_rgb_std_average": 36.48,
+            "outer_luminance_proxy": 161.17,
+            "inner_luminance_proxy": 167.15,
+            "uniform_external_band_heuristic_flag": false
+          },
+          "bottom": {
+            "outer_rgb_std_average": 29.82,
+            "inner_rgb_std_average": 26.02,
+            "outer_luminance_proxy": 77.66,
+            "inner_luminance_proxy": 81.04,
+            "uniform_external_band_heuristic_flag": false
+          },
+          "left": {
+            "outer_rgb_std_average": 45.49,
+            "inner_rgb_std_average": 47.75,
+            "outer_luminance_proxy": 137.08,
+            "inner_luminance_proxy": 137.38,
+            "uniform_external_band_heuristic_flag": false
+          },
+          "right": {
+            "outer_rgb_std_average": 55.42,
+            "inner_rgb_std_average": 55.55,
+            "outer_luminance_proxy": 142.57,
+            "inner_luminance_proxy": 145.35,
+            "uniform_external_band_heuristic_flag": false
+          }
+        },
+        "heuristic_flags": [],
+        "image_dark_pixels_pct": 0.002,
+        "image_bright_pixels_pct": 0.001,
+        "edge_intensity_mean": 18.598,
+        "full_resolution_four_edge_visual_result": "NOT_DONE",
+        "frame_clearance": "BLOCKED",
+        "automated_no_frame_claim": false
+      },
+      "source_variant": "NGA_ORIGINAL_IIIF_NOT_COMMONS_JPEG"
+    }
+  ]
+}

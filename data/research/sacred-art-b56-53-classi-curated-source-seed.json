@@ -1,0 +1,3197 @@
+{
+  "schema": "AO_B56_CLASS_I_53_HERO_REVIEW_SEED_V1",
+  "date": "2026-10-24",
+  "calendar_source": "platform/885-sacred-art-candidates:PR887",
+  "all_53_are_2026_observed_principal_calendar_dates": true,
+  "protected_approvals_source": "data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json",
+  "historical_user_date_approvals_count": 10,
+  "originals_found_in_383": 4,
+  "external_approved_not_in_383": 6,
+  "release_photo_reuse_approval": 0,
+  "approved_artwork_selections_must_not_be_erased": true,
+  "curator_prior_subject_selections_can_be_shown_without_overwriting_date_choices": true,
+  "candidate_placement_not_a_liturgical_proper": true,
+  "no_user_selections_automatically_changed": true,
+  "strictly_zero_euro": true,
+  "dates": [
+    {
+      "date": "2026-01-01",
+      "principal_id": "sancti:01-01:1:w",
+      "title": "Octave Day of Christmas",
+      "association_tier": "OCTAVE_CONTEXT",
+      "theme": "calendar.christmas",
+      "subject_relation": "OCTAVE_CONTEXT",
+      "existing_artwork_candidates": [
+        "cma-143784",
+        "cma-143644",
+        "nga-46185"
+      ],
+      "historical_selected_artwork_id": "cma-143784",
+      "pre_oct19_visual_screen": "PROMISING_AESTHETIC_FIT",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.christmas",
+          "artworkId": "cma-143784",
+          "originalSha256": "5de97b5cb76dbbaaf40dad652b5788667fa1e41a65327db10363e7d675eef2cc",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://clevelandart.org/art/1968.22"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "OCTAVE_CONTEXT",
+        "assessment": "Dolci's Adoration of the Shepherds is a Christmas subject, not a depiction of the January 1 Octave Day specifically.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      }
+    },
+    {
+      "date": "2026-01-06",
+      "principal_id": "sancti:01-06:1:w",
+      "title": "Epiphany of the Lord",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.epiphany",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "met-436984",
+        "met-436104"
+      ],
+      "historical_selected_artwork_id": "met-436984",
+      "pre_oct19_visual_screen": "COMPARATIVE_REVIEW",
+      "exact_research_links": [
+        {
+          "artworkId": "met-436984",
+          "observedPrincipalId": "sancti:01-06:1:w",
+          "observedDate2026": "2026-01-06",
+          "observedTitle": "Epiphany of the Lord",
+          "artist": "Quinten Massys",
+          "artworkTitle": "The Adoration of the Magi",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/436984",
+          "originalSha256": "254e94beee4b50c8d61e9f214cfee1663bb31bedd0cc51a47164a3717c1515c7",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "Adoration of Magi is the feast Gospel event",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.epiphany",
+          "artworkId": "met-436984",
+          "originalSha256": "254e94beee4b50c8d61e9f214cfee1663bb31bedd0cc51a47164a3717c1515c7",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/436984"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "FEAST_EXACT",
+        "assessment": "Massys' Adoration of the Magi depicts the Epiphany event. Subject-fit candidate; date-specific visual approval pending.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "user_selection_20261027_batch01": {
+        "source": "User 2026-10-27 17:08:10Z",
+        "code": "NONE",
+        "state": "NEW_ALTERNATIVES_REQUESTED",
+        "painting": null,
+        "rights_and_quality": "NOT_CLEARED",
+        "replaces_historical_subject_approval": false
+      }
+    },
+    {
+      "date": "2026-02-18",
+      "principal_id": "tempora:Quadp3-3:1:v",
+      "title": "Ash Wednesday",
+      "association_tier": "LITURGY_AND_GOSPEL_RESEARCH",
+      "theme": "calendar.lent",
+      "subject_relation": "LITURGY_AND_GOSPEL_RESEARCH",
+      "existing_artwork_candidates": [
+        "nga-50726",
+        "met-437821"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [],
+      "earlier_curator_selections": [],
+      "protected_approval": null,
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T18:45:44Z",
+        "review_round": "CLASS_I_ROUND_1_LENT_2026",
+        "chosen_option_letter": "A",
+        "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+        "artwork_id": "met-436839",
+        "exact_physical_original": {
+          "title": "The Penitent Magdalen",
+          "artist": "Georges de La Tour",
+          "year": "ca. 1640",
+          "museum": "The Metropolitan Museum of Art, New York",
+          "inventory": "1978.517",
+          "object_record_url": "https://www.metmuseum.org/art/collection/search/436839"
+        },
+        "iconographic_relation": "PENITENTIAL_THEME_NOT_MATTHEW_6_LITERAL_EVENT",
+        "user_selection_is_authoritative_for_date": true,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": false,
+        "evidence_note": "User explicit four-date chat response: A Ash Wednesday, B Lent I, C Lent II, Lent III not decided. Preserve all prior candidates; no photo approvals."
+      }
+    },
+    {
+      "date": "2026-02-22",
+      "principal_id": "tempora:Quad1-0:1:v",
+      "title": "I Sunday of Lent",
+      "association_tier": "GOSPEL_RESEARCH",
+      "theme": "calendar.lent",
+      "subject_relation": "GOSPEL_RESEARCH",
+      "existing_artwork_candidates": [
+        "nga-50726",
+        "met-437821"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [
+        {
+          "artworkId": "nga-50726",
+          "observedPrincipalId": "tempora:Quad1-0:1:v",
+          "observedDate2026": "2026-02-22",
+          "observedTitle": "I Sunday of Lent",
+          "artist": "Juan de Flandes",
+          "artworkTitle": "The Temptation of Christ",
+          "museumObjectUrl": "https://www.nga.gov/artworks/50726-temptation-christ",
+          "originalSha256": "a9225bb7ebdcabbd9b8610d88576b8d24aa7e382173078e7181ae192be34d9a6",
+          "association": "EXACT_APPOINTED_GOSPEL",
+          "evidence": "NGA work depicts Christ tempted by Satan; 2026-02-22 appointed Gospel is Matthew 4:1–11, the specific depicted episode.",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [],
+      "protected_approval": null,
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T18:45:44Z",
+        "review_round": "CLASS_I_ROUND_1_LENT_2026",
+        "chosen_option_letter": "B",
+        "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+        "artwork_id": "external:tretyakov:inv651",
+        "exact_physical_original": {
+          "title": "Christ in the Wilderness",
+          "artist": "Ivan Kramskoi",
+          "year": "1872",
+          "museum": "State Tretyakov Gallery, Moscow",
+          "inventory": "Inv. 651",
+          "object_record_url": "https://my.tretyakov.ru/app/masterpiece/8448"
+        },
+        "iconographic_relation": "GOSPEL_THEME_TEMPTATION_WITHOUT_VISIBLE_SATAN",
+        "user_selection_is_authoritative_for_date": true,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": false,
+        "evidence_note": "User explicit four-date chat response: A Ash Wednesday, B Lent I, C Lent II, Lent III not decided. Preserve all prior candidates; no photo approvals."
+      }
+    },
+    {
+      "date": "2026-03-01",
+      "principal_id": "tempora:Quad2-0:1:v",
+      "title": "II Sunday of Lent",
+      "association_tier": "GOSPEL_RESEARCH",
+      "theme": "calendar.lent",
+      "subject_relation": "GOSPEL_RESEARCH",
+      "existing_artwork_candidates": [
+        "nga-50726",
+        "met-437821"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [
+        {
+          "artworkId": "kress-k2016",
+          "observedPrincipalId": "tempora:Quad2-0:1:v",
+          "observedDate2026": "2026-03-01",
+          "observedTitle": "II Sunday of Lent",
+          "artist": "Maestro Bartolomé",
+          "artworkTitle": "The Transfiguration",
+          "museumObjectUrl": "https://www.kressfoundation.org/kress-collection/artwork/245f57ea5e77586917beceead35160a60ce0554a93de420bbf1d89e63bac8ccd",
+          "originalSha256": "977f1dabcfa0adbcb21c9386fdf40f3eaf06754f348f1ba1d592c70146b13882",
+          "association": "EXACT_APPOINTED_GOSPEL",
+          "evidence": "1962 Second Sunday of Lent Gospel is Matthew 17:1–9, the Transfiguration; museum original depicts that event.",
+          "appointedReading": "Matthew 17:1-9",
+          "appointedReadingSourceUrl": "https://missalemeum.com/en/calendar/2056-02-27",
+          "sourceRights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [],
+      "protected_approval": null,
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T18:45:44Z",
+        "review_round": "CLASS_I_ROUND_1_LENT_2026",
+        "chosen_option_letter": "C",
+        "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+        "artwork_id": "external:capodimonte:bellini-transfiguration",
+        "exact_physical_original": {
+          "title": "The Transfiguration",
+          "artist": "Giovanni Bellini",
+          "year": "1478–1479",
+          "museum": "Museo e Real Bosco di Capodimonte, Naples",
+          "inventory": null,
+          "object_record_url": "https://capodimonte.cultura.gov.it/restaurata-la-trasfigurazione-di-bellini-capolavoro-del-maestro-veneziano/"
+        },
+        "iconographic_relation": "EXACT_APPOINTED_GOSPEL",
+        "user_selection_is_authoritative_for_date": true,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": false,
+        "evidence_note": "User explicit four-date chat response: A Ash Wednesday, B Lent I, C Lent II, Lent III not decided. Preserve all prior candidates; no photo approvals."
+      }
+    },
+    {
+      "date": "2026-03-08",
+      "principal_id": "tempora:Quad3-0:1:v",
+      "title": "III Sunday of Lent",
+      "association_tier": "GOSPEL_RESEARCH",
+      "theme": "calendar.lent",
+      "subject_relation": "GOSPEL_RESEARCH",
+      "existing_artwork_candidates": [
+        "nga-50726",
+        "met-437821"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [],
+      "earlier_curator_selections": [],
+      "protected_approval": null,
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T18:45:44Z",
+        "review_round": "CLASS_I_ROUND_1_LENT_2026",
+        "chosen_option_letter": null,
+        "status": "OPEN_UNDECIDED_HOLD",
+        "artwork_id": null,
+        "exact_physical_original": null,
+        "iconographic_relation": "LUKE_11_14_28_ACTUAL_EXORCISM_NO_PAINTING_APPROVED",
+        "user_selection_is_authoritative_for_date": false,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": true,
+        "evidence_note": "User explicit four-date chat response: A Ash Wednesday, B Lent I, C Lent II, Lent III not decided. Preserve all prior candidates; no photo approvals."
+      }
+    },
+    {
+      "date": "2026-03-15",
+      "principal_id": "tempora:Quad4-0:1:pv",
+      "title": "IV Sunday of Lent",
+      "association_tier": "GOSPEL_RESEARCH",
+      "theme": "calendar.lent",
+      "subject_relation": "GOSPEL_RESEARCH",
+      "existing_artwork_candidates": [
+        "nga-50726",
+        "met-437821"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [
+        {
+          "artworkId": "met-437821",
+          "observedPrincipalId": "tempora:Quad4-0:1:pv",
+          "observedDate2026": "2026-03-15",
+          "observedTitle": "IV Sunday of Lent",
+          "artist": "Jacopo Tintoretto (Jacopo Robusti)",
+          "artworkTitle": "The Miracle of the Loaves and Fishes",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/437821",
+          "originalSha256": "ce43ad89383b7d1526b2763d03638e6b9d17adbb4b8ee24a557fc09186c638ea",
+          "association": "EXACT_APPOINTED_GOSPEL",
+          "evidence": "Met official painting record explicitly identifies the feeding of five thousand, matching the appointed Gospel on Laetare Sunday John 6:1–15; NOT the feeding of four thousand.",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [],
+      "protected_approval": null,
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T18:55:00Z",
+        "review_round": "CLASS_I_ROUND_2_LENT_2026",
+        "chosen_option_letter": null,
+        "status": "OPEN_UNDECIDED_HOLD",
+        "artwork_id": null,
+        "exact_physical_original": null,
+        "iconographic_relation": "NO_FEAST_ARTWORK_SELECTED",
+        "user_selection_is_authoritative_for_date": false,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "round_1_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": true,
+        "evidence_note": "User has not decided on a Laetare Sunday painting. Do not infer rejection or selection from earlier shortlist."
+      },
+      "user_selection_20261027_batch01": {
+        "source": "User 2026-10-27 17:08:10Z",
+        "code": "A",
+        "state": "CHOSEN",
+        "painting": {
+          "artist": "Giovanni Lanfranco",
+          "title": "Miracle of the Loaves and Fishes",
+          "source_url": "https://catalogo.fondazionezeri.unibo.it/entry/work/53025/"
+        },
+        "rights_and_quality": "NOT_CLEARED",
+        "replaces_historical_subject_approval": false
+      }
+    },
+    {
+      "date": "2026-03-19",
+      "principal_id": "sancti:03-19:1:w",
+      "title": "St. Joseph, Spouse of the Bl. Virgin Mary",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.saint-joseph",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "cma-160143",
+        "met-437458"
+      ],
+      "historical_selected_artwork_id": "cma-160143",
+      "pre_oct19_visual_screen": "PROMISING_AESTHETIC_FIT",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.saint-joseph",
+          "artworkId": "cma-160143",
+          "originalSha256": "6edb1762e9001a78a19efb71173959befeb9cf7f90a9538bab62b6bffd3f3814",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://clevelandart.org/art/1998.10"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "PERSON_CONTEXT",
+        "assessment": "Gandolfi's Holy Family includes Saint Joseph but is not uniquely the March 19 feast; compare stronger independent Saint Joseph compositions.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T18:55:00Z",
+        "review_round": "CLASS_I_ROUND_2_LENT_2026",
+        "chosen_option_letter": null,
+        "status": "OPEN_RESEARCH_HOLD",
+        "artwork_id": null,
+        "exact_physical_original": null,
+        "iconographic_relation": "NO_FEAST_ARTWORK_SELECTED",
+        "user_selection_is_authoritative_for_date": false,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "round_1_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": true,
+        "evidence_note": "User approved none of Round 2's three St Joseph proposals; research further, preserving all prior historical candidate records."
+      },
+      "user_selection_20261027_batch01": {
+        "source": "User 2026-10-27 17:08:10Z",
+        "code": "A",
+        "state": "CHOSEN",
+        "painting": {
+          "artist": "Claudio Coello",
+          "title": "St Joseph and the Christ Child",
+          "source_url": "https://emuseum.toledomuseum.org/objects/55088/st-joseph-and-the-christ-child"
+        },
+        "rights_and_quality": "NOT_CLEARED",
+        "replaces_historical_subject_approval": false
+      }
+    },
+    {
+      "date": "2026-03-22",
+      "principal_id": "tempora:Quad5-0:1:v",
+      "title": "Passion Sunday",
+      "association_tier": "LITURGY_AND_GOSPEL_RESEARCH",
+      "theme": "calendar.passion",
+      "subject_relation": "LITURGY_AND_GOSPEL_RESEARCH",
+      "existing_artwork_candidates": [
+        "met-437342",
+        "met-437156",
+        "met-437986"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [],
+      "earlier_curator_selections": [],
+      "protected_approval": null,
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T18:55:00Z",
+        "review_round": "CLASS_I_ROUND_2_LENT_2026",
+        "chosen_option_letter": null,
+        "status": "OPEN_RESEARCH_HOLD",
+        "artwork_id": null,
+        "exact_physical_original": null,
+        "iconographic_relation": "NO_FEAST_ARTWORK_SELECTED",
+        "user_selection_is_authoritative_for_date": false,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "round_1_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": true,
+        "evidence_note": "User approved none of Round 2's three Passion Sunday proposals; continue searching for a suitable authentic painting."
+      }
+    },
+    {
+      "date": "2026-03-25",
+      "principal_id": "sancti:03-25:1:w",
+      "title": "Annunciation of the Blessed Virgin Mary",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.annunciation",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "met-438724",
+        "met-436502"
+      ],
+      "historical_selected_artwork_id": "met-438724",
+      "pre_oct19_visual_screen": "PROMISING_AESTHETIC_FIT",
+      "exact_research_links": [
+        {
+          "artworkId": "met-438724",
+          "observedPrincipalId": "sancti:03-25:1:w",
+          "observedDate2026": "2026-03-25",
+          "observedTitle": "Annunciation of the Blessed Virgin Mary",
+          "artist": "Philippe de Champaigne",
+          "artworkTitle": "The Annunciation",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/438724",
+          "originalSha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "Museum subject and observed Annunciation coincide",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.annunciation",
+          "artworkId": "met-438724",
+          "originalSha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "FEAST_EXACT",
+        "assessment": "Champaigne's Annunciation depicts the appointed feast event. Date-specific artistic choice still open.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T18:55:00Z",
+        "review_round": "CLASS_I_ROUND_2_LENT_2026",
+        "chosen_option_letter": "B",
+        "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+        "artwork_id": "external:galleria-sabauda:orazio-gentileschi-annunciation-1623",
+        "exact_physical_original": {
+          "title": "The Annunciation",
+          "artist": "Orazio Gentileschi",
+          "year": "1623",
+          "museum": "Galleria Sabauda, Musei Reali, Turin, Italy",
+          "inventory": "469",
+          "object_record_url": "https://catalogo.fondazionezeri.unibo.it/entry/work/47842/Gentileschi%20Orazio%2C%20Annunciazione",
+          "identity_basis": "Fondazione Zeri catalogue, Galleria Sabauda inv. 469, 1622–23, oil on canvas 286 × 196 cm"
+        },
+        "iconographic_relation": "EXACT_FEAST_EVENT_LUKE_1_26_38",
+        "user_selection_is_authoritative_for_date": true,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "round_1_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": false,
+        "evidence_note": "Explicit user selection of option B in the Round 2 illustrated review."
+      }
+    },
+    {
+      "date": "2026-03-29",
+      "principal_id": "tempora:Quad6-0r:1:rv",
+      "title": "Palm Sunday",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.palm-sunday",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "kress-k2017"
+      ],
+      "historical_selected_artwork_id": "kress-k2017",
+      "pre_oct19_visual_screen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "exact_research_links": [
+        {
+          "artworkId": "kress-k2017",
+          "observedPrincipalId": "tempora:Quad6-0r:1:rv",
+          "observedDate2026": "2026-03-29",
+          "observedTitle": "Palm Sunday",
+          "artist": "Maestro Bartolomé",
+          "artworkTitle": "The Entry into Jerusalem",
+          "museumObjectUrl": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+          "originalSha256": "f3922cf491cb80e66db98abe25d7b4e1960469be631ce5c1972e2430d7adfbff",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "Entry into Jerusalem is the blessing/procession Gospel subject; rights held",
+          "sourceRights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.palm-sunday",
+          "artworkId": "kress-k2017",
+          "originalSha256": "f3922cf491cb80e66db98abe25d7b4e1960469be631ce5c1972e2430d7adfbff",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+          "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079"
+        }
+      ],
+      "protected_approval": {
+        "artist": "Anthony van Dyck",
+        "title": "The Entry of Christ into Jerusalem",
+        "user_choice_approved": true,
+        "relation": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+        "catalogue_id": null,
+        "original_found_in_383": false,
+        "approved_date": "2026-03-29",
+        "evidence": "Explicit 2026-10-19 date-specific user selection",
+        "external_research_photo": {
+          "kind": "commons_file",
+          "file": "Entry of Christ into Jerusalem by Anthony van Dyck.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
+          "museum": "Indianapolis Museum of Art, accession 58.3",
+          "source_photo_rights_not_app_certified": true
+        }
+      }
+    },
+    {
+      "date": "2026-03-30",
+      "principal_id": "tempora:Quad6-1:1:v",
+      "title": "Feria II of Holy Week",
+      "association_tier": "HOLY_WEEK_SCRIPTURE_RESEARCH",
+      "theme": "calendar.passion",
+      "subject_relation": "HOLY_WEEK_SCRIPTURE_RESEARCH",
+      "existing_artwork_candidates": [
+        "met-437342",
+        "met-437156",
+        "met-437986"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [],
+      "earlier_curator_selections": [],
+      "protected_approval": null,
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T19:05:04Z",
+        "review_round": "CLASS_I_ROUND_3_HOLY_WEEK_2026",
+        "chosen_option_letter": "B",
+        "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+        "artwork_id": "external:hermitage:rubens-vandyck-feast-simon-pharisee",
+        "exact_physical_original": {
+          "title": "The Feast in the House of Simon the Pharisee",
+          "artist": "Peter Paul Rubens and workshop, with Anthony van Dyck",
+          "year": "c. 1618–1620",
+          "museum": "State Hermitage Museum, Saint Petersburg",
+          "inventory": null,
+          "object_record_url": "https://www.pubhist.com/w20544",
+          "identity_note": "Oil on canvas transferred from panel, approximately 189 × 284.5 cm. Do not identify with an otherwise similar anointing in Bethany."
+        },
+        "iconographic_relation": "THEMATIC_DIFFERENT_PERICOPE_LUKE_7_NOT_JOHN_12",
+        "user_selection_is_authoritative_for_date": true,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "round_1_and_2_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": false,
+        "evidence_note": "User explicitly selects the Hermitage Feast in the House of Simon the Pharisee despite its different Luke 7 episode; it does not depict John 12 Bethany anointing."
+      }
+    },
+    {
+      "date": "2026-03-31",
+      "principal_id": "tempora:Quad6-2:1:v",
+      "title": "Feria III of Holy Week",
+      "association_tier": "HOLY_WEEK_SCRIPTURE_RESEARCH",
+      "theme": "calendar.passion",
+      "subject_relation": "HOLY_WEEK_SCRIPTURE_RESEARCH",
+      "existing_artwork_candidates": [
+        "met-437342",
+        "met-437156",
+        "met-437986"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [
+        {
+          "artworkId": "met-437371",
+          "observedPrincipalId": "tempora:Quad6-2:1:v",
+          "observedDate2026": "2026-03-31",
+          "observedTitle": "Feria III of Holy Week",
+          "artist": "Raphael",
+          "artworkTitle": "The Agony in the Garden",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/437371",
+          "originalSha256": "f8d08f533183a99c36d021f8e4bf089cc91204a5c5694bfd22676b1dd787e35f",
+          "association": "EXACT_APPOINTED_GOSPEL",
+          "evidence": "Met painting of Christ praying in Gethsemane depicts the explicitly appointed opening Passion scene in Mark 14:32–42; not the whole Passion or the Mass rite.",
+          "appointedReading": "Mark 14:32–42 within Mark 14:32–72; 15:1–46",
+          "appointedReadingSourceUrl": "https://missalemeum.com/en/calendar/2026-03-31",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [],
+      "protected_approval": null,
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T19:05:04Z",
+        "review_round": "CLASS_I_ROUND_3_HOLY_WEEK_2026",
+        "chosen_option_letter": "B",
+        "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+        "artwork_id": "external:ngi:L.14702",
+        "exact_physical_original": {
+          "title": "The Taking of Christ",
+          "artist": "Michelangelo Merisi da Caravaggio",
+          "year": "1602",
+          "museum": "National Gallery of Ireland, Dublin (Jesuit Community Leeson Street collection, on indefinite loan)",
+          "inventory": "L.14702",
+          "object_record_url": "https://www.nationalgallery.ie/ga/node/169",
+          "identity_note": null
+        },
+        "iconographic_relation": "PASSION_MARK_SUBSCENE_BETRAYAL_AND_ARREST",
+        "user_selection_is_authoritative_for_date": true,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "round_1_and_2_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": false,
+        "evidence_note": "User chose actual Dublin National Gallery of Ireland Jesuit-loan Caravaggio original, NOT alternate copies of Taking of Christ."
+      }
+    },
+    {
+      "date": "2026-04-01",
+      "principal_id": "tempora:Quad6-3:1:v",
+      "title": "Feria IV of Holy Week",
+      "association_tier": "HOLY_WEEK_SCRIPTURE_RESEARCH",
+      "theme": "calendar.passion",
+      "subject_relation": "HOLY_WEEK_SCRIPTURE_RESEARCH",
+      "existing_artwork_candidates": [
+        "met-437342",
+        "met-437156",
+        "met-437986"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [
+        {
+          "artworkId": "met-437371",
+          "observedPrincipalId": "tempora:Quad6-3:1:v",
+          "observedDate2026": "2026-04-01",
+          "observedTitle": "Feria IV of Holy Week",
+          "artist": "Raphael",
+          "artworkTitle": "The Agony in the Garden",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/437371",
+          "originalSha256": "f8d08f533183a99c36d021f8e4bf089cc91204a5c5694bfd22676b1dd787e35f",
+          "association": "EXACT_APPOINTED_GOSPEL",
+          "evidence": "Same original painting depicts Christ's Agony on the Mount of Olives, opening the appointed Passion according to Luke 22:39–46; an exact Scripture episode, not an illustration of every Holy Wednesday ceremony.",
+          "appointedReading": "Luke 22:39–46 within Luke 22:39–71; 23:1–53",
+          "appointedReadingSourceUrl": "https://missalemeum.com/en/calendar/2026-04-01",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [],
+      "protected_approval": null,
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T19:05:04Z",
+        "review_round": "CLASS_I_ROUND_3_HOLY_WEEK_2026",
+        "chosen_option_letter": "B",
+        "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+        "artwork_id": "external:nationalgallery:NG3679",
+        "exact_physical_original": {
+          "title": "Christ before the High Priest",
+          "artist": "Gerrit van Honthorst",
+          "year": "c. 1617",
+          "museum": "The National Gallery, London",
+          "inventory": "NG3679",
+          "object_record_url": "https://www.nationalgallery.org.uk/paintings/gerrit-van-honthorst-christ-before-the-high-priest",
+          "identity_note": null
+        },
+        "iconographic_relation": "PASSION_LUKE_SUBSCENE_PRIESTLY_HEARING_ICONOGRAPHY_DEBATED",
+        "user_selection_is_authoritative_for_date": true,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "round_1_and_2_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": false,
+        "evidence_note": "User approves Honthorst NG3679. High priest identity debated Caiaphas versus Annas (and historical Pilate identification); do not certify more specific court scene than museum does."
+      }
+    },
+    {
+      "date": "2026-04-02",
+      "principal_id": "tempora:Quad6-4r:1:w",
+      "title": "Holy Thursday",
+      "association_tier": "COMPLEX_RITE_SUBJECT",
+      "theme": "calendar.holy-thursday",
+      "subject_relation": "COMPLEX_RITE_SUBJECT",
+      "existing_artwork_candidates": [
+        "nga-12130"
+      ],
+      "historical_selected_artwork_id": "met-459131",
+      "pre_oct19_visual_screen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.holy-thursday",
+          "artworkId": "met-459131",
+          "originalSha256": "5d19d31a2a213a80e81bffe2c195a1e9b3ae810c0b3428a69ae94685fd73c502",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/459131"
+        }
+      ],
+      "protected_approval": {
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "user_choice_approved": true,
+        "relation": "EXACT_EUCHARISTIC_INSTITUTION",
+        "catalogue_id": "ART-hilippe-de-hampaigne-a-etite-ne",
+        "original_found_in_383": true,
+        "approved_date": "2026-04-02",
+        "evidence": "User explicitly replaced Holy Thursday Ugolino with Philippe de Champaigne La Petite Cène on 2026-10-26; independent 2026-05-27 approval unchanged",
+        "external_research_photo": null,
+        "supersedes": "2026-10-19 Ugolino da Siena Last Supper selection; archived above",
+        "image_master_approved": false,
+        "frame_free_master_photo_candidate": "research/champaigne-inv1125-photo-review-20261026",
+        "primary_research_photo_sha256": "f0742b795178e1a600e43694693f880a07039587b74ba6f352ccbf389919cb30",
+        "photo_crop_status": "D preferred pending 100-percent painting edge check; C failed gold-frame criterion; zero photo releases"
+      },
+      "superseded_date_approval_20261019": {
+        "artist": "Ugolino da Siena",
+        "title": "Last Supper",
+        "user_choice_approved": true,
+        "relation": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+        "catalogue_id": "met-459131",
+        "original_found_in_383": true,
+        "approved_date": "2026-04-02",
+        "evidence": "Explicit 2026-10-19 date-specific five-star approval",
+        "external_research_photo": null
+      },
+      "user_decision_revision_record": "data/calendar/approved-feast-holy-thursday-20261026-override.v1.json",
+      "excluded_artwork_candidates_by_user": [
+        "met-459131"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "principal_id": "tempora:Quad6-5r:1:bv",
+      "title": "Good Friday",
+      "association_tier": "COMPLEX_RITE_SUBJECT",
+      "theme": "calendar.good-friday",
+      "subject_relation": "COMPLEX_RITE_SUBJECT",
+      "existing_artwork_candidates": [
+        "met-652416",
+        "met-437342"
+      ],
+      "historical_selected_artwork_id": "met-459087",
+      "pre_oct19_visual_screen": "HARD_EXCLUDED",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.good-friday",
+          "artworkId": "met-459087",
+          "originalSha256": "2220c79ddf9ae2ccc23a9853a8055217079a52e6c1eb8f921a627eb8a858ee26",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/459087"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "ARCHIVED_SELECTION_EXCLUDED",
+        "assessment": "Older subject choice met-459087 is El Greco's Christ Carrying the Cross, absent from the current B54 383 artworks. Preserve its history but do not newly recommend excluded El Greco or count this as date-approved.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T19:05:04Z",
+        "review_round": "CLASS_I_ROUND_3_HOLY_WEEK_2026",
+        "chosen_option_letter": "C",
+        "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+        "artwork_id": "external:antwerp-cathedral:rubens-descent-cross-central-panel",
+        "exact_physical_original": {
+          "title": "The Descent from the Cross (central panel of Antwerp Cathedral triptych)",
+          "artist": "Peter Paul Rubens",
+          "year": "1611–1614",
+          "museum": "Cathedral of Our Lady (Onze-Lieve-Vrouwekathedraal), Antwerp",
+          "inventory": "Central panel: 421 × 311 cm; not Courtauld sketch",
+          "object_record_url": "https://www.dekathedraal.be/en/rubens-descent-cross",
+          "identity_note": null
+        },
+        "iconographic_relation": "GOOD_FRIDAY_JOHN_19_SUBSCENE_DESCENT_FROM_CROSS",
+        "user_selection_is_authoritative_for_date": true,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "round_1_and_2_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": false,
+        "evidence_note": "User explicitly selected ONLY large Antwerp Cathedral original central panel; do NOT substitute the Courtauld preparatory sketch or include the lateral panels or gilded frame in future hero image."
+      }
+    },
+    {
+      "date": "2026-04-04",
+      "principal_id": "tempora:Quad6-6r:1:vw",
+      "title": "Holy Saturday",
+      "association_tier": "COMPLEX_RITE_SUBJECT",
+      "theme": "calendar.holy-saturday",
+      "subject_relation": "COMPLEX_RITE_SUBJECT",
+      "existing_artwork_candidates": [
+        "met-437156",
+        "met-437342"
+      ],
+      "historical_selected_artwork_id": "met-437156",
+      "pre_oct19_visual_screen": "PROMISING_AESTHETIC_FIT",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.holy-saturday",
+          "artworkId": "met-437156",
+          "originalSha256": "6825656670d25b88c12aa833984db007876698c7d6fbdbdadeb6d020cf1bbb67",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437156"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "PASSION_CONTEXT",
+        "assessment": "Moretto's Entombment is suitable Holy Saturday Passion context, not a literal depiction of the Easter Vigil's complete ceremonial structure.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "round4_additional_research_20261026": {
+        "trigger": "USER_REQUESTED_FURTHER_RESEARCH_ALL_FOUR",
+        "original_shortlist_not_approved": true,
+        "date_specific_hero_approval_made": false,
+        "held_open": true,
+        "detailed_source_check_completed": true,
+        "reading_context": "Holy Saturday burial and waiting; Easter Vigil later proclaims Resurrection",
+        "provenance_verified_real_paintings": [
+          {
+            "letter": "A",
+            "artist": "Rembrandt van Rijn",
+            "title": "The Entombment",
+            "year": "1635–1639",
+            "collection": "Alte Pinakothek, Munich",
+            "inventory": "396",
+            "source": "https://www.sammlung.pinakothek.de/en/artwork/A9xlamzLWv",
+            "relation": "EXACT_BURIAL_THEME",
+            "quality_note": "Deep nocturnal chiaroscuro; group figures small at mobile scale"
+          },
+          {
+            "letter": "B",
+            "artist": "Peter Paul Rubens",
+            "title": "The Entombment",
+            "year": "c. 1612",
+            "collection": "J. Paul Getty Museum",
+            "inventory": "93.PA.9",
+            "source": "https://www.getty.edu/education/k-12-learning/explore-the-entombment/",
+            "relation": "EXACT_BURIAL_AND_LAMENTATION_THEME",
+            "quality_note": "Square close figural grouping; visual chroma moderate; different Rubens original from the user's approved Good Friday Antwerp altarpiece"
+          },
+          {
+            "letter": "C",
+            "artist": "Annibale Carracci",
+            "title": "The Dead Christ Mourned (The Three Maries)",
+            "year": "c. 1604",
+            "collection": "National Gallery, London",
+            "inventory": "NG2923",
+            "source": "https://www.nationalgallery.org.uk/paintings/annibale-carracci-the-dead-christ-mourned-the-three-maries",
+            "relation": "TRADITIONAL_LAMENTATION_BEFORE_BURIAL",
+            "quality_note": "Baroque color/anguish more theatrical than silent waiting; correct separate physical painting"
+          },
+          {
+            "letter": "D",
+            "artist": "Szymon Czechowicz",
+            "title": "The Entombment",
+            "year": "c. 1750s",
+            "collection": "National Museum in Kraków",
+            "inventory": "MNK II-a-954",
+            "source": "https://commons.wikimedia.org/wiki/File:Szymon_Czechowicz_-_The_Entombment_-_MNK_II-a-954_-_National_Museum_Krak%C3%B3w.jpg",
+            "relation": "EXACT_BURIAL_THEME",
+            "quality_note": "Unframed print appears brighter than other options; full physical-artwork identity from museum Commons"
+          }
+        ],
+        "images_are_research_reference_only": true,
+        "full_painted_surface_frame_free_quality_verified": false,
+        "photo_reuse_cleared": false,
+        "app_published": false,
+        "latest_user_review_utc": "2026-10-26T19:40:00Z",
+        "latest_user_choice": "NO_DECISION_KEEP_OPEN",
+        "user_did_not_reject_all_paintings": true
+      },
+      "user_selection_20261027_batch01": {
+        "source": "User 2026-10-27 17:08:10Z",
+        "code": "NONE",
+        "state": "NEW_ALTERNATIVES_REQUESTED",
+        "painting": null,
+        "rights_and_quality": "NOT_CLEARED",
+        "replaces_historical_subject_approval": false
+      }
+    },
+    {
+      "date": "2026-04-05",
+      "principal_id": "tempora:Pasc0-0:1:w",
+      "title": "Easter Sunday",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.easter",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "cma-78982"
+      ],
+      "historical_selected_artwork_id": "cma-78982",
+      "pre_oct19_visual_screen": "COMPARATIVE_REVIEW",
+      "exact_research_links": [
+        {
+          "artworkId": "met-437272",
+          "observedPrincipalId": "tempora:Pasc0-0:1:w",
+          "observedDate2026": "2026-04-05",
+          "observedTitle": "Easter Sunday",
+          "artist": "Perugino",
+          "artworkTitle": "The Resurrection",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/437272",
+          "originalSha256": "a19493cf951a720a556bbf8fd880a5ab9d094739a8ac865a7ee5e8e3164b5c09",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "Museum Resurrection matches the Easter celebration",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.easter",
+          "artworkId": "cma-78982",
+          "originalSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://clevelandart.org/art/2017.192"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "FEAST_EXACT",
+        "assessment": "König's Resurrection of Christ fits Easter's core mystery, though Mark 16:1–7 recounts women at the empty tomb rather than the moment of Resurrection.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "round4_additional_research_20261026": {
+        "trigger": "USER_REQUESTED_FURTHER_RESEARCH_ALL_FOUR",
+        "original_shortlist_not_approved": true,
+        "date_specific_hero_approval_made": false,
+        "held_open": true,
+        "detailed_source_check_completed": true,
+        "reading_context": "Easter Sunday: Mark 16:1–7 women discover empty tomb; resurrection-event artworks are thematic mystery, not literal Gospel visit",
+        "provenance_verified_real_paintings": [
+          {
+            "letter": "A",
+            "artist": "Juan Bautista Maíno",
+            "title": "The Resurrection",
+            "year": "1612–1614",
+            "collection": "Museo del Prado, Madrid",
+            "inventory": null,
+            "source": "https://www.museodelprado.es/en/the-collection/art-work/the-resurrection/528d18b5-73c4-4775-87fd-d9680f95f2bb",
+            "relation": "EXACT_RESURRECTION_FEAST_MYSTERY",
+            "quality_note": "Dominican church commission; powerful grounded Spanish Catholic early-Baroque figural treatment"
+          },
+          {
+            "letter": "B",
+            "artist": "Annibale Carracci",
+            "title": "La Résurrection du Christ",
+            "year": "1593",
+            "collection": "Musée du Louvre, Paris",
+            "inventory": "INV 200",
+            "source": "https://collections.louvre.fr/en/ark:/53355/cl010064444",
+            "relation": "EXACT_RESURRECTION_FEAST_MYSTERY",
+            "quality_note": "Arch-topped altarpiece; more radiant and elaborate; not the Louvre drawing INV 14706"
+          },
+          {
+            "letter": "C",
+            "artist": "Jacopo Tintoretto",
+            "title": "The Resurrection of Christ",
+            "year": "1579–1581",
+            "collection": "Scuola Grande di San Rocco, Venice",
+            "inventory": "Upper Hall Passion cycle",
+            "source": "https://www.wga.hu/html/t/tintoret/3b/2upper/2/24resur.html",
+            "relation": "EXACT_RESURRECTION_FEAST_MYSTERY_AND_WOMEN_NEAR_TOMB",
+            "quality_note": "Huge multiform scene; legibility and whole-painting photo concerns; distinct from San Cassiano 1565 painting"
+          },
+          {
+            "letter": "D",
+            "artist": "Guido Reni",
+            "title": "Resurrection of Christ",
+            "year": "c. 1596–1597",
+            "collection": "Basilica di San Domenico, Bologna",
+            "inventory": "Rosary chapel mystery panel, c.69×63 cm",
+            "source": "https://catalogo.fondazionezeri.unibo.it/entry/work/60368/Reni%20Guido%2C%20Resurrezione%20di%20Cristo",
+            "relation": "EXACT_RESURRECTION_FEAST_MYSTERY",
+            "quality_note": "Small panel nested in a larger rosary ensemble; usable painting photo not yet certified, comparative option only"
+          }
+        ],
+        "images_are_research_reference_only": true,
+        "full_painted_surface_frame_free_quality_verified": false,
+        "photo_reuse_cleared": false,
+        "app_published": false,
+        "latest_user_review_utc": "2026-10-26T19:40:00Z",
+        "latest_user_choice": "NO_DECISION_KEEP_OPEN",
+        "user_did_not_reject_all_paintings": true
+      }
+    },
+    {
+      "date": "2026-04-06",
+      "principal_id": "tempora:Pasc0-1:1:w",
+      "title": "Monday in the Octave of Easter",
+      "association_tier": "OCTAVE_CONTEXT",
+      "theme": "calendar.easter",
+      "subject_relation": "OCTAVE_CONTEXT",
+      "existing_artwork_candidates": [
+        "cma-78982"
+      ],
+      "historical_selected_artwork_id": "cma-78982",
+      "pre_oct19_visual_screen": "COMPARATIVE_REVIEW",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.easter",
+          "artworkId": "cma-78982",
+          "originalSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://clevelandart.org/art/2017.192"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "GOSPEL_DIFFERENT",
+        "assessment": "Luke 24:13–35 recounts the road to Emmaus; existing Velázquez Supper at Emmaus met-437871 is a closer pericope candidate than repeating Resurrection.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": "met-437871",
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "round4_additional_research_20261026": {
+        "trigger": "USER_REQUESTED_FURTHER_RESEARCH_ALL_FOUR",
+        "original_shortlist_not_approved": true,
+        "date_specific_hero_approval_made": false,
+        "held_open": true,
+        "detailed_source_check_completed": true,
+        "reading_context": "Easter Monday: Luke 24:13–35 the disciples recognize Christ in the breaking of bread at Emmaus",
+        "provenance_verified_real_paintings": [
+          {
+            "letter": "A",
+            "artist": "Caravaggio",
+            "title": "The Supper at Emmaus",
+            "year": "1606",
+            "collection": "Pinacoteca di Brera, Milan",
+            "inventory": "2296",
+            "source": "https://pinacotecabrera.org/collezioni/collezione-on-line/cena-in-emmaus/",
+            "relation": "EXACT_LUKE_24_RECOGNITION",
+            "quality_note": "Darker sober later Caravaggio, NOT earlier 1601 London NG172"
+          },
+          {
+            "letter": "B",
+            "artist": "Matthias Stom",
+            "title": "The Supper at Emmaus",
+            "year": "c. 1633–1639",
+            "collection": "Museo Nacional Thyssen-Bornemisza, Madrid",
+            "inventory": "375 / 1976.66",
+            "source": "https://www.museothyssen.org/en/collection/artists/stom-matthias/supper-emmaus",
+            "relation": "EXACT_LUKE_24_RECOGNITION",
+            "quality_note": "Tight candlelit Caravaggesque four-figure composition with excellent small-screen focal clarity"
+          },
+          {
+            "letter": "C",
+            "artist": "Hendrick ter Brugghen",
+            "title": "The Supper at Emmaus",
+            "year": "1616",
+            "collection": "Toledo Museum of Art, Ohio",
+            "inventory": "1983.1",
+            "source": "https://emuseum.toledomuseum.org/objects/54889/the-supper-at-emmaus",
+            "relation": "EXACT_LUKE_24_RECOGNITION",
+            "quality_note": "Museum verifies original with dark three-figure composition; distinguish from erroneous online 1621 date"
+          },
+          {
+            "letter": "D",
+            "artist": "Jean-Baptiste de Champaigne",
+            "title": "The Supper at Emmaus",
+            "year": "1664",
+            "collection": "Museum of Fine Arts Ghent (MSK Gent)",
+            "inventory": "1955-M",
+            "source": "https://www.mskgent.be/en/collection/1955-m",
+            "relation": "EXACT_LUKE_24_RECOGNITION",
+            "quality_note": "Large monumental subdued classical work formerly attributed to Philippe de Champaigne, now Jean-Baptiste"
+          }
+        ],
+        "images_are_research_reference_only": true,
+        "full_painted_surface_frame_free_quality_verified": false,
+        "photo_reuse_cleared": false,
+        "app_published": false
+      },
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T19:40:00Z",
+        "review_round": "CLASS_I_ROUND_4_EASTER_REVISED_2026",
+        "chosen_option_letter": "B",
+        "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+        "artwork_id": "external:thyssen:375-1976.66",
+        "exact_physical_original": {
+          "title": "The Supper at Emmaus",
+          "artist": "Matthias Stom",
+          "year": "c. 1633–1639",
+          "museum": "Museo Nacional Thyssen-Bornemisza, Madrid",
+          "inventory": "375 (1976.66)",
+          "object_record_url": "https://www.museothyssen.org/en/collection/artists/stom-matthias/supper-emmaus",
+          "scholarly_context_url": null
+        },
+        "iconographic_relation": "EXACT_APPOINTED_GOSPEL_LUKE_24_13_35",
+        "user_selection_is_authoritative_for_date": true,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "round_1_2_3_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": false,
+        "evidence_note": "Candlelit recognition in the breaking of bread; exact Thyssen original, not any of Matthias Stom's other paintings of Emmaus."
+      }
+    },
+    {
+      "date": "2026-04-07",
+      "principal_id": "tempora:Pasc0-2:1:w",
+      "title": "Tuesday in the Octave of Easter",
+      "association_tier": "OCTAVE_CONTEXT",
+      "theme": "calendar.easter",
+      "subject_relation": "OCTAVE_CONTEXT",
+      "existing_artwork_candidates": [
+        "cma-78982"
+      ],
+      "historical_selected_artwork_id": "cma-78982",
+      "pre_oct19_visual_screen": "COMPARATIVE_REVIEW",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.easter",
+          "artworkId": "cma-78982",
+          "originalSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://clevelandart.org/art/2017.192"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "GOSPEL_DIFFERENT",
+        "assessment": "Luke 24:36–47 describes the risen Christ appearing among the disciples, not the standalone Resurrection image.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "round4_additional_research_20261026": {
+        "trigger": "USER_REQUESTED_FURTHER_RESEARCH_ALL_FOUR",
+        "original_shortlist_not_approved": true,
+        "date_specific_hero_approval_made": false,
+        "held_open": true,
+        "detailed_source_check_completed": true,
+        "reading_context": "Easter Tuesday: Luke 24:36–47 first appearance of risen Christ among disciples, wounds shown; NOT later encounter with Thomas",
+        "provenance_verified_real_paintings": [
+          {
+            "letter": "A",
+            "artist": "Peter Paul Rubens",
+            "title": "Resurrected Christ Appearing to the Apostles, Rockox Triptych central panel",
+            "year": "1613–1615",
+            "collection": "Royal Museum of Fine Arts Antwerp (KMSKA)",
+            "inventory": "307 (central panel; overall 307–311)",
+            "source": "https://kmska.be/en/masterpiece/epitaph-of-nicolaas-rockox-and-his-wife-adriana-perez",
+            "relation": "PLAUSIBLE_FIRST_APPARITION_LUKE_24_SCHOLARLY_CONTESTED",
+            "quality_note": "Strong dark figural Baroque; current scholarship supports Luke 24 but historic interpretation is doubting Thomas; three disciples only, not complete eleven; central panel only without donors or frame"
+          },
+          {
+            "letter": "B",
+            "artist": "Szymon Czechowicz",
+            "title": "Christ Appearing to the Apostles after the Resurrection",
+            "year": "1758",
+            "collection": "National Museum in Kraków",
+            "inventory": "MNK II-a-13; 45×63 cm",
+            "source": "https://zbiory.mnk.pl/pl/wyniki-wyszukiwania/katalog/272458",
+            "relation": "GENERAL_APPARITION_TO_APOSTLES",
+            "quality_note": "Explicit original Kraków work; daylight landscape, somewhat brighter, previously shown round4 but physical provenance now corroborated"
+          },
+          {
+            "letter": "C",
+            "artist": "Szymon Czechowicz",
+            "title": "Appearance of Christ to the Apostles",
+            "year": "1758",
+            "collection": "Lviv National Art Gallery, displayed Zhovkva Castle",
+            "inventory": "Ж-6000; 134×188.5 cm",
+            "source": "https://collection-lvivgallery.org.ua/en/works/536-iavlennia-khrysta-apostolam",
+            "relation": "GENERAL_APPARITION_TO_APOSTLES",
+            "quality_note": "Different, much larger physical painting than Kraków MNK II-a-13 despite same artist/date/subject; check faithful image and photographic rights separately"
+          }
+        ],
+        "images_are_research_reference_only": true,
+        "full_painted_surface_frame_free_quality_verified": false,
+        "photo_reuse_cleared": false,
+        "app_published": false
+      },
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T19:40:00Z",
+        "review_round": "CLASS_I_ROUND_4_EASTER_REVISED_2026",
+        "chosen_option_letter": "A",
+        "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+        "artwork_id": "external:kmska:307-rockox-center",
+        "exact_physical_original": {
+          "title": "Resurrected Christ Appearing to the Apostles — central panel of Rockox–Pérez triptych",
+          "artist": "Peter Paul Rubens",
+          "year": "1613–1615",
+          "museum": "Royal Museum of Fine Arts Antwerp (KMSKA)",
+          "inventory": "central panel 307; triptych 307–311",
+          "object_record_url": "https://kmska.be/en/masterpiece/epitaph-of-nicolaas-rockox-and-his-wife-adriana-perez",
+          "scholarly_context_url": "https://vlaamsekunstcollectie.be/en/collection/307-311"
+        },
+        "iconographic_relation": "SCHOLARLY_DISPUTED_FIRST_APPEARANCE_LUKE_24_VS_DOUBTING_THOMAS_JOHN_20",
+        "user_selection_is_authoritative_for_date": true,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "round_1_2_3_approvals_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": false,
+        "evidence_note": "User expressly accepts this Antwerp central panel while requiring the Luke 24 interpretation to remain contested. Do NOT assert definitive Luke 24 identity or replace with triptych wings, framed full triptych, Hermitage Van Dyck, or other Thomas painting. Flemish Art Collection research argues for the first apostolic appearance; historical identification as Thomas persists."
+      }
+    },
+    {
+      "date": "2026-04-08",
+      "principal_id": "tempora:Pasc0-3:1:w",
+      "title": "Wednesday in the Octave of Easter",
+      "association_tier": "OCTAVE_CONTEXT",
+      "theme": "calendar.easter",
+      "subject_relation": "OCTAVE_CONTEXT",
+      "existing_artwork_candidates": [
+        "cma-78982"
+      ],
+      "historical_selected_artwork_id": "cma-78982",
+      "pre_oct19_visual_screen": "COMPARATIVE_REVIEW",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.easter",
+          "artworkId": "cma-78982",
+          "originalSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://clevelandart.org/art/2017.192"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "GOSPEL_DIFFERENT",
+        "assessment": "John 21:1–14 depicts the miraculous catch of fish and risen Christ by the Sea of Tiberias, not the standalone Resurrection image.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T19:52:16Z",
+        "review_round": "CLASS_I_ROUND_5_EASTER_OCTAVE_2026",
+        "chosen_option_letter": null,
+        "status": "OPEN_RESEARCH_HOLD",
+        "artwork_id": null,
+        "exact_physical_original": null,
+        "iconographic_relation": "FURTHER_RESEARCH_NO_PAINTING_APPROVED",
+        "user_selection_is_authoritative_for_date": false,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "rounds_1_to_4_decisions_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": true,
+        "evidence_note": "User explicitly rejected approval of all three previous Easter Wednesday illustrated candidates and requested more research; no painting approved."
+      },
+      "user_selection_20261027_batch01": {
+        "source": "User 2026-10-27 17:08:10Z",
+        "code": "NONE",
+        "state": "NEW_ALTERNATIVES_REQUESTED",
+        "painting": null,
+        "rights_and_quality": "NOT_CLEARED",
+        "replaces_historical_subject_approval": false
+      }
+    },
+    {
+      "date": "2026-04-09",
+      "principal_id": "tempora:Pasc0-4:1:w",
+      "title": "Thursday in the Octave of Easter",
+      "association_tier": "OCTAVE_CONTEXT",
+      "theme": "calendar.easter",
+      "subject_relation": "OCTAVE_CONTEXT",
+      "existing_artwork_candidates": [
+        "cma-78982"
+      ],
+      "historical_selected_artwork_id": "cma-78982",
+      "pre_oct19_visual_screen": "COMPARATIVE_REVIEW",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.easter",
+          "artworkId": "cma-78982",
+          "originalSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://clevelandart.org/art/2017.192"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "GOSPEL_DIFFERENT",
+        "assessment": "John 20:11–18 describes Mary Magdalene encountering the risen Lord; compare Noli me tangere paintings rather than automatically reusing Resurrection.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T19:52:16Z",
+        "review_round": "CLASS_I_ROUND_5_EASTER_OCTAVE_2026",
+        "chosen_option_letter": null,
+        "status": "OPEN_RESEARCH_HOLD",
+        "artwork_id": null,
+        "exact_physical_original": null,
+        "iconographic_relation": "FURTHER_RESEARCH_NO_PAINTING_APPROVED",
+        "user_selection_is_authoritative_for_date": false,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "rounds_1_to_4_decisions_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": true,
+        "evidence_note": "User explicitly did not approve any of four Easter Thursday paintings; research further."
+      },
+      "user_selection_20261027_batch01": {
+        "source": "User 2026-10-27 17:08:10Z",
+        "code": "NONE",
+        "state": "NEW_ALTERNATIVES_REQUESTED",
+        "painting": null,
+        "rights_and_quality": "NOT_CLEARED",
+        "replaces_historical_subject_approval": false
+      }
+    },
+    {
+      "date": "2026-04-10",
+      "principal_id": "tempora:Pasc0-5:1:w",
+      "title": "Friday in the Octave of Easter",
+      "association_tier": "OCTAVE_CONTEXT",
+      "theme": "calendar.easter",
+      "subject_relation": "OCTAVE_CONTEXT",
+      "existing_artwork_candidates": [
+        "cma-78982"
+      ],
+      "historical_selected_artwork_id": "cma-78982",
+      "pre_oct19_visual_screen": "COMPARATIVE_REVIEW",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.easter",
+          "artworkId": "cma-78982",
+          "originalSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://clevelandart.org/art/2017.192"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "GOSPEL_DIFFERENT",
+        "assessment": "Matthew 28:16–20 describes the Great Commission; Easter Friday remained undecided in earlier user review. The generic Resurrection picture is not a date-specific approval.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T19:52:16Z",
+        "review_round": "CLASS_I_ROUND_5_EASTER_OCTAVE_2026",
+        "chosen_option_letter": "C",
+        "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+        "artwork_id": "external:kimbell:AP-2011.01",
+        "exact_physical_original": {
+          "title": "The Sacrament of Ordination (Christ Presenting the Keys to Saint Peter)",
+          "artist": "Nicolas Poussin",
+          "year": "c. 1636–1640",
+          "museum": "Kimbell Art Museum, Fort Worth, Texas",
+          "inventory": "AP 2011.01",
+          "object_record_url": "https://kimbellart.org/collection/ap-201101"
+        },
+        "iconographic_relation": "RELATED_APOSTOLIC_COMMISSION_MATTHEW_16_NOT_APPOINTED_MATTHEW_28",
+        "user_selection_is_authoritative_for_date": true,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "rounds_1_to_4_decisions_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": false,
+        "evidence_note": "User expressly approved Poussin option C for Easter Friday, with Matthew 16 thematic caveat. Kimbell confirms picture is keys entrusted to Saint Peter, not Great Commission of Apostles in Matthew 28."
+      }
+    },
+    {
+      "date": "2026-04-11",
+      "principal_id": "tempora:Pasc0-6:1:w",
+      "title": "Saturday in the Octave of Easter",
+      "association_tier": "OCTAVE_CONTEXT",
+      "theme": "calendar.easter",
+      "subject_relation": "OCTAVE_CONTEXT",
+      "existing_artwork_candidates": [
+        "cma-78982"
+      ],
+      "historical_selected_artwork_id": "cma-78982",
+      "pre_oct19_visual_screen": "COMPARATIVE_REVIEW",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.easter",
+          "artworkId": "cma-78982",
+          "originalSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://clevelandart.org/art/2017.192"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "GOSPEL_DIFFERENT",
+        "assessment": "John 20:1–9 depicts Peter and the beloved disciple at the empty tomb; the shared Resurrection painting is Eastertide theme, not exact appointed scene.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-26T19:52:16Z",
+        "review_round": "CLASS_I_ROUND_5_EASTER_OCTAVE_2026",
+        "chosen_option_letter": "A",
+        "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+        "artwork_id": "external:orsay:RF-1153",
+        "exact_physical_original": {
+          "title": "Les Disciples Pierre et Jean courant au Sépulcre le matin de la Résurrection",
+          "artist": "Eugène Burnand",
+          "year": "1898",
+          "museum": "Musée d’Orsay, Paris",
+          "inventory": "RF 1153",
+          "object_record_url": "https://www.musee-orsay.fr/fr/oeuvres/les-disciples-pierre-et-jean-courant-au-sepulcre-le-matin-de-la-resurrection-9239"
+        },
+        "iconographic_relation": "EXACT_APPOINTED_GOSPEL_JOHN_20_1_9_APOSTLES_RUNNING_TO_TOMB",
+        "user_selection_is_authoritative_for_date": true,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "rounds_1_to_4_decisions_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": false,
+        "evidence_note": "User chose Burnand option A, the full Musée d’Orsay original; depicts the Apostles running towards rather than within the tomb."
+      }
+    },
+    {
+      "date": "2026-04-12",
+      "principal_id": "tempora:Pasc1-0:1:w",
+      "title": "Low Sunday",
+      "association_tier": "GOSPEL_RESEARCH",
+      "theme": "calendar.easter",
+      "subject_relation": "GOSPEL_RESEARCH",
+      "existing_artwork_candidates": [
+        "cma-78982"
+      ],
+      "historical_selected_artwork_id": "cma-78982",
+      "pre_oct19_visual_screen": "COMPARATIVE_REVIEW",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.easter",
+          "artworkId": "cma-78982",
+          "originalSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://clevelandart.org/art/2017.192"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "GOSPEL_DIFFERENT",
+        "assessment": "John 20:19–31 is Christ's encounter with doubting Thomas. Existing B54 Caravaggio Incredulity B02-THOMAS-CARAVAGGIO is a more precise artistic candidate; compare physical-source identity with duplicate catalogue entry W07-014.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": "B02-THOMAS-CARAVAGGIO",
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-27T05:01:11Z",
+        "review_round": "CLASS_I_ROUND_6_PASCHALTIDE_2026",
+        "chosen_option_letter": "A",
+        "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+        "artwork_id": "external:potsdam:caravaggio-incredulity-thomas",
+        "exact_physical_original": {
+          "title": "The Incredulity of Saint Thomas",
+          "artist": "Michelangelo Merisi da Caravaggio",
+          "year": "c. 1601–1602",
+          "museum": "Stiftung Preußische Schlösser und Gärten Berlin-Brandenburg, Neues Palais, Potsdam",
+          "inventory": null,
+          "object_record_url": "https://www.spsg.de/en/palaces-gardens/object/the-incredulity-of-saint-thomas/"
+        },
+        "iconographic_relation": "EXACT_APPOINTED_GOSPEL_JOHN_20_19_31",
+        "user_selection_is_authoritative_for_date": true,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "prior_rounds_1_to_5_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": false,
+        "evidence_note": "User selected option A, original Caravaggio Incredulity of Saint Thomas, Potsdam; NOT similar copies."
+      }
+    },
+    {
+      "date": "2026-05-01",
+      "principal_id": "sancti:05-01r:1:w",
+      "title": "St. Joseph the Workman",
+      "association_tier": "RELATED_SAINT_DIFFERENT_FEAST",
+      "theme": "calendar.saint-joseph",
+      "subject_relation": "RELATED_SAINT_DIFFERENT_FEAST",
+      "existing_artwork_candidates": [
+        "cma-160143",
+        "met-437458"
+      ],
+      "historical_selected_artwork_id": "cma-160143",
+      "pre_oct19_visual_screen": "PROMISING_AESTHETIC_FIT",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.saint-joseph",
+          "artworkId": "cma-160143",
+          "originalSha256": "6edb1762e9001a78a19efb71173959befeb9cf7f90a9538bab62b6bffd3f3814",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://clevelandart.org/art/1998.10"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "PERSON_CONTEXT",
+        "assessment": "The Holy Family includes Saint Joseph but does not establish the workshop/labour subject of Saint Joseph the Worker; Matthew 13:54–58 relates Christ to the carpenter.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-27T05:01:11Z",
+        "review_round": "CLASS_I_ROUND_6_PASCHALTIDE_2026",
+        "chosen_option_letter": "C",
+        "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+        "artwork_id": "external:louvre:RF-1948-27",
+        "exact_physical_original": {
+          "title": "Saint Joseph the Carpenter",
+          "artist": "Georges de La Tour",
+          "year": "c. 1642–1644",
+          "museum": "Musée du Louvre, Paris",
+          "inventory": "RF 1948 27",
+          "object_record_url": "https://collections.louvre.fr/en/ark:/53355/cl010063817"
+        },
+        "iconographic_relation": "EXACT_JOSEPH_WORKMAN_FEAST_THEME_NOT_MATTHEW_13_LITERAL_EVENT",
+        "user_selection_is_authoritative_for_date": true,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "prior_rounds_1_to_5_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": false,
+        "evidence_note": "User chose option C for May 1; in prior 19 March round this painting was only an unselected alternative and that date's OPEN_RESEARCH_HOLD remains intact."
+      }
+    },
+    {
+      "date": "2026-05-14",
+      "principal_id": "tempora:Pasc5-4:1:w",
+      "title": "Ascension of the Lord",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.ascension",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "met-436835"
+      ],
+      "historical_selected_artwork_id": "met-436835",
+      "pre_oct19_visual_screen": "COMPARATIVE_REVIEW",
+      "exact_research_links": [
+        {
+          "artworkId": "met-436835",
+          "observedPrincipalId": "tempora:Pasc5-4:1:w",
+          "observedDate2026": "2026-05-14",
+          "observedTitle": "Ascension of the Lord",
+          "artist": "Hans Süss von Kulmbach",
+          "artworkTitle": "The Ascension of Christ",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/436835",
+          "originalSha256": "889c57548f01237cb9031d81650832e74ac9f89112131a5bf32ded0317353a90",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "Ascension of Christ exact feast event",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.ascension",
+          "artworkId": "met-436835",
+          "originalSha256": "889c57548f01237cb9031d81650832e74ac9f89112131a5bf32ded0317353a90",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/436835"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "FEAST_EXACT",
+        "assessment": "Kulmbach's Ascension of Christ depicts the feast event. Visual suitability still requires comparison.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-27T05:01:11Z",
+        "review_round": "CLASS_I_ROUND_6_PASCHALTIDE_2026",
+        "chosen_option_letter": null,
+        "status": "OPEN_UNDECIDED_HOLD",
+        "artwork_id": null,
+        "exact_physical_original": null,
+        "iconographic_relation": "OPEN_UNDECIDED_NO_ARTWORK_SELECTED",
+        "user_selection_is_authoritative_for_date": false,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "prior_rounds_1_to_5_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": true,
+        "evidence_note": "User explicitly made no Ascension date-specific selection; do not reject or auto-select any candidate."
+      }
+    },
+    {
+      "date": "2026-05-23",
+      "principal_id": "tempora:Pasc6-6:1:r",
+      "title": "Vigil of Pentecost",
+      "association_tier": "VIGIL_CONTEXT",
+      "theme": "calendar.pentecost",
+      "subject_relation": "VIGIL_CONTEXT",
+      "existing_artwork_candidates": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historical_selected_artwork_id": "commons-baroncelli-pentecost",
+      "pre_oct19_visual_screen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.pentecost",
+          "artworkId": "commons-baroncelli-pentecost",
+          "originalSha256": "1cbd9f1f47143245a4336a4ecd4dfa0d637f93ce2f5ebfbfb5409aebc46e4f49",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Master_of_the_Baroncelli_Portraits_-_Pentecost.jpg"
+        }
+      ],
+      "protected_approval": {
+        "artist": "Juan Bautista Maíno",
+        "title": "The Pentecost",
+        "user_choice_approved": true,
+        "relation": "ANTICIPATORY_PENTECOST_SUBJECT_NOT_LITERAL_VIGIL_READINGS",
+        "catalogue_id": null,
+        "original_found_in_383": false,
+        "approved_date": "2026-05-23",
+        "evidence": "2026-10-19 named Vigil image choice",
+        "external_research_photo": {
+          "kind": "commons_file",
+          "file": "Maino Pentecostés, 1620-1625. Museo del Prado.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Maino_Pentecost%C3%A9s%2C_1620-1625._Museo_del_Prado.jpg"
+        }
+      }
+    },
+    {
+      "date": "2026-05-24",
+      "principal_id": "tempora:Pasc7-0:1:r",
+      "title": "Pentecost Sunday",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.pentecost",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historical_selected_artwork_id": "commons-baroncelli-pentecost",
+      "pre_oct19_visual_screen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "exact_research_links": [
+        {
+          "artworkId": "commons-multscher-pentecost",
+          "observedPrincipalId": "tempora:Pasc7-0:1:r",
+          "observedDate2026": "2026-05-24",
+          "observedTitle": "Pentecost Sunday",
+          "artist": "Hans Multscher",
+          "artworkTitle": "The Descent of the Holy Spirit (Pentecost)",
+          "museumObjectUrl": "https://commons.wikimedia.org/wiki/File:Hans_Multscher_-_Au%C3%9Fenfl%C3%BCgel_des_Wurzacher_Altars_(links_unten)_-_Google_Art_Project.jpg",
+          "originalSha256": "662be382f179c06ca7e4e061d2a346b5df3c2671a7ed0d3d63db9fbc6c07e14d",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "Descent of Holy Spirit exact feast iconography; rights held",
+          "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.pentecost",
+          "artworkId": "commons-baroncelli-pentecost",
+          "originalSha256": "1cbd9f1f47143245a4336a4ecd4dfa0d637f93ce2f5ebfbfb5409aebc46e4f49",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Master_of_the_Baroncelli_Portraits_-_Pentecost.jpg"
+        }
+      ],
+      "protected_approval": {
+        "artist": "Jean II Restout",
+        "title": "Pentecost",
+        "user_choice_approved": true,
+        "relation": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+        "catalogue_id": "ART-ean-estout-entecost",
+        "original_found_in_383": true,
+        "approved_date": "2026-05-24",
+        "evidence": "2026-10-17 final decision freeze confirms artwork rating 5 locked; 2026-10-19 user confirms approved Pentecost painting",
+        "external_research_photo": null
+      }
+    },
+    {
+      "date": "2026-05-25",
+      "principal_id": "tempora:Pasc7-1:1:r",
+      "title": "Monday after Pentecost",
+      "association_tier": "OCTAVE_CONTEXT",
+      "theme": "calendar.pentecost",
+      "subject_relation": "OCTAVE_CONTEXT",
+      "existing_artwork_candidates": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historical_selected_artwork_id": "commons-baroncelli-pentecost",
+      "pre_oct19_visual_screen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.pentecost",
+          "artworkId": "commons-baroncelli-pentecost",
+          "originalSha256": "1cbd9f1f47143245a4336a4ecd4dfa0d637f93ce2f5ebfbfb5409aebc46e4f49",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Master_of_the_Baroncelli_Portraits_-_Pentecost.jpg"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "OCTAVE_CONTEXT",
+        "assessment": "The Baroncelli Portraits Master's Pentecost is a thematic octave image, not evidenced as Monday's distinct prescribed Gospel scene.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "editorial_decision_20261026": {
+        "user_confirmed_utc": "2026-10-27T05:01:11Z",
+        "review_round": "CLASS_I_ROUND_6_PASCHALTIDE_2026",
+        "chosen_option_letter": null,
+        "status": "OPEN_UNDECIDED_HOLD",
+        "artwork_id": null,
+        "exact_physical_original": null,
+        "iconographic_relation": "OPEN_UNDECIDED_NO_ARTWORK_SELECTED",
+        "user_selection_is_authoritative_for_date": false,
+        "preexisting_ten_locked_approvals_unchanged": true,
+        "prior_rounds_1_to_5_unchanged": true,
+        "source_photograph_identity_sha_confirmed": false,
+        "full_painted_surface_and_no_frame_verified": false,
+        "photo_visual_quality_approved": false,
+        "image_reuse_rights_approved": false,
+        "production_release_approved": false,
+        "on_hold": true,
+        "evidence_note": "User explicitly made no Pentecost Monday date-specific selection; retain both Nicodemus and Cornelius thematic research candidates without auto-approval."
+      }
+    },
+    {
+      "date": "2026-05-26",
+      "principal_id": "tempora:Pasc7-2:1:r",
+      "title": "Tuesday after Pentecost",
+      "association_tier": "OCTAVE_CONTEXT",
+      "theme": "calendar.pentecost",
+      "subject_relation": "OCTAVE_CONTEXT",
+      "existing_artwork_candidates": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historical_selected_artwork_id": "commons-baroncelli-pentecost",
+      "pre_oct19_visual_screen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.pentecost",
+          "artworkId": "commons-baroncelli-pentecost",
+          "originalSha256": "1cbd9f1f47143245a4336a4ecd4dfa0d637f93ce2f5ebfbfb5409aebc46e4f49",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Master_of_the_Baroncelli_Portraits_-_Pentecost.jpg"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "OCTAVE_CONTEXT",
+        "assessment": "Repeated Pentecost painting reflects the octave but not Tuesday's distinct appointed Gospel.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      }
+    },
+    {
+      "date": "2026-05-27",
+      "principal_id": "tempora:Pasc7-3:1:r",
+      "title": "Ember Wednesday of Pentecost",
+      "association_tier": "OCTAVE_EMBER_GOSPEL_RESEARCH",
+      "theme": "calendar.pentecost",
+      "subject_relation": "OCTAVE_EMBER_GOSPEL_RESEARCH",
+      "existing_artwork_candidates": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historical_selected_artwork_id": "commons-baroncelli-pentecost",
+      "pre_oct19_visual_screen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.pentecost",
+          "artworkId": "commons-baroncelli-pentecost",
+          "originalSha256": "1cbd9f1f47143245a4336a4ecd4dfa0d637f93ce2f5ebfbfb5409aebc46e4f49",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Master_of_the_Baroncelli_Portraits_-_Pentecost.jpg"
+        }
+      ],
+      "protected_approval": {
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "user_choice_approved": true,
+        "relation": "EUCHARISTIC_THEME_FOR_JOHN_6_NOT_LITERAL_DISCOURSE",
+        "catalogue_id": "ART-hilippe-de-hampaigne-a-etite-ne",
+        "original_found_in_383": true,
+        "approved_date": "2026-05-27",
+        "evidence": "User 2026-10-19 selection of Eucharistic thematic art for Ember Wednesday",
+        "external_research_photo": null
+      }
+    },
+    {
+      "date": "2026-05-28",
+      "principal_id": "tempora:Pasc7-4:1:r",
+      "title": "Thursday after Pentecost",
+      "association_tier": "OCTAVE_CONTEXT",
+      "theme": "calendar.pentecost",
+      "subject_relation": "OCTAVE_CONTEXT",
+      "existing_artwork_candidates": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historical_selected_artwork_id": "commons-baroncelli-pentecost",
+      "pre_oct19_visual_screen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.pentecost",
+          "artworkId": "commons-baroncelli-pentecost",
+          "originalSha256": "1cbd9f1f47143245a4336a4ecd4dfa0d637f93ce2f5ebfbfb5409aebc46e4f49",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Master_of_the_Baroncelli_Portraits_-_Pentecost.jpg"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "OCTAVE_CONTEXT",
+        "assessment": "Repeated Pentecost painting reflects the octave but not Thursday's distinct appointed Gospel.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      }
+    },
+    {
+      "date": "2026-05-29",
+      "principal_id": "tempora:Pasc7-5:1:r",
+      "title": "Ember Friday of Pentecost",
+      "association_tier": "OCTAVE_EMBER_GOSPEL_RESEARCH",
+      "theme": "calendar.pentecost",
+      "subject_relation": "OCTAVE_EMBER_GOSPEL_RESEARCH",
+      "existing_artwork_candidates": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historical_selected_artwork_id": "commons-baroncelli-pentecost",
+      "pre_oct19_visual_screen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.pentecost",
+          "artworkId": "commons-baroncelli-pentecost",
+          "originalSha256": "1cbd9f1f47143245a4336a4ecd4dfa0d637f93ce2f5ebfbfb5409aebc46e4f49",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Master_of_the_Baroncelli_Portraits_-_Pentecost.jpg"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "OCTAVE_CONTEXT",
+        "assessment": "Pentecost scene is a thematic rather than Ember Friday Gospel-exact image.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      }
+    },
+    {
+      "date": "2026-05-30",
+      "principal_id": "tempora:Pasc7-6:1:r",
+      "title": "Ember Saturday of Pentecost",
+      "association_tier": "OCTAVE_EMBER_GOSPEL_RESEARCH",
+      "theme": "calendar.pentecost",
+      "subject_relation": "OCTAVE_EMBER_GOSPEL_RESEARCH",
+      "existing_artwork_candidates": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historical_selected_artwork_id": "commons-baroncelli-pentecost",
+      "pre_oct19_visual_screen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.pentecost",
+          "artworkId": "commons-baroncelli-pentecost",
+          "originalSha256": "1cbd9f1f47143245a4336a4ecd4dfa0d637f93ce2f5ebfbfb5409aebc46e4f49",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Master_of_the_Baroncelli_Portraits_-_Pentecost.jpg"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "OCTAVE_CONTEXT",
+        "assessment": "Pentecost scene is thematic rather than a precise Ember Saturday lesson/Gospel painting.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      }
+    },
+    {
+      "date": "2026-05-31",
+      "principal_id": "tempora:Pent01-0r:1:w",
+      "title": "Trinity Sunday",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.trinity",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "review-kmska-314"
+      ],
+      "historical_selected_artwork_id": "cma-136507",
+      "pre_oct19_visual_screen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "exact_research_links": [
+        {
+          "artworkId": "met-435618",
+          "observedPrincipalId": "tempora:Pent01-0r:1:w",
+          "observedDate2026": "2026-05-31",
+          "observedTitle": "Trinity Sunday",
+          "artist": "Bartolomeo di Giovanni",
+          "artworkTitle": "The Trinity",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/435618",
+          "originalSha256": "6a8c4112b9309924182d3e665e59ac0e8ba7bdadf565020ffad6a7480e55a0a1",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "Depiction of Holy Trinity exact titular theological subject",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.trinity",
+          "artworkId": "cma-136507",
+          "originalSha256": "161aa1edd73d63709ed835e5e20e3ee5e7a175358d0a52a00a8c0ea86840a050",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://clevelandart.org/art/1960.79"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "FEAST_EXACT",
+        "assessment": "Girardin's Trinity depicts the feast's theological subject. Not automatically the exact Gospel of the baptismal command in Matthew 28.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      }
+    },
+    {
+      "date": "2026-06-04",
+      "principal_id": "tempora:Pent01-4:1:w",
+      "title": "Corpus Christi",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.corpus-christi",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "met-438434"
+      ],
+      "historical_selected_artwork_id": "met-437722",
+      "pre_oct19_visual_screen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "exact_research_links": [],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.corpus-christi",
+          "artworkId": "met-437722",
+          "originalSha256": "666c631f181f2ea3a096a2c0ccad76f37c7f68087a77a0fd96cd31678eaa321a",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437722"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "THEOLOGICAL_CONTEXT",
+        "assessment": "Spanish Painter's Mass of Saint Gregory concerns the Eucharistic mystery, not the historical institution of Corpus Christi; strong thematic candidate, not a literal feast event.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "user_selection_20261027_batch01": {
+        "source": "User 2026-10-27 17:08:10Z",
+        "code": "A",
+        "state": "CHOSEN",
+        "painting": {
+          "artist": "Philippe de Champaigne",
+          "title": "La Petite Cène",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010062076"
+        },
+        "rights_and_quality": "NOT_CLEARED",
+        "replaces_historical_subject_approval": false
+      }
+    },
+    {
+      "date": "2026-06-12",
+      "principal_id": "tempora:Pent02-5:1:w",
+      "title": "Sacred Heart of Jesus",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.sacred-heart",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "commons-morlete-sacred-heart-1759"
+      ],
+      "historical_selected_artwork_id": "commons-morlete-sacred-heart-1759",
+      "pre_oct19_visual_screen": "AESTHETIC_HOLD_DEVOTIONAL_EXCEPTION_POSSIBLE",
+      "exact_research_links": [
+        {
+          "artworkId": "commons-morlete-sacred-heart-1759",
+          "observedPrincipalId": "tempora:Pent02-5:1:w",
+          "observedDate2026": "2026-06-12",
+          "observedTitle": "Sacred Heart of Jesus",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "artworkTitle": "The Heart of Jesus",
+          "museumObjectUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "originalSha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "The central crowned-and-pierced flaming Sacred Heart is directly represented, identifiable as the devotion celebrated by the 1962 I-class Sacred Heart feast; additional saintly portraits and Eucharistic symbolism are contextual.",
+          "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "approvedForProduction": false
+        },
+        {
+          "artworkId": "commons-el-paso-sacred-heart-retablo",
+          "observedPrincipalId": "tempora:Pent02-5:1:w",
+          "observedDate2026": "2026-06-12",
+          "observedTitle": "Sacred Heart of Jesus",
+          "artist": "Anonymous Mexican artist",
+          "artworkTitle": "The Sacred Heart of Jesus",
+          "museumObjectUrl": "https://commons.wikimedia.org/wiki/File:%27The_Sacred_Heart_of_Jesus%27,_anonymous_Mexican_retablo,_oil_on_tin,_mid_19th_century,_El_Paso_Museum_of_Art.JPG",
+          "originalSha256": "dc2bff1f0b3601394da268703bbd655e316bdf02e5d3471b49195967cf024681",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "The historical painted depiction explicitly shows Christ indicating his Sacred Heart, directly relevant to the I-class feast of the Most Sacred Heart of Jesus.",
+          "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.sacred-heart",
+          "artworkId": "commons-morlete-sacred-heart-1759",
+          "originalSha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
+        }
+      ],
+      "protected_approval": {
+        "artist": "Juan Patricio Morlete Ruiz",
+        "title": "The Heart of Jesus",
+        "user_choice_approved": true,
+        "relation": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+        "catalogue_id": "commons-morlete-sacred-heart-1759",
+        "original_found_in_383": true,
+        "approved_date": "2026-06-12",
+        "evidence": "2026-10-17 final curator file: 5, locked, perfect_theme; 2026-10-19 user reaffirmation",
+        "external_research_photo": null
+      }
+    },
+    {
+      "date": "2026-06-24",
+      "principal_id": "sancti:06-24:1:w",
+      "title": "Nativity of St. John the Baptist",
+      "association_tier": "NATIVITY_SUBJECT_REQUIRED",
+      "theme": "calendar.st-john-baptist",
+      "subject_relation": "NATIVITY_SUBJECT_REQUIRED",
+      "existing_artwork_candidates": [
+        "met-438467"
+      ],
+      "historical_selected_artwork_id": "met-437738",
+      "pre_oct19_visual_screen": "AESTHETIC_HOLD_RESEARCH_ALTERNATIVE",
+      "exact_research_links": [
+        {
+          "artworkId": "met-458984",
+          "observedPrincipalId": "sancti:06-24:1:w",
+          "observedDate2026": "2026-06-24",
+          "observedTitle": "Nativity of St. John the Baptist",
+          "artist": "Sano di Pietro",
+          "artworkTitle": "The Birth and Naming of Saint John the Baptist",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/458984",
+          "originalSha256": "2b4133fcf6012c34796fae2c134b0b9baeb804952675565e85c2e61007a717eb",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "Birth and naming exact Nativity event",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        },
+        {
+          "artworkId": "met-438467",
+          "observedPrincipalId": "sancti:06-24:1:w",
+          "observedDate2026": "2026-06-24",
+          "observedTitle": "Nativity of St. John the Baptist",
+          "artist": "Bernard van Orley",
+          "artworkTitle": "The Birth and Naming of Saint John the Baptist; (reverse) Trompe-l'oeil with Painting of The Man of Sorrows",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/438467",
+          "originalSha256": "2ed2f5a5294815d7332c713eef824d2f616db12e5636ff5253908d87469832df",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "Birth and naming shown on obverse; primary-image face requires curation",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        },
+        {
+          "artworkId": "met-436567",
+          "observedPrincipalId": "sancti:06-24:1:w",
+          "observedDate2026": "2026-06-24",
+          "observedTitle": "Nativity of St. John the Baptist",
+          "artist": "Francesco Granacci",
+          "artworkTitle": "Scenes from the Life of Saint John the Baptist",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/436567",
+          "originalSha256": "ae83f3ea09efd0540a86716d7bf215ad8251aad83b55d2842518e3aaa25bd852",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "Birth shown within multi-scene painted panel",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.st-john-baptist",
+          "artworkId": "met-437738",
+          "originalSha256": "6bb2c3a5fa32367eb211a25c222a3c54294fb7055ab4fc0a09060ccc09693f2b",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/437738"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "WRONG_EVENT",
+        "assessment": "B54 historical met-437738 depicts the Beheading of Saint John, NOT his birth. Met Sano di Pietro 458984 depicts the Birth and Naming; prioritize its linked exact original.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": "met-458984",
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      }
+    },
+    {
+      "date": "2026-06-29",
+      "principal_id": "sancti:06-29:1:r",
+      "title": "Sts. Peter & Paul",
+      "association_tier": "TWO_SAINTS_SUBJECT_REQUIRED",
+      "theme": "person.peter",
+      "subject_relation": "TWO_SAINTS_SUBJECT_REQUIRED",
+      "existing_artwork_candidates": [
+        "met-442491"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [
+        {
+          "artworkId": "met-442491",
+          "observedPrincipalId": "sancti:06-29:1:r",
+          "observedDate2026": "2026-06-29",
+          "observedTitle": "Sts. Peter & Paul",
+          "artist": "Bartolomeo Manfredi",
+          "artworkTitle": "Saints Peter and Paul",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/442491",
+          "originalSha256": "68d501d009183a6aca17628e8323a8edaedf676cc4d7293b97f1afa3380470bc",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "Both apostles depicted, not just one",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [
+        {
+          "targetId": "person.peter",
+          "artworkId": "met-441971",
+          "originalSha256": "d3575d5455b46be66e0fc14e7ee1e7daf9194d2e8f68bd29d99608fea4a6e68e",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/441971"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "WRONG_SUBJECT",
+        "assessment": "Ribera's Tears of Saint Peter omits Saint Paul entirely; the exact two-apostle portrait Manfredi, Saints Peter and Paul, Met 442491 is already in B54.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": "met-442491",
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "user_selection_20261027_batch01": {
+        "source": "User 2026-10-27 17:08:10Z",
+        "code": "A",
+        "state": "CHOSEN",
+        "painting": {
+          "artist": "Bartolomeo Manfredi (possibly with Nicolas Tournier)",
+          "title": "Saints Peter and Paul",
+          "source_url": "https://www.metmuseum.org/art/collection/search/442491"
+        },
+        "rights_and_quality": "NOT_CLEARED",
+        "replaces_historical_subject_approval": false
+      }
+    },
+    {
+      "date": "2026-07-01",
+      "principal_id": "sancti:07-01:1:r",
+      "title": "The Precious Blood of Our Lord Jesus Christ",
+      "association_tier": "EXACT_DEVOTION",
+      "theme": "devotion.precious-blood",
+      "subject_relation": "EXACT_DEVOTION",
+      "existing_artwork_candidates": [
+        "met-652416",
+        "met-437342"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [],
+      "earlier_curator_selections": [],
+      "protected_approval": null,
+      "user_selection_20261027_batch01": {
+        "source": "User 2026-10-27 17:08:10Z",
+        "code": "NONE",
+        "state": "NEW_ALTERNATIVES_REQUESTED",
+        "painting": null,
+        "rights_and_quality": "NOT_CLEARED",
+        "replaces_historical_subject_approval": false
+      }
+    },
+    {
+      "date": "2026-08-15",
+      "principal_id": "sancti:08-15:1:w",
+      "title": "Assumption of the Blessed Virgin Mary",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.assumption",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "nga-46470",
+        "nga-46145"
+      ],
+      "historical_selected_artwork_id": "nga-46131",
+      "pre_oct19_visual_screen": "COMPARATIVE_REVIEW",
+      "exact_research_links": [
+        {
+          "artworkId": "met-458998",
+          "observedPrincipalId": "sancti:08-15:1:w",
+          "observedDate2026": "2026-08-15",
+          "observedTitle": "Assumption of the Blessed Virgin Mary",
+          "artist": "Bernardo Daddi",
+          "artworkTitle": "The Assumption of the Virgin",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/458998",
+          "originalSha256": "3dd3b3ef433e7d549e34ff2383a18a061de42ebb0b1207bbbd3cffb1d60ec725",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "Assumption of the Virgin exact titular event",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.assumption",
+          "artworkId": "nga-46131",
+          "originalSha256": "4644923c39a6170ef8d2d9c81fe9e0638942bd67f8d1720f6061ef145938776d",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://www.nga.gov/artworks/46131-assumption-of-the-virgin"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "FEAST_EXACT",
+        "assessment": "NGA workshop-of-Rubens Assumption depicts the feast mystery; confirm exact attribution and painting composition during user review.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      },
+      "user_selection_20261027_batch01": {
+        "source": "User 2026-10-27 17:08:10Z",
+        "code": "A",
+        "state": "CHOSEN",
+        "painting": {
+          "artist": "Guido Reni",
+          "title": "Assumption of the Virgin",
+          "source_url": "https://sammlung.staedelmuseum.de/en/work/assumption-of-the-virgin"
+        },
+        "rights_and_quality": "NOT_CLEARED",
+        "replaces_historical_subject_approval": false
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "principal_id": "sancti:09-29:1:w",
+      "title": "Dedication of St. Michael the Archangel",
+      "association_tier": "EXACT_DEVOTION",
+      "theme": "devotion.st-michael",
+      "subject_relation": "EXACT_DEVOTION",
+      "existing_artwork_candidates": [
+        "met-437729"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [
+        {
+          "artworkId": "met-437729",
+          "observedPrincipalId": "sancti:09-29:1:w",
+          "observedDate2026": "2026-09-29",
+          "observedTitle": "Dedication of St. Michael the Archangel",
+          "artist": "Ignacio de Ries",
+          "artworkTitle": "Saint Michael the Archangel",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/437729",
+          "originalSha256": "26be17aa91fd738b87c38204430e9cff8333197c585fd4f95706d25e43fc3b4e",
+          "association": "EXACT_TITULAR_SAINT",
+          "evidence": "Museum painting depicts Saint Michael, the titular archangel of observed 29 September dedication; not a depiction of the historical basilica dedication.",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [],
+      "protected_approval": null
+    },
+    {
+      "date": "2026-10-25",
+      "principal_id": "sancti:10-DU:1:w",
+      "title": "Christ the King",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.christ-king",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "met-436794"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [],
+      "earlier_curator_selections": [],
+      "protected_approval": {
+        "artist": "Ambrosius Benson",
+        "title": "Salvator Mundi",
+        "user_choice_approved": true,
+        "relation": "CHRIST_AS_SAVIOUR_AND_KING",
+        "catalogue_id": null,
+        "original_found_in_383": false,
+        "approved_date": "2026-10-25",
+        "evidence": "Explicit 2026-10-19 date-specific user selection",
+        "external_research_photo": {
+          "kind": "commons_file",
+          "file": "Ambrosius Benson - Salvator Mundi.jpeg",
+          "source": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg"
+        }
+      }
+    },
+    {
+      "date": "2026-11-01",
+      "principal_id": "sancti:11-01:1:w",
+      "title": "All Saints",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.all-saints",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "met-437743"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [
+        {
+          "artworkId": "met-437743",
+          "observedPrincipalId": "sancti:11-01:1:w",
+          "observedDate2026": "2026-11-01",
+          "observedTitle": "All Saints",
+          "artist": "Spanish Painter",
+          "artworkTitle": "The Trinity Adored by All Saints",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/437743",
+          "originalSha256": "93690bf1b31ed4b7459bacec00017dc9642a005744002dd57e9348e4ab106924",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "The Trinity Adored by All Saints includes entire saints congregation",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [],
+      "protected_approval": {
+        "artist": "Carlo Saraceni",
+        "title": "Paradise",
+        "user_choice_approved": true,
+        "relation": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+        "catalogue_id": null,
+        "original_found_in_383": false,
+        "approved_date": "2026-11-01",
+        "evidence": "Explicit 2026-10-19 date-specific user selection",
+        "external_research_photo": {
+          "kind": "met_object",
+          "id": 437607,
+          "source": "https://www.metmuseum.org/art/collection/search/437607",
+          "museum": "The Metropolitan Museum of Art, Carlo Saraceni Paradise"
+        }
+      }
+    },
+    {
+      "date": "2026-11-02",
+      "principal_id": "sancti:11-02m1:1:b",
+      "title": "Commemoration of All Souls",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.all-souls",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "met-437542"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [
+        {
+          "artworkId": "met-437542",
+          "observedPrincipalId": "sancti:11-02m1:1:b",
+          "observedDate2026": "2026-11-02",
+          "observedTitle": "Commemoration of All Souls",
+          "artist": "Workshop of Peter Paul Rubens",
+          "artworkTitle": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/437542",
+          "originalSha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "Museum painting depicts intercession for souls in Purgatory, a specific All Souls devotional subject; Saint Teresa appears in the artwork.",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [],
+      "protected_approval": {
+        "artist": "Ludovico Carracci",
+        "title": "An Angel Frees the Souls of Purgatory",
+        "user_choice_approved": true,
+        "relation": "FEAST_SPECIFIC_OR_APPROVED_CONTEXT",
+        "catalogue_id": null,
+        "original_found_in_383": false,
+        "approved_date": "2026-11-02",
+        "evidence": "Explicit 2026-10-19 date-specific user selection",
+        "external_research_photo": {
+          "kind": "commons_file",
+          "file": "Carracci-Purgatory.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg"
+        }
+      }
+    },
+    {
+      "date": "2026-11-29",
+      "principal_id": "tempora:Adv1-0:1:v",
+      "title": "I Sunday of Advent",
+      "association_tier": "GOSPEL_RESEARCH",
+      "theme": "calendar.advent",
+      "subject_relation": "GOSPEL_RESEARCH",
+      "existing_artwork_candidates": [
+        "met-436502",
+        "met-438724"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [],
+      "earlier_curator_selections": [],
+      "protected_approval": {
+        "artist": "John Martin",
+        "title": "The Great Day of His Wrath",
+        "user_choice_approved": true,
+        "relation": "ESCHATOLOGICAL_THEME_NOT_LITERAL_SUNDAY_GOSPEL",
+        "catalogue_id": null,
+        "original_found_in_383": false,
+        "approved_date": "2026-11-29",
+        "evidence": "Explicit 2026-10-19 date-specific user selection",
+        "external_research_photo": {
+          "kind": "commons_file",
+          "file": "John Martin - The Great Day of His Wrath - Google Art Project.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:John_Martin_-_The_Great_Day_of_His_Wrath_-_Google_Art_Project.jpg"
+        }
+      }
+    },
+    {
+      "date": "2026-12-06",
+      "principal_id": "tempora:Adv2-0:1:v",
+      "title": "II Sunday of Advent",
+      "association_tier": "GOSPEL_RESEARCH",
+      "theme": "calendar.advent",
+      "subject_relation": "GOSPEL_RESEARCH",
+      "existing_artwork_candidates": [
+        "met-436502",
+        "met-438724"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [],
+      "earlier_curator_selections": [],
+      "protected_approval": null
+    },
+    {
+      "date": "2026-12-08",
+      "principal_id": "sancti:12-08:1:w",
+      "title": "Immaculate Conception of the Blessed Virgin Mary",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.immaculate-conception",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "met-437423",
+        "cma-135659"
+      ],
+      "historical_selected_artwork_id": "cma-135659",
+      "pre_oct19_visual_screen": "PROMISING_AESTHETIC_FIT",
+      "exact_research_links": [
+        {
+          "artworkId": "met-437423",
+          "observedPrincipalId": "sancti:12-08:1:w",
+          "observedDate2026": "2026-12-08",
+          "observedTitle": "Immaculate Conception of the Blessed Virgin Mary",
+          "artist": "Guido Reni",
+          "artworkTitle": "The Immaculate Conception",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/437423",
+          "originalSha256": "db8e29b4bd81ab1481b32564b69ec6e40056cf28a3184fb0ba4da2bbe86e697a",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "Exact museum subject",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.immaculate-conception",
+          "artworkId": "cma-135659",
+          "originalSha256": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://clevelandart.org/art/1959.189"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "FEAST_EXACT",
+        "assessment": "Murillo's Immaculate Conception depicts the feast's distinctive iconography, subject fit only until explicit choice.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      }
+    },
+    {
+      "date": "2026-12-13",
+      "principal_id": "tempora:Adv3-0:1:pv",
+      "title": "III Sunday of Advent",
+      "association_tier": "GOSPEL_RESEARCH",
+      "theme": "calendar.advent",
+      "subject_relation": "GOSPEL_RESEARCH",
+      "existing_artwork_candidates": [
+        "met-436502",
+        "met-438724"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [],
+      "earlier_curator_selections": [],
+      "protected_approval": null
+    },
+    {
+      "date": "2026-12-20",
+      "principal_id": "tempora:Adv4-0:1:v",
+      "title": "IV Sunday of Advent",
+      "association_tier": "GOSPEL_RESEARCH",
+      "theme": "calendar.advent",
+      "subject_relation": "GOSPEL_RESEARCH",
+      "existing_artwork_candidates": [
+        "met-436502",
+        "met-438724"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [],
+      "earlier_curator_selections": [],
+      "protected_approval": null
+    },
+    {
+      "date": "2026-12-24",
+      "principal_id": "sancti:12-24:1:v",
+      "title": "Vigil of Christmas",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.christmas-eve",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "cma-143784",
+        "cma-143644",
+        "nga-46185"
+      ],
+      "historical_selected_artwork_id": null,
+      "pre_oct19_visual_screen": "NOT_SCREENED_AS_OLD_SELECTION",
+      "exact_research_links": [],
+      "earlier_curator_selections": [],
+      "protected_approval": null
+    },
+    {
+      "date": "2026-12-25",
+      "principal_id": "sancti:12-25m1:1:w",
+      "title": "The Nativity of Our Lord",
+      "association_tier": "EXACT_FEAST",
+      "theme": "calendar.christmas",
+      "subject_relation": "EXACT_FEAST",
+      "existing_artwork_candidates": [
+        "cma-143784",
+        "cma-143644",
+        "nga-46185"
+      ],
+      "historical_selected_artwork_id": "cma-143784",
+      "pre_oct19_visual_screen": "PROMISING_AESTHETIC_FIT",
+      "exact_research_links": [
+        {
+          "artworkId": "met-435584",
+          "observedPrincipalId": "sancti:12-25m1:1:w",
+          "observedDate2026": "2026-12-25",
+          "observedTitle": "The Nativity of Our Lord",
+          "artist": "Antoniazzo Romano",
+          "artworkTitle": "The Nativity",
+          "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/435584",
+          "originalSha256": "f9293a3fe3c493805a59c912651cfbdc6ec6decbc75d0cf5c460638c1ad862e4",
+          "association": "EXACT_FEAST_SUBJECT",
+          "evidence": "Nativity exact feast event; Christmas night/appointed text link not certified",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "earlier_curator_selections": [
+        {
+          "targetId": "calendar.christmas",
+          "artworkId": "cma-143784",
+          "originalSha256": "5de97b5cb76dbbaaf40dad652b5788667fa1e41a65327db10363e7d675eef2cc",
+          "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+          "sourceRights": "CC0",
+          "sourceUrl": "https://clevelandart.org/art/1968.22"
+        }
+      ],
+      "protected_approval": null,
+      "editorial_screen_20261026": {
+        "status": "FEAST_EXACT",
+        "assessment": "Dolci's Adoration of the Shepherds depicts the Nativity of Christ; candidate, not automatically the chosen Christmas hero.",
+        "previous_selection_is_not_date_approval": true,
+        "proposed_exact_artwork_id": null,
+        "new_user_selection_made": false,
+        "photo_release_cleared": false
+      }
+    }
+  ],
+  "user_decision_updates": [
+    {
+      "date": "2026-04-02",
+      "superseded": "Ugolino da Siena — Last Supper",
+      "new_hero": "Philippe de Champaigne — La Petite Cène",
+      "date_of_user_decision": "2026-10-26",
+      "status": "effective_protected_artwork_selection",
+      "shared_painting_with": "2026-05-27",
+      "production_image_approved": false
+    },
+    {
+      "date": "2026-02-18",
+      "user_confirmed_utc": "2026-10-26T18:45:44Z",
+      "review_round": "CLASS_I_ROUND_1_LENT_2026",
+      "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+      "chosen_option_letter": "A",
+      "artist": "Georges de La Tour",
+      "title": "The Penitent Magdalen",
+      "artwork_id": "met-436839",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-02-22",
+      "user_confirmed_utc": "2026-10-26T18:45:44Z",
+      "review_round": "CLASS_I_ROUND_1_LENT_2026",
+      "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+      "chosen_option_letter": "B",
+      "artist": "Ivan Kramskoi",
+      "title": "Christ in the Wilderness",
+      "artwork_id": "external:tretyakov:inv651",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-03-01",
+      "user_confirmed_utc": "2026-10-26T18:45:44Z",
+      "review_round": "CLASS_I_ROUND_1_LENT_2026",
+      "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+      "chosen_option_letter": "C",
+      "artist": "Giovanni Bellini",
+      "title": "The Transfiguration",
+      "artwork_id": "external:capodimonte:bellini-transfiguration",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-03-08",
+      "user_confirmed_utc": "2026-10-26T18:45:44Z",
+      "review_round": "CLASS_I_ROUND_1_LENT_2026",
+      "status": "OPEN_UNDECIDED_HOLD",
+      "chosen_option_letter": null,
+      "artist": null,
+      "title": null,
+      "artwork_id": null,
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-03-15",
+      "user_confirmed_utc": "2026-10-26T18:55:00Z",
+      "review_round": "CLASS_I_ROUND_2_LENT_2026",
+      "status": "OPEN_UNDECIDED_HOLD",
+      "chosen_option_letter": null,
+      "artist": null,
+      "title": null,
+      "artwork_id": null,
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-03-19",
+      "user_confirmed_utc": "2026-10-26T18:55:00Z",
+      "review_round": "CLASS_I_ROUND_2_LENT_2026",
+      "status": "OPEN_RESEARCH_HOLD",
+      "chosen_option_letter": null,
+      "artist": null,
+      "title": null,
+      "artwork_id": null,
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-03-22",
+      "user_confirmed_utc": "2026-10-26T18:55:00Z",
+      "review_round": "CLASS_I_ROUND_2_LENT_2026",
+      "status": "OPEN_RESEARCH_HOLD",
+      "chosen_option_letter": null,
+      "artist": null,
+      "title": null,
+      "artwork_id": null,
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-03-25",
+      "user_confirmed_utc": "2026-10-26T18:55:00Z",
+      "review_round": "CLASS_I_ROUND_2_LENT_2026",
+      "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+      "chosen_option_letter": "B",
+      "artist": "Orazio Gentileschi",
+      "title": "The Annunciation",
+      "artwork_id": "external:galleria-sabauda:orazio-gentileschi-annunciation-1623",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-03-30",
+      "user_confirmed_utc": "2026-10-26T19:05:04Z",
+      "review_round": "CLASS_I_ROUND_3_HOLY_WEEK_2026",
+      "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+      "chosen_option_letter": "B",
+      "artist": "Peter Paul Rubens and workshop, with Anthony van Dyck",
+      "title": "The Feast in the House of Simon the Pharisee",
+      "artwork_id": "external:hermitage:rubens-vandyck-feast-simon-pharisee",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-03-31",
+      "user_confirmed_utc": "2026-10-26T19:05:04Z",
+      "review_round": "CLASS_I_ROUND_3_HOLY_WEEK_2026",
+      "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+      "chosen_option_letter": "B",
+      "artist": "Michelangelo Merisi da Caravaggio",
+      "title": "The Taking of Christ",
+      "artwork_id": "external:ngi:L.14702",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-04-01",
+      "user_confirmed_utc": "2026-10-26T19:05:04Z",
+      "review_round": "CLASS_I_ROUND_3_HOLY_WEEK_2026",
+      "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+      "chosen_option_letter": "B",
+      "artist": "Gerrit van Honthorst",
+      "title": "Christ before the High Priest",
+      "artwork_id": "external:nationalgallery:NG3679",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-04-03",
+      "user_confirmed_utc": "2026-10-26T19:05:04Z",
+      "review_round": "CLASS_I_ROUND_3_HOLY_WEEK_2026",
+      "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+      "chosen_option_letter": "C",
+      "artist": "Peter Paul Rubens",
+      "title": "The Descent from the Cross (central panel of Antwerp Cathedral triptych)",
+      "artwork_id": "external:antwerp-cathedral:rubens-descent-cross-central-panel",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date_range": [
+        "2026-04-04",
+        "2026-04-05",
+        "2026-04-06",
+        "2026-04-07"
+      ],
+      "user_confirmed_utc": "2026-10-26T19:14:52Z",
+      "review_round": "CLASS_I_ROUND_4_EASTER_2026",
+      "status": "REQUEST_MORE_RESEARCH_ALL_FOUR; NO_PAINTING_CHOSEN",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-04-06",
+      "user_confirmed_utc": "2026-10-26T19:40:00Z",
+      "review_round": "CLASS_I_ROUND_4_EASTER_REVISED_2026",
+      "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+      "chosen_option_letter": "B",
+      "artist": "Matthias Stom",
+      "title": "The Supper at Emmaus",
+      "artwork_id": "external:thyssen:375-1976.66",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-04-07",
+      "user_confirmed_utc": "2026-10-26T19:40:00Z",
+      "review_round": "CLASS_I_ROUND_4_EASTER_REVISED_2026",
+      "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+      "chosen_option_letter": "A",
+      "artist": "Peter Paul Rubens",
+      "title": "Resurrected Christ Appearing to the Apostles — central panel of Rockox–Pérez triptych",
+      "artwork_id": "external:kmska:307-rockox-center",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-04-04",
+      "user_confirmed_utc": "2026-10-26T19:40:00Z",
+      "review_round": "CLASS_I_ROUND_4_EASTER_REVISED_2026",
+      "status": "OPEN_UNDECIDED_HOLD",
+      "chosen_option_letter": null,
+      "artist": null,
+      "title": null,
+      "artwork_id": null,
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-04-05",
+      "user_confirmed_utc": "2026-10-26T19:40:00Z",
+      "review_round": "CLASS_I_ROUND_4_EASTER_REVISED_2026",
+      "status": "OPEN_UNDECIDED_HOLD",
+      "chosen_option_letter": null,
+      "artist": null,
+      "title": null,
+      "artwork_id": null,
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-04-08",
+      "user_confirmed_utc": "2026-10-26T19:52:16Z",
+      "review_round": "CLASS_I_ROUND_5_EASTER_OCTAVE_2026",
+      "status": "OPEN_RESEARCH_HOLD",
+      "chosen_option_letter": null,
+      "artist": null,
+      "title": null,
+      "artwork_id": null,
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-04-09",
+      "user_confirmed_utc": "2026-10-26T19:52:16Z",
+      "review_round": "CLASS_I_ROUND_5_EASTER_OCTAVE_2026",
+      "status": "OPEN_RESEARCH_HOLD",
+      "chosen_option_letter": null,
+      "artist": null,
+      "title": null,
+      "artwork_id": null,
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-04-10",
+      "user_confirmed_utc": "2026-10-26T19:52:16Z",
+      "review_round": "CLASS_I_ROUND_5_EASTER_OCTAVE_2026",
+      "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+      "chosen_option_letter": "C",
+      "artist": "Nicolas Poussin",
+      "title": "The Sacrament of Ordination (Christ Presenting the Keys to Saint Peter)",
+      "artwork_id": "external:kimbell:AP-2011.01",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-04-11",
+      "user_confirmed_utc": "2026-10-26T19:52:16Z",
+      "review_round": "CLASS_I_ROUND_5_EASTER_OCTAVE_2026",
+      "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+      "chosen_option_letter": "A",
+      "artist": "Eugène Burnand",
+      "title": "Les Disciples Pierre et Jean courant au Sépulcre le matin de la Résurrection",
+      "artwork_id": "external:orsay:RF-1153",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-04-12",
+      "user_confirmed_utc": "2026-10-27T05:01:11Z",
+      "review_round": "CLASS_I_ROUND_6_PASCHALTIDE_2026",
+      "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+      "chosen_option_letter": "A",
+      "artist": "Michelangelo Merisi da Caravaggio",
+      "title": "The Incredulity of Saint Thomas",
+      "artwork_id": "external:potsdam:caravaggio-incredulity-thomas",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-05-01",
+      "user_confirmed_utc": "2026-10-27T05:01:11Z",
+      "review_round": "CLASS_I_ROUND_6_PASCHALTIDE_2026",
+      "status": "APPROVED_DATE_SPECIFIC_PAINTING",
+      "chosen_option_letter": "C",
+      "artist": "Georges de La Tour",
+      "title": "Saint Joseph the Carpenter",
+      "artwork_id": "external:louvre:RF-1948-27",
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-05-14",
+      "user_confirmed_utc": "2026-10-27T05:01:11Z",
+      "review_round": "CLASS_I_ROUND_6_PASCHALTIDE_2026",
+      "status": "OPEN_UNDECIDED_HOLD",
+      "chosen_option_letter": null,
+      "artist": null,
+      "title": null,
+      "artwork_id": null,
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "date": "2026-05-25",
+      "user_confirmed_utc": "2026-10-27T05:01:11Z",
+      "review_round": "CLASS_I_ROUND_6_PASCHALTIDE_2026",
+      "status": "OPEN_UNDECIDED_HOLD",
+      "chosen_option_letter": null,
+      "artist": null,
+      "title": null,
+      "artwork_id": null,
+      "photo_approved": false,
+      "production_image_approved": false,
+      "rights_reuse_approved": false
+    },
+    {
+      "source": "User 2026-10-27 17:08:10Z",
+      "batch": "CLASS_I_10_DATE_01",
+      "date_count": 10,
+      "selected": 5,
+      "requested_new_alternatives": 5,
+      "source_file": "data/research/sacred-art-20261027-class-i-10-date-batch01.v1.json",
+      "production_release": false
+    }
+  ],
+  "editorial_screen_20261026": {
+    "scope": "28 earlier subject selections already in B56; original identifiers preserved",
+    "reviewed_date_rows": 28,
+    "unique_previous_subject_artwork_ids": 15,
+    "locked_10_untouched": true,
+    "production_photos_released": 0,
+    "status_counts": {
+      "OCTAVE_CONTEXT": 6,
+      "FEAST_EXACT": 8,
+      "PERSON_CONTEXT": 2,
+      "ARCHIVED_SELECTION_EXCLUDED": 1,
+      "PASSION_CONTEXT": 1,
+      "GOSPEL_DIFFERENT": 7,
+      "THEOLOGICAL_CONTEXT": 1,
+      "WRONG_EVENT": 1,
+      "WRONG_SUBJECT": 1
+    },
+    "source_caution": "Only editorial iconographic matching. Does not approve date hero, photo, or image distribution."
+  },
+  "editorial_round_summary_20261026": {
+    "previous_protected_date_approvals": 10,
+    "new_confirmed_date_painting_choices": 14,
+    "total_confirmed_date_paintings": 24,
+    "class_i_dates": 53,
+    "still_open_date_choices": 29,
+    "of_which_explicit_open_hold": 8,
+    "photo_release_count": 0,
+    "no_contact_or_payments": true,
+    "no_automated_candidate_approvals": true,
+    "only_explicit_round_1_and_2_user_choices_written": true,
+    "latest_review_round": "CLASS_I_ROUND_6_PASCHALTIDE_2026",
+    "identity_reference_corroborated": "Gentileschi Galleria Sabauda 469, Zeri; no photograph release",
+    "only_explicit_round_1_2_and_3_user_choices_written": true,
+    "round4_dates_held_open_for_deeper_research": 4,
+    "round4_new_painting_approvals": 2,
+    "round4_verified_alternative_originals": 15,
+    "round4_latest_user_kept_undecided_dates": [
+      "2026-04-04",
+      "2026-04-05"
+    ],
+    "round4_explicit_paintings_selected": [
+      "2026-04-06",
+      "2026-04-07"
+    ],
+    "all_painting_choices_not_photo_rights": true,
+    "round5_new_painting_approvals": 2,
+    "round5_new_research_holds": 2,
+    "round6_new_painting_approvals": 2,
+    "round6_new_undecided_holds": 2,
+    "only_explicit_round_1_through_6_user_choices_written": true
+  }
+}

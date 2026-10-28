@@ -1,0 +1,158 @@
+{
+  "schema": "AO_SACRED_ART_2026_10_27_PREFERENCE_AND_REFOCUS_V1",
+  "user_timestamp": "2026-10-27T16:18:01Z",
+  "authority": "User comments; no irrevocable final choices inferred or original approved paintings superseded.",
+  "user_decisions": {
+    "evening": {
+      "primary_favorite": {
+        "id": "E9",
+        "artwork": "Jean-François Millet — The Angelus",
+        "status": "PREFERRED_NOT_YET_EXPLICITLY_FINAL_2026_10_27"
+      },
+      "positive_reserve": {
+        "id": "E6",
+        "artwork": "Moritz Müller — Evening Prayer",
+        "status": "USER_LIKED_BACKUP"
+      },
+      "rest": "do not infer additional approval"
+    },
+    "guardian": {
+      "direction": "Consider Saint Michael the Archangel as Guardian Angel module hero imagery",
+      "status": "USER_SUGGESTED_NOT_LOCKED",
+      "theology": "St Michael is a protector/intercessor but not automatically each person's personal guardian angel; prayer copy and feast labels must remain distinct.",
+      "avoid_duplication": "Existing distinct Saint Michael hero is Guido Reni, so prefer a different painting if needed unless user approves reuse.",
+      "choice_code": "M4",
+      "artist": "Guido Reni",
+      "title": "Archangel Michael Defeating Satan",
+      "user_response": "M4 ... good",
+      "editorial_status": "USER_APPROVED_FOR_GUARDIAN_HERO_2026_10_27",
+      "existing_reuse_source_module": "michael",
+      "quality_legal_release": "UNVERIFIED",
+      "reuse_same_photo_and_source_id": true
+    },
+    "joseph": {
+      "portrayal": "YOUTHFUL_OR_MATURE_ACTIVE_JOSEPH_NOT_ELDERLY_WHITE_BEARD",
+      "subject_scope": [
+        "St Joseph alone",
+        "Joseph with Christ Child",
+        "Joseph as protective father",
+        "Holy Family with Joseph prominently portrayed",
+        "Carpentry/workshop"
+      ],
+      "not_restricted_to_dream": true,
+      "older_user_approved": "Philippe de Champaigne Dream of Saint Joseph retained pending replacement",
+      "choice_code": "S4",
+      "artist": "Claudio Coello",
+      "title": "St Joseph and the Christ Child",
+      "source_object": "https://emuseum.toledomuseum.org/objects/55088/st-joseph-and-the-christ-child",
+      "user_response": "S4 ... good",
+      "editorial_status": "USER_APPROVED_FOR_JOSEPH_HERO_2026_10_27",
+      "photo_rights": "NOT_VERIFIED"
+    }
+  },
+  "refreshed_unapproved_saint_joseph_candidates": [
+    {
+      "code": "YJ1",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "St Joseph and the Sleeping Christ Child",
+      "museum": "Mildred Lane Kemper Art Museum WU 3640",
+      "object": "https://www.kemperartmuseum.wustl.edu/collection/search-results/wu-3640-bartolome-esteban-murillo-spanish-16181682-st-joseph-and-the-sleeping-christ-child-c-166875",
+      "photo": "https://s3.us-central-1.wasabisys.com/kemper-new/media/w1500/permanent_0_4571/3640.tif.jpg",
+      "photo_reuse": "Museum image reuse terms not yet verified",
+      "visual": "Young dark-haired father, infant asleep; quiet grey dusk, full painting",
+      "note": "Strong visual-fit contender"
+    },
+    {
+      "code": "YJ2",
+      "artist": "Francisco de Herrera the Elder",
+      "title": "St Joseph and the Christ Child",
+      "museum": "Szépművészeti Múzeum Budapest (work requires exact match to Commons variant)",
+      "object": "https://www.szepmuveszeti.hu/mutargyak/10478/",
+      "photo": "https://commons.wikimedia.org/wiki/File:Francisco_de_Herrera_the_Elder_St_Joseph_And_The_Child.jpg",
+      "photo_reuse": "Commons PD-Art faithful image; cross-territory terms unconfirmed",
+      "visual": "Dark Spanish-Baroque Joseph with dark hair, boy in pink and ochre drapery",
+      "note": "Object/copy and photo must be matched to avoid confusing similar variants"
+    },
+    {
+      "code": "YJ3",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "Saint Joseph Leading the Christ Child",
+      "museum": "State Hermitage Museum, St Petersburg",
+      "object": "https://commons.wikimedia.org/wiki/File:Murillo_-_St_Joseph_Leading_the_Christ_Child,_1670s.jpg",
+      "photo_reuse": "Commons PD-Art; original 1360 × 1920, source terms may vary",
+      "visual": "Mature non-elderly Joseph leading young Jesus, golden dusk"
+    },
+    {
+      "code": "YJ4",
+      "artist": "Claudio Coello",
+      "title": "St Joseph and the Christ Child",
+      "museum": "Toledo Museum of Art 1981.44",
+      "object": "https://emuseum.toledomuseum.org/objects/55088/st-joseph-and-the-christ-child",
+      "photo": "https://commons.wikimedia.org/wiki/File:San_Jos%C3%A9_con_el_Ni%C3%B1o_-_Claudio_Coello.jpg",
+      "photo_reuse": "Museum has 2000px full download, Commons PD-Art; exact commercial policy not verified",
+      "visual": "Specifically described as young father by museum, 1666, ornate Baroque altarpiece",
+      "note": "Avoid any exterior frame; arched composition historic"
+    },
+    {
+      "code": "YJ5",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "Saint Joseph and the Christ Child",
+      "museum": "John and Mable Ringling Museum of Art",
+      "object": "https://commons.wikimedia.org/wiki/File:Murillo_-_Saint_Joseph_and_the_Christ_Child,_ca._1670-75.jpg",
+      "photo_reuse": "Commons PD-Art, extant source 786×1000 is low-res",
+      "visual": "Close dark waist-up portrait of younger dark-haired Joseph and baby",
+      "note": "Good artistic fit; image-quality likely needs independently freer and higher resolution same original"
+    }
+  ],
+  "saint_michael_hero_direction_candidates": [
+    {
+      "code": "AM1",
+      "artist": "Guido Reni",
+      "title": "Saint Michael Defeating Satan",
+      "status": "ALREADY_APPROVED_FOR_DISTINCT_SAINT_MICHAEL_MODULE",
+      "photo": "research/module-hero-pd-masters-20261026/assets/staged/module-hero-masters/michael.jpg",
+      "note": "Reuse possible without new selection, but visually duplicates module identity"
+    },
+    {
+      "code": "AM2",
+      "artist": "Ignacio de Ries",
+      "title": "Saint Michael the Archangel",
+      "museum": "Met 437729",
+      "object": "https://www.metmuseum.org/art/collection/search/437729",
+      "photo": "https://commons.wikimedia.org/wiki/File:Saint_Michael_the_Archangel_MET_DT360124.jpg",
+      "license": "MET_CC0_EXACT_PHOTO_2489x3722",
+      "note": "Best immediate zero-fee, explicitly designated CC0 alternative for guardian/protector imagery"
+    },
+    {
+      "code": "AM3",
+      "artist": "Luca Giordano",
+      "title": "Saint Michael",
+      "museum": "Gemäldegalerie Berlin",
+      "object": "https://commons.wikimedia.org/wiki/File:Luca_giordano,_san_michele_arcangelo,_1663_ca._01.jpg",
+      "license": "SAILKO_CC_BY_3_0_PHOTOGRAPH",
+      "note": "Different painting from current Saint Michael hero; credit and change notice necessary"
+    },
+    {
+      "code": "AM4",
+      "artist": "Raphael",
+      "title": "Saint Michael Vanquishing Satan",
+      "museum": "Louvre",
+      "object": "https://commons.wikimedia.org/wiki/File:Raphael_-_St._Michael_Vanquishing_Satan.jpg",
+      "license": "COMMONS_PD_ART_SOURCE_REVIEW_PENDING",
+      "note": "More Renaissance, less Baroque"
+    }
+  ],
+  "guardrails": [
+    "All previous rejected 15 remain rejected",
+    "Retain original approved artwork objects until explicit replacement choice",
+    "No extrapolation that Saint Michael is the user's personal guardian angel",
+    "Strict zero euro, no contacts, no rushed rights claims",
+    "No artistic re-selection of Evening Prayer without respecting E9 preference"
+  ],
+  "last_user_selection": {
+    "timestamp": "2026-10-27T16:28:13Z",
+    "verbatim": "M4 and S4 are good.... ok lets move on to other modules",
+    "interpretation": "M4 and S4 accepted as module hero painting choices; E9 prior favourite retained; do not reopen these three in next round"
+  },
+  "editorial_update_applied_to_production": false
+}

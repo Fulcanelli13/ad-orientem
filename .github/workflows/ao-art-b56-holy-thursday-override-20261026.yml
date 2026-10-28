@@ -1,0 +1,27 @@
+name: B56 Class I 53-date Holy Thursday artwork revision gate
+on:
+  push:
+    branches: [research/sacred-art-b56-classi-53-hero-selector-20261024]
+    paths:
+      - .github/workflows/ao-art-b56-holy-thursday-override-20261026.yml
+      - data/research/sacred-art-b56-53-classi-curated-source-seed.json
+      - scripts/research/sacred_art_b56_53_hero_selector.py
+      - tests/sacred-art-b56-holy-thursday-override-20261026.mjs
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-of-truth-reconciliation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check 53 feast dates, latest Champaigne choice, preserved historical approval and frame guards
+        run: node tests/sacred-art-b56-holy-thursday-override-20261026.mjs
+      - name: Ensure 53-feast visual selector generator compiles
+        run: python3 -m py_compile scripts/research/sacred_art_b56_53_hero_selector.py
+      - name: Research viewer only, no publication
+        run: echo "B56 original research gallery remains separate and offline. Source-photo release remains blocked."

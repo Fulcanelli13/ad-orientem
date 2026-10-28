@@ -1,0 +1,490 @@
+{
+  "schema": "AO_SACRED_ART_CLASS_I_TEN_DATE_EDITORIAL_BATCH_V1",
+  "created_date": "2026-10-27",
+  "branch": "research/sacred-art-b56-classi-53-hero-selector-20261024",
+  "locked_policy": [
+    "Ten DATE choices reviewed together, not one feast per conversation",
+    "Preserve historical explicitly approved artwork placements, no silent re-votes",
+    "Cites exact object pages and preserves photo-rights gaps separately from artist choice",
+    "Strictly zero euro, no contacting rights holders, no fees",
+    "If no candidate liked select NONE, defer, continue rest of ten",
+    "Photographic frame, colour, full painted surface and source SHA are separate production gate",
+    "Post Resurrection John 21 must not be confused with Luke 5",
+    "No media release or new approval from assembling batch"
+  ],
+  "counts": {
+    "dates": 10,
+    "choices": 26,
+    "user_votes": 10,
+    "app_releases": 0,
+    "user_choices": 5,
+    "more_research": 5
+  },
+  "other_historical_approvals_preserved": [
+    "2026-01-01 Tintoretto Circumcision",
+    "2026-04-05 Bouguereau Holy Women at Tomb",
+    "2026-05-14 Hans Süss von Kulmbach Ascension pending reconciliation",
+    "2026-05-31 Girardin Trinity",
+    "2026-06-24 Andrea Sacchi Birth of St John",
+    "2026-12-06 Willmann Family of Christ",
+    "2026-12-13 Strozzi John Baptist Interrogated",
+    "2026-12-20 Gaulli Preaching St John"
+  ],
+  "records": [
+    {
+      "batch_index": 1,
+      "date": "2026-01-06",
+      "celebration": "Epiphany",
+      "theme": "Adoration of the Magi",
+      "editorial_state": "AWAITING_FIRST_USER_BATCH_VOTE",
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Guido Reni",
+          "title": "Adoration of the Magi",
+          "source_url": "https://www.clevelandart.org/art/1969.132",
+          "photo_reuse_status": "CMA_OPEN_ACCESS",
+          "notes": "Large, dramatic Baroque altarpiece; unfinished in passages",
+          "selected_by_user": false
+        },
+        {
+          "code": "B",
+          "artist": "Titian and workshop",
+          "title": "Adoration of the Magi",
+          "source_url": "https://www.clevelandart.org/art/1957.150",
+          "photo_reuse_status": "CMA_OPEN_ACCESS",
+          "notes": "Dark panoramic Epiphany; note historic overcleaning",
+          "selected_by_user": false
+        },
+        {
+          "code": "C",
+          "artist": "Giovanni Battista Tiepolo",
+          "title": "Adoration of the Magi",
+          "source_url": "https://www.metmuseum.org/art/collection/search/437789",
+          "photo_reuse_status": "MET_OPEN_ACCESS",
+          "notes": "Dynamic oil sketch; lighter and sketchier",
+          "selected_by_user": false
+        }
+      ],
+      "other_choice": "NONE_RESEARCH_MORE",
+      "existing_user_approval_override": false,
+      "photo_release_authorized": false,
+      "batch1_vote": {
+        "code": "NONE",
+        "status": "NEW_ALTERNATIVES_REQUESTED",
+        "chosen_candidate": null,
+        "rights_release": false
+      }
+    },
+    {
+      "batch_index": 2,
+      "date": "2026-03-15",
+      "celebration": "Laetare Sunday",
+      "theme": "John 6:1–15, Multiplication of Loaves",
+      "editorial_state": "AWAITING_FIRST_USER_BATCH_VOTE",
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Giovanni Lanfranco",
+          "title": "Miracle of the Loaves and Fishes",
+          "source_url": "https://catalogo.fondazionezeri.unibo.it/entry/work/53025/",
+          "photo_reuse_status": "NGI_PHOTO_LICENSE_EXACT_UNVERIFIED",
+          "notes": "Wide atmospheric Roman Baroque, NGI inv.72",
+          "selected_by_user": false
+        },
+        {
+          "code": "B",
+          "artist": "Ambrosius Francken I",
+          "title": "The Multiplication of Loaves and Fishes",
+          "source_url": "https://kmska.be/en/masterpiece/the-multiplication-of-loaves-and-fishes",
+          "photo_reuse_status": "KMSKA_IMAGE_CC0_COLLECTION_DECLARATION",
+          "notes": "Antwerp 1598; central panel of altarpiece, darker detailed scene",
+          "selected_by_user": false
+        }
+      ],
+      "other_choice": "NONE_RESEARCH_MORE",
+      "existing_user_approval_override": false,
+      "photo_release_authorized": false,
+      "batch1_vote": {
+        "code": "A",
+        "status": "CHOSEN",
+        "chosen_candidate": {
+          "code": "A",
+          "artist": "Giovanni Lanfranco",
+          "title": "Miracle of the Loaves and Fishes",
+          "source_url": "https://catalogo.fondazionezeri.unibo.it/entry/work/53025/",
+          "photo_reuse_status": "NGI_PHOTO_LICENSE_EXACT_UNVERIFIED",
+          "notes": "Wide atmospheric Roman Baroque, NGI inv.72",
+          "selected_by_user": false
+        },
+        "rights_release": false
+      }
+    },
+    {
+      "batch_index": 3,
+      "date": "2026-03-19",
+      "celebration": "St Joseph, Spouse of the Blessed Virgin",
+      "theme": "Youthful Joseph with Christ",
+      "editorial_state": "AWAITING_FIRST_USER_BATCH_VOTE",
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Claudio Coello",
+          "title": "St Joseph and the Christ Child",
+          "source_url": "https://emuseum.toledomuseum.org/objects/55088/st-joseph-and-the-christ-child",
+          "photo_reuse_status": "TOLEDO_EXACT_PHOTO_TERMS_PENDING",
+          "notes": "Reuse user-liked S4, physically the young father with Christ and tools",
+          "selected_by_user": false
+        },
+        {
+          "code": "B",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "St Joseph and the Sleeping Christ Child",
+          "source_url": "https://www.kemperartmuseum.wustl.edu/collection/search-results/wu-3640-bartolome-esteban-murillo-spanish-16181682-st-joseph-and-the-sleeping-christ-child-c-166875",
+          "photo_reuse_status": "KEMPER_EXACT_PHOTO_TERMS_PENDING",
+          "notes": "Young dark-haired Joseph, subdued intimacy",
+          "selected_by_user": false
+        }
+      ],
+      "other_choice": "NONE_RESEARCH_MORE",
+      "existing_user_approval_override": false,
+      "photo_release_authorized": false,
+      "batch1_vote": {
+        "code": "A",
+        "status": "CHOSEN",
+        "chosen_candidate": {
+          "code": "A",
+          "artist": "Claudio Coello",
+          "title": "St Joseph and the Christ Child",
+          "source_url": "https://emuseum.toledomuseum.org/objects/55088/st-joseph-and-the-christ-child",
+          "photo_reuse_status": "TOLEDO_EXACT_PHOTO_TERMS_PENDING",
+          "notes": "Reuse user-liked S4, physically the young father with Christ and tools",
+          "selected_by_user": false
+        },
+        "rights_release": false
+      }
+    },
+    {
+      "batch_index": 4,
+      "date": "2026-04-04",
+      "celebration": "Holy Saturday",
+      "theme": "Entombment or the stillness before Easter",
+      "editorial_state": "AWAITING_FIRST_USER_BATCH_VOTE",
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Annibale Carracci",
+          "title": "The Burial of Christ",
+          "source_url": "https://www.metmuseum.org/art/collection/search/438338",
+          "photo_reuse_status": "MET_OPEN_ACCESS",
+          "notes": "Dark torchlit chamber, oil on copper",
+          "selected_by_user": false
+        },
+        {
+          "code": "B",
+          "artist": "Caravaggio",
+          "title": "The Deposition (Entombment of Christ)",
+          "source_url": "https://www.vaticannews.va/en/vatican-city/news/2021-03/vatican-museums-art-prayer-faith-lent-consolation-pope-9.html",
+          "photo_reuse_status": "VATICAN_MUSEUM_PHOTO_RESTRICTED_FIND_ALTERNATIVE_SOURCE",
+          "notes": "Very strong nocturnal Baroque; exact photo reuse blocked",
+          "selected_by_user": false
+        },
+        {
+          "code": "C",
+          "artist": "Frans Francken II",
+          "title": "The Marys at the Tomb",
+          "source_url": "https://chazen.wisc.edu/the-art-of-easter/",
+          "photo_reuse_status": "CHAZEN_EXACT_PHOTO_RIGHTS_UNVERIFIED",
+          "notes": "Resurrection dawn rather than Holy Saturday itself, thematic anticipation",
+          "selected_by_user": false
+        }
+      ],
+      "other_choice": "NONE_RESEARCH_MORE",
+      "existing_user_approval_override": false,
+      "photo_release_authorized": false,
+      "batch1_vote": {
+        "code": "NONE",
+        "status": "NEW_ALTERNATIVES_REQUESTED",
+        "chosen_candidate": null,
+        "rights_release": false
+      }
+    },
+    {
+      "batch_index": 5,
+      "date": "2026-04-08",
+      "celebration": "Wednesday in the Easter Octave",
+      "theme": "John 21:1–14, Christ on the shore of Tiberias",
+      "editorial_state": "AWAITING_FIRST_USER_BATCH_VOTE",
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "James Tissot",
+          "title": "Christ Appears on the Shore of Lake Tiberias",
+          "source_url": "https://opencollection.brooklynmuseum.org/objects/4615",
+          "photo_reuse_status": "BROOKLYN_EXACT_IMAGE_REUSE_TO_VERIFY",
+          "notes": "Exact post-Resurrection Gospel scene; watercolour",
+          "selected_by_user": false
+        },
+        {
+          "code": "B",
+          "artist": "Jacopo Bassano",
+          "title": "Miraculous Draught of Fishes",
+          "source_url": "https://act.library.vanderbilt.edu/artworks/55336",
+          "photo_reuse_status": "COMMONS_PD_ART_EXACT_VERSION_REVIEW",
+          "notes": "Artwork described as John 21:1–19, full-scale fresco cartoon",
+          "selected_by_user": false
+        },
+        {
+          "code": "C",
+          "artist": "Studio of Jacob Jordaens",
+          "title": "Miraculous Draught of Fishes",
+          "source_url": "https://artmuseum.princeton.edu/art/collections/objects/29845",
+          "photo_reuse_status": "PRINCETON_FREE_PUBLIC_DOMAIN_IMAGE",
+          "notes": "Baroque oil; possible Luke 5 pre-Resurrection subject, NOT exact John 21",
+          "selected_by_user": false
+        }
+      ],
+      "other_choice": "NONE_RESEARCH_MORE",
+      "existing_user_approval_override": false,
+      "photo_release_authorized": false,
+      "batch1_vote": {
+        "code": "NONE",
+        "status": "NEW_ALTERNATIVES_REQUESTED",
+        "chosen_candidate": null,
+        "rights_release": false
+      }
+    },
+    {
+      "batch_index": 6,
+      "date": "2026-04-09",
+      "celebration": "Thursday in the Easter Octave",
+      "theme": "John 20, Noli me tangere",
+      "editorial_state": "AWAITING_FIRST_USER_BATCH_VOTE",
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Battistello Caracciolo",
+          "title": "Noli me tangere",
+          "source_url": "https://www.palazzopretorio.prato.it/en/explore-the-museum/artworks/1328-noli-me-tangere/",
+          "photo_reuse_status": "PRATO_PHOTO_REUSE_UNVERIFIED",
+          "notes": "1618 Neapolitan tenebrism; exact Gospel moment",
+          "selected_by_user": false
+        },
+        {
+          "code": "B",
+          "artist": "Workshop of Peter Paul Rubens",
+          "title": "Christ Appearing to Mary Magdalen as a Gardener",
+          "source_url": "https://www.rijksmuseum.nl/en/collection/object/Christ-Appearing-to-Mary-Magdalen-as-a-Gardener-Noli-me-Tangere--0b68164e0067c63c7c3cd42174531725",
+          "photo_reuse_status": "RIJKSMUSEUM_ART_PD_IMAGE_DIGITAL_UNAVAILABLE",
+          "notes": "Caravaggesque garden scene; public-domain object but image not downloadable from current museum page",
+          "selected_by_user": false
+        },
+        {
+          "code": "C",
+          "artist": "Claude Lorrain",
+          "title": "Christ Appears in front of Mary Magdalene (Noli me tangere)",
+          "source_url": "https://sammlung.staedelmuseum.de/en/work/christ-appears-in-front-of-mary-magdalene",
+          "photo_reuse_status": "STADEL_PUBLIC_DOMAIN_OBJECT_EXACT_FILE_CHECK",
+          "notes": "Broad sunrise landscape, less dark than preference",
+          "selected_by_user": false
+        }
+      ],
+      "other_choice": "NONE_RESEARCH_MORE",
+      "existing_user_approval_override": false,
+      "photo_release_authorized": false,
+      "batch1_vote": {
+        "code": "NONE",
+        "status": "NEW_ALTERNATIVES_REQUESTED",
+        "chosen_candidate": null,
+        "rights_release": false
+      }
+    },
+    {
+      "batch_index": 7,
+      "date": "2026-06-04",
+      "celebration": "Corpus Christi",
+      "theme": "Eucharistic institution and adoration",
+      "editorial_state": "AWAITING_FIRST_USER_BATCH_VOTE",
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Philippe de Champaigne",
+          "title": "La Petite Cène",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010062076",
+          "photo_reuse_status": "LOUVRE_PHOTOGRAPHIC_REUSE_RESTRICTED",
+          "notes": "User already approved same painting for Holy Thursday and Pentecost Ember Wednesday; one shared asset",
+          "selected_by_user": false
+        },
+        {
+          "code": "B",
+          "artist": "Nicolas Poussin",
+          "title": "Eucharist (Seven Sacraments)",
+          "source_url": "https://www.nationalgallery.org.uk/paintings/nicolas-poussin-eucharist",
+          "photo_reuse_status": "NATIONAL_GALLERY_IMAGE_NC_ND_DO_NOT_REUSE_DIRECTLY",
+          "notes": "Dramatic candlelit institution; exact file photo hold",
+          "selected_by_user": false
+        },
+        {
+          "code": "C",
+          "artist": "Peter Paul Rubens",
+          "title": "The Glorification of the Eucharist",
+          "source_url": "https://www.metmuseum.org/art/collection/search/437527",
+          "photo_reuse_status": "MET_OPEN_ACCESS",
+          "notes": "Official CC0; was rejected for Christ-King placement only, separate thematic role",
+          "selected_by_user": false
+        }
+      ],
+      "other_choice": "NONE_RESEARCH_MORE",
+      "existing_user_approval_override": false,
+      "photo_release_authorized": false,
+      "batch1_vote": {
+        "code": "A",
+        "status": "CHOSEN",
+        "chosen_candidate": {
+          "code": "A",
+          "artist": "Philippe de Champaigne",
+          "title": "La Petite Cène",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010062076",
+          "photo_reuse_status": "LOUVRE_PHOTOGRAPHIC_REUSE_RESTRICTED",
+          "notes": "User already approved same painting for Holy Thursday and Pentecost Ember Wednesday; one shared asset",
+          "selected_by_user": false
+        },
+        "rights_release": false
+      }
+    },
+    {
+      "batch_index": 8,
+      "date": "2026-06-29",
+      "celebration": "Saints Peter and Paul",
+      "theme": "Joint apostolic portraits",
+      "editorial_state": "AWAITING_FIRST_USER_BATCH_VOTE",
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Bartolomeo Manfredi (possibly with Nicolas Tournier)",
+          "title": "Saints Peter and Paul",
+          "source_url": "https://www.metmuseum.org/art/collection/search/442491",
+          "photo_reuse_status": "MET_OPEN_ACCESS",
+          "notes": "Early Caravaggesque double portrait; ideal dark composition",
+          "selected_by_user": false
+        },
+        {
+          "code": "B",
+          "artist": "Jusepe de Ribera",
+          "title": "Saint Peter and Saint Paul",
+          "source_url": "https://collections.musees.strasbourg.eu/fr/document/saint-pierre-et-saint-paul/5ee338d6461cda28a3ab1b33",
+          "photo_reuse_status": "STRASBOURG_PHOTO_CONTACT_ONLY_SOURCE_HOLD",
+          "notes": "Excellent severe Baroque; museum requests photothèque contact, no contact allowed",
+          "selected_by_user": false
+        }
+      ],
+      "other_choice": "NONE_RESEARCH_MORE",
+      "existing_user_approval_override": false,
+      "photo_release_authorized": false,
+      "batch1_vote": {
+        "code": "A",
+        "status": "CHOSEN",
+        "chosen_candidate": {
+          "code": "A",
+          "artist": "Bartolomeo Manfredi (possibly with Nicolas Tournier)",
+          "title": "Saints Peter and Paul",
+          "source_url": "https://www.metmuseum.org/art/collection/search/442491",
+          "photo_reuse_status": "MET_OPEN_ACCESS",
+          "notes": "Early Caravaggesque double portrait; ideal dark composition",
+          "selected_by_user": false
+        },
+        "rights_release": false
+      }
+    },
+    {
+      "batch_index": 9,
+      "date": "2026-07-01",
+      "celebration": "Precious Blood",
+      "theme": "Christ's Blood and chalices",
+      "editorial_state": "AWAITING_FIRST_USER_BATCH_VOTE",
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Giovanni Bellini",
+          "title": "The Blood of the Redeemer",
+          "source_url": "https://www.nationalgallery.org.uk/paintings/giovanni-bellini-the-blood-of-the-redeemer",
+          "photo_reuse_status": "NATIONAL_GALLERY_IMAGE_NC_ND_SOURCE_HOLD",
+          "notes": "Exact theological image: angel collects blood in chalice; Renaissance rather than Baroque",
+          "selected_by_user": false
+        },
+        {
+          "code": "B",
+          "artist": "Raphael",
+          "title": "The Mond Crucifixion",
+          "source_url": "https://www.nationalgallery.org.uk/paintings/raphael-the-mond-crucifixion",
+          "photo_reuse_status": "NATIONAL_GALLERY_IMAGE_NC_ND_SOURCE_HOLD",
+          "notes": "Angels catch blood from Christ's wounds; vertical classicism",
+          "selected_by_user": false
+        },
+        {
+          "code": "C",
+          "artist": "Attributed to Nicolò da Bologna",
+          "title": "Single Leaf from a Missal: The Crucifixion",
+          "source_url": "https://www.clevelandart.org/art/1924.1013",
+          "photo_reuse_status": "CMA_OPEN_ACCESS",
+          "notes": "Cleveland CC0; illuminated manuscript scene, NOT an oil painting",
+          "selected_by_user": false
+        }
+      ],
+      "other_choice": "NONE_RESEARCH_MORE",
+      "existing_user_approval_override": false,
+      "photo_release_authorized": false,
+      "batch1_vote": {
+        "code": "NONE",
+        "status": "NEW_ALTERNATIVES_REQUESTED",
+        "chosen_candidate": null,
+        "rights_release": false
+      }
+    },
+    {
+      "batch_index": 10,
+      "date": "2026-08-15",
+      "celebration": "Assumption of the Blessed Virgin Mary",
+      "theme": "Mary assumed into heaven",
+      "editorial_state": "AWAITING_FIRST_USER_BATCH_VOTE",
+      "candidates": [
+        {
+          "code": "A",
+          "artist": "Guido Reni",
+          "title": "Assumption of the Virgin",
+          "source_url": "https://sammlung.staedelmuseum.de/en/work/assumption-of-the-virgin",
+          "photo_reuse_status": "STADEL_PUBLIC_DOMAIN_PICTURE_EXACT_MASTER_CHECK",
+          "notes": "Early Baroque oil on copper; powerful luminous Virgin",
+          "selected_by_user": false
+        },
+        {
+          "code": "B",
+          "artist": "Workshop of Peter Paul Rubens",
+          "title": "The Assumption of the Virgin",
+          "source_url": "https://www.nga.gov/artworks/46131-assumption-virgin",
+          "photo_reuse_status": "NGA_OPEN_ACCESS",
+          "notes": "Rubens workshop, grand composition, Mary borne among angels",
+          "selected_by_user": false
+        }
+      ],
+      "other_choice": "NONE_RESEARCH_MORE",
+      "existing_user_approval_override": false,
+      "photo_release_authorized": false,
+      "batch1_vote": {
+        "code": "A",
+        "status": "CHOSEN",
+        "chosen_candidate": {
+          "code": "A",
+          "artist": "Guido Reni",
+          "title": "Assumption of the Virgin",
+          "source_url": "https://sammlung.staedelmuseum.de/en/work/assumption-of-the-virgin",
+          "photo_reuse_status": "STADEL_PUBLIC_DOMAIN_PICTURE_EXACT_MASTER_CHECK",
+          "notes": "Early Baroque oil on copper; powerful luminous Virgin",
+          "selected_by_user": false
+        },
+        "rights_release": false
+      }
+    }
+  ],
+  "user_decision_source": "2026-10-27T17:08:10Z"
+}

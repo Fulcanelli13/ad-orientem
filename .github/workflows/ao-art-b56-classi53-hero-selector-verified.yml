@@ -1,0 +1,54 @@
+name: B56 Class I feast heroes — canonical title reconciliation and full photo-integrity retest
+on:
+  push:
+    branches: [research/sacred-art-b56-classi-53-hero-selector-20261024]
+    paths: [.github/workflows/ao-art-b56-classi53-hero-selector-verified.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-art-b56-53-classi-hero-selection
+  cancel-in-progress: false
+jobs:
+  private-class-i-hero-selector:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b56-classi-53-hero-selector-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Source provenance, correct protected dates, and image processor
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+          python -m py_compile scripts/research/sacred_art_b56_53_hero_selector.py scripts/research/sacred_art_b56_publish_private_hero_selector.py
+          node tests/sacred-art-b55-classi-protected-approval-reconciliation.mjs
+          test -f tests/sacred-art-b56-classi53-hero-selector-canonical-title-integrity.mjs
+          test ! -f previews/sacred-art-b56-classi-53-hero-selection-offline.html
+      - name: Exact-source Commons and Met previews + 383 preserved original images; create 53-date 3-4-option viewer
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_b56_53_hero_selector.py
+      - name: Independently validate 53 dates, 10 protected prior approvals, all available imagery, selections and SHA checks
+        run: node tests/sacred-art-b56-classi53-hero-selector-integrity.mjs
+      - name: Preserve all photo derivatives only in UNPUBLISHED draft Release, remote byte-for-byte SHA proof
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_b56_publish_private_hero_selector.py
+      - name: Commit research indexes only, never embed unapproved art in public Git
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b56-53-hero-selection-verified-summary.json data/research/sacred-art-b56-53-hero-candidate-list.json
+          git commit -m 'research: B56 53 Class I 3–4 artwork candidates each, original image/photo status and prior approval preservation'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b56-classi-53-hero-selector-20261024
+            git rebase origin/research/sacred-art-b56-classi-53-hero-selector-20261024
+            git push origin HEAD:research/sacred-art-b56-classi-53-hero-selector-20261024 && exit 0
+            sleep 3
+          done
+          exit 1

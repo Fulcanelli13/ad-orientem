@@ -1,0 +1,33 @@
+name: B56 private 53 feast hero download with draft archive read scope
+on:
+  push:
+    branches:
+      - research/sacred-art-b56-classi-53-hero-selector-20261024
+    paths:
+      - .github/workflows/ao-art-b56-hero-delivery-auth.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b56-classi-53-hero-selector-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'Pillow>=11,<13'
+      - name: Generate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_b56_53_hero_selector.py
+      - run: node tests/sacred-art-b56-classi53-exact-artist-object-validated.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-53-feast-hero-review
+          path: previews/sacred-art-b56-classi-53-hero-selection-offline.html
+          retention-days: 7
+          if-no-files-found: error
