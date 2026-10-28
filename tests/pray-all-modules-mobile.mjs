@@ -353,6 +353,61 @@ try{
    assert.equal(await disclosure.getAttribute("open"),"","Historical witness drawer cannot be opened on touch: "+route);
  }
 
+ // B15: monthly devotional material is reachable without entering the
+ // optional month register or asserting that any sacramental act took place.
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("programme.first_friday",{returnContext:null}));
+ const fridayDirect=page.locator("#aoPray435930.open [data-ao-first-monthly-direct='friday']");
+ assert.equal(await fridayDirect.count(),1,"First Friday direct prayer doorway absent");
+ assert.equal(await fridayDirect.locator("[data-p435930-ff-direct-prayer]").count(),1);
+ assert.equal(await page.locator("#aoPray435930.open [data-p435930-ff-stage][aria-current='step']").getAttribute("data-p435930-ff-stage"),"0");
+ assert.equal(await page.locator("#aoPray435930.open .aoQuietSeriesDisclosure [data-p435930-ff-tracking]").isChecked(),false);
+ await fridayDirect.locator("[data-p435930-ff-direct-prayer]").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930.open .aoP435930Mount").getAttribute("data-ao-pray-view"),"prayerOnly");
+ assert.equal(await page.locator("#aoPray435930.open [data-ao-devo-card]").getAttribute("data-ao-devo-card"),"sacred_heart_short_prayer");
+ assert.ok((await page.locator("#aoPray435930.open [data-ao-devo-card]").innerText()).length>130,
+   "First Friday direct source prayer is missing text");
+ await page.locator("#aoPray435930.open [data-p435930-prayer-return]").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930.open [data-p435930-ff-stage][aria-current='step']").getAttribute("data-p435930-ff-stage"),"0",
+   "Direct prayer did not restore exact First Friday stage");
+ assert.equal(await page.locator("#aoPray435930.open .aoQuietSeriesDisclosure [data-p435930-ff-tracking]").isChecked(),false,
+   "Direct prayer unexpectedly activated month tracking");
+ const fridayOrder=await page.locator("#aoPray435930.open .aoP435930Body").evaluate(el=>{
+  const direct=el.querySelector("[data-ao-first-monthly-direct]");
+  const record=el.querySelector(".aoQuietSeriesDisclosure");
+  return !!direct&&!!record&&direct.compareDocumentPosition(record)&Node.DOCUMENT_POSITION_FOLLOWING;
+ });
+ assert.ok(fridayOrder,"First Friday tracker must follow the direct prayer and programme");
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("programme.first_saturday",{returnContext:null}));
+ const saturdayDirect=page.locator("#aoPray435930.open [data-ao-first-monthly-direct='saturday']");
+ assert.equal(await saturdayDirect.locator("button").count(),2,"Keep two distinct First Saturday actions");
+ assert.equal(await page.locator("#aoPray435930.open .aoQuietSeriesDisclosure [data-p435930-fs-tracking]").isChecked(),false);
+ await saturdayDirect.locator("[data-p435930-fs-direct-meditate]").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930.open .aoP435930Mount").getAttribute("data-ao-pray-view"),"fsMeditation");
+ assert.equal(await page.locator("#aoPray435930.open [data-p435930-timer='15']").count(),1,
+   "Existing fifteen-minute meditation timer must remain an optional aid");
+ await page.locator("#aoPray435930.open [data-p435930-fs-meditation-return]").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930.open .aoP435930Mount").getAttribute("data-ao-pray-view"),"firstSaturday");
+ assert.equal(await page.locator("#aoPray435930.open [data-p435930-fs-stage='4']").getAttribute("aria-current"),"step",
+   "Meditation return must restore its canonical programme stage");
+ assert.equal(await page.locator("#aoPray435930.open [data-p435930-fs-meditation]").isChecked(),false,
+   "Opening and leaving meditation cannot mark the act complete");
+ assert.equal(await page.locator("#aoPray435930.open [data-p435930-fs-save]").count(),0,
+   "No completion record button may appear when tracking is off");
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("programme.first_saturday",{returnContext:null}));
+ const beforeDirectRosary=await page.locator("#aoPray435930.open [data-p435930-fs-stage][aria-current='step']").getAttribute("data-p435930-fs-stage");
+ await saturdayDirect.locator("[data-p435930-fs-direct-rosary]").evaluate(el=>el.click());
+ await page.waitForSelector("#aoPrayerBookRoot.open",{state:"visible",timeout:15000});
+ await page.locator("#aoPrayerBookRoot.open .lab-back").first().evaluate(el=>el.click());
+ await page.waitForFunction(()=>
+   document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset?.aoPrayView==="firstSaturday",
+   null,{timeout:15000});
+ assert.equal(await page.locator("#aoPray435930.open [data-p435930-fs-stage][aria-current='step']").getAttribute("data-p435930-fs-stage"),beforeDirectRosary,
+   "Rosary shortcut should restore the exact current stage rather than reset to intention");
+ await page.setViewportSize({width:320,height:720});
+ const fsDirectWidth=await saturdayDirect.evaluate(el=>({width:el.clientWidth,scroll:el.scrollWidth}));
+ assert.ok(fsDirectWidth.scroll<=fsDirectWidth.width+2,"320px First Saturday direct controls overflow");
+ await page.screenshot({path:resolve(root,"artifacts/pray-b15-first-saturday-320.png"),animations:"disabled"});
+ await page.setViewportSize({width:390,height:844});
  // Swipe-first finite guides must not reintroduce button-controlled page travel.
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.stations",{returnContext:null}));
  const stationProgress=page.locator("#aoPray435930.open .aoP435930StationRail.aoDevoSequenceTimeline .aoDevoProgress");
