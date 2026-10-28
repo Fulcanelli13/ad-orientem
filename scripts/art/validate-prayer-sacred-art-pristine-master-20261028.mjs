@@ -67,7 +67,25 @@ assert.equal(r.totals.pristine_publication_ready,0);
 assert.equal(r.totals.production_activated,0);
 assert.equal(r.totals.request_better_photo,13);
 assert.equal(r.totals.distinct_better_photo_artworks,10);
-assert.equal(r.totals.native_hash_ci_pass,5);
+assert.equal(r.totals.native_hash_ci_pass,20);
+const fullBatch=read("assets/staged/prayer-pristine-bulk-native-audit-20261028/native-audit.json");
+assert.equal(fullBatch.scheduled_originals,20);
+assert.equal(fullBatch.originals_verified_exact_bytes,20);
+assert.equal(fullBatch.originals_requiring_file_recovery,0);
+assert.equal(fullBatch.pristine_quality_final_certified,0);
+assert.equal(fullBatch.native_corner_sheets.length,4);
+const scanById=Object.fromEntries(fullBatch.results.map(x=>[x.module_id,x]));
+for(const hero of r.primary_artworks){
+ if(!hero.original.archived)continue;
+ const check=scanById[hero.module_id];
+ assert.equal(check?.result,"PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",hero.module_id);
+ assert.equal(check.sha256_recomputed,hero.original.sha256,hero.module_id+" sha");
+ assert.deepEqual(check.pixels_verified,hero.original.dimensions_px,hero.module_id+" pixels");
+ assert.equal(hero.original.hash_verification,"REHASHED_20_MASTER_BATCH_CI_PASS");
+ assert.equal(hero.quality.native_batch_visual_review?.technical_integrity,
+  "PASS_PINNED_SHA_AND_PIXEL_DIMENSIONS");
+ assert.equal(hero.quality.native_batch_visual_review?.source_photo_publication_approved,false);
+}
 assert.equal(r.batch_execution.B0_BULK_RECONCILIATION.hero_records_processed,22);
 assert.equal(r.batch_execution.B0_BULK_RECONCILIATION.review_placements_processed,118);
 assert.equal(r.batch_execution.B0_BULK_RECONCILIATION.master_hashes_recalculated_in_this_pass,0);
@@ -76,7 +94,7 @@ assert.deepEqual(r.batch_execution.B1_IMAGE_ACQUISITION.exact_original_missing.m
 assert.deepEqual(r.batch_execution.B1_IMAGE_ACQUISITION.existing_original_needs_better_photo.map(x=>x.module_id).sort(),
  ["holy-spirit","michael","salvation"].sort());
 const rosary=r.primary_artworks.find(x=>x.module_id==="rosary");
-assert.equal(rosary.original.hash_verification,"REHASHED_COMPARISON_CI_PASS");
+assert.equal(rosary.original.hash_verification,"REHASHED_20_MASTER_BATCH_CI_PASS");
 assert.equal(rosary.original.recovered_location.sha256,
  "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca");
 const independentSailko=native.entries.find(x=>x.module_id==="rosary")?.native_asset?.sha256_verified_by_workflow;
