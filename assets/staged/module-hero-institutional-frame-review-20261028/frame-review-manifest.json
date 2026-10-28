@@ -1,0 +1,129 @@
+{
+  "scope": "NON_PRODUCTION_REVIEW_ONLY",
+  "painted_boundaries_certified": 0,
+  "pristine_masters_approved": 0,
+  "app_released": 0,
+  "note": "Pixel boxes are estimates from photographed source views. Only human inspection may certify exact edges, colour and crop.",
+  "paintings": [
+    {
+      "module_id": "confession",
+      "accession": "NGA 1948.12.1",
+      "original_branch_role": "museum",
+      "original_path": "assets/staged/module-hero-masters/confession.jpg",
+      "sha256_verified": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+      "source_dimensions": [
+        4096,
+        3712
+      ],
+      "source_bytes_unchanged": true,
+      "proposed_pixel_box_xyxy": [
+        0,
+        0,
+        4096,
+        3712
+      ],
+      "proposed_fraction_box_xyxy": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "candidate_ratio": 1.103448,
+      "painting_boundary_assessment": "apparently_frame_free_verify_full_perimeter",
+      "evidence_and_limitations": "All four observed perimeter regions appear to be painting. No artificial frame detected; no crop proposed.",
+      "review_colour_note": "source_ICC_to_sRGB_review_only",
+      "focal_for_test_only": [
+        0.43,
+        0.46
+      ],
+      "boundary_overlay": "confession-boundary-overlay.jpg",
+      "candidate_preview": "confession-frame-boundary-candidate.jpg",
+      "responsive_comparison": "confession-responsive-comparison.jpg",
+      "human_edge_signoff": false,
+      "colour_signoff": false,
+      "responsive_signoff": false,
+      "pristine_master_approved": false,
+      "app_released": false
+    },
+    {
+      "module_id": "angelus",
+      "accession": "Met 2004.31",
+      "original_branch_role": "wave2",
+      "original_path": "assets/staged/module-hero-wave2/angelus-met.jpg",
+      "sha256_verified": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "source_dimensions": [
+        3741,
+        3658
+      ],
+      "source_bytes_unchanged": true,
+      "proposed_pixel_box_xyxy": [
+        82,
+        77,
+        3660,
+        3590
+      ],
+      "proposed_fraction_box_xyxy": [
+        0.021919,
+        0.02105,
+        0.978348,
+        0.981411
+      ],
+      "candidate_ratio": 1.018503,
+      "painting_boundary_assessment": "unpainted_oak_perimeter_visible",
+      "evidence_and_limitations": "Manual estimate from archived whole-image and native corner: omit exposed oak support, retain painted Annunciation. Met painted surface 69.2 x 70.5 cm is only a ratio cross-check.",
+      "review_colour_note": "UNPROFILED_RGB_NO_CALIBRATION_CLAIM",
+      "focal_for_test_only": [
+        0.53,
+        0.44
+      ],
+      "boundary_overlay": "angelus-boundary-overlay.jpg",
+      "candidate_preview": "angelus-frame-boundary-candidate.jpg",
+      "responsive_comparison": "angelus-responsive-comparison.jpg",
+      "human_edge_signoff": false,
+      "colour_signoff": false,
+      "responsive_signoff": false,
+      "pristine_master_approved": false,
+      "app_released": false
+    },
+    {
+      "module_id": "adoration",
+      "accession": "Met 2005.186",
+      "original_branch_role": "museum",
+      "original_path": "assets/staged/module-hero-masters/adoration.jpg",
+      "sha256_verified": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "source_dimensions": [
+        3122,
+        3813
+      ],
+      "source_bytes_unchanged": true,
+      "proposed_pixel_box_xyxy": [
+        82,
+        73,
+        3050,
+        3755
+      ],
+      "proposed_fraction_box_xyxy": [
+        0.026265,
+        0.019145,
+        0.976938,
+        0.984789
+      ],
+      "candidate_ratio": 0.806084,
+      "painting_boundary_assessment": "outer_support_plus_painted_inner_border",
+      "evidence_and_limitations": "Conservative estimate removes outer beige support and black photo backdrop but retains painted grey border and bottom inscriptions. Requires detailed inspection on every edge.",
+      "review_colour_note": "UNPROFILED_RGB_NO_CALIBRATION_CLAIM",
+      "focal_for_test_only": [
+        0.5,
+        0.43
+      ],
+      "boundary_overlay": "adoration-boundary-overlay.jpg",
+      "candidate_preview": "adoration-frame-boundary-candidate.jpg",
+      "responsive_comparison": "adoration-responsive-comparison.jpg",
+      "human_edge_signoff": false,
+      "colour_signoff": false,
+      "responsive_signoff": false,
+      "pristine_master_approved": false,
+      "app_released": false
+    }
+  ]
+}
