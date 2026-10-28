@@ -2,7 +2,7 @@
   "schema": "ad-orientem.daily-prayer-boundary-certified-witness.v1",
   "batch": "B12",
   "date": "2026-10-27",
-  "status": "RESEARCH_ONLY_NO_PRODUCTION_CHANGE",
+  "status": "B12_COMPLETE_TEXT_AND_PRINT_IMAGE_CHECKED_EDITORIAL_RIGHTS_PENDING",
   "witness": {
     "id": "b12-baltimore-evening-examination-light",
     "occurrence_id": "AO.DAILY.B01.038",
@@ -27,20 +27,33 @@
       "examen_guide_is_prayer_text": false,
       "contrition_is_separate_prayer": true
     },
-    "verification": "COMPLETE_BODY_CROSSCHECKED_AGAINST_PROOFREAD_WIKISOURCE_ORIGINAL_PAGE_TRANSCRIPTION_AND_ADDITIONAL_EDITION_EXTRACT",
-    "original_image_review": "PENDING_DIRECT_VISUAL_CHECK",
+    "verification": "COMPLETE_BODY_CHECKED_AGAINST_ORIGINAL_PRINTED_PAGE_IMAGE_AND_PROOFREAD_TRANSCRIPTION",
+    "original_image_review": "DIRECT_VISUAL_CHECK_COMPLETE_2026_10_28",
     "source_role": "LAY_ANOTHER_FORM_OF_EVENING_PRAYERS_NOT_THE_OFFICE_OF_COMPLINE",
     "release": "NOT_PUBLISHED_NO_USER_DEFAULT_APPROVAL",
-    "reuse_review": "1888 work marked public domain by Commons as an underlying scan; distribution and transcribed-text provenance to be checked for target territory"
+    "reuse_review": "1888 work marked public domain by Commons as an underlying scan; distribution and transcribed-text provenance to be checked for target territory",
+    "image_verified_date": "2026-10-28",
+    "image_review_record": {
+      "source": "Wikisource original scanned page linked as Image for Page:Manualofprayersf00cath.djvu/94",
+      "source_page": "https://en.wikisource.org/wiki/Page:Manualofprayersf00cath.djvu/94",
+      "printed_page": 82,
+      "exact_beginning": "O MY God, sovereign Judge of men",
+      "exact_ending": "give me the grace of true contrition.",
+      "before_prayer_is_rubric": true,
+      "after_prayer_is_rubric": true,
+      "prayer_separate_from_next_act_of_contrition": true,
+      "finding": "Printed page directly viewed; entire body, separation rubrics, placement, source page number and end of prayer confirmed against B12 full-text record."
+    }
   },
   "census": {
     "prior_full_body_original_image_checked": 42,
-    "new_full_body_proofread_page_text_only": 1,
+    "new_full_body_proofread_page_text_only": 0,
     "combined_full_body_witness_records": 43,
-    "original_image_checked_total_unchanged": 42,
     "english_full_body_records": 28,
     "french_full_body_records": 15,
-    "production_preset_updates_approved": 0
+    "production_preset_updates_approved": 0,
+    "original_image_checked_total_current": 43,
+    "b12_newly_image_checked": 1
   },
   "identity_review": {
     "prayer_family": "prayer-for-light-before-evening-examen",
@@ -50,8 +63,8 @@
     "note": "Lasance prayer already petitions for light but simultaneously performs evening adoration and thanksgiving, so it is a different complete text, not a translation of Baltimore's short independent prayer."
   },
   "nonrelease_gates": [
-    "Original printed page image not successfully retrieved in this pass; do not report B12 as scan-image certified.",
     "Editorial default/preset composition still requires user approval.",
-    "Historical source-body rights review distinct from obtaining a free reproduction."
+    "Historical source-body rights review distinct from obtaining a free reproduction.",
+    "Direct image and exact prayer transcription now checked; reuse rights, default choices and composite order remain unapproved."
   ]
 }
