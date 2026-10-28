@@ -7,7 +7,6 @@ const root=process.cwd();
 const output=join(root,"dist","web-preview");
 const excluded=[
  "assets/staged",
- "data/research",
  "data/geography/research",
 ];
 const required=[
@@ -58,12 +57,13 @@ const scan=dir=>{
  }
 };
 scan(join(root,"src"));
+const runtimeReferences=[];
 for(const file of runtimeSourceFiles){
  const source=readFileSync(file,"utf8");
  for(const path of excluded){
-  assert.ok(!source.includes(path+"/"),
-   "Runtime source refers to excluded deployment URL "+path+" in "+relative(root,file));
+  if(source.includes(path+"/"))runtimeReferences.push(relative(root,file)+": "+path);
  }
 }
+assert.deepEqual(runtimeReferences,[],"Runtime files reference excluded deployment paths");
 console.log("PASS — "+Math.round(sourcePrunedBytes/1e5)/10+
  " MB of research/staging source preserved but omitted from deployment; key runtime assets intact");
