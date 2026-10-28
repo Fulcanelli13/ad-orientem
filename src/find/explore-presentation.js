@@ -1,6 +1,6 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { MASS_EMBLEM_GROUPS, massInstitutionEmblem } from "./institution-emblems.js";
-import { renderDirectoryVenueCard,eligibleDirectoryImage } from "./directory-card.js";
+import { renderDirectoryVenueCard,eligibleDirectoryImage,renderDirectoryGallery } from "./directory-card.js";
 import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
 import { renderPilgrimageJourneyPanel, journeysForCanonicalPlace } from "./pilgrimage-journey.js";
 import { renderSaintPlaceSheet,renderSaintSourceIndexSheet } from "./saints-presentation.js";
@@ -393,6 +393,7 @@ function detailSheet(vm){
   html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
 
   if(item.kind==="TLM_VENUE"&&eligibleDirectoryImage(item.cover_media,item.place_id))html+='<figure class="aoTlmDetailPhoto"><img loading="lazy" decoding="async" src="'+esc(item.cover_media.asset_path)+'" alt="'+esc(vm.language==="fr"?item.cover_media.alt_fr:item.cover_media.alt_en)+'"><figcaption>'+esc(item.cover_media.credit)+' · '+esc(item.cover_media.license)+'</figcaption></figure>';
+  if(item.kind==="TLM_VENUE")html+=renderDirectoryGallery(item,vm.language);
   html+='<div class="aoExploreFullBack"><button type="button" data-explore-collapse-detail>'+esc(L(vm.language,"← Back to preview","← Retour à l’aperçu"))+'</button></div>';
   if(item.summary)html+='<p class="aoExploreLead">'+esc(translatedSummary(item,vm.language))+'</p>';
   if(item.geo?.indicative_only)html+='<p class="aoExploreLead">'+esc(L(vm.language,"Indicative map pin only — nearby reference point, not the shrine entrance.","Repère cartographique indicatif — point de référence à proximité, et non entrée du sanctuaire.")+(item.geo.reference_point_name?" · "+item.geo.reference_point_name:""))+"</p>";
