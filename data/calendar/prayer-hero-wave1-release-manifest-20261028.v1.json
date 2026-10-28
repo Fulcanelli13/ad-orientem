@@ -89,7 +89,7 @@
         "corroboration": "Institutional artwork record pinned in existing hero ledger; direct institutional photo-file licence and native-byte review not independently closed in this pass.",
         "source_photo_rights": "HOLD_EXACT_FILE",
         "photo_master_state": "PREVIOUS_MANIFEST_SHA_ONLY",
-        "first_action": "Check staged full master against the AIC original; preserve full painterly scene, four edges and natural colour. Reconcile original SHA-256 with archived native bytes.",
+        "first_action": "Whole and native surface details show the original sunrise, tiny lark, fieldworker and aged canvas detail: keep whole image in a portrait/contain surface; reject any tight sky or wide cover crop cutting the bird/sun. Verify full native edges and correct ICC/colour.",
         "mobile_critical_content": [
           "lark/songbird context",
           "fieldworker silhouette",
@@ -168,7 +168,7 @@
         "corroboration": "Exact OP6 Wolverhampton source appears on Wikimedia Commons at 898x1200; the Art UK reproduction licensing has not been cleared for production.",
         "source_photo_rights": "HOLD_ART_UK_PHOTO_RIGHTS",
         "photo_master_state": "LOW_RES_PREVIEW_ONLY",
-        "first_action": "Locate a genuinely open, higher-resolution photograph of this exact OP6 painting; never substitute another Frère Prayer or upscale a low-res file as native evidence.",
+        "first_action": "Search only higher-res openly reusable exact Wolverhampton OP6 image (two praying children by a bed); 898x1200 CC claims or Art UK display availability do not establish high-quality photo rights for production. Preserve Frère as final hero without substitution.",
         "mobile_critical_content": [
           "praying figure",
           "surrounding interior"
@@ -357,17 +357,18 @@
         "corroboration": "Complete work photo 1772x2652 by Sailko is CC BY 3.0 and must credit Sailko and disclose changes; earlier native review notes mounting hardware visible at top. The higher-resolution file ending _11 is only a detail.",
         "source_photo_rights": "CC_BY_3_0_ATTRIBUTION_REQUIRED",
         "photo_master_state": "WHOLE_PHOTO_HARDWARE_VISIBLE",
-        "first_action": "Find and inspect a clean fully pictured licensed photograph; if none exists, retain blocked status rather than cropping away the Rosario mystery roundels or substituting the detail image.",
+        "first_action": "Evaluate a tight painted-surface-only crop of the Sailko 1772x2652 complete photograph to exclude visible top/bottom mounting clips without removing painted composition, and test colour/detail; retain CC BY 3.0 attribution and modification notice. Do not substitute a close-up/detail image.",
         "mobile_critical_content": [
-          "entire altarpiece",
-          "fifteen mystery roundels",
-          "Madonna and Child"
+          "complete altarpiece",
+          "fifteen Rosary mystery roundels",
+          "Virgin with Child",
+          "lower angel group"
         ],
         "forbid": [
-          "detail-photo hero",
-          "crop away mysteries",
-          "uncredited Sailko reuse",
-          "mounting hardware in hero"
+          "detail-only photo as complete hero",
+          "omit any mystery roundels",
+          "leave top/bottom mounting hardware in final",
+          "omit photographer credit and crop notice"
         ]
       }
     },
@@ -445,11 +446,11 @@
         "corroboration": "The NGA says this specific work's media is free and in the public domain; the visual description independently identifies the small dog at the kneeling son's feet.",
         "source_photo_rights": "PUBLIC_DOMAIN_MUSEUM_PAGE_CONFIRMED",
         "photo_master_state": "EXISTING_NATIVE_SHA_INHERITED",
-        "first_action": "Rehash archived 4096x3712 original, inspect all native edges and color, and validate landscape/phone crops preserving the embracing father/son and small dog.",
+        "first_action": "Inspected native face/hands/dog/top-edge tiles and whole/phone previews: mark strong preliminary visual result, allow full/contain and test 3:4 phone with dog visible, disallow 16:9 cover which clips dog; final QA of all painted borders, sRGB and actual reader remains.",
         "mobile_critical_content": [
-          "father and son",
-          "dog at son's feet",
-          "return-home narrative"
+          "father and son embrace",
+          "dog fully visible at feet",
+          "right attendants as composition context"
         ],
         "forbid": [
           "wide crop removing the dog",
@@ -523,17 +524,19 @@
         "corroboration": "Previously linked exact work source reports 3250x4391 and Commons PD-Art/PDM; this pass has not reverified native bytes, the museum download terms or image colour.",
         "source_photo_rights": "HOLD_FILE_AND_JURISDICTION_CONFIRMATION",
         "photo_master_state": "EXISTING_NATIVE_SHA_INHERITED",
-        "first_action": "Rehash staged full image, compare against accession 008327-000 and inspect all edges, surface, colours, and source-file reuse notice. Use existing final primary, not a new candidate.",
+        "first_action": "Compare the staged 2220x3000 full photograph with accession MNAC 008327-000 at four edges; ensure all seven episode medallions and the central sword remain complete. Recheck source-file licensing, native sharpness and colour.",
         "mobile_critical_content": [
-          "Virgin",
-          "seven swords",
-          "complete painted field"
+          "Virgin Mary seated in grief",
+          "seven surrounding narrative medallions",
+          "central sword and full painted field"
         ],
         "forbid": [
           "frame inclusion",
           "unverified restoration",
-          "cropping out swords"
-        ]
+          "cropping out any of seven medallions",
+          "falsely describing seven physical swords"
+        ],
+        "correction_20261028": "Image has seven episode medallions and one dominant physical sword; earlier seven-swords phrasing inaccurately described this specific composition."
       }
     }
   ],
