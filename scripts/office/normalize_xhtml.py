@@ -41,22 +41,22 @@ EXPLICIT_OMITTED_PRECES = {
 # antiphon and psalm, and a Chapter cell may include hymn and versicle.
 # This is source labeling for navigation, NOT verse-level parsing.
 LATIN_CELL_PREFIXES = (
-    (re.compile(r"^Incipit(?:$|\\n|\\s)", re.I), "OPENING"),
-    (re.compile(r"^(?:Psalmi\\b|Psalmus\\b|Ant\\.)", re.I), "PSALMODY"),
-    (re.compile(r"^Capitulum(?:\\s|$)", re.I), "CHAPTER_HYMN_VERSE"),
-    (re.compile(r"^Canticum:\\s*(?:Benedictus|Magnificat)", re.I), "GOSPEL_CANTICLE"),
-    (re.compile(r"^Canticum(?:\\s|$|:)", re.I), "CANTICLE"),
-    (re.compile(r"^(?:Lectio|Lectiónes|Lectiones|Absolutio)\\b", re.I), "LESSON_OR_ABSOLUTION"),
-    (re.compile(r"^(?:Responsorium|Resp\\.)\\b", re.I), "RESPONSORY"),
-    (re.compile(r"^(?:Invitatorium|Invit\\.)\\b", re.I), "INVITATORY"),
-    (re.compile(r"^(?:Hymnus|Hymn\\.)\\b", re.I), "HYMN"),
-    (re.compile(r"^(?:Oratio|Preces)\\b", re.I), "PRAYER"),
-    (re.compile(r"^Conclusio(?:$|\\n|\\s)", re.I), "CONCLUSION"),
-    (re.compile(r"^(?:Nocturnus|Nocturnum)\\b", re.I), "NOCTURN"),
+    (re.compile(r"^Incipit(?:$|\n|\s)", re.I), "OPENING"),
+    (re.compile(r"^(?:Psalmi\b|Psalmus\b|Ant\.)", re.I), "PSALMODY"),
+    (re.compile(r"^Capitulum(?:\s|$)", re.I), "CHAPTER_HYMN_VERSE"),
+    (re.compile(r"^Canticum:\s*(?:Benedictus|Magnificat)", re.I), "GOSPEL_CANTICLE"),
+    (re.compile(r"^Canticum(?:\s|$|:)", re.I), "CANTICLE"),
+    (re.compile(r"^(?:Lectio|Lectiónes|Lectiones|Absolutio)\b", re.I), "LESSON_OR_ABSOLUTION"),
+    (re.compile(r"^(?:Responsorium|Resp\.)\b", re.I), "RESPONSORY"),
+    (re.compile(r"^(?:Invitatorium|Invit\.)\b", re.I), "INVITATORY"),
+    (re.compile(r"^(?:Hymnus|Hymn\.)\b", re.I), "HYMN"),
+    (re.compile(r"^(?:Oratio|Preces)\b", re.I), "PRAYER"),
+    (re.compile(r"^Conclusio(?:$|\n|\s)", re.I), "CONCLUSION"),
+    (re.compile(r"^(?:Nocturnus|Nocturnum)\b", re.I), "NOCTURN"),
 )
 def classify_latin_cell(text: str) -> dict:
     # Never classify an arbitrary verse in the middle of the cell.
-    first = str(text).split("\\n", 1)[0].strip()
+    first = str(text).split("\n", 1)[0].strip()
     for pattern, role in LATIN_CELL_PREFIXES:
         if pattern.search(first):
             return {"role": role, "basis": "LATIN_SOURCE_PREFIX", "certainty": "HEURISTIC"}
