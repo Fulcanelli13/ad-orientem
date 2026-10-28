@@ -156,6 +156,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
   html+='<div class="aoHeritageTools"><div class="aoFindSearch"><input type="search" data-find-query value="'+esc(vm.filters?.query||"")+'" aria-label="'+L(vm.language,"Search sacred places","Chercher un lieu sacré")+'" placeholder="'+L(vm.language,"Search place, saint or devotion","Lieu, saint ou dévotion")+'" autocomplete="off" spellcheck="false"></div><button type="button" class="aoHeritageGlossaryButton" data-find-glossary aria-label="'+L(vm.language,"Definitions","Définitions")+'">?</button></div>';
   html+='<nav class="aoHeritageCategories" aria-label="'+L(vm.language,"Filter places on the map","Filtrer les lieux sur la carte")+'">';
   html+='<button type="button" data-find-filter="lens" data-find-filter-value="saints" aria-label="'+esc(L(vm.language,"Open Map of Saints","Ouvrir la carte des saints"))+'">'+esc(L(vm.language,"Saints","Saints"))+"</button>";
+  if(vm.journeyOpen)html+='<button type="button" class="aoJourneyModeExit active" data-explore-journey-close aria-label="'+esc(L(vm.language,"Exit pilgrimage journey mode","Quitter le mode pèlerinage"))+'">'+esc(L(vm.language,"Journeys ×","Parcours ×"))+'</button>';
 
 
 
