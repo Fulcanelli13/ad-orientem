@@ -65,6 +65,85 @@ try{
     assert.ok(summary.rootVisible && summary.navNext && summary.navPrev);
     assert.ok(summary.shellWidth<=width+1,"Phone viewport horizontal overflow");
     assert.equal(summary.overflow,false,"Curated Mass caused document horizontal scroll");
+    // Between musical windows, show a Mass-order prediction, not heard sound.
+    if(width===390 && lang==="en" && !secondConfiteor){
+      const collect=await page.evaluate(()=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        const target=api.model.cards.find(c=>c.sourceSectionId==="AO.CARD.004");
+        if(!target)return null;
+        api.showSequence(target.sequence);
+        return target.sectionId;
+      });
+      assert.ok(collect,"Missing sourced Collect card for chant forecast");
+      const expected=await page.evaluate(()=>{
+        const dock=document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock");
+        const node=dock?.querySelector('[data-role="schola-upcoming"]');
+        return {text:node?.textContent??"",hidden:node?.hidden,
+          upcoming:dock?.dataset.upcomingOnly,
+          visible:dock?getComputedStyle(dock).display:null,
+          aria:node?.getAttribute("aria-label")??""};
+      });
+      assert.equal(expected.upcoming,"true","No anticipation in Schola-free Collect interval");
+      assert.equal(expected.hidden,false);
+      assert.match(expected.text,/NEXT.*Gradual/i);
+      assert.match(expected.aria,/not observed/i);
+      assert.notEqual(expected.visible,"none");
+      // Source-free personal plan, persisted in this browser but never a
+      // Gregorian-source approval or observation of today's choir.
+      const planPanel=page.locator("#ao-r17-native-reader-preview [data-schola-local-panel]");
+      await planPanel.locator("summary").click();
+      const planVisible=await planPanel.evaluate(el=>{
+        const box=el.querySelector(".ao-schola-programme-fields");
+        const rect=box.getBoundingClientRect();
+        return {opened:el.open,visible:rect.height>60,above:rect.bottom<
+          el.getBoundingClientRect().top,clipped:getComputedStyle(el.closest(".ao-schola-dock")).overflow};
+      });
+      assert.equal(planVisible.opened,true);
+      assert.equal(planVisible.visible,true);
+      assert.equal(planVisible.above,true,"Music editor should open ABOVE the bottom Schola dock");
+      assert.notEqual(planVisible.clipped,"hidden","Editor clipped by Schola dock");
+      const localCheck=planPanel.locator('[data-schola-local-choice="OFFERTORY_LOCAL_MOTET"]');
+      await localCheck.check();
+      await planPanel.locator("[data-schola-local-parish]").fill("St Joseph local programme");
+      // Commit on the input event, even if the independently scrolling
+      // Reader repaints before the blur/change event reaches the root.
+      await page.waitForFunction(()=>JSON.parse(localStorage.getItem(
+        "ao-schola-local-programme-v1")||"{}").parishLabel==="St Joseph local programme");
+      await planPanel.locator("[data-schola-local-parish]").press("Tab");
+      const savedPlan=await page.evaluate(()=>{
+        const plan=JSON.parse(localStorage.getItem("ao-schola-local-programme-v1")||"{}");
+        return {name:plan.parishLabel,selected:plan.choices?.OFFERTORY_LOCAL_MOTET?.selected,
+          observed:plan.observedSinging};
+      });
+      assert.equal(savedPlan.name,"St Joseph local programme");
+      assert.equal(savedPlan.selected,true);
+      assert.equal(savedPlan.observed,false);
+      assert.ok(await planPanel.locator('[data-schola-organ-rule="OFFERTORY_ORGAN_OPTION"]').count());
+      await planPanel.locator("summary").click();
+      // A closed music editor must not remain a transparent hit target over
+      // ordinary Mass navigation (regression from R17 phone, 27 Oct).
+      const hiddenPanel=await planPanel.evaluate(el=>{
+        const fields=el.querySelector(".ao-schola-programme-fields");
+        const css=getComputedStyle(fields);
+        const rect=fields.getBoundingClientRect();
+        return {open:el.open,display:css.display,pointerEvents:css.pointerEvents,
+          rectHeight:rect.height};
+      });
+      assert.equal(hiddenPanel.open,false);
+      assert.equal(hiddenPanel.display,"none",
+        "Closed Schola editor visually overlaps ordinary Mass navigation");
+      assert.equal(hiddenPanel.pointerEvents,"none",
+        "Closed Schola editor must not intercept taps");
+      assert.equal(hiddenPanel.rectHeight,0);
+      const nextButton=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
+      const beforeTap=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard?.()?.sequence);
+      await nextButton.tap({timeout:5000});
+      const afterTap=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard?.()?.sequence);
+      if(Number.isFinite(beforeTap)&&Number.isFinite(afterTap)){
+        assert.notEqual(afterTap,beforeTap,"Mass next-card tap was intercepted");
+      }
+      await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSequence(1));
+    }
     assert.ok(summary.headings.includes("Gloria · The Celebrant's Intonation"));
     assert.ok(summary.headings.includes("Words of Consecration and Elevation · Host"));
     assert.ok(summary.headings.includes("Communion Antiphon"));
