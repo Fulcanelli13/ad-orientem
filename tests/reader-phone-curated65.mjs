@@ -121,6 +121,7 @@ try{
       assert.deepEqual(duringCatchup,beforeCatchup,
         "Subsequent priest scrolling/card navigation advanced choir position after catch-up");
       await rejoin.click();
+      await page.waitForFunction(()=>document.querySelector("[data-schola-rejoin]")?.hidden===true);
       assert.equal(await rejoin.isVisible(),false,
         "Explicit Schola rejoin should restore automatic expected-music preview");
       const collect=await page.evaluate(()=>{
