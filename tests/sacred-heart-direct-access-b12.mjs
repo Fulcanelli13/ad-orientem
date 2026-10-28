@@ -43,7 +43,7 @@ assert.match(runtime,/prayer=prayerCard\("sacred_heart_short_prayer"/);
 assert.match(runtime,/prayer=sourcedPrayerCard\(c,/);
 assert.match(runtime,/sourcedPrayerCard\(l,/);
 assert.match(runtime,/installSequentialDevotionalReader/);
-assert.match(runtime,/kind:"sacredHeart",chapters/);
+assert.match(runtime,/kind:heart\?"sacredHeart":"communion",chapters/);
 assert.match(css,/aoHeartChoiceGrid/);
 assert.match(css,/grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
 console.log("PASS B12: four distinct one-tap Sacred Heart devotions, full source/edition integrity, separate Christ King dedication, targeted Holy Name crosslink.");
