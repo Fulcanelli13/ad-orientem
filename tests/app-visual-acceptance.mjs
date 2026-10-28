@@ -1273,7 +1273,9 @@ try{
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="novenas",null,{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 [data-n1-home]").count(),1,"Novenas lost explicit global Home");
   assert.equal(await page.locator("#aoPray435930 [data-n1-close]").count(),0,"Novenas regressed to ambiguous Close");
-  assert.equal(await page.locator("#aoPray435930 .aoN1Card").count(),16,"Novenas overview must expose the frozen 16-target bilingual corpus");
+  assert.equal(await page.locator("#aoPray435930 [data-n1-select]").count(),16,"Novenas overview must preserve all sixteen canonical bilingual novenas");
+  assert.equal(await page.locator("#aoPray435930 [data-n1-supplement]").count(),2,"Novenas overview must separately expose the two Institute repeat-form nine-day novenas");
+  assert.equal(await page.locator("#aoPray435930 [data-n1-therese-weekly]").count(),1,"Novenas overview must separately expose the perpetual Tuesday St Therese devotion");
   await shot("03f-pray-novenas");
   await page.locator("#aoPray435930 [data-n1-select='st_michael']").click();
   // The current quiet novena detail folio presents its start authority in
