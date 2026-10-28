@@ -246,3 +246,19 @@ For Lorenzo Lotto's *Madonna del Rosario*, three full-size arch-shaped exterior 
 **Release state:** 22 primary identities fixed, 20 archived primary originals, 2 missing primary originals, 31 sections and 118 placements unchanged; 9/10 exact Commons source binary matches within the 12 promising photographs; **0 final pristine certifications**, **0 production activations**, **€0 expenditure**. The 12-source cohort now has a source-fingerprint release gate; it is not yet a published pristine cohort.
 
 Next step: convert the nine verified Commons-source photos into a source-specific quality/rights acceptance review queue; resolve the distinct Breton archived-source origin, the NGA/MNAC institution-native image chain and the seven separate missing/unsuitable photograph cases. Avoid redundant mass downloading of nine already byte-confirmed originals.
+
+## Batch 7 — three institutional source checks, two exact Commons recoveries
+
+[Three-institution source audit](../../assets/staged/prayer-art-b7-three-institution-native-20261028/institution-native-source-audit.json) · [Breton and MNAC exact Commons source results](../../assets/staged/prayer-art-b7b-breton-mnac-exact-commons-20261029/two-case-results.json).
+
+**Five distinct source cases checked in two bulk workflows.** Neither the existing selected heroes nor the primary original files were modified; the 22 primary selections, 118 placement actions and source SHA-256s are preserved. **Two additional original research photographs were archived** as candidates, **one source-ID mismatch is resolved**. The new source-path statuses are:
+
+| Work | Source and outcome | New research asset? | Final pristine? |
+|---|---|---:|---|
+| Jules Breton, *Song of the Lark* | AIC official artwork API matches 94841 (public domain, image ID `48b2de88-ba73-8e19-f448-d1cef4a1c847`). Its image endpoint returned HTTP 403; no unauthorized workarounds. A separate Commons file, `Jules Breton, le chant de l'alouette.1884.jpg`, is an **exact SHA-256 binary match** to our existing 2,548×3,300 native primary source. The wrong linked 1,019×1,534 enhanced PNG source pointer has been replaced, while preserving both source history and original photo bytes | No duplicate needed | HOLD |
+| Bartolomé Esteban Murillo, *The Return of the Prodigal Son* | National Gallery of Art–donated exact artwork photo on Wikimedia Commons, explicitly CC0 and institution-credited. The **4,000×3,658 JPEG** was archived unmodified with source SHA1 `e91b10fda9a0ff8410f7033fa91a8b2244d6d874` and independent SHA-256; the 4,096×3,712 master is retained | **Yes** | HOLD |
+| *Virgin of the Seven Sorrows*, attributed to Master of Female Half-Lengths | MNAC object `008327-000` documented as `Domini públic`. A second full-work Google Art Project / Commons PD-Art reproduction **3,250×4,391 JPEG** is now archived with SHA1 `03c6d507851e439df31dfaf0fec390b6e55c86db` and independent SHA-256; it improves native dimensions versus the existing 2,220×3,000 candidate. Museum-photo-to-archive provenance and native colour still need final review | **Yes** | HOLD |
+
+The full-composition comparison sheets are preserved alongside their original source candidates. Visual inspection indicates that Murillo's complete painted scene and the Seven Sorrows' seven medallions remain visible without an obvious separate external frame. These are *preliminary* findings, not full detailed image-level or rights signoffs.
+
+**Release state:** Two new source originals archived, one exact photographic-source mislink repaired, three institutional objects independently checked, seven previously unresolved acquisition/source groups still in their existing hold categories; **zero** newly pristine-certified or deployed photos, **€0**. Continue in bulk with the other photo exceptions and the release-quality gates, not more individual UI prototypes.
