@@ -2678,8 +2678,20 @@ export function createReaderDomAdapter({
     const rejoin=root.querySelector("[data-schola-rejoin]");
     if(rejoin)rejoin.hidden=current?.scholaCatchupPinned!==true;
     if(previous)previous.disabled=!source || Number(source.index)<=0;
-    if(next)next.disabled=!source || Boolean(source.complete) ||
-      Boolean(source.benedictusHold) || Number(source.index)>=Number(source.total)-1;
+    if(next){
+      const atLast=Boolean(source) && Number(source.total)>0 &&
+        Number(source.index)===Number(source.total)-1;
+      // The *last* phrase remains navigable: only a user's deliberate
+      // click after hearing its ending may mark the chant complete.
+      next.disabled=!source || Boolean(source.complete) ||
+        Boolean(source.benedictusHold) || Number(source.total)<=0;
+      next.textContent=atLast&&!source.complete ? "FINISH" : "›";
+      next.setAttribute?.("aria-label",atLast&&!source.complete
+        ? "Finish Schola chant when actually heard ending"
+        : "Next Schola phrase");
+      next.title=atLast&&!source.complete
+        ? "Mark chant finished when heard" : "Next Schola phrase";
+    }
     const release=root.querySelector("[data-schola-release]");
     if(release){
       release.hidden=!source?.benedictusHold || source?.benedictusReleaseAllowed!==true;

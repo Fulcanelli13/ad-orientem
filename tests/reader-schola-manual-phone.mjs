@@ -106,6 +106,29 @@ try{
      "Unobserved Schola text was presented as confirmed singing");
    await page.locator("[data-schola-next]").click();
    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.index===1);
+   const atLastPhrase=await page.evaluate(()=>{
+     const api=window.__AO_PHONE_PREVIEW;
+     let state=api.getScholaState();
+     while(state.index<state.total-1){
+       api.nextSchola();state=api.getScholaState();
+     }
+     return {index:state.index,total:state.total,complete:state.complete,
+       card:api.getCurrentCard().sectionId,cue:api.getActiveCue()};
+   });
+   assert.ok(atLastPhrase.total>1,"Kyrie needs multiple witnessed segments for the finish test");
+   assert.equal(atLastPhrase.complete,false,"Reaching last phrase is not observed chant completion");
+   await page.waitForFunction(()=>
+     document.querySelector("[data-schola-next]")?.textContent==="FINISH");
+   assert.equal(await page.locator("[data-schola-next]").isDisabled(),false,
+     "Last Schola phrase cannot be finished from the actual reader");
+   await page.locator("[data-schola-next]").click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.complete===true);
+   await page.waitForFunction(()=>document.querySelector("[data-schola-next]")?.disabled===true);
+   assert.equal(await page.locator("[data-schola-next]").isDisabled(),true);
+   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId),
+     atLastPhrase.card,"Finishing choir track moved the priest reader");
+   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getActiveCue()),
+     atLastPhrase.cue,"Finishing choir track advanced priest cue");
    const sharedAdvance=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().title);
    assert.equal(sharedAdvance,"Kyrie","Shared Schola manual correction moved the main Mass card");
    const chosen=await page.evaluate(()=>{
