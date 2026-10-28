@@ -26,9 +26,12 @@ jobs:
         with:
           persist-credentials: false
       - name: Check source-generator JavaScript syntax
-        run: node --check scripts/office/phase-b-generate.mjs
+        run: |
+          node --check scripts/office/phase-b-generate.mjs
+          node --check scripts/office/build-research-preview.mjs
+          node --check src/office/research-reader.js
       - name: Calendar, Tenebrae and composition probe contracts
-        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs
+        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs
       - name: Source-cell HTML normalizer unit tests
         run: python3 -m unittest discover -s tests -p 'test_divine_office_normalizer.py' -v
 
@@ -70,6 +73,7 @@ jobs:
             --hours MATINS,LAUDS,PRIME,TERCE,SEXT,NONE,VESPERS,COMPLINE \
             --languages la,en,fr
           python3 scripts/office/normalize_xhtml.py --out "$OUTPUT"
+          node scripts/office/build-research-preview.mjs --out "$OUTPUT"
           node --input-type=module -e '
             import {readFileSync} from "node:fs";
             const p=JSON.parse(readFileSync(process.env.OUTPUT+"/manifest.json","utf8"));
@@ -89,6 +93,9 @@ jobs:
           assert doc["count"]==96, doc["count"]
           assert doc["alignmentSamples"]==32, doc["alignmentSamples"]
           assert doc["published"]==0 and doc["liturgicallyVerified"]==0
+          from pathlib import Path
+          previews=json.loads((Path(os.environ["OUTPUT"])/"preview"/"preview-manifest.json").read_text(encoding="utf8"))
+          assert previews["pages"]==64 and previews["published"]==0 and previews["researchOnly"]
           print("Office normalization research manifest valid: 96 documents, 32 trilingual groups, zero published.")
           PY
       # Deliberately no artifact upload and no source-text publication.
