@@ -104,6 +104,26 @@ function placeSources(profile,language){
     +'</div></details></section>';
 }
 
+/** A Place's rights-approved photo gallery belongs to the physical Place,
+ * not to its optional illustrated pilgrimage guide. */
+function placeGalleryHtml(profile,language){
+ const gallery=arr(profile?.gallery);
+ if(!gallery.length)return "";
+ const loc=(item,key)=>item?.[key+"_"+language]??item?.[key+"_en"]??"";
+ const cite=(url,label)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(label||L(language,"Original source","Source originale"))+' ↗</a>';
+ let html='<section class="aoExploreGuideGallery" data-explore-place-chapter="gallery" aria-label="'+esc(L(language,"Photographs of this pilgrimage place","Photographies de ce lieu de pèlerinage"))+'">'
+    +'<h4>'+esc(L(language,"The place in photographs","Le lieu en images"))+'</h4><div class="aoExploreGalleryGrid">';
+ for(const image of gallery){
+  html+='<figure class="aoExploreGalleryImage" data-gallery-image="'+esc(image.media_id)+'">'
+    +'<img loading="lazy" decoding="async" src="'+esc(image.asset_path)+'" alt="'+esc(loc(image,"alt"))+'">'
+    +'<figcaption><strong>'+esc(loc(image,"label"))+'</strong><span>'+esc(image.credit)+' · '+esc(image.license)+'</span>'
+    +'<span class="aoExploreGalleryCredits">'+cite(image.source_url,L(language,"Photo source","Source de la photographie"))
+    +cite(image.license_url,L(language,"Licence","Licence"))+'</span>'
+    +'<small>'+esc(loc(image,"changes"))+'</small></figcaption></figure>';
+ }
+ return html+'</div></section>';
+}
+
 function illustratedGuideHtml(profile,language){
  const guide=profile?.illustrated_guide;if(!guide)return "";
  const loc=(item,key)=>item?.[key+"_"+language]??item?.[key+"_en"]??"";
@@ -111,19 +131,6 @@ function illustratedGuideHtml(profile,language){
  let html='<section class="aoExploreIllustratedGuide" data-explore-place-chapter="guide" aria-label="'+esc(L(language,"Pilgrimage guide","Guide du pèlerin"))+'">';
  html+='<header class="aoExploreGuideIntro"><small>'+esc(L(language,"PILGRIMAGE GUIDE","GUIDE DU PÈLERIN"))+'</small><h3>'+esc(loc(guide,"subtitle"))+'</h3><p>'+esc(loc(guide,"region"))+'</p><div class="aoExploreStoryEvidence">'+cite(guide.official_url,L(language,"Official website","Site officiel"))+'</div></header>';
 
- if(arr(profile.gallery).length){
-  html+='<section class="aoExploreGuideGallery" data-explore-place-chapter="gallery" aria-label="'+esc(L(language,"Photographs of this pilgrimage place","Photographies de ce lieu de pèlerinage"))+'">'
-    +'<h4>'+esc(L(language,"The place in photographs","Le lieu en images"))+'</h4><div class="aoExploreGalleryGrid">';
-  for(const image of profile.gallery){
-    html+='<figure class="aoExploreGalleryImage" data-gallery-image="'+esc(image.media_id)+'">'
-      +'<img loading="lazy" decoding="async" src="'+esc(image.asset_path)+'" alt="'+esc(loc(image,"alt"))+'">'
-      +'<figcaption><strong>'+esc(loc(image,"label"))+'</strong><span>'+esc(image.credit)+' · '+esc(image.license)+'</span>'
-      +'<span class="aoExploreGalleryCredits">'+cite(image.source_url,L(language,"Photo source","Source de la photographie"))
-      +cite(image.license_url,L(language,"Licence","Licence"))+'</span>'
-      +'<small>'+esc(loc(image,"changes"))+'</small></figcaption></figure>';
-  }
-  html+='</div></section>';
- }
  for(const section of arr(guide.sections)){
   html+='<section class="aoExploreGuideSection"><h4>'+esc(loc(section,"title"))+'</h4>';
   for(const row of arr(section.paragraphs))html+='<article class="aoExploreGuideParagraph"><p>'+esc(row?.[language]||row?.en||"")+'</p><div class="aoExploreStoryEvidence">'+cite(row?.source_url,L(language,"Historical source","Source historique"))+'</div></article>';
@@ -203,13 +210,14 @@ function placeSheet(vm){
     ?arr(profile.story_chapters).filter(row=>row.kind===storyKindForFilter[restricted])
     :arr(profile.story_chapters);
   const hasGuide=Boolean(profile.illustrated_guide);
+  const hasGallery=arr(profile.gallery).length>0;
   const hasNovenas=arr(profile.novenas).length>0;
   const hasCalendar=arr(profile.calendar).length>0||arr(profile.seasonal_pilgrimages).length>0;
   const hasSources=arr(profile.sources).some(source=>source?.url);
-  if(profile.editorial_feature||chapters.length||hasGuide){
+  if(profile.editorial_feature||chapters.length||hasGuide||hasGallery){
     html+='<nav class="aoExplorePlaceChapters" aria-label="'+esc(L(vm.language,"Explore this place","Explorer ce lieu"))+'">';
     if(chapters.length||synopsis)html+='<button type="button" data-explore-place-jump="story">'+esc(L(vm.language,"The place","Le lieu"))+'</button>';
-    if(hasGuide&&arr(profile.gallery).length)html+='<button type="button" data-explore-place-jump="gallery">'+esc(L(vm.language,"Photographs","Photographies"))+'</button>';
+    if(hasGallery)html+='<button type="button" data-explore-place-jump="gallery">'+esc(L(vm.language,"Photographs","Photographies"))+'</button>';
     if(hasGuide)html+='<button type="button" data-explore-place-jump="guide">'+esc(L(vm.language,"Pilgrimage guide","Guide du pèlerin"))+'</button>';
     if(hasNovenas)html+='<button type="button" data-explore-place-jump="pray">'+esc(L(vm.language,"Pray","Prier"))+'</button>';
     if(hasCalendar)html+='<button type="button" data-explore-place-jump="calendar">'+esc(L(vm.language,"Calendar","Calendrier"))+'</button>';
@@ -237,6 +245,7 @@ function placeSheet(vm){
     }
     html+='</section>';
   }else if(synopsis)html+='<section class="aoExplorePlaceOpening" data-explore-place-chapter="story"><small>'+esc(L(vm.language,"THE PLACE","LE LIEU"))+'</small><p class="aoHeritageOverview">'+esc(synopsis)+'</p></section>';
+  if(hasGallery)html+=placeGalleryHtml(profile,vm.language);
   if(hasGuide)html+=illustratedGuideHtml(profile,vm.language);
   if(profile.directions_url)html+='<div class="aoFindActions aoExplorePlaceVisit" data-explore-place-chapter="visit"><a href="'+esc(profile.directions_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Directions","Itinéraire"))+'</a></div>';
   if(!chapters.length&&!synopsis)html+='<p class="aoHeritageMeta">'+esc(L(vm.language,"Explore original records and their sources below.","Consultez les fiches originales et leurs sources ci-dessous."))+'</p>';

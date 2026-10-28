@@ -91,6 +91,27 @@ for(const placeId of new Set(registry.items.map(x=>x.place_id))){
   }
  }
 }
+// P63: a Place's approved gallery must remain visible even when there is no
+// published illustrated pilgrimage guide (e.g. Notre-Dame and P61 churches).
+const galleryOnlyId="place:FR:pontmain";
+const galleryOnlyProfiles=profiles.map(p=>p.place_id===galleryOnlyId?{...p,illustrated_guide:null}:p);
+for(const lang of ["en","fr"]){
+ const html=renderExploreToString(buildExploreViewModel({
+  language:lang,lens:"heritage",view:"map",items:projected.byLens.shrines,
+  filters:{heritageCategories:["shrines","pilgrimages","apparitions","relics","traditions"]},
+  placeProfiles:galleryOnlyProfiles,selectedPlaceId:galleryOnlyId,expandPlace:true
+ }));
+ assert.ok(html.includes('data-explore-place-chapter="gallery"'),"Missing standalone gallery");
+ assert.ok(html.includes('data-explore-place-jump="gallery"'),"Missing gallery navigation");
+ assert.ok(!html.includes('data-explore-place-chapter="guide"'),"Gallery incorrectly requires a published guide");
+ for(const item of registry.items.filter(x=>x.place_id===galleryOnlyId)){
+  assert.ok(html.includes(item.asset_path));
+  assert.ok(html.includes(esc(item["alt_"+lang])));
+  assert.ok(html.includes(esc(item["label_"+lang])));
+ }
+ for(const item of registry.items.filter(x=>x.place_id!==galleryOnlyId))
+  assert.ok(!html.includes(item.asset_path),"Other Place's gallery leaked");
+}
 for(const p of profiles.filter(x=>!registry.items.some(img=>img.place_id===x.place_id)))
  assert.equal(p.gallery.length,0);
 console.log("PASS R69: 6 approved local gallery photographs over 4 physical Places, EN/FR UI, 24 independently approved heroes and original 14 guides");
