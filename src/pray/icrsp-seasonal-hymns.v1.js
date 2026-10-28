@@ -102,7 +102,15 @@ And so to purify the soul.
 Hear us, O Trinity thrice blest!
 Sole Unity! to Thee we cry:
 Vouchsafe us from these fasts below
-To reap immortal fruit on high.`,englishSource:{work:"Edward Caswall, Lyra Catholica, London: James Burns, 1849",printedPages:"70–71",pdfPagesZeroBased:[107,108],url:"https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",witnessStatus:"COLLATED_AGAINST_1849_PRINTED_PAGE_IMAGES"},languageStatus:"HISTORIC_LATIN_AND_CASWALL_1849_ENGLISH_FRENCH_PENDING"}),
+To reap immortal fruit on high.`,englishSource:{work:"Edward Caswall, Lyra Catholica, London: James Burns, 1849",printedPages:"70–71",pdfPagesZeroBased:[107,108],url:"https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",witnessStatus:"COLLATED_AGAINST_1849_PRINTED_PAGE_IMAGES"},fr:`Créateur plein de bonté, daignez écouter les prières que nous vous offrons avec larmes, au milieu des jeûnes de cette sainte Quarantaine.
+
+Vous qui scrutez le fond des cœurs, vous connaissez notre faiblesse : nous revenons à vous ; donnez-nous la grâce du pardon.
+
+Nous avons beaucoup péché ; pardonnez-nous à cause de notre aveu ; pour la gloire de votre Nom, apportez le remède à nos langueurs.
+
+Faites que la résistance de notre corps soit abattue par l’abstinence, et que notre cœur, soumis à un jeûne spirituel, ne se repaisse plus du péché.
+
+Trinité bienheureuse, Unité parfaite, rendez profitable à vos fidèles le bienfait du jeûne. Amen.`,frenchSource:{work:"Dom Prosper Guéranger, L’Année liturgique, Le Carême, 16e édition (1903)",section:"Vêpres · Audi, benigne Conditor",url:"https://www.domgueranger.net/lannee-liturgique-le-careme-historique-mystique-pratique-prieres/",witnessStatus:"TRANSCRIPTION_OF_1903_EDITION_NOT_YET_PHYSICAL_PAGE_COLLATED"},languageStatus:"HISTORIC_LATIN_CASWALL_1849_ENGLISH_GUERANGER_1903_FRENCH"}),
   ad_regias_agni_dapes:h("ad_regias_agni_dapes","Ad regias Agni dapes","Eastertide","Vespers · Roman Breviary version",
 `Ad régias Agni dapes,
 Stolis amícti cándidis,

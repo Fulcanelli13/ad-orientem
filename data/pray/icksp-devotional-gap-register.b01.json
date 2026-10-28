@@ -512,7 +512,7 @@
         ]
       },
       "office_role": "Lent Vespers",
-      "french_translation_status": "ICRSP_MODERN_FRENCH_SOURCE_LINK_ONLY_NO_COPY",
+      "french_translation_status": "GUERANGER_1903_FRENCH_IMPLEMENTED_IN_DRAFT",
       "english_translation_status": "HISTORICAL_ENGLISH_CASWALL_1849_IMPLEMENTED_IN_DRAFT",
       "liturgical_rubric": null,
       "historical_english_translation": {
@@ -526,6 +526,13 @@
         ],
         "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
         "verification": "VISUAL_COLLATED_FROM_ORIGINAL_PRINTED_PAGES"
+      },
+      "historical_french_translation": {
+        "author": "Dom Prosper Guéranger",
+        "work": "L’Année liturgique, Le Carême, 16e édition (1903)",
+        "section": "Lenten Vespers hymn, five paragraphs",
+        "url": "https://www.domgueranger.net/lannee-liturgique-le-careme-historique-mystique-pratique-prieres/",
+        "verification": "Historical 1903 edition transcription; original printed pages not visually collated"
       }
     },
     {
@@ -833,9 +840,10 @@
     "production_hymn_releases": 0,
     "full_historical_english_hymns_in_draft": 2,
     "other_english_hymns_unverified": 6,
-    "historical_french_seasonal_hymns_in_draft": 0,
+    "historical_french_seasonal_hymns_in_draft": 1,
     "caswall_1849_pages_collated": 4,
-    "release_status": "DRAFT_BRANCH_ONLY_ACTIONS_GATES_REQUIRED"
+    "release_status": "DRAFT_BRANCH_ONLY_ACTIONS_GATES_REQUIRED",
+    "other_french_hymns_unverified": 7
   },
   "reconciliation_pass3": {
     "date": "2026-10-28",
