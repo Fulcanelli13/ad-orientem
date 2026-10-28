@@ -22,7 +22,7 @@ import { R17_FINAL_APPROVED_MASS_ASSETS } from "../src/mass/reader-final-approve
 
 assert.equal(mapLegacyFollowMode("missal"), "MISSAL");
 assert.equal(mapLegacyFollowMode("read"), "MISSAL");
-assert.equal(mapLegacyFollowMode("simple"), "SIMPLE");
+assert.equal(mapLegacyFollowMode("simple"), "LIVE");
 assert.equal(mapLegacyFollowMode("vox"), "LIVE");
 assert.equal(mapLegacyFollowMode(undefined), "LIVE");
 
