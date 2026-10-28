@@ -12,8 +12,13 @@ assert.match(renderTenebraeCeremony({ceremony:c,step:p}),/not required by the 19
 c=tenebraeCeremonialAction(c,"enable",p);
 assert.equal(c.enabled,true);
 assert.equal(tenebraeCeremonialAction(c,"extinguish",{kind:"LESSON"}).extinguished,0);
-for(let i=0;i<14;i++)c=tenebraeCeremonialAction(c,"extinguish",p);
+for(const id of [...Array.from({length:9},(_,i)=>"M.N"+(Math.floor(i/3)+1)+".P"+(i%3+1)),...Array.from({length:5},(_,i)=>"L.P"+(i+1))]){
+ const step={kind:"PSALM",id};
+ c=tenebraeCeremonialAction(c,"extinguish",step);
+ assert.equal(tenebraeCeremonialAction(c,"extinguish",step).extinguished,c.extinguished);
+}
 assert.equal(c.extinguished,14);
+assert.equal(new Set(c.observedPsalms).size,14);
 assert.equal(tenebraeCeremonialAction(c,"extinguish",p).extinguished,14);
 assert.equal(tenebraeCeremonialAction(c,"hide",p).hidden,false);
 c=tenebraeCeremonialAction(c,"hide",{kind:"CANTICLE",id:"L.BENEDICTUS"});
