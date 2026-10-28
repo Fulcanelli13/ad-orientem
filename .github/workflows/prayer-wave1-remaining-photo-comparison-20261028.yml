@@ -1,0 +1,41 @@
+name: Prayer Wave 1 - remaining original photo comparison
+on:
+  push:
+    branches:
+      - research/prayer-wave1-photo-comparison-20261028
+    paths:
+      - .github/workflows/prayer-wave1-remaining-photo-comparison-20261028.yml
+      - scripts/art/prayer-wave1-remaining-photo-comparison-20261028.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prayer-wave1-photo-comparison-20261028
+  cancel-in-progress: false
+
+jobs:
+  research-source-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-wave1-photo-comparison-20261028
+      - name: Install photo processing
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Verify archived SHA and produce source comparison originals
+        run: |
+          python -m py_compile scripts/art/prayer-wave1-remaining-photo-comparison-20261028.py
+          python scripts/art/prayer-wave1-remaining-photo-comparison-20261028.py
+      - name: Archive original candidates and QA contact sheets permanently
+        run: |
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/staged/prayer-wave1-photo-comparison-20261028
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(prayer art): pin alternate MNAC and Lotto originals and photo QA sheets"
+          git pull --rebase origin research/prayer-wave1-photo-comparison-20261028
+          git push origin HEAD:research/prayer-wave1-photo-comparison-20261028
