@@ -128,7 +128,9 @@
     "batch4_conditional_frame_free_candidates": 12,
     "batch5_painting_boundary_case_proofs": 4,
     "batch5_source_rights_evidence_documented": 12,
-    "batch5_final_pristine_certifications": 0
+    "batch5_final_pristine_certifications": 0,
+    "batch5b_lotto_transparent_candidate_count": 1,
+    "batch5b_lotto_painting_identity_changes": 0
   },
   "primary_artworks": [
     {
@@ -2635,6 +2637,31 @@
           "production_allowed": false,
           "nonwhite_rectangular_crop_noop": true,
           "next_action": "REMOVE_EXTERNAL_WHITE_CORNERS_VIA_ALPHA_MATTE_ONLY_PRESERVE_WHOLE_ARCH_AND_15_ROUNDELS"
+        },
+        "batch5b_lotto_curved_panel_matte": {
+          "status": "SOURCE_PRESERVING_EXTERIOR_ALPHA_RESEARCH_PROOF_VISUALLY_REVIEWED",
+          "method": "ROW_EDGE_NEARWHITE_PREFIX_SUFFIX_ONLY",
+          "source_sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+          "original_pixels": [
+            1880,
+            2886
+          ],
+          "source_original_preserved": true,
+          "full_native_alpha_source_exact_rgb": true,
+          "selected_research_threshold": {
+            "min_channel": 238,
+            "max_channel_spread": 32,
+            "transparent_pixel_fraction": 0.066145
+          },
+          "candidate_path": "assets/staged/prayer-art-b5b-lotto-exterior-matte-20261028/lotto-exterior-nearwhite-matte-research-only.png",
+          "candidate_sha256": "9b3fc17972cb55877b91572276f3c59621612dd14d9ccc90ccc57e2f99c17f2a",
+          "proof_sheet": "assets/staged/prayer-art-b5b-lotto-exterior-matte-20261028/lotto-white-exterior-matte-three-thresholds.jpg",
+          "all_fifteen_medallions_visually_present": true,
+          "entire_arch_preserved": true,
+          "painted_edge_subpixel_final_certified": false,
+          "source_photo_rights_certified": false,
+          "pristine_certified": false,
+          "production_activated": false
         }
       },
       "alternative_source_candidate": {
@@ -6790,6 +6817,17 @@
       "source_originals_unchanged": true,
       "preserved_user_editing_decisions": true,
       "signoff_requirement": "Technical crop proposals cannot be promoted until all original painted pixels and file-specific rights verified; Lotto needs entire-arch alpha approach rather than rectangular crop"
+    },
+    "B5B_LOTTO_ARCH_SILHOUETTE": {
+      "status": "SOURCE_EXACT_RESEARCH_MATTE_VERIFIED_ARCH_AND_MEDALLIONS_RETAINED",
+      "run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40739039501",
+      "evidence_file": "assets/staged/prayer-art-b5b-lotto-exterior-matte-20261028/matte-proofs.json",
+      "research_image_sha256": "9b3fc17972cb55877b91572276f3c59621612dd14d9ccc90ccc57e2f99c17f2a",
+      "three_thresholds_verified": 3,
+      "painted_field_compositional_review": "PASS_FULL_ARCH_AND_15_MEDALLIONS_VISUALLY_RETAINED",
+      "pristine_final": 0,
+      "release": 0,
+      "cost_eur": 0
     }
   },
   "protected_wave1_notes": {
