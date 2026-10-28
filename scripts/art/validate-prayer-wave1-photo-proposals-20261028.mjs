@@ -39,6 +39,12 @@ assert.equal(evidence.source_images.sorrows_new.sha256,
 const rosary=reviews.photo_reviews.find(x=>x.module==="rosary");
 assert.equal(rosary.no_artwork_reselection,true);
 assert.equal(rosary.recommend_photo.sha256,evidence.source_images.rosary_yorck.sha256);
+assert.equal(rosary.historical_master_identity_reconciled.byte_identical,true);
+assert.equal(rosary.historical_master_identity_reconciled.historical_manifest_sha256,
+  wave.modules.find(x=>x.section==="rosary").photo.original_sha256_recorded);
+assert.equal(rosary.historical_master_identity_reconciled.reacquired_commons_original_sha256,
+  evidence.source_images.rosary_yorck.sha256);
+
 assert.equal(rosary.candidate_original_previews.length,2);
 assert.equal(rosary.rejected_photo_candidates.length,2);
 const angelus=reviews.photo_reviews.find(x=>x.module==="angelus");
