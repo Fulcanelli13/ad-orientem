@@ -520,7 +520,7 @@ try{
  await open("pray.sacred_hymns");
  let hymn=await snapshot();
  assert.equal(hymn.kind,"hymns");assert.equal(hymn.route,"pray.sacred_hymns");
- assert.equal(hymn.stops,3);assert.equal(hymn.active,1);
+ assert.equal(hymn.stops,11);assert.equal(hymn.active,1);
  assert.equal(hymn.id,"hymn-te_deum");assert.equal(hymn.overflow,"auto");
  assert.ok(hymn.paragraphCount>20,"Te Deum has no line-level focus");
  assert.equal(await page.locator("#aoPray435930 [data-ao-hymn-options]").evaluate(x=>x.open),false,
