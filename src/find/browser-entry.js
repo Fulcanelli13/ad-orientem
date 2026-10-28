@@ -18,6 +18,7 @@ import { SAINTS_SHEET_CSS } from "./saints-presentation.js";
 import { projectSaintCatalogueItems } from "./saints-catalogue.js";
 import { projectSaintSourceIndexItems } from "./saints-source-index.js";
 import { mapViewport, mountExploreMap, exploreMapFeatures } from "./map-runtime.js";
+import { mappedVenueViewportLabel } from "./mass-map-viewport-context.js";
 import {buildAtlasCoverage} from "./mapcn-atlas-coverage.js";
 import {buildSacredNetwork} from "./mapcn-network-model.js";
 import { ATLAS_PHYSICAL_STYLE } from "./atlas-physical-style.js";
@@ -329,6 +330,14 @@ export function createFindOwner(win=globalThis){
   // Rebuild only the small Discover rail on map movement. This uses the
   // currently filtered canonical Places and the existing MapLibre camera;
   // there is no parallel search index, geocoder, or map instance.
+  function syncMassViewport(){
+    if(!openState||state.lens!=="tlm"||state.view!=="map"||!mapHandle)return;
+    const counter=getRoot(win)?.querySelector?.("[data-tlm-viewport-count]");
+    if(!counter)return;
+    try{counter.textContent=mappedVenueViewportLabel(mapHandle.viewportVenueStats?.(),language(win));}
+    catch{counter.textContent=mappedVenueViewportLabel(null,language(win));}
+  }
+
   function syncDiscoverViewport(){
     if(!openState||state.lens!=="heritage"||state.bibleAtlas)return;
     const rail=getRoot(win)?.querySelector?.("[data-mapcn-discover-rail]");
@@ -584,7 +593,7 @@ export function createFindOwner(win=globalThis){
     if(mapHandle&&state.view==="map"){
       lastMapView=mapViewport(mapHandle.map);lastMapLens=state.lens;
     }
-    if(reuseMap){syncJourneyMarkers();syncDiscoverViewport();return true;}
+    if(reuseMap){syncJourneyMarkers();syncDiscoverViewport();syncMassViewport();return true;}
     mapHandle?.destroy?.();mapHandle=null;
     if(openState&&state.view==="map"){
       const mapNode=node.querySelector?.("[data-find-map]");
@@ -655,6 +664,11 @@ export function createFindOwner(win=globalThis){
           showMapRecovery(true);return true;
         }
         mapHandle=nextHandle;
+        if(state.lens==="tlm"){
+          mapHandle.map?.on?.("moveend",syncMassViewport);
+          mapHandle.map?.on?.("load",syncMassViewport);
+          syncMassViewport();
+        }
         if(state.lens==="heritage"){
           mapHandle.map?.on?.("moveend",syncDiscoverViewport);
           syncDiscoverViewport();

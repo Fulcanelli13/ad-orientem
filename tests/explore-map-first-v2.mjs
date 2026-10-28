@@ -97,7 +97,7 @@ const runtime=readFileSync("src/find/browser-entry.js","utf8");
 const css=readFileSync("src/find/explore-map-first-v2-style.js","utf8");
 assert.match(runtime,/map\.getBounds\?\.\(\)/);
 assert.match(runtime,/mapHandle\.map\?\.on\?\.\("moveend",syncDiscoverViewport\)/);
-assert.match(runtime,/if\(reuseMap\)\{syncJourneyMarkers\(\);syncDiscoverViewport\(\);return true;\}/);
+assert.match(runtime,/if\(reuseMap\)\{syncJourneyMarkers\(\);syncDiscoverViewport\(\);syncMassViewport\(\);return true;\}/);
 assert.match(runtime,/data-mapcn-discover-toggle/);
 assert.match(css,/data-discover-expanded="false"/);
 assert.match(css,/@media\(max-width:799px\)/);

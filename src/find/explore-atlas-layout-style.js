@@ -353,6 +353,10 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoFindResultMeta strong{
   font:500 13px var(--ao-font-body,Georgia,serif);
 }
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmViewportContext{
+  display:block;margin-top:4px;padding-top:4px;border-top:1px solid rgba(205,180,132,.2);
+  color:#f0debb;font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+}
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoFindBody[data-find-view=map]{
   position:relative;flex:1;min-height:0;margin:0;padding:0!important;overflow:hidden;
 }
@@ -360,13 +364,27 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   position:absolute;inset:0;width:100%;height:100%!important;
   margin:0!important;min-height:0!important;border:0!important;border-radius:0!important;
 }
+/* Keep native MapLibre zoom/fullscreen controls below the floating section menu
+   and source filter strip. On phones the old top-right placement was occluded
+   by "Other sections", making actual map zoom buttons unclickable. */
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoFindMap .maplibregl-ctrl-top-right{
+  top:184px;right:9px;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoFindMap .maplibregl-ctrl-top-right button{
+  min-width:44px;min-height:44px;
+}
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreMapReset{
-  top:130px;left:14px;width:44px;height:44px;padding:0;
-  border-radius:50%;font-size:0;background:#0c1824ed;
-  border:1px solid rgba(205,180,132,.34)
+  top:184px;left:14px;display:inline-flex;align-items:center;gap:7px;
+  width:auto;height:auto;min-height:44px;max-width:160px;padding:8px 12px;
+  border-radius:10px;font:600 12px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+  white-space:nowrap;color:#e9d8b8;background:#0c1824eb;
+  border:1px solid rgba(205,180,132,.45)
 }
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreMapReset:before{
-  content:"◎";font:27px/1 Georgia,serif;color:#d9c390
+  content:"◎";font:21px/1 Georgia,serif;color:#d9c390
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreMapReset:focus-visible{
+  outline:2px solid #e8d1a2;outline-offset:3px
 }
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoMapLegend{
   position:absolute;bottom:13px;left:14px;z-index:8;

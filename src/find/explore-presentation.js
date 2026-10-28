@@ -660,6 +660,7 @@ export function renderExploreToString(vm){
   html+='<div class="aoFindResultMeta"><strong>'+String(vm.items.length)+'</strong><span>'+esc(noun)+'</span>';
   if(vm.mapped&&vm.mapped<vm.items.length)html+='<span> · '+String(vm.mapped)+' '+esc(L(vm.language,"mapped","cartographiés"))+'</span>';
   if(vm.addressOnly)html+='<span> · '+String(vm.addressOnly)+' '+esc(L(vm.language,"address only","adresse seule"))+'</span>';
+  if(vm.lens==="tlm"&&vm.view==="map")html+='<span class="aoTlmViewportContext" data-tlm-viewport-count aria-live="polite">'+esc(L(vm.language,"In this view: …","Dans cette vue : …"))+'</span>';
   if(vm.lens==="tlm"){
     const listed=vm.items.filter(x=>x.status==="SCHEDULE UNVERIFIED").length;
     if(listed)html+='<span> · '+String(listed)+' '+esc(L(vm.language,"directory-listed, unverified","répertoriés, non vérifiés"))+'</span>';
