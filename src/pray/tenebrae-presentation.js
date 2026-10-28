@@ -1,6 +1,7 @@
 import {TENEBRAE_DAY_NAMES} from "./tenebrae-1960.js";
 import {devotionalProgressMarkup} from "./devotional-progress.js";
 import {tenebraeGuideCopy,TENEBRAE_GUIDE_LINKS} from "./tenebrae-guides.js";
+import {renderTenebraeCeremony} from "./tenebrae-ceremonial.v1.js";
 const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const nl=x=>esc(x).replace(/\n/g,"<br>");
 function label(en,fr,locale){return locale==="fr"?fr:en}
@@ -19,7 +20,7 @@ function stepTitle(step,locale){
  if(id==="L.COLLECT")return label("Concluding prayer","Oraison finale",locale);
  return id;
 }
-export function renderTenebraeBody({day=0,hour="MATINS",index=0,face="vernacular",french=false,data=null,loading=false,error=null,guided=true}={}){
+export function renderTenebraeBody({day=0,hour="MATINS",index=0,face="vernacular",french=false,data=null,loading=false,error=null,guided=true,ceremony=null}={}){
  const loc=french?"fr":"en",L=(en,fr)=>label(en,fr,loc),steps=data?.steps??[];
  const current=steps[index]??null;
  const guide=tenebraeGuideCopy({day,hour,step:current,french});
@@ -66,7 +67,7 @@ export function renderTenebraeBody({day=0,hour="MATINS",index=0,face="vernacular
   '<nav class="aoTenebDays" aria-label="'+esc(L("Select Holy Week day","Choisir le jour"))+'">'+days+'</nav>'+
   '<div class="aoTenebHours" role="group" aria-label="'+esc(L("Select canonical hour","Choisir l’heure canoniale"))+'">'+hours+'</div>'+
   '<div class="aoTenebMode" role="group" aria-label="'+esc(L("Reading mode","Mode de lecture"))+'">'+modeButtons+'</div>'+
-  (guided?'<p class="aoTenebDayContext">'+esc(guide.day)+'</p>':'')+jumpMarkup+
+  (guided?'<p class="aoTenebDayContext">'+esc(guide.day)+'</p>':'')+renderTenebraeCeremony({ceremony,step:current,french})+jumpMarkup+
   material+
   '<details class="aoTenebSource"><summary>'+esc(L("Liturgical edition and source","Édition liturgique et sources"))+'</summary><p>'+esc(edition)+'</p><p>'+esc(witness)+'</p><p>'+esc(guide.sourceWarning)+'</p><p>© 2026 Divinum Officium · MIT · <a href="https://github.com/DivinumOfficium/divinum-officium" target="_blank" rel="noopener noreferrer">Source</a></p></details></main>';
 }

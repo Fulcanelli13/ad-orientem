@@ -1,0 +1,48 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {freshTenebraeCeremony,tenebraeCeremonialAction,renderTenebraeCeremony} from "../src/pray/tenebrae-ceremonial.v1.js";
+
+const script=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
+const tenebrae=readFileSync(new URL("../src/pray/tenebrae-presentation.js",import.meta.url),"utf8");
+const source=readFileSync(new URL("../src/pray/tenebrae-1960.js",import.meta.url),"utf8");
+const p={kind:"PSALM",id:"M.N1.P1"};
+let c=freshTenebraeCeremony();
+assert.equal(c.enabled,false);
+assert.match(renderTenebraeCeremony({ceremony:c,step:p}),/not required by the 1960 Office/);
+c=tenebraeCeremonialAction(c,"enable",p);
+assert.equal(c.enabled,true);
+assert.equal(tenebraeCeremonialAction(c,"extinguish",{kind:"LESSON"}).extinguished,0);
+for(const id of [...Array.from({length:9},(_,i)=>"M.N"+(Math.floor(i/3)+1)+".P"+(i%3+1)),...Array.from({length:5},(_,i)=>"L.P"+(i+1))]){
+ const step={kind:"PSALM",id};
+ c=tenebraeCeremonialAction(c,"extinguish",step);
+ assert.equal(tenebraeCeremonialAction(c,"extinguish",step).extinguished,c.extinguished);
+}
+assert.equal(c.extinguished,14);
+assert.equal(new Set(c.observedPsalms).size,14);
+assert.equal(tenebraeCeremonialAction(c,"extinguish",p).extinguished,14);
+assert.equal(tenebraeCeremonialAction(c,"hide",p).hidden,false);
+c=tenebraeCeremonialAction(c,"hide",{kind:"CANTICLE",id:"L.BENEDICTUS"});
+assert.equal(c.hidden,true);
+assert.equal(tenebraeCeremonialAction(c,"return",p).returned,false);
+c=tenebraeCeremonialAction(c,"strepitus",p);
+c=tenebraeCeremonialAction(c,"return",p);
+assert.equal(c.returned,true);
+const html=renderTenebraeCeremony({ceremony:c,step:p,french:true});
+assert.equal((html.match(/role="img"/g)||[]).length,15);
+assert.match(html,/Source ICRSP/);
+assert.deepEqual(tenebraeCeremonialAction(c,"reset",p),freshTenebraeCeremony());
+
+assert.match(source,/hour===\"MATINS\"\?32:10/);
+assert.match(tenebrae,/renderTenebraeCeremony\(\{ceremony,step:current,french\}\)/);
+assert.match(script,/tenebraeCeremonialAction\(TEN\.ceremony/);
+assert.match(script,/TEN\.ceremony=freshTenebraeCeremony\(\)/);
+assert.match(script,/ceremony:TEN\.ceremony/);
+assert.match(script,/SEVEN\.scriptureOnly\?'':/);
+assert.match(script,/data-p435930-word-method="scripture"/);
+assert.match(script,/!SEVEN\.scriptureOnly&&!SEVEN\.sections/);
+assert.match(script,/Object\.entries\(FS_MYSTERIES\)\.filter\(\(\[id\]\)=>id!=='luminous'\)/);
+assert.match(script,/\['joyful','sorrowful','glorious'\]\.includes\(b\.dataset\.p435930FsMedSet\)/);
+assert.match(script,/No record is required/);
+assert.match(script,/no invented fixed number of days/);
+assert.match(script,/local parish programme may also offer routine Confession/);
+console.log("ICKSP Prayer Batch 4: observational Tenebrae, Scripture-only Seven Words and First Friday/Saturday guards passed");
