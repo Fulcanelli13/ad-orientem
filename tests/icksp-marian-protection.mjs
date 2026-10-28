@@ -5,11 +5,13 @@ import {ICKSP_MARIAN_PROTECTION_V1} from "../src/pray/icksp-marian-protection.v1
 const prayer=ICKSP_MARIAN_PROTECTION_V1.augustQueen;
 assert.equal(prayer.id,"icksp_august_queen_heaven");
 assert.ok(Object.isFrozen(prayer));
-assert.ok(prayer.en.length>500 && prayer.fr.length>400,"Both historical language witnesses must be complete");
+assert.ok(prayer.en.length>350 && prayer.fr.length>400,"Both historical language witnesses must be complete");
 assert.match(prayer.en,/August Queen of Heaven/);
-assert.match(prayer.en,/All ye holy Angels and Archangels keep us and defend us/);
+assert.match(prayer.en,/Who is like unto God!/);
+assert.doesNotMatch(prayer.en,/All ye holy Angels and Archangels keep us and defend us/,"Separate invocations must not be silently appended");
 assert.match(prayer.fr,/Auguste Reine des cieux/);
 assert.match(prayer.fr,/Saints Anges et Archanges/);
+assert.ok(prayer.fr.trim().endsWith("Auguste Reine des cieux et maîtresse des Anges."),"French closing refrain lost");
 assert.ok(!("la" in prayer),"Never generate unsupported Latin text");
 assert.match(prayer.editions.english.url,/gutenberg\.org/);
 assert.match(prayer.editions.french.url,/servantesdemarie\.com/);
