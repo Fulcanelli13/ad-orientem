@@ -1,0 +1,42 @@
+name: Prayer Sacred Art B5 - four conservative painting-boundary proofs
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/prayer-art-b5-four-boundary-proofs-20261028.yml
+      - scripts/art/prayer-art-b5-four-painting-boundary-proposals-20261028.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-prayer-b5-four-boundary
+  cancel-in-progress: false
+jobs:
+  preserve-source-and-boundary-proofs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free pinned image and array dependencies
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0 numpy==2.2.6
+      - name: Verify source SHA and produce four auditable crop proofs
+        run: |
+          python -m py_compile scripts/art/prayer-art-b5-four-painting-boundary-proposals-20261028.py
+          python scripts/art/prayer-art-b5-four-painting-boundary-proposals-20261028.py
+      - name: Preserve full source-linked boundary evidence in research Git
+        if: always()
+        run: |
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/staged/prayer-art-b5-four-boundary-candidates-20261028/
+          git diff --cached --check
+          if git diff --cached --quiet; then echo "No new review proofs"; exit 0; fi
+          git commit -m "research(prayer art): archive four exact painting boundary proofs and pixel crop evidence"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028
