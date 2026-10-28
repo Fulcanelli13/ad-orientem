@@ -20,6 +20,8 @@ import {PRECIOUS_BLOOD_HISTORICAL_SOURCE_V1,PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1
 import {PRIESTLY_INTERCESSION_PURPOSES_B19,priestlyIntercessionFor} from "./priestly-intercessions-b19.js";
 import {OCCASIONAL_PURPOSES_B20,occasionalIntercessionFor} from "./occasional-intercessions-b20.js";
 import {OCCASIONAL_PURPOSES_ALL_B21,occasionalIntercessionB21For} from "./occasional-intercessions-b21.js";
+import {JOSEPH_SEVEN_SORROWS_SOURCE_B24,JOSEPH_SEVEN_PRAYERS_B24,JOSEPH_SEVEN_STEP_COUNT_B24,JOSEPH_SEVEN_CLOSURE_B24,josephSevenStepAt} from "./st-joseph-seven-sorrows-joys-b24.js";
+import "./st-joseph-seven-sorrows-styles-b24.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
 import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
 import {monthlyDevotionalRegister} from "./quiet-devotional-progression.js";
@@ -253,6 +255,7 @@ let FIVE_WOUNDS={index:0,latin:false};
 let PRECIOUS_BLOOD={phase:0,bead:0,latin:false,showMeditation:false};
 let PRIESTS={purpose:"priests",latin:false};
 let OCCASIONAL={purpose:"sick",latin:false};
+let JOSEPH_SEVEN={step:0,latin:false};
 let ROSARY_FIFTEEN={active:false};
 // Only a source-launched exact Rosary object owns this temporary return receipt.
 let rosaryScriptureReturn=null;
@@ -435,6 +438,7 @@ function open(id,opts={}){
   else if(id==='pray.library')view='library';
   else if(id==='pray.for_priests'){view='priests';PRIESTS={purpose:'priests',latin:false}}
   else if(id==='pray.occasional_intercessions'){view='occasionals';OCCASIONAL={purpose:'sick',latin:false}}
+  else if(id==='pray.st_joseph_seven_sorrows'){view='josephSeven';JOSEPH_SEVEN={step:0,latin:false}}
   else if(id==='pray.penitential_psalms'){view='penitential';PEN.step=0}
   else if(id==='pray.litany_saints'){view='litany';LIT.step=0}
   else if(id==='pray.seven_words'){view='sevenWords';SEVEN.step=0}
@@ -724,7 +728,7 @@ function renderPrayFamily(){
  esc(L('Also: Chaplet of the Five Wounds','Également : chapelet des Cinq Plaies'))+'</button></div>'
  :''}${familyId==='devotions'
  ?'<div class="aoOccasionalFamilyAside"><button type="button" data-p435930-own="pray.occasional_intercessions">'+
- esc(L('Pray for the sick, family, and in difficulties','Prier pour les malades, la famille et dans les difficultés'))+'</button></div>'
+ esc(L('Occasional intercessions','Intercessions occasionnelles'))+'</button> <button type="button" data-p435930-own="pray.st_joseph_seven_sorrows">'+esc(L('St Joseph · Seven Sorrows and Joys','Saint Joseph · Sept douleurs et sept joies'))+'</button></div>'
  :''}${familyId==='eucharistic'
  ?'<div class="aoPriestsFamilyAside"><button type="button" data-p435930-own="pray.for_priests">'+
  esc(L('Pray for priests and vocations','Prier pour les prêtres et les vocations'))+'</button></div>'
@@ -1834,6 +1838,36 @@ function renderPriestIntercessions(){
  '</p>'+source+'</details>'+
  '</main>';
 }
+/**
+ * Historical 1910 English seven-pair devotion, sourced from Raccolta §300.
+ * Each pair shows the exact historical supplication then the three existing
+ * canonical prayers. The final antiphon, ℣, ℟ and collect are an eighth step,
+ * never silently omitted. This is NOT the St Joseph Novena (§301).
+ */
+function renderJosephSeven(){
+ const step=josephSevenStepAt(JOSEPH_SEVEN.step,DATA.prayers);
+ if(!step)return callout(esc(L('Historical prayer unavailable.','Prière historique indisponible.')),'warn');
+ const ending=step.type==='closing';
+ const title=L('Seven Sorrows and Joys of St Joseph','Sept douleurs et sept joies de saint Joseph');
+ const progress=Math.round((JOSEPH_SEVEN.step+1)*100/JOSEPH_SEVEN_STEP_COUNT_B24);
+ const rail=Array.from({length:JOSEPH_SEVEN_STEP_COUNT_B24},(_,i)=>'<button type="button" data-p435930-joseph-step="'+i+'" aria-label="'+esc(i===7?L('Closing prayer','Prière finale'):L('Prayer','Prière')+' '+(i+1))+'" '+(i===JOSEPH_SEVEN.step?'aria-current="step"':'')+'>'+esc(i===7?L('End','Fin'):String(i+1))+'</button>').join('');
+ const notice=L('The seven historical supplications are available in English only. The Our Father, Hail Mary and Glory Be reuse Ad Orientem’s existing translations.','Les sept prières historiques sont présentées en anglais, sans traduction française vérifiée. Le Notre Père, le Je vous salue Marie et le Gloire au Père réutilisent les traductions déjà présentes.');
+ const sourceLink=JOSEPH_SEVEN_SORROWS_SOURCE_B24.sourceLinks.map((url,i)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(i===0?L('1910 digital text','Texte numérique de 1910'):i===1?L('1910 original scan (not yet collated)','Fac-similé de 1910 (non collationné)'):L('1857 distinct edition','Édition distincte de 1857'))+'</a>').join('');
+ const body=ending
+   ?'<small class="aoJosephSevenKicker">'+esc(L('Concluding prayer · Raccolta 1910 §300','Prière finale · Raccolta 1910 §300'))+'</small><h2>'+esc(L('Antiphon and collect','Antienne et oraison'))+'</h2><p class="aoJosephSevenOriginal" lang="en"><b>Ant.</b> '+esc(JOSEPH_SEVEN_CLOSURE_B24.antiphon)+'</p><p class="aoJosephSevenOriginal" lang="en"><b>℣.</b> '+esc(JOSEPH_SEVEN_CLOSURE_B24.versicle)+'\n<b>℟.</b> '+esc(JOSEPH_SEVEN_CLOSURE_B24.response)+'</p><p class="aoJosephSevenOriginal" lang="en"><b>'+esc(JOSEPH_SEVEN_CLOSURE_B24.rubric)+'</b>\n'+esc(JOSEPH_SEVEN_CLOSURE_B24.collect)+'</p>'
+   :'<small class="aoJosephSevenKicker">'+esc(L('Sorrow and joy','Douleur et joie')+' · '+(JOSEPH_SEVEN.step+1)+' / 7')+'</small><h2>'+esc(isFr()?step.prayer.labelFr:step.prayer.labelEn)+'</h2><p class="aoJosephSevenOriginal" lang="en">'+esc(step.prayer.sourceTextEn)+'</p><div class="aoJosephSevenCanonical">'+
+       step.repetitions.map(rec=>'<section data-ao-joseph-canonical="'+esc(rec.id)+'"><h3>'+esc(JOSEPH_SEVEN.latin?rec.titleEn:(isFr()?rec.titleFr:rec.titleEn))+'</h3><p lang="'+(JOSEPH_SEVEN.latin?'la':(isFr()?'fr':'en'))+'">'+nl(JOSEPH_SEVEN.latin?rec.la:(isFr()?rec.fr:rec.en))+'</p></section>').join('')+
+       '<button type="button" class="aoJosephSevenLang" data-p435930-joseph-latin aria-pressed="'+String(JOSEPH_SEVEN.latin)+'">'+esc(JOSEPH_SEVEN.latin?L('Vernacular prayers','Prières en français'):L('Canonical prayers in Latin','Prières ordinaires en latin'))+'</button></div>';
+ return head(title,L('The original seven paired prayers, followed by their closing collect','Sept prières successives et leur oraison finale'))+
+  '<main class="aoP435930Body aoJosephSeven" data-ao-st-joseph-seven-reader data-ao-st-joseph-source="raccolta-1910-300">'+
+  '<p class="aoJosephSevenIntro">'+esc(L('Pray each sorrow and joy, then an Our Father, Hail Mary and Glory Be. Finish with the antiphon and collect.','Priez chaque douleur et joie, suivies d’un Notre Père, d’un Je vous salue Marie et d’un Gloire au Père, puis l’antienne et l’oraison finale.'))+'</p>'+
+  '<div class="aoJosephSevenProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+progress+'" aria-label="'+esc(L('Prayer progress','Progression de la prière'))+'"><span style="width:'+progress+'%"></span></div>'+
+  '<div class="aoJosephSevenRail" role="group" aria-label="'+esc(L('Choose one of seven sorrows and the conclusion','Choisir une des sept douleurs ou la conclusion'))+'">'+rail+'</div>'+
+  '<article class="aoJosephSevenCard"><p class="aoJosephSevenNotice">'+esc(notice)+'</p>'+body+'</article>'+
+  '<div class="aoJosephSevenNav"><button type="button" data-p435930-joseph-prev '+(JOSEPH_SEVEN.step===0?'disabled':'')+'>'+esc(L('Previous','Précédent'))+'</button>'+
+  (ending?'<button type="button" data-p435930-joseph-finish>'+esc(L('Finish','Terminer'))+'</button>':'<button type="button" data-p435930-joseph-next>'+esc(JOSEPH_SEVEN.step===6?L('Concluding prayer','Prière finale'):L('Next','Suivant'))+'</button>')+'</div>'+
+  '<details class="aoJosephSevenSource"><summary>'+esc(L('Source and textual limitations','Source et limites textuelles'))+'</summary><p>'+esc(L('The Raccolta (1910), no. 300, pp. 274–275; historical English digital transcription. A photographed edition has been located, but direct word-for-word collation of the printed pages remains outstanding. The separately numbered no. 301 is a St Joseph novena, not this devotion. Historical indulgence grants are not represented as current.','Raccolta (1910), n° 300, pp. 274–275, transcription anglaise historique. Le fac-similé a été localisé, sans collation mot à mot des pages imprimées. Le n° 301 est une neuvaine distincte ; aucune indulgence ancienne n’est présentée comme actuelle.'))+'</p>'+sourceLink+'</details></main>';
+}
 function renderOccasionalIntercessions(){
  const lc=isFr()?'fr':'en';
  const purpose=OCCASIONAL_PURPOSES_ALL_B21.includes(OCCASIONAL.purpose)?OCCASIONAL.purpose:'sick';
@@ -2116,7 +2150,7 @@ function reopenResume(snapshot){
  const r=shell();r.classList.add('open');r.setAttribute('aria-hidden','false');document.body.classList.add('aoP435930Open');render();
  queueMicrotask(()=>r.querySelector('button,[href],input,[tabindex]:not([tabindex="-1"])')?.focus?.());return true
 }
-function navigationSignature(){return [view,PRIESTS.purpose,PRIESTS.latin,OCCASIONAL.purpose,OCCASIONAL.latin,MERCY.step,MERCY.includeClosing,MERCY.guide,FIVE_WOUNDS.index,FIVE_WOUNDS.latin,PRECIOUS_BLOOD.phase,PRECIOUS_BLOOD.bead,PRECIOUS_BLOOD.latin,TEN.day,TEN.hour,TEN.step,TEN.face,familyId||'',CONF.stage,CONF.path||'',CONF.examStep,CONF.riteStep,CONF.afterStep,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
+function navigationSignature(){return [view,PRIESTS.purpose,PRIESTS.latin,OCCASIONAL.purpose,OCCASIONAL.latin,JOSEPH_SEVEN.step,JOSEPH_SEVEN.latin,MERCY.step,MERCY.includeClosing,MERCY.guide,FIVE_WOUNDS.index,FIVE_WOUNDS.latin,PRECIOUS_BLOOD.phase,PRECIOUS_BLOOD.bead,PRECIOUS_BLOOD.latin,TEN.day,TEN.hour,TEN.step,TEN.face,familyId||'',CONF.stage,CONF.path||'',CONF.examStep,CONF.riteStep,CONF.afterStep,BEN.step,ADOR.mode,ADOR.visitStep,ADOR.holyStep,ADOR.fourStep,FF.step,FS.step,PEN.step,LIT.step,SEVEN.step,FORTY.step,STATIONS.step,LIB.open||'',prayerId||'',S.angelusMode].join('|')}
 function focusables(){const r=document.getElementById(ROOT_ID);if(!r?.classList.contains('open'))return [];return [...r.querySelectorAll('button:not([disabled]),[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(el=>el.offsetParent!==null&&!el.hidden)}
 
 
@@ -2749,7 +2783,7 @@ function installLibraryParagraphFocus(m,id){
   if(event.target.closest("[data-p435930-flip]"))queueMicrotask(()=>reader?.focus?.());
  });
 }
-function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='fiveWounds')html=renderFiveWounds();else if(view==='preciousBlood')html=renderPreciousBlood();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='priests')html=renderPriestIntercessions();else if(view==='occasionals')html=renderOccasionalIntercessions();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=(view==='adoration'&&ADOR.quiet?'':semanticRails())+(homeNavigationError
+function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='fiveWounds')html=renderFiveWounds();else if(view==='preciousBlood')html=renderPreciousBlood();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='priests')html=renderPriestIntercessions();else if(view==='occasionals')html=renderOccasionalIntercessions();else if(view==='josephSeven')html=renderJosephSeven();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=(view==='adoration'&&ADOR.quiet?'':semanticRails())+(homeNavigationError
  ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});
  // Source-owned public rite stages and private Visit arrival are projected,
  // never interpreted as observed acts or additional liturgical requirements.
@@ -3102,6 +3136,17 @@ function onClick(e){
    if(b.hasAttribute('data-p435930-five-finish')&&FIVE_WOUNDS.index===29){
      FIVE_WOUNDS.index=0;FIVE_WOUNDS.latin=false;return backToParent();
    }
+ }
+ if(view==='josephSeven'){
+  if(b.hasAttribute('data-p435930-joseph-step')){
+   const next=Number(b.dataset.p435930JosephStep);
+   if(Number.isInteger(next)&&next>=0&&next<JOSEPH_SEVEN_STEP_COUNT_B24){JOSEPH_SEVEN.step=next;return render()}
+   return;
+  }
+  if(b.hasAttribute('data-p435930-joseph-prev')){JOSEPH_SEVEN.step=Math.max(0,JOSEPH_SEVEN.step-1);return render()}
+  if(b.hasAttribute('data-p435930-joseph-next')){JOSEPH_SEVEN.step=Math.min(JOSEPH_SEVEN_STEP_COUNT_B24-1,JOSEPH_SEVEN.step+1);return render()}
+  if(b.hasAttribute('data-p435930-joseph-latin')){JOSEPH_SEVEN.latin=!JOSEPH_SEVEN.latin;return render()}
+  if(b.hasAttribute('data-p435930-joseph-finish')&&JOSEPH_SEVEN.step===JOSEPH_SEVEN_STEP_COUNT_B24-1){JOSEPH_SEVEN={step:0,latin:false};return backToParent()}
  }
  if(view==='occasionals'){
   if(b.hasAttribute('data-p435930-occasional-purpose')){
@@ -3515,6 +3560,7 @@ const TARGET={
  'pray.library':{id:'pray.library',type:'module',domain:'pray',category:'library',title:'Prayer Library'},
  'pray.for_priests':{id:'pray.for_priests',type:'module',domain:'pray',category:'eucharistic',title:'Pray for Priests'},
   'pray.occasional_intercessions':{id:'pray.occasional_intercessions',type:'module',domain:'pray',category:'devotions',title:'Occasional Intercessions'},
+ 'pray.st_joseph_seven_sorrows':{id:'pray.st_joseph_seven_sorrows',type:'module',domain:'pray',category:'devotions',title:'Seven Sorrows and Joys of St Joseph'},
  'pray.penitential_psalms':{id:'pray.penitential_psalms',type:'module',domain:'pray',category:'penance-passion',title:'Seven Penitential Psalms'},
  'pray.litany_saints':{id:'pray.litany_saints',type:'module',domain:'pray',category:'penance-passion',title:'Litany of the Saints'},
  'pray.seven_words':{id:'pray.seven_words',type:'module',domain:'pray',category:'penance-passion',title:'Seven Words of Our Lord'},
