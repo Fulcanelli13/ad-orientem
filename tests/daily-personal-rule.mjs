@@ -4,7 +4,7 @@ import {
  DAILY_PERSONAL_RULE_STORAGE_KEY,PERSONAL_DAILY_SOURCE_COVERAGE,
  defaultPersonalDailyPrefs,normalizePersonalDailyPrefs,loadPersonalDailyPrefs,
  savePersonalDailyPrefs,personalDailyOptions,buildPersonalDailyPlan,
- changePersonalDailyPrefs
+ changePersonalDailyPrefs,PERSONAL_BRIEF_PRAYER_IDS
 } from "../src/pray/daily-personal-rule.js";
 import {DAILY_PERSONAL_PRAYER_SOURCE_V1 as CORPUS} from "../src/pray/daily-personal-prayer-source.js";
 import {APPROVED_DAILY_FORMULATION_MANIFEST_V1,DAILY_APPROVED_SEQUENCE_RELEASE_V1} from "../src/pray/daily-approved-formulations.js";
@@ -34,6 +34,45 @@ for(const [edition,morning,evening] of [["1905",10,8],["1913",11,10]]){
   }
  }
 }
+// Personal Brief is a curated subset of complete printed prayers, never
+// a separate historical edition or a truncated combined offering prayer.
+for(const [edition,expectedMorning,expectedEvening] of [["1913",6,5],["1905",6,4]]){
+ for(const [daypart,count] of [["morning",expectedMorning],["evening",expectedEvening]]){
+  for(const language of ["en","fr","la"]){
+   const fullPrefs={...defaultPersonalDailyPrefs(language),edition};
+   const full=buildPersonalDailyPlan({daypart,prefs:fullPrefs});
+   const briefPrefs=changePersonalDailyPrefs(fullPrefs,{action:"length",value:"brief"});
+   const brief=buildPersonalDailyPlan({daypart,prefs:briefPrefs});
+   assert.equal(brief.rows.length,count);
+   assert.equal(brief.length,"brief");
+   assert.equal(brief.brief,true);
+   assert.equal(brief.expanded,false);
+   const expected=PERSONAL_BRIEF_PRAYER_IDS[edition][daypart];
+   assert.deepEqual(brief.rows.map(x=>x.sourceId),expected);
+   assert.deepEqual(brief.rows.map(x=>x.id),full.rows.filter(x=>expected.includes(x.sourceId)).map(x=>x.id),"Subset must preserve full historical order");
+   for(const card of brief.rows){
+    const source=full.rows.find(x=>x.id===card.id);
+    assert.equal(card.text,source.text,"No partial prayer text in Brief");
+    assert.equal(card.sourceUrl,source.sourceUrl,"Source provenance cannot be lost");
+   }
+   assert.equal(new Set(brief.rows.map(x=>x.id)).size,count);
+   assert.equal(buildPersonalDailyPlan({daypart,prefs:changePersonalDailyPrefs(briefPrefs,{action:"length",value:"full"})}).rows.length,full.rows.length);
+  }
+ }
+}
+assert.ok(PERSONAL_BRIEF_PRAYER_IDS["1913"].morning.includes("daily-prayer"),"Combined Pius X Morning offering must remain whole");
+assert.ok(PERSONAL_BRIEF_PRAYER_IDS["1913"].evening.includes("examen"),"1913 Nightly Examen handoff should remain available in Brief");
+assert.ok(!PERSONAL_BRIEF_PRAYER_IDS["1905"].evening.includes("examen"),"Never invent a 1905 printed examination card");
+const inherited=normalizePersonalDailyPrefs({version:1,edition:"1913",language:"fr",mode:"standard",variants:{morning:{},evening:{}},extras:{morning:[],evening:[]}});
+assert.equal(inherited.length,"full","Existing saved routines without length must not silently become Brief");
+assert.equal(normalizePersonalDailyPrefs({...defaultPersonalDailyPrefs(),length:"unknown"}).length,"full","Unexpected personal length fails closed");
+let selectedBrief=changePersonalDailyPrefs(defaultPersonalDailyPrefs("en"),{action:"extra",daypart:"evening",value:"baltimore-1889-evening-in-manus"});
+assert.equal(selectedBrief.mode,"expanded");
+selectedBrief=changePersonalDailyPrefs(selectedBrief,{action:"length",value:"brief"});
+assert.equal(buildPersonalDailyPlan({daypart:"evening",prefs:selectedBrief}).rows.length,5,"Saved extras must not make Brief longer");
+assert.equal(selectedBrief.extras.evening.length,1,"Brief must not delete saved choices");
+selectedBrief=changePersonalDailyPrefs(selectedBrief,{action:"length",value:"full"});
+assert.equal(buildPersonalDailyPlan({daypart:"evening",prefs:selectedBrief}).rows.length,11,"Full must restore the saved optional prayer");
 const initial=defaultPersonalDailyPrefs("en");
 assert.equal(initial.edition,"1913");
 assert.equal(initial.mode,"standard");
@@ -129,6 +168,11 @@ assert.match(card,/data-ao-personal-prayer="daily-prayer"/);
 assert.match(card,/created me, made me a Christian/);
 assert.match(dailyPersonalSettings(first,initial,h),/data-tp381-personal-action="language"/);
 assert.match(dailyPersonalSettings(first,initial,h),/1913 · EN · Standard/,"The opening settings summary must identify the effective rule");
+const briefMarkup=dailyPersonalSettings(buildPersonalDailyPlan({daypart:"morning",prefs:changePersonalDailyPrefs(initial,{action:"length",value:"brief"})}),changePersonalDailyPrefs(initial,{action:"length",value:"brief"}),h);
+assert.match(briefMarkup,/data-tp381-personal-action="length"/);
+assert.match(briefMarkup,/Personal Brief/);
+assert.match(briefMarkup,/not a separately printed Short St Pius X/);
+assert.doesNotMatch(briefMarkup,/data-tp381-personal-action="extra"/,"Brief cannot edit dormant full-routine extras");
 assert.match(dailyPersonalProvenance(first.rows[1],h.L),/Latin version on tap is an editorial translation/);
 const latinSource=buildPersonalDailyPlan({daypart:"morning",prefs:defaultPersonalDailyPrefs("la")}).rows[1];
 assert.match(dailyPersonalProvenance(latinSource,h.L),/Editorial Latin translation · not printed Latin/);
@@ -152,4 +196,5 @@ assert.match(runtime,/personalDailyPrayerCard\(row,dailyReadingPlan\(\),/);
 assert.match(runtime,/dailyPersonalSettings\(plan,personalDailyPrefs\(\),/);
 assert.match(runtime,/\$\{choice\}\$\{dailyPersonalSettings\(plan,personalDailyPrefs\(\),/,"Daily rule controls must be in the opening screen, before the horizon");
 assert.match(runtime,/previousId=previous\[previousStep\]\?\.id/,"Updating a daily rule must retain its active prayer ID");
+assert.match(runtime,/action==="length"/,"Changing routine length must restart visual progression from the opening stage");
 console.log("PASS: St Pius X 1905/1913 structure, 3 languages, 45 optional texts, source-ID privacy, variants, optional order and legacy gate");
