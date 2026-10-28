@@ -1,7 +1,8 @@
 // ICKSP-selected monthly novena. Existing 16 canonical novenas remain frozen.
 // Two independently historic witnesses of Father Cyril's original prayer:
 // English: F. X. Lasance, Prayer-Book for Religious (1904), Book IV;
-// French: prayer with Vidi Ghent 25 Aug 1885, transcribed separately.
+// French: 2007 transcription containing a Vidi dated Ghent, 25 Aug 1885.
+// The original printed 1885 source has not yet been directly inspected.
 // The ICKSP contemporary English is a distinct recension, not silently copied.
 // Nine prayer occasions repeat the SAME historically attested prayer;
 // no invented nine daily meditations, contemporary translation, or indulgence.
@@ -18,7 +19,7 @@ export const ICKSP_DIVINE_INFANT_KING_NOVENA_V1=F({
   calendar:F({type:"MONTHLY_DAYS",startDay:17,endDay:25,precision:"ICKSP_MONTHLY_17_25_OBSERVANCE"}),
   startKind:"TRADITIONAL_START",
   traditionalStart:bi("17th to 25th of each month, as observed by the Institute","Du 17 au 25 de chaque mois, selon la pratique de l’Institut"),
-  frenchTextStatus:"TRADITIONAL_FRENCH_WITNESS_1885",
+  frenchTextStatus:"TRADITIONAL_FRENCH_WITNESS_1885_NOTICE_TRANSCRIPTION",
   history:bi("The prayer to the Holy Child attributed to Venerable Father Cyril appears in Fr F. X. Lasance's 1904 Prayer-Book for Religious. The Institute uses this traditional prayer for a novena observed on the 17th–25th of each month. The 1904 English and 1885 French witnesses have different wording.","La prière au saint Enfant Jésus attribuée au vénérable père Cyrille figure dans un témoin français portant le Vidi de Gand du 25 août 1885. L’Institut récite sa neuvaine du 17 au 25 de chaque mois. Les textes anglais de 1904 et français de 1885 ne sont pas des traductions littérales l’un de l’autre."),
   meaning:bi("Seek help from the Divine Infant through Our Lady's intercession, renew confidence, repentance and love of neighbour.","Demander le secours du Divin Enfant par l’intercession de sa Mère, renouveler la confiance, le repentir et l’amour du prochain."),
   how:bi("Recite the same historical prayer once daily for nine days, naming the intention where the prayer directs. The novena may also be prayed on other days; 17–25 is the Institute's monthly practice.","Récitez la même prière historique chaque jour pendant neuf jours, en nommant votre intention à l’endroit indiqué. Elle peut aussi se prier à d’autres dates ; le 17–25 est l’usage mensuel de l’Institut."),
@@ -41,14 +42,15 @@ Enfant plein de puissance, ô Jésus, je Vous en conjure de nouveau, assistez-mo
   source:F({
     work:"Prayer to the Holy Child · same devotion selected by ICKSP",
     authors:"Venerable Fr Cyril of the Mother of God, OCD · historical attribution",
-    edition:"English witness: F. X. Lasance, 1904 · French witness: Vidi, Ghent, 25 Aug 1885",
+    edition:"English witness: F. X. Lasance, 1904 · French witness: transcription citing Vidi, Ghent, 25 Aug 1885",
     url:"https://en.wikisource.org/wiki/Prayer-book_for_Religious/Book_4",
     adaptation:"English and French historical recensions are separately presented; not a translation of ICKSP's modern page. No fabricated separate day texts."
   }),
   historySources:F([
     F({label:"ICKSP · Novena to the Divine Infant King",url:"https://institute-christ-king.org/resources/devotions-prayers/616-devotions-prayer-infant-king"}),
     F({label:"Fr F. X. Lasance · Prayer-Book for Religious · 1904",url:"https://en.wikisource.org/wiki/Prayer-book_for_Religious/Book_4"}),
-    F({label:"French text · Vidi 25 Aug 1885",url:"https://prieresetdevotions.blogspot.com/2007/07/prire-efficace-lenfant-jsus-rvle-par-la.html"}),
+    F({label:"French historical transcription · Vidi dated 25 Aug 1885",url:"https://prieresetdevotions.blogspot.com/2007/07/prire-efficace-lenfant-jsus-rvle-par-la.html"}),
+    F({label:"ICRSP France · Father Cyril prayer, contemporary French witness",url:"https://icrspfrance.fr/?page=child-jesus-prayers"}),
     F({label:"ICKSP Kansas City · monthly practice (17–25)",url:"https://institute-christ-king.org/kansascity-home"})
   ])
 });
