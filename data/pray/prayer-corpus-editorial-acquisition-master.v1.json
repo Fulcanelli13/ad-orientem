@@ -41,10 +41,10 @@
   "summary": {
     "decision_rows": 97,
     "by_decision": {
-      "ADD": 8,
+      "ADD": 7,
       "ADD_LATER": 6,
       "ALTERNATIVE": 25,
-      "DEFER": 28,
+      "DEFER": 29,
       "EXCLUDE": 4,
       "RETAIN": 26
     },
@@ -954,13 +954,13 @@
       "source_family": "Raccolta",
       "source_key": "R",
       "title": "Heroic Act of Charity for Souls in Purgatory (§140)",
-      "decision": "ADD",
+      "decision": "DEFER",
       "target_module": "Prayers for Dead",
-      "reason": "Distinct voluntary spiritual offering.",
-      "priority": "P1",
+      "reason": "This is a deliberate voluntary spiritual offering, not a mandatory standalone prayer or fixed historical formula. Preserve devotional context and historical distinctions; consider optional informed act within Prayers for the Dead only after theological and edition review.",
+      "priority": "P2",
       "source_url": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Index",
       "existing_owner": null,
-      "edition_or_dedup_note": "",
+      "edition_or_dedup_note": "Raccolta 1857 §140; Lasance Prayer-book for Religious describes the act as not a binding vow and says no fixed formula is necessary. Historical indulgence grants not presumed current.",
       "release_gate": "HISTORIC_INDEX_ONLY",
       "approved_by_user": false,
       "text_imported": false
