@@ -359,6 +359,41 @@ try{
  assert.equal(await stationProgress.count(),1,"Stations require one shared progress track");
  assert.equal(await stationProgress.getAttribute("aria-valuenow"),"1");
  assert.equal(await stationProgress.getAttribute("aria-valuemax"),"14");
+ const stationChoice=page.locator("#aoPray435930.open [data-ao-stations-direct-reading]");
+ assert.equal(await stationChoice.count(),1,"B14 direct reading choice must be visible");
+ assert.equal(await stationChoice.locator("button").count(),2,"Exactly two presentations of the same 14 source-owned stations");
+ const guidedChoice=stationChoice.locator('[data-p435930-station-reading="guided"]');
+ const simpleChoice=stationChoice.locator('[data-p435930-station-reading="simple"]');
+ await guidedChoice.tap();
+ assert.equal(await guidedChoice.getAttribute("aria-pressed"),"true");
+ assert.equal(await page.locator("#aoPray435930.open .aoP435930StationConsider").count(),1,"Full St Alphonsus meditation missing");
+ assert.equal(await page.locator("#aoPray435930.open .aoP435930StationOrdinary").count(),1,"Full traditional prayer set missing");
+ await page.locator("#aoPray435930.open .aoP435930StationOrdinary > summary").tap();
+ assert.equal(await page.locator("#aoPray435930.open .aoP435930StationOrdinary .aoP435930Prayer").count(),3,
+   "One-tap Our Father, Hail Mary, Glory Be must reuse three canonical prayer records");
+ await simpleChoice.tap();
+ assert.equal(await simpleChoice.getAttribute("aria-pressed"),"true","Simple presentation was not selected directly");
+ assert.equal(await page.locator("#aoPray435930.open .aoP435930StationConsider").count(),0,"Simple view still displays full meditation");
+ assert.equal(await page.locator("#aoPray435930.open .aoP435930StationPrayer").count(),0,"Simple view still displays full St Alphonsus prayers");
+ assert.equal(await stationProgress.getAttribute("aria-valuenow"),"1","Changing presentation must not advance the station");
+ await guidedChoice.tap();
+ assert.equal(await page.locator("#aoPray435930.open .aoP435930StationConsider").count(),1,"Guided source prayer did not return");
+ const stationOptions=page.locator("#aoPray435930.open details[data-ao-stations-options]");
+ await stationOptions.locator("summary").tap();
+ await page.locator("#aoPray435930.open [data-p435930-station-public-posture]").evaluate(el=>{
+  el.checked=true;el.dispatchEvent(new Event("change",{bubbles:true}));
+ });
+ assert.equal(await simpleChoice.isDisabled(),true,"Public historical posture must not be silently disabled by simple mode");
+ assert.equal(await guidedChoice.getAttribute("aria-pressed"),"true");
+ assert.equal(await page.locator("#aoPray435930.open .aoStationsDirectPublicNotice").count(),1);
+ await page.locator("#aoPray435930.open [data-p435930-station-public-posture]").evaluate(el=>{
+  el.checked=false;el.dispatchEvent(new Event("change",{bubbles:true}));
+ });
+ assert.equal(await simpleChoice.isEnabled(),true);
+ await page.setViewportSize({width:320,height:720});
+ const mobileGrid=await stationChoice.locator(".aoStationsDirectReadingChoices").evaluate(el=>({client:el.clientWidth,scroll:el.scrollWidth}));
+ assert.ok(mobileGrid.scroll<=mobileGrid.client+2,"320px Stations direct selector overflows");
+ await page.setViewportSize({width:390,height:844});
  assert.equal(await page.locator("#aoPray435930.open [data-p435930-station-prev],[data-p435930-station-next]").count(),0);
  const stationBody=page.locator("#aoPray435930.open .aoP435930Stations .aoDevoCardScroll");
  const stationSwipe=async(dx,dy)=>stationBody.evaluate((el,{dx,dy})=>{
