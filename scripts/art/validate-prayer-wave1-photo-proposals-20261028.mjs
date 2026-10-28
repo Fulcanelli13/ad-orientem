@@ -42,6 +42,20 @@ assert.equal(rosary.recommend_photo.sha256,evidence.source_images.rosary_yorck.s
 assert.equal(rosary.candidate_original_previews.length,2);
 assert.equal(rosary.rejected_photo_candidates.length,2);
 const angelus=reviews.photo_reviews.find(x=>x.module==="angelus");
+const angV3=read("assets/staged/prayer-wave1-photo-comparison-20261028/angelus-v3-native-edge.json");
+assert.equal(angV3.editorial_choice_changed,false);
+assert.equal(angV3.production_released,false);
+assert.equal(angV3.original_bytes_modified,false);
+assert.equal(angV3.edges_certified,false);
+assert.deepEqual(angV3.cropped_box_xyxy,[106,91,3630,3550]);
+assert.ok(Math.abs(angV3.ratio_error)<.003);
+assert.equal(angV3.previews.length,2);
+assert.equal(angelus.v3.production_approved,false);
+for(const candidate of [angV3.pixel_grid,...angV3.previews]){
+  const buf=readFileSync(candidate.file);
+  assert.equal(createHash("sha256").update(buf).digest("hex"),candidate.sha256,candidate.file);
+}
+
 assert.equal(angelus.v2_edge_review.startsWith("HOLD"),true);
 assert.equal(angelus.candidate_cropped_previews.length,2);
 for(const hero of output.entries){
