@@ -284,7 +284,7 @@ function renderDailyGuided(rows){
 let lastDailyHorizonScene=null;
 function dailyHorizonMarkup(total){
  const mood=dailyHorizonState(S.daypart,S.dailyStep,total);
- const signature=mood.daypart+":"+mood.phase;
+ const signature=mood.daypart+":"+mood.phase+":"+mood.step+":"+mood.total;
  const changed=signature!==lastDailyHorizonScene;
  lastDailyHorizonScene=signature;
  const description=L(mood.en,mood.fr);
