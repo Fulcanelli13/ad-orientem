@@ -110,6 +110,14 @@ export function anchorRailToSourceParagraphs(root,{cueByChannel={}}={}){
     }else{
       tile.dataset.sourceRailOffset="";
     }
+    // Offscreen source-anchored art is not a visible pictogram. Keep its
+    // original approved label for restoration, but remove accessibility
+    // image semantics until its exact paragraph actually enters the stage.
+    if(tile.dataset.active==="true"&&tile.dataset.iconVisible==="true"){
+      tile.setAttribute("aria-hidden",String(!placement));
+      if(placement)tile.setAttribute("role","img");
+      else tile.removeAttribute("role");
+    }
   }
   for(const [side,selector] of [["left",".ao-rail-left"],["right",".ao-rail-right"]]){
     const rail=stage.querySelector(selector);
