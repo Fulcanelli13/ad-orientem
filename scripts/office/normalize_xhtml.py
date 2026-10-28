@@ -315,6 +315,21 @@ def convert_tree(root: Path) -> dict:
             outfile.write_text(json.dumps(doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         for role in roles:
             semantic_stats[role["role"]] = semantic_stats.get(role["role"], 0) + 1
+    # Research diagnostic: inspect the *actual* remaining headings before
+    # extending semantic labels. Never invent an identity from a verse body.
+    unclassified = {}
+    for date, hour in sorted(groups):
+        for section in normalized[(date, hour, "la")]["sections"]:
+            if section.get("semantic", {}).get("role") != "SOURCE_SECTION":
+                continue
+            first = section["text"].split("\n", 1)[0][:120]
+            key = (hour, first)
+            unclassified[key] = unclassified.get(key, 0) + 1
+    print("OFFICE_UNCLASSIFIED_HEADINGS", json.dumps([
+        {"hour": hour, "heading": heading, "count": count}
+        for (hour, heading), count in sorted(
+            unclassified.items(), key=lambda item: (-item[1], item[0]))
+    ], ensure_ascii=False))
     summary = {
         "schema": "ao.office.normalization-audit.v1",
         "sourceRevision": revision, "records": records,
