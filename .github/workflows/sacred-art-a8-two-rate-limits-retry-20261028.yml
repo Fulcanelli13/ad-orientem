@@ -1,0 +1,30 @@
+name: Sacred Art retry two Wikimedia rate-limited originals
+on:
+  push:
+    branches:
+      - research/prayer-existing-sacred-art-mosaic-20261028
+    paths:
+      - .github/workflows/sacred-art-a8-two-rate-limits-retry-20261028.yml
+permissions:
+  contents: write
+jobs:
+  retry-2-originals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout research branch
+        uses: actions/checkout@v4
+        with:
+          ref: research/prayer-existing-sacred-art-mosaic-20261028
+      - name: Install Pillow for original dimension check
+        run: python -m pip install --disable-pip-version-check pillow==11.3.0
+      - name: Download/check two current Wikimedia originals once
+        run: python scripts/research/sacred_art_two_rate_limited_originals_retry_20261028.py
+      - name: Commit research-only retry evidence
+        run: |
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-a8-44-rate-limit-retry-20261028.v1.json
+          git diff --cached --check
+          git commit -m "research(art): record two Commons original SHA retry results"
+          git push origin HEAD:research/prayer-existing-sacred-art-mosaic-20261028
