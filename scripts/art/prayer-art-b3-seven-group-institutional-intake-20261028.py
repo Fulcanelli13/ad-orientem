@@ -48,6 +48,7 @@ for c in data["cases"]:
     try:
         m = json.loads(read_url(c["iiif_manifest"],limit=350_000).decode("utf-8"))
         assert m.get("@id")==c["iiif_manifest"], "MANIFEST_ID_MISMATCH"
+        rec["manifest_license_seen"] = m.get("license")
         assert "publicdomain/mark/1.0" in m.get("license",""), "NO_PUBLIC_DOMAIN_MARK"
         meta = {}
         for item in m.get("metadata",[]):
