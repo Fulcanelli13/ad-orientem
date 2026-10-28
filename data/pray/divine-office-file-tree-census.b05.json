@@ -1,0 +1,282 @@
+{
+  "schema": "ao.divine-office-file-tree-census.b05",
+  "date": "2026-10-28",
+  "data_repo": "DivinumOfficium/divinum-officium",
+  "data_repo_ref": "master",
+  "git_tree_sha": "47d2eb2d9441ad688d51648df5540768e6043722",
+  "tree_truncated": false,
+  "source_url": "https://api.github.com/repos/DivinumOfficium/divinum-officium/git/trees/master?recursive=1",
+  "repository_total_blob_files": 40420,
+  "office_tree_files": 25394,
+  "language_directories": {
+    "Latin": {
+      "total": 3950,
+      "bytes": 8703757,
+      "byFolder": {
+        "Appendix": 8,
+        "Commune": 66,
+        "CommuneCist": 59,
+        "CommuneM": 55,
+        "CommuneOP": 28,
+        "Martyrologium": 367,
+        "Necrologium": 12,
+        "Psalterium": 222,
+        "Regula": 125,
+        "Sancti": 896,
+        "SanctiCist": 193,
+        "SanctiM": 278,
+        "SanctiOP": 133,
+        "Tempora": 643,
+        "TemporaCist": 172,
+        "TemporaM": 266,
+        "TemporaOP": 427
+      },
+      "sample_unusual_non_txt": [
+        "Sancti/aliquibus locis/09-04-BMVDivPastMatr"
+      ]
+    },
+    "English": {
+      "total": 2010,
+      "bytes": 5761712,
+      "byFolder": {
+        "Commune": 44,
+        "CommuneM": 14,
+        "Martyrologium": 367,
+        "Psalterium": 220,
+        "Regula": 123,
+        "Sancti": 454,
+        "SanctiCist": 2,
+        "SanctiM": 93,
+        "Tempora": 589,
+        "TemporaM": 89,
+        "TemporaOP": 15
+      },
+      "sample_unusual_non_txt": []
+    },
+    "Francais": {
+      "total": 1651,
+      "bytes": 5713384,
+      "byFolder": {
+        "Appendix": 6,
+        "Commune": 44,
+        "CommuneM": 4,
+        "Martyrologium": 367,
+        "Psalterium": 196,
+        "Sancti": 441,
+        "SanctiM": 6,
+        "Tempora": 582,
+        "TemporaM": 5
+      },
+      "sample_unusual_non_txt": [
+        "Sancti/Orthographe",
+        "Sancti/Traduction nom du saint"
+      ]
+    }
+  },
+  "shared_ordinary_templates": [
+    "Ordinarium/Completorium.txt",
+    "Ordinarium/Laudes.txt",
+    "Ordinarium/Matutinum.txt",
+    "Ordinarium/Minor.txt",
+    "Ordinarium/Prima.txt",
+    "Ordinarium/Vespera.txt"
+  ],
+  "core_folders": [
+    {
+      "folder": "Sancti",
+      "latin_files": 896,
+      "english_files": 454,
+      "french_files": 441,
+      "latin_with_exact_relative_path_english": 453,
+      "latin_with_exact_relative_path_french": 439,
+      "latin_without_exact_english_path": 443,
+      "latin_without_exact_french_path": 457,
+      "missing_english_sample": [
+        "Sancti/01-00.txt",
+        "Sancti/01-08g.txt",
+        "Sancti/02-02-quadp.txt",
+        "Sancti/04-01C.txt",
+        "Sancti/05-09t.txt",
+        "Sancti/05-16n.txt",
+        "Sancti/06-28t.txt",
+        "Sancti/06-29oct.txt"
+      ],
+      "missing_french_sample": [
+        "Sancti/01-00.txt",
+        "Sancti/01-08g.txt",
+        "Sancti/01-12t.txt",
+        "Sancti/02-02-quadp.txt",
+        "Sancti/03-23n.txt",
+        "Sancti/04-01C.txt",
+        "Sancti/05-03t.txt",
+        "Sancti/05-09t.txt"
+      ]
+    },
+    {
+      "folder": "Tempora",
+      "latin_files": 643,
+      "english_files": 589,
+      "french_files": 582,
+      "latin_with_exact_relative_path_english": 589,
+      "latin_with_exact_relative_path_french": 582,
+      "latin_without_exact_english_path": 54,
+      "latin_without_exact_french_path": 61,
+      "missing_english_sample": [
+        "Tempora/Adv2-6o.txt",
+        "Tempora/Adv3-3o.txt",
+        "Tempora/Bavaria/Passaviensis/Nat1-0.txt",
+        "Tempora/Bavaria/Passaviensis/Nat29.txt",
+        "Tempora/Bavaria/Passaviensis/Nat30.txt",
+        "Tempora/Bavaria/Passaviensis/Nat31.txt",
+        "Tempora/Brasilia/Pent03-4-EucharisticiCordisDNJC.txt",
+        "Tempora/Epi1-0b.txt"
+      ],
+      "missing_french_sample": [
+        "Tempora/Adv1-0o.txt",
+        "Tempora/Adv1-1o.txt",
+        "Tempora/Adv1-2o.txt",
+        "Tempora/Adv1-3o.txt",
+        "Tempora/Adv1-4o.txt",
+        "Tempora/Adv1-5o.txt",
+        "Tempora/Adv1-6o.txt",
+        "Tempora/Adv2-0o.txt"
+      ]
+    },
+    {
+      "folder": "Commune",
+      "latin_files": 66,
+      "english_files": 44,
+      "french_files": 44,
+      "latin_with_exact_relative_path_english": 44,
+      "latin_with_exact_relative_path_french": 44,
+      "latin_without_exact_english_path": 22,
+      "latin_without_exact_french_path": 22,
+      "missing_english_sample": [
+        "Commune/C10n.txt",
+        "Commune/C12N.txt",
+        "Commune/C12Q.txt",
+        "Commune/C2ap.txt",
+        "Commune/C2b-1.txt",
+        "Commune/C2b-1p.txt",
+        "Commune/C2bp.txt",
+        "Commune/C3a-1p.txt"
+      ],
+      "missing_french_sample": [
+        "Commune/C10n.txt",
+        "Commune/C12A.txt",
+        "Commune/C12N.txt",
+        "Commune/C12Q.txt",
+        "Commune/C2b-1.txt",
+        "Commune/C2b-1p.txt",
+        "Commune/C2bp.txt",
+        "Commune/C3a-1p.txt"
+      ]
+    },
+    {
+      "folder": "Psalterium",
+      "latin_files": 222,
+      "english_files": 220,
+      "french_files": 196,
+      "latin_with_exact_relative_path_english": 220,
+      "latin_with_exact_relative_path_french": 196,
+      "latin_without_exact_english_path": 2,
+      "latin_without_exact_french_path": 26,
+      "missing_english_sample": [
+        "Psalterium/Chant.txt",
+        "Psalterium/Monastic canticles.txt"
+      ],
+      "missing_french_sample": [
+        "Psalterium/Psalmorum/Psalm247.txt",
+        "Psalterium/Psalmorum/Psalm248.txt",
+        "Psalterium/Psalmorum/Psalm249.txt",
+        "Psalterium/Psalmorum/Psalm250.txt",
+        "Psalterium/Psalmorum/Psalm251.txt",
+        "Psalterium/Psalmorum/Psalm253.txt",
+        "Psalterium/Psalmorum/Psalm254.txt",
+        "Psalterium/Psalmorum/Psalm255.txt"
+      ]
+    },
+    {
+      "folder": "Martyrologium",
+      "latin_files": 367,
+      "english_files": 367,
+      "french_files": 367,
+      "latin_with_exact_relative_path_english": 367,
+      "latin_with_exact_relative_path_french": 367,
+      "latin_without_exact_english_path": 0,
+      "latin_without_exact_french_path": 0,
+      "missing_english_sample": [],
+      "missing_french_sample": []
+    },
+    {
+      "folder": "Regula",
+      "latin_files": 125,
+      "english_files": 123,
+      "french_files": 0,
+      "latin_with_exact_relative_path_english": 123,
+      "latin_with_exact_relative_path_french": 0,
+      "latin_without_exact_english_path": 2,
+      "latin_without_exact_french_path": 125,
+      "missing_english_sample": [
+        "Regula/OrdoPraedicatorum.txt",
+        "Regula/Regulatable.txt"
+      ],
+      "missing_french_sample": [
+        "Regula/01-01.txt",
+        "Regula/01-02.txt",
+        "Regula/01-03.txt",
+        "Regula/01-04.txt",
+        "Regula/01-05.txt",
+        "Regula/01-06.txt",
+        "Regula/01-07.txt",
+        "Regula/01-08.txt"
+      ]
+    },
+    {
+      "folder": "Appendix",
+      "latin_files": 8,
+      "english_files": 0,
+      "french_files": 6,
+      "latin_with_exact_relative_path_english": 0,
+      "latin_with_exact_relative_path_french": 6,
+      "latin_without_exact_english_path": 8,
+      "latin_without_exact_french_path": 2,
+      "missing_english_sample": [
+        "Appendix/Ante et Post Divinum Officium.txt",
+        "Appendix/Benedictio mensae.txt",
+        "Appendix/Index.txt",
+        "Appendix/Itinerarium.txt",
+        "Appendix/Litaniae.txt",
+        "Appendix/Ordo Commendationis Animae.txt",
+        "Appendix/Psalmi graduales.txt",
+        "Appendix/Septem psalmi paenitentiales.txt"
+      ],
+      "missing_french_sample": [
+        "Appendix/Ante et Post Divinum Officium.txt",
+        "Appendix/Litaniae.txt"
+      ]
+    }
+  ],
+  "core_folder_totals": {
+    "latin": 2327,
+    "english": 1797,
+    "french": 1636,
+    "same_en": 1796,
+    "same_fr": 1634
+  },
+  "manifest_paths": {
+    "Latin": "data/pray/divine-office-source-files-latin.b05.tsv",
+    "English": "data/pray/divine-office-source-files-english.b05.tsv",
+    "Francais": "data/pray/divine-office-source-files-francais.b05.tsv",
+    "Ordinarium": "data/pray/divine-office-source-files-ordinarium.b05.tsv"
+  },
+  "method": "Full non-truncated GitHub git tree enumerated; each language path retained with exact git blob hash and size, UTF-8 manifests. 'Exact relative path' is a coarse indicator only, not translation proof, file content verification or 1960 edition certification.",
+  "cautions": [
+    "The Latin corpus contains Dominican/OP, Cistercian, Monastic and other distinct directory variants; totals are NOT solely Roman 1960.",
+    "The plain Latin Sancti and Tempora folders include texts for historical versions; raw file count is NOT 1960 Roman coverage.",
+    "Martyrology has day files; count does not imply 367 independent prayers.",
+    "Some English or French translations may be shared or inherited; absence of a same-name file is not definitive missing translation.",
+    "Six Ordinary templates correspond to Matins, Lauds, Prime, Vespers, Compline and one common file for Terce/Sext/None.",
+    "Each git blob SHA allows exact reproducibility, but the master branch may move; the recorded tree SHA is pinned for this audit."
+  ]
+}
