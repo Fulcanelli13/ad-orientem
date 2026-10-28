@@ -6,6 +6,7 @@ import { ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1, annualInstituteImmaculateStatus 
 const ADDITIONAL_NOVENAS=Object.freeze({[ICKSP_DIVINE_INFANT_KING_NOVENA_V1.id]:ICKSP_DIVINE_INFANT_KING_NOVENA_V1,[ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1.id]:ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1});
 const ALL_NOVENAS=Object.freeze({...CORPUS,...ADDITIONAL_NOVENAS});
 import { novenaSourceAccess } from "./novena-source-access.v1.js";
+import {novenaPrintQualification} from "./prayer-source-qualifications-b17.js";
 import { novenaScriptureContextHtml } from "./novena-scripture-context.js";
 import { hammerHistoricalDayWitness } from "./novena-hammer-day-witness.v1.js";
 import { hammerHistoricalDayText } from "./novena-hammer-original-texts.v1.js";
@@ -76,8 +77,10 @@ function sourceDetails(n){
    ?`<p><a class="aoN1SourcePrimary" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(L('Read the cited text','Consulter le texte cité'))} ↗</a></p>`
    :`<p class="aoN1Fine">${esc(L('A direct source link is unavailable.','Aucun lien direct vers la source n’est disponible.'))}</p>`;
  const note=section?`<p class="aoN1Fine aoN1SourceSection"><b>${esc(txt(section.heading))}</b></p><p class="aoN1Fine">${esc(txt(section.note))}</p>`:'';
+ const printStatus=novenaPrintQualification(n.id,{french:isFr()});
+ const printNotice=printStatus?`<p class="aoN1Fine" data-n1-novena-print-audit="${esc(printStatus.status)}">${esc(printStatus.text)}</p>`:'';
  const links=(n.historySources||[]).filter(x=>/^https:\/\//i.test(x.url||'')).map(x=>`<li><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.label)} ↗</a></li>`).join('');
- return `<details class="aoN1Details aoN1SourceDetails"><summary>${esc(L('Sources & edition','Sources et édition'))}</summary><p><b>${esc(s.work||n.id)}</b><br>${esc(s.authors||'')}<br>${esc(s.edition||'')}<br>${esc(s.approval||'')}</p>${direct}${note}${s.adaptation?`<p>${esc(s.adaptation)}</p>`:''}${links?`<ul>${links}</ul>`:''}<p class="aoN1Fine">${esc(L('An identified source or translation is not in itself proof of complete word-for-word collation.', 'Un texte source identifié ou une traduction ne constitue pas, à lui seul, une vérification intégrale mot à mot.'))}</p></details>`;
+ return `<details class="aoN1Details aoN1SourceDetails"><summary>${esc(L('Sources & edition','Sources et édition'))}</summary><p><b>${esc(s.work||n.id)}</b><br>${esc(s.authors||'')}<br>${esc(s.edition||'')}<br>${esc(s.approval||'')}</p>${direct}${note}${printNotice}${s.adaptation?`<p>${esc(s.adaptation)}</p>`:''}${links?`<ul>${links}</ul>`:''}<p class="aoN1Fine">${esc(L('An identified source or translation is not in itself proof of complete word-for-word collation.', 'Un texte source identifié ou une traduction ne constitue pas, à lui seul, une vérification intégrale mot à mot.'))}</p></details>`;
 }
 function contextSource(id){return (NOVENA_CONTEXT_V1.sourceRegistry||[]).find(x=>x.id===id)||null}
 function contextDetails(n){

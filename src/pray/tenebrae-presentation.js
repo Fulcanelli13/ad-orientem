@@ -1,4 +1,5 @@
 import {TENEBRAE_DAY_NAMES} from "./tenebrae-1960.js";
+import {tenebraeRevisionLink} from "./prayer-source-qualifications-b17.js";
 import {devotionalProgressMarkup} from "./devotional-progress.js";
 import {tenebraeGuideCopy,TENEBRAE_GUIDE_LINKS} from "./tenebrae-guides.js";
 import {renderTenebraeCeremony} from "./tenebrae-ceremonial.v1.js";
@@ -56,6 +57,9 @@ export function renderTenebraeBody({day=0,hour="MATINS",index=0,face="vernacular
   "The complete hour text is assembled locally from the open-source Divinum Officium 1960/61 Roman Breviary corpus. Independent photographed-Breviary critical collation remains pending.",
   "L’heure complète est assemblée localement à partir du Bréviaire romain 1960/61 de Divinum Officium. La collation critique avec l’édition imprimée reste à accomplir."
  );
+ const exactRevision=data?.sourceRevision||"";
+ const revisionLink=tenebraeRevisionLink(exactRevision);
+ const revisionNotice=revisionLink?'<p data-ao-tenebrae-digital-revision="'+esc(exactRevision)+'"><a href="'+esc(revisionLink)+'" target="_blank" rel="noopener noreferrer">'+esc(L("Exact digital source revision","Révision numérique exacte"))+" · "+esc(exactRevision.slice(0,12))+'</a></p>':'<p>'+esc(L("Exact digital source revision unavailable in this reader.","Révision numérique exacte indisponible dans ce lecteur."))+'</p>';
  const about='<details class="aoTenebGuideIntro"><summary>'+esc(L("Understanding Tenebrae · history & how to participate","Comprendre les Ténèbres · histoire et participation"))+'</summary>'+
   '<p>'+esc(guide.overview)+'</p><p>'+esc(guide.structure)+'</p><p>'+esc(guide.method)+'</p>'+
   '<h3>'+esc(L("The lights and the strepitus","Les cierges et le strepitus"))+'</h3><p>'+esc(guide.ceremonial)+'</p>'+
@@ -69,5 +73,5 @@ export function renderTenebraeBody({day=0,hour="MATINS",index=0,face="vernacular
   '<div class="aoTenebMode" role="group" aria-label="'+esc(L("Reading mode","Mode de lecture"))+'">'+modeButtons+'</div>'+
   (guided?'<p class="aoTenebDayContext">'+esc(guide.day)+'</p>':'')+renderTenebraeCeremony({ceremony,step:current,french})+jumpMarkup+
   material+
-  '<details class="aoTenebSource"><summary>'+esc(L("Liturgical edition and source","Édition liturgique et sources"))+'</summary><p>'+esc(edition)+'</p><p>'+esc(witness)+'</p><p>'+esc(guide.sourceWarning)+'</p><p>© 2026 Divinum Officium · MIT · <a href="https://github.com/DivinumOfficium/divinum-officium" target="_blank" rel="noopener noreferrer">Source</a></p></details></main>';
+  '<details class="aoTenebSource"><summary>'+esc(L("Liturgical edition and source","Édition liturgique et sources"))+'</summary><p>'+esc(edition)+'</p><p>'+esc(witness)+'</p><p>'+esc(guide.sourceWarning)+'</p>'+revisionNotice+'<p>© 2026 Divinum Officium · MIT · <a href="https://github.com/DivinumOfficium/divinum-officium" target="_blank" rel="noopener noreferrer">Source</a></p></details></main>';
 }
