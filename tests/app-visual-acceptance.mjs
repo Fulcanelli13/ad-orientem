@@ -1314,10 +1314,10 @@ try{
       const guide=page.locator("#aoPray435930 [data-ao-hymn-options]");
       assert.equal(await guide.count(),1,"Hymn provenance and language guidance disappeared");
       assert.equal(await guide.evaluate(el=>el.open),false,"Hymn options obscure the opening prayer");
-      assert.match(await guide.textContent(),/deliberately small traditional collection|collection traditionnelle volontairement réduite/i,
+      assert.match(await guide.textContent(),/Historical hymn texts with identified sources|Hymnes historiques avec sources identifiées/i,
         "Historic hymn source introduction was discarded rather than relocated");
-      assert.equal(await page.locator("#aoPray435930 .aoDevoSequenceTimeline .aoDevoStop").count(),3,
-        "Te Deum, Veni Creator and Ave Maris Stella have lost their named reader");
+      assert.equal(await page.locator("#aoPray435930 .aoDevoSequenceTimeline .aoDevoStop").count(),11,
+        "Three original hymns plus eight historically sourced ICRSP hymns must retain named navigation");
       assert.equal(await page.locator("#aoPray435930 .aoDevoCardScroll .aoTP381TextParagraph").count()>0,true,
         "Hymn reader has no verse-level focus text");
     }else if(["pray.meal_prayers","pray.holy_name_litany"].includes(route)){
