@@ -310,7 +310,7 @@
     "test:sacred-places-p46": "node tests/sacred-places-p46-four-exact-catholic-buildings.mjs",
     "test:sacred-places-p48": "node tests/sacred-places-p48-eight-global-buildings.mjs",
     "test:daily-formulation-engine": "node tests/daily-formulation-engine.mjs",
-    "test:icksp-prayers": "node tests/icksp-marian-protection.mjs && node tests/icksp-prayers-for-priests.mjs && node tests/icksp-divine-infant-king-novena.mjs"
+    "test:icksp-prayers": "node tests/icksp-marian-protection.mjs && node tests/icksp-prayers-for-priests.mjs && node tests/icksp-divine-infant-king-novena.mjs && node tests/icksp-therese-devotions.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
