@@ -1,6 +1,6 @@
-// Store Locator-style Discover rail ported from MapCN (MIT), using the
-// existing Ad Orientem canonical Heritage map and Place ownership.
-// No second MapLibre instance, coordinates, raw feeds or independent search.
+// MapCN-inspired discovery; every result is an existing, map-publishable canonical Place.
+// The visible-region filter is applied to the current MapLibre viewport, never to guessed
+// coordinates or a second independent map/index.
 const list=value=>Array.isArray(value)?value:[];
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const L=(language,en,fr)=>language==="fr"?fr:en;
@@ -10,8 +10,18 @@ function vicinity(profile,item){
  const fragments=[address.city||address.region,address.country].map(clean).filter(Boolean);
  return [...new Set(fragments)].join(" · ")||clean(item?.subtitle)||"";
 }
-// All results come from already filtered, map-publishable canonical Places.
-// No approximate or unpublished point can be introduced by the rail.
+
+// A map-bound discovery result must already pass the ordinary publication gate.
+// MapLibre owns longitude wrapping and antimeridian checks via bounds.contains.
+export function discoverItemsWithinMapBounds(items,bounds){
+ if(!bounds||typeof bounds.contains!=="function")return list(items);
+ return list(items).filter(item=>{
+  if(!item?.map_publishable||!item?.geo)return false;
+  const lat=Number(item.geo.lat),lng=Number(item.geo.lng);
+  return Number.isFinite(lat)&&Number.isFinite(lng)&&lat>=-90&&lat<=90&&lng>=-180&&lng<=180
+    &&Boolean(bounds.contains([lng,lat]));
+ });
+}
 export function renderMapcnDiscoverRail(vm){
  const byPlace=new Map(list(vm.placeProfiles).filter(p=>p?.place_id)
    .map(p=>[p.place_id,p]));
@@ -27,11 +37,16 @@ export function renderMapcnDiscoverRail(vm){
    ||Number(Boolean(b.profile?.media?.asset_path))-Number(Boolean(a.profile?.media?.asset_path))
    ||clean(a.item.title).localeCompare(clean(b.item.title)));
  const limit=Math.min(180,Math.max(24,Number(vm.filters?.mapcnDiscoverLimit)||36));
- const shown=entries.slice(0,limit);
- let html='<aside class="aoMapcnDiscoverRail" data-mapcn-discover-rail aria-label="'+esc(L(vm.language,"Documented sacred places","Lieux sacrés documentés"))+'">';
- html+='<div class="aoMapcnDiscoverHead"><div><small>'+L(vm.language,"DISCOVER · SACRED ATLAS","DÉCOUVRIR · ATLAS SACRÉ")+'</small>';
- html+='<h2>'+L(vm.language,"Explore the places","Explorer les lieux")+'</h2></div><strong>'+entries.length+'</strong></div>';
- html+='<div class="aoMapcnDiscoverEntries" role="list">';
+ const shown=entries.slice(0,limit),scoped=Boolean(vm.discoverViewport);
+ const title=scoped?L(vm.language,"In this area","Dans cette région"):L(vm.language,"Explore places","Explorer les lieux");
+ let html='<aside class="aoMapcnDiscoverRail" data-mapcn-discover-rail data-discover-expanded="false" aria-label="'+esc(L(vm.language,"Documented sacred places","Lieux sacrés documentés"))+'">';
+ html+='<div class="aoMapcnDiscoverHead"><button type="button" class="aoMapcnDiscoverToggle" data-mapcn-discover-toggle aria-expanded="false" aria-controls="ao-mapcn-discover-items">';
+ html+='<span class="aoMapcnDiscoverHeading"><small>'+L(vm.language,"DISCOVER · SACRED ATLAS","DÉCOUVRIR · ATLAS SACRÉ")+'</small>';
+ html+='<span class="aoMapcnDiscoverTitle">'+title+'</span></span>';
+ html+='<span class="aoMapcnDiscoverCount" aria-label="'+esc(L(vm.language,"Mapped places in this view","Lieux cartographiés dans cette vue"))+'">'+entries.length+'</span>';
+ html+='<span class="aoMapcnDiscoverChevron" aria-hidden="true">⌃</span></button></div>';
+ html+='<div class="aoMapcnDiscoverEntries" role="list" id="ao-mapcn-discover-items">';
+ if(!shown.length)html+='<p class="aoMapcnDiscoverEmpty">'+L(vm.language,"No documented place in this map view. Move or zoom the map.","Aucun lieu documenté dans cette vue. Déplacez ou agrandissez la carte.")+'</p>';
  for(const {item,profile} of shown){
   const active=vm.selectedPlace?.place_id===item.place_id;
   const title=clean(profile?.name)||clean(item.title);
@@ -50,7 +65,7 @@ export function renderMapcnDiscoverRail(vm){
  html+='</div><div class="aoMapcnDiscoverFoot">';
  if(entries.length>shown.length)html+='<button type="button" data-mapcn-discover-more>'
   +L(vm.language,"Show more places","Afficher plus de lieux")+' · '+(entries.length-shown.length)+'</button>';
- else html+='<span>'+L(vm.language,"All matching map places shown","Tous les lieux cartographiés affichés")+'</span>';
+ else if(entries.length)html+='<span>'+L(vm.language,"All places in this view shown","Tous les lieux de cette vue sont affichés")+'</span>';
  html+='</div></aside>';
  return html;
 }
