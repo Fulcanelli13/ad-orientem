@@ -1,0 +1,576 @@
+{
+  "schema": "ad-orientem.pray.icksp-audit-master.v1",
+  "snapshot_date": "2026-10-28",
+  "repo": "Fulcanelli13/ad-orientem",
+  "scope": "25 unique Pray family module cards in main prayFamilies() order after Rosary deduplication; excludes Prayer Library, extra routes, all special rites and calendars",
+  "source_research_prs": {
+    "1": 1800,
+    "2": 1806,
+    "3": 1808,
+    "4": 1812,
+    "5": 1817
+  },
+  "implementation_pr_snapshot": [
+    {
+      "repo": "Fulcanelli13/folio-core",
+      "pr": 59,
+      "state": "OPEN_NON_DRAFT",
+      "scope": "Batch 1 implementation, still needs phone/source gates"
+    },
+    {
+      "repo": "Fulcanelli13/ad-orientem",
+      "pr": 1800,
+      "state": "OPEN_DRAFT",
+      "scope": "B01 source research plus staged new Marian, priest, Infant King, St Therese and 8 Latin seasonal hymn features; not merged"
+    },
+    {
+      "repo": "Fulcanelli13/ad-orientem",
+      "pr": 1813,
+      "state": "OPEN_NON_DRAFT",
+      "scope": "Batch 2 five-module implementation; not merged; phone and rubrical acceptance conditional"
+    },
+    {
+      "repo": "Fulcanelli13/ad-orientem",
+      "pr": 1818,
+      "state": "OPEN_DRAFT",
+      "scope": "Related English bedside Morning/Evening option, not full Compline; not merged"
+    }
+  ],
+  "statuses": {
+    "OPEN_IMPLEMENTATION_PR": 10,
+    "PARTIAL_IMPLEMENTATION_PR_OPEN": 2,
+    "RESEARCH_ONLY": 13
+  },
+  "priority_counts": {
+    "P0": 3,
+    "P1": 17,
+    "P2": 5
+  },
+  "stage_definitions": {
+    "RESEARCH_ONLY": "Editorial review done; no active implementation PR positively identified for the primary Batch-specific work.",
+    "OPEN_IMPLEMENTATION_PR": "A PR explicitly claims implementation changes for this module; open and not merged; no deployment or release certification inferred.",
+    "PARTIAL_IMPLEMENTATION_PR_OPEN": "An open PR contains only a subset of the module's approved recommendations; others remain to implement or verify.",
+    "NOT_RELEASE_CERTIFIED": "No complete module-specific end-to-end acceptance and deployment verification established by this consolidation."
+  },
+  "modules": [
+    {
+      "id": "pray.morning_evening",
+      "batch": 1,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "OPEN_IMPLEMENTATION_PR",
+      "implementation_owner": "folio-core #59; supplement ad-orientem #1800, #1818",
+      "action": "Preserve St Pius X 1913 default and 1905 alternative; audit historical prayer variants, independent Compline/bedtime links, and sunrise/sunset behavior.",
+      "unresolved_gate": "Historic 1913/Hagan language-source collation and owner-level acceptance remain; integrate private canonical PR safely.",
+      "acceptance_gate": "1913 11/10 and 1905 10/8 unchanged; user selections, LA/EN/FR and progressive horizon tested.",
+      "related_prs": [
+        59,
+        1800,
+        1818
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.angelus_regina",
+      "batch": 1,
+      "priority": "P2",
+      "audit_state": "REVIEWED",
+      "implementation_state": "OPEN_IMPLEMENTATION_PR",
+      "implementation_owner": "folio-core #59; separate Marian-source addition ad-orientem #1800",
+      "action": "Maintain traditional seasonal Angelus/Regina and optional historical conclusion; refer to August Queen as distinct related prayer.",
+      "unresolved_gate": "Check seasonal posture and matching variant sources; do not insert August Queen into Angelus.",
+      "acceptance_gate": "Automatic Eastertide transition and historical appendix, user choices and bilingual/trilingual original prayers remain correct.",
+      "related_prs": [
+        59,
+        1800
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.rosary",
+      "batch": 1,
+      "priority": "P2",
+      "audit_state": "REVIEWED",
+      "implementation_state": "OPEN_IMPLEMENTATION_PR",
+      "implementation_owner": "folio-core #59",
+      "action": "Preserve 15 traditional mysteries, five/fifteen-decade player and historical ICKSP contextual links.",
+      "unresolved_gate": "No new Institute rosary format established; no unverified novena or Marian prayer within decade engine.",
+      "acceptance_gate": "Bead counts, mystery order, actual user modes and source attribution pass existing regressions.",
+      "related_prs": [
+        59
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.meal_prayers",
+      "batch": 1,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "OPEN_IMPLEMENTATION_PR",
+      "implementation_owner": "folio-core #59",
+      "action": "Collate Baltimore historical short Grace After Meals and offer full 1888 thanksgiving as optional without changing the short default.",
+      "unresolved_gate": "Verify French historical witness and ensure not attributed falsely to English-only Baltimore original.",
+      "acceptance_gate": "Both before/after forms, optional long grace and language provenance pass regressions.",
+      "related_prs": [
+        59
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.nightly_examen",
+      "batch": 1,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "OPEN_IMPLEMENTATION_PR",
+      "implementation_owner": "folio-core #59; related ad-orientem #1818",
+      "action": "Offer attested historic contrition variant, avoid double contrition when returning to Evening Prayer, and keep Compline a distinct Office.",
+      "unresolved_gate": "Historic source/edition checks and non-overlap with bedtime/Compline branch remain.",
+      "acceptance_gate": "Examen privacy, five-step flow, optional return and source-labelled contrition tested.",
+      "related_prs": [
+        59,
+        1818
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.rosary_methods",
+      "batch": 2,
+      "priority": "P2",
+      "audit_state": "REVIEWED",
+      "implementation_state": "OPEN_IMPLEMENTATION_PR",
+      "implementation_owner": "ad-orientem #1813",
+      "action": "Clarify Montfort adaptations and source the Scripture-linked method to internal DR/CPDV/Crampon corpus.",
+      "unresolved_gate": "Fifteen decades only where supported; original vs editorial language ownership.",
+      "acceptance_gate": "Five verified methods retain exact sequences and 5/15 decade constraints; source labels correct.",
+      "related_prs": [
+        1813
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.divine_mercy",
+      "batch": 2,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "OPEN_IMPLEMENTATION_PR",
+      "implementation_owner": "ad-orientem #1813",
+      "action": "Preserve complete five-decade chaplet; expose optional 'You expired' and 'O Blood and Water' as separate witnessed prayers.",
+      "unresolved_gate": "The #1813 solution is source links, not imported modern protected wording; confirm presentation meets product acceptance.",
+      "acceptance_gate": "Core bead count unchanged; options clearly distinguished, link-only holds explicit.",
+      "related_prs": [
+        1813
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.adoration",
+      "batch": 2,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "OPEN_IMPLEMENTATION_PR",
+      "implementation_owner": "ad-orientem #1813",
+      "action": "Add verified original Latin Eucharistic Pange lingua, complete Lauda Sion, O sacrum convivium and source-identified optional ICKSP prayer links.",
+      "unresolved_gate": "ICKSP modern Spiritual Communion, priest prayers and Golden Arrow may remain link-only until text-reuse clearance; no duplicate source IDs.",
+      "acceptance_gate": "Five established modes remain; complete texts categorized as hymn, Mass sequence, Office antiphon; 3-language availability honest.",
+      "related_prs": [
+        1813,
+        1800
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.benediction",
+      "batch": 2,
+      "priority": "P0",
+      "audit_state": "REVIEWED",
+      "implementation_state": "OPEN_IMPLEMENTATION_PR",
+      "implementation_owner": "ad-orientem #1813",
+      "action": "Fix French Christ-address collect, seasonally appropriate Panem de caelo Alleluia, explicit Christ the King options and local ICKSP witness links.",
+      "unresolved_gate": "Historical exact 1962 rubric and complete phone/bilingual acceptance; unverified chant variants held.",
+      "acceptance_gate": "Seven stages unchanged, seasonal date tests and optional local rites correct; clergy-only blessing never assigned to laity.",
+      "related_prs": [
+        1813
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.forty_hours",
+      "batch": 2,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "OPEN_IMPLEMENTATION_PR",
+      "implementation_owner": "ad-orientem #1813",
+      "action": "Preserve six-stage visitor and add distinct source-bounded solemn three-day public ceremonial participant path.",
+      "unresolved_gate": "Full 1962 ceremonial recension and actual local scheduling still cannot be universally assumed.",
+      "acceptance_gate": "Visitor and solemn choices independently available, links to Mass/Benediction, clergy roles and timing qualified.",
+      "related_prs": [
+        1813
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.communion_treasury",
+      "batch": 3,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "RESEARCH_ONLY",
+      "implementation_owner": "Batch 3 implementation not yet assigned",
+      "action": "Collate seven pre-Communion and four after-Communion prayers; enable direct selection; preserve shared Mass folios.",
+      "unresolved_gate": "Independent historic LA/EN/FR prayer/source checks; spiritual communion shared with Batch 2.",
+      "acceptance_gate": "7/4 titles and wording intact; no duplicated private prayers or invented Eucharistic rite.",
+      "related_prs": [
+        1808
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.confession",
+      "batch": 3,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "RESEARCH_ONLY",
+      "implementation_owner": "Batch 3; shared contrition belongs to folio-core #59",
+      "action": "Preserve regular/returning/general Confession, private ten-commandment cards and no stored sins; source-align older catechesis.",
+      "unresolved_gate": "Historical St Pius X references and exact shared contrition owner reconciliation.",
+      "acceptance_gate": "Three paths, no simulated absolution, no saved sin responses and correct kind/number instruction.",
+      "related_prs": [
+        1808,
+        59
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.penitential_psalms",
+      "batch": 3,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "RESEARCH_ONLY",
+      "implementation_owner": "Batch 3 implementation not yet assigned",
+      "action": "Validate and ideally locally ensure seven complete Vulgate-numbered psalms in authentic source languages.",
+      "unresolved_gate": "Full-chapter verse integrity and independent source availability if offline.",
+      "acceptance_gate": "7/7 chapter coverage, correct 6/31/37/50/101/129/142 mapping, no paraphrase on failure, optional Litany handoff.",
+      "related_prs": [
+        1808
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.litany_saints",
+      "batch": 3,
+      "priority": "P0",
+      "audit_state": "REVIEWED",
+      "implementation_state": "RESEARCH_ONLY",
+      "implementation_owner": "Batch 3 implementation not yet assigned",
+      "action": "Provide attested liturgical Latin and properly verified EN/FR; separate private historical litany from Rogations, Easter Vigil and Forty Hours.",
+      "unresolved_gate": "Existing EN 1883 and FR Corneille 1862 are distinct uncollated witnesses; exact 1962 liturgical recension and rights not yet cleared.",
+      "acceptance_gate": "Offline verified version-specific texts, invocation alignment, separate public rite proper prayers, faithful response roles.",
+      "related_prs": [
+        1808
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.stations",
+      "batch": 3,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "RESEARCH_ONLY",
+      "implementation_owner": "Batch 3 implementation not yet assigned",
+      "action": "Collate St Alphonsus French; preserve guided and simple modes while explaining public erected-stations context.",
+      "unresolved_gate": "No unverified historical French translation; indulgence conditions must not be generalized.",
+      "acceptance_gate": "14 stations, 13 interstation Stabat stanzas, no compulsory vocal prayer, modes and public/private cues tested.",
+      "related_prs": [
+        1808
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.seven_words",
+      "batch": 4,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "RESEARCH_ONLY",
+      "implementation_owner": "Batch 4 implementation not yet assigned",
+      "action": "Preserve 7 scriptural words; package historical English meditation locally; source-collate French or label unavailable; optional Scripture-only path.",
+      "unresolved_gate": "French historical original not yet collated; current Baltimore meditation relies on external transcription.",
+      "acceptance_gate": "Seven correct Gospel refs, appendix separated from Seventh Word, offline and language behavior tested.",
+      "related_prs": [
+        1812
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.tenebrae",
+      "batch": 4,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "RESEARCH_ONLY",
+      "implementation_owner": "Batch 4 implementation not yet assigned",
+      "action": "Maintain locally compiled 1960/61 Matins/Lauds for three days; optionally accompany source-specific ICKSP 15-candle ceremony.",
+      "unresolved_gate": "Historical candle-event alignment, recension and local usage must not be assumed universal; printed-Breviary facsimile collation pending.",
+      "acceptance_gate": "3 days × 2 hours canonical integrity; historically qualified local candle cues and reduced-motion safe.",
+      "related_prs": [
+        1812
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.novenas",
+      "batch": 4,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "PARTIAL_IMPLEMENTATION_PR_OPEN",
+      "implementation_owner": "ad-orientem #1800 staged; Batch 4 residual",
+      "action": "Preserve 16 novenas; integrate Institute Divine Infant King repeat-form and source-labelled St Thérèse perpetual Tuesday and distinct Immaculate Conception repeated form.",
+      "unresolved_gate": "#1800 stages Infant King original text and links for St Thérèse; distinct repeated Immaculate Conception prayer and all reuse tests require reconciliation.",
+      "acceptance_gate": "Sixteen existing forms preserved; supplementary identities and 9-day vs weekly recurrence correct; full Node/phone gate passed.",
+      "related_prs": [
+        1800,
+        1812
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "programme.first_friday",
+      "batch": 4,
+      "priority": "P2",
+      "audit_state": "REVIEWED",
+      "implementation_state": "RESEARCH_ONLY",
+      "implementation_owner": "Batch 4 implementation not yet assigned",
+      "action": "Preserve nine-month private report and reparatory Communion; clarify historical essential conditions versus ICKSP local devotions.",
+      "unresolved_gate": "Source-specific Sacred Heart/Confession historical conditions; do not edit Batch 5 Sacred Heart canonical text simultaneously.",
+      "acceptance_gate": "Five-stage flow, date detection, no inferred Communion or grace, optional month reports.",
+      "related_prs": [
+        1812
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "programme.first_saturday",
+      "batch": 4,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "RESEARCH_ONLY",
+      "implementation_owner": "Batch 4 implementation not yet assigned",
+      "action": "Preserve the four acts and 15-minute meditation; prioritize historically traditional 15 mysteries instead of post-2002 Luminous set.",
+      "unresolved_gate": "Fatima/1925 historical source collation, confession date timing nuance, saved preference migration.",
+      "acceptance_gate": "Six-stage flow, separate Rosary/meditation, explicit reporting, authentic traditional default.",
+      "related_prs": [
+        1812
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.sacred_heart",
+      "batch": 5,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "RESEARCH_ONLY",
+      "implementation_owner": "Batch 5 implementation; ICKSP optional priest prayers owned #1813/#1800",
+      "action": "Preserve Pius XI Iesu dulcissime, litany and human-race consecration; register Golden Arrow Holy Face reparation and ICKSP King Dedication as DISTINCT prayer identities.",
+      "unresolved_gate": "Golden Arrow vs Iesu dulcissime and Dedication vs Consecration are non-equivalent; independently clear source reuse.",
+      "acceptance_gate": "Direct prayer choice, precise historic identities and source references, no duplicate priest prayer.",
+      "related_prs": [
+        1817,
+        1800,
+        1813
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.holy_name_litany",
+      "batch": 5,
+      "priority": "P2",
+      "audit_state": "REVIEWED",
+      "implementation_state": "RESEARCH_ONLY",
+      "implementation_owner": "Batch 5 implementation not yet assigned",
+      "action": "Preserve local LA/EN/FR historical litany and guided seven-section read; check invocation alignment and external chant references.",
+      "unresolved_gate": "Equal section count does not independently validate line-by-line translation; score redistribution not licensed.",
+      "acceptance_gate": "Full/guided exact text, invocation/response order, access from Holy Name feast and role cues.",
+      "related_prs": [
+        1817
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.sacred_hymns",
+      "batch": 5,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "PARTIAL_IMPLEMENTATION_PR_OPEN",
+      "implementation_owner": "ad-orientem #1800 staged; Batch 5 residual",
+      "action": "Preserve 3 core source hymns and reconcile 8 additional Latin seasonal recensions staged in #1800; grow authentic EN/FR access without duplication.",
+      "unresolved_gate": "#1800 full suite not release certified; 8 recensions vs 7 groups, pre-1632 Easter alternate not universal 1962; modern score rights unclear.",
+      "acceptance_gate": "11 historical hymn entries on staged reader, source-true Latin-only labels and authentic language witnesses, no overlapping Batch 2 texts.",
+      "related_prs": [
+        1800,
+        1817
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.good_death",
+      "batch": 5,
+      "priority": "P0",
+      "audit_state": "REVIEWED",
+      "implementation_state": "RESEARCH_ONLY",
+      "implementation_owner": "Batch 5 implementation not yet assigned; St Joseph source common with canonical Prayer",
+      "action": "Restore independently collated 1909/preconciliar Litany of St Joseph as historical default and retain distinct 2021 expanded identity.",
+      "unresolved_gate": "Existing current Litany contains 2021 invocations (Custos Redemptoris, Patrone exsulum, etc.); 1909 and historical EN/FR must be collated rather than deleting lines blindly.",
+      "acceptance_gate": "All 9 stages preserved; full LA/EN/FR preconciliar and explicit 2021 alternatives; no changes to urgent bedside pathway.",
+      "related_prs": [
+        1817
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    },
+    {
+      "id": "pray.dying_companion",
+      "batch": 5,
+      "priority": "P1",
+      "audit_state": "REVIEWED",
+      "implementation_state": "RESEARCH_ONLY",
+      "implementation_owner": "Batch 5 implementation not yet assigned",
+      "action": "Retain priest-first urgent bedside sequence, prayer and commendation; critically collate Proficiscere original Roman and historical French texts.",
+      "unresolved_gate": "Existing Latin linked to Monastic 1963; French linked to Scribd historical transcription; no certified 1962 Roman facsimile.",
+      "acceptance_gate": "Urgent offline mobile access, correct lay/priest roles, no simulated sacraments, switch to prayers for the dead after death.",
+      "related_prs": [
+        1817
+      ],
+      "verification_state": "NOT_RELEASE_CERTIFIED",
+      "deployment_state": "AUDIT_CHANGES_NOT_VERIFIED_DEPLOYED"
+    }
+  ],
+  "non_conflation_registry": [
+    {
+      "collision_id": "C01",
+      "short_name": "Golden Arrow vs Sacred Heart Act",
+      "non_conflation_rule": "ICKSP Golden Arrow is a Holy Face/Holy Name reparation, not Pius XI Iesu dulcissime.",
+      "owners": "Batch 5 Sacred Heart content identity; Batch 2 Adoration links; Batch 1 #1800 staged registry."
+    },
+    {
+      "collision_id": "C02",
+      "short_name": "Christ the King Dedication vs Consecration",
+      "non_conflation_rule": "ICKSP Dedication is not the complete Consecration of the Human Race, nor optional Christ the King Benediction rite.",
+      "owners": "Batch 5 Sacred Heart; Batch 2 Benediction."
+    },
+    {
+      "collision_id": "C03",
+      "short_name": "Full Eucharistic Pange lingua vs Passiontide Pange lingua",
+      "non_conflation_rule": "Corporis mysterium vs proelium certaminis are different historical hymns; Tantum Ergo is excerpt of the former.",
+      "owners": "Batch 2 Adoration canonical text; Batch 5 Hymns links; avoid duplicate IDs."
+    },
+    {
+      "collision_id": "C04",
+      "short_name": "St Thérèse devotions",
+      "non_conflation_rule": "Twenty-Four Glory Bes 9-day Novena, Institute Tuesday Perpetual Novena, 1925 printed Benedict XV-associated prayer, and mission intercession remain distinct.",
+      "owners": "Batch 4 Novenas; #1800 staged text/link registry."
+    },
+    {
+      "collision_id": "C05",
+      "short_name": "Immaculate Conception novenas",
+      "non_conflation_rule": "1883 Moran 9-day day-specific prayers differ from ICKSP repeat-form O Most Holy Virgin, 29 Nov–7 Dec.",
+      "owners": "Batch 4 Novenas; existing 16 preserved."
+    },
+    {
+      "collision_id": "C06",
+      "short_name": "Saint Joseph Litany editions",
+      "non_conflation_rule": "1909 preconciliar vs 2021 seven-expanded invocation recension must be separate, not silently mixed.",
+      "owners": "Batch 5 Good Death + St Joseph Prayer Library shared ID."
+    },
+    {
+      "collision_id": "C07",
+      "short_name": "Litany of the Saints ritual contexts",
+      "non_conflation_rule": "Private 1883/1862 witness is not a verified universal 1962 Rogation litany; Easter Vigil and Forty Hours have separate ceremonial conditions.",
+      "owners": "Batch 3 Litany + Batch 2 Forty Hours + Holy Week proper."
+    },
+    {
+      "collision_id": "C08",
+      "short_name": "Compline vs Nightly Examination",
+      "non_conflation_rule": "Complete Office of Compline is not an optional five-step Nightly Examen and must not be introduced as undocumented St Pius X 'Short' form.",
+      "owners": "Batch 1 #59, #1800, #1818; released daily routines."
+    },
+    {
+      "collision_id": "C09",
+      "short_name": "Rosary Mystery historical sets",
+      "non_conflation_rule": "15 Joyful/Sorrowful/Glorious are traditional Fatima baseline; Luminous set is post-2002 and must be labelled and not imposed on First Saturdays.",
+      "owners": "Batch 1 Rosary, Batch 2 Rosary Methods, Batch 4 First Saturdays."
+    },
+    {
+      "collision_id": "C10",
+      "short_name": "Marian protection vs Angelus",
+      "non_conflation_rule": "August Queen of Heaven is a separate sourced prayer, not extra Angelus line, Regina Caeli variant or original Rosary step.",
+      "owners": "Batch 1 Angelus, #1800 staged Marian route."
+    },
+    {
+      "collision_id": "C11",
+      "short_name": "Office hymn vs score vs proper",
+      "non_conflation_rule": "An ICKSP chant score does not create a new lyric identity or confer paid-app redistribution permission; Latin-only recensions must not be passed off as EN/FR.",
+      "owners": "Batch 5 Hymns, #1800 staged 8/7, Batch 2 Eucharistic hymns."
+    },
+    {
+      "collision_id": "C12",
+      "short_name": "Prayer for Priests variants",
+      "non_conflation_rule": "ICKSP Eternal Priest prayer from separate historical witness is staged English in #1800; second Institute prayer has text-corruption hold, not a verified substitution.",
+      "owners": "Batch 2 Adoration, #1800 staged canonical route."
+    },
+    {
+      "collision_id": "C13",
+      "short_name": "Private Communion Treasury vs Mass prayers",
+      "non_conflation_rule": "7/4 Communion selections feed Mass folios; they are not Postcommunion proper texts and should have one canonical prayer identity.",
+      "owners": "Batch 3 Communion, Mass Reader maintained."
+    },
+    {
+      "collision_id": "C14",
+      "short_name": "1955 Tenebrae ceremony vs 1960/61 Breviary",
+      "non_conflation_rule": "15-candle public ceremonial witness may coexist with 1960 Matins/Lauds but is not mandatory identical rubrics for all parish services.",
+      "owners": "Batch 4 Tenebrae canonical Office."
+    },
+    {
+      "collision_id": "C15",
+      "short_name": "Dying companion vs Sacramental Rites",
+      "non_conflation_rule": "Proficiscere is prayer/commendation with source-specific roles, not an app-administered Anointing, Viaticum, absolution or Apostolic Blessing.",
+      "owners": "Batch 5 Dying Companion, Good Death, Learn Serious Illness."
+    }
+  ],
+  "release_gates": [
+    "Verify current main and both public/private PR owners; resolve merge conflicts and do not double-edit canonical prayer IDs.",
+    "Original text/provenance and separately reusable translation validated; unavailable or held witnesses explicitly labelled.",
+    "Latin/English/French displays are attested, with no AI-filled prayers or unlicensed PDF/audio.",
+    "Traditional 1962 vs 1909/2021 vs optional local usage clearly distinguished.",
+    "Canonical Prayer, Rosary, Mass, Devotions, Office, and Calendar reuse single text identity rather than copy blocks.",
+    "Targeted Node/source and state regression plus Playwright mobile/language/low-connectivity tests pass.",
+    "Merged pull request is on current main and exact deployed Vercel commit is verified against live navigation, with protected rollback retained.",
+    "No paid services, hosting migration, artificial timeline/sacramental completion, or new parallel Calendar."
+  ],
+  "secondary_coverage_holds": [
+    "Prayer Library and its entire canonical text bank",
+    "Additional ICKSP/ICRSP source catalogues beyond 25 preliminary selected works and 98 indexed Office entries",
+    "My Customs and other non-Pray module routes",
+    "Full Office Compline, Holy Week public ceremonial and special rites",
+    "External connected canonical folio-core implementation and published deployment state"
+  ]
+}
