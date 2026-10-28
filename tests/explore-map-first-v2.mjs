@@ -76,6 +76,11 @@ assert.equal((journeyCategories.match(/class="[^"]*active/g)||[]).length,1,
  "Journey mode must not show duplicate competing active categories");
 
 assert.ok(categories,"Primary map categories must be present");
+assert.equal((surface.match(/data-find-glossary/g)||[]).length,1,
+ "Definitions remain available as one action, not duplicated beside the primary search");
+assert.match(secondary,/data-find-glossary/,
+ "Definitions must be accessible from the secondary More menu");
+
 assert.match(categories,/data-find-filter="lens" data-find-filter-value="saints"/,
  "Published Saints must remain a direct, visible map doorway");
 for(const category of ["ALL","shrines","pilgrimages","relics","apparitions"])
