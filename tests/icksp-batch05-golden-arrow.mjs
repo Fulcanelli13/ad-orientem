@@ -13,10 +13,10 @@ assert.deepEqual([...golden.distinctFrom].sort(),["devotion_consecration_christ_
 assert.ok(c.prayers.sacred_heart_short_prayer.en.length>500,"Existing Pius XI prayer must remain complete");
 assert.match(c.prayers.devotion_consecration_christ_king.en,/renew my baptismal vows/);
 assert.match(runtime,/HEART_STAGES=Object\.freeze\(\["litany","reparation","golden_arrow","consecration"\]\)/);
-assert.match(runtime,/data-tp381-heart="golden_arrow"/);
-assert.match(runtime,/data-tp381-heart="reparation"/);
-assert.match(runtime,/data-tp381-heart="consecration"/);
-assert.match(runtime,/data-tp381-heart="litany"/);
+assert.match(runtime,/const choices=sacredHeartDirectChoices\(tab\)/);
+assert.match(runtime,/HEART_STAGES.map\(id=>/);
+assert.match(runtime,/data-tp381-heart=/);
+assert.match(runtime,/HEART_STAGES=Object.freeze\(\["litany","reparation","golden_arrow","consecration"\]\)/);
 assert.match(runtime,/GOLDEN_ARROW_REPARATION_V1/);
 assert.match(runtime,/Reuse the canonical prayer/);
 assert.match(runtime,/const choices=/);
