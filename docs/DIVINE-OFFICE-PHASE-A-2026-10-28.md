@@ -60,3 +60,13 @@ Keep both separately identified; **do not silently treat their texts as same-ver
 - Neither the complete Office nor an Office composition engine has yet been wired.
 - No online source-fetch performance, full-year coverage, real rendered-hour equality or free-tier batch execution has been measured by this Phase A scaffold.
 - Printed-Breviary critical collation is separate from agreement with another presentation of Divinum Officium.
+
+## Phase B — pinned generator proof (28 October 2026)
+
+Committed `src/office/generator-probe-contract.js`, `scripts/office/phase-b-generate.mjs`, `tests/divine-office-composition-probe.mjs`, and `.github/workflows/divine-office-phase-b.yml`. The generator uses Divinum Officium's own `standalone/tools/epubgen2/EofficiumXhtml.pl`, invoked with the upstream documented CGI command-line query. It derives its DO SHA from Ad Orientem's pre-existing source-transport owner and explicitly rejects an upstream checkout that differs from that SHA. Public standard GitHub-hosted runners are free under GitHub's stated billing policy; there is no private or larger runner, no new service and no stored Actions artifact.
+
+**First CI proof:** workflow run `40699928696`, both jobs successful. Node syntax plus 11 committed contracts passed. 2026-10-28 Vespers generated at pinned SHA in three single-language outputs: Latin 15,563 UTF-8 bytes; English 16,468 bytes; French 17,904 bytes. All three passed the **document envelope** checks, with `compositionVerified:false`, `languageCompletenessVerified:false` and `published:0`. This shows the actual upstream composer executes, not that its full Office or translations are certified.
+
+**Second smoke:** expand to four dates (2026-10-28, 2026-10-31, 2026-11-01, 2026-11-03), eight hours, three languages = 96 generated XHTML files. This is a bulk *envelope* test, not a validated 96-hour liturgical corpus. No raw XHTML may be put into the browser; output is research-only until structurally normalized, sanitized, aligned and independently checked.
+
+**Next:** Classify generated paragraphs/sections from the actual XHTML; verify French fallback and First/Second Vespers around 31 October–1 November with independent witnesses; then create safe date/hour/locale JSON and integrate the reader. Preserve existing Tenebrae (different DO SHA) without overwriting it.
