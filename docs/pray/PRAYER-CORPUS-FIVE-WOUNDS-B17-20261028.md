@@ -20,9 +20,9 @@ These corroborate the displayed order. An original scanned 1857 print-page colla
 
 ## UI, navigation and source rules
 
-- New internal **subroute** `pray.five_wounds` uses existing `AO_PRAY_V435930` route owner; it is linked from **both** Chaplets and Passion families without duplicating the text or creating an additional surface.
+- New internal **subroute** `pray.five_wounds` uses existing `AO_PRAY_V435930` route owner; it is a single Chaplets-family option, with a small contextual link from the existing Passion family; the original 23 Prayer-family ownership entries remain frozen.
 - The reader advances among 30 prayer steps; the wound rail jumps to each group; the 5+1 bead indicator distinguishes the Ave; a quiet progress bar shows session progression.
-- EN/FR use the existing canonical prayers in the selected Prayer language. A deliberate Latin toggle uses the **canonical Latin**. No new translations, no API fetch, no changes to original 48 prayer records.
+- EN/FR use the already-selected Prayer language and its canonical text. A local Latin toggle uses the **canonical Latin**; this reader does not replace the original session-language switch owned by other rites. No new translations, no API fetch, no changes to original 48 prayer records.
 - Reader does not mark completion in any Calendar or devotional streak; Finish returns to the existing previous Prayer surface.
 - All controls have a minimum 48px touch target (wound selection at least 58px); keyboard focus and reduced-motion requirements are included. Provenance and ritual history are secondary disclosure.
 - Existing reader routes, personal preferences, Morning/Evening, Stations, Rosary, Divine Mercy, Mass and the Divine Office remain independent.
