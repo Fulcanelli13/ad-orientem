@@ -82,7 +82,8 @@ try {
         name:x?.name??x?.title??null,path:x?.path??null
       })), calendarCommemorations:(p?.calendarCommemorations??[]).map(x=>({
         name:x?.name??null,path:x?.path??null,prayerSourcePath:x?.prayerSourcePath??null
-      })), raw:p?inspect(p,"fr"):null, reader:a?.proper?.data?inspect(a.proper.data,"fr"):null});
+      })), raw:p?inspect(p,"fr"):null, reader:a?.proper?.data?inspect(a.proper.data,"fr"):null,
+      readerEnglish:a?.proper?.data?inspect(a.proper.data,"en"):null});
    }catch(error){observedDays.push({date,error:String(error?.message??error)});}
   }
   const sourceObservations=[];
@@ -144,12 +145,20 @@ for(const date of ["2026-03-06","2027-03-06"]){
  assert.equal(row.reader?.readerSlots?.secret,"MISSING",date+" invalid Secret published as READY");
  assert.equal(row.reader?.readerSlots?.postcommunion,"READY",
    date+" unrelated source-authentic named Postcommunion was dropped");
+ assert.equal(row.readerEnglish?.readerSlots?.collect,"MISSING",
+   date+" English reader exposed the wrong source-Latin Collect");
+ assert.equal(row.readerEnglish?.readerSlots?.secret,"MISSING",
+   date+" English reader exposed the wrong source-Latin Secret");
+ assert.equal(row.readerEnglish?.readerSlots?.postcommunion,"READY",
+   date+" correct Postcommunion disappeared in English reader");
 }
 const martin=output.observedDays.find(x=>x.date==="2026-11-11");
 assert.equal(martin?.sourcePath,"Sancti/11-11");
 assert.equal(martin.reader?.readerSlots?.collect,"READY");
 assert.equal(martin.reader?.readerSlots?.secret,"READY");
 assert.equal(martin.reader?.readerSlots?.postcommunion,"READY");
+assert.equal(martin.readerEnglish?.readerSlots?.collect,"READY");
+assert.equal(martin.readerEnglish?.readerSlots?.secret,"READY");
 
 for(const d of output.observedDays){
  console.log("MARTYRS_LIVE_DAY="+JSON.stringify({date:d.date,status:d.status,mainId:d.mainId,
