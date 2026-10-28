@@ -340,7 +340,10 @@ export function createFindOwner(win=globalThis){
     const visible=discoverItemsWithinMapBounds(lastExploreViewModel.items,bounds);
     const staged=win?.document?.createElement?.("div");
     if(!staged)return;
-    staged.innerHTML=renderMapcnDiscoverRail({...lastExploreViewModel,items:visible,discoverViewport:true});
+    const center=map.getCenter?.();
+    staged.innerHTML=renderMapcnDiscoverRail({...lastExploreViewModel,items:visible,discoverViewport:true,
+      discoverCenter:center&&Number.isFinite(Number(center.lat))&&Number.isFinite(Number(center.lng))
+        ?{lat:Number(center.lat),lng:Number(center.lng)}:null});
     const next=staged.firstElementChild;
     if(!next||typeof rail.replaceWith!=="function")return;
     const expanded=rail.dataset?.discoverExpanded==="true";
