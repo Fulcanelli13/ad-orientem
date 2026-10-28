@@ -49,7 +49,7 @@ const cases=[
   {width:390,height:844,isMobile:true,hasTouch:true,bucket:"main",file:"2026-11-01-vespers-fr.html"},
   {width:390,height:844,isMobile:true,hasTouch:true,bucket:"advent",file:"2026-11-28-vespers-en.html"},
   {width:390,height:844,isMobile:true,hasTouch:true,bucket:"advent",file:"2026-11-29-vespers-fr.html"},
-  {width:320,height:568,isMobile:true,hasTouch:true,bucket:"souls",file:"2026-11-02-prime-en.html"},
+  {width:320,height:568,isMobile:true,hasTouch:true,bucket:"souls",file:"2026-11-02-sext-en.html"},
   {width:390,height:844,isMobile:true,hasTouch:true,bucket:"souls",file:"2026-11-02-vespers-fr.html"},
   {width:320,height:568,isMobile:true,hasTouch:true,bucket:"syntax",file:"2026-11-02-prime-fr.html"},
   {width:390,height:844,isMobile:true,hasTouch:true,bucket:"syntax",file:"2026-11-02-compline-fr.html"},
@@ -121,19 +121,28 @@ try{
     if(bucket==="syntax"){
       assert.equal(await root.locator('.aoOfficeLocaleControls a[href*="-fr.html"]').count(),1,
         file+" corrected French local navigation missing");
-      assert.equal(await root.locator(".aoOfficeLocaleUnavailable").count(),0,
-        file+" corrected Office still marked unavailable");
+      assert.equal(await root.locator(".aoOfficeLocaleUnavailable").count(),
+        file.includes("-prime-fr.html")?1:0,
+        file+" unexpected correction-locale status");
+      if(file.includes("-prime-fr.html")){
+        assert.equal(await root.locator('.aoOfficeLocaleControls a[href*="-en.html"]').count(),0,
+          file+" inconsistent English Prime still linked");
+        assert.ok((await root.locator(".aoOfficeLocaleUnavailable").innerText()).includes("EN review"),
+          file+" missing source-review label");
+      }
       const missingCount=await root.locator(".aoOfficeMassCard").evaluateAll(cards=>
         cards.filter(card=>/^(?:\d+|special)\s+is missing\b/i.test(
           card.querySelector(".aoOfficeFullTranslation .aoOfficeSourceText")?.textContent?.trim()??""
         )).length);
       assert.equal(missingCount,0,file+" unresolved text still displayed");
     }
-    if(bucket==="souls"&&file.includes("-prime-en.")){
+    if(bucket==="souls"&&file.includes("-sext-en.")){
       assert.equal(await root.locator(".aoOfficeLocaleUnavailable").count(),1,
         file+" missing French must not have a clickable link");
       assert.equal(await root.locator('.aoOfficeLocaleControls a[href*="-fr.html"]').count(),0,
         file+" blocked French page must not be linked");
+      assert.equal(await root.locator('[data-office-hour-link][href*="-prime-en.html"]').count(),0,
+        file+" mismatched English Prime must not be navigable");
     }
     await root.locator('[data-office-mode-select="MISSAL"]').click();
     assert.equal(await root.getAttribute("data-office-mode"),"MISSAL");
@@ -170,6 +179,10 @@ try{
     }else if(bucket==="souls"&&file.endsWith("-fr.html")){
       // The five source-incomplete French hours are not navigable.
       assert.equal(await root.locator("[data-office-hour-link]").count(),3,file);
+    }else if(bucket==="souls"&&file.endsWith("-en.html")){
+      assert.equal(await root.locator("[data-office-hour-link]").count(),7,file);
+    }else if(bucket==="syntax"&&file.endsWith("-en.html")){
+      assert.equal(await root.locator("[data-office-hour-link]").count(),7,file);
     }else{
       assert.equal(await root.locator("[data-office-hour-link]").count(),8,file);
     }
