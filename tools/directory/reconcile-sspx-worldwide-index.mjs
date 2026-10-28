@@ -26,7 +26,9 @@ export function loadSspxSnapshotRows(){
   for(const name of names){
     const doc=source(directory+"/"+name);
     if(!String(doc.provider??"").startsWith("SSPX_"))continue;
-    rows.push(...(Array.isArray(doc.records)?doc.records:[]));
+    // Historical census compares Mass-reported venues; newly approved
+    // address-only locations have no timetable and must not alter this base.
+    rows.push(...(Array.isArray(doc.records)?doc.records:[]).filter(row=>row.ps!=="SITE_ONLY_SOURCE_CONFIRMED"));
   }
   return rows;
 }
