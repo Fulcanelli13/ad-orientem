@@ -288,7 +288,8 @@ assert.equal(simple.sourceModel.totalCards,39);
 assert.equal(simple.presentationModel.totalCards,39);
 assert.equal(simple.sourceModel.presentationMode,"LIVE");
 const simpleHost=findReaderModeAnchorCard(simple.presentationModel,anchor);
-assert.equal(simpleHost.sectionId,"AO.CARD.015","Host cue did not remain anchored when switching LIVE -> SIMPLE");
+assert.equal(simpleHost.sectionId,"AO.CANON.06",
+  "Host elevation must retain its source-owned Canon card on saved-mode migration");
 assert.ok(simpleHost.paragraphs.some(p=>(p.sourceCueIds??[]).includes("AO.SM.C0174")));
 
 const missal=buildReaderModeModels({prepared,data,mode:"MISSAL"});
