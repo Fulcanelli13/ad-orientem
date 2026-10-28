@@ -36,6 +36,77 @@
         0.43,
         0.46
       ],
+      "required_subject_anchors_original_normalized": {
+        "father": [
+          0.445,
+          0.325
+        ],
+        "son": [
+          0.38,
+          0.465
+        ],
+        "dog": [
+          0.512,
+          0.824
+        ],
+        "restoration_garments": [
+          0.76,
+          0.495
+        ]
+      },
+      "cover_subject_visibility_checks": {
+        "square_1x1": {
+          "viewport": [
+            320,
+            320
+          ],
+          "source_window_xyxy": [
+            165.1,
+            0,
+            3877.1,
+            3712
+          ],
+          "required_anchor_count": 4,
+          "clipped_or_edge_risk_anchors": [],
+          "automatic_cover_eligible": true,
+          "warning": "Point check only: full figure and painted details still need human signoff"
+        },
+        "phone_3x4": {
+          "viewport": [
+            270,
+            360
+          ],
+          "source_window_xyxy": [
+            564.2,
+            0,
+            3348.2,
+            3712
+          ],
+          "required_anchor_count": 4,
+          "clipped_or_edge_risk_anchors": [],
+          "automatic_cover_eligible": true,
+          "warning": "Point check only: full figure and painted details still need human signoff"
+        },
+        "wide_16x9": {
+          "viewport": [
+            1600,
+            900
+          ],
+          "source_window_xyxy": [
+            0,
+            647.7,
+            4096,
+            2951.7
+          ],
+          "required_anchor_count": 4,
+          "clipped_or_edge_risk_anchors": [
+            "dog"
+          ],
+          "automatic_cover_eligible": false,
+          "warning": "Point check only: full figure and painted details still need human signoff"
+        }
+      },
+      "full_work_display_policy": "contain_or_natural_aspect_preferred_for_full_composition",
       "boundary_overlay": "confession-boundary-overlay.jpg",
       "candidate_preview": "confession-frame-boundary-candidate.jpg",
       "responsive_comparison": "confession-responsive-comparison.jpg",
@@ -76,6 +147,80 @@
         0.53,
         0.44
       ],
+      "required_subject_anchors_original_normalized": {
+        "mary": [
+          0.282,
+          0.4
+        ],
+        "gabriel": [
+          0.662,
+          0.245
+        ],
+        "dove": [
+          0.657,
+          0.079
+        ],
+        "lilies": [
+          0.957,
+          0.205
+        ]
+      },
+      "cover_subject_visibility_checks": {
+        "square_1x1": {
+          "viewport": [
+            320,
+            320
+          ],
+          "source_window_xyxy": [
+            116.5,
+            77,
+            3629.4,
+            3590
+          ],
+          "required_anchor_count": 4,
+          "clipped_or_edge_risk_anchors": [],
+          "automatic_cover_eligible": true,
+          "warning": "Point check only: full figure and painted details still need human signoff"
+        },
+        "phone_3x4": {
+          "viewport": [
+            270,
+            360
+          ],
+          "source_window_xyxy": [
+            581.9,
+            77,
+            3216.7,
+            3590
+          ],
+          "required_anchor_count": 4,
+          "clipped_or_edge_risk_anchors": [
+            "lilies"
+          ],
+          "automatic_cover_eligible": false,
+          "warning": "Point check only: full figure and painted details still need human signoff"
+        },
+        "wide_16x9": {
+          "viewport": [
+            1600,
+            900
+          ],
+          "source_window_xyxy": [
+            82,
+            737.2,
+            3660,
+            2749.8
+          ],
+          "required_anchor_count": 4,
+          "clipped_or_edge_risk_anchors": [
+            "dove",
+            "lilies"
+          ],
+          "automatic_cover_eligible": false,
+          "warning": "Point check only: full figure and painted details still need human signoff"
+        }
+      },
+      "full_work_display_policy": "contain_or_natural_aspect_preferred_for_full_composition",
       "boundary_overlay": "angelus-boundary-overlay.jpg",
       "candidate_preview": "angelus-frame-boundary-candidate.jpg",
       "responsive_comparison": "angelus-responsive-comparison.jpg",
@@ -116,6 +261,77 @@
         0.5,
         0.43
       ],
+      "required_subject_anchors_original_normalized": {
+        "mary": [
+          0.507,
+          0.334
+        ],
+        "host": [
+          0.49,
+          0.75
+        ],
+        "left_saint": [
+          0.2,
+          0.332
+        ],
+        "right_saint": [
+          0.791,
+          0.323
+        ]
+      },
+      "cover_subject_visibility_checks": {
+        "square_1x1": {
+          "viewport": [
+            320,
+            320
+          ],
+          "source_window_xyxy": [
+            82,
+            380.0,
+            3050,
+            3348.0
+          ],
+          "required_anchor_count": 4,
+          "clipped_or_edge_risk_anchors": [],
+          "automatic_cover_eligible": true,
+          "warning": "Point check only: full figure and painted details still need human signoff"
+        },
+        "phone_3x4": {
+          "viewport": [
+            270,
+            360
+          ],
+          "source_window_xyxy": [
+            185.2,
+            73,
+            2946.8,
+            3755
+          ],
+          "required_anchor_count": 4,
+          "clipped_or_edge_risk_anchors": [],
+          "automatic_cover_eligible": true,
+          "warning": "Point check only: full figure and painted details still need human signoff"
+        },
+        "wide_16x9": {
+          "viewport": [
+            1600,
+            900
+          ],
+          "source_window_xyxy": [
+            82,
+            938.4,
+            3050,
+            2607.9
+          ],
+          "required_anchor_count": 4,
+          "clipped_or_edge_risk_anchors": [
+            "host"
+          ],
+          "automatic_cover_eligible": false,
+          "warning": "Point check only: full figure and painted details still need human signoff"
+        }
+      },
+      "full_work_display_policy": "contain_or_natural_aspect_preferred_for_full_composition",
       "boundary_overlay": "adoration-boundary-overlay.jpg",
       "candidate_preview": "adoration-frame-boundary-candidate.jpg",
       "responsive_comparison": "adoration-responsive-comparison.jpg",
