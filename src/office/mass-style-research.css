@@ -141,7 +141,7 @@ body{font-family:var(--ao-font-ui,system-ui,-apple-system,sans-serif)}
  .aoOfficeMissalCols>section+section{margin-top:22px;padding-top:20px;border-left:0;border-top:1px solid #ffffff18}
  .aoOfficeMassReader[data-office-mode="MISSAL"] .aoOfficeMassViewport{padding:30px 25px 220px}
  .aoOfficeBottomNav{grid-template-columns:45px minmax(0,1fr) 45px;padding-inline:7px}
- .aoOfficeBottomNav>button{width:39px;height:39px}
+ .aoOfficeBottomNav>button{width:44px;height:44px}
  .aoOfficeVerificationNote{font-size:8px}
 }
 @media(prefers-reduced-motion:reduce){.aoOfficeMassReader *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
