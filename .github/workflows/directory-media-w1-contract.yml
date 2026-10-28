@@ -33,6 +33,19 @@ jobs:
           node tests/directory-media-card-contract.mjs
           node tests/preliminary-world-mass-map-r49.mjs
           python tests/directory-photo-discovery-test.py -v
+      - name: Wikimedia Commons live smoke (research only, nonblocking)
+        continue-on-error: true
+        run: |
+          python tools/directory/discover-open-place-media.py --offset 2 --limit 6 --output /tmp/ao-directory-photo-pilot.json
+          python -c 'import json; j=json.load(open("/tmp/ao-directory-photo-pilot.json")); print("PHOTO PILOT: venues",len(j["venues"]),"candidates by category", {k:sum(len(v["categories"].get(k,[])) for v in j["venues"]) for k in j["categories"]},"errors",sum(len(v["errors"]) for v in j["venues"]),"published",j["publications"])'
+      - name: Retain small diagnostic pilot manifest for archive review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: directory-photo-smoke-research-only
+          path: /tmp/ao-directory-photo-pilot.json
+          if-no-files-found: warn
+          retention-days: 2
       - name: Explore and publication guard regressions
         run: |
           node tests/explore-surface.mjs
