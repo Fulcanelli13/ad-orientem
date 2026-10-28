@@ -65,11 +65,15 @@ async function main() {
   if (!executable.isFile())throw Error("OFFICE_PROBE_GENERATOR_MISSING");
   await mkdir(opt.out,{recursive:true});
   const records=[];
+  // Match the upstream ebook generator: CGI.pm reads argv in command-line mode.
+  const engineEnvironment={...process.env,TZ:"UTC"};
+  delete engineEnvironment.REQUEST_METHOD;
+  delete engineEnvironment.QUERY_STRING;
   for (const date of opt.dates) for (const hour of opt.hours) for (const language of opt.languages) {
     const request=makeGeneratorRequest({date,hour,language});
     const output=execFileSync("perl",[entry,request.query],{
       cwd,encoding:"utf8",timeout:120000,maxBuffer:24*1024*1024,
-      env:{...process.env,TZ:"UTC",REQUEST_METHOD:"",QUERY_STRING:""},
+      env:engineEnvironment,
     });
     const result=inspectGeneratedXhtml({xhtml:output,date,hour,language});
     const file=date+"/"+hour.toLowerCase()+"/"+language+".xhtml";
