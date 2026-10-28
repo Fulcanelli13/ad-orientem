@@ -1,0 +1,68 @@
+{
+  "schema": "AO_PRAYER_ANGELUS_V3_PHOTO_CROP_V1",
+  "date": "2026-10-28",
+  "editorial_choice_changed": false,
+  "production_released": false,
+  "cost_eur": 0,
+  "museum": "Met 2004.31",
+  "official_source": "https://www.metmuseum.org/art/collection/search/438724",
+  "source_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+  "source_pixels": [
+    3741,
+    3658
+  ],
+  "cropped_box_xyxy": [
+    106,
+    91,
+    3630,
+    3550
+  ],
+  "cropped_pixels": [
+    3524,
+    3459
+  ],
+  "proportions_painted_area_cm": [
+    70.5,
+    69.2
+  ],
+  "ratio_error": 5.431086200546886e-06,
+  "edges_certified": false,
+  "original_bytes_modified": false,
+  "pixel_grid": {
+    "file": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-v3-four-corners.jpg",
+    "sha256": "fb81851cccea23190a726d9a4464f9b539a04edf7f0f5ff26a38c589a0b06f24",
+    "bytes": 299969
+  },
+  "previews": [
+    {
+      "file": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-v3-paint-only-720.webp",
+      "sha256": "b6564bf79fa27d8c0bca634ac40dd94dbcd372d081465385939ee52f2eb2c1bd",
+      "bytes": 113248,
+      "pixels": [
+        720,
+        707
+      ],
+      "production": false
+    },
+    {
+      "file": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-v3-paint-only-1440.webp",
+      "sha256": "01f24b6654a7e7ebe737391da2eabba964a9a0a007ac2df14ca7da0bf8cf9e63",
+      "bytes": 449394,
+      "pixels": [
+        1440,
+        1413
+      ],
+      "production": false
+    }
+  ],
+  "preserve": [
+    "Virgin Mary",
+    "Gabriel",
+    "dove",
+    "lilies",
+    "signature",
+    "basket and all painted field"
+  ],
+  "next_gate": "Review visible native painted border in four corners. If any oak remains or any paint lost, do not release.",
+  "app_enabled": false
+}
