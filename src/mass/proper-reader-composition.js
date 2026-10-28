@@ -65,13 +65,22 @@ function languageKey(language){
   return String(language??"en").toLowerCase().startsWith("fr") ? "fr" : "en";
 }
 
-export function composeProperReaderParagraphs(blockId, resolvedProperParagraphs, {language="en",form="SUNG"}={}) {
+export function composeProperReaderParagraphs(blockId, resolvedProperParagraphs, {language="en",form="SUNG",omitFixedCueIds=[]}={}) {
   if (!Array.isArray(resolvedProperParagraphs) || resolvedProperParagraphs.length === 0) {
     throw new TypeError("Resolved Proper paragraphs required");
   }
   const locale=languageKey(language);
   const low=String(form).toUpperCase()==="LOW";
-  const fixed=(PINNED_PROPER_FOLLOWUPS[String(blockId)] ?? []).map(row=>Object.freeze({
+  // Explicit Requiem omission applies ONLY to the private Gospel-book kiss
+  // follow-up. Retain the Laus tibi response and every other Proper footnote.
+  const omissions=new Set(omitFixedCueIds);
+  if(omissions.size && (blockId!=="AO.SM.B026"||
+    omissions.size!==1||!omissions.has("AO.SM.C0088")||
+    (PINNED_PROPER_FOLLOWUPS["AO.SM.B026"]??[]).map(x=>x.id).join(",")!==
+      "AO.SM.C0087,AO.SM.C0088"))
+    throw new Error("REQUIEM_GOSPEL_FOLLOWUP_SOURCE_IDENTITY_MISMATCH");
+  const fixed=(PINNED_PROPER_FOLLOWUPS[String(blockId)] ?? [])
+    .filter(row=>!omissions.has(row.id)).map(row=>Object.freeze({
     ...row,
     speakerRole:low&&row.kind==="RESPONSE"?"MINISTERS":row.speakerRole,
     speakerEvidence:low&&row.kind==="RESPONSE"
