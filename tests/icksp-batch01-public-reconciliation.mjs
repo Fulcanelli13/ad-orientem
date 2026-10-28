@@ -49,7 +49,11 @@ assert.match(presentation,/data-ao-b01-rosary-related/);
 assert.match(presentation,/data-ao-b01-rosary-later/);
 assert.match(presentation,/angelusHistoricalConclusion:true/);
 assert.match(presentation,/typeof raw\.angelusHistoricalConclusion==='boolean'/);
-assert.doesNotMatch(presentation,/B01_PIUS_X_1905_CONTRITION/);
+// B13 deliberately makes the existing 1905 editorial rendering an optional,
+ // explicitly labelled *preparatory* prayer in Confession, never a priest's rite.
+ assert.match(presentation,/B01_PIUS_X_1905_CONTRITION/);
+ assert.match(presentation,/data-ao-conf-contrition-picker/);
+ assert.match(presentation,/EDITORIAL_TRANSLATION|editorial English rendering|traduction française est une adaptation éditoriale/);
 const packageJson=JSON.parse(read("package.json"));
 assert.match(packageJson.scripts["test:pray-owner"],/test:icksp-batch01-reconcile/);
 console.log("B01 complete: published canonical witnesses retained, independent whole-French Hope, Catechism short and 1888 Manual full Grace, 1905 Pius X, Marian guides and folio defaults PASS");

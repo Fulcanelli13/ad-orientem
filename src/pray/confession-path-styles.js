@@ -14,6 +14,17 @@ const CONFESSION_CSS=String.raw`
 #aoPray435930 .aoP435930ConfSources summary{cursor:pointer;min-height:40px}
 #aoPray435930 .aoP435930ConfSources a{display:block;margin-top:8px;color:var(--liturgical,#c7ae6d);overflow-wrap:anywhere}
 @media (max-width:400px){#aoPray435930 .aoP435930ConfOneCard{padding-inline:13px}#aoPray435930 .aoP435930ConfPathCards button{padding-inline:12px}}
+/* B13: visible, session-only prayer text alternatives inside the existing
+   sacramental preparation; never an additional Confession pathway or rite. */
+#aoPray435930 .aoP435930ConfContrition{display:grid;min-width:0;gap:9px;margin:15px 0 4px}
+#aoPray435930 .aoP435930ConfContrition>h3{margin:0;font:600 .9rem/1.36 var(--ao-font-display,Georgia,serif)}
+#aoPray435930 .aoP435930ConfContritionChoices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;min-width:0}
+#aoPray435930 .aoP435930ConfContritionChoices button{min-width:0;min-height:44px;padding:9px 10px;border:1px solid var(--liturgical-border,rgba(199,174,109,.3));border-radius:10px;background:transparent;color:var(--text,#eee9df);font:500 .77rem/1.38 var(--ao-font-ui,system-ui,sans-serif);overflow-wrap:anywhere}
+#aoPray435930 .aoP435930ConfContritionChoices button[aria-pressed="true"]{background:var(--liturgical-soft,rgba(199,174,109,.12));border-color:var(--liturgical,#c7ae6d);color:var(--liturgical,#dec791)}
+#aoPray435930 .aoP435930ConfContritionChoices button:focus-visible{outline:2px solid var(--liturgical,#c7ae6d);outline-offset:2px}
+#aoPray435930 .aoP435930ConfContritionSourceStatus{font:400 .74rem/1.52 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#aeb2b8);margin:0}
+#aoPray435930 .aoP435930ConfContritionSourceStatus a{color:var(--liturgical,#dec791);overflow-wrap:anywhere}
+@media(max-width:360px){#aoPray435930 .aoP435930ConfContritionChoices button{padding:9px 7px}}
 `;
 export function installConfessionPathStyles(doc=globalThis.document){
  if(!doc?.head)return false;

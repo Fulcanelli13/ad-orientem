@@ -450,6 +450,13 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 @media(max-width:350px){#aoPray435930 .aoHeartChoice{padding:9px 7px;min-height:70px}
  #aoPray435930 .aoHeartChoiceScope{font-size:.63rem}}
 
+/* B13: direct closing prayer access without altering the original five
+   nightly examination stages or the integrated Evening Prayer sequence. */
+#aoPray435930 .aoExamenContritionShortcut{margin:10px 12px 4px;display:flex;min-width:0}
+#aoPray435930 .aoExamenContritionShortcut button{min-height:44px;max-width:100%;padding:10px 14px;border:1px solid var(--liturgical-border,rgba(199,174,109,.28));border-radius:10px;background:transparent;color:var(--text,#eee9df);font:500 .78rem/1.35 var(--ao-font-ui,system-ui,sans-serif);text-align:left}
+#aoPray435930 .aoExamenContritionShortcut button:focus-visible{outline:2px solid var(--liturgical,#c7ae6d);outline-offset:2px}
+#aoPray435930 .aoExamenContritionChoices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;min-width:0}
+#aoPray435930 .aoExamenContritionChoices button{white-space:normal;min-width:0;min-height:44px;overflow-wrap:anywhere}
 `;
 
 export function installTraditionalPrayStyles(doc=globalThis.document){
