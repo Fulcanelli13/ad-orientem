@@ -326,7 +326,15 @@
       "source_body_url": "https://www.institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
       "source_variance": "ICKSP formula includes explicit Institute missionaries; traditional Raccolta form has broader missionary wording. Preserve both witness identities.",
       "source_comparison_lead": "Raccolta No. 573 · prayer for Mission Sunday, older indulgence notes historical only",
-      "app_integration_route": "pray.st_therese_devotions"
+      "app_integration_route": "pray.st_therese_devotions",
+      "historical_source_date_evidence": {
+        "origin": "Raccolta no. 573 (historical version)",
+        "date": "1928-07-09",
+        "evidence_type": "French collection retrospective cites brief dated 9 July 1928; not original 1928 primary image",
+        "source_url": "https://fr.scribd.com/document/683942201/Thesaurisons-Pour-Le-Ciel",
+        "rights_status": "Historical origination date does not establish reuse rights of a later English or French translation.",
+        "accuracy": "ICKSP adds explicitly institute-targeted missionary intention"
+      }
     },
     {
       "id": "icksp_us_therese_benedict_xv",
@@ -362,6 +370,21 @@
       "text_witnesses": {
         "en": "https://distantreader.org/stacks/pamphlets/pdf/005457174.pdf",
         "pages": "PDF zero-index 39–40 = printed 38–39"
+      },
+      "primary_printed_source": {
+        "work": "Rev. Edward F. Garesche, S.J., A Novena to the Little Flower",
+        "publication": "Diederich-Schaefer, Milwaukee, 1925",
+        "printed_pages": [
+          38,
+          39
+        ],
+        "pdf_pages_zero_based": [
+          39,
+          40
+        ],
+        "pdf_url": "https://distantreader.org/stacks/pamphlets/pdf/005457174.pdf",
+        "verified_via_original_page_images": true,
+        "ending": "The printed text instructs Hail, holy Queen after the prayer; the app uses existing canonical Salve Regina."
       }
     },
     {
@@ -696,5 +719,16 @@
     "infantJesusVotivePrayerSeparate": true,
     "policy": "ALL_ACCEPTED_FOR_COVERAGE_AND_CONTEXTUAL_CORRECTNESS",
     "stThereseBenedictAttribution": "ICKSP names Benedict XV; separate 1926 historical reference does not establish that authorship; hold final credit"
+  },
+  "reconciliation_pass4": {
+    "date": "2026-10-28",
+    "stThereseSelected": 3,
+    "fullHistoricallyPrintedPrayer": 1,
+    "sourceLinkedIntact": 2,
+    "existing24GloriesUnchanged": true,
+    "verified1925Printed": "Garesche pp. 38-39",
+    "missionary1928IndirectWitness": "Raccolta no 573 retrospective source",
+    "authorship": "Papal composition not demonstrated by Garesche note",
+    "testEvidence": "Static JS parse, English/French rendered route smoke; Node browser suites not yet run"
   }
 }
