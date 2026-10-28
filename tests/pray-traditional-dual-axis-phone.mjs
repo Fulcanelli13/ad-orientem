@@ -165,6 +165,7 @@ try{
  assert.equal(afterAlternative.stopwatch,beforeAlternative.stopwatch,"Source choice must not reset the stopwatch");
  assert.equal(afterAlternative.hostScroll,beforeAlternative.hostScroll,"Source choice must not jump the page scroll");
  assert.equal(afterAlternative.activeChoices,1,"Exactly one formulation must be active");
+ await page.screenshot({path:resolve(captures,"morning-faith-formulation-switched-390-fr.png"),animations:"disabled"});
  await page.locator("#aoPray435930 [data-tp381-personal-variant='default:faith']").evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-personal-prayer='faith']").getAttribute("data-ao-personal-source"),"faith");
  assert.equal(await page.locator("#aoPray435930 .aoQuietHorizonCanvas").getAttribute("data-preserved-atmosphere"),"original");
