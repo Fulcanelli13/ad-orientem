@@ -50,6 +50,19 @@ try{
  const ready=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.equal(ready.error,null,"Transactional bootstrap failed: "+JSON.stringify(ready));
  assert.ok(ready.version,"No complete offline app snapshot");
+ // Measure the completed and cryptographically verified resource snapshot.
+ // The presence of READY is meaningful only after the transactional commit.
+ const certified=await page.evaluate(async()=>{
+  const status=globalThis.AO_OFFLINE_APP_V1.status;
+  const cache=await caches.open("ao-bootstrap-snapshot-v1-"+status.version);
+  const entries=await cache.keys();
+  const marker=entries.find(x=>x.url.includes("__ao_bootstrap_completed__"));
+  const metadata=marker?await (await cache.match(marker)).json():null;
+  return {entries:entries.length,files:metadata?.files??null,bytes:metadata?.bytes??null};
+ });
+ console.log("OFFLINE_CERTIFIED_GRAPH "+JSON.stringify(certified));
+ assert.ok(certified.files>384&&certified.files<=512,"Unexpected measured offline graph size: "+JSON.stringify(certified));
+ assert.ok(certified.bytes>0&&certified.bytes<=35_000_000,"Offline byte ceiling must remain enforced");
 
  const openPrayer=async(p,route)=>{
   await p.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
