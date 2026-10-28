@@ -14,10 +14,11 @@
     "source_form_ids_in_b19": 24,
     "source_form_ids_absent_from_b19": 7,
     "missing_source_bodies": 0,
-    "presets_with_b12_direct_image_hold": 1,
+    "presets_with_b12_direct_image_hold": 0,
     "required_b12_examination_occurrences": 1,
     "approved_presets": 0,
-    "release_cleared_profiles": 0
+    "release_cleared_profiles": 0,
+    "print_image_verified_body_records": 43
   },
   "all_source_ids_resolve_to_complete_text": true,
   "not_source_publication_clearance": true,
@@ -454,9 +455,9 @@
       "canonical_prayers": 1,
       "guided_examination_stages": 1,
       "missing_historical_bodies": 0,
-      "pending_direct_image": 1,
+      "pending_direct_image": 0,
       "not_shown_in_b19": 1,
-      "historical_forms_checked": 8,
+      "historical_forms_checked": 9,
       "editorial_status": "PROPOSED_NOT_USER_APPROVED",
       "publication_status": "NOT_RELEASED",
       "steps": [
@@ -508,13 +509,14 @@
           "required": true,
           "type": "historical-form-id",
           "id": "b12-baltimore-evening-examination-light",
-          "text_status": "TEXT_COMPLETE_IMAGE_CHECK_PENDING",
+          "text_status": "FULL_BODY_PRINT_IMAGE_CHECKED",
           "full_wording_available": true,
           "printed_source_page": "https://en.wikisource.org/wiki/Page:Manualofprayersf00cath.djvu/94",
           "was_in_b19": true,
           "source_code": "BAL1888",
           "publication": "PENDING_EDITORIAL_RIGHTS_RELEASE",
-          "reader_render_status": "RESEARCH_ONLY"
+          "reader_render_status": "RESEARCH_ONLY",
+          "image_verified_date": "2026-10-28"
         },
         {
           "position": 5,
@@ -1059,11 +1061,18 @@
   ],
   "holds": [
     "Canonical Sign of the Cross and other common prayers require their own exact-language text provenance and rights review; do not treat historical occurrence as verified canonical wording",
-    "Baltimore 1888 standalone evening Light prayer is COMPLETE in transcribed proofread historical page but direct printed-page visual inspection remains pending",
+    "Baltimore 1888 standalone Evening Light prayer original printed p.82 image directly checked on 2026-10-28; exact text and recitation rubrics confirmed. Editorial defaults, exact canonical text matching and reproduction/reuse rights remain pending.",
     "All 8 routines are Ad Orientem editorial composites, not complete faithful orders from any one historic book",
     "Optional means user may omit an entire prayer; never clip, summarize, splice or shorten any original witness",
     "French 1905 devotional appendix is not a prayer text authored by the Council of Trent",
     "B19 omitted seven optional Complete-preset forms; supplement B20 closes the editorial PRESENTATION gap, not editorial approval",
     "Release requires user selection, source-image check, individual body publication rights in target jurisdictions, and complete profile acceptance. No manifest mutation authorized"
-  ]
+  ],
+  "b20_image_closure": {
+    "record": "data/pray/daily-prayer-evening-light-boundary.b12.json",
+    "source_page": "https://en.wikisource.org/wiki/Page:Manualofprayersf00cath.djvu/94",
+    "date": "2026-10-28",
+    "result": "DIRECT_IMAGE_CHECKED_NO_REMAINING_B12_IMAGE_HOLD",
+    "not_released": true
+  }
 }
