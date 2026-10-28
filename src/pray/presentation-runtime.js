@@ -20,6 +20,7 @@ import "./devotional-methods-styles.js";
 import "./tenebrae-styles.js";
 import {loadTenebraeHour} from "./tenebrae-1960.js";
 import {renderTenebraeBody} from "./tenebrae-presentation.js";
+import {freshTenebraeCeremony,tenebraeCeremonialAction} from "./tenebrae-ceremonial.v1.js";
 import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "./angelus-guide-data.js";
 import { rosaryGuideSections } from "./rosary-guide-data.js";
 import { rosaryNamedChapters,rosaryCurrentChapter } from "./rosary-card-chapters.js";
@@ -259,7 +260,7 @@ let STATIONS={step:0,optionsOpen:false,publicPosture:false,simpleResponses:false
 const stationReaderMode=()=>STATIONS.publicPosture?'guided':S.stations.mode;
 const stationRecitation=()=>STATIONS.publicPosture?'group':S.stations.recitation;
 let ANGELUS_CARD_INDEX=0,angelusOptionsOpen=false;
-let TEN={day:0,hour:'MATINS',step:0,face:'vernacular',guided:true,model:null,loading:false,error:null,epoch:0};
+let TEN={day:0,hour:'MATINS',step:0,face:'vernacular',guided:true,model:null,loading:false,error:null,epoch:0,ceremony:freshTenebraeCeremony()};
 let lastStationsFxStep=null;
 let angelusRitualObserver=null,lastAngelusRitualCard=null;
 function stopAngelusExactRail(){
@@ -403,7 +404,7 @@ function open(id,opts={}){
   else if(id==='pray.penitential_psalms'){view='penitential';PEN.step=0}
   else if(id==='pray.litany_saints'){view='litany';LIT.step=0}
   else if(id==='pray.seven_words'){view='sevenWords';SEVEN.step=0}
-  else if(id==='pray.tenebrae'){view='tenebrae';TEN.day=0;TEN.hour='MATINS';TEN.step=0;TEN.guided=true;TEN.model=null;TEN.error=null;TEN.epoch++}
+  else if(id==='pray.tenebrae'){view='tenebrae';TEN.day=0;TEN.hour='MATINS';TEN.step=0;TEN.guided=true;TEN.model=null;TEN.error=null;TEN.ceremony=freshTenebraeCeremony();TEN.epoch++}
   else if(id==='pray.forty_hours'){view='fortyHours';FORTY={mode:'choose',step:0,solemnStep:0}}
   else if(id==='pray.de_profundis'){view='prayerOnly';prayerReturnView='home';prayerId='dead_de_profundis'}
   else if(id==='pray.eternal_rest'){view='prayerOnly';prayerReturnView='home';prayerId='foundations_eternal_rest'}
@@ -2289,7 +2290,9 @@ function renderFortyHours(){
  ${devotionalSource('Baltimore Manual · Forty Hours (1889)',L('Historical account and private prayer aids. This is not an original witness of every public Forty Hours ceremonial or a claim that old indulgence grants remain current.','Présentation historique et aides de prière privées. Ce document ne certifie ni tous les cérémoniaux publics ni le maintien actuel des anciennes indulgences.'),'fortyHours')}</main>`;
 }
 function setTenebrae(day=TEN.day,hour=TEN.hour){
- TEN.epoch++;TEN.day=Math.max(0,Math.min(2,Number(day)||0));
+ TEN.epoch++;const nextDay=Math.max(0,Math.min(2,Number(day)||0));
+ if(nextDay!==TEN.day)TEN.ceremony=freshTenebraeCeremony();
+ TEN.day=nextDay;
  TEN.hour=hour==="LAUDS"?"LAUDS":"MATINS";TEN.step=0;
  TEN.model=null;TEN.error=null;TEN.loading=false;render();
 }
@@ -2313,7 +2316,7 @@ function renderTenebrae(){
  if(!TEN.model&&!TEN.loading&&!TEN.error)setTimeout(()=>void ensureTenebrae(),0);
  return head(L('Office of Tenebrae','Office des Ténèbres'),L('Triduum · Matins and Lauds','Triduum · Matines et Laudes'))+
   renderTenebraeBody({day:TEN.day,hour:TEN.hour,index:TEN.step,face:TEN.face,
-   french:isFr(),data:TEN.model,loading:TEN.loading,error:TEN.error,guided:TEN.guided});
+   french:isFr(),data:TEN.model,loading:TEN.loading,error:TEN.error,guided:TEN.guided,ceremony:TEN.ceremony});
 }
 function renderMercy(){
  const steps=divineMercySteps({includeClosing:MERCY.includeClosing});
@@ -2743,6 +2746,11 @@ function onClick(e){
  if(b.matches('[data-p435930-close]'))return close();
  if(b.matches('[data-p435930-home]')||b.matches('[data-p435930-home-retry]'))return goGlobalHome();
  if(b.matches('[data-p435930-back]'))return backToParent()
+ if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-ceremony')){
+  const step=TEN.model?.steps?.[TEN.step]||null;
+  TEN.ceremony=tenebraeCeremonialAction(TEN.ceremony,b.dataset.p435930TenebraeCeremony,step);
+  return render();
+ }
  if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-mode')){
   TEN.guided=b.dataset.p435930TenebraeMode==='guided';return render();
  }
