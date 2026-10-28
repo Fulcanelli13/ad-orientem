@@ -80,7 +80,7 @@ const SHELL_STYLE = `
 .ao-mass-prefs-close{appearance:none;border:0;background:transparent;color:#89958c;font-size:22px;line-height:1;padding:3px 5px}
 .ao-mass-prefs-group{margin-top:14px}
 .ao-mass-prefs-group>small{display:block;margin-bottom:7px;color:#6e7a72;font:700 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;text-transform:uppercase}
-.ao-mode-ribbon{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.ao-mode-ribbon{display:grid;grid-template-columns:repeat(2,1fr);gap:5px}
 .ao-mode-ribbon button{
   appearance:none;border:0;background:transparent;color:#929a93;min-width:0;height:44px;padding:4px 0;
   font:700 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.09em

@@ -353,6 +353,8 @@ stableMode.setMode("MISSAL");
 expect(switchCount===1,"re-selecting the active mode rebuilt the reader twice");
 expect(!readerDomSource.includes('["MISSAL","SIMPLE","LIVE"]'),
   "retired Simple UI control returned to the reader");
+expect(readerDomSource.includes(".ao-mode-ribbon{display:grid;grid-template-columns:repeat(2,1fr)"),
+  "Reader preferences still reserve three slots");
 // Real production cue updates use cardUpdate:false. The rail may change
 // without rebuilding the prayer paragraph; the exact active Latin words
 // must follow the canonical cue, and all former anchors must disappear.

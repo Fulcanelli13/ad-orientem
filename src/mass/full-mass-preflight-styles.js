@@ -38,7 +38,7 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-full-mass-preflig
   "#ao-mass-flow-v1 .aoFullMassPreflight fieldset{border:0;padding:0;margin:12px 0 0;min-width:0}",
   "#ao-mass-flow-v1 .aoFullMassPreflight legend{font-size:.84rem;font-weight:600;margin-bottom:9px;padding:0}",
   "#ao-mass-flow-v1 .aoFullMassForms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}",
-  "#ao-mass-flow-v1 .aoFullMassReaderModes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}",
+  "#ao-mass-flow-v1 .aoFullMassReaderModes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}",
   "#ao-mass-flow-v1 .aoFullMassChoice{min-height:49px;display:flex;align-items:center;gap:9px;padding:9px;border:1px solid rgba(207,184,145,.25);border-radius:9px;background:rgba(7,11,17,.24);color:inherit;font-size:.82rem;line-height:1.3;cursor:pointer;min-width:0;overflow-wrap:anywhere}",
   "#ao-mass-flow-v1 .aoFullMassChoice:has(input:checked){border-color:rgba(211,182,133,.8);background:rgba(211,182,133,.1)}",
   "#ao-mass-flow-v1 .aoFullMassChoice input{flex:0 0 auto;width:19px;height:19px;accent-color:var(--liturgical,#c7ac80);margin:0}",
@@ -81,7 +81,7 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-full-mass-preflig
   ".aoMassSpecialReaderGuide{margin:10px 0;border-top:1px solid rgba(201,174,128,.22);padding-top:7px;color:var(--text,#eee2ca)}",
   ".aoMassSpecialReaderGuide>summary{min-height:44px;padding:11px 0;cursor:pointer;font:500 .84rem/1.45 system-ui,sans-serif;color:var(--liturgical,#d5bc8d)}",
   ".aoMassSpecialReaderGuide .aoSpecialMassContext{background:transparent;margin:4px 0 10px}",
-  "@media(max-width:370px){#ao-mass-flow-v1 .aoFullMassForms{grid-template-columns:1fr}#ao-mass-flow-v1 .aoFullMassReaderModes{grid-template-columns:repeat(3,minmax(0,1fr))}}",
+  "@media(max-width:370px){#ao-mass-flow-v1 .aoFullMassForms{grid-template-columns:1fr}#ao-mass-flow-v1 .aoFullMassReaderModes{grid-template-columns:repeat(2,minmax(0,1fr))}}",
 
   /* Keep the full-height backdrop opaque: the old Home must not bleed through. */
   "#ao-mass-flow-v1 .aoMassFlowBackdrop:has(.aoGuidedMassFolio){background:rgba(4,8,12,.98)!important}",
@@ -122,7 +122,7 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-full-mass-preflig
   "#ao-mass-flow-v1 .aoFullMassCategories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:10px 0}",
   "#ao-mass-flow-v1 .aoFullMassCategories button{font:500 15px/1.3 var(--ao-font-ui,'EB Garamond',Georgia,serif)!important;min-height:49px;white-space:normal}",
   "#ao-mass-flow-v1 .aoFullMassForms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}",
-  "#ao-mass-flow-v1 .aoFullMassReaderModes{grid-template-columns:repeat(3,minmax(0,1fr))}",
+  "#ao-mass-flow-v1 .aoFullMassReaderModes{grid-template-columns:repeat(2,minmax(0,1fr))}",
   "#ao-mass-flow-v1 .aoFullMassChoice{min-height:64px;border-radius:9px!important;padding:12px!important;min-width:0}",
   "#ao-mass-flow-v1 .aoFullMassChoice span{font-size:16px!important;line-height:1.3}",
   "#ao-mass-flow-v1 .aoFullMassChoice input:checked+span{color:#ead6b4}",
