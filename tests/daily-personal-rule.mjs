@@ -8,7 +8,7 @@ import {
 } from "../src/pray/daily-personal-rule.js";
 import {DAILY_PERSONAL_PRAYER_SOURCE_V1 as CORPUS} from "../src/pray/daily-personal-prayer-source.js";
 import {APPROVED_DAILY_FORMULATION_MANIFEST_V1,DAILY_APPROVED_SEQUENCE_RELEASE_V1} from "../src/pray/daily-approved-formulations.js";
-import {dailyPersonalPrayerCard,dailyPersonalSettings,dailyPersonalList} from "../src/pray/daily-personal-prayer-view.js";
+import {personalDailyPrayerCard,dailyPersonalSettings,dailyPersonalList} from "../src/pray/daily-personal-prayer-view.js";
 
 assert.deepEqual(PERSONAL_DAILY_SOURCE_COVERAGE.languages,["la","en","fr"]);
 assert.equal(PERSONAL_DAILY_SOURCE_COVERAGE.manualOptions,40);
@@ -83,7 +83,7 @@ assert.deepEqual(normalizePersonalDailyPrefs({version:2}),defaultPersonalDailyPr
 assert.equal(normalizePersonalDailyPrefs({...initial,extras:{morning:["attacker-id"],evening:[]}}).extras.morning.length,0);
 const h={esc:x=>String(x).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll('"',"&quot;"),L:(en,fr)=>en,prayerParagraphs:t=>'<p>'+t+'</p>',source:(label,url)=>'<small>'+label+'</small>'};
 const first=buildPersonalDailyPlan({daypart:"morning",prefs:initial});
-const card=dailyPersonalPrayerCard(first.rows[1],first,h);
+const card=personalDailyPrayerCard(first.rows[1],first,h);
 assert.match(card,/data-ao-personal-prayer="daily-prayer"/);
 assert.match(card,/created me, made me a Christian/);
 assert.match(dailyPersonalSettings(first,initial,h),/data-tp381-personal-action="language"/);
