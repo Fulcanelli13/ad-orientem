@@ -30,9 +30,10 @@
       "alternative_source_url": "https://icksp.org.uk/newbrighton/consecration-to-our-lady/",
       "source_body_text_accessible": true,
       "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
-      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_coverage_label": "Institute-specific consecration — not a generic personal prayer",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "review_group": "INSTITUTE_SPECIFIC_DEVOTION"
     },
     {
       "id": "icksp_us_dedication_to_christ_king",
@@ -57,7 +58,8 @@
       "app_match_refs": [
         "canonical-data.js#devotion_consecration_christ_king"
       ],
-      "next_action": "Reuse the canonical prayer; collate wording and source attribution, not a duplicate card."
+      "next_action": "Reuse the canonical prayer; collate wording and source attribution, not a duplicate card.",
+      "review_group": "EXISTING_OR_RELATED"
     },
     {
       "id": "icksp_us_prayer_reparation",
@@ -83,7 +85,8 @@
         "canonical-data.js#sacred_heart_short_prayer",
         "traditional-pray-runtime.js#renderSacredHeart"
       ],
-      "next_action": "Locate ICKSP wording before deciding whether a distinct translation exists."
+      "next_action": "Locate ICKSP wording before deciding whether a distinct translation exists.",
+      "review_group": "EXISTING_OR_RELATED"
     },
     {
       "id": "icksp_us_prayer_for_priests_sacred_heart",
@@ -103,7 +106,8 @@
       "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
       "app_coverage_label": "Potential addition — wider-app comparison still open",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "review_group": "POTENTIAL_PERSONAL_DEVOTION"
     },
     {
       "id": "icksp_us_prayer_for_priests_second",
@@ -124,7 +128,8 @@
       "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
       "app_coverage_label": "Potential addition — wider-app comparison still open",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "review_group": "POTENTIAL_PERSONAL_DEVOTION"
     },
     {
       "id": "icksp_us_prayer_infant_jesus",
@@ -144,7 +149,8 @@
       "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
       "app_coverage_label": "Potential addition — wider-app comparison still open",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "review_group": "POTENTIAL_PERSONAL_DEVOTION"
     },
     {
       "id": "icksp_us_novena_divine_infant_king",
@@ -164,7 +170,8 @@
       "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
       "app_coverage_label": "Potential addition — wider-app comparison still open",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "review_group": "POTENTIAL_PERSONAL_DEVOTION"
     },
     {
       "id": "icksp_us_august_queen_heaven",
@@ -185,7 +192,8 @@
       "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
       "app_coverage_label": "Potential addition — wider-app comparison still open",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "review_group": "POTENTIAL_PERSONAL_DEVOTION"
     },
     {
       "id": "icksp_us_novena_immaculate_conception",
@@ -208,7 +216,8 @@
       "app_match_refs": [
         "novena-corpus.js#immaculate_conception"
       ],
-      "next_action": "Compare ICKSP novena to the Moran 1883 day-specific form rather than duplicate automatically."
+      "next_action": "Compare ICKSP novena to the Moran 1883 day-specific form rather than duplicate automatically.",
+      "review_group": "EXISTING_OR_RELATED"
     },
     {
       "id": "icksp_us_therese_perpetual_novena",
@@ -235,7 +244,8 @@
       "app_match_refs": [
         "novena-corpus.js#st_therese"
       ],
-      "next_action": "Keep the Twenty-Four Glory Bes novena; assess the Institute's perpetual Tuesday sequence as a distinct optional variant."
+      "next_action": "Keep the Twenty-Four Glory Bes novena; assess the Institute's perpetual Tuesday sequence as a distinct optional variant.",
+      "review_group": "EXISTING_OR_RELATED"
     },
     {
       "id": "icksp_us_therese_for_missionaries",
@@ -256,7 +266,8 @@
       "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
       "app_coverage_label": "Potential addition — wider-app comparison still open",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "review_group": "POTENTIAL_PERSONAL_DEVOTION"
     },
     {
       "id": "icksp_us_therese_benedict_xv",
@@ -277,7 +288,8 @@
       "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
       "app_coverage_label": "Potential addition — wider-app comparison still open",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
+      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "review_group": "POTENTIAL_PERSONAL_DEVOTION"
     },
     {
       "id": "icrsp_fr_office_complies",
@@ -295,7 +307,8 @@
       "app_coverage_status": "DISTINCT_DIVINE_OFFICE",
       "app_coverage_label": "Divine Office — not an ordinary prayer",
       "app_match_refs": [],
-      "next_action": "Build complete 1962 Compline context separately from St Pius X evening prayer."
+      "next_action": "Build complete 1962 Compline context separately from St Pius X evening prayer.",
+      "review_group": "COMPLETE_DIVINE_OFFICE"
     },
     {
       "id": "icrsp_fr_sunday_vespers",
@@ -313,7 +326,8 @@
       "app_coverage_status": "DISTINCT_DIVINE_OFFICE",
       "app_coverage_label": "Divine Office — not an ordinary prayer",
       "app_match_refs": [],
-      "next_action": "Build Sunday Vespers as an Office; reuse Magnificat rather than duplicate it."
+      "next_action": "Build Sunday Vespers as an Office; reuse Magnificat rather than duplicate it.",
+      "review_group": "COMPLETE_DIVINE_OFFICE"
     },
     {
       "id": "icrsp_fr_te_deum",
@@ -334,7 +348,8 @@
         "traditional-pray-data.js#SACRED_HYMNS_V381.te_deum",
         "traditional-pray-runtime.js#renderHymns"
       ],
-      "next_action": "Use ICRSP Latin/French for source collation; do not add another Te Deum card."
+      "next_action": "Use ICRSP Latin/French for source collation; do not add another Te Deum card.",
+      "review_group": "EXISTING_OR_RELATED"
     },
     {
       "id": "icrsp_fr_vexilla_regis",
@@ -349,10 +364,11 @@
       "editorial_notes": "Passion Vespers hymn, not the Eucharistic Pange Lingua.",
       "full_text_import": "NOT_AUTHORIZED",
       "release_status": "RESEARCH_ONLY",
-      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
-      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_coverage_status": "HISTORIC_HYMN_NEEDS_SOURCE_AND_ROUTE_CHECK",
+      "app_coverage_label": "Seasonal Office hymn — assess existing coverage and editions",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
+      "next_action": "Match to existing Office/Mass hymn registries and 1962 text recension; if new, integrate in seasonal hymn/Office context rather than daily prayer bank.",
+      "review_group": "SEASONAL_OFFICE_HYMN"
     },
     {
       "id": "icrsp_fr_audi_benigne_conditor",
@@ -367,10 +383,11 @@
       "editorial_notes": "Liturgical Latin hymn; translate only from attested historical text.",
       "full_text_import": "NOT_AUTHORIZED",
       "release_status": "RESEARCH_ONLY",
-      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
-      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_coverage_status": "HISTORIC_HYMN_NEEDS_SOURCE_AND_ROUTE_CHECK",
+      "app_coverage_label": "Seasonal Office hymn — assess existing coverage and editions",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
+      "next_action": "Match to existing Office/Mass hymn registries and 1962 text recension; if new, integrate in seasonal hymn/Office context rather than daily prayer bank.",
+      "review_group": "SEASONAL_OFFICE_HYMN"
     },
     {
       "id": "icrsp_fr_ad_cenam_agni",
@@ -385,10 +402,11 @@
       "editorial_notes": "Two historical recensions; mark versions explicitly and do not conflate.",
       "full_text_import": "NOT_AUTHORIZED",
       "release_status": "RESEARCH_ONLY",
-      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
-      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_coverage_status": "HISTORIC_HYMN_NEEDS_SOURCE_AND_ROUTE_CHECK",
+      "app_coverage_label": "Seasonal Office hymn — assess existing coverage and editions",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
+      "next_action": "Match to existing Office/Mass hymn registries and 1962 text recension; if new, integrate in seasonal hymn/Office context rather than daily prayer bank.",
+      "review_group": "SEASONAL_OFFICE_HYMN"
     },
     {
       "id": "icrsp_fr_aeterne_rex_altissime",
@@ -403,10 +421,11 @@
       "editorial_notes": "Source indicates Matins of Ascension.",
       "full_text_import": "NOT_AUTHORIZED",
       "release_status": "RESEARCH_ONLY",
-      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
-      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_coverage_status": "HISTORIC_HYMN_NEEDS_SOURCE_AND_ROUTE_CHECK",
+      "app_coverage_label": "Seasonal Office hymn — assess existing coverage and editions",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
+      "next_action": "Match to existing Office/Mass hymn registries and 1962 text recension; if new, integrate in seasonal hymn/Office context rather than daily prayer bank.",
+      "review_group": "SEASONAL_OFFICE_HYMN"
     },
     {
       "id": "icrsp_fr_lustra_sex",
@@ -421,10 +440,11 @@
       "editorial_notes": "Part of Passion hymn tradition; preserve exact text identity.",
       "full_text_import": "NOT_AUTHORIZED",
       "release_status": "RESEARCH_ONLY",
-      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
-      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_coverage_status": "HISTORIC_HYMN_NEEDS_SOURCE_AND_ROUTE_CHECK",
+      "app_coverage_label": "Seasonal Office hymn — assess existing coverage and editions",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
+      "next_action": "Match to existing Office/Mass hymn registries and 1962 text recension; if new, integrate in seasonal hymn/Office context rather than daily prayer bank.",
+      "review_group": "SEASONAL_OFFICE_HYMN"
     },
     {
       "id": "icrsp_fr_o_sol_salutis",
@@ -439,10 +459,11 @@
       "editorial_notes": "Seasonal Office hymn.",
       "full_text_import": "NOT_AUTHORIZED",
       "release_status": "RESEARCH_ONLY",
-      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
-      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_coverage_status": "HISTORIC_HYMN_NEEDS_SOURCE_AND_ROUTE_CHECK",
+      "app_coverage_label": "Seasonal Office hymn — assess existing coverage and editions",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
+      "next_action": "Match to existing Office/Mass hymn registries and 1962 text recension; if new, integrate in seasonal hymn/Office context rather than daily prayer bank.",
+      "review_group": "SEASONAL_OFFICE_HYMN"
     },
     {
       "id": "icrsp_fr_ex_more_docti",
@@ -457,10 +478,11 @@
       "editorial_notes": "Seasonal Office hymn.",
       "full_text_import": "NOT_AUTHORIZED",
       "release_status": "RESEARCH_ONLY",
-      "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
-      "app_coverage_label": "Potential addition — wider-app comparison still open",
+      "app_coverage_status": "HISTORIC_HYMN_NEEDS_SOURCE_AND_ROUTE_CHECK",
+      "app_coverage_label": "Seasonal Office hymn — assess existing coverage and editions",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication."
+      "next_action": "Match to existing Office/Mass hymn registries and 1962 text recension; if new, integrate in seasonal hymn/Office context rather than daily prayer bank.",
+      "review_group": "SEASONAL_OFFICE_HYMN"
     },
     {
       "id": "icrsp_fr_magnificat",
@@ -480,7 +502,8 @@
       "app_match_refs": [
         "canonical-data.js#weekday_magnificat"
       ],
-      "next_action": "Reuse the existing canticle in Vespers, and collate source edition."
+      "next_action": "Reuse the existing canticle in Vespers, and collate source edition.",
+      "review_group": "EXISTING_OR_RELATED"
     },
     {
       "id": "icrsp_fr_benedictus",
@@ -500,7 +523,8 @@
       "app_match_refs": [
         "canonical-data.js#weekday_benedictus"
       ],
-      "next_action": "Reuse existing canticle in Lauds, and collate source edition."
+      "next_action": "Reuse existing canticle in Lauds, and collate source edition.",
+      "review_group": "EXISTING_OR_RELATED"
     },
     {
       "id": "icrsp_fr_st_blaise_candles_food",
@@ -518,7 +542,8 @@
       "app_coverage_status": "RITUAL_NOT_LAY_PRAYER",
       "app_coverage_label": "Priestly ritual — Calendar information only",
       "app_match_refs": [],
-      "next_action": "Reference St Blaise blessing in Calendar customs; do not treat as a personal lay prayer."
+      "next_action": "Reference St Blaise blessing in Calendar customs; do not treat as a personal lay prayer.",
+      "review_group": "RITUAL_REFERENCE"
     }
   ],
   "policies": [
@@ -547,6 +572,14 @@
       "src/pray/novena-runtime.js",
       "src/pray/christ-king-benediction.js"
     ],
-    "warning": "A no-match in sampled code is not proof of global absence; same subject does not mean same prayer."
+    "warning": "A no-match in sampled code is not proof of global absence; same subject does not mean same prayer.",
+    "review_groups": {
+      "INSTITUTE_SPECIFIC_DEVOTION": 1,
+      "EXISTING_OR_RELATED": 7,
+      "POTENTIAL_PERSONAL_DEVOTION": 7,
+      "COMPLETE_DIVINE_OFFICE": 2,
+      "SEASONAL_OFFICE_HYMN": 7,
+      "RITUAL_REFERENCE": 1
+    }
   }
 }
