@@ -120,9 +120,10 @@ assert.match(runtime,/dead_eternal_rest_singular/,"Dying Companion lost transiti
 assert.match(runtime,/devotion_litany_st_joseph/,"Good Death stopped reusing the canonical St Joseph Litany");
 assert.match(runtime,/devotion_ad_te_beate_ioseph/,"Good Death stopped reusing Ad te beate Ioseph");
 assert.match(runtime,/devotion_memorare_st_joseph/,"Good Death stopped reusing the canonical St Joseph Memorare");
-assert.match(runtime,/data-tp381-heart="litany"/,"Sacred Heart litany tab disappeared");
-assert.match(runtime,/data-tp381-heart="reparation"/,"Sacred Heart reparation tab disappeared");
-assert.match(runtime,/data-tp381-heart="consecration"/,"Sacred Heart consecration tab disappeared");
+assert.match(runtime,/HEART_STAGES=Object\.freeze\(\["litany","reparation","golden_arrow","consecration"\]\)/,"Sacred Heart four source-owned stages disappeared");
+assert.match(runtime,/const choices=sacredHeartDirectChoices\(tab\)/,"Sacred Heart direct chooser disappeared");
+assert.match(runtime,/HEART_STAGES.map\(id=>/,"Sacred Heart direct buttons lost four-stage source ownership");
+assert.match(runtime,/data-tp381-heart=/,"Sacred Heart one-tap choice buttons disappeared");
 assert.match(runtime,/current Enchiridion prints an abbreviated form/,"Traditional/current Sacred Heart version distinction disappeared");
 assert.doesNotMatch(runtime,/aoTP381Hero/,"v38.1 traditional PRAY regained non-donor hero cards");
 assert.doesNotMatch(styles,/aoTP381Hero/,"v38.1 traditional PRAY regained non-donor hero styling");
