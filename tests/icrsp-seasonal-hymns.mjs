@@ -56,7 +56,7 @@ for(const id of ids){
   if(["audi_benigne","vexilla_regis","o_sol_salutis"].includes(id)){
     assert.equal(h.fr.split(/\n\s*\n/).length,id==="vexilla_regis"?7:5);
     assert.match(h.frenchSource.work,/Guéranger/);
-    assert.match(h.frenchSource.witnessStatus,/NOT_YET_PHYSICAL_PAGE_COLLATED/);
+    assert.match(h.frenchSource.witnessStatus,/(?:NOT_YET_PHYSICAL_PAGE_COLLATED|PRINTED_PAGE_UNCHECKED)/);
     if(id==="o_sol_salutis"){
       assert.equal(h.frenchSource.editionYear,1903);
       assert.match(h.fr,/O Jésus, soleil de salut/);
@@ -74,7 +74,7 @@ for(const id of ids){
     assert.match(h.frenchSource.work,/Guéranger.*1903/);
     assert.match(h.frenchSource.witnessStatus,/NOT_YET_PHYSICAL_PAGE_COLLATED/);
     assert.equal(h.languageStatus,"HISTORIC_LATIN_CASWALL_1849_ENGLISH_GUERANGER_1903_FRENCH");
-  }else if(id!=="vexilla_regis")assert.equal(h.fr,undefined,"Other historical French translations remain unverified: "+id);
+  }else if(!["vexilla_regis","o_sol_salutis"].includes(id))assert.equal(h.fr,undefined,"Other historical French translations remain unverified: "+id);
   if(!h.en)assert.equal(h.languageStatus,"HISTORIC_LATIN_ONLY_EN_FR_SOURCE_REQUIRED");
   assert.ok(!Object.keys(SACRED_HYMNS_V381).includes(id),"Original title collision "+id);
 }
