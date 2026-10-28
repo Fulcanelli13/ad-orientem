@@ -20,13 +20,13 @@ export function installScriptureStyles(doc=globalThis.document){
  
  /* Optional, source-owned preparation and thanksgiving: secondary to Scripture. */
  .aoScriptureOptionalPrayer{margin:10px 0 12px;border-top:1px solid rgba(205,182,135,.16);border-bottom:1px solid rgba(205,182,135,.16);color:#d9caaa}
- .aoScriptureOptionalPrayer>summary{min-height:42px;display:flex;align-items:center;cursor:pointer;padding:9px 3px;font:500 13px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
+ .aoScriptureOptionalPrayer>summary{min-height:48px;display:flex;align-items:center;cursor:pointer;padding:9px 3px;font:500 13px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
  .aoScriptureOptionalPrayer>summary:focus-visible{outline:2px solid #e1cc99;outline-offset:2px}
  .aoScriptureOptionalPrayerBody{padding:4px clamp(4px,2vw,16px) 16px}
  .aoScriptureOptionalPrayerTitle{font:400 18px/1.45 var(--ao-font-liturgical,Georgia,serif);color:#efe1c4;margin:12px 0 8px}
  .aoScriptureOptionalPrayerText{font:400 clamp(17px,2.6vw,19px)/1.75 var(--ao-font-liturgical,Georgia,serif);color:#ede6d9;margin:0 0 12px;white-space:pre-line}
  .aoScriptureOptionalPrayerChoices{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
- .aoScriptureLibrary .aoScriptureOptionalPrayerChoices button{min-height:40px;font:500 13px/1.3 var(--ao-font-ui,Georgia,serif);background:transparent}
+ .aoScriptureLibrary .aoScriptureOptionalPrayerChoices button{min-height:48px;font:500 13px/1.3 var(--ao-font-ui,Georgia,serif);background:transparent}
  .aoScriptureLibrary .aoScriptureOptionalPrayerChoices button[aria-pressed="true"]{background:rgba(174,142,89,.18);border-color:#d4bb83;color:#f7edcd}
  .aoScriptureOptionalPrayerBody>a{font:12px/1.5 var(--ao-font-ui,Georgia,serif);color:#ceb88d;text-decoration:underline;text-underline-offset:3px}
 
