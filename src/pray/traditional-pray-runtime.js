@@ -1,5 +1,6 @@
 import "./traditional-pray-styles.js";
 import {ICKSP_MARIAN_PROTECTION_V1} from "./icksp-marian-protection.v1.js";
+import {ICKSP_PRIEST_PRAYERS_V1} from "./icksp-prayers-for-priests.v1.js";
 import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "./dying-companion-flow.js";
 import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabel} from "./guided-daily-cards.js";
@@ -34,6 +35,7 @@ const ROUTES=Object.freeze({
   "pray.morning_evening":Object.freeze({id:"pray.morning_evening",type:"module",domain:"pray",category:"daily-prayer",title:"Morning & Evening Prayer"}),
   "pray.sacred_hymns":Object.freeze({id:"pray.sacred_hymns",type:"module",domain:"pray",category:"traditional-devotion",title:"Sacred Hymns & Canticles"}),
   "pray.marian_protection":Object.freeze({id:"pray.marian_protection",type:"module",domain:"pray",category:"traditional-devotion",title:"Marian Protection Prayer"}),
+  "pray.prayers_for_priests":Object.freeze({id:"pray.prayers_for_priests",type:"module",domain:"pray",category:"traditional-devotion",title:"Prayers for Priests"}),
   "pray.holy_name_litany":Object.freeze({id:"pray.holy_name_litany",type:"module",domain:"pray",category:"traditional-devotion",title:"Litany of the Holy Name"}),
   "pray.nightly_examen":Object.freeze({id:"pray.nightly_examen",type:"module",domain:"pray",category:"daily-prayer",title:"Nightly Examination"}),
   "pray.meal_prayers":Object.freeze({id:"pray.meal_prayers",type:"module",domain:"pray",category:"daily-prayer",title:"Grace at Meals"}),
@@ -299,6 +301,18 @@ function renderHymns(){
   const card=`<section class="aoDevoCard" data-ao-devo-card="hymn-${esc(key)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(h.title)}"><article class="aoTP381PrayerCard"><h3>${esc(h.title)}</h3><p class="aoTP381HymnSubtitle">${esc(L(h.subtitle,h.subtitleFr))}</p>${text}</article></div></section>`;
   const options=`<details class="aoTP381SecondaryOptions" data-ao-hymn-options><summary>${esc(L("Language and historical sources","Langue et sources historiques"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("A deliberately small traditional collection with identified sources. Latin, English and French witnesses are identified rather than silently substituted.","Une collection traditionnelle volontairement réduite, avec ses sources clairement identifiées. Les témoins latin, anglais et français sont identifiés plutôt que remplacés silencieusement."))}</p><div class="aoTP381Lang" role="group" aria-label="${esc(L("Text language","Langue du texte"))}"><button type="button" data-tp381-hymn-lang="en" aria-pressed="${lang==="en"}" class="${lang==="en"?"active":""}">${esc(L("English","Anglais"))}</button><button type="button" data-tp381-hymn-lang="fr" aria-pressed="${lang==="fr"}" class="${lang==="fr"?"active":""}">Français</button><button type="button" data-tp381-hymn-lang="la" aria-pressed="${lang==="la"}" class="${lang==="la"?"active":""}">Latin</button></div>${source("The Daily Prayer-Book · Burns & Oates · 1882",TRADITIONAL_PRAY_SOURCES_V381.dailybook)}${source(frSource[0],frSource[1])}</div></details>`;
   return `${head(L("Sacred Hymns & Canticles","Hymnes & cantiques sacrés"))}<main class="aoP435930Body aoTP381DonorBody">${card}${options}</main>`;
+}
+
+function renderPrayersForPriests(){
+  const prayer=ICKSP_PRIEST_PRAYERS_V1.eternalPriest;
+  const held=ICKSP_PRIEST_PRAYERS_V1.sacredHeartHighPriest;
+  const languageNote=L(
+    "The verified source text is English; a historically authenticated French translation is not yet available. No translation has been invented.",
+    "Le texte source vérifié est en anglais ; aucune traduction française historiquement attestée n’a encore été trouvée. Aucune traduction n’a été inventée."
+  );
+  const card=sourcedPrayerCard(prayer,L(prayer.title,prayer.titleFr),{focusParagraphs:true});
+  const note=isFr()?prayer.note.fr:prayer.note.en;
+  return `${head(L("Prayers for Priests","Prières pour les prêtres"),L("Traditional ICKSP selection","Choix traditionnel de l’Institut"))}<main class="aoP435930Body aoTP381DonorBody"><section class="aoDevoCard" data-ao-devo-card="priest-prayer"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L(prayer.title,prayer.titleFr))}">${card}</div></section><p class="aoTP381Intro">${esc(languageNote)}</p><details class="aoTP381SecondaryOptions"><summary>${esc(L("Source editions and second prayer","Sources et seconde prière"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(note)}</p>${source(prayer.editions.institute.label,prayer.editions.institute.url)}${source(prayer.editions.historicalLead.label,prayer.editions.historicalLead.url)}<p>${esc(L("The Institute also lists a second prayer to the Eternal High Priest. Its published transcription contains an apparent error; that separate prayer is retained in the source register until its words can be verified.", "L’Institut propose également une deuxième prière au Souverain Prêtre. Sa transcription publiée présente une anomalie ; la prière demeure distincte dans le registre des sources jusqu’à vérification."))}</p>${source(held.title,held.source_url)}</div></details></main>`;
 }
 function renderMarianProtection(){
   const prayer=ICKSP_MARIAN_PROTECTION_V1.augustQueen;
@@ -567,6 +581,7 @@ function glossaryTermsForState(){
   if(S.screen==="prayer")return ["G326"];
   if(S.route==="pray.sacred_hymns")return ["G326","G321"];
   if(S.route==="pray.marian_protection")return ["G326","G324"];
+  if(S.route==="pray.prayers_for_priests")return ["G326","G331"];
   if(S.route==="pray.holy_name_litany")return ["G096","G154","G326"];
   if(S.route==="pray.nightly_examen")return ["G328","G019","G011","G012"];
   if(S.route==="pray.meal_prayers")return ["G326","G237"];
@@ -581,7 +596,7 @@ function injectGlossaryAction(){
   const button=document.createElement("button");
   button.type="button";button.className="aoTP381Glossary";button.dataset.tp381Glossary="true";
   button.textContent=L("Terms & explanations","Termes & explications");
-  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen","pray.meal_prayers","pray.holy_name_litany","pray.sacred_heart","pray.communion_treasury","pray.sacred_hymns","pray.marian_protection","pray.good_death","pray.dying_companion"].includes(S.route))body.append(button);
+  if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen","pray.meal_prayers","pray.holy_name_litany","pray.sacred_heart","pray.communion_treasury","pray.sacred_hymns","pray.marian_protection","pray.prayers_for_priests","pray.good_death","pray.dying_companion"].includes(S.route))body.append(button);
   else body.insertAdjacentElement("afterbegin",button);
   return true;
 }
@@ -591,7 +606,7 @@ function render(){
   // A route change or Full Text mode must not inherit another reader’s stage owner.
   delete m.dataset.aoTraditionalDualAxis;
   m.dataset.aoTraditionalPrayRoute=S.route;
-  m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="mass.prepare"||S.route==="mass.thanksgiving"?renderMassFolioPrayers():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.marian_protection"?renderMarianProtection():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
+  m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="mass.prepare"||S.route==="mass.thanksgiving"?renderMassFolioPrayers():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.marian_protection"?renderMarianProtection():S.route==="pray.prayers_for_priests"?renderPrayersForPriests():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
   if(S.screen==="module"&&S.route==="pray.morning_evening")syncDailyTimerView();
   if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen"].includes(S.route)){
     const daily=S.route==="pray.morning_evening";
@@ -934,6 +949,7 @@ function mountRuntime(){
     routes:ROUTES,
     hymns:SACRED_HYMNS_V381,
     marianProtection:ICKSP_MARIAN_PROTECTION_V1,
+    prayersForPriests:ICKSP_PRIEST_PRAYERS_V1,
     open,
     close:BASE_CLOSE,
     state:()=>({...S}),
