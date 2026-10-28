@@ -87,7 +87,7 @@ const card=personalDailyPrayerCard(first.rows[1],first,h);
 assert.match(card,/data-ao-personal-prayer="daily-prayer"/);
 assert.match(card,/created me, made me a Christian/);
 assert.match(dailyPersonalSettings(first,initial,h),/data-tp381-personal-action="language"/);
-assert.match(dailyPersonalSettings(first,initial,h),/St Pius X · 1913 · English · Standard/,"The opening settings summary must identify the effective rule");
+assert.match(dailyPersonalSettings(first,initial,h),/1913 · EN · Standard/,"The opening settings summary must identify the effective rule");
 assert.match(dailyPersonalProvenance(first.rows[1],h.L),/Latin version on tap is an editorial translation/);
 const latinSource=buildPersonalDailyPlan({daypart:"morning",prefs:defaultPersonalDailyPrefs("la")}).rows[1];
 assert.match(dailyPersonalProvenance(latinSource,h.L),/Editorial Latin translation · not printed Latin/);
