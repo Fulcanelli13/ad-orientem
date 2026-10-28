@@ -113,9 +113,11 @@ assert.match(runtime,/navigate\?\.\("learn"\)/,"Dying Companion cross-domain han
 assert.match(runtime,/Call a priest now/,"Dying Companion no longer prioritises obtaining a priest");
 assert.match(runtime,/Confession or Penance, Anointing of the Sick, Holy Communion as Viaticum, and the Apostolic Blessing/,"Dying Companion lost last-sacraments request guidance");
 assert.match(runtime,/never simulates priestly absolution/,"Dying Companion regained priest-role simulation");
-assert.match(runtime,/data-tp381-dying="now"/,"Dying Companion Now tab disappeared");
-assert.match(runtime,/data-tp381-dying="pray"/,"Dying Companion Pray tab disappeared");
-assert.match(runtime,/data-tp381-dying="commend"/,"Dying Companion Commend tab disappeared");
+assert.match(runtime,/data-ao-bedside-direct="true"/,"Dying Companion direct bedside choices disappeared");
+assert.match(runtime,/\["now",L\("Call a priest now"/,"Dying Companion Now/Call priest priority disappeared");
+assert.match(runtime,/\["pray",L\("Pray at the bedside"/,"Dying Companion direct bedside prayer disappeared");
+assert.match(runtime,/\["commend",L\("Commend the soul"/,"Dying Companion direct Commendation disappeared");
+assert.match(runtime,/data-tp381-dying="\$\{id\}"/,"Dying Companion direct stage controls are not source-owned");
 assert.match(runtime,/dead_eternal_rest_singular/,"Dying Companion lost transition from dying prayers to suffrage after death");
 assert.match(runtime,/devotion_litany_st_joseph/,"Good Death stopped reusing the canonical St Joseph Litany");
 assert.match(runtime,/devotion_ad_te_beate_ioseph/,"Good Death stopped reusing Ad te beate Ioseph");
