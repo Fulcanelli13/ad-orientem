@@ -124,7 +124,7 @@ try{
       assert.equal(await root.locator(".aoOfficeLocaleUnavailable").count(),0,
         file+" corrected Office still marked unavailable");
       const missingCount=await root.locator(".aoOfficeMassCard").evaluateAll(cards=>
-        cards.filter(card=>/^(?:\\d+|special)\\s+is missing\\b/i.test(
+        cards.filter(card=>/^(?:\d+|special)\s+is missing\b/i.test(
           card.querySelector(".aoOfficeFullTranslation .aoOfficeSourceText")?.textContent?.trim()??""
         )).length);
       assert.equal(missingCount,0,file+" unresolved text still displayed");
