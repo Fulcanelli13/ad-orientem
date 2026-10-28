@@ -20,15 +20,27 @@ const HORIZONS=Object.freeze({
   ["Night","Nuit","#0d1729","#1c293b","#2b384b","#303e55"]
  ])
 });
+// Continuously interpolate the five editorial sky palettes. The label remains
+// a five-part meditation, but *every* real prayer step alters the atmosphere.
+// No clock, animation frame or source-sequence ID is involved.
+function interpolateSkyColour(start,end,amount){
+ const a=[1,3,5].map(i=>parseInt(start.slice(i,i+2),16));
+ const b=[1,3,5].map(i=>parseInt(end.slice(i,i+2),16));
+ return "#"+a.map((value,i)=>Math.round(value+(b[i]-value)*amount).toString(16).padStart(2,"0")).join("");
+}
 export function dailyHorizonState(daypart,step,total){
  if(!Object.hasOwn(HORIZONS,daypart))throw new RangeError("Invalid daily prayer");
  if(!Number.isInteger(total)||total<1)throw new RangeError("Invalid prayer length");
  const position=Math.max(0,Math.min(total,Number.isFinite(step)?Math.trunc(step):0));
- // Five visual moods across the actual 11 / 13 canonical prayer cards.
+ const fraction=position/total;
  const phase=Math.min(4,Math.floor(position*5/total));
- const [en,fr,top,mid,low,light]=HORIZONS[daypart][phase];
- return Object.freeze({daypart,phase,step:position,total,en,fr,top,mid,low,light,
-  fraction:position/total});
+ const palette=HORIZONS[daypart];
+ const [en,fr]=palette[phase];
+ const track=fraction*4,lower=Math.min(4,Math.floor(track)),upper=Math.min(4,lower+1);
+ const blend=track-lower;
+ const colours=[2,3,4,5].map(i=>interpolateSkyColour(palette[lower][i],palette[upper][i],blend));
+ const [top,mid,low,light]=colours;
+ return Object.freeze({daypart,phase,step:position,total,en,fr,top,mid,low,light,fraction});
 }
 function monthNumber(key){
  const m=String(key??"").match(/^(\d{4})-(\d{2})-(\d{2})$/);

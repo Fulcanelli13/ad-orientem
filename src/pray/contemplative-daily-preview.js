@@ -6,7 +6,7 @@
  * Never rewrites prayer texts, sequences, routes or reader state.
  * Existing source-gated formulation and timer work remains independently owned.
  */
-export const CONTEMPLATIVE_DAILY_PREVIEW_VERSION = "contemplative-daily-preview-v1";
+export const CONTEMPLATIVE_DAILY_PREVIEW_VERSION = "contemplative-daily-preview-v2-horizon";
 export const CONTEMPLATIVE_DAILY_PREVIEW_FLAG = "aoPrayReader=contemplative";
 export const CONTEMPLATIVE_DAILY_CLASSIC_FALLBACK_FLAG = "aoPrayReader=classic";
 
@@ -25,8 +25,13 @@ export function contemplativeDailyMode(search, mount) {
 }
 
 export const CONTEMPLATIVE_DAILY_PREVIEW_CSS = [
-  '#aoPray435930[data-ao-contemplative-daily]{--text:#eee9df;--muted:#aeb3ba;--bg:#0b121b;--surface:#101a24;--surface-1:#101a24;--border:rgba(236,224,204,.13);--liturgical:#c6a67a;color:var(--text)!important}',
-  '#aoPray435930[data-ao-contemplative-daily] .aoP435930Sheet{background:radial-gradient(ellipse 98% 45% at 55% 105%,color-mix(in srgb,var(--ao-contemplative-light,#ac8773) 29%,transparent),transparent 74%),linear-gradient(175deg,#0a1119 6%,#111d29 67%,#18222b 100%)!important;color:#eee9df!important;border:1px solid rgba(224,199,163,.15)!important;box-shadow:0 -12px 65px rgba(0,0,0,.54)!important}',
+  // Typed colour variables animate the sky with manual prayer progression.
+  '@property --ao-contemplative-top{syntax:"<color>";inherits:true;initial-value:#111b29}',
+  '@property --ao-contemplative-mid{syntax:"<color>";inherits:true;initial-value:#283440}',
+  '@property --ao-contemplative-low{syntax:"<color>";inherits:true;initial-value:#50494a}',
+  '@property --ao-contemplative-light{syntax:"<color>";inherits:true;initial-value:#916b60}',
+  '#aoPray435930[data-ao-contemplative-daily]{--text:#eee9df;--muted:#aeb3ba;--bg:#0b121b;--surface:#101a24;--surface-1:#101a24;--border:rgba(236,224,204,.13);--liturgical:#c6a67a;color:var(--text)!important;transition:--ao-contemplative-top 1150ms ease,--ao-contemplative-mid 1150ms ease,--ao-contemplative-low 1150ms ease,--ao-contemplative-light 1150ms ease}',
+  '#aoPray435930[data-ao-contemplative-daily] .aoP435930Sheet{background:linear-gradient(180deg,rgba(5,10,17,.42),rgba(6,11,17,.53) 52%,rgba(5,9,15,.69)),radial-gradient(ellipse 98% 48% at 51% 104%,color-mix(in srgb,var(--ao-contemplative-light,#916b60) 88%,transparent),transparent 76%),linear-gradient(180deg,var(--ao-contemplative-top,#111b29) 0%,var(--ao-contemplative-mid,#283440) 56%,var(--ao-contemplative-low,#50494a) 100%)!important;color:#eee9df!important;border:1px solid rgba(224,199,163,.15)!important;box-shadow:0 -12px 65px rgba(0,0,0,.54)!important}',
   // The approved Design B has a very quiet landscape silhouette beneath the text.
   // It is decorative, does not block touch input, and never requires art assets.
   '#aoPray435930[data-ao-contemplative-daily] .aoP435930Sheet{position:relative!important;isolation:isolate!important}',
@@ -41,7 +46,9 @@ export const CONTEMPLATIVE_DAILY_PREVIEW_CSS = [
   '#aoPray435930[data-ao-contemplative-daily] .aoTP381DaypartStrip{justify-content:center!important;gap:22px!important;margin:4px 0 6px!important;padding:0!important}',
   '#aoPray435930[data-ao-contemplative-daily] .aoTP381DaypartStrip button{border:0!important;border-radius:0!important;background:transparent!important;color:#aeb3ba!important;min-height:44px!important;padding:8px 3px!important;font:500 12px/1.3 var(--ao-font-ui,Georgia,serif)!important;letter-spacing:.04em!important}',
   '#aoPray435930[data-ao-contemplative-daily] .aoTP381DaypartStrip button[aria-pressed="true"]{box-shadow:inset 0 -2px #c6a67a!important;color:#eee9df!important}',
-  '#aoPray435930[data-ao-contemplative-daily="guided"] .aoQuietHorizon{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;opacity:0!important;pointer-events:none!important}',
+  // Restore the original compact horizon; the entire reading sky also changes.
+  '#aoPray435930[data-ao-contemplative-daily="guided"] .aoQuietHorizon{position:relative!important;width:min(100%,660px)!important;height:auto!important;margin:5px auto 12px!important;overflow:visible!important;clip-path:none!important;opacity:1!important;pointer-events:auto!important}',
+  '#aoPray435930[data-ao-contemplative-daily="guided"] .aoQuietHorizonCanvas{height:clamp(88px,10dvh,106px)!important}',
   '#aoPray435930[data-ao-contemplative-daily="guided"] .aoDevoTimeline.aoDevoSequenceTimeline{position:relative!important;top:auto!important;min-height:0!important;border:0!important;padding:2px 7px 14px!important;margin:0 auto!important;background:transparent!important;width:min(100%,560px)!important;gap:2px!important}',
   '#aoPray435930[data-ao-contemplative-daily="guided"] .aoDevoStops{gap:3px!important;justify-content:flex-start!important;overflow-x:auto!important;scroll-snap-type:none!important}',
   '#aoPray435930[data-ao-contemplative-daily="guided"] .aoDevoStop{display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 44px!important;min-width:44px!important;width:44px!important;min-height:44px!important;height:44px!important;border:0!important;padding:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#aeb3ba!important}',
@@ -62,7 +69,7 @@ export const CONTEMPLATIVE_DAILY_PREVIEW_CSS = [
   '#aoPray435930[data-ao-contemplative-daily="list"] .aoTP381PrayerList{max-width:660px;margin:25px auto!important}',
   '#aoPray435930[data-ao-contemplative-daily] :is(button,summary,a):focus-visible{outline:2px solid #dbb983!important;outline-offset:3px!important}',
   '@media(max-width:560px){#aoPray435930[data-ao-contemplative-daily] .aoP435930Sheet{height:100dvh!important;max-height:100dvh!important;border-radius:0!important;border:0!important}#aoPray435930[data-ao-contemplative-daily="guided"] .aoTP381DonorBody .aoDevoCardScroll{min-height:61dvh!important;padding-inline:clamp(15px,5vw,24px)!important}}',
-  '@media(prefers-reduced-motion:reduce){#aoPray435930[data-ao-contemplative-daily] *,#aoPray435930[data-ao-contemplative-daily] *::before,#aoPray435930[data-ao-contemplative-daily] *::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}'
+  '@media(prefers-reduced-motion:reduce){#aoPray435930[data-ao-contemplative-daily]{transition:none!important}#aoPray435930[data-ao-contemplative-daily] *,#aoPray435930[data-ao-contemplative-daily] *::before,#aoPray435930[data-ao-contemplative-daily] *::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}'
 ].join("\n");
 
 /**
