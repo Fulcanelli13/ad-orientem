@@ -2840,7 +2840,7 @@ export async function mountNativeReaderPreview({
     observedPriestEvent=null;
     activeCueId=cueStillPresent ? desiredCue : null;
     if(activeCueId)transientGuard.resolveCue(activeCueId);
-    ready.scholaState.activateForCard(current);
+    if(!scholaPinnedByCatchup)ready.scholaState.activateForCard(current);
 
     root.dataset.r17PresentationMode=rebuilt.mode;
     root.dataset.r17SourceModelCards=String(sourceModel.totalCards);
@@ -2851,7 +2851,8 @@ export async function mountNativeReaderPreview({
       // A two-column Missal changes page geometry, not source/cue identity.
       if(cueStillPresent){
         activeCueId=desiredCue;
-        ready.scholaState.reachLiturgicalBoundary?.(desiredCue);
+        if(!scholaPinnedByCatchup)
+          ready.scholaState.reachLiturgicalBoundary?.(desiredCue);
         transientGuard.resolveCue(desiredCue);
         focusCueAtReaderLine(desiredCue);
         root.dataset.r17NativeCue=desiredCue;
