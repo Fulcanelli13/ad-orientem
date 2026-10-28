@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   verify-default-off-and-three-responsive-sizes:
@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          persist-credentials: true
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -35,6 +35,25 @@ jobs:
           node --check src/pray/presentation-runtime.js
           node --check tests/pray-confession-wave1-hero-proof.mjs
           node tests/pray-confession-wave1-hero-proof.mjs
+      - name: Archive three screenshot proofs in the review branch, not just expiring artifacts
+        if: success()
+        run: |
+          mkdir -p assets/staged/prayer-wave1-confession-qa-20261028
+          for width in 320 390 1440; do
+            cp "artifacts/prayer-wave1-confession-proof/flagged-${width}.png" "assets/staged/prayer-wave1-confession-qa-20261028/flagged-${width}.png"
+          done
+          (
+            cd assets/staged/prayer-wave1-confession-qa-20261028
+            sha256sum flagged-320.png flagged-390.png flagged-1440.png > SCREENSHOT-SHA256.txt
+          )
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/staged/prayer-wave1-confession-qa-20261028/
+          git diff --cached --check
+          if git diff --cached --quiet; then echo "Screenshots unchanged"; exit 0; fi
+          git commit -m "research(pray art): preserve revised Confession hero screenshots with checksums"
+          git pull --rebase origin feature/prayer-wave1-confession-hero-proof-20261028
+          git push origin HEAD:feature/prayer-wave1-confession-hero-proof-20261028
       - name: Temporary visual acceptance screenshots (not sole artwork archive)
         if: always()
         uses: actions/upload-artifact@v4
