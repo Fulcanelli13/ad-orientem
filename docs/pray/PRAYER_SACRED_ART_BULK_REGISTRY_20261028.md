@@ -8,7 +8,7 @@ This report is derived from the single [master registry](../../data/research/pra
 
 - **22/22** approved primary painting identities and source records mapped.
 - **20/22** staged research originals identified, with SHA-256 records and dimensions; **2** still missing (Guardian Angel and Frère Evening Prayer).
-- **5** original candidates supported by prior specific CI SHA checks; this includes the recovered original Lotto Rosary photograph, distinct from the Sailko reproduction tested in another run.
+- **20/20** available original research files independently downloaded, SHA-256 rehashed and dimension-verified in the new bulk native scan; Rosary was recovered from the original Yorck checksum, distinct from the Sailko clip-bearing photograph.
 - **0/22** certified pristine for final publication; **0/22** activated in production.
 - Latest 31-section review contains **47 Keeps, 51 rejected placements, 13 better-photo placements (10 distinct works), six referrals and one unreviewed placement**. The unreviewed placement is Morlete Ruiz's *Heart of Jesus*, whose earlier historical approval remains protected.
 
@@ -76,6 +76,18 @@ This report is derived from the single [master registry](../../data/research/pra
 | Prayer Library | 4 | 0 | 4 | 0 | 0 |
 
 The complete 118 individual placement rows, with module-scoped actions, original IDs, title, artist, source URL, historical status and referral destination, live **inside the master registry**. Rejection in one section does not veto reuse of the same painting elsewhere.
+
+## Batch C — visual triage completed across all 20 native originals
+
+The [bulk native audit](../../assets/staged/prayer-pristine-bulk-native-audit-20261028/native-audit.json) successfully recovered and verified **all 20/20**, then generated **four permanent 5-painting inspection sheets** (full picture plus four native 210-pixel corners). The preliminary issue classification is:
+- **10** originals show no obvious external physical frame in the contact sheet, but remain pending full tonal/detail, centre-pixel and rights certification.
+- **2** require removal or carefully checked cropping of exposed support (Champaigne *Annunciation*, Ingres *Virgin Adoring the Host*).
+- **2** have large white non-art margins (Benson *Salvator Mundi*, full Yorck Lotto *Madonna del Rosario*); the latter must preserve all fifteen roundels and curved painted top.
+- **1** explicitly contains an external gilded frame (Restout *Pentecost*), and **1** is an unsuitable whole-gallery installation photograph (Gérôme *Age of Augustus*).
+- **1** needs higher-fidelity detail research (Reni *Michael*); **1** contains questionable contemporary poster boundaries (Perpetual Help).
+- **1** has uncertain arched painted bounds (Dürer *Adoration of the Trinity*), and **1** Honthorst image has a **suspected** red corner overprint requiring verification—not yet a confirmed watermark.
+
+**No master has been declared pristine.** All observations and follow-up actions are attached to their source-original IDs in the master registry. The contact sheets make it possible to inspect the full batch without reopening user editorial choices.
 
 ## Actual next batches
 
