@@ -11,9 +11,9 @@ import {APPROVED_DAILY_FORMULATION_MANIFEST_V1,DAILY_APPROVED_SEQUENCE_RELEASE_V
 import {personalDailyPrayerCard,dailyPersonalSettings,dailyPersonalList,dailyPersonalProvenance} from "../src/pray/daily-personal-prayer-view.js";
 
 assert.deepEqual(PERSONAL_DAILY_SOURCE_COVERAGE.languages,["la","en","fr"]);
-assert.equal(PERSONAL_DAILY_SOURCE_COVERAGE.manualOptions,44);
-assert.equal(CORPUS.additional.length,44);
-assert.equal(new Set(CORPUS.additional.map(x=>x.id)).size,44);
+assert.equal(PERSONAL_DAILY_SOURCE_COVERAGE.manualOptions,45);
+assert.equal(CORPUS.additional.length,45);
+assert.equal(new Set(CORPUS.additional.map(x=>x.id)).size,45);
 for(const record of CORPUS.additional){
  assert.ok(["la","en","fr"].includes(record.lang));
  assert.ok(record.sourceImageChecked===true||record.sourceWebChecked===true,"Every optional item needs verified original print/page source");
@@ -53,6 +53,26 @@ for(const id of nightSourceIds){
 assert.equal(personalDailyOptions("evening","la","1913").filter(x=>x.id.startsWith("roman-compline-")).length,3);
 assert.equal(personalDailyOptions("evening","fr","1913").filter(x=>x.id.startsWith("roman-compline-")).length,1);
 assert.equal(personalDailyOptions("evening","en","1913").filter(x=>x.id.startsWith("roman-compline-")).length,0,"Never infer an English translation for ICRSP Latin/French source");
+const baltimoreId="baltimore-1889-evening-in-manus";
+const baltimore=CORPUS.additional.find(x=>x.id===baltimoreId);
+assert.ok(baltimore&&baltimore.lang==="en"&&baltimore.sourceWebChecked===true);
+assert.match(baltimore.sourceLabel,/Baltimore, 1889/);
+assert.equal(baltimore.sourceUrl,"https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers");
+assert.equal(baltimore.text.split("\n").length,6,"Complete historical ordinary short responsory retains all six printed lines");
+assert.equal((baltimore.text.match(/Into Thy hands, O Lord, I commend my spirit\./g)||[]).length,3);
+assert.match(baltimore.text,/Thou hast redeemed us, O Lord, God of truth/);
+assert.match(baltimore.text,/Glory be to the Father, and to the Son, and to the Holy Ghost/);
+assert.equal(personalDailyOptions("evening","en","1913").filter(x=>x.id===baltimoreId).length,1);
+assert.equal(personalDailyOptions("evening","la","1913").filter(x=>x.id===baltimoreId).length,0);
+assert.equal(personalDailyOptions("evening","fr","1913").filter(x=>x.id===baltimoreId).length,0);
+const baltimorePrefs=changePersonalDailyPrefs(defaultPersonalDailyPrefs("en"),{action:"extra",daypart:"evening",value:baltimoreId});
+const baltimorePlan=buildPersonalDailyPlan({daypart:"evening",prefs:baltimorePrefs});
+assert.equal(baltimorePlan.rows.length,11);
+assert.equal(baltimorePlan.rows.at(-1).sourceId,baltimoreId);
+assert.equal(baltimorePlan.rows.at(-1).sourceStatus,"complete-optional-liturgical-selection");
+assert.match(baltimorePlan.rows.at(-1).sourceContextEn,/not the complete Office/);
+assert.equal(buildPersonalDailyPlan({daypart:"evening",prefs:defaultPersonalDailyPrefs("en")}).rows.length,10,"Opt-in English Compline excerpt cannot alter St Pius X default");
+
 for(const language of ["la","fr"]){
  const id=language==="la"?"roman-compline-latin-in-manus":"roman-compline-french-in-manus";
  const prefs=changePersonalDailyPrefs(defaultPersonalDailyPrefs(language),{action:"extra",daypart:"evening",value:id});
@@ -132,4 +152,4 @@ assert.match(runtime,/personalDailyPrayerCard\(row,dailyReadingPlan\(\),/);
 assert.match(runtime,/dailyPersonalSettings\(plan,personalDailyPrefs\(\),/);
 assert.match(runtime,/\$\{choice\}\$\{dailyPersonalSettings\(plan,personalDailyPrefs\(\),/,"Daily rule controls must be in the opening screen, before the horizon");
 assert.match(runtime,/previousId=previous\[previousStep\]\?\.id/,"Updating a daily rule must retain its active prayer ID");
-console.log("PASS: St Pius X 1905/1913 structure, 3 languages, 44 optional texts, source-ID privacy, variants, optional order and legacy gate");
+console.log("PASS: St Pius X 1905/1913 structure, 3 languages, 45 optional texts, source-ID privacy, variants, optional order and legacy gate");

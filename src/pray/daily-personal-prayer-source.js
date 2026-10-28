@@ -1233,6 +1233,21 @@ export const DAILY_PERSONAL_PRAYER_SOURCE_V1=Object.freeze({
       "sourceContextEn": "Complete Compline antiphon, optionally prayed privately; traditionally frames the Nunc dimittis, not the whole Office. Eastertide adds Alleluia.",
       "sourceContextFr": "Antienne complète de Complies, proposée comme prière privée facultative ; elle encadre traditionnellement le Nunc dimittis, sans constituer l’office entier. Alléluia s’ajoute au temps pascal.",
       "sourceWebChecked": true
+    },
+    {
+      "id": "baltimore-1889-evening-in-manus",
+      "lang": "en",
+      "daypart": "evening",
+      "kind": "additional",
+      "slot": "protection",
+      "purpose": "historical-office-excerpt",
+      "title": "Into Thy hands · Compline short responsory",
+      "sourceLabel": "A Manual of Prayers for the Use of the Catholic Laity (Baltimore, 1889), Evening Prayers — Short Responsory",
+      "sourceUrl": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Evening_Prayers",
+      "text": "Into Thy hands, O Lord, I commend my spirit.\nR. Into Thy hands, O Lord, I commend my spirit.\nV. Thou hast redeemed us, O Lord, God of truth.\nR. I commend my spirit.\nV. Glory be to the Father, and to the Son, and to the Holy Ghost.\nR. Into Thy hands, O Lord, I commend my spirit.",
+      "sourceContextEn": "Complete ordinary short responsory printed in the Baltimore Catholic Manual (1889); an optional passage from Compline, not the complete Office. The Passiontide and Eastertide forms differ.",
+      "sourceContextFr": "Répons bref ordinaire complet imprimé dans le Manuel catholique de Baltimore (1889) ; passage facultatif de Complies et non l’office entier. Les formes du temps de la Passion et du temps pascal diffèrent.",
+      "sourceWebChecked": true
     }
   ]
 });
