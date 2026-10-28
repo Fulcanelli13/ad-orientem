@@ -136,10 +136,13 @@ body{font-family:var(--ao-font-ui,system-ui,-apple-system,sans-serif)}
  .aoOfficeSourceText{font-size:calc(18px*var(--ao-office-size))}
  .aoOfficeRail{left:4px;width:35px;padding:8px 2px}
  .aoOfficeRail span{font-size:7px}
- .aoOfficeMissalCols{grid-template-columns:1fr}
- .aoOfficeMissalCols>section{padding:0}
- .aoOfficeMissalCols>section+section{margin-top:22px;padding-top:20px;border-left:0;border-top:1px solid #ffffff18}
- .aoOfficeMassReader[data-office-mode="MISSAL"] .aoOfficeMassViewport{padding:30px 25px 220px}
+ /* Match the actual Mass MISSAL: Latin remains LEFT and vernacular
+    RIGHT even at 320px. Never stack the languages on phones. */
+ .aoOfficeMissalCols{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:9px}
+ .aoOfficeMissalCols>section{min-width:0;padding:0}
+ .aoOfficeMissalCols>section+section{margin-top:0;padding:0 0 0 9px;border-top:0;border-left:1px solid #ffffff18}
+ .aoOfficeMissalCols .aoOfficeSourceText{font-size:calc(15px*var(--ao-office-size));line-height:1.5;overflow-wrap:anywhere;word-break:normal}
+ .aoOfficeMassReader[data-office-mode="MISSAL"] .aoOfficeMassViewport{padding:26px 12px 180px}
  .aoOfficeBottomNav{grid-template-columns:45px minmax(0,1fr) 45px;padding-inline:7px}
  .aoOfficeBottomNav>button{width:44px;height:44px}
  .aoOfficeVerificationNote{font-size:8px}
