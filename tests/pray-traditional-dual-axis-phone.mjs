@@ -280,7 +280,7 @@ try{
  await open("pray.sacred_hymns");
  let hymn=await snapshot();
  assert.equal(hymn.kind,"hymns");assert.equal(hymn.route,"pray.sacred_hymns");
- assert.equal(hymn.stops,3);assert.equal(hymn.active,1);
+ assert.equal(hymn.stops,11);assert.equal(hymn.active,1);
  assert.equal(hymn.id,"hymn-te_deum");assert.equal(hymn.overflow,"auto");
  assert.ok(hymn.paragraphCount>20,"Te Deum has no line-level focus");
  assert.equal(await page.locator("#aoPray435930 [data-ao-hymn-options]").evaluate(x=>x.open),false,
@@ -301,6 +301,22 @@ try{
   assert.equal(await page.locator(frame+" [data-face-la]").isVisible(),true);
   assert.equal(await renderedLines(frame+" [data-face-la]"),sourceLineation(SACRED_HYMNS_V381[keys[i]].la),
     "Original Latin hymn witness changed: "+keys[i]);
+ }
+ // Eight additional ICRSP hymns must retain Latin source text and the
+ // original three source-locked hymns must retain their own EN/FR editions.
+ const seasonalIds=["vexilla_regis","audi_benigne","ad_regias_agni_dapes",
+   "ad_cenam_agni_providi","aeterne_rex_altissime","lustra_sex",
+   "o_sol_salutis","ex_more_docti"];
+ for(let i=0;i<seasonalIds.length;i++){
+   await page.locator("#aoPray435930 .aoDevoStop").nth(i+3).evaluate(b=>b.click());
+   const key=seasonalIds[i];
+   assert.equal((await snapshot()).id,"hymn-"+key,"Historical Office hymn missing from timeline");
+   const text=await page.locator("#aoPray435930 .aoDevoCardScroll").innerText();
+   assert.ok(text.length>450,key+" incomplete Latin text");
+   assert.match(text,/Amen\./,key+" hymn lacks final Amen");
+   assert.equal(await page.locator("#aoPray435930 .aoDevoCardScroll [data-face-v]").count(),0,
+     "English/French hymn not source verified; do not display empty translation as real text");
+   assert.equal(await page.locator("#aoPray435930 .aoDevoCardScroll .aoTP381Reader").count(),1);
  }
  await page.screenshot({path:resolve(captures,"hymns-ave-maris-stella-la-390.png"),animations:"disabled"});
  await page.locator("#aoPray435930 .aoDevoStop").first().evaluate(x=>x.click());
