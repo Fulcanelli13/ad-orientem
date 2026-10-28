@@ -257,11 +257,12 @@ function renderDailyGuided(rows){
  const body=step===total?"":(row.kind==="examination"||row.kind==="personal-examen")
    ?row.editorial===true?`<p class="aoTP381TextParagraph">${esc(row.cue||L("Examine your conscience before God in silence.","Examinez votre conscience devant Dieu en silence."))}</p>`:`<p>${esc(L("Review the day before God: your duties towards Him, your neighbour, and yourself. This is a brief daily examen, not sacramental Confession.","Revoyez la journée devant Dieu : vos devoirs envers Lui, le prochain et vous-même. Il s’agit d’un bref examen quotidien, non d’une Confession sacramentelle."))}</p><button type="button" class="aoTP381GuideSubroute" data-tp381-daily-examen>${esc(L("Open guided nightly examination","Ouvrir l’examen du soir guidé"))}</button>`
    :row.kind==="personal-prayer"?personalDailyPrayerCard(row,dailyReadingPlan(),{esc,L,prayerParagraphs,source})
+   :row.kind==="personal-legacy"?prayerCard(row.legacyId,{focusParagraphs:true})
    :row.kind==="approved-source-prayer"?dailyApprovedPrayerCard(row)
    :row.kind==="silence"?`<p class="aoTP381TextParagraph">${esc(row.cue||L("Pause in silence.","Recueillez-vous en silence."))}</p>`
    :prayerCard(row.id,{focusParagraphs:true});
  const id=step===total?"daily-finished":row.id;
- const content=guidedCardFrame({id,title:step===total?"":((row.kind==="examination"||row.kind==="personal-examen")?row.title||row.titleEn||L("Nightly Examination","Examen du soir"):row.kind==="silence"?row.title:row.kind==="approved-source-prayer"||row.kind==="personal-prayer"?row.title:prayerTitle(data().prayers?.[row.id],row.id)),
+ const content=guidedCardFrame({id,title:step===total?"":((row.kind==="examination"||row.kind==="personal-examen")?row.title||row.titleEn||L("Nightly Examination","Examen du soir"):row.kind==="silence"?row.title:row.kind==="approved-source-prayer"||row.kind==="personal-prayer"||row.kind==="personal-legacy"?row.title:prayerTitle(data().prayers?.[row.id],row.id)),
    step,total,body,onStep:"daily"});
  return `<section class="aoDevoCard" data-ao-devo-card="${esc(id)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L("Daily prayer card","Carte de prière quotidienne"))}">${content}</div></section>`;
 }
@@ -608,7 +609,7 @@ function render(){
     if(!daily||S.dailyMode==="guided"){
       const chapters=rows.map((row,i)=>({
         id:row.id||"examen-"+(i+1),
-        title:daily?(row.kind==="examination"?row.title||L("Nightly Examination","Examen du soir"):row.kind==="approved-source-prayer"||row.kind==="personal-prayer"||row.kind==="personal-examen"||row.kind==="silence"?row.title||row.titleEn:prayerTitle(data().prayers?.[row.id],row.id))
+        title:daily?(row.kind==="examination"?row.title||L("Nightly Examination","Examen du soir"):row.kind==="approved-source-prayer"||row.kind==="personal-prayer"||row.kind==="personal-legacy"||row.kind==="personal-examen"||row.kind==="silence"?row.title||row.titleEn:prayerTitle(data().prayers?.[row.id],row.id))
           :(isFr()?row.titleFr:row.titleEn)
       }));
       chapters.push({id:daily?"daily-finished":"examen-finished",title:L("Prayer completed","Prière terminée")});
