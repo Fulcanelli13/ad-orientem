@@ -76,6 +76,8 @@ try{
     });
     const overlaps=(a,b)=>a&&b&&a.x<b.right&&b.x<a.right&&a.y<b.bottom&&b.y<a.bottom;
     assert.equal(metrics.state,"ready");
+    assert.equal(await page.locator(".aoFindMap").getAttribute("data-ao-cartography"),"enhanced-dark",
+      "Real EN/FR map screenshots require the applied country and sea/land contrast palette");
     assert.equal(metrics.language,language);
     assert.ok(metrics.map?.w>=width-25,"Map viewport collapsed at "+width);
     assert.ok(metrics.attribution?.w>10&&metrics.attribution?.h>10,

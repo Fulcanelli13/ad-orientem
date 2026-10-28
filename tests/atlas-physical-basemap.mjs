@@ -50,8 +50,12 @@ const owner=readFileSync(new URL("../src/find/browser-entry.js",import.meta.url)
 const map=readFileSync(new URL("../src/find/map-runtime.js",import.meta.url),"utf8");
 assert.match(owner,/styleOverride:bibleCinemaPreview\?ATLAS_PHYSICAL_STYLE:null/,
  "Physical style must be review-flag-only");
-assert.match(map,/style:styleOverride\?\?win\.AO_EXPLORE_MAP_STYLE_URL/,
+assert.match(map,/styleOverride\?\?win\.AO_EXPLORE_MAP_STYLE_URL\?\?win\.AO_DIRECTORY_MAP_STYLE_URL\?\?DEFAULT_STYLE/,
  "Never change existing directory and default map style ownership");
+assert.match(map,/style:selectedStyle/,
+ "Resolved map style must remain owned by the existing style override precedence");
+assert.match(map,/if\(selectedStyle===DEFAULT_STYLE&&!styleOverride\)/,
+ "Explore cartographic repaint must never touch the independently owned Biblical Atlas style");
 assert.ok(stops.some(s=>s.geo?.key==="jerusalem"));
 assert.ok(stops.some(s=>!s.geo),"Do not add inferred geographic pins");
 console.log("PASS public-domain physical GeoJSON review; 151 source events untouched, zero political labels, normal maps isolated");
