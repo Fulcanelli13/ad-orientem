@@ -2318,8 +2318,8 @@ const lang=()=>state()?.language==='fr'?'fr':'en';
 const L=(en,fr)=>lang()==='fr'?fr:en;
 const MANIFEST=Object.freeze({
  proper:Object.freeze({id:'proper',delivery:'daily-resolved',cache:'resolver/runtime',trigger:'day resolution',required:true,fallback:'explicit unavailable state'}),
- scripture:Object.freeze({id:'scripture',delivery:'reader-on-demand',cache:'session memory',trigger:'Scripture open or explicit refresh',scope:'Gospel + Epistle/Lesson',required:false,fallback:'load on reader open'}),
- commentary:Object.freeze({id:'commentary',delivery:'reader-on-demand',cache:'session memory + provider caches',trigger:'Commentary open or explicit refresh',scope:'Gospel + Epistle/Lesson',required:false,fallback:'explicit unavailable / source link'}),
+ scripture:Object.freeze({id:'scripture',delivery:'daily-prefetch',cache:'session memory',trigger:'Proper ready',scope:'Gospel + Epistle/Lesson',required:false,fallback:'load on reader open'}),
+ commentary:Object.freeze({id:'commentary',delivery:'daily-prefetch',cache:'session memory + provider caches',trigger:'Proper ready',scope:'Gospel + Epistle/Lesson',required:false,fallback:'explicit unavailable / source link'}),
  saintIdentity:Object.freeze({id:'saintIdentity',delivery:'daily-derived',cache:'daily summary',trigger:'day resolution',required:false,fallback:'liturgical title'}),
  saintBiography:Object.freeze({id:'saintBiography',delivery:'module-lazy',cache:'Saint reader memory',trigger:'Saint of the Day open',required:false,fallback:'explicit no sourced biography'}),
  saintArtwork:Object.freeze({id:'saintArtwork',delivery:'module-lazy',cache:'saint-art cache',trigger:'Home card / Saint of the Day open',required:false,fallback:'approved-art placeholder'}),
@@ -2375,30 +2375,7 @@ function openDiagnostics(){closeDiagnostics();document.body.insertAdjacentHTML('
 function closeDiagnostics(){document.getElementById('ao-content-v37-panel')?.remove();document.body.classList.remove('aoContentV37Open');diagOpen=false}
 function renderDiagnostics(){if(!diagOpen)return;const old=document.getElementById('ao-content-v37-panel');if(!old)return;old.outerHTML=diagHtml();bindDiag()}
 function bindDiag(){const p=document.getElementById('ao-content-v37-panel');if(!p)return;p.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;if(b.hasAttribute('data-v37-close')){closeDiagnostics();return}if(b.hasAttribute('data-v37-refresh')){b.disabled=true;await hydrateDaily(state(),{force:true});renderDiagnostics();return}if(b.hasAttribute('data-v37-load-cate')){b.disabled=true;await loadModule('catechism',{language:lang()});renderDiagnostics();return}})}
-// The Home Proper needs the appointed Scripture references, not full Latin/French
-// Bible corpora or patristic commentary. Preserve the date and availability
-// summary while deferring all optional historical source documents until the
-// reader or an explicit user-driven diagnostic refresh requests them.
-function stageDaily(s=state()){
- if(!s?.resolution)return null;
- const key=dailyKey(s);
- if(key===lastDailyKey&&currentDaily)return currentDaily;
- lastDailyKey=key;currentDaily=deriveDaily(s);
- setStatus('proper',currentDaily.proper.status==='ready'?'ready':currentDaily.proper.status,
-   {sourcePath:currentDaily.proper.sourcePath,languageCoverage:currentDaily.proper.languageCoverage});
- setStatus('saintIdentity',currentDaily.saint.status,{title:currentDaily.saint.title});
- for(const slot of ['gospel','epistle']){
-   if(currentDaily.scripture[slot]?.status==='queued')currentDaily.scripture[slot].status='deferred';
-   if(currentDaily.commentary[slot]?.status==='queued')currentDaily.commentary[slot].status='deferred';
- }
- const scriptureStatus=Object.values(currentDaily.scripture).some(x=>x.status==='deferred')?'deferred':'unavailable';
- const commentaryStatus=Object.values(currentDaily.commentary).some(x=>x.status==='deferred')?'deferred':'unavailable';
- setStatus('scripture',scriptureStatus,{slots:currentDaily.scripture,trigger:'reader-open'});
- setStatus('commentary',commentaryStatus,{slots:currentDaily.commentary,trigger:'commentary-open'});
- cacheDaily(currentDaily);
- return currentDaily;
-}
-function installStore(){const store=globalThis.AO_RUNTIME_V8?.store;if(!store?.subscribe||storeUnsub)return !!storeUnsub;storeUnsub=store.subscribe(()=>{const s=state();if(s?.resolution?.proper?.status==='ready'){const k=dailyKey(s);if(k!==lastDailyKey)setTimeout(()=>stageDaily(s),40)}});const s=state();if(s?.resolution?.proper?.status==='ready')setTimeout(()=>stageDaily(s),80);return true}
+function installStore(){const store=globalThis.AO_RUNTIME_V8?.store;if(!store?.subscribe||storeUnsub)return !!storeUnsub;storeUnsub=store.subscribe(()=>{const s=state();if(s?.resolution?.proper?.status==='ready'){const k=dailyKey(s);if(k!==lastDailyKey)setTimeout(()=>hydrateDaily(s),40)}});const s=state();if(s?.resolution?.proper?.status==='ready')setTimeout(()=>hydrateDaily(s),80);return true}
 function installModuleHooksBounded(){installModuleHooks();[120,600,1800].forEach(ms=>setTimeout(installModuleHooks,ms))}
 function boot(){if(booted)return;booted=true;Object.keys(MANIFEST).forEach(id=>setStatus(id,id==='catechism'||id==='saintBiography'||id==='saintArtwork'?'lazy':'idle'));setStatus('traditionalExercises',globalThis.AO_TRAD_V352?.qa?.()?.allReady?'ready':'partial');installStore();installModuleHooksBounded();moduleStateFromDom();document.addEventListener('click',e=>{if(e.target.closest('[data-v37-open-diagnostics]'))openDiagnostics()});document.addEventListener('keydown',e=>{if(e.altKey&&e.shiftKey&&e.key.toLowerCase()==='d'){e.preventDefault();openDiagnostics()}if(e.key==='Escape'&&diagOpen)closeDiagnostics()});pruneDaily()}
 const API={version:VERSION,manifest:MANIFEST,status:(id)=>id?getStatus(id):Object.fromEntries(STATUS),hydrateDaily,cachedDaily,getDaily:()=>currentDaily,getDailyDocument:(slot)=>DAILY_DOCS.get((lastDailyKey||'')+':'+slot)||null,prefetchTomorrow,loadModule,sourcePanelMarkup,markSaintTimeout,moduleStateFromDom,installModuleHooks,openDiagnostics,closeDiagnostics,qa(){const s=state(),p=s?.resolution?.proper?.status==='ready'?s.resolution.proper.data:null;return{version:VERSION,manifestFamilies:Object.keys(MANIFEST).length,coreMassChanged:false,prayerCorpusChanged:false,dailyCoordinator:!!storeUnsub,properReady:!!p,currentDailyKey:lastDailyKey,catechismHooked:!!globalThis.AO_TRADITIONAL_CATECHISM?.__v37,traditionalExercisesHooked:!!globalThis.AO_TRAD_V352?.__v37,terminalSaintGuard:'saint-reader-owned',contentObserver:false,diagnostics:true,tomorrowPrefetch:true,cachePrefix:CACHE_PREFIX}}};
