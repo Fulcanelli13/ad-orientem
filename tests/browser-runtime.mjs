@@ -61,7 +61,7 @@ const runtime=createBrowserMassRuntime({
   root,
   celebrationApi:{getResolvedMass:()=>celebration()},
   resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Holy Rosary",proper}),
-  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  readReaderPreferences:()=>({mode:"missal",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
   loadPresentationData:async()=>{loaded=true;return presentationData},
   onReaderMounted:()=>{mounted=true},
 });
@@ -70,9 +70,9 @@ assert.equal(loaded,true); assert.equal(mounted,true);
 assert.ok(root.innerHTML.includes('data-ao-reader-shell'));
 assert.ok(root.innerHTML.includes("Holy Rosary"));
 assert.equal(entered.session.resolvedMass.form,"MISSA_CANTATA_INCENSE");
-assert.equal(entered.session.resolvedMass.presentationMode,"SIMPLE");
-assert.equal(runtime.getReaderMode(),"SIMPLE");
-assert.equal(runtime.setMode("LIVE"),"SIMPLE","standalone runtime allowed an uncertified LIVE mode switch");
+assert.equal(entered.session.resolvedMass.presentationMode,"MISSAL");
+assert.equal(runtime.getReaderMode(),"MISSAL");
+assert.equal(runtime.setMode("LIVE"),"MISSAL","standalone runtime allowed an uncertified LIVE mode switch");
 const model=runtime.getReaderModel();
 assert.equal(model.totalCards,30);
 assert.equal(model.properSource,"Sancti/10-07");
@@ -98,7 +98,7 @@ const aspergesRuntime=createBrowserMassRuntime({
   root:aspergesRoot,
   celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["asperges"]})},
   resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Holy Rosary",proper,precedingRites:["ASPERGES"]}),
-  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  readReaderPreferences:()=>({mode:"missal",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
   loadPresentationData:async()=>presentationData,
   loadAspergesData:async()=>aspergesData,
 });
@@ -132,7 +132,7 @@ const palmRuntime=createBrowserMassRuntime({
   root:palmRoot,
   celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["palm"]})},
   resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Palm Sunday",proper,precedingRites:["PALM"]}),
-  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  readReaderPreferences:()=>({mode:"missal",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
   loadPresentationData:async()=>presentationData,
   loadPalmData:async()=>palmData,
 });
@@ -172,7 +172,7 @@ const ashRuntime=createBrowserMassRuntime({
   root:ashRoot,
   celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["ash"]})},
   resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Ash Wednesday",proper,precedingRites:["ASH"]}),
-  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  readReaderPreferences:()=>({mode:"missal",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
   loadPresentationData:async()=>presentationData,
   loadAshData:async()=>ashData,
 });
@@ -211,7 +211,7 @@ const candlemasRuntime=createBrowserMassRuntime({
   root:candlemasRoot,
   celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["candlemas"]})},
   resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Candlemas",proper,precedingRites:["CANDLEMAS"]}),
-  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  readReaderPreferences:()=>({mode:"missal",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
   loadPresentationData:async()=>presentationData,
   loadCandlemasData:async()=>candlemasData,
 });
@@ -254,7 +254,7 @@ const rogations=createBrowserMassRuntime({
   root:rogationsRoot,
   celebrationApi:{getResolvedMass:()=>celebration({insertedRites:["rogations"]})},
   resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Rogations",proper,precedingRites:["ROGATIONS"]}),
-  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  readReaderPreferences:()=>({mode:"missal",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
   loadPresentationData:async()=>presentationData,
   loadRogationsData:async()=>rogationsData,
 });
@@ -292,7 +292,7 @@ const planAwareLow=createBrowserMassRuntime({
     faithfulCommunicantsPresent:true,
     chantSetting:"GREGORIAN",
   }),
-  readReaderPreferences:()=>({mode:"simple",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
+  readReaderPreferences:()=>({mode:"missal",postureProfile:"FOLLOW_CONGREGATION",gestureProfile:"GUIDED_1962"}),
   loadPresentationData:async()=>presentationData,
   eventData,
 });
@@ -467,7 +467,7 @@ const missingRoot=rootFixture();
 const missing=createBrowserMassRuntime({
   root:missingRoot, celebrationApi:{getResolvedMass:()=>celebration()},
   resolveHostOptions:()=>({form:"low",celebrationTitle:"Holy Rosary",proper}),
-  readReaderPreferences:()=>({mode:"simple"}),
+  readReaderPreferences:()=>({mode:"missal"}),
   loadPresentationData:async()=>{throw new Error("reader data unavailable")},
 });
 await assert.rejects(()=>missing.enter(),/reader data unavailable/);
@@ -478,7 +478,7 @@ const requiem=createBrowserMassRuntime({
   root:requiemRoot,
   celebrationApi:{getResolvedMass:()=>celebration({requestedCelebrationId:"requiem",celebrationId:"requiem",celebrationType:"requiem",properSource:"Votive/Requiem"})},
   resolveHostOptions:()=>({form:"solemn",celebrationTitle:"Requiem",proper,followingActions:["REQUIEM_ABSOLUTION"]}),
-  readReaderPreferences:()=>({mode:"simple"}),
+  readReaderPreferences:()=>({mode:"missal"}),
   loadPresentationData:async()=>presentationData,
   eventData,
   loadRequiemAbsolutionData:async()=>requiemAbsolutionData,
@@ -520,7 +520,7 @@ const corpus=createBrowserMassRuntime({
   root:corpusRoot,
   celebrationApi:{getResolvedMass:()=>celebration({celebrationId:"corpus-christi",celebrationType:"calendar"})},
   resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Corpus Christi",proper,followingActions:["CORPUS_CHRISTI_PROCESSION"]}),
-  readReaderPreferences:()=>({mode:"simple"}),
+  readReaderPreferences:()=>({mode:"missal"}),
   loadPresentationData:async()=>presentationData,
   loadCorpusChristiData:async()=>corpusChristiData,
 });
@@ -562,7 +562,7 @@ const holyThursday=createBrowserMassRuntime({
   root:holyThursdayRoot,
   celebrationApi:{getResolvedMass:()=>celebration({celebrationId:"holy-thursday",celebrationType:"calendar"})},
   resolveHostOptions:()=>({form:"mc-incense",celebrationTitle:"Holy Thursday",proper,followingActions:["HOLY_THURSDAY_POST"]}),
-  readReaderPreferences:()=>({mode:"simple"}),
+  readReaderPreferences:()=>({mode:"missal"}),
   loadPresentationData:async()=>presentationData,
   loadHolyThursdayPostData:async()=>holyThursdayPostData,
 });
