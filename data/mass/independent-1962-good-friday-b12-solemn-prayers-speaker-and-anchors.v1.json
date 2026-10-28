@@ -14,7 +14,9 @@
     "rubricPage": 167,
     "rubricSection": 14,
     "rubricProof": "Printed 1962 rubric 14 identifies the celebrant as saying Oremus, Flectamus genua, Levate and the subsequent oration; distinguish this speaking actor from the faithful's kneel/rise events.",
-    "vaticanScansCourtesy": "Church Music Association of America via GregoBase"
+    "vaticanScansCourtesy": "Church Music Association of America via GregoBase",
+    "firstPrayerOpeningPage": 167,
+    "firstPrintedIntention": "Oremus, dilectissimi nobis, pro Ecclesia sancta Dei"
   },
   "scope": {
     "language": "original Latin only",
@@ -24,13 +26,21 @@
     "speakerRowsPerPrayer": 5,
     "sourceTextMutated": false,
     "normalMassReaderMutated": false,
-    "vaticanPageImagesStoredInRepo": false
+    "vaticanPageImagesStoredInRepo": false,
+    "printedPreIntentionStandaloneOremus": 0,
+    "printedSectionHeadingIsSpoken": false,
+    "projectionCorrection": [
+      "Solemn Prayers heading is a nonspoken RUBRIC",
+      "Remove the unsupported standalone pre-first-intention Oremus at GF-SOP-410",
+      "Preserve the printed first invitation Oremus, dilectissimi under prayer 1"
+    ]
   },
   "warnings": [
     "This audit verifies source-anchored Latin clauses and the printed speaker/rubric; it is not a word-for-word diplomatic collation of all nine full prayers.",
     "The app expands shortened printed Per Dominum/Per eundem Dominum conclusions; a substantive deviation would require independent liturgical decision before correction.",
     "Keep PRINTED_1962 Good Friday Jewish prayer distinct from the 2008 optional wording; do not certify the alternative as the printed edition.",
-    "English/French authorized translation and full chant/stanza/actor review remain open."
+    "English/French authorized translation and full chant/stanza/actor review remain open.",
+    "The source already begins the first intention with Oremus, dilectissimi; do not add an extra Oremus before that printed line."
   ],
   "prayers": [
     {
