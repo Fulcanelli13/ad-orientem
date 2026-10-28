@@ -1,4 +1,5 @@
 import "./traditional-pray-styles.js";
+import "./traditional-pray-direct-b16-styles.js";
 import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/observed-module-return.js";
 import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "./dying-companion-flow.js";
 import {JOSEPH_LITANY_1909_V1,JOSEPH_LITANY_2021_V1} from "./st-joseph-litany-1909.v1.js";
@@ -381,8 +382,12 @@ function renderHymns(){
     source("The Daily Prayer-Book · Burns & Oates · 1882",TRADITIONAL_PRAY_SOURCES_V381.dailybook)+source(frSource[0],frSource[1]);
   const editionNote=seasonal&&h.recension? `<p>${esc(L("Edition: ","Édition : ")+h.recension)}</p>`:"";
   const options=`<details class="aoTP381SecondaryOptions" data-ao-hymn-options><summary>${esc(L("Language and historical sources","Langue et sources historiques"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("Historical hymn texts with identified sources and explicitly labelled language editions.","Hymnes historiques avec sources identifiées et éditions linguistiques clairement indiquées."))}</p>${languageControls}${editionNote}${historicalSources}</div></details>`;
-  const browse=`<details class="aoTP381SecondaryOptions" data-ao-hymn-catalogue><summary>${esc(L("Choose hymn · eleven traditional texts","Choisir une hymne · onze textes traditionnels"))}</summary><div class="aoTP381SecondaryOptionsBody"><div class="aoTP381PrayerList">${HYMN_KEYS.map(id=>{const item=hymnById(id);return `<button type="button" data-tp381-hymn="${esc(id)}" aria-current="${id===key?"true":"false"}"><span><b>${esc(item.title)}</b><small>${esc(L(item.subtitle,item.subtitleFr))}</small></span></button>`}).join("")}</div></div></details>`;
-  return `${head(L("Sacred Hymns & Canticles","Hymnes & cantiques sacrés"))}<main class="aoP435930Body aoTP381DonorBody">${card}${browse}${options}</main>`;
+  // Three commonly used hymns direct; eight historical Office witnesses
+  // remain accessible as a secondary, source-labelled collection.
+  const core=HYMN_KEYS.slice(0,3);
+  const direct=`<section class="aoPrayHymnsDirect" data-ao-hymns-direct="true"><p>${esc(L("Choose a principal hymn directly","Choisir directement une hymne principale"))}</p><nav class="aoPrayHymnsDirectChoices" aria-label="${esc(L("Principal historic hymns","Hymnes historiques principales"))}">${core.map(id=>{const item=hymnById(id);return `<button type="button" data-tp381-hymn="${esc(id)}" aria-pressed="${id===key}" ${id===key?'aria-current="true"':''}>${esc(item.title)}</button>`}).join("")}</nav></section>`;
+  const browse=`<details class="aoTP381SecondaryOptions" data-ao-hymn-catalogue><summary>${esc(L("Eight additional seasonal Office hymn texts","Huit autres hymnes de l’Office selon les temps liturgiques"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("Historical Office usage is recorded for each witness. This is not an automatic Office calendar or a substitute for the prescribed texts.","L’usage historique est indiqué pour chaque témoin. Il ne s’agit pas d’un calendrier automatique de l’Office ni d’un remplacement des textes prescrits."))}</p><div class="aoTP381PrayerList">${HYMN_KEYS.slice(3).map(id=>{const item=hymnById(id);return `<button type="button" data-tp381-hymn="${esc(id)}" aria-current="${id===key?"true":"false"}"><span><b>${esc(item.title)}</b><small>${esc(L(item.subtitle,item.subtitleFr))}</small></span></button>`}).join("")}</div></div></details>`;
+  return `${head(L("Sacred Hymns & Canticles","Hymnes & cantiques sacrés"))}<main class="aoP435930Body aoTP381DonorBody">${direct}${card}${browse}${options}</main>`;
 }
 
 function traditionalContextGuide(kind){
@@ -758,9 +763,12 @@ function renderDyingCompanion(){
     commend:L("Commend the soul","Recommandez l’âme")
   };
   const card=`<section class="aoDevoCard" data-ao-devo-card="dying-${tab}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(titles[tab])}">${body}</div></section>`;
-  const steps=`<div class="aoTP381Tabs" role="group" aria-label="${esc(L("Bedside stages","Étapes au chevet"))}"><button type="button" data-tp381-dying="now" class="${tab==="now"?"active":""}">${esc(L("Now","Maintenant"))}</button><button type="button" data-tp381-dying="pray" class="${tab==="pray"?"active":""}">${esc(L("Pray","Prier"))}</button><button type="button" data-tp381-dying="commend" class="${tab==="commend"?"active":""}">${esc(L("Commend","Recommander"))}</button></div>`;
-  const options=`<details class="aoTP381SecondaryOptions" data-ao-dying-companion-options><summary>${esc(L("About this bedside companion","À propos de cet accompagnement"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("A bedside companion for the faithful when death may be near. The first action is pastoral, not digital: obtain a priest when possible.","Un accompagnement au chevet pour les fidèles lorsque la mort peut être proche. La première action est pastorale, non numérique : obtenir un prêtre lorsque cela est possible."))}</p>${steps}${dyingCompanionStepNav(tab)}</div></details>`;
-  return `${head(L("Dying Companion","Accompagnement du mourant"))}<main class="aoP435930Body aoTP381DonorBody">${card}${options}</main>`;
+  // The real-world first action is seeking a priest; the source-owned
+  // bedside prayer and commendation remain direct, independent choices.
+  const actions=[["now",L("Call a priest now","Appelez un prêtre maintenant")],["pray",L("Pray at the bedside","Prier au chevet")],["commend",L("Commend the soul","Recommander l’âme")]];
+  const steps=`<section class="aoBedsideDirect" data-ao-bedside-direct="true" aria-label="${esc(L("Immediate bedside actions","Actions immédiates au chevet"))}"><nav class="aoBedsideDirectChoices" aria-label="${esc(L("Choose the appropriate bedside step","Choisissez l’étape adaptée au chevet"))}">${actions.map(([id,label])=>`<button type="button" data-tp381-dying="${id}" aria-pressed="${tab===id}" ${tab===id?'aria-current="step"':''}>${esc(label)}</button>`).join("")}</nav><small>${esc(L("Seek a priest and urgent medical care where needed. These prayers do not administer the sacraments.","Contactez un prêtre et les secours médicaux si nécessaire. Ces prières n’administrent pas les sacrements."))}</small></section>`;
+  const options=`<details class="aoTP381SecondaryOptions" data-ao-dying-companion-options><summary>${esc(L("About this bedside companion","À propos de cet accompagnement"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("A bedside companion for the faithful when death may be near. The first action is pastoral, not digital: obtain a priest when possible.","Un accompagnement au chevet pour les fidèles lorsque la mort peut être proche. La première action est pastorale, non numérique : obtenir un prêtre lorsque cela est possible."))}</p>${dyingCompanionStepNav(tab)}</div></details>`;
+  return `${head(L("Dying Companion","Accompagnement du mourant"))}<main class="aoP435930Body aoTP381DonorBody">${steps}${card}${options}</main>`;
 }
 function renderPrayer(){
   const p=data().prayers?.[S.prayerId];
