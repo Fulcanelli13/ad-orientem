@@ -72,3 +72,25 @@ Original references:
 - https://prieresetdevotions.blogspot.com/2007/07/prire-efficace-lenfant-jsus-rvle-par-la.html
 - https://icrspfrance.fr/?page=child-jesus-prayers
 - https://institute-christ-king.org/kansascity-home
+
+## B05 — St Thérèse: three original Institute selections (28 October 2026)
+
+The Institute's three texts have been preserved as **three distinct source identities**, not merged into Ad Orientem's pre-existing Twenty-Four Glory Bes novena:
+
+1. **Perpetual Novena in Honor of St Thérèse** — source-linked from Pray → Devotions & Novenas → St Thérèse · Institute Devotions. The Institute's original specifies recurring Society member intentions and public Tuesday participation. Those intentions have not been silently deleted or replaced, and its weekly perpetual recitation is **not** misrepresented as nine independent day-specific prayers. Full text remains on the original linked page pending verified reusable source witness.
+2. **Prayer for Missionaries** — separate source-linked work with a historical *Raccolta* no. 573 antecedent. A retrospective French compilation cites a brief of **9 July 1928**; this does **not** by itself license later English/French transcriptions. The ICKSP addition naming its own missionaries is preserved at its source.
+3. **The Institute's prayer labeled "by Pope Benedict XV"** — actual complete *English-language printed 1925 form* added in `src/pray/icksp-therese-devotions.v1.js`. Collated against Fr Edward F. Garesche, S.J., *A Novena to the Little Flower*, Milwaukee 1925, printed pages **38–39** (PDF pages 40–41; zero-index **39–40**), https://distantreader.org/stacks/pamphlets/pdf/005457174.pdf . The end is followed by the separate instruction **Hail, Holy Queen**, fulfilled by reusing the existing canonical `marian_hail_holy_queen` in English, French or Latin. Its printed notice mentions Cardinal Della Chiesa (later Benedict XV), but it does **not unambiguously prove the Pope composed this prayer**. Attribution remains qualified. No invented French/Latin main prayer and no current indulgence claim.
+
+### App wiring and safeguards
+- Added `pray.st_therese_devotions` in `src/pray/traditional-pray-runtime.js`, with the historical 1925 original and source disclosures; the other two works are explicitly link-only.
+- Added an existing Devotions family launcher in `src/pray/presentation-runtime.js` and a cold-launch entry in `src/pray/lazy-module-registry.js`.
+- The existing canonical `st_therese` Novena detail in `src/pray/novena-runtime.js` links to the three Institute forms. Its old 24 Glory Bes method remains intact.
+- The phone Prayer route parity test now expects 27 visible cards: its original 23 stable canonical entries, Tenebrae, and the three separate new ICKSP module entry points. The original 23-source count is not rewritten.
+- New `tests/icksp-therese-devotions.mjs` is part of `npm run test:icksp-prayers`; the existing mobile Novenas suite asserts an Institute St Thérèse cross-link.
+
+### Verification status
+**Executed:** GitHub fetch/readback, JS syntax parse across changed runtime/data modules, original 1925 PDF page inspection, EN/FR rendering smoke test with the actual reader function and representative dependencies, source identity checks and canonical Salve Regina reuse.
+
+**Not executed:** full Node test runner, Playwright mobile test, end-to-end app release checks, merge, or production deployment. The development container could not access GitHub remotely; no Actions runs were available on this draft head. Thus code is committed but **NOT release-certified**.
+
+**Cumulative:** all 25 B01 source selections accepted, 98 French Divine Office source-index entries (12 previously represented in B01), **four** new draft prayer/novena experiences (August Queen, Eternal Priest, Infant King novena, St Thérèse), plus **two** St Thérèse works source-linked from the app. **Zero production releases** in this research PR.
