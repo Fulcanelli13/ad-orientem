@@ -63,7 +63,33 @@
       "no_artwork_reselection": true,
       "display_policy": "object-fit contain at natural portrait ratio; no detail-substitution or cropping out any mystery",
       "published": false,
-      "release_gate": "HOLD_FINAL_COLOR_AND_ATTRIBUTION"
+      "release_gate": "HOLD_FINAL_COLOR_AND_ATTRIBUTION",
+      "candidate_original_previews": [
+        {
+          "path": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary-yorck-complete-720.webp",
+          "sha256": "6356b633f286357467f2e660afd5db2c1fcde72582037c0e751cb6c3648817c2",
+          "pixels": [
+            720,
+            1105
+          ],
+          "bytes": 222636,
+          "retouched": false,
+          "upscaled": false
+        },
+        {
+          "path": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary-yorck-complete-1440.webp",
+          "sha256": "2a57f7adca6db6f92ab6de841c735bfaa76fff385490b61282c02ba953dd12f2",
+          "pixels": [
+            1440,
+            2211
+          ],
+          "bytes": 565774,
+          "retouched": false,
+          "upscaled": false
+        }
+      ],
+      "source_candidate_quality_review": "PASS_AS_UNFRAMED_RESEARCH_PHOTO: 720px proof visibly includes complete top fifteen roundels, entire Madonna/Child and all lower angels, no physical clips. Darker and subdued than Sailko; do not recolor or claim source match until reference acceptance.",
+      "next_gate": "Attach exact PD single-reproduction attribution, source page and hashes to actual Rosary user journey under opt-in preview; no crop whatsoever."
     },
     {
       "module": "angelus",
@@ -98,7 +124,34 @@
       "source_candidate_choice": "CROP_NATIVE_SUPPORT_ONLY_PENDING_EDGE_SIGNOFF",
       "display_policy": "natural aspect contain, not forced 3:4 or 16:9 cover (dove/lilies at risk)",
       "published": false,
-      "release_gate": "HOLD_PAINTED_EDGE_CERTIFICATION"
+      "release_gate": "HOLD_PAINTED_EDGE_CERTIFICATION",
+      "candidate_cropped_previews": [
+        {
+          "path": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-paint-proposal-v2-720.webp",
+          "sha256": "ec572953cd37d878fd346f5f9f6d611cd5874cf9bbd2d08b1bab6f4e161c8738",
+          "pixels": [
+            720,
+            707
+          ],
+          "bytes": 98464,
+          "retouched": false,
+          "upscaled": false
+        },
+        {
+          "path": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-paint-proposal-v2-1440.webp",
+          "sha256": "b49675aeababae29b9fad5b833ee5c68cff8a0b1fc3c20095670f9a9e65a7169",
+          "pixels": [
+            1440,
+            1413
+          ],
+          "bytes": 380774,
+          "retouched": false,
+          "upscaled": false
+        }
+      ],
+      "v2_corner_evidence": "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-v2-corner-grid.jpg",
+      "v2_edge_review": "HOLD: TL and bottom-left 512-pixel tiles still show a narrow light/support strip; v2 is closer but not a fully frame-free painting-only crop. Do not release.",
+      "next_gate": "Derive next tiny-edge trim using native surface boundary; ensure physical painted-surface ratio and do not clip objects or painting, particularly signature, basket, dove and lilies."
     },
     {
       "module": "evening",
@@ -123,13 +176,18 @@
     "rosary_bad_crop_candidates_disqualified": 2,
     "angelus_refinement_pending": 1,
     "evening_high_res_found": 0,
-    "photo_released": 0
+    "photo_released": 0,
+    "rosary_clean_source_faithful_proofs": 2,
+    "angelus_cropped_source_faithful_proofs": 2,
+    "angelus_v2_human_signoff": false
   },
   "no_source_original_bytes_edited": true,
   "review_files": [
     "assets/staged/prayer-wave1-photo-comparison-20261028/comparison-evidence.json",
     "assets/staged/prayer-wave1-photo-comparison-20261028/rosary-source-comparison.jpg",
     "assets/staged/prayer-wave1-photo-comparison-20261028/seven-sorrows-source-comparison.jpg",
-    "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-painted-perimeter-proposal.jpg"
+    "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-painted-perimeter-proposal.jpg",
+    "assets/staged/prayer-wave1-photo-comparison-20261028/candidate-proof-manifest.json",
+    "assets/staged/prayer-wave1-photo-comparison-20261028/angelus-v2-corner-grid.jpg"
   ]
 }
