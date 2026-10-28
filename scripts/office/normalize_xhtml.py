@@ -213,6 +213,11 @@ def convert_tree(root: Path) -> dict:
             "file": str(outfile.relative_to(root)), "status": doc["status"],
         })
 
+    groups = {(date, hour) for date, hour, _ in normalized}
+    for date, hour in groups:
+        if any((date, hour, lang) not in normalized for lang in LANGS):
+            raise ValueError("OFFICE_NORMALIZE_TRILINGUAL_ROW_MISSING:" + date + ":" + hour)
+
     comparisons = []
     for date, hour, language in sorted(normalized):
         if language != "fr":
