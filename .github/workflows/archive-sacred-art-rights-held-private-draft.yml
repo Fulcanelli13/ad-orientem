@@ -1,0 +1,39 @@
+name: Preserve rights-held Sacred Art sources in UNPUBLISHED draft
+on:
+  push:
+    branches:
+      - research/module-hero-pd-masters-20261026
+    paths:
+      - scripts/art/archive-rights-held-draft.py
+      - data/research/sacred-art-private-rights-holds-backup-manifest-20261028.json
+      - .github/workflows/archive-sacred-art-rights-held-private-draft.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: sacred-art-unpublished-rights-draft-20261028
+  cancel-in-progress: false
+
+jobs:
+  verify-and-preserve-unpublished:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify source syntax
+        run: python -m py_compile scripts/art/archive-rights-held-draft.py
+      - name: Checksum verify and archive ten originals in unpublished draft
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/art/archive-rights-held-draft.py \
+            --manifest data/research/sacred-art-private-rights-holds-backup-manifest-20261028.json \
+            --cache "$RUNNER_TEMP/held-originals" \
+            --out "$RUNNER_TEMP/unpublished-draft-assets"
+      - name: Report no public release
+        if: success()
+        run: echo "Ten rights-held research originals preserved in an UNPUBLISHED draft. No public release."
