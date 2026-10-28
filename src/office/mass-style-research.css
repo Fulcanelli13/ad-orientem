@@ -1,0 +1,147 @@
+/* Ad Orientem Office prototype: the existing Mass reader's visual grammar.
+   Research-only. Uses its semantic class names, CSS variables and proportions;
+   it does not fork the production Mass stylesheet or touch Pray routes. */
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#080910;color:#eef1e9}
+body{font-family:var(--ao-font-ui,system-ui,-apple-system,sans-serif)}
+.aoOfficePilotNav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding:12px;font-size:11px;background:#080910}
+.aoOfficePilotNav a{color:#b3bdaf;text-decoration:none}
+.aoOfficePilotNav a[aria-current="page"]{color:#eadbeb}
+.aoOfficeMassReader{
+  --ao-mass-bg:#0c0b11;--ao-mass-top:#17151e;--ao-mass-bottom:#080910;
+  --ao-mass-panel:#201d27;--ao-mass-accent:#927aa2;--ao-mass-accent-text:#c7b5d9;
+  --ao-text:#eef1e9;--ao-muted:#a9afa7;--ao-line:rgba(238,241,233,.13);
+  --ao-office-size:1;
+  position:relative;isolation:isolate;display:grid;
+  grid-template-rows:56px 48px 2px minmax(0,1fr) 72px 25px;
+  width:min(100%,1080px);height:min(88dvh,830px);min-height:510px;
+  margin:14px auto 24px;border:1px solid #f5f4f20d;border-radius:14px;overflow:hidden;
+  background:linear-gradient(180deg,var(--ao-mass-top),var(--ao-mass-bottom));
+  color:var(--ao-text)
+}
+.aoOfficeMassReader button,.aoOfficeMassReader a{font-family:inherit;cursor:pointer}
+.aoOfficeMassReader button:focus-visible,.aoOfficeMassReader a:focus-visible{outline:2px solid var(--ao-mass-accent-text);outline-offset:2px}
+.aoOfficeMassReader [hidden]{display:none!important}
+.aoOfficeMassReader .ao-reader-top-ribbon{
+  position:relative;z-index:11;display:grid;grid-template-columns:56px minmax(0,1fr) 56px;align-items:center;
+  padding:4px 6px;background:var(--ao-mass-top);border-bottom:1px solid #ffffff0c
+}
+.aoOfficeMassReader .ao-reader-top-action{
+  border:0;background:transparent;color:#d7dfd8;display:grid;place-items:center;width:46px;height:46px;margin:auto;
+  border-radius:12px;font-size:24px
+}
+.aoOfficeMassReader .ao-reader-top-action:hover{background:#ffffff08}
+.aoOfficeMassReader .ao-section-jump{
+  border:0;background:transparent;display:flex;align-items:center;justify-content:center;gap:8px;
+  min-width:0;height:46px;white-space:nowrap;
+  font:600 18px/1.1 var(--ao-font-display,Georgia,serif);color:#f1f3ee
+}
+.aoOfficeMassReader .ao-section-jump [data-office-section-title]{overflow:hidden;text-overflow:ellipsis}
+.aoOfficeMassReader .ao-section-caret{color:#879288;font:500 16px/1 system-ui,sans-serif}
+.aoOfficeStateRibbon{position:relative;z-index:8;display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:16px;padding:0 16px;background:#13121b;border-bottom:1px solid #ffffff07}
+.aoOfficeObserved{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ao-mass-accent-text);font:600 10px/1.4 system-ui,sans-serif;letter-spacing:.09em}
+.aoOfficeEdition{color:#aeb8b0;font:500 10px/1.3 system-ui,sans-serif}
+.aoOfficeModeLabel{font:600 10px/1.2 system-ui,sans-serif;letter-spacing:.1em;color:#dae0da}
+.aoOfficeMassReader .ao-progress-track{position:relative;z-index:7;height:2px;background:#ffffff11}
+.aoOfficeMassReader .ao-progress-track>span{display:block;height:100%;background:var(--ao-mass-accent);transition:width .2s}
+.aoOfficeMassStage{position:relative;min-height:0;overflow:hidden;background:radial-gradient(ellipse 54% 42% at 50% 40%,#9779a20d,transparent 78%)}
+.aoOfficeMassViewport{min-height:0;height:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;
+  touch-action:pan-y;scrollbar-width:none;padding:clamp(28px,4.5vh,48px) clamp(55px,10vw,100px) 220px;
+  scroll-padding-top:clamp(40px,8vh,80px)}
+.aoOfficeMassViewport::-webkit-scrollbar{display:none}
+.aoOfficeMassCard{max-width:820px;margin:auto;animation:officeCardIn .30s cubic-bezier(.18,.82,.2,1) both}
+.aoOfficeMassCard[data-office-arrive="previous"]{animation-name:officeCardBack}
+@keyframes officeCardIn{from{opacity:.7;transform:translateX(10vw)}to{opacity:1;transform:translateX(0)}}
+@keyframes officeCardBack{from{opacity:.7;transform:translateX(-10vw)}to{opacity:1;transform:translateX(0)}}
+.aoOfficeCardHead{padding:0 0 17px;margin:0 auto 25px;border-bottom:1px solid #ffffff0b}
+.aoOfficeCardKicker{display:block;margin-bottom:11px;color:var(--ao-mass-accent-text);font:600 10px/1.3 system-ui,sans-serif;letter-spacing:.12em}
+.aoOfficeMassReader .ao-prayer-title{margin:0;font:400 clamp(22px,2.6vw,29px)/1.2 var(--ao-font-display,Georgia,serif);letter-spacing:.015em;color:#e7ebe5}
+.aoOfficeMassReader .ao-prayer-body{max-width:760px;display:flex;flex-direction:column;gap:4px}
+.aoOfficeMassReader .ao-reader-paragraph{
+  position:relative;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:5px 0;border-radius:6px;
+  font:400 calc(clamp(20px,2.5vw,26px)*var(--ao-office-size))/1.63 var(--ao-font-liturgical,Georgia,serif);
+  color:#eef1e9;opacity:.43;transition:opacity .28s,transform .28s,text-shadow .28s;user-select:text
+}
+.aoOfficeMassReader .ao-reader-paragraph[data-active="true"]{opacity:1;transform:translateX(2px);color:#f7f8f4;text-shadow:0 0 23px #e1eed414}
+.aoOfficeMassReader .ao-reader-paragraph[data-office-near="true"]{opacity:.78}
+.aoOfficeMassReader .ao-reader-paragraph[data-line-kind="VERSE"]{font-variant-numeric:oldstyle-nums}
+.aoOfficeFullTranslation{max-width:760px;border-top:1px solid #ffffff14;margin:24px 0 0;padding:15px 0 0}
+.aoOfficeTranslationHeading,.aoOfficeLanguageLabel{font:600 9px/1.4 system-ui,sans-serif;letter-spacing:.13em;color:#a2b0a5;margin-bottom:10px}
+.aoOfficeFullTranslation .aoOfficeSourceText{font-style:italic;color:#bfc9bf}
+.aoOfficeSourceText{
+  white-space:pre-wrap;overflow-wrap:anywhere;
+  font:400 calc(clamp(18px,2vw,22px)*var(--ao-office-size))/1.59 var(--ao-font-liturgical,Georgia,serif)
+}
+.aoOfficeMissalCols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0}
+.aoOfficeMissalCols>section{min-width:0;padding:0 20px}
+.aoOfficeMissalCols>section:first-child{padding-left:0}
+.aoOfficeMissalCols>section+section{border-left:1px solid #ffffff1c}
+.aoOfficeMassReader[data-office-mode="MISSAL"] .aoOfficeMassViewport{padding-inline:clamp(30px,6vw,70px)}
+.aoOfficeRail{position:absolute;z-index:6;top:32%;pointer-events:none;width:44px;
+  display:grid;place-items:center;padding:12px 5px;border:1px solid #e6deeb18;
+  background:color-mix(in srgb,var(--ao-mass-panel) 86%,transparent);border-radius:11px;
+  color:var(--ao-mass-accent-text)}
+.aoOfficeRailLeft{left:8px}
+.aoOfficeRail span{font:600 8px/1.4 system-ui,sans-serif;letter-spacing:.03em;text-align:center;overflow-wrap:anywhere}
+.aoOfficeMassReader[data-office-mode="MISSAL"] .aoOfficeRail{display:none}
+.aoOfficeBottomNav{
+  display:grid;grid-template-columns:60px minmax(0,1fr) 60px;align-items:center;
+  padding:3px 12px;background:#121018;border-top:1px solid #ffffff12
+}
+.aoOfficeBottomNav>button{
+  border:1px solid #ffffff17;background:#ffffff08;border-radius:50%;
+  width:45px;height:45px;display:grid;place-items:center;color:#e6e8e1;font-size:22px
+}
+.aoOfficeBottomNav>button:last-child{justify-self:end}
+.aoOfficeBottomNav>button:disabled{opacity:.25;cursor:default}
+.aoOfficeCardPosition{text-align:center;min-width:0}
+.aoOfficeCardPosition [data-office-card-title]{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:400 14px/1.2 Georgia,serif}
+.aoOfficeCardPosition small{display:block;margin:5px 0 6px;font:600 9px/1 system-ui,sans-serif;letter-spacing:.12em;color:#9aaba1}
+.aoOfficeCardProgress{display:flex;gap:3px;width:min(250px,100%);height:4px;margin:auto}
+.aoOfficeProgressSegment{flex:1;border:0!important;border-radius:4px;background:#ffffff18;min-width:1px;padding:0}
+.aoOfficeProgressSegment[aria-current="step"]{background:#dfc7e9}
+.aoOfficeProgressSegment[data-office-completed="true"]{background:#aa91bc}
+.aoOfficeVerificationNote{background:#121018;padding:7px 12px;text-align:center;color:#94a3a2;font:500 9px/1.1 system-ui,sans-serif;letter-spacing:.07em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.aoOfficeRibbonMenus{position:absolute;z-index:22;left:0;right:0;top:56px;pointer-events:none}
+.aoOfficeRibbonMenus>*{pointer-events:auto}
+.aoOfficeHourMenu,.aoOfficeSectionMenu,.aoOfficePrefs{
+  position:absolute;z-index:24;top:0;border:1px solid #ffffff1a;border-radius:12px;background:#201d27;
+  padding:12px;box-shadow:0 18px 46px #0009;max-height:min(70vh,560px);overflow-y:auto
+}
+.aoOfficeHourMenu{left:9px;width:min(360px,calc(100% - 18px));display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.aoOfficeHourChoice,.aoOfficeSectionMenu button{
+  display:block;text-decoration:none;background:#ffffff05;border:1px solid #ffffff0c;border-radius:9px;
+  padding:11px;color:#d4dad4;font:500 12px/1.3 system-ui,sans-serif;text-align:left
+}
+.aoOfficeHourChoice[aria-current="page"]{background:#a283bc26;color:#ead9f6;border-color:#ac8fc157}
+.aoOfficeSectionMenu{left:50%;transform:translateX(-50%);width:min(440px,94%)}
+.aoOfficeSectionMenu button{width:100%;margin-bottom:4px;cursor:pointer}
+.aoOfficePrefs{right:7px;width:min(320px,calc(100% - 14px))}
+.aoOfficePrefs h2{margin:0 0 18px;font:400 19px/1.2 Georgia,serif}
+.aoOfficeModeControls,.aoOfficeLocaleControls{display:flex;gap:4px;padding:4px;border-radius:9px;background:#101019;margin:9px 0 14px}
+.aoOfficeModeControls button,.aoOfficeLocaleControls a{
+  flex:1;border:0;border-radius:8px;text-align:center;text-decoration:none;
+  padding:10px 6px;background:transparent;color:#b0b8b1;font:600 11px/1.2 system-ui,sans-serif
+}
+.aoOfficeModeControls button[aria-pressed="true"],.aoOfficeLocaleControls a[aria-current="page"]{background:#493951;color:#f1e5f7}
+.aoOfficeFontControl{display:grid;gap:10px;color:#b2b8b3;font:500 11px/1.3 system-ui,sans-serif}
+.aoOfficeFontControl input{accent-color:#b49bcb}
+@media(max-width:650px){
+ .aoOfficeMassReader{height:min(85dvh,750px);min-height:510px;margin:0 auto;border-radius:0}
+ .aoOfficeEdition{display:none}
+ .aoOfficeStateRibbon{grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:0 10px}
+ .aoOfficeMassViewport{padding:30px 52px 220px}
+ .aoOfficeMassReader .ao-reader-paragraph{font-size:calc(21px*var(--ao-office-size))}
+ .aoOfficeSourceText{font-size:calc(18px*var(--ao-office-size))}
+ .aoOfficeRail{left:4px;width:35px;padding:8px 2px}
+ .aoOfficeRail span{font-size:7px}
+ .aoOfficeMissalCols{grid-template-columns:1fr}
+ .aoOfficeMissalCols>section{padding:0}
+ .aoOfficeMissalCols>section+section{margin-top:22px;padding-top:20px;border-left:0;border-top:1px solid #ffffff18}
+ .aoOfficeMassReader[data-office-mode="MISSAL"] .aoOfficeMassViewport{padding:30px 25px 220px}
+ .aoOfficeBottomNav{grid-template-columns:45px minmax(0,1fr) 45px;padding-inline:7px}
+ .aoOfficeBottomNav>button{width:39px;height:39px}
+ .aoOfficeVerificationNote{font-size:8px}
+}
+@media(prefers-reduced-motion:reduce){.aoOfficeMassReader *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
