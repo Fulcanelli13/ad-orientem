@@ -43,14 +43,18 @@
 
 ## Concrete next work
 
-**A. Reconcile the 98 historic approvals** against the wider 253-work review archive, external institutional object records, old curator records and acquisition SHAs. Work on exact identities and previews without asking the user to re-select them.
+**A. COMPLETED — Reconcile all 101 historic approvals.** All 101 original artwork IDs match the same subject ID in the 253-work historical archive. Of these, 16 have 18 direct photo leads; the other 85 need source-photograph acquisition. This DOES NOT mean all 101 are linked into the separate 281-object museum registry: only three have exact museum object URL matches there. See `sacred-art-historical-101-archive-crosswalk-20261028.v1.json`.
 
-**B. Reconnect the 266 source-acquisition records** with currently retained artifact bytes and stable archival paths. A past GitHub Actions artifact ID does not prove an accessible current pristine master.
+**B. ACTIVE — 266 source-acquisition records** correspond to 35 currently listed GitHub Actions ZIP artifacts (1.291 GiB) scheduled to expire 9–10 November 2026. One specific original (Met 437821) has been downloaded and verified against its recorded SHA-256. A checksum-gated free GitHub Release archive for the 256 CC0-classified originals is running; ten non-CC0/right-held acquisitions are excluded pending separate safe preservation. Do not declare backup complete without a verified Release and asset sizes. See `sacred-art-266-acquisition-artifact-expiry-20261028.v1.json`.
 
-**C. Within current Prayer modules, prioritize the 14 zero-Keep pools**, then pools with fewer than three. Draw first from approved subject paintings and prior ratings 4–5; exclude global 0–2 and blocked artists. Keep all explicit original decisions intact.
+**C. FIRST EXISTING-LIBRARY PASS COMPLETE — 14 zero-Keep pools and seven additional underfilled/conditional pools** were reviewed against the existing historical approvals and the existing museum registry, producing 63 proposed cross-module associations. The Divine Mercy and generic Prayer Library pools must not be padded with irrelevant artwork. These are not new editorial approvals or pristine photographic sign-offs. See `pray-artwork-existing-library-priority-reuse-20261028.v1.json`.
 
 **D. Only then prepare a genuinely historic-first, photographic-pristine reviewer** with 3–5 high-quality candidate paintings per pool, no duplicate physical artworks, and exportable per-module decisions.
 
 ## Scope warning
 
 The canonical 281-object registry is **one museum acquisition source**, not the entirety of the historical gallery. A high historical approval count in a separate subject ledger is not evidence that its image is available inside the 281-object registry. The 119 prior review gallery options also include valid paintings outside that museum registry. All are separately retained in the master.
+
+## Current source backup safeguards
+
+GitHub Releases permits files under 2 GiB and does not impose a total release-size or bandwidth cap, per GitHub's official documentation. The new preservation script runs on a public GitHub-hosted runner (standard public-repo runners are free), downloads the old Action artifacts, checks every included original's SHA-256 against the acquisition ledger, excludes ten non-CC0 sources, repacks the eligible images by artifact ID, and only publishes after the full 256-original verification succeeds. It never deletes any old artifacts or modifies the production site. Exact asset-upload verification is still required; a running CI job is not evidence that the backup is finished.
