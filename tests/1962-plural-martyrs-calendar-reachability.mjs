@@ -79,6 +79,29 @@ try {
        common(x.path)||common(x.sourcePath));
      const matched=primary.length>0||sourceCommem.length>0||
        dayCommem.length>0||rowOwners.length>0;
+     // This is an independent *content* sweep: an inherited Common can
+     // have a named Santoral source owner and thus escape exact-path
+     // matching. Record Latin N. et N. versus a single French N. without
+     // assuming that every mismatch belongs to C6b/C7b.
+     const donorTextMismatches=[];
+     const twoLatin=/\bN\s*\.\s*et\s*N\s*\./iu;
+     const placeholderFrench=/\bN\s*\./giu;
+     for(const field of ["secrets","postcommunions"]){
+       for(const [index,oration] of (p[field]??[]).entries()){
+         const latin=String(oration?.lat??oration?.la??"");
+         const french=String(oration?.fr??"");
+         const english=String(oration?.en??"");
+         const frenchCount=[...french.matchAll(placeholderFrench)].length;
+         if(twoLatin.test(latin)&&frenchCount===1&&
+           /\bmartyr/iu.test(latin)&&/\bmartyr/iu.test(french)){
+           donorTextMismatches.push({field,index,
+             latinTwoNamed:true,frenchPlaceholders:frenchCount,
+             englishTwoNamed:/\bN\s*\.\s*and\s*N\s*\./iu.test(english),
+             frenchSingularLabel:/votre\s+sainte\s+(?:Vierge\s+et\s+)?Martyre\s+N\./iu.test(french),
+             explicitRowSource:oration?.sourcePath??null});
+         }
+       }
+     }
      const formResults={};
      if(matched||(day.commemorations??[]).length){
       for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
@@ -93,7 +116,7 @@ try {
        dayCommemCount:commemorations.length,
        matching:{principals:primary,calendarCommemorations:sourceCommem,
         dayCommemorations:dayCommem,prayerRows:rowOwners},
-       matched,formResults,
+       matched,formResults,donorTextMismatches,
        // Perpetua & Felicity remain their own named source-owner case.
        namedMarch6Source:cals.some(x=>normalize(x.prayerSourcePath??x.path)==="Sancti/03-06"),
        sourceFilesNotExpanded:true};
@@ -111,6 +134,10 @@ try {
 
 const matched=observed.filter(x=>x.matched);
 const failed=observed.filter(x=>x.status!=="ready");
+const inheritedMismatchCandidates=observed
+ .filter(x=>x.donorTextMismatches?.length)
+ .map(x=>({date:x.date,mainId:x.mainId,
+   sourcePath:x.sourcePath,rows:x.donorTextMismatches}));
 const countByYear=Object.fromEntries([2024,2025,2026,2027,2028,2029].map(year=>{
  const rows=observed.filter(x=>x.date.startsWith(String(year)));
  return [year,{checked:rows.length,ready:rows.filter(x=>x.status==="ready").length,
@@ -124,6 +151,8 @@ const report={
  method:"Local production index.html + AO_RUNTIME_V8.resolver.resolveDay for all civil dates; source path matching and source-owned Mass-form decision inspection; no date substitution or alternate Mass selection",
  inspectedDays:observed.length,byYear:countByYear,
  exactSourceMatchCount:matched.length,exactSourceMatches:matched,
+ inheritedDonorTextMismatchCount:inheritedMismatchCandidates.reduce((n,x)=>n+x.rows.length,0),
+ inheritedDonorTextMismatchCandidates:inheritedMismatchCandidates,
  failures:failed,
  // A zero count here does not prove that source aliases, embedded parser
  // inheritance or expressly chosen votives are impossible.
@@ -148,6 +177,8 @@ console.log("MARTYRS_REACH_SUMMARY="+JSON.stringify({
  checked:report.inspectedDays,byYear:report.byYear,
  exactSourceMatches:matched.map(x=>({date:x.date,mainId:x.mainId,
   sourcePath:x.sourcePath,match:x.matching,formResults:x.formResults})),
+ inheritedDonorTextMismatchCount:report.inheritedDonorTextMismatchCount,
+ inheritedDonorTextMismatchCandidates:inheritedMismatchCandidates.slice(0,75),
  failures:failed.slice(0,20),excludedAlternates:true,
  noClaimAboutNestedOrChosenMasses:true
 }));
