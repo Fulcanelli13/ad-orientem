@@ -19,6 +19,17 @@ export function dailyPersonalProvenance(row,L=(en)=>en){
  return L("Historical source reading · consult the edition reference","Texte issu d’une source historique · consulter la référence de l’édition");
 }
 
+/** Short, source-identifying labels; full provenance remains underneath the text.
+ * Never infer an author from a missing witness label. */
+export function dailyFormulationLabel(sourceLabel){
+ const label=String(sourceLabel||"");
+ const name=/Lasance/i.test(label)?"Lasance":/Moran/i.test(label)?"Moran":
+  /Pocket Prayer Book/i.test(label)?"Pocket Prayer Book":
+  /Exercices de la vie chrétienne/i.test(label)?"Exercices":
+  label.split(",")[0].trim()||"Historical source";
+ const year=label.match(/\b(1[0-9]{3}|20[0-9]{2})\b/)?.[0];
+ return name+(year?" · "+year:"");
+}
 export function personalDailyPrayerCard(row,plan,{esc,L,prayerParagraphs,source}){
  const note=dailyPersonalProvenance(row,L);
  const context=row.sourceContextEn||row.sourceContextFr?'<small class="aoDailyPersonalContext">'+esc(L(row.sourceContextEn||"",row.sourceContextFr||""))+'</small>':"";
@@ -26,18 +37,16 @@ export function personalDailyPrayerCard(row,plan,{esc,L,prayerParagraphs,source}
  '<p class="aoTP381TextParagraph">'+esc(L("Exact text unavailable in the selected language; nothing substituted.","Texte exact indisponible dans cette langue ; aucune substitution."))+'</p>';
  const twoFaces=Boolean(row.text&&row.latinText&&row.language!=="la"&&row.text!==row.latinText);
  const prayerBody=twoFaces?'<button type="button" data-tp381-flip aria-label="'+esc(L("Switch prayer language","Changer la langue de la prière"))+'"><span data-face-v>'+body+'</span><span data-face-la hidden>'+prayerParagraphs(row.latinText)+'</span></button>':'<div class="aoTP381Reader">'+body+'</div>';
- const matches=plan.availableVariants.filter(x=>x.slot===row.sourceId);
- let variants="";
- if(matches.length){
-  variants='<details class="aoDailyPersonalAlternatives"><summary>'+esc(L("Other formulations","Autres formulations"))+'</summary>'+
-   '<p>'+esc(L("Select one complete printed prayer. Return to St Pius X at any time.","Choisissez une prière complète tirée d’un livre imprimé. Revenez à saint Pie X à tout moment."))+'</p>'+
-   '<button type="button" data-tp381-personal-variant="default:'+esc(row.sourceId)+'" aria-pressed="'+String(!row.replacementId)+'">'+esc(L("St Pius X · Standard","Saint Pie X · Référence"))+'</button>'+
-   matches.map(x=>'<button type="button" data-tp381-personal-variant="'+esc(x.id)+'" aria-pressed="'+String(row.replacementId===x.id)+'">'+esc(x.sourceLabel)+'</button>').join("")+
-   '</details>';
- }
+ const matches=plan.direct?[]:plan.availableVariants.filter(x=>x.slot===row.sourceId);
+ const controls=matches.length?'<div class="aoDailyFormulationPicker" role="group" aria-label="'+esc(L("Prayer formulation","Formulation de la prière"))+'">'+
+  '<span class="aoDailyFormulationLabel">'+esc(L("Prayer text","Texte de prière"))+'</span>'+
+  '<div class="aoDailyFormulationChoices">'+
+   '<button type="button" data-tp381-personal-variant="default:'+esc(row.sourceId)+'" aria-pressed="'+String(!row.replacementId)+'">'+esc(L("St Pius X","Saint Pie X"))+'</button>'+
+   matches.map(x=>'<button type="button" data-tp381-personal-variant="'+esc(x.id)+'" aria-pressed="'+String(row.replacementId===x.id)+'" title="'+esc(x.sourceLabel)+'">'+esc(dailyFormulationLabel(x.sourceLabel))+'</button>').join("")+
+  '</div></div>':"";
  return '<article class="aoTP381PrayerCard" data-ao-personal-prayer="'+esc(row.sourceId)+'" data-ao-personal-source="'+esc(row.replacementId||row.sourceId)+'">'+
- '<h3>'+esc(row.title)+'</h3><small class="aoDailyPersonalProvenance">'+esc(note)+'</small>'+
- prayerBody+context+variants+source(row.sourceLabel,row.sourceUrl)+'</article>';
+ '<h3>'+esc(row.title)+'</h3>'+controls+'<small class="aoDailyPersonalProvenance">'+esc(note)+'</small>'+
+ prayerBody+context+source(row.sourceLabel,row.sourceUrl)+'</article>';
 }
 export function dailyPersonalList(rows,{esc,L,isFr}){
  return '<div class="aoTP381PrayerList" data-ao-personal-list>'+rows.map((r,i)=>
