@@ -314,7 +314,7 @@
     "test:sacred-places-p44": "node tests/sacred-places-p44-two-catalan-basilicas.mjs",
     "test:sacred-places-p46": "node tests/sacred-places-p46-four-exact-catholic-buildings.mjs",
     "test:sacred-places-p48": "node tests/sacred-places-p48-eight-global-buildings.mjs",
-    "test:daily-formulation-engine": "node tests/daily-formulation-engine.mjs && node tests/daily-personal-rule.mjs && node tests/prayer-purpose-index.mjs && node tests/adoration-four-purpose-options.mjs",
+    "test:daily-formulation-engine": "node tests/daily-formulation-engine.mjs && node tests/daily-personal-rule.mjs && node tests/prayer-purpose-index.mjs && node tests/adoration-four-purpose-options.mjs && node tests/good-death-purpose-options.mjs",
     "test:daily-personal-rule": "node tests/daily-personal-rule.mjs",
     "test:icksp-batch01-reconcile": "node tests/icksp-batch01-public-reconciliation.mjs"
   },
