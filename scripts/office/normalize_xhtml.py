@@ -249,6 +249,17 @@ def convert_tree(root: Path) -> dict:
         "liturgicallyVerified": 0, "published": 0,
     }
     (root / "normalized-manifest.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # Diagnosis of source cell count differences; no automated text rewrites.
+    for hour in ("LAUDS", "VESPERS"):
+        key_date = "2026-10-31"
+        if all((key_date, hour, locale) in normalized for locale in LANGS):
+            print("OFFICE_CELL_DIFFERENTIAL", json.dumps({
+                "date": key_date, "hour": hour,
+                "cells": {locale: [
+                    {"id": x["sourceCellId"], "incipit": x["text"][:64]}
+                    for x in normalized[(key_date,hour,locale)]["sections"]
+                ] for locale in LANGS}
+            }, ensure_ascii=False))
     return summary
 
 
@@ -265,17 +276,6 @@ if __name__ == "__main__":
     for row in summary["comparisons"]:
         if not row["structurallyAligned"] or row["identicalLongEnglishFrenchBlocks"]:
             print("OFFICE_LANGUAGE_REVIEW", json.dumps(row))
-    # Diagnosis of source cell count differences; no automated text rewrites.
-    for hour in ("LAUDS", "VESPERS"):
-        key_date = "2026-10-31"
-        if all((key_date, hour, locale) in normalized for locale in LANGS):
-            print("OFFICE_CELL_DIFFERENTIAL", json.dumps({
-                "date": key_date, "hour": hour,
-                "cells": {locale: [
-                    {"id": x["sourceCellId"], "incipit": x["text"][:64]}
-                    for x in normalized[(key_date,hour,locale)]["sections"]
-                ] for locale in LANGS}
-            }, ensure_ascii=False))
     for row in summary["records"]:
         if row["hour"] == "VESPERS" and row["language"] == "la":
             print("OFFICE_VESPERS_HEADLINE", row["date"], row["headline"][:300])
