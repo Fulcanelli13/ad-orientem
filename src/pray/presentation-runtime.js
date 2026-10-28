@@ -3013,7 +3013,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
   const mode=ADOR.mode;
   const steps=mode==='visit'?visitSteps():mode==='holy'?holySteps():mode==='night'?nightHomeAsGuided(lang()):fourSteps();
   const index=mode==='visit'?ADOR.visitStep:mode==='holy'?ADOR.holyStep:mode==='night'?ADOR.nightStep:ADOR.fourStep;
-  const chapters=steps.map((step,i)=>({id:mode+'-'+i,title:step.title}));
+  const chapters=steps.map((step,i)=>({id:mode==='night'?step.id:mode+'-'+i,title:step.title}));
   const reader=installSequentialDevotionalReader({
    mount:m,kind:'adoration',chapters,activeIndex:index,
    paragraphSelector:'.aoP435930GuideNow p,.aoP435930GuideCue p,.aoP435930Prayer .aoP435930Flip,.aoP435930Prayer .aoP435930Text',
