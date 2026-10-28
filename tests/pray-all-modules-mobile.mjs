@@ -464,6 +464,10 @@ try{
    const href=await primary.getAttribute("href");
    assert.match(href,/^https:\/\//,"Non-HTTPS Novena source for "+id);
    assert.equal(await primary.getAttribute("rel"),"noopener noreferrer");
+   if(id==="st_therese"){
+     assert.equal(await detail.locator("[data-n1-icksp-therese]").count(),1,
+       "Existing 24 Glory Bes novena must cross-link the distinct ICKSP forms");
+   }
    if(id==="holy_ghost")assert.match(await source.textContent(),/NOVENA FOR PENTECOST/,"Source points to Christmas page without Pentecost section identity");
    if(id==="perpetual_help")assert.match(await source.textContent(),/not proofread/i,"Unproofread source transcription is represented as certified");
    if(["annunciation","seven_sorrows","assumption"].includes(id)){
