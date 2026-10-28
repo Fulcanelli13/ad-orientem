@@ -21,13 +21,13 @@ The eight routines listed below are **editorial compositions by Ad Orientem** fr
 
 **Resolution outcomes:** 8/8 routine definitions found; **56 total stage placements**; **31 distinct historical full-text witnesses** used by the eight; **0 missing historical text bodies**; **7 omitted optional wordings** now surfaced in the supplemental review. These are *source-data resolution* passes, not editorial or publishing readiness.
 
-**Outstanding major hold:** English Evening Complete uses the standalone 1888 Baltimore prayer for light before examination. Its entire transcription has been verified against proofread historical page text, but **direct visual inspection of the original printed page is still pending**. It is a required step in that proposed Complete routine. See [printed p.82 / scan p.94](https://en.wikisource.org/wiki/Page:Manualofprayersf00cath.djvu/94).
+**Original-image verification completed 28 October 2026:** the 1888 Baltimore English Evening Complete prayer for light was checked against [printed p.82 / scan p.94](https://en.wikisource.org/wiki/Page:Manualofprayersf00cath.djvu/94), including its distinct preceding and following rubrics. There are now **zero unresolved historical full-text or source-image holds** among the eight proposed routines. Editorial choices, source-era canonical wording and reuse rights remain outstanding.
 
 ## Distinguish three different gates
 
 1. **Source wording found:** all proposed historical ID references lead to full text and a source-page URL. This is satisfied as a data-resolution audit.
 2. **Editorial decision:** the user must accept or replace each routine's full stage order, default wording, genuine alternatives and optional whole-prayer steps. **0/8 approved**.
-3. **Public text distribution:** exact-edition rights/reuse, original-page verification including the Baltimore exception, canonical common-prayer EN/FR matching, and release manifest approval. **0/8 cleared**.
+3. **Public text distribution:** exact-edition rights/reuse, canonical common-prayer EN/FR matching, and release manifest approval. All historical source-page images are now checked, including Baltimore. **0/8 cleared**.
 
 The proposed standard/common prayers in these profiles use three canonical IDs: `foundations_sign_of_cross`, `foundations_our_father`, `foundations_guardian_angel`. Their currently displayed wordings and translation/provenance **must be individually audited**. Having found an 1888/1905 counterpart does not mean the precise current canonical text has been copychecked to that edition.
 
@@ -96,14 +96,14 @@ The proposed standard/common prayers in these profiles use three canonical IDs: 
 <details>
 <summary><strong>English · Evening · Complete — 11 stages</strong></summary>
 
-**Not approved.** 7 required as proposed, 4 optional. **Historical image holds:** 1. B19 missing but B20 supplemented: 1.
+**Not approved.** 7 required as proposed, 4 optional. **Historical image holds:** 0. B19 missing but B20 supplemented: 1.
 
 | Position | Devotional purpose | Record | Proposed | Verification / hold |
 |---:|---|---|---|---|
 | 1 | sign-of-cross | `foundations_sign_of_cross` | Required | Existing canonical text: edition / rights audit pending |
 | 2 | presence | `b11-bbg-evening-presence` | Required | Print-image checked; B19 wording |
 | 3 | thanksgiving | `b11-bbg-evening-thanksgiving` | Required | Print-image checked; B19 wording |
-| 4 | prayer-for-light | `b12-baltimore-evening-examination-light` | Required | Proofread text; direct print image pending |
+| 4 | prayer-for-light | `b12-baltimore-evening-examination-light` | Required | Original image checked (28 October 2026); publication rights pending |
 | 5 | guided-examination | `daily-evening-examen` | Required | Silent/guided editorial control, not a historic prayer |
 | 6 | contrition | `b11-lasance-evening-contrition` | Required | Print-image checked; B19 wording |
 | 7 | act-of-love | `b11-lasance-evening-love` | Optional | Print-image checked; B20 supplemental wording |
@@ -188,7 +188,7 @@ The proposed standard/common prayers in these profiles use three canonical IDs: 
 - [ ] User approves or revises eight **whole-prayer** stage lists (required and optional)
 - [ ] Approve true alternative wordings versus prayers to recite together
 - [ ] Match canonical common prayers to source-era full texts in each displayed language
-- [ ] Check Baltimore 1888 Evening examination printed image and exact copy
+- [x] Check Baltimore 1888 Evening examination printed image and exact copy (completed 28 October 2026)
 - [ ] Complete rights review per edition and territory, without contacting publishers or paying fees
 - [ ] Assemble a **new explicit cleared-source manifest** and enable a separately reviewed release in PR #1786
 - [ ] CI-gated mobile / prayer focus / language acceptance after first actual texts are present
