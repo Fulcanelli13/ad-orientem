@@ -114,9 +114,10 @@ try{
   assert.equal(model.starts,0);
   assert.equal(model.owner,"R17_NATIVE_PRODUCTION");
   assert.equal(model.marker,"R17_NATIVE_PRODUCTION");
-  assert.equal(model.total,51,"Nuptial product reader must be 48 LIVE presentation steps plus three source-pinned insertions");
-  assert.equal(model.sourceTotal,42,"Nuptial 48-step presentation replaced the certified 39+3 source model");
-  assert.equal(model.productOwner,"SOURCE_FIRST_LIVE_PRODUCT_48");
+  assert.equal(model.total,42,"Nuptial LIVE reader must retain 39 source cards plus three source-pinned insertions");
+  assert.equal(model.sourceTotal,42,"Nuptial source must retain the certified 39+3 insertion model");
+  assert.equal(model.productOwner,model.sourceOwner,
+    "Nuptial must use the source-owned LIVE model without any historical 48-card projector");
   assert.match(model.sourceOwner,/SOURCE_FIRST_LIVE\+NUPTIAL_INSERTIONS/);
   assert.equal(model.count,3);
 
@@ -146,7 +147,7 @@ try{
 
   assert.deepEqual(pageErrors,[]);
   await context.close();
-  console.log("Nuptial real-shell acceptance: PASS — 51-step product presentation over the certified 42-step source model, with three source-pinned insertions, touch navigation, no faithful-state leakage, no legacy start.");
+  console.log("Nuptial real-shell acceptance: PASS — 42 source-first LIVE cards (39 + 3 nuptial insertions), touch navigation, no faithful-state leakage, no legacy start.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));
