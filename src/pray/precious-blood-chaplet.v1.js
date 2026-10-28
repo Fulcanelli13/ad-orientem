@@ -78,9 +78,9 @@ export function preciousBloodMystery(index,language="en"){
  return Object.freeze({
   ...m,title:language==="fr"?m.fr:m.en,language,
   paterText:pater[language],gloriaText:gloria[language],
-  responseText:language==="la"?PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1.repeatedResponse.la
-  :PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1.repeatedResponse.en,
-  responseLanguage:language==="la"?"la":"en",
+  responseText:language==="en"?PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1.repeatedResponse.en
+  :PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1.repeatedResponse.la,
+  responseLanguage:language==="en"?"en":"la",
   historicalMeditationLanguage:"en"
  });
 }
