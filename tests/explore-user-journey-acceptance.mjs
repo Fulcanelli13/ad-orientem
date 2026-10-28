@@ -208,6 +208,31 @@ try{
    await page.waitForTimeout(400);
    assert.deepEqual(offRouteScripture,[],
     "Map-only visitor must not download complete Latin/French Bible or Catena source corpora");
+   const staged=await page.evaluate(()=>{
+     const p=globalThis.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.proper;
+     return {hasProper:p?.status==="ready",status:globalThis.AO_CONTENT_V37?.status?.("scripture")?.status};
+   });
+   if(staged.hasProper)assert.equal(staged.status,"deferred",
+     "Daily content summary should expose on-demand status, not a false 'ready' or loading claim");
+   // An explicit diagnostics refresh retains the original reader's full-source
+   // capability; stub only the transport for this deterministic contract check.
+   if(staged.hasProper){
+    const explicit=await page.evaluate(async()=>{
+      const api=globalThis.AO_CONTENT_V37,svc=globalThis.AO_RUNTIME_V8.scriptureService;
+      const old=svc.load,calls=[];
+      svc.load=async function(kind){
+       calls.push(kind);
+       return {reference:{display:String(kind),kind},englishChapter:[],latinChapter:[],
+        frenchChapter:[],englishCatena:[],englishNotes:[]};
+      };
+      try{await api.hydrateDaily(globalThis.AO_RUNTIME_V8.store.getState(),{force:true});}
+      finally{svc.load=old;}
+      return {calls,documentReady:Boolean(api.getDailyDocument("gospel"))};
+    });
+    assert.ok(explicit.calls.includes("gospel"),"Explicit manual refresh must still load Gospel");
+    assert.ok(explicit.calls.includes("scripture"),"Explicit manual refresh must still load Epistle/Lesson");
+    assert.equal(explicit.documentReady,true,"Manual refresh should populate same daily reading cache");
+   }
    assert.equal(errors.length,0,"Actual visitor flow JS exceptions: "+errors.join(" | "));
    results.push({...note,passed:true});
    console.log("PASS end-to-end Explore visitor "+width+"px "+language+": "+note.steps.join("; "));
