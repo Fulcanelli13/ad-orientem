@@ -35,8 +35,12 @@ try{
    viewport:{width,height:mobile?844:960},deviceScaleFactor:mobile?2:1,
    isMobile:mobile,hasTouch:mobile,locale:"en-GB",
   });
-  const page=await context.newPage(),errors=[];
+  const page=await context.newPage(),errors=[],glyph404s=[];
   page.on("pageerror",error=>errors.push(String(error?.message??error)));
+  page.on("response",response=>{
+    if(response.status()===404&&response.url().startsWith("https://tiles.openfreemap.org/fonts/")
+      &&response.url().includes("Open%20Sans"))glyph404s.push(response.url());
+  });
   try{
    await page.goto(origin+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
    const entry=page.locator('[data-ao-app-surface="find"]');
@@ -649,8 +653,10 @@ try{
    assert.ok(emblemReview.eligible===0||emblemReview.emblemLayer||emblemReview.logoLoaded>0,
      "Institution logos must render ON eligible map pins, not only in filter chips: "+JSON.stringify(emblemReview));
    await page.screenshot({path:resolve(out,"explore-"+width+"-mass-emblems-closeup.png"),fullPage:false});
-   captures.push({width,...measures,errors,massScreenshot:true,
+   captures.push({width,...measures,errors,glyph404s,massScreenshot:true,
      closeup:emblemReview});
+   assert.deepEqual(glyph404s,[],
+     "OpenFreeMap Dark custom labels must not request unavailable implicit MapLibre Open Sans glyphs");
    assert.equal(errors.length,0,"Explore JS runtime errors at "+width+": "+errors.join(" | "));
   }finally{await context.close();}
  }
