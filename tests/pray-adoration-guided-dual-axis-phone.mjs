@@ -114,8 +114,10 @@ try{
    "Visit and untimed silence should be the only primary options");
  assert.equal(await page.locator(chooser+" .aoAdorationMethodsDisclosure").evaluate(el=>el.open),false,
    "Secondary prayer methods should not crowd the entrance");
- assert.equal(await page.locator(chooser+" .aoP435930BigGrid button").count(),3,
-   "Holy Hour, Four Ends, and Treasury must stay accessible");
+ assert.equal(await page.locator(chooser+" .aoP435930BigGrid button").count(),4,
+   "Holy Hour, Four Ends, Treasury and Night Adoration must stay accessible");
+ assert.equal(await page.locator(chooser+' [data-p435930-ador-mode="night"]').count(),1,
+   "New night-home watch must remain a secondary Adoration method");
  assert.equal(await page.locator(chooser+" .aoAdorationPrimaryGrid button").first().isVisible(),true);
  assert.equal(await page.locator("#aoPray435930.open [data-ao-pray-rail-channel]").evaluateAll(
   es=>es.every(el=>getComputedStyle(el).display==="none")
