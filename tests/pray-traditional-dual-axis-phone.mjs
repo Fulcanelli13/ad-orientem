@@ -141,8 +141,8 @@ try{
      summaryVisible:summary.getBoundingClientRect().height>=40,
      label:summary.innerText,open:el.open};
  });
- assert.ok(openingRule.summaryVisible&&openingRule.settingsTop<openingRule.horizonTop&&!openingRule.open,
-   "Daily customization must be visible and collapsed before the cinematic stage: "+JSON.stringify(openingRule));
+ assert.ok(openingRule.summaryVisible&&openingRule.settingsTop>openingRule.horizonTop&&!openingRule.open,
+   "Routine editing belongs below the prayer, not in the main reading path: "+JSON.stringify(openingRule));
  assert.match(openingRule.label,/1913.*FR.*Standard/,"Saved rule identity should be readable at entry");
  assert.ok(openingSky.height>=85&&openingSky.height<=135,
   "Quiet sky must be a minor editorial accent, not the dominant screen: "+JSON.stringify(openingSky));
@@ -159,6 +159,44 @@ try{
  assert.ok(opening.cardTop<390&&opening.optionsAfter&&opening.glossaryAfter,
    "Prayer must precede secondary descriptions and controls: "+JSON.stringify(opening));
  assert.match(await page.locator("#aoPray435930 .aoTP381DaypartStrip").innerText(),/Matin\s+Soir/);
+ // Users can read any complete prayer without assembling or editing a rule.
+ assert.equal(await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").count(),1,"Direct prayer index must be visible at the top");
+ const preferencesBeforeBrowsing=await page.evaluate(()=>localStorage.getItem("ao.pray.personal-rule.v1"));
+ await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-daily-prayer-catalog]").count(),1);
+ assert.equal(await page.locator("#aoPray435930 [data-ao-daily-prayer-catalog] [data-tp381-direct-prayer]").count()>10,true,"All original complete St Pius X prayers must be directly accessible");
+ assert.equal(await page.locator("#aoPray435930 [data-ao-daily-prayer-catalog] [data-tp381-direct-prayer='daily-prayer']").count(),1);
+ const otherPrayers=page.locator("#aoPray435930 .aoDailyCatalogAdditional");
+ assert.equal(await otherPrayers.count(),1,"Historical prayers must be in the direct index");
+ await otherPrayers.locator("summary").evaluate(el=>el.click());
+ assert.equal(await otherPrayers.evaluate(el=>el.open),true);
+ const scrollCheck=await page.locator("#aoPray435930 .aoP435930Mount").evaluate(el=>{
+  const extent=el.scrollHeight-el.clientHeight;
+  el.scrollTop=Math.min(extent,600);
+  return {extent,moved:el.scrollTop,overflow:getComputedStyle(el).overflowY};
+ });
+ assert.ok(scrollCheck.extent>500&&scrollCheck.moved>100&&scrollCheck.overflow==="auto",
+  "Expanded prayer index must scroll naturally on the main Prayer surface: "+JSON.stringify(scrollCheck));
+ const optionalPrayer=await otherPrayers.locator("[data-tp381-direct-prayer]").first().getAttribute("data-tp381-direct-prayer");
+ await otherPrayers.locator("[data-tp381-direct-prayer]").first().evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-personal-prayer='"+optionalPrayer+"']").count(),1,
+  "Direct optional prayer must render complete source text without being added to routine");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoStop").count(),2,"Individual prayer must use a single complete card and finish step");
+ assert.equal(await page.evaluate(()=>localStorage.getItem("ao.pray.personal-rule.v1")),preferencesBeforeBrowsing,
+  "Opening a historical prayer cannot silently edit saved rules");
+ await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").evaluate(el=>el.click());
+ await page.locator("#aoPray435930 [data-tp381-direct-prayer='daily-prayer']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-personal-prayer='daily-prayer']").count(),1);
+ const individualScroll=await page.locator("#aoPray435930 .aoDevoCardScroll").evaluate(el=>{
+  const extent=el.scrollHeight-el.clientHeight;
+  el.scrollTop=Math.min(extent,160);
+  return {extent,moved:el.scrollTop,overflow:getComputedStyle(el).overflowY,touchAction:getComputedStyle(el).touchAction};
+ });
+ assert.equal(individualScroll.overflow,"auto","Individual prayer text needs its own scrollable region");
+ assert.match(individualScroll.touchAction,/pan-y/,"Vertical touch reading must be enabled");
+ if(individualScroll.extent>5)assert.ok(individualScroll.moved>0,"Long individual prayer did not scroll: "+JSON.stringify(individualScroll));
+ await page.locator("#aoPray435930 [data-tp381-daily-mode='guided']").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"11","Return to full guided prayer without source changes");
  // Curated Personal Brief has full sourced cards but a shorter horizon.
  await page.locator("#aoPray435930 [data-ao-personal-settings] summary").evaluate(el=>el.click());
  await page.locator("#aoPray435930 [data-tp381-personal-action='length'][data-tp381-personal-value='brief']").evaluate(el=>el.click());
