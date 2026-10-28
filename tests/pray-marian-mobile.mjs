@@ -335,8 +335,8 @@ try{
   await historicalConclusion.evaluate(x=>x.click());
   assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),5);
   assert.equal(await page.locator("#aoPray435930 .aoFolioConclusionPart").count(),0);
-  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection").count(),5);
- assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection a[href^='https://']").count(),5);
+  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection").count(),6);
+ assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection a[href^='https://']").count(),6);
  await page.locator("#aoPray435930 .aoAngelusGuide>summary").evaluate(x=>x.click());
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuide").evaluate(x=>x.open),true);
  await page.locator("#aoPray435930 [data-p435930-seg='group']").first().evaluate(x=>x.click());
@@ -383,7 +383,7 @@ try{
  assert.equal(await flip.locator("[data-face-la]").evaluate(x=>x.hidden),false,"Latin replacement did not open");
  await page.locator("#aoPray435930 [data-p435930-seg='regina']").first().evaluate(x=>x.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-angelus-form]").getAttribute("data-ao-angelus-form"),"regina");
- assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection").count(),4);
+ assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection").count(),5);
  assert.equal(await page.locator("#aoPray435930 [data-p435930-angelus-appendix]").count(),0,"Angelus-only appendix leaked into Regina Caeli");
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary",{returnContext:null}));
  await page.waitForFunction(()=>!!document.querySelector("#aoPrayerBookRoot.open .aoRosaryGuide"),null,{timeout:18000});

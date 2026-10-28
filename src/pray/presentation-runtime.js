@@ -23,6 +23,7 @@ import {renderTenebraeBody} from "./tenebrae-presentation.js";
 import {freshTenebraeCeremony,tenebraeCeremonialAction} from "./tenebrae-ceremonial.v1.js";
 import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "./angelus-guide-data.js";
 import { rosaryGuideSections } from "./rosary-guide-data.js";
+import {B01_AUGUST_QUEEN_SOURCE} from "./icksp-batch01-public.v1.js";
 import { rosaryNamedChapters,rosaryCurrentChapter } from "./rosary-card-chapters.js";
 import {installRosaryActiveCard} from "./rosary-active-card.js";
 import { divineMercySteps, mercyStepText, MERCY_WITNESSES, MERCY_OPTIONAL_OPENINGS, rosaryPlan, ROSARY_METHODS } from "./devotional-methods-v1.js";
@@ -708,7 +709,8 @@ function angelusUnits(text,form){
 }
 function angelusGuideMarkup(form){
  const sections=angelusGuideSections(form,lang());
- return `<details class="aoP435930GuideInfo aoAngelusGuide" data-ao-devotional-guide="${esc(form)}"><summary>${esc(L('Guide · history, meaning & practice','Guide · histoire, sens et pratique'))}</summary><div class="aoAngelusGuideBody">${sections.map(entry=>`<section class="aoAngelusGuideSection"><h3>${esc(entry.heading)}</h3><p>${esc(entry.body)} <a href="${esc(entry.source.url)}" target="_blank" rel="noopener noreferrer">${esc(entry.source.label)} ↗</a></p></section>`).join('')}</div></details>`;
+ const related=`<section class="aoAngelusGuideSection" data-ao-b01-august-queen><h3>${esc(L("Related Marian devotion","Dévotion mariale associée"))}</h3><p>${esc(L("August Queen of Heaven is a separate prayer, not an Angelus or Regina Cæli response.","L’Auguste Reine des Cieux est une prière distincte, et non un répons de l’Angélus ou du Regina Cæli."))} <a href="${esc(B01_AUGUST_QUEEN_SOURCE.url)}" target="_blank" rel="noopener noreferrer">${esc(L("ICKSP · August Queen prayer","ICKSP · Prière de l’Auguste Reine"))} ↗</a></p></section>`;
+ return `<details class="aoP435930GuideInfo aoAngelusGuide" data-ao-devotional-guide="${esc(form)}"><summary>${esc(L('Guide · history, meaning & practice','Guide · histoire, sens et pratique'))}</summary><div class="aoAngelusGuideBody">${sections.map(entry=>`<section class="aoAngelusGuideSection"><h3>${esc(entry.heading)}</h3><p>${esc(entry.body)} <a href="${esc(entry.source.url)}" target="_blank" rel="noopener noreferrer">${esc(entry.source.label)} ↗</a></p></section>`).join('')}${related}</div></details>`;
 }
 function angelusDialogueHTML(parts){
  return `<span class="aoAngelusDialogue">${parts.map(part=>`<span class="aoAngelusDialogueLine ${part.role}" data-ao-angelus-voice="${part.role}"><span class="ao-liturgical-speaker" data-ao-speaker-role="${part.role==='leader'?'versicle':'response'}">${part.role==='leader'?'℣.':'℟.'}</span><span>${esc(part.text)}</span></span>`).join('')}</span>`;
@@ -1162,7 +1164,8 @@ function ensureRosaryGuide(r){
  }
  // Preserve the open Guide and the Rosary step; repaint only for a language change.
  guide.dataset.aoRosaryGuideLanguage=language;
- guide.innerHTML=`<summary>${esc(L('Guide · history, mysteries & practice','Guide · histoire, mystères et pratique'))}</summary><div class="aoRosaryGuideBody">${rosaryGuideSections(language).map(section=>`<section class="aoRosaryGuideSection"><h3>${esc(section.heading)}</h3><p>${esc(section.body)} <a href="${esc(section.source.url)}" target="_blank" rel="noopener noreferrer">${esc(section.source.label)} ↗</a></p></section>`).join('')}</div>`;
+ const allSections=rosaryGuideSections(language),later=allSections.at(-1);
+ guide.innerHTML=`<summary>${esc(L('Guide · history, mysteries & practice','Guide · histoire, mystères et pratique'))}</summary><div class="aoRosaryGuideBody">${allSections.slice(0,-1).map(section=>`<section class="aoRosaryGuideSection"><h3>${esc(section.heading)}</h3><p>${esc(section.body)} <a href="${esc(section.source.url)}" target="_blank" rel="noopener noreferrer">${esc(section.source.label)} ↗</a></p></section>`).join('')}<section class="aoRosaryGuideSection aoRosaryHistoricalAppendix" data-ao-b01-rosary-later><h3>${esc(L("Later historical note · 2002","Note historique ultérieure · 2002"))}</h3><h3>${esc(later.heading)}</h3><p>${esc(later.body)} <a href="${esc(later.source.url)}" target="_blank" rel="noopener noreferrer">${esc(later.source.label)} ↗</a></p></section><p class="aoRosaryGuideRelated" data-ao-b01-rosary-related>${esc(L("Other Marian prayer, outside the Rosary sequence:","Autre prière mariale, hors du Rosaire :"))} <a href="${esc(B01_AUGUST_QUEEN_SOURCE.url)}" target="_blank" rel="noopener noreferrer">${esc(L("August Queen of Heaven · ICKSP","Auguste Reine des Cieux · ICKSP"))} ↗</a></p></div>`;
  guide.open=wasOpen;
  rosaryGuideOpen=guide.open===true;
  return guide;
