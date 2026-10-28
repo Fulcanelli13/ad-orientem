@@ -25,14 +25,17 @@ function openedSuccessfully(value) {
 export function createAppHostAdapter(win = globalThis) {
   const runtime = () => win?.AO_RUNTIME_V8 ?? null;
   const shell = () => win?.AO_V37_SHELL ?? null;
-  // Only nonessential domains use dynamic loading. Keep Home, PRAY, Calendar,
-  // Settings and the native Mass preflight owners available at initial boot.
+  // Nonessential domain owners load on the first explicit visit. Keep Home,
+  // PRAY, Calendar, Settings and native Mass preflight ready at initial boot.
+  // Formation mirrors the existing Explore/Apostolate one-shot import.
   const domainLoads = new Map();
   function loadDomainOnce(domain) {
     if (domainLoads.has(domain)) return domainLoads.get(domain);
     const load = domain === "find"
       ? import("../find/browser-entry.js").then(mod => mod.installFindBrowserOwner(win))
-      : import("../apostolate/browser-entry.js").then(mod => mod.installApostolateOwner(win));
+      : domain === "learn"
+        ? import("../learn/browser-entry.js").then(mod => mod.installLearnBrowserOwner(win))
+        : import("../apostolate/browser-entry.js").then(mod => mod.installApostolateOwner(win));
     const settled = load.catch(error => {
       domainLoads.delete(domain); // failed requests can recover on the next visit
       throw error;
@@ -150,9 +153,9 @@ export function createAppHostAdapter(win = globalThis) {
         // obsolete PrayerBook surface if that owner cannot open.
         return Promise.resolve(modular.open()).then(openedSuccessfully);
       }
-      if (domain === "find" || domain === "apostolate") {
+      if (domain === "find" || domain === "apostolate" || domain === "learn") {
         // A first-use import installs the same modular domain owner as before.
-        // No historical V37 fallback and no eager Explore/Apostolate corpora.
+        // No historical V37 fallback and no eager Formation/Explore corpora.
         return loadDomainOnce(domain)
           .then(modular => typeof modular?.open === "function"
             ? Promise.resolve(modular.open()).then(openedSuccessfully)
@@ -161,13 +164,6 @@ export function createAppHostAdapter(win = globalThis) {
             try { win?.console?.error?.("Ad Orientem domain unavailable: "+domain,error); } catch {}
             return false; // shell retains its normal fail-closed Home fallback
           });
-      }
-      if (domain === "learn") {
-        const modular = win?.AO_LEARN_APP_V1;
-        if (typeof modular?.open !== "function") return false;
-        // Learn is fail-closed once extracted: the historical V37 domain shell
-        // is donor evidence, not a production fallback.
-        return Promise.resolve(modular.open()).then(openedSuccessfully);
       }
       const api = shell();
       if (typeof api?.openDomain !== "function") return false;
