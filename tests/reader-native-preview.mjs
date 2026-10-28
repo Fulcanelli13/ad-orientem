@@ -159,6 +159,38 @@ assert.ok(reqCards.some(c=>c.title==="Requiem · No final blessing" &&
 assert.equal(curatedReady.presentationModel.totalCards,65,
   "Requiem overlay changed normal Ordinary curated presentation");
 
+// Absolution is a distinct following action, not a reason to replace the
+// source-owned Requiem Mass with an obsolete 48-step presentation. Its
+// last-Gospel suppression and dismissal must agree with the compiled plan.
+const absolutionPrepared={
+  ...requiemPrepared,
+  session:{...requiemPrepared.session,
+    resolvedMass:{...requiemPrepared.session.resolvedMass,
+      followingActions:["REQUIEM_ABSOLUTION"]},
+    plan:{...requiemPrepared.session.plan,
+      followingGraphs:["REQUIEM_ABSOLUTION"],normalLastGospel:false},
+  },
+};
+const requiemWithAbsolution=await prepareNativeReaderPreview({
+  prepared:absolutionPrepared,reviewCuratedCards:true,
+  presentationData:data,eventData,cueRegistries,guideData,
+  requiemAbsolutionData,
+});
+assert.equal(requiemWithAbsolution.curatedEligible,true);
+assert.equal(requiemWithAbsolution.presentationModel.structureOwner,
+  "SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+assert.ok(requiemWithAbsolution.requiemAbsolutionController,
+  "Requiem absolution following-action was lost");
+const invalidAbsolution=await prepareNativeReaderPreview({
+  prepared:{...absolutionPrepared,session:{...absolutionPrepared.session,
+    plan:{...absolutionPrepared.session.plan,normalLastGospel:true}}},
+  reviewCuratedCards:true,presentationData:data,eventData,cueRegistries,guideData,
+  requiemAbsolutionData,
+});
+assert.equal(invalidAbsolution.curatedEligible,false,
+  "unsupported Absolution/Last Gospel combination should remain gated");
+
+
 assert.equal(curatedReady.presentationModel.sourceAuthorityModel,curatedReady.model);
 const previewIntroit=curatedReady.presentationModel.cards.find(c=>
   c.blocks.some(b=>b.blockId==="AO.SM.B014"));
