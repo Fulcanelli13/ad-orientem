@@ -38,7 +38,7 @@ const fail={getStyle:()=>({layers:[{id:"water",type:"fill"}]}),
  setPaintProperty:()=>{throw Error("provider revision")},setLayoutProperty:()=>{}};
 assert.equal(applyExploreDarkCartography(fail).skipped,ids.length);
 const runtime=readFileSync("src/find/map-runtime.js","utf8");
-assert.match(runtime,/if\(selectedStyle===DEFAULT_STYLE&&!styleOverride\)applyExploreDarkCartography\(map\)/,
+assert.match(runtime,/if\(selectedStyle===DEFAULT_STYLE&&!styleOverride\)\{[\s\S]*applyExploreDarkCartography\(map\)/,
  "The dark palette must be opt-in only for the verified default provider style");
 assert.match(runtime,/style:selectedStyle/);
 assert.match(runtime,/styleOverride\?\?win\.AO_EXPLORE_MAP_STYLE_URL\?\?win\.AO_DIRECTORY_MAP_STYLE_URL\?\?DEFAULT_STYLE/);
