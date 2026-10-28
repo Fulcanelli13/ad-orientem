@@ -125,7 +125,10 @@
     "batch4_review_sheet_visual_cases": 23,
     "batch4_preliminary_frame_free_primary": 10,
     "batch4_preliminary_frame_free_additional": 2,
-    "batch4_conditional_frame_free_candidates": 12
+    "batch4_conditional_frame_free_candidates": 12,
+    "batch5_painting_boundary_case_proofs": 4,
+    "batch5_source_rights_evidence_documented": 12,
+    "batch5_final_pristine_certifications": 0
   },
   "primary_artworks": [
     {
@@ -216,6 +219,67 @@
           "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
           "not_full_curatorial_or_source_rights_clearance": true,
           "pristine_certified": false
+        },
+        "batch5_painted_boundary_proposals": {
+          "source_original_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+          "source_original_pixels": [
+            3741,
+            3658
+          ],
+          "issue": "EXPOSED_UNPAINTED_SUPPORT",
+          "proposed_source_crop_boxes": [
+            {
+              "label": "UNVERIFIED_INSET_1",
+              "box": [
+                19,
+                18,
+                3722,
+                3640
+              ],
+              "proof_file": null,
+              "candidate_pixels": [
+                3703,
+                3622
+              ],
+              "sha256": null
+            },
+            {
+              "label": "UNVERIFIED_INSET_2",
+              "box": [
+                45,
+                44,
+                3696,
+                3614
+              ],
+              "proof_file": null,
+              "candidate_pixels": [
+                3651,
+                3570
+              ],
+              "sha256": null
+            },
+            {
+              "label": "UNVERIFIED_INSET_3",
+              "box": [
+                75,
+                73,
+                3666,
+                3585
+              ],
+              "proof_file": null,
+              "candidate_pixels": [
+                3591,
+                3512
+              ],
+              "sha256": null
+            }
+          ],
+          "side_by_side_sheet": "assets/staged/prayer-art-b5-four-boundary-candidates-20261028/angelus-boundary-proposals.jpg",
+          "original_source_not_changed": true,
+          "correctly_painted_edges_certified": false,
+          "pristine_certified": false,
+          "rights_certified": false,
+          "production_allowed": false
         }
       },
       "alternative_source_candidate": null,
@@ -324,6 +388,15 @@
           "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
           "not_full_curatorial_or_source_rights_clearance": true,
           "pristine_certified": false
+        },
+        "batch5_source_rights_evidence": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "category": "COMMONS_PD_ART_FAITHFUL_2D",
+          "reference": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+          "rights_note": "Commons faithful-reproduction PD-Art page; original photo sourced from National Gallery NG6276. Preserve whole original vs separate cropped derivative.",
+          "source_photo_rights_certified": false,
+          "pristine_photo_certified": false,
+          "production_approved": false
         }
       },
       "alternative_source_candidate": null,
@@ -553,6 +626,15 @@
           "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
           "not_full_curatorial_or_source_rights_clearance": true,
           "pristine_certified": false
+        },
+        "batch5_source_rights_evidence": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "category": "COMMONS_PD_ART_FAITHFUL_2D",
+          "reference": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "rights_note": "Commons PD-Art and Google Arts & Culture image. Artwork itself public domain; note painting dating metadata irregularity, no claim of digital-photo CC0.",
+          "source_photo_rights_certified": false,
+          "pristine_photo_certified": false,
+          "production_approved": false
         }
       },
       "alternative_source_candidate": null,
@@ -658,6 +740,15 @@
           "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
           "not_full_curatorial_or_source_rights_clearance": true,
           "pristine_certified": false
+        },
+        "batch5_source_rights_evidence": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+          "category": "COMMONS_PD_ART_FAITHFUL_2D",
+          "reference": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+          "rights_note": "Commons PD-Art and Google Arts & Culture image. Correct same artist, no substitution; source metadata has historic dating anomaly.",
+          "source_photo_rights_certified": false,
+          "pristine_photo_certified": false,
+          "production_approved": false
         }
       },
       "alternative_source_candidate": null,
@@ -991,6 +1082,15 @@
           "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
           "not_full_curatorial_or_source_rights_clearance": true,
           "pristine_certified": false
+        },
+        "batch5_source_rights_evidence": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+          "category": "COMMONS_PD_ART_FAITHFUL_2D",
+          "reference": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+          "rights_note": "Commons PD-Art covers central Rubens Resurrection triptych panel; verify it is the historically selected central face.",
+          "source_photo_rights_certified": false,
+          "pristine_photo_certified": false,
+          "production_approved": false
         }
       },
       "alternative_source_candidate": null,
@@ -1096,6 +1196,67 @@
           "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
           "not_full_curatorial_or_source_rights_clearance": true,
           "pristine_certified": false
+        },
+        "batch5_painted_boundary_proposals": {
+          "source_original_sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+          "source_original_pixels": [
+            3122,
+            3813
+          ],
+          "issue": "EXPOSED_UNPAINTED_SUPPORT",
+          "proposed_source_crop_boxes": [
+            {
+              "label": "UNVERIFIED_INSET_1",
+              "box": [
+                16,
+                19,
+                3106,
+                3794
+              ],
+              "proof_file": null,
+              "candidate_pixels": [
+                3090,
+                3775
+              ],
+              "sha256": null
+            },
+            {
+              "label": "UNVERIFIED_INSET_2",
+              "box": [
+                37,
+                46,
+                3085,
+                3767
+              ],
+              "proof_file": null,
+              "candidate_pixels": [
+                3048,
+                3721
+              ],
+              "sha256": null
+            },
+            {
+              "label": "UNVERIFIED_INSET_3",
+              "box": [
+                62,
+                76,
+                3060,
+                3737
+              ],
+              "proof_file": null,
+              "candidate_pixels": [
+                2998,
+                3661
+              ],
+              "sha256": null
+            }
+          ],
+          "side_by_side_sheet": "assets/staged/prayer-art-b5-four-boundary-candidates-20261028/adoration-boundary-proposals.jpg",
+          "original_source_not_changed": true,
+          "correctly_painted_edges_certified": false,
+          "pristine_certified": false,
+          "rights_certified": false,
+          "production_allowed": false
         }
       },
       "alternative_source_candidate": null,
@@ -1201,6 +1362,15 @@
           "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
           "not_full_curatorial_or_source_rights_clearance": true,
           "pristine_certified": false
+        },
+        "batch5_source_rights_evidence": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Jerome_Writing-Caravaggio_(1605-6).jpg",
+          "category": "COMMONS_PD_ART_FAITHFUL_2D",
+          "reference": "https://commons.wikimedia.org/wiki/File:Saint_Jerome_Writing-Caravaggio_(1605-6).jpg",
+          "rights_note": "Commons PD-Art for Borghese Caravaggio original; master is described as self-scanned from source reproduction, check reproduction quality.",
+          "source_photo_rights_certified": false,
+          "pristine_photo_certified": false,
+          "production_approved": false
         }
       },
       "alternative_source_candidate": null,
@@ -1306,6 +1476,37 @@
           "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
           "not_full_curatorial_or_source_rights_clearance": true,
           "pristine_certified": false
+        },
+        "batch5_painted_boundary_proposals": {
+          "source_original_sha256": "2a25ed08f0fc21825eb084e0f5a09de63e8bdcf13c42d8b008d1d3bc805d3cd5",
+          "source_original_pixels": [
+            2987,
+            3200
+          ],
+          "issue": "WHITE_NONART_MARGIN",
+          "proposed_source_crop_boxes": [
+            {
+              "label": "CONSERVATIVE_NONWHITE_BOUND_PLUS_MARGIN",
+              "box": [
+                50,
+                70,
+                2936,
+                3113
+              ],
+              "proof_file": "assets/staged/prayer-art-b5-four-boundary-candidates-20261028/king-full-size-conservative-boundary-proof.png",
+              "candidate_pixels": [
+                2886,
+                3043
+              ],
+              "sha256": "eb24fe32066c1d7b258dfb367d74bcbd6d6e21b019ebc4f59958ed590f666475"
+            }
+          ],
+          "side_by_side_sheet": "assets/staged/prayer-art-b5-four-boundary-candidates-20261028/king-boundary-proposals.jpg",
+          "original_source_not_changed": true,
+          "correctly_painted_edges_certified": false,
+          "pristine_certified": false,
+          "rights_certified": false,
+          "production_allowed": false
         }
       },
       "alternative_source_candidate": null,
@@ -1411,6 +1612,15 @@
           "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
           "not_full_curatorial_or_source_rights_clearance": true,
           "pristine_certified": false
+        },
+        "batch5_source_rights_evidence": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg",
+          "category": "COMMONS_PD_ART_FAITHFUL_2D",
+          "reference": "https://commons.wikimedia.org/wiki/File:Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg",
+          "rights_note": "Commons PD-Art for Luca Giordano BF.2004.1 image; preserve original field and attribution.",
+          "source_photo_rights_certified": false,
+          "pristine_photo_certified": false,
+          "production_approved": false
         }
       },
       "alternative_source_candidate": null,
@@ -1641,6 +1851,15 @@
           "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
           "not_full_curatorial_or_source_rights_clearance": true,
           "pristine_certified": false
+        },
+        "batch5_source_rights_evidence": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Song_of_the_Lark_-_Jules_Breton.png",
+          "category": "COMMONS_PD_ART_FAITHFUL_2D",
+          "reference": "https://commons.wikimedia.org/wiki/File:Song_of_the_Lark_-_Jules_Breton.png",
+          "rights_note": "Commons PD-Art, source originally Corel Professional Photos CD. The work itself is public domain, but exact-source provenance differs from institution-issued open access.",
+          "source_photo_rights_certified": false,
+          "pristine_photo_certified": false,
+          "production_approved": false
         }
       },
       "alternative_source_candidate": null,
@@ -2141,6 +2360,15 @@
           "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
           "not_full_curatorial_or_source_rights_clearance": true,
           "pristine_certified": false
+        },
+        "batch5_source_rights_evidence": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Meirelles-primeiramissa2.jpg",
+          "category": "COMMONS_PD_ART_FAITHFUL_2D",
+          "reference": "https://commons.wikimedia.org/wiki/File:Meirelles-primeiramissa2.jpg",
+          "rights_note": "Commons PD-Art for Victor Meirelles; file history indicates 2023 revised photograph, check revision SHA and quality.",
+          "source_photo_rights_certified": false,
+          "pristine_photo_certified": false,
+          "production_approved": false
         }
       },
       "alternative_source_candidate": null,
@@ -2246,6 +2474,15 @@
           "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
           "not_full_curatorial_or_source_rights_clearance": true,
           "pristine_certified": false
+        },
+        "batch5_source_rights_evidence": {
+          "source_url": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+          "category": "NGA_OFFICIAL_OPEN_ACCESS",
+          "reference": "https://www.nga.gov/artworks/free-images-and-open-access",
+          "rights_note": "NGA official object #34956 explicitly states the object's media are free/public domain and the NGA Open Access policy covers free commercial/noncommercial uses.",
+          "source_photo_rights_certified": false,
+          "pristine_photo_certified": false,
+          "production_approved": false
         }
       },
       "alternative_source_candidate": null,
@@ -2365,6 +2602,39 @@
           "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
           "not_full_curatorial_or_source_rights_clearance": true,
           "pristine_certified": false
+        },
+        "batch5_painted_boundary_proposals": {
+          "source_original_sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+          "source_original_pixels": [
+            1880,
+            2886
+          ],
+          "issue": "WHITE_NONART_MARGIN_CURVED_TOP",
+          "proposed_source_crop_boxes": [
+            {
+              "label": "CONSERVATIVE_NONWHITE_BOUND_PLUS_MARGIN",
+              "box": [
+                0,
+                0,
+                1880,
+                2886
+              ],
+              "proof_file": "assets/staged/prayer-art-b5-four-boundary-candidates-20261028/rosary-full-size-conservative-boundary-proof.png",
+              "candidate_pixels": [
+                1880,
+                2886
+              ],
+              "sha256": "fb9b3c4ec05e7d5833cb31f1ef36cece47d8570e72f39ea03f8c39a1d7806822"
+            }
+          ],
+          "side_by_side_sheet": "assets/staged/prayer-art-b5-four-boundary-candidates-20261028/rosary-boundary-proposals.jpg",
+          "original_source_not_changed": true,
+          "correctly_painted_edges_certified": false,
+          "pristine_certified": false,
+          "rights_certified": false,
+          "production_allowed": false,
+          "nonwhite_rectangular_crop_noop": true,
+          "next_action": "REMOVE_EXTERNAL_WHITE_CORNERS_VIA_ALPHA_MATTE_ONLY_PRESERVE_WHOLE_ARCH_AND_15_ROUNDELS"
         }
       },
       "alternative_source_candidate": {
@@ -2481,6 +2751,15 @@
           "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
           "not_full_curatorial_or_source_rights_clearance": true,
           "pristine_certified": false
+        },
+        "batch5_source_rights_evidence": {
+          "source_url": "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000",
+          "category": "MNAC_OBJECT_PUBLIC_DOMAIN_LABEL",
+          "reference": "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000",
+          "rights_note": "MNAC 008327-000 record says 'Copyright: Domini públic', but source-image bytes and exact photographer/source terms still require a file-to-object mapping.",
+          "source_photo_rights_certified": false,
+          "pristine_photo_certified": false,
+          "production_approved": false
         }
       },
       "alternative_source_candidate": null,
@@ -6481,6 +6760,36 @@
       },
       "first_photo_technical_cohort": "10 primary with no obvious external frame; two B2 external candidates appear painting-only; all still require full original-colour/detail and rights gates",
       "red_mark_case": "visit: lower-right red circular mark visible, origin not identified"
+    },
+    "B5_FOUR_BOUNDARY_AND_TWELVE_RIGHTS": {
+      "status": "BOUNDARY_PROOF_COMPLETE_RIGHTS_EVIDENCE_SOURCE_RECONCILED",
+      "boundary_workflow_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40735267373",
+      "boundary_proofs": "assets/staged/prayer-art-b5-four-boundary-candidates-20261028/boundary-proofs.json",
+      "rights_evidence": "data/research/prayer-art-b5-twelve-photo-source-rights-evidence-20261028.v1.json",
+      "exact_master_source_sha_pass": 4,
+      "source_crop_proposals": 8,
+      "meaningful_lossless_white_margin_fullsize_derivatives": 1,
+      "unmodified_noop_fullsize_rosary_derivatives": 1,
+      "primary_hero_crop_cases": 4,
+      "rights_evidence_source_photos": 12,
+      "rights_evidence_sources_by_type": {
+        "total_sources": 12,
+        "COMMONS_PD_ART_FAITHFUL_2D": 10,
+        "NGA_OFFICIAL_OPEN_ACCESS": 1,
+        "MNAC_OBJECT_PUBLIC_DOMAIN_LABEL": 1,
+        "source_pages_documented": 12,
+        "photo_rights_final_certified": 0,
+        "pristine_certified": 0,
+        "production_allowed": 0,
+        "cost_eur": 0
+      },
+      "public_photo_rights_certified": 0,
+      "pristine_final_certified": 0,
+      "production_release": 0,
+      "cost_eur": 0,
+      "source_originals_unchanged": true,
+      "preserved_user_editing_decisions": true,
+      "signoff_requirement": "Technical crop proposals cannot be promoted until all original painted pixels and file-specific rights verified; Lotto needs entire-arch alpha approach rather than rectangular crop"
     }
   },
   "protected_wave1_notes": {
@@ -6513,6 +6822,15 @@
         "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
         "not_full_curatorial_or_source_rights_clearance": true,
         "pristine_certified": false
+      },
+      "batch5_source_rights_evidence": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+        "category": "COMMONS_PD_ART_FAITHFUL_2D",
+        "reference": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+        "rights_note": "Commons PD-Art for P00361, but original photography attributed to Prado; hold for museum-specific rights and Photoshop metadata/source fidelity.",
+        "source_photo_rights_certified": false,
+        "pristine_photo_certified": false,
+        "production_approved": false
       }
     },
     {
@@ -6561,6 +6879,15 @@
         "review_basis": "COMPOSITE_WHOLE_PLUS_310PX_NATIVE_CENTRE_PLUS_155PX_NATIVE_CORNERS",
         "not_full_curatorial_or_source_rights_clearance": true,
         "pristine_certified": false
+      },
+      "batch5_source_rights_evidence": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Dyck,_Anthonis_van_-_Pouring_of_the_Holy_Ghost_-_Bildergalerie_Sanssouci.jpeg",
+        "category": "COMMONS_PD_ART_FAITHFUL_2D",
+        "reference": "https://commons.wikimedia.org/wiki/File:Dyck,_Anthonis_van_-_Pouring_of_the_Holy_Ghost_-_Bildergalerie_Sanssouci.jpeg",
+        "rights_note": "Commons PD-Art for Sanssouci Van Dyck, Google Arts & Culture file; photographic color and museum provenance pending final review.",
+        "source_photo_rights_certified": false,
+        "pristine_photo_certified": false,
+        "production_approved": false
       }
     }
   ]
