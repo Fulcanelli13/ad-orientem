@@ -98,7 +98,10 @@
     "reviewCategories": 168,
     "reviewCategoryArtworkRows": 253,
     "reviewCategoryPhotos": 139,
-    "newWave01ResearchWorks": 12
+    "newWave01ResearchWorks": 12,
+    "reviewCategoryWorksMatchedExactCanonical": 27,
+    "exactCategoryPhotosAttachedToMuseumObjects": 16,
+    "canonicalObjectsWithVisibleCategoryPreview": 11
   },
   "museumObjects": [
     {
@@ -703,7 +706,23 @@
       "possibleNameMatches": [],
       "userPoolAssignments": [],
       "requiresPhotoRightsCheck": true,
-      "productionApproved": false
+      "productionApproved": false,
+      "exactMatchedGalleryPhotoRefs": [
+        {
+          "subjectId": "BIB-G04",
+          "reviewWorkId": "met-437457",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Baptism_of_Christ_MET_DT9354.jpg?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Baptism_of_Christ_MET_DT9354.jpg",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        },
+        {
+          "subjectId": "BIB-G04",
+          "reviewWorkId": "met-437457",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Baptism_of_Christ_MET_1981.186_1.jpg?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Baptism_of_Christ_MET_1981.186_1.jpg",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        }
+      ]
     },
     {
       "artworkId": "met-435755",
@@ -1176,7 +1195,16 @@
       "possibleNameMatches": [],
       "userPoolAssignments": [],
       "requiresPhotoRightsCheck": true,
-      "productionApproved": false
+      "productionApproved": false,
+      "exactMatchedGalleryPhotoRefs": [
+        {
+          "subjectId": "BIB-G08",
+          "reviewWorkId": "met-702752",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Benedetto_Luti_-_Christ_and_the_Woman_of_Samaria_-_2015.645_-_Metropolitan_Museum_of_Art.jpg?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Benedetto_Luti_-_Christ_and_the_Woman_of_Samaria_-_2015.645_-_Metropolitan_Museum_of_Art.jpg",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        }
+      ]
     },
     {
       "artworkId": "met-437403",
@@ -4129,7 +4157,23 @@
       "possibleNameMatches": [],
       "userPoolAssignments": [],
       "requiresPhotoRightsCheck": true,
-      "productionApproved": false
+      "productionApproved": false,
+      "exactMatchedGalleryPhotoRefs": [
+        {
+          "subjectId": "BIB-G07",
+          "reviewWorkId": "met-436801",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Marriage_Feast_at_Cana_MET_DT1459.jpg?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Marriage_Feast_at_Cana_MET_DT1459.jpg",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        },
+        {
+          "subjectId": "BIB-G07",
+          "reviewWorkId": "met-436801",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_de_Flandes_-_The_Marriage_Feast_at_Cana_-_WGA12055.jpg?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_de_Flandes_-_The_Marriage_Feast_at_Cana_-_WGA12055.jpg",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        }
+      ]
     },
     {
       "artworkId": "met-440393",
@@ -4347,7 +4391,16 @@
       "possibleNameMatches": [],
       "userPoolAssignments": [],
       "requiresPhotoRightsCheck": true,
-      "productionApproved": false
+      "productionApproved": false,
+      "exactMatchedGalleryPhotoRefs": [
+        {
+          "subjectId": "DEV-11",
+          "reviewWorkId": "met-437542",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Teresa_of_%C3%81vila_Interceding_for_Souls_in_Purgatory_MET_DT206354.jpg?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Teresa_of_%C3%81vila_Interceding_for_Souls_in_Purgatory_MET_DT206354.jpg",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        }
+      ]
     },
     {
       "artworkId": "met-747199",
@@ -4649,7 +4702,23 @@
         }
       ],
       "requiresPhotoRightsCheck": true,
-      "productionApproved": false
+      "productionApproved": false,
+      "exactMatchedGalleryPhotoRefs": [
+        {
+          "subjectId": "BIB-G18",
+          "reviewWorkId": "nga-34956",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Return_of_the_Prodigal_Son_1667-1670_Murillo.jpg?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Return_of_the_Prodigal_Son_1667-1670_Murillo.jpg",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        },
+        {
+          "subjectId": "BIB-G18",
+          "reviewWorkId": "nga-34956",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Bartolom%C3%A9_Esteban_Murillo%2C_The_Return_of_the_Prodigal_Son%2C_1667-1670%2C_NGA_34956.jpg?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo%2C_The_Return_of_the_Prodigal_Son%2C_1667-1670%2C_NGA_34956.jpg",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        }
+      ]
     },
     {
       "artworkId": "cma-148758",
@@ -4899,7 +4968,16 @@
       "possibleNameMatches": [],
       "userPoolAssignments": [],
       "requiresPhotoRightsCheck": true,
-      "productionApproved": false
+      "productionApproved": false,
+      "exactMatchedGalleryPhotoRefs": [
+        {
+          "subjectId": "BIB-G03",
+          "reviewWorkId": "met-437849",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Flight_into_Egypt_MET_DT7231.jpg?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Flight_into_Egypt_MET_DT7231.jpg",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        }
+      ]
     },
     {
       "artworkId": "met-816629",
@@ -7476,7 +7554,16 @@
       "possibleNameMatches": [],
       "userPoolAssignments": [],
       "requiresPhotoRightsCheck": true,
-      "productionApproved": false
+      "productionApproved": false,
+      "exactMatchedGalleryPhotoRefs": [
+        {
+          "subjectId": "BIB-G17",
+          "reviewWorkId": "met-436302",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Good_Samaritan_MET_DP278746.jpg?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Good_Samaritan_MET_DP278746.jpg",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        }
+      ]
     },
     {
       "artworkId": "kress-k2017",
@@ -8662,7 +8749,23 @@
       "possibleNameMatches": [],
       "userPoolAssignments": [],
       "requiresPhotoRightsCheck": true,
-      "productionApproved": false
+      "productionApproved": false,
+      "exactMatchedGalleryPhotoRefs": [
+        {
+          "subjectId": "BIB-G22",
+          "reviewWorkId": "met-437871",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Supper_at_Emmaus_MET_DP120945.jpg?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Supper_at_Emmaus_MET_DP120945.jpg",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        },
+        {
+          "subjectId": "BIB-G22",
+          "reviewWorkId": "met-437871",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/La_cena_de_Ema%C3%BAs%2C_by_Diego_Vel%C3%A1zquez.jpg?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:La_cena_de_Ema%C3%BAs%2C_by_Diego_Vel%C3%A1zquez.jpg",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        }
+      ]
     },
     {
       "artworkId": "cma-143138",
@@ -9022,7 +9125,16 @@
       "possibleNameMatches": [],
       "userPoolAssignments": [],
       "requiresPhotoRightsCheck": true,
-      "productionApproved": false
+      "productionApproved": false,
+      "exactMatchedGalleryPhotoRefs": [
+        {
+          "subjectId": "BIB-G05",
+          "reviewWorkId": "nga-50726",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan_de_Flandes%2C_The_Temptation_of_Christ%2C_c._1500-1504%2C_NGA_50726.jpg?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_de_Flandes%2C_The_Temptation_of_Christ%2C_c._1500-1504%2C_NGA_50726.jpg",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        }
+      ]
     },
     {
       "artworkId": "met-437821",
@@ -9854,7 +9966,16 @@
       "possibleNameMatches": [],
       "userPoolAssignments": [],
       "requiresPhotoRightsCheck": true,
-      "productionApproved": false
+      "productionApproved": false,
+      "exactMatchedGalleryPhotoRefs": [
+        {
+          "subjectId": "BIB-G09",
+          "reviewWorkId": "nga-12205",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Netherlandish_16th_Century%2C_The_Healing_of_the_Paralytic%2C_c._1560-1590%2C_NGA_12205.jpg?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Netherlandish_16th_Century%2C_The_Healing_of_the_Paralytic%2C_c._1560-1590%2C_NGA_12205.jpg",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        }
+      ]
     },
     {
       "artworkId": "nga-129283",
@@ -11426,7 +11547,23 @@
         }
       ],
       "requiresPhotoRightsCheck": true,
-      "productionApproved": false
+      "productionApproved": false,
+      "exactMatchedGalleryPhotoRefs": [
+        {
+          "subjectId": "DEV-05",
+          "reviewWorkId": "met-438434",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jean_Auguste_Dominique_Ingres_-_The_Virgin_Adoring_the_Host.jpg",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        },
+        {
+          "subjectId": "DEV-05",
+          "reviewWorkId": "met-438434",
+          "preview": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Virgin_Adoring_the_Host.PNG?width=950",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Virgin_Adoring_the_Host.PNG",
+          "photoStatus": "EXACT_OBJECT_URL_MATCH_PHOTO_NOT_CERTIFIED"
+        }
+      ]
     },
     {
       "artworkId": "met-437527",
