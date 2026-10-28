@@ -1,0 +1,295 @@
+{
+  "schema": "ad-orientem.daily-prayer-pius-x-primary-b21.v1",
+  "date": "2026-10-28",
+  "status": "SOURCE_ANCHOR_NOT_PUBLIC_RELEASE",
+  "editorial_priority": "ST_PIUS_X_CATECHISM_PRIMARY_OTHER_MANUALS_SUPPLEMENTARY",
+  "parentage": {
+    "original1905": "Compendio della dottrina cristiana (Rome, 1905), Orazioni quotidiane e altre preci",
+    "authorizedFrench1913": "Catéchisme de la doctrine chrétienne, French edition printed with March 7 1913 authorization, derived from revised 1912 Italian catechism",
+    "greaterCatechism": "Catechismo maggiore of St Pius X, Q 972–985, practical daily pious exercises",
+    "laterUpdatedAppendix": "Postconciliar redaction of prayer formulas published as a 1967 update is NOT an original 1905/1912 Pius X prayer witness"
+  },
+  "hierarchy": [
+    "Pius X catechism original or authorized source edition = routine sequence and primary common texts",
+    "Source-era EN/FR attested text with verified wording = language presentation only (no invented translation)",
+    "Other preconciliar manuals = optional extra complete devotional prayers only",
+    "Existing canonical reader remains unchanged until gated release"
+  ],
+  "sources": [
+    {
+      "name": "1905 printed-source transcription",
+      "url": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Orazioni_quotidiane_ed_altre_preci"
+    },
+    {
+      "name": "French 1913 direct scanned pages 117–118",
+      "url": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf"
+    },
+    {
+      "name": "Catechismo maggiore Q972–985",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/"
+    }
+  ],
+  "editions": [
+    {
+      "id": "piusx-1905-it",
+      "name": "Compendio della dottrina cristiana (1905), original Italian daily-prayer appendix",
+      "lang": "it",
+      "date": "1905",
+      "kind": "ORIGINAL_1905_TEXT",
+      "url": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Orazioni_quotidiane_ed_altre_preci",
+      "imageChecked": false,
+      "note": "Proofread 1905 transcription. Do not treat its wording as identical to the later 1912/1913 authorized revised edition.",
+      "routines": {
+        "morning": {
+          "text": "Vi adoro, Dio mio, e vi amo con tutto il cuore: vi ringrazio di avermi creato, fatto cristiano e conservato in questa notte: vi offerisco tutte la mie azioni, vi prego di preservarmi in questo giorno dal peccato e liberarmi da ogni male. Così sia.",
+          "stages": [
+            [
+              "sign-of-cross",
+              "Opening Sign of the Cross",
+              "before-core"
+            ],
+            [
+              "daily-prayer",
+              "Morning adoration, thanksgiving and offering",
+              "core"
+            ],
+            [
+              "our-father",
+              "Pater noster",
+              "common"
+            ],
+            [
+              "hail-mary",
+              "Ave Maria",
+              "common"
+            ],
+            [
+              "creed",
+              "Apostles' Creed",
+              "common"
+            ],
+            [
+              "faith",
+              "Act of Faith",
+              "common"
+            ],
+            [
+              "hope",
+              "Act of Hope",
+              "common"
+            ],
+            [
+              "charity",
+              "Act of Charity",
+              "common"
+            ],
+            [
+              "salve-regina",
+              "Salve Regina",
+              "common"
+            ],
+            [
+              "guardian-angel",
+              "Angele Dei",
+              "common"
+            ]
+          ]
+        },
+        "evening": {
+          "text": "Vi adoro, Dio mio, e vi amo con tutto il cuore; vi ringrazio d’avermi creato, fatto cristiano e conservato in questo giorno: vi offerisco tutto quello che oggi ho fatto di bene e vi prego a liberarmi da ogni male. Così sia.",
+          "stages": [
+            [
+              "daily-prayer",
+              "Evening adoration, thanksgiving and offering",
+              "core"
+            ],
+            [
+              "our-father",
+              "Pater noster",
+              "common"
+            ],
+            [
+              "hail-mary",
+              "Ave Maria",
+              "common"
+            ],
+            [
+              "glory-be",
+              "Gloria Patri",
+              "common"
+            ],
+            [
+              "contrition",
+              "Act of Contrition",
+              "common"
+            ],
+            [
+              "jesus-joseph-mary-1",
+              "Jesus, Joseph and Mary — dedication",
+              "final"
+            ],
+            [
+              "jesus-joseph-mary-2",
+              "Jesus, Joseph and Mary — last agony",
+              "final"
+            ],
+            [
+              "jesus-joseph-mary-3",
+              "Jesus, Joseph and Mary — peaceful death",
+              "final"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "piusx-1913-fr",
+      "name": "Catéchisme de la doctrine chrétienne, French edition (1913, authorized)",
+      "lang": "fr",
+      "date": "1913",
+      "kind": "AUTHORIZED_1913_FRENCH_TRANSLATION_OF_REVISED_1912_TEXT",
+      "url": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf",
+      "imagePages": [
+        117,
+        118
+      ],
+      "imageChecked": true,
+      "note": "French edition carries the March 7, 1913 approval letter for the revised catechism. It is not word-for-word the 1905 Italian appendix.",
+      "routines": {
+        "morning": {
+          "text": "Je vous adore, mon Dieu, et vous aime de tout mon cœur. Je vous remercie de m'avoir créé, fait chrétien et conservé en cette nuit. Je vous offre les actions de la journée; faites qu'elles soient toutes selon votre sainte volonté, pour votre plus grande gloire. Préservez-moi du péché et de tout mal. Que votre grâce soit toujours avec moi et avec tous ceux qui me sont chers. Ainsi soit-il.",
+          "stages": [
+            [
+              "sign-of-cross",
+              "Signe de la Croix",
+              "core"
+            ],
+            [
+              "daily-prayer",
+              "Prière du matin : adoration, action de grâces et offrande",
+              "core"
+            ],
+            [
+              "our-father",
+              "Pater",
+              "common"
+            ],
+            [
+              "hail-mary",
+              "Ave",
+              "common"
+            ],
+            [
+              "glory-be",
+              "Gloria",
+              "common"
+            ],
+            [
+              "creed",
+              "Credo",
+              "common"
+            ],
+            [
+              "faith",
+              "Acte de foi",
+              "common"
+            ],
+            [
+              "hope",
+              "Acte d’espérance",
+              "common"
+            ],
+            [
+              "charity",
+              "Acte de charité",
+              "common"
+            ],
+            [
+              "salve-regina",
+              "Salve Regina",
+              "common"
+            ],
+            [
+              "guardian-angel",
+              "Angele Dei",
+              "common"
+            ]
+          ]
+        },
+        "evening": {
+          "text": "Je vous adore, mon Dieu, et vous aime de tout mon cœur. Je vous remercie de m'avoir créé, fait chrétien et conservé en ce jour. Pardonnez-moi le mal que j'ai commis aujourd'hui, et si j'ai accompli quelque bien, acceptez-le. Gardez-moi dans le repos et délivrez-moi des dangers. Que votre grâce soit toujours avec moi et avec tous ceux qui me sont chers. Ainsi soit-il.",
+          "stages": [
+            [
+              "daily-prayer",
+              "Prière du soir : adoration, action de grâces et protection",
+              "core"
+            ],
+            [
+              "our-father",
+              "Pater",
+              "common"
+            ],
+            [
+              "hail-mary",
+              "Ave",
+              "common"
+            ],
+            [
+              "glory-be",
+              "Gloria",
+              "common"
+            ],
+            [
+              "creed",
+              "Credo",
+              "common"
+            ],
+            [
+              "faith",
+              "Acte de foi",
+              "common"
+            ],
+            [
+              "hope",
+              "Acte d’espérance",
+              "common"
+            ],
+            [
+              "charity",
+              "Acte de charité",
+              "common"
+            ],
+            [
+              "examen",
+              "Bref examen de conscience",
+              "guided"
+            ],
+            [
+              "contrition",
+              "Acte de contrition",
+              "common"
+            ],
+            [
+              "de-profundis",
+              "De profundis — pour les âmes du Purgatoire",
+              "supplement-after"
+            ],
+            [
+              "jesus-joseph-mary",
+              "Jésus, Joseph, Marie : invocations",
+              "supplement-after"
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "caveats": [
+    "1905 original Italian and 1912 revised/1913 French order differ; do not synthesize as one alleged original.",
+    "The 1913 printed French text was visually checked on pages 117 and 118. The 1905 Italian appendix presently relies on proofread Wikisource transcription, not a direct image check in this pass.",
+    "English edition-matched Pius X Morning/Evening prayer text not yet independently verified; do not invent or translate one and label historical.",
+    "1913 French appended De Profundis and deathbed invocations are adjacent devotions, not necessarily core prescribed evening list.",
+    "Some older indulgence notes are historically situated and not current indulgence promises.",
+    "All strings are research witnesses and guide labels; no rights clearance, user editorial choice or public manifest authorization is implied."
+  ]
+}
