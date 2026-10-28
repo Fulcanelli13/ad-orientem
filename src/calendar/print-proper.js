@@ -54,7 +54,7 @@ function sectionsFromProper(p,lang){
  */
 export function assessResolvedProperTextSections(proper,{language="en"}={}){
   if(!["en","fr"].includes(language))return {ok:false,reason:"Unsupported vernacular"};
-  const p=proper?.data&&proper?.status?proper.data:proper;
+  let p=proper?.data&&proper?.status?proper.data:proper;
   if(!p||typeof p!=="object")return {ok:false,reason:"Resolved Proper unavailable"};
   // Print must use the SAME exact-source, non-Virgin C7b editorial
   // inheritance already verified in the LIVE Reader, not the raw host
