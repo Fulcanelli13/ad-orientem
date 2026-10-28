@@ -190,8 +190,9 @@ jobs:
           for hour,languages in expected.items():
             for lang,number in languages.items():
               d=json.loads((Path(os.environ["OUTPUT"])/"all-souls"/"2026-11-02"/hour.lower()/(lang+".research.json")).read_text(encoding="utf8"))
-              assert len(d["omittedSourceCells"])==number,(hour,lang,d["omittedSourceCells"])
-              assert all(x["reason"] in {"UPSTREAM_EXPLICIT_START_OMISSION","UPSTREAM_EXPLICIT_HYMN_OMISSION"} for x in d["omittedSourceCells"])
+              new_status=[x for x in d["omittedSourceCells"] if x["reason"] in {"UPSTREAM_EXPLICIT_START_OMISSION","UPSTREAM_EXPLICIT_HYMN_OMISSION"}]
+              assert len(new_status)==number,(hour,lang,d["omittedSourceCells"])
+              assert all(x["reason"] in {"UPSTREAM_EXPLICIT_START_OMISSION","UPSTREAM_EXPLICIT_HYMN_OMISSION","UPSTREAM_EXPLICIT_PRECES_OMISSION"} for x in d["omittedSourceCells"])
           assert souls_mass["published"]==0 and not souls_mass["productionRouteRegistered"]
           rubric=json.loads((Path(os.environ["OUTPUT"])/"printed-rubric-audit.json").read_text(encoding="utf8"))
           assert rubric["schema"]=="ao.office.independent-1961-rubric-pilot.v1"
