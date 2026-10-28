@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {DIVINUM_OFFICIUM_PIN} from "../src/app/source-transport-compat.js";
-import {renderOfficeResearchReader,validateResearchOfficePair} from "../src/office/research-reader.js";
+import {renderOfficeResearchReader,validateResearchOfficePair,sourceCellHasMissingTranslation,missingOfficeSourceCells} from "../src/office/research-reader.js";
 
 const doc=(locale,overrides={})=>({
   schema:"ao.office.source-cells.v1",
@@ -76,4 +76,18 @@ test("single-language switches do not lose source references or invent translati
   assert.match(en,/lang="en"/);
   assert.doesNotMatch(en,/lang="la"/);
   assert.equal((la.match(/aoOfficeResearchSection aoTenebReading/g)||[]).length,2);
+});
+
+test("literal unresolved upstream translation placeholders are forbidden in both Office research readers",()=>{
+  for(const marker of ["1 is missing","2 is missing","special is missing","special is missing\\nPartial martyrology"]){
+    assert.equal(sourceCellHasMissingTranslation(marker),true,marker);
+    const incomplete=doc("fr",{sections:french.sections.map((s,i)=>i===1?{...s,text:marker}:s)});
+    const missing=missingOfficeSourceCells(incomplete);
+    assert.equal(missing.length,1);
+    assert.equal(missing[0].sourceCellId,"Vespera3");
+    assert.throws(()=>renderOfficeResearchReader({latin,translation:incomplete,locale:"fr"}),/UPSTREAM_MISSING_TEXT/);
+  }
+  assert.equal(sourceCellHasMissingTranslation("Our special is missing from this sentence."),false);
+  assert.equal(sourceCellHasMissingTranslation("Special is missing no longer: we found the full source."),true);
+  assert.equal(missingOfficeSourceCells(english).length,0);
 });
