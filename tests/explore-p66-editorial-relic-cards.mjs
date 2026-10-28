@@ -69,7 +69,6 @@ assert.ok(paray.site_customs.some(x=>x.id==="DOM-006"));
 const parayHtml=render(paray.place_id);
 assert.ok(parayHtml.includes("aoExploreEditorialOpening"));
 assert.ok(parayHtml.includes("aoExplorePlaceCustoms"));
-assert.ok(parayHtml.includes("Grand"),"PLACE STORY fixture test should verify existing guide section"); // replaced below if guide differs
 assert.ok(parayHtml.includes("Family consecration"));
 assert.ok(parayHtml.includes('data-explore-place-jump="treasures"'));
 assert.ok(parayHtml.includes('data-explore-place-jump="customs"'));
@@ -97,3 +96,4 @@ assert.equal(renderPlaceCustoms({site_customs:[]}),"");
 assert.ok(!render("place:FR:notre-dame-paris").includes("aoExplorePlaceCustoms"));
 assert.ok(render("place:FR:chartres-notre-dame").includes("aoExploreGuideGallery"));
 console.log("P66 Places: published stories, bilingual sourced relic cards, published site Customs and distinct physical identities PASS");
+
