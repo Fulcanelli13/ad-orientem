@@ -24,6 +24,7 @@ import {JOSEPH_SEVEN_SORROWS_SOURCE_B24,JOSEPH_SEVEN_PRAYERS_B24,JOSEPH_SEVEN_ST
 import "./st-joseph-seven-sorrows-styles-b24.js";
 import {MONTFORT_B26_SOURCE,MONTFORT_B26_PHASES,MONTFORT_B26_AVE_MARIS_LATIN,MONTFORT_B26_CONSECRATION_ACT_EN,montfortPhaseForDay,montfortSchedule,montfortTodayLocal,montfortNextFeast} from "./montfort-consecration-b26.js";
 import "./montfort-consecration-styles-b26.js";
+import {MONTFORT_B27_PRAYERS,MONTFORT_B27_SOURCE,montfortHistoricalPrayerRows,montfortB27RequiredForDay} from "./montfort-original-prayers-b27.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
 import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
 import {monthlyDevotionalRegister} from "./quiet-devotional-progression.js";
@@ -1864,6 +1865,19 @@ function renderPriestIntercessions(){
  * never silently omitted. This is NOT the St Joseph Novena (§301).
  */
 
+function renderMontfortHistoricalB27(id){
+ const p=MONTFORT_B27_PRAYERS[id],rows=montfortHistoricalPrayerRows(id);
+ if(!p||!rows?.length)return '<p class="aoMontfortB26Note">'+esc(L('Historical prayer source unavailable.','Source de la prière historique indisponible.'))+'</p>';
+ const title=isFr()?p.titleFr:p.titleEn;
+ const optional=id==='augustine';
+ const texts=id==='augustine'
+  ?'<div lang="en">'+rows.filter(r=>r.kind==='original').map(r=>'<p class="aoMontfortB26Original">'+esc(r.leader)+'</p>').join('')+'</div><details class="aoMontfortB26Details"><summary>'+esc(L('Montfort’s transmitted Latin prayer','Prière latine transmise par Montfort'))+'</summary><div lang="la">'+rows.filter(r=>r.kind==='originalLatin').map(r=>'<p class="aoMontfortB26Original">'+esc(r.leader)+'</p>').join('')+'</div></details>'
+  :'<div lang="en" class="aoMontfortB27Litany">'+rows.map(r=>r.kind==='collect'
+   ?'<p class="aoMontfortB27Collect">'+esc(r.leader)+'</p>'
+   :'<p class="aoMontfortB27Response" data-ao-montfort-original-row><span>'+esc(r.kind==='versicle'?'℣ '+r.leader:r.leader)+'</span>'+(r.response?'<strong>'+esc(r.kind==='versicle'?'℟ '+r.response:r.response)+'</strong>':'')+'</p>').join('')+'</div>';
+ return '<details class="aoMontfortB26Details aoMontfortB27Prayer" data-ao-montfort-b27-original="'+esc(id)+'"><summary>'+esc(title)+(optional?' · '+esc(L('optional','facultatif')):'')+'</summary><p class="aoMontfortB26Note">'+esc(L('Historical English source, not a verified French translation. Original printed-page collation outstanding.','Témoin historique anglais ; aucune traduction française vérifiée. Collation des pages imprimées encore en attente.'))+'</p>'+texts+'<p class="aoMontfortB26Note">'+esc(p.note)+'</p><a href="'+esc(p.witnessUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(L('View the historical source','Consulter la source historique'))+'</a></details>';
+}
+
 function renderMontfortB26(){
  const w=montfortSchedule(MONTFORT.target);
  if(!w)return callout(esc(L('This preparation date is invalid.','Cette date de préparation est invalide.')),'warn');
@@ -1885,9 +1899,10 @@ function renderMontfortB26(){
  const cues=ending
   ?'<p>'+esc(L('Montfort directs confession and Holy Communion with this intention; after Communion, recite and sign the act of consecration personally (True Devotion §231). An offering or penance according to one’s means is recommended, not obligatory (§232).','Montfort recommande la confession et la sainte Communion avec cette intention, puis la récitation et la signature personnelle de l’acte après la Communion (§231). Une offrande ou pénitence selon ses moyens est conseillée sans être obligatoire (§232).'))+'</p>'+originalAct
   :'<p>'+esc(isFr()?phase.dailyDirectionFr:phase.dailyDirectionEn)+'</p>'+
-   (day>=13?'<p class="aoMontfortB26Note">'+esc(L('Source-required litanies are named below. The Litany of the Holy Spirit and of the Holy Name need independent original-form admission; the shorter “Come, Holy Spirit” is not labelled as a substitute.','Les litanies prescrites sont identifiées ci-dessous. Les litanies du Saint-Esprit et du Saint Nom nécessitent encore une admission de leur version historique ; « Venez, Esprit-Saint » n’est pas présenté comme leur remplacement.'))+'</p>':'')+
+   (day>=13?'<p class="aoMontfortB26Note">'+esc(L('Full English historical litanies are included below. Their original printed pages have not yet been independently collated; no French translation is invented.','Les litanies historiques anglaises intégrales figurent ci-dessous. Les pages imprimées d’origine restent à collationner et aucune traduction française n’est inventée.'))+'</p>':'')+
    (phase.id==='self'?'<p class="aoMontfortB26Note">'+esc(L('Prescribed: Litany of the Holy Spirit, Ave Maris Stella, Litany of Loreto.','Prescrit : litanies du Saint-Esprit, Ave Maris Stella, litanies de Lorette.'))+'</p>':phase.id==='mary'?'<p class="aoMontfortB26Note">'+esc(L('Prescribed: Litany of the Holy Spirit, Ave Maris Stella, at least five decades of the Rosary.','Prescrit : litanies du Saint-Esprit, Ave Maris Stella, au moins cinq dizaines du Rosaire.'))+'</p>':phase.id==='jesus'?'<p class="aoMontfortB26Note">'+esc(L('Prescribed: Litany of the Holy Spirit, Ave Maris Stella, Litany of the Holy Name of Jesus.','Prescrit : litanies du Saint-Esprit, Ave Maris Stella, litanies du Saint Nom de Jésus.'))+'</p>':'')+
    (phase.canonicalIds||[]).map(prayer).join('')+
+   (day>=13?montfortB27RequiredForDay(day).map(renderMontfortHistoricalB27).join(''):'')+
    (phase.ownRosary?'<button type="button" class="aoMontfortB26Jump" data-p435930-montfort-rosary>'+esc(L('Open the existing Holy Rosary','Ouvrir le Saint Rosaire existant'))+'</button>':'')+hymn;
  const sourceLinks=[MONTFORT_B26_SOURCE.instructionsWitness,MONTFORT_B26_SOURCE.originalActWitness,MONTFORT_B26_SOURCE.originalScanWitness].map((url,i)=>'<p><a href="'+esc(url)+'" rel="noopener noreferrer" target="_blank">'+esc(i===0?L('Original 1863 instructions (digital)','Instructions originales de 1863 (numériques)'):i===1?L('Faber 1863 consecration act','Acte de consécration, Faber 1863'):L('Historical book edition and provenance','Édition historique et provenance'))+'</a></p>').join('');
  return head(title,L('12 days + three weeks · original source-directed programme','12 jours + trois semaines · programme conforme à la source'))+
@@ -1903,7 +1918,7 @@ function renderMontfortB26(){
   '<label class="aoMontfortB26Check"><input type="checkbox" data-p435930-montfort-mark '+(done?'checked':'')+'/>'+esc(ending?L('I have personally made this consecration','J’ai personnellement fait cette consécration'):L('I have completed this day’s preparation','J’ai accompli la préparation de ce jour'))+'</label>'+
   '<div class="aoMontfortB26Nav"><button type="button" data-p435930-montfort-prev '+(day===1?'disabled':'')+'>'+esc(L('Previous','Précédent'))+'</button><button type="button" data-p435930-montfort-today>'+esc(L('Current day','Jour actuel'))+'</button><button type="button" data-p435930-montfort-next '+(ending?'disabled':'')+'>'+esc(ending?L('Complete','Terminé'):day===33?L('Consecration act','Acte de consécration'):L('Next','Suivant'))+'</button></div>'+
   '<details class="aoMontfortB26Details"><summary>'+esc(L('Source, historical limits and required prayers','Sources, limites historiques et prières prescrites'))+'</summary>'+
-  '<p class="aoMontfortB26Note">'+esc(L('True Devotion §§227–233 and Faber’s 1863 public-domain consecration act. This reader reproduces Montfort’s phase structure, not the later 1958-and-after thirty-three daily reading schemes. The printed original has not undergone page-image collation. Historical litanies not yet source-admitted in Ad Orientem are explicitly identified rather than silently omitted or replaced. No copyrighted 1987 translation is used.','Vraie Dévotion §§227–233 et acte de consécration de Faber (1863, domaine public). Ce lecteur reprend les quatre périodes de Montfort, sans attribuer au saint les lectures quotidiennes élaborées postérieurement. Les pages imprimées originales restent à collationner. Les litanies historiques non encore admises sont signalées, jamais remplacées silencieusement. La traduction de 1987 n’est pas reproduite.'))+'</p>'+sourceLinks+'</details></main>';
+  '<p class="aoMontfortB26Note">'+esc(L('True Devotion §§227–233, Faber’s 1863 public-domain consecration act, the 1897 Holy Ghost litany and the 1909 Holy Name litany. Full digital historic English prayers are present, but page-by-page original photographed print collation remains outstanding. Prayer attributed by Montfort to Augustine is taken from §67; this is not an Augustinian autograph. No copyrighted 1987 translation is used.','Vraie Dévotion §§227–233, acte de consécration de Faber (1863), litanies du Saint-Esprit (1897) et du Saint Nom (1909). Les prières historiques anglaises sont complètes ; leur collation photographique originale reste à accomplir. La prière attribuée à Augustin provient du §67 de Montfort, sans manuscrit autographe augustinien. La traduction protégée de 1987 est exclue.'))+'</p>'+sourceLinks+'</details></main>';
 }
 
 function renderJosephSeven(){
