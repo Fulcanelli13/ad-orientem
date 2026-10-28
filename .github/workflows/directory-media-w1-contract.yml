@@ -1,0 +1,40 @@
+name: Directory media W1 contracts
+on:
+  pull_request:
+    paths:
+      - "src/find/browser-entry.js"
+      - "src/find/explore-presentation.js"
+      - "src/find/directory-card.js"
+      - "tools/directory/discover-open-place-media.py"
+      - "tests/directory-media-card-contract.mjs"
+      - "tests/directory-photo-discovery-test.py"
+      - ".github/workflows/directory-media-w1-contract.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Syntax and data-contract tests
+        run: |
+          node --check src/find/directory-card.js
+          node --check src/find/explore-presentation.js
+          node --check src/find/browser-entry.js
+          python -m py_compile tools/directory/discover-open-place-media.py
+          node tests/directory-media-card-contract.mjs
+          node tests/preliminary-world-mass-map-r49.mjs
+          python -m unittest discover -s tests -p 'directory-photo-discovery-test.py' -v
+      - name: Explore and publication guard regressions
+        run: |
+          node tests/explore-surface.mjs
+          node tests/directory-site-only-admissions-20261029.mjs
+          node tests/directory-b94-research-publication-gate.mjs
