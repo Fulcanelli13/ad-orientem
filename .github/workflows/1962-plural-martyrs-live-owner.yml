@@ -33,6 +33,8 @@ jobs:
         run: |
           npm install --no-audit --no-fund
           npx playwright install --with-deps chromium
+      - name: Test printable Proper C7b source integrity, direct Common hold and provenance
+        run: node tests/calendar-print-proper.mjs
       - name: Read actual selected calendar and French Reader source ownership
         run: node tests/1962-plural-martyrs-live-owner-audit.mjs
       - name: Transient source trace for editorial review
