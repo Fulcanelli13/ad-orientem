@@ -3,7 +3,7 @@
   "as_of": "2026-10-28",
   "source_repo": "Fulcanelli13/ad-orientem",
   "scope": "OWNED PUBLIC REPOSITORY RECORDS ONLY. This is a set of record identities across different granularities, NOT a deduplicated count of unique prayers in all sources.",
-  "method": "Read public main canonical-data and explicit V3 source certification/novena review, public v4 and ICKSP hymn/novena/B01/B05 source modules. No inferred texts, original edition certification, online full-site scrape, commercial score permission or cross-identity merges.",
+  "method": "Read public main canonical-data and explicit V3 source certification/novena review, public v4 and ICKSP hymn/novena/B01/B05 source modules. No inferred texts, original edition certification, online full-site scrape, commercial score permission or cross-identity merges. Source text verification is NOT evaluated afresh; legacy original print claims and inspection flags remain in individual provenance, not normalized here.",
   "summary": {
     "ledger_records": 94,
     "by_type": {
@@ -27,11 +27,12 @@
     "existing_hymn_identities": 11,
     "reviewed_pray_hub_modules": 25,
     "unique_global_prayers": "NOT_YET_DEDUPLICATED",
-    "source_editions_fully_print_certified": 0,
+    "source_editions_fully_print_certified": "NOT_MEASURED_ACROSS_ALL_LANES",
     "known_canonical_core_missing_urls": [
       "mass_confiteor",
       "adoration_lord_i_am_not_worthy"
-    ]
+    ],
+    "canonical_source_review_v3_fully_print_certified": 0
   },
   "lanes": [
     "CANONICAL_PRAYER_BANK",
@@ -156,11 +157,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Compendium of the Catechism of the Catholic Church · Appendix A",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:foundations_our_father",
@@ -177,11 +180,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Compendium of the Catechism of the Catholic Church · Appendix A",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:foundations_hail_mary",
@@ -198,11 +203,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Compendium of the Catechism of the Catholic Church · Appendix A",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:foundations_glory_be",
@@ -219,11 +226,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Compendium of the Catechism of the Catholic Church · Appendix A",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:foundations_apostles_creed",
@@ -240,11 +249,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Compendium of the Catechism of the Catholic Church · Appendix A",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:sacrament_act_of_contrition",
@@ -261,11 +272,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Compendium of the Catechism of the Catholic Church · Appendix A",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:foundations_act_of_faith",
@@ -282,11 +295,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Compendium of the Catechism of the Catholic Church · Appendix A",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:foundations_act_of_hope",
@@ -303,11 +318,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Compendium of the Catechism of the Catholic Church · Appendix A",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:foundations_act_of_love",
@@ -324,11 +341,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Compendium of the Catechism of the Catholic Church · Appendix A",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:foundations_guardian_angel",
@@ -345,11 +364,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Compendium of the Catechism of the Catholic Church · Appendix A",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:foundations_grace_before_meals",
@@ -366,11 +387,13 @@
       "source_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
       "source_label": "Baltimore Manual · 1888",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:foundations_grace_after_meals",
@@ -387,11 +410,13 @@
       "source_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
       "source_label": "Baltimore Manual · 1888",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:foundations_morning_offering",
@@ -408,11 +433,13 @@
       "source_url": "https://www.usccb.org/prayers/morning-offering",
       "source_label": "USCCB · Catholic Household Blessings and Prayers, p. 48",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:foundations_prayer_of_adoration",
@@ -429,11 +456,13 @@
       "source_url": "https://bible.usccb.org/bible/john/20",
       "source_label": "John 20:28",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:mass_confiteor",
@@ -450,11 +479,13 @@
       "source_url": null,
       "source_label": "Missale Romanum 1962 · Prayers at the Foot of the Altar",
       "source_grade": "UNCLASSIFIED",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:marian_hail_holy_queen",
@@ -471,11 +502,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Compendium of the Catechism of the Catholic Church · Appendix A",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:marian_memorare",
@@ -492,11 +525,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Compendium of the Catechism of the Catholic Church · Appendix A",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:weekday_magnificat",
@@ -513,11 +548,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Compendium of the Catechism of the Catholic Church · Appendix A",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:marian_consecration_immaculate_heart",
@@ -534,11 +571,13 @@
       "source_url": "https://fatima.org/act-of-cosnecration-to-the-immaculate-heart-of-mary/",
       "source_label": "Historical Fatima devotional witness",
       "source_grade": "VERIFIED_SECONDARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:adoration_anima_christi",
@@ -555,11 +594,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Vatican Compendium (Latin); traditional English/French witnesses",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:adoration_spiritual_communion",
@@ -576,11 +617,13 @@
       "source_url": "https://www.vaticannews.va/en/prayers/the-spiritual-communion.html",
       "source_label": "Vatican News · attributed to St Alphonsus Liguori",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:benediction_o_salutaris",
@@ -597,11 +640,13 @@
       "source_url": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
       "source_label": "Lasance · With God · Benediction of the Blessed Sacrament",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:benediction_tantum_ergo",
@@ -618,11 +663,13 @@
       "source_url": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
       "source_label": "Lasance · With God · Benediction of the Blessed Sacrament",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:benediction_divine_praises",
@@ -639,11 +686,13 @@
       "source_url": "https://www.usccb.org/prayers/divine-praises",
       "source_label": "Holy Communion and Worship of the Eucharistic Mystery outside Mass · no. 99",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:adoration_litany_blessed_sacrament",
@@ -660,11 +709,13 @@
       "source_url": "https://en.wikisource.org/wiki/With_God/Litanies",
       "source_label": "F. X. Lasance · With God · 1911 · p. 496",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:benediction_versicles",
@@ -681,11 +732,13 @@
       "source_url": "https://en.wikisource.org/wiki/With_God/Benediction_of_the_Blessed_Sacrament",
       "source_label": "Lasance · With God · Benediction of the Blessed Sacrament",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:adoration_lord_i_am_not_worthy",
@@ -702,11 +755,13 @@
       "source_url": null,
       "source_label": "Missale Romanum 1962 · Communion formula",
       "source_grade": "UNCLASSIFIED",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:mass_devotion_leonine",
@@ -723,11 +778,13 @@
       "source_url": "https://en.wikisource.org/wiki/The_Catholic%27s_pocket_prayer-book/Prayers_after_Low-Mass",
       "source_label": "The Catholic's Pocket Prayer-Book · Prayers after Low-Mass",
       "source_grade": "VERIFIED_SECONDARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:sacrament_come_holy_spirit",
@@ -744,11 +801,13 @@
       "source_url": "https://www.usccb.org/prayers/prayer-holy-spirit",
       "source_label": "USCCB prayer witness",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:weekday_benedictus",
@@ -765,11 +824,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Compendium of the Catechism of the Catholic Church · Appendix A",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:devotion_prayer_st_michael",
@@ -786,11 +847,13 @@
       "source_url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html",
       "source_label": "Holy See Press Office · prayer written by Leo XIII",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:devotion_memorare_st_joseph",
@@ -807,11 +870,13 @@
       "source_url": "https://www.scd.org/stjoseph/prayers",
       "source_label": "Diocese of Sacramento traditional prayer witness",
       "source_grade": "VERIFIED_SECONDARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:devotion_consecration_christ_king",
@@ -828,11 +893,13 @@
       "source_url": "https://app.itheca.org/biblioteca/Oraciones/DeumUnuTri.html",
       "source_label": "Traditional Pius-XI-era Christ-the-King prayer · 1923",
       "source_grade": "VERIFIED_SECONDARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:church_prayer_for_pope",
@@ -849,11 +916,13 @@
       "source_url": "https://www.vaticannews.va/en/prayers/prayer-for-the-pope.html",
       "source_label": "Vatican News / Roman Missal prayer",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:devotion_st_anthony_lost_items",
@@ -870,11 +939,13 @@
       "source_url": "https://www.preces-latinae.org/thesaurus/Sancti/SAntoniusDePadova/SiQuaeris.html",
       "source_label": "Historic miraculous responsory of St Anthony · Raccolta no. 531",
       "source_grade": "VERIFIED_SECONDARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:sacred_heart_short_prayer",
@@ -891,11 +962,13 @@
       "source_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
       "source_label": "Apostolic Penitentiary · Enchiridion Indulgentiarum; prayer prescribed by Pius XI",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:sacred_heart_aspiration_trust",
@@ -912,11 +985,13 @@
       "source_url": "https://www.usccb.org/novena-sacred-heart-jesus",
       "source_label": "Widely attested devotional aspiration; USCCB Sacred Heart novena witness",
       "source_grade": "VERIFIED_SECONDARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:foundations_eternal_rest",
@@ -933,11 +1008,13 @@
       "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
       "source_label": "Compendium of the Catechism of the Catholic Church · Appendix A",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "ANCHOR_REVIEWED_NOT_FULL_VERBATIM",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:dead_de_profundis",
@@ -954,11 +1031,13 @@
       "source_url": "https://en.wikisource.org/wiki/With_God/Evening_Prayers",
       "source_label": "F. X. Lasance · With God · Evening Prayers",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:devotion_litany_st_joseph",
@@ -975,11 +1054,13 @@
       "source_url": "https://www.usccb.org/prayers/litany-saint-joseph",
       "source_label": "Current 2021 invocation set. English: AELF Committee on Divine Worship approved translation, freely publishable. Latin: Holy See current text. French: retained as a traditional vernacular rendering with the seven 2021 titles; not represented as an episcopal-conference official recension pending exact source lock.",
       "source_grade": "UNCLASSIFIED",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:devotion_ad_te_beate_ioseph",
@@ -996,11 +1077,13 @@
       "source_url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_15081889_quamquam-pluries.html",
       "source_label": "Prayer attached by Leo XIII to Quamquam pluries (1889). Latin is retained as the canonical traditional text; English follows the historical Holy See translation; French follows a historical Catholic translation.",
       "source_grade": "UNCLASSIFIED",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:traditional_veni_sancte_sequence",
@@ -1017,11 +1100,13 @@
       "source_url": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/The_Hymn%2C_%22Veni_Creator_Spiritus%22%2C_and_the_Sequence%2C_%22Veni_Sancte_piritus%22",
       "source_label": "Traditional Pentecost Sequence, also used devotionally to invoke the Holy Spirit. Latin is the received sequence; English is the public-domain Caswall translation printed in the 1857 Raccolta; French is a historical public-domain translation (Douniol, 1858).",
       "source_grade": "UNCLASSIFIED",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:dead_fidelium_deus",
@@ -1038,11 +1123,13 @@
       "source_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Prayers_for_the_Dead",
       "source_label": "Traditional Roman collect for all the faithful departed. English and French are historical Catholic translations; Latin is the received traditional text.",
       "source_grade": "UNCLASSIFIED",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:dead_eternal_rest_singular",
@@ -1059,11 +1146,13 @@
       "source_url": "https://www.ctsbooks.org/prayers-for-the-dead/",
       "source_label": "Traditional singular form of Requiem aeternam for one deceased person.",
       "source_grade": "UNCLASSIFIED",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:sub_tuum",
@@ -1080,11 +1169,13 @@
       "source_url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html",
       "source_label": "Holy See Press Office · ancient Marian invocation",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:benediction_adoremus_ps116",
@@ -1101,11 +1192,13 @@
       "source_url": "https://en.wikisource.org/wiki/Blessed_Sacrament_Book",
       "source_label": "Lasance · Blessed Sacrament Book · 1913; traditional Benediction corpus",
       "source_grade": "VERIFIED_PRIMARY",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:litany_loreto_1962",
@@ -1122,11 +1215,13 @@
       "source_url": "https://www.vatican.va/special/rosary/documents/litanie-lauretane_en.html",
       "source_label": "Holy See Litany of Loreto; 1962-era form omits later invocations",
       "source_grade": "UNCLASSIFIED",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "prayer:litany_loreto_current",
@@ -1143,11 +1238,13 @@
       "source_url": "https://www.vatican.va/special/rosary/documents/litanie-lauretane_en.html",
       "source_label": "Holy See · current Litany of Loreto",
       "source_grade": "UNCLASSIFIED",
-      "printed_edition_certified": false,
+      "printed_edition_certified": null,
       "verified_scope": "REPOSITORY_OWNERSHIP_ONLY",
       "collation_status": "NOT_REVIEWED",
       "status": "EXISTING_PUBLIC_CORPUS",
-      "duplicate_resolution": "FROZEN_CANONICAL_ID"
+      "duplicate_resolution": "FROZEN_CANONICAL_ID",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:holy_ghost",
@@ -1159,10 +1256,12 @@
       "source_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Novena_For_Christmas",
       "source_label": "Blessed Be God: A Complete Catholic Prayer Book",
       "form": "DAY_SPECIFIC",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:christmas",
@@ -1174,10 +1273,12 @@
       "source_url": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Novena_For_Christmas",
       "source_label": "Blessed Be God: A Complete Catholic Prayer Book",
       "form": "DAY_SPECIFIC",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:corpus_christi",
@@ -1189,10 +1290,12 @@
       "source_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_for_the_Festival_of_Corpus_Christi",
       "source_label": "The Catholic Prayer Book and Manual of Meditations",
       "form": "REPEAT_FORM",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:sacred_heart",
@@ -1204,10 +1307,12 @@
       "source_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_for_the_Feast_of_the_Sacred_Heart",
       "source_label": "The Catholic Prayer Book and Manual of Meditations",
       "form": "REPEAT_FORM",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:immaculate_conception",
@@ -1219,10 +1324,12 @@
       "source_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_in_Preparation_for_the_Feast_of_the_Immaculate_Conception",
       "source_label": "The Catholic Prayer Book and Manual of Meditations",
       "form": "DAY_SPECIFIC",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:annunciation",
@@ -1234,10 +1341,12 @@
       "source_url": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
       "source_label": "Mary, Help of Christians: Novenas in Preparation for the Principal Feasts of the Blessed Virgin",
       "form": "DAY_SPECIFIC",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:assumption",
@@ -1249,10 +1358,12 @@
       "source_url": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
       "source_label": "Mary, Help of Christians: Novenas in Preparation for the Principal Feasts of the Blessed Virgin",
       "form": "DAY_SPECIFIC",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:seven_sorrows",
@@ -1264,10 +1375,12 @@
       "source_url": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
       "source_label": "Mary, Help of Christians: Novenas in Preparation for the Principal Feasts of the Blessed Virgin",
       "form": "DAY_SPECIFIC",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:st_joseph",
@@ -1279,10 +1392,12 @@
       "source_url": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_of_St._Joseph",
       "source_label": "The Catholic Prayer Book and Manual of Meditations",
       "form": "DAY_SPECIFIC",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:holy_souls",
@@ -1294,10 +1409,12 @@
       "source_url": "https://www.ecatholic2000.com/life/prayer108.shtml",
       "source_label": "Novena for the Holy Souls in Purgatory",
       "form": "DAY_SPECIFIC",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "EDITORIAL_TRANSLATION_NOT_INDEPENDENTLY_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:perpetual_help",
@@ -1309,10 +1426,12 @@
       "source_url": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/699",
       "source_label": "With God: A Book of Prayers and Reflections",
       "form": "REPEAT_FORM",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:st_therese",
@@ -1324,10 +1443,12 @@
       "source_url": "https://www.ewtn.com/catholicism/devotions/novena-of-the-twentyfour-glory-bes-to-st-therese-the-little-flower-293",
       "source_label": "Novena of the Twenty-Four Glory Bes to St Thérèse of Lisieux",
       "form": "REPEAT_FORM",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:st_anthony_nine_tuesdays",
@@ -1339,10 +1460,12 @@
       "source_url": "https://www.pamphlets.info/Australia/acts1014/",
       "source_label": "Devotion of the Nine Tuesdays to St Anthony",
       "form": "REPEAT_FORM",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:christ_the_king",
@@ -1354,10 +1477,12 @@
       "source_url": "https://www.liberius.net/livres/Thesaurisons_pour_le_Ciel_000001335.pdf",
       "source_label": "Preces et Pia Opera / Thésaurisons pour le Ciel",
       "form": "REPEAT_FORM",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:immaculate_heart",
@@ -1369,10 +1494,12 @@
       "source_url": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Prayer_to_the_Immaculate_Heart_of_Mary",
       "source_label": "The Raccolta · Prayer to the Immaculate Heart of Mary",
       "form": "REPEAT_FORM",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:st_michael",
@@ -1384,10 +1511,12 @@
       "source_url": "https://laportelatine.org/spiritualite/prieres-et-devotions/priere-a-saint-michel",
       "source_label": "Leonine Prayer to St Michael the Archangel",
       "form": "REPEAT_FORM",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "language_edition_status": "NOT_INDEPENDENTLY_COLLATION_CERTIFIED",
       "status": "EXISTING_CANONICAL_16",
-      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID"
+      "duplicate_resolution": "FROZEN_NOVENA_ID_NOT_NEW_PRAYER_ID",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:divine_infant_king",
@@ -1400,9 +1529,11 @@
       "source_label": "English witness: F. X. Lasance, 1904 · French witness: transcription citing Vidi, Ghent, 25 Aug 1885",
       "form": "REPEAT_FORM",
       "repeat_form": true,
-      "original_print_certified": false,
+      "original_print_certified": null,
       "status": "ADDED_ICKSP_B04",
-      "duplicate_resolution": "DISTINCT_INSTITUTE_REPEAT_FORM"
+      "duplicate_resolution": "DISTINCT_INSTITUTE_REPEAT_FORM",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:icksp_immaculate_conception",
@@ -1415,9 +1546,11 @@
       "source_label": "EN: Blessed Be God, 1925. FR: Les Echos de Saint-Maurice, December 1903, pp. 388–389; FR includes original Jubilee clause",
       "form": "REPEAT_FORM",
       "repeat_form": true,
-      "original_print_certified": false,
+      "original_print_certified": null,
       "status": "ADDED_ICKSP_B04",
-      "duplicate_resolution": "DISTINCT_INSTITUTE_REPEAT_FORM"
+      "duplicate_resolution": "DISTINCT_INSTITUTE_REPEAT_FORM",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "novena:icksp_us_therese_perpetual_novena",
@@ -1430,7 +1563,10 @@
       "form": "TUESDAY_RECURRING",
       "local_text": false,
       "status": "ICKSP_LINK_ONLY_B04",
-      "duplicate_resolution": "NOT_NINE_CONSECUTIVE_DAYS"
+      "duplicate_resolution": "NOT_NINE_CONSECUTIVE_DAYS",
+      "original_print_certified": null,
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "hymn:te_deum",
@@ -1445,8 +1581,10 @@
       },
       "source_label": "Existing historic source-specific canonical hymn",
       "status": "ORIGINAL_THREE",
-      "original_print_certified": false,
-      "duplicate_resolution": "HYMN_NOT_CHANT_SCORE"
+      "original_print_certified": null,
+      "duplicate_resolution": "HYMN_NOT_CHANT_SCORE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "hymn:veni_creator",
@@ -1461,8 +1599,10 @@
       },
       "source_label": "Existing historic source-specific canonical hymn",
       "status": "ORIGINAL_THREE",
-      "original_print_certified": false,
-      "duplicate_resolution": "HYMN_NOT_CHANT_SCORE"
+      "original_print_certified": null,
+      "duplicate_resolution": "HYMN_NOT_CHANT_SCORE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "hymn:ave_maris_stella",
@@ -1477,8 +1617,10 @@
       },
       "source_label": "Existing historic source-specific canonical hymn",
       "status": "ORIGINAL_THREE",
-      "original_print_certified": false,
-      "duplicate_resolution": "HYMN_NOT_CHANT_SCORE"
+      "original_print_certified": null,
+      "duplicate_resolution": "HYMN_NOT_CHANT_SCORE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "hymn:vexilla_regis",
@@ -1497,9 +1639,11 @@
       "source_label": "ICRSP France · historical Roman Office Latin",
       "recension": null,
       "source_edition_status": "HISTORIC_LATIN_CASWALL_1849_ENGLISH_GUERANGER_1904_FRENCH",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "status": "B05_ICKSP_ICRSP_RELEASED",
-      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE"
+      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "hymn:audi_benigne",
@@ -1518,9 +1662,11 @@
       "source_label": "ICRSP France · historical Roman Office Latin",
       "recension": null,
       "source_edition_status": "HISTORIC_LATIN_CASWALL_1849_ENGLISH_GUERANGER_1903_FRENCH",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "status": "B05_ICKSP_ICRSP_RELEASED",
-      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE"
+      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "hymn:ad_regias_agni_dapes",
@@ -1539,9 +1685,11 @@
       "source_label": "ICRSP France · historical Roman Office Latin",
       "recension": "ROMAN_BREVIARY_AFTER_1632",
       "source_edition_status": "HISTORIC_LATIN_AND_CASWALL_1849_ENGLISH_FRENCH_PENDING",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "status": "B05_ICKSP_ICRSP_RELEASED",
-      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE"
+      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "hymn:ad_cenam_agni_providi",
@@ -1560,9 +1708,11 @@
       "source_label": "ICRSP France · historical Roman Office Latin",
       "recension": "PRE_1632_CONDITIONAL",
       "source_edition_status": "HISTORIC_NEAL_1851_ENGLISH_UNAPPROVED_LITURGICAL_TEXT",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "status": "B05_ICKSP_ICRSP_RELEASED",
-      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE"
+      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "hymn:aeterne_rex_altissime",
@@ -1581,9 +1731,11 @@
       "source_label": "ICRSP France · historical Roman Office Latin",
       "recension": null,
       "source_edition_status": "HISTORIC_LATIN_AND_CASWALL_1849_ENGLISH_FRENCH_PENDING",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "status": "B05_ICKSP_ICRSP_RELEASED",
-      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE"
+      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "hymn:lustra_sex",
@@ -1602,9 +1754,11 @@
       "source_label": "ICRSP France · historical Roman Office Latin",
       "recension": null,
       "source_edition_status": "HISTORICAL_LATIN_1842_ENGLISH_GUERANGER_GOOD_FRIDAY_FRENCH",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "status": "B05_ICKSP_ICRSP_RELEASED",
-      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE"
+      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "hymn:o_sol_salutis",
@@ -1623,9 +1777,11 @@
       "source_label": "ICRSP France · Laudes · First Sunday of Lent Office",
       "recension": null,
       "source_edition_status": "HISTORICAL_LATIN_SHEPHERD_1870_ENGLISH_GUERANGER_1903_FRENCH",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "status": "B05_ICKSP_ICRSP_RELEASED",
-      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE"
+      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "hymn:ex_more_docti",
@@ -1644,9 +1800,11 @@
       "source_label": "ICRSP France · historical Roman Office Latin",
       "recension": null,
       "source_edition_status": "HISTORICAL_LATIN_CASWALL_1849_ENGLISH_GUERANGER_FRENCH",
-      "original_print_certified": false,
+      "original_print_certified": null,
       "status": "B05_ICKSP_ICRSP_RELEASED",
-      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE"
+      "duplicate_resolution": "DISTINCT_OFFICE_RECENSION_NOT_CHANT_SCORE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "witness:grace_after_meals_baltimore_1888_full",
@@ -1662,8 +1820,10 @@
       },
       "source_edition_status": "1888_EN_HISTORICAL_TRANSCRIPTION",
       "status": "B01_RELEASED",
-      "printed_edition_certified": false,
-      "duplicate_resolution": "SOURCE_DISTINCT_ALTERNATIVE_DO_NOT_REPLACE_CANONICAL"
+      "printed_edition_certified": null,
+      "duplicate_resolution": "SOURCE_DISTINCT_ALTERNATIVE_DO_NOT_REPLACE_CANONICAL",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "witness:grace_after_meals_baltimore_catechism_short",
@@ -1679,8 +1839,10 @@
       },
       "source_edition_status": "HISTORICAL_CATECHISM_EN_TRANSCRIPTION",
       "status": "B01_RELEASED",
-      "printed_edition_certified": false,
-      "duplicate_resolution": "SOURCE_DISTINCT_ALTERNATIVE_DO_NOT_REPLACE_CANONICAL"
+      "printed_edition_certified": null,
+      "duplicate_resolution": "SOURCE_DISTINCT_ALTERNATIVE_DO_NOT_REPLACE_CANONICAL",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "witness:act_of_hope_traditional_fr_related",
@@ -1696,8 +1858,10 @@
       },
       "source_edition_status": "FRENCH_INDEPENDENT_DEVOTIONAL_WITNESS",
       "status": "B01_RELEASED",
-      "printed_edition_certified": false,
-      "duplicate_resolution": "SOURCE_DISTINCT_ALTERNATIVE_DO_NOT_REPLACE_CANONICAL"
+      "printed_edition_certified": null,
+      "duplicate_resolution": "SOURCE_DISTINCT_ALTERNATIVE_DO_NOT_REPLACE_CANONICAL",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "witness:act_of_contrition_pius_x_1905_optional",
@@ -1713,8 +1877,10 @@
       },
       "source_edition_status": "ITALIAN_1905_VERIFIED",
       "status": "B01_RELEASED",
-      "printed_edition_certified": false,
-      "duplicate_resolution": "SOURCE_DISTINCT_ALTERNATIVE_DO_NOT_REPLACE_CANONICAL"
+      "printed_edition_certified": null,
+      "duplicate_resolution": "SOURCE_DISTINCT_ALTERNATIVE_DO_NOT_REPLACE_CANONICAL",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "witness:august_queen_of_heaven_related_marian",
@@ -1730,8 +1896,10 @@
       },
       "source_edition_status": "OFFICIAL_INSTITUTE_PAGE_SOURCE_LINK_NO_NEW_TRANSLATION",
       "status": "B01_RELEASED",
-      "printed_edition_certified": false,
-      "duplicate_resolution": "SOURCE_DISTINCT_ALTERNATIVE_DO_NOT_REPLACE_CANONICAL"
+      "printed_edition_certified": null,
+      "duplicate_resolution": "SOURCE_DISTINCT_ALTERNATIVE_DO_NOT_REPLACE_CANONICAL",
+      "original_print_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "supplement:holy_name_litany",
@@ -1747,8 +1915,10 @@
       "source_url": "https://www.traditio-op.org/Liturgica_Rito_Latino/Rituale_Romanum_1925.pdf",
       "source_label": null,
       "status": "PUBLIC_SUPPLEMENT_LOCAL",
-      "original_print_certified": false,
-      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE"
+      "original_print_certified": null,
+      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "supplement:sacred_heart_litany",
@@ -1764,8 +1934,10 @@
       "source_url": null,
       "source_label": null,
       "status": "PUBLIC_SUPPLEMENT_LOCAL",
-      "original_print_certified": false,
-      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE"
+      "original_print_certified": null,
+      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "supplement:sacred_heart_human_race_consecration",
@@ -1781,8 +1953,10 @@
       "source_url": "https://www.vatican.va/archive/aas/documents/AAS-19-1927-ocr.pdf",
       "source_label": null,
       "status": "PUBLIC_SUPPLEMENT_LOCAL",
-      "original_print_certified": false,
-      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE"
+      "original_print_certified": null,
+      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "supplement:communion_beforeThomas",
@@ -1798,8 +1972,10 @@
       "source_url": null,
       "source_label": null,
       "status": "PUBLIC_SUPPLEMENT_LOCAL",
-      "original_print_certified": false,
-      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE"
+      "original_print_certified": null,
+      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "supplement:communion_beforeAmbrose",
@@ -1815,8 +1991,10 @@
       "source_url": null,
       "source_label": null,
       "status": "PUBLIC_SUPPLEMENT_LOCAL",
-      "original_print_certified": false,
-      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE"
+      "original_print_certified": null,
+      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "supplement:communion_afterThomas",
@@ -1832,8 +2010,10 @@
       "source_url": null,
       "source_label": null,
       "status": "PUBLIC_SUPPLEMENT_LOCAL",
-      "original_print_certified": false,
-      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE"
+      "original_print_certified": null,
+      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "supplement:communion_afterBonaventure",
@@ -1849,8 +2029,10 @@
       "source_url": null,
       "source_label": null,
       "status": "PUBLIC_SUPPLEMENT_LOCAL",
-      "original_print_certified": false,
-      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE"
+      "original_print_certified": null,
+      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "supplement:communion_enEgo",
@@ -1866,8 +2048,10 @@
       "source_url": null,
       "source_label": null,
       "status": "PUBLIC_SUPPLEMENT_LOCAL",
-      "original_print_certified": false,
-      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE"
+      "original_print_certified": null,
+      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "supplement:golden_arrow",
@@ -1883,8 +2067,10 @@
       "source_url": "https://institute-christ-king.org/resources/devotions-prayers/613-devotions-reparation",
       "source_label": null,
       "status": "PUBLIC_SUPPLEMENT_LOCAL",
-      "original_print_certified": false,
-      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE"
+      "original_print_certified": null,
+      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "supplement:proficiscere_post1922",
@@ -1900,8 +2086,10 @@
       "source_url": null,
       "source_label": "RITUALE_ROMANUM_1937_POST_1922_ORDER_LATIN_OCR_CHECKED_1962_EXACT_EDITION_PENDING",
       "status": "PUBLIC_SUPPLEMENT_LOCAL",
-      "original_print_certified": false,
-      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE"
+      "original_print_certified": null,
+      "duplicate_resolution": "POSSIBLE_CANONICAL_OVERLAP_TO_RECONCILE",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     },
     {
       "key": "supplement:st_joseph_litany_1909",
@@ -1916,8 +2104,10 @@
       },
       "source_url": "https://laportelatine.org/spiritualite/prieres-et-devotions/litanies/litanies-de-saint-joseph",
       "status": "B05_HISTORICAL_ALTERNATIVE",
-      "original_print_certified": false,
-      "duplicate_resolution": "SAME_PRAYER_HISTORIC_RECENSION_AS_CANONICAL_2021"
+      "original_print_certified": null,
+      "duplicate_resolution": "SAME_PRAYER_HISTORIC_RECENSION_AS_CANONICAL_2021",
+      "printed_edition_certified": null,
+      "edition_verification_gate": "NOT_ESTABLISHED_BY_OWNERSHIP_INVENTORY"
     }
   ],
   "remaining_gates": [
