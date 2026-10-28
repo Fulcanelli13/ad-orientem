@@ -171,9 +171,13 @@
       "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
       "app_coverage_label": "Potential addition — wider-app comparison still open",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "next_action": "Identify original Latin collect or approved votive formulary, check denomination and date, then surface in Infant Jesus devotions if lawful source text available",
       "review_group": "POTENTIAL_PERSONAL_DEVOTION",
-      "source_selection_status": "ACCEPTED"
+      "source_selection_status": "ACCEPTED",
+      "text_identity": "SEPARATE_VOTIVE_MASS_PRAYER_NOT_CYRIL_NOVENA",
+      "source_origin": "ICKSP page explicitly says 'From the Votive Mass to the Infant Jesus'",
+      "source_body_url": "https://institute-christ-king.org/resources/devotions-prayers/615-devotions-prayer-infant-jesus",
+      "rubrical_hold": "Source article does not establish authority or edition as part of the universal 1962 Roman Missal; do not add to Mass Proper automatically"
     },
     {
       "id": "icksp_us_novena_divine_infant_king",
@@ -285,9 +289,14 @@
       "app_match_refs": [
         "novena-corpus.js#st_therese"
       ],
-      "next_action": "Keep the Twenty-Four Glory Bes novena; assess the Institute's perpetual Tuesday sequence as a distinct optional variant.",
+      "next_action": "Integrate as separate variant of St Thérèse novena without altering 24 Glory Bes source and without forcing Institute donations or U.S. session time",
       "review_group": "EXISTING_OR_RELATED",
-      "source_selection_status": "ACCEPTED"
+      "source_selection_status": "ACCEPTED",
+      "text_identity": "ICKSP_PERPETUAL_NOVENA_DISTINCT_FROM_TWENTY_FOUR_GLORY_BES",
+      "source_body_url": "https://www.institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
+      "institution_specific_embedded_intentions": "Little Flower Recurring Gift Society included in published novena; not genericized",
+      "historical_source_gate": "Need an earlier/public-domain authentic prayer witness or licensable formula before importing complete current ICKSP text; link remains accepted",
+      "practice": "ICKSP Tuesday shared novena; 7:30 pm ET session time not universal prayer requirement"
     },
     {
       "id": "icksp_us_therese_for_missionaries",
@@ -308,9 +317,13 @@
       "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
       "app_coverage_label": "Potential addition — wider-app comparison still open",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "next_action": "Collate original historic text, retain contextual Institute missionary intention, then publish as optional Saint Thérèse missionary prayer",
       "review_group": "POTENTIAL_PERSONAL_DEVOTION",
-      "source_selection_status": "ACCEPTED"
+      "source_selection_status": "ACCEPTED",
+      "text_identity": "ST_THERESE_MISSIONARY_INTERCESSION_RACCOLTA_FAMILY",
+      "source_body_url": "https://www.institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
+      "source_variance": "ICKSP formula includes explicit Institute missionaries; traditional Raccolta form has broader missionary wording. Preserve both witness identities.",
+      "source_comparison_lead": "Raccolta No. 573 · prayer for Mission Sunday, older indulgence notes historical only"
     },
     {
       "id": "icksp_us_therese_benedict_xv",
@@ -331,9 +344,12 @@
       "app_coverage_status": "NOT_MATCHED_IN_SAMPLED_PRAY_CODE",
       "app_coverage_label": "Potential addition — wider-app comparison still open",
       "app_match_refs": [],
-      "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
+      "next_action": "Find pre-1923 original or historically attested translation, preserve own distinct prayer ID; do not merge with perpetual novena",
       "review_group": "POTENTIAL_PERSONAL_DEVOTION",
-      "source_selection_status": "ACCEPTED"
+      "source_selection_status": "ACCEPTED",
+      "text_identity": "PRAYER_ATTRIBUTED_TO_POPE_BENEDICT_XV",
+      "source_body_url": "https://www.institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
+      "source_attribution_status": "ICKSP attributes to Benedict XV; independent original Latin or dated historical printed English witness not yet collated"
     },
     {
       "id": "icrsp_fr_office_complies",
@@ -653,5 +669,15 @@
     "test_status": "NOVENA_DATE_ROLLOVER_AND_STATIC_JS_CHECKS_PASS; FULL NODE_PLAYWRIGHT_NOT_EXECUTED",
     "added_novena_forms": 1,
     "original_canonical_novena_count_preserved": 16
+  },
+  "reconciliation_pass3": {
+    "date": "2026-10-28",
+    "novenaImplemented": "divine_infant_king",
+    "divineInfantHistoricalEnglish": "F X Lasance 1904",
+    "divineInfantHistoricalFrench": "2007 transcription citing 1885 Ghent Vidi (original edition not inspected)",
+    "monthlyPractice": "ICKSP Kansas City 17–25 monthly",
+    "stThereseSourceItemsRetained": 3,
+    "infantJesusVotivePrayerSeparate": true,
+    "policy": "ALL_ACCEPTED_FOR_COVERAGE_AND_CONTEXTUAL_CORRECTNESS"
   }
 }
