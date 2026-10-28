@@ -57,15 +57,16 @@
     "masters_archived": 20,
     "masters_missing": 2,
     "master_sha_recorded": 20,
-    "native_hash_ci_pass": 4,
+    "native_hash_ci_pass": 5,
     "pristine_publication_ready": 0,
     "production_activated": 0,
     "source_quality_status": {
-      "PRELIMINARY_ALTERNATE_PROOF": 2,
+      "PRELIMINARY_ALTERNATE_PROOF": 1,
       "ARCHIVED_ONLY_QA_PENDING": 12,
       "PHOTO_REPLACEMENT_OR_HIGHER_QUALITY_NEEDED": 3,
       "MISSING": 2,
-      "PRELIMINARY_CORNER_PASS": 3
+      "PRELIMINARY_CORNER_PASS": 3,
+      "PRELIMINARY_REACQUIRED_ORIGINAL": 1
     },
     "next_research_batches": {
       "B2_NEAR_READY_NATIVE_QA": 5,
@@ -1351,7 +1352,18 @@
           2886
         ],
         "bytes": 3259819,
-        "hash_verification": "RECORDED_PREVIOUS_ARCHIVE_EVIDENCE"
+        "hash_verification": "REHASHED_COMPARISON_CI_PASS",
+        "recovered_location": {
+          "repository": "Fulcanelli13/ad-orientem",
+          "ref": "research/prayer-wave1-photo-comparison-20261028",
+          "path": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary_yorck-new-commons-original.jpg",
+          "sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+          "dimensions_px": [
+            1880,
+            2886
+          ],
+          "exact_locked_master_recovered": true
+        }
       },
       "quality": {
         "pristine_certified": false,
@@ -1361,9 +1373,9 @@
         "source_photo_rights_certified": false,
         "final_colour_certified": false,
         "preliminary_visual": "HOLD_VISIBLE_MOUNTING_HARDWARE_AND_MASTER_QUALITY",
-        "photo_comparison_choice": "PREFER_CLEAN_YORCK_PHOTO_FOR_REVIEW",
+        "photo_comparison_choice": "REUSE_EXACT_PRIOR_MASTER_NOT_UNRELATED_ALTERNATE",
         "framing_state": "PENDING_SOURCE_OR_DERIVATIVE_VERIFICATION",
-        "highest_supported_grade": "PRELIMINARY_ALTERNATE_PROOF",
+        "highest_supported_grade": "PRELIMINARY_REACQUIRED_ORIGINAL",
         "specific_issues": [
           "Cross-source preview comparison shows different blue/green/gold saturation; do not approve a favourite by aesthetic brightness alone.",
           "Inspect ISO6400 Sailko photo for chroma noise and loss of fine details in 15 mystery medallions.",
@@ -4340,7 +4352,8 @@
       "prayer_sections_processed": 31,
       "master_hashes_recalculated_in_this_pass": 0,
       "production_releases": 0,
-      "explanation": "Six source ledgers reconciled in bulk; previous photo checks retained rather than treated as fresh inspections."
+      "explanation": "Six source ledgers reconciled in bulk; previous photo checks retained rather than treated as fresh inspections.",
+      "existing_native_hash_ci_comparisons": 5
     },
     "B1_IMAGE_ACQUISITION": {
       "status": "QUEUE_READY",
@@ -4630,7 +4643,7 @@
     }
   },
   "protected_wave1_notes": {
-    "rosary": "Clean full Yorck master exact existing SHA recovered; Sailko mounting-clip variants rejected. Do not silently change artist or work.",
+    "rosary": "Exact original 1880x2886 Yorck SHA-256 595c... was recovered and verified by comparative-source CI; Wave 1 native CI's separately archived Sailko photo SHA-256 5563... is NOT the primary master, and both must remain distinct.",
     "angelus": "Met v3 painted area crop is preliminary evidence only, full no-paint-loss proof still needed.",
     "sorrows": "Seven narrative medallions and one physical sword; canonical novena owner exists, no separate invented reader.",
     "evening": "Exact Frère Wolverhampton OP6 photo high-resolution reusable original unresolved; reject fake 2x upscales.",
