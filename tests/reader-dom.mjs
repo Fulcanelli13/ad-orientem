@@ -26,7 +26,6 @@ const prepared={
 const html=buildReaderShellMarkup(prepared);
 for(const token of [
   'data-reader-mode="MISSAL"',
-  'data-reader-mode="SIMPLE"',
   'data-reader-mode="LIVE"',
   'data-role="priest-position"',
   'data-role="section-title"',
@@ -268,9 +267,11 @@ const unlocked=createReaderDomAdapter({
 });
 unlocked.mount(prepared);
 expect(unlocked.canSwitchPresentationMode()===true,"unlocked reader did not expose mode switching");
+unlocked.setMode("MISSAL");
+expect(unlocked.getMode()==="MISSAL","unlocked reader did not change mode");
+expect(callbackMode==="MISSAL","unlocked reader did not invoke presentation mode callback");
 unlocked.setMode("SIMPLE");
-expect(unlocked.getMode()==="SIMPLE","unlocked reader did not change mode");
-expect(callbackMode==="SIMPLE","unlocked reader did not invoke presentation mode callback");
+expect(unlocked.getMode()==="LIVE","old SIMPLE choice must migrate to LIVE");
 
 import {readFileSync} from "node:fs";
 const readerDomSource=readFileSync("src/mass/reader-dom.js","utf8");
@@ -347,9 +348,11 @@ const stableMode=createReaderDomAdapter({
 stableMode.mount(prepared);
 stableMode.setMode("LIVE");
 expect(switchCount===0,"re-selecting LIVE rebuilt the reader and displaced the active cue");
-stableMode.setMode("SIMPLE");
-stableMode.setMode("SIMPLE");
+stableMode.setMode("MISSAL");
+stableMode.setMode("MISSAL");
 expect(switchCount===1,"re-selecting the active mode rebuilt the reader twice");
+expect(!readerDomSource.includes('["MISSAL","SIMPLE","LIVE"]'),
+  "retired Simple UI control returned to the reader");
 // Real production cue updates use cardUpdate:false. The rail may change
 // without rebuilding the prayer paragraph; the exact active Latin words
 // must follow the canonical cue, and all former anchors must disappear.
