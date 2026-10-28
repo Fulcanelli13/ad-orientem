@@ -1,0 +1,160 @@
+{
+  "schema": "AO_SACRED_PLACES_P61_FOUR_VERIFIED_CATHOLIC_BUILDINGS_V1",
+  "date": "2026-10-29",
+  "status": "PROPOSED_CANONICAL_RELEASE_PENDING_CI_MERGE",
+  "baseline": {
+    "places": 512,
+    "sources": 810,
+    "crosswalk": 512,
+    "unlinked": 253,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 516,
+    "sources": 818,
+    "crosswalk": 516,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "new_physical_locations": 4,
+  "new_mapping_rows_resolved": 0,
+  "photo_assets_approved": 0,
+  "tlm_schedule_links_added": 0,
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0200",
+      "place_id": "place:PL:lichen-marian-basilica",
+      "name": "Bazylika Najświętszej Maryi Panny Licheńskiej",
+      "place_type": "basilica",
+      "country": "PL",
+      "country_name": "Poland",
+      "city": "Licheń Stary",
+      "lat": 52.32321,
+      "lng": 18.35794,
+      "geo_source_ref": "osm:way:208331549",
+      "geo_source_url": "https://www.openstreetmap.org/way/208331549",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W208331549",
+      "identity_source_url": "https://www.marianie.pl/avy/sanktuarium-lichen",
+      "identity_source_issuer": "Zgromadzenie Księży Marianów",
+      "source_directness": "OFFICIAL_SHRINE",
+      "source_ids": [
+        "AO-P61-SITE-SG-INV-0200",
+        "AO-P61-GEO-SG-INV-0200"
+      ],
+      "precision": "site",
+      "scope_limit": "Modern basilica 1994–2004; distinct from historic St Dorota parish church and other buildings of Licheń shrine campus",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "mapping_method": "P61_OFFICIAL_IDENTITY_PLUS_NAMED_INDIVIDUAL_OSM_CHURCH_WAY"
+    },
+    {
+      "candidate_id": "SG-INV-0429",
+      "place_id": "place:MX:ocotlan-basilica-tlaxcala",
+      "name": "Basílica de Nuestra Señora de Ocotlán",
+      "place_type": "basilica",
+      "country": "MX",
+      "country_name": "Mexico",
+      "city": "Tlaxcala de Xicohténcatl",
+      "lat": 19.31792,
+      "lng": -98.22796,
+      "geo_source_ref": "osm:way:95827233",
+      "geo_source_url": "https://www.openstreetmap.org/way/95827233",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/es/W95827233",
+      "identity_source_url": "https://diocesisdetlaxcala.mx/ntrasraocotlan/",
+      "identity_source_issuer": "Diócesis de Tlaxcala",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "source_ids": [
+        "AO-P61-SITE-SG-INV-0429",
+        "AO-P61-GEO-SG-INV-0429"
+      ],
+      "precision": "site",
+      "scope_limit": "Basilica church at Ocotlán; distinct from the Capilla del Pocito and other devotional sites",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "mapping_method": "P61_OFFICIAL_IDENTITY_PLUS_NAMED_INDIVIDUAL_OSM_CHURCH_WAY"
+    },
+    {
+      "candidate_id": "SG-INV-0410",
+      "place_id": "place:US:san-francisco-de-asis-ranchos-taos",
+      "name": "San Francisco de Asís Mission Church — Ranchos de Taos",
+      "place_type": "church",
+      "country": "US",
+      "country_name": "United States",
+      "city": "Ranchos de Taos",
+      "lat": 36.35845,
+      "lng": -105.60844,
+      "geo_source_ref": "osm:way:426943457",
+      "geo_source_url": "https://www.openstreetmap.org/way/426943457",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/23324812",
+      "identity_source_url": "https://archdiosf.org/parishfinder",
+      "identity_source_issuer": "Roman Catholic Archdiocese of Santa Fe",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "source_ids": [
+        "AO-P61-SITE-SG-INV-0410",
+        "AO-P61-GEO-SG-INV-0410"
+      ],
+      "precision": "site",
+      "scope_limit": "Historic adobe parish church; not affiliated chapels at Llano Quemado, Los Cordovas or Talpa; original P60 Plus Code had fixme=location, corrected locator from named OSM building way",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "mapping_method": "P61_OFFICIAL_IDENTITY_PLUS_NAMED_INDIVIDUAL_OSM_CHURCH_WAY"
+    },
+    {
+      "candidate_id": "SG-INV-0493",
+      "place_id": "place:AR:catamarca-cathedral-valle",
+      "name": "Catedral Basílica de Nuestra Señora del Valle — Catamarca",
+      "place_type": "cathedral",
+      "country": "AR",
+      "country_name": "Argentina",
+      "city": "San Fernando del Valle de Catamarca",
+      "lat": -28.46893,
+      "lng": -65.78019,
+      "geo_source_ref": "osm:way:36373669",
+      "geo_source_url": "https://www.openstreetmap.org/way/36373669",
+      "geo_provenance_mapcarta_url": "https://mapcarta.com/W36373669",
+      "identity_source_url": "https://episcopado.org/diocesis/ver/52",
+      "identity_source_issuer": "Conferencia Episcopal Argentina",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "source_ids": [
+        "AO-P61-SITE-SG-INV-0493",
+        "AO-P61-GEO-SG-INV-0493"
+      ],
+      "precision": "site",
+      "scope_limit": "Cathedral basilica building; do not confuse separately mapped Camarín de la Virgen, cathedral museum or nearby parish churches; street number held owing to 631/653/655 source discrepancy",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "mapping_method": "P61_OFFICIAL_IDENTITY_PLUS_NAMED_INDIVIDUAL_OSM_CHURCH_WAY"
+    }
+  ],
+  "held": [
+    {
+      "id": "SG-INV-0650",
+      "reason": "Cebu OSM way 413764505 is religious landuse precinct, not verified basilica church-building polygon"
+    },
+    {
+      "id": "SG-INV-0512",
+      "reason": "El Cisne OSM way site identity supported but individual church footprint label still needs inspection"
+    },
+    {
+      "id": "SG-INV-0380",
+      "reason": "Belleville OSM node covers 200+ acre shrine campus, not a single exact church building"
+    },
+    {
+      "id": "SG-INV-0720",
+      "reason": "Muxima recovered current Catholic status via diocesan 2026 programme, but needs precise church feature check"
+    },
+    {
+      "id": "SG-INV-0049",
+      "reason": "Lateran cathedral and Scala Santa are separate buildings; Claude proximity reuse rejected"
+    }
+  ],
+  "policy": {
+    "no_tlm_assertions": true,
+    "no_automatic_shrine_record": true,
+    "no_photograph_publication": true,
+    "no_paid_services": true,
+    "no_mass_schedule_or_visiting_hours_guessed": true
+  }
+}
