@@ -2,7 +2,7 @@ import {validatedPreGospelChantParts} from "./reader-pre-gospel-chant-source.js"
 import {correct1962ProperEditorialReferences} from "./1962-proper-editorial-corrections.js";
 import {project1962Pent21AlleluiaDisplayRows,PS113_PENT21_ENGLISH_EDITORIAL} from "./1962-ps113-alleluia-editorial.js";
 import {inspect1962PrefaceSelection} from "./1962-preface-decision.js";
-import {inspect1962PluralMartyrsFrenchOrationSource} from "./1962-plural-martyr-french-source.js";
+import {inspect1962PluralMartyrsFrenchOrationSource, reconcile1962PerpetuaFelicityNonVirginCommon} from "./1962-plural-martyr-french-source.js";
 const REQUIRED_SLOTS = Object.freeze([
   "INTROIT","COLLECT_SET","EPISTLE_OR_LESSON","GRADUAL",
   "GOSPEL","OFFERTORY","SECRET_SET","PREFACE","COMMUNION","POSTCOMMUNION_SET"
@@ -159,6 +159,7 @@ function readyEnvelope(slot,value,{language="en"}={}){
 export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}={}){
   if(!proper || typeof proper!=="object") throw new TypeError("Resolved Proper object required");
   proper=correct1962ProperEditorialReferences(proper);
+  proper=reconcile1962PerpetuaFelicityNonVirginCommon(proper);
   const locale=String(language??"en").toLowerCase().startsWith("fr") ? "fr" : "en";
   const opts={language:locale};
 
