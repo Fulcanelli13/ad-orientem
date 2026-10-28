@@ -1,0 +1,41 @@
+name: Breviarium W3 - 35 weak photos and 28 native source gates
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/breviarium-w3-35-weak-28-native-20261029.yml
+      - scripts/art/breviarium-w3-35-alternates-28-native-quality-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-breviarium-w3-35-weak-28-source-gates
+  cancel-in-progress: false
+jobs:
+  source-gates-for-sixty-three-records:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate and reconcile 35 weak sources and 28 original quality holds
+        run: |
+          python -m py_compile scripts/art/breviarium-w3-35-alternates-28-native-quality-20261029.py
+          python scripts/art/breviarium-w3-35-alternates-28-native-quality-20261029.py
+      - name: Permanently preserve 63-entry bulk source and gate output
+        if: always()
+        run: |
+          if [ ! -f data/calendar/sacred-art-breviarium-83-w3-weak-photo-alternatives-20261029.v1.json ]; then exit 0; fi
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-breviarium-83-w3-weak-photo-alternatives-20261029.v1.json
+          git diff --cached --check
+          if git diff --cached --quiet; then echo "No changed source evidence"; exit 0; fi
+          git commit -m "research(sacred art): persist all 35 photo source exceptions plus 28 original quality gates"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028
