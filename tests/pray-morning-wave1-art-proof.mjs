@@ -78,6 +78,14 @@ try{
   const thumb=art.locator("summary img");
   await thumb.evaluate(async el=>{if(!el.complete)await new Promise((ok,no)=>{el.onload=ok;el.onerror=no})});
   assert.ok(await thumb.evaluate(el=>el.naturalWidth>0),"thumbnail failed");
+  const collapsed=await page.locator(rootSel+" .aoDevoCardScroll").evaluate(el=>{
+    const rect=el.getBoundingClientRect();
+    return {top:rect.top,visible:rect.top<innerHeight*0.79,
+     textLength:el.innerText.length};
+  });
+  assert.ok(collapsed.visible && collapsed.textLength>30,
+   "Artwork capsule must leave the opening prayer readable without scrolling "+width+" "+JSON.stringify(collapsed));
+  await page.screenshot({path:resolve(save,"morning-art-collapsed-"+width+".png"),animations:"disabled"});
   await art.locator("summary").click();
   assert.equal(await art.evaluate(el=>el.open),true);
   const full=art.locator("figure img");
