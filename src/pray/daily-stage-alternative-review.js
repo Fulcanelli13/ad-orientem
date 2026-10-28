@@ -5,6 +5,12 @@
  * provenance and original 1905/1913 ordering belong to the source corpus.
  */
 export const REVIEWED_DAILY_STAGE_ALTERNATIVES=Object.freeze({
+ "ignatius_suscipe_lasance_1908_en":Object.freeze({
+  daypart:"morning",slot:"daily-prayer",purpose:"offering",
+  label:"St Ignatius · Suscipe (Lasance 1908)",scope:"narrower"}),
+ "ignatius_suscipe_lasance_1908_la":Object.freeze({
+  daypart:"morning",slot:"daily-prayer",purpose:"offering",
+  label:"S. Ignatius · Suscipe (Latine)",scope:"narrower"}),
  "b11-lasance-morning-adoration-thanksgiving":Object.freeze({
   daypart:"morning",slot:"daily-prayer",purpose:"thanksgiving",label:"Lasance · Adoration & thanks",scope:"narrower"}),
  "moran-1883-morning-thanksgiving":Object.freeze({

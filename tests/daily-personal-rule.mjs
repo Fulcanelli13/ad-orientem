@@ -135,7 +135,11 @@ assert.equal(initial.mode,"standard");
 assert.equal(buildPersonalDailyPlan({daypart:"evening",prefs:initial}).rows.length,10);
 const english=personalDailyOptions("morning","en","1913");
 assert.ok(english.some(x=>x.sourceLabel.includes("Lasance")));
-assert.equal(personalDailyOptions("morning","la","1913").length,0,"Latin must not import English-language morning texts");
+const latinMorning=personalDailyOptions("morning","la","1913");
+assert.deepEqual(latinMorning.map(x=>x.id),["ignatius_suscipe_lasance_1908_la"],
+ "Only the original 1908 Latin Suscipe is newly authorized for Latin Morning Offering");
+assert.ok(latinMorning.every(x=>x.lang==="la"&&!/Take, O Lord/.test(x.text)),
+ "Latin must not import English-language morning texts");
 assert.ok(personalDailyOptions("evening","fr","1913").some(x=>x.id==="piusx-1913-jesus-joseph-mary"));
 assert.ok(!personalDailyOptions("evening","fr","1905").some(x=>x.id==="piusx-1913-jesus-joseph-mary"));
 const nightSourceIds=["roman-compline-latin-in-manus","roman-compline-french-in-manus","roman-compline-latin-visita-quaesumus","roman-compline-latin-salva-nos"];
@@ -315,16 +319,17 @@ for(const language of ["en","fr","la"])for(const edition of ["1905","1913"]){
 }
 // B08: each distinct purpose owns its own optional choices. A narrower
 // historical prayer can NEVER replace the combined printed St Pius X opening.
-assert.equal(Object.keys(REVIEWED_DAILY_STAGE_ALTERNATIVES).length,12);
+assert.equal(Object.keys(REVIEWED_DAILY_STAGE_ALTERNATIVES).length,14);
 assert.equal(CORPUS.additional.length,45);
 assert.equal(new Set(CORPUS.additional.map(x=>x.id)).size,45);
 const narrow=Object.entries(REVIEWED_DAILY_STAGE_ALTERNATIVES).filter(([,rule])=>rule.scope==="narrower");
-assert.equal(narrow.length,11);
+assert.equal(narrow.length,13);
 assert.equal(Object.values(REVIEWED_DAILY_STAGE_ALTERNATIVES).filter(x=>x.scope==="same-act").length,1);
 assert.deepEqual(DAILY_PURPOSES.morning,["offering","thanksgiving"]);
 assert.deepEqual(DAILY_PURPOSES.evening,["thanksgiving","adoration"]);
 for(const [id,rule] of Object.entries(REVIEWED_DAILY_STAGE_ALTERNATIVES)){
- const item=CORPUS.additional.find(x=>x.id===id);
+ const item=CORPUS.additional.find(x=>x.id===id) ||
+   personalDailyOptions(rule.daypart,id.endsWith("_la")?"la":"en").find(x=>x.id===id);
  assert.ok(item&&item.kind==="additional"&&item.daypart===rule.daypart);
  assert.ok(item.sourceWebChecked===true||item.sourceImageChecked===true);
  assert.match(item.sourceUrl,/^https:\/\//);
@@ -375,7 +380,7 @@ for(const edition of ["1905","1913"])for(const daypart of ["morning","evening"])
 }
 // Old B07 saved offering-as-replacement selections are migrated to a
 // distinct optional purpose. Both their text and the St Pius X source remain.
-for(const [id,rule] of narrow){
+for(const [id,rule] of narrow.filter(([id])=>CORPUS.additional.some(x=>x.id===id))){
  const row=CORPUS.additional.find(x=>x.id===id);
  const legacy=defaultPersonalDailyPrefs(row.lang);
  legacy.variants[rule.daypart]["daily-prayer"]=id;

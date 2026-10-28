@@ -6,6 +6,7 @@
  * Saves only source IDs/edition/language; no prayer content or examination.
  */
 import {DAILY_PERSONAL_PRAYER_SOURCE_V1 as CORPUS} from "./daily-personal-prayer-source.js";
+import {prayerAcquisitionCandidates} from "./prayer-acquisition-historical-witnesses.v1.js";
 import {reviewedDailyAlternative,reviewedDailyPurpose,DAILY_PURPOSES,REVIEWED_DAILY_STAGE_ALTERNATIVES} from "./daily-stage-alternative-review.js";
 
 export const DAILY_PERSONAL_RULE_STORAGE_KEY="ao.pray.personal-rule.v1";
@@ -132,9 +133,27 @@ export function savePersonalDailyPrefs(storage,prefs,language="en"){
  const validated=normalizePersonalDailyPrefs(prefs,language);
  try{storage?.setItem?.(DAILY_PERSONAL_RULE_STORAGE_KEY,JSON.stringify(validated));return true}catch{return false}
 }
+/** Publish independently verified 1908 source-language alternatives without
+ * altering St Pius X's printed 1905/1913 dayparts or the locked prayer bank.
+ * Unreleased witnesses, and English text in a French session, fail closed.
+ */
+function clearedMorningOfferings(daypart,language){
+ if(daypart!=="morning")return [];
+ return prayerAcquisitionCandidates("self_offering",{language}).map(w=>Object.freeze({
+  id:w.id,lang:w.language,daypart:"morning",kind:"additional",
+  slot:"offering",purpose:"offering",title:w.title,
+  sourceLabel:"F. X. Lasance, My Prayer-Book (1908), p. "+w.source.page,
+  sourceUrl:w.source.scanPageUrl,
+  sourceImageChecked:true,text:w.text
+ }));
+}
 export function personalDailyOptions(daypart,language,edition="1913"){
  if(!PARTS.includes(daypart)||!LANGS.has(language))return [];
- return [...allowed(CORPUS.additional,language,daypart),...(edition==="1913"&&daypart==="evening"?editionSupplements(language):[])];
+ return [
+  ...allowed(CORPUS.additional,language,daypart),
+  ...clearedMorningOfferings(daypart,language),
+  ...(edition==="1913"&&daypart==="evening"?editionSupplements(language):[])
+ ];
 }
 export function personalDailyEdition(edition){
  return CORPUS.editions[EDITIONS.has(edition)?edition:"1913"];
@@ -190,15 +209,7 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
  });
  const extrasById=new Map(personalDailyOptions(daypart,language,p.edition).filter(x=>x.kind==="additional").map(x=>[x.id,x]));
  const selected=p.length==="full"&&p.mode==="expanded"?p.extras[daypart].filter(id=>extrasById.has(id)):[];
- const extras=selected.map(id=>{
-  const item=extrasById.get(id);
-  return {id:"personal-extra-"+id,sourceId:id,kind:item.legacyPrayerId?"personal-legacy":"personal-prayer",legacyId:item.legacyPrayerId||null,
-   title:item.title,language,text:item.text,sourceLabel:item.sourceLabel,
-   sourceUrl:item.sourceUrl,
-   sourceStatus:item.purpose?.startsWith("historical-office-")?"complete-optional-liturgical-selection":"complete-additional-manual-prayer",
-   sourceContextEn:item.sourceContextEn||null,sourceContextFr:item.sourceContextFr||null,
-   optional:true,sourceExact:true};
- });
+ const extras=selected.map(id=>optionalPersonalPrayerRow(extrasById.get(id),language));
  // Append selected complete optional devotions in the order saved by the
  // user. The printed catechism's mandatory stages retain their exact order.
  return {mode:"personal",daypart,edition:p.edition,language,length:p.length,brief:p.length==="brief",expanded:p.length==="full"&&p.mode==="expanded",
@@ -208,6 +219,20 @@ export function buildPersonalDailyPlan({daypart="morning",prefs=defaultPersonalD
   briefIds:briefIDs,briefCustom:Boolean(p.briefSelections[p.edition]?.[daypart]),
   offeredExtras:[...extrasById.values()],availableVariants:variants,purposeChoices,selectedPurposes,
   sourceLabel:edition.sourceLabel,sourceUrl:edition.sourceUrl};
+}
+/** One immutable source-owned view for both a saved optional extra and
+ * direct reading. Direct entry must not require recording a purpose choice
+ * or adding an optional text to St Pius X's fixed printed sequence.
+ */
+function optionalPersonalPrayerRow(item,language){
+ return {id:"personal-extra-"+item.id,sourceId:item.id,
+  kind:item.legacyPrayerId?"personal-legacy":"personal-prayer",
+  legacyId:item.legacyPrayerId||null,title:item.title,language,text:item.text,
+  sourceLabel:item.sourceLabel,sourceUrl:item.sourceUrl,
+  sourceStatus:item.purpose?.startsWith("historical-office-")
+   ?"complete-optional-liturgical-selection":"complete-additional-manual-prayer",
+  sourceContextEn:item.sourceContextEn||null,sourceContextFr:item.sourceContextFr||null,
+  optional:true,sourceExact:true};
 }
 /** Read one unmodified source prayer without adding it to the daily rule.
  * Both the printed edition and optional source-language corpus are searchable.
@@ -221,10 +246,7 @@ export function personalDailyDirectPlan({daypart="morning",prefs=defaultPersonal
  if(!selected){
   const item=personalDailyOptions(daypart,p.language,p.edition).find(row=>row.id===sourceId&&row.kind==="additional");
   if(!item)return null;
-  const single=buildPersonalDailyPlan({daypart,prefs:{
-   ...full,mode:"expanded",extras:{...full.extras,[daypart]:[item.id]}
-  }});
-  selected=single.rows.find(row=>row.sourceId===item.id);
+  selected=optionalPersonalPrayerRow(item,p.language);
  }
  return selected?{...base,rows:[selected],direct:true,sourceId,selectedExtras:[]}:null;
 }
