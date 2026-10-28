@@ -195,6 +195,13 @@ try{
  assert.equal((await snapshot()).index,11,"Adding an evening prayer must preserve completion, not restart the sequence");
  await page.locator("#aoPray435930 [data-tp381-personal-action='language'][data-tp381-personal-value='la']").evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"10","French-only extra must never appear as a Latin translation");
+ const latinOffice=page.locator("#aoPray435930 [data-tp381-personal-action='extra'][data-tp381-personal-value^='roman-compline-latin-']");
+ assert.equal(await latinOffice.count(),3,"Latin Evening Prayer must offer three source-backed night texts without foreign-language fallbacks");
+ const inManus=page.locator("#aoPray435930 [data-tp381-personal-action='extra'][data-tp381-personal-value='roman-compline-latin-in-manus']");
+ await inManus.evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"11","Latin optional Compline responsory must add exactly one card");
+ await inManus.evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"10","Deselecting the Compline excerpt restores the printed core count");
  assert.equal(await page.locator("#aoPray435930 [data-tp381-personal-action='edition'][data-tp381-personal-value='1905']").evaluate(el=>el.click()),undefined);
  assert.equal(await page.locator("#aoPray435930 [data-ao-quiet-daily-horizon]").getAttribute("data-ao-horizon-total"),"8","1905 printed evening order must be distinct");
  await page.locator("#aoPray435930 [data-tp381-personal-action='reset']").evaluate(el=>el.click());
