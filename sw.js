@@ -118,14 +118,27 @@ async function stageSnapshot(){
   const source=await safeFetch(ROOT),html=await source.clone().text();
   if(!html.includes("src/mass/browser-entry.js")||!html.includes("ao-packed-"))fail("UNRECOGNISED_HTML");
   const initialHash=await hash(utf8(html));
-  const queue=[ROOT,...urlsInHtml(html),OFFLINE_CRITICAL_ANGELUS_ART];
+  // A resource is charged against the hard item limit only once, even if
+  // both the HTML and an ESM/CSS import refer to it. Keep queue identity
+  // distinct from actual certified resources (which are still hashed).
+  const queue=[...new Set([ROOT,...urlsInHtml(html),OFFLINE_CRITICAL_ANGELUS_ART])];
   const processed=new Set(),digests=[];
   let bytes=0;
   try{
    // Limit concurrency while avoiding one network+CacheStorage round-trip
    // per resource. Individual responses are still verified before commit.
    while(queue.length){
-    if(processed.size+queue.length>MAX_ITEMS)fail("ITEM_LIMIT");
+    const remaining=new Set(queue.filter(url=>!processed.has(url)));
+    const uniqueCount=processed.size+remaining.size;
+    if(uniqueCount>MAX_ITEMS){
+     // Explain why a *unique* graph breached the cap. Fail closed: neither
+     // the active snapshot nor a partially staged replacement is promoted.
+     const paths=[...processed,...remaining].map(url=>new URL(url).pathname);
+     const counts={pray:paths.filter(p=>p.includes("/src/pray/")).length,
+      mass:paths.filter(p=>p.includes("/src/mass/")).length,
+      other:paths.filter(p=>!p.includes("/src/pray/")&&!p.includes("/src/mass/")).length};
+     fail("ITEM_LIMIT_"+uniqueCount+"_OF_"+MAX_ITEMS+"_P"+counts.pray+"_M"+counts.mass+"_O"+counts.other);
+    }
     const batch=[];
     while(batch.length<8&&queue.length){
       const url=queue.shift();
