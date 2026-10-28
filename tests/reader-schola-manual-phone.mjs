@@ -241,8 +241,13 @@ try{
    const unselectedMotet=musicMenu.locator('[data-schola-event-select="OFFERTORY_LOCAL_MOTET"]');
    assert.equal(await unselectedMotet.isDisabled(),true,
      "Unplanned local motet must not be presented as a selectable performance");
-   assert.equal(await musicMenu.locator('[data-schola-event-select="BENEDICTUS_AFTER_CHALICE"]').isDisabled(),
-     true,"Manual Benedictus barrier must never be skipped via event navigator");
+   // This event exists only with a source-resolved polyphonic setting.
+   // Unknown or Gregorian settings must not invent a second Benedictus.
+   const delayedBenedictus=musicMenu.locator('[data-schola-event-select="BENEDICTUS_AFTER_CHALICE"]');
+   if(await delayedBenedictus.count()){
+     assert.equal(await delayedBenedictus.isDisabled(),true,
+       "Manually released Benedictus must never be skipped by the event picker");
+   }
    await musicMenu.locator('[data-schola-event-select="KYRIE"]').click();
    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.trackId==="KYRIE");
    assert.equal(await musicMenu.isVisible(),false);
