@@ -81,14 +81,14 @@ export function inspect1962PluralMartyrsFrenchOrationSource(proper,slot){
       const latin=String(row?.lat??row?.la??"");
       const french=String(row?.fr??"");
       const frWrong=WITNESS_FRENCH.test(ascii(french));
-      const latWrong=/\\bvirginum\\s+et\\s+martyrum\\b/iu.test(ascii(latin));
+      const latWrong=/\bvirginum\s+et\s+martyrum\b/iu.test(ascii(latin));
       // The pinned source itself specifies C7b, the Common of female
       // NON-Virgin Martyrs. The production host currently retains
       // "Virginum et Martyrum" even in the LATIN commemorative prayer.
       // French and Latin may therefore be wrong *together*. Comparing them
       // for agreement is not enough; check their original source ownership.
       const identifiedLatin=MARTYRS_LATIN.test(ascii(latin))&&
-        /\\bperpetuae\\s+et\\s+felicitatis\\b/iu.test(ascii(latin));
+        /\bperpetuae\s+et\s+felicitatis\b/iu.test(ascii(latin));
       if(identifiedLatin&&(frWrong||latWrong)){
         return Object.freeze({
           status:"SOURCE_CONFLICT",
