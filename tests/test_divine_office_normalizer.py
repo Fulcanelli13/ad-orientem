@@ -102,6 +102,36 @@ class NormalizerTests(unittest.TestCase):
             normalize_xhtml(HTML.replace("<b>Antiphona</b><br/>Magnificat anima mea Dominum.\n<script>alert('malicious')</script>Non potest in nobis.", ""),
                             date=DAY, hour="VESPERS", language="la", source_revision=PIN)
 
+    def test_trilingual_semantic_json_is_valid_and_uses_latin_provenance(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            rows = []
+            for language in ("la", "en", "fr"):
+                target = root / DAY / "vespers"
+                target.mkdir(parents=True, exist_ok=True)
+                filename = DAY + "/vespers/" + language + ".xhtml"
+                (root / filename).write_text(HTML, encoding="utf-8")
+                rows.append({
+                    "date": DAY, "hour": "VESPERS", "language": language,
+                    "file": filename, "sha256": hashlib.sha256(HTML.encode()).hexdigest(),
+                    "envelopePass": True, "status": "CAPTURED_UNVERIFIED",
+                })
+            (root / "manifest.json").write_text(json.dumps({
+                "researchOnly": True, "sourceRevision": PIN,
+                "counts": {"published": 0}, "records": rows,
+            }), encoding="utf-8")
+            summary = convert_tree(root)
+            self.assertEqual(summary["count"], 3)
+            self.assertEqual(summary["structurallyAligned"], 1)
+            self.assertEqual(summary["semanticRolesInLatinGroups"]["OPENING"], 1)
+            for language in ("la", "en", "fr"):
+                serialized = (root / DAY / "vespers" / (language+".research.json")).read_text(encoding="utf-8")
+                document = json.loads(serialized)
+                self.assertEqual(document["sections"][0]["semantic"]["role"], "OPENING")
+                self.assertEqual(document["sections"][0]["semantic"]["latinSourceCellId"], "Vespera1")
+                self.assertFalse(document["publishable"])
+            self.assertEqual(json.loads((root/"normalized-manifest.json").read_text(encoding="utf-8"))["published"], 0)
+
     def test_raw_checksum_and_research_only_guards(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
