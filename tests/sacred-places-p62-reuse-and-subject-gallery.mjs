@@ -6,10 +6,13 @@ const gallery=read("data/geography/research/sacred-places-p62-subject-gallery-pi
 const geo=read("data/geography/seed-registry.v1.json");
 const sources=read("data/shrines/source-registry.v1.json");
 const media=read("data/geography/approved-place-media.v1.json");
+const existingGallery=read("data/geography/approved-place-gallery.v1.json");
 const photoResearch=read("data/geography/research/sacred-places-p61-photo-candidates.v1.json");
 assert.equal(audit.schema,"AO_SACRED_PLACES_P62_P60_ADDITIONAL_REUSE_ADJUDICATION_V1");
 assert.equal(gallery.schema,"AO_SACRED_PLACES_P62_SUBJECT_PHOTOGRAPHY_PILOT_V1");
-assert.deepEqual([geo.places.length,sources.sources.length,media.items.length],[516,818,31]);
+assert.deepEqual([geo.places.length,sources.sources.length,media.items.length,existingGallery.items.length],[516,818,31,6]);
+assert.equal(gallery.publication_target_existing_gallery,"data/geography/approved-place-gallery.v1.json");
+assert.equal(gallery.existing_gallery_baseline.approved_gallery_assets,6);
 assert.equal(audit.records.length,26);
 assert.equal(audit.input.already_accounted_p59,8);
 assert.equal(audit.input.p60_additional_reuse_proposals,34);
@@ -45,6 +48,8 @@ for(const p of gallery.places){
  assert.ok(canonical.has(p.place_id));
  for(const s of p.subjects){
   assert.ok(gallery.subject_types.includes(s.kind));
+  assert.equal(s.publication_registry,gallery.publication_target_existing_gallery);
+  assert.ok(s.gallery_chapter_id.length>1);
   assert.ok(!subjectids.has(s.subject_id));subjectids.add(s.subject_id);
   assert.ok(s.source_url.startsWith("https://"));
   if(s.reuse_existing_photo_candidate_id)assert.ok(photoCandidateIds.has(s.reuse_existing_photo_candidate_id));
