@@ -8,6 +8,7 @@ import {
 } from "../src/find/data-service.js";
 import { auditVenue } from "../src/find/contracts.js";
 import { isMapPublishableGeo } from "../src/find/geo-provenance.js";
+import { buildFindViewModel, renderFindToString } from "../src/find/presentation.js";
 
 function readSnapshot(file){
   return JSON.parse(readFileSync(new URL("../data/directory/generated/v19/"+file,import.meta.url),"utf8"));
@@ -49,6 +50,13 @@ for(const item of additions){
   assert.equal(expanded.schedules.filter(s=>s.ministry_id===record.ministries[0].ministry_id).length,0);
   assert.equal(filterDirectoryRecords(records,{query:item.query}).filter(r=>r.venue.venue_id===venueId).length,1,"venue must be findable by address or place");
   assert.equal(filterDirectoryRecords(records,{query:item.city}).filter(r=>r.venue.venue_id===venueId).length,1,"venue must be findable by city");
+  for(const [language,expectedText] of [["en","Mass times not verified"],["fr","Horaires de messe non vérifiés"]]){
+    const listHtml=renderFindToString(buildFindViewModel({records:[record],language}));
+    const detailHtml=renderFindToString(buildFindViewModel({records:[record],selectedId:venueId,language}));
+    assert.ok(listHtml.includes(expectedText),"schedule uncertainty must appear in list: "+language);
+    assert.ok(detailHtml.includes(expectedText),"schedule uncertainty must appear in detail: "+language);
+    assert.ok(detailHtml.includes("data-find-close-detail"),"detail panel must remain functional");
+  }
 
   const invalidApproval={...record,venue:{...record.venue,upstream:{...record.venue.upstream,site_only_approval:null}}};
   assert.equal(publishableDirectoryRecords([invalidApproval]).length,0,"unapproved site-only entry must fail closed");
