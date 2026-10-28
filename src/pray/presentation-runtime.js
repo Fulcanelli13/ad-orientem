@@ -41,6 +41,7 @@ import {BATCH03_LITANY_EDITION_POLICY,BATCH03_ICRSP_MAJOR_PROCESSION_STEPS,BATCH
 import {PENITENTIAL_PSALMS_VULGATE,penitentialPsalmReference,auditPenitentialPsalmResponse,PENITENTIAL_PSALMS_TEXT_STATUS} from "./penitential-psalms-source.js";
 import { DEVOTIONAL_WITNESSES, PRAYER_WITNESSED_VARIANTS } from "./devotional-witness-links.v1.js";
 import { parseSevenWordsHistoricalWitness } from "./seven-words-witness.v1.js";
+import {sevenWordsLocalWitnessText, SEVEN_WORDS_LOCAL_EN_1889_V1} from "./seven-words-offline-1889.v1.js";
 import { prayCollationNotice } from "./source-collation-notices.v1.js";
 import { prayerCompendiumFrenchWitness } from "./compendium-french-witnesses.v1.js";
 import {christKingStages,CHRIST_KING_OPTION_DEFAULTS,CHRIST_KING_CONSECRATION,CHRIST_KING_ROYAL_PRAISES,CHRIST_KING_WITNESSES} from "./christ-king-benediction.js";
@@ -2205,7 +2206,7 @@ async function ensureSevenWords(){
  SEVEN.loading=true;SEVEN.error='';
  const token=++SEVEN.srcToken;
  try{
-  const txt=await guidedWsText('A Manual of Prayers for the Use of the Catholic Laity/The Devotion of the Seven Words upon the Cross','seven-words-source-bounded-v2','en');
+  const txt=sevenWordsLocalWitnessText(); // packaged with the app: no Wikisource runtime dependency
   if(token!==SEVEN.srcToken)return;
   const witnessed=parseSevenWordsHistoricalWitness(txt);
   SEVEN.sections=witnessed.sections;SEVEN.appendix=witnessed.appendix;
@@ -2238,7 +2239,7 @@ function renderSevenWords(){
  ${card}
  ${i===6?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-word-done>${esc(L('Finish devotion','Terminer la dévotion'))}</button></div>`:''}
  <details class="aoP435930PrayerOptions aoP435930GuidedContext"><summary>${esc(L('Historical meditation guide','Guide de la méditation historique'))}</summary>${devotionalGuide('sevenWords')}</details>
- ${devotionalSource('Baltimore Manual · The Devotion of the Seven Words upon the Cross',L('English historical meditation witness; Gospel text supplied separately by the Scripture service. Concluding prayers follow the Seventh Word in the source.','Témoin anglais de la méditation ; le texte évangélique est fourni séparément par le service biblique. Des prières finales suivent la septième Parole dans la source.'),'sevenWords')}${appendix}</main>`;
+ <details class="aoP435930Source"><summary>${esc(L('Historic French Seven Words · separate source (research)','Sept Paroles historiques françaises · source distincte (recherche)'))}</summary><p>${esc(L('Berthaumier’s 1854 French translation of a distinct St Bonaventure-attributed seven-word method is documented, but has not yet been independently collated against all printed pages; it is not a translation of the Baltimore text.','La traduction française de Berthaumier (1854) d’une méthode distincte des sept Paroles, attribuée à saint Bonaventure, est identifiée mais non encore collationnée sur toutes les pages imprimées. Il ne s’agit pas de la traduction du texte de Baltimore.'))}</p><a href="https://fr.wikisource.org/wiki/Livre:%C5%92uvres_spirituelles_de_S._Bonaventure,_tome_1,_1854.djvu" target="_blank" rel="noopener noreferrer">${esc(L('1854 original scanned edition','Édition originale numérisée de 1854'))}</a></details>\n ${devotionalSource('Baltimore Manual · The Devotion of the Seven Words upon the Cross',L('English historical witness packaged locally from Wikisource transcription. Independent print-page collation remains pending. Gospel text is separate; concluding prayers follow the Seventh Word as a distinct appendix.','Témoin anglais historique conservé localement d’après une transcription Wikisource ; comparaison avec l’édition imprimée à achever. Le texte biblique est distinct ; les prières finales forment une annexe.'),'sevenWords')}${appendix}</main>`;
 }
 const FORTY_STAGES=[['Arrive','Arriver'],['Adore','Adorer'],['Prayer aids','Aides de prière'],['Public devotion','Dévotion publique'],['Benediction','Bénédiction'],['Leave','Partir']];
 function fortyStageBody(){
