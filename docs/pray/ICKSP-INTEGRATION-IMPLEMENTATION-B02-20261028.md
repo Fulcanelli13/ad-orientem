@@ -94,3 +94,38 @@ The Institute's three texts have been preserved as **three distinct source ident
 **Not executed:** full Node test runner, Playwright mobile test, end-to-end app release checks, merge, or production deployment. The development container could not access GitHub remotely; no Actions runs were available on this draft head. Thus code is committed but **NOT release-certified**.
 
 **Cumulative:** all 25 B01 source selections accepted, 98 French Divine Office source-index entries (12 previously represented in B01), **four** new draft prayer/novena experiences (August Queen, Eternal Priest, Infant King novena, St Thérèse), plus **two** St Thérèse works source-linked from the app. **Zero production releases** in this research PR.
+
+## B06 — seven ICRSP seasonal hymn selections / eight historical Latin recensions (28 October 2026)
+
+### Integration completed on the PR branch
+- `src/pray/icrsp-seasonal-hymns.v1.js` contains **eight complete historical Latin hymn texts**, each with a direct ICRSP French source link, exact historical title, season and Office hour. No newly invented English/French verse translations or unverified modern ICRSP French copies are included.
+- All seven ICRSP-selected hymn groups are accepted and represented:
+  1. `Vexilla Regis` — Vespers, Passiontide (source specifies **kneeling at O Crux, ave**).
+  2. `Audi, benigne Conditor` — Vespers, Lent.
+  3. `Ad regias Agni dapes` — Vespers, Eastertide, ordinary revised Roman Breviary hymn.
+     `Ad cenam Agni providi` — **a separate pre-1632 recension**. The *Antiphonale* of 1912 allows use only for those entitled by right, custom or indult; it is **not** substituted for the standard 1962 text. One accepted Institute source grouping therefore contains **two** historically different full Latin texts.
+  4. `Æterne Rex altissime` — Matins, Ascension.
+  5. `Lustra sex` — Lauds, Passiontide.
+  6. `O sol salutis intimis` — Lauds, Lent; full historical Latin collated from the ICRSP First Sunday of Lent Office at `a0155_ancien`, not a guessed standalone article.
+  7. `Ex more docti mystico` — Matins, Lent.
+- `src/pray/traditional-pray-runtime.js` integrates all eight in the **existing Sacred Hymns & Canticles reader** using its original sequential card/timeline, local vertical stanza scroll, sources drawer and direct hymn chooser. No new Prayer Calendar, Office engine or duplicate hymn module was created. The 3 original EN/FR/Latin source-locked hymns are frozen in `SACRED_HYMNS_V381`, and the 8 additional Latin-only hymns live in a separate export with edition metadata.
+- The new texts are explicitly labeled Latin-only pending independently reusable historical English/French editions. Users are not shown Latin text under a false English or French caption. ICRSP French is linked as provenance and comparative reading without copying modern French translation.
+- Office hours are a documented contextual label, **not** a claim that the same hymn is universally prescribed by the 1962 rubrics for every calendar day, nor a replacement for a full Matins/Lauds/Vespers service.
+
+### Regression coverage
+- `tests/icrsp-seasonal-hymns.mjs` guards 7 groups, 8 complete Latin texts, exact Office mapping, distinct Easter recensions, conditional pre-1632 use, existing 3-core identity, no unverified translations, and reader UI/source controls.
+- Added to `npm run test:pray-traditional` via `npm run test:icrsp-hymns`.
+- Updated `tests/pray-traditional-dual-axis-phone.mjs` to expect **11 hymn timeline stops** (previously 3), preserve the original 3 hymns and their bilingual flip semantics, and touch/inspect all eight new Latin hymns on mobile.
+- In-session source parse, metadata/recension integrity and **22 English/French DOM-render smoke cases** (11 choices × 2 interfaces) passed. The Node and Playwright tests are **committed but not yet executed**, therefore **no merge/deployment claim**.
+
+### Sources and edition boundaries
+- https://icrspfrance.fr/textes-liturgiques.php?article=a0901_ancien
+- https://icrspfrance.fr/textes-liturgiques.php?article=x9ef3247f_lisible
+- https://icrspfrance.fr/textes-liturgiques.php?article=a0913_ancien
+- https://icrspfrance.fr/textes-liturgiques.php?article=a0920_ancien
+- https://icrspfrance.fr/textes-liturgiques.php?article=a0938_ancien
+- https://icrspfrance.fr/textes-liturgiques.php?article=x628ec868_lisible
+- https://icrspfrance.fr/textes-liturgiques.php?article=a0155_ancien
+- https://icrspfrance.fr/textes-liturgiques.php?article=xd82464db_lisible
+
+**Cumulative after B06:** 25/25 Institute selections accepted; 4 drafted new prayer/novena experiences plus 2 separate St Thérèse source-linked works; **7 ICRSP hymn groups, 8 complete Latin historical hymn versions** in the existing 11-item hymn reader; 98 Office index entries (12 overlap the first inventory); **0 published production additions**. The full 1962 Office, remaining prayer/novena variants, and EN/FR hymn witnesses are not yet complete.
