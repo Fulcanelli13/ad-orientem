@@ -111,7 +111,18 @@
       "app_match_refs": [],
       "next_action": "Verify source text and reusable language witnesses; check further app modules and editorial decision before publication.",
       "review_group": "POTENTIAL_PERSONAL_DEVOTION",
-      "source_selection_status": "ACCEPTED"
+      "source_selection_status": "ACCEPTED",
+      "historical_witness_candidate": {
+        "work": "The American Ecclesiastical Review",
+        "volume": 50,
+        "pages": "608–609",
+        "year": 1914,
+        "secondary_evidence_url": "https://fauxtations.wordpress.com/2016/10/01/st-therese-and-praying-for-priests/",
+        "primary_copy_url": "https://books.google.com/books?id=2tPNAAAAMAAJ",
+        "status": "HISTORICAL_DATE_LOCATED_PRIMARY_PAGE_IMAGE_NOT_COLLATED",
+        "attribution_warning": "Frequently attributed to St Thérèse, but the 1914 printed witness associates the published prayer with a Sister of the Holy Child in Pennsylvania, not with St Thérèse. Do not attribute authorship to the saint without primary evidence.",
+        "next_gate": "Inspect 1914 issue page image and compare the exact English form to ICKSP text before importing."
+      }
     },
     {
       "id": "icksp_us_prayer_for_priests_second",
