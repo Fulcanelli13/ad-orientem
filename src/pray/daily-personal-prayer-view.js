@@ -32,6 +32,11 @@ export function dailyFormulationLabel(sourceLabel){
 }
 export function personalDailyPrayerCard(row,plan,{esc,L,prayerParagraphs,source}){
  const note=dailyPersonalProvenance(row,L);
+ const scopeNote=row.replacementScope==="narrower"?
+  '<small class="aoDailyFormulationCoverageNote">'+esc(L(
+   "This is a complete historical prayer with a narrower focus than the St Pius X opening. It replaces that whole stage, not just one sentence. Return to St Pius X for the combined original.",
+   "Cette prière historique intégrale a un objet plus restreint que la prière d’ouverture de saint Pie X. Elle remplace toute cette étape, et non une seule phrase. Revenez à saint Pie X pour retrouver la prière originale complète."
+  ))+'</small>':"";
  const context=row.sourceContextEn||row.sourceContextFr?'<small class="aoDailyPersonalContext">'+esc(L(row.sourceContextEn||"",row.sourceContextFr||""))+'</small>':"";
  const body=row.text?prayerParagraphs(row.text):
  '<p class="aoTP381TextParagraph">'+esc(L("Exact text unavailable in the selected language; nothing substituted.","Texte exact indisponible dans cette langue ; aucune substitution."))+'</p>';
@@ -42,10 +47,10 @@ export function personalDailyPrayerCard(row,plan,{esc,L,prayerParagraphs,source}
   '<span class="aoDailyFormulationLabel">'+esc(L("Prayer text","Texte de prière"))+'</span>'+
   '<div class="aoDailyFormulationChoices">'+
    '<button type="button" data-tp381-personal-variant="default:'+esc(row.sourceId)+'" aria-pressed="'+String(!row.replacementId)+'">'+esc(L("St Pius X","Saint Pie X"))+'</button>'+
-   matches.map(x=>'<button type="button" data-tp381-personal-variant="'+esc(x.id)+'" aria-pressed="'+String(row.replacementId===x.id)+'" title="'+esc(x.sourceLabel)+'">'+esc(dailyFormulationLabel(x.sourceLabel))+'</button>').join("")+
+   matches.map(x=>'<button type="button" data-tp381-personal-variant="'+esc(x.id)+'" aria-pressed="'+String(row.replacementId===x.id)+'" title="'+esc(x.sourceLabel+(x.replacementScope==="narrower"?" · narrower focus than original":""))+'">'+esc(x.choiceLabel||dailyFormulationLabel(x.sourceLabel))+'</button>').join("")+
   '</div></div>':"";
  return '<article class="aoTP381PrayerCard" data-ao-personal-prayer="'+esc(row.sourceId)+'" data-ao-personal-source="'+esc(row.replacementId||row.sourceId)+'">'+
- '<h3>'+esc(row.title)+'</h3>'+controls+'<small class="aoDailyPersonalProvenance">'+esc(note)+'</small>'+
+ '<h3>'+esc(row.title)+'</h3>'+controls+scopeNote+'<small class="aoDailyPersonalProvenance">'+esc(note)+'</small>'+
  prayerBody+context+source(row.sourceLabel,row.sourceUrl)+'</article>';
 }
 export function dailyPersonalList(rows,{esc,L,isFr}){
