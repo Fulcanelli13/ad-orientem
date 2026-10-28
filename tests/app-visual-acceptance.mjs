@@ -1273,7 +1273,9 @@ try{
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="novenas",null,{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 [data-n1-home]").count(),1,"Novenas lost explicit global Home");
   assert.equal(await page.locator("#aoPray435930 [data-n1-close]").count(),0,"Novenas regressed to ambiguous Close");
-  assert.equal(await page.locator("#aoPray435930 .aoN1Card").count(),16,"Novenas overview must expose the frozen 16-target bilingual corpus");
+  assert.equal(await page.locator("#aoPray435930 [data-n1-select]").count(),16,"Novenas overview must preserve all sixteen canonical bilingual novenas");
+  assert.equal(await page.locator("#aoPray435930 [data-n1-supplement]").count(),2,"Novenas overview must separately expose the two Institute repeat-form nine-day novenas");
+  assert.equal(await page.locator("#aoPray435930 [data-n1-therese-weekly]").count(),1,"Novenas overview must separately expose the perpetual Tuesday St Therese devotion");
   await shot("03f-pray-novenas");
   await page.locator("#aoPray435930 [data-n1-select='st_michael']").click();
   // The current quiet novena detail folio presents its start authority in
@@ -1338,7 +1340,11 @@ try{
     if(route==="pray.morning_evening"){
        assert.equal(await page.locator("#aoPray435930 [data-ao-pray-guide-card]").count(),1,
          "Morning/Evening must open as a single guided prayer card");
-       assert.equal(await page.locator("#aoPray435930 [data-tp381-daily-mode='guided']").getAttribute("aria-pressed"),"true");
+       assert.equal(await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").count(),1,
+         "Morning/Evening guided prayer must offer the direct named-prayer chooser");
+       assert.match(await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").innerText(),
+         /Choose a prayer|Choisir une prière/,
+         "Morning/Evening should expose the current direct prayer access control");
        await shot("03g-pray-morning-guided");
        const details=page.locator("#aoPray435930 [data-ao-daily-options]");
        await details.locator("summary").click();
@@ -1346,13 +1352,18 @@ try{
          "Secondary options cannot be opened from the finished prayer card");
        await page.locator("#aoPray435930 [data-tp381-daily-mode='list']").click();
       const rowGeometry=await page.evaluate(()=>{
-        const row=document.querySelector("#aoPray435930 .aoTP381PrayerList button");
-        const title=row?.querySelector("b")?.getBoundingClientRect();
-        const note=row?.querySelector("small")?.getBoundingClientRect();
-        return title&&note?{titleBottom:title.bottom,noteTop:note.top,titleRight:title.right,noteLeft:note.left}:null;
+        const rows=[...document.querySelectorAll("#aoPray435930 .aoDailyPrayerCatalog .aoDailyCatalogRows button")];
+        const visible=rows.filter(row=>row.getClientRects().length>0);
+        const titlesPresent=visible.length>0&&visible.every(row=>Boolean(row.querySelector("b")?.textContent?.trim()));
+        const subtitlesSeparate=visible.every(row=>{
+          const title=row.querySelector("b"),note=row.querySelector("small");
+          // Named prayers do not require a subtitle. When supplied, keep it below the title.
+          return !note||!title||note.getBoundingClientRect().top>=title.getBoundingClientRect().bottom+2;
+        });
+        return {count:visible.length,titlesPresent,subtitlesSeparate};
       });
-      assert.ok(rowGeometry&&rowGeometry.noteTop>=rowGeometry.titleBottom+2,
-        "Morning/Evening prayer-row subtitle overlaps the title instead of occupying its donor second line");
+      assert.ok(rowGeometry.count>0&&rowGeometry.titlesPresent&&rowGeometry.subtitlesSeparate,
+        "Morning/Evening named prayer catalog lost readable titles or overlaps source subtitles");
     }
     await shot(name);
   }
