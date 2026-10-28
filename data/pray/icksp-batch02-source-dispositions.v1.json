@@ -54,10 +54,12 @@
         "fr"
       ],
       "rights": "historical witness comparative collation pending",
-      "disposition": "PRESERVE_EXISTING_OPTIONAL_PENDING_LINE_COLLATION",
+      "disposition": "PRESERVE_CANONICAL_POST1964_14_AND_PROJECT_OPTIONAL_1962_13",
       "minister": "congregation",
-      "applicability": "only if recited locally",
-      "tests": "existing Benediction tests"
+      "applicability": "Optional local recitation only. 1962 13 by default; post-1964 14 via explicit edition selection.",
+      "tests": "tests/icksp-batch02-prayer-implementation.mjs",
+      "edition": "Historical 1962 projection omits the single invocation added 25 April 1964 (AAS 56:338); modern translations retained only as edition-compatible lines",
+      "decree": "https://zenit.org/2025/03/26/questions-about-liturgy-tinkering-with-the-divine-praises/"
     },
     {
       "id": "eucharistic_pange_lingua_full",
