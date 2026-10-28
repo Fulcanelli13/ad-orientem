@@ -825,7 +825,7 @@ function handleClick(e){
     const nextRows=buildPersonalDailyPlan({daypart:S.daypart,prefs:next}).rows;
     // An edition change starts a different printed sequence, but language,
     // extra prayers and manual ordering must not reset the active card.
-    if(action==="edition"||action==="reset")S.dailyStep=0;
+    if(action==="edition"||action==="length"||action==="reset")S.dailyStep=0;
     else if(previousStep===previous.length)S.dailyStep=nextRows.length;
     else{
       const match=nextRows.findIndex(row=>row.id===previousId);
