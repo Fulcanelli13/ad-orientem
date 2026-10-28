@@ -7,6 +7,8 @@ on:
     paths:
       - 'src/mass/1962-plural-martyr-french-source.js'
       - 'src/mass/proper-reader-slots.js'
+      - 'src/calendar/print-proper.js'
+      - 'tests/calendar-print-proper.mjs'
       - 'tests/1962-plural-martyrs-live-owner-audit.mjs'
       - '.github/workflows/1962-plural-martyrs-live-owner.yml'
   workflow_dispatch:
