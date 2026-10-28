@@ -176,3 +176,14 @@ Validation: `scripts/art/validate-prayer-sacred-art-pristine-master-20261028.mjs
 Bulk original scan: `scripts/art/bulk-verify-prayer-hero-native-images-20261028.py`.
 
 All source original references and six pinned source blob hashes are in the registry itself. No paid media, paid storage, correspondence to rights owners, or production artwork changes were used.
+
+## Batch 3 — seven remaining exact-source gates reconciled
+
+Research-only bulk source register: [B3 seven-case gates](../../data/research/prayer-sacred-art-b3-seven-group-source-gates-20261028.v1.json); [actual run results](../../assets/staged/prayer-art-b3-institutional-source-20261028/seven-group-intake-results.json); [Actions run #40727223776](https://github.com/Fulcanelli13/ad-orientem/actions/runs/40727223776).
+
+- **7/7** previously unresolved source groups received explicit source and rights dispositions. Six remained on their existing low-resolution, quality, identity, or image-rights holds.
+- **1** official institutional IIIF metadata check attempted for Rubens's *Holy Trinity*, KMSKA accession 314. The public collection page labels its image CC0, but the *live* IIIF manifest returned `https://rightsstatements.org/page/UND/1.0/`. That inconsistency means **no new image was downloaded and no photo-rights clearance was granted**. The Rubens painting also remains a candidate, not an unambiguous identification of the historically reviewed placement.
+- **1** Batoni 3,543×5,231 Commons file has a public-domain page label but an embedded Catholic News Service copyright-holder field. Quarantined. A separately licensed photographer's CC0 file is too small (1,034×1,441) to meet the native-quality objective.
+- **0** new master images acquired in this specific B3 pass, **0** newly pristine-certified, **0** released. The previously archived seven Batch 2 originals remain intact; all 22 selected heroes and 118 placement decisions remain unchanged. Cost **€0**.
+
+Next: perform final photographic and file-specific rights QA on the existing high-quality candidates as a consolidated group, seek genuinely independent clean masters for the seven exceptions, and do not treat contradictory licence labels or artificially enlarged files as solved cases.
