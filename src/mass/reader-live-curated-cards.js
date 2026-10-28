@@ -244,7 +244,16 @@ function curated(card){
     const blocks=blocksInRange(card,first,last);
     if(!paragraphs.length)throw new Error(sourceId(card)+": empty curated LIVE card");
     previous=last;
-    return Object.freeze({title:spec.titles[i],paragraphs,blocks,ordinal:i+1});
+    // The original fixed group title names Psalm 42 even where Ritus XIII.1
+    // has source-suppressed it in Requiem Masses. Keep the exact card/cue
+    // identity but never advertise a prayer that is not rendered.
+    const omittedJudica=sourceId(card)==="AO.CARD.001" && i===0 &&
+      (card.blocks??[]).some(b=>b.blockId==="AO.SM.B003" &&
+        b.omittedByRite==="RITUS_XIII_1_REQUIEM");
+    return Object.freeze({
+      title:omittedJudica?"At the Foot of the Altar · Introibo":spec.titles[i],
+      paragraphs,blocks,ordinal:i+1,
+    });
   });
 }
 
