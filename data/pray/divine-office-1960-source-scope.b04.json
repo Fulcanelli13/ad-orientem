@@ -1,0 +1,305 @@
+{
+  "schema": "ao.divine-office-corpus-scope.b04",
+  "date": "2026-10-28",
+  "authority_version": "ROMAN_1960_BREVIARY_NOT_CURRENT_LOTH",
+  "office_hours": 8,
+  "source_repo": "https://github.com/DivinumOfficium/divinum-officium",
+  "source_license_document": "https://github.com/DivinumOfficium/divinum-officium/blob/master/LICENSE",
+  "technical_source": "https://divinumofficium.hu/www/horas/Help/technical.html",
+  "note": "Open-source platform is useful for research and source structure, but completeness, appropriate version, source translation rights and exact 1960 conformity require separate per-file verification.",
+  "folders": [
+    {
+      "folder_id": "Ordinarium",
+      "repository_path": "web/www/horas/Latin/Ordinarium",
+      "repository_url": "https://github.com/DivinumOfficium/divinum-officium/tree/master/web/www/horas/Latin/Ordinarium",
+      "role": "Eight canonical hour skeletons, with Epiphany special Matins",
+      "inventory_unit_type": "STRUCTURE",
+      "source_evidence": "TECHNICAL_DOC_ROOT_OR_DISCUSSION",
+      "file_count": null,
+      "latin_record_count": null,
+      "english_record_count": null,
+      "french_record_count": null,
+      "full_file_tree_inspected": false
+    },
+    {
+      "folder_id": "Psalterium",
+      "repository_path": "web/www/horas/Latin/Psalterium",
+      "repository_url": "https://github.com/DivinumOfficium/divinum-officium/tree/master/web/www/horas/Latin/Psalterium",
+      "role": "Common prayers, invitatories, antiphons, blessings, doxologies, season-dependent hour parts",
+      "inventory_unit_type": "TEXT_AND_RULES",
+      "source_evidence": "TECHNICAL_DOC_ROOT_OR_DISCUSSION",
+      "file_count": null,
+      "latin_record_count": null,
+      "english_record_count": null,
+      "french_record_count": null,
+      "full_file_tree_inspected": false
+    },
+    {
+      "folder_id": "Psalmi",
+      "repository_path": "web/www/horas/Latin/Psalmi",
+      "repository_url": "https://github.com/DivinumOfficium/divinum-officium/tree/master/web/www/horas/Latin/Psalmi",
+      "role": "150 psalms and breviary canticles; Psalm-number identity must reconcile Scripture",
+      "inventory_unit_type": "SCRIPTURE_REUSE",
+      "source_evidence": "TECHNICAL_DOC_ROOT_OR_DISCUSSION",
+      "file_count": null,
+      "latin_record_count": null,
+      "english_record_count": null,
+      "french_record_count": null,
+      "full_file_tree_inspected": false
+    },
+    {
+      "folder_id": "Tempora",
+      "repository_path": "web/www/horas/Latin/Tempora",
+      "repository_url": "https://github.com/DivinumOfficium/divinum-officium/tree/master/web/www/horas/Latin/Tempora",
+      "role": "Temporal proper offices keyed by liturgical week/day; conditional variants",
+      "inventory_unit_type": "TEMPORAL_PROPER",
+      "source_evidence": "TECHNICAL_DOC_ROOT_OR_DISCUSSION",
+      "file_count": null,
+      "latin_record_count": null,
+      "english_record_count": null,
+      "french_record_count": null,
+      "full_file_tree_inspected": false
+    },
+    {
+      "folder_id": "Sancti",
+      "repository_path": "web/www/horas/Latin/Sancti",
+      "repository_url": "https://github.com/DivinumOfficium/divinum-officium/tree/master/web/www/horas/Latin/Sancti",
+      "role": "Sanctoral offices by date; r suffix marks 1960-specific variations",
+      "inventory_unit_type": "SANCTORAL_PROPER",
+      "source_evidence": "TECHNICAL_DOC_ROOT_OR_DISCUSSION",
+      "file_count": null,
+      "latin_record_count": null,
+      "english_record_count": null,
+      "french_record_count": null,
+      "full_file_tree_inspected": false
+    },
+    {
+      "folder_id": "Commune",
+      "repository_path": "web/www/horas/Latin/Commune",
+      "repository_url": "https://github.com/DivinumOfficium/divinum-officium/tree/master/web/www/horas/Latin/Commune",
+      "role": "Common offices incl. Dedication, Office of Dead, Blessed Virgin and Little Office",
+      "inventory_unit_type": "COMMON_REUSED",
+      "source_evidence": "TECHNICAL_DOC_ROOT_OR_DISCUSSION",
+      "file_count": null,
+      "latin_record_count": null,
+      "english_record_count": null,
+      "french_record_count": null,
+      "full_file_tree_inspected": false
+    },
+    {
+      "folder_id": "Martyrologium",
+      "repository_path": "web/www/horas/Latin/Martyrologium",
+      "repository_url": "https://github.com/DivinumOfficium/divinum-officium/tree/master/web/www/horas/Latin/Martyrologium",
+      "role": "Martyrology readings, not one independent daily prayer per line",
+      "inventory_unit_type": "LITURGICAL_READING",
+      "source_evidence": "TECHNICAL_DOC_ROOT_OR_DISCUSSION",
+      "file_count": null,
+      "latin_record_count": null,
+      "english_record_count": null,
+      "french_record_count": null,
+      "full_file_tree_inspected": false
+    },
+    {
+      "folder_id": "Tabulae",
+      "repository_path": "web/www/horas/Latin/Tabulae",
+      "repository_url": "https://github.com/DivinumOfficium/divinum-officium/tree/master/web/www/horas/Latin/Tabulae",
+      "role": "Calendars, tables and occurrence/concurrence rule inputs",
+      "inventory_unit_type": "RUBRICAL_DATA",
+      "source_evidence": "TECHNICAL_DOC_ROOT_OR_DISCUSSION",
+      "file_count": null,
+      "latin_record_count": null,
+      "english_record_count": null,
+      "french_record_count": null,
+      "full_file_tree_inspected": false
+    }
+  ],
+  "hours": [
+    {
+      "hour_id": "matins",
+      "order": 1,
+      "ordinary_script_required": true,
+      "proper_resolution_needed": true,
+      "psalter_fallback_needed": true,
+      "language_collation_needed": true,
+      "psalms_derived_from_scripture": true,
+      "source_covered": "HOUR_STRUCTURE_DOCUMENTED_NOT_INSTANCE_ENUMERATED"
+    },
+    {
+      "hour_id": "lauds",
+      "order": 2,
+      "ordinary_script_required": true,
+      "proper_resolution_needed": true,
+      "psalter_fallback_needed": true,
+      "language_collation_needed": true,
+      "psalms_derived_from_scripture": true,
+      "source_covered": "HOUR_STRUCTURE_DOCUMENTED_NOT_INSTANCE_ENUMERATED"
+    },
+    {
+      "hour_id": "prime",
+      "order": 3,
+      "ordinary_script_required": true,
+      "proper_resolution_needed": true,
+      "psalter_fallback_needed": true,
+      "language_collation_needed": true,
+      "psalms_derived_from_scripture": true,
+      "source_covered": "HOUR_STRUCTURE_DOCUMENTED_NOT_INSTANCE_ENUMERATED"
+    },
+    {
+      "hour_id": "terce",
+      "order": 4,
+      "ordinary_script_required": true,
+      "proper_resolution_needed": true,
+      "psalter_fallback_needed": true,
+      "language_collation_needed": true,
+      "psalms_derived_from_scripture": true,
+      "source_covered": "HOUR_STRUCTURE_DOCUMENTED_NOT_INSTANCE_ENUMERATED"
+    },
+    {
+      "hour_id": "sext",
+      "order": 5,
+      "ordinary_script_required": true,
+      "proper_resolution_needed": true,
+      "psalter_fallback_needed": true,
+      "language_collation_needed": true,
+      "psalms_derived_from_scripture": true,
+      "source_covered": "HOUR_STRUCTURE_DOCUMENTED_NOT_INSTANCE_ENUMERATED"
+    },
+    {
+      "hour_id": "none",
+      "order": 6,
+      "ordinary_script_required": true,
+      "proper_resolution_needed": true,
+      "psalter_fallback_needed": true,
+      "language_collation_needed": true,
+      "psalms_derived_from_scripture": true,
+      "source_covered": "HOUR_STRUCTURE_DOCUMENTED_NOT_INSTANCE_ENUMERATED"
+    },
+    {
+      "hour_id": "vespers",
+      "order": 7,
+      "ordinary_script_required": true,
+      "proper_resolution_needed": true,
+      "psalter_fallback_needed": true,
+      "language_collation_needed": true,
+      "psalms_derived_from_scripture": true,
+      "source_covered": "HOUR_STRUCTURE_DOCUMENTED_NOT_INSTANCE_ENUMERATED"
+    },
+    {
+      "hour_id": "compline",
+      "order": 8,
+      "ordinary_script_required": true,
+      "proper_resolution_needed": true,
+      "psalter_fallback_needed": true,
+      "language_collation_needed": true,
+      "psalms_derived_from_scripture": true,
+      "source_covered": "HOUR_STRUCTURE_DOCUMENTED_NOT_INSTANCE_ENUMERATED"
+    }
+  ],
+  "dependencies": [
+    {
+      "type": "OCCURRENCE_CONCURRENCE",
+      "inputs": [
+        "rank",
+        "Sunday or feria",
+        "feast",
+        "vigil and octave survival",
+        "commemorations",
+        "first/second Vespers",
+        "transfer rules"
+      ],
+      "resolution_state": "NOT_VERIFIED"
+    },
+    {
+      "type": "PSALTER_WEEK_DAY",
+      "inputs": [
+        "Sunday through Saturday",
+        "1960 psalm distribution",
+        "invitation",
+        "antiphons",
+        "doxologies"
+      ],
+      "resolution_state": "NOT_VERIFIED"
+    },
+    {
+      "type": "TEMPORAL",
+      "inputs": [
+        "Advent",
+        "Christmastide",
+        "Septuagesima",
+        "Lent/Passiontide",
+        "Eastertide",
+        "Pentecost and post-Pentecost"
+      ],
+      "resolution_state": "NOT_VERIFIED"
+    },
+    {
+      "type": "SANCTORAL",
+      "inputs": [
+        "fixed feasts",
+        "regional and institute proper feasts",
+        "Commons substitution"
+      ],
+      "resolution_state": "NOT_VERIFIED"
+    },
+    {
+      "type": "OFFICE_SPECIAL",
+      "inputs": [
+        "Office of the Dead",
+        "Little Office of the Blessed Virgin",
+        "Saturday Office of BVM",
+        "Tenebrae/Paschal Triduum"
+      ],
+      "resolution_state": "NOT_VERIFIED"
+    },
+    {
+      "type": "LANGUAGE",
+      "inputs": [
+        "Latin reference",
+        "English witness",
+        "French witness",
+        "translation completeness",
+        "avoid silent English fallback"
+      ],
+      "resolution_state": "NOT_VERIFIED"
+    }
+  ],
+  "coverage": {
+    "source_folders_mapped": 8,
+    "canonical_hours_mapped": 8,
+    "actual_source_files_enumerated": 0,
+    "full_latin_texts_collated": 0,
+    "english_translation_files_collated": 0,
+    "french_translation_files_collated": 0,
+    "calendar_date_hour_renderings_verified": 0,
+    "distinct_source_text_denominator": null
+  },
+  "icrsp_french_cross_reference": {
+    "source_url": "https://icrspfrance.fr/textes-liturgiques.php",
+    "office_subsection_current_records": 98,
+    "breakdown": {
+      "COMPLETE_OFFICE": 2,
+      "ALREADY_IN_APP": 3,
+      "HYMN": 8,
+      "CANTICLE": 1,
+      "COMPLETE_OFFICE_SECTION": 14,
+      "HISTORICAL_POETRY": 2,
+      "PSALM_COLLECTION": 3,
+      "PSALM_REFERENCE": 65
+    },
+    "additional_source_category": "Textes liturgiques de référence; decrees and rubrical tables, not direct prayer content",
+    "document_titles": [
+      "Rubriques du Bréviaire (1960)",
+      "Tables de préséance, d’occurrence et de concurrence (1960)",
+      "Decret du 26 juillet 1960",
+      "Rubricarum instructum",
+      "Variationes : Changement dans le Bréviaire et le Missel Romain (1960)"
+    ],
+    "status": "CATEGORY_DISCOVERED_HISTORICAL_SOURCE_TEXTS_NOT_COLLATED"
+  },
+  "icrsp_us_cross_reference": {
+    "source_url": "https://institute-christ-king.org/resources/devotions-prayers",
+    "index_headings_checked": 9,
+    "scope": "US devotional index is not a full Office corpus and must remain separate from ICRSP France liturgical index"
+  },
+  "implementation_policy": "INVENTORY_ONLY_NO_HOUR_RENDERER_WORK"
+}
