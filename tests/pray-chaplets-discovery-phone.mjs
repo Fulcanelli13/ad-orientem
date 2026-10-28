@@ -55,12 +55,29 @@ try{
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"Five Wounds reader must not clip horizontally");
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
    await page.locator(rootSel+' [data-p435930-family="chaplets"]').click();
+   // Full Raccolta 33-Pater chaplet is one extra guided choice, not the held short form.
+   await page.locator(rootSel+' [data-p435930-own="pray.precious_blood"]').click();
+   const blood=rootSel+' [data-ao-precious-blood-reader]';
+   assert.equal(await page.locator(blood).count(),1);
+   assert.match(await page.locator(blood+' .aoPreciousBloodCard').innerText(),/O God, come to my assistance/);
+   await page.locator(rootSel+' [data-p435930-blood-next]').click();
+   assert.match(await page.locator(blood+' .aoPreciousBloodCard').innerText(),/Our Father/);
+   await page.locator(rootSel+' [data-p435930-blood-next]').click();
+   assert.match(await page.locator(blood+' .aoPreciousBloodPrayerHead').innerText(),/Our Father 2/);
+   await page.locator(rootSel+' [data-p435930-blood-mystery="6"]').click();
+   assert.match(await page.locator(blood+' header h2').innerText(),/Piercing of His Side/);
+   await page.locator(rootSel+' [data-p435930-blood-latin]').click();
+   assert.match(await page.locator(blood+' .aoPreciousBloodCard').innerText(),/Pater noster/);
+   await page.screenshot({path:resolve(out,"precious-blood-full-guided-"+width+".png"),animations:"disabled"});
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"Precious Blood reader must not clip horizontally");
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+   await page.locator(rootSel+' [data-p435930-family="chaplets"]').click();
    // Enter the existing Divine Mercy owner from its new discovery family.
    await page.locator(rootSel+' [data-p435930-own="pray.divine_mercy"]').click();
    assert.equal(await page.locator(rootSel+" .aoMercyReader [data-ao-mercy-bead-navigation]").count(),1);
    await page.screenshot({path:resolve(out,"chaplet-from-family-"+width+".png"),animations:"disabled"});
    assert.deepEqual(errors,[],errors.join("; "));
-   console.log("PASS "+width+"px Rosary & Chaplets discovery: original Rosary and methods routes unchanged, Five Wounds opened source-owning reader, canonical Mercy preserved");
+   console.log("PASS "+width+"px Rosary & Chaplets discovery: original Rosary and methods routes unchanged, Five Wounds and Precious Blood source-owned guided readers; canonical Mercy preserved");
   }finally{await page.close()}
  }
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}
