@@ -1,0 +1,47 @@
+{
+  "schema": "AO_PRAYER_WAVE1_MORNING_SORROWS_INTEGRATION_STATUS_V1",
+  "date": "2026-10-28",
+  "cost_eur": 0,
+  "selection_changes": 0,
+  "previous_approval_registers_edited": false,
+  "source_integrity": "PASS 2/2 VERIFIED ORIGINALS, 4 SOURCE-FAITHFUL DERIVATIVES",
+  "works": [
+    {
+      "module": "morning",
+      "title": "The Song of the Lark",
+      "artist": "Jules Breton",
+      "source_master_sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+      "color": "sRGB only from source ICC",
+      "crop": "none",
+      "file_rights": "production file rights still to be reconciled",
+      "module_route": "pray.morning_evening",
+      "proof_integration": "opt in aoPrayerArt=morning-review; only morning guided step 0; collapsed editorial artwork disclosure",
+      "design_safeguards": [
+        "Sunrise and progressive full-screen atmosphere still owned by existing contemplative reader",
+        "No extra default UI; opening prayer and one-click prayer alternatives unchanged",
+        "Timer unchanged; Evening Prayer shows no artwork",
+        "Full artwork and small bird kept; attribution to Art Institute of Chicago",
+        "No production activation until editorial photographic approval and source terms"
+      ],
+      "production_published": false
+    },
+    {
+      "module": "seven-sorrows",
+      "title": "Virgin of the Seven Sorrows",
+      "artist": "Master of the Female Half-Lengths (attributed)",
+      "source_master_sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+      "color": "sRGB only from source ICC",
+      "crop": "none",
+      "file_rights": "Commons source reproduction terms and jurisdiction to be checked",
+      "module_route": null,
+      "route_status": "No current standalone Seven Sorrows Prayer route present on main in canonical prayer registry.",
+      "proof_integration": "Source-faithful artifacts only; pending integration into canonical module, not an invented parallel reader.",
+      "iconography": "Seven narrative medallions around the Virgin and one prominent physical sword, not seven swords.",
+      "composition": "All seven medallions, Virgin, sword and full painting retained.",
+      "production_published": false
+    }
+  ],
+  "browser_status": "PASS initial tests 320/390/1440, preview flag default off; screenshot archival job will track later CI.",
+  "merge_policy": "This is a draft review change; no direct production release of either painting.",
+  "morlete_ruiz_state": "Historical Sacred Heart approval unaffected; placement review remains separate."
+}
