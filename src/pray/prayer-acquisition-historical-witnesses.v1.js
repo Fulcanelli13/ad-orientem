@@ -2,9 +2,12 @@
  * Wave 04 historical witness mining — NOT the locked 48-prayer canonical bank.
  * These pre-1931 English witnesses are extracted from Lasance (1908),
  * My Prayer-Book / Prayers During the Day. Each has a visible text page.
- * Print-image collation, exact recensional agreement, and French/Latin
- * witnesses are NOT yet cleared. Nothing in this file changes user-facing
- * Prayer readers or the daily historical release switch.
+ * Release is PER WITNESS and PER LANGUAGE, never per source website.
+ * Cleared witnesses: Suscipe EN/Latin (Morning Offering); Aquinas
+ * Concede mihi EN/Latin and Lasance's after-meditation EN (Scripture reader).
+ * The longer before-meditation EN witness remains held for image collation.
+ * No French version is asserted. Neither locked canonical prayer identity
+ * nor the printed Pius X Morning/Evening order is changed.
  */
 export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
   {
@@ -47,7 +50,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
     "work_kind": "PRAYER",
     "text": "O my God, I give Thee heartfelt thanks for all the graces Thou hast conferred on me during this meditation. Pardon me, I beseech Thee, all the negligence and all the distractions of which I have been guilty. Give me strength to carry out the resolutions that I have made. Fortify me, that from henceforth I may diligently practise this virtue . . . avoid this fault . . . perform this action . . . to Thy honor.\n\nHelp me to keep my good resolutions, O sweet Virgin Mary; and do thou, my good angel, recall them to my memory, if I should ever forget or neglect them. Omnia ad majorem Dei gloriam!",
     "source_page": "226",
-    "notes": "Transcription normalizes obvious OCR error in printed Latin motto 'Ommia' to 'Omnia'; substantive editorial correction must be confirmed against page image before publication.",
+    "notes": "Printed 1908 page 226 independently checked; the motto is 'Omnia', whereas the incomplete online transcription reads 'Ommia'. No historical French translation asserted. Printed page 226 has the correct motto Omnia; do not attribute OCR Ommia to printed text.",
     "source": {
       "work": "F.X. Lasance, My Prayer-Book: Happiness in Goodness",
       "edition": "Benziger Brothers, 1908",
@@ -58,7 +61,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
       "witness_status": "HISTORICAL_ENGLISH_SCAN_IMAGE_COLLATED"
     },
     "release": {
-      "status": "STAGED_RESEARCH_NOT_LIVE",
+      "status": "LIVE_CLEARED",
       "translation_status": {
         "en": "HISTORICAL_ENGLISH",
         "fr": "NOT_AVAILABLE",
@@ -66,7 +69,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
       },
       "exact_print_verified": true,
       "modern_rights_clearance": "ORIGINAL_1908_TEXT_ONLY",
-      "allowed_in_prayer_hub": false
+      "allowed_in_prayer_hub": true
     }
   },
   {
@@ -109,7 +112,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
     "work_kind": "PRAYER",
     "text": "Grant me grace, O merciful God, to desire ardently all that is pleasing to Thee, to examine it prudently, to acknowledge it truthfully, and to accomplish it perfectly, for the praise and glory of Thy name. Amen.",
     "source_page": "228",
-    "notes": "English translation collated with printed image p.228. The same image contains the Latin original; preserved in a separate, source-identified Latin witness.",
+    "notes": "English translation collated with printed image p.228. The same image contains the Latin original; preserved in a separate, source-identified Latin witness. Prayer printed in Lasance 1908 p.228; suitable before study or Scripture reading as an optional use.",
     "source": {
       "work": "F.X. Lasance, My Prayer-Book: Happiness in Goodness",
       "edition": "Benziger Brothers, 1908",
@@ -120,7 +123,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
       "witness_status": "HISTORICAL_ENGLISH_SCAN_IMAGE_COLLATED"
     },
     "release": {
-      "status": "STAGED_RESEARCH_NOT_LIVE",
+      "status": "LIVE_CLEARED",
       "translation_status": {
         "en": "HISTORICAL_ENGLISH",
         "fr": "NOT_AVAILABLE",
@@ -128,7 +131,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
       },
       "exact_print_verified": true,
       "modern_rights_clearance": "ORIGINAL_1908_TEXT_ONLY",
-      "allowed_in_prayer_hub": false
+      "allowed_in_prayer_hub": true
     }
   },
   {
@@ -171,7 +174,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
     "work_kind": "PRAYER",
     "text": "Concede mihi, misericors Deus, quae tibi placita sunt ardenter concupiscere, prudenter investigare, veraciter agnoscere et perfecte adimplere, ad laudem et gloriam nominis tui. Amen.",
     "source_page": "228",
-    "notes": "Latin transcription verified against printed page 228. Preserved separately from the English translation and not silently substituted for French.",
+    "notes": "Latin transcription verified against printed page 228. Preserved separately from the English translation and not silently substituted for French. Prayer printed in Lasance 1908 p.228; suitable before study or Scripture reading as an optional use.",
     "source": {
       "work": "F.X. Lasance, My Prayer-Book: Happiness in Goodness",
       "edition": "Benziger Brothers, 1908",
@@ -182,7 +185,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
       "witness_status": "LATIN_SCAN_IMAGE_COLLATED"
     },
     "release": {
-      "status": "STAGED_RESEARCH_NOT_LIVE",
+      "status": "LIVE_CLEARED",
       "translation_status": {
         "en": "NOT_APPLICABLE",
         "fr": "NOT_AVAILABLE",
@@ -190,7 +193,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
       },
       "exact_print_verified": true,
       "modern_rights_clearance": "ORIGINAL_1908_TEXT_ONLY",
-      "allowed_in_prayer_hub": false
+      "allowed_in_prayer_hub": true
     }
   }
 ]);
