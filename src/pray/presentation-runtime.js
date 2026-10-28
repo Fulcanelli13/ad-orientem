@@ -52,6 +52,7 @@ import {FORTY_HOURS_SOLEMN_SOURCE,FORTY_HOURS_SOLEMN_STAGES,fortySolemnAt} from 
 import {EUCHARISTIC_WITNESS_IDS,getEucharisticWitness,EUCHARISTIC_SOURCE} from "./eucharistic-witnesses.js";
 import {instituteOptionalFor} from "./icksp-batch02-optional.js";
 import {SACRED_HEART_DEVOTIONS_V382} from "./traditional-pray-data.js";
+import {ADORATION_FOUR_OPTIONAL_SOURCE_IDS,ADORATION_FOUR_SOURCE_LABELS,adorationFourOptionFor,normalizedAdorationFourChoices} from "./adoration-four-purpose-options.js";
 
 // Locked v43.59.30 PRAY presentation runtime. Kept intact inside a browser-only
 // guard so unit tests may import the modular owner without a DOM.
@@ -244,6 +245,19 @@ function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,
 let CONF=freshConfessionState();
 let BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:"ordinary",feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};
 let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};
+const ADOR_FOUR_CHOICES_KEY="ao.pray.adoration-four-choices.v1";
+let ADOR_FOUR_CHOICES=null;
+function adorationFourChoices(){
+ if(ADOR_FOUR_CHOICES)return ADOR_FOUR_CHOICES;
+ let raw={};try{raw=JSON.parse(globalThis.localStorage?.getItem(ADOR_FOUR_CHOICES_KEY)||"{}")}catch{}
+ return ADOR_FOUR_CHOICES=normalizedAdorationFourChoices(raw);
+}
+function saveAdorationFourChoice(purpose,id){
+ const old=adorationFourChoices();
+ const next=normalizedAdorationFourChoices({...old,[purpose]:id||null});
+ ADOR_FOUR_CHOICES=next;
+ try{globalThis.localStorage?.setItem(ADOR_FOUR_CHOICES_KEY,JSON.stringify(next))}catch{}
+}
 // Adoration preserves an explicit, secondary handoff to the distinct public
 // Benediction reader. The wording indicates whether this is a first visit or
 // a return from that rite; opening Adoration never starts Benediction.
@@ -1573,7 +1587,7 @@ function holySteps(){return [
 function fourSteps(){return [
  {title:L('Adoration','Adoration'),now:L('Begin with God Himself. Adore Him for who He is, not first for what He gives you.','Commencez par Dieu Lui-même. Adorez-Le pour ce qu’Il est, non d’abord pour ce qu’Il vous donne.'),prayers:[{id:'foundations_prayer_of_adoration'}],silence:L('Remain briefly in simple worship.','Demeurez brièvement dans une adoration simple.')},
  {title:L('Thanksgiving','Action de grâces'),now:L('Give thanks for creation, redemption, the Eucharist and particular graces. Name concrete gifts rather than speaking only in generalities.','Rendez grâce pour la création, la rédemption, l’Eucharistie et les grâces particulières. Nommez des dons concrets plutôt que de rester dans les généralités.'),prayers:[{id:'foundations_glory_be',kicker:L('Optional doxology','Doxologie facultative')}],silence:L('Let gratitude become specific.','Que votre gratitude devienne concrète.')},
- {title:L('Reparation','Réparation'),now:L('Acknowledge sin beginning with your own need for mercy, then offer reparation for offences against God.','Reconnaissez le péché en commençant par votre propre besoin de miséricorde, puis offrez réparation pour les offenses faites à Dieu.'),prayers:[{id:'sacrament_act_of_contrition'}],silence:L('A longer traditional Act of Reparation is available if useful.','Un Acte de réparation traditionnel plus long est disponible si cela vous aide.'),extra:`<button type="button" class="aoP435930Secondary" data-p435930-open-prayer="sacred_heart_short_prayer">${esc(L('Open Act of Reparation','Ouvrir l’Acte de réparation'))}</button>`},
+ {title:L('Reparation','Réparation'),now:L('Acknowledge sin beginning with your own need for mercy, then offer reparation for offences against God.','Reconnaissez le péché en commençant par votre propre besoin de miséricorde, puis offrez réparation pour les offenses faites à Dieu.'),prayers:[{id:'sacrament_act_of_contrition'}],silence:L('A longer traditional Act of Reparation is available if useful.','Un Acte de réparation traditionnel plus long est disponible si cela vous aide.'),extra:''},
  {title:L('Petition','Demande'),now:L('Present the needs of the Church, others and yourself. Keep the order broad enough that prayer does not become only self-concern.','Présentez les besoins de l’Église, des autres et les vôtres. Gardez un ordre assez large pour que la prière ne devienne pas seulement préoccupée de soi.'),prayers:[{id:'foundations_our_father'}],silence:L('After asking, leave the intentions with God.','Après avoir demandé, laissez les intentions à Dieu.')},
  {title:L('Return to silence','Revenir au silence'),now:L('The method is finished. Stop adding material and return to silent adoration.','La méthode est terminée. Cessez d’ajouter du contenu et revenez à l’adoration silencieuse.'),prayers:[],silence:L('Remain as long as is appropriate; there is no completion score.','Demeurez aussi longtemps qu’il convient ; il n’y a aucun score d’accomplissement.')}
 ]}
@@ -1614,6 +1628,24 @@ function exitAdorationQuiet(){
   m.querySelector('.aoAdorationQuietLink,.aoAdorationQuietEnter')?.focus?.({preventScroll:true});
  });
 }
+function adorationFourOptionalMarkup(purpose){
+ const ids=ADORATION_FOUR_OPTIONAL_SOURCE_IDS[purpose]||[];
+ const eligible=ids.filter(id=>!!P(id)?.[lang()]&&!!P(id)?.provenance?.url);
+ if(!eligible.length)return "";
+ const chosen=adorationFourChoices()[purpose];
+ const selected=adorationFourOptionFor(purpose,chosen)&&eligible.includes(chosen)?chosen:null;
+ const label=L("Additional complete prayer (optional)","Prière intégrale complémentaire (facultative)");
+ const button=(id,title,active)=>'<button type="button" data-p435930-four-choice="'+esc(purpose+":"+id)+'" aria-pressed="'+String(active)+'">'+esc(title)+'</button>';
+ const selections=button("none",L("None","Aucune"),!selected)+eligible.map(id=>{
+  const name=ADORATION_FOUR_SOURCE_LABELS[id];return button(id,L(name.en,name.fr),selected===id);
+ }).join("");
+ const reading=selected?'<div class="aoFourPurposeReading" data-ao-four-source="'+esc(selected)+'">'+
+  prayerBlock(selected,{kicker:L("Separate optional devotion","Dévotion distincte facultative")})+'</div>':"";
+ return '<section class="aoFourPurposeOption" data-ao-four-purpose="'+esc(purpose)+'" aria-label="'+esc(label)+'">'+
+  '<small class="aoFourPurposeCaption">'+esc(label)+'</small>'+
+  '<div class="aoFourPurposeChoices" role="group" aria-label="'+esc(label)+'">'+selections+'</div>'+
+  reading+'</section>';
+}
 function guidedStage(kind,steps,index,lastLabel){
  const st=steps[index]||steps[0];
  // The original stage/prayer arrays remain canonical; only the visual
@@ -1621,7 +1653,7 @@ function guidedStage(kind,steps,index,lastLabel){
  return `<section class="aoDevoCard" data-ao-devo-card="${kind}-${index}">
  <header class="aoDevoCardHead"><small class="aoDevoCardNumber">${index+1} / ${steps.length}</small><h2 class="aoDevoCardTitle">${esc(st.title)}</h2></header>
  <div class="aoDevoCardScroll" role="region" tabindex="0" aria-label="${esc(st.title)}">
- ${guideNow(st.title,st.now)}${guidePrayers(st.prayers)}${guideCue(L('SILENCE / NOTICE','SILENCE / ATTENTION'),st.silence)}${st.extra||''}<button type="button" class="${st.prayers.length===0?'aoAdorationQuietEnter':'aoAdorationQuietLink'}" data-p435930-ador-quiet-enter>${esc(st.prayers.length===0?L('Remain in silence','Demeurer en silence'):L('Pause in silence','Faire une pause en silence'))}</button>
+ ${guideNow(st.title,st.now)}${guidePrayers(st.prayers)}${kind==='four'?adorationFourOptionalMarkup(['adoration','thanksgiving','reparation','petition'][index]):''}${guideCue(L('SILENCE / NOTICE','SILENCE / ATTENTION'),st.silence)}${st.extra||''}<button type="button" class="${st.prayers.length===0?'aoAdorationQuietEnter':'aoAdorationQuietLink'}" data-p435930-ador-quiet-enter>${esc(st.prayers.length===0?L('Remain in silence','Demeurer en silence'):L('Pause in silence','Faire une pause en silence'))}</button>
  </div></section>${guideNav(kind,index,steps.length,lastLabel)}`
 }
 function batch02SourceLinks(destination){
@@ -2821,6 +2853,29 @@ function onClick(e){
  if(b.dataset.p435930BenStep!=null){BEN.step=+b.dataset.p435930BenStep;return render()}
  if(b.matches('[data-p435930-ben-finish]')&&BEN.step===benStages().length-1){
   setAdorationPresence('reserved');BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};popView('home');return render()
+ }
+ if(b.hasAttribute('data-p435930-four-choice')){
+  if(view!=='adoration'||ADOR.mode!=='four'||ADOR.quiet)return;
+  const raw=String(b.dataset.p435930FourChoice||'');
+  const colon=raw.indexOf(':');if(colon<0)return;
+  const purpose=raw.slice(0,colon),id=raw.slice(colon+1);
+  const phase=['adoration','thanksgiving','reparation','petition'][ADOR.fourStep];
+  if(purpose!==phase)return;
+  if(id!=='none'&&(!adorationFourOptionFor(purpose,id)||!P(id)?.[lang()]||!P(id)?.provenance?.url))return;
+  const current=adorationFourChoices()[purpose]||null,chosen=id==='none'?null:id;
+  if(current===chosen)return;
+  // Only the optional source-prayer selector is replaced: never remount
+  // the historical stage, parent scroll, timer, silence cue or ritual rail.
+  const section=mount()?.querySelector('.aoP435930AdorationReader[data-ao-adoration-mode="four"] [data-ao-four-purpose="'+purpose+'"]');
+  if(!section)return;
+  saveAdorationFourChoice(purpose,chosen);
+  const holder=section.ownerDocument.createElement('div');
+  holder.innerHTML=adorationFourOptionalMarkup(purpose);
+  const replacement=holder.firstElementChild;
+  if(!replacement)return;
+  section.replaceWith(replacement);
+  replacement.querySelector('[data-p435930-four-choice="'+raw+'"]')?.focus?.({preventScroll:true});
+  return;
  }
  if(b.matches('[data-p435930-ador-quiet-enter]'))return enterAdorationQuiet();
  if(b.matches('[data-p435930-ador-quiet-exit]'))return exitAdorationQuiet();
