@@ -82,7 +82,7 @@ export function reviewAdventVespersOrdinaryStructure({
   if(next<0)return fail("OFFICE_ADVENT_VESPERS_ORDINARY_SEQUENCE_MISSING:"+expected);
   position=next;
  }
- if(marked.filter(x=>x==="#Suffragium").length!==2||
+ if(lines.filter(x=>x==="#Suffragium"||/^\([^)]*\)\s+#Suffragium$/u.test(x)).length!==2||
     marked.filter(x=>x==="#Capitulum Responsorium Hymnus Versus").length!==1||
     marked.filter(x=>x==="#Conclusio").length!==1)
   return fail("OFFICE_ADVENT_VESPERS_ORDINARY_VARIANT_STRUCTURE_CHANGED");
