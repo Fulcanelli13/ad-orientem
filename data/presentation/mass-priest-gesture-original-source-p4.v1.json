@@ -1,0 +1,65 @@
+{
+  "schema": "ao-mass-priest-gesture-original-source-p4-v1",
+  "version": "2026-10-29-p4",
+  "releaseClass": "RESEARCH_ONLY_NO_ICON_OR_RUBRIC_PROMOTION",
+  "primaryRitualAuthority": "Missale Romanum 1962 Ritus servandus VIII.4 and VII.5 and XII.1",
+  "policy": {
+    "zeroCostOnly": true,
+    "noThirdPartyFees": true,
+    "noGeneratedOriginals": true,
+    "noApprovalInferred": true,
+    "noArtInstalled": true,
+    "frozenMatrixRemain": "142/125/17",
+    "frozenBankMasters": 67
+  },
+  "targets": [
+    {
+      "cueId": "AO.SM.C0161",
+      "action": "HANDS_OVER_OBLATIONS",
+      "sourceCandidateId": "LECLERC1661_PLATE19",
+      "status": "AWAITING_BYTES_AND_EXACT_1962_POSE_COMPARISON"
+    },
+    {
+      "cueId": "AO.SM.C0117",
+      "action": "RAISE_EYES_AND_HANDS",
+      "sourceCandidateId": null,
+      "status": "REQUIRES_RIGHTS_CLEARED_EXACT_VISUAL_REFERENCE"
+    },
+    {
+      "cueId": "AO.SM.C0263",
+      "action": "RAISE_EYES_AND_HANDS",
+      "sourceCandidateId": null,
+      "status": "REQUIRES_RIGHTS_CLEARED_EXACT_VISUAL_REFERENCE"
+    }
+  ],
+  "original": {
+    "id": "LECLERC1661_PLATE19",
+    "title": "Quand le Prestre couvre l'hostie & le calice de ses mains",
+    "artist": "Sébastien Leclerc I (1637–1714)",
+    "year": 1661,
+    "objectId": "RP-P-OB-69.169",
+    "publisher": "Claude Bouchard, Metz",
+    "holdingInstitution": "Rijksmuseum, Amsterdam",
+    "holdingInstitutionObjectUri": "https://id.rijksmuseum.nl/200217631",
+    "museumObjectUrl": "https://www.rijksmuseum.nl/en/collection/object/Priester%2Bmet%2Btwee%2Bmisdienaars%2Bvoor%2Been%2Baltaar--8fbf3e2537fef0d39ba7130518c4c1c4",
+    "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Priester_met_twee_misdienaars_voor_een_altaar,_RP-P-OB-69.169.jpg",
+    "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/Priester_met_twee_misdienaars_voor_een_altaar%2C_RP-P-OB-69.169.jpg",
+    "license": "CC0_1_0",
+    "licenseEvidenceUrl": "https://commons.wikimedia.org/wiki/File:Priester_met_twee_misdienaars_voor_een_altaar,_RP-P-OB-69.169.jpg",
+    "museumRights": "PUBLIC_DOMAIN",
+    "expectedSHA1": "9e7ec93ae7b947f9b540686340978287da5846a8",
+    "expectedBytes": 171095,
+    "expectedWidth": 649,
+    "expectedHeight": 1050,
+    "filePath": "assets/references/mass-icon-originals/Leclerc_1661_RP-P-OB-69.169_CC0.jpg",
+    "proofPath": "data/presentation/mass-icon-source-p4-plate19-integrity.json",
+    "mediaType": "image/jpeg",
+    "exactLiturgicalGestureVerified": false,
+    "palmGeometryInspected": false,
+    "bothVesselsIdentifiable": null,
+    "matches1962Rubrics": null,
+    "userArtworkApproval": "PENDING",
+    "iconReleaseEligible": false,
+    "guard": "A 1661 print may show a close related historical action but does NOT independently prove the exact 1962 Hanc igitur hands posture. Acquire raw file bytes only, preserve provenance and review separate."
+  }
+}
