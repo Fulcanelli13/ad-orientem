@@ -1,0 +1,62 @@
+{
+  "schema": "AO_R18_SINGLE_RECORD_CANONICAL_RELEASE_REVIEW_V1",
+  "review_date": "2026-10-30",
+  "target_branch": "main",
+  "record_id": "PENT-001",
+  "origin_review_key": "CUSTOMS-R18-14",
+  "source_review_blob_sha": "2b22181c25b6e5bc8dd8d6fd959fc0b30117a02c",
+  "editorial_decision": "SOURCE_BOUNDED_ARTICLE_READY_FOR_INDIVIDUAL_PR_REVIEW_NOT_MERGED",
+  "reason": "Distinct voluntary Polish household greenery at Pentecost. Verified institutional text supports historically regional action; no automatic modern continuity, new rite, blessing or celebrant role.",
+  "publication_semantics": "PUBLISHED in PR seed is the proposed canonical state ONLY IF THIS PR IS MERGED; current production main remains at 35.",
+  "new_source_ids": [
+    "LASYPANSTWOWE-PENTECOST-GREENERY",
+    "LASYPANSTWOWE-BIRCH-GREENERY"
+  ],
+  "proposed_scope": {
+    "geo": "Poland, historically documented regional domestic customs",
+    "liturgical_context": "Pentecost, movable date resolved exclusively by canonical 1962 Calendar",
+    "not": "Roman Mass rubric, sacramental blessing, mandatory devotion, recurring local event, verified current programme",
+    "automatic_calendar_reminder": false,
+    "automatic_calendar_recommendation": false
+  },
+  "article_qa": {
+    "eight_fields_en_fr_verified": true,
+    "title_history_meaning_practice_caution_scope_cross_checked": true,
+    "source_claim_bounded": true,
+    "photo_rights_not_in_scope": true
+  },
+  "release_gates": {
+    "id_collision_check": "REQUIRED",
+    "source_links": "REQUIRED",
+    "bilingual_article": "REQUIRED",
+    "regional_scope": "REQUIRED",
+    "canonical_seed_parity": "REQUIRED",
+    "date_nonactivation": "REQUIRED",
+    "unrelated_published_35_no_regressions": "REQUIRED",
+    "user_final_merge_approval": "NOT_YET_GIVEN"
+  },
+  "live_change_now": false,
+  "rollback": "Do not merge PR or revert its exact merge commit. No production data has been changed at proposal stage.",
+  "excluded_from_this_release": [
+    "CUSTOMS-R18-03",
+    "CUSTOMS-R18-04",
+    "CUSTOMS-R18-05",
+    "CUSTOMS-R18-07",
+    "CUSTOMS-R18-08",
+    "CUSTOMS-R18-09",
+    "CUSTOMS-R18-13",
+    "CUSTOMS-R18-15",
+    "CUSTOMS-R18-16",
+    "CUSTOMS-R18-17"
+  ],
+  "source_urls": [
+    "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich",
+    "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/brzoza-przytul-sie-do-bialej-pani"
+  ],
+  "authorizations": {
+    "human_final_copy_signoff": false,
+    "automatic_merge_allowed": false,
+    "annual_local_event_allowed": false,
+    "indulgences_allowed": false
+  }
+}
