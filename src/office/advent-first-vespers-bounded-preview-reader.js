@@ -102,7 +102,12 @@ export function createAdventFirstVespersBoundedPinnedReader({
  async function readSource(path,language){
   if(!PATHS.has(path))
    throw Error("PRIVATE_PREVIEW_NAMED_SECTION_PATH_NOT_ALLOWED");
-  const map=parseAdventPreviewSourceSections(await raw(path,language),SECTIONS[path]);
+  const allowed=new Set(SECTIONS[path]);
+  if(path==="Tempora/Adv1-0"&&language!=="la"){
+   allowed.delete("Ant Vespera");
+   allowed.delete("Versum 1");
+  }
+  const map=parseAdventPreviewSourceSections(await raw(path,language),allowed);
   return Object.freeze({sourceRevision:PIN,sourcePath:path,language,map});
  }
  async function readPsalmSource(path,language){
