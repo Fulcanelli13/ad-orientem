@@ -35,7 +35,7 @@ assert.equal(review.photo_review_queue.length,12);
 assert.equal(review.photo_review_queue.every(x=>x.review==="HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"),true);
 const unrelated=review.candidate_pairs.find(x=>x.venue_name==="Friedhofskirche St. Michael"
   &&x.place_id==="place:DE:altoetting-gnadenkapelle");
-assert.equal(unrelated?.disposition,"DIFFERENT_OR_GENERIC_DEDICATION_HOLD");
+assert.equal(unrelated?.disposition,"DIFFERENT_CONFIRMED_PLACE_HOLD","P104 exact cemetery-church link must block Gnadenkapelle media substitution");
 const wrongChapel=review.candidate_pairs.find(x=>x.venue_name==="Sieben-Schmerzen-Kapelle (Seven Sorrows Chapel)"
   &&x.place_id==="place:DE:altoetting-gnadenkapelle");
 assert.equal(wrongChapel?.place_has_approved_photo,true);
