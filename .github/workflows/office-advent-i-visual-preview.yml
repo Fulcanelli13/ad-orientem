@@ -27,6 +27,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Validate visual harness and Compline engine syntax before browser setup
+        run: |
+          node --check tests/divine-office-advent-first-vespers-browser-visual.mjs
+          node --check src/office/saturday-compline-2026-pilot.js
       - name: Install existing pinned-capability browser test dependency
         run: npm install --no-audit --no-fund
       - name: Install headless Chromium for visual capture
