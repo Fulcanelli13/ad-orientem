@@ -1,0 +1,36 @@
+name: P75 existing Commons 150-image visual review (read-only)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/p75-existing-commons-150-image-review.v1.json'
+      - 'tools/curate-existing-commons-p75.py'
+      - '.github/workflows/p75-150-existing-commons-visual.yml'
+permissions:
+  contents: read
+jobs:
+  audit-150-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed Pillow encoder/decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Validate exact 150 candidate selection without network
+        run: python tools/curate-existing-commons-p75.py --dry-run
+      - name: Verify original bytes and create three 50-image contact sheets
+        run: python tools/curate-existing-commons-p75.py --delay 1.6
+      - name: Temporary image review evidence, never automatically approved
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p75-150-candidate-verified-contact-sheets
+          retention-days: 1
+          if-no-files-found: warn
+          path: |
+            data/geography/research/p75-review-artifacts/p75-150-candidate-hash-audit.jsonl
+            data/geography/research/p75-review-artifacts/p75-summary.json
+            data/geography/research/p75-review-artifacts/p75-contact-sheet-*.jpg
