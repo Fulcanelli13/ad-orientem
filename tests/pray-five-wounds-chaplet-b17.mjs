@@ -78,4 +78,10 @@ assert.ok(!runtime.slice(runtime.indexOf("function renderFiveWounds()"),runtime.
 assert.match(style,/\.aoFiveWounds button\{min-height:48px/);
 assert.match(style,/\.aoFiveWoundsRail button\{min-height:58px/);
 assert.match(style,/prefers-reduced-motion:reduce/);
+assert.match(style,/\.aoFiveWoundsRail button small\{font:500 12px\/1\.35/,"Wound names must not be 10px labels");
+assert.match(style,/\.aoFiveWoundsRail button small\{[^\n]*opacity:1;/,"Non-active wound names remain readable");
+assert.match(style,/\.aoFiveWoundsActions\{[\s\S]*?position:sticky;bottom:0;z-index:12/,"Use the existing action row as a phone thumb dock");
+assert.match(style,/env\(safe-area-inset-bottom\)/,"Respect phone safe-area inset");
+assert.match(style,/\.aoFiveWoundsActions button\{[\s\S]*?min-height:48px/,"Next/previous remain accessible");
+assert.doesNotMatch(style,/@media\(max-width:420px\)[^]*?font-size:10px/,"Mobile wound labels must not be reduced to 10px");
 console.log("B17 PASS: five groups × five Gloria + Ave; canonical EN/FR/LA reuse, route, 48px controls and no current indulgence promises.");
