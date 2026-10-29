@@ -34,6 +34,8 @@ jobs:
           node --check src/office/source-content-gate.js
           node --check src/office/mass-style-research-reader.js
           node --check src/office/prime-martyrology-split.js
+          node --check src/office/vespers-concurrence-gate.js
+          node --check scripts/office/audit-vespers-concurrence.mjs
           node --check src/office/mass-style-research-ui.js
           node --check scripts/office/build-mass-style-preview.mjs
           node --check src/office/sung-vespers-gate.js
@@ -47,7 +49,7 @@ jobs:
           node --check scripts/office/audit-all-souls-prime-critical.mjs
           node --check scripts/office/audit-all-souls-proper-prayers.mjs
       - name: Calendar, Tenebrae and composition probe contracts
-        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-content-scope-gate.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-prime-martyrology-split.mjs tests/divine-office-printed-rubric-pilot.mjs tests/divine-office-translation-risk.mjs tests/divine-office-french-directive-overlay.mjs tests/divine-office-french-provenance.mjs tests/divine-office-all-souls-prime-critical.mjs tests/divine-office-all-souls-prayers.mjs
+        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-content-scope-gate.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-prime-martyrology-split.mjs tests/divine-office-printed-rubric-pilot.mjs tests/divine-office-vespers-concurrence.mjs tests/divine-office-translation-risk.mjs tests/divine-office-french-directive-overlay.mjs tests/divine-office-french-provenance.mjs tests/divine-office-all-souls-prime-critical.mjs tests/divine-office-all-souls-prayers.mjs
       - name: Source-cell HTML normalizer unit tests
         run: python3 -m unittest discover -s tests -p 'test_divine_office_normalizer.py' -v
 
@@ -157,6 +159,9 @@ jobs:
           node scripts/office/audit-printed-rubrics-pilot.mjs \
             --main "$OUTPUT" --souls "$OUTPUT/all-souls" \
             --report "$OUTPUT/printed-rubric-audit.json"
+          node scripts/office/audit-vespers-concurrence.mjs \
+            --main "$OUTPUT" --advent "$OUTPUT/advent-vespers" \
+            --souls "$OUTPUT/all-souls" --report "$OUTPUT/vespers-concurrence-audit.json"
           # Phase J syntax-only candidate: baseline captured first.
           # This mutates the PINNED upstream checkout's WORKTREE only in CI
           # scratch, preserving its Git commit SHA but marking results as an
@@ -244,6 +249,17 @@ jobs:
           assert rubric["structuralChecksTotal"]==5
           assert not rubric["canPublish"] and rubric["published"]==0 and rubric["verifiedOfficeDates"]==0
           assert not rubric["allSoulsMatins"]["independentlyCheckedPrintedOfficeText"]
+          concurrence=json.loads((Path(os.environ["OUTPUT"])/"vespers-concurrence-audit.json").read_text(encoding="utf8"))
+          assert concurrence["schema"]=="ao.office.vespers-concurrence-source-audit.v1"
+          assert concurrence["pairsChecked"]==2 and concurrence["pairsSourceConsistent"]==2
+          assert {x["id"] for x in concurrence["paired"]}=={"ALL_SAINTS","ADVENT_I"}
+          assert all(x["sourceStructureConsistent"] and not x["commemorationsVerified"] for x in concurrence["paired"])
+          assert concurrence["special"]["status"]=="BR_173_SPECIAL_OFFICE_REVIEW_REQUIRED"
+          assert concurrence["special"]["sourceHeadlinesConsistent"]
+          assert concurrence["special"]["vesperalOfficeOnNovember1NotIndependentlyAdjudicated"]
+          assert concurrence["locallyAdjudicatedVespers"]==0 and concurrence["verifiedCommemorations"]==0
+          assert concurrence["printedOfficeTextCertified"]==0
+          assert not concurrence["canPublish"] and concurrence["published"]==0
           exception=json.loads((Path(os.environ["OUTPUT"])/"all-souls"/"exception-collect-audit.json").read_text(encoding="utf8"))
           assert exception["schema"]=="ao.office.all-souls-exception-collect-audit.v1"
           assert exception["total"]==2 and not exception["canPublish"] and exception["published"]==0
