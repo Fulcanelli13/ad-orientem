@@ -75,5 +75,57 @@ if (master.counts.identityTriagedCandidateGroups !== 34 ||
     master.counts.b13ApprovedSourceRepairCases !== 4 ||
     master.phase1EvidenceReview.productionMutation !== false) fail("phase1 follow-up manifest mismatch");
 
+
+const crosswalk = load("sacred-art-accepted-856-to-canonical-383-20261029.v1.json");
+const confirmedRows = crosswalk.records.filter(r => r.canonical383.status === "CONFIRMED_IDENTITY");
+const unlinkedRows = crosswalk.records.filter(r => r.canonical383.status === "NO_CONFIRMED_IDENTITY");
+if (crosswalk.records.length !== 856 || confirmedRows.length !== 72 || unlinkedRows.length !== 784)
+  fail("crosswalk 856-to-383 identity counts mismatch");
+const c383 = new Map(load("sacred-art-curator-queues-383-20261029.v1.json").main_records.map(r => [r.artwork_id, r]));
+const positiveTypes = {};
+for (const r of crosswalk.records) {
+  const raw = byId.get(r.sourceId);
+  if (!raw || raw.decision !== r.review.decision || raw.batch !== r.batch || raw.corrections !== r.review.corrections)
+    fail("crosswalk mismatches frozen review choice " + r.sourceId);
+  if (r.releaseStatus !== "NOT_CERTIFIED_DO_NOT_PUBLISH" || r.productionMutation !== false)
+    fail("crosswalk mistakenly promoted source photo " + r.sourceId);
+  if (r.canonical383.status === "CONFIRMED_IDENTITY") {
+    if (!c383.has(r.canonical383.artworkId)) fail("nonexistent canonical art work " + r.canonical383.artworkId);
+    const typ = r.canonical383.evidence;
+    positiveTypes[typ] = (positiveTypes[typ] || 0) + 1;
+    if (typ === "EXACT_CANONICAL_OBJECT_ID" &&
+        r.sourceId.toLowerCase().replace(":", "-") !== r.canonical383.artworkId.toLowerCase())
+      fail("canonical source ID evidence mismatch " + r.sourceId);
+    if (r.canonical383.existingProductionApproved !== false) fail("photo-approval gate unexpectedly true");
+  }
+}
+const expectedPositiveTypes = {
+  EXACT_CANONICAL_OBJECT_ID: 63,
+  EXACT_COMMONS_FILE_IDENTITY: 4,
+  EXACT_LEGACY_COMMONS_FILENAME_ID: 4,
+  EXACT_INSTITUTIONAL_ACCESSION_FROM_COMMONS: 1,
+};
+for (const [type, expectedCount] of Object.entries(expectedPositiveTypes))
+  if (positiveTypes[type] !== expectedCount) fail("crosswalk evidence count mismatch " + type);
+if (Object.keys(positiveTypes).length !== Object.keys(expectedPositiveTypes).length)
+  fail("unknown positive evidence class");
+if (crosswalk.counts.researchCandidateMatched !== 74 ||
+    crosswalk.counts.researchCandidateUnlinked !== 11 ||
+    crosswalk.counts.acceptedWithCorrections !== 84 ||
+    crosswalk.counts.documentedB13Exceptions !== 4) fail("crosswalk companion counts mismatch");
+const weakIdentityQueue = load("sacred-art-phase1-identity-review-13-20261029.v1.json");
+if (weakIdentityQueue.leadRows.length !== 13 ||
+    weakIdentityQueue.counts.certifiedAsSameWork !== 0 ||
+    weakIdentityQueue.counts.unlinkedTotal !== 784) fail("weak-identity research queue status mismatch");
+for (const lead of weakIdentityQueue.leadRows)
+  if (!unlinkedRows.some(r => r.sourceId === lead.sourceId) ||
+      lead.noAutoMerge !== true || lead.userDecisionProtected !== true)
+    fail("weak heuristic lead auto-approved or no longer unlinked " + lead.sourceId);
+if (master.counts.acceptedToCanonical383VerifiedSourceLinks !== 72 ||
+    master.counts.acceptedWithoutCanonicalPhysicalIdentityLink !== 784 ||
+    master.counts.weakTextualWorkIdentityLeadsForReview !== 13 ||
+    master.phase1AcceptedCrosswalk.mergesPerformed !== 0)
+  fail("master no longer agrees with accepted/canonical crosswalk");
+
 if (master.gates.production !== "UNTOUCHED") fail("production gate modified");
 console.log("PASS Sacred Art Phase 1: " + records.length + " reviewed; " + expected.acceptedOrConditional + " accepted/conditional; " + counts.REJECT + " rejected; no production mutations.");
