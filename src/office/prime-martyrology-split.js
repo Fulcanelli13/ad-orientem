@@ -60,7 +60,7 @@ export function splitAllSoulsPrimeMartyrologyCell(text,language){
 // Reuse Calendar's existing authoritative date projection; do not create
 // a separate Office calendar or declare the year's complete Office verified.
 export function primeSplitRequired({date,hour,role,sourceCellId}={}){
-  if(typeof date!=="string"||!/^(?:[12]\\d{3})-11-0[23]$/.test(date))
+  if(typeof date!=="string"||!/^(?:[12]\d{3})-11-0[23]$/.test(date))
     return false;
   const year=Number(date.slice(0,4));
   return date===allSoulsObservanceDate(year)&&hour==="PRIME"&&
