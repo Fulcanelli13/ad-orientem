@@ -11,7 +11,7 @@ const label=x=>typeof x==="string"&&x.trim().length>=5&&x.trim().length<=180;
 export function resolveRelicIndoorPlacement(collection, relicId, placeId){
   if(collection?.schema!==RELIC_PLACEMENT_SCHEMA||
      collection?.status!=="PUBLISHED_SOURCE_ATTRIBUTED_LOCATIONS_NOT_LIVE_INDOOR_NAVIGATION"||
-     !/^relic:[A-Z]{2}:[a-z0-9-]+$/.test(relicId||"")||
+     !/^relic:[A-Z]{2}:[\p{L}0-9-]+$/u.test(relicId||"")||
      !/^place:[A-Z]{2}:[a-z0-9-]+$/.test(placeId||""))return null;
   const entries=Array.isArray(collection.entries)?collection.entries:[];
   const matching=entries.filter(x=>x?.relic_id===relicId);
