@@ -65,7 +65,11 @@ try{
        cacheLength:cache?.length,html:root?.innerHTML?.slice(0,450),
        ownerCount:root?.querySelectorAll('[data-ao-devotional-owner]').length,
        ownerHtml:root?.querySelector('[data-ao-devotional-owner]')?.outerHTML?.slice(0,700),
-       litanyLineCount:root?.querySelectorAll('.aoP435930LitanyLine').length,url:location.href};
+       litanyLineCount:root?.querySelectorAll('.aoP435930LitanyLine').length,
+       verseCount:root?.querySelectorAll('.aoP435930LitanyVerses').length,
+       verseHtml:root?.querySelector('.aoP435930LitanyVerses')?.outerHTML?.slice(0,1300),
+       htmlNearLine:(()=>{let raw=root?.innerHTML||"";let j=raw.indexOf("Lord, have");return j>=0?raw.slice(j-500,j+700):null})(),
+       url:location.href};
      },language);
      console.error("B38 failed to render source fixture:",JSON.stringify(diagnose));
      throw error;
