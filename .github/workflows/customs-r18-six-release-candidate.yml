@@ -10,6 +10,8 @@ on:
       - 'tests/customs-r18-six-editorial-dossier-parity.mjs'
       - 'tests/customs-r18-six-canonical-release-candidate.mjs'
       - 'data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json'
+      - 'data/customs/customs-r18-eleven-calendar-parent-subtype-structure.v1.json'
+      - 'tools/customs/simulate-r18-eleven-calendar-context.mjs'
       - 'docs/CUSTOMS_R18_ALL18_RELEASE_RECONCILIATION_20261029.md'
       - 'tests/customs-r18-all18-release-ownership-reconciliation.mjs'
       - '.github/workflows/customs-r18-six-release-candidate.yml'
@@ -30,3 +32,4 @@ jobs:
           node tools/customs/simulate-r18-six-canonical-release.mjs
           node tests/customs-r18-six-editorial-dossier-parity.mjs
           node tests/customs-r18-all18-release-ownership-reconciliation.mjs
+          node tools/customs/simulate-r18-eleven-calendar-context.mjs
