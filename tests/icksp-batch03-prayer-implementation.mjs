@@ -60,8 +60,8 @@ assert.match(pres,/const edition=L\('English prayer-book witness · 1883 · priv
  "Private Litany must visibly identify the edition, not pretend translated 1962 identity");
 assert.match(pres,/\<details class="aoLitanySectionGuide"/,
  "Recitation guidance must remain available but not precede the source prayer");
-assert.match(pres,/\<article class="aoP435930Prayer \$\{S\.rosary\.recitation/,
- "Preserve the historical litany text's canonical prayer card");
+assert.match(pres,/aoLitanyHistoricalText.*data-ao-litany-witness-text="true"/,
+ "Historical private Litany must use an independent source reading container without projected speaker roles");
 assert.match(pres,/view==='litany'&&LIT\.use==='private'/,
  "Session English/French switching must not publish public rites");
 assert.match(litanyStyles,/data-ao-devotional-owner="litany"\] \.aoDevoCardScroll \.aoLitanyInvocation\{/,
