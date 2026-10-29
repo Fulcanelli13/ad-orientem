@@ -191,8 +191,12 @@ test("source-resolved collect Oremus, proper ending and lay dismissal are carrie
  assert.equal(byKind.OREMUS.sourceId,prefix+"Oremus");
  assert.equal(byKind.COLLECT_ENDING.sourceId,prefix+"Qui vivis");
  assert.equal(byKind.COLLECT_ENDING.macroResolved,true);
- assert.equal(byKind.SECOND_DOMINE_EXAUDI_OMITTED.documentedSourceCondition,true);
- assert.equal(byKind.DISMISSAL_DIALOGUE_SOURCE_CANDIDATE,undefined);
+ assert.equal(byKind.SECOND_DOMINE_EXAUDI_OMITTED,undefined);
+ assert.equal(byKind.DISMISSAL_DIALOGUE_SOURCE_CANDIDATE.sourceId,
+  prefix+"Dominus");
+ assert.equal(byKind.DISMISSAL_DIALOGUE_SOURCE_CANDIDATE.variant,
+  "DOMINE_EXAUDI");
+ assert.equal(byKind.DISMISSAL_DIALOGUE_SOURCE_CANDIDATE.printedOrdinarium1961Section53Compared,true);
  assert.equal(byKind.BENEDICAMUS.sourceId,prefix+"Benedicamus Domino");
  assert.equal(byKind.FIDELIUM_ANIMAE.sourceId,prefix+"Fidelium animae");
  assert.equal(p.sourceAudit.collectEndingTranslationsApproved,false);
