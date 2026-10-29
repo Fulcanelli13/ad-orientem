@@ -1,0 +1,149 @@
+name: One-shot global 76-country Directory photo research index and Commons audit
+on:
+  push:
+    branches:
+      - research/directory-global-76-index-one-shot-20261029
+    paths:
+      - data/directory/research/.run-global-76-photo-index-20261029.json
+permissions:
+  contents: write
+concurrency:
+  group: ao-directory-global-76-photo-index-20261029-once
+  cancel-in-progress: false
+jobs:
+  global-source-archive:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/research/directory-global-76-index-one-shot-20261029'
+    runs-on: ubuntu-latest
+    timeout-minutes: 38
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run strict offline checks and trigger contract
+        run: |
+          set -euo pipefail
+          node tests/production-tree-hygiene.mjs
+          python tests/directory-76-country-photo-merge-test.py -v
+          python tests/directory-commons-bulk-metadata-test.py -v
+          python - <<'PY'
+          import json
+          j=json.load(open('data/directory/research/.run-global-76-photo-index-20261029.json'))
+          assert j=={'schema':'AO_DIRECTORY_76_COUNTRY_BULK_PHOTO_CONSOLIDATION_ONCE_V1',
+                     'physical_anchors':2579,'countries':76,
+                     'publication':False,'originals_downloaded':False}
+          PY
+      - name: Fetch immutable research archives, all five country cohorts
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/directory-unified-photo-intake:refs/remotes/origin/research/directory-unified-photo-intake' \
+            'refs/heads/data/cl2-unified-source-location-classification-20261026:refs/remotes/origin/data/cl2-unified-source-location-classification-20261026' \
+            'refs/heads/research/directory-photo-candidates:refs/remotes/origin/research/directory-photo-candidates' \
+            'refs/heads/research/directory-country-media-index:refs/remotes/origin/research/directory-country-media-index'
+          test "$(git rev-parse refs/remotes/origin/data/cl2-unified-source-location-classification-20261026)" = eb67711a9886a7626916b7a145787c5e99105968
+          for id in C1 C2 C3 C4 C5; do
+            branch="research/directory-country-image-cohort-$id-20261029"
+            git fetch --no-tags origin "refs/heads/$branch:refs/remotes/origin/$branch"
+          done
+          git worktree add --detach /tmp/ao-global-cl2 eb67711a9886a7626916b7a145787c5e99105968
+          git worktree add --detach /tmp/ao-global-intake refs/remotes/origin/research/directory-unified-photo-intake
+          git worktree add --detach /tmp/ao-global-pilots refs/remotes/origin/research/directory-photo-candidates
+          python - <<'PY'
+          import pathlib,subprocess
+          root=pathlib.Path('/tmp/ao-six-country-archives')
+          sources=[('eight','research/directory-country-media-index',
+             'data/directory/research/worldwide-media-sources/country-first-20261029-v1')]
+          sources += [(code,f'research/directory-country-image-cohort-{code}-20261029',
+             f'data/directory/research/worldwide-media-sources/restworld-20261029/{code}')
+             for code in ['C1','C2','C3','C4','C5']]
+          for label,ref,prefix in sources:
+            dest=root/label;dest.mkdir(parents=True)
+            paths=subprocess.check_output(['git','ls-tree','-r','--name-only',f'origin/{ref}',prefix],text=True).splitlines()
+            paths=[p for p in paths if pathlib.Path(p).name.startswith('country-') and p.endswith('.json')]
+            if len(paths)<8:raise SystemExit('Incomplete source archive '+label)
+            for path in paths:
+              name=pathlib.Path(path).name
+              if '/' in name or '..' in name:raise SystemExit('Unsafe archive filename')
+              data=subprocess.check_output(['git','show',f'origin/{ref}:{path}'])
+              (dest/name).write_bytes(data)
+            print('COLLECTED_COUNTRY_METADATA',label,len(paths),flush=True)
+          PY
+      - name: Build audited all-country index for all 2579 distinct physical sites
+        run: |
+          set -euo pipefail
+          python tools/directory/merge-country-photo-sources.py \
+            --intake-audit /tmp/ao-global-intake/data/directory/research/unified-photo-intake/cl2-eb67711a-20261029/audit.json \
+            --source eight=/tmp/ao-six-country-archives/eight \
+            --source C1=/tmp/ao-six-country-archives/C1 \
+            --source C2=/tmp/ao-six-country-archives/C2 \
+            --source C3=/tmp/ao-six-country-archives/C3 \
+            --source C4=/tmp/ao-six-country-archives/C4 \
+            --source C5=/tmp/ao-six-country-archives/C5 \
+            --output-dir /tmp/ao-global-76-source-input
+          python tools/directory/build-worldwide-photo-source-index.py \
+            --intake-dir /tmp/ao-global-intake/data/directory/research/unified-photo-intake/cl2-eb67711a-20261029 \
+            --cl2-dir /tmp/ao-global-cl2/data/directory/research/cl2-unified-20261026 \
+            --candidate-file /tmp/ao-global-pilots/data/directory/research/photo-candidates/r49-exterior-0-100.json \
+            --candidate-file /tmp/ao-global-pilots/data/directory/research/photo-candidates/r49-exterior-100-100.json \
+            --country-dir /tmp/ao-global-76-source-input \
+            --output /tmp/ao-global-photo-source-index.json
+          python - <<'PY'
+          import json
+          src=json.load(open('/tmp/ao-global-photo-source-index.json'))
+          stats=src['counts']
+          assert stats['physical_anchors_indexed']==2579
+          assert stats['countries']==76
+          assert stats.get('countries_without_export',0)==0
+          assert stats['countries_successful']+stats.get('countries_with_source_error',0)==76
+          assert stats['prior_pilot_candidate_links_before_dedup']==42
+          assert stats['published_images']==0
+          assert src['publication']=='RESEARCH_ONLY_NEVER_APP_VISIBLE'
+          print('WORLD76_SOURCE_INDEX',json.dumps(stats,sort_keys=True))
+          PY
+      - name: Audit every unique Commons source in bounded 25-title batches
+        run: |
+          set -euo pipefail
+          python tools/directory/verify-worldwide-commons-source-metadata.py \
+            --index /tmp/ao-global-photo-source-index.json \
+            --output /tmp/ao-global-photo-rights-report.json \
+            --limit 1500 --offset 0 --delay-seconds 4
+          python - <<'PY'
+          import json
+          src=json.load(open('/tmp/ao-global-photo-rights-report.json'))
+          c=src['counts']
+          assert c['source_index_anchors']==2579
+          assert c['selected_unique_titles']==c['unique_commons_titles_in_whole_index'], 'More than 1500 titles: must separately audit remaining titles'
+          assert c['original_images_downloaded']==0
+          assert c['images_published']==0
+          assert c['images_approved']==0
+          assert all(x['publication']=='RESEARCH_ONLY_NEVER_APP_VISIBLE' for x in src['records'])
+          print('WORLD76_COMMONS_RIGHTS',json.dumps(c,sort_keys=True))
+          PY
+      - name: Archive global source index and Commons metadata rights report permanently
+        run: |
+          set -euo pipefail
+          branch="research/directory-global-photo-index-20261029"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            echo "Global index already archived; immutable" >&2; exit 1
+          fi
+          git fetch --no-tags origin main
+          git switch -c "$branch" origin/main
+          target="data/directory/research/worldwide-media-sources/global-76-20261029"
+          test ! -e "$target"
+          mkdir -p "$target"
+          cp /tmp/ao-global-76-source-input/source-merge-audit.json "$target/source-merge-audit.json"
+          cp /tmp/ao-global-photo-source-index.json "$target/worldwide-source-index.json"
+          cp /tmp/ao-global-photo-rights-report.json "$target/commons-rights-report.json"
+          test "$(du -sm "$target" | awk '{print $1}')" -le 45
+          git add "$target/source-merge-audit.json" "$target/worldwide-source-index.json" "$target/commons-rights-report.json"
+          test "$(git diff --cached --name-only | wc -l)" -eq 3
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): 76-country photo sources and 2579-site Commons preflight"
+          git push origin "HEAD:refs/heads/$branch"
