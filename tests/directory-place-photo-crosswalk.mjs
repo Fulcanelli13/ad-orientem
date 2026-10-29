@@ -55,4 +55,22 @@ assert.equal(adjudication.adjudications.find(x=>x.venue_id==="AO-EUR-DE-049")?.p
  "place:DE:kevelaer-kerzenkapelle");
 assert.ok(adjudication.forbidden_join_examples.some(x=>x.incorrect_place==="place:DE:kevelaer-gnadenkapelle"));
 
+const trio=read("data/geography/research/directory-st-alphonsus-photo-candidates-w6.v1.json");
+assert.equal(trio.schema,"AO_DIRECTORY_PHOTO_THREE_CATEGORY_ST_ALPHONSUS_W6_V1");
+assert.equal(trio.status,"PHOTO_SOURCE_RESEARCH_ONLY_NO_PUBLICATION");
+assert.equal(trio.publications,0);
+assert.equal(trio.downloads,0);
+assert.equal(trio.photos.length,3);
+assert.deepEqual(trio.photos.map(x=>x.category),["EXTERIOR","INTERIOR","SACRED_DETAIL"]);
+assert.ok(geo.directoryPlaceLinks.some(x=>x.venue_id===trio.venue_id&&x.place_id===trio.place_id&&
+ x.confidence==="CONFIRMED"&&x.relationship==="LOCATED_AT"),
+ "Only source-confirmed exact physical Place may own a three-category photo shortlist");
+for(const item of trio.photos){
+ assert.ok(item.source_url.startsWith("https://commons.wikimedia.org/wiki/File:"));
+ assert.ok(item.editorial_state.startsWith("HOLD_"));
+}
+assert.equal(trio.photos[0].license,"CC0");
+assert.equal(trio.photos[1].license,"CC-BY-SA-3.0");
+assert.equal(trio.photos[2].license,null,"Unknown altar copyright must remain unverified");
+
 console.log("PASS 1,879 venues x 516 canonical Places: 40 proximity review pairs, 6 photo leads, zero inferred publication");
