@@ -47,6 +47,8 @@ jobs:
       - run: node tests/required-main-gate-contract.mjs
       - name: Audit all 17 unresolved source gesture artwork decisions without runtime promotion
         run: node tests/mass-17-gesture-icon-disposition.mjs
+      - name: Preserve seven exact adaptive SVG user-review choices without releasing artwork
+        run: node tests/mass-seven-adaptive-svg-user-review.mjs
       - name: Verify Leclerc 1661 CC0 historical original bits, rights, and strictly research-only 1962 gesture use
         run: node tests/mass-priest-gesture-p4-original.mjs
       - name: Validate source-owned All Souls selection and native module syntax
