@@ -19,12 +19,12 @@ const hero=read("data/geography/approved-place-media.v1.json");
 assert.equal(sources.schema,"AO_PLACE_GALLERY_ACQUISITION_R69_V1");
 assert.equal(registry.schema,"AO_APPROVED_PLACE_GALLERY_V1");
 assert.equal(sources.sources.length,4);
-assert.equal(registry.items.length,6);
-assert.equal(hero.items.length,31);
+assert.equal(registry.items.length,7);
+assert.equal(hero.items.length,32);
 assert.ok(EXPLORE_DATA_URLS.approvedPlaceGallery.endsWith("/data/geography/approved-place-gallery.v1.json"));
-assert.equal(new Set(registry.items.map(x=>x.media_id)).size,6);
+assert.equal(new Set(registry.items.map(x=>x.media_id)).size,7);
 assert.deepEqual([...new Set(registry.items.map(x=>x.place_id))].sort(),[
- "place:FR:basilique-sainte-therese-lisieux","place:FR:chartres-notre-dame","place:FR:pontmain","place:FR:rue-du-bac"
+ "place:FR:basilique-sainte-therese-lisieux","place:FR:chartres-notre-dame","place:FR:pontmain","place:FR:rue-du-bac","place:US:st-alphonsus-baltimore"
 ].sort());
 for(const source of sources.sources){
  const item=registry.items.find(r=>r.media_id===source.media_id);
@@ -62,8 +62,8 @@ const dataset={
 const projected=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projected,{today:"2026-10-11"});
 assert.equal(profiles.filter(p=>p.illustrated_guide).length,14);
-assert.equal(profiles.filter(p=>p.gallery.length>0).length,4);
-for(const placeId of new Set(registry.items.map(x=>x.place_id))){
+assert.equal(profiles.filter(p=>p.gallery.length>0).length,5);
+for(const placeId of new Set(registry.items.filter(x=>x.place_id!=="place:US:st-alphonsus-baltimore").map(x=>x.place_id))){
  const images=registry.items.filter(x=>x.place_id===placeId);
  const profile=profiles.find(x=>x.place_id===placeId);
  assert.ok(profile&&profile.illustrated_guide);
@@ -114,4 +114,5 @@ for(const lang of ["en","fr"]){
 }
 for(const p of profiles.filter(x=>!registry.items.some(img=>img.place_id===x.place_id)))
  assert.equal(p.gallery.length,0);
-console.log("PASS R69: 6 approved local gallery photographs over 4 physical Places, EN/FR UI, 24 independently approved heroes and original 14 guides");
+assert.equal(profiles.find(p=>p.place_id==="place:US:st-alphonsus-baltimore")?.gallery.length,1);
+console.log("PASS R69: original six R69 photos preserved, St Alphonsus exact-site gallery added, EN/FR UI and original 14 guides");
