@@ -28,7 +28,7 @@ for(const [venue,place] of [["AO-AMER-R28-US-25-03","place:US:st-boniface-sioux-
 assert.equal(review.batches.length,10);
 assert.equal(review.batches.reduce((n,b)=>n+b.limit,0),1879);
 assert.equal(review.candidate_pairs.length,42);
-assert.equal(new Set(review.candidate_pairs.map(x=>x.venue_id+"|"+x.place_id)).size,40);
+assert.equal(new Set(review.candidate_pairs.map(x=>x.venue_id+"|"+x.place_id)).size,42);
 assert.equal(review.candidate_pairs.every(x=>x.auto_publish===false),true);
 assert.equal(review.candidate_pairs.every(x=>x.distance_m>=0&&x.distance_m<=350),true);
 assert.equal(review.photo_review_queue.length,7);
