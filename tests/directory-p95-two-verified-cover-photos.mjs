@@ -17,7 +17,7 @@ const expected=[
   ["AO-AMER-R28-US-25-03","place:US:st-boniface-sioux-city",
    "assets/approved/place-media/US-st-boniface-sioux-city.webp",
    "85c498e5078050d626f0d504b1fd4257ed5b5f720e5b26dd6734bc5604a529c3",
-   "228b098e9254bfbf2fe93d208f9be4998d909d27","Ammodramus","CC0",[682,1000]],
+   "228b098e9254bfbf2fe93d208f9be4998d909d27","Ammodramus","CC0-1.0",[682,1000]],
   ["V19:DIO-US-MN-ST-PAUL-SAINT-AGNES","place:US:st-agnes-saint-paul",
    "assets/approved/place-media/US-st-agnes-saint-paul.webp",
    "4df12e7c03ccbd79e207a7f92e4a548c481d0cb47957d37a2a5b7fbfafb4f9d3",
