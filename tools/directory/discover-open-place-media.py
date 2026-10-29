@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Free, read-only Wikimedia Commons discovery for Ad Orientem church photos.
 
-Scans one set of already-known Directory identities for exterior, interior and
-sacred-detail candidates in the SAME pass. Downloads metadata only. NEVER
+Scans already-known Directory identities in bounded exterior-first and
+interior/altar-second passes (legacy all-category research remains available). Downloads metadata only. NEVER
 writes to approved-place-media / approved-place-gallery, never promotes an
 image or infers that a Commons file depicts the target church.
 
@@ -40,6 +40,22 @@ CATEGORIES = {
     "INTERIOR": "church interior nave",
     "SACRED_DETAIL": "church high altar reliquary",
 }
+WAVES = {
+    "exterior": ("EXTERIOR",),
+    "interior": ("INTERIOR", "SACRED_DETAIL"),
+    "all": tuple(CATEGORIES),  # Backwards compatible with existing W1 pilots.
+}
+
+def panorama_hint(title, description, width, height):
+    """Research hint only: never assert 360 projection from image shape/name."""
+    terms = set(words(title + " " + description))
+    aspect = float(width) / max(float(height), 1.0)
+    if terms & {"360", "equirectangular", "photosphere", "spherical"} and 1.8 <= aspect <= 2.2:
+        return "POSSIBLE_360_EQUIRECTANGULAR_REQUIRES_REVIEW"
+    if "panorama" in terms or "panoramic" in terms:
+        return "PANORAMIC_STILL_PROJECTION_UNVERIFIED"
+    return "UNSPECIFIED"
+
 
 # Search context, never automatic proof of church identity. Prefer spelling
 # variants across source languages. Unknown codes simply leave this hint empty.
@@ -369,6 +385,7 @@ def candidate_from_page(page, venue, kind, *, discovery_method, entity_id=None):
         "photographer": metadata(info, "Artist")[:400],
         "license": licence, "license_url": metadata(info, "LicenseUrl"),
         "description": description[:500], "category_requested": kind,
+        "panorama_hint": panorama_hint(title, description, info.get("width", 0), info.get("height", 0)),
         "category_evidence": classify_evidence(kind, title, description),
         "country_evidence": location_signal, "discovery_score_only": score,
         "discovery_method": discovery_method,
@@ -669,6 +686,7 @@ def openverse_candidate(item, venue):
         "provider": str(item.get("provider") or "")[:70],
         "source": str(item.get("source") or "")[:70],
         "category_requested": role,
+        "panorama_hint": panorama_hint(title, description, width, height),
         "category_evidence": classify_evidence(role, title, description),
         "country_evidence": country,
         "discovery_score_only": score,
@@ -760,7 +778,10 @@ class BoundedOpenverseClient:
         return self.inner.request(params, endpoint=endpoint)
 
 def run(source, output, offset, limit, client, *, indices=None, openverse_budget=OPENVERSE_DEFAULT_RUN_REQUEST_BUDGET,
-        openverse_per_venue=OPENVERSE_REQUEST_BUDGET_PER_VENUE):
+        openverse_per_venue=OPENVERSE_REQUEST_BUDGET_PER_VENUE, wave="all"):
+    if wave not in WAVES:
+        raise ValueError("Unknown photo discovery wave")
+    active_roles = WAVES[wave]
     rows = source_rows(source)
     selected_indices = list(indices) if indices is not None else list(range(offset, min(offset+limit, len(rows))))
     if not selected_indices or len(selected_indices) > MAX_BATCH or len(set(selected_indices)) != len(selected_indices):
@@ -784,12 +805,12 @@ def run(source, output, offset, limit, client, *, indices=None, openverse_budget
             row["wikidata_identity_research"] = {"state": "WIKIDATA_API_UNAVAILABLE"}
             row["errors"]["WIKIDATA"] = type(exc).__name__ + ": " + str(exc)[:160]
         nearby = {kind: [] for kind in CATEGORIES}
-        if not any(structured.values()):
+        if not any(structured[role] for role in active_roles):
             try:
                 nearby = nearby_commons_discovery(client, venue)
             except (urllib.error.URLError, ValueError, KeyError, TimeoutError) as exc:
                 row["errors"]["COMMONS_GEOSEARCH"] = type(exc).__name__ + ": " + str(exc)[:160]
-        for kind in CATEGORIES:
+        for kind in active_roles:
             if structured[kind] or nearby[kind]:
                 row["categories"][kind] = structured[kind] or nearby[kind]
                 continue
@@ -806,7 +827,7 @@ def run(source, output, offset, limit, client, *, indices=None, openverse_budget
                 bounded_openverse, venue, max_queries=min(
                     openverse_per_venue, bounded_openverse.remaining))
             row["openverse_queries"] = bounded_openverse.used-before
-            for kind in CATEGORIES:
+            for kind in active_roles:
                 row["categories"][kind] = merge_photo_candidates(
                     row["categories"][kind], alternatives[kind])
         except (urllib.error.URLError, urllib.error.HTTPError, ValueError, KeyError, TimeoutError) as exc:
@@ -815,10 +836,10 @@ def run(source, output, offset, limit, client, *, indices=None, openverse_budget
         results.append(row)
         print("STAGED", venue["id"], {k: len(v) for k, v in row["categories"].items()}, flush=True)
     methods = {}
-    categories = {kind: 0 for kind in CATEGORIES}
+    categories = {kind: 0 for kind in active_roles}
     unique_media_urls = set()
     for row in results:
-        for kind in CATEGORIES:
+        for kind in active_roles:
             for photo in row["categories"][kind]:
                 method = photo["discovery_method"]
                 methods[method] = methods.get(method, 0) + 1
@@ -851,7 +872,7 @@ def run(source, output, offset, limit, client, *, indices=None, openverse_budget
         "image_downloads": 0, "publications": 0,
         "openverse_api_queries": metrics["openverse_api_queries"],
         "pilot_metrics": metrics,
-        "categories": list(CATEGORIES), "venues": results,
+        "wave": wave, "categories": list(active_roles), "venues": results,
     }
     output.parent.mkdir(parents=True, exist_ok=True)
     temp = output.with_suffix(output.suffix + ".tmp")
@@ -866,6 +887,8 @@ def main():
     ap.add_argument("--offset", type=int, default=0)
     ap.add_argument("--limit", type=int, default=200)
     ap.add_argument("--delay", type=float, default=1.2)
+    ap.add_argument("--wave", choices=tuple(WAVES), default="all",
+                    help="Exterior cover pass, then interior/altar pass; all keeps legacy pilot behaviour")
     ap.add_argument("--indices", type=str, default=None,
                     help="Comma-separated frozen R49 indices for representative sampling")
     ap.add_argument("--openverse-budget", type=int, default=OPENVERSE_DEFAULT_RUN_REQUEST_BUDGET,
@@ -885,8 +908,9 @@ def main():
         ap.error("indices must be comma-separated integers")
     result = run(args.source, args.output, args.offset, args.limit, WikimediaClient(args.delay),
                  indices=indices, openverse_budget=args.openverse_budget,
-                 openverse_per_venue=args.openverse_per_venue)
-    print("RESEARCH ONLY", result["processed"], "venues; 3 categories; zero images published", flush=True)
+                 openverse_per_venue=args.openverse_per_venue, wave=args.wave)
+    print("RESEARCH ONLY", result["processed"], "venues; wave", result["wave"],
+          "; zero images published", flush=True)
     print("CANDIDATE METRICS", json.dumps(result["pilot_metrics"], sort_keys=True), flush=True)
 
 if __name__ == "__main__":
