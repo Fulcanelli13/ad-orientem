@@ -137,6 +137,18 @@ function main(){
     properOrder:review.antiphonBeforeCollect,
     sourceBlockersBefore:review.originalSemanticBlockers,
     sourceBlockersAfter:review.restoredSemanticBlockers,
+    sourceIdSequences:{
+      latin:read(baseline,"la").sections.map(s=>s.sourceCellId),
+      frenchBaseline:read(baseline,"fr").sections.map(s=>s.sourceCellId),
+      frenchCandidate:read(candidate,"fr").sections.map(s=>s.sourceCellId),
+      english:read(baseline,"en").sections.map(s=>s.sourceCellId)
+    },
+    frenchCellHeaders:{
+      baseline:read(baseline,"fr").sections.map(s=>({id:s.sourceCellId,
+        head:s.text.split("\n")[0].slice(0,45)})),
+      candidate:read(candidate,"fr").sections.map(s=>({id:s.sourceCellId,
+        head:s.text.split("\n")[0].slice(0,45)}))
+    },
     printed1961Certified:false,published:0
   }));
   if(!review.dedicatedCommemorationCellRestored||
