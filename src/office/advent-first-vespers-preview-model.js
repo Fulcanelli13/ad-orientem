@@ -245,15 +245,10 @@ export function projectAdventI2026ResearchPreview({
      rightsApproved:false
     }));ok=true;break;
    }
-   case "SECOND_DOMINE_EXAUDI_OMITTED":{
-    if(event.slot!=="conclusion"||
-       collectEndingReview.dialogueVariant!=="DOMINE_EXAUDI")break;
-    // A rubric OMITTING a dialogue has no visible prayer block.
-    ok=true;break;
-   }
    case "DISMISSAL_DIALOGUE_SOURCE_CANDIDATE":{
     if(event.sourceId!==PRAYERS+"Dominus"||
-       collectEndingReview.dialogueVariant!=="DOMINUS_VOBISCUM")break;
+       event.variant!==collectEndingReview.dialogueVariant||
+       event.printedOrdinarium1961Section53Compared!==true)break;
     ok=add(event,event.sourceId,l=>collectEndingReview.languages?.[l]?.beforeBenedicamus);break;
    }
    case "BENEDICAMUS":{
