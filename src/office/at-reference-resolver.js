@@ -227,14 +227,14 @@ export function createOfficeAtReferenceResolver({readSource,maxDocuments=32,
        doc.sourcePath!==path||doc.language!==language||
        typeof doc.text!=="string"||doc.text.length>180000)
      throw Error("OFFICE_AT_PSALM_SOURCE_PROVENANCE_OR_SIZE_INVALID");
-    const rows=doc.text.replace(/\\r\\n?/g,"\\n").trim().split("\\n");
+    const rows=doc.text.replace(/\r\n?/g,"\n").trim().split("\n");
     if(rows.length!==(number===143?18:22))
      throw Error("OFFICE_AT_PSALM_SEGMENT_ROW_COUNT_CHANGED");
     let prior=0;
     const counts=new Map(),records=[];
     for(const line of rows){
      const m=/^(143|144):([1-9][0-9]?)([ab]?) (.{3,1600})$/u.exec(line);
-     if(!m||Number(m[1])!==number||/[$@&]|<[^>]*>|\\{:/u.test(line))
+     if(!m||Number(m[1])!==number||/[$@&]|<[^>]*>|\{:/u.test(line))
       throw Error("OFFICE_AT_PSALM_SEGMENT_SOURCE_INVALID");
      const n=Number(m[2]),suffix=m[3];
      const ordinal=n*100+(suffix==="a"?1:suffix==="b"?2:0);
@@ -277,7 +277,7 @@ export function createOfficeAtReferenceResolver({readSource,maxDocuments=32,
    }[number+":"+canonical];
    if(selected.length!==expected)throw Error("OFFICE_AT_PSALM_SEGMENT_INCOMPLETE");
    return Object.freeze({
-    language,text:selected.map(x=>x.line).join("\\n"),
+    language,text:selected.map(x=>x.line).join("\n"),
     trace:Object.freeze([Object.freeze({
      sourceId:"Psalterium/Psalmorum/Psalm"+number+"#"+canonical,
      language
