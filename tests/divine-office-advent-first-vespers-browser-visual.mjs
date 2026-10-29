@@ -57,7 +57,7 @@ await new Promise((done,reject)=>{
  server.listen(0,"127.0.0.1",done);
 });
 const port=server.address().port;
-const URL="http://127.0.0.1:"+port+"/previews/advent-i-first-vespers-2026-research.html";
+const PREVIEW_URL="http://127.0.0.1:"+port+"/previews/advent-i-first-vespers-2026-research.html";
 const SOURCE="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/"+
  PIN+"/web/www/horas/";
 const LOCALE={Latin:"la",English:"en",Francais:"fr"};
@@ -119,7 +119,7 @@ function watchErrors(page){
  return errors;
 }
 async function awaitReader(page){
- await page.goto(URL,{waitUntil:"domcontentloaded",timeout:45000});
+ await page.goto(PREVIEW_URL,{waitUntil:"domcontentloaded",timeout:45000});
  await page.locator("#reader").waitFor({state:"visible",timeout:60000});
  await assertSourcePreview(page);
 }
@@ -245,7 +245,7 @@ try{
   isMobile:true,hasTouch:true});
  const bp=await bad.newPage(),berrors=watchErrors(bp);
  await mockSources(bp,{omitFrenchCollect:true});
- await bp.goto(URL,{waitUntil:"domcontentloaded",timeout:45000});
+ await bp.goto(PREVIEW_URL,{waitUntil:"domcontentloaded",timeout:45000});
  await bp.locator("#status.error").waitFor({state:"visible",timeout:45000});
  assert.equal(await bp.locator("#reader").isHidden(),true);
  assert.match(await bp.locator("#status").innerText(),/Source preview withheld/);
@@ -261,7 +261,7 @@ try{
   const failures=[];
   lp.on("requestfailed",req=>failures.push({
    url:req.url(),error:req.failure()?.errorText??"unknown"}));
-  await lp.goto(URL,{waitUntil:"domcontentloaded",timeout:45000});
+  await lp.goto(PREVIEW_URL,{waitUntil:"domcontentloaded",timeout:45000});
   try{
    await lp.locator("#reader").waitFor({state:"visible",timeout:90000});
    assert.ok((await lp.locator("#status").innerText()).includes("Source preview assembled"));
