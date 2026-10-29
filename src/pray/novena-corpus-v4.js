@@ -3,6 +3,7 @@ import { NOVENA_FRENCH_BODY_V1 } from "./novena-french-body-v1.js";
 import { NOVENA_FRENCH_BODY_V1_MARIAN } from "./novena-french-body-v1-marian.js";
 import { NOVENA_FRENCH_BODY_V1_DEVOTIONAL } from "./novena-french-body-v1-devotional.js";
 import { NOVENA_FRENCH_GUIDE_PARITY_V1 } from "./novena-french-guide-parity.v1.js";
+import { HOLY_SOULS_PRINT_ALIGNED_V1 } from "./novena-holy-souls-print-corrections.v1.js";
 
 export const NOVENA_CORPUS_V4_VERSION="bilingual-16-target-v1";
 
@@ -46,11 +47,12 @@ function translatedSourceBody(n,t){
   }
   out.days=A((n.days||[]).map((d,i)=>{
     const frGuide=NOVENA_FRENCH_GUIDE_PARITY_V1[n.id]?.[i]||null;
+    const historicPrintCorrection=n.id==="holy_souls"?HOLY_SOULS_PRINT_ALIGNED_V1[i+1]||null:null;
     return F({
       ...d,
       ...(frGuide?.theme?{theme:bi(d.theme.en,frGuide.theme)}:{}),
       ...(frGuide?.guide?{guide:bi(d.guide.en,frGuide.guide)}:{}),
-      ...(d.text?{text:bi(d.text,t?.days?.[i])}:{})
+      ...(d.text?{text:bi(historicPrintCorrection?.en||d.text,historicPrintCorrection?.fr||t?.days?.[i])}:{})
     });
   }));
   // Source-edition caveat: the currently accessible "1925" scan includes
@@ -82,7 +84,7 @@ function translatedSourceBody(n,t){
       edition:"Redemptorist Fathers, Manual of the Purgatorian Society (copyright 1894; scanned copy carries 28 May 1907 imprimatur), printed pp. 199–210",
       url:"https://www.catholickingdom.com/s_Library/Books/M/Manual_of_the_Purgatorian_Society_OCR_CK.pdf",
       status:"MODERN_DIGITAL_TRANSCRIPTION_WITH_SCANNED_1894_COPYRIGHT_PRINT_WITNESS_LOCATED · PRINT_EDITION_NOT_COLLATED",
-      adaptation:"All nine proper prayers, the four-line recurring verse and the seven invocations have identifiable pages in the Redemptorists' historical Manual of the Purgatorian Society, printed pp. 199–210. This 1894-copyright work has a 1907 imprimatur in the available scan. The day text remains that of the earlier reviewed digital recension, not a fully image-collated facsimile. French is editorial; no original French or current-indulgence certificate is claimed."
+      adaptation:"All nine proper prayers, the four-line recurring verse and the seven invocations have identifiable pages in the Redemptorists' historical Manual of the Purgatorian Society, printed pp. 199–210. This 1894-copyright work has a 1907 imprimatur in the available scan. Five day-prayer bodies (1, 2, 4, 6, 9) now correct genuine textual differences against the photographed pages of this print witness; the N3 donor remains preserved and four further day bodies await full line collation. The common verse and invocations retain their existing editorial ownership. French is editorial; no complete print-edition, original French or current-indulgence certificate is claimed."
     });
   }
   return F(out);

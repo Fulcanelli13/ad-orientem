@@ -1,0 +1,35 @@
+name: Prayer printed-page ten-exception visual capture
+on:
+  pull_request:
+    paths:
+      - 'tools/pray/capture-original-page-exceptions.mjs'
+      - 'data/pray/original-pdf-72-day-text-layer-screen-20261029.v1.json'
+      - '.github/workflows/pray-original-page-exception-capture.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  capture-ten:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install free PDF tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+      - name: Check historical ten-page capture input and matching logic
+        run: node tools/pray/capture-original-page-exceptions.mjs --self-test
+      - name: Capture all ten original-page exceptions for visual comparison
+        run: node tools/pray/capture-original-page-exceptions.mjs --out /tmp/pray-visual
+      - name: Upload temporary printed-page review package
+        uses: actions/upload-artifact@v4
+        with:
+          name: pray-ten-original-page-images
+          path: |
+            /tmp/pray-visual/exception-review.json
+            /tmp/pray-visual/*.png
+          retention-days: 3

@@ -1,3 +1,4 @@
+import { HOLY_SOULS_PRINT_ALIGNED_V1 } from "../src/pray/novena-holy-souls-print-corrections.v1.js";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { NOVENA_CORPUS_V3 } from "../src/pray/novena-corpus.js";
@@ -197,8 +198,11 @@ for(const [id,original] of Object.entries(NOVENA_CORPUS_V3)){
    assert.equal(after.guide.fr,overlay.guide);
    assert.notEqual(after.guide.fr,before.guide.en,"English guide leaked into French: "+id+" day "+(i+1));
   }else assert.equal(after.guide.fr,before.guide.fr,"Unintended French guide edit: "+id+" day "+(i+1));
-  // None of the text-owner body/translation fields may be modified.
-  assert.equal(after.text?.en||"",before.text||"","Historical prayer changed: "+id+" day "+(i+1));
+  // Only five source-page-photographed Holy Souls corrections are allowed
+  // to differ from N3. Every other historical prayer body remains frozen.
+  const printFix=id==="holy_souls"?HOLY_SOULS_PRINT_ALIGNED_V1[i+1]||null:null;
+  assert.equal(after.text?.en||"",printFix?.en||before.text||"","Unapproved prayer edit: "+id+" day "+(i+1));
+  if(printFix?.fr)assert.equal(after.text.fr,printFix.fr,"French source-alignment drift: "+id+" day "+(i+1));
  }
 }
 assert.equal(translatedTitles,45,"All 45 genuinely untranslated heading instances must be covered");
@@ -262,8 +266,14 @@ for(const id of ["christmas","holy_ghost","st_joseph","holy_souls","immaculate_c
  for(let i=0;i<9;i++){
   const a=record.dayBodySourceReview[i],text=live.days[i].text.en;
   assert.equal(a.day,i+1);
-  assert.ok(text.startsWith(a.sourceIncipit),id+" day "+(i+1)+" original-text opening drifted");
-  assert.ok(text.endsWith(a.sourceExplicit),id+" day "+(i+1)+" original-text ending drifted");
+  const printFix=id==="holy_souls"?HOLY_SOULS_PRINT_ALIGNED_V1[i+1]||null:null;
+  if(!printFix){
+   assert.ok(text.startsWith(a.sourceIncipit),id+" day "+(i+1)+" original-text opening drifted");
+   assert.ok(text.endsWith(a.sourceExplicit),id+" day "+(i+1)+" original-text ending drifted");
+  }else{
+   assert.equal(text,printFix.en,"Historical print page correction drift: "+id+" day "+(i+1));
+   assert.equal(printFix.printedPages.length,2);
+  }
   assert.match(a.completePrintEditionCertification,/NOT_CERTIFIED/);
   assert.ok(a.sourceUrl||record.url);
   verifiedDigitalAnchors++;
