@@ -9,6 +9,7 @@ import {buildAnnualOfficeReadiness,ANNUAL_OFFICE_HOURS,
  ANNUAL_OFFICE_LANGUAGES} from "./annual-readiness-register.js";
 import {reviewOfficeOccurrence,reviewOfficeVespersConcurrence}
  from "./precedence-review.js";
+import {DIVINUM_OFFICIUM_PIN} from "../app/source-transport-compat.js";
 export const OFFICE_ANNUAL_SWEEP_SCHEMA="ao.office.annual-selection-sweep.v1";
 const iso=d=>d.toISOString().slice(0,10);
 const nextDay=day=>{const d=new Date(day+"T12:00:00Z");d.setUTCDate(d.getUTCDate()+1);return iso(d)};
@@ -34,6 +35,25 @@ function rosterIndex(officeDays,year){
      !["UNIVERSAL_ONLY","LOCAL_RESEARCH_RECONCILED"].includes(row.localCalendarStatus)||
      !Array.isArray(row.candidates)||row.candidates.length<1)
    throw Error("OFFICE_SWEEP_ROSTER_ENTRY_INVALID");
+  if(row.researchProvenance){
+   const ev=row.researchProvenance;
+   if(ev.sourceRevision!==DIVINUM_OFFICIUM_PIN||
+      ev.pinnedOfficeResearchPR!=="https://github.com/Fulcanelli13/ad-orientem/pull/1860"||
+      ev.rubricReference!=="https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"||
+      ev.corroboratingCalendarUrl!=="https://ordo.fsspx.org/day/"+row.date+"?lang=en"||
+      !["ALL_HOURS_RESEARCH_ENVELOPE","VESPERS_RESEARCH_ENVELOPE_ONLY",
+        "SPECIAL_OFFICE_RESEARCH_ENVELOPE"].includes(ev.observationScope)||
+      !Array.isArray(ev.observedHourHeadings)||!ev.observedHourHeadings.length||
+      new Set(ev.observedHourHeadings).size!==ev.observedHourHeadings.length||
+      !ev.observedHourHeadings.every(hour=>ANNUAL_OFFICE_HOURS.includes(hour))||
+      (ev.observationScope==="VESPERS_RESEARCH_ENVELOPE_ONLY"&&
+       (ev.observedHourHeadings.length!==1||ev.observedHourHeadings[0]!=="VESPERS"))||
+      ev.wholeOfficeVerified!==false||ev.translationVerified!==false||
+      ev.sourceRightsApproved!==false||
+      !row.candidates.every(candidate=>
+        candidate.witness?.sourceId?.startsWith("PR1860:")))
+     throw Error("OFFICE_SWEEP_SOURCE_WITNESS_METADATA_INVALID");
+  }
   entries.set(row.date,row);
  }
  return entries;
@@ -65,16 +85,21 @@ export function sweepAnnualOfficeResearch({year=2026,officeDays=[]}={}){
  for(const [date,row] of roster)reviewed.set(date,reviewOfficeOccurrence(row));
  const reasons={},daily=[];
  let candidateHourReviews=0,withheldHourReviews=0,candidateDates=0;
+ let sourceWitnessDays=0,sourceHeadingsObserved=0;
  const byHour=Object.fromEntries(ANNUAL_OFFICE_HOURS.map(hour=>[
   hour,{planned:dates.length,researchCandidates:0,withheld:0}
  ]));
  for(const date of dates){
   const occurrence=reviewed.get(date);
+  const sourceWitness=roster.get(date)?.researchProvenance??null;
+  if(sourceWitness){sourceWitnessDays++;sourceHeadingsObserved+=sourceWitness.observedHourHeadings.length;}
   if(candidateOk(occurrence))candidateDates++;
   const hours=[];
   for(const hour of ANNUAL_OFFICE_HOURS){
    let state="WITHHELD",reason,officeDate=null,officeKey=null,officePart=null;
-   if(!occurrence){
+   if(sourceWitness&&!sourceWitness.observedHourHeadings.includes(hour)){
+    reason="PINNED_OFFICE_RESEARCH_HOUR_HEADLINE_NOT_OBSERVED";
+   }else if(!occurrence){
     reason="INDEPENDENT_OFFICE_CALENDAR_DAY_NOT_SUPPLIED";
    }else if(!candidateOk(occurrence)){
     reason=occurrence.status==="RUBRIC_CANDIDATE"?
@@ -138,6 +163,7 @@ export function sweepAnnualOfficeResearch({year=2026,officeDays=[]}={}){
    days:dates.length,plannedHours,plannedLocaleSlots,
    submittedOfficeResearchDays:roster.size,
    researchCandidateDates:candidateDates,
+   sourceWitnessDays,sourceHeadingsObserved,
    researchCandidateHours:candidateHourReviews,
    withheldHours:withheldHourReviews,
    parsedSourceSections:0,completeTrilingualHours:0,
