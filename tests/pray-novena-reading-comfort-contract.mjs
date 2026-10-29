@@ -3,7 +3,12 @@ import {readFileSync} from "node:fs";
 import {NOVENA_CORPUS_V4_IDS} from "../src/pray/novena-corpus-v4.js";
 const css=readFileSync(new URL("../src/pray/novena-styles.js",import.meta.url),"utf8");
 const runtime=readFileSync(new URL("../src/pray/novena-runtime.js",import.meta.url),"utf8");
+const adapter=readFileSync(new URL("../src/pray/devotional-sequence-adapter.js",import.meta.url),"utf8");
 assert.equal(NOVENA_CORPUS_V4_IDS.length,16,"Novena canon must not change");
+assert.match(adapter,/kind==="novena"\?\(adjacent\?"\.80":"\.65"\)/,
+ "Novena inactive paragraphs need a readable .65 minimum, with .80 for adjacent paragraphs");
+assert.match(adapter,/\(adjacent\?"\.56":"\.30"\)/,
+ "Preserve the existing contrast cadence for non-Novena devotional readers");
 const comfort=css.slice(css.indexOf("/* B35: comfortable source provenance"));
 assert.ok(comfort.length>400,"B35 overlay should remain distinct from the donor CSS");
 assert.match(comfort,/#aoPray435930 \.aoN1Reader \.aoN1SourceText>small/);
