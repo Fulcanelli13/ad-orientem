@@ -57,7 +57,7 @@ function wrapNonSacredController(base,form){return Object.freeze({...base,form,p
 const SOLEMN_REQUIEM_MINISTER_VARIANTS=Object.freeze({
   "SMIN-004":Object.freeze({
     actor:"SUBDEACON",label:"EPISTLE COMPLETE · REQUIEM",
-    action:"After the Epistle, the subdeacon returns without kissing the celebrant’s hand or receiving his blessing."
+    action:"The subdeacon returns after the Epistle without receiving the celebrant’s blessing or kissing his hand."
   }),
   "SMIN-006":null, // Deacon does not receive the ordinary pre-Gospel blessing.
   "SMIN-007":Object.freeze({
