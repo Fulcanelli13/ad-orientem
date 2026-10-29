@@ -1,0 +1,159 @@
+{
+  "schema": "ao.pray.original-print-ten-exception-resolution.v1",
+  "date": "2026-10-29",
+  "sourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40872727022",
+  "sourceFile": "data/pray/original-pdf-72-day-text-layer-screen-20261029.v1.json",
+  "sourcePdfSHA256": {
+    "hammer_1909": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+    "purgatorian_manual_1894_1907": "3739d066b2ac6de5b31c73242552ad3726a05aa02fe5f6babf8e04155952c113"
+  },
+  "method": "20+1 source-page PNGs rendered from the original public-domain scans at 1800px for all ten outlier day prayers. Reviewed original printed prayer wording against extant V4 English bodies and matched OCR anomalies. Data records editorial correction status, not a blanket full original-print edition certificate.",
+  "sourcePageIndexBasis": "PDF pages use zero-based indices; printed page ranges are printed Arabic page labels in the volume.",
+  "exceptions": [
+    {
+      "id": "annunciation",
+      "day": 1,
+      "printedPage": 97,
+      "sourcePdfPageIndexes": [
+        100,
+        101
+      ],
+      "classification": "OCR_LAYOUT_ONLY",
+      "observed": "Decorated W of With, split annuncia-tion and sub-lime, capital O read as 0; app prayer wording corresponds to photograph.",
+      "englishBodyEdited": false
+    },
+    {
+      "id": "annunciation",
+      "day": 3,
+      "printedPage": 101,
+      "sourcePdfPageIndexes": [
+        104,
+        105
+      ],
+      "classification": "OCR_LAYOUT_ONLY",
+      "observed": "Decorated I of I rejoice, split be-cause and sin-cerely, and OCR Gad for God; image wording agrees with app.",
+      "englishBodyEdited": false
+    },
+    {
+      "id": "annunciation",
+      "day": 4,
+      "printedPage": 103,
+      "sourcePdfPageIndexes": [
+        106,
+        107
+      ],
+      "classification": "OCR_LAYOUT_ONLY",
+      "observed": "Decorated M of Mary, split arch-angel, Trin-ity and accord-ing; image wording agrees with app.",
+      "englishBodyEdited": false
+    },
+    {
+      "id": "annunciation",
+      "day": 6,
+      "printedPage": 107,
+      "sourcePdfPageIndexes": [
+        111,
+        112
+      ],
+      "classification": "OCR_LAYOUT_ONLY",
+      "observed": "Decorated H of Holiest, page break, and split incom-parable; no independent verified wording discrepancy.",
+      "englishBodyEdited": false
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 3,
+      "printedPage": 121,
+      "sourcePdfPageIndexes": [
+        125,
+        126
+      ],
+      "classification": "OCR_LAYOUT_ONLY",
+      "observed": "Decorated I of I compassionate and broken under-went, sorrow-ful, espe-cially; image prayer retains same text.",
+      "englishBodyEdited": false
+    },
+    {
+      "id": "holy_souls",
+      "day": 1,
+      "printedPages": [
+        199,
+        200
+      ],
+      "sourcePdfPageIndexes": [
+        198,
+        199
+      ],
+      "classification": "Genuine English variant corrected",
+      "observed": "Printed how great would be my suffering (not how great were my suffering), I wish to die (not I will rather die), the blessed souls that suffer; photographed both printed pages.",
+      "englishBodyEdited": true
+    },
+    {
+      "id": "holy_souls",
+      "day": 2,
+      "printedPages": [
+        202,
+        203
+      ],
+      "sourcePdfPageIndexes": [
+        201,
+        202
+      ],
+      "classification": "Genuine English variant corrected",
+      "observed": "Printed who have spent on earth so many years and employ the time remaining to me in Thy love and service; modern transcription reordered/changed wording.",
+      "englishBodyEdited": true
+    },
+    {
+      "id": "holy_souls",
+      "day": 4,
+      "printedPages": [
+        204,
+        205
+      ],
+      "sourcePdfPageIndexes": [
+        203,
+        204
+      ],
+      "classification": "Genuine English variant corrected; erroneous page window repaired",
+      "observed": "Original automatic scan used 202–203 and excluded PDF page 204, which contains the end. Additional photograph of printed p205 reviewed. Printed I wish to die; all the holy souls; with all their heart; come to their assistance; current English corrected.",
+      "englishBodyEdited": true
+    },
+    {
+      "id": "holy_souls",
+      "day": 6,
+      "printedPages": [
+        206,
+        207
+      ],
+      "sourcePdfPageIndexes": [
+        205,
+        206
+      ],
+      "classification": "Genuine English variant corrected",
+      "observed": "Print has O supreme Good and I wish to die rather than offend Thee again; modern digital app wording had God and will rather die.",
+      "englishBodyEdited": true
+    },
+    {
+      "id": "holy_souls",
+      "day": 9,
+      "printedPages": [
+        209,
+        210
+      ],
+      "sourcePdfPageIndexes": [
+        208,
+        209
+      ],
+      "classification": "Genuine English variant corrected",
+      "observed": "Printed I wish rather to die than to offend Thee again; app had I promise rather to die. Historical prayer continues onto printed p210 and stops before De profundis.",
+      "englishBodyEdited": true
+    }
+  ],
+  "outcomes": {
+    "tenReviewed": 10,
+    "ocrLayoutOnlyNoTextChange": 5,
+    "actualEnglishHistoricalVariantsCorrected": 5,
+    "additionalMissingOriginalSourcePageRecovered": 1,
+    "fullPrintedBookEditionCertified": 0,
+    "independentOriginalFrenchEditionCertified": 0,
+    "currentIndulgenceGrantCertified": 0
+  },
+  "textPolicy": "N3 donor remains unchanged. Exact five restored English day bodies live in src/pray/novena-holy-souls-print-corrections.v1.js; French is editorial and refreshed where promise/wish changed. Other 67 English days unmodified. Complete-book and remaining 62 body facsimile certifications still pending."
+}
