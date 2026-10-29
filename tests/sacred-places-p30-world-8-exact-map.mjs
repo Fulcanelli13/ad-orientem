@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import {readFileSync} from "node:fs";
 import {LIVE,RELEASES} from "./helpers/sacred-places-live-baseline.mjs";
 import {assertExploreGeographyRegistry,isMapPublishablePlaceGeo} from "../src/find/geography-contracts.js";
@@ -44,7 +45,7 @@ for(const x of m.published_new){
  for(const f of ["opening_hours","hero_image","description_en","description_fr","mass_times","pilgrimage_schedule"])assert.equal(p[f],undefined);
 }
 assert.ok(!geo.places.some(x=>x.geo?.source_ref==="osm:way:417245741"),"Do not publish Lutheran Nidaros");
-assert.equal(geo.directoryPlaceLinks.length,9);
+assert.equal(geo.directoryPlaceLinks.length,LIVE.links);
 assert.equal(assertExploreGeographyRegistry(geo).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...shrines,sources:src.sources,places:geo.places}).pass,true);
 console.log("PASS P30: eight distinct Catholic church OSM ways, eight independent sources, eight countries; 6 newly source-reviewed priority IDs, 16 holds and 9 Directory links retained");
