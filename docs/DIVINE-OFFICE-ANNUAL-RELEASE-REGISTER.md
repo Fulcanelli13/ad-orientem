@@ -803,3 +803,56 @@ then matching Latin–English–French source text against
 the printed Breviary before enabling the existing reader.
 No annual CGI/XHTML capture, duplicate calendar or paid
 infrastructure is authorized.
+
+## First Vespers Ordinary structure + independent Advent versicle witnesses (29 October)
+
+The existing 2026-11-28/29 Advent I First Vespers ten-slot
+source-research manifest is now supplemented by a separate
+**source-structure and three-language component gate**:
+
+- `src/office/advent-vespers-remainder-research.js`
+  reviews a single transient, caller-supplied **original**
+  `web/www/horas/Ordinarium/Vespera.txt` leaf at the exact
+  pinned DO revision. The structural parser verifies eight
+  major source markers in order: Incipit; Psalms; Chapter/Hymn/
+  Versicle; Magnificat; Preces; Collect; Suffragium; Conclusion.
+  It also retains the Monastic alternate chapter-responsory
+  heading and the **two** source occurrences of Suffragium
+  (one with a parenthetical condition). Their inclusion in the
+  source does **not** authorize reciting either for Roman 1960.
+  Conditional lines are counted, **not interpreted**.
+- The same module checks `Tempora/Adv1-0` and
+  `Psalterium/Special/Major Special` separately in Latin,
+  English and French. The pinned **Latin** proper
+  `[Versum 1]` explicitly points to
+  `@Psalterium/Special/Major Special:Adv Versum 3`.
+  The inspected English and French proper leaves lack this
+  intermediate key, but each language's common Advent
+  `[Adv Versum 3]` contains a verse and response.
+  The module therefore reads the **actual common key in each
+  locale**, rather than inventing an English or French
+  translation or treating the missing alias as missing text.
+- The three source-owned `Tempora/Adv1-0#Ant 1` sections
+  are checked as **Magnificat antiphon candidates**. They do
+  not establish the Magnificat canticle text or its repetition
+  and placement rubrics.
+- A changed Latin alias, newly introduced EN/FR local versicle,
+  missing French component, substituted source revision/path,
+  altered Ordinary ordering or disappearing variant is
+  **withheld**. This adds six source-component observations
+  (one verse/response and one antiphon per language) without
+  increasing complete/certified Hour coverage.
+
+`tests/divine-office-advent-vespers-remainder-research.mjs`
+covers six regression cases. CI includes the new tests alongside
+the existing psalmody (Psalms 109–113), standard collect conclusion,
+reference trace and annual metadata guards.
+
+**Current release position:** original source sequencing is
+better documented, not liturgically verified. The full Vespers
+still needs 1960-specific Ordinary choice, antiphon repetition,
+hymn/chapter and variable doxology assembly, Magnificat source
+text, commemoration concurrence, printed witness collation,
+trilingual alignment and rights review. Certified and published
+Hours remain **zero**. No bulk CGI/XHTML capture, permanent
+text archive, additional hosting or paid services are enabled.
