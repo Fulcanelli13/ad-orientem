@@ -30,7 +30,7 @@ for(const id of ["chaplets","marian","daily","novenas","eucharistic","ourlord","
 assert.match(actual,/data-p435930-own="pray.library"/);
 assert.match(actual,/data-p435930-pilot-prayer="foundations_hail_mary"/);
 assert.match(actual,/data-p435930-pilot-search/);
-assert.match(actual,/Approved paintings and crops are not yet bound/);
+assert.match(actual,/approved paintings and crops are not yet bound/);
 
 const angelus=renderPilotAngelusEntry({
  head:title=>"<header>"+title+"</header>",L,esc,form:"angelus",posture:"Kneel · ordinary days",moduleIcon:()=>"<i></i>"
