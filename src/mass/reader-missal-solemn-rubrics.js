@@ -32,8 +32,8 @@ const FR=Object.freeze({
  "SMIN-019":"Le sous-diacre répond Deo gratias à la fin du Dernier Évangile.",
 });
 const REQUIEM_FR=Object.freeze({
- "SMIN-004":"Après l’Épître, le sous-diacre revient sans recevoir la bénédiction du célébrant.",
- "SMIN-007":"À la procession de l’Évangile, on ne porte ni encens ni cierges allumés ; les acolytes entourent le livre des Évangiles.",
+ "SMIN-004":"Après l’Épître, le sous-diacre revient sans baiser la main du célébrant ni recevoir sa bénédiction.",
+ "SMIN-007":"À l’Évangile, deux acolytes sans cierges se placent de part et d’autre du diacre et tiennent l’évangéliaire. On ne porte ni encens ni cierges pour la procession ; on n’encense ni le livre ni le célébrant, et le livre ne lui est pas présenté à baiser.",
  "SMIN-009":"Les ministres sacrés assistent l’encensement de l’offertoire. Seul le célébrant est encensé, non le chœur ni les fidèles.",
  "SMIN-010":"À l’élévation de l’Hostie, le sous-diacre, agenouillé du côté de l’épître, encense le Saint-Sacrement de trois coups doubles avec inclination avant et après ; le diacre assiste le célébrant.",
  "SMIN-011":"À l’élévation du Calice, le sous-diacre, toujours agenouillé du côté de l’épître, encense le Saint-Sacrement de trois coups doubles avec inclination avant et après ; le diacre assiste le célébrant.",

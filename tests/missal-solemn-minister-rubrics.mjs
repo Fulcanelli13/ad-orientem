@@ -60,6 +60,26 @@ for(const id of ["SMIN-004","SMIN-007","SMIN-009","SMIN-010","SMIN-011"]){
  assert.notEqual(byId(deadFr,id).displayText,byId(ordinaryFr,id).displayText);
 }
 assert.equal(deadEn.flatMap(x=>x.publishedMissalRubrics??[]).length,14);
+// Ritus servandus XIII.2: the existing source cues must convey omitted
+// Epistle hand kiss and Gospel-book ceremonies in both Missal languages.
+const deadEpistleEn=byId(deadEn,"SMIN-004")?.displayText??"";
+const deadEpistleFr=byId(deadFr,"SMIN-004")?.displayText??"";
+assert.match(deadEpistleEn,/without receiving the celebrant.s blessing or kissing his hand/i);
+assert.match(deadEpistleFr,/sans baiser la main du célébrant ni recevoir sa bénédiction/i);
+const deadGospelEn=byId(deadEn,"SMIN-007")?.displayText??"";
+const deadGospelFr=byId(deadFr,"SMIN-007")?.displayText??"";
+assert.match(deadGospelEn,/two acolytes without candles.*hold the Gospel book/i);
+assert.match(deadGospelEn,/book and celebrant are not incensed/i);
+assert.match(deadGospelEn,/book is not presented for the celebrant to kiss/i);
+assert.match(deadGospelFr,/deux acolytes sans cierges.*tiennent l’évangéliaire/i);
+assert.match(deadGospelFr,/on n’encense ni le livre ni le célébrant/i);
+assert.match(deadGospelFr,/le livre ne lui est pas présenté à baiser/i);
+assert.doesNotMatch(byId(ordinaryEn,"SMIN-007")?.displayText??"",/not incensed/i,
+ "Requiem Gospel omissions leaked into the ordinary Solemn Missal");
+for(const id of ["SMIN-004","SMIN-007"]){
+ assert.equal(byId(deadEn,id)?.observedNow,false);
+ assert.equal(byId(deadFr,id)?.observedNow,false);
+}
 for(const [id,object] of [["SMIN-010","Host"],["SMIN-011","Chalice"]]){
  assert.match(byId(deadEn,id)?.displayText??"",new RegExp("subdeacon.*incenses.*"+object,"i"));
  assert.match(byId(deadFr,id)?.displayText??"",/sous-diacre.*encense/i);

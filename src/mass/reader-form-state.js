@@ -57,12 +57,12 @@ function wrapNonSacredController(base,form){return Object.freeze({...base,form,p
 const SOLEMN_REQUIEM_MINISTER_VARIANTS=Object.freeze({
   "SMIN-004":Object.freeze({
     actor:"SUBDEACON",label:"EPISTLE COMPLETE · REQUIEM",
-    action:"The subdeacon returns after the Epistle without receiving the celebrant’s blessing."
+    action:"The subdeacon returns after the Epistle without receiving the celebrant’s blessing or kissing his hand."
   }),
   "SMIN-006":null, // Deacon does not receive the ordinary pre-Gospel blessing.
   "SMIN-007":Object.freeze({
     actor:"DEACON + ACOLYTES",label:"GOSPEL PROCESSION · REQUIEM",
-    action:"The Gospel procession has neither incense nor lighted candles; acolytes support the Gospel book."
+    action:"The Gospel procession has neither incense nor lighted candles; two acolytes without candles stand beside the deacon and hold the Gospel book. The book and celebrant are not incensed, and the book is not presented for the celebrant to kiss."
   }),
   "SMIN-009":Object.freeze({
     actor:"DEACON + THURIFER",label:"OFFERTORY INCENSATION · REQUIEM",
