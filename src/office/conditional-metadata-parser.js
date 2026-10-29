@@ -39,7 +39,7 @@ export function parseConditionalOfficeMetadata({
   throw Error("OFFICE_META_SOURCE_CONTRACT_INVALID");
  const lines=sourceText.replace(/\r\n?/g,"\n").split("\n");
  if(lines.length>15000)throw Error("OFFICE_META_SOURCE_TOO_MANY_LINES");
- const variants=[];let current=null;
+ const variants=[],sourceSectionHeaders=[];let current=null;
  function finish(){
   if(!current)return;
   const metadata={kind:current.kind,
@@ -59,6 +59,13 @@ export function parseConditionalOfficeMetadata({
   if(h){
    finish();
    const kind=h[1],qualifier=h[2]??null;
+   // Record source-owned section names and qualifier locations only.
+   // This is not a representation of prayers, psalms, lessons or rubrics.
+   if(sourceSectionHeaders.length>=500)throw Error("OFFICE_META_TOO_MANY_SOURCE_HEADERS");
+   sourceSectionHeaders.push(Object.freeze({
+    name:kind,qualifier:qualifier?safe(qualifier,160):null,
+    line:i+1
+   }));
    if(CAPTURE.has(kind)){
     current={kind,qualifier:qualifier?safe(qualifier,160):null,
       sourceLine:i+1,ranks:[],rules:[],titles:[],conditions:[]};
@@ -93,6 +100,7 @@ export function parseConditionalOfficeMetadata({
   sourceRevision,sourcePath,language,
   status:"CONDITIONAL_SOURCE_METADATA_UNADJUDICATED",
   metadataVariants:Object.freeze(variants),
+  sourceSectionHeaders:Object.freeze(sourceSectionHeaders),
   byKind:Object.freeze(byKind),
   rankWitnessCount:ranks.length,
   rankVariantBlockCount:byKind.Rank.length,
