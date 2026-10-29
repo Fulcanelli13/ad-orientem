@@ -121,7 +121,7 @@ export async function reviewAdventI2026CollectConclusion({
    collectConclusion:Object.freeze(parts.macroConclusion),
    // The original Ordinary says omit the SECOND Domine exaudi,
    // rather than repeating it mechanically before Benedicamus.
-   beforeBenedicamus:Object.freeze(useDominus?parts.domin:[]),
+   beforeBenedicamus:Object.freeze(useDominus?parts.domin:parts.domineExaudi),
    benedicamus:Object.freeze(parts.benedicamus),
    fideliumAnimae:Object.freeze(parts.fideliumAnimae),
    sourceIds:Object.freeze([
@@ -142,7 +142,8 @@ export async function reviewAdventI2026CollectConclusion({
   dialogueVariant:useDominus?"DOMINUS_VOBISCUM":"DOMINE_EXAUDI",
   languages:Object.freeze(byLang),languageComponentsLocated:3,
   collectEndingSourceMacroResolved:true,
-  omittedSecondDomineExaudi:!useDominus,
+  omittedSecondDomineExaudi:false,
+  concludingDialogue1961OrdinariumSection53Reviewed:true,
   openingPaterAndAve:false,
   sourceBackedOremus:true,
   translationReviewRequired:Object.freeze([
