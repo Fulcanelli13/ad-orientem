@@ -11,16 +11,17 @@
     "rejected": 1599,
     "acceptedOrConditional": 856,
     "sourceIdConflicts": 0,
-    "possibleDuplicatePhysicalArtworkGroups": 33,
+    "possibleDuplicatePhysicalArtworkGroups": 34,
     "exactSourcePageCrosswalkMatchesWithCanonical383": 4,
     "canonical383Records": 383,
-    "sourceMetadataMissingPrior60": 60,
-    "productionImportsMade": 0
+    "sourceMetadataMissingPrior60": 7,
+    "productionImportsMade": 0,
+    "canonical383ExactSourceUrlJoins": 4
   },
   "shards": [
     {
       "path": "data/calendar/sacred-art-editorial-consolidation-shard-01-20261029.v1.json",
-      "gitBlobSha": "eb4e229efa7089bba61567034f84ed285e7d9973",
+      "gitBlobSha": "ed34f6bd91d3c3a03ee233591fca40a589c8f05f",
       "reviewCards": 683
     },
     {
@@ -49,8 +50,15 @@
         "REJECT": 53
       },
       "decisionFile": "sacred-art-20261029-user-60-import-reject-ledger.v1.json",
-      "sourceFile": "sacred-art-kmska-cleveland-first-review-20261029.v1.json",
-      "sourceIDSetValidated": "ledger-only"
+      "sourceFile": "sacred-art-editorial-prior60-final-decisions-20261029.v1.json",
+      "sourceIDSetValidated": true,
+      "sourceBatchSha256": "c5f31d713316e506bf7cc83819a265a67735856802bc6380d5e051e97d12f282",
+      "researchSourceURLJoins": 58,
+      "metadataOriginalFrom": "sacred-art-editorial-prior60-final-decisions-20261029.v1.json",
+      "unmatchedFirstReviewSourceIDs": [
+        "kmska:65m0to",
+        "kmska:tcasyd"
+      ]
     },
     {
       "batch": "B3",
@@ -17428,6 +17436,26 @@
     "duplicateSourceIds": [],
     "probableSameWorkTitleArtistNotAutoMerged": [
       {
+        "normalizedTitleArtist": "altarpiece with the passion of christ|master of the schlagl altarpiece german",
+        "sourceIds": [
+          "cma:128838",
+          "cma:128839"
+        ],
+        "batches": [
+          "PRIOR60"
+        ],
+        "decisions": [
+          {
+            "sourceId": "cma:128838",
+            "decision": "REJECT"
+          },
+          {
+            "sourceId": "cma:128839",
+            "decision": "REJECT"
+          }
+        ]
+      },
+      {
         "normalizedTitleArtist": "aanbidding door de herders|schilder jan cossiers",
         "sourceIds": [
           "kmska:0csw4p",
@@ -18184,66 +18212,34 @@
       }
     ],
     "prior60MissingTitleArtistSourceMetadata": [
-      "cma:147696",
-      "cma:144588",
-      "cma:153927",
-      "cma:144270",
-      "cma:146167",
-      "cma:142293",
-      "cma:128375",
-      "kmska:ulznvi",
-      "kmska:65m0to",
-      "kmska:tcasyd",
-      "cma:134620",
-      "cma:144303",
-      "cma:97142",
-      "cma:97171",
-      "cma:128838",
-      "cma:128839",
-      "cma:136217",
-      "cma:142475",
-      "cma:130132",
-      "cma:159234",
-      "cma:124116",
-      "cma:168322",
-      "cma:129218",
-      "cma:152842",
-      "cma:97149",
-      "cma:143768",
-      "cma:97178",
-      "cma:97150",
-      "cma:139727",
-      "cma:97145",
-      "cma:148860",
-      "cma:122337",
-      "cma:122336",
-      "cma:122335",
-      "cma:149074",
-      "cma:128390",
-      "cma:128842",
-      "cma:120996",
-      "cma:128389",
-      "cma:130981",
-      "cma:131820",
-      "cma:130377",
-      "cma:148861",
-      "cma:97136",
-      "cma:142474",
-      "cma:97157",
-      "cma:130982",
-      "cma:135311",
-      "cma:84662",
-      "cma:120995",
-      "cma:515375",
-      "cma:114684",
-      "cma:97139",
-      "cma:97179",
-      "cma:106094",
-      "cma:148990",
-      "cma:134237",
-      "cma:97158",
-      "cma:122339",
-      "cma:144966"
+      {
+        "sourceId": "cma:97142",
+        "missing": "artist"
+      },
+      {
+        "sourceId": "cma:159234",
+        "missing": "artist"
+      },
+      {
+        "sourceId": "cma:124116",
+        "missing": "artist"
+      },
+      {
+        "sourceId": "cma:120996",
+        "missing": "artist"
+      },
+      {
+        "sourceId": "cma:131820",
+        "missing": "artist"
+      },
+      {
+        "sourceId": "cma:120995",
+        "missing": "artist"
+      },
+      {
+        "sourceId": "cma:97158",
+        "missing": "artist"
+      }
     ],
     "possibleCommonsUploaderArtistMisattribution": [
       {
@@ -18360,6 +18356,10 @@
         "title": "La Visitation (Louvre, INV 1431)",
         "artist": "Tangopaso"
       }
+    ],
+    "prior60MissingSourceUrl": [
+      "kmska:65m0to",
+      "kmska:tcasyd"
     ]
   },
   "gates": {
@@ -18369,5 +18369,6 @@
     "rights": "NOT_VERIFIED_BY_THIS_LEDGER",
     "photoCertification": "NOT_VERIFIED_BY_THIS_LEDGER",
     "production": "UNTOUCHED"
-  }
+  },
+  "provenanceUpdate": "Original 60 user choices matched legacy frozen SHA, 60 titles recovered, 53 artist attributions retained, 58 research source URLs linked. Blank historical attributions remain blank."
 }
