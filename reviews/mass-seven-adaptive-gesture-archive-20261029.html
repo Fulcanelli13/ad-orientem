@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Ad Orientem · seven adaptive gesture review icons</title>
+<style>
+:root{--bg:#f6f5f1;--panel:#fff;--fg:#173040;--muted:#6b7479;--line:#d9dedf;--icon:#173040}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif;margin:0}
+body[data-theme=dark]{--bg:#081721;--panel:#102737;--fg:#f2f5f2;--muted:#b5c2c8;--line:#2d4754;--icon:#e3ebee}
+body[data-theme=accent]{--bg:#0a1821;--panel:#122a39;--fg:#e9f0f3;--muted:#becbd2;--line:#395364;--icon:#72d4c9}
+body[data-theme=muted]{--bg:#1c242b;--panel:#252f38;--fg:#d1d5d7;--muted:#a3b0b5;--line:#485661;--icon:#819ba8}
+main{max-width:1140px;margin:auto;padding:22px 16px 44px}
+h1{font:32px/1.2 Georgia,serif;margin:8px 0 10px}.eyebrow{text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--muted)}
+p,.small{color:var(--muted)}a{color:inherit}
+.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:13px 16px;border:1px solid var(--line);background:var(--panel);border-radius:12px;margin:24px 0}
+.controls label{font-size:13px;font-weight:600}.controls select{border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--fg);padding:8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;min-height:256px}
+.card h2{font:20px Georgia,serif;margin:4px 0}.card p{font-size:13px;margin:6px 0}.cap{font-size:11px;letter-spacing:.1em;color:var(--muted)}
+.status{border:1px solid var(--line);border-radius:20px;padding:3px 9px;display:inline-block;font-size:11px;font-weight:700}
+.reject{background:#623335;color:#fff}.approved{background:#174935;color:#e7fff2}.warn{color:#ab7045}
+.icon-well{min-height:134px;display:flex;gap:16px;justify-content:center;align-items:center;border-radius:10px;background:var(--bg);margin:12px 0;padding:12px}
+.glyph{display:inline-block;color:var(--icon);background:currentColor;mask:var(--src) center/contain no-repeat;-webkit-mask:var(--src) center/contain no-repeat;width:var(--sz);height:var(--sz);flex:none}
+.caption{font-size:11px;color:var(--muted);text-align:center}
+.evidence{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:20px}
+.evidence p{font-size:13px;margin:7px 0}
+</style></head><body data-theme="light"><main>
+<div class="eyebrow">Ad Orientem · 1962 Mass · archived immutable artwork review · 29 October 2026</div>
+<h1>Seven adaptive gesture SVGs</h1>
+<p>These are the exact SVGs reviewed by the user: <strong>six concept approvals and one explicit rejection</strong>. All are preserved as historical review files; none are installed in LIVE. C0193 and C0204 retain independent ceremonial holds despite visual approval.</p>
+<div class="controls"><label for="theme">Theme</label><select id="theme"><option value="light">Light</option><option value="dark">Dark</option><option value="accent">Accent</option><option value="muted">Muted</option></select><label for="scale">Icon size</label><select id="scale"><option value="32">32px</option><option value="48" selected>48px</option><option value="64">64px</option><option value="96">96px</option></select><span class="small">Real SVG geometry · CSS mask / currentColor</span></div>
+<div class="cards" id="cards"></div>
+<div class="evidence"><strong>Release protections</strong>
+<p>The active Mass icon manifest and source-matrix remain unchanged: 142 total gesture rows, 125 bound, 17 unbound. Original 1962 rubrics are not overwritten; the user's choices apply only to this 29 October seven-SVG batch.</p>
+<p>C0169 is rejected and must be redrawn. C0193's inappropriate monstrance and C0204's ambiguity with the major elevation remain publication blockers. No altered image inherits approval without review.</p>
+<p><a href="../data/mass/gesture-icon-user-review-20261029.v1.json">Machine-readable source-of-truth decisions and SHA-256 hashes</a>.</p></div>
+</main>
+<script type="module">
+const data=[
+ ["C0117","Eyes and hands raised","User approved the visual concept; verify brief gesture before Veni sanctificator.","APPROVE",false],
+ ["C0155","Memento of the Living","Source cue for joined hands and inclined head.","APPROVE",false],
+ ["C0161","Hanc igitur","Two open palms above both oblations must remain identifiable.","APPROVE",true],
+ ["C0169","Institution narrative","REJECTED: this proposed image reads like the major elevation, not eyes briefly raised.","REJECT",true],
+ ["C0193","Memento of the Dead","Approved artwork concept, but the depicted monstrance is wrong for the Mass. Do not publish.","APPROVE",true],
+ ["C0204","Minor elevation","Approved artwork concept, but distinguish minor elevation from major elevations. Do not publish.","APPROVE",true],
+ ["C0263","Final blessing","Approved artwork concept; verify correct eyes-and-hands action and appropriate Mass form.","APPROVE",false]
+];
+const cards=document.getElementById("cards");
+for(const [id,title,description,decision,hold] of data){
+ const el=document.createElement("article");el.className="card";
+ const src="../assets/review/mass-adaptive-gesture-20261029/"+id+".svg";
+ el.innerHTML='<div class="cap">'+id+'</div><h2>'+title+'</h2><span class="status '+(decision==="REJECT"?"reject":"approved")+'">'+(decision==="REJECT"?"USER REJECTED":"USER APPROVED CONCEPT")+'</span><div class="icon-well"><span class="glyph" style="--src:url('+src+');--sz:var(--selected-size,48px)" role="img" aria-label="'+title+'"></span></div><div class="caption">CSS currentColor mask · actual size</div><p>'+description+'</p><p class="small">'+(hold?"Additional accuracy hold.":"Additional source review before release.")+'</p>';
+ cards.append(el);
+}
+document.getElementById("theme").addEventListener("change",e=>document.body.dataset.theme=e.target.value);
+document.getElementById("scale").addEventListener("change",e=>document.documentElement.style.setProperty("--selected-size",e.target.value+"px"));
+</script></body></html>
