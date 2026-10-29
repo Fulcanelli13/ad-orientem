@@ -66,7 +66,7 @@ try{
       "#aoPray435930.open .aoN1Reader .aoDevoParagraph[data-ao-devo-active='true']").length===1,
       null,{timeout:3500});
     const n=NOVENA_CORPUS_V4[id];
-    const expected=novenaStageChapters({pattern:n.pattern||(id==="immaculate_conception"?"OPENING_DAY_COMMON_CLOSE":"STANDARD"),sharedClosing:!!n.sharedClosingText});
+    const expected=novenaStageChapters({pattern:n.pattern||(id==="immaculate_conception"?"OPENING_DAY_COMMON_CLOSE":"STANDARD"),sharedClosing:!!n.sharedClosingText,commonRequired:!!(n.commonPrayers?.length||n.sharedClosingText)});
     const state=await page.evaluate(()=>({
      screen:globalThis.AO_NOVENAS_V3.state().screen,
      current:globalThis.AO_NOVENAS_V3.state().stage,

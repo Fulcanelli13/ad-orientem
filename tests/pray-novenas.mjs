@@ -352,8 +352,8 @@ assert.equal(historicalNovenaReview.records.find(x=>x.id==="holy_souls").dayBody
 assert.match(readFileSync("src/pray/novena-runtime.js","utf8"),/Moran directs the Litany of Loreto or the Tota pulchra hymn/);
 assert.match(litSource,/const prayerStage=p==='OPENING_DAY_COMMON_CLOSE'\?3:1;/,
  "Guided Immaculate Conception day prayer must follow common Hail Marys and Glory Be");
-assert.match(litSource,/const commonStage=2;/,
- "Guided Immaculate Conception canonical prayers must precede the day prayer");
+assert.match(litSource,/const commonStage=hasCommon\|\|p!=='STANDARD'\?2:null;/,
+ "Guided Immaculate Conception canonical prayers must remain stage 2 before the day prayer; omit the stage only when the source prescribes none");
 assert.match(litSource,/sourceWitness\(n\.opening,L\('Common opening','Ouverture commune'\)\)\+commonPrayers\(n\)/,
  "Simple Immaculate Conception must show the canonical prayers immediately after the opening");
 assert.match(litSource,/p==='OPENING_DAY_COMMON_CLOSE'\?'':commonPrayers\(n\)/,
