@@ -120,7 +120,17 @@ function watchErrors(page){
 }
 async function awaitReader(page){
  await page.goto(PREVIEW_URL,{waitUntil:"domcontentloaded",timeout:45000});
- await page.locator("#reader").waitFor({state:"visible",timeout:60000});
+ await page.waitForFunction(()=>{
+  const reader=document.querySelector("#reader");
+  const status=document.querySelector("#status");
+  return reader?.hidden===false||status?.classList.contains("error");
+ },null,{timeout:30000});
+ if(await page.locator("#status").evaluate(x=>x.classList.contains("error"))){
+  const why=await page.locator("#status").innerText();
+  await shot(page,"00-private-preview-fail-closed-diagnostic");
+  throw Error("OFFICE_BROWSER_SOURCE_ASSEMBLY_WITHHELD:"+why);
+ }
+ await page.locator("#reader").waitFor({state:"visible",timeout:5000});
  await assertSourcePreview(page);
 }
 async function assertSourcePreview(page){
