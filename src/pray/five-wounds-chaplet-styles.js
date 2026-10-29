@@ -59,7 +59,7 @@ export function installFiveWoundsChapletStyles(doc=globalThis.document){
     the source prayer is visible without a preparatory manual scroll. */
  #aoPray435930 .aoFiveWounds{padding:8px 10px calc(48px + env(safe-area-inset-bottom))}
  #aoPray435930 .aoFiveWounds header{margin:0 0 5px}
- #aoPray435930 .aoFiveWoundsEyebrow{margin:0;letter-spacing:.06em;font-size:10px}
+ #aoPray435930 .aoFiveWoundsEyebrow{margin:0;letter-spacing:.06em;font-size:11px}
  #aoPray435930 .aoFiveWounds header h2{font-size:21px;line-height:1.2;margin:3px 0 5px}
  #aoPray435930 .aoFiveWounds header>p:last-child{font-size:13px;line-height:1.35;margin:0}
  #aoPray435930 .aoFiveWoundsRail{margin:7px 0 5px}
