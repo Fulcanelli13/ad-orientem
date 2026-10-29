@@ -22,6 +22,9 @@ const STANDARD_PRAYERS=new Set([
  "Per Dominum","Per Dominum eiusdem","Per eumdem"
 ]);
 const PRAYER_DIRECTIVE=/^\$([A-Za-z][A-Za-z ]{0,70})$/u;
+const PLAIN_PSALM=/^&psalm\(([1-9][0-9]{0,2})\)$/u;
+const PSALM_VERSE=/^([1-9][0-9]{0,2}):([1-9][0-9]{0,2})([a-z]?)\s+(.+)$/u;
+
 const DIRECTIVE=/^\s*(?:[$&!#%]|\((?:sed|nisi|rubrica|deinde)\b|\{(?:omit|omises|:))/iu;
 const REF=/^@(?:(?<path>(?:Tempora|Sancti|Commune|Psalterium|Ordinarium|Special|Martyrologium)\/[A-Za-z0-9][A-Za-z0-9_. \/-]*)?:)(?<section>[A-Za-z][A-Za-z0-9_. -]{0,100})$/u;
 const fullKey=(p,s,l)=>p+"#"+s+"|"+l;
@@ -32,18 +35,21 @@ function identity(path,section,language){
   throw Error("OFFICE_AT_SOURCE_IDENTITY_INVALID");
 }
 export function createOfficeAtReferenceResolver({readSource,maxDocuments=32,
- maxDepth=6,maxNodes=48,enableStandardPrayers=false}={}){
+ maxDepth=6,maxNodes=48,enableStandardPrayers=false,
+ readPsalmSource=null,enablePsalmVerses=false}={}){
  if(typeof readSource!=="function"||!Number.isInteger(maxDocuments)||
     maxDocuments<1||maxDocuments>96||!Number.isInteger(maxDepth)||
     maxDepth<1||maxDepth>12||!Number.isInteger(maxNodes)||
-    maxNodes<1||maxNodes>128||typeof enableStandardPrayers!=="boolean")
+    maxNodes<1||maxNodes>128||typeof enableStandardPrayers!=="boolean"||
+    typeof enablePsalmVerses!=="boolean"||
+    (enablePsalmVerses&&typeof readPsalmSource!=="function"))
   throw Error("OFFICE_AT_RESOLVER_CONFIGURATION_INVALID");
- const cache=new Map();
+ const cache=new Map(),psalmCache=new Map();
  async function file(path,language){
   identity(path,"Rank",language);
   const key=path+"|"+language;
   if(!cache.has(key)){
-   if(cache.size>=maxDocuments)throw Error("OFFICE_AT_SOURCE_READ_BUDGET");
+   if(cache.size+psalmCache.size>=maxDocuments)throw Error("OFFICE_AT_SOURCE_READ_BUDGET");
    const pending=Promise.resolve().then(()=>readSource(path,language)).then(doc=>{
     if(doc?.sourceRevision!==DIVINUM_OFFICIUM_PIN||
        doc.sourcePath!==path||doc.language!==language||
@@ -56,9 +62,43 @@ export function createOfficeAtReferenceResolver({readSource,maxDocuments=32,
   }
   return cache.get(key);
  }
+ async function psalmVerses(number,language){
+  if(!enablePsalmVerses||!Number.isInteger(number)||number<1||number>150)
+   throw Error("OFFICE_AT_PSALM_FORM_NOT_SUPPORTED");
+  const path="Psalterium/Psalmorum/Psalm"+number;
+  const key=path+"|"+language;
+  if(!psalmCache.has(key)){
+   if(cache.size+psalmCache.size>=maxDocuments)
+    throw Error("OFFICE_AT_SOURCE_READ_BUDGET");
+   const pending=Promise.resolve().then(()=>
+    readPsalmSource(path,language)).then(doc=>{
+    if(doc?.sourceRevision!==DIVINUM_OFFICIUM_PIN||
+       doc.sourcePath!==path||doc.language!==language||
+       typeof doc.text!=="string"||doc.text.length>180000)
+     throw Error("OFFICE_AT_PSALM_SOURCE_PROVENANCE_OR_SIZE_INVALID");
+    const lines=doc.text.replace(/\\r\\n?/g,"\\n").split("\\n").map(x=>x.trim()).filter(Boolean);
+    if(!lines.length||lines.length>500)throw Error("OFFICE_AT_PSALM_VERSES_INVALID");
+    let previous=0,lastSuffix="",seen=new Set();
+    for(const line of lines){
+     const m=PSALM_VERSE.exec(line);
+     if(!m||Number(m[1])!==number||line.length>1600||
+        /(?:^|\\s)[$@&]|<[^>]*>|\\{:/u.test(line))
+      throw Error("OFFICE_AT_PSALM_VERSES_INVALID");
+     const n=Number(m[2]),suffix=m[3],ordinal=n*27+(suffix? suffix.charCodeAt(0)-96:0);
+     if(ordinal<=previous||seen.has(n+suffix))
+      throw Error("OFFICE_AT_PSALM_VERSE_ORDER_INVALID");
+     previous=ordinal;lastSuffix=suffix;seen.add(n+suffix);
+    }
+    return lines.join("\\n");
+   });
+   psalmCache.set(key,pending);
+  }
+  return {text:await psalmCache.get(key),sourceId:path+"#VERSES"};
+ }
  async function resolve({path,section,language}={}){
   identity(path,section,language);
   const trace=[],active=new Set();
+  let psalmVerseOnly=false;
   async function walk(p,s,depth){
    identity(p,s,language);
    const key=fullKey(p,s,language);
@@ -83,6 +123,13 @@ export function createOfficeAtReferenceResolver({readSource,maxDocuments=32,
       if(!m)throw Error("OFFICE_AT_REFERENCE_SYNTAX_UNSUPPORTED:"+key);
       const q=m.groups.path??p,sectionName=m.groups.section;
       parts.push(await walk(q,sectionName,depth+1));
+     }else if(line.startsWith("&")){
+      const match=PLAIN_PSALM.exec(line);
+      if(!match)throw Error("OFFICE_AT_PSALM_FORM_NOT_SUPPORTED");
+      const part=await psalmVerses(Number(match[1]),language);
+      trace.push(Object.freeze({sourceId:part.sourceId,language}));
+      psalmVerseOnly=true;
+      parts.push(part.text);
      }else if(line.startsWith("$")){
       const match=PRAYER_DIRECTIVE.exec(line);
       if(!enableStandardPrayers||!match||!STANDARD_PRAYERS.has(match[1]))
@@ -104,6 +151,8 @@ export function createOfficeAtReferenceResolver({readSource,maxDocuments=32,
    schema:OFFICE_AT_REFERENCE_SCHEMA,sourceId:path+"#"+section,
    language,sourceRevision:DIVINUM_OFFICIUM_PIN,
    text,referenceTrace:Object.freeze(trace),
+   psalmVersesExpandedWithoutDoxology:psalmVerseOnly,
+   psalmDoxologyAndAntiphonVerified:false,
    status:"EXPLICIT_AT_REFERENCES_EXPANDED_UNVERIFIED",
    conditionalRubricsResolved:false,completeHourVerified:false,
    translationVerified:false,publishable:false
@@ -117,11 +166,15 @@ export function createOfficeAtReferenceResolver({readSource,maxDocuments=32,
    texts:Object.freeze(Object.fromEntries(refs.map(r=>[r.language,r.text]))),
    referenceTraces:Object.freeze(Object.fromEntries(refs.map(r=>
     [r.language,r.referenceTrace]))),
+   psalmVersesExpandedWithoutDoxology:refs.some(x=>x.psalmVersesExpandedWithoutDoxology),
+   psalmDoxologyAndAntiphonVerified:false,
    alignmentVerified:false,officePrecedenceVerified:false,
    rightsApproved:false,publishable:false,status:"PARSED_UNVERIFIED"
   });
  }
- return Object.freeze({resolve,resolveParallel,cachedSourceCount:()=>cache.size,
+ return Object.freeze({resolve,resolveParallel,
+  cachedSourceCount:()=>cache.size+psalmCache.size,
   maxDepth,maxNodes,standardPrayersSourceEnabled:enableStandardPrayers,
+  psalmVerseSourceEnabled:enablePsalmVerses,
   sourceRevision:DIVINUM_OFFICIUM_PIN});
 }
