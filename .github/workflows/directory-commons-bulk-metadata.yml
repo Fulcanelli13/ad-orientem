@@ -1,0 +1,27 @@
+name: Directory Commons bulk metadata-only rights contracts
+on:
+  pull_request:
+    paths:
+      - tools/directory/verify-worldwide-commons-source-metadata.py
+      - tests/directory-commons-bulk-metadata-test.py
+      - .github/workflows/directory-commons-bulk-metadata.yml
+      - docs/DIRECTORY-COMMONS-BULK-METADATA-20261029.md
+permissions:
+  contents: read
+jobs:
+  commons-bulk-meta-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Offline Commons licence/size/SHA1/canonical-source contracts
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/directory/verify-worldwide-commons-source-metadata.py
+          python tests/directory-commons-bulk-metadata-test.py -v
+          node tests/production-tree-hygiene.mjs
