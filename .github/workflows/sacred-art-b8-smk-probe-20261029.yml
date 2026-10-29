@@ -1,0 +1,44 @@
+name: Sacred Art - B8 SMK open painting metadata probe
+on:
+  push:
+    branches: [research/sacred-art-b8-smk-20261029]
+    paths:
+      - scripts/art/sacred-art-b8-smk-probe-20261029.py
+      - .github/workflows/sacred-art-b8-smk-probe-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-b8-probe
+  cancel-in-progress: true
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b8-smk-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe official SMK source and record source shape
+        run: |
+          python -m py_compile scripts/art/sacred-art-b8-smk-probe-20261029.py
+          python scripts/art/sacred-art-b8-smk-probe-20261029.py
+      - name: Permanently archive source access evidence
+        run: |
+          python - <<'PY'
+          import json
+          j=json.load(open('data/calendar/sacred-art-b8-smk-api-probe-20261029.v1.json'))
+          assert len(j['requests'])==5 and j['photosSaved']==0
+          print([(x['parameters']['keys'],x.get('status'),x.get('error')) for x in j['requests']])
+          PY
+          git config user.name "Ad Orientem Sacred Art"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b8-smk-api-probe-20261029.v1.json
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): record B8 SMK API source and rights fields"
+          git pull --rebase origin research/sacred-art-b8-smk-20261029
+          git push origin HEAD:research/sacred-art-b8-smk-20261029
