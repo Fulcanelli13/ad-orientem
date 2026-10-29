@@ -206,6 +206,52 @@ def classify_evidence(kind, title, description):
     }
     return "CATEGORY_TEXT_MATCH" if signal[kind] & tokens else "CATEGORY_UNCONFIRMED"
 
+def frozen_id_locality_hint(source_id, country):
+    """City *search hint* from existing R49 venue-ID postal suffixes.
+
+    This is not independent address verification. Match postal/region syntax
+    explicitly; reject ambiguous unbounded address text, never geocode a
+    different entity or claim it is the photographed subject.
+    """
+    source_id = str(source_id or "").lower()
+    country = str(country or "").upper()
+    postal_patterns = {
+        "FR": r"-f-[0-9]{5}-(?P<city>[a-z0-9-]+)-france$",
+        "DE": r"-d-[0-9]{5}-(?P<city>[a-z0-9-]+)-deutschland$",
+        "CH": r"-ch-[0-9]{4}-(?P<city>[a-z0-9-]+)-suisse$",
+        "IT": r"-i-[0-9]{5}-(?P<city>[a-z0-9-]+)-italia$",
+        "CZ": r"-cz-[0-9]{5}-(?P<city>[a-z0-9-]+)-ceska-republika$",
+        "NL": r"-(?:nl-)?[0-9]{4}-[a-z]{2}-(?P<city>[a-z0-9-]+)-nederland$",
+        "AT": r"-(?:a-)?[0-9]{4}-(?P<city>[a-z0-9-]+)-osterreich$",
+        "PL": r"-[0-9]{2}-[0-9]{3}-(?P<city>[a-z0-9-]+)-polska$",
+    }
+    pattern = postal_patterns.get(country)
+    if pattern:
+        m = re.search(pattern, source_id)
+        if not m:
+            return ""
+        terms = m.group("city").split("-")
+        if not (1 <= len(terms) <= 6) or any(len(w) < 2 for w in terms):
+            return ""
+        return " ".join(terms)
+    # US/CA/AU postfix may contain a compound locality; restrict to the
+    # last single distinctive locality token. It is a search hint, not a
+    # complete or canonical town name (e.g. "bend" for "South Bend").
+    patterns = {
+        "US": r"-(?P<city>[a-z]{4,})-(?:al|ak|az|ar|ca|co|ct|de|fl|ga|hi|id|il|in|ia|ks|ky|la|me|md|ma|mi|mn|ms|mo|mt|ne|nv|nh|nj|nm|ny|nc|nd|oh|ok|or|pa|ri|sc|sd|tn|tx|ut|vt|va|wa|wv|wi|wy|dc)-[0-9]{5}(?:-[0-9]{4})?-usa$",
+        "CA": r"-(?P<city>[a-z]{4,})-(?:ab|bc|mb|nb|nl|ns|nt|nu|on|pe|qc|sk|yt)-[a-z][0-9][a-z]-[0-9][a-z][0-9]-canada$",
+        "AU": r"-(?P<city>[a-z]{4,})-(?:nsw|vic|sa|wa|qld|act|tas|nt)-[0-9]{4}-australia$",
+        "NZ": r"-(?P<city>[a-z]{4,})-new-zealand$",
+        "IE": r"-(?P<city>[a-z]{4,})(?:-city)?-irlande$",
+    }
+    pattern = patterns.get(country)
+    match = re.search(pattern, source_id) if pattern else None
+    token = match.group("city") if match else ""
+    if token in {"road", "street", "avenue", "church", "chapel", "place", "county"}:
+        return ""
+    return token
+
+
 def source_rows(source: Path):
     payload = json.loads(source.read_text(encoding="utf-8"))
     if payload.get("schema") != "AO_PRELIMINARY_TLM_MAP_R49":
@@ -224,6 +270,14 @@ def source_rows(source: Path):
         item = {key: raw[position] for key, position in idx.items()}
         if not item["id"] or not item["name"] or not item["country"] or not str(item["url"]).startswith("http"):
             raise ValueError("Invalid research identity / source")
+        if str(item["locality"] or "").strip():
+            item["locality_source"] = "FROZEN_R49_LOCALITY_FIELD"
+        else:
+            hint = frozen_id_locality_hint(item["id"], item["country"])
+            item["locality"] = hint
+            item["locality_source"] = (
+                "FROZEN_VENUE_ID_POSTAL_SEARCH_HINT_NOT_VERIFIED"
+                if hint else "NO_LOCALITY_HINT")
         rows.append(item)
     if len({r["id"] for r in rows}) != len(rows):
         raise ValueError("Repeated venue IDs")
@@ -816,6 +870,7 @@ def run(source, output, offset, limit, client, *, indices=None, openverse_budget
         row = {
             "source_id": venue["id"], "name": venue["name"],
             "country": venue["country"], "locality": venue["locality"],
+            "locality_source": venue.get("locality_source", "UNSPECIFIED"),
             "venue_source_url": venue["url"], "categories": {}, "errors": {},
         }
         try:
@@ -873,6 +928,11 @@ def run(source, output, offset, limit, client, *, indices=None, openverse_budget
         "candidates_by_category": categories,
         "unique_source_urls": len(unique_media_urls),
         "venues_with_any_candidate": sum(any(row["categories"].values()) for row in results),
+        "venues_with_postal_locality_hint": sum(
+            row.get("locality_source") == "FROZEN_VENUE_ID_POSTAL_SEARCH_HINT_NOT_VERIFIED"
+            for row in results),
+        "venues_without_locality_hint": sum(
+            row.get("locality_source") == "NO_LOCALITY_HINT" for row in results),
         "venues_with_geo_name_wikidata_match": sum(
             row.get("wikidata_identity_research", {}).get("state") ==
             "GEO_AND_NAME_CORROBORATED_RESEARCH_ONLY" for row in results),
