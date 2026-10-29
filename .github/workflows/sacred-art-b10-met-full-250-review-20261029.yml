@@ -1,0 +1,69 @@
+name: Sacred Art B10 - Met full catalogue 250 official image review
+on:
+  push:
+    branches: [research/sacred-art-b10-getty-20261029]
+    paths:
+      - scripts/art/sacred-art-b10-met-full-250-review-20261029.py
+      - .github/workflows/sacred-art-b10-met-full-250-review-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-art-b10-full-catalogue
+  cancel-in-progress: true
+jobs:
+  curate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 34
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b10-getty-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Scan entire official Met metadata CSV and verify live artwork images
+        run: |
+          python -m py_compile scripts/art/sacred-art-b10-met-full-250-review-20261029.py
+          python -u scripts/art/sacred-art-b10-met-full-250-review-20261029.py
+      - name: Validate B7/B8 frozen decisions, B10 unique sources and review interface
+        run: |
+          python - <<'PY'
+          import json,re,hashlib
+          from pathlib import Path
+          src=Path('data/calendar/sacred-art-b10-met-full-catalogue-250-20261029.v1.json')
+          j=json.loads(src.read_text());r=j['rows'];c=j['counts']
+          assert len(r)==250 and j['fullBatchReady']
+          assert c['priorReviewIDsExcluded']==1455
+          assert c['priorB7UserSelectionsPreserved']==42 and c['priorB8UserSelectionsPreserved']==54
+          assert c['productionOriginalsDownloaded']==c['productionMutations']==0
+          assert len({x['id'] for x in r})==len({x['previewURL'] for x in r})==250
+          assert all(x['id']=='met:'+x['objectId'] for x in r)
+          assert all(x['sourceRights']=='MET_PUBLIC_DOMAIN_TRUE_OPEN_ACCESS_CC0' for x in r)
+          assert all(x['previewURL'].startswith('https://images.metmuseum.org/CRDImages/') for x in r)
+          assert all(not x['productionImported'] and x['productionOriginalImageQA'] is False for x in r)
+          assert j['batchHash']==hashlib.sha256(json.dumps([x['id'] for x in r],separators=(',',':')).encode()).hexdigest()
+          h=Path('docs/SACRED_ART_MET_FULL_CATALOGUE_250_REVIEW_B10_20261029.html').read_text()
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert m and json.loads(m.group(1))==r
+          assert "batchId:'B10'" in h and 'const PAGE_SIZE=50;' in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'seenPages.length<TOTAL_PAGES' in h
+          js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert js
+          Path('/tmp/b10-gallery.js').write_text(js.group(1))
+          print('B10_GATE_PASS',len(r),'unique works, previous 1455 IDs excluded')
+          PY
+          node --check /tmp/b10-gallery.js
+      - name: Archive validated research batch, never release production images
+        if: success()
+        run: |
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b10-met-full-catalogue-250-20261029.v1.json
+          git add docs/SACRED_ART_B10_FULL_CATALOGUE_QA_20261029.md
+          git add docs/SACRED_ART_MET_FULL_CATALOGUE_250_REVIEW_B10_20261029.html
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): preserve full-catalogue B10 250 verified image review"
+          git pull --rebase origin research/sacred-art-b10-getty-20261029
+          git push origin HEAD:research/sacred-art-b10-getty-20261029
