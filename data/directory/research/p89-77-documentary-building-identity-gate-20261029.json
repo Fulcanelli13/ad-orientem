@@ -1211,5 +1211,43 @@
       "rights_cleared": false,
       "original_verified": false
     }
+  ],
+  "site_master_corrections_to_review": [
+    {
+      "row": 11,
+      "site_id": "RG-07325669F01F",
+      "reason": "Unresolved registered location: generic 'eglise saint caprais'; Toulouse Commons photo must not be assigned from saint name alone.",
+      "auto_update_site": false
+    },
+    {
+      "row": 135,
+      "site_id": "RG-6F74FEB9175B",
+      "reason": "Registered city hint São Paulo; source explicitly labels Igreja São Benedito in Itu (São Paulo state). Reconcile municipality.",
+      "auto_update_site": false
+    },
+    {
+      "row": 301,
+      "site_id": "RG-FF21EA0E316B",
+      "reason": "Registered Église Saint-Germain has no usable locality; Commons source says Saint-Germain-sur-Ay. Needs exact local Mass venue.",
+      "auto_update_site": false
+    },
+    {
+      "row": 349,
+      "site_id": "RG-014B017E0591",
+      "reason": "Source describes the right church on Essendene Road. Existing CR3 5EG place hint appears to be presbytery address, not church building address (Essendene Road CR3 5PA).",
+      "auto_update_site": false
+    },
+    {
+      "row": 373,
+      "site_id": "RG-F78E459E839F",
+      "reason": "Original P85 geography reported a 236m pin-to-photo coordinate offset; independently verified church and visible sign, but pin precision needs review.",
+      "auto_update_site": false
+    }
+  ],
+  "next_gates": [
+    "Resolve five site-master address/identity anomalies without rewriting stable IDs",
+    "Independently verify rights and required attribution for exact original revision",
+    "Check original image quality, cropping, frames and resolution and checksum",
+    "Promote only explicitly reviewed, nonexcluded images into existing photo gallery; no new review architecture"
   ]
 }
