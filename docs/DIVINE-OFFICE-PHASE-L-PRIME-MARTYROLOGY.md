@@ -92,3 +92,60 @@ This follow-up closes an **independent historical Latin wording check**, **not**
 Do not generate another research wave or relabel the engineering phase for this case. **Accept** the universal Latin phrase as historically *attested in a 1922 Office-of-the-Dead witness*; **reject** the available congregation-specific English as a translation of that phrase. **Wait for precise page evidence**, namely (a) actual 1956/1960-adjusted **3 November page** and accurate 2026 Luna, and (b) actual printed **1961-compatible All Souls Prime proper** plus a documented English translation of exactly the universal variant. Until then, no source rewrite or public promotion.
 
 Current blocked states remain: `primeCollectComparedAgainstPrintedRomanProper=false`, `martyrology2026_11_03TextVerified=false`, `englishRecipientScopeReviewedAndApproved=false`, `published=0`.
+
+
+## 3 November complete-source collation: independent transcription versus pinned variants (29 October 2026)
+
+**Important scope:** This is a *text and provenance comparison*, not a printed-edition or moon-table certification. Do not unlock the Martyrology on the strength of matching Divinum Officium directories or a user-uploaded third-party transcription.
+
+### Three pinned 3 November sources: exact bytes
+
+Divinum Officium repository at the existing pin `126a07f91ede04664108abb6fb20ace3f4de14b9` contains:
+
+- `web/www/horas/Latin/Martyrologium/11-03.txt`
+- `web/www/horas/Latin/Martyrologium1955R/11-03.txt`
+- `web/www/horas/Latin/Martyrologium1960/11-03.txt`
+
+All three have **the same Git blob SHA** `450878afe363606d58fe3f91bebffcd3d23eac19` (1495 bytes according to GitHub API). Their twelve eulogies, in order, are:
+
+1. St Charles Borromeo (anniversary at Milan; feast on the following day)
+2. St Quartus (disciple of the Apostles)
+3. St Valentine, priest, and St Hilary, deacon, at Viterbo
+4. Germanus, Theophilus, Caesarius and Vitalis at Caesarea in Cappadocia
+5. The innumerable martyrs of Saragossa
+6. St Winefride of England
+7. St Malachy, Bishop of Connor, at Clairvaux
+8. St Hubert, Bishop of Tongres
+9. St Domnus, Bishop of Vienne
+10. St Pirminus, Bishop of Meaux
+11. St Hermengaud, Bishop of Urgel
+12. St Sylvia, mother of Pope St Gregory
+
+**Source-family parity = 3/3 exact. This is NOT 3 independent witnesses**: they are three directories of one project. The files contain no historic or dynamically computed **2026** Luna value.
+
+### External transcription comparison
+
+- A complete online Latin–French November file **labelled** `Martyrologe 1961 - Novembre Latin Français`, uploaded to Scribd by Xavier de Pontonx, includes the special All Souls same-day introduction, then the 3 November text and the matching twelve principal eulogies: https://fr.scribd.com/document/918115216/11-Martyrologe-1961-Novembre-Latin-Franc-ais .
+- Its searchable text specifically says **on 2 November, not the day before**, read the *Hac die Commemoratio omnium Fidelium Defunctorum* prologue before announcing the **next day**, and then continue with the 3 November entries. This supports the distinction between the All Souls introduction and anticipated Martyrology reading.
+- It is **a third-party transcription labelled 1961**, not a demonstrably photographed leaf of the Vatican 1956 edition. The uploaded page states **all rights reserved**; do not ingest or republish the full bilingual text or treat the uploader as the printed publisher. Source order and identities were compared; textual character-by-character parity against a physical printed edition was **not** established.
+- A purported 1959 English secondary compilation instead begins 3 November with Blessed Simon Ballachi and omits the Charles Borromeo lead entry: https://www.boston-catholic-journal.com/1959-roman-martrylogy-in-english/roman-martyrology-1959-november-in-english.htm . Thus it cannot be silently substituted for the matching Latin source family without edition review.
+
+### 2026 Luna — only a candidate, not a clearance
+
+- A modern 2026 office calendar on Societas Laudis explicitly prints `Tertio Nonas Novembris, luna vigesima quarta`: https://www.societaslaudis.org/fr/2026-11-03/hebdomada-xxxi-per-annum/vel-s-martini-de-porres-religiosi/antiphonale-romanum/ad-primam/ .
+- This gives **XXIV** as an independently published *modern-calendar candidate*, but the site uses post-1962 liturgical books; it does **not** independently establish the same 2026 lunar reading under a verified **1956 Martyrology/1960 variationes ecclesiastical calendar table**. **Do not mark the historical Luna verified** from an astronomical moon age or this modern calendar alone.
+
+### Exact print sources located, access not resolved
+
+- **1956 Latin**: Vatican Polyglot Press, fourth post-typical edition (542 pp), in University of Virginia / Google Books catalogue and independent library records: https://books.google.com/books?id=bfwuAAAAYAAJ . Google Books is a snippet view, not a page-located 3 November scan.
+- **1961 Latin Breviary**: *Breviarium Romanum*, Benziger Brothers, two volumes, is in the Internet Archive/Open Library catalogue as `breviariumromanu0001cath`: https://openlibrary.org/books/OL37908636M/Breviarium_Romanum_ex_decreto_ss._Concilii_Tridentini_restitutum . The listing is borrow-based, not a directly accessed All Souls Prime proper. **Do not guess a page from the record**.
+- **1962 English Martyrology**: Newman Press, J. B. O'Connell, 412 pages, listed by WorldCat: https://search.worldcat.org/title/1051608602 . This is an **English Martyrology**, **not** an English translation of the All Souls Prime collect.
+
+### Acceptance and release decision
+
+- **Close the bounded comparison**: three pinned `11-03` files are identical and their twelve commemorations have a consistent, externally searchable 1961-*labelled* parallel.
+- **Do not close source-edition collation**: no independently inspected, precise 1956 Vatican 3 November physical page; the externally labelled 1961 transcription has not been authenticated against a printed exemplar.
+- **Do not close 2026 historical Luna**: XXIV is only an independent modern-calendar candidate.
+- **Do not lift English Prime quarantine**: still no printed 1961-compatible `Deus, veniae largitor` adapted Prime text with source-attested historical English translation of `animas omnium fidelium`.
+
+All booleans remain deliberately **false**: `martyrology2026_11_03TextVerified`, `martyrology1961VariationAppliedAndVerified`, `primeCollectComparedAgainstPrintedRomanProper`, `englishRecipientScopeReviewedAndApproved`. `published=0`. No change to source cells, UI, tests, or release routing.
