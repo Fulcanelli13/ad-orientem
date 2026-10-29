@@ -82,7 +82,7 @@ assert.match(en,/Gospel of the Mass/);
 assert.match(en,/aoTodayV2Frontispiece/);
 assert.match(en,/aoTodayV2PrayNow/);
 assert.match(en,/data-home-prayer-jump/,"Today needs a direct prayer-section shortcut");
-assert.ok(en.indexOf("aoTodayV2PrayNow")<en.indexOf("aoTodayV2CalendarGlance"),"Prayer section must precede Calendar context");
+assert.ok(en.indexOf('class="aoTodayV2Zone aoTodayV2PrayNow"')<en.indexOf('class="aoTodayV2CalendarGlance"'),"Prayer section must precede Calendar context");
 assert.match(en,/data-date=/,"Seven-day date rail must use canonical selected-date keys");
 assert.match(en,/aoTodayV2ReadReflect/);
 assert.match(en,/aoTodayV2CalendarGlance/,"Approved C includes one grouped calendar summary");
