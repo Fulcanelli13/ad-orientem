@@ -24,7 +24,7 @@ assert.match(register.cohorts.purgatorian_manual_1894_1907.boundaries,/199.*210/
 assert.match(register.cohorts.purgatorian_manual_1894_1907.scanEdition,/1907_IMPRIMATUR/);
 assert.match(register.cohorts.callan_1925_copyright_later_scan.scanEdition,/POST_1933_MATERIAL/);
 assert.match(register.cohorts.callan_1925_copyright_later_scan.boundaries,/April 22, 1933/);
-assert.deepEqual(register.days.filter(x=>x.id==="christmas").map(x=>x.sectionStartPrintedPage),Array(9).fill(268));
+assert.deepEqual(register.days.filter(x=>x.id==="christmas").map(x=>x.sectionStartPrintedPage),Array(9).fill(292));
 assert.deepEqual(register.days.filter(x=>x.id==="holy_ghost").map(x=>x.sectionStartPrintedPage),Array(9).fill(296));
 assert.ok(register.days.every(x=>x.fullyPrintCollated===false&&x.facsimileImageCompared===false&&x.frenchOriginalEditionCertified===false));
 const counts={};for(const x of register.days){
