@@ -136,13 +136,28 @@ try{
         // Page-level no-overflow tests missed the prior 23px word colliding
         // with PAUSE inside this narrow Schola dock.
         const nextPhrase=root.locator("[data-schola-next]");
-        for(let i=0;i<16&&(await nextPhrase.textContent())?.trim()!=="FINISH";i++){
+        // Read the actual Schola controller between clicks. Rapidly sampling
+        // animated text alone can press FINISH before its DOM state settles.
+        for(let i=0;i<16;i++){
+          const state=await page.evaluate(()=>window.AO_R17_NATIVE_READER_PREVIEW?.getScholaState?.());
+          assert.equal(state?.trackId,"KYRIE","Music navigation changed the selected chant");
+          assert.equal(state.complete,false,"Schola completed without an observed FINISH");
+          assert.ok(state.total>1,"Kyrie segments missing");
+          if(state.index===state.total-1)break;
           assert.equal(await nextPhrase.isEnabled(),true,
-            "Kyrie ended before the explicit FINISH control appeared");
+            "Schola next arrow disabled before the last Kyrie phrase");
           await nextPhrase.click();
+          await page.waitForFunction(previous=>{
+            const s=window.AO_R17_NATIVE_READER_PREVIEW?.getScholaState?.();
+            return s?.trackId==="KYRIE"&&s.index===previous+1&&!s.complete;
+          },state.index,{timeout:9000});
         }
-        assert.equal((await nextPhrase.textContent())?.trim(),"FINISH",
-          "Last Kyrie phrase must expose a manual FINISH action");
+        await page.waitForFunction(()=>{
+          const s=window.AO_R17_NATIVE_READER_PREVIEW?.getScholaState?.();
+          const button=document.querySelector('#ao-r17-native-reader-preview [data-schola-next]');
+          return s?.trackId==="KYRIE"&&s.total>1&&s.index===s.total-1&&!s.complete &&
+            button?.dataset.scholaFinish==="true"&&button.textContent?.trim()==="FINISH";
+        },null,{timeout:9000});
         const fit=await nextPhrase.evaluate(button=>{
           const pause=document.querySelector('#ao-r17-native-reader-preview [data-schola-pause]');
           const a=button.getBoundingClientRect(),b=pause?.getBoundingClientRect();
