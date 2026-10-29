@@ -25,7 +25,7 @@ jobs:
       - name: Read only published OAI/CC0 APIs; no source images downloaded
         run: |
           python -m py_compile scripts/art/sacred-art-kmska-cleveland-b1-20261029.py
-          python scripts/art/sacred-art-kmska-cleveland-b1-20261029.py --kmska-pages 60 --cleveland-per-query 50 --kmska-manifests-max 60 --delay 0.13
+          python scripts/art/sacred-art-kmska-cleveland-b1-20261029.py --kmska-pages 24 --cleveland-per-query 50 --kmska-manifests-max 60 --delay 0.13
       - name: Validate no stale museum IDs, no publishing and exact licence gates
         run: |
           python - <<'PY'
