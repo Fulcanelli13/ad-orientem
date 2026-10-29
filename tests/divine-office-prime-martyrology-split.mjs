@@ -107,6 +107,43 @@ test("boundary is not manufactured for another date/hour/source role",()=>{
     latin:source("la","2026-11-03"),translation:source("fr","2026-11-03"),locale:"fr"
   }).cards.length,3);
 });
+test("All Souls Prime split follows the shared 1960 transfer date in future years",()=>{
+  const isSplit=(date,hour="PRIME",role="MARTYROLOGY",sourceCellId="Prima5")=>
+    primeSplitRequired({date,hour,role,sourceCellId});
+  // 2026 and 2027: November 2 is not a Sunday.
+  assert.equal(isSplit("2026-11-02"),true);
+  assert.equal(isSplit("2027-11-02"),true);
+  assert.equal(isSplit("2027-11-03"),false);
+  // 2025 and 2031: November 2 falls on Sunday; the Office moves to Monday.
+  for(const year of [2025,2031]){
+    assert.equal(isSplit(year+"-11-02"),false);
+    assert.equal(isSplit(year+"-11-03"),true);
+  }
+  for(const date of ["2031-11-02","2031-11-04","2026-11-03","2026-10-31",
+                     "bogus","2026-11-02T00:00:00","0000-11-02"]){
+    assert.equal(isSplit(date),false,date);
+  }
+  assert.equal(isSplit("2031-11-03","VESPERS"),false);
+  assert.equal(isSplit("2031-11-03","PRIME","PRAYER"),false);
+  assert.equal(isSplit("2031-11-03","PRIME","MARTYROLOGY","Prima6"),false);
+});
+test("future All Souls Prime has two source-lossless navigable cards, not a dropped prayer",()=>{
+  for(const date of ["2027-11-02","2031-11-03"]){
+    const latin=source("la",date);
+    const french=source("fr",date);
+    const model=projectOfficeMassStyleCards({latin,translation:french,locale:"fr"});
+    assert.equal(model.cards.length,4,date);
+    assert.deepEqual(model.cards.slice(1,3).map(c=>c.sourcePart),
+      ["MARTYROLOGY_READING","POST_MARTYROLOGY_PRAYER"]);
+    assert.equal(model.cards[1].latin+"\n"+model.cards[2].latin,latin.sections[1].text);
+    assert.equal(model.cards[1].vernacular+"\n"+model.cards[2].vernacular,french.sections[1].text);
+    assert.equal(model.cards[3].sourceCellId,"Prima6");
+  }
+  // Sunday Nov 2 is not transferred All Souls and cannot get the split.
+  assert.equal(projectOfficeMassStyleCards({
+    latin:source("la","2031-11-02"),translation:source("fr","2031-11-02"),locale:"fr"
+  }).cards.length,3);
+});
 test("missing, duplicated or locale-inconsistent marker refuses publication and rendering",()=>{
   assert.throws(()=>splitAllSoulsPrimeMartyrologyCell(
     "Martyrologium\nDeus, veniae largitor","la"),/BOUNDARY_AMBIGUOUS/);
