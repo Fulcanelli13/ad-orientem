@@ -83,8 +83,8 @@ let browser;
 function record(name,attrs){receipt.scenarios.push({name,...attrs})}
 const shot=async(page,name)=>{
  const filename=name+".png";
- await page.screenshot({path:resolve(OUT,filename),fullPage:true,
-  animations:"disabled"});
+ await page.screenshot({path:resolve(OUT,filename),
+  fullPage:!name.includes("-focus-"),animations:"disabled"});
  receipt.screenshots.push(filename);
 };
 const finish=async()=>{
