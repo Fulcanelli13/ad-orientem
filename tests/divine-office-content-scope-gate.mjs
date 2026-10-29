@@ -60,3 +60,34 @@ test("known content-scope gate is narrow and does not alter source text",()=>{
   assert.equal(latin.sections[0].text,originalLatin);
   assert.equal(english.sections[0].text,originalEnglish);
 });
+
+
+test("omitted French XXIII Sunday commemoration blocks otherwise aligned Vespers",()=>{
+  const v=(language,date,text)=>({
+    ...doc(language,text,date,"VESPERS"),headline:"Omnium Sanctorum",
+    sections:[{sourceCellId:"Vespera10",index:1,sourceIndex:1,text,
+      semantic:{role:"PRAYER",latinSourceCellId:"Vespera10"}}],
+  });
+  const comm="Commemoratio Dominica XXIII Post Pentecosten I. Novembris";
+  const latin=v("la","2026-11-01","Oratio Omnium Sanctorum.\n"+comm+
+    "\nAnt. At Jesus conversus.\n℣. Dirigatur Domine.\nAbsolve quaesumus Domine.");
+  const missing=v("fr","2026-11-01","Oraison de Tous les Saints. Ainsi soit-il.");
+  const blocks=officeTranslationContentBlockers({latin,translation:missing});
+  assert.equal(blocks.length,1);
+  assert.equal(blocks[0].reason,"FR_VESPERS_SUNDAY_COMMEMORATION_INCOMPLETE");
+  assert.equal(blocks[0].translationSourceCellId,"Vespera10");
+  assert.equal(blocks[0].canPublish,false);
+  assert.throws(()=>validateResearchOfficePair({latin,translation:missing,locale:"fr"}),
+    /CONTENT_SCOPE_MISMATCH/);
+  const corrected=v("fr","2026-11-01",
+    "Commémoraison du dimanche. Jésus se retournant.\n"+
+    "Pardonnez, nous vous en supplions, Seigneur, les offenses de vos peuples.");
+  assert.deepEqual(officeTranslationContentBlockers({latin,translation:corrected}),[]);
+  const irrelevant=v("la","2026-11-01","Oratio Omnium Sanctorum.");
+  assert.deepEqual(officeTranslationContentBlockers({latin:irrelevant,translation:missing}),[]);
+  for(const date of ["2027-11-01","2031-11-01"]){
+    const more=officeTranslationContentBlockers({latin:{...latin,date},
+      translation:{...missing,date}});
+    assert.equal(more.length,1,date);
+  }
+});
