@@ -18445,5 +18445,31 @@
     "confirmedNewPhysicalPaintings": 0,
     "interpretation": "This is an evidence-tiered linkage scan, not deduplicated physical-work count. Distinct physical-work verification and exact original-image rights remain pending.",
     "productionMutation": false
+  },
+  "phase1MuseumAccessionAudit": {
+    "path": "data/calendar/sacred-art-phase1-museum-479-accession-audit-20261029.v1.json",
+    "institutionBackedUnlinkedCards": 479,
+    "internalSourceUrlAligned": 479,
+    "accessionKeyCollisionsAcross2455": 0,
+    "independentMuseumVerificationFromThisAudit": 0,
+    "productionMutation": false
+  },
+  "phase1OfficialMuseumVerification": {
+    "path": "data/calendar/sacred-art-phase1-official-cma29-met73-verification-20261029.v1.json",
+    "officialCollectionObjectPagesResolved": 102,
+    "byMuseum": {
+      "Cleveland": 29,
+      "Met": 73
+    },
+    "attributionOrAnonymousExceptions": 11,
+    "ensembleAndMultipleSurfaceAlerts": 5,
+    "metAccessionObjectNumbersIndividuallyRecorded": 5,
+    "remainingMuseumSourceCardsToVerify": 377,
+    "canonicalLinksNewlyEstablished": 0,
+    "unlinkedTo383Still": 784,
+    "uniquePhysicalWorksProvenNew": 0,
+    "exactPhotoOrRightsCertified": 0,
+    "userChoicesMutated": false,
+    "productionMutation": false
   }
 }
