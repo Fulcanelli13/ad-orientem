@@ -1,0 +1,156 @@
+name: Directory bulk photo staging - permanent research archive
+on:
+  workflow_dispatch:
+    inputs:
+      wave:
+        description: "Stage exterior first, then interior/high-altar photographs"
+        required: true
+        type: choice
+        options:
+          - exterior
+          - interior
+      offset:
+        description: "Frozen R49 discovery batch starting index"
+        required: true
+        type: number
+        default: 0
+      limit:
+        description: "Frozen R49 discovery batch venue count"
+        required: true
+        type: number
+        default: 100
+      selection_offset:
+        description: "Start candidate index within discovered Commons shortlist"
+        required: true
+        type: number
+        default: 0
+      selection_limit:
+        description: "Source originals to attempt (1 to 50)"
+        required: true
+        type: number
+        default: 30
+permissions:
+  contents: write
+concurrency:
+  group: directory-bulk-photo-assets-archive
+  cancel-in-progress: false
+jobs:
+  stage-only:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate bounds and immutable research-only safeguards
+        env:
+          WAVE: ${{ inputs.wave }}
+          OFFSET: ${{ inputs.offset }}
+          LIMIT: ${{ inputs.limit }}
+          SELECTION_OFFSET: ${{ inputs.selection_offset }}
+          SELECTION_LIMIT: ${{ inputs.selection_limit }}
+        run: |
+          set -euo pipefail
+          node tests/production-tree-hygiene.mjs
+          python tests/directory-bulk-photo-stage-test.py -v
+          python - <<'PY'
+          import os
+          assert os.environ["WAVE"] in ("exterior","interior")
+          a,n,c,k=(int(os.environ[x]) for x in
+                   ("OFFSET","LIMIT","SELECTION_OFFSET","SELECTION_LIMIT"))
+          assert 0<=a<1879 and 1<=n<=500 and a+n<=1879
+          assert 0<=c<10000 and 1<=k<=50
+          PY
+      - name: Load exact archived discovery export (not arbitrary URLs)
+        env:
+          WAVE: ${{ inputs.wave }}
+          OFFSET: ${{ inputs.offset }}
+          LIMIT: ${{ inputs.limit }}
+        run: |
+          set -euo pipefail
+          git fetch origin 'refs/heads/research/directory-photo-candidates:refs/remotes/origin/research/directory-photo-candidates'
+          source="data/directory/research/photo-candidates/r49-$WAVE-$OFFSET-$LIMIT.json"
+          git show "refs/remotes/origin/research/directory-photo-candidates:$source" > /tmp/ao-photo-candidates.json
+          test -s /tmp/ao-photo-candidates.json
+      - name: Install pinned free image decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Download and validate original files (zero publication)
+        env:
+          WAVE: ${{ inputs.wave }}
+          SELECTION_OFFSET: ${{ inputs.selection_offset }}
+          SELECTION_LIMIT: ${{ inputs.selection_limit }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/ao-photo-staging
+          python tools/directory/stage-bulk-place-photos.py \
+            --candidate-file /tmp/ao-photo-candidates.json \
+            --wave "$WAVE" --selection-offset "$SELECTION_OFFSET" --limit "$SELECTION_LIMIT" \
+            --output-dir /tmp/ao-photo-staging/images --report /tmp/ao-photo-staging/report.json
+      - name: Verify local derivatives and zero published images
+        run: |
+          python - <<'PY'
+          import json,hashlib,pathlib
+          r=json.loads(pathlib.Path("/tmp/ao-photo-staging/report.json").read_text())
+          assert r["schema"]=="AO_DIRECTORY_BULK_STAGE_REPORT_V1"
+          assert r["publication"] is False and r["status"]=="STAGED_NOT_PUBLISHED"
+          assert 1<=len(r["staged"])<=50
+          assert len(r["staged"])+len(r["held"])==r["selected"]
+          root=pathlib.Path("/tmp/ao-photo-staging/images")
+          for x in r["staged"]:
+              f=root/x["asset_path"]
+              assert f.is_file() and f.suffix==".webp"
+              assert hashlib.sha256(f.read_bytes()).hexdigest()==x["derivative_sha256"]
+              assert x["publication"] is False and x["subject_identity"]=="UNVERIFIED_DISCOVERY_MATCH"
+          PY
+      - name: Archive only exact files on permanent research branch (never main)
+        env:
+          WAVE: ${{ inputs.wave }}
+          OFFSET: ${{ inputs.offset }}
+          LIMIT: ${{ inputs.limit }}
+          SELECTION_OFFSET: ${{ inputs.selection_offset }}
+          SELECTION_LIMIT: ${{ inputs.selection_limit }}
+        run: |
+          set -euo pipefail
+          tag="r49-$WAVE-$OFFSET-$LIMIT-$SELECTION_OFFSET-$SELECTION_LIMIT"
+          target="assets/staged/directory-bulk/$tag"
+          report_target="data/directory/research/photo-staging/reports/$tag.json"
+          git fetch origin 'refs/heads/research/directory-photo-assets:refs/remotes/origin/research/directory-photo-assets' || true
+          if git show-ref --verify --quiet refs/remotes/origin/research/directory-photo-assets; then
+            git switch -C research/directory-photo-assets origin/research/directory-photo-assets
+          else
+            git switch -c research/directory-photo-assets
+          fi
+          if test -e "$report_target"; then
+            echo "Batch already archived; refusing overwrite"
+            exit 1
+          fi
+          mkdir -p "$target" "$(dirname "$report_target")"
+          cp /tmp/ao-photo-staging/images/*.webp "$target/"
+          export AO_TARGET="$target" AO_REPORT_TARGET="$report_target"
+          python - <<'PY'
+          import json,os,pathlib
+          r=json.loads(pathlib.Path("/tmp/ao-photo-staging/report.json").read_text())
+          r["archive_directory"]=os.environ["AO_TARGET"]
+          for x in r["staged"]:
+              x["asset_path"]=os.environ["AO_TARGET"]+"/"+x["asset_path"]
+          pathlib.Path(os.environ["AO_REPORT_TARGET"]).write_text(
+              json.dumps(r,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+          PY
+          git add "$target" "$report_target"
+          git diff --cached --name-only | while read -r file; do
+            case "$file" in
+              "$target"/*|"$report_target") ;;
+              *) echo "Unexpected staged path: $file" >&2; exit 1;;
+            esac
+          done
+          if git diff --cached --quiet; then exit 1; fi
+          git -c user.name='ad-orientem-research-bot' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): $WAVE SHA-verified staging $tag (unpublished)"
+          git push origin HEAD:refs/heads/research/directory-photo-assets
