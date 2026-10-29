@@ -704,6 +704,21 @@ def openverse_discovery(client, venue):
     return output, len(searched)
 
 
+def merge_photo_candidates(existing, additional):
+    """Preserve higher-confidence prior sources, dedup by original landing URL,
+    and never exceed the per-site-per-category research cap."""
+    retained = []
+    seen = set()
+    for item in list(existing) + list(additional):
+        key = str(item.get("source_url") or "").strip()
+        if not key or key in seen:
+            continue
+        if len(retained) >= MAX_CANDIDATES_PER_CATEGORY:
+            break
+        retained.append(item)
+        seen.add(key)
+    return retained
+
 def run(source, output, offset, limit, client):
     rows = source_rows(source)
     subset = rows[offset:offset + limit]
@@ -742,14 +757,8 @@ def run(source, output, offset, limit, client):
             alternatives, query_count = openverse_discovery(client, venue)
             row["openverse_queries"] = query_count
             for kind in CATEGORIES:
-                used = {entry["source_url"] for entry in row["categories"][kind]}
-                for candidate in alternatives[kind]:
-                    if candidate["source_url"] in used:
-                        continue
-                    row["categories"][kind].append(candidate)
-                    used.add(candidate["source_url"])
-                    if len(row["categories"][kind]) >= MAX_CANDIDATES_PER_CATEGORY:
-                        break
+                row["categories"][kind] = merge_photo_candidates(
+                    row["categories"][kind], alternatives[kind])
         except (urllib.error.URLError, urllib.error.HTTPError, ValueError, KeyError, TimeoutError) as exc:
             row["openverse_queries"] = 0
             row["errors"]["OPENVERSE"] = type(exc).__name__ + ": " + str(exc)[:160]

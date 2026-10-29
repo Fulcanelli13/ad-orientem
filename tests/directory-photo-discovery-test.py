@@ -157,6 +157,16 @@ class PhotoDiscoveryTests(unittest.TestCase):
         self.assertFalse(found["SACRED_DETAIL"])
         self.assertEqual(found["EXTERIOR"][0]["publication_state"],"HOLD_IDENTITY_CATEGORY_AND_RIGHTS_REVIEW")
 
+    def test_openverse_merge_never_exceeds_limit(self):
+        old=[{"source_url":f"https://example.org/{n}","discovery_method":"WIKIDATA_P18"}
+             for n in range(mod.MAX_CANDIDATES_PER_CATEGORY)]
+        new=[old[0], {"source_url":"https://example.org/openverse"}]
+        self.assertEqual(mod.merge_photo_candidates(old,new),old)
+        smaller=[old[0]]
+        combined=mod.merge_photo_candidates(smaller,new)
+        self.assertEqual(len(combined),2)
+        self.assertEqual(combined[-1]["source_url"],"https://example.org/openverse")
+
     def test_openverse_name_variants_source_only(self):
         names=mod.search_name_variants("St. John the Baptist Church")
         self.assertEqual(names[0],"St. John the Baptist Church")
