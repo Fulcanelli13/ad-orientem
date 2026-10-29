@@ -704,6 +704,13 @@ button.ao-schola-control{cursor:pointer}
 }
 .ao-schola-control[data-schola-release]{grid-column:1/-1;min-height:36px;font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-mass-accent-text);border-color:color-mix(in srgb,var(--ao-mass-accent) 35%,transparent);letter-spacing:.04em}
 .ao-schola-control[data-schola-release][hidden]{display:none!important}
+/* Last-phrase FINISH is a word, not the 23px arrow glyph. At 320px the
+   glyph font made it paint over PAUSE without causing page-level overflow. */
+.ao-schola-control[data-schola-next][data-schola-finish="true"]{
+  font:700 8px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:0;padding:0 2px;white-space:nowrap;
+  overflow:hidden;text-overflow:clip;
+}
 .ao-schola-control[data-schola-previous]:disabled,.ao-schola-control[data-schola-next]:disabled{
   opacity:.25;cursor:default
 }
@@ -2729,6 +2736,7 @@ export function createReaderDomAdapter({
       // click after hearing its ending may mark the chant complete.
       next.disabled=!source || Boolean(source.complete) ||
         Boolean(source.benedictusHold) || Number(source.total)<=0;
+      next.dataset.scholaFinish=String(atLast&&!source.complete);
       next.textContent=atLast&&!source.complete ? "FINISH" : "›";
       next.setAttribute?.("aria-label",atLast&&!source.complete
         ? "Finish Schola chant when actually heard ending"
