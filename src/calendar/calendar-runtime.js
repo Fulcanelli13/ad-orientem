@@ -763,7 +763,13 @@ function calendarCustomCatalogueMarkup(){
   const isFr=fr();
   const groups=groupCalendarCustomsByYear(articles);
   const item=article=>{
-    const searchable=calendarCustomSearchIndex(article);
+    // Search enrichments route to the already published owner; no extra cards.
+    // Include both languages so regional historical notes remain discoverable.
+    const related=customsHistoricalVariantContextEnabled()?
+      [...calendarCustomHistoricalVariantPreview(article.id,{fr:false}),
+       ...calendarCustomHistoricalVariantPreview(article.id,{fr:true})]:[];
+    const searchable=normaliseCustomSearch([calendarCustomSearchIndex(article),
+      ...related.flatMap(x=>[x.title,x.history,x.historical_region])].join(" "));
     return '<div data-cal-custom-item data-cal-custom-terms="'+esc(searchable)+'">'+calendarCustomArticleMarkup(article)+'</div>';
   };
   return '<section class="aoCalCustomCatalogueSection"><details class="aoCalCustomCatalogue">'
