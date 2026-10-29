@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - data/directory/research/p86-actual-visual-photo-qa-301-20261029.json
+      - data/directory/research/p88-p85-recovered-84-source-triage-20261029.json
+      - tests/directory-p88-p85-photo-source-triage-test.py
       - tools/directory/screen-worldwide-p83-photo-candidates.py
       - tests/directory-p83-global-photo-screen-test.py
       - tests/directory-p86-visual-qa-ledger-test.py
@@ -24,5 +26,6 @@ jobs:
         run: |
           set -euo pipefail
           python tests/directory-p86-visual-qa-ledger-test.py
+          python tests/directory-p88-p85-photo-source-triage-test.py
           python tests/directory-p83-global-photo-screen-test.py -v
           node tests/production-tree-hygiene.mjs
