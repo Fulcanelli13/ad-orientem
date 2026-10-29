@@ -7,8 +7,8 @@
   "source479Sha256": "179e879ff6f2a644eb081caf16a5fa8b811e25a3983ce13c74153ec652ee3bd9",
   "counts": {
     "frozenSourceCards": 54,
-    "confirmedOfficialIdsAndTitles": 20,
-    "officialResponseButUnresolved": 34,
+    "confirmedOfficialIdsAndTitles": 54,
+    "officialResponseButUnresolved": 0,
     "officialFetchFailures": 0,
     "originalConditionalImportCount": 2,
     "creatorReviewFlags": 5,
@@ -17,7 +17,9 @@
     "sourcePhotoLicensesCertified": 0,
     "uniquePhysicalNewPaintingsCertified": 0,
     "newlyEstablishedCanonical383Links": 0,
-    "productionImports": 0
+    "productionImports": 0,
+    "officialNumbersExactCase": 20,
+    "officialNumbersCasefoldOnly": 34
   },
   "methodologicalLimitations": [
     "Official museum object_number and title are authoritative source identity only, not a match to an existing canonical 383 work.",
@@ -84,7 +86,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -93,7 +97,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS1168",
+        "frozenSourceObjectNumber": "KMS1168",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS1181",
@@ -146,7 +156,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -155,7 +167,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS1181",
+        "frozenSourceObjectNumber": "KMS1181",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS1319",
@@ -208,7 +226,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -217,7 +237,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS1319",
+        "frozenSourceObjectNumber": "KMS1319",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS1638",
@@ -270,7 +296,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -279,7 +307,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS1638",
+        "frozenSourceObjectNumber": "KMS1638",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS1898",
@@ -332,7 +366,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -341,7 +377,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS1898",
+        "frozenSourceObjectNumber": "KMS1898",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS1899",
@@ -394,7 +436,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -403,7 +447,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS1899",
+        "frozenSourceObjectNumber": "KMS1899",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS3141",
@@ -456,7 +506,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -465,7 +517,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS3141",
+        "frozenSourceObjectNumber": "KMS3141",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS387",
@@ -521,7 +579,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -530,7 +590,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS387",
+        "frozenSourceObjectNumber": "KMS387",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS3922",
@@ -583,7 +649,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -592,7 +660,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS3922",
+        "frozenSourceObjectNumber": "KMS3922",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS3924",
@@ -658,7 +732,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -667,7 +743,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS3924",
+        "frozenSourceObjectNumber": "KMS3924",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS4550",
@@ -739,7 +821,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -748,7 +832,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS4550",
+        "frozenSourceObjectNumber": "KMS4550",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS561",
@@ -801,7 +891,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -810,7 +902,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS561",
+        "frozenSourceObjectNumber": "KMS561",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS6468",
@@ -863,7 +961,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -872,7 +972,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS6468",
+        "frozenSourceObjectNumber": "KMS6468",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS6469",
@@ -925,7 +1031,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -934,7 +1042,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS6469",
+        "frozenSourceObjectNumber": "KMS6469",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS727",
@@ -987,7 +1101,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -996,7 +1112,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS727",
+        "frozenSourceObjectNumber": "KMS727",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS7710",
@@ -1049,7 +1171,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -1058,7 +1182,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS7710",
+        "frozenSourceObjectNumber": "KMS7710",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS7976",
@@ -1112,7 +1242,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -1121,7 +1253,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS7976",
+        "frozenSourceObjectNumber": "KMS7976",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS830",
@@ -1174,7 +1312,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -1183,7 +1323,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS830",
+        "frozenSourceObjectNumber": "KMS830",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS8561",
@@ -1234,7 +1380,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [
         "HISTORIC_CREATOR_QUALIFIER_REVIEW"
@@ -1245,7 +1393,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS8561",
+        "frozenSourceObjectNumber": "KMS8561",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMS981",
@@ -1298,7 +1452,9 @@
       "evidence": {
         "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": true,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [],
       "physicalArtworkUniquenessCertified": false,
@@ -1307,7 +1463,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "EXACT_CASE",
+        "officialVerbatimObjectNumber": "KMS981",
+        "frozenSourceObjectNumber": "KMS981",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP11",
@@ -1319,7 +1481,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP11",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP11&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP11&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "d723dfb0852c852b915493d6791ef5fb14179d187ada86c7aeffcb60712bd8f0",
       "responseBytes": 4636,
       "httpStatus": 200,
@@ -1358,20 +1520,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp11",
+        "frozenSourceObjectNumber": "KMSSP11",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP113",
@@ -1383,7 +1551,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP113",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP113&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP113&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "699a96eb4bc5b354544583ae628f22033bb7e52e72e783079fae2e7eaed493b8",
       "responseBytes": 4200,
       "httpStatus": 200,
@@ -1438,12 +1606,13 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": false
+        "creatorMentionMatch": false,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH",
         "HISTORIC_CREATOR_QUALIFIER_REVIEW"
       ],
       "physicalArtworkUniquenessCertified": false,
@@ -1452,7 +1621,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp113",
+        "frozenSourceObjectNumber": "KMSSP113",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP114",
@@ -1464,7 +1639,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP114",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP114&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP114&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "c5cf2a19d6e6dc95609c6416f39ff13817e78ff9737abf2859232e31915afaa9",
       "responseBytes": 3299,
       "httpStatus": 200,
@@ -1512,12 +1687,13 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": false
+        "creatorMentionMatch": false,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH",
         "HISTORIC_CREATOR_QUALIFIER_REVIEW"
       ],
       "physicalArtworkUniquenessCertified": false,
@@ -1526,7 +1702,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp114",
+        "frozenSourceObjectNumber": "KMSSP114",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP12",
@@ -1538,7 +1720,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP12",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP12&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP12&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "2c4a556527177258caedd2d5bf82cf7109458007b74683d9541f3ff2dec08795",
       "responseBytes": 2711,
       "httpStatus": 200,
@@ -1577,20 +1759,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp12",
+        "frozenSourceObjectNumber": "KMSSP12",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP120",
@@ -1602,7 +1790,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP120",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP120&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP120&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "5f1106f16e071a9b68e378b0170adeb0ca57a1dd46320535182e1f1833a28da7",
       "responseBytes": 5126,
       "httpStatus": 200,
@@ -1641,20 +1829,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp120",
+        "frozenSourceObjectNumber": "KMSSP120",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP124",
@@ -1666,7 +1860,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP124",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP124&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP124&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "0b221387e871c50a74292dfaf4c86613a31e1c52a1eafa74061d2f31b44cb2a2",
       "responseBytes": 5799,
       "httpStatus": 200,
@@ -1723,20 +1917,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp124",
+        "frozenSourceObjectNumber": "KMSSP124",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP126",
@@ -1748,7 +1948,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP126",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP126&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP126&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "08ca6804c0bb22298e2b0a6c029a5509421175daa9fbd3468b9a527d14d135a8",
       "responseBytes": 3807,
       "httpStatus": 200,
@@ -1797,20 +1997,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp126",
+        "frozenSourceObjectNumber": "KMSSP126",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP13",
@@ -1822,7 +2028,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP13",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP13&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP13&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "2165ddbe319760a02eb0f01393706a4c3286032c64f223a766938e669d7cfc1c",
       "responseBytes": 5147,
       "httpStatus": 200,
@@ -1861,20 +2067,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp13",
+        "frozenSourceObjectNumber": "KMSSP13",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP186",
@@ -1886,7 +2098,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP186",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP186&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP186&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "1e6648012dcedf12325f6829832d6c86677e4cf7179f355ef2dd0c9cd999e343",
       "responseBytes": 4532,
       "httpStatus": 200,
@@ -1935,20 +2147,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp186",
+        "frozenSourceObjectNumber": "KMSSP186",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP230",
@@ -1960,7 +2178,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP230",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP230&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP230&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "8f05853940abde3658cd336138b3a1e051ff9c076e02f1c78f845255c3d5ab37",
       "responseBytes": 3918,
       "httpStatus": 200,
@@ -2002,20 +2220,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp230",
+        "frozenSourceObjectNumber": "KMSSP230",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP234",
@@ -2027,7 +2251,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP234",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP234&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP234&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "ce7270dda7b935cb4fe302baded34b0da99c960e7a4f316490012b78560b9d08",
       "responseBytes": 7017,
       "httpStatus": 200,
@@ -2067,20 +2291,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp234",
+        "frozenSourceObjectNumber": "KMSSP234",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP256",
@@ -2092,7 +2322,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP256",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP256&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP256&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "dcc7fa55721569ca6d03856cf6e3d51b67e71dcbe1d9a6e8d6f5d3b2853c23ee",
       "responseBytes": 3875,
       "httpStatus": 200,
@@ -2131,20 +2361,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp256",
+        "frozenSourceObjectNumber": "KMSSP256",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP259",
@@ -2156,7 +2392,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP259",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP259&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP259&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "72a1e2659c3b97193f9dbee5996f32d7346a5c71cdb9f3efdb020d384889b825",
       "responseBytes": 4118,
       "httpStatus": 200,
@@ -2196,20 +2432,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp259",
+        "frozenSourceObjectNumber": "KMSSP259",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP28",
@@ -2221,7 +2463,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP28",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP28&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP28&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "4f7e47ae4d5d799ecdb6c5c63e79f9fd532a77fc25dc696c1e96835d638aa38b",
       "responseBytes": 5356,
       "httpStatus": 200,
@@ -2280,20 +2522,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp28",
+        "frozenSourceObjectNumber": "KMSSP28",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP338",
@@ -2305,7 +2553,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP338",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP338&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP338&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "b189cb77c351a43cdb23a7d760105886e8dfcc017f31e7bd40d61ac6fc7bfafc",
       "responseBytes": 4933,
       "httpStatus": 200,
@@ -2344,20 +2592,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp338",
+        "frozenSourceObjectNumber": "KMSSP338",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP35",
@@ -2369,7 +2623,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP35",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP35&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP35&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "3d5453abeec80bc4208e33cf3c71bcf07937de8e1ea30e9f154a90a15b828c01",
       "responseBytes": 4717,
       "httpStatus": 200,
@@ -2408,20 +2662,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp35",
+        "frozenSourceObjectNumber": "KMSSP35",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP365",
@@ -2433,7 +2693,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP365",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP365&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP365&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "5c08332b4b15d66a570a13dc6fa50b8305aafbc152c3ed178ee94a3d938b906c",
       "responseBytes": 11899,
       "httpStatus": 200,
@@ -2472,20 +2732,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp365",
+        "frozenSourceObjectNumber": "KMSSP365",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP405",
@@ -2497,7 +2763,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP405",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP405&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP405&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "e89b3bfc693019a612cdf92a173370928bcc6b39a4b338c5624bbed88c5a389d",
       "responseBytes": 17324,
       "httpStatus": 200,
@@ -2542,12 +2808,13 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": false
+        "creatorMentionMatch": false,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH",
         "HISTORIC_CREATOR_QUALIFIER_REVIEW"
       ],
       "physicalArtworkUniquenessCertified": false,
@@ -2556,7 +2823,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp405",
+        "frozenSourceObjectNumber": "KMSSP405",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP427",
@@ -2568,7 +2841,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP427",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP427&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP427&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "721b334e9b4b3cb085fb30862e3321096943dac7c98d452c68b8f40fd9def482",
       "responseBytes": 7095,
       "httpStatus": 200,
@@ -2608,20 +2881,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp427",
+        "frozenSourceObjectNumber": "KMSSP427",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP48",
@@ -2633,7 +2912,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP48",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP48&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP48&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "3a3edc0954a014f7336c65831047aab374f3f2dbacf6f6229f128130594e2e3a",
       "responseBytes": 3158,
       "httpStatus": 200,
@@ -2672,20 +2951,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp48",
+        "frozenSourceObjectNumber": "KMSSP48",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP510",
@@ -2697,7 +2982,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP510",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP510&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP510&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "f02995642716cd2e56ad35b9e473dca7a42691a2e9862d0bbbb30f2d95cdc9c3",
       "responseBytes": 4124,
       "httpStatus": 200,
@@ -2749,20 +3034,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp510",
+        "frozenSourceObjectNumber": "KMSSP510",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP54",
@@ -2774,7 +3065,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP54",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP54&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP54&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "6bccfce2198a26ca1daaab2ac14d9845f9e55767dc418f215fc692c0690ac7bd",
       "responseBytes": 3998,
       "httpStatus": 200,
@@ -2813,20 +3104,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp54",
+        "frozenSourceObjectNumber": "KMSSP54",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP64",
@@ -2838,7 +3135,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP64",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP64&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP64&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "d8a93f0b67dfcaabadd057efc4e1e611c73a57709ffb6b42331304df14107dba",
       "responseBytes": 5898,
       "httpStatus": 200,
@@ -2888,20 +3185,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp64",
+        "frozenSourceObjectNumber": "KMSSP64",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP712",
@@ -2913,7 +3216,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP712",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP712&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP712&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "8e2c9dcf394420eb8dac12430c1ba5b5d260d0f95091e719127aa91c84130028",
       "responseBytes": 7332,
       "httpStatus": 200,
@@ -2972,20 +3275,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp712",
+        "frozenSourceObjectNumber": "KMSSP712",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP734",
@@ -2997,7 +3306,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP734",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP734&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP734&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "c31c6e50a543b265a387a37c2920bd17cfa9c3ca7f5daf8b636f130e5d142ac8",
       "responseBytes": 7913,
       "httpStatus": 200,
@@ -3036,20 +3345,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp734",
+        "frozenSourceObjectNumber": "KMSSP734",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP749",
@@ -3061,7 +3376,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP749",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP749&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP749&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "086d21a315dc1f81439c98922a81d5f458d4f05babd4ac0fbaa629c9df922f6d",
       "responseBytes": 4877,
       "httpStatus": 200,
@@ -3100,20 +3415,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp749",
+        "frozenSourceObjectNumber": "KMSSP749",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSSP95",
@@ -3125,7 +3446,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSSP95",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSSP95&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSSP95&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "346eb146b0fe779b60ffd3e75d9ccb3aba5ace6f74066602215d624e11359396",
       "responseBytes": 3011,
       "httpStatus": 200,
@@ -3176,12 +3497,13 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
       "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH",
         "HISTORIC_CREATOR_QUALIFIER_REVIEW"
       ],
       "physicalArtworkUniquenessCertified": false,
@@ -3190,7 +3512,13 @@
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSsp95",
+        "frozenSourceObjectNumber": "KMSSP95",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSST155",
@@ -3202,7 +3530,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSST155",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSST155&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSST155&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "95ac3382bbf8d0c2a37f4cd7a495f4de1a57111730ff7414e58b71b280905c7d",
       "responseBytes": 5259,
       "httpStatus": 200,
@@ -3241,20 +3569,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSst155",
+        "frozenSourceObjectNumber": "KMSST155",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSST174",
@@ -3266,7 +3600,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSST174",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSST174&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSST174&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "c052528b99c371f1aa371e022c1e7d7049453ce4f53fb9d758ed646f9c3ffbd0",
       "responseBytes": 3340,
       "httpStatus": 200,
@@ -3305,20 +3639,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSst174",
+        "frozenSourceObjectNumber": "KMSST174",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSST175",
@@ -3330,7 +3670,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSST175",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSST175&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSST175&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "8196e54749edd8b5491c968567786c00c310312208d9c8704a75f4e6cf540910",
       "responseBytes": 3113,
       "httpStatus": 200,
@@ -3369,20 +3709,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSst175",
+        "frozenSourceObjectNumber": "KMSST175",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSST488",
@@ -3394,7 +3740,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSST488",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSST488&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSST488&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "ec2fd34c390a8747c6f02a543b9c2588d8ee9a9cfea1375728d7050852307d58",
       "responseBytes": 3226,
       "httpStatus": 200,
@@ -3433,20 +3779,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSst488",
+        "frozenSourceObjectNumber": "KMSST488",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSST565",
@@ -3458,7 +3810,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSST565",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSST565&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSST565&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "6258689e0f197b0a0a322bcb14b3e5ef74652e097cedef3af53fa8456b6dcad4",
       "responseBytes": 3348,
       "httpStatus": 200,
@@ -3497,20 +3849,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSst565",
+        "frozenSourceObjectNumber": "KMSST565",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSST602",
@@ -3522,7 +3880,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSST602",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSST602&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSST602&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "7682f895bc87e9fa5160494b7e6feea14647ac72e31e4a27ac1cd768fd5501a5",
       "responseBytes": 3213,
       "httpStatus": 200,
@@ -3561,20 +3919,26 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSst602",
+        "frozenSourceObjectNumber": "KMSST602",
+        "fullyMatchedAfterCasefold": true
+      }
     },
     {
       "sourceId": "smk:KMSST87",
@@ -3586,7 +3950,7 @@
       "originalSourceUrl": "https://open.smk.dk/en/artwork/image/KMSST87",
       "apiRequest": "https://api.smk.dk/api/v1/art/?object_number=KMSST87&lang=en",
       "apiFinalUrl": "https://api.smk.dk/api/v1/art/?object_number=KMSST87&lang=en",
-      "status": "OFFICIAL_RECORD_REQUIRES_REVIEW",
+      "status": "OFFICIAL_OBJECT_ID_AND_TITLE_MATCH",
       "responseSha256": "5281dbe88ce5a340f477db7507bb795fe12704c20683fdb90b159e2e23e1d2d7",
       "responseBytes": 2459,
       "httpStatus": 200,
@@ -3625,20 +3989,37 @@
         "relatedIds": []
       },
       "evidence": {
-        "objectNumberExact": false,
+        "objectNumberExact": true,
         "normalizedTitleExact": true,
-        "creatorMentionMatch": true
+        "creatorMentionMatch": true,
+        "objectNumberExactCase": false,
+        "objectNumberCaseFoldMatches": true
       },
-      "flags": [
-        "OFFICIAL_OBJECT_NUMBER_MISMATCH"
-      ],
+      "flags": [],
       "physicalArtworkUniquenessCertified": false,
       "canonical383Linked": false,
       "exactOriginalPhotographCertified": false,
       "photographicRightsCertified": false,
       "nativeImageVisuallyInspected": false,
       "userDecisionModified": false,
-      "productionMutation": false
+      "productionMutation": false,
+      "identityNormalization": {
+        "method": "ASCII_CASEFOLD_ONLY",
+        "officialVerbatimObjectNumber": "KMSst87",
+        "frozenSourceObjectNumber": "KMSST87",
+        "fullyMatchedAfterCasefold": true
+      }
     }
-  ]
+  ],
+  "identityNormalization": {
+    "rule": "ASCII_CASEFOLD_SAME_INVENTORY_ONLY",
+    "reason": "SMK current API spells collection prefixes KMSsp/KMSst while the frozen source IDs use KMSSP/KMSST; official verbatim forms are retained per record",
+    "promotedCaseOnlyRecords": 34,
+    "exactCaseRecords": 20,
+    "otherDifferencesPermitted": false,
+    "originalMuseumJsonResponseHashesPreserved": true,
+    "photographyReleaseUnaffected": true,
+    "baselineOriginalUserChoicesRetained": true
+  },
+  "reconciliationAmendedFromOriginalApiSnapshot": true
 }
