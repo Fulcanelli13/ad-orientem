@@ -56,7 +56,17 @@ try{
     assert.equal(actual,language,"Runtime must load the requested test language before source selection");
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.litany_saints",{returnContext:null})),true);
     const owner="#aoPray435930.open [data-ao-devotional-owner='litany']";
-    await page.waitForSelector(owner+" .aoP435930LitanyLine",{timeout:20000});
+    try{
+     await page.waitForSelector(owner+" .aoP435930LitanyLine",{timeout:10000});
+    }catch(error){
+     const diagnose=await page.evaluate(locale=>{
+      const root=document.querySelector("#aoPray435930.open"),cache=localStorage.getItem("ao2:v435930:ws:"+locale+":"+(locale==="fr"?"litany-saints-corneille-fr-v2":"litany-saints-1883-en-v2"));
+      return {view:globalThis.AO_PRAY_V435930?.state?.(),text:root?.innerText?.slice(0,1800),
+       cacheLength:cache?.length,html:root?.innerHTML?.slice(0,450),url:location.href};
+     },language);
+     console.error("B38 failed to render source fixture:",JSON.stringify(diagnose));
+     throw error;
+    }
     await page.waitForSelector(owner+" .aoDevoSequenceTimeline",{timeout:12000});
     const measured=()=>page.evaluate(()=>{
      const root=document.querySelector("#aoPray435930.open [data-ao-devotional-owner='litany']");
