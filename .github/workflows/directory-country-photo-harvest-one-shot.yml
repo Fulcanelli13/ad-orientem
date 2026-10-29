@@ -1,0 +1,118 @@
+name: One-shot worldwide Wikidata image sources - 8 countries, 2579 anchors
+on:
+  push:
+    branches:
+      - research/directory-country-harvest-once-20261029
+    paths:
+      - data/directory/research/.run-country-harvest-eight-20261029.json
+permissions:
+  contents: write
+concurrency:
+  group: ao-directory-country-image-eight-20261029-once
+  cancel-in-progress: false
+jobs:
+  harvest-and-index:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/research/directory-country-harvest-once-20261029'
+    runs-on: ubuntu-latest
+    timeout-minutes: 42
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact one-time payload and research-only code contract
+        run: |
+          set -euo pipefail
+          node tests/production-tree-hygiene.mjs
+          python tests/directory-bulk-photo-source-index-test.py -v
+          python - <<'PY'
+          import json
+          j=json.load(open('data/directory/research/.run-country-harvest-eight-20261029.json'))
+          assert j=={"schema":"AO_DIRECTORY_COUNTRY_P18_EIGHT_ONCE_V1",
+                      "countries":["MU","IE","IT","DE","FR","US","AU","BE"],
+                      "max_rows":2000,"publication":False,"image_downloads":False}
+          PY
+      - name: Fetch fixed checksum-verified research sources only
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/directory-unified-photo-intake:refs/remotes/origin/research/directory-unified-photo-intake' \
+            'refs/heads/research/directory-photo-candidates:refs/remotes/origin/research/directory-photo-candidates' \
+            'refs/heads/data/cl2-unified-source-location-classification-20261026:refs/remotes/origin/data/cl2-unified-source-location-classification-20261026'
+          pinned='eb67711a9886a7626916b7a145787c5e99105968'
+          test "$(git rev-parse refs/remotes/origin/data/cl2-unified-source-location-classification-20261026)" = "$pinned"
+          git worktree add --detach /tmp/ao-country-cl2 "$pinned"
+          git worktree add --detach /tmp/ao-country-intake refs/remotes/origin/research/directory-unified-photo-intake
+          git worktree add --detach /tmp/ao-country-pilots refs/remotes/origin/research/directory-photo-candidates
+      - name: Country-level Wikidata P18 harvesting, serial, budgeted, no original download
+        run: |
+          set -euo pipefail
+          python tools/directory/harvest-wikidata-country-photo-index.py \
+            --countries MU,IE,IT,DE,FR,US,AU,BE \
+            --max-rows 2000 --delay-seconds 15 \
+            --output-dir /tmp/ao-eight-country-photo-sources
+      - name: Match source index across all 2579 anchors; identity/rights held
+        run: |
+          set -euo pipefail
+          python tools/directory/build-worldwide-photo-source-index.py \
+            --intake-dir /tmp/ao-country-intake/data/directory/research/unified-photo-intake/cl2-eb67711a-20261029 \
+            --cl2-dir /tmp/ao-country-cl2/data/directory/research/cl2-unified-20261026 \
+            --candidate-file /tmp/ao-country-pilots/data/directory/research/photo-candidates/r49-exterior-0-100.json \
+            --candidate-file /tmp/ao-country-pilots/data/directory/research/photo-candidates/r49-exterior-100-100.json \
+            --country-dir /tmp/ao-eight-country-photo-sources \
+            --output /tmp/ao-eight-country-photo-sources/worldwide-source-index.json
+          python - <<'PY'
+          import json,pathlib
+          root=pathlib.Path("/tmp/ao-eight-country-photo-sources")
+          assert len(list(root.glob("country-*.json")))==8
+          j=json.load(open(root/"worldwide-source-index.json"))
+          stats=j["counts"]
+          assert stats["physical_anchors_indexed"]==2579
+          assert stats["countries"]==76
+          assert stats["prior_pilot_candidate_links_before_dedup"]==42
+          assert stats["original_files_downloaded"]==0
+          assert stats["approved_cover_images"]==0
+          assert stats["published_images"]==0
+          assert stats["countries_successful"]+stats["countries_with_source_error"]==8
+          assert all(x["publication"]=="RESEARCH_ONLY_NEVER_APP_VISIBLE"
+                     and not x["approved_exterior"] for x in j["records"])
+          assert all(all(c["publication"]=="RESEARCH_ONLY_NEVER_APP_VISIBLE"
+                         and not c["subject_approved"] and not c["rights_approved"]
+                         for c in x["photographic_candidates"]) for x in j["records"])
+          print("EIGHT_COUNTRY_PHOTO_SOURCE_RESULTS",json.dumps(stats,sort_keys=True))
+          PY
+      - name: Permanent metadata-only archive, fixed research branch, no main write
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/directory-country-media-index:refs/remotes/origin/research/directory-country-media-index' || true
+          if git show-ref --verify --quiet refs/remotes/origin/research/directory-country-media-index; then
+            git switch -C research/directory-country-media-index origin/research/directory-country-media-index
+          else
+            git fetch --no-tags origin main
+            git switch -c research/directory-country-media-index origin/main
+          fi
+          target="data/directory/research/worldwide-media-sources/country-first-20261029-v1"
+          test ! -e "$target" || { echo "Cannot overwrite existing country harvest"; exit 1; }
+          mkdir -p "$target"
+          cp /tmp/ao-eight-country-photo-sources/*.json "$target/"
+          test "$(find "$target" -maxdepth 1 -name '*.json' | wc -l)" -eq 10
+          size="$(du -sm "$target" | awk '{print $1}')"
+          test "$size" -le 35 || { echo "Image source metadata archive exceeds free repo size guard"; exit 1; }
+          git add "$target"
+          git diff --cached --name-only | while read -r f; do
+            case "$f" in
+              "$target"/*.json) ;;
+              *) echo "Unexpected research archive mutation $f" >&2; exit 1;;
+            esac
+          done
+          test "$(git diff --cached --name-only | wc -l)" -eq 10
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): index 8 Wikidata country photo sources against all 2579 anchors"
+          git push origin HEAD:refs/heads/research/directory-country-media-index
