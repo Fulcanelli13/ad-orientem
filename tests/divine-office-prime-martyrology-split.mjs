@@ -103,9 +103,9 @@ test("boundary is not manufactured for another date/hour/source role",()=>{
     {date:"2026-11-02",hour:"PRIME",role:"PRAYER",sourceCellId:"Prima5"},
     {date:"2026-11-02",hour:"PRIME",role:"MARTYROLOGY",sourceCellId:"Prima6"}
   ])assert.equal(primeSplitRequired(item),false);
-  assert.equal(projectOfficeMassStyleCards({
+  assert.throws(()=>projectOfficeMassStyleCards({
     latin:source("la","2026-11-03"),translation:source("fr","2026-11-03"),locale:"fr"
-  }).cards.length,3);
+  }),/ALL_SOULS_DATE_CONFLICT/);
 });
 test("All Souls Prime split follows the shared 1960 transfer date in future years",()=>{
   const isSplit=(date,hour="PRIME",role="MARTYROLOGY",sourceCellId="Prima5")=>
@@ -139,10 +139,10 @@ test("future All Souls Prime has two source-lossless navigable cards, not a drop
     assert.equal(model.cards[1].vernacular+"\n"+model.cards[2].vernacular,french.sections[1].text);
     assert.equal(model.cards[3].sourceCellId,"Prima6");
   }
-  // Sunday Nov 2 is not transferred All Souls and cannot get the split.
-  assert.equal(projectOfficeMassStyleCards({
+  // Sunday Nov 2 cannot render an All Souls source as the ordinary Office.
+  assert.throws(()=>projectOfficeMassStyleCards({
     latin:source("la","2031-11-02"),translation:source("fr","2031-11-02"),locale:"fr"
-  }).cards.length,3);
+  }),/ALL_SOULS_DATE_CONFLICT/);
 });
 test("missing, duplicated or locale-inconsistent marker refuses publication and rendering",()=>{
   assert.throws(()=>splitAllSoulsPrimeMartyrologyCell(
