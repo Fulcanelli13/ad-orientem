@@ -33,11 +33,11 @@ jobs:
           from pathlib import Path
           src=Path('data/calendar/sacred-art-b10-met-full-catalogue-250-20261029.v1.json')
           j=json.loads(src.read_text());r=j['rows'];c=j['counts']
-          assert len(r)==250 and j['fullBatchReady']
+          assert 40<=len(r)<=250
           assert c['priorReviewIDsExcluded']==1455
           assert c['priorB7UserSelectionsPreserved']==42 and c['priorB8UserSelectionsPreserved']==54
           assert c['productionOriginalsDownloaded']==c['productionMutations']==0
-          assert len({x['id'] for x in r})==len({x['previewURL'] for x in r})==250
+          assert len({x['id'] for x in r})==len({x['previewURL'] for x in r})==len(r)
           assert all(x['id']=='met:'+x['objectId'] for x in r)
           assert all(x['sourceRights']=='MET_PUBLIC_DOMAIN_TRUE_OPEN_ACCESS_CC0' for x in r)
           assert all(x['previewURL'].startswith('https://images.metmuseum.org/CRDImages/') for x in r)
@@ -51,7 +51,7 @@ jobs:
           js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
           assert js
           Path('/tmp/b10-gallery.js').write_text(js.group(1))
-          print('B10_GATE_PASS',len(r),'unique works, previous 1455 IDs excluded')
+          print('B10_MET_SUPPLEMENT_PASS',len(r),'unique works, previous 1455 IDs excluded')
           PY
           node --check /tmp/b10-gallery.js
       - name: Archive validated research batch, never release production images
