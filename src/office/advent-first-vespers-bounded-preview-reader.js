@@ -15,11 +15,27 @@ const PATHS=new Set([
  "Psalterium/Common/Prayers"
 ]);
 const PSALMS=new Set([143,144,232]);
+const SECTIONS=Object.freeze({
+ "Tempora/Adv1-0":new Set([
+  "Ant Vespera","Ant Laudes","Capitulum Laudes","Ant 1","Oratio","Versum 1"
+ ]),
+ "Psalterium/Psalmi/Psalmi major":new Set(["Day6 Vespera"]),
+ "Psalterium/Special/Major Special":new Set([
+  "Hymnus Adv Vespera","Adv Versum 3"
+ ]),
+ "Psalterium/Common/Prayers":new Set([
+  "Pater noster","Ave Maria","Deus in adjutorium",
+  "Alleluia","Dominus","Benedicamus Domino",
+  "Fidelium animae","Gloria","Deo gratias","Qui vivis","Oremus"
+ ])
+});
 const LANGS={la:"Latin",en:"English",fr:"Francais"};
 const NORMAL=/^\[([A-Za-z][A-Za-z0-9_. -]{0,100})\]\s*$/u;
 export const ADVENT_FIRST_VESPERS_BOUNDED_SOURCE_SCHEMA=
  "ao.office.advent-i-2026-private-pinned-reader.v1";
-export function parseAdventPreviewSourceSections(text){
+export function parseAdventPreviewSourceSections(text,allowed){
+ if(!(allowed instanceof Set)||allowed.size<1||allowed.size>20)
+  throw Error("PRIVATE_PREVIEW_SECTION_ALLOWLIST_REQUIRED");
  if(typeof text!=="string"||text.length<40||text.length>320000)
   throw Error("PRIVATE_PREVIEW_RAW_SECTION_FILE_INVALID");
  const map=new Map();
@@ -27,9 +43,11 @@ export function parseAdventPreviewSourceSections(text){
  for(const line of text.replace(/\r\n?/gu,"\n").split("\n")){
   const header=NORMAL.exec(line);
   if(header){
-   section=header[1];
-   if(map.has(section))throw Error("PRIVATE_PREVIEW_DUPLICATED_SECTION:"+section);
-   map.set(section,[]);
+   section=allowed.has(header[1])?header[1]:null;
+   if(section!==null){
+    if(map.has(section))throw Error("PRIVATE_PREVIEW_DUPLICATED_SECTION:"+section);
+    map.set(section,[]);
+   }
    continue;
   }
   // Qualifier-headed alternate sections must never leak into a prior
@@ -37,7 +55,8 @@ export function parseAdventPreviewSourceSections(text){
   if(/^\[[^\]]+\]\s+\(/u.test(line)){section=null;continue}
   if(section!==null&&line.trim())map.get(section).push(line.trim());
  }
- if(map.size<4)throw Error("PRIVATE_PREVIEW_NO_SECTION_HEADINGS");
+ if([...allowed].some(key=>!map.has(key)))
+  throw Error("PRIVATE_PREVIEW_REQUIRED_SOURCE_SECTION_MISSING");
  return map;
 }
 export function createAdventFirstVespersBoundedPinnedReader({
@@ -83,7 +102,7 @@ export function createAdventFirstVespersBoundedPinnedReader({
  async function readSource(path,language){
   if(!PATHS.has(path))
    throw Error("PRIVATE_PREVIEW_NAMED_SECTION_PATH_NOT_ALLOWED");
-  const map=parseAdventPreviewSourceSections(await raw(path,language));
+  const map=parseAdventPreviewSourceSections(await raw(path,language),SECTIONS[path]);
   return Object.freeze({sourceRevision:PIN,sourcePath:path,language,map});
  }
  async function readPsalmSource(path,language){
