@@ -118,6 +118,9 @@ function paint(){
  }
  header.append(el("h2",title),el("span",block.sourceId||"General rubrics","ref"));
  card.append(header);
+ document.getElementById("back").disabled=index===0;
+ document.getElementById("next").disabled=index===blocks.length-1;
+ bar.style.width=String((index+1)/blocks.length*100)+"%";
  if(block.kind==="RESEARCH_CALENDAR_NOTICE"){
   card.append(el("p",block.message,"notice"));return;
  }
