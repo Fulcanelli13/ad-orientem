@@ -1,0 +1,102 @@
+name: P79 single 502-source Commons pre-review campaign
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/p79-all-502-commons-review.v1.json'
+      - 'tools/screen-all-502-commons-p79.py'
+      - '.github/workflows/p79-single-502-campaign.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  screen:
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        shard: [0, 1, 2, 3, 4]
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed photo reader
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Confirm complete source universe and offline no-publication contract
+        run: python tools/screen-all-502-commons-p79.py --shard ${{ matrix.shard }} --dry-run
+      - name: Check current Commons metadata and fetch 540px visual previews for this shard
+        run: |
+          python tools/screen-all-502-commons-p79.py \
+            --shard ${{ matrix.shard }} --shard-size 105 \
+            --delay 0.35 --out data/geography/research/p79-run
+      - name: Upload one fixed shard into a single campaign consolidation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p79-502-shard-${{ matrix.shard }}
+          path: |
+            data/geography/research/p79-run/p79-thumbnails/
+            data/geography/research/p79-run/p79-contact-*.jpg
+            data/geography/research/p79-run/p79-shard-*.json
+          retention-days: 2
+          if-no-files-found: warn
+  consolidate:
+    needs: screen
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: p79-502-shard-*
+          merge-multiple: true
+          path: /tmp/p79-all
+      - name: Verify 502/502 complete source attempts and produce one review package
+        run: |
+          python - <<'PY'
+          import json,pathlib,collections
+          root=pathlib.Path("/tmp/p79-all")
+          manifests=sorted(root.glob("p79-shard-*.json"))
+          assert len(manifests)==5,"Every one of the five source-screening shards must finish"
+          audit=[]
+          for n,p in enumerate(manifests):
+            m=json.loads(p.read_text(encoding="utf8"))
+            assert m["shard"]==n and m["schema"]=="AO_P79_ALL_502_SHARD_V1"
+            assert len(m["records"])==(105 if n<4 else 82)
+            audit.extend(m["records"])
+          assert len(audit)==502 and [r["id"] for r in audit]==list(range(1,503))
+          assert len({(r["entity_id"],r["original_sha1"]) for r in audit})==502
+          assert not any(r["approved"] or r["rights_cleared"] or r["subject_verified"] or r["original_bytes_verified"] for r in audit)
+          assert all(r["status"] in ("SOURCE_METADATA_AND_THUMBNAIL_SCREENED",
+              "SOURCE_METADATA_OK_THUMBNAIL_HOLD","HOLD_SOURCE_IDENTITY_OR_RIGHTS") for r in audit)
+          summary={"source_assignments":len(audit),"distinct_sources":501,
+             "source_metadata_current":sum(bool(r.get("source_meta_verified")) for r in audit),
+             "preview_downloaded":sum(r["preview_verified"] for r in audit),
+             "source_holds":sum(not r.get("source_meta_verified") for r in audit),
+             "photo_subject_approvals":0,"publication_approvals":0}
+          (root/"p79-502-screen-audit.json").write_text(json.dumps({"schema":"AO_P79_ALL_SOURCE_AUDIT_V1","summary":summary,"records":audit},ensure_ascii=False,indent=2)+"\n",encoding="utf8")
+          html=pathlib.Path("docs/SACRED_PLACES_COMMONS_502_SINGLE_REVIEW_20261029.html").read_text(encoding="utf8")
+          marker="const BULK_AUDIT=null;"
+          assert html.count(marker)==1
+          value=json.dumps({r["id"]:{"status":r["status"]} for r in audit},separators=(",",":"))
+          html=html.replace(marker,"const BULK_AUDIT="+value+";")
+          (root/"index.html").write_text(html,encoding="utf8")
+          print("P79_COMPLETE_502_CAMPAIGN="+json.dumps(summary),flush=True)
+          PY
+      - name: Single downloadable image review (502 assignments; 100-card pages)
+        uses: actions/upload-artifact@v4
+        with:
+          name: P79-ONE-502-SOURCE-REVIEW
+          path: /tmp/p79-all/
+          retention-days: 2
+          if-no-files-found: error
