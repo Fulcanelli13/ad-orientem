@@ -1,0 +1,67 @@
+name: Sacred Art B11 - Cleveland + NGA 250 verified painting review
+on:
+  push:
+    branches: [research/sacred-art-b11-20261029]
+    paths:
+      - scripts/art/sacred-art-b11-cma-nga-250-review-20261029.py
+      - .github/workflows/sacred-art-b11-250-verified-review-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ad-orientem-sacred-art-b11
+  cancel-in-progress: true
+jobs:
+  curate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b11-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Full official Cleveland and NGA image-licensed painting scan
+        run: |
+          python -m py_compile scripts/art/sacred-art-b11-cma-nga-250-review-20261029.py
+          python -u scripts/art/sacred-art-b11-cma-nga-250-review-20261029.py
+      - name: Validate every source identity, rights, gallery JSON and 50-card pages
+        run: |
+          python - <<'PY'
+          import json,re,hashlib
+          from pathlib import Path
+          p=Path('data/calendar/sacred-art-b11-250-official-verified-20261029.v1.json')
+          d=json.loads(p.read_text());a=d['rows'];c=d['counts']
+          assert len(a)>=180,('source count',c)
+          assert len(a)==len({x['id'] for x in a})==len({x['previewURL'] for x in a})
+          assert c['priorReviewIDsExcluded']==1705
+          assert c['productionImports']==c['originalImageDownloads']==c['userSelections']==0
+          assert set(x['provider'] for x in a)<=set(['CMA','NGA'])
+          assert all(x['imageRightsVerified'] and x['rightsConflict'] is None and not x['productionImported'] for x in a)
+          assert all(x['sourceRights']=='NGA_EXACT_OBJECT_PUBLISHED_IMAGES_OPENACCESS_1'
+            if x['provider']=='NGA' else x['sourceRights']=='CMA_SHARE_LICENSE_STATUS_CC0_EXACT_OBJECT_OPENACCESS_CDN' for x in a)
+          assert d['batchHash']==hashlib.sha256(json.dumps([x['id'] for x in a],separators=(',',':')).encode()).hexdigest()
+          h=Path('docs/SACRED_ART_NEXT_250_IMPORT_REVIEW_B11_20261029.html').read_text()
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert m and json.loads(m.group(1))==a
+          assert "batchId:'B11'" in h and 'const PAGE_SIZE=50;' in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'seenPages.length<TOTAL_PAGES' in h
+          js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert js
+          Path('/tmp/b11-gallery.js').write_text(js.group(1))
+          print('B11_SOURCE_VERIFIED',len(a),'items, complete 250:',d['completeBatchReady'])
+          PY
+          node --check /tmp/b11-gallery.js
+      - name: Commit research-only source data and review UI
+        run: |
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b11-250-official-verified-20261029.v1.json
+          git add docs/SACRED_ART_B11_250_OFFICIAL_SOURCE_QA_20261029.md
+          git add docs/SACRED_ART_NEXT_250_IMPORT_REVIEW_B11_20261029.html
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): archive B11 verified fresh NGA and Cleveland sacred paintings"
+          git pull --rebase origin research/sacred-art-b11-20261029
+          git push origin HEAD:research/sacred-art-b11-20261029
