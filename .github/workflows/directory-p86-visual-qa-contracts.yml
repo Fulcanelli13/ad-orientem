@@ -11,6 +11,8 @@ on:
       - tests/directory-p89-77-photo-identity-gate-test.py
       - data/directory/research/p90-two-originals-media-publication-gates-20261029.json
       - tests/directory-p90-original-photo-publication-gates-test.py
+      - data/directory/research/p94-28-original-photo-visual-qa-20261029.json
+      - tests/directory-p94-28-photo-contact-sheet-qa-test.py
       - tools/directory/screen-worldwide-p83-photo-candidates.py
       - tests/directory-p83-global-photo-screen-test.py
       - tests/directory-p86-visual-qa-ledger-test.py
@@ -36,5 +38,6 @@ jobs:
           python tests/directory-p88-84-actual-visual-qa-test.py
           python tests/directory-p89-77-photo-identity-gate-test.py
           python tests/directory-p90-original-photo-publication-gates-test.py
+          python tests/directory-p94-28-photo-contact-sheet-qa-test.py
           python tests/directory-p83-global-photo-screen-test.py -v
           node tests/production-tree-hygiene.mjs
