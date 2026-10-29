@@ -5,6 +5,12 @@ import {OFFICE_ADVENT_ASSEMBLY_SCHEMA}
  from "../src/office/advent-first-vespers-assembled-research.js";
 import {reviewAdventFirstVespers1960RubricPlan as review}
  from "../src/office/advent-first-vespers-rubric-plan.js";
+import {reviewAdventI2026UniversalCommemoration}
+ from "../src/office/advent-first-vespers-universal-commemoration.js";
+import {readFileSync} from "node:fs";
+const universal=JSON.parse(readFileSync(new URL(
+ "../data/office/research/advent-i-2026-universal-commemoration.json",
+ import.meta.url),"utf8"));
 const prefix="Psalterium/Common/Prayers#";
 const lang=["la","en","fr"],segments=[
  [143,"1-8"],[143,"9-15"],[144,"1-7"],[144,"8-13a"],[144,"13b-21"]
@@ -124,4 +130,29 @@ test("unverified commemoration and incipit-overlap remain explicit",()=>{
  assert.ok(p.unresolvedGates.includes("1960_ANTIPHON_PSALM_INCIPIT_OVERLAP_198"));
  assert.equal(p.orderedEvents.filter(x=>x.kind==="PSALM_PORTION").every(x=>x.incipitOverlap198Collated===false),true);
  assert.equal(p.orderedEvents.find(x=>x.kind==="COMMEMORATIONS_UNADJUDICATED").selectionAuthorized,false);
+});
+
+test("explicit 1960 universal-only decision replaces commemoration unknown while local remains withheld",()=>{
+ const universalCommemoration=reviewAdventI2026UniversalCommemoration({witness:universal});
+ const p=review({assembly:assembly(),universalCommemoration});
+ assert.equal(p.status,"RUBRIC_ORDER_RESEARCH_WITH_HELD_COLLATION");
+ assert.equal(p.sourceAudit.universalCommemorationDecision,"NO_UNIVERSAL_COMMEMORATION");
+ const e=p.orderedEvents.find(x=>x.slot==="commemorations");
+ assert.equal(e.kind,"NO_UNIVERSAL_COMMEMORATION");
+ assert.equal(e.noSourceTextRequired,true);
+ assert.equal(e.localCalendarAdjudicated,false);
+ assert.ok(p.unresolvedGates.includes("LOCAL_PRIVILEGED_COMMEMORATION_REVIEW"));
+ assert.equal(p.completeHourVerified,false);
+ assert.equal(p.publishable,false);
+});
+test("forged universal approval or fabricated local resolution fails closed",()=>{
+ const ok=reviewAdventI2026UniversalCommemoration({witness:universal});
+ for(const edit of [
+  {localCalendarReviewed:true},{officePart:"SECOND"},
+  {universalCommemorationCount:1},{completeHourCertified:true},
+  {status:"APPROVED"},{published:true}
+ ]){
+  const p=review({assembly:assembly(),universalCommemoration:{...ok,...edit}});
+  assert.equal(p.status,"WITHHELD");assert.equal(p.publishable,false);
+ }
 });
