@@ -37,6 +37,12 @@ assert.deepEqual(ledger.editorial_lanes,{
  FIX_SOURCE_CITATION_BEFORE_IDENTITY_DECISION:12
 });
 assert.equal(ledger.totals.source_page_access_failures,1);
+assert.equal(ledger.totals.research_records_retained,408);
+assert.equal(ledger.totals.research_records_rejected,0);
+assert.equal(ledger.totals.record_by_record_user_votes_required,0);
+assert.equal(ledger.totals.unresolved_source_holds,12);
+assert.equal(ledger.editorial_workflow.user_bulk_record_approval_required,false);
+assert.equal(ledger.editorial_workflow.research_retention,"ALL_408_ALWAYS_RETAINED");
 assert.equal(ledger.totals.independent_prior_narrow_witness_groups,12);
 assert.equal(ledger.totals.owner_links_action_reviewed,47);
 assert.equal(ledger.totals.owner_links_vetoed,11);
@@ -91,7 +97,11 @@ for(const r of ledger.records){
  assert.deepEqual(r.indulgence_grant_ids,[]);
  assert.equal(r.bilingual_copy_accepted,false);
  assert.equal(r.publication_authorized,false);
- assert.equal(r.editorial_decision,"PENDING_CONSOLIDATED_HUMAN_REVIEW");
+ assert.equal(r.editorial_decision,"RETAINED_IN_RESEARCH_EDITORIAL_RELEASE_GATES_PENDING");
+ assert.equal(r.research_retention_status,"RETAINED_HISTORICAL_SOURCE_OBSERVATION");
+ assert.equal(r.record_by_record_user_approval_required,false);
+ assert.equal(r.publication_eligibility_status,"NOT_YET_APPROVED_FOR_CALENDAR");
+ assert.ok(r.expert_editorial_next_action);
  if(r.existing_owner_link)assert.ok(byOwner.has(r.provisional_group_id));
 }
 const fail=ledger.records.filter(x=>!x.source_original_printed_page_checked);
