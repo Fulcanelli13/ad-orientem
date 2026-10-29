@@ -67,7 +67,7 @@ const DATA=JSON.parse(document.getElementById('review-data').textContent);
 const KEY='ao-sacred-art-rijks-b2-ratings-20261029-v1';
 let stored={};try{stored=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(_){}
 function el(tag,cls,txt){const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=String(txt);return n}
-function save(){localStorage.setItem(KEY,JSON.stringify(stored))}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(stored))}catch(_){/* In-memory ratings still exportable when file:// storage is blocked */}}
 function review(id){return stored[id]||{}}
 function render(){
  const query=document.querySelector('#search').value.toLowerCase(),f=document.querySelector('#filter').value;
