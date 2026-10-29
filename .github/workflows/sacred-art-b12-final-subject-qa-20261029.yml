@@ -1,0 +1,65 @@
+name: Sacred Art B12 — final subject and source quality correction
+on:
+  push:
+    branches: [research/sacred-art-b12-20261029]
+    paths:
+      - scripts/art/sacred-art-b12-final-subject-photo-qa-20261029.py
+      - .github/workflows/sacred-art-b12-final-subject-qa-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-b12-final-editorial-screen
+  cancel-in-progress: true
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b12-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Replace doubtful non-paintings and verify new exact art photograph sources
+        run: |
+          python -m py_compile scripts/art/sacred-art-b12-final-subject-photo-qa-20261029.py
+          python -u scripts/art/sacred-art-b12-final-subject-photo-qa-20261029.py
+      - name: Validate final B12 artwork identity and review functionality
+        run: |
+          python - <<'PY'
+          import json,re,hashlib
+          from pathlib import Path
+          d=json.loads(Path('data/calendar/sacred-art-b12-final-250-quality-corrected-20261029.v2.json').read_text())
+          r=d['rows'];c=d['counts']
+          assert d['batchReady'] and len(r)==c['reviewable']==250
+          assert c['manualMetadataDisqualifications']==c['verifiedSubstitutionImages']==6
+          assert c['previousBatchesReviewCardsExcluded']==1955
+          assert c['productionImports']==c['originalImagesDownloaded']==0
+          assert len({x['id'] for x in r})==len({x['previewURL'] for x in r})==250
+          assert all(x['licenseShortName'].lower().startswith(('public domain','cc0')) for x in r)
+          assert all(min(x['nativeSourceDimensions'].values())>=1600 and x['imageRightsVerified'] for x in r)
+          assert d['batchSha256']==hashlib.sha256(json.dumps([x['id'] for x in r],separators=(',',':')).encode()).hexdigest()
+          h=Path('docs/SACRED_ART_NEXT_250_IMPORT_REVIEW_B12_FINAL_20261029.html').read_text()
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert m and json.loads(m.group(1))==r
+          assert "batchId:'B12'" in h and 'const PAGE_SIZE=50;' in h and 'IMPORT_WITH_CORRECTIONS' in h
+          js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert js
+          Path('/tmp/b12-final-review.js').write_text(js.group(1))
+          print('PASS B12 FINAL 250 vetted candidates no source repeat and six bad image exclusions')
+          PY
+          node --check /tmp/b12-final-review.js
+      - name: Archive corrected final research gallery only
+        if: success()
+        run: |
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b12-final-250-quality-corrected-20261029.v2.json
+          git add docs/SACRED_ART_B12_FINAL_VISUAL_SUBJECT_QA_20261029.md
+          git add docs/SACRED_ART_NEXT_250_IMPORT_REVIEW_B12_FINAL_20261029.html
+          git diff --cached --check
+          git commit -m "research(art): B12 replace doubtful photos with six better public-domain candidates"
+          git pull --rebase origin research/sacred-art-b12-20261029
+          git push origin HEAD:research/sacred-art-b12-20261029
