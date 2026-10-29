@@ -1,0 +1,63 @@
+name: P70 Commons first-batch discovery (read only)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/p70-commons-batch0-run-request.json'
+      - '.github/workflows/p70-commons-first-batch-discovery.yml'
+permissions:
+  contents: read
+jobs:
+  first-commons-discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate frozen 272 canonical queries and no publication
+        run: |
+          python -m unittest discover -s tests -p 'test_explore_p69_media_discovery.py'
+          python tools/discover-sacred-media-p69.py --mode plan --batch 0 --batch-size 150 > "${RUNNER_TEMP}/p70-plan.jsonl"
+          python - "${RUNNER_TEMP}/p70-plan.jsonl" <<'PY'
+          import json,sys
+          p=json.load(open("data/geography/research/p70-commons-batch0-run-request.json"))
+          records=[json.loads(x) for x in open(sys.argv[1],encoding="utf8")]
+          assert len(records)==p["queries_expected"]==272
+          assert all(r["publication"]=="RESEARCH_ONLY_QUERY" for r in records)
+          print("P70_PLAN_OK",len(records))
+          PY
+      - name: Query actual Commons candidates; never acquire or publish
+        id: discovery
+        run: |
+          python tools/discover-sacred-media-p69.py --mode discover --batch 0 --batch-size 150 \
+            --max-requests 300 --candidate-cap 500 --delay 0.5 \
+            --output data/geography/research/p70-commons-candidates-batch0.jsonl \
+            2> "${RUNNER_TEMP}/p70-discovery-summary.jsonl"
+          cat "${RUNNER_TEMP}/p70-discovery-summary.jsonl"
+          python - <<'PY'
+          import json,pathlib
+          path=pathlib.Path("data/geography/research/p70-commons-candidates-batch0.jsonl")
+          lines=path.read_text(encoding="utf8").splitlines()
+          assert len(lines)<=500
+          assert len(lines)==len({(json.loads(s)["entity_id"],json.loads(s)["commons_original_sha1"]) for s in lines})
+          for s in lines:
+              o=json.loads(s)
+              assert o["publication"]=="RESEARCH_ONLY_NOT_APPROVED"
+              assert o["source_bytes_hash_verified"] is False
+              assert o["image_binary_archived"] is False
+              assert o["subject_identity"]=="UNVERIFIED_SEARCH_MATCH"
+          print("AO_P70_RECORD_COUNT="+str(len(lines)))
+          print("AO_P70_RECORDS_BEGIN")
+          for s in lines:
+              print("AO_P70_CANDIDATE_RECORD="+s)
+          print("AO_P70_RECORDS_END")
+          PY
+      - name: Preserve short-lived handoff copy, not an asset archive
+        if: steps.discovery.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: p70-commons-research-only-batch0
+          path: data/geography/research/p70-commons-candidates-batch0.jsonl
+          retention-days: 1
