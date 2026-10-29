@@ -1,0 +1,452 @@
+{
+  "schema": "ad-orientem-sacred-art-institution-source-policy-v1",
+  "reviewDate": "2026-10-29",
+  "scope": "Source-photo discovery and reuse; NOT blanket artwork exclusion or release certification",
+  "baseline": {
+    "worksAudited": 383,
+    "officialCC0Provenance": 92,
+    "approvedPaintings": 107,
+    "approvedOfficialCC0Provenance": 19,
+    "pr": 1870
+  },
+  "priorities": [
+    "PRIMARY_OPEN",
+    "CONDITIONAL_REVIEW",
+    "POLICY_UNVERIFIED",
+    "REFERENCE_ONLY"
+  ],
+  "policy": {
+    "mandatoryChecks": [
+      "approved exact physical artwork identity",
+      "source institution AND source-photo version",
+      "underlying work/public-domain status",
+      "image-specific licence permitting publication and required alterations",
+      "original file URL and licensing evidence captured",
+      "archived SHA-256 byte identity",
+      "native resolution, framing, fidelity, colour and composition before pristine certification"
+    ],
+    "hardExclusionsArtists": [
+      "El Greco",
+      "Fra Angelico"
+    ],
+    "referenceOnlyMeaning": "Institution-supplied photos not eligible for automated ingestion, publication, crop or modification; image metadata and object research remain usable within applicable data terms; independently sourced PD/CC0 photos of same painting can still be reviewed individually.",
+    "allowedImageLicences": [
+      "CC0",
+      "Public Domain Mark or institution-confirmed no known copyright restrictions with unrestricted reuse",
+      "explicit unrestricted institutional image right"
+    ],
+    "conditionalLicences": [
+      "CC BY",
+      "CC BY-SA (attribution, modification notices, share-alike)"
+    ],
+    "heldLicences": [
+      "CC BY-NC",
+      "CC BY-NC-ND",
+      "CC BY-NC-SA",
+      "restricted/fee/permission-only",
+      "unknown"
+    ],
+    "noCost": "No purchases, paid licences, fee-based API plans or paid storage",
+    "precedence": "Check exact work across all PRIMARY_OPEN institutions and open independent reproductions before restricted museum photography; ensure no change to historical user selections",
+    "productionFlag": "never auto-publish: source rights and native photo QA must pass independently"
+  },
+  "institutionCount": 39,
+  "tiers": {
+    "PRIMARY_OPEN": 22,
+    "CONDITIONAL_REVIEW": 3,
+    "POLICY_UNVERIFIED": 2,
+    "REFERENCE_ONLY": 12
+  },
+  "institutions": [
+    {
+      "id": "met",
+      "name": "Metropolitan Museum of Art",
+      "country": "United States",
+      "tier": "PRIMARY_OPEN",
+      "licence": "CC0",
+      "officialPolicy": "https://www.metmuseum.org/policies/image-resources",
+      "acquisitionMethod": "API/open-access object flag; museum-origin JPEG",
+      "exception": "public-domain images only"
+    },
+    {
+      "id": "cma",
+      "name": "Cleveland Museum of Art",
+      "country": "United States",
+      "tier": "PRIMARY_OPEN",
+      "licence": "CC0",
+      "officialPolicy": "https://www.clevelandart.org/open-access",
+      "acquisitionMethod": "Public API and full-resolution image links; share_license_status=CC0",
+      "exception": "fee-bearing image service is not an acquisition option"
+    },
+    {
+      "id": "nga",
+      "name": "National Gallery of Art Washington",
+      "country": "United States",
+      "tier": "PRIMARY_OPEN",
+      "licence": "CC0",
+      "officialPolicy": "https://www.nga.gov/terms-and-notices",
+      "acquisitionMethod": "Official Open Access image/object download; NGA bulk data and Wikimedia donations",
+      "exception": "NOT National Gallery London or Australia; exact object-image eligibility required"
+    },
+    {
+      "id": "getty",
+      "name": "J. Paul Getty Museum",
+      "country": "United States",
+      "tier": "PRIMARY_OPEN",
+      "licence": "CC0",
+      "officialPolicy": "https://www.getty.edu/legal/terms-of-use/",
+      "acquisitionMethod": "Getty Open Content flag, downloadable image",
+      "exception": "non-open website images excluded"
+    },
+    {
+      "id": "rijks",
+      "name": "Rijksmuseum",
+      "country": "Netherlands",
+      "tier": "PRIMARY_OPEN",
+      "licence": "Public Domain/CC0",
+      "officialPolicy": "https://data.rijksmuseum.nl/policy",
+      "acquisitionMethod": "Collection Online/data services; item rights field",
+      "exception": "some photos are CC BY or restricted"
+    },
+    {
+      "id": "artic",
+      "name": "Art Institute of Chicago",
+      "country": "United States",
+      "tier": "PRIMARY_OPEN",
+      "licence": "public-domain/CC0-tagged",
+      "officialPolicy": "https://api.artic.edu/docs/",
+      "acquisitionMethod": "API artworks is_public_domain=true and IIIF; data dumps",
+      "exception": "obey API limits, one-image-at-a-time and delay guidance"
+    },
+    {
+      "id": "parismusees",
+      "name": "Paris Musées (City of Paris collections including Petit Palais)",
+      "country": "France",
+      "tier": "PRIMARY_OPEN",
+      "licence": "CC0-marked subset",
+      "officialPolicy": "https://apicollections.parismusees.paris.fr/cgu",
+      "acquisitionMethod": "Portal/API CC0-downloadable images; >=3000px images documented",
+      "exception": "NOT Louvre/RMN; only exact CC0-flagged files"
+    },
+    {
+      "id": "smk",
+      "name": "SMK National Gallery of Denmark",
+      "country": "Denmark",
+      "tier": "PRIMARY_OPEN",
+      "licence": "Public Domain subset",
+      "officialPolicy": "https://connect.smk.dk/om/rettigheder",
+      "acquisitionMethod": "SMK Connect/collection open data and images",
+      "exception": "CC BY-SA item subset must be separately held"
+    },
+    {
+      "id": "walters",
+      "name": "Walters Art Museum",
+      "country": "United States",
+      "tier": "PRIMARY_OPEN",
+      "licence": "CC0 qualifying images",
+      "officialPolicy": "https://thewalters.org/about/policies/rights-reproductions/",
+      "acquisitionMethod": "Museum online collection images and metadata",
+      "exception": "loaned/copyrighted artworks excluded"
+    },
+    {
+      "id": "smithsonian",
+      "name": "Smithsonian Institution Open Access",
+      "country": "United States",
+      "tier": "PRIMARY_OPEN",
+      "licence": "CC0 icon subset",
+      "officialPolicy": "https://www.si.edu/openaccess/faq",
+      "acquisitionMethod": "SI Open Access API and image/IIIF links",
+      "exception": "not all Smithsonian content is CC0"
+    },
+    {
+      "id": "ycba",
+      "name": "Yale Center for British Art",
+      "country": "United States",
+      "tier": "PRIMARY_OPEN",
+      "licence": "public domain unrestricted",
+      "officialPolicy": "https://britishart.yale.edu/using-images-works-public-domain",
+      "acquisitionMethod": "Collection IIIF and bulk harvest",
+      "exception": "public-domain items only"
+    },
+    {
+      "id": "dallas",
+      "name": "Dallas Museum of Art",
+      "country": "United States",
+      "tier": "PRIMARY_OPEN",
+      "licence": "public domain unrestricted",
+      "officialPolicy": "https://dma.org/press-room/dma-now-open-access-institution",
+      "acquisitionMethod": "Collection open-access download",
+      "exception": "loans and Keir Collection excluded"
+    },
+    {
+      "id": "stadel",
+      "name": "Städel Museum",
+      "country": "Germany",
+      "tier": "PRIMARY_OPEN",
+      "licence": "public domain unrestricted",
+      "officialPolicy": "https://sammlung.staedelmuseum.de/en/concept",
+      "acquisitionMethod": "Digital Collection download",
+      "exception": "non-PD requires licensing"
+    },
+    {
+      "id": "denver",
+      "name": "Denver Art Museum",
+      "country": "United States",
+      "tier": "PRIMARY_OPEN",
+      "licence": "CC0 qualifying images",
+      "officialPolicy": "https://www.denverartmuseum.org/en/open-access-denver-art-museum",
+      "acquisitionMethod": "Collection high-resolution JPEG downloads",
+      "exception": "object must have OA designation"
+    },
+    {
+      "id": "lacma",
+      "name": "Los Angeles County Museum of Art",
+      "country": "United States",
+      "tier": "PRIMARY_OPEN",
+      "licence": "public domain high-resolution image marked",
+      "officialPolicy": "https://www.lacma.org/about/contact-us/terms-use",
+      "acquisitionMethod": "Only Public Domain High Resolution Image Available records",
+      "exception": "other LACMA protected content restricted"
+    },
+    {
+      "id": "bma",
+      "name": "Birmingham Museum of Art (Alabama)",
+      "country": "United States",
+      "tier": "PRIMARY_OPEN",
+      "licence": "public-domain open content",
+      "officialPolicy": "https://www.artsbma.org/collection-resources/collections-access-policy/",
+      "acquisitionMethod": "Online Collection downloadable rights-flagged images",
+      "exception": "not Birmingham Museums UK"
+    },
+    {
+      "id": "mauritshuis",
+      "name": "Mauritshuis",
+      "country": "Netherlands",
+      "tier": "PRIMARY_OPEN",
+      "licence": "royalty-free qualifying collection images",
+      "officialPolicy": "https://www.mauritshuis.nl/en/contact/requesting-visual-material",
+      "acquisitionMethod": "Collection download button; institutional credit requested",
+      "exception": "document exact download and publication rules"
+    },
+    {
+      "id": "mia",
+      "name": "Minneapolis Institute of Art",
+      "country": "United States",
+      "tier": "PRIMARY_OPEN",
+      "licence": "CC Public Domain Mark subset",
+      "officialPolicy": "https://new.artsmia.org/copyright-and-image-access",
+      "acquisitionMethod": "Collection images explicitly marked public domain",
+      "exception": "other material/reproduction service may be restricted"
+    },
+    {
+      "id": "slam",
+      "name": "Saint Louis Art Museum",
+      "country": "United States",
+      "tier": "PRIMARY_OPEN",
+      "licence": "identified public-domain content",
+      "officialPolicy": "https://www.slam.org/terms-of-use/",
+      "acquisitionMethod": "Public-domain content only",
+      "exception": "other site content limited to noncommercial"
+    },
+    {
+      "id": "birminghamuk",
+      "name": "Birmingham Museums Trust (UK)",
+      "country": "United Kingdom",
+      "tier": "PRIMARY_OPEN",
+      "licence": "CC0 qualifying historical image subset",
+      "officialPolicy": "https://www.birminghammuseums.org.uk/collection/picture-library",
+      "acquisitionMethod": "Public-domain CC0 picture-library images; size cap",
+      "exception": "do not pay for extra high-resolution service"
+    },
+    {
+      "id": "wellcome",
+      "name": "Wellcome Collection",
+      "country": "United Kingdom",
+      "tier": "PRIMARY_OPEN",
+      "licence": "Public Domain Mark/CC0 subset",
+      "officialPolicy": "https://wellcomecollection.org/collections/accessing-our-collections",
+      "acquisitionMethod": "Wellcome API and item-level rights filters",
+      "exception": "noncommercial/CC BY material not in default pool"
+    },
+    {
+      "id": "pmaopenn",
+      "name": "Philadelphia Museum of Art — OPenn subset",
+      "country": "United States",
+      "tier": "PRIMARY_OPEN",
+      "licence": "Public Domain Mark subset",
+      "officialPolicy": "https://openn.library.upenn.edu/html/0031.html",
+      "acquisitionMethod": "Only PMA images in OPenn with explicit PD marking",
+      "exception": "not a blanket licence for all PMA website images"
+    },
+    {
+      "id": "basel",
+      "name": "Kunstmuseum Basel",
+      "country": "Switzerland",
+      "tier": "CONDITIONAL_REVIEW",
+      "licence": "free downloads of public-domain works; verify per-file terms",
+      "officialPolicy": "https://ci.kunstmuseumbasel.ch/de/sammlung/sammlung-online",
+      "acquisitionMethod": "Collection online; download terms",
+      "exception": "commercial/modification rights need exact file/terms review"
+    },
+    {
+      "id": "swedennational",
+      "name": "Nationalmuseum Stockholm",
+      "country": "Sweden",
+      "tier": "CONDITIONAL_REVIEW",
+      "licence": "image-specific CC BY-SA/other",
+      "officialPolicy": "https://collection.nationalmuseum.se/en/collection/item/244493/",
+      "acquisitionMethod": "Per-image licence and attribution",
+      "exception": "not unconditional CC0"
+    },
+    {
+      "id": "belvedere",
+      "name": "Belvedere Vienna",
+      "country": "Austria",
+      "tier": "CONDITIONAL_REVIEW",
+      "licence": "image-specific; some private/scientific only",
+      "officialPolicy": "https://sammlung.belvedere.at/objects/3492/judith%3Bjsessionid%3D38F89207A3E5BFB12AE1DC29",
+      "acquisitionMethod": "Verify on exact object page",
+      "exception": "default image examples prohibit commercial without contacting rights office"
+    },
+    {
+      "id": "harvard",
+      "name": "Harvard Art Museums",
+      "country": "United States",
+      "tier": "POLICY_UNVERIFIED",
+      "licence": "unverified",
+      "officialPolicy": "https://harvardartmuseums.org",
+      "acquisitionMethod": "Hold until official image policy verified",
+      "exception": "do not assume data/API openness means photos open"
+    },
+    {
+      "id": "yalemuseum",
+      "name": "Yale University Art Gallery",
+      "country": "United States",
+      "tier": "POLICY_UNVERIFIED",
+      "licence": "unverified",
+      "officialPolicy": "https://artgallery.yale.edu",
+      "acquisitionMethod": "Hold until official image policy verified",
+      "exception": "separate from Yale Center for British Art"
+    },
+    {
+      "id": "prado",
+      "name": "Museo Nacional del Prado",
+      "country": "Spain",
+      "tier": "REFERENCE_ONLY",
+      "licence": "licensing fees, alteration restrictions",
+      "officialPolicy": "https://www.imagebankmuseodelprado.com/en/license-agreement",
+      "acquisitionMethod": "Cataloguing and visual comparison only",
+      "exception": "independently CC0/PD image of same work may be processed by file-level proof"
+    },
+    {
+      "id": "louvre",
+      "name": "Musée du Louvre/RMN",
+      "country": "France",
+      "tier": "REFERENCE_ONLY",
+      "licence": "restricted commercial/editorial reuse",
+      "officialPolicy": "https://collections.louvre.fr/en/page/cgu",
+      "acquisitionMethod": "Cataloguing and visual comparison only",
+      "exception": "Paris Musées is a different open institution"
+    },
+    {
+      "id": "nationalgalleryuk",
+      "name": "National Gallery London",
+      "country": "United Kingdom",
+      "tier": "REFERENCE_ONLY",
+      "licence": "CC BY-NC-ND images",
+      "officialPolicy": "https://www.nationalgallery.org.uk/documentation/ngacuk/licences",
+      "acquisitionMethod": "Cataloguing and visual comparison only",
+      "exception": "CC0 structured collection data is NOT CC0 photography"
+    },
+    {
+      "id": "uffizi",
+      "name": "Gallerie degli Uffizi",
+      "country": "Italy",
+      "tier": "REFERENCE_ONLY",
+      "licence": "commercial reuse permission/legal fee framework",
+      "officialPolicy": "https://www.uffizi.it/en/professional-services/photo-rights-reproductions",
+      "acquisitionMethod": "Cataloguing and visual comparison only",
+      "exception": "Italian cultural heritage image rules require special caution"
+    },
+    {
+      "id": "vatican",
+      "name": "Vatican Museums",
+      "country": "Vatican City",
+      "tier": "REFERENCE_ONLY",
+      "licence": "website photographs redistribution prohibited",
+      "officialPolicy": "https://www.museivaticani.va/content/museivaticani/en/copyright.html",
+      "acquisitionMethod": "Cataloguing and visual comparison only",
+      "exception": "not an image-mining source"
+    },
+    {
+      "id": "va",
+      "name": "Victoria and Albert Museum",
+      "country": "United Kingdom",
+      "tier": "REFERENCE_ONLY",
+      "licence": "non-commercial limits and commercial licensing",
+      "officialPolicy": "https://www.vam.ac.uk/info/va-websites-terms-conditions",
+      "acquisitionMethod": "Cataloguing and visual comparison only",
+      "exception": "even non-commercial usage includes resolution and duration limits"
+    },
+    {
+      "id": "mfa",
+      "name": "Museum of Fine Arts Boston",
+      "country": "United States",
+      "tier": "REFERENCE_ONLY",
+      "licence": "image reproduction licence/fee process",
+      "officialPolicy": "https://www.mfa.org/collections/mfa-images/licensing/frequently-asked-questions",
+      "acquisitionMethod": "Cataloguing and visual comparison only",
+      "exception": "public-domain painting is not blanket rights to MFA photograph"
+    },
+    {
+      "id": "britishmuseum",
+      "name": "British Museum",
+      "country": "United Kingdom",
+      "tier": "REFERENCE_ONLY",
+      "licence": "CC BY-NC-SA image subset; paid commercial licences",
+      "officialPolicy": "https://www.britishmuseum.org/collection/image/935219001",
+      "acquisitionMethod": "Cataloguing and visual comparison only",
+      "exception": "artist artwork copyright and photo licence are separate"
+    },
+    {
+      "id": "orsay",
+      "name": "Musée d’Orsay / Orangerie",
+      "country": "France",
+      "tier": "REFERENCE_ONLY",
+      "licence": "non-commercial site use; publication authorization",
+      "officialPolicy": "https://group.musee-orsay.fr/legal-notice.html",
+      "acquisitionMethod": "Cataloguing and visual comparison only",
+      "exception": "official images not free for general app redistribution"
+    },
+    {
+      "id": "thyssen",
+      "name": "Museo Nacional Thyssen-Bornemisza",
+      "country": "Spain",
+      "tier": "REFERENCE_ONLY",
+      "licence": "non-commercial download; commercial permission, no alterations",
+      "officialPolicy": "https://www.museothyssen.org/en/use-images-and-legal-terms/photographic-archive-and-use-images-works",
+      "acquisitionMethod": "Cataloguing and visual comparison only",
+      "exception": "photo archive rights separate from physical painting"
+    },
+    {
+      "id": "hermitage",
+      "name": "State Hermitage Museum",
+      "country": "Russia",
+      "tier": "REFERENCE_ONLY",
+      "licence": "high resolution and publication via written permissions/possible fees",
+      "officialPolicy": "https://hermitagemuseum.org/about/image_usage_policy?042710=&lng=en",
+      "acquisitionMethod": "Cataloguing and visual comparison only",
+      "exception": "no permission/fee requests under current zero-budget policy"
+    },
+    {
+      "id": "khm",
+      "name": "Kunsthistorisches Museum Vienna",
+      "country": "Austria",
+      "tier": "REFERENCE_ONLY",
+      "licence": "private download; reproduction request for other uses",
+      "officialPolicy": "https://www.khm.at/en/artworks/besuchsordnung-kunsthistorisches-u-naturhistorisches-museum-1311577",
+      "acquisitionMethod": "Cataloguing and visual comparison only",
+      "exception": "inspect any alternate legitimately open original separately"
+    }
+  ]
+}
