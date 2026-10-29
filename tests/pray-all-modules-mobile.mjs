@@ -33,7 +33,10 @@ try{
  const page=await context.newPage();
  const errors=[];
  page.on("pageerror",e=>errors.push(String(e?.message||e)));
- await page.goto("http://127.0.0.1:4198/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+ // Exercise existing 24-route regression unchanged; the book-first Morning/Evening
+ // default is tested independently in pray-daily-ux-pilot-phone.mjs.
+ // Explicitly select the legacy presentation for historical card assertions.
+ await page.goto("http://127.0.0.1:4198/index.html?aoDailyUxPilot=0",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
  assert.equal(await page.evaluate(async()=>globalThis.AO_PRAY_APP_V1.open()),true,
    "The lightweight Prayer host must lazy-load the real prayer reader");
