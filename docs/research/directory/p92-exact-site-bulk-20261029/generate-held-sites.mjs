@@ -20,7 +20,7 @@ for(const r of data.records){
 }
 const sites=[...groups.values()].sort((a,b)=>b.photos.length-a.photos.length||a.country.localeCompare(b.country)||a.site_name.localeCompare(b.site_name));
 const multiple=sites.filter(s=>s.photos.length>=3);
-if(sites.length!==131 || sites.reduce((sum,s)=>sum+s.photos.length,0)!==238 || multiple.length!==33 || multiple.reduce((sum,s)=>sum+s.photos.length,0)!==114)throw new Error('Unexpected held queue totals; regenerate after validating the canonical ledger');
-process.stdout.write(JSON.stringify({source:"canonical P91 ledger with effective P92 statuses",editorial_or_publication_approval:false,
-  total_sites:sites.length,total_held_photos:238,priority_multiphoto_sites:multiple.length,
-  priority_multiphoto_images:114,sites},null,2)+'\n');
+if(sites.length!==data.unresolved_distinct_physical_site_ids || sites.reduce((sum,s)=>sum+s.photos.length,0)!==data.effective_image_site_disposition_counts.HELD_UNVERIFIED)throw new Error('Unexpected held queue totals; regenerate after validating the canonical ledger');
+process.stdout.write(JSON.stringify({source:"one canonical P91–current-pass evidence ledger",editorial_or_publication_approval:false,
+  total_sites:sites.length,total_held_photos:sites.reduce((sum,s)=>sum+s.photos.length,0),priority_multiphoto_sites:multiple.length,
+  priority_multiphoto_images:multiple.reduce((sum,s)=>sum+s.photos.length,0),sites},null,2)+'\n');
