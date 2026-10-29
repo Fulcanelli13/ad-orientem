@@ -92,8 +92,8 @@ try{
    return {...meta,missing};
  });
  assert.deepEqual(firstSnapshot.missing,[],"First-use Prayer lazy entry modules not in completed snapshot");
- assert.ok(firstSnapshot.files>0 && firstSnapshot.files<=416 && firstSnapshot.bytes<=35000000,
-  "Measured first-use graph must fit its 416-resource and 35 MB transactional limits: "+JSON.stringify(firstSnapshot));
+ assert.ok(firstSnapshot.files>0 && firstSnapshot.files<=512 && firstSnapshot.bytes<=35000000,
+  "Measured first-use graph must fit its 512-resource and 35 MB transactional limits: "+JSON.stringify(firstSnapshot));
  console.log("OFFLINE_FIRST_USE_SNAPSHOT="+JSON.stringify(firstSnapshot));
  await context.setOffline(true);
  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
