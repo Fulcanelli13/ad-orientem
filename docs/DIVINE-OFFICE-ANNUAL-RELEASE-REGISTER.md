@@ -579,3 +579,66 @@ with printed Rubrics, multiple occurrences, Vespers and independent
 local Ordo. Only after that can it choose specific source sections
 for the eight Hours. No source archive, bulk capture, public route
 or paid service is introduced by this stage.
+
+## First traceable First Vespers composition acceptance slice (2026-11-28/29)
+
+The next end-to-end **research** gate is implemented without building
+another Office ordo or archiving/generating Office XHTML:
+
+- `src/office/source-acceptance-slice.js` joins the previously tested
+  1960 Office concurrence research handoff to an explicit *original Latin
+  source metadata leaf* and exact trilingual section resolver. On civil
+  Saturday **28 November 2026**, the appointed research candidate is
+  First Vespers of **Sunday 29 November**. The original source identity
+  must be `Tempora/Adv1-0`, with the Latin source title
+  `Dominica I Adventus`. The original metadata parser now exposes only
+  `sourceSectionHeaders` (section names, qualifiers, source line numbers)
+  in addition to the earlier conditional Rank/Rule metadata.
+  Duplicate or conditional section headings, wrong title, wrong date,
+  mixed source owner, missing French and mismatched source pin all
+  **withhold composition** before it is presented as a complete Hour.
+- A spot check of the **actual immutable pinned original** across
+  `Latin`, `English` and `Francais`
+  `Tempora/Adv1-0.txt` found an explicit `[Ant 1]` section in each
+  language. The `[Oratio]` section also exists, **but its ending is
+  still `$Qui vivis` in all three**: it is not a complete, safely
+  resolved collect at the raw-leaf layer. The research test therefore
+  exercises a trilingual antiphon **component slice** and separately
+  ensures unresolved collect macros block any larger section sequence.
+  An antiphon slice is **not a complete first Vespers service**.
+- `src/office/at-reference-resolver.js` is an additional bounded
+  research resolver for explicit source `@...` dependencies, taking
+  the same injected pinned parsed-source reader as Mass. It resolves
+  `@:Ant Laudes` and `@Psalterium/Special/Major Special:Adv Versum 3`
+  in the original language with original source-ref traces, in-flight
+  source-file caching, cycle detection and limits on depth, nodes and
+  source reads. **It does not guess** `$Qui vivis`,
+  `&psalm(...)`, implicit unsuffixed `@Commune/C9`, alternative
+  rubrics or `{:H-...:}` hymn markup. Unresolved directives
+  fail closed; no fallback or loss of section provenance is allowed.
+  The existing source-path validator now admits the pinned source's
+  legitimate **space-containing** `Major Special` path but continues
+  to reject `..`, empty/relative or `//` paths.
+- `src/office/structured-hour-draft.js` preserves any optional
+  per-language exact-reference trace in the resulting
+  `STRUCTURED_UNVERIFIED` draft; it still cannot promote a source
+  component to a complete or published Hour.
+
+Regression test entrypoints:
+
+    node --test tests/divine-office-source-acceptance-slice.mjs
+    node --test tests/divine-office-at-reference-resolver.mjs
+
+They use **injected fixtures** corresponding to inspected pinned-source
+header and macro shapes. They do not fetch remote Office text in CI
+and do not prove live browser integration, full liturgical Office
+correctness or print/translation/rights certification.
+
+**Release position:** zero complete, independently printed-collated or
+published Office Hours. The first complete-Hour milestone still requires:
+source-origin-aware `$...` and `&...` reference completion;
+the Office-specific 1960 Ordinary/Psalterium + proper/common sections
+for the full Hour in correct order; authoritative Vespers commemoration
+appointment; all three language alignments; and original-print/rights
+review. Until those gates exist, retain the current reader disabled and
+use no scheduled annual raw-source downloads.
