@@ -1,0 +1,63 @@
+name: Sacred Art — Batch B4 Chicago 250 open paintings discovery
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-artic-250-b4-20261029.yml
+      - scripts/art/sacred-art-artic-250-b4-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-artic-b4
+  cancel-in-progress: true
+jobs:
+  discover-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pull CC0/PD catalogue metadata and validate official IIIF image headers
+        run: |
+          python -m py_compile scripts/art/sacred-art-artic-250-b4-20261029.py
+          python scripts/art/sacred-art-artic-250-b4-20261029.py --target 250 --pages-per-term 3 --per-page 85 --max-requests 205 --max-image-checks 520 --delay .11
+      - name: Confirm precise new painting-only set and no overlap with B3 or finalized sixty
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          b4=json.loads(Path('data/calendar/sacred-art-artic-250-b4-20261029.v1.json').read_text())
+          b3=json.loads(Path('data/calendar/sacred-art-250-review-source-b3-20261029.v1.json').read_text())
+          prior=json.loads(Path('data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json').read_text())
+          ids={r['id'] for r in b4['rows']}
+          excluded={r['id'] for r in b3['rows']} | {x['sourceId'] for k in ('imports','rejects') for x in prior[k]}
+          assert len(excluded)==310
+          assert 200<=len(ids)<=250, b4['counts']
+          assert len(ids)==len(b4['rows']) and not ids&excluded
+          assert b4['counts']['productionImports']==0
+          assert b4['counts']['newArtworkRejections']==0
+          assert b4['gates']['sourceImagesDownloadedAndStored']==0
+          assert all(x['rightsBasis']=='ARTIC_IS_PUBLIC_DOMAIN_TRUE_OFFICIAL_IIIF_IMAGE_ID' for x in b4['rows'])
+          assert all(x['previewURL'].startswith('https://www.artic.edu/iiif/2/') for x in b4['rows'])
+          assert all(x['provider']=='ArtInstituteChicago' and not x['productionImported'] for x in b4['rows'])
+          assert all('painting' not in x['medium'].lower() or 'oil' in x['medium'].lower() or 'tempera' in x['medium'].lower() for x in b4['rows'])
+          print('PASS source image check',b4['counts'])
+          PY
+          git diff --exit-code -- data/calendar/sacred-art-250-review-source-b3-20261029.v1.json data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json data/calendar/sacred-art-curator-queues-383-20261029.v1.json
+      - name: Archive exact Chicago B4 research catalogue permanently on research branch
+        if: always()
+        run: |
+          if [ ! -f data/calendar/sacred-art-artic-250-b4-20261029.v1.json ]; then exit 0; fi
+          git config user.name "Ad Orientem art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-artic-250-b4-20261029.v1.json docs/SACRED_ART_ARTIC_250_B4_SOURCE_REPORT_20261029.md
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): preserve Chicago B4 source-verified non-overlapping paintings"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028
