@@ -8,24 +8,25 @@
   "source_assignment_visual_checks": "256 preview thumbnails inspected across eight manually generated review contact sheets; 13 newly rejected images have directly inspected previews; no claim that all remaining images have complete individual visual QA",
   "source_remaining_before_P91": 283,
   "p90_wrong_site_rejections": 90,
-  "p91_new_source_rejections": 13,
-  "cumulative_rejected_photo_assignments": 103,
+  "p91_new_source_rejections": 10,
+  "cumulative_rejected_photo_assignments": 100,
   "p90_subject_corroborated": 12,
   "p91_new_subject_corroborated": 26,
   "cumulative_subject_corroborated_research_only": 38,
-  "remaining_unverified_assignments": 244,
+  "remaining_unverified_assignments": 247,
   "distinct_corroborated_sites": 16,
-  "distinct_unverified_sites": 127,
+  "distinct_unverified_sites": 129,
   "held_photo_roles_in_candidate_reviews": 26,
   "output_dispositions": {
     "REJECT_INDEPENDENT_SOURCES_SHOW_DIFFERENT_PHYSICAL_SITE": 23,
     "REJECT_OBVIOUS_NON_CHURCH_OR_WRONG_PLACE": 47,
     "SUBJECT_P90_CORROBORATED_PENDING_ARTISTIC_AND_RIGHTS_REVIEW": 12,
     "SUBJECT_P91_CORROBORATED_PRE_PUBLICATION_HOLD": 26,
-    "REJECT_P91_VERIFIED_DIFFERENT_SITE_OR_NOT_PHYSICAL_CHURCH": 13,
+    "REJECT_P91_VERIFIED_DIFFERENT_SITE_OR_NOT_PHYSICAL_CHURCH": 10,
     "REJECT_P90_INDEPENDENT_BUILDING_SUBJECT_MISMATCH": 20,
     "HOLD_EXACT_BUILDING_STILL_UNVERIFIED": 215,
-    "HOLD_SITE_IDENTITY_OR_PHOTO_ROLE_UNCERTAIN": 29
+    "HOLD_SITE_IDENTITY_OR_PHOTO_ROLE_UNCERTAIN": 29,
+    "HOLD_INSUFFICIENT_EXACT_WORSHIP_VENUE_IDENTITY": 3
   },
   "visual_selection": "Role is proposed from actual P87 preview, not original file. Multiple similar angles should be deduplicated; only primary candidate per site is needed for editorial gate.",
   "human_final_approvals": 0,
@@ -66,19 +67,6 @@
         "urls": [
           "https://www.rcdea.org.uk/location/st-hugh-of-lincoln-buckden-huntingdon/",
           "https://www.sthughslincoln.org.uk/contacts"
-        ]
-      },
-      {
-        "indices": [
-          236,
-          237
-        ],
-        "code": "DISTINCT_CHAPEL_AND_WELL_NOT_PARISH_CHURCH",
-        "reason": "Photos show medieval St Winefride's Well and chapel (Holywell, CH8 7PN), a distinct heritage site from the actual parish Church of St Winefride at 15 Well Street (CH8 7PL). They must not stand in as the church building.",
-        "urls": [
-          "https://taking-stock.org.uk/building/holywell-st-winefride/",
-          "https://www.stwinefridesholywell.co.uk/",
-          "https://www.stwinefrideswell.org.uk/sanctuary.html"
         ]
       },
       {
@@ -125,16 +113,6 @@
           "https://commons.wikimedia.org/wiki/Category:Immaculate_Conception_Cathedral_Ave_Maria_Center",
           "https://commons.wikimedia.org/wiki/Category:Cathedral_of_the_Immaculate_Conception_(Lake_Charles,_Louisiana)",
           "https://avemariacatholics.com/masses-1"
-        ]
-      },
-      {
-        "indices": [
-          234
-        ],
-        "code": "MUSEUM_RECONSTRUCTION_NOT_ACTIVE_CATHOLIC_CHAPEL",
-        "reason": "Actual photo describes reconstructed Saint Teilo church side chapel at St Fagans National History Museum, Cardiff, not independently identifiable as the active traditional Catholic Mass venue labelled St Teilo's Chapel in CL2. Museum reconstruction is unsuitable for a documented physical worship-site image.",
-        "urls": [
-          "https://commons.wikimedia.org/wiki/File:St.Teilo_-_Innen_5_Seitenkapelle.jpg"
         ]
       }
     ],
@@ -10441,7 +10419,7 @@
       "commons_file_title": "File:St.Teilo - Innen 5 Seitenkapelle.jpg",
       "original_sha1_claim": "f0f979b8a1af6bbe0210a09c2c8a70aa4136a61a",
       "source_url": "https://commons.wikimedia.org/wiki/File:St.Teilo_-_Innen_5_Seitenkapelle.jpg",
-      "preliminary_visual_disposition": "REJECT_P91_VERIFIED_DIFFERENT_SITE_OR_NOT_PHYSICAL_CHURCH",
+      "preliminary_visual_disposition": "HOLD_INSUFFICIENT_EXACT_WORSHIP_VENUE_IDENTITY",
       "reason": "Contact-sheet appearance is not sufficient to certify exact church, photographic role, or reuse rights.",
       "visual_review_scope": "ONE_LOW_RES_CONTACT_SHEET_NOT_INDEPENDENT_SITE_VERIFICATION",
       "subject_verified": false,
@@ -10470,12 +10448,12 @@
       "original_image_bytes_verified": false,
       "p90_disposition": "HOLD_EXACT_BUILDING_STILL_UNVERIFIED",
       "p91_evidence": {
-        "code": "MUSEUM_RECONSTRUCTION_NOT_ACTIVE_CATHOLIC_CHAPEL",
-        "reason": "Actual photo describes reconstructed Saint Teilo church side chapel at St Fagans National History Museum, Cardiff, not independently identifiable as the active traditional Catholic Mass venue labelled St Teilo's Chapel in CL2. Museum reconstruction is unsuitable for a documented physical worship-site image.",
+        "code": "MUSEUM_CHAPEL_TARGET_IDENTITY_UNRESOLVED",
+        "reason": "Photograph depicts the St Fagans National Museum reconstruction of St Teilo's chapel; CL2 only says St Teilo's Chapel, Cardiff, without building address. Cannot assert this is the wrong target until the actual Mass venue is pinned. Exclude from curated set meanwhile.",
         "urls": [
           "https://commons.wikimedia.org/wiki/File:St.Teilo_-_Innen_5_Seitenkapelle.jpg"
         ],
-        "confidence": "DIRECT_SITE_CONTRADICTION_OR_NOT_WORSHIP_BUILDING"
+        "confidence": "INSUFFICIENT_TARGET_SITE_IDENTITY_NO_NEGATIVE_PROOF"
       },
       "p91_visual_role": null,
       "p91_visual_reason": null,
@@ -10532,7 +10510,7 @@
       "commons_file_title": "File:St Winefride's Well, Holywell.jpg",
       "original_sha1_claim": "4481067c456bfcb2d9ca4e7bb984bc8aff1101e7",
       "source_url": "https://commons.wikimedia.org/wiki/File:St_Winefride's_Well,_Holywell.jpg",
-      "preliminary_visual_disposition": "REJECT_P91_VERIFIED_DIFFERENT_SITE_OR_NOT_PHYSICAL_CHURCH",
+      "preliminary_visual_disposition": "HOLD_INSUFFICIENT_EXACT_WORSHIP_VENUE_IDENTITY",
       "reason": "Contact-sheet appearance is not sufficient to certify exact church, photographic role, or reuse rights.",
       "visual_review_scope": "ONE_LOW_RES_CONTACT_SHEET_NOT_INDEPENDENT_SITE_VERIFICATION",
       "subject_verified": false,
@@ -10561,14 +10539,14 @@
       "original_image_bytes_verified": false,
       "p90_disposition": "HOLD_EXACT_BUILDING_STILL_UNVERIFIED",
       "p91_evidence": {
-        "code": "DISTINCT_CHAPEL_AND_WELL_NOT_PARISH_CHURCH",
-        "reason": "Photos show medieval St Winefride's Well and chapel (Holywell, CH8 7PN), a distinct heritage site from the actual parish Church of St Winefride at 15 Well Street (CH8 7PL). They must not stand in as the church building.",
+        "code": "WELL_VS_PARISH_CHURCH_TARGET_IDENTITY_UNRESOLVED",
+        "reason": "Photograph depicts St Winefride's medieval Well/Chapel; CL2 source identifies only 'St Winefride's, Holywell' with no address. Since Mass can also occur at the Well/Chapel, cannot assert the intended venue is the separate parish church until the traditional Mass site is established. Hold separately.",
         "urls": [
           "https://taking-stock.org.uk/building/holywell-st-winefride/",
-          "https://www.stwinefridesholywell.co.uk/",
-          "https://www.stwinefrideswell.org.uk/sanctuary.html"
+          "https://www.stwinefrideswell.org.uk/sanctuary.html",
+          "https://www.stwinefridesholywell.co.uk/"
         ],
-        "confidence": "DIRECT_SITE_CONTRADICTION_OR_NOT_WORSHIP_BUILDING"
+        "confidence": "INSUFFICIENT_TARGET_SITE_IDENTITY_NO_NEGATIVE_PROOF"
       },
       "p91_visual_role": null,
       "p91_visual_reason": null,
@@ -10583,7 +10561,7 @@
       "commons_file_title": "File:St Winefride's Well.jpg",
       "original_sha1_claim": "671925008f8c6126410b2d48b731139fb85980ef",
       "source_url": "https://commons.wikimedia.org/wiki/File:St_Winefride's_Well.jpg",
-      "preliminary_visual_disposition": "REJECT_P91_VERIFIED_DIFFERENT_SITE_OR_NOT_PHYSICAL_CHURCH",
+      "preliminary_visual_disposition": "HOLD_INSUFFICIENT_EXACT_WORSHIP_VENUE_IDENTITY",
       "reason": "Holy well is a sacred detail, not an exterior of a church",
       "visual_review_scope": "ONE_LOW_RES_CONTACT_SHEET_NOT_INDEPENDENT_SITE_VERIFICATION",
       "subject_verified": false,
@@ -10612,14 +10590,14 @@
       "original_image_bytes_verified": false,
       "p90_disposition": "HOLD_SITE_IDENTITY_OR_PHOTO_ROLE_UNCERTAIN",
       "p91_evidence": {
-        "code": "DISTINCT_CHAPEL_AND_WELL_NOT_PARISH_CHURCH",
-        "reason": "Photos show medieval St Winefride's Well and chapel (Holywell, CH8 7PN), a distinct heritage site from the actual parish Church of St Winefride at 15 Well Street (CH8 7PL). They must not stand in as the church building.",
+        "code": "WELL_VS_PARISH_CHURCH_TARGET_IDENTITY_UNRESOLVED",
+        "reason": "Photograph depicts St Winefride's medieval Well/Chapel; CL2 source identifies only 'St Winefride's, Holywell' with no address. Since Mass can also occur at the Well/Chapel, cannot assert the intended venue is the separate parish church until the traditional Mass site is established. Hold separately.",
         "urls": [
           "https://taking-stock.org.uk/building/holywell-st-winefride/",
-          "https://www.stwinefridesholywell.co.uk/",
-          "https://www.stwinefrideswell.org.uk/sanctuary.html"
+          "https://www.stwinefrideswell.org.uk/sanctuary.html",
+          "https://www.stwinefridesholywell.co.uk/"
         ],
-        "confidence": "DIRECT_SITE_CONTRADICTION_OR_NOT_WORSHIP_BUILDING"
+        "confidence": "INSUFFICIENT_TARGET_SITE_IDENTITY_NO_NEGATIVE_PROOF"
       },
       "p91_visual_role": null,
       "p91_visual_reason": null,
@@ -17055,5 +17033,13 @@
       "p91_visual_reason": null,
       "subject_verified_for_publication": false
     }
-  ]
+  ],
+  "identity_ambiguity_corrections": {
+    "photo_indices": [
+      234,
+      236,
+      237
+    ],
+    "reason": "Initial attempted wrong-site rejection was too strong: CL2 venue named only Cardiff St Teilo's Chapel or Holywell St Winefride's without a source-backed exact address; cannot distinguish a museum shrine/Well from presumed parish church yet. Keep on HOLD. Positive counterevidence about Mass at Well means no default assumption of parish site."
+  }
 }
