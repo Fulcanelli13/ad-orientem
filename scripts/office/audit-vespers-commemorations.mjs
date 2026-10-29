@@ -71,7 +71,11 @@ function mainFn(){
       date:x.date,language:x.language,heading:x.sourceHeadingCount,
       antiphon:x.antiphonSourceIncipitMatched,
       collect:x.sundayCollectSourceIncipitMatched,
-      ordered:x.componentOrderMatched,reason:x.reason
+      ordered:x.componentOrderMatched,reason:x.reason,
+      ...(x.candidateHeadingLineLeads?{diagnostic:{
+        sourceIncipientAnywhereForDiagnosis:x.sourceIncipientAnywhereForDiagnosis,
+        candidateHeadingLineLeads:x.candidateHeadingLineLeads
+      }}:{})
     })),
     certified:report.independentlyVerifiedOfficeCommemorations,published:report.published
   }));
