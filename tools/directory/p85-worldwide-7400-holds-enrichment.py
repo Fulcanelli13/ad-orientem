@@ -66,7 +66,11 @@ def source_lineage(allfile,holdsfile,summaryfile):
         guard(r["publication"]==HOLD and r["published"] is False and
               r["exact_site_verified"] is False and r["rights_independently_cleared"] is False and
               not r["screening_disposition"].startswith("REVIEW_QUEUE_") and
-              filename_ok(r["file_title"]),"Unsafe or malformed held source")
+              isinstance(r.get("file_title"),str) and 0<len(r["file_title"])<=600,
+              "Unsafe or missing held source identity (never skip an original P83 record)")
+        # Unsafe Commons titles are still accounted for but may not be sent
+        # to the Commons API. Such rows become explicit metadata-only HOLDS.
+        # The original P83 record was never certified as a valid Commons title.
     return report,all_rows,holds
 
 def load_geo(intake,cl2):
@@ -174,6 +178,10 @@ def with_current_source(row,source,allrefs,geo):
           "p83_original_disposition":row["screening_disposition"],
           "publication":HOLD,"exact_site_verified":False,
           "rights_approved":False,"original_bytes_verified":False,"published":False}
+    if not filename_ok(row["file_title"]):
+        item["p85_disposition"]="HOLD_UNSAFE_OR_UNQUERYABLE_COMMONS_TITLE"
+        item["source_check"]={"source_status":"HOLD_UNSAFE_OR_UNQUERYABLE_COMMONS_TITLE"}
+        return item
     if source.get("source_status","").startswith("HOLD_"):
         item.update({"p85_disposition":source["source_status"],"source_check":source})
         return item
@@ -251,8 +259,13 @@ def evidence_shard(allfile,holdsfile,summaryfile,intake,cl2,out,shard,delay=1.0,
     result=[]
     queries=0
     failed=0
-    for j in range(0,len(names),20):
-        batch=names[j:j+20]
+    eligible=[n for n in names if filename_ok(byfile[n][0]["file_title"])]
+    ineligible=[n for n in names if n not in set(eligible)]
+    for fileid in ineligible:
+        for row in byfile[fileid]:
+            result.append(with_current_source(row,{"source_status":"HOLD_UNSAFE_OR_UNQUERYABLE_COMMONS_TITLE"},refs,geo))
+    for j in range(0,len(eligible),20):
+        batch=eligible[j:j+20]
         title=[byfile[n][0]["file_title"] for n in batch]
         found,error=loader(title)
         queries+=1
@@ -262,7 +275,7 @@ def evidence_shard(allfile,holdsfile,summaryfile,intake,cl2,out,shard,delay=1.0,
                 "source_status":"HOLD_COMMONS_QUERY_ERROR_NOT_NO_RESULTS","source_error":error}
             for row in byfile[fileid]:
                 result.append(with_current_source(row,source,refs,geo))
-        if j+20<len(names):time.sleep(delay)
+        if j+20<len(eligible):time.sleep(delay)
     result.sort(key=lambda x:(x["physical_anchor_id"],x["file_title"],str(x["original_sha1_claim"])))
     disp=collections.Counter(r["p85_disposition"] for r in result)
     summary={"schema":SCHEMA,"technical_shard":shard,"technical_shard_count":SHARDS,
@@ -270,6 +283,7 @@ def evidence_shard(allfile,holdsfile,summaryfile,intake,cl2,out,shard,delay=1.0,
         "source_p83_all_assignments_sha256":digest(allfile),
         "source_p83_holds_sha256":digest(holdsfile),
         "unique_file_titles_checked":len(names),"assignments_accounted":len(result),
+        "unsafe_commons_titles_held_without_request":len(ineligible),
         "commons_metadata_requests":queries,"file_metadata_query_failures":failed,
         "source_holds":dict(sorted(disp.items())),"original_bytes_downloaded":0,
         "site_approvals":0,"rights_approvals":0,"publications":0}
