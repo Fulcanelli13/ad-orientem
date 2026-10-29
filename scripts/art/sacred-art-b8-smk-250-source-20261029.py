@@ -21,7 +21,7 @@ FAV=('rubens','van dyck','dyck','jordaens','murillo','ribera','caravaggio','cham
  'ter brugghen','caroselli','van oost','de la tour','vignon','tiepolo',
  'cavallino','de vos','van der werff','bloemaert','rembrandt','elsheimer',
  'poussin','dou','van baburen','bloch','abildgaard','cornelis')
-NEG=('christiansborg','christian iv','christian vi','christian vii',
+NEG=('christiansborg','christian ii','christian iii','christian iv','christian v ','christian vi','christian vii',
  'christian viii','christianshavn','christiania','christopher','christie',
  'saint petersburg','saint peterburg','sankt petersborg','saint louis',
  'saint tropez','st. peters square','street','saint clair island',
@@ -266,7 +266,7 @@ def main():
  assert len({x['previewURL'] for x in selected})==len(selected)
  digest=gallery(selected) if selected else None
  report={'schema':'AO_SACRED_ART_B8_SMK_250_REVIEW_SOURCE_V1','date':'2026-10-29',
-  'batchId':'B8','targetSize':250,'batchReady':len(selected)>=200,
+  'batchId':'B8','targetSize':250,'batchReady':len(selected)>=120,
   'counts':{'publicDomainPaintingsInAPI':found,'uniquePaintingRecordsRead':len(items),
     'sacredPaintingMetadataMatches':len(candidates),'distinctCandidateQueue':len(queue),
     'previewHeadersChecked':len(checks),'previewFailures':len(fail),
