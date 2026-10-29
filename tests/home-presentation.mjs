@@ -66,11 +66,26 @@ assert.equal(vm.observedTitle,"Our Lady of the Rosary","1962 observance and Mass
 assert.equal(vm.massFormularyName,"Holy Rosary","Actual selected Mass must be named from the resolved Proper");
 assert.equal(vm.massIntroit,"Gaudeamus","Latin Introit incipit must be derived from the Proper");
 assert.equal(vm.resolvedForSelection,true);
+assert.equal(vm.rank,"Rank · 2","Day rank must come from 1962 observed-day authority");
 assert.equal(vm.dateLong,"07/10/2026");
 assert.equal(vm.formularyLabel,"Formulary 2/2");
 assert.equal(vm.commemorationLabel,"Commemorations · St Mark");
 assert.equal(vm.gospelReference,"Luke 1:26");
 
+const feriaState={...base,resolution:{...base.resolution,
+ day:{...base.resolution.day,main:{title:"Feria",rank:"IV class",color:"Green"}},
+ proper:{status:"ready",data:{...proper,name:"Mass of the preceding Sunday",rank:"II class",
+   introit:{lat:"Si iniquitátes observáveris, Dómine"}}}}};
+const feriaVm=buildHomeViewModel(feriaState);
+assert.equal(feriaVm.observedTitle,"Feria");
+assert.equal(feriaVm.massFormularyName,"Mass of the preceding Sunday");
+assert.equal(feriaVm.rank,"Rank · IV class","A Sunday Proper must not overwrite the feria rank");
+assert.equal(feriaVm.massIntroit,"Si iniquitátes observáveris, Dómine");
+const feriaHtml=renderHomeToString(feriaState,{});
+assert.match(feriaHtml,/<h1 class="aoEditorialTitle">Feria<\/h1>/);
+assert.match(feriaHtml,/Mass of the preceding Sunday/);
+assert.doesNotMatch(feriaHtml,/<h1 class="aoEditorialTitle">Mass of the preceding Sunday<\/h1>/,
+  "H2 must not confuse the selected Proper with the observed feria");
 const en=renderHomeToString(base,r17Win);
 assert.match(en,new RegExp(`data-ao-home-presentation-owner="${HOME_PRESENTATION_VERSION}"`));
 assert.match(en,/Holy Rosary/);
