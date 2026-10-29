@@ -11,12 +11,12 @@ const CUES=Object.freeze({
 });
 export const USER_APPROVED_MASS_GESTURE_KEYS=CUES;
 export const USER_APPROVED_MASS_GESTURE_ASSETS=Object.freeze({
- "ao_1962_priest_c0117":new URL("../../assets/active/mass-user-gesture-20261029/C0117.svg",import.meta.url).href,
- "ao_1962_priest_c0155":new URL("../../assets/active/mass-user-gesture-20261029/C0155.svg",import.meta.url).href,
- "ao_1962_priest_c0161":new URL("../../assets/active/mass-user-gesture-20261029/C0161.svg",import.meta.url).href,
- "ao_1962_priest_c0193":new URL("../../assets/active/mass-user-gesture-20261029/C0193.svg",import.meta.url).href,
- "ao_1962_priest_c0204":new URL("../../assets/active/mass-user-gesture-20261029/C0204.svg",import.meta.url).href,
- "ao_1962_priest_c0263":new URL("../../assets/active/mass-user-gesture-20261029/C0263.svg",import.meta.url).href,
+ "ao_1962_priest_c0117":new URL("../../assets/extensions/mass-user-gesture-20261029/C0117.svg",import.meta.url).href,
+ "ao_1962_priest_c0155":new URL("../../assets/extensions/mass-user-gesture-20261029/C0155.svg",import.meta.url).href,
+ "ao_1962_priest_c0161":new URL("../../assets/extensions/mass-user-gesture-20261029/C0161.svg",import.meta.url).href,
+ "ao_1962_priest_c0193":new URL("../../assets/extensions/mass-user-gesture-20261029/C0193.svg",import.meta.url).href,
+ "ao_1962_priest_c0204":new URL("../../assets/extensions/mass-user-gesture-20261029/C0204.svg",import.meta.url).href,
+ "ao_1962_priest_c0263":new URL("../../assets/extensions/mass-user-gesture-20261029/C0263.svg",import.meta.url).href,
 });
 export function userApprovedMassGestureArt({cueId=null,matrixAction=null,priestAction=null}={}){
  const cue=String(cueId??"");
