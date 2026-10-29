@@ -1,8 +1,10 @@
-/** Opt-in F05 reader comparison. Existing source, card and personal-rule engines own all texts. */
+/** Book-first daily reader by default, with explicit legacy query rollback. Existing source, card and personal-rule engines own all texts. */
 export const DAILY_UX_PILOT_SCHEMA="ao-daily-ux-pilot-v1";
 export function dailyUxPilotEnabled(search){
- try{return new URLSearchParams(String(search||"").replace(/^\?/,"")).get("aoDailyUxPilot")==="1"}
- catch{return false}
+ // Default rollout; explicit ?aoDailyUxPilot=0 restores the previous reader.
+ // This flag controls presentation only. It does not change prayer sources or saved editions.
+ try{return new URLSearchParams(String(search||"").replace(/^\?/,"")).get("aoDailyUxPilot")!=="0"}
+ catch{return true}
 }
 export function renderDailyUxModes({mode,L,esc}){
  const options=[["guided",L("Cards","Cartes")],["continuous",L("Continuous","Continu")],["list",L("Browse","Choisir")]];
