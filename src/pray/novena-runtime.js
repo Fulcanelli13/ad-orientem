@@ -149,7 +149,9 @@ function sourceWitness(text,label){
    else if(String(n?.frenchTextStatus||'').includes('TRADITIONAL_FRENCH_WITNESS'))witnessLabel='TEXTE FRANÇAIS TRADITIONNEL';
    else witnessLabel='TRADUCTION FRANÇAISE · ALIGNÉE SUR LA SOURCE';
  }
- const toggle=isFr()&&en&&fr?`<button type="button" class="aoP435930Secondary" data-n1-show-en>${esc(showEnglish?'Revenir au français':'Voir le témoin anglais')}</button>`:'';
+ // A source-only English witness must retain a reversible way back to the
+ // explicit French-unavailable state, rather than trapping readers in English.
+ const toggle=isFr()&&en&&(fr||showEnglish)?`<button type="button" class="aoP435930Secondary" data-n1-show-en>${esc(showEnglish?'Revenir au français':'Voir le témoin anglais')}</button>`:'';
  return `<article class="aoN1SourceText"><small>${esc(witnessLabel)}</small>${novenaParagraphs(value)}${toggle}</article>`;
 }
 function canonicalPrayer(id,count=1){const p=prayerData()[id];if(!p)return `<div class="aoN1FailClosed">${esc(L('Canonical prayer record unavailable in this build.','Prière canonique indisponible dans cette version.'))}</div>`;const v=(isFr()?p.fr:p.en)||'',la=p.la||'',title=isFr()?(p.titleFr||p.title):p.title;return `<article class="aoN1Canon"><div class="aoN1CanonHead"><b>${esc(title||id)}</b><span>${count>1?count+'×':''}</span></div>${la&&v?`<button type="button" data-n1-flip><span data-face-v>${nl(v)}</span><span data-face-la hidden>${nl(la)}</span></button>`:`<div>${nl(v||la)}</div>`}</article>`}
@@ -234,7 +236,31 @@ function renderInstituteThereseWeekly(){
  </details>
  <button type="button" class="aoP435930Secondary" data-n1-therese-back>${esc(L('Back to all novenas','Retour aux neuvaines'))}</button></main>`;
 }
-function render(){const m=mount();if(!m)return;const n=N.id?ALL_NOVENAS[N.id]:null;let h=N.screen==='overview'?renderOverview():N.screen==='weekly'?renderInstituteThereseWeekly():N.screen==='detail'&&n?renderDetail(n):N.screen==='day'&&n?renderDay(n):renderOverview();m.dataset.aoPrayView='novenas';m.dataset.aoN1='true';m.classList.toggle('aoP435930FocusRunway',N.screen==='day'&&N.mode==='guided');m.innerHTML=h;m.scrollTop=0;queueMicrotask(()=>{
+// Language-witness changes are not navigations. Keep the exact source block,
+// its phone scroll container and its focused control when the wording changes.
+const WITNESS_BLOCK_SELECTOR='.aoN1SourceText,.aoN1FailClosed';
+function witnessAnchor(button){
+ const m=mount(),block=button.closest(WITNESS_BLOCK_SELECTOR);
+ if(!m||!block)return null;
+ const blocks=[...m.querySelectorAll(WITNESS_BLOCK_SELECTOR)];
+ const index=blocks.indexOf(block);
+ if(index<0)return null;
+ const scroll=button.closest('.aoDevoCardScroll')||m;
+ return {index,top:block.getBoundingClientRect().top,scrollTop:scroll.scrollTop,
+  innerScroll:scroll!==m};
+}
+function restoreWitnessAnchor(m,anchor){
+ const block=m.querySelectorAll(WITNESS_BLOCK_SELECTOR)[anchor.index];
+ const scroll=anchor.innerScroll?m.querySelector('.aoDevoCardScroll'):m;
+ if(!block||!scroll)return;
+ scroll.scrollTop=anchor.scrollTop;
+ // Align the source block with its previous viewport position if possible.
+ // Both the original French and the English source may have different lengths.
+ scroll.scrollTop+=block.getBoundingClientRect().top-anchor.top;
+ const next=block.querySelector('[data-n1-show-en]');
+ if(next)next.focus({preventScroll:true});
+}
+function render({witnessFocus=null}={}){const m=mount();if(!m)return;const n=N.id?ALL_NOVENAS[N.id]:null;let h=N.screen==='overview'?renderOverview():N.screen==='weekly'?renderInstituteThereseWeekly():N.screen==='detail'&&n?renderDetail(n):N.screen==='day'&&n?renderDay(n):renderOverview();m.dataset.aoPrayView='novenas';m.dataset.aoN1='true';m.classList.toggle('aoP435930FocusRunway',N.screen==='day'&&N.mode==='guided');m.innerHTML=h;if(!witnessFocus)m.scrollTop=0;queueMicrotask(()=>{
   if(N.screen==='day'&&n&&m.querySelector('.aoN1Reader')){
    const guided=N.mode==='guided';
    const chapters=guided?novenaChapters(n):
@@ -245,7 +271,11 @@ function render(){const m=mount();if(!m)return;const n=N.id?ALL_NOVENAS[N.id]:nu
     onNavigate:idx=>{if(!guided)return;N.stage=idx;render()}
    });
   }
-  m.querySelector('button,[href],summary,[tabindex]:not([tabindex="-1"])')?.focus?.();
+  if(witnessFocus){
+   // The shared sequential adapter may schedule a frame after its mount.
+   // Restore after that frame instead of letting the reader jump to its top.
+   requestAnimationFrame(()=>restoreWitnessAnchor(m,witnessFocus));
+  }else m.querySelector('button,[href],summary,[tabindex]:not([tabindex="-1"])')?.focus?.();
  })}
 function open(opts={}){
  OPEN_RECEIPT=captureObservedModuleOrigin(window,"pray");
@@ -293,7 +323,7 @@ function onClick(e){const b=e.target.closest?.('button,[data-n1-flip]');if(!b)re
   const state=calStatus(ALL_NOVENAS[id]);N.day=state.kind==='active'?state.day:1;
   N.stage=0;N.showEnglish=false;return render()
  }
- if(b.dataset.n1Select){detailFromOverview=N.screen==='overview';N.id=b.dataset.n1Select;N.screen='detail';N.day=calStatus(ALL_NOVENAS[N.id]).kind==='active'?calStatus(ALL_NOVENAS[N.id]).day:1;N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Day){N.day=+b.dataset.n1Day;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Begin){N.day=+b.dataset.n1Begin;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Mode){N.mode=b.dataset.n1Mode==='simple'?'simple':'guided';try{localStorage.setItem(STORE_MODE,N.mode)}catch{}N.stage=0;return render()}if(b.matches('[data-n1-show-en]')){N.showEnglish=!N.showEnglish;return render()}if(b.matches('[data-n1-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}if(b.matches('[data-n1-stage-prev]')){N.stage=Math.max(0,N.stage-1);return render()}if(b.matches('[data-n1-stage-next]')){const n=ALL_NOVENAS[N.id],last=stages(n)-1;if(N.stage>=last){N.screen='detail';N.stage=0;N.showEnglish=false}else N.stage++;return render()}if(b.matches('[data-n1-day-prev]')){N.day=Math.max(1,N.day-1);N.showEnglish=false;return render()}if(b.matches('[data-n1-day-next]')){if(N.day>=9){N.screen='detail';N.stage=0}else{N.day++;N.showEnglish=false}return render()}}
+ if(b.dataset.n1Select){detailFromOverview=N.screen==='overview';N.id=b.dataset.n1Select;N.screen='detail';N.day=calStatus(ALL_NOVENAS[N.id]).kind==='active'?calStatus(ALL_NOVENAS[N.id]).day:1;N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Day){N.day=+b.dataset.n1Day;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Begin){N.day=+b.dataset.n1Begin;N.screen='day';N.stage=0;N.showEnglish=false;return render()}if(b.dataset.n1Mode){N.mode=b.dataset.n1Mode==='simple'?'simple':'guided';try{localStorage.setItem(STORE_MODE,N.mode)}catch{}N.stage=0;return render()}if(b.matches('[data-n1-show-en]')){const anchor=witnessAnchor(b);N.showEnglish=!N.showEnglish;return render({witnessFocus:anchor})}if(b.matches('[data-n1-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}if(b.matches('[data-n1-stage-prev]')){N.stage=Math.max(0,N.stage-1);return render()}if(b.matches('[data-n1-stage-next]')){const n=ALL_NOVENAS[N.id],last=stages(n)-1;if(N.stage>=last){N.screen='detail';N.stage=0;N.showEnglish=false}else N.stage++;return render()}if(b.matches('[data-n1-day-prev]')){N.day=Math.max(1,N.day-1);N.showEnglish=false;return render()}if(b.matches('[data-n1-day-next]')){if(N.day>=9){N.screen='detail';N.stage=0}else{N.day++;N.showEnglish=false}return render()}}
 document.addEventListener('click',onClick,true);
 const oldOpen=PR.open.bind(PR);PR.open=function(id,opts={}){if(id==='pray.novenas'||id==='novenas'||id==='novena')return open(opts);return oldOpen(id,opts)};
 const MOD=window.AO_MODULES;
