@@ -9,20 +9,26 @@ import {join,dirname,resolve} from "node:path";
 import {fileURLToPath} from "node:url";
 import {DIVINUM_OFFICIUM_PIN} from "../../src/app/source-transport-compat.js";
 import {OFFICE_VESPERS_COMMEMORATION_GATE,
-  screenGeneratedVespersCommemorations} from "../../src/office/vespers-commemoration-gate.js";
+  screenGeneratedVespersCommemorations,
+  collateAllSaintsSundayVespersCommemoration} from "../../src/office/vespers-commemoration-gate.js";
 const SAMPLES=Object.freeze([
   ["main","2026-10-31"],["main","2026-11-01"],
   ["souls","2026-11-02"],["advent","2026-11-28"],["advent","2026-11-29"]
 ]);
 export function auditRealVespersCommemorations({main,advent,souls}={}){
   const roots={main,advent,souls};
+  const sourceDocuments=new Map();
   const cases=SAMPLES.map(([group,date])=>{
     if(typeof roots[group]!=="string"||!roots[group])throw Error("OFFICE_COMM_ROOT_MISSING");
     const doc=JSON.parse(readFileSync(join(roots[group],date,"vespers","la.research.json"),"utf8"));
+    sourceDocuments.set(date,doc);
     return Object.freeze({...screenGeneratedVespersCommemorations(doc),group});
   });
+  const sundayComparisons=["2026-10-31","2026-11-01"].map(date=>
+    collateAllSaintsSundayVespersCommemoration(sourceDocuments.get(date)));
   return Object.freeze({
     schema:"ao.office.vespers-commemoration-screening.v1",
+    sundayComparisons,
     sourceRevision:DIVINUM_OFFICIUM_PIN,
     gate:OFFICE_VESPERS_COMMEMORATION_GATE,
     sampleDates:cases.length,cases,
@@ -49,6 +55,12 @@ function mainFn(){
     cases:report.cases.map(c=>({date:c.date,
       sourceCells:c.scannedPrayerSourceCellIds,
       possibleHeadings:c.explicitCommemorationHeadingCount})),
+    sundayComparisons:report.sundayComparisons.map(c=>({
+      date:c.date,part:c.part,sourceHeading:c.sourceHeading,
+      incipits:c.componentIncipitsLocated,inOrder:c.componentOrderMatches,
+      sourceMatched:c.sourceStructureMatches,
+      originalPrinted1961Certified:c.original1961BreviaryPrintedProperCertified
+    })),
     certified:report.independentlyVerifiedOfficeCommemorations,published:report.published
   }));
   if(report.sampleDates!==5||report.cases.some(c=>
