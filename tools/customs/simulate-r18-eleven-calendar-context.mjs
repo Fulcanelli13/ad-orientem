@@ -87,7 +87,7 @@ for(const [key,entry] of Object.entries(sourceChecked.inputs)){
  structure:"data/customs/customs-r18-eleven-calendar-parent-subtype-structure.v1.json"}[key];
  assert.equal(entry.path,expectedPath);
  const bytes=file(expectedPath);
- const sha=createHash("sha1").update("blob "+bytes.length+"\\0".replace("\\\\0","\\0")).update(bytes).digest("hex");
+ const sha=createHash("sha1").update("blob "+bytes.length+String.fromCharCode(0)).update(bytes).digest("hex");
  assert.equal(entry.blob_sha,sha,"Source blob has drifted: "+key);
 }
 assert.equal(sourceChecked.records.length,11);
