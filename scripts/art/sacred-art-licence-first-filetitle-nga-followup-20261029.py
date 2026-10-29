@@ -72,8 +72,8 @@ for r in targets:
 # policy only applies to photographs individually offered as Open Access.
 ngas=[]
 for r in a["records"]:
-    if r["file_licence_audit_status"]=="EXACT_FILE_METADATA_NOT_YET_CONFIRMED" and
-       r["source_url"].startswith("https://www.nga.gov/artworks/"):
+    if (r["file_licence_audit_status"]=="EXACT_FILE_METADATA_NOT_YET_CONFIRMED" and
+        r["source_url"].startswith("https://www.nga.gov/artworks/")):
         r["file_licence_audit_status"]="NGA_US_OPEN_ACCESS_POLICY_FILE_ELIGIBILITY_UNCONFIRMED"
         r["required_licence_action"]="VERIFY_EXACT_OBJECT_IMAGE_HAS_OFFICIAL_OPEN_ACCESS_DOWNLOAD_AND_LINK_ARCHIVED_SHA"
         r["source_photo_policy_url"]="https://www.nga.gov/terms-and-notices"
@@ -81,8 +81,8 @@ for r in a["records"]:
         ngas.append(r["artwork_id"])
 assert len(ngas)==34
 for r in a["records"]:
-    if r["file_licence_audit_status"]=="EXACT_FILE_METADATA_NOT_YET_CONFIRMED" and
-       r["source_url"].startswith("https://www.metmuseum.org/"):
+    if (r["file_licence_audit_status"]=="EXACT_FILE_METADATA_NOT_YET_CONFIRMED" and
+        r["source_url"].startswith("https://www.metmuseum.org/")):
         r["file_licence_audit_status"]="MET_OFFICIAL_OBJECT_API_RIGHTS_NOT_LIVE_VERIFIED"
         r["required_licence_action"]="RETRY_OFFICIAL_OBJECT_IMAGE_RIGHTS_WHEN_API_RESPONDS"
 # Preserve independently verified source-byte + institution CC0 original-file
