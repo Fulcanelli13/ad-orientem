@@ -133,7 +133,7 @@ jobs:
             --languages la,en,fr
           python3 scripts/office/normalize_xhtml.py --out "$OUTPUT"
           node scripts/office/build-research-preview.mjs --out "$OUTPUT"
-          node scripts/office/build-mass-style-preview.mjs --out "$OUTPUT"
+          node scripts/office/build-mass-style-preview.mjs --out "$OUTPUT" --quarantine-content-scope
           node scripts/office/audit-translation-risks.mjs --out "$OUTPUT" --report "$OUTPUT/translation-risk.json"
           # Liturgical witness for Advent I: FIRST Vespers on Saturday and
           # SECOND on Sunday. This is a fresh six-file source sample, not
@@ -223,9 +223,16 @@ jobs:
           assert pair["requiresDistinctFirstVespersMusic"] is True, pair
           assert pair["scoresPublished"]==0 and pair["sungButtonEnabled"] is False
           previews=json.loads((Path(os.environ["OUTPUT"])/"preview"/"preview-manifest.json").read_text(encoding="utf8"))
-          assert previews["pages"]==64 and previews["published"]==0 and previews["researchOnly"]
+          assert previews["pages"]==63 and previews["published"]==0 and previews["researchOnly"]
+          assert previews["blockedLocalePageCount"]==1
+          assert previews["blockedLocalePages"][0]["reasons"]==["FR_VESPERS_SUNDAY_COMMEMORATION_INCOMPLETE"]
           mass_preview=json.loads((Path(os.environ["OUTPUT"])/"preview"/"mass"/"preview-manifest.json").read_text(encoding="utf8"))
-          assert mass_preview["pages"]==64 and mass_preview["published"]==0
+          assert mass_preview["pages"]==63 and mass_preview["published"]==0
+          assert mass_preview["blockedLocalePageCount"]==1
+          assert {(x["date"],x["hour"],x["locale"]) for x in mass_preview["blockedLocalePages"]}=={
+            ("2026-11-01","VESPERS","fr")}
+          assert mass_preview["blockedLocalePages"][0]["semanticBlockerReasons"]==[
+            "FR_VESPERS_SUNDAY_COMMEMORATION_INCOMPLETE"]
           assert mass_preview["researchOnly"] and not mass_preview["productionRouteRegistered"]
           assert mass_preview["externalResources"]==0 and mass_preview["chantScoreAssets"]==0
           assert not mass_preview["chantButtonEnabled"]
@@ -355,7 +362,7 @@ jobs:
           advent_mass=json.loads((Path(os.environ["OUTPUT"])/"advent-vespers"/"preview"/"mass"/"preview-manifest.json").read_text(encoding="utf8"))
           assert advent_mass["pages"]==4 and advent_mass["published"]==0
           assert advent_mass["hours"]==["VESPERS"] and not advent_mass["productionRouteRegistered"]
-          print("Office Mass-style preview valid: 64 main + 4 Advent I bilingual interactive pages, zero published.")
+          print("Office Mass-style preview valid: 63 main + 4 Advent I bilingual interactive pages, one FR Vespers quarantined, zero published.")
           PY
       - name: Install pinned Playwright browser for mobile layout QA
         run: |
