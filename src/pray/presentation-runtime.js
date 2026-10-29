@@ -719,10 +719,13 @@ function prayFamilies(){
 function prayFamilyDoor(id,family){
  return `<button type="button" class="aoP435930ModuleCard aoP435930FamilyDoor" ${family.direct?`data-p435930-own="${esc(family.direct)}"`:`data-p435930-family="${esc(id)}"`}>${assetIcon(family.assetId,'aoP435930ModuleAsset',{preferEmbedded:true})}<small class="aoP435930ModuleKind">${esc(L('PRAYER','PRIÈRE'))}</small><b>${esc(family.title)}</b><span class="aoP435930ModuleDescription">${esc(family.description)}</span><i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button>`;
 }
-function prayFamilyItem(item){
+function prayFamilyItem(item,contextual=false){
  const [owner,route,title,description]=item;
  const attr=owner==='external'?`data-p435930-external="${esc(route)}"`:`data-p435930-own="${esc(route)}"`;
- return `<button type="button" class="aoP435930ModuleCard" ${attr}>${moduleIcon(route)}<small class="aoP435930ModuleKind">${esc(route.startsWith('programme.')?L('DEVOTION','DÉVOTION'):L('PRAYER','PRIÈRE'))}</small><b>${esc(title)}</b><span class="aoP435930ModuleDescription">${esc(description)}</span><i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button>`;
+ // Contextual entries are real illustrated cards but not extra identities
+ // in the frozen historical Prayer family inventory.
+ const context=contextual===true?' data-ao-pray-contextual="true"':'';
+ return `<button type="button" class="aoP435930ModuleCard" ${attr}${context}>${moduleIcon(route)}<small class="aoP435930ModuleKind">${esc(route.startsWith('programme.')?L('DEVOTION','DÉVOTION'):L('PRAYER','PRIÈRE'))}</small><b>${esc(title)}</b><span class="aoP435930ModuleDescription">${esc(description)}</span><i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button>`;
 }
 function myCustomsDoor(){
  const name=L('My Customs & Prayers','Mes coutumes et prières');
@@ -772,7 +775,7 @@ function renderPrayFamily(){
  const family=prayFamilies()[familyId];
  if(!family){familyId=null;view='home';return renderPrayHome()}
  const related=prayRelatedFamilyItems(familyId);
- return `${head(family.title,L('Choose a prayer or devotion','Choisissez une prière ou une dévotion'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro">${familyId==='chaplets'?'':`<small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(family.title)}</h2>`}<p>${esc(family.description)}</p>${({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId]?'<div class="aoP435930ContextRow">'+glossaryContextCapsule(({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId],{french:isFr()})+'</div>':''}</section><div class="aoP435930ModuleGrid">${[...family.items,...related].map(prayFamilyItem).join('')}</div></main>`;
+ return `${head(family.title,L('Choose a prayer or devotion','Choisissez une prière ou une dévotion'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro">${familyId==='chaplets'?'':`<small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(family.title)}</h2>`}<p>${esc(family.description)}</p>${({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId]?'<div class="aoP435930ContextRow">'+glossaryContextCapsule(({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId],{french:isFr()})+'</div>':''}</section><div class="aoP435930ModuleGrid">${family.items.map(prayFamilyItem).join('')}${related.map(item=>prayFamilyItem(item,true)).join('')}</div></main>`;
 }
 function openFamily(id){
  const family=prayFamilies()[String(id??'')];
