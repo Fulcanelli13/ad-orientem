@@ -25,6 +25,7 @@ for id in ids:
     if isinstance(j,dict):
      entry["keys"]=list(j.keys())[:30]
      entry["edmRightsValues"]=[]
+     entry["aggregationRelevant"]={k:j.get(k) for k in ("id","edmRights","isShownAt","isShownBy","object") if k in j}
      def walk(x,path="",depth=0):
       if depth>14:return
       if isinstance(x,dict):
