@@ -1,0 +1,41 @@
+name: Sacred Art — MET v1.1 CC0 sacred painting source probe
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-met-v11-b4-probe-20261029.yml
+      - scripts/art/sacred-art-met-b4-probe-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  met-official-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inspect MET v1.1 and 2026 preview response
+        run: |
+          python -m py_compile scripts/art/sacred-art-met-b4-probe-20261029.py
+          python scripts/art/sacred-art-met-b4-probe-20261029.py
+      - name: Save source evidence permanently in Git
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('data/calendar/sacred-art-met-b4-availability-probe-20261029.v1.json'))
+          assert len(d['results'])==3 and d['imageOriginalsDownloaded']==0
+          print([(x['subject'],x['status']) for x in d['results']])
+          PY
+          git config user.name "Ad Orientem Sacred Art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-met-b4-availability-probe-20261029.v1.json
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): persist Met 2026 official API and image validation"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028
