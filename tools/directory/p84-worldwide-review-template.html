@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ad Orientem · Worldwide Directory photographs · Single editorial review</title>
+<style>
+:root{color-scheme:dark;--bg:#091117;--surface:#15252d;--edge:#354950;--fg:#e9f0ee;--muted:#a4b6b9;--mint:#77d7b8;--amber:#e7bf7c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 system-ui,Arial,sans-serif}
+header{position:sticky;top:0;z-index:4;padding:14px 3vw;background:#091117f5;border-bottom:1px solid var(--edge)}
+h1{margin:0;font:600 clamp(21px,3vw,30px)/1.2 Georgia,serif}.note{font-size:12px;color:var(--muted);max-width:1250px}
+strong{font-weight:650}.toolbar,.stats,.nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.toolbar{margin-top:10px}
+.stats{gap:18px;margin-top:8px;font-size:12px;color:var(--muted)}.stats strong{color:var(--fg)}
+input,select,textarea,button{font:inherit;border:1px solid #536771;color:var(--fg);background:#1e313b;border-radius:7px;padding:8px}
+input[type=search]{min-width:200px;flex:1}.toolbar button,.control button{cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--mint);outline-offset:1px}
+button:hover{border-color:var(--mint)}button:disabled{opacity:.4;cursor:default}
+button.primary{background:#236149}.progress{height:7px;background:#29414a;border-radius:8px;overflow:hidden;margin-top:10px}.progress span{display:block;height:100%;background:var(--mint)}
+main{padding:15px 3vw 42px}.notice{border-left:3px solid var(--amber);padding:10px 14px;color:#d0d9d9;background:#192b32;margin:0 0 14px;max-width:1400px}
+.nav{justify-content:space-between;margin:12px 0;color:var(--muted)}.nav button{font-size:12px;padding:7px}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+article{border:1px solid var(--edge);background:var(--surface);border-radius:11px;overflow:hidden;min-width:0;display:flex;flex-direction:column}
+.photo{height:200px;position:relative;background:#26373c;display:flex;align-items:center;justify-content:center}
+.photo img{width:100%;height:100%;object-fit:contain}.unavailable{display:none;color:#e1bd7c;font-size:12px;padding:25px;text-align:center}
+article .body{padding:12px;display:flex;flex:1;flex-direction:column;gap:7px}
+h2{font-size:15px;line-height:1.3;margin:0}.small{font-size:11px;color:var(--muted);overflow-wrap:anywhere}
+.tag{font-size:11px;border:1px solid #547078;border-radius:5px;padding:2px 6px;color:#c8dcdf}
+.tags{display:flex;flex-wrap:wrap;gap:5px}a{color:#88dad0}
+.control{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:auto}
+.control button{padding:6px 3px;font-size:12px}
+.control .active[data-choice=IMPORT]{background:#276b4c;border-color:#7bd4a5}
+.control .active[data-choice=CORRECT]{background:#755a2b;border-color:#efcf88}
+.control .active[data-choice=REJECT]{background:#763c48;border-color:#ea8e9a}
+.control .active[data-choice=HOLD]{background:#3e6278;border-color:#8eb8e0}
+textarea{font-size:12px;min-height:42px;width:100%;resize:vertical}
+@media(max-width:600px){header{position:relative}.toolbar{align-items:stretch}input[type=search]{min-width:100%}.gallery{grid-template-columns:1fr}.photo{height:260px}}
+</style></head><body>
+<header>
+<h1>Ad Orientem · Worldwide Directory photography</h1>
+<div class="note">One consolidated editorial review across existing Directory physical-site identities. Source matches and Creative Commons metadata are research claims, not verified subjects or grants of publication permission.</div>
+<div id="stats" class="stats"></div><div class="progress"><span id="progress"></span></div>
+<div class="toolbar">
+<input id="search" type="search" placeholder="Search church, city, country, original, author, anchor ID…">
+<select id="country"><option value="">All countries</option></select>
+<select id="decision"><option value="">All candidates</option><option value="UNREVIEWED">Unreviewed</option><option value="IMPORT">Import</option><option value="CORRECT">Import with corrections</option><option value="REJECT">Reject</option><option value="HOLD">Hold</option><option value="PREVIEW_HOLD">Preview unavailable</option></select>
+<button class="primary" id="export">Export one decisions JSON</button>
+<label style="border:1px solid #536771;border-radius:7px;padding:8px;cursor:pointer">Load previous decisions<input id="import" type="file" accept=".json,application/json" hidden></label>
+</div></header>
+<main>
+<div class="notice">Confirm the exact building and photograph content before selecting Import. A successful preview does not establish photo identity, licence validity, underlying artwork rights or publication approval. This tool saves editorial choices only; it cannot publish photographs. Local previews fall back to current Commons links if the temporary source package has expired.</div>
+<div class="nav"><span id="range"></span><div><button id="prev">Previous 250</button> <span id="page"></span> <button id="next">Next 250</button></div></div>
+<div class="gallery" id="gallery"></div>
+<div class="nav"><span id="bottom"></span><div><button id="prev2">Previous 250</button> <span id="page2"></span> <button id="next2">Next 250</button></div></div>
+</main>
+<script>
+"use strict";
+/*P84_EMBED_REVIEW_DATA*/
+const PAGE_SIZE=250, CHOICES=["IMPORT","CORRECT","REJECT","HOLD"];
+const STORE="ad-orientem-p84-2579-"+SUMMARY.p83_source_sha256.slice(0,16);
+const $=id=>document.getElementById(id);
+const escapeHtml=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const choiceStore=(()=>{try{return JSON.parse(localStorage.getItem(STORE)||"{}")}catch{return {}}})();
+const selections=(choiceStore&&typeof choiceStore==="object"&&!Array.isArray(choiceStore))?choiceStore:{};
+let page=0;
+function key(r){return r.physical_anchor_id+"|"+r.file_title+"|"+(r.original_sha1_claim||"");}
+function choice(r){const s=selections[key(r)];return CHOICES.includes(s?.decision)?s.decision:"UNREVIEWED";}
+function memo(r){return String(selections[key(r)]?.note||"");}
+function save(){try{localStorage.setItem(STORE,JSON.stringify(selections))}catch{}}
+const countries=[...new Set(RECORDS.map(r=>r.country))].sort();
+$("country").insertAdjacentHTML("beforeend",countries.map(s=>'<option value="'+escapeHtml(s)+'">'+escapeHtml(s)+'</option>').join(""));
+function visible(){
+const q=$("search").value.trim().toLocaleLowerCase(),country=$("country").value,d=$("decision").value;
+return RECORDS.filter(r=>(!country||r.country===country)&&(!d||(d==="PREVIEW_HOLD"?!r.preview_verified:choice(r)===d))&&(!q||[r.place_name,r.place_city_hint,r.country,r.file_title,r.physical_anchor_id,r.photographer,r.screening_disposition].join(" ").toLocaleLowerCase().includes(q)));
+}
+function setChoice(k,d){
+const r=RECORDS.find(x=>key(x)===k);if(!r||!CHOICES.includes(d))return;
+const previous=selections[k]||{};
+selections[k]={decision:d,note:String(previous.note||"")};save();render();
+}
+function changeNote(k,note){const previous=selections[k]||{};selections[k]={decision:CHOICES.includes(previous.decision)?previous.decision:"HOLD",note:String(note).slice(0,1200)};save();updateCounts();}
+function card(r){
+const k=key(r),current=choice(r),status=r.preview_verified?"Thumbnail acquired":"Thumbnail hold / live source fallback";
+const local=r.preview_verified?r.preview_local_path:"";
+const live=typeof r.preview_url==="string"&&r.preview_url.startsWith("https://")?r.preview_url:"";
+const img=local||live;
+const safeLink=r.source_url.startsWith("https://commons.wikimedia.org/")?r.source_url:"#";
+const options=[["IMPORT","Import"],["CORRECT","Import with corrections"],["REJECT","Reject"],["HOLD","Hold"]];
+return '<article><div class="photo">'+(img?'<img loading="lazy" decoding="async" alt="Research preview of '+escapeHtml(r.file_title)+'" src="'+escapeHtml(img)+'" data-live="'+escapeHtml(live)+'">':"")+'<div class="unavailable">Preview unavailable. Check exact Commons source.</div></div>'+
+'<div class="body"><h2>'+escapeHtml(r.place_name)+'</h2><div class="tags"><span class="tag">'+escapeHtml(r.country)+'</span><span class="tag">'+escapeHtml(r.place_city_hint||"City not corroborated")+'</span><span class="tag">'+escapeHtml(r.screening_disposition)+'</span></div>'+
+'<div class="small">'+escapeHtml(r.physical_anchor_id)+' · '+escapeHtml(status)+'</div><div class="small">'+escapeHtml(r.file_title)+'</div><div class="small">'+escapeHtml(r.license||r.rights_metadata_status)+' · '+escapeHtml(r.photographer||"Author not yet rechecked")+'</div>'+
+'<div class="small"><a href="'+escapeHtml(safeLink)+'" target="_blank" rel="noopener noreferrer">View exact Commons source</a> · Metadata: '+escapeHtml(r.source_meta_status||"unverified")+'</div>'+
+'<div class="control">'+options.map(([v,label])=>'<button type="button" data-key="'+escapeHtml(k)+'" data-choice="'+v+'" class="'+(current===v?"active":"")+'">'+label+'</button>').join("")+'</div>'+
+'<textarea data-note="'+escapeHtml(k)+'" placeholder="Required corrections, exact site evidence, visual concerns…">'+escapeHtml(memo(r))+'</textarea></div></article>';
+}
+function updateCounts(){
+const done=RECORDS.filter(r=>choice(r)!=="UNREVIEWED").length;
+const preview=RECORDS.filter(r=>r.preview_verified).length;
+$("stats").innerHTML='<span><strong>'+RECORDS.length+'</strong> source-screened assignments</span><span><strong>'+preview+'</strong> thumbnails acquired</span><span><strong>'+done+'</strong> decisions</span><span><strong>'+SUMMARY.anchors_accounted+'</strong> worldwide identities preserved</span><span><strong>'+SUMMARY.held_assignments+'</strong> additional source holds (not in review gallery)</span>';
+$("progress").style.width=(RECORDS.length?100*done/RECORDS.length:0)+"%";
+}
+function render(){
+const items=visible(),pages=Math.max(1,Math.ceil(items.length/PAGE_SIZE));page=Math.min(Math.max(0,page),pages-1);
+const subset=items.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE);
+$("gallery").innerHTML=subset.map(card).join("");
+$("gallery").querySelectorAll("img").forEach(im=>{im.onerror=()=>{if(!im.dataset.retried&&im.dataset.live&&im.src!==im.dataset.live){im.dataset.retried="yes";im.src=im.dataset.live;return}im.style.display="none";im.nextElementSibling.style.display="block"}});
+$("gallery").querySelectorAll("button[data-choice]").forEach(b=>b.onclick=()=>setChoice(b.dataset.key,b.dataset.choice));
+$("gallery").querySelectorAll("textarea[data-note]").forEach(t=>t.onchange=()=>changeNote(t.dataset.note,t.value));
+for(const id of ["page","page2"])$(id).textContent=(page+1)+" / "+pages;
+$("range").textContent=items.length?"Showing "+(page*PAGE_SIZE+1)+"–"+Math.min((page+1)*PAGE_SIZE,items.length)+" of "+items.length:"No candidates in this filter";
+$("bottom").textContent="One worldwide decisions file · no automatic publication";
+for(const id of ["prev","prev2"])$(id).disabled=page===0;
+for(const id of ["next","next2"])$(id).disabled=page+1>=pages;
+updateCounts();
+}
+for(const id of ["search","country","decision"])$(id).addEventListener(id==="search"?"input":"change",()=>{page=0;render()});
+for(const id of ["prev","prev2"])$(id).onclick=()=>{page--;render();window.scrollTo({top:0,behavior:"smooth"})};
+for(const id of ["next","next2"])$(id).onclick=()=>{page++;render();window.scrollTo({top:0,behavior:"smooth"})};
+$("export").onclick=()=>{
+const output={schema:"AO_P84_WORLDWIDE_DIRECTORY_ONE_REVIEW_DECISIONS_V1",p83_source_sha256:SUMMARY.p83_source_sha256,
+p84_screen_sha256:SUMMARY.p84_screen_sha256,all_directory_anchors:SUMMARY.anchors_accounted,
+candidate_count:RECORDS.length,decisions:RECORDS.map(r=>({physical_anchor_id:r.physical_anchor_id,
+file_title:r.file_title,original_sha1_claim:r.original_sha1_claim,
+country:r.country,source_url:r.source_url,screening_disposition:r.screening_disposition,
+thumbnail_verified:r.preview_verified,source_meta_status:r.source_meta_status,
+decision:choice(r),correction_note:memo(r)}))};
+const blob=new Blob([JSON.stringify(output,null,2)+"\n"],{type:"application/json"});
+const a=document.createElement("a");a.href=URL.createObjectURL(blob);
+a.download="ad-orientem-p84-worldwide-directory-decisions.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500);
+};
+$("import").onchange=async ev=>{
+const file=ev.target.files?.[0];if(!file)return;
+try{const parsed=JSON.parse(await file.text());
+if(parsed.schema!=="AO_P84_WORLDWIDE_DIRECTORY_ONE_REVIEW_DECISIONS_V1"||
+parsed.p83_source_sha256!==SUMMARY.p83_source_sha256||!Array.isArray(parsed.decisions)||parsed.candidate_count!==RECORDS.length||parsed.decisions.length!==RECORDS.length)throw Error("wrong campaign or incomplete decisions file");
+const known=new Set(RECORDS.map(key)),seen=new Set(),fresh={};
+for(const x of parsed.decisions){const k=key(x);
+if(!known.has(k)||seen.has(k)||!["UNREVIEWED",...CHOICES].includes(x.decision))throw Error("unexpected or repeated image identity");
+seen.add(k);if(x.decision!=="UNREVIEWED")fresh[k]={decision:x.decision,note:String(x.correction_note||"").slice(0,1200)};}
+Object.keys(selections).forEach(k=>delete selections[k]);Object.assign(selections,fresh);save();page=0;render();alert("Decisions loaded for this exact worldwide campaign.");
+}catch(e){alert("Cannot import: "+e.message)}ev.target.value="";
+};render();
+</script></body></html>
