@@ -79,6 +79,28 @@ try{
     assert.ok(row.hasMain&&row.title&&row.chars>0,route+" must expose visible main content and a heading");
     assert.ok(row.bodyOverflow<=1,route+" clips the phone document by "+row.bodyOverflow+"px at "+width);
     assert.ok(row.singleOwner<=1,route+" has multiple competing devotional owners");
+    if(route==="pray.litany_saints"){
+     const selector=await page.evaluate(()=>{
+      const buttons=[...document.querySelectorAll("#aoPray435930.open .aoBatch03LitanyUses button")];
+      return buttons.map(b=>({height:b.getBoundingClientRect().height,
+       background:getComputedStyle(b).backgroundColor,color:getComputedStyle(b).color}));
+     });
+     assert.equal(selector.length,4,"Keep four distinct private/public Litany editions");
+     assert.ok(selector.every(x=>x.height>=60),"Litany edition choices need 60px accessible mobile controls");
+     assert.ok(selector.every(x=>!/rgb\\(2(?:3\\d|4\\d|5\\d),\\s*2(?:3\\d|4\\d|5\\d),\\s*2(?:3\\d|4\\d|5\\d)\\)/.test(x.background)),
+      "Litany source choices should not retain light native button backgrounds");
+    }
+    if(route==="pray.little_crown"){
+     const prayer=await page.evaluate(()=>{
+      const el=document.querySelector("#aoPray435930.open .aoLittleCrownPrayerText");
+      const r=el?.getBoundingClientRect();
+      const visibleEnd=innerHeight-65;
+      return {top:r?.top,bottom:r?.bottom,visibleHeight:r?Math.max(0,Math.min(r.bottom,visibleEnd)-Math.max(0,r.top)):0,
+       font:el?parseFloat(getComputedStyle(el).fontSize):0};
+     });
+     assert.ok(prayer.visibleHeight>=22&&prayer.font>=19,
+      "Little Crown must show actual 19px+ source prayer on the 320/390 opening screen: "+JSON.stringify(prayer));
+    }
     if(capture.has(route)){
      const file="route-"+route.replace(/[^a-z0-9]+/gi,"-")+"-"+width+".png";
      await page.screenshot({path:resolve(dest,file),animations:"disabled"});
