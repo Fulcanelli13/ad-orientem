@@ -2,7 +2,7 @@
 // Ceremony FORM and the liturgical CELEBRATION are different axes. The latter
 // remains owned by the 1962 calendar/Proper resolver; NEVER substitute a Proper.
 import {normalizeMassForm,MASS_FORMS} from "./session-engine.js";
-import {m1AccessPreviewRequested,paintM1AccessRows,m1AccessRows} from "./m1-access-overview.js";
+import {m1AccessPreviewRequested,paintM1AccessRows,m1AccessRows,m1SelectedIntroit} from "./m1-access-overview.js";
 import {availableOptionalMassRites,composeOptionalMassRites} from "./full-mass-optional-rites.js";
 import {specialMassPresentation,renderSpecialMassContext} from "./full-mass-special-presentation.js";
 import {massCalendarPreflightContext,fillMassCalendarPreflight} from "./calendar-preflight-context.js";
@@ -272,7 +272,8 @@ export function mountFullMassPreflight({
       folio.innerHTML=
         '<aside class="aoMassFolioIdentity"><small data-folio-date></small>'+
         '<p class="aoMassFolioKicker" data-folio-kind></p><h2 data-folio-celebration></h2>'+
-        '<p class="aoMassFolioSeason" data-folio-season></p>'+
+        '<p class="aoMassFolioSeason" data-folio-season></p>'+ 
+         '<p data-m1-introit class="aoM1ActualIntroit" hidden></p>'+
         '<dl class="aoMassFolioSelections"><div><dt data-folio-label-ceremony></dt><dd data-folio-value-ceremony></dd></div>'+
         '<div><dt data-folio-label-reader></dt><dd data-folio-value-reader></dd></div></dl>'+
         '<details data-folio-calendar-details><summary data-folio-context-summary></summary>'+
@@ -663,6 +664,12 @@ export function mountFullMassPreflight({
     const sourceGate=getSourceGate();
     const localPreflight=getLocalOrationSummary?.()??null;
     const localReady=localPreflight?.ready!==false;
+    if(m1Preview){
+      const intro=folio.querySelector("[data-m1-introit]");
+      const incipit=m1SelectedIntroit(legacy,{ready:summary.canStart&&sourceGate.ready&&localReady});
+      intro.hidden=!incipit;
+      intro.textContent=incipit?l("Introit · ","Introït · ")+incipit:"";
+    }
     root.querySelector("[data-full-mass-resolver]").textContent=!localReady?
       l("Confirm the exact additional prayers before starting Mass.",
         "Confirmez les prières supplémentaires exactes avant de commencer la messe.") :
