@@ -10,6 +10,9 @@ on:
       - 'src/office/reviewed-hour-handoff.js'
       - 'src/office/annual-research-sweep.js'
       - 'src/office/universal-source-descriptors.js'
+      - 'src/office/pinned-filename-index.js'
+      - 'tests/divine-office-pinned-filename-index.mjs'
+      - 'data/office/source-index/roman-1960-pinned-latin-filenames.json'
       - 'tests/divine-office-universal-source-descriptors.mjs'
       - 'data/office/research/2026-office-pilot-ordo-roster.json'
       - 'tests/divine-office-research-roster.mjs'
@@ -57,6 +60,8 @@ jobs:
           node --test tests/divine-office-annual-research-sweep.mjs
           node --check src/office/universal-source-descriptors.js
           node --test tests/divine-office-universal-source-descriptors.mjs
+          node --check src/office/pinned-filename-index.js
+          node --test tests/divine-office-pinned-filename-index.mjs
           node --test tests/divine-office-research-roster.mjs
           node --check src/office/annual-capture-ledger.js
           node --check scripts/office/emit-annual-capture-ledger.mjs
@@ -111,6 +116,34 @@ jobs:
                 throw Error("OFFICE_ANNUAL_SWEEP_FABRICATED_COVERAGE");
             }
           '
+      - name: Check all civil dates against pinned Latin filenames only
+        run: |
+          set -euo pipefail
+          INDEX="data/office/source-index/roman-1960-pinned-latin-filenames.json"
+          for year in 2026 2028; do
+            node scripts/office/sweep-annual-research.mjs \
+              --year "$year" --source-index "$INDEX" \
+              --out "$RUNNER_TEMP/office-filename-${year}.json"
+          done
+          node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            for(const [year,total,listed,notListed] of
+                [[2026,391,311,80],[2028,388,307,81]]){
+              const p=process.env.RUNNER_TEMP+"/office-filename-"+year+".json";
+              const doc=JSON.parse(readFileSync(p,"utf8"));
+              const s=doc.summary;
+              if(s.pinnedDirectoryFilenamesIndexed!==1185||
+                 s.totalUnverifiedSourcePathLeads!==total||
+                 s.proposedPathsWithExactPinnedLatinFilename!==listed||
+                 s.proposedPathsWithoutExactPinnedLatinFilename!==notListed||
+                 s.sourceFilesVerifiedByThisSweep!==0||
+                 s.researchCandidateHours!==0||
+                 s.completeTrilingualHours!==0||
+                 s.publishedHours!==0)
+                throw Error("OFFICE_FILENAME_INDEX_CANNOT_CERTIFY_HOURS");
+            }
+          '
+      # No source file contents fetched: GitHub file-name index only.
       - name: Verify evidence-scoped six-date Office candidate pilot
         run: |
           node scripts/office/sweep-annual-research.mjs \
