@@ -187,7 +187,7 @@ export function installSequentialDevotionalReader({
       // Private historical Litany invocations are call-and-response prayer
       // text, not instructions. Do not dim neighbouring source lines: a
       // congregant must be able to follow the complete printed witness.
-      const litanySourceLine=kind==="litany"&&Boolean(p.closest(".aoP435930LitanyVerses"));
+      const litanySourceLine=kind==="litany"&&Boolean(p.closest(".aoLitanyVerses"));
       const adjacent=Math.abs(i-found)===1;
       const power=canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary||litanySourceLine?"1"
         :i===found?"1":kind==="novena"?(adjacent?".80":".65"):(adjacent?".56":".30");
