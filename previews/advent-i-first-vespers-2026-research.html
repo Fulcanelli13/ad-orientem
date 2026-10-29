@@ -80,7 +80,7 @@ const status=document.getElementById("status");
 const reader=document.getElementById("reader");
 const bar=document.getElementById("bar");
 const card=document.getElementById("card");
-let blocks=[],index=0,mode="fr";
+let blocks=[],frames=[],index=0,mode="fr",readingView="focus";
 const names={
  OPENING:"Opening · Deus in adjutorium",
  SEASONAL_OPENING_RESPONSE:"Alleluia",
@@ -108,27 +108,42 @@ function el(tag,text,klass){
  if(klass)n.className=klass;
  return n;
 }
+function steps(){return readingView==="focus"?frames:blocks}
+function eventIndex(){return readingView==="focus"?frames[index]?.eventIndex:index}
 function paint(){
- const block=blocks[index];if(!block)return;
+ const block=steps()[index];if(!block)return;
  const focus=names[block.kind]||block.kind;
  card.replaceChildren();
- const header=el("div",undefined,"card-head");
- let title=focus;
+ const head=el("div",undefined,"card-head");
+ let heading=focus;
  if(block.kind==="PSALM_PORTION"){
-  title=block.sourceId?.split("#")[0].split("Psalm").at(-1)+
-    " · verses "+block.sourceId?.split("#")[1];
+  heading=block.sourceId?.split("#")[0].split("Psalm").at(-1)+
+   " · verses "+block.sourceId?.split("#")[1];
  }
  if(block.kind==="ANTIPHON_BEFORE"||block.kind==="ANTIPHON_AFTER"){
-  if(block.position)title+=" · Psalm portion "+block.position;
-  else title+=" · Magnificat";
+  if(block.position)heading+=" · Psalm portion "+block.position;
+  else heading+=" · Magnificat";
  }
- header.append(el("h2",title),el("span",block.sourceId||"General rubrics","ref"));
- card.append(header);
+ head.append(el("h2",heading),el("span",block.sourceId||"General rubrics","ref"));
+ card.append(head);
+ const total=steps().length;
  document.getElementById("back").disabled=index===0;
- document.getElementById("next").disabled=index===blocks.length-1;
- bar.style.width=String((index+1)/blocks.length*100)+"%";
+ document.getElementById("next").disabled=index===total-1;
+ bar.style.width=String((index+1)/total*100)+"%";
+ bar.setAttribute("role","progressbar");
+ bar.setAttribute("aria-valuemin","1");
+ bar.setAttribute("aria-valuemax",String(total));
+ bar.setAttribute("aria-valuenow",String(index+1));
+ bar.setAttribute("aria-label","Reading progression");
+ if(readingView==="focus"&&block.subTotal>1){
+  const part=block.focusType==="HYMN_STANZA"?"Stanza":
+   block.focusType==="MAGNIFICAT_VERSE"?"Magnificat verse":"Psalm verse";
+  const detail=block.label?" · "+block.label:"";
+  card.append(el("p",part+" "+(block.subIndex+1)+
+   " of "+block.subTotal+detail,"focus-cue"));
+ }
  if(block.kind==="RESEARCH_CALENDAR_NOTICE"){
-  card.append(el("p",block.message,"notice"));return;
+  card.append(el("p",blocks[eventIndex()].message,"notice"));return;
  }
  const languages=mode==="la"?["la"]:["la",mode];
  const columns=el("div",undefined,"columns"+(languages.length===1?" single":""));
@@ -144,9 +159,11 @@ function paint(){
   columns.append(panel);
  }
  card.append(columns);
- document.getElementById("back").disabled=index===0;
- document.getElementById("next").disabled=index===blocks.length-1;
- bar.style.width=String((index+1)/blocks.length*100)+"%";
+}
+function go(delta){
+ const target=index+delta;
+ if(target<0||target>=steps().length)return;
+ index=target;paint();card.scrollIntoView({behavior:"instant",block:"start"});
 }
 for(const b of document.querySelectorAll("[data-mode]"))b.addEventListener("click",()=>{
  mode=b.dataset.mode;
@@ -157,13 +174,24 @@ for(const b of document.querySelectorAll("[data-mode]"))b.addEventListener("clic
  }
  paint();
 });
+for(const b of document.querySelectorAll("[data-view]"))b.addEventListener("click",()=>{
+ const selected=b.dataset.view;
+ if(!["focus","whole"].includes(selected)||selected===readingView)return;
+ const anchor=eventIndex();
+ readingView=selected;
+ index=readingView==="focus"?
+  frames.findIndex(frame=>frame.eventIndex===anchor):anchor;
+ if(index<0){index=0;readingView="focus";}
+ for(const item of document.querySelectorAll("[data-view]")){
+  const active=item.dataset.view===readingView;
+  item.classList.toggle("active",active);
+  item.setAttribute("aria-pressed",String(active));
+ }
+ paint();card.scrollIntoView({behavior:"instant",block:"start"});
+});
 document.querySelector('[data-mode="fr"]').click();
-document.getElementById("back").addEventListener("click",()=>{
- if(index>0){index--;paint();}
-});
-document.getElementById("next").addEventListener("click",()=>{
- if(index<blocks.length-1){index++;paint();}
-});
+document.getElementById("back").addEventListener("click",()=>go(-1));
+document.getElementById("next").addEventListener("click",()=>go(1));
 try{
  const witnessResponse=await fetch("../data/office/research/advent-i-2026-universal-commemoration.json",{cache:"no-store"});
  if(!witnessResponse.ok)throw Error("Advent I calendar evidence unavailable");
@@ -176,7 +204,13 @@ try{
     result.preview?.status!=="PRIVATE_RESEARCH_PREVIEW_SOURCE_SEQUENCE_ONLY"||
     !Array.isArray(result.preview.blocks)||!result.preview.blocks.length)
   throw Error(result.reason||"Source assembly withheld");
+ const focusModel=buildAdventI2026ReadingFocus({preview:result.preview});
+ if(focusModel.status!=="RESEARCH_VERSE_AND_STANZA_FOCUS_NOT_CERTIFIED"||
+   focusModel.sourceTextAltered!==false||
+   focusModel.publishable!==false||focusModel.published!==false)
+  throw Error(focusModel.reason||"Source-preserving focus unavailable");
  blocks=result.preview.blocks;
+ frames=focusModel.frames;
  status.textContent="Source preview assembled for universal-calendar solo recitation. All certification and publication gates remain closed.";
  reader.hidden=false;paint();
 }catch(err){
