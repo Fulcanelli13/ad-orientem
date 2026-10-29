@@ -3,6 +3,7 @@ import {calendarCustomArticle} from "../calendar/customs-read-model.js";
 import {calendarCustomHistoricalVariants} from "../calendar/customs-22-regional-variants.js";
 
 const ROOT="ao-customs-library-root";
+const REGIONAL_CSS=".aoCustRegionalVariants{margin-top:18px}.aoCustRegionalVariants summary{min-height:44px;display:flex;align-items:center;cursor:pointer}.aoCustRegionalVariant{margin:12px 0 0;padding:14px 0;border-top:1px solid #514638}.aoCustRegionalVariant h3{font-size:17px;line-height:1.4;color:#e6d2aa;margin:0 0 8px}.aoCustRegionalVariant p{line-height:1.6;margin:7px 0}.aoCustRegionalVariant a{color:#e0c98f;overflow-wrap:anywhere}";
 const E=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const DATA=Object.freeze({
   customs:"../../data/customs/customs-atlas-seed.v1.json",
@@ -157,7 +158,7 @@ function makeOwner(win=globalThis){
     state.archive=false;state.custom=customId;state.research=null;state.q="";state.limit=60;
     root=win.document.createElement("section");root.id=ROOT;root.setAttribute("role","dialog");root.setAttribute("aria-modal","true");
     root.setAttribute("aria-label",L("Customs and Traditions","Coutumes et Traditions"));
-    root.innerHTML='<style>'+CSS+'</style><main class="aoCustFrame"></main>';win.document.body.appendChild(root);
+    root.innerHTML='<style>'+CSS+REGIONAL_CSS+'</style><main class="aoCustFrame"></main>';win.document.body.appendChild(root);
     root.addEventListener("click",onClick);root.addEventListener("submit",onSubmit);root.addEventListener("change",onChange);
     root.addEventListener("keydown",event=>{if(event.key==="Escape"){event.preventDefault();close();}});
     paint();root.querySelector("[data-cust-close]")?.focus();
