@@ -115,7 +115,7 @@ export async function composeOfficeSourceAcceptanceSlice({
   // Known missing sections or unresolved source macros are research holds.
   // A programmer error or unexpected host failure is not silently swallowed.
   const code=String(error?.message??"");
-  if(!/^(?:OFFICE_SOURCE_(?:SECTION_EMPTY|DIRECTIVE_UNRESOLVED|TEXT_INVALID|SECTION_EXCESSIVE|LINE_INVALID)|OFFICE_DRAFT_PARSED_SECTION_UNTRUSTED|OFFICE_PINNED_SOURCE_PROVENANCE_MISMATCH)/u.test(code))
+  if(!/^(?:OFFICE_SOURCE_(?:SECTION_EMPTY|DIRECTIVE_UNRESOLVED|TEXT_INVALID|SECTION_EXCESSIVE|LINE_INVALID)|OFFICE_AT_(?:SOURCE_|REFERENCE_|OTHER_MACRO_OR_CONDITIONAL_UNRESOLVED)|OFFICE_DRAFT_PARSED_SECTION_UNTRUSTED|OFFICE_PINNED_SOURCE_PROVENANCE_MISMATCH)/u.test(code))
    throw error;
   return fail("OFFICE_SOURCE_SLICE_COMPOSITION_BLOCKED:"+code);
  }
