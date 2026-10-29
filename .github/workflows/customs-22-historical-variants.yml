@@ -5,6 +5,8 @@ on:
     paths:
       - "src/calendar/customs-22-regional-variants.js"
       - "src/calendar/calendar-runtime.js"
+      - "src/calendar/customs-search.js"
+      - "src/customs/customs-library.js"
       - "src/customs/customs-browser.js"
       - "tests/customs-22-existing-article-enrichment.mjs"
       - ".github/workflows/customs-22-historical-variants.yml"
@@ -24,6 +26,8 @@ jobs:
         run: |
           node --check src/calendar/customs-22-regional-variants.js
           node --check src/calendar/calendar-runtime.js
+          node --check src/calendar/customs-search.js
+          node --check src/customs/customs-library.js
           node --check src/customs/customs-browser.js
           node --check tests/customs-22-existing-article-enrichment.mjs
       - name: Validate 22 bilingual variants on 12 published parents, zero extra card/date/indulgence/rubric
