@@ -725,7 +725,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  font:600 12px/1.5 var(--ao-font-ui,system-ui,sans-serif);
  letter-spacing:.035em;overflow-wrap:anywhere;
 }
-#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll .aoP435930LitanyVerses{
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll .aoLitanyVerses{
  display:grid;gap:13px;min-width:0;max-width:100%;
 }
 #aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll .aoLitanyInvocation{
