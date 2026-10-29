@@ -1,0 +1,1680 @@
+{
+  "schema": "AO_SACRED_ART_TWO_OPEN_DATA_SOURCE_PROBE_V1",
+  "date": "2026-10-29",
+  "imagesDownloaded": 0,
+  "sources": [
+    {
+      "name": "flemish-sets",
+      "url": "https://datahub.vlaamsekunstcollectie.be/oai/?verb=ListSets",
+      "status": "ACCESSIBLE",
+      "imageBytes": 0,
+      "httpCode": 200,
+      "type": "text/xml; charset=utf8",
+      "sets": [
+        {
+          "setSpec": "institution:musea_brugge",
+          "setName": "Musea Brugge"
+        },
+        {
+          "setSpec": "creator:jules_lagae",
+          "setName": "Jules Lagae"
+        },
+        {
+          "setSpec": "creator:lagae_jules",
+          "setName": "Lagae, Jules"
+        },
+        {
+          "setSpec": "period:19de_eeuw",
+          "setName": "19de eeuw"
+        },
+        {
+          "setSpec": "period:19th_century",
+          "setName": "19th century"
+        },
+        {
+          "setSpec": "period:18de_eeuw",
+          "setName": "18de eeuw"
+        },
+        {
+          "setSpec": "period:18th_century",
+          "setName": "18th century"
+        },
+        {
+          "setSpec": "period:16de_eeuw",
+          "setName": "16de eeuw"
+        },
+        {
+          "setSpec": "period:16th_century",
+          "setName": "16th century"
+        },
+        {
+          "setSpec": "creator:anoniem",
+          "setName": "anoniem"
+        },
+        {
+          "setSpec": "period:15de_eeuw",
+          "setName": "15de eeuw"
+        },
+        {
+          "setSpec": "period:15th_century",
+          "setName": "15th century"
+        },
+        {
+          "setSpec": "creator:christiaan_van_de_voorde",
+          "setName": "Christiaan van de Voorde"
+        },
+        {
+          "setSpec": "creator:van_de_voorde_christiaan",
+          "setName": "van de Voorde, Christiaan"
+        },
+        {
+          "setSpec": "creator:jacob_van_daele",
+          "setName": "Jacob van Daele"
+        },
+        {
+          "setSpec": "creator:daele_jacob_van",
+          "setName": "Daele, Jacob van"
+        },
+        {
+          "setSpec": "period:13de_eeuw",
+          "setName": "13de eeuw"
+        },
+        {
+          "setSpec": "period:13th_century",
+          "setName": "13th century"
+        },
+        {
+          "setSpec": "creator:johannes_van_giessen",
+          "setName": "Johannes van Giessen"
+        },
+        {
+          "setSpec": "creator:giessen_johannes_van",
+          "setName": "Giessen, Johannes van"
+        },
+        {
+          "setSpec": "creator:ja_keppelman",
+          "setName": "J.A. Keppelman"
+        },
+        {
+          "setSpec": "creator:keppelman_ja",
+          "setName": "Keppelman, J.A."
+        },
+        {
+          "setSpec": "period:17de_eeuw",
+          "setName": "17de eeuw"
+        },
+        {
+          "setSpec": "period:17th_century",
+          "setName": "17th century"
+        },
+        {
+          "setSpec": "creator:hans_rucker",
+          "setName": "Hans Rucker"
+        },
+        {
+          "setSpec": "creator:rucker_hans",
+          "setName": "Rucker, Hans"
+        },
+        {
+          "setSpec": "creator:gorgen_choquet",
+          "setName": "Gorgen Choquet"
+        },
+        {
+          "setSpec": "creator:choquet_gorgen",
+          "setName": "Choquet, Gorgen"
+        },
+        {
+          "setSpec": "creator:adriaen_van_wesel",
+          "setName": "Adriaen Van Wesel"
+        },
+        {
+          "setSpec": "creator:van_wesel_adriaen",
+          "setName": "Van Wesel, Adriaen"
+        },
+        {
+          "setSpec": "creator:cornelis_i_schut",
+          "setName": "Cornelis (I) Schut"
+        },
+        {
+          "setSpec": "creator:schut_cornelis_i",
+          "setName": "Schut, Cornelis (I)"
+        },
+        {
+          "setSpec": "creator:jacques_labus",
+          "setName": "Jacques Labus"
+        },
+        {
+          "setSpec": "creator:labus_jacques",
+          "setName": "Labus, Jacques"
+        },
+        {
+          "setSpec": "creator:jan_crabbe",
+          "setName": "Jan Crabbe"
+        },
+        {
+          "setSpec": "creator:crabbe_jan",
+          "setName": "Crabbe, Jan"
+        },
+        {
+          "setSpec": "creator:iohann_henrich_hamer",
+          "setName": "Iohann Henrich Hamer"
+        },
+        {
+          "setSpec": "creator:hamer_iohann_henrich",
+          "setName": "Hamer, Iohann Henrich"
+        },
+        {
+          "setSpec": "creator:pieter_i_bruegel",
+          "setName": "Pieter (I) Bruegel"
+        },
+        {
+          "setSpec": "creator:bruegel_pieter_i",
+          "setName": "Bruegel, Pieter (I)"
+        },
+        {
+          "setSpec": "creator:pieter_ii_brueghel",
+          "setName": "Pieter (II) Brueghel"
+        },
+        {
+          "setSpec": "creator:brueghel_pieter_ii",
+          "setName": "Brueghel, Pieter (II)"
+        },
+        {
+          "setSpec": "creator:jan_i_brueghel",
+          "setName": "Jan (I) Brueghel"
+        },
+        {
+          "setSpec": "creator:brueghel_jan_i",
+          "setName": "Brueghel, Jan (I)"
+        },
+        {
+          "setSpec": "subject:religieuze_voorstellingen",
+          "setName": "religieuze voorstellingen"
+        },
+        {
+          "setSpec": "subject:landschappen",
+          "setName": "landschappen"
+        },
+        {
+          "setSpec": "creator:jan_anton_garemijn",
+          "setName": "Jan Anton Garemijn"
+        },
+        {
+          "setSpec": "creator:garemijn_jan_anton",
+          "setName": "Garemijn, Jan Anton"
+        },
+        {
+          "setSpec": "creator:andreas_schelfhout",
+          "setName": "Andreas Schelfhout"
+        },
+        {
+          "setSpec": "creator:schelfhout_andreas",
+          "setName": "Schelfhout, Andreas"
+        },
+        {
+          "setSpec": "subject:diervoorstellingen",
+          "setName": "diervoorstellingen"
+        },
+        {
+          "setSpec": "subject:genrestukken",
+          "setName": "genrestukken"
+        },
+        {
+          "setSpec": "subject:portretten",
+          "setName": "portretten"
+        },
+        {
+          "setSpec": "creator:pieter_pourbus",
+          "setName": "Pieter Pourbus"
+        },
+        {
+          "setSpec": "creator:pourbus_pieter",
+          "setName": "Pourbus, Pieter"
+        },
+        {
+          "setSpec": "creator:adriaen_isenbrant",
+          "setName": "Adriaen Isenbrant"
+        },
+        {
+          "setSpec": "creator:isenbrant_adriaen",
+          "setName": "Isenbrant, Adriaen"
+        },
+        {
+          "setSpec": "creator:jef_van_der_veken",
+          "setName": "Jef Van der Veken"
+        },
+        {
+          "setSpec": "creator:veken_jef_van_der",
+          "setName": "Veken, Jef Van der"
+        },
+        {
+          "setSpec": "creator:frans_van_cuyck_de_myerhop",
+          "setName": "Frans van Cuyck de Myerhop"
+        },
+        {
+          "setSpec": "creator:cuyck_de_myerhop_frans_van",
+          "setName": "Cuyck de Myerhop, Frans van"
+        },
+        {
+          "setSpec": "subject:stillevens",
+          "setName": "stillevens"
+        },
+        {
+          "setSpec": "creator:alexander_adriaenssen",
+          "setName": "Alexander Adriaenssen"
+        },
+        {
+          "setSpec": "creator:adriaenssen_alexander",
+          "setName": "Adriaenssen, Alexander"
+        },
+        {
+          "setSpec": "creator:gaspar_de_crayer",
+          "setName": "Gaspar de Crayer"
+        },
+        {
+          "setSpec": "creator:crayer_gaspar_de",
+          "setName": "Crayer, Gaspar de"
+        },
+        {
+          "setSpec": "creator:franciscus_josephus_kinsoen",
+          "setName": "Franciscus Josephus Kinsoen"
+        },
+        {
+          "setSpec": "creator:kinsoen_franciscus_josephus",
+          "setName": "Kinsoen, Franciscus Josephus"
+        },
+        {
+          "setSpec": "creator:jacob_i_van_oost",
+          "setName": "Jacob (I) van Oost"
+        },
+        {
+          "setSpec": "creator:oost_jacob_i_van",
+          "setName": "Oost, Jacob (I) van"
+        },
+        {
+          "setSpec": "subject:interieurs",
+          "setName": "interieurs"
+        },
+        {
+          "setSpec": "creator:franois_antoine_bossuet",
+          "setName": "François Antoine Bossuet"
+        },
+        {
+          "setSpec": "creator:bossuet_franois_antoine",
+          "setName": "Bossuet, François Antoine"
+        },
+        {
+          "setSpec": "subject:stadsgezichten",
+          "setName": "stadsgezichten"
+        },
+        {
+          "setSpec": "creator:joseph_octave_van_der_donckt",
+          "setName": "Joseph Octave van der Donckt"
+        },
+        {
+          "setSpec": "creator:franciscus_joseph_octave_van_der_donckt",
+          "setName": "Franciscus Joseph Octave van der Donckt"
+        },
+        {
+          "setSpec": "creator:donckt_franciscus_joseph_octave_van_der",
+          "setName": "Donckt, Franciscus Joseph Octave van der"
+        },
+        {
+          "setSpec": "creator:joseph_benot_suve",
+          "setName": "Joseph Benoît Suvée"
+        },
+        {
+          "setSpec": "creator:suve_joseph_benot",
+          "setName": "Suvée, Joseph Benoît"
+        },
+        {
+          "setSpec": "subject:zelfportretten",
+          "setName": "zelfportretten"
+        },
+        {
+          "setSpec": "creator:alphonse_asselbergs",
+          "setName": "Alphonse Asselbergs"
+        },
+        {
+          "setSpec": "creator:asselbergs_alphonse",
+          "setName": "Asselbergs, Alphonse"
+        },
+        {
+          "setSpec": "creator:isaac_denies",
+          "setName": "Isaac Denies"
+        },
+        {
+          "setSpec": "creator:denies_isaac",
+          "setName": "Denies, Isaac"
+        },
+        {
+          "setSpec": "creator:joris_van_son",
+          "setName": "Joris van Son"
+        },
+        {
+          "setSpec": "creator:son_joris_van",
+          "setName": "Son, Joris van"
+        },
+        {
+          "setSpec": "creator:jan_van_goyen",
+          "setName": "Jan van Goyen"
+        },
+        {
+          "setSpec": "creator:jan_josefsz_van_goyen",
+          "setName": "Jan Josefsz. van Goyen"
+        },
+        {
+          "setSpec": "creator:goyen_jan_josefsz_van",
+          "setName": "Goyen, Jan Josefsz. van"
+        },
+        {
+          "setSpec": "subject:zeegezichten",
+          "setName": "zeegezichten"
+        },
+        {
+          "setSpec": "subject:griffioen",
+          "setName": "griffioen"
+        },
+        {
+          "setSpec": "subject:haan",
+          "setName": "haan"
+        },
+        {
+          "setSpec": "subject:leeuw",
+          "setName": "leeuw"
+        },
+        {
+          "setSpec": "subject:huwelijkstrouw",
+          "setName": "huwelijkstrouw"
+        },
+        {
+          "setSpec": "subject:kraanvogel",
+          "setName": "kraanvogel"
+        },
+        {
+          "setSpec": "creator:peter_paul_rubens",
+          "setName": "Peter Paul Rubens"
+        },
+        {
+          "setSpec": "creator:rubens_peter_paul",
+          "setName": "Rubens, Peter Paul"
+        },
+        {
+          "setSpec": "creator:jan_frans_legillon",
+          "setName": "Jan Frans Legillon"
+        },
+        {
+          "setSpec": "creator:legillon_jan_frans",
+          "setName": "Legillon, Jan Frans"
+        },
+        {
+          "setSpec": "creator:henri_victor_wolvens",
+          "setName": "Henri Victor Wolvens"
+        },
+        {
+          "setSpec": "creator:wolvens_henri_victor",
+          "setName": "Wolvens, Henri Victor"
+        },
+        {
+          "setSpec": "period:20ste_eeuw",
+          "setName": "20ste eeuw"
+        },
+        {
+          "setSpec": "period:20th_century",
+          "setName": "20th century"
+        },
+        {
+          "setSpec": "creator:ambrosius_benson",
+          "setName": "Ambrosius Benson"
+        },
+        {
+          "setSpec": "creator:benson_ambrosius",
+          "setName": "Benson, Ambrosius"
+        },
+        {
+          "setSpec": "creator:gilbert_decock",
+          "setName": "Gilbert Decock"
+        },
+        {
+          "setSpec": "creator:decock_gilbert",
+          "setName": "Decock, Gilbert"
+        },
+        {
+          "setSpec": "subject:abstract",
+          "setName": "abstract"
+        },
+        {
+          "setSpec": "creator:paul_josef_de_cock",
+          "setName": "Paul Josef de Cock"
+        },
+        {
+          "setSpec": "creator:cock_paul_josef_de",
+          "setName": "Cock, Paul Josef de"
+        },
+        {
+          "setSpec": "creator:joseph_thodore_coosemans",
+          "setName": "Joseph Théodore Coosemans"
+        },
+        {
+          "setSpec": "creator:coosemans_joseph_thodore",
+          "setName": "Coosemans, Joseph Théodore"
+        },
+        {
+          "setSpec": "creator:jan_hals",
+          "setName": "Jan Hals"
+        },
+        {
+          "setSpec": "creator:hals_jan",
+          "setName": "Hals, Jan"
+        },
+        {
+          "setSpec": "creator:luc_peire",
+          "setName": "Luc Peire"
+        },
+        {
+          "setSpec": "creator:peire_luc",
+          "setName": "Peire, Luc"
+        },
+        {
+          "setSpec": "creator:alvaro_sanchez",
+          "setName": "Alvaro Sanchez"
+        },
+        {
+          "setSpec": "creator:sanchez_alvaro",
+          "setName": "Sanchez, Alvaro"
+        },
+        {
+          "setSpec": "creator:nicolaes_maes",
+          "setName": "Nicolaes Maes"
+        },
+        {
+          "setSpec": "creator:maes_nicolaes",
+          "setName": "Maes, Nicolaes"
+        },
+        {
+          "setSpec": "creator:antonius_claeissens",
+          "setName": "Antonius Claeissens"
+        },
+        {
+          "setSpec": "creator:claeissens_antonius",
+          "setName": "Claeissens, Antonius"
+        },
+        {
+          "setSpec": "creator:abel_grimmer",
+          "setName": "Abel Grimmer"
+        },
+        {
+          "setSpec": "creator:grimmer_abel",
+          "setName": "Grimmer, Abel"
+        },
+        {
+          "setSpec": "creator:jacob_de_backer",
+          "setName": "Jacob de Backer"
+        },
+        {
+          "setSpec": "creator:backer_jacob_de",
+          "setName": "Backer, Jacob de"
+        },
+        {
+          "setSpec": "creator:adriaen_pietersz_van_de_venne",
+          "setName": "Adriaen Pietersz. van de Venne"
+        },
+        {
+          "setSpec": "creator:venne_adriaen_pietersz_van_de",
+          "setName": "Venne, Adriaen Pietersz. van de"
+        },
+        {
+          "setSpec": "creator:cornelis_van_cleve",
+          "setName": "Cornelis van Cleve"
+        },
+        {
+          "setSpec": "creator:cleve_cornelis_van",
+          "setName": "Cleve, Cornelis van"
+        },
+        {
+          "setSpec": "creator:jan_van_hemessen",
+          "setName": "Jan van Hemessen"
+        },
+        {
+          "setSpec": "creator:hemessen_jan_van",
+          "setName": "Hemessen, Jan van"
+        },
+        {
+          "setSpec": "creator:paul_jean_clays",
+          "setName": "Paul Jean Clays"
+        },
+        {
+          "setSpec": "creator:clays_paul_jean",
+          "setName": "Clays, Paul Jean"
+        },
+        {
+          "setSpec": "creator:jean_baptiste_van_acker",
+          "setName": "Jean Baptiste Van Acker"
+        },
+        {
+          "setSpec": "creator:acker_jean_baptiste_van",
+          "setName": "Acker, Jean Baptiste van"
+        },
+        {
+          "setSpec": "creator:franois_xaver_henri_verbeeck",
+          "setName": "François Xaver Henri Verbeeck"
+        },
+        {
+          "setSpec": "creator:verbeeck_franois_xaver_henri",
+          "setName": "Verbeeck, François Xaver Henri"
+        },
+        {
+          "setSpec": "subject:allegorie",
+          "setName": "allegorie"
+        },
+        {
+          "setSpec": "subject:figuurvoorstellingen",
+          "setName": "figuurvoorstellingen"
+        },
+        {
+          "setSpec": "creator:thodore_fourmois",
+          "setName": "Théodore Fourmois"
+        },
+        {
+          "setSpec": "creator:fourmois_thodore",
+          "setName": "Fourmois, Théodore"
+        },
+        {
+          "setSpec": "creator:jean_charles_verbrugge",
+          "setName": "Jean Charles Verbrugge"
+        },
+        {
+          "setSpec": "creator:verbrugge_jean_charles",
+          "setName": "Verbrugge, Jean Charles"
+        },
+        {
+          "setSpec": "subject:topografie",
+          "setName": "topografie"
+        },
+        {
+          "setSpec": "creator:jacob_ii_de_gheyn",
+          "setName": "Jacob (II) de Gheyn"
+        },
+        {
+          "setSpec": "creator:gheyn_jacob_ii_de",
+          "setName": "Gheyn, Jacob (II) de"
+        },
+        {
+          "setSpec": "creator:pieter_ii_claeissens",
+          "setName": "Pieter (II) Claeissens"
+        },
+        {
+          "setSpec": "creator:claeissens_pieter_ii",
+          "setName": "Claeissens, Pieter (II)"
+        },
+        {
+          "setSpec": "creator:pirre_joseph_verhaghen",
+          "setName": "Pièrre Joseph Verhaghen"
+        },
+        {
+          "setSpec": "creator:verhaghen_pirre_joseph",
+          "setName": "Verhaghen, Pièrre Joseph"
+        },
+        {
+          "setSpec": "creator:augustin_van_den_berghe",
+          "setName": "Augustin van den Berghe"
+        },
+        {
+          "setSpec": "creator:berghe_augustin_van_den",
+          "setName": "Berghe, Augustin van den"
+        },
+        {
+          "setSpec": "creator:edouard_auguste_wallays",
+          "setName": "Edouard Auguste Wallays"
+        },
+        {
+          "setSpec": "creator:wallays_edouard_auguste",
+          "setName": "Wallays, Edouard Auguste"
+        },
+        {
+          "setSpec": "creator:abraham_van_den_hecken",
+          "setName": "Abraham van den Hecken"
+        },
+        {
+          "setSpec": "creator:hecken_abraham_van_den",
+          "setName": "Hecken, Abraham van den"
+        },
+        {
+          "setSpec": "creator:johannes_beerblock",
+          "setName": "Johannes Beerblock"
+        },
+        {
+          "setSpec": "creator:beerblock_johannes",
+          "setName": "Beerblock, Johannes"
+        },
+        {
+          "setSpec": "creator:jean_franois_xavier_roffiaen",
+          "setName": "Jean François Xavier Roffiaen"
+        },
+        {
+          "setSpec": "creator:roffiaen_jean_franois_xavier",
+          "setName": "Roffiaen, Jean François Xavier"
+        },
+        {
+          "setSpec": "creator:antonius_suweyns",
+          "setName": "Antonius Suweyns"
+        },
+        {
+          "setSpec": "creator:suweyns_antonius",
+          "setName": "Suweyns, Antonius"
+        },
+        {
+          "setSpec": "creator:frans_francken_ii",
+          "setName": "Frans Francken II"
+        },
+        {
+          "setSpec": "creator:frans_ii_francken",
+          "setName": "Frans (II) Francken"
+        },
+        {
+          "setSpec": "creator:francken_frans_ii",
+          "setName": "Francken, Frans (II)"
+        },
+        {
+          "setSpec": "creator:joseph_denis_odevaere",
+          "setName": "Joseph Denis Odevaere"
+        },
+        {
+          "setSpec": "creator:odevaere_joseph_denis",
+          "setName": "Odevaere, Joseph Denis"
+        },
+        {
+          "setSpec": "creator:aelbert_cuyp",
+          "setName": "Aelbert Cuyp"
+        },
+        {
+          "setSpec": "creator:cuyp_aelbert",
+          "setName": "Cuyp, Aelbert"
+        },
+        {
+          "setSpec": "creator:monogrammist_aw",
+          "setName": "monogrammist A.W."
+        },
+        {
+          "setSpec": "subject:heraldiek",
+          "setName": "heraldiek"
+        },
+        {
+          "setSpec": "creator:joos_van_cleve",
+          "setName": "Joos Van Cleve"
+        },
+        {
+          "setSpec": "creator:cleve_joos_van",
+          "setName": "Cleve, Joos Van"
+        },
+        {
+          "setSpec": "creator:paulus_pontius_i",
+          "setName": "Paulus Pontius I"
+        },
+        {
+          "setSpec": "creator:paulus_pontius",
+          "setName": "Paulus Pontius"
+        },
+        {
+          "setSpec": "creator:pontius_paulus",
+          "setName": "Pontius, Paulus"
+        },
+        {
+          "setSpec": "creator:matthias_de_visch",
+          "setName": "Matthias de Visch"
+        },
+        {
+          "setSpec": "creator:visch_matthias_de",
+          "setName": "Visch, Matthias de"
+        },
+        {
+          "setSpec": "creator:peeter_van_bredael",
+          "setName": "Peeter van Bredael"
+        },
+        {
+          "setSpec": "creator:bredael_peeter_van",
+          "setName": "Bredael, Peeter van"
+        },
+        {
+          "setSpec": "subject:dorpsgezichten",
+          "setName": "dorpsgezichten"
+        },
+        {
+          "setSpec": "creator:adlade_labille_guiard",
+          "setName": "Adélaïde Labille-Guiard"
+        },
+        {
+          "setSpec": "creator:labille_guiard_adlade",
+          "setName": "Labille-Guiard, Adélaïde"
+        },
+        {
+          "setSpec": "creator:franois_andr_vincent",
+          "setName": "François André Vincent"
+        },
+        {
+          "setSpec": "creator:vincent_franois_andr",
+          "setName": "Vincent, François André"
+        },
+        {
+          "setSpec": "creator:carlo_saraceni",
+          "setName": "Carlo Saraceni"
+        },
+        {
+          "setSpec": "creator:saraceni_carlo",
+          "setName": "Saraceni, Carlo"
+        },
+        {
+          "setSpec": "creator:dirck_hals",
+          "setName": "Dirck Hals"
+        },
+        {
+          "setSpec": "creator:hals_dirck",
+          "setName": "Hals, Dirck"
+        },
+        {
+          "setSpec": "creator:jan_asselijn",
+          "setName": "Jan Asselijn"
+        },
+        {
+          "setSpec": "creator:asselijn_jan",
+          "setName": "Asselijn, Jan"
+        },
+        {
+          "setSpec": "creator:monogrammist_jbnj",
+          "setName": "monogrammist J.B.N.J."
+        },
+        {
+          "setSpec": "creator:david_teniers_ii",
+          "setName": "David Teniers II"
+        },
+        {
+          "setSpec": "creator:david_ii_teniers",
+          "setName": "David (II) Teniers"
+        },
+        {
+          "setSpec": "creator:teniers_david_ii",
+          "setName": "Teniers, David (II)"
+        },
+        {
+          "setSpec": "creator:pieter_meulener",
+          "setName": "Pieter Meulener"
+        },
+        {
+          "setSpec": "creator:meulener_pieter",
+          "setName": "Meulener, Pieter"
+        },
+        {
+          "setSpec": "creator:gertrude_cornlie_marie_de_plichy",
+          "setName": "Gertrude Cornélie Marie de Pélichy"
+        },
+        {
+          "setSpec": "creator:plichy_gertrude_cornlie_marie_de",
+          "setName": "Pélichy, Gertrude Cornélie Marie de"
+        },
+        {
+          "setSpec": "creator:anthony_van_dyck",
+          "setName": "Anthony van Dyck"
+        },
+        {
+          "setSpec": "creator:dyck_anthony_van",
+          "setName": "Dyck, Anthony van"
+        },
+        {
+          "setSpec": "creator:balthasar_richard_de_hooghe",
+          "setName": "Balthasar Richard de Hooghe"
+        },
+        {
+          "setSpec": "creator:hooghe_balthasar_richard_de",
+          "setName": "Hooghe, Balthasar Richard de"
+        },
+        {
+          "setSpec": "creator:jan_van_eyck",
+          "setName": "Jan van Eyck"
+        },
+        {
+          "setSpec": "creator:eyck_jan_van",
+          "setName": "Eyck, Jan van"
+        },
+        {
+          "setSpec": "subject:historiestukken",
+          "setName": "historiestukken"
+        },
+        {
+          "setSpec": "subject:aardewerk",
+          "setName": "aardewerk"
+        },
+        {
+          "setSpec": "creator:rogier_van_der_weyden",
+          "setName": "Rogier van der Weyden"
+        },
+        {
+          "setSpec": "creator:weyden_rogier_van_der",
+          "setName": "Weyden, Rogier van der"
+        },
+        {
+          "setSpec": "subject:boom",
+          "setName": "boom"
+        },
+        {
+          "setSpec": "subject:bloem",
+          "setName": "bloem"
+        },
+        {
+          "setSpec": "subject:paard",
+          "setName": "paard"
+        },
+        {
+          "setSpec": "subject:os",
+          "setName": "os"
+        },
+        {
+          "setSpec": "creator:hugo_van_der_goes",
+          "setName": "Hugo van der Goes"
+        },
+        {
+          "setSpec": "creator:goes_hugo_van_der",
+          "setName": "Goes, Hugo van der"
+        },
+        {
+          "setSpec": "subject:dood",
+          "setName": "dood"
+        },
+        {
+          "setSpec": "creator:lucas_achtschellinck",
+          "setName": "Lucas Achtschellinck"
+        },
+        {
+          "setSpec": "creator:achtschellinck_lucas",
+          "setName": "Achtschellinck, Lucas"
+        },
+        {
+          "setSpec": "subject:alexandrijnse_parkiet",
+          "setName": "Alexandrijnse parkiet"
+        },
+        {
+          "setSpec": "subject:indische_papegaai",
+          "setName": "Indische papegaai"
+        },
+        {
+          "setSpec": "subject:vogel",
+          "setName": "vogel"
+        },
+        {
+          "setSpec": "creator:lancelot_blondeel",
+          "setName": "Lancelot Blondeel"
+        },
+        {
+          "setSpec": "creator:blondeel_lancelot",
+          "setName": "Blondeel, Lancelot"
+        },
+        {
+          "setSpec": "subject:mythologie",
+          "setName": "mythologie"
+        },
+        {
+          "setSpec": "creator:gerard_david",
+          "setName": "Gerard David"
+        },
+        {
+          "setSpec": "creator:david_gerard",
+          "setName": "David, Gerard"
+        },
+        {
+          "setSpec": "creator:jacques_darthois",
+          "setName": "Jacques d'Arthois"
+        },
+        {
+          "setSpec": "creator:jacques_d_arthois",
+          "setName": "Jacques d' Arthois"
+        },
+        {
+          "setSpec": "creator:arthois_jacques_d",
+          "setName": "Arthois, Jacques d'"
+        },
+        {
+          "setSpec": "creator:gillis_van_tilborgh",
+          "setName": "Gillis van Tilborgh"
+        },
+        {
+          "setSpec": "creator:tilborgh_gillis_van",
+          "setName": "Tilborgh, Gillis van"
+        },
+        {
+          "setSpec": "creator:jacob_cobrysse",
+          "setName": "Jacob Cobrysse"
+        },
+        {
+          "setSpec": "creator:cobrysse_jacob",
+          "setName": "Cobrysse, Jacob"
+        },
+        {
+          "setSpec": "creator:peter_faes",
+          "setName": "Peter Faes"
+        },
+        {
+          "setSpec": "creator:faes_peter",
+          "setName": "Faes, Peter"
+        },
+        {
+          "setSpec": "creator:charles_le_brun",
+          "setName": "Charles Le Brun"
+        },
+        {
+          "setSpec": "creator:brun_charles_le",
+          "setName": "Brun, Charles Le"
+        },
+        {
+          "setSpec": "creator:gerard_edelinck",
+          "setName": "Gerard Edelinck"
+        },
+        {
+          "setSpec": "creator:edelinck_gerard",
+          "setName": "Edelinck, Gerard"
+        },
+        {
+          "setSpec": "creator:herman_saftleven",
+          "setName": "Herman Saftleven"
+        },
+        {
+          "setSpec": "creator:saftleven_herman",
+          "setName": "Saftleven, Herman"
+        },
+        {
+          "setSpec": "creator:charles_nicolas_nol",
+          "setName": "Charles-Nicolas Noël"
+        },
+        {
+          "setSpec": "creator:nol_charles_nicolas",
+          "setName": "Noël, Charles-Nicolas"
+        },
+        {
+          "setSpec": "creator:hendrik_van_minderhout",
+          "setName": "Hendrik van Minderhout"
+        },
+        {
+          "setSpec": "creator:minderhout_hendrik_van",
+          "setName": "Minderhout, Hendrik van"
+        },
+        {
+          "setSpec": "creator:ghislain_vroyelinck",
+          "setName": "Ghislain Vroyelinck"
+        },
+        {
+          "setSpec": "creator:vroyelinck_ghislain",
+          "setName": "Vroyelinck, Ghislain"
+        },
+        {
+          "setSpec": "creator:jan_baptist_van_meunincxhove",
+          "setName": "Jan Baptist van Meunincxhove"
+        },
+        {
+          "setSpec": "creator:meunincxhove_jan_baptist_van",
+          "setName": "Meunincxhove, Jan Baptist van"
+        },
+        {
+          "setSpec": "creator:jacob_ii_van_oost",
+          "setName": "Jacob (II) van Oost"
+        },
+        {
+          "setSpec": "creator:oost_jacob_ii_van",
+          "setName": "Oost, Jacob (II) van"
+        },
+        {
+          "setSpec": "creator:pirre_franois_ledoulx",
+          "setName": "Pièrre François Ledoulx"
+        },
+        {
+          "setSpec": "creator:ledoulx_pirre_franois",
+          "setName": "Ledoulx, Pièrre François"
+        },
+        {
+          "setSpec": "creator:meester_van_1518",
+          "setName": "meester van 1518"
+        },
+        {
+          "setSpec": "creator:sebastiaan_vrancx",
+          "setName": "Sebastiaan Vrancx"
+        },
+        {
+          "setSpec": "creator:vrancx_sebastiaan",
+          "setName": "Vrancx, Sebastiaan"
+        },
+        {
+          "setSpec": "creator:jacob_foppens_van_es",
+          "setName": "Jacob Foppens van Es"
+        },
+        {
+          "setSpec": "creator:es_jacob_foppens_van",
+          "setName": "Es, Jacob Foppens van"
+        },
+        {
+          "setSpec": "creator:jan_baptist_bosschaert",
+          "setName": "Jan Baptist Bosschaert"
+        },
+        {
+          "setSpec": "creator:bosschaert_jan_baptist",
+          "setName": "Bosschaert, Jan Baptist"
+        },
+        {
+          "setSpec": "creator:erasmus_quellinus_ii",
+          "setName": "Erasmus Quellinus II"
+        },
+        {
+          "setSpec": "creator:erasmus_ii_quellinus",
+          "setName": "Erasmus (II) Quellinus"
+        },
+        {
+          "setSpec": "creator:quellinus_erasmus_ii",
+          "setName": "Quellinus, Erasmus (II)"
+        },
+        {
+          "setSpec": "creator:bernard_van_orley",
+          "setName": "Bernard van Orley"
+        },
+        {
+          "setSpec": "creator:orley_bernard_van",
+          "setName": "Orley, Bernard van"
+        },
+        {
+          "setSpec": "creator:adriaen_thomasz_key",
+          "setName": "Adriaen Thomasz. Key"
+        },
+        {
+          "setSpec": "creator:key_adriaen_thomasz",
+          "setName": "Key, Adriaen Thomasz."
+        },
+        {
+          "setSpec": "creator:salomon_van_ruysdael",
+          "setName": "Salomon van Ruysdael"
+        },
+        {
+          "setSpec": "creator:ruysdael_salomon_van",
+          "setName": "Ruysdael, Salomon van"
+        },
+        {
+          "setSpec": "creator:aert_van_der_neer",
+          "setName": "Aert van der Neer"
+        },
+        {
+          "setSpec": "creator:neer_aert_van_der",
+          "setName": "Neer, Aert van der"
+        },
+        {
+          "setSpec": "creator:jheronimus_bosch",
+          "setName": "Jheronimus Bosch"
+        },
+        {
+          "setSpec": "creator:bosch_jheronimus",
+          "setName": "Bosch, Jheronimus"
+        },
+        {
+          "setSpec": "creator:david_vinckboons_i",
+          "setName": "David Vinckboons I"
+        },
+        {
+          "setSpec": "creator:david_vinckboons",
+          "setName": "David Vinckboons"
+        },
+        {
+          "setSpec": "creator:vinckboons_david",
+          "setName": "Vinckboons, David"
+        },
+        {
+          "setSpec": "creator:louis_gustave_cambier",
+          "setName": "Louis Gustave Cambier"
+        },
+        {
+          "setSpec": "creator:cambier_louis_gustave",
+          "setName": "Cambier, Louis Gustave"
+        },
+        {
+          "setSpec": "creator:dsir_mergaert",
+          "setName": "Désiré Mergaert"
+        },
+        {
+          "setSpec": "creator:mergaert_dsir",
+          "setName": "Mergaert, Désiré"
+        },
+        {
+          "setSpec": "creator:frans_jacob_wynckelman",
+          "setName": "Frans Jacob Wynckelman"
+        },
+        {
+          "setSpec": "creator:wynckelman_frans_jacob",
+          "setName": "Wynckelman, Frans Jacob"
+        },
+        {
+          "setSpec": "creator:henri_julien_de_stoop",
+          "setName": "Henri Julien De Stoop"
+        },
+        {
+          "setSpec": "creator:stoop_henri_julien_de",
+          "setName": "Stoop, Henri Julien De"
+        },
+        {
+          "setSpec": "creator:lonce_legendre",
+          "setName": "Léonce Legendre"
+        },
+        {
+          "setSpec": "creator:legendre_lonce",
+          "setName": "Legendre, Léonce"
+        },
+        {
+          "setSpec": "creator:flori_van_acker",
+          "setName": "Flori Van Acker"
+        },
+        {
+          "setSpec": "creator:acker_flori_van",
+          "setName": "Acker, Flori van"
+        },
+        {
+          "setSpec": "creator:jan_gossaert",
+          "setName": "Jan Gossaert"
+        },
+        {
+          "setSpec": "creator:gossaert_jan",
+          "setName": "Gossaert, Jan"
+        },
+        {
+          "setSpec": "creator:antoon_l_joostens",
+          "setName": "Antoon L. Joostens"
+        },
+        {
+          "setSpec": "creator:joostens_antoon_l",
+          "setName": "Joostens, Antoon L."
+        },
+        {
+          "setSpec": "creator:frank_brangwyn",
+          "setName": "Frank Brangwyn"
+        },
+        {
+          "setSpec": "creator:brangwyn_frank",
+          "setName": "Brangwyn, Frank"
+        },
+        {
+          "setSpec": "creator:lucien_wolls",
+          "setName": "Lucien Wollès"
+        },
+        {
+          "setSpec": "creator:lucien_wolles",
+          "setName": "Lucien Wolles"
+        },
+        {
+          "setSpec": "creator:wolles_lucien",
+          "setName": "Wolles, Lucien"
+        },
+        {
+          "setSpec": "creator:bernard_de_maere",
+          "setName": "Bernard De Maere"
+        },
+        {
+          "setSpec": "creator:maere_bernard_de",
+          "setName": "Maere, Bernard De"
+        },
+        {
+          "setSpec": "creator:constant_permeke",
+          "setName": "Constant Permeke"
+        },
+        {
+          "setSpec": "creator:permeke_constant",
+          "setName": "Permeke, Constant"
+        },
+        {
+          "setSpec": "creator:bruno_van_hollebeke",
+          "setName": "Bruno Van Hollebeke"
+        },
+        {
+          "setSpec": "creator:hollebeke_bruno_van",
+          "setName": "Hollebeke, Bruno Van"
+        },
+        {
+          "setSpec": "creator:hans_memling",
+          "setName": "Hans Memling"
+        },
+        {
+          "setSpec": "creator:memling_hans",
+          "setName": "Memling, Hans"
+        },
+        {
+          "setSpec": "creator:meester_van_de_madonna_van_wolfhard_strau",
+          "setName": "meester van de Madonna van Wolfhard Strauß"
+        },
+        {
+          "setSpec": "creator:jan_de_hervy",
+          "setName": "Jan de Hervy"
+        },
+        {
+          "setSpec": "creator:hervy_jan_de",
+          "setName": "Hervy, Jan de"
+        },
+        {
+          "setSpec": "creator:lambert_noos",
+          "setName": "Lambert Noos"
+        },
+        {
+          "setSpec": "creator:noos_lambert",
+          "setName": "Noos, Lambert"
+        },
+        {
+          "setSpec": "creator:pieter_i_claeissens",
+          "setName": "Pieter (I) Claeissens"
+        },
+        {
+          "setSpec": "creator:claeissens_pieter_i",
+          "setName": "Claeissens, Pieter (I)"
+        },
+        {
+          "setSpec": "creator:edgard_tytgat",
+          "setName": "Edgard Tytgat"
+        },
+        {
+          "setSpec": "creator:tytgat_edgard",
+          "setName": "Tytgat, Edgard"
+        },
+        {
+          "setSpec": "creator:petrus_christus_i",
+          "setName": "Petrus Christus I"
+        },
+        {
+          "setSpec": "creator:petrus_christus",
+          "setName": "Petrus Christus"
+        },
+        {
+          "setSpec": "creator:christus_petrus",
+          "setName": "Christus, Petrus"
+        },
+        {
+          "setSpec": "creator:anonieme_meester_noordelijke_nederlanden_",
+          "setName": "anonieme meester, Noordelijke Nederlanden (?)"
+        },
+        {
+          "setSpec": "creator:noordelijke_nederlanden_anonieme_meester",
+          "setName": "Noordelijke Nederlanden? Anonieme meester"
+        },
+        {
+          "setSpec": "creator:anonieme_meester_noordelijke_nederlanden",
+          "setName": "Anonieme meester, Noordelijke Nederlanden?"
+        },
+        {
+          "setSpec": "creator:albert_jakob_frans_gregorius",
+          "setName": "Albert Jakob Frans Gregorius"
+        },
+        {
+          "setSpec": "creator:gregorius_albert_jakob_frans",
+          "setName": "Gregorius, Albert Jakob Frans"
+        },
+        {
+          "setSpec": "creator:lon_spilliaert",
+          "setName": "Léon Spilliaert"
+        },
+        {
+          "setSpec": "creator:leon_spilliaert",
+          "setName": "Leon Spilliaert"
+        },
+        {
+          "setSpec": "creator:spilliaert_leon",
+          "setName": "Spilliaert, Leon"
+        },
+        {
+          "setSpec": "creator:ren_magritte",
+          "setName": "René Magritte"
+        },
+        {
+          "setSpec": "creator:magritte_ren",
+          "setName": "Magritte, René"
+        },
+        {
+          "setSpec": "subject:fantastische_kunst",
+          "setName": "fantastische kunst"
+        },
+        {
+          "setSpec": "creator:auguste_van_de_steene",
+          "setName": "Auguste Van de Steene"
+        },
+        {
+          "setSpec": "creator:steene_auguste_van_de",
+          "setName": "Steene, Auguste Van de"
+        },
+        {
+          "setSpec": "creator:roger_raveel",
+          "setName": "Roger Raveel"
+        },
+        {
+          "setSpec": "creator:raveel_roger",
+          "setName": "Raveel, Roger"
+        },
+        {
+          "setSpec": "creator:gustave_van_de_woestyne",
+          "setName": "Gustave Van De Woestyne"
+        },
+        {
+          "setSpec": "creator:woestyne_gustave_van_de",
+          "setName": "Woestyne, Gustave van de"
+        },
+        {
+          "setSpec": "creator:jan_provoost",
+          "setName": "Jan Provoost"
+        },
+        {
+          "setSpec": "creator:provoost_jan",
+          "setName": "Provoost, Jan"
+        },
+        {
+          "setSpec": "creator:louis_de_grave",
+          "setName": "Louis de Grave"
+        },
+        {
+          "setSpec": "creator:grave_louis_de",
+          "setName": "Grave, Louis de"
+        },
+        {
+          "setSpec": "subject:inscripties",
+          "setName": "inscripties"
+        },
+        {
+          "setSpec": "creator:joseph_warlincourt",
+          "setName": "Joseph Warlincourt"
+        },
+        {
+          "setSpec": "creator:warlincourt_joseph",
+          "setName": "Warlincourt, Joseph"
+        },
+        {
+          "setSpec": "creator:dan_van_severen",
+          "setName": "Dan Van Severen"
+        },
+        {
+          "setSpec": "creator:severen_dan_van",
+          "setName": "Severen, Dan Van"
+        },
+        {
+          "setSpec": "creator:raoul_de_keyser",
+          "setName": "Raoul De Keyser"
+        },
+        {
+          "setSpec": "creator:keyser_raoul_de",
+          "setName": "Keyser, Raoul De"
+        },
+        {
+          "setSpec": "creator:edmond_van_hove",
+          "setName": "Edmond Van Hove"
+        },
+        {
+          "setSpec": "creator:hove_edmond_van",
+          "setName": "Hove, Edmond van"
+        },
+        {
+          "setSpec": "creator:amde_cortier",
+          "setName": "Amédée Cortier"
+        },
+        {
+          "setSpec": "creator:cortier_amde",
+          "setName": "Cortier, Amédée"
+        }
+      ]
+    },
+    {
+      "name": "flemish-formats",
+      "url": "https://datahub.vlaamsekunstcollectie.be/oai/?verb=ListMetadataFormats",
+      "status": "ACCESSIBLE",
+      "imageBytes": 0,
+      "httpCode": 200,
+      "type": "text/xml; charset=utf8",
+      "prefixes": [
+        "oai_dc",
+        "oai_rdf",
+        "oai_lido"
+      ]
+    },
+    {
+      "name": "flemish-objects",
+      "url": "https://datahub.vlaamsekunstcollectie.be/oai/?verb=ListRecords&metadataPrefix=oai_lido",
+      "status": "ACCESSIBLE",
+      "imageBytes": 0,
+      "httpCode": 200,
+      "type": "text/xml; charset=utf8",
+      "recordSample": [
+        {
+          "identifier": [
+            "oai:datahub.vlaamsekunstcollectie.be:www.museabrugge.be:XXX_0021_0030",
+            "https://www.museabrugge.be/collection/work/data/XXX_0021_0030",
+            "oai:datahub.vlaamsekunstcollectie.be:www.museabrugge.be:XXX_0021_0030",
+            "https://www.museabrugge.be/collection/work/data/XXX_0021_0030",
+            "10000079"
+          ],
+          "institutions": [
+            "Dodenmasker van gips, dodenmasker van Guido Gezelle",
+            "Masque mortuaire de Guide Gezelle",
+            "Death mask of Guide Gezelle",
+            "\n            ",
+            "\n              ",
+            "Musea Brugge",
+            "Musea Brugge",
+            "Depot",
+            "Lagae, Jules",
+            "Jules Lagae",
+            "Lagae, Jules",
+            "Brugge"
+          ],
+          "headerSets": [
+            "institution:musea_brugge",
+            "creator:jules_lagae",
+            "creator:lagae_jules",
+            "period:19de_eeuw"
+          ]
+        },
+        {
+          "identifier": [
+            "oai:datahub.vlaamsekunstcollectie.be:www.museabrugge.be:XXIII_O_0308",
+            "https://www.museabrugge.be/collection/work/data/XXIII_O_0308",
+            "oai:datahub.vlaamsekunstcollectie.be:www.museabrugge.be:XXIII_O_0308",
+            "https://www.museabrugge.be/collection/work/data/XXIII_O_0308",
+            "10000302"
+          ],
+          "institutions": [
+            "Groot roosebeker van Filips de Stoute",
+            "\n            ",
+            "\n              ",
+            "Musea Brugge",
+            "Musea Brugge",
+            "Gruuthusemuseum",
+            "Ursentaler, Ulrich",
+            "Ulrich Ursentaler",
+            "Ursentaler, Ulrich",
+            "Mechelen",
+            "\n          ",
+            "Musea Brugge"
+          ],
+          "headerSets": [
+            "institution:musea_brugge",
+            "creator:ulrich_ursentaler",
+            "creator:ursentaler_ulrich"
+          ]
+        },
+        {
+          "identifier": [
+            "oai:datahub.vlaamsekunstcollectie.be:www.museabrugge.be:XXIII_O_0310",
+            "https://www.museabrugge.be/collection/work/data/XXIII_O_0310",
+            "oai:datahub.vlaamsekunstcollectie.be:www.museabrugge.be:XXIII_O_0310",
+            "https://www.museabrugge.be/collection/work/data/XXIII_O_0310",
+            "10000303"
+          ],
+          "institutions": [
+            "Dubbele groot of leliaert van Filips de Stoute",
+            "\n            ",
+            "\n              ",
+            "Musea Brugge",
+            "Musea Brugge",
+            "Gruuthusemuseum",
+            "Gent",
+            "\n          ",
+            "Musea Brugge"
+          ],
+          "headerSets": [
+            "institution:musea_brugge"
+          ]
+        }
+      ],
+      "oaiErrors": []
+    },
+    {
+      "name": "kmska-exact",
+      "url": "https://datahub.vlaamsekunstcollectie.be/oai/?verb=GetRecord&metadataPrefix=oai_lido&identifier=oai%3Adatahub.vlaamsekunstcollectie.be%3Akmska.be%3Aah3b99",
+      "status": "ACCESSIBLE",
+      "imageBytes": 0,
+      "httpCode": 200,
+      "type": "text/xml; charset=utf8",
+      "recordSample": [
+        {
+          "identifier": [
+            "oai:datahub.vlaamsekunstcollectie.be:kmska.be:ah3b99",
+            "http://kmska.be/collection/work/data/ah3b99",
+            "oai:datahub.vlaamsekunstcollectie.be:kmska.be:ah3b99",
+            "http://kmska.be/collection/work/data/ah3b99",
+            "15"
+          ],
+          "institutions": [
+            "Zelfportret",
+            "Autoportrait",
+            "Self Portrait",
+            "Selbstporträt",
+            "Autorretrato",
+            "Autoritratto",
+            "\n            ",
+            "\n              ",
+            "Koninklijk Museum voor Schone Kunsten Antwerpen",
+            "Royal Museum of Fine Arts Antwerp",
+            "In depot / in bruikleen",
+            "In depot / on loan"
+          ],
+          "headerSets": [
+            "institution:koninklijk_museum_voor_schone_kunsten_antwerpen",
+            "creator:balthasar_beschey",
+            "creator:balthasar_beschey",
+            "creator:beschey_balthasar",
+            "period:18de_eeuw"
+          ]
+        }
+      ],
+      "oaiErrors": []
+    },
+    {
+      "name": "kmska-set",
+      "url": "https://datahub.vlaamsekunstcollectie.be/oai/?verb=ListRecords&metadataPrefix=oai_lido&set=institution%3Akmska",
+      "status": "ACCESSIBLE",
+      "imageBytes": 0,
+      "httpCode": 200,
+      "type": "text/xml; charset=utf8",
+      "recordSample": [],
+      "oaiErrors": [
+        {
+          "code": "noRecordsMatch",
+          "message": "The combination of the values of the from, until, set and metadataPrefix arguments results in an empty list."
+        }
+      ]
+    },
+    {
+      "name": "cleveland",
+      "url": "https://openaccess-api.clevelandart.org/api/artworks/?q=annunciation&cc0&has_image=1&limit=3",
+      "status": "ACCESSIBLE",
+      "imageBytes": 0,
+      "httpCode": 200,
+      "type": "application/json",
+      "info": {
+        "total": 88,
+        "parameters": {
+          "skip": 0,
+          "limit": 3,
+          "q": "annunciation",
+          "cc0": "",
+          "has_image": "1",
+          "select": "accession_number,accession_number_sortable,cover_accession_number,department,classification_type,collection,gallery,department",
+          "search": "annunciation"
+        }
+      },
+      "artworks": [
+        {
+          "id": 127572,
+          "title": "The Annunciation",
+          "technique": "oil on canvas",
+          "licence": "CC0",
+          "imageKeys": [
+            "annotation",
+            "web",
+            "print",
+            "full"
+          ],
+          "creators": [
+            {
+              "id": 2362,
+              "description": "Paolo Veronese (Italian, 1528–1588)",
+              "extent": null,
+              "qualifier": null,
+              "role": "artist",
+              "biography": null,
+              "name_in_original_language": null,
+              "birth_year": "1528",
+              "death_year": "1588",
+              "use_in_caption": true,
+              "include_extent": false,
+              "weight": 1
+            },
+            {
+              "id": 34768,
+              "description": "Workshop",
+              "extent": null,
+              "qualifier": "and",
+              "role": "artist",
+              "biography": null,
+              "name_in_original_language": null,
+              "use_in_caption": true,
+              "include_extent": false,
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "id": 122338,
+          "title": "The Annunciation",
+          "technique": "oil on wood",
+          "licence": "CC0",
+          "imageKeys": [
+            "annotation",
+            "web",
+            "print",
+            "full"
+          ],
+          "creators": [
+            {
+              "id": 2535,
+              "description": "Albert Bouts (Netherlandish, 1451/55–1549)",
+              "extent": null,
+              "qualifier": null,
+              "role": "artist",
+              "biography": null,
+              "name_in_original_language": null,
+              "birth_year": "1451",
+              "death_year": "1549",
+              "use_in_caption": true,
+              "include_extent": false,
+              "weight": 1
+            }
+          ]
+        },
+        {
+          "id": 131820,
+          "title": "The Annunciation",
+          "technique": "tempera and oil with gold on wood",
+          "licence": "CC0",
+          "imageKeys": [
+            "annotation",
+            "web",
+            "print",
+            "full"
+          ],
+          "creators": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+name: Sacred Art — licence 383 final integrity ONLY
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/sacred-art-licence-383-integrity-20261029.yml
+      - scripts/art/validate-sacred-art-licence-first-383-20261029.mjs
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-licence-evidence-and-no-photo-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate evidence and freeze quality work at zero
+        run: |
+          node --check scripts/art/validate-sacred-art-licence-first-383-20261029.mjs
+          node scripts/art/validate-sacred-art-licence-first-383-20261029.mjs

@@ -1,0 +1,27 @@
+name: Sacred Art - Breviarium 83 sources and acquisition integrity
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/breviarium-83-source-integrity-20261029.yml
+      - scripts/art/validate-breviarium-83-sacred-art-20261029.mjs
+      - data/calendar/sacred-art-breviarium-83-gallery-intake-20261029.v1.json
+      - assets/staged/sacred-art-breviarium-wave1-native-20261029/wave1-source-intake-results.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preserve-editorial-and-original-image-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          node --check scripts/art/validate-breviarium-83-sacred-art-20261029.mjs
+          node scripts/art/validate-breviarium-83-sacred-art-20261029.mjs

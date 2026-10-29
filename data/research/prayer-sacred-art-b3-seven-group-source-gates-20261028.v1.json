@@ -1,0 +1,85 @@
+{
+  "schema": "AO_PRAYER_ART_B3_SEVEN_UNRESOLVED_SOURCE_GROUPS_V1",
+  "date": "2026-10-28",
+  "source_registry": "data/research/prayer-sacred-art-pristine-master-registry-20261028.v1.json",
+  "source_intake": "data/research/prayer-sacred-art-b2-reconciled-intake-20261028.v1.json",
+  "policy": {
+    "review_all_remaining_groups_together": true,
+    "editorial_approvals_immutable": true,
+    "exact_object_identity_required": true,
+    "no_upscaling": true,
+    "no_frame_or_gallery_photo_pass": true,
+    "rights_clearance_distinct_from_object_public_domain": true,
+    "automated_pristine_certification": false,
+    "automated_production_release": false,
+    "paid_sources": false
+  },
+  "cases": [
+    {
+      "id": "guardian-angel-cortona",
+      "source": "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg",
+      "object": "Pietro da Cortona, The Guardian Angel, 1656",
+      "status": "HOLD_BELOW_NATIVE_QUALITY",
+      "evidence": "694x1100 source only; no higher-resolution authentic photo verified",
+      "acquire": false
+    },
+    {
+      "id": "evening-frere-op6",
+      "source": "https://commons.wikimedia.org/wiki/File:Pierre_Edouard_Fr%C3%A8re_(1819-1886)_-_The_Prayer_-_OP6_-_Wolverhampton_Art_Gallery.jpg",
+      "object": "Pierre-Édouard Frère, The Prayer, Wolverhampton Art Gallery OP6",
+      "status": "HOLD_BELOW_NATIVE_QUALITY",
+      "evidence": "898x1200 only; 2x upscaled PICRYL derivative excluded",
+      "acquire": false
+    },
+    {
+      "id": "restout-pentecost",
+      "source": "https://collections.louvre.fr/en/ark:/53355/cl010062538",
+      "object": "Jean Restout, Pentecost, Louvre INV 20303",
+      "status": "HOLD_MUSEUM_PHOTO_RIGHTS_AND_FRAME",
+      "evidence": "GrandPalaisRmn / René-Gabriel Ojéda credited by museum; existing 4037x2444 Commons source contains exterior gilt frame",
+      "acquire": false
+    },
+    {
+      "id": "gerome-age-augustus",
+      "source": "https://www.amiens.fr/Vivre-a-Amiens/Culture-Patrimoine/Etablissements-culturels/Musee-de-Picardie/Collections/XIX/Notices/Notice-Jean-Leon-Gerome-Siecle-d-Auguste",
+      "object": "Jean-Léon Gérôme, The Age of Augustus: Birth of Christ, Musée de Picardie",
+      "status": "HOLD_NO_CLEAN_NATIVE_PHOTO",
+      "evidence": "Existing 6000x4000 source is gallery installation, not pristine; low-resolution alternative exists",
+      "acquire": false
+    },
+    {
+      "id": "tiepolo-prado-burial",
+      "source": "https://www.museodelprado.es/en/the-collection/art-work/burial-of-christ/fca27623-6bb0-4bca-9856-b7c23a6651a3",
+      "object": "Giandomenico Tiepolo, Burial of Christ, Prado P000362",
+      "status": "HOLD_SOURCE_FILE_AND_PHOTO_RIGHTS",
+      "evidence": "Museum confirms exact P000362 identity; no suitable rights-checked source original acquired",
+      "acquire": false
+    },
+    {
+      "id": "batoni-sacred-heart",
+      "source": "https://commons.wikimedia.org/wiki/File:Sacred_Heart_of_Jesus,_Gesu_Church,_Rome.jpg",
+      "alternative_source": "https://commons.wikimedia.org/wiki/File:SacredHeartBatoni.jpg",
+      "object": "Pompeo Batoni, Sacred Heart of Jesus, Il Gesù",
+      "status": "QUARANTINE_3543PX_COPYRIGHT_CONFLICT",
+      "evidence": "3543x5231 file Commons PD tag conflicts with embedded Catholic News Service copyright holder; independent CC0 photo 1034x1441 below quality floor",
+      "acquire": false
+    },
+    {
+      "id": "rubens-trinity",
+      "source": "https://vlaamsekunstcollectie.be/en/collectie/314",
+      "iiif_manifest": "https://iiif.kmska.be/iiif/2/28958/manifest.json",
+      "object": "Peter Paul Rubens, The Holy Trinity, KMSKA object 314, 1620",
+      "status": "INSTITUTIONAL_SOURCE_CANDIDATE_EXACT_WORK_SELECTION_REVIEW",
+      "evidence": "Institutional IIIF 19178x19721 canvas, public-domain mark and CC0 declaration; original user placement did not specify object ID, identity-selection reconciliation remains mandatory",
+      "acquire": true,
+      "acquire_width_px": 4000
+    }
+  ],
+  "totals": {
+    "unresolved_groups": 7,
+    "source_candidate_for_retrieval": 1,
+    "pristine_certified": 0,
+    "production_activated": 0,
+    "cost_eur": 0
+  }
+}

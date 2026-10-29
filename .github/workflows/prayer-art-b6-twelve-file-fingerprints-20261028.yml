@@ -1,0 +1,42 @@
+name: Prayer Sacred Art B6 - twelve exact source fingerprints
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/prayer-art-b6-twelve-file-fingerprints-20261028.yml
+      - scripts/art/prayer-art-b6-twelve-originals-source-fingerprints-20261028.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-prayer-b6-twelve-file-fingerprints
+  cancel-in-progress: false
+jobs:
+  source-provenance-for-twelve-painting-only-photographs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free image-header reader
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Verify 12 archived originals and batch exact Commons source provenance
+        run: |
+          python -m py_compile scripts/art/prayer-art-b6-twelve-originals-source-fingerprints-20261028.py
+          python scripts/art/prayer-art-b6-twelve-originals-source-fingerprints-20261028.py
+      - name: Permanently archive successful source and failure evidence in research Git
+        if: always()
+        run: |
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/staged/prayer-art-b6-twelve-source-fingerprint-20261028/
+          git diff --cached --check
+          if git diff --cached --quiet; then echo "No source evidence change"; exit 0; fi
+          git commit -m "research(prayer art): archive twelve exact source byte fingerprints and Commons rights metadata"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

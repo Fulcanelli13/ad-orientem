@@ -1,0 +1,86 @@
+name: Sacred Art — Batch B5 next 250 KMSKA sacred paintings and gallery
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-kmska-b5-250-gallery-20261029.yml
+      - scripts/art/sacred-art-kmska-next-250-b5-20261029.py
+      - scripts/art/build-sacred-art-kmska-next-b5-gallery-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+# Same concurrency group as B4: run AFTER it rather than hammering the museum
+# concurrently. Queueing does not consume Actions runner minutes.
+concurrency:
+  group: ao-art-kmska-next250-b4
+  cancel-in-progress: false
+jobs:
+  b5-source-and-gallery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect up to 250 new exact paintings from KMSKA OAI pages 181 onward
+        run: |
+          python -m py_compile scripts/art/sacred-art-kmska-next-250-b5-20261029.py scripts/art/build-sacred-art-kmska-next-b5-gallery-20261029.py
+          python scripts/art/sacred-art-kmska-next-250-b5-20261029.py --target 250 --max-pages 540 --start-zero-page 180 --delay .11 --max-image-checks 630
+      - name: Generate standalone B5 import-only five-page HTML from validated official image references
+        run: |
+          python scripts/art/build-sacred-art-kmska-next-b5-gallery-20261029.py
+      - name: Verify disjointness, source-image rights holds, 50-card paging and JavaScript validity
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          b5=json.loads(Path('data/calendar/sacred-art-kmska-next-250-b5-20261029.v1.json').read_text())
+          b3=json.loads(Path('data/calendar/sacred-art-250-review-source-b3-20261029.v1.json').read_text())
+          p=json.loads(Path('data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json').read_text())
+          earlier={x['id'] for x in b3['rows']}|{x['sourceId'] for k in ('imports','rejects') for x in p[k]}
+          b4p=Path('data/calendar/sacred-art-kmska-next-250-b4-20261029.v1.json')
+          if b4p.exists():
+            b4=json.loads(b4p.read_text())
+            assert all(x.get('oaiPageIndex',179)<180 for x in b4['rows'])
+            earlier|={x['id'] for x in b4['rows']}
+          ids=[x['id'] for x in b5['rows']]
+          assert b5['batchReady'] and 200<=len(ids)<=250,b5['counts']
+          assert len(set(ids))==len(ids) and not set(ids)&earlier
+          assert all(x['oaiPageIndex']>=180 for x in b5['rows'])
+          assert all(x['provider']=='KMSKA' and x['previewURL'].startswith('https://iiif.kmska.be/') for x in b5['rows'])
+          assert all(x['rightsForProduction']=='HOLD_UNTIL_EXACT_SOURCE_PHOTOGRAPH_RIGHTS_RESOLVED' for x in b5['rows'])
+          assert b5['gates']['noSourceImageOriginalsStored'] and b5['counts']['productionImports']==0
+          h=Path('docs/SACRED_ART_KMSKA_NEXT_250_IMPORT_REVIEW_B5_20261029.html').read_text()
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert m
+          cards=json.loads(m.group(1))
+          assert len(cards)==len(ids) and {r['id'] for r in cards}==set(ids)
+          assert all(x['rightsConflict'] for x in cards)
+          assert 'const PAGE_SIZE=50;' in h and 'seenPages.length<TOTAL_PAGES' in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'Finalize and export decisions' in h
+          assert "batchId:'B5'" in h and 'for(let score=' not in h
+          js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert js
+          Path('/tmp/ao-b5-gallery.js').write_text(js.group(1),encoding='utf8')
+          print('B5 250 DISTINCT SOURCE-CLEARED RESEARCH PREVIEWS',len(ids))
+          PY
+          node --check /tmp/ao-b5-gallery.js
+          git diff --exit-code -- data/calendar/sacred-art-250-review-source-b3-20261029.v1.json data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json
+      - name: Archive B5 source evidence and independent gallery permanently
+        if: always()
+        run: |
+          if [ ! -f data/calendar/sacred-art-kmska-next-250-b5-20261029.v1.json ]; then echo 'No source report was created'; exit 0; fi
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-kmska-next-250-b5-20261029.v1.json docs/SACRED_ART_KMSKA_B5_250_SOURCE_QA_20261029.md
+          if [ -f docs/SACRED_ART_KMSKA_NEXT_250_IMPORT_REVIEW_B5_20261029.html ]; then
+            git add docs/SACRED_ART_KMSKA_NEXT_250_IMPORT_REVIEW_B5_20261029.html
+          fi
+          git diff --cached --check
+          if git diff --cached --quiet; then echo 'No additional evidence'; exit 0; fi
+          git commit -m "research(art): preserve independent next 250 B5 KMSKA source paintings and import review"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

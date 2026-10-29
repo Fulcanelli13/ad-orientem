@@ -1,0 +1,57 @@
+name: Sacred Art — B3 exclude nonpainting manuscripts and restore 250 artworks
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-b3-painting-only-repair-20261029.yml
+      - scripts/art/repair-sacred-art-b3-painting-only-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-b3-painting-only-repair
+  cancel-in-progress: true
+jobs:
+  replace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Substitute individually verified paintings for all nonpainting source results
+        run: |
+          python -m py_compile scripts/art/repair-sacred-art-b3-painting-only-20261029.py
+          python scripts/art/repair-sacred-art-b3-painting-only-20261029.py
+      - name: Validate 250 exact paintings, prior user decisions and nonproduction holds
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data/calendar/sacred-art-250-review-source-b3-20261029.v1.json')
+          d=json.loads(p.read_text())
+          r=d['rows']
+          assert len(r)==250 and len({x['id'] for x in r})==250
+          assert d['counts']['nonPaintingMetadataFalsePositivesRemoved']>0
+          assert d['counts']['repairReplacementPaintings']==d['counts']['nonPaintingMetadataFalsePositivesRemoved']
+          assert not any(x in (z['title']+' '+z['medium']).lower() for z in r for x in ['bifolio','book of hours','vellum','parchment','antiphonary','bifolia'])
+          assert all(z['rightsForProduction']=='HOLD_UNTIL_EXACT_PHOTO_LICENCE_RECONCILED' for z in r if z['provider']=='KMSKA')
+          assert all(z['rightsBasis']=='CLEVELAND_EXACT_ARTWORK_CC0' for z in r if z['provider']=='Cleveland')
+          assert d['limits']['sourceImageBytesArchived']==0
+          assert d['counts']['productionImports']==0
+          print('PASS',d['counts'])
+          PY
+          git diff --exit-code -- data/calendar/sacred-art-curator-queues-383-20261029.v1.json data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json
+      - name: Persist final 250-source record and discarded source evidence
+        run: |
+          git config user.name "Ad Orientem sacred art curatorial QA"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-250-review-source-b3-20261029.v1.json docs/SACRED_ART_250_WORK_REVIEW_B3_20261029.md
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): complete 250 actual painting candidates, exclude manuscript leaves"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

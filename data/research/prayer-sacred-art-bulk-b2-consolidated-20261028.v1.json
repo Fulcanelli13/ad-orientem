@@ -1,0 +1,265 @@
+{
+  "schema": "AO_PRAYER_ART_BULK_ACQUISITION_14_GROUPS_CONSOLIDATED_V1",
+  "date": "2026-10-28",
+  "original_approved_work_groups": 14,
+  "native_original_candidates_archived": 7,
+  "below_floor_reference_sources": 3,
+  "unresolved_exact_work_discoveries": 4,
+  "provisional_quality_bans": {
+    "carracci-burial-met": [
+      "BORDER_OR_MOUNT_CONCERN",
+      "Met original has broad dark perimeter and visible rectilinear margin at native corners. Do not label as frame-free without painted-area check."
+    ],
+    "paired-hearts-lopez": [
+      "EXTERNAL_FRAME_CONFIRMED",
+      "Gold outer frame visible along all four native corners; crop only after painted boundary proof."
+    ],
+    "reni-michael": [
+      "EXTERNAL_FRAME_AND_PERSPECTIVE_CONFIRMED",
+      "Photograph includes gilded gallery frame and oblique perspective; higher resolution does not solve pristine requirement."
+    ],
+    "tiepolo-station12": [
+      "HIGH_NOISE_AND_GLARE_CONCERN",
+      "Visible uneven texture/compression and severe blue noise in bottom-right native corner; may be unsuitable despite 3277 x 4316 pixels."
+    ]
+  },
+  "all_artwork_approvals_unchanged": true,
+  "quality_final_approved": 0,
+  "production_releases": 0,
+  "source_jobs": [
+    "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40713711506",
+    "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40714325345"
+  ],
+  "cases": {
+    "guardian-angel-cortona": {
+      "phase": "B2",
+      "status": "REFERENCE_ONLY_BELOW_SOURCE_QUALITY_FLOOR",
+      "archived": null,
+      "notes": [],
+      "source": "https://commons.wikimedia.org/wiki/File:Cortona_Guardian_Angel_01.jpg",
+      "quality_preliminary": null,
+      "production_allowed": false
+    },
+    "evening-frere-op6": {
+      "phase": "B2",
+      "status": "REFERENCE_ONLY_BELOW_SOURCE_QUALITY_FLOOR",
+      "archived": null,
+      "notes": [],
+      "source": "https://commons.wikimedia.org/wiki/File:Pierre_Edouard_Fr%C3%A8re_(1819-1886)_-_The_Prayer_-_OP6_-_Wolverhampton_Art_Gallery.jpg",
+      "quality_preliminary": null,
+      "production_allowed": false
+    },
+    "restout-pentecost": {
+      "phase": "B2",
+      "status": "DISCOVERY_PENDING_EXACT_OBJECT_IDENTIFICATION",
+      "archived": null,
+      "notes": [],
+      "source": null,
+      "quality_preliminary": null,
+      "production_allowed": false
+    },
+    "reni-michael": {
+      "phase": "B2B",
+      "status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+      "archived": {
+        "path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/reni-michael/reni-michael-native.jpg",
+        "sha256": "d376bbf82b9978223eb8968fda988ae7d61ebc84cf50d72bb5f5fd868fbb23ce",
+        "pixels": [
+          2112,
+          2816
+        ],
+        "bytes": 1570300,
+        "source_original_unchanged": true
+      },
+      "notes": [],
+      "source": "https://commons.wikimedia.org/wiki/File:Cappouccini,_guido_reni,_san_michele_arcangelo_02.JPG",
+      "quality_preliminary": {
+        "category": "EXTERNAL_FRAME_AND_PERSPECTIVE_CONFIRMED",
+        "observation": "Photograph includes gilded gallery frame and oblique perspective; higher resolution does not solve pristine requirement.",
+        "pristine_certified": false,
+        "source_rights_certified": false
+      },
+      "production_allowed": false
+    },
+    "gerome-age-augustus": {
+      "phase": "B2",
+      "status": "REFERENCE_ONLY_BELOW_SOURCE_QUALITY_FLOOR",
+      "archived": null,
+      "notes": [],
+      "source": "https://commons.wikimedia.org/wiki/File:Le_Si%C3%A8cle_d%27Auguste_-_naissance_de_N.S._J%C3%A9sus-Christ_par_G%C3%A9r%C3%B4me.jpg",
+      "quality_preliminary": null,
+      "production_allowed": false
+    },
+    "tiepolo-station12": {
+      "phase": "B2B",
+      "status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+      "archived": {
+        "path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/tiepolo-station12/tiepolo-station12-native.jpg",
+        "sha256": "4d59307c2553be1b7103d5e9642631f3025fc4cad929e3ed4fdd7348a5cfbeec",
+        "pixels": [
+          3277,
+          4316
+        ],
+        "bytes": 11118115,
+        "source_original_unchanged": true
+      },
+      "notes": [],
+      "source": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XII_-_Jesus_dies_on_the_cross.jpg",
+      "quality_preliminary": {
+        "category": "HIGH_NOISE_AND_GLARE_CONCERN",
+        "observation": "Visible uneven texture/compression and severe blue noise in bottom-right native corner; may be unsuitable despite 3277 x 4316 pixels.",
+        "pristine_certified": false,
+        "source_rights_certified": false
+      },
+      "production_allowed": false
+    },
+    "tiepolo-prado-descent": {
+      "phase": "B2B",
+      "status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+      "archived": {
+        "path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/tiepolo-prado-descent/tiepolo-prado-descent-native.jpg",
+        "sha256": "1cb5d8a9f420eddd32ffabc4713a49d27a6f39e664d2495c5852a34fa68723e7",
+        "pixels": [
+          2705,
+          2362
+        ],
+        "bytes": 7491294,
+        "source_original_unchanged": true
+      },
+      "notes": [],
+      "source": "https://commons.wikimedia.org/wiki/File:Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+      "quality_preliminary": {
+        "category": "PRELIMINARY_NO_EXTERNAL_FRAME_VISIBLE",
+        "observation": "Whole painted area present with no obvious surrounding frame; colour and reuse rights pending. User's editorial status is retained unchanged.",
+        "pristine_certified": false,
+        "source_rights_certified": false
+      },
+      "production_allowed": false
+    },
+    "tiepolo-prado-burial": {
+      "phase": "B2",
+      "status": "DISCOVERY_PENDING_EXACT_OBJECT_IDENTIFICATION",
+      "archived": null,
+      "notes": [
+        "HTTP Error 429: Too Many Requests"
+      ],
+      "source": null,
+      "quality_preliminary": null,
+      "production_allowed": false
+    },
+    "carracci-burial-met": {
+      "phase": "B2",
+      "status": "RESEARCH_SOURCE_ARCHIVED_NOT_PRISTINE",
+      "archived": {
+        "path": "assets/staged/prayer-art-bulk-acquisition-b2-20261028/carracci-burial-met-met-native.jpg",
+        "sha256": "6146de5ad9544812623cee4499e7cc717d1b0c152500be72c73103a781fc5757",
+        "width": 3122,
+        "height": 3875,
+        "bytes": 2111362,
+        "original_unmodified": true,
+        "origin": "https://images.metmuseum.org/CRDImages/ep/original/DP312834.jpg",
+        "rights_basis": "Met API isPublicDomain=true; review exact file terms at release"
+      },
+      "notes": [],
+      "source": "https://www.metmuseum.org/art/collection/search/438338",
+      "quality_preliminary": {
+        "category": "BORDER_OR_MOUNT_CONCERN",
+        "observation": "Met original has broad dark perimeter and visible rectilinear margin at native corners. Do not label as frame-free without painted-area check.",
+        "pristine_certified": false,
+        "source_rights_certified": false
+      },
+      "production_allowed": false
+    },
+    "teniers-agony-antwerp": {
+      "phase": "B2B",
+      "status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+      "archived": {
+        "path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/teniers-agony-antwerp/teniers-agony-antwerp-native.jpg",
+        "sha256": "6a697614cfe96b9f62921af0015eeca08fbc26ed0103dbefe9abe98c5342658e",
+        "pixels": [
+          1333,
+          1799
+        ],
+        "bytes": 1916709,
+        "source_original_unchanged": true
+      },
+      "notes": [],
+      "source": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
+      "quality_preliminary": {
+        "category": "PRELIMINARY_NO_EXTERNAL_FRAME_VISIBLE",
+        "observation": "Full painted image appears to extend to edges; bottom border may require painted-surface inspection.",
+        "pristine_certified": false,
+        "source_rights_certified": false
+      },
+      "production_allowed": false
+    },
+    "paired-hearts-lopez": {
+      "phase": "B2B",
+      "status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+      "archived": {
+        "path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/paired-hearts-lopez/paired-hearts-lopez-native.jpg",
+        "sha256": "1b990f88d8d8a9a6a74a9a3cba598eef1fe2d33dc188c45cd924a8f8d3e4059d",
+        "pixels": [
+          1725,
+          2560
+        ],
+        "bytes": 394056,
+        "source_original_unchanged": true
+      },
+      "notes": [],
+      "source": "https://commons.wikimedia.org/wiki/File:Sagrados_corazones_de_Jes%C3%BAs_y_Mar%C3%ADa_(Sacred_Hearts_of_Jesus_and_Mary),_workshop_of_Vicente_L%C3%B3pez_Porta%C3%B1a.jpg",
+      "quality_preliminary": {
+        "category": "EXTERNAL_FRAME_CONFIRMED",
+        "observation": "Gold outer frame visible along all four native corners; crop only after painted boundary proof.",
+        "pristine_certified": false,
+        "source_rights_certified": false
+      },
+      "production_allowed": false
+    },
+    "batoni-sacred-heart": {
+      "phase": "B2",
+      "status": "SOURCE_FETCH_FAILED",
+      "archived": null,
+      "notes": [
+        "HTTP Error 429: Too Many Requests"
+      ],
+      "source": null,
+      "quality_preliminary": null,
+      "production_allowed": false
+    },
+    "vandyck-holy-spirit": {
+      "phase": "B2B",
+      "status": "ARCHIVED_SOURCE_EXACT_FILENAME_QUALITY_PENDING",
+      "archived": {
+        "path": "assets/staged/prayer-art-bulk-acquisition-b2b-20261028/vandyck-holy-spirit/vandyck-holy-spirit-native.jpg",
+        "sha256": "9ac5db7a32626fd6825e6d364f3fc48b034ba8282a6989cf24d3f368c0eafe63",
+        "pixels": [
+          6064,
+          7368
+        ],
+        "bytes": 3321156,
+        "source_original_unchanged": true
+      },
+      "notes": [],
+      "source": "https://commons.wikimedia.org/wiki/File:Dyck,_Anthonis_van_-_Pouring_of_the_Holy_Ghost_-_Bildergalerie_Sanssouci.jpeg",
+      "quality_preliminary": {
+        "category": "PRELIMINARY_NO_EXTERNAL_FRAME_VISIBLE",
+        "observation": "Painting extends through all sampled corners; centre-pixel, institutional colour and exact reuse rights remain open.",
+        "pristine_certified": false,
+        "source_rights_certified": false
+      },
+      "production_allowed": false
+    },
+    "rubens-trinity": {
+      "phase": "B2",
+      "status": "DISCOVERY_PENDING_EXACT_OBJECT_IDENTIFICATION",
+      "archived": null,
+      "notes": [
+        "HTTP Error 429: Too Many Requests"
+      ],
+      "source": null,
+      "quality_preliminary": null,
+      "production_allowed": false
+    }
+  }
+}

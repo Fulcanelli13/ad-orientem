@@ -1,0 +1,41 @@
+name: Prayer Sacred Art - bulk inspect 20 pinned masters
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/prayer-artwork-20-master-bulk-native-pass-20261028.yml
+      - scripts/art/bulk-verify-prayer-hero-native-images-20261028.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-prayer-20-originals-bulk-20261028
+  cancel-in-progress: false
+jobs:
+  rehash-20-existing-originals-and-archive-batch-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow for local no-upscale checks
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Verify original bytes and prepare four native-corner proofs for all twenty files
+        run: |
+          python -m py_compile scripts/art/bulk-verify-prayer-hero-native-images-20261028.py
+          python scripts/art/bulk-verify-prayer-hero-native-images-20261028.py
+      - name: Preserve exact evidence and contact sheets on Git branch
+        run: |
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/staged/prayer-pristine-bulk-native-audit-20261028/
+          git diff --cached --check
+          if git diff --cached --quiet; then echo "No new research evidence"; exit 0; fi
+          git commit -m "research(prayer art): preserve bulk-native integrity and four-corner review sheets"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

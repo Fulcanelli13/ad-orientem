@@ -1,0 +1,63 @@
+name: Sacred Art — 186-museum artwork atlas and aesthetic review gates
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-museum-aesthetic-index-20261029.yml
+      - scripts/art/build-sacred-art-museum-artwork-aesthetic-intake-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-museum-aesthetic-index
+  cancel-in-progress: false
+jobs:
+  prepare-physical-work-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build art and museum crosswalk without changing canonical source records
+        run: |
+          python -m py_compile scripts/art/build-sacred-art-museum-artwork-aesthetic-intake-20261029.py
+          python scripts/art/build-sacred-art-museum-artwork-aesthetic-intake-20261029.py
+      - name: Validate all frozen ID decisions, reject guards and no false art approval
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data/calendar/sacred-art-museum-work-intake-and-aesthetic-gates-20261029.v1.json')
+          d=json.loads(p.read_text(encoding='utf8'))
+          assert d['institutionCount']==186
+          assert len(d['museumSourceMatrix'])==186
+          assert len(d['canonicalArtworkRecords'])==383
+          assert len(d['breviarium83PlateReferences'])==83
+          assert d['counts']['historicalUserApprovedCanonical']==107
+          assert d['counts']['newHumanAestheticApprovals']==0
+          assert d['counts']['newPhotoRightClearances']==0
+          assert d['counts']['newProductionAssets']==0
+          assert all(x['aestheticTier']=='NO_NEW_AESTHETIC_TIER_ASSIGNED' for x in d['canonicalArtworkRecords'])
+          assert all(x['productionReleasedByThisPass'] is False for x in d['canonicalArtworkRecords'])
+          assert len({x['museumSourceId'] for x in d['museumSourceMatrix']})==186
+          print('PASS',d['counts'])
+          PY
+          git diff --exit-code -- data/calendar/sacred-art-curator-queues-383-20261029.v1.json data/calendar/sacred-art-licence-first-383-exact-source-audit-20261029.v1.json data/calendar/sacred-art-candidates.v1.json
+      - name: Permanently preserve artwork-source crosswalk and review queue
+        if: always()
+        run: |
+          if [ ! -f data/calendar/sacred-art-museum-work-intake-and-aesthetic-gates-20261029.v1.json ]; then
+            echo "No generated output found"; exit 0
+          fi
+          git config user.name "Ad Orientem museum art register"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-museum-work-intake-and-aesthetic-gates-20261029.v1.json docs/SACRED_ART_MUSEUM_WORK_INTAKE_AND_AESTHETICS_20261029.md
+          git diff --cached --check
+          if git diff --cached --quiet; then echo "No newly generated rows"; exit 0; fi
+          git commit -m "research(art): stage museum work identities and strict user-aesthetic review gates"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

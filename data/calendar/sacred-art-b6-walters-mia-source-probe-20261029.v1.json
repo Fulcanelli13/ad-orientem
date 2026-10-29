@@ -1,0 +1,150 @@
+{
+  "schema": "AO_B6_SOURCE_INTERFACES_V1",
+  "photosSaved": 0,
+  "sources": [
+    {
+      "source": "walters-art",
+      "url": "https://raw.githubusercontent.com/WaltersArtMuseum/api-thewalters-org/main/art.csv",
+      "state": "ACCESSIBLE",
+      "imageOriginalsDownloaded": 0,
+      "httpStatus": 206,
+      "mime": "text/plain; charset=utf-8",
+      "header": [
+        "ObjectID",
+        "AccessionNumber",
+        "ObjectName",
+        "DateBeginYear",
+        "DateEndYear",
+        "DateText",
+        "Title",
+        "Dimensions",
+        "Medium",
+        "Style",
+        "Culture",
+        "Inscriptions",
+        "Classification",
+        "Period",
+        "ResourceURL",
+        "Description",
+        "CreditLine",
+        "Keywords",
+        "Provenance",
+        "Dynasty",
+        "Reign",
+        "GeographyID",
+        "RelatedObjects",
+        "Images",
+        "CollectionID",
+        "MuseumLocation",
+        "Creators",
+        "Exhibitions"
+      ],
+      "samples": [
+        [
+          "2",
+          "W.569.4A",
+          "illuminated manuscripts; folios (leaves)",
+          "1601",
+          "1700",
+          "11th century AH/AD 17th century (Safavid)",
+          "Leaf from Qur'an",
+          "H: 15 3/16 x W: 10 1/16 in. (38.5 x 25.5 cm)"
+        ],
+        [
+          "5",
+          "49.685",
+          "vessels; brush washers",
+          "1662",
+          "1722",
+          "1662-1722",
+          "Peach Bloom Brush Washer",
+          "H: 1 3/16 × Diam: 4 3/4 in. (3 × 12 cm)"
+        ],
+        [
+          "7",
+          "54.975",
+          "statuettes (statues)",
+          "-425",
+          "-400",
+          "late 5th century BCE (Classical)",
+          "Zeus",
+          "H: 13 7/8 in. (35.3 cm)"
+        ]
+      ]
+    },
+    {
+      "source": "walters-media",
+      "url": "https://raw.githubusercontent.com/WaltersArtMuseum/api-thewalters-org/main/media.csv",
+      "state": "ACCESSIBLE",
+      "imageOriginalsDownloaded": 0,
+      "httpStatus": 206,
+      "mime": "text/plain; charset=utf-8",
+      "header": [
+        "ObjectID",
+        "AccessionNumber",
+        "MediaXrefID",
+        "ImageURL",
+        "Filename",
+        "MediaType",
+        "MediaView",
+        "Rank",
+        "IsPrimary"
+      ],
+      "samples": [
+        [
+          "39420",
+          "11.1",
+          "38551",
+          "https://art.thewalters.org/images/raw/PS1_11.1_Fnt_DD_T12.jpg",
+          "PS1_11.1_Fnt_DD_T12.jpg",
+          "Image",
+          "Front",
+          "1"
+        ],
+        [
+          "92411",
+          "11.4",
+          "75322",
+          "https://art.thewalters.org/images/raw/PL7_11.4_Fnt_TR_T03I-tms.jpg",
+          "PL7_11.4_Fnt_TR_T03I-tms.jpg",
+          "Image",
+          "front",
+          "1"
+        ],
+        [
+          "92412",
+          "11.5",
+          "59160",
+          "https://art.thewalters.org/images/raw/PS1_11.5.binding_UpperCoverDet_DD_T14.jpg",
+          "PS1_11.5.binding_UpperCoverDet_DD_T14.jpg",
+          "Image",
+          "detail",
+          "2"
+        ]
+      ]
+    },
+    {
+      "source": "mia-european-dept",
+      "url": "https://raw.githubusercontent.com/artsmia/collection/main/departments/2.json",
+      "state": "HOLD",
+      "imageOriginalsDownloaded": 0,
+      "httpStatus": 206,
+      "mime": "text/plain; charset=utf-8",
+      "error": "JSONDecodeError: Expecting ',' delimiter: line 18341 column 6 (char 200001)"
+    },
+    {
+      "source": "mia-v10",
+      "url": "https://search.artsmia.org/search/Christ?size=5",
+      "state": "HOLD",
+      "imageOriginalsDownloaded": 0,
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "source": "mia-photo",
+      "url": "https://images.artsmia.org/17.jpg",
+      "state": "HOLD",
+      "imageOriginalsDownloaded": 0,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    }
+  ]
+}

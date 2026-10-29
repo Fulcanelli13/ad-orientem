@@ -1,0 +1,41 @@
+name: Sacred Art licence only - 112 missing source identities
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/sacred-art-licence-112-source-names-20261029.yml
+      - scripts/art/sacred-art-licence-next-112-file-identity-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-licence-only-112
+  cancel-in-progress: false
+jobs:
+  identify-source-file-rights-not-photo-quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify image-file names and existing institutional provenance
+        run: |
+          python -m py_compile scripts/art/sacred-art-licence-next-112-file-identity-20261029.py
+          python scripts/art/sacred-art-licence-next-112-file-identity-20261029.py
+      - name: Persist only the 112 source and licence records (no photos)
+        if: always()
+        run: |
+          if [ ! -f data/calendar/sacred-art-licence-next-112-source-identities-20261029.v1.json ]; then exit 0; fi
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-licence-next-112-source-identities-20261029.v1.json data/calendar/sacred-art-licence-next-112-source-identities-20261029.csv
+          git diff --cached --check
+          if git diff --cached --quiet; then echo "No source licence evidence change"; exit 0; fi
+          git commit -m "research(sacred art): preserve 112 exact-source licence identity checks"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

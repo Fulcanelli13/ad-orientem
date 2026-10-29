@@ -1,0 +1,82 @@
+name: Sacred Art — Walters Museum B6 250 painting import review
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-walters-b6-250-gallery-20261029.yml
+      - scripts/art/sacred-art-walters-next-b6-20261029.py
+      - scripts/art/build-sacred-art-walters-b6-gallery-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-walters-b6
+  cancel-in-progress: true
+jobs:
+  source-and-gallery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 26
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Join Walters official art + creators + media and verify exact images
+        run: |
+          python -m py_compile scripts/art/sacred-art-walters-next-b6-20261029.py scripts/art/build-sacred-art-walters-b6-gallery-20261029.py
+          python scripts/art/sacred-art-walters-next-b6-20261029.py --target 250 --max-checks 360 --delay .08
+      - name: Generate separate B6 250-work review file
+        run: |
+          python scripts/art/build-sacred-art-walters-b6-gallery-20261029.py
+      - name: Validate B6 uniqueness, rights holds, review choices and JavaScript
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          d=json.loads(Path('data/calendar/sacred-art-walters-250-b6-20261029.v1.json').read_text())
+          b3=json.loads(Path('data/calendar/sacred-art-250-review-source-b3-20261029.v1.json').read_text())
+          b4=json.loads(Path('data/calendar/sacred-art-b4-multimuseum-working-review-20261029.v1.json').read_text())
+          b5=json.loads(Path('data/calendar/sacred-art-nga-open-250-b5r-20261029.v1.json').read_text())
+          old=json.loads(Path('data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json').read_text())
+          excluded={x['id'] for z in (b3['rows'],b4['rows'],b5['rows']) for x in z}
+          excluded|={x['sourceId'] for name in ('imports','rejects') for x in old[name]}
+          ids={x['id'] for x in d['rows']}
+          assert len(excluded)==683 and not ids&excluded
+          assert d['batchReady'] and 200<=len(ids)<=250,d['counts']
+          assert len(ids)==len(d['rows']) and len({r['previewURL'] for r in d['rows']})==len(ids)
+          assert all(r['provider']=='Walters' and r['rightsHold'] for r in d['rows'])
+          assert all(r['previewURL'].startswith('https://art.thewalters.org/images/raw/') for r in d['rows'])
+          assert d['gates']['originalPhotoFilesDownloadedAndStored']==0 and d['counts']['productionImports']==0
+          h=Path('docs/SACRED_ART_WALTERS_250_IMPORT_REVIEW_B6_20261029.html').read_text()
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert m
+          cards=json.loads(m.group(1))
+          assert len(cards)==len(ids) and {r['id'] for r in cards}==ids
+          assert all(r['rightsConflict'] for r in cards)
+          assert "batchId:'B6'" in h and 'const PAGE_SIZE=50;' in h
+          assert 'seenPages.length<TOTAL_PAGES' in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'Finalize and export decisions' in h
+          assert 'for(let score=' not in h
+          js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert js
+          Path('/tmp/ao-walters-b6.js').write_text(js.group(1))
+          print('B6_250_DISTINCT_RIGHTS_HELD_RESEARCH_IMAGES',len(cards))
+          PY
+          node --check /tmp/ao-walters-b6.js
+          git diff --exit-code -- data/calendar/sacred-art-250-review-source-b3-20261029.v1.json data/calendar/sacred-art-b4-multimuseum-working-review-20261029.v1.json data/calendar/sacred-art-nga-open-250-b5r-20261029.v1.json
+      - name: Preserve reviewed source IDs, official media links and standalone gallery
+        if: always()
+        run: |
+          if [ ! -f data/calendar/sacred-art-walters-250-b6-20261029.v1.json ]; then exit 0; fi
+          git config user.name "Ad Orientem sacred art curation"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-walters-250-b6-20261029.v1.json docs/SACRED_ART_WALTERS_250_B6_SOURCE_QA_20261029.md
+          if [ -f docs/SACRED_ART_WALTERS_250_IMPORT_REVIEW_B6_20261029.html ]; then
+            git add docs/SACRED_ART_WALTERS_250_IMPORT_REVIEW_B6_20261029.html
+          fi
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): archive Walters B6 verified new paintings and separate review gallery"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

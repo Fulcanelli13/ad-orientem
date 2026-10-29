@@ -1,0 +1,43 @@
+name: Sacred Art Curator — 18 official CC0 native photo contact sheets
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/sacred-art-official-cc0-18-native-qa-20261029.yml
+      - scripts/art/sacred-art-official-cc0-18-native-visual-review-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-curator-official-18-native
+  cancel-in-progress: false
+jobs:
+  museum-image-first-native-photo-inspection:
+    runs-on: ubuntu-latest
+    timeout-minutes: 19
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free photo decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Native image and four-corner inspections; compare official source SHA
+        run: |
+          python -m py_compile scripts/art/sacred-art-official-cc0-18-native-visual-review-20261029.py
+          python scripts/art/sacred-art-official-cc0-18-native-visual-review-20261029.py
+      - name: Permanently preserve only QA proofs and technical records
+        if: always()
+        run: |
+          if [ ! -f assets/staged/sacred-art-curator-18-official-cc0-native-qa-20261029/native-official-photo-qa.json ]; then exit 0; fi
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/staged/sacred-art-curator-18-official-cc0-native-qa-20261029/
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(sacred art): retain source-exact CC0 museum native-photo QA proofs"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

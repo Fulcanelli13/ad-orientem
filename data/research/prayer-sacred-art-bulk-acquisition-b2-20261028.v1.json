@@ -1,0 +1,216 @@
+{
+  "schema": "AO_PRAYER_ART_BULK_SOURCE_ACQUISITION_20261028_V1",
+  "date": "2026-10-28",
+  "owner_registry": "data/research/prayer-sacred-art-pristine-master-registry-20261028.v1.json",
+  "scope": {
+    "primary_missing": 2,
+    "primary_replace": 3,
+    "distinct_better_photo_artworks": 10,
+    "overlap_reused": "Jean Restout Pentecost is both an approved primary and a Hymns photographic request",
+    "unique_exact_artwork_groups": 14
+  },
+  "policy": {
+    "no_paid_sources": true,
+    "no_artwork_substitution": true,
+    "no_artificial_upscaling": true,
+    "archive_only_source_verified_binaries": true,
+    "low_resolution_remains_reference_not_pristine": true,
+    "unresolved_object_identity_stays_hold": true,
+    "no_product_publication": true
+  },
+  "cases": [
+    {
+      "id": "guardian-angel-cortona",
+      "target": "hero:angel",
+      "artist": "Pietro da Cortona",
+      "title": "The Guardian Angel (1656)",
+      "mode": "commons_exact",
+      "file": "Cortona_Guardian_Angel_01.jpg",
+      "minimum": [
+        1300,
+        1900
+      ],
+      "source_role": "reference_low_resolution_only",
+      "search": "Pietro da Cortona Guardian Angel Rome Galleria Nazionale Barberini",
+      "notes": "Exact Cortona 1656; no copies or later variants."
+    },
+    {
+      "id": "evening-frere-op6",
+      "target": "hero:evening",
+      "artist": "Pierre-Édouard Frère",
+      "title": "The Prayer (Wolverhampton OP6)",
+      "mode": "commons_exact",
+      "file": "Pierre_Edouard_Frère_(1819-1886)_-_The_Prayer_-_OP6_-_Wolverhampton_Art_Gallery.jpg",
+      "minimum": [
+        1300,
+        1700
+      ],
+      "source_role": "reference_low_resolution_only",
+      "search": "Pierre Edouard Frere The Prayer OP6 Wolverhampton",
+      "notes": "Exact OP6, not another Evening Prayer; no 2x upscales."
+    },
+    {
+      "id": "restout-pentecost",
+      "target": "hero:holy-spirit;placement:holy-spirit--primary",
+      "artist": "Jean Restout",
+      "title": "Pentecost (Louvre INV 20303)",
+      "mode": "commons_search",
+      "search": "Jean Restout La Pentecôte Louvre painting",
+      "minimum": [
+        1900,
+        1200
+      ],
+      "notes": "Avoid framed/glare source. Exact Restout 1732, no substitute artist or photographer rights conflict."
+    },
+    {
+      "id": "reni-michael",
+      "target": "hero:michael",
+      "artist": "Guido Reni",
+      "title": "Saint Michael Defeating Satan (Santa Maria della Concezione)",
+      "mode": "commons_exact",
+      "file": "Cappouccini,_guido_reni,_san_michele_arcangelo_02.JPG",
+      "minimum": [
+        1600,
+        2200
+      ],
+      "search": "Cappouccini guido reni san michele arcangelo 01 02",
+      "notes": "Original Reni painting, not copy; verify frame/perspective, photographer licence and fine detail."
+    },
+    {
+      "id": "gerome-age-augustus",
+      "target": "hero:salvation",
+      "artist": "Jean-Léon Gérôme",
+      "title": "The Age of Augustus: The Birth of Christ (Musée de Picardie)",
+      "mode": "commons_exact",
+      "file": "Le_Siècle_d'Auguste_-_naissance_de_N.S._Jésus-Christ_par_Gérôme.jpg",
+      "minimum": [
+        1700,
+        1100
+      ],
+      "search": "Jean Léon Gérôme The Age of Augustus Birth of Christ painting isolated",
+      "notes": "Must show painting alone, no gallery installation or synthetic perspective repair."
+    },
+    {
+      "id": "tiepolo-station12",
+      "target": "placement:stations:station12",
+      "artist": "Giandomenico Tiepolo",
+      "title": "San Polo Via Crucis XII: Jesus Dies on the Cross",
+      "mode": "commons_exact",
+      "file": "Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_XII_-_Jesus_dies_on_the_cross.jpg",
+      "minimum": [
+        2500,
+        3300
+      ],
+      "search": "Chiesa San Polo Venice Via Crucis XII Giandomenico Tiepolo",
+      "notes": "Station XII exact San Polo canvas, not stations XIII or XIV; check frame/glare."
+    },
+    {
+      "id": "tiepolo-prado-descent",
+      "target": "placement:stations:descent-prado",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Descent from the Cross (Prado 1772)",
+      "mode": "commons_exact",
+      "file": "Giovanni_Domenico_Tiepolo_-_El_Descendimiento.jpg",
+      "minimum": [
+        1600,
+        1200
+      ],
+      "search": "Giandomenico Tiepolo El Descendimiento Museo Prado 1772 original",
+      "notes": "Prado Passion series, distinct from San Polo Via Crucis."
+    },
+    {
+      "id": "tiepolo-prado-burial",
+      "target": "placement:stations:burial-prado;placement:tenebrae:burial-prado",
+      "artist": "Giandomenico Tiepolo",
+      "title": "Burial of Christ (Prado 1772, P000362)",
+      "mode": "commons_search",
+      "search": "Giovanni Domenico Tiepolo El Entierro de Cristo 1772 Prado burial",
+      "minimum": [
+        1600,
+        1200
+      ],
+      "notes": "Prado inventory P000362, not different San Polo Entombment painting."
+    },
+    {
+      "id": "carracci-burial-met",
+      "target": "placement:stations:carracci;placement:tenebrae:carracci",
+      "artist": "Annibale Carracci",
+      "title": "The Burial of Christ (Met 1998.188)",
+      "mode": "met_exact",
+      "met_object_id": 438338,
+      "minimum": [
+        1600,
+        1300
+      ],
+      "notes": "Met primaryImage official open access, full copper painting, 1595."
+    },
+    {
+      "id": "teniers-agony-antwerp",
+      "target": "placement:tenebrae:teniers",
+      "artist": "David Teniers the Elder",
+      "title": "Agony in the Garden (Antwerp Rosary cycle)",
+      "mode": "commons_search",
+      "search": "David Teniers Elder Agony Garden Antwerp Rosary Chapel",
+      "minimum": [
+        1600,
+        1200
+      ],
+      "notes": "Distinguish from Teniers younger and Rubens workshop variants; no auto identity promotion."
+    },
+    {
+      "id": "paired-hearts-lopez",
+      "target": "placement:first-friday:first-saturday",
+      "artist": "Workshop of Vicente López Portaña",
+      "title": "Sacred Hearts of Jesus and Mary",
+      "mode": "commons_exact",
+      "file": "Sagrados_corazones_de_Jesús_y_María_(Sacred_Hearts_of_Jesus_and_Mary),_workshop_of_Vicente_López_Portaña.jpg",
+      "minimum": [
+        1250,
+        1800
+      ],
+      "search": "Sagrados corazones Jesús María workshop Vicente Lopez Portana museum",
+      "notes": "Original object not copy; Commons summary contains inconsistent generic label; validate visually."
+    },
+    {
+      "id": "batoni-sacred-heart",
+      "target": "placement:sacred-heart:batoni",
+      "artist": "Pompeo Batoni",
+      "title": "Sacred Heart of Jesus (Il Gesù)",
+      "mode": "commons_exact",
+      "file": "SacredHeartBatoni.jpg",
+      "minimum": [
+        1500,
+        1900
+      ],
+      "search": "Pompeo Batoni Sacred Heart Jesus Il Gesu original painting high resolution",
+      "notes": "Known 1034×1441 CC0 photo likely fails quality floor; find better source, not a copy."
+    },
+    {
+      "id": "vandyck-holy-spirit",
+      "target": "placement:hymns:vandyck",
+      "artist": "Anthony van Dyck",
+      "title": "Outpouring of the Holy Spirit (Sanssouci)",
+      "mode": "commons_exact",
+      "file": "Dyck,_Anthonis_van_-_Pouring_of_the_Holy_Ghost_-_Bildergalerie_Sanssouci.jpeg",
+      "minimum": [
+        3000,
+        4000
+      ],
+      "search": "Anthony van Dyck Pouring Holy Ghost Bildergalerie Sanssouci painting",
+      "notes": "Exact Van Dyck Sanssouci, 6064×7368 candidate PD-Art."
+    },
+    {
+      "id": "rubens-trinity",
+      "target": "placement:hymns:rubens",
+      "artist": "Peter Paul Rubens",
+      "title": "The Holy Trinity (exact work TBD)",
+      "mode": "commons_search",
+      "search": "Peter Paul Rubens Holy Trinity painting original",
+      "minimum": [
+        1600,
+        1200
+      ],
+      "notes": "Ambiguous object title; DO NOT select by generic keyword, ask human/registry exact object identity."
+    }
+  ]
+}

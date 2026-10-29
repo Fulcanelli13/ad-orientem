@@ -1,0 +1,86 @@
+{
+  "schema": "AO_PRAYER_ART_B7B_BRETON_AND_MNAC_COMMONS_NATIVE_CANDIDATES_V1",
+  "date": "2026-10-29",
+  "source_api_calls": 1,
+  "cases": [
+    {
+      "id": "morning",
+      "artist": "Jules Breton",
+      "artwork": "The Song of the Lark",
+      "commons_exact_filename": "File:Jules Breton, le chant de l'alouette.1884.jpg",
+      "existing_primary_sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+      "existing_primary_dimensions": [
+        2548,
+        3300
+      ],
+      "research_only": true,
+      "original_primary_bytes_unchanged": true,
+      "photo_rights_final_certified": false,
+      "pristine_certified": false,
+      "publication_allowed": false,
+      "commons_metadata": {
+        "file_page": "https://commons.wikimedia.org/wiki/File:Jules_Breton,_le_chant_de_l'alouette.1884.jpg",
+        "sha1": "885e783c3a4cbb6b96f5b6da1072d9ba37c99f20",
+        "width": 2548,
+        "height": 3300,
+        "mime": "image/jpeg",
+        "licence": "Public domain",
+        "copyrighted": "False",
+        "artist": "Jules Breton"
+      },
+      "archived_primary_is_exact_second_commons_file": true,
+      "status": "EXACT_PINNED_ARCHIVED_MORNING_COMMONS_FILE_VERIFIED"
+    },
+    {
+      "id": "sorrows",
+      "artist": "Attributed to the Master of the Female Half-Lengths",
+      "artwork": "Virgin of the Seven Sorrows (Mare de Déu dels Set Dolors)",
+      "commons_exact_filename": "File:Master of the Half Lengths - Virgin of the Seven Sorrows - Google Art Project.jpg",
+      "existing_primary_sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+      "existing_primary_dimensions": [
+        2220,
+        3000
+      ],
+      "research_only": true,
+      "original_primary_bytes_unchanged": true,
+      "photo_rights_final_certified": false,
+      "pristine_certified": false,
+      "publication_allowed": false,
+      "commons_metadata": {
+        "file_page": "https://commons.wikimedia.org/wiki/File:Master_of_the_Half_Lengths_-_Virgin_of_the_Seven_Sorrows_-_Google_Art_Project.jpg",
+        "sha1": "03c6d507851e439df31dfaf0fec390b6e55c86db",
+        "width": 3250,
+        "height": 4391,
+        "mime": "image/jpeg",
+        "licence": "Public domain",
+        "copyrighted": "False",
+        "artist": "Master of the Female Half-Lengths"
+      },
+      "candidate_image": {
+        "path": "assets/staged/prayer-art-b7b-breton-mnac-exact-commons-20261029/sorrows-google-art-project-3250x4391-commons-original.jpg",
+        "sha256": "9ac17078b83f2cf6031aa70a86917929cdeea16927e66c4bb7c0f7671ec89667",
+        "sha1": "03c6d507851e439df31dfaf0fec390b6e55c86db",
+        "pixels": [
+          3250,
+          4391
+        ],
+        "bytes": 5215174,
+        "full_frame_proof": "assets/staged/prayer-art-b7b-breton-mnac-exact-commons-20261029/sorrows-google-art-project-entire-composition-review.jpg",
+        "full_frame_proof_sha256": "16271c82699c42d1bb7979928bf27ac4906a1560a569e4f1d8a394bc99efb7cc",
+        "quality_and_rights_hold": true,
+        "master_not_replaced": true
+      },
+      "status": "HIGHER_NATIVE_PIXEL_EXACT_SEVEN_SORROWS_SOURCE_ARCHIVED_FOR_QUALITY_REVIEW"
+    }
+  ],
+  "totals": {
+    "cases": 2,
+    "primary_hero_master_overwrites": 0,
+    "archived_source_exact_morning_identifications": 1,
+    "higher_resolution_sorrows_candidate_archived": 1,
+    "pristine_final_certifications": 0,
+    "photo_rights_final_certifications": 0,
+    "production_releases": 0,
+    "cost_eur": 0
+  }
+}

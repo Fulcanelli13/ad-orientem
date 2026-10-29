@@ -1,0 +1,72 @@
+name: Sacred Art — Met Batch 4 250-work gallery
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-met-b4-gallery-20261029.yml
+      - scripts/art/build-sacred-art-met-b4-gallery-20261029.py
+      - data/calendar/sacred-art-met-250-b4-20261029.v1.json
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-met-b4-gallery
+  cancel-in-progress: true
+jobs:
+  build-gallery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build Met B4 gallery only after separate source verification
+        run: |
+          if [ ! -f data/calendar/sacred-art-met-250-b4-20261029.v1.json ]; then
+            echo 'Met B4 metadata has not been committed'; exit 0
+          fi
+          python -m py_compile scripts/art/build-sacred-art-met-b4-gallery-20261029.py
+          python scripts/art/build-sacred-art-met-b4-gallery-20261029.py
+      - name: Verify 250 distinct card data, one Met source, B3 untouched and correct JS
+        run: |
+          if [ ! -f docs/SACRED_ART_MET_250_WORK_IMPORT_REVIEW_B4_20261029.html ]; then exit 0; fi
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          h=Path('docs/SACRED_ART_MET_250_WORK_IMPORT_REVIEW_B4_20261029.html').read_text(encoding='utf8')
+          q=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert q
+          rows=json.loads(q.group(1))
+          b3=json.loads(Path('data/calendar/sacred-art-250-review-source-b3-20261029.v1.json').read_text())
+          earlier=json.loads(Path('data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json').read_text())
+          excluded={x['id'] for x in b3['rows']}|{x['sourceId'] for n in ('imports','rejects') for x in earlier[n]}
+          ids={x['id'] for x in rows}
+          assert 200<=len(rows)<=250 and len(rows)==len(ids)
+          assert len(excluded)==310 and not ids&excluded
+          assert all(x['provider']=='MetMuseum' and x['sourceImageRights']=='MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE' for x in rows)
+          assert all(x['previewURL'].startswith('https://images.metmuseum.org/') for x in rows)
+          assert "batchId:'B4'" in h and 'const PAGE_SIZE=50' in h
+          assert 'seenPages.length<TOTAL_PAGES' in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'Finalize and export decisions' in h
+          assert 'for(let score=' not in h
+          js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert js
+          Path('/tmp/ao-met-b4-gallery.js').write_text(js.group(1))
+          print('PASS',len(rows),'Met CC0 research cards')
+          PY
+          node --check /tmp/ao-met-b4-gallery.js
+          git diff --exit-code -- data/calendar/sacred-art-250-review-source-b3-20261029.v1.json data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json
+      - name: Preserve B4 gallery without changing B3 file or production
+        run: |
+          if [ ! -f docs/SACRED_ART_MET_250_WORK_IMPORT_REVIEW_B4_20261029.html ]; then exit 0; fi
+          git config user.name "Ad Orientem art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/SACRED_ART_MET_250_WORK_IMPORT_REVIEW_B4_20261029.html
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): build separate 250-work Met Batch B4 user review"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

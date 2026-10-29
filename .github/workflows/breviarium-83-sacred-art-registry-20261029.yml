@@ -1,0 +1,42 @@
+name: Sacred Art - Breviarium 83-plate full registry intake
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/breviarium-83-sacred-art-registry-20261029.yml
+      - scripts/art/breviarium-83-bulk-registry-intake-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-breviarium-83-bulk-catalogue
+  cancel-in-progress: false
+jobs:
+  all-83-gallery-plates-and-user-protected-rejection-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free source-HTML parser
+        run: python -m pip install --disable-pip-version-check beautifulsoup4==4.13.4
+      - name: Extract and classify complete gallery with immutable owner gates
+        run: |
+          python -m py_compile scripts/art/breviarium-83-bulk-registry-intake-20261029.py
+          python scripts/art/breviarium-83-bulk-registry-intake-20261029.py
+      - name: Preserve research-only registry in Git
+        if: always()
+        run: |
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-breviarium-83-gallery-intake-20261029.v1.json assets/staged/sacred-art-breviarium-source-audit-20261029/import-summary.json
+          git diff --cached --check
+          if git diff --cached --quiet; then echo "No new bulk source evidence"; exit 0; fi
+          git commit -m "research(sacred art): stage Breviarium 83 plate Commons source register and aesthetic triage"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

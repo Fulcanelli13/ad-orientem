@@ -1,0 +1,29 @@
+name: Prayer Sacred Art B5 - four boundaries and twelve photo-rights validation
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/prayer-art-b5-registry-validation-20261028.yml
+      - scripts/art/validate-prayer-art-b5-four-boundaries-twelve-rights-20261028.mjs
+      - data/research/prayer-sacred-art-pristine-master-registry-20261028.v1.json
+      - data/research/prayer-art-b5-twelve-photo-source-rights-evidence-20261028.v1.json
+      - assets/staged/prayer-art-b5-four-boundary-candidates-20261028/boundary-proofs.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate-4-and-12-against-original-sha:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify crop source SHA, PNG dimensions and rights gates
+        run: |
+          node --check scripts/art/validate-prayer-art-b5-four-boundaries-twelve-rights-20261028.mjs
+          node scripts/art/validate-prayer-art-b5-four-boundaries-twelve-rights-20261028.mjs

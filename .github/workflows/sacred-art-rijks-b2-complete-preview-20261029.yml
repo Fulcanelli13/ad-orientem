@@ -1,0 +1,61 @@
+name: Sacred Art — complete rights-cleared Rijks B2 contact sheets
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - scripts/art/complete-sacred-art-rijks-b2-unrendered-previews-20261029.py
+      - .github/workflows/sacred-art-rijks-b2-complete-preview-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-rijks-b2-complete
+  cancel-in-progress: true
+jobs:
+  complete-verified-thumbnails:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free local image renderer
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Complete first-pass whole-image previews without rechecking 140 objects
+        run: |
+          python -m py_compile scripts/art/complete-sacred-art-rijks-b2-unrendered-previews-20261029.py
+          python scripts/art/complete-sacred-art-rijks-b2-unrendered-previews-20261029.py
+      - name: Verify all exact source rights, dimensions and frozen approvals
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('data/calendar/sacred-art-rijks-rights-gated-review-b2-20261029.v1.json').read_text())
+          assert len(d['records'])==140
+          assert d['counts']['newImageAestheticRatings']==0 and d['counts']['productionReleases']==0
+          assert d['counts']['nativePhotographsCertified']==0
+          assert d['counts']['sourceImageCC0PreviewCount']<=137
+          for x in d['records']:
+            if x['disposition']=='CC0_RESEARCH_CONTACT_SHEET_ONLY':
+              p=x['edmImageRightsProof']
+              assert p['sameObject'] and p['sameImageService'] and p['explicitOpenRights']
+              assert p['status']=='CC0_OR_PDM' and x['imageRights']=='CC0_OR_PDM'
+              assert min(x['nativeSourceDimensions'].values())>=1800
+          assert len(d['contactSheets'])<=6
+          print('VALIDATED',d['counts'],d['contactSheets'])
+          PY
+          git diff --exit-code -- data/calendar/sacred-art-curator-queues-383-20261029.v1.json data/calendar/sacred-art-candidates.v1.json
+      - name: Commit supplementary research sheets, no production originals
+        run: |
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-rijks-rights-gated-review-b2-20261029.v1.json docs/SACRED_ART_RIJKS_RIGHTS_GATED_REVIEW_B2_20261029.md
+          if [ -d assets/staged/sacred-art-rijks-b2-20261029 ]; then git add assets/staged/sacred-art-rijks-b2-20261029/; fi
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): complete 137 rights-cleared full-field Rijks preview queue"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

@@ -1,0 +1,26 @@
+name: Sacred Art Curator — rights, visual, and near-ready QA
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/sacred-art-curator-queues-integrity-20261029.yml
+      - scripts/art/validate-sacred-art-curator-queues-20261029.mjs
+      - data/calendar/sacred-art-curator-official18-native-first-visual-20261029.v1.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit-source-specific-licences-and-painting-visual-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          node --check scripts/art/validate-sacred-art-curator-queues-20261029.mjs
+          node scripts/art/validate-sacred-art-curator-queues-20261029.mjs

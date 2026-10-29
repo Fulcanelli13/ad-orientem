@@ -1,0 +1,54 @@
+name: Sacred Art — Rijks B2 rating gallery (research only)
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-rijks-b2-user-gallery-20261029.yml
+      - scripts/art/build-sacred-art-rijks-b2-user-review-gallery-20261029.py
+      - data/calendar/sacred-art-rijks-rights-gated-review-b2-20261029.v1.json
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-rijks-b2-user-review-html
+  cancel-in-progress: true
+jobs:
+  build-curatorial-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate standalone review HTML for exact-rights-cleared images only
+        run: |
+          python -m py_compile scripts/art/build-sacred-art-rijks-b2-user-review-gallery-20261029.py
+          python scripts/art/build-sacred-art-rijks-b2-user-review-gallery-20261029.py
+      - name: Verify rights and prevent direct modification of canonical decisions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('data/calendar/sacred-art-rijks-rights-gated-review-b2-20261029.v1.json').read_text())
+          html=Path('docs/SACRED_ART_RIJKS_B2_AESTHETIC_REVIEW_20261029.html').read_text()
+          assert '<script id="review-data" type="application/json">' in html
+          assert html.count('https://iiif.micr.io/')==d['counts']['sourceImageCC0PreviewCount']
+          assert 'localStorage' in html and 'Export my ratings' in html
+          assert 'newImageAestheticRatings' in d['counts'] and d['counts']['newImageAestheticRatings']==0
+          assert d['counts']['productionReleases']==0
+          print('PASS',d['counts']['sourceImageCC0PreviewCount'],'rights-gated review thumbnails')
+          PY
+          git diff --exit-code -- data/calendar/sacred-art-curator-queues-383-20261029.v1.json data/calendar/sacred-art-licence-first-383-exact-source-audit-20261029.v1.json
+      - name: Permanently store local-only rating gallery (no image originals)
+        run: |
+          git config user.name "Ad Orientem visual curator tools"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/SACRED_ART_RIJKS_B2_AESTHETIC_REVIEW_20261029.html
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): publish rights-safe offline B2 visual rating gallery"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

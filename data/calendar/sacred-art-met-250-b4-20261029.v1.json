@@ -1,0 +1,1576 @@
+{
+  "schema": "AO_SACRED_ART_MET_B4_250_OFFICIAL_IMAGE_VERIFIED_V1",
+  "date": "2026-10-29",
+  "batchId": "B4",
+  "targetSize": 250,
+  "batchReady": false,
+  "source": "The Metropolitan Museum of Art official public Collection API v1.1, Open Access CC0",
+  "counts": {
+    "distinctImageVisiblePaintings": 14,
+    "metadataSearchTermsAttempted": 62,
+    "candidateObjectIds": 444,
+    "detailLookups": 444,
+    "religiousPaintingMetadataMatches": 14,
+    "previewJPEGsChecked": 14,
+    "imagePreviewFailed": 0,
+    "overlapWithB3_250AndPrior60": 0,
+    "previouslyCataloguedMetExcluded": 93,
+    "newUserDecisions": 0,
+    "newProductionImports": 0,
+    "sourceFailures": 426
+  },
+  "gates": {
+    "isPublicDomainPerExactObject": true,
+    "classificationPaintings": true,
+    "materialPaintedSupport": true,
+    "individualPreviewJPEGHeaderValidated": true,
+    "noImageOriginalsArchived": true,
+    "noB3OrPrior60MetadataChanged": true,
+    "noAestheticGradeAssigned": true,
+    "productionSourceQualityCertified": false
+  },
+  "searchLog": [
+    {
+      "query": "Crucifixion",
+      "total": 25,
+      "firstPageIds": 25,
+      "newIds": 21
+    },
+    {
+      "query": "Christ",
+      "total": 67,
+      "firstPageIds": 67,
+      "newIds": 55
+    },
+    {
+      "query": "Saint Jerome",
+      "total": 4,
+      "firstPageIds": 4,
+      "newIds": 3
+    },
+    {
+      "query": "Saint Mary Magdalene",
+      "total": 10,
+      "firstPageIds": 10,
+      "newIds": 8
+    },
+    {
+      "query": "Magdalene",
+      "total": 12,
+      "firstPageIds": 12,
+      "newIds": 2
+    },
+    {
+      "query": "Saint Peter",
+      "total": 9,
+      "firstPageIds": 9,
+      "newIds": 3
+    },
+    {
+      "query": "Saint John",
+      "total": 44,
+      "firstPageIds": 44,
+      "newIds": 36
+    },
+    {
+      "query": "Saint Paul",
+      "total": 7,
+      "firstPageIds": 7,
+      "newIds": 3
+    },
+    {
+      "query": "Saint Joseph",
+      "total": 2,
+      "firstPageIds": 2,
+      "newIds": 1
+    },
+    {
+      "query": "Saint Francis",
+      "total": 7,
+      "firstPageIds": 7,
+      "newIds": 2
+    },
+    {
+      "query": "Annunciation",
+      "total": 20,
+      "firstPageIds": 20,
+      "newIds": 11
+    },
+    {
+      "query": "Deposition",
+      "total": 0,
+      "firstPageIds": 0,
+      "newIds": 0
+    },
+    {
+      "query": "Ecce Homo",
+      "total": 4,
+      "firstPageIds": 4,
+      "newIds": 0
+    },
+    {
+      "query": "Holy Family",
+      "total": 17,
+      "firstPageIds": 17,
+      "newIds": 8
+    },
+    {
+      "query": "The Virgin",
+      "total": 35,
+      "firstPageIds": 35,
+      "newIds": 22
+    },
+    {
+      "query": "Virgin and Child",
+      "total": 133,
+      "firstPageIds": 133,
+      "newIds": 102
+    },
+    {
+      "query": "Saint Sebastian",
+      "total": 1,
+      "firstPageIds": 1,
+      "newIds": 1
+    },
+    {
+      "query": "Saint Catherine",
+      "total": 9,
+      "firstPageIds": 9,
+      "newIds": 5
+    },
+    {
+      "query": "Saint Teresa",
+      "total": 1,
+      "firstPageIds": 1,
+      "newIds": 0
+    },
+    {
+      "query": "Adoration of the Magi",
+      "total": 21,
+      "firstPageIds": 21,
+      "newIds": 13
+    },
+    {
+      "query": "Adoration of the Shepherds",
+      "total": 21,
+      "firstPageIds": 21,
+      "newIds": 1
+    },
+    {
+      "query": "Nativity",
+      "total": 11,
+      "firstPageIds": 11,
+      "newIds": 7
+    },
+    {
+      "query": "Baptism of Christ",
+      "total": 40,
+      "firstPageIds": 40,
+      "newIds": 2
+    },
+    {
+      "query": "Resurrection",
+      "total": 7,
+      "firstPageIds": 7,
+      "newIds": 2
+    },
+    {
+      "query": "Lamentation",
+      "total": 9,
+      "firstPageIds": 9,
+      "newIds": 9
+    },
+    {
+      "query": "The Virgin and Child",
+      "total": 55,
+      "firstPageIds": 55,
+      "newIds": 0
+    },
+    {
+      "query": "Madonna and Child",
+      "total": 128,
+      "firstPageIds": 128,
+      "newIds": 2
+    },
+    {
+      "query": "Christ Carrying the Cross",
+      "total": 7,
+      "firstPageIds": 7,
+      "newIds": 0
+    },
+    {
+      "query": "Saint Andrew",
+      "total": 4,
+      "firstPageIds": 4,
+      "newIds": 4
+    },
+    {
+      "query": "The Assumption",
+      "total": 2,
+      "firstPageIds": 2,
+      "newIds": 0
+    },
+    {
+      "query": "Saint Augustine",
+      "total": 1,
+      "firstPageIds": 1,
+      "newIds": 0
+    },
+    {
+      "query": "Saint Agnes",
+      "total": 0,
+      "firstPageIds": 0,
+      "newIds": 0
+    },
+    {
+      "query": "Saint Lucy",
+      "total": 3,
+      "firstPageIds": 3,
+      "newIds": 1
+    },
+    {
+      "query": "The Ascension",
+      "total": 1,
+      "firstPageIds": 1,
+      "newIds": 0
+    },
+    {
+      "query": "The Transfiguration",
+      "total": 0,
+      "firstPageIds": 0,
+      "newIds": 0
+    },
+    {
+      "query": "Saint Dominic",
+      "total": 3,
+      "firstPageIds": 3,
+      "newIds": 2
+    },
+    {
+      "query": "Saint Benedict",
+      "total": 5,
+      "firstPageIds": 5,
+      "newIds": 2
+    },
+    {
+      "query": "John the Baptist",
+      "total": 54,
+      "firstPageIds": 54,
+      "newIds": 4
+    },
+    {
+      "query": "The Last Supper",
+      "total": 7,
+      "firstPageIds": 7,
+      "newIds": 2
+    },
+    {
+      "query": "The Pieta",
+      "total": 1,
+      "firstPageIds": 1,
+      "newIds": 0
+    },
+    {
+      "query": "Sacred Heart",
+      "total": 0,
+      "firstPageIds": 0,
+      "newIds": 0
+    },
+    {
+      "query": "Saint Ambrose",
+      "total": 0,
+      "firstPageIds": 0,
+      "newIds": 0
+    },
+    {
+      "query": "Saint Gregory",
+      "total": 2,
+      "firstPageIds": 2,
+      "newIds": 0
+    },
+    {
+      "query": "Saint Stephen",
+      "total": 1,
+      "firstPageIds": 1,
+      "newIds": 0
+    },
+    {
+      "query": "Saint Anthony",
+      "total": 8,
+      "firstPageIds": 8,
+      "newIds": 5
+    },
+    {
+      "query": "Saint Michael",
+      "total": 6,
+      "firstPageIds": 6,
+      "newIds": 3
+    },
+    {
+      "query": "The Visitation",
+      "total": 0,
+      "firstPageIds": 0,
+      "newIds": 0
+    },
+    {
+      "query": "Holy Trinity",
+      "total": 0,
+      "firstPageIds": 0,
+      "newIds": 0
+    },
+    {
+      "query": "Saint Christopher",
+      "total": 2,
+      "firstPageIds": 2,
+      "newIds": 0
+    },
+    {
+      "query": "Saint Philip",
+      "total": 1,
+      "firstPageIds": 1,
+      "newIds": 0
+    },
+    {
+      "query": "The Holy Family",
+      "total": 37,
+      "firstPageIds": 37,
+      "newIds": 20
+    },
+    {
+      "query": "The Madonna",
+      "total": 22,
+      "firstPageIds": 22,
+      "newIds": 5
+    },
+    {
+      "query": "Saints",
+      "total": 241,
+      "firstPageIds": 241,
+      "newIds": 75
+    },
+    {
+      "query": "The Baptism",
+      "total": 40,
+      "firstPageIds": 40,
+      "newIds": 0
+    },
+    {
+      "query": "Adoration",
+      "total": 20,
+      "firstPageIds": 20,
+      "newIds": 0
+    },
+    {
+      "query": "Christ and the Virgin",
+      "total": 26,
+      "firstPageIds": 26,
+      "newIds": 0
+    },
+    {
+      "query": "Saint Nicholas",
+      "total": 6,
+      "firstPageIds": 6,
+      "newIds": 0
+    },
+    {
+      "query": "Saint Margaret",
+      "total": 2,
+      "firstPageIds": 2,
+      "newIds": 0
+    },
+    {
+      "query": "Saint Barbara",
+      "total": 1,
+      "firstPageIds": 1,
+      "newIds": 0
+    },
+    {
+      "query": "The Virgin Mary",
+      "total": 43,
+      "firstPageIds": 43,
+      "newIds": 2
+    },
+    {
+      "query": "The Crucifixion",
+      "total": 25,
+      "firstPageIds": 25,
+      "newIds": 0
+    },
+    {
+      "query": "Saint",
+      "total": 179,
+      "firstPageIds": 179,
+      "newIds": 0
+    }
+  ],
+  "errors": [
+    {
+      "stage": "OBJECT",
+      "id": 436271,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437240,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436412,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437649,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437698,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436280,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437021,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437288,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437404,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437578,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437856,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 641257,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 440566,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435580,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435619,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436034,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436068,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436413,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436572,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436767,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437157,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437202,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437407,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437736,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437855,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 438666,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 439977,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 910391,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435897,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436176,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436922,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436950,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437168,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437489,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437639,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437774,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 441965,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436272,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435607,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436097,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436492,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436781,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437281,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 440732,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435763,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437321,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437466,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437978,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437559,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436776,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437564,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437569,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 438022,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437032,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 441672,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436721,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435572,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437604,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437910,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437261,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437491,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 828241,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436967,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437744,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 904343,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435992,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437038,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437195,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435824,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 438850,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436991,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436563,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437777,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437909,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435600,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437651,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436576,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436568,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436705,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437285,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437857,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 438813,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436978,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 440209,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 659875,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 438385,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436495,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436496,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 438025,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 928091,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435759,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437699,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437740,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437529,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435614,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436497,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436738,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437081,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437609,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 438139,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 438382,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 441227,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 816514,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436733,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435744,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437024,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437652,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436909,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437528,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436751,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437221,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436562,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437492,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435885,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 438688,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436898,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435822,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436476,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436743,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436899,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437554,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 438761,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436680,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436981,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436537,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436979,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437028,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436770,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436793,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436797,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436344,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436798,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437368,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437455,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436799,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437026,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437858,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435731,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435848,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435853,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436487,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436723,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436894,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437083,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437100,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437524,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437700,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437912,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 438690,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 438387,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436299,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437232,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437018,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437152,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436539,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437971,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437733,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435762,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435764,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435765,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435766,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436103,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436245,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436261,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436795,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437013,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437017,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437033,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437057,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437060,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437062,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437175,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437337,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437544,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 838076,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 437229,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 435838,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436244,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436283,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "OBJECT",
+      "id": 436262,
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    }
+  ],
+  "rows": [
+    {
+      "id": "met:437172",
+      "provider": "MetMuseum",
+      "museum": "The Metropolitan Museum of Art",
+      "objectId": "437172",
+      "accession": "1976.100.17",
+      "title": "The Crucifixion",
+      "artist": "Bartolomé Estebán Murillo",
+      "date": "ca. 1675",
+      "medium": "Oil on canvas",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/437172",
+      "previewURL": "https://images.metmuseum.org/CRDImages/ep/web-large/DT10248.jpg",
+      "fullOriginalSourceURL": "https://images.metmuseum.org/CRDImages/ep/original/DT10248.jpg",
+      "rightsBasis": "MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE",
+      "rightsForProduction": "MET_CC0_PUBLIC_DOMAIN__NATIVE_QA_AND_PROVENANCE_PENDING",
+      "aestheticGrade": null,
+      "editorialSelection": null,
+      "productionImported": false
+    },
+    {
+      "id": "met:437972",
+      "provider": "MetMuseum",
+      "museum": "The Metropolitan Museum of Art",
+      "objectId": "437972",
+      "accession": "65.220.2",
+      "title": "The Crucifixion",
+      "artist": "Francisco de Zurbarán",
+      "date": "",
+      "medium": "Oil on canvas",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/437972",
+      "previewURL": "https://images.metmuseum.org/CRDImages/ep/web-large/ep65.220.2.bw.R.jpg",
+      "fullOriginalSourceURL": "https://images.metmuseum.org/CRDImages/ep/original/ep65.220.2.bw.R.jpg",
+      "rightsBasis": "MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE",
+      "rightsForProduction": "MET_CC0_PUBLIC_DOMAIN__NATIVE_QA_AND_PROVENANCE_PENDING",
+      "aestheticGrade": null,
+      "editorialSelection": null,
+      "productionImported": false
+    },
+    {
+      "id": "met:435817",
+      "provider": "MetMuseum",
+      "museum": "The Metropolitan Museum of Art",
+      "objectId": "435817",
+      "accession": "56.228",
+      "title": "The Crucifixion with the Virgin and Saint John",
+      "artist": "Hendrick ter Brugghen",
+      "date": "ca. 1624–25",
+      "medium": "Oil on canvas",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/435817",
+      "previewURL": "https://images.metmuseum.org/CRDImages/ep/web-large/DP146490.jpg",
+      "fullOriginalSourceURL": "https://images.metmuseum.org/CRDImages/ep/original/DP146490.jpg",
+      "rightsBasis": "MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE",
+      "rightsForProduction": "MET_CC0_PUBLIC_DOMAIN__NATIVE_QA_AND_PROVENANCE_PENDING",
+      "aestheticGrade": null,
+      "editorialSelection": null,
+      "productionImported": false
+    },
+    {
+      "id": "met:437242",
+      "provider": "MetMuseum",
+      "museum": "The Metropolitan Museum of Art",
+      "objectId": "437242",
+      "accession": "57.170",
+      "title": "The Crucifixion",
+      "artist": "Jacopo Palma the Younger",
+      "date": "",
+      "medium": "Oil on canvas",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/437242",
+      "previewURL": "https://images.metmuseum.org/CRDImages/ep/web-large/ep57.170.bw.R.jpg",
+      "fullOriginalSourceURL": "https://images.metmuseum.org/CRDImages/ep/original/ep57.170.bw.R.jpg",
+      "rightsBasis": "MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE",
+      "rightsForProduction": "MET_CC0_PUBLIC_DOMAIN__NATIVE_QA_AND_PROVENANCE_PENDING",
+      "aestheticGrade": null,
+      "editorialSelection": null,
+      "productionImported": false
+    },
+    {
+      "id": "met:436792",
+      "provider": "MetMuseum",
+      "museum": "The Metropolitan Museum of Art",
+      "objectId": "436792",
+      "accession": "41.190.20a–c",
+      "title": "The Crucifixion with Saints and a Donor",
+      "artist": "Joos van Cleve",
+      "date": "ca. 1520",
+      "medium": "Oil on wood",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/436792",
+      "previewURL": "https://images.metmuseum.org/CRDImages/ep/web-large/DT1467.jpg",
+      "fullOriginalSourceURL": "https://images.metmuseum.org/CRDImages/ep/original/DT1467.jpg",
+      "rightsBasis": "MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE",
+      "rightsForProduction": "MET_CC0_PUBLIC_DOMAIN__NATIVE_QA_AND_PROVENANCE_PENDING",
+      "aestheticGrade": null,
+      "editorialSelection": null,
+      "productionImported": false
+    },
+    {
+      "id": "met:438028",
+      "provider": "MetMuseum",
+      "museum": "The Metropolitan Museum of Art",
+      "objectId": "438028",
+      "accession": "1997.117.9",
+      "title": "The Crucifixion",
+      "artist": "Paolo Uccello (Paolo di Dono)",
+      "date": "probably mid-1450s",
+      "medium": "Tempera on wood, gold ground",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/438028",
+      "previewURL": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-25222-001.jpg",
+      "fullOriginalSourceURL": "https://images.metmuseum.org/CRDImages/ep/original/DP-25222-001.jpg",
+      "rightsBasis": "MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE",
+      "rightsForProduction": "MET_CC0_PUBLIC_DOMAIN__NATIVE_QA_AND_PROVENANCE_PENDING",
+      "aestheticGrade": null,
+      "editorialSelection": null,
+      "productionImported": false
+    },
+    {
+      "id": "met:436282",
+      "provider": "MetMuseum",
+      "museum": "The Metropolitan Museum of Art",
+      "objectId": "436282",
+      "accession": "33.92ab",
+      "title": "The Crucifixion; The Last Judgment",
+      "artist": "Jan van Eyck",
+      "date": "ca. 1436–38",
+      "medium": "Oil on canvas, transferred from wood",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/436282",
+      "previewURL": "https://images.metmuseum.org/CRDImages/ep/web-large/LC-33_92ab-Primary_Temp.jpg",
+      "fullOriginalSourceURL": "https://images.metmuseum.org/CRDImages/ep/original/LC-33_92ab-Primary_Temp.jpg",
+      "rightsBasis": "MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE",
+      "rightsForProduction": "MET_CC0_PUBLIC_DOMAIN__NATIVE_QA_AND_PROVENANCE_PENDING",
+      "aestheticGrade": null,
+      "editorialSelection": null,
+      "productionImported": false
+    },
+    {
+      "id": "met:435574",
+      "provider": "MetMuseum",
+      "museum": "The Metropolitan Museum of Art",
+      "objectId": "435574",
+      "accession": "12.6",
+      "title": "The Crucifixion",
+      "artist": "Andrea di Bartolo",
+      "date": "",
+      "medium": "Tempera on wood, gold ground",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/435574",
+      "previewURL": "https://images.metmuseum.org/CRDImages/ep/web-large/DP318238.jpg",
+      "fullOriginalSourceURL": "https://images.metmuseum.org/CRDImages/ep/original/DP318238.jpg",
+      "rightsBasis": "MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE",
+      "rightsForProduction": "MET_CC0_PUBLIC_DOMAIN__NATIVE_QA_AND_PROVENANCE_PENDING",
+      "aestheticGrade": null,
+      "editorialSelection": null,
+      "productionImported": false
+    },
+    {
+      "id": "met:436072",
+      "provider": "MetMuseum",
+      "museum": "The Metropolitan Museum of Art",
+      "objectId": "436072",
+      "accession": "41.190.12",
+      "title": "The Crucifixion",
+      "artist": "Bernardo Daddi",
+      "date": "",
+      "medium": "Tempera on wood, gold ground",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/436072",
+      "previewURL": "https://images.metmuseum.org/CRDImages/ep/web-large/ep41.190.12.bw.R.jpg",
+      "fullOriginalSourceURL": "https://images.metmuseum.org/CRDImages/ep/original/ep41.190.12.bw.R.jpg",
+      "rightsBasis": "MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE",
+      "rightsForProduction": "MET_CC0_PUBLIC_DOMAIN__NATIVE_QA_AND_PROVENANCE_PENDING",
+      "aestheticGrade": null,
+      "editorialSelection": null,
+      "productionImported": false
+    },
+    {
+      "id": "met:436921",
+      "provider": "MetMuseum",
+      "museum": "The Metropolitan Museum of Art",
+      "objectId": "436921",
+      "accession": "25.79",
+      "title": "The Crucifixion",
+      "artist": "Luca di Tommè di Nuto",
+      "date": "",
+      "medium": "Oil on wood, gold ground",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/436921",
+      "previewURL": "https://images.metmuseum.org/CRDImages/ep/web-large/ep25.79.bw.R.jpg",
+      "fullOriginalSourceURL": "https://images.metmuseum.org/CRDImages/ep/original/ep25.79.bw.R.jpg",
+      "rightsBasis": "MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE",
+      "rightsForProduction": "MET_CC0_PUBLIC_DOMAIN__NATIVE_QA_AND_PROVENANCE_PENDING",
+      "aestheticGrade": null,
+      "editorialSelection": null,
+      "productionImported": false
+    },
+    {
+      "id": "met:436997",
+      "provider": "MetMuseum",
+      "museum": "The Metropolitan Museum of Art",
+      "objectId": "436997",
+      "accession": "43.161",
+      "title": "The Crucifixion",
+      "artist": "Master of the Berswordt Altar",
+      "date": "ca. 1400",
+      "medium": "Oil, egg(?), and gold on plywood, transferred from wood",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/436997",
+      "previewURL": "https://images.metmuseum.org/CRDImages/ep/web-large/DP164823.jpg",
+      "fullOriginalSourceURL": "https://images.metmuseum.org/CRDImages/ep/original/DP164823.jpg",
+      "rightsBasis": "MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE",
+      "rightsForProduction": "MET_CC0_PUBLIC_DOMAIN__NATIVE_QA_AND_PROVENANCE_PENDING",
+      "aestheticGrade": null,
+      "editorialSelection": null,
+      "productionImported": false
+    },
+    {
+      "id": "met:438423",
+      "provider": "MetMuseum",
+      "museum": "The Metropolitan Museum of Art",
+      "objectId": "438423",
+      "accession": "1999.532",
+      "title": "The Crucifixion",
+      "artist": "Bernardo Daddi",
+      "date": "ca. 1325–30",
+      "medium": "Tempera on wood, gold ground",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/438423",
+      "previewURL": "https://images.metmuseum.org/CRDImages/ep/web-large/DT4527.jpg",
+      "fullOriginalSourceURL": "https://images.metmuseum.org/CRDImages/ep/original/DT4527.jpg",
+      "rightsBasis": "MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE",
+      "rightsForProduction": "MET_CC0_PUBLIC_DOMAIN__NATIVE_QA_AND_PROVENANCE_PENDING",
+      "aestheticGrade": null,
+      "editorialSelection": null,
+      "productionImported": false
+    },
+    {
+      "id": "met:440985",
+      "provider": "MetMuseum",
+      "museum": "The Metropolitan Museum of Art",
+      "objectId": "440985",
+      "accession": "41.190.31a",
+      "title": "The Crucifixion",
+      "artist": "Ugolino da Siena",
+      "date": "ca. 1315–20",
+      "medium": "Tempera on wood, gold ground",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/440985",
+      "previewURL": "https://images.metmuseum.org/CRDImages/ep/web-large/DP296426.jpg",
+      "fullOriginalSourceURL": "https://images.metmuseum.org/CRDImages/ep/original/DP296426.jpg",
+      "rightsBasis": "MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE",
+      "rightsForProduction": "MET_CC0_PUBLIC_DOMAIN__NATIVE_QA_AND_PROVENANCE_PENDING",
+      "aestheticGrade": null,
+      "editorialSelection": null,
+      "productionImported": false
+    },
+    {
+      "id": "met:770595",
+      "provider": "MetMuseum",
+      "museum": "The Metropolitan Museum of Art",
+      "objectId": "770595",
+      "accession": "2018.87",
+      "title": "The Crucifixion",
+      "artist": "Stefano da Verona (Stefano di Giovanni d'Arbosio di Francia)",
+      "date": "ca. 1400",
+      "medium": "Tempera on wood, gold ground",
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/770595",
+      "previewURL": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-15505-001.jpg",
+      "fullOriginalSourceURL": "https://images.metmuseum.org/CRDImages/ep/original/DP-15505-001.jpg",
+      "rightsBasis": "MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE",
+      "rightsForProduction": "MET_CC0_PUBLIC_DOMAIN__NATIVE_QA_AND_PROVENANCE_PENDING",
+      "aestheticGrade": null,
+      "editorialSelection": null,
+      "productionImported": false
+    }
+  ]
+}

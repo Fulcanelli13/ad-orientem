@@ -1,0 +1,117 @@
+{
+  "schema": "AO_B6_WALTERS_IIIF_PREVIEW_HOST_SMOKE_V1",
+  "imageFilesSaved": 0,
+  "tests": [
+    {
+      "sourceUrl": "https://art.thewalters.org/images/raw/PL7_37.569_Fnt_BW.jpg",
+      "mode": "raw",
+      "url": "https://art.thewalters.org/images/raw/PL7_37.569_Fnt_BW.jpg",
+      "validJpeg": true,
+      "status": 206,
+      "mime": "image/jpeg",
+      "contentLength": "16"
+    },
+    {
+      "sourceUrl": "https://art.thewalters.org/images/raw/PL7_37.569_Fnt_BW.jpg",
+      "mode": "web",
+      "url": "https://art.thewalters.org/images/web/PL7_37.569_Fnt_BW.jpg",
+      "validJpeg": false,
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "sourceUrl": "https://art.thewalters.org/images/raw/PL7_37.569_Fnt_BW.jpg",
+      "mode": "medium",
+      "url": "https://art.thewalters.org/images/medium/PL7_37.569_Fnt_BW.jpg",
+      "validJpeg": false,
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "sourceUrl": "https://art.thewalters.org/images/raw/PL7_37.569_Fnt_BW.jpg",
+      "mode": "large",
+      "url": "https://art.thewalters.org/images/large/PL7_37.569_Fnt_BW.jpg",
+      "validJpeg": false,
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "sourceUrl": "https://art.thewalters.org/images/raw/PL7_37.569_Fnt_BW.jpg",
+      "mode": "thumb",
+      "url": "https://art.thewalters.org/images/thumb/PL7_37.569_Fnt_BW.jpg",
+      "validJpeg": false,
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "sourceUrl": "https://art.thewalters.org/images/raw/PL7_37.497_Fnt_BW.jpg",
+      "mode": "raw",
+      "url": "https://art.thewalters.org/images/raw/PL7_37.497_Fnt_BW.jpg",
+      "validJpeg": true,
+      "status": 206,
+      "mime": "image/jpeg",
+      "contentLength": "16"
+    },
+    {
+      "sourceUrl": "https://art.thewalters.org/images/raw/PL7_37.497_Fnt_BW.jpg",
+      "mode": "web",
+      "url": "https://art.thewalters.org/images/web/PL7_37.497_Fnt_BW.jpg",
+      "validJpeg": false,
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "sourceUrl": "https://art.thewalters.org/images/raw/PL7_37.497_Fnt_BW.jpg",
+      "mode": "medium",
+      "url": "https://art.thewalters.org/images/medium/PL7_37.497_Fnt_BW.jpg",
+      "validJpeg": false,
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "sourceUrl": "https://art.thewalters.org/images/raw/PL7_37.497_Fnt_BW.jpg",
+      "mode": "large",
+      "url": "https://art.thewalters.org/images/large/PL7_37.497_Fnt_BW.jpg",
+      "validJpeg": false,
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "sourceUrl": "https://art.thewalters.org/images/raw/PL7_37.497_Fnt_BW.jpg",
+      "mode": "thumb",
+      "url": "https://art.thewalters.org/images/thumb/PL7_37.497_Fnt_BW.jpg",
+      "validJpeg": false,
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "sourceUrl": "https://art.thewalters.org/images/raw/PL1_37.519_Fnt_TR_T90II.jpg",
+      "mode": "raw",
+      "url": "https://art.thewalters.org/images/raw/PL1_37.519_Fnt_TR_T90II.jpg",
+      "validJpeg": true,
+      "status": 206,
+      "mime": "image/jpeg",
+      "contentLength": "16"
+    },
+    {
+      "sourceUrl": "https://art.thewalters.org/images/raw/PL1_37.519_Fnt_TR_T90II.jpg",
+      "mode": "web",
+      "url": "https://art.thewalters.org/images/web/PL1_37.519_Fnt_TR_T90II.jpg",
+      "validJpeg": false,
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "sourceUrl": "https://art.thewalters.org/images/raw/PL1_37.519_Fnt_TR_T90II.jpg",
+      "mode": "medium",
+      "url": "https://art.thewalters.org/images/medium/PL1_37.519_Fnt_TR_T90II.jpg",
+      "validJpeg": false,
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "sourceUrl": "https://art.thewalters.org/images/raw/PL1_37.519_Fnt_TR_T90II.jpg",
+      "mode": "large",
+      "url": "https://art.thewalters.org/images/large/PL1_37.519_Fnt_TR_T90II.jpg",
+      "validJpeg": false,
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "sourceUrl": "https://art.thewalters.org/images/raw/PL1_37.519_Fnt_TR_T90II.jpg",
+      "mode": "thumb",
+      "url": "https://art.thewalters.org/images/thumb/PL1_37.519_Fnt_TR_T90II.jpg",
+      "validJpeg": false,
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    }
+  ]
+}

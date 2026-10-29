@@ -1,0 +1,175 @@
+{
+  "schema": "AO_PRAYER_ART_B7_THREE_INSTITUTIONAL_SOURCES_V1",
+  "date": "2026-10-29",
+  "originals_preserved": true,
+  "user_artwork_selection_changes": 0,
+  "note": "An institution-labelled image, CC0 reproduction or matching metadata is not itself a pristine painting/photo acceptance.",
+  "cases": [
+    {
+      "case_id": "morning-aic-song-lark",
+      "registered_hero_sha256": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+      "hero_original_retained": true,
+      "new_image_is_primary_master": false,
+      "photo_rights_final_certified": false,
+      "pristine_certified": false,
+      "production_allowed": false,
+      "source_checks": [
+        "OFFICIAL_ARTWORK_ID_TITLE_ARTIST_PD_AND_IMAGE_ID_MATCH"
+      ],
+      "searched_official_api": "https://api.artic.edu/api/v1/artworks/search?q=The+Song+of+the+Lark+Jules+Breton&limit=20&fields=id%2Ctitle%2Cartist_title%2Cis_public_domain%2Cimage_id%2Cdate_display",
+      "matched_artworks": [
+        {
+          "id": 94841,
+          "title": "The Song of the Lark",
+          "artist_title": "Jules Breton",
+          "is_public_domain": true,
+          "image_id": "48b2de88-ba73-8e19-f448-d1cef4a1c847"
+        },
+        {
+          "id": 16964,
+          "title": "The Plow and the Song",
+          "artist_title": "Arshile Gorky",
+          "is_public_domain": false,
+          "image_id": "77245c86-908f-83a8-4a17-119633f80a5e"
+        },
+        {
+          "id": 118659,
+          "title": "Untitled",
+          "artist_title": "André Breton",
+          "is_public_domain": false,
+          "image_id": "588f6c7c-f960-14a9-1f4d-5e9b4f95fd20"
+        },
+        {
+          "id": 48,
+          "title": "Mower Honing a Scythe",
+          "artist_title": "Jules Bastien-Lepage",
+          "is_public_domain": true,
+          "image_id": "a302e9f4-7c4b-86c5-524f-594a42b7b182"
+        },
+        {
+          "id": 49708,
+          "title": "The Song of the Poet",
+          "artist_title": "Peppino Mangravite",
+          "is_public_domain": false,
+          "image_id": "6b5d02d1-d607-e0f0-19f9-9634c45bd855"
+        },
+        {
+          "id": 889,
+          "title": "Barks Fleeing Before the Storm",
+          "artist_title": "Jules Dupré",
+          "is_public_domain": true,
+          "image_id": "80df29cd-493f-23c0-3e51-4ddc38b3f34f"
+        },
+        {
+          "id": 119444,
+          "title": "The Song of the Dog",
+          "artist_title": "Hilaire Germain Edgar Degas",
+          "is_public_domain": true,
+          "image_id": "01bff209-10a2-739e-14b1-972b07e057e6"
+        },
+        {
+          "id": 122096,
+          "title": "The Song of the Border-Guard",
+          "artist_title": "Cy Twombly",
+          "is_public_domain": false,
+          "image_id": "b6bf5262-6db1-682f-3e24-4a7fb6a13409"
+        },
+        {
+          "id": 890,
+          "title": "On the Road",
+          "artist_title": "Jules Dupré",
+          "is_public_domain": true,
+          "image_id": "e0d8a305-15b0-bdcd-1e83-06d8594a2f7e"
+        },
+        {
+          "id": 891,
+          "title": "The Cottage by the Roadside, Stormy Sky",
+          "artist_title": "Jules Dupré",
+          "is_public_domain": true,
+          "image_id": "f4d85da1-5c80-3c7b-38cc-bf324d6ce670"
+        }
+      ],
+      "authoritative_object": {
+        "id": 94841,
+        "title": "The Song of the Lark",
+        "artist_title": "Jules Breton",
+        "image_id": "48b2de88-ba73-8e19-f448-d1cef4a1c847",
+        "date_display": "1884",
+        "is_public_domain": true
+      },
+      "institution_public_domain_object": true,
+      "institution_api_documentation": "https://api.artic.edu/docs/",
+      "status": "INSTITUTIONAL_API_OR_RENDITION_HOLD",
+      "exception": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "case_id": "confession-nga-donated-cc0",
+      "registered_hero_sha256": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+      "hero_original_retained": true,
+      "new_image_is_primary_master": false,
+      "photo_rights_final_certified": false,
+      "pristine_certified": false,
+      "production_allowed": false,
+      "source_checks": [
+        "NGA_OBJECT_34956",
+        "COMMONS_FILE_CC0",
+        "SOURCE_BYTES_SHA1_MATCH"
+      ],
+      "commons_institution_donated_source": {
+        "page": "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo,_The_Return_of_the_Prodigal_Son,_1667-1670,_NGA_34956.jpg",
+        "metadata_url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&formatversion=2&titles=File%3ABartolom%C3%A9+Esteban+Murillo%2C+The+Return+of+the+Prodigal+Son%2C+1667-1670%2C+NGA+34956.jpg&prop=imageinfo&iiprop=url%7Csize%7Csha1%7Cextmetadata",
+        "licence": "CC0",
+        "credit": "This file was donated to Wikimedia Commons as part of a project by the  National Gallery of Art . Please see the Gallery's  Open Access Policy .",
+        "width": 4000,
+        "height": 3658,
+        "sha1": "e91b10fda9a0ff8410f7033fa91a8b2244d6d874"
+      },
+      "candidate_image": {
+        "pixels": [
+          4000,
+          3658
+        ],
+        "format": "JPEG",
+        "has_icc": false,
+        "source_sha256": "71b30dda1ce9aaba5e05499b15ecb842078975d1d512090988c40ad07add0d1a",
+        "bytes": 12913920,
+        "path": "assets/staged/prayer-art-b7-three-institution-native-20261028/confession-nga-donated-cc0.jpg",
+        "review_proof": "assets/staged/prayer-art-b7-three-institution-native-20261028/confession-nga-donated-cc0-full-composition-review.jpg",
+        "review_proof_sha256": "3e3a5b1dabe8bcae1782c4bff1d1f82ec141d07da20a210456fea3eb6579880d",
+        "source_original_unchanged": true,
+        "pristine_certified": false,
+        "production_allowed": false
+      },
+      "status": "EXACT_NGA_DONATION_CC0_SOURCE_ARCHIVED_REVIEW"
+    },
+    {
+      "case_id": "sorrows-mnac-008327",
+      "registered_hero_sha256": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+      "hero_original_retained": true,
+      "new_image_is_primary_master": false,
+      "photo_rights_final_certified": false,
+      "pristine_certified": false,
+      "production_allowed": false,
+      "source_checks": [
+        "MNAC_CATALOGUE_008327-000_MATCHES_APPROVED_WORK",
+        "MNAC_OBJECT_PAGE_COPYRIGHT_DOMINI_PUBLIC"
+      ],
+      "object_page": "https://www.museunacional.cat/ca/colleccio/mare-de-deu-dels-set-dolors/mestre-de-les-mitges-figures/008327-000",
+      "image_asset_page": "https://www.museunacional.cat/ca/file/008327-000jpg-0",
+      "object_public_domain_label_found": true,
+      "museum_html_image_extensions_detected": [
+        "jpg"
+      ],
+      "status": "OFFICIAL_MNAC_OBJECT_IMAGE_REFERENCE_CONFIRMED_BINARY_NOT_YET_MAPPED"
+    }
+  ],
+  "totals": {
+    "cases": 3,
+    "institutional_original_binary_candidates_archived": 1,
+    "official_object_identity_evidence": 3,
+    "new_photo_rights_final_certifications": 0,
+    "new_pristine_certifications": 0,
+    "new_production_activations": 0,
+    "cost_eur": 0
+  }
+}

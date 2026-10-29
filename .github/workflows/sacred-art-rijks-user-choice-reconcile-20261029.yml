@@ -1,0 +1,35 @@
+name: Sacred Art — reconcile 137 Rijks decisions without invented corrections
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - scripts/art/reconcile-rijks-137-user-choices-20261029.py
+      - .github/workflows/sacred-art-rijks-user-choice-reconcile-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify 137 uploaded decisions without reclassifying threes as imports
+        run: |
+          python -m py_compile scripts/art/reconcile-rijks-137-user-choices-20261029.py
+          python scripts/art/reconcile-rijks-137-user-choices-20261029.py
+          git diff --exit-code -- data/calendar/sacred-art-curator-queues-383-20261029.v1.json
+      - name: Archive review-choice overlay
+        run: |
+          git config user.name "Ad Orientem research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-rijks-user-choice-overlay-20261029.v1.json
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): archive Rijks user preferences as non-production import candidates and holds"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

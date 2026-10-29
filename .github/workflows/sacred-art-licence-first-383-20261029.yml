@@ -1,0 +1,40 @@
+name: Sacred Art — LICENSE FIRST exact source rights 383
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/sacred-art-licence-first-383-20261029.yml
+      - scripts/art/sacred-art-licence-first-full-383-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-licence-first-383
+  cancel-in-progress: false
+jobs:
+  exact-source-file-licensing-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check licences only — zero image downloads
+        run: |
+          python -m py_compile scripts/art/sacred-art-licence-first-full-383-20261029.py
+          python scripts/art/sacred-art-licence-first-full-383-20261029.py
+      - name: Commit exact rights evidence and all 383 per-artwork licence statuses
+        if: always()
+        run: |
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-licence-first-383-exact-source-audit-20261029.v1.json data/calendar/sacred-art-licence-first-383-review-20261029.csv
+          git diff --cached --check
+          if git diff --cached --quiet; then echo "No new licence evidence"; exit 0; fi
+          git commit -m "research(sacred art): preserve 383 exact source-license audit and outstanding holds"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

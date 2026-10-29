@@ -1,0 +1,50 @@
+name: Sacred Art — Verify import review remote image loading
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-two-museum-preview-smoke-20261029.yml
+      - docs/SACRED_ART_TWO_MUSEUM_IMPORT_REVIEW_20261029.html
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  remote-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify five actual preview responses without downloading source originals
+        run: |
+          python - <<'PY'
+          import json,re,urllib.request
+          from pathlib import Path
+          raw=Path('docs/SACRED_ART_TWO_MUSEUM_IMPORT_REVIEW_20261029.html').read_text()
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',raw,re.S)
+          assert m
+          items=json.loads(m.group(1))
+          assert len(items)==60
+          selected=[x for x in items if x['provider']=='KMSKA']+ [x for x in items if x['provider']=='Cleveland'][:2]
+          assert len(selected)==5
+          problems=[]
+          for item in selected:
+            try:
+              q=urllib.request.Request(item['previewURL'],headers={'User-Agent':'AdOrientem-PreviewSmoke/1.0 (+https://github.com/Fulcanelli13/ad-orientem)','Range':'bytes=0-200'})
+              with urllib.request.urlopen(q,timeout=18) as resp:
+                sig=resp.read(16)
+                mime=resp.headers.get('Content-Type','')
+                if resp.status not in (200,206) or not mime.startswith('image/') or not sig.startswith((bytes.fromhex('ffd8'),bytes.fromhex('89504e47'))):
+                  problems.append([item['id'],'BAD_IMAGE_RESPONSE',resp.status,mime])
+                else:print('IMAGE_OK',item['id'],resp.status,mime)
+            except Exception as e:
+              problems.append([item['id'],type(e).__name__,str(e)[:200]])
+          if problems:
+            print('IMAGE_BLOCKERS',json.dumps(problems))
+            raise SystemExit(2)
+          print('ALL_FIVE_IMAGE_PREVIEWS_ACCESSIBLE')
+          PY

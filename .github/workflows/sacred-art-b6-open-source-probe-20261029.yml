@@ -1,0 +1,39 @@
+name: Sacred Art — Batch B6 official Walters and Mia source probe
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - scripts/art/sacred-art-b6-open-museum-source-probe-20261029.py
+      - .github/workflows/sacred-art-b6-open-source-probe-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  source-shape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: |
+          python -m py_compile scripts/art/sacred-art-b6-open-museum-source-probe-20261029.py
+          python scripts/art/sacred-art-b6-open-museum-source-probe-20261029.py
+      - name: Save verified schema and source status
+        run: |
+          python - <<'PY'
+          import json
+          j=json.load(open('data/calendar/sacred-art-b6-walters-mia-source-probe-20261029.v1.json'))
+          assert len(j['sources'])==5 and j['photosSaved']==0
+          print([(x['source'],x['state']) for x in j['sources']])
+          PY
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b6-walters-mia-source-probe-20261029.v1.json
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): record Walters / Mia rights-aware B6 museum feed schemas"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

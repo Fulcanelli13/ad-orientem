@@ -1,0 +1,82 @@
+name: Sacred Art — immediate fresh multi-museum B4R review gallery
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-b4r-multimuseum-immediate-20261029.yml
+      - scripts/art/sacred-art-next-round-b4r-20261029.py
+      - scripts/art/build-sacred-art-next-b4r-gallery-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-fresh-b4r
+  cancel-in-progress: true
+jobs:
+  generate-next-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Gather new Cleveland CC0 and independent KMSKA/Met images; exclude user reviews
+        run: |
+          python -m py_compile scripts/art/sacred-art-next-round-b4r-20261029.py scripts/art/build-sacred-art-next-b4r-gallery-20261029.py
+          python scripts/art/sacred-art-next-round-b4r-20261029.py --target 250 --max-queries 76 --pages 5 --limit 100 --delay .04
+      - name: Generate actual import/correction review HTML with separate browser state
+        run: |
+          python scripts/art/build-sacred-art-next-b4r-gallery-20261029.py
+      - name: Independently prove every card is new and links to a verified-open museum source
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          d=json.loads(Path('data/calendar/sacred-art-b4-multimuseum-working-review-20261029.v1.json').read_text())
+          o=json.loads(Path('data/calendar/sacred-art-b3-final-user-decisions-20261029.v1.json').read_text())
+          old60=json.loads(Path('data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json').read_text())
+          b3=json.loads(Path('data/calendar/sacred-art-250-review-source-b3-20261029.v1.json').read_text())
+          excluded=set(o['imports'])|set(o['rejects'])|set(o['withCorrections'])|{r['sourceId'] for z in ('imports','rejects') for r in old60[z]}
+          assert len(excluded)==310 and {r['id'] for r in b3['rows']}<=excluded
+          ids={r['id'] for r in d['rows']}
+          assert len(d['rows'])>=75 and len(ids)==len(d['rows'])
+          assert ids.isdisjoint(excluded)
+          assert len({r['previewURL'] for r in d['rows']})==len(ids)
+          assert d['gates']['sourceImageOriginalsStored']==0
+          assert all(not r['productionImported'] for r in d['rows'])
+          assert all(r['rightsHold'] for r in d['rows'] if r['provider']=='KMSKA')
+          assert all(r['rightsBasis']=='CLEVELAND_EXACT_ARTWORK_CC0' for r in d['rows'] if r['provider']=='Cleveland')
+          h=Path('docs/SACRED_ART_NEXT_MULTIMUSEUM_IMPORT_REVIEW_B4R_20261029.html').read_text()
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert m
+          rows=json.loads(m.group(1))
+          assert len(rows)==len(d['rows']) and {r['id'] for r in rows}==ids
+          assert 'const PAGE_SIZE=50;' in h and 'seenPages.length<TOTAL_PAGES' in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'Finalize and export decisions' in h
+          assert "batchId:'B4R'" in h
+          assert 'for(let score=' not in h
+          script=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert script
+          Path('/tmp/ao-art-b4r.js').write_text(script.group(1))
+          print('B4R_READY',d['counts'])
+          PY
+          node --check /tmp/ao-art-b4r.js
+          git diff --exit-code -- data/calendar/sacred-art-b3-final-user-decisions-20261029.v1.json data/calendar/sacred-art-250-review-source-b3-20261029.v1.json
+      - name: Publish new gallery and verifiable source ledger, but never alter production
+        if: always()
+        run: |
+          if [ ! -f data/calendar/sacred-art-b4-multimuseum-working-review-20261029.v1.json ]; then exit 0; fi
+          git config user.name "Ad Orientem Sacred Art Research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b4-multimuseum-working-review-20261029.v1.json docs/SACRED_ART_B4_MULTIMUSEUM_REVIEW_QA_20261029.md
+          if [ -f docs/SACRED_ART_NEXT_MULTIMUSEUM_IMPORT_REVIEW_B4R_20261029.html ]; then
+            git add docs/SACRED_ART_NEXT_MULTIMUSEUM_IMPORT_REVIEW_B4R_20261029.html
+          fi
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): deliver fresh independently reviewed B4R multi-museum import gallery"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

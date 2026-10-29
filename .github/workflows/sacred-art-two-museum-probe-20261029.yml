@@ -1,0 +1,46 @@
+name: Sacred Art — KMSKA and Belvedere source access probe
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-two-museum-probe-20261029.yml
+      - scripts/art/sacred-art-two-museum-source-probe-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-art-two-museum-source-probe
+  cancel-in-progress: true
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe official source metadata endpoints only
+        run: |
+          python -m py_compile scripts/art/sacred-art-two-museum-source-probe-20261029.py
+          python scripts/art/sacred-art-two-museum-source-probe-20261029.py
+      - name: Save source access evidence, including failures
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('data/calendar/sacred-art-two-museum-access-probe-20261029.v1.json').read_text())
+          assert len(d['sources'])==5 and d['imageBytesDownloaded']==0
+          assert all(x['imageBytesDownloaded']==0 for x in d['sources'])
+          print('VALIDATED',[(x['name'],x['status']) for x in d['sources']])
+          PY
+          git config user.name "Ad Orientem art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-two-museum-access-probe-20261029.v1.json
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): record actual KMSKA and Belvedere access results"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

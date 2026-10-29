@@ -1,0 +1,42 @@
+name: Breviarium W3b - exact work originals stop on first HTTP 429
+on:
+  push:
+    branches:
+      - research/prayer-artwork-pristine-registry-bulk-20261028
+    paths:
+      - .github/workflows/breviarium-w3b-originals-20261029.yml
+      - scripts/art/breviarium-w3b-exact-bounded-originals-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-breviarium-w3b-bounded-exact-files
+  cancel-in-progress: false
+jobs:
+  original-source-research-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Enforce source SHA, byte cap and stop on first HTTP 429
+        run: |
+          python -m py_compile scripts/art/breviarium-w3b-exact-bounded-originals-20261029.py
+          python scripts/art/breviarium-w3b-exact-bounded-originals-20261029.py
+      - name: Preserve source bytes and failure evidence in research Git
+        if: always()
+        run: |
+          if [ ! -f assets/staged/sacred-art-breviarium-w3b-exact-originals-20261029/source-original-results.json ]; then exit 0; fi
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/staged/sacred-art-breviarium-w3b-exact-originals-20261029/
+          git diff --cached --check
+          if git diff --cached --quiet; then echo "No new source evidence"; exit 0; fi
+          git commit -m "research(sacred art): permanently record bounded exact-file acquisitions and HTTP 429 stop evidence"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

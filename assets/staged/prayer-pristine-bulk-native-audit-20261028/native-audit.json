@@ -1,0 +1,398 @@
+{
+  "schema": "AO_PRAYER_ART_BULK_20_MASTER_TECHNICAL_RECHECK_V1",
+  "date": "2026-10-28",
+  "selection_contract": "All 22 editorial choices unchanged, no production images released",
+  "source": "data/research/prayer-sacred-art-pristine-master-registry-20261028.v1.json",
+  "scheduled_originals": 20,
+  "originals_verified_exact_bytes": 20,
+  "originals_requiring_file_recovery": 0,
+  "pristine_quality_final_certified": 0,
+  "visual_sheets_are_review_evidence_not_certification": true,
+  "no_paid_services": true,
+  "no_upscale": true,
+  "no_artwork_substitution": true,
+  "results": [
+    {
+      "module_id": "angelus",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "pixels_verified": [
+        3741,
+        3658
+      ],
+      "bytes": 3055151,
+      "source_ref": "research/module-hero-wave2-20261026",
+      "source_path": "assets/staged/module-hero-wave2/angelus-met.jpg",
+      "icc_preview_handling": "untagged RGB retained, reference colour not certified",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "joseph",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "d632ea2012825ecdccc760f50b7cc9107a30bf4a2349541742ef6f66a4987f9b",
+      "pixels_verified": [
+        4421,
+        6000
+      ],
+      "bytes": 19749000,
+      "source_ref": "research/module-hero-joseph-original-20261026",
+      "source_path": "assets/staged/module-hero-masters/joseph.jpg",
+      "icc_preview_handling": "untagged RGB retained, reference colour not certified",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "holy-spirit",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "c32547f474f4908331c9e7a013809076a65bbbcdc2f8cec6c5b6af2f7e6a1b09",
+      "pixels_verified": [
+        4037,
+        2444
+      ],
+      "bytes": 4430258,
+      "source_ref": "research/module-hero-wave2-20261026",
+      "source_path": "assets/staged/module-hero-wave2/holy-spirit.jpg",
+      "icc_preview_handling": "untagged RGB retained, reference colour not certified",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "heart-jesus",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+      "pixels_verified": [
+        2345,
+        3045
+      ],
+      "bytes": 2012474,
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/heart-jesus.jpg",
+      "icc_preview_handling": "untagged RGB retained, reference colour not certified",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "heart-mary",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "82e465f5600d0df4b2af32d22b8642a832bfc4cdd5d19d1f1c2b0baeec49649d",
+      "pixels_verified": [
+        2277,
+        2960
+      ],
+      "bytes": 1951966,
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/heart-mary.jpg",
+      "icc_preview_handling": "untagged RGB retained, reference colour not certified",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "michael",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad",
+      "pixels_verified": [
+        1657,
+        2441
+      ],
+      "bytes": 513396,
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/michael.jpg",
+      "icc_preview_handling": "untagged RGB retained, reference colour not certified",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "regina",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "ab93fd9a928693d2797a0eadd69dc630e4cf2da59233c3f512b9921dfcfeb178",
+      "pixels_verified": [
+        2144,
+        3000
+      ],
+      "bytes": 4593377,
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/regina.jpg",
+      "icc_preview_handling": "embedded ICC transformed to sRGB in PREVIEW ONLY",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "adoration",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "pixels_verified": [
+        3122,
+        3813
+      ],
+      "bytes": 2467303,
+      "source_ref": "research/module-hero-museum-photos-20261026",
+      "source_path": "assets/staged/module-hero-masters/adoration.jpg",
+      "icc_preview_handling": "untagged RGB retained, reference colour not certified",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "scripture",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158",
+      "pixels_verified": [
+        8708,
+        6212
+      ],
+      "bytes": 7423474,
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/scripture.jpg",
+      "icc_preview_handling": "untagged RGB retained, reference colour not certified",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "king",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "2a25ed08f0fc21825eb084e0f5a09de63e8bdcf13c42d8b008d1d3bc805d3cd5",
+      "pixels_verified": [
+        2987,
+        3200
+      ],
+      "bytes": 7773073,
+      "source_ref": "research/module-hero-wave2-20261026",
+      "source_path": "assets/staged/module-hero-wave2/king.jpg",
+      "icc_preview_handling": "untagged RGB retained, reference colour not certified",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "souls",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "a2c3a6eda78b412da44d50197d853f01e1cd3ded5ebd5996816db451f11606b6",
+      "pixels_verified": [
+        2393,
+        3200
+      ],
+      "bytes": 1789923,
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/souls.jpg",
+      "icc_preview_handling": "embedded ICC transformed to sRGB in PREVIEW ONLY",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "salvation",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "c5b8c147a0e75f1fe91279ceedd323fd246030e8bf0750f4a2b39811bac42102",
+      "pixels_verified": [
+        6000,
+        4000
+      ],
+      "bytes": 7530116,
+      "source_ref": "research/module-hero-rescue-20261026",
+      "source_path": "assets/staged/module-hero-rescue/salvation.jpg",
+      "icc_preview_handling": "untagged RGB retained, reference colour not certified",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "morning",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "381db59fa47aee7603c4b9eb12f8dff8de4841eb0a4fd50c6d229e0fbd3cb63c",
+      "pixels_verified": [
+        2548,
+        3300
+      ],
+      "bytes": 2080000,
+      "source_ref": "research/module-hero-rescue-20261026",
+      "source_path": "assets/staged/module-hero-rescue/morning.jpg",
+      "icc_preview_handling": "untagged RGB retained, reference colour not certified",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "perpetual",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "c6d06a9458658a6de9164895ca784e17ea70548ed090ae27987f28351694d077",
+      "pixels_verified": [
+        3000,
+        3688
+      ],
+      "bytes": 2764032,
+      "source_ref": "research/module-hero-wave2-20261026",
+      "source_path": "assets/staged/module-hero-wave2/perpetual.jpg",
+      "icc_preview_handling": "embedded ICC transformed to sRGB in PREVIEW ONLY",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "saints",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "137d3df4dee890524678cbd02b9690130c5550d22ca6778621b24fc6fe6ab5b2",
+      "pixels_verified": [
+        4969,
+        5434
+      ],
+      "bytes": 5931350,
+      "source_ref": "research/module-hero-wave2-20261026",
+      "source_path": "assets/staged/module-hero-wave2/saints-gart.jpg",
+      "icc_preview_handling": "untagged RGB retained, reference colour not certified",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "visit",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "347cf5d74cc575bcb082250a90dc64c54dc673e94fbc4e48efcd27fa2a3b09c1",
+      "pixels_verified": [
+        3948,
+        3328
+      ],
+      "bytes": 9588163,
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/visit.jpg",
+      "icc_preview_handling": "embedded ICC transformed to sRGB in PREVIEW ONLY",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "mass",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "909302874ecb137b75c3b97974e9a4b42ec3c4d10a6d3e83bc98c130057b760f",
+      "pixels_verified": [
+        4424,
+        3399
+      ],
+      "bytes": 3421164,
+      "source_ref": "research/module-hero-pd-masters-20261026",
+      "source_path": "assets/staged/module-hero-masters/mass.jpg",
+      "icc_preview_handling": "untagged RGB retained, reference colour not certified",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "confession",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "b1e3d47e65f4367fd11fc23d9a63fb25ff3d8c934c3147606f1a3eba703beaa7",
+      "pixels_verified": [
+        4096,
+        3712
+      ],
+      "bytes": 3022309,
+      "source_ref": "research/module-hero-museum-photos-20261026",
+      "source_path": "assets/staged/module-hero-masters/confession.jpg",
+      "icc_preview_handling": "embedded ICC transformed to sRGB in PREVIEW ONLY",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "rosary",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+      "pixels_verified": [
+        1880,
+        2886
+      ],
+      "bytes": 3259819,
+      "source_ref": "research/prayer-wave1-photo-comparison-20261028",
+      "source_path": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary_yorck-new-commons-original.jpg",
+      "icc_preview_handling": "untagged RGB retained, reference colour not certified",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    },
+    {
+      "module_id": "sorrows",
+      "result": "PASS_EXACT_PINNED_BYTES_AND_DIMENSIONS",
+      "sha256_recomputed": "c9c338596bc2a1f069535facfab1fe11cee1aaad7d67e5440c2114cfe9f09f2a",
+      "pixels_verified": [
+        2220,
+        3000
+      ],
+      "bytes": 1454827,
+      "source_ref": "research/module-hero-museum-photos-20261026",
+      "source_path": "assets/staged/module-hero-masters/sorrows.jpg",
+      "icc_preview_handling": "embedded ICC transformed to sRGB in PREVIEW ONLY",
+      "source_original_never_changed": true,
+      "native_visual_quality_certified": false,
+      "external_frame_free_certified": false,
+      "photo_rights_certified": false,
+      "pristine_certified": false
+    }
+  ],
+  "native_corner_sheets": [
+    {
+      "path": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-01.jpg",
+      "sha256": "c1117a59c9933d9daceee96bdaf804320e5d08da3b7d5a40f1f5a2e9c47e990e",
+      "bytes": 467691
+    },
+    {
+      "path": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-02.jpg",
+      "sha256": "f144635fe5bae0b7086c986a96c25df5e9be58a5fa11aebccb275417f33982f5",
+      "bytes": 331010
+    },
+    {
+      "path": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-03.jpg",
+      "sha256": "e7372b7f0193d6a75de2ebea2872af8f7c56bb4a195b961bcf7d0314ea902187",
+      "bytes": 434814
+    },
+    {
+      "path": "assets/staged/prayer-pristine-bulk-native-audit-20261028/bulk-native-corners-04.jpg",
+      "sha256": "90e0e87794e13dc5b5471fc2625f7da7ff5e4873ed310c57b1c3d0d8599851b7",
+      "bytes": 411314
+    }
+  ]
+}

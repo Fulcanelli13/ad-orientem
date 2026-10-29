@@ -1,0 +1,40 @@
+name: Sacred Art — Art Institute Chicago open paintings B4 API probe
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - scripts/art/sacred-art-artic-b4-probe-20261029.py
+      - .github/workflows/sacred-art-artic-b4-probe-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  source-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m py_compile scripts/art/sacred-art-artic-b4-probe-20261029.py
+          python scripts/art/sacred-art-artic-b4-probe-20261029.py
+      - name: Preserve actual API search evidence
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('data/calendar/sacred-art-artic-b4-interface-probe-20261029.v1.json'))
+          assert len(d['searches'])==3 and d['photosDownloaded']==0
+          print([(x['term'],x['status']) for x in d['searches']])
+          PY
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-artic-b4-interface-probe-20261029.v1.json
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): record Chicago public domain painting API schema"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028

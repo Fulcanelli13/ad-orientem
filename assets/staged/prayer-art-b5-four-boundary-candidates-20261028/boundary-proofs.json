@@ -1,0 +1,260 @@
+{
+  "schema": "AO_PRAYER_ART_B5_FOUR_CONSERVATIVE_BOUNDARY_PROOFS_V1",
+  "date": "2026-10-28",
+  "exact_approved_paintings": 4,
+  "proven_originals_checked": 4,
+  "proposed_crop_derivatives": 8,
+  "no_paint_loss_certified": 0,
+  "pristine_certified": 0,
+  "production_released": 0,
+  "must_preserve_curved_rosary_top_and_15_medallions": true,
+  "no_paid_sources": true,
+  "no_upscaling": true,
+  "candidate_not_same_as_approved_pristine_photo": true,
+  "cases": [
+    {
+      "case_id": "angelus",
+      "title": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "issue": "EXPOSED_UNPAINTED_SUPPORT",
+      "source_ref": "research/module-hero-wave2-20261026",
+      "source_path": "assets/staged/module-hero-wave2/angelus-met.jpg",
+      "original_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "original_pixels": [
+        3741,
+        3658
+      ],
+      "original_preserved": true,
+      "proposal_method": {
+        "method": "ONLY_MANUAL_FRACTIONAL_INSET_PROPOSALS_NO_AUTOMATED_SUPPORT_BOUNDARY"
+      },
+      "painted_boundary_final_accepted": false,
+      "photographer_rights_certified": false,
+      "pristine_certified": false,
+      "production_activated": false,
+      "candidate_files": [
+        {
+          "label": "UNVERIFIED_INSET_1",
+          "source_crop_box": [
+            19,
+            18,
+            3722,
+            3640
+          ],
+          "candidate_pixels": [
+            3703,
+            3622
+          ],
+          "source_original_not_modified": true,
+          "status": "RESEARCH_DERIVATIVE_NOT_APPROVED"
+        },
+        {
+          "label": "UNVERIFIED_INSET_2",
+          "source_crop_box": [
+            45,
+            44,
+            3696,
+            3614
+          ],
+          "candidate_pixels": [
+            3651,
+            3570
+          ],
+          "source_original_not_modified": true,
+          "status": "RESEARCH_DERIVATIVE_NOT_APPROVED"
+        },
+        {
+          "label": "UNVERIFIED_INSET_3",
+          "source_crop_box": [
+            75,
+            73,
+            3666,
+            3585
+          ],
+          "candidate_pixels": [
+            3591,
+            3512
+          ],
+          "source_original_not_modified": true,
+          "status": "RESEARCH_DERIVATIVE_NOT_APPROVED"
+        }
+      ],
+      "proof_contact_sheet": {
+        "path": "assets/staged/prayer-art-b5-four-boundary-candidates-20261028/angelus-boundary-proposals.jpg",
+        "sha256": "ac82911d12c7c855263a0f843bbe29dc5dfffcb2897bba91c40fa68a83c25933"
+      }
+    },
+    {
+      "case_id": "adoration",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "issue": "EXPOSED_UNPAINTED_SUPPORT",
+      "source_ref": "research/module-hero-museum-photos-20261026",
+      "source_path": "assets/staged/module-hero-masters/adoration.jpg",
+      "original_sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+      "original_pixels": [
+        3122,
+        3813
+      ],
+      "original_preserved": true,
+      "proposal_method": {
+        "method": "ONLY_MANUAL_FRACTIONAL_INSET_PROPOSALS_NO_AUTOMATED_SUPPORT_BOUNDARY"
+      },
+      "painted_boundary_final_accepted": false,
+      "photographer_rights_certified": false,
+      "pristine_certified": false,
+      "production_activated": false,
+      "candidate_files": [
+        {
+          "label": "UNVERIFIED_INSET_1",
+          "source_crop_box": [
+            16,
+            19,
+            3106,
+            3794
+          ],
+          "candidate_pixels": [
+            3090,
+            3775
+          ],
+          "source_original_not_modified": true,
+          "status": "RESEARCH_DERIVATIVE_NOT_APPROVED"
+        },
+        {
+          "label": "UNVERIFIED_INSET_2",
+          "source_crop_box": [
+            37,
+            46,
+            3085,
+            3767
+          ],
+          "candidate_pixels": [
+            3048,
+            3721
+          ],
+          "source_original_not_modified": true,
+          "status": "RESEARCH_DERIVATIVE_NOT_APPROVED"
+        },
+        {
+          "label": "UNVERIFIED_INSET_3",
+          "source_crop_box": [
+            62,
+            76,
+            3060,
+            3737
+          ],
+          "candidate_pixels": [
+            2998,
+            3661
+          ],
+          "source_original_not_modified": true,
+          "status": "RESEARCH_DERIVATIVE_NOT_APPROVED"
+        }
+      ],
+      "proof_contact_sheet": {
+        "path": "assets/staged/prayer-art-b5-four-boundary-candidates-20261028/adoration-boundary-proposals.jpg",
+        "sha256": "45eb612c7bdcbdca5b0f77cab4e3db74b31517954a084e949d88144a7ef4b73a"
+      }
+    },
+    {
+      "case_id": "king",
+      "title": "Salvator Mundi",
+      "artist": "Ambrosius Benson",
+      "issue": "WHITE_NONART_MARGIN",
+      "source_ref": "research/module-hero-wave2-20261026",
+      "source_path": "assets/staged/module-hero-wave2/king.jpg",
+      "original_sha256": "2a25ed08f0fc21825eb084e0f5a09de63e8bdcf13c42d8b008d1d3bc805d3cd5",
+      "original_pixels": [
+        2987,
+        3200
+      ],
+      "original_preserved": true,
+      "proposal_method": {
+        "method": "NEAR_WHITE_MASK_CONSERVATIVE_ONLY_NOT_BOUNDARY_CLEARED",
+        "near_white_threshold": 236,
+        "channel_spread_threshold": 28,
+        "nonwhite_min_occupancy_per_scanline": ".8%",
+        "safety_pad_px": 19
+      },
+      "painted_boundary_final_accepted": false,
+      "photographer_rights_certified": false,
+      "pristine_certified": false,
+      "production_activated": false,
+      "candidate_files": [
+        {
+          "label": "CONSERVATIVE_NONWHITE_BOUND_PLUS_MARGIN",
+          "source_crop_box": [
+            50,
+            70,
+            2936,
+            3113
+          ],
+          "candidate_pixels": [
+            2886,
+            3043
+          ],
+          "source_original_not_modified": true,
+          "status": "RESEARCH_DERIVATIVE_NOT_APPROVED",
+          "path": "assets/staged/prayer-art-b5-four-boundary-candidates-20261028/king-full-size-conservative-boundary-proof.png",
+          "sha256": "eb24fe32066c1d7b258dfb367d74bcbd6d6e21b019ebc4f59958ed590f666475",
+          "bytes": 13445205,
+          "lossless_source_pixel_crop": true
+        }
+      ],
+      "proof_contact_sheet": {
+        "path": "assets/staged/prayer-art-b5-four-boundary-candidates-20261028/king-boundary-proposals.jpg",
+        "sha256": "7a63dfa77cd434dd0465a14e628b309c0dbfa765e78da36fa47b223b9cc026be"
+      }
+    },
+    {
+      "case_id": "rosary",
+      "title": "Madonna del Rosario",
+      "artist": "Lorenzo Lotto",
+      "issue": "WHITE_NONART_MARGIN_CURVED_TOP",
+      "source_ref": "research/prayer-wave1-photo-comparison-20261028",
+      "source_path": "assets/staged/prayer-wave1-photo-comparison-20261028/rosary_yorck-new-commons-original.jpg",
+      "original_sha256": "595c186cf5e71cfba242f2db6af53c75169e2498bf15c7f4f08966bfba0605ca",
+      "original_pixels": [
+        1880,
+        2886
+      ],
+      "original_preserved": true,
+      "proposal_method": {
+        "method": "NEAR_WHITE_MASK_CONSERVATIVE_ONLY_NOT_BOUNDARY_CLEARED",
+        "near_white_threshold": 236,
+        "channel_spread_threshold": 28,
+        "nonwhite_min_occupancy_per_scanline": ".8%",
+        "safety_pad_px": 18
+      },
+      "painted_boundary_final_accepted": false,
+      "photographer_rights_certified": false,
+      "pristine_certified": false,
+      "production_activated": false,
+      "candidate_files": [
+        {
+          "label": "CONSERVATIVE_NONWHITE_BOUND_PLUS_MARGIN",
+          "source_crop_box": [
+            0,
+            0,
+            1880,
+            2886
+          ],
+          "candidate_pixels": [
+            1880,
+            2886
+          ],
+          "source_original_not_modified": true,
+          "status": "RESEARCH_DERIVATIVE_NOT_APPROVED",
+          "path": "assets/staged/prayer-art-b5-four-boundary-candidates-20261028/rosary-full-size-conservative-boundary-proof.png",
+          "sha256": "fb9b3c4ec05e7d5833cb31f1ef36cece47d8570e72f39ea03f8c39a1d7806822",
+          "bytes": 7002793,
+          "lossless_source_pixel_crop": true
+        }
+      ],
+      "proof_contact_sheet": {
+        "path": "assets/staged/prayer-art-b5-four-boundary-candidates-20261028/rosary-boundary-proposals.jpg",
+        "sha256": "78571ed6d927c8144d92e63371335a8801587529e22494d06d432c365aa4c281"
+      }
+    }
+  ]
+}
