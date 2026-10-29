@@ -228,14 +228,15 @@ export async function assembleSaturdayComplinePilot({reader}={}){
   });
   minor("Completorium_","CHAPTER",x=>[x.find(z=>/^v\./u.test(z))]);
   prayer("Deo gratias","RESPONSE");
-  minor("Responsory Completorium","SHORT_RESPONSORY",x=>{
+  minor("Responsory Completorium","SHORT_RESPONSORY",(x,l)=>{
    const first=x.find(z=>z.startsWith("R.br."));
    const responses=x.filter(z=>z.startsWith("R."));
    const verse=x.find(z=>z.startsWith("V."));
    if(!first||responses.length<3||!verse)
     throw Error("COMPLINE_SHORT_RESPONSORY_INVALID");
    // The original 1960 responsory has its Gloria in the middle.
-   return [first,responses[0],verse,responses[1],...atPlaceholder(),responses.at(-1)];
+   return [first,responses[0],verse,responses[1],
+    ...at(l,PRAYERS,"Gloria").slice(0,2),responses.at(-1)];
   });
   minor("Versum 4","VERSICLE");
   minor("Ant 4","ANTIPHON");
@@ -273,7 +274,7 @@ export async function assembleSaturdayComplinePilot({reader}={}){
   }
   blocks.push(projectBlock("MARIAN_ANTIPHON",MARIAN,"Advent",marian));
   prayer("Fidelium animae","FINAL_RESPONSE",x=>x.slice(0,2));
-  if(blocks.length!==37)throw Error("COMPLINE_REQUIRED_SEQUENCE_COUNT_CHANGED:"+blocks.length);
+  if(blocks.length!==40)throw Error("COMPLINE_REQUIRED_SEQUENCE_COUNT_CHANGED:"+blocks.length);
   const frames=[];
   blocks.forEach((b,eventIndex)=>{
    const portion=b.kind==="PSALM"||b.kind==="CANTICLE"?
@@ -316,4 +317,3 @@ export async function assembleSaturdayComplinePilot({reader}={}){
   });
  }catch(e){return held(String(e?.message??e))}
 }
-function atPlaceholder(){return ["V. Glória Patri, et Fílio, et Spirítui Sancto."]}
