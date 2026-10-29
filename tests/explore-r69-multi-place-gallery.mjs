@@ -85,10 +85,12 @@ if(later.length){
       "Selected HERO photograph did not bind to its own Place card "+source.place_id);
     assert.equal(profile.gallery.find(x=>x.media_id===source.media_id)?.display_role,"HERO");
   }
-  // Abbey gallery details may not hijack the primary hero; no generic fallback
-  // is permitted on Knock (which has only a secondary site picture).
+  // Abbey gallery details may not hijack the primary hero; the gallery-only
+  // Knock photo must preserve its separately approved existing Place hero.
   const knock=profiles.find(x=>x.place_id==="place:IE:knock-shrine");
-  assert.equal(knock?.media,null,"Gallery-only Knock photo must not become hero");
+  assert.equal(knock?.media?.asset_path,
+    "assets/approved/place-media/IE-knock-shrine.webp",
+    "Gallery-only Knock photo displaced the existing approved Place hero");
 }
 assert.equal(profiles.filter(p=>p.illustrated_guide).length,14);
 assert.equal(profiles.filter(p=>p.gallery.length>0).length,
