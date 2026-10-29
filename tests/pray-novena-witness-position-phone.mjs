@@ -96,8 +96,46 @@ try{
    await page.locator(rootSel+" .aoN1FailClosed").first().waitFor({timeout:5000});
    assert.match(await fail.innerText(),/texte français.*pas disponible/i);
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"English-only witness mobile overflow");
+   // Source-owned guided Novenas have 3, 4, 5 or 6 stages depending on
+   // historical pattern; the progress rail must report the actual count.
+   assert.equal(await page.locator(rootSel+' [data-ao-novena-stage-progress]').count(),0,
+    "Simple Novena reading should not invent a stage counter");
+   await page.locator(rootSel+' [data-n1-mode="guided"]').click();
+   const progress=page.locator(rootSel+' [data-ao-novena-stage-progress]');
+   await progress.waitFor();
+   assert.equal(await progress.getAttribute("role"),"progressbar");
+   assert.equal(await progress.getAttribute("aria-valuemax"),"3","Holy Face uses three source-owned guided stages");
+   assert.equal(await progress.getAttribute("aria-valuenow"),"1");
+   assert.match(await page.locator(rootSel+' .aoN1StageCaption').innerText(),/Étape de prière 1 sur 3/);
+   assert.equal(await progress.locator("span").count(),3);
+   await page.locator(rootSel+' [data-n1-stage-next]').click();
+   assert.equal(await progress.getAttribute("aria-valuenow"),"2","Stage advance must update the progress value");
+   assert.equal(await progress.locator(".current").count(),1,"Exactly one segment is current");
+   assert.equal(await progress.locator(".done").count(),1);
+   await page.locator(rootSel+' [data-n1-stage-prev]').click();
+   assert.equal(await progress.getAttribute("aria-valuenow"),"1","Stage back must restore progress");
+   await page.evaluate(()=>{const k="ao2:settings:v1",v=JSON.parse(localStorage.getItem(k)||"{}");localStorage.setItem(k,JSON.stringify({...v,language:"en"}))});
+   await open("holy_ghost");
+   await page.locator(rootSel+' [data-n1-mode="guided"]').click();
+   assert.equal(await progress.getAttribute("aria-valuemax"),"4","Holy Ghost must use four guided stages");
+   assert.equal(await progress.getAttribute("aria-valuenow"),"1");
+   assert.match(await page.locator(rootSel+' .aoN1StageCaption').innerText(),/Prayer stage 1 of 4/);
+   const layout=await page.locator(rootSel+' .aoN1StageIndicator').evaluate(el=>{
+    const cap=el.querySelector(".aoN1StageCaption"),bar=el.querySelector(".aoN1StageRail");
+    return {font:parseFloat(getComputedStyle(cap).fontSize),width:bar.getBoundingClientRect().width,
+      segments:bar.children.length,columns:getComputedStyle(bar).gridTemplateColumns.split(" ").length};
+   });
+   assert.ok(layout.font>=13,"Novena progress caption must remain readable at phone width");
+   assert.ok(layout.width>=180,"Novena progress bar must not collapse on a narrow phone");
+   assert.equal(layout.segments,4);
+   assert.equal(layout.columns,4,"Progress bar column count must match this novena's actual stage count");
+   await page.locator(rootSel+' [data-n1-stage-next]').click();
+   assert.equal(await progress.getAttribute("aria-valuenow"),"2");
+   assert.match(await page.locator(rootSel+' .aoN1StageCaption').innerText(),/Prayer stage 2 of 4/);
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),
+    "Guided Novena progress must not introduce horizontal overflow");
    assert.deepEqual(errors,[],"Unexpected JavaScript errors: "+JSON.stringify(errors));
-   console.log("PASS "+width+"px Novena witness: FR/EN paragraph anchor, focus, reversible English-only source, no text invention or overflow");
+   console.log("PASS "+width+"px Novena witness and progress: FR/EN focus; 3/4-stage guided progress; simple unaffected; no overflow");
   }finally{await page.close()}
  }
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}

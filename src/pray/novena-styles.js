@@ -24,8 +24,14 @@ export const NOVENA_N3_CSS=String.raw`
 #aoPray435930 .aoN1Details p,#aoPray435930 .aoN1Details li{color:var(--muted,#b3bbc3);line-height:1.55}
 #aoPray435930 .aoN1Details a{color:var(--liturgical,#d8bd7d)}
 #aoPray435930 .aoN1StageRail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
-#aoPray435930 .aoN1StageRail span{height:4px;border-radius:999px;background:rgba(255,255,255,.11)}
+#aoPray435930 .aoN1StageRail span{height:5px;border-radius:999px;background:color-mix(in srgb,var(--text,#f3ead7) 17%,transparent)}
 #aoPray435930 .aoN1StageRail span.done,#aoPray435930 .aoN1StageRail span.current{background:var(--liturgical,#d8bd7d)}
+/* One quiet progress cue for the actual source-owned guided stages.
+   Simple mode keeps the nine-day folio and does not invent stages. */
+#aoPray435930 .aoN1Reader .aoN1StageIndicator{display:grid;gap:8px;margin:5px 2px 14px;min-width:0}
+#aoPray435930 .aoN1Reader .aoN1StageCaption{font:500 13px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:var(--text,#f3ead7)}
+#aoPray435930 .aoN1Reader .aoN1StageRail{width:100%;min-width:0}
+#aoPray435930 .aoN1Reader .aoN1StageRail span.current{box-shadow:0 0 0 1px color-mix(in srgb,var(--liturgical,#d8bd7d) 30%,transparent)}
 #aoPray435930 .aoN1SourceText{padding:18px;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:18px;background:var(--surface-1,#151c24)}
 #aoPray435930 .aoN1SourceText small{display:block;color:var(--liturgical,#d8bd7d);font:650 .62rem/1.2 var(--ao-font-display,var(--font-display,system-ui));letter-spacing:.1em;text-transform:uppercase;margin-bottom:9px}
 #aoPray435930 .aoN1SourceText p{white-space:pre-wrap;margin:0;color:var(--text,#f3ead7);font:400 1.03rem/1.68 var(--ao-font-liturgical,var(--font-liturgical,Georgia,serif))}
