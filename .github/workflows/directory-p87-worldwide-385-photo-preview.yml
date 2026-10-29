@@ -1,0 +1,188 @@
+name: P87 one worldwide 385 actual-photo preview QA and consolidated offline reviewer
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/directory/p87-worldwide-385-visual-preview-qa.py'
+      - 'tests/directory-p87-world-385-visual-previews-test.py'
+      - '.github/workflows/directory-p87-worldwide-385-photo-preview.yml'
+      - 'tests/production-tree-hygiene.mjs'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/directory/p87-worldwide-385-visual-preview-qa.py'
+      - 'tests/directory-p87-world-385-visual-previews-test.py'
+      - '.github/workflows/directory-p87-worldwide-385-photo-preview.yml'
+permissions:
+  contents: read
+concurrency:
+  group: ao-p87-385-worldwide-visual-preview-once
+  cancel-in-progress: false
+jobs:
+  source-and-visual-qa-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free local thumbnail decoder for visual quality checks
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Test 385 real thumbnail derivatives, zero publication and complete offline review
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/directory/p87-worldwide-385-visual-preview-qa.py
+          python tests/directory-p87-world-385-visual-previews-test.py -v
+          node tests/production-tree-hygiene.mjs
+      - name: Test the ORIGINAL immutable P86 385-candidate source evidence, not only synthetic test cases
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/p86-final-one-worldwide-photo-editorial-review-20261029:refs/remotes/origin/research/p86-final-one-worldwide-photo-editorial-review-20261029'
+          test "$(git rev-parse refs/remotes/origin/research/p86-final-one-worldwide-photo-editorial-review-20261029)" = 76af5c42e13876cddcd185232f67222c0d0bfe1e
+          git worktree add --detach /tmp/p87-real-p86 76af5c42e13876cddcd185232f67222c0d0bfe1e
+          (cd /tmp/p87-real-p86/docs/research/directory/p86-final-worldwide-photo-review-20261029 && sha256sum -c SHA256SUMS)
+          python - <<'PY'
+          import importlib.util,pathlib
+          spec=importlib.util.spec_from_file_location("p87_real","tools/directory/p87-worldwide-385-visual-preview-qa.py")
+          mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+          root=pathlib.Path("/tmp/p87-real-p86/docs/research/directory/p86-final-worldwide-photo-review-20261029")
+          rows,audit=mod.lineage(root/"research-queue.jsonl",root/"audit.json")
+          assert len(rows)==385 and len({r["physical_anchor_id"] for r in rows})==183
+          assert len({r["country"] for r in rows})==27
+          assert all(mod.safe_title(r["file_title"]) for r in rows)
+          print("P87_REAL_SOURCE_385_OK",{"assignments":len(rows),"churches":183,"countries":27})
+          PY
+
+  fetch-small-thumbnails-globally:
+    if: >-
+      github.repository == 'Fulcanelli13/ad-orientem' &&
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/main'
+    needs: source-and-visual-qa-contract
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        shard: [0, 1, 2]
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free local image toolkit; no external visual AI or paid processing
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Retrieve frozen complete 385-candidate research source (no private images)
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/p86-final-one-worldwide-photo-editorial-review-20261029:refs/remotes/origin/research/p86-final-one-worldwide-photo-editorial-review-20261029'
+          test "$(git rev-parse refs/remotes/origin/research/p86-final-one-worldwide-photo-editorial-review-20261029)" = 76af5c42e13876cddcd185232f67222c0d0bfe1e
+          git worktree add --detach /tmp/p87-real-p86 76af5c42e13876cddcd185232f67222c0d0bfe1e
+          (cd /tmp/p87-real-p86/docs/research/directory/p86-final-worldwide-photo-review-20261029 && sha256sum -c SHA256SUMS)
+      - name: Query current Commons source and download only bounded small previews
+        run: |
+          set -euo pipefail
+          src=/tmp/p87-real-p86/docs/research/directory/p86-final-worldwide-photo-review-20261029
+          python tools/directory/p87-worldwide-385-visual-preview-qa.py \
+            --queue "$src/research-queue.jsonl" \
+            --audit "$src/audit.json" \
+            --shard ${{ matrix.shard }} --delay .6 \
+            --out "/tmp/p87-completed-shard-${{ matrix.shard }}"
+      - name: Move research-only preview bytes between machine workers, never publish or approve
+        uses: actions/upload-artifact@v4
+        with:
+          name: P87_COMPLETE_WORLDWIDE_PREVIEW_SHARD_${{ matrix.shard }}
+          path: /tmp/p87-completed-shard-${{ matrix.shard }}/
+          retention-days: 3
+          if-no-files-found: error
+
+  preserve-one-visual-review-archive:
+    if: >-
+      github.repository == 'Fulcanelli13/ad-orientem' &&
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/main'
+    needs: fetch-small-thumbnails-globally
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install local thumbnail analysis toolkit
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Restore the P86 immutable research source, not production assets
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/p86-final-one-worldwide-photo-editorial-review-20261029:refs/remotes/origin/research/p86-final-one-worldwide-photo-editorial-review-20261029'
+          test "$(git rev-parse refs/remotes/origin/research/p86-final-one-worldwide-photo-editorial-review-20261029)" = 76af5c42e13876cddcd185232f67222c0d0bfe1e
+          git worktree add --detach /tmp/p87-real-p86 76af5c42e13876cddcd185232f67222c0d0bfe1e
+          (cd /tmp/p87-real-p86/docs/research/directory/p86-final-worldwide-photo-review-20261029 && sha256sum -c SHA256SUMS)
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: P87_COMPLETE_WORLDWIDE_PREVIEW_SHARD_*
+          path: /tmp/p87-unpacked-shards
+          merge-multiple: false
+      - name: Assemble exact 385-source offline reviewer, QA flags, duplicate warnings and contact sheets
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/p87-normalized-shards
+          for i in 0 1 2; do
+            test -f "/tmp/p87-unpacked-shards/P87_COMPLETE_WORLDWIDE_PREVIEW_SHARD_$i/p87-shard-$i.json"
+            mv "/tmp/p87-unpacked-shards/P87_COMPLETE_WORLDWIDE_PREVIEW_SHARD_$i" "/tmp/p87-normalized-shards/shard-$i"
+          done
+          src=/tmp/p87-real-p86/docs/research/directory/p86-final-worldwide-photo-review-20261029
+          python tools/directory/p87-worldwide-385-visual-preview-qa.py \
+            --queue "$src/research-queue.jsonl" \
+            --audit "$src/audit.json" \
+            --source-shards /tmp/p87-normalized-shards \
+            --out /tmp/p87-one-worldwide-review
+          python - <<'PY'
+          import json,pathlib,zipfile
+          root=pathlib.Path("/tmp/p87-one-worldwide-review")
+          s=json.loads((root/"audit.json").read_text())
+          assert s["schema"]=="AO_P87_COMPLETE_WORLDWIDE_PREVIEW_QUALITY_GATE_V1"
+          assert s["photographic_assignments"]==385 and s["review_site_ids"]==183
+          assert s["previews_captured"]+s["previews_unavailable_or_held"]==385
+          assert s["no_automatic_semantic_subject_validation"] is True
+          assert s["rights_cleared"]==s["original_image_bytes_downloaded"]==s["photos_approved"]==s["photos_published"]==0
+          with zipfile.ZipFile("/tmp/p87-one-worldwide-review.zip") as z:
+            assert {"index.html","audit.json","evidence.json","README.txt"}.issubset(set(z.namelist()))
+            assert len([x for x in z.namelist() if x.startswith("thumbs/")])==s["previews_captured"]
+          print("P87_ONE_WORLD_REVIEW_ARCHIVED_NOT_PUBLIC",s)
+          PY
+      - name: Permanently preserve small low-resolution preview pack without modifying the app
+        run: |
+          set -euo pipefail
+          branch="research/p87-worldwide-original-preview-pack-20261029"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            echo "P87 evidence branch already exists, never overwrite" >&2; exit 1
+          fi
+          git fetch --no-tags origin main
+          git switch -c "$branch" origin/main
+          target="docs/research/directory/p87-final-worldwide-visual-review-20261029"
+          test ! -e "$target"
+          mkdir -p "$target"
+          cp /tmp/p87-one-worldwide-review.zip "$target/p87-one-worldwide-review-and-contact-sheets.zip"
+          cp /tmp/p87-one-worldwide-review/audit.json "$target/audit.json"
+          cp /tmp/p87-one-worldwide-review/README.txt "$target/README.txt"
+          (cd "$target" && sha256sum p87-one-worldwide-review-and-contact-sheets.zip audit.json README.txt > SHA256SUMS && sha256sum -c SHA256SUMS)
+          git add "$target/p87-one-worldwide-review-and-contact-sheets.zip" "$target/audit.json" "$target/README.txt" "$target/SHA256SUMS"
+          test "$(git diff --cached --name-only | wc -l)" -eq 4
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): one 385-photo offline preview visual quality and identity-review pack"
+          git push origin "HEAD:refs/heads/$branch"
