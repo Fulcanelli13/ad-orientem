@@ -5,7 +5,7 @@
  * Exactly 11 unsigned R18 articles, copied from the 8-field bilingual source
  * review blob e42482bc7ebe05274a511aa93e40d24fd164b64d; live published count remains 35.
  */
-const EDITORIAL_SOURCE_BLOB="e42482bc7ebe05274a511aa93e40d24fd164b64d";
+const EDITORIAL_SOURCE_BLOB="2b22181c25b6e5bc8dd8d6fd959fc0b30117a02c";
 const REVIEW_CANDIDATES=Object.freeze([
   {
     "review_key": "CUSTOMS-R18-03",
@@ -31,16 +31,16 @@ const REVIEW_CANDIDATES=Object.freeze([
         "fr": "Le rassemblement chrétien peut honorer le saint qui prépara la venue du Christ."
       },
       "practice": {
-        "en": "Local programmes can combine worship, shared food, prayer, song and a community fire.",
-        "fr": "Les programmes locaux peuvent réunir culte, repas partagé, prière, chants et feu communautaire."
+        "en": "Where actually organised, a parish gathering may include Mass, a shared meal, hymns, prayers and a community bonfire.",
+        "fr": "Là où elle est effectivement organisée, une rencontre paroissiale peut comprendre messe, repas partagé, chants, prières et feu communautaire."
       },
       "caution": {
         "en": "A local bonfire is not a prescribed Roman fire-blessing rite or a general parish schedule. Follow actual organiser announcements and fire-safety rules; do not confuse Saint John the Baptist with Saint John the Evangelist.",
         "fr": "Un feu local n'est ni un rite romain universel de bénédiction du feu ni un programme paroissial permanent. Respecter les annonces et les consignes de sécurité ; ne pas confondre saint Jean-Baptiste avec saint Jean l'Évangéliste."
       },
       "occasion": {
-        "en": "Nativity of St John Baptist, 24 June; eve commonly 23 June",
-        "fr": "Autour de la Nativité de saint Jean-Baptiste, le 24 juin, selon une annonce locale réelle."
+        "en": "Around the Nativity of St John the Baptist (24 June), according to actual local announcements",
+        "fr": "Autour de la Nativité de saint Jean-Baptiste (24 juin), selon les annonces locales effectives"
       },
       "scope": {
         "en": "Local Catholic parish gatherings attested in parts of France; no general rite or standing event schedule.",
@@ -79,13 +79,13 @@ const REVIEW_CANDIDATES=Object.freeze([
   {
     "review_key": "CUSTOMS-R18-04",
     "title": {
-      "en": "Decorating Easter eggs: pisanki and pysanky",
-      "fr": "Décorer les œufs de Pâques : pisanki et pysanky"
+      "en": "Decorated Easter eggs — Polish pisanki and Ukrainian pysanky",
+      "fr": "Œufs de Pâques décorés — pisanki polonais et pysanky ukrainiens"
     },
     "article": {
       "title": {
-        "en": "Decorating Easter eggs: pisanki and pysanky",
-        "fr": "Décorer les œufs de Pâques : pisanki et pysanky"
+        "en": "Decorated Easter eggs — Polish pisanki and Ukrainian pysanky",
+        "fr": "Œufs de Pâques décorés — pisanki polonais et pysanky ukrainiens"
       },
       "description": {
         "en": "Polish pisanki and Ukrainian pysanky are related regional traditions of decorating eggs for Easter, with distinct techniques and cultural histories.",
@@ -96,20 +96,20 @@ const REVIEW_CANDIDATES=Object.freeze([
         "fr": "L'UNESCO documente les pysanky ukrainiennes, notamment la décoration à la réserve de cire, comme une tradition culturelle pratiquée dans différents milieux religieux. Des sources muséales polonaises décrivent séparément les techniques des pisanki. Ces sources n'établissent ni une origine exclusivement catholique romaine ni une activité prescrite le Samedi saint."
       },
       "meaning": {
-        "en": "An Easter egg can suggest new life; individual motifs have varied cultural meanings.",
-        "fr": "L'œuf pascal peut évoquer la vie nouvelle ; chaque motif possède des significations culturelles variables."
+        "en": "Decorated eggs are associated with Easter and new life, while individual motifs also carry diverse cultural meanings.",
+        "fr": "Les œufs décorés sont associés à Pâques et à la vie nouvelle ; leurs motifs possèdent aussi des significations culturelles variées."
       },
       "practice": {
         "en": "Families decorate and exchange eggs; some traditions use successive applications of wax and dye.",
         "fr": "Les familles décorent et offrent des œufs ; certains usages emploient des couches successives de cire et de teinture."
       },
       "caution": {
-        "en": "Decorating eggs is not the priestly blessing of Easter food, does not confer sacramental status and carries no guaranteed protective or divinatory power.",
-        "fr": "Décorer des œufs n'est pas la bénédiction sacerdotale des aliments de Pâques, ne confère pas le caractère d'un sacramental et ne garantit aucun pouvoir protecteur ou divinatoire."
+        "en": "Decorating an egg does not itself constitute a priestly blessing or confer sacramental status. Some communities separately bless eggs; reported folklore about protection or divination must not be presented as Catholic doctrine.",
+        "fr": "La décoration d’un œuf n’est pas en elle-même une bénédiction sacerdotale et ne lui confère pas le statut de sacramental. Certaines communautés font bénir leurs œufs séparément ; les croyances populaires de protection ou de divination ne sont pas la doctrine catholique."
       },
       "occasion": {
-        "en": "Easter season; no independently established universal Holy Saturday decorating time",
-        "fr": "Pâques et les préparatifs familiaux de la fête."
+        "en": "Easter preparation and celebration, with dates varying by family and region",
+        "fr": "Préparatifs et célébrations de Pâques, selon les familles et les régions"
       },
       "scope": {
         "en": "Polish pisanki and Ukrainian pysanka crafts with varied religious and cultural participation.",
@@ -156,13 +156,13 @@ const REVIEW_CANDIDATES=Object.freeze([
   {
     "review_key": "CUSTOMS-R18-05",
     "title": {
-      "en": "Herbergsuche — Advent Marian-image visits between households",
-      "fr": "Herbergsuche — visite d'une image mariale de foyer en foyer pendant l'Avent"
+      "en": "Herbergsuche — Advent visits of a Marian image",
+      "fr": "Herbergsuche — visite d'une image mariale pendant l'Avent"
     },
     "article": {
       "title": {
-        "en": "Herbergsuche — Advent Marian-image visits between households",
-        "fr": "Herbergsuche — visite d'une image mariale de foyer en foyer pendant l'Avent"
+        "en": "Herbergsuche — Advent visits of a Marian image",
+        "fr": "Herbergsuche — visite d'une image mariale pendant l'Avent"
       },
       "description": {
         "en": "In a documented Austrian Advent practice, a Marian image is received successively by participating households, which pray when it arrives or departs.",
@@ -185,8 +185,8 @@ const REVIEW_CANDIDATES=Object.freeze([
         "fr": "Le parcours et la participation dépendent de la paroisse ou des familles locales ; aucune visite ou cérémonie ne doit être annoncée sans confirmation actuelle."
       },
       "occasion": {
-        "en": "Advent; individual parish house-visit itinerary, not a universal fixed nine-day programme",
-        "fr": "Avent — programme paroissial local, sans dates universelles"
+        "en": "Advent; participating households follow a locally agreed itinerary",
+        "fr": "Avent ; les foyers participants suivent un parcours convenu localement"
       },
       "scope": {
         "en": "Regional Austrian Catholic household-image relay; participation depends on the parish.",
@@ -225,21 +225,21 @@ const REVIEW_CANDIDATES=Object.freeze([
   {
     "review_key": "CUSTOMS-R18-07",
     "title": {
-      "en": "La guignolée — French Canadian Christmas alms collection",
-      "fr": "La guignolée — quête caritative canadienne-française de Noël"
+      "en": "Québec guignolée — Christmas charity collection",
+      "fr": "La guignolée québécoise — collecte caritative de Noël"
     },
     "article": {
       "title": {
-        "en": "La guignolée — French Canadian Christmas alms collection",
-        "fr": "La guignolée — quête caritative canadienne-française de Noël"
+        "en": "Québec guignolée — Christmas charity collection",
+        "fr": "La guignolée québécoise — collecte caritative de Noël"
       },
       "description": {
         "en": "La guignolée is a Québec Christmas-season tradition of collecting food and donations for people in need.",
         "fr": "La guignolée est une tradition québécoise de collecte de denrées et de dons pour les personnes démunies pendant la période de Noël."
       },
       "history": {
-        "en": "Québec heritage sources and the Society of St Vincent de Paul describe house-to-house charitable collections with Catholic historical links, later also organised by civic groups. The tradition is separate from a liturgical offertory, and campaign dates vary by organiser.",
-        "fr": "Des sources patrimoniales du Québec et la Société de Saint-Vincent-de-Paul décrivent des quêtes charitables de maison en maison, historiquement liées au catholicisme puis également organisées par des groupes civiques. La coutume est distincte de l'offertoire liturgique et les dates varient selon l'organisateur."
+        "en": "The Society of St Vincent de Paul traces its Québec guignolée collections to 1861, drawing on earlier house-to-house visiting and singing around New Year. Modern collections seek food and donations for families in need, sometimes with civic partners. Organisers set their own dates and collection points.",
+        "fr": "La Société de Saint-Vincent-de-Paul fait remonter sa guignolée au Québec à 1861, dans le prolongement de visites et chants de maison en maison autour du Nouvel An. Aujourd'hui, les collectes de denrées et de dons pour les familles démunies associent parfois des partenaires civiques. Chaque organisateur fixe ses dates et ses points de collecte."
       },
       "meaning": {
         "en": "Christian almsgiving and practical care for families in need.",
@@ -254,8 +254,8 @@ const REVIEW_CANDIDATES=Object.freeze([
         "fr": "Ni rite catholique ni don obligatoire. L'existence d'une collecte actuelle, son organisateur et ses dates doivent être vérifiés localement avant toute annonce d'événement."
       },
       "occasion": {
-        "en": "Christmas-season charity drive; actual annual dates locally announced",
-        "fr": "Temps de Noël — dates des collectes annoncées localement"
+        "en": "Weeks before Christmas; check the current charity organiser's dates",
+        "fr": "Les semaines précédant Noël ; vérifier les dates auprès de l'organisme caritatif"
       },
       "scope": {
         "en": "Québec charitable tradition with historic Catholic links and later wider civic participation.",
@@ -295,21 +295,21 @@ const REVIEW_CANDIDATES=Object.freeze([
   {
     "review_key": "CUSTOMS-R18-08",
     "title": {
-      "en": "Polish kolędnicy — Christmas visiting carollers",
-      "fr": "Kolędnicy polonais — quêteurs et chanteurs de Noël"
+      "en": "Polish kolędnicy — visiting Christmas carollers",
+      "fr": "Kolędnicy polonais — chanteurs itinérants de Noël"
     },
     "article": {
       "title": {
-        "en": "Polish kolędnicy — Christmas visiting carollers",
-        "fr": "Kolędnicy polonais — quêteurs et chanteurs de Noël"
+        "en": "Polish kolędnicy — visiting Christmas carollers",
+        "fr": "Kolędnicy polonais — chanteurs itinérants de Noël"
       },
       "description": {
         "en": "In Polish Christmas custom, kolędnicy visit households to sing carols and, in some places, perform seasonal dramatic scenes.",
         "fr": "Dans des usages polonais de Noël, les kolędnicy visitent les foyers pour chanter et, selon les lieux, jouer de courtes scènes traditionnelles."
       },
       "history": {
-        "en": "A Polish state educational resource describes the carollers, seasonal costumes and performances, including Nativity and Herod-related forms. These are regional subtypes of Polish visiting performance, not universally prescribed Catholic processions or the German Sternsinger institution.",
-        "fr": "Une ressource pédagogique publique polonaise décrit les chanteurs, les costumes saisonniers et les jeux, notamment autour de la Nativité ou d'Hérode. Il s'agit de variantes régionales de spectacles itinérants polonais, non de processions catholiques universelles ni de l'institution allemande des Sternsinger."
+        "en": "A Polish public educational resource describes Christmas carollers visiting homes in costume, sometimes performing scenes about the Nativity or Herod. Forms and songs vary by region. The custom is related to other visiting Christmas traditions but is not the same as Germany's Epiphany Sternsinger.",
+        "fr": "Une ressource éducative publique polonaise décrit des chanteurs de Noël visitant les maisons en costume, parfois avec des scènes de la Nativité ou d'Hérode. Les formes et les chants varient selon la région. Cette coutume est apparentée à d'autres visites de Noël, sans se confondre avec les Sternsinger allemands de l'Épiphanie."
       },
       "meaning": {
         "en": "The birth of Christ remembered through local song and shared hospitality.",
@@ -371,21 +371,21 @@ const REVIEW_CANDIDATES=Object.freeze([
   {
     "review_key": "CUSTOMS-R18-09",
     "title": {
-      "en": "Hungarian betlehemezés Nativity visiting plays",
-      "fr": "Jeux hongrois de la Nativité betlehemezés"
+      "en": "Hungarian betlehemezés — visiting Nativity plays",
+      "fr": "Betlehemezés hongrois — jeux itinérants de la Nativité"
     },
     "article": {
       "title": {
-        "en": "Hungarian betlehemezés Nativity visiting plays",
-        "fr": "Jeux hongrois de la Nativité betlehemezés"
+        "en": "Hungarian betlehemezés — visiting Nativity plays",
+        "fr": "Betlehemezés hongrois — jeux itinérants de la Nativité"
       },
       "description": {
         "en": "Hungarian betlehemezés consists of regional Nativity plays performed during Christmas visits, sometimes with actors or puppets.",
         "fr": "Le betlehemezés hongrois comprend des jeux régionaux de la Nativité présentés lors des visites de Noël, parfois par des acteurs ou avec des marionnettes."
       },
       "history": {
-        "en": "The Hungarian Catholic Lexicon and ethnographic sources describe shepherd dialogue, song and differing dramatic forms. Actor and puppet versions remain subtypes within this named Hungarian tradition, not additional canonical Customs.",
-        "fr": "Le Lexique catholique hongrois et des sources ethnographiques décrivent les dialogues des bergers, les chants et diverses formes théâtrales. Les versions avec acteurs ou marionnettes restent des variantes de cette tradition hongroise, non des coutumes canoniques supplémentaires."
+        "en": "The Hungarian Catholic Lexicon describes visiting Nativity plays with shepherds' dialogue and songs, alongside several regional dramatic forms, including puppet performances. Actors and puppets represent variations within this Hungarian tradition.",
+        "fr": "Le Lexique catholique hongrois décrit des jeux itinérants de la Nativité, avec dialogues des bergers et chants, ainsi que plusieurs formes théâtrales régionales, dont les représentations avec marionnettes. Acteurs et marionnettes sont des variantes de cette tradition hongroise."
       },
       "meaning": {
         "en": "The Nativity is expressed through local religious drama, not a prescribed Mass text.",
@@ -448,21 +448,21 @@ const REVIEW_CANDIDATES=Object.freeze([
   {
     "review_key": "CUSTOMS-R18-13",
     "title": {
-      "en": "L-Irxoxt — Maltese running procession with the Risen Christ",
-      "fr": "L-Irxoxt — procession maltaise du Ressuscité portée au pas de course"
+      "en": "L-Irxoxt — Maltese Easter Resurrection processions",
+      "fr": "L-Irxoxt — processions maltaises de la Résurrection"
     },
     "article": {
       "title": {
-        "en": "L-Irxoxt — Maltese running procession with the Risen Christ",
-        "fr": "L-Irxoxt — procession maltaise du Ressuscité portée au pas de course"
+        "en": "L-Irxoxt — Maltese Easter Resurrection processions",
+        "fr": "L-Irxoxt — processions maltaises de la Résurrection"
       },
       "description": {
         "en": "Some Maltese Easter processions carry a statue of the Risen Christ through the streets; in certain localities the bearers briefly run with it.",
         "fr": "Dans certaines processions pascales maltaises, une statue du Christ ressuscité est portée dans les rues ; en quelques lieux, les porteurs courent brièvement avec elle."
       },
       "history": {
-        "en": "Maltese public heritage accounts attest local Resurrection processions, and reporting from Senglea documents the distinctive running. Running is a geographic subtype of the local procession, not an element prescribed within the Roman Easter Mass.",
-        "fr": "Des témoignages publics maltais attestent des processions locales de la Résurrection, et des reportages à Senglea décrivent la course particulière. Cette course est une variante géographique de la procession locale, et non un acte prescrit dans la messe romaine de Pâques."
+        "en": "Maltese public heritage accounts attest Easter processions carrying the Risen Christ. Reporting from Senglea documents bearers briefly running with the statue there. This running is a particular local form, not a requirement of the Roman Easter Mass.",
+        "fr": "Des sources publiques maltaises attestent des processions pascales portant le Christ ressuscité. Des reportages à Senglea décrivent des porteurs courant brièvement avec la statue dans cette localité. Cette course est une forme locale particulière, non une obligation de la messe romaine de Pâques."
       },
       "meaning": {
         "en": "A public expression of joy in Christ's Resurrection.",
@@ -481,8 +481,8 @@ const REVIEW_CANDIDATES=Object.freeze([
         "fr": "Dimanche de Pâques — seulement là où la procession est annoncée"
       },
       "scope": {
-        "en": "Named Maltese and Gozitan local Easter processions; running varies by place.",
-        "fr": "Processions pascales locales attestées à Malte et à Gozo ; la course dépend de la localité."
+        "en": "Local Easter Resurrection processions in Malta and Gozo; running with the statue is attested in particular localities only.",
+        "fr": "Processions locales de la Résurrection à Malte et à Gozo ; la course avec la statue n'est attestée que dans certaines localités."
       }
     },
     "source_claim_en": "Malta government confirms local L-Irxoxt processions; 2026 report verifies running in Senglea, not all Maltese parishes.",
@@ -538,16 +538,16 @@ const REVIEW_CANDIDATES=Object.freeze([
         "fr": "Dans certains usages régionaux polonais de Pentecôte, les maisons et les portails sont ornés de feuillages de printemps."
       },
       "history": {
-        "en": "Polish State Forests describe the greenery of Zielone Świątki as a seasonal cultural tradition. An archival photograph has been cited for a specific locality and period, but its caption requires independent verification before use as a precise historical attribution.",
-        "fr": "Les Forêts d'État polonaises décrivent les feuillages des Zielone Świątki comme une tradition culturelle saisonnière. Une photographie d'archives a été invoquée pour une localité et une époque précises, mais sa légende exige une vérification indépendante avant toute attribution historique détaillée."
+        "en": "Polish State Forests documents the older rural custom of decorating houses, gates and sometimes churches with fresh greenery at Zielone Świątki, the feast of Pentecost. Forms differed by village, and the source also records that some decorations have become less common.",
+        "fr": "Les Forêts d'État polonaises documentent l'ancien usage rural d'orner maisons, portails et parfois églises de feuillages frais à la Pentecôte, dite Zielone Świątki. Les formes variaient selon les villages et la source constate aussi que certaines décorations sont devenues plus rares."
       },
       "meaning": {
         "en": "An optional regional sign of Pentecost joy, never a required Roman liturgical decoration.",
         "fr": "Un signe régional libre de la joie de Pentecôte, et non une décoration liturgique romaine imposée."
       },
       "practice": {
-        "en": "Optional household greenery may recall Pentecost, using sustainably obtained branches without attributing magical powers.",
-        "fr": "Un feuillage domestique facultatif peut rappeler la Pentecôte, avec des rameaux prélevés sans dommage et sans leur prêter de pouvoir magique."
+        "en": "Where the regional custom is known, a household may decorate with sustainably sourced greenery as a voluntary seasonal remembrance.",
+        "fr": "Là où cet usage régional est connu, une famille peut décorer son foyer de feuillages obtenus sans dommage, en souvenir facultatif de la fête."
       },
       "caution": {
         "en": "This regional household decoration is neither a prescribed Roman Pentecost practice nor a priestly blessing; do not attribute magical protection to the branches.",
@@ -558,8 +558,8 @@ const REVIEW_CANDIDATES=Object.freeze([
         "fr": "Pentecôte — date mobile calculée par le calendrier"
       },
       "scope": {
-        "en": "Regional Polish household greenery custom at Pentecost; the historical photograph needs separate verification.",
-        "fr": "Coutume régionale polonaise de décoration végétale à la Pentecôte ; la photographie historique reste à vérifier séparément."
+        "en": "Historically documented regional Polish Pentecost greenery, particularly in rural household settings.",
+        "fr": "Décorations de Pentecôte attestées historiquement dans certaines régions polonaises, notamment en milieu rural."
       }
     },
     "source_claim_en": "Polish State Forests documents domestic/gate greenery for Pentecost; archived 1930 photograph attribution remains unverified.",
@@ -608,8 +608,8 @@ const REVIEW_CANDIDATES=Object.freeze([
         "fr": "L'Inchinata de Tivoli est un usage de l'Assomption dans lequel des images portées du Christ et de Notre-Dame se rencontrent et s'inclinent."
       },
       "history": {
-        "en": "The Diocese of Tivoli and civic sources describe the meeting of two images near Santa Maria Maggiore, including a locally announced programme for 14–15 August 2026. Accounts of an ancient founding date are devotional tradition, not independently established chronology.",
-        "fr": "Le diocèse de Tivoli et des sources municipales décrivent la rencontre de deux images près de Santa Maria Maggiore, notamment dans un programme local annoncé pour les 14 et 15 août 2026. Les récits d'une fondation très ancienne relèvent de la tradition dévotionnelle plutôt que d'une chronologie historiquement établie."
+        "en": "The Diocese of Tivoli records a procession of the image of the Saviour to meet that of Our Lady of Graces, followed by the ceremonial bow of the two images. Its 2026 programme places the encounter on 14 August with a renewed greeting on 15 August. Ancient foundation stories should be distinguished from documented history.",
+        "fr": "Le diocèse de Tivoli décrit une procession de l'image du Sauveur venant rencontrer celle de Notre-Dame des Grâces, suivie de l'inclination cérémonielle des deux images. Son programme de 2026 situe la rencontre le 14 août et un renouvellement du salut le 15 août. Les récits d'une fondation très ancienne doivent être distingués de l'histoire documentée."
       },
       "meaning": {
         "en": "A local dramatic expression of faith in Mary's Assumption and the triumph of the Risen Christ.",
@@ -624,8 +624,8 @@ const REVIEW_CANDIDATES=Object.freeze([
         "fr": "Cette cérémonie propre à la ville se distingue des autres processions de l'Assomption et de la messe ; l'annonce de 2026 ne détermine automatiquement aucun parcours ni aucune date futurs."
       },
       "occasion": {
-        "en": "Evening 14 August and morning 15 August; Tivoli local Assumption observance",
-        "fr": "14–15 août — procession locale de Tivoli"
+        "en": "Assumption observances in Tivoli; consult the current programme (2026: 14–15 August)",
+        "fr": "Célébrations de l'Assomption à Tivoli ; consulter le programme en cours (2026 : 14–15 août)"
       },
       "scope": {
         "en": "The Inchinata procession of Tivoli, Italy; event timing requires local confirmation.",
@@ -693,8 +693,8 @@ const REVIEW_CANDIDATES=Object.freeze([
         "fr": "Ces grandes structures votives en bois ne sont pas des bougies ordinaires à bénir chez soi. L'événement local n'est ni un rite universel de l'Assomption romaine ni l'Inchinata de Tivoli."
       },
       "occasion": {
-        "en": "14 August local procession associated with Assumption, not a universal Marian vigil rite",
-        "fr": "14 août — procession locale de Sassari"
+        "en": "Sassari's Assumption-period local procession; 2026 programme: 14 August",
+        "fr": "Procession locale de Sassari autour de l'Assomption ; programme 2026 : 14 août"
       },
       "scope": {
         "en": "The Faradda guild procession of Sassari, Sardinia, Italy.",
@@ -733,13 +733,13 @@ const REVIEW_CANDIDATES=Object.freeze([
   {
     "review_key": "CUSTOMS-R18-17",
     "title": {
-      "en": "Frauendreißiger — thirty days of Marian devotion",
-      "fr": "Frauendreißiger — trente jours de dévotion mariale"
+      "en": "Frauendreißiger — Bavarian Marian pilgrimage period",
+      "fr": "Frauendreißiger — période bavaroise de pèlerinage marial"
     },
     "article": {
       "title": {
-        "en": "Frauendreißiger — thirty days of Marian devotion",
-        "fr": "Frauendreißiger — trente jours de dévotion mariale"
+        "en": "Frauendreißiger — Bavarian Marian pilgrimage period",
+        "fr": "Frauendreißiger — période bavaroise de pèlerinage marial"
       },
       "description": {
         "en": "Frauendreißiger names a period of Marian devotion at certain Bavarian shrines between the Assumption and Holy Cross feasts.",
@@ -750,8 +750,8 @@ const REVIEW_CANDIDATES=Object.freeze([
         "fr": "L'archidiocèse de Munich et le sanctuaire Maria Thalkirchen décrivent cette période locale de dévotion traditionnellement associée au 15 août et au 14 septembre. Les messes et pèlerinages dépendent du programme actuel de chaque sanctuaire ; il ne s'agit pas d'un temps supplémentaire du calendrier romain de 1962."
       },
       "meaning": {
-        "en": "Sustained Marian prayer and pilgrimage after the feast of the Assumption.",
-        "fr": "Prière mariale suivie et pèlerinage dans le prolongement de l’Assomption."
+        "en": "A regional period for sustained Marian prayer and pilgrimage around the Assumption and Exaltation of the Holy Cross.",
+        "fr": "Une période régionale de prière mariale et de pèlerinage autour de l'Assomption et de l'Exaltation de la Sainte Croix."
       },
       "practice": {
         "en": "Consult an actual shrine calendar for services; private prayer can remain voluntary without inventing indulgences.",
@@ -762,8 +762,8 @@ const REVIEW_CANDIDATES=Object.freeze([
         "fr": "Aucune cérémonie de sanctuaire ni indulgence ne peut être annoncée ou promise à partir de cette notice historique. Un privilège pontifical signalé par une source exige la vérification indépendante de son acte original et de ses conditions précises."
       },
       "occasion": {
-        "en": "15 August–14 September in cited Bavarian diocesan and pilgrimage accounts",
-        "fr": "Du 15 août au 14 septembre — programme de sanctuaire bavarois"
+        "en": "Traditionally 15 August–14 September; individual shrine events follow the current programme",
+        "fr": "Traditionnellement du 15 août au 14 septembre ; les célébrations dépendent du programme actuel de chaque sanctuaire"
       },
       "scope": {
         "en": "Bavarian Marian shrines observing a regional devotional period; programmes vary by sanctuary.",
