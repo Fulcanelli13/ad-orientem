@@ -179,6 +179,6 @@ def main():
    "approved_images":0,"published_images":0}
  file=args.output/("p81-shard-%02d.json"%args.shard)
  file.write_text(json.dumps({"schema":"AO_P81_COMMONS_2579_SHARD_V1","summary":summary,"records":output},ensure_ascii=False,separators=(",",":"))+"\n",encoding="utf8")
- print("P81_SHARD_SUMMARY="+json.dumps(summary,flush=True),flush=True)
+ print("P81_SHARD_SUMMARY="+json.dumps(summary),flush=True)
  check(len(output)==len(rows),"Incomplete source anchor coverage")
 if __name__=="__main__":main()
