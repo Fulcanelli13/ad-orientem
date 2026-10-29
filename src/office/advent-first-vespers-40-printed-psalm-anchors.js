@@ -167,7 +167,7 @@ export async function reviewAdventSaturdayFortyPrintedAnchors({
   originalSourceLinesReordered:false,
   fullLatinPrintedTextCollated:false,
   full1961TypicalPrintedCollation:false,
-  1961MameProperAndSaturdayPsalterAccessible:false,
+  mame1961ProperAndSaturdayPsalterAccessible:false,
   translationsCertified:false,completeHourCertified:false,
   rightsApproved:false,publishable:false,published:false
  });
