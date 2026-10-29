@@ -140,16 +140,16 @@ export function reviewAdventFirstVespers1960RubricPlan({
  for(let i=0;i<SATURDAY.length;i++){
   const [n,range]=SATURDAY[i];
   const psalmId="Psalterium/Psalmorum/Psalm"+n+"#"+range;
-  const antId=PROPER+"Ant Laudes#"+(i+1);
+  const antId=PROPER+"Ant Laudes";
   events.push(event("ANTIPHON_BEFORE",antId,{
-   slot:"five-psalmody",position:i+1,fullText:true}));
+   slot:"five-psalmody",position:i+1,sourceRow:i+1,fullText:true}));
   events.push(event("PSALM_PORTION",psalmId,{
    slot:"five-psalmody",position:i+1,
    incipitOverlap198Collated:false}));
   events.push(event("GLORIA_PATRI",PRAYERS+"Gloria",{
    slot:"five-psalmody",position:i+1}));
   events.push(event("ANTIPHON_AFTER",antId,{
-   slot:"five-psalmody",position:i+1,fullText:true}));
+   slot:"five-psalmody",position:i+1,sourceRow:i+1,fullText:true}));
  }
  events.push(event("CHAPTER",PROPER+"Capitulum Laudes",{slot:"chapter"}));
  events.push(event("CHAPTER_RESPONSE",PRAYERS+"Deo gratias",{
