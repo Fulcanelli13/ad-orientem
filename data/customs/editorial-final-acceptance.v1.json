@@ -1,7 +1,7 @@
 {
   "schema": "AO_CUSTOMS_FINAL_HUMAN_EDITORIAL_SIGNOFF_V1",
   "as_of": "2026-10-23",
-  "scope": "Additional final human approval of exact published EN, FR and historical claim copy; separate from 24 existing scoped Calendar article acceptances",
+  "scope": "35 previously catalogued Customs plus one separate proposed Polish Pentecost greenery candidate, all still awaiting final human bilingual and claims signoff. Proposed article is not live until PR merge.",
   "canonical_text_owner": "src/calendar/customs-read-model.js; src/calendar/customs-extra-articles.js",
   "source_review_basis": "data/customs/research/customs-published-35-editorial-first-pass.20261023.v1.json",
   "export_command": "node tools/customs/export-final-editorial-review.mjs",
@@ -11,9 +11,12 @@
     "three_separate_approvals_per_custom": true,
     "current_text_fingerprints_required_if_approved": true,
     "changed_copy_invalidates_prior_approval": true,
-    "no_new_customs": true,
-    "no_calendar_or_mass_reader_changes": true,
-    "context_only_not_reviewable_for_publication": true
+    "no_new_customs": false,
+    "no_calendar_or_mass_reader_changes": false,
+    "context_only_not_reviewable_for_publication": true,
+    "one_new_candidate_per_release": true,
+    "no_mass_reader_rite_change": true,
+    "human_merge_approval_of_pent_001_required": true
   },
   "records": [
     {
@@ -938,6 +941,33 @@
       "custom_id": "MARI-002",
       "priority": "CRITICAL_SCOPE",
       "review_focus": "1932 Woods Hole and 1951 Philadelphia document modern Mary Garden revival, not medieval arrangements.",
+      "final_en": {
+        "decision": "PENDING",
+        "reviewer": null,
+        "reviewed_on": null,
+        "content_sha256": null,
+        "review_note": null
+      },
+      "final_fr": {
+        "decision": "PENDING",
+        "reviewer": null,
+        "reviewed_on": null,
+        "content_sha256": null,
+        "review_note": null
+      },
+      "final_claims": {
+        "decision": "PENDING",
+        "reviewer": null,
+        "reviewed_on": null,
+        "content_sha256": null,
+        "review_note": null
+      },
+      "final_status": "BLOCKED_PENDING_HUMAN_SIGNOFF"
+    },
+    {
+      "custom_id": "PENT-001",
+      "priority": "REGIONAL_SCOPE",
+      "review_focus": "Polish Zielone Świątki household greenery: historically attested countryside custom; no global Catholic norm, Roman blessing, annual parish event, or protective efficacy. The editorial reviewer must explicitly approve English, French and claims before this draft PR can merge.",
       "final_en": {
         "decision": "PENDING",
         "reviewer": null,
