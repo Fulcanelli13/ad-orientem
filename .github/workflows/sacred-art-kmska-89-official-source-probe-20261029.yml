@@ -1,0 +1,51 @@
+name: Sacred Art KMSKA 89 official collection source discovery (research only)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-kmska-89-official-source-probe-20261029.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sacred-art-kmska-source-probe
+  cancel-in-progress: false
+
+jobs:
+  probe-kmska-public-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify frozen Phase 1 decisions
+        run: node scripts/art/validate-editorial-phase1-20261029.mjs
+      - name: Probe three official KMSKA object identifiers and source redirects
+        run: node scripts/art/probe-kmska-official-sources-20261029.mjs
+      - name: Protect diagnostic status and save compact research evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import {readFileSync} from 'node:fs';
+          const r=JSON.parse(readFileSync('data/calendar/sacred-art-phase1-kmska-source-endpoint-probe-20261029.v1.json','utf8'));
+          if(r.sampleSize!==3 || r.recordsAwaitingAuthoritativeVerification!==89 ||
+             r.objectsVerifiedByThisProbe!==0 || r.blockedPromotion!==true ||
+             r.results.length!==3 || r.results.some(v=>v.requests.length!==5)) throw Error('invalid probe or gate');
+          console.log('All 15 read-only endpoint probe attempts preserved; no source verification promoted.');
+          NODE
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-phase1-kmska-source-endpoint-probe-20261029.v1.json
+          git diff --cached --check
+          git commit -m "research(sacred-art): record KMSKA official API probe evidence [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029
