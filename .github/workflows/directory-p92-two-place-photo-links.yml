@@ -1,0 +1,31 @@
+name: P92 exact two-place Directory photo identity gate
+on:
+  pull_request:
+    paths:
+      - data/geography/seed-registry.v1.json
+      - data/geography/sacred-places-live-release-chain.v1.json
+      - data/geography/research/sacred-places-p92-two-directory-photo-venue-links.v1.json
+      - data/geography/research/directory-place-photo-screen-p92-20261029.v1.json
+      - tests/directory-p92-two-place-photo-link-contract.mjs
+      - tests/directory-place-photo-crosswalk.mjs
+      - .github/workflows/directory-p92-two-place-photo-links.yml
+permissions:
+  contents: read
+jobs:
+  place-identity-and-registry-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify two physical churches, exact venue IDs and release chain
+        run: |
+          set -euo pipefail
+          node tests/directory-p92-two-place-photo-link-contract.mjs
+          node tests/directory-place-photo-crosswalk.mjs
+          node tests/explore-geography-contracts.mjs
+          node tests/production-tree-hygiene.mjs
