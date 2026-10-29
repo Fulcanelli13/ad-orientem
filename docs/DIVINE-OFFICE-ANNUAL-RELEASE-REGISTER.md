@@ -31,10 +31,67 @@ Known evidence-backed 2026 source blockers from PR #1860:
 
 The exception report says allYearDiscrepanciesActuallyChecked=false. It is not evidence that every unflagged date is correct.
 
+
+## Parsing-first implementation decision (29 October 2026 — supersedes raw-capture rollout)
+
+**Do not run the remaining 52 raw XHTML capture batches.** The seven-day
+168-slot source ledger is retained only as an immutable record of the earlier
+research probe, not as reader-ready coverage and not as the basis of a yearly
+download/generation programme. In particular, `168/8760` describes historic
+XHTML-envelope probes; it is **not** a completeness measure for prayers,
+Office sections, textual certification or publication.
+
+Ad Orientem's Office must follow the existing Mass reader's **source-first,
+parser/resolver, structured-projection approach**, with no bulk downloading,
+disk archive of annual XHTML, 8,760 rendered HTML files, or weekly/annual
+raw-source scraping jobs:
+
+1. Keep a pinned, attributable authority and an Office-specific 1960/1961
+   ordo resolver. Reuse the Calendar's dates/seasons as context, never as a
+   substitute for the Office's feast precedence, concurrence, occurrence,
+   commemorations or exceptional rubrics.
+2. Maintain a **reusable normalized corpus** of ordinary components:
+   psalms/verses, hymns, canticles, antiphon identity, responsories, collects,
+   lessons, fixed responses and rubrics. Refer to components by stable source
+   IDs rather than copying shared text into each day/hour/language.
+3. Resolve only the source sections actually required for the selected
+   date, Hour, language and approved Office variant; parse exact source
+   documents/sections **on demand** through the same kind of pinned source
+   resolver used by the Mass Proper. Network retrieval for a requested
+   source section is a read, not an authorisation to download and store a
+   bulk archive. Cache/deduplicate parsed results using the pinned revision,
+   source path, section ID, language and ruleset identity; avoid fetching
+   the same psalm or other shared component repeatedly.
+4. Assemble the Office as a structured sequence of these reusable
+   components plus date-specific propers; preserve provenance, selection
+   rules, text identity and Latin–English/French alignment, and distinguish
+   first/second Vespers. No rendered upstream XHTML may enter the UI.
+5. Validate with representative **liturgical equivalence test cases**
+   (weekday, Sunday, saints, concurrent Vespers, Matins, Prime/Martyrology,
+   All Souls, Holy Week/Tenebrae, language failures) and then a lightweight
+   **365-day × eight-Hour × language dry-run** of the resolver's structured
+   coverage and exceptions. Do not generate raw XHTML for each slot.
+   Review a consolidated discrepancy queue rather than 52 acquisition batches.
+6. Release only source-collated, rights-reviewed, liturgically approved
+   structured Offices. Missing translations or unresolved precedence fail
+   closed; the optional sung Sunday Vespers score gate remains separate.
+
+**Reporting changes immediately:** track `date/hour variant resolved`,
+`required section identities found`, `component reuse`,
+`LA/EN/FR alignment`, `liturgical exceptions outstanding`,
+`text/rubric certification`, and `reader published`.
+Do not use `source files captured` as the principal progress bar.
+
+The 168 historical source hashes remain for audit and are not invalidated by
+this decision. The earlier raw-capture generator/ledger tools, if retained,
+are **legacy research-only**, not an execution roadmap or a release gate.
+The PR-only weekly generator/download workflow must be removed rather than
+run another batch. No new paid services or persistent source archives.
+
 ## Finite four-gate completion definition
 
 1. Annual slot inventory: 2026/2028 8-hour trilingual dates complete and uniquely keyed (this PR).
-2. Actual source generation: bounded zero-cost batches; import SHA-identified raw evidence and later validated safe JSON evidence without promoting XHTML to published text.
+2. Parser/resolver coverage: pinned-source section selection, normalized reusable component IDs, and dry-run structural coverage; no annual raw-source capture or XHTML-generation campaign.
 3. Liturgical correctness: independent 1960–61 Office precedence, proper-text, translation, exceptional-hour and local-calendar reviews; source ID, witness, page and rights retained. The remaining historical exceptions get explicit approval or quarantine.
 4. Release: only independently verified Office Hours connect to existing Calendar/Pray routes, with clear unavailable-locale behavior. Sung Vespers has a separate native-notation and rights gate and does not block text release.
 
