@@ -5,6 +5,7 @@ on:
     paths:
       - "src/pray/novena-runtime.js"
       - "src/pray/novena-styles.js"
+      - "src/pray/devotional-sequence-adapter.js"
       - "tests/pray-novena-witness-position-phone.mjs"
       - "tests/pray-novena-witness-contract.mjs"
       - "tests/pray-novena-stage-progress-contract.mjs"
@@ -16,6 +17,7 @@ on:
     paths:
       - "src/pray/novena-runtime.js"
       - "src/pray/novena-styles.js"
+      - "src/pray/devotional-sequence-adapter.js"
       - "tests/pray-novena-witness-position-phone.mjs"
       - "tests/pray-novena-witness-contract.mjs"
       - "tests/pray-novena-stage-progress-contract.mjs"
