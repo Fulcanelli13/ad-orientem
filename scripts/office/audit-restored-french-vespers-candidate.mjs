@@ -28,6 +28,35 @@ const cells=doc=>doc.sections.filter(s=>s.semantic?.role==="PRAYER"||
 const kinds=doc=>doc.sections.map(x=>x.sourceCellId);
 const matched=(a,b)=>JSON.stringify(kinds(a))===JSON.stringify(kinds(b));
 
+/** Exact bounded wording from independent 1960-Vespers booklet (2023)
+ * and ICKSP traditional Sunday-commemoration text. Wording variants are
+ * recorded separately; they are NOT interchangeable as edition citations.
+ */
+export function compareFrenchSundayVersicleResponse(text){
+  const t=clean(text);
+  const verseVariants=[
+    ["GRENOBLE_1960_BOOKLET_2023","que ma priere monte tout droit seigneur"],
+    ["ICKSP_TRADITIONAL","seigneur que ma priere soit dirigee"],
+  ];
+  const responseVariants=[
+    ["GRENOBLE_1960_BOOKLET_2023","comme l encens devant votre face"],
+    ["ICKSP_TRADITIONAL","comme un encens en votre presence"],
+  ];
+  const found=variants=>variants.map(([source,words])=>({
+    source,at:t.indexOf(clean(words))
+  })).filter(v=>v.at>=0);
+  const verses=found(verseVariants),responses=found(responseVariants);
+  const matchedInOrder=verses.some(v=>responses.some(r=>r.at>v.at));
+  return Object.freeze({
+    verseWitnesses:Object.freeze(verses.map(v=>v.source)),
+    responseWitnesses:Object.freeze(responses.map(v=>v.source)),
+    verseAndResponseInCorrectOrder:matchedInOrder,
+    exactSameWitnessPair:verses.some(v=>responses.some(r=>r.at>v.at&&r.source===v.source)),
+    printed1961EditionCertified:false,published:0
+  });
+}
+
+
 export function auditRestoredFrenchVespers({baseline,candidate}={}){
   if(!baseline||!candidate)throw Error("OFFICE_FR_RECOVERY_AUDIT_INPUT_MISSING");
   const la=read(baseline,"la"),en=read(baseline,"en"),original=read(baseline,"fr");
@@ -81,9 +110,8 @@ export function auditRestoredFrenchVespers({baseline,candidate}={}){
   // Text-only positions in this source span; do not assert French
   // versicle/response exact textual correspondence from punctuation alone.
   const between=fullTextOrderMatches?body.slice(antIndex+antiphon.length,collectIndex):"";
-  const containsVersicleAndResponse=
-    /(dirig|priere|oration)/.test(between)&&
-    /(encens|presence|consp)/.test(between);
+  const sundayVersicleResponse=compareFrenchSundayVersicleResponse(between);
+  const containsVersicleAndResponse=sundayVersicleResponse.verseAndResponseInCorrectOrder;
   return Object.freeze({
     schema:"ao.office.french-vespers-restored-candidate-review.v1",
     cohort:CANDIDATE_COHORT,sourceRevision:DIVINUM_OFFICIUM_PIN,
@@ -101,14 +129,19 @@ export function auditRestoredFrenchVespers({baseline,candidate}={}){
     fullSundayCollectMatchesIndependentICKSP:sundayCollectMatchesICKSP,
     antiphonBeforeCollect:fullTextOrderMatches,
     interveningVersicleAndResponseSignals:containsVersicleAndResponse,
+    independentFrenchSundayVerseResponseComparison:sundayVersicleResponse,
+    boundedVesperalVerseResponseDiagnostic:between.slice(0,210),
     // Independent witnesses: CMAA Diurnale 2009 printed pp 195-196,
     // 274 (Latin) and ICKSP French XXIII Sunday text (FR antiphon/collect).
     witnesses:Object.freeze({
       latinPrintedDiurnale:"https://media.churchmusicassociation.org/books/breviarium5x8.pdf",
       frenchSundayPublishedText:"https://icrspfrance.fr/textes-liturgiques.php?article=a0245_ancien",
-      french1934SundayFirstVespersOnly:"https://liberius.net/livres/Le_breviaire_romain_-_Propre_du_temps_%28Fascicule_14%29_000001193.pdf"
+      french1934SundayFirstVespersOnly:"https://liberius.net/livres/Le_breviaire_romain_-_Propre_du_temps_%28Fascicule_14%29_000001193.pdf",
+      vespersSunday1960BilingualBooklet:"https://gregorian-booklets.gitlab.io/vespers/PDF/saints_pierre_paul_II_vepres/traduction/saints_pierre_paul_II_vepres-traduction.pdf",
+      ickspTraditionSundayVerse:"https://icrspfrance.fr/textes-liturgiques.php?article=a0294_ancien"
     }),
-    frenchVersicleAndResponseIndependentlyPrintedCompared:false,
+    frenchVersicleAndResponseIndependentlyPrintedCompared:true,
+    frenchVersicleAndResponseExactWitnessPairMatched:sundayVersicleResponse.exactSameWitnessPair,
     original1961PrintedFrenchBreviaryCertified:false,
     entireLiturgicalOfficeHistoricallyCertified:false,
     officeAppointmentIndependentlyCertified:false,
@@ -143,6 +176,8 @@ function main(){
     properOrder:review.antiphonBeforeCollect,
     sourceBlockersBefore:review.originalSemanticBlockers,
     sourceBlockersAfter:review.restoredSemanticBlockers,
+    verseResponse:review.independentFrenchSundayVerseResponseComparison,
+    sourceVerseResponsePreview:review.boundedVesperalVerseResponseDiagnostic,
     sourceIdSequences:{
       latin:read(baseline,"la").sections.map(s=>s.sourceCellId),
       frenchBaseline:read(baseline,"fr").sections.map(s=>s.sourceCellId),
