@@ -66,6 +66,26 @@ for(const cue of ["AO.SM.C0232","AO.SM.C0234"]){
   assert.equal(compact.sourceCueId,cue);
  }
 }
+// Complete the finite seven-gesture matrix gate: all remain text-backed,
+// and none is silently promoted to unrelated (especially full-elevation) art.
+const gestureMatrix=read("../data/mass/gesture-matrix.v1.json");
+const unresolved=["C0117","C0155","C0161","C0169","C0193","C0204","C0263"];
+for(const suffix of unresolved){
+ const cue="AO.SM."+suffix;
+ const primary=gestureMatrix.items.find(x=>x.cueId===cue&&x.actor==="PRIEST"&&
+   x.displayPrimary===true);
+ assert.ok(primary,cue+" lacks prescribed priest matrix action");
+ assert.equal(primary.authorityClass,"1962_NORMATIVE");
+ assert.equal(primary.iconStatus,"PENDING_EXACT_MASTER");
+ assert.equal(primary.iconKey,null,cue+" acquired unapproved artwork");
+ for(const language of ["en","fr"]){
+  const certified=publishedMissalRubricsForParagraph({sourceCueIds:[cue]},registry,{
+    form:"LOW",language,gestureMatrix
+  });
+  assert.ok(certified.some(x=>x.sourceCueId===cue&&x.actor==="PRIEST"&&
+    x.observedNow===false&&x.sourceId==="MR62_RITUS"),cue+" missing sourced "+language+" text");
+ }
+}
 const covered=mk("AO.SM.C0232","LOW","en","TEXT").publishedMissalRubrics;
 assert.ok(exactIconBackedRubric("AO.RUB.C0232.02",{
  mode:"LIVE",cueId:"AO.SM.C0232",priestActionIconKey:"final_ea_priest_communion_host_original",
