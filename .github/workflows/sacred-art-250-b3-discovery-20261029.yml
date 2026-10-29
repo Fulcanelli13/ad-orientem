@@ -1,0 +1,61 @@
+name: Sacred Art — 250-work KMSKA/Cleveland B3 discovery
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-250-b3-discovery-20261029.yml
+      - scripts/art/prepare-sacred-art-250-batch-b3-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-250-b3-discovery
+  cancel-in-progress: true
+jobs:
+  source-discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build 250 no-duplicate official source image references
+        run: |
+          python -m py_compile scripts/art/prepare-sacred-art-250-batch-b3-20261029.py
+          python scripts/art/prepare-sacred-art-250-batch-b3-20261029.py --target 250 --kmska-cap 215 --delay .08 --image-check
+      - name: Validate source, image response, user rejections and zero publication
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('data/calendar/sacred-art-250-review-source-b3-20261029.v1.json').read_text())
+          ledger=json.loads(Path('data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json').read_text())
+          excluded={x['sourceId'] for key in ('imports','rejects') for x in ledger[key]}
+          ids={x['id'] for x in d['rows']}
+          assert d['counts']['preexisting60Excluded']==60 and len(excluded)==60
+          assert len(ids)==len(d['rows']) and not (ids & excluded)
+          assert 200<=len(ids)<=250,d['counts']
+          assert d['counts']['productionImports']==0 and d['counts']['newEditorialImports']==0 and d['counts']['newRejects']==0
+          assert d['limits']['sourceImageBytesArchived']==0 and d['limits']['KMSKARightsUndeterminedHeldForProduction']
+          assert d['limits']['imageHeaderValidationEnabled']
+          assert all(x['previewURL'].startswith('https://') and not x['productionImported'] for x in d['rows'])
+          assert all(x['rightsForProduction']=='HOLD_UNTIL_EXACT_PHOTO_LICENCE_RECONCILED' for x in d['rows'] if x['provider']=='KMSKA')
+          assert all(x['rightsBasis']=='CLEVELAND_EXACT_ARTWORK_CC0' for x in d['rows'] if x['provider']=='Cleveland')
+          print('PASS',d['counts'])
+          PY
+          git diff --exit-code -- data/calendar/sacred-art-curator-queues-383-20261029.v1.json
+      - name: Permanently archive verified candidate URLs and errors on research branch
+        if: always()
+        run: |
+          if [ ! -f data/calendar/sacred-art-250-review-source-b3-20261029.v1.json ]; then exit 0; fi
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-250-review-source-b3-20261029.v1.json docs/SACRED_ART_250_WORK_REVIEW_B3_20261029.md
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): archive true 250-work B3 source review without repeats"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028
