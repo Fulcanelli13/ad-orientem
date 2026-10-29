@@ -755,6 +755,29 @@ def run(source, output, offset, limit, client):
             row["errors"]["OPENVERSE"] = type(exc).__name__ + ": " + str(exc)[:160]
         results.append(row)
         print("STAGED", venue["id"], {k: len(v) for k, v in row["categories"].items()}, flush=True)
+    methods = {}
+    categories = {kind: 0 for kind in CATEGORIES}
+    unique_media_urls = set()
+    for row in results:
+        for kind in CATEGORIES:
+            for photo in row["categories"][kind]:
+                method = photo["discovery_method"]
+                methods[method] = methods.get(method, 0) + 1
+                categories[kind] += 1
+                unique_media_urls.add(photo["source_url"])
+    metrics = {
+        "candidates_by_source": dict(sorted(methods.items())),
+        "candidates_by_category": categories,
+        "unique_source_urls": len(unique_media_urls),
+        "venues_with_any_candidate": sum(any(row["categories"].values()) for row in results),
+        "venues_with_geo_name_wikidata_match": sum(
+            row.get("wikidata_identity_research", {}).get("state") ==
+            "GEO_AND_NAME_CORROBORATED_RESEARCH_ONLY" for row in results),
+        "venues_with_openverse_error": sum("OPENVERSE" in row["errors"] for row in results),
+        "openverse_api_queries": sum(row.get("openverse_queries", 0) for row in results),
+        "approved_images": 0,
+        "published_images": 0,
+    }
     payload = {
         "schema": "AO_DIRECTORY_OPEN_PHOTO_CANDIDATES_V1",
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
@@ -763,7 +786,8 @@ def run(source, output, offset, limit, client):
         "licensing_policy": "Metadata screening only; no copyright or identity publication decision",
         "publication": "RESEARCH_ONLY_NEVER_APP_VISIBLE",
         "image_downloads": 0, "publications": 0,
-        "openverse_api_queries": sum(r.get("openverse_queries", 0) for r in results),
+        "openverse_api_queries": metrics["openverse_api_queries"],
+        "pilot_metrics": metrics,
         "categories": list(CATEGORIES), "venues": results,
     }
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -784,6 +808,7 @@ def main():
         ap.error("Offset 0..1878 and limit 1..500 required")
     result = run(args.source, args.output, args.offset, args.limit, WikimediaClient(args.delay))
     print("RESEARCH ONLY", result["processed"], "venues; 3 categories; zero images published", flush=True)
+    print("CANDIDATE METRICS", json.dumps(result["pilot_metrics"], sort_keys=True), flush=True)
 
 if __name__ == "__main__":
     main()
