@@ -86,8 +86,7 @@ function witnessValid(m){
     row.printedPages.length>=1&&row.printedPages.length<=2&&
     row.printedPages.every(p=>[436,437,438].includes(p))&&
     row.printedPages.every((p,j)=>j===0||p===row.printedPages[j-1]+1)
-   )
-  );
+   );
  });
 }
 function numberedSourceRows(doc,n){
