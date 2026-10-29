@@ -29,6 +29,21 @@ A work cannot pass on source rights, iconographic relevance, a preferred artist 
 - Previously approved works are never replaced by a new museum scan.
 - Photography rights restrictions do not prohibit art-historical object research or independent rights-verified photographs.
 
+## Existing human aesthetic calibration and priority preview
+
+The existing [rating reconciliation](../data/calendar/sacred-art-rating-reconciliation-20261013.v1.json) contains **197 rated originals**: **54 rated 4–5**, **81 rated 3**, and **62 rated 0–2**. The 54 are historical strong-rating examples, not 54 newly assessed works; the 62 are global rejects under the user’s rules. Also retain 35 earlier subject approvals and all 107 locked canonical approvals without simply adding them together.
+
+The discovery collector's high-scoring **title/artist metadata** includes:
+- Tintoretto — *Angel from the Annunciation to the Virgin* (Rijksmuseum object 20026408);
+- Murillo — *Annunciation to the Virgin* (Rijksmuseum object 20025782);
+- Tiepolo — *De Onbevlekte Ontvangenis* (Rijksmuseum object 200108011);
+- Ludovico Carracci — *Het visioen van de heilige Franciscus van Assisi* (Rijksmuseum object 200109177);
+- Tintoretto — *Christ with the Adulterous Woman* (Rijksmuseum object 20028546).
+
+These are **priority candidates for original-image visual comparison only**. Attribution, painting-versus-graphic medium, exact physical work, rights and aesthetic tier A/B/C/D are not verified by title alone. Do **not** infer a Rubens/Van Dyck-level beautiful painting from a name, and do not assign a user rating without visual evidence.
+
+The 654 newly registered metadata leads contain **322** explicit sacred-title hits, **175** ambiguous, and **157** likely unrelated/unsupported or non-painting title records after preliminary title screening. The Flemish initial page coverage is limited and currently reflects Musea Brugge identifiers from a **multi-museum OAI aggregator**; this is not a KMSKA-only painting census. Do not call these 322 verified paintings.
+
 ## Next actual museum mining job
 
 Rijksmuseum and KMSKA are configured. Then use official source/terms-safe metadata from Belvedere, KMSKA/Art in Flanders, Paris Musées where the free token can be obtained, and other open feeds. Keep source-specific queries, total inventory claims, pagination and failure counts.
