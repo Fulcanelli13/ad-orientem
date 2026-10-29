@@ -18,6 +18,16 @@ assert.equal(canonical.length,35);
 assert.deepEqual(new Set(canonical),new Set(published.map(x=>x.custom_id)));
 const items=calendarR18ElevenEditorialReviewRecords();
 assert.equal(items.length,11);
+assert.equal(CALENDAR_R18_ELEVEN_REVIEW_BLOB,"2b22181c25b6e5bc8dd8d6fd959fc0b30117a02c",
+  "Reviewer text must be regenerated from QA-corrected source and not earlier copy");
+assert.equal(items.filter(x=>x.editorial_lane==="STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF").length,7);
+assert.equal(items.filter(x=>x.editorial_lane==="LOCAL_FEAST_CONTEXT_ONLY_NOT_GLOBAL_CUSTOM_ID").length,4);
+assert.ok(items.every(x=>x.editorial_lane_status==="ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF"));
+assert.equal(items.find(x=>x.review_key==="CUSTOMS-R18-13").article.title.en,"L-Irxoxt — Maltese Easter Resurrection processions");
+assert.equal(items.find(x=>x.review_key==="CUSTOMS-R18-17").article.title.en,"Frauendreißiger — Bavarian Marian pilgrimage period");
+assert.ok(!items.find(x=>x.review_key==="CUSTOMS-R18-14").article.history.en.includes("archival photograph"));
+assert.ok(!items.find(x=>x.review_key==="CUSTOMS-R18-09").article.history.en.includes("canonical Customs"));
+assert.ok(items.find(x=>x.review_key==="CUSTOMS-R18-04").article.caution.en.includes("Some communities separately bless eggs"));
 assert.match(CALENDAR_R18_ELEVEN_REVIEW_BLOB,/^[0-9a-f]{40}$/);
 assert.equal(new Set(items.map(x=>x.review_key)).size,11);
 assert.deepEqual(items.map(x=>x.review_key),["03","04","05","07","08","09","13","14","15","16","17"].map(n=>"CUSTOMS-R18-"+n));
@@ -64,6 +74,10 @@ for(const html of [htmlEn,htmlFr]){
  assert.ok(html.includes("lang=\"en\"")&&html.includes("lang=\"fr\""));
 }
 assert.ok(htmlEn.includes("Proposed article · not published"));
+assert.ok(htmlEn.includes("Regional candidate · approval required"));
+assert.ok(htmlEn.includes("Local historical context only"));
+assert.ok(htmlFr.includes("Candidat régional · validation requise"));
+assert.ok(htmlFr.includes("Contexte historique local uniquement"));
 assert.ok(htmlFr.includes("Article proposé · non publié"));
 assert.ok(htmlEn.includes("St John Baptist&#39;s community bonfire"));
 assert.ok(htmlFr.includes("Le feu communautaire de la Saint-Jean-Baptiste"));
