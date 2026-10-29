@@ -178,6 +178,8 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-full-mass-preflig
   "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoMassFolioOption label{color:var(--text,#eee)}",
   "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] [data-folio-language]{background:var(--surface-2,#171f28);color:var(--text,#eee);border-color:var(--border,rgba(238,238,238,.2))}",
   "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] [data-folio-essential-notice]:empty{display:none!important}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoM1ActualIntroit{margin:8px 0 0;font:italic 16px/1.4 var(--ao-font-body,Georgia,serif);color:var(--text,#eee);overflow-wrap:anywhere}",
+  "#ao-mass-flow-v1 [data-ao-mass-access-m1='true'] .aoM1ActualIntroit[hidden]{display:none!important}",
   ].join("\n");
   document.head.appendChild(el);
 }
