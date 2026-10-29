@@ -31,7 +31,7 @@ jobs:
           python - <<'PY'
           import json
           j=json.load(open('data/calendar/sacred-art-b8-smk-api-probe-20261029.v1.json'))
-          assert len(j['requests'])==5 and j['photosSaved']==0
+          assert len(j['requests'])==7 and j['photosSaved']==0
           print([(x['parameters']['keys'],x.get('status'),x.get('error')) for x in j['requests']])
           PY
           git config user.name "Ad Orientem Sacred Art"
