@@ -412,6 +412,47 @@ def structured_discovery(client, venue):
     return info, out
 
 
+
+def nearby_commons_discovery(client, venue):
+    """Geotagged Commons file *camera* locations near a source pin.
+
+    Geographic proximity is NOT proof of the photo's subject or exact Church.
+    Only shortlist files whose captions share a distinctive church-name token;
+    still require later independent visual/site/license verification.
+    """
+    out = {kind: [] for kind in CATEGORIES}
+    loc = venue_coordinates(venue)
+    if not loc:
+        return out
+    radius = min(WIKIDATA_DISTANCE_M.get(str(venue.get("precision")).lower(), 250), 300)
+    pages = commons_pages(client, {
+        "generator": "geosearch", "ggsprimary": "all",
+        "ggsnamespace": 6, "ggscoord": f"{loc[0]}|{loc[1]}",
+        "ggsradius": radius, "ggslimit": 35,
+    })
+    seen = set()
+    for page in pages:
+        title = page.get("title", "")
+        if not title or title in seen:
+            continue
+        seen.add(title)
+        for kind in CATEGORIES:
+            item = candidate_from_page(page, venue, kind,
+                                       discovery_method="COMMONS_GEOTAG_NEAR_PIN_UNVERIFIED")
+            if not item or item["discovery_score_only"] < 0.55:
+                continue
+            if item["category_evidence"] == "CATEGORY_UNCONFIRMED" and kind != "EXTERIOR":
+                continue
+            item["geo_search_radius_m"] = radius
+            item["geographic_disclaimer"] = "Camera coordinate near pin; subject not proven"
+            out[kind].append(item)
+    for kind in CATEGORIES:
+        out[kind].sort(key=lambda x: (
+            x["category_evidence"] != "CATEGORY_TEXT_MATCH",
+            -x["discovery_score_only"], -(x["width"] * x["height"]), x["commons_title"]))
+        out[kind] = out[kind][:MAX_CANDIDATES_PER_CATEGORY]
+    return out
+
 def discover(client, venue, kind):
     name = plain(venue["name"])[:120]
     locality = plain(venue["locality"])[:80]
@@ -450,9 +491,15 @@ def run(source, output, offset, limit, client):
             structured = {kind: [] for kind in CATEGORIES}
             row["wikidata_identity_research"] = {"state": "WIKIDATA_API_UNAVAILABLE"}
             row["errors"]["WIKIDATA"] = type(exc).__name__ + ": " + str(exc)[:160]
+        nearby = {kind: [] for kind in CATEGORIES}
+        if not any(structured.values()):
+            try:
+                nearby = nearby_commons_discovery(client, venue)
+            except (urllib.error.URLError, ValueError, KeyError, TimeoutError) as exc:
+                row["errors"]["COMMONS_GEOSEARCH"] = type(exc).__name__ + ": " + str(exc)[:160]
         for kind in CATEGORIES:
-            if structured[kind]:
-                row["categories"][kind] = structured[kind]
+            if structured[kind] or nearby[kind]:
+                row["categories"][kind] = structured[kind] or nearby[kind]
                 continue
             try:
                 row["categories"][kind] = discover(client, venue, kind)

@@ -87,6 +87,33 @@ class PhotoDiscoveryTests(unittest.TestCase):
             "Bruxelles Saints-Jean et Etienne aux Minimes.jpg", "Church exterior"))
         self.assertFalse(mod.unsuitable_photo_subject(
             "High altar of the Minimes", "Photograph of a church altar"))
+
+    def test_geo_fallback_requires_caption_site_match(self):
+        venue={"name":"St Benedict Church","country":"AU","locality":"",
+               "lat":-33.619096,"lng":151.0455178,"precision":"building"}
+        class Client:
+            def request(self,params,endpoint=mod.API):
+                assert params["generator"]=="geosearch"
+                assert params["ggsnamespace"]==6
+                assert params["ggsradius"]==250
+                return {"query":{"pages":[
+                    {"title":"File:Random nearby garden.jpg","imageinfo":[{"mime":"image/jpeg",
+                       "width":1600,"height":1100,"extmetadata":{
+                          "LicenseShortName":{"value":"CC BY-SA 4.0"},
+                          "LicenseUrl":{"value":"https://creativecommons.org/licenses/by-sa/4.0/"}}}]},
+                    {"title":"File:St Benedict Church near Arcadia Australia.jpg",
+                     "imageinfo":[{"mime":"image/jpeg","width":1600,"height":1100,
+                        "extmetadata":{"LicenseShortName":{"value":"CC BY 4.0"},
+                        "LicenseUrl":{"value":"https://creativecommons.org/licenses/by/4.0/"},
+                        "ImageDescription":{"value":"Church exterior near Arcadia Australia"}}}]}
+                ]}}
+        results=mod.nearby_commons_discovery(Client(),venue)
+        self.assertEqual(len(results["EXTERIOR"]),1)
+        self.assertEqual(results["EXTERIOR"][0]["discovery_method"],"COMMONS_GEOTAG_NEAR_PIN_UNVERIFIED")
+        self.assertEqual(results["EXTERIOR"][0]["publication_state"],"HOLD_IDENTITY_CATEGORY_AND_RIGHTS_REVIEW")
+        self.assertEqual(results["EXTERIOR"][0]["geo_search_radius_m"],250)
+        self.assertFalse(results["INTERIOR"])
+        self.assertFalse(results["SACRED_DETAIL"])
     def test_structured_categorization_and_hold(self):
         v={"name":"St Benedict Church","locality":"","country":"AU",
            "lat":-33.619096,"lng":151.0455178,"precision":"building"}
