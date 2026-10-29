@@ -4,6 +4,7 @@ import { insertChantPhraseBreaks } from "./reader-chant-line-layout.js";
 import { missalSourceRubricCopy } from "./reader-missal-book-rubrics.js";
 import { conciseMissalSourceRubric, conciseMissalInlineSequence } from "./reader-rubric-presentation.js";
 import { R17_ICON_KEYS } from "./reader-icons.js";
+import { resolveUserApprovedMassGestureArt } from "./reader-user-approved-gesture-art.js";
 import { normalizePresentationMode } from "./session-engine.js";
 import { resolveMassLiturgicalTheme, massThemeCssVariables } from "./reader-liturgical-theme.js";
 import { R17_DONOR_PNG_ICON_KEYS, R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
@@ -2385,7 +2386,7 @@ function syncIconlessSourceRubric(root,current,mode,iconResolver,form,language){
   const iconKey=current?.priestActionIconKey??null;
   const tile=root.querySelector?.('.ao-rail-right [data-channel="priest-action"]');
   const iconUrl=tile?.dataset.iconVisible==="true" &&
-    typeof iconResolver==="function" && iconKey ?iconResolver(iconKey):null;
+    iconKey ?resolveUserApprovedMassGestureArt(iconKey,iconResolver):null;
   const rows=[...(root.querySelectorAll?.(".ao-reader-paragraph")??[])];
   const owner=rows.find(node=>node.dataset.cueId===cueId) ??
     rows.find(node=>String(node.dataset.sourceCueIds??"").split(/\s+/).includes(cueId));
@@ -2478,7 +2479,7 @@ export function isDonorPngWrapper(id,src){
 function applyIconNode(el,key,iconResolver){
   if(!el)return;
   const id=String(key??"").trim();
-  const src=id && typeof iconResolver==="function" ? iconResolver(id) : null;
+  const src=id ? resolveUserApprovedMassGestureArt(id,iconResolver) : null;
   // Guard against a stale rich-art fetch repainting a newer gesture.
   const identity=src ? id+"|"+src : null;
   el.__aoIconIdentity=identity;
@@ -2531,7 +2532,7 @@ function syncExactIconBackedRubrics(root,current,mode,iconResolver){
   const fallbackTile=root.querySelector?.('[data-channel="priest-action"]');
   const imagePresent=Boolean(fallbackTile?.dataset.actionTextFallback!=="true"&&
     key&&renderedIcon&&!renderedIcon.hidden&&
-    typeof iconResolver==="function"&&iconResolver(key));
+    resolveUserApprovedMassGestureArt(key,iconResolver));
   let covered=0;
   for(const item of root.querySelectorAll?.('.ao-live-inline-rubrics [data-rubric-id]')??[]){
     const match=exactIconBackedRubric(item.dataset.rubricId,{
@@ -4142,7 +4143,7 @@ export function createReaderDomAdapter({
     const badgeKey=missalAction?.iconKey??current.priestActionIconKey;
     const actionActive=Boolean(
       textValue(missalAction??current.priestAction) && badgeKey &&
-      typeof iconResolver==="function"&&iconResolver(badgeKey)
+      resolveUserApprovedMassGestureArt(badgeKey,iconResolver)
     );
     if(actionBadge){actionBadge.dataset.active=String(actionActive);actionBadge.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));}
     if(actionRail)actionRail.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));
@@ -4179,8 +4180,12 @@ export function createReaderDomAdapter({
       // Its existing source-timed inline rubric must remain unobscured.
       const cinematicKey=kind==="BELL"?"bells":
         kind==="ELEVATION"?current.priestActionIconKey:null;
-      const approvedCinematicGraphic=Boolean(cinematicKey &&
-        typeof iconResolver==="function"&&iconResolver(cinematicKey));
+      // User-approved C0204 is an ordinary source-cued priest pictogram,
+      // NOT permission for a full-screen major elevation. Never obscure
+      // Per ipsum's exact Latin/vernacular text with the minor gesture art.
+      const minorElevationSource=current?.nativeCueId==="AO.SM.C0204";
+      const approvedCinematicGraphic=!minorElevationSource && Boolean(cinematicKey &&
+        resolveUserApprovedMassGestureArt(cinematicKey,iconResolver));
       const noArtCinematic=visible && (kind==="ELEVATION"||kind==="BELL") &&
         !approvedCinematicGraphic;
       // Final visibility is settled after paragraph layout. Keep the source

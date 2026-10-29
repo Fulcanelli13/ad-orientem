@@ -49,6 +49,8 @@ jobs:
         run: node tests/mass-17-gesture-icon-disposition.mjs
       - name: Preserve seven exact adaptive SVG user-review choices without releasing artwork
         run: node tests/mass-seven-adaptive-svg-user-review.mjs
+      - name: Verify six explicitly user-approved 1962 source-owned priest icons and C0169 rejection
+        run: node tests/mass-six-user-approved-gesture-icons.mjs
       - name: Verify Leclerc 1661 CC0 historical original bits, rights, and strictly research-only 1962 gesture use
         run: node tests/mass-priest-gesture-p4-original.mjs
       - name: Validate source-owned All Souls selection and native module syntax
