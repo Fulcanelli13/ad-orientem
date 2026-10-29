@@ -17,6 +17,7 @@
     76,
     118,
     119,
+    148,
     149,
     150,
     159,
@@ -79,6 +80,7 @@
     340
   ],
   "supplementary_neighbour_pages": [
+    148,
     221,
     249,
     259,
@@ -93,7 +95,7 @@
     "76": "Christ Child figure placed after first Christmas Mass; a Spanish post-Midnight-Mass procession with songs and instruments; bell/carillon details need another leaf.",
     "118": "Russian St Nicholas grain cakes, French Canadian small festive loaves, edible tree pastries, Scandinavian animal-shaped bread and Venezuelan hallaca are enumerated as food traditions.",
     "119": "Lithuanian hard pastry balls, medieval English boar-head presentation and goose/capon Christmas dinner are mentioned, not prescribed Catholic rites.",
-    "149": "Latin Epiphany water blessing, home collection and priestly home blessing. The Eastern river procession on this page is explicitly for Mid-Pentecost, not Epiphany.",
+    "149": "Latin Epiphany water and home blessing; Eastern Epiphany river/fountain blessing is on p148, while Mid-Pentecost river water is described separately on p149.",
     "150": "Medieval Magi Office of the Star and Milan Magi procession; household chalk blessing is on preceding page 149.",
     "159": "Historical farewell to Alleluia, Toul choirboys' symbolic burial and Paris straw-effigy farewell are separate, suppressed or local practices.",
     "163": "French Canadian Easter water, German/Austrian wedding sprinkling, Easter horse river immersion, Slavic Holy Thursday washing and Church blessed Easter water described together, with magical claims distinguished.",
@@ -120,12 +122,12 @@
   "summary": {
     "groups_in_full_A2_A3_queue": 258,
     "source_group_pages_directly_screened": 96,
-    "unique_printed_pages_directly_inspected": 35,
-    "source_action_present": 79,
+    "unique_printed_pages_directly_inspected": 36,
+    "source_action_present": 80,
     "folklore_context_only": 9,
-    "source_scope_conflicts": 1,
+    "source_scope_conflicts": 0,
     "source_action_not_visible_on_scanned_leaf": 7,
-    "adjacent_page_location_corrections": 10,
+    "adjacent_page_location_corrections": 11,
     "still_awaiting_direct_printed_page_screen": 162,
     "approved_unique_identity_count": 0,
     "published_count": 0
@@ -2699,15 +2701,16 @@
       ],
       "recorded_printed_page": 149,
       "directly_inspected_printed_pages": [
+        148,
         149
       ],
-      "corrected_source_action_start_page": null,
-      "original_page_pdf_zero_index": 166,
+      "corrected_source_action_start_page": 148,
+      "original_page_pdf_zero_index": 165,
       "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
       "page_excerpt_scope_en": "Latin Epiphany water blessing, home collection and priestly home blessing. The Eastern river procession on this page is explicitly for Mid-Pentecost, not Epiphany.",
-      "limited_action_evidence_status": "SOURCE_SCOPE_CONFLICT",
-      "source_conflict_note": "Printed page 149 describes Eastern solemn water blessing at Mid-Pentecost, not an Eastern Epiphany river-water rite. Verify different original source passage before keeping the title.",
-      "exact_action_verified_in_this_pass": false,
+      "limited_action_evidence_status": "NARROW_HISTORICAL_ACTION_PRESENT_ON_OR_ADJACENT_TO_SCANNED_PAGE",
+      "source_conflict_note": null,
+      "exact_action_verified_in_this_pass": true,
       "historical_folklore_only": false,
       "historical_source_context_only": true,
       "independently_attested_continuation_today": false,
@@ -2717,7 +2720,8 @@
       "proposed_calendar_rule": null,
       "indulgence_grant_matches": [],
       "approved_en_fr_article": false,
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_source_qualification": "Printed page 148 describes the historic Eastern Epiphany river/fountain blessing; p149 later discusses a distinct Mid-Pentecost Eastern water blessing. Two occasions must not be conflated, and neither authorises a Roman 1962 public rite."
     },
     {
       "review_id": "AO-CUSTOMS-A23-PRIMARY-087",
@@ -3021,5 +3025,8 @@
       "approved_en_fr_article": false,
       "publication_authorized": false
     }
+  ],
+  "notes": [
+    "Resolved Eastern Epiphany water source-page conflict on original printed page 148; its Mid-Pentecost reference on page 149 must not be used as the Epiphany proof."
   ]
 }
