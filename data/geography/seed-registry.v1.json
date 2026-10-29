@@ -21728,6 +21728,87 @@
         "AO-P61-SITE-SG-INV-0493",
         "AO-P61-GEO-SG-INV-0493"
       ]
+    },
+    {
+      "place_id": "place:US:st-boniface-sioux-city",
+      "name": {
+        "official": "St. Boniface Catholic Church, Sioux City",
+        "aliases": [
+          "St Boniface Church",
+          "Cathedral of the Epiphany — St Boniface Worship Site"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 42.50055,
+        "lng": -96.41809,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/354389668",
+        "source_ref": "osm:node:354389668",
+        "matched_country_code": "US",
+        "verified_at": "2026-10-29",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "703 West 5th Street",
+        "line2": null,
+        "postal_code": "51103",
+        "city": "Sioux City",
+        "region": "Iowa",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "703 West 5th Street, Sioux City, Iowa 51103, United States"
+      },
+      "source_ids": [
+        "AO-P92-SITE-BONIFACE-US",
+        "AO-P92-GEO-BONIFACE-US",
+        "AO-AMER-R28-US-25-03"
+      ]
+    },
+    {
+      "place_id": "place:US:st-agnes-saint-paul",
+      "name": {
+        "official": "Church of Saint Agnes, Saint Paul",
+        "aliases": [
+          "St. Agnes Catholic Church, St. Paul",
+          "Church of St. Agnes — Frogtown"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 44.959722,
+        "lng": -93.123333,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Stagnesa.jpg",
+        "source_ref": "commons:File:Stagnesa.jpg:object-location",
+        "matched_country_code": "US",
+        "verified_at": "2026-10-29"
+      },
+      "address": {
+        "line1": "535 Thomas Avenue West",
+        "line2": null,
+        "postal_code": "55103",
+        "city": "Saint Paul",
+        "region": "Minnesota",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "535 Thomas Avenue West, Saint Paul, Minnesota 55103, United States"
+      },
+      "source_ids": [
+        "AO-P92-SITE-ST-AGNES-US",
+        "AO-P92-GEO-ST-AGNES-US",
+        "V19:DIO-US-MN-ST-PAUL-SAINT-AGNES"
+      ]
     }
   ],
   "directoryPlaceLinks": [
@@ -21828,6 +21909,30 @@
       "source_ids": [
         "src-icksp-st-mary-of-the-assumption-parish-and-shrine-103-west-7th-street-oswego-ny-13126-14",
         "SHR-OSWEGO-ASSUMPTION"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:US:st-boniface-sioux-city",
+      "venue_id": "AO-AMER-R28-US-25-03",
+      "place_id": "place:US:st-boniface-sioux-city",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-P92-SITE-BONIFACE-US",
+        "AO-P92-GEO-BONIFACE-US",
+        "AO-AMER-R28-US-25-03"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:US:st-agnes-saint-paul",
+      "venue_id": "V19:DIO-US-MN-ST-PAUL-SAINT-AGNES",
+      "place_id": "place:US:st-agnes-saint-paul",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-P92-SITE-ST-AGNES-US",
+        "AO-P92-GEO-ST-AGNES-US",
+        "V19:DIO-US-MN-ST-PAUL-SAINT-AGNES"
       ]
     }
   ]
