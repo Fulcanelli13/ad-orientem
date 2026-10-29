@@ -1,0 +1,29 @@
+{
+  "schema": "AO_P80_WORLDWIDE_2579_ONE_SWEEP_PLAN_V1",
+  "as_of": "2026-10-29",
+  "source": "data/directory/research/unified-photo-intake/cl2-eb67711a-20261029/manifest.json",
+  "source_branch": "research/directory-unified-photo-intake",
+  "source_branch_commit": "f3408ab9448c1fd1fade2b8f0c2c161d3b0c21c2",
+  "source_cl2_commit": "eb67711a9886a7626916b7a145787c5e99105968",
+  "source_physical_anchors": 2579,
+  "source_countries": 76,
+  "source_shards": 11,
+  "previous_photo_source_candidates": 42,
+  "previous_pilot_anchors": 200,
+  "country_harvest_groups": 5,
+  "countries_per_group": 16,
+  "max_wikidata_rows_per_country": 2500,
+  "max_concurrent_country_groups": 2,
+  "country_delay_seconds": 5,
+  "manual_review": "ONLY_AFTER_GLOBAL_RUN_AND_SINGLE_CONSOLIDATED_INDEX",
+  "data_publication": "RESEARCH_ONLY_NO_APP_PHOTOS",
+  "coverage_claims": "A country harvested is not a photographed or verified church; no metadata source certifies an exact building.",
+  "fees": "EUR_0",
+  "phases": [
+    "validate all 2579 pinned anchors",
+    "harvest P18 image source metadata for all 76 countries",
+    "match lead labels to exact-source anchor IDs without promotion",
+    "consolidate all 2579 results and country-error/limits",
+    "prepare one review only after consolidated output"
+  ]
+}
