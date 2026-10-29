@@ -10,6 +10,7 @@ Nothing here marks art pristine; a photograph with a documented CC0 source is
 still subject to full native-image, edge, fidelity and user aesthetic review.
 """
 import csv, io, json, re
+from urllib.parse import unquote
 from collections import Counter
 from datetime import date
 from pathlib import Path
@@ -63,7 +64,7 @@ def lic(z,official,approval,visual):
             return ("OFFICIAL_CC0_CURRENT_VARIANT_DIFFERS","CONFIRM_SELECTED_ARCHIVE_FILE_VERSION","Official current JPEG is CC0 but differs from historical selected archive")
     if z["source_lane"] in ("NO_PHYSICAL_ORIGINAL","PARTIAL_WORK_ONLY"):
         return ("NO_COMPLETE_SOURCE_FOR_LICENCE","ACQUIRE_EXACT_COMPLETE_IMAGE_THEN_CHECK_TERMS","No exact full-work source to license")
-    if visual and any(e["file"] in (approval.get("source_page") or "") for e in a8Licences):
+    if visual and any(e["file"] in unquote(approval.get("source_page") or "").replace("_"," ") for e in a8Licences):
         return ("PER_FILE_CC_BY_SA_EVIDENCE","VERIFY_ATTRIBUTION_AND_SHAREALIKE_IMPLEMENTATION","Exact Commons CC BY-SA 4.0 photo evidence exists but final licence compliance not established")
     if z["source_lane"]=="FULL_WORK_OPEN_METADATA":
         return ("OPEN_METADATA_ONLY","CHECK_EXACT_FILE_RIGHTS_AND_TERMS","Public-domain or open metadata without approved exact-file reuse evidence")
@@ -101,7 +102,13 @@ for z in main:
         photo_action="SOURCE_HIGHER_FIDELITY_EXACT_WORK"
     # Hard aesthetic bans and explicit rejected IDs may never be promoted
     # through a different source file.
-    excluded=hard_artist or id in bannedIds
+    conflicting_prior_votes=id in bannedIds and z["frozen_editorial_state"].startswith("APPROVED")
+    excluded=hard_artist or (id in bannedIds and not conflicting_prior_votes)
+    if conflicting_prior_votes:
+        photo_action="HOLD_CONFLICTING_APPROVAL_AND_REJECTION_AUTHORITIES"
+        rights="EDITORIAL_CONFLICT_HOLD"
+        action="RECONCILE_PREVIOUS_USER_EDIT_BEFORE_RELEASE"
+        visual_status="EDITORIAL_CONFLICT_DO_NOT_PROMOTE"
     if excluded:
         photo_action="EXCLUDED_BY_HISTORICAL_USER_EDIT"
         rights="EXCLUDED_NO_REUSE_REVIEW"
@@ -119,14 +126,15 @@ for z in main:
       "source_image_identity_approved":False,
       "full_native_frame_free_certified":False,
       "colour_fidelity_certified":False,"curator_final_certified":False,
-      "production_approved":False,"historical_exclusion":excluded}
+      "production_approved":False,"historical_exclusion":excluded,
+      "historical_editorial_conflict":conflicting_prior_votes}
     mainOut.append(rec)
 # These are record-specific operational lists; no double counting by cross-module reuse.
-rightsQueue=[x for x in mainOut if x["licence_state"] not in ("OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH","EXCLUDED_NO_REUSE_REVIEW")]
+rightsQueue=[x for x in mainOut if x["licence_state"] not in ("OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH","EXCLUDED_NO_REUSE_REVIEW","EDITORIAL_CONFLICT_HOLD")]
 needsImage=[x for x in mainOut if x["photo_next_action"] in (
    "ACQUIRE_EXACT_COMPLETE_SOURCE","REPLACE_WITH_FULL_PAINTED_WORK_PHOTO",
    "SOURCE_HIGHER_FIDELITY_EXACT_WORK","TEST_PAINT_PRESERVING_CROP_OR_REPLACE")]
-strong=[x for x in mainOut if x["licence_state"]=="OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH" and x["approved_primary_cohort"] and not x["historical_exclusion"]]
+strong=[x for x in mainOut if x["licence_state"]=="OFFICIAL_CC0_SELECTED_SOURCE_HASH_MATCH" and x["approved_primary_cohort"] and not x["historical_exclusion"] and not x["historical_editorial_conflict"]]
 photoCleanA8=[x for x in mainOut if x["photo_visual_state"]=="PRELIMINARY_CONTACT_SHEET_FRAME_FREE"]
 # High potential only: official image hash + CC0 + original >= 2400px
 # (quality is NOT presumed)
@@ -134,7 +142,7 @@ a6strong=[]
 for x in strong:
     src=a6By[x["artwork_id"]]
     dims=src.get("official_current_image_dimensions") or []
-    if len(dims)==2 and min(dims)>=2400:
+    if len(dims)==2 and min(dims)>=2400 and x["artwork_id"]!="met-459131":
         a6strong.append({**x,"official_current_image_dimensions":dims,
           "museum":src["museum"],"official_object_api":src["official_object_api"],
           "proof_label":"OFFICIAL_CC0_SOURCE_HASH_MATCH_NATIVE_VISUAL_REVIEW_PENDING"})
@@ -177,10 +185,13 @@ stats={
  "rights_evidence_gap":sum(x["licence_state"]=="RIGHTS_EVIDENCE_GAP" for x in mainOut),
  "missing_or_partial_source_needs_rights_and_acquisition":sum(x["licence_state"]=="NO_COMPLETE_SOURCE_FOR_LICENCE" for x in mainOut),
  "excluded_records":sum(x["historical_exclusion"] for x in mainOut),
+ "conflicting_historical_approved_and_rejected_ids":sum(x["historical_editorial_conflict"] for x in mainOut),
+ "negative_aesthetic_user_feedback_not_near_ready":["met-459131"],
  "direct_visual_or_source_photo_repair_queue":len(needsImage),
  "photo_need_by_action":dict(Counter(x["photo_next_action"] for x in mainOut)),
  "preliminary_a8_frame_free":len(photoCleanA8),
  "a8_border_support_issues":sum(x["photo_visual_state"]=="BORDER_OR_SUPPORT_VIOLATION_SUSPECTED" for x in mainOut),
+ "conditional_cc_by_sa_file_terms_to_implement":sum(x["licence_state"]=="PER_FILE_CC_BY_SA_EVIDENCE" for x in mainOut),
  "official_cc0_good_resolution_first_final_visual_queue":len(a6strong),
  "prayer_locked_heroes":len(prayerAnnex),"prayer_archived":sum(x["master_original_archived"] for x in prayerAnnex),
  "prayer_visually_plausible":sum(x["first_visual_result"]=="PLAUSIBLE_PAINTING_ONLY_IMAGE" for x in prayerAnnex),
