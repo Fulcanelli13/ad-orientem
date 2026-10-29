@@ -1,0 +1,69 @@
+name: Sacred Art B12 — 250 new source-verified Baroque painting review
+on:
+  push:
+    branches: [research/sacred-art-b12-20261029]
+    paths:
+      - scripts/art/sacred-art-b12-commons-250-review-20261029.py
+      - .github/workflows/sacred-art-b12-commons-250-review-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-b12-verification
+  cancel-in-progress: true
+jobs:
+  curate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 38
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b12-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Discover new religious paintings, validate licences, identity and media
+        run: |
+          python -m py_compile scripts/art/sacred-art-b12-commons-250-review-20261029.py
+          python -u scripts/art/sacred-art-b12-commons-250-review-20261029.py
+      - name: Verify full-size image, rights, batch exclusions and 50-card interface
+        run: |
+          python - <<'PY'
+          import json,hashlib,re
+          from pathlib import Path
+          d=json.loads(Path('data/calendar/sacred-art-b12-commons-250-reviewed-20261029.v1.json').read_text())
+          a=d['rows'];c=d['counts']
+          assert len(a)==250 and d['completeBatchReady'],('B12 required volume not ready',c)
+          assert c['previousReviewCardsExcluded']==1955
+          assert c['originalImageDownloads']==c['productionImports']==0
+          assert len({x['id'] for x in a})==len({x['previewURL'] for x in a})==250
+          assert all(x['id']=='commons:'+x['objectId'] for x in a)
+          assert all(x['licenseShortName'].lower().startswith(('public domain','cc0')) for x in a)
+          assert all(x['sourceRights']=='WIKIMEDIA_COMMONS_EXACT_FILE_PUBLIC_DOMAIN_OR_CC0' for x in a)
+          assert all(min(x['nativeSourceDimensions'].values())>=1600 for x in a)
+          assert all(x['imageRightsVerified'] and x['rightsConflict'] is None and not x['productionImported'] for x in a)
+          assert d['batchHash']==hashlib.sha256(json.dumps([x['id'] for x in a],separators=(',',':')).encode()).hexdigest()
+          h=Path('docs/SACRED_ART_NEXT_250_IMPORT_REVIEW_B12_20261029.html').read_text()
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert m and json.loads(m.group(1))==a
+          assert "batchId:'B12'" in h and 'const PAGE_SIZE=50;' in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'seenPages.length<TOTAL_PAGES' in h
+          js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert js
+          Path('/tmp/ao-art-b12-review.js').write_text(js.group(1))
+          print('B12_APPROVED_FOR_REVIEW',len(a),'new distinct source paintings')
+          PY
+          node --check /tmp/ao-art-b12-review.js
+      - name: Archive research review without production changes
+        if: success()
+        run: |
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b12-commons-250-reviewed-20261029.v1.json
+          git add docs/SACRED_ART_B12_250_SOURCE_QA_20261029.md
+          git add docs/SACRED_ART_NEXT_250_IMPORT_REVIEW_B12_20261029.html
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): archive B12 250 new PD sacred paintings and source-verified gallery"
+          git pull --rebase origin research/sacred-art-b12-20261029
+          git push origin HEAD:research/sacred-art-b12-20261029
