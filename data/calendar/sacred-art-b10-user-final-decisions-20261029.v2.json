@@ -1,0 +1,2268 @@
+{
+  "schema": "AO_SACRED_ART_VERIFIED_USER_DECISIONS_V2",
+  "batchId": "B10",
+  "date": "2026-10-29",
+  "completeBatch": true,
+  "originalUploadedFileSha256": "29d632cf085efe00effd3997f63430509f048407aa23561b143f8ab675949936",
+  "originalBatchSha256": "6d62270cf2da35d6ce5cef80cce1ee1969a1c79a28c035af69cbd1dfa8744da5",
+  "sourceRowCount": 250,
+  "counts": {
+    "IMPORT": 97,
+    "REJECT": 149,
+    "IMPORT_WITH_CORRECTIONS": 4
+  },
+  "note": "Full all-250 selections reconstructed from uploaded user import IDs and correction strings against immutable original gallery source. Any absent source ID is REJECT only because user uploaded completeBatch=true. Original user file integrity SHA256 stored separately.",
+  "noProductionImports": true,
+  "decisions": [
+    {
+      "sourceId": "met:437455",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Holy Family with Saints Anne and Catherine of Alexandria",
+      "artist": "Jusepe de Ribera (called Lo Spagnoletto)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436603",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Samson Captured by the Philistines",
+      "artist": "Guercino (Giovanni Francesco Barbieri)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437423",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Immaculate Conception",
+      "artist": "Guido Reni",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437403",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christ and the Woman of Samaria",
+      "artist": "Rembrandt",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437970",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Saint Benedict",
+      "artist": "Francisco de Zurbarán",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:438134",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Saint Catherine of Alexandria in Prison",
+      "artist": "Paolo Veronese (Paolo Caliari)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:438813",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Saint John the Baptist Bearing Witness",
+      "artist": "Annibale Carracci",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437542",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "artist": "Peter Paul Rubens",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437330",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Saints Peter and John Healing the Lame Man",
+      "artist": "Nicolas Poussin",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437986",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Denial of Saint Peter",
+      "artist": "Caravaggio (Michelangelo Merisi)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436799",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "The Holy Family with Saint Anne and the Young Baptist and His Parents",
+      "artist": "Jacob Jordaens",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437528",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Holy Family with Saints Francis and Anne and the Infant Saint John the Baptist",
+      "artist": "Peter Paul Rubens",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:441971",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Tears of Saint Peter",
+      "artist": "Jusepe de Ribera (called Lo Spagnoletto)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437544",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Virgin and Child",
+      "artist": "Peter Paul Rubens",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436502",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Annunciation",
+      "artist": "Luca Giordano",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437490",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Annunciation",
+      "artist": "Hans Memling",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437824",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child",
+      "artist": "Titian (Tiziano Vecellio)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437060",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Virgin and Child",
+      "artist": "Hans Memling",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:438128",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Flight into Egypt",
+      "artist": "Giovanni Battista Tiepolo",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436344",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Holy Family with Saint Anne",
+      "artist": "French Painter",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:647338",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Saint Francis in Ecstasy",
+      "artist": "Giovanni Benedetto Castiglione (Il Grechetto)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:438824",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Saint John the Baptist Preaching",
+      "artist": "Mattia Preti (Il Cavalier Calabrese)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:435727",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Departure of Saints Paula and Eustochium for the Holy Land",
+      "artist": "Giuseppe Bottani",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437897",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Abraham's Parting from the Family of Lot",
+      "artist": "Jan Victors",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436266",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Isaac Blessing Jacob",
+      "artist": "Gerbrand van den Eeckhout",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436061",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Landscape with the Flight into Egypt",
+      "artist": "Aelbert Cuyp",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436062",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Piping Shepherds",
+      "artist": "Aelbert Cuyp",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437780",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Shepherds and Sheep",
+      "artist": "David Teniers the Younger",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437776",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Good Samaritan",
+      "artist": "David Teniers the Younger",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437342",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Lamentation",
+      "artist": "Scipione Pulzone (Il Gaetano)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:435770",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Preaching of John the Baptist",
+      "artist": "Bartholomeus Breenbergh",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:442761",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Sacrifice of Polyxena",
+      "artist": "Charles Le Brun",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437592",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Yard of the Inn at Emmaus",
+      "artist": "David Ryckaert III",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436721",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christ Crowned with Thorns (Ecce Homo), and the Mourning Virgin (Mater Dolorosa)",
+      "artist": "Adriaen Isenbrant",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437978",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christ Presented to the People (Ecce Homo)",
+      "artist": "Sodoma (Giovanni Antonio Bazzi)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:435725",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christ's Descent into Hell",
+      "artist": "Hieronymus Bosch",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:435759",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Head of Saint John the Baptist on a Charger",
+      "artist": "Aelbert Bouts",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:435644",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child",
+      "artist": "Giovanni Bellini",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:435682",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child",
+      "artist": "Boccaccio Boccaccino",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436334",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child",
+      "artist": "Francesco Francia",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:438432",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child",
+      "artist": "Francesco Granacci (Francesco di Andrea di Marco)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:928091",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child with Saint John the Evangelist",
+      "artist": "Rosso Fiorentino",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:904343",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Mary Magdalen Writing a Letter",
+      "artist": "Master of the Female Half-Lengths",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437197",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Saint Michael",
+      "artist": "Neroccio de' Landi",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436802",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Saints Michael and Francis",
+      "artist": "Juan de Flandes",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436781",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Adoration of the Christ Child",
+      "artist": "Jan Joest of Kalkar",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436990",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Martyrdom of Saint Lawrence; (reverse) Giving Drink to the Thirsty",
+      "artist": "Master of the Acts of Mercy",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436099",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "The Nativity with Donors and Saints Jerome and Leonard",
+      "artist": "Gerard David",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437853",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Venice, from the Porch of Madonna della Salute",
+      "artist": "Joseph Mallord William Turner",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:435762",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Virgin and Child",
+      "artist": "Dieric Bouts",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436795",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Virgin and Child",
+      "artist": "Joos van Cleve",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437337",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Virgin and Child",
+      "artist": "Netherlandish (Bruges) Painter",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436102",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Virgin and Child with Four Angels",
+      "artist": "Gerard David",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436770",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Holy Family",
+      "artist": "Jacopino del Conte",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436041",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Samson and Delilah",
+      "artist": "Lucas Cranach the Elder",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436104",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "The Adoration of the Magi",
+      "artist": "Gerard David",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:435917",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "The Adoration of the Shepherds",
+      "artist": "Marcellus Coffermans",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436200",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "The Adoration of the Shepherds",
+      "artist": "Christian Wilhelm Ernst Dietrich",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436793",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "The Holy Family",
+      "artist": "Joos van Cleve",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436100",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "The Nativity",
+      "artist": "Gerard David",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:665702",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Sacrifice of Iphigenia",
+      "artist": "Gaetano Gandolfi",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436966",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "The Adoration of the Shepherds",
+      "artist": "Andrea Mantegna",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:435640",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna Adoring the Sleeping Child",
+      "artist": "Giovanni Bellini",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:435733",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child Enthroned with Saints and Angels",
+      "artist": "Francesco Botticini (Francesco di Giovanni)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436055",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child Enthroned with Two Angels and a Donor",
+      "artist": "Vittore Crivelli",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436493",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child with Angels",
+      "artist": "Domenico Ghirlandaio",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437195",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child with Saints Jerome and Mary Magdalen",
+      "artist": "Neroccio de' Landi",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437081",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Madonna and Child with the Infant Saint John the Baptist",
+      "artist": "Michele da Verona (Michele di Zenone)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:438691",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Saint George",
+      "artist": "Carlo Crivelli",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:435729",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Three Miracles of Saint Zenobius",
+      "artist": "Botticelli (Alessandro di Mariano Filipepi)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028095",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christ Crowned with Thorns",
+      "artist": "Gerard van Honthorst",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109414",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christ on the Way to Calvary",
+      "artist": "Jacques Jordaens",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027776",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De boetvaardige Maria Magdalena",
+      "artist": "Anthony van Dyck",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200891357",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De heilige Alexis",
+      "artist": "Luca Giordano",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027097",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De heilige Hieronymus",
+      "artist": "Pieter van der Werff",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027888",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De heilige maagschap",
+      "artist": "Frans Francken (II)",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108254",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Abraham Entertaining the Three Angels",
+      "artist": "Ferdinand Bol",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108253",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Farao's dochter vindt Mozes in het biezen mandje",
+      "artist": "Ferdinand Bol",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200318048",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "God Holds Adam and Eve Responsible",
+      "artist": "Adriaen van der Werff",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109288",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Isaac Blessing Jacob",
+      "artist": "Govert Flinck",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200107945",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Tobit and Anna with the Kid",
+      "artist": "Rembrandt van Rijn",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028546",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christ with the Adulterous Woman",
+      "artist": "Jacopo Tintoretto",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108011",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "God zendt de maagd Maria naar Joachim en Anna",
+      "artist": "Giovanni Battista Tiepolo",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109201",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De kruisiging",
+      "artist": "Jacob Cornelisz van Oostsanen",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109200",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Salome and the Head of John the Baptist",
+      "artist": "Jacob Cornelisz van Oostsanen",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20055828",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Annunciation to the Virgin",
+      "artist": "Jacob de Wit",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108871",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Assumption of the Virgin",
+      "artist": "Jacob de Wet (I)",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027184",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christ and the Centurion",
+      "artist": "Adam Camerarius",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108489",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christ and the Penitent Sinners",
+      "artist": "Gerard Seghers",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200110644",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christ and the Woman in Adultery",
+      "artist": "Gerbrand van den Eeckhout",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200111837",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christ and the Woman of Canaan",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027536",
+      "decision": "IMPORT_WITH_CORRECTIONS",
+      "corrections": "can do better. if not that one will be fine",
+      "title": "Christ Appearing to Mary Magdalen as a Gardener (Noli me Tangere)",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027782",
+      "decision": "IMPORT_WITH_CORRECTIONS",
+      "corrections": "can do better because of the glow on the picture",
+      "title": "Christ as Saviour of the World",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027911",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christ before Caiphas",
+      "artist": "Aert de Gelder",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200384577",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Christ Blessing the Children",
+      "artist": "Johannes Voorhout (I)",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026954",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christ Blessing the little Children",
+      "artist": "Jacob de Wet (I)",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026883",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Christ Instructs Peter to Feed My Sheep",
+      "artist": "Claude Vignon",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026224",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Christ on the Way to Calvary",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027187",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christ with Martha and Mary",
+      "artist": "Vincent Malò (I)",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200546455",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christus onder de Schriftgeleerden",
+      "artist": "Orazio Borgianni",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027022",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De dood van de heilige Cecilia",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20025760",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De heilige Catharina",
+      "artist": "Pier Francesco Morazzone",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20025788",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De heilige Hieronymus",
+      "artist": "Matthijs Naiveu",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027991",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De heilige Hieronymus",
+      "artist": "Gerrit de Haen",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109178",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De heilige Sebastiaan",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026333",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De verheerlijking van de heilige Dominicus",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026400",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De verzoeking van de heilige Antonius",
+      "artist": "David Teniers (II)",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200510275",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Fantasielandschap met de Heilige Carlo Borromeo",
+      "artist": "Henry Ferguson",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026642",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Heilige Sebastiaan verzorgd door de heilige Irene en haar helpers",
+      "artist": "Jacques Blanchard",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026725",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Het mystieke huwelijk van de heilige Catharina",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028147",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Het mystieke huwelijk van de heilige Rosa da Lima",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20029060",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Maria in gebed",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027784",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Still Life with Fruit and Vegetables, with Christ at Emmaus in the background",
+      "artist": "Floris Gerritsz van Schooten",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027011",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Abraham en de drie engelen",
+      "artist": "Francesco Zugno",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026437",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Annunciation to the Shepherds",
+      "artist": "Joachim Wtewael",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108947",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Annunciation to the Shepherds",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027021",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Apostle Paul",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028973",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Black Madonna",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028245",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De evangelist Johannes op Patmos",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108841",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De evangelist Lucas",
+      "artist": "Joachim Wtewael",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108842",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De evangelist Marcus",
+      "artist": "Joachim Wtewael",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027096",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De graflegging",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027738",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De graflegging",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026438",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De ontmoeting tussen David en Abigail",
+      "artist": "Joachim Wtewael",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026626",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De ontmoeting van David en Abigaël",
+      "artist": "Christiaen Jansz. van Bieselingen",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109014",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De opwekking van Lazarus",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028755",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De profeet Elia in de woestijn door een engel gewekt",
+      "artist": "Giovanni Lanfranco",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027864",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De rijke man en de arme Lazarus",
+      "artist": "Barent Fabritius",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026246",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De verkondiging aan de herders",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028085",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De verkondiging aan de herders",
+      "artist": "Abraham Daniëlsz. Hondius",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026738",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De verloochening van Petrus",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200107933",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De verloochening van Petrus",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026365",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Ecce Homo",
+      "artist": "Matthias Stom",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026270",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Elia door de raven gevoed",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200384576",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Farao's dochter vindt Mozes",
+      "artist": "Johannes Voorhout (I)",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108023",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Farao's dochter vindt Mozes in het biezen mandje",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027570",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Het laatste avondmaal",
+      "artist": "Gerbrand van den Eeckhout",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20029323",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Het laatste avondmaal",
+      "artist": "Gerard de Lairesse",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108748",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Het offer van Abraham",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20015869",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Johannes de Doper",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026885",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Johannes de Doper predikend",
+      "artist": "David Vinckboons",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026745",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Judith and Holofernes",
+      "artist": "Jan de Bray",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027909",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "King David",
+      "artist": "Aert de Gelder",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20060665",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Landscape with Conversion of Saint Paul",
+      "artist": "Kerstiaen de Keuninck",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026384",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Landscape with the baptism of the eunuch",
+      "artist": "Herman van Swanevelt",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028880",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027417",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Moses Choosing the seventy Elders",
+      "artist": "Jacob de Wit",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200110643",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Panoramic Landscape with Tobias and the Angel",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026651",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Prediking van Johannes de Doper",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027869",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Salome ontvangt het hoofd van Johannes de Doper",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028190",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Samson and Delilah",
+      "artist": "Jan Lievens",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109435",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Samson and Delilah",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026953",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Saul Welcoming David after his Victory over Goliath",
+      "artist": "Gerrit de Wet",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200416850",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Schilderij met voorstelling van De Annunciatie",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20025814",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Tobias and the angel",
+      "artist": "Eglon van der Neer",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028310",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Annunciation to the Virgin",
+      "artist": "Meester van het Salemer Altaar",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109469",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Binnenzijde linker vleugel van een altaarstuk met het huwelijksfeest van de heilige Elisabeth en Lodewijk van Thüringen op de Wartburg",
+      "artist": "Master of the St Elizabeth Panels",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200111839",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Binnenzijde van de linkervleugel van een drieluik met de stichter en de heilige Jacobus de Meerdere",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200111847",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Binnenzijde van de rechter vleugel van een drieluik met de stichteres met de heilige Catharina",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109489",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Binnenzijde van de rechtervleugel van een altaarstuk met de heilige Elisabeth die de zieken in Marburg verzorgt en de dood van de heilige Elisabeth",
+      "artist": "Master of the St Elizabeth Panels",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027436",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Christ and his Disciples",
+      "artist": "Honoré Daumier",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027012",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Christ as Salvator Mundi",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028021",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Christ as the Man of Sorrows",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027025",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Christ Blessing the Children",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109461",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Christ on the Cross",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109278",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Christ Taking Leave of his Mother",
+      "artist": "Cornelis Engebrechtsz",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20029335",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Christ with Crown of Thorns",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109276",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Christ’s Second Visit to the House of Mary and Martha",
+      "artist": "Cornelis Engebrechtsz",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027757",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Church Interior with Christ Preaching to a Congregation",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20025848",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De heilige Bonaventura",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027002",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De heilige Catharina van Alexandrië",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200110753",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De heilige Clara",
+      "artist": "Joseph Désiré Court",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028504",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De heilige Dionysius de Areopagiet in gebed",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026419",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De heilige Dominicus",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027933",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De heilige Hieronymus",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109427",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De heilige Hieronymus in zijn studeercel bij kaarslicht",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026188",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De heilige Hieronymus in zijn studeervertrek",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:2009324",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De heilige Ignatius van Antiochië",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108361",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De heilige maagschap",
+      "artist": "Master of the Lille Adoration",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108523",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De heilige maagschap",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20060344",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De heilige Paulus",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028181",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De heilige Petrus",
+      "artist": "Gerardus Laurentius Keultjes",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:2009323",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De heilige Sebastiaan",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20029336",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De maagd Maria",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109654",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De mis van de heilige Gregorius",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108287",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De verzoeking van de heilige Antonius de Heremiet",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108290",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De verzoeking van de heilige Antonius de Heremiet",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109172",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De welvoorziene keuken, met op de achtergrond Jezus bij Martha en Maria",
+      "artist": "Joachim Bueckelaer",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109186",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Drieluik met de kruisiging (middenpaneel), de heilige Petrus en de stichter (binnenzijde linkervleugel), de heilige Jacobus en de stichteres (binnenzijde rechtervleugel) en de heilige Christoforus en het Christuskind op de levensweg (buitenzijde vleugels)",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027024",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Entombment of Christ with Joseph of Arimathea and Nicodemus, Mary Magdalene, the Virgin and Saint John the Evangelist",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109261",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Geertruy Haeck-van Slingelandt van der Tempel knielt in gebed voor de heilige Agnes",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109460",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Het martelaarschap van de heilige Lucia",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200502239",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Linkervleugel van een memorietafel met acht mansportretten (binnenzijde linkervleugel), waarschijnlijk Willem Jelysz van Soutelande (?-1515/16) en familie, met de heilige Jacobus de Meerdere en het familiewapen van Van Soutelande (buitenzijde vleugels)",
+      "artist": "Master of Alkmaar",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027013",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Maria",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20025755",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Maria met kind",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20025790",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Maria met kind",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026214",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Maria met kind",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027023",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Maria met kind",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028506",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Maria met kind",
+      "artist": "Meester van de Vrouwelijke Halffiguren",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200107816",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Maria met kind",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108470",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Maria met kind",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20013286",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Maria met kind en Johannes de Doper",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028300",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Paneel van een altaarstuk met Jezus lerende in de tempel en de verschijning aan Maria",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200845928",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Rivierlandschap met de heilige Christoffel",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028308",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "A Donor and his two Sons with Saint John the Evangelist, inner left wing of a triptych",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027266",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "A Saint Bernard Dog Comes to the Aid of a lost Woman with a sick Child",
+      "artist": "Charles Picqué",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026562",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Abraham Leaves Haran",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20025870",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Altarpiece Wing with the Circumcision. On the outside are John the Baptist with the Lamb of God",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20087836",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Central panel of a Memorial Triptych, formerly called the Gertz Memorial Triptych, with the Lamentation",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200111840",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Centre Panel of a Triptych with the Raising of Lazarus",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026596",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Crucifixion",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028056",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Crucifixion",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20025861",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De ark van Noach",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200107987",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "De barmhartige Samaritaan",
+      "artist": "Master of the Good Samaritan",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027251",
+      "decision": "IMPORT_WITH_CORRECTIONS",
+      "corrections": "can do better",
+      "title": "De graflegging",
+      "artist": "Cornelis Kruseman",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200110493",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De kruisdraging",
+      "artist": "Quinten Massijs (I)",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109462",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De opstanding",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20089792",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De prediking van Johannes de Doper, linkerpaneel van een drieluik",
+      "artist": "Jan van Coninxloo (II)",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026560",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De rijke man en de arme Lazarus",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109428",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De roeping van Sint Antonius",
+      "artist": "Aertgen Claesz van Leyden",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028972",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "De Tafelen der Wet met de tien geboden in schoonschrift getoond door Mozes",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108411",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Drieluik met taferelen uit het leven van Johannes de Doper",
+      "artist": "Jan van Coninxloo (II)",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108285",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Ecce Homo",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108475",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Ecce homo",
+      "artist": "Woutherus Mol",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200108819",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Ecce Homo",
+      "artist": "Brunswijkse Monogrammist",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200110637",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Ecce Homo",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200111811",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Gezicht op de vlakte van Montmorency bij Saint-Leu-la-Forêt",
+      "artist": "Pieter Rudolph Kleijn",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109463",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Het laatste avondmaal",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026723",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Johannes de Doper",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20089791",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Johannes de Doper vermaant de Farizeeërs, middenpaneel van een drieluik",
+      "artist": "Jan van Coninxloo (II)",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109035",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "King Melchior, one of the Three Magi, Pointing at the Star, fragment from An Adoration of the Magi",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027199",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Linker vleugel van een altaarstuk met de ontmoeting van Abraham en Melchisedek (binnenzijde) en Synagoge (buitenzijde)",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109430",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200110492",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027676",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Marketplace, with the Flagellation, the Ecce Homo and the Bearing of the Cross in the background",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027895",
+      "decision": "IMPORT_WITH_CORRECTIONS",
+      "corrections": "can find better",
+      "title": "Moses with the Tables of the Law",
+      "artist": "Pieter Gaal",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20027019",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Mozes in het biezen mandje",
+      "artist": "anonymous",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20028298",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Paneel van een altaarstuk met de besnijdenis (binnenzijde) en de opstanding (buitenzijde)",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026325",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Saint George and the Dragon",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:200109298",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Achttien taferelen uit het leven van Christus, bekend als de Roermondse passie",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20026290",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Maria met kind",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "rijks:20078354",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Salomé met het hoofd van Johannes de Doper",
+      "artist": "Attribution not identified",
+      "sourceInstitution": "Rijksmuseum, Amsterdam",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437741",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Six Apostles",
+      "artist": "Spanish (Oña) Painter",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:435649",
+      "decision": "IMPORT",
+      "corrections": null,
+      "title": "Judith",
+      "artist": "Benjamin-Constant (Jean-Joseph-Benjamin Constant)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436920",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child",
+      "artist": "Luca di Tommè di Nuto",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437249",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child Enthroned",
+      "artist": "Paolo Veneziano",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436452",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child with Angels",
+      "artist": "Gentile da Fabriano (Gentile di Niccolò di Giovanni di Massio)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437290",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child with Angels",
+      "artist": "Pietro di Domenico da Montepulciano",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:437612",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child with Angels",
+      "artist": "Sassetta (Stefano di Giovanni)",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    },
+    {
+      "sourceId": "met:436751",
+      "decision": "REJECT",
+      "corrections": null,
+      "title": "Madonna and Child with Saints Michael and John the Baptist; The Noli Me Tangere; The Conversion of Saint Paul",
+      "artist": "Italian (Pisan) Painter",
+      "sourceInstitution": "The Metropolitan Museum of Art, New York",
+      "productionImported": false
+    }
+  ]
+}
