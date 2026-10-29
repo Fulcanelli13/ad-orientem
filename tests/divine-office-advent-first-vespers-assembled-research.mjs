@@ -6,6 +6,8 @@ import {ADVENT_VESPERS_REMAINDER_SCHEMA} from "../src/office/advent-vespers-rema
 import {OFFICE_MAGNIFICAT_SOURCE_SCHEMA} from "../src/office/advent-magnificat-source.js";
 import {OFFICE_ADVENT_CHAPTER_HYMN_SCHEMA} from "../src/office/advent-vespers-chapter-hymn.js";
 import {OFFICE_SOURCE_SLICE_SCHEMA} from "../src/office/source-acceptance-slice.js";
+import {OFFICE_VESPERS_ORIGINAL_PRAYERS_SCHEMA}
+ from "../src/office/advent-vespers-ordinary-prayers.js";
 import {assembleAdventFirstVespersResearch}
  from "../src/office/advent-first-vespers-assembled-research.js";
 
@@ -130,4 +132,41 @@ test("a missing French Gloria or missing Latin collect source conclusion cannot 
   assert.equal(r.status,"WITHHELD");
   assert.equal(r.publishable,false);
  }
+});
+
+function openingClosing(){
+ return {...shared,schema:OFFICE_VESPERS_ORIGINAL_PRAYERS_SCHEMA,
+  status:"OPENING_AND_CONCLUSION_SOURCE_CANDIDATES_UNVERIFIED",
+  selected1960Ordinary:false,priestOrLayVariantVerified:false,
+  languages:Object.fromEntries(langs.map(lang=>[lang,{
+   opening:["Pater noster","Ave Maria","Deus in adjutorium","Alleluia"]
+    .map(name=>({sourceId:"Psalterium/Common/Prayers#"+name,
+      sourceText:["v. "+lang+" "+name],liturgicalChoiceAuthorized:false})),
+   ending:["Dominus","Benedicamus Domino","Fidelium animae"]
+    .map(name=>({sourceId:"Psalterium/Common/Prayers#"+name,
+      sourceText:["V. "+lang+" "+name],liturgicalChoiceAuthorized:false}))
+  }]))
+ };
+}
+test("when original Ordinary source branches are observed, nine of ten slots contain source texts but zero are liturgically complete",()=>{
+ const r=assembleAdventFirstVespersResearch({...fixture(),
+  openingClosing:openingClosing()});
+ assert.equal(r.status,"ORDERED_TRILINGUAL_SOURCE_RESEARCH_NOT_A_COMPLETE_OFFICE");
+ assert.equal(r.sourceTextComponentSlots,9);
+ assert.equal(r.liturgicallyCompleteSlots,0);
+ assert.deepEqual(r.unresolvedSlots,["commemorations"]);
+ assert.equal(r.slots[0].texts.fr.length,4);
+ assert.equal(r.slots[9].texts.en.length,3);
+ assert.equal(r.slots[9].unresolvedLiturgicalGates.includes(
+  "PRIEST_OR_LAY_DOMINUS_VOBISCUM_BRANCH"),true);
+ assert.equal(r.slots.every(x=>x.visibleInLiveReader===false),true);
+ assert.equal(r.publishable,false);
+ assert.equal(r.published,false);
+});
+test("forged Ordinary approval cannot remove priest or lay dismissal exception",()=>{
+ const evidence=openingClosing();
+ const r=assembleAdventFirstVespersResearch({...fixture(),
+  openingClosing:{...evidence,priestOrLayVariantVerified:true}});
+ assert.equal(r.status,"WITHHELD");
+ assert.equal(r.publishable,false);
 });
