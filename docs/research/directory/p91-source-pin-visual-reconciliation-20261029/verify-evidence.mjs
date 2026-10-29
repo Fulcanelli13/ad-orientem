@@ -10,6 +10,7 @@ const expected = { REJECTED_WRONG_BUILDING: 90, EXACT_BUILDING_CORROBORATED_RESE
 const actual = Object.fromEntries(Object.keys(expected).map(key => [key, 0]));
 const heldSites = new Set(), photoIds = new Set();
 const p94VisualIds = new Set(), p94OutcomeCounts = {};
+const p95VisualIds = new Set(), p95OutcomeCounts = {};
 const fail = msg => { throw new Error('P91/P92 gate: ' + msg); };
 
 if (ledger.records.length !== 385 || ledger.total_original_assignments !== 385) fail('385 original records must be preserved');
@@ -42,13 +43,27 @@ for (const row of ledger.records) {
     p94VisualIds.add(row.contact_index);
     p94OutcomeCounts[v.editorial_screen_decision] = (p94OutcomeCounts[v.editorial_screen_decision] || 0) + 1;
   }
+  if (row.p95_actual_preview_visual_review) {
+    const v = row.p95_actual_preview_visual_review;
+    if (derived !== 'EXACT_BUILDING_CORROBORATED_RESEARCH_ONLY' ||
+        v.exact_commons_source_url !== row.source_url ||
+        v.inspection_level !== 'ACTUAL_RENDERED_COMMONS_THUMBNAIL' ||
+        v.directly_viewed_preview !== true ||
+        !v.composition_observation || !v.role || !v.editorial_screen_outcome ||
+        row.p94_actual_preview_visual_review) fail('P95 must have non-overlapping source-specific visual assessments: ' + row.contact_index);
+    if (v.file_original_bytes_verified || v.original_sha1_recomputed ||
+        v.full_resolution_aesthetics_approved || v.licensing_and_attribution_verified_for_publication ||
+        v.rights_cleared || v.app_publication_approved) fail('P95 cannot claim original, full-size, rights or publication approval: ' + row.contact_index);
+    p95VisualIds.add(row.contact_index);
+    p95OutcomeCounts[v.editorial_screen_outcome] = (p95OutcomeCounts[v.editorial_screen_outcome] || 0) + 1;
+  }
   if (derived === 'HELD_UNVERIFIED') heldSites.add(row.physical_anchor_id);
   actual[derived]++;
 }
 for (const key of Object.keys(expected)) {
   if (actual[key] !== expected[key] || ledger.effective_image_site_disposition_counts[key] !== expected[key]) fail('unexpected ' + key + ' count');
 }
-if (heldSites.size !== 124 || ledger.unresolved_distinct_physical_site_ids !== 124) fail('expected 141 held physical sites');
+if (heldSites.size !== 124 || ledger.unresolved_distinct_physical_site_ids !== 124) fail('expected 124 held physical sites');
 if (photoIds.size !== 385) fail('must preserve 385 distinct indices');
 if (ledger.total_subject_corrob !== 83 || ledger.still_unverified !== 212 || ledger.distinct_subject_site_ids !== 26 || ledger.previous_subject_corrob !== 57 || ledger.new_subject_corrob !== 26) fail('current P93 summary must be self-consistent');
 if (!ledger.p92_historical_summary || ledger.p92_historical_summary.total_subject_corrob !== 57 || ledger.p92_historical_summary.still_unverified !== 238 || ledger.p92_historical_summary.distinct_subject_site_ids !== 19) fail('P92 historical snapshot missing or altered');
@@ -59,4 +74,16 @@ const p93 = ledger.records.filter(row => row.p93_research_outcome === 'EXACT_CHU
 if (p93.length !== 26 || new Set(p93.map(row => row.physical_anchor_id)).size !== 7 || ledger.p93_evidence_batches.length !== 7) fail('P93 requires 26 per-file proofs across seven buildings');
 const expectedP94 = { VIABLE_INTERIOR_CANDIDATE:1, REJECT_CHURCH_WIDE_HERO_ROLE:3, PREFERRED_INTERIOR_CANDIDATE:2, SECONDARY_EXTERIOR_ONLY:3, VIABLE_EXTERIOR_CANDIDATE:3, PREFERRED_ALTAR_DETAIL_CANDIDATE:1 };
 if (p94VisualIds.size !== 13 || ledger.p94_web_preview_visual_inspected !== 13 || Object.keys(expectedP94).some(k => expectedP94[k] !== p94OutcomeCounts[k] || expectedP94[k] !== ledger.p94_editorial_screen_outcomes?.[k])) fail('P94 must reflect exactly 13 genuinely viewed source previews and their editorial decisions');
-console.log('PASS: 385 rows; 90 mismatches rejected; 83 building identities corroborated; 212 held; 13 actual Commons photo previews screened; no original bytes, rights or production approvals.');
+const expectedP95 = {
+  VIABLE_EXTERIOR:6, SECONDARY_EXTERIOR:4, REJECT_PRIMARY_HERO_ROLE:1,
+  PREFERRED_EXTERIOR_CANDIDATE:4, REJECT_CHURCH_HERO_ROLE:1, VIABLE_ALTAR_DETAIL:1
+};
+if (p95VisualIds.size !== 17 || ledger.p95_new_direct_preview_reviews !== 17 ||
+    ledger.p95_total_direct_preview_reviews !== 30 ||
+    ledger.p95_remaining_identity_corrob_uninspected !== 53 ||
+    Object.keys(expectedP95).some(k => expectedP95[k] !== p95OutcomeCounts[k] ||
+      expectedP95[k] !== ledger.p95_visual_outcomes?.[k]))
+  fail('P95 must reflect 17 new exact source previews and 53 remaining identity matches');
+if (p94VisualIds.size + p95VisualIds.size + ledger.p95_remaining_identity_corrob_uninspected !== 83)
+  fail('all corroborated images must be accounted for by actual preview review state');
+console.log('PASS: 385 rows; 90 image-to-site rejections; 83 research-only identities; 212 held; 30 source-specific image previews screened; 53 not yet previewed; 0 full-original, rights or production approvals.');
