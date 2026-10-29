@@ -2,7 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {DIVINUM_OFFICIUM_PIN} from "../src/app/source-transport-compat.js";
 import {reviewVespersCommemorationEvidence,screenGeneratedVespersCommemorations,
-  OFFICE_VESPERS_COMMEMORATION_GATE} from "../src/office/vespers-commemoration-gate.js";
+  OFFICE_VESPERS_COMMEMORATION_GATE,
+  collateAllSaintsSundayVespersCommemoration} from "../src/office/vespers-commemoration-gate.js";
 
 const text=[
   "Oratio {ex Proprio}","Oremus.","Main Office Collect. Per Dominum nostrum.",
@@ -114,4 +115,44 @@ test("real-sample screening treats absent headings as UNKNOWN, not no commemorat
   assert.equal(none.published,0);
   assert.throws(()=>screenGeneratedVespersCommemorations({
     ...doc(),publishable:true}),/SOURCE_INVALID/);
+});
+
+
+test("31 Oct First and 1 Nov Second Vespers have distinct printed Sunday component signatures",()=>{
+  const cases=[
+    ["2026-10-31","Vidi Dominum * sedentem super solium excelsum.",
+     "℣. Vespertina oratio ascendat ad te, Domine.",
+     "℟. Et descendat super nos misericordia tua.","FIRST"],
+    ["2026-11-01","At Jesus conversus * et videns eam dixit: Confide, filia.",
+     "℣. Dirigatur, Domine, oratio mea.",
+     "℟. Sicut incensum in conspectu tuo.","SECOND"]
+  ];
+  for(const [date,antiphon,verse,response,part] of cases){
+    const prayer="Commemoratio dominicae\nAnt. "+antiphon+"\n"+
+      verse+"\n"+response+"\nOremus.\n"+
+      "Absolve, quaesumus, Domine, tuorum delicta populorum.";
+    const office={...doc(),date,sections:[{
+      ...doc().sections[0],text:"Oratio Omnium Sanctorum.\n"+prayer
+    }]};
+    const r=collateAllSaintsSundayVespersCommemoration(office);
+    assert.equal(r.part,part);
+    assert.equal(r.commemorationHeadingCount,1);
+    assert.equal(r.sourceStructureMatches,true);
+    assert.equal(r.componentOrderMatches,true);
+    assert.equal(r.original1961BreviaryPrintedProperCertified,false);
+    assert.equal(r.canPublish,false);
+  }
+});
+test("Sunday signature cannot be satisfied by feast text before the commemoration",()=>{
+  const fake={...doc(),date:"2026-11-01",sections:[{...doc().sections[0],
+    text:"Ant. At Jesus conversus et videns eam dixit.\n"+
+      "℣. Dirigatur Domine oratio mea.\n"+
+      "℟. Sicut incensum in conspectu tuo.\n"+
+      "Absolve quaesumus Domine tuorum delicta populorum.\n"+
+      "Commemoratio dominicae\nSome other text."}]};
+  const r=collateAllSaintsSundayVespersCommemoration(fake);
+  assert.equal(r.sourceStructureMatches,false);
+  assert.deepEqual(Object.values(r.componentIncipitsLocated),[false,false,false,false]);
+  assert.throws(()=>collateAllSaintsSundayVespersCommemoration({
+    ...fake,sourceRevision:"unknown"}),/COHORT_OR_PIN_INVALID/);
 });
