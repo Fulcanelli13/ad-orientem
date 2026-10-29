@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {calendarStagedPublishedCustomVariants} from "../src/calendar/customs-research-preview.js";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const root="data/customs/master/";
 const working=read(root+"working-master.v1.json").records;
@@ -82,5 +83,37 @@ assert.match(html,/No new Customs module/);
 assert.ok(!html.includes("<script src="));
 assert.ok(!html.includes("Approve custom"));
 assert.ok(!html.includes("Reject custom"));
+const publishedParents=[...new Set(v.records.map(x=>x.owner_custom_id))];
+const collected=[];
+for(const parent of publishedParents){
+ const en=calendarStagedPublishedCustomVariants(parent,v);
+ const fr=calendarStagedPublishedCustomVariants(parent,v,{fr:true});
+ assert.equal(en.length,fr.length);
+ assert.ok(en.length>=1);
+ for(let i=0;i<en.length;i++){
+  const r=v.records.find(x=>x.variant_id===en[i].variant_id);assert.ok(r);
+  assert.equal(en[i].parent_custom_id,parent);
+  assert.equal(en[i].title,r.content.title_en);
+  assert.equal(fr[i].title,r.content.title_fr);
+  assert.equal(fr[i].optional_practice_or_context,r.content.practice_or_context_fr);
+  assert.equal(en[i].is_new_custom_card,false);
+  assert.equal(en[i].date_approved,false);
+  assert.equal(en[i].suggested_occurrence_date,null);
+  assert.equal(en[i].is_1962_liturgical_rubric,false);
+  assert.equal(en[i].is_current_parish_announcement,false);
+  assert.equal(en[i].indulgence_associated,false);
+  assert.equal(en[i].publication_state,"RESEARCH_VARIANT_DETAIL_NOT_PUBLISHED");
+  assert.equal(en[i].source_reference.printed_page,r.source.printed_page);
+  collected.push(en[i].variant_id);
+ }
+}
+assert.equal(collected.length,22);
+assert.equal(new Set(collected).size,22);
+assert.equal(calendarStagedPublishedCustomVariants("CORP-001",v).length,3);
+assert.equal(calendarStagedPublishedCustomVariants("DEAD-001",v).length,6);
+assert.equal(calendarStagedPublishedCustomVariants("BLSS-004",v).length,2);
+assert.equal(calendarStagedPublishedCustomVariants("NOT_A_PUBLISHED_CUSTOM",v).length,0);
+assert.throws(()=>calendarStagedPublishedCustomVariants("CORP-001",{records:v.records.slice(0,20)}),TypeError);
+
 console.log("PASS: 22 new bilingual regional Calendar details reusing 12 published owners; 18 existing full bilingual drafts reused without changing source copy.");
 console.log("PASS: 40-card self-contained EN/FR preview, source and local date guards, no automatic publication or indulgence claim.");
