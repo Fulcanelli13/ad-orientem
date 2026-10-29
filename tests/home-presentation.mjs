@@ -81,6 +81,9 @@ assert.doesNotMatch(en,/data-action="follow"/,"Home Follow Mass still depends on
 assert.match(en,/Gospel of the Mass/);
 assert.match(en,/aoTodayV2Frontispiece/);
 assert.match(en,/aoTodayV2PrayNow/);
+assert.match(en,/data-home-prayer-jump/,"Today needs a direct prayer-section shortcut");
+assert.ok(en.indexOf("aoTodayV2PrayNow")<en.indexOf("aoTodayV2CalendarGlance"),"Prayer section must precede Calendar context");
+assert.match(en,/data-date=/,"Seven-day date rail must use canonical selected-date keys");
 assert.match(en,/aoTodayV2ReadReflect/);
 assert.match(en,/aoTodayV2CalendarGlance/,"Approved C includes one grouped calendar summary");
 assert.doesNotMatch(en,/class="aoTodayV2Approaching"|class="aoTodayV2Context"/,"Retired duplicated calendar panels must not render");
@@ -105,7 +108,7 @@ const fr=renderHomeToString({...base,language:"fr"},r17Win);
 assert.match(fr,/Saint Rosaire/);
 assert.match(fr,/Autour de la Messe/);
 assert.match(fr,/Évangile de la messe/);
-assert.match(fr,/Prier maintenant/);
+assert.match(fr,/Prier au fil du jour/);
 assert.match(fr,/Lire et méditer/);
 assert.match(fr,/Aperçu du calendrier/,"French Calendar at a glance card must be rendered");
 assert.match(fr,/Vie et sources|À propos de cette célébration|Jour du calendrier et sources/);
