@@ -1,0 +1,24 @@
+name: Pray Benediction contextual return phone
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/pray/presentation-runtime.js'
+      - 'tests/nonmass-d3-d6-e2e.mjs'
+      - '.github/workflows/pray-benediction-return-phone.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  return-context:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Verify Benediction to Adoration and exact return
+        run: node tests/nonmass-d3-d6-e2e.mjs
