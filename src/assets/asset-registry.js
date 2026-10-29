@@ -1240,7 +1240,7 @@ export const AO_PRAY_ROUTE_ASSET_IDS=Object.freeze({
   "pray.five_wounds":"ao-rich-stations",
   "pray.precious_blood":"ao-rich-stations",
   "pray.little_crown":"ao-rich-rosary",
-  "pray.for_priests":"ao-rich-st-joseph",
+  "pray.for_priests":"ao-refined-devotions",
   "pray.occasional_intercessions":"ao-refined-devotions",
   "pray.st_joseph_seven_sorrows":"ao-rich-st-joseph",
   "pray.montfort_consecration":"ao-rich-our-lady-marian-devotions",
