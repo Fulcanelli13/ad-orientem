@@ -9,6 +9,7 @@ const ledger = JSON.parse(readFileSync(join(here, 'p91-all-385-canonical-evidenc
 const expected = { REJECTED_WRONG_BUILDING: 90, EXACT_BUILDING_CORROBORATED_RESEARCH_ONLY: 83, HELD_UNVERIFIED: 212 };
 const actual = Object.fromEntries(Object.keys(expected).map(key => [key, 0]));
 const heldSites = new Set(), photoIds = new Set();
+const p94VisualIds = new Set(), p94OutcomeCounts = {};
 const fail = msg => { throw new Error('P91/P92 gate: ' + msg); };
 
 if (ledger.records.length !== 385 || ledger.total_original_assignments !== 385) fail('385 original records must be preserved');
@@ -34,6 +35,13 @@ for (const row of ledger.records) {
     if (!row.p93_evidence || row.p93_evidence.source_file_url !== row.source_url || row.p93_evidence.independent_evidence_urls?.length < 2 || !row.p93_evidence.verified_site_address) fail('missing P93 exact-site per-file evidence for ' + row.contact_index);
   }
   if ([371,372,373].includes(row.contact_index) && (derived !== 'HELD_UNVERIFIED' || row.p93_venue_ambiguity?.status !== 'HOLD_UNTIL_CANONICAL_VENUE_CONFIRMED')) fail('Park City venue conflict prematurely resolved for '+row.contact_index);
+  if (row.p94_actual_preview_visual_review) {
+    const v = row.p94_actual_preview_visual_review;
+    if (derived !== 'EXACT_BUILDING_CORROBORATED_RESEARCH_ONLY' || v.exact_source_page !== row.source_url || !v.photo_preview_visually_inspected || v.review_scope !== 'ACTUAL_COMMONS_WEB_RENDERED_PHOTO_PREVIEW_NOT_DOWNLOADED_ORIGINAL') fail('P94 visual proof must be source-specific and research-only: ' + row.contact_index);
+    if (v.rights_or_attribution_clearance_completed || v.original_file_bytes_downloaded_or_hashed || v.publication_approved || !v.license_claim_observed_only) fail('P94 cannot claim rights, original bytes or publication: ' + row.contact_index);
+    p94VisualIds.add(row.contact_index);
+    p94OutcomeCounts[v.editorial_screen_decision] = (p94OutcomeCounts[v.editorial_screen_decision] || 0) + 1;
+  }
   if (derived === 'HELD_UNVERIFIED') heldSites.add(row.physical_anchor_id);
   actual[derived]++;
 }
@@ -49,4 +57,6 @@ const newlyCorrob = ledger.records.filter(row => row.p92_research_outcome === 'E
 if (newlyCorrob.length !== 40 || new Set(newlyCorrob.map(row => row.physical_anchor_id)).size !== 10 || ledger.p92_new_subject_corrob !== 40 || ledger.p92_new_subject_sites !== 10) fail('P92 must include 40 specific exact-site research matches at 10 physical sites');
 const p93 = ledger.records.filter(row => row.p93_research_outcome === 'EXACT_CHURCH_BUILDING_CORROBORATED_SOURCE_CATEGORY_AND_INDEPENDENT_SITE');
 if (p93.length !== 26 || new Set(p93.map(row => row.physical_anchor_id)).size !== 7 || ledger.p93_evidence_batches.length !== 7) fail('P93 requires 26 per-file proofs across seven buildings');
-console.log('PASS: 385 rows; 90 wrong-site rejections; 83 research-only corroborations (26 P93); 212 held at 124 sites; Park City venue conflict held; no publication approvals.');
+const expectedP94 = { VIABLE_INTERIOR_CANDIDATE:1, REJECT_CHURCH_WIDE_HERO_ROLE:3, PREFERRED_INTERIOR_CANDIDATE:2, SECONDARY_EXTERIOR_ONLY:3, VIABLE_EXTERIOR_CANDIDATE:3, PREFERRED_ALTAR_DETAIL_CANDIDATE:1 };
+if (p94VisualIds.size !== 13 || ledger.p94_web_preview_visual_inspected !== 13 || Object.keys(expectedP94).some(k => expectedP94[k] !== p94OutcomeCounts[k] || expectedP94[k] !== ledger.p94_editorial_screen_outcomes?.[k])) fail('P94 must reflect exactly 13 genuinely viewed source previews and their editorial decisions');
+console.log('PASS: 385 rows; 90 mismatches rejected; 83 building identities corroborated; 212 held; 13 actual Commons photo previews screened; no original bytes, rights or production approvals.');
