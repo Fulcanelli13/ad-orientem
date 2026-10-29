@@ -1,0 +1,70 @@
+name: P90 verify two original Commons church photos without publication
+on:
+  push:
+    branches:
+      - research/p86-directory-visual-qa-reviewed-20261029
+    paths:
+      - tools/directory/p90-acquire-two-commons-originals.py
+      - .github/workflows/directory-p90-two-original-photos.yml
+permissions:
+  contents: write
+concurrency:
+  group: directory-p90-two-source-originals-once
+  cancel-in-progress: false
+jobs:
+  research-only-original-source-integrity:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Use free local image decoder for two Commons originals
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Exact two file pages only; pinned source revision, SHA-1 and licence claims
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/directory/p90-acquire-two-commons-originals.py
+          python tools/directory/p90-acquire-two-commons-originals.py /tmp/p90-originals
+          (cd /tmp/p90-originals && sha256sum -c SHA256SUMS)
+          python - <<'PY'
+          import json,pathlib
+          d=json.loads(pathlib.Path("/tmp/p90-originals/audit.json").read_text())
+          assert d["retrieved_and_SHA1_verified"]==d["source_frozen_originals"]==2
+          assert d["final_editorial_approval_count"]==d["copyright_release_approval_count"]==d["published_count"]==0
+          assert all(x["image_decode_verified"] and x["source_revision_verified"] and not x["app_published"] for x in d["files"])
+          print("P90_ORIGINALS_SHA_AND_DECODE_OK_ZERO_PUBLICATION")
+          PY
+      - name: Temporary verified transport - does not publish a live application image
+        uses: actions/upload-artifact@v4
+        with:
+          name: P90_TWO_ORIGINAL_CHURCH_PHOTOS_RESEARCH_ONLY
+          path: /tmp/p90-originals/
+          retention-days: 3
+          if-no-files-found: error
+      - name: Preserve exact two-source originals permanently in isolated research branch
+        env:
+          AO_SOURCE_BRANCH: research/p90-original-two-church-photos-20261029
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "$AO_SOURCE_BRANCH" >/dev/null; then
+            echo "Permanent P90 archive already exists, refuse overwriting" >&2
+            exit 1
+          fi
+          git fetch --no-tags origin main
+          git switch -c "$AO_SOURCE_BRANCH" origin/main
+          target=docs/research/directory/p90-verified-two-originals-20261029
+          test ! -e "$target"
+          mkdir -p "$target"
+          cp /tmp/p90-originals/* "$target/"
+          (cd "$target" && sha256sum -c SHA256SUMS)
+          git add "$target"
+          test "$(git diff --cached --name-only | wc -l)" -eq 6
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): checksum-verified original Commons photos for two churches"
+          git push origin "HEAD:refs/heads/$AO_SOURCE_BRANCH"
