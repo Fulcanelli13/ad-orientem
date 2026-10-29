@@ -56,13 +56,13 @@ try{
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.litany_saints",{returnContext:null})),true);
    const rootSel="#aoPray435930.open";
    const owner=rootSel+' [data-ao-devotional-owner="litany"]';
-   await page.locator(owner+' .aoP435930LitanyLine').first().waitFor({timeout:10000});
+   await page.locator(owner+' .aoLitanyInvocation').first().waitFor({timeout:10000});
    await page.waitForSelector(owner+'[data-ao-devotional-dual-axis="true"]',{timeout:10000});
    await page.evaluate(()=>document.fonts.ready);
    const inspect=()=>page.evaluate(()=>{
     const root=document.querySelector("#aoPray435930.open"),m=root.querySelector(".aoP435930Mount"),
       reader=m.querySelector('[data-ao-devotional-owner="litany"]'),
-      first=reader.querySelector(".aoP435930LitanyLine"),last=reader.querySelectorAll(".aoP435930LitanyLine"),
+      first=reader.querySelector(".aoLitanyInvocation"),last=reader.querySelectorAll(".aoLitanyInvocation"),
       second=last[1],
       guide=reader.querySelector(".aoLitanySectionGuide"),
       source=reader.querySelector("details.aoP435930Source"),
@@ -109,7 +109,7 @@ try{
    assert.equal(await session.count(),1,"Historical private Litany needs an explicit EN/FR witness control");
    await session.click();
    await page.waitForFunction(()=>document.querySelector('[data-ao-devotional-owner="litany"] .aoLitanyWitnessCaption')?.textContent?.includes("1862"),null,{timeout:10000});
-   await page.locator(owner+' .aoP435930LitanyLine').first().waitFor();
+   await page.locator(owner+' .aoLitanyInvocation').first().waitFor();
    let fr=await inspect();
    assert.equal(fr.language,"fr","Private French witness is distinct, never an English translation");
    assert.match(fr.sourceLine,/Seigneur/);
@@ -120,7 +120,7 @@ try{
    await page.screenshot({path:resolve(out,"litany-fr-"+width+"-opening.png"),animations:"disabled"});
    await page.locator(owner+' [data-p435930-lit-use="major"]').click();
    await page.locator(rootSel+' [data-ao-litany-use="major"]').waitFor();
-   assert.equal(await page.locator(rootSel+" .aoP435930LitanyLine").count(),0,
+   assert.equal(await page.locator(rootSel+" .aoLitanyInvocation").count(),0,
     "Uncollated public 1962 rite must not be filled with the private French prayer text");
    assert.match(await page.locator(rootSel+' [data-ao-litany-use="major"]').innerText(),/1962|1960/);
    await page.screenshot({path:resolve(out,"litany-public-held-"+width+".png"),animations:"disabled"});
