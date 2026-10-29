@@ -19,13 +19,27 @@ const hero=read("data/geography/approved-place-media.v1.json");
 assert.equal(sources.schema,"AO_PLACE_GALLERY_ACQUISITION_R69_V1");
 assert.equal(registry.schema,"AO_APPROVED_PLACE_GALLERY_V1");
 assert.equal(sources.sources.length,4);
-assert.equal(registry.items.length,6);
+// R69's original six remain frozen. Later exact-source batches may add approved
+// media but cannot silently replace or alter the six historical records.
+const originalOwners=[
+ "place:FR:basilique-sainte-therese-lisieux","place:FR:chartres-notre-dame",
+ "place:FR:pontmain","place:FR:rue-du-bac"
+];
+const originals=registry.items.filter(x=>originalOwners.includes(x.place_id));
+const p73=read("data/geography/research/p73-curated-place-gallery-bundle.v1.json");
+const later=registry.items.filter(x=>!originalOwners.includes(x.place_id));
+assert.equal(originals.length,6);
+assert.ok(later.length===0||later.length===p73.candidates.length,
+  "No partial P73 approval state: image binaries and gallery entries must ship atomically");
+if(later.length){
+ assert.deepEqual(new Set(later.map(x=>x.media_id)),
+   new Set(p73.candidates.map(x=>x.media_id)));
+}
+assert.equal(registry.items.length,originals.length+later.length);
 assert.equal(hero.items.length,31);
 assert.ok(EXPLORE_DATA_URLS.approvedPlaceGallery.endsWith("/data/geography/approved-place-gallery.v1.json"));
-assert.equal(new Set(registry.items.map(x=>x.media_id)).size,6);
-assert.deepEqual([...new Set(registry.items.map(x=>x.place_id))].sort(),[
- "place:FR:basilique-sainte-therese-lisieux","place:FR:chartres-notre-dame","place:FR:pontmain","place:FR:rue-du-bac"
-].sort());
+assert.equal(new Set(registry.items.map(x=>x.media_id)).size,registry.items.length);
+assert.deepEqual([...new Set(originals.map(x=>x.place_id))].sort(),originalOwners.sort());
 for(const source of sources.sources){
  const item=registry.items.find(r=>r.media_id===source.media_id);
  assert.ok(item,"Missing acquired photo "+source.media_id);
@@ -62,8 +76,9 @@ const dataset={
 const projected=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projected,{today:"2026-10-11"});
 assert.equal(profiles.filter(p=>p.illustrated_guide).length,14);
-assert.equal(profiles.filter(p=>p.gallery.length>0).length,4);
-for(const placeId of new Set(registry.items.map(x=>x.place_id))){
+assert.equal(profiles.filter(p=>p.gallery.length>0).length,
+  new Set(registry.items.map(x=>x.place_id)).size);
+for(const placeId of new Set(originals.map(x=>x.place_id))){
  const images=registry.items.filter(x=>x.place_id===placeId);
  const profile=profiles.find(x=>x.place_id===placeId);
  assert.ok(profile&&profile.illustrated_guide);
@@ -114,4 +129,7 @@ for(const lang of ["en","fr"]){
 }
 for(const p of profiles.filter(x=>!registry.items.some(img=>img.place_id===x.place_id)))
  assert.equal(p.gallery.length,0);
-console.log("PASS R69: 6 approved local gallery photographs over 4 physical Places, EN/FR UI, 24 independently approved heroes and original 14 guides");
+console.log("PASS R69: original six approved Place-gallery photographs remain unchanged; "+
+ registry.items.length+" exact local photographs over "+
+ new Set(registry.items.map(x=>x.place_id)).size+
+ " Places, bilingual UI and original 14 guides");
