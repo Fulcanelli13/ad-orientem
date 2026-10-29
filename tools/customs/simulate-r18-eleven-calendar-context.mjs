@@ -10,6 +10,7 @@ const file=p=>readFileSync(new URL("../../"+p,import.meta.url));
 const json=p=>JSON.parse(file(p).toString("utf8"));
 const sourcePath="data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json";
 const stage=json("data/customs/customs-r18-eleven-calendar-parent-subtype-structure.v1.json");
+const editorial=json("data/customs/customs-r18-eleven-bilingual-editorial-copy-review.v1.json");
 const source=json(sourcePath);
 const seed=json("data/customs/customs-atlas-seed.v1.json");
 const six=json("data/customs/customs-r18-six-canonical-release-candidate.v1.json");
@@ -41,6 +42,33 @@ assert.equal(publishedApi.length,35);
 assert.deepEqual(new Set(publishedApi),published);
 assert.equal(six.rows.length,6);
 assert.ok(six.rows.every(x=>x.publication_allowed===false&&Object.values(x.signoffs).every(x=>x===false)));
+
+assert.equal(editorial.counts.records,11);
+assert.equal(editorial.counts.bilingual_field_pairs_total,33);
+assert.equal(editorial.counts.canonical_publications,0);
+assert.equal(editorial.counts.approved_articles,0);
+assert.equal(editorial.source_article_file,sourcePath);
+assert.equal(editorial.structure_file,"data/customs/customs-r18-eleven-calendar-parent-subtype-structure.v1.json");
+for(const [name,value] of Object.entries(editorial.policy))
+  assert.equal(value,true,"Missing bilingual-release safeguard "+name);
+const copyByKey=new Map(editorial.records.map(x=>[x.review_key,x]));
+assert.equal(copyByKey.size,11);
+const editableFields=["description","history","caution"];
+for(const row of editorial.records){
+ assert.equal(row.revision_status,"UNAPPROVED_EDITORIAL_COPY_PROPOSAL");
+ assert.equal(row.language_review_en,"PENDING");
+ assert.equal(row.language_review_fr,"PENDING");
+ assert.equal(row.independent_full_source_verification,false);
+ assert.deepEqual(row.replaces_only,editableFields);
+ assert.deepEqual(Object.keys(row.changes).sort(),[...editableFields].sort());
+ for(const field of editableFields)for(const lang of ["en","fr"])
+  assert.ok(row.changes[field]?.[lang]?.length>80,
+    "Need substantial edited EN/FR "+row.review_key+" "+field+" "+lang);
+ assert.notEqual(row.changes.description.en,row.changes.history.en,
+   "Reader should not repeat identical English history/description");
+ assert.notEqual(row.changes.description.fr,row.changes.history.fr,
+   "Reader should not repeat identical French history/description");
+}
 
 const sourceReviews=source.records.filter(x=>x.action_identity_review&&x.unpublished_bilingual_article);
 assert.equal(sourceReviews.length,11);
@@ -77,6 +105,13 @@ for(const candidate of stage.staged){
  assert.ok(candidate.article_pointer.endsWith("#"+key+".unpublished_bilingual_article"));
  assert.equal(candidate.primary_source_url,actual.action_identity_review.primary_institutional_source_url);
  assert.ok(actual.source_links.some(x=>x.url===candidate.primary_source_url));
+ assert.ok(copyByKey.has(key),"Missing copy review for "+key);
+ const proposed=copyByKey.get(key);
+ const resolvedArticle={...actual.unpublished_bilingual_article,...proposed.changes};
+ for(const field of eightFields)for(const lang of ["en","fr"])
+   assert.ok(resolvedArticle[field]?.[lang]?.trim().length>=4,key+" resolved candidate missing "+field+"."+lang);
+ assert.deepEqual(Object.keys(resolvedArticle).sort(),[...eightFields].sort());
+
  assert.equal(actual.current_publication_authorized,false);
  assert.deepEqual(actual.indulgence_grants,[]);
  for(const field of eightFields)for(const lang of ["en","fr"]){
@@ -127,4 +162,4 @@ for(const date of ["2026-04-05","2026-06-24","2026-08-14","2026-08-15","2026-12-
 assert.ok(publishedApi.every(id=>calendarCustomArticle(id)?.id===id));
 assert.equal(defaults.staged_candidate_actions,stage.staged.length);
 assert.equal(defaults.subtype_examples,subtypeKeys.size);
-console.log("PASS Customs R18 eleven Calendar structural rehearsal: 11 candidate action owners, 8 noncanonical thematic families, 15 named subordinate examples, 6 prior dossiers unaffected, 35 published untouched, 0 local events/grants/IDs/approvals.");
+console.log("PASS Customs R18 Calendar rehearsal: 11 candidate actions, 8 noncanonical families, 15 subtypes, 33 EN/FR editorial revisions, 35 published unchanged and zero event/grant/identity/copy approvals.");
