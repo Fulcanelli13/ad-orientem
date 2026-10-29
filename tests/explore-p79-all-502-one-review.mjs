@@ -1,0 +1,33 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const read=p=>readFileSync(new URL("../"+p,import.meta.url),"utf8");
+const manifest=JSON.parse(read("data/geography/research/p79-all-502-commons-review.v1.json"));
+const data=manifest.records,ids=new Set(data.map(x=>x.id)),shas=new Set(data.map(x=>x.original_sha1));
+assert.equal(manifest.schema,"AO_P79_ONE_CAMPAIGN_ALL_502_COMMONS_ASSIGNMENTS_V1");
+assert.equal(manifest.publication,"RESEARCH_ONLY_NO_AUTO_APPROVAL");
+assert.equal(data.length,502);
+assert.equal(ids.size,502);
+assert.equal(shas.size,501);
+assert.equal(new Set(data.filter(x=>x.owner==="GEOGRAPHY").map(x=>x.entity_id)).size,109);
+assert.equal(new Set(data.filter(x=>x.owner==="SACRED_PHENOMENA").map(x=>x.entity_id)).size,26);
+assert.deepEqual(data.map(x=>x.id),Array.from({length:502},(_,i)=>i+1));
+for(const x of data){
+ assert.equal(x.subject_identity_verified,false);
+ assert.equal(x.rights_cleared,false);
+ assert.equal(x.original_bytes_verified,false);
+ assert.equal(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(x.source_page),true);
+ assert.equal(/^[0-9a-f]{40}$/.test(x.original_sha1),true);
+ if(x.published)assert.ok(x.already_approved_media);
+}
+const html=read("docs/SACRED_PLACES_COMMONS_502_SINGLE_REVIEW_20261029.html");
+assert.ok(html.includes('const records=')&&html.includes('const BULK_AUDIT=null;'));
+assert.ok(html.includes('const KEY="ao-p79-502-decisions-v1",CHUNK=100;'));
+assert.ok(html.includes('label="')===false);
+assert.ok(html.includes('id="export"')&&html.includes('P79_USER_EDITORIAL_CHOICES_V1'));
+for(const value of ["IMPORT","CORRECT","REJECT","HOLD"])assert.ok(html.includes(value));
+const wf=read(".github/workflows/p79-single-502-campaign.yml");
+assert.ok(wf.includes("matrix:")&&wf.includes("shard: [0, 1, 2, 3, 4]"));
+assert.ok(wf.includes("merge-multiple: true")&&wf.includes('P79-ONE-502-SOURCE-REVIEW'));
+assert.ok(/permissions:\s+contents: read/.test(wf));
+assert.equal(wf.includes("contents: write"),false);
+console.log("PASS P79: all 502 Commons candidates preserved, 501 distinct file pins, one reviewer and one consolidated read-only campaign.");
