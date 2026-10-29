@@ -1,0 +1,79 @@
+name: Directory unified photographic intake - 2579 anchor contracts
+on:
+  pull_request:
+    paths:
+      - tools/directory/build-unified-photo-intake.py
+      - tests/directory-unified-photo-intake-test.py
+      - .github/workflows/directory-unified-photo-intake-contract.yml
+      - docs/DIRECTORY-UNIFIED-PHOTO-INTAKE-20261029.md
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run completely offline fail-closed synthetic contracts
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/directory/build-unified-photo-intake.py
+          python tests/directory-unified-photo-intake-test.py -v
+          node tests/production-tree-hygiene.mjs
+      - name: Fetch exact reviewed unmerged CL2 source snapshot read-only
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/data/cl2-unified-source-location-classification-20261026:refs/remotes/origin/data/cl2-unified-source-location-classification-20261026'
+          src_ref='refs/remotes/origin/data/cl2-unified-source-location-classification-20261026'
+          pinned='eb67711a9886a7626916b7a145787c5e99105968'
+          actual="$(git rev-parse "$src_ref")"
+          if test "$actual" != "$pinned"; then
+            echo "::error::CL2 changed since review; compare and re-pin before any photo intake."
+            exit 1
+          fi
+          git worktree add --detach /tmp/ao-photo-cl2-source "$pinned"
+          python tools/directory/build-unified-photo-intake.py \
+            --cl2-dir /tmp/ao-photo-cl2-source/data/directory/research/cl2-unified-20261026 \
+            --r49 data/directory/preliminary-map-r49.v1.json \
+            --out-dir /tmp/ao-unified-photo-intake \
+            --shard-size 250 --cl2-commit "$pinned"
+      - name: Check complete 2579-anchored intake and 11 research shards
+        run: |
+          python - <<'PY'
+          import json,hashlib,pathlib
+          root=pathlib.Path('/tmp/ao-unified-photo-intake')
+          index=json.loads((root/'manifest.json').read_text())
+          audit=json.loads((root/'audit.json').read_text())
+          assert index['schema']=='AO_DIRECTORY_UNIFIED_PHOTO_QUEUE_INDEX_V1'
+          assert index['publication']=='RESEARCH_ONLY_NEVER_APP_VISIBLE'
+          assert index['not_app_visible'] is True
+          assert index['counts']['distinct_consolidated_physical_anchors']==2579
+          assert index['counts']['historical_canonical_group_ids']==2584
+          assert index['counts']['same_building_aliases_not_extra_sites']==5
+          assert index['counts']['all_cl2_venue_sources']==2687
+          assert index['counts']['r49_historical_source_ids']==1879
+          assert index['counts']['photos_published']==0
+          assert len(index['shards'])==11 and sum(x['count'] for x in index['shards'])==2579
+          seen=set()
+          for s in index['shards']:
+            f=root/s['path']
+            assert hashlib.sha256(f.read_bytes()).hexdigest()==s['sha256']
+            j=json.loads(f.read_text())
+            assert j['publication']==index['publication']
+            for x in j['records']:
+              assert x['physical_anchor_id'] not in seen
+              assert x['publication']==index['publication']
+              assert x['building_subject_verified'] is False
+              assert x['approved_originals']==0
+              assert x['approved_cover_photo'] is False
+              seen.add(x['physical_anchor_id'])
+          assert len(seen)==2579 and audit['counts']==index['counts']
+          print('ONE_WORLDWIDE_PHOTO_INTAKE',json.dumps(index['counts'],sort_keys=True))
+          PY
