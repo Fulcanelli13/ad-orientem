@@ -98,9 +98,9 @@ function validAssembly(a){
  return Array.isArray(psSources)&&
   psSources[0]==="Psalterium/Psalmi/Psalmi major#Day6 Vespera"&&
   psSources[1]===PROPER+"Ant Laudes"&&
+  psSources.length===SATURDAY.length+2&&
   SATURDAY.every(([n,range],i)=>
    psSources[i+2]==="Psalterium/Psalmorum/Psalm"+n+"#"+range)&&
-   psSources.length===SATURDAY.length+2)&&
   byKey["magnificat-antiphon"].sourceIds?.[0]===PROPER+"Ant 1"&&
   byKey["magnificat-canticle"].sourceIds?.[0]===
    "Psalterium/Psalmorum/Psalm232#LUKE_1_46_55"&&
