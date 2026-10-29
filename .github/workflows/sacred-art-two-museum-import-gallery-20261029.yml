@@ -1,0 +1,67 @@
+name: Sacred Art — KMSKA and Cleveland import-only review gallery
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-two-museum-import-gallery-20261029.yml
+      - scripts/art/build-sacred-art-two-museum-import-gallery-20261029.py
+      - data/calendar/sacred-art-kmska-cleveland-first-review-20261029.v1.json
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-import-gallery-two-museums
+  cancel-in-progress: true
+jobs:
+  build-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate selection-only gallery when actual rights-checked source data exists
+        run: |
+          if [ ! -f data/calendar/sacred-art-kmska-cleveland-first-review-20261029.v1.json ]; then
+            echo 'No source data committed yet; skip until intake job archives it'
+            exit 0
+          fi
+          python -m py_compile scripts/art/build-sacred-art-two-museum-import-gallery-20261029.py
+          python scripts/art/build-sacred-art-two-museum-import-gallery-20261029.py
+      - name: Confirm no numeric ratings and exact complete-batch rejection semantics
+        run: |
+          if [ ! -f docs/SACRED_ART_TWO_MUSEUM_IMPORT_REVIEW_20261029.html ]; then exit 0; fi
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          html=Path('docs/SACRED_ART_TWO_MUSEUM_IMPORT_REVIEW_20261029.html').read_text()
+          d=json.loads(Path('data/calendar/sacred-art-kmska-cleveland-first-review-20261029.v1.json').read_text())
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',html,re.S)
+          assert m
+          rows=json.loads(m.group(1))
+          assert len(rows)==d['counts']['totalVisuallyReviewable']
+          assert len({x['id'] for x in rows})==len(rows)
+          assert 'IMPORT_WITH_CORRECTIONS' in html and 'UNSELECTED' in html
+          assert 'REJECT' in html and 'Finalize and export decisions' in html
+          assert "if(finalize&&!$('#complete').checked)" in html
+          assert "cur(w.id).decision" in html
+          assert "0–5" not in html and "rating" not in html.lower()
+          assert all(x['previewURL'] and x['sourceImageRights']!='UNVERIFIED' for x in rows)
+          assert d['imagesDownloaded']==0 and d['productionImports']==0
+          print('PASS',len(rows),'image-visible items; import and corrections only, unselected reject on finalize')
+          PY
+          git diff --exit-code -- data/calendar/sacred-art-curator-queues-383-20261029.v1.json data/calendar/sacred-art-rijks-rights-gated-review-b2-20261029.v1.json
+      - name: Save standalone gallery to research branch only
+        run: |
+          if [ ! -f docs/SACRED_ART_TWO_MUSEUM_IMPORT_REVIEW_20261029.html ]; then exit 0; fi
+          git config user.name "Ad Orientem art curator"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/SACRED_ART_TWO_MUSEUM_IMPORT_REVIEW_20261029.html
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): deliver two-museum Import / Import with Corrections gallery"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028
