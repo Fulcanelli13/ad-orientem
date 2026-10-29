@@ -1,0 +1,48 @@
+{
+  "schema": "AO_P102_PHOTO_SOURCE_BYTES_RELEASE_AUDIT_V1",
+  "source_p101_commit": "9457126abdf1b13b15ba5a04f804d325b71118da",
+  "stage": "PR_BRANCH_NOT_DEPLOYED",
+  "copied": 3,
+  "records": [
+    {
+      "place_id": "place:US:st-john-cantius-chicago",
+      "source_commit": "9457126abdf1b13b15ba5a04f804d325b71118da",
+      "from": "assets/staged/directory-p101/US-st-john-cantius-chicago.webp",
+      "to": "assets/approved/place-media/US-st-john-cantius-chicago.webp",
+      "sha256": "c15aa55e6e96e360743aa390a5e59a4cd395f1539eb3304411cf599fcf9b6474",
+      "bytes": 119570,
+      "source_sha1": "400197c1d636d0fdd05df92799393afc1d487d0d",
+      "width": 980,
+      "height": 1400,
+      "copy_exact": true,
+      "reencoded": false
+    },
+    {
+      "place_id": "place:IT:san-canziano-padova",
+      "source_commit": "9457126abdf1b13b15ba5a04f804d325b71118da",
+      "from": "assets/staged/directory-p101/IT-san-canziano-padova.webp",
+      "to": "assets/approved/place-media/IT-san-canziano-padova.webp",
+      "sha256": "e8451d6e84fb85104d01e9c3d7785c73f36a04f947bc89ba58d2af0e8e2368ed",
+      "bytes": 237110,
+      "source_sha1": "caed676bbb4d2b4c9af45de9d10ee3016966d7c9",
+      "width": 1161,
+      "height": 1400,
+      "copy_exact": true,
+      "reencoded": false
+    },
+    {
+      "place_id": "place:FR:saint-bruno-bordeaux",
+      "source_commit": "9457126abdf1b13b15ba5a04f804d325b71118da",
+      "from": "assets/staged/directory-p101/FR-saint-bruno-bordeaux.webp",
+      "to": "assets/approved/place-media/FR-saint-bruno-bordeaux.webp",
+      "sha256": "016dcedbb672a068d38f26cac2e3d420efdabc78c8a6daf5fdc7760332dac7b1",
+      "bytes": 252754,
+      "source_sha1": "9c8ec29a46fe8c3d27e32a600600e1bcefa3e8d4",
+      "width": 1400,
+      "height": 1035,
+      "copy_exact": true,
+      "reencoded": false
+    }
+  ],
+  "production_media_requires_separate_approved_registry_entry": true
+}
