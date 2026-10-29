@@ -1152,17 +1152,19 @@ button.ao-schola-control{cursor:pointer}
   cursor:default;
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"]{
-  display:block;padding:7px 0;margin:4px 0;
+  /* Original source rubrics are their own paragraphs in the book sequence.
+     Do not float them to another cue or turn them into a sidebar card. */
+  display:block;padding:3px 0;margin:10px 0 3px;
   border-bottom:0;font-size:clamp(13px,1.48vw,16px)!important;
   font-family:var(--ao-missal-face)!important;
   font-style:italic!important;
-  color:var(--ao-text-muted,#b5b8b4);
+  color:var(--ao-missal-rubric-red,#df7e80);
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"]::before,
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"]::after{display:none!important}
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"] .ao-line-primary{
   font-style:italic!important;font-size:.91em!important;line-height:1.45!important;
-  color:var(--ao-text-muted,#b5b8b4);text-align:center;
+  color:var(--ao-missal-rubric-red,#df7e80);text-align:center;
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"] .ao-line-secondary{display:none}
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="CONSECRATION_WORDS"]{
@@ -1504,13 +1506,16 @@ button.ao-schola-control{cursor:pointer}
     width:26px!important;height:26px!important;flex-basis:26px;
   }
 }
-/* A source rubric is a single understated italic line, NOT a card.
+/* Missal rubric red is independent of the app accent and must remain legible
+   on the dark reading paper. LIVE keeps its own visual treatment. */
+.ao-reader-shell[data-mode="MISSAL"]{--ao-missal-rubric-red:#df7e80}
+/* A source rubric is a single red italic line, NOT a card.
    The source, actor and date remain metadata, not repeated reading chrome. */
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics{
   grid-column:1 / -1;grid-row:auto;display:block;
   max-width:66ch;margin:7px auto 4px;padding:2px 8px;
   border:0;background:transparent;text-align:center;
-  color:var(--ao-text-muted,#b5b8b4);
+  color:var(--ao-missal-rubric-red,#df7e80);
   font:italic 400 clamp(13px,1.6vw,15px)/1.5 var(--ao-missal-face,Georgia,serif);
   letter-spacing:0;overflow-wrap:break-word;
 }
@@ -1532,11 +1537,17 @@ button.ao-schola-control{cursor:pointer}
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-ceremonial-state-detail>p{
   margin:3px auto 6px;max-width:62ch;text-align:center;font:inherit;
-  line-height:1.52;color:var(--ao-text-muted,#b5b8b4);
+  line-height:1.52;color:var(--ao-missal-rubric-red,#df7e80);
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-ceremonial-state-detail>a{
   display:inline-block;font:400 .68rem/1.5 var(--ao-font-ui,system-ui,sans-serif);
   color:var(--ao-mass-accent-text);text-underline-offset:3px;
+}
+/* A printed Missal uses red type for rubrics, not pictograms in the text.
+   Existing approved gesture artwork remains available to LIVE only. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics
+  :is(.ao-approved-finger-rubric-art,.ao-approved-priest-gesture-rubric-art,.ao-approved-priest-head-bow-rubric-art){
+  display:none!important;
 }
 /* Actual additional rubrical information exists at chalice preparation:
    the brief direction is visible and the form-specific action/exception is
