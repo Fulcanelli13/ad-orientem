@@ -1,0 +1,30 @@
+name: Calendar Customs 22 bilingual context preview
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "src/calendar/customs-existing-variant-preview.js"
+      - "src/calendar/calendar-runtime.js"
+      - "src/calendar/customs-read-model.js"
+      - "src/calendar/customs-extra-articles.js"
+      - "tests/calendar-customs-existing22-context-preview.mjs"
+      - ".github/workflows/calendar-customs-existing22-preview.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verified-variant-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify read model syntax
+        run: |
+          node --check src/calendar/customs-existing-variant-preview.js
+          node --check src/calendar/calendar-runtime.js
+          node --check tests/calendar-customs-existing22-context-preview.mjs
+      - name: Verify 22-to-12 mapping and unpublished safeguards
+        run: node tests/calendar-customs-existing22-context-preview.mjs
