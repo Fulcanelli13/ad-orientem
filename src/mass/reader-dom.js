@@ -3195,6 +3195,7 @@ export function createReaderDomAdapter({
       button.type="button";
       button.dataset.scholaEventSelect=item.id;
       const unavailable=(item.manualOnly===true ||
+        item.musicWindow?.status==="SOURCE_ANCHORS_UNVERIFIED" ||
         item.id==="BENEDICTUS_CONTINUOUS" ||
         (["ORGAN_OPTION","LOCAL_OPTION"].includes(item.kind) &&
           item.localPlan?.selected!==true) ||
