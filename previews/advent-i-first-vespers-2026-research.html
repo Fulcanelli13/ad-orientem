@@ -95,6 +95,9 @@ import {buildAdventI2026ReadingFocus}
  from "../src/office/advent-first-vespers-reading-focus.js";
 import {reviewOfficeBetaSelection}
  from "../src/office/reader-beta-catalog.js";
+import {createSaturdayComplinePinnedReader,
+ assembleSaturdayComplinePilot}
+ from "../src/office/saturday-compline-2026-pilot.js";
 
 const status=document.getElementById("status");
 const reader=document.getElementById("reader");
@@ -107,9 +110,13 @@ const betaTitle=document.getElementById("office-title");
 const betaSubtitle=document.getElementById("office-subtitle");
 const titleByHour={MATINS:"Matins",LAUDS:"Lauds",PRIME:"Prime",
  TERCE:"Terce",SEXT:"Sext",NONE:"None",VESPERS:"Vespers",COMPLINE:"Compline"};
-function refreshBetaSelection(){
+const pilotStore=new Map();
+let selectedPilotKey=null,requestSerial=0;
+async function refreshBetaSelection(){
+ const serial=++requestSerial;
  const review=reviewOfficeBetaSelection({date:betaDate.value,hour:betaHour.value});
  if(review.status!=="SOURCE_FIRST_RESEARCH_PREVIEW_AVAILABLE"){
+  selectedPilotKey=null;blocks=[];frames=[];index=0;
   reader.hidden=true;
   status.classList.remove("error");
   status.textContent=review.reason==="INVALID_DATE_OR_CANONICAL_HOUR"?
@@ -121,21 +128,47 @@ function refreshBetaSelection(){
   betaSubtitle.textContent="Research preview unavailable for this selection";
   return;
  }
- betaTitle.textContent=review.entry.label;
- betaSubtitle.textContent="Saturday evening, 28 November 2026 · Universal calendar · research-only";
- if(blocks.length&&frames.length){
-  reader.hidden=false;
-  status.classList.remove("error");
-  status.textContent="Source-first research preview available; printed edition, translation and reuse-rights approval still pending.";
-  paint();
- }else{
+ const entry=review.entry,oldKey=selectedPilotKey;
+ betaTitle.textContent=entry.label;
+ betaSubtitle.textContent=entry.officeDate===entry.civilDate?
+  "Saturday, 28 November 2026 · research-only":
+  "Saturday evening, 28 November 2026 · Universal calendar · research-only";
+ if(!pilotStore.has(entry.key)){
   reader.hidden=true;
-  status.textContent="Reading the exact pinned source components for the reviewed research pilot.";
+  status.textContent="Assembling pinned, source-owned "+entry.hour.toLowerCase()+
+   " components in Latin, English and French.";
+  if(entry.assembly!=="SATURDAY_COMPLINE_2026_SOURCE_FIRST")return;
+  try{
+   const source=createSaturdayComplinePinnedReader({
+    fetchSource:fetch.bind(globalThis)
+   });
+   const data=await assembleSaturdayComplinePilot({reader:source});
+   if(data.status!=="SOURCE_FIRST_SATURDAY_COMPLINE_RESEARCH_NOT_CERTIFIED"||
+      data.publishable!==false||data.published!==false||
+      data.blocks.length!==42||!data.frames.length)
+    throw Error(data.reason||"Saturday Compline source assembly withheld");
+   pilotStore.set(entry.key,{blocks:data.blocks,frames:data.frames});
+  }catch(error){
+   if(serial!==requestSerial)return;
+   selectedPilotKey=null;reader.hidden=true;
+   status.classList.add("error");
+   status.textContent="Saturday Compline preview withheld: "+
+    String(error?.message??error);
+   return;
+  }
  }
+ if(serial!==requestSerial)return;
+ const pilot=pilotStore.get(entry.key);
+ if(!pilot)return;
+ if(entry.key!==oldKey)index=0;
+ selectedPilotKey=entry.key;
+ blocks=pilot.blocks;frames=pilot.frames;
+ index=Math.max(0,Math.min(index,(readingView==="focus"?frames:blocks).length-1));
+ reader.hidden=false;
+ status.classList.remove("error");
+ status.textContent="Source-first research preview available; rubrical, translation and reuse-rights approval remain pending.";
+ paint();
 }
-betaDate.addEventListener("change",refreshBetaSelection);
-betaHour.addEventListener("change",refreshBetaSelection);
-
 const names={
  OPENING:"Opening · Deus in adjutorium",
  SEASONAL_OPENING_RESPONSE:"Alleluia",
@@ -155,7 +188,15 @@ const names={
  RESEARCH_CALENDAR_NOTICE:"Universal calendar note",
  DISMISSAL_DIALOGUE_SOURCE_CANDIDATE:"Dismissal dialogue",
  BENEDICAMUS:"Benedicamus Domino",
- FIDELIUM_ANIMAE:"Fidelium animae"
+ FIDELIUM_ANIMAE:"Fidelium animae",
+ INVITATION:"Invitation",BLESSING:"Blessing",LESSON:"Short lesson",
+ RESPONSE:"Response",INVOCATION:"Versicle",PATER_NOSTER:"Pater noster",
+ CONFITEOR:"Confiteor",ABSOLUTION:"Absolution",ALLELUIA:"Alleluia",
+ ANTIPHON:"Antiphon",PSALM:"Psalmody",DOXOLOGY:"Gloria Patri",
+ SHORT_RESPONSORY:"Short responsory",CANTICLE:"Nunc dimittis",
+ KYRIE:"Kyrie",DIALOGUE:"Dialogue",DISMISSAL:"Benedicamus Domino",
+ MARIAN_ANTIPHON:"Alma Redemptoris Mater",MARIAN_COLLECT:"Marian collect",
+ FINAL_RESPONSE:"Fidelium animae"
 };
 function el(tag,text,klass){
  const n=document.createElement(tag);
@@ -192,7 +233,8 @@ function paint(){
  bar.setAttribute("aria-label","Reading progression");
  if(readingView==="focus"&&block.subTotal>1){
   const part=block.focusType==="HYMN_STANZA"?"Stanza":
-   block.focusType==="MAGNIFICAT_VERSE"?"Magnificat verse":"Psalm verse";
+   block.focusType==="MAGNIFICAT_VERSE"?"Magnificat verse":
+   block.focusType==="CANTICLE_VERSE"?"Canticle verse":"Psalm verse";
   const detail=block.label?" · "+block.label:"";
   card.append(el("p",part+" "+(block.subIndex+1)+
    " of "+block.subTotal+detail,"focus-cue"));
@@ -266,9 +308,10 @@ try{
    focusModel.sourceTextAltered!==false||
    focusModel.publishable!==false||focusModel.published!==false)
   throw Error(focusModel.reason||"Source-preserving focus unavailable");
- blocks=result.preview.blocks;
- frames=focusModel.frames;
- refreshBetaSelection();
+ pilotStore.set("advent-i-2026-first-vespers",{
+  blocks:result.preview.blocks,frames:focusModel.frames
+ });
+ await refreshBetaSelection();
 }catch(err){
  reader.hidden=true;
  if(reviewOfficeBetaSelection({date:betaDate.value,hour:betaHour.value}).canPreview){
