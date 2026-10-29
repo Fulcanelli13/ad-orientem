@@ -8,6 +8,7 @@ on:
       - "src/calendar/customs-read-model.js"
       - "src/calendar/customs-extra-articles.js"
       - "tests/calendar-customs-existing22-context-preview.mjs"
+      - "tests/calendar-customs-existing22-visual-acceptance.mjs"
       - ".github/workflows/calendar-customs-existing22-preview.yml"
   workflow_dispatch:
 permissions:
@@ -28,3 +29,22 @@ jobs:
           node --check tests/calendar-customs-existing22-context-preview.mjs
       - name: Verify 22-to-12 mapping and unpublished safeguards
         run: node tests/calendar-customs-existing22-context-preview.mjs
+  browser-phone-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Actual 320/390px Calendar Customs preview and ordinary view
+        run: node tests/calendar-customs-existing22-visual-acceptance.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: calendar-customs-existing22-mobile-qa
+          path: artifacts/calendar-customs-existing22-preview/
+          retention-days: 30
+          if-no-files-found: warn
