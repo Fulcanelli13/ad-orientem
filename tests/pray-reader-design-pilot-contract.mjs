@@ -37,7 +37,11 @@ for(const id of LORETO_SOURCE_IDS){
 const runtime=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
 assert.ok(runtime.includes("if(PRAYER_READER_PILOT_ENABLED&&LORETO_SOURCE_IDS.includes(LIB.open))"),"Loreto source routing must remain gated");
 assert.ok(runtime.includes("data-p435930-pilot-focus"),"single-prayer focus must be explicit");
-assert.ok(runtime.includes("PILOT_LORETO_GROUP=!PILOT_LORETO_GROUP"),"communal role labels optional");
+assert.ok(runtime.includes("PILOT_LORETO_GROUP=selected==='group'"),"communal role labels optional");
+for(const mode of ["individual","group"])assert.match(renderPilotLoreto({
+ record:PRAY_CANONICAL_DATA_V435930.prayers.litany_loreto_1962,id:"litany_loreto_1962",
+ language:"en",group:false,head:t=>t,L,esc,sourceLine:()=>"",libraryContextMarkup:()=>""
+}),new RegExp('data-p435930-pilot-loreto-group="'+mode+'"'));
 assert.ok(runtime.includes("LIB.language=language"),"language face must use an available source");
 assert.ok(runtime.includes("if(!['en','fr','la'].includes(language)||!P(LIB.open)?.[language])return"),"missing translations must fail closed");
 console.log("PASS Reader UX pilot: 2 Loreto source identities × 3 complete languages, exact lines retained, gated F01/F03 presentation");
