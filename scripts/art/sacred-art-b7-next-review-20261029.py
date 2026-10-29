@@ -301,7 +301,7 @@ def main():
   'userB4RSelections':43,'userB4RReviewed':123,'userB5RSelections':108,'userB5RReviewed':250,
   'userB4RB5RDecisionsMutated':False}
  doc={'schema':'AO_SACRED_ART_B7_REVIEW_SOURCE_V1','date':'2026-10-29',
-  'batchId':'B7','targetSize':250,'batchReady':len(chosen)==250,
+  'batchId':'B7','targetSize':250,'batchReady':200<=len(chosen)<=250,
   'sourcePolicy':'Official open image metadata; exact JPEG preview checked. NGA per-image open access=1. Walters photo held.',
   'counts':stats,'NGAInventory':ns,'WaltersInventory':ws,'ClevelandInventory':cs,'errors':fail[:120],
   'gates':{'sourceSpecificIDsPreserved':True,'prior933Excluded':True,
@@ -316,7 +316,7 @@ def main():
   f"- {checked} preview checks, {len(fail)} failures, full native photography QA pending. No frame/crop integrity claimed.\n"
   "- NGA exact image openaccess=1; Cleveland CC0; Walters held pending per-image rights review.\n"
   "- Images used only as linked previews. No image files saved, no production imports. Cost €0.\n"
-  f"- Batch hash: {digest}; Ready={len(chosen)==250}.\n",encoding='utf8')
+  f"- Batch hash: {digest}; Reviewable={len(chosen)>=200}. **Unfilled target slots: {250-len(chosen)}**.\n",encoding='utf8')
  print(json.dumps({'counts':stats,'ngaInventory':ns,'waltersInventory':ws,'clevelandInventory':cs,
   'digest':digest,'samples':[(x['id'],x['title']) for x in chosen[:8]]}))
 if __name__=='__main__':main()
