@@ -127,5 +127,14 @@ if (master.counts.acceptedToCanonical383VerifiedSourceLinks !== 72 ||
     master.phase1AcceptedCrosswalk.mergesPerformed !== 0)
   fail("master no longer agrees with accepted/canonical crosswalk");
 
+const linkage = load("sacred-art-phase1-856-to-383-crosswalk-20261029.v1.json");
+if (linkage.rows.length !== 856 || linkage.counts.exactIdentityLinked !== 63 ||
+    linkage.counts.titleArtistCandidatesOnly !== 3 || linkage.counts.unlinked !== 790 ||
+    linkage.counts.ambiguousStrong !== 0) fail("856-to-383 crosswalk counts mismatch");
+for (const entry of linkage.rows) {
+  const record = byId.get(entry.id);
+  if (!record || record.decision === "REJECT" || record.decision !== entry.choice) fail("crosswalk decision mismatch " + entry.id);
+}
+if (master.phase1Crosswalk.reviewCardsAssessed !== 856 || master.phase1Crosswalk.productionMutation !== false) fail("master crosswalk metadata mismatch");
 if (master.gates.production !== "UNTOUCHED") fail("production gate modified");
 console.log("PASS Sacred Art Phase 1: " + records.length + " reviewed; " + expected.acceptedOrConditional + " accepted/conditional; " + counts.REJECT + " rejected; no production mutations.");
