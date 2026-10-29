@@ -15,8 +15,9 @@ function setup({badFrench=false,collectMacro=false,cycle=false,wrongPin=false}={
    ["Ant Vespera",["@:Ant Laudes"]],
    ["Ant Laudes",cycle?["@:Ant Vespera"]:["Antiphon of "+language]],
    ["Ant 1",["Source Magnificat antiphon "+language]],
+   ["Versum 1",["@Psalterium/Special/Major Special:Adv Versum 3"]],
    ["Oratio",collectMacro?["Prayer "+language,"$Qui vivis"]:["Prayer "+language]]
-  ]):new Map([["Other",["Psalterium line "+language]]]);
+  ]):new Map([["Adv Versum 3",["Psalterium line "+language]]]);
   if(badFrench&&language==="fr")map.delete("Ant Laudes");
   return {sourceRevision:wrongPin?"0".repeat(40):DIVINUM_OFFICIUM_PIN,
    sourcePath:path,language,map};
@@ -39,10 +40,13 @@ test("same-leaf @: reference resolves the explicit source section in all three l
 test("absolute @path:section references retain dependency and exact language",async()=>{
  const {resolver}=setup();
  const results=await Promise.all(["la","en","fr"].map(language=>
-  resolver.resolve({path:other,section:"Other",language})));
+  resolver.resolve({path:original,section:"Versum 1",language})));
  assert.equal(results[0].text,"Psalterium line la");
  assert.equal(results[2].text,"Psalterium line fr");
  assert.equal(results[0].status,"EXPLICIT_AT_REFERENCES_EXPANDED_UNVERIFIED");
+ assert.deepEqual(results[0].referenceTrace.map(x=>x.sourceId),[
+  original+"#Versum 1",other+"#Adv Versum 3"
+ ]);
 });
 test("a parsed three-language explicit-reference section can enter a draft but is not a complete Hour",async()=>{
  const {resolver}=setup();
