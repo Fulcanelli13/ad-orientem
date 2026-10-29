@@ -4,6 +4,9 @@ on:
     branches: [main]
     paths:
       - "src/pray/traditional-pray-runtime.js"
+      - "src/pray/daily-ux-pilot.js"
+      - "tests/pray-daily-ux-pilot-contract.mjs"
+      - "tests/pray-daily-ux-pilot-phone.mjs"
       - "src/pray/traditional-pray-styles.js"
       - "src/pray/devotional-sequence-adapter.js"
       - "tests/pray-traditional-dual-axis-phone.mjs"
@@ -26,13 +29,18 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: node tests/pray-guided-cards.mjs
       - run: node tests/pray-traditional-life.mjs
+      - run: node tests/pray-daily-ux-pilot-contract.mjs
       - run: npx playwright install --with-deps chromium
       - run: node tests/pray-traditional-dual-axis-phone.mjs
+      - name: Compare source-owned 11/13 card and continuous daily readers
+        run: node tests/pray-daily-ux-pilot-phone.mjs
       - name: Preserve French phone reader screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: traditional-daily-dual-axis-phone
-          path: artifacts/pray-traditional-daily
+          path: |
+            artifacts/pray-traditional-daily/
+            artifacts/pray-daily-ux-pilot/
           if-no-files-found: warn
           retention-days: 21
