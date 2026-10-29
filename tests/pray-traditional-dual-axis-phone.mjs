@@ -25,7 +25,7 @@ try{
  browser=await chromium.launch({headless:true});
  const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,locale:"fr-FR",serviceWorkers:"block"});
  const errors=[];page.on("pageerror",e=>errors.push(e.message));
- await page.goto("http://127.0.0.1:4286/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+ await page.goto("http://127.0.0.1:4286/index.html?aoDailyUxPilot=0",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().installed===true&&typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("settings"));
  await page.waitForSelector("#ao-settings-modular-root [data-settings-route='/settings/language-reading']",{timeout:20000});
@@ -71,8 +71,8 @@ try{
   node.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[t(230+dx,390+dy)]}));
  },{dx,dy});
  await open("pray.morning_evening");
- // Current production default is Design B. This branch must integrate with it,
- // not accidentally revive the pre-#1789 Daily reading presentation.
+ // Design B remains the reversible legacy presentation. This suite protects
+ // that fallback; the daily UX phone suite independently tests the book-first default.
  await page.waitForSelector('#aoPray435930[data-ao-contemplative-daily="guided"]',{timeout:12000});
  assert.equal(await page.locator('#aoPray435930[data-ao-contemplative-daily="guided"]').count(),1);
  await page.screenshot({path:resolve(captures,"morning-390-fr.png"),animations:"disabled"});
