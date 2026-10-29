@@ -1,4 +1,4 @@
-name: Prayer Novena witness and stage progress phone acceptance
+name: Prayer Novena reading and witness phone acceptance
 on:
   pull_request:
     branches: [main]
@@ -37,5 +37,13 @@ jobs:
         run: node tests/pray-novena-witness-contract.mjs
       - name: Guided stage source/ARIA contract
         run: node tests/pray-novena-stage-progress-contract.mjs
-      - name: 320px and 390px Novena witness and guided-stage continuity
+      - name: 320px and 390px Novena witness, guided-stage and thumb-reading acceptance
         run: node tests/pray-novena-witness-position-phone.mjs
+      - name: Attach temporary Novena mobile review captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: novena-reading-comfort-phone
+          path: artifacts/pray-b35/*.png
+          if-no-files-found: ignore
+          retention-days: 3
