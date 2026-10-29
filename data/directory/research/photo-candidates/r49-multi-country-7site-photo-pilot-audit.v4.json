@@ -1,0 +1,137 @@
+{
+  "schema": "AO_DIRECTORY_PHOTO_REPRESENTATIVE_SAMPLE_AUDIT_V4",
+  "research_only": true,
+  "generated_at": "2026-10-29",
+  "source": {
+    "pr": 1905,
+    "git_head": "66b43f39967eb210ea8349d7a281ae3cb4b00a06",
+    "ci_run_id": 40796249642,
+    "ci_artifact_id": 12864550312,
+    "ci_artifact_expiration": "2026-10-31T00:52:10Z",
+    "snapshot": "AO_PRELIMINARY_TLM_MAP_R49",
+    "indices": [
+      58,
+      116,
+      144,
+      274,
+      6,
+      2,
+      10
+    ]
+  },
+  "metrics": {
+    "venues_processed": 7,
+    "countries": [
+      "FR",
+      "IT",
+      "US",
+      "MU",
+      "BE",
+      "AU",
+      "CA"
+    ],
+    "any_candidate": 3,
+    "unique_image_sources": 3,
+    "by_category": {
+      "EXTERIOR": 2,
+      "INTERIOR": 1,
+      "SACRED_DETAIL": 0
+    },
+    "by_source": {
+      "COUNTRY_CONSTRAINED_TEXT": 1,
+      "WIKIDATA_COMMONS_CATEGORY": 1,
+      "WIKIDATA_P18": 1,
+      "OPENVERSE_API_SEARCH": 0
+    },
+    "wikidata_geo_name_corroborated": 2,
+    "openverse_requests": 7,
+    "openverse_timeouts": 2,
+    "approved_photos": 0,
+    "published_photos": 0,
+    "downloaded_images": 0
+  },
+  "venues": [
+    {
+      "country": "FR",
+      "name": "Eglise Saint-Sébastien",
+      "identity_state": "NO_GEO_NAME_CORROBORATED_IDENTITY",
+      "candidate_count": 0,
+      "errors": {
+        "OPENVERSE": "TimeoutError: The read operation timed out"
+      }
+    },
+    {
+      "country": "IT",
+      "name": "Ss. Trinità dei Pellegrini",
+      "identity_state": "NO_WIKIDATA_SEARCH_HITS",
+      "candidate_count": 0,
+      "errors": {}
+    },
+    {
+      "country": "US",
+      "name": "Church of St Mary",
+      "identity_state": "NO_GEO_NAME_CORROBORATED_IDENTITY",
+      "candidate_count": 1,
+      "errors": {
+        "OPENVERSE": "TimeoutError: The read operation timed out"
+      },
+      "candidate": {
+        "title": "File:Nave of Mary Magdalene Church in 1691.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Nave_of_Mary_Magdalene_Church_in_1691.jpg",
+        "discovery_method": "COUNTRY_CONSTRAINED_TEXT",
+        "identity_verdict": "FALSE_MATCH_NOT_SAME_DEDICATION",
+        "publication": "BLOCK"
+      }
+    },
+    {
+      "country": "MU",
+      "name": "Église Sainte-Thérèse",
+      "identity_state": "NO_GEO_NAME_CORROBORATED_IDENTITY",
+      "candidate_count": 0,
+      "errors": {}
+    },
+    {
+      "country": "BE",
+      "name": "Eglise Saints Jean et Etienne aux Minimes",
+      "identity_state": "GEO_AND_NAME_CORROBORATED_RESEARCH_ONLY",
+      "wikidata_id": "Q2617482",
+      "distance_m": 8.6,
+      "candidate_count": 1,
+      "candidate": {
+        "title": "File:Entry porch of the Minim church, with the former convent in the back.png",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Entry_porch_of_the_Minim_church%2C_with_the_former_convent_in_the_back.png",
+        "discovery_method": "WIKIDATA_COMMONS_CATEGORY",
+        "identity_verdict": "HOLD_CONTENT_AND_RIGHTS",
+        "publication": "BLOCK"
+      }
+    },
+    {
+      "country": "AU",
+      "name": "St Benedict's Catholic Church",
+      "identity_state": "NO_GEO_NAME_CORROBORATED_IDENTITY",
+      "candidate_count": 0,
+      "errors": {}
+    },
+    {
+      "country": "CA",
+      "name": "St. Clement Parish",
+      "identity_state": "GEO_AND_NAME_CORROBORATED_RESEARCH_ONLY",
+      "wikidata_id": "Q3365740",
+      "distance_m": 10.9,
+      "candidate_count": 1,
+      "candidate": {
+        "title": "File:Ste-Anne's Church Ottawa.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ste-Anne%27s_Church_Ottawa.jpg",
+        "discovery_method": "WIKIDATA_P18",
+        "identity_verdict": "HOLD_FOR_EXACT_WORSHIP_SITE_RELATION_AND_RIGHTS",
+        "publication": "BLOCK"
+      }
+    }
+  ],
+  "next_controls": [
+    "Exclude generic single-saint-name text-search coincidences; implemented in PR at commit 6f2cee4",
+    "Bound Openverse response wait to 15 s for anonymous requests",
+    "No publication without independent exact physical-site relation, original-file rights, visual suitability and approved derivative checksum"
+  ],
+  "note": "This compact permanent audit preserves pilot metrics and actionable candidate evidence from the short-lived CI artifact, but does not replace the original full JSON."
+}
