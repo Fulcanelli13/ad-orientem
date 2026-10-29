@@ -8,6 +8,7 @@ on:
       - "tests/customs-full-registry-census.mjs"
       - "tests/customs-wave-a-bulk-reconciliation.mjs"
       - "tests/customs-a1-evidence-indulgence-gate.mjs"
+      - "tests/customs-a23-258-and-primary-facsimile-gate.mjs"
       - "data/customs/indulgence-grant-research-seed-20261029.v1.json"
       - "tests/customs-pitre-1900-wave05-editorial-staging-integrity.mjs"
       - "tests/customs-weiser-readiness-pages.mjs"
@@ -107,3 +108,7 @@ jobs:
         run: |
           node --check tests/customs-a1-evidence-indulgence-gate.mjs
           node tests/customs-a1-evidence-indulgence-gate.mjs
+      - name: Verify all 408 full-queue groups, twelve original facsimiles, 23 grant cases
+        run: |
+          node --check tests/customs-a23-258-and-primary-facsimile-gate.mjs
+          node tests/customs-a23-258-and-primary-facsimile-gate.mjs
