@@ -23,7 +23,10 @@ assert.deepEqual(new Set(newSites.map(x=>x.country)),new Set(["SG","MA","CA","ZM
 assert.equal(new Set(seed.shrines.map(x=>x.place_id)).size,257);
 assert.equal(new Set(geo.places.map(x=>x.place_id)).size,geo.places.length);
 assert.equal(hero.items.length,31,"New source-certified shrine images do not change the six original R70 coverage sites");
-assert.equal(gallery.items.length,6);
+// Preserve the original six R68/R69 photographs without treating later
+// approved Place imagery as an unauthorized mutation of this R70 cohort.
+assert.equal(gallery.items.filter(item=>item.reviewed_at==="2026-10-11").length,6);
+assert.ok(gallery.items.length>=6);
 assert.equal(illustrated.length,14);
 assert.equal(board.candidates.length,750);
 assert.equal(board.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,166);
