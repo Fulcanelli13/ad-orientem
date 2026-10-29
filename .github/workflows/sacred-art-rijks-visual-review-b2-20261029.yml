@@ -30,7 +30,7 @@ jobs:
           python scripts/art/sacred-art-rijks-rights-gated-review-b2-20261029.py --offline-smoke
       - name: Prepare official source metadata and CC0-only whole-image research sheets
         run: |
-          python scripts/art/sacred-art-rijks-rights-gated-review-b2-20261029.py --max-objects 8 --max-images 2 --delay 0.15 --timeout 16
+          python scripts/art/sacred-art-rijks-rights-gated-review-b2-20261029.py --max-objects 140 --max-images 70 --delay 0.15 --timeout 16
       - name: Verify no false legal, aesthetic or production promotion
         run: |
           python - <<'PY'
