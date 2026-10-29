@@ -56,17 +56,23 @@ try{
     assert.equal(opened,true,"Calendar must open through its actual owner");
     const cal=page.locator("#ao-calendar-modular-root");
     await cal.locator(".aoCalCustomCatalogue").waitFor({state:"visible",timeout:60000});
-    await cal.locator(".aoCalCustomCatalogue > summary").click();
+    // Calendar's asynchronous 1962-day paints replace the complete article DOM.
+    // Open the native disclosure nodes synchronously rather than letting a
+    // Playwright stability wait target a detached old <summary>.
+    await page.evaluate(()=>{
+      const root=document.querySelector("#ao-calendar-modular-root");
+      root?.querySelector(".aoCalCustomCatalogue")?.setAttribute("open","");
+      root?.querySelector('[data-cal-custom-id="ADVT-001"]')?.setAttribute("open","");
+    });
     const parent=cal.locator('[data-cal-custom-id="ADVT-001"]');
     assert.equal(await parent.count(),1,"The existing Advent wreath article must remain one canonical card");
-    await parent.locator(":scope > summary").click();
     const variant=cal.locator('[data-cal-custom-variant="AO-CUST-VAR-003"]');
     const count=await variant.count();
     assert.equal(count,review?1:0,"Variant should be visible only with explicit editorial preview flag");
     if(review){
       assert.equal(await cal.locator('[data-cal-customs-variants-preview="ADVT-001"]').count(),1);
       assert.match(await variant.textContent(),lang==="fr"?/Jean ou Jeanne/:/John or Joan/);
-      await variant.locator("summary").click();
+      await page.evaluate(()=>document.querySelector('[data-cal-custom-variant="AO-CUST-VAR-003"]')?.setAttribute("open",""));
       assert.match(await variant.textContent(),/1958|Weiser|Advent/);
       const source=variant.locator('a[href^="https://www.fisheaters.com/srpdf/"]');
       assert.equal(await source.count(),1,"A source link must accompany historical variant");
