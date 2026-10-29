@@ -10,6 +10,10 @@ endpoints={
 'getty_collection_ui':'https://www.getty.edu/art/collection/search/?q=Christ',
 'mia_picture_sample':'https://1.api.artsmia.org/1578/medium.jpg',
 'mia_picture_old_host':'https://api.artsmia.org/images/1578/medium.jpg',
+'rijks_all_oil':'https://data.rijksmuseum.nl/search/collection?type=painting&material=oil+paint&imageAvailable=true',
+'rijks_christ':'https://data.rijksmuseum.nl/search/collection?type=painting&imageAvailable=true&description=Christ',
+'rijks_maria':'https://data.rijksmuseum.nl/search/collection?type=painting&imageAvailable=true&description=Maria',
+'rijks_saint':'https://data.rijksmuseum.nl/search/collection?type=painting&imageAvailable=true&description=saint',
 }
 for name,url in endpoints.items():
  row={'name':name,'url':url}
