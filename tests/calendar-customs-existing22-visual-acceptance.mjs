@@ -93,7 +93,7 @@ try{
       articleScroll:el?.scrollWidth,articleClient:el?.clientWidth,
       canonicalArticles:el?.querySelectorAll("[data-cal-custom-id]").length};
     });
-    assert.equal(dimensions.canonicalArticles,35,"No extra published article card");
+    assert.equal(dimensions.canonicalArticles,35,"35 original published articles plus single PENT-001 proposal");
     assert.ok(dimensions.articleScroll<=dimensions.articleClient+2,
       "Calendar horizontal overflow at "+width+": "+JSON.stringify(dimensions));
     assert.ok(errors.length===0,"Browser errors: "+errors.join(" | "));
