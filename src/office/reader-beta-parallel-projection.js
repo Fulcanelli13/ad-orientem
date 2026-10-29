@@ -32,7 +32,8 @@ function originalLines(s){
  if(typeof s!=="string"||s.length>180000||!s.trim()||
     /[\u0000]/u.test(s))return null;
  const lines=s.split("\n");
- if(lines.some(x=>!x.trim()||x.length>12000))return null;
+ if(lines.some(x=>!x.trim()||x.length>12000||
+    /^\s*[$@&]/u.test(x)||/\{:|<[^>]+>/u.test(x)))return null;
  return lines;
 }
 export function projectOfficeBetaParallelHour({draft,handoff}={}){
