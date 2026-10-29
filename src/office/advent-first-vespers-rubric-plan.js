@@ -17,6 +17,8 @@ import {OFFICE_ADVENT_ASSEMBLY_SCHEMA}
  from "./advent-first-vespers-assembled-research.js";
 import {OFFICE_ADVENT_COMM_REVIEW_SCHEMA}
  from "./advent-first-vespers-universal-commemoration.js";
+import {ADVENT_COLLECT_ENDING_SCHEMA}
+ from "./advent-i-collect-ending-1960-research.js";
 
 export const OFFICE_ADVENT_RUBRIC_PLAN_SCHEMA="ao.office.advent-i-vespers-1960-rubric-plan.v1";
 const PRAYERS="Psalterium/Common/Prayers#";
@@ -121,7 +123,7 @@ function event(kind,sourceId,extras={}){
 export function reviewAdventFirstVespers1960RubricPlan({
  assembly,calendarScope="UNIVERSAL",
  recitation="SOLO",minister="BELOW_DEACON",
- universalCommemoration=null
+ universalCommemoration=null,collectEndingReview=null
 }={}){
  if(!validAssembly(assembly))
   return bad("OFFICE_ADVENT_RUBRIC_PLAN_NINE_SOURCE_SLOTS_REQUIRED");
@@ -143,6 +145,34 @@ export function reviewAdventFirstVespers1960RubricPlan({
   comm.completeHourCertified!==false||
   comm.publishable!==false||comm.published!==false
  ))return bad("OFFICE_UNIVERSAL_COMMEMORATION_REVIEW_INVALID");
+ const ending=collectEndingReview;
+ if(ending!==null&&(
+  ending.schema!==ADVENT_COLLECT_ENDING_SCHEMA||
+  ending.status!=="THREE_LANGUAGE_SOURCE_COLLECT_AND_DISMISSAL_VARIANTS_NOT_PRINT_CERTIFIED"||
+  ending.sourceRevision!==DIVINUM_OFFICIUM_PIN||
+  ending.civilDate!=="2026-11-28"||ending.officeDate!=="2026-11-29"||
+  ending.officePart!=="FIRST"||ending.calendarScope!=="UNIVERSAL"||
+  ending.recitation!==recitation||ending.minister!==minister||
+  ending.languageComponentsLocated!==3||
+  ending.collectEndingSourceMacroResolved!==true||
+  ending.exactPrintedCollectEndingCollated!==false||
+  ending.translationFidelityCertified!==false||
+  ending.completeHourCertified!==false||
+  ending.publishable!==false||ending.published!==false||
+  !LANGUAGES.every(lang=>{
+   const x=ending.languages?.[lang];
+   return x?.sourceIds?.length===6&&
+    typeof x.oremus==="string"&&
+    typeof x.collectBody==="string"&&
+    Array.isArray(x.beforeCollect)&&x.beforeCollect.length===2&&
+    Array.isArray(x.collectConclusion)&&x.collectConclusion.length===2&&
+    Array.isArray(x.beforeBenedicamus)&&
+    Array.isArray(x.benedicamus)&&x.benedicamus.length===2&&
+    Array.isArray(x.fideliumAnimae)&&x.fideliumAnimae.length===2&&
+    x.printedTextIndependentlyCollated===false&&
+    x.translationFidelityApproved===false;
+  })
+ ))return bad("OFFICE_COLLECT_ENDING_RESEARCH_EVIDENCE_INVALID");
  const dialogue=(recitation==="CHOIR_OR_COMMON"&&
   minister==="DEACON_OR_HIGHER")?
   "DOMINUS_VOBISCUM":"DOMINE_EXAUDI";
@@ -184,11 +214,17 @@ export function reviewAdventFirstVespers1960RubricPlan({
   slot:"magnificat-canticle"}));
  events.push(event("ANTIPHON_AFTER",magnAnt,{
   slot:"magnificat-antiphon",fullText:true}));
- events.push(event("BEFORE_COLLECT_DIALOGUE",null,{
-  slot:"collect",variant:dialogue,sourceTextCollated:false}));
- events.push(event("OREMUS",null,{
-  slot:"collect",sourceTextCollated:false}));
+ events.push(event("BEFORE_COLLECT_DIALOGUE",
+  ending?PRAYERS+"Dominus":null,{
+   slot:"collect",variant:dialogue,
+   sourceSectionLocated:!!ending,sourceTextCollated:false}));
+ events.push(event("OREMUS",ending?PRAYERS+"Oremus":null,{
+  slot:"collect",sourceSectionLocated:!!ending,
+  sourceTextCollated:false}));
  events.push(event("COLLECT",PROPER+"Oratio",{slot:"collect"}));
+ events.push(event("COLLECT_ENDING",PRAYERS+"Qui vivis",{
+  slot:"collect",sourceSectionLocated:!!ending,
+  macroResolved:!!ending,completePrintedTextCollated:false}));
  // RG111 and BR250-259 require explicit privilege/local-calendar decisions.
  // NO "no commemoration" assertion is derived from an empty research slot.
  events.push(comm?
@@ -197,8 +233,14 @@ export function reviewAdventFirstVespers1960RubricPlan({
    noSourceTextRequired:true,localCalendarAdjudicated:false}):
   event("COMMEMORATIONS_UNADJUDICATED",null,{
    slot:"commemorations",selectionAuthorized:false}));
- events.push(event("DISMISSAL_DIALOGUE_UNCOLLATED",null,{
-  slot:"conclusion",variant:dialogue,sourceTextCollated:false}));
+ events.push(ending&&dialogue==="DOMINE_EXAUDI"?
+  event("SECOND_DOMINE_EXAUDI_OMITTED",null,{
+   slot:"conclusion",documentedSourceCondition:true,
+   sourceSectionLocated:true,printedVariantCollated:false}):
+  event(ending?"DISMISSAL_DIALOGUE_SOURCE_CANDIDATE":
+   "DISMISSAL_DIALOGUE_UNCOLLATED",ending?PRAYERS+"Dominus":null,{
+    slot:"conclusion",variant:dialogue,
+    sourceSectionLocated:!!ending,sourceTextCollated:false}));
  events.push(event("BENEDICAMUS",PRAYERS+"Benedicamus Domino",{
   slot:"conclusion",sourceTextCollated:false}));
  events.push(event("FIDELIUM_ANIMAE",PRAYERS+"Fidelium animae",{
@@ -209,6 +251,8 @@ export function reviewAdventFirstVespers1960RubricPlan({
   totalDoxologyPositionsIncludingOpening:7,fullAntiphonUsages:12,
   preces:0,paterAveAtOpening:0,
   universalCommemorationDecision:comm?"NO_UNIVERSAL_COMMEMORATION":"WITHHELD",
+  collectEndingSourceDecision:ending?"TRILINGUAL_SOURCE_IDENTIFIED":"WITHHELD",
+  collectEndingTranslationsApproved:false,
   rubricRefs:Object.freeze([
    "BR166a","BR178b","BR179a","BR188","BR190-191",
    "BR198","BR201","BR204","BR246-251","BR260","RG111"
@@ -222,10 +266,11 @@ export function reviewAdventFirstVespers1960RubricPlan({
   hour:"VESPERS",officePart:"FIRST",
   calendarScope,recitation,minister,dialogue,
   orderedEvents:Object.freeze(events),sourceAudit,
-  unresolvedGates:comm?
-   Object.freeze(GATES.map(x=>x==="UNIVERSAL_AND_LOCAL_PRIVILEGED_COMMEMORATION_REVIEW"?
-     "LOCAL_PRIVILEGED_COMMEMORATION_REVIEW":x)):
-   GATES,
+  unresolvedGates:Object.freeze(GATES.map(x=>
+   comm&&x==="UNIVERSAL_AND_LOCAL_PRIVILEGED_COMMEMORATION_REVIEW"?
+    "LOCAL_PRIVILEGED_COMMEMORATION_REVIEW":
+   ending&&x==="1960_FIRST_VESPERS_COLLECT_AND_CONCLUSION_WITNESSES"?
+    "COLLECT_ENDING_1961_PRINT_AND_TRANSLATION_REVIEW":x)),
   appointedOfficeVerified:false,completeHourVerified:false,
   rubricsFullyCertified:false,printedEditionCertified:false,
   translationAlignmentVerified:false,rightsApproved:false,
