@@ -202,7 +202,10 @@ test("source-owned Qui vivis supports a two-component trilingual Advent I resear
 });
 test("a missing French standard-prayer conclusion blocks Advent I collect research",async()=>{
  const env=environment({collectMacro:true,approvedPrayers:true,missingFrenchPrayer:true});
- await assert.rejects(composeOfficeSourceAcceptanceSlice(args(env,handoff([
+ const r=await composeOfficeSourceAcceptanceSlice(args(env,handoff([
   ...sections,{key:"collect",path:sourcePath,section:"Oratio",role:"COLLECT"}
- ]))),/OFFICE_AT_SOURCE_SECTION_MISSING/);
+ ])));
+ assert.equal(r.status,"WITHHELD");
+ assert.match(r.reason,/OFFICE_AT_SOURCE_SECTION_MISSING/);
+ assert.equal(r.publishable,false);
 });
