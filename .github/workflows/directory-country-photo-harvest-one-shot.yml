@@ -34,6 +34,7 @@ jobs:
           import json
           j=json.load(open('data/directory/research/.run-country-harvest-eight-20261029.json'))
           assert j=={"schema":"AO_DIRECTORY_COUNTRY_P18_EIGHT_ONCE_V1",
+                      "attempt":2,
                       "countries":["MU","IE","IT","DE","FR","US","AU","BE"],
                       "max_rows":2000,"publication":False,"image_downloads":False}
           PY
@@ -78,7 +79,7 @@ jobs:
           assert stats["original_files_downloaded"]==0
           assert stats["approved_cover_images"]==0
           assert stats["published_images"]==0
-          assert stats["countries_successful"]+stats["countries_with_source_error"]==8
+          assert stats["countries_successful"]+stats.get("countries_with_source_error",0)==8
           assert all(x["publication"]=="RESEARCH_ONLY_NEVER_APP_VISIBLE"
                      and not x["approved_exterior"] for x in j["records"])
           assert all(all(c["publication"]=="RESEARCH_ONLY_NEVER_APP_VISIBLE"
