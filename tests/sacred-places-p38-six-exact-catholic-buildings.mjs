@@ -10,7 +10,7 @@ assert.equal(m.schema,"AO_SACRED_PLACES_P38_SIX_EXACT_CATHOLIC_BUILDINGS_V1");
 assert.deepEqual(Object.values(m.baseline),[457,755,457,198,145,9]);
 assert.deepEqual(Object.values(m.proposed),[463,761,463,204,145,9]);
 assert.deepEqual([g.places.length,s.sources.length,h.place_crosswalk.length,h.exception_queues.places_without_direct_claim.length,g.geoAreas.length,g.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.heritage_crosswalk,LIVE.unlinked,LIVE.areas,LIVE.links]);
-assert.ok(LIVE.places>=463);assert.ok(LIVE.sources>=761);assert.ok(LIVE.areas>=145);assert.equal(LIVE.links,9);
+assert.ok(LIVE.places>=463);assert.ok(LIVE.sources>=761);assert.ok(LIVE.areas>=145);assert.ok(LIVE.links>=9,"Confirmed links may grow only by later source-proven releases");
 assert.equal(h.counts.places,LIVE.places);assert.equal(h.counts.places_without_direct_claim,LIVE.unlinked);
 assert.equal(m.new_physical_locations,6);assert.equal(m.published_new.length,6);assert.equal(m.photo_assets_approved,0);assert.equal(m.tlm_schedule_links_added,0);
 const rel=RELEASES.findIndex(x=>x.id==="P38");assert.ok(rel>0 && RELEASES[rel-1].id==="P37");

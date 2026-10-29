@@ -6545,6 +6545,38 @@
       "directness": "SECONDARY",
       "url": "https://www.openstreetmap.org/way/36373669",
       "contribution": "Named cathedral worship structure mapped by osm:way:36373669, independently correlated with official identity and https://mapcarta.com/W36373669. Site centroid is approximate; building's original closed OSM way is the identity reference."
+    },
+    {
+      "id": "AO-P92-SITE-BONIFACE-US",
+      "title": "Exact St Boniface worship-site identity, 703 West 5th Street, Sioux City",
+      "issuer": "Cathedral of the Epiphany parish, Sioux City",
+      "directness": "OFFICIAL_CHURCH",
+      "url": "https://sccathedral.org/",
+      "contribution": "The parish identifies St. Boniface at 703 West 5th Street as a distinct worship building rather than the Cathedral at Douglas Street."
+    },
+    {
+      "id": "AO-P92-GEO-BONIFACE-US",
+      "title": "St Boniface church map point, Sioux City",
+      "issuer": "OpenStreetMap contributors; independent map identifier confirmed against the parish address",
+      "directness": "SECONDARY",
+      "url": "https://www.openstreetmap.org/node/354389668",
+      "contribution": "Named Catholic worship site OSM node 354389668; mapped point corroborated by https://mapcarta.com/22093934 and exact street address; geometry is not a verified church footprint."
+    },
+    {
+      "id": "AO-P92-SITE-ST-AGNES-US",
+      "title": "Church of Saint Agnes 535 Thomas Avenue Saint Paul",
+      "issuer": "Archdiocese of Saint Paul and Minneapolis",
+      "directness": "OFFICIAL_DIOCESAN",
+      "url": "https://www.archspm.org/location/st-agnes-catholic-church/",
+      "contribution": "The archdiocesan directory identifies the active Saint Paul Church of Saint Agnes, including 535 Thomas Avenue address and Latin liturgical service without changing Directory schedule records."
+    },
+    {
+      "id": "AO-P92-GEO-ST-AGNES-US",
+      "title": "St Agnes building object coordinates, historic photograph",
+      "issuer": "Wikimedia Commons photographic record, object location",
+      "directness": "SECONDARY",
+      "url": "https://commons.wikimedia.org/wiki/File:Stagnesa.jpg",
+      "contribution": "Photographic file explicitly identifies Church of St Agnes at 548 Lafond Avenue, adjacent to the 535 Thomas Avenue parish address; object location 44.959722, -93.123333; not a claimed OSM building polygon."
     }
   ]
 }

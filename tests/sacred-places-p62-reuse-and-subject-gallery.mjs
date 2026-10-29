@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import {readFileSync} from "node:fs";
 const read = p => JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const audit=read("data/geography/research/sacred-places-p62-reuse-adjudication.v1.json");
@@ -10,7 +11,7 @@ const existingGallery=read("data/geography/approved-place-gallery.v1.json");
 const photoResearch=read("data/geography/research/sacred-places-p61-photo-candidates.v1.json");
 assert.equal(audit.schema,"AO_SACRED_PLACES_P62_P60_ADDITIONAL_REUSE_ADJUDICATION_V1");
 assert.equal(gallery.schema,"AO_SACRED_PLACES_P62_SUBJECT_PHOTOGRAPHY_PILOT_V1");
-assert.deepEqual([geo.places.length,sources.sources.length,media.items.length],[516,818,31]);
+assert.deepEqual([geo.places.length,sources.sources.length,media.items.length],[LIVE.places,LIVE.sources,31]);
 // P62's historical six were a baseline, not a permanent cap on additional
 // independently licensed physical Place photographs.
 const historicalSix=existingGallery.items.filter(row=>row.reviewed_at==="2026-10-11");
@@ -79,4 +80,4 @@ assert.deepEqual(new Set(nd.subjects.filter(s=>s.photographs.length).map(s=>s.ki
 assert.ok(subjectids.has("ndp-holy-crown")&&subjectids.has("ndp-dubuisson-2024-reliquary"));
 assert.ok(gallery.places.find(x=>x.place_id==="place:FR:notre-dame-paris").subjects.find(x=>x.subject_id==="ndp-true-cross"));
 assert.ok(!media.items.some(x=>x.place_id==="place:FR:notre-dame-paris"));
-console.log("PASS P62: 26 adjudications, rejected Lateran merge, protected two-basilica hold, 13 multi-subject records, 6 unapproved Commons photo candidates; 516 Places and 31 approved media unchanged.");
+console.log("PASS P62: 26 adjudications, rejected Lateran merge, protected two-basilica hold, 13 multi-subject records, 6 unapproved Commons photo candidates; current Places and 31 approved media unchanged.");

@@ -27,7 +27,15 @@ for(const release of RELEASES){
   assert.ok(isMapPublishablePlaceGeo(p.geo,p.address.country_code));
   assert.ok(p.source_ids?.length>=1,"Identity source provenance not retained: "+item.place_id);
   for(const sid of p.source_ids)assert.ok(sourceById.has(sid),"Dangling typed site source "+sid);
-  assert.ok(!geo.directoryPlaceLinks.some(link=>link.place_id===p.place_id),"New Places should not acquire inferred TLM venue links");
+  const links=geo.directoryPlaceLinks.filter(link=>link.place_id===p.place_id);
+  if(release.id==="P92"){
+    const expected=release.data.published_new.find(x=>x.place_id===p.place_id);
+    assert.equal(links.length,1,"P92 requires one independently sourced exact venue bridge");
+    assert.equal(links[0].venue_id,expected.directory_venue_id);
+    assert.equal(links[0].confidence,"CONFIRMED");
+    assert.equal(links[0].relationship,"LOCATED_AT");
+    assert.ok(links[0].source_ids.length>=2);
+  }else assert.equal(links.length,0,"Historical Place release must not acquire an inferred TLM venue link");
  }
 }
 assert.equal(assertExploreGeographyRegistry(geo).pass,true);

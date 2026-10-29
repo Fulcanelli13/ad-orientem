@@ -23,7 +23,7 @@ assert.equal(main.places.length,LIVE.places);
 assert.equal(89+r89.country_areas_added.length+r90.country_areas_added.length+r91.country_areas_added.length+r92.country_areas_added.length+r93.country_areas_added.length,141,"R93 frozen geography milestone");
 assert.equal(main.geoAreas.length,LIVE.areas,"Current geography includes subsequent approved releases");
 assert.equal(sources.sources.length,LIVE.sources);
-assert.equal(main.directoryPlaceLinks.length,9);
+assert.equal(main.directoryPlaceLinks.length,LIVE.links);
 assert.equal(heritage.place_crosswalk.length,main.places.length);
 assert.equal(heritage.counts.places,main.places.length);
 assert.equal(heritage.counts.places_without_direct_claim,heritage.exception_queues.places_without_direct_claim.length);

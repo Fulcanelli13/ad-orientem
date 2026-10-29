@@ -1,3 +1,4 @@
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 
@@ -16,7 +17,7 @@ assert.equal(new Set(p21.reviewed_200.map(x=>x.candidate_id)).size,200);
 assert.deepEqual([p21.baseline.places,p21.baseline.sources,p21.baseline.directory_links],[361,659,9]);
 assert.ok(geo.places.length>=361);
 assert.ok(sources.sources.length>=659);
-assert.equal(geo.directoryPlaceLinks.length,9);
+assert.equal(geo.directoryPlaceLinks.length,LIVE.links);
 const gates={};
 let extracted=0,normalised=0;
 const geoIds=new Set(geo.places.map(x=>x.place_id));

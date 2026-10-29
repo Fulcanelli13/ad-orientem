@@ -23,7 +23,7 @@ assert.equal(geo.geoAreas.length,LIVE.areas);
 assert.equal(sources.sources.length,LIVE.sources);
 assert.equal(new Set(geo.places.map(x=>x.place_id)).size,geo.places.length);
 assert.equal(new Set(sources.sources.map(x=>x.id)).size,sources.sources.length);
-assert.equal(geo.directoryPlaceLinks.length,9);
+assert.equal(geo.directoryPlaceLinks.length,LIVE.links);
 assert.equal(heritage.place_crosswalk.length,geo.places.length);
 assert.equal(heritage.counts.places,geo.places.length);
 assert.equal(heritage.counts.places_without_direct_claim,heritage.exception_queues.places_without_direct_claim.length);

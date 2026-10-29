@@ -21,7 +21,7 @@ assert.equal(release.proposed.source_registry,630);
 assert.equal(geo.places.length,LIVE.places);
 assert.equal(sources.sources.length,LIVE.sources);
 assert.equal(geo.geoAreas.length,LIVE.areas,"Current country areas must follow immutable release chain");
-assert.equal(geo.directoryPlaceLinks.length,9);
+assert.equal(geo.directoryPlaceLinks.length,LIVE.links);
 assert.equal(cross.place_crosswalk.length,LIVE.places);
 assert.equal(cross.counts.places,LIVE.places);
 assert.equal(cross.counts.places_without_direct_claim,LIVE.unlinked);

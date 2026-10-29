@@ -20,7 +20,7 @@ assert.equal(heritage.counts.places,LIVE.places);
 assert.equal(heritage.counts.places_without_direct_claim,LIVE.unlinked);
 assert.equal(heritage.exception_queues.places_without_direct_claim.length,LIVE.unlinked);
 assert.equal(geo.geoAreas.length,LIVE.areas,"Current geography count derives from immutable release ledger");
-assert.equal(geo.directoryPlaceLinks.length,9);
+assert.equal(geo.directoryPlaceLinks.length,LIVE.links);
 assert.equal(r.published_new.length,3);
 assert.equal(p16.held_exceptions.length,16);
 assert.equal(r.source_queue.held_original_exception_slots,p16.held_exceptions.length);
