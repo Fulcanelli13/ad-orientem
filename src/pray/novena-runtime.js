@@ -158,10 +158,15 @@ function canonicalPrayer(id,count=1){const p=prayerData()[id];if(!p)return `<div
 function commonPrayers(n){return (n.commonPrayers||[]).map(x=>canonicalPrayer(x[0],x[1])).join('')}
 function daySource(n,d){return n.form==='REPEAT_FORM'?n.repeatText:d.text}
 function novenaPattern(n){return n.pattern||(n.id==='immaculate_conception'?'OPENING_DAY_COMMON_CLOSE':'STANDARD')}
+function novenaHasCommonStage(n){
+ // Do not insert an empty guided Common prayers card in a source-owned novena
+ // with no common prayer. Retain the slot if there is a shared closing stage.
+ return !!(n.commonPrayers?.length||n.sharedClosingText);
+}
 function novenaChapters(n){return novenaPattern(n)==='SOURCE_REPEAT_ONLY'
  ?[{id:'prepare',title:L('Prepare','Se préparer')},{id:'repeat',title:L('Historical prayer','Prière historique')},{id:'close',title:L('Close','Conclure')}]
- :novenaStageChapters({pattern:novenaPattern(n),sharedClosing:!!n.sharedClosingText},{french:isFr()})}
-function stages(n){const p=novenaPattern(n);return p==='SOURCE_REPEAT_ONLY'?3:p==='HAMMER_MARIAN'?6:p==='OPENING_DAY_COMMON_CLOSE'?5:p==='COMMON_BEFORE_REPEAT'?4:(n.sharedClosingText?5:4)}
+ :novenaStageChapters({pattern:novenaPattern(n),sharedClosing:!!n.sharedClosingText,commonRequired:novenaHasCommonStage(n)},{french:isFr()})}
+function stages(n){return novenaChapters(n).length}
 function stageRail(n){
  const total=stages(n),current=N.stage+1;
  const progress=L('Prayer stage ','Étape de prière ')+current+L(' of ',' sur ')+total;
@@ -200,11 +205,12 @@ function stageContent(n,d){
   if(N.stage===3)return `<div class="aoN1Info"><span class="aoN1Kicker">${esc(L('CLOSE','CONCLURE'))}</span><h3>${esc(L('Remain briefly in prayer','Demeurez brièvement en prière'))}</h3><p>${esc(L('Entrust your intention to God before leaving this prayer.','Confiez votre intention à Dieu avant de quitter cette prière.'))}</p></div>${sourceDetails(n)}`;
  }
  const prayerStage=p==='OPENING_DAY_COMMON_CLOSE'?3:1;
- const commonStage=2;
+ const hasCommon=novenaHasCommonStage(n);
+ const commonStage=hasCommon||p!=='STANDARD'?2:null;
  const sharedClosingStage=n.sharedClosingText?3:null;
- const closeStage=p==='OPENING_DAY_COMMON_CLOSE'?4:(n.sharedClosingText?4:3);
+ const closeStage=p==='OPENING_DAY_COMMON_CLOSE'?4:(n.sharedClosingText?4:(hasCommon?3:2));
  if(N.stage===prayerStage)return sourceWitness(daySource(n,d),L('Historical prayer','Prière historique'));
- if(N.stage===commonStage)return `<div class="aoN1Info"><h3>${esc(L('Common prayers','Prières communes'))}</h3><p>${esc(commonNote(n))}</p></div>${commonPrayers(n)}`;
+ if(commonStage!==null&&N.stage===commonStage)return `<div class="aoN1Info"><h3>${esc(L('Common prayers','Prières communes'))}</h3><p>${esc(commonNote(n))}</p></div>${commonPrayers(n)}`;
  if(sharedClosingStage!==null&&N.stage===sharedClosingStage)return sourceWitness(n.sharedClosingText,txt(n.sharedClosingLabel||{en:'Common closing prayer',fr:'Prière commune de conclusion'}));
  if(N.stage===closeStage){const loreto=n.closingCanonical?canonicalPrayer(n.closingCanonical,1):'';return `${loreto}<div class="aoN1Info"><span class="aoN1Kicker">${esc(L('CLOSE','CONCLURE'))}</span><h3>${esc(L('Remain briefly in prayer','Demeurez brièvement en prière'))}</h3><p>${esc(p==='OPENING_DAY_COMMON_CLOSE'?L('Moran directs the Litany of Loreto or the Tota pulchra hymn; this reader uses the Litany.','Moran prescrit les Litanies de Lorette ou l’hymne Tota pulchra ; ce lecteur utilise les Litanies.'):L('After a moment of silence, return tomorrow for the next day of the novena.','Après un instant de silence, revenez demain pour le jour suivant de la neuvaine.'))}</p></div>${sourceDetails(n)}`}
  return'';
