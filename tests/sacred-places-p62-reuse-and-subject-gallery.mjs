@@ -11,7 +11,8 @@ const existingGallery=read("data/geography/approved-place-gallery.v1.json");
 const photoResearch=read("data/geography/research/sacred-places-p61-photo-candidates.v1.json");
 assert.equal(audit.schema,"AO_SACRED_PLACES_P62_P60_ADDITIONAL_REUSE_ADJUDICATION_V1");
 assert.equal(gallery.schema,"AO_SACRED_PLACES_P62_SUBJECT_PHOTOGRAPHY_PILOT_V1");
-assert.deepEqual([geo.places.length,sources.sources.length,media.items.length],[LIVE.places,LIVE.sources,31]);
+assert.deepEqual([geo.places.length,sources.sources.length],[LIVE.places,LIVE.sources]);
+assert.ok(media.items.length>=31,"P62 older 31 approved covers must remain; independently reviewed later releases may add more");
 // P62's historical six were a baseline, not a permanent cap on additional
 // independently licensed physical Place photographs.
 const historicalSix=existingGallery.items.filter(row=>row.reviewed_at==="2026-10-11");

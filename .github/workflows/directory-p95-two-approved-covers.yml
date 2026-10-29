@@ -1,0 +1,33 @@
+name: P95 two approved Directory full-frame church covers
+on:
+  pull_request:
+    paths:
+      - data/geography/approved-place-media.v1.json
+      - data/geography/research/directory-p95-first-two-photo-covers.v1.json
+      - assets/approved/place-media/US-st-boniface-sioux-city.webp
+      - assets/approved/place-media/US-st-agnes-saint-paul.webp
+      - src/find/directory-card.js
+      - src/find/explore-presentation.js
+      - tests/directory-p95-two-verified-cover-photos.mjs
+      - .github/workflows/directory-p95-two-approved-covers.yml
+permissions:
+  contents: read
+jobs:
+  two-verified-photo-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check real WebP hashes, separate Place identity, attribution and no crop
+        run: |
+          set -euo pipefail
+          node --check src/find/directory-card.js
+          node --check src/find/explore-presentation.js
+          node tests/directory-p95-two-verified-cover-photos.mjs
+          node tests/directory-media-card-contract.mjs
+          node tests/production-tree-hygiene.mjs

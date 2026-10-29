@@ -1,0 +1,72 @@
+{
+  "schema": "AO_P95_TWO_VERIFIED_DIRECTORY_COVERS_V1",
+  "date": "2026-10-29",
+  "release_state": "APPROVED_MEDIA_PROPOSED_VIA_PR",
+  "purpose": "Publish two independently verified real church exteriors in existing Directory cover media registry after source, license, visual review and exact P92 Place linkage, without altering Mass times.",
+  "baseline": {
+    "approved_cover_images": 31,
+    "canonical_places": 518,
+    "confirmed_directory_place_links": 11
+  },
+  "proposed": {
+    "approved_cover_images": 33,
+    "canonical_places": 518,
+    "confirmed_directory_place_links": 11
+  },
+  "source_original_archive": "research/p90-original-two-church-photos-20261029/docs/research/directory/p90-verified-two-originals-20261029/",
+  "research_originals_qa_ledger": "data/directory/research/p90-two-originals-media-publication-gates-20261029.json",
+  "exact_place_link_release": "data/geography/research/sacred-places-p92-two-directory-photo-venue-links.v1.json",
+  "rights": "Individual authors and original Creative Commons pages consulted; source revision SHA-1 and local byte SHA-256 verified. CC BY-SA 3.0 needs author, source, license and modifications; app detail and preview now provide clickable original-source and licence citations. Existing unmodified originals remain in permanent research branch.",
+  "display": "Photographs use object-fit:contain on Directory cards and map quick preview; original 1000px-long-edge WebPs have no crop, inserted frame or recolour; main detail already uses contain.",
+  "photos": [
+    {
+      "place_id": "place:US:st-boniface-sioux-city",
+      "venue_id": "AO-AMER-R28-US-25-03",
+      "original_sha1": "228b098e9254bfbf2fe93d208f9be4998d909d27",
+      "original_sha256": "b83539bd8133084efb3050531828389e02d75c2d6ae496922a4d069d848d9b1b",
+      "derivative_sha256": "85c498e5078050d626f0d504b1fd4257ed5b5f720e5b26dd6734bc5604a529c3",
+      "derivative_dimensions": [
+        682,
+        1000
+      ],
+      "asset_path": "assets/approved/place-media/US-st-boniface-sioux-city.webp",
+      "original_archive_preview": "st-boniface-sioux-city-quality-preview.webp",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Ammodramus",
+      "commons_source_page": "https://commons.wikimedia.org/wiki/File:St._Boniface_Church_(Sioux_City)_from_SW_1.jpg",
+      "source_identity": "Cathedral parish at 703 West 5th Street; separate worship building from the cathedral at 1003 Douglas Street",
+      "editorial_full_frame_suitability": "PASS",
+      "editorial_issue": "Portrait crop would remove steeple; force no-crop contain."
+    },
+    {
+      "place_id": "place:US:st-agnes-saint-paul",
+      "venue_id": "V19:DIO-US-MN-ST-PAUL-SAINT-AGNES",
+      "original_sha1": "661b34873db6f23afd5ef25ec08766e647644e4c",
+      "original_sha256": "d38a78ab7764bab3e8d71ae5ae548a1e9058dbcd760b36291de84211e3f9d83b",
+      "derivative_sha256": "4df12e7c03ccbd79e207a7f92e4a548c481d0cb47957d37a2a5b7fbfafb4f9d3",
+      "derivative_dimensions": [
+        1000,
+        843
+      ],
+      "asset_path": "assets/approved/place-media/US-st-agnes-saint-paul.webp",
+      "original_archive_preview": "st-agnes-saint-paul-quality-preview.webp",
+      "license": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "creator": "McGhiever",
+      "commons_source_page": "https://commons.wikimedia.org/wiki/File:Church_of_St_Agnes_2013.jpg",
+      "source_identity": "535 Thomas Avenue West, Saint Paul; exact church not school or parish offices",
+      "editorial_full_frame_suitability": "PASS",
+      "editorial_issue": "Do not center-crop; preserve tower and cross, full face of church."
+    }
+  ],
+  "existing_venue_records_changed": 0,
+  "schedule_or_calendar_claims_added": 0,
+  "expense_eur": 0,
+  "held": {
+    "other_p93_originals_unpublished": 25,
+    "p93_technical_exceptions": 3,
+    "p94_no_auto_promotion": true
+  },
+  "verification": "Automated contract compares each published WebP bytes SHA256, exact Place link, declared licence, credit, user-visible preview and rendering rules. CI gate must pass before merge."
+}
