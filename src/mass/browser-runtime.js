@@ -202,7 +202,10 @@ export function createBrowserMassRuntime({
       cardTitle:card.title,
       cardUpdate:true,
       paragraphs:(card.paragraphs??[]).map(row=>({
-        id:row.id,kind:row.kind,primary:row.latin,
+        id:row.id,kind:row.kind,
+        primary:row.kind==="RUBRIC"
+          ? (String(currentPrepared?.readerPreferences?.language??"en").toLowerCase().startsWith("fr")
+              ? row.french : row.english) : row.latin,
         sourceCueIds:[row.sourceRecordId].filter(Boolean),
       })),
       progress:String(state.index+1)+" / "+String(state.total)+" · Absolution",
