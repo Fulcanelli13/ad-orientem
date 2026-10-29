@@ -405,7 +405,7 @@ try{
  assert.equal(await dp.locator("#next").isDisabled(),true);
  await dp.locator('[data-view="focus"]').click();
  await dp.locator("#office-hour").selectOption("VESPERS");
- await dp.locator("#reader").waitFor({state:"visible",timeout:10000);
+ await dp.locator("#reader").waitFor({state:"visible",timeout:10000});
  await dp.locator("#office-date").fill("2026-11-29");
  await dp.locator("#office-date").dispatchEvent("change");
  assert.equal(await dp.locator("#reader").isHidden(),true);
