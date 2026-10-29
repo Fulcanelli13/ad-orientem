@@ -41,7 +41,7 @@ def main():
     parser.add_argument("--archive-commit", required=True)
     args = parser.parse_args()
     data = json.loads(INPUT.read_text(encoding="utf-8"))
-    if data.get("schema") != "AO_P105_SOURCE_PINNED_THREE_DIRECTORY_DERIVATIVES_V1":
+    if data.get("schema") != "AO_AO_P105_SOURCE_PINNED_SEVEN_DIRECTORY_DERIVATIVES_V1":
         raise ValueError("Wrong P105 source schema")
     if len(data["records"]) != 7 or {x["row"] for x in data["records"]} != {309, 315, 320, 349, 356, 375, 380}:
         raise ValueError("Unexpected candidate selection")
@@ -115,7 +115,7 @@ def main():
     sheet.save(SHEET, "JPEG", quality=88, optimize=True)
 
     output = {
-        "schema": "AO_P105_THREE_CHECKSUM_VERIFIED_WEBP_STAGING_RESULTS_V1",
+        "schema": "AO_P105_SEVEN_CHECKSUM_VERIFIED_WEBP_STAGING_RESULTS_V1",
         "source_input": str(INPUT.relative_to(ROOT)),
         "source_archive_commit": args.archive_commit,
         "status": "STAGING_ONLY_NO_APPROVAL_NO_APP_VISIBILITY",
