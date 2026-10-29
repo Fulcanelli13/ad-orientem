@@ -53,7 +53,11 @@ def planned_rows(batch=0,batch_size=150,include_relics=True):
     published_sources={x.get("source_url") for x in approved+gallery if x.get("status")=="APPROVED"}
     # Fixed ID ordering: one batch never silently reallocates sites after
     # future assets are published. No duplicate Places or additional pins.
-    places=sorted(geography["places"],key=lambda x:x["place_id"])
+    # Stable geography preference for the Indian Ocean and Ireland before
+    # the wider world; never shuffle IDs after media approvals.
+    places=sorted(geography["places"],key=lambda x:(
+      0 if x.get("address",{}).get("country_code") in {"MU","IE"} else 1,
+      x["place_id"]))
     assert len(places)==len(known)
     start=batch*batch_size
     selected=places[start:start+batch_size]
