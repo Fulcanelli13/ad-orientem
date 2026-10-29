@@ -1,0 +1,69 @@
+name: Sacred Art B11 - Commons 250 Baroque sacred public domain review
+on:
+  push:
+    branches: [research/sacred-art-b11-20261029]
+    paths:
+      - scripts/art/sacred-art-b11-commons-250-review-20261029.py
+      - .github/workflows/sacred-art-b11-commons-250-review-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ad-orientem-sacred-art-commons-b11
+  cancel-in-progress: true
+jobs:
+  curate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b11-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Query public-domain Baroque works and verify exact image licences and bytes
+        run: |
+          python -m py_compile scripts/art/sacred-art-b11-commons-250-review-20261029.py
+          python -u scripts/art/sacred-art-b11-commons-250-review-20261029.py
+      - name: Validate B11 image identities, full review, licence, hash, no repeats
+        run: |
+          python - <<'PY'
+          import json,re,hashlib
+          from pathlib import Path
+          d=json.load(open('data/calendar/sacred-art-b11-commons-250-verified-20261029.v1.json'))
+          r=d['rows'];c=d['counts']
+          assert 180<=len(r)<=250,('new painting count',c)
+          assert c['previousReviewIDsExcluded']==1705
+          assert c['noProductionImports']==c['originalImagesDownloaded']==0
+          assert len({x['id'] for x in r})==len({x['previewURL'] for x in r})==len(r)
+          assert all(x['id']=='commons:'+x['objectId'] for x in r)
+          assert all(x['sourceRights']=='WIKIMEDIA_COMMONS_EXACT_FILE_PUBLIC_DOMAIN_OR_CC0' for x in r)
+          assert all(x['licenseShortName'].lower().startswith(('public domain','cc0')) for x in r)
+          assert all(min(x['nativeSourceDimensions'].values())>=1400 for x in r)
+          assert all(x['imageRightsVerified'] and x['rightsConflict'] is None and not x['productionImported'] for x in r)
+          assert d['batchHash']==hashlib.sha256(json.dumps([x['id'] for x in r],separators=(',',':')).encode()).hexdigest()
+          h=Path('docs/SACRED_ART_NEXT_250_IMPORT_REVIEW_B11_20261029.html').read_text()
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert m and json.loads(m.group(1))==r
+          assert "batchId:'B11'" in h and 'const PAGE_SIZE=50;' in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'seenPages.length<TOTAL_PAGES' in h
+          js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert js
+          Path('/tmp/ao-b11-commons-gallery.js').write_text(js.group(1))
+          print('B11_VALIDATED',len(r),'PD/CC0 sacred artworks; batch complete:',d['completeBatchReady'])
+          PY
+          node --check /tmp/ao-b11-commons-gallery.js
+      - name: Archive research-only B11 gallery and verified file rights
+        if: success()
+        run: |
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b11-commons-250-verified-20261029.v1.json
+          git add docs/SACRED_ART_B11_COMMONS_250_SOURCE_QA_20261029.md
+          git add docs/SACRED_ART_NEXT_250_IMPORT_REVIEW_B11_20261029.html
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): B11 Commons Baroque CC0 and public domain verified review"
+          git pull --rebase origin research/sacred-art-b11-20261029
+          git push origin HEAD:research/sacred-art-b11-20261029
