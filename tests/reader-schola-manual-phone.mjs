@@ -119,6 +119,19 @@ try{
    assert.equal(atLastPhrase.complete,false,"Reaching last phrase is not observed chant completion");
    await page.waitForFunction(()=>
      document.querySelector("[data-schola-next]")?.textContent==="FINISH");
+   const finishFit=await page.locator("[data-schola-next]").evaluate(button=>{
+     const p=document.querySelector("[data-schola-pause]");
+     const a=button.getBoundingClientRect(),b=p?.getBoundingClientRect();
+     return {flag:button.dataset.scholaFinish,fontPx:parseFloat(getComputedStyle(button).fontSize),
+       scrollWidth:button.scrollWidth,clientWidth:button.clientWidth,
+       nextRight:a.right,pauseLeft:b?.left??0};
+   });
+   assert.equal(finishFit.flag,"true","FINISH button must own its compact phone typography");
+   assert.ok(finishFit.fontPx<=10,"FINISH word inherits the oversized Schola arrow font");
+   assert.ok(finishFit.scrollWidth<=finishFit.clientWidth+1,
+     "FINISH glyph overflows its own button at "+width+"px: "+JSON.stringify(finishFit));
+   assert.ok(finishFit.nextRight<=finishFit.pauseLeft+1,
+     "FINISH and PAUSE controls physically overlap at "+width+"px");
    assert.equal(await page.locator("[data-schola-next]").isDisabled(),false,
      "Last Schola phrase cannot be finished from the actual reader");
    await page.locator("[data-schola-next]").click();
