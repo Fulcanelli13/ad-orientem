@@ -1,0 +1,37 @@
+name: P76 thirty verified exterior previews (read-only)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/p76-30-exterior-preview-manifest.v1.json'
+      - 'tools/acquire-p76-thirty-exteriors.py'
+      - '.github/workflows/p76-thirty-exterior-originals.yml'
+permissions:
+  contents: read
+jobs:
+  source-and-visual-previews:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install tested full-frame decoder and encoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Verify frozen 30-source identity manifest
+        run: python tools/acquire-p76-thirty-exteriors.py --check
+      - name: Reverify Commons originals, licence metadata and prepare three larger review sheets
+        run: python tools/acquire-p76-thirty-exteriors.py --delay 2.5
+      - name: Ephemeral preview; production still requires approved Git asset PR
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p76-30-exteriors-research-derivatives-for-review
+          retention-days: 1
+          if-no-files-found: error
+          path: |
+            data/geography/research/p76-preview-artifacts/p76-*.jpg
+            data/geography/research/p76-preview-artifacts/p76-*.webp
+            data/geography/research/p76-preview-artifacts/p76-*.json
+            data/geography/research/p76-preview-artifacts/p76-*.jsonl
