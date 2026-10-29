@@ -146,7 +146,7 @@ def normalize_anchor_rows(parts, r49_ids):
         if aid not in anchors:
             raise ValueError("Alias points outside CL2 consolidated anchors")
         anchors[aid]["historical_group_ids"].append(group)
-    if len(group_anchor) - len(anchors) != 5:
+    if len(group_anchor) - len(anchors) != EXPECTED_SITE_IDS - EXPECTED_ANCHORS:
         raise ValueError("CL2 same-building historical aliases changed")
     unique_sources = set()
     held_group_conflicts = []
