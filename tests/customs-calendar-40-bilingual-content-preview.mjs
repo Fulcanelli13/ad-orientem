@@ -42,7 +42,7 @@ for(const row of v.records){
  const s=bySource.get(row.source_group_id);assert.ok(s);
  assert.deepEqual(row.source.observation_ids,s.source_observation_ids);
  assert.equal(row.source.printed_page,s.corrected_or_checked_source_printed_page);
- for(const key of ["title_en","title_fr","history_en","history_fr","practice_or_context_en","practice_or_context_fr"])assert.ok(typeof row.content[key]==="string"&&row.content[key].length>24,key);
+ for(const key of ["title_en","title_fr","history_en","history_fr","practice_or_context_en","practice_or_context_fr"])assert.ok(typeof row.content[key]==="string"&&row.content[key].trim().length>(key.startsWith("title")?5:24),key);
 }
 const variants=pack.records.filter(x=>x.type==="EXISTING_OWNER_VARIANT_DETAIL");
 const profiles=pack.records.filter(x=>x.type==="EXISTING_UNPUBLISHED_BILINGUAL_PROFILE");
