@@ -99,6 +99,7 @@ test("omitted French XXIII Sunday commemoration blocks otherwise aligned Vespers
 test("French II Vespers missing component is caught when heading and antiphon span cells",()=>{
   const make=(lang,date,header,second)=>({
     schema:"ao.office.source-cells.v1",date,hour:"VESPERS",language:lang,
+    headline:"Omnium Sanctorum",
     sourceRevision:DIVINUM_OFFICIUM_PIN,
     sections:[
       {sourceCellId:"Vespera9",semantic:{role:"PRAYER"},text:header},
@@ -112,7 +113,7 @@ test("French II Vespers missing component is caught when heading and antiphon sp
   const found=officeTranslationContentBlockers({latin,translation:fr});
   assert.equal(found.length,1);
   assert.equal(found[0].reason,"FR_VESPERS_SUNDAY_COMMEMORATION_INCOMPLETE");
-  assert.equal(found[0].translationSourceCellId,"Vespera9");
+  assert.equal(found[0].translationSourceCellId,"Vespera10");
   const saturday=make("la","2026-10-31",
     "Oratio Omnium Sanctorum\nCommemoratio Dominica XXIII Post Pentecosten I. Novembris",
     "Ant. Vidi Dominum sedentem. Absolve, quaesumus, Domine.");
