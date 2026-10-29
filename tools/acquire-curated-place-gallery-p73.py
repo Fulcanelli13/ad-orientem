@@ -6,7 +6,7 @@ originals, verify SHA1, author and licence, prepare uncropped WebP and registry
 together in a disposable checkout. A separate reviewed asset PR MUST commit
 the WebP files and the approved-gallery JSON as one atomic change.
 """
-import argparse, hashlib, html, importlib.util, io, json, re, tempfile, shutil, time
+import argparse, base64, hashlib, html, importlib.util, io, json, re, tempfile, shutil, time
 from pathlib import Path
 from urllib.parse import urlencode, urlsplit
 from PIL import Image, ImageOps
@@ -129,7 +129,7 @@ def verify_committed(rows,registry):
             insist(im.format=="WEBP" and im.size==(record["width"],record["height"]),"Incorrect WebP dimensions")
     print("P73_COMMITTED_PASS="+json.dumps({"files":len(rows),"derivatives_verified":len(rows)},sort_keys=True))
 
-def acquire(rows,registry,delay):
+def acquire(rows,registry,delay,emit_handoff=False):
     insist(3<=delay<=15,"Require 3-15 sec Commons delay")
     existing={x["media_id"]:x for x in registry["items"]}
     writes=[]
@@ -168,6 +168,14 @@ def acquire(rows,registry,delay):
         for row,tmp,record in writes:
             shutil.copyfile(tmp,ASSET/row["asset_filename"])
             registry["items"].append(record)
+            if emit_handoff:
+                print("P73_REGISTRY_RECORD="+json.dumps(record,ensure_ascii=False),flush=True)
+                encoded=base64.b64encode(tmp.read_bytes()).decode("ascii")
+                pieces=[encoded[i:i+6000] for i in range(0,len(encoded),6000)]
+                for number,part in enumerate(pieces):
+                    print("P73_BLOB_CHUNK="+json.dumps({
+                        "media_id":row["media_id"],"index":number,"total":len(pieces),
+                        "base64":part},separators=(",",":")),flush=True)
         if writes:
             registry["version"]="1.3.0"
             registry["acquisition_manifests"]=list(dict.fromkeys([
@@ -186,6 +194,7 @@ if __name__=="__main__":
     op.add_argument("--acquire",action="store_true")
     op.add_argument("--verify-committed",action="store_true")
     p.add_argument("--delay",type=float,default=4.0)
+    p.add_argument("--emit-handoff",action="store_true",help="Print reviewed derivative bytes in bounded base64 log chunks for authenticated GitHub blob transfer")
     args=p.parse_args()
     selected,registry=manifest()
     if args.check_manifest:
@@ -193,4 +202,4 @@ if __name__=="__main__":
     elif args.verify_committed:
         verify_committed(selected,registry)
     else:
-        acquire(selected,registry,args.delay)
+        acquire(selected,registry,args.delay,args.emit_handoff)
