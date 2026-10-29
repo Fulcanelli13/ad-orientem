@@ -8,6 +8,7 @@ on:
       - "tests/pray-novena-witness-position-phone.mjs"
       - "tests/pray-novena-witness-contract.mjs"
       - "tests/pray-novena-stage-progress-contract.mjs"
+      - "tests/pray-novena-reading-comfort-contract.mjs"
       - "package.json"
       - ".github/workflows/pray-novena-witness-focus-phone.yml"
   push:
@@ -18,6 +19,7 @@ on:
       - "tests/pray-novena-witness-position-phone.mjs"
       - "tests/pray-novena-witness-contract.mjs"
       - "tests/pray-novena-stage-progress-contract.mjs"
+      - "tests/pray-novena-reading-comfort-contract.mjs"
       - ".github/workflows/pray-novena-witness-focus-phone.yml"
   workflow_dispatch:
 permissions:
@@ -37,6 +39,8 @@ jobs:
         run: node tests/pray-novena-witness-contract.mjs
       - name: Guided stage source/ARIA contract
         run: node tests/pray-novena-stage-progress-contract.mjs
+      - name: Novena long-form reading comfort contract
+        run: node tests/pray-novena-reading-comfort-contract.mjs
       - name: 320px and 390px Novena witness, guided-stage and thumb-reading acceptance
         run: node tests/pray-novena-witness-position-phone.mjs
       - name: Attach temporary Novena mobile review captures
