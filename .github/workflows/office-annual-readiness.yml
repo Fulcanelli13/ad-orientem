@@ -6,6 +6,8 @@ on:
       - 'src/office/source-section-resolver.js'
       - 'src/office/mass-host-source-bridge.js'
       - 'src/office/structured-hour-draft.js'
+      - 'src/office/precedence-review.js'
+      - 'tests/divine-office-precedence-review.mjs'
       - 'tests/divine-office-mass-bridge-and-hour-draft.mjs'
       - 'tests/divine-office-source-section-resolver.mjs'
       - 'src/office/annual-capture-ledger.js'
@@ -37,6 +39,8 @@ jobs:
           node --check src/office/mass-host-source-bridge.js
           node --check src/office/structured-hour-draft.js
           node --test tests/divine-office-mass-bridge-and-hour-draft.mjs
+          node --check src/office/precedence-review.js
+          node --test tests/divine-office-precedence-review.mjs
           node --check src/office/annual-capture-ledger.js
           node --check scripts/office/emit-annual-capture-ledger.mjs
           node --test tests/divine-office-annual-capture-ledger.mjs
