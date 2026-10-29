@@ -3781,29 +3781,6 @@
         "label": "WASHES / PURIFIES",
         "condition": null
       },
-      "assetId": "ao_purify_fingers",
-      "assetName": "Priest purify Fingers",
-      "assetStatus": "approved",
-      "matchRule": "CUE_SPECIFIC_ACTION",
-      "availability": "REPO_EXACT_SOURCE_ORIGINAL",
-      "sourceHash": "b241d6eb22540b4079bdf06c0881bb3fc3ac805e151f34231d191a99bfce2055",
-      "reviewState": "MAPPED",
-      "runtimeAssetKey": "final_ao_purify_fingers",
-      "assetPath": "assets/active/mass-final/ao_purify_fingers.svg",
-      "needsSourceImport": false,
-      "semanticResolution": "EXACT_APPROVED_ART",
-      "imageSha256": "b241d6eb22540b4079bdf06c0881bb3fc3ac805e151f34231d191a99bfce2055"
-    },
-    {
-      "sourceRegistry": "reader-priest-actions.v1.json",
-      "registryId": null,
-      "cueId": "AO.SM.C0248",
-      "lane": "priest_action",
-      "sourceEvent": {
-        "cueId": "AO.SM.C0248",
-        "label": "WASHES / PURIFIES",
-        "condition": null
-      },
       "assetId": "ao_purify_chalice",
       "assetName": "Priest purify Chalice",
       "assetStatus": "approved",
@@ -3816,6 +3793,29 @@
       "needsSourceImport": false,
       "semanticResolution": "EXACT_APPROVED_ART",
       "imageSha256": "b009bd4f82f59f33e49be3379bbe65bbe436dcdc40971bd1a2c9c5a4c34360b0"
+    },
+    {
+      "sourceRegistry": "reader-priest-actions.v1.json",
+      "registryId": null,
+      "cueId": "AO.SM.C0248",
+      "lane": "priest_action",
+      "sourceEvent": {
+        "cueId": "AO.SM.C0248",
+        "label": "WASHES / PURIFIES",
+        "condition": null
+      },
+      "assetId": "ao_purify_fingers",
+      "assetName": "Priest purify Fingers",
+      "assetStatus": "approved",
+      "matchRule": "CUE_SPECIFIC_ACTION",
+      "availability": "REPO_EXACT_SOURCE_ORIGINAL",
+      "sourceHash": "b241d6eb22540b4079bdf06c0881bb3fc3ac805e151f34231d191a99bfce2055",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "final_ao_purify_fingers",
+      "assetPath": "assets/active/mass-final/ao_purify_fingers.svg",
+      "needsSourceImport": false,
+      "semanticResolution": "EXACT_APPROVED_ART",
+      "imageSha256": "b241d6eb22540b4079bdf06c0881bb3fc3ac805e151f34231d191a99bfce2055"
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",

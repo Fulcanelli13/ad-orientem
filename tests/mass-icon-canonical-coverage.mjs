@@ -6,6 +6,8 @@ import { execFileSync } from "node:child_process";
 import { projectAllCues, ICON_FORMS } from "../tools/mass/collect-icon-inputs.mjs";
 import { canonicalMeaningsForReaderState, canonicalIconKeysForReaderState, positionMeaning, actionMeaning, voiceMeaning, CANONICAL_ICON_ASSETS } from "../src/mass/reader-canonical-icons.js";
 import { iconKeysForReaderState } from "../src/mass/reader-icons.js";
+import { FINAL_65_CUE_ICON_KEYS } from "../src/mass/reader-final65-icon-keys.js";
+import { readFileSync } from "node:fs";
 import { CANONICAL_ICON_SET as SET } from "../src/mass/reader-canonical-icon-set.js";
 
 // The generated runtime module must match the JSON it is built from.
@@ -60,6 +62,44 @@ assert.equal(actionMeaning({ label: "TURNS TO PEOPLE", cueId: "AO.SM.C0131" }, s
 assert.equal(actionMeaning({ label: "TURNS TO PEOPLE", cueId: "AO.SM.C0070" }, sung), "priest.action.greeting");
 assert.equal(actionMeaning({ label: "WASHES / PURIFIES", cueId: "AO.SM.C0247" }, sung), "priest.action.purify_chalice", "Quod ore sumpsimus is the first ablution (chalice)");
 assert.equal(actionMeaning({ label: "WASHES / PURIFIES", cueId: "AO.SM.C0248" }, sung), "priest.action.purify_fingers", "Corpus tuum is the ablution of the fingers");
+// The exact published C0072/C0253 action is turning to the Missal, not
+// the subsequent orans prayer. Keep orans on the actual Low Mass proper
+// C0073/C0254, but never put extended hands beside the Oremus movement.
+// Lavabo art depicts the minister pouring water, not a priest-only action.
+for(const form of ["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN","LOW"]){
+ for(const [cue,label,reason] of [
+  ["AO.SM.C0072","TURNS TO MISSAL","POSITION_TRANSITION"],
+  ["AO.SM.C0253","TURNS TO MISSAL","POSITION_TRANSITION"],
+  ["AO.SM.C0125","WASHES / PURIFIES","TEXT_ONLY_NO_ART"],
+ ]){
+  const state={form,cueId:cue,priestAction:{cueId:cue,label,owner:"R17_V180_EXACT_CUE_ACTION"}};
+  assert.equal(actionMeaning(state.priestAction,state),reason,form+" "+cue+" role/action drift");
+  assert.equal(canonicalIconKeysForReaderState(state).priestActionIconKey,null,
+   form+" "+cue+" painted the wrong priest-action icon");
+ }
+}
+for(const cue of ["AO.SM.C0073","AO.SM.C0254"]){
+ const state={form:"LOW",cueId:cue,priestAction:{cueId:cue,label:"PRAYS COLLECT",owner:"R18_LOW_CUE_SOURCE"}};
+ assert.equal(canonicalIconKeysForReaderState(state).priestActionIconKey,"canon:priest.action.orans",
+  "Source-owned orans proper lost its original approved graphic: "+cue);
+}
+// Correct the 20 Oct crosswalk's reversed ablution images in place without
+// changing immutable artist/user asset IDs, names, paths or original hashes.
+const sourceCrosswalk=JSON.parse(readFileSync(new URL("../data/presentation/mass-icon-final-cue-crosswalk-20261020.v1.json",import.meta.url),"utf8"));
+for(const [cue,asset,key,meaning,opening] of [
+ ["AO.SM.C0247","ao_purify_chalice","final_ao_purify_chalice","priest.action.purify_chalice","Quod ore"],
+ ["AO.SM.C0248","ao_purify_fingers","final_ao_purify_fingers","priest.action.purify_fingers","Corpus tuum"],
+]){
+ const row=sourceCrosswalk.rows.find(x=>x.lane==="priest_action"&&x.cueId===cue);
+ assert.equal(row?.assetId,asset,cue+" historical crosswalk returned the wrong ablution");
+ assert.equal(row?.runtimeAssetKey,key,cue+" exact approved original mismatch");
+ assert.equal(FINAL_65_CUE_ICON_KEYS.priestAction[cue],key,cue+" curated art reversed");
+ assert.equal(actionMeaning({cueId:cue,label:"WASHES / PURIFIES"},{form:"MISSA_CANTATA_SIMPLE",cueId:cue}),meaning);
+ const sungText=JSON.parse(readFileSync(new URL("../data/presentation/reader-text-sung.v1.json",import.meta.url),"utf8"));
+ const paragraph=sungText.blocks.flatMap(b=>b.units??[]).find(u=>u.cue_id===cue);
+ assert.ok(paragraph?.latin?.startsWith(opening),cue+" is not the certified 1962 prayer");
+}
+
 assert.equal(positionMeaning({ station: "ALTAR_EPISTLE_MISSAL", facing: "MISSAL" }), "priest.position.epistle_side");
 assert.equal(positionMeaning({ station: "ALTAR_CENTER", facing: "PEOPLE" }), "priest.position.facing_people");
 assert.equal(voiceMeaning({ value: "SECRET", cueId: "AO.SM.C0150" }, { form: "LOW" }), "priest.voice.low", "Secret is low voice, not silence");
