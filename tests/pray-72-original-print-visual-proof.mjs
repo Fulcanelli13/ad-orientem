@@ -72,7 +72,7 @@ for(const r of proof.records){
   assert.deepEqual(r.sourceImageFiles,[]);
  }
 }
-assert.equal(proofPDFSeen.size,14,'Expected 3 Christmas + 3 Pentecost + 2 Holy Souls + 6 Hammer unique source pages');
+assert.equal(proofPDFSeen.size,18,'Expected 3 Christmas + 3 Pentecost + 2 Holy Souls + 10 Hammer unique source pages');
 for(const id of ['christmas','holy_ghost'])assert.ok(vetted.filter(x=>x.id===id).every(x=>x.editionCaveat.includes('NOT_AUTHENTICATED_1925_FIRST_EDITION')));
 const d4=proof.records.find(x=>x.id==='holy_souls'&&x.day===4);
 assert.deepEqual(d4.correctedSourceWindowZeroBased,[203,204]);
