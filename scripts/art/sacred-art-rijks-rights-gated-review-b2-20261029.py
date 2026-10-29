@@ -173,5 +173,5 @@ def main():
     clean(r['artist']).replace('|','/'),r['disposition']])+' |')
  lines.extend(['','The original source and its photograph rights are different legal subjects. No public-domain or CC0 claim inferred from the museum name. No visual beauty grade inferred from artist/title.'])
  MD.write_text('\n'.join(lines)+'\n',encoding='utf-8')
- print(json.dumps({'scope':report['scope'],'counts':report['counts'],'contactSheets':sheet_paths},indent=2))
+ print(json.dumps({'scope':report['scope'],'counts':report['counts'],'contactSheets':sheet_paths,'sampleErrors':errors[:8]},indent=2))
 if __name__=='__main__':main()
