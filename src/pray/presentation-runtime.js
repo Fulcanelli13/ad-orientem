@@ -468,7 +468,11 @@ function open(id,opts={}){
   else if(id==='pray.adoration')view='adoration';
   else if(id==='pray.stations'){view='stations';STATIONS.step=0}
   else if(id==='pray.visit_blessed_sacrament'){view='adoration';ADOR.mode='visit'}
-  else if(id==='pray.library')view='library';
+  else if(id==='pray.library'){
+    // A new direct Library entry must open the index, never the last prayer.
+    // In-Library Back and search/filter navigation retain their own state.
+    view='library';LIB.open=null;LIB.language=null;PILOT_LORETO_GROUP=false;
+  }
   else if(id==='pray.for_priests'){view='priests';PRIESTS={purpose:'priests',latin:false}}
   else if(id==='pray.occasional_intercessions'){view='occasionals';OCCASIONAL={purpose:'sick',latin:false}}
   else if(id==='pray.st_joseph_seven_sorrows'){view='josephSeven';JOSEPH_SEVEN={step:0,latin:false}}
