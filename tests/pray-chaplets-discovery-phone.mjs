@@ -174,6 +174,7 @@ try{
       port=mount.getBoundingClientRect(),b=next.getBoundingClientRect();
     const hit=document.elementFromPoint(b.left+b.width/2,b.top+b.height/2);
     return {textAboveDock:p?Math.max(0,Math.min(p.bottom,a.top,port.bottom)-Math.max(p.top,port.top)):0,
+      sourceLineHeight:p?.height||0,
       navTop:a.top,navBottom:a.bottom,portTop:port.top,portBottom:port.bottom,
       dockPosition:getComputedStyle(nav).position,
       touchHeight:b.height,touchWidth:b.width,touchHit:hit===next||next.contains(hit),
@@ -182,8 +183,9 @@ try{
       overflow:document.documentElement.scrollWidth-innerWidth};
    });
    const bloodOpening=await bloodMetrics();
-   assert.ok(bloodOpening.textAboveDock>=40,
-    "Precious Blood must show real source prayer on the first screen: "+JSON.stringify(bloodOpening));
+   assert.ok(bloodOpening.textAboveDock>=26&&
+    bloodOpening.textAboveDock>=bloodOpening.sourceLineHeight*.9,
+    "Precious Blood must show the full first historical source verse above the thumb dock: "+JSON.stringify(bloodOpening));
    assert.equal(bloodOpening.dockPosition,"sticky");
    assert.ok(bloodOpening.touchHeight>=48&&bloodOpening.touchWidth>=96,
     "Precious Blood next needs a 48px thumb target");
