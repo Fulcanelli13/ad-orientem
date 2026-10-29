@@ -11,7 +11,7 @@ export const OFFICE_BETA_CATALOG_SCHEMA="ao.office.beta-catalog.v1";
 export const OFFICE_BETA_HOURS=Object.freeze([
  "MATINS","LAUDS","PRIME","TERCE","SEXT","NONE","VESPERS","COMPLINE"
 ]);
-// Only the *research* assembly for this date is currently implemented.
+// Only two *research* assemblies for this date are currently implemented.
 // This is NOT an approved, live, or published liturgical Office.
 const ENTRIES=Object.freeze([
  Object.freeze({
@@ -20,6 +20,19 @@ const ENTRIES=Object.freeze([
   hour:"VESPERS",officePart:"FIRST",
   label:"First Vespers · First Sunday of Advent",
   assembly:"ADVENT_I_2026_SOURCE_FIRST",
+  recitation:"SOLO",minister:"BELOW_DEACON",
+  sourceRevision:"126a07f91ede04664108abb6fb20ace3f4de14b9",
+  languages:Object.freeze(["la","en","fr"]),
+  precedenceResearchOnly:true,completeHourCertified:false,
+  translationsApproved:false,rightsApproved:false,
+  publishable:false,published:false
+ }),
+ Object.freeze({
+  key:"advent-i-2026-saturday-compline",
+  civilDate:"2026-11-28",officeDate:"2026-11-28",
+  hour:"COMPLINE",officePart:null,
+  label:"Saturday Compline · Eve of Advent I",
+  assembly:"SATURDAY_COMPLINE_2026_SOURCE_FIRST",
   recitation:"SOLO",minister:"BELOW_DEACON",
   sourceRevision:"126a07f91ede04664108abb6fb20ace3f4de14b9",
   languages:Object.freeze(["la","en","fr"]),
