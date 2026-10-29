@@ -13,7 +13,7 @@ export const OFFICE_AT_REFERENCE_SCHEMA="ao.office.at-reference-resolved.v1";
 const PATH=/^(?:Tempora|Sancti|Commune|Psalterium|Ordinarium|Special|Martyrologium)\/[A-Za-z0-9][A-Za-z0-9_. \/-]{0,139}$/;
 const SECTION=/^[A-Za-z][A-Za-z0-9_. -]{0,100}$/;
 const LANGUAGES=["la","en","fr"];
-const DIRECTIVE=/^\s*(?:[$&]|\(sed\s|\{(?:omit|omises)\})/iu;
+const DIRECTIVE=/^\s*(?:[const DIRECTIVE=/^\s*(?:[$&]|\(sed\s|\{(?:omit|omises)\})/iu;!#%]|\((?:sed|nisi|rubrica|deinde)\b|\{(?:omit|omises|:))/iu;
 const REF=/^@(?:(?<path>(?:Tempora|Sancti|Commune|Psalterium|Ordinarium|Special|Martyrologium)\/[A-Za-z0-9][A-Za-z0-9_. \/-]*)?:)(?<section>[A-Za-z][A-Za-z0-9_. -]{0,100})$/u;
 const fullKey=(p,s,l)=>p+"#"+s+"|"+l;
 function identity(path,section,language){
