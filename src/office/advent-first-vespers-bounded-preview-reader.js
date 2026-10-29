@@ -68,12 +68,12 @@ export function createAdventFirstVespersBoundedPinnedReader({
  const cache=new Map();
  function urlFor(path,lang){
   if(path==="Ordinarium/Vespera"&&lang==="original")
-   return BASE+"Ordinarium/Vespera.txt";
+   return new URL(BASE+"Ordinarium/Vespera.txt").href;
   if(!Object.hasOwn(LANGS,lang))throw Error("PRIVATE_PREVIEW_LANGUAGE_NOT_ALLOWED");
-  if(PATHS.has(path))return BASE+LANGS[lang]+"/"+path+".txt";
+  if(PATHS.has(path))return new URL(BASE+LANGS[lang]+"/"+path+".txt").href;
   const m=/^Psalterium\/Psalmorum\/Psalm([0-9]{3})$/u.exec(path);
   if(m&&PSALMS.has(Number(m[1])))
-   return BASE+LANGS[lang]+"/"+path+".txt";
+   return new URL(BASE+LANGS[lang]+"/"+path+".txt").href;
   throw Error("PRIVATE_PREVIEW_SOURCE_OUTSIDE_FINITE_ALLOWLIST");
  }
  async function raw(path,lang){
