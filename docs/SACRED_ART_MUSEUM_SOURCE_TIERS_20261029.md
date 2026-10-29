@@ -4,16 +4,16 @@
 
 ## Auditable institutional source registry
 
-[Machine-readable institutional register (96 entries)](../data/calendar/sacred-art-institution-source-priority-registry-20261029.v1.json).
+[Machine-readable institutional register (186 entries)](../data/calendar/sacred-art-institution-source-priority-registry-20261029.v1.json).
 
 This is a **prioritized institutional directory, not a claim to include every gallery worldwide**. Open categories rely on published reuse rules; POLICY_UNVERIFIED entries are collection-discovery leads, **not legally cleared institutions**. Its entries document policy evidence, source tiers, acquisition channels and exceptions. The licensing-first 383-work audit remains authoritative for those **specific** recorded source files. No artwork gains a publication clearance merely by belonging to a preferred museum.
 
 | Tier | Sources/programmes | Default pipeline action |
 | --- | ---: | --- |
-| PRIMARY_OPEN | 26 | Search, rights-filter by exact object, collect metadata and source links; acquire only once file rights and storage plan pass |
-| CONDITIONAL_REVIEW | 9 | Compare catalogue/rights text; no bulk photograph ingestion until exact-file legal clearance |
-| POLICY_UNVERIFIED | 30 | Metadata-only; no image acquisition until policy review |
-| REFERENCE_ONLY | 28 | Art-historical research only in compliance with website terms; **no institutional-photo scraping, crops or publication** |
+| PRIMARY_OPEN | 38 | Search, rights-filter by exact object, collect metadata and source links; acquire only once file rights and storage plan pass |
+| CONDITIONAL_REVIEW | 16 | Compare catalogue/rights text; no bulk photograph ingestion until exact-file legal clearance |
+| POLICY_UNVERIFIED | 94 | Metadata-only; no image acquisition until policy review |
+| REFERENCE_ONLY | 35 | Art-historical research only in compliance with website terms; **no institutional-photo scraping, crops or publication** |
 
 | DISCOVERY_METADATA_ONLY | 3 | Open catalogue records only; no source-photo ingestion, even where data itself is CC0/CC BY |
 
@@ -27,7 +27,7 @@ These institutions differ: some publish CC0; others mark images public domain or
 
 ## 29 October expansion — Germany, Switzerland and Italy (57 new records)
 
-**96 total sources/programmes**: 26 PRIMARY_OPEN, 9 CONDITIONAL_REVIEW, 3 DISCOVERY_METADATA_ONLY, 30 POLICY_UNVERIFIED, 28 REFERENCE_ONLY. Of the 57 added records: **22 Germany, 15 Switzerland, 20 Italy**. Germany includes two subset records associated with parent institutions; these are source programmes/collection sections, not assertions of 96 wholly distinct museum owners.
+**186 total sources/programmes after both regional expansions**: 38 PRIMARY_OPEN, 16 CONDITIONAL_REVIEW, 3 DISCOVERY_METADATA_ONLY, 94 POLICY_UNVERIFIED, 35 REFERENCE_ONLY. The original +57 DE/CH/IT expansion remains included; a second +90 expansion covers FR/ES/AT/PL/NL/BE. Of the 57 added records: **22 Germany, 15 Switzerland, 20 Italy**. Germany includes two subset records associated with parent institutions; these are source programmes/collection sections, not assertions of 96 wholly distinct museum owners.
 
 ### Germany — highest-priority discovery
 
@@ -87,6 +87,84 @@ Specific institutional examples: [Brera image rights](https://pinacotecabrera.or
 - **Rights not pristine**: license verification is not quality QA; do not download, recrop, certify or ship assets in this directory stage.
 - **€0**: no purchase, paid archives, paid permissions or paid storage.
 
+## 29 October expansion II — France, Spain, Austria, Poland, Netherlands, Belgium (+90 entries)
+
+The **186 total source-programme entries** now include +22 France, +17 Spain, +10 Austria, +13 Poland, +13 Netherlands and +15 Belgium. A museum nested under a parent collection portal remains listed to support title/iconography filters but is **not** an additional independent blanket image licence.
+
+| Tier after correction | Entries | Important meaning |
+|---|---:|---|
+| PRIMARY_OPEN | **38** | Institution or subset with stated freely reusable qualifying files; must verify exact image |
+| CONDITIONAL_REVIEW | **16** | Limited free downloads or per-image licence/attribution/ShareAlike |
+| DISCOVERY_METADATA_ONLY | **3** | Catalogues/data only; not images |
+| POLICY_UNVERIFIED | **94** | Candidate institution not yet cleared to ingest any official photograph |
+| REFERENCE_ONLY | **35** | Official photographs subject to restricted terms or special permissions |
+| **Total** | **186** | Source-programme records, not 186 certified museums |
+
+### France: Paris Musées plus the great regional painting museums
+
+**Rights-first intake:** Paris Musées' officially CC0-marked images from Petit Palais, Musée Cognacq-Jay, Musée de la Vie romantique and Maisons de Victor Hugo. These are **subcollections of the existing Paris Musées open-access programme**, so avoid duplicate license and data-pipeline counting. The French Ministry of Culture's [2026 catalogue directory](https://www.culture.gouv.fr/thematiques/musees/Les-musees-en-France/les-collections-des-musees-de-france/decouvrir-les-collections/catalogues-en-ligne-de-collections-musees-de-france) confirms that Paris Musées has a large corpus of unrestricted commercial-use collection images and that Musée de Bretagne Rennes provides unrestricted high-definition reuse for designated images. **Musée des Beaux-Arts Rennes is a different museum and does not inherit that licence.**
+
+**High editorial priority, photographic rights outstanding**: Palais des Beaux-Arts Lille; Musée de Flandre Cassel; Musée des Beaux-Arts Lyon, Rennes, Rouen, Strasbourg, Dijon, Caen; Musée d'arts Nantes; Musée Fabre Montpellier; Musée Granet Aix; Musée des Augustins Toulouse; Musée de Grenoble; Musée Magnin Dijon; Musée de la Chartreuse Douai; Musée du Petit Palais **Avignon** (different museum from Petit Palais **Paris**). Musée des Beaux-Arts Bordeaux's [official legal notice](https://www.musba-bordeaux.fr/mentions-legales) restricts reuse of photographic works without the author's written consent, so its official photos are reference-only.
+
+**Important official evidence**: [Paris Musées CC0 scope and exceptions](https://www.parismuseescollections.paris.fr/fr/les-images-sous-droits); [Musée Cognacq-Jay open-content policy](https://www.museecognacqjay.paris.fr/professionnels/reproduction-dimages).
+
+### Spain: extremely important paintings, restricted or unverified institutional photos
+
+**No new blanket unrestricted museum-photo source confirmed.** Museu Nacional d'Art de Catalunya (MNAC) publishes images on its website under [CC BY-NC-SA 3.0](https://www.museunacional.cat/en/legal-notice), subject to exceptions, and requires integrity and source credit. This **does not qualify for unrestricted app image acquisition or alteration**. Prado and Thyssen remain research-only from prior pass.
+
+Prioritised discovery: Museo de Bellas Artes Sevilla (**Murillo, Zurbarán**), Museo de Bellas Artes Valencia (**Ribera, Ribalta**), Museo de Bellas Artes Bilbao, Museo Lázaro Galdiano, Real Academia de Bellas Artes de San Fernando Madrid, Patrimonio Nacional / Galería de las Colecciones Reales, Museo de Bellas Artes Granada/Córdoba/Asturias, Museu Episcopal de Vic, Museo de Zaragoza, Museo de Navarra, Museo de Santa Cruz Toledo, Museo Nacional de Escultura Valladolid, Museo de Burgos and Museu Frederic Marès Barcelona.
+
+No institution-specific original photo should be scraped just because the artwork is historic or an alternate Commons image exists.
+
+### Austria: **Belvedere policy correction**
+
+**Correction to previous registry:** Belvedere Vienna moves from CONDITIONAL_REVIEW to **PRIMARY_OPEN** based on its [official Open Content terms](https://sammlung.belvedere.at/opencontent/images). Images of copyright-expired artworks actually included in the Open Content programme are CC0, downloadable in print quality and may be modified/commercially used; other artwork/photo cases remain excluded. This is especially valuable for Austrian religious painting and historic altarpieces.
+
+**Conditional**: [Albertina Vienna](https://www.albertina.at/en/research/image-reproduction-services/) permits reuse of downloadable public-domain works without approval at **up to 1200 pixels**; high-resolution alternatives require a separate image service and cannot be assumed free. Its attractive small image thumbnails are not pristine-master source replacements.
+
+**Pending**: Akademie der bildenden Künste Wien Gemäldegalerie, Liechtenstein Collections Vienna, Residenzgalerie Salzburg, Alte Galerie Graz / Universalmuseum Joanneum, Tiroler Landesmuseum Ferdinandeum Innsbruck, Stift Klosterneuburg, Stift Melk, Dom Museum Wien, Museum Niederösterreich. Existing Kunsthistorisches Museum Wien remains REFERENCE_ONLY under the known photo/reproduction terms.
+
+### Poland: a major discovery and source market
+
+**Primary qualified open-image programmes**:
+- National Museum Warsaw [official-linked Digital National Museum guidance](https://instytutpolski.pl/london/get-to-know-poland/culture-in-poland/museums/digital-national-museum-in-warsaw/) reports that individually marked public-domain artworks may be downloaded, processed and reused commercially. Exact photo label remains mandatory.
+- Museum of Warsaw [official public-domain policy](https://muzeumwarszawy.pl/prawa-autorskie/) permits commercial and noncommercial reproduction, alteration and distribution of public-domain-marked materials. [Existing JPEGs can be downloaded free](https://muzeumwarszawy.pl/en/collection-research-and-granting-access-to-digital-representations/); new scans and TIFF options may incur fees and are excluded.
+- Polish History Museum [open policy](https://muzhp.pl/polityka-otwartosci) uses CC0 metadata and Public Domain Mark for reproductions of eligible old works; historical artifacts may be of lower editorial priority than Old Master painting.
+
+**Conditional**: National Museum Kraków provides some public-domain digital photos for self-download/reuse but also runs paid reproduction services; distinguish the two using [exact MNK rules](https://mnk.pl/en/practical-information/access-to-the-collection/). Czartoryski Museum inherits MNK rules. National Museum Wrocław [separates object public-domain status from museum photographic copyrights](https://muzeumcyfrowe.mnwr.pl/en/guidelines-for-using-the-digital-collections); hold until photo-specific clearance.
+
+**Priority institutions awaiting policy**: National Museum Gdańsk (Memling and Gothic), National Museum Poznań, National Museum Szczecin, Wawel Royal Castle, Royal Castle Warsaw, Wilanów Palace and the Archdiocesan Museum Kraków.
+
+### Netherlands: several strong open avenues, important limitations
+
+**Primary:** Rijksmuseum (already registered), Mauritshuis (already registered), and newly added [Centraal Museum Utrecht](https://prod.centraalmuseum.nl/en/collection-and-research/request-image), which confirms free, royalty-free public-domain download. The Mauritshuis says all collection images can be downloaded without royalties, asks for artwork title/artist/year and institutional credit in publications; respect exact photos and source records.
+
+**Reference-only institutional photograph source:** [Museum Boijmans Van Beuningen terms](https://www.boijmans.nl/en/terms-of-delivery-images) say reproduction for publication requires permission and transformations need approval. It now provides some photographs free *on request*, but free delivery is **not** a licence for unrestricted use or automated modification. Under the €0/no-contact strategy it is a source for art-historical object research and independently obtained, separately cleared reproductions only.
+
+**High priority unverified**: Museum Catharijneconvent Utrecht (Catholic collections), Museum Gouda (altarpieces), Bonnefanten Maastricht, Frans Hals Museum Haarlem, Museum De Lakenhal Leiden, Dordrechts Museum, Het Noordbrabants Museum, Teylers Museum, Museum Prinsenhof Delft, Amsterdam Museum and Kröller-Müller (lower religious-image relevance).
+
+### Belgium: first-priority multi-museum programme
+
+**Most strategically valuable:** [Art in Flanders](https://artinflanders.be/en), run by Meemoo, with **more than 24,000 downloadable images from more than 100 Flemish collections**. Its [rights and reuse rules](https://artinflanders.be/en/download-free-images) explicitly allow commercially reusing images marked Public Domain, and it also carries CC BY examples.
+
+**Hard exception inside Art in Flanders:** Cathedral of Our Lady Antwerp, Saint Rumbold's Cathedral Mechelen and Saint Bavo's Cathedral Ghent **Ghent Altarpiece** images have special conditions including religious-symbolism rules, a maximum freely downloadable resolution of 2000 pixels and possible licence fees. **Exclude those particular church-controlled images from unrestricted automated intake, even if the broader portal is open.** Other independently licensable reproductions of those artworks remain a separate file-by-file legal review.
+
+**Also directly open:** [KMSKA Antwerp](https://kmska.be/en/disclaimer) states photos of public-domain artworks can be downloaded freely and reused without restrictions, with museum credit appreciated. **Conditional:** MSK Gent exposes PDM-labelled objects and IIIF, but ascertain that the particular digital image file is openly licensed before acquisition; Groeningemuseum Brugge, Museum Mayer van den Bergh and Plantin-Moretus may have item-eligible images through Art in Flanders.
+
+**Research-only:** [Royal Museums of Fine Arts Belgium, Brussels](https://fine-arts-museum.be/fr/disclaimer-copyrights) require written authorisation and usage fees for reuse of museum photographic assets.
+
+**Other discovery leads**: Rubenshuis, Snijders & Rockoxhuis, M Leuven, Musée des Beaux-Arts Tournai, Mu.ZEE Ostend. No blanket photo rights presumed.
+
+### Execution priority after directory completion
+
+1. **Filter actual source files** from Paris Musées, Art in Flanders, KMSKA, Belvedere, Rijksmuseum, Mauritshuis, National Museum Warsaw and the qualified Museum of Warsaw holdings. These are potential high-volume inputs—not pre-certified photos.
+2. Run object/iconography/artist queries with parallel title aliases, compare to the **383 canonical works** and historical approvals/rejections; preserve exact artwork physical identity.
+3. For each promising work capture museum object ID, source-image URL, licence designation, photo credit, SHA (once lawfully acquired), resolution, material, and any special restrictions; **do not treat museum-level policy as a photograph-level clearance**.
+4. Carry out quality checks only after rights evidence. Exclude frames, supports, margins, reflections, low-res originals, overprocessing, watermarks and colour shifts; never overwrite source originals.
+5. Keep the entire programme **€0**, with no paid permissions, paid high-resolution service, fee-bearing storage, API overage or unpermitted scraping. Report per-country discovered works, exact-work duplicates, rights-cleared photos and pristine quality as separate gates.
+
+No new photographs were downloaded, selected or modified in this museum directory expansion. No 383-file licensing statuses, 107 approved artwork decisions, Prayer heroes or production assets were changed.
+
 ### Rights held or limited
 
 - **Conditional**: Kunstmuseum Basel — free public-domain downloads, but exact file reuse terms require checking; Nationalmuseum Stockholm — image-specific licensing can be CC BY-SA; Belvedere Vienna — example collection images restricted to private/scientific use.
@@ -117,6 +195,6 @@ Specific institutional examples: [Brera image rights](https://pinacotecabrera.or
 - For each of the 22 preferred programmes, collect relevant collection size and artist/subject/title matches **without downloading entire collections**.
 - Rank candidates by exact iconographic fit and availability of a truly reusable original photograph, not by museum fame alone.
 - Report **number of institutions screened; paintings discovered; physical-work matches to canonical artworks; per-image rights verified; photo SHA joined; frames/quality passed; releases** as separate counters.
-- Do not assert that a museum has been exhausted until its documented query scope, date, coverage, filters and exception count are archived. The 96 programmes are a prioritized directory, not an exhaustive world list.
+- Do not assert that a museum has been exhausted until its documented query scope, date, coverage, filters and exception count are archived. The 186 programmes are a prioritized directory, not an exhaustive world list.
 
 **Preservation**: do not change the 383 audit dispositions, the 107 approved artwork decisions, the 22 Prayer heroes, artist exclusions, other historical rejects or production assets. No fees or fee-bearing image licences.
