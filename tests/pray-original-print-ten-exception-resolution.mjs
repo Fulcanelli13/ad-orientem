@@ -6,7 +6,7 @@ import {HOLY_SOULS_PRINT_ALIGNED_V1,HOLY_SOULS_PRINT_ALIGNED_DAY_IDS} from '../s
 const r=JSON.parse(readFileSync(new URL('../data/pray/original-print-ten-exception-resolution-20261029.v1.json',import.meta.url),'utf8'));
 assert.equal(r.schema,'ao.pray.original-print-ten-exception-resolution.v1');
 assert.equal(r.exceptions.length,10);
-assert.deepEqual([...HOLY_SOULS_PRINT_ALIGNED_DAY_IDS].sort((a,b)=>a-b),[1,2,4,6,9]);
+assert.deepEqual([...HOLY_SOULS_PRINT_ALIGNED_DAY_IDS].sort((a,b)=>a-b),[1,2,4,5,6,8,9]);
 assert.equal(r.outcomes.ocrLayoutOnlyNoTextChange,5);
 assert.equal(r.outcomes.actualEnglishHistoricalVariantsCorrected,5);
 assert.equal(r.outcomes.fullPrintedBookEditionCertified,0);
@@ -28,7 +28,7 @@ for(const [id,source] of Object.entries(NOVENA_CORPUS_V3)){
   }else assert.equal(now,old,'Unexpected donor-source difference '+id+' day '+(i+1));
  }
 }
-assert.equal(changed,5);
+assert.equal(changed,7);
 for(const row of r.exceptions){
  const live=NOVENA_CORPUS_V4[row.id]?.days[row.day-1];
  assert.ok(live);
@@ -46,5 +46,5 @@ assert.equal(ocrOnly,5);
 const day4=r.exceptions.find(x=>x.id==='holy_souls'&&x.day===4);
 assert.deepEqual(day4.sourcePdfPageIndexes,[203,204]);
 assert.match(NOVENA_CORPUS_V4.holy_souls.source.status,/PRINT_EDITION_NOT_COLLATED/);
-assert.match(NOVENA_CORPUS_V4.holy_souls.source.adaptation,/Five day-prayer bodies/);
+assert.match(NOVENA_CORPUS_V4.holy_souls.source.adaptation,/Seven day-prayer bodies/);
 console.log('PASS print ten-exception result: 5 Hammer OCR-only + 5 visually justified Holy Souls source variants; N3 untouched, other 67 day bodies frozen, no false print certification.');
