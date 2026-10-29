@@ -1,0 +1,39 @@
+name: Prayer UX unified phone route coverage
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/pray/internal-route-owner.js"
+      - "src/pray/presentation-runtime.js"
+      - "src/pray/presentation-styles.js"
+      - "src/pray/devotional-card-deck-styles.js"
+      - "src/pray/precious-blood-chaplet-styles.js"
+      - "src/pray/five-wounds-chaplet-styles.js"
+      - "tests/pray-ux-direct-route-mobile-audit.mjs"
+      - ".github/workflows/pray-ux-unified-phone.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  direct-routes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install declared project dependencies
+        run: npm install --no-audit --no-fund
+      - name: Use local Chromium for real mobile DOM checks
+        run: npx playwright install --with-deps chromium
+      - name: Screen all Prayer direct-entry routes at 320px and 390px
+        run: node tests/pray-ux-direct-route-mobile-audit.mjs
+      - name: Temporary route matrix and representative visual captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pray-ux-unified-phone-audit
+          path: artifacts/pray-ux-unified/
+          if-no-files-found: ignore
+          retention-days: 3
