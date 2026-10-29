@@ -1,0 +1,48 @@
+name: Sacred Art - B9 AIC official open-access supplement
+on:
+  push:
+    branches: [research/sacred-art-b9-met-250-20261029]
+    paths:
+      - scripts/art/sacred-art-b9-aic-supplement-20261029.py
+      - .github/workflows/sacred-art-b9-aic-supplement-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  harvest-aic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b9-met-250-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Acquire title-focused paintings via official AIC API and check image bytes
+        run: |
+          python -m py_compile scripts/art/sacred-art-b9-aic-supplement-20261029.py
+          python -u scripts/art/sacred-art-b9-aic-supplement-20261029.py
+      - name: Validate supplement provenance and image-link checks
+        run: |
+          python - <<'PY'
+          import json
+          p='data/calendar/sacred-art-b9-aic-open-access-supplement-20261029.v1.json'
+          j=json.load(open(p));r=j['rows'];c=j['counts']
+          assert len(r)==len({x['id'] for x in r})==len({x['previewURL'] for x in r})
+          assert c['previousReviewIDsExcluded']==1260
+          assert all(x['provider']=='AIC' and x['sourceRights']=='AIC_IS_PUBLIC_DOMAIN_TRUE_OFFICIAL_IIIF_CC0' for x in r)
+          assert all(x['previewURL'].startswith('https://www.artic.edu/iiif/2/') for x in r)
+          assert c['productionImports']==c['originalImageDownloads']==0
+          print('AIC_SOURCE_SUPPLEMENT_VALID',len(r),'official source-linked paintings')
+          PY
+      - name: Archive checked AIC records, without any original images
+        run: |
+          git config user.name "Ad Orientem art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b9-aic-open-access-supplement-20261029.v1.json
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): archive verified AIC sacred paintings for B9"
+          git pull --rebase origin research/sacred-art-b9-met-250-20261029
+          git push origin HEAD:research/sacred-art-b9-met-250-20261029
