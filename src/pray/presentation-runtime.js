@@ -790,7 +790,8 @@ function renderPrayFamily(){
  return `${head(family.title,L('Choose a prayer or devotion','Choisissez une prière ou une dévotion'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro">${familyId==='chaplets'?'':`<small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(family.title)}</h2>`}<p>${esc(family.description)}</p>${({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId]?'<div class="aoP435930ContextRow">'+glossaryContextCapsule(({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId],{french:isFr()})+'</div>':''}</section><div class="aoP435930ModuleGrid">${family.items.map(prayFamilyItem).join('')}${related.map(item=>prayFamilyItem(item,true)).join('')}</div></main>`;
 }
 function openFamily(id){
- const family=prayFamilies()[String(id??'')];
+ const key=String(id??'');
+ const family=prayFamilies()[key]||(PRAYER_PILOT_ENABLED?prayerPilotAliases(L)[key]:null);
  if(!family||family.direct)return false;
  familyId=String(id);view='family';render();return true;
 }
