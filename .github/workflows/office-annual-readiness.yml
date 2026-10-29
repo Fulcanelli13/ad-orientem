@@ -29,6 +29,15 @@ on:
       - 'src/office/advent-first-vespers-saturday-psalm-integrity.js'
       - 'src/office/advent-i-2026-proper-printed-latin.js'
       - 'src/office/advent-i-collect-ending-1960-research.js'
+      - 'src/office/advent-first-vespers-preview-model.js'
+      - 'src/office/advent-first-vespers-preview-session.js'
+      - 'src/office/advent-first-vespers-bounded-preview-reader.js'
+      - 'tests/divine-office-advent-first-vespers-private-preview.mjs'
+      - 'previews/advent-i-first-vespers-2026-research.html'
+      - 'tests/fixtures/office/advent-i-preview-la.json'
+      - 'tests/fixtures/office/advent-i-preview-en.json'
+      - 'tests/fixtures/office/advent-i-preview-fr.json'
+      - 'tests/fixtures/office/advent-i-preview-ordinary.txt'
       - 'tests/divine-office-advent-i-collect-ending-1960-research.mjs'
       - 'tests/fixtures/office/advent-i-2026-collect-dialogue-source-sections.json'
       - 'tests/divine-office-advent-i-proper-printed-latin.mjs'
@@ -137,6 +146,10 @@ jobs:
           node --test tests/divine-office-advent-i-proper-printed-latin.mjs
           node --check src/office/advent-i-collect-ending-1960-research.js
           node --test tests/divine-office-advent-i-collect-ending-1960-research.mjs
+          node --check src/office/advent-first-vespers-preview-model.js
+          node --check src/office/advent-first-vespers-preview-session.js
+          node --check src/office/advent-first-vespers-bounded-preview-reader.js
+          node --test tests/divine-office-advent-first-vespers-private-preview.mjs
           node --check src/office/conditional-source-reader.js
           node --test tests/divine-office-conditional-source-reader.mjs
           node --test tests/divine-office-expanded-temporal-sweep.mjs
