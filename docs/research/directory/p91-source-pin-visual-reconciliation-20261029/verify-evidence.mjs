@@ -12,6 +12,7 @@ const heldSites = new Set(), photoIds = new Set();
 const p94VisualIds = new Set(), p94OutcomeCounts = {};
 const p95VisualIds = new Set(), p95OutcomeCounts = {};
 const p96VisualIds = new Set(), p96OutcomeCounts = {}, p96Sites = new Set();
+const p97VisualIds = new Set(), p97OutcomeCounts = {}, p97Sites = new Set();
 const fail = msg => { throw new Error('P91/P92 gate: ' + msg); };
 
 if (ledger.records.length !== 385 || ledger.total_original_assignments !== 385) fail('385 original records must be preserved');
@@ -74,6 +75,20 @@ for (const row of ledger.records) {
     p96Sites.add(row.physical_anchor_id);
     p96OutcomeCounts[v.editorial_role_screening] = (p96OutcomeCounts[v.editorial_role_screening] || 0) + 1;
   }
+  if (row.p97_actual_preview_visual_review) {
+    const v = row.p97_actual_preview_visual_review;
+    if (derived !== 'EXACT_BUILDING_CORROBORATED_RESEARCH_ONLY' ||
+      !v.preview_actually_inspected || v.scope !== 'RENDERED_EXACT_COMMONS_SOURCE_FILE_PREVIEW_NOT_ORIGINAL' ||
+      v.exact_source_file_url !== row.source_url || !v.role || !v.editorial_role_screen || !v.visible_observation ||
+      row.p94_actual_preview_visual_review || row.p95_actual_preview_visual_review || row.p96_actual_preview_visual_review)
+      fail('P97 must contain non-overlapping genuine exact-source visual proof for ' + row.contact_index);
+    if (v.original_file_bytes_downloaded || v.original_sha1_recomputed || v.full_size_quality_approved ||
+      v.rights_and_attribution_cleared || v.final_editorial_approved || v.published)
+      fail('P97 may not imply original-byte, rights or production approval for ' + row.contact_index);
+    p97VisualIds.add(row.contact_index);
+    p97Sites.add(row.physical_anchor_id);
+    p97OutcomeCounts[v.editorial_role_screen] = (p97OutcomeCounts[v.editorial_role_screen] || 0) + 1;
+  }
   if (derived === 'HELD_UNVERIFIED') heldSites.add(row.physical_anchor_id);
   actual[derived]++;
 }
@@ -114,4 +129,20 @@ if (Object.keys(p96OutcomeCounts).length !== Object.keys(ledger.p96_visual_scree
   fail('P96 review outcome ledger inconsistent');
 if (p94VisualIds.size + p95VisualIds.size + p96VisualIds.size + ledger.p96_remaining_identity_corrob_uninspected !== 83)
   fail('P96 all research corroborations must be accounted for, including 31 unreviewed');
-console.log('PASS: 385 image-to-site assignments; 90 wrong, 83 research corroborated, 212 held; 52 exact visual previews inspected (22 P96), 31 pending; zero rights/original-byte/publication approvals.');
+const leftP97 = ledger.records.filter(row =>
+  row.effective_image_site_disposition === 'EXACT_BUILDING_CORROBORATED_RESEARCH_ONLY' &&
+  !row.p94_actual_preview_visual_review && !row.p95_actual_preview_visual_review &&
+  !row.p96_actual_preview_visual_review && !row.p97_actual_preview_visual_review
+).map(row => row.contact_index).sort((a,b)=>a-b);
+if (p97VisualIds.size !== 27 || p97Sites.size !== 13 ||
+  ledger.p97_new_direct_preview_reviews !== 27 || ledger.p97_total_direct_preview_reviews !== 79 ||
+  ledger.p97_remaining_identity_corrob_uninspected !== 4 ||
+  JSON.stringify(leftP97) !== JSON.stringify([77,110,204,261]) ||
+  JSON.stringify(ledger.p97_exact_images_not_visually_retrievable) !== JSON.stringify(leftP97))
+  fail('P97 must distinguish 27 genuine previews from four inaccessible images');
+if (Object.keys(p97OutcomeCounts).length !== Object.keys(ledger.p97_visual_screen_outcome_counts || {}).length ||
+  Object.keys(p97OutcomeCounts).some(k=>p97OutcomeCounts[k] !== ledger.p97_visual_screen_outcome_counts[k]))
+  fail('P97 role screening summary mismatch');
+if (p94VisualIds.size + p95VisualIds.size + p96VisualIds.size + p97VisualIds.size + leftP97.length !== 83)
+  fail('P97 all 83 research identities must be accounted for');
+console.log('PASS: 385 images; 90 wrong, 83 research corroborated, 212 unresolved; 79 exact-source thumbnails visually viewed, four inaccessible held; zero original-byte, rights, final approval or production publication.');
