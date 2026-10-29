@@ -1803,7 +1803,7 @@
         199
       ],
       "initialPdfTextLayerOverlapBasisPoints": 7890,
-      "latestPdfTextLayerOverlapBasisPoints": 7890,
+      "latestPdfTextLayerOverlapBasisPoints": null,
       "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
       "originalFirstEditionVerified": false,
       "originalFrenchWitnessVerified": false,
@@ -1819,7 +1819,8 @@
       "visualPdfPageIndexesZeroBased": null,
       "sourceImageFiles": [],
       "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "editionCaveat": null,
+      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
     },
     {
       "id": "holy_souls",
@@ -1831,7 +1832,7 @@
         202
       ],
       "initialPdfTextLayerOverlapBasisPoints": 7419,
-      "latestPdfTextLayerOverlapBasisPoints": 7419,
+      "latestPdfTextLayerOverlapBasisPoints": null,
       "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
       "originalFirstEditionVerified": false,
       "originalFrenchWitnessVerified": false,
@@ -1847,7 +1848,8 @@
       "visualPdfPageIndexesZeroBased": null,
       "sourceImageFiles": [],
       "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "editionCaveat": null,
+      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
     },
     {
       "id": "holy_souls",
@@ -1890,7 +1892,7 @@
         203
       ],
       "initialPdfTextLayerOverlapBasisPoints": 6615,
-      "latestPdfTextLayerOverlapBasisPoints": 6615,
+      "latestPdfTextLayerOverlapBasisPoints": null,
       "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
       "originalFirstEditionVerified": false,
       "originalFrenchWitnessVerified": false,
@@ -1906,7 +1908,13 @@
       "visualPdfPageIndexesZeroBased": null,
       "sourceImageFiles": [],
       "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "editionCaveat": null,
+      "correctedSourceWindowZeroBased": [
+        203,
+        204
+      ],
+      "note": "Earlier two-page automated best-hit window [202,203] omitted the end of printed day four. The visually reviewed full prayer runs PDF indices [203,204], as recorded in the ten-exception resolution.",
+      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
     },
     {
       "id": "holy_souls",
@@ -1943,7 +1951,7 @@
         206
       ],
       "initialPdfTextLayerOverlapBasisPoints": 7835,
-      "latestPdfTextLayerOverlapBasisPoints": 7835,
+      "latestPdfTextLayerOverlapBasisPoints": null,
       "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
       "originalFirstEditionVerified": false,
       "originalFrenchWitnessVerified": false,
@@ -1959,7 +1967,8 @@
       "visualPdfPageIndexesZeroBased": null,
       "sourceImageFiles": [],
       "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "editionCaveat": null,
+      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
     },
     {
       "id": "holy_souls",
@@ -2027,7 +2036,7 @@
         209
       ],
       "initialPdfTextLayerOverlapBasisPoints": 7622,
-      "latestPdfTextLayerOverlapBasisPoints": 7622,
+      "latestPdfTextLayerOverlapBasisPoints": null,
       "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
       "originalFirstEditionVerified": false,
       "originalFrenchWitnessVerified": false,
@@ -2043,7 +2052,8 @@
       "visualPdfPageIndexesZeroBased": null,
       "sourceImageFiles": [],
       "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "editionCaveat": null,
+      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
     }
   ]
 }
