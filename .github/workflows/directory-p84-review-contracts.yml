@@ -1,0 +1,31 @@
+name: P84 worldwide photo review offline contracts
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/directory/p84-worldwide-preview-review.py'
+      - 'tools/directory/p84-worldwide-review-template.html'
+      - 'tests/directory-p84-worldwide-review-test.py'
+      - '.github/workflows/directory-p84-one-worldwide-review.yml'
+      - '.github/workflows/directory-p84-review-contracts.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed preview decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Validate 8-shard full-population review, source hash and subject/rights holds
+        run: |
+          python -m py_compile tools/directory/p84-worldwide-preview-review.py
+          python tests/directory-p84-worldwide-review-test.py -v
+          node tests/production-tree-hygiene.mjs
