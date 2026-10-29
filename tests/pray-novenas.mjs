@@ -198,7 +198,7 @@ for(const [id,original] of Object.entries(NOVENA_CORPUS_V3)){
    assert.equal(after.guide.fr,overlay.guide);
    assert.notEqual(after.guide.fr,before.guide.en,"English guide leaked into French: "+id+" day "+(i+1));
   }else assert.equal(after.guide.fr,before.guide.fr,"Unintended French guide edit: "+id+" day "+(i+1));
-  // Only five source-page-photographed Holy Souls corrections are allowed
+  // Only seven source-page-photographed Holy Souls corrections are allowed
   // to differ from N3. Every other historical prayer body remains frozen.
   const printFix=id==="holy_souls"?HOLY_SOULS_PRINT_ALIGNED_V1[i+1]||null:null;
   assert.equal(after.text?.en||"",printFix?.en||before.text||"","Unapproved prayer edit: "+id+" day "+(i+1));
