@@ -71,7 +71,7 @@ function candidateMonth(record,year,month){
   return {anchor:d,period:c.type==="MOVABLE_EASTER"?"Easter season":"Pentecost",kind:"SEASON_FEAST_CONTEXT_NO_EVENT_CONFIRMATION"};
  }
  if(c.type==="FIXED_CONTEXT_DAY"||c.type==="FIXED_CONTEXT_RANGE"){
-  const start=localIso(year,c.anchor_month_day),end=c.contextual_span_end_month_day?localIso(year,c.contextual_span_end_month_day):null;
+  const start=localIso(year,c.month_day),end=c.range_end?localIso(year,c.range_end):null;
   if(start.startsWith(ym))return {anchor:start,period:end?start+" to "+end:start,kind:"FIXED_HISTORICAL_CONTEXT_NOT_EVENT_CONFIRMATION"};
   if(end&&end.startsWith(ym))return {anchor:null,period:start+" to "+end,kind:"ONGOING_CONTEXT_NOT_LOCAL_EVENT_DATE"};
  }
