@@ -375,7 +375,11 @@ function compactExploreItemSheet(vm){
   html+='<header><div><small>'+esc((lang==="fr"&&item.eyebrow_fr)||item.eyebrow||lensLabel(lang,item.lens))+'</small><h2>'+esc(title)+'</h2>';
   if(area)html+='<p>'+esc(area)+'</p>';
   html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(lang,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
-  if(isMass&&eligibleDirectoryImage(item.cover_media,item.place_id))html+='<img class="aoTlmPreviewPhoto" loading="lazy" decoding="async" src="'+esc(item.cover_media.asset_path)+'" alt="'+esc(lang==="fr"?item.cover_media.alt_fr:item.cover_media.alt_en)+'">';
+  if(isMass&&eligibleDirectoryImage(item.cover_media,item.place_id)){
+    const m=item.cover_media;
+    html+='<img class="aoTlmPreviewPhoto" loading="lazy" decoding="async" src="'+esc(m.asset_path)+'" alt="'+esc(lang==="fr"?m.alt_fr:m.alt_en)+'">'
+      +'<small class="aoTlmPreviewPhotoCredit">'+esc(m.credit)+' · <a href="'+esc(m.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(m.license)+'</a> · <a href="'+esc(m.source_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(lang,"Original photo","Photo originale"))+'</a></small>';
+  }
   if(summary)html+='<p class="aoExplorePreviewSynopsis">'+esc(summary)+'</p>';
   if(isMass)html+='<p class="aoExplorePreviewCaution">'+esc(L(lang,
     "Check the source for current Mass times, exact entrance and the status of individual celebrations.",
@@ -406,7 +410,15 @@ function detailSheet(vm){
   if(subtitle)html+='<p>'+esc(subtitle)+'</p>';
   html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
 
-  if(item.kind==="TLM_VENUE"&&eligibleDirectoryImage(item.cover_media,item.place_id))html+='<figure class="aoTlmDetailPhoto"><img loading="lazy" decoding="async" src="'+esc(item.cover_media.asset_path)+'" alt="'+esc(vm.language==="fr"?item.cover_media.alt_fr:item.cover_media.alt_en)+'"><figcaption>'+esc(item.cover_media.credit)+' · '+esc(item.cover_media.license)+'</figcaption></figure>';
+  if(item.kind==="TLM_VENUE"&&eligibleDirectoryImage(item.cover_media,item.place_id)){
+    const m=item.cover_media;
+    const changes=vm.language==="fr"?m.changes_fr:m.changes_en;
+    html+='<figure class="aoTlmDetailPhoto"><img loading="lazy" decoding="async" src="'+esc(m.asset_path)+'" alt="'+esc(vm.language==="fr"?m.alt_fr:m.alt_en)+'"><figcaption>'
+      +esc(m.credit)+' · <a href="'+esc(m.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(m.license)+'</a>'
+      +' · <a href="'+esc(m.source_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Original Wikimedia photograph","Photographie Wikimedia originale"))+'</a>'
+      +(changes?'<span class="aoTlmPhotoChanges"> · '+esc(changes)+'</span>':'')
+      +'</figcaption></figure>';
+  }
   if(item.kind==="TLM_VENUE")html+=renderDirectoryGallery(item,vm.language);
   html+='<div class="aoExploreFullBack"><button type="button" data-explore-collapse-detail>'+esc(L(vm.language,"← Back to preview","← Retour à l’aperçu"))+'</button></div>';
   if(item.summary)html+='<p class="aoExploreLead">'+esc(translatedSummary(item,vm.language))+'</p>';
