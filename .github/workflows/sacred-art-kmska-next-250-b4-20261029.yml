@@ -26,6 +26,28 @@ jobs:
         run: |
           python -m py_compile scripts/art/sacred-art-kmska-next-250-b4-20261029.py
           python scripts/art/sacred-art-kmska-next-250-b4-20261029.py --target 250 --oai-pages 180 --delay .11 --image-checks 700
+      - name: Build completed B4 50-per-page import-only gallery in the same source workflow
+        run: |
+          python -m py_compile scripts/art/build-sacred-art-kmska-next-b4-gallery-20261029.py
+          python scripts/art/build-sacred-art-kmska-next-b4-gallery-20261029.py
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          h=Path('docs/SACRED_ART_KMSKA_NEXT_250_IMPORT_REVIEW_B4_20261029.html').read_text(encoding='utf8')
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert m
+          rows=json.loads(m.group(1))
+          assert 200<=len(rows)<=250
+          assert all(x['rightsConflict'] and x['provider']=='KMSKA' for x in rows)
+          assert "batchId:'B4'" in h
+          assert 'const PAGE_SIZE=50' in h and 'seenPages.length<TOTAL_PAGES' in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'Finalize and export decisions' in h
+          js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert js
+          Path('/tmp/ao-art-b4-complete.js').write_text(js.group(1))
+          print('PASS: B4 self-contained',len(rows),'artwork cards')
+          PY
+          node --check /tmp/ao-art-b4-complete.js
       - name: Validate independent sources, 250 paintings, no licence or user-decision promotion
         run: |
           python - <<'PY'
@@ -54,7 +76,7 @@ jobs:
           if [ ! -f data/calendar/sacred-art-kmska-next-250-b4-20261029.v1.json ]; then exit 0; fi
           git config user.name "Ad Orientem art research"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/calendar/sacred-art-kmska-next-250-b4-20261029.v1.json docs/SACRED_ART_KMSKA_B4_250_SOURCE_QA_20261029.md
+          git add data/calendar/sacred-art-kmska-next-250-b4-20261029.v1.json docs/SACRED_ART_KMSKA_B4_250_SOURCE_QA_20261029.md docs/SACRED_ART_KMSKA_NEXT_250_IMPORT_REVIEW_B4_20261029.html
           git diff --cached --check
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "research(art): preserve next distinct 250 KMSKA paintings B4"
