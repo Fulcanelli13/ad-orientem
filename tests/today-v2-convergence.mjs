@@ -98,7 +98,8 @@ assert.doesNotMatch(primary,/class="contentCard findCard/);
 assert.doesNotMatch(primary,/aoHomeComingUp/);
 assert.equal((primary.match(/data-home-scripture/g)||[]).length,1,"Scripture must retain one compact native entry without duplicate cards");
 assert.doesNotMatch(primary,/data-resume-mass/);
-assert.match(TODAY_V2_CSS,/\.aoTodayV2Frontispiece \.aoTodayV2Art::after\{display:none!important\}/,"H1.2 image island should have no title veil");\nassert.ok(TODAY_V2_CSS.includes('html[data-ao-appearance-v1="light"] .aoTodayV2ArtMissing .aoTodayV2Art::after'),"Light no-art hero must not retain a dark veil under dark text");
+assert.match(TODAY_V2_CSS,/\.aoTodayV2Frontispiece \.aoTodayV2Art::after\{display:none!important\}/,"H1.2 image island should have no title veil");
+assert.ok(TODAY_V2_CSS.includes('html[data-ao-appearance-v1="light"] .aoTodayV2ArtMissing .aoTodayV2Art::after'),"Light no-art hero must not retain a dark veil under dark text");
 assert.ok(TODAY_V2_CSS.includes('html[data-ao-appearance-v1="light"] .aoTodayV2Frontispiece:not(.aoTodayV2ArtMissing) .aoTodayV2ArtOverlay h1'),"Approved artwork keeps light foreground text in either theme");
 assert.match(TODAY_V2_CSS, /@media\(max-width:699px\)\{\s*\.aoTodayV2ArtMissing \.aoTodayV2Art\{height:clamp\(138px,36vw,175px\)!important/,
   "Compact no-art fallback is strictly phone-scoped, leaving desktop layout unchanged");
