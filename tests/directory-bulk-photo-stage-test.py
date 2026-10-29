@@ -57,7 +57,8 @@ class BulkPhotoStageTests(unittest.TestCase):
                       category_requested="INTERIOR")
         x["venues"][0]["categories"]["INTERIOR"]=[interior]
         self.assertEqual(len(mod.candidate_selection(x,"interior")),1)
-        self.assertEqual(mod.candidate_selection(x,"exterior"),[])
+        with self.assertRaisesRegex(ValueError,"Wrong source wave"):
+            mod.candidate_selection(x,"exterior")
         with tempfile.TemporaryDirectory() as td:
             report=mod.stage(self.fake(),"exterior",0,1,Path(td)/"out",
                              Path(td)/"report.json",validate_only=True)
@@ -163,7 +164,7 @@ class BulkPhotoStageTests(unittest.TestCase):
         import io
         from PIL import Image
         buf=io.BytesIO()
-        Image.new("RGB",(1600,1000),(50,90,30)).save(buf,"JPEG")
+        Image.effect_noise((1600,1000),100).convert("RGB").save(buf,"JPEG")
         binary,size,_=mod.convert_original(buf.getvalue(),
             {"mime":"image/jpeg","width":1600,"height":1000},
             {"panorama_hint":"UNSPECIFIED"})
