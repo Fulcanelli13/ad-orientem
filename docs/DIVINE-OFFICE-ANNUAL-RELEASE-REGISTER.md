@@ -895,3 +895,16 @@ https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html
 (§166(a)). Source revision remains
 `126a07f91ede04664108abb6fb20ace3f4de14b9`.
 This correction is **mandatory** before any complete-Hour certification.
+
+
+## Advent I First Vespers — 1960 rubric-sequence acceptance layer (29 October 2026)
+
+The research source assembly's 9/10 slots are **not** nine approved liturgical slots. A separate, non-rendering pure reviewer now lives at src/office/advent-first-vespers-rubric-plan.js with regressions at tests/divine-office-advent-first-vespers-rubric-plan.mjs.
+
+Under the 1960 Breviary Rubrics, BR 178(b) starts Vespers **directly at Deus in adiutorium**; the Pater noster and Ave Maria entries remain in the historical source inventory but are **not** obligatory Vespers opening events. BR 166(a) uses Saturday Day6 Vespera, with five Psalm 143/144 portions: 143:1–8, 143:9–15, 144:1–7, 144:8–13a, 144:13b–21. BR 190–191 puts **full** antiphons before and after all five portions and Magnificat (12 antiphon uses). BR 201 adds Gloria Patri after all five portions and Magnificat (6 instances). BR 260 excludes preces from this Saturday First Vespers. BR 204 puts the versicle after the hymn; BR 188 retains the printed hymn conclusion.
+
+BR 247 differentiates *Dominus vobiscum* from *Domine exaudi* before the collect according to the recitation situation and ordination; a solo reciter always uses the latter. The reviewer records this branching but does not claim to have collated the actual spoken formula or dismissal. It also holds the opening Alleluia alternative, §198 psalm/canticle incipit overlap, and first-vs-second Vespers dismissal conditional. General Rubrics §§106–114 and Breviary Rubrics §§250–259 still require an independently reviewed commemoration decision. **No commemoration is invented or dismissed solely because its source slot is empty.** Local calendars are held.
+
+This sequence is only a **rubric-ordered research witness**, not the source-authenticated published Hour. No real LA/EN/FR full-text print collation, rights approval, local-calendar adjudication, or live reader has been completed. Invariants remain 0 liturgically certified Hours, 0 approved Hours and 0 published Hours.
+
+Primary references: [1960 Breviary Rubrics](https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html) and [1960 General Rubrics](https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html). Next acceptance slice: a genuine, independently compared 1960/61 printed Latin Advent I First Vespers transcript and then separate English/French collation, with recitation, commemorations and publication rights adjudicated.
