@@ -9,7 +9,8 @@
     "DISTINCT_ARTIST_AND_OBJECT": 2,
     "DISTINCT_SAINT_SUBJECT": 2,
     "promotedToCanonical": 0,
-    "userChoicesChanged": 0
+    "userChoicesChanged": 0,
+    "openCasesWithPublishedSourceObjectMetadata": 5
   },
   "policy": "Do not promote textual leads to physical-work same identities without exact accession and authoritative provenance. Different saint identity or artist blocks weak textual matches.",
   "records": [
@@ -38,7 +39,15 @@
         "classification": "OPEN_MUSEUM_OBJECT_EVIDENCE",
         "reason": "Rubens attribution and matching historical subject are not enough to prove same specific artwork",
         "canonicalLinkPromoted": false,
-        "choiceModified": false
+        "choiceModified": false,
+        "verifiedSourceObjectFacts": {
+          "accession": "1958.4.1",
+          "medium": "oil on panel",
+          "collection": "National Gallery of Art",
+          "date": "c. 1626",
+          "officialURL": "https://www.nga.gov/artworks/45640-meeting-abraham-and-melchizedek"
+        },
+        "canonicalImageIdentityStillUnverified": true
       }
     },
     {
@@ -150,7 +159,15 @@
         "classification": "OPEN_MUSEUM_OBJECT_EVIDENCE",
         "reason": "Veronese exact matching iconographic subject; require work-level institutional identity to resolve",
         "canonicalLinkPromoted": false,
-        "choiceModified": false
+        "choiceModified": false,
+        "verifiedSourceObjectFacts": {
+          "accession": "1984.28.1",
+          "medium": "oil on canvas",
+          "collection": "National Gallery of Art",
+          "date": "c. 1585/1586",
+          "officialURL": "https://www.nga.gov/artworks/63264-martyrdom-and-last-communion-saint-lucy"
+        },
+        "canonicalImageIdentityStillUnverified": true
       }
     },
     {
@@ -262,7 +279,16 @@
         "classification": "OPEN_MUSEUM_OBJECT_EVIDENCE",
         "reason": "The Mass of Saint Basil and the canonical oil modello could be same or distinct preparatory works; requires object's accession/medium and canonical provenance",
         "canonicalLinkPromoted": false,
-        "choiceModified": false
+        "choiceModified": false,
+        "verifiedSourceObjectFacts": {
+          "accession": "2007.166",
+          "medium": "oil on canvas transferred from canvas",
+          "collection": "The Metropolitan Museum of Art",
+          "date": "1746",
+          "officialURL": "https://www.metmuseum.org/art/collection/search/439120",
+          "institutionDescription": "The Met describes this work as a proposal/modello for a mosaic altarpiece."
+        },
+        "canonicalImageIdentityStillUnverified": true
       }
     },
     {
@@ -346,7 +372,15 @@
         "classification": "OPEN_MUSEUM_OBJECT_EVIDENCE",
         "reason": "St Rosalie/Rosalia interceding for Palermo title may refer to the same painting; need exact canonical object evidence",
         "canonicalLinkPromoted": false,
-        "choiceModified": false
+        "choiceModified": false,
+        "verifiedSourceObjectFacts": {
+          "accession": "71.41",
+          "medium": "oil on canvas",
+          "collection": "The Metropolitan Museum of Art",
+          "date": "1624",
+          "officialURL": "https://www.metmuseum.org/art/collection/search/436257"
+        },
+        "canonicalImageIdentityStillUnverified": true
       }
     },
     {
@@ -374,8 +408,18 @@
         "classification": "OPEN_MUSEUM_OBJECT_EVIDENCE",
         "reason": "Coronation of Virgin versus canonical oil sketch needs physical work/source attribution corroboration",
         "canonicalLinkPromoted": false,
-        "choiceModified": false
+        "choiceModified": false,
+        "verifiedSourceObjectFacts": {
+          "accession": "L-R 81.2021 (MFA Boston collection)",
+          "medium": "oil on panel",
+          "collection": "Museum of Fine Arts Boston / Weatherbie Collection",
+          "date": "c. 1625",
+          "officialURL": "https://commons.wikimedia.org/wiki/File:13._Coronation_of_the_Virgin_Peter_Paul_Rubens.jpg",
+          "museumObjectId": "505834"
+        },
+        "canonicalImageIdentityStillUnverified": true
       }
     }
-  ]
+  ],
+  "followUpNote": "Five source object accession/medium records verified from NGA, Met or Commons metadata; canonical 383 objects lack identifying source pages so no identity promotion is justified without matching archival SHA/provenance. Original decisions untouched."
 }
