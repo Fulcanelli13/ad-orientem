@@ -267,6 +267,13 @@ jobs:
           comms=json.loads((Path(os.environ["OUTPUT"])/"vespers-commemorations.json").read_text(encoding="utf8"))
           assert comms["schema"]=="ao.office.vespers-commemoration-screening.v1"
           assert comms["sampleDates"]==5 and len(comms["cases"])==5
+          assert len(comms["sundayComparisons"])==2
+          assert [(x["date"],x["part"]) for x in comms["sundayComparisons"]]==[
+            ("2026-10-31","FIRST"),("2026-11-01","SECOND")]
+          assert all(x["specificPrintedWitnessComparisonDone"] is True for x in comms["sundayComparisons"])
+          assert all(x["original1961BreviaryPrintedProperCertified"] is False
+                     and x["canPublish"] is False and x["published"]==0
+                     for x in comms["sundayComparisons"])
           assert {x["date"] for x in comms["cases"]}=={"2026-10-31","2026-11-01","2026-11-02","2026-11-28","2026-11-29"}
           assert all(x["absenceOfHeadingProvesNoCommemoration"] is False for x in comms["cases"])
           assert all(x["printAndLocalOrdoReviewRequired"] is True for x in comms["cases"])
