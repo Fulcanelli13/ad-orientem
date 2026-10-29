@@ -1,0 +1,36 @@
+name: P79 Commons thumbnail host identity diagnostic
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/p79-thumb-source-diagnostic.yml
+permissions:
+  contents: read
+jobs:
+  inspect-image-hosts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inspect only the Wikimedia-provided thumbnail hostname for two P79 sources
+        run: |
+          python - <<'PY'
+          import json,urllib.request,urllib.parse
+          data=json.load(open("data/geography/research/p79-all-502-commons-review.v1.json"))
+          for idx in (1,2,112,256,425):
+              r=data["records"][idx-1]
+              q=urllib.parse.urlencode({"action":"query","format":"json","formatversion":"2","prop":"imageinfo","iiprop":"url|sha1|size|mime|extmetadata","iiurlwidth":"540","titles":r["source_file"]})
+              url="https://commons.wikimedia.org/w/api.php?"+q
+              req=urllib.request.Request(url,headers={"User-Agent":"AdOrientem-P79-ThumbnailHostDiagnostic/1.0 (github.com/Fulcanelli13/ad-orientem)"})
+              with urllib.request.urlopen(req,timeout=30) as res: obj=json.load(res)
+              p=obj["query"]["pages"][0]
+              info=p.get("imageinfo",[{}])[0]
+              for field in ("url","thumburl"):
+                  v=info.get(field,"")
+                  parsed=urllib.parse.urlsplit(v)
+                  print("HOST_DIAGNOSTIC",json.dumps({"id":idx,"field":field,"scheme":parsed.scheme,
+                    "hostname":parsed.hostname,"url_prefix":v[:90],"sha1_match":info.get("sha1")==r["original_sha1"]}),flush=True)
+          PY
