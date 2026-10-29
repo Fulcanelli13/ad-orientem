@@ -147,7 +147,7 @@ async function assertSourcePreview(page){
   bodySize:getComputedStyle(document.body).fontSize
  }));
  assert.ok(info.horizontalOverflow<=1,"mobile preview has horizontal overflow: "+JSON.stringify(info));
- assert.equal(info.navButtonCount,5);
+ assert.equal(info.navButtonCount,7);
  assert.match(info.brand,/Divine Office/);
 }
 try{
@@ -189,6 +189,8 @@ try{
  assert.equal(await page.locator(".locale").first().innerText(),"LATIN");
  await shot(page,"03-mobile-390-la-only");
  await page.locator('[data-mode="fr"]').click();
+ await page.locator('[data-view="whole"]').click();
+ assert.equal(await page.locator('[data-view="whole"]').getAttribute("aria-pressed"),"true");
  const seenKinds=[],total=49;
  let clicked=0,psalm=false,hymn=false,magnificat=false,collect=false,note=false;
  for(let i=0;i<total;i++){
@@ -235,6 +237,92 @@ try{
   collectConclusionAppearsOnce:true,noHorizontalOverflow:true
  });
  await mobile.close();
+
+ // Separate real Chromium acceptance for the short mobile reading progression.
+ // The original 37 source events are NOT replaced: 86 focused steps are
+ // derived by splitting only 40 numbered Psalm rows, ten Magnificat verses
+ // and the six original hymn stanzas, with no altered or omitted source text.
+ const focusMobile=await browser.newContext({
+  viewport:{width:390,height:844},deviceScaleFactor:2,
+  isMobile:true,hasTouch:true,locale:"en-GB",reducedMotion:"reduce"
+ });
+ const fp=await focusMobile.newPage(),focusErrors=watchErrors(fp);
+ const focusHits=await mockSources(fp);
+ await awaitReader(fp);
+ assert.equal(await fp.locator('[data-view="focus"]').getAttribute("aria-pressed"),"true");
+ assert.equal(await fp.locator("#bar").getAttribute("aria-valuemax"),"86");
+ let focusPsalm=0,focusHymn=0,focusCanticle=0,focusEnding=0,focusSteps=0;
+ let focusedPsalmShot=false,focusedHymnShot=false,focusedCanticleShot=false;
+ for(let i=0;i<90;i++){
+  const sourceId=await fp.locator("#card .ref").innerText();
+  const cue=await fp.locator("#card .focus-cue").count()?
+    await fp.locator("#card .focus-cue").innerText():"";
+  const at=await fp.locator("#bar").getAttribute("aria-valuenow");
+  assert.equal(Number(at),i+1,"focused progress moved out of sequence");
+  if(/Psalm(?:143|144)#/.test(sourceId)){
+   focusPsalm++;
+   assert.match(cue,/Psalm verse/);
+   if(!focusedPsalmShot){
+    assert.match(await fp.locator("#card").innerText(),/143:1/);
+    const size=await fp.locator("#card").evaluate(el=>el.getBoundingClientRect().height);
+    assert.ok(size<844,"single mobile bilingual Psalm verse still exceeds viewport: "+size);
+    await shot(fp,"15-focus-mobile-390-psalm-la-fr");
+    const origin=cue;
+    await fp.locator('[data-mode="en"]').click();
+    assert.equal(await fp.locator("#card .focus-cue").innerText(),origin);
+    assert.match(await fp.locator("#card").innerText(),/Blessed be the Lord my God/);
+    await shot(fp,"16-focus-mobile-390-psalm-la-en");
+    await fp.locator('[data-mode="fr"]').click();
+    focusedPsalmShot=true;
+   }
+  }
+  if(/Hymnus Adv Vespera/.test(sourceId)){
+   focusHymn++;
+   assert.match(cue,/Stanza/);
+   if(!focusedHymnShot){
+    await shot(fp,"17-focus-mobile-390-hymn-stanza-la-fr");
+    focusedHymnShot=true;
+   }
+  }
+  if(/LUKE_1_46_55/.test(sourceId)){
+   focusCanticle++;
+   assert.match(cue,/Magnificat verse/);
+   if(!focusedCanticleShot){
+    await shot(fp,"18-focus-mobile-390-magnificat-verse-la-fr");
+    focusedCanticleShot=true;
+   }
+  }
+  if(sourceId.includes("Qui vivis"))focusEnding++;
+  assert.ok((await fp.evaluate(()=>document.documentElement.scrollWidth-
+   document.documentElement.clientWidth))<=1,"focused verse caused horizontal overflow");
+  focusSteps++;
+  if(await fp.locator("#next").isDisabled())break;
+  await fp.locator("#next").click();
+ }
+ assert.equal(focusSteps,86);
+ assert.equal(focusPsalm,40);
+ assert.equal(focusHymn,6);
+ assert.equal(focusCanticle,10);
+ assert.equal(focusEnding,1);
+ assert.equal(focusHits.size,22);
+ assert.equal(await fp.locator("#back").isEnabled(),true);
+ assert.equal(await fp.locator("#next").isDisabled(),true);
+ assert.deepEqual(focusErrors,[]);
+ // Switching display mode should preserve the liturgical source EVENT
+ // without duplicating, losing or renumbering the prayer.
+ await fp.locator('[data-view="whole"]').click();
+ assert.equal(await fp.locator("#bar").getAttribute("aria-valuemax"),"37");
+ assert.equal(await fp.locator("#next").isDisabled(),true);
+ await fp.locator('[data-view="focus"]').click();
+ assert.equal(await fp.locator("#bar").getAttribute("aria-valuemax"),"86");
+ assert.equal(await fp.locator("#next").isDisabled(),true);
+ record("390px phone: 86 source-preserving focused steps, 40 Psalm rows, ten Magnificat verses, six hymn stanzas",{
+  passed:true,sourceEvents:37,focusSteps,psalmVerseRows:focusPsalm,
+  magnificatVerseRows:focusCanticle,hymnStanzas:focusHymn,
+  noMissingTranslations:true,noHorizontalOverflow:true,
+  intactSourceCollectEnding:true
+ });
+ await focusMobile.close();
 
  const desktop=await browser.newContext({viewport:{width:1440,height:900},
   deviceScaleFactor:1,locale:"en-GB"});
