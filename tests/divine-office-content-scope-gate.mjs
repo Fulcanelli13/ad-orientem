@@ -145,7 +145,7 @@ test("restored French Sunday Vespera10 with headline-only commemoration clears o
   french.sections=[
     {sourceCellId:"Vespera9",semantic:{role:"PRAYER"},text:"Oraison de Tous les Saints."},
     {sourceCellId:"Vespera10",semantic:{role:"PRAYER"},
-      text:"Jésus se retournant et la voyant dit : Aie confiance, ma fille.\n"+
+      text:"Jésus, se retournant * et la voyant, dit : Aie confiance, ma fille.\n"+
         "℣. Que ma prière soit dirigée, Seigneur.\n"+
         "℟. Comme un encens en votre présence.\n"+
         "Pardonnez, nous vous en supplions, Seigneur, les offenses de vos peuples."}
