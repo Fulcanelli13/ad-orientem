@@ -1,0 +1,22 @@
+name: P100 one-file original acquisition probe
+on:
+  push:
+    branches:
+      - research/p100-original-byte-audit-20261030
+    paths:
+      - .github/workflows/p100-photo-probe.yml
+      - docs/research/directory/p100-original-photo-probe-20261030/**
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  image-probe:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch one exact Wikimedia Commons original and hash bytes
+        run: python3 docs/research/directory/p100-original-photo-probe-20261030/probe.py
