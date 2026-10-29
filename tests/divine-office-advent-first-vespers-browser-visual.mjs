@@ -27,6 +27,13 @@ for(const lang of ["la","en","fr"]){
   "../tests/fixtures/office/advent-i-preview-"+lang+".json",import.meta.url),"utf8"));
  assert.equal(fixtures[lang].revision,PIN);
 }
+const complineFixtures={};
+for(const lang of ["la","en","fr"]){
+ complineFixtures[lang]=JSON.parse(readFileSync(new URL(
+  "../tests/fixtures/office/advent-i-saturday-compline-"+lang+".json",
+  import.meta.url),"utf8"));
+ assert.equal(complineFixtures[lang].sourceRevision,PIN);
+}
 const ordinary=readFileSync(new URL(
  "../tests/fixtures/office/advent-i-preview-ordinary.txt",import.meta.url),"utf8");
 const witness=JSON.parse(readFileSync(new URL(
@@ -69,6 +76,12 @@ function originalSourceFixture(url){
  if(!m)throw Error("OFFICE_VISUAL_UNKNOWN_SOURCE_URL:"+path);
  const lang=LOCALE[m[1]],id=m[2],f=fixtures[lang];
  if(Object.hasOwn(f.leaves,id))return f.leaves[id];
+ const cf=complineFixtures[lang];
+ const pm=/^Psalterium\/Psalmorum\/Psalm(87|102|233)$/u.exec(id);
+ if(pm&&cf.psalms[pm[1]])return cf.psalms[pm[1]];
+ if(Object.hasOwn(cf.sections,id))return Object.entries(cf.sections[id])
+  .map(([name,lines])=>"["+name+"]\n"+lines.join("\n"))
+  .join("\n\n")+"\n";
  const sections=f.sections[id];
  if(!sections)throw Error("OFFICE_VISUAL_SOURCE_NOT_IN_FINITE_FIXTURE:"+path);
  return Object.entries(sections)
@@ -367,11 +380,36 @@ try{
  assert.equal(await dp.locator("#office-date").inputValue(),"2026-11-28");
  assert.equal(await dp.locator("#office-hour").inputValue(),"VESPERS");
  await dp.locator("#office-hour").selectOption("COMPLINE");
- assert.equal(await dp.locator("#reader").isHidden(),true);
- assert.match(await dp.locator("#status").innerText(),/Not yet implemented/);
- assert.equal(await dp.locator("#office-title").innerText(),"Compline");
+ await dp.locator("#reader").waitFor({state:"visible",timeout:35000});
+ assert.match(await dp.locator("#office-title").innerText(),/Saturday Compline/);
+ assert.match(await dp.locator("#status").innerText(),/Source-first research preview/);
+ assert.equal(dhits.size,43,"Saturday Compline must fetch 21 new, finite pinned sources");
+ assert.equal(await dp.locator("#bar").getAttribute("aria-valuemax"),
+  String(await dp.locator("#next").evaluate(el=>{
+   return el.closest("main").querySelector("#bar").getAttribute("aria-valuemax")
+  })));
+ await shot(dp,"20-desktop-1440-saturday-compline-opening");
+ await dp.locator('[data-view="whole"]').click();
+ const found=new Set();
+ for(let z=0;z<48;z++){
+  const title=await dp.locator("#card h2").innerText();
+  const source=await dp.locator("#card .ref").innerText();
+  if(source.includes("Psalm87")&&!found.has("psalm")){
+   found.add("psalm");
+   await shot(dp,"21-desktop-1440-compline-psalm87");
+  }
+  if(source.includes("Mariaant")&&!found.has("marian")){
+   found.add("marian");
+   await shot(dp,"22-desktop-1440-compline-alma-redemptoris");
+  }
+  if(await dp.locator("#next").isDisabled())break;
+  await dp.locator("#next").click();
+ }
+ assert.ok(found.has("psalm")&&found.has("marian"));
+ assert.equal(await dp.locator("#next").isDisabled(),true);
+ await dp.locator('[data-view="focus"]').click();
  await dp.locator("#office-hour").selectOption("VESPERS");
- assert.equal(await dp.locator("#reader").isVisible(),true);
+ await dp.locator("#reader").waitFor({state:"visible",timeout:10000);
  await dp.locator("#office-date").fill("2026-11-29");
  await dp.locator("#office-date").dispatchEvent("change");
  assert.equal(await dp.locator("#reader").isHidden(),true);
@@ -380,9 +418,9 @@ try{
  await dp.locator("#office-date").dispatchEvent("change");
  assert.equal(await dp.locator("#reader").isVisible(),true);
  assert.match(await dp.locator("#card").innerText(),/Alleluia/);
- assert.equal(dhits.size,22,"returning to the reviewed pilot must reuse source session");
+ assert.equal(dhits.size,43,"switching pilots must reuse prior pinned source sessions");
  await shot(dp,"19-desktop-1440-office-beta-date-hour-picker");
- assert.equal(dhits.size,22);
+ assert.equal(dhits.size,43);
  assert.deepEqual(dperrors,[]);
  record("1440px desktop responsive bilingual layout",{
   passed:true,sourceURLs:dhits.size});
@@ -426,6 +464,11 @@ try{
    await lp.locator("#reader").waitFor({state:"visible",timeout:90000});
    assert.match(await lp.locator("#status").innerText(),/Source-first research preview available|Source preview assembled/);
    await shot(lp,"14-mobile-390-live-pinned-sources");
+   await lp.locator("#office-hour").selectOption("COMPLINE");
+   await lp.locator("#reader").waitFor({state:"visible",timeout:90000});
+   assert.match(await lp.locator("#office-title").innerText(),/Saturday Compline/);
+   await shot(lp,"23-mobile-390-live-saturday-compline-sources");
+
    assert.deepEqual(liveErrors,[]);
    record("real browser pinned source URL/CORS delivery",{
     passed:true,live:true,networkFailures:failures});
