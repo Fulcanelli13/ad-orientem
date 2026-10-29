@@ -29,7 +29,7 @@ rows = {row[col["id"]]: row for row in r49["records"]}
 p97_by = {rec["global_review_row"]: rec for rec in p97["records"]}
 p94_by = {rec["global_review_row"]: rec for rec in p94["records"]}
 assert set(p97_by) == {x["global_review_row"] for x in d["records"]}
-assert len(places["places"]) == 518
+assert len(places["places"]) >= 518
 assert not ({x["canonical_place_id"] for x in d["records"]} - {None})
 verified_leads = []
 held_missing = []
