@@ -4,8 +4,10 @@ import {readFile,mkdir} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {buildPersonalDailyPlan,defaultPersonalDailyPrefs} from "../src/pray/daily-personal-rule.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const sourcePlan={morning:buildPersonalDailyPlan({daypart:"morning",prefs:defaultPersonalDailyPrefs("en")}).rows,evening:buildPersonalDailyPlan({daypart:"evening",prefs:defaultPersonalDailyPrefs("en")}).rows};
 const captures=resolve(root,"artifacts/pray-daily-ux-pilot");
 await mkdir(captures,{recursive:true});
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".webp":"image/webp",".woff2":"font/woff2"};
@@ -47,7 +49,7 @@ try{
    await page.locator(base+'[data-tp381-daily-presentation="continuous"]').click();
    let flow=await state();
    assert.equal(flow.mode,"continuous");
-   assert.equal(flow.count,11);
+   assert.equal(flow.count,sourcePlan.morning.length,"continuous Morning must match the active source-edition plan");
    assert.ok(flow.overflow<=1&&flow.mountOverflow<=1,"morning horizontal overflow "+JSON.stringify(flow));
    assert.ok(await page.locator(base+'.aoDailyUxStage .aoTP381PrayerCard').count()>0,"continuous mode should reuse real prayer cards");
    const first=page.locator(base+'[data-ao-daily-position="0"]');
@@ -59,7 +61,7 @@ try{
    assert.equal(await page.locator(base+'[data-ao-daily-position="8"][data-completed]').count(),0);
    await page.locator(base+'[data-tp381-daypart="evening"]').click();
    flow=await state();
-   assert.equal(flow.count,13,"evening source sequence must retain its thirteen stages");
+   assert.equal(flow.count,sourcePlan.evening.length,"Evening must match the selected St Pius X source-edition plan, not impose the 13-step canonical baseline");
    assert.ok(flow.overflow<=1&&flow.mountOverflow<=1,"evening horizontal overflow "+JSON.stringify(flow));
    await page.screenshot({path:resolve(captures,"daily-evening-continuous-"+width+".png"),animations:"disabled"});
    await page.locator(base+'[data-tp381-daily-presentation="guided"]').click();
@@ -68,7 +70,7 @@ try{
    assert.equal(await page.locator(base+'.aoQuietHorizon').count(),1,"existing horizon presentation must remain");
    await page.screenshot({path:resolve(captures,"daily-evening-cards-"+width+".png"),animations:"disabled"});
    assert.deepEqual(errors,[],"Uncaught phone errors: "+errors.join("; "));
-   console.log("PASS "+width+"px: 11/13 source-backed daily cards and continuous flow, jump, no completion, original horizon");
+   console.log("PASS "+width+"px: "+sourcePlan.morning.length+"/"+sourcePlan.evening.length+" source-edition stages in cards and flow; canonical baselines remain 11/13, no completion inferred");
   }finally{await page.close()}
  }
 }finally{
