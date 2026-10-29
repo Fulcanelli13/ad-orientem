@@ -1,0 +1,32 @@
+name: Sacred Art B11 — Wikimedia Commons religious paintings source probe
+on:
+  push:
+    branches: [research/sacred-art-b11-20261029]
+    paths:
+      - scripts/art/sacred-art-b11-commons-preflight-20261029.py
+      - .github/workflows/sacred-art-b11-commons-preflight-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b11-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inspect category graph and per-image licence metadata
+        run: python -u scripts/art/sacred-art-b11-commons-preflight-20261029.py
+      - name: Archive source evidence only
+        run: |
+          git config user.name "Ad Orientem sacred art"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b11-commons-access-probe-20261029.v1.json
+          git diff --cached --check
+          git commit -m "research(art): Commons category and source photo rights preflight"
+          git pull --rebase origin research/sacred-art-b11-20261029
+          git push origin HEAD:research/sacred-art-b11-20261029
