@@ -10,6 +10,16 @@ function row(id,kind,latin,sourceRecordId){
   return freeze({id,kind,latin:text,sourceRecordId});
 }
 const REQUIRED=Object.freeze(["ABS-010","ABS-020","ABS-030","ABS-040","ABS-050"]);
+// Rituale Romanum 1952, De Exsequiis; 1962 Missal General Rubrics §401.
+// Book directions, not user-observed minister actions or source-clocks.
+export const ABSOLUTION_RITUALE_SOURCE="https://laudatedominum.net/burial_of_adults.php";
+export const ABSOLUTION_CEREMONY_CLOCK="PRESCRIBED_SOURCE_ONLY_NOT_OBSERVED";
+function rubricRow(id,english,french,sourceRecordId){
+  if(!clean(english)||!clean(french))throw new Error("Missing bilingual Absolution rubric "+id);
+  return freeze({id,kind:"RUBRIC",english:clean(english),french:clean(french),
+    sourceRecordId,owner:"RITUALE_1952_ABSOLUTION",observedNow:false,
+    sourceUrl:ABSOLUTION_RITUALE_SOURCE});
+}
 
 export function buildRequiemAbsolutionPayload({graph,payload,bodyPresent=false,burialProcession=false}={}){
   if(!Array.isArray(graph)||graph.length!==5)throw new Error("Certified five-record ABS graph required");
@@ -22,12 +32,17 @@ export function buildRequiemAbsolutionPayload({graph,payload,bodyPresent=false,b
     id:"ABS-R01",title:"At the Bier or Catafalque",
     sourceRecordIds:freeze(["ABS-010"]),
     actorScope:"ALL_FAITHFUL",posture:"LOCAL_OR_INHERIT",
-    paragraphs:freeze([]),
+    paragraphs:freeze([rubricRow("ABS-R01-R",
+      "For the Absolution the celebrant wears a black cope. After Solemn Mass the deacon and subdeacon assist; otherwise servers assist. If a sermon is given, it comes before the Absolution; any previously distributed candles are lit for it.",
+      "Pour l’absoute, le célébrant porte une chape noire. Après la messe solennelle, le diacre et le sous-diacre l’assistent ; autrement, ce sont les servants. S’il y a une prédication, elle précède l’absoute ; les cierges déjà distribués sont allumés pour celle-ci.",
+      "ABS-010")]),
     // Ritus XIII.3 is a conditional transition after Mass, not a new
     // Absolution prayer/card or an observed sermon/candle event.
-    guide:"If there is a sermon, it is given after Mass and before this Absolution. If candles were distributed, they are lit for the Absolution. Follow local directions; no universal lay posture is imposed.",
-    guideFr:"S’il y a une prédication, elle a lieu après la messe et avant cette absoute. Si des cierges ont été distribués, on les allume pour l’absoute. Suivez les usages locaux ; aucune posture universelle des fidèles n’est imposée.",
-    guideSourceUrl:"https://usus-antiquior.github.io/ritus-servandus.html#XIII"
+    guide:"If there is a sermon, it is given after Mass and before this Absolution. If candles were distributed, they are lit for the Absolution. The celebrant takes a black cope. Deacon and subdeacon assist only after Solemn Mass; otherwise servers assist. Follow local directions; no universal lay posture is imposed.",
+    guideFr:"S’il y a une prédication, elle a lieu après la messe et avant cette absoute. Si des cierges ont été distribués, on les allume pour l’absoute. Le célébrant revêt une chape noire. Le diacre et le sous-diacre n’assistent que si la messe précédente était solennelle ; autrement, des servants l’assistent. Suivez les usages locaux ; aucune posture universelle des fidèles n’est imposée.",
+    guideSourceUrl:"https://usus-antiquior.github.io/ritus-servandus.html#XIII",
+    ceremonialSourceUrl:ABSOLUTION_RITUALE_SOURCE,
+    ceremonialObservation:ABSOLUTION_CEREMONY_CLOCK
   }));
 
   if(bodyPresent){
@@ -38,7 +53,15 @@ export function buildRequiemAbsolutionPayload({graph,payload,bodyPresent=false,b
       paragraphs:freeze([
         row("ABS-R02-P","TEXT",payload.nonIntres?.latin,"ABS-020"),
         row("ABS-R02-A","RESPONSE",payload.nonIntres?.response,"ABS-020"),
-      ])
+        rubricRow("ABS-R02-R",
+          "With the body present, Non intres is said before the choir begins Libera me. It is omitted if the body is absent.",
+          "Le corps étant présent, on dit Non intres avant que le chœur commence Libera me. Cette oraison est omise en l’absence du corps.",
+          "ABS-020"),
+      ]),
+      guide:"With the body present, the celebrant says Non intres before the choir begins Libera me. This prayer is omitted if the body is absent.",
+      guideFr:"Le corps étant présent, le célébrant dit Non intres avant que le chœur commence Libera me. Cette oraison est omise en l’absence du corps.",
+      guideSourceUrl:ABSOLUTION_RITUALE_SOURCE,
+      ceremonialObservation:ABSOLUTION_CEREMONY_CLOCK
     }));
   }
 
@@ -46,7 +69,17 @@ export function buildRequiemAbsolutionPayload({graph,payload,bodyPresent=false,b
     id:"ABS-R03",title:"Libera me, Domine",
     sourceRecordIds:freeze(["ABS-030"]),
     actorScope:"ALL_FAITHFUL",posture:"LOCAL_OR_INHERIT",
-    paragraphs:freeze((payload.liberaMe??[]).map((x,i)=>row("ABS-R03-"+String(i+1),x.kind,x.latin,"ABS-030")))
+    paragraphs:freeze([
+      rubricRow("ABS-R03-R",
+        "The choir sings Libera me; incense is prepared toward the end of the responsory.",
+        "Le chœur chante Libera me ; on prépare l’encens vers la fin du répons.",
+        "ABS-030"),
+      ...(payload.liberaMe??[]).map((x,i)=>row("ABS-R03-"+String(i+1),x.kind,x.latin,"ABS-030")),
+    ]),
+    guide:"The choir chants Libera me. Toward the end of the responsory, incense is prepared for the Absolution; the reader does not infer its actual timing.",
+    guideFr:"Le chœur chante Libera me. Vers la fin du répons, on prépare l’encens pour l’absoute ; le lecteur ne présume pas du moment effectivement observé.",
+    guideSourceUrl:ABSOLUTION_RITUALE_SOURCE,
+    ceremonialObservation:ABSOLUTION_CEREMONY_CLOCK
   }));
 
   const kp=payload.kyriePaterVersicles??{};
@@ -58,11 +91,18 @@ export function buildRequiemAbsolutionPayload({graph,payload,bodyPresent=false,b
     paragraphs:freeze([
       ...(kp.kyrie??[]).map((x,i)=>row("ABS-R04-K"+String(i+1),i===1?"RESPONSE":"VERSICLE",x,"ABS-040")),
       row("ABS-R04-PN","TEXT",kp.pater,"ABS-040"),
+      rubricRow("ABS-R04-R",
+        "The celebrant begins Pater noster aloud and continues silently. He first sprinkles the coffin or catafalque with holy water, then circles it again to incense it, reverencing the processional cross when he passes.",
+        "Le célébrant commence Pater noster à haute voix et poursuit en silence. Il asperge d’abord le cercueil ou le catafalque d’eau bénite, puis en fait de nouveau le tour pour l’encenser, saluant la croix de procession lorsqu’il passe devant elle.",
+        "ABS-040"),
       ...(kp.versicles??[]).map((x,i)=>row("ABS-R04-V"+String(i+1),x.kind,x.latin,"ABS-040")),
       row("ABS-R04-O","TEXT",bodyPresent?kp.prayerBodyPresent:kp.prayerBodyAbsent,"ABS-040"),
       row("ABS-R04-A","RESPONSE",kp.response,"ABS-040"),
     ]),
-    guide:"During the silent Pater noster the celebrant performs the appointed aspersion/incensation; no faithful imitation gesture is created."
+    guide:"After the Kyrie, the celebrant begins Pater noster aloud and continues silently. During it he first sprinkles the coffin or catafalque with holy water, then goes around it again to incense it, reverencing the processional cross as he passes. The versicles and the body-present or body-absent prayer follow. These actions are prescribed, not observed by the reader; no faithful imitation gesture is created.",
+    guideFr:"Après le Kyrie, le célébrant commence Pater noster à haute voix et poursuit en silence. Il asperge d’abord le cercueil ou le catafalque d’eau bénite, puis en fait de nouveau le tour pour l’encenser, saluant la croix de procession lorsqu’il passe devant elle. Suivent les versets et l’oraison propre à la présence ou à l’absence du corps. Le lecteur décrit les gestes prescrits sans prétendre les observer et n’impose aucun geste d’imitation aux fidèles.",
+    guideSourceUrl:ABSOLUTION_RITUALE_SOURCE,
+    ceremonialObservation:ABSOLUTION_CEREMONY_CLOCK
   }));
 
   if(bodyPresent&&burialProcession){
@@ -71,10 +111,18 @@ export function buildRequiemAbsolutionPayload({graph,payload,bodyPresent=false,b
       sourceRecordIds:freeze(["ABS-050"]),
       actorScope:"FAITHFUL_PARTICIPATING",posture:"PROCESSIONAL",
       paragraphs:freeze([
+        rubricRow("ABS-R05-R",
+          "In paradisum accompanies the departure of the body toward burial. Only those actually joining the burial procession take a processional posture.",
+          "In paradisum accompagne le départ du corps vers la sépulture. La posture processionnelle ne concerne que ceux qui suivent effectivement la procession funèbre.",
+          "ABS-050"),
         row("ABS-R05-I","TEXT",payload.departure?.inParadisum,"ABS-050"),
         row("ABS-R05-C","TEXT",payload.departure?.chorusAngelorum,"ABS-050"),
       ]),
-      handoff:"BURIAL_PROCESSION"
+      handoff:"BURIAL_PROCESSION",
+      guide:"In paradisum accompanies the departure of the body toward burial. A processional posture applies only to those actually joining that procession.",
+      guideFr:"In paradisum accompagne le départ du corps vers la sépulture. La posture processionnelle ne concerne que les personnes qui suivent effectivement cette procession.",
+      guideSourceUrl:ABSOLUTION_RITUALE_SOURCE,
+      ceremonialObservation:ABSOLUTION_CEREMONY_CLOCK
     }));
   }
 

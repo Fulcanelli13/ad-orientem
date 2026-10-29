@@ -15,6 +15,44 @@ assert.equal(graph.length,5);
 let built=buildRequiemAbsolutionPayload({graph,payload,bodyPresent:true,burialProcession:true});
 assert.equal(built.cards.length,5);
 assert.equal(built.cards[0].id,"ABS-R01");
+// Every ceremonial direction is rendered inline at its own existing native
+// Absolution card; the reader's legacy Guide panel is hidden in production.
+const rubrics=built.cards.flatMap(card=>card.paragraphs
+  .filter(x=>x.kind==="RUBRIC").map(x=>({...x,cardId:card.id})));
+assert.deepEqual(rubrics.map(x=>x.cardId),
+  ["ABS-R01","ABS-R02","ABS-R03","ABS-R04","ABS-R05"]);
+assert.deepEqual(rubrics.map(x=>x.id),
+  ["ABS-R01-R","ABS-R02-R","ABS-R03-R","ABS-R04-R","ABS-R05-R"]);
+assert.deepEqual(rubrics.map(x=>x.sourceRecordId),
+  ["ABS-010","ABS-020","ABS-030","ABS-040","ABS-050"]);
+for(const note of rubrics){
+ assert.equal(note.owner,"RITUALE_1952_ABSOLUTION");
+ assert.equal(note.observedNow,false,"Book directions must not appear as observed actions");
+ assert.match(note.sourceUrl,/burial_of_adults\.php$/);
+ assert.ok(note.english.length>50 && note.french.length>50);
+ assert.equal(note.latin,undefined,"English rubrics must not masquerade as original Latin");
+}
+assert.match(rubrics[0].english,/deacon and subdeacon assist; otherwise servers assist/i);
+assert.match(rubrics[0].english,/If a sermon is given.*before the Absolution/i);
+assert.match(rubrics[1].english,/Non intres.*before.*Libera me/i);
+assert.match(rubrics[2].english,/choir sings Libera me/i);
+assert.match(rubrics[3].english,/first sprinkles.*then circles it again to incense/i);
+assert.match(rubrics[3].french,/asperge d’abord.*puis en fait de nouveau le tour pour l’encenser/i);
+assert.match(rubrics[4].english,/Only those actually joining/i);
+assert.equal(built.cards[2].paragraphs.filter(p=>p.kind!=="RUBRIC").length,payload.liberaMe.length,
+ "Choir rubric must not replace or reorder canonical Libera text");
+assert.equal(built.cards[3].paragraphs.findIndex(p=>p.id==="ABS-R04-R"),
+ built.cards[3].paragraphs.findIndex(p=>p.id==="ABS-R04-PN")+1,
+ "Sprinkling and incensation must appear beside Pater noster");
+for(const language of ["en","fr"]){
+ const visible=built.cards.flatMap(card=>card.paragraphs.map(p=>({
+  id:p.id,kind:p.kind,primary:p.kind==="RUBRIC"
+     ?(language==="fr"?p.french:p.english):p.latin,sourceCueIds:[p.sourceRecordId]})));
+ const normalized=normalizeReaderMoment({paragraphs:visible});
+ assert.equal(normalized.paragraphs.filter(p=>p.kind==="RUBRIC").length,5);
+ assert.ok(normalized.paragraphs.every(p=>p.primary?.length),
+  "A visible localized ritual direction must not go blank");
+}
 assert.match(built.cards[0].guide,/sermon.*after Mass.*before this Absolution/i);
 assert.match(built.cards[0].guide,/If candles were distributed, they are lit for the Absolution/i);
 assert.match(built.cards[0].guideFr,/prédication.*après la messe.*avant cette absoute/i);
@@ -59,7 +97,7 @@ assert.equal(withRequiemXIII3MissalNotes([{id:"other",sourceCueIds:["AO.SM.C0100
 assert.equal(built.cards[1].id,"ABS-R02");
 assert.ok(built.cards[1].paragraphs[0].latin.startsWith("Non intres"));
 assert.equal(built.cards[2].id,"ABS-R03");
-assert.ok(built.cards[2].paragraphs.some(x=>x.latin.includes("Líbera me")));
+assert.ok(built.cards[2].paragraphs.some(x=>x.kind!=="RUBRIC" && x.latin?.includes("Líbera me")));
 assert.equal(built.cards[3].faithfulGesture,null);
 assert.ok(built.cards[3].paragraphs.some(x=>x.latin==="Pater noster."));
 assert.equal(built.cards[4].id,"ABS-R05");
@@ -68,9 +106,13 @@ assert.equal(built.cards[4].handoff,"BURIAL_PROCESSION");
 
 built=buildRequiemAbsolutionPayload({graph,payload,bodyPresent:false,burialProcession:true});
 assert.equal(built.cards.length,3,"body-absent branch retained body/burial-only cards");
+assert.equal(built.cards.flatMap(card=>card.paragraphs).filter(p=>p.kind==="RUBRIC").length,3);
+assert.ok(built.cards.every(card=>card.paragraphs.every(p=>p.kind!=="RUBRIC" || p.observedNow===false)));
+assert.ok(!built.cards.flatMap(c=>c.paragraphs).some(p=>p.id==="ABS-R02-R"),
+ "Body-absent catafalque must not inherit the body-present Non intres direction");
 assert.ok(!built.cards.some(x=>x.id==="ABS-R02"),"Non intres appeared without body present");
 assert.ok(!built.cards.some(x=>x.id==="ABS-R05"),"In paradisum appeared without a body-present burial procession");
-assert.ok(built.cards.find(x=>x.id==="ABS-R04").paragraphs.some(x=>x.latin.startsWith("Absolve")));
+assert.ok(built.cards.find(x=>x.id==="ABS-R04").paragraphs.some(x=>x.kind!=="RUBRIC" && x.latin?.startsWith("Absolve")));
 
 const ctrl=createRequiemAbsolutionReaderController({graph,payload,bodyPresent:true,burialProcession:true});
 assert.equal(ctrl.project().card.id,"ABS-R01");

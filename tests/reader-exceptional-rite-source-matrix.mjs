@@ -29,7 +29,20 @@ const assertRows=(rows,context)=>{
   assert.ok(String(row.id||"").trim(),context+": missing source paragraph ID");
   assert.ok(!seen.has(row.id),context+": duplicate source paragraph "+row.id);
   seen.add(row.id);
-  assert.ok(String(row.latin||"").trim(),context+": empty Latin reading "+row.id);
+  // The Absolution has source-owned bilingual explanatory rubrics, not Latin
+  // prayers. Preserve the Latin-text requirement on every other source row.
+  if(row.kind==="RUBRIC" && context.startsWith("requiem-absolution/")){
+   assert.equal(row.owner,"RITUALE_1952_ABSOLUTION",context+": unidentified rubric source");
+   assert.equal(row.observedNow,false,context+": book rubric claimed observation");
+   assert.ok(/^ABS-0(?:10|20|30|40|50)$/.test(String(row.sourceRecordId??"")),
+     context+": rubric not anchored to certified ABS graph");
+   assert.match(String(row.sourceUrl??""),/^https:\/\//);
+   assert.ok(String(row.english??"").trim() && String(row.french??"").trim(),
+     context+": missing bilingual ceremonial direction "+row.id);
+   assert.equal(row.latin,undefined,context+": editorial rubric mistaken for original Latin prayer");
+  }else{
+   assert.ok(String(row.latin||"").trim(),context+": empty Latin reading "+row.id);
+  }
   assert.ok(String(row.kind||"").trim(),context+": missing reading kind "+row.id);
  }
  return seen.size;
