@@ -1,0 +1,43 @@
+name: Directory P105 SHA-verified seven staged WebPs
+on:
+  pull_request:
+    paths:
+      - data/directory/research/p105-seven-source-locked-derivatives-input.json
+      - tools/directory/build-p105-seven-webps.py
+      - .github/workflows/directory-p105-seven-staged-webps.yml
+permissions:
+  contents: write
+jobs:
+  seven-source-pinned-webp-staging:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/p105-seven-source-pinned-directory-webps-20261030'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          persist-credentials: true
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'Pillow>=11,<13'
+      - name: Fetch permanent archived exact P93 source Git tree
+        run: |
+          git fetch --no-tags --depth=1 origin research/p93-archived-originals-20261029
+          echo "P93_COMMIT=$(git rev-parse FETCH_HEAD)" >> "$GITHUB_ENV"
+      - name: Byte-verify every source and produce uncropped WebPs
+        run: python tools/directory/build-p105-seven-webps.py --archive-commit "$P93_COMMIT"
+      - name: Commit only research-stage images and full-frame review sheet
+        shell: bash
+        run: |
+          git add assets/staged/directory-p105/ \
+            docs/research/directory/p105-seven-mobile-full-frame-review.jpg \
+            data/directory/research/p105-seven-derivative-build-results.json
+          if git diff --cached --quiet; then
+            echo "Exact staged assets already present"
+          else
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m 'research(directory): preserve seven P105 SHA-checked, uncropped WebP assets'
+            git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+          fi
