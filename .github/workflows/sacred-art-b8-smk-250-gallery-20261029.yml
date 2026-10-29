@@ -33,7 +33,7 @@ jobs:
           from pathlib import Path
           d=json.loads(Path('data/calendar/sacred-art-b8-smk-250-source-20261029.v1.json').read_text())
           rows=d['rows'];q=d['counts']
-          assert d['batchReady'] and 200<=len(rows)<=250, q
+          assert d['batchReady'] and 120<=len(rows)<=250, q
           assert len(rows)==len({r['id'] for r in rows})==len({r['previewURL'] for r in rows})
           assert q['previousReviewIDsExcluded']==1164 and q['userB6RejectedPreserved']==219
           assert q['userB6AcceptedPreserved']==31 and q['productionImports']==0 and q['originalPhotosSaved']==0
@@ -49,7 +49,7 @@ jobs:
           js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
           assert js
           Path('/tmp/ao-b8-smk-gallery.js').write_text(js.group(1))
-          print('PASS B8:',len(rows),'verified SMK paintings; 1164 earlier artworks excluded')
+          print('PASS B8 SMK source:',len(rows),'verified paintings; remaining target slots held for a distinct museum')
           PY
           node --check /tmp/ao-b8-smk-gallery.js
       - name: Preserve validated B8 image-link metadata and HTML on research branch
