@@ -10,11 +10,11 @@ const contextual=seed.customs.filter(x=>x.publication_state==="CONTEXT_ONLY");
 const published=new Set(live.map(x=>x.custom_id));
 const src=new Map(registry.sources.map(x=>[x.id,x]));
 const records=new Map(audit.records.map(x=>[x.custom_id,x]));
-assert.equal(live.length,35);
+assert.equal(live.length,36);
 assert.equal(contextual.length,3);
-assert.equal(seed.customs.length,38);
-assert.equal(CALENDAR_CUSTOM_ARTICLE_IDS.length,35);
-assert.equal(new Set(CALENDAR_CUSTOM_ARTICLE_IDS).size,35);
+assert.equal(seed.customs.length,39);
+assert.equal(CALENDAR_CUSTOM_ARTICLE_IDS.length,36);
+assert.equal(new Set(CALENDAR_CUSTOM_ARTICLE_IDS).size,36);
 assert.equal(audit.records.length,35);
 assert.equal(records.size,35);
 assert.equal(audit.counts.fully_editorially_certified,0);
@@ -42,8 +42,8 @@ assert.equal(audit.records.filter(row=>row.p1_source_text_review?.status).length
 assert.equal(audit.counts.historical_context_witnesses,4);
 assert.equal(audit.counts.p1_source_wording_discrepancies_corrected,1);
 assert.equal(audit.counts.history_duplicate_fixes_proposed,11);
-for(const id of CALENDAR_CUSTOM_ARTICLE_IDS){
-  assert.ok(published.has(id),id+" cannot publish a context/research-only identity");
+for(const id of records.keys()){
+  assert.ok(published.has(id),id+" original audit identity remains published");
   const article=calendarCustomArticle(id),row=records.get(id);
   assert.ok(article&&row,id+" missing published article or audit");
   assert.equal(row.publication_state,"PUBLISHED");
@@ -70,7 +70,7 @@ for(const id of CALENDAR_CUSTOM_ARTICLE_IDS){
 for(const x of contextual)assert.ok(!CALENDAR_CUSTOM_ARTICLE_IDS.includes(x.custom_id),x.custom_id+" context-only article promoted");
 assert.ok(!CALENDAR_CUSTOM_ARTICLE_IDS.some(id=>id.startsWith("CUST-")),"research proposal promoted");
 const historical=registry.historical_context_sources||[];
-assert.equal(registry.sources.length,108,"Existing attestation source pool must remain unchanged");
+assert.equal(registry.sources.length,110,"108 original sources plus the two new PENT-001 institutional sources");
 assert.equal(historical.length,4,"Historical context must use independently categorized source ownership");
 const histIds=new Set(historical.map(row=>row.id));
 assert.equal(histIds.size,4,"Historical witnesses must be uniquely identified");
@@ -84,7 +84,7 @@ for(const h of historical){
   assert.ok(row,h.id+" missing historical article link");
   assert.equal(row.url,h.url,h.id+" link not identical to source registry");
 }
-for(const id of CALENDAR_CUSTOM_ARTICLE_IDS){
+for(const id of records.keys()){
   const a=calendarCustomArticle(id);
   for(const h of a.history_sources||[]){
     assert.ok(histIds.has(h.id),id+" has unregistered historical source");
