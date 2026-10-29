@@ -356,4 +356,63 @@ if (master.phase1NgaVerification.sourceCards !== 126 ||
   fail("NGA official verification manifest mismatch");
 console.log("PASS NGA 126 official firstpass: 42 pages checked, 84 pending, 12 Van Dyck-after panels; no promotions.");
 
+
+const authoritativeNGA = load("sacred-art-phase1-nga126-official-csv-report-20261029.v1.json");
+const ngac = authoritativeNGA.counts;
+const ngao = master.phase1NgaOpenDataVerification;
+const expectedNGAHashes = [
+  "53d0757fd5a4fb53785adefdb7e6eeb3290d97157eb5d59bfdc203d6d8e909c0",
+  "59dd0f38d2756fe9400267d91c355bbbd1ff3a4165f9d76e47e9ce76a4325ca6"
+];
+if (authoritativeNGA.sources.objectsSha256 !== expectedNGAHashes[0] ||
+    authoritativeNGA.sources.associationsSha256 !== expectedNGAHashes[1] ||
+    ngao.officialObjectDataSha256 !== expectedNGAHashes[0] ||
+    ngao.officialAssociationsSha256 !== expectedNGAHashes[1])
+  fail("NGA source-data snapshot hashes drifted");
+if (authoritativeNGA.rows.length !== 126 ||
+    ngac.frozenNgaSourceCards !== 126 || ngac.foundByOfficialObjectId !== 126 ||
+    ngac.accessionExact !== 126 || ngac.accessionConflict !== 0 ||
+    ngac.missingInOfficialCsv !== 0 || ngac.titleNormalizedMismatch !== 0 ||
+    ngac.virtualObjects !== 0 || ngac.associationRowsRelatedToTargetIds !== 18 ||
+    ngac.newlyCertifiedDistinctPhysicalPaintings !== 0 || ngac.productionImports !== 0)
+  fail("official NGA 126-row data comparison outcome changed");
+const frozenNGAById = new Map(nga.rows.map(r => [r.sourceId, r]));
+let associatedNGA = 0, paintingsNGA = 0;
+const officialNGAIDs = new Set();
+for (const row of authoritativeNGA.rows) {
+  const source = frozenNGAById.get(row.sourceId), o = row.official;
+  if (!source || officialNGAIDs.has(row.sourceId) ||
+      !o || o.objectId !== row.sourceId.replace("nga:", "") ||
+      row.frozenReviewDecision !== source.decisionFrozen ||
+      row.reviewedAccession !== source.accessionFromFrozenSource ||
+      row.frozenTitle !== source.reviewedTitle ||
+      row.frozenArtist !== source.reviewedArtist ||
+      o.accessionExact !== true || o.titleNormalizedEqual !== true ||
+      row.status !== "OFFICIAL_OBJECT_ID_AND_ACCESSION_MATCH")
+    fail("NGA official CSV record does not match frozen user source " + row.sourceId);
+  officialNGAIDs.add(row.sourceId);
+  if (o.classification === "Painting") paintingsNGA++;
+  if (o.objectAssociations.length) associatedNGA++;
+  if (row.countedAsNewDistinctPhysicalPainting !== false ||
+      row.matchedToCanonical383 !== false ||
+      row.sourcePhotoCertified !== false ||
+      row.photoRightsCertified !== false ||
+      row.nativeVisualCertified !== false ||
+      row.productionMutation !== false)
+    fail("NGA CSV report violated physical-work/photo/production gate " + row.sourceId);
+}
+if (associatedNGA !== 18 || paintingsNGA !== 126 || officialNGAIDs.size !== 126 ||
+    ngao.ngaSourceCards !== 126 || ngao.confirmedObjectIds !== 126 ||
+    ngao.accessionExact !== 126 || ngao.museumBackedOfficialVerifiedToDate !== 228 ||
+    ngao.museumBackedOfficialStillUnverified !== 251 ||
+    ngao.catalogueClassifiedPaintings !== 126 ||
+    ngao.officialAssociationAffectedSourceCards !== 18 ||
+    ngao.canonical383NewLinks !== 0 ||
+    ngao.newPhysicalArtworkCountCertified !== 0 ||
+    ngao.photographsCertified !== 0 ||
+    ngao.originalUserChoicesChanged !== false ||
+    ngao.productionMutation !== false)
+  fail("NGA official CSV research master audit/status mismatch");
+console.log("PASS NGA official Open Data: 126 exact accessions + titles, 18 associated records, zero releases.");
+
 console.log("PASS Sacred Art Phase 1: " + records.length + " reviewed; " + expected.acceptedOrConditional + " accepted/conditional; " + counts.REJECT + " rejected; no production mutations.");
