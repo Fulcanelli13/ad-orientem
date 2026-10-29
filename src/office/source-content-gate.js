@@ -64,7 +64,11 @@ export function officeTranslationContentBlockers({latin,translation}={}){
       const l=latin.sections.find(s=>/at [ij]esus conversus/.test(normalized(s.text)))??
         latin.sections.find(s=>/commemoratio dominica/.test(normalized(s.text)));
       if(!l)throw Error("OFFICE_CONTENT_GATE_SUNDAY_SOURCE_UNRESOLVED");
-      const tr=find(translation,l.sourceCellId);
+      // Native source-cell numbers differ by locale when the composer
+      // includes/omits a status row. Use the normalizer's source-backed
+      // Latin alignment, not a falsely identical raw French cell ID.
+      const tr=find(translation,l.sourceCellId) ??
+        translation.sections.find(s=>s.semantic?.latinSourceCellId===l.sourceCellId);
       const all=normalized((translation.sections??[]).map(s=>s.text).join("\n"));
       // Actual French antiphons contain punctuation after "Jésus,".
       // Compare word tokens, not the artificially unpunctuated test incipit.
