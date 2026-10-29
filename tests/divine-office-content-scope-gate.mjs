@@ -94,3 +94,29 @@ test("omitted French XXIII Sunday commemoration blocks otherwise aligned Vespers
     assert.equal(more.length,1,date);
   }
 });
+
+
+test("French II Vespers missing component is caught when heading and antiphon span cells",()=>{
+  const make=(lang,date,header,second)=>({
+    schema:"ao.office.source-cells.v1",date,hour:"VESPERS",language:lang,
+    sourceRevision:DIVINUM_OFFICIUM_PIN,
+    sections:[
+      {sourceCellId:"Vespera9",semantic:{role:"PRAYER"},text:header},
+      {sourceCellId:"Vespera10",semantic:{role:"PRAYER"},text:second},
+    ],
+  });
+  const latin=make("la","2026-11-01",
+    "Oratio Omnium Sanctorum\nCommemoratio Dominica XXIII Post Pentecosten I. Novembris",
+    "Ant. At Jesus conversus, et videns eam dixit.\nAbsolve, quaesumus, Domine.");
+  const fr=make("fr","2026-11-01","Oraison des saints.","Conclusion.");
+  const found=officeTranslationContentBlockers({latin,translation:fr});
+  assert.equal(found.length,1);
+  assert.equal(found[0].reason,"FR_VESPERS_SUNDAY_COMMEMORATION_INCOMPLETE");
+  assert.equal(found[0].translationSourceCellId,"Vespera9");
+  const saturday=make("la","2026-10-31",
+    "Oratio Omnium Sanctorum\nCommemoratio Dominica XXIII Post Pentecosten I. Novembris",
+    "Ant. Vidi Dominum sedentem. Absolve, quaesumus, Domine.");
+  const satFr=make("fr","2026-10-31","Commémoraison du dimanche",
+    "Je vis le Seigneur assis. Pardonnez, nous vous en supplions, Seigneur.");
+  assert.deepEqual(officeTranslationContentBlockers({latin:saturday,translation:satFr}),[]);
+});
