@@ -1,0 +1,33 @@
+name: Sacred Art B10 - Getty and alternative source access probe
+on:
+  push:
+    branches: [research/sacred-art-b10-getty-20261029]
+    paths:
+      - scripts/art/sacred-art-b10-open-access-probe-20261029.py
+      - .github/workflows/sacred-art-b10-source-probe-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b10-getty-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe Getty and alternatives
+        run: python -u scripts/art/sacred-art-b10-open-access-probe-20261029.py
+      - name: Archive source capability evidence
+        run: |
+          git config user.name "Ad Orientem sacred art"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b10-open-source-access-probe-20261029.v1.json
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): record Getty, Met and Mia 2026 image access evidence"
+          git pull --rebase origin research/sacred-art-b10-getty-20261029
+          git push origin HEAD:research/sacred-art-b10-getty-20261029
