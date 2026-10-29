@@ -63,7 +63,7 @@ for(const rec of b.records){
  const card=attachApprovedDirectoryMedia([{kind:"TLM_VENUE",source_id:rec.venue_id,item_id:"tlm:"+rec.venue_id,title:"Church",lens:"tlm"}],
  {directoryPlaceLinks:geo.directoryPlaceLinks,approved:photos.items,gallery:gallery.items});
  assert.equal(card[0].cover_media?.asset_path,rec.approved_path);
- assert.ok(renderDirectoryVenueCard(card[0],"en").includes(rec.alt_en));
+ assert.ok(renderDirectoryVenueCard(card[0],"en").includes(rec.alt_en.replaceAll("&","&amp;").replaceAll("\x27","&#039;")));
  assert.ok(renderDirectoryVenueCard(card[0],"fr").includes(rec.alt_fr.replaceAll("'","&#039;")));
  const html=renderExploreToString(buildExploreViewModel({language:"en",lens:"tlm",items:card,view:"map",selectedId:"tlm:"+rec.venue_id,filters:{directoryGroup:"ALL"}}));
  assert.ok(html.includes("aoTlmPreviewPhotoCredit"));
