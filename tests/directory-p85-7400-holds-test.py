@@ -66,6 +66,26 @@ class P85Tests(unittest.TestCase):
         evidence=m.with_current_source(r,source,other,{})
         self.assertEqual(evidence["p85_disposition"],"HOLD_EXACT_BUILDING_IDENTITY_STILL_UNCORROBORATED")
 
+    def test_real_p83_unqueryable_file_title_remains_hold_without_api(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=pathlib.Path(tmp)
+            allf,holdsf,summary,allrows,holds=make_inputs(root)
+            bad=allrows[301]
+            bad["file_title"]="File:unsafe..name#query.jpg"
+            # P83 stores this source assignment unapproved. P85 cannot drop it.
+            with allf.open("w") as stream:
+                for r in allrows:stream.write(json.dumps(r)+"\n")
+            with holdsf.open("w") as stream:
+                for r in holds:stream.write(json.dumps(r)+"\n")
+            report,original,held=m.source_lineage(allf,holdsf,summary)
+            self.assertEqual(len(original),7701)
+            self.assertEqual(len(held),7400)
+            self.assertFalse(m.filename_ok(bad["file_title"]))
+            output=m.with_current_source(bad,{}, {m.canonical(bad["file_title"]):{bad["physical_anchor_id"]}}, {})
+            self.assertEqual(output["p85_disposition"],"HOLD_UNSAFE_OR_UNQUERYABLE_COMMONS_TITLE")
+            self.assertFalse(output["exact_site_verified"])
+            self.assertFalse(output["rights_approved"])
+
     def test_geotag_shared_needs_all_other_source_pins_far_away(self):
         r=sample(5)
         source=m.check_page(page(r["file_title"],r["original_sha1_claim"]),r["file_title"])
