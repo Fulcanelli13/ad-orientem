@@ -125,3 +125,39 @@ references before section projection, and add an independent Office
 selection/precedence layer and representative equivalence fixtures.
 Only after those gates can structured hours be assembled. No raw annual
 capture is needed for any of these steps.
+
+## Source-first host bridge and structured Hour research draft
+
+Research branch now contains two additional modules:
+
+- `src/office/mass-host-source-bridge.js` calls the **existing Mass
+  parsed-source interface** `hostResolver.resolveSource(path, language,
+  diagnostic)` and accepts only its already parsed `Map` of sections. A
+  source-revision assertion is mandatory: a host that does not explicitly
+  expose the approved pinned revision is rejected. This is an interface
+  bridge, **not yet an installed production host integration**. The existing
+  Mass host may need an exposed pin property before it can be wired.
+- `src/office/structured-hour-draft.js` assembles a caller-supplied ordered
+  selection of exact original Office source sections into an
+  `ao.office.structured-hour-draft.v1` object. It preserves unique sequence
+  keys, source section identities, roles, and the original LA/EN/FR texts;
+  shared source documents are parsed once per language. The function does
+  not invent calendar precedence, replace proper texts with a generic
+  Common, or infer translation alignment.
+
+The research selection is deliberately **not a certified liturgical ordo**.
+A composite draft is `STRUCTURED_UNVERIFIED`, with Office precedence,
+whole-Hour completeness, trilingual alignment, printed-original
+certification, rights and publication all false. Tests are synthetically
+sourced structural fixtures, not historically verified complete Hours.
+This is the narrowest safe step from source section parsing to composition.
+
+    node --test tests/divine-office-source-section-resolver.mjs
+    node --test tests/divine-office-mass-bridge-and-hour-draft.mjs
+
+The next necessary work is to expose/verify the actual Mass host's pinned
+source provenance, add an **independent Office 1960/1961 precedence and
+concurrence resolver** backed by authoritative rubrics, resolve source
+directives with the pinned parser, and test real selected Hours against
+independent printed witnesses before any reader route. This does not need
+additional raw Office captures.
