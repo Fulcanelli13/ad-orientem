@@ -6,6 +6,7 @@ on:
       - 'src/pray/**'
       - 'data/pray/**'
       - 'tests/pray-source-integrity-crosslane-gate.mjs'
+      - 'tests/pray-litany-novena-bulk-witness-20261029.mjs'
       - '.github/workflows/prayer-source-integrity.yml'
       - 'package.json'
   push:
@@ -30,4 +31,4 @@ jobs:
         with:
           node-version: '22'
       - name: Check Prayer source integrity across existing ledgers
-        run: node tests/pray-source-integrity-crosslane-gate.mjs
+        run: node tests/pray-source-integrity-crosslane-gate.mjs && node tests/pray-litany-novena-bulk-witness-20261029.mjs
