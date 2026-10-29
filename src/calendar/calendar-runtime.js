@@ -8,6 +8,7 @@ import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
 import { calendarCustomRecommendations, calendarCustomSeasonalMonthEntries, calendarCustomArticleIds, calendarCustomArticle } from "./customs-read-model.js";
 import { calendarCustomHistoricalVariantPreview } from "./customs-existing-variant-preview.js";
+import { calendarR18ElevenEditorialReviewMarkup } from "./customs-r18-eleven-editorial-preview.js";
 import { normaliseCustomSearch, calendarCustomSearchIndex, calendarCustomSearchMatches } from "./customs-search.js";
 import { groupCalendarCustomsByYear } from "../customs/year-led-library.js";
 import { personalCustomsForDate } from "../customs/personal-store.js";
@@ -758,6 +759,13 @@ function calendarCustomArticleMarkup(article){
 }
 
 
+// Explicit URL-only editorial comparison. Not part of canonical Custom IDs,
+// personal practice recommendations, recurring Calendar dates or search results.
+function r18ElevenEditorialReviewEnabled(){
+  try{return new URLSearchParams(globalThis.location?.search||"").get("customsR18Eleven")==="review"}
+  catch{return false}
+}
+
 function calendarCustomCatalogueMarkup(){
   const articles=calendarCustomArticleIds().map(calendarCustomArticle).filter(Boolean);
   const isFr=fr();
@@ -778,7 +786,7 @@ function calendarCustomCatalogueMarkup(){
     +'<input id="ao-cal-custom-search" type="search" data-cal-custom-search autocomplete="off" placeholder="'+esc(L("Name or subject","Nom ou sujet"))+'">'
     +'<p data-cal-custom-empty hidden>'+esc(L("No matching customs.","Aucune coutume correspondante."))+'</p>'
     +'<div class="aoCalCustomCatalogueItems">'+groups.map(group=>'<section class="aoCalCustomYearGroup" data-cal-custom-year-group="'+esc(group.key)+'"><h4>'+esc(isFr?group.fr:group.en)+'</h4>'+group.articles.map(item).join("")+'</section>').join("")+'</div>'
-    +'</details><button type="button" class="aoCalMyCustomsButton" data-cal-my-customs-open>'+esc(L("My Customs & Prayers","Mes coutumes et prières"))+' →</button></section>';
+    +'</details>'+(r18ElevenEditorialReviewEnabled()?calendarR18ElevenEditorialReviewMarkup({fr:isFr}):"")+'+<button type="button" class="aoCalMyCustomsButton" data-cal-my-customs-open>'+esc(L("My Customs & Prayers","Mes coutumes et prières"))+' →</button></section>';
 }
 
 
