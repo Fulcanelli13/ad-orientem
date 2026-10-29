@@ -13,6 +13,35 @@ class PhotoDiscoveryTests(unittest.TestCase):
         rows=mod.source_rows(mod.R49)
         self.assertEqual(len(rows),1879)
         self.assertEqual(len({r["id"] for r in rows}),1879)
+    def test_frozen_source_id_postal_city_hints_are_bounded_and_not_verified(self):
+        cases = (
+            ("FR", "ao-fssp-eglise-3-rue-f-85100-les-sables-d-olonne-france", "les sables d olonne"),
+            ("DE", "ao-fssp-kirche-platz-d-30169-hannover-deutschland", "hannover"),
+            ("CH", "ao-fssp-basilique-ch-1700-fribourg-suisse", "fribourg"),
+            ("IT", "ao-fssp-chiesa-i-00186-roma-italia", "roma"),
+            ("NL", "ao-fssp-sint-agneskerk-nl-1075-xa-amsterdam-nederland", "amsterdam"),
+            ("AT", "ao-fssp-pfarrkirche-2700-wiener-neustadt-osterreich", "wiener neustadt"),
+            ("PL", "ao-fssp-kosciol-59-900-jerzmanki-polska", "jerzmanki"),
+            ("US", "ao-fssp-church-114-w-saratoga-st-baltimore-md-21201-usa", "baltimore"),
+            ("CA", "ao-fssp-st-clement-ottawa-on-k1n-5l5-canada", "ottawa"),
+            ("AU", "ao-fssp-church-parramatta-nsw-2150-australia", "parramatta"),
+            ("IE", "ao-fssp-st-johns-waterford-city-irlande", "waterford"),
+            ("NZ", "ao-fssp-chapel-auckland-new-zealand", "auckland"),
+        )
+        for cc, venue_id, expected in cases:
+            with self.subTest(cc=cc, venue_id=venue_id):
+                self.assertEqual(mod.frozen_id_locality_hint(venue_id, cc), expected)
+        self.assertEqual(mod.frozen_id_locality_hint(
+            "ao-fssp-st-joseph-unverified-location-france", "FR"), "")
+        self.assertEqual(mod.frozen_id_locality_hint(
+            "ao-fssp-kirche-d-30169-hannover-deutschland", "IT"), "")
+        rows = mod.source_rows(mod.R49)
+        by_id = {r["id"]:r for r in rows}
+        exact = by_id["ao-fssp-national-shrine-of-st-alphonsus-liguori-114-w-saratoga-st-baltimore-md-21201-usa"]
+        self.assertEqual(exact["locality"], "baltimore")
+        self.assertEqual(exact["locality_source"],
+                         "FROZEN_VENUE_ID_POSTAL_SEARCH_HINT_NOT_VERIFIED")
+        self.assertEqual(len(rows), 1879)
     def test_normalize_license(self):
         def info(label,url=""):
             return {"extmetadata":{"LicenseShortName":{"value":label},"LicenseUrl":{"value":url}}}
