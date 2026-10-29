@@ -66,8 +66,11 @@ export function officeTranslationContentBlockers({latin,translation}={}){
       if(!l)throw Error("OFFICE_CONTENT_GATE_SUNDAY_SOURCE_UNRESOLVED");
       const tr=find(translation,l.sourceCellId);
       const all=normalized((translation.sections??[]).map(s=>s.text).join("\n"));
-      const hasAntiphon=/jesus se retournant/.test(all);
-      const hasCollect=/pardonnez, nous vous en supplions, seigneur, les offenses de vos peuples/.test(all);
+      // Actual French antiphons contain punctuation after "Jésus,".
+      // Compare word tokens, not the artificially unpunctuated test incipit.
+      const frenchTokens=all.replace(/[^a-z0-9]+/g," ");
+      const hasAntiphon=/jesus se retournant/.test(frenchTokens);
+      const hasCollect=/pardonnez nous vous en supplions seigneur les offenses de vos peuples/.test(frenchTokens);
       // The restored French generator adds the commemoration as a dedicated
       // Vespera10 source cell. Its label may be in the source-owned headline,
       // rather than repeated in the prayer cell text.
