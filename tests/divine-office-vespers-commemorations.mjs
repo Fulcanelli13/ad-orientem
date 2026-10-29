@@ -83,6 +83,25 @@ test("inseparable St Peter–St Paul addition is prayer-only under RG 110(a)",()
     assert.equal(x.reason,"RG_110_PETER_PAUL_EXCEPTION_IDENTITY_UNVERIFIED");
   }
 });
+test("BR 259 has an explicit withheld path for unusable proper antiphon AND verse",()=>{
+  const candidate=item({
+    kind:"PRIVILEGED_BR259_BOTH_OMITTED",antiphon:null,versicle:null,
+    rubric259Review:"BOTH_PROPER_PARTS_INAPPLICABLE_REVIEW_PENDING",
+  });
+  const r=reviewVespersCommemorationEvidence({office:doc(),candidate});
+  assert.equal(r.status,"SOURCE_EVIDENCE_PRESENT_REVIEW_REQUIRED");
+  assert.equal(r.reason,"BR_259_NO_TRANSFER_OF_UNUSABLE_PROPER_PARTS");
+  assert.equal(r.properOmissionIndependentlyEstablished,false);
+  assert.equal(r.commemorationAuthorized,false);
+  assert.equal(r.published,0);
+  for(const changed of [{rubric259Review:null},
+    {antiphon:item().antiphon},{versicle:item().versicle}]){
+    const result=reviewVespersCommemorationEvidence({
+      office:doc(),candidate:{...candidate,...changed}});
+    assert.equal(result.status,"WITHHELD");
+    assert.equal(result.reason,"BR_259_EXCEPTION_NOT_INDEPENDENTLY_ESTABLISHED");
+  }
+});
 test("real-sample screening treats absent headings as UNKNOWN, not no commemoration",()=>{
   const found=screenGeneratedVespersCommemorations(doc());
   assert.equal(found.explicitCommemorationHeadingCount,1);
