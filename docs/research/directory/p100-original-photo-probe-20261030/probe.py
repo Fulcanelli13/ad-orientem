@@ -26,7 +26,7 @@ except Exception as e:print('P100_API_ERROR '+repr(e))
 url=info.get('url') if info else KNOWN
 try:
     b,h,final=load(url)
-    if not b.startswith(b'\\xff\\xd8'): raise ValueError('not JPEG')
+    if not b.startswith(bytes((255,216))): raise ValueError('not JPEG')
     sha1=hashlib.sha1(b).hexdigest()
     sha256=hashlib.sha256(b).hexdigest()
     result={'file':FILE,'url':final,'bytes':len(b),'sha1_computed':sha1,'sha256_computed':sha256,'expected_ledger_sha1':EXPECTED,'matches_ledger':sha1==EXPECTED,'matches_api': sha1==info.get('sha1') if info and info.get('sha1') else None,'content_type':h.get('Content-Type'),'rights_approved':False,'visual_fullres_approved':False,'published':False}
