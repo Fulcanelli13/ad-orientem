@@ -40,3 +40,23 @@ Primary printed source, checked page by page (not inferred from Divinum Officium
 ## Evidence of actual CI run
 
 See [draft PR #1860](https://github.com/Fulcanelli13/ad-orientem/pull/1860), workflow *Divine Office research — text, reader and native chant pilot*, and its Phase H test log. Only count the 24 exceptional-hours capture / 16 previews and their Matins/locale screening as completed if the final runner job passes.
+
+
+## Source-scoped All Saints Sunday Vespers commemoration (29 October 2026)
+
+The existing 2026 All Saints Vespers pilot has now moved beyond counting a `Commemoratio` heading. The pinned original composer generated both **31 October (First Vespers)** and **1 November (Second Vespers)**. An exact source-scoped comparator inspects only the text *after* the actual `Commemoratio Dominica XXIII Post Pentecosten I. Novembris` heading, so that a prayer found elsewhere in the feast cannot falsely satisfy the check.
+
+| Latin component | 31 October, First Vespers | 1 November, Second Vespers |
+| --- | --- | --- |
+| Magnificat antiphon | `Vidi Dominum sedentem` | `At Jesus conversus et videns eam dixit` |
+| Versicle | `Vespertina oratio ascendat ad te, Domine` | `Dirigatur, Domine, oratio mea` |
+| Response | `Et descendat super nos misericordia tua` | `Sicut incensum in conspectu tuo` |
+| Collect | `Absolve, quaesumus, Domine, tuorum delicta populorum` | Same Sunday collect |
+
+**Evidence hierarchy:** Independently inspected illustrated bilingual Breviary compilation from [Church Music Association](https://media.churchmusicassociation.org/books/breviarium5x8.pdf), printed pp. **188** (November I First Vespers), **195–196** (XXIII Sunday collect / Second Vespers), **274** (Sunday versicle), **438** (Saturday Vespers versicle), PDF page indices 187, 194–195, 273, 437; matched the original pinned Divinum Officium composer’s generated source parts. The external [SSPX Ordo for 1 November 2026](https://ordo.fsspx.org/day/2026-11-01?lang=en) separately attests the Sunday commemoration at Second Vespers. Its [31 October Ordo](https://ordo.fsspx.org/day/2026-10-31?lang=en) attests First Vespers of All Saints **but does not explicitly enumerate the Sunday commemoration**, so the first Vespers appointment retains a stricter review flag.
+
+**Observed result:** [exact-head Office CI #40816495731](https://github.com/Fulcanelli13/ad-orientem/actions/runs/40816495731) passed 3/3 jobs. The source-backed `OFFICE_VESPERS_COMMEMORATION_SCREEN` reported **both comparisons matched all four Latin components, in the correct order, inside one source-attested commemoration heading each**; 69/69 JS, 9/9 Python, 10/10 Chromium cases (8 phone, 0px overflow). CI on the subsequent regression-enforcement commit must be checked separately.
+
+**Do not overclaim:** this external PDF is a modern bilingual *compilation*, not an authenticated original printed **1961** Roman Breviary exemplar. Source matching does **not** establish historic source lineage, version parity, exact full antiphon/verse/collect wording, English/French translations, all local rubrics, or all-year concurrence. It does **not** settle the special All Souls Office or its English Prime. The two source comparisons are accepted as **engineering source integrity**, not liturgical publication certification.
+
+The current code now treats a future loss of either quadruplet as a CI failure. It still always reports `independentlyVerifiedOfficeCommemorations=0`, `certifiedVespersTextComponents=0`, `canPublish=false`, `published=0`; no content rewritten and no public Office route.
