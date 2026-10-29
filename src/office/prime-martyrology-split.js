@@ -13,7 +13,9 @@ const fold=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
   .toLowerCase().trim();
 export const OFFICE_PRIME_SOURCE_BOUNDARY="ao.office.prime-martyrology-source-boundary.v1";
 const ANCHORS=Object.freeze({
-  la:/^[℣v]\.?\s*in memoria aeterna erunt justi\b/u,
+  // The pinned composer renders iusti; the proper source uses justi.
+  // These are explicit attested orthographic variants of this one versicle.
+  la:/^[℣v]\.?\s*in memoria aeterna erunt (?:iusti|justi)\b/u,
   en:/^[℣v]\.?\s*the just shall be in everlasting remembrance\b/u,
   fr:/^[℣v]\.?\s*en souvenir eternel seront les justes\b/u,
 });
