@@ -1,0 +1,55 @@
+{
+  "schema": "ao-mass-approved-gesture-extension-v1",
+  "version": "2026-10-29",
+  "status": "USER_AUTHORIZED_READER_ACTIVATION",
+  "approvalRecord": "data/mass/gesture-icon-user-review-20261029.v1.json",
+  "originalReviewFiles": "assets/review/mass-adaptive-gesture-20261029",
+  "productionDir": "assets/active/mass-user-gesture-20261029",
+  "readerResolver": "src/mass/reader-user-approved-gesture-art.js",
+  "constraints": {
+    "exact1962CueOnly": true,
+    "priestActorOnly": true,
+    "noGestureOrMissalTextChanges": true,
+    "localFaithfulPostureUnchanged": true,
+    "excludeRejectedC0169": true,
+    "immutable67MasterBank": true,
+    "canonical125BoundRowsUnchanged": true,
+    "renderUsingCurrentColorMask": true,
+    "originalApprovalFilesByteIdentical": true
+  },
+  "notes": "User explicitly directed integration into Mass on 29 October 2026. Art is an additive, exact-cue, user-selected visual overlay; normative 1962 rubric remains authoritative, particularly where a picture is only a mnemonic.",
+  "bindings": [
+    {
+      "cue": "C0117",
+      "key": "ao_1962_priest_c0117"
+    },
+    {
+      "cue": "C0155",
+      "key": "ao_1962_priest_c0155"
+    },
+    {
+      "cue": "C0161",
+      "key": "ao_1962_priest_c0161"
+    },
+    {
+      "cue": "C0193",
+      "key": "ao_1962_priest_c0193",
+      "reviewCaution": "Source art contains a non-rubrical monstrance; preserve source prayer/rubrics as the authoritative description."
+    },
+    {
+      "cue": "C0204",
+      "key": "ao_1962_priest_c0204",
+      "reviewCaution": "Graphic may resemble major rather than slight elevation; source rubric retains slight elevation distinction."
+    },
+    {
+      "cue": "C0263",
+      "key": "ao_1962_priest_c0263"
+    }
+  ],
+  "explicitlyExcluded": [
+    {
+      "cue": "C0169",
+      "reason": "USER_REJECTED_CONCEPT"
+    }
+  ]
+}
