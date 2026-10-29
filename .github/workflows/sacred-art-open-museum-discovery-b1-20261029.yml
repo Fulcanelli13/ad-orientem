@@ -1,0 +1,68 @@
+name: Sacred Art — open museum metadata discovery B1 (Rijks/KMSKA)
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-open-museum-discovery-b1-20261029.yml
+      - scripts/art/sacred-art-open-museum-discovery-b1-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-open-museum-b1
+  cancel-in-progress: false
+jobs:
+  discover-open-museum-metadata:
+    name: Discover sources without image downloads
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate parsers and hard artistic exclusions without network
+        run: |
+          python -m py_compile scripts/art/sacred-art-open-museum-discovery-b1-20261029.py
+          python scripts/art/sacred-art-open-museum-discovery-b1-20261029.py --offline-smoke
+      - name: Discover Rijksmuseum and KMSKA artwork metadata (no photos)
+        run: |
+          python scripts/art/sacred-art-open-museum-discovery-b1-20261029.py --queries 25 --resolves 300 --kmska-pages 80 --delay 0.25 --timeout 18
+      - name: Validate 383 immutability, provenance gates and output statistics
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data/calendar/sacred-art-open-museum-discovery-b1-20261029.v1.json')
+          d=json.loads(p.read_text())
+          assert d['baseline']['artworks']==383 and d['downloadedImages']==0
+          assert d['stats']['verifiedPhotoLicences']==0
+          assert d['stats']['photoQualityPassed']==0
+          assert d['stats']['editorialApprovals']==0
+          assert d['stats']['productionReleases']==0
+          assert len(d['leads'])==d['stats']['metadataLeads']
+          assert len({(x['provider'],x['objectId']) for x in d['leads']})==len(d['leads'])
+          assert all(x['photographLicence']=='UNVERIFIED' and not x['photoLicenceVerified'] and not x['photoQualityPassed'] and not x['editorialApproved'] and not x['productionPublished'] for x in d['leads'])
+          assert d['sourceStats']['rijks']['queryAttempts']<=25
+          assert d['sourceStats']['kmska']['pagesScanned']<=80
+          print('VALIDATED',d['status'],d['stats'], 'ERRORS',len(d['errors']))
+          PY
+          git diff --exit-code -- data/calendar/sacred-art-licence-first-383-exact-source-audit-20261029.v1.json
+      - name: Permanently commit research metadata and real source errors
+        if: always()
+        run: |
+          if [ ! -f data/calendar/sacred-art-open-museum-discovery-b1-20261029.v1.json ]; then
+            echo "No report created; source failures occurred before results were written"
+            exit 0
+          fi
+          git config user.name "Ad Orientem museum research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-open-museum-discovery-b1-20261029.v1.json docs/SACRED_ART_OPEN_MUSEUM_DISCOVERY_B1_20261029.md
+          git diff --cached --check
+          if git diff --cached --quiet; then echo "No changed metadata to commit"; exit 0; fi
+          git commit -m "research(art): archive actual Rijksmuseum KMSKA B1 metadata discovery"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028
