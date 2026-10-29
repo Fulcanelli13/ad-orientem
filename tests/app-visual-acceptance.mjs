@@ -664,9 +664,21 @@ try{
     titles:[...document.querySelectorAll("#aoPray435930 [data-p435930-ador-mode] b")].map(x=>x.textContent?.trim()??""),
     publicRiteLink:document.querySelectorAll("#aoPray435930 .aoAdorationChooser [data-p435930-go-ben]").length,
     mountedBenediction:document.querySelectorAll("#aoPray435930 .aoP435930BenedictionReader").length,
+    nightIsOptional:!!document.querySelector("#aoPray435930 .aoAdorationMethodsDisclosure [data-p435930-ador-mode='night']"),
+    nightIsPrimary:!!document.querySelector("#aoPray435930 .aoAdorationPrimaryGrid [data-p435930-ador-mode='night']"),
+    nightContext:document.querySelector("#aoPray435930 .aoAdorationMethodsDisclosure [data-p435930-ador-mode='night'] span")?.textContent?.trim()??"",
   }));
-  assert.deepEqual(adorationLanding.modes,["visit","open","holy","four","treasury"],"Adoration landing no longer matches the final five-entry donor composition");
-  assert.deepEqual(adorationLanding.titles,["Visit to the Blessed Sacrament","Silent Adoration","Guided Holy Hour","The Four Ends","Eucharistic Treasury"],"Adoration landing titles regressed");
+  // B29 added a separately source-owned home vigil under optional guided forms.
+  // Preserve the original two primary presence choices and three optional
+  // Eucharistic methods; never relabel private home prayer as public Benediction.
+  assert.deepEqual(adorationLanding.modes,["visit","open","holy","four","treasury","night"],
+    "Adoration landing must retain the five pre-B29 modes plus Fr Mateo's optional home vigil");
+  assert.deepEqual(adorationLanding.titles,["Visit to the Blessed Sacrament","Silent Adoration","Guided Holy Hour","The Four Ends","Eucharistic Treasury","Night Adoration at Home · Fr Mateo"],
+    "Adoration landing lost or renamed the B29 source-owned home vigil");
+  assert.equal(adorationLanding.nightIsOptional,true,"Night vigil must remain in the optional methods disclosure");
+  assert.equal(adorationLanding.nightIsPrimary,false,"Home vigil cannot displace Visit or Silent Adoration as the primary Eucharistic choices");
+  assert.match(adorationLanding.nightContext,/at home.*without treating the image as the Blessed Sacrament/i,
+    "Home vigil description must explicitly distinguish a Sacred Heart image from the Blessed Sacrament");
   // Fresh private Adoration must not invent a return to Benediction.
   // The explicit rite-to-prayer return and exposed-mode handoff are covered
   // by nonmass-d3-d6-e2e.mjs; retain those behavioral regressions.
