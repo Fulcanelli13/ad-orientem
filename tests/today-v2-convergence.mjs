@@ -57,7 +57,8 @@ assert.match(html,/Life &amp; sources/,"Observed saint opens context without rep
 assert.doesNotMatch(html,/Saint Francis Borgia/,"Do not repeat principal saint below the hero");
 assert.equal((html.match(/class="aoTodayV2CalendarGlance"/g)||[]).length,1,"One compact Calendar at a glance panel");
 assert.doesNotMatch(html,/aoTodayV2Context|aoTodayV2Approaching|Coming next|Full calendar/,"No duplicate season or upcoming panels");
-assert.match(html,/Upcoming dates are calendar appointments; verify the observed 1962 day in Calendar\./);\nassert.match(html,/class="aoTodayV2EventArrow"/,"H2 agenda rows require a clear destination");
+assert.match(html,/Upcoming dates are calendar appointments; verify the observed 1962 day in Calendar\./);
+assert.match(html,/class="aoTodayV2EventArrow"/,"H2 agenda rows require a clear destination");
 assert.doesNotMatch(html,/data-home-shortcut="/,
   "Unbound home-shortcut attributes would produce inert buttons");
 assert.equal((html.match(/class="aoTodayV2PrayerFeature"/g)||[]).length,1);
