@@ -28,6 +28,12 @@ assert.deepEqual(ledger.editorial_lanes,{
  FIX_SOURCE_CITATION_BEFORE_IDENTITY_DECISION:12
 });
 assert.equal(ledger.totals.source_page_access_failures,1);
+assert.equal(ledger.totals.research_records_retained,408);
+assert.equal(ledger.totals.research_records_rejected,0);
+assert.equal(ledger.totals.record_by_record_user_votes_required,0);
+assert.equal(ledger.totals.unresolved_source_holds,12);
+assert.equal(ledger.editorial_workflow.user_bulk_record_approval_required,false);
+assert.equal(ledger.editorial_workflow.research_retention,"ALL_408_ALWAYS_RETAINED");
 assert.equal(ledger.totals.owner_links_action_reviewed,47);
 assert.equal(ledger.totals.owner_links_vetoed,11);
 assert.equal(ledger.totals.distinct_groups_with_cluster_joins,34);
@@ -50,7 +56,11 @@ for(const r of ledger.records){
  assert.deepEqual(r.indulgence_grant_ids,[]);
  assert.equal(r.bilingual_copy_accepted,false);
  assert.equal(r.publication_authorized,false);
- assert.equal(r.editorial_decision,"PENDING_CONSOLIDATED_HUMAN_REVIEW");
+ assert.equal(r.editorial_decision,"RETAINED_IN_RESEARCH_EDITORIAL_RELEASE_GATES_PENDING");
+ assert.equal(r.research_retention_status,"RETAINED_HISTORICAL_SOURCE_OBSERVATION");
+ assert.equal(r.record_by_record_user_approval_required,false);
+ assert.equal(r.publication_eligibility_status,"NOT_YET_APPROVED_FOR_CALENDAR");
+ assert.ok(r.expert_editorial_next_action);
  if(r.existing_owner_link){
   const o=ownerById.get(r.provisional_group_id);
   assert.ok(o);
@@ -73,12 +83,16 @@ assert.equal(cards.filter(r=>r.ownerVeto).length,11);
 assert.equal(cards.filter(r=>r.status==="ORIGINAL_PAGE_ACCESS_FAILURE").length,1);
 assert.match(html,/localStorage\.setItem/);
 assert.match(html,/URL\.createObjectURL/);
-assert.match(html,/AO_CUSTOMS_USER_EDITORIAL_CHOICES_V1/);
-assert.match(html,/not_a_publication_authorization:true/);
+assert.match(html,/AO_CUSTOMS_OPTIONAL_USER_CORRECTION_FLAGS_V1/);
+assert.match(html,/does_not_approve_publication:true/);
 assert.match(html,/250 per page/);
-assert.match(html,/Accept with corrections/);
-assert.match(html,/Context only/);
-assert.match(html,/Reject candidate/);
+assert.match(html,/All 408 records are retained automatically/);
+assert.match(html,/Flag a source or classification issue/);
+assert.match(html,/Retained in research/);
+assert.ok(!html.includes("Accept candidate"),"User must not accept 408 research observations individually");
+assert.ok(!html.includes("Reject candidate"),"User must not be invited to reject valid evidence");
+assert.ok(!html.includes("AO_CUSTOMS_USER_EDITORIAL_CHOICES_V1"),"Deprecated approval ballot should be absent");
+assert.match(html,/\(!f\|\|\(f==="flagged"\?/);
 assert.ok(!html.includes("<script src="),"review file must be offline self-contained");
 console.log("PASS: consolidated 408/408 identity board, 47 owner reviews with 11 vetoes, 12 clusters, 407 scanned pages + 1 access failure.");
-console.log("PASS: offline 408-card editorial review with 250-per-page batching, local notes and decisions export; production remains 35 published + 3 context-only.");
+console.log("PASS: offline 408-card historical-source dashboard with all records retained by default, optional correction flags only, no user ballots and no production changes.");
