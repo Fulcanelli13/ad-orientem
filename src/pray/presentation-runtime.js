@@ -495,7 +495,7 @@ function close({silent=false,preserve=false}={}){
 function head(title,sub=''){
  const settings=view==='angelus'?`<button type="button" class="aoFolioSettingsTrigger" data-p435930-angelus-settings aria-controls="aoAngelusOptions" aria-expanded="${angelusOptionsOpen?'true':'false'}" aria-label="${esc(L('Prayer parameters','Paramètres de prière'))}">${assetIcon('ao-ui-settings')||'⚙'}</button>`:'';
  // One in-session control serves all source-owned prayer card readers with real EN/FR text.
- const prayerLanguage=['adoration','benediction','stations','confession'].includes(view)||(view==='fiveWounds'&&!FIVE_WOUNDS.latin)
+ const prayerLanguage=['adoration','benediction','stations','confession'].includes(view)||(view==='fiveWounds'&&!FIVE_WOUNDS.latin)||(view==='litany'&&LIT.use==='private')
   ? `<button type="button" class="aoP435930SessionLanguage" data-p435930-session-language lang="${lang()}" aria-label="${esc(L('Prayer language: English. Switch to French','Langue de prière : français. Passer en anglais'))}" title="${esc(L('Switch to French','Passer en anglais'))}">${lang().toUpperCase()}</button>`
   :'';
  const trailing=settings+prayerLanguage+`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
@@ -2542,9 +2542,16 @@ function renderLitany(){
  LIT.step=Math.max(0,Math.min(LIT.sections.length-1,LIT.step));
  const st=LIT.sections[LIT.step],final=LIT.step===LIT.sections.length-1;
  const text=st.lines.map(line=>`<p class="aoP435930LitanyLine">${esc(line)}</p>`).join('');
- const body=`${guideNow(st.title,L('Pray the historical wording in order. In a group, agree who leads the responses; this transcription does not assign every voice.','Priez le texte historique dans l’ordre. En groupe, convenez de la répartition des répons ; cette transcription n’attribue pas chaque voix.'))}
-  <article class="aoP435930Prayer ${S.rosary.recitation==='group'?'aoP435930GroupRecitation':''}"><div class="aoP435930Text aoP435930LitanyVerses">${text}</div></article>
-  ${guideCue(L('PACE','RYTHME'),L('Leave a small breath between invocations. The repetition is part of the prayer, not text to skim.','Laissez un léger souffle entre les invocations. La répétition fait partie de la prière ; ce n’est pas un texte à parcourir rapidement.'))}`;
+ // Each language is a different historical edition, not a translation of a
+ // certified 1962 rite. Keep the source witness visibly identified on every
+ // section while making the actual invocations the first reading surface.
+ const edition=L('English prayer-book witness · 1883 · private','Témoin français de 1862 · privé');
+ const body=`<p class="aoLitanyWitnessCaption" role="note">${esc(edition)}</p>
+  <article class="aoP435930Prayer ${S.rosary.recitation==='group'?'aoP435930GroupRecitation':''}" lang="${lang()}"><div class="aoP435930Text aoP435930LitanyVerses">${text}</div></article>
+  <details class="aoLitanySectionGuide"><summary>${esc(L('How to pray this section','Comment prier cette partie'))}</summary>
+   ${guideNow(st.title,L('Pray the historical wording in order. In a group, agree who leads the responses; this transcription does not assign every voice.','Priez le texte historique dans l’ordre. En groupe, convenez de la répartition des répons ; cette transcription n’attribue pas chaque voix.'))}
+   ${guideCue(L('PACE','RYTHME'),L('Leave a small breath between invocations. The repetition is part of the prayer, not text to skim.','Laissez un léger souffle entre les invocations. La répétition fait partie de la prière ; ce n’est pas un texte à parcourir rapidement.'))}
+  </details>`;
  const card=sourcedDevotionalCard({kind:'litany',id:'litany-'+LIT.step,title:st.title,index:LIT.step,total:LIT.sections.length,body});
  return `${head(L('Litany of the Saints','Litanies des saints'),L('Call · response · guided in sections','Invocation · réponse · guidées par sections'))}
  <main class="aoP435930Body aoP435930DevotionalGuidedReader" data-ao-devotional-owner="litany" data-ao-devotional-final="${final}">
@@ -3228,6 +3235,15 @@ function onClick(e){
    next.scrollTop=outerScroll;
    next.querySelector('[data-p435930-session-language]')?.focus?.({preventScroll:true});
   });
+  return;
+ }
+ // A private Litany language change switches between distinct 1883 English
+ // and 1862 French historical witnesses. The source loader resets the section
+ // cursor on language change; no public 1962 harmonisation is fabricated.
+ if(view==='litany'&&LIT.use==='private'&&b.hasAttribute('data-p435930-session-language')){
+  praySessionLanguage=isFr()?'en':'fr';
+  render();
+  queueMicrotask(()=>mount()?.querySelector('[data-p435930-session-language]')?.focus?.({preventScroll:true}));
   return;
  }
  if(b.hasAttribute('data-p435930-angelus-settings')){
