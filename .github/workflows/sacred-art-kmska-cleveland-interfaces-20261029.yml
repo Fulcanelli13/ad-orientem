@@ -30,7 +30,7 @@ jobs:
           python - <<'PY'
           import json
           d=json.load(open('data/calendar/sacred-art-kmska-cleveland-interfaces-20261029.v1.json'))
-          assert len(d['sources'])==4 and d['imagesDownloaded']==0
+          assert len(d['sources'])==6 and d['imagesDownloaded']==0
           print([(x['name'],x['status']) for x in d['sources']])
           PY
           git config user.name "Ad Orientem sacred art research"
