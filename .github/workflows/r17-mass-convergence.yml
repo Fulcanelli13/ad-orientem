@@ -85,6 +85,8 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: node tests/reader-phone-acceptance.mjs
+      - name: Certify Requiem choir posture source cues in LIVE and Missal on phones
+        run: node tests/reader-requiem-choir-posture-phone.mjs
       - run: npm run test:phone-curated65
       # Independently certify Ordinary priest/Schola separation. The broad
       # npm run test:phone sequence can stop earlier on non-Mass regressions;

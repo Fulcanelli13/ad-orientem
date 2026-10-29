@@ -1,0 +1,43 @@
+name: Explore P67 source-described relic indoor placements
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/explore/relic-indoor-placement.v1.json'
+      - 'src/find/relic-indoor-location.js'
+      - 'src/find/explore-data-service.js'
+      - 'src/find/place-profiles.js'
+      - 'src/find/place-editorial-presentation.js'
+      - 'src/find/heritage-style.js'
+      - 'tools/audit-relic-indoor-placement-p67.mjs'
+      - 'tests/explore-p67-relic-indoor-placement.mjs'
+      - '.github/workflows/explore-p67-relic-indoor-placement.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'data/explore/relic-indoor-placement.v1.json'
+      - 'src/find/relic-indoor-location.js'
+      - 'src/find/explore-data-service.js'
+      - 'src/find/place-profiles.js'
+      - 'src/find/place-editorial-presentation.js'
+      - 'src/find/heritage-style.js'
+      - 'tools/audit-relic-indoor-placement-p67.mjs'
+      - 'tests/explore-p67-relic-indoor-placement.mjs'
+permissions:
+  contents: read
+jobs:
+  relic-indoor-location:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Canonical object, source and interior placement tests
+        run: node tests/explore-p67-relic-indoor-placement.mjs
+      - name: Existing editorial and gallery regressions
+        run: |
+          node tests/explore-p66-editorial-relic-cards.mjs
+          node tests/explore-r69-multi-place-gallery.mjs
+          node tests/connected-sacred-entities-p64.mjs

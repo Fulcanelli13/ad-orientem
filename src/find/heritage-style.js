@@ -631,4 +631,60 @@ export const HERITAGE_STYLE = String.raw`
 .aoExplorePlaceSheet .aoExploreGalleryCredits a{color:var(--ao-liturgical-accent,#c9ad78);text-decoration:underline;min-height:32px;display:inline-flex;align-items:center;outline-offset:3px}
 .aoExplorePlaceSheet .aoExploreGalleryImage small{font-size:11px;line-height:1.4;color:var(--ao-text-muted,#aab4be)}
 @media(max-width:520px){.aoExplorePlaceSheet .aoExploreGalleryGrid{grid-template-columns:1fr}.aoExplorePlaceSheet .aoExploreGalleryImage img{height:300px}}
+
+/* P66: a source-owned editorial sanctuary folio with uncropped media. */
+.aoExplorePlaceSheet .aoExplorePlaceMedia{margin:15px 0 21px;border-radius:14px;background:radial-gradient(ellipse at 50% 50%,#202c34,#080e17 74%)}
+.aoExplorePlaceSheet .aoExplorePlaceMedia img{max-height:min(64vh,520px);object-fit:contain;background:transparent}
+.aoExplorePlaceSheet .aoExploreEditorialOpening{margin:18px 0 24px;padding:24px clamp(17px,4vw,32px);border:1px solid rgba(202,168,112,.24);border-left:3px solid var(--ao-liturgical-accent,#c9ad78);background:linear-gradient(125deg,rgba(201,173,120,.095),rgba(23,34,46,.25) 68%);border-radius:5px 13px 13px 5px}
+.aoExplorePlaceSheet .aoExploreEditorialOpening>small,.aoExplorePlaceSheet .aoExploreTreasures header>small,.aoExplorePlaceSheet .aoExplorePlaceCustoms>small{display:block;font:700 10px/1.5 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.18em;color:var(--ao-liturgical-accent,#c9ad78)}
+.aoExplorePlaceSheet .aoExploreEditorialOpening h3{font:500 clamp(23px,4vw,36px)/1.2 var(--ao-font-display,Georgia,serif);color:var(--ao-text-primary,#f1e9dc);margin:11px 0 15px;overflow-wrap:anywhere}
+.aoExplorePlaceSheet .aoExploreEditorialOpening>p{max-width:67ch;color:var(--ao-text-primary,#e9e4d9);font:400 clamp(15px,2.3vw,17px)/1.73 var(--ao-font-body,Georgia,serif);margin:0 0 13px;text-wrap:pretty}
+.aoExplorePlaceSheet .aoExploreEditorialOpening>a,.aoExplorePlaceSheet .aoExploreTreasureActions>a{color:var(--ao-liturgical-accent,#c9ad78);font:500 12px/1.5 var(--ao-font-ui,system-ui,sans-serif);min-height:38px;display:inline-flex;align-items:center}
+.aoExplorePlaceSheet .aoExploreTreasures{margin:27px 0}
+.aoExplorePlaceSheet .aoExploreTreasures>header{padding:0 0 19px}
+.aoExplorePlaceSheet .aoExploreTreasures>header h3,.aoExplorePlaceSheet .aoExplorePlaceCustoms>h3{font:500 clamp(24px,4vw,35px)/1.16 var(--ao-font-display,Georgia,serif);color:var(--ao-text-primary,#f4ede1);margin:10px 0;letter-spacing:-.02em}
+.aoExplorePlaceSheet .aoExploreTreasures>header p{margin:0;max-width:74ch;font:400 13px/1.66 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#aab4be)}
+.aoExplorePlaceSheet .aoExploreTreasureGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.aoExplorePlaceSheet .aoExploreTreasureCard{min-width:0;display:flex;flex-direction:column;gap:11px;padding:22px 19px;border-radius:13px;border:1px solid var(--ao-rule,rgba(255,255,255,.12));background:radial-gradient(ellipse at 90% 0%,rgba(196,160,104,.1),transparent 55%),var(--ao-surface-1,#101923)}
+.aoExplorePlaceSheet .aoExploreTreasureKind{font:650 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.075em;text-transform:uppercase;color:var(--ao-liturgical-accent,#c9ad78)}
+.aoExplorePlaceSheet .aoExploreTreasureCard h4{font:500 clamp(19px,2.7vw,24px)/1.25 var(--ao-font-display,Georgia,serif);color:var(--ao-text-primary,#efe9dc);margin:0;overflow-wrap:anywhere}
+.aoExplorePlaceSheet .aoExploreTreasureCard>p{margin:0;color:var(--ao-text-muted,#bdc5cb);font:400 13px/1.65 var(--ao-font-body,Georgia,serif)}
+.aoExplorePlaceSheet .aoExploreTreasureCard>.aoExploreTreasureNotice{border-left:2px solid rgba(201,173,120,.45);padding-left:10px;font:400 12px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+.aoExplorePlaceSheet .aoExploreTreasureActions{margin-top:auto;padding-top:12px;border-top:1px solid var(--ao-rule,rgba(255,255,255,.1));display:flex;align-items:center;justify-content:space-between;gap:11px;flex-wrap:wrap}
+.aoExplorePlaceSheet .aoExploreTreasureActions>button,.aoExplorePlaceSheet .aoExplorePlaceCustoms>button{border:1px solid var(--ao-liturgical-border,rgba(201,173,120,.42));background:transparent;border-radius:999px;color:var(--ao-liturgical-accent,#c9ad78);padding:9px 12px;font:600 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);min-height:42px;cursor:pointer}
+.aoExplorePlaceSheet .aoExplorePlaceCustoms{margin:27px 0;padding:23px;border:1px solid var(--ao-rule,rgba(255,255,255,.14));background:var(--ao-surface-1,#101923);border-radius:13px}
+.aoExplorePlaceSheet .aoExplorePlaceCustoms p{margin:0 0 15px;display:grid;gap:4px;border-bottom:1px solid var(--ao-rule,rgba(255,255,255,.1));padding-bottom:13px}
+.aoExplorePlaceSheet .aoExplorePlaceCustoms p strong{font:500 18px/1.3 var(--ao-font-display,Georgia,serif);color:var(--ao-text-primary,#efe9dc)}
+.aoExplorePlaceSheet .aoExplorePlaceCustoms p span{color:var(--ao-text-muted,#aab4be);font:400 12px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+@media(max-width:640px){.aoExplorePlaceSheet .aoExploreTreasureGrid{grid-template-columns:1fr}.aoExplorePlaceSheet .aoExplorePlaceMedia img{max-height:min(50vh,420px)}.aoExplorePlaceSheet .aoExploreEditorialOpening{padding:20px 17px}.aoExplorePlaceSheet .aoExploreTreasureCard{padding:18px 16px}}
+
+
+/* P67 source-described indoor placement; no simulated room map. */
+.aoExplorePlaceSheet .aoExploreIndoorPosition{
+ display:grid;gap:5px;padding:13px 14px 12px;border-radius:10px;
+ background:rgba(168,191,201,.06);border:1px solid rgba(168,191,201,.18);
+}
+.aoExplorePlaceSheet .aoExploreIndoorPosition>small{
+ font:700 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+ letter-spacing:.12em;color:var(--ao-liturgical-accent,#c9ad78)
+}
+.aoExplorePlaceSheet .aoExploreIndoorPosition>strong{
+ color:var(--ao-text-primary,#eee9df);
+ font:500 17px/1.35 var(--ao-font-display,Georgia,serif);
+}
+.aoExplorePlaceSheet .aoExploreIndoorPosition>span{
+ color:var(--ao-text-muted,#aab4be);
+ font:400 11px/1.45 var(--ao-font-ui,system-ui,sans-serif)
+}
+.aoExplorePlaceSheet .aoExploreIndoorPosition>a,
+.aoExplorePlaceSheet .aoExploreIndoorClosure>a{
+ color:var(--ao-liturgical-accent,#c9ad78);font:500 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoExplorePlaceSheet .aoExploreIndoorClosure{
+ margin:9px 0 0!important;padding:10px 12px;
+ border-left:2px solid var(--ao-liturgical-accent,#c9ad78);
+ background:rgba(182,140,78,.10);font:400 12px/1.6 var(--ao-font-ui,system-ui,sans-serif)!important;
+ color:var(--ao-text-primary,#eee9df)!important
+}
+
 `;

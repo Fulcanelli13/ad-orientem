@@ -1,5 +1,7 @@
 import { formatDisplayDate } from "../app/date-format.js";
 import { calendarDateForSemanticKey } from "../calendar/intelligence.js";
+import { existingPlaceEditorialConnections } from "./place-editorial-reuse.js";
+import { resolveRelicIndoorPlacement } from "./relic-indoor-location.js";
 
 const arr=value=>Array.isArray(value)?value:[];
 const text=value=>String(value??"").trim();
@@ -337,6 +339,29 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
     const sourceBoundChapters=candidateChapters.some(row=>row.kind==="ORIGIN")
       &&candidateChapters.some(row=>row.kind==="PILGRIMAGE")
       ?candidateChapters:Object.freeze([]);
+    // Existing approved guides own the site story. The relic corpus owns custody;
+    // the Saints pilot remains EDITORIAL_REVIEW_ONLY and is NOT exposed here.
+    const editorial=existingPlaceEditorialConnections(placeId,{
+      geography:dataset?.geography,
+      guideCorpora:[{guides:dataset?.editorial?.placeGuides}],
+      phenomena:dataset?.sacredPhenomena,
+      customs:dataset?.customs,
+      saints:dataset?.saints,
+    });
+    const originalRelics=new Map(related.relics.map(item=>[item.source_id,item]));
+    const sacredTreasures=Object.freeze(editorial.sacred_objects.map(entry=>{
+      const linked=originalRelics.get(entry.id);
+      const raw=linked?.raw?.record??null;
+      return Object.freeze({
+        ...entry,kind:raw?.relic_kind??null,associated_person:raw?.associated_person??null,
+        item_id:linked?.item_id??null,lens:linked?.lens??null,
+        inside_location:resolveRelicIndoorPlacement(dataset?.sacredPhenomena?.indoorPlacement,entry.id,placeId),
+        access_notice_en:raw?.access_notice_en??null,
+        access_notice_fr:raw?.access_notice_fr??null,
+        display_notice_en:raw?.display_notice_en??null,
+        display_notice_fr:raw?.display_notice_fr??null,
+      });
+    }));
 
     profiles.push(Object.freeze({
       place_id:placeId,
@@ -347,6 +372,9 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
       media:resolveApprovedPlaceMedia(dataset?.media?.approved,placeId),
       gallery:resolveApprovedPlaceGallery(dataset?.media?.gallery,placeId),
       illustrated_guide:publishedIllustratedPlaceGuide(dataset?.editorial?.placeGuides,placeId),
+      editorial_intro:editorial.introduction,
+      sacred_treasures:sacredTreasures,
+      site_customs:editorial.customs,
       address:place?.address??null,
       address_label:addressLabel(place?.address),
       geo:place?.geo??null,

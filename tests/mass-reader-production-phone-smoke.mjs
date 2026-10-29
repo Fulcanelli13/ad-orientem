@@ -132,6 +132,32 @@ try{
         assert.equal(after.phrase,prior.phrase,"Priest catch-up advanced choir phrase");
         assert.equal(after.complete,prior.complete,"Priest catch-up marked choir finished");
         await snapshot(page,"catch-up-independent",c);
+        // Production-only regression for the last-phrase FINISH control.
+        // Page-level no-overflow tests missed the prior 23px word colliding
+        // with PAUSE inside this narrow Schola dock.
+        const nextPhrase=root.locator("[data-schola-next]");
+        for(let i=0;i<16&&(await nextPhrase.textContent())?.trim()!=="FINISH";i++){
+          assert.equal(await nextPhrase.isEnabled(),true,
+            "Kyrie ended before the explicit FINISH control appeared");
+          await nextPhrase.click();
+        }
+        assert.equal((await nextPhrase.textContent())?.trim(),"FINISH",
+          "Last Kyrie phrase must expose a manual FINISH action");
+        const fit=await nextPhrase.evaluate(button=>{
+          const pause=document.querySelector('#ao-r17-native-reader-preview [data-schola-pause]');
+          const a=button.getBoundingClientRect(),b=pause?.getBoundingClientRect();
+          return {state:button.dataset.scholaFinish,
+            width:button.clientWidth,textWidth:button.scrollWidth,
+            right:a.right,pauseLeft:b?.left??0,
+            fontSize:parseFloat(getComputedStyle(button).fontSize)};
+        });
+        assert.equal(fit.state,"true","Production FINISH label has no compact state");
+        assert.ok(fit.fontSize>=8&&fit.fontSize<=11,
+          "Production FINISH inherited arrow-sized text: "+JSON.stringify(fit));
+        assert.ok(fit.textWidth<=fit.width+1&&fit.right<=fit.pauseLeft+1,
+          "Production FINISH overlaps PAUSE at "+option.width+"px: "+JSON.stringify(fit));
+        c.finishFit=fit;
+        await snapshot(page,"schola-finish-control",c);
         await music.click();
         const quiet=menu.locator('[data-schola-event-select="HOMILY"]');
         if(await quiet.count() && await quiet.isEnabled()){

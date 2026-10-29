@@ -35,7 +35,7 @@ try{
    await door.click();
    const family=page.locator(rootSel+" .aoP435930FamilyDoor"); // not required in family detail
    const all=await page.locator(rootSel+" .aoP435930ModuleGrid [data-p435930-own]").evaluateAll(xs=>xs.map(x=>x.dataset.p435930Own));
-   assert.deepEqual(all,["pray.rosary","pray.rosary_methods","pray.divine_mercy","pray.five_wounds","pray.precious_blood"]);
+   assert.deepEqual(all,["pray.rosary","pray.rosary_methods","pray.divine_mercy","pray.five_wounds","pray.precious_blood","pray.little_crown"]);
    assert.equal(await page.locator(rootSel+" #aoP435930Title").innerText(),"Rosary & Chaplets");
    assert.equal(await page.locator(rootSel+" .aoP435930HomeIntro h2").count(),0,"Do not duplicate family title below app header");
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"No horizontal clipping");
@@ -70,6 +70,36 @@ try{
    assert.match(await page.locator(blood+' .aoPreciousBloodCard').innerText(),/Pater noster/);
    await page.screenshot({path:resolve(out,"precious-blood-full-guided-"+width+".png"),animations:"disabled"});
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"Precious Blood reader must not clip horizontally");
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+   await page.locator(rootSel+' [data-p435930-family="chaplets"]').click();
+   // B30: exact 3+12 Little Crown, repeated aspiration, correct source and accessible finish.
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+   await page.locator(rootSel+' [data-p435930-family="chaplets"]').click();
+   await page.locator(rootSel+' [data-p435930-own="pray.little_crown"]').click();
+   const crown=rootSel+' [data-ao-little-crown-reader]';
+   assert.equal(await page.locator(crown).count(),1);
+   assert.equal(await page.locator(crown+' [data-p435930-crown-bead]').count(),15);
+   assert.equal(await page.locator(crown+' [role="progressbar"]').getAttribute("aria-valuenow"),"1");
+   assert.match(await page.locator(crown+' .aoLittleCrownAspiration').innerText(),/And the Word was made Flesh/);
+   assert.match(await page.locator(crown+' .aoLittleCrownPrayerText').innerText(),/Our Father/);
+   await page.locator(crown+' [data-p435930-crown-bead="3"]').click();
+   assert.equal(await page.locator(crown+' [role="progressbar"]').getAttribute("aria-valuenow"),"4");
+   assert.match(await page.locator(crown+' .aoLittleCrownPrayerText').innerText(),/Hail Mary/);
+   await page.locator(crown+' [data-p435930-crown-latin]').click();
+   assert.match(await page.locator(crown+' .aoLittleCrownPrayerText').innerText(),/Ave Maria/);
+   assert.match(await page.locator(crown+' .aoLittleCrownAspiration').innerText(),/Et Verbum caro factum est/);
+   await page.locator(crown+' [data-p435930-crown-prev]').click();
+   assert.equal(await page.locator(crown+' [role="progressbar"]').getAttribute("aria-valuenow"),"3");
+   await page.locator(crown+' [data-p435930-crown-latin]').click();
+   await page.locator(crown+' [data-p435930-crown-bead="14"]').click();
+   assert.equal(await page.locator(crown+' [role="progressbar"]').getAttribute("aria-valuenow"),"15");
+   assert.equal(await page.locator(crown+' [data-p435930-crown-finish]').count(),1);
+   await page.locator(crown+' .aoLittleCrownSource summary').click();
+   assert.match(await page.locator(crown+' .aoLittleCrownSource').innerText(),/1940/);
+   await page.screenshot({path:resolve(out,"little-crown-b30-"+width+".png"),animations:"disabled"});
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"Little Crown must not clip 320/390px");
+   await page.locator(crown+' [data-p435930-crown-finish]').click();
+   assert.equal(await page.locator(crown).count(),0);
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
    await page.locator(rootSel+' [data-p435930-family="chaplets"]').click();
    // Enter the existing Divine Mercy owner from its new discovery family.

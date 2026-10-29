@@ -65,7 +65,7 @@ for(const token of [
  "No membership","not the reserved sacrament",
  "nightHomeAsGuided(lang())"
 ])assert.ok(ui.toLowerCase().includes(token.toLowerCase()),"B29 reader integration missing: "+token);
-assert.match(ui,/No monthly hour is compulsory/);
+assert.match(ui,/The original source recommends monthly night prayer, alone or together, but not under pain of sin/);
 assert.match(ui,/an image of the Sacred Heart/i);
 assert.match(ui,/no membership/i);
 assert.match(css,/max-width:350px/);
