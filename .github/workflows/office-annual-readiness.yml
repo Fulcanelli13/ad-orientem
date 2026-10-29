@@ -18,6 +18,8 @@ on:
       - 'src/office/advent-first-vespers-source-sequence.js'
       - 'src/office/advent-vespers-remainder-research.js'
       - 'src/office/advent-magnificat-source.js'
+      - 'src/office/advent-vespers-chapter-hymn.js'
+      - 'tests/divine-office-advent-vespers-chapter-hymn.mjs'
       - 'tests/divine-office-advent-magnificat-source.mjs'
       - 'tests/divine-office-advent-vespers-remainder-research.mjs'
       - 'tests/divine-office-advent-first-vespers-source-sequence.mjs'
@@ -93,6 +95,8 @@ jobs:
           node --test tests/divine-office-advent-vespers-remainder-research.mjs
           node --check src/office/advent-magnificat-source.js
           node --test tests/divine-office-advent-magnificat-source.mjs
+          node --check src/office/advent-vespers-chapter-hymn.js
+          node --test tests/divine-office-advent-vespers-chapter-hymn.mjs
           node --check src/office/conditional-source-reader.js
           node --test tests/divine-office-conditional-source-reader.mjs
           node --test tests/divine-office-expanded-temporal-sweep.mjs
