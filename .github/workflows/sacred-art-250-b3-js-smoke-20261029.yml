@@ -1,0 +1,45 @@
+name: Sacred Art — Verify 250-work HTML JavaScript and five-page review contract
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-250-b3-js-smoke-20261029.yml
+      - docs/SACRED_ART_250_WORK_IMPORT_REVIEW_B3_20261029.html
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  static-browser-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - name: Parse inline gallery program with real Node JavaScript compiler
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          h=Path('docs/SACRED_ART_250_WORK_IMPORT_REVIEW_B3_20261029.html').read_text(encoding='utf8')
+          match=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert match
+          data=json.loads(match.group(1))
+          assert len(data)==250 and len({x['id'] for x in data})==250
+          js=re.search(r'<script>(.*?)</script>',h,re.S)
+          assert js
+          code=js.group(1)
+          Path('/tmp/ad-orientem-gallery-b3.js').write_text(code,encoding='utf8')
+          assert 'im.src=work.previewURL' in code
+          assert 'const PAGE_SIZE=50;' in code
+          assert 'seenPages.length<TOTAL_PAGES' in code
+          assert "if(finalize&&!$('#complete').checked)" in code
+          assert 'for(let score=' not in code
+          assert 'Import with corrections' in h
+          assert all(w.get('previewURL','').startswith('https://') for w in data)
+          assert len([w for w in data if w['provider']=='KMSKA'])==237
+          assert len([w for w in data if w['provider']=='Cleveland'])==13
+          print('HTML_DATA_CONTRACT_PASS',len(data))
+          PY
+          node --check /tmp/ad-orientem-gallery-b3.js
+          echo 'B3_BROWSER_JS_SYNTAX_PASS'
