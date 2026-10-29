@@ -1,7 +1,7 @@
 /** Opt-in F05 reader comparison. Existing source, card and personal-rule engines own all texts. */
 export const DAILY_UX_PILOT_SCHEMA="ao-daily-ux-pilot-v1";
 export function dailyUxPilotEnabled(search){
- try{return new URLSearchParams(String(search||"").replace(/^\\?/,"")).get("aoDailyUxPilot")==="1"}
+ try{return new URLSearchParams(String(search||"").replace(/^\?/,"")).get("aoDailyUxPilot")==="1"}
  catch{return false}
 }
 export function renderDailyUxModes({mode,L,esc}){
