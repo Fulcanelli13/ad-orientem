@@ -158,8 +158,20 @@ try{
   reducedMotion:"reduce"
  });
  const page=await mobile.newPage(),errors=watchErrors(page);
+ const requests=[],responses=[],failedRequests=[];
+ page.on("request",r=>{if(r.url().startsWith(SOURCE))requests.push(r.url())});
+ page.on("response",r=>{if(r.url().startsWith(SOURCE))responses.push({url:r.url(),status:r.status()})});
+ page.on("requestfailed",r=>failedRequests.push({
+  url:r.url(),failure:r.failure()?.errorText??"unknown"
+ }));
  const hits=await mockSources(page);
- await awaitReader(page);
+ try{await awaitReader(page)}
+ catch(error){
+  throw Error(String(error?.message??error)+"; "+JSON.stringify({
+   requests,matchedCount:hits.size,responses,failedRequests,
+   pageErrors:errors
+  }));
+ }
  assert.equal(hits.size,22,"preview fetched unexpected files or duplicated URLs");
  assert.equal(await page.locator("#back").isDisabled(),true);
  assert.equal(await page.locator("#next").isEnabled(),true);
