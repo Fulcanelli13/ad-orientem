@@ -80,6 +80,9 @@ for(const name of workflows){
     // Upstream exact successful research run ONLY, writes one non-public global metadata archive.
     assert.match(source,/workflow_run:\s*\n\s*workflows:/);
     assert.match(source,/One-shot worldwide Directory source photography - remaining 68 countries plus AU retry/);
+    assert.match(source,/One-shot Directory C4-only Wikimedia country photo recovery/);
+    assert.match(source,/github\.event\.workflow_run\.head_branch == 'research\/directory-C4-recovery-once-20261029'/);
+    assert.match(source,/github\.event\.workflow_run\.head_sha == '64c8a5e6a93973f86b8ca9b3a96951e7a9918f4d'/);
     assert.match(source,/github\.event\.workflow_run\.conclusion == 'success'/);
     assert.match(source,/github\.event\.workflow_run\.head_sha == '7a6ffa9a598dc1ad17673830e5c273625d18e1a6'/);
     assert.match(source,/github\.event\.workflow_run\.repository\.full_name == 'Fulcanelli13\/ad-orientem'/);
