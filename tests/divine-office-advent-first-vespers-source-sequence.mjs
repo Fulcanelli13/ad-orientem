@@ -122,7 +122,7 @@ test("a locale-specific alternate Ant Vespera is not silently thrown away",async
 test("altered or reordered French psalm numbering withholds the whole sequence",async()=>{
  const env=fixture({changes:(map,path,lang)=>{
   if(path===psalter&&lang==="fr"){
-   const lines=map.get("Day0 Vespera");
+   const lines=map.get("Day6 Vespera");
    const t=lines[3];lines[3]=lines[4];lines[4]=t;
   }
  }});
@@ -201,7 +201,7 @@ function verses({missingFrench=false,substituted=false}={}){
     sourcePath:substituted?"Psalterium/Psalmorum/Psalm99":path,
     sourceRevision:DIVINUM_OFFICIUM_PIN,language,
     text:language==="fr"&&missingFrench?"":verses.map((v,i)=>
-      n+":"+v+" "+language+" source psalm verse "+i+".").join("\\n")
+      n+":"+v+" "+language+" source psalm verse "+i+".").join("\n")
    };
   }
  });
