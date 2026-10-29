@@ -7,6 +7,8 @@ on:
       - tools/directory/promote-st-alphonsus-photos.py
       - data/geography/research/directory-st-alphonsus-photo-editorial-20261029.v1.json
       - .github/workflows/directory-st-alphonsus-promote.yml
+      - tests/directory-st-alphonsus-approved.mjs
+      - tests/explore-r69-multi-place-gallery.mjs
   # No workflow_dispatch, pull_request write scope or schedule.
 permissions:
   contents: write
