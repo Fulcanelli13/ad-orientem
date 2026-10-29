@@ -18537,5 +18537,30 @@
     "officialPageTitleOrInventoryExceptions": 0,
     "verifiedPhysicalSpecialCases": "data/calendar/sacred-art-phase1-kmska-physical-special-cases-20261029.v1.json",
     "sourcePhotoCertificationNotInScope": true
+  },
+  "phase1RijksmuseumOfficialVerification": {
+    "verifiedReport": "data/calendar/sacred-art-phase1-rijks-66-official-linked-art-report-20261029.v1.json",
+    "exceptionQueue": "data/calendar/sacred-art-phase1-rijks-66-curatorial-exceptions-20261029.v1.json",
+    "apiProbe": "data/calendar/sacred-art-phase1-rijks-api-probe-20261029.v1.json",
+    "museum": "Rijksmuseum",
+    "sourceCards": 66,
+    "exactMuseumIdAndAccessionVerified": 66,
+    "normalizedTitleMatches": 66,
+    "paintingClassified": 66,
+    "missingOrConflictingOfficialObjects": 0,
+    "conditionalUserChoicesPreserved": 4,
+    "creatorMetadataReviewQueue": 28,
+    "physicalObjectTypeExceptions": 4,
+    "museumBackedOfficialVerifiedToDate": 383,
+    "museumBackedOfficialStillUnverified": 96,
+    "remainingByMuseum": {
+      "smk": 54,
+      "walters": 42
+    },
+    "canonical383NewIdentityLinks": 0,
+    "sourcePhotographsCertified": 0,
+    "productionImports": 0,
+    "userChoicesChanged": false,
+    "productionMutation": false
   }
 }
