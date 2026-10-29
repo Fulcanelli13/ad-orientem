@@ -47,7 +47,7 @@ const ACTIONS=Object.freeze({
  "PROFOUND BOW":["The priest bows profoundly.","Le prêtre s’incline profondément."],
  // Ritus servandus VIII.4: eye-raising is brief and immediately followed
  // by lowering the gaze; do not turn it into a prolonged elevation pose.
- "RAISES EYES":["Holding the Host, the priest raises his eyes to heaven and immediately lowers them, at et elevatis oculis in caelum.","Tenant l’Hostie, le prêtre élève les yeux au ciel et les abaisse aussitôt, à et elevatis oculis in caelum."],
+ "RAISES EYES":["The priest, holding the Host, raises his eyes to heaven and immediately lowers them, at et elevatis oculis in caelum.","Le prêtre, tenant l’Hostie, élève les yeux au ciel et les abaisse aussitôt, à et elevatis oculis in caelum."],
  "RAISES EYES AND HANDS":["The priest raises his eyes and hands.","Le prêtre élève les yeux et les mains."],
  "RECEIVES CHALICE":["The priest receives the Precious Blood.","Le prêtre communie au Précieux Sang."],
  "RECEIVES HOST":["The priest receives the Sacred Host.","Le prêtre communie à la sainte Hostie."],
