@@ -94,9 +94,16 @@ export function filterPilotDiscovery(root,value){
   const mosaic=root.querySelector("[data-ao-pray-pilot-mosaic]");
   if(!results||!mosaic)return;
   results.hidden=!q;mosaic.hidden=!!q;
+  // The R1.1 facets filter existing source/route metadata; they do not
+  // introduce a new prayer index or infer Latin witnesses.
+  const active=[...results.querySelectorAll('[data-p435930-pilot-facet][aria-pressed="true"]')]
+    .map(node=>node.dataset.p435930PilotFacet);
+  const forms=active.filter(id=>id!=="la");
   let count=0;
   for(const row of results.querySelectorAll("[data-pilot-searchable]")){
-    const match=!!q&&simplify(row.dataset.pilotSearchable).includes(q);
+    const match=!!q&&simplify(row.dataset.pilotSearchable).includes(q)
+      &&(!forms.length||forms.includes(row.dataset.pilotForm))
+      &&(!active.includes("la")||row.dataset.pilotLatin==="true");
     row.hidden=!match;if(match)count++;
   }
   const counter=root.querySelector("[data-ao-pilot-result-count]");
@@ -121,13 +128,16 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
       if(!routes.has(owner+":"+id))routes.set(owner+":"+id,{owner,id,title,description});
     });
   });
+  const routeForm=id=>/novena|montfort|first_friday|first_saturday/.test(id)?"novena"
+    :/rosary|chaplet|five_wounds|little_crown|precious_blood|mercy/.test(id)?"chaplet"
+    :/litany/.test(id)?"litany":"prayer";
   const routeRows=[...routes.values()].map(row=>
-    '<button type="button" class="aoPrayPilotResult" data-pilot-searchable="'+esc([row.title,row.description].join(" "))+'"'+
+    '<button type="button" class="aoPrayPilotResult" data-pilot-form="'+routeForm(row.id)+'" data-pilot-latin="false" data-pilot-searchable="'+esc([row.title,row.description].join(" "))+'"'+
     (row.owner==="external"?' data-p435930-external="':' data-p435930-own="')+esc(row.id)+'">'+
     '<b>'+esc(row.title)+'</b><small>'+esc(row.description)+'</small></button>'
   ).join("");
   const prayerRows=Object.entries(DATA.prayers||{}).map(([id,p])=>
-    '<button type="button" class="aoPrayPilotResult" data-pilot-searchable="'+esc([p.title,p.titleFr,id].join(" "))+'" data-p435930-pilot-prayer="'+esc(id)+'">'+
+    '<button type="button" class="aoPrayPilotResult" data-pilot-form="'+(id.includes("litany")?"litany":"prayer")+'" data-pilot-latin="'+Boolean(p.la)+'" data-pilot-searchable="'+esc([p.title,p.titleFr,id].join(" "))+'" data-p435930-pilot-prayer="'+esc(id)+'">'+
     '<b>'+esc(p.titleFr&&L("EN","FR")==="FR"?p.titleFr:p.title)+'</b>'+
     '<small>'+esc(L("Canonical prayer text","Texte canonique de prière"))+'</small></button>'
   ).join("");
@@ -137,7 +147,11 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
       '<label class="aoPrayPilotSearch">'+assetIcon("ao-ui-search","aoPrayPilotSearchIcon")+
       '<input type="search" data-p435930-pilot-search autocomplete="off" aria-label="'+esc(L("Search all prayers and devotions","Rechercher toutes les prières et dévotions"))+'" placeholder="'+esc(L("Search prayers and devotions","Rechercher prières et dévotions"))+'"></label>'+
       '<p class="aoPrayPilotIntro">'+esc(L("Choose a door or search the existing prayer library and readers.","Choisissez une porte ou recherchez les prières et les lecteurs existants."))+'</p></div>'+
-      '<div data-ao-pray-pilot-results class="aoPrayPilotResults" hidden><p><b data-ao-pilot-result-count>0</b> '+esc(L("results","résultats"))+'</p>'+routeRows+prayerRows+
+      '<div data-ao-pray-pilot-results class="aoPrayPilotResults" hidden>'+
+      '<div class="aoPrayPilotFacets" role="group" aria-label="'+esc(L("Filter search results","Filtrer les résultats"))+'">'+
+      [["prayer",L("Prayers","Prières")],["litany",L("Litanies","Litanies")],["chaplet",L("Chaplets","Chapelets")],["novena",L("Novenas","Neuvaines")],["la",L("Latin","Latin")]]
+        .map(([id,label])=>'<button type="button" data-p435930-pilot-facet="'+id+'" aria-pressed="false">'+esc(label)+'</button>').join("")+
+      '</div><p><b data-ao-pilot-result-count>0</b> '+esc(L("results","résultats"))+'</p>'+routeRows+prayerRows+
       '<p data-ao-pilot-empty hidden>'+esc(L("No matching prayers or devotions.","Aucune prière ni dévotion correspondante."))+'</p></div>'+
       '<section data-ao-pray-pilot-mosaic class="aoPrayPilotMosaic" aria-label="'+esc(L("Prayer categories","Catégories de prières"))+'">'+MOSAIC.map(makeTile).join("")+'</section>'+
       '<p class="aoPrayPilotArtNote">'+esc(L("Pilot: approved paintings and crops are not yet bound. These tiles use existing app icons, not invented artwork.","Prototype : les tableaux et cadrages approuvés ne sont pas encore reliés. Les icônes proviennent de l'application."))+'</p>'+
@@ -183,6 +197,9 @@ function installStyles(){
     "#aoPray435930 .aoPrayPilotArtNote{max-width:570px;margin:8px auto 0;padding:0 12px;font-size:11px;line-height:1.45;color:var(--muted,#aaa);text-align:center}",
     "#aoPray435930 .aoPrayPilotResults{padding:4px 16px 24px}",
     "#aoPray435930 .aoPrayPilotResults[hidden],#aoPray435930 .aoPrayPilotMosaic[hidden],#aoPray435930 .aoPrayPilotResult[hidden]{display:none!important}",
+    "#aoPray435930 .aoPrayPilotFacets{display:flex;flex-wrap:wrap;gap:5px;margin:4px 0 12px}",
+    "#aoPray435930 .aoPrayPilotFacets button{min-height:44px;padding:8px 12px;border:1px solid var(--border,#555);border-radius:999px;background:var(--surface-1,#1a2530);color:var(--text,#eee);font:600 12px/1.2 var(--ao-font-ui,system-ui,sans-serif)}",
+    "#aoPray435930 .aoPrayPilotFacets button[aria-pressed=true]{border-color:var(--liturgical,#c9ae76);background:color-mix(in srgb,var(--liturgical,#c9ae76) 20%,var(--surface-1,#1a2530))}",
     "#aoPray435930 .aoPrayPilotResult{display:block;width:100%;min-height:55px;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--border,#333);padding:10px 0;color:var(--text,#fff);cursor:pointer}",
     "#aoPray435930 .aoPrayPilotResult b{display:block;font:500 17px/1.25 var(--ao-font-display,Georgia,serif)}",
     "#aoPray435930 .aoPrayPilotResult small{display:block;margin-top:3px;color:var(--muted,#aaa);font-size:12px;line-height:1.35}",
