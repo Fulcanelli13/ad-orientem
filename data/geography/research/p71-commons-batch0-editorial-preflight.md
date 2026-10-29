@@ -1,6 +1,6 @@
 # P71 — Commons batch 0 editorial preflight (research only)
 
-Date: 2026-10-29. Parent input: [P70 PR #1924](https://github.com/Fulcanelli13/ad-orientem/pull/1924), `data/geography/research/p70-commons-batch0-consolidated-review.jsonl` on branch `research/p70-commons-discovery-batch0-20261029`.
+Date: 2026-10-29. Priority scores rank possible review work, **not** licence or image approvals; exclusions and rights/historical holds sort below ordinary review candidates. Parent input: [P70 PR #1924](https://github.com/Fulcanelli13/ad-orientem/pull/1924), `data/geography/research/p70-commons-batch0-consolidated-review.jsonl` on branch `research/p70-commons-discovery-batch0-20261029`.
 
 ## Reconciliation
 
@@ -12,10 +12,11 @@ Date: 2026-10-29. Parent input: [P70 PR #1924](https://github.com/Fulcanelli13/a
 
 ## Editorial triage lanes
 
-- PLACE_EXACT_IDENTITY_MANUAL_REVIEW: **412**
+- PLACE_EXACT_IDENTITY_MANUAL_REVIEW: **411**
 - RELIC_EXACT_IDENTITY_MANUAL_REVIEW: **71**
 - RIGHTS_METADATA_HOLD: **9**
 - EXCLUDE_WRONG_LOCATION: **9**
+- HISTORICAL_ARTWORK_GALLERY_ONLY: **1**
 - RIGHTS_AND_HISTORICAL_HOLD: **1**
 
 This is a **metadata/title/source-description preflight**, not completion of the visual review. `EXCLUDE_WRONG_LOCATION` blocks candidate-to-entity association, not the source file's possible reuse for a different correctly identified Place. All other lanes are holds/manual review, never automatic approvals. The companion JSONL preserves each original Commons SHA-1, entity ID, rights claim, image dimensions and flags.
@@ -40,6 +41,12 @@ The false matches include one image from Georgia/USA assigned to Antigua, four M
 - [Ballintubber Abbey eastern elevation](https://commons.wikimedia.org/wiki/File:Ballintubber_Abbey_eastern_elevation.JPG): 2,592×1,944 px, own-work, CC0 claim and exact abbey caption. Strong **source-review prospect**, not approved.
 - [Saint Oliver Plunkett's head](https://commons.wikimedia.org/wiki/File:St_Oliver_Plunkett%27s_head_2007-10-5.jpg): source identifies the relic inside St Peter's, Drogheda. Treat as **relic-detail/gallery candidate**, never as church-exterior hero.
 - [Marie Reine de la Paix 1942 postcard](https://commons.wikimedia.org/wiki/File:Marie-Reine-de-la-Paix-Port-Louis-1942.jpg): source identifies a historical postcard and an unknown original author while also claiming CC0. **Hold for underlying-rights verification**, not a current-site hero.
+
+Additional Commons page checks:
+
+- [Marie Reine de la Paix 2019 (Balou46)](https://commons.wikimedia.org/wiki/File:MU-port-louis-kirche-maria.jpg): CC BY-SA 4.0, own work, exact category; subject framing remains unreviewed.
+- [Ballintubber cloisters](https://commons.wikimedia.org/wiki/File:Ballintubber_Abbey_cloisters.JPG): CC0, own work, exact location; likely a gallery detail, not a main building hero.
+- [Port Louis Cathedral, 1812](https://commons.wikimedia.org/wiki/File:Port-Louis_1812.jpg): engraving of the church; segregated as **historical artwork**, not a present-day photograph, despite high resolution.
 
 ## Operational constraints and next finite release gate
 
