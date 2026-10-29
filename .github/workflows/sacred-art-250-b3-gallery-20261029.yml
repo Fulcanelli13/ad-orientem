@@ -53,6 +53,9 @@ jobs:
           assert 'productionImported:false' in html
           assert all(not x['productionImageRightsCleared'] for x in rows if x['provider']=='KMSKA')
           assert all(x['previewURL'].startswith('https://') for x in rows)
+          assert all('book of hours' not in (x['title']+' '+x['technique']).lower() for x in rows)
+          assert all('parchment' not in (x['title']+' '+x['technique']).lower() for x in rows)
+          assert all('vellum' not in (x['title']+' '+x['technique']).lower() for x in rows)
           print('PASS',len(rows),'images; user 60 decisions excluded; protected rights')
           PY
           git diff --exit-code -- data/calendar/sacred-art-curator-queues-383-20261029.v1.json data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json
