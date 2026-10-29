@@ -1615,8 +1615,11 @@ button.ao-schola-control{cursor:pointer}
 }
 /* Persistent participant state lives in the source-context ribbon, not
    beside a later prayer row whose source posture began before this card. */
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-reader-objective-context{
+  position:relative;padding-right:72px
+}
 .ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-reader-objective-context:has(.ao-objective-posture:not([hidden])){
-  position:relative;padding-left:52px;padding-right:72px
+  padding-left:52px
 }
 /* The MUSIC picker formerly sat over the source-context wording on
    320px phones. Reserve its own right-hand slot during objective context. */
