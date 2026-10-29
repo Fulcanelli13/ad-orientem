@@ -48,6 +48,24 @@ test("All Souls Prime splits at one independently anchored versicle in LA EN FR,
     assert.ok(!s.postPrayer.includes("Martyrologium"));
   }
 });
+test("pinned composer Latin iusti and source justi both split losslessly, never ambiguously",()=>{
+  const original="V. In memória ætérna erunt justi.";
+  const variants=[
+    texts.la,
+    texts.la.replace(original,"℣. In memória ætérna erunt iusti."),
+    texts.la.replace(original,"℣. In memória ætérna erunt justi."),
+  ];
+  for(const sourceText of variants){
+    const result=splitAllSoulsPrimeMartyrologyCell(sourceText,"la");
+    assert.equal(result.boundaryLine,3);
+    assert.equal(result.martyrology+"\\n"+result.postPrayer,sourceText);
+    assert.match(result.postPrayer,/Deus, véniæ largítor/);
+  }
+  const duplicate=texts.la.replace(original,
+    "℣. In memória ætérna erunt iusti.\\nV. In memória ætérna erunt justi.");
+  assert.throws(()=>splitAllSoulsPrimeMartyrologyCell(duplicate,"la"),
+    /OFFICE_PRIME_SPLIT_VERSICLE_BOUNDARY_AMBIGUOUS/);
+});
 test("source-part renderer keeps exactly one Prima5 identity but two ordered cards",()=>{
   const latin=source("la"),translation=source("fr");
   const original=latin.sections[1].text;
