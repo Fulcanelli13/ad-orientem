@@ -58,10 +58,10 @@ export function officeTranslationContentBlockers({latin,translation}={}){
     // Dómine); compare normalized WORD sequences, not exact commas.
     const latinTokens=latinBody.replace(/[^a-z0-9]+/g," ");
     const allSaints=/omnium sanctorum/.test(normalized(latin.headline));
-    const target=allSaints&&/at jesus conversus/.test(latinTokens)&&
+    const target=allSaints&&/at [ij]esus conversus/.test(latinTokens)&&
       /absolve quaesumus domine/.test(latinTokens);
     if(target){
-      const l=latin.sections.find(s=>/at jesus conversus/.test(normalized(s.text)))??
+      const l=latin.sections.find(s=>/at [ij]esus conversus/.test(normalized(s.text)))??
         latin.sections.find(s=>/commemoratio dominica/.test(normalized(s.text)));
       if(!l)throw Error("OFFICE_CONTENT_GATE_SUNDAY_SOURCE_UNRESOLVED");
       const tr=find(translation,l.sourceCellId);
