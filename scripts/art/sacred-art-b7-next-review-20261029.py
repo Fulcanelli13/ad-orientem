@@ -58,8 +58,8 @@ canonical_nga=set()
 canonical_walters=set()
 for x in canon['main_records']:
  s=json.dumps(x,ensure_ascii=False)
- canonical_nga.update(re.findall(r'nga\\.gov/artworks/(\\d+)',s,re.I))
- canonical_walters.update(re.findall(r'walters\\.org/(?:art/|.*?object/)(\\d+)',s,re.I))
+ canonical_nga.update(re.findall(r'nga\.gov/artworks/(\d+)',s,re.I))
+ canonical_walters.update(re.findall(r'walters\\.org/(?:art/|.*?object/)(\d+)',s,re.I))
 
 def nga_candidates():
  images={};imrows=0;openrows=0
@@ -210,16 +210,16 @@ def main():
   'gates':{'sourceSpecificIDsPreserved':True,'prior933Excluded':True,
    'noAutomaticAestheticApprovals':True,'originalBytesSaved':0,
    'rightsHoldsNotPromoted':True,'galleryNotProduction':True},'rows':chosen}
- OUT.write_text(json.dumps(doc,ensure_ascii=False,indent=2)+'\\n',encoding='utf8')
+ OUT.write_text(json.dumps(doc,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
  digest=build_html(chosen) if chosen else None
- QA.write_text('# Sacred Art Batch 7 — source QA and editorial basis\\n\\n'
-  f"- **{len(chosen)} verified JPEG review cards**, target 250. NGA: {stats['NGA']}; Walters: {stats['Walters']}.\\n"
-  f"- **933 prior distinct review IDs excluded**: {counts}. No B4R/B5R user decisions changed.\\n"
-  f"- B4R: 43/123 selected; B5R: 108/250 selected (including corrections). Batch 5 sets the preferred editorial standard.\\n"
-  f"- {checked} preview checks, {len(fail)} failures, full native photography QA pending. No frame/crop integrity claimed.\\n"
-  "- NGA exact image openaccess=1; Walters held pending per-image rights review.\\n"
-  "- Images used only as linked previews. No image files saved, no production imports. Cost €0.\\n"
-  f"- Batch hash: {digest}; Ready={len(chosen)==250}.\\n",encoding='utf8')
+ QA.write_text('# Sacred Art Batch 7 — source QA and editorial basis\n\n'
+  f"- **{len(chosen)} verified JPEG review cards**, target 250. NGA: {stats['NGA']}; Walters: {stats['Walters']}.\n"
+  f"- **933 prior distinct review IDs excluded**: {counts}. No B4R/B5R user decisions changed.\n"
+  f"- B4R: 43/123 selected; B5R: 108/250 selected (including corrections). Batch 5 sets the preferred editorial standard.\n"
+  f"- {checked} preview checks, {len(fail)} failures, full native photography QA pending. No frame/crop integrity claimed.\n"
+  "- NGA exact image openaccess=1; Walters held pending per-image rights review.\n"
+  "- Images used only as linked previews. No image files saved, no production imports. Cost €0.\n"
+  f"- Batch hash: {digest}; Ready={len(chosen)==250}.\n",encoding='utf8')
  print(json.dumps({'counts':stats,'ngaInventory':ns,'waltersInventory':ws,
   'digest':digest,'samples':[(x['id'],x['title']) for x in chosen[:8]]}))
 if __name__=='__main__':main()
