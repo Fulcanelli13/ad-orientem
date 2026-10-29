@@ -48,14 +48,16 @@ test("source-first trilingual collect has named Oremus, exact macro ending, Bene
  assert.equal(r.publishable,false);
  assert.equal(r.published,false);
 });
-test("a priest reciting alone does not use Dominus vobiscum",async()=>{
+test("solo priest uses Domine exaudi both before and after collect under printed 1961 §53",async()=>{
  const r=await review({readSource:readSource(),
   recitation:"SOLO",minister:"DEACON_OR_HIGHER"});
  assert.equal(r.dialogueVariant,"DOMINE_EXAUDI");
  assert.deepEqual(r.languages.la.beforeCollect,
   fixture.sections.la.Dominus.slice(2,4));
- assert.deepEqual(r.languages.la.beforeBenedicamus,[]);
- assert.equal(r.omittedSecondDomineExaudi,true);
+ assert.deepEqual(r.languages.la.beforeBenedicamus,
+  fixture.sections.la.Dominus.slice(2,4));
+ assert.equal(r.omittedSecondDomineExaudi,false);
+ assert.equal(r.concludingDialogue1961OrdinariumSection53Reviewed,true);
 });
 test("a lay or below-deacon leader in common uses Domine exaudi",async()=>{
  const r=await review({readSource:readSource(),
@@ -64,7 +66,8 @@ test("a lay or below-deacon leader in common uses Domine exaudi",async()=>{
  assert.deepEqual(r.languages.en.beforeCollect,
   fixture.sections.en.Dominus.slice(2,4));
  assert.equal(r.languages.fr.oremus,"v. Prions.");
- assert.deepEqual(r.languages.fr.beforeBenedicamus,[]);
+ assert.deepEqual(r.languages.fr.beforeBenedicamus,
+  fixture.sections.fr.Dominus.slice(2,4));
 });
 test("recitation and ministry must be explicitly established; no invented default",async()=>{
  for(const args of [
