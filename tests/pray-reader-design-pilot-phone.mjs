@@ -44,7 +44,7 @@ try{
    assert.equal(await page.locator(base+'.aoReaderPilotLitanyPair').count()>40,true);
    const heading=page.locator(base+'.aoReaderPilotRailHead');
    assert.equal(await heading.count(),1);
-   assert.match(await heading.innerText(),/Invocation.*Response/s);
+   assert.match(await heading.innerText(),/Invocation.*Response/si);
    assert.equal(await heading.evaluate(x=>getComputedStyle(x).position),"sticky",
       "The source invocation/response header must remain pinned while reading");
    const individual=await page.locator(base+'.aoReaderPilotResponse strong').first().evaluate(x=>getComputedStyle(x).fontStyle);
@@ -56,7 +56,7 @@ try{
    assert.equal(await page.locator(base+'.aoReaderPilotLitany .aoDevoCardScroll').getAttribute("lang"),"fr");
    await page.locator(base+'[data-p435930-pilot-loreto-group="group"]').click();
    assert.equal(await page.locator(base+'[data-p435930-pilot-loreto-group="group"]').getAttribute("aria-pressed"),"true");
-   assert.match(await heading.innerText(),/Leader.*All/s);
+   assert.match(await heading.innerText(),/Leader.*All/si);
    assert.equal(await page.locator(base+'.aoReaderPilotResponse strong').first().evaluate(x=>getComputedStyle(x).fontStyle),
     "normal","Group responses must use ordinary, bold typography");
    assert.equal(await page.locator(base+'.aoReaderPilotResponse strong').first().evaluate(x=>getComputedStyle(x).fontWeight),"600");
