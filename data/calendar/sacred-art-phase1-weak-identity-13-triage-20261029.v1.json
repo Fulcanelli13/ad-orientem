@@ -1,0 +1,381 @@
+{
+  "schema": "AO_SACRED_ART_PHASE1_WEAK_IDENTITY_13_TRIAGE_V1",
+  "asOf": "2026-10-29",
+  "sourceQueue": "data/calendar/sacred-art-phase1-identity-review-13-20261029.v1.json",
+  "counts": {
+    "reviewed": 13,
+    "OPEN_MUSEUM_OBJECT_EVIDENCE": 5,
+    "DISTINCT_INSTITUTIONAL_OBJECT_EVIDENCE": 4,
+    "DISTINCT_ARTIST_AND_OBJECT": 2,
+    "DISTINCT_SAINT_SUBJECT": 2,
+    "promotedToCanonical": 0,
+    "userChoicesChanged": 0
+  },
+  "policy": "Do not promote textual leads to physical-work same identities without exact accession and authoritative provenance. Different saint identity or artist blocks weak textual matches.",
+  "records": [
+    {
+      "sourceId": "nga:45640",
+      "batch": "B7",
+      "title": "The Meeting of Abraham and Melchizedek",
+      "artistAsPresented": "Sir Peter Paul Rubens",
+      "originalDecision": "IMPORT",
+      "sourceObjectUrl": "https://www.nga.gov/artworks/45640",
+      "possibleExistingCanonical": [
+        {
+          "canonicalArtworkId": "ART-eter-aul-ubens-eeting-of-braham-and-elchizedek",
+          "canonicalTitle": "Meeting of Abraham and Melchizedek",
+          "canonicalArtist": "Peter Paul Rubens",
+          "canonicalEditorialState": "UNREVIEWED",
+          "titleSimilarity": 1,
+          "artistSimilarity": 0.75,
+          "rankingScore": 92,
+          "matchAuthority": "WEAK_TEXTUAL_POSSIBILITY_NOT_IDENTITY_PROOF"
+        }
+      ],
+      "userDecisionProtected": true,
+      "noAutoMerge": true,
+      "assessment": {
+        "classification": "OPEN_MUSEUM_OBJECT_EVIDENCE",
+        "reason": "Rubens attribution and matching historical subject are not enough to prove same specific artwork",
+        "canonicalLinkPromoted": false,
+        "choiceModified": false
+      }
+    },
+    {
+      "sourceId": "commons:34140055",
+      "batch": "B11",
+      "title": "Adoration of the Magi",
+      "artistAsPresented": "Workshop of Peter Paul Rubens",
+      "originalDecision": "IMPORT",
+      "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:%27Adoration_of_the_Magi%27%2C_workshop_of_Peter_Paul_Rubens%2C_The_Hermitage.JPG",
+      "possibleExistingCanonical": [
+        {
+          "canonicalArtworkId": "ART-eter-aul-ubens-doration-of-the-agi",
+          "canonicalTitle": "Adoration of the Magi",
+          "canonicalArtist": "Peter Paul Rubens",
+          "canonicalEditorialState": "APPROVED_5",
+          "titleSimilarity": 1,
+          "artistSimilarity": 0.75,
+          "rankingScore": 92,
+          "matchAuthority": "WEAK_TEXTUAL_POSSIBILITY_NOT_IDENTITY_PROOF"
+        }
+      ],
+      "userDecisionProtected": true,
+      "noAutoMerge": true,
+      "assessment": {
+        "classification": "DISTINCT_INSTITUTIONAL_OBJECT_EVIDENCE",
+        "reason": "Commons explicitly depicts Hermitage workshop painting, not automatically the generic Rubens work in canonical register",
+        "canonicalLinkPromoted": false,
+        "choiceModified": false
+      }
+    },
+    {
+      "sourceId": "nga:45891",
+      "batch": "B5R",
+      "title": "The Annunciation",
+      "artistAsPresented": "Veronese and Workshop",
+      "originalDecision": "IMPORT",
+      "sourceObjectUrl": "https://www.nga.gov/artworks/45891",
+      "possibleExistingCanonical": [
+        {
+          "canonicalArtworkId": "cma-127572",
+          "canonicalTitle": "The Annunciation",
+          "canonicalArtist": "Workshop of Paolo Veronese",
+          "canonicalEditorialState": "APPROVED_5",
+          "titleSimilarity": 1,
+          "artistSimilarity": 0.667,
+          "rankingScore": 89,
+          "matchAuthority": "WEAK_TEXTUAL_POSSIBILITY_NOT_IDENTITY_PROOF"
+        }
+      ],
+      "userDecisionProtected": true,
+      "noAutoMerge": true,
+      "assessment": {
+        "classification": "DISTINCT_INSTITUTIONAL_OBJECT_EVIDENCE",
+        "reason": "NGA object differs from Cleveland Museum of Art record cma-127572, despite Veronese workshop subject",
+        "canonicalLinkPromoted": false,
+        "choiceModified": false
+      }
+    },
+    {
+      "sourceId": "nga:41664",
+      "batch": "B5R",
+      "title": "The Holy Family on the Steps",
+      "artistAsPresented": "Follower of Nicolas Poussin",
+      "originalDecision": "IMPORT",
+      "sourceObjectUrl": "https://www.nga.gov/artworks/41664",
+      "possibleExistingCanonical": [
+        {
+          "canonicalArtworkId": "cma-150389",
+          "canonicalTitle": "The Holy Family on the Steps",
+          "canonicalArtist": "Nicolas Poussin",
+          "canonicalEditorialState": "UNREVIEWED",
+          "titleSimilarity": 1,
+          "artistSimilarity": 0.667,
+          "rankingScore": 89,
+          "matchAuthority": "WEAK_TEXTUAL_POSSIBILITY_NOT_IDENTITY_PROOF"
+        }
+      ],
+      "userDecisionProtected": true,
+      "noAutoMerge": true,
+      "assessment": {
+        "classification": "DISTINCT_INSTITUTIONAL_OBJECT_EVIDENCE",
+        "reason": "NGA follower of Poussin work is not the Cleveland Poussin original cma-150389",
+        "canonicalLinkPromoted": false,
+        "choiceModified": false
+      }
+    },
+    {
+      "sourceId": "nga:63264",
+      "batch": "B5R",
+      "title": "The Martyrdom and Last Communion of Saint Lucy",
+      "artistAsPresented": "Veronese",
+      "originalDecision": "IMPORT",
+      "sourceObjectUrl": "https://www.nga.gov/artworks/63264",
+      "possibleExistingCanonical": [
+        {
+          "canonicalArtworkId": "G17-010",
+          "canonicalTitle": "The Martyrdom and Last Communion of Saint Lucy",
+          "canonicalArtist": "Paolo Veronese",
+          "canonicalEditorialState": "UNREVIEWED",
+          "titleSimilarity": 1,
+          "artistSimilarity": 0.5,
+          "rankingScore": 83,
+          "matchAuthority": "WEAK_TEXTUAL_POSSIBILITY_NOT_IDENTITY_PROOF"
+        }
+      ],
+      "userDecisionProtected": true,
+      "noAutoMerge": true,
+      "assessment": {
+        "classification": "OPEN_MUSEUM_OBJECT_EVIDENCE",
+        "reason": "Veronese exact matching iconographic subject; require work-level institutional identity to resolve",
+        "canonicalLinkPromoted": false,
+        "choiceModified": false
+      }
+    },
+    {
+      "sourceId": "walters:2840",
+      "batch": "B6",
+      "title": "The Virgin of the Immaculate Conception",
+      "artistAsPresented": "Bartolomé Estebán Murillo",
+      "originalDecision": "IMPORT",
+      "sourceObjectUrl": "https://purl.thewalters.org/art/37.286",
+      "possibleExistingCanonical": [
+        {
+          "canonicalArtworkId": "cma-135659",
+          "canonicalTitle": "The Immaculate Conception",
+          "canonicalArtist": "Bartolomé Esteban Murillo",
+          "canonicalEditorialState": "APPROVED_LOCKED",
+          "titleSimilarity": 0.667,
+          "artistSimilarity": 1,
+          "rankingScore": 78,
+          "matchAuthority": "WEAK_TEXTUAL_POSSIBILITY_NOT_IDENTITY_PROOF"
+        }
+      ],
+      "userDecisionProtected": true,
+      "noAutoMerge": true,
+      "assessment": {
+        "classification": "DISTINCT_INSTITUTIONAL_OBJECT_EVIDENCE",
+        "reason": "Walters 37.286 is separate accession from Cleveland cma-135659",
+        "canonicalLinkPromoted": false,
+        "choiceModified": false
+      }
+    },
+    {
+      "sourceId": "walters:14271",
+      "batch": "B6",
+      "title": "Adoration of the Shepherds",
+      "artistAsPresented": "Bernardo Strozzi",
+      "originalDecision": "IMPORT",
+      "sourceObjectUrl": "https://purl.thewalters.org/art/37.277",
+      "possibleExistingCanonical": [
+        {
+          "canonicalArtworkId": "cma-143644",
+          "canonicalTitle": "Adoration of the Shepherds",
+          "canonicalArtist": "Bernardo Cavallino",
+          "canonicalEditorialState": "APPROVED_5",
+          "titleSimilarity": 1,
+          "artistSimilarity": 0.333,
+          "rankingScore": 77,
+          "matchAuthority": "WEAK_TEXTUAL_POSSIBILITY_NOT_IDENTITY_PROOF"
+        }
+      ],
+      "userDecisionProtected": true,
+      "noAutoMerge": true,
+      "assessment": {
+        "classification": "DISTINCT_ARTIST_AND_OBJECT",
+        "reason": "Bernardo Strozzi is not Bernardo Cavallino; both painting attributions and museums differ",
+        "canonicalLinkPromoted": false,
+        "choiceModified": false
+      }
+    },
+    {
+      "sourceId": "walters:32732",
+      "batch": "B6",
+      "title": "The Adoration of the Shepherds",
+      "artistAsPresented": "Bernardo Castello",
+      "originalDecision": "IMPORT",
+      "sourceObjectUrl": "https://purl.thewalters.org/art/37.1929",
+      "possibleExistingCanonical": [
+        {
+          "canonicalArtworkId": "cma-143644",
+          "canonicalTitle": "Adoration of the Shepherds",
+          "canonicalArtist": "Bernardo Cavallino",
+          "canonicalEditorialState": "APPROVED_5",
+          "titleSimilarity": 1,
+          "artistSimilarity": 0.333,
+          "rankingScore": 77,
+          "matchAuthority": "WEAK_TEXTUAL_POSSIBILITY_NOT_IDENTITY_PROOF"
+        }
+      ],
+      "userDecisionProtected": true,
+      "noAutoMerge": true,
+      "assessment": {
+        "classification": "DISTINCT_ARTIST_AND_OBJECT",
+        "reason": "Bernardo Castello is not Bernardo Cavallino; both painting attributions and museums differ",
+        "canonicalLinkPromoted": false,
+        "choiceModified": false
+      }
+    },
+    {
+      "sourceId": "met:439120",
+      "batch": "B9",
+      "title": "The Mass of Saint Basil",
+      "artistAsPresented": "Pierre Hubert Subleyras",
+      "originalDecision": "IMPORT_WITH_CORRECTIONS",
+      "sourceObjectUrl": "https://www.metmuseum.org/art/collection/search/439120",
+      "possibleExistingCanonical": [
+        {
+          "canonicalArtworkId": "ART-ierre-ubert-ubleyras-he-ass-of-aint-asil-oil-modello",
+          "canonicalTitle": "The Mass of Saint Basil — oil modello",
+          "canonicalArtist": "Pierre Hubert Subleyras",
+          "canonicalEditorialState": "UNREVIEWED",
+          "titleSimilarity": 0.6,
+          "artistSimilarity": 1,
+          "rankingScore": 74,
+          "matchAuthority": "WEAK_TEXTUAL_POSSIBILITY_NOT_IDENTITY_PROOF"
+        }
+      ],
+      "userDecisionProtected": true,
+      "noAutoMerge": true,
+      "assessment": {
+        "classification": "OPEN_MUSEUM_OBJECT_EVIDENCE",
+        "reason": "The Mass of Saint Basil and the canonical oil modello could be same or distinct preparatory works; requires object's accession/medium and canonical provenance",
+        "canonicalLinkPromoted": false,
+        "choiceModified": false
+      }
+    },
+    {
+      "sourceId": "nga:72037",
+      "batch": "B5R",
+      "title": "The Martyrdom of Saint Bartholomew",
+      "artistAsPresented": "Jusepe de Ribera",
+      "originalDecision": "IMPORT",
+      "sourceObjectUrl": "https://www.nga.gov/artworks/72037",
+      "possibleExistingCanonical": [
+        {
+          "canonicalArtworkId": "W01-001",
+          "canonicalTitle": "The Martyrdom of Saint Philip",
+          "canonicalArtist": "Jusepe de Ribera",
+          "canonicalEditorialState": "APPROVED_LOCKED",
+          "titleSimilarity": 0.5,
+          "artistSimilarity": 1,
+          "rankingScore": 67,
+          "matchAuthority": "WEAK_TEXTUAL_POSSIBILITY_NOT_IDENTITY_PROOF"
+        }
+      ],
+      "userDecisionProtected": true,
+      "noAutoMerge": true,
+      "assessment": {
+        "classification": "DISTINCT_SAINT_SUBJECT",
+        "reason": "Saint Bartholomew and Saint Philip are different saints and the represented martyrdom is different",
+        "canonicalLinkPromoted": false,
+        "choiceModified": false
+      }
+    },
+    {
+      "sourceId": "walters:37037",
+      "batch": "B6",
+      "title": "Saint Paul the Hermit",
+      "artistAsPresented": "Jusepe de Ribera",
+      "originalDecision": "IMPORT",
+      "sourceObjectUrl": "https://purl.thewalters.org/art/37.278",
+      "possibleExistingCanonical": [
+        {
+          "canonicalArtworkId": "ART-usepe-de-ibera-aint-aul-postolate",
+          "canonicalTitle": "Saint Paul — Apostolate",
+          "canonicalArtist": "Jusepe de Ribera",
+          "canonicalEditorialState": "APPROVED_LOCKED",
+          "titleSimilarity": 0.5,
+          "artistSimilarity": 1,
+          "rankingScore": 67,
+          "matchAuthority": "WEAK_TEXTUAL_POSSIBILITY_NOT_IDENTITY_PROOF"
+        }
+      ],
+      "userDecisionProtected": true,
+      "noAutoMerge": true,
+      "assessment": {
+        "classification": "DISTINCT_SAINT_SUBJECT",
+        "reason": "Saint Paul the Hermit is not Saint Paul the Apostle; distinct subjects",
+        "canonicalLinkPromoted": false,
+        "choiceModified": false
+      }
+    },
+    {
+      "sourceId": "met:436257",
+      "batch": "B9",
+      "title": "Saint Rosalie Interceding for the Plague-stricken of Palermo",
+      "artistAsPresented": "Anthony van Dyck",
+      "originalDecision": "IMPORT",
+      "sourceObjectUrl": "https://www.metmuseum.org/art/collection/search/436257",
+      "possibleExistingCanonical": [
+        {
+          "canonicalArtworkId": "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo",
+          "canonicalTitle": "Saint Rosalia Interceding for Palermo",
+          "canonicalArtist": "Anthony van Dyck",
+          "canonicalEditorialState": "UNREVIEWED",
+          "titleSimilarity": 0.5,
+          "artistSimilarity": 1,
+          "rankingScore": 67,
+          "matchAuthority": "WEAK_TEXTUAL_POSSIBILITY_NOT_IDENTITY_PROOF"
+        }
+      ],
+      "userDecisionProtected": true,
+      "noAutoMerge": true,
+      "assessment": {
+        "classification": "OPEN_MUSEUM_OBJECT_EVIDENCE",
+        "reason": "St Rosalie/Rosalia interceding for Palermo title may refer to the same painting; need exact canonical object evidence",
+        "canonicalLinkPromoted": false,
+        "choiceModified": false
+      }
+    },
+    {
+      "sourceId": "commons:65493548",
+      "batch": "B11",
+      "title": "The coronation of the Virgin",
+      "artistAsPresented": "Peter Paul Rubens",
+      "originalDecision": "IMPORT",
+      "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:13._Coronation_of_the_Virgin_Peter_Paul_Rubens.jpg",
+      "possibleExistingCanonical": [
+        {
+          "canonicalArtworkId": "ART-eter-aul-ubens-oronation-of-the-irgin-oil-sketch",
+          "canonicalTitle": "Coronation of the Virgin — oil sketch",
+          "canonicalArtist": "Peter Paul Rubens",
+          "canonicalEditorialState": "UNREVIEWED",
+          "titleSimilarity": 0.5,
+          "artistSimilarity": 1,
+          "rankingScore": 67,
+          "matchAuthority": "WEAK_TEXTUAL_POSSIBILITY_NOT_IDENTITY_PROOF"
+        }
+      ],
+      "userDecisionProtected": true,
+      "noAutoMerge": true,
+      "assessment": {
+        "classification": "OPEN_MUSEUM_OBJECT_EVIDENCE",
+        "reason": "Coronation of Virgin versus canonical oil sketch needs physical work/source attribution corroboration",
+        "canonicalLinkPromoted": false,
+        "choiceModified": false
+      }
+    }
+  ]
+}
