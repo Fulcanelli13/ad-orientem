@@ -6577,6 +6577,70 @@
       "directness": "SECONDARY",
       "url": "https://commons.wikimedia.org/wiki/File:Stagnesa.jpg",
       "contribution": "Photographic file explicitly identifies Church of St Agnes at 548 Lafond Avenue, adjacent to the 535 Thomas Avenue parish address; object location 44.959722, -93.123333; not a claimed OSM building polygon."
+    },
+    {
+      "id": "AO-P99-SITE-CANTIUS-US",
+      "title": "Exact church-building identity: St. John Cantius Church, Chicago",
+      "issuer": "Saint John Cantius parish",
+      "directness": "OFFICIAL_CHURCH",
+      "url": "https://www.cantius.org/contact-us",
+      "contribution": "Official physical worship-site name and address. Existing R49 operational venue ID V19:SJC-001, no schedule modifications. OSM named church-building centroid is not R49's street-level geocode; map source displays street number 819 while parish official uses 825, but both identify the same named worship building."
+    },
+    {
+      "id": "AO-P99-GEO-CANTIUS-US",
+      "title": "Named OSM church footprint: St. John Cantius Church, Chicago",
+      "issuer": "OpenStreetMap contributors; map feature cross-checked with independently named church and official address",
+      "directness": "SECONDARY",
+      "url": "https://www.openstreetmap.org/way/210308153",
+      "contribution": "Named Catholic church building osm:way:210308153, independently cited at https://mapcarta.com/22163886. Coordinates are approximate OSM footprint centroid (41.89684,-87.65303) rather than entrance survey."
+    },
+    {
+      "id": "AO-P99-SITE-CANZIANO-IT",
+      "title": "Exact church-building identity: Chiesa di San Canziano, Padova",
+      "issuer": "Comune di Padova",
+      "directness": "OFFICIAL_CHURCH",
+      "url": "https://padovaper.comune.padova.it/servizi/cultura-e-turismo/chiesa-di-san-canziano",
+      "contribution": "Official physical worship-site name and address. Existing R49 operational venue ID ao-fssp-chiesa-di-san-canziano-via-s-canziano-9-i-35100-padova-italia, no schedule modifications. Municipal source confirms Via San Canziano; FSSP R49 names the same building at number 9. OSM named church building footprint corroborates physical structure."
+    },
+    {
+      "id": "AO-P99-GEO-CANZIANO-IT",
+      "title": "Named OSM church footprint: Chiesa di San Canziano, Padova",
+      "issuer": "OpenStreetMap contributors; map feature cross-checked with independently named church and official address",
+      "directness": "SECONDARY",
+      "url": "https://www.openstreetmap.org/way/131987476",
+      "contribution": "Named Catholic church building osm:way:131987476, independently cited at https://mapcarta.com/W131987476. Coordinates are approximate OSM footprint centroid (45.40638,11.87628) rather than entrance survey."
+    },
+    {
+      "id": "AO-P99-SITE-STLOUIS-FR",
+      "title": "Exact church-building identity: Église Saint-Louis-de-Gonzague de Pau",
+      "issuer": "Fraternité Sacerdotale Saint-Pierre à Pau",
+      "directness": "OFFICIAL_CHURCH",
+      "url": "https://fssppau.com/StLouis",
+      "contribution": "Official physical worship-site name and address. Existing R49 operational venue ID ao-fssp-chapelle-saint-louis-de-gonzague-place-saint-louis-de-gonzague-f-64000-pau-france, no schedule modifications. FSSP identifies chapelle/église Saint-Louis-de-Gonzague at Place Saint-Louis; not the similarly dedicated private funerary chapel in Corsica. OSM building way distinct from square geometry."
+    },
+    {
+      "id": "AO-P99-GEO-STLOUIS-FR",
+      "title": "Named OSM church footprint: Église Saint-Louis-de-Gonzague de Pau",
+      "issuer": "OpenStreetMap contributors; map feature cross-checked with independently named church and official address",
+      "directness": "SECONDARY",
+      "url": "https://www.openstreetmap.org/way/62885578",
+      "contribution": "Named Catholic church building osm:way:62885578, independently cited at https://mapcarta.com/fr/W62885578. Coordinates are approximate OSM footprint centroid (43.29596,-0.36541) rather than entrance survey."
+    },
+    {
+      "id": "AO-P99-SITE-STBRUNO-FR",
+      "title": "Exact church-building identity: Église Saint-Bruno de Bordeaux",
+      "issuer": "Fraternité Sacerdotale Saint-Pierre, Bordeaux",
+      "directness": "OFFICIAL_CHURCH",
+      "url": "https://fssp-bordeaux.fr/emplacement/eglise-saint-bruno/",
+      "contribution": "Official physical worship-site name and address. Existing R49 operational venue ID ao-fssp-eglise-saint-bruno-place-du-11-novembre-f-33000-bordeaux-france, no schedule modifications. Official FSSP and diocesan records agree on Place du 11 Novembre; OSM way names the Catholic Saint-Bruno church building. Do not substitute nearby historic Carthusian complex."
+    },
+    {
+      "id": "AO-P99-GEO-STBRUNO-FR",
+      "title": "Named OSM church footprint: Église Saint-Bruno de Bordeaux",
+      "issuer": "OpenStreetMap contributors; map feature cross-checked with independently named church and official address",
+      "directness": "SECONDARY",
+      "url": "https://www.openstreetmap.org/way/115526560",
+      "contribution": "Named Catholic church building osm:way:115526560, independently cited at https://mapcarta.com/37962780. Coordinates are approximate OSM footprint centroid (44.83773,-0.58963) rather than entrance survey."
     }
   ]
 }
