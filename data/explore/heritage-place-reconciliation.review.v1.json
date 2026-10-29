@@ -11,8 +11,8 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 516,
-    "places_with_linked_records": 259,
+    "places": 518,
+    "places_with_linked_records": 261,
     "places_without_direct_claim": 257,
     "multicategory_heritage_places": 212,
     "shrines": 257,
@@ -23,7 +23,7 @@
     "custom_attestations": 71,
     "novena_context_links": 18,
     "route_records": 20,
-    "directory_place_links": 9
+    "directory_place_links": 11
   },
   "exception_queues": {
     "dangling_place_references": [],
@@ -5869,6 +5869,26 @@
       "display_name": "Catedral Basílica de Nuestra Señora del Valle — Catamarca",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:st-boniface-sioux-city",
+      "display_name": "St. Boniface Catholic Church, Sioux City",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:US:st-boniface-sioux-city"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:st-agnes-saint-paul",
+      "display_name": "Church of Saint Agnes, Saint Paul",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:US:st-agnes-saint-paul"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }
   ],
   "distinct_place_links": {
@@ -5879,7 +5899,7 @@
     "customs": 55,
     "novena_context": 10,
     "routes": 18,
-    "directory_links": 9
+    "directory_links": 11
   },
   "map_policy_note": "The distinct-place counts include address-only or coordinate-pending Places. They are not counts of publishable map pins.",
   "georeference_tranche_20261010": {
@@ -6130,5 +6150,18 @@
       "candidate:SG-INV-0735"
     ],
     "rule": "Two separately attested Catholic physical churches matched to named OSM building ways; original conflated Bergamo title remains distinct and Itasy formal shrine title is not inferred. No TLM, image rights, door, relic or Mass-schedule inference."
+  },
+  "georeference_tranche_20261029_p92": {
+    "schema": "AO_P92_TWO_CANONICAL_DIRECTORY_EXACT_CHURCHES_V1",
+    "release_manifest": "data/geography/research/sacred-places-p92-two-directory-photo-venue-links.v1.json",
+    "added_place_ids": [
+      "place:US:st-boniface-sioux-city",
+      "place:US:st-agnes-saint-paul"
+    ],
+    "added_link_ids": [
+      "link:directory-place:US:st-boniface-sioux-city",
+      "link:directory-place:US:st-agnes-saint-paul"
+    ],
+    "photos_published": 0
   }
 }
