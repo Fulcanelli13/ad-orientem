@@ -97,7 +97,7 @@ assert.equal(withRequiemXIII3MissalNotes([{id:"other",sourceCueIds:["AO.SM.C0100
 assert.equal(built.cards[1].id,"ABS-R02");
 assert.ok(built.cards[1].paragraphs[0].latin.startsWith("Non intres"));
 assert.equal(built.cards[2].id,"ABS-R03");
-assert.ok(built.cards[2].paragraphs.some(x=>x.latin.includes("Líbera me")));
+assert.ok(built.cards[2].paragraphs.some(x=>x.kind!=="RUBRIC" && x.latin?.includes("Líbera me")));
 assert.equal(built.cards[3].faithfulGesture,null);
 assert.ok(built.cards[3].paragraphs.some(x=>x.latin==="Pater noster."));
 assert.equal(built.cards[4].id,"ABS-R05");
@@ -112,7 +112,7 @@ assert.ok(!built.cards.flatMap(c=>c.paragraphs).some(p=>p.id==="ABS-R02-R"),
  "Body-absent catafalque must not inherit the body-present Non intres direction");
 assert.ok(!built.cards.some(x=>x.id==="ABS-R02"),"Non intres appeared without body present");
 assert.ok(!built.cards.some(x=>x.id==="ABS-R05"),"In paradisum appeared without a body-present burial procession");
-assert.ok(built.cards.find(x=>x.id==="ABS-R04").paragraphs.some(x=>x.latin.startsWith("Absolve")));
+assert.ok(built.cards.find(x=>x.id==="ABS-R04").paragraphs.some(x=>x.kind!=="RUBRIC" && x.latin?.startsWith("Absolve")));
 
 const ctrl=createRequiemAbsolutionReaderController({graph,payload,bodyPresent:true,burialProcession:true});
 assert.equal(ctrl.project().card.id,"ABS-R01");
