@@ -596,4 +596,84 @@ if(master.phase1KmskaVerification.officialInventoryAndTitleMatches !== 89 ||
  fail("KMSKA official 89 verification master summary mismatch");
 console.log("PASS KMSKA 89 official exact inventory/title matches, 4 special physical evidence cases, zero releases.");
 
+
+const rijksOfficial = load("sacred-art-phase1-rijks-66-official-linked-art-report-20261029.v1.json");
+const rijksExceptions = load("sacred-art-phase1-rijks-66-curatorial-exceptions-20261029.v1.json");
+const rijksSourceRecords = museum479.rows.filter(r => r.museum === "rijks");
+const rijksById = new Map(rijksSourceRecords.map(r => [r.sourceId, r]));
+const rijksCount = rijksOfficial.counts;
+if (rijksSourceRecords.length !== 66 || rijksOfficial.rows.length !== 66 ||
+    rijksCount.frozenSourceCards !== 66 || rijksCount.officialIdAndInventoryConfirmed !== 66 ||
+    rijksCount.fetchedButNotConfirmed !== 0 || rijksCount.fetchFailed !== 0 ||
+    rijksCount.normalizedTitleMatches !== 66 || rijksCount.museumPaintingClassified !== 66 ||
+    rijksCount.creatorMetadataReviewRequired !== 28 ||
+    rijksCount.originallyConditionalDecisions !== 4 ||
+    rijksCount.canonical383NewLinks !== 0 ||
+    rijksCount.distinctNewPaintingsCertified !== 0 ||
+    rijksCount.photosCertified !== 0 || rijksCount.productionImports !== 0)
+  fail("Rijksmuseum official 66 source counts mismatch");
+const rijksIds = new Set();
+let rijksExceptionCount = 0, rijksTypeExceptions = 0;
+for (const row of rijksOfficial.rows) {
+  const frozen = rijksById.get(row.sourceId);
+  if (!frozen || rijksIds.has(row.sourceId) ||
+      row.originalAccession !== frozen.sourceAccession ||
+      row.originalTitle !== frozen.title ||
+      row.originalArtist !== frozen.artistAsReviewed ||
+      row.userDecision !== frozen.userDecision ||
+      row.originalSourceUrl !== frozen.sourceObjectUrl ||
+      row.batch !== frozen.batch ||
+      row.official.canonicalId !== "https://id.rijksmuseum.nl/" + frozen.sourceObjectId ||
+      row.status !== "OFFICIAL_ID_AND_INVENTORY_CONFIRMED" ||
+      row.evidence.canonicalPersistentIdMatches !== true ||
+      row.evidence.officialInventoryMatchesFrozenAccession !== true ||
+      !row.official.inventoryNumbers.includes(frozen.sourceAccession) ||
+      row.evidence.exactNormalizedTitleMatches !== true ||
+      row.evidence.metadataClassifiedAsPainting !== true ||
+      row.httpStatus !== 200 ||
+      !/^[a-f0-9]{64}$/.test(row.serverResponseSha256) ||
+      row.exactPhotoVerified !== false ||
+      row.licensedOriginalBytesVerified !== false ||
+      row.physicalPaintingUniquenessVerified !== false ||
+      row.matchedToCanonical383 !== false ||
+      row.originalEditorialDecisionPreserved !== true ||
+      row.productionMutation !== false)
+    fail("Rijksmuseum official identity or editor choice mismatch " + row.sourceId);
+  rijksIds.add(row.sourceId);
+  if (row.evidence.creatorRequiresReview) rijksExceptionCount++;
+  if (row.official.typeLabels.some(v => !["painting", "schilderij"].includes(v.toLowerCase()))) rijksTypeExceptions++;
+}
+if (rijksIds.size !== 66 || rijksExceptionCount !== 28 || rijksTypeExceptions !== 4 ||
+    rijksOfficial.gate.userChoicesChanged !== false ||
+    rijksOfficial.gate.canonicalArtworkMaster383Changed !== false ||
+    rijksOfficial.gate.photographicRightsCleared !== false ||
+    rijksOfficial.gate.nativeVisualReviewCompleted !== false ||
+    rijksOfficial.gate.productionMutation !== false)
+  fail("Rijksmuseum verified source gates changed");
+if (rijksExceptions.artistReviewQueue.length !== 28 ||
+    rijksExceptions.physicalObjectReviewQueue.length !== 4 ||
+    rijksExceptions.counts.authorMetadataReview !== 28 ||
+    rijksExceptions.counts.compositeOrPanelWorkTypeReview !== 4 ||
+    rijksExceptions.release.frozenChoicesUnchanged !== true ||
+    rijksExceptions.release.canonicalArtwork383Unchanged !== true ||
+    rijksExceptions.release.productionMutation !== false)
+  fail("Rijksmuseum attribution/physical-work exception queue counts changed");
+for (const z of rijksExceptions.artistReviewQueue) {
+  const oldRow = rijksById.get(z.sourceId);
+  if (!oldRow || oldRow.sourceAccession !== z.accession ||
+      oldRow.userDecision !== z.originalUserChoice || z.originalReviewProtected !== true ||
+      z.physicalArtworkCertified !== false)
+    fail("Rijksmuseum artist exception changed user's selection " + z.sourceId);
+}
+if (master.phase1RijksmuseumOfficialVerification.sourceCards !== 66 ||
+    master.phase1RijksmuseumOfficialVerification.exactMuseumIdAndAccessionVerified !== 66 ||
+    master.phase1RijksmuseumOfficialVerification.creatorMetadataReviewQueue !== 28 ||
+    master.phase1RijksmuseumOfficialVerification.physicalObjectTypeExceptions !== 4 ||
+    master.phase1RijksmuseumOfficialVerification.museumBackedOfficialVerifiedToDate !== 383 ||
+    master.phase1RijksmuseumOfficialVerification.museumBackedOfficialStillUnverified !== 96 ||
+    master.phase1RijksmuseumOfficialVerification.canonical383NewIdentityLinks !== 0 ||
+    master.phase1RijksmuseumOfficialVerification.productionMutation !== false)
+  fail("Rijksmuseum official source summary diverged from frozen evidence");
+console.log("PASS Rijksmuseum 66 exact official identity/collection number matches; 28 artist leads and four physical-work exceptions; no releases.");
+
 console.log("PASS Sacred Art Phase 1: " + records.length + " reviewed; " + expected.acceptedOrConditional + " accepted/conditional; " + counts.REJECT + " rejected; no production mutations.");
