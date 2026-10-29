@@ -658,4 +658,33 @@ export const HERITAGE_STYLE = String.raw`
 .aoExplorePlaceSheet .aoExplorePlaceCustoms p span{color:var(--ao-text-muted,#aab4be);font:400 12px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
 @media(max-width:640px){.aoExplorePlaceSheet .aoExploreTreasureGrid{grid-template-columns:1fr}.aoExplorePlaceSheet .aoExplorePlaceMedia img{max-height:min(50vh,420px)}.aoExplorePlaceSheet .aoExploreEditorialOpening{padding:20px 17px}.aoExplorePlaceSheet .aoExploreTreasureCard{padding:18px 16px}}
 
+
+/* P67 source-described indoor placement; no simulated room map. */
+.aoExplorePlaceSheet .aoExploreIndoorPosition{
+ display:grid;gap:5px;padding:13px 14px 12px;border-radius:10px;
+ background:rgba(168,191,201,.06);border:1px solid rgba(168,191,201,.18);
+}
+.aoExplorePlaceSheet .aoExploreIndoorPosition>small{
+ font:700 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+ letter-spacing:.12em;color:var(--ao-liturgical-accent,#c9ad78)
+}
+.aoExplorePlaceSheet .aoExploreIndoorPosition>strong{
+ color:var(--ao-text-primary,#eee9df);
+ font:500 17px/1.35 var(--ao-font-display,Georgia,serif);
+}
+.aoExplorePlaceSheet .aoExploreIndoorPosition>span{
+ color:var(--ao-text-muted,#aab4be);
+ font:400 11px/1.45 var(--ao-font-ui,system-ui,sans-serif)
+}
+.aoExplorePlaceSheet .aoExploreIndoorPosition>a,
+.aoExplorePlaceSheet .aoExploreIndoorClosure>a{
+ color:var(--ao-liturgical-accent,#c9ad78);font:500 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoExplorePlaceSheet .aoExploreIndoorClosure{
+ margin:9px 0 0!important;padding:10px 12px;
+ border-left:2px solid var(--ao-liturgical-accent,#c9ad78);
+ background:rgba(182,140,78,.10);font:400 12px/1.6 var(--ao-font-ui,system-ui,sans-serif)!important;
+ color:var(--ao-text-primary,#eee9df)!important
+}
+
 `;
