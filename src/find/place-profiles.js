@@ -48,6 +48,15 @@ export function resolveApprovedPlaceMedia(records,placeId){
 /** Independently approved gallery assets only; never render hotlinks, candidate art or
  * a photograph assigned to a different physical Place. */
 export function resolveApprovedPlaceGallery(records,placeId){
+  // Gallery reuse is restricted to individually credited, free-reuse media.
+  // Match the exact licence identifier to its own canonical URL; the older
+  // CC0 / CC-BY-SA-2.0 image grants must not be relabelled CC-BY-SA-4.0.
+  const allowedGalleryLicenses=Object.freeze({
+    "CC0-1.0": /^https:\/\/creativecommons\.org\/publicdomain\/zero\/1\.0\/$/,
+    "CC-BY-3.0": /^https:\/\/creativecommons\.org\/licenses\/by\/3\.0\/$/,
+    "CC-BY-SA-2.0": /^https:\/\/creativecommons\.org\/licenses\/by-sa\/2\.0\/$/,
+    "CC-BY-SA-4.0": /^https:\/\/creativecommons\.org\/licenses\/by-sa\/4\.0\/$/,
+  });
   const seen=new Set(),out=[];
   for(const record of arr(records)){
     if(record?.place_id!==placeId||record?.status!=="APPROVED"||record?.kind!=="PHOTO")continue;
@@ -56,8 +65,7 @@ export function resolveApprovedPlaceGallery(records,placeId){
     const width=Number(record.width),height=Number(record.height);
     if(!id||seen.has(id)||!/^assets\/approved\/place-gallery\/[a-zA-Z0-9_-]+\.webp$/.test(path)||
        !record.rights_verified||!record.subject_verified||!record.crop_reviewed||
-       record.license!=="CC-BY-SA-4.0"||
-       !/^https:\/\/creativecommons\.org\/licenses\/by-sa\/4\.0\//.test(text(record.license_url))||
+       !allowedGalleryLicenses[record.license]?.test(text(record.license_url))||
        !/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(text(record.source_url))||
        !/^[a-f0-9]{40}$/.test(text(record.source_sha1))||
        !/^[a-f0-9]{64}$/.test(text(record.derivative_sha256))||
