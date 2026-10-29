@@ -49,6 +49,8 @@ test("unverified eligibility, calendar drift, special Office and invalid dates f
     [{current:{hasSecondVespers:false}},"SECOND_AND_FIRST_VESPERS_ELIGIBILITY_UNPROVEN"],
     [{following:{officeKind:"OFFICE_OF_DEAD"}},"BR_173_SPECIAL_OFFICE_OF_DEAD_REQUIRES_OWN_PROPER"],
     [{current:{officeKind:"OFFICE_OF_DEAD"}},"BR_173_SPECIAL_OFFICE_OF_DEAD_REQUIRES_OWN_PROPER"],
+    [{current:{officeKind:null}},"OFFICE_TYPE_NOT_INDEPENDENTLY_CLASSIFIED"],
+    [{following:{officeKind:"UNKNOWN"}},"OFFICE_TYPE_NOT_INDEPENDENTLY_CLASSIFIED"],
     [{calendarFollowingRank:1},"INDEPENDENT_OFFICE_CLASS_AND_CALENDAR_RANK_REQUIRED"],
   ];
   for(const [override,reason] of scenarios){
