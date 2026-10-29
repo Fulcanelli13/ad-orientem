@@ -2224,7 +2224,10 @@ export async function mountNativeReaderPreview({
     }[kind];
     if(!config)throw new Error("Unknown following-action reader "+kind);
     const rows=kind==="GENERIC_PROCESSION" ? [] : (card.paragraphs??[]).map(row=>Object.freeze({
-      id:row.id,kind:row.kind,primary:row.latin,
+      id:row.id,kind:row.kind,
+      primary:row.kind==="RUBRIC"
+        ? (String(ready.prepared?.readerPreferences?.language??"en").toLowerCase().startsWith("fr")
+            ? row.french : row.english) : row.latin,
       sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
     }));
     let posture=null;
