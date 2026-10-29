@@ -12,6 +12,7 @@ const sourcePath="data/customs/customs-r18-all18-release-ownership-reconciliatio
 const stage=json("data/customs/customs-r18-eleven-calendar-parent-subtype-structure.v1.json");
 const editorial=json("data/customs/customs-r18-eleven-bilingual-editorial-copy-review.v1.json");
 const quality=json("data/customs/customs-r18-eleven-bilingual-qa-amendments.v1.json");
+const lanes=json("data/customs/customs-r18-eleven-editorial-publication-lanes.v1.json");
 const sourceChecked=json("data/customs/customs-r18-eleven-source-checked-full-bilingual-article-pack.v1.json");
 const source=json(sourcePath);
 const seed=json("data/customs/customs-atlas-seed.v1.json");
@@ -72,6 +73,14 @@ for(const row of editorial.records){
    "Reader should not repeat identical French history/description");
 }
 
+assert.equal(lanes.schema,"AO_R18_ELEVEN_ACTION_LANE_EDITORIAL_ADJUDICATION_V1");
+assert.deepEqual(lanes.summary,{reviewed:11,regional_standalone_recommendations:7,
+ local_context_only_recommendations:4,final_approvals:0,canonical_ids_allocated:0,
+ calendar_events_published:0,indulgences_published:0});
+assert.ok(Object.values(lanes.rules).every(x=>x===true));
+assert.equal(lanes.records.length,11);
+const laneByKey=new Map(lanes.records.map(x=>[x.review_key,x]));
+assert.equal(laneByKey.size,11);
 assert.equal(quality.schema,"AO_R18_ELEVEN_BILINGUAL_QA_AMENDMENTS_V1");
 assert.deepEqual(quality.counts,{records:11,corrected_field_pairs:27,signed_off:0,published:0});
 assert.ok(Object.values(quality.approval).every(x=>x===false));
@@ -141,6 +150,23 @@ for(const candidate of stage.staged){
  const proposed=copyByKey.get(key);
  const verified=verifiedByKey.get(key);
  assert.ok(verified,"Missing source-checked final copy: "+key);
+ const lane=laneByKey.get(key);
+ assert.ok(lane,"Missing editorial lane for "+key);
+ const regional=!new Set(["CUSTOMS-R18-03","CUSTOMS-R18-13","CUSTOMS-R18-15","CUSTOMS-R18-16"]).has(key);
+ assert.equal(lane.reviewer_recommendation,regional?
+ "STANDALONE_REGIONAL_HISTORICAL_ARTICLE_AFTER_SIGNOFF":
+ "LOCAL_FEAST_CONTEXT_ONLY_NOT_GLOBAL_CUSTOM_ID");
+ assert.deepEqual(lane.title,verified.article.title);
+ assert.equal(lane.working_master_id,actual.working_master_id);
+ assert.ok(Object.values(lane.editorial_gates).every(x=>x===false));
+ assert.equal(lane.canonical_id,null);
+ assert.equal(lane.canonical_parent_id,null);
+ assert.deepEqual(lane.child_subtype_ids,[]);
+ assert.equal(lane.published,false);
+ assert.equal(lane.recurring_event,false);
+ assert.equal(lane.full_copy_human_approved,false);
+ assert.equal(lane.decision_stage,"ANALYST_RECOMMENDATION_NOT_HUMAN_EDITORIAL_SIGNOFF");
+
  assert.equal(verified.working_master_id,actual.working_master_id);
  assert.equal(verified.complete_bilingual_fields,8);
  assert.equal(verified.source_check.result,"NARROW_ACTION_CLAIM_CORROBORATED");
