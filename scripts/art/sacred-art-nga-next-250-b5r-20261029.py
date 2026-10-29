@@ -38,6 +38,7 @@ def table(name):
 def pick(row,*names):
  for n in names:
   if n in row:return row.get(n)
+  if n.lower() in row:return row.get(n.lower())
  return ''
 def is_paint(row):
  classification=norm(pick(row,'classification','visualBrowserClassification'))
@@ -113,7 +114,7 @@ def main():
    key=pick(x,'depictstmsobjectid')
    if not key or not key.isdigit() or key in images:continue
    url=preview_url(x)
-   if url:images[key]={'url':url,'uuid':x['uuid'],'base':x['iiifURL']}
+   if url:images[key]={'url':url,'uuid':x['uuid'],'base':pick(x,'iiifURL')}
  finally:f.close()
  f,rows=table('objects.csv');obj_headers=rows.fieldnames
  objects=0;matches=[]
