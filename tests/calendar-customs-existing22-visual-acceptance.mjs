@@ -1,5 +1,5 @@
 // Browser-only acceptance: source-bounded Customs variants live inside published Calendar articles
-// in explicit editorial preview, never as new day events or canonical Customs.
+// as historical parent context only, never as new day events or canonical Customs.
 import assert from "node:assert/strict";
 import http from "node:http";
 import {mkdir,readFile} from "node:fs/promises";
@@ -28,15 +28,15 @@ const base="http://127.0.0.1:"+server.address().port;
 let browser;
 try{
  browser=await chromium.launch({headless:true});
- const cases=[320,390].flatMap(width=>["en","fr"].flatMap(lang=>[false,true].map(review=>({width,lang,review}))));
- for(const {width,lang,review} of cases){
+ const cases=[320,390].flatMap(width=>["en","fr"].flatMap(lang=>[false,true].map(live=>({width,lang,live}))));
+ for(const {width,lang,live} of cases){
    const page=await browser.newPage({viewport:{width,height:width===320?740:844},
     isMobile:true,hasTouch:true,deviceScaleFactor:1,reducedMotion:"reduce",
     locale:lang==="fr"?"fr-FR":"en-GB"});
    const errors=[];
    page.on("pageerror",e=>errors.push(String(e?.message||e)));
    try{
-    await page.goto(base+"/index.html?aoR17Reader=native"+(review?"&customsVariantsReview=1":""),
+    await page.goto(base+"/index.html?aoR17Reader=native"+(live?"":"&customsHistorical=off"),
       {waitUntil:"domcontentloaded",timeout:90000});
     await page.waitForFunction(()=>window.AO_APP_SHELL_V1?.status?.().visibleOwner===true,
       null,{timeout:45000});
@@ -68,8 +68,10 @@ try{
     assert.equal(await parent.count(),1,"The existing Advent wreath article must remain one canonical card");
     const variant=cal.locator('[data-cal-custom-variant="AO-CUST-VAR-003"]');
     const count=await variant.count();
-    assert.equal(count,review?1:0,"Variant should be visible only with explicit editorial preview flag");
-    if(review){
+    assert.equal(count,live?1:0,"Historical details must be released by default, absent in QA baseline");
+    assert.equal(await cal.locator(".aoCalCustomCatalogue [data-cal-custom-variant]").count(),live?22:0,
+      "All 22 details should be nested under the 35 canonical articles, without duplicate cards");
+    if(live){
       assert.equal(await cal.locator('[data-cal-customs-variants-preview="ADVT-001"]').count(),1);
       assert.match(await variant.textContent(),lang==="fr"?/Jean ou Jeanne/:/John or Joan/);
       await page.evaluate(()=>document.querySelector('[data-cal-custom-variant="AO-CUST-VAR-003"]')?.setAttribute("open",""));
@@ -77,6 +79,13 @@ try{
       const source=variant.locator('a[href^="https://www.fisheaters.com/srpdf/"]');
       assert.equal(await source.count(),1,"A source link must accompany historical variant");
       assert.ok((await source.getAttribute("href")).endsWith(".pdf"));
+    }
+    if(live){
+      const patronal=await cal.locator('[data-cal-custom-id="PATR-001"]').textContent();
+      assert.ok(!patronal.includes("Attach this as regional history"),
+        "Internal editorial instructions must never be rendered as public copy");
+      assert.ok(!patronal.includes("Rattacher cette variante historique"),
+        "Internal French editorial instructions must not appear in Calendar");
     }
     const dimensions=await page.evaluate(()=>{
      const el=document.querySelector("#ao-calendar-modular-root");
@@ -94,9 +103,9 @@ try{
       const node=document.querySelector('[data-cal-custom-id="ADVT-001"]');
       node?.scrollIntoView({block:"start",behavior:"instant"});
     });
-    await page.screenshot({path:resolve(output,`calendar-customs-${review?"review":"default"}-${lang}-${width}.png`),
+    await page.screenshot({path:resolve(output,`calendar-customs-${live?"historical":"baseline"}-${lang}-${width}.png`),
       fullPage:false,animations:"disabled"});
-    console.log("PASS browser Calendar Customs: "+lang+" "+width+"px, "+(review?"review":"ordinary")+
+    console.log("PASS browser Calendar Customs: "+lang+" "+width+"px, "+(live?"historical":"baseline")+
       ", published=35, variant="+count+", no Calendar overflow");
    }finally{await page.close();}
   }
