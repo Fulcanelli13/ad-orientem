@@ -58,8 +58,12 @@ assert.equal(internalPrayerView("pray.st_joseph_seven_sorrows"),"josephSeven");
 assert.equal(supportedDirectPrayerRoute("pray.st_joseph_seven_sorrows"),true);
 const ui=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
 const style=readFileSync(new URL("../src/pray/st-joseph-seven-sorrows-styles-b24.js",import.meta.url),"utf8");
-for(const token of ["function renderJosephSeven(){","josephSevenStepAt(JOSEPH_SEVEN.step,DATA.prayers)","data-ao-st-joseph-seven-reader","data-ao-joseph-canonical","data-p435930-joseph-step","data-p435930-joseph-latin","data-p435930-joseph-finish","data-p435930-own=\\\"pray.st_joseph_seven_sorrows\\\"","else if(view==='josephSeven')html=renderJosephSeven()","'pray.st_joseph_seven_sorrows':{id:'pray.st_joseph_seven_sorrows'"])
+for(const token of ["function renderJosephSeven(){","josephSevenStepAt(JOSEPH_SEVEN.step,DATA.prayers)","data-ao-st-joseph-seven-reader","data-ao-joseph-canonical","data-p435930-joseph-step","data-p435930-joseph-latin","data-p435930-joseph-finish","else if(view==='josephSeven')html=renderJosephSeven()","'pray.st_joseph_seven_sorrows':{id:'pray.st_joseph_seven_sorrows'"])
  assert.ok(ui.includes(token.replaceAll("\\\"","\"")), "Reader contract missing "+token);
+assert.ok(ui.includes("['own','pray.st_joseph_seven_sorrows'"),
+ "Source-owned contextual Prayer card route must be declared exactly: pray.st_joseph_seven_sorrows");
+assert.ok(ui.includes("related.map(item=>prayFamilyItem(item,true))"),
+ "Contextual Prayer route must use shared illustrated module card without a duplicate owner");
 assert.ok(style.includes("min-height:48px"));
 assert.ok(style.includes("prefers-reduced-motion"));
 assert.ok(style.includes("grid-template-columns:repeat(4,minmax(0,1fr))"));
