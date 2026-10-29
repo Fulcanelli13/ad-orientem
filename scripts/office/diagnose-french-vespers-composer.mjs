@@ -33,15 +33,37 @@ const extraResult=[
 const extraSource=[
 "  if ($hora eq 'Vespera' && $wday =~ /Pent23|111\\-0/) {",
 "    open my $ao, '>>', $ENV{'AO_VESPERS_TRACE_FILE'} or die $!;",
+"    my $ao_rank=$w{Rank}//''; $ao_rank =~ s/[\\r\\n]+/ /g;",
 "    print {$ao} 'AO_COMM_SOURCE|lang=' . $lang . '|day=' . $wday . '|index=' . $ind .",
-"      '|rank=' . substr(($w{Rank}//''),0,70) .",
+"      '|rank=' . substr($ao_rank,0,70) .",
 "      '|hasOratio=' . (length($w{Oratio}//'')>0?1:0) .",
 "      '|hasAnt3=' . (length($w{'Ant 3'}//'')>0?1:0) . \"\\n\";",
 "    close $ao;",
 "  }"
 ].join("\n");
-const instrumented=source.replace(selection,selection+"\n"+extraResult)
+let instrumented=source.replace(selection,selection+"\n"+extraResult)
   .replace(anchor,anchor+"\n"+extraSource);
+const start=instrumented.indexOf("sub getcommemoratio {");
+const stop=instrumented.indexOf("#*** vigilia_commemoratio",start);
+if(start<0||stop<0)throw Error("OFFICE_DIAGNOSTIC_FUNCTION_BOUNDARY_MISSING");
+let body=instrumented.slice(start,stop);
+const traceReturn=stage=>[
+  "  if ($wday =~ /Pent23|111\\-0/) {",
+  "    open my $ao, '>>', $ENV{'AO_VESPERS_TRACE_FILE'} or die $!;",
+  "    print {$ao} 'AO_COMM_EXIT|lang=' . $lang . '|stage="+stage+"|day=' . $wday . '|index=' . $ind . \"\\n\";",
+  "    close $ao;",
+  "  }"
+].join("\n");
+const exits=[
+  ["  if (!$o) { return ''; }","  if (!$o) {\n"+traceReturn("MISSING_COLLECT")+"\n    return '';\n  }"],
+  ["  if (!$a) { return ''; }","  if (!$a) {\n"+traceReturn("MISSING_ANTIPHON")+"\n    return '';\n  }"],
+  ["  return $w;","  "+traceReturn("SUCCESS").replaceAll("\n","\n  ")+"\n  return $w;"]
+];
+for(const [from,to] of exits){
+  if(body.split(from).length!==2)throw Error("OFFICE_DIAGNOSTIC_EXIT_ANCHOR_CHANGED:"+from);
+  body=body.replace(from,to);
+}
+instrumented=instrumented.slice(0,start)+body+instrumented.slice(stop);
 const env={...process.env,TZ:"UTC"};delete env.REQUEST_METHOD;delete env.QUERY_STRING;
 const runs=[],trace=report+".trace";
 env.AO_VESPERS_TRACE_FILE=trace;
