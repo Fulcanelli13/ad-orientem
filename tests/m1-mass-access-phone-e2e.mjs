@@ -60,6 +60,8 @@ try{
   await page.locator("[data-folio-overview-button]").click();
   await page.waitForSelector("[data-m1-choice='language']",{state:"visible"});
   assert.match(await page.locator("[data-m1-choice='language']").innerText(),/Français/);
+  assert.match(await page.locator("[data-m1-choice='ceremony']").innerText(),/Messe basse/,
+    "The ceremonial label must follow the chosen pre-Mass language");
   await page.locator("[data-m1-choice='before']").click();
   await page.locator("[data-folio-before][value='full']").check();
   await page.locator("[data-folio-overview-button]").click();
