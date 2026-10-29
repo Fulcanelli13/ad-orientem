@@ -1,0 +1,129 @@
+{
+  "schema": "AO_SACRED_PLACES_P99_FOUR_EXACT_DIRECTORY_CHURCHES_V1",
+  "date": "2026-10-29",
+  "status": "DRAFT_PR_PENDING_REGRESSION_AND_REVIEW",
+  "baseline": {
+    "places": 518,
+    "sources": 822,
+    "crosswalk": 518,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 11
+  },
+  "proposed": {
+    "places": 522,
+    "sources": 830,
+    "crosswalk": 522,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 15
+  },
+  "new_geo_areas": [],
+  "country_areas_added": [],
+  "new_places": 4,
+  "confirmed_directory_links_added": 4,
+  "published_new": [
+    {
+      "place_id": "place:US:st-john-cantius-chicago",
+      "candidate_id": "P97-ROW-230",
+      "place_type": "church",
+      "name": "St. John Cantius Church, Chicago",
+      "country": "US",
+      "city": "Chicago",
+      "address": "825 North Carpenter Street, Chicago",
+      "lat": 41.89684,
+      "lng": -87.65303,
+      "geo_source_kind": "OSM",
+      "geo_source_ref": "osm:way:210308153",
+      "geo_source_url": "https://www.openstreetmap.org/way/210308153",
+      "identity_source_url": "https://www.cantius.org/contact-us",
+      "geo_supporting_reference": "https://mapcarta.com/22163886",
+      "source_ids": [
+        "AO-P99-SITE-CANTIUS-US",
+        "AO-P99-GEO-CANTIUS-US"
+      ],
+      "directory_venue_id": "V19:SJC-001",
+      "tlm_assertion": "EXISTING_R49_OPERATIONAL_VENUE_PRESERVED_NO_SCHEDULE_ADDED",
+      "photograph_status": "P93_CHECKSUM_VERIFIED_ORIGINAL_RESEARCH_ONLY_NATIVE_AND_RIGHTS_GATE_PENDING",
+      "photo_publication": "NONE"
+    },
+    {
+      "place_id": "place:IT:san-canziano-padova",
+      "candidate_id": "P97-ROW-366",
+      "place_type": "church",
+      "name": "Chiesa di San Canziano, Padova",
+      "country": "IT",
+      "city": "Padova",
+      "address": "Via San Canziano 9, Padova",
+      "lat": 45.40638,
+      "lng": 11.87628,
+      "geo_source_kind": "OSM",
+      "geo_source_ref": "osm:way:131987476",
+      "geo_source_url": "https://www.openstreetmap.org/way/131987476",
+      "identity_source_url": "https://padovaper.comune.padova.it/servizi/cultura-e-turismo/chiesa-di-san-canziano",
+      "geo_supporting_reference": "https://mapcarta.com/W131987476",
+      "source_ids": [
+        "AO-P99-SITE-CANZIANO-IT",
+        "AO-P99-GEO-CANZIANO-IT"
+      ],
+      "directory_venue_id": "ao-fssp-chiesa-di-san-canziano-via-s-canziano-9-i-35100-padova-italia",
+      "tlm_assertion": "EXISTING_R49_OPERATIONAL_VENUE_PRESERVED_NO_SCHEDULE_ADDED",
+      "photograph_status": "P93_CHECKSUM_VERIFIED_ORIGINAL_RESEARCH_ONLY_NATIVE_AND_RIGHTS_GATE_PENDING",
+      "photo_publication": "NONE"
+    },
+    {
+      "place_id": "place:FR:saint-louis-de-gonzague-pau",
+      "candidate_id": "P97-ROW-322",
+      "place_type": "church",
+      "name": "Église Saint-Louis-de-Gonzague de Pau",
+      "country": "FR",
+      "city": "Pau",
+      "address": "Place Saint-Louis de Gonzague, Pau",
+      "lat": 43.29596,
+      "lng": -0.36541,
+      "geo_source_kind": "OSM",
+      "geo_source_ref": "osm:way:62885578",
+      "geo_source_url": "https://www.openstreetmap.org/way/62885578",
+      "identity_source_url": "https://fssppau.com/StLouis",
+      "geo_supporting_reference": "https://mapcarta.com/fr/W62885578",
+      "source_ids": [
+        "AO-P99-SITE-STLOUIS-FR",
+        "AO-P99-GEO-STLOUIS-FR"
+      ],
+      "directory_venue_id": "ao-fssp-chapelle-saint-louis-de-gonzague-place-saint-louis-de-gonzague-f-64000-pau-france",
+      "tlm_assertion": "EXISTING_R49_OPERATIONAL_VENUE_PRESERVED_NO_SCHEDULE_ADDED",
+      "photograph_status": "P93_CHECKSUM_VERIFIED_ORIGINAL_RESEARCH_ONLY_NATIVE_AND_RIGHTS_GATE_PENDING",
+      "photo_publication": "NONE"
+    },
+    {
+      "place_id": "place:FR:saint-bruno-bordeaux",
+      "candidate_id": "P97-ROW-330",
+      "place_type": "church",
+      "name": "Église Saint-Bruno de Bordeaux",
+      "country": "FR",
+      "city": "Bordeaux",
+      "address": "Place du 11 Novembre, Bordeaux",
+      "lat": 44.83773,
+      "lng": -0.58963,
+      "geo_source_kind": "OSM",
+      "geo_source_ref": "osm:way:115526560",
+      "geo_source_url": "https://www.openstreetmap.org/way/115526560",
+      "identity_source_url": "https://fssp-bordeaux.fr/emplacement/eglise-saint-bruno/",
+      "geo_supporting_reference": "https://mapcarta.com/37962780",
+      "source_ids": [
+        "AO-P99-SITE-STBRUNO-FR",
+        "AO-P99-GEO-STBRUNO-FR"
+      ],
+      "directory_venue_id": "ao-fssp-eglise-saint-bruno-place-du-11-novembre-f-33000-bordeaux-france",
+      "tlm_assertion": "EXISTING_R49_OPERATIONAL_VENUE_PRESERVED_NO_SCHEDULE_ADDED",
+      "photograph_status": "P93_CHECKSUM_VERIFIED_ORIGINAL_RESEARCH_ONLY_NATIVE_AND_RIGHTS_GATE_PENDING",
+      "photo_publication": "NONE"
+    }
+  ],
+  "policy": {
+    "confirmed_links_require_independent_named_osm_building": true,
+    "no_new_tlm_masses_or_schedules": true,
+    "photo_media_unapproved_until_native_rights_derivative_review": true,
+    "no_expense": true
+  }
+}
