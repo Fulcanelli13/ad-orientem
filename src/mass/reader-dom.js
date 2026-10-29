@@ -1519,6 +1519,20 @@ button.ao-schola-control{cursor:pointer}
   font:italic 400 clamp(13px,1.6vw,15px)/1.5 var(--ao-missal-face,Georgia,serif);
   letter-spacing:0;overflow-wrap:break-word;
 }
+/* Source-time rubric order must also be PHYSICAL order. The bilingual
+   prayer columns use an explicit grid-row:1; without this override an
+   earlier/prepended red direction is visually auto-placed *after* the
+   prayer. Applies only to individually certified C0161/C0169/C0204. */
+.ao-reader-shell[data-mode="MISSAL"]
+ .ao-reader-paragraph[data-missal-rubric-before="true"]>.ao-missal-inline-rubrics{
+  grid-row:1;grid-column:1/-1;
+}
+.ao-reader-shell[data-mode="MISSAL"]
+ .ao-reader-paragraph[data-missal-rubric-before="true"]>.ao-line-primary,
+.ao-reader-shell[data-mode="MISSAL"]
+ .ao-reader-paragraph[data-missal-rubric-before="true"]>.ao-line-secondary{
+  grid-row:2;
+}
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-canon-inline-heading,
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-canon-inline-source{display:none!important}
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-missal-rubric-action{
@@ -4400,13 +4414,15 @@ export function createReaderDomAdapter({
             ? missalSourceRubricCopy(p,{language:frenchReader?"fr":"en"}):null;
           // Only shorten complete, certified action sequences; never change
           // the original Latin/prayer row or expose editorial research drafts.
-          // Both modes must print the actual 1962 Memento hand/head rubrics,
-          // not the Sung donor's abbreviated "[silent commemoration]" gloss.
-          // Require the existing published R17 event identity and original
-          // source paragraph; never convert an unapproved editorial draft.
+          // For these source-bracket priest sequences, both MISSAL and LIVE
+          // use the already-certified 1962 bilingual copy. Do not print an
+          // uppercase English Sung-donor mnemonic as a French LIVE rubric.
+          // A complete published R17 source event sequence is required; on
+          // any draft/partial event the original paragraph fails open.
           const liveMemento=mode==="LIVE"&&p.kind==="RUBRIC"&&
             p.sourceCueIds?.length===1 &&
-            ["AO.SM.C0155","AO.SM.C0193"].includes(p.sourceCueIds[0]);
+            ["AO.SM.C0117","AO.SM.C0155","AO.SM.C0193","AO.SM.C0263"]
+              .includes(p.sourceCueIds[0]);
           const conciseSource=bookRubric ? conciseMissalSourceRubric(p,{
             form:prepared?.session?.resolvedMass?.form,
             language:frenchReader?"fr":"en",
@@ -4562,13 +4578,23 @@ export function createReaderDomAdapter({
                   ?event.displayText:event.shortAction).join(" · ");
             }
             note.append(actions);
-            // In a printed Missal the slight elevation rubric precedes the
-            // doxology text; LIVE retains its existing inline treatment.
-            if(mode==="MISSAL" && shortRubrics.some(event=>
-              event.id==="GM.P.C0204.01"&&
-              event.owner==="CERTIFIED_1962_MATRIX_TEXT_ONLY"))
+            // A printed Missal puts these rubrics BEFORE the exact words
+            // they direct: Hanc igitur hands, Institution eyes, and minor
+            // elevation at omnis honor. LIVE keeps source-adjacent guidance.
+            // Guard each by its already-published 1962 ID and source cue;
+            // generic actions and uncited additions never gain precedence.
+            const printedBeforeText=mode==="MISSAL"&&shortRubrics.some(event=>
+              (event.id==="GM.P.C0204.01"&&
+                event.owner==="CERTIFIED_1962_MATRIX_TEXT_ONLY")||
+              (event.sourceId==="MR62_RITUS"&&
+               event.review==="EXISTING_PUBLISHED_R17_1962_RUBRIC"&&
+               event.owner==="PUBLISHED_R17_MISSAL_INLINE"&&
+               (event.id==="AO.RUB.C0161.01"&&event.sourceCueId==="AO.SM.C0161"||
+                event.id==="AO.RUB.C0169.01"&&event.sourceCueId==="AO.SM.C0169")));
+            if(printedBeforeText){
+              node.dataset.missalRubricBefore="true";
               node.prepend(note);
-            else node.append(note);
+            }else node.append(note);
           }
           // Existing "long" registry data contains only the SAME short
           // actions again. No fake detail buttons, source-link repetition

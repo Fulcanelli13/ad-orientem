@@ -160,4 +160,43 @@ const badMinor=normalizeReaderMoment({paragraphs:[{
 assert.equal(badMinor.paragraphs[0].publishedMissalRubrics.length,0,
  "Unapproved matrix identity cannot pass normalization");
 
+// Four source-owned 1962 priest gestures, not four new icon approvals.
+// C0117 and C0263 already retain their printed rubric order. C0161 and
+// C0169 must include their omitted normative details in *both* readers.
+const normative=JSON.parse(readFileSync(new URL("../data/mass/gesture-matrix.v1.json",import.meta.url),"utf8"));
+const four1962=Object.freeze({
+ "AO.SM.C0117":{event:"AO.RUB.C0117.01",en:/raises his eyes and hands/,fr:/élève les yeux et les mains/},
+ "AO.SM.C0161":{event:"AO.RUB.C0161.01",en:/open palms facing the Host and chalice.*until Per Christum Dominum nostrum.*joins his hands/,
+   fr:/paumes ouvertes tournées vers l’Hostie et le calice.*Per Christum Dominum nostrum.*joint alors les mains/},
+ "AO.SM.C0169":{event:"AO.RUB.C0169.01",en:/raises his eyes to heaven and immediately lowers them/,
+   fr:/élève les yeux au ciel et les abaisse aussitôt/},
+ "AO.SM.C0263":{event:"AO.RUB.C0263.01",en:/raises his eyes and hands/,fr:/élève les yeux et les mains/},
+});
+for(const [cue,rule] of Object.entries(four1962)){
+ const gesture=normative.items.find(x=>x.cueId===cue&&x.actor==="PRIEST"&&x.displayPrimary===true);
+ assert.ok(gesture,cue+" missing primary 1962 action");
+ assert.equal(gesture.authorityClass,"1962_NORMATIVE");
+ assert.equal(gesture.iconKey,null,cue+" acquired an unapproved artwork");
+ assert.equal(gesture.iconStatus,"PENDING_EXACT_MASTER");
+ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  for(const language of ["en","fr"]){
+   const p=mk("original", [cue]);
+   const approved=publishedMissalRubricsForParagraph(p,source,{form,language});
+   const event=approved.find(x=>x.id===rule.event);
+   assert.ok(event,"Missing published 1962 event "+cue+" "+form+" "+language);
+   assert.equal(event.actor,"PRIEST");
+   assert.equal(event.observedNow,false);
+   assert.equal(event.sourceId,"MR62_RITUS");
+   assert.equal(event.sourceUrl,cited);
+   assert.match(event.displayText,rule[language],cue+" incomplete "+language+" 1962 direction");
+   const normalized=normalizeReaderMoment({paragraphs:withPublishedMissalParagraphRubrics([p],source,{form,language})});
+   assert.ok(normalized.paragraphs[0].publishedMissalRubrics.some(x=>x.id===rule.event),
+    "1962 source rubric not preserved by actual reader normalizer");
+   const tampered=structuredClone(source);
+   tampered.items.find(x=>x.id===rule.event).authorityClass="EDITORIAL_DRAFT";
+   assert.ok(!publishedMissalRubricsForParagraph(p,tampered,{form,language})
+     .some(x=>x.id===rule.event),"Unapproved 1962 event promoted");
+  }
+ }
+}
 console.log("PASS 52 existing approved priest actions + 2 published canonical-digits STATE annotations (EN/FR, four forms); bells remain unpromoted.");
