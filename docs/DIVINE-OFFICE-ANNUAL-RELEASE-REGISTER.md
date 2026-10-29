@@ -266,3 +266,62 @@ Only then run the annual sweep with genuine Office-day research candidates.
 
 No extra downloads, permanent source-text archives, scheduled scrapes,
 automatic publishing, or financial cost.
+
+## First pinned research-witness registry: two Sunday Vespers transitions and All Souls
+
+`data/office/research/2026-office-pilot-ordo-roster.json` is the first
+*bounded exception-focused cohort* of six dates. It is NOT a proposal to
+type all 365 dates by hand. The registry cites the existing pinned Office
+research PR #1860; the 1960 General Rubrics for categories and Saturday/
+Vespers rules; and the public SSPX 1962 Ordo day pages as corroborative
+**Mass-calendar context only**. The Ordo day pages do not certify an Office
+hour or its source sections, and the PR pilot does not certify printed text.
+The metadata has a declared Office-research observation scope per date.
+
+| 2026 date | Evidence envelope | Reportable issue |
+| --- | --- | --- |
+| 31 Oct | all-hour research generator pilot | Saturday BVM to All Saints I Vespers; following Sunday's commemoration disposition is still open |
+| 1 Nov | all-hour research generator pilot | All Saints takes the principal Office; the impeded XXIII Sunday requires independent disposition / LA–FR collation |
+| 2 Nov | special Office research pilot | Office of the Dead must use its own rubrics; Prime beneficiary translation and Martyrology remain blocked |
+| 3 Nov | all-hour research generator pilot | ordinary feria source identity; local variations and next-day Vespers remain unreviewed |
+| 28 Nov | Vespers-only research pilot | transition from Saturday BVM to Advent I |
+| 29 Nov | Vespers-only research pilot | Advent I Sunday Second Vespers candidate; other Hours not witnessed in this particular pilot |
+
+The observation-scope validator deliberately refuses a fabricated pin,
+incorrect URL identity, extra Hours in a Vespers-only source pilot, or
+unresolved local/Office category. It does not inspect or download the Office
+texts. The metadata claims **34 source-hour headings observed** in the
+prior research pilot: 4 × 8 plus 2 × Vespers. These claims are not a
+verification of exact text, translation, or liturgical Office appointment.
+
+Running the annual sweep with this dated metadata produces these
+*research-only* counts, checked by CI:
+
+- 6 submitted research day records; 4 days whose single Office precedence
+  candidate passes the narrow RG91 research review.
+- 15 of 2,920 date × Hour combinations have a provisional occurrence or
+  Vespers candidate **and are within the recorded observation scope**.
+  2,905 remain withheld. Even those 15 do **not** have verified Office
+  section sequences; they do not count as complete trilingual Hours.
+- **0 fully assembled/certified/published** Hours, unchanged.
+- On 31 Oct and 1 Nov, the Sunday commemoration issue is deliberately
+  not waived to inflate candidate counts; All Souls' special Office is
+  deliberately blocked from the general 1960 occurrence path.
+
+Reproduce without any downloads:
+
+    node scripts/office/sweep-annual-research.mjs --year 2026 --office-days data/office/research/2026-office-pilot-ordo-roster.json --out /tmp/office-pilot-research-sweep.json
+    node --test tests/divine-office-research-roster.mjs
+
+**Scale-up method:** next ingest and normalize the *Office-specific*
+universal Sanctoral/Temporal calendar descriptors from the exact pinned
+source **on demand** through existing parsed-source resolution. Model
+recurring rules and exception overrides once, not 365 generated XHTML
+documents or hand-authored daily calendars. Keep the literal Office-day
+source identity and 1960 rank/rubric source IDs, then run this single
+metadata sweep, and adjudicate only its finite exceptions. Local diocesan,
+ICKSP and institute-specific variations remain separate researched
+overlays, not silent replacements of the universal Office.
+
+This remains an unmerged draft research stage. No weekly captures or
+additional paid hosting are enabled.
