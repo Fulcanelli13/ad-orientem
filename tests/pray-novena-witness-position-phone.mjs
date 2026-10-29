@@ -29,6 +29,10 @@ try{
    await page.evaluate(()=>{const key="ao2:settings:v1",saved=JSON.parse(localStorage.getItem(key)||"{}");localStorage.setItem(key,JSON.stringify({...saved,language:"fr"}));localStorage.setItem("ao:novenas:n1:mode","simple");});
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:20000});
+   // The settings app may complete bootstrap *after* the Prayer module loads.
+   // Apply this test's French locale after bootstrap so the Novena runtime
+   // reads the intended current setting rather than an earlier default.
+   await page.evaluate(()=>{const key="ao2:settings:v1",saved=JSON.parse(localStorage.getItem(key)||"{}");localStorage.setItem(key,JSON.stringify({...saved,language:"fr"}));});
    const rootSel="#aoPray435930.open";
    const open=async(id)=>{
     assert.equal(await page.evaluate(novenaId=>globalThis.AO_PRAY_V435930.open("pray.novenas",{novenaId,returnContext:null}),id),true);
@@ -52,6 +56,15 @@ try{
    // the card-local scroll position, day identity and active toggle focus.
    await open("holy_ghost");
    const bilingual=page.locator(rootSel+" .aoN1SourceText [data-n1-show-en]").first();
+   const available=await bilingual.count();
+   if(!available){
+    const diagnostic=await page.evaluate(()=>({settings:localStorage.getItem("ao2:settings:v1"),
+      mode:document.querySelector("#aoPray435930.open .aoN1Reader")?.dataset.aoNovenaDeck,
+      witnessCount:document.querySelectorAll("#aoPray435930.open .aoN1SourceText").length,
+      failClosed:document.querySelectorAll("#aoPray435930.open .aoN1FailClosed").length,
+      snippet:document.querySelector("#aoPray435930.open .aoN1Reader")?.innerText?.slice(0,330)}));
+    assert.fail("Bilingual source witness toggle absent: "+JSON.stringify(diagnostic));
+   }
    await bilingual.scrollIntoViewIfNeeded();
    const before=await state();
    assert.ok(before.hasToggle,"Verified bilingual novena must offer a source-witness switch");
