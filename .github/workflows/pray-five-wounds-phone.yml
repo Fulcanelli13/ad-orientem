@@ -1,0 +1,44 @@
+name: Prayer Five Wounds phone reading acceptance
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/pray/five-wounds-chaplet-styles.js"
+      - "src/pray/presentation-runtime.js"
+      - "tests/pray-five-wounds-chaplet-b17.mjs"
+      - "tests/pray-chaplets-discovery-phone.mjs"
+      - ".github/workflows/pray-five-wounds-phone.yml"
+  push:
+    branches: [main]
+    paths:
+      - "src/pray/five-wounds-chaplet-styles.js"
+      - "src/pray/presentation-runtime.js"
+      - "tests/pray-five-wounds-chaplet-b17.mjs"
+      - "tests/pray-chaplets-discovery-phone.mjs"
+      - ".github/workflows/pray-five-wounds-phone.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  chaplet-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Historical Five Wounds source and route contract
+        run: node tests/pray-five-wounds-chaplet-b17.mjs
+      - name: 320px and 390px chaplets mobile UI acceptance
+        run: node tests/pray-chaplets-discovery-phone.mjs
+      - name: Temporary mobile visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pray-five-wounds-phone-review
+          path: artifacts/rosary-chaplets-discovery/five-wounds-*.png
+          if-no-files-found: ignore
+          retention-days: 3
