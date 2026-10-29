@@ -54,6 +54,23 @@ for(const x of ["batch03LitanyUseOptions","renderBatch03PublicLitanyReference","
 assert.ok(pres.includes("STATIONS.publicPosture?'guided':S.stations.mode"),"Public posture must preserve guided recitation");
 assert.ok(pres.includes("CONF=freshConfessionState()"),"No stored Confession answers");
 assert.ok(!pres.includes("LIT.sections=all1962"),"Never invent harmonized 1962 text");
+const litanyStyles=src("src/pray/devotional-card-deck-styles.js");
+const litanyFocus=src("src/pray/devotional-sequence-adapter.js");
+assert.match(pres,/const edition=L\('English prayer-book witness · 1883 · private','Témoin français de 1862 · privé'\)/,
+ "Private Litany must visibly identify the edition, not pretend translated 1962 identity");
+assert.match(pres,/\<details class="aoLitanySectionGuide"/,
+ "Recitation guidance must remain available but not precede the source prayer");
+assert.match(pres,/\<article class="aoP435930Prayer \$\{S\.rosary\.recitation/,
+ "Preserve the historical litany text's canonical prayer card");
+assert.match(pres,/view==='litany'&&LIT\.use==='private'/,
+ "Session English/French switching must not publish public rites");
+assert.match(litanyStyles,/data-ao-devotional-owner="litany"\] \.aoDevoCardScroll \.aoP435930LitanyLine\{/,
+ "The reader typography must be limited to the historical private Litany");
+assert.match(litanyStyles,/clamp\(18px,4\.7vw,22px\)\/1\.66/,
+ "Historical litany source text must remain at least 18px");
+assert.match(litanyFocus,/litanySourceLine=kind==="litany"&&Boolean\(p\.closest\("\.aoP435930LitanyVerses"\)\)/,
+ "Do not mute entire historical litany invocations as focus context");
+
 assert.ok(traditional.includes("data-ao-communion-purpose-picker"),"Historical complete Communion prayers must remain directly selectable without opening a catalogue");
 assert.ok(traditional.includes("data-tp381-communion-pick"));
 assert.ok(traditional.includes("position>=communionStages().length"));
