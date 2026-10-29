@@ -21807,6 +21807,166 @@
         "AO-P92-SITE-ST-AGNES-US",
         "AO-P92-GEO-ST-AGNES-US"
       ]
+    },
+    {
+      "place_id": "place:US:st-john-cantius-chicago",
+      "name": {
+        "official": "St. John Cantius Church, Chicago",
+        "aliases": [
+          "Saint John Cantius Roman Catholic Church",
+          "St. John Cantius Church"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.89684,
+        "lng": -87.65303,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/210308153",
+        "source_ref": "osm:way:210308153",
+        "matched_country_code": "US",
+        "verified_at": "2026-10-29",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "825 North Carpenter Street",
+        "line2": null,
+        "postal_code": "60642",
+        "city": "Chicago",
+        "region": "Illinois",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "825 North Carpenter Street, 60642 Chicago, United States"
+      },
+      "source_ids": [
+        "AO-P99-SITE-CANTIUS-US",
+        "AO-P99-GEO-CANTIUS-US"
+      ]
+    },
+    {
+      "place_id": "place:IT:san-canziano-padova",
+      "name": {
+        "official": "Chiesa di San Canziano, Padova",
+        "aliases": [
+          "San Canziano",
+          "Chiesa dei Santi Canziano, Canzio, Canzianilla e Proto"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.40638,
+        "lng": 11.87628,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/131987476",
+        "source_ref": "osm:way:131987476",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-29",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "Via San Canziano 9",
+        "line2": null,
+        "postal_code": "35100",
+        "city": "Padova",
+        "region": "Veneto",
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Via San Canziano 9, 35100 Padova, Italy"
+      },
+      "source_ids": [
+        "AO-P99-SITE-CANZIANO-IT",
+        "AO-P99-GEO-CANZIANO-IT"
+      ]
+    },
+    {
+      "place_id": "place:FR:saint-louis-de-gonzague-pau",
+      "name": {
+        "official": "Église Saint-Louis-de-Gonzague de Pau",
+        "aliases": [
+          "Chapelle Saint-Louis-de-Gonzague",
+          "Église Saint-Louis de Gonzague"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 43.29596,
+        "lng": -0.36541,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/62885578",
+        "source_ref": "osm:way:62885578",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-29",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "Place Saint-Louis de Gonzague",
+        "line2": null,
+        "postal_code": "64000",
+        "city": "Pau",
+        "region": "Pyrénées-Atlantiques",
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Place Saint-Louis de Gonzague, 64000 Pau, France"
+      },
+      "source_ids": [
+        "AO-P99-SITE-STLOUIS-FR",
+        "AO-P99-GEO-STLOUIS-FR"
+      ]
+    },
+    {
+      "place_id": "place:FR:saint-bruno-bordeaux",
+      "name": {
+        "official": "Église Saint-Bruno de Bordeaux",
+        "aliases": [
+          "Eglise Saint-Bruno",
+          "Saint-Bruno Bordeaux"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 44.83773,
+        "lng": -0.58963,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/115526560",
+        "source_ref": "osm:way:115526560",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-29",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "Place du 11 Novembre",
+        "line2": null,
+        "postal_code": "33000",
+        "city": "Bordeaux",
+        "region": "Gironde",
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Place du 11 Novembre, 33000 Bordeaux, France"
+      },
+      "source_ids": [
+        "AO-P99-SITE-STBRUNO-FR",
+        "AO-P99-GEO-STBRUNO-FR"
+      ]
     }
   ],
   "directoryPlaceLinks": [
@@ -21931,6 +22091,54 @@
         "AO-P92-SITE-ST-AGNES-US",
         "AO-P92-GEO-ST-AGNES-US",
         "V19:DIO-US-MN-ST-PAUL-SAINT-AGNES"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:US:st-john-cantius-chicago",
+      "venue_id": "V19:SJC-001",
+      "place_id": "place:US:st-john-cantius-chicago",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-P99-SITE-CANTIUS-US",
+        "AO-P99-GEO-CANTIUS-US",
+        "V19:SJC-001"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:IT:san-canziano-padova",
+      "venue_id": "ao-fssp-chiesa-di-san-canziano-via-s-canziano-9-i-35100-padova-italia",
+      "place_id": "place:IT:san-canziano-padova",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-P99-SITE-CANZIANO-IT",
+        "AO-P99-GEO-CANZIANO-IT",
+        "ao-fssp-chiesa-di-san-canziano-via-s-canziano-9-i-35100-padova-italia"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:FR:saint-louis-de-gonzague-pau",
+      "venue_id": "ao-fssp-chapelle-saint-louis-de-gonzague-place-saint-louis-de-gonzague-f-64000-pau-france",
+      "place_id": "place:FR:saint-louis-de-gonzague-pau",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-P99-SITE-STLOUIS-FR",
+        "AO-P99-GEO-STLOUIS-FR",
+        "ao-fssp-chapelle-saint-louis-de-gonzague-place-saint-louis-de-gonzague-f-64000-pau-france"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:FR:saint-bruno-bordeaux",
+      "venue_id": "ao-fssp-eglise-saint-bruno-place-du-11-novembre-f-33000-bordeaux-france",
+      "place_id": "place:FR:saint-bruno-bordeaux",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-P99-SITE-STBRUNO-FR",
+        "AO-P99-GEO-STBRUNO-FR",
+        "ao-fssp-eglise-saint-bruno-place-du-11-novembre-f-33000-bordeaux-france"
       ]
     }
   ]
