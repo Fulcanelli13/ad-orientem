@@ -32,6 +32,7 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   customGuidanceP1:moduleUrl("../../data/customs/customs-p1-guidance-en-fr.v1.json"),
   shrines:moduleUrl("../../data/shrines/shrines-pilgrimages-seed.v1.json"),
   sacredPhenomena:moduleUrl("../../data/explore/sacred-phenomena-seed.v1.json"),
+  relicIndoorPlacement:moduleUrl("../../data/explore/relic-indoor-placement.v1.json"),
   shrineSources:moduleUrl("../../data/shrines/source-registry.v1.json"),
   routeStageEvidence:moduleUrl("../../data/shrines/route-stage-evidence-20261020.v1.json"),
   routeGeometryReview:moduleUrl("../../data/shrines/route-geometry-review-20261020.v1.json"),
@@ -51,7 +52,7 @@ export const EXPLORE_DATA_URLS=Object.freeze({
 
 export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_SAINTS_CHANNEL}={}){
   const research=isResearchSaintsChannel(saintsChannel);
-  const [directory,geography,customs,customSources,customGuidance,customGuidanceP1,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,illustratedWorldMarianR1,illustratedGlobalSaintsR1,illustratedGlobalMarianB2,biblePlaces,saintsPilot,saintsCalendarBridge,saintsDoctors,saintsVocations,saintsOwnerIndex,routeStageEvidence,routeGeometryReview,routeStageSiteLinks]=await Promise.all([
+  const [directory,geography,customs,customSources,customGuidance,customGuidanceP1,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relicIndoorPlacement,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,illustratedWorldMarianR1,illustratedGlobalSaintsR1,illustratedGlobalMarianB2,biblePlaces,saintsPilot,saintsCalendarBridge,saintsDoctors,saintsVocations,saintsOwnerIndex,routeStageEvidence,routeGeometryReview,routeStageSiteLinks]=await Promise.all([
     loadDirectoryDataset({fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.geography,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customs,{fetchImpl}),
@@ -63,6 +64,7 @@ export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_S
     fetchJson(EXPLORE_DATA_URLS.novenaBridge,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.novenaSot,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.sacredPhenomena,{fetchImpl}),
+    fetchJson(EXPLORE_DATA_URLS.relicIndoorPlacement,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.relatedPlaces,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.approvedPlaceMedia,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.approvedPlaceGallery,{fetchImpl,optional:true}),
@@ -106,7 +108,8 @@ export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_S
         ...(customGuidanceP1?.schema==="AO_CUSTOMS_P1_GUIDANCE_EN_FR_V1"&&customGuidanceP1?.publication==="SUPPORTING_COPY_FOR_PUBLISHED_CANONICAL_IDS"?safeArray(customGuidanceP1.entries):[]),
       ],
     }),
-    sacredPhenomena:Object.freeze({apparitions:safeArray(sacredPhenomena?.apparitions),relics:safeArray(sacredPhenomena?.relics),norms:sacredPhenomena?.norms??null}),
+    sacredPhenomena:Object.freeze({apparitions:safeArray(sacredPhenomena?.apparitions),relics:safeArray(sacredPhenomena?.relics),norms:sacredPhenomena?.norms??null,
+      indoorPlacement:relicIndoorPlacement?.schema==="AO_RELIC_INDOOR_PLACEMENT_V1"?relicIndoorPlacement:null}),
     shrines:Object.freeze({
       shrines:safeArray(shrines?.shrines),
       pilgrimages:safeArray(shrines?.pilgrimages),
