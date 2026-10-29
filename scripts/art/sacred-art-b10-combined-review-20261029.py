@@ -28,7 +28,6 @@ def final():
  r=json.loads(RIJKS.read_text());m=json.loads(MET.read_text())
  assert r['counts']['priorReviewIDsExcluded']==m['counts']['priorReviewIDsExcluded']==1455
  assert r['counts']['historicalRijksUserRatingsExcluded']==137
- assert r['counts']['productionImports']==m['counts']['productionMutations']==0 if False else True
  assert r['counts']['productionImports']==0 and m['counts']['productionMutations']==0
  assert r['counts']['productionImageOriginalDownloads']==0
  assert m['counts']['productionOriginalsDownloaded']==0
