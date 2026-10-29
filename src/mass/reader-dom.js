@@ -1616,7 +1616,13 @@ button.ao-schola-control{cursor:pointer}
 /* Persistent participant state lives in the source-context ribbon, not
    beside a later prayer row whose source posture began before this card. */
 .ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-reader-objective-context:has(.ao-objective-posture:not([hidden])){
-  position:relative;padding-left:52px;padding-right:8px
+  position:relative;padding-left:52px;padding-right:72px
+}
+/* The MUSIC picker formerly sat over the source-context wording on
+   320px phones. Reserve its own right-hand slot during objective context. */
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-state-music-jump{
+  left:auto;right:6px;top:15px;transform:none;
+  min-height:32px;min-width:54px;padding:7px 6px
 }
 .ao-reader-objective-context .ao-objective-posture[hidden]{display:none!important}
 .ao-reader-objective-context .ao-objective-posture{
@@ -1628,7 +1634,7 @@ button.ao-schola-control{cursor:pointer}
   width:25px;height:25px;flex:0 0 25px
 }
 .ao-reader-objective-context .ao-objective-posture [data-role="objective-posture-label"]{
-  font:600 7px/1.1 var(--ao-font-ui,system-ui,sans-serif);
+  font:600 9px/1.1 var(--ao-font-ui,system-ui,sans-serif);
   letter-spacing:.025em;text-transform:uppercase
 }
 `;
