@@ -101,7 +101,7 @@ export function dailyPersonalPrayerCatalog(plan,optional,{esc,L}){
    ' <small>'+optional.length+'</small></summary><div class="aoTP381PrayerList aoDailyCatalogRows">'+additional+'</div></details>':"")+
  '</section>';
 }
-export function dailyPersonalSettings(plan,prefs,{esc,L,expanded=false}){
+export function dailyPersonalSettings(plan,prefs,{esc,L,expanded=false,showEdition=true}){
  const part=plan.daypart;
  const choice=(action,id,en,fr,on)=>
  '<button type="button" data-tp381-personal-action="'+action+'" data-tp381-personal-value="'+esc(id)+'" aria-pressed="'+String(on)+'">'+esc(L(en,fr))+'</button>';
@@ -156,7 +156,7 @@ export function dailyPersonalSettings(plan,prefs,{esc,L,expanded=false}){
  const modeSummary=plan.brief?L("Personal Brief","Brève personnelle"):prefs.mode==="expanded"?L("Expanded","Enrichie"):L("Standard","Standard");
  const selectedSummary=plan.selectedExtras.length&&plan.expanded?" · +"+plan.selectedExtras.length:"";
  return '<details class="aoDailyPersonalSettings" data-ao-personal-settings '+(expanded?"open":"")+'> <summary><span class="aoDailyPersonalSettingsLabel">'+esc(L("Customize","Personnaliser"))+'</span><small class="aoDailyPersonalSettingsCurrent">'+esc(editionSummary+" · "+languageSummary+" · "+modeSummary+selectedSummary)+'</small></summary>'+
- '<div class="aoDailyPersonalSettingsBody">'+ed+lang+length+
+ '<div class="aoDailyPersonalSettingsBody">'+(showEdition?ed:'')+lang+length+
  (plan.brief?'<p class="aoDailyPersonalNote">'+esc(L(
   "Personal Brief is your selection of complete prayers from St Pius X, in the printed order, not a separately published Short edition. Saved additions to your Complete rule remain available when you switch back.",
   "La règle brève est votre sélection de prières intégrales de saint Pie X, dans l’ordre imprimé, et non une édition courte historique. Les ajouts à votre règle intégrale demeurent enregistrés."
