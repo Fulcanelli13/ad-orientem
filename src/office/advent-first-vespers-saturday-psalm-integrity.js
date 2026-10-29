@@ -54,7 +54,8 @@ function incipit(line,text){
 function validManifest(m){
  if(m?.schema!==MANIFEST_SCHEMA||m.civilDate!=="2026-11-28"||
   m.officeDate!=="2026-11-29"||m.officePart!=="FIRST"||
-  m.language!=="la"||m.pinnedRevision!==DIVINUM_OFFICIUM_PIN||
+  m.language!=="la"||m.psalterTextFamily!=="GALLICAN_VULGATE"||
+  m.pinnedRevision!==DIVINUM_OFFICIUM_PIN||
   m.sourceBlobs?.[SOURCE+"143"]!==BLOBS[143]||
   m.sourceBlobs?.[SOURCE+"144"]!==BLOBS[144]||
   Object.keys(m.sourceBlobs??{}).length!==2||
@@ -150,6 +151,7 @@ export async function reviewAdventSaturdayLatinPsalmSource({
   schema:OFFICE_SATURDAY_PSALM_CHECK_SCHEMA,
   status:"FIVE_SATURDAY_SOURCE_SEGMENTS_PINNED_SECONDARY_INICIPITS_ONLY",
   sourceRevision:DIVINUM_OFFICIUM_PIN,
+  psalterTextFamily:"GALLICAN_VULGATE",
   civilDate:"2026-11-28",officeDate:"2026-11-29",officePart:"FIRST",
   pinnedSourceFilesVerified:2,sourceVerseRowsVerified:40,
   fivePsalmPortionsVerified:5,receipts:Object.freeze(receipts),
