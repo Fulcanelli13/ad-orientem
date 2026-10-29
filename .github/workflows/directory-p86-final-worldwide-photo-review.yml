@@ -1,0 +1,127 @@
+name: P86 one final worldwide Directory photo review after completed P85 recovery
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/directory/p86-consolidate-one-worldwide-photo-review.py'
+      - 'tests/directory-p86-final-one-worldwide-review-test.py'
+      - '.github/workflows/directory-p86-final-worldwide-photo-review.yml'
+      - 'tests/production-tree-hygiene.mjs'
+  workflow_run:
+    workflows:
+      - "P85 one global 7400-held-photos current Commons evidence recovery"
+    types:
+      - completed
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/directory/p86-consolidate-one-worldwide-photo-review.py'
+      - '.github/workflows/directory-p86-final-worldwide-photo-review.yml'
+permissions:
+  contents: read
+concurrency:
+  group: ao-directory-p86-final-worldwide-one-review
+  cancel-in-progress: false
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fail-closed test over 7701 source assignments and single existing P84 renderer
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/directory/p86-consolidate-one-worldwide-photo-review.py
+          python tests/directory-p86-final-one-worldwide-review-test.py -v
+          node tests/production-tree-hygiene.mjs
+
+  assemble-one-final-review:
+    if: >-
+      github.repository == 'Fulcanelli13/ad-orientem' &&
+      (
+        (
+          github.event_name == 'workflow_run' &&
+          github.event.workflow_run.repository.full_name == 'Fulcanelli13/ad-orientem' &&
+          github.event.workflow_run.name == 'P85 one global 7400-held-photos current Commons evidence recovery' &&
+          github.event.workflow_run.conclusion == 'success' &&
+          github.event.workflow_run.event == 'push' &&
+          github.event.workflow_run.head_branch == 'main' &&
+          github.event.workflow_run.head_sha == 'db8dd794621638cf2ffb1e4a57d9c2ecb02c80a1'
+        ) ||
+        (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
+        (github.event_name == 'push' && github.ref == 'refs/heads/main')
+      )
+    needs: contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Restore exactly original P83 and successful immutable P85 research outcomes
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/p83-screened-worldwide-photo-candidates-20261029:refs/remotes/origin/research/p83-screened-worldwide-photo-candidates-20261029' \
+            'refs/heads/research/p85-7400-worldwide-recovery-audit-20261029:refs/remotes/origin/research/p85-7400-worldwide-recovery-audit-20261029'
+          test "$(git rev-parse refs/remotes/origin/research/p83-screened-worldwide-photo-candidates-20261029)" = 736c10ad7f10eced0581834cd09612d4b62761ba
+          git worktree add --detach /tmp/p86-original-p83 736c10ad7f10eced0581834cd09612d4b62761ba
+          git worktree add --detach /tmp/p86-complete-p85 refs/remotes/origin/research/p85-7400-worldwide-recovery-audit-20261029
+          (cd /tmp/p86-original-p83/data/directory/research/archives/p83-worldwide-screened-photography && sha256sum -c SHA256SUMS)
+          (cd /tmp/p86-complete-p85/data/directory/research/archives/p85-worldwide-7400-holds && sha256sum -c SHA256SUMS)
+      - name: Assemble one final full-world P84-style review from all P83 and P85 evidence
+        run: |
+          set -euo pipefail
+          python tools/directory/p86-consolidate-one-worldwide-photo-review.py \
+            --p83 /tmp/p86-original-p83/data/directory/research/archives/p83-worldwide-screened-photography \
+            --p85 /tmp/p86-complete-p85/data/directory/research/archives/p85-worldwide-7400-holds \
+            --out /tmp/p86-one-final-editorial-review
+          python - <<'PY'
+          import json,pathlib
+          root=pathlib.Path("/tmp/p86-one-final-editorial-review")
+          a=json.loads((root/"audit.json").read_text())
+          assert a["schema"]=="AO_P86_FINAL_SINGLE_WORLDWIDE_PHOTO_REVIEW_V1"
+          assert a["physical_anchors"]==2579 and a["countries"]==76
+          assert a["original_photo_assignments"]==7701 and a["p85_held_rechecked"]==7400
+          assert a["one_final_reviewer_candidates"]==301+a["p85_research_candidates_recovered"]
+          assert a["p85_research_candidates_recovered"]+a["p85_remaining_source_holds"]==7400
+          assert a["original_image_bytes_downloaded"]==a["subject_verified"]==a["rights_approved"]==a["photos_published"]==0
+          assert len((root/"index.html").read_bytes())<10_000_000
+          print("P86_FINAL_REVIEW_ALL_SOURCES_VERIFIED",json.dumps(a,sort_keys=True))
+          PY
+      - name: Preserve one final worldwide review and evidence without image binaries on the research branch
+        run: |
+          set -euo pipefail
+          branch="research/p86-final-one-worldwide-photo-editorial-review-20261029"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            echo "Final worldwide reviewer already saved; refusing overwrite" >&2; exit 1
+          fi
+          git fetch --no-tags origin main
+          git switch -c "$branch" origin/main
+          target="docs/research/directory/p86-final-worldwide-photo-review-20261029"
+          test ! -e "$target"
+          mkdir -p "$target"
+          cp /tmp/p86-one-final-editorial-review/index.html "$target/index.html"
+          cp /tmp/p86-one-final-editorial-review/audit.json "$target/audit.json"
+          cp /tmp/p86-one-final-editorial-review/p86-one-worldwide-editorial-queue.jsonl "$target/research-queue.jsonl"
+          cp /tmp/p86-one-final-editorial-review/p86-final-viewer-input.json "$target/reviewer-input.json"
+          (cd "$target" && sha256sum index.html audit.json research-queue.jsonl reviewer-input.json > SHA256SUMS && sha256sum -c SHA256SUMS)
+          test "$(du -sm "$target" | awk '{print $1}')" -le 15
+          git add "$target/index.html" "$target/audit.json" "$target/research-queue.jsonl" "$target/reviewer-input.json" "$target/SHA256SUMS"
+          test "$(git diff --cached --name-only | wc -l)" -eq 5
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): one final worldwide photo review combining original and recovered candidates"
+          git push origin "HEAD:refs/heads/$branch"

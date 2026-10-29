@@ -169,6 +169,33 @@ for(const name of workflows){
     assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
     assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
     assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
+  }else if(name==="directory-p86-final-worldwide-photo-review.yml"){
+    // Exactly one recovered-world reviewer, reusing the canonical P84
+    // renderer after a pinned successful P85 source archive or manual retry.
+    assert.match(source,/name: P86 one final worldwide Directory photo review after completed P85 recovery/);
+    assert.match(source,/workflow_run:\s*\n\s*workflows:/);
+    assert.match(source,/P85 one global 7400-held-photos current Commons evidence recovery/);
+    assert.match(source,/github\.event\.workflow_run\.conclusion == 'success'/);
+    assert.match(source,/github\.event\.workflow_run\.head_sha == 'db8dd794621638cf2ffb1e4a57d9c2ecb02c80a1'/);
+    assert.match(source,/github\.event\.workflow_run\.repository\.full_name == 'Fulcanelli13\/ad-orientem'/);
+    assert.match(source,/workflow_dispatch:/);
+    assert.match(source,/github\.ref == 'refs\/heads\/main'/);
+    assert.match(source,/permissions:\s*\n\s*contents:\s*read/);
+    assert.match(source,/assemble-one-final-review:[\s\S]*?permissions:\s*\n\s*contents:\s*write/);
+    assert.match(source,/p86-consolidate-one-worldwide-photo-review\.py/);
+    assert.match(source,/p85_held_rechecked.*7400/);
+    assert.match(source,/sha256sum -c SHA256SUMS/);
+    assert.match(source,/original_image_bytes_downloaded/);
+    assert.match(source,/git push origin "HEAD:refs\/heads\/\$branch"/);
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1);
+    assert.match(source,/push:\s*\n\s*branches: \[main\]\s*\n\s*paths:/);
+    assert.match(source,/github\.event_name == 'push' && github\.ref == 'refs\/heads\/main'/);
+    assert.match(source,/'tools\/directory\/p86-consolidate-one-worldwide-photo-review\.py'/);
+    assert.match(source,/'\.github\/workflows\/directory-p86-final-worldwide-photo-review\.yml'/);
+    assert.doesNotMatch(source,/schedule:\s*\n/);
+    assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+    assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
   }else if(name==="branch-hygiene.yml"){
     // Merged-branch ref deletion is deliberately distinct from mutating app
     // source or restoring old production builds. Enforce the exact safeguards,
