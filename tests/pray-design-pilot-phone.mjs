@@ -48,6 +48,14 @@ try{
    assert.equal(await mosaic.isVisible(),false,"search should replace mosaic temporarily");
    const memo=page.locator(base+" [data-p435930-pilot-prayer]").filter({hasText:"Memorare"}).first();
    assert.ok(await memo.isVisible(),"search should find canonical prayer records");
+   const facets=page.locator(base+" [data-p435930-pilot-facet]");
+   assert.equal(await facets.count(),5,"R1.1 search must expose form and Latin filters");
+   const litanyFacet=page.locator(base+' [data-p435930-pilot-facet="litany"]');
+   await litanyFacet.click();
+   assert.equal(await litanyFacet.getAttribute("aria-pressed"),"true");
+   assert.equal(await memo.isVisible(),false,"Litany facet must exclude a non-litany");
+   await litanyFacet.click();
+   assert.equal(await memo.isVisible(),true,"Clearing the facet restores the canonical prayer");
    await memo.click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"library","search must open the real canonical Library");
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
