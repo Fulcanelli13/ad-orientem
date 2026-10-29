@@ -15,6 +15,8 @@
 import {DIVINUM_OFFICIUM_PIN} from "../app/source-transport-compat.js";
 import {OFFICE_ADVENT_ASSEMBLY_SCHEMA}
  from "./advent-first-vespers-assembled-research.js";
+import {OFFICE_ADVENT_COMM_REVIEW_SCHEMA}
+ from "./advent-first-vespers-universal-commemoration.js";
 
 export const OFFICE_ADVENT_RUBRIC_PLAN_SCHEMA="ao.office.advent-i-vespers-1960-rubric-plan.v1";
 const PRAYERS="Psalterium/Common/Prayers#";
@@ -118,7 +120,8 @@ function event(kind,sourceId,extras={}){
  */
 export function reviewAdventFirstVespers1960RubricPlan({
  assembly,calendarScope="UNIVERSAL",
- recitation="SOLO",minister="BELOW_DEACON"
+ recitation="SOLO",minister="BELOW_DEACON",
+ universalCommemoration=null
 }={}){
  if(!validAssembly(assembly))
   return bad("OFFICE_ADVENT_RUBRIC_PLAN_NINE_SOURCE_SLOTS_REQUIRED");
@@ -127,6 +130,19 @@ export function reviewAdventFirstVespers1960RubricPlan({
  if(!["SOLO","CHOIR_OR_COMMON"].includes(recitation)||
     !["BELOW_DEACON","DEACON_OR_HIGHER"].includes(minister))
   return bad("OFFICE_ADVENT_RUBRIC_PLAN_RECITATION_VARIANT_INVALID");
+ const comm=universalCommemoration;
+ if(comm!==null&&(
+  comm.schema!==OFFICE_ADVENT_COMM_REVIEW_SCHEMA||
+  comm.status!=="UNIVERSAL_NO_COMMEMORATION_RESEARCH_REVIEWED"||
+  comm.civilDate!=="2026-11-28"||comm.officeDate!=="2026-11-29"||
+  comm.officePart!=="FIRST"||comm.calendarScope!=="UNIVERSAL_ONLY"||
+  comm.principalId!=="advent-i-2026-11-29"||
+  comm.universalCommemorationCount!==0||
+  comm.universalCommemorationsAuthorized!==true||
+  comm.localCalendarReviewed!==false||
+  comm.completeHourCertified!==false||
+  comm.publishable!==false||comm.published!==false
+ ))return bad("OFFICE_UNIVERSAL_COMMEMORATION_REVIEW_INVALID");
  const dialogue=(recitation==="CHOIR_OR_COMMON"&&
   minister==="DEACON_OR_HIGHER")?
   "DOMINUS_VOBISCUM":"DOMINE_EXAUDI";
@@ -175,8 +191,12 @@ export function reviewAdventFirstVespers1960RubricPlan({
  events.push(event("COLLECT",PROPER+"Oratio",{slot:"collect"}));
  // RG111 and BR250-259 require explicit privilege/local-calendar decisions.
  // NO "no commemoration" assertion is derived from an empty research slot.
- events.push(event("COMMEMORATIONS_UNADJUDICATED",null,{
-  slot:"commemorations",selectionAuthorized:false}));
+ events.push(comm?
+  event("NO_UNIVERSAL_COMMEMORATION",null,{
+   slot:"commemorations",universalScopeOnly:true,
+   noSourceTextRequired:true,localCalendarAdjudicated:false}):
+  event("COMMEMORATIONS_UNADJUDICATED",null,{
+   slot:"commemorations",selectionAuthorized:false}));
  events.push(event("DISMISSAL_DIALOGUE_UNCOLLATED",null,{
   slot:"conclusion",variant:dialogue,sourceTextCollated:false}));
  events.push(event("BENEDICAMUS",PRAYERS+"Benedicamus Domino",{
@@ -188,6 +208,7 @@ export function reviewAdventFirstVespers1960RubricPlan({
   gloriaPatriPositions:6,openingGloriaPatriPositions:1,
   totalDoxologyPositionsIncludingOpening:7,fullAntiphonUsages:12,
   preces:0,paterAveAtOpening:0,
+  universalCommemorationDecision:comm?"NO_UNIVERSAL_COMMEMORATION":"WITHHELD",
   rubricRefs:Object.freeze([
    "BR166a","BR178b","BR179a","BR188","BR190-191",
    "BR198","BR201","BR204","BR246-251","BR260","RG111"
@@ -201,7 +222,10 @@ export function reviewAdventFirstVespers1960RubricPlan({
   hour:"VESPERS",officePart:"FIRST",
   calendarScope,recitation,minister,dialogue,
   orderedEvents:Object.freeze(events),sourceAudit,
-  unresolvedGates:GATES,
+  unresolvedGates:comm?
+   Object.freeze(GATES.map(x=>x==="UNIVERSAL_AND_LOCAL_PRIVILEGED_COMMEMORATION_REVIEW"?
+     "LOCAL_PRIVILEGED_COMMEMORATION_REVIEW":x)):
+   GATES,
   appointedOfficeVerified:false,completeHourVerified:false,
   rubricsFullyCertified:false,printedEditionCertified:false,
   translationAlignmentVerified:false,rightsApproved:false,
