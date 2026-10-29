@@ -23,11 +23,14 @@ try{
   const page=await browser.newPage({viewport:{width,height:width===320?568:844},deviceScaleFactor:1,isMobile:true,hasTouch:true});
   const errors=[];page.on("pageerror",err=>errors.push(err.message));
   try{
-   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoPrayerReadersPilot=1",{waitUntil:"domcontentloaded",timeout:90000});
+   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoPrayerReadersPilot=1&aoPrayerPilot=1",{waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:45000});
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
    const open=id=>page.evaluate(id=>globalThis.AO_PRAY_V435930.open(id,{returnContext:null}),id);
+   assert.equal(await open("pray.hub"),true);
+   assert.equal(await page.locator("#aoPray435930.open [data-ao-pray-pilot-mosaic] .aoPrayPilotTile").count(),9,
+     "Combined Wave 1 must preserve Claude R1.1 discovery while F01/F03 are active");
    assert.equal(await open("pray.library"),true);
    const base="#aoPray435930.open ";
    await page.locator(base+'[data-p435930-lib-open="marian_memorare"]').click();
