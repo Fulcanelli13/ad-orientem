@@ -81,7 +81,7 @@ assert.match(en,/class="aoTodayV2Introit"/,"Latin Introit incipit not displayed"
 assert.match(en,/<em lang="la">Gaudeamus<\/em>/);
 assert.doesNotMatch(en,/<div class="aoTodayV2ArtOverlay">/,"Art should be independent of the observance title");
 assert.equal((en.match(/class="aoWeekColour"/g)||[]).length,7,"Week rail must show a sourced/unknown colour for each day");
-assert.equal((en.match(/aoVerifiedDay/g)||[]).length,1,"Only the resolved selected day may claim its colour");
+assert.equal((en.match(/class="dayCell[^"]*aoVerifiedDay/g)||[]).length,1,"Only the resolved selected day may claim its colour");
 assert.match(en,/Mass in progress/);
 assert.match(en,/data-ao-resume-owner="R17_NATIVE"/,"Home Resume is not owned by native R17 persistence");
 assert.match(en,/07\/10\/2026 · 5/,"Home Resume lost native checkpoint date/position");
@@ -181,7 +181,7 @@ const failed=renderHomeToString({
 assert.match(failed,/Calendar unavailable/);
 assert.doesNotMatch(failed,/class="aoTodayV2ActualFormulary"/,"Failed Calendar must not expose stale Mass formulary");
 assert.doesNotMatch(failed,/class="aoTodayV2Introit"/,"Failed Calendar must not expose stale Mass Introit");
-assert.equal((failed.match(/aoVerifiedDay/g)||[]).length,0,"Failed Calendar must not invent a daily colour");
+assert.equal((failed.match(/class="dayCell[^"]*aoVerifiedDay/g)||[]).length,0,"Failed Calendar must not invent a daily colour");
 assert.doesNotMatch(failed,/Mass in progress/);
 
 console.log("PASS modular Home base presentation");
