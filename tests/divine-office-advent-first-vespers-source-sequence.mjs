@@ -11,7 +11,8 @@ import {createOfficeAtReferenceResolver}
 
 const eve="2026-11-28",day="2026-11-29";
 const proper="Tempora/Adv1-0",psalter="Psalterium/Psalmi/Psalmi major";
-const langs=["la","en","fr"],psalms=[109,110,111,112,113];
+const langs=["la","en","fr"],psalms=[143,143,144,144,144];
+const psalmRanges=["1-8","9-15","1-7","8-'13a'","'13b'-21"];
 function candidate(date,id,kind,position,{first=false,second=true}={}){
  return {id,date,kind,tablePosition:position,
   class:position<=13?1:position<=21?2:position<=27?3:4,
@@ -51,8 +52,9 @@ function fixture({changes=()=>{},onRead=()=>{}}={}){
    ["Capitulum Laudes",["!Rom 13:11","v. Source chapter"]],
    ["Ant 1",["Magnificat "+language]]
   ]):new Map([
-   ["Day0 Vespera",psalms.map(n=>
-    (language==="fr"?"Œuvres":"Dóminus")+" * "+language+" exhortatio.;;"+n)]
+   ["Day6 Vespera",psalms.map((n,i)=>
+    (language==="fr"?"Œuvres":"Dóminus")+" * "+language+" exhortatio.;;"+n+"("+
+    (language==="fr"?psalmRanges[i].replaceAll("\u0027","’"):psalmRanges[i])+")")]
   ]);
   if(path===proper&&language==="la"){
    map.set("Ant Vespera",[
@@ -78,7 +80,7 @@ test("Advent I First Vespers enumerates 5 source-numbered psalm pairs in all 3 l
  assert.equal(r.psalmRowsVerifiedAsSourceCandidates,5);
  assert.deepEqual(r.psalmCandidates.map(x=>x.number),psalms);
  assert.equal(r.psalmCandidates[0].psalmSourcePath,
-  "Psalterium/Psalmorum/Psalm109");
+  "Psalterium/Psalmorum/Psalm143");
  assert.deepEqual(Object.keys(r.psalmCandidates[0].languages),langs);
  assert.equal(r.psalmCandidates[0].languages.fr.antiphon,
   "Antiphon 1 * fr Adventum.");
@@ -193,18 +195,19 @@ function verses({missingFrench=false,substituted=false}={}){
   readPsalmSource:async(path,language)=>{
    calls.push([path,language]);
    const n=Number(path.slice(path.lastIndexOf("Psalm")+5));
+   const verses=n===143?[1,2,2,3,4,5,6,7,8,9,10,11,12,12,13,13,14,15]:
+    [1,2,3,4,5,6,7,8,9,10,11,12,"13a","13b",14,15,16,17,18,19,20,21];
    return {
     sourcePath:substituted?"Psalterium/Psalmorum/Psalm99":path,
     sourceRevision:DIVINUM_OFFICIUM_PIN,language,
-    text:language==="fr"&&missingFrench?"":(
-     n+":1 "+language+" première ligne du psaume.\n"+
-     n+":2 "+language+" deuxième ligne du psaume.")
+    text:language==="fr"&&missingFrench?"":verses.map((v,i)=>
+      n+":"+v+" "+language+" source psalm verse "+i+".").join("\\n")
    };
   }
  });
  return {resolver,calls};
 }
-test("five exact psalm verse files per language yield 15 traced research components",async()=>{
+test("five Saturday Psalm143/144 source segments per language reuse six exact files",async()=>{
  const source=await reviewAdventFirstVespersSourceSequence({
   handoff:handoff(),readSource:fixture().readSource
  });
@@ -212,14 +215,14 @@ test("five exact psalm verse files per language yield 15 traced research compone
  const r=await assembleAdventFirstVespersPsalmodyResearch({
   sourceSequence:source,psalmVerseResolver:v.resolver
  });
- assert.equal(r.status,"FIVE_TRILINGUAL_PSALM_VERSE_COMPONENTS_UNVERIFIED");
- assert.equal(r.fivePsalmsReadFromExactSources,true);
+ assert.equal(r.status,"FIVE_SATURDAY_PSALM_SEGMENTS_TRILINGUAL_UNVERIFIED");
+ assert.equal(r.fiveSaturdayPsalmSegmentsReadFromExactSources,true);
  assert.equal(r.psalmVerseComponents.length,5);
- assert.equal(v.calls.length,15);
+ assert.equal(v.calls.length,6);
  assert.deepEqual(r.psalmVerseComponents.map(x=>x.psalmNumber),psalms);
  assert.equal(r.psalmVerseComponents[0].languages.la.sourceTrace[0].sourceId,
-  "Psalterium/Psalmorum/Psalm109#VERSES");
- assert.match(r.psalmVerseComponents[4].languages.fr.psalmVerses,/113:2/);
+  "Psalterium/Psalmorum/Psalm143#1-8");
+ assert.match(r.psalmVerseComponents[4].languages.fr.psalmVerses,/144:21/);
  assert.equal(r.psalmVerseComponents.every(x=>
    x.exactSourceVersesLocated===true&&x.psalmDoxologyVerified===false&&
    x.liturgicalPlacementVerified===false),true);
@@ -237,7 +240,7 @@ test("one missing French psalm withholds all five in research",async()=>{
   sourceSequence:source,psalmVerseResolver:verses({missingFrench:true}).resolver
  });
  assert.equal(r.status,"WITHHELD");
- assert.match(r.reason,/OFFICE_AT_PSALM_VERSES_INVALID/);
+ assert.match(r.reason,/OFFICE_AT_PSALM_SEGMENT_ROW_COUNT_CHANGED/);
  assert.equal(r.psalmRowsVerifiedAsSourceCandidates,0);
  assert.equal(r.published,false);
 });
