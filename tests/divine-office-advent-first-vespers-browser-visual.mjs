@@ -362,6 +362,26 @@ try{
  await dp.locator('[data-mode="en"]').click();
  await dp.locator("#next").click();
  await shot(dp,"11-desktop-1440-la-en-second-card");
+ // The same presentation must work as an honest date/Hour beta shell,
+ // never silently displaying Advent Vespers for a different request.
+ assert.equal(await dp.locator("#office-date").inputValue(),"2026-11-28");
+ assert.equal(await dp.locator("#office-hour").inputValue(),"VESPERS");
+ await dp.locator("#office-hour").selectOption("COMPLINE");
+ assert.equal(await dp.locator("#reader").isHidden(),true);
+ assert.match(await dp.locator("#status").innerText(),/Not yet implemented/);
+ assert.equal(await dp.locator("#office-title").innerText(),"Compline");
+ await dp.locator("#office-hour").selectOption("VESPERS");
+ assert.equal(await dp.locator("#reader").isVisible(),true);
+ await dp.locator("#office-date").fill("2026-11-29");
+ await dp.locator("#office-date").dispatchEvent("change");
+ assert.equal(await dp.locator("#reader").isHidden(),true);
+ assert.match(await dp.locator("#status").innerText(),/Not yet implemented/);
+ await dp.locator("#office-date").fill("2026-11-28");
+ await dp.locator("#office-date").dispatchEvent("change");
+ assert.equal(await dp.locator("#reader").isVisible(),true);
+ assert.match(await dp.locator("#card").innerText(),/Alleluia/);
+ assert.equal(dhits.size,22,"returning to the reviewed pilot must reuse source session");
+ await shot(dp,"19-desktop-1440-office-beta-date-hour-picker");
  assert.equal(dhits.size,22);
  assert.deepEqual(dperrors,[]);
  record("1440px desktop responsive bilingual layout",{
