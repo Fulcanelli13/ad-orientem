@@ -44,7 +44,8 @@ function fail(reason){
 function common(x){return x?.sourceRevision===PIN&&
  x.officeDate===DAY&&x.civilDate===EVE&&
  x.officePart==="FIRST"&&x.publishable===false&&
- x.published===false&&x.completeHourVerified===false}
+ x.published===false&&x.appointedOfficeVerified===false&&
+ x.completeHourVerified===false}
 function languageMap(x){return LANGUAGES.every(lang=>x?.[lang]!==undefined)}
 function sourceOnlySlot(key,role,sourceIds,texts,unresolved){
  return Object.freeze({key,role,status:"SOURCE_TEXT_ONLY_NOT_LITURGICALLY_APPOINTED",
