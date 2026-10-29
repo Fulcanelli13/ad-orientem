@@ -9,6 +9,8 @@ queries=[
  {'keys':'Christ','offset':'0','rows':'3','lang':'en'},
  {'keys':'*','filters':'[has_image:true],[object_names:maleri],[public_domain:true]','offset':'0','rows':'3','lang':'en'},
  {'keys':'*','filters':'[has_image:true],[public_domain:true]','offset':'0','rows':'3','lang':'en'},
+ {'keys':'*','filters':'[has_image:true],[object_names:Painting],[public_domain:true]','offset':'0','rows':'3','lang':'en'},
+ {'keys':'Christ','filters':'[has_image:true],[object_names:Painting],[public_domain:true]','offset':'0','rows':'3','lang':'en'},
  {'keys':'Jesus','offset':'0','rows':'3','lang':'en'},
  {'keys':'Madonna','offset':'0','rows':'3','lang':'en'},
 ]
