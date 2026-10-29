@@ -3,6 +3,10 @@ on:
   pull_request:
     paths:
       - 'src/office/annual-readiness-register.js'
+      - 'src/office/annual-capture-ledger.js'
+      - 'scripts/office/emit-annual-capture-ledger.mjs'
+      - 'tests/divine-office-annual-capture-ledger.mjs'
+      - 'data/office/source-capture-ledgers/**'
       - 'scripts/office/build-annual-readiness-register.mjs'
       - 'tests/divine-office-annual-readiness-register.mjs'
       - '.github/workflows/office-annual-readiness.yml'
@@ -23,6 +27,9 @@ jobs:
       - name: Compile-time and completeness contracts
         run: |
           node --check src/office/annual-readiness-register.js
+          node --check src/office/annual-capture-ledger.js
+          node --check scripts/office/emit-annual-capture-ledger.mjs
+          node --test tests/divine-office-annual-capture-ledger.mjs
           node --check scripts/office/build-annual-readiness-register.mjs
           node --test tests/divine-office-annual-readiness-register.mjs
       - name: Generate 2026 and leap-year 2028 preflight inventories in ephemeral scratch
@@ -46,5 +53,33 @@ jobs:
               console.log("OFFICE_ANNUAL_INVENTORY_ASSERTIONS",year,days*24,
                 "planned/none approved/none published");
             }
+          '
+      - name: Rehydrate historical 168 verified source hashes from committed metadata ONLY
+        run: |
+          set -euo pipefail
+          LEDGER="data/office/source-capture-ledgers/2026/2026-capture-45.json"
+          node scripts/office/build-annual-readiness-register.mjs \
+            --year 2026 --out "$RUNNER_TEMP/office-from-committed-ledger" \
+            --ledger-file "$LEDGER"
+          node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            import {validateAnnualCaptureLedger} from "./src/office/annual-capture-ledger.js";
+            const ledger=JSON.parse(readFileSync("data/office/source-capture-ledgers/2026/2026-capture-45.json","utf8"));
+            validateAnnualCaptureLedger(ledger);
+            const out=process.env.RUNNER_TEMP+"/office-from-committed-ledger";
+            const d=JSON.parse(readFileSync(out+"/2026-office-annual-readiness.json","utf8"));
+            const s=d.summary;
+            if(s.rawCaptured!==168||s.notGenerated!==8592||
+               s.datesWithAnyRawEvidence!==7||
+               s.liturgicallyCertified!==0||s.approved!==0||
+               s.published!==0||d.release.publicRouteEnabled||d.release.canPublish)
+              throw Error("OFFICE_COMMITTED_METADATA_PROVENANCE_IMPORT_INVALID");
+            console.log("OFFICE_COMMITTED_LEDGER_VERIFIED",JSON.stringify({
+              immutableBatch:ledger.batchId,
+              metadataOnlyHashes:ledger.verifiedRawSourceCount,
+              recordsSha256:ledger.recordsSha256,
+              annualCapture:s.rawCaptured,unreviewed:s.notGenerated,
+              approved:s.approved,published:s.published
+            }));
           '
       # No artifact upload, no public Office route, no scheduled scraping.
