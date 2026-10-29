@@ -62,7 +62,7 @@ const dataset={
 const projected=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projected,{today:"2026-10-11"});
 assert.equal(profiles.filter(p=>p.illustrated_guide).length,14);
-assert.equal(profiles.filter(p=>p.gallery.length>0).length,5);
+assert.equal(profiles.filter(p=>p.gallery.length>0).length,4,"R69 heritage projected gallery owners remain unchanged; St Alphonsus is Directory-owned");
 for(const placeId of new Set(registry.items.filter(x=>x.place_id!=="place:US:st-alphonsus-baltimore").map(x=>x.place_id))){
  const images=registry.items.filter(x=>x.place_id===placeId);
  const profile=profiles.find(x=>x.place_id===placeId);
@@ -114,5 +114,5 @@ for(const lang of ["en","fr"]){
 }
 for(const p of profiles.filter(x=>!registry.items.some(img=>img.place_id===x.place_id)))
  assert.equal(p.gallery.length,0);
-assert.equal(profiles.find(p=>p.place_id==="place:US:st-alphonsus-baltimore")?.gallery.length,1);
+assert.equal(registry.items.filter(x=>x.place_id==="place:US:st-alphonsus-baltimore").length,1,"Directory gallery owner retained without inventing a separate heritage shrine");
 console.log("PASS R69: original six R69 photos preserved, St Alphonsus exact-site gallery added, EN/FR UI and original 14 guides");
