@@ -58,4 +58,4 @@ node docs/research/directory/p91-source-pin-visual-reconciliation-20261029/verif
 node docs/research/directory/p92-exact-site-bulk-20261029/generate-held-sites.mjs > /tmp/p93-held-sites.json
 ```
 
-The second script is currently pinned to P92 counts and must be updated alongside this pass before it is run on P93; it is only a derived queue, not a second master.
+The second script now derives its totals dynamically from the authoritative ledger. It is a temporary, regenerable queue, **not** a second master.
