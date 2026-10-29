@@ -232,4 +232,45 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2CustomCalendarLink{min-height:44px;border:0;background:none;padding:7px 0;color:#d5c39d;font:600 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
 @media(max-width:700px){.aoTodayV2CustomSpotlight{margin:14px 14px 0;padding:16px 5px}}
 
+
+/* H1.1 — compact Today, three Calendar lenses, source-owned Prayer and appearance. */
+.aoTodayV2 .brandRow{min-height:52px;display:flex;align-items:center;gap:7px}
+.aoTodayV2 .brandText{min-width:0;flex:1}
+.aoTodayV2 .aoTodayV2PrayerJump{width:44px;min-width:44px;min-height:44px;height:44px;border:0;background:transparent;color:var(--liturgical,var(--text));border-radius:50%;display:grid;place-items:center;padding:0}
+.aoTodayV2 .aoTodayV2PrayerJump:focus-visible{outline:2px solid var(--liturgical);outline-offset:2px}
+.aoTodayV2 .aoTodayV2Tabs{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;margin:0 13px 3px;padding:3px;min-height:44px;border:1px solid var(--border);border-radius:24px;background:var(--surface-1)}
+.aoTodayV2 .aoTodayV2Tabs button{min-height:36px;border:0;border-radius:20px;padding:3px 4px;text-transform:none;letter-spacing:0;font:500 14px/1.2 var(--ao-font-body,Georgia,serif);color:var(--muted)}
+.aoTodayV2 .aoTodayV2Tabs button[aria-current="page"]{color:var(--text);background:var(--surface-2);box-shadow:inset 0 0 0 1px var(--liturgical-border);border:0}
+.aoTodayV2 .dateNavigator{padding:0 8px 2px;margin:0;border:0}
+.aoTodayV2 .dateRail{display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;padding:0 12px 7px;overflow:visible;background:var(--bg)}
+.aoTodayV2 .dateRail .dayCell{min-width:0;min-height:55px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px solid transparent;border-radius:12px;padding:3px 0;background:transparent;color:var(--muted);font:500 12px/1.1 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTodayV2 .dateRail .dayCell span{font:600 10px/1.15 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.03em}
+.aoTodayV2 .dateRail .dayCell b{font:500 19px/1.1 var(--ao-font-display,Georgia,serif);color:var(--text)}
+.aoTodayV2 .dateRail .dayCell.selected{background:var(--surface-1);border-color:var(--liturgical-border)}
+.aoTodayV2 .dateRail .dayCell.today b{text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--liturgical)}
+.aoTodayV2 .dateRail .dayCell:focus-visible{outline:2px solid var(--liturgical);outline-offset:2px}
+.aoTodayV2 .aoHomeCalendarAccess[hidden]{display:none!important}
+.aoTodayV2ArtMissing .aoTodayV2Art{height:clamp(116px,31vw,143px)!important}
+.aoTodayV2 .aoTodayV2ArtOverlay .eyebrow{font-size:11px;letter-spacing:.11em}
+.aoTodayV2 .aoTodayV2HeroActions{padding:10px 16px 12px}
+.aoTodayV2 .aoTodayV2Mass{padding:7px 10px 10px!important;border-bottom:0}
+.aoTodayV2 .aoTodayV2PrimaryMass b,.aoTodayV2 .aoTodayV2PrimaryMass span{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;overflow-wrap:break-word;max-width:100%}
+.aoTodayV2 .aoTodayV2PrayerThroughDay{margin:0;padding:0 18px}
+.aoTodayV2 .aoTodayV2PrayerThroughDay .aoTodayV2Zone{padding-top:19px}
+.aoTodayV2 .aoTodayV2PrayerThroughDay:focus{outline:none}
+.aoTodayV2 .aoTodayV2RuleLine{display:flex;align-items:center;justify-content:space-between;gap:7px;width:100%;min-height:44px;margin:7px 0;border:1px dashed var(--border);border-radius:11px;padding:8px 11px;background:transparent;color:var(--text);text-align:left;font:400 14px/1.35 var(--ao-font-body,Georgia,serif)}
+.aoTodayV2 .aoTodayV2RuleLine span:first-child{min-width:0;overflow-wrap:anywhere}
+.aoTodayV2 .aoTodayV2CalendarGlance{margin-top:5px}
+html[data-ao-appearance-v1] .aoTodayV2,html[data-ao-appearance-v1] .aoTodayV2 .aoTodayV2HeroActions,html[data-ao-appearance-v1] .aoTodayV2 .aoTodayV2Tabs,html[data-ao-appearance-v1] .aoTodayV2 .aoTodayV2PrayerFeature{transition:background-color .22s ease,color .22s ease,border-color .22s ease}
+@media(max-width:359px){
+ .aoTodayV2 .aoTodayV2Tabs{margin-inline:10px}
+ .aoTodayV2 .aoTodayV2Tabs button{font-size:12px}
+ .aoTodayV2 .dateRail{padding-inline:9px;gap:2px}
+ .aoTodayV2 .dateRail .dayCell{min-height:51px}
+ .aoTodayV2 .aoTodayV2ArtOverlay h1{font-size:clamp(25px,8vw,30px)}
+ .aoTodayV2 .aoTodayV2Mass{padding-inline:5px!important}
+ .aoTodayV2 .aoTodayV2PrayerThroughDay{padding:0 13px}
+}
+@media(prefers-reduced-motion:reduce){html[data-ao-appearance-v1] .aoTodayV2,html[data-ao-appearance-v1] .aoTodayV2 *{transition:none!important;scroll-behavior:auto!important}}
+html[data-ao-motion-v1="reduced"] .aoTodayV2,html[data-ao-motion-v1="reduced"] .aoTodayV2 *{transition:none!important;scroll-behavior:auto!important}
 `;
