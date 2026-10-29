@@ -206,3 +206,63 @@ The next gate is to anchor these candidates to source-owned 1960 Office
 calendar witness IDs and reconcile them with the existing research pilot;
 then connect the review to Hour-selection and perform one consolidated
 annual read-only exception sweep, with no Office XHTML batch capture.
+
+## Precedence-to-Hour handoff and unified annual research sweep
+
+Implemented research-only modules:
+
+- `src/office/reviewed-hour-handoff.js` — joins the independently supplied
+  Office occurrence decision (and, for Vespers, the next day's concurrence)
+  to an **explicitly selected** source-section list. It checks civil evening
+  date vs the appointed Office date, principal Office identity, Hour, and
+  First/Second Vespers. Unknown or impeded celebrations, missing next-day
+  evidence, and mismatched source selection block parsing; they do not
+  trigger a Mass Proper fallback. One complete Vespers section list is still
+  **not** established and the handoff can only produce
+  `STRUCTURED_UNVERIFIED` drafts.
+- `src/office/annual-research-sweep.js` — runs a finite in-memory
+  **365 × 8** (or leap **366 × 8**) rule-status pass using only supplied
+  Office-specific research candidates. The expected trilingual
+  **8,760/8,784** combinations are logical coverage targets, never fetched
+  or generated XHTML. Counts distinguish `researchCandidateHours` from
+  `completeTrilingualHours`, independent certification and publication.
+  It uses the existing annual register's known blockers as **advisory**
+  records, not as Office-selection proof.
+- `scripts/office/sweep-annual-research.mjs` — explicit CLI, optionally
+  accepting a reviewed **metadata-only** Office candidate roster via
+  `--office-days`; no source-text documents, HTTP or batch generation.
+  CI runs the no-roster version for 2026 and 2028, writes reports only to
+  ephemeral runner scratch and checks that neither year fabricates coverage.
+
+Without an Office candidate roster the correct results are:
+
+| Logical statistic | 2026 | 2028 |
+| --- | ---: | ---: |
+| Civil days | 365 | 366 |
+| Date × Hour combinations | 2,920 | 2,928 |
+| Date × Hour × language targets | 8,760 | 8,784 |
+| Independently supplied Office-day records | 0 | 0 |
+| Source-backed, trilingual complete Hours | 0 | 0 |
+| Liturgically certified / public Hours | 0 | 0 |
+
+The sweep's zero-roster results show **coverage visibility, not a completed
+annual discrepancy audit**. The old 168 hash-only records stay an isolated
+historical probe. Do not conflate them with source-identified Office days.
+
+Testing:
+
+    node --test tests/divine-office-reviewed-hour-handoff.mjs
+    node --test tests/divine-office-annual-research-sweep.mjs
+    node scripts/office/sweep-annual-research.mjs --year 2026 --out /tmp/office-sweep-2026.json
+
+**Remaining engineering dependencies:** identify the real pinned-source
+`resolveSource` host and expose verified path/revision metadata; build an
+Office-specific candidate register with primary/printed-source identifiers
+and local calendar exceptions; reconcile the older PR #1860 Vespers
+research/commemoration gates rather than maintaining rival production
+arbiters; resolve referenced `@`/`$` source directives; establish
+independently collated Office-section sequences for representative Hours.
+Only then run the annual sweep with genuine Office-day research candidates.
+
+No extra downloads, permanent source-text archives, scheduled scrapes,
+automatic publishing, or financial cost.
