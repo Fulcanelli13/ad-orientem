@@ -1,0 +1,30 @@
+name: Prayer whole-Novena 19-programme component audit
+on:
+  pull_request:
+    paths:
+      - 'tools/pray/audit-whole-novena-components.mjs'
+      - 'data/pray/whole-novena-19-component-audit-20261029.v1.json'
+      - '.github/workflows/pray-whole-novena-component-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify 19 Novena source components and reader pattern census
+        run: node tools/pray/audit-whole-novena-components.mjs --self-test
+      - name: Generate one 19-programme machine-readable audit
+        run: node tools/pray/audit-whole-novena-components.mjs --out /tmp/pray-whole-novena-audit
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prayer-whole-novena-19-component-audit
+          path: /tmp/pray-whole-novena-audit/
+          retention-days: 3
