@@ -72,6 +72,8 @@ jobs:
         with:
           name: st-alphonsus-two-photo-staging-diagnostics
           path: |
+            assets/staged/directory-st-alphonsus/US-st-alphonsus-baltimore-exterior-2018.webp
+            assets/staged/directory-st-alphonsus/US-st-alphonsus-baltimore-nave-2013.webp
             data/geography/research/directory-st-alphonsus-photo-stage-20261029.v1.json
           if-no-files-found: warn
           retention-days: 2
