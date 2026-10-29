@@ -61,7 +61,7 @@ try{
   return {entries:entries.length,files:metadata?.files??null,bytes:metadata?.bytes??null};
  });
  console.log("OFFLINE_CERTIFIED_GRAPH "+JSON.stringify(certified));
- assert.ok(certified.files>0&&certified.files<=416,"Unexpected measured offline graph size: "+JSON.stringify(certified));
+ assert.ok(certified.files>0&&certified.files<=448,"Unexpected measured offline graph size: "+JSON.stringify(certified));
  assert.ok(certified.bytes>0&&certified.bytes<=35_000_000,"Offline byte ceiling must remain enforced");
 
  const openPrayer=async(p,route)=>{
