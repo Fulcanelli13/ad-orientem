@@ -35,7 +35,10 @@ class BulkMediaDiscoveryTests(unittest.TestCase):
         self.assertEqual(len(all_relics),122)
         self.assertEqual(len(set(all_relics)),122)
         self.assertTrue(approved)
-        self.assertTrue(all_places==sorted(all_places),"Place sharding must be stable by canonical ID")
+        geo={x["place_id"]:x for x in mod.load(mod.GEO)["places"]}
+        expected=sorted(all_places,key=lambda id:(0 if geo[id]["address"].get("country_code") in {"MU","IE"} else 1,id))
+        self.assertEqual(all_places,expected,"Priority geography and canonical IDs must stay stable")
+        self.assertTrue(any(geo[id]["address"].get("country_code")=="MU" for id in all_places[:150]))
 
     def test_100_to_200_batch_limits(self):
         for n in (100,150,200):
