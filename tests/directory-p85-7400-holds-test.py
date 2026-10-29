@@ -76,7 +76,7 @@ class P85Tests(unittest.TestCase):
             with allf.open("w") as stream:
                 for r in allrows:stream.write(json.dumps(r)+"\n")
             with holdsf.open("w") as stream:
-                for r in holds:stream.write(json.dumps(r)+"\\n")
+                for r in holds:stream.write(json.dumps(r)+"\n")
             report,original,held=m.source_lineage(allf,holdsf,summary)
             self.assertEqual(len(original),7701)
             self.assertEqual(len(held),7400)
