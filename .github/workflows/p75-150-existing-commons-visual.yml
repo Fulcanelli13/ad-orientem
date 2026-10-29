@@ -1,11 +1,9 @@
 name: P75 existing Commons 150-image visual review (read-only)
+# The initial 150-source acquisition is complete and permanently recorded in
+# p75-150-original-byte-evidence.v1.jsonl. This expensive network audit must
+# not rerun on every editorial or documentation-only PR push.
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - 'data/geography/research/p75-existing-commons-150-image-review.v1.json'
-      - 'tools/curate-existing-commons-p75.py'
-      - '.github/workflows/p75-150-existing-commons-visual.yml'
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
