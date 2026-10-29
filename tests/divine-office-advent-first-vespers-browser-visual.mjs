@@ -294,6 +294,12 @@ try{
     await fp.locator('[data-mode="en"]').click();
     assert.equal(await fp.locator("#card .focus-cue").innerText(),origin);
     assert.match(await fp.locator("#card").innerText(),/Blessed be the Lord my God/);
+    const englishFocus=await fp.locator("#card").evaluate(el=>({
+     top:el.getBoundingClientRect().top,
+     visibleHeight:window.innerHeight
+    }));
+    assert.ok(englishFocus.top>=65&&englishFocus.top<englishFocus.visibleHeight/2,
+     "language switch abandoned the currently focused verse: "+JSON.stringify(englishFocus));
     await shot(fp,"16-focus-mobile-390-psalm-la-en");
     await fp.locator('[data-mode="fr"]').click();
     focusedPsalmShot=true;
