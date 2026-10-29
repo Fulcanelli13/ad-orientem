@@ -73,6 +73,10 @@ export function resolveApprovedPlaceGallery(records,placeId){
       alt_en:text(record.alt_en),alt_fr:text(record.alt_fr),
       label_en:text(record.label_en),label_fr:text(record.label_fr),
       changes_en:text(record.changes_en),changes_fr:text(record.changes_fr),
+      subject_relic_id:text(record.subject_relic_id)||null,
+      depicts_kind:text(record.depicts_kind)||null,
+      photographed_at:text(record.photographed_at)||null,
+      caption_en:text(record.caption_en),caption_fr:text(record.caption_fr),
     }));
   }
   return Object.freeze(out);
@@ -349,12 +353,19 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
       saints:dataset?.saints,
     });
     const originalRelics=new Map(related.relics.map(item=>[item.source_id,item]));
+    // Approved gallery records may also depict the exact relic or its housing.
+    // A photo is never assigned by saint name, proximity or an image keyword.
+    const approvedGallery=resolveApprovedPlaceGallery(dataset?.media?.gallery,placeId);
     const sacredTreasures=Object.freeze(editorial.sacred_objects.map(entry=>{
       const linked=originalRelics.get(entry.id);
       const raw=linked?.raw?.record??null;
       return Object.freeze({
         ...entry,kind:raw?.relic_kind??null,associated_person:raw?.associated_person??null,
         item_id:linked?.item_id??null,lens:linked?.lens??null,
+        image:approvedGallery.find(photo=>photo.subject_relic_id===entry.id &&
+          ["RELIQUARY_HOUSING_REPUTED_RELIC","GLASS_SHRINE_REPORTED_BODILY_REMAINS"].includes(photo.depicts_kind) &&
+          /^\d{4}-\d{2}-\d{2}$/.test(photo.photographed_at||"") &&
+          photo.caption_en&&photo.caption_fr)??null,
         inside_location:resolveRelicIndoorPlacement(dataset?.sacredPhenomena?.indoorPlacement,entry.id,placeId),
         access_notice_en:raw?.access_notice_en??null,
         access_notice_fr:raw?.access_notice_fr??null,
