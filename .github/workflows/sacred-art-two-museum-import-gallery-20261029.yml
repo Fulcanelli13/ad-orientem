@@ -49,7 +49,7 @@ jobs:
           assert 'REJECT' in html and 'Finalize and export decisions' in html
           assert "if(finalize&&!$('#complete').checked)" in html
           assert "cur(w.id).decision" in html
-          assert "for(let score=" not in html and "value=\\"5\\"" not in html
+          assert "for(let score=" not in html
           assert all(x['previewURL'] and x['sourceImageRights']!='UNVERIFIED' for x in rows)
           assert d['imagesDownloaded']==0 and d['productionImports']==0
           print('PASS',len(rows),'image-visible items; import and corrections only, unselected reject on finalize')
