@@ -58,11 +58,11 @@ test("pinned composer Latin iusti and source justi both split losslessly, never 
   for(const sourceText of variants){
     const result=splitAllSoulsPrimeMartyrologyCell(sourceText,"la");
     assert.equal(result.boundaryLine,3);
-    assert.equal(result.martyrology+"\\n"+result.postPrayer,sourceText);
+    assert.equal(result.martyrology+"\n"+result.postPrayer,sourceText);
     assert.match(result.postPrayer,/Deus, véniæ largítor/);
   }
   const duplicate=texts.la.replace(original,
-    "℣. In memória ætérna erunt iusti.\\nV. In memória ætérna erunt justi.");
+    "℣. In memória ætérna erunt iusti.\nV. In memória ætérna erunt justi.");
   assert.throws(()=>splitAllSoulsPrimeMartyrologyCell(duplicate,"la"),
     /OFFICE_PRIME_SPLIT_VERSICLE_BOUNDARY_AMBIGUOUS/);
 });
