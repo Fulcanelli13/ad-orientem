@@ -22,6 +22,9 @@ on:
       - 'src/office/advent-first-vespers-assembled-research.js'
       - 'src/office/advent-first-vespers-rubric-plan.js'
       - 'src/office/advent-first-vespers-latin-print-anchors.js'
+      - 'src/office/advent-first-vespers-1961-magnificat-lexical-check.js'
+      - 'tests/divine-office-advent-first-vespers-1961-magnificat-lexical-check.mjs'
+      - 'data/office/research/advent-i-2026-1961-magnificat-print-hashes.json'
       - 'tests/divine-office-advent-first-vespers-latin-print-anchors.mjs'
       - 'data/office/research/advent-i-2026-latin-print-anchors.json'
       - 'tests/divine-office-advent-first-vespers-rubric-plan.mjs'
@@ -110,6 +113,8 @@ jobs:
           node --test tests/divine-office-advent-first-vespers-rubric-plan.mjs
           node --check src/office/advent-first-vespers-latin-print-anchors.js
           node --test tests/divine-office-advent-first-vespers-latin-print-anchors.mjs
+          node --check src/office/advent-first-vespers-1961-magnificat-lexical-check.js
+          node --test tests/divine-office-advent-first-vespers-1961-magnificat-lexical-check.mjs
           node --check src/office/conditional-source-reader.js
           node --test tests/divine-office-conditional-source-reader.mjs
           node --test tests/divine-office-expanded-temporal-sweep.mjs
