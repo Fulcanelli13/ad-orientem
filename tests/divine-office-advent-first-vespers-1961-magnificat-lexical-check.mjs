@@ -15,7 +15,7 @@ const raw=[
  "1:48 Quia respéxit humilitátem ancíllæ suæ: * ecce enim ex hoc beátam me dicent omnes generatiónes.",
  "1:49 Quia fecit mihi magna qui potens est: * et sanctum nomen ejus.",
  "1:50 Et misericórdia ejus, a progénie in progénies: * timéntibus eum.",
- "1:51 Fecit poténtiam in bráchio suo: * dispérsit supérbos mente cordis sui.",
+ "1:51 Fecit poténtiam in brácchio suo: * dispérsit supérbos mente cordis sui.",
  "1:52 Depósuit poténtes de sede: * et exaltávit húmiles.",
  "1:53 Esuriéntes implévit bonis: * et dívites dimísit inánes.",
  "1:54 Suscépit Israël púerum suum: * recordátus misericórdiæ suæ.",
@@ -23,7 +23,7 @@ const raw=[
 ];
 const fixture=()=>({sourceRevision:PIN,sourcePath:path,language:"la",
  sourceBlobSha:"954dd48b23bd1a2da7c8c79dda64e4a50df57f38",
- text:raw.join("\n")});
+ text:raw.join("\n")+"\n"});
 test("all ten 1961 printed Magnificat verse lexemes match the pinned 1960 Office source",async()=>{
  const r=await review({witness,readCanticleSource:async()=>fixture()});
  assert.equal(r.status,"TEN_PRINTED_MAGNIFICAT_VERSES_LEXICALLY_EQUAL_LIMITED");
