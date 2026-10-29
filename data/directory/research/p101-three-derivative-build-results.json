@@ -1,0 +1,107 @@
+{
+  "schema": "AO_P101_THREE_CHECKSUM_VERIFIED_WEBP_STAGING_RESULTS_V1",
+  "source_input": "data/directory/research/p101-three-source-locked-derivatives-input.json",
+  "source_archive_commit": "a09181edb9bb1e1c1831b80b5e4a701ff006b52b",
+  "status": "STAGING_ONLY_NO_APPROVAL_NO_APP_VISIBILITY",
+  "counts": {
+    "originals_verified": 3,
+    "native_jpeg_decodes": 3,
+    "webp_derivatives_staged": 3,
+    "approved_media_written": 0,
+    "new_photos_live": 0
+  },
+  "contact_sheet": "docs/research/directory/p101-three-mobile-full-frame-review.jpg",
+  "contact_sheet_sha256": "42ebc8f35ccf39e2b194d9b01470ae33df718e11e6c8cf8b3e91d2d1007686d7",
+  "records": [
+    {
+      "row": 230,
+      "place_id": "place:US:st-john-cantius-chicago",
+      "original_archive_commit": "a09181edb9bb1e1c1831b80b5e4a701ff006b52b",
+      "archive_file": "docs/research/directory/p93-bulk-28-originals-20261029/230-original.jpg",
+      "source_sha1_verified": "400197c1d636d0fdd05df92799393afc1d487d0d",
+      "original_sha256_verified": "a9f9b96f62adc257757a1c27419ac3a50ccc37eb605e34ce3b371607a89d4327",
+      "native_decode_ok": true,
+      "original_dimensions": [
+        1267,
+        1810
+      ],
+      "staged_path": "assets/staged/directory-p101/US-st-john-cantius-chicago.webp",
+      "staged_sha256": "c15aa55e6e96e360743aa390a5e59a4cd395f1539eb3304411cf599fcf9b6474",
+      "staged_bytes": 119570,
+      "staged_dimensions": [
+        980,
+        1400
+      ],
+      "applied_changes": "Resize to at most 1400 px, EXIF orientation normalized, RGB WebP quality 85; no crop, painting, recolour, synthesis or montage",
+      "source_claimed_author": "Sjcantius",
+      "source_claimed_license": "CC0-1.0",
+      "source_claimed_license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_file_url": "https://commons.wikimedia.org/wiki/File:Saint_John_Cantius_Church_Chicago.jpg",
+      "status": "STAGED_ONLY_NOT_APPROVED",
+      "native_visual_editorial_review": "PENDING",
+      "mobile_card_qa": "PENDING",
+      "rights_approval": "PENDING_FINAL_PUBLICATION_REVIEW",
+      "approved_media_registry_written": false
+    },
+    {
+      "row": 366,
+      "place_id": "place:IT:san-canziano-padova",
+      "original_archive_commit": "a09181edb9bb1e1c1831b80b5e4a701ff006b52b",
+      "archive_file": "docs/research/directory/p93-bulk-28-originals-20261029/366-original.jpg",
+      "source_sha1_verified": "caed676bbb4d2b4c9af45de9d10ee3016966d7c9",
+      "original_sha256_verified": "d263ebdc6ee79c4c26469efafdf1ed9cacf42ef6bf3eea5785207dd9e6530b6c",
+      "native_decode_ok": true,
+      "original_dimensions": [
+        3967,
+        4782
+      ],
+      "staged_path": "assets/staged/directory-p101/IT-san-canziano-padova.webp",
+      "staged_sha256": "e8451d6e84fb85104d01e9c3d7785c73f36a04f947bc89ba58d2af0e8e2368ed",
+      "staged_bytes": 237110,
+      "staged_dimensions": [
+        1161,
+        1400
+      ],
+      "applied_changes": "Resize to at most 1400 px, EXIF orientation normalized, RGB WebP quality 85; no crop, painting, recolour, synthesis or montage",
+      "source_claimed_author": "Tournasol7",
+      "source_claimed_license": "CC-BY-SA-4.0",
+      "source_claimed_license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_file_url": "https://commons.wikimedia.org/wiki/File:St_Cantianus_church_in_Padua_(2).jpg",
+      "status": "STAGED_ONLY_NOT_APPROVED",
+      "native_visual_editorial_review": "PENDING",
+      "mobile_card_qa": "PENDING",
+      "rights_approval": "PENDING_FINAL_PUBLICATION_REVIEW",
+      "approved_media_registry_written": false
+    },
+    {
+      "row": 330,
+      "place_id": "place:FR:saint-bruno-bordeaux",
+      "original_archive_commit": "a09181edb9bb1e1c1831b80b5e4a701ff006b52b",
+      "archive_file": "docs/research/directory/p93-bulk-28-originals-20261029/330-original.jpg",
+      "source_sha1_verified": "9c8ec29a46fe8c3d27e32a600600e1bcefa3e8d4",
+      "original_sha256_verified": "85711e4b1ad9f2c490c2d9329ea0ae077d160a5a3baeb48d7d3c4f95067ffdd4",
+      "native_decode_ok": true,
+      "original_dimensions": [
+        3408,
+        2520
+      ],
+      "staged_path": "assets/staged/directory-p101/FR-saint-bruno-bordeaux.webp",
+      "staged_sha256": "016dcedbb672a068d38f26cac2e3d420efdabc78c8a6daf5fdc7760332dac7b1",
+      "staged_bytes": 252754,
+      "staged_dimensions": [
+        1400,
+        1035
+      ],
+      "applied_changes": "Resize to at most 1400 px, EXIF orientation normalized, RGB WebP quality 85; no crop, painting, recolour, synthesis or montage",
+      "source_claimed_author": "Marc Ryckaert (MJJR)",
+      "source_claimed_license": "CC-BY-SA-3.0",
+      "source_claimed_license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source_file_url": "https://commons.wikimedia.org/wiki/File:Bordeaux_Saint-Bruno_R02.jpg",
+      "status": "STAGED_ONLY_NOT_APPROVED",
+      "native_visual_editorial_review": "PENDING",
+      "mobile_card_qa": "PENDING",
+      "rights_approval": "PENDING_FINAL_PUBLICATION_REVIEW",
+      "approved_media_registry_written": false
+    }
+  ]
+}
