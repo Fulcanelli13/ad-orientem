@@ -34,6 +34,30 @@ for(const cue of sourceSequences){
   }
  }
 }
+// Existing certified source-only Memento brackets need their full 1962
+// hand/head/eye movements. The concise projection is reused in Missal and
+// LIVE, without adding priest observations, icons or prayer text mutations.
+for(const [cue,phrase] of [
+ ["AO.SM.C0155",/head slightly bowed/],
+ ["AO.SM.C0193",/eyes fixed on the Blessed Sacrament/],
+]){
+ const sourceRow=sung.blocks.flatMap(b=>b.units).find(x=>x.cue_id===cue);
+ assert.ok(sourceRow?.latin.startsWith("[SILENT COMMEMORATION"),cue);
+ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  for(const language of ["en","fr"]){
+   const p=mk(cue,form,language,"RUBRIC");
+   const result=conciseMissalSourceRubric(p,{form,language});
+   assert.ok(result,cue+" needs exact source rubric "+form+" "+language);
+   assert.deepEqual(result.eventIds,[cue==="AO.SM.C0155"?"AO.RUB.C0155.01":"AO.RUB.C0193.01"]);
+   assert.equal(result.observedNow,false);
+   assert.match(result.text,language==="en"?phrase:
+     cue==="AO.SM.C0155"?/tête légèrement inclinée/:/yeux fixés sur le Saint-Sacrement/);
+   const bad=structuredClone(p);
+   bad.publishedMissalRubrics[0].sourceId="EDITORIAL_RESEARCH";
+   assert.equal(conciseMissalSourceRubric(bad,{form,language}),null);
+  }
+ }
+}
 for(const cue of ["AO.SM.C0232","AO.SM.C0234"]){
  for(const language of ["en","fr"]){
   const row=mk(cue,"LOW",language,"TEXT");
@@ -58,6 +82,9 @@ assert.equal(conciseMissalInlineSequence(covered,{form:"GOOD_FRIDAY"}),null);
 const dom=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
 assert.match(dom,/mode==="MISSAL"\?conciseMissalInlineSequence\(shortRubrics/);
 assert.match(dom,/const conciseSource=bookRubric \? conciseMissalSourceRubric\(p/);
+assert.match(dom,/const liveMemento=mode==="LIVE"/);
+assert.match(dom,/event.id==="GM.P.C0204.01"/);
+assert.match(dom,/node.prepend\(note\)/);
 assert.match(dom,/shortAction:typeof event\.shortAction==="string"\?event\.shortAction:null/);
 assert.match(dom,/syncExactIconBackedRubrics\(root,current,mode,iconResolver\)/);
 assert.match(dom,/renderedIcon&&!renderedIcon\.hidden/);
