@@ -34,7 +34,7 @@ assert.equal(inventory.counts.anchorReviewed,anchors.length);
 assert.equal(inventory.counts.notReviewed,unreviewed.length);
 assert.equal(inventory.counts.fullyCertified,other.filter(x=>/FULL.*CERTIF|CERTIF.*FULL/.test(status(x))).length);
 assert.equal(all.length,anchors.length+unreviewed.length+other.length);
-assert.equal(inventory.counts.editionDifferent,anchors.filter(x=>x.collation?.classification!=="SAME_FORM_NORM").length);
+assert.equal(inventory.counts.editionDifferent,anchors.filter(x=>!!x.collation?.uiNotice).length);
 for(const item of other){
   assert.ok(item.collation?.originalEdition && item.collation?.printFacsimile && item.collation?.pageRange && item.collation?.comparisonNotes,
     item.id+": any newly upgraded certification must carry a named print edition, facsimile, pages and comparison notes");
@@ -60,7 +60,7 @@ assert.equal(LITANY_SOURCE_WITNESSES.fr.status,"HISTORICAL_TRANSCRIPTION_UNCOLLA
 assert.equal(BATCH03_LITANY_EDITION_POLICY.major.reader,"SOURCE_LINK_ONLY_PENDING_COMPLETE_TEXT_COLLATION");
 assert.equal(BATCH03_LITANY_EDITION_POLICY.major.liturgical1962Certified,false);
 assert.equal(BATCH03_LITANY_SOURCE_STATUS.offlineComplete1962,"BLOCKED_UNTIL_ENTIRE_EDITION_VERIFIED");
-assert.match(BATCH03_LITANY_EDITION_POLICY.major.rubricConflict,/not doubled|not doubled|not doubled|not doubled|not doubled/i);
+assert.match(BATCH03_LITANY_EDITION_POLICY.major.rubricConflict,/not doubled/i);
 assert.equal(prayEditionWitness("litany_loreto_1962").edition,"LORETO_PRE_1980_FORM");
 assert.equal(prayEditionWitness("litany_loreto_current").edition,"LORETO_CURRENT_2020");
 assert.notEqual(prayEditionWitness("litany_loreto_1962").url,prayEditionWitness("litany_loreto_current").url,
