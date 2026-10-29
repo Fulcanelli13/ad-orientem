@@ -1,0 +1,1012 @@
+{
+  "schema": "AO_CUSTOMS_ALL47_OWNER_ACTION_COMPARISONS_V1",
+  "as_of": "2026-10-29",
+  "status": "SOURCE_BOUNDED_EDITORIAL_COMPARISON_NO_AUTOMATIC_MERGE",
+  "principle": "A shared feast, named saint, ritual object or geography does not establish the same custom. Prior source matches are provisional; vetoes apply to the proposed owner link only, not to the historical observation.",
+  "source_registry": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json",
+  "canonical_registry": "data/customs/customs-atlas-seed.v1.json",
+  "summary": {
+    "owner_links_examined": 47,
+    "owner_links_vetoed": 11,
+    "prior_owner_links_retained_as_comparison": 36,
+    "unpublished_owner_comparisons": 9,
+    "route_prefix_counts": {
+      "OWNER": 22,
+      "STAGED": 6,
+      "WRONG": 11,
+      "RELATED": 7,
+      "RITUAL": 1
+    },
+    "mergers_authorized": 0,
+    "source_claims_deleted": 0
+  },
+  "records": [
+    {
+      "review_id": "AO-CUSTOMS-OWNER-001",
+      "group_id": "CAT-WEISER-A-007",
+      "source_observation_ids": [
+        "WEI58-02-004"
+      ],
+      "source_printed_pages": [
+        27
+      ],
+      "source_claim": "Monday household or personal prayers for the Holy Souls",
+      "prior_proposed_owner": "DEAD-003",
+      "owner_name": "Prayer for the dead on 2 November",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_DATE_VARIANT",
+      "reason_en": "Monday household or personal prayers for the Holy Souls requires an action-level and geographical comparison with Prayer for the dead on 2 November; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-002",
+      "group_id": "CAT-WEISER-A-016",
+      "source_observation_ids": [
+        "WEI58-03-005"
+      ],
+      "source_printed_pages": [
+        36
+      ],
+      "source_claim": "Ember-day remembrance of the departed",
+      "prior_proposed_owner": "DEAD-003",
+      "owner_name": "Prayer for the dead on 2 November",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_DATE_VARIANT",
+      "reason_en": "Ember-day remembrance of the departed requires an action-level and geographical comparison with Prayer for the dead on 2 November; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-003",
+      "group_id": "CAT-WEISER-A-023",
+      "source_observation_ids": [
+        "WEI58-05-003"
+      ],
+      "source_printed_pages": [
+        55
+      ],
+      "source_claim": "Named child lighting the family Advent candle",
+      "prior_proposed_owner": "ADVT-001",
+      "owner_name": "The family Advent wreath",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_ACTION_COMPONENT",
+      "reason_en": "Named child lighting the family Advent candle requires an action-level and geographical comparison with The family Advent wreath; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-004",
+      "group_id": "CAT-WEISER-A-027",
+      "source_observation_ids": [
+        "WEI58-05-008"
+      ],
+      "source_printed_pages": [
+        57
+      ],
+      "source_claim": "Alpine Marian-image visits between homes in Advent",
+      "prior_proposed_owner": "CUST-ADVT-HERBERGSUCHE",
+      "owner_name": "Herbergsuche — Advent Marian-image visits between households",
+      "owner_status": "UNPUBLISHED_WORKING_MASTER",
+      "action_relationship_classification": "STAGED_OWNER_ACTION_MATCH",
+      "reason_en": "Alpine Marian-image visits between homes in Advent requires an action-level and geographical comparison with Herbergsuche — Advent Marian-image visits between households; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-005",
+      "group_id": "CAT-WEISER-A-029",
+      "source_observation_ids": [
+        "WEI58-05-010"
+      ],
+      "source_printed_pages": [
+        58
+      ],
+      "source_claim": "Herbergsuchen lodging-search devotional drama",
+      "prior_proposed_owner": "CUST-ADVT-HERBERGSUCHE",
+      "owner_name": "Herbergsuche — Advent Marian-image visits between households",
+      "owner_status": "UNPUBLISHED_WORKING_MASTER",
+      "action_relationship_classification": "WRONG_OWNER_DISTINCT_ACTION",
+      "reason_en": "A dramatic lodging-search performance is a different action from visits carrying a Marian image.",
+      "prior_owner_match_vetoed": true,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-006",
+      "group_id": "CAT-WEISER-A-047",
+      "source_observation_ids": [
+        "WEI58-08-005"
+      ],
+      "source_printed_pages": [
+        97
+      ],
+      "source_claim": "Priest-blessed Christmas candle displayed at a family meal",
+      "prior_proposed_owner": "CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "owner_name": "The Irish Christmas candle",
+      "owner_status": "UNPUBLISHED_WORKING_MASTER",
+      "action_relationship_classification": "WRONG_OWNER_REGIONAL_IDENTITY",
+      "reason_en": "Slavic Christmas candle at the family table is not attestation of an Irish Christmas candle custom.",
+      "prior_owner_match_vetoed": true,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-007",
+      "group_id": "CAT-WEISER-A-076",
+      "source_observation_ids": [
+        "WEI58-10-014"
+      ],
+      "source_printed_pages": [
+        130
+      ],
+      "source_claim": "Saint John's blessed wine at wedding, departure and death",
+      "prior_proposed_owner": "BLSS-003",
+      "owner_name": "St John the Evangelist — blessing of wine",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_OBJECT_USE_VARIANT",
+      "reason_en": "Saint John's blessed wine at wedding, departure and death requires an action-level and geographical comparison with St John the Evangelist — blessing of wine; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-008",
+      "group_id": "CAT-WEISER-A-092",
+      "source_observation_ids": [
+        "WEI58-12-014"
+      ],
+      "source_printed_pages": [
+        151
+      ],
+      "source_claim": "Portuguese Os Reis Epiphany carolling",
+      "prior_proposed_owner": "EPIP-001",
+      "owner_name": "Epiphany star singers",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "WRONG_OWNER_GEOGRAPHY",
+      "reason_en": "Portuguese Os Reis carol is not equivalent to the German Sternsinger; the Portuguese house-to-house claim was not confirmed on the original indexed passage.",
+      "prior_owner_match_vetoed": true,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-009",
+      "group_id": "CAT-WEISER-A-093",
+      "source_observation_ids": [
+        "WEI58-12-019"
+      ],
+      "source_printed_pages": [
+        153
+      ],
+      "source_claim": "French Magi-cake charity for poor child's education",
+      "prior_proposed_owner": "EPIP-002",
+      "owner_name": "The Epiphany cake and the poor person's portion",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "RELATED_DISTINCT_CHARITY",
+      "reason_en": "Giving money to fund education is a charitable gesture, distinct from eating galette.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-010",
+      "group_id": "CAT-WEISER-B-003",
+      "source_observation_ids": [
+        "WEI58-15-005"
+      ],
+      "source_printed_pages": [
+        190
+      ],
+      "source_claim": "Palm Sunday cemetery visits accompanying the procession",
+      "prior_proposed_owner": "DEAD-001",
+      "owner_name": "Prayerful cemetery visit",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_LOCAL_CALENDAR_VARIANT",
+      "reason_en": "Palm Sunday cemetery visits accompanying the procession requires an action-level and geographical comparison with Prayerful cemetery visit; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-011",
+      "group_id": "CAT-WEISER-B-004",
+      "source_observation_ids": [
+        "WEI58-15-008"
+      ],
+      "source_printed_pages": [
+        192
+      ],
+      "source_claim": "Use of blessed palms for reconciliation between neighbours",
+      "prior_proposed_owner": "DOM-013",
+      "owner_name": "Keeping blessed Palm Sunday branches at home",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "RELATED_DISTINCT_RECONCILIATION",
+      "reason_en": "Use of blessed palms for reconciliation between neighbours requires an action-level and geographical comparison with Keeping blessed Palm Sunday branches at home; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-012",
+      "group_id": "CAT-WEISER-B-005",
+      "source_observation_ids": [
+        "WEI58-15-009"
+      ],
+      "source_printed_pages": [
+        192
+      ],
+      "source_claim": "Slavic Palm Sunday willow tapping / Boże Rany",
+      "prior_proposed_owner": "DOM-013",
+      "owner_name": "Keeping blessed Palm Sunday branches at home",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "WRONG_OWNER_ACTION_DISTINCT",
+      "reason_en": "Willow tapping is not the same action as storing a blessed Palm Sunday branch.",
+      "prior_owner_match_vetoed": true,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-013",
+      "group_id": "CAT-WEISER-B-006",
+      "source_observation_ids": [
+        "WEI58-15-010"
+      ],
+      "source_printed_pages": [
+        192
+      ],
+      "source_claim": "Placing blessed Palm branches in barns and farms",
+      "prior_proposed_owner": "DOM-013",
+      "owner_name": "Keeping blessed Palm Sunday branches at home",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_OBJECT_USE_VARIANT",
+      "reason_en": "Placing blessed Palm branches in barns and farms requires an action-level and geographical comparison with Keeping blessed Palm Sunday branches at home; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-014",
+      "group_id": "CAT-WEISER-B-007",
+      "source_observation_ids": [
+        "WEI58-15-016"
+      ],
+      "source_printed_pages": [
+        195
+      ],
+      "source_claim": "Decorating the Latin Monumento / Altar of Repose",
+      "prior_proposed_owner": "HTHU-001",
+      "owner_name": "Visiting churches on Holy Thursday",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "RELATED_DISTINCT_DECORATION",
+      "reason_en": "Decorating an altar of repose is different from the prescribed prayers or visits at the repository.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-015",
+      "group_id": "CAT-WEISER-B-017",
+      "source_observation_ids": [
+        "WEI58-15-035"
+      ],
+      "source_printed_pages": [
+        207
+      ],
+      "source_claim": "Holy Saturday family Easter egg dyeing and baking",
+      "prior_proposed_owner": "CANDIDATE-EASTER-EGG-CRAFT",
+      "owner_name": "Decorating Easter eggs: pisanki and pysanky",
+      "owner_status": "UNPUBLISHED_WORKING_MASTER",
+      "action_relationship_classification": "STAGED_OWNER_ACTION_MATCH",
+      "reason_en": "Holy Saturday family Easter egg dyeing and baking requires an action-level and geographical comparison with Decorating Easter eggs: pisanki and pysanky; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-016",
+      "group_id": "CAT-WEISER-B-018",
+      "source_observation_ids": [
+        "WEI58-15-037"
+      ],
+      "source_printed_pages": [
+        208
+      ],
+      "source_claim": "Holy Saturday priestly blessing of foods at home",
+      "prior_proposed_owner": "BLSS-004",
+      "owner_name": "Holy Saturday — blessing of Easter foods",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_RITUAL_LOCAL_VARIANT",
+      "reason_en": "Holy Saturday priestly blessing of foods at home requires an action-level and geographical comparison with Holy Saturday — blessing of Easter foods; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-017",
+      "group_id": "CAT-WEISER-B-028",
+      "source_observation_ids": [
+        "WEI58-16-022"
+      ],
+      "source_printed_pages": [
+        221
+      ],
+      "source_claim": "Easter walking pilgrimage with Cross and prayer",
+      "prior_proposed_owner": "EAST-001",
+      "owner_name": "An Easter Monday Emmaus walk",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "WRONG_OWNER_DIFFERENT_DAY",
+      "reason_en": "Easter walking pilgrimages differ in date and action from the published Easter Monday Emmaus custom.",
+      "prior_owner_match_vetoed": true,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-018",
+      "group_id": "CAT-WEISER-B-033",
+      "source_observation_ids": [
+        "WEI58-16-029"
+      ],
+      "source_printed_pages": [
+        223
+      ],
+      "source_claim": "Easter Monday visits to grandparents",
+      "prior_proposed_owner": "EAST-001",
+      "owner_name": "An Easter Monday Emmaus walk",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_REGIONAL_VARIANT",
+      "reason_en": "Easter Monday visits to grandparents requires an action-level and geographical comparison with An Easter Monday Emmaus walk; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-019",
+      "group_id": "CAT-WEISER-B-034",
+      "source_observation_ids": [
+        "WEI58-16-030"
+      ],
+      "source_printed_pages": [
+        224
+      ],
+      "source_claim": "Easter Thursday remembrance of deceased",
+      "prior_proposed_owner": "DEAD-003",
+      "owner_name": "Prayer for the dead on 2 November",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "WRONG_OWNER_DIFFERENT_RITE",
+      "reason_en": "Slavic Easter Thursday remembrance has a distinct rite and date from the All Souls prayer owner.",
+      "prior_owner_match_vetoed": true,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-020",
+      "group_id": "CAT-WEISER-B-038",
+      "source_observation_ids": [
+        "WEI58-17-012"
+      ],
+      "source_printed_pages": [
+        234
+      ],
+      "source_claim": "Giving decorated Easter eggs to children and household staff",
+      "prior_proposed_owner": "CANDIDATE-EASTER-EGG-CRAFT",
+      "owner_name": "Decorating Easter eggs: pisanki and pysanky",
+      "owner_status": "UNPUBLISHED_WORKING_MASTER",
+      "action_relationship_classification": "RELATED_DISTINCT_EGG_GIFTS",
+      "reason_en": "Giving decorated Easter eggs to children and household staff requires an action-level and geographical comparison with Decorating Easter eggs: pisanki and pysanky; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-021",
+      "group_id": "CAT-WEISER-B-039",
+      "source_observation_ids": [
+        "WEI58-17-013"
+      ],
+      "source_printed_pages": [
+        234
+      ],
+      "source_claim": "Red or coloured Easter eggs in regional celebrations",
+      "prior_proposed_owner": "CANDIDATE-EASTER-EGG-CRAFT",
+      "owner_name": "Decorating Easter eggs: pisanki and pysanky",
+      "owner_status": "UNPUBLISHED_WORKING_MASTER",
+      "action_relationship_classification": "STAGED_OWNER_ACTION_MATCH",
+      "reason_en": "Red or coloured Easter eggs in regional celebrations requires an action-level and geographical comparison with Decorating Easter eggs: pisanki and pysanky; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-022",
+      "group_id": "CAT-WEISER-B-042",
+      "source_observation_ids": [
+        "WEI58-17-018"
+      ],
+      "source_printed_pages": [
+        236
+      ],
+      "source_claim": "Shared blessed Easter egg at family breakfast",
+      "prior_proposed_owner": "BLSS-004",
+      "owner_name": "Holy Saturday — blessing of Easter foods",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "RELATED_DISTINCT_BLESSED_FOOD_USE",
+      "reason_en": "Shared blessed Easter egg at family breakfast requires an action-level and geographical comparison with Holy Saturday — blessing of Easter foods; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-023",
+      "group_id": "CAT-WEISER-B-044",
+      "source_observation_ids": [
+        "WEI58-17-023"
+      ],
+      "source_printed_pages": [
+        238
+      ],
+      "source_claim": "Easter paska bread decorated with crosses",
+      "prior_proposed_owner": "BLSS-004",
+      "owner_name": "Holy Saturday — blessing of Easter foods",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_FOOD_VARIANT",
+      "reason_en": "Easter paska bread decorated with crosses requires an action-level and geographical comparison with Holy Saturday — blessing of Easter foods; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-024",
+      "group_id": "CAT-WEISER-B-057",
+      "source_observation_ids": [
+        "WEI58-19-003"
+      ],
+      "source_printed_pages": [
+        248
+      ],
+      "source_claim": "Pentecost decorating the home or church with greenery",
+      "prior_proposed_owner": "CUST-PENTECOST-POLISH-GREENERY",
+      "owner_name": "Pentecost greenery decorating Polish homes",
+      "owner_status": "UNPUBLISHED_WORKING_MASTER",
+      "action_relationship_classification": "STAGED_OWNER_ACTION_MATCH",
+      "reason_en": "Pentecost decorating the home or church with greenery requires an action-level and geographical comparison with Pentecost greenery decorating Polish homes; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-025",
+      "group_id": "CAT-WEISER-B-076",
+      "source_observation_ids": [
+        "WEI58-21-007"
+      ],
+      "source_printed_pages": [
+        262
+      ],
+      "source_claim": "Corpus Christi windows adorned with candles and sacred images",
+      "prior_proposed_owner": "CORP-001",
+      "owner_name": "Flower carpets for Corpus Christi",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_DECORATION_VARIANT",
+      "reason_en": "Corpus Christi windows adorned with candles and sacred images requires an action-level and geographical comparison with Flower carpets for Corpus Christi; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-026",
+      "group_id": "CAT-WEISER-B-077",
+      "source_observation_ids": [
+        "WEI58-21-008"
+      ],
+      "source_printed_pages": [
+        262
+      ],
+      "source_claim": "Birch greenery decorating Corpus Christi homes and routes",
+      "prior_proposed_owner": "CORP-001",
+      "owner_name": "Flower carpets for Corpus Christi",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_DECORATION_VARIANT",
+      "reason_en": "Birch greenery decorating Corpus Christi homes and routes requires an action-level and geographical comparison with Flower carpets for Corpus Christi; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-027",
+      "group_id": "CAT-WEISER-B-084",
+      "source_observation_ids": [
+        "WEI58-21-018"
+      ],
+      "source_printed_pages": [
+        265
+      ],
+      "source_claim": "Flower wreaths for Corpus Christi homes, flags and banners",
+      "prior_proposed_owner": "CORP-001",
+      "owner_name": "Flower carpets for Corpus Christi",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_DECORATION_VARIANT",
+      "reason_en": "Flower wreaths for Corpus Christi homes, flags and banners requires an action-level and geographical comparison with Flower carpets for Corpus Christi; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-028",
+      "group_id": "CAT-WEISER-B-095",
+      "source_observation_ids": [
+        "WEI58-23-007"
+      ],
+      "source_printed_pages": [
+        280
+      ],
+      "source_claim": "Kirchweih/Kirmes church patron or dedication festivities",
+      "prior_proposed_owner": "PATR-001",
+      "owner_name": "French fête patronale / village patronal celebration",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_PATRONAL_VARIANT",
+      "reason_en": "Kirchweih/Kirmes church patron or dedication festivities requires an action-level and geographical comparison with French fête patronale / village patronal celebration; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-029",
+      "group_id": "CAT-WEISER-B-096",
+      "source_observation_ids": [
+        "WEI58-23-010"
+      ],
+      "source_printed_pages": [
+        280
+      ],
+      "source_claim": "Household name-day exemption from chores",
+      "prior_proposed_owner": "NDAY-001",
+      "owner_name": "Baptismal patron's name day",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_NAME_DAY_VARIANT",
+      "reason_en": "Household name-day exemption from chores requires an action-level and geographical comparison with Baptismal patron's name day; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-030",
+      "group_id": "CAT-WEISER-B-097",
+      "source_observation_ids": [
+        "WEI58-23-014"
+      ],
+      "source_printed_pages": [
+        282
+      ],
+      "source_claim": "Anniversary pilgrimage to a martyr's tomb",
+      "prior_proposed_owner": "DEV-006",
+      "owner_name": "Pilgrimage to a shrine or holy place",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_PILGRIMAGE_VARIANT",
+      "reason_en": "Anniversary pilgrimage to a martyr's tomb requires an action-level and geographical comparison with Pilgrimage to a shrine or holy place; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-031",
+      "group_id": "CAT-WEISER-B-101",
+      "source_observation_ids": [
+        "WEI58-24-004"
+      ],
+      "source_printed_pages": [
+        289
+      ],
+      "source_claim": "Assumption field procession with priest",
+      "prior_proposed_owner": "MARI-001",
+      "owner_name": "French Assumption Marian processions",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_ASSUMPTION_REGIONAL_VARIANT",
+      "reason_en": "Assumption field procession with priest requires an action-level and geographical comparison with French Assumption Marian processions; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-032",
+      "group_id": "CAT-WEISER-B-105",
+      "source_observation_ids": [
+        "WEI58-24-014"
+      ],
+      "source_printed_pages": [
+        291
+      ],
+      "source_claim": "Blessing fishing vessels and sea at Assumption",
+      "prior_proposed_owner": "MARI-001",
+      "owner_name": "French Assumption Marian processions",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "RELATED_DISTINCT_BLESSING",
+      "reason_en": "The clerical blessing of boats or sea is distinct from the Assumption Marian procession itself.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-033",
+      "group_id": "CAT-WEISER-B-128",
+      "source_observation_ids": [
+        "WEI58-26-005"
+      ],
+      "source_printed_pages": [
+        309
+      ],
+      "source_claim": "Seventh- and thirtieth-day prayers for deceased",
+      "prior_proposed_owner": "DEAD-003",
+      "owner_name": "Prayer for the dead on 2 November",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "WRONG_OWNER_DATE_ACTION",
+      "reason_en": "Memorial observance on the 7th and 30th days after death is different from the calendar feast of All Souls.",
+      "prior_owner_match_vetoed": true,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-034",
+      "group_id": "CAT-WEISER-B-130",
+      "source_observation_ids": [
+        "WEI58-26-010"
+      ],
+      "source_printed_pages": [
+        311
+      ],
+      "source_claim": "Cleaning and decorating graves before All Souls",
+      "prior_proposed_owner": "DEAD-001",
+      "owner_name": "Prayerful cemetery visit",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_CEMETERY_PREPARATION",
+      "reason_en": "Cleaning and decorating graves before All Souls requires an action-level and geographical comparison with Prayerful cemetery visit; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-035",
+      "group_id": "CAT-WEISER-B-131",
+      "source_observation_ids": [
+        "WEI58-26-011"
+      ],
+      "source_printed_pages": [
+        311
+      ],
+      "source_claim": "All Souls graveside lanterns and votive candles",
+      "prior_proposed_owner": "DEAD-001",
+      "owner_name": "Prayerful cemetery visit",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_CEMETERY_LIGHTS",
+      "reason_en": "All Souls graveside lanterns and votive candles requires an action-level and geographical comparison with Prayerful cemetery visit; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-036",
+      "group_id": "CAT-WEISER-B-132",
+      "source_observation_ids": [
+        "WEI58-26-012"
+      ],
+      "source_printed_pages": [
+        311
+      ],
+      "source_claim": "Bell tolling at All Saints dusk to summon prayer",
+      "prior_proposed_owner": "BELL-004",
+      "owner_name": "Glas / death bell",
+      "owner_status": "CONTEXT_ONLY",
+      "action_relationship_classification": "WRONG_OWNER_BELL_FUNCTION",
+      "reason_en": "All Saints dusk bells call to prayer, whereas the prior BELL-004 owner is the death bell or glas.",
+      "prior_owner_match_vetoed": true,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-037",
+      "group_id": "CAT-WEISER-B-133",
+      "source_observation_ids": [
+        "WEI58-26-013"
+      ],
+      "source_printed_pages": [
+        311
+      ],
+      "source_claim": "All Souls family prayer by a retained Candlemas candle",
+      "prior_proposed_owner": "DOM-011",
+      "owner_name": "Keeping blessed Candlemas candles at home",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "RELATED_DISTINCT_CANDLE_USE",
+      "reason_en": "All Souls family prayer by a retained Candlemas candle requires an action-level and geographical comparison with Keeping blessed Candlemas candles at home; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-038",
+      "group_id": "CAT-WEISER-B-135",
+      "source_observation_ids": [
+        "WEI58-26-015"
+      ],
+      "source_printed_pages": [
+        312
+      ],
+      "source_claim": "Brazilian All Souls cemetery visit and candles",
+      "prior_proposed_owner": "DEAD-001",
+      "owner_name": "Prayerful cemetery visit",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_CEMETERY_GEOGRAPHY",
+      "reason_en": "Brazilian All Souls cemetery visit and candles requires an action-level and geographical comparison with Prayerful cemetery visit; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-039",
+      "group_id": "CAT-WEISER-B-136",
+      "source_observation_ids": [
+        "WEI58-26-016"
+      ],
+      "source_printed_pages": [
+        312
+      ],
+      "source_claim": "Puerto Rican All Souls vigil at graves with prayer",
+      "prior_proposed_owner": "DEAD-001",
+      "owner_name": "Prayerful cemetery visit",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_CEMETERY_GEOGRAPHY",
+      "reason_en": "Puerto Rican All Souls vigil at graves with prayer requires an action-level and geographical comparison with Prayerful cemetery visit; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-040",
+      "group_id": "CAT-WEISER-B-137",
+      "source_observation_ids": [
+        "WEI58-26-017"
+      ],
+      "source_printed_pages": [
+        312
+      ],
+      "source_claim": "Philippine grave repair preceding All Souls novena",
+      "prior_proposed_owner": "DEAD-001",
+      "owner_name": "Prayerful cemetery visit",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_CEMETERY_PREPARATION",
+      "reason_en": "Philippine grave repair preceding All Souls novena requires an action-level and geographical comparison with Prayerful cemetery visit; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-041",
+      "group_id": "CAT-WEISER-B-141",
+      "source_observation_ids": [
+        "WEI58-26-022"
+      ],
+      "source_printed_pages": [
+        313
+      ],
+      "source_claim": "All Souls soul bread given to poor and children",
+      "prior_proposed_owner": "DEAD-003",
+      "owner_name": "Prayer for the dead on 2 November",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "WRONG_OWNER_ALMS_VS_PRAYER",
+      "reason_en": "All Souls soul bread and charitable distribution are distinct actions from prayers for the deceased.",
+      "prior_owner_match_vetoed": true,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-042",
+      "group_id": "CAT-WEISER-B-149",
+      "source_observation_ids": [
+        "WEI58-27-002"
+      ],
+      "source_printed_pages": [
+        317
+      ],
+      "source_claim": "Saint Blaise blessed bread sticks / pan bendito",
+      "prior_proposed_owner": "BLSS-001",
+      "owner_name": "St Blaise — blessing of throats",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "WRONG_OWNER_BLESSED_FOOD_VS_THROAT",
+      "reason_en": "Saint Blaise blessed bread is not the rite of blessing throats with crossed candles.",
+      "prior_owner_match_vetoed": true,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-043",
+      "group_id": "CAT-WEISER-B-150",
+      "source_observation_ids": [
+        "WEI58-27-004"
+      ],
+      "source_printed_pages": [
+        318
+      ],
+      "source_claim": "Saint Blaise throat blessing with oil-dipped wick",
+      "prior_proposed_owner": "BLSS-001",
+      "owner_name": "St Blaise — blessing of throats",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "RITUAL_VARIANT_REQUIRES_AUTHORITY",
+      "reason_en": "An oil-dipped-wick regional blessing requires exact ritual authority before 1962 Roman-rite publication.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-044",
+      "group_id": "CAT-WEISER-B-165",
+      "source_observation_ids": [
+        "WEI58-27-031"
+      ],
+      "source_printed_pages": [
+        330
+      ],
+      "source_claim": "Breton fishermen's Saint John fires and crew prayers",
+      "prior_proposed_owner": "CANDIDATE-STJOHN-BONFIRE",
+      "owner_name": "St John Baptist's community bonfire",
+      "owner_status": "UNPUBLISHED_WORKING_MASTER",
+      "action_relationship_classification": "STAGED_OWNER_REGION_MATCH",
+      "reason_en": "Breton fishermen's Saint John fires and crew prayers requires an action-level and geographical comparison with St John Baptist's community bonfire; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-045",
+      "group_id": "CAT-WEISER-B-166",
+      "source_observation_ids": [
+        "WEI58-27-032"
+      ],
+      "source_printed_pages": [
+        330
+      ],
+      "source_claim": "Saint John eve fire wheels and torches in France and Spain",
+      "prior_proposed_owner": "CANDIDATE-STJOHN-BONFIRE",
+      "owner_name": "St John Baptist's community bonfire",
+      "owner_status": "UNPUBLISHED_WORKING_MASTER",
+      "action_relationship_classification": "STAGED_OWNER_FOLKLORE_SPLIT",
+      "reason_en": "Folk fire wheels and claimed protective powers must be separated from prayer at a Catholic Saint John bonfire.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-046",
+      "group_id": "CAT-WEISER-B-173",
+      "source_observation_ids": [
+        "WEI58-28-012"
+      ],
+      "source_printed_pages": [
+        336
+      ],
+      "source_claim": "Carrying a blessed Saint Christopher medal when travelling",
+      "prior_proposed_owner": "SCHR-001",
+      "owner_name": "St Christopher — vehicles and travellers' blessing",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "WRONG_OWNER_OBJECT_VS_VEHICLE",
+      "reason_en": "Carrying a Saint Christopher medal is distinct from the priest's blessing of vehicles.",
+      "prior_owner_match_vetoed": true,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    },
+    {
+      "review_id": "AO-CUSTOMS-OWNER-047",
+      "group_id": "CAT-WEISER-B-177",
+      "source_observation_ids": [
+        "WEI58-28-018"
+      ],
+      "source_printed_pages": [
+        338
+      ],
+      "source_claim": "Saint Anne's nameday observance for Anne",
+      "prior_proposed_owner": "NDAY-001",
+      "owner_name": "Baptismal patron's name day",
+      "owner_status": "PUBLISHED",
+      "action_relationship_classification": "OWNER_NAME_DAY_VARIANT",
+      "reason_en": "Saint Anne's nameday observance for Anne requires an action-level and geographical comparison with Baptismal patron's name day; a shared feast, material object, or devotion is not sufficient for merger.",
+      "prior_owner_match_vetoed": false,
+      "approved_owner_assignment": false,
+      "approved_identity_merge": false,
+      "current_indulgence_work_approved": false,
+      "calendar_publication_approved": false
+    }
+  ]
+}
