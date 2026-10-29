@@ -1,0 +1,44 @@
+name: Prayer Precious Blood 320/390 phone acceptance
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/pray/precious-blood-chaplet-styles.js"
+      - "src/pray/presentation-runtime.js"
+      - "tests/pray-precious-blood-chaplet-b18.mjs"
+      - "tests/pray-chaplets-discovery-phone.mjs"
+      - ".github/workflows/pray-precious-blood-phone.yml"
+  push:
+    branches: [main]
+    paths:
+      - "src/pray/precious-blood-chaplet-styles.js"
+      - "src/pray/presentation-runtime.js"
+      - "tests/pray-precious-blood-chaplet-b18.mjs"
+      - "tests/pray-chaplets-discovery-phone.mjs"
+      - ".github/workflows/pray-precious-blood-phone.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  chaplet-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Preserve source-verified 33-Pater historical chaplet
+        run: node tests/pray-precious-blood-chaplet-b18.mjs
+      - name: 320px and 390px chaplet and source-first phone acceptance
+        run: node tests/pray-chaplets-discovery-phone.mjs
+      - name: Temporary 320px and 390px visuals
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pray-precious-blood-phone-review
+          path: artifacts/rosary-chaplets-discovery/precious-blood-*.png
+          if-no-files-found: ignore
+          retention-days: 3
