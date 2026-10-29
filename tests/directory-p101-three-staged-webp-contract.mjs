@@ -1,0 +1,50 @@
+import assert from "node:assert/strict";
+import {readFileSync,existsSync} from "node:fs";
+import {createHash} from "node:crypto";
+const load=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const input=load("data/directory/research/p101-three-source-locked-derivatives-input.json");
+const built=load("data/directory/research/p101-three-derivative-build-results.json");
+const media=load("data/geography/approved-place-media.v1.json");
+const hash=blob=>createHash("sha256").update(blob).digest("hex");
+assert.equal(input.schema,"AO_P101_SOURCE_PINNED_THREE_DIRECTORY_DERIVATIVES_V1");
+assert.equal(built.schema,"AO_P101_THREE_CHECKSUM_VERIFIED_WEBP_STAGING_RESULTS_V1");
+assert.equal(built.status,"STAGING_ONLY_NO_APPROVAL_NO_APP_VISIBILITY");
+assert.equal(built.records.length,3);
+assert.deepEqual(built.counts,{originals_verified:3,native_jpeg_decodes:3,webp_derivatives_staged:3,approved_media_written:0,new_photos_live:0});
+assert.match(built.source_archive_commit,/^[0-9a-f]{40}$/);
+const contact=readFileSync(new URL("../"+built.contact_sheet,import.meta.url));
+assert.equal(hash(contact),built.contact_sheet_sha256);
+for(const source of input.records){
+ const record=built.records.find(r=>r.place_id===source.place_id);
+ assert.ok(record,"missing stage: "+source.place_id);
+ assert.equal(record.row,source.row);
+ assert.equal(record.archive_file,input.source_archive_directory+"/"+source.source_file);
+ assert.equal(record.original_archive_commit,built.source_archive_commit);
+ assert.equal(record.source_sha1_verified,source.original_sha1);
+ assert.equal(record.original_sha256_verified,source.original_sha256);
+ assert.deepEqual(record.original_dimensions,[source.original_width,source.original_height]);
+ assert.equal(record.staged_path,source.staged_path);
+ assert.ok(record.staged_path.startsWith("assets/staged/directory-p101/"));
+ assert.equal(record.source_claimed_author,source.creator);
+ assert.equal(record.source_claimed_license,source.license);
+ assert.equal(record.source_claimed_license_url,source.license_url);
+ assert.equal(record.source_file_url,source.source_url);
+ assert.equal(record.status,"STAGED_ONLY_NOT_APPROVED");
+ assert.equal(record.native_decode_ok,true);
+ assert.equal(record.native_visual_editorial_review,"PENDING");
+ assert.equal(record.mobile_card_qa,"PENDING");
+ assert.equal(record.approved_media_registry_written,false);
+ const bytes=readFileSync(new URL("../"+record.staged_path,import.meta.url));
+ assert.equal(bytes.length,record.staged_bytes);
+ assert.equal(hash(bytes),record.staged_sha256);
+ assert.ok(bytes.toString("ascii",0,4)==="RIFF"&&bytes.toString("ascii",8,12)==="WEBP");
+ assert.ok(record.staged_bytes<2_000_000);
+ assert.ok(Math.max(...record.staged_dimensions)<=1400);
+ assert.ok(Math.abs(record.staged_dimensions[0]/record.staged_dimensions[1]-
+                   source.original_width/source.original_height)<0.005,"no crop / aspect warp");
+ assert.equal(media.items.some(m=>m.place_id===source.place_id&&m.status==="APPROVED"),false,
+   "P101 staging may not silently publish");
+ assert.equal(existsSync(new URL("../"+record.staged_path.replace("assets/staged/directory-p101/","assets/approved/place-media/"),import.meta.url)),false);
+}
+assert.equal(built.records.filter(x=>x.status==="STAGED_ONLY_NOT_APPROVED").length,3);
+console.log("P101 PASS — three permanent WebP derivatives, byte hashes and mobile full-frame review; zero new approvals");
