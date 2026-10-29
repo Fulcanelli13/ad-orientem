@@ -1,0 +1,40 @@
+name: Prayer 62 original print pages bulk visual review
+on:
+  pull_request:
+    paths:
+      - 'tools/pray/bulk-original-print-62-visual-review.mjs'
+      - 'src/pray/novena-holy-souls-print-corrections.v1.js'
+      - 'data/pray/original-print-62-bulk-review-20261029.v1.json'
+      - 'data/pray/original-pdf-72-day-text-layer-screen-20261029.v1.json'
+      - '.github/workflows/prayer-62-original-visual-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  review-62:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install free PDF page tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+      - name: Test reproducible 62-prayer scan and safety gates
+        run: node tools/pray/bulk-original-print-62-visual-review.mjs --self-test
+      - name: Render and compare all 62 original book prayer-page windows
+        run: node tools/pray/bulk-original-print-62-visual-review.mjs --out /tmp/pray-original-62
+      - name: Upload one consolidated review, including original page previews
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-62-original-source-review
+          path: |
+            /tmp/pray-original-62/bulk-62-review.json
+            /tmp/pray-original-62/bulk-62-printed-page-review.html
+            /tmp/pray-original-62/*.png
+          retention-days: 3

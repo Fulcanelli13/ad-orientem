@@ -25,7 +25,7 @@ The PDF searchable text has all **nine proper day prayers**, including the disti
 
 | Programme | Day bodies | Scanned book / section | Proof level |
 |---|---:|---|---|
-| Christmas, Pentecost | 18 | Callan/McHugh, *Blessed Be God*, originally copyrighted 1925. [Scanned-book listing](https://en.wikisource.org/wiki/File:Blessedbegodcomp00call.pdf): Christmas printed p **268**, Pentecost p **296** | Printed section locations; image-by-image comparison **pending** |
+| Christmas, Pentecost | 18 | Callan/McHugh, *Blessed Be God*, originally copyrighted 1925. [Scanned-book listing](https://en.wikisource.org/wiki/File:Blessedbegodcomp00call.pdf): Christmas printed p **292**, Pentecost p **296** | Printed section locations; image-by-image comparison **pending** |
 | Immaculate Conception, St Joseph | 18 | Moran, *The Catholic Prayer Book and Manual of Meditations* (1883), [scanned edition](https://archive.org/details/TheCatholicPrayerBookAndManual): Immaculate Conception p **566**, St Joseph p **603**; Corpus Christi p **608**, Sacred Heart p **609** (repeat forms, not part of 72) | Printed section locations; 18 individual-day page ranges **pending** |
 | Annunciation, Seven Sorrows, Assumption | 27 | Hammer, *Mary, Help of Christians* (1909), [scanned edition](https://archive.org/details/MaryHelpOfChristians). Original daily structure [Gutenberg sections III–V](https://www.gutenberg.org/files/33671/33671-h/33671-h.htm) | Historical print source and 27 headings identified; printed day-page numbers and full image comparison **pending** |
 | Holy Souls | 9 | Redemptorist *Manual of the Purgatorian Society* (1894 copyright, 1907 imprimatur), printed pp **199–210** | 9/9 numbered printed day ranges **located**; full image comparison **pending** |

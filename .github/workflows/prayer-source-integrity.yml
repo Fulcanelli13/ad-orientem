@@ -7,6 +7,7 @@ on:
       - 'data/pray/**'
       - 'tests/pray-72-original-print-witness-cohorts.mjs'
       - 'tests/pray-original-print-ten-exception-resolution.mjs'
+      - 'tests/pray-62-bulk-original-pages.mjs'
       - 'tests/pray-original-pdf-text-layer-screen.mjs'
       - 'tests/pray-source-integrity-crosslane-gate.mjs'
       - 'tests/pray-litany-novena-bulk-witness-20261029.mjs'
@@ -35,4 +36,4 @@ jobs:
         with:
           node-version: '22'
       - name: Check Prayer source integrity across existing ledgers
-        run: node tests/pray-source-integrity-crosslane-gate.mjs && node tests/pray-litany-novena-bulk-witness-20261029.mjs && node tests/pray-72-original-print-witness-cohorts.mjs && node tests/pray-original-print-ten-exception-resolution.mjs && node tests/pray-original-pdf-text-layer-screen.mjs
+        run: node tests/pray-source-integrity-crosslane-gate.mjs && node tests/pray-litany-novena-bulk-witness-20261029.mjs && node tests/pray-72-original-print-witness-cohorts.mjs && node tests/pray-original-print-ten-exception-resolution.mjs && node tests/pray-62-bulk-original-pages.mjs && node tests/pray-original-pdf-text-layer-screen.mjs
