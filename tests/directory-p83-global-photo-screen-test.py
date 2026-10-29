@@ -68,6 +68,37 @@ class Screening(unittest.TestCase):
         self.assertEqual(counts["HOLD_UNSUPPORTED_LICENSE_CLAIM"],1)
         self.assertTrue(all(not x["published"] and not x["exact_site_verified"] for x in index))
 
+    def test_same_anchor_duplicate_commons_title_is_not_two_images(self):
+        older,countries,rows=corpus()
+        x=photo("File:Chapelle Saint-Jean-Marie-Vianney Samoreau.jpg","a"*40,"Samoreau")
+        rows[0]["source_media_candidates"]=[x,{**x}]
+        rows[0]["candidate_count"]=2
+        rows[0]["search_status"]="SEARCH_SUCCESS_WITH_CANDIDATES"
+        anchors,index,queue,counts=p83.screen(older,countries,rows)
+        self.assertEqual(len(anchors),2579)
+        self.assertEqual(len(index),1)
+        self.assertEqual(index[0]["repeated_identical_source_results"],1)
+        self.assertFalse(index[0].get("unresolved_same_title_source_conflict",False))
+        self.assertEqual(index[0]["publication"],p83.HOLD)
+        self.assertFalse(index[0]["published"])
+
+    def test_same_title_different_commons_sha_is_explicit_rights_hold(self):
+        older,countries,rows=corpus()
+        title="File:Chapelle Saint-Jean-Marie-Vianney Samoreau.jpg"
+        rows[0]["source_media_candidates"]=[
+            photo(title,"a"*40,"Samoreau"),
+            photo(title,"b"*40,"Samoreau")]
+        rows[0]["candidate_count"]=2
+        rows[0]["search_status"]="SEARCH_SUCCESS_WITH_CANDIDATES"
+        anchors,index,queue,counts=p83.screen(older,countries,rows)
+        self.assertEqual(len(index),1)
+        self.assertEqual(len(queue),0)
+        self.assertEqual(index[0]["screening_disposition"],
+                         "HOLD_CONFLICTING_COMMONS_SOURCE_REVISIONS")
+        self.assertEqual(index[0]["conflicting_source_claims"][0]["original_sha1_claim"],"b"*40)
+        self.assertFalse(index[0]["rights_independently_cleared"])
+        self.assertEqual(counts["HOLD_CONFLICTING_COMMONS_SOURCE_REVISIONS"],1)
+
     def test_valid_locality_gives_research_preview_not_approval(self):
         older,countries,rows=corpus()
         rows[0]["source_media_candidates"]=[photo("File:Chapelle Saint-Jean-Marie-Vianney Samoreau.jpg","a"*40,"Samoreau")]
