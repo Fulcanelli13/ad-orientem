@@ -47,7 +47,7 @@ const ACTIONS=Object.freeze({
  "RAISES EYES AND HANDS":["The priest raises his eyes and hands.","Le prêtre élève les yeux et les mains."],
  "RECEIVES CHALICE":["The priest receives the Precious Blood.","Le prêtre communie au Précieux Sang."],
  "RECEIVES HOST":["The priest receives the Sacred Host.","Le prêtre communie à la sainte Hostie."],
- "REMEMBERS THE DEAD":["The priest joins his hands before his breast and raises them towards his face; with his eyes fixed upon the Blessed Sacrament, he commemorates the dead, then extends his hands.","Le prêtre joint les mains devant la poitrine et les élève vers le visage ; les yeux fixés sur le Saint-Sacrement, il fait mémoire des défunts, puis étend les mains."],
+ "REMEMBERS THE DEAD":["The priest extends and joins his hands before his breast, then raises them towards his face; with his eyes fixed upon the Blessed Sacrament, he commemorates the dead, then extends his hands.","Le prêtre étend et joint les mains devant la poitrine, puis les élève vers le visage ; les yeux fixés sur le Saint-Sacrement, il fait mémoire des défunts, puis étend les mains."],
  "REMEMBERS THE LIVING":["The priest raises and joins his hands towards his face or breast, pauses with head slightly bowed to commemorate the living, then extends his hands.","Le prêtre élève et joint les mains vers le visage ou la poitrine ; la tête légèrement inclinée, il fait mémoire des vivants, puis étend les mains."],
  "REPLACES AND COVERS CHALICE":["The priest replaces and covers the chalice.","Le prêtre repose et recouvre le calice."],
  "REPLACES HOST":["The priest replaces the Sacred Host.","Le prêtre repose la sainte Hostie."],
