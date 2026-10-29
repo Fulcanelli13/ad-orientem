@@ -64,7 +64,7 @@ assert.match(pres,/\<article class="aoP435930Prayer \$\{S\.rosary\.recitation/,
  "Preserve the historical litany text's canonical prayer card");
 assert.match(pres,/view==='litany'&&LIT\.use==='private'/,
  "Session English/French switching must not publish public rites");
-assert.match(litanyStyles,/data-ao-devotional-owner="litany"\] \.aoDevoCardScroll \.aoP435930LitanyLine\{/,
+assert.match(litanyStyles,/data-ao-devotional-owner="litany"\] \.aoDevoCardScroll \.aoLitanyInvocation\{/,
  "The reader typography must be limited to the historical private Litany");
 assert.match(litanyStyles,/clamp\(18px,4\.7vw,22px\)\/1\.66/,
  "Historical litany source text must remain at least 18px");
