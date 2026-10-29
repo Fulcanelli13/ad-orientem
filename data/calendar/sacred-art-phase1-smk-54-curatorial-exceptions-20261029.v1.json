@@ -1,0 +1,492 @@
+{
+  "schema": "AO_SACRED_ART_SMK_54_CREATOR_AND_WORK_STRUCTURE_EXCEPTIONS_V1",
+  "asOf": "2026-10-29",
+  "sourceOfficial": "data/calendar/sacred-art-phase1-smk-54-official-object-report-20261029.v1.json",
+  "sourceGitBlobSha": "5fbef7d12b27d756cb16c3f4bcb664c0d26bb738",
+  "counts": {
+    "officialRecords": 54,
+    "creatorAttributionQualifierOrHistoryReview": 18,
+    "historicSourceFlaggedCreators": 5,
+    "physicalGroupLeads": 3,
+    "canonical383NewLinks": 0,
+    "releaseApprovals": 0
+  },
+  "authorRules": [
+    "Historic former ascriptions are not the current artist; preserve as attribution history only",
+    "An attributed-to, follower-of, workshop-of, imitator-of or copy-after role must not be converted into autograph attribution",
+    "Names and qualifiers in source are preserved verbatim, pending appropriate EN/FR copy review",
+    "Editorial IMPORT/IMPORT_WITH_CORRECTIONS choices are immutable; publication/photo QA is separate"
+  ],
+  "artistReviewQueue": [
+    {
+      "sourceId": "smk:KMS387",
+      "accession": "KMS387",
+      "originalDecision": "IMPORT",
+      "title": "St Matthew the Evangelist",
+      "frozenArtist": "Carracci, Annibale",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Carracci, Annibale",
+          "creatorRole": "copy after",
+          "creatorQualifier": "copy after"
+        }
+      ],
+      "originalMuseumSourceHash": "9a53c5f61eba42c148f42ad0a4f9c35375c32023ccc15e8fe87d63f5e7f66be2",
+      "currentMuseumObjectNumber": "KMS387",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMS3924",
+      "accession": "KMS3924",
+      "originalDecision": "IMPORT",
+      "title": "Christ Driving the Traders from the Temple",
+      "frozenArtist": "Bosch, Hieronymus",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Bosch, Hieronymus",
+          "creatorRole": "follower of",
+          "creatorQualifier": null
+        },
+        {
+          "creator": "Bruegel (I), Pieter",
+          "creatorRole": "earlier ascribed to",
+          "creatorQualifier": "earlier ascribed to"
+        }
+      ],
+      "originalMuseumSourceHash": "6b4f18a22d63595fc50ff1c9870eead62c79a5c0a5476de49b0190603de69ec6",
+      "currentMuseumObjectNumber": "KMS3924",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMS4550",
+      "accession": "KMS4550",
+      "originalDecision": "IMPORT_WITH_CORRECTIONS",
+      "title": "Judith with the Head of Holophernes",
+      "frozenArtist": "Giordano, Luca",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Giordano, Luca",
+          "creatorRole": "follower of",
+          "creatorQualifier": "follower of"
+        },
+        {
+          "creator": "Matteis, Paolo de",
+          "creatorRole": "earlier ascribed to",
+          "creatorQualifier": "earlier ascribed to"
+        },
+        {
+          "creator": "Giordano, Luca",
+          "creatorRole": "earlier ascribed to",
+          "creatorQualifier": "earlier ascribed to"
+        }
+      ],
+      "originalMuseumSourceHash": "0d01cc127db6b04bc66561422f924db17deae2c149b90b33c3207ce5803a34b5",
+      "currentMuseumObjectNumber": "KMS4550",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMS8561",
+      "accession": "KMS8561",
+      "originalDecision": "IMPORT",
+      "title": "The Good Thief (Saint Dismas)",
+      "frozenArtist": "Ubekendt spansk mester",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Ubekendt spansk mester",
+          "creatorRole": null,
+          "creatorQualifier": null
+        }
+      ],
+      "originalMuseumSourceHash": "4e0c3d4c187346fd3ad0ac43b958fd23c628a2fb4b44ef83ef368a70a48362a5",
+      "currentMuseumObjectNumber": "KMS8561",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMSSP113",
+      "accession": "KMSSP113",
+      "originalDecision": "IMPORT",
+      "title": "Saint Sebastian",
+      "frozenArtist": "Eugenio Cajés; Unknown",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Cajés, Eugenio",
+          "creatorRole": null,
+          "creatorQualifier": null
+        },
+        {
+          "creator": "Ubekendt",
+          "creatorRole": null,
+          "creatorQualifier": null
+        },
+        {
+          "creator": "Lanfranco, Giovanni",
+          "creatorRole": "earlier ascribed to",
+          "creatorQualifier": null
+        }
+      ],
+      "originalMuseumSourceHash": "699a96eb4bc5b354544583ae628f22033bb7e52e72e783079fae2e7eaed493b8",
+      "currentMuseumObjectNumber": "KMSsp113",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMSSP114",
+      "accession": "KMSSP114",
+      "originalDecision": "IMPORT",
+      "title": "The Glorification of Christ surrounded by Saints",
+      "frozenArtist": "Giovanni Carlone; Lanfranco, Giovanni",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Lanfranco, Giovanni",
+          "creatorRole": "earlier ascribed to",
+          "creatorQualifier": null
+        },
+        {
+          "creator": "Carlone, Giovanni",
+          "creatorRole": "attributed to",
+          "creatorQualifier": null
+        }
+      ],
+      "originalMuseumSourceHash": "c5cf2a19d6e6dc95609c6416f39ff13817e78ff9737abf2859232e31915afaa9",
+      "currentMuseumObjectNumber": "KMSsp114",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMSSP124",
+      "accession": "KMSSP124",
+      "originalDecision": "IMPORT",
+      "title": "The Holy Family",
+      "frozenArtist": "Giovanni Battista Tagliasacchi",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Tagliasacchi, Giovanni Battista",
+          "creatorRole": "attributed to",
+          "creatorQualifier": null
+        },
+        {
+          "creator": "Cignani, Carlo",
+          "creatorRole": "earlier ascribed to",
+          "creatorQualifier": null
+        },
+        {
+          "creator": "Polazzo, Francesco",
+          "creatorRole": "earlier ascribed to",
+          "creatorQualifier": null
+        }
+      ],
+      "originalMuseumSourceHash": "0b221387e871c50a74292dfaf4c86613a31e1c52a1eafa74061d2f31b44cb2a2",
+      "currentMuseumObjectNumber": "KMSsp124",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMSSP126",
+      "accession": "KMSSP126",
+      "originalDecision": "IMPORT",
+      "title": "Adam and Eve with Cain and Abel",
+      "frozenArtist": "Nicola Vaccaro",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Vaccaro, Nicola",
+          "creatorRole": "attributed to",
+          "creatorQualifier": null
+        },
+        {
+          "creator": "Cignani, Carlo",
+          "creatorRole": "earlier ascribed to",
+          "creatorQualifier": null
+        }
+      ],
+      "originalMuseumSourceHash": "08ca6804c0bb22298e2b0a6c029a5509421175daa9fbd3468b9a527d14d135a8",
+      "currentMuseumObjectNumber": "KMSsp126",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMSSP186",
+      "accession": "KMSSP186",
+      "originalDecision": "IMPORT",
+      "title": "Christ on the Cross",
+      "frozenArtist": "Peter Paul Rubens",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Rubens, Peter Paul",
+          "creatorRole": "attributed to",
+          "creatorQualifier": null
+        },
+        {
+          "creator": "Momper, Joos de II",
+          "creatorRole": "imitator of",
+          "creatorQualifier": null
+        }
+      ],
+      "originalMuseumSourceHash": "1e6648012dcedf12325f6829832d6c86677e4cf7179f355ef2dd0c9cd999e343",
+      "currentMuseumObjectNumber": "KMSsp186",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMSSP230",
+      "accession": "KMSSP230",
+      "originalDecision": "IMPORT",
+      "title": "The Coronation of the Virgin",
+      "frozenArtist": "Cornelis Schut",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Schut, Cornelis",
+          "creatorRole": "attributed to",
+          "creatorQualifier": null
+        }
+      ],
+      "originalMuseumSourceHash": "8f05853940abde3658cd336138b3a1e051ff9c076e02f1c78f845255c3d5ab37",
+      "currentMuseumObjectNumber": "KMSsp230",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMSSP234",
+      "accession": "KMSSP234",
+      "originalDecision": "IMPORT",
+      "title": "Christ blessing little Children. Suffer Little Children to Come unto me",
+      "frozenArtist": "Jacob Jordaens",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Jordaens, Jacob",
+          "creatorRole": "attributed to",
+          "creatorQualifier": null
+        }
+      ],
+      "originalMuseumSourceHash": "ce7270dda7b935cb4fe302baded34b0da99c960e7a4f316490012b78560b9d08",
+      "currentMuseumObjectNumber": "KMSsp234",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMSSP259",
+      "accession": "KMSSP259",
+      "originalDecision": "IMPORT",
+      "title": "The Adoration of the Shepherds",
+      "frozenArtist": "Jan Boeckhorst",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Boeckhorst, Jan",
+          "creatorRole": "attributed to",
+          "creatorQualifier": null
+        }
+      ],
+      "originalMuseumSourceHash": "72a1e2659c3b97193f9dbee5996f32d7346a5c71cdb9f3efdb020d384889b825",
+      "currentMuseumObjectNumber": "KMSsp259",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMSSP28",
+      "accession": "KMSSP28",
+      "originalDecision": "IMPORT",
+      "title": "The Adoration of the Shepherds",
+      "frozenArtist": "Giuseppe Bartolomeo Chiari",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Chiari, Giuseppe Bartolomeo",
+          "creatorRole": null,
+          "creatorQualifier": null
+        },
+        {
+          "creator": "Masucci, Lorenzo",
+          "creatorRole": "earlier ascribed to",
+          "creatorQualifier": "earlier ascribed to"
+        },
+        {
+          "creator": "Maratti, Carlo",
+          "creatorRole": "earlier ascribed to",
+          "creatorQualifier": "earlier ascribed to"
+        }
+      ],
+      "originalMuseumSourceHash": "4f7e47ae4d5d799ecdb6c5c63e79f9fd532a77fc25dc696c1e96835d638aa38b",
+      "currentMuseumObjectNumber": "KMSsp28",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMSSP405",
+      "accession": "KMSSP405",
+      "originalDecision": "IMPORT",
+      "title": "Supper at Emmaus",
+      "frozenArtist": "Rembrandt van Rijn (værksted); Rembrandt van Rijn",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Rembrandt van Rijn (værksted)",
+          "creatorRole": null,
+          "creatorQualifier": null
+        },
+        {
+          "creator": "Rembrandt van Rijn",
+          "creatorRole": "earlier ascribed to",
+          "creatorQualifier": "earlier ascribed to"
+        }
+      ],
+      "originalMuseumSourceHash": "e89b3bfc693019a612cdf92a173370928bcc6b39a4b338c5624bbed88c5a389d",
+      "currentMuseumObjectNumber": "KMSsp405",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMSSP510",
+      "accession": "KMSSP510",
+      "originalDecision": "IMPORT",
+      "title": "The Crucifixion",
+      "frozenArtist": "Flinck, Govert",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Flinck, Govert",
+          "creatorRole": "workshop of",
+          "creatorQualifier": null
+        },
+        {
+          "creator": "Eeckhout, Gerbrand van den",
+          "creatorRole": "earlier ascribed to",
+          "creatorQualifier": "earlier ascribed to"
+        }
+      ],
+      "originalMuseumSourceHash": "f02995642716cd2e56ad35b9e473dca7a42691a2e9862d0bbbb30f2d95cdc9c3",
+      "currentMuseumObjectNumber": "KMSsp510",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMSSP64",
+      "accession": "KMSSP64",
+      "originalDecision": "IMPORT",
+      "title": "Adam and Eve Lamenting over the Body of Abel",
+      "frozenArtist": "Paolo de Matteis",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Matteis, Paolo de",
+          "creatorRole": null,
+          "creatorQualifier": null
+        },
+        {
+          "creator": "Giordano, Luca",
+          "creatorRole": "earlier ascribed to",
+          "creatorQualifier": "earlier ascribed to"
+        }
+      ],
+      "originalMuseumSourceHash": "d8a93f0b67dfcaabadd057efc4e1e611c73a57709ffb6b42331304df14107dba",
+      "currentMuseumObjectNumber": "KMSsp64",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMSSP712",
+      "accession": "KMSSP712",
+      "originalDecision": "IMPORT",
+      "title": "The Crucifixion",
+      "frozenArtist": "Lucas Cranach (I)",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Cranach (I), Lucas",
+          "creatorRole": null,
+          "creatorQualifier": null
+        },
+        {
+          "creator": "Dürer, Albrecht",
+          "creatorRole": "earlier ascribed to",
+          "creatorQualifier": "earlier ascribed to"
+        },
+        {
+          "creator": "Wolgemut, Michael",
+          "creatorRole": "earlier ascribed to",
+          "creatorQualifier": "earlier ascribed to"
+        }
+      ],
+      "originalMuseumSourceHash": "8e2c9dcf394420eb8dac12430c1ba5b5d260d0f95091e719127aa91c84130028",
+      "currentMuseumObjectNumber": "KMSsp712",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    },
+    {
+      "sourceId": "smk:KMSSP95",
+      "accession": "KMSSP95",
+      "originalDecision": "IMPORT",
+      "title": "The Entombment of Christ",
+      "frozenArtist": "Ubekendt",
+      "authoritativeCreatorProductions": [
+        {
+          "creator": "Ubekendt",
+          "creatorRole": "after model by",
+          "creatorQualifier": "after"
+        },
+        {
+          "creator": "Caravaggio, Michelangelo Merisi da",
+          "creatorRole": "copy after",
+          "creatorQualifier": "after"
+        }
+      ],
+      "originalMuseumSourceHash": "346eb146b0fe779b60ffd3e75d9ccb3aba5ace6f74066602215d624e11359396",
+      "currentMuseumObjectNumber": "KMSsp95",
+      "action": "CURATE_AUTHORSHIP_QUALIFIERS_PRESERVE_EARLIER_ASCRIBED_VS_CURRENT_AND_USER_DECISION",
+      "automaticArtistOverwrite": false,
+      "imageReleaseAllowed": false
+    }
+  ],
+  "physicalGroupLeads": [
+    {
+      "relationshipHypothesis": "TWO_BIBLICAL_SUBJECTS_WITHIN_ONE_TITLED_SOURCE",
+      "sourceIds": [
+        "smk:KMS1168"
+      ],
+      "basis": "Reviewed painting title includes Presentation of Christ and Baptism of Christ; whether two surfaces or scenes is not established here",
+      "status": "RESEARCH_LEAD_ONLY_DO_NOT_SPLIT",
+      "confirmBeforeGrouping": true
+    },
+    {
+      "relationshipHypothesis": "PARADISE_BEFORE_AND_AFTER_FALL_PAIR_CANDIDATE",
+      "sourceIds": [
+        "smk:KMS1898",
+        "smk:KMS1899"
+      ],
+      "basis": "Repeated source artist and corresponding titles; official physical ensemble relationship NOT independently established",
+      "status": "RESEARCH_LEAD_ONLY_DO_NOT_MERGE",
+      "confirmBeforeGrouping": true
+    },
+    {
+      "relationshipHypothesis": "PRODIGAL_SON_NARRATIVE_PAIR_CANDIDATE",
+      "sourceIds": [
+        "smk:KMS6468",
+        "smk:KMS6469"
+      ],
+      "basis": "Repeated source artist and corresponding titles; official physical ensemble relationship NOT independently established",
+      "status": "RESEARCH_LEAD_ONLY_DO_NOT_MERGE",
+      "confirmBeforeGrouping": true
+    }
+  ],
+  "gates": {
+    "originalUserChoicesChanged": false,
+    "physicalArtworkCountPromoted": false,
+    "photoRightsCleared": false,
+    "nativeImagesInspected": false,
+    "productionMutation": false
+  }
+}
