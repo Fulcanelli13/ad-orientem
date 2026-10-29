@@ -415,4 +415,63 @@ if (associatedNGA !== 18 || paintingsNGA !== 126 || officialNGAIDs.size !== 126 
   fail("NGA official CSV research master audit/status mismatch");
 console.log("PASS NGA official Open Data: 126 exact accessions + titles, 18 associated records, zero releases.");
 
+
+const kmskaQueue = load("sacred-art-phase1-kmska-89-official-identity-queue-20261029.v1.json");
+const kmskaSource = museum479.rows.filter(r => r.museum === "kmska");
+const kmskaBySource = new Map(kmskaSource.map(r => [r.sourceId, r]));
+if (kmskaSource.length !== 89 || kmskaQueue.rows.length !== 89 ||
+    kmskaQueue.counts.acceptedConditional !== 89 ||
+    kmskaQueue.counts.accepted !== 56 ||
+    kmskaQueue.counts.conditional !== 33 ||
+    kmskaQueue.counts.legacyIdUnique !== 89 ||
+    kmskaQueue.counts.inventoryStringUnique !== 89 ||
+    kmskaQueue.counts.sourceLegacyUrlAligned !== 89 ||
+    kmskaQueue.counts.knownPriorRelationshipRows !== 5 ||
+    kmskaQueue.counts.knownPriorEnsembleComponentRows !== 1 ||
+    kmskaQueue.counts.sourceRecordsIndependentlyVerified !== 0 ||
+    kmskaQueue.counts.canonical383NewLinks !== 0 ||
+    kmskaQueue.counts.sourceImageApprovals !== 0 ||
+    kmskaQueue.counts.productionImports !== 0)
+  fail("KMSKA 89-source queue counts incorrect");
+let importedKmska = 0, correctedKmska = 0, relationshipKmska = 0, ensembleKmska = 0;
+const kmskaIds = new Set(), kmskaAccessions = new Set();
+for (const r of kmskaQueue.rows) {
+  const frozen = kmskaBySource.get(r.sourceId);
+  if (!frozen || kmskaIds.has(r.sourceId) || kmskaAccessions.has(r.inventoryNumberExactString) ||
+      r.inventoryNumberExactString !== String(frozen.sourceAccession) ||
+      r.legacyKmskaId !== frozen.sourceObjectId ||
+      r.originalUserDecision !== frozen.userDecision || r.batch !== frozen.batch ||
+      r.originalReviewedTitle !== frozen.title ||
+      r.originalReviewedArtist !== frozen.artistAsReviewed ||
+      r.originalLegacyKmskaUrl !== frozen.sourceObjectUrl ||
+      r.urlIdInternallyChecked !== true)
+    fail("KMSKA queue changed a frozen source or accession " + r.sourceId);
+  kmskaIds.add(r.sourceId);
+  kmskaAccessions.add(r.inventoryNumberExactString);
+  if (r.originalUserDecision === "IMPORT") importedKmska++;
+  if (r.originalUserDecision === "IMPORT_WITH_CORRECTIONS") correctedKmska++;
+  if (r.existingIdentityTriage) {
+    relationshipKmska++;
+    if (r.existingIdentityTriage.relation === "ENSEMBLE_COMPONENT") ensembleKmska++;
+  }
+  if (r.currentInstitutionalPageResolved !== false ||
+      r.currentOfficialApiRecordResolved !== false ||
+      r.officialInventoryNumberVerified !== false ||
+      r.officialTitleAndArtistVerified !== false ||
+      r.physicalWorkOrEnsembleVerified !== false ||
+      r.canonical383IdentityLink !== "NO_CONFIRMED_LINK" ||
+      r.sourcePhotographCertified !== false || r.rightsCertified !== false ||
+      r.nativeImageVisualCertified !== false || r.productionRelease !== false)
+    fail("KMSKA queue prematurely certified artwork/source " + r.sourceId);
+}
+if (importedKmska !== 56 || correctedKmska !== 33 ||
+    relationshipKmska !== 5 || ensembleKmska !== 1 ||
+    kmskaQueue.gate.userDecisionsModified !== false ||
+    kmskaQueue.gate.canonical383MasterModified !== false ||
+    kmskaQueue.gate.exactPhotographicLicenceCertified !== false ||
+    kmskaQueue.gate.originalPhotoVisualExamined !== false ||
+    kmskaQueue.gate.productionMutation !== false)
+  fail("KMSKA source review integrity gate changed");
+console.log("PASS KMSKA 89 queued accession records, 33 conditional, 5 preserved relations; zero premature promotions.");
+
 console.log("PASS Sacred Art Phase 1: " + records.length + " reviewed; " + expected.acceptedOrConditional + " accepted/conditional; " + counts.REJECT + " rejected; no production mutations.");
