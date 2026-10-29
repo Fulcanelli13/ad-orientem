@@ -99,7 +99,7 @@ jobs:
             --summary "$dir/p83-worldwide-summary.json" \
             --parts /tmp/p84-all-transport \
             --out /tmp/p84-one-worldwide-editorial
-      - name: Downloadable single campaign: source audit, previews, contact sheets, interactive review
+      - name: Single downloadable campaign with source audit, previews and interactive review
         uses: actions/upload-artifact@v4
         with:
           name: P84-ONE-WORLDWIDE-2579-IDENTITIES-PHOTO-REVIEW
