@@ -10,6 +10,7 @@ import {buildAnnualOfficeReadiness,ANNUAL_OFFICE_HOURS,
 import {reviewOfficeOccurrence,reviewOfficeVespersConcurrence}
  from "./precedence-review.js";
 import {DIVINUM_OFFICIUM_PIN} from "../app/source-transport-compat.js";
+import {planUniversalOfficeKeysForYear} from "./universal-source-descriptors.js";
 export const OFFICE_ANNUAL_SWEEP_SCHEMA="ao.office.annual-selection-sweep.v1";
 const iso=d=>d.toISOString().slice(0,10);
 const nextDay=day=>{const d=new Date(day+"T12:00:00Z");d.setUTCDate(d.getUTCDate()+1);return iso(d)};
@@ -75,6 +76,7 @@ export function sweepAnnualOfficeResearch({year=2026,officeDays=[]}={}){
  if(!Number.isInteger(year)||year<1900||year>2099)
   throw Error("OFFICE_SWEEP_YEAR_INVALID");
  const roster=rosterIndex(officeDays,year),dates=daysOf(year);
+ const pathPlan=planUniversalOfficeKeysForYear(year);
  // Existing annual risk inventory contributes only advisory flags. It does
  // NOT supply a proper Office day or qualify a research candidate.
  const context=buildAnnualOfficeReadiness({year});
@@ -145,6 +147,7 @@ export function sweepAnnualOfficeResearch({year=2026,officeDays=[]}={}){
   daily.push(Object.freeze({
    date,officeCalendarResearchCandidate:candidateOk(occurrence),
    occurrenceStatus:occurrence?.status??"NOT_SUPPLIED",
+   proposedUniversalSourceKeys:pathPlan.days[daily.length].keys,
    hours:Object.freeze(hours)
   }));
  }
@@ -161,6 +164,10 @@ export function sweepAnnualOfficeResearch({year=2026,officeDays=[]}={}){
   researchOnly:true,releaseAuthorized:false,published:0,
   summary:Object.freeze({
    days:dates.length,plannedHours,plannedLocaleSlots,
+   proposedFixedSanctoralPaths:pathPlan.fixedSanctoralPathLeads,
+   proposedAdventTemporalPaths:pathPlan.adventTemporalPathLeads,
+   totalUnverifiedSourcePathLeads:pathPlan.totalProposedSourcePaths,
+   sourceFilesVerifiedByThisSweep:0,
    submittedOfficeResearchDays:roster.size,
    researchCandidateDates:candidateDates,
    sourceWitnessDays,sourceHeadingsObserved,
