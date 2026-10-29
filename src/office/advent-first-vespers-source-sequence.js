@@ -21,7 +21,8 @@ export const ADVENT_FIRST_VESPERS_RESEARCH_SCHEMA="ao.office.advent-i-first-vesp
 const PROPER="Tempora/Adv1-0";
 const PSALTER="Psalterium/Psalmi/Psalmi major";
 const LANGUAGES=Object.freeze(["la","en","fr"]);
-const EXPECTED_PSALMS=Object.freeze([109,110,111,112,113]);
+// BR 166(a): First Vespers use Saturday Psalter, except proper components.
+const SATURDAY_SEGMENTS=Object.freeze([[143,"1-8"],[143,"9-15"],[144,"1-7"],[144,"8-13a"],[144,"13b-21"]]);
 const LITURGICAL_COMPONENTS=Object.freeze([
  ["opening","OPENING","Ordinarium/Vespera#Incipit"],
  ["five-psalmody","PSALMODY",PSALTER+"#Day0 Vespera | "+PROPER+"#Ant Laudes"],
@@ -77,16 +78,20 @@ function normalLines(doc,section,count){
  }
  return lines;
 }
-function psalmNumbers(lines){
- const numbers=[];
+function psalmSegments(lines){
+ const segments=[];
  for(const line of lines){
-  const match=/^(.{2,360});;([0-9]{1,3})$/u.exec(line);
-  if(!match||!SLICE_SOURCE.test(match[1]))return null;
-  numbers.push(Number(match[2]));
+  const m=/^(.{2,360});;(143|144)\\(([^()]{3,30})\\)$/u.exec(line);
+  if(!m||!SLICE_SOURCE.test(m[1]))return null;
+  const normalized=m[3].replace(/[‘’]/gu,"'").replace(/'/gu,"");
+  segments.push(Object.freeze({number:Number(m[2]),range:normalized}));
  }
- if(numbers.length!==5||numbers.some((x,i)=>x!==EXPECTED_PSALMS[i]))return null;
- return numbers;
+ if(segments.length!==5||segments.some((row,i)=>
+   row.number!==SATURDAY_SEGMENTS[i][0]||
+   row.range!==SATURDAY_SEGMENTS[i][1]))return null;
+ return segments;
 }
+
 function sourceSlots(sourceProbed){
  return Object.freeze(LITURGICAL_COMPONENTS.map(([key,role,origin])=>
   Object.freeze({
@@ -120,11 +125,11 @@ export async function reviewAdventFirstVespersSourceSequence({
   if(!safeSource(proper,PROPER,language)||!safeSource(psalter,PSALTER,language))
    return withhold("OFFICE_FIRST_VESPERS_SOURCE_IDENTITY_INVALID");
   const ants=normalLines(proper,"Ant Laudes",5);
-  const psalmLines=normalLines(psalter,"Day0 Vespera",5);
+  const psalmLines=normalLines(psalter,"Day6 Vespera",5);
   if(!ants||!psalmLines)
    return withhold("OFFICE_FIRST_VESPERS_FIVE_SOURCE_ROWS_MISSING:"+language);
-  const numbers=psalmNumbers(psalmLines);
-  if(!numbers)
+  const segments=psalmSegments(psalmLines);
+  if(!segments)
    return withhold("OFFICE_FIRST_VESPERS_PSALM_NUMBER_MISMATCH:"+language);
   if(language==="la"){
    const rubric=proper.map.get("Ant Vespera");
@@ -137,10 +142,10 @@ export async function reviewAdventFirstVespersSourceSequence({
   }
   rowsByLanguage[language]={ants,psalmLines};
  }
- const psalmCandidates=EXPECTED_PSALMS.map((number,i)=>Object.freeze({
-  position:i+1,number,
+ const psalmCandidates=SATURDAY_SEGMENTS.map(([number,sourceRange],i)=>Object.freeze({
+  position:i+1,number,sourceRange,
   psalmSourcePath:"Psalterium/Psalmorum/Psalm"+number,
-  psalmNumberEvidence:PSALTER+"#Day0 Vespera",
+  psalmNumberEvidence:PSALTER+"#Day6 Vespera",
   antiphonSourceEvidence:PROPER+"#Ant Laudes",
   // Each language has its own exact proper and ordinary lines.
   languages:Object.freeze(Object.fromEntries(LANGUAGES.map(lang=>[
@@ -165,7 +170,7 @@ export async function reviewAdventFirstVespersSourceSequence({
   components:sourceSlots(true),
   unresolvedGates:Object.freeze([
    "ORDINARY_OPENING_CONDITIONALS",
-   "PSALM_SOURCE_VERSES_AND_GLORIA_PATRI",
+   "SATURDAY_PSALM_SEGMENTS_AND_GLORIA_PATRI",
    "ANTIPHON_REPETITION_AND_FIRST_VESPERS_1960_RUBRICS",
    "CHAPTER_MACROS",
    "ADVENT_HYMN_AND_DOXOLOGY",
@@ -204,12 +209,13 @@ export async function assembleAdventFirstVespersPsalmodyResearch({
     sourceSequence.published!==false||
     !Array.isArray(sourceSequence.psalmCandidates)||
     sourceSequence.psalmCandidates.length!==5||
-    typeof psalmVerseResolver?.resolvePlainPsalmParallel!=="function")
+    typeof psalmVerseResolver?.resolvePsalmSegmentParallel!=="function")
   return withhold("OFFICE_FIRST_VESPERS_PSALM_VERSE_GATE_INVALID");
  const checked=[];
  for(let i=0;i<5;i++){
   const candidate=sourceSequence.psalmCandidates[i];
-  if(candidate?.number!==EXPECTED_PSALMS[i]||
+  if(candidate?.number!==SATURDAY_SEGMENTS[i][0]||
+     candidate.sourceRange!==SATURDAY_SEGMENTS[i][1]||
      candidate.position!==i+1||
      candidate.psalmSourcePath!=="Psalterium/Psalmorum/Psalm"+candidate.number||
      candidate.psalmVersesFetched!==false||
@@ -220,8 +226,8 @@ export async function assembleAdventFirstVespersPsalmodyResearch({
  let resolved;
  try{
   resolved=await Promise.all(sourceSequence.psalmCandidates.map(
-   candidate=>psalmVerseResolver.resolvePlainPsalmParallel({
-    number:candidate.number
+   candidate=>psalmVerseResolver.resolvePsalmSegmentParallel({
+    number:candidate.number,range:candidate.sourceRange
    })
   ));
  }catch(error){
@@ -231,23 +237,24 @@ export async function assembleAdventFirstVespersPsalmodyResearch({
  }
  for(let i=0;i<5;i++){
   const source=resolved[i],candidate=sourceSequence.psalmCandidates[i];
-  if(source?.schema!=="ao.office.plain-psalm-source-verses.v1"||
-     source.status!=="THREE_LANGUAGE_SOURCE_VERSES_UNVERIFIED"||
+  if(source?.schema!=="ao.office.psalm-source-segment.v1"||
+     source.status!=="THREE_LANGUAGE_SATURDAY_PSALTER_SEGMENT_UNVERIFIED"||
      source.sourceRevision!==DIVINUM_OFFICIUM_PIN||
      source.psalmNumber!==candidate.number||
+     source.range!==candidate.sourceRange||
      source.sourcePath!==candidate.psalmSourcePath||
-     source.rawVersesLocated!==true||
-     source.psalmDoxologyVerified!==false||
-     source.antiphonApplicationVerified!==false||
+     source.sourceVerseSegmentLocated!==true||
+     source.gloriaPatriVerified!==false||
+     source.antiphonPlacementVerified!==false||
      source.publishable!==false||source.published!==false||
      !LANGUAGES.every(lang=>typeof source.texts?.[lang]==="string"&&
       source.texts[lang].trim().startsWith(candidate.number+":")&&
       source.referenceTraces?.[lang]?.[0]?.sourceId===
-        candidate.psalmSourcePath+"#VERSES"))
+        candidate.psalmSourcePath+"#"+candidate.sourceRange))
    return withhold("OFFICE_FIRST_VESPERS_PSALM_VERSE_SOURCE_UNTRUSTED");
   checked.push(Object.freeze({
-   position:i+1,psalmNumber:candidate.number,
-   psalmSourceId:candidate.psalmSourcePath+"#VERSES",
+   position:i+1,psalmNumber:candidate.number,sourceRange:candidate.sourceRange,
+   psalmSourceId:candidate.psalmSourcePath+"#"+candidate.sourceRange,
    antiphonSourceId:PROPER+"#Ant Laudes:"+(i+1),
    languages:Object.freeze(Object.fromEntries(LANGUAGES.map(lang=>[
     lang,Object.freeze({
@@ -263,12 +270,12 @@ export async function assembleAdventFirstVespersPsalmodyResearch({
  }
  return Object.freeze({
   schema:ADVENT_FIRST_VESPERS_RESEARCH_SCHEMA,
-  status:"FIVE_TRILINGUAL_PSALM_VERSE_COMPONENTS_UNVERIFIED",
+  status:"FIVE_SATURDAY_PSALM_SEGMENTS_TRILINGUAL_UNVERIFIED",
   civilDate:sourceSequence.civilDate,officeDate:sourceSequence.officeDate,
   officePart:"FIRST",hour:"VESPERS",
   sourceRevision:DIVINUM_OFFICIUM_PIN,
   psalmVerseComponents: Object.freeze(checked),
-  fivePsalmsReadFromExactSources:true,
+  fiveSaturdayPsalmSegmentsReadFromExactSources:true,
   requiredAntiphonPlacementVerified:false,gloriaPatriVerified:false,
   sourceOnlyNotAnOffice:true,
   appointedOfficeVerified:false,completeHourVerified:false,
