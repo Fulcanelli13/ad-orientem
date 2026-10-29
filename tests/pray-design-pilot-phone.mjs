@@ -75,6 +75,12 @@ try{
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"angelus");
    assert.equal(await page.locator(base+" [data-p435930-pilot-angelus-begin]").count(),1,
     "Prayer-entry Angelus should have the approved optional opening");
+   const group=page.locator(base+' [data-p435930-pilot-angelus-recitation="group"]');
+   assert.equal(await group.count(),1,"F04 entry must expose existing Alone/With others recitation");
+   await group.click();
+   assert.equal(await group.getAttribute("aria-pressed"),"true");
+   assert.equal(await page.evaluate(()=>localStorage.getItem("ao-prayer-recitation-mode")),"group",
+    "Group recitation must reuse the existing saved preference, not create a second engine");
    await page.screenshot({path:resolve(output,"angelus-entry-"+width+".png"),animations:"disabled"});
    await page.locator(base+" [data-p435930-pilot-angelus-begin]").click();
    await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length>=4);
