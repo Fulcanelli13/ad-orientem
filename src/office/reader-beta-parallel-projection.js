@@ -42,6 +42,12 @@ export function projectOfficeBetaParallelHour({draft,handoff}={}){
   handoff.officeSelectionAuthorized!==false||
   handoff.liturgicallyCertified!==false||
   handoff.publishable!==false||handoff.published!==false||
+  handoff.selection?.status!=="RESEARCH_SELECTION"||
+  handoff.selection?.sourceRevision!==PIN||
+  handoff.selection?.date!==handoff.officeDate||
+  handoff.selection?.hour!==handoff.hour||
+  handoff.selection?.officeKey!==handoff.officeKey||
+  !Array.isArray(handoff.selection?.orderedSections)||
   !OFFICE_BETA_HOURS.includes(handoff.hour))
   return hold("EXPLICIT_OFFICE_RESEARCH_APPOINTMENT_REQUIRED");
  if(draft?.schema!==OFFICE_HOUR_DRAFT_SCHEMA||
@@ -61,8 +67,15 @@ export function projectOfficeBetaParallelHour({draft,handoff}={}){
   draft.sections.length<1||draft.sections.length>150||
   draft.sections.length!==draft.sectionCount)
   return hold("PINNED_REVIEWED_SOURCE_HOUR_REQUIRED");
+ if(handoff.selection.orderedSections.length!==draft.sectionCount)
+  return hold("RESEARCH_SECTION_COUNT_CHANGED");
  const blocks=[],seen=new Set();
- for(const source of draft.sections){
+ for(const [i,source] of draft.sections.entries()){
+  const selected=handoff.selection.orderedSections[i];
+  if(!selected||selected.key!==source.key||
+   selected.path+"#"+selected.section!==source.sourceId||
+   selected.role!==source.role)
+   return hold("RESEARCH_SECTION_SOURCE_OWNER_CHANGED");
   if(typeof source?.key!=="string"||!source.key||
    seen.has(source.key)||typeof source.sourceId!=="string"||
    !source.sourceId.includes("#")||
