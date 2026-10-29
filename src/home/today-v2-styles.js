@@ -233,6 +233,20 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 @media(max-width:700px){.aoTodayV2CustomSpotlight{margin:14px 14px 0;padding:16px 5px}}
 
 
+/* The art overlay owns contrast independently of the user's page appearance.
+   No approved art: light canvas + dark ink. Approved art: dark veil + light ink. */
+html[data-ao-appearance-v1="light"] .aoTodayV2ArtMissing .aoTodayV2Art::after{
+ background:linear-gradient(180deg,rgba(246,242,234,.04),rgba(235,227,212,.72))!important
+}
+html[data-ao-appearance-v1="light"] .aoTodayV2ArtMissing .aoTodayV2ArtOverlay h1,
+html[data-ao-appearance-v1="light"] .aoTodayV2ArtMissing .aoTodayV2ArtOverlay .eyebrow{
+ color:#1E242B!important;text-shadow:none!important
+}
+html[data-ao-appearance-v1="light"] .aoTodayV2Frontispiece:not(.aoTodayV2ArtMissing) .aoTodayV2ArtOverlay h1,
+html[data-ao-appearance-v1="light"] .aoTodayV2Frontispiece:not(.aoTodayV2ArtMissing) .aoTodayV2ArtOverlay .eyebrow{
+ color:#F7F2E9!important;text-shadow:0 2px 8px rgba(0,0,0,.88)!important
+}
+
 /* H1.1 — compact Today, three Calendar lenses, source-owned Prayer and appearance. */
 .aoTodayV2 .brandRow{min-height:52px;display:flex;align-items:center;gap:7px}
 .aoTodayV2 .brandText{min-width:0;flex:1}
