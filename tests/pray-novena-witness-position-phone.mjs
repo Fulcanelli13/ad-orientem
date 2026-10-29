@@ -91,6 +91,7 @@ try{
    await en.waitFor({timeout:5000});
    assert.match(await en.locator("small").innerText(),/TÉMOIN SOURCE ANGLAIS/);
    assert.equal(await en.locator("[data-n1-show-en]").count(),1,"English-only witness must retain a reversible control");
+   await page.waitForFunction(()=>document.activeElement?.matches?.("[data-n1-show-en]")===true,null,{timeout:5000});
    assert.equal((await state()).focus,true);
    await en.locator("[data-n1-show-en]").click();
    await page.locator(rootSel+" .aoN1FailClosed").first().waitFor({timeout:5000});
