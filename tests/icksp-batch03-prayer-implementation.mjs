@@ -54,6 +54,10 @@ assert.match(deck,/padding:12px 15px 24dvh/,"Remove the excessive narrow-phone r
 assert.match(adapter,/kind==="litany"\?\(adjacent\?"\.88":"\.76"\)/,"Litany keeps readable .76+ inactive invocations");
 assert.match(adapter,/\(adjacent\?"\.56":"\.30"\)/,"Leave other readers' original focus falloff unchanged");
 
+assert.match(src("src/pray/presentation-runtime.js"),/data-ao-private-litany-invocations="true"/,
+ "Private historical invocations must retain separate source-owned lines");
+assert.match(src("src/pray/presentation-runtime.js"),/aoP435930LitanyPrayer/,
+ "Do not route one-line invocations through the generic prose semantic rewriter");
 const pres=src("src/pray/presentation-runtime.js");
 const traditional=src("src/pray/traditional-pray-runtime.js");
 for(const x of ["batch03LitanyUseOptions","renderBatch03PublicLitanyReference","data-p435930-lit-use","data-p435930-lit-forty","BATCH03_LITANY_SOURCE_STATUS",
