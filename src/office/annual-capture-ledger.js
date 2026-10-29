@@ -127,3 +127,26 @@ export function reconcileAnnualCaptureLedger(existing,incoming){
     throw Error("OFFICE_LEDGER_IMMUTABLE_CONFLICT");
   return Object.freeze({action:"UNCHANGED",ledger:existing});
 }
+
+
+/**
+ * Load a previously SHA-verified capture into the annual inventory without
+ * requiring old ephemeral XHTML files. This is HISTORICAL CAPTURE PROVENANCE,
+ * not a new byte revalidation or a verified translation/proper.
+ */
+export function ledgerToAnnualEvidenceManifest(ledger){
+  validateAnnualCaptureLedger(ledger);
+  return Object.freeze({
+    schema:"ao.office.engine-probe-manifest.v1",
+    sourceRevision:ledger.sourceRevision,
+    researchOnly:true,publicReaderEnabled:false,
+    evidenceOnlyFromHistoricalLedger:true,
+    originalBytesNotRetained:true,
+    counts:{published:0},
+    records:ledger.records.map(r=>({
+      ...r,status:"CAPTURED_UNVERIFIED",envelopePass:true,
+      compositionVerified:false,printedBreviaryCertified:false,
+      languageCompletenessVerified:false,publishable:false
+    }))
+  });
+}
