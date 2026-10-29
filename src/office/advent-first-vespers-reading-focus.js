@@ -132,8 +132,8 @@ export function buildAdventI2026ReadingFocus({preview}={}){
   preview.sourceRevision!==PIN||
   preview.civilDate!=="2026-11-28"||preview.officeDate!=="2026-11-29"||
   preview.officePart!=="FIRST"||preview.calendarScope!=="UNIVERSAL_ONLY"||
-  preview.blockCount!==37||!Array.isArray(preview.blocks)||
-  preview.blocks.length!==37||preview.psalmPortions!==5||
+  preview.blockCount!==38||!Array.isArray(preview.blocks)||
+  preview.blocks.length!==38||preview.psalmPortions!==5||
   preview.antiphonUses!==12||
   preview.doxologyPositionsIncludingOpening!==7||
   preview.sourceCollectEndingOnce!==true||
