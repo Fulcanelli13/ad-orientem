@@ -185,7 +185,8 @@ export function reviewAdventFirstVespers1960RubricPlan({
   slot:"conclusion",sourceTextCollated:false}));
  const sourceAudit=Object.freeze({
   psalmPortions:5,psalmNumbers:Object.freeze(SATURDAY.map(([n])=>n)),
-  gloriaPatriPositions:6,fullAntiphonUsages:12,
+  gloriaPatriPositions:6,openingGloriaPatriPositions:1,
+  totalDoxologyPositionsIncludingOpening:7,fullAntiphonUsages:12,
   preces:0,paterAveAtOpening:0,
   rubricRefs:Object.freeze([
    "BR166a","BR178b","BR179a","BR188","BR190-191",
