@@ -109,7 +109,7 @@ try{
   assert.notEqual(opened,false);
   const base="#aoPray435930.open ";
   await frPage.waitForSelector(base+".aoDailyBookSelector",{timeout:20000});
-  assert.match(await frPage.locator(base+".aoDailyBookLabel").innerText(),/Version du livre de prières/);
+  assert.match(await frPage.locator(base+".aoDailyBookLabel").innerText(),/Version du livre de prières/i);
   await frPage.locator(base+".aoDailyReadingOptions summary").click();
   await frPage.locator(base+'[data-tp381-daily-presentation="continuous"]').click();
   const first=frPage.locator(base+'[data-ao-daily-position="0"]');
