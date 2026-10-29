@@ -1,0 +1,81 @@
+name: Sacred Art - B7 NGA and Walters new 250 painting review
+on:
+  push:
+    branches:
+      - research/sacred-art-b7-20261029
+    paths:
+      - .github/workflows/sacred-art-b7-250-review-20261029.yml
+      - scripts/art/sacred-art-b7-next-review-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-b7-gallery
+  cancel-in-progress: false
+jobs:
+  discover-and-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b7-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run official institutional source scanner and generate B7
+        run: |
+          python -m py_compile scripts/art/sacred-art-b7-next-review-20261029.py
+          python scripts/art/sacred-art-b7-next-review-20261029.py
+      - name: Validate 250 unique official-image cards and all exclusion guards
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          b=Path('data/calendar/sacred-art-b7-official-museum-candidates-20261029.v1.json')
+          assert b.exists(),'B7 metadata not written'
+          d=json.loads(b.read_text(encoding='utf8'))
+          assert len(d['rows'])==250,('B7 not complete',d['counts'])
+          assert d['batchReady'] and d['counts']['priorDistinctReviewIDsExcluded']==933
+          old=set()
+          for fn in [
+            'data/calendar/sacred-art-250-review-source-b3-20261029.v1.json',
+            'data/calendar/sacred-art-b4-multimuseum-working-review-20261029.v1.json',
+            'data/calendar/sacred-art-nga-open-250-b5r-20261029.v1.json',
+            'data/calendar/sacred-art-walters-250-b6-20261029.v1.json']:
+            old|={x['id'] for x in json.loads(Path(fn).read_text())['rows']}
+          p=json.loads(Path('data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json').read_text())
+          old|={x['sourceId'] for k in ('imports','rejects') for x in p[k]}
+          assert len(old)==933
+          ids=[x['id'] for x in d['rows']]
+          assert len(ids)==len(set(ids)) and not (set(ids)&old)
+          assert all(x['previewURL'].startswith('https://') and not x['productionImported'] for x in d['rows'])
+          assert all(x['rightsConflict'] for x in d['rows'] if x['provider']=='Walters')
+          assert all(x['sourceImageRights']=='NGA_EXACT_PUBLISHED_IMAGE_OPENACCESS_1' for x in d['rows'] if x['provider']=='NGA')
+          h=Path('docs/SACRED_ART_NEXT_250_IMPORT_REVIEW_B7_20261029.html').read_text()
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert m and len(json.loads(m.group(1)))==250
+          assert "batchId:'B7'" in h
+          assert "const PAGE_SIZE=50" in h and "seenPages.length<TOTAL_PAGES" in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'Finalize and export decisions' in h
+          assert d['counts']['productionImports']==0 and d['counts']['imagesDownloaded']==0
+          js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert js
+          Path('/tmp/ad-orientem-b7.js').write_text(js.group(1))
+          print('PASS: 250 new, 933 prior excluded, 5 review pages, rights held safely')
+          PY
+          node --check /tmp/ad-orientem-b7.js
+          git diff --check
+      - name: Commit the complete B7 research gallery, without source photographs
+        if: success()
+        run: |
+          git config user.name "Ad Orientem art review"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b7-official-museum-candidates-20261029.v1.json
+          git add docs/SACRED_ART_B7_SOURCE_AND_DUPLICATE_QA_20261029.md
+          git add docs/SACRED_ART_NEXT_250_IMPORT_REVIEW_B7_20261029.html
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): archive verified B7 250-work distinct paginated review"
+          git pull --rebase origin research/sacred-art-b7-20261029
+          git push origin HEAD:research/sacred-art-b7-20261029
