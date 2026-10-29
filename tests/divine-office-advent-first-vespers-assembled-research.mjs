@@ -22,14 +22,14 @@ function fixture(){
   status:"SOURCE_SEQUENCE_COMPONENTS_MAPPED_UNVERIFIED",
   psalmRowsVerifiedAsSourceCandidates:5};
  const psalmody={...shared,schema:ADVENT_FIRST_VESPERS_RESEARCH_SCHEMA,
-  status:"FIVE_TRILINGUAL_PSALM_VERSE_COMPONENTS_UNVERIFIED",
+  status:"FIVE_SATURDAY_PSALM_SEGMENTS_TRILINGUAL_UNVERIFIED",
   gloriaPatriVerified:false,requiredAntiphonPlacementVerified:false,
-  psalmVerseComponents:[109,110,111,112,113].map(number=>({
-   psalmNumber:number,
+  psalmVerseComponents:[[143,"1-8"],[143,"9-15"],[144,"1-7"],[144,"8-13a"],[144,"13b-21"]].map(([number,sourceRange])=>({
+   psalmNumber:number,sourceRange,
    languages:Object.fromEntries(langs.map(lang=>[lang,{
     antiphon:"Antiphon "+lang+" "+number,
     psalmVerses:number+":1 Verse text "+lang,
-    sourceTrace:[trace("Psalterium/Psalmorum/Psalm"+number+"#VERSES",lang)]
+    sourceTrace:[trace("Psalterium/Psalmorum/Psalm"+number+"#"+sourceRange,lang)]
    }]))
   }))};
  const properWitness={...shared,schema:ADVENT_VESPERS_REMAINDER_SCHEMA,
@@ -86,7 +86,7 @@ test("one ordered 10-slot Vespers research artifact joins all available source p
   "magnificat-antiphon","magnificat-canticle","collect",
   "commemorations","conclusion"
  ]);
- assert.equal(r.slots[1].texts.fr[4].verses,"113:1 Verse text fr");
+ assert.equal(r.slots[1].texts.fr[4].verses,"144:1 Verse text fr");
  assert.equal(r.slots[6].texts.la.verses.length,10);
  assert.equal(r.slots[7].texts.fr,"fr source collect");
  assert.equal(r.slots[0].texts,null);
