@@ -1,0 +1,69 @@
+name: Sacred Art - B9 Met 250 pristine sacred paintings
+on:
+  push:
+    branches: [research/sacred-art-b9-met-250-20261029]
+    paths:
+      - scripts/art/sacred-art-b9-met-250-review-20261029.py
+      - .github/workflows/sacred-art-b9-met-250-review-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-art-b9-met-250
+  cancel-in-progress: true
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b9-met-250-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Search official Met 2026 API, verify exact image links and create review
+        run: |
+          python -m py_compile scripts/art/sacred-art-b9-met-250-review-20261029.py
+          python -u scripts/art/sacred-art-b9-met-250-review-20261029.py
+      - name: Validate complete gallery, provenance, no repeats and no production mutation
+        run: |
+          python - <<'PY'
+          import json,re,hashlib
+          from pathlib import Path
+          j=json.loads(Path('data/calendar/sacred-art-b9-met-250-review-source-20261029.v1.json').read_text())
+          rows=j['rows'];c=j['counts']
+          assert j['completeReviewSet'] and len(rows)==250,c
+          assert c['previousReviewIDsExcluded']==1260
+          assert c['productionImports']==c['originalImageDownloads']==0
+          assert len({x['id'] for x in rows})==len({x['previewURL'] for x in rows})==250
+          assert all(x['id']=='met:'+x['objectId'] for x in rows)
+          assert all(x['sourceRights']=='MET_PUBLIC_DOMAIN_TRUE_OPEN_ACCESS_CC0' for x in rows)
+          assert all(x['previewURL'].startswith('https://images.metmuseum.org/CRDImages/') for x in rows)
+          assert all(x['nativeImageURL'].startswith('https://images.metmuseum.org/CRDImages/') for x in rows)
+          assert all(not x['productionImported'] and x['productionOriginalImageQA'] is False for x in rows)
+          h=Path('docs/SACRED_ART_MET_250_IMPORT_REVIEW_B9_20261029.html').read_text()
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert m and json.loads(m.group(1))==rows
+          assert "batchId:'B9'" in h and 'const PAGE_SIZE=50;' in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'seenPages.length<TOTAL_PAGES' in h
+          assert j['selectionHash']==hashlib.sha256(json.dumps([x['id'] for x in rows],separators=(',',':')).encode()).hexdigest()
+          js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert js
+          Path('/tmp/ao-art-b9-met-gallery.js').write_text(js.group(1))
+          print('PASS 250 distinctive Met religious paintings; 1260 earlier reviews excluded')
+          PY
+          node --check /tmp/ao-art-b9-met-gallery.js
+      - name: Commit B9 research files only
+        if: success()
+        run: |
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b9-met-250-review-source-20261029.v1.json
+          git add docs/SACRED_ART_B9_MET_SOURCE_AND_DUPLICATE_QA_20261029.md
+          git add docs/SACRED_ART_MET_250_IMPORT_REVIEW_B9_20261029.html
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): archive Met B9 250 fully validated review cards"
+          git pull --rebase origin research/sacred-art-b9-met-250-20261029
+          git push origin HEAD:research/sacred-art-b9-met-250-20261029
