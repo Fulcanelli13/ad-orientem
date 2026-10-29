@@ -169,6 +169,8 @@ async function refreshBetaSelection(){
  status.textContent="Source-first research preview available; rubrical, translation and reuse-rights approval remain pending.";
  paint();
 }
+betaDate.addEventListener("change",refreshBetaSelection);
+betaHour.addEventListener("change",refreshBetaSelection);
 const names={
  OPENING:"Opening · Deus in adjutorium",
  SEASONAL_OPENING_RESPONSE:"Alleluia",
