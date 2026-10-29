@@ -54,10 +54,22 @@ export function installFiveWoundsChapletStyles(doc=globalThis.document){
 #aoPray435930 .aoFiveWoundsSource a{display:block;color:#c9ac79;font-size:13px;padding:7px 0;min-height:35px}
 #aoPray435930 .aoFiveWounds button:focus-visible,#aoPray435930 .aoFiveWounds summary:focus-visible{outline:2px solid #dac291;outline-offset:3px}
 @media(max-width:420px){
- #aoPray435930 .aoFiveWoundsRail button{min-height:66px;padding:6px 2px;gap:5px}
+ /* In the 320px reader, the app header already identifies the chaplet.
+    Keep the wound identity and instructions, but remove redundant air so
+    the source prayer is visible without a preparatory manual scroll. */
+ #aoPray435930 .aoFiveWounds{padding:8px 10px calc(48px + env(safe-area-inset-bottom))}
+ #aoPray435930 .aoFiveWounds header{margin:0 0 5px}
+ #aoPray435930 .aoFiveWoundsEyebrow{margin:0;letter-spacing:.06em;font-size:10px}
+ #aoPray435930 .aoFiveWounds header h2{font-size:21px;line-height:1.2;margin:3px 0 5px}
+ #aoPray435930 .aoFiveWounds header>p:last-child{font-size:13px;line-height:1.35;margin:0}
+ #aoPray435930 .aoFiveWoundsRail{margin:7px 0 5px}
+ #aoPray435930 .aoFiveWoundsRail button{min-height:66px;padding:5px 2px;gap:5px}
  #aoPray435930 .aoFiveWoundsRail button small{font-size:12px;line-height:1.25}
- #aoPray435930 .aoFiveWoundsBeads{gap:11px}
- #aoPray435930 .aoFiveWoundsPrayerText{line-height:1.6}
+ #aoPray435930 .aoFiveWoundsBeads{gap:11px;margin:12px 0 10px}
+ #aoPray435930 .aoFiveWoundsPrayer{padding:12px 12px 14px}
+ #aoPray435930 .aoFiveWoundsPrayerText{margin:13px 0 5px;line-height:1.55}
+ #aoPray435930 .aoFiveWoundsActions{margin-top:8px}
+ #aoPray435930 .aoFiveWoundsSource{margin-top:12px}
 }
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoFiveWoundsProgress>span{transition:none}}
 `;
