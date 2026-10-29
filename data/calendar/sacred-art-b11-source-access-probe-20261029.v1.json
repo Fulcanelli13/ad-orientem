@@ -1,0 +1,816 @@
+{
+  "schema": "AO_SACRED_ART_B11_SOURCE_ACCESS_PROBE_V1",
+  "date": "2026-10-29",
+  "tests": [
+    {
+      "key": "cma_all",
+      "url": "https://openaccess-api.clevelandart.org/api/artworks/?type=Painting&has_image=1&limit=12&cc0",
+      "http": 200,
+      "contentType": "application/json",
+      "total": 3907,
+      "examples": [
+        {
+          "id": 94979,
+          "title": "Nathaniel Hurd",
+          "type": "Painting",
+          "department": "American Painting and Sculpture",
+          "share_license_status": "CC0",
+          "technique": "oil on canvas",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1915.534/1915.534_web.jpg",
+            "width": "748",
+            "height": "893",
+            "filesize": "402404",
+            "filename": "1915.534_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1915.534/1915.534_print.jpg",
+            "width": "2849",
+            "height": "3400",
+            "filesize": "5904910",
+            "filename": "1915.534_print.jpg"
+          }
+        },
+        {
+          "id": 102578,
+          "title": "Portrait of Dora Wheeler",
+          "type": "Painting",
+          "department": "American Painting and Sculpture",
+          "share_license_status": "CC0",
+          "technique": "oil on canvas",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1921.1239/1921.1239_web.jpg",
+            "width": "939",
+            "height": "893",
+            "filesize": "175673",
+            "filename": "1921.1239_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1921.1239/1921.1239_print.jpg",
+            "width": "3400",
+            "height": "3254",
+            "filesize": "8163185",
+            "filename": "1921.1239_print.jpg"
+          }
+        },
+        {
+          "id": 92937,
+          "title": "Stag at Sharkey's",
+          "type": "Painting",
+          "department": "American Painting and Sculpture",
+          "share_license_status": "CC0",
+          "technique": "oil on canvas",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1922.1133/1922.1133_web.jpg",
+            "width": "1194",
+            "height": "893",
+            "filesize": "152341",
+            "filename": "1922.1133_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1922.1133/1922.1133_print.jpg",
+            "width": "3400",
+            "height": "2542",
+            "filesize": "1240178",
+            "filename": "1922.1133_print.jpg"
+          }
+        },
+        {
+          "id": 151904,
+          "title": "The Biglin Brothers Turning the Stake",
+          "type": "Painting",
+          "department": "American Painting and Sculpture",
+          "share_license_status": "CC0",
+          "technique": "oil on canvas",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1927.1984/1927.1984_web.jpg",
+            "width": "1263",
+            "height": "835",
+            "filesize": "780656",
+            "filename": "1927.1984_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1927.1984/1927.1984_print.jpg",
+            "width": "3400",
+            "height": "2247",
+            "filesize": "5271592",
+            "filename": "1927.1984_print.jpg"
+          }
+        },
+        {
+          "id": 110180,
+          "title": "The Race Track (Death on a Pale Horse)",
+          "type": "Painting",
+          "department": "American Painting and Sculpture",
+          "share_license_status": "CC0",
+          "technique": "oil on canvas",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1928.8/1928.8_web.jpg",
+            "width": "900",
+            "height": "711",
+            "filesize": "190928",
+            "filename": "1928.8_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1928.8/1928.8_print.jpg",
+            "width": "3400",
+            "height": "2685",
+            "filesize": "3014421",
+            "filename": "1928.8_print.jpg"
+          }
+        }
+      ],
+      "keys": [
+        "id",
+        "accession_number",
+        "share_license_status",
+        "tombstone",
+        "current_location",
+        "title",
+        "creation_date",
+        "creation_date_earliest",
+        "creation_date_latest",
+        "artists_tags",
+        "culture",
+        "technique",
+        "support_materials",
+        "department",
+        "collection",
+        "type",
+        "measurements",
+        "dimensions",
+        "state_of_the_work",
+        "edition_of_the_work",
+        "copyright",
+        "inscriptions",
+        "exhibitions",
+        "provenance",
+        "find_spot",
+        "related_works",
+        "former_accession_numbers",
+        "did_you_know",
+        "early_education_description",
+        "artlens_description",
+        "description",
+        "external_resources",
+        "citations",
+        "url",
+        "images",
+        "alternate_images",
+        "creditline",
+        "image_credit",
+        "sketchfab_id",
+        "sketchfab_url"
+      ]
+    },
+    {
+      "key": "cma_christ",
+      "url": "https://openaccess-api.clevelandart.org/api/artworks/?q=Christ&type=Painting&has_image=1&limit=12&cc0",
+      "http": 200,
+      "contentType": "application/json",
+      "total": 100,
+      "examples": [
+        {
+          "id": 84662,
+          "title": "The Orange Christ",
+          "type": "Painting",
+          "department": "Modern European Painting and Sculpture",
+          "share_license_status": "CC0",
+          "technique": "oil on board",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/2020.107/2020.107_web.jpg",
+            "width": "726",
+            "height": "900",
+            "filesize": "373699",
+            "filename": "2020.107_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/2020.107/2020.107_print.jpg",
+            "width": "2741",
+            "height": "3400",
+            "filesize": "3893285",
+            "filename": "2020.107_print.jpg"
+          }
+        },
+        {
+          "id": 78982,
+          "title": "The Resurrection of Christ",
+          "type": "Painting",
+          "department": "European Painting and Sculpture",
+          "share_license_status": "CC0",
+          "technique": "oil on copper",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/2017.192/2017.192_web.jpg",
+            "width": "678",
+            "height": "900",
+            "filesize": "207795",
+            "filename": "2017.192_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/2017.192/2017.192_print.jpg",
+            "width": "2561",
+            "height": "3400",
+            "filesize": "1942238",
+            "filename": "2017.192_print.jpg"
+          }
+        },
+        {
+          "id": 128838,
+          "title": "Altarpiece with The Passion of Christ",
+          "type": "Painting",
+          "department": "Medieval Art",
+          "share_license_status": "CC0",
+          "technique": "oil and gold on wood",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1951.453/1951.453_web.jpg",
+            "width": "1263",
+            "height": "515",
+            "filesize": "173223",
+            "filename": "1951.453_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1951.453/1951.453_print.jpg",
+            "width": "3400",
+            "height": "1386",
+            "filesize": "992114",
+            "filename": "1951.453_print.jpg"
+          }
+        },
+        {
+          "id": 168322,
+          "title": "Icon of the Mother of God and Infant Christ (Virgin Eleousa)",
+          "type": "Painting",
+          "department": "Medieval Art",
+          "share_license_status": "CC0",
+          "technique": "tempera and gold on wood",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/2010.154/2010.154_web.jpg",
+            "width": "659",
+            "height": "900",
+            "filesize": "259013",
+            "filename": "2010.154_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/2010.154/2010.154_print.jpg",
+            "width": "2488",
+            "height": "3400",
+            "filesize": "3175559",
+            "filename": "2010.154_print.jpg"
+          }
+        },
+        {
+          "id": 129386,
+          "title": "Christ on the Cross",
+          "type": "Painting",
+          "department": "European Painting and Sculpture",
+          "share_license_status": "CC0",
+          "technique": "oil on canvas",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1952.222/1952.222_web.jpg",
+            "width": "517",
+            "height": "893",
+            "filesize": "278382",
+            "filename": "1952.222_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1952.222/1952.222_print.jpg",
+            "width": "1970",
+            "height": "3400",
+            "filesize": "4027583",
+            "filename": "1952.222_print.jpg"
+          }
+        }
+      ],
+      "keys": [
+        "id",
+        "accession_number",
+        "share_license_status",
+        "tombstone",
+        "current_location",
+        "title",
+        "creation_date",
+        "creation_date_earliest",
+        "creation_date_latest",
+        "artists_tags",
+        "culture",
+        "technique",
+        "support_materials",
+        "department",
+        "collection",
+        "type",
+        "measurements",
+        "dimensions",
+        "state_of_the_work",
+        "edition_of_the_work",
+        "copyright",
+        "inscriptions",
+        "exhibitions",
+        "provenance",
+        "find_spot",
+        "related_works",
+        "former_accession_numbers",
+        "did_you_know",
+        "early_education_description",
+        "artlens_description",
+        "description",
+        "external_resources",
+        "citations",
+        "url",
+        "images",
+        "alternate_images",
+        "creditline",
+        "image_credit",
+        "sketchfab_id",
+        "sketchfab_url"
+      ]
+    },
+    {
+      "key": "cma_madonna",
+      "url": "https://openaccess-api.clevelandart.org/api/artworks/?q=Madonna&type=Painting&has_image=1&limit=12&cc0",
+      "http": 200,
+      "contentType": "application/json",
+      "total": 32,
+      "examples": [
+        {
+          "id": 139727,
+          "title": "Madonna of Humility",
+          "type": "Painting",
+          "department": "Medieval Art",
+          "share_license_status": "CC0",
+          "technique": "tempera and gold on wood panel",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1963.500/1963.500_web.jpg",
+            "width": "690",
+            "height": "893",
+            "filesize": "515223",
+            "filename": "1963.500_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1963.500/1963.500_print.jpg",
+            "width": "2629",
+            "height": "3400",
+            "filesize": "7039614",
+            "filename": "1963.500_print.jpg"
+          }
+        },
+        {
+          "id": 129218,
+          "title": "Madonna and Child",
+          "type": "Painting",
+          "department": "Medieval Art",
+          "share_license_status": "CC0",
+          "technique": "tempera and gold on poplar panel",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1952.110/1952.110_web.jpg",
+            "width": "563",
+            "height": "893",
+            "filesize": "416959",
+            "filename": "1952.110_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1952.110/1952.110_print.jpg",
+            "width": "2144",
+            "height": "3400",
+            "filesize": "5261480",
+            "filename": "1952.110_print.jpg"
+          }
+        },
+        {
+          "id": 97157,
+          "title": "The Madonna of Humility with the Temptation of Eve",
+          "type": "Painting",
+          "department": "Medieval Art",
+          "share_license_status": "CC0",
+          "technique": "tempera and gold on wood panel",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1916.795/1916.795_web.jpg",
+            "width": "",
+            "height": "",
+            "filesize": "",
+            "filename": "1916.795_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1916.795/1916.795_print.jpg",
+            "width": "",
+            "height": "",
+            "filesize": "",
+            "filename": "1916.795_print.jpg"
+          }
+        },
+        {
+          "id": 152842,
+          "title": "Madonna and Child",
+          "type": "Painting",
+          "department": "Medieval Art",
+          "share_license_status": "CC0",
+          "technique": "oil and gilding on wood panel",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1985.8/1985.8_web.jpg",
+            "width": "627",
+            "height": "900",
+            "filesize": "297170",
+            "filename": "1985.8_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1985.8/1985.8_print.jpg",
+            "width": "2369",
+            "height": "3400",
+            "filesize": "4281352",
+            "filename": "1985.8_print.jpg"
+          }
+        },
+        {
+          "id": 143768,
+          "title": "Madonna and Child Enthroned",
+          "type": "Painting",
+          "department": "Medieval Art",
+          "share_license_status": "CC0",
+          "technique": "tempera and gold on poplar panel",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1968.206/1968.206_web.jpg",
+            "width": "472",
+            "height": "893",
+            "filesize": "332353",
+            "filename": "1968.206_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1968.206/1968.206_print.jpg",
+            "width": "1797",
+            "height": "3400",
+            "filesize": "4777259",
+            "filename": "1968.206_print.jpg"
+          }
+        }
+      ],
+      "keys": [
+        "id",
+        "accession_number",
+        "share_license_status",
+        "tombstone",
+        "current_location",
+        "title",
+        "creation_date",
+        "creation_date_earliest",
+        "creation_date_latest",
+        "artists_tags",
+        "culture",
+        "technique",
+        "support_materials",
+        "department",
+        "collection",
+        "type",
+        "measurements",
+        "dimensions",
+        "state_of_the_work",
+        "edition_of_the_work",
+        "copyright",
+        "inscriptions",
+        "exhibitions",
+        "provenance",
+        "find_spot",
+        "related_works",
+        "former_accession_numbers",
+        "did_you_know",
+        "early_education_description",
+        "artlens_description",
+        "description",
+        "external_resources",
+        "citations",
+        "url",
+        "images",
+        "alternate_images",
+        "creditline",
+        "image_credit",
+        "sketchfab_id",
+        "sketchfab_url"
+      ]
+    },
+    {
+      "key": "cma_biblical",
+      "url": "https://openaccess-api.clevelandart.org/api/artworks/?q=Saint&type=Painting&has_image=1&limit=12&cc0",
+      "http": 200,
+      "contentType": "application/json",
+      "total": 113,
+      "examples": [
+        {
+          "id": 148758,
+          "title": "The Crucifixion of Saint Andrew",
+          "type": "Painting",
+          "department": "European Painting and Sculpture",
+          "share_license_status": "CC0",
+          "technique": "oil on canvas",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1976.2/1976.2_web.jpg",
+            "width": "678",
+            "height": "900",
+            "filesize": "223048",
+            "filename": "1976.2_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1976.2/1976.2_print.jpg",
+            "width": "2563",
+            "height": "3400",
+            "filesize": "2852637",
+            "filename": "1976.2_print.jpg"
+          }
+        },
+        {
+          "id": 149768,
+          "title": "Saint John the Baptist in a Landscape",
+          "type": "Painting",
+          "department": "Medieval Art",
+          "share_license_status": "CC0",
+          "technique": "oil on panel",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1979.80/1979.80_web.jpg",
+            "width": "287",
+            "height": "893",
+            "filesize": "62046",
+            "filename": "1979.80_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1979.80/1979.80_print.jpg",
+            "width": "1145",
+            "height": "3400",
+            "filesize": "2801896",
+            "filename": "1979.80_print.jpg"
+          }
+        },
+        {
+          "id": 113202,
+          "title": "The Holy Family with Saint John the Baptist and Saint Margaret",
+          "type": "Painting",
+          "department": "Medieval Art",
+          "share_license_status": "CC0",
+          "technique": "tempera and oil on wood",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1932.227/1932.227_web.jpg",
+            "width": "900",
+            "height": "900",
+            "filesize": "355762",
+            "filename": "1932.227_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1932.227/1932.227_print.jpg",
+            "width": "3400",
+            "height": "3400",
+            "filesize": "3920474",
+            "filename": "1932.227_print.jpg"
+          }
+        },
+        {
+          "id": 136680,
+          "title": "Saint Jerome",
+          "type": "Painting",
+          "department": "European Painting and Sculpture",
+          "share_license_status": "CC0",
+          "technique": "oil on canvas",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1961.219/1961.219_web.jpg",
+            "width": "693",
+            "height": "893",
+            "filesize": "339844",
+            "filename": "1961.219_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1961.219/1961.219_print.jpg",
+            "width": "2640",
+            "height": "3400",
+            "filesize": "4996100",
+            "filename": "1961.219_print.jpg"
+          }
+        },
+        {
+          "id": 134237,
+          "title": "Virgin and Child with Saint Jerome and Saint Catherine of Alexandria",
+          "type": "Painting",
+          "department": "Medieval Art",
+          "share_license_status": "CC0",
+          "technique": "tempera and gold on wood panel",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1956.719/1956.719_web.jpg",
+            "width": "621",
+            "height": "893",
+            "filesize": "456532",
+            "filename": "1956.719_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1956.719/1956.719_print.jpg",
+            "width": "2364",
+            "height": "3400",
+            "filesize": "6541277",
+            "filename": "1956.719_print.jpg"
+          }
+        }
+      ],
+      "keys": [
+        "id",
+        "accession_number",
+        "share_license_status",
+        "tombstone",
+        "current_location",
+        "title",
+        "creation_date",
+        "creation_date_earliest",
+        "creation_date_latest",
+        "artists_tags",
+        "culture",
+        "technique",
+        "support_materials",
+        "department",
+        "collection",
+        "type",
+        "measurements",
+        "dimensions",
+        "state_of_the_work",
+        "edition_of_the_work",
+        "copyright",
+        "inscriptions",
+        "exhibitions",
+        "provenance",
+        "find_spot",
+        "related_works",
+        "former_accession_numbers",
+        "did_you_know",
+        "early_education_description",
+        "artlens_description",
+        "description",
+        "external_resources",
+        "citations",
+        "url",
+        "images",
+        "alternate_images",
+        "creditline",
+        "image_credit",
+        "sketchfab_id",
+        "sketchfab_url"
+      ]
+    },
+    {
+      "key": "cma_oil",
+      "url": "https://openaccess-api.clevelandart.org/api/artworks/?type=Painting&has_image=1&limit=12&department=European+Painting+and+Sculpture&cc0",
+      "http": 200,
+      "contentType": "application/json",
+      "total": 310,
+      "examples": [
+        {
+          "id": 128391,
+          "title": "Portrait of a Family Playing Music",
+          "type": "Painting",
+          "department": "European Painting and Sculpture",
+          "share_license_status": "CC0",
+          "technique": "oil on canvas",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1951.355/1951.355_web.jpg",
+            "width": "900",
+            "height": "759",
+            "filesize": "188537",
+            "filename": "1951.355_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1951.355/1951.355_print.jpg",
+            "width": "3400",
+            "height": "2867",
+            "filesize": "2369926",
+            "filename": "1951.355_print.jpg"
+          }
+        },
+        {
+          "id": 127571,
+          "title": "Portrait of a Man, Possibly Girolamo Rosati",
+          "type": "Painting",
+          "department": "European Painting and Sculpture",
+          "share_license_status": "CC0",
+          "technique": "oil on canvas",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1950.250/1950.250_web.jpg",
+            "width": "824",
+            "height": "893",
+            "filesize": "534682",
+            "filename": "1950.250_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1950.250/1950.250_print.jpg",
+            "width": "3139",
+            "height": "3400",
+            "filesize": "8148748",
+            "filename": "1950.250_print.jpg"
+          }
+        },
+        {
+          "id": 160885,
+          "title": "Portrait of Tieleman Roosterman",
+          "type": "Painting",
+          "department": "European Painting and Sculpture",
+          "share_license_status": "CC0",
+          "technique": "oil on canvas",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1999.173/1999.173_web.jpg",
+            "width": "664",
+            "height": "893",
+            "filesize": "53872",
+            "filename": "1999.173_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1999.173/1999.173_print.jpg",
+            "width": "2529",
+            "height": "3400",
+            "filesize": "857877",
+            "filename": "1999.173_print.jpg"
+          }
+        },
+        {
+          "id": 117032,
+          "title": "The Sacrifice of Isaac",
+          "type": "Painting",
+          "department": "European Painting and Sculpture",
+          "share_license_status": "CC0",
+          "technique": "oil on wood",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1937.577/1937.577_web.jpg",
+            "width": "697",
+            "height": "900",
+            "filesize": "306442",
+            "filename": "1937.577_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1937.577/1937.577_print.jpg",
+            "width": "2633",
+            "height": "3400",
+            "filesize": "2768419",
+            "filename": "1937.577_print.jpg"
+          }
+        },
+        {
+          "id": 135428,
+          "title": "Hunting near Hartenfels Castle",
+          "type": "Painting",
+          "department": "European Painting and Sculpture",
+          "share_license_status": "CC0",
+          "technique": "oil, originally on wood, transferred to masonite",
+          "web": {
+            "url": "https://openaccess-cdn.clevelandart.org/1958.425/1958.425_web.jpg",
+            "width": "1263",
+            "height": "866",
+            "filesize": "1094651",
+            "filename": "1958.425_web.jpg"
+          },
+          "print": {
+            "url": "https://openaccess-cdn.clevelandart.org/1958.425/1958.425_print.jpg",
+            "width": "3400",
+            "height": "2332",
+            "filesize": "7869098",
+            "filename": "1958.425_print.jpg"
+          }
+        }
+      ],
+      "keys": [
+        "id",
+        "accession_number",
+        "share_license_status",
+        "tombstone",
+        "current_location",
+        "title",
+        "creation_date",
+        "creation_date_earliest",
+        "creation_date_latest",
+        "artists_tags",
+        "culture",
+        "technique",
+        "support_materials",
+        "department",
+        "collection",
+        "type",
+        "measurements",
+        "dimensions",
+        "state_of_the_work",
+        "edition_of_the_work",
+        "copyright",
+        "inscriptions",
+        "exhibitions",
+        "provenance",
+        "find_spot",
+        "related_works",
+        "former_accession_numbers",
+        "did_you_know",
+        "early_education_description",
+        "artlens_description",
+        "description",
+        "external_resources",
+        "citations",
+        "url",
+        "images",
+        "alternate_images",
+        "creditline",
+        "image_credit",
+        "sketchfab_id",
+        "sketchfab_url"
+      ]
+    },
+    {
+      "key": "aic_host",
+      "url": "https://www.artic.edu/iiif/2/b2f3e61e-62a4-7788-1aa4-0b1d631e4914/full/843,/0/default.jpg",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    }
+  ]
+}
