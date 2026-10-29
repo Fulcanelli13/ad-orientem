@@ -76,6 +76,23 @@ for(const name of workflows){
     assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
     assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
     assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
+  }else if(name==="directory-one-shot-locality-replay100.yml"){
+    // Single fixed 100-venue comparative pilot, no app publication or main push.
+    assert.match(source,/push:\s*\n\s*branches:\s*\n\s*-\s*research\/directory-photo-city-replay100-20261029/);
+    assert.match(source,/paths:\s*\n\s*-\s*data\/directory\/research\/\.run-exterior-locality-replay100-20261029\.json/);
+    assert.match(source,/github\.ref == 'refs\/heads\/research\/directory-photo-city-replay100-20261029'/);
+    assert.match(source,/permissions:\s*\n\s*contents:\s*write/i);
+    assert.doesNotMatch(source,/workflow_dispatch:|schedule:\s*\n/);
+    assert.match(source,/--offset 100 --limit 100 --wave exterior/);
+    assert.match(source,/--selection-offset 0 --limit 30/);
+    assert.match(source,/r49-exterior-100-100-locality-v2\.json/);
+    assert.match(source,/STAGED_NOT_PUBLISHED/);
+    assert.match(source,/git push origin HEAD:refs\/heads\/research\/directory-photo-candidates/);
+    assert.match(source,/git push origin HEAD:refs\/heads\/research\/directory-photo-assets/);
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,2);
+    assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+    assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
   }else if(name==="branch-hygiene.yml"){
     // Merged-branch ref deletion is deliberately distinct from mutating app
     // source or restoring old production builds. Enforce the exact safeguards,
