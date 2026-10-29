@@ -115,5 +115,32 @@ assert.equal(calendarStagedPublishedCustomVariants("BLSS-004",v).length,2);
 assert.equal(calendarStagedPublishedCustomVariants("NOT_A_PUBLISHED_CUSTOM",v).length,0);
 assert.throws(()=>calendarStagedPublishedCustomVariants("CORP-001",{records:v.records.slice(0,20)}),TypeError);
 
+// Each of the 22 existing-owner variants now carries concrete bilingual caution
+// rather than one generic historical disclaimer, plus a French locality label.
+const detailByGroup=new Map(v.records.map(x=>[x.source_group_id,x]));
+for(const item of variants){
+ const detail=detailByGroup.get(item.source_registry_id);
+ assert.ok(detail);
+ assert.equal(item.caution_en,detail.content.caution_en);
+ assert.equal(item.caution_fr,detail.content.caution_fr);
+ assert.equal(item.region_label_fr,detail.geographic_source_label_fr);
+ assert.ok(item.caution_en.length>65);
+ assert.ok(item.caution_fr.length>65);
+ assert.notEqual(item.caution_fr,item.caution_en);
+ assert.ok(item.caution_en.includes("1958 historical description"));
+ assert.ok(item.caution_fr.includes("témoignage historique de 1958"));
+ const embeddedCard=cards.find(c=>c.id===item.entry_id);
+ assert.ok(embeddedCard);
+ assert.equal(embeddedCard.en.caution,item.caution_en);
+ assert.equal(embeddedCard.fr.caution,item.caution_fr);
+ assert.equal(embeddedCard.regionFr,item.region_label_fr);
+}
+assert.equal(v.totals.bilingual_context_specific_cautions,22);
+assert.equal(pack.summary.context_specific_bilingual_cautions,22);
+assert.equal(pack.summary.existing_published_records_unchanged,35);
+assert.equal(pack.policy.no_record_by_record_user_accept_reject_ballot,true);
+assert.match(html,/lang==="fr"\?x.regionFr/);
+assert.ok(!html.includes("Approve custom"));
+
 console.log("PASS: 22 new bilingual regional Calendar details reusing 12 published owners; 18 existing full bilingual drafts reused without changing source copy.");
 console.log("PASS: 40-card self-contained EN/FR preview, source and local date guards, no automatic publication or indulgence claim.");
