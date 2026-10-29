@@ -1,0 +1,161 @@
+name: P85 one global 7400-held-photos current Commons evidence recovery
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/directory/p85-worldwide-7400-holds-enrichment.py'
+      - 'tests/directory-p85-7400-holds-test.py'
+      - '.github/workflows/directory-p85-worldwide-holds.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/directory/p85-worldwide-7400-holds-enrichment.py'
+      - 'tests/directory-p85-7400-holds-test.py'
+      - '.github/workflows/directory-p85-worldwide-holds.yml'
+permissions:
+  contents: read
+concurrency:
+  group: ao-p85-one-worldwide-7400-source-recheck-20261029
+  cancel-in-progress: false
+jobs:
+  verified-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check P85 7400-source coverage, identity, licence and global completeness
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/directory/p85-worldwide-7400-holds-enrichment.py
+          python tests/directory-p85-7400-holds-test.py -v
+          node tests/production-tree-hygiene.mjs
+
+  one-worldwide-source-harvest:
+    if: >-
+      github.repository == 'Fulcanelli13/ad-orientem' &&
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/main'
+    needs: verified-contract
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch pinned P83 archive and canonical CL2 physical-source pins
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/p83-screened-worldwide-photo-candidates-20261029:refs/remotes/origin/research/p83-screened-worldwide-photo-candidates-20261029' \
+            'refs/heads/research/directory-unified-photo-intake:refs/remotes/origin/research/directory-unified-photo-intake' \
+            'refs/heads/data/cl2-unified-source-location-classification-20261026:refs/remotes/origin/data/cl2-unified-source-location-classification-20261026'
+          test "$(git rev-parse refs/remotes/origin/research/p83-screened-worldwide-photo-candidates-20261029)" = 736c10ad7f10eced0581834cd09612d4b62761ba
+          test "$(git rev-parse refs/remotes/origin/research/directory-unified-photo-intake)" = f3408ab9448c1fd1fade2b8f0c2c161d3b0c21c2
+          test "$(git rev-parse refs/remotes/origin/data/cl2-unified-source-location-classification-20261026)" = eb67711a9886a7626916b7a145787c5e99105968
+          git worktree add --detach /tmp/p85-p83 736c10ad7f10eced0581834cd09612d4b62761ba
+          git worktree add --detach /tmp/p85-cl2-intake f3408ab9448c1fd1fade2b8f0c2c161d3b0c21c2
+          git worktree add --detach /tmp/p85-cl2 eb67711a9886a7626916b7a145787c5e99105968
+          (cd /tmp/p85-p83/data/directory/research/archives/p83-worldwide-screened-photography && sha256sum -c SHA256SUMS)
+      - name: Recheck held Commons file-source metadata for this technical transport shard
+        run: |
+          set -euo pipefail
+          src="/tmp/p85-p83/data/directory/research/archives/p83-worldwide-screened-photography"
+          python tools/directory/p85-worldwide-7400-holds-enrichment.py \
+            --all "$src/p83-all-source-photo-assignments.jsonl" \
+            --holds "$src/p83-holds-for-later-source-work.jsonl" \
+            --summary "$src/p83-worldwide-summary.json" \
+            --intake /tmp/p85-cl2-intake/data/directory/research/unified-photo-intake/cl2-eb67711a-20261029 \
+            --cl2 /tmp/p85-cl2/data/directory/research/cl2-unified-20261026 \
+            --shard ${{ matrix.shard }} --delay 1.2 \
+            --out "/tmp/p85-source-shard-${{ matrix.shard }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: P85_WORLDWIDE_7400_HOLDS_SOURCE_SHARD_${{ matrix.shard }}
+          path: /tmp/p85-source-shard-${{ matrix.shard }}/
+          retention-days: 3
+          if-no-files-found: error
+
+  consolidate-archive-once:
+    if: >-
+      github.repository == 'Fulcanelli13/ad-orientem' &&
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/main'
+    needs: one-worldwide-source-harvest
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch immutable P83 complete world source
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/p83-screened-worldwide-photo-candidates-20261029:refs/remotes/origin/research/p83-screened-worldwide-photo-candidates-20261029'
+          test "$(git rev-parse refs/remotes/origin/research/p83-screened-worldwide-photo-candidates-20261029)" = 736c10ad7f10eced0581834cd09612d4b62761ba
+          git worktree add --detach /tmp/p85-p83 736c10ad7f10eced0581834cd09612d4b62761ba
+          (cd /tmp/p85-p83/data/directory/research/archives/p83-worldwide-screened-photography && sha256sum -c SHA256SUMS)
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: P85_WORLDWIDE_7400_HOLDS_SOURCE_SHARD_*
+          merge-multiple: true
+          path: /tmp/p85-all-machine-evidence
+      - name: Reconcile exactly 7400 original holds and zero publication
+        run: |
+          set -euo pipefail
+          src="/tmp/p85-p83/data/directory/research/archives/p83-worldwide-screened-photography"
+          python tools/directory/p85-worldwide-7400-holds-enrichment.py \
+            --all "$src/p83-all-source-photo-assignments.jsonl" \
+            --holds "$src/p83-holds-for-later-source-work.jsonl" \
+            --summary "$src/p83-worldwide-summary.json" \
+            --technical /tmp/p85-all-machine-evidence \
+            --out /tmp/p85-one-worldwide-result
+          python - <<'PY'
+          import json
+          d=json.load(open("/tmp/p85-one-worldwide-result/p85-global-audit.json"))
+          assert d["all_holds_accounted"]==7400 and d["p83_original_assignments"]==7701
+          assert d["p83_original_anchors"]==2579 and d["p83_existing_research_review"]==301
+          assert d["p85_new_research_review_candidates"]+d["p85_assignments_still_held"]==7400
+          assert d["original_bytes_downloaded"]==d["images_approved"]==d["rights_cleared"]==d["photos_published"]==0
+          PY
+      - name: Save one checksum-verified non-public complete world audit on research branch
+        run: |
+          set -euo pipefail
+          branch="research/p85-7400-worldwide-recovery-audit-20261029"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            echo "P85 complete source archive exists, refuse overwrite" >&2; exit 1
+          fi
+          git fetch --no-tags origin main
+          git switch -c "$branch" origin/main
+          target="data/directory/research/archives/p85-worldwide-7400-holds"
+          test ! -e "$target"
+          mkdir -p "$target"
+          for name in p85-7400-all-holds-rechecked.jsonl p85-new-research-review-candidates.jsonl p85-holds-still-open.jsonl p85-global-audit.json; do
+            cp "/tmp/p85-one-worldwide-result/$name" "$target/$name"
+          done
+          (cd "$target" && sha256sum p85-* > SHA256SUMS && sha256sum -c SHA256SUMS)
+          test "$(du -sm "$target" | awk '{print $1}')" -le 35
+          git add "$target/p85-7400-all-holds-rechecked.jsonl" "$target/p85-new-research-review-candidates.jsonl" "$target/p85-holds-still-open.jsonl" "$target/p85-global-audit.json" "$target/SHA256SUMS"
+          test "$(git diff --cached --name-only | wc -l)" -eq 5
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): recheck all 7400 held worldwide photograph sources"
+          git push origin "HEAD:refs/heads/$branch"
