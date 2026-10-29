@@ -1,0 +1,115 @@
+name: P81 one-sweep 2579 Directory Commons photo source discovery
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/directory/research/p81-all-2579-direct-commons-plan.v1.json'
+      - 'tools/directory/discover-commons-p81-worldwide.py'
+      - '.github/workflows/p81-worldwide-2579-commons-search.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  all-2579-identities:
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    runs-on: ubuntu-latest
+    timeout-minutes: 29
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pin the existing unmerged CL2 source identity and its 11 finished archive shards
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin 'refs/heads/research/directory-unified-photo-intake:refs/remotes/origin/research/directory-unified-photo-intake'
+          test "$(git rev-parse refs/remotes/origin/research/directory-unified-photo-intake)" = f3408ab9448c1fd1fade2b8f0c2c161d3b0c21c2
+          git worktree add --detach /tmp/p81-input f3408ab9448c1fd1fade2b8f0c2c161d3b0c21c2
+      - name: Validate source shard SHA256, physical IDs and zero user/public approval
+        run: |
+          python tools/directory/discover-commons-p81-worldwide.py \
+            --source-root /tmp/p81-input/data/directory/research/unified-photo-intake/cl2-eb67711a-20261029 \
+            --shard ${{ matrix.shard }} \
+            --output /tmp/p81-shard-${{ matrix.shard }} --check
+      - name: One bounded Commons File-source search per exact anchor; no small review batches
+        run: |
+          python tools/directory/discover-commons-p81-worldwide.py \
+            --source-root /tmp/p81-input/data/directory/research/unified-photo-intake/cl2-eb67711a-20261029 \
+            --shard ${{ matrix.shard }} \
+            --output /tmp/p81-shard-${{ matrix.shard }} --delay 1.1
+      - name: Archive one research-only chunk, including unresolved source errors
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: P81_DIRECTORY_COMMONS_SOURCE_SHARD_${{ matrix.shard }}
+          retention-days: 3
+          if-no-files-found: warn
+          path: /tmp/p81-shard-${{ matrix.shard }}/
+  consolidate:
+    needs: all-2579-identities
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: P81_DIRECTORY_COMMONS_SOURCE_SHARD_*
+          merge-multiple: true
+          path: /tmp/p81-all
+      - name: Reconcile complete 2579 IDs and independently deduplicate all discovered Commons originals
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json,collections
+          base=Path("/tmp/p81-all")
+          files=sorted(base.glob("p81-shard-*.json"))
+          assert len(files)==11,"Incomplete worldwide campaign"
+          rows=[]
+          for i,f in enumerate(files):
+              data=json.loads(f.read_text(encoding="utf-8"))
+              assert data["schema"]=="AO_P81_COMMONS_2579_SHARD_V1"
+              assert data["summary"]["shard"]==i
+              assert len(data["records"])==(250 if i<10 else 79)
+              rows.extend(data["records"])
+          assert len(rows)==2579 and len({x["physical_anchor_id"] for x in rows})==2579
+          assert all(not x["rights_cleared"] and not x["subject_verified"] and not x["published"] for x in rows)
+          candidates=[]
+          for row in rows:
+              for photo in row["source_media_candidates"]:
+                  assert photo["review_status"]=="UNVERIFIED_MEDIA_DISCOVERY_LEAD"
+                  assert not photo["license_independently_cleared"] and not photo["exact_building_subject_verified"]
+                  candidates.append({"physical_anchor_id":row["physical_anchor_id"],
+                    "anchor_name":row["place_name"],"country":row["country"],**photo})
+          ids={(r["country"],r["physical_anchor_id"]) for r in rows}
+          assert len(ids)==2579
+          unique={r["original_sha1_claim"] for r in candidates}
+          counters=collections.Counter(r["search_status"] for r in rows)
+          summary={"anchors_accounted":len(rows),
+            "source_query_success":sum(k.startswith("SEARCH_SUCCESS") and v or 0 for k,v in counters.items()),
+            "source_query_errors":counters["SOURCE_ERROR_NOT_ZERO_RESULTS"],
+            "no_specific_building_name":counters["NO_DISTINCT_BUILDING_NAME"],
+            "anchors_with_commons_candidate_media":sum(bool(r["candidate_count"]) for r in rows),
+            "commons_candidate_links":len(candidates),
+            "distinct_commons_original_sha1_claims":len(unique),
+            "rights_cleared":0,"approved":0,"published":0}
+          (base/"p81-worldwide-2579-source-summary.json").write_text(json.dumps(summary,indent=2)+"\n",encoding="utf8")
+          (base/"p81-all-anchor-source-rows.jsonl").write_text("".join(json.dumps(r,ensure_ascii=False)+"\n" for r in rows),encoding="utf8")
+          (base/"p81-global-commons-candidate-leads.jsonl").write_text("".join(json.dumps(r,ensure_ascii=False)+"\n" for r in candidates),encoding="utf8")
+          print("P81_COMPLETE_WORLDWIDE_DISCOVERY="+json.dumps(summary),flush=True)
+          assert summary["source_query_success"]+summary["source_query_errors"]+summary["no_specific_building_name"]==2579
+          PY
+      - name: One global research export before ONE future editorial review
+        uses: actions/upload-artifact@v4
+        with:
+          name: P81-ONE-2579-DIRECTORY-COMMONS-SOURCE-CAMPAIGN
+          retention-days: 3
+          if-no-files-found: error
+          path: /tmp/p81-all/
