@@ -91,3 +91,8 @@ Key distinctions:
 **Identity decision accounting:** all 11 are preliminarily distinguishable at the cited action-and-geography scope, but their final canonical parent/subtype structure remains subject to independent editorial decisions. The four explicitly local-event records (03, 13, 15, 16) are hard-blocked against scheduled publication. R18-05, 07 and 17 also require present organizer/shrine participation checks for any live event. **No permanent IDs assigned; no existing published IDs merged or superseded; no publications.**
 
 These new analyses are intentionally kept inside the existing `customs-r18-all18-release-ownership-reconciliation.v1.json` alongside the complete original EN/FR drafts. The companion `R18-18` remains attached only to the six-candidate proposed `XMAS-004`. The two independently proposed PR #1642 identities `EPIP-003` and `CRIB-001` are unaffected.
+
+
+### Specific indulgence hold — Bavarian Frauendreißiger (R18-17)
+
+The [Maria Thalkirchen shrine's own page](https://www.mariathalkirchen.de/index.php?id=164) currently claims a plenary indulgence under a papal privilege associated with its Frauendreißiger devotions and confession. **This is recorded only as a source claim.** The original grant text, granting authority, exact conditions, applicable timeframe and relationship to the 1962 liturgical context remain independently unverified. The candidate is **not linked to an indulgence grant**, must not display a plenary-indulgence promise in Calendar or Prayer, and is separately routed to the future indulgence-validation programme. The integrity test explicitly enforces this hold.
