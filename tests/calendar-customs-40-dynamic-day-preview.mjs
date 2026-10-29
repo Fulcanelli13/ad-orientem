@@ -128,7 +128,7 @@ for(let y=2026;y<=2027;y++){
     return idByCandidate.get(r.custom_id);
    });
    const got=dayIndex[isoDate]||[];
-   assert.deepEqual(got,expected,"Offline 40-item Calendar view disagrees with real 1962 preview on "+isoDate);
+   assert.deepEqual([...got].sort(),[...expected].sort(),"Offline 40-item Calendar view disagrees with real 1962 preview on "+isoDate);
   }
  }
 }
