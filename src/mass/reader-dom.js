@@ -707,7 +707,7 @@ button.ao-schola-control{cursor:pointer}
 /* Last-phrase FINISH is a word, not the 23px arrow glyph. At 320px the
    glyph font made it paint over PAUSE without causing page-level overflow. */
 .ao-schola-control[data-schola-next][data-schola-finish="true"]{
-  font:700 7px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+  font:700 8px/1.2 var(--ao-font-ui,system-ui,sans-serif);
   letter-spacing:0;padding:0 2px;white-space:nowrap;
   overflow:hidden;text-overflow:clip;
 }
