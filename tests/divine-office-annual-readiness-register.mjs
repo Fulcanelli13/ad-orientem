@@ -92,8 +92,16 @@ test("no arbitrary years and invalid CLI argument combinations",()=>{
   for(const year of [1899,2101,2026.5,NaN,"2026"])
     assert.throws(()=>buildAnnualOfficeReadiness({year}),/YEAR_INVALID/);
   assert.deepEqual(parseReadinessArgs(["--year","2026","--out","/tmp/office"]),
-    {year:2026,out:"/tmp/office",probe:null});
+    {year:2026,out:"/tmp/office",probe:null,ledger:null});
   assert.throws(()=>parseReadinessArgs(["--year","2026"]),/YEAR_OUTPUT_REQUIRED/);
   assert.throws(()=>parseReadinessArgs(["--year","2026","--out","/tmp","--out","/foo"]),
     /ARGS_INVALID/);
+});
+
+
+test("historical metadata ledger flag is accepted as CLI input, never as an approval",()=>{
+  const cli=parseReadinessArgs(["--year","2026","--out","/tmp/office",
+    "--ledger-file","/tmp/2026-capture-45.json"]);
+  assert.equal(cli.ledger,"/tmp/2026-capture-45.json");
+  assert.equal(cli.probe,null);
 });
