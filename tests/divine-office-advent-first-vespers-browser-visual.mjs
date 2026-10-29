@@ -133,6 +133,27 @@ async function awaitReader(page){
  await page.locator("#reader").waitFor({state:"visible",timeout:5000});
  await assertSourcePreview(page);
 }
+async function assertMobileNavigationReachable(page){
+ const nav=await page.locator(".arrows").evaluate(el=>{
+  const bounds=el.getBoundingClientRect();
+  const prev=document.getElementById("back").getBoundingClientRect();
+  const next=document.getElementById("next").getBoundingClientRect();
+  return {
+   position:getComputedStyle(el).position,
+   top:bounds.top,bottom:bounds.bottom,
+   height:window.innerHeight,
+   prevLeft:prev.left,nextRight:next.right,width:window.innerWidth,
+   nextTop:next.top,nextBottom:next.bottom
+  };
+ });
+ assert.equal(nav.position,"fixed","mobile Next/Previous must stay in sight");
+ assert.ok(nav.bottom<=nav.height+2&&nav.bottom>=nav.height-3,
+  "navigation bottom is not viewport-anchored: "+JSON.stringify(nav));
+ assert.ok(nav.top>=0&&nav.nextTop>=nav.top&&nav.nextBottom<=nav.height,
+  "navigation controls are clipped: "+JSON.stringify(nav));
+ assert.ok(nav.prevLeft>=0&&nav.nextRight<=nav.width+1,
+  "mobile nav has horizontal overflow: "+JSON.stringify(nav));
+}
 async function assertSourcePreview(page){
  const s=await page.locator("#status").innerText();
  assert.match(s,/Source preview assembled/);
@@ -173,6 +194,7 @@ try{
   }));
  }
  assert.equal(hits.size,22,"preview fetched unexpected files or duplicated URLs");
+ await assertMobileNavigationReachable(page);
  assert.equal(await page.locator("#back").isDisabled(),true);
  assert.equal(await page.locator("#next").isEnabled(),true);
  assert.equal(await page.locator('[data-mode="fr"]').getAttribute("aria-pressed"),"true");
@@ -258,6 +280,7 @@ try{
   const cue=await fp.locator("#card .focus-cue").count()?
     await fp.locator("#card .focus-cue").innerText():"";
   const at=await fp.locator("#bar").getAttribute("aria-valuenow");
+  if(i%17===0)await assertMobileNavigationReachable(fp);
   assert.equal(Number(at),i+1,"focused progress moved out of sequence");
   if(/Psalm(?:143|144)#/.test(sourceId)){
    focusPsalm++;
@@ -344,6 +367,7 @@ try{
  const np=await narrow.newPage(),nperrors=watchErrors(np);
  await mockSources(np);
  await awaitReader(np);
+ await assertMobileNavigationReachable(np);
  assert.ok((await np.evaluate(()=>document.documentElement.scrollWidth-
   document.documentElement.clientWidth))<=1);
  await shot(np,"12-narrow-mobile-320-la-fr-opening");
