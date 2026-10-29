@@ -1,0 +1,100 @@
+name: P76 permanent verified research gallery archive
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/p76-archive-verified-derivatives.yml'
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: explore-p76-permanent-research-photo-archive
+  cancel-in-progress: false
+jobs:
+  archive-only-never-publish:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN: '40832362448'
+      SOURCE_SHA: '73cb45716059a8d33bc12ca4012fcf68be889966'
+      ARCHIVE_BRANCH: 'research/explore-p76-source-verified-exterior-webps'
+      ARCHIVE_DIR: 'assets/staged/explore-p76-exteriors-20261029'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Verify origin run and exact PR code version before artifact transfer
+        run: |
+          set -euo pipefail
+          status="$(gh run view "$SOURCE_RUN" --repo "$GITHUB_REPOSITORY" --json conclusion --jq .conclusion)"
+          head="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN" --jq .head_sha)"
+          test "$status" = success
+          test "$head" = "$SOURCE_SHA"
+      - name: Retrieve the already-verified bounded thirty-image evidence, not another Commons download
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/p76-verified
+          gh run download "$SOURCE_RUN" --repo "$GITHUB_REPOSITORY" \
+            --name p76-30-exteriors-research-derivatives-for-review \
+            --dir /tmp/p76-verified
+      - name: Verify all source-byte and local WebP checksums again
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,pathlib
+          out=pathlib.Path("/tmp/p76-verified")
+          m=json.loads(pathlib.Path("data/geography/research/p76-30-exterior-preview-manifest.v1.json").read_text())
+          records=[json.loads(s) for s in (out/"p76-acquisition-results.jsonl").read_text().splitlines()]
+          assert len(records)==len(m["candidates"])==30
+          assert len({r["review_number"] for r in records})==30
+          success=0
+          for candidate,r in zip(m["candidates"],records):
+              assert candidate["review_number"]==r["review_number"]
+              assert candidate["place_id"]==r["place_id"]
+              assert candidate["source_sha1"]==r["expected_sha1"]
+              assert candidate["asset_publication"]=="NOT_APPROVED"
+              assert r["published"] is False and r["exact_site_approved"] is False
+              assert r["full_resolution_approved"] is False
+              if r["original_bytes_verified"]:
+                  f=out/r["derivative_file"]
+                  assert f.is_file() and f.stat().st_size>10000
+                  b=f.read_bytes()
+                  assert b[0:4]==b"RIFF" and b[8:12]==b"WEBP"
+                  assert hashlib.sha256(b).hexdigest()==r["derivative_sha256"]
+                  assert r["source_sha1"]==candidate["source_sha1"]
+                  success+=1
+          assert success>=1 and success<=30
+          for k in range(1,4):assert (out/f"p76-exteriors-{k:02d}.jpg").is_file()
+          print(f"ARCHIVE_VALIDATED={success}/30 source and derivative checked")
+          PY
+      - name: Commit verified derivatives to permanent research-only branch
+        run: |
+          set -euo pipefail
+          git fetch origin "refs/heads/$ARCHIVE_BRANCH:refs/remotes/origin/$ARCHIVE_BRANCH" || true
+          if git show-ref --verify --quiet "refs/remotes/origin/$ARCHIVE_BRANCH"; then
+            git switch -C "$ARCHIVE_BRANCH" "origin/$ARCHIVE_BRANCH"
+          else
+            git switch -c "$ARCHIVE_BRANCH"
+          fi
+          report="data/geography/research/p76-source-verified-exteriors-archive.v1.jsonl"
+          if test -e "$report"; then
+            echo "The immutable P76 archive is already committed" >&2
+            exit 1
+          fi
+          mkdir -p "$ARCHIVE_DIR" "$(dirname "$report")"
+          cp /tmp/p76-verified/*.webp "$ARCHIVE_DIR/"
+          cp /tmp/p76-verified/p76-exteriors-*.jpg "$ARCHIVE_DIR/"
+          cp /tmp/p76-verified/p76-acquisition-results.jsonl "$report"
+          git add "$ARCHIVE_DIR" "$report"
+          git diff --cached --name-only | while IFS= read -r path; do
+            case "$path" in
+              "$ARCHIVE_DIR"/*|"$report") ;;
+              *) echo "Unexpected staging path $path" >&2; exit 1;;
+            esac
+          done
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m 'research(explore): stage 30 P76 checked Commons WebPs without publishing'
+          git push origin "HEAD:refs/heads/$ARCHIVE_BRANCH"
