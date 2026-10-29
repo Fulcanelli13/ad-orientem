@@ -88,7 +88,21 @@
       "credit_and_rights_final_app_review_completed": false,
       "editorial_approved": false,
       "published": false,
-      "blocker": "No canonical place/confirmed LOCATED_AT join for this church in the current 529-place seed registry; exact physical-site promotion must precede media release."
+      "blocker": "No canonical place/confirmed LOCATED_AT join for this church in the current 529-place seed registry; exact physical-site promotion must precede media release.",
+      "existing_research_anchor_id": "RG-58B096C9EE65",
+      "frozen_venue_source_id": "ao-fssp-basilika-st-clemens-platz-an-der-basilika-1-d-30169-hannover-deutschland",
+      "independently_corrob_church_address": "Platz an der Basilika 1, 30169 Hannover, Germany",
+      "physical_site_evidence_urls": [
+        "https://www.st-clemens-hannover.de/anfahrt/",
+        "https://www.bistum-hildesheim.de/bistum/pfarrgemeinden/kirche/a/basilika-st-clemens-hannover-1/"
+      ],
+      "traditional_rite_venue_evidence_urls": [
+        "https://www.st-clemens-hannover.de/gottesdienste/",
+        "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/niederlassungen/hannover/home.php"
+      ],
+      "physical_site_evidence_status": "OFFICIAL_CHURCH_AND_DIOCESE_CONFIRM_ADDRESS_FSSP_CONFIRMS_RITE_AT_BUILDING",
+      "no_new_schedule_published": true,
+      "notes": "Building-and-address research is not a canonical Place ID, precise surveyed map geometry, nor approval for public image release."
     },
     {
       "photo_id": 71,
@@ -114,7 +128,21 @@
       "credit_and_rights_final_app_review_completed": false,
       "editorial_approved": false,
       "published": false,
-      "blocker": "No canonical place/confirmed LOCATED_AT join for this church in the current 529-place seed registry; exact physical-site promotion must precede media release."
+      "blocker": "No canonical place/confirmed LOCATED_AT join for this church in the current 529-place seed registry; exact physical-site promotion must precede media release.",
+      "existing_research_anchor_id": "RG-0573EEA7D76E",
+      "frozen_venue_source_id": "SSPXMAP:OPE-002331",
+      "independently_corrob_church_address": "Th.-Fontane-Str. 7, 83059 Kolbermoor, Germany",
+      "physical_site_evidence_urls": [
+        "https://map.fsspx.org/de/places/kapelle-hl-bruder-konrad",
+        "https://fsspx.de/de/priorate-und-messzentren"
+      ],
+      "traditional_rite_venue_evidence_urls": [
+        "https://map.fsspx.org/de/places/kapelle-hl-bruder-konrad",
+        "https://fsspx.today/chapel/kolbermoor/"
+      ],
+      "physical_site_evidence_status": "SAME_ORGANIZATION_MULTI_OFFICIAL_WITNESS_PRECISE_CHAPEL_AND_ADDRESS",
+      "no_new_schedule_published": true,
+      "notes": "Building-and-address research is not a canonical Place ID, precise surveyed map geometry, nor approval for public image release."
     },
     {
       "photo_id": 195,
@@ -140,7 +168,20 @@
       "credit_and_rights_final_app_review_completed": false,
       "editorial_approved": false,
       "published": false,
-      "blocker": "No canonical place/confirmed LOCATED_AT join for this church in the current 529-place seed registry; exact physical-site promotion must precede media release."
+      "blocker": "No canonical place/confirmed LOCATED_AT join for this church in the current 529-place seed registry; exact physical-site promotion must precede media release.",
+      "existing_research_anchor_id": "RG-0B11C840F55E",
+      "frozen_venue_source_id": "AO-B34-L-GB-52D1803A1F95",
+      "independently_corrob_church_address": "Whitecliff Mill Street, Blandford Forum, Dorset DT11 7BN, England",
+      "physical_site_evidence_urls": [
+        "https://www.plymouth-diocese.org.uk/church/blandford-forum-lady-lourdes-st-cecilia/",
+        "https://blandfordcatholics.org/contact-us/"
+      ],
+      "traditional_rite_venue_evidence_urls": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "physical_site_evidence_status": "DIOCESE_AND_PARISH_CONFIRM_SAME_BUILDING_BUT_CURRENT_TLM_SCHEDULE_NOT_INDEPENDENTLY_ESTABLISHED",
+      "no_new_schedule_published": true,
+      "notes": "Building-and-address research is not a canonical Place ID, precise surveyed map geometry, nor approval for public image release."
     }
   ],
   "release_candidates_with_confirmed_place_join": 0,
@@ -154,5 +195,6 @@
     "Finish independent native-pixel image QA and actual app responsive render tests; current contain layout is not a crop claim.",
     "Record free license ID and exact canonical license URL, source URL, creator, changes EN/FR, alt text EN/FR, derivative SHA-256 and selected local approved .webp path.",
     "Receive editorial sign-off and pass media publish validation, preserving 385-source identity ledger."
-  ]
+  ],
+  "research_site_evidence_update": "2026-10-30: independent official site and local source checks added for #61, #71 and #195; no Place, map pin or Mass schedule published. Blandford TLM schedule remains unverified."
 }
