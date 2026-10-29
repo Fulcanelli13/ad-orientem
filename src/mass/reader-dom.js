@@ -4180,7 +4180,11 @@ export function createReaderDomAdapter({
       // Its existing source-timed inline rubric must remain unobscured.
       const cinematicKey=kind==="BELL"?"bells":
         kind==="ELEVATION"?current.priestActionIconKey:null;
-      const approvedCinematicGraphic=Boolean(cinematicKey &&
+      // User-approved C0204 is an ordinary source-cued priest pictogram,
+      // NOT permission for a full-screen major elevation. Never obscure
+      // Per ipsum's exact Latin/vernacular text with the minor gesture art.
+      const minorElevationSource=current?.nativeCueId==="AO.SM.C0204";
+      const approvedCinematicGraphic=!minorElevationSource && Boolean(cinematicKey &&
         resolveUserApprovedMassGestureArt(cinematicKey,iconResolver));
       const noArtCinematic=visible && (kind==="ELEVATION"||kind==="BELL") &&
         !approvedCinematicGraphic;
