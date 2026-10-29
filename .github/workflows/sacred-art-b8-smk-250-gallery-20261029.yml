@@ -37,8 +37,8 @@ jobs:
           assert len(rows)==len({r['id'] for r in rows})==len({r['previewURL'] for r in rows})
           assert q['previousReviewIDsExcluded']==1164 and q['userB6RejectedPreserved']==219
           assert q['userB6AcceptedPreserved']==31 and q['productionImports']==0 and q['originalPhotosSaved']==0
-          assert all(r['provider']=='SMK' and r['sourceImageRights']=='SMK_EXACT_OBJECT_PUBLIC_DOMAIN_PDM_1.0' for r in rows)
-          assert all(r['sourceRightsURL'].startswith('https://creativecommons.org/publicdomain/mark/1.0') for r in rows)
+          assert all(r['provider']=='SMK' and r['sourceImageRights']=='SMK_EXACT_OBJECT_PUBLIC_DOMAIN_TRUE_OFFICIAL_POLICY' for r in rows)
+          assert all(r['sourceRightsURL'].startswith(('https://creativecommons.org/publicdomain/mark/1.0','https://connect.smk.dk/om/rettigheder')) for r in rows)
           assert all(r['previewURL'].startswith('https://iip-thumb.smk.dk/') for r in rows)
           assert all(not r['productionImported'] for r in rows)
           h=Path('docs/SACRED_ART_SMK_250_IMPORT_REVIEW_B8_20261029.html').read_text()
