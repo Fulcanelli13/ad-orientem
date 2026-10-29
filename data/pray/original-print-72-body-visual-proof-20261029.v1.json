@@ -12,17 +12,17 @@
   "scope": "Word-sequence of the English proper prayer body only; not punctuation-exact diplomatic transcription, additional preparatory prayers, common prayer references, meditations, practices, French editions or indulgence grants.",
   "counts": {
     "dayBodies": 72,
-    "fullPrintedBodyWordSequenceChecked": 65,
-    "awaitingFullVisualWordSequenceCheck": 7,
+    "fullPrintedBodyWordSequenceChecked": 72,
+    "awaitingFullVisualWordSequenceCheck": 0,
     "firstEditionWordForWordCertificate": 0,
     "completeProgrammeDevotionalPrintCertificates": 0,
     "sourcePrintBookCohorts": 4
   },
   "dispositionCounts": {
-    "PRINT_BODY_WORD_SEQUENCE_CHECKED": 65,
-    "AWAITING_COMPLETE_PAGE_WORD_PROOF": 2,
+    "PRINT_BODY_WORD_SEQUENCE_CHECKED": 72,
+    "AWAITING_COMPLETE_PAGE_WORD_PROOF": 0,
     "OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED": 0,
-    "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW": 5
+    "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW": 0
   },
   "sourceBooks": [
     {
@@ -47,10 +47,10 @@
       "bookId": "purgatorian_manual_1894_1907",
       "sha256": "3739d066b2ac6de5b31c73242552ad3726a05aa02fe5f6babf8e04155952c113",
       "daysTotal": 9,
-      "visuallyVerified": 2
+      "visuallyVerified": 9
     }
   ],
-  "auditPolicy": "A completed body word-sequence check requires direct original-page-image inspection start to finish of the English proper prayer text. Page-image rendering and PDF text-layer overlap alone do NOT certify it. Verify the correct day boundaries instead of assuming the overlapping two-page best-hit window is the body.",
+  "auditPolicy": "Full visual word-sequence proof is a scope-limited comparison of every English proper daily prayer word to the historical *copy* photographed; it is NOT diplomatic pagination/punctuation accuracy, earliest-edition identity, complete devotional practice, independently historical French, or current indulgence certification. Day four's actual correct PDF page window [203,204] supersedes the earlier automatic best-hit [202,203].",
   "records": [
     {
       "id": "holy_ghost",
@@ -2138,17 +2138,27 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW",
-      "wordSequenceCheckedAgainstFullPageImage": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
       "printedPageLabels": [
         199,
         200
       ],
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
+      "visualPdfPageIndexesZeroBased": [
+        198,
+        199
+      ],
+      "sourceImageFiles": [
+        "holy_souls-day1-page199.png",
+        "holy_souls-day1-page200.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
       "editionCaveat": null,
-      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
+      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979.",
+      "originalPrintedReviewWorkflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40872727022",
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Print proper prayer starts p199 and ends p200 before the separately printed Our Father, Hail Mary, repeating verse and long daily prayer. Complete English proper prayer body matches photographed printed word sequence. Historic previous correction retained; no new wording edit. The historical book's repeated Our Father, Hail Mary, verse and common daily prayers are separate from this body-level proof.",
+      "priorPartialCorrectionState": "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW"
     },
     {
       "id": "holy_souls",
@@ -2167,17 +2177,27 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW",
-      "wordSequenceCheckedAgainstFullPageImage": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
       "printedPageLabels": [
         202,
         203
       ],
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
+      "visualPdfPageIndexesZeroBased": [
+        201,
+        202
+      ],
+      "sourceImageFiles": [
+        "holy_souls-day2-page202.png",
+        "holy_souls-day2-page203.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
       "editionCaveat": null,
-      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
+      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979.",
+      "originalPrintedReviewWorkflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40872727022",
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Printed Second Day prayer begins p202 and ends p203 before the separate common-prayer references and Third Day heading. Complete English proper prayer body matches photographed printed word sequence. Historic previous correction retained; no new wording edit. The historical book's repeated Our Father, Hail Mary, verse and common daily prayers are separate from this body-level proof.",
+      "priorPartialCorrectionState": "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW"
     },
     {
       "id": "holy_souls",
@@ -2227,22 +2247,36 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW",
-      "wordSequenceCheckedAgainstFullPageImage": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
       "printedPageLabels": [
         204,
         205
       ],
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
+      "visualPdfPageIndexesZeroBased": [
+        203,
+        204
+      ],
+      "sourceImageFiles": [
+        "holy_souls-day4-page204.png",
+        "holy_souls-day4-page205.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
       "editionCaveat": null,
       "correctedSourceWindowZeroBased": [
         203,
         204
       ],
       "note": "Earlier two-page automated best-hit window [202,203] omitted the end of printed day four. The visually reviewed full prayer runs PDF indices [203,204], as recorded in the ten-exception resolution.",
-      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
+      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979.",
+      "originalPrintedReviewWorkflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40872727022",
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Original printed prayer spans pp204–205. Corrected prior truncated two-page automated best-hit window; checked both physical page images. Complete English proper prayer body matches photographed printed word sequence. Historic previous correction retained; no new wording edit. The historical book's repeated Our Father, Hail Mary, verse and common daily prayers are separate from this body-level proof.",
+      "priorPartialCorrectionState": "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW",
+      "actualSourceWindowZeroBased": [
+        203,
+        204
+      ]
     },
     {
       "id": "holy_souls",
@@ -2261,13 +2295,23 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        205
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        204
+      ],
+      "sourceImageFiles": [
+        "purgatorian_manual_1894_1907-p205.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "originalPrintedReviewWorkflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40881455788",
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Complete printed Fifth Day prayer p205 checked, including restored 'O infinite Good' and previously omitted 'I wish rather to die than ever offend Thee again' sentence. Complete English proper prayer body matches photographed printed word sequence. Historic previous correction retained; no new wording edit. The historical book's repeated Our Father, Hail Mary, verse and common daily prayers are separate from this body-level proof.",
+      "priorPartialCorrectionState": "AWAITING_COMPLETE_PAGE_WORD_PROOF"
     },
     {
       "id": "holy_souls",
@@ -2286,17 +2330,27 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW",
-      "wordSequenceCheckedAgainstFullPageImage": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
       "printedPageLabels": [
         206,
         207
       ],
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
+      "visualPdfPageIndexesZeroBased": [
+        205,
+        206
+      ],
+      "sourceImageFiles": [
+        "holy_souls-day6-page206.png",
+        "holy_souls-day6-page207.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
       "editionCaveat": null,
-      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
+      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979.",
+      "originalPrintedReviewWorkflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40872727022",
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Printed Sixth Day prayer begins p206 and ends p207 before separate common-prayer directions and Seventh Day heading. Complete English proper prayer body matches photographed printed word sequence. Historic previous correction retained; no new wording edit. The historical book's repeated Our Father, Hail Mary, verse and common daily prayers are separate from this body-level proof.",
+      "priorPartialCorrectionState": "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW"
     },
     {
       "id": "holy_souls",
@@ -2346,13 +2400,23 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
-      "wordSequenceCheckedAgainstFullPageImage": false,
-      "printedPageLabels": null,
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
-      "editionCaveat": null
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        208
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        207
+      ],
+      "sourceImageFiles": [
+        "purgatorian_manual_1894_1907-p208.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null,
+      "originalPrintedReviewWorkflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40881455788",
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Printed Eighth Day prayer is wholly on p208 and says 'I wish rather to die than ever again offend Thee'; wording matches corrected V4 text. Complete English proper prayer body matches photographed printed word sequence. Historic previous correction retained; no new wording edit. The historical book's repeated Our Father, Hail Mary, verse and common daily prayers are separate from this body-level proof.",
+      "priorPartialCorrectionState": "AWAITING_COMPLETE_PAGE_WORD_PROOF"
     },
     {
       "id": "holy_souls",
@@ -2371,20 +2435,30 @@
       "currentIndulgenceCertified": false,
       "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
       "fullDevotionalProgrammeVerified": false,
-      "disposition": "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW",
-      "wordSequenceCheckedAgainstFullPageImage": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
       "printedPageLabels": [
         209,
         210
       ],
-      "visualPdfPageIndexesZeroBased": null,
-      "sourceImageFiles": [],
-      "comparisonStandard": "PENDING",
+      "visualPdfPageIndexesZeroBased": [
+        208,
+        209
+      ],
+      "sourceImageFiles": [
+        "holy_souls-day9-page209.png",
+        "holy_souls-day9-page210.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
       "editionCaveat": null,
-      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
+      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979.",
+      "originalPrintedReviewWorkflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40872727022",
+      "directImageVerifiedOn": "2026-10-29",
+      "visualObservation": "Complete Ninth Day prayer begins p209 and ends p210 before separate common-prayer reference and distinct De Profundis heading. Complete English proper prayer body matches photographed printed word sequence. Historic previous correction retained; no new wording edit. The historical book's repeated Our Father, Hail Mary, verse and common daily prayers are separate from this body-level proof.",
+      "priorPartialCorrectionState": "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW"
     }
   ],
   "updatedOn": "2026-10-29",
-  "updatedEvidence": "All 27 Hammer proper English day-prayer bodies individually image-proved, including the 21 previously held; 65/72 overall.",
-  "researchStatus": "65 directly visually checked proper English day-prayer bodies; seven Redemptorist Holy Souls remaining. No complete original first-impression, whole-programme, French-original or modern-indulgence certificate."
+  "updatedEvidence": "Full image-backed proper English prayer body word-sequence proof now completed for all 72 original-book daily prayers, including last seven Redemptorist Holy Souls days 1,2,4,5,6,8,9 on printed pp199–210; no fresh English text corrections required.",
+  "researchStatus": "72/72 proper English daily prayer bodies visually word-sequence checked from the available printed historical copy. Not certified: first printed impressions; all other devotional components/whole forms; historical French witnesses; currently applicable indulgence concessions and conditions."
 }

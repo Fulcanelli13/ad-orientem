@@ -11,15 +11,15 @@ const decision=get('original-print-ten-exception-resolution-20261029.v1.json');
 
 assert.equal(proof.schema,'ao.pray.original-print-body-visual-proof.v1');
 assert.equal(proof.counts.dayBodies,72);
-assert.equal(proof.counts.fullPrintedBodyWordSequenceChecked,65);
-assert.equal(proof.counts.awaitingFullVisualWordSequenceCheck,7);
+assert.equal(proof.counts.fullPrintedBodyWordSequenceChecked,72);
+assert.equal(proof.counts.awaitingFullVisualWordSequenceCheck,0);
 assert.equal(proof.counts.firstEditionWordForWordCertificate,0);
 assert.equal(proof.counts.completeProgrammeDevotionalPrintCertificates,0);
 assert.equal(proof.counts.sourcePrintBookCohorts,4);
-assert.equal(proof.dispositionCounts.PRINT_BODY_WORD_SEQUENCE_CHECKED,65);
-assert.equal(proof.dispositionCounts.AWAITING_COMPLETE_PAGE_WORD_PROOF,2);
+assert.equal(proof.dispositionCounts.PRINT_BODY_WORD_SEQUENCE_CHECKED,72);
+assert.equal(proof.dispositionCounts.AWAITING_COMPLETE_PAGE_WORD_PROOF,0);
 assert.equal(proof.dispositionCounts.OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED,0);
-assert.equal(proof.dispositionCounts.PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW,5);
+assert.equal(proof.dispositionCounts.PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW,0);
 assert.equal(proof.records.length,72);
 assert.equal(new Set(proof.records.map(r=>r.id+':'+r.day)).size,72);
 const scanRows=new Map(scan.records.map(r=>[r.id+':'+r.day,r]));
@@ -27,22 +27,22 @@ const originalRows=new Map(source.days.map(r=>[r.id+':'+r.day,r]));
 const bookSHA=new Map(scan.books.map(x=>[x.id,x.sha256]));
 const vetted=proof.records.filter(r=>r.wordSequenceCheckedAgainstFullPageImage);
 const held=proof.records.filter(r=>!r.wordSequenceCheckedAgainstFullPageImage);
-assert.equal(vetted.length,65);
-assert.equal(held.length,7);
-assert.equal(proof.sourceBooks.reduce((n,x)=>n+x.visuallyVerified,0),65);
+assert.equal(vetted.length,72);
+assert.equal(held.length,0);
+assert.equal(proof.sourceBooks.reduce((n,x)=>n+x.visuallyVerified,0),72);
 assert.deepEqual(Object.fromEntries(proof.sourceBooks.map(x=>[x.bookId,x.visuallyVerified])),{
  callan_1925_copyright_later_scan:18,
- moran_1883:18,hammer_1909:27,purgatorian_manual_1894_1907:2
+ moran_1883:18,hammer_1909:27,purgatorian_manual_1894_1907:9
 });
 const expectedVetted=new Set([
  ...Array.from({length:9},(_,i)=>'christmas:'+(i+1)),
  ...Array.from({length:9},(_,i)=>'holy_ghost:'+(i+1)),
  ...Array.from({length:9},(_,i)=>'immaculate_conception:'+(i+1)),
  ...Array.from({length:9},(_,i)=>'st_joseph:'+(i+1)),
- 'holy_souls:3','holy_souls:7',
+ ...Array.from({length:9},(_,i)=>'holy_souls:'+(i+1)), 
  ...['annunciation','seven_sorrows','assumption'].flatMap(id=>Array.from({length:9},(_,i)=>id+':'+(i+1)))
 ]);
-assert.equal(expectedVetted.size,65);
+assert.equal(expectedVetted.size,72);
 assert.deepEqual(new Set(vetted.map(x=>x.id+':'+x.day)),expectedVetted);
 const proofPDFSeen=new Set();
 for(const r of proof.records){
@@ -64,7 +64,8 @@ for(const r of proof.records){
   assert.equal(r.visualPdfPageIndexesZeroBased.length,r.sourceImageFiles.length);
   assert.ok(r.sourceImageFiles.length<=2 && r.sourceImageFiles.length>0);
   for(const idx of r.visualPdfPageIndexesZeroBased){
-   assert.ok(idx>=prior.pdfPageStart && idx<=prior.pdfPageEnd,'Claim outside scanned book page window '+k);
+   const allowed=r.correctedSourceWindowZeroBased||[prior.pdfPageStart,prior.pdfPageEnd];
+   assert.ok(idx>=allowed[0] && idx<=allowed[1],'Claim outside corrected historical printed page window '+k);
    proofPDFSeen.add(r.cohort+':'+idx);
   }
   assert.match(r.comparisonStandard,/ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED/);
@@ -73,7 +74,7 @@ for(const r of proof.records){
   assert.deepEqual(r.sourceImageFiles,[]);
  }
 }
-assert.equal(proofPDFSeen.size,51,'29 source pages already checked + 22 newly inspected Hammer pages');
+assert.equal(proofPDFSeen.size,60,'51 previously checked unique source pages plus nine new original Holy Souls printed pages');
 for(const id of ['christmas','holy_ghost'])assert.ok(vetted.filter(x=>x.id===id).every(x=>x.editionCaveat.includes('NOT_AUTHENTICATED_1925_FIRST_EDITION')));
 
 const moranProof=proof.records.filter(x=>x.cohort==='moran_1883');
@@ -112,13 +113,46 @@ const oldOcr=[
  ['annunciation',1],['annunciation',3],['annunciation',4],['annunciation',6],['seven_sorrows',3]
 ];
 for(const [id,day] of oldOcr)assert.equal(hammer.find(x=>x.id===id&&x.day===day).priorOcrExceptionDisposition,'OCR_LAYOUT_ONLY_VISUALLY_RESOLVED');
-assert.deepEqual(held.map(x=>x.id).sort(),Array(7).fill('holy_souls'));
-assert.deepEqual(held.map(x=>x.day).sort((a,b)=>a-b),[1,2,4,5,6,8,9]);
+assert.deepEqual(held.map(x=>x.id).sort(),[]);
+assert.deepEqual(held.map(x=>x.day).sort((a,b)=>a-b),[]);
+
+
+// Last seven Redemptorist printed-page visual proofs have individual word-sequence
+// sign-offs. Day four's historic auto-window is demonstrably wrong; use its
+// corrected full printed-page extent, leaving the pre-review research artifact.
+const holy=proof.records.filter(r=>r.id==='holy_souls');
+assert.equal(holy.length,9);
+assert.ok(holy.every(r=>r.wordSequenceCheckedAgainstFullPageImage&&r.disposition==='PRINT_BODY_WORD_SEQUENCE_CHECKED'));
+const seven={
+  1:{printed:[199,200],indices:[198,199],workflow:'40872727022'},
+  2:{printed:[202,203],indices:[201,202],workflow:'40872727022'},
+  4:{printed:[204,205],indices:[203,204],workflow:'40872727022'},
+  5:{printed:[205],indices:[204],workflow:'40881455788'},
+  6:{printed:[206,207],indices:[205,206],workflow:'40872727022'},
+  8:{printed:[208],indices:[207],workflow:'40881455788'},
+  9:{printed:[209,210],indices:[208,209],workflow:'40872727022'}
+};
+for(const [key,expected] of Object.entries(seven)){
+ const row=holy.find(r=>r.day===Number(key));
+ assert.deepEqual(row.printedPageLabels,expected.printed);
+ assert.deepEqual(row.visualPdfPageIndexesZeroBased,expected.indices);
+ assert.match(row.originalPrintedReviewWorkflowRun,new RegExp(expected.workflow));
+ assert.equal(row.sourceImageFiles.length,expected.printed.length);
+ assert.ok(row.sourceImageFiles.every(n=>n.endsWith('.png')));
+ assert.equal(row.priorPartialCorrectionState,['5','8'].includes(key)?'AWAITING_COMPLETE_PAGE_WORD_PROOF':'PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW');
+ assert.equal(row.originalFirstEditionVerified,false);
+ assert.equal(row.originalFrenchWitnessVerified,false);
+ assert.equal(row.currentIndulgenceCertified,false);
+ assert.equal(row.fullDevotionalProgrammeVerified,false);
+}
+assert.deepEqual(holy.map(x=>x.day),[1,2,3,4,5,6,7,8,9]);
+assert.equal(holy.filter(x=>x.wordSequenceCheckedAgainstFullPageImage).length,9);
 
 const d4=proof.records.find(x=>x.id==='holy_souls'&&x.day===4);
 assert.deepEqual(d4.correctedSourceWindowZeroBased,[203,204]);
-assert.equal(d4.wordSequenceCheckedAgainstFullPageImage,false);
+assert.equal(d4.wordSequenceCheckedAgainstFullPageImage,true);
+assert.deepEqual(d4.actualSourceWindowZeroBased,[203,204]);
 assert.equal(decision.outcomes.actualEnglishHistoricalVariantsCorrected,5);
 assert.equal(bulk.counts.newHistoricallyVerifiedBodyCorrections,2);
 assert.equal(proof.counts.firstEditionWordForWordCertificate,0);
-console.log('PASS: 65/72 English proper prayers image-word-checked (18 Callan, 18 Moran, 27 Hammer, 2 Holy Souls), with seven Holy Souls held; no first-edition, full-programme, French-original or current-indulgence certifications.');
+console.log('PASS: 72/72 English proper day prayers visually checked from actual historical book pages (18 Callan later scan, 18 Moran, 27 Hammer, 9 Redemptorist), with 0 body holds; first-edition, whole-devotion, original-French, and modern-indulgence claims remain unverified.');
