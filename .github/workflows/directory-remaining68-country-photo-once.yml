@@ -1,0 +1,119 @@
+name: Directory remaining 68 countries - seven archive-checkpointed metadata harvests
+on:
+  push:
+    branches:
+      - research/directory-remaining68-country-harvest-20261029
+    paths:
+      - data/directory/research/.run-country-harvest-remaining68-20261029.json
+permissions:
+  contents: write
+concurrency:
+  group: ao-directory-country-media-remaining68-once
+  cancel-in-progress: false
+jobs:
+  harvest:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/research/directory-remaining68-country-harvest-20261029'
+    runs-on: ubuntu-latest
+    timeout-minutes: 44
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        include:
+          - cohort: S1
+            countries: GB,PH,HU,NG,FJ,KR,UG,GH,LV,SV
+          - cohort: S2
+            countries: PL,CZ,GA,CL,GT,MQ,AE,GI,MG,TZ
+          - cohort: S3
+            countries: BR,AT,SK,DO,ID,NO,BY,GP,NC,UY
+          - cohort: S4
+            countries: CA,AR,CO,HR,KE,RE,CM,GY,PA,VU
+          - cohort: S5
+            countries: CH,NZ,ZA,SE,LT,RU,CU,HK,PE,ZW
+          - cohort: S6
+            countries: MX,NL,PT,TW,MY,SG,EC,LB,PY
+          - cohort: S7
+            countries: ES,IN,JP,BJ,NA,SI,EE,LK,SN
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Enforce scope and publication locks
+        env:
+          COUNTRIES: ${{ matrix.countries }}
+          COHORT: ${{ matrix.cohort }}
+        run: |
+          set -euo pipefail
+          node tests/production-tree-hygiene.mjs
+          python tests/directory-bulk-photo-source-index-test.py -v
+          python - <<'PY'
+          import os,json
+          j=json.load(open('data/directory/research/.run-country-harvest-remaining68-20261029.json'))
+          assert j=={"schema":"AO_DIRECTORY_REMAINING68_COUNTRY_IMAGES_ONCE_V1",
+                     "countries_remaining":68,"cohorts":7,"max_rows":2000,
+                     "publication":False,"original_downloads":False}
+          codes=os.environ["COUNTRIES"].split(",")
+          assert 9<=len(codes)<=10 and len(codes)==len(set(codes))
+          assert all(len(x)==2 and x.isupper() for x in codes)
+          PY
+      - name: Country-wide Wikidata P18 index with quota-aware serial requests
+        env:
+          COUNTRIES: ${{ matrix.countries }}
+          COHORT: ${{ matrix.cohort }}
+        run: |
+          set -euo pipefail
+          python tools/directory/harvest-wikidata-country-photo-index.py \
+            --countries "$COUNTRIES" --max-rows 2000 --delay-seconds 15 \
+            --output-dir "/tmp/ao-photo-country-$COHORT"
+          python - <<'PY'
+          import json,os,pathlib
+          codes=os.environ["COUNTRIES"].split(",")
+          base=pathlib.Path("/tmp/ao-photo-country-"+os.environ["COHORT"])
+          a=json.loads((base/"audit.json").read_text())
+          c=a["counts"]
+          assert c["requested_countries"]==len(codes)
+          assert c["successful_countries"]+c["error_countries"]==len(codes)
+          assert c["photos_downloaded"]==0 and c["photos_published"]==0
+          assert len(list(base.glob("country-*.json")))==len(codes)
+          for name in codes:
+            j=json.loads((base/("country-"+name+".json")).read_text())
+            assert j["country"]==name
+            assert j["publication"]=="RESEARCH_ONLY_NEVER_APP_VISIBLE"
+            assert j["status"] in ("SUCCESS","SOURCE_ERROR_NOT_ZERO_RESULTS")
+          print("WHOLE_COUNTRY_SHARD",os.environ["COHORT"],json.dumps(c,sort_keys=True))
+          PY
+      - name: Persist entire cohort on research-only archive, never main
+        env:
+          COHORT: ${{ matrix.cohort }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/directory-country-media-remaining68:refs/remotes/origin/research/directory-country-media-remaining68' || true
+          if git show-ref --verify --quiet refs/remotes/origin/research/directory-country-media-remaining68; then
+            git switch -C research/directory-country-media-remaining68 origin/research/directory-country-media-remaining68
+          else
+            git fetch --no-tags origin main
+            git switch -c research/directory-country-media-remaining68 origin/main
+          fi
+          target="data/directory/research/worldwide-media-sources/remaining68-20261029/$COHORT"
+          test ! -e "$target" || { echo "Cannot overwrite a prior country shard"; exit 1; }
+          mkdir -p "$target"
+          cp "/tmp/ao-photo-country-$COHORT/"*.json "$target/"
+          count="$(find "$target" -maxdepth 1 -name '*.json' | wc -l)"
+          test "$count" -ge 10 && test "$count" -le 11
+          test "$(du -sm "$target" | awk '{print $1}')" -le 35
+          git add "$target"
+          git diff --cached --name-only | while read -r f; do
+            case "$f" in "$target"/*.json) ;; *) echo "Unapproved file: $f" >&2; exit 1;; esac
+          done
+          test "$(git diff --cached --name-only | wc -l)" -eq "$count"
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): archive $COHORT worldwide image-source metadata"
+          git push origin HEAD:refs/heads/research/directory-country-media-remaining68
