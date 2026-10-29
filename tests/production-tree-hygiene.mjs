@@ -131,6 +131,21 @@ for(const name of workflows){
     assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
     assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
     assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
+  }else if(name==="directory-p83-global-screen-recovery-one-shot.yml"){
+    // Exact P81+P80 global source P83 retry; never publishes original photos.
+    assert.match(source,/push:\s*\n\s*branches:\s*\n\s*-\s*research\/p83-duplicate-recovery-once-20261029/);
+    assert.match(source,/paths:\s*\n\s*-\s*data\/directory\/research\/\.run-p83-duplicate-recovery-20261029\.json/);
+    assert.match(source,/github\.ref == 'refs\/heads\/research\/p83-duplicate-recovery-once-20261029'/);
+    assert.match(source,/permissions:\s*\n\s*contents:\s*write/i);
+    assert.match(source,/p81-archive-sha256\.txt/);
+    assert.match(source,/screen-worldwide-p83-photo-candidates\.py/);
+    assert.match(source,/sha256sum -c SHA256SUMS/);
+    assert.match(source,/git push origin "HEAD:refs\/heads\/\$branch"/);
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1);
+    assert.doesNotMatch(source,/schedule:\s*\n|workflow_dispatch:/);
+    assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
+    assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
   }else if(name==="branch-hygiene.yml"){
     // Merged-branch ref deletion is deliberately distinct from mutating app
     // source or restoring old production builds. Enforce the exact safeguards,
