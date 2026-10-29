@@ -112,3 +112,18 @@ test("source document request ceiling is strict",async()=>{
  await assert.rejects(resolver.resolve({path:original,section:"Ant 1",language:"en"}),
   /OFFICE_AT_SOURCE_READ_BUDGET/);
 });
+
+test("source conditional lines and editorial notation remain unresolved",async()=>{
+ for(const raw of ["(rubrica 1960)","(nisi rubrica tridentina)",
+  "{:H-PlacareChriste:}v. hymn","!Isa 1:1-3"]){
+  const resolver=createOfficeAtReferenceResolver({
+   readSource:async(path,language)=>({
+    sourceRevision:DIVINUM_OFFICIUM_PIN,sourcePath:path,language,
+    map:new Map([["Oratio",[raw]]])
+   })
+  });
+  await assert.rejects(resolver.resolve({
+   path:original,section:"Oratio",language:"la"
+  }),/OFFICE_AT_OTHER_MACRO_OR_CONDITIONAL_UNRESOLVED/);
+ }
+});
