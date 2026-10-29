@@ -18519,16 +18519,23 @@
     "institution": "KMSKA Antwerp",
     "sourceCards": 89,
     "frozenConditionalChoices": 33,
-    "exactOfficialPagesVerified": 2,
-    "exactOfficialPagesStillPending": 87,
+    "exactOfficialPagesVerified": 89,
+    "exactOfficialPagesStillPending": 0,
     "structuralTriptychRelationConfirmed": true,
     "sourceProbeWorkflow": "sacred-art-kmska-89-official-source-probe-20261029.yml",
-    "museumBackedOfficialVerifiedToDate": 230,
-    "museumBackedOfficialStillUnverified": 249,
+    "museumBackedOfficialVerifiedToDate": 317,
+    "museumBackedOfficialStillUnverified": 162,
     "canonical383NewLinks": 0,
     "photoRightsOrNativeVisualCertified": 0,
     "publicationActions": 0,
     "userDecisionsChanged": false,
-    "productionMutation": false
+    "productionMutation": false,
+    "officialBulkReport": "data/calendar/sacred-art-phase1-kmska-89-official-inventory-report-20261029.v1.json",
+    "officialBulkGeneratedAt": "2026-10-29T21:00:32.695Z",
+    "officialInventoryAndTitleMatches": 89,
+    "officialPageResolveFailures": 0,
+    "officialPageTitleOrInventoryExceptions": 0,
+    "verifiedPhysicalSpecialCases": "data/calendar/sacred-art-phase1-kmska-physical-special-cases-20261029.v1.json",
+    "sourcePhotoCertificationNotInScope": true
   }
 }
