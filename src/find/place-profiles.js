@@ -1,6 +1,7 @@
 import { formatDisplayDate } from "../app/date-format.js";
 import { calendarDateForSemanticKey } from "../calendar/intelligence.js";
 import { existingPlaceEditorialConnections } from "./place-editorial-reuse.js";
+import { resolveRelicIndoorPlacement } from "./relic-indoor-location.js";
 
 const arr=value=>Array.isArray(value)?value:[];
 const text=value=>String(value??"").trim();
@@ -354,6 +355,7 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
       return Object.freeze({
         ...entry,kind:raw?.relic_kind??null,associated_person:raw?.associated_person??null,
         item_id:linked?.item_id??null,lens:linked?.lens??null,
+        inside_location:resolveRelicIndoorPlacement(dataset?.sacredPhenomena?.indoorPlacement,entry.id,placeId),
         access_notice_en:raw?.access_notice_en??null,
         access_notice_fr:raw?.access_notice_fr??null,
         display_notice_en:raw?.display_notice_en??null,

@@ -32,8 +32,8 @@ export function renderPlaceSacredTreasures(profile,language="en"){
     +'<header><small>'+esc(L(language,"SACRED TREASURES","TRÉSORS SACRÉS"))+'</small>'
     +'<h3>'+esc(L(language,"Relics associated with this sanctuary","Reliques associées à ce sanctuaire"))+'</h3>'
     +'<p>'+esc(L(language,
-      "Their reported custody is documented by the cited sources; authenticity, precise indoor position and public display have not been independently established.",
-      "Les sources citées attestent leur conservation signalée, mais ni leur authenticité, ni leur emplacement précis, ni leur exposition au public ne sont établis indépendamment."))+'</p></header>'
+      "Custody and, where listed, precise indoor position are attributed to the cited sources; neither authenticity, public display nor visitor access is guaranteed.",
+      "La conservation et, le cas échéant, l’emplacement intérieur sont attribués aux sources citées ; ni authenticité, ni exposition au public, ni accès ne sont garantis."))+'</p></header>'
     +'<div class="aoExploreTreasureGrid">';
   for(const row of treasures){
     const title=language==="fr"?row.title?.fr:row.title?.en;
@@ -42,12 +42,32 @@ export function renderPlaceSacredTreasures(profile,language="en"){
     const display=language==="fr"?(row.display_notice_fr||""):(row.display_notice_en||"");
     const access=language==="fr"?(row.access_notice_fr||""):(row.access_notice_en||"");
     const kind=titles[row.kind]??["Relic","Relique"];
+    const inside=row.inside_location;
+    const indoorLabel=language==="fr"?inside?.location_fr:inside?.location_en;
+    const indoorSource=inside?.source_url;
+    const isClosed=inside?.access_state==="TEMPORARY_CLOSURE_ANNOUNCED_2026_04_16";
+    const indoorHtml=indoorLabel&&source(indoorSource)?
+      '<div class="aoExploreIndoorPosition" data-relic-placement="'+esc(row.id)+'">'
+      +'<small>'+esc(L(language,"WITHIN THE SANCTUARY","EMPLACEMENT DANS LE SANCTUAIRE"))+'</small>'
+      +'<strong>'+esc(indoorLabel)+'</strong>'
+      +'<span>'+esc(L(language,"Source-described location · not indoor navigation",
+        "Emplacement décrit par la source · pas de guidage intérieur"))+'</span>'
+      +'<a href="'+esc(indoorSource)+'" target="_blank" rel="noopener noreferrer">'
+      +esc(L(language,"Location source","Source de l’emplacement"))+' ↗</a>'
+      +(isClosed&&source(inside?.access_source_url)?
+        '<p class="aoExploreIndoorClosure">'+esc(L(language,
+          "The relic chapel was reported closed for works on 16 April 2026. Check for reopening before visiting.",
+          "La fermeture de la chapelle pour travaux a été annoncée le 16 avril 2026. Vérifiez sa réouverture avant toute visite."))
+        +' <a href="'+esc(inside.access_source_url)+'" target="_blank" rel="noopener noreferrer">'
+        +esc(L(language,"Closure notice","Avis de fermeture"))+' ↗</a></p>':"")
+      +'</div>':"";
     html+='<article class="aoExploreTreasureCard" data-sacred-object-id="'+esc(row.id)+'">'
       +'<small class="aoExploreTreasureKind">'+esc(kind[language==="fr"?1:0])+'</small>'
       +'<h4>'+esc(title)+'</h4>'
       +(!genericFrench&&description?'<p>'+esc(description)+'</p>':"")
       +(display?'<p class="aoExploreTreasureNotice">'+esc(display)+'</p>':"")
       +(access?'<p class="aoExploreTreasureNotice">'+esc(access)+'</p>':"")
+      +indoorHtml
       +'<div class="aoExploreTreasureActions">'
       +'<a href="'+esc(row.source_url)+'" target="_blank" rel="noopener noreferrer">'
       +esc(L(language,"Custody source","Source de conservation"))+' ↗</a>'
