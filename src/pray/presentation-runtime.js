@@ -2550,7 +2550,7 @@ function renderLitany(){
  // section while making the actual invocations the first reading surface.
  const edition=L('English prayer-book witness · 1883 · private','Témoin français de 1862 · privé');
  const body=`<p class="aoLitanyWitnessCaption" role="note">${esc(edition)}</p>
-  <article class="aoP435930Prayer ${S.rosary.recitation==='group'?'aoP435930GroupRecitation':''}" lang="${lang()}"><div class="aoP435930Text aoP435930LitanyVerses">${text}</div></article>
+  <article class="aoLitanyHistoricalText" lang="${lang()}" data-ao-litany-witness-text="true"><div class="aoLitanyVerses">${text}</div></article>
   <details class="aoLitanySectionGuide"><summary>${esc(L('How to pray this section','Comment prier cette partie'))}</summary>
    ${guideNow(st.title,L('Pray the historical wording in order. In a group, agree who leads the responses; this transcription does not assign every voice.','Priez le texte historique dans l’ordre. En groupe, convenez de la répartition des répons ; cette transcription n’attribue pas chaque voix.'))}
    ${guideCue(L('PACE','RYTHME'),L('Leave a small breath between invocations. The repetition is part of the prayer, not text to skim.','Laissez un léger souffle entre les invocations. La répétition fait partie de la prière ; ce n’est pas un texte à parcourir rapidement.'))}
