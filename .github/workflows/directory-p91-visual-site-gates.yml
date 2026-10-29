@@ -1,0 +1,25 @@
+name: P91 Directory real image visual and exact site evidence contracts
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/research/directory/p91-independent-photo-screen-20261029/**'
+      - 'tests/directory-p91-exact-visual-site-gates-test.py'
+permissions:
+  contents: read
+jobs:
+  p91-metadata-identity-provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact source ID continuity, 385 accounted, no ambiguous-site false rejection or media release
+        run: |
+          set -euo pipefail
+          python -m py_compile tests/directory-p91-exact-visual-site-gates-test.py
+          python tests/directory-p91-exact-visual-site-gates-test.py -v
