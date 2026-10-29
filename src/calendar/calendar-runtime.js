@@ -1209,6 +1209,14 @@ function hybridMonthCss(){return `
 .aoCalCustomArticleContent p{margin:5px 0 10px}
 .aoCalCustomArticleContent ul{padding-left:18px}
 .aoCalCustomArticleContent a{color:#d8c5a4;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.aoCalCustomRegionalVariants{border-top:1px solid rgba(227,212,187,.2);margin-top:19px;padding-top:10px}
+.aoCalCustomRegionalVariants>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:#e4d1b2;font-weight:650}
+.aoCalCustomRegionalVariants>p{font-size:13px;line-height:1.55;color:#c2b6a3}
+.aoCalCustomRegionalVariant{padding:12px 0;border-top:1px solid rgba(227,212,187,.12)}
+.aoCalCustomRegionalVariant h5{margin:4px 0 8px;font-size:14px}
+.aoCalCustomRegionalVariant small{display:block;color:#bcae97;line-height:1.5}
+.aoCalCustomRegionalVariant a{overflow-wrap:anywhere}
+
 .aoCalCustomCatalogueSection{margin:18px 0 14px}
 .aoCalCustomCatalogue{border-top:1px solid rgba(227,212,187,.15);border-bottom:1px solid rgba(227,212,187,.12);padding:3px 0}
 .aoCalCustomCatalogue>summary{list-style:none;cursor:pointer;padding:13px 2px;font-size:15px;color:#d2c6b2}
