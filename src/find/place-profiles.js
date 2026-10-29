@@ -76,6 +76,7 @@ export function resolveApprovedPlaceGallery(records,placeId){
     seen.add(id);
     out.push(Object.freeze({
       media_id:id,asset_path:path,chapter_id:text(record.chapter_id),
+      display_role:text(record.display_role),
       source_url:text(record.source_url),license_url:text(record.license_url),
       license:text(record.license),credit:text(record.credit),orientation:record.orientation,
       alt_en:text(record.alt_en),alt_fr:text(record.alt_fr),
@@ -388,8 +389,13 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
       editorial_feature:featuredPlace?Object.freeze({ordinal:featuredPlace.ordinal,source_id:featuredPlace.source_id}):null,
       aliases:Object.freeze(arr(place?.name?.aliases).filter(Boolean)),
       place_type:place?.place_type??"other",
-      media:resolveApprovedPlaceMedia(dataset?.media?.approved,placeId),
-      gallery:resolveApprovedPlaceGallery(dataset?.media?.gallery,placeId),
+      // Preserve any separately approved main Place photograph. When no such
+      // photo exists, allow ONLY an exact-Place approved gallery photo with an
+      // explicit HERO slot to become the first card picture; detail and
+      // reliquary images never qualify for this fallback.
+      media:resolveApprovedPlaceMedia(dataset?.media?.approved,placeId) ??
+        approvedGallery.find(photo=>photo.display_role==="HERO"&&!photo.subject_relic_id) ?? null,
+      gallery:approvedGallery,
       illustrated_guide:publishedIllustratedPlaceGuide(dataset?.editorial?.placeGuides,placeId),
       editorial_intro:editorial.introduction,
       sacred_treasures:sacredTreasures,
