@@ -88,6 +88,17 @@ for(const invalid of [
  assert.equal(auditGestureIconDispositions({dispositions:invalid,matrix,bank:master}).ok,false,
   "Source/actor/artwork promotion contract failed to close");
 }
+const review=readFileSync(new URL("../reviews/mass-priest-two-svg-visual-review-20261029.html",import.meta.url),"utf8");
+assert.match(review,/<strong>Verdict: both drawings require redesign/);
+assert.match(review,/class="asset-32"/);
+assert.match(review,/class="asset-48"/);
+assert.match(review,/class="asset-64"/);
+for(const name of ["priest-eyes-hands-raised.svg","priest-hands-over-oblations.svg"])
+ assert.ok(review.includes(name),"Blocked artwork lacks actual-size review: "+name);
+for(const source of ["_PI.HTM","_PJ.HTM","_PN.HTM"])
+ assert.ok(review.includes(source),"Primary 1962 source omitted: "+source);
+assert.ok(review.includes("not a permanent user veto"),
+ "Editorial drawing failure was conflated with user rejection");
 const sourceIntegrityTampered=structuredClone(matrix);
 sourceIntegrityTampered.items.find(x=>x.id==="GM.P.C0117.01").iconKey="priest_centre_arms_rich";
 assert.equal(auditGestureIconDispositions({dispositions,matrix:sourceIntegrityTampered,bank:master}).ok,false,
