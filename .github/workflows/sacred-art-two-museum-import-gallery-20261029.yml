@@ -42,7 +42,8 @@ jobs:
           m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',html,re.S)
           assert m
           rows=json.loads(m.group(1))
-          assert 0<=len(rows)<=d['counts']['totalVisuallyReviewable']
+          assert len(rows)<=d['counts']['totalVisuallyReviewable']+3
+          assert sum(x['provider']=='KMSKA' for x in rows)==3
           assert all(not any(z in x['title'].lower() for z in ('krishna','buddha','shiva','vishnu')) for x in rows)
           assert len({x['id'] for x in rows})==len(rows)
           assert 'IMPORT_WITH_CORRECTIONS' in html and 'UNSELECTED' in html
@@ -51,6 +52,7 @@ jobs:
           assert "cur(w.id).decision" in html
           assert "for(let score=" not in html
           assert all(x['previewURL'] and x['sourceImageRights']!='UNVERIFIED' for x in rows)
+          assert all(x.get('rightsConflict') and not x.get('productionImageRightsCleared') for x in rows if x['provider']=='KMSKA')
           assert d['imagesDownloaded']==0 and d['productionImports']==0
           print('PASS',len(rows),'image-visible items; import and corrections only, unselected reject on finalize')
           PY
