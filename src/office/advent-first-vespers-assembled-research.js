@@ -16,6 +16,8 @@ import {OFFICE_ADVENT_CHAPTER_HYMN_SCHEMA}
  from "./advent-vespers-chapter-hymn.js";
 import {OFFICE_SOURCE_SLICE_SCHEMA}
  from "./source-acceptance-slice.js";
+import {OFFICE_VESPERS_ORIGINAL_PRAYERS_SCHEMA}
+ from "./advent-vespers-ordinary-prayers.js";
 
 export const OFFICE_ADVENT_ASSEMBLY_SCHEMA="ao.office.advent-i-first-vespers-assembly.v1";
 const PIN=DIVINUM_OFFICIUM_PIN,DAY="2026-11-29",EVE="2026-11-28";
@@ -66,7 +68,8 @@ function blockedSlot(key,role,gates){
  });
 }
 export function assembleAdventFirstVespersResearch({
- sourceSequence,psalmody,properWitness,magnificat,chapterHymn,collect
+ sourceSequence,psalmody,properWitness,magnificat,chapterHymn,collect,
+ openingClosing=null
 }={}){
  if(sourceSequence?.schema!==ADVENT_FIRST_VESPERS_RESEARCH_SCHEMA||
     sourceSequence.status!=="SOURCE_SEQUENCE_COMPONENTS_MAPPED_UNVERIFIED"||
@@ -99,6 +102,18 @@ export function assembleAdventFirstVespersResearch({
     collect.completeHourVerified!==false||
     !Array.isArray(collect.sections))
   return fail("OFFICE_ADVENT_ASSEMBLY_COLLECT_REQUIRED");
+ const hasOrdinarySourceCandidates=openingClosing!==null;
+ if(hasOrdinarySourceCandidates&&(
+    openingClosing?.schema!==OFFICE_VESPERS_ORIGINAL_PRAYERS_SCHEMA||
+    openingClosing.status!=="OPENING_AND_CONCLUSION_SOURCE_CANDIDATES_UNVERIFIED"||
+    !common(openingClosing)||!languageMap(openingClosing.languages)||
+    openingClosing.selected1960Ordinary!==false||
+    openingClosing.priestOrLayVariantVerified!==false||
+    !LANGUAGES.every(lang=>
+      openingClosing.languages[lang]?.opening?.length===4&&
+      openingClosing.languages[lang]?.ending?.length===3)
+ ))
+  return fail("OFFICE_ADVENT_ASSEMBLY_OPENING_CLOSING_SOURCE_INVALID");
  const collectSection=collect.sections.find(x=>
   x.role==="COLLECT"&&x.sourceId==="Tempora/Adv1-0#Oratio");
  if(!collectSection||!languageMap(collectSection.texts)||
@@ -143,8 +158,19 @@ export function assembleAdventFirstVespersResearch({
  }
  const project=field=>Object.fromEntries(LANGUAGES.map(lang=>
   [lang,linesByLanguage[lang][field]]));
- slots.push(blockedSlot("opening","OPENING",[
-  "1960_INITIAL_PATER_AVE_AND_DEUS_IN_ADJUTORIUM_APPOINTMENT"]));
+ slots.push(hasOrdinarySourceCandidates?
+  sourceOnlySlot("opening","OPENING",[
+   "Psalterium/Common/Prayers#Pater noster",
+   "Psalterium/Common/Prayers#Ave Maria",
+   "Psalterium/Common/Prayers#Deus in adjutorium",
+   "Psalterium/Common/Prayers#Alleluia"
+  ],Object.fromEntries(LANGUAGES.map(lang=>[
+   lang,openingClosing.languages[lang].opening
+  ])),[
+   "1960_SILENT_INITIAL_PRAYERS_AND_SEASONAL_ALLELUIA_SELECTION"
+  ]):
+  blockedSlot("opening","OPENING",[
+   "1960_INITIAL_PATER_AVE_AND_DEUS_IN_ADJUTORIUM_APPOINTMENT"]));
  slots.push(sourceOnlySlot("five-psalmody","PSALMODY",
   ["Psalterium/Psalmi/Psalmi major#Day0 Vespera","Tempora/Adv1-0#Ant Laudes",
    ...[109,110,111,112,113].map(n=>"Psalterium/Psalmorum/Psalm"+n+"#VERSES")],
@@ -171,8 +197,19 @@ export function assembleAdventFirstVespersResearch({
  ],project("collect"),["1960_COLLECT_AND_CONCURRENCE_APPOINTMENT"]));
  slots.push(blockedSlot("commemorations","COMMEMORATIONS",[
   "1960_OCCURRENCE_AND_CONCURRENCE_COMMDECISION"]));
- slots.push(blockedSlot("conclusion","CONCLUSION",[
-  "1960_BENEDICAMUS_FIDELIUM_ANIMAE_AND_LOCAL_VARIANTS"]));
+ slots.push(hasOrdinarySourceCandidates?
+  sourceOnlySlot("conclusion","CONCLUSION",[
+   "Psalterium/Common/Prayers#Dominus",
+   "Psalterium/Common/Prayers#Benedicamus Domino",
+   "Psalterium/Common/Prayers#Fidelium animae"
+  ],Object.fromEntries(LANGUAGES.map(lang=>[
+   lang,openingClosing.languages[lang].ending
+  ])),[
+   "PRIEST_OR_LAY_DOMINUS_VOBISCUM_BRANCH",
+   "1960_BENEDICAMUS_FIDELIUM_ANIMAE_AND_LOCAL_VARIANTS"
+  ]):
+  blockedSlot("conclusion","CONCLUSION",[
+   "1960_BENEDICAMUS_FIDELIUM_ANIMAE_AND_LOCAL_VARIANTS"]));
  if(slots.length!==10||slots.some((x,i)=>x.key!==ORDER[i][0]||x.role!==ORDER[i][1]))
   return fail("OFFICE_ADVENT_ASSEMBLY_ORDER_MISMATCH");
  return Object.freeze({
