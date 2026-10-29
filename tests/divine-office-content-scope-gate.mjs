@@ -127,3 +127,31 @@ test("French II Vespers missing component is caught when heading and antiphon sp
     "Je vis le Seigneur assis. Pardonnez, nous vous en supplions, Seigneur.");
   assert.deepEqual(officeTranslationContentBlockers({latin:saturday,translation:satFr}),[]);
 });
+
+
+test("restored French Sunday Vespera10 with headline-only commemoration clears only its content blocker",()=>{
+  const latin=doc("la","Incipit","2026-11-01","VESPERS");
+  latin.headline="Omnium Sanctorum ~ I. classis";
+  latin.sections=[
+    {sourceCellId:"Vespera9",semantic:{role:"PRAYER"},text:"Oratio Omnium Sanctorum."},
+    {sourceCellId:"Vespera10",semantic:{role:"PRAYER"},
+      text:"Ant. At Jesus conversus et videns eam dixit.\n"+
+        "℣. Dirigatur, Domine, oratio mea.\n"+
+        "℟. Sicut incensum in conspectu tuo.\n"+
+        "Absolve, quaesumus, Domine, tuorum delicta populorum."}
+  ];
+  const french=doc("fr","Oraison","2026-11-01","VESPERS");
+  french.headline="Tous les Saints. Commémoraison du 23e dimanche après la Pentecôte";
+  french.sections=[
+    {sourceCellId:"Vespera9",semantic:{role:"PRAYER"},text:"Oraison de Tous les Saints."},
+    {sourceCellId:"Vespera10",semantic:{role:"PRAYER"},
+      text:"Jésus se retournant et la voyant dit : Aie confiance, ma fille.\n"+
+        "℣. Que ma prière soit dirigée, Seigneur.\n"+
+        "℟. Comme un encens en votre présence.\n"+
+        "Pardonnez, nous vous en supplions, Seigneur, les offenses de vos peuples."}
+  ];
+  assert.deepEqual(officeTranslationContentBlockers({latin,translation:french}),[]);
+  const missing={...french,sections:french.sections.slice(0,1)};
+  assert.equal(officeTranslationContentBlockers({latin,translation:missing})[0].reason,
+    "FR_VESPERS_SUNDAY_COMMEMORATION_INCOMPLETE");
+});
