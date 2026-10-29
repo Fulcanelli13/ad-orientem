@@ -1,0 +1,132 @@
+{
+  "schema": "AO_SACRED_ART_KMSKA_89_PHYSICAL_RELATION_SPECIAL_CASES_V1",
+  "date": "2026-10-29",
+  "scope": "Four authoritative museum consortium/collection source matches, two distinct Cossiers same-title works and two components of a triptych with independently rejected parent review",
+  "sourceQueue": "data/calendar/sacred-art-phase1-kmska-89-official-identity-queue-20261029.v1.json",
+  "sourceQueueBlobSha": "a09c871d08f19cd7d5ca9c90938fb45cc5d500ed",
+  "counts": {
+    "verifiedSourceIdentities": 4,
+    "distinctCossiersPaintings": 2,
+    "acceptedTriptychComponents": 2,
+    "documentedRejectedWholePresent": 1,
+    "newCanonical383Links": 0,
+    "sourcePhotoCertified": 0,
+    "userDecisionsMutated": 0,
+    "productionImports": 0
+  },
+  "notes": [
+    "No assumption that each inventory record equals one painting universally; triptychs and composite surfaces must be assessed by work structure",
+    "The official Flemish Art Collection pages explicitly link the legacy source identifiers for Cossiers 37 and 40",
+    "No editorial transfer between 208, 209bis, 210bis, and 208–210"
+  ],
+  "records": [
+    {
+      "sourceId": "kmska:0csw4p",
+      "legacyReviewChoice": "IMPORT",
+      "legacyBatch": "B3",
+      "originalReviewedTitle": "Aanbidding door de herders",
+      "originalAccession": "40",
+      "sourceEvidence": {
+        "publicAuthority": "Flemish Art Collection, Royal Museum of Fine Arts Antwerp",
+        "page": "https://vlaamsekunstcollectie.be/collectie/40",
+        "officialInventory": "40",
+        "artist": "Jan Cossiers",
+        "material": "oil on canvas",
+        "dimensionsCm": {
+          "height": 300,
+          "width": 275
+        },
+        "linkedLegacyPurl": "http://kmska.be/collection/work/data/0csw4p",
+        "identityRelation": {
+          "relation": "SAME_TITLE_SAME_ARTIST_DISTINCT_PHYSICAL_OBJECT_FROM_37",
+          "relatedSourceId": "kmska:4opepv",
+          "reason": "Different exact official collection object IDs, dimensions, and distinct old PURLs"
+        }
+      },
+      "samePhysicalArtAsOtherAcceptedRecord": false,
+      "releaseGate": "RESEARCH_ONLY_NO_IMAGE_CERTIFICATION"
+    },
+    {
+      "sourceId": "kmska:4opepv",
+      "legacyReviewChoice": "IMPORT",
+      "legacyBatch": "B3",
+      "originalReviewedTitle": "Aanbidding door de herders",
+      "originalAccession": "37",
+      "sourceEvidence": {
+        "publicAuthority": "Flemish Art Collection, Royal Museum of Fine Arts Antwerp",
+        "page": "https://vlaamsekunstcollectie.be/collectie/37",
+        "officialInventory": "37",
+        "artist": "Jan Cossiers",
+        "material": "oil on canvas",
+        "dimensionsCm": {
+          "height": 152,
+          "width": 237
+        },
+        "linkedLegacyPurl": "http://kmska.be/collection/work/data/4opepv",
+        "identityRelation": {
+          "relation": "SAME_TITLE_SAME_ARTIST_DISTINCT_PHYSICAL_OBJECT_FROM_40",
+          "relatedSourceId": "kmska:0csw4p",
+          "reason": "Different exact official collection object IDs, dimensions, and distinct old PURLs"
+        }
+      },
+      "samePhysicalArtAsOtherAcceptedRecord": false,
+      "releaseGate": "RESEARCH_ONLY_NO_IMAGE_CERTIFICATION"
+    },
+    {
+      "sourceId": "kmska:7v3wb4",
+      "legacyReviewChoice": "IMPORT",
+      "legacyBatch": "B3",
+      "originalReviewedTitle": "Aanbidding door de koningen",
+      "originalAccession": "208",
+      "sourceEvidence": {
+        "publicAuthority": "Royal Museum of Fine Arts Antwerp",
+        "page": "https://kmska.be/nl/meesterwerk/aanbidding-door-de-koningen-3",
+        "officialInventory": "208",
+        "artist": "Meester van de Aanbidding te Antwerpen",
+        "material": "oil on panel",
+        "dimensionsCm": {
+          "height": 29,
+          "width": 22
+        },
+        "identityRelation": {
+          "relation": "CENTRE_PANEL_OF_TRIPTYCH_208_TO_210",
+          "parentInventory": "208-210",
+          "parentSourceId": "kmska:z5h6lf",
+          "parentDecision": "REJECT",
+          "approvalNeverTransferred": true
+        }
+      },
+      "samePhysicalArtAsOtherAcceptedRecord": false,
+      "releaseGate": "RESEARCH_ONLY_NO_IMAGE_CERTIFICATION"
+    },
+    {
+      "sourceId": "kmska:9tct5i",
+      "legacyReviewChoice": "IMPORT",
+      "legacyBatch": "B3",
+      "originalReviewedTitle": "Annunciatie",
+      "originalAccession": "209bis",
+      "sourceEvidence": {
+        "publicAuthority": "Royal Museum of Fine Arts Antwerp",
+        "page": "https://kmska.be/nl/meesterwerk/annunciatie",
+        "officialInventory": "209bis",
+        "artist": "Meester van de Aanbidding te Antwerpen",
+        "material": "oil on panel",
+        "dimensionsCm": {
+          "height": 29,
+          "width": 8.5
+        },
+        "identityRelation": {
+          "relation": "EXTERIOR_ANNUNCIATION_WING_OF_208_TO_210",
+          "parentInventory": "208-210",
+          "parentSourceId": "kmska:z5h6lf",
+          "parentDecision": "REJECT",
+          "otherAnnunciationSourceId": "kmska:hyinp7",
+          "otherAnnunciationDecision": "REJECT",
+          "approvalNeverTransferred": true
+        }
+      },
+      "samePhysicalArtAsOtherAcceptedRecord": false,
+      "releaseGate": "RESEARCH_ONLY_NO_IMAGE_CERTIFICATION"
+    }
+  ]
+}
