@@ -47,7 +47,8 @@ try{
    assert.equal(await page.locator(base+'[data-p435930-pilot-loreto-form="litany_loreto_current"]').getAttribute("aria-pressed"),"true");
    await page.locator(base+'[data-p435930-pilot-loreto-language="fr"]').click();
    assert.equal(await page.locator(base+'.aoReaderPilotLitany .aoDevoCardScroll').getAttribute("lang"),"fr");
-   await page.locator(base+'[data-p435930-pilot-loreto-group]').click();
+   await page.locator(base+'[data-p435930-pilot-loreto-group="group"]').click();
+   assert.equal(await page.locator(base+'[data-p435930-pilot-loreto-group="group"]').getAttribute("aria-pressed"),"true");
    assert.equal(await page.locator(base+'.aoReaderPilotLitanyPair small').count()>40,true);
    await page.screenshot({path:resolve(output,"loreto-current-fr-group-"+width+".png"),animations:"disabled"});
    await page.locator(base+'[data-p435930-pilot-loreto-language="la"]').click();
