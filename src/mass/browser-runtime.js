@@ -208,7 +208,9 @@ export function createBrowserMassRuntime({
       progress:String(state.index+1)+" / "+String(state.total)+" · Absolution",
       posture:card.posture && card.posture!=="LOCAL_OR_INHERIT" ? {label:card.posture} : null,
       gesture:null,
-      guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+      guide:card.guide ? {registryAvailable:true,text:
+        String(currentPrepared?.readerPreferences?.language??"en").toLowerCase().startsWith("fr") &&
+        card.guideFr ? card.guideFr : card.guide} : null,
     };
   }
 
