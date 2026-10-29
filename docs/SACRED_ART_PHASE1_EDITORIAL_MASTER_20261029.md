@@ -209,3 +209,18 @@ Evidence ledger: [NGA 126 source cards, 42 object pages confirmed](../data/calen
 **Overall museum verification:** prior CMA 29 + Met 73 = 102; newly observed NGA 42 = **144/479** institution-backed canonical-unlinked cards with an official-page identity check. **335** remain without independent official-site confirmation (NGA 84, KMSKA 89, Rijks 66, SMK 54, Walters 42), and separately 305 Commons-origin unlinked cards. Crosswalk to canonical 383 remains **72 accepted cards linked / 784 unlinked**: neither finding an NGA record nor identifying series/components constitutes a new exact crosswalk link. No editorial decisions changed, canonical master promotions, image certification, production releases or spending.
 
 Validation guards now include all 126 NGA source rows and their 42 confirmed official object-page identities, 12-panel series, 84 still-pending records, Tiepolo separate object evidence and all closed release gates. **The Node validator has not been executed in CI.**
+
+### NGA official Open Data bulk follow-up (staged; not yet run)
+
+Instead of doing 84 more manual title/URL lookups, the research branch now includes `scripts/art/reconcile-nga-opendata-126-20261029.mjs`. It accepts the NGA's official [CC0 collection metadata CSV repository](https://github.com/NationalGalleryOfArt/opendata), joins all 126 frozen source IDs to `objects.csv` by exact numeric `objectID`, checks accession numbers and normalized titles, and optionally reads `object_associations.csv` for parent/child relationships. It records `isVirtual`, attribution, medium, series and provenance and generates a separate research-only report at a new output path; **it never modifies the review ledger or production artwork registry**.
+
+Usage after obtaining the official NGA metadata files:
+
+```sh
+node scripts/art/reconcile-nga-opendata-126-20261029.mjs \
+  --objects=/path/to/nga-opendata/data/objects.csv \
+  --associations=/path/to/nga-opendata/data/object_associations.csv \
+  --output=/tmp/nga-126-verified.json
+```
+
+The CSV parser's quoted-field/multiline test passed in isolated logic. **No live NGA CSV was downloaded or parsed in this conversation**, and the standalone Node script was **not** executed on the authoritative dataset. Do not count the pending 84 as verified before the resulting report is independently checked and committed. This workflow is designed to use free factual metadata without downloading images or spending money.
