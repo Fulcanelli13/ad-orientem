@@ -172,7 +172,32 @@ export function createOfficeAtReferenceResolver({readSource,maxDocuments=32,
    rightsApproved:false,publishable:false,status:"PARSED_UNVERIFIED"
   });
  }
- return Object.freeze({resolve,resolveParallel,
+ async function resolvePlainPsalmParallel({number}={}){
+  if(!Number.isInteger(number)||number<1||number>150||!enablePsalmVerses)
+   throw Error("OFFICE_AT_PSALM_FORM_NOT_SUPPORTED");
+  const verses=await Promise.all(LANGUAGES.map(language=>
+   psalmVerses(number,language)));
+  return Object.freeze({
+   schema:"ao.office.plain-psalm-source-verses.v1",
+   status:"THREE_LANGUAGE_SOURCE_VERSES_UNVERIFIED",
+   sourceRevision:DIVINUM_OFFICIUM_PIN,
+   sourcePath:"Psalterium/Psalmorum/Psalm"+number,
+   psalmNumber:number,
+   texts:Object.freeze(Object.fromEntries(LANGUAGES.map((language,i)=>[
+    language,verses[i].text
+   ]))),
+   referenceTraces:Object.freeze(Object.fromEntries(LANGUAGES.map((language,i)=>[
+    language,Object.freeze([Object.freeze({
+     sourceId:verses[i].sourceId,language
+    })])
+   ]))),
+   rawVersesLocated:true,psalmDoxologyVerified:false,
+   antiphonApplicationVerified:false,paragraphAlignmentVerified:false,
+   officeCompletenessVerified:false,rightsApproved:false,
+   publishable:false,published:false
+  });
+ }
+ return Object.freeze({resolve,resolveParallel,resolvePlainPsalmParallel,
   cachedSourceCount:()=>cache.size+psalmCache.size,
   maxDepth,maxNodes,standardPrayersSourceEnabled:enableStandardPrayers,
   psalmVerseSourceEnabled:enablePsalmVerses,
