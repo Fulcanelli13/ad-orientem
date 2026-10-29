@@ -30,6 +30,9 @@ for(const id of ["chaplets","marian","daily","novenas","eucharistic","ourlord","
 assert.match(actual,/data-p435930-own="pray.library"/);
 assert.match(actual,/data-p435930-pilot-prayer="foundations_hail_mary"/);
 assert.match(actual,/data-p435930-pilot-search/);
+assert.equal((actual.match(/data-p435930-pilot-facet="/g)||[]).length,5,"R1.1 has four form filters plus Latin availability");
+assert.match(actual,/data-pilot-form="prayer"/);
+assert.match(actual,/data-pilot-latin="false"/);
 assert.match(actual,/approved paintings and crops are not yet bound/);
 
 const angelus=renderPilotAngelusEntry({
