@@ -1,0 +1,72 @@
+name: P76 verified WebP source blob handoff (read-only)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/p76-archive-verified-derivatives.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  reviewed-binary-handoff:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    strategy:
+      fail-fast: false
+      matrix:
+        segment: [0, 1, 2]
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN: '40832362448'
+      SOURCE_SHA: '73cb45716059a8d33bc12ca4012fcf68be889966'
+      SEGMENT: ${{ matrix.segment }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate exact successful immutable 30-original source run
+        run: |
+          set -euo pipefail
+          test "$(gh run view "$SOURCE_RUN" --repo "$GITHUB_REPOSITORY" --json conclusion --jq .conclusion)" = success
+          test "$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN" --jq .head_sha)" = "$SOURCE_SHA"
+      - name: Retrieve existing source-verified WebPs without another Commons download
+        run: |
+          mkdir -p /tmp/p76-original-audit
+          gh run download "$SOURCE_RUN" --repo "$GITHUB_REPOSITORY" \
+            --name p76-30-exteriors-research-derivatives-for-review \
+            --dir /tmp/p76-original-audit
+      - name: Authenticate the derivative SHA256 and emit bounded Git-blob handoff chunks
+        run: |
+          python - <<'PY'
+          import base64,hashlib,json,os,pathlib
+          root=pathlib.Path("/tmp/p76-original-audit")
+          m=json.loads(pathlib.Path("data/geography/research/p76-30-exterior-preview-manifest.v1.json").read_text())
+          records=[json.loads(s) for s in (root/"p76-acquisition-results.jsonl").read_text().splitlines()]
+          assert len(records)==len(m["candidates"])==30
+          segment=int(os.environ["SEGMENT"])
+          subset=list(zip(m["candidates"],records))[segment*10:(segment+1)*10]
+          assert len(subset)==10
+          seen=set()
+          for candidate,row in subset:
+              idx=candidate["review_number"]
+              assert idx==row["review_number"] and idx not in seen
+              seen.add(idx)
+              assert candidate["source_sha1"]==row["expected_sha1"]
+              assert candidate["place_id"]==row["place_id"]
+              assert candidate["asset_publication"]=="NOT_APPROVED"
+              assert row["exact_site_approved"] is False and row["published"] is False
+              if not row["original_bytes_verified"]:
+                  print("P76_HOLD="+json.dumps({"index":idx,"reason":row.get("hold_reason")}),flush=True)
+                  continue
+              f=root/row["derivative_file"]
+              b=f.read_bytes()
+              assert len(b)>10000 and b[:4]==b"RIFF" and b[8:12]==b"WEBP"
+              assert hashlib.sha256(b).hexdigest()==row["derivative_sha256"]
+              print("P76_WEBP_RECORD="+json.dumps(row,ensure_ascii=False),flush=True)
+              encoded=base64.b64encode(b).decode("ascii")
+              pieces=[encoded[k:k+6000] for k in range(0,len(encoded),6000)]
+              for k,part in enumerate(pieces):
+                  print("P76_WEBP_CHUNK="+json.dumps({"number":idx,"chunk":k,"total":len(pieces),
+                        "base64":part},separators=(",",":")),flush=True)
+          print("P76_HANDOFF_PART="+json.dumps({"segment":segment,"candidate_files":len(subset),
+            "byte_verified":sum(x["original_bytes_verified"] for _,x in subset)}),flush=True)
+          PY
