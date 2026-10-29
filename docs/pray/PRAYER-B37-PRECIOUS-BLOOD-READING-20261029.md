@@ -16,7 +16,7 @@ The source prayer already uses a responsive 19px minimum serif; do not shrink th
 ## Acceptance
 The existing `test:pray-owner` already runs B18 historical source integrity. Extend its static contract to ensure the original 33 Pater / 7 Gloria / 7 responses, no short-form promotion, and unchanged 19px prayer CSS remain intact.
 
-Extend `tests/pray-chaplets-discovery-phone.mjs` at both 320px and 390px to check that at least 40px of the actual opening prayer is above the action dock, that the original Previous/Continue remains pointer-reachable even after scrolling, that each target is at least 48px high, that text stays 19px+ and there is no horizontal overflow. Continue checking step 2, bead changes, seventh mystery, Latin prayer, original source and other family cards.
+Extend `tests/pray-chaplets-discovery-phone.mjs` at both 320px and 390px to check that the entire first historical opening source line is visible above the action dock (at least 90% of its measured line box, and 26px minimum at phone widths), that the original Previous/Continue remains pointer-reachable even after scrolling, that each target is at least 48px high, that text stays 19px+ and there is no horizontal overflow. Continue checking step 2, bead changes, seventh mystery, Latin prayer, original source and other family cards.
 
 A dedicated GitHub Actions workflow reuses that phone test and uploads temporary three-day screenshots. Inspect images before final UI approval. Required Main and this targeted phone workflow must be green before merging; verify Vercel READY on the exact merge commit.
 
