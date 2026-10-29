@@ -43,7 +43,7 @@ for(const name of workflows){
     assert.match(source,/git\s+push\s+origin\s+["']HEAD:\$\{GITHUB_REF_NAME\}["']/i,
       name+" must push only back to the triggering review branch");
   }else if(name==="directory-st-alphonsus-stage.yml"){
-    // Narrow, exact-branch staging of TWO fixed-source local photographs.
+    // Narrow, exact-branch staging of FOUR fixed-source local photographs.
     // Writes staged assets + report only; no approved media or production edits.
     assert.match(source,/push:\s*\n\s*branches:\s*\n\s*-\s*feat\/directory-st-alphonsus-media-20261029/i,
       "St Alphonsus binary staging must remain on its exact feature branch");
@@ -55,6 +55,10 @@ for(const name of workflows){
       "Only explicit exterior image may be staged");
     assert.match(source,/git add assets\/staged\/directory-st-alphonsus\/US-st-alphonsus-baltimore-nave-2013\.webp/,
       "Only explicit interior image may be staged");
+    assert.match(source,/git add assets\/staged\/directory-st-alphonsus\/US-st-alphonsus-baltimore-exterior-spire-2014\.webp/,
+      "Only explicit full-spire exterior alternate may be staged");
+    assert.match(source,/git add assets\/staged\/directory-st-alphonsus\/US-st-alphonsus-baltimore-high-altar-2013\.webp/,
+      "Only exact St Alphonsus high altar image may be staged");
     assert.match(source,/git add data\/geography\/research\/directory-st-alphonsus-photo-stage-20261029\.v1\.json/,
       "Only provenance report may be staged");
     assert.equal((source.match(/git\s+push\s+/g)||[]).length,1,
