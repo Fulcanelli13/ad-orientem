@@ -90,6 +90,45 @@ try{
    console.log("PASS "+width+"px: direct 1913/1905 source pills, three pending book labels, secondary reading control and "+sourcePlan.morning.length+"/"+sourcePlan.evening.length+" source-edition stages; no completion inferred");
   }finally{await page.close()}
  }
+ // The older phone suite covers French cards. This pilot must additionally
+ // prove that the new continuous presentation handles French at 320px.
+ const frPage=await browser.newPage({viewport:{width:320,height:568},isMobile:true,hasTouch:true,locale:"fr-FR",serviceWorkers:"block"});
+ const frenchErrors=[];frPage.on("pageerror",e=>frenchErrors.push(e.message));
+ try{
+  const origin="http://127.0.0.1:"+server.address().port;
+  await frPage.goto(origin+"/index.html?aoDailyUxPilot=1",{waitUntil:"domcontentloaded",timeout:90000});
+  await frPage.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().installed===true&&typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:40000});
+  await frPage.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("settings"));
+  await frPage.waitForSelector('#ao-settings-modular-root [data-settings-route="/settings/language-reading"]',{timeout:20000});
+  await frPage.locator('[data-settings-route="/settings/language-reading"]').click();
+  await frPage.locator('[data-pref-path="general.uiLanguage"][data-pref-value="fr"]').click();
+  await frPage.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr",null,{timeout:10000});
+  await frPage.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("home"));
+  assert.equal(await frPage.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+  const opened=await frPage.evaluate(()=>globalThis.AO_MODULES.open("pray.morning_evening"));
+  assert.notEqual(opened,false);
+  const base="#aoPray435930.open ";
+  await frPage.waitForSelector(base+".aoDailyBookSelector",{timeout:20000});
+  assert.match(await frPage.locator(base+".aoDailyBookLabel").innerText(),/Version du livre de prières/);
+  await frPage.locator(base+".aoDailyReadingOptions summary").click();
+  await frPage.locator(base+'[data-tp381-daily-presentation="continuous"]').click();
+  const first=frPage.locator(base+'[data-ao-daily-position="0"]');
+  assert.ok((await first.innerText()).length>160,"French opening prayer should render full source text");
+  await first.scrollIntoViewIfNeeded();
+  const dimensions=await frPage.evaluate(()=>{
+   const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
+   const stage=mount?.querySelector(".aoDailyUxStage");
+   const rect=stage?.getBoundingClientRect();
+   return {overflow:document.documentElement.scrollWidth-innerWidth,
+     mountOverflow:(mount?.scrollWidth||0)-(mount?.clientWidth||0),
+     left:rect?.left,right:rect?.right,viewport:innerWidth};
+  });
+  assert.ok(dimensions.overflow<=1&&dimensions.mountOverflow<=1&&dimensions.left>=-1&&dimensions.right<=dimensions.viewport+1,
+   "French continuous 320px text must fit the phone: "+JSON.stringify(dimensions));
+  await frPage.screenshot({path:resolve(captures,"daily-morning-continuous-text-320-fr.png"),animations:"disabled"});
+  assert.deepEqual(frenchErrors,[],"French pilot errors: "+frenchErrors.join("; "));
+  console.log("PASS French 320px: complete source prayer text and edition selector fit without horizontal overflow");
+ }finally{await frPage.close()}
 }finally{
  await browser?.close();
  await new Promise(ok=>server.close(ok));
