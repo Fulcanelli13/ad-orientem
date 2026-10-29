@@ -4,6 +4,8 @@
 ## Scope and evidence
 The existing private Litany of the Saints reader uses two **separate historical witnesses**: the English Catholic Prayer Book (1883), and Corneille's French collected works (1862). Both are uncollated. The public Major Litanies, Easter Vigil and Forty Hours remain **distinct rites**, with the full 1962 public text withheld until line-by-line source collation. Do not import a private list into a public rite or silently correct suspect historical French transcription readings.
 
+The browser audit uncovered a more consequential issue: the shared Prayer semantic-prose formatter was flattening the 18 separately marked Litany invocations into a **single text span**, joining words and eliminating line boundaries. To prevent source corruption in the actual UI, the private Litany uses a dedicated `aoP435930LitanyPrayer` / `aoP435930LitanyVerses` structure, retaining the original per-invocation paragraphs. It is intentionally excluded from the generic prose semantic face; the existing focused-source paragraph adapter remains attached to the individual lines. This is a presentation ownership fix, not textual editing.
+
 The current source-owned Litany reader already provides the chapter timeline; do not create a second Previous/Next system. A review of actual shared CSS showed a **16px** litany-line face with a **52px / 16vw right gutter**, even on 320px devices, and the generic distant-paragraph **30%** opacity which dims historical invocations rather than merely guiding them.
 
 ## Code change
