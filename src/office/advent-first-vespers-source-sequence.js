@@ -34,7 +34,7 @@ const LITURGICAL_COMPONENTS=Object.freeze([
  ["commemorations","COMMEMORATIONS","RG106-114; BR250-259"],
  ["conclusion","CONCLUSION","Ordinarium/Vespera#Conclusio"]
 ]);
-const SLICE_SOURCE=/^[a-zA-Z0-9][a-zA-Z0-9 _.,:;*’'\-()]+$/u;
+const SLICE_SOURCE=/^[\p{L}\p{N}][\p{L}\p{M}\p{N} _.,:;*!?’'–\-()]+$/u;
 function withhold(reason,extra={}){
  return Object.freeze({
   schema:ADVENT_FIRST_VESPERS_RESEARCH_SCHEMA,
