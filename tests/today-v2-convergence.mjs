@@ -57,7 +57,7 @@ assert.match(html,/Life &amp; sources/,"Observed saint opens context without rep
 assert.doesNotMatch(html,/Saint Francis Borgia/,"Do not repeat principal saint below the hero");
 assert.equal((html.match(/class="aoTodayV2CalendarGlance"/g)||[]).length,1,"One compact Calendar at a glance panel");
 assert.doesNotMatch(html,/aoTodayV2Context|aoTodayV2Approaching|Coming next|Full calendar/,"No duplicate season or upcoming panels");
-assert.match(html,/Upcoming calendar dates · confirm actual 1962 observance in Calendar/);
+assert.match(html,/Upcoming dates are calendar appointments; verify the observed 1962 day in Calendar\./);\nassert.match(html,/class="aoTodayV2EventArrow"/,"H2 agenda rows require a clear destination");
 assert.doesNotMatch(html,/data-home-shortcut="/,
   "Unbound home-shortcut attributes would produce inert buttons");
 assert.equal((html.match(/class="aoTodayV2PrayerFeature"/g)||[]).length,1);
@@ -82,7 +82,7 @@ assert.match(frHtml,/Lire et méditer/);
 assert.match(frHtml,/calendrier/i);
 assert.match(frHtml,/Vie et sources/,"The saint link must be bilingual");
 assert.doesNotMatch(frHtml,/COMING SOON|<h2>À venir<\/h2>/,"French Home has no second Coming next heading");
-assert.match(frHtml,/Dates à venir/);
+assert.match(frHtml,/Dates annoncées par le calendrier/);
 assert.match(frHtml,/25 oct./i);
 const primary=renderHomeToString(state,{AO_PHASE1_ART:{homeMarkup(){return ""}}});
 assert.match(primary,/aoTodayV2NoArt/,"No approved artwork must preserve a source-safe visual fallback");
@@ -97,7 +97,7 @@ assert.doesNotMatch(primary,/class="contentCard findCard/);
 assert.doesNotMatch(primary,/aoHomeComingUp/);
 assert.equal((primary.match(/data-home-scripture/g)||[]).length,1,"Scripture must retain one compact native entry without duplicate cards");
 assert.doesNotMatch(primary,/data-resume-mass/);
-assert.ok(TODAY_V2_CSS.includes('html[data-ao-appearance-v1="light"] .aoTodayV2ArtMissing .aoTodayV2Art::after'),"Light no-art hero must not retain a dark veil under dark text");
+assert.match(TODAY_V2_CSS,/\.aoTodayV2Frontispiece \.aoTodayV2Art::after\{display:none!important\}/,"H1.2 image island should have no title veil");\nassert.ok(TODAY_V2_CSS.includes('html[data-ao-appearance-v1="light"] .aoTodayV2ArtMissing .aoTodayV2Art::after'),"Light no-art hero must not retain a dark veil under dark text");
 assert.ok(TODAY_V2_CSS.includes('html[data-ao-appearance-v1="light"] .aoTodayV2Frontispiece:not(.aoTodayV2ArtMissing) .aoTodayV2ArtOverlay h1'),"Approved artwork keeps light foreground text in either theme");
 assert.match(TODAY_V2_CSS, /@media\(max-width:699px\)\{\s*\.aoTodayV2ArtMissing \.aoTodayV2Art\{height:clamp\(138px,36vw,175px\)!important/,
   "Compact no-art fallback is strictly phone-scoped, leaving desktop layout unchanged");
