@@ -25,7 +25,7 @@ const LANGUAGES=Object.freeze(["la","en","fr"]);
 const SATURDAY_SEGMENTS=Object.freeze([[143,"1-8"],[143,"9-15"],[144,"1-7"],[144,"8-13a"],[144,"13b-21"]]);
 const LITURGICAL_COMPONENTS=Object.freeze([
  ["opening","OPENING","Ordinarium/Vespera#Incipit"],
- ["five-psalmody","PSALMODY",PSALTER+"#Day0 Vespera | "+PROPER+"#Ant Laudes"],
+ ["five-psalmody","PSALMODY",PSALTER+"#Day6 Vespera | "+PROPER+"#Ant Laudes"],
  ["chapter","CHAPTER",PROPER+"#Capitulum Laudes"],
  ["hymn","HYMN","Psalterium/Special/Major Special#Hymnus Adv Vespera"],
  ["versicle","VERSICLE",PROPER+"#Versum 1 -> Psalterium/Special/Major Special#Adv Versum 3"],
@@ -81,7 +81,7 @@ function normalLines(doc,section,count){
 function psalmSegments(lines){
  const segments=[];
  for(const line of lines){
-  const m=/^(.{2,360});;(143|144)\\(([^()]{3,30})\\)$/u.exec(line);
+  const m=/^(.{2,360});;(143|144)\(([^()]{3,30})\)$/u.exec(line);
   if(!m||!SLICE_SOURCE.test(m[1]))return null;
   const normalized=m[3].replace(/[‘’]/gu,"'").replace(/'/gu,"");
   segments.push(Object.freeze({number:Number(m[2]),range:normalized}));
