@@ -4504,7 +4504,17 @@ export function createReaderDomAdapter({
                     : event.displayText;
                 const text=doc.createElement("span");
                 text.className=mode==="LIVE"?"ao-live-rubric-action":"ao-missal-rubric-action";
-                text.dataset.rubricId=event.id;
+                // The source-confirmed minor elevation belongs to the
+                // canonical gesture matrix, NOT the published R17 registry.
+                // Keep its cue and readable text in LIVE, but never assign
+                // data-rubric-id: those identities are reserved for R17 and
+                // audited independently by the 65-card phone gate.
+                const matrixOnly=event.id==="GM.P.C0204.01"&&
+                  event.owner==="CERTIFIED_1962_MATRIX_TEXT_ONLY"&&
+                  event.review==="EXACT_1962_GESTURE_MATRIX_RUBRIC"&&
+                  event.sourceCueId==="AO.SM.C0204";
+                if(matrixOnly)text.dataset.sourceGestureId=event.id;
+                else text.dataset.rubricId=event.id;
                 text.dataset.sourceCueId=event.sourceCueId;
                 text.textContent=short;
                 const approvedArt=approvedFingerRubricArt(event);
