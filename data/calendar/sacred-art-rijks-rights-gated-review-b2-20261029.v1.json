@@ -14,7 +14,7 @@
     "nativePhotographsCertified": 0,
     "productionReleases": 0,
     "byDisposition": {
-      "SOURCE_OR_FORMAT_ERROR": 8
+      "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0": 8
     }
   },
   "restrictions": {
@@ -25,40 +25,7 @@
     "museumArtApprovalNotInheritedFromRights": true
   },
   "contactSheets": [],
-  "sourceErrors": [
-    {
-      "sourceObjectId": "200109177",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
-    },
-    {
-      "sourceObjectId": "20025782",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
-    },
-    {
-      "sourceObjectId": "20025781",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
-    },
-    {
-      "sourceObjectId": "20026408",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
-    },
-    {
-      "sourceObjectId": "20026409",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
-    },
-    {
-      "sourceObjectId": "200110538",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
-    },
-    {
-      "sourceObjectId": "200109465",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
-    },
-    {
-      "sourceObjectId": "200109730",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
-    }
-  ],
+  "sourceErrors": [],
   "records": [
     {
       "sourceObjectId": "200109177",
@@ -75,8 +42,14 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "disposition": "SOURCE_OR_FORMAT_ERROR",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
+      "status": "IMAGE_RIGHTS_HOLD",
+      "imageRights": "UNDECLARED",
+      "rightsUris": [],
+      "imageService": "https://iiif.micr.io/rXrek",
+      "visualId": "202109177",
+      "digitalId": "50012210710010473897967",
+      "accession": "SK-A-3992",
+      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
     },
     {
       "sourceObjectId": "20025782",
@@ -93,8 +66,14 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "disposition": "SOURCE_OR_FORMAT_ERROR",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
+      "status": "IMAGE_RIGHTS_HOLD",
+      "imageRights": "UNDECLARED",
+      "rightsUris": [],
+      "imageService": "https://iiif.micr.io/sRdks",
+      "visualId": "20225782",
+      "digitalId": "5008256765054507786",
+      "accession": "SK-A-282",
+      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
     },
     {
       "sourceObjectId": "20025781",
@@ -111,8 +90,14 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "disposition": "SOURCE_OR_FORMAT_ERROR",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
+      "status": "IMAGE_RIGHTS_HOLD",
+      "imageRights": "UNDECLARED",
+      "rightsUris": [],
+      "imageService": "https://iiif.micr.io/cekDK",
+      "visualId": "20225781",
+      "digitalId": "500109711151126711566114",
+      "accession": "SK-C-1366",
+      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
     },
     {
       "sourceObjectId": "20026408",
@@ -129,8 +114,14 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "disposition": "SOURCE_OR_FORMAT_ERROR",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
+      "status": "IMAGE_RIGHTS_HOLD",
+      "imageRights": "UNDECLARED",
+      "rightsUris": [],
+      "imageService": "https://iiif.micr.io/oCupQ",
+      "visualId": "20226408",
+      "digitalId": "500895311083677711280",
+      "accession": "SK-A-3986",
+      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
     },
     {
       "sourceObjectId": "20026409",
@@ -147,8 +138,14 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "disposition": "SOURCE_OR_FORMAT_ERROR",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
+      "status": "IMAGE_RIGHTS_HOLD",
+      "imageRights": "UNDECLARED",
+      "rightsUris": [],
+      "imageService": "https://iiif.micr.io/GKSQk",
+      "visualId": "20226409",
+      "digitalId": "5008469981031021208884",
+      "accession": "SK-A-3987",
+      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
     },
     {
       "sourceObjectId": "200110538",
@@ -165,8 +162,14 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "disposition": "SOURCE_OR_FORMAT_ERROR",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
+      "status": "IMAGE_RIGHTS_HOLD",
+      "imageRights": "UNDECLARED",
+      "rightsUris": [],
+      "imageService": "https://iiif.micr.io/vWPRF",
+      "visualId": "202110538",
+      "digitalId": "50055114559965687674",
+      "accession": "SK-A-4488",
+      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
     },
     {
       "sourceObjectId": "200109465",
@@ -183,8 +186,14 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "disposition": "SOURCE_OR_FORMAT_ERROR",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
+      "status": "IMAGE_RIGHTS_HOLD",
+      "imageRights": "UNDECLARED",
+      "rightsUris": [],
+      "imageService": "https://iiif.micr.io/OBMWo",
+      "visualId": "202109465",
+      "digitalId": "500561175068687812277",
+      "accession": "SK-A-1188-B",
+      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
     },
     {
       "sourceObjectId": "200109730",
@@ -201,8 +210,14 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "disposition": "SOURCE_OR_FORMAT_ERROR",
-      "error": "ValueError: INVALID_RIJKSMUSEUM_ID"
+      "status": "IMAGE_RIGHTS_HOLD",
+      "imageRights": "UNDECLARED",
+      "rightsUris": [],
+      "imageService": "https://iiif.micr.io/MVCje",
+      "visualId": "202109730",
+      "digitalId": "50057681068512111374111",
+      "accession": "SK-A-3141",
+      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
     }
   ]
 }
