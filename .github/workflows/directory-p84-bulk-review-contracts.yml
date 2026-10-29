@@ -1,0 +1,27 @@
+name: Directory P84 worldwide bulk review builder contracts
+on:
+  pull_request:
+    paths:
+      - tools/directory/build-p84-worldwide-bulk-photo-review.py
+      - tests/directory-p84-bulk-photo-review-test.py
+      - .github/workflows/directory-p84-one-worldwide-photo-review.yml
+      - .github/workflows/directory-p84-bulk-review-contracts.yml
+permissions:
+  contents: read
+jobs:
+  p84-static-bulk-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify 501-lead single HTML, paging, no-publication and escaping
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/directory/build-p84-worldwide-bulk-photo-review.py
+          python tests/directory-p84-bulk-photo-review-test.py -v
+          node tests/production-tree-hygiene.mjs
