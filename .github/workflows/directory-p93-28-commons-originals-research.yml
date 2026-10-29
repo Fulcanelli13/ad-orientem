@@ -1,0 +1,150 @@
+name: P93 28 fixed Commons original church photos research archive
+on:
+  push:
+    branches:
+      - research/p93-28-commons-originals-20261029
+    paths:
+      - tools/directory/p93-verify-28-pinned-commons-originals.py
+      - data/directory/research/p93-28-pinned-commons-originals-intake-20261029.json
+      - .github/workflows/directory-p93-28-commons-originals-research.yml
+permissions:
+  contents: read
+concurrency:
+  group: p93-immutable-28-photo-originals-one-pass
+  cancel-in-progress: false
+jobs:
+  pin-and-retrieve-originals:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        shard: [0, 1, 2]
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free bounded original-file decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Verify immutable 28-source manifest, original SHA-1 and independent licence metadata
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/directory/p93-verify-28-pinned-commons-originals.py
+          python tools/directory/p93-verify-28-pinned-commons-originals.py \
+            --shard ${{ matrix.shard }} --output "/tmp/p93-shard-${{ matrix.shard }}"
+      - name: Transport verified research-only sources to independent archive job
+        uses: actions/upload-artifact@v4
+        with:
+          name: P93_ORIGINAL_RESEARCH_SHARD_${{ matrix.shard }}
+          path: /tmp/p93-shard-${{ matrix.shard }}/
+          retention-days: 3
+          if-no-files-found: error
+
+  archive-research-only:
+    needs: pin-and-retrieve-originals
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install local contact-sheet toolkit
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: P93_ORIGINAL_RESEARCH_SHARD_*
+          path: /tmp/p93-restored
+      - name: Merge exactly 28 immutable source dispositions, prepare local contact sheets
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,pathlib,shutil
+          from PIL import Image,ImageOps,ImageDraw
+          root=pathlib.Path("/tmp/p93-restored")
+          target=pathlib.Path("/tmp/p93-permanent")
+          target.mkdir()
+          intake=json.loads(pathlib.Path("data/directory/research/p93-28-pinned-commons-originals-intake-20261029.json").read_text())
+          records=[]
+          for shard in range(3):
+              source=root/("P93_ORIGINAL_RESEARCH_SHARD_"+str(shard))
+              meta=json.loads((source/("p93-shard-"+str(shard)+".json")).read_text())
+              assert meta["schema"]=="AO_P93_ORIGINAL_SOURCE_SHARD_RESEARCH_V1"
+              assert meta["shard"]==shard and meta["rights_approved"]==meta["photos_published"]==0
+              for row in meta["records"]:
+                  if row["status"]=="ORIGINAL_SOURCE_BYTES_HASH_VERIFIED":
+                      for k,sha in (("original_file",row["original_sha256"]),("preview_file",row["preview_sha256"])):
+                          p=source/row[k]
+                          assert p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest()==sha
+                          shutil.copy2(p,target/p.name)
+                  records.append(row)
+          frozen={x["global_source_row"]:x for x in intake["candidates"]}
+          assert len(records)==28 and {x["global_source_row"] for x in records}==set(frozen)
+          assert len({x["file_title"] for x in records})==28
+          assert all(x["physical_anchor_id"]==frozen[x["global_source_row"]]["physical_anchor_id"] and
+                     x["source_sha1"]==frozen[x["global_source_row"]]["expected_original_sha1"]
+                     and not x["image_approved"] and not x["rights_independently_approved"]
+                     for x in records)
+          records.sort(key=lambda x:x["global_source_row"])
+          ok=[r for r in records if r["status"]=="ORIGINAL_SOURCE_BYTES_HASH_VERIFIED"]
+          for offset in range(0,len(records),16):
+              slice_=records[offset:offset+16]
+              board=Image.new("RGB",(4*340,4*280),(24,30,37));pen=ImageDraw.Draw(board)
+              for j,r in enumerate(slice_):
+                  xx=(j%4)*340;yy=(j//4)*280
+                  if r.get("preview_file"):
+                      with Image.open(target/r["preview_file"]) as im:
+                          im=ImageOps.contain(im.convert("RGB"),(315,223))
+                          board.paste(im,(xx+(340-im.width)//2,yy+5))
+                  pen.text((xx+7,yy+233),str(r["global_source_row"])+" "+r["site_name"][:35],fill=(255,255,255))
+                  pen.text((xx+7,yy+251),r["status"].replace("ORIGINAL_SOURCE_BYTES_HASH_VERIFIED","VERIFIED")[:40],fill=(180,210,205))
+              board.save(target/("contact-sheet-"+str(offset//16+1)+".jpg"),quality=86)
+          audit={"schema":"AO_P93_28_SOURCE_ORIGINAL_PHOTOS_RESEARCH_ARCHIVE_V1",
+             "input_candidate_count":28,"source_originals_downloaded_verified":len(ok),
+             "held_originals":28-len(ok),"source_original_sha256_verified":len(ok),
+             "source_licence_metadata_claims_checked":len(ok),
+             "original_full_resolution_human_visual_approved":0,
+             "production_media_rights_cleared":0,"production_media_published":0,
+             "photo_ownership":"RESEARCH_ONLY_NEVER_APP_VISIBLE",
+             "p93_input_source_manifest_sha256":hashlib.sha256(pathlib.Path("data/directory/research/p93-28-pinned-commons-originals-intake-20261029.json").read_bytes()).hexdigest(),
+             "records":records}
+          (target/"audit.json").write_text(json.dumps(audit,indent=2,ensure_ascii=False)+"\n")
+          shutil.copy("data/directory/research/p93-28-pinned-commons-originals-intake-20261029.json",target/"frozen-source-intake.json")
+          (target/"README.txt").write_text("All P93 photographs are research only. No exact-site, licence compliance or publication approval follows from Commons source hashes. Separate 28-image human original quality and Place release gates remain.\n")
+          with (target/"SHA256SUMS").open("w") as out:
+              for p in sorted(target.iterdir()):
+                  if p.is_file() and p.name!="SHA256SUMS":
+                      out.write(hashlib.sha256(p.read_bytes()).hexdigest()+"  "+p.name+"\n")
+          print("P93_28_ARCHIVED_RESEARCH_RESULTS",{"verified":len(ok),"held":28-len(ok)},flush=True)
+          PY
+          (cd /tmp/p93-permanent && sha256sum -c SHA256SUMS)
+      - name: Preserve 28-source research bytes in separate immutable public GitHub branch, not app
+        env:
+          TARGET_BRANCH: research/p93-archived-originals-20261029
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "$TARGET_BRANCH" >/dev/null; then
+            echo "P93 permanent research branch already exists; refuse to overwrite" >&2
+            exit 1
+          fi
+          git fetch --no-tags origin main
+          git switch -c "$TARGET_BRANCH" origin/main
+          target=docs/research/directory/p93-bulk-28-originals-20261029
+          test ! -e "$target"
+          mkdir -p "$target"
+          cp /tmp/p93-permanent/* "$target/"
+          (cd "$target" && sha256sum -c SHA256SUMS)
+          git add "$target"
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): archive the P93 28 church original-file source QA cohort"
+          git push origin "HEAD:refs/heads/$TARGET_BRANCH"
