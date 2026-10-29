@@ -511,7 +511,8 @@
           ],
           "objectWorkType": []
         }
-      ]
+      ],
+      "previewChecks": []
     },
     {
       "part": "1677",
@@ -1022,6 +1023,20 @@
           ],
           "objectWorkType": []
         }
+      ],
+      "previewChecks": [
+        {
+          "url": "https://nationalmuseum.iiifhosting.com/iiif/K0125-1958-K-2010-10-21/full/!560,560/0/default.jpg",
+          "error": "URLError:<urlopen error [Errno -2] Name or service not known>"
+        },
+        {
+          "url": "https://nationalmuseum.iiifhosting.com/iiif/K0125-1958-K-2010-10-21/full/560,/0/default.jpg",
+          "error": "URLError:<urlopen error [Errno -2] Name or service not known>"
+        },
+        {
+          "url": "https://nationalmuseum.iiifhosting.com/iiif/K0125-1958-K-2010-10-21/full/full/0/default.jpg",
+          "error": "URLError:<urlopen error [Errno -2] Name or service not known>"
+        }
       ]
     },
     {
@@ -1512,6 +1527,20 @@
             "Nationalmuseum, Sweden"
           ],
           "objectWorkType": []
+        }
+      ],
+      "previewChecks": [
+        {
+          "url": "https://nationalmuseum.iiifhosting.com/iiif/K0125-1958-K-2010-10-21/full/!560,560/0/default.jpg",
+          "error": "URLError:<urlopen error [Errno -2] Name or service not known>"
+        },
+        {
+          "url": "https://nationalmuseum.iiifhosting.com/iiif/K0125-1958-K-2010-10-21/full/560,/0/default.jpg",
+          "error": "URLError:<urlopen error [Errno -2] Name or service not known>"
+        },
+        {
+          "url": "https://nationalmuseum.iiifhosting.com/iiif/K0125-1958-K-2010-10-21/full/full/0/default.jpg",
+          "error": "URLError:<urlopen error [Errno -2] Name or service not known>"
         }
       ]
     }
