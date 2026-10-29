@@ -181,7 +181,12 @@ export function installSequentialDevotionalReader({
       // focus still determines when the actual user reaches each posture cue.
       const stationsPrayer=kind==="stations"&&
         Boolean(p.closest(".aoP435930VRLine,.aoP435930StationPrayer"));
-      const power=canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary?"1":i===found?"1":Math.abs(i-found)===1?".56":".30";
+      // Long-form Novena paragraphs must remain legible while the reader
+      // illuminates the active one. The shared .56/.30 focus falloff is
+      // deliberately retained for all other devotional readers.
+      const adjacent=Math.abs(i-found)===1;
+      const power=canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary?"1"
+        :i===found?"1":kind==="novena"?(adjacent?".80":".65"):(adjacent?".56":".30");
       p.style.setProperty("--ao-devo-focus",power);
       p.style.setProperty("opacity",power,"important");
       p.dataset.aoDevoActive=i===found?"true":"false";
