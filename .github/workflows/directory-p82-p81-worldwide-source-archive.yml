@@ -1,0 +1,137 @@
+name: P82 preserve P81 worldwide Commons research
+on:
+  workflow_run:
+    workflows:
+      - "P81 one-sweep 2579 Directory Commons photo source discovery"
+    types:
+      - completed
+permissions:
+  contents: write
+concurrency:
+  group: ao-p82-p81-global-source-archive-20261029
+  cancel-in-progress: false
+jobs:
+  archive:
+    if: >-
+      github.repository == 'Fulcanelli13/ad-orientem' &&
+      github.event.workflow_run.repository.full_name == 'Fulcanelli13/ad-orientem' &&
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.id == 40863537417 &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'research/p81-2579-direct-commons-search-20261029' &&
+      github.event.workflow_run.head_sha == '6c0e960d0753647b99e1cb65b1520a2da7395f16'
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download the eleven immutable source artifacts from the exact successful P81 run
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+          pattern: P81_DIRECTORY_COMMONS_SOURCE_SHARD_*
+          merge-multiple: true
+          path: /tmp/ao-p81-source
+      - name: Validate every site, preserve rights holds, and create deterministic source archive
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import collections,hashlib,json,os,pathlib,zipfile
+          root=pathlib.Path('/tmp/ao-p81-source')
+          expected={f'p81-shard-{i:02d}.json' for i in range(11)}
+          actual={p.name for p in root.iterdir() if p.is_file()}
+          assert actual==expected, f'incomplete/unexpected shard files: {sorted(actual^expected)}'
+          rows=[]
+          for shard in range(11):
+              path=root/f'p81-shard-{shard:02d}.json'
+              assert path.stat().st_size < 15_000_000, 'oversize research shard'
+              obj=json.loads(path.read_text(encoding='utf-8'))
+              assert obj['schema']=='AO_P81_COMMONS_2579_SHARD_V1'
+              assert obj['summary']['shard']==shard
+              assert len(obj['records'])==(250 if shard<10 else 79)
+              assert obj['summary']['source_anchors']==len(obj['records'])
+              rows.extend(obj['records'])
+          ids=[r['physical_anchor_id'] for r in rows]
+          assert len(ids)==len(set(ids))==2579
+          assert len({r['country'] for r in rows})==76
+          counters=collections.Counter()
+          source_keys=set()
+          assignment_count=0
+          for row in rows:
+              assert row['schema']=='AO_P81_ONE_SITE_COMMONS_DISCOVERY_V1'
+              assert row['subject_verified'] is False and row['rights_cleared'] is False and row['published'] is False
+              assert row['candidate_count']==len(row['source_media_candidates'])
+              assert row['candidate_count']<=4
+              counters[row['search_status']]+=1
+              for m in row['source_media_candidates']:
+                  assert m['review_status']=='UNVERIFIED_MEDIA_DISCOVERY_LEAD'
+                  assert m['license_independently_cleared'] is False
+                  assert m['original_sha1_bytes_verified'] is False
+                  assert m['exact_building_subject_verified'] is False
+                  assert m['published'] is False
+                  assert len(m['original_sha1_claim'])==40 and m['original_sha1_claim'].isalnum()
+                  source_keys.add(m['original_sha1_claim'])
+                  assignment_count+=1
+          assert sum(counters.values())==2579
+          assert all(key in {'SEARCH_SUCCESS_WITH_CANDIDATES','SEARCH_SUCCESS_EMPTY','SOURCE_ERROR_NOT_ZERO_RESULTS','NO_DISTINCT_BUILDING_NAME'} for key in counters)
+          summary={
+            'schema':'AO_P81_PERMANENT_COMPLETE_WORLDWIDE_SOURCE_ARCHIVE_V1',
+            'upstream_run_id':40863537417,
+            'upstream_head_sha':'6c0e960d0753647b99e1cb65b1520a2da7395f16',
+            'physical_anchors':2579,
+            'countries':76,
+            'technical_shards':11,
+            'source_status_counts':dict(sorted(counters.items())),
+            'candidate_assignments':assignment_count,
+            'unique_original_sha1_claims':len(source_keys),
+            'images_approved':0,
+            'images_published':0,
+            'rights_cleared':0,
+            'subject_verified':0,
+            'disclaimer':'These are unverified site-photo associations and licence metadata claims, NOT images approved for publication. Original photo bytes not acquired.'
+          }
+          target=pathlib.Path('/tmp/p82-archive')
+          target.mkdir()
+          (target/'p81-global-summary.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          archive=target/'p81-2579-anchor-commons-source-complete.zip'
+          with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+              for path in sorted(root.iterdir()):
+                  info=zipfile.ZipInfo(path.name,date_time=(1980,1,1,0,0,0))
+                  info.compress_type=zipfile.ZIP_DEFLATED
+                  info.external_attr=0o644<<16
+                  z.writestr(info,path.read_bytes(),compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
+              audit=target/'p81-global-summary.json'
+              info=zipfile.ZipInfo(audit.name,date_time=(1980,1,1,0,0,0))
+              info.compress_type=zipfile.ZIP_DEFLATED
+              info.external_attr=0o644<<16
+              z.writestr(info,audit.read_bytes(),compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
+          digest=hashlib.sha256(archive.read_bytes()).hexdigest()
+          (target/'p81-archive-sha256.txt').write_text(digest+'  '+archive.name+'\n',encoding='ascii')
+          assert archive.stat().st_size<25_000_000,'archive exceeds bounded research storage'
+          print('P82_PERMANENT_ARCHIVE',json.dumps({**summary,'archive_sha256':digest,'archive_bytes':archive.stat().st_size},sort_keys=True),flush=True)
+          PY
+      - name: Commit archive to one new immutable research-only branch (never main)
+        run: |
+          set -euo pipefail
+          branch="research/p81-all-2579-commons-source-archive-20261029"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            echo "Permanent research archive already exists; do not overwrite" >&2
+            exit 1
+          fi
+          git fetch --no-tags origin main
+          git switch -c "$branch" origin/main
+          target="data/directory/research/archives/p81-2579-worldwide-commons"
+          test ! -e "$target"
+          mkdir -p "$target"
+          cp /tmp/p82-archive/p81-2579-anchor-commons-source-complete.zip "$target/"
+          cp /tmp/p82-archive/p81-global-summary.json "$target/"
+          cp /tmp/p82-archive/p81-archive-sha256.txt "$target/"
+          (cd "$target" && sha256sum -c p81-archive-sha256.txt)
+          git add "$target/p81-2579-anchor-commons-source-complete.zip" "$target/p81-global-summary.json" "$target/p81-archive-sha256.txt"
+          test "$(git diff --cached --name-only | wc -l)" -eq 3
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): preserve all 2579 P81 Commons source outcomes"
+          git push origin "HEAD:refs/heads/$branch"
