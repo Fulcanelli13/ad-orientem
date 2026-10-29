@@ -64,7 +64,7 @@ assert.equal(deadEn.flatMap(x=>x.publishedMissalRubrics??[]).length,14);
 // Epistle hand kiss and Gospel-book ceremonies in both Missal languages.
 const deadEpistleEn=byId(deadEn,"SMIN-004")?.displayText??"";
 const deadEpistleFr=byId(deadFr,"SMIN-004")?.displayText??"";
-assert.match(deadEpistleEn,/without kissing the celebrant.s hand or receiving his blessing/i);
+assert.match(deadEpistleEn,/without receiving the celebrant.s blessing or kissing his hand/i);
 assert.match(deadEpistleFr,/sans baiser la main du célébrant ni recevoir sa bénédiction/i);
 const deadGospelEn=byId(deadEn,"SMIN-007")?.displayText??"";
 const deadGospelFr=byId(deadFr,"SMIN-007")?.displayText??"";
