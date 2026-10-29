@@ -1076,6 +1076,14 @@ button.ao-schola-control{cursor:pointer}
    Restore its existing left-rail icon, with no duplicate in other modes. */
 .ao-reader-shell[data-mode="LIVE"][data-objective-context="true"]
 .ao-rail-left .ao-rail-item[data-channel="posture"][data-active="true"]{display:grid!important}
+/* Objective-context posture is not exempt from source-line ownership.
+   The rule above formerly painted stale C0150 posture beside C0174/C0181
+   elevation even when that posture paragraph was offscreen. Only restore
+   this context tile when its ORIGINAL source cue is actually visible. */
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"]
+.ao-rail[data-source-anchored="true"] .ao-rail-item[data-channel="posture"]:not([data-source-rail-anchor="exact"]){
+  display:none!important
+}
 .ao-reader-shell[data-mode="LIVE"][data-objective-context="true"]
 .ao-rail-left .ao-rail-item[data-channel="posture"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{
   display:block!important;max-width:49px;font:600 10px/1.2 var(--ao-font-ui,system-ui,sans-serif);
