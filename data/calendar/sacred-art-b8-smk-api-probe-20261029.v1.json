@@ -1,0 +1,416 @@
+{
+  "schema": "AO_SACRED_ART_B8_SMK_PROBE_V1",
+  "date": "2026-10-29",
+  "photosSaved": 0,
+  "requests": [
+    {
+      "parameters": {
+        "keys": "Christ",
+        "offset": "0",
+        "rows": "3",
+        "lang": "en"
+      },
+      "url": "https://api.smk.dk/api/v1/art/search/?keys=Christ&offset=0&rows=3&lang=en",
+      "status": 200,
+      "mime": "application/json; charset=utf-8",
+      "responseType": "dict",
+      "topKeys": [
+        "offset",
+        "rows",
+        "found",
+        "items",
+        "facets",
+        "facets_ranges",
+        "corrections",
+        "autocomplete"
+      ],
+      "offset": 0,
+      "rows": 3,
+      "found": 658,
+      "items_length": 3,
+      "corrections_length": 0,
+      "autocomplete_length": 5,
+      "samples": [
+        {
+          "id": "1170089611_object",
+          "object_names": [
+            {
+              "name": "Painting"
+            }
+          ],
+          "production_date": [
+            {
+              "start": "1631-01-01T00:00:00.000Z",
+              "end": "1686-12-31T00:00:00.000Z",
+              "period": "1631-1686"
+            }
+          ],
+          "techniques": [
+            "Oil on panel"
+          ],
+          "titles": [
+            {
+              "title": "Head of Christ",
+              "language": "engelsk"
+            }
+          ],
+          "object_number": "KMS561",
+          "public_domain": true,
+          "image_iiif_id": "https://iip.smk.dk/iiif/jp2/6d5702148_kms561.tif.jp2",
+          "image_width": 4379,
+          "image_height": 5607,
+          "image_thumbnail": "https://iip-thumb.smk.dk/iiif/jp2/6d5702148_kms561.tif.jp2/full/!1024,/0/default.jpg",
+          "has_image": true
+        },
+        {
+          "id": "1170023249_object",
+          "object_names": [
+            {
+              "name": "Statue"
+            }
+          ],
+          "production_date": [
+            {
+              "start": "1897-01-01T00:00:00.000Z",
+              "end": "1898-12-31T00:00:00.000Z",
+              "period": "1897-1898"
+            }
+          ],
+          "techniques": [
+            "Plaster cast"
+          ],
+          "titles": [
+            {
+              "title": "The Risen Christ",
+              "notes": "Ændret ifm. Michelangelo Imperfect 2025",
+              "type": "museum title",
+              "language": "engelsk"
+            },
+            {
+              "title": "Risen Christ",
+              "type": "previous title",
+              "language": "engelsk"
+            },
+            {
+              "title": "Christ of the Minerva",
+              "type": "previous title",
+              "language": "engelsk"
+            }
+          ],
+          "object_number": "KAS422",
+          "public_domain": true,
+          "image_iiif_id": "https://iip.smk.dk/iiif/jp2/8910k0173_KAS422.tif.jp2",
+          "image_width": 2615,
+          "image_height": 6248,
+          "image_thumbnail": "https://iip-thumb.smk.dk/iiif/jp2/8910k0173_KAS422.tif.jp2/full/!1024,/0/default.jpg",
+          "has_image": true
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "keys": "*",
+        "filters": "[has_image:true],[object_names:maleri],[public_domain:true]",
+        "offset": "0",
+        "rows": "3",
+        "lang": "en"
+      },
+      "url": "https://api.smk.dk/api/v1/art/search/?keys=%2A&filters=%5Bhas_image%3Atrue%5D%2C%5Bobject_names%3Amaleri%5D%2C%5Bpublic_domain%3Atrue%5D&offset=0&rows=3&lang=en",
+      "status": 200,
+      "mime": "application/json; charset=utf-8",
+      "responseType": "dict",
+      "topKeys": [
+        "offset",
+        "rows",
+        "found",
+        "items",
+        "facets",
+        "facets_ranges",
+        "autocomplete"
+      ],
+      "offset": 0,
+      "rows": 3,
+      "found": 0,
+      "items_length": 0,
+      "autocomplete_length": 0,
+      "samples": []
+    },
+    {
+      "parameters": {
+        "keys": "*",
+        "filters": "[has_image:true],[public_domain:true]",
+        "offset": "0",
+        "rows": "3",
+        "lang": "en"
+      },
+      "url": "https://api.smk.dk/api/v1/art/search/?keys=%2A&filters=%5Bhas_image%3Atrue%5D%2C%5Bpublic_domain%3Atrue%5D&offset=0&rows=3&lang=en",
+      "status": 200,
+      "mime": "application/json; charset=utf-8",
+      "responseType": "dict",
+      "topKeys": [
+        "offset",
+        "rows",
+        "found",
+        "items",
+        "facets",
+        "facets_ranges",
+        "autocomplete"
+      ],
+      "offset": 0,
+      "rows": 3,
+      "found": 39517,
+      "items_length": 3,
+      "autocomplete_length": 0,
+      "samples": [
+        {
+          "id": "1170000001_object",
+          "object_names": [
+            {
+              "name": "Chiaroscuro woodcut"
+            },
+            {
+              "name": "Print"
+            }
+          ],
+          "production_date": [
+            {
+              "start": "1500-01-01T00:00:00.000Z",
+              "end": "1550-01-01T00:00:00.000Z",
+              "period": "1500-1550"
+            }
+          ],
+          "techniques": [
+            "Chiaroscuro woodcut"
+          ],
+          "object_number": "KKS5261",
+          "public_domain": true,
+          "image_iiif_id": "https://iip.smk.dk/iiif/jp2/qz20sx771_kks5261.tif.jp2",
+          "image_width": 4992,
+          "image_height": 6287,
+          "image_thumbnail": "https://iip-thumb.smk.dk/iiif/jp2/qz20sx771_kks5261.tif.jp2/full/!1024,/0/default.jpg",
+          "has_image": true,
+          "titles": [
+            {
+              "title": "Augustus og den tiburtinske sibylle",
+              "type": "beskrivelse",
+              "language": "dansk"
+            }
+          ]
+        },
+        {
+          "id": "1170000002_object",
+          "object_names": [
+            {
+              "name": "Chiaroscuro woodcut"
+            },
+            {
+              "name": "Print"
+            }
+          ],
+          "production_date": [
+            {
+              "start": "1500-01-01T00:00:00.000Z",
+              "end": "1550-01-01T00:00:00.000Z",
+              "period": "1500-1550"
+            }
+          ],
+          "techniques": [
+            "Chiaroscuro woodcut"
+          ],
+          "object_number": "KKSgb22423",
+          "public_domain": true,
+          "image_iiif_id": "https://iip.smk.dk/iiif/jp2/1z40kx99j_kksgb22423.tif.jp2",
+          "image_width": 7361,
+          "image_height": 4735,
+          "image_thumbnail": "https://iip-thumb.smk.dk/iiif/jp2/1z40kx99j_kksgb22423.tif.jp2/full/!1024,/0/default.jpg",
+          "has_image": true,
+          "titles": [
+            {
+              "title": "Peters og Paulus' martyrium",
+              "type": "beskrivelse",
+              "language": "dansk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "keys": "Jesus",
+        "offset": "0",
+        "rows": "3",
+        "lang": "en"
+      },
+      "url": "https://api.smk.dk/api/v1/art/search/?keys=Jesus&offset=0&rows=3&lang=en",
+      "status": 200,
+      "mime": "application/json; charset=utf-8",
+      "responseType": "dict",
+      "topKeys": [
+        "offset",
+        "rows",
+        "found",
+        "items",
+        "facets",
+        "facets_ranges",
+        "corrections",
+        "autocomplete"
+      ],
+      "offset": 0,
+      "rows": 3,
+      "found": 962,
+      "items_length": 3,
+      "corrections_length": 0,
+      "autocomplete_length": 5,
+      "samples": [
+        {
+          "id": "1170305533_object",
+          "object_names": [
+            {
+              "name": "Etching"
+            },
+            {
+              "name": "Copper engraving"
+            },
+            {
+              "name": "Print"
+            }
+          ],
+          "production_date": [
+            {
+              "start": "1629-01-01T00:00:00.000Z",
+              "end": "1698-01-01T00:00:00.000Z",
+              "period": "1629-1698"
+            }
+          ],
+          "techniques": [
+            "Etching and copper engraving"
+          ],
+          "object_number": "KKSgb73874",
+          "public_domain": true,
+          "has_image": false,
+          "titles": [
+            {
+              "title": "Jesus (Jesus Amabilis)",
+              "type": "beskrivelse",
+              "language": "dansk"
+            }
+          ]
+        },
+        {
+          "id": "1170089611_object",
+          "object_names": [
+            {
+              "name": "Painting"
+            }
+          ],
+          "production_date": [
+            {
+              "start": "1631-01-01T00:00:00.000Z",
+              "end": "1686-12-31T00:00:00.000Z",
+              "period": "1631-1686"
+            }
+          ],
+          "techniques": [
+            "Oil on panel"
+          ],
+          "titles": [
+            {
+              "title": "Head of Christ",
+              "language": "engelsk"
+            }
+          ],
+          "object_number": "KMS561",
+          "public_domain": true,
+          "image_iiif_id": "https://iip.smk.dk/iiif/jp2/6d5702148_kms561.tif.jp2",
+          "image_width": 4379,
+          "image_height": 5607,
+          "image_thumbnail": "https://iip-thumb.smk.dk/iiif/jp2/6d5702148_kms561.tif.jp2/full/!1024,/0/default.jpg",
+          "has_image": true
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "keys": "Madonna",
+        "offset": "0",
+        "rows": "3",
+        "lang": "en"
+      },
+      "url": "https://api.smk.dk/api/v1/art/search/?keys=Madonna&offset=0&rows=3&lang=en",
+      "status": 200,
+      "mime": "application/json; charset=utf-8",
+      "responseType": "dict",
+      "topKeys": [
+        "offset",
+        "rows",
+        "found",
+        "items",
+        "facets",
+        "facets_ranges",
+        "corrections",
+        "autocomplete"
+      ],
+      "offset": 0,
+      "rows": 3,
+      "found": 349,
+      "items_length": 3,
+      "corrections_length": 0,
+      "autocomplete_length": 5,
+      "samples": [
+        {
+          "id": "1170015064_object",
+          "object_names": [
+            {
+              "name": "Drawing"
+            }
+          ],
+          "production_date": [
+            {
+              "start": "1986-01-01T00:00:00.000Z",
+              "end": "1986-12-31T00:00:00.000Z",
+              "period": "1986"
+            }
+          ],
+          "object_number": "KKS1986-129",
+          "public_domain": false,
+          "has_image": false,
+          "titles": [
+            {
+              "title": "\"Madonna\"",
+              "type": "museumstitel",
+              "language": "dansk"
+            }
+          ]
+        },
+        {
+          "id": "1170214999_object",
+          "object_names": [
+            {
+              "name": "Drawing"
+            }
+          ],
+          "production_date": [
+            {
+              "start": "1983-01-01T00:00:00.000Z",
+              "end": "1983-01-01T00:00:00.000Z",
+              "period": "1983"
+            }
+          ],
+          "techniques": [
+            "Felt-tip pen"
+          ],
+          "object_number": "KKS1984-155/38",
+          "public_domain": false,
+          "has_image": false,
+          "titles": [
+            {
+              "title": "\"Madonna\"",
+              "type": "kunstnertitel",
+              "language": "Dansk"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
