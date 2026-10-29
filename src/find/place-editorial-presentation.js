@@ -42,6 +42,19 @@ export function renderPlaceSacredTreasures(profile,language="en"){
     const display=language==="fr"?(row.display_notice_fr||""):(row.display_notice_en||"");
     const access=language==="fr"?(row.access_notice_fr||""):(row.access_notice_en||"");
     const kind=titles[row.kind]??["Relic","Relique"];
+    // The approved Place gallery has already validated its local WebP, licence
+    // and subject; only show a photo bound to this exact relic ID and Place.
+    const photo=row.image?.subject_relic_id===row.id?row.image:null;
+    const photoHtml=photo?
+      '<figure class="aoExploreTreasurePhoto" data-sacred-object-photo="'+esc(photo.media_id)+'">'
+      +'<img loading="lazy" decoding="async" src="'+esc(photo.asset_path)+'" alt="'
+      +esc(language==="fr"?photo.alt_fr:photo.alt_en)+'">'
+      +'<figcaption><span>'+esc(language==="fr"?photo.caption_fr:photo.caption_en)+'</span>'
+      +'<small>'+esc(photo.credit)+' · '+esc(photo.license)+' · '+esc(photo.photographed_at)+'</small>'
+      +'<span><a href="'+esc(photo.source_url)+'" target="_blank" rel="noopener noreferrer">'
+      +esc(L(language,"Original photograph","Photographie originale"))+' ↗</a>'
+      +'<a href="'+esc(photo.license_url)+'" target="_blank" rel="noopener noreferrer">'
+      +esc(L(language,"Licence","Licence"))+' ↗</a></span></figcaption></figure>':"";
     const inside=row.inside_location;
     const indoorLabel=language==="fr"?inside?.location_fr:inside?.location_en;
     const indoorSource=inside?.source_url;
@@ -64,6 +77,7 @@ export function renderPlaceSacredTreasures(profile,language="en"){
     html+='<article class="aoExploreTreasureCard" data-sacred-object-id="'+esc(row.id)+'">'
       +'<small class="aoExploreTreasureKind">'+esc(kind[language==="fr"?1:0])+'</small>'
       +'<h4>'+esc(title)+'</h4>'
+      +photoHtml
       +(!genericFrench&&description?'<p>'+esc(description)+'</p>':"")
       +(display?'<p class="aoExploreTreasureNotice">'+esc(display)+'</p>':"")
       +(access?'<p class="aoExploreTreasureNotice">'+esc(access)+'</p>':"")
