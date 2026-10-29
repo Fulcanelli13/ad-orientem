@@ -386,3 +386,63 @@ is **not** a complete 1960 Office-calendar engine. Only independent
 ordination/precedence adjudication and complete source-derived
 section sequences can authorize real daily Offices. Continue through
 on-demand parsed metadata, no full-year Office XHTML batches.
+
+## One-pass exact pinned source filename index — no content capture
+
+A single metadata-only GitHub directory inspection of the pinned Latin
+Divinum Officium `web/www/horas/Latin` source trees identified
+**1,185 real file names**, with no Office text, XHTML, generators, annual
+captures or content archive:
+
+| Source owner | Exact pinned Latin filenames |
+| --- | ---: |
+| `Tempora` — Temporal proprium, including all seasons | **638** |
+| `Sancti` — fixed Sanctoral + variant entries | **486** |
+| `Commune` — shared Commons and their variants | **61** |
+| **Total** | **1,185** |
+
+The immutable, alphabetized index is in
+`data/office/source-index/roman-1960-pinned-latin-filenames.json`
+and cites DivinumOfficium/divinum-officium at revision
+`126a07f91ede04664108abb6fb20ace3f4de14b9`. Nested
+country/locale directories are **not included** and are not implicitly
+certified. Filenames alone neither select a 1960 variant nor prove that
+the EN/FR files exist or correspond to the Latin sections.
+
+`src/office/pinned-filename-index.js` strictly validates that snapshot
+and compares all annually generated **possible** source keys to their
+exact filename presence. `Sancti/12-01`, for instance, is not present
+as an exact Latin filename, but that does **not** imply that the day
+lacks any Office or that a variant/Temporal/Common path cannot apply.
+
+| Metadata-only path check | 2026 | 2028 |
+| --- | ---: | ---: |
+| Possible fixed Sanctoral + Advent source paths | 391 | 388 |
+| Exact pinned Latin filenames listed | **311** | **307** |
+| Exact filenames not listed | **80** | **81** |
+| Additional Office texts read by annual sweep | **0** | **0** |
+| Offices appointed or certified by filename matching | **0** | **0** |
+
+This is substantial **source identity indexing**, not 311 liturgically
+verified 2026 Offices or 311 translations. It does not attempt to
+process the 638 Temporal filenames into a date-to-Office decision yet.
+That requires conditional source-rule parsing and an independent 1960
+Office ordo: some filenames denote historical variants, optional
+observances and alternate editions.
+
+The annual research CLI accepts `--source-index` and reports the exact
+match counts without changing the earlier 15 provisional pilot Hours
+or the zero verified/published status. CI validates both 2026 and
+leap-year 2028 against the immutable filename index, with only
+ephemeral generated metadata reports.
+
+    node scripts/office/sweep-annual-research.mjs --year 2026 --source-index data/office/source-index/roman-1960-pinned-latin-filenames.json --out /tmp/office-filename-audit.json
+    node --test tests/divine-office-pinned-filename-index.mjs
+
+**Next correction and implementation gate:** parse *conditional* Rank
+and Rule sections without flattening variants, then bind all confirmed
+Temporal families (Epiphany, pre-Lent, Lent, Passiontide, Paschaltide,
+Pentecost and post-Pentecost) to their real recurring dates and source
+identities. Preserve competing options for independent precedence
+adjudication, rather than selecting an arbitrary file by season or
+historical numeric rank. No bulk source downloads are required.
