@@ -215,8 +215,8 @@ export async function assembleSaturdayComplinePilot({reader}={}){
     if(!lines)throw Error("COMPLINE_PSALM_PART_MISSING:"+l+":"+number);
     portions[l]=lines;
    }
-   blocks.push(projectBlock("PSALM","Psalterium/Psalmorum",
-    "Psalm"+number+":"+start+"-"+end,portions));
+   blocks.push(projectBlock("PSALM","Psalterium/Psalmorum/Psalm"+number,
+    String(start)+"-"+String(end),portions));
    prayer("Gloria","DOXOLOGY");
   }
   blocks.push(projectBlock("ANTIPHON",PSALMI,"Completorium:Sabbato",
@@ -263,18 +263,27 @@ export async function assembleSaturdayComplinePilot({reader}={}){
   // Advent seasonal Marian antiphon: retain source-owned verse and collect;
   // do NOT infer other-season alternates. The embedded $Oremus is replaced
   // with its actual existing Common/Prayers source rather than shown raw.
-  const marian={};
+  const marian={},marianCollect={};
   for(const l of LANGS){
    const all=at(l,MARIAN,"Advent");
-   const clean=all.filter(z=>!z.startsWith("$")&&z!=="_")
-    .map(z=>z.replace(/^\{:S-[^:]+:\}/u,"").replace(/\{::\}/gu,"").trim());
-   if(clean.length<7||clean.some(z=>!isLine(z)))
+   const prayerAt=all.findIndex(z=>z.trim()==="$Oremus");
+   if(prayerAt<5||prayerAt>=all.length-1)
+    throw Error("COMPLINE_ADVENT_MARIAN_COLLECT_UNRESOLVED:"+l);
+   const clean=z=>z.replace(/^\{:S-[^:]+:\}/u,"")
+    .replace(/\{::\}/gu,"").trim();
+   const ant=all.slice(0,prayerAt).filter(z=>z!=="_").map(clean);
+   const collect=all.slice(prayerAt+1).filter(z=>z!=="_").map(clean);
+   if(ant.length<7||collect.length!==1||
+      ant.some(z=>!isLine(z))||collect.some(z=>!isLine(z)))
     throw Error("COMPLINE_ADVENT_MARIAN_SOURCE_UNRESOLVED:"+l);
-   marian[l]=clean;
+   marian[l]=ant;
+   marianCollect[l]=collect;
   }
   blocks.push(projectBlock("MARIAN_ANTIPHON",MARIAN,"Advent",marian));
+  prayer("Oremus","OREMUS",x=>x.slice(0,1));
+  blocks.push(projectBlock("MARIAN_COLLECT",MARIAN,"Advent:Oratio",marianCollect));
   prayer("Fidelium animae","FINAL_RESPONSE",x=>x.slice(0,2));
-  if(blocks.length!==40)throw Error("COMPLINE_REQUIRED_SEQUENCE_COUNT_CHANGED:"+blocks.length);
+  if(blocks.length!==42)throw Error("COMPLINE_REQUIRED_SEQUENCE_COUNT_CHANGED:"+blocks.length);
   const frames=[];
   blocks.forEach((b,eventIndex)=>{
    const portion=b.kind==="PSALM"||b.kind==="CANTICLE"?
