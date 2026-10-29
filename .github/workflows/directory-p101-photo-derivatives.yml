@@ -1,0 +1,45 @@
+name: Directory P101 checksum-verified original photo staging
+on:
+  pull_request:
+    paths:
+      - data/directory/research/p101-three-source-locked-derivatives-input.json
+      - tools/directory/build-p101-directory-webp.py
+      - .github/workflows/directory-p101-photo-derivatives.yml
+permissions:
+  contents: write
+jobs:
+  stage-source-pinned-photos:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/p101-three-verified-directory-derivatives-20261029'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          persist-credentials: true
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install open-source image encoder
+        run: python -m pip install 'Pillow>=11,<13'
+      - name: Fetch permanent P93 archive and pin its commit
+        shell: bash
+        run: |
+          git fetch --no-tags --depth=1 origin research/p93-archived-originals-20261029
+          echo "P93_ARCHIVE_COMMIT=$(git rev-parse FETCH_HEAD)" >> "$GITHUB_ENV"
+      - name: Verify original bytes, decode and produce uncropped staged WebP
+        run: python tools/directory/build-p101-directory-webp.py --archive-commit "$P93_ARCHIVE_COMMIT"
+      - name: Commit only staged assets, review sheet and SHA report
+        shell: bash
+        run: |
+          git add assets/staged/directory-p101/ \
+            docs/research/directory/p101-three-mobile-full-frame-review.jpg \
+            data/directory/research/p101-three-derivative-build-results.json
+          if git diff --cached --quiet; then
+            echo "Source-pinned staged derivatives already identical"
+          else
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m 'research(directory): archive three verified P101 WebP previews and byte hashes'
+            git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+          fi

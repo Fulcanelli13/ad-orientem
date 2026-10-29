@@ -1,0 +1,23 @@
+name: Directory P101 staged WebP provenance guard
+on:
+  pull_request:
+    paths:
+      - assets/staged/directory-p101/**
+      - data/directory/research/p101-three-derivative-build-results.json
+      - data/directory/research/p101-three-source-locked-derivatives-input.json
+      - tests/directory-p101-three-staged-webp-contract.mjs
+      - .github/workflows/directory-p101-staged-proof.yml
+permissions:
+  contents: read
+jobs:
+  provenance-and-no-promotion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/directory-p101-three-staged-webp-contract.mjs
