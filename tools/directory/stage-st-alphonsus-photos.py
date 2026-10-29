@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Acquire TWO independently source-checked St Alphonsus photos, staging only.
+"""Acquire FOUR independently source-checked St Alphonsus photos, staging only.
 
 Never alters an approved-media manifest. Requires exact existing canonical
 Directory->Place relation, Wikimedia originals and real source-file SHA1.
@@ -39,6 +39,32 @@ SOURCES = (
         "alt_fr": "Vue extérieure du sanctuaire national Saint-Alphonse-de-Liguori à Baltimore",
         "label_en": "Exterior — Saint Alphonsus Shrine",
         "label_fr": "Extérieur — sanctuaire Saint-Alphonse",
+    },
+    {
+        "role": "EXTERIOR",
+        "title": "File:St. Alphonsus Church - Baltimore 02.JPG",
+        "asset": "US-st-alphonsus-baltimore-exterior-spire-2014.webp",
+        "credit": "Farragutful",
+        "author_contains": "Farragutful",
+        "license": "CC-BY-SA-4.0",
+        "license_path": "/licenses/by-sa/4.0",
+        "alt_en": "Full spire and Gothic Revival brick exterior of the National Shrine of Saint Alphonsus in Baltimore",
+        "alt_fr": "Flèche complète et extérieur néogothique en brique du sanctuaire Saint-Alphonse de Baltimore",
+        "label_en": "Exterior — full church and spire",
+        "label_fr": "Extérieur — église et flèche",
+    },
+    {
+        "role": "SACRED_DETAIL",
+        "title": "File:St. Alphonsus Church, Baltimore altar.JPG",
+        "asset": "US-st-alphonsus-baltimore-high-altar-2013.webp",
+        "credit": "Farragutful",
+        "author_contains": "Farragutful",
+        "license": "CC-BY-SA-3.0",
+        "license_path": "/licenses/by-sa/3.0",
+        "alt_en": "The Gothic high altar at Saint Alphonsus Church in Baltimore",
+        "alt_fr": "Maître-autel gothique de l'église Saint-Alphonse de Baltimore",
+        "label_en": "Sacred detail — high altar",
+        "label_fr": "Détail sacré — maître-autel",
     },
     {
         "role": "INTERIOR",
@@ -133,9 +159,9 @@ def fetch_meta(entry):
 
 def stage(*, validate_only=False):
     assert_identity()
-    assert len(SOURCES) == 2
-    assert {r["role"] for r in SOURCES} == {"EXTERIOR", "INTERIOR"}
-    assert len({r["asset"] for r in SOURCES}) == 2
+    assert len(SOURCES) == 4
+    assert {r["role"] for r in SOURCES} == {"EXTERIOR", "INTERIOR", "SACRED_DETAIL"}
+    assert len({r["asset"] for r in SOURCES}) == 4
     if validate_only:
         return {"schema": "AO_ST_ALPHONSUS_STAGE_REPORT_V1",
                 "status": "VALIDATED_MANIFEST_NOT_DOWNLOADED",
@@ -183,7 +209,7 @@ def stage(*, validate_only=False):
         "status": "STAGED_FOR_VISUAL_REVIEW_ONLY",
         "venue_id": VENUE, "place_id": PLACE,
         "records": records,
-        "held_sacred_detail": "Individual altar photograph rights and original source not independently checked",
+        "held_sacred_detail": "High altar image requires final visual review even after Commons author, original and license checks",
         "notes": "Assets must not be used in approved Directory gallery until visual quality, precise physical subject, rights, alt, and derivative SHA256 are reviewed.",
     }
     REPORT.parent.mkdir(parents=True, exist_ok=True)
