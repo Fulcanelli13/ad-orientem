@@ -158,6 +158,8 @@ export function reviewAdventFirstVespers1960RubricPlan({
   ending.exactPrintedCollectEndingCollated!==false||
   ending.translationFidelityCertified!==false||
   ending.completeHourCertified!==false||
+  ending.dialogueVariant!==((recitation==="CHOIR_OR_COMMON"&&
+    minister==="DEACON_OR_HIGHER")?"DOMINUS_VOBISCUM":"DOMINE_EXAUDI")||
   ending.publishable!==false||ending.published!==false||
   !LANGUAGES.every(lang=>{
    const x=ending.languages?.[lang];
