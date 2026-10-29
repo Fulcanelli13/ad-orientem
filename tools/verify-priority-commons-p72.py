@@ -111,7 +111,9 @@ def main():
     q=urlencode({"action":"query","format":"json","prop":"imageinfo","iiprop":"url|sha1|size|mime|extmetadata","titles":"|".join(r["commons_file_title"] for r in rows)})
     try:
         result=get_url_json(API+"?"+q)
-        pages={p["title"]:p for p in result["query"]["pages"] if "missing" not in p}
+        raw_pages=result["query"]["pages"]
+        page_values=raw_pages.values() if isinstance(raw_pages,dict) else raw_pages
+        pages={p["title"]:p for p in page_values if "missing" not in p}
         api_error=None
     except Exception as exc:
         pages={}
@@ -154,7 +156,7 @@ def main():
             record["error"]=type(exc).__name__+": "+str(exc)[:250]
         output.append(record)
         print("AO_P72_ORIGINAL_RESULT="+json.dumps(record,ensure_ascii=False),flush=True)
-        if i+1<len(rows):time.sleep(args.delay)
+        if i+1<len(rows) and not api_error:time.sleep(args.delay)
     REPORT.write_text("".join(json.dumps(x,ensure_ascii=False)+"\n" for x in output),encoding="utf-8")
     if previews:
         draw_contact_sheet(previews)
