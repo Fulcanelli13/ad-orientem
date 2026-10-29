@@ -1,0 +1,26 @@
+name: Directory 76-country photo source merge contracts
+on:
+  pull_request:
+    paths:
+      - tools/directory/merge-country-photo-sources.py
+      - tests/directory-76-country-photo-merge-test.py
+      - .github/workflows/directory-76-country-photo-merge.yml
+permissions:
+  contents: read
+jobs:
+  source-merge-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate 76-country immutable source merge and AU retry
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/directory/merge-country-photo-sources.py
+          python tests/directory-76-country-photo-merge-test.py -v
+          node tests/production-tree-hygiene.mjs
