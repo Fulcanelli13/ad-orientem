@@ -1,0 +1,158 @@
+{
+  "schema": "AO_P103_PHOTO_APP_LAYOUT_AND_COPYRIGHT_PRE_RELEASE_V1",
+  "as_of": "2026-10-30",
+  "baseline": {
+    "p102_merged_pr": 2027,
+    "p102_preview_verified_photo_ids": [
+      61,
+      71,
+      195
+    ],
+    "source_candidates": 31,
+    "original_SHA1_SHA256_verified": 11,
+    "full_original_decoded": 10,
+    "originals_pending": 20,
+    "exact_preview_exceptions": [
+      77,
+      110,
+      204,
+      261
+    ],
+    "overall_identity_wrong_rejected": 90,
+    "overall_research_corrob": 83,
+    "overall_held_unverified": 212
+  },
+  "actual_code_inspected": [
+    {
+      "source": "src/find/directory-card.js",
+      "surface": "Directory list card",
+      "desktop_css": "116px media column, min-height 174px, object-fit:contain; object-position:center",
+      "mobile_css": "At <=420px: 100px media column, min-height 168px, same object-fit:contain",
+      "crop_behavior": "Full image retained; letterboxing possible; 16:9 source crop requirement NOT imposed."
+    },
+    {
+      "source": "src/find/directory-card.js",
+      "surface": "TLM map quick preview",
+      "css": "width:100%;height:156px;object-fit:contain;background:#0b141e",
+      "crop_behavior": "No crop. Display credit + license and source URL."
+    },
+    {
+      "source": "src/find/directory-card.js",
+      "surface": "TLM detailed photo",
+      "css": "width:100%;max-height:300px;object-fit:contain;background:#0b141e",
+      "crop_behavior": "No crop. Credit, license URL, original source, and modifications text."
+    },
+    {
+      "source": "src/find/directory-card.js",
+      "surface": "Directory gallery grid",
+      "css": "repeat(auto-fit,minmax(min(100%,190px),1fr)); image height:160px; object-fit:contain",
+      "crop_behavior": "No crop. Added exact license hyperlink to gallery credit; existing source URL link retained."
+    },
+    {
+      "source": "src/find/explore-map-first-v2-style.js",
+      "surface": "MapCN editorial discovery carousel (separate component)",
+      "css": "88x76 px; object-fit:cover; portrait data attribute switches to contain",
+      "crop_behavior": "Not assumed to be the TLM Directory card; needs separate design if reused for place images."
+    }
+  ],
+  "source_evidence_scope": "Static repository HTML/CSS inspection and exact Wikimedia Commons file descriptions. No browser screenshots, no native-pixel visual QA and no in-app real-layout image testing performed in P103.",
+  "existing_approved_media": {
+    "approved_cover_records": 36,
+    "approved_gallery_records": 33,
+    "subject_free_license_url_pairs_preserved": true,
+    "canonical_places": 529,
+    "confirmed_directory_place_links": 22
+  },
+  "new_release_candidates": [
+    {
+      "photo_id": 61,
+      "church": "Basilika St. Clemens",
+      "locality": "Hannover, Germany",
+      "exact_source_page": "https://commons.wikimedia.org/wiki/File:Basilica_St_Clemens_Clemensstrasse_Calenberger_Neustadt_Hannover_Germany_02.jpg",
+      "independent_sha1": "905abcea4ecfd7e99a909f693a7e38eb51a86522",
+      "independent_sha256": "7d7c7e13da1608d8db4ae2eee06378255dcf5ec7f8e523daac92341528175469",
+      "creator_exact_file_page": "Christian A. Schröder (ChristianSchd)",
+      "declared_free_license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_page_free_license_observed": true,
+      "provenance_credit_suggestion": "Christian A. Schröder (ChristianSchd) · Wikimedia Commons",
+      "license_attribution_requirements": "CC BY-SA 4.0: preserve author credit, exact source link, license link, change indication, compatible terms for adapted image if applicable.",
+      "canonical_place_id": null,
+      "confirmed_directory_link_id": null,
+      "verified_place_join": false,
+      "source_photo_record_in_approved_covers": false,
+      "preview_role": "PREFERRED_EXTERIOR_PREVIEW",
+      "full_native_pixel_visual_inspection_completed": false,
+      "actual_mobile_desktop_render_test_completed": false,
+      "derivative_file_sha256_computed": false,
+      "credit_and_rights_final_app_review_completed": false,
+      "editorial_approved": false,
+      "published": false,
+      "blocker": "No canonical place/confirmed LOCATED_AT join for this church in the current 529-place seed registry; exact physical-site promotion must precede media release."
+    },
+    {
+      "photo_id": 71,
+      "church": "Kapelle Hl. Bruder Konrad",
+      "locality": "Kolbermoor, Germany",
+      "exact_source_page": "https://commons.wikimedia.org/wiki/File:Hl._Bruder_Konrad_Kolbermoor-4.jpg",
+      "independent_sha1": "f67972deb17cd65db5ec2b3315567570569998f6",
+      "independent_sha256": "1c2f504cbf5fd66040ac91b5e51bb445f0fc8d165850e7ef75b6616438264082",
+      "creator_exact_file_page": "Rufus46",
+      "declared_free_license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_page_free_license_observed": true,
+      "provenance_credit_suggestion": "Rufus46 · Wikimedia Commons",
+      "license_attribution_requirements": "CC BY-SA 4.0: preserve author credit, exact source link, license link, change indication, compatible terms for adapted image if applicable.",
+      "canonical_place_id": null,
+      "confirmed_directory_link_id": null,
+      "verified_place_join": false,
+      "source_photo_record_in_approved_covers": false,
+      "preview_role": "PREFERRED_EXTERIOR_PREVIEW",
+      "full_native_pixel_visual_inspection_completed": false,
+      "actual_mobile_desktop_render_test_completed": false,
+      "derivative_file_sha256_computed": false,
+      "credit_and_rights_final_app_review_completed": false,
+      "editorial_approved": false,
+      "published": false,
+      "blocker": "No canonical place/confirmed LOCATED_AT join for this church in the current 529-place seed registry; exact physical-site promotion must precede media release."
+    },
+    {
+      "photo_id": 195,
+      "church": "Our Lady of Lourdes and St Cecilia",
+      "locality": "Blandford Forum, England",
+      "exact_source_page": "https://commons.wikimedia.org/wiki/File:Church_of_Our_Lady_of_Lourdes_and_St_Cecilia,_Whitecliff_Mill_Street,_Blandford_Forum_(September_2025)_(4).jpg",
+      "independent_sha1": "d7c7524559edea69e0f3b0b54f2d83e5fde87f3a",
+      "independent_sha256": "ab7ced153661d256f8bcd67e6ffe8f33925f0b5b385e3283a4aa525518ad1323",
+      "creator_exact_file_page": "Hassocks5489",
+      "declared_free_license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_page_free_license_observed": true,
+      "provenance_credit_suggestion": "Hassocks5489 · Wikimedia Commons",
+      "license_attribution_requirements": "CC0 dedication: no licence attribution required; source provenance should nevertheless be retained.",
+      "canonical_place_id": null,
+      "confirmed_directory_link_id": null,
+      "verified_place_join": false,
+      "source_photo_record_in_approved_covers": false,
+      "preview_role": "PREFERRED_EXTERIOR_PREVIEW",
+      "full_native_pixel_visual_inspection_completed": false,
+      "actual_mobile_desktop_render_test_completed": false,
+      "derivative_file_sha256_computed": false,
+      "credit_and_rights_final_app_review_completed": false,
+      "editorial_approved": false,
+      "published": false,
+      "blocker": "No canonical place/confirmed LOCATED_AT join for this church in the current 529-place seed registry; exact physical-site promotion must precede media release."
+    }
+  ],
+  "release_candidates_with_confirmed_place_join": 0,
+  "release_candidates_promoted_this_pass": 0,
+  "production_images_added": 0,
+  "files_downloaded_from_wikimedia_this_pass": 0,
+  "cost_eur": 0,
+  "release_gates": [
+    "Create or identify correct canonical Place, backed by physical church and venue source evidence, then exact CONFIRMED LOCATED_AT directory link; never by name-only match.",
+    "Ensure image matches physical church building, not neighbouring parish, institution or incidental sign.",
+    "Finish independent native-pixel image QA and actual app responsive render tests; current contain layout is not a crop claim.",
+    "Record free license ID and exact canonical license URL, source URL, creator, changes EN/FR, alt text EN/FR, derivative SHA-256 and selected local approved .webp path.",
+    "Receive editorial sign-off and pass media publish validation, preserving 385-source identity ledger."
+  ]
+}
