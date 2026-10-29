@@ -1,0 +1,26 @@
+name: Directory Place/photo bulk crosswalk
+on:
+  pull_request:
+    paths:
+      - "tools/directory/screen-canonical-place-photos.mjs"
+      - "data/geography/research/directory-place-photo-screen-20261029.v1.json"
+      - "tests/directory-place-photo-crosswalk.mjs"
+      - ".github/workflows/directory-place-photo-crosswalk.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate full 1,879-site research queue, no photo publication
+        run: |
+          node --check tools/directory/screen-canonical-place-photos.mjs
+          node tests/directory-place-photo-crosswalk.mjs
+          node tests/directory-media-card-contract.mjs
+          node tests/explore-geography-contracts.mjs
