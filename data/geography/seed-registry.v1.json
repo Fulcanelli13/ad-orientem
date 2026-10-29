@@ -21967,6 +21967,280 @@
         "AO-P99-SITE-STBRUNO-FR",
         "AO-P99-GEO-STBRUNO-FR"
       ]
+    },
+    {
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "name": {
+        "official": "Kostel svatého Ignáce z Loyoly, Jihlava",
+        "aliases": [
+          "Kostel sv. Ignáce z Loyoly",
+          "Jesuit Church of St Ignatius of Loyola"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:CZ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 49.39669,
+        "lng": 15.591157,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.outdooractive.com/en/poi/jihlava/jezuitsky-kostel-sv.-ignace-z-loyoly-jihlava/40442032/",
+        "source_ref": "independent:outdooractive:40442032",
+        "matched_country_code": "CZ",
+        "verified_at": "2026-10-30"
+      },
+      "address": {
+        "line1": "Masarykovo náměstí",
+        "line2": null,
+        "postal_code": "586 01",
+        "city": "Jihlava",
+        "region": "Vysočina",
+        "country_code": "CZ",
+        "country": "Czechia",
+        "formatted": "Masarykovo náměstí, 586 01 Jihlava, Czechia"
+      },
+      "source_ids": [
+        "AO-P104-309-SITE",
+        "AO-P104-309-GEO"
+      ]
+    },
+    {
+      "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
+      "name": {
+        "official": "Friedhofskirche St. Michael, Altötting",
+        "aliases": [
+          "St. Michael's Cemetery Church",
+          "Friedhofskirche Sankt Michael"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:DE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 48.2282,
+        "lng": 12.67853,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/207573764",
+        "source_ref": "osm:way:207573764",
+        "matched_country_code": "DE",
+        "verified_at": "2026-10-30",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": "Neuöttinger Straße",
+        "line2": null,
+        "postal_code": "84503",
+        "city": "Altötting",
+        "region": "Bavaria",
+        "country_code": "DE",
+        "country": "Germany",
+        "formatted": "Neuöttinger Straße, 84503 Altötting, Germany"
+      },
+      "source_ids": [
+        "AO-P104-315-SITE",
+        "AO-P104-315-GEO"
+      ]
+    },
+    {
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "name": {
+        "official": "Basilique Saint-Bernard de Fontaine-lès-Dijon",
+        "aliases": [
+          "Basilique de la Maison natale Saint-Bernard",
+          "Couvent et Basilique Saint-Bernard"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 47.345814,
+        "lng": 5.015873,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.plan-du-patrimoine.fr/monument-historique/21/fontaine-les-dijon/couvent-et-basilique-saint-bernard/PA00112467/",
+        "source_ref": "fr:monument-historique:PA00112467",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-30"
+      },
+      "address": {
+        "line1": "Place des Feuillants",
+        "line2": null,
+        "postal_code": "21121",
+        "city": "Fontaine-lès-Dijon",
+        "region": "Côte-d'Or",
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Place des Feuillants, 21121 Fontaine-lès-Dijon, France"
+      },
+      "source_ids": [
+        "AO-P104-320-SITE",
+        "AO-P104-320-GEO"
+      ]
+    },
+    {
+      "place_id": "place:GB:sacred-heart-caterham",
+      "name": {
+        "official": "Church of the Sacred Heart of Jesus, Caterham",
+        "aliases": [
+          "Sacred Heart Church Caterham",
+          "Sacred Heart of Jesus, Caterham-on-the-Hill"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:GB"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 51.287381,
+        "lng": -0.08646362,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://historicengland.org.uk/listing/the-list/list-entry/1294941",
+        "source_ref": "historic-england:1294941",
+        "matched_country_code": "GB",
+        "verified_at": "2026-10-30"
+      },
+      "address": {
+        "line1": "Essendene Road",
+        "line2": null,
+        "postal_code": "CR3 5PA",
+        "city": "Caterham",
+        "region": "Surrey",
+        "country_code": "GB",
+        "country": "United Kingdom",
+        "formatted": "Essendene Road, CR3 5PA Caterham, United Kingdom"
+      },
+      "source_ids": [
+        "AO-P104-349-SITE",
+        "AO-P104-349-GEO"
+      ]
+    },
+    {
+      "place_id": "place:GB:st-mary-catholic-brewood",
+      "name": {
+        "official": "Roman Catholic Church of St Mary, Brewood",
+        "aliases": [
+          "St Mary's Catholic Church, Brewood",
+          "St Mary Brewood and Coven"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:GB"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 52.6776,
+        "lng": -2.1798,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://historicengland.org.uk/listing/the-list/list-entry/1039334",
+        "source_ref": "historic-england:1039334",
+        "matched_country_code": "GB",
+        "verified_at": "2026-10-30"
+      },
+      "address": {
+        "line1": "Kiddemore Green Road",
+        "line2": null,
+        "postal_code": "ST19 9BQ",
+        "city": "Brewood",
+        "region": "Staffordshire",
+        "country_code": "GB",
+        "country": "United Kingdom",
+        "formatted": "Kiddemore Green Road, ST19 9BQ Brewood, United Kingdom"
+      },
+      "source_ids": [
+        "AO-P104-356-SITE",
+        "AO-P104-356-GEO"
+      ]
+    },
+    {
+      "place_id": "place:US:immaculate-conception-cathedral-lake-charles",
+      "name": {
+        "official": "Cathedral of the Immaculate Conception, Lake Charles",
+        "aliases": [
+          "Immaculate Conception Cathedral",
+          "Cathedral of the Immaculate Conception, Louisiana"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 30.22639,
+        "lng": -93.21667,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://sv.aroundus.com/p/5298480-cathedral-of-the-immaculate-conception",
+        "source_ref": "independent:aroundus:5298480",
+        "matched_country_code": "US",
+        "verified_at": "2026-10-30"
+      },
+      "address": {
+        "line1": "935 Bilbo Street",
+        "line2": null,
+        "postal_code": "70601",
+        "city": "Lake Charles",
+        "region": "Louisiana",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "935 Bilbo Street, 70601 Lake Charles, United States"
+      },
+      "source_ids": [
+        "AO-P104-375-SITE",
+        "AO-P104-375-GEO"
+      ]
+    },
+    {
+      "place_id": "place:US:holy-family-log-church-cahokia",
+      "name": {
+        "official": "Holy Family Log Church, Cahokia",
+        "aliases": [
+          "Church of the Holy Family, Cahokia",
+          "Église de la Sainte-Famille"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 38.5701225,
+        "lng": -90.188512,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://commons.wikimedia.org/wiki/Category:Church_of_the_Holy_Family,_Cahokia",
+        "source_ref": "wikidata:Q5117898;nrhp:70000851",
+        "matched_country_code": "US",
+        "verified_at": "2026-10-30"
+      },
+      "address": {
+        "line1": "116 Church Street",
+        "line2": null,
+        "postal_code": "62206",
+        "city": "Cahokia Heights",
+        "region": "Illinois",
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "116 Church Street, 62206 Cahokia Heights, United States"
+      },
+      "source_ids": [
+        "AO-P104-380-SITE",
+        "AO-P104-380-GEO"
+      ]
     }
   ],
   "directoryPlaceLinks": [
@@ -22139,6 +22413,90 @@
         "AO-P99-SITE-STBRUNO-FR",
         "AO-P99-GEO-STBRUNO-FR",
         "ao-fssp-eglise-saint-bruno-place-du-11-novembre-f-33000-bordeaux-france"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:CZ:st-ignatius-jihlava",
+      "venue_id": "ao-research-una-voce-cz-current-20261010-uvcz-r20-jihlava-st-ignatius",
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-P104-309-SITE",
+        "AO-P104-309-GEO",
+        "ao-research-una-voce-cz-current-20261010-uvcz-r20-jihlava-st-ignatius"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:DE:friedhofskirche-st-michael-altoetting",
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-112",
+      "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-P104-315-SITE",
+        "AO-P104-315-GEO",
+        "ao-research-icksp-federated-v13-icksp-stg-112"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "venue_id": "ao-research-icksp-federated-v13-icksp-stg-013-fontaine",
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-P104-320-SITE",
+        "AO-P104-320-GEO",
+        "ao-research-icksp-federated-v13-icksp-stg-013-fontaine"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:GB:sacred-heart-caterham",
+      "venue_id": "DIO-GB-ARUNDEL-CATERHAM-SACRED-HEART",
+      "place_id": "place:GB:sacred-heart-caterham",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-P104-349-SITE",
+        "AO-P104-349-GEO",
+        "DIO-GB-ARUNDEL-CATERHAM-SACRED-HEART"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:GB:st-mary-catholic-brewood",
+      "venue_id": "DIO-GB-BIRMINGHAM-BREWOOD-ST-MARY",
+      "place_id": "place:GB:st-mary-catholic-brewood",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-P104-356-SITE",
+        "AO-P104-356-GEO",
+        "DIO-GB-BIRMINGHAM-BREWOOD-ST-MARY"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:US:immaculate-conception-cathedral-lake-charles",
+      "venue_id": "AO-AMER-R26-US-03-08",
+      "place_id": "place:US:immaculate-conception-cathedral-lake-charles",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-P104-375-SITE",
+        "AO-P104-375-GEO",
+        "AO-AMER-R26-US-03-08"
+      ]
+    },
+    {
+      "link_id": "link:directory-place:US:holy-family-log-church-cahokia",
+      "venue_id": "ao-icksp-holy-family-log-church-116-church-street-cahokia-illinois-62206-please-direct-correspondence-to-the-institute-s-oratory-in-st-louis-missouri-4",
+      "place_id": "place:US:holy-family-log-church-cahokia",
+      "relationship": "LOCATED_AT",
+      "confidence": "CONFIRMED",
+      "source_ids": [
+        "AO-P104-380-SITE",
+        "AO-P104-380-GEO",
+        "ao-icksp-holy-family-log-church-116-church-street-cahokia-illinois-62206-please-direct-correspondence-to-the-institute-s-oratory-in-st-louis-missouri-4"
       ]
     }
   ]
