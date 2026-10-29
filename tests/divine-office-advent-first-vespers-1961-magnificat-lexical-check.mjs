@@ -41,11 +41,12 @@ test("all ten 1961 printed Magnificat verse lexemes match the pinned 1960 Office
 test("lexically different Magnificat wording must fail even if verse count remains ten",async()=>{
  const substitutions=[
   [4,"nomen ejus.","regnum ejus."],
-  [9,"Ábraham,","Jacob,"],
-  [1,"salutári","salutáris"],
+  [10,"Ábraham,","Jacob,"],
+  [2,"salutári","salutáris"],
  ];
  for(const [line,oldText,newText] of substitutions){
   const tampered=[...raw];tampered[line]=tampered[line].replace(oldText,newText);
+  assert.notEqual(tampered[line],raw[line],"negative fixture must actually mutate the source");
   const r=await review({witness,readCanticleSource:async()=>({
    ...fixture(),text:tampered.join("\n")
   })});
