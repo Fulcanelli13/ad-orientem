@@ -49,19 +49,18 @@ export function officeTranslationContentBlockers({latin,translation}={}){
   // reviewed independently; do not silently fabricate the lost prayers.
   if(latin.hour==="VESPERS"&&latin.language==="la"&&
      translation.language==="fr"){
-    const l=latin.sections.find(s=>
-      /commemoratio dominica xxiii post pentecosten i[.] novembris/i.test(normalized(s.text)));
-    // The 31 October FIRST Vespers Sunday commemoration instead uses
-    // Vidi Dominum. Only the SECOND Vespers At Jesus source is missing
-    // from the French composed output; do not quarantine its valid sibling.
-    const prayerCells=(latin.sections??[]).filter(s=>
-      s.semantic?.role==="PRAYER"||/^Vespera(?:8|9|10)$/.test(s.sourceCellId));
-    const headingIndex=l?prayerCells.findIndex(s=>s.sourceCellId===l.sourceCellId):-1;
-    // Source heading, antiphon and collect may occupy DISTINCT cells.
-    // Inspect the ordered span after the heading, not just its own cell.
-    const latinAfter=headingIndex>=0?
-      normalized(prayerCells.slice(headingIndex).map(s=>s.text).join("\n")):"";
-    if(l&&/at jesus conversus/.test(latinAfter)){
+    // The verified II Vespers commemoration uses At Jesus + the Sunday
+    // Absolve collect. Source headings can be stored separately or as
+    // metadata; detect the actual Latin prayer SIGNATURE across cells.
+    // I Vespers has Vidi Dominum and must not be quarantined here.
+    const latinBody=normalized((latin.sections??[]).map(s=>s.text).join("\n"));
+    const allSaints=/omnium sanctorum/.test(normalized(latin.headline));
+    const target=allSaints&&/at jesus conversus/.test(latinBody)&&
+      /absolve quaesumus domine/.test(latinBody);
+    if(target){
+      const l=latin.sections.find(s=>/at jesus conversus/.test(normalized(s.text)))??
+        latin.sections.find(s=>/commemoratio dominica/.test(normalized(s.text)));
+      if(!l)throw Error("OFFICE_CONTENT_GATE_SUNDAY_SOURCE_UNRESOLVED");
       const tr=find(translation,l.sourceCellId);
       const all=normalized((translation.sections??[]).map(s=>s.text).join("\n"));
       const hasAntiphon=/jesus se retournant/.test(all);
