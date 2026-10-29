@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import {readFileSync} from "node:fs";
+import {readFileSync,existsSync} from "node:fs";
+import {createHash} from "node:crypto";
 import {projectExploreDataset} from "../src/find/explore-projection.js";
 import {buildExplorePlaceProfiles,resolveApprovedPlaceGallery} from "../src/find/place-profiles.js";
 import {renderPlaceSacredTreasures} from "../src/find/place-editorial-presentation.js";
@@ -26,8 +27,20 @@ for(const row of manifest.photos){
  assert.equal(row.expected_license,"CC-BY-SA-4.0");
  assert.equal(row.crop_policy,"ENTIRE_FRAME_NO_CROP");
  assert.ok(row.label_en&&row.label_fr&&row.caption_en&&row.caption_fr);
- assert.equal(originalGallery.items.some(x=>x.media_id===row.media_id),false,
-  "Only the byte-verification job may publish this image: "+row.media_id);
+ const published=originalGallery.items.find(x=>x.media_id===row.media_id);
+ if(published){
+  assert.equal(published.place_id,row.place_id);
+  assert.equal(published.subject_relic_id,row.relic_id);
+  assert.equal(published.depicts_kind,row.subject_kind);
+  assert.equal(published.status,"APPROVED");
+  assert.equal(published.rights_verified,true);
+  assert.equal(published.subject_verified,true);
+  assert.equal(published.source_url,row.source_url);
+  assert.ok(existsSync(new URL("../"+published.asset_path,import.meta.url)));
+  const bytes=readFileSync(new URL("../"+published.asset_path,import.meta.url));
+  assert.equal(createHash("sha256").update(bytes).digest("hex"),published.derivative_sha256);
+ }
+
 }
 const data={
  geography:{places:geo.places,geoAreas:geo.geoAreas,directoryPlaceLinks:geo.directoryPlaceLinks},
@@ -45,28 +58,31 @@ const profiles=buildExplorePlaceProfiles(data,projection,{today:"2026-10-29"});
 const place=id=>profiles.find(p=>p.place_id===id);
 const nd=place("place:FR:notre-dame-paris");
 assert.equal(nd.sacred_treasures.length,3);
-assert.ok(nd.sacred_treasures.every(x=>!x.image),
-  "Unacquired candidates must never leak into a live card");
-assert.ok(!renderPlaceSacredTreasures(nd).includes("aoExploreTreasurePhoto"));
+for(const treasure of nd.sacred_treasures){
+ const published=originalGallery.items.find(x=>x.subject_relic_id===treasure.id&&x.place_id===nd.place_id);
+ assert.equal(Boolean(treasure.image),Boolean(published),
+  "Research-only/unacquired photographs must remain invisible");
+}
+
 for(const candidate of manifest.photos){
  const old=originalGallery.items[0];
  // In-memory metadata fixture only: never save/reuse an unrelated asset
  // as a real object photo. This checks the owner joining and HTML escaping.
- const fake={...old,media_id:candidate.media_id,place_id:candidate.place_id,
+ const fake={...old,media_id:candidate.media_id+"-fixture",place_id:candidate.place_id,
   chapter_id:"sacred_treasures",subject_relic_id:candidate.relic_id,
   depicts_kind:candidate.subject_kind,photographed_at:candidate.photographed_at,
   caption_en:candidate.caption_en,caption_fr:candidate.caption_fr,
   label_en:candidate.label_en,label_fr:candidate.label_fr};
- const withPhoto={...data,media:{...data.media,gallery:[...originalGallery.items,fake]}};
- const p=buildExplorePlaceProfiles(withPhoto,projectExploreDataset(withPhoto))[0]; // assert correct below
+ const withPhoto={...data,media:{...data.media,gallery:[
+   ...originalGallery.items.filter(x=>x.media_id!==candidate.media_id),fake]}};
  const selected=buildExplorePlaceProfiles(withPhoto,projectExploreDataset(withPhoto))
    .find(x=>x.place_id===candidate.place_id);
  const owner=selected.sacred_treasures.find(x=>x.id===candidate.relic_id);
  assert.ok(owner.image,"Exact subject should be associated with its own Place");
- assert.equal(owner.image.media_id,candidate.media_id);
+ assert.equal(owner.image.media_id,fake.media_id);
  const html=renderPlaceSacredTreasures(selected);
  assert.ok(html.includes("aoExploreTreasurePhoto"));
- assert.ok(html.includes('data-sacred-object-photo="'+candidate.media_id+'"'));
+ assert.ok(html.includes('data-sacred-object-photo="'+fake.media_id+'"'));
  assert.ok(html.includes(candidate.caption_en));
  assert.ok(html.includes("Original photograph"));
  assert.ok(html.includes("Licence"));
@@ -76,7 +92,7 @@ for(const candidate of manifest.photos){
  assert.ok(french.includes("Photographie originale"));
  const unrelated=buildExplorePlaceProfiles(withPhoto,projectExploreDataset(withPhoto))
    .find(x=>x.place_id==="place:FR:chartres-notre-dame");
- assert.ok(!unrelated.sacred_treasures.some(x=>x.image?.media_id===candidate.media_id),
+ assert.ok(!unrelated.sacred_treasures.some(x=>x.image?.media_id===fake.media_id),
   "No image subject may leak to another Place");
  const invalid={...fake,subject_relic_id:"relic:ZZ:does-not-exist"};
  assert.ok(!buildExplorePlaceProfiles({...withPhoto,media:{approved:[],gallery:[...originalGallery.items,invalid]}},
@@ -85,5 +101,7 @@ for(const candidate of manifest.photos){
    .some(x=>x.image?.media_id===candidate.media_id),
    "Unknown relic ID must not be substituted by caption similarity");
 }
-assert.equal(resolveApprovedPlaceGallery(originalGallery.items,"place:FR:notre-dame-paris").length,0);
+const notreGallery=resolveApprovedPlaceGallery(originalGallery.items,"place:FR:notre-dame-paris");
+assert.ok(notreGallery.every(x=>x.source_url.startsWith("https://commons.wikimedia.org/wiki/File:")));
+
 console.log("P68 PASS: 3 exact, licensed research selections, zero premature public assets; object-Place scoped bilingual photo binding");
