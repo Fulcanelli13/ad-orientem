@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { buildRequiemAbsolutionPayload, createRequiemAbsolutionReaderController } from "../src/mass/reader-requiem-absolution.js";
+import {withRequiemXIII3MissalNotes,REQUIEM_XIII3_NOTE_OWNER,REQUIEM_XIII3_SOURCE} from "../src/mass/reader-requiem-conditions.js";
+import {normalizeReaderMoment} from "../src/mass/reader-dom.js";
 import { makeResolvedMass, compileMassPlan } from "../src/mass/session-engine.js";
 
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
@@ -13,6 +15,47 @@ assert.equal(graph.length,5);
 let built=buildRequiemAbsolutionPayload({graph,payload,bodyPresent:true,burialProcession:true});
 assert.equal(built.cards.length,5);
 assert.equal(built.cards[0].id,"ABS-R01");
+assert.match(built.cards[0].guide,/sermon.*after Mass.*before this Absolution/i);
+assert.match(built.cards[0].guide,/If candles were distributed, they are lit for the Absolution/i);
+assert.match(built.cards[0].guideFr,/prédication.*après la messe.*avant cette absoute/i);
+assert.match(built.cards[0].guideFr,/Si des cierges ont été distribués.*on les allume/i);
+assert.match(built.cards[0].guide,/no universal lay posture is imposed/i);
+assert.equal(built.cards[0].guideSourceUrl,REQUIEM_XIII3_SOURCE);
+
+// XIII.3 has three conditional in-Mass moments and an explicit, separately
+// selected post-Mass Absolution. Do not invent a fourth in-Mass sermon card.
+const original=[...["AO.SM.C0076","AO.SM.C0082","AO.SM.C0174","AO.SM.C0181"].map(cueId=>({
+ id:cueId,sourceCueIds:[cueId],kind:cueId==="AO.SM.C0174"?"RUBRIC":"TEXT",
+ primary:cueId==="AO.SM.C0174"?"[GENUFLECTS — ELEVATES HOST]":"Latin",
+ publishedMissalRubrics:[],
+}))];
+const dead={form:"SOLEMN",actualCelebration:{type:"REQUIEM",id:"requiem"}};
+const plain={form:"SOLEMN",actualCelebration:{type:"CALENDAR",id:"ordinary"}};
+for(const language of ["en","fr"]){
+ const rows=withRequiemXIII3MissalNotes(original,dead,{language});
+ assert.equal(rows.length,4,"XIII.3 must not create or remove Mass paragraphs");
+ assert.deepEqual(rows.map(x=>x.publishedMissalRubrics?.length??0),[1,1,1,0]);
+ assert.equal(rows[0].publishedMissalRubrics[0].sourceCueId,"AO.SM.C0076");
+ assert.equal(rows[1].publishedMissalRubrics[0].sourceCueId,"AO.SM.C0082");
+ assert.equal(rows[2].publishedMissalRubrics[0].sourceCueId,"AO.SM.C0174");
+ const events=rows.flatMap(x=>x.publishedMissalRubrics??[]);
+ assert.equal(events.length,3);
+ for(const event of events){
+  assert.equal(event.owner,REQUIEM_XIII3_NOTE_OWNER);
+  assert.equal(event.sourceId,"MR62_RITUS");
+  assert.equal(event.sourceUrl,REQUIEM_XIII3_SOURCE);
+  assert.equal(event.actor,"FAITHFUL");
+  assert.equal(event.kind,"CONDITIONAL_DIRECTION");
+  assert.equal(event.observedNow,false);
+  assert.match(event.displayText,language==="fr"?/Si des cierges/:/If candles/);
+ }
+ const normalized=normalizeReaderMoment({paragraphs:rows});
+ assert.deepEqual(normalized.paragraphs.map(x=>x.publishedMissalRubrics.length),[1,1,1,0],
+   "Reader normalization hid a source-backed Requiem conditional note");
+}
+assert.deepEqual(withRequiemXIII3MissalNotes(original,plain).map(x=>x.publishedMissalRubrics?.length??0),[0,0,0,0]);
+assert.deepEqual(withRequiemXIII3MissalNotes(original,{...dead,form:"UNKNOWN"}).map(x=>x.publishedMissalRubrics?.length??0),[0,0,0,0]);
+assert.equal(withRequiemXIII3MissalNotes([{id:"other",sourceCueIds:["AO.SM.C0100"],publishedMissalRubrics:[]}],dead)[0].publishedMissalRubrics.length,0);
 assert.equal(built.cards[1].id,"ABS-R02");
 assert.ok(built.cards[1].paragraphs[0].latin.startsWith("Non intres"));
 assert.equal(built.cards[2].id,"ABS-R03");
