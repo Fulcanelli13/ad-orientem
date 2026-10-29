@@ -18,7 +18,7 @@ export function installFiveWoundsChapletStyles(doc=globalThis.document){
 #aoPray435930 .aoFiveWoundsRail button{min-height:58px;padding:7px 3px;border:1px solid transparent;background:transparent;border-radius:8px;color:inherit;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer}
 #aoPray435930 .aoFiveWoundsRail button span{width:10px;height:10px;border-radius:50%;border:1px solid #b9a073}
 #aoPray435930 .aoFiveWoundsRail button.active span{background:#d1b98c;box-shadow:0 0 0 4px rgba(198,167,113,.12)}
-#aoPray435930 .aoFiveWoundsRail button small{font:500 11px/1.25 var(--ao-font-ui,Georgia,serif);opacity:.8;max-width:110px}
+#aoPray435930 .aoFiveWoundsRail button small{font:500 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);opacity:1;max-width:110px;min-width:0;overflow-wrap:anywhere}
 #aoPray435930 .aoFiveWoundsRail button.active{border-color:rgba(199,170,119,.4);background:rgba(199,170,119,.08)}
 #aoPray435930 .aoFiveWoundsProgress{height:3px;background:rgba(196,179,150,.18);border-radius:8px;overflow:hidden}
 #aoPray435930 .aoFiveWoundsProgress>span{height:100%;display:block;background:#baa176;transition:width .2s ease}
@@ -32,15 +32,33 @@ export function installFiveWoundsChapletStyles(doc=globalThis.document){
 #aoPray435930 .aoFiveWoundsPrayerText{font:400 clamp(19px,3.2vw,23px)/1.75 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);text-align:center;margin:28px 0 12px}
 #aoPray435930 .aoFiveWounds button{min-height:48px;color:inherit;font-family:var(--ao-font-ui,Georgia,serif)}
 #aoPray435930 .aoFiveWoundsPrayerTop button{font-size:12px;min-width:66px;border:1px solid rgba(198,171,120,.5);border-radius:999px;background:transparent;padding:6px 10px}
-#aoPray435930 .aoFiveWoundsActions{display:flex;justify-content:space-between;gap:12px;margin-top:16px}
-#aoPray435930 .aoFiveWoundsActions button{padding:10px 19px;border:1px solid rgba(197,175,137,.43);background:transparent;border-radius:999px;font-size:14px}
+#aoPray435930 .aoFiveWoundsActions{
+ position:sticky;bottom:0;z-index:12;
+ display:flex;justify-content:space-between;align-items:stretch;
+ gap:9px;margin:16px 0 0;
+ padding:11px 3px max(11px,env(safe-area-inset-bottom));
+ border-top:1px solid var(--border,rgba(202,180,146,.25));
+ background:var(--surface-1,#151c24);
+}
+#aoPray435930 .aoFiveWoundsActions button{
+ flex:1 1 0;min-width:0;min-height:48px;
+ padding:10px 9px;border:1px solid rgba(197,175,137,.43);
+ background:transparent;border-radius:999px;
+ font-size:14px;line-height:1.35;text-align:center;
+ white-space:normal;
+}
 #aoPray435930 .aoFiveWoundsActions button.primary{margin-left:auto;background:rgba(196,161,107,.2);border-color:rgba(202,180,145,.65)}
 #aoPray435930 .aoFiveWoundsSource{margin-top:30px;border-top:1px solid rgba(198,169,115,.23);padding-top:8px}
 #aoPray435930 .aoFiveWoundsSource summary{min-height:48px;display:flex;align-items:center;cursor:pointer;font-size:13px;color:var(--ao-muted,#c4b6a1)}
 #aoPray435930 .aoFiveWoundsSource p{font-size:14px;line-height:1.65}
 #aoPray435930 .aoFiveWoundsSource a{display:block;color:#c9ac79;font-size:13px;padding:7px 0;min-height:35px}
 #aoPray435930 .aoFiveWounds button:focus-visible,#aoPray435930 .aoFiveWounds summary:focus-visible{outline:2px solid #dac291;outline-offset:3px}
-@media(max-width:420px){#aoPray435930 .aoFiveWoundsRail button small{font-size:10px;line-height:1.15}#aoPray435930 .aoFiveWoundsBeads{gap:11px}#aoPray435930 .aoFiveWoundsPrayerText{line-height:1.6}}
+@media(max-width:420px){
+ #aoPray435930 .aoFiveWoundsRail button{min-height:66px;padding:6px 2px;gap:5px}
+ #aoPray435930 .aoFiveWoundsRail button small{font-size:12px;line-height:1.25}
+ #aoPray435930 .aoFiveWoundsBeads{gap:11px}
+ #aoPray435930 .aoFiveWoundsPrayerText{line-height:1.6}
+}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoFiveWoundsProgress>span{transition:none}}
 `;
  doc.head?.append(s);
