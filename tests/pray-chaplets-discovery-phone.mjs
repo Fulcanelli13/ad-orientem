@@ -126,8 +126,9 @@ try{
     "Five Wounds thumb dock must remain reachable while reading: "+JSON.stringify(fiveScrolled));
    await page.screenshot({path:resolve(out,"five-wounds-thumb-scroll-"+width+".png"),animations:"disabled"});
    await page.locator(rootSel+' [data-p435930-five-latin]').click(); // return to vernacular from Latin
-   await page.evaluate(()=>{const key="ao2:settings:v1",v=JSON.parse(localStorage.getItem(key)||"{}");
-    localStorage.setItem(key,JSON.stringify({...v,language:"fr"}));});
+   const sessionLanguage=page.locator(rootSel+' [data-p435930-session-language]');
+   assert.equal(await sessionLanguage.count(),1,"Five Wounds needs the same in-session EN/FR switch as other Prayer readers");
+   await sessionLanguage.click(); // English -> French without resetting the reader
    await page.locator(rootSel+' [data-p435930-five-wound="4"]').click();
    assert.equal(await page.locator(rootSel+' .aoFiveWoundsPrayerText').getAttribute("lang"),"fr",
     "French Five Wounds must use canonical French text, not an English label");
@@ -137,8 +138,10 @@ try{
    const fiveFr=await fiveMetrics();
    assert.ok(fiveFr.labelFonts.every(x=>x>=12)&&fiveFr.overflow<=1,
     "French wound labels must also be >=12px and not overflow the phone");
-   await page.evaluate(()=>{const key="ao2:settings:v1",v=JSON.parse(localStorage.getItem(key)||"{}");
-    localStorage.setItem(key,JSON.stringify({...v,language:"en"}));});
+   await sessionLanguage.click(); // French -> English, still the same chaplet step
+   assert.equal(await page.locator(rootSel+' .aoFiveWoundsPrayerText').getAttribute("lang"),"en");
+   assert.equal(await page.locator(rootSel+' .aoFiveWoundsProgress').getAttribute("aria-valuenow"),"25",
+    "In-session language switching must never restart the 30-prayer chaplet");
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
    await page.locator(rootSel+' [data-p435930-family="chaplets"]').click();
    // Full Raccolta 33-Pater chaplet is one extra guided choice, not the held short form.
