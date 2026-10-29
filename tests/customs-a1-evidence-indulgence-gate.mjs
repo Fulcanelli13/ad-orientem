@@ -54,11 +54,11 @@ assert.deepEqual(summary,{
 });
 assert.equal(grants.schema,"AO_CUSTOMS_INDULGENCE_AUTHORITY_AND_CROSSWALK_RESEARCH_V1");
 assert.equal(grants.status,"RESEARCH_ONLY_NOT_IN_CALENDAR_RUNTIME");
-assert.equal(grants.grants.length,9);
-assert.equal(new Set(grants.grants.map(x=>x.grant_id)).size,9);
+assert.equal(grants.grants.length,23);
+assert.equal(new Set(grants.grants.map(x=>x.grant_id)).size,23);
 assert.equal(grants.canonical_customs_crosswalk.length,38);
 assert.deepEqual(grants.canonical_customs_crosswalk.map(x=>x.custom_id),canonical.map(x=>x.custom_id));
-assert.equal(grants.canonical_customs_crosswalk.filter(x=>x.candidate_grants.length).length,7);
+assert.equal(grants.canonical_customs_crosswalk.filter(x=>x.candidate_grants.length).length,10);
 const grantIds=new Set(grants.grants.map(x=>x.grant_id));
 for(const item of grants.canonical_customs_crosswalk) {
  assert.equal(item.conditions_verified_for_custom,false);
@@ -74,13 +74,13 @@ assert.deepEqual(grants.general_plenary_conditions.refs,["Normae N. 17 §§1–2
 assert.equal(grants.source_scope.authority_checks.later_decrees_complete,false);
 for(const g of grants.grants) {
  assert.equal(g.source_url,src);
- assert.equal(g.grant_type,"PLENARY");
+ assert.ok(["PLENARY","PARTIAL"].includes(g.grant_type));
  assert.ok(g.exact_concession && g.prescribed_work_en && g.special_conditions.length>0);
- assert.equal(g.usual_conditions_ref,grants.general_plenary_conditions.id);
+ assert.equal(g.usual_conditions_ref,g.grant_type==="PLENARY"?grants.general_plenary_conditions.id:null);
  assert.equal(g.custom_association_status,"NO_AUTOMATIC_CUSTOM_LINK");
  assert.equal(g.publication_authorized,false);
  assert.equal(g.any_history_from_raccolta,"NOT_REVIEWED_SEPARATE_EDITION");
 }
 assert.equal(grants.counts.actual_indulgence_work_links_published,0);
 console.log("PASS Customs A1: 150 exact source-readiness dossiers, 50 intake joins, 30 prior folio checks, 15 spot-check flags, 12 narrowly witnessed leads; no source/page/identity/date/grant approval invented.");
-console.log("PASS Indulgence seed: 9 original 1999 Enchiridion grants and full general plenary conditions, 38 canonical identity crosswalk rows, 7 explicitly nonautomatic intersections; zero published matches.");
+console.log("PASS Indulgence seed: 23 source-rechecked Enchiridion concession cases incl. partial/plenary, corrected Norms 17-20, 38 canonical crosswalk rows, 10 conditional nonautomatic intersections; zero published matches.");
