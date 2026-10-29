@@ -325,3 +325,64 @@ overlays, not silent replacements of the universal Office.
 
 This remains an unmerged draft research stage. No weekly captures or
 additional paid hosting are enabled.
+
+## Recurring universal source-key planner and pinned metadata-only projection
+
+`src/office/universal-source-descriptors.js` provides the first generic
+**rule-based path planner**, not another set of dated Office documents:
+
+1. Every valid civil date proposes one `Sancti/MM-DD` **possible path**,
+   including dates where the source file may not exist. An absent source
+   file is not proof that a feast is absent, and a path proposal is not a
+   claim that a feast is actually appointed.
+2. Advent days are derived from the **movable first Sunday of Advent**
+   using the existing Calendar's date arithmetic; the confirmed pinned
+   source naming pattern is `Tempora/Adv{week}-{weekday}` (Sunday = 0).
+   Pinned original source spot checks:
+   `Latin/Tempora/Adv1-0.txt`, `Adv1-1.txt`, `Adv1-6.txt`,
+   `Adv4-0.txt`, plus `Latin/Sancti/11-01.txt`,
+   `11-02.txt` and `11-29.txt`.
+   These are **source identities**, not an Office ordo.
+3. An opt-in **one-date** reader uses the already existing
+   `hostResolver.resolveSource(path,"la",diagnostic)` interface and
+   projects just the `[Officium]`, `[Rank]` and `[Rule]` metadata
+   (title, rank label, rule line count and conditioning indicator),
+   with source pin/path/language checks and a small in-memory cache.
+   It copies **no psalms, hymns, lessons, prayers, rendered XHTML or
+   annual source documents** into the registry.
+4. **Crucial rubrical safeguard:** the original pinned `Adv1-0`
+   has an historical `Semiduplex;;6.9` Rank, while the original
+   `Adv4-0` and `Sancti/11-02` contain multiple conditional
+   `[Rank]` variants. These numbers are NOT RG91 table positions,
+   and the host's flattened `Map` may lose conditional variants.
+   The projector *always* returns null Office class, null first/second
+   Vespers eligibility and null 1960 precedence; it must not silently
+   construct an apparently precise universal Office calendar.
+5. The existing annual research sweep now attaches **unverified path
+   leads** to each date, and separately reports path planning from
+   independently supplied Office-day research evidence. These
+   source-key proposals never increase `researchCandidateHours`,
+   `completeTrilingualHours` or certified/published counts.
+
+| Planning count (no reads) | 2026 | 2028 |
+| --- | ---: | ---: |
+| Fixed-date Sanctoral path leads, existence unknown | 365 | 366 |
+| Advent Temporal path leads, existence unknown | 26 | 22 |
+| **Total possible source-key leads** | **391** | **388** |
+| Automatically inspected or certified files | 0 | 0 |
+| New Office-day appointment decisions | 0 | 0 |
+| Raw XHTML acquired / archived | 0 | 0 |
+
+The planner and metadata extraction are covered by
+`tests/divine-office-universal-source-descriptors.mjs`.
+CI checks both years' counts and the critical distinction
+between proposed keys and independently verified text.
+
+**Still to extend:** verify additional Temporal source-key patterns and
+their recurrence rules (Christmas, Epiphany, Septuagesima, Lent,
+Passiontide, Easter, Ascension, Pentecost and its octave, and
+post-Pentecost), with conditional rubrics preserved. A source-key map
+is **not** a complete 1960 Office-calendar engine. Only independent
+ordination/precedence adjudication and complete source-derived
+section sequences can authorize real daily Offices. Continue through
+on-demand parsed metadata, no full-year Office XHTML batches.
