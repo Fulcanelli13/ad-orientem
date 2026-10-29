@@ -68,6 +68,52 @@ export const MASS_SCHOLA_EVENT_SPECS=freeze([
     at:source("AO.CARD.030")},
 ].map(row=>freeze(row)));
 
+// Editorial bounds for optional music already in the 36-event itinerary.
+// A source anchor proves where a text/cue belongs, NEVER that music was heard.
+// Processional arrival/departure and the end of actual Communion distribution
+// cannot be inferred from a priest's card or its scroll position.
+export const SCHOLA_OPTIONAL_MUSIC_WINDOWS=freeze({
+  ENTRANCE_ORGAN_OPTION:freeze({
+    startAfter:null,endCue:null,requires:"OBSERVED_ENTRANCE_AND_ALTAR_ARRIVAL",
+    note:"Entrance and altar arrival require observation; opening card does not start the organ."
+  }),
+  OFFERTORY_LOCAL_MOTET:freeze({
+    startAfter:"AO.SM.B030",endCue:"AO.SM.C0135",
+    requires:"OFFERTORY_ANTIPHON_COMPLETED",
+    note:"After the Offertory antiphon; finish by the Secret. Source cues are not heard music."
+  }),
+  OFFERTORY_ORGAN_OPTION:freeze({
+    startAfter:"AO.SM.B030",endCue:"AO.SM.C0135",
+    requires:"OFFERTORY_ANTIPHON_COMPLETED_AND_ORGAN_PERMISSION",
+    note:"Optional organ within the Offertory window only; stop by the Secret and check 1958 permission."
+  }),
+  COMMUNION_LOCAL_MOTET:freeze({
+    startAfter:"AO.SM.B074",endCue:"AO.SM.C0251",
+    requires:"COMMUNION_ANTIPHON_COMPLETED_AND_DISTRIBUTION_CONTINUES",
+    note:"After Communion antiphon, only while distribution continues; finish before Postcommunion."
+  }),
+  RECESSIONAL_ORGAN_OPTION:freeze({
+    startAfter:null,endCue:null,requires:"OBSERVED_RECESSIONAL_AFTER_BLESSING",
+    note:"Last Gospel card does not prove recessional music has started; confirm the local exit."
+  }),
+});
+function optionalMusicWindowForEvent(spec,cards){
+  const rule=SCHOLA_OPTIONAL_MUSIC_WINDOWS[spec.id];
+  if(!rule)return null;
+  const hasSourceBlock=!rule.startAfter||cards.some(card=>
+    (card.blocks??[]).some(block=>block.blockId===rule.startAfter&&
+      block.omittedByRite==null&&(block.paragraphCount==null||block.paragraphCount>0)));
+  const hasEndCue=!rule.endCue||cards.some(card=>
+    (card.paragraphs??[]).some(row=>(row.sourceCueIds??[]).includes(rule.endCue)));
+  return freeze({...rule,
+    sourceAnchorsVerified:Boolean(rule.endCue&&hasSourceBlock&&hasEndCue),
+    status:!rule.endCue?"MANUAL_CEREMONY_BOUNDARY_REQUIRED":
+      hasSourceBlock&&hasEndCue?"SOURCE_ANCHORS_PRESENT_NOT_PERFORMANCE":
+      "SOURCE_ANCHORS_UNVERIFIED",
+    actuallySinging:"UNKNOWN",actuallyPlaying:"UNKNOWN",notAnObservation:true,
+  });
+}
+
 const sourceId=card=>String(card?.sourceSectionId??card?.sectionId??"");
 const blockOwned=(card,id)=>(card?.blocks??[]).some(b=>b.blockId===id&&
    b.omittedByRite==null && (b.paragraphCount==null || b.paragraphCount>0));
@@ -169,6 +215,7 @@ export function buildScholaMusicItinerary({cards,form,tracks=[],sanctusPerforman
    sourceRef:spec.afterBlock??spec.at.block??spec.at.section,
    sourcePrecision:spec.precision??(spec.at.block?"SOURCE_BLOCK":"SOURCE_SECTION"),
    organPermission:organ?organAuthorityForScholaEvent(spec,resolvedMass):null,
+   musicWindow:optionalMusicWindowForEvent(spec,cards),
    status:organ?"ORGAN_CANDIDATE_REQUIRES_RITUAL_CUE":local?"LOCAL_PROGRAMME_UNCONFIRMED":
      spec.manualOnly?"AWAIT_EXPLICIT_CHOIR_OBSERVATION":
      spec.kind==="QUIET_INTERVAL"?"SOURCE_STAGE_NOT_PERFORMANCE_OBSERVATION":
