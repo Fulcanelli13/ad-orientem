@@ -68,7 +68,10 @@ for(const item of grants.canonical_customs_crosswalk) {
 const src=grants.source_scope.primary_url;
 assert.match(src,/^https:\/\/www\.vatican\.va\//);
 assert.equal(grants.source_scope.current_special_decrees_screen,"NOT_COMPLETE");
-assert.equal(grants.general_plenary_conditions.conditions_en.length,5);
+assert.equal(grants.general_plenary_conditions.conditions_en.length,6);
+assert.equal(grants.general_plenary_conditions.id,"EI99_GENERAL_NORMS_17_20");
+assert.deepEqual(grants.general_plenary_conditions.refs,["Normae N. 17 §§1–2","Normae N. 18 §§1–2","Normae N. 19","Normae N. 20 §§1–5"]);
+assert.equal(grants.source_scope.authority_checks.later_decrees_complete,false);
 for(const g of grants.grants) {
  assert.equal(g.source_url,src);
  assert.equal(g.grant_type,"PLENARY");
