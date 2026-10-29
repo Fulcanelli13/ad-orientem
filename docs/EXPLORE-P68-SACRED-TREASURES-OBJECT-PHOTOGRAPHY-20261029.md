@@ -5,7 +5,7 @@
 ## Initial editorial selection
 
 Three original Commons photographs are selected by **exact canonical relic ID**:
-1. **Notre-Dame de Paris**, `relic:FR:crown-of-thorns-paris`: Luistxo's 28 December 2024 photograph of the **modern Crown of Thorns reliquary installation**. It does **not** photograph the medieval 1862 reliquary as if current, authenticate the Crown, or assert normal public display.
+1. **Notre-Dame de Paris**, `relic:FR:crown-of-thorns-paris`: Thomon's 29 May 2018 photograph of the **historical display of the Crown**, clearly labelled as archival. It does **not** depict the 2024 reliquary installation or establish current accessibility. The modern reliquary by living designer Sylvain Dubuisson is **held** until the artwork's underlying reproduction rights (separate from the photographer's Commons licence) are independently cleared.
 2. **Nevers**, `relic:FR:bernadette-nevers`: Jabonsbachek, 6 July 2018, the saint's **glass shrine**, with dating and explicit note about the wax-covered face and hands; a dated photograph is not proof of the current visitor display.
 3. **Padua**, `relic:IT:anthony-padua-tongue`: Elmiralaleh, 27 April 2022, **reliquary housing the tongue attributed to Saint Anthony**. Do not equate a photograph of the container with independent relic authentication.
 
