@@ -145,7 +145,7 @@ try{
      assert.equal(snapshot.missalRubricBeforeText,true,
       "Missal minor elevation must precede omnis honor et gloria");
     }else{
-     assert.match(snapshot.primary,/omnis honor|all honou?r and glory|honneur et gloire/i,
+     assert.match(snapshot.primary,/omnis honor|all honou?r and glory|honneur et (?:toute )?gloire/i,
       "Source doxology text must remain readable in the selected vernacular/Latin mode");
      assert.match(snapshot.liveRubric,spec.lang==="fr"
       ?/élève légèrement le calice avec la sainte Hostie/:/raises the chalice slightly with the Sacred Host/,
