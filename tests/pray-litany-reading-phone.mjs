@@ -57,10 +57,13 @@ try{
    const rootSel="#aoPray435930.open";
    const owner=rootSel+' [data-ao-devotional-owner="litany"]';
    await page.locator(owner+' .aoP435930LitanyLine').first().waitFor({timeout:10000});
+   await page.waitForSelector(owner+'[data-ao-devotional-dual-axis="true"]',{timeout:10000});
+   await page.evaluate(()=>document.fonts.ready);
    const inspect=()=>page.evaluate(()=>{
     const root=document.querySelector("#aoPray435930.open"),m=root.querySelector(".aoP435930Mount"),
       reader=m.querySelector('[data-ao-devotional-owner="litany"]'),
       first=reader.querySelector(".aoP435930LitanyLine"),last=reader.querySelectorAll(".aoP435930LitanyLine"),
+      second=last[1],
       guide=reader.querySelector(".aoLitanySectionGuide"),
       source=reader.querySelector("details.aoP435930Source"),
       caption=reader.querySelector(".aoLitanyWitnessCaption"),
@@ -71,9 +74,12 @@ try{
      lineHeight:parseFloat(style.lineHeight),opacity:parseFloat(style.opacity),
      minimumOpacity:Math.min(...[...last].map(el=>parseFloat(getComputedStyle(el).opacity))),
      firstTop:r.top,viewportBottom:port.bottom,
+     lineGap:second?second.getBoundingClientRect().top-r.bottom:null,
      sourceLine:first.textContent,caption:caption?.textContent,guideOpen:guide?.open,
      sourceOpen:source?.open,guideSummaryHeight:guide?.querySelector("summary")?.getBoundingClientRect().height,
      editionHeight:edition?.getBoundingClientRect().height,editionScroll:edition?.scrollWidth-edition?.clientWidth,
+     editionVisible:!!edition&&getComputedStyle(edition).display!=="none",
+     editionTapHeight:edition?.querySelector("button")?.getBoundingClientRect().height,
      lineCount:last.length,readerPresent:!!reader,overflow:document.documentElement.scrollWidth-innerWidth
     };
    });
@@ -83,6 +89,9 @@ try{
    assert.ok(en.font>=18&&en.lineHeight/en.font>=1.6,"Private Litany source text should use generous 18px+ type");
    assert.ok(en.minimumOpacity>=.99,"No historical invocations should be muted behind focus");
    assert.ok(en.firstTop<en.viewportBottom-18,"The invocation text must enter the first phone viewport");
+   assert.ok(en.lineGap>=6,"Separate historical invocation lines must have visible spacing: "+JSON.stringify(en));
+   assert.ok(en.editionVisible&&en.editionHeight>=44&&en.editionTapHeight>=44,
+    "Historical edition/use selector must be visible and thumb-accessible");
    assert.equal(en.guideOpen,false,"Guidance should be available but closed by default");
    assert.equal(en.sourceOpen,false,"Historical source notes must stay collapsed by default");
    assert.ok(en.guideSummaryHeight>=44);
