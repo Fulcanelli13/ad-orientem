@@ -18416,5 +18416,24 @@
       "unresolvedMuseumIdentityEvidence": 5,
       "promotedLinks": 0
     }
+  },
+  "phase2PhotoVerificationIntake": {
+    "status": "STAGED_NOT_CERTIFIED",
+    "asOf": "2026-10-29",
+    "manifest": "data/calendar/sacred-art-phase2-856-image-qa-intake-200-first-20261029.v1.json",
+    "first200": "data/calendar/sacred-art-phase2-first200-qa-worklist-20261029.v1.json",
+    "exactSourcePhotos": [
+      "data/calendar/sacred-art-phase2-first200-photo-source-index-01-20261029.v1.json",
+      "data/calendar/sacred-art-phase2-first200-photo-source-index-02-20261029.v1.json"
+    ],
+    "firstWave": 200,
+    "awaitingWave": 656,
+    "preexistingCanonicalLinksAmongFirst200": 72,
+    "originalPhotoUrlsRecorded": 112,
+    "onlyPreviewPhotoUrlsRecorded": 88,
+    "imageByteAvailabilityCheckedByThisWork": 0,
+    "individualVisualInspectionCompletedByThisWork": 0,
+    "licensingClearedForProductionByThisWork": 0,
+    "productionAssetsChanged": false
   }
 }
