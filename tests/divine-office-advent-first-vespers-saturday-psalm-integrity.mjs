@@ -27,6 +27,7 @@ test("exact two Git psalm blobs expand into five Saturday Vespers segments, 40 s
  assert.equal(reads,2);
  assert.equal(r.status,"FIVE_SATURDAY_SOURCE_SEGMENTS_PINNED_SECONDARY_INICIPITS_ONLY");
  assert.equal(r.sourceVerseRowsVerified,40);
+ assert.equal(r.psalterTextFamily,"GALLICAN_VULGATE");
  assert.deepEqual(r.receipts.map(x=>x.sourceVerseRows),[9,9,7,6,9]);
  assert.equal(r.receipts[3].sourceId,"Psalterium/Psalmorum/Psalm144#8-13a");
  assert.equal(r.receipts[4].sourceId,"Psalterium/Psalmorum/Psalm144#13b-21");
@@ -59,6 +60,7 @@ test("any real source mutation breaks cryptographic provenance, even with spoofe
 });
 test("printed incipit and day/boundary claims cannot be promoted",async()=>{
  for(const mutate of [
+  d=>{d.psalterTextFamily="PIUS_XII"},
   d=>{d.parts[0].first="Dixit Dominus"},
   d=>{d.parts[4].last="Different last verse"},
   d=>{d.parts[3].range="8-13b"},
