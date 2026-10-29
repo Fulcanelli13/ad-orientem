@@ -1,0 +1,41 @@
+name: Explore P66 editorial source and relic cards
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/find/place-profiles.js'
+      - 'src/find/place-editorial-presentation.js'
+      - 'src/find/explore-presentation.js'
+      - 'src/find/heritage-style.js'
+      - 'tests/explore-p66-editorial-relic-cards.mjs'
+      - 'tests/explore-place-profiles.mjs'
+      - 'tests/explore-r69-multi-place-gallery.mjs'
+      - 'data/explore/sacred-phenomena-seed.v1.json'
+      - '.github/workflows/explore-p66-editorial-relic-cards.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'src/find/place-profiles.js'
+      - 'src/find/place-editorial-presentation.js'
+      - 'src/find/explore-presentation.js'
+      - 'src/find/heritage-style.js'
+      - 'tests/explore-p66-editorial-relic-cards.mjs'
+permissions:
+  contents: read
+jobs:
+  place-editorial-folio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Source-verified stories, relic custody and local customs
+        run: node tests/explore-p66-editorial-relic-cards.mjs
+      - name: Existing Place and gallery regressions
+        run: |
+          node tests/explore-place-profiles.mjs
+          node tests/explore-r69-multi-place-gallery.mjs
+      - name: Read-only cross-owner release boundaries
+        run: node tests/connected-sacred-entities-p64.mjs
