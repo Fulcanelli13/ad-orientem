@@ -155,3 +155,81 @@ export function screenGeneratedVespersCommemorations(office){
     printAndLocalOrdoReviewRequired:true,published:0
   });
 }
+
+/**
+ * Exact, bounded 2026 All Saints Sunday-commemoration Latin comparison.
+ *
+ * Text witness (independently illustrated, but not a certified 1961 edition):
+ * CMAA Latin/English Breviary compilation,
+ * https://media.churchmusicassociation.org/books/breviarium5x8.pdf
+ * pp. 188 (I November Sunday I Vespers), 195–196 (XXIII post Pentecost
+ * collect and II Vespers), 274 (Sunday versicle), 438 (Saturday versicle).
+ * These are printed page numbers; the PDF page indices are 187, 194–195,
+ * 273 and 437. Sunday appointment is separately attested by SSPX Ordo
+ * https://ordo.fsspx.org/day/2026-11-01?lang=en .
+ *
+ * Guard the source SPAN after its Commemoratio heading, not a whole Office:
+ * an antiphon somewhere in the principal feast must not count as
+ * evidence that it appears in the Sunday commemoration.
+ */
+const ALL_SAINTS_SUNDAY_WITNESSES=Object.freeze({
+  "2026-10-31":Object.freeze({
+    part:"FIRST",antiphon:"vidi dominum sedentem",
+    verse:"vespertina oratio ascendat ad te domine",
+    response:"et descendat super nos misericordia tua",
+    collect:"absolve quaesumus domine tuorum delicta populorum",
+    printedPage:"188 / 438",
+  }),
+  "2026-11-01":Object.freeze({
+    part:"SECOND",antiphon:"at iesus conversus et videns eam dixit",
+    verse:"dirigatur domine oratio mea",
+    response:"sicut incensum in conspectu tuo",
+    collect:"absolve quaesumus domine tuorum delicta populorum",
+    printedPage:"196 / 274",
+  }),
+});
+const compareLatin=s=>String(s??"").normalize("NFD")
+  .replace(/[\u0300-\u036f]/g,"").toLowerCase()
+  .replaceAll("æ","ae").replaceAll("œ","oe")
+  .replaceAll("j","i").replace(/[^a-z]+/g," ").trim();
+export function collateAllSaintsSundayVespersCommemoration(office){
+  if(!validOffice(office)||!ALL_SAINTS_SUNDAY_WITNESSES[office?.date])
+    throw Error("OFFICE_SUNDAY_COMM_COHORT_OR_PIN_INVALID");
+  const expected=ALL_SAINTS_SUNDAY_WITNESSES[office.date];
+  const source=office.sections.filter(s=>s.semantic?.role==="PRAYER"||
+    /^Vespera(?:8|9|10)$/u.test(s.sourceCellId));
+  const headings=[];
+  source.forEach((cell,i)=>cell.text.split("\n").forEach((line,lineNo)=>{
+    if(/^commemoratio(?:nes)?(?:\b|[\s.:])/u.test(compareLatin(line)))
+      headings.push({cell:i,line:lineNo,sourceCellId:cell.sourceCellId,
+        heading:line.trim().slice(0,100)});
+  }));
+  const one=headings.length===1?headings[0]:null;
+  // Nothing before the source's explicit commemoration heading can satisfy
+  // the evidence check. Do not select a generic feast antiphon.
+  const after=one?source.slice(one.cell).flatMap((s,i)=>{
+    const lines=s.text.split("\n");
+    return i===0?lines.slice(one.line+1):lines;
+  }).join("\n"):"";
+  const text=compareLatin(after);
+  const loc=Object.fromEntries(["antiphon","verse","response","collect"].map(k=>
+    [k,text.indexOf(compareLatin(expected[k]))]));
+  const parts=Object.fromEntries(Object.entries(loc).map(([k,i])=>[k,i>=0]));
+  const inOrder=loc.antiphon>=0&&loc.verse>loc.antiphon&&
+    loc.response>loc.verse&&loc.collect>loc.response;
+  return Object.freeze({
+    date:office.date,part:expected.part,
+    sourceRevision:office.sourceRevision,
+    claimedPrintedWitness:"CMAA_BILINGUAL_BREVIARY_COMPILATION",
+    independent1961PrintedEditionCertified:false,
+    printedPage:expected.printedPage,
+    commemorationHeadingCount:headings.length,
+    sourceHeading:one?.heading??null,sourceCellId:one?.sourceCellId??null,
+    componentIncipitsLocated:Object.freeze(parts),componentOrderMatches:inOrder,
+    sourceStructureMatches:headings.length===1&&inOrder,
+    specificPrintedWitnessComparisonDone:true,
+    original1961BreviaryPrintedProperCertified:false,
+    localCalendarCommemorationVerified:false,
+    canPublish:false,published:0
+  });
+}
