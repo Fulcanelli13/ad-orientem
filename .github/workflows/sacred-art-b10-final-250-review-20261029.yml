@@ -1,0 +1,69 @@
+name: Sacred Art B10 - final 250 Rijksmuseum + Met review
+on:
+  push:
+    branches: [research/sacred-art-b10-getty-20261029]
+    paths:
+      - scripts/art/sacred-art-b10-combined-review-20261029.py
+      - .github/workflows/sacred-art-b10-final-250-review-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-art-b10-final-250
+  cancel-in-progress: true
+jobs:
+  combine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b10-getty-20261029
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Combine source-verifiable artworks and render one review
+        run: |
+          python -m py_compile scripts/art/sacred-art-b10-combined-review-20261029.py
+          python -u scripts/art/sacred-art-b10-combined-review-20261029.py
+      - name: Validate 250 uniqueness, earlier review decisions, images, rights, interactive gallery
+        run: |
+          python - <<'PY'
+          import json,hashlib,re
+          from pathlib import Path
+          d=json.load(open('data/calendar/sacred-art-b10-final-250-combined-20261029.v1.json'))
+          a=d['rows'];c=d['counts']
+          assert len(a)==250 and d['completeBatchReady'] and c['reviewableArtworkCount']==250
+          assert c['previousReviewIDsExcluded']==1455
+          assert c['additionalHistoricalRijksRatingsExcluded']==137
+          assert c['sourceOriginalDownloads']==c['productionImports']==0
+          assert len({x['id'] for x in a})==len({x['previewURL'] for x in a})==250
+          assert set(c['byMuseum'])=={'Met','Rijks'}
+          assert all(x['imageRightsVerified'] and not x['productionImported'] and x['rightsConflict'] is None for x in a)
+          assert all(x['previewURL'].startswith('https://images.metmuseum.org/CRDImages/') if x['provider']=='Met' else x['previewURL'].startswith('https://iiif.micr.io/') for x in a)
+          sha=hashlib.sha256(json.dumps([x['id'] for x in a],separators=(',',':')).encode()).hexdigest()
+          assert sha==d['batchSha256']
+          h=Path('docs/SACRED_ART_NEXT_250_IMPORT_REVIEW_B10_20261029.html').read_text()
+          e=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert e and json.loads(e.group(1))==a
+          assert "batchId:'B10'" in h and 'const PAGE_SIZE=50;' in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'seenPages.length<TOTAL_PAGES' in h
+          js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert js
+          Path('/tmp/ao-b10-final-gallery.js').write_text(js.group(1))
+          print('PASS B10 250 artwork reviewer — no repeats from 1455 earlier review cards')
+          PY
+          node --check /tmp/ao-b10-final-gallery.js
+      - name: Archive finished Batch 10 user-review gallery without production mutation
+        if: success()
+        run: |
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b10-final-250-combined-20261029.v1.json
+          git add docs/SACRED_ART_B10_FINAL_250_QA_20261029.md
+          git add docs/SACRED_ART_NEXT_250_IMPORT_REVIEW_B10_20261029.html
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): B10 consolidated 250 religious paintings reviewer verified"
+          git pull --rebase origin research/sacred-art-b10-getty-20261029
+          git push origin HEAD:research/sacred-art-b10-getty-20261029
