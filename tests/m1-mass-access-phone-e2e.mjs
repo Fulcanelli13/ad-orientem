@@ -42,6 +42,8 @@ try{
   assert.equal(await page.locator("[data-ao-start-live]").count(),1,
     "M1 must reuse the one authoritative Start Mass button");
   assert.equal(await page.locator(".aoMassFolioStepNav").isVisible(),false,"Old wizard must be hidden in M1");
+  // Review frames must show the settled overlay, not a mid-transition crossfade.
+  await page.waitForTimeout(750);
   await page.screenshot({path:resolve(out,width+"-overview-dark.png")});
   await page.locator("[data-m1-choice='ceremony']").click();
   await page.locator('[data-full-mass-form][value="LOW"]').check();
