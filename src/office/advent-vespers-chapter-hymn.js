@@ -128,6 +128,7 @@ export async function assembleAdventVespersChapterAndHymnResearch({
   hymnSourceId:COMMON+"#Hymnus Adv Vespera",
   languages:Object.freeze(result),
   chapterAndHymnSourceSectionsLocated:6,
+  appointedOfficeVerified:false,
   chapterVespersAppointmentVerified:false,
   hymnAndDoxologyRubricsVerified:false,
   completeHourVerified:false,sourceTextCollated:false,
