@@ -5,6 +5,8 @@ on:
       - "tools/directory/screen-canonical-place-photos.mjs"
       - "data/geography/research/directory-place-photo-screen-20261029.v1.json"
       - "tests/directory-place-photo-crosswalk.mjs"
+      - "data/geography/research/directory-place-identity-editorial-20261029.v1.json"
+      - "data/geography/research/directory-st-alphonsus-photo-candidates-w6.v1.json"
       - ".github/workflows/directory-place-photo-crosswalk.yml"
   workflow_dispatch:
 permissions:
