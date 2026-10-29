@@ -1,0 +1,526 @@
+{
+  "schema": "AO_CUSTOMS_EXISTING_OWNER_22_BILINGUAL_VARIANT_CARDS_V1",
+  "date": "2026-10-29",
+  "status": "BILINGUAL_CALENDAR_COPY_DRAFT_NOT_RUNTIME_PUBLISHED",
+  "purpose": "Enrich existing Calendar Customs using 22 existing-owner source-action variants. No new Customs Atlas, IDs or separate review ballot.",
+  "counts": {
+    "bilingual_variants": 22,
+    "distinct_existing_published_owners": 12,
+    "new_custom_ids": 0,
+    "calendar_published": 0
+  },
+  "release_requirements": [
+    "Regional attribution and date inherited from existing Calendar resolver, not fixed by this file",
+    "Check 1962 ministerial competence and rite before user-facing instruction",
+    "Do not imply current local event, parish availability, supernatural efficacy or indulgence",
+    "Bilingual copy and source pointer editorial QA before runtime publication"
+  ],
+  "variants": [
+    {
+      "variant_id": "AO-CUST-VARIANT-001",
+      "source_group_id": "CAT-WEISER-A-007",
+      "existing_published_custom_id": "DEAD-003",
+      "existing_owner_name_en": "Prayer for the dead on 2 November",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-02-004"
+      ],
+      "source_printed_page": 27,
+      "source_geography_labels": [
+        "Latin Catholic"
+      ],
+      "display_en": "Some Catholics devoted Mondays to prayer for the departed. This voluntary devotion carries no guarantee that souls are temporarily released from purgatory.",
+      "display_fr": "Dans certains milieux catholiques, le lundi était consacré à la prière pour les défunts. C'est une dévotion facultative, sans garantie de délivrance temporaire des âmes.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": false,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-002",
+      "source_group_id": "CAT-WEISER-A-016",
+      "existing_published_custom_id": "DEAD-003",
+      "existing_owner_name_en": "Prayer for the dead on 2 November",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-03-005"
+      ],
+      "source_printed_page": 36,
+      "source_geography_labels": [
+        "Catholic Europe"
+      ],
+      "display_en": "Some communities offered Masses and prayers for the dead on Ember Days. This is historical local practice, not a new universal duty.",
+      "display_fr": "Aux Quatre-Temps, certaines communautés priaient pour les défunts et faisaient célébrer des messes à leur intention. La pratique dépend des usages locaux.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": false,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-003",
+      "source_group_id": "CAT-WEISER-A-023",
+      "existing_published_custom_id": "ADVT-001",
+      "existing_owner_name_en": "The family Advent wreath",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-05-003"
+      ],
+      "source_printed_page": 55,
+      "source_geography_labels": [
+        "Some European places"
+      ],
+      "display_en": "In some households a designated child lit the Advent-wreath candle. It is an optional family variation.",
+      "display_fr": "Dans certaines familles, un enfant désigné allumait la bougie de la couronne de l'Avent. Cela reste un usage domestique facultatif.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": false,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-004",
+      "source_group_id": "CAT-WEISER-A-076",
+      "existing_published_custom_id": "BLSS-003",
+      "existing_owner_name_en": "St John the Evangelist — blessing of wine",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-10-014"
+      ],
+      "source_printed_page": 130,
+      "source_geography_labels": [
+        "Central Europe"
+      ],
+      "display_en": "In Central Europe wine already blessed on St John's feast was used at meals and on journeys or family occasions. The blessing itself remains a clerical rite.",
+      "display_fr": "En Europe centrale, le vin déjà béni à la Saint-Jean était conservé ou partagé lors de voyages et de fêtes familiales. Sa bénédiction relève du ministre compétent.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": true,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-005",
+      "source_group_id": "CAT-WEISER-B-003",
+      "existing_published_custom_id": "DEAD-001",
+      "existing_owner_name_en": "Prayerful cemetery visit",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-15-005"
+      ],
+      "source_printed_page": 190,
+      "source_geography_labels": [
+        "France and England (reported historical)"
+      ],
+      "display_en": "Some families visited relatives' graves on Palm Sunday, sometimes around a local churchyard procession. This is not a required Roman Palm Sunday action.",
+      "display_fr": "À l'occasion des Rameaux, des familles visitaient les tombes de leurs proches, parfois à la suite d'une procession locale. Ce n'est pas un élément prescrit de la procession romaine.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": false,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-006",
+      "source_group_id": "CAT-WEISER-B-006",
+      "existing_published_custom_id": "DOM-013",
+      "existing_owner_name_en": "Keeping blessed Palm Sunday branches at home",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-15-010"
+      ],
+      "source_printed_page": 192,
+      "source_geography_labels": [
+        "Austria Bavaria Slavic regions"
+      ],
+      "display_en": "Some Central and Eastern European households placed blessed palms near fields or stables, without any guarantee of protection against weather.",
+      "display_fr": "Dans certaines régions d'Europe centrale et orientale, des rameaux bénits étaient placés près des champs ou des étables, sans garantie contre les intempéries.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": false,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-007",
+      "source_group_id": "CAT-WEISER-B-018",
+      "existing_published_custom_id": "BLSS-004",
+      "existing_owner_name_en": "Holy Saturday — blessing of Easter foods",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-15-037"
+      ],
+      "source_printed_page": 208,
+      "source_geography_labels": [
+        "Certain Central European villages"
+      ],
+      "display_en": "In certain villages a priest visited homes to bless Easter food on Holy Saturday. Laypeople do not thereby acquire authority to perform the priest's blessing.",
+      "display_fr": "Dans certains villages, le prêtre se rendait dans les maisons le Samedi saint pour bénir les aliments de Pâques. Ce rite n'est pas à accomplir par les laïcs.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": true,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-008",
+      "source_group_id": "CAT-WEISER-B-033",
+      "existing_published_custom_id": "EAST-001",
+      "existing_owner_name_en": "An Easter Monday Emmaus walk",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-16-029"
+      ],
+      "source_printed_page": 223,
+      "source_geography_labels": [
+        "French Canada"
+      ],
+      "display_en": "In French Canada an Easter Monday walk could include visiting grandparents, a regional family variation.",
+      "display_fr": "Au Canada français, une promenade du lundi de Pâques pouvait inclure une visite aux grands-parents. C'est une variante familiale régionale.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": false,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-009",
+      "source_group_id": "CAT-WEISER-B-044",
+      "existing_published_custom_id": "BLSS-004",
+      "existing_owner_name_en": "Holy Saturday — blessing of Easter foods",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-17-023"
+      ],
+      "source_printed_page": 238,
+      "source_geography_labels": [
+        "Ukraine, Poland, other Slavic homes"
+      ],
+      "display_en": "Slavic households prepared Easter breads such as cross-marked paska. Making the bread and having food blessed are distinct actions.",
+      "display_fr": "Des familles slaves préparaient des pains de Pâques, notamment la paska ornée d'une croix. La préparation du pain se distingue de sa bénédiction.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": true,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-010",
+      "source_group_id": "CAT-WEISER-B-076",
+      "existing_published_custom_id": "CORP-001",
+      "existing_owner_name_en": "Flower carpets for Corpus Christi",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-21-007"
+      ],
+      "source_printed_page": 262,
+      "source_geography_labels": [
+        "France Spain Portugal Belgium Italy and elsewhere"
+      ],
+      "display_en": "In places with an actual Corpus Christi procession, households decorated windows along the route with candles and religious images.",
+      "display_fr": "Sur certains parcours de la procession de la Fête-Dieu, les fenêtres étaient ornées de cierges et d'images pieuses, lorsque la procession avait réellement lieu.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": true,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-011",
+      "source_group_id": "CAT-WEISER-B-077",
+      "existing_published_custom_id": "CORP-001",
+      "existing_owner_name_en": "Flower carpets for Corpus Christi",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-21-008"
+      ],
+      "source_printed_page": 262,
+      "source_geography_labels": [
+        "Central and Northern Europe"
+      ],
+      "display_en": "In parts of northern and central Europe, birch greenery decorated homes along a Corpus Christi procession route.",
+      "display_fr": "Dans certaines régions du nord et du centre de l'Europe, des rameaux de bouleau décoraient les maisons situées sur le passage de la Fête-Dieu.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": true,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-012",
+      "source_group_id": "CAT-WEISER-B-084",
+      "existing_published_custom_id": "CORP-001",
+      "existing_owner_name_en": "Flower carpets for Corpus Christi",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-21-018"
+      ],
+      "source_printed_page": 265,
+      "source_geography_labels": [
+        "Central Europe and France"
+      ],
+      "display_en": "Corpus Christi wreaths and flowers adorned homes and banners in some regions. Any priestly blessing of the wreaths is a separate action.",
+      "display_fr": "Pour la Fête-Dieu, des couronnes et bouquets de fleurs étaient disposés sur les maisons et les bannières. Leur éventuelle bénédiction est distincte de la décoration.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": true,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-013",
+      "source_group_id": "CAT-WEISER-B-095",
+      "existing_published_custom_id": "PATR-001",
+      "existing_owner_name_en": "French fête patronale / village patronal celebration",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-23-007"
+      ],
+      "source_printed_page": 279,
+      "source_geography_labels": [
+        "Germany, Hungary, Slovakia, Ukraine, Spain"
+      ],
+      "display_en": "Regional church patron or dedication feasts could involve Mass, processions and local celebrations, as actually observed in the parish.",
+      "display_fr": "Dans plusieurs pays, la fête patronale ou l'anniversaire de la dédicace d'une église donnait lieu à la messe, à des processions et à des réjouissances locales, selon le lieu.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": false,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-014",
+      "source_group_id": "CAT-WEISER-B-096",
+      "existing_published_custom_id": "NDAY-001",
+      "existing_owner_name_en": "Baptismal patron's name day",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-23-010"
+      ],
+      "source_printed_page": 280,
+      "source_geography_labels": [
+        "European Catholic families"
+      ],
+      "display_en": "A baptismal name day might include breakfast, gifts or relief from chores in some households; none is compulsory.",
+      "display_fr": "La fête du saint patron de baptême pouvait comporter un repas familial, de petits cadeaux ou une dispense des tâches domestiques. Aucun de ces usages n'est obligatoire.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": false,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-015",
+      "source_group_id": "CAT-WEISER-B-097",
+      "existing_published_custom_id": "DEV-006",
+      "existing_owner_name_en": "Pilgrimage to a shrine or holy place",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-23-014"
+      ],
+      "source_printed_page": 282,
+      "source_geography_labels": [
+        "Early and medieval Christian church"
+      ],
+      "display_en": "Christians historically visited martyrs' tombs on their anniversaries, a particular example of pilgrimage to a holy place.",
+      "display_fr": "Des fidèles se rendaient auprès du tombeau d'un martyr à l'anniversaire de sa mort. Cet exemple historique s'inscrit dans le pèlerinage aux lieux saints.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": false,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-016",
+      "source_group_id": "CAT-WEISER-B-101",
+      "existing_published_custom_id": "MARI-001",
+      "existing_owner_name_en": "French Assumption Marian processions",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-24-004"
+      ],
+      "source_printed_page": 289,
+      "source_geography_labels": [
+        "Austria and Central Europe"
+      ],
+      "display_en": "In Austria and parts of Central Europe some Assumption Marian processions traversed fields with prayers for the harvest.",
+      "display_fr": "En Autriche et ailleurs en Europe centrale, certaines processions mariales de l'Assomption traversaient les champs et comportaient des prières pour les récoltes.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": true,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-017",
+      "source_group_id": "CAT-WEISER-B-130",
+      "existing_published_custom_id": "DEAD-001",
+      "existing_owner_name_en": "Prayerful cemetery visit",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-26-010"
+      ],
+      "source_printed_page": 310,
+      "source_geography_labels": [
+        "Catholic European communities"
+      ],
+      "display_en": "Before All Saints and All Souls some families cleaned and decorated relatives' graves.",
+      "display_fr": "À l'approche de la Toussaint et de la Commémoraison des fidèles défunts, certaines familles nettoyaient et ornaient les tombes de leurs proches.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": false,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-018",
+      "source_group_id": "CAT-WEISER-B-131",
+      "existing_published_custom_id": "DEAD-001",
+      "existing_owner_name_en": "Prayerful cemetery visit",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-26-011"
+      ],
+      "source_printed_page": 311,
+      "source_geography_labels": [
+        "Central European Catholic countries"
+      ],
+      "display_en": "Graveside candles and sheltered lanterns were used around All Saints in parts of Central Europe as acts of remembrance and prayer.",
+      "display_fr": "Dans plusieurs régions d'Europe centrale, des lanternes ou des cierges étaient déposés sur les tombes autour de la Toussaint, dans un esprit de souvenir et de prière.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": false,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-019",
+      "source_group_id": "CAT-WEISER-B-135",
+      "existing_published_custom_id": "DEAD-001",
+      "existing_owner_name_en": "Prayerful cemetery visit",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-26-015"
+      ],
+      "source_printed_page": 311,
+      "source_geography_labels": [
+        "Brazil"
+      ],
+      "display_en": "In Brazil cemetery visits with candles and prayers around All Souls are historically attested; this is a regional example.",
+      "display_fr": "Au Brésil, des visites de cimetières avec prières et cierges sont attestées à la Commémoraison des fidèles défunts. Il s'agit d'un usage local.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": false,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-020",
+      "source_group_id": "CAT-WEISER-B-136",
+      "existing_published_custom_id": "DEAD-001",
+      "existing_owner_name_en": "Prayerful cemetery visit",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-26-016"
+      ],
+      "source_printed_page": 311,
+      "source_geography_labels": [
+        "Puerto Rico"
+      ],
+      "display_en": "In Puerto Rico some families visited graves, brought flowers and prayed for the departed around All Souls.",
+      "display_fr": "À Porto Rico, certaines familles visitaient les tombes, y déposaient des fleurs et priaient pour les défunts autour du 2 novembre.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": false,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-021",
+      "source_group_id": "CAT-WEISER-B-137",
+      "existing_published_custom_id": "DEAD-001",
+      "existing_owner_name_en": "Prayerful cemetery visit",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-26-017"
+      ],
+      "source_printed_page": 312,
+      "source_geography_labels": [
+        "Philippines"
+      ],
+      "display_en": "In the Philippines preparing graves and praying a novena for the departed are historically attested; arrangements vary locally.",
+      "display_fr": "Aux Philippines, la préparation des tombes et des prières ou neuvaines liées aux défunts sont attestées. Les horaires et usages varient selon les communautés.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": false,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    },
+    {
+      "variant_id": "AO-CUST-VARIANT-022",
+      "source_group_id": "CAT-WEISER-B-177",
+      "existing_published_custom_id": "NDAY-001",
+      "existing_owner_name_en": "Baptismal patron's name day",
+      "source_id": "WEISER-1958",
+      "source_observation_ids": [
+        "WEI58-28-018"
+      ],
+      "source_printed_page": 338,
+      "source_geography_labels": [
+        "Central European historic"
+      ],
+      "display_en": "In some European communities women named Anne marked St Anne's feast as their baptismal name day, a local example of name-day observance.",
+      "display_fr": "Dans certains milieux européens, les femmes prénommées Anne fêtaient leur patronne à la Sainte-Anne. C'est un cas particulier de la fête du saint patron de baptême.",
+      "calendar_context_inherit_existing_owner": true,
+      "locality_guard": "SHOW_ONLY_IN_SUPPORTED_REGIONAL_CONTEXT_OR_AS_HISTORICAL_EXAMPLE",
+      "historical_publication_scope": "OPTIONAL_VARIANT_NOT_UNIVERSAL_NOR_CURRENT_LOCAL_EVENT",
+      "rite_or_blessing_scope_review_required": false,
+      "new_canonical_identity_created": false,
+      "indulgence_grants": [],
+      "approved_for_live_publication": false
+    }
+  ]
+}
