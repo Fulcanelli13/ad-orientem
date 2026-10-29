@@ -1,0 +1,939 @@
+{
+  "schema": "ao.pray.original-pdf-72-text-layer-scan.v1",
+  "date": "2026-10-29",
+  "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40869741142",
+  "scanMethod": "Direct PDF download with SHA-256 fingerprints, Poppler pdftotext layer, 4-word contiguous shingle overlap across 2 adjacent pages. All page numbers PDF zero-based. Text-layer match is NOT facsimile/image-verbatim or printed-edition certification.",
+  "books": [
+    {
+      "id": "callan_1925_copyright_later_scan",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Blessedbegodcomp00call.pdf",
+      "sha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "bytes": 29779017,
+      "pageCount": 810,
+      "nonemptyTextPages": 789,
+      "caveat": "1925 copyright; scanned material contains post-1933 content, so not a certified 1925 first print"
+    },
+    {
+      "id": "moran_1883",
+      "url": "https://archive.org/download/TheCatholicPrayerBook1883/TheCatholicPrayerBook1883.pdf",
+      "sha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "bytes": 18323335,
+      "pageCount": 641,
+      "nonemptyTextPages": 635,
+      "caveat": "Alternative full PDF includes p566–567 missing from another Wikisource scan"
+    },
+    {
+      "id": "hammer_1909",
+      "url": "https://www.catholickingdom.com/s_Library/Books/M/Mary_Help_of_Christians_HAMMER_OCR_CK.pdf",
+      "sha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "bytes": 20508376,
+      "pageCount": 522,
+      "nonemptyTextPages": 488,
+      "caveat": "OCR-backed scan of 1909 Hammer edition; Internet Archive image-only scan has no searchable prayer text"
+    },
+    {
+      "id": "purgatorian_manual_1894_1907",
+      "url": "https://www.catholickingdom.com/s_Library/Books/M/Manual_of_the_Purgatorian_Society_OCR_CK.pdf",
+      "sha256": "3739d066b2ac6de5b31c73242552ad3726a05aa02fe5f6babf8e04155952c113",
+      "bytes": 5169948,
+      "pageCount": 256,
+      "nonemptyTextPages": 253,
+      "caveat": "1894 copyright, 1907 imprimatur scan; selected OCR prayer words differ"
+    }
+  ],
+  "records": [
+    {
+      "id": "holy_ghost",
+      "day": 1,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 344,
+      "pdfPageEnd": 345,
+      "overlapBasisPoints": 9808,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_ghost",
+      "day": 2,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 344,
+      "pdfPageEnd": 345,
+      "overlapBasisPoints": 9831,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_ghost",
+      "day": 3,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 344,
+      "pdfPageEnd": 345,
+      "overlapBasisPoints": 8980,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_ghost",
+      "day": 4,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 345,
+      "pdfPageEnd": 346,
+      "overlapBasisPoints": 9623,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_ghost",
+      "day": 5,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 345,
+      "pdfPageEnd": 346,
+      "overlapBasisPoints": 8750,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_ghost",
+      "day": 6,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 345,
+      "pdfPageEnd": 346,
+      "overlapBasisPoints": 8913,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_ghost",
+      "day": 7,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 345,
+      "pdfPageEnd": 346,
+      "overlapBasisPoints": 9737,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_ghost",
+      "day": 8,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 346,
+      "pdfPageEnd": 347,
+      "overlapBasisPoints": 9851,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_ghost",
+      "day": 9,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 346,
+      "pdfPageEnd": 347,
+      "overlapBasisPoints": 9744,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "christmas",
+      "day": 1,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 340,
+      "pdfPageEnd": 341,
+      "overlapBasisPoints": 9333,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "christmas",
+      "day": 2,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 340,
+      "pdfPageEnd": 341,
+      "overlapBasisPoints": 9677,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "christmas",
+      "day": 3,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 341,
+      "pdfPageEnd": 342,
+      "overlapBasisPoints": 8333,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "christmas",
+      "day": 4,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 341,
+      "pdfPageEnd": 342,
+      "overlapBasisPoints": 9655,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "christmas",
+      "day": 5,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 341,
+      "pdfPageEnd": 342,
+      "overlapBasisPoints": 8750,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "christmas",
+      "day": 6,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 341,
+      "pdfPageEnd": 342,
+      "overlapBasisPoints": 9565,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "christmas",
+      "day": 7,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 342,
+      "pdfPageEnd": 343,
+      "overlapBasisPoints": 8276,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "christmas",
+      "day": 8,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 342,
+      "pdfPageEnd": 343,
+      "overlapBasisPoints": 9524,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "christmas",
+      "day": 9,
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageStart": 342,
+      "pdfPageEnd": 343,
+      "overlapBasisPoints": 9375,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 1,
+      "cohort": "moran_1883",
+      "pdfPageStart": 578,
+      "pdfPageEnd": 579,
+      "overlapBasisPoints": 9121,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 2,
+      "cohort": "moran_1883",
+      "pdfPageStart": 581,
+      "pdfPageEnd": 582,
+      "overlapBasisPoints": 9247,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 3,
+      "cohort": "moran_1883",
+      "pdfPageStart": 581,
+      "pdfPageEnd": 582,
+      "overlapBasisPoints": 8969,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 4,
+      "cohort": "moran_1883",
+      "pdfPageStart": 581,
+      "pdfPageEnd": 582,
+      "overlapBasisPoints": 9412,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 5,
+      "cohort": "moran_1883",
+      "pdfPageStart": 582,
+      "pdfPageEnd": 583,
+      "overlapBasisPoints": 9787,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 6,
+      "cohort": "moran_1883",
+      "pdfPageStart": 582,
+      "pdfPageEnd": 583,
+      "overlapBasisPoints": 9865,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 7,
+      "cohort": "moran_1883",
+      "pdfPageStart": 583,
+      "pdfPageEnd": 584,
+      "overlapBasisPoints": 9474,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 8,
+      "cohort": "moran_1883",
+      "pdfPageStart": 583,
+      "pdfPageEnd": 584,
+      "overlapBasisPoints": 9756,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 9,
+      "cohort": "moran_1883",
+      "pdfPageStart": 583,
+      "pdfPageEnd": 584,
+      "overlapBasisPoints": 9901,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "st_joseph",
+      "day": 1,
+      "cohort": "moran_1883",
+      "pdfPageStart": 614,
+      "pdfPageEnd": 615,
+      "overlapBasisPoints": 9545,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "st_joseph",
+      "day": 2,
+      "cohort": "moran_1883",
+      "pdfPageStart": 615,
+      "pdfPageEnd": 616,
+      "overlapBasisPoints": 8952,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "st_joseph",
+      "day": 3,
+      "cohort": "moran_1883",
+      "pdfPageStart": 615,
+      "pdfPageEnd": 616,
+      "overlapBasisPoints": 9505,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "st_joseph",
+      "day": 4,
+      "cohort": "moran_1883",
+      "pdfPageStart": 615,
+      "pdfPageEnd": 616,
+      "overlapBasisPoints": 9424,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "st_joseph",
+      "day": 5,
+      "cohort": "moran_1883",
+      "pdfPageStart": 616,
+      "pdfPageEnd": 617,
+      "overlapBasisPoints": 8832,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "st_joseph",
+      "day": 6,
+      "cohort": "moran_1883",
+      "pdfPageStart": 617,
+      "pdfPageEnd": 618,
+      "overlapBasisPoints": 9463,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "st_joseph",
+      "day": 7,
+      "cohort": "moran_1883",
+      "pdfPageStart": 617,
+      "pdfPageEnd": 618,
+      "overlapBasisPoints": 9518,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "st_joseph",
+      "day": 8,
+      "cohort": "moran_1883",
+      "pdfPageStart": 618,
+      "pdfPageEnd": 619,
+      "overlapBasisPoints": 9594,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "st_joseph",
+      "day": 9,
+      "cohort": "moran_1883",
+      "pdfPageStart": 619,
+      "pdfPageEnd": 620,
+      "overlapBasisPoints": 8933,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "annunciation",
+      "day": 1,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 100,
+      "pdfPageEnd": 101,
+      "overlapBasisPoints": 7971,
+      "match": "PARTIAL_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "annunciation",
+      "day": 2,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 102,
+      "pdfPageEnd": 103,
+      "overlapBasisPoints": 9153,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "annunciation",
+      "day": 3,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 104,
+      "pdfPageEnd": 105,
+      "overlapBasisPoints": 6613,
+      "match": "PARTIAL_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "annunciation",
+      "day": 4,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 106,
+      "pdfPageEnd": 107,
+      "overlapBasisPoints": 7606,
+      "match": "PARTIAL_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "annunciation",
+      "day": 5,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 108,
+      "pdfPageEnd": 109,
+      "overlapBasisPoints": 9661,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "annunciation",
+      "day": 6,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 111,
+      "pdfPageEnd": 112,
+      "overlapBasisPoints": 7887,
+      "match": "PARTIAL_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "annunciation",
+      "day": 7,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 112,
+      "pdfPageEnd": 113,
+      "overlapBasisPoints": 9796,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "annunciation",
+      "day": 8,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 115,
+      "pdfPageEnd": 116,
+      "overlapBasisPoints": 9167,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "annunciation",
+      "day": 9,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 118,
+      "pdfPageEnd": 119,
+      "overlapBasisPoints": 9000,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 1,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 121,
+      "pdfPageEnd": 122,
+      "overlapBasisPoints": 8257,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 2,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 124,
+      "pdfPageEnd": 125,
+      "overlapBasisPoints": 9762,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 3,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 125,
+      "pdfPageEnd": 126,
+      "overlapBasisPoints": 7045,
+      "match": "PARTIAL_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 4,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 127,
+      "pdfPageEnd": 128,
+      "overlapBasisPoints": 9500,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 5,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 130,
+      "pdfPageEnd": 131,
+      "overlapBasisPoints": 9750,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 6,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 131,
+      "pdfPageEnd": 132,
+      "overlapBasisPoints": 8974,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 7,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 132,
+      "pdfPageEnd": 133,
+      "overlapBasisPoints": 8776,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 8,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 135,
+      "pdfPageEnd": 136,
+      "overlapBasisPoints": 9756,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 9,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 137,
+      "pdfPageEnd": 138,
+      "overlapBasisPoints": 9714,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "assumption",
+      "day": 1,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 140,
+      "pdfPageEnd": 141,
+      "overlapBasisPoints": 8681,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "assumption",
+      "day": 2,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 142,
+      "pdfPageEnd": 143,
+      "overlapBasisPoints": 9123,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "assumption",
+      "day": 3,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 144,
+      "pdfPageEnd": 145,
+      "overlapBasisPoints": 9434,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "assumption",
+      "day": 4,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 146,
+      "pdfPageEnd": 147,
+      "overlapBasisPoints": 9718,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "assumption",
+      "day": 5,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 148,
+      "pdfPageEnd": 149,
+      "overlapBasisPoints": 8971,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "assumption",
+      "day": 6,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 151,
+      "pdfPageEnd": 152,
+      "overlapBasisPoints": 9661,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "assumption",
+      "day": 7,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 153,
+      "pdfPageEnd": 154,
+      "overlapBasisPoints": 9859,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "assumption",
+      "day": 8,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 155,
+      "pdfPageEnd": 156,
+      "overlapBasisPoints": 9444,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "assumption",
+      "day": 9,
+      "cohort": "hammer_1909",
+      "pdfPageStart": 156,
+      "pdfPageEnd": 157,
+      "overlapBasisPoints": 9877,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_souls",
+      "day": 1,
+      "cohort": "purgatorian_manual_1894_1907",
+      "pdfPageStart": 198,
+      "pdfPageEnd": 199,
+      "overlapBasisPoints": 7890,
+      "match": "PARTIAL_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_souls",
+      "day": 2,
+      "cohort": "purgatorian_manual_1894_1907",
+      "pdfPageStart": 201,
+      "pdfPageEnd": 202,
+      "overlapBasisPoints": 7419,
+      "match": "PARTIAL_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_souls",
+      "day": 3,
+      "cohort": "purgatorian_manual_1894_1907",
+      "pdfPageStart": 201,
+      "pdfPageEnd": 202,
+      "overlapBasisPoints": 10000,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_souls",
+      "day": 4,
+      "cohort": "purgatorian_manual_1894_1907",
+      "pdfPageStart": 202,
+      "pdfPageEnd": 203,
+      "overlapBasisPoints": 6615,
+      "match": "PARTIAL_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_souls",
+      "day": 5,
+      "cohort": "purgatorian_manual_1894_1907",
+      "pdfPageStart": 203,
+      "pdfPageEnd": 204,
+      "overlapBasisPoints": 8333,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_souls",
+      "day": 6,
+      "cohort": "purgatorian_manual_1894_1907",
+      "pdfPageStart": 205,
+      "pdfPageEnd": 206,
+      "overlapBasisPoints": 7835,
+      "match": "PARTIAL_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_souls",
+      "day": 7,
+      "cohort": "purgatorian_manual_1894_1907",
+      "pdfPageStart": 205,
+      "pdfPageEnd": 206,
+      "overlapBasisPoints": 10000,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_souls",
+      "day": 8,
+      "cohort": "purgatorian_manual_1894_1907",
+      "pdfPageStart": 206,
+      "pdfPageEnd": 207,
+      "overlapBasisPoints": 8660,
+      "match": "HIGH_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    },
+    {
+      "id": "holy_souls",
+      "day": 9,
+      "cohort": "purgatorian_manual_1894_1907",
+      "pdfPageStart": 208,
+      "pdfPageEnd": 209,
+      "overlapBasisPoints": 7622,
+      "match": "PARTIAL_TEXT_LAYER_OVERLAP",
+      "scanPageImageFullyCollated": false,
+      "printEditionCertified": false
+    }
+  ],
+  "totals": {
+    "books": 4,
+    "dayBodies": 72,
+    "highTextLayerOverlap": 62,
+    "partialTextLayerOverlap": 10,
+    "unmatched": 0,
+    "completePrintedFacsimileCertificates": 0
+  },
+  "partialExceptionDays": [
+    {
+      "id": "annunciation",
+      "day": 1,
+      "cohort": "hammer_1909",
+      "overlapBasisPoints": 7971
+    },
+    {
+      "id": "annunciation",
+      "day": 3,
+      "cohort": "hammer_1909",
+      "overlapBasisPoints": 6613
+    },
+    {
+      "id": "annunciation",
+      "day": 4,
+      "cohort": "hammer_1909",
+      "overlapBasisPoints": 7606
+    },
+    {
+      "id": "annunciation",
+      "day": 6,
+      "cohort": "hammer_1909",
+      "overlapBasisPoints": 7887
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 3,
+      "cohort": "hammer_1909",
+      "overlapBasisPoints": 7045
+    },
+    {
+      "id": "holy_souls",
+      "day": 1,
+      "cohort": "purgatorian_manual_1894_1907",
+      "overlapBasisPoints": 7890
+    },
+    {
+      "id": "holy_souls",
+      "day": 2,
+      "cohort": "purgatorian_manual_1894_1907",
+      "overlapBasisPoints": 7419
+    },
+    {
+      "id": "holy_souls",
+      "day": 4,
+      "cohort": "purgatorian_manual_1894_1907",
+      "overlapBasisPoints": 6615
+    },
+    {
+      "id": "holy_souls",
+      "day": 6,
+      "cohort": "purgatorian_manual_1894_1907",
+      "overlapBasisPoints": 7835
+    },
+    {
+      "id": "holy_souls",
+      "day": 9,
+      "cohort": "purgatorian_manual_1894_1907",
+      "overlapBasisPoints": 7622
+    }
+  ],
+  "visuallyInspectedSamplePages": [
+    {
+      "cohort": "callan_1925_copyright_later_scan",
+      "pdfPageIndex": 344,
+      "status": "Page rendered, source printing visible, not complete day certification"
+    },
+    {
+      "cohort": "moran_1883",
+      "pdfPageIndex": 578,
+      "printedPage": 566,
+      "status": "Page rendered; missing Immaculate Conception opening exists in alternate original"
+    },
+    {
+      "cohort": "hammer_1909",
+      "pdfPageIndex": 100,
+      "status": "Historical scanned illustrated plate rendered; no printed prayer text verified on this sampled page"
+    },
+    {
+      "cohort": "purgatorian_manual_1894_1907",
+      "pdfPageIndex": 198,
+      "printedPage": 199,
+      "status": "Page rendered; Holy Souls day-one proper prayer visibly begins"
+    }
+  ],
+  "exceptions": [
+    "10 partial text-layer matches require OCR-versus-wording review (5 Hammer, 5 Holy Souls).",
+    "Moran Wikisource DJVU printed pp566–567 missing; alternate original PDF image at p566 reviewed.",
+    "Callan physical scan contains post-1933 references; 1925 first printing not certified.",
+    "Hammer OCR-backed original recovered; image-only alternate does not support machine text match.",
+    "Historical French witnesses, rights review and modern indulgence grants are separate from original English print matching."
+  ]
+}
