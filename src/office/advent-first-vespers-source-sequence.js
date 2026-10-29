@@ -217,11 +217,18 @@ export async function assembleAdventFirstVespersPsalmodyResearch({
      !LANGUAGES.every(lang=>candidate.languages?.[lang]?.antiphon))
    return withhold("OFFICE_FIRST_VESPERS_SOURCE_CANDIDATE_CHANGED");
  }
- const resolved=await Promise.all(sourceSequence.psalmCandidates.map(
-  candidate=>psalmVerseResolver.resolvePlainPsalmParallel({
-   number:candidate.number
-  })
- ));
+ let resolved;
+ try{
+  resolved=await Promise.all(sourceSequence.psalmCandidates.map(
+   candidate=>psalmVerseResolver.resolvePlainPsalmParallel({
+    number:candidate.number
+   })
+  ));
+ }catch(error){
+  const message=String(error?.message??"");
+  if(!/^OFFICE_AT_(?:PSALM_|SOURCE_READ_BUDGET)/u.test(message))throw error;
+  return withhold("OFFICE_FIRST_VESPERS_PSALM_SOURCE_BLOCKED:"+message);
+ }
  for(let i=0;i<5;i++){
   const source=resolved[i],candidate=sourceSequence.psalmCandidates[i];
   if(source?.schema!=="ao.office.plain-psalm-source-verses.v1"||
