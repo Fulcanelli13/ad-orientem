@@ -32,7 +32,12 @@ function main(argv){
     certified:ledger.liturgicallyCertified,published:ledger.published
   }));
   // The log contains only hashes/provenance. The byte files remain scratch.
-  console.log("OFFICE_CAPTURE_LEDGER_JSON "+JSON.stringify(ledger));
+  const {records,...meta}=ledger;
+  console.log("OFFICE_CAPTURE_LEDGER_META "+JSON.stringify(meta));
+  for(const date of [...new Set(records.map(r=>r.date))])
+    console.log("OFFICE_CAPTURE_LEDGER_DAY "+JSON.stringify({
+      date,records:records.filter(r=>r.date===date)
+    }));
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   try{main(process.argv.slice(2))}
