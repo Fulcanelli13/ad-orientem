@@ -724,6 +724,34 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoPrivateLitanyEditionChooser>summary:focus-visible{
  outline:2px solid var(--liturgical,#d8bd7d);outline-offset:2px;
 }
+/* Consolidated Prayer audit: the source-edition chooser previously fell back
+   to bright native buttons over the dark liturgical reader. Keep all four
+   source-distinct choices; this changes presentation, never edition status. */
+#aoPray435930 .aoBatch03LitanyUses{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:8px!important;margin:0 0 14px!important;padding:0!important;
+}
+#aoPray435930 .aoBatch03LitanyUses button{
+ box-sizing:border-box!important;width:100%!important;min-width:0!important;
+ min-height:60px!important;white-space:normal!important;text-align:center!important;
+ padding:10px 9px!important;border:1px solid var(--border,rgba(216,189,125,.32))!important;
+ border-radius:11px!important;background:var(--surface-1,#151c24)!important;
+ color:var(--text,#f1e7d7)!important;
+ font:500 13px/1.35 var(--ao-font-ui,system-ui,sans-serif)!important;
+ overflow-wrap:break-word!important;
+}
+#aoPray435930 .aoBatch03LitanyUses button[aria-pressed="true"]{
+ border-color:var(--liturgical,#d8bd7d)!important;
+ background:color-mix(in srgb,var(--liturgical,#d8bd7d) 11%,var(--surface-1,#151c24))!important;
+ color:var(--text,#f1e7d7)!important;
+}
+#aoPray435930 .aoBatch03LitanyUses button:focus-visible{
+ outline:2px solid var(--liturgical,#d8bd7d)!important;outline-offset:2px!important;
+}
+@media(max-width:420px){
+ #aoPray435930 .aoBatch03LitanyUses{gap:7px!important;margin-bottom:10px!important}
+ #aoPray435930 .aoBatch03LitanyUses button{min-height:64px!important;padding:8px!important}
+}
 /* B38: the historical PRIVATE Litany is invocation-first, not a 1962
    public-liturgical edition. Preserve the existing source-owned chapter rail. */
 #aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll{
