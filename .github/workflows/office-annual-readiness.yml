@@ -9,6 +9,8 @@ on:
       - 'src/office/precedence-review.js'
       - 'src/office/reviewed-hour-handoff.js'
       - 'src/office/annual-research-sweep.js'
+      - 'data/office/research/2026-office-pilot-ordo-roster.json'
+      - 'tests/divine-office-research-roster.mjs'
       - 'scripts/office/sweep-annual-research.mjs'
       - 'tests/divine-office-reviewed-hour-handoff.mjs'
       - 'tests/divine-office-annual-research-sweep.mjs'
@@ -51,6 +53,7 @@ jobs:
           node --check src/office/annual-research-sweep.js
           node --check scripts/office/sweep-annual-research.mjs
           node --test tests/divine-office-annual-research-sweep.mjs
+          node --test tests/divine-office-research-roster.mjs
           node --check src/office/annual-capture-ledger.js
           node --check scripts/office/emit-annual-capture-ledger.mjs
           node --test tests/divine-office-annual-capture-ledger.mjs
@@ -99,6 +102,27 @@ jobs:
                 doc.allYearLiturgicalDiscrepanciesActuallyChecked!==false)
                 throw Error("OFFICE_ANNUAL_SWEEP_FABRICATED_COVERAGE");
             }
+          '
+      - name: Verify evidence-scoped six-date Office candidate pilot
+        run: |
+          node scripts/office/sweep-annual-research.mjs \
+            --year 2026 \
+            --office-days data/office/research/2026-office-pilot-ordo-roster.json \
+            --out "$RUNNER_TEMP/office-six-date-research-sweep.json"
+          node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            const d=JSON.parse(readFileSync(process.env.RUNNER_TEMP+
+              "/office-six-date-research-sweep.json","utf8"));
+            if(d.summary.submittedOfficeResearchDays!==6||
+               d.summary.sourceWitnessDays!==6||
+               d.summary.sourceHeadingsObserved!==34||
+               d.summary.researchCandidateHours!==15||
+               d.summary.withheldHours!==2905||
+               d.summary.completeTrilingualHours!==0||
+               d.summary.independentlyCertifiedHours!==0||
+               d.summary.publishedHours!==0||
+               d.allYearLiturgicalDiscrepanciesActuallyChecked!==false)
+              throw Error("OFFICE_RESEARCH_WITNESS_SCOPE_OR_RELEASE_FABRICATED");
           '
       # Outputs remain ephemeral runner scratch. No source or report upload.
       - name: Rehydrate historical 168 verified source hashes from committed metadata ONLY
