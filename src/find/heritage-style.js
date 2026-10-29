@@ -687,4 +687,36 @@ export const HERITAGE_STYLE = String.raw`
  color:var(--ao-text-primary,#eee9df)!important
 }
 
+
+/* P68: a dated, attributed photograph of the exact reliquary/shrine.
+   The image uses contain; never crop or visually invent a relic. */
+.aoExplorePlaceSheet .aoExploreTreasurePhoto{
+ margin:1px 0 4px;padding:0;overflow:hidden;
+ border-radius:11px;border:1px solid rgba(190,174,143,.19);
+ background:radial-gradient(ellipse at center,rgba(201,173,120,.07),rgba(4,9,15,.55) 80%);
+}
+.aoExplorePlaceSheet .aoExploreTreasurePhoto>img{
+ width:100%;height:clamp(180px,25vw,320px);display:block;
+ object-fit:contain;object-position:center center;background:transparent;
+}
+.aoExplorePlaceSheet .aoExploreTreasurePhoto figcaption{
+ padding:11px 14px 13px;display:grid;gap:6px;
+ color:var(--ao-text-muted,#aab4be);
+ font:400 12px/1.5 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoExplorePlaceSheet .aoExploreTreasurePhoto figcaption small{
+ font:400 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+ color:var(--ao-text-muted,#aab4be);
+}
+.aoExplorePlaceSheet .aoExploreTreasurePhoto figcaption>span:last-child{
+ display:flex;gap:14px;flex-wrap:wrap;
+}
+.aoExplorePlaceSheet .aoExploreTreasurePhoto figcaption a{
+ color:var(--ao-liturgical-accent,#c9ad78);
+ display:inline-flex;align-items:center;min-height:30px;
+}
+@media(max-width:640px){
+ .aoExplorePlaceSheet .aoExploreTreasurePhoto>img{height:260px}
+}
+
 `;
