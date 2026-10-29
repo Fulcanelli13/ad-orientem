@@ -11,7 +11,7 @@ permissions:
   contents: write
 concurrency:
   group: ao-sacred-art-b7-gallery
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   discover-and-validate:
     runs-on: ubuntu-latest
