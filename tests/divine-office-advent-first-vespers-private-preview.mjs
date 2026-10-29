@@ -29,7 +29,7 @@ function fetcher({mutate=()=>{},onRead=()=>{}}={}){
   else{
    const match=ref.match(/^(Latin|English|Francais)\/(.+)\.txt$/u);
    if(!match)throw Error("no locale or path fallback");
-   const lang=loc[match[1]],path=match[2];
+   const lang=loc[match[1]],path=decodeURIComponent(match[2]);
    const f=fixture[lang];
    if(f.leaves[path])content=f.leaves[path];
    else if(f.sections[path]){
