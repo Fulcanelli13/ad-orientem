@@ -252,7 +252,8 @@ jobs:
             const d=JSON.parse(readFileSync(process.env.OUTPUT+
               "/french-vespers-restored/restored-full-commemoration-review.json","utf8"));
             if(!d.sourceChanged||!d.changedOnlyPrayerCells||
-               !d.sameFrenchCellIDs||!d.sameTrilingualIDs||
+               !d.originalFrenchCellsPreserved||
+               !d.dedicatedCommemorationCellRestored||!d.sameTrilingualIDs||
                !d.fullSundayAntiphonMatchesIndependentICKSP||
                !d.fullSundayCollectMatchesIndependentICKSP||
                !d.antiphonBeforeCollect||d.restoredSemanticBlockers.length||
