@@ -6,7 +6,7 @@ stay research-only. Only bounded Commons thumbnails are downloaded, never
 original photographs. Main app and approval registries are untouched.
 """
 from __future__ import annotations
-import argparse, collections, hashlib, html, importlib.util, io, json, re, time
+import argparse, collections, hashlib, html, importlib.util, io, json, re, shutil, time
 import urllib.parse
 from pathlib import Path
 from PIL import Image, ImageDraw
@@ -223,6 +223,8 @@ def consolidate(queue,summary,parts,out):
             checks[idx]=rec
     check(len(checks)==len(rows),"P84 worldwide campaign incomplete")
     out.mkdir(parents=True)
+    if (parts/"previews").is_dir():
+        shutil.copytree(parts/"previews",out/"previews")
     pictures=[]
     for i,r in enumerate(rows):
         rec=checks[i]
