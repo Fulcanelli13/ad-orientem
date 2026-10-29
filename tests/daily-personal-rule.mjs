@@ -420,7 +420,7 @@ assert.match(runtime,/personalDailyDirectPlan\(\{daypart:S.daypart,prefs,sourceI
 assert.match(runtime,/data-tp381-personal-action/);
 assert.match(runtime,/personalDailyPrayerCard\(row,dailyReadingPlan\(\),/);
 assert.match(runtime,/dailyPersonalSettings\(plan,prefs,/);
-assert.match(runtime,/\$\{choice\}\$\{nav\}/,"Prayer selection must be the primary navigation");
+assert.ok(runtime.includes("editionPills") && runtime.includes("renderDailyBookPills"),"Prayer-book selector must follow daypart and lead the secondary reading controls");
 assert.match(runtime,/\$\{body\}\$\{guided\?dailyTimerControls\(\):""\}\$\{dailyPersonalSettings\(plan,prefs,/,"Routine customization belongs after prayer, not in the reading path");
 assert.match(runtime,/previousId=previous\[previousStep\]\?\.id/,"Updating a daily rule must retain its active prayer ID");
 assert.match(runtime,/action==="length"/,"Changing routine length must restart visual progression from the opening stage");
