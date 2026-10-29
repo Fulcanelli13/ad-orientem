@@ -13,7 +13,9 @@
     "season_only": 4,
     "live_calendar_changes": 0,
     "approvals_claimed": 0,
-    "wrong_owner_claims_excluded": 2
+    "wrong_owner_claims_excluded": 2,
+    "source_bounded_geographic_descriptions": 18,
+    "geocoded_attestations_claimed": 0
   },
   "records": [
     {
@@ -58,7 +60,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Historical Irish household practice, with regional designs."
+      ],
       "original_source_claims": [
         {
           "source_id": "NMI-STPATRICK-CROSSES",
@@ -86,7 +90,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CANDIDATE-IRISH-CHRISTMAS-CANDLE",
@@ -130,7 +135,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Irish households; distinct local witnesses include Adare in Limerick and Annascaul in Kerry."
+      ],
       "original_source_claims": [
         {
           "source_id": "DUCHAS-ADARE-0506-062",
@@ -160,7 +167,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CANDIDATE-STJOHN-BONFIRE",
@@ -204,7 +212,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Named French parish examples in Saint-André-les-Alpes and Oloron-Sainte-Marie; their forms remain distinct."
+      ],
       "original_source_claims": [
         {
           "source_id": "POP-IA04002601",
@@ -235,7 +245,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CANDIDATE-EASTER-EGG-CRAFT",
@@ -279,7 +290,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Polish and Ukrainian traditions, including diaspora communities; names, motifs and religious settings vary."
+      ],
       "original_source_claims": [
         {
           "source_id": "UNESCO-PYSANKA-02134",
@@ -317,7 +330,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CUST-ADVT-HERBERGSUCHE",
@@ -361,7 +375,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Austria, regional Catholic parishes"
+      ],
       "original_source_claims": [
         {
           "source_id": "AT-PARISH-HERBERGSUCHE",
@@ -387,7 +403,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CUST-XMAS-POLISH-HAY",
@@ -431,7 +448,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Poland"
+      ],
       "original_source_claims": [
         {
           "source_id": "PL-MINISTRY-WIGILIA",
@@ -459,7 +478,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CUST-XMAS-KASHUBIAN-ANIMAL-CARE",
@@ -503,7 +523,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Kashubia, Poland"
+      ],
       "original_source_claims": [
         {
           "source_id": "PL-AGRI-KASHUBIA",
@@ -531,7 +553,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CUST-XMAS-QUEBEC-GUIGNOLEE",
@@ -575,7 +598,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Québec, Canada"
+      ],
       "original_source_claims": [
         {
           "source_id": "QC-HERITAGE-GUIGNOLEE",
@@ -603,7 +628,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CUST-XMAS-POLISH-KOLEDNICI",
@@ -647,7 +673,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Poland"
+      ],
       "original_source_claims": [
         {
           "source_id": "PL-ZPE-KOLEDNICI",
@@ -669,7 +697,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CUST-XMAS-HUNGARIAN-BETLEHEMEZES",
@@ -713,7 +742,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Hungary"
+      ],
       "original_source_claims": [
         {
           "source_id": "HU-NEPRAJZ-LEXIKON",
@@ -741,7 +772,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CUST-BARBARA-BRANCHES",
@@ -785,7 +817,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Austria and some Central European communities"
+      ],
       "original_source_claims": [
         {
           "source_id": "AT-VIENNA-BARBARA",
@@ -807,7 +841,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CUST-XMAS-PROVENCAL-PAIN-CALENDAL",
@@ -851,7 +886,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Provence, France"
+      ],
       "original_source_claims": [
         {
           "source_id": "FR-VAR-PAIN-CALENDAL",
@@ -879,7 +916,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CUST-EPIPHANY-SPANISH-MAGI-GIFTS",
@@ -923,7 +961,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Spain, regional Spanish-speaking extensions not automatically assumed"
+      ],
       "original_source_claims": [
         {
           "source_id": "ES-TOURISM-SHOE-KINGS",
@@ -951,7 +991,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CUST-EASTER-MALTESE-IRXOXT",
@@ -995,7 +1036,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Named parishes in Malta and Gozo"
+      ],
       "original_source_claims": [
         {
           "source_id": "https://publicservice.gov.mt/en/news/easter-in-gozo-a-celebration-of-faith-culture-and-community",
@@ -1023,7 +1066,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CUST-PENTECOST-POLISH-GREENERY",
@@ -1067,7 +1111,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Poland, documented near Kraków"
+      ],
       "original_source_claims": [
         {
           "source_id": "PL-NAC-PENTECOST-1930",
@@ -1097,7 +1143,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CUST-ASSUMPTION-TIVOLI-INCHINATA",
@@ -1141,7 +1188,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Tivoli, Lazio, Italy"
+      ],
       "original_source_claims": [
         {
           "source_id": "IT-TIVOLI-DIOCESE-2026",
@@ -1169,7 +1218,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CUST-ASSUMPTION-SASSARI-CANDELIERI",
@@ -1213,7 +1263,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Sassari, Sardinia, Italy"
+      ],
       "original_source_claims": [
         {
           "source_id": "IT-SASSARI-FARADDA-2026",
@@ -1241,7 +1293,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     },
     {
       "candidate_id": "CUST-MARIAN-BAVARIAN-FRAUENDREISSIGER",
@@ -1285,7 +1338,9 @@
         "calendar_event_automatically_published": false,
         "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
       },
-      "geography": [],
+      "geography": [
+        "Bavaria, Germany; named pilgrimage churches"
+      ],
       "original_source_claims": [
         {
           "source_id": "DE-MUNICH-FRAUENDREISSIGER",
@@ -1313,7 +1368,8 @@
         "identity_approved": false,
         "ready_for_publication": false,
         "user_review_ballot_required": false
-      }
+      },
+      "geography_is_source_bounded_text_not_place_or_global_map_pin": true
     }
   ]
 }
