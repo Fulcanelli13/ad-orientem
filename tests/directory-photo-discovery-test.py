@@ -293,6 +293,40 @@ class PhotoDiscoveryTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 mod.run(mod.R49,out,0,2,NoNetwork(),indices=[58,58],openverse_budget=1)
 
+    def test_wave_separation_and_legacy_compatibility(self):
+        self.assertEqual(mod.WAVES["exterior"], ("EXTERIOR",))
+        self.assertEqual(mod.WAVES["interior"], ("INTERIOR","SACRED_DETAIL"))
+        self.assertEqual(mod.WAVES["all"], tuple(mod.CATEGORIES))
+        class NoNetwork:
+            def request(self,params,endpoint=mod.API):
+                if params.get("action")=="wbsearchentities":
+                    return {"search":[]}
+                return {"query":{"pages":[]},"results":[]}
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            for wave, expected in (("exterior",["EXTERIOR"]),
+                                   ("interior",["INTERIOR","SACRED_DETAIL"]),
+                                   ("all",list(mod.CATEGORIES))):
+                output=Path(td)/(wave+".json")
+                payload=mod.run(mod.R49,output,0,1,NoNetwork(),
+                                openverse_budget=0,wave=wave)
+                self.assertEqual(payload["wave"],wave)
+                self.assertEqual(payload["categories"],expected)
+                self.assertEqual(set(payload["venues"][0]["categories"]),set(expected))
+                self.assertEqual(set(payload["pilot_metrics"]["candidates_by_category"]),set(expected))
+                self.assertEqual(payload["image_downloads"],0)
+                self.assertEqual(payload["publications"],0)
+            with self.assertRaises(ValueError):
+                mod.run(mod.R49,Path(td)/"bad.json",0,1,NoNetwork(),
+                        openverse_budget=0,wave="invalid")
+    def test_panorama_is_never_assumed_to_be_verified_360(self):
+        self.assertEqual(mod.panorama_hint("Church 360 equirectangular","",4000,2000),
+                         "POSSIBLE_360_EQUIRECTANGULAR_REQUIRES_REVIEW")
+        self.assertEqual(mod.panorama_hint("Church 360 photograph","",900,1600),
+                         "UNSPECIFIED")
+        self.assertEqual(mod.panorama_hint("Church panoramic view","",4000,1600),
+                         "PANORAMIC_STILL_PROJECTION_UNVERIFIED")
+
     def test_all_categories(self):
         self.assertEqual(set(mod.CATEGORIES),{"EXTERIOR","INTERIOR","SACRED_DETAIL"})
     def test_discovery_only(self):

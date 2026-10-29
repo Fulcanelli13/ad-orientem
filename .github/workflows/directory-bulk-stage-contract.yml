@@ -1,0 +1,40 @@
+name: Directory bulk photo staging contracts
+on:
+  pull_request:
+    paths:
+      - 'tools/directory/stage-bulk-place-photos.py'
+      - 'tests/directory-bulk-photo-stage-test.py'
+      - 'tests/production-tree-hygiene.mjs'
+      - '.github/workflows/directory-bulk-photo-stage.yml'
+      - '.github/workflows/directory-bulk-stage-contract.yml'
+      - 'docs/DIRECTORY-TWO-WAVE-BULK-PHOTOS-20261029.md'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/directory/stage-bulk-place-photos.py'
+      - 'tests/directory-bulk-photo-stage-test.py'
+      - 'tests/production-tree-hygiene.mjs'
+      - '.github/workflows/directory-bulk-photo-stage.yml'
+      - '.github/workflows/directory-bulk-stage-contract.yml'
+permissions:
+  contents: read
+jobs:
+  staging-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned image decoder for offline conversion fixture
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Compile and validate no-publication staging and image bytes
+        run: |
+          python -m py_compile tools/directory/stage-bulk-place-photos.py
+          python tests/directory-bulk-photo-stage-test.py -v
+          python tests/directory-photo-discovery-test.py -v
+          node tests/production-tree-hygiene.mjs
