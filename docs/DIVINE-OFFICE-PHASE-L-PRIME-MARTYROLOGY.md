@@ -64,3 +64,31 @@ This is a **source audit**, not permission to import an English collect or publi
 4. **Do not re-open Phase N navigation engineering** unless a regression is demonstrated; 3/3 jobs and 10/10 browser cases passed at the exact head. Preserve its source-cell IDs, date-specific gating, and post-Martyrology prayer outside-choir behavior.
 
 **Release flags unchanged:** `martyrology2026_11_03TextVerified=false`; `primeCollectComparedAgainstPrintedRomanProper=false`; `englishRecipientScopeReviewedAndApproved=false`; `verifiedOfficeDates=0`; `published=0`. Draft PR #1860 remains unmerged and undeployed.
+
+## 29 October: primary source wording checkpoint (1922 / 1960)
+
+This follow-up closes an **independent historical Latin wording check**, **not** the 1961 edition, 1956 Martyrology, English translation or release gate.
+
+### A. Actual preconciliar printed wording found
+
+- **Rudolf Tomanek, *Kościół cierpiący* (Cieszyn, 1922), printed p. 154**, Latin/Polish section *Officium Defunctorum — Godzinki za dusze*, digitized by the Silesian Digital Library: https://sbc.org.pl/Content/323045/Publikacja-KC-8072.pdf .
+- The searchable page contains the sequence **`In memoria aeterna erunt justi` → `Deus, veniae largitor`**, whose petition explicitly reads **`ut animas omnium fidelium, qui ex hoc saeculo transierunt`**. Its facing Polish translation likewise says *dusze wszystkich wiernych*. A separate academic publication confirms the book's **1922** date: https://bibliotekanauki.pl/articles/673281.pdf .
+- This is independent evidence that the **universal-beneficiaries variant historically existed in an Office-for-the-Dead context**, beyond the pinned Divinum Officium source. It is **not** by itself a 1960/61 printed Roman Breviary collation; nor does it demonstrate an English wording.
+- The digital library's PDF text was indexed, but the full scanned page could not be directly loaded in this research environment (timeout). Record as **searchable printed witness; page image inspection pending**. Do not misstate that the image was visually collated.
+
+### B. Exact primary 1960 amendments and rubrics page checked
+
+- *Acta Apostolicae Sedis* **52 (1960), p. 728**, direct page-image examination: https://isidore.co/divinum/www/horas/Help/Rubrics/Variationes%20in%20Martyrologio%20Romano%20%28AAS%2052%2C%201960%29.pdf . Item **56** deletes the All Saints Vigil elogium on **31 October**; item **57** deletes the All Saints octave elogium on **8 November**. There is **no 3 November-specific item** between these entries. This does **not** establish the full 3 November list or Luna.
+- Patrick L. Murphy, ed., *The New Rubrics of the Roman Breviary and Missal: Translation and Commentary* (**1960**, Catholic Press Newspaper Co., Sydney), **printed p. 46**, PDF **page 31 (index 30)**, has directly examined §**248**: Prime and Compline's prayer is ordinarily fixed **except in the Office of All Souls**, and Prime also in the Sacred Triduum. https://cdn.restorethe54.com/media/pdf/the-new-rubrics-of-the-roman-missal-and-breviary-1960.pdf . This proves the **exception**, **not the wording** of the adapted collect.
+
+### C. Where this leaves the 1956 Martyrology
+
+- An independently indexed 1960-version **November 3** summary cites **2017 Justitias Books pp. 270–271** (Latin reconstruction of 1956+1960) and **1962 J. B. O'Connell / Newman Press p. 240** (English). The edition/page data is a **secondary bibliography**, not a directly inspected primary page: https://en.wikipedia.org/wiki/November_3_in_the_Roman_Martyrology .
+- Justitias itself states its edition incorporates the 1956 print and the 1960 changes, but its public **sample pages are January only**, not 3 November: https://justitiasbooks.com/martyrologium-romanum/ .
+- Thus, **1956 actual November 3 entries and 2026 ecclesiastical Luna remain unverified**. A Google Books snippet, library catalogue, or Wikipedia list is not adequate certification of the complete Martyrology, rubrical sequence or lunar announcement.
+
+### Freeze and explicit stopping rule
+
+Do not generate another research wave or relabel the engineering phase for this case. **Accept** the universal Latin phrase as historically *attested in a 1922 Office-of-the-Dead witness*; **reject** the available congregation-specific English as a translation of that phrase. **Wait for precise page evidence**, namely (a) actual 1956/1960-adjusted **3 November page** and accurate 2026 Luna, and (b) actual printed **1961-compatible All Souls Prime proper** plus a documented English translation of exactly the universal variant. Until then, no source rewrite or public promotion.
+
+Current blocked states remain: `primeCollectComparedAgainstPrintedRomanProper=false`, `martyrology2026_11_03TextVerified=false`, `englishRecipientScopeReviewedAndApproved=false`, `published=0`.
