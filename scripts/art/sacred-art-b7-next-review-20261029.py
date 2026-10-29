@@ -64,7 +64,7 @@ def norm_title(s):
  s=wal.low(s).replace('sir ','')
  return re.sub(r'[^a-z0-9]+',' ',s).strip()
 CANON_TITLES=[(norm_title(x.get('title')),norm_title(x.get('artist')))
- for x in canon['main_records'] if x.get('title') and x.get('artist')]
+ for x in canon['main_records'] if x.get('title') and x.get('artist') and x.get('editorial_state')=='APPROVED_LOCKED']
 def already_catalogued(title,artist):
  title,artist=norm_title(title),norm_title(artist)
  return bool(title and len(artist)>=6 and any(title==t and
