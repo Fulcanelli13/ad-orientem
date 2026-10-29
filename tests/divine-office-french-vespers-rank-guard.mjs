@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import {frenchSundayRankGuardCandidate,PINNED_RANK_GUARD_FILE}
+import {frenchSundayRankGuardCandidate,sourceFeatures,PINNED_RANK_GUARD_FILE}
  from "../scripts/office/experiment-french-vespers-rank-guard.mjs";
 
 test("rank guard candidate changes exactly one reversible literal and no other rules",()=>{
@@ -22,4 +22,14 @@ test("unrecognized, already-modified or duplicated Perl source fails closed",()=
     "&& $w{Rank} !~ /Adv|Quad|Passio|Epi|Corp|Nat|Cord|Asc|Dominica|;;6/i\n"+
       "&& $w{Rank} !~ /Adv|Quad|Passio|Epi|Corp|Nat|Cord|Asc|Dominica|;;6/i",
   ]) assert.throws(()=>frenchSundayRankGuardCandidate(input),/ANCHOR_NOT_UNIQUE/);
+});
+
+
+test("French source collect detection joins styled initial without losing the prayer",()=>{
+  const original="<p>Ant. Jésus, se retournant et la voyant.</p>"+
+    "<p>Orémus.<span class='red'>P</span>ardonnez, nous vous en supplions, "+
+    "Seigneur, les offenses de vos peuples.</p>";
+  assert.deepEqual(sourceFeatures(original,"fr"),{antiphon:true,collect:true});
+  const withoutPrayer="<p>Ant. Jésus, se retournant et la voyant.</p><p>Orémus.</p>";
+  assert.deepEqual(sourceFeatures(withoutPrayer,"fr"),{antiphon:true,collect:false});
 });
