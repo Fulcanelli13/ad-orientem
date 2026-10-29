@@ -1,15 +1,11 @@
-# Sacred Art — 250-work review Batch B3
+# Sacred Art — painting-only B3 review batch
 
-Source: KMSKA official IIIF manifests + Cleveland Museum of Art official CC0 API.
+Verified official preview responses for **250 distinct source artworks**.
 
-- Target: **250**. Actual eligible distinct image references: **250**.
-- KMSKA source-derived research previews: **215**; original IIIF manifest photo rights remain held unless explicitly cleared.
-- Cleveland CC0 candidate images: **35**. 60 previous reviewed works excluded.
-- This is research-selection only. Not 250 new approvals or published images.
-- **45** metadata/API/preview failures (see ledger).
-- No image original files acquired. No canonical approvals modified. Cost €0.
-
-## Process
-
-Use the generated offline HTML to select Import or Import with corrections; all other *displayed* artworks become Reject only after explicit batch-finalization.
-The exported decisions are user curation, not automatic app imports. KMSKA assets remain rights-held pending photo evidence.
+- KMSKA Antwerp **237** (research display, exact photo-rights held for production).
+- Cleveland Museum of Art **13** (official per-object CC0 source claim).
+- Rejected/imported prior 60 records never re-offered.
+- **23** false-positive manuscript leaves or non-paintings removed.
+- **23** additional KMSKA paintings validated and substituted.
+- Original photos downloaded for republication: **0**. Artworks approved: **0**. Production imports: **0**.
+- Research audit includes original 250 result and discarded source IDs for provenance.
