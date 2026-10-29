@@ -39,7 +39,7 @@ h2{font-size:clamp(25px,4.5vw,35px);font-weight:400;line-height:1.18;margin:0 0 
 .notice{padding:18px;color:var(--ao-text-muted);font:15px/1.6 system-ui,sans-serif}
 footer{border-top:1px solid var(--ao-rule);padding:20px 0;margin-top:28px;color:var(--ao-text-muted);font:13px/1.65 system-ui,sans-serif}
 code{font:12px ui-monospace,monospace;color:#bbb}
-@media(max-width:640px){header{padding:14px}.top{gap:8px}.guard{font-size:10px;padding:5px 8px}main{padding-top:26px}.columns{grid-template-columns:1fr}.columns>div+div{border-top:1px solid var(--ao-rule);padding-top:18px}.card{min-height:210px}.arrows{width:100%}.arrows button{flex:1}}
+@media(max-width:640px){header{padding:14px}.top{gap:8px}.guard{font-size:10px;padding:5px 8px}main{padding-top:26px;padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))}.columns{grid-template-columns:1fr}.columns>div+div{border-top:1px solid var(--ao-rule);padding-top:18px}.card{min-height:210px}.arrows{position:fixed;left:0;right:0;bottom:0;z-index:6;width:auto;display:flex;padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));gap:10px;border-top:1px solid var(--ao-liturgical-border);background:rgba(8,12,18,.96);backdrop-filter:blur(16px);box-shadow:0 -15px 28px rgba(0,0,0,.35)}.arrows button{flex:1;font-weight:500}}
 @media(prefers-reduced-motion:reduce){.progress>div{transition:none}}
 </style>
 </head>
