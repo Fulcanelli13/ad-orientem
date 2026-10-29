@@ -29,6 +29,7 @@ const english=[
  "Our Father, in secret, after the Litany proper."
 ].join("\n");
 const french=[
+ "Œuvres de Pierre Corneille · édition historique, tome IX.",
  "Les litanies des saints.","Seigneur, ayez pitié de nous.",
  "Sainte Marie, priez pour nous.","Saint Pierre, priez pour nous.",
  ...Array.from({length:29},(_,i)=>i%2?"Saint Joseph, priez pour nous.":"Sainte Marie, priez pour nous."),
