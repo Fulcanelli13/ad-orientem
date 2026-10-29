@@ -61,7 +61,7 @@ Sources: [Swiss federal item-rights policy](https://www.bak.admin.ch/en/so-right
 
 Top Old Master/religious-painting galleries now separately listed:
 - **Rome**: Gallerie Nazionali di Arte Antica (Palazzo Barberini / Galleria Corsini), Galleria Borghese, Galleria Spada.
-- **Florence and Siena**: Gallerie dell'Accademia di Venezia belongs to Venice below; Pinacoteca Nazionale di Siena; pre-existing Uffizi group retains reference-only status.
+- **Florence and Siena**: Pinacoteca Nazionale di Siena; the pre-existing Uffizi group in Florence retains reference-only status.
 - **Milan/Bergamo**: Pinacoteca di Brera, Pinacoteca Ambrosiana, Museo Poldi Pezzoli, Accademia Carrara, Museo Diocesano Milano.
 - **Venice and Veneto**: Gallerie dell'Accademia Venezia, Museo di Castelvecchio Verona.
 - **Bologna/Emilia**: Pinacoteca Nazionale Bologna, Gallerie Estensi / Galleria Estense Modena, Galleria Nazionale Parma (Complesso della Pilotta), Civica Pinacoteca Il Guercino Cento.
@@ -117,6 +117,6 @@ Specific institutional examples: [Brera image rights](https://pinacotecabrera.or
 - For each of the 22 preferred programmes, collect relevant collection size and artist/subject/title matches **without downloading entire collections**.
 - Rank candidates by exact iconographic fit and availability of a truly reusable original photograph, not by museum fame alone.
 - Report **number of institutions screened; paintings discovered; physical-work matches to canonical artworks; per-image rights verified; photo SHA joined; frames/quality passed; releases** as separate counters.
-- Do not assert that a museum has been exhausted until its documented query scope, date, coverage, filters and exception count are archived. The 22 programmes are an opening cohort, not an exhaustive world list.
+- Do not assert that a museum has been exhausted until its documented query scope, date, coverage, filters and exception count are archived. The 96 programmes are a prioritized directory, not an exhaustive world list.
 
 **Preservation**: do not change the 383 audit dispositions, the 107 approved artwork decisions, the 22 Prayer heroes, artist exclusions, other historical rejects or production assets. No fees or fee-bearing image licences.
