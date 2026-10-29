@@ -717,3 +717,89 @@ translation alignment, rights approval and production browser route.
 As a result, `completeTrilingualHours`, `certifiedHours` and
 `publishedHours` remain **zero**. Do not describe the new
 component tests as independently certified Hours.
+
+## Advent I First Vespers — ten-component source sequence and five psalms
+
+The next research milestone is an **explicit, reusable source-owner
+sequence** rather than individual disconnected candidate components.
+The bounded first case is civil evening **Saturday, 28 November 2026**,
+for the **First Vespers of Sunday, 29 November 2026**.
+
+Pinned original source checks at revision
+`126a07f91ede04664108abb6fb20ace3f4de14b9`:
+
+- `web/www/horas/Ordinarium/Vespera.txt` has the ordered headings:
+  Incipit, Psalmi, Capitulum/Hymnus/Versus, Magnificat, possible
+  Preces/Suffragium, Oratio and Conclusio. The historic
+  conditions in the source must be evaluated for 1960, not emitted
+  as prayers or all applied unconditionally.
+- `Psalterium/Psalmi/Psalmi major.txt#[Day0 Vespera]` provides
+  **109, 110, 111, 112, 113** as five Sunday Vespers psalms,
+  with antiphon stubs. All three source languages contain that
+  exact numeric sequence.
+- `Tempora/Adv1-0.txt#[Ant Vespera]` in **Latin** points to
+  `@:Ant Laudes` and has a historical conditional line.
+  **English and French do not contain this alias heading**,
+  but do contain the underlying **five translated
+  `[Ant Laudes]`** entries; source ownership is explicit
+  and no unrelated text may be substituted.
+- Other source-owner leads: proper
+  `[Capitulum Laudes]`, `[Versum 1]`, `[Ant 1]` (Magnificat
+  antiphon), `[Oratio]` and
+  `Psalterium/Special/Major Special#[Hymnus Adv Vespera]`
+  and `#[Adv Versum 3]`. The hymn has source markup;
+  the chapter has `!Rom 13:11` and `$Deo gratias`.
+  They are **not** certified as fully resolved.
+- The Magnificat canticle text, 1960 antiphon/Gloria Patri
+  placement, independent commemoration decision, exact
+  seasonal conclusion and doxology, and any local variation
+  remain separate completion gates. A known source section
+  does not authorize a prayer or certify its position.
+
+Implementation:
+
+- `src/office/advent-first-vespers-source-sequence.js` requires the
+  **reviewed Office-specific Saturday-to-Sunday handoff** and two
+  exact pinned parsed documents **per language**, yielding five
+  numerically matched psalm + antiphon **research** candidates
+  and a ten-slot Office source-order manifest. It refuses a
+  missing/extra source row, wrong numeric Psalm, missing
+  French source, unknown macro, substituted revision/path,
+  historical alias mismatch or changed office part.
+- The same module has optional
+  `assembleAdventFirstVespersPsalmodyResearch` consuming the
+  **existing** opt-in source-backed
+  `createOfficeAtReferenceResolver(...)` method
+  `resolvePlainPsalmParallel`. This can read the **five
+  original psalm verse sources in each of three languages**
+  strictly on demand, with no archived source texts. It requires
+  every language, verified number, pinned path and source
+  revision; a missing French psalm withholds all five.
+  **The result is still only source verses and prospective
+  antiphons**, not liturgically approved psalmody, because
+  Gloria Patri, antiphon repetition/placement, rubrical variants
+  and printed source comparison are not certified.
+- `tests/divine-office-advent-first-vespers-source-sequence.mjs`
+  covers the two source files × three languages, 109–113
+  numbering, non-identical Latin vs EN/FR aliases, wrong
+  source identity and the full fifteen source/verse
+  research reads. **Tests use injected synthetic content
+  reflecting the inspected source structure**, not a falsely
+  described independent printed Breviary or a live-endpoint
+  validation.
+
+Run:
+
+    node --test tests/divine-office-advent-first-vespers-source-sequence.mjs
+
+**Release state:** all ten components remain liturgically
+unverified, `completeTrilingualHours = 0`,
+`independentlyCertifiedHours = 0`,
+`publishedHours = 0`. This module is a research
+acceptance fixture, not an alternative Office engine.
+The next real milestone is adjudicating the complete
+1960 Sunday Vespers rubric and its ordered components,
+then matching Latin–English–French source text against
+the printed Breviary before enabling the existing reader.
+No annual CGI/XHTML capture, duplicate calendar or paid
+infrastructure is authorized.
