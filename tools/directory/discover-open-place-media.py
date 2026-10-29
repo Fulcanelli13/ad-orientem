@@ -102,6 +102,10 @@ MIN_EDGE = 640
 MAX_CANDIDATES_PER_CATEGORY = 4
 MAX_API_RESULTS = 12
 MAX_BATCH = 500
+# Public Domain metadata remains research-only until the underlying legal basis
+# has been checked; the byte stager currently supports these explicit CC terms.
+STAGEABLE_COMMONS_LICENSES = frozenset({"CC0", "CC-BY-4.0", "CC-BY-SA-4.0",
+                                        "CC-BY-SA-3.0", "CC-BY-SA-2.0"})
 ACCEPTED = {
     "CC BY 4.0": "CC-BY-4.0",
     "CC BY SA 4.0": "CC-BY-SA-4.0",
@@ -509,7 +513,7 @@ def structured_discovery(client, venue):
             x["category_evidence"] not in ("CATEGORY_TEXT_MATCH","STRUCTURED_SUBCATEGORY_ROLE_UNVERIFIED"),
             x["discovery_method"] != "WIKIDATA_P18",
             -x["discovery_score_only"], -(x["width"] * x["height"]), x["commons_title"]))
-        out[kind] = values[:MAX_CANDIDATES_PER_CATEGORY]
+        out[kind] = sorted(values, key=candidate_priority)[:MAX_CANDIDATES_PER_CATEGORY]
     return info, out
 
 
@@ -551,7 +555,7 @@ def nearby_commons_discovery(client, venue):
         out[kind].sort(key=lambda x: (
             x["category_evidence"] != "CATEGORY_TEXT_MATCH",
             -x["discovery_score_only"], -(x["width"] * x["height"]), x["commons_title"]))
-        out[kind] = out[kind][:MAX_CANDIDATES_PER_CATEGORY]
+        out[kind] = sorted(out[kind], key=candidate_priority)[:MAX_CANDIDATES_PER_CATEGORY]
     return out
 
 def discover(client, venue, kind):
@@ -573,7 +577,7 @@ def discover(client, venue, kind):
                                                         candidate["description"]):
             found.append(candidate)
     found.sort(key=lambda r: (-r["discovery_score_only"], -r["width"] * r["height"], r["commons_title"]))
-    return found[:MAX_CANDIDATES_PER_CATEGORY]
+    return sorted(found, key=candidate_priority)[:MAX_CANDIDATES_PER_CATEGORY]
 
 
 # Search query variants are derived only from the venue's existing source name.
@@ -747,19 +751,36 @@ def openverse_discovery(client, venue, max_queries=OPENVERSE_REQUEST_BUDGET_PER_
     return output, len(searched)
 
 
+def acquisition_eligible(candidate):
+    """A source-hash CC shortlist hint, never proof of rights or church identity."""
+    return (candidate.get("license") in STAGEABLE_COMMONS_LICENSES
+            and candidate.get("discovery_method") != "OPENVERSE_API_SEARCH"
+            and re.fullmatch(r"[0-9a-f]{40}", str(candidate.get("source_sha1") or "")) is not None
+            and str(candidate.get("source_url") or "").startswith("https://commons.wikimedia.org/wiki/File:"))
+
+def candidate_priority(candidate):
+    """Prefer technically acquirable CC photos ahead of historic/PD scans."""
+    title = str(candidate.get("commons_title") or candidate.get("title") or "").lower()
+    historical = bool(re.search(r"\b(?:engraving|painting|drawing|lithograph|old postcard|sketch|"
+                                r"historical map|18[0-9]{2}|19[0-3][0-9])\b", title))
+    has_role = candidate.get("category_evidence") in (
+        "CATEGORY_TEXT_MATCH", "STRUCTURED_SUBCATEGORY_ROLE_UNVERIFIED")
+    return (0 if acquisition_eligible(candidate) else 1,
+            0 if has_role else 1, 1 if historical else 0,
+            -float(candidate.get("discovery_score_only") or 0),
+            -(int(candidate.get("width") or 0)*int(candidate.get("height") or 0)))
+
 def merge_photo_candidates(existing, additional):
-    """Preserve higher-confidence prior sources, dedup by original landing URL,
-    and never exceed the per-site-per-category research cap."""
-    retained = []
+    """Deduplicate; reserve shortlist space for Commons SHA1 + CC candidates."""
     seen = set()
-    for item in list(existing) + list(additional):
+    retained = []
+    for item in sorted(list(existing) + list(additional), key=candidate_priority):
         key = str(item.get("source_url") or "").strip()
-        if not key or key in seen:
-            continue
+        if key and key not in seen:
+            retained.append(item)
+            seen.add(key)
         if len(retained) >= MAX_CANDIDATES_PER_CATEGORY:
             break
-        retained.append(item)
-        seen.add(key)
     return retained
 
 class BoundedOpenverseClient:
@@ -811,14 +832,16 @@ def run(source, output, offset, limit, client, *, indices=None, openverse_budget
             except (urllib.error.URLError, ValueError, KeyError, TimeoutError) as exc:
                 row["errors"]["COMMONS_GEOSEARCH"] = type(exc).__name__ + ": " + str(exc)[:160]
         for kind in active_roles:
-            if structured[kind] or nearby[kind]:
-                row["categories"][kind] = structured[kind] or nearby[kind]
-                continue
-            try:
-                row["categories"][kind] = discover(client, venue, kind)
-            except (urllib.error.URLError, ValueError, KeyError, TimeoutError) as exc:
-                row["categories"][kind] = []
-                row["errors"][kind] = type(exc).__name__ + ": " + str(exc)[:160]
+            shortlist = structured[kind] or nearby[kind]
+            # A category filled with PD/historical scans must not suppress one
+            # bounded Commons text search for a source-hash CC photograph.
+            if not any(acquisition_eligible(item) for item in shortlist):
+                try:
+                    fresh = discover(client, venue, kind)
+                    shortlist = merge_photo_candidates(shortlist, fresh)
+                except (urllib.error.URLError, ValueError, KeyError, TimeoutError) as exc:
+                    row["errors"][kind] = type(exc).__name__ + ": " + str(exc)[:160]
+            row["categories"][kind] = shortlist
         row["openverse_queries"] = 0
         row["openverse_budget_exhausted"] = bounded_openverse.remaining == 0
         try:
@@ -857,6 +880,16 @@ def run(source, output, offset, limit, client, *, indices=None, openverse_budget
         "openverse_api_queries": bounded_openverse.used,
         "openverse_request_budget": openverse_budget,
         "venues_skipped_due_to_openverse_budget": sum(row["openverse_budget_exhausted"] for row in results),
+        "stageable_commons_cc_candidates": sum(
+            acquisition_eligible(photo)
+            for row in results for kind in active_roles for photo in row["categories"][kind]),
+        "venues_with_stageable_commons_cc": sum(
+            any(acquisition_eligible(photo)
+                for kind in active_roles for photo in row["categories"][kind])
+            for row in results),
+        "public_domain_rights_holds": sum(
+            photo.get("license") == "PUBLIC_DOMAIN"
+            for row in results for kind in active_roles for photo in row["categories"][kind]),
         "approved_images": 0,
         "published_images": 0,
     }
