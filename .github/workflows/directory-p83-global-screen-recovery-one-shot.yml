@@ -1,0 +1,111 @@
+name: P83 one-shot corrected worldwide Commons photo screen recovery
+on:
+  push:
+    branches:
+      - research/p83-duplicate-recovery-once-20261029
+    paths:
+      - data/directory/research/.run-p83-duplicate-recovery-20261029.json
+permissions:
+  contents: write
+concurrency:
+  group: ao-p83-worldwide-photo-screen-archive-once
+  cancel-in-progress: false
+jobs:
+  consolidate-screen-archive:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/research/p83-duplicate-recovery-once-20261029'
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate exact one-shot P83 recovery marker
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          j=json.load(open('data/directory/research/.run-p83-duplicate-recovery-20261029.json'))
+          assert j=={'schema':'AO_P83_DUPLICATE_SOURCE_RECOVERY_ONCE_V1',
+                     'p81_upstream_run_id':40863537417,
+                     'p82_original_sha256_verified':True,
+                     'physical_anchors':2579,'countries':76,
+                     'rights_approved':False,'originals_downloaded':False,'publication':False}
+          PY
+      - name: Validate P83 offline source and nonpublication tests
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/directory/screen-worldwide-p83-photo-candidates.py
+          python tests/directory-p83-global-photo-screen-test.py -v
+          node tests/production-tree-hygiene.mjs
+      - name: Fetch only the fixed archival evidence and original CL2 physical-site identity
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/archived-p80-worldwide-source-20261029:refs/remotes/origin/research/archived-p80-worldwide-source-20261029' \
+            'refs/heads/research/p81-all-2579-commons-source-archive-20261029:refs/remotes/origin/research/p81-all-2579-commons-source-archive-20261029' \
+            'refs/heads/research/directory-unified-photo-intake:refs/remotes/origin/research/directory-unified-photo-intake' \
+            'refs/heads/data/cl2-unified-source-location-classification-20261026:refs/remotes/origin/data/cl2-unified-source-location-classification-20261026'
+          test "$(git rev-parse refs/remotes/origin/research/archived-p80-worldwide-source-20261029)" = 74c3e0043736c6ccbc214fde884849763bb134e5
+          test "$(git rev-parse refs/remotes/origin/research/directory-unified-photo-intake)" = f3408ab9448c1fd1fade2b8f0c2c161d3b0c21c2
+          test "$(git rev-parse refs/remotes/origin/data/cl2-unified-source-location-classification-20261026)" = eb67711a9886a7626916b7a145787c5e99105968
+          git worktree add --detach /tmp/p83-p80 refs/remotes/origin/research/archived-p80-worldwide-source-20261029
+          git worktree add --detach /tmp/p83-p81 refs/remotes/origin/research/p81-all-2579-commons-source-archive-20261029
+          git worktree add --detach /tmp/p83-intake f3408ab9448c1fd1fade2b8f0c2c161d3b0c21c2
+          git worktree add --detach /tmp/p83-cl2 eb67711a9886a7626916b7a145787c5e99105968
+      - name: Verify original P80 and completed P81 byte identities, then screen all 2579
+        run: |
+          set -euo pipefail
+          source_root="data/directory/research/archives/p81-2579-worldwide-commons"
+          p81_root="/tmp/p83-p81/$source_root"
+          p80="/tmp/p83-p80/data/directory/research/archives/p80-complete-worldwide-source-2579-anchors-76-countries.zip"
+          test -f "$p80"
+          test -f "$p81_root/p81-global-summary.json"
+          (cd "$p81_root" && sha256sum -c p81-archive-sha256.txt)
+          python - "$p81_root/p81-global-summary.json" <<'PY'
+          import json,sys
+          s=json.load(open(sys.argv[1]))
+          assert s['schema']=='AO_P81_PERMANENT_COMPLETE_WORLDWIDE_SOURCE_ARCHIVE_V1'
+          assert s['upstream_run_id']==40863537417
+          assert s['upstream_head_sha']=='6c0e960d0753647b99e1cb65b1520a2da7395f16'
+          assert s['physical_anchors']==2579 and s['countries']==76 and s['technical_shards']==11
+          assert s['images_approved']==s['images_published']==s['rights_cleared']==s['subject_verified']==0
+          PY
+          p81sha="$(cut -d ' ' -f 1 "$p81_root/p81-archive-sha256.txt")"
+          python tools/directory/screen-worldwide-p83-photo-candidates.py \
+            --p80-archive "$p80" \
+            --p81-archive "$p81_root/p81-2579-anchor-commons-source-complete.zip" \
+            --p81-sha256 "$p81sha" \
+            --intake-root /tmp/p83-intake/data/directory/research/unified-photo-intake/cl2-eb67711a-20261029 \
+            --cl2-root /tmp/p83-cl2/data/directory/research/cl2-unified-20261026 \
+            --out /tmp/p83-one-global-screen
+      - name: Record research-only global screening with complete checksums on immutable Git branch
+        run: |
+          set -euo pipefail
+          branch="research/p83-screened-worldwide-photo-candidates-20261029"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            echo "Worldwide screened source archive already exists and is immutable" >&2
+            exit 1
+          fi
+          git fetch --no-tags origin main
+          git switch -c "$branch" origin/main
+          target="data/directory/research/archives/p83-worldwide-screened-photography"
+          test ! -e "$target"
+          mkdir -p "$target"
+          for file in p83-all-2579-anchor-coverage.jsonl p83-all-source-photo-assignments.jsonl p83-source-screened-preview-queue.jsonl p83-holds-for-later-source-work.jsonl p83-worldwide-summary.json; do
+            cp "/tmp/p83-one-global-screen/$file" "$target/$file"
+          done
+          (cd "$target" && sha256sum p83-* > SHA256SUMS && sha256sum -c SHA256SUMS)
+          test "$(du -sm "$target" | awk '{print $1}')" -le 30
+          git add "$target/p83-all-2579-anchor-coverage.jsonl" \
+            "$target/p83-all-source-photo-assignments.jsonl" \
+            "$target/p83-source-screened-preview-queue.jsonl" \
+            "$target/p83-holds-for-later-source-work.jsonl" \
+            "$target/p83-worldwide-summary.json" "$target/SHA256SUMS"
+          test "$(git diff --cached --name-only | wc -l)" -eq 6
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): screen P80 + P81 Commons leads across all 2579 sites"
+          git push origin "HEAD:refs/heads/$branch"
