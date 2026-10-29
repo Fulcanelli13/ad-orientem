@@ -837,7 +837,7 @@ function renderAngelus(){
  if(PRAYER_PILOT_ENABLED&&ANGELUS_PILOT_ENTRY){
   const c=angelusChoice(),p=angelusExactPosture();
   const posture=c.form==='regina'?L('Stand · Eastertide','Debout · temps pascal'):p.stand?L('Stand · Sunday or after Saturday Vespers','Debout · dimanche ou après les vêpres du samedi'):L('Kneel · ordinary days','À genoux · jours ordinaires');
-  return renderPilotAngelusEntry({head,L,esc,form:c.form,posture,moduleIcon});
+  return renderPilotAngelusEntry({head,L,esc,form:c.form,posture,moduleIcon,recitation:S.rosary.recitation});
  }
  const c=angelusChoice(),form=c.form,obj=form==='regina'?DATA.regina:DATA.angelus,vern=obj?.[lang()]||'',lat=obj?.la||'';
  const unitsV=angelusUnits(vern,form),unitsL=angelusUnits(lat,form);
@@ -3222,6 +3222,11 @@ function onClick(e){
   return;
  }
  const b=e.target.closest?.('button,[data-p435930-flip]');if(!b)return;
+ if(PRAYER_PILOT_ENABLED&&view==='angelus'&&ANGELUS_PILOT_ENTRY&&b.hasAttribute('data-p435930-pilot-angelus-recitation')){
+  const mode=b.dataset.p435930PilotAngelusRecitation;
+  if(mode!=='individual'&&mode!=='group')return;
+  setRecitationMode(mode);return render();
+ }
  if(PRAYER_PILOT_ENABLED&&view==='angelus'&&b.hasAttribute('data-p435930-pilot-angelus-begin')){
   ANGELUS_PILOT_ENTRY=false;return render();
  }
