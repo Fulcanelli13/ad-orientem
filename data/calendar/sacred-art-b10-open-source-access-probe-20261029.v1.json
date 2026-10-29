@@ -66,6 +66,104 @@
       "name": "mia_picture_old_host",
       "url": "https://api.artsmia.org/images/1578/medium.jpg",
       "error": "URLError: <urlopen error timed out>"
+    },
+    {
+      "name": "rijks_all_oil",
+      "url": "https://data.rijksmuseum.nl/search/collection?type=painting&material=oil+paint&imageAvailable=true",
+      "http": 200,
+      "mime": "application/ld+json",
+      "previewBytes": 7955,
+      "total": 4435,
+      "orderedIDs": [
+        "https://id.rijksmuseum.nl/200100988",
+        "https://id.rijksmuseum.nl/200105887",
+        "https://id.rijksmuseum.nl/200105889",
+        "https://id.rijksmuseum.nl/200105971",
+        "https://id.rijksmuseum.nl/200106038",
+        "https://id.rijksmuseum.nl/200106077"
+      ],
+      "ids": [],
+      "keys": [
+        "@context",
+        "id",
+        "type",
+        "partOf",
+        "next",
+        "orderedItems"
+      ]
+    },
+    {
+      "name": "rijks_christ",
+      "url": "https://data.rijksmuseum.nl/search/collection?type=painting&imageAvailable=true&description=Christ",
+      "http": 200,
+      "mime": "application/ld+json",
+      "previewBytes": 3799,
+      "total": 45,
+      "orderedIDs": [
+        "https://id.rijksmuseum.nl/200106080",
+        "https://id.rijksmuseum.nl/200107774",
+        "https://id.rijksmuseum.nl/200107933",
+        "https://id.rijksmuseum.nl/200107963",
+        "https://id.rijksmuseum.nl/200108489",
+        "https://id.rijksmuseum.nl/200108795"
+      ],
+      "ids": [],
+      "keys": [
+        "@context",
+        "id",
+        "type",
+        "partOf",
+        "orderedItems"
+      ]
+    },
+    {
+      "name": "rijks_maria",
+      "url": "https://data.rijksmuseum.nl/search/collection?type=painting&imageAvailable=true&description=Maria",
+      "http": 200,
+      "mime": "application/ld+json",
+      "previewBytes": 7890,
+      "total": 232,
+      "orderedIDs": [
+        "https://id.rijksmuseum.nl/200106080",
+        "https://id.rijksmuseum.nl/200107774",
+        "https://id.rijksmuseum.nl/200107815",
+        "https://id.rijksmuseum.nl/200107816",
+        "https://id.rijksmuseum.nl/200107942",
+        "https://id.rijksmuseum.nl/200107971"
+      ],
+      "ids": [],
+      "keys": [
+        "@context",
+        "id",
+        "type",
+        "partOf",
+        "next",
+        "orderedItems"
+      ]
+    },
+    {
+      "name": "rijks_saint",
+      "url": "https://data.rijksmuseum.nl/search/collection?type=painting&imageAvailable=true&description=saint",
+      "http": 200,
+      "mime": "application/ld+json",
+      "previewBytes": 2538,
+      "total": 27,
+      "orderedIDs": [
+        "https://id.rijksmuseum.nl/200107764",
+        "https://id.rijksmuseum.nl/200107952",
+        "https://id.rijksmuseum.nl/200108249",
+        "https://id.rijksmuseum.nl/200108795",
+        "https://id.rijksmuseum.nl/200109039",
+        "https://id.rijksmuseum.nl/200109177"
+      ],
+      "ids": [],
+      "keys": [
+        "@context",
+        "id",
+        "type",
+        "partOf",
+        "orderedItems"
+      ]
     }
   ]
 }
