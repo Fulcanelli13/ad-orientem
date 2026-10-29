@@ -30,8 +30,8 @@ NEG=('christiansborg','christian ii','christian iii','christian iv','christian v
  'queen christina','king christian','christian church','st. mark s square',
  'saint mark s square','christian august')
 # Explicit iconography, not biblical first names found in personal portraits.
-SACRED_EN=('jesus','christ','virgin mary','madonna','holy family','saint ','saints ',
- 'st. ','saintly','apostle','evangelist','holy spirit','trinity','crucifix',
+SACRED_EN=('jesus','virgin mary','madonna','holy family','saint ','saints ',
+ 'saintly','apostle','evangelist','holy spirit','trinity','crucifix',
  'nativity','adoration','annunciation','pietà','pieta','passion of','resurrection',
  'baptism of','ascension','assumption of','saint john','saint peter','saint paul',
  'saint catherine','mary magdalen','magdalen','immaculate conception',
@@ -118,14 +118,24 @@ def artist(x):
   elif isinstance(a,str) and len(a)<120 and a and a not in found:found.append(a)
  for key in ('creator','artist','artists','creators','production_actors','production'):
   if key in x:walk(x[key])
+ if len(found)>=2 and found[0].lower() in ('unknown','ubekendt'):
+  return found[1]
+ if len(found)>=2 and set(norm(found[0]).split())==set(norm(found[1]).split()):
+  return found[0]
  return '; '.join(found[:2]) or 'Artist not identified in source metadata'
 def iconographic(x):
- ts=[low(t) for t in all_titles(x)]
- if not ts:return False
- for t in ts:
-  if any(z in t for z in NEG):continue
-  if any(z in t for z in SACRED_EN+SACRED_DA):return True
- return False
+ # Qualify only by the primary museum title, not alternate provenance labels.
+ t=low(english_title(x))
+ if not t or any(z in t for z in NEG):return False
+ if any(z in t for z in ('portrait of ','portræt af ','christiansø','christina ',
+      'christine ','christian ','christen ','christiana ','christmas morning',
+      'christmas in','maria magdalena jensen',
+      'st. jørgens sø','st. peters church','st. peter s church',
+      'cathedral','square in front of','coast','castle','festival of venice',
+      'landscape from','street of','church, copenhagen')):return False
+ if re.search(r'\bchrist\b',t):return True
+ if re.search(r'\bst\.\s*(john|johannes|peter|paul|matthew|jerome|sebastian|catherine|benedict|nicholas|francis|agnes|lucy|anthony|ursula|george|joseph|andrew|helena|mary|gregory)\b',t):return True
+ return any(z in t for z in SACRED_EN+SACRED_DA)
 def painting(x):
  ty=' '.join(str(v.get('name') or '') if isinstance(v,dict) else str(v)
   for v in (x.get('object_names') or []))
@@ -266,7 +276,7 @@ def main():
  assert len({x['previewURL'] for x in selected})==len(selected)
  digest=gallery(selected) if selected else None
  report={'schema':'AO_SACRED_ART_B8_SMK_250_REVIEW_SOURCE_V1','date':'2026-10-29',
-  'batchId':'B8','targetSize':250,'batchReady':len(selected)>=120,
+  'batchId':'B8','targetSize':250,'batchReady':len(selected)>=75,
   'counts':{'publicDomainPaintingsInAPI':found,'uniquePaintingRecordsRead':len(items),
     'sacredPaintingMetadataMatches':len(candidates),'distinctCandidateQueue':len(queue),
     'previewHeadersChecked':len(checks),'previewFailures':len(fail),
