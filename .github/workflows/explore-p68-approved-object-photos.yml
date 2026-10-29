@@ -1,0 +1,77 @@
+name: Explore P68 approved sacred-object photo acquisition
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/approved-sacred-object-acquisition-p68.v1.json'
+      - 'tools/acquire-sacred-object-photos-p68.py'
+      - 'src/find/place-profiles.js'
+      - 'src/find/place-editorial-presentation.js'
+      - 'src/find/heritage-style.js'
+      - 'tests/explore-p68-sacred-object-photo-binding.mjs'
+      - '.github/workflows/explore-p68-approved-object-photos.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'data/geography/research/approved-sacred-object-acquisition-p68.v1.json'
+      - 'tools/acquire-sacred-object-photos-p68.py'
+      - 'src/find/place-profiles.js'
+      - 'tests/explore-p68-sacred-object-photo-binding.mjs'
+      - '.github/workflows/explore-p68-approved-object-photos.yml'
+concurrency:
+  group: explore-p68-source-photo-acquisition
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  binding-and-editorial-guardrails:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Offline exact object, photographer and licence-manifest gates
+        run: |
+          python -m pip install --disable-pip-version-check Pillow==11.3.0
+          python tools/acquire-sacred-object-photos-p68.py --check-manifest
+          node tests/explore-p68-sacred-object-photo-binding.mjs
+      - name: Existing source-owned Place regressions
+        run: |
+          node tests/explore-p67-relic-indoor-placement.mjs
+          node tests/explore-p66-editorial-relic-cards.mjs
+          node tests/explore-r69-multi-place-gallery.mjs
+
+  permanent-approved-media:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: binding-and-editorial-guardrails
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free offline WebP conversion package
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Reverify Wikimedia photo authors, licences, original byte hashes; acquire
+        run: python tools/acquire-sacred-object-photos-p68.py --acquire
+      - name: Persist images AND approved registry together in Git
+        run: |
+          git config user.name "ad-orientem-media-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/geography/approved-place-gallery.v1.json assets/approved/place-gallery/
+          if git diff --cached --quiet; then
+            echo "All selected photos already acquired and verified."
+            exit 0
+          fi
+          git commit -m "assets(explore): permanently archive verified sacred-object WebP photos"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
