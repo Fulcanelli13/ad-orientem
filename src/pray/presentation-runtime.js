@@ -2541,7 +2541,10 @@ function renderLitany(){
  if(!LIT.sections)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body">${batch03LitanyUseOptions()}<p class="aoP435930Loading">${esc(L('Loading the Litany…','Chargement des Litanies…'))}</p></main>`;
  LIT.step=Math.max(0,Math.min(LIT.sections.length-1,LIT.step));
  const st=LIT.sections[LIT.step],final=LIT.step===LIT.sections.length-1;
- const text=st.lines.map(line=>`<p class="aoP435930LitanyLine">${esc(line)}</p>`).join('');
+ // Private litany lines use an edition-scoped element rather than the
+ // donor's generic LitanyLine dialogue hook, which merges lines and assigns
+ // V/R cues not attested by this separate historical source witness.
+ const text=st.lines.map((line,i)=>`<p class="aoLitanyInvocation" data-ao-litany-source-line="${i+1}">${esc(line)}</p>`).join('');
  // Each language is a different historical edition, not a translation of a
  // certified 1962 rite. Keep the source witness visibly identified on every
  // section while making the actual invocations the first reading surface.
@@ -2999,7 +3002,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
    :owner==='sevenWords'?SEVEN.step:FORTY.step;
   const reader=installSequentialDevotionalReader({
    mount:m,kind:owner,chapters:stages,activeIndex:step,
-   paragraphSelector:'.aoP435930GuideNow p,.aoP435930GuideCue p,.aoP435930ScriptureVerse,.aoP435930LitanyLine,.aoP435930WitnessParagraph,.aoP435930Text,.aoP435930Prayer .aoP435930Flip',
+   paragraphSelector:'.aoP435930GuideNow p,.aoP435930GuideCue p,.aoP435930ScriptureVerse,.aoP435930LitanyLine,.aoLitanyInvocation,.aoP435930WitnessParagraph,.aoP435930Text,.aoP435930Prayer .aoP435930Flip',
    timelineLabel:owner==='penitential'?L('Seven Penitential Psalms','Sept psaumes pénitentiels')
     :owner==='litany'?L('Litany invocations','Invocations des litanies')
     :owner==='sevenWords'?L('Seven Gospel Words','Sept Paroles évangéliques')
