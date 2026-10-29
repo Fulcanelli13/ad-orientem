@@ -285,4 +285,75 @@ if (master.phase1MuseumAccessionAudit.institutionBackedUnlinkedCards !== 479 ||
   fail("phase1 research master museum evidence manifest mismatch");
 console.log("PASS official museum source pages: CMA 29 + Met 73 = 102; 11 attribution exceptions; no production or canonical link mutation.");
 
+
+const nga = load("sacred-art-phase1-nga-126-official-firstpass-20261029.v1.json");
+const ngaRows = nga.rows;
+const ngaSourceRecords = museum479.rows.filter(r => r.museum === "nga");
+if (ngaRows.length !== 126 || ngaSourceRecords.length !== 126 ||
+    nga.counts.ngaSourceCards !== 126 || nga.counts.officialObjectPageIdentityObserved !== 42 ||
+    nga.counts.officialObjectPagesPending !== 84 ||
+    nga.counts.afterVanDyckSeriesPanels !== 12 ||
+    nga.counts.sameTitleDistinctTiepoloPaintings !== 2 ||
+    nga.counts.frozenConditionalImports !== 16 ||
+    nga.counts.physicalRelationshipFlaggedSourceCards !== 27 ||
+    nga.counts.newConfirmedCanonical383Links !== 0 ||
+    nga.counts.newPhysicalPaintingsCertifiableForRelease !== 0 ||
+    nga.counts.productionImports !== 0) fail("NGA 126-source firstpass counts mismatch");
+const ngaSourceById = new Map(ngaSourceRecords.map(r => [r.sourceId, r]));
+const ngaIds = new Set();
+let checkedNGA = 0, pendingNGA = 0, apostlesNGA = 0, conditionalNGA = 0, flaggedNGA = 0;
+for (const r of ngaRows) {
+  const old = ngaSourceById.get(r.sourceId);
+  if (!old || ngaIds.has(r.sourceId) || r.reviewBatch !== old.batch ||
+      r.decisionFrozen !== old.userDecision || r.reviewedTitle !== old.title ||
+      r.reviewedArtist !== old.artistAsReviewed ||
+      r.accessionFromFrozenSource !== old.sourceAccession ||
+      r.sourceOriginalUrl !== old.sourceObjectUrl)
+    fail("NGA source/decision evidence drift " + r.sourceId);
+  ngaIds.add(r.sourceId);
+  const reviewed = r.officialPageIdentityFound;
+  if (reviewed) {
+    checkedNGA++;
+    if (r.verificationStatus !== "OFFICIAL_NGA_COLLECTION_PAGE_TITLE_AND_OBJECT_ID_OBSERVED" ||
+        !r.officialNgaPageReviewed?.startsWith("https://www.nga.gov/artworks/" + old.sourceObjectId + "-") ||
+        r.officialTitleObserved !== r.reviewedTitle)
+      fail("NGA checked official page identity mismatch " + r.sourceId);
+  } else {
+    pendingNGA++;
+    if (r.verificationStatus !== "OFFICIAL_OBJECT_PAGE_REVIEW_PENDING" ||
+        r.officialNgaPageReviewed !== null || r.officialTitleObserved !== null)
+      fail("NGA pending record was wrongly promoted " + r.sourceId);
+  }
+  if (r.decisionFrozen === "IMPORT_WITH_CORRECTIONS") conditionalNGA++;
+  const issues = r.physicalArtworkRelationshipEvidence;
+  if (issues.length) flaggedNGA++;
+  if (issues.some(e => e.type === "ANONYMOUS_AFTER_VAN_DYCK_SERIES")) {
+    apostlesNGA++;
+    if (!/^1960\.6\.11\.[a-l]$/.test(r.accessionFromFrozenSource)) fail("NGA Timken apostle mismatch " + r.sourceId);
+  }
+  if (r.officialAccessionPageTranscriptionCompleted !== false ||
+      r.objectIdentityWithCanonical383 !== "NOT_CONFIRMED" ||
+      r.photoIdentityCertified !== false || r.rightsCertified !== false ||
+      r.fullNativeVisualCertified !== false || r.productionApproved !== false)
+    fail("NGA official source verification incorrectly promoted image or physical identity " + r.sourceId);
+}
+if (checkedNGA !== 42 || pendingNGA !== 84 || apostlesNGA !== 12 ||
+    conditionalNGA !== 16 || flaggedNGA !== 27 ||
+    nga.knownSeries.length !== 1 || nga.knownSeries[0].memberSourceIds.length !== 12 ||
+    nga.releaseGuards.userDecisionsChanged !== false ||
+    nga.releaseGuards.canonical383MasterMutated !== false ||
+    nga.releaseGuards.sourceImageApprovalTransferred !== false ||
+    nga.releaseGuards.photoRightsCertified !== false ||
+    nga.releaseGuards.productionMutation !== false)
+  fail("NGA official verification release gate/series mismatch");
+if (master.phase1NgaVerification.sourceCards !== 126 ||
+    master.phase1NgaVerification.officialObjectPageIdentitiesChecked !== 42 ||
+    master.phase1NgaVerification.awaitingIndependentMuseumCheck !== 84 ||
+    master.phase1NgaVerification.totalOfficialMuseumPagesChecked !== 144 ||
+    master.phase1NgaVerification.remainingInstitutionBackedCards !== 335 ||
+    master.phase1NgaVerification.canonical383NewLinks !== 0 ||
+    master.phase1NgaVerification.productionMutation !== false)
+  fail("NGA official verification manifest mismatch");
+console.log("PASS NGA 126 official firstpass: 42 pages checked, 84 pending, 12 Van Dyck-after panels; no promotions.");
+
 console.log("PASS Sacred Art Phase 1: " + records.length + " reviewed; " + expected.acceptedOrConditional + " accepted/conditional; " + counts.REJECT + " rejected; no production mutations.");
