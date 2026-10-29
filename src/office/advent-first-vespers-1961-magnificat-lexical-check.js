@@ -32,6 +32,11 @@ function normalizedLatin(text){
   .replace(/\s+/gu," ").trim();
 }
 function digest(s){return createHash("sha256").update(normalizedLatin(s),"utf8").digest("hex")}
+function gitBlobSha(content){
+ const bytes=Buffer.byteLength(content,"utf8");
+ return createHash("sha1").update("blob "+bytes+"\0","utf8")
+  .update(content,"utf8").digest("hex");
+}
 function validWitness(w){
  return w?.schema===WITNESS_SCHEMA&&
   w.witness?.document===URL&&w.witness?.zeroBasedPdfPage===126&&
@@ -66,7 +71,7 @@ export async function reviewPrinted1961LatinMagnificat({
  if(source?.sourceRevision!==DIVINUM_OFFICIUM_PIN||
   source.sourcePath!==SOURCE||source.language!=="la"||
   typeof source.text!=="string"||
-  (source.sourceBlobSha!==undefined&&source.sourceBlobSha!==BLOB))
+  source.sourceBlobSha!==BLOB||gitBlobSha(source.text)!==BLOB)
   return deny("PINNED_CANTICLE_PROVENANCE_MISMATCH");
  const lines=source.text.trim().replace(/\r\n?/gu,"\n").split("\n");
  if(lines.length!==11||!/^\(Canticum B\. Mariæ Virginis \* Luc\. 1:46-55\)$/u.test(lines[0]))
