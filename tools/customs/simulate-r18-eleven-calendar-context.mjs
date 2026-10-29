@@ -11,6 +11,7 @@ const json=p=>JSON.parse(file(p).toString("utf8"));
 const sourcePath="data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json";
 const stage=json("data/customs/customs-r18-eleven-calendar-parent-subtype-structure.v1.json");
 const editorial=json("data/customs/customs-r18-eleven-bilingual-editorial-copy-review.v1.json");
+const quality=json("data/customs/customs-r18-eleven-bilingual-qa-amendments.v1.json");
 const sourceChecked=json("data/customs/customs-r18-eleven-source-checked-full-bilingual-article-pack.v1.json");
 const source=json(sourcePath);
 const seed=json("data/customs/customs-atlas-seed.v1.json");
@@ -71,6 +72,15 @@ for(const row of editorial.records){
    "Reader should not repeat identical French history/description");
 }
 
+assert.equal(quality.schema,"AO_R18_ELEVEN_BILINGUAL_QA_AMENDMENTS_V1");
+assert.deepEqual(quality.counts,{records:11,corrected_field_pairs:27,signed_off:0,published:0});
+assert.ok(Object.values(quality.approval).every(x=>x===false));
+assert.equal(quality.records.length,11);
+const qaByKey=new Map(quality.records.map(x=>[x.review_key,x]));
+assert.equal(qaByKey.size,11);
+assert.equal(sourceChecked.copy_quality_review.language_pairs_revised,27);
+assert.equal(sourceChecked.copy_quality_review.article_count_affected,11);
+assert.equal(sourceChecked.copy_quality_review.publication_approval_granted,false);
 const sourceReviews=source.records.filter(x=>x.action_identity_review&&x.unpublished_bilingual_article);
 assert.equal(sourceReviews.length,11);
 const checkedFile="data/customs/customs-r18-eleven-source-checked-full-bilingual-article-pack.v1.json";
@@ -153,8 +163,18 @@ for(const candidate of stage.staged){
  assert.equal(verified.action_structure.noncanonical_theme_family,candidate.provisional_family_key);
  assert.deepEqual(verified.action_structure.child_forms,candidate.subtype_examples);
  
- const resolvedArticle={...actual.unpublished_bilingual_article,...proposed.changes};
- assert.deepEqual(verified.article,resolvedArticle,"8-field EN/FR article must equal source with exact reviewed edits");
+ const baselineArticle={...actual.unpublished_bilingual_article,...proposed.changes};
+ const qa=qaByKey.get(key);
+ assert.ok(qa,"Missing second-pass EN/FR changes for "+key);
+ assert.equal(qa.release_status,"COPY_QA_PROPOSED_NOT_CANONICALLY_APPROVED");
+ assert.deepEqual(Object.keys(qa.changes).sort(),[...qa.fields].sort());
+ const applied=Object.fromEntries(Object.entries(qa.changes).map(([field,change])=>{
+   assert.deepEqual(change.before,baselineArticle[field],"Original copy of "+key+" "+field+" changed");
+   assert.ok(change.after.en?.length>4&&change.after.fr?.length>4);
+   return [field,change.after];
+ }));
+ const resolvedArticle={...baselineArticle,...applied};
+ assert.deepEqual(verified.article,resolvedArticle,"Final eight-field article must match source + revised copy + QA amendments");
  for(const field of eightFields)for(const lang of ["en","fr"])
    assert.ok(resolvedArticle[field]?.[lang]?.trim().length>=4,key+" resolved candidate missing "+field+"."+lang);
  assert.deepEqual(Object.keys(resolvedArticle).sort(),[...eightFields].sort());
