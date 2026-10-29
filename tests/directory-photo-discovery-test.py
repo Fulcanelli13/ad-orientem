@@ -218,7 +218,8 @@ class PhotoDiscoveryTests(unittest.TestCase):
                 return {"query":{"pages":self.first}}
         match={"qid":"Q12345","category":"St Benedict Church Arcadia","image":None}
         with patch.object(mod,"wikidata_photo_identity",
-                          return_value=({"state":"GEO_AND_NAME_CORROBORATED_RESEARCH_ONLY"},match)), \
+                          side_effect=lambda _client, _venue: (
+                              {"state":"GEO_AND_NAME_CORROBORATED_RESEARCH_ONLY"},match)), \
              patch.object(mod,"relevant_commons_subcategories",return_value={}):
             client=Client(pd)
             info,found=mod.structured_discovery(client,venue)
