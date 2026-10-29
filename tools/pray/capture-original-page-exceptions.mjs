@@ -54,7 +54,10 @@ function collect(){
    const body=NOVENA_CORPUS_V4[r.id].days[r.day-1].text?.en;
    assert.ok(body?.length>100,key+' no canonical English body');
    const pages=[];
-   for(let p=r.pdfPageStart;p<=r.pdfPageEnd;p++){
+   // The earlier two-page automatic window for Holy Souls day four stopped
+   // before its printed last page (205). Correct that sampling boundary.
+   const actualPageEnd=id==='purgatorian_manual_1894_1907'&&r.id==='holy_souls'&&r.day===4?204:r.pdfPageEnd;
+   for(let p=r.pdfPageStart;p<=actualPageEnd;p++){
     const base=join(dir,key+'-page'+(p+1));
     run('pdftoppm',['-f',String(p+1),'-l',String(p+1),'-scale-to','1800','-png','-singlefile',pdf,base]);
     assert.ok(existsSync(base+'.png'));
