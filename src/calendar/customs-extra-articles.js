@@ -1,5 +1,5 @@
-/* Editor-reviewed Calendar prose for 24 identities already PUBLISHED in canonical SOT-07.
- * This is a source-bounded read-model projection. No new customs, Mass
+/* Calendar prose for 24 existing published identities plus PENT-001 regional single-record release proposal.
+ * The PENT-001 draft affects canonical Customs only after PR approval/merge. No new Mass
  * rites, local ceremonies, bookings or geography are published.
  * Acceptance register: data/customs/calendar-copy-acceptance.v1.json
  * The research master remains draft and its 14 NOT_APPROVED identities stay excluded.
