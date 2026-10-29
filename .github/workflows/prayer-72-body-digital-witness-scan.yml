@@ -5,6 +5,8 @@ on:
       - 'src/pray/novena-corpus*.js'
       - 'data/pray/novena-source-review.v3.json'
       - 'tools/pray/bulk-digital-witness-overlap.mjs'
+      - 'tests/pray-novena-digital-overlap-bulk-result.mjs'
+      - 'data/pray/novena-digital-witness-bulk-result-20261029.v1.json'
       - '.github/workflows/prayer-72-body-digital-witness-scan.yml'
   workflow_dispatch:
 
@@ -23,7 +25,7 @@ jobs:
         with:
           node-version: '22'
       - name: Validate deterministic corpus extraction and comparison logic
-        run: node tools/pray/bulk-digital-witness-overlap.mjs --self-test
+        run: node tools/pray/bulk-digital-witness-overlap.mjs --self-test && node tests/pray-novena-digital-overlap-bulk-result.mjs
       - name: Compare all historical English day and repeat prayer bodies to digital source pages
         run: node tools/pray/bulk-digital-witness-overlap.mjs --out /tmp/pray-digital-witness-overlap.json
       - name: Upload research-only metadata (no witness text)
