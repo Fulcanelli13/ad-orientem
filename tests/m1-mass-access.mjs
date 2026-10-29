@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import {m1AccessRows,m1AccessPreviewRequested} from "../src/mass/m1-access-overview.js";
+import {m1AccessRows,m1AccessPreviewRequested,m1SelectedIntroit} from "../src/mass/m1-access-overview.js";
 const base={kind:"CALENDAR",kindLabel:"Mass of the day",actualTitle:"Feria",
  form:"MISSA_CANTATA_INCENSE",formLabel:"Missa Cantata · incense",
  readerMode:"LIVE",readerLanguage:"en",beforeMass:"none",afterMass:"none"};
@@ -23,4 +23,9 @@ assert.equal(m1AccessRows(base,{optionalRites:true}).at(-1).id,"rites",
  "A real optional rite must remain accessible, not disappear from the overview");
 assert.equal(m1AccessRows(base).length,6);
 assert.equal(m1AccessRows({...base,kind:"REQUIEM",kindLabel:"Requiem"})[0].value,"Requiem");
+const withProper={proper:{status:"READY",data:{introit:{lat:"Si iniquitátes observáveris, Dómine\nPs 129:3"}}}};
+assert.equal(m1SelectedIntroit(withProper,{ready:true}),"Si iniquitátes observáveris, Dómine");
+assert.equal(m1SelectedIntroit(withProper,{ready:false}),null,"No Introit while source is unresolved");
+assert.equal(m1SelectedIntroit({proper:{status:"PENDING"}},{ready:true}),null,
+  "No fake Introit where the selected Proper has not supplied one");
 console.log("PASS M1 source-projected six-row Mass choices, French and conditional rites");
