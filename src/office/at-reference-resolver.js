@@ -3,7 +3,7 @@
  * references, using the same injected pinned parsed-source reader as Mass.
  *
  * Optional exact per-language pinned standard-prayer section resolution;
- * no invented prayer conclusions, no &psalm() generator or conditional
+ * no invented prayer conclusions; optional plain psalm-verse research only.
  * Rubrics evaluation, no CGI, archive, extra network client or French fallback.
  * Any unsupported directive is an error, not a partial liturgical Hour.
  */
@@ -76,20 +76,20 @@ export function createOfficeAtReferenceResolver({readSource,maxDocuments=32,
        doc.sourcePath!==path||doc.language!==language||
        typeof doc.text!=="string"||doc.text.length>180000)
      throw Error("OFFICE_AT_PSALM_SOURCE_PROVENANCE_OR_SIZE_INVALID");
-    const lines=doc.text.replace(/\\r\\n?/g,"\\n").split("\\n").map(x=>x.trim()).filter(Boolean);
+    const lines=doc.text.replace(/\r\n?/g,"\n").split("\n").map(x=>x.trim()).filter(Boolean);
     if(!lines.length||lines.length>500)throw Error("OFFICE_AT_PSALM_VERSES_INVALID");
-    let previous=0,lastSuffix="",seen=new Set();
+    let previous=0,seen=new Set();
     for(const line of lines){
      const m=PSALM_VERSE.exec(line);
      if(!m||Number(m[1])!==number||line.length>1600||
-        /(?:^|\\s)[$@&]|<[^>]*>|\\{:/u.test(line))
+        /(?:^|\s)[$@&]|<[^>]*>|\{:/u.test(line))
       throw Error("OFFICE_AT_PSALM_VERSES_INVALID");
      const n=Number(m[2]),suffix=m[3],ordinal=n*27+(suffix? suffix.charCodeAt(0)-96:0);
      if(ordinal<=previous||seen.has(n+suffix))
       throw Error("OFFICE_AT_PSALM_VERSE_ORDER_INVALID");
-     previous=ordinal;lastSuffix=suffix;seen.add(n+suffix);
+     previous=ordinal;seen.add(n+suffix);
     }
-    return lines.join("\\n");
+    return lines.join("\n");
    });
    psalmCache.set(key,pending);
   }
