@@ -98,3 +98,44 @@ export function calendarStagedHouseholdCustomsOnDate(date,readModel,{fr=false}={
   return shown(r,m.anchor,m.period,m.kind,fr);
  }));
 }
+
+
+/**
+ * Non-live regional details for published Customs. Variants belong inside
+ * their parent canonical article, not a second custom, feast or local event.
+ * The 18-candidate date projection above remains unchanged.
+ */
+export function calendarStagedPublishedCustomVariants(parentCustomId,variantReadModel,{fr=false}={}){
+ if(typeof parentCustomId!=="string"||!parentCustomId.trim())throw new TypeError("Expected parent custom ID");
+ if(!Array.isArray(variantReadModel?.records)||variantReadModel.records.length!==22)
+  throw new TypeError("Expected 22 source-bounded published-owner variants");
+ const seen=new Set();
+ for(const r of variantReadModel.records){
+  if(seen.has(r.variant_id)||!r.owner_custom_id||!r.source_group_id||!r.content?.title_en||!r.content?.title_fr||
+     !r.content?.history_en||!r.content?.history_fr||!r.content?.practice_or_context_en||
+     !r.content?.practice_or_context_fr||r.presentation?.variant_not_extra_card!==true||
+     r.presentation?.slot!=="EXISTING_CUSTOM_READER_REGIONAL_VARIANT"||
+     r.editorial?.publication_authorized!==false||r.calendar?.feast_or_liturgical_rank_override_allowed!==false||
+     !r.source?.url||!r.source?.observation_ids?.length)
+   throw new TypeError("Invalid or publication-unsafe existing owner variant "+r.variant_id);
+  seen.add(r.variant_id);
+ }
+ return Object.freeze(variantReadModel.records.filter(r=>r.owner_custom_id===parentCustomId).map(r=>Object.freeze({
+  variant_id:r.variant_id,
+  parent_custom_id:r.owner_custom_id,
+  title:fr?r.content.title_fr:r.content.title_en,
+  historical_context:fr?r.content.history_fr:r.content.history_en,
+  optional_practice_or_context:fr?r.content.practice_or_context_fr:r.content.practice_or_context_en,
+  region_labels:Object.freeze([...r.geographic_source_labels]),
+  anchor_hint:r.calendar.anchor_key,
+  date_approved:false,
+  suggested_occurrence_date:null,
+  source_reference:Object.freeze({url:r.source.url,printed_page:r.source.printed_page,
+    observation_ids:Object.freeze([...r.source.observation_ids])}),
+  is_new_custom_card:false,
+  is_1962_liturgical_rubric:false,
+  is_current_parish_announcement:false,
+  indulgence_associated:false,
+  publication_state:"RESEARCH_VARIANT_DETAIL_NOT_PUBLISHED"
+ }))));
+}
