@@ -46,10 +46,14 @@ const requiredPhases={
 };
 assert.deepEqual(Object.fromEntries(audit.approvedSequence.map(x=>[x.cueId,x.phase])),requiredPhases);
 
-// A known frozen 20 Oct preview labelled both ablutions in reverse. The
-// 21 Oct canonical cue override is the live, source-verified ruling.
+// The 20 Oct preview originally reversed both ablutions. The current
+// crosswalk is now reconciled to the source-correct 21 Oct canonical meaning;
+// retain the historical mistake as a non-live audit record only.
 for(const fix of audit.historicalCorrection){
- assert.equal(oldAction.get(fix.cueId)?.assetId,fix.oldCrosswalk);
+ assert.notEqual(oldAction.get(fix.cueId)?.assetId,fix.oldCrosswalk,
+   "Reversed historical purification icon reintroduced");
+ assert.equal(oldAction.get(fix.cueId)?.assetId,fix.canonical,
+   "Published source-correct ablution icon no longer matches the original");
  assert.equal(canonical.actionCueOverrides[fix.cueId],fix.canonical.replace("ao_purify_chalice","priest.action.purify_chalice").replace("ao_purify_fingers","priest.action.purify_fingers"));
  assert.equal(meaning.get(canonical.actionCueOverrides[fix.cueId])?.assetId,fix.canonical);
 }
