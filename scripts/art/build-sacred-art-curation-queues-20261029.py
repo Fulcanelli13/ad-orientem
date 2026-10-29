@@ -165,7 +165,8 @@ for x in brevia["records"]:
        "current_archive_sha256":up.get("sha256") or up.get("archive_sha256"),
        "licence_exact_file_reviewed":False,"pristine_final":False,"production_activated":False})
 assert len(mainOut)==383 and len(prayerAnnex)==22 and len(brevAnnex)==83
-assert len(strong)==18 and len(rightsQueue)==365-0 if False else True
+assert len(strong)==18, f"Official CC0 exact matches must be 18, found {len(strong)}"
+assert len(rightsQueue)==365, f"Expected 365 records needing file-specific licensing gate, got {len(rightsQueue)}"
 assert len(a6strong)<=18
 stats={
  "source_register":"383 canonical main artworks, not deduplicated with annexes",
