@@ -1,0 +1,193 @@
+{
+  "schema": "AO_B9_MET_SOURCE_PROBE_V1",
+  "date": "2026-10-29",
+  "records": [
+    {
+      "url": "https://collectionapi.metmuseum.org/public/collection/v1/departments",
+      "http": 200,
+      "mime": "application/json",
+      "keys": [
+        "departments"
+      ],
+      "departments": [
+        {
+          "departmentId": 1,
+          "displayName": "American Decorative Arts"
+        },
+        {
+          "departmentId": 3,
+          "displayName": "Ancient West Asian Art"
+        },
+        {
+          "departmentId": 4,
+          "displayName": "Arms and Armor"
+        },
+        {
+          "departmentId": 5,
+          "displayName": "Arts of Africa, Oceania, and the Americas"
+        },
+        {
+          "departmentId": 6,
+          "displayName": "Asian Art"
+        },
+        {
+          "departmentId": 7,
+          "displayName": "The Cloisters"
+        },
+        {
+          "departmentId": 8,
+          "displayName": "The Costume Institute"
+        },
+        {
+          "departmentId": 9,
+          "displayName": "Drawings and Prints"
+        },
+        {
+          "departmentId": 10,
+          "displayName": "Egyptian Art"
+        },
+        {
+          "departmentId": 11,
+          "displayName": "European Paintings"
+        },
+        {
+          "departmentId": 12,
+          "displayName": "European Sculpture and Decorative Arts"
+        },
+        {
+          "departmentId": 13,
+          "displayName": "Greek and Roman Art"
+        },
+        {
+          "departmentId": 14,
+          "displayName": "Islamic Art"
+        },
+        {
+          "departmentId": 15,
+          "displayName": "The Robert Lehman Collection"
+        },
+        {
+          "departmentId": 16,
+          "displayName": "The Libraries"
+        },
+        {
+          "departmentId": 17,
+          "displayName": "Medieval Art"
+        },
+        {
+          "departmentId": 18,
+          "displayName": "Musical Instruments"
+        },
+        {
+          "departmentId": 19,
+          "displayName": "Photographs"
+        },
+        {
+          "departmentId": 21,
+          "displayName": "Modern Art"
+        }
+      ]
+    },
+    {
+      "url": "https://collectionapi.metmuseum.org/public/collection/v1.1/search?q=Crucifixion&hasImages=true&departmentId=11&limit=5",
+      "http": 200,
+      "mime": "application/json",
+      "keys": [
+        "total",
+        "objectIDs"
+      ],
+      "total": 57,
+      "ids": [
+        435577,
+        437338,
+        437172,
+        438423,
+        438605
+      ]
+    },
+    {
+      "url": "https://collectionapi.metmuseum.org/public/collection/v1.1/search?q=Madonna&hasImages=true&departmentId=11&limit=5",
+      "http": 200,
+      "mime": "application/json",
+      "keys": [
+        "total",
+        "objectIDs"
+      ],
+      "total": 150,
+      "ids": [
+        437015,
+        436311,
+        437892,
+        438754,
+        941909
+      ]
+    },
+    {
+      "url": "https://collectionapi.metmuseum.org/public/collection/v1.1/search?q=Saint+Jerome&hasImages=true&departmentId=11&limit=5",
+      "http": 200,
+      "mime": "application/json",
+      "keys": [
+        "total",
+        "objectIDs"
+      ],
+      "total": 18,
+      "ids": [
+        437910,
+        437261,
+        435728,
+        437491,
+        436099
+      ]
+    },
+    {
+      "url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436105",
+      "http": 200,
+      "mime": "application/json",
+      "keys": [
+        "objectID",
+        "isHighlight",
+        "accessionNumber",
+        "accessionYear",
+        "isPublicDomain",
+        "primaryImage",
+        "primaryImageSmall",
+        "additionalImages",
+        "constituents",
+        "department",
+        "objectName",
+        "title",
+        "culture",
+        "period",
+        "dynasty",
+        "reign",
+        "portfolio",
+        "artistRole",
+        "artistPrefix",
+        "artistDisplayName",
+        "artistDisplayBio",
+        "artistSuffix",
+        "artistAlphaSort",
+        "artistNationality",
+        "artistBeginDate",
+        "artistEndDate",
+        "artistGender",
+        "artistWikidata_URL",
+        "artistULAN_URL",
+        "objectDate",
+        "objectBeginDate",
+        "objectEndDate",
+        "medium",
+        "dimensions",
+        "measurements"
+      ],
+      "objectID": 436105,
+      "title": "The Death of Socrates",
+      "isPublicDomain": true,
+      "primaryImage": "https://images.metmuseum.org/CRDImages/ep/original/DP-13139-001.jpg",
+      "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-13139-001.jpg",
+      "department": "European Paintings",
+      "objectName": "Painting",
+      "medium": "Oil on canvas"
+    }
+  ]
+}
