@@ -606,7 +606,11 @@ export function mountFullMassPreflight({
        const exp=folio.querySelector(".aoMassFolioExperience");
        const optionalRites=availableOptionalMassRites(legacy,{form:summary.form,kind:summary.kind})
          .some(rite=>rite.allowed||rite.fromSource);
-       if(!m1Focus)paintM1AccessRows(root,summary,{fr,optionalRites});
+       if(!m1Focus)paintM1AccessRows(root,{
+         ...summary,
+         formLabel:txt(LABELS[summary.form],fr),
+         kindLabel:txt(KIND_LABELS[summary.kind],fr),
+       },{fr,optionalRites});
        const showExperience=["language","before","after","rites"].includes(m1Focus);
        exp.hidden=!showExperience;
        for(const option of exp.querySelectorAll("[data-m1-option]")){
