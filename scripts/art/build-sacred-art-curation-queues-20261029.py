@@ -21,7 +21,7 @@ def j(name, folder=DATA):return json.loads((folder/name).read_text())
 def csvrows(name):return list(csv.DictReader((DATA/name).open(newline="")))
 def writecsv(name,rows,fields):
     with (DATA/name).open("w",newline="") as h:
-        writer=csv.DictWriter(h,fieldnames=fields,extrasaction="ignore")
+        writer=csv.DictWriter(h,fieldnames=fields,extrasaction="ignore",lineterminator="\n")
         writer.writeheader()
         for row in rows:writer.writerow(row)
 
