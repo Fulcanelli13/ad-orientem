@@ -53,6 +53,16 @@ function translatedSourceBody(n,t){
       ...(d.text?{text:bi(d.text,t?.days?.[i])}:{})
     });
   }));
+  // Source-edition caveat: the currently accessible "1925" scan includes
+  // post-1933 material. 1925 is the original copyright, NOT a verified scan
+  // printing date. No text changes or invented first-edition claims.
+  if(n.id==="holy_ghost"||n.id==="christmas"){
+    out.source=F({
+      ...n.source,
+      status:"1925_ORIGINAL_COPYRIGHT · ACCESSIBLE_SCAN_POST_1933_CONTENT · FIRST_EDITION_WORD_FOR_WORD_NOT_COLLATED",
+      adaptation:"The historical English daily prayers retain the linked digital witness. Although the work was first copyrighted in 1925, the accessible scanned copy includes a 1933 indulgence decree and later Miraculous Medal material; the physical scan is not certified as a 1925 first impression. Printed first-edition page-by-page comparison and separate modern indulgence verification remain pending."
+    });
+  }
   // The traditional nine-day Holy Souls recension gives this four-line verse
   // after the Pater/Ave on EVERY day, before its seven recurring invocations.
   // The French verse below is an explicitly editorial translation.
@@ -64,10 +74,15 @@ function translatedSourceBody(n,t){
       editorialFrenchVerse+"\n\n"+String(t?.sharedClosingText||"")
     );
     out.sharedClosingLabel=bi("Daily verse and closing intercessions","Verset quotidien et intercessions finales");
+    out.historySources=A([...(n.historySources||[]),
+      F({label:"Redemptorist Manual of the Purgatorian Society · 1894 copyright / 1907 imprimatur · printed pp. 199–210",
+         url:"https://www.catholickingdom.com/s_Library/Books/M/Manual_of_the_Purgatorian_Society_OCR_CK.pdf"})]);
     out.source=F({
       ...n.source,
-      status:"MODERN_DIGITAL_TRANSCRIPTION_OF_TRADITIONAL_FORM · PRINT_EDITION_NOT_COLLATED",
-      adaptation:"The day prayers are reviewed against nine linked online transcription sections; the repeated four-line verse and existing seven invocations are retained. French text is an editorial translation. No original printed-facsimile or historic French edition certification is claimed."
+      edition:"Redemptorist Fathers, Manual of the Purgatorian Society (copyright 1894; scanned copy carries 28 May 1907 imprimatur), printed pp. 199–210",
+      url:"https://www.catholickingdom.com/s_Library/Books/M/Manual_of_the_Purgatorian_Society_OCR_CK.pdf",
+      status:"MODERN_DIGITAL_TRANSCRIPTION_WITH_SCANNED_1894_COPYRIGHT_PRINT_WITNESS_LOCATED · PRINT_EDITION_NOT_COLLATED",
+      adaptation:"All nine proper prayers, the four-line recurring verse and the seven invocations have identifiable pages in the Redemptorists' historical Manual of the Purgatorian Society, printed pp. 199–210. This 1894-copyright work has a 1907 imprimatur in the available scan. The day text remains that of the earlier reviewed digital recension, not a fully image-collated facsimile. French is editorial; no original French or current-indulgence certificate is claimed."
     });
   }
   return F(out);
