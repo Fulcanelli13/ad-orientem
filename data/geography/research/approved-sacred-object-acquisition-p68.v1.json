@@ -11,7 +11,8 @@
     "Research/P62 candidates do not become approved by matching keywords; these are explicitly selected exact files.",
     "Do not alter the 1962 Calendar, Place coordinates, relic IDs or original media registries for unrelated Places.",
     "No paid services, no Google Maps scraping, no expiring-only artifact archives.",
-    "The modern 2024 Crown reliquary is held for independent underlying artwork-rights review; only an explicitly dated historical Crown photograph is selected for P68."
+    "The modern 2024 Crown reliquary is held for independent underlying artwork-rights review; only an explicitly dated historical Crown photograph is selected for P68.",
+    "A missing pinned original SHA1 must be acquired and verified through Commons imageinfo against the downloaded original bytes; never invent a 40-character SHA1 to pass validation."
   ],
   "photos": [
     {
@@ -23,7 +24,7 @@
       "source_url": "https://commons.wikimedia.org/wiki/File:Couronne_d%27%C3%A9pines_ND.jpg",
       "expected_artist": "Thomon",
       "expected_license": "CC-BY-SA-4.0",
-      "expected_source_sha1": "4a8cea973239323c3dca36fe8497a7bc2",
+      "expected_source_sha1": null,
       "photographed_at": "2018-05-29",
       "asset_filename": "FR-notre-dame-crown-historical-display-2018.webp",
       "label_en": "The Holy Crown in Notre-Dame — historical display (2018)",
