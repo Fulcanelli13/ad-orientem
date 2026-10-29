@@ -52,7 +52,7 @@ for(const name of workflows){
       "photo batch requires explicit research-branch write permission");
     assert.match(source,/publication[^\\n]*RESEARCH_ONLY_NEVER_APP_VISIBLE/,
       "photo batch cannot claim publication");
-    assert.match(source,/git add "\$target\/r49-\$OFFSET-\$LIMIT\.json"/,
+    assert.match(source,/git add "\$target\/r49-\$WAVE-\$OFFSET-\$LIMIT\.json"/,
       "photo batch may stage exactly one per-batch metadata file");
     assert.match(source,/git push origin HEAD:refs\/heads\/research\/directory-photo-candidates/,
       "photo batch writes only the candidate research branch");
@@ -61,6 +61,21 @@ for(const name of workflows){
     assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
     assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
     assert.doesNotMatch(source,/gh\s+api\s+-X\s+(?:PUT|PATCH|POST)/i);
+  }else if(name==="directory-bulk-photo-stage.yml"){
+    // An explicitly dispatched archival writer, never app publication.
+    assert.match(source,/workflow_dispatch:/i);
+    assert.doesNotMatch(source,/schedule:\s*\n/);
+    assert.match(source,/github\.ref == 'refs\/heads\/main'/);
+    assert.match(source,/permissions:\s*\n\s*contents:\s*write/i);
+    assert.match(source,/stage-bulk-place-photos\.py/);
+    assert.match(source,/STAGED_NOT_PUBLISHED/);
+    assert.match(source,/git add "\$target" "\$report_target"/);
+    assert.match(source,/git push origin HEAD:refs\/heads\/research\/directory-photo-assets/);
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1,
+      "bulk photo writer must push only to the archive branch");
+    assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+    assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
   }else if(name==="branch-hygiene.yml"){
     // Merged-branch ref deletion is deliberately distinct from mutating app
     // source or restoring old production builds. Enforce the exact safeguards,
