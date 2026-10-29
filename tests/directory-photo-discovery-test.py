@@ -327,6 +327,64 @@ class PhotoDiscoveryTests(unittest.TestCase):
         self.assertEqual(mod.panorama_hint("Church panoramic view","",4000,1600),
                          "PANORAMIC_STILL_PROJECTION_UNVERIFIED")
 
+    def test_stageable_commons_cc_preferred_to_public_domain_scans(self):
+        prior=[{"source_url":f"https://commons.wikimedia.org/wiki/File:old{n}",
+                "commons_title":f"File:19{n:02d} historical facade engraving.jpg",
+                "license":"PUBLIC_DOMAIN",
+                "source_sha1":str(n)*40,"discovery_method":"WIKIDATA_COMMONS_CATEGORY",
+                "category_evidence":"CATEGORY_UNCONFIRMED",
+                "width":1500,"height":1100}
+               for n in range(4)]
+        cc={"source_url":"https://commons.wikimedia.org/wiki/File:verified.jpg",
+            "commons_title":"File:Verified church exterior.jpg",
+            "license":"CC-BY-SA-4.0","source_sha1":"a"*40,
+            "discovery_method":"COUNTRY_CONSTRAINED_TEXT",
+            "category_evidence":"CATEGORY_TEXT_MATCH",
+            "width":1600,"height":1200}
+        selected=mod.merge_photo_candidates(prior,[cc])
+        self.assertEqual(len(selected),4)
+        self.assertEqual(selected[0],cc)
+        self.assertTrue(mod.acquisition_eligible(cc))
+        self.assertFalse(mod.acquisition_eligible(prior[0]))
+        self.assertEqual(len({x["source_url"] for x in selected}),4)
+
+    def test_wave_one_per_role_fallback_when_category_is_public_domain_only(self):
+        import tempfile
+        from unittest.mock import patch
+        venue=mod.source_rows(mod.R49)[58]
+        historical={"source_url":"https://commons.wikimedia.org/wiki/File:old.jpg",
+                    "license":"PUBLIC_DOMAIN","source_sha1":"b"*40,
+                    "commons_title":"File:Old engraving.jpg",
+                    "discovery_method":"WIKIDATA_COMMONS_CATEGORY",
+                    "category_evidence":"CATEGORY_UNCONFIRMED",
+                    "width":1600,"height":1200}
+        cc={"source_url":"https://commons.wikimedia.org/wiki/File:new.jpg",
+            "license":"CC-BY-SA-4.0","source_sha1":"a"*40,
+            "commons_title":"File:Church exterior.jpg",
+            "discovery_method":"COUNTRY_CONSTRAINED_TEXT",
+            "category_evidence":"CATEGORY_TEXT_MATCH",
+            "width":1600,"height":1200}
+        calls=[]
+        def search(client,v,role):
+            calls.append(role)
+            return [cc]
+        def structured(client,v):
+            return ({"state":"GEO_AND_NAME_CORROBORATED_RESEARCH_ONLY"},
+                    {"EXTERIOR":[historical],"INTERIOR":[],"SACRED_DETAIL":[]})
+        class NoNet:
+            pass
+        with tempfile.TemporaryDirectory() as td:
+            with patch.object(mod,"structured_discovery",side_effect=structured), \
+                 patch.object(mod,"discover",side_effect=search):
+                payload=mod.run(mod.R49,Path(td)/"out.json",0,1,NoNet(),
+                                indices=[58],wave="exterior",openverse_budget=0)
+        self.assertEqual(calls,["EXTERIOR"])
+        self.assertEqual(payload["venues"][0]["categories"]["EXTERIOR"][0]["source_sha1"],"a"*40)
+        self.assertEqual(payload["pilot_metrics"]["stageable_commons_cc_candidates"],1)
+        self.assertEqual(payload["pilot_metrics"]["venues_with_stageable_commons_cc"],1)
+        self.assertEqual(payload["pilot_metrics"]["public_domain_rights_holds"],1)
+        self.assertEqual(payload["publications"],0)
+
     def test_all_categories(self):
         self.assertEqual(set(mod.CATEGORIES),{"EXTERIOR","INTERIOR","SACRED_DETAIL"})
     def test_discovery_only(self):
