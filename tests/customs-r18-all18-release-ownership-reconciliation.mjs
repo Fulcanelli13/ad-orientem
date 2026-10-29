@@ -133,6 +133,13 @@ assert.equal(reviewByKey.get("CUSTOMS-R18-04").action_identity_review.regional_s
  "REGIONAL_EGG_ART_SUBTYPES_UNDER_ONE_CRAFT_IDENTITY");
 assert.equal(reviewByKey.get("CUSTOMS-R18-08").action_identity_review.proposed_action_family,
  reviewByKey.get("CUSTOMS-R18-09").action_identity_review.proposed_action_family);
+const shrineClaim=reviewByKey.get("CUSTOMS-R18-17").action_identity_review.shrine_indulgence_claim_separate_gate;
+assert.equal(shrineClaim.site_reports_papal_privilege_and_plenary_indulgence,true);
+assert.equal(shrineClaim.official_primary_grant_text_independently_verified,false);
+assert.equal(shrineClaim.grant_conditions_validated_for_traditional_1962_context,false);
+assert.equal(shrineClaim.publication_allowed,false);
+assert.ok(shrineClaim.primary_shrine_url.startsWith("https://"));
+assert.deepEqual(reviewByKey.get("CUSTOMS-R18-17").indulgence_grants,[]);
 for(const n of ["03","13","15","16"]){
  const d=reviewByKey.get("CUSTOMS-R18-"+n).action_identity_review;
  assert.equal(d.locality_and_recurrence_gate,"LOCAL_EVENT_VERIFICATION_REQUIRED");
