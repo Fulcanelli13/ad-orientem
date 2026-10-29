@@ -253,7 +253,8 @@ jobs:
               "/french-vespers-restored/restored-full-commemoration-review.json","utf8"));
             if(!d.sourceChanged||!d.changedOnlyPrayerCells||
                !d.originalFrenchCellsPreserved||
-               !d.dedicatedCommemorationCellRestored||!d.sameTrilingualIDs||
+               !d.dedicatedCommemorationCellRestored||
+               !d.canonicalLatinAlignment||!d.sameFrenchAndEnglishNativeIds||
                !d.fullSundayAntiphonMatchesIndependentICKSP||
                !d.fullSundayCollectMatchesIndependentICKSP||
                !d.antiphonBeforeCollect||d.restoredSemanticBlockers.length||
