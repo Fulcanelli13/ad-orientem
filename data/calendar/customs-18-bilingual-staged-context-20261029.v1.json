@@ -1,0 +1,1301 @@
+{
+  "schema": "AO_CALENDAR_CUSTOMS_18_BILINGUAL_STAGED_CONTEXT_V1",
+  "date": "2026-10-29",
+  "state": "CALENDAR_SHAPED_RESEARCH_PREVIEW_NOT_PUBLISHED",
+  "source_working_master": "data/customs/master/working-master.v1.json",
+  "authority": "Calendar controls dates and existing 1962 feast computation; this file is context only.",
+  "integrity": "All source facts, full bilingual texts, local scope, optional practice and explicit no-publication boundary retained.",
+  "summary": {
+    "bilingual_candidates": 18,
+    "source_refs": 34,
+    "local_event_contexts": 9,
+    "source_only_household_contexts": 9,
+    "season_only": 4,
+    "live_calendar_changes": 0,
+    "approvals_claimed": 0,
+    "wrong_owner_claims_excluded": 2
+  },
+  "records": [
+    {
+      "candidate_id": "CANDIDATE-STPATRICK-RIBBON",
+      "source_master_id": "CANDIDATE-STPATRICK-RIBBON",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "St Patrick's ribbon cross",
+        "fr": "La croix de rubans de saint Patrick"
+      },
+      "description": {
+        "en": "The wearing of crosses for St Patrick is recorded by a traveller in the 1680s. Later children's badges used card, ribbon or paper; museum research describes substantial decline by the late 1930s.",
+        "fr": "Le port de croix en l’honneur de saint Patrick est signalé par un voyageur dans les années 1680. Les insignes d'enfants ultérieurs utilisaient carton, rubans ou papier ; les recherches muséales décrivent un net déclin à la fin des années 1930."
+      },
+      "history": {
+        "en": "The wearing of crosses for St Patrick is recorded by a traveller in the 1680s. Later children's badges used card, ribbon or paper; museum research describes substantial decline by the late 1930s.",
+        "fr": "Le port de croix en l’honneur de saint Patrick est signalé par un voyageur dans les années 1680. Les insignes d'enfants ultérieurs utilisaient carton, rubans ou papier ; les recherches muséales décrivent un net déclin à la fin des années 1930."
+      },
+      "meaning": {
+        "en": "A decorative cross honours the saint and recalls Christian faith.",
+        "fr": "La croix décorative honore le saint et rappelle la foi chrétienne."
+      },
+      "optional_practice": {
+        "en": "Families made badges for children to wear on the feast, with varied colours and forms.",
+        "fr": "Les familles confectionnaient des insignes que les enfants portaient le jour de la fête, selon des formes et couleurs diverses."
+      },
+      "caution": {
+        "en": "No obligatory design, sacramental status or automatic exemption from Lenten discipline is implied.",
+        "fr": "Aucun motif obligatoire, statut de sacramental ou dispense automatique des règles du Carême n'est sous-entendu."
+      },
+      "calendar_context": {
+        "type": "FIXED_CONTEXT_DAY",
+        "month_day": "03-17",
+        "range_end": null,
+        "source_occasion": "17 March",
+        "local_event_required": false,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "NMI-STPATRICK-CROSSES",
+          "title": "National Museum of Ireland",
+          "url": "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/St-Patrick"
+        },
+        {
+          "source_id": "GALWAY-CROSSES-REVIVAL",
+          "title": "Galway City Museum",
+          "url": "https://galwaycitymuseum.ie/blog/1-reviving-an-old-tradition-st-patricks-crosses/"
+        }
+      ],
+      "source_ids": [
+        "NMI-STPATRICK-CROSSES",
+        "GALWAY-CROSSES-REVIVAL"
+      ],
+      "related_weiser_groups": [],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "source_master_id": "CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "The Irish Christmas candle",
+        "fr": "La bougie de Noël dans les foyers irlandais"
+      },
+      "description": {
+        "en": "Folklore collections preserve twentieth-century accounts of candles at windows or on tables. The evidence does not establish the custom's first origin.",
+        "fr": "Les collections folkloriques conservent des témoignages du XXe siècle sur des bougies aux fenêtres ou sur les tables. Ces sources n'établissent pas l'origine première de l'usage."
+      },
+      "history": {
+        "en": "Folklore collections preserve twentieth-century accounts of candles at windows or on tables. The evidence does not establish the custom's first origin.",
+        "fr": "Les collections folkloriques conservent des témoignages du XXe siècle sur des bougies aux fenêtres ou sur les tables. Ces sources n'établissent pas l'origine première de l'usage."
+      },
+      "meaning": {
+        "en": "A light can accompany welcome for Christ and remembrance of loved ones.",
+        "fr": "Une lumière peut accompagner l'accueil du Christ et le souvenir des proches."
+      },
+      "optional_practice": {
+        "en": "Households lit Christmas candles; some associated them with hospitality or deceased relatives.",
+        "fr": "Les foyers allumaient des bougies de Noël, parfois liées à l'hospitalité ou aux parents défunts."
+      },
+      "caution": {
+        "en": "Use an electric candle where appropriate. Historical beliefs about returning spirits or guaranteed favours are not taught as Catholic doctrine.",
+        "fr": "Préférer une bougie électrique si nécessaire. Les croyances historiques sur le retour des esprits ou les faveurs garanties ne sont pas enseignées comme doctrine catholique."
+      },
+      "calendar_context": {
+        "type": "FIXED_CONTEXT_RANGE",
+        "month_day": "12-24",
+        "range_end": "12-25",
+        "source_occasion": "24–25 December; local duration varies",
+        "local_event_required": false,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "DUCHAS-ADARE-0506-062",
+          "title": "National Folklore Collection, UCD / Dúchas",
+          "url": "https://www.duchas.ie/en/cbes/4922029/4920129/4948861"
+        },
+        {
+          "source_id": "NMI-CHRISTMAS-REMEMBRANCE",
+          "title": "National Museum of Ireland; Clodagh Doyle, Irish Folklife Division",
+          "url": "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/Generations-past-how-Christmas-was-celebrated-in-y"
+        }
+      ],
+      "source_ids": [
+        "DUCHAS-ADARE-0506-062",
+        "NMI-CHRISTMAS-REMEMBRANCE"
+      ],
+      "related_weiser_groups": [],
+      "excluded_false_owner_claims": [
+        "CAT-WEISER-A-047"
+      ],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CANDIDATE-STJOHN-BONFIRE",
+      "source_master_id": "CANDIDATE-STJOHN-BONFIRE",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "St John Baptist's community bonfire",
+        "fr": "Le feu communautaire de la Saint-Jean-Baptiste"
+      },
+      "description": {
+        "en": "A French heritage survey records a parish procession and fire; a separate diocesan announcement documents a modern parish programme.",
+        "fr": "Une enquête du patrimoine décrit une procession paroissiale suivie d'un feu ; une annonce diocésaine distincte présente un programme paroissial contemporain."
+      },
+      "history": {
+        "en": "A French heritage survey records a parish procession and fire; a separate diocesan announcement documents a modern parish programme.",
+        "fr": "Une enquête du patrimoine décrit une procession paroissiale suivie d'un feu ; une annonce diocésaine distincte présente un programme paroissial contemporain."
+      },
+      "meaning": {
+        "en": "A Christian gathering may honour the saint who prepared Christ's way.",
+        "fr": "Le rassemblement chrétien peut honorer le saint qui prépara la venue du Christ."
+      },
+      "optional_practice": {
+        "en": "Local programmes can combine worship, shared food, prayer, song and a community fire.",
+        "fr": "Les programmes locaux peuvent réunir culte, repas partagé, prière, chants et feu communautaire."
+      },
+      "caution": {
+        "en": "No fire-building instructions or universal blessing rite; do not treat solstice festivals as automatically Catholic observances.",
+        "fr": "Aucune instruction pour allumer un feu ni rite universel de bénédiction ; les fêtes du solstice ne sont pas automatiquement des observances catholiques."
+      },
+      "calendar_context": {
+        "type": "FIXED_CONTEXT_DAY",
+        "month_day": "06-23",
+        "range_end": null,
+        "source_occasion": "Nativity of St John Baptist, 24 June; eve commonly 23 June",
+        "local_event_required": true,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "POP-IA04002601",
+          "title": "French public heritage inventory / Région Provence-Alpes-Côte d'Azur",
+          "url": "https://pop.culture.gouv.fr/notice/merimee/IA04002601"
+        },
+        {
+          "source_id": "DIOCESE64-JOHN-2026",
+          "title": "Diocese of Bayonne, Lescar and Oloron",
+          "url": "https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/"
+        }
+      ],
+      "source_ids": [
+        "POP-IA04002601",
+        "DIOCESE64-JOHN-2026"
+      ],
+      "related_weiser_groups": [
+        "CAT-WEISER-B-165",
+        "CAT-WEISER-B-166"
+      ],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CANDIDATE-EASTER-EGG-CRAFT",
+      "source_master_id": "CANDIDATE-EASTER-EGG-CRAFT",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "Decorating Easter eggs: pisanki and pysanky",
+        "fr": "Décorer les œufs de Pâques : pisanki et pysanky"
+      },
+      "description": {
+        "en": "Regional egg art is transmitted in families; UNESCO documents the Ukrainian tradition, while museum material distinguishes Polish and Ukrainian names. Exact origins remain uncertain.",
+        "fr": "Cet art régional se transmet en famille ; l'UNESCO documente la tradition ukrainienne et des ressources muséales distinguent les noms polonais et ukrainiens. Les origines précises restent incertaines."
+      },
+      "history": {
+        "en": "Regional egg art is transmitted in families; UNESCO documents the Ukrainian tradition, while museum material distinguishes Polish and Ukrainian names. Exact origins remain uncertain.",
+        "fr": "Cet art régional se transmet en famille ; l'UNESCO documente la tradition ukrainienne et des ressources muséales distinguent les noms polonais et ukrainiens. Les origines précises restent incertaines."
+      },
+      "meaning": {
+        "en": "An Easter egg can suggest new life; individual motifs have varied cultural meanings.",
+        "fr": "L'œuf pascal peut évoquer la vie nouvelle ; chaque motif possède des significations culturelles variables."
+      },
+      "optional_practice": {
+        "en": "Families decorate and exchange eggs; some traditions use successive applications of wax and dye.",
+        "fr": "Les familles décorent et offrent des œufs ; certains usages emploient des couches successives de cire et de teinture."
+      },
+      "caution": {
+        "en": "No protective or divinatory power is asserted. Decoration is distinct from an authorised food blessing and is not confined to Roman Catholics.",
+        "fr": "Aucun pouvoir protecteur ou divinatoire n'est affirmé. La décoration se distingue d'une bénédiction autorisée des aliments et n'appartient pas exclusivement aux catholiques romains."
+      },
+      "calendar_context": {
+        "type": "MOVABLE_EASTER",
+        "month_day": null,
+        "range_end": null,
+        "source_occasion": "Easter season; no independently established universal Holy Saturday decorating time",
+        "local_event_required": false,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "UNESCO-PYSANKA-02134",
+          "title": "UNESCO Intangible Cultural Heritage; Estonia/Ukraine nomination",
+          "url": "https://ich.unesco.org/en/RL/pysanka-ukrainian-tradition-and-art-of-decorating-eggs-02134"
+        },
+        {
+          "source_id": "SMITHSONIAN-NMAH-PISANKA-EGG",
+          "title": "Smithsonian National Museum of American History — Pisanka Decorated Easter Egg",
+          "url": "https://americanhistory.si.edu/collections/object/nmah_1175123"
+        },
+        {
+          "source_id": "RADOM-PISANKI-TECHNIQUES",
+          "title": "Muzeum Wsi Radomskiej / Radom Village Museum",
+          "url": "https://www.muzeum-radom.pl/terminy/plastyka-obrzedowa/361"
+        }
+      ],
+      "source_ids": [
+        "UNESCO-PYSANKA-02134",
+        "RADOM-PISANKI-TECHNIQUES",
+        "SMITHSONIAN-NMAH-PISANKA-EGG"
+      ],
+      "related_weiser_groups": [
+        "CAT-WEISER-B-017",
+        "CAT-WEISER-B-038",
+        "CAT-WEISER-B-039"
+      ],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CUST-ADVT-HERBERGSUCHE",
+      "source_master_id": "CUST-ADVT-HERBERGSUCHE",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "Herbergsuche — Advent Marian-image visits between households",
+        "fr": "Herbergsuche — visite d'une image mariale de foyer en foyer pendant l'Avent"
+      },
+      "description": {
+        "en": "In Großpetersdorf, an Advent image or statue of Our Lady moves between households. Families pray a short devotion as the image arrives and departs. The custom recalls the journey of Mary and Joseph to Bethlehem and encourages hospitality. Dramatic local lodging-search plays must be researched as separate variants.",
+        "fr": "À Großpetersdorf, une image ou statue de Notre-Dame passe de foyer en foyer pendant l’Avent. Les familles récitent une courte prière à son arrivée et à son départ. La coutume rappelle le voyage de Marie et Joseph à Bethléem et encourage l’hospitalité. Les représentations théâtrales locales demeurent des variantes distinctes à vérifier."
+      },
+      "history": {
+        "en": "In Großpetersdorf, an Advent image or statue of Our Lady moves between households. Families pray a short devotion as the image arrives and departs. The custom recalls the journey of Mary and Joseph to Bethlehem and encourages hospitality. Dramatic local lodging-search plays must be researched as separate variants.",
+        "fr": "À Großpetersdorf, une image ou statue de Notre-Dame passe de foyer en foyer pendant l’Avent. Les familles récitent une courte prière à son arrivée et à son départ. La coutume rappelle le voyage de Marie et Joseph à Bethléem et encourage l’hospitalité. Les représentations théâtrales locales demeurent des variantes distinctes à vérifier."
+      },
+      "meaning": {
+        "en": "Hospitality toward Mary and Joseph as preparation to welcome Christ.",
+        "fr": "L’hospitalité envers Marie et Joseph pour se préparer à accueillir le Christ."
+      },
+      "optional_practice": {
+        "en": "In a participating parish, receive the image and pray as a household; otherwise retain as a historical local account.",
+        "fr": "Dans une paroisse qui le pratique, accueillir l’image et prier en famille ; ailleurs, le présenter comme un usage local attesté."
+      },
+      "caution": {
+        "en": "Not identical to Mexican Las Posadas; a house-to-house Marian-image relay may differ from a dramatic lodging play.",
+        "fr": "Ne pas confondre avec les Posadas mexicaines : la circulation d’une image mariale peut différer du théâtre de la recherche d’hospitalité."
+      },
+      "calendar_context": {
+        "type": "ADVENT_SEASON_ONLY",
+        "month_day": null,
+        "range_end": null,
+        "source_occasion": "Advent; individual parish house-visit itinerary, not a universal fixed nine-day programme",
+        "local_event_required": true,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "AT-PARISH-HERBERGSUCHE",
+          "title": "Roman Catholic Parish Großpetersdorf, Austria",
+          "url": "https://www.pfarre-grosspetersdorf.at/pfarre/1131/aktuelles/article/12277.html"
+        }
+      ],
+      "source_ids": [
+        "AT-PARISH-HERBERGSUCHE"
+      ],
+      "related_weiser_groups": [
+        "CAT-WEISER-A-027"
+      ],
+      "excluded_false_owner_claims": [
+        "CAT-WEISER-A-029"
+      ],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CUST-XMAS-POLISH-HAY",
+      "source_master_id": "CUST-XMAS-POLISH-HAY",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "Christmas Eve hay beneath the tablecloth",
+        "fr": "Foin sous la nappe de la veille de Noël"
+      },
+      "description": {
+        "en": "Polish national heritage records describe hay beneath the white Christmas Eve tablecloth in recollection of Christ's birth in a stable. This is distinct from adding straw to a devotional Advent crib.",
+        "fr": "Les documents polonais du patrimoine décrivent le foin sous la nappe blanche de la veille de Noël, souvenir de la naissance du Christ dans l’étable. Il ne s’agit pas de la paille ajoutée à une crèche pendant l’Avent."
+      },
+      "history": {
+        "en": "Polish national heritage records describe hay beneath the white Christmas Eve tablecloth in recollection of Christ's birth in a stable. This is distinct from adding straw to a devotional Advent crib.",
+        "fr": "Les documents polonais du patrimoine décrivent le foin sous la nappe blanche de la veille de Noël, souvenir de la naissance du Christ dans l’étable. Il ne s’agit pas de la paille ajoutée à une crèche pendant l’Avent."
+      },
+      "meaning": {
+        "en": "A family may follow its traditional table custom without divination.",
+        "fr": "Une famille peut suivre cet usage à table sans tirer de présages."
+      },
+      "optional_practice": {
+        "en": "A little clean hay may be placed beneath the Christmas Eve tablecloth where this is customary; do not interpret straw lengths as predictions.",
+        "fr": "Mettre un peu de foin propre sous la nappe de Noël selon l’usage local, sans tirer de présages des brins."
+      },
+      "caution": {
+        "en": "Not to be merged with Advent manger-straw good-deeds practice, nor presented as obligatory.",
+        "fr": "À distinguer de la paille de la crèche de l’Avent ; aucun caractère obligatoire."
+      },
+      "calendar_context": {
+        "type": "FIXED_CONTEXT_DAY",
+        "month_day": "12-24",
+        "range_end": null,
+        "source_occasion": "24 December, Christmas Eve in Polish households",
+        "local_event_required": false,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "PL-MINISTRY-WIGILIA",
+          "title": "Polish Ministry of Culture",
+          "url": "https://www.gov.pl/web/kultura/nowy-wpis-na-krajowej-liscie-niematerialnego-dziedzictwa-kulturowego"
+        },
+        {
+          "source_id": "PL-FORESTRY-WIGILIA",
+          "title": "Polish State Forests",
+          "url": "https://www.lasy.gov.pl/pl/informacje/aktualnosci/podlazniczka-i-diduch-czyli-tradycje-i-swiateczne-zwyczaje"
+        }
+      ],
+      "source_ids": [
+        "PL-MINISTRY-WIGILIA",
+        "PL-FORESTRY-WIGILIA"
+      ],
+      "related_weiser_groups": [],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CUST-XMAS-KASHUBIAN-ANIMAL-CARE",
+      "source_master_id": "CUST-XMAS-KASHUBIAN-ANIMAL-CARE",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "Christmas Eve care for livestock and birds",
+        "fr": "Soins aux animaux à la veille de Noël"
+      },
+      "description": {
+        "en": "Polish agricultural heritage accounts describe Kashubian farmers giving particularly good fodder to livestock before Christmas and leaving grain for birds. Legends about talking animals or guaranteed protection are folklore.",
+        "fr": "Les sources patrimoniales polonaises rapportent qu’en Cachoubie on offrait une bonne nourriture au bétail avant Noël et laissait des céréales aux oiseaux. Les légendes d’animaux parlant ou de protection garantie relèvent du folklore."
+      },
+      "history": {
+        "en": "Polish agricultural heritage accounts describe Kashubian farmers giving particularly good fodder to livestock before Christmas and leaving grain for birds. Legends about talking animals or guaranteed protection are folklore.",
+        "fr": "Les sources patrimoniales polonaises rapportent qu’en Cachoubie on offrait une bonne nourriture au bétail avant Noël et laissait des céréales aux oiseaux. Les légendes d’animaux parlant ou de protection garantie relèvent du folklore."
+      },
+      "meaning": {
+        "en": "Respectful, suitable animal care is a voluntary expression of gratitude for creation.",
+        "fr": "Des soins adaptés aux animaux sont une expression libre de reconnaissance pour la création."
+      },
+      "optional_practice": {
+        "en": "Show care for livestock and birds with safe, suitable food, not unsuitable folk feeding or promises of protection.",
+        "fr": "Prendre soin du bétail et des oiseaux avec une nourriture adaptée, sans reproduire des gestes dangereux ni garantir une protection."
+      },
+      "caution": {
+        "en": "Kashubian testimony does not prove the same custom throughout Scandinavia or constitute veterinary advice.",
+        "fr": "Le témoignage cachoube ne prouve pas un usage dans toute la Scandinavie et ne remplace pas les soins vétérinaires."
+      },
+      "calendar_context": {
+        "type": "FIXED_CONTEXT_DAY",
+        "month_day": "12-24",
+        "range_end": null,
+        "source_occasion": "24 December, locality-bound family observance",
+        "local_event_required": false,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "PL-AGRI-KASHUBIA",
+          "title": "Polish Ministry of Agriculture, Pomorskie",
+          "url": "https://www.gov.pl/web/rolnictwo/woj-pomorskie1"
+        },
+        {
+          "source_id": "PL-MINISTRY-UNESCO-WIGILIA",
+          "title": "Polish Ministry of Culture",
+          "url": "https://www.gov.pl/web/kultura/zlozylismy-wniosek-o-wpisanie-wigilii-na-liste-unesco"
+        }
+      ],
+      "source_ids": [
+        "PL-AGRI-KASHUBIA",
+        "PL-MINISTRY-UNESCO-WIGILIA"
+      ],
+      "related_weiser_groups": [],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CUST-XMAS-QUEBEC-GUIGNOLEE",
+      "source_master_id": "CUST-XMAS-QUEBEC-GUIGNOLEE",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "La guignolée — French Canadian Christmas alms collection",
+        "fr": "La guignolée — quête caritative canadienne-française de Noël"
+      },
+      "description": {
+        "en": "The Society of St Vincent de Paul helped establish the guignolée as an organized charitable collection in nineteenth-century Québec. Visitors went from door to door collecting food or gifts for those in need. Modern organizers continue local Christmas-season campaigns, which can include people with no Catholic affiliation.",
+        "fr": "La Société de Saint-Vincent-de-Paul a contribué à organiser la guignolée comme collecte charitable dans le Québec du XIXe siècle. Les quêteurs passaient de maison en maison afin de recueillir des denrées pour les plus démunis. Les organisateurs actuels poursuivent ces campagnes locales de Noël, auxquelles participent aussi des personnes sans appartenance catholique."
+      },
+      "history": {
+        "en": "The Society of St Vincent de Paul helped establish the guignolée as an organized charitable collection in nineteenth-century Québec. Visitors went from door to door collecting food or gifts for those in need. Modern organizers continue local Christmas-season campaigns, which can include people with no Catholic affiliation.",
+        "fr": "La Société de Saint-Vincent-de-Paul a contribué à organiser la guignolée comme collecte charitable dans le Québec du XIXe siècle. Les quêteurs passaient de maison en maison afin de recueillir des denrées pour les plus démunis. Les organisateurs actuels poursuivent ces campagnes locales de Noël, auxquelles participent aussi des personnes sans appartenance catholique."
+      },
+      "meaning": {
+        "en": "Christian almsgiving and practical care for families in need.",
+        "fr": "L’aumône chrétienne et le souci concret des familles pauvres."
+      },
+      "optional_practice": {
+        "en": "Support a legitimate local charity drive without assuming a fixed date or mandatory donation.",
+        "fr": "Soutenir une collecte locale reconnue, sans présumer d’une date obligatoire ni d’un don imposé."
+      },
+      "caution": {
+        "en": "Not an element of Mass or a required Catholic ritual; the tradition's later forms may be civic.",
+        "fr": "Ce n’est ni un élément de la messe ni un rite catholique obligatoire ; les formes récentes peuvent être civiques."
+      },
+      "calendar_context": {
+        "type": "CHRISTMAS_SEASON_ONLY",
+        "month_day": null,
+        "range_end": null,
+        "source_occasion": "Christmas-season charity drive; actual annual dates locally announced",
+        "local_event_required": true,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "QC-HERITAGE-GUIGNOLEE",
+          "title": "Québec Répertoire du patrimoine culturel — La guignolée",
+          "url": "https://www.patrimoine-culturel.gouv.qc.ca/rpcq/detail.do?id=234696&methode=consulter&type=bien"
+        },
+        {
+          "source_id": "SSVP-GUIGNOLEE-2026",
+          "title": "Société de Saint-Vincent de Paul de Montréal",
+          "url": "https://ssvp-mtl.org/fr/guignolee"
+        }
+      ],
+      "source_ids": [
+        "QC-HERITAGE-GUIGNOLEE",
+        "SSVP-GUIGNOLEE-2026"
+      ],
+      "related_weiser_groups": [],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CUST-XMAS-POLISH-KOLEDNICI",
+      "source_master_id": "CUST-XMAS-POLISH-KOLEDNICI",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "Polish kolędnicy — Christmas visiting carollers",
+        "fr": "Kolędnicy polonais — quêteurs et chanteurs de Noël"
+      },
+      "description": {
+        "en": "Polish kolędnicy are visiting Christmas carollers who sing, bring seasonal good wishes and sometimes enact Nativity or Herod plays in homes. A Polish state educational resource documents the performers, songs and comic or theatrical folk elements. Catholic religious themes should be distinguished from broader regional folklore.",
+        "fr": "Les kolędnicy polonais sont des groupes qui visitent les foyers pendant Noël pour chanter des cantiques, présenter des vœux et parfois jouer la Nativité ou le drame d’Hérode. Une ressource éducative publique décrit les chants ainsi que les composantes théâtrales ou comiques. Les thèmes religieux catholiques doivent être distingués du folklore régional."
+      },
+      "history": {
+        "en": "Polish kolędnicy are visiting Christmas carollers who sing, bring seasonal good wishes and sometimes enact Nativity or Herod plays in homes. A Polish state educational resource documents the performers, songs and comic or theatrical folk elements. Catholic religious themes should be distinguished from broader regional folklore.",
+        "fr": "Les kolędnicy polonais sont des groupes qui visitent les foyers pendant Noël pour chanter des cantiques, présenter des vœux et parfois jouer la Nativité ou le drame d’Hérode. Une ressource éducative publique décrit les chants ainsi que les composantes théâtrales ou comiques. Les thèmes religieux catholiques doivent être distingués du folklore régional."
+      },
+      "meaning": {
+        "en": "The birth of Christ remembered through local song and shared hospitality.",
+        "fr": "Le souvenir de la naissance du Christ transmis par le chant et l’accueil."
+      },
+      "optional_practice": {
+        "en": "Enjoy or welcome an established local carolling tradition; no uniform troupe script is prescribed.",
+        "fr": "Accueillir ou écouter un groupe local traditionnel, sans imposer un scénario unique."
+      },
+      "caution": {
+        "en": "Do not equate every Polish carolling troupe with the separate Epiphany Sternsinger charity collection.",
+        "fr": "Ne pas assimiler tous les groupes polonais aux Sternsinger allemands de l’Épiphanie."
+      },
+      "calendar_context": {
+        "type": "CHRISTMAS_SEASON_ONLY",
+        "month_day": null,
+        "range_end": null,
+        "source_occasion": "Christmas cycle; dates and troupe forms differ across regions",
+        "local_event_required": true,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "PL-ZPE-KOLEDNICI",
+          "title": "Polish government educational portal ZPE — Polskie obyczaje bożonarodzeniowe",
+          "url": "https://zpe.gov.pl/a/polskie-obyczaje-bozonarodzeniowe-koleda-pastoralka-kolednicy-i-koledowanie/DWQhHa9xN"
+        }
+      ],
+      "source_ids": [
+        "PL-ZPE-KOLEDNICI"
+      ],
+      "related_weiser_groups": [],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CUST-XMAS-HUNGARIAN-BETLEHEMEZES",
+      "source_master_id": "CUST-XMAS-HUNGARIAN-BETLEHEMEZES",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "Hungarian betlehemezés Nativity visiting plays",
+        "fr": "Jeux hongrois de la Nativité betlehemezés"
+      },
+      "description": {
+        "en": "The Hungarian ethnographic lexicon documents Christmas visiting plays with shepherd dialogue, song and portable Nativity scenes. It distinguishes actor and puppet versions and surviving written Hungarian forms from the seventeenth century.",
+        "fr": "Le lexique ethnographique hongrois décrit des jeux de Noël joués de maison en maison, avec bergers, chants et crèches portatives. Il distingue les acteurs des marionnettes et des textes hongrois conservés dès le XVIIe siècle."
+      },
+      "history": {
+        "en": "The Hungarian ethnographic lexicon documents Christmas visiting plays with shepherd dialogue, song and portable Nativity scenes. It distinguishes actor and puppet versions and surviving written Hungarian forms from the seventeenth century.",
+        "fr": "Le lexique ethnographique hongrois décrit des jeux de Noël joués de maison en maison, avec bergers, chants et crèches portatives. Il distingue les acteurs des marionnettes et des textes hongrois conservés dès le XVIIe siècle."
+      },
+      "meaning": {
+        "en": "The Nativity is expressed through local religious drama, not a prescribed Mass text.",
+        "fr": "La Nativité est évoquée dans le théâtre religieux populaire, sans être un texte prescrit de la messe."
+      },
+      "optional_practice": {
+        "en": "Attend an authentic local Nativity drama or document its songs where a community actually continues the tradition.",
+        "fr": "Assister à une représentation locale authentique de la Nativité ou en conserver les chants là où la tradition existe."
+      },
+      "caution": {
+        "en": "Hungarian betlehemezés is distinct from Polish szopka carolling and Las Posadas, despite shared themes.",
+        "fr": "Le betlehemezés hongrois se distingue des szopka polonaises et des Posadas malgré des thèmes communs."
+      },
+      "calendar_context": {
+        "type": "CHRISTMAS_SEASON_ONLY",
+        "month_day": null,
+        "range_end": null,
+        "source_occasion": "Christmas season, local dates",
+        "local_event_required": true,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "HU-NEPRAJZ-LEXIKON",
+          "title": "Magyar Néprajzi Lexikon, Hungarian Electronic Library",
+          "url": "https://mek.oszk.hu/02100/02115/html/1-713.html"
+        },
+        {
+          "source_id": "HU-MAGYAR-KATOLIKUS-LEXIKON-BETLEHEMEZES",
+          "title": "Magyar Katolikus Lexikon, betlehemezés",
+          "url": "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html"
+        }
+      ],
+      "source_ids": [
+        "HU-NEPRAJZ-LEXIKON",
+        "HU-MAGYAR-KATOLIKUS-LEXIKON-BETLEHEMEZES"
+      ],
+      "related_weiser_groups": [],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CUST-BARBARA-BRANCHES",
+      "source_master_id": "CUST-BARBARA-BRANCHES",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "St Barbara branches — Barbarazweige",
+        "fr": "Rameaux de sainte Barbe — Barbarazweige"
+      },
+      "description": {
+        "en": "For St Barbara's traditional 4 December observance, branches of fruit trees, especially cherry or apple, are placed in water and may blossom around Christmas. The Archdiocese of Vienna describes this household custom and relates it to later stories of the martyr. Her exact ancient biography is not securely documented.",
+        "fr": "Le 4 décembre, jour traditionnel de sainte Barbe, on met dans l’eau des rameaux d’arbres fruitiers, notamment cerisiers ou pommiers, qui peuvent fleurir vers Noël. L’archidiocèse de Vienne décrit cet usage familial et le rattache à des récits tardifs sur la martyre. Les détails de son ancienne biographie ne sont pas assurés."
+      },
+      "history": {
+        "en": "For St Barbara's traditional 4 December observance, branches of fruit trees, especially cherry or apple, are placed in water and may blossom around Christmas. The Archdiocese of Vienna describes this household custom and relates it to later stories of the martyr. Her exact ancient biography is not securely documented.",
+        "fr": "Le 4 décembre, jour traditionnel de sainte Barbe, on met dans l’eau des rameaux d’arbres fruitiers, notamment cerisiers ou pommiers, qui peuvent fleurir vers Noël. L’archidiocèse de Vienne décrit cet usage familial et le rattache à des récits tardifs sur la martyre. Les détails de son ancienne biographie ne sont pas assurés."
+      },
+      "meaning": {
+        "en": "A winter sign of hope and patient preparation for Christmas.",
+        "fr": "Un signe d’espérance en hiver et une préparation patiente à Noël."
+      },
+      "optional_practice": {
+        "en": "Place appropriate fruit-tree branches in water, where locally customary; pray for perseverance and hope.",
+        "fr": "Mettre des rameaux adaptés dans l’eau selon l’usage local, et prier pour la persévérance et l’espérance."
+      },
+      "caution": {
+        "en": "Whether a branch blooms is a natural outcome, not a guarantee of future fortune or favour.",
+        "fr": "La floraison est un phénomène naturel, non une garantie de bonheur ou de faveur future."
+      },
+      "calendar_context": {
+        "type": "FIXED_CONTEXT_DAY",
+        "month_day": "12-04",
+        "range_end": null,
+        "source_occasion": "Traditional observance 4 December; voluntary domestic symbolism, not a Mass rite",
+        "local_event_required": false,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "AT-VIENNA-BARBARA",
+          "title": "Archdiocese of Vienna — St Barbara, 4 December",
+          "url": "https://www.erzdioezese-wien.at/heilige-barbara"
+        }
+      ],
+      "source_ids": [
+        "AT-VIENNA-BARBARA"
+      ],
+      "related_weiser_groups": [],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CUST-XMAS-PROVENCAL-PAIN-CALENDAL",
+      "source_master_id": "CUST-XMAS-PROVENCAL-PAIN-CALENDAL",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "Provençal Christmas pain calendal and the poor person's portion",
+        "fr": "Le pain calendal provençal et la part du pauvre"
+      },
+      "description": {
+        "en": "The Provençal Christmas Eve Gros Souper includes the pain calendal, a round loaf traditionally marked with a cross. A regional tourism description records dividing it into portions, including a share for the poor. Its charitable symbolism belongs to the household meal and must not be confused with Eucharistic bread or a ministerial blessing.",
+        "fr": "Le gros souper provençal du 24 décembre comporte le pain calendal, miche ronde traditionnellement marquée d’une croix. Une source touristique régionale décrit son partage, avec notamment la part du pauvre. Ce symbole domestique de charité ne se confond ni avec l’Eucharistie ni avec une bénédiction sacerdotale."
+      },
+      "history": {
+        "en": "The Provençal Christmas Eve Gros Souper includes the pain calendal, a round loaf traditionally marked with a cross. A regional tourism description records dividing it into portions, including a share for the poor. Its charitable symbolism belongs to the household meal and must not be confused with Eucharistic bread or a ministerial blessing.",
+        "fr": "Le gros souper provençal du 24 décembre comporte le pain calendal, miche ronde traditionnellement marquée d’une croix. Une source touristique régionale décrit son partage, avec notamment la part du pauvre. Ce symbole domestique de charité ne se confond ni avec l’Eucharistie ni avec une bénédiction sacerdotale."
+      },
+      "meaning": {
+        "en": "Generosity, Christian hospitality and remembrance of those in need at Christmas.",
+        "fr": "Générosité, hospitalité chrétienne et attention aux plus démunis à Noël."
+      },
+      "optional_practice": {
+        "en": "Where a family keeps the tradition, share festive bread and make a real charitable offering.",
+        "fr": "Dans une famille qui conserve l’usage, partager le pain de fête et accomplir un geste concret de charité."
+      },
+      "caution": {
+        "en": "Documented as Provençal regional culture; parts associated with miracles or special protection remain folklore, not promises.",
+        "fr": "Coutume provençale locale ; les parts auxquelles on prête des miracles ou une protection particulière relèvent du folklore, non d’une promesse."
+      },
+      "calendar_context": {
+        "type": "FIXED_CONTEXT_DAY",
+        "month_day": "12-24",
+        "range_end": null,
+        "source_occasion": "24 December, traditional Provençal Gros Souper; local family observance",
+        "local_event_required": false,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "FR-VAR-PAIN-CALENDAL",
+          "title": "Le Var — regional tourism authority",
+          "url": "https://www.visitvar.fr/agenda/evenements-incontournables/noel-provence/traditions-de-noel-provence"
+        },
+        {
+          "source_id": "FR-PACA-GROS-SOUPER",
+          "title": "Provence-Alpes-Côte d’Azur regional tourism",
+          "url": "https://provence-alpes-cotedazur.com/decouvrir/les-destinations/la-provence/la-veillee-de-noel/"
+        }
+      ],
+      "source_ids": [
+        "FR-VAR-PAIN-CALENDAL",
+        "FR-PACA-GROS-SOUPER"
+      ],
+      "related_weiser_groups": [],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CUST-EPIPHANY-SPANISH-MAGI-GIFTS",
+      "source_master_id": "CUST-EPIPHANY-SPANISH-MAGI-GIFTS",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "Three Kings gifts left in children's shoes",
+        "fr": "Les cadeaux des Rois mages dans les chaussures des enfants"
+      },
+      "description": {
+        "en": "In Spanish Christmas observance, the Three Kings are represented in processions on 5 January and bring gifts overnight for the feast of Epiphany. Spain's official tourism office also describes children setting out a shoe for the gifts. This festive custom is distinct from the Gospel visit of the Magi and from a priest's house blessing.",
+        "fr": "En Espagne, les Rois mages parcourent les villes en cortège le 5 janvier et les enfants reçoivent traditionnellement leurs cadeaux au passage vers le 6 janvier. L’office national du tourisme décrit aussi la chaussure laissée pour les présents. Cette tradition familiale se distingue du récit évangélique des Mages et de la bénédiction d’une maison par un prêtre."
+      },
+      "history": {
+        "en": "In Spanish Christmas observance, the Three Kings are represented in processions on 5 January and bring gifts overnight for the feast of Epiphany. Spain's official tourism office also describes children setting out a shoe for the gifts. This festive custom is distinct from the Gospel visit of the Magi and from a priest's house blessing.",
+        "fr": "En Espagne, les Rois mages parcourent les villes en cortège le 5 janvier et les enfants reçoivent traditionnellement leurs cadeaux au passage vers le 6 janvier. L’office national du tourisme décrit aussi la chaussure laissée pour les présents. Cette tradition familiale se distingue du récit évangélique des Mages et de la bénédiction d’une maison par un prêtre."
+      },
+      "meaning": {
+        "en": "A family festival associated with the Epiphany story and generosity.",
+        "fr": "Une fête familiale liée au récit de l’Épiphanie et à la générosité."
+      },
+      "optional_practice": {
+        "en": "Present the gift tradition as optional cultural celebration; families may pray or read Matthew 2 separately.",
+        "fr": "Présenter la distribution de cadeaux comme célébration facultative ; les familles peuvent lire séparément Matthieu 2 ou prier."
+      },
+      "caution": {
+        "en": "Not a Roman liturgical rubric or claim that the Magi literally deliver gifts.",
+        "fr": "Ni rubrique de la liturgie romaine, ni affirmation d’une distribution surnaturelle effective par les Mages."
+      },
+      "calendar_context": {
+        "type": "FIXED_CONTEXT_RANGE",
+        "month_day": "01-05",
+        "range_end": "01-06",
+        "source_occasion": "Evening of 5 January into 6 January; Spanish household custom",
+        "local_event_required": false,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "ES-TOURISM-SHOE-KINGS",
+          "title": "Spain's official tourism promotion service",
+          "url": "https://socialnewsroom.spain.info/three-kings-day-in-spain-2024/"
+        },
+        {
+          "source_id": "ES-TOURISM-MADRID",
+          "title": "Spain's official tourism portal",
+          "url": "https://www.spain.info/en/top/christmas-madrid/"
+        }
+      ],
+      "source_ids": [
+        "ES-TOURISM-SHOE-KINGS",
+        "ES-TOURISM-MADRID"
+      ],
+      "related_weiser_groups": [],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CUST-EASTER-MALTESE-IRXOXT",
+      "source_master_id": "CUST-EASTER-MALTESE-IRXOXT",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "L-Irxoxt — Maltese running procession with the Risen Christ",
+        "fr": "L-Irxoxt — procession maltaise du Ressuscité portée au pas de course"
+      },
+      "description": {
+        "en": "In Maltese communities, the risen Christ is carried through the streets in an Easter Sunday procession. In certain localities, bearers run briefly with the statue. Malta's public administration confirms the Easter Resurrection procession, while local reporting documents the distinctive running in places such as Senglea.",
+        "fr": "À Malte, une statue du Christ ressuscité est portée dans les rues le dimanche de Pâques. Dans certaines localités, les porteurs courent brièvement avec la statue. L’administration maltaise confirme la procession pascale, tandis que des témoignages locaux attestent cette course particulière, notamment à Senglea."
+      },
+      "history": {
+        "en": "In Maltese communities, the risen Christ is carried through the streets in an Easter Sunday procession. In certain localities, bearers run briefly with the statue. Malta's public administration confirms the Easter Resurrection procession, while local reporting documents the distinctive running in places such as Senglea.",
+        "fr": "À Malte, une statue du Christ ressuscité est portée dans les rues le dimanche de Pâques. Dans certaines localités, les porteurs courent brièvement avec la statue. L’administration maltaise confirme la procession pascale, tandis que des témoignages locaux attestent cette course particulière, notamment à Senglea."
+      },
+      "meaning": {
+        "en": "A public expression of joy in Christ's Resurrection.",
+        "fr": "Une expression publique de la joie de la Résurrection du Christ."
+      },
+      "optional_practice": {
+        "en": "Attend an actual advertised Easter procession as an observer or participant according to local arrangements.",
+        "fr": "Assister à une procession pascale réellement annoncée, selon les usages et les consignes du lieu."
+      },
+      "caution": {
+        "en": "The run occurs only in some localities and is not an action within the Mass or a universal Easter obligation.",
+        "fr": "La course n’existe que dans certaines localités ; elle n’appartient pas aux rites de la messe et n’est pas une obligation pascale."
+      },
+      "calendar_context": {
+        "type": "MOVABLE_EASTER",
+        "month_day": null,
+        "range_end": null,
+        "source_occasion": "Easter Sunday, only parishes with actual announced procession",
+        "local_event_required": true,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "https://publicservice.gov.mt/en/news/easter-in-gozo-a-celebration-of-faith-culture-and-community",
+          "title": "Malta Public Administration",
+          "url": "https://publicservice.gov.mt/en/news/easter-in-gozo-a-celebration-of-faith-culture-and-community"
+        },
+        {
+          "source_id": "https://timesofmalta.com/article/running-risen-unique-easter-tradition-draws-crowds-and-devotion.1108477",
+          "title": "Times of Malta, 20 April 2025",
+          "url": "https://timesofmalta.com/article/running-risen-unique-easter-tradition-draws-crowds-and-devotion.1108477"
+        }
+      ],
+      "source_ids": [
+        "https://publicservice.gov.mt/en/news/easter-in-gozo-a-celebration-of-faith-culture-and-community",
+        "https://timesofmalta.com/article/running-risen-unique-easter-tradition-draws-crowds-and-devotion.1108477"
+      ],
+      "related_weiser_groups": [],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CUST-PENTECOST-POLISH-GREENERY",
+      "source_master_id": "CUST-PENTECOST-POLISH-GREENERY",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "Pentecost greenery decorating Polish homes",
+        "fr": "Décorations végétales de Pentecôte dans les foyers polonais"
+      },
+      "description": {
+        "en": "Polish regional sources record decorating homes, gates and churches with spring branches at Zielone Świątki. The Polish National Archives captions a 1930 photograph of such house decoration near Kraków. Protective magical claims are not Catholic teaching.",
+        "fr": "Les sources régionales polonaises signalent l’ornement des maisons, portails et églises avec des rameaux à la Pentecôte. Les Archives nationales légendent une photographie de 1930 prise près de Cracovie. Les pouvoirs magiques prêtés aux branches ne sont pas une doctrine catholique."
+      },
+      "history": {
+        "en": "Polish regional sources record decorating homes, gates and churches with spring branches at Zielone Świątki. The Polish National Archives captions a 1930 photograph of such house decoration near Kraków. Protective magical claims are not Catholic teaching.",
+        "fr": "Les sources régionales polonaises signalent l’ornement des maisons, portails et églises avec des rameaux à la Pentecôte. Les Archives nationales légendent une photographie de 1930 prise près de Cracovie. Les pouvoirs magiques prêtés aux branches ne sont pas une doctrine catholique."
+      },
+      "meaning": {
+        "en": "An optional regional sign of Pentecost joy, never a required Roman liturgical decoration.",
+        "fr": "Un signe régional libre de la joie de Pentecôte, et non une décoration liturgique romaine imposée."
+      },
+      "optional_practice": {
+        "en": "Optional household greenery may recall Pentecost, using sustainably obtained branches without attributing magical powers.",
+        "fr": "Un feuillage domestique facultatif peut rappeler la Pentecôte, avec des rameaux prélevés sans dommage et sans leur prêter de pouvoir magique."
+      },
+      "caution": {
+        "en": "A local Polish custom is not a universal Roman Pentecost decoration or a priestly blessing.",
+        "fr": "Une coutume polonaise locale n’est ni une décoration liturgique romaine universelle ni une bénédiction sacerdotale."
+      },
+      "calendar_context": {
+        "type": "MOVABLE_PENTECOST",
+        "month_day": null,
+        "range_end": null,
+        "source_occasion": "Pentecost, movable feast resolved by Calendar",
+        "local_event_required": false,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "PL-NAC-PENTECOST-1930",
+          "title": "Polish National Archives, centenary photo album pp.132–133",
+          "url": "https://www.nac.gov.pl/wp-content/uploads/2019/11/2018_11_26-100x100-album-maly.pdf"
+        },
+        {
+          "source_id": "PL-FORESTRY-PENTECOST",
+          "title": "Polish State Forests, Zielone Świątki",
+          "url": "https://www.lasy.gov.pl/pl/edukacja/blogi/blog-lesniczego/zielone-swiatki-2013-nie-zapominajmy-o-nich"
+        }
+      ],
+      "source_ids": [
+        "PL-NAC-PENTECOST-1930",
+        "PL-FORESTRY-PENTECOST"
+      ],
+      "related_weiser_groups": [
+        "CAT-WEISER-B-057"
+      ],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CUST-ASSUMPTION-TIVOLI-INCHINATA",
+      "source_master_id": "CUST-ASSUMPTION-TIVOLI-INCHINATA",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "Tivoli's Inchinata procession",
+        "fr": "La procession de l’Inchinata à Tivoli"
+      },
+      "description": {
+        "en": "At Tivoli, an image of the Risen Christ is carried from the cathedral on Assumption Eve to meet an image of Our Lady near Santa Maria Maggiore. The processional images make a ceremonial bow. The Diocese of Tivoli and the municipal authority attest the celebration; the medieval chronology is complex and claims of a fifth-century foundation remain devotional legend.",
+        "fr": "À Tivoli, la veille de l’Assomption, l’image du Christ ressuscité quitte la cathédrale en procession pour rencontrer celle de Notre-Dame près de Sainte-Marie-Majeure. Les deux images accomplissent un salut rituel. Le diocèse et la commune décrivent cette célébration ; les récits d’une fondation au Ve siècle restent légendaires."
+      },
+      "history": {
+        "en": "At Tivoli, an image of the Risen Christ is carried from the cathedral on Assumption Eve to meet an image of Our Lady near Santa Maria Maggiore. The processional images make a ceremonial bow. The Diocese of Tivoli and the municipal authority attest the celebration; the medieval chronology is complex and claims of a fifth-century foundation remain devotional legend.",
+        "fr": "À Tivoli, la veille de l’Assomption, l’image du Christ ressuscité quitte la cathédrale en procession pour rencontrer celle de Notre-Dame près de Sainte-Marie-Majeure. Les deux images accomplissent un salut rituel. Le diocèse et la commune décrivent cette célébration ; les récits d’une fondation au Ve siècle restent légendaires."
+      },
+      "meaning": {
+        "en": "A local dramatic expression of faith in Mary's Assumption and the triumph of the Risen Christ.",
+        "fr": "Une expression locale de foi en l’Assomption de Marie et en la victoire du Christ ressuscité."
+      },
+      "optional_practice": {
+        "en": "Attend only if the diocese/parish actually announces its traditional procession; no universal processional route is implied.",
+        "fr": "N’y participer que si le diocèse ou la paroisse annonce réellement la procession traditionnelle ; aucun parcours universel ne s’en déduit."
+      },
+      "caution": {
+        "en": "Separate this distinctive Tivoli icon procession from a generic Assumption procession and from the Roman Mass rite.",
+        "fr": "Distinguer la rencontre d’icônes propre à Tivoli d’une procession mariale générique et des rites de la messe romaine."
+      },
+      "calendar_context": {
+        "type": "FIXED_CONTEXT_RANGE",
+        "month_day": "08-14",
+        "range_end": "08-15",
+        "source_occasion": "Evening 14 August and morning 15 August; Tivoli local Assumption observance",
+        "local_event_required": true,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "IT-TIVOLI-DIOCESE-2026",
+          "title": "Diocese of Tivoli and Palestrina",
+          "url": "https://diocesitivoliepalestrina.it/festa-dellinchinata-2026/"
+        },
+        {
+          "source_id": "IT-TIVOLI-MUNICIPAL",
+          "title": "Comune di Tivoli",
+          "url": "https://www.comune.tivoli.rm.it/informazione/le-manifestazioni-ricorrenti/"
+        }
+      ],
+      "source_ids": [
+        "IT-TIVOLI-DIOCESE-2026",
+        "IT-TIVOLI-MUNICIPAL"
+      ],
+      "related_weiser_groups": [],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CUST-ASSUMPTION-SASSARI-CANDELIERI",
+      "source_master_id": "CUST-ASSUMPTION-SASSARI-CANDELIERI",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "Faradda di li Candareri — Sassari's Marian offering procession",
+        "fr": "Faradda di li Candareri — procession votive mariale de Sassari"
+      },
+      "description": {
+        "en": "On 14 August the guilds of Sassari carry large decorated wooden candle structures in a Marian votive procession known as the Faradda. The route culminates at Santa Maria di Betlem, recalling a civic vow attributed to deliverance from plague. Modern municipal and Italian heritage records describe the living local celebration.",
+        "fr": "Le 14 août, les corporations de Sassari portent de grands cierges votifs en bois décoré lors de la Faradda, procession mariale qui rejoint Santa Maria di Betlem. Elle renouvelle un vœu civique lié, dans la tradition locale, à la délivrance de la peste. Les sources municipales et patrimoniales italiennes décrivent cette célébration toujours vivante."
+      },
+      "history": {
+        "en": "On 14 August the guilds of Sassari carry large decorated wooden candle structures in a Marian votive procession known as the Faradda. The route culminates at Santa Maria di Betlem, recalling a civic vow attributed to deliverance from plague. Modern municipal and Italian heritage records describe the living local celebration.",
+        "fr": "Le 14 août, les corporations de Sassari portent de grands cierges votifs en bois décoré lors de la Faradda, procession mariale qui rejoint Santa Maria di Betlem. Elle renouvelle un vœu civique lié, dans la tradition locale, à la délivrance de la peste. Les sources municipales et patrimoniales italiennes décrivent cette célébration toujours vivante."
+      },
+      "meaning": {
+        "en": "A local civic and Catholic expression of thanksgiving and honour to Our Lady of the Assumption.",
+        "fr": "Une action de grâce locale, civique et catholique, en l’honneur de Notre-Dame de l’Assomption."
+      },
+      "optional_practice": {
+        "en": "Discover or attend Sassari's announced local procession; no other parish celebration is inferred.",
+        "fr": "Découvrir ou suivre la procession locale annoncée à Sassari, sans supposer qu’elle existe dans d’autres paroisses."
+      },
+      "caution": {
+        "en": "The guild procession is distinct from a generic Assumption statue procession, a candle blessing and the Roman liturgy.",
+        "fr": "La procession des corporations se distingue d’une procession mariale générique, d’une bénédiction des cierges et de la liturgie romaine."
+      },
+      "calendar_context": {
+        "type": "FIXED_CONTEXT_DAY",
+        "month_day": "08-14",
+        "range_end": null,
+        "source_occasion": "14 August local procession associated with Assumption, not a universal Marian vigil rite",
+        "local_event_required": true,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "IT-SASSARI-FARADDA-2026",
+          "title": "Comune di Sassari, Faradda 2026",
+          "url": "https://www.comune.sassari.it/it/novita/notizia/Candelieri-2026-segui-tutti-gli-aggiornamenti/"
+        },
+        {
+          "source_id": "IT-MIC-FARADDA",
+          "title": "Italian Ministry of Culture heritage registry",
+          "url": "https://idese.cultura.gov.it/en/place/discesa-dei-candelieri-la-faradda/"
+        }
+      ],
+      "source_ids": [
+        "IT-SASSARI-FARADDA-2026",
+        "IT-MIC-FARADDA"
+      ],
+      "related_weiser_groups": [],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    },
+    {
+      "candidate_id": "CUST-MARIAN-BAVARIAN-FRAUENDREISSIGER",
+      "source_master_id": "CUST-MARIAN-BAVARIAN-FRAUENDREISSIGER",
+      "status": "RESEARCH_CANDIDATE_NOT_PUBLISHED",
+      "title": {
+        "en": "Frauendreißiger — thirty days of Marian devotion",
+        "fr": "Frauendreißiger — trente jours de dévotion mariale"
+      },
+      "description": {
+        "en": "Bavarian Catholic shrines observe a thirty-day period of Marian devotion beginning with the Assumption on 15 August and continuing to the Exaltation of the Holy Cross on 14 September. The Archdiocese of Munich and the Maria Thalkirchen shrine document Masses, Rosaries and devotions during this period. It is a local devotional programme, not a new season of the Roman calendar.",
+        "fr": "En Bavière, certains sanctuaires catholiques consacrent trente jours à la dévotion mariale de l’Assomption, le 15 août, à l’Exaltation de la Sainte Croix, le 14 septembre. L’archidiocèse de Munich et le sanctuaire de Maria Thalkirchen attestent messes, chapelets et dévotions. Il s’agit d’un programme local et non d’un temps supplémentaire du calendrier romain."
+      },
+      "history": {
+        "en": "Bavarian Catholic shrines observe a thirty-day period of Marian devotion beginning with the Assumption on 15 August and continuing to the Exaltation of the Holy Cross on 14 September. The Archdiocese of Munich and the Maria Thalkirchen shrine document Masses, Rosaries and devotions during this period. It is a local devotional programme, not a new season of the Roman calendar.",
+        "fr": "En Bavière, certains sanctuaires catholiques consacrent trente jours à la dévotion mariale de l’Assomption, le 15 août, à l’Exaltation de la Sainte Croix, le 14 septembre. L’archidiocèse de Munich et le sanctuaire de Maria Thalkirchen attestent messes, chapelets et dévotions. Il s’agit d’un programme local et non d’un temps supplémentaire du calendrier romain."
+      },
+      "meaning": {
+        "en": "Sustained Marian prayer and pilgrimage after the feast of the Assumption.",
+        "fr": "Prière mariale suivie et pèlerinage dans le prolongement de l’Assomption."
+      },
+      "optional_practice": {
+        "en": "Consult an actual shrine calendar for services; private prayer can remain voluntary without inventing indulgences.",
+        "fr": "Consulter le programme réel du sanctuaire ; la prière privée reste libre, sans promettre d’indulgence non vérifiée."
+      },
+      "caution": {
+        "en": "Never apply contemporary shrine Mass propers or indulgence terms mechanically to the 1962 calendar.",
+        "fr": "Ne pas transposer automatiquement les formulaires des messes ou conditions d’indulgences actuels au calendrier de 1962."
+      },
+      "calendar_context": {
+        "type": "FIXED_CONTEXT_RANGE",
+        "month_day": "08-15",
+        "range_end": "09-14",
+        "source_occasion": "15 August–14 September in cited Bavarian diocesan and pilgrimage accounts",
+        "local_event_required": true,
+        "local_event_confirmed": false,
+        "region_conditional": true,
+        "original_1962_feast_resolver_owns_date": true,
+        "rank_or_mass_rubric_implied": false,
+        "user_notification_enabled": false,
+        "calendar_event_automatically_published": false,
+        "time_type": "HISTORICAL_OR_SEASONAL_CONTEXT_NOT_LOCAL_EVENT_SCHEDULE"
+      },
+      "geography": [],
+      "original_source_claims": [
+        {
+          "source_id": "DE-MUNICH-FRAUENDREISSIGER",
+          "title": "Archdiocese of Munich and Freising",
+          "url": "https://www2.erzbistum-muenchen.de/news/bistum/Gottesdienste-und-Kraeutersegnungen-zu-Mariae-Himmelfahrt-48941.news"
+        },
+        {
+          "source_id": "DE-MARIA-THALKIRCHEN",
+          "title": "Maria Thalkirchen pilgrimage church",
+          "url": "https://www.mariathalkirchen.de/index.php?id=164"
+        }
+      ],
+      "source_ids": [
+        "DE-MUNICH-FRAUENDREISSIGER",
+        "DE-MARIA-THALKIRCHEN"
+      ],
+      "related_weiser_groups": [],
+      "excluded_false_owner_claims": [],
+      "editorial": {
+        "all_research_observations_retained": true,
+        "bilingual_copy_present": true,
+        "source_rechecked_from_original_this_pass": false,
+        "liturgical_authority_confirmed": false,
+        "indulgence_work_confirmed": false,
+        "identity_approved": false,
+        "ready_for_publication": false
+      }
+    }
+  ]
+}
