@@ -51,7 +51,8 @@ class BulkPhotoStageTests(unittest.TestCase):
         self.assertEqual(result[0]["subject_identity"],"UNVERIFIED_DISCOVERY_MATCH")
         self.assertIn(result[0]["site_verification"],
                       {"VENUE_ONLY_RESEARCH_HOLD","CONFIRMED_DIRECTORY_PLACE_LINK"})
-        self.assertEqual(mod.candidate_selection(x,"interior"),[])
+        with self.assertRaisesRegex(ValueError,"Wrong source wave"):
+            mod.candidate_selection(x,"interior")
         x["wave"]="interior"
         interior=dict(x["venues"][0]["categories"]["EXTERIOR"][0],
                       category_requested="INTERIOR")
