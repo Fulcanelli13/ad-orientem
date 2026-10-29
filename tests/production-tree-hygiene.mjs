@@ -147,6 +147,28 @@ for(const name of workflows){
     assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
     assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
     assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+  }else if(name==="directory-p85-worldwide-holds.yml"){
+    // One main-merge-triggered, metadata-only campaign; sole writer may
+    // create the fixed research archive, never mutate main or app media.
+    assert.match(source,/name: P85 one global 7400-held-photos current Commons evidence recovery/);
+    assert.match(source,/push:\s*\n\s*branches: \[main\]/);
+    assert.match(source,/pull_request:\s*\n\s*branches: \[main\]/);
+    assert.match(source,/permissions:\s*\n\s*contents:\s*read/);
+    assert.match(source,/consolidate-archive-once:[\s\S]*?permissions:\s*\n\s*contents:\s*write/);
+    assert.match(source,/github\.event_name == 'push'/);
+    assert.match(source,/github\.ref == 'refs\/heads\/main'/);
+    assert.match(source,/max-parallel:\s*3/);
+    assert.match(source,/shard: \[0, 1, 2, 3, 4, 5\]/);
+    assert.match(source,/p85-worldwide-7400-holds-enrichment\.py/);
+    assert.match(source,/all_holds_accounted.*7400/);
+    assert.match(source,/original_bytes_downloaded/);
+    assert.match(source,/sha256sum -c SHA256SUMS/);
+    assert.match(source,/git push origin "HEAD:refs\/heads\/\$branch"/);
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1);
+    assert.doesNotMatch(source,/schedule:\s*\n|workflow_dispatch:/);
+    assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+    assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
   }else if(name==="branch-hygiene.yml"){
     // Merged-branch ref deletion is deliberately distinct from mutating app
     // source or restoring old production builds. Enforce the exact safeguards,
