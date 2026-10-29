@@ -38,8 +38,16 @@ export function frenchSundayRankGuardCandidate(original){
 }
 const fold=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
   .toLowerCase().replaceAll("æ","ae").replaceAll("œ","oe");
-function sourceFeatures(raw,language){
-  const text=fold(raw).replace(/<[^>]+>/g," ").replace(/&nbsp;/g," ");
+export function sourceFeatures(raw,language){
+  // The generator styles large red collect initials in a separate inline
+  // tag. Removing each tag with a SPACE would turn <span>P</span>ardonnez
+  // into "P ardonnez" and falsely report the prayer missing. Preserve
+  // inline word boundaries; separate only structural/block/BR tags.
+  const text=fold(raw)
+    .replace(/<br\\s*\\/?>|<\\/(?:p|div|td|tr|h[1-6])>/g,"\\n")
+    .replace(/<[^>]+>/g,"")
+    .replace(/&nbsp;|&#160;|&#x[a-f0-9]+;/gi," ")
+    .replace(/[ \\t]+/g," ");
   const antiphon=language==="fr"?/jesus\s*,?\s*se retournant/.test(text):
     language==="en"?/but jesus turned him about/.test(text):
     /at (?:jesus|iesus) conversus/.test(text);
