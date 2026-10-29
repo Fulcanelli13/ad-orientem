@@ -1,0 +1,240 @@
+{
+  "schema": "AO_B11_COMMONS_MEDIA_SOURCE_PROBE_V1",
+  "date": "2026-10-29",
+  "tests": [
+    {
+      "params": {
+        "action": "query",
+        "list": "categorymembers",
+        "cmtitle": "Category:Baroque religious paintings",
+        "cmtype": "file|subcat",
+        "cmlimit": 25,
+        "format": "json"
+      },
+      "keys": [
+        "batchcomplete",
+        "continue",
+        "query"
+      ],
+      "continue": {
+        "cmcontinue": "file|444945474f2056454cc3815a5155455a203030372e4a5047|159922",
+        "continue": "-||"
+      },
+      "members": [
+        {
+          "pageid": 118368676,
+          "ns": 6,
+          "title": "File:(Agen) Salomon sacrifiant aux idoles - Giovani Battista Lama - Musée des Beaux-Arts d'Agen.jpg"
+        },
+        {
+          "pageid": 67328576,
+          "ns": 6,
+          "title": "File:Peter Paul Rubens - Christ on the Sea of Galilee.jpg"
+        },
+        {
+          "pageid": 80527754,
+          "ns": 6,
+          "title": "File:Daniël Seghers and Simon de Vos - A garland of flowers surrounding a medallion of the Virgin in prayer.jpg"
+        },
+        {
+          "pageid": 80523270,
+          "ns": 6,
+          "title": "File:Simon de Vos - Massacre of the Innocents.jpg"
+        },
+        {
+          "pageid": 19858889,
+          "ns": 6,
+          "title": "File:Saint Agnes.JPG"
+        },
+        {
+          "pageid": 80519468,
+          "ns": 6,
+          "title": "File:Simon de Vos - The Adoration of the Magi.jpeg"
+        },
+        {
+          "pageid": 78890102,
+          "ns": 6,
+          "title": "File:1691 Willmann Landschaft mit dem Traum Jakobs anagoria.jpg"
+        },
+        {
+          "pageid": 4104296,
+          "ns": 6,
+          "title": "File:230718 88-olinda-maspe.jpg"
+        },
+        {
+          "pageid": 2776346,
+          "ns": 6,
+          "title": "File:8630 - Milano - San Marco - Quadro della navata sinistra - Foto Giovanni Dall'Orto 14-Apr-2007.jpg"
+        },
+        {
+          "pageid": 230049,
+          "ns": 6,
+          "title": "File:Anthony Abbot by Zurbaran.jpeg"
+        }
+      ]
+    },
+    {
+      "params": {
+        "action": "query",
+        "generator": "categorymembers",
+        "gcmtitle": "Category:Religious paintings by Peter Paul Rubens",
+        "gcmtype": "file",
+        "gcmlimit": 4,
+        "prop": "imageinfo",
+        "iiprop": "url|size|extmetadata|mime",
+        "iiurlwidth": 900,
+        "format": "json",
+        "formatversion": 2
+      },
+      "keys": [
+        "batchcomplete",
+        "continue",
+        "query"
+      ],
+      "continue": {
+        "gcmcontinue": "file|31363235303030310a31332e20434f524f4e4154494f4e204f46205448452056495247494e205045544552205041554c20525542454e532e4a5047|65493548",
+        "continue": "gcmcontinue||"
+      },
+      "examples": [
+        {
+          "title": "File:Rubens Praying Hands.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Rubens_Praying_Hands.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Rubens_Praying_Hands.jpg/960px-Rubens_Praying_Hands.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2684,
+          "height": 1744,
+          "metadata": {
+            "ObjectName": "Rubens Praying Hands",
+            "Artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Peter_Paul_Rubens\" class=\"extiw\" title=\"w:en:Peter Paul Rubens\"><span title=\"Flemish painter (1577–1640)\">Peter Paul Rubens</span></a></bdi>",
+            "ImageDescription": "<i>Praying Hands</i>",
+            "Credit": "COREL photo CD, Masters I",
+            "LicenseShortName": "Public domain",
+            "UsageTerms": "Public domain"
+          }
+        },
+        {
+          "title": "File:Rubens, Sir Peter Paul - Saints Amandus and Walburga; Saints Catherine of Alexandria and Eligius - Google Art Project.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Rubens%2C_Sir_Peter_Paul_-_Saints_Amandus_and_Walburga%3B_Saints_Catherine_of_Alexandria_and_Eligius_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Rubens%2C_Sir_Peter_Paul_-_Saints_Amandus_and_Walburga%3B_Saints_Catherine_of_Alexandria_and_Eligius_-_Google_Art_Project.jpg/960px-Rubens%2C_Sir_Peter_Paul_-_Saints_Amandus_and_Walburga%3B_Saints_Catherine_of_Alexandria_and_Eligius_-_Google_Art_Project.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 1501,
+          "height": 3817,
+          "metadata": {
+            "ObjectName": "<div class=\"fn\">\n<div style=\"font-weight:bold;display:inline-block;\"><div style=\"display:inline-block\" dir=\"ltr\" lang=\"en\"><i>Saints Amandus and Walburga; Saints Catherine of Alexandria and Eligius</i></div></div><div style=\"display: none;\">title QS:P1476,en:\"Saints Amandus and Walburga; Saints Catherine of Alexandria and Eligius\"</div><div style=\"display: none;\">label QS:Len,\"Saints Amandus and Walburga; Saints Catherine of Alexandria and Eligius\"</div></div>",
+            "Artist": "<div class=\"fn value\">\nRubens, Sir Peter Paul (1577 - 1640) – Artist<br> <a rel=\"nofollow\" class=\"external text\" href=\"http://www.googleartproject.com/artist/peter-paul-rubens/4128005/\">Details on Google Art Project</a></div>",
+            "Credit": "<a rel=\"nofollow\" class=\"external text\" href=\"//www.google.com/culturalinstitute/asset-viewer/NQHBwJkZRc--Jw\">NQHBwJkZRc--Jw at Google Cultural Institute</a> maximum zoom level",
+            "LicenseShortName": "Public domain",
+            "UsageTerms": "Public domain"
+          }
+        },
+        {
+          "title": "File:Peter Paul Rubens (1577-1640) Het dispuut - Sint-Pauluskerk (Antwerpen) 19-08-2018.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Peter_Paul_Rubens_%281577-1640%29_Het_dispuut_-_Sint-Pauluskerk_%28Antwerpen%29_19-08-2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Peter_Paul_Rubens_%281577-1640%29_Het_dispuut_-_Sint-Pauluskerk_%28Antwerpen%29_19-08-2018.jpg/960px-Peter_Paul_Rubens_%281577-1640%29_Het_dispuut_-_Sint-Pauluskerk_%28Antwerpen%29_19-08-2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2464,
+          "height": 3472,
+          "metadata": {
+            "ObjectName": "Peter Paul Rubens (1577-1640) Het dispuut - Sint-Pauluskerk (Antwerpen) 19-08-2018",
+            "ImageDescription": "This photo of <b>movable heritage</b> has been taken in the <b>Flemish Region</b>",
+            "Credit": "picture taken and uploaded by <a href=\"//commons.wikimedia.org/wiki/User:Paul_Hermans\" title=\"User:Paul Hermans\">Paul Hermans</a>",
+            "LicenseShortName": "Public domain",
+            "UsageTerms": "Public domain"
+          }
+        },
+        {
+          "title": "File:Peter Paul Rubens - The Secular Hierarchy in Adoration.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Peter_Paul_Rubens_-_The_Secular_Hierarchy_in_Adoration.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "thumburl": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Peter_Paul_Rubens_-_The_Secular_Hierarchy_in_Adoration.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "width": 707,
+          "height": 1024,
+          "metadata": {
+            "ObjectName": "<div class=\"fn\">\n<div style=\"font-weight:bold;display:inline-block;\"><div style=\"display:inline-block\" dir=\"ltr\" lang=\"en\"><i>The secular hierarchy in adoration <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q111677154#P1476\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span></i></div></div><div style=\"display: none;\">label QS:Len,\"<i>The Secular Hierarchy in Adoration</i>\"</div></div>",
+            "Artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Peter_Paul_Rubens\" class=\"extiw\" title=\"w:en:Peter Paul Rubens\"><span title=\"Flemish painter (1577–1640)\">Peter Paul Rubens</span></a></bdi>",
+            "Credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://hoogsteder.com/news/discovered-oilsketch-by-peter-paul-rubens\">https://hoogsteder.com/news/discovered-oilsketch-by-peter-paul-rubens</a>",
+            "LicenseShortName": "Public domain",
+            "UsageTerms": "Public domain"
+          }
+        }
+      ]
+    },
+    {
+      "params": {
+        "action": "query",
+        "generator": "categorymembers",
+        "gcmtitle": "Category:Baroque religious paintings",
+        "gcmtype": "file",
+        "gcmlimit": 4,
+        "prop": "imageinfo",
+        "iiprop": "url|size|extmetadata|mime",
+        "iiurlwidth": 900,
+        "format": "json",
+        "formatversion": 2
+      },
+      "keys": [
+        "batchcomplete",
+        "continue",
+        "query"
+      ],
+      "continue": {
+        "gcmcontinue": "file|31363335410a5341494e542041474e45532e4a5047|19858889",
+        "continue": "gcmcontinue||"
+      },
+      "examples": [
+        {
+          "title": "File:Peter Paul Rubens - Christ on the Sea of Galilee.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Peter_Paul_Rubens_-_Christ_on_the_Sea_of_Galilee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Peter_Paul_Rubens_-_Christ_on_the_Sea_of_Galilee.jpg/960px-Peter_Paul_Rubens_-_Christ_on_the_Sea_of_Galilee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 1000,
+          "height": 738,
+          "metadata": {
+            "ObjectName": "<i>Christ on the Sea of Galilee</i>",
+            "Artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Peter_Paul_Rubens\" class=\"extiw\" title=\"w:en:Peter Paul Rubens\"><span title=\"Flemish painter (1577–1640)\">Peter Paul Rubens</span></a></bdi>",
+            "Credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://skd-online-collection.skd.museum/Details/Index/401567\">https://skd-online-collection.skd.museum/Details/Index/401567</a>",
+            "LicenseShortName": "Public domain",
+            "UsageTerms": "Public domain"
+          }
+        },
+        {
+          "title": "File:Simon de Vos - Massacre of the Innocents.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Simon_de_Vos_-_Massacre_of_the_Innocents.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Simon_de_Vos_-_Massacre_of_the_Innocents.jpg/960px-Simon_de_Vos_-_Massacre_of_the_Innocents.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2560,
+          "height": 2563,
+          "metadata": {
+            "ObjectName": "<i>Massacre of the Innocents</i>",
+            "Artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Simon_de_Vos\" class=\"extiw\" title=\"w:en:Simon de Vos\"><span title=\"Flemish painter (1603-1676)\">Simon de Vos</span></a></bdi>",
+            "Credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.lempertz.com/en/catalogues/lot/1029-2/1170-simon-de-vos.html\">https://www.lempertz.com/en/catalogues/lot/1029-2/1170-simon-de-vos.html</a>",
+            "LicenseShortName": "Public domain",
+            "UsageTerms": "Public domain"
+          }
+        },
+        {
+          "title": "File:Daniël Seghers and Simon de Vos - A garland of flowers surrounding a medallion of the Virgin in prayer.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Dani%C3%ABl_Seghers_and_Simon_de_Vos_-_A_garland_of_flowers_surrounding_a_medallion_of_the_Virgin_in_prayer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Dani%C3%ABl_Seghers_and_Simon_de_Vos_-_A_garland_of_flowers_surrounding_a_medallion_of_the_Virgin_in_prayer.jpg/960px-Dani%C3%ABl_Seghers_and_Simon_de_Vos_-_A_garland_of_flowers_surrounding_a_medallion_of_the_Virgin_in_prayer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2404,
+          "height": 3000,
+          "metadata": {
+            "ObjectName": "<i>A garland of flowers surrounding a medallion of the Virgin in prayer</i>",
+            "Artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Simon_de_Vos\" class=\"extiw\" title=\"w:en:Simon de Vos\"><span title=\"Flemish painter (1603-1676)\">Simon de Vos</span></a></bdi>",
+            "Credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.lempertz.com/en/catalogues/lot/1076-1/1053-daniel-segherssimon-de-vos.html\">https://www.lempertz.com/en/catalogues/lot/1076-1/1053-daniel-segherssimon-de-vos.html</a>",
+            "LicenseShortName": "Public domain",
+            "UsageTerms": "Public domain"
+          }
+        },
+        {
+          "title": "File:(Agen) Salomon sacrifiant aux idoles - Giovani Battista Lama - Musée des Beaux-Arts d'Agen.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/%28Agen%29_Salomon_sacrifiant_aux_idoles_-_Giovani_Battista_Lama_-_Mus%C3%A9e_des_Beaux-Arts_d%27Agen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/%28Agen%29_Salomon_sacrifiant_aux_idoles_-_Giovani_Battista_Lama_-_Mus%C3%A9e_des_Beaux-Arts_d%27Agen.jpg/960px-%28Agen%29_Salomon_sacrifiant_aux_idoles_-_Giovani_Battista_Lama_-_Mus%C3%A9e_des_Beaux-Arts_d%27Agen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 6126,
+          "height": 5333,
+          "metadata": {
+            "ObjectName": "(Agen) Salomon sacrifiant aux idoles - Giovani Battista Lama - Musée des Beaux-Arts d'Agen",
+            "Credit": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+            "Artist": "<a href=\"//commons.wikimedia.org/wiki/User:Archaeodontosaurus\" title=\"User:Archaeodontosaurus\">Didier Descouens</a>",
+            "LicenseShortName": "Public domain",
+            "UsageTerms": "Public domain"
+          }
+        }
+      ]
+    }
+  ]
+}
