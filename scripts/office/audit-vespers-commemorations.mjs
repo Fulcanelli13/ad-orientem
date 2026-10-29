@@ -8,6 +8,7 @@ import {readFileSync,writeFileSync,mkdirSync} from "node:fs";
 import {join,dirname,resolve} from "node:path";
 import {fileURLToPath} from "node:url";
 import {DIVINUM_OFFICIUM_PIN} from "../../src/app/source-transport-compat.js";
+import {collateAllSaintsVespersTranslation} from "../../src/office/vespers-translation-collation.js";
 import {OFFICE_VESPERS_COMMEMORATION_GATE,
   screenGeneratedVespersCommemorations,
   collateAllSaintsSundayVespersCommemoration} from "../../src/office/vespers-commemoration-gate.js";
@@ -26,9 +27,14 @@ export function auditRealVespersCommemorations({main,advent,souls}={}){
   });
   const sundayComparisons=["2026-10-31","2026-11-01"].map(date=>
     collateAllSaintsSundayVespersCommemoration(sourceDocuments.get(date)));
+  const translations=["2026-10-31","2026-11-01"].flatMap(date=>
+    ["en","fr"].map(language=>{
+      const translated=JSON.parse(readFileSync(join(main,date,"vespers",language+".research.json"),"utf8"));
+      return collateAllSaintsVespersTranslation(translated);
+    }));
   return Object.freeze({
     schema:"ao.office.vespers-commemoration-screening.v1",
-    sundayComparisons,
+    sundayComparisons,translations,
     sourceRevision:DIVINUM_OFFICIUM_PIN,
     gate:OFFICE_VESPERS_COMMEMORATION_GATE,
     sampleDates:cases.length,cases,
@@ -61,6 +67,12 @@ function mainFn(){
       sourceMatched:c.sourceStructureMatches,
       originalPrinted1961Certified:c.original1961BreviaryPrintedProperCertified
     })),
+    translations:report.translations.map(x=>({
+      date:x.date,language:x.language,heading:x.sourceHeadingCount,
+      antiphon:x.antiphonSourceIncipitMatched,
+      collect:x.sundayCollectSourceIncipitMatched,
+      ordered:x.componentOrderMatched,reason:x.reason
+    })),
     certified:report.independentlyVerifiedOfficeCommemorations,published:report.published
   }));
   // These two specific Latin source triplets have now been checked
@@ -72,6 +84,10 @@ function mainFn(){
       c.original1961BreviaryPrintedProperCertified!==false||
       c.canPublish!==false||c.published!==0))
     throw Error("OFFICE_VESPERS_SUNDAY_COMM_EXACT_SOURCE_MISMATCH");
+  if(report.translations.length!==4||report.translations.some(x=>
+    x.published!==0||x.translationPublicationAuthorized!==false||
+    x.independentPrintedTranslationCertified!==false))
+    throw Error("OFFICE_VESPERS_VERNACULAR_RESEARCH_GATE_DRIFT");
   if(report.sampleDates!==5||report.cases.some(c=>
       c.absenceOfHeadingProvesNoCommemoration!==false||
       c.printAndLocalOrdoReviewRequired!==true)||report.published!==0)
