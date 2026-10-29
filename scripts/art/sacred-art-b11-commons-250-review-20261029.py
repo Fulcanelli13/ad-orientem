@@ -248,7 +248,7 @@ def gallery(rows,digest):
  assert "batchId:'B11'" in src and "const PAGE_SIZE=50;" in src
  HTML.write_text(src,encoding='utf8')
 def main():
- oldIDs,oldWorks,previous=previous()
+ oldIDs,oldWorks,priorBreakdown=previous()
  cards=[];categoryQA={}
  for i,c in enumerate(CATEGORIES):
   rs,stat=image_cards(c,maxPages=4)
