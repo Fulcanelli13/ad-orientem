@@ -8,6 +8,8 @@ sources=[
  ('flemish-sets','https://datahub.vlaamsekunstcollectie.be/oai/?verb=ListSets','xml'),
  ('flemish-formats','https://datahub.vlaamsekunstcollectie.be/oai/?verb=ListMetadataFormats','xml'),
  ('flemish-objects','https://datahub.vlaamsekunstcollectie.be/oai/?verb=ListRecords&metadataPrefix=oai_lido','xml'),
+ ('kmska-exact','https://datahub.vlaamsekunstcollectie.be/oai/?verb=GetRecord&metadataPrefix=oai_lido&identifier=oai%3Adatahub.vlaamsekunstcollectie.be%3Akmska.be%3Aah3b99','xml'),
+ ('kmska-set','https://datahub.vlaamsekunstcollectie.be/oai/?verb=ListRecords&metadataPrefix=oai_lido&set=institution%3Akmska','xml'),
  ('cleveland','https://openaccess-api.clevelandart.org/api/artworks/?q=annunciation&cc0&has_image=1&limit=3','json')]
 def tag(x):return x.tag.split('}')[-1]
 result=[]
@@ -32,6 +34,7 @@ for name,url,format in sources:
      row['recordSample'].append({'identifier':[x.text for x in rec.iter() if tag(x) in ('identifier','lidoRecID','recordID')][:5],
         'institutions':[x.text for x in rec.iter() if tag(x) in ('legalBodyName','repositoryName','appellationValue') and x.text][:12],
         'headerSets':[x.text for x in rec.iter() if tag(x)=='setSpec'][:5]})
+    row['oaiErrors']=[{'code':z.attrib.get('code'),'message':z.text} for z in root.iter() if tag(z)=='error']
   else:
    o=json.loads(data)
    row['info']=o.get('info');row['artworks']=[{'id':x.get('id'),'title':x.get('title'),
