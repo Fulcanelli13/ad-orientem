@@ -1,0 +1,38 @@
+name: P74 approved Place gallery binary integrity
+on:
+  pull_request:
+    branches:
+      - research/p73-curated-place-gallery-bundle-20261029
+    paths:
+      - 'assets/approved/place-gallery/**'
+      - 'data/geography/approved-place-gallery.v1.json'
+      - 'data/geography/research/p73-curated-place-gallery-bundle.v1.json'
+      - 'tools/acquire-curated-place-gallery-p73.py'
+      - 'src/find/place-profiles.js'
+      - 'tests/explore-p73-curated-place-gallery.mjs'
+      - '.github/workflows/p74-curated-gallery-binary-integrity.yml'
+permissions:
+  contents: read
+jobs:
+  exact-hashes-and-place-joins:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install exact version of the lossless image decoder
+        run: python -m pip install --disable-pip-version-check 'Pillow==11.3.0'
+      - name: Verify six original-source SHA1 identities and local WebP SHA256 bytes
+        run: |
+          python tools/acquire-curated-place-gallery-p73.py --check-manifest
+          python tools/acquire-curated-place-gallery-p73.py --verify-committed
+      - name: Exercise strict Creative Commons and Place/relic scope gates
+        run: |
+          node tests/explore-p73-curated-place-gallery.mjs
+          node tests/explore-p68-sacred-object-photo-binding.mjs
+          node tests/explore-r69-multi-place-gallery.mjs
