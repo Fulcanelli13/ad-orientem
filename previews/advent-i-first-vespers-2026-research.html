@@ -17,7 +17,7 @@ header{border-bottom:1px solid var(--ao-rule);padding:18px clamp(14px,4vw,40px);
 .progress{max-width:960px;margin:14px auto 0;height:3px;background:#27303a;border-radius:10px;overflow:hidden}
 .progress>div{height:100%;width:0;background:var(--ao-liturgical-accent);transition:width .25s}
 main{max-width:960px;padding:32px clamp(16px,4vw,40px) 80px;margin:auto}
-.eyebrow{font:500 12px/1.3 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.13em;color:var(--ao-liturgical-accent)}
+.eyebrow{font:500 12px/1.3 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.13em;color:var(--ao-liturgical-accent)}.beta-selector{display:flex;gap:14px;flex-wrap:wrap;align-items:end;margin:20px 0 22px;padding:15px;border:1px solid var(--ao-rule);border-radius:12px;background:var(--ao-surface-2)}.beta-selector label{font:13px/1.5 system-ui,sans-serif;display:flex;flex-direction:column;gap:7px;color:var(--ao-text-muted);flex:1;min-width:160px}.beta-selector input,.beta-selector select{min-height:44px;padding:9px 12px;border:1px solid var(--ao-liturgical-border);background:var(--ao-surface-1);color:var(--ao-text-primary);border-radius:9px;font:16px system-ui,sans-serif;max-width:100%}.beta-note{font:12px/1.5 system-ui,sans-serif;color:var(--ao-text-muted);margin:0}
 h1{font-size:clamp(37px,7vw,58px);font-weight:400;line-height:1.04;letter-spacing:-.02em;margin:10px 0 8px}
 .subtitle{font-size:18px;color:var(--ao-text-muted);margin:0 0 24px}
 .status{font:14px/1.5 system-ui,sans-serif;padding:14px 16px;border:1px solid var(--ao-rule);border-radius:var(--ao-card-radius);background:var(--ao-surface-2);color:var(--ao-text-muted);margin:24px 0}
@@ -47,8 +47,26 @@ code{font:12px ui-monospace,monospace;color:#bbb}
 <header><div class="top"><div class="brand">Ad Orientem · Divine Office</div><div class="guard">Research preview · not published</div></div><div class="progress"><div id="bar"></div></div></header>
 <main>
 <div class="eyebrow">Roman Breviary · 1960 rubrics · Universal calendar</div>
-<h1>First Vespers</h1>
-<p class="subtitle">First Sunday of Advent · Saturday evening, 28 November 2026</p>
+<h1 id="office-title">First Vespers</h1>
+<p class="subtitle" id="office-subtitle">First Sunday of Advent · Saturday evening, 28 November 2026</p>
+<div class="beta-selector" role="group" aria-label="Office date and Hour">
+  <label for="office-date">Civil date
+    <input id="office-date" type="date" value="2026-11-28" min="1900-01-01" max="2100-12-31">
+  </label>
+  <label for="office-hour">Canonical Hour
+    <select id="office-hour">
+      <option value="MATINS">Matins</option>
+      <option value="LAUDS">Lauds</option>
+      <option value="PRIME">Prime</option>
+      <option value="TERCE">Terce</option>
+      <option value="SEXT">Sext</option>
+      <option value="NONE">None</option>
+      <option value="VESPERS" selected>Vespers</option>
+      <option value="COMPLINE">Compline</option>
+    </select>
+  </label>
+  <p class="beta-note">Only fully assembled research pilots can be opened. Other dates and Hours display their actual availability; no substitute Office is generated.</p>
+</div>
 <div id="status" class="status" role="status" aria-live="polite">Reading the pinned, source-owned Office components. No content is shown until all required sections have been assembled.</div>
 <div id="reader" hidden>
   <nav class="controls" aria-label="Reading controls">
@@ -75,12 +93,49 @@ import {assembleAdventI2026PrivatePreviewSession}
  from "../src/office/advent-first-vespers-preview-session.js";
 import {buildAdventI2026ReadingFocus}
  from "../src/office/advent-first-vespers-reading-focus.js";
+import {reviewOfficeBetaSelection}
+ from "../src/office/reader-beta-catalog.js";
 
 const status=document.getElementById("status");
 const reader=document.getElementById("reader");
 const bar=document.getElementById("bar");
 const card=document.getElementById("card");
 let blocks=[],frames=[],index=0,mode="fr",readingView="focus";
+const betaDate=document.getElementById("office-date");
+const betaHour=document.getElementById("office-hour");
+const betaTitle=document.getElementById("office-title");
+const betaSubtitle=document.getElementById("office-subtitle");
+const titleByHour={MATINS:"Matins",LAUDS:"Lauds",PRIME:"Prime",
+ TERCE:"Terce",SEXT:"Sext",NONE:"None",VESPERS:"Vespers",COMPLINE:"Compline"};
+function refreshBetaSelection(){
+ const review=reviewOfficeBetaSelection({date:betaDate.value,hour:betaHour.value});
+ if(review.status!=="SOURCE_FIRST_RESEARCH_PREVIEW_AVAILABLE"){
+  reader.hidden=true;
+  status.classList.remove("error");
+  status.textContent=review.reason==="INVALID_DATE_OR_CANONICAL_HOUR"?
+   "Choose a valid civil date and canonical Hour.":
+   "Not yet implemented for "+betaDate.value+" · "+
+    (titleByHour[betaHour.value]||"Unknown Hour")+
+    ". No liturgical text has been invented or substituted.";
+  betaTitle.textContent=titleByHour[betaHour.value]||"Divine Office";
+  betaSubtitle.textContent="Research preview unavailable for this selection";
+  return;
+ }
+ betaTitle.textContent=review.entry.label;
+ betaSubtitle.textContent="Saturday evening, 28 November 2026 · Universal calendar · research-only";
+ if(blocks.length&&frames.length){
+  reader.hidden=false;
+  status.classList.remove("error");
+  status.textContent="Source-first research preview available; printed edition, translation and reuse-rights approval still pending.";
+  paint();
+ }else{
+  reader.hidden=true;
+  status.textContent="Reading the exact pinned source components for the reviewed research pilot.";
+ }
+}
+betaDate.addEventListener("change",refreshBetaSelection);
+betaHour.addEventListener("change",refreshBetaSelection);
+
 const names={
  OPENING:"Opening · Deus in adjutorium",
  SEASONAL_OPENING_RESPONSE:"Alleluia",
@@ -193,6 +248,7 @@ for(const b of document.querySelectorAll("[data-view]"))b.addEventListener("clic
 document.querySelector('[data-mode="fr"]').click();
 document.getElementById("back").addEventListener("click",()=>go(-1));
 document.getElementById("next").addEventListener("click",()=>go(1));
+refreshBetaSelection();
 try{
  const witnessResponse=await fetch("../data/office/research/advent-i-2026-universal-commemoration.json",{cache:"no-store"});
  if(!witnessResponse.ok)throw Error("Advent I calendar evidence unavailable");
@@ -212,11 +268,13 @@ try{
   throw Error(focusModel.reason||"Source-preserving focus unavailable");
  blocks=result.preview.blocks;
  frames=focusModel.frames;
- status.textContent="Source preview assembled for universal-calendar solo recitation. All certification and publication gates remain closed.";
- reader.hidden=false;paint();
+ refreshBetaSelection();
 }catch(err){
- status.classList.add("error");
- status.textContent="Source preview withheld: "+String(err?.message??err)+". No partial or substitute Office text will be shown.";
+ reader.hidden=true;
+ if(reviewOfficeBetaSelection({date:betaDate.value,hour:betaHour.value}).canPreview){
+  status.classList.add("error");
+  status.textContent="Source preview withheld: "+String(err?.message??err)+". No partial or substitute Office text will be shown.";
+ }
 }
 </script>
 </body>
