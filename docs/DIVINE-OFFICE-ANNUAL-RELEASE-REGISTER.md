@@ -96,3 +96,32 @@ run another batch. No new paid services or persistent source archives.
 4. Release: only independently verified Office Hours connect to existing Calendar/Pray routes, with clear unavailable-locale behavior. Sung Vespers has a separate native-notation and rights gate and does not block text release.
 
 No further general research phases, no second Calendar, no paid services, no recurring source scrape, and no archived bulk copyrighted source. This PR does not touch the production Office, Mass or Tenebrae readers. Do not merge draft PR #1860 merely to inflate the annual capture counts.
+
+## First source-section implementation gate (research-only)
+
+`src/office/source-section-resolver.js` now provides an explicit
+`createOfficeSectionResolver({readSource})` boundary. The caller supplies an
+already parsed, same-language, exact-revision source map from the existing
+source resolver. The Office module has **no downloader, upstream checkout,
+generator, persistence adapter or calendar selection**. It can project one
+named source section for LA/EN/FR or all three languages, caches bounded
+source reads per session, and rejects missing sections, unresolved @$&
+macros, unsafe source paths, and mismatched pin/path/language provenance.
+Source formatting remains ordinary text for a downstream escaping renderer.
+
+Output is `PARSED_UNVERIFIED`: `publishable=false`, no Office
+precedence decision, no claim that similarly named translated sections
+align by paragraph, no printed-edition certification and no permissions
+clearance. This is intentionally narrower than an Office composition engine.
+
+Test with:
+
+    node --test tests/divine-office-source-section-resolver.mjs
+
+The annual-readiness workflow runs this test alongside its existing
+2026/2028 inventory checks. Next: adapt the production source resolver
+with verified pinned-source provenance, resolve inherited `@` and `$`
+references before section projection, and add an independent Office
+selection/precedence layer and representative equivalence fixtures.
+Only after those gates can structured hours be assembled. No raw annual
+capture is needed for any of these steps.
