@@ -37,6 +37,70 @@ class PhotoDiscoveryTests(unittest.TestCase):
                          "COUNTRY_NOT_ESTABLISHED")
         self.assertEqual(mod.country_signal("ZZ","Church","in Rome"),
                          "COUNTRY_NOT_EVALUATED")
+
+    def test_coordinates_and_wikidata_identity(self):
+        venue={"name":"St Benedict Church","locality":"","country":"AU",
+               "lat":-33.619096,"lng":151.0455178,"precision":"building"}
+        def entity(qid,latitude,longitude,label):
+            return {"id":qid,"labels":{"en":{"value":label}},
+                    "claims":{"P625":[{"rank":"normal","mainsnak":{"snaktype":"value",
+                        "datavalue":{"type":"globecoordinate","value":{"latitude":latitude,
+                        "longitude":longitude,"globe":"http://www.wikidata.org/entity/Q2"}}}}],
+                        "P18":[{"rank":"normal","mainsnak":{"snaktype":"value",
+                        "datavalue":{"type":"string","value":"St Benedict exterior.jpg"}}}],
+                        "P373":[{"rank":"normal","mainsnak":{"snaktype":"value",
+                        "datavalue":{"type":"string","value":"St Benedict's Church, Arcadia"}}}]}}
+        good=entity("Q12345",-33.619095,151.04552,"St Benedict Church")
+        wrong=entity("Q99999",40.0,-100.0,"St Benedict Church")
+        class Client:
+            def __init__(self,entries):
+                self.entries=entries
+            def request(self,params,endpoint=mod.API):
+                if params["action"]=="wbsearchentities":
+                    return {"search":[{"id":x} for x in self.entries]}
+                return {"entities":self.entries}
+        meta, match=mod.wikidata_photo_identity(Client({"Q12345":good,"Q99999":wrong}),venue)
+        self.assertEqual(meta["state"],"GEO_AND_NAME_CORROBORATED_RESEARCH_ONLY")
+        self.assertEqual(meta["wikidata_id"],"Q12345")
+        self.assertEqual(match["image"],"St Benedict exterior.jpg")
+        self.assertEqual(match["category"],"St Benedict's Church, Arcadia")
+        self.assertLess(meta["distance_m"],10)
+        ambiguous=entity("Q11111",-33.619095,151.04552,"St Benedict Church")
+        state, chosen=mod.wikidata_photo_identity(Client({"Q12345":good,"Q11111":ambiguous}),venue)
+        self.assertEqual(state["state"],"AMBIGUOUS_WIKIDATA_IDENTITY")
+        self.assertIsNone(chosen)
+        state,chosen=mod.wikidata_photo_identity(Client({"Q99999":wrong}),venue)
+        self.assertEqual(state["state"],"NO_GEO_NAME_CORROBORATED_IDENTITY")
+        self.assertIsNone(chosen)
+        state,chosen=mod.wikidata_photo_identity(Client({"Q12345":good}),{**venue,"lat":None})
+        self.assertEqual(state["state"],"NO_SOURCE_COORDINATES")
+        self.assertIsNone(chosen)
+        self.assertGreater(mod.geo_distance_m((0,0),(0,1)),100000)
+
+    def test_structured_categorization_and_hold(self):
+        v={"name":"St Benedict Church","locality":"","country":"AU",
+           "lat":-33.619096,"lng":151.0455178,"precision":"building"}
+        class Client:
+            def request(self,params,endpoint=mod.API):
+                if params["action"]=="wbsearchentities":
+                    return {"search":[{"id":"Q12345"}]}
+                if params["action"]=="wbgetentities":
+                    return {"entities":{"Q12345":{"labels":{"en":{"value":"St Benedict Church"}},
+                    "claims":{"P625":[{"mainsnak":{"snaktype":"value","datavalue":
+                    {"type":"globecoordinate","value":{"latitude":v["lat"],"longitude":v["lng"]}}}}],
+                    "P18":[{"mainsnak":{"snaktype":"value","datavalue":{"type":"string","value":"St Benedict exterior.jpg"}}}]}}}}
+                assert params["action"]=="query"
+                return {"query":{"pages":[{"title":"File:St Benedict exterior Australia.jpg",
+                    "imageinfo":[{"mime":"image/jpeg","width":1280,"height":900,"sha1":"a"*40,
+                     "extmetadata":{"LicenseShortName":{"value":"CC BY-SA 4.0"},
+                     "LicenseUrl":{"value":"https://creativecommons.org/licenses/by-sa/4.0/"},
+                     "ImageDescription":{"value":"Exterior view of St Benedict church Australia"}}}]}]}}
+        info, found=mod.structured_discovery(Client(),v)
+        self.assertEqual(info["state"],"GEO_AND_NAME_CORROBORATED_RESEARCH_ONLY")
+        self.assertEqual(len(found["EXTERIOR"]),1)
+        self.assertFalse(found["INTERIOR"])
+        self.assertFalse(found["SACRED_DETAIL"])
+        self.assertEqual(found["EXTERIOR"][0]["publication_state"],"HOLD_IDENTITY_CATEGORY_AND_RIGHTS_REVIEW")
     def test_all_categories(self):
         self.assertEqual(set(mod.CATEGORIES),{"EXTERIOR","INTERIOR","SACRED_DETAIL"})
     def test_discovery_only(self):
