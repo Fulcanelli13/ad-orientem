@@ -4,7 +4,10 @@ on:
     paths:
       - 'src/office/annual-capture-plan.js'
       - 'scripts/office/validate-annual-capture.mjs'
+      - 'scripts/office/emit-annual-capture-ledger.mjs'
+      - 'src/office/annual-capture-ledger.js'
       - 'tests/divine-office-annual-capture.mjs'
+      - 'tests/divine-office-annual-capture-ledger.mjs'
       - '.github/workflows/office-weekly-source-import.yml'
 permissions:
   contents: read
@@ -23,7 +26,9 @@ jobs:
         run: |
           node --check src/office/annual-capture-plan.js
           node --check scripts/office/validate-annual-capture.mjs
-          node --test tests/divine-office-annual-capture.mjs
+          node --check scripts/office/emit-annual-capture-ledger.mjs
+          node --check src/office/annual-capture-ledger.js
+          node --test tests/divine-office-annual-capture.mjs tests/divine-office-annual-capture-ledger.mjs
       - name: Read only exact reviewed research composer commit
         uses: actions/checkout@v4
         with:
@@ -102,6 +107,31 @@ jobs:
               planned:s.planned,sourceFilesCapturedAndShaVerified:s.rawCaptured,
               dates:s.datesWithAnyRawEvidence,remaining:s.notGenerated,
               certified:s.liturgicallyCertified,approved:s.approved,published:s.published
+            }));
+          '
+      - name: Produce hash-only verified metadata in scratch, compare annual index
+        env:
+          RAW: ${{ runner.temp }}/office-week-raw
+          REPORT: ${{ runner.temp }}/office-annual-import
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          node scripts/office/emit-annual-capture-ledger.mjs \
+            --root "$RAW" --start 2026-11-05 \
+            --composer ce39a02827049b31041ae250ec3b9b7c364f4a1e \
+            --run-id "$GITHUB_RUN_ID" --out "$RAW/capture-metadata-only.json"
+          node scripts/office/build-annual-readiness-register.mjs \
+            --year 2026 --out "$REPORT/from-historical-ledger" \
+            --ledger-file "$RAW/capture-metadata-only.json"
+          REPORT="$REPORT" node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            const d=JSON.parse(readFileSync(process.env.REPORT+
+              "/from-historical-ledger/2026-office-annual-readiness.json","utf8"));
+            if(d.summary.rawCaptured!==168||d.summary.notGenerated!==8592||
+               d.summary.liturgicallyCertified!==0||d.summary.published!==0)
+              throw Error("OFFICE_HASH_ONLY_HISTORICAL_IMPORT_INCORRECT");
+            console.log("OFFICE_HASH_ONLY_LEDGER_REIMPORT_OK",JSON.stringify({
+              indexed:d.summary.rawCaptured,published:d.summary.published
             }));
           '
       # No source-text/artifact uploads, publication or recurring schedule.
