@@ -47,7 +47,8 @@ async function check(row){
    const actual=j?.object_number??null;
    const titles=titleOf(j);
    const titleMatches=titles.some(x=>norm(x)===norm(row.title));
-   const objectMatches=actual===accession;
+   const objectExactCase=actual===accession;
+   const objectMatches=typeof actual==="string"&&actual.toUpperCase()===accession.toUpperCase();
    const kinds=kindOf(j);
    const creators=namesOf(j);
    const creatorQualifier=arr(j?.production).map(z=>z?.creator_qualifier??null).filter(Boolean);
@@ -58,6 +59,9 @@ async function check(row){
     frozenTitle:row.title,frozenArtist:row.artistAsReviewed,frozenAccession:accession,
     originalSourceUrl:row.sourceObjectUrl,apiRequest:api,apiFinalUrl:r.url,
     status,responseSha256:sha(data),responseBytes:data.length,httpStatus:r.status,
+    identityNormalization:{method:objectExactCase?"EXACT_CASE":"ASCII_CASEFOLD_ONLY",
+      officialVerbatimObjectNumber:actual,frozenSourceObjectNumber:accession,
+      fullyMatchedAfterCasefold:objectMatches},
     official:{
       objectNumber:actual,titles,creatorTexts:creators,creatorQualifiers:creatorQualifier,
       kinds,publicDomainField:j?.public_domain??null,imageExistsField:j?.has_image??null,
@@ -68,7 +72,8 @@ async function check(row){
       material:arr(j?.materials).slice(0,10),techniques:arr(j?.techniques).slice(0,10),
       relatedIds:arr(j?.related_artworks).map(z=>typeof z==="string"?z:z?.object_number??z?.id).filter(Boolean).slice(0,20)
     },
-    evidence:{objectNumberExact:objectMatches,normalizedTitleExact:titleMatches,
+    evidence:{objectNumberExact:objectMatches,objectNumberExactCase:objectExactCase,
+      objectNumberCaseFoldMatches:objectMatches,normalizedTitleExact:titleMatches,
       creatorMentionMatch:creators.some(n=>norm(n)===norm(row.artistAsReviewed))},
     flags:[...(!objectMatches?["OFFICIAL_OBJECT_NUMBER_MISMATCH"]:[]),
       ...(!titleMatches?["OFFICIAL_TITLE_DIFFERENT_OR_NOT_EXTRACTED"]:[]),
@@ -102,6 +107,8 @@ rows.sort((a,b)=>a.sourceId.localeCompare(b.sourceId));
 const counts={frozenSourceCards:54,confirmedOfficialIdsAndTitles:rows.filter(r=>r.status==="OFFICIAL_OBJECT_ID_AND_TITLE_MATCH").length,
  officialResponseButUnresolved:rows.filter(r=>r.status==="OFFICIAL_RECORD_REQUIRES_REVIEW").length,
  officialFetchFailures:rows.filter(r=>r.status==="OFFICIAL_SOURCE_FETCH_FAILED").length,
+ officialNumbersExactCase:rows.filter(r=>r.identityNormalization?.method==="EXACT_CASE").length,
+ officialNumbersCasefoldOnly:rows.filter(r=>r.identityNormalization?.method==="ASCII_CASEFOLD_ONLY"&&r.identityNormalization.fullyMatchedAfterCasefold).length,
  originalConditionalImportCount:rows.filter(r=>r.frozenDecision==="IMPORT_WITH_CORRECTIONS").length,
  creatorReviewFlags:rows.filter(r=>r.flags.some(f=>/CREATOR/.test(f))).length,
  publicDomainFieldTrue:rows.filter(r=>r.official?.publicDomainField===true).length,
@@ -116,6 +123,8 @@ const report={schema:"AO_SACRED_ART_SMK_54_OFFICIAL_COLLECTION_IDENTITY_V1",gene
  officialAuthority:"Statens Museum for Kunst (SMK), National Gallery of Denmark",
  documentedApi:"https://www.smk.dk/en/article/smk-api/",
  source479:baselinePath,source479Sha256:sha(readFileSync(baselinePath)),counts,
+ identityNormalization:{rule:"ASCII_CASEFOLD_SAME_INVENTORY_ONLY",reason:"SMK spells KMSsp/KMSst in official API while older frozen source IDs are uppercased KMSSP/KMSST; verbatim IDs retained",promotedCaseOnlyRecords:counts.officialNumbersCasefoldOnly,exactCaseRecords:counts.officialNumbersExactCase,otherDifferencesPermitted:false,originalMuseumJsonResponseHashesPreserved:true,photographyReleaseUnaffected:true,baselineOriginalUserChoicesRetained:true},
+ reconciliationAmendedFromOriginalApiSnapshot:false,
  methodologicalLimitations:[
   "Official museum object_number and title are authoritative source identity only, not a match to an existing canonical 383 work.",
   "Artist names and maker qualifiers are retained as evidence/review flags; no metadata or user's editorial decisions silently changed.",
