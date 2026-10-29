@@ -184,8 +184,12 @@ export function installSequentialDevotionalReader({
       // Long-form Novena paragraphs must remain legible while the reader
       // illuminates the active one. The shared .56/.30 focus falloff is
       // deliberately retained for all other devotional readers.
+      // Private historical Litany invocations are call-and-response prayer
+      // text, not instructions. Do not dim neighbouring source lines: a
+      // congregant must be able to follow the complete printed witness.
+      const litanySourceLine=kind==="litany"&&Boolean(p.closest(".aoLitanyVerses"));
       const adjacent=Math.abs(i-found)===1;
-      const power=canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary?"1"
+      const power=canonicalPrayer||confessionPrimary||stationsPrayer||contemplativeDailyPrimary||litanySourceLine?"1"
         :i===found?"1":kind==="novena"?(adjacent?".80":".65"):(adjacent?".56":".30");
       p.style.setProperty("--ao-devo-focus",power);
       p.style.setProperty("opacity",power,"important");
