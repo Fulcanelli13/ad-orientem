@@ -1,0 +1,37 @@
+name: Directory P106 one-time source-locked four-WebP copy
+on:
+  pull_request:
+    paths:
+      - tools/directory/restore-p106-approved-webp.py
+      - data/directory/research/p106-four-photo-approved-media-input.json
+      - .github/workflows/directory-p106-copy-webps.yml
+permissions:
+  contents: write
+jobs:
+  copy-four-pinned-webps:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'release/p106-four-curated-directory-photo-covers-20261030'
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          persist-credentials: true
+          fetch-depth: 1
+      - name: Retrieve immutable P105 staged originals
+        run: git fetch --no-tags --depth=50 origin research/p105-seven-source-pinned-directory-webps-20261030
+      - name: Check source and copy only four exact WebP bytes
+        run: python3 tools/directory/restore-p106-approved-webp.py
+      - name: Save verified production-path bytes and audit
+        shell: bash
+        run: |
+          git add assets/approved/place-media/GB-sacred-heart-caterham.webp \
+            assets/approved/place-media/GB-st-mary-catholic-brewood.webp \
+            assets/approved/place-media/US-immaculate-conception-cathedral-lake-charles.webp \
+            assets/approved/place-media/US-holy-family-log-church-cahokia.webp \
+            data/directory/research/p106-four-approved-bytes-audit.json
+          if ! git diff --cached --quiet; then
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m 'media(directory): stage four exact approved-path WebPs from P105 byte archive'
+            git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+          fi
