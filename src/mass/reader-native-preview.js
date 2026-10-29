@@ -1673,6 +1673,7 @@ export async function mountNativeReaderPreview({
       cueProjection:cueNative ? cueProjection : null,
       legacyPosture:eventAllowed ? legacy.posture : null,
       cueId:activeCueId,
+      resolvedMass,
       // Preserve pre-V5 local posture keys. The 48-step layer owns display IDs
       // only; saved section overrides continue to target the source AO.CARD.* id.
       sectionId:current?.sourceSectionId??current?.sectionId??null,
@@ -1824,11 +1825,16 @@ export async function mountNativeReaderPreview({
     const sediliaReturn=focusedFaithful && !focusedFaithful.conditionalSedilia &&
       customaryPrefs.followPriestSeating!==false &&
       ["AO.SM.C0068","AO.SM.C0104"].includes(activeCueId);
+    const choirMovement=postureResolved.owner==="REQUIEM_CHOIR_1962" &&
+      postureResolved.posture?.transition===true &&
+      postureResolved.posture?.cueId===activeCueId &&
+      String(posture?.value??posture?.label??"")===postureResolved.posture.value;
     const postureCue=(sediliaMovement||sediliaReturn)
       ? Object.freeze({...posture,cueId:activeCueId,
           owner:"CUSTOMARY_PRIEST_SEDILIA_TRANSITION"})
       : localTransition
         ? Object.freeze({...posture,cueId:activeCueId,owner:"LOCAL_CUSTOMARY_CUE"})
+      : choirMovement ? postureResolved.posture
       : cueNative && cueProjection?.postureTransition===true &&
         cueProjection?.posture?.cueId===activeCueId &&
         String(posture?.value??posture?.label??"")===String(cueProjection.posture.value??cueProjection.posture.label??"")
