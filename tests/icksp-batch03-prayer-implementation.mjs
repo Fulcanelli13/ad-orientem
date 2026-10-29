@@ -44,6 +44,20 @@ assert.ok(Object.values(CONFESSION_PATHS).every(x=>x.id&&x.descriptionEn&&x.desc
 assert.ok(COMMUNION_TREASURY_V383.beforeThomas.la&&COMMUNION_TREASURY_V383.beforeThomas.en&&COMMUNION_TREASURY_V383.beforeThomas.fr);
 assert.ok(COMMUNION_TREASURY_V383.afterBonaventure.la&&COMMUNION_TREASURY_V383.afterBonaventure.en&&COMMUNION_TREASURY_V383.afterBonaventure.fr);
 
+// B38 is a presentation-only correction for the historical PRIVATE Litany.
+// It must not reclassify public 1962 rites or adjust uncollated witnesses.
+const deck=src("src/pray/devotional-card-deck-styles.js");
+const adapter=src("src/pray/devotional-sequence-adapter.js");
+assert.match(deck,/data-ao-devotional-owner="litany"/,"Limit typography changes to historical private Litany");
+assert.match(deck,/clamp\(18px,4\.25vw,22px\)\/1\.58/,"Private invocations remain 18px+ on phones");
+assert.match(deck,/padding:12px 15px 24dvh/,"Remove the excessive narrow-phone right gutter");
+assert.match(adapter,/kind==="litany"\?\(adjacent\?"\.88":"\.76"\)/,"Litany keeps readable .76+ inactive invocations");
+assert.match(adapter,/\(adjacent\?"\.56":"\.30"\)/,"Leave other readers' original focus falloff unchanged");
+
+assert.match(src("src/pray/presentation-runtime.js"),/data-ao-private-litany-invocations="true"/,
+ "Private historical invocations must retain separate source-owned lines");
+assert.match(src("src/pray/presentation-runtime.js"),/aoP435930LitanyPrayer/,
+ "Do not route one-line invocations through the generic prose semantic rewriter");
 const pres=src("src/pray/presentation-runtime.js");
 const traditional=src("src/pray/traditional-pray-runtime.js");
 for(const x of ["batch03LitanyUseOptions","renderBatch03PublicLitanyReference","data-p435930-lit-use","data-p435930-lit-forty","BATCH03_LITANY_SOURCE_STATUS",

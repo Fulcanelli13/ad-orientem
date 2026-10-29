@@ -701,6 +701,68 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  font:400 11px/1.5 var(--ao-font-ui,system-ui,sans-serif)!important;
 }
 
+/* The generic dual-axis rule hides .aoP435930GuideNav; the private
+   Litany's edition selector is a DIFFERENT control, never a duplicate
+   chapter navigator. Keep it keyboard-accessible in a quiet disclosure. */
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoPrivateLitanyEditionChooser{
+ margin:3px 0 10px;border-bottom:1px solid var(--border,rgba(255,255,255,.12));
+}
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoPrivateLitanyEditionChooser>summary{
+ display:flex;align-items:center;min-height:44px;cursor:pointer;
+ font:500 14px/1.4 var(--ao-font-liturgical,Georgia,serif);
+ color:var(--muted,#c8bdaa);
+}
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-dual-axis="true"][data-ao-devotional-owner="litany"] .aoPrivateLitanyEditionChooser .aoBatch03LitanyUses.aoP435930GuideNav{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:8px!important;padding:7px 0 13px!important;margin:0!important;
+}
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoPrivateLitanyEditionChooser .aoBatch03LitanyUses button{
+ min-height:44px!important;min-width:0;padding:8px 6px!important;
+ font-size:12px!important;line-height:1.32!important;
+ white-space:normal;overflow-wrap:break-word;
+}
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoPrivateLitanyEditionChooser>summary:focus-visible{
+ outline:2px solid var(--liturgical,#d8bd7d);outline-offset:2px;
+}
+/* B38: the historical PRIVATE Litany is invocation-first, not a 1962
+   public-liturgical edition. Preserve the existing source-owned chapter rail. */
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll{
+ padding:14px 16px 25dvh 16px;
+}
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll .aoP435930LitanyPrayer{
+ margin:0 0 16px;padding:0;border:0;box-shadow:none;background:transparent;
+}
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll .aoP435930LitanyVerses{
+ display:grid;gap:12px;min-width:0;
+}
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll .aoP435930LitanyLine{
+ font:400 clamp(18px,4.25vw,22px)/1.58 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ color:var(--text,#f1e7d7)!important;
+ margin:0;overflow-wrap:break-word;
+}
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll .aoP435930GuideNow{
+ margin-bottom:14px!important;
+}
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll .aoP435930GuideNow p{
+ font-size:14px!important;line-height:1.45!important;
+}
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardHead{
+ padding-block:9px 8px;
+}
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoStop{
+ min-height:48px;
+}
+@media(max-width:420px){
+ #aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll{
+  padding:12px 15px 24dvh;
+ }
+ #aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll .aoP435930GuideNow{
+  margin-bottom:10px!important;padding-block:2px!important;
+ }
+ #aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoDevoCardScroll .aoP435930GuideCue{
+  margin-top:12px!important;
+ }
+}
 @keyframes aoDevoCardEnter{from{opacity:.55;transform:translateX(5px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoDevoCard{animation:none}#aoPray435930 .aoDevoParagraph{transition:none!important}}
 `;

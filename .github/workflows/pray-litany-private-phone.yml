@@ -1,0 +1,48 @@
+name: Prayer Private Litany historical phone acceptance
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/pray/devotional-card-deck-styles.js"
+      - "src/pray/devotional-sequence-adapter.js"
+      - "src/pray/presentation-runtime.js"
+      - "src/pray/litany-source.js"
+      - "tests/icksp-batch03-prayer-implementation.mjs"
+      - "tests/pray-b38-private-litany-phone.mjs"
+      - ".github/workflows/pray-litany-private-phone.yml"
+  push:
+    branches: [main]
+    paths:
+      - "src/pray/devotional-card-deck-styles.js"
+      - "src/pray/devotional-sequence-adapter.js"
+      - "src/pray/presentation-runtime.js"
+      - "src/pray/litany-source.js"
+      - "tests/icksp-batch03-prayer-implementation.mjs"
+      - "tests/pray-b38-private-litany-phone.mjs"
+      - ".github/workflows/pray-litany-private-phone.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  private-litany-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Litany historical/private/public source and text policy
+        run: node tests/icksp-batch03-prayer-implementation.mjs
+      - name: EN/FR 320px and 390px private-litany reading
+        run: node tests/pray-b38-private-litany-phone.mjs
+      - name: Short-lived visual proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pray-private-litany-phone-review
+          path: artifacts/pray-b38/*.png
+          if-no-files-found: ignore
+          retention-days: 3
