@@ -33,7 +33,7 @@ const legacyIds=new Set([...editorialReview.approved,...editorialReview.needs_re
 assert.equal(legacyIds.size,18,"Original R58/R59 photo cohort must remain distinct and intact");
 assert.equal(approved.items.filter(x=>legacyIds.has(x.place_id)).length,18,
  "The original ten plus eight replacement approved photographs must be preserved");
-assert.equal(approved.items.length,31,"Six additional independently reviewed exact-shrine photos must be approved");
+assert.equal(approved.items.length,32,"Six additional independently reviewed exact-shrine photos must be approved");
 const shrineRecovery=read("data/geography/research/shrine-seven-photo-recovery-20261021.v1.json");
 const shrineCandidates=new Map(shrineRecovery.candidates.map(x=>[x.place_id,x]));
 const b2Candidates=new Map(read("data/geography/research/explore-major-marian-b2-photo-candidates.v1.json").candidates.map(x=>[x.place_id,x]));
@@ -45,10 +45,11 @@ for(const item of approved.items){
   assert.equal(item.status,"APPROVED");
   assert.ok(item.rights_verified&&item.subject_verified&&item.crop_reviewed);
   assert.match(item.asset_path,/^assets\/approved\/place-media\/[a-zA-Z0-9_.-]+\.webp$/);
-  assert.ok(["PUBLIC_DOMAIN","CC-BY-SA-2.0","CC-BY-SA-3.0","CC-BY-SA-4.0"].includes(item.license),
+  assert.ok(["PUBLIC_DOMAIN","CC0","CC-BY-SA-2.0","CC-BY-SA-3.0","CC-BY-SA-4.0"].includes(item.license),
     "Only independently confirmed freely reusable site photos may be published");
   assert.equal(item.license_url,item.license==="PUBLIC_DOMAIN"
     ? "https://creativecommons.org/publicdomain/mark/1.0/"
+    : item.license==="CC0"?"https://creativecommons.org/publicdomain/zero/1.0/"
     : "https://creativecommons.org/licenses/by-sa/"+item.license.split("-").at(-1)+"/");
   if(legacyIds.has(item.place_id)){
     assert.equal(item.license,"CC-BY-SA-4.0","Original cohort licence must never be loosened");
@@ -67,6 +68,16 @@ for(const item of approved.items){
       "Pontmain hero is reused from an independently approved and site-matched gallery image");
     assert.equal(item.derivative_sha256,pontmain?.derivative_sha256,
       "Pontmain hero and gallery must have identical source-reviewed photograph bytes");
+  }else if(item.place_id==="place:US:st-alphonsus-baltimore"){
+    const stage=read("data/geography/research/directory-st-alphonsus-photo-stage-20261029.v1.json");
+    const editorial=read("data/geography/research/directory-st-alphonsus-photo-editorial-20261029.v1.json");
+    const approval=editorial.approved_source_assets.find(x=>x.decision==="APPROVE_HERO");
+    const selected=stage.records.find(x=>x.asset_path.endsWith("/"+approval.stage_filename));
+    assert.equal(item.source_url,selected.source_url);
+    assert.equal(item.source_sha1,approval.source_sha1);
+    assert.equal(item.derivative_sha256,approval.derivative_sha256);
+    assert.equal(item.credit,selected.credit);
+    assert.equal(item.license,"CC-BY-SA-4.0");
   }else{
     const c=shrineCandidates.get(item.place_id)||b2Candidates.get(item.place_id);
     assert.ok(c&&c.image_review_state==="EDITORIALLY_ACCEPTED_EXACT_SITE_AND_FULL_FRAME_20261021",
