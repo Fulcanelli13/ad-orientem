@@ -10,6 +10,8 @@
 - **83 Breviarium plates** registered as visual-source references (not automatically 83 separate physical paintings).
 - **654** B1 Rijksmuseum/KMSKA source metadata leads joined (B1 optional; absent or unfinished means zero leads, not an empty collection).
 - **0** new human aesthetic approvals; **0** source-image legal clearances; **0** photo QA releases.
+- B1 title prefilter: **322** explicit sacred-title matches, **175** ambiguous, **157** unsupported/likely unrelated or non-painting records.
+- The Flemish OAI feed currently yields Musea Brugge collection URLs, **not 374 confirmed KMSKA holdings**. Museum holder and medium must be confirmed independently.
 
 ## Strict aesthetic gates (not an artist-only score)
 
