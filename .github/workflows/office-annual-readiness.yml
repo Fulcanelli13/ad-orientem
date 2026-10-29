@@ -1,0 +1,50 @@
+name: Divine Office annual readiness register — no publication
+on:
+  pull_request:
+    paths:
+      - 'src/office/annual-readiness-register.js'
+      - 'scripts/office/build-annual-readiness-register.mjs'
+      - 'tests/divine-office-annual-readiness-register.mjs'
+      - '.github/workflows/office-annual-readiness.yml'
+      - 'docs/DIVINE-OFFICE-ANNUAL-RELEASE-REGISTER.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  annual-inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Compile-time and completeness contracts
+        run: |
+          node --check src/office/annual-readiness-register.js
+          node --check scripts/office/build-annual-readiness-register.mjs
+          node --test tests/divine-office-annual-readiness-register.mjs
+      - name: Generate 2026 and leap-year 2028 preflight inventories in ephemeral scratch
+        run: |
+          OUT="$RUNNER_TEMP/office-readiness"
+          node scripts/office/build-annual-readiness-register.mjs --year 2026 --out "$OUT"
+          node scripts/office/build-annual-readiness-register.mjs --year 2028 --out "$OUT"
+          OUTPUT="$OUT" node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            for(const [year,days] of [[2026,365],[2028,366]]){
+              const d=JSON.parse(readFileSync(process.env.OUTPUT+"/"+year+"-office-annual-readiness.json","utf8"));
+              const s=JSON.parse(readFileSync(process.env.OUTPUT+"/"+year+"-office-annual-exceptions.json","utf8"));
+              if(d.rows.length!==days*24||d.summary.planned!==days*24||
+                 d.summary.civilDays!==days||d.summary.rawCaptured!==0||
+                 d.summary.notGenerated!==days*24||
+                 d.summary.liturgicallyCertified!==0||
+                 d.summary.approved!==0||d.summary.published!==0||
+                 d.release.publicRouteEnabled||d.release.canPublish||
+                 s.exceptions.allYearDiscrepanciesActuallyChecked!==false)
+                   throw Error("OFFICE_ANNUAL_INVENTORY_RELEASE_GATES_NOT_SATISFIED");
+              console.log("OFFICE_ANNUAL_INVENTORY_ASSERTIONS",year,days*24,
+                "planned/none approved/none published");
+            }
+          '
+      # No artifact upload, no public Office route, no scheduled scraping.
