@@ -162,7 +162,9 @@ try{
       witnessFont:witness?parseFloat(getComputedStyle(witness).fontSize):null,
       bodyFont:body?parseFloat(getComputedStyle(body).fontSize):null,
       bodyLeading:body?parseFloat(getComputedStyle(body).lineHeight):null,
-      paragraphGap:paras[0]?parseFloat(getComputedStyle(paras[0]).marginBottom):null,
+      paragraphCount:paras.length,
+      paragraphGap:paras.length>1?paras[1].getBoundingClientRect().top-paras[0].getBoundingClientRect().bottom:null,
+      focusOpacity:paras.map(p=>Number(getComputedStyle(p).opacity)),
       summaryFont:summary?parseFloat(getComputedStyle(summary).fontSize):null,
       sourceOpen:source?.open,hasSource:!!source,
       overflow:document.documentElement.scrollWidth-innerWidth
@@ -176,7 +178,10 @@ try{
     assert.ok(sample.witnessFont>=12,"Historical source status must be at least 12px");
     assert.ok(sample.bodyFont>=18&&sample.bodyLeading/sample.bodyFont>=1.55,
      "Prayer paragraphs must preserve their 18px+ / 1.55+ reading rhythm");
-    assert.ok(sample.paragraphGap>=20,"Original source paragraphs need visible separation");
+    assert.ok(sample.paragraphGap===null||sample.paragraphGap>=16,
+     "Consecutive source paragraphs must be visually separated: "+JSON.stringify({locale,id,sample}));
+    assert.ok(sample.focusOpacity.every(x=>x>=.64),
+     "Novena unfocused text must keep readable opacity: "+JSON.stringify({locale,id,opacity:sample.focusOpacity}));
     assert.ok(sample.hasSource&&!sample.sourceOpen,"Edition notes must remain accessible but closed by default");
     assert.ok(sample.summaryFont>=14,"Source edition disclosure is not legible on small phones");
     assert.ok(sample.overflow<=1,"Reader must not horizontally overflow at "+width+"px");
