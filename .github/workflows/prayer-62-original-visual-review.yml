@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'tools/pray/bulk-original-print-62-visual-review.mjs'
+      - 'src/pray/novena-holy-souls-print-corrections.v1.js'
+      - 'data/pray/original-print-62-bulk-review-20261029.v1.json'
       - 'data/pray/original-pdf-72-day-text-layer-screen-20261029.v1.json'
       - '.github/workflows/prayer-62-original-visual-review.yml'
   workflow_dispatch:
