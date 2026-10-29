@@ -213,7 +213,7 @@ try{
  await page.locator('[data-mode="fr"]').click();
  await page.locator('[data-view="whole"]').click();
  assert.equal(await page.locator('[data-view="whole"]').getAttribute("aria-pressed"),"true");
- const seenKinds=[],total=49;
+ const seenKinds=[],total=55;
  let clicked=0,psalm=false,hymn=false,magnificat=false,collect=false,note=false;
  for(let i=0;i<total;i++){
   const title=await page.locator("#card .card-head h2").innerText();
@@ -261,7 +261,7 @@ try{
  await mobile.close();
 
  // Separate real Chromium acceptance for the short mobile reading progression.
- // The original 37 source events are NOT replaced: 86 focused steps are
+ // The original 38 source events are NOT replaced: 87 focused steps are
  // derived by splitting only 40 numbered Psalm rows, ten Magnificat verses
  // and the six original hymn stanzas, with no altered or omitted source text.
  const focusMobile=await browser.newContext({
@@ -272,7 +272,7 @@ try{
  const focusHits=await mockSources(fp);
  await awaitReader(fp);
  assert.equal(await fp.locator('[data-view="focus"]').getAttribute("aria-pressed"),"true");
- assert.equal(await fp.locator("#bar").getAttribute("aria-valuemax"),"86");
+ assert.equal(await fp.locator("#bar").getAttribute("aria-valuemax"),"87");
  let focusPsalm=0,focusHymn=0,focusCanticle=0,focusEnding=0,focusSteps=0;
  let focusedPsalmShot=false,focusedHymnShot=false,focusedCanticleShot=false;
  for(let i=0;i<90;i++){
@@ -328,7 +328,7 @@ try{
   if(await fp.locator("#next").isDisabled())break;
   await fp.locator("#next").click();
  }
- assert.equal(focusSteps,86);
+ assert.equal(focusSteps,87);
  assert.equal(focusPsalm,40);
  assert.equal(focusHymn,6);
  assert.equal(focusCanticle,10);
@@ -340,13 +340,13 @@ try{
  // Switching display mode should preserve the liturgical source EVENT
  // without duplicating, losing or renumbering the prayer.
  await fp.locator('[data-view="whole"]').click();
- assert.equal(await fp.locator("#bar").getAttribute("aria-valuemax"),"37");
+ assert.equal(await fp.locator("#bar").getAttribute("aria-valuemax"),"38");
  assert.equal(await fp.locator("#next").isDisabled(),true);
  await fp.locator('[data-view="focus"]').click();
  assert.equal(await fp.locator("#bar").getAttribute("aria-valuemax"),"86");
  assert.equal(await fp.locator("#next").isDisabled(),true);
- record("390px phone: 86 source-preserving focused steps, 40 Psalm rows, ten Magnificat verses, six hymn stanzas",{
-  passed:true,sourceEvents:37,focusSteps,psalmVerseRows:focusPsalm,
+ record("390px phone: 87 source-preserving focused steps, 40 Psalm rows, ten Magnificat verses, six hymn stanzas",{
+  passed:true,sourceEvents:38,focusSteps,psalmVerseRows:focusPsalm,
   magnificatVerseRows:focusCanticle,hymnStanzas:focusHymn,
   noMissingTranslations:true,noHorizontalOverflow:true,
   intactSourceCollectEnding:true
