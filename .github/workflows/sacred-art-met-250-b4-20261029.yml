@@ -1,0 +1,63 @@
+name: Sacred Art — Met Open Access 250-work Batch B4
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - scripts/art/sacred-art-met-250-b4-20261029.py
+      - .github/workflows/sacred-art-met-250-b4-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-met-250-b4
+  cancel-in-progress: true
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Find exact Met paintings via official 2026 API and check public domain JPEG previews
+        run: |
+          python -m py_compile scripts/art/sacred-art-met-250-b4-20261029.py
+          python scripts/art/sacred-art-met-250-b4-20261029.py --target 250 --max-object-lookups 1550 --max-matches 600 --max-preview-checks 550 --delay .08
+      - name: Verify B4 disjointness, exact image evidence and no app imports
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('data/calendar/sacred-art-met-250-b4-20261029.v1.json').read_text())
+          b3=json.loads(Path('data/calendar/sacred-art-250-review-source-b3-20261029.v1.json').read_text())
+          prev=json.loads(Path('data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json').read_text())
+          earlier={x['id'] for x in b3['rows']} | {r['sourceId'] for key in ('imports','rejects') for r in prev[key]}
+          ids={r['id'] for r in d['rows']}
+          assert len(earlier)==310
+          assert 200<=len(ids)<=250,d['counts']
+          assert len(ids)==len(d['rows']) and not ids&earlier
+          assert d['batchReady'] and d['counts']['newProductionImports']==0
+          assert d['counts']['newUserDecisions']==0
+          assert all(x['provider']=='MetMuseum' for x in d['rows'])
+          assert all(x['rightsBasis']=='MET_IS_PUBLIC_DOMAIN_TRUE_EXACT_SOURCE_OBJECT_AND_IMAGE' for x in d['rows'])
+          assert all(x['previewURL'].startswith('https://images.metmuseum.org/') for x in d['rows'])
+          assert all(not x['productionImported'] for x in d['rows'])
+          assert d['gates']['noImageOriginalsArchived']
+          print('VALID MET B4',d['counts'])
+          PY
+          git diff --exit-code -- data/calendar/sacred-art-250-review-source-b3-20261029.v1.json data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json data/calendar/sacred-art-curator-queues-383-20261029.v1.json
+      - name: Permanently save exact MET object research metadata, even if batch incomplete
+        if: always()
+        run: |
+          if [ ! -f data/calendar/sacred-art-met-250-b4-20261029.v1.json ]; then exit 0; fi
+          git config user.name "Ad Orientem Sacred Art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-met-250-b4-20261029.v1.json docs/SACRED_ART_MET_250_B4_SOURCE_REPORT_20261029.md
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): stage Met B4 verified sacred painting source records"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028
