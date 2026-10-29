@@ -11,8 +11,8 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 522,
-    "places_with_linked_records": 265,
+    "places": 529,
+    "places_with_linked_records": 272,
     "places_without_direct_claim": 257,
     "multicategory_heritage_places": 212,
     "shrines": 257,
@@ -23,7 +23,7 @@
     "custom_attestations": 71,
     "novena_context_links": 18,
     "route_records": 20,
-    "directory_place_links": 15
+    "directory_place_links": 22
   },
   "exception_queues": {
     "dangling_place_references": [],
@@ -5929,6 +5929,76 @@
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "display_name": "Kostel svatého Ignáce z Loyoly, Jihlava",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:CZ:st-ignatius-jihlava"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
+      "display_name": "Friedhofskirche St. Michael, Altötting",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:DE:friedhofskirche-st-michael-altoetting"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "display_name": "Basilique Saint-Bernard de Fontaine-lès-Dijon",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:FR:basilique-saint-bernard-fontaine-les-dijon"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:GB:sacred-heart-caterham",
+      "display_name": "Church of the Sacred Heart of Jesus, Caterham",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:GB:sacred-heart-caterham"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:GB:st-mary-catholic-brewood",
+      "display_name": "Roman Catholic Church of St Mary, Brewood",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:GB:st-mary-catholic-brewood"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:immaculate-conception-cathedral-lake-charles",
+      "display_name": "Cathedral of the Immaculate Conception, Lake Charles",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:US:immaculate-conception-cathedral-lake-charles"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:holy-family-log-church-cahokia",
+      "display_name": "Holy Family Log Church, Cahokia",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:US:holy-family-log-church-cahokia"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }
   ],
   "distinct_place_links": {
@@ -5939,7 +6009,7 @@
     "customs": 55,
     "novena_context": 10,
     "routes": 18,
-    "directory_links": 15
+    "directory_links": 22
   },
   "map_policy_note": "The distinct-place counts include address-only or coordinate-pending Places. They are not counts of publishable map pins.",
   "georeference_tranche_20261010": {
@@ -6220,5 +6290,28 @@
       "link:directory-place:FR:saint-bruno-bordeaux"
     ],
     "photos_published": 0
+  },
+  "georeference_tranche_20261030_p104": {
+    "schema": "AO_P104_SEVEN_EXACT_BUILDING_P97_DIRECTORY_LINKS_V1",
+    "new_place_ids": [
+      "place:CZ:st-ignatius-jihlava",
+      "place:DE:friedhofskirche-st-michael-altoetting",
+      "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "place:GB:sacred-heart-caterham",
+      "place:GB:st-mary-catholic-brewood",
+      "place:US:immaculate-conception-cathedral-lake-charles",
+      "place:US:holy-family-log-church-cahokia"
+    ],
+    "new_link_ids": [
+      "link:directory-place:CZ:st-ignatius-jihlava",
+      "link:directory-place:DE:friedhofskirche-st-michael-altoetting",
+      "link:directory-place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "link:directory-place:GB:sacred-heart-caterham",
+      "link:directory-place:GB:st-mary-catholic-brewood",
+      "link:directory-place:US:immaculate-conception-cathedral-lake-charles",
+      "link:directory-place:US:holy-family-log-church-cahokia"
+    ],
+    "not_mapped_unlisted_new_brighton": true,
+    "approved_photos": 0
   }
 }

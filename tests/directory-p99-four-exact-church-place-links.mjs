@@ -14,8 +14,8 @@ const crosswalk=read("data/geography/research/directory-place-photo-screen-p92-2
 assert.equal(manifest.schema,"AO_SACRED_PLACES_P99_FOUR_EXACT_DIRECTORY_CHURCHES_V1");
 assert.deepEqual([manifest.baseline.places,manifest.baseline.sources,manifest.baseline.directory_links],[518,822,11]);
 assert.deepEqual([manifest.proposed.places,manifest.proposed.sources,manifest.proposed.directory_links],[522,830,15]);
-assert.deepEqual([g.places.length,sources.sources.length,g.directoryPlaceLinks.length],[522,830,15]);
-assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[522,830,15]);
+assert.deepEqual([g.places.length,sources.sources.length,g.directoryPlaceLinks.length],[LIVE.places,LIVE.sources,LIVE.links]);
+assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[529,844,22]);
 assert.equal(manifest.new_places,4);
 assert.equal(manifest.confirmed_directory_links_added,4);
 assert.equal(g.geoAreas.length,146);
@@ -63,8 +63,8 @@ for(const [venueId,[placeId,osm,sourceRow]] of expected){
  }
  assert.ok(manifest.published_new.some(x=>x.place_id===placeId&&x.candidate_id==="P97-ROW-"+sourceRow&&x.photo_publication==="NONE"));
 }
-assert.equal(crosswalk.counts.canonical_places,522);
-assert.equal(crosswalk.counts.confirmed_links,15);
+assert.equal(crosswalk.counts.canonical_places,LIVE.places);
+assert.equal(crosswalk.counts.confirmed_links,LIVE.links);
 assert.equal(crosswalk.counts.exact_confirmed_photo_joins,5,"two historical P95 plus three P102 approved links");
 assert.equal(manifest.policy.no_new_tlm_masses_or_schedules,true);
 assert.equal(manifest.policy.photo_media_unapproved_until_native_rights_derivative_review,true);
