@@ -57,6 +57,7 @@ class P85Tests(unittest.TestCase):
     def test_name_and_city_yield_only_review_not_approval(self):
         r=sample(3)
         source=m.check_page(page(r["file_title"],r["original_sha1_claim"]),r["file_title"])
+        source["current_page_id"]=r["commons_page_id"]
         evidence=m.with_current_source(r,source,{m.canonical(r["file_title"]):{r["physical_anchor_id"]}}, {})
         self.assertEqual(evidence["p85_disposition"],"RECOVERED_FOR_RESEARCH_REVIEW_CITY_TEXT_NOT_APPROVED")
         self.assertFalse(evidence["rights_approved"])
@@ -68,6 +69,7 @@ class P85Tests(unittest.TestCase):
     def test_geotag_shared_needs_all_other_source_pins_far_away(self):
         r=sample(5)
         source=m.check_page(page(r["file_title"],r["original_sha1_claim"]),r["file_title"])
+        source["current_page_id"]=r["commons_page_id"]
         source["geotag_source_coordinates"]=[{"lat":48.85,"lon":2.34}]
         peers={m.canonical(r["file_title"]):{r["physical_anchor_id"],"RG-OTHER"}}
         pins={r["physical_anchor_id"]:{"status":"SOURCE_COORDINATE_SEARCH_HINT_NOT_CERTIFIED",
