@@ -737,7 +737,8 @@ class BoundedOpenverseClient:
             self.used += 1
         return self.inner.request(params, endpoint=endpoint)
 
-def run(source, output, offset, limit, client, *, indices=None, openverse_budget=OPENVERSE_DEFAULT_RUN_REQUEST_BUDGET):
+def run(source, output, offset, limit, client, *, indices=None, openverse_budget=OPENVERSE_DEFAULT_RUN_REQUEST_BUDGET,
+        openverse_per_venue=OPENVERSE_REQUEST_BUDGET_PER_VENUE):
     rows = source_rows(source)
     selected_indices = list(indices) if indices is not None else list(range(offset, min(offset+limit, len(rows))))
     if not selected_indices or len(selected_indices) > MAX_BATCH or len(set(selected_indices)) != len(selected_indices):
@@ -781,7 +782,7 @@ def run(source, output, offset, limit, client, *, indices=None, openverse_budget
             before = bounded_openverse.used
             alternatives, query_count = openverse_discovery(
                 bounded_openverse, venue, max_queries=min(
-                    OPENVERSE_REQUEST_BUDGET_PER_VENUE, bounded_openverse.remaining))
+                    openverse_per_venue, bounded_openverse.remaining))
             row["openverse_queries"] = bounded_openverse.used-before
             for kind in CATEGORIES:
                 row["categories"][kind] = merge_photo_candidates(
@@ -847,7 +848,11 @@ def main():
                     help="Comma-separated frozen R49 indices for representative sampling")
     ap.add_argument("--openverse-budget", type=int, default=OPENVERSE_DEFAULT_RUN_REQUEST_BUDGET,
                     help="Maximum total Openverse requests in this run (default 20, max 40)")
+    ap.add_argument("--openverse-per-venue", type=int, default=OPENVERSE_REQUEST_BUDGET_PER_VENUE,
+                    help="Queries per venue (0..2); set 1 for representative samples")
     args = ap.parse_args()
+    if not 0 <= args.openverse_per_venue <= OPENVERSE_REQUEST_BUDGET_PER_VENUE:
+        ap.error("Openverse per-venue requests must be 0..2")
     if not 0 <= args.openverse_budget <= 40:
         ap.error("Openverse quota must be 0..40 requests per batch")
     if not 0 <= args.offset < 1879 or not 1 <= args.limit <= MAX_BATCH or args.offset+args.limit > 1879:
@@ -857,7 +862,8 @@ def main():
     except ValueError:
         ap.error("indices must be comma-separated integers")
     result = run(args.source, args.output, args.offset, args.limit, WikimediaClient(args.delay),
-                 indices=indices, openverse_budget=args.openverse_budget)
+                 indices=indices, openverse_budget=args.openverse_budget,
+                 openverse_per_venue=args.openverse_per_venue)
     print("RESEARCH ONLY", result["processed"], "venues; 3 categories; zero images published", flush=True)
     print("CANDIDATE METRICS", json.dumps(result["pilot_metrics"], sort_keys=True), flush=True)
 
