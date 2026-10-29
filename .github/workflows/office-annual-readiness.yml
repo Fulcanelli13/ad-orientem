@@ -31,6 +31,9 @@ on:
       - 'src/office/advent-i-collect-ending-1960-research.js'
       - 'src/office/advent-first-vespers-preview-model.js'
       - 'src/office/reader-beta-catalog.js'
+      - 'src/office/saturday-compline-2026-pilot.js'
+      - 'tests/divine-office-saturday-compline-pilot.mjs'
+      - 'tests/fixtures/office/advent-i-saturday-compline-*.json'
       - 'src/office/reader-beta-parallel-projection.js'
       - 'tests/divine-office-reader-beta-parallel-projection.mjs'
       - 'tests/divine-office-reader-beta-catalog.mjs'
@@ -157,6 +160,8 @@ jobs:
           node --check src/office/advent-first-vespers-preview-model.js
           node --check src/office/reader-beta-catalog.js
           node --test tests/divine-office-reader-beta-catalog.mjs
+          node --check src/office/saturday-compline-2026-pilot.js
+          node --test tests/divine-office-saturday-compline-pilot.mjs
           node --check src/office/reader-beta-parallel-projection.js
           node --test tests/divine-office-reader-beta-parallel-projection.mjs
           node --check src/office/advent-first-vespers-reading-focus.js
