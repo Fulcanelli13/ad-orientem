@@ -88,6 +88,24 @@ class PhotoDiscoveryTests(unittest.TestCase):
         self.assertFalse(mod.unsuitable_photo_subject(
             "High altar of the Minimes", "Photograph of a church altar"))
 
+
+    def test_exact_child_commons_categories_only(self):
+        self.assertEqual(mod.commons_subcategory_role("Category:Interiors of Church of St Joseph"),"INTERIOR")
+        self.assertEqual(mod.commons_subcategory_role("Category:Altars in Saint Joseph Church"),"SACRED_DETAIL")
+        self.assertEqual(mod.commons_subcategory_role("Category:Exteriors of Church of St Joseph"),"EXTERIOR")
+        self.assertIsNone(mod.commons_subcategory_role("Category:Churches in Brussels"))
+        class Client:
+            def request(self,params,endpoint=mod.API):
+                self_params=params
+                self_val=self_params["cmtitle"]
+                assert self_val=="Category:St Joseph"
+                return {"query":{"categorymembers":[
+                    {"title":"Category:Interiors of Saint Joseph"},
+                    {"title":"Category:Altars of Saint Joseph"},
+                    {"title":"Category:Other architecture in Belgium"}]}}
+        children=mod.relevant_commons_subcategories(Client(),"St Joseph")
+        self.assertEqual(set(children),{"INTERIOR","SACRED_DETAIL"})
+        self.assertEqual(children["INTERIOR"],"Interiors of Saint Joseph")
     def test_geo_fallback_requires_caption_site_match(self):
         venue={"name":"St Benedict Church","country":"AU","locality":"",
                "lat":-33.619096,"lng":151.0455178,"precision":"building"}

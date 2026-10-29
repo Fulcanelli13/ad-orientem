@@ -360,6 +360,38 @@ def commons_pages(client, params):
     })
     return data.get("query", {}).get("pages") or []
 
+
+def commons_subcategory_role(title):
+    """Identify explicit thematic subfolders, never infer one from a QID."""
+    terms=set(words(title))
+    if terms & {"interior", "interiors", "interieur", "interieurs", "nave",
+                "inside", "innenraum", "sanctuary", "choir", "nef"}:
+        return "INTERIOR"
+    if terms & {"altar", "altars", "autel", "autels", "relic", "relics",
+                "reliquary", "reliquaries", "retable", "retables", "statue",
+                "statues", "vitraux", "chapels", "altare", "paintings"}:
+        return "SACRED_DETAIL"
+    if terms & {"exterior", "exteriors", "facade", "facades", "outside",
+                "towers", "exterieur", "exterieurs"}:
+        return "EXTERIOR"
+    return None
+
+def relevant_commons_subcategories(client, category):
+    """Get at most one exact-child subcategory per role; no recursive crawl."""
+    data=client.request({
+        "action":"query","format":"json","list":"categorymembers",
+        "cmtitle":"Category:"+category,"cmtype":"subcat","cmlimit":50,
+    })
+    selected={}
+    for entry in data.get("query",{}).get("categorymembers",[]):
+        title=str(entry.get("title") or "")
+        if not title.startswith("Category:"):
+            continue
+        role=commons_subcategory_role(title)
+        if role and role not in selected:
+            selected[role]=title[9:]
+    return selected
+
 def structured_discovery(client, venue):
     """One Wikidata identity search, then P18 and Commons category, as available.
 
@@ -373,7 +405,7 @@ def structured_discovery(client, venue):
     pages = []
     if match.get("image"):
         try:
-            pages.extend((page, "WIKIDATA_P18") for page in
+            pages.extend((page, "WIKIDATA_P18", None) for page in
                          commons_pages(client, {"titles": "File:" + match["image"]}))
         except (urllib.error.URLError, ValueError, KeyError, TimeoutError):
             info["image_fetch_error"] = "COMMONS_P18_METADATA_UNAVAILABLE"
@@ -381,31 +413,53 @@ def structured_discovery(client, venue):
         category = str(match["category"])[:140]
         if not re.search(r"[\[\]{}|<>\n\r]", category):
             try:
-                pages.extend((page, "WIKIDATA_COMMONS_CATEGORY") for page in
+                pages.extend((page, "WIKIDATA_COMMONS_CATEGORY", None) for page in
                              commons_pages(client, {
                     "generator": "categorymembers", "gcmtitle": "Category:" + category,
                     "gcmtype": "file", "gcmlimit": 40, "gcmnamespace": 6,
                 }))
             except (urllib.error.URLError, ValueError, KeyError, TimeoutError):
                 info["category_fetch_error"] = "COMMONS_CATEGORY_UNAVAILABLE"
+    if match.get("category"):
+        try:
+            relevant = relevant_commons_subcategories(client, str(match["category"])[:140])
+        except (urllib.error.URLError, ValueError, KeyError, TimeoutError):
+            relevant = {}
+            info["subcategory_fetch_error"] = "COMMONS_SUBCATEGORY_LIST_UNAVAILABLE"
+        for role in ("INTERIOR","SACRED_DETAIL","EXTERIOR"):
+            if role not in relevant:
+                continue
+            try:
+                child = relevant[role]
+                pages.extend((page,"WIKIDATA_COMMONS_SUBCATEGORY",role) for page in
+                             commons_pages(client,{"generator":"categorymembers",
+                                 "gcmtitle":"Category:"+child,"gcmtype":"file",
+                                 "gcmlimit":30,"gcmnamespace":6}))
+            except (urllib.error.URLError, ValueError, KeyError, TimeoutError):
+                info.setdefault("subcategory_errors",[]).append(role)
     seen = set()
-    for page, method in pages:
+    for page, method, preferred_role in pages:
         title = page.get("title")
         if not title or title in seen:
             continue
         seen.add(title)
         for kind in CATEGORIES:
+            if preferred_role and kind!=preferred_role:
+                continue
             c = candidate_from_page(page, venue, kind,
                                     discovery_method=method,
                                     entity_id=match["qid"])
             if not c:
                 continue
-            if c["category_evidence"] == "CATEGORY_UNCONFIRMED" and kind != "EXTERIOR":
+            if preferred_role:
+                c["category_evidence"]="STRUCTURED_SUBCATEGORY_ROLE_UNVERIFIED"
+                c["commons_subcategory"]=relevant.get(preferred_role)
+            elif c["category_evidence"] == "CATEGORY_UNCONFIRMED" and kind != "EXTERIOR":
                 continue
             out[kind].append(c)
     for kind, values in out.items():
         values.sort(key=lambda x: (
-            x["category_evidence"] != "CATEGORY_TEXT_MATCH",
+            x["category_evidence"] not in ("CATEGORY_TEXT_MATCH","STRUCTURED_SUBCATEGORY_ROLE_UNVERIFIED"),
             x["discovery_method"] != "WIKIDATA_P18",
             -x["discovery_score_only"], -(x["width"] * x["height"]), x["commons_title"]))
         out[kind] = values[:MAX_CANDIDATES_PER_CATEGORY]
