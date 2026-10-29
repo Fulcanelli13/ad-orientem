@@ -143,6 +143,26 @@ def match_score(name, locality, title, description) -> float:
     # This is discovery ordering, NOT an identity certification.
     return round(min(1.0, hit * 0.78 + (0.22 if local_match else 0.0)), 3)
 
+def strong_text_identity_evidence(venue, title, description):
+    """Reject Saint-name-only coincidences in external search results.
+
+    Exact Wikidata P18/category and geo-anchored matches use different
+    evidence; only unanchored Commons/Openverse text results need this gate.
+    """
+    name_tokens = {word for word in words(venue.get("name")) if len(word) >= 4 and word not in STOP}
+    observed = set(words(str(title) + " " + str(description)))
+    matched = name_tokens & observed
+    if len(name_tokens) >= 2 and len(matched) >= 2:
+        return True
+    # One-word church dedications (St Mary, Holy Name, St Joseph, etc.)
+    # require BOTH an explicit city/locality and country corroboration.
+    place_tokens = {word for word in words(venue.get("locality"))
+                    if len(word) >= 4 and word not in STOP}
+    return bool(matched and place_tokens and place_tokens & observed
+                and country_signal(venue.get("country"), title, description)
+                == "TARGET_COUNTRY_MENTIONED")
+
+
 def unsuitable_photo_subject(title, description):
     """Block obvious scans/drawings and no-longer-standing buildings from a
     visitor-photo shortlist. Other evidence stays HOLD for visual review.
@@ -205,7 +225,7 @@ class WikimediaClient:
         })
         for attempt in range(3):
             try:
-                with urllib.request.urlopen(request, timeout=35) as response:
+                with urllib.request.urlopen(request, timeout=15 if endpoint == OPENVERSE_API else 35) as response:
                     if response.headers.get("Content-Type", "").split(";")[0] != "application/json":
                         raise ValueError("Unexpected Commons response")
                     data = response.read(2_500_001)
@@ -531,7 +551,9 @@ def discover(client, venue, kind):
     found = []
     for page in (data.get("query", {}).get("pages") or []):
         candidate = candidate_from_page(page, venue, kind, discovery_method="COUNTRY_CONSTRAINED_TEXT")
-        if candidate:
+        if candidate and strong_text_identity_evidence(venue,
+                                                        candidate["commons_title"],
+                                                        candidate["description"]):
             found.append(candidate)
     found.sort(key=lambda r: (-r["discovery_score_only"], -r["width"] * r["height"], r["commons_title"]))
     return found[:MAX_CANDIDATES_PER_CATEGORY]
@@ -628,7 +650,7 @@ def openverse_candidate(item, venue):
     # this church. Country often goes unmentioned even when a source is correct.
     score = max((match_score(variant, venue.get("locality"), title, description)
                  for variant in search_name_variants(name)[:3]), default=0)
-    if score < 0.60:
+    if score < 0.60 or not strong_text_identity_evidence(venue, title, description):
         return None
     media_id = str(item.get("id") or "")
     if not re.fullmatch(r"[0-9a-fA-F-]{36}", media_id):

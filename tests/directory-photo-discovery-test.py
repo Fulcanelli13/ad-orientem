@@ -188,6 +188,23 @@ class PhotoDiscoveryTests(unittest.TestCase):
         self.assertIsNone(mod.openverse_license(mk("by-nd","4.0",
             "https://creativecommons.org/licenses/by-nd/4.0/")))
 
+    def test_st_mary_false_match_excluded(self):
+        target={"name":"Church of St Mary","country":"US","locality":""}
+        self.assertFalse(mod.strong_text_identity_evidence(
+            target,"Nave of Mary Magdalene Church in 1691",""))
+        self.assertFalse(mod.strong_text_identity_evidence(
+            {"name":"Church of the Holy Name","country":"AU","locality":""},
+            "Church of the Holy Name",""))
+        self.assertTrue(mod.strong_text_identity_evidence(
+            {"name":"Ss. Trinità dei Pellegrini","country":"IT","locality":""},
+            "Santissima Trinità dei Pellegrini, Roma",""))
+        self.assertTrue(mod.strong_text_identity_evidence(
+            {"name":"Church of St Mary","country":"US","locality":"Providence"},
+            "St Mary Church, Providence, United States",""))
+        self.assertFalse(mod.strong_text_identity_evidence(
+            {"name":"Church of St Mary","country":"US","locality":"Providence"},
+            "St Mary Church, Providence",""))
+
     def test_openverse_metadata_only_held(self):
         target={"name":"Church of the Holy Name","country":"AU","locality":"Stepney"}
         image={"id":"f9c119f6-3d45-4d1f-82d1-2aadfc9e12f0",
