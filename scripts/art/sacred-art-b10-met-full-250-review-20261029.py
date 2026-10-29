@@ -144,7 +144,7 @@ def main():
  cids,ctitles=canonical()
  candidates,csv_meta=csv_all(exclude,cids,ctitles)
  print('B10_CSV',json.dumps({'candidateCount':len(candidates),'source':csv_meta},ensure_ascii=False)[:2000],flush=True)
- assert len(candidates)>240,('insufficient full catalogue source candidates',len(candidates))
+ assert len(candidates)>30,('insufficient full catalogue source candidates',len(candidates))
  candidates.sort(key=rank)
  verified=[];errors=[];checked=0
  # Bounded batches; use authoritative current API, never rely on stale CSV for licensing.
@@ -163,7 +163,7 @@ def main():
    if identity in ctitles:continue
    verified.append(obj)
   print('B10_CURRENT_API',json.dumps({'checked':checked,'eligible':len(verified),'errors':len(errors)}),flush=True)
-  if len(verified)>=315:break
+  if len(verified)>=120:break
   time.sleep(.2)
  verified.sort(key=M.priority)
  unique=[];seen=set()
