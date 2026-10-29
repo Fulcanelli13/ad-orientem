@@ -34,12 +34,56 @@ for(const cue of sourceSequences){
   }
  }
 }
+// Existing certified source-only Memento brackets need their full 1962
+// hand/head/eye movements. The concise projection is reused in Missal and
+// LIVE, without adding priest observations, icons or prayer text mutations.
+for(const [cue,phrase] of [
+ ["AO.SM.C0155",/head slightly bowed/],
+ ["AO.SM.C0193",/eyes fixed on the Blessed Sacrament/],
+]){
+ const sourceRow=sung.blocks.flatMap(b=>b.units).find(x=>x.cue_id===cue);
+ assert.ok(sourceRow?.latin.startsWith("[SILENT COMMEMORATION"),cue);
+ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  for(const language of ["en","fr"]){
+   const p=mk(cue,form,language,"RUBRIC");
+   const result=conciseMissalSourceRubric(p,{form,language});
+   assert.ok(result,cue+" needs exact source rubric "+form+" "+language);
+   assert.deepEqual(result.eventIds,[cue==="AO.SM.C0155"?"AO.RUB.C0155.01":"AO.RUB.C0193.01"]);
+   assert.equal(result.observedNow,false);
+   assert.match(result.text,language==="en"?phrase:
+     cue==="AO.SM.C0155"?/tête légèrement inclinée/:/yeux fixés sur le Saint-Sacrement/);
+   const bad=structuredClone(p);
+   bad.publishedMissalRubrics[0].sourceId="EDITORIAL_RESEARCH";
+   assert.equal(conciseMissalSourceRubric(bad,{form,language}),null);
+  }
+ }
+}
 for(const cue of ["AO.SM.C0232","AO.SM.C0234"]){
  for(const language of ["en","fr"]){
   const row=mk(cue,"LOW",language,"TEXT");
   const compact=conciseMissalInlineSequence(row.publishedMissalRubrics,{form:"LOW",language});
   assert.ok(compact&&compact.eventIds.length===2);
   assert.equal(compact.sourceCueId,cue);
+ }
+}
+// Complete the finite seven-gesture matrix gate: all remain text-backed,
+// and none is silently promoted to unrelated (especially full-elevation) art.
+const gestureMatrix=read("../data/mass/gesture-matrix.v1.json");
+const unresolved=["C0117","C0155","C0161","C0169","C0193","C0204","C0263"];
+for(const suffix of unresolved){
+ const cue="AO.SM."+suffix;
+ const primary=gestureMatrix.items.find(x=>x.cueId===cue&&x.actor==="PRIEST"&&
+   x.displayPrimary===true);
+ assert.ok(primary,cue+" lacks prescribed priest matrix action");
+ assert.equal(primary.authorityClass,"1962_NORMATIVE");
+ assert.equal(primary.iconStatus,"PENDING_EXACT_MASTER");
+ assert.equal(primary.iconKey,null,cue+" acquired unapproved artwork");
+ for(const language of ["en","fr"]){
+  const certified=publishedMissalRubricsForParagraph({sourceCueIds:[cue]},registry,{
+    form:"LOW",language,gestureMatrix
+  });
+  assert.ok(certified.some(x=>x.sourceCueId===cue&&x.actor==="PRIEST"&&
+    x.observedNow===false&&x.sourceId==="MR62_RITUS"),cue+" missing sourced "+language+" text");
  }
 }
 const covered=mk("AO.SM.C0232","LOW","en","TEXT").publishedMissalRubrics;
@@ -58,6 +102,9 @@ assert.equal(conciseMissalInlineSequence(covered,{form:"GOOD_FRIDAY"}),null);
 const dom=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
 assert.match(dom,/mode==="MISSAL"\?conciseMissalInlineSequence\(shortRubrics/);
 assert.match(dom,/const conciseSource=bookRubric \? conciseMissalSourceRubric\(p/);
+assert.match(dom,/const liveMemento=mode==="LIVE"/);
+assert.match(dom,/event.id==="GM.P.C0204.01"/);
+assert.match(dom,/node.prepend\(note\)/);
 assert.match(dom,/shortAction:typeof event\.shortAction==="string"\?event\.shortAction:null/);
 assert.match(dom,/syncExactIconBackedRubrics\(root,current,mode,iconResolver\)/);
 assert.match(dom,/renderedIcon&&!renderedIcon\.hidden/);

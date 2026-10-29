@@ -109,4 +109,55 @@ for(const id of ["AO.SM.C0161","AO.SM.C0174","AO.SM.C0181"]){
  assert.equal(bells.length,0,"Uncertified independent bell stage auto-published");
 }
 
+// C0204 has a 1962 normative gesture-matrix record but no exact approved
+// artwork or R17 event. It must print at its own paragraph in BOTH modes
+// without mutating the historical 52-action / 414-crosswalk denominators.
+const matrix=JSON.parse(readFileSync(new URL("../data/mass/gesture-matrix.v1.json",import.meta.url),"utf8"));
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+ for(const language of ["en","fr"]){
+  const input=mk("minor-elevation",["AO.SM.C0204"]);
+  const opts={form,language,gestureMatrix:matrix};
+  const row=publishedMissalRubricsForParagraph(input,source,opts);
+  assert.equal(row.length,1,"Missing C0204 source-only action "+form+" "+language);
+  const x=row[0];
+  assert.equal(x.id,"GM.P.C0204.01");
+  assert.equal(x.owner,"CERTIFIED_1962_MATRIX_TEXT_ONLY");
+  assert.equal(x.review,"EXACT_1962_GESTURE_MATRIX_RUBRIC");
+  assert.equal(x.sourceId,"MR62_RITUS");
+  assert.equal(x.sourceUrl,cited);
+  assert.equal(x.observedNow,false);
+  assert.equal(x.kind,"MATRIX_TEXT_ONLY");
+  assert.match(x.displayText,language==="fr"?/élève légèrement le calice/:/raises the chalice slightly/);
+  const projection=withPublishedMissalParagraphRubrics([input],source,opts);
+  assert.equal(projection.length,1,"No added prayer row or section");
+  const normalized=normalizeReaderMoment({paragraphs:projection});
+  assert.equal(normalized.paragraphs[0].publishedMissalRubrics.length,1,
+    "Text-only source rubric lost in normalizer");
+  assert.equal(normalized.paragraphs[0].publishedMissalRubrics[0].id,x.id);
+ }
+}
+assert.equal(publishedMissalRubricsForParagraph(mk("c0204",["AO.SM.C0204"]),source).length,0,
+ "A missing canonical matrix must fail closed");
+assert.equal(publishedMissalRubricsForParagraph(
+ mk("derived",[]),source,{gestureMatrix:matrix}).length,0,
+ "A synthetic/source-anchor-only row cannot borrow C0204");
+for(const mutation of [
+ x=>{x.items.find(y=>y.id==="GM.P.C0204.01").iconKey="priest_elevation";},
+ x=>{x.items.find(y=>y.id==="GM.P.C0204.01").authorityClass="EDITORIAL";},
+ x=>{x.items.find(y=>y.id==="GM.P.C0204.01").label="GENERIC ELEVATION";}
+]){
+ const bad=structuredClone(matrix);mutation(bad);
+ assert.equal(publishedMissalRubricsForParagraph(mk("bad",["AO.SM.C0204"]),
+  source,{gestureMatrix:bad}).length,0,"Unverified source must not promote artwork or text");
+}
+const badMinor=normalizeReaderMoment({paragraphs:[{
+ id:"fake",sourceCueIds:["AO.SM.C0204"],
+ publishedMissalRubrics:[{id:"GM.P.C0204.02",sourceCueId:"AO.SM.C0204",
+   owner:"CERTIFIED_1962_MATRIX_TEXT_ONLY",review:"EXACT_1962_GESTURE_MATRIX_RUBRIC",
+   kind:"MATRIX_TEXT_ONLY",actor:"PRIEST",sourceId:"MR62_RITUS",observedNow:false,
+   displayText:"Fabricated action"}]
+}]});
+assert.equal(badMinor.paragraphs[0].publishedMissalRubrics.length,0,
+ "Unapproved matrix identity cannot pass normalization");
+
 console.log("PASS 52 existing approved priest actions + 2 published canonical-digits STATE annotations (EN/FR, four forms); bells remain unpromoted.");
