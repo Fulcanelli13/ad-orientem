@@ -1,0 +1,99 @@
+{
+  "schema": "AO_DIRECTORY_UNIFIED_PHOTO_QUEUE_INDEX_V1",
+  "publication": "RESEARCH_ONLY_NEVER_APP_VISIBLE",
+  "source_master": "CL2_UNMERGED_RESEARCH_ONLY",
+  "cl2_commit": "eb67711a9886a7626916b7a145787c5e99105968",
+  "cl2_manifest_sha256": "bdee666ca817616740fd01e061d4d8a404e1ae1cbae1118b1ab23b9d1802d1ff",
+  "r49_sha256": "cb2979e77c973d457b4cbc5b21381405a4575c4bae3f1fb6b501aa363204d622",
+  "shard_size": 250,
+  "shards": [
+    {
+      "path": "anchors-0000-0249.json",
+      "count": 250,
+      "sha256": "8a6a5f6e36233e810154619fe611dff63659d58389fcc24713ded08d48978d50",
+      "bytes": 189295
+    },
+    {
+      "path": "anchors-0250-0499.json",
+      "count": 250,
+      "sha256": "2fb24f5ae36c807b5161ec3012f6618fb5a20b0e2862f829be785860cccc9b3e",
+      "bytes": 188473
+    },
+    {
+      "path": "anchors-0500-0749.json",
+      "count": 250,
+      "sha256": "ee53546ae63c85ce2c9f6bc85d971f2d59e96a226dc80e99ed44f5dfb2a3bc54",
+      "bytes": 196096
+    },
+    {
+      "path": "anchors-0750-0999.json",
+      "count": 250,
+      "sha256": "9d090b5845853fd1354feda4944e452c5846df6984707ac63111cda2c219575a",
+      "bytes": 196457
+    },
+    {
+      "path": "anchors-1000-1249.json",
+      "count": 250,
+      "sha256": "69c6d3aa74aa40b116c68db0154ba4baee8a4f4af75ba76d26fd425197b4a1f5",
+      "bytes": 181784
+    },
+    {
+      "path": "anchors-1250-1499.json",
+      "count": 250,
+      "sha256": "ab98537812917cde8bbdc35511a4987333d27f7a6bf8a48f15f8e077198a1fca",
+      "bytes": 179569
+    },
+    {
+      "path": "anchors-1500-1749.json",
+      "count": 250,
+      "sha256": "64a5599b84d609eb4d2fc68017221a64fa8274fc2a72bb197dba753c5f5248fc",
+      "bytes": 184789
+    },
+    {
+      "path": "anchors-1750-1999.json",
+      "count": 250,
+      "sha256": "726ec6bb33fd49d841ecebc37d41bff45280e5967e675b72810599641a070c46",
+      "bytes": 188237
+    },
+    {
+      "path": "anchors-2000-2249.json",
+      "count": 250,
+      "sha256": "f7d38875d7d02471e9f152157f9a93da6c44744e6006b11599c66e09e973560e",
+      "bytes": 191041
+    },
+    {
+      "path": "anchors-2250-2499.json",
+      "count": 250,
+      "sha256": "636eccb70f64cb52bd49ca89afa4934b6ce5ac0f48f1a5a45b7893a011a9a94f",
+      "bytes": 190647
+    },
+    {
+      "path": "anchors-2500-2578.json",
+      "count": 79,
+      "sha256": "2a6800ab7905e6b0276f9d51b6493158bd1c37726cd0bfba79be4f8c22cf8526",
+      "bytes": 59420
+    }
+  ],
+  "counts": {
+    "distinct_consolidated_physical_anchors": 2579,
+    "research_photo_queue_records": 2579,
+    "historical_canonical_group_ids": 2584,
+    "same_building_aliases_not_extra_sites": 5,
+    "all_cl2_venue_sources": 2687,
+    "cl2_venue_sources_safely_attached": 2682,
+    "cl2_venue_sources_held_for_group_conflict": 5,
+    "cl2_venue_sources_other_unmapped": 0,
+    "r49_historical_source_ids": 1879,
+    "r49_exact_source_ids_crosswalked": 1879,
+    "r49_unmatched_historical_source_ids": 0,
+    "anchors_with_r49_exact_source": 1844,
+    "anchors_without_r49_exact_source": 735,
+    "anchors_with_source_evidence": 2579,
+    "unique_countries": 76,
+    "photos_downloaded": 0,
+    "photos_approved": 0,
+    "photos_published": 0
+  },
+  "audit_sha256": "8843a56447cb9e70e985ae9a7eabd864dd33d0f3c399b88ea4b33ffadc8e03e8",
+  "not_app_visible": true
+}
