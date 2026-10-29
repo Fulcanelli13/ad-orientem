@@ -85,4 +85,15 @@ assert.ok(runtime.includes("role=\"progressbar\""));
 assert.ok(runtime.includes("historical English"));
 assert.ok(styles.includes("min-height:48px"));
 assert.ok(styles.includes("prefers-reduced-motion:reduce"));
+assert.match(styles,/\.aoPreciousBloodActions\{[^]*?position:sticky;bottom:0;z-index:12/,
+ "Keep the canonical previous/continue actions reachable in the phone reader");
+assert.match(styles,/\.aoPreciousBloodActions button\{[^]*?min-height:48px/,
+ "Original source-owned controls require 48px minimum tap targets");
+assert.match(styles,/env\(safe-area-inset-bottom\)/,
+ "Chaplet controls must respect a home-indicator safe area");
+assert.match(styles,/@media\(max-width:420px\)/,
+ "Compact only the mobile source-first layout, not the desktop or Mass reader");
+assert.match(styles,/\.aoPreciousBloodCard p\{font:400 clamp\(19px,3\.4vw,23px\)\/1\.7/,
+ "Do not shrink the actual source prayer font");
+
 console.log("B18 PASS: 7 full historical Precious Blood mysteries, 33+7+7, dated original ending, canonical EN/FR/LA repeats; source-conflicted short form withheld.");
