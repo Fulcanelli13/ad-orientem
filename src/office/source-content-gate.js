@@ -54,7 +54,14 @@ export function officeTranslationContentBlockers({latin,translation}={}){
     // The 31 October FIRST Vespers Sunday commemoration instead uses
     // Vidi Dominum. Only the SECOND Vespers At Jesus source is missing
     // from the French composed output; do not quarantine its valid sibling.
-    if(l&&/at jesus conversus/.test(normalized(l.text))){
+    const prayerCells=(latin.sections??[]).filter(s=>
+      s.semantic?.role==="PRAYER"||/^Vespera(?:8|9|10)$/.test(s.sourceCellId));
+    const headingIndex=l?prayerCells.findIndex(s=>s.sourceCellId===l.sourceCellId):-1;
+    // Source heading, antiphon and collect may occupy DISTINCT cells.
+    // Inspect the ordered span after the heading, not just its own cell.
+    const latinAfter=headingIndex>=0?
+      normalized(prayerCells.slice(headingIndex).map(s=>s.text).join("\n")):"";
+    if(l&&/at jesus conversus/.test(latinAfter)){
       const tr=find(translation,l.sourceCellId);
       const all=normalized((translation.sections??[]).map(s=>s.text).join("\n"));
       const hasAntiphon=/jesus se retournant/.test(all);
