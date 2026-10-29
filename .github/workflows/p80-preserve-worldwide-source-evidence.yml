@@ -1,0 +1,65 @@
+name: P80 complete 76-country image-source archival handoff (read-only)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/p80-preserve-worldwide-source-evidence.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verified-public-source-transfer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN_ID: '40856809723'
+      SOURCE_HEAD: '3118034f662ab708c580ea71c8522d2f66032895'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify completed original 2579-anchor worldwide campaign
+        run: |
+          set -euo pipefail
+          test "$(gh run view "$SOURCE_RUN_ID" --repo "$GITHUB_REPOSITORY" --json conclusion --jq .conclusion)" = success
+          test "$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID" --jq .head_sha)" = "$SOURCE_HEAD"
+      - name: Retrieve already completed research source records (no new Wikimedia requests)
+        run: |
+          mkdir -p /tmp/p80-source-data
+          gh run download "$SOURCE_RUN_ID" --repo "$GITHUB_REPOSITORY" \
+            --name P80-ONE-WORLDWIDE-2579-PHOTO-SOURCE-AUDIT \
+            --dir /tmp/p80-source-data
+      - name: Check full source lineage and emit bounded base64 blocks for authenticated GitHub archival
+        run: |
+          python - <<'PY'
+          import base64,hashlib,json,pathlib,zipfile,io
+          root=pathlib.Path("/tmp/p80-source-data")
+          countries=sorted(root.glob("p80-all-countries/country-*.json"))
+          idx=root/"p80-whole-world/p80-2579-source-first-index.json"
+          audit=root/"p80-whole-world/p80-audit.json"
+          assert len(countries)==76 and idx.is_file() and audit.is_file()
+          d=json.loads(idx.read_text())
+          c=d["counts"]
+          assert c["anchors_accounted"]==2579
+          assert c["countries_attempted"]==76
+          assert c["raw_country_image_rows"]==44777
+          assert c["source_error_countries"]==["BR","IN","MX"]
+          assert len(d["records"])==2579
+          expected=sum(len(json.loads(f.read_text())["records"]) for f in countries)
+          assert expected==44777
+          data=io.BytesIO()
+          with zipfile.ZipFile(data,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=8) as z:
+            for f in countries+[idx,audit]:
+              z.write(f,f.relative_to(root))
+          binary=data.getvalue()
+          digest=hashlib.sha256(binary).hexdigest()
+          encoded=base64.b64encode(binary).decode("ascii")
+          parts=[encoded[i:i+6000] for i in range(0,len(encoded),6000)]
+          print("P80_ARCHIVE_HEADER="+json.dumps({"schema":"AO_P80_PERMANENT_ARCHIVE_TRANSFER_V1",
+            "sha256":digest,"bytes":len(binary),"chunks":len(parts),
+            "countries":len(countries),"original_country_image_rows":expected,"anchors":2579}),flush=True)
+          for i,part in enumerate(parts):
+            print("P80_ARCHIVE_B64_CHUNK="+json.dumps({"i":i,"data":part},separators=(",",":")),flush=True)
+          print("P80_ARCHIVE_READY="+json.dumps({"sha256":digest,"chunks":len(parts)}),flush=True)
+          PY
