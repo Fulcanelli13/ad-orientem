@@ -20,6 +20,32 @@ GENERIC = {"the","church","chapel","cathedral","saint","sainte","san","santa","s
            "our","lady","notre","dame","de","des","du","del","di","of","la","le",
            "eglise","iglesia","kirche","parish","catholic","maria","marie","mary",
            "basilica","basilique","holy"}
+P86_GENERIC_UNRESOLVED_VENUE_NAMES = frozenset({
+    "Brindisi",
+    "Swakopmund – Namibia",
+    "Belo Horizonte",
+    "Atikokan",
+    "Thunder Bay",
+    "Verona",
+    "Winchester",
+    "Coonoor",
+    "Misión - Veracruz",
+    "Douala",
+    "San Luis",
+    "Misión Ensenada",
+    "Bergen",
+    "Misión - Toluca",
+    "Cotonou",
+    "Gothenburg",
+    "Mar del Plata",
+    "Misión - Morelia",
+    "Tandil",
+    "Palermo",
+    "Misión - Merida",
+    "Misión Durango",
+    "Visitacion",
+})
+
 STATUSES = {"SEARCH_SUCCESS_EMPTY", "SEARCH_SUCCESS_WITH_CANDIDATES",
             "SOURCE_ERROR_NOT_ZERO_RESULTS", "NO_DISTINCT_BUILDING_NAME"}
 
@@ -238,6 +264,13 @@ def screen(p80,p80_countries,p81_rows,geos=None):
             p["screening_disposition"]="HOLD_SHARED_IMAGE_ACROSS_DIFFERENT_SITES"
         elif p["rights_metadata_status"]!="SUPPORTED_LICENSE_METADATA_CLAIM_NOT_INDEPENDENTLY_CLEARED":
             p["screening_disposition"]=p["rights_metadata_status"]
+        elif (p["place_name"].strip().casefold() in
+              {n.casefold() for n in P86_GENERIC_UNRESOLVED_VENUE_NAMES}
+              or (p["place_city_hint"] and
+                  p["place_name"].strip().casefold()==p["place_city_hint"].strip().casefold())):
+            # A city is not a physical church. No file from a city-level
+            # search may be offered as a photo of an unnamed Mass venue.
+            p["screening_disposition"]="HOLD_GENERIC_LOCALITY_EXACT_BUILDING_UNIDENTIFIED"
         elif p["p80_near_source_pin"]:
             p["screening_disposition"]="REVIEW_QUEUE_GEO_SOURCE_PIN_CORROBORATED"
         elif p["locality_correlated"] and len(tokens(p["place_name"]) & tokens(p["file_title"]+" "+p["source_description"]))>=1:
