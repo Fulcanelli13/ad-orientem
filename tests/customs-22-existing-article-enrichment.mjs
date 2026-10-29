@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {CALENDAR_HISTORICAL_CUSTOM_VARIANT_COUNT,CALENDAR_HISTORICAL_CUSTOM_PARENT_COUNT,calendarHistoricalCustomVariantIds,calendarCustomHistoricalVariants} from "../src/calendar/customs-22-regional-variants.js";
 import {calendarCustomArticleIds,calendarCustomArticle,calendarCustomRecommendations} from "../src/calendar/customs-read-model.js";
+import {calendarCustomSearchIndex,calendarCustomSearchMatches} from "../src/calendar/customs-search.js";
+import {selectCustoms} from "../src/customs/customs-library.js";
 const read=p=>readFileSync(new URL("../"+p,import.meta.url),"utf8");
 const canonical=JSON.parse(read("data/customs/customs-atlas-seed.v1.json")).customs;
 const runtime=read("src/calendar/calendar-runtime.js");
@@ -47,6 +49,27 @@ assert.equal(all.length,22);
 assert.equal(parents.size,12);
 assert.equal(new Set(all.map(x=>x.id)).size,22);
 assert.deepEqual(new Set(all.map(x=>x.id)),new Set(calendarHistoricalCustomVariantIds()));
+// A variation is discoverable by title in both languages, but its result
+// always opens the existing canonical Customs article, never a new card.
+const searchLibrary={items:canonical.filter(x=>x.publication_state==="PUBLISHED").map(x=>({
+ ...x,id:x.custom_id,name:x.name,
+ temporal:{group:"advent"},
+ title_en:x.name,title_fr:x.name,
+ description_en:x.canonical_statement,description_fr:x.canonical_statement
+}))};
+for(const variant of all){
+ const parent=calendarCustomArticle(variant.parent_custom_id);
+ assert.ok(parent);
+ const idx=calendarCustomSearchIndex(parent);
+ for(const fr of [false,true]){
+  const label=calendarCustomHistoricalVariants(variant.parent_custom_id,{fr})
+    .find(x=>x.id===variant.id).title;
+  assert.equal(calendarCustomSearchMatches(idx,label),true,"Calendar search missed "+variant.id);
+  assert.ok(selectCustoms(searchLibrary,{view:"all",query:label})
+    .some(x=>x.id===variant.parent_custom_id),"Customs collection missed "+variant.id);
+ }
+}
+assert.equal(selectCustoms(searchLibrary,{view:"all"}).length,35);
 assert.equal(calendarCustomHistoricalVariants("NOT_A_CUSTOM").length,0);
 assert.equal(calendarCustomHistoricalVariants("CUST-XMAS-POLISH-HAY").length,0);
 assert.equal(calendarCustomHistoricalVariants("CORP-001").length,3);
