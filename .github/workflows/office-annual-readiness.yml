@@ -7,6 +7,11 @@ on:
       - 'src/office/mass-host-source-bridge.js'
       - 'src/office/structured-hour-draft.js'
       - 'src/office/precedence-review.js'
+      - 'src/office/reviewed-hour-handoff.js'
+      - 'src/office/annual-research-sweep.js'
+      - 'scripts/office/sweep-annual-research.mjs'
+      - 'tests/divine-office-reviewed-hour-handoff.mjs'
+      - 'tests/divine-office-annual-research-sweep.mjs'
       - 'tests/divine-office-precedence-review.mjs'
       - 'tests/divine-office-mass-bridge-and-hour-draft.mjs'
       - 'tests/divine-office-source-section-resolver.mjs'
@@ -41,6 +46,11 @@ jobs:
           node --test tests/divine-office-mass-bridge-and-hour-draft.mjs
           node --check src/office/precedence-review.js
           node --test tests/divine-office-precedence-review.mjs
+          node --check src/office/reviewed-hour-handoff.js
+          node --test tests/divine-office-reviewed-hour-handoff.mjs
+          node --check src/office/annual-research-sweep.js
+          node --check scripts/office/sweep-annual-research.mjs
+          node --test tests/divine-office-annual-research-sweep.mjs
           node --check src/office/annual-capture-ledger.js
           node --check scripts/office/emit-annual-capture-ledger.mjs
           node --test tests/divine-office-annual-capture-ledger.mjs
@@ -68,6 +78,29 @@ jobs:
                 "planned/none approved/none published");
             }
           '
+      - name: Execute no-download annual Office selection sweeps
+        run: |
+          set -euo pipefail
+          node scripts/office/sweep-annual-research.mjs \
+            --year 2026 --out "$RUNNER_TEMP/office-selection-2026.json"
+          node scripts/office/sweep-annual-research.mjs \
+            --year 2028 --out "$RUNNER_TEMP/office-selection-2028.json"
+          node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            for(const [year,days] of [[2026,365],[2028,366]]){
+              const doc=JSON.parse(readFileSync(process.env.RUNNER_TEMP+
+                "/office-selection-"+year+".json","utf8"));
+              if(doc.summary.days!==days||
+                doc.summary.plannedLocaleSlots!==days*8*3||
+                doc.summary.researchCandidateHours!==0||
+                doc.summary.withheldHours!==days*8||
+                doc.summary.independentlyCertifiedHours!==0||
+                doc.summary.publishedHours!==0||
+                doc.allYearLiturgicalDiscrepanciesActuallyChecked!==false)
+                throw Error("OFFICE_ANNUAL_SWEEP_FABRICATED_COVERAGE");
+            }
+          '
+      # Outputs remain ephemeral runner scratch. No source or report upload.
       - name: Rehydrate historical 168 verified source hashes from committed metadata ONLY
         run: |
           set -euo pipefail
