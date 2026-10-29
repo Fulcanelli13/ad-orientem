@@ -114,7 +114,7 @@ def normalize_anchor_rows(parts, r49_ids):
             raise ValueError("Duplicate CL2 historical ID")
         if entry.get("site_state") != "RESEARCH_ONLY_NOT_PUBLIC":
             raise ValueError("Unexpected site release state")
-        if not re.fullmatch(r"RG-[0-9A-F]{12}", group) or not re.fullmatch(r"RG-[0-9A-F]{12}", aid):
+        if not re.fullmatch(r"RG-(?:B[0-9]{2}-)?[0-9A-F]{12}", group) or not re.fullmatch(r"RG-(?:B[0-9]{2}-)?[0-9A-F]{12}", aid):
             raise ValueError("Noncanonical CL2 group ID")
         group_anchor[group] = aid
         if group == aid:
