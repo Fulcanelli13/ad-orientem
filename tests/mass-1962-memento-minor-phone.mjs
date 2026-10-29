@@ -86,7 +86,8 @@ try{
      await frame();
      const current=api.getNativeEventState();
      const primary=row.querySelector(".ao-line-primary");
-     const liveRubric=row.querySelector(".ao-iconless-source-rubric");
+     const liveRubric=row.querySelector('[data-source-gesture-id="GM.P.C0204.01"]')??
+       row.querySelector(".ao-iconless-source-rubric");
      const missalRubric=row.querySelector(
       '.ao-missal-inline-rubrics [data-rubric-id="GM.P.C0204.01"]');
      const missalContainer=missalRubric?.closest(".ao-missal-inline-rubrics");
@@ -100,6 +101,9 @@ try{
       primary:primary?.textContent?.trim()??"",
       primaryColor:primaryStyle?.color??"",
       liveRubric:liveRubric?.textContent?.trim()??"",
+      liveMatrixIdentity:liveRubric?.dataset.sourceGestureId??null,
+      fakeR17Rubric:row.querySelectorAll('[data-rubric-id="GM.P.C0204.01"]').length,
+      matrixArt:liveRubric?.querySelector(".ao-approved-priest-gesture-rubric-art,.ao-approved-finger-rubric-art,.ao-approved-priest-head-bow-rubric-art")?.dataset.approvedAsset??null,
       missalRubric:missalRubric?.textContent?.trim()??"",
       missalColor:noteStyle?.color??"",
       missalRubricBeforeText:Boolean(missalContainer&&primary&&
@@ -146,8 +150,12 @@ try{
      assert.match(snapshot.liveRubric,spec.lang==="fr"
       ?/élève légèrement l’Hostie et le calice/:/raises the Host and chalice slightly/,
       "LIVE minor elevation lacks text-only source cue");
-     assert.equal(snapshot.actionIconKey,null,
-      "Minor elevation reused an inaccurate full-elevation pictogram");
+     assert.equal(snapshot.fakeR17Rubric,0,
+      "The canonical gesture-matrix source must never masquerade as an R17 published event");
+     assert.equal(snapshot.liveMatrixIdentity,"GM.P.C0204.01",
+      "LIVE missing certified matrix source identity at exact C0204 paragraph");
+     assert.equal(snapshot.matrixArt,null,
+      "C0204 cannot acquire approximate elevation artwork");
     }
    }
   }finally{await context.close();}
