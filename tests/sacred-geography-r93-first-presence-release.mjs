@@ -25,7 +25,7 @@ assert.equal(geo.geoAreas.length,LIVE.areas,"Current geography may grow after R9
 assert.equal(src.sources.length,LIVE.sources);
 assert.equal(new Set(geo.places.map(x=>x.place_id)).size,geo.places.length);
 assert.equal(new Set(src.sources.map(x=>x.id)).size,src.sources.length);
-assert.equal(geo.directoryPlaceLinks.length,9);
+assert.equal(geo.directoryPlaceLinks.length,LIVE.links);
 assert.equal(cross.place_crosswalk.length,geo.places.length);
 assert.equal(cross.counts.places,geo.places.length);
 assert.equal(cross.counts.places_without_direct_claim,cross.exception_queues.places_without_direct_claim.length);
