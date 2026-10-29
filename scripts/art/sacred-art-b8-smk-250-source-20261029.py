@@ -139,7 +139,9 @@ def painting(x):
 def verified_legal(x):
  if x.get('public_domain') is not True or x.get('has_image') is not True:return False
  url=str(x.get('rights_url') or '')
- if 'creativecommons.org/publicdomain/mark/1.0' not in url:return False
+ if url and 'creativecommons.org/publicdomain/mark/1.0' not in url:return False
+ licence=low(x.get('licence') or '')
+ if licence and 'public domain' not in licence:return False
  im=str(x.get('image_thumbnail') or '')
  p=urllib.parse.urlparse(im)
  if p.scheme!='https' or p.hostname not in ('iip-thumb.smk.dk','iip.smk.dk'):return False
@@ -243,8 +245,8 @@ def main():
    'year':x.get('year_from'),'objectUrl':'https://open.smk.dk/en/artwork/image/'+oid,
    'previewURL':x['image_thumbnail'],'imageWidth':x.get('image_width'),
    'imageHeight':x.get('image_height'),
-   'sourceImageRights':'SMK_EXACT_OBJECT_PUBLIC_DOMAIN_PDM_1.0',
-   'sourceRightsURL':x['rights_url'],'rightsConflict':None,
+   'sourceImageRights':'SMK_EXACT_OBJECT_PUBLIC_DOMAIN_TRUE_OFFICIAL_POLICY',
+   'sourceRightsURL':x.get('rights_url') or 'https://connect.smk.dk/om/rettigheder','rightsConflict':None,
    'productionImageRightsCleared':False,'productionImported':False})
  selected=[];fail=[];imageUrls=set()
  # Submit up to 450 previews to a modest thread pool; keep the candidate
@@ -272,7 +274,7 @@ def main():
     'previousBatches':prior,'canonicalSMKIDsExcluded':len(canon),
     'userB6AcceptedPreserved':31,'userB6RejectedPreserved':219,
     'originalPhotosSaved':0,'productionImports':0},
-  'sourceRights':'SMK public_domain=true; has_image=true; painting classification; exact publicdomain/mark/1.0 rights_url; native photo QA still outstanding',
+  'sourceRights':'SMK public_domain=true and has_image=true per record; Painting classification; individual rights_url when present or SMK official Public Domain policy when absent; native photo QA outstanding',
   'scanLog':log,'previewErrors':fail[:100],'hash':digest,
   'gates':{'noAlreadyReviewedSourceIDs':True,'noInventedAestheticApproval':True,
     'imageLinkedViaOfficialSMKCDN':True,'noProductionMutation':True,
@@ -283,7 +285,7 @@ def main():
   f"- Sacred metadata candidates: **{len(candidates)}**, distinct editorial queue **{len(queue)}**.\n"
   f"- Verified-image review cards **{len(selected)}** / target 250; source-image failures **{len(fail)}**.\n"
   f"- Excluded earlier review IDs **{len(prev)}**: {prior}. B6 preserved: 31 selected, 219 rejected.\n"
-  "- Artwork type must be Painting; techniques oil/tempera etc.; exact Public Domain Mark, official image URL and JPEG signature check.\n"
+  "- Artwork type must be Painting; techniques oil/tempera etc.; individual public_domain=true; SMK official Public Domain policy, official image URL and JPEG signature check.\n"
   "- Subject and artist are title/metadata triage, NOT human aesthetic approval. Original photograph, frame, colour fidelity and crop not certified.\n"
   f"- Batch hash {digest}. Gallery research only, no photos stored, no production art changes, €0.\n")
  print(json.dumps({'counts':report['counts'],'ready':report['batchReady'],'hash':digest,
