@@ -7,6 +7,8 @@ import {createAdventFirstVespersBoundedPinnedReader,
  from "../src/office/advent-first-vespers-bounded-preview-reader.js";
 import {assembleAdventI2026PrivatePreviewSession as assemble}
  from "../src/office/advent-first-vespers-preview-session.js";
+import {buildAdventI2026ReadingFocus as buildFocus}
+ from "../src/office/advent-first-vespers-reading-focus.js";
 
 const fixture={};
 for(const lang of ["la","en","fr"]){
@@ -142,4 +144,77 @@ test("invalid local calendar or public-release flags never become a preview",asy
  });
  assert.equal(x.status,"WITHHELD");
  assert.equal(x.publishable,false);
+});
+
+test("focused reading retains 37 liturgical events, exactly 40+10 verse rows and six hymn stanzas",async()=>{
+ const result=await assemble({...reader(),universalWitness:universal,
+  recitation:"SOLO",minister:"BELOW_DEACON"});
+ assert.equal(result.status,"RESEARCH_PREVIEW_ASSEMBLED_NOT_RELEASED",result.reason);
+ const p=result.preview;
+ const focus=buildFocus({preview:p});
+ assert.equal(focus.status,"RESEARCH_VERSE_AND_STANZA_FOCUS_NOT_CERTIFIED",focus.reason);
+ assert.equal(focus.originalEventCount,37);
+ assert.equal(focus.focusFrameCount,86);
+ assert.equal(focus.frames.length,86);
+ assert.equal(focus.psalmVerseRows,40);
+ assert.equal(focus.magnificatVerseRows,10);
+ assert.equal(focus.hymnStanzas,6);
+ assert.equal(focus.allLanguagesAlignedByPinnedSourceOrdinals,true);
+ assert.equal(focus.sourceTextAltered,false);
+ assert.equal(focus.published,false);
+ assert.equal(focus.publishable,false);
+ assert.deepEqual([...new Set(focus.frames.map(x=>x.eventIndex))],
+  [...Array(37).keys()]);
+ assert.equal(focus.frames.filter(x=>x.kind==="COLLECT_ENDING").length,1);
+ assert.equal(focus.frames.filter(x=>x.kind==="RESEARCH_CALENDAR_NOTICE").length,1);
+ const ps=focus.frames.filter(x=>x.focusType==="PSALM_VERSE");
+ assert.equal(ps.length,40);
+ assert.ok(ps.filter(x=>x.label==="143:2").length===2);
+ assert.ok(ps.filter(x=>x.label==="144:13a").length===1);
+ assert.ok(ps.filter(x=>x.label==="144:13b").length===1);
+ for(const [eventIndex,block] of p.blocks.entries()){
+  const fr=focus.frames.filter(x=>x.eventIndex===eventIndex);
+  assert.ok(fr.length>=1);
+  if(block.kind==="RESEARCH_CALENDAR_NOTICE")continue;
+  for(const lang of ["la","en","fr"]){
+   const after=block.kind==="PSALM_PORTION"?
+    [fr.map(x=>x.texts[lang][0]).join("\n")]:
+   block.kind==="MAGNIFICAT"?
+    fr.map(x=>x.texts[lang][0]):
+   block.kind==="HYMN"?
+    fr.flatMap((x,i)=>i===0?[...x.texts[lang]]:["\n",...x.texts[lang]]):
+    fr[0].texts[lang];
+   assert.deepEqual(after,block.texts[lang],
+    "Source content altered: "+lang+" "+block.kind+" "+eventIndex);
+  }
+ }
+});
+test("focused reading rejects missing French verse, lost hymn stanza and forged release flags",async()=>{
+ const result=await assemble({...reader(),universalWitness:universal,
+  recitation:"SOLO",minister:"BELOW_DEACON"});
+ const original=result.preview;
+ assert.equal(buildFocus({preview:{...original,published:true}}).status,"WITHHELD");
+ assert.equal(buildFocus({preview:{...original,translationApproved:true}}).status,"WITHHELD");
+ assert.equal(buildFocus({preview:{...original,blockCount:36}}).status,"WITHHELD");
+ for(const edit of [
+  blocks=>{
+   const x=blocks.find(x=>x.kind==="PSALM_PORTION");
+   x.texts={...x.texts,fr:[x.texts.fr[0].split("\n").slice(1).join("\n")]};
+  },
+  blocks=>{
+   const x=blocks.find(x=>x.kind==="HYMN");
+   x.texts={...x.texts,en:x.texts.en.filter((t,i)=>i!==4)};
+  },
+  blocks=>{
+   const x=blocks.find(x=>x.kind==="MAGNIFICAT");
+   x.texts={...x.texts,la:x.texts.la.slice(1)};
+  }
+ ]){
+  const blocks=structuredClone(original.blocks);
+  edit(blocks);
+  const r=buildFocus({preview:{...original,blocks}});
+  assert.equal(r.status,"WITHHELD");
+  assert.equal(r.frames.length,0);
+  assert.equal(r.published,false);
+ }
 });
