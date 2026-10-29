@@ -177,15 +177,15 @@ export function renderPilotAngelusEntry({head,L,esc,form,posture,moduleIcon}){
 function installStyles(){
   if(typeof document==="undefined"||document.getElementById("ao-prayer-design-pilot-css"))return;
   const css=[
-    "#aoPray435930 .aoPrayPilotHome{display:block;padding:0 0 20px;overflow-y:auto}",
+    "#aoPray435930 .aoPrayPilotHome{display:block;width:100%;min-width:0;box-sizing:border-box;padding:0 0 20px;overflow-y:auto}",
     "#aoPray435930 .aoPrayPilotTop{padding:6px 16px 10px}",
     "#aoPray435930 .aoPrayPilotTop h2{font:600 28px/1.16 var(--ao-font-display,Georgia,serif);margin:8px 0 12px;color:var(--text,#f3ead7)}",
     "#aoPray435930 .aoPrayPilotSearch{min-height:46px;display:flex;gap:10px;align-items:center;padding:0 13px;border:1px solid var(--border,#4c4841);border-radius:12px;background:var(--surface-1,#18202a);color:var(--muted,#aaa)}",
     "#aoPray435930 .aoPrayPilotSearch input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--text,#f3ead7);font:400 16px/1.3 var(--ao-font-display,Georgia,serif)}",
     "#aoPray435930 .aoPrayPilotSearchIcon{width:19px;height:19px}",
     "#aoPray435930 .aoPrayPilotIntro{font:400 13px/1.4 var(--ao-font-display,Georgia,serif);color:var(--muted,#aaa);margin:9px 0 0}",
-    "#aoPray435930 .aoPrayPilotMosaic{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:44px;gap:3px;max-width:590px;margin:0 auto 2px;padding:0 3px}",
-    "#aoPray435930 .aoPrayPilotTile{position:relative;min-width:0;min-height:0;padding:0;overflow:hidden;border:0;border-radius:2px;background:linear-gradient(140deg,#243548,#111920);color:#fff;cursor:pointer;text-align:left}",
+    "#aoPray435930 .aoPrayPilotMosaic{display:grid;width:100%;min-width:0;box-sizing:border-box;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:44px;gap:3px;max-width:590px;margin:0 auto 2px;padding:0 3px}",
+    "#aoPray435930 .aoPrayPilotTile{position:relative;width:100%;height:100%;min-width:0;min-height:0;padding:0;overflow:hidden;border:0;border-radius:2px;background:linear-gradient(140deg,#243548,#111920);color:#fff;cursor:pointer;text-align:left}",
     "#aoPray435930 .aoPrayPilotTile:nth-child(3n+2){background:linear-gradient(140deg,#51412f,#1a1e23)}",
     "#aoPray435930 .aoPrayPilotTile:nth-child(3n){background:linear-gradient(140deg,#43334f,#161c29)}",
     "#aoPray435930 .aoPrayPilotTile:focus-visible{outline:3px solid var(--liturgical,#c9ae76);outline-offset:-3px;z-index:2}",
