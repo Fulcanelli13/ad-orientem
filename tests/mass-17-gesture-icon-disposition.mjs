@@ -19,6 +19,23 @@ assert.deepEqual(
   candidateCueUses:audit.artworkProposalCueUses,distinctCandidateFiles:audit.distinctUnapprovedCandidateFiles},
  {total:142,bound:125,pending:17,priest:7,faithful:10,candidateCueUses:3,distinctCandidateFiles:2});
 assert.equal(audit.productionChangesAuthorized,0);
+assert.equal(audit.artworkReadyForUserApproval,0,
+ "Neither mismatched line drawing may be presented as approved art");
+assert.equal(audit.redesignRequiredCueUses,3);
+const failedArt=dispositions.items.filter(x=>x.disposition==="REDESIGN_REQUIRED");
+assert.deepEqual(failedArt.map(x=>x.id).sort(),[
+ "GM.P.C0117.01","GM.P.C0161.01","GM.P.C0263.01"].sort());
+assert.equal(new Set(failedArt.map(x=>x.reviewCandidate)).size,2);
+for(const row of failedArt){
+ assert.equal(row.artworkReview.verdict,"EDITORIAL_NOT_RELEASE_ELIGIBLE");
+ assert.equal(row.artworkReview.candidateCanBePromoted,false);
+ assert.equal(row.artworkReview.userRejection,false,
+  "Editorial rejection must not become a permanent user artwork veto");
+ assert.deepEqual(row.artworkReview.visualInspectedAtPx,[32,48,64]);
+ assert.equal(row.releaseAssetKey,null);
+}
+assert.match(dispositions.items.find(x=>x.id==="GM.P.C0117.01").reason,
+ /Veni sanctificator/,"Offertory C0117 cannot be misattributed to Deus qui humanae");
 assert.equal(R17_FROZEN_ACTIVE_ICON_KEYS.length,67);
 assert.equal(crosswalk.rows.length,414);
 assert.equal(new Set(dispositions.items.map(x=>x.id)).size,17);
@@ -64,13 +81,26 @@ for(const invalid of [
  (()=>{const x=structuredClone(dispositions);x.items[0].disposition="CANDIDATE_SOURCE_REVIEW";return x;})(),
  (()=>{const x=structuredClone(dispositions);x.items[10].actor="PRIEST";return x;})(),
  (()=>{const x=structuredClone(dispositions);x.items.pop();return x;})(),
- (()=>{const x=structuredClone(dispositions);x.items[4].reviewCandidate="../assets/active/mass-v46/stand.svg";return x;})()
+ (()=>{const x=structuredClone(dispositions);x.items[4].reviewCandidate="../assets/active/mass-v46/stand.svg";return x;})(),
+ (()=>{const x=structuredClone(dispositions);x.items.find(y=>y.id==="GM.P.C0117.01").artworkReview.candidateCanBePromoted=true;return x;})(),
+ (()=>{const x=structuredClone(dispositions);x.items.find(y=>y.id==="GM.P.C0161.01").artworkReview.userRejection=true;return x;})()
 ]){
  assert.equal(auditGestureIconDispositions({dispositions:invalid,matrix,bank:master}).ok,false,
   "Source/actor/artwork promotion contract failed to close");
 }
+const review=readFileSync(new URL("../reviews/mass-priest-two-svg-visual-review-20261029.html",import.meta.url),"utf8");
+assert.match(review,/<strong>Verdict: both drawings require redesign/);
+assert.match(review,/class="asset-32"/);
+assert.match(review,/class="asset-48"/);
+assert.match(review,/class="asset-64"/);
+for(const name of ["priest-eyes-hands-raised.svg","priest-hands-over-oblations.svg"])
+ assert.ok(review.includes(name),"Blocked artwork lacks actual-size review: "+name);
+for(const source of ["_PI.HTM","_PJ.HTM","_PN.HTM"])
+ assert.ok(review.includes(source),"Primary 1962 source omitted: "+source);
+assert.ok(review.includes("not a permanent user veto"),
+ "Editorial drawing failure was conflated with user rejection");
 const sourceIntegrityTampered=structuredClone(matrix);
 sourceIntegrityTampered.items.find(x=>x.id==="GM.P.C0117.01").iconKey="priest_centre_arms_rich";
 assert.equal(auditGestureIconDispositions({dispositions,matrix:sourceIntegrityTampered,bank:master}).ok,false,
  "An unreviewed icon binding was silently approved");
-console.log("PASS 17 exact source gesture dispositions: 7 priest hold, 10 faithful no extra icon, 2 review SVGs for 3 cues; original 142/125/17 and 67/414 source banks unchanged.");
+console.log("PASS 17 exact gestures: 3 cue uses of 2 failed review SVGs require redesign, 4 other priest holds remain text-only, 10 faithful rules no art; original 142/125/17 and 67/414 immutable.");

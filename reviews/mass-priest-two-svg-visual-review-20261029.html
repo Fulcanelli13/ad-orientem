@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ad Orientem | Two gesture drawings — exact size audit</title>
+<style>
+:root{color-scheme:dark;--bg:#0e151c;--panel:#1b2630;--line:#3b4952;--fg:#f0ebe0;--muted:#b7bbb9;--accent:#c4a47b}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--fg);font:15px/1.55 system-ui,sans-serif;margin:0}main{max-width:1050px;margin:auto;padding:25px}
+h1{font:34px/1.16 Georgia,serif;margin:0 0 10px}h2{font:25px Georgia,serif;margin:0}h3{font:18px Georgia,serif}
+.kicker{letter-spacing:.11em;text-transform:uppercase;font-size:11px;color:var(--accent)}
+p{color:var(--muted)}a{color:#e0bf92}.banner,.panel{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:20px;margin:20px 0}
+.banner{border-left:4px solid var(--accent)}.banner strong{color:#ffdbad}.cells{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:11px}
+.sample{background:#121b24;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;min-height:145px}
+.sample img{object-fit:contain;vertical-align:middle;filter:brightness(0) invert(.91)}
+.sample label{display:block;font-size:12px;color:#bcc1c0;margin:4px 0 12px}
+.asset-32{width:32px;height:32px}.asset-48{width:48px;height:48px}.asset-64{width:64px;height:64px}
+.panel header{display:flex;gap:15px;align-items:baseline;flex-wrap:wrap}.status{font-size:11px;font-weight:700;letter-spacing:.06em;color:#efc3a3}
+li{margin:7px 0}.notes{color:var(--muted);font-size:13px}.evidence{font-size:13px}
+@media(max-width:540px){main{padding:14px}h1{font-size:29px}.panel{padding:14px}}
+</style></head>
+<body><main>
+<div class="kicker">Ad Orientem · original SVG comparison · 29 October 2026</div>
+<h1>Two priest gesture drawings</h1>
+<p>Actual rendered icon sizes, rather than enlarged sketches. This is an editorial source-accuracy review, not a new production icon bank, not a permanent user veto, and not a request for automatic approval.</p>
+<div class="banner"><strong>Verdict: both drawings require redesign.</strong> Neither matches the 1962 ceremonial gesture closely enough at 32px/48px, nor the visual weight of the approved v4.6 Mass family. The red Missal text and LIVE source guidance remain authoritative and available. No image is activated.</div>
+<section class="panel" id="eyes-hands">
+<header><h2>Eyes and hands raised</h2><span class="status">REDESIGN REQUIRED · C0117 / C0263</span></header>
+<p>At C0117 the priest straightens after <i>In spiritu humilitatis</i> and raises his eyes and hands before <i>Veni, sanctificator</i>; at C0263 he does so before the final blessing. Both phases subsequently join the hands. These are distinct source locations, never the <i>Deus, qui humanae</i> mixing of water and wine.</p>
+<div class="cells">
+<div class="sample"><label>Candidate · 32px actual</label><img class="asset-32" src="../assets/review/mass-icon-candidates/priest-eyes-hands-raised.svg" alt="Unapproved drawing of raised eyes and hands at 32 pixels"></div>
+<div class="sample"><label>Candidate · 48px actual</label><img class="asset-48" src="../assets/review/mass-icon-candidates/priest-eyes-hands-raised.svg" alt="Unapproved drawing of raised eyes and hands at 48 pixels"></div>
+<div class="sample"><label>Candidate · 64px actual</label><img class="asset-64" src="../assets/review/mass-icon-candidates/priest-eyes-hands-raised.svg" alt="Unapproved drawing at 64 pixels"></div>
+<div class="sample"><label>Approved v4.6 comparator · 64px</label><img class="asset-64" src="../assets/active/mass-v46/priest_centre_arms_rich.svg" alt="Existing approved rich priest action master, comparison only"></div></div>
+<p class="notes">Failures: indistinct upward gaze, high generic Y-position, no clear chasuble anatomy, no credible short raised-and-rejoined phase, optical style unlike the approved full-body priest silhouettes. A new drawing requires independently verified source imagery and separate C0117/C0263 approval.</p>
+<p class="evidence">Primary source: <a href="https://www.intratext.com/IXT/LAT0820/_PI.HTM">Ritus servandus VII.5</a> and <a href="https://www.intratext.com/IXT/LAT0820/_PN.HTM">XII.1</a>.</p>
+</section>
+<section class="panel" id="oblations">
+<header><h2>Hands over the oblations</h2><span class="status">REDESIGN REQUIRED · C0161</span></header>
+<p>At <i>Hanc igitur</i> the priest holds both hands open, with palms above and facing the Host and chalice, until <i>Per Christum Dominum nostrum</i>, then joins them.</p>
+<div class="cells">
+<div class="sample"><label>Candidate · 32px actual</label><img class="asset-32" src="../assets/review/mass-icon-candidates/priest-hands-over-oblations.svg" alt="Unapproved drawing for hands over offerings at 32 pixels"></div>
+<div class="sample"><label>Candidate · 48px actual</label><img class="asset-48" src="../assets/review/mass-icon-candidates/priest-hands-over-oblations.svg" alt="Unapproved drawing for hands over offerings at 48 pixels"></div>
+<div class="sample"><label>Candidate · 64px actual</label><img class="asset-64" src="../assets/review/mass-icon-candidates/priest-hands-over-oblations.svg" alt="Unapproved drawing for hands over offerings at 64 pixels"></div>
+<div class="sample"><label>Approved v4.6 comparator · 64px</label><img class="asset-64" src="../assets/active/mass-v46/priest_centre_hands_rich.svg" alt="Existing approved priest centre hands rich silhouette, comparison only"></div></div>
+<p class="notes">Failures: two open palms cannot be identified, oblations do not separate into recognizable Host and chalice, sideways line suggests one hand rather than simultaneous palms above the gifts, and body/vestment family differs strongly from the active master. No object-labelled substitute or generic altar-action icon should be used.</p>
+<p class="evidence">Primary source: <a href="https://www.intratext.com/IXT/LAT0820/_PJ.HTM">Ritus servandus VIII.4</a>.</p>
+</section>
+<div class="banner"><strong>Next gate:</strong> two replacement source-authentic designs, checked separately at 32px and 48px against approved original donor masters, with explicit user acceptance before any production asset or cue binding. The other four normative priest composite movements remain source-rubric-only. Source IDs, 65 cards, 142/125/17 matrix, and the approved 67-icon bank are unchanged.</div>
+</main></body></html>
