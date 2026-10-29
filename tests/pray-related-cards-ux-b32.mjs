@@ -28,8 +28,12 @@ for(const route of [
  assert.ok(id&&getCanonicalAsset(id),"Missing existing canonical icon for "+route);
 }
 const family=source.slice(end,source.indexOf("function openFamily(id){",end));
-assert.match(family,/\[\.\.\.family\.items,\.\.\.related\]\.map\(prayFamilyItem\)/,
- "Related cards must use the exact existing canonical Prayer module-card renderer");
+assert.match(family,/family\.items\.map\(prayFamilyItem\)/,
+ "Historical canonical Prayer family cards must use the original module renderer");
+assert.match(family,/related\.map\(item=>prayFamilyItem\(item,true\)\)/,
+ "Related cards must use the original illustrated module renderer with contextual identity");
+assert.match(source,/data-ao-pray-contextual="true"/,
+ "The contextual marker must distinguish discovery aliases from the frozen Prayer catalogue");
 assert.ok(!/aoFiveWoundsFamilyAside|aoOccasionalFamilyAside|aoPriestsFamilyAside/.test(family),
  "Unstyled plain Prayer links must not be appended after the illustrated card grid");
 assert.equal(source.slice(source.indexOf("function prayFamilies(){"),source.indexOf("function prayFamilyDoor(")).includes("pray.montfort_consecration"),false,
