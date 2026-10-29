@@ -158,6 +158,8 @@ export function reviewAdventFirstVespers1960RubricPlan({
   ending.exactPrintedCollectEndingCollated!==false||
   ending.translationFidelityCertified!==false||
   ending.completeHourCertified!==false||
+  ending.omittedSecondDomineExaudi!==false||
+  ending.concludingDialogue1961OrdinariumSection53Reviewed!==true||
   ending.dialogueVariant!==((recitation==="CHOIR_OR_COMMON"&&
     minister==="DEACON_OR_HIGHER")?"DOMINUS_VOBISCUM":"DOMINE_EXAUDI")||
   ending.publishable!==false||ending.published!==false||
@@ -168,7 +170,7 @@ export function reviewAdventFirstVespers1960RubricPlan({
     typeof x.collectBody==="string"&&
     Array.isArray(x.beforeCollect)&&x.beforeCollect.length===2&&
     Array.isArray(x.collectConclusion)&&x.collectConclusion.length===2&&
-    Array.isArray(x.beforeBenedicamus)&&
+    Array.isArray(x.beforeBenedicamus)&&x.beforeBenedicamus.length===2&&
     Array.isArray(x.benedicamus)&&x.benedicamus.length===2&&
     Array.isArray(x.fideliumAnimae)&&x.fideliumAnimae.length===2&&
     x.printedTextIndependentlyCollated===false&&
@@ -235,13 +237,13 @@ export function reviewAdventFirstVespers1960RubricPlan({
    noSourceTextRequired:true,localCalendarAdjudicated:false}):
   event("COMMEMORATIONS_UNADJUDICATED",null,{
    slot:"commemorations",selectionAuthorized:false}));
- events.push(ending&&dialogue==="DOMINE_EXAUDI"?
-  event("SECOND_DOMINE_EXAUDI_OMITTED",null,{
-   slot:"conclusion",documentedSourceCondition:true,
-   sourceSectionLocated:true,printedVariantCollated:false}):
-  event(ending?"DISMISSAL_DIALOGUE_SOURCE_CANDIDATE":
+ // Mame 1961 Vespers Ordinary §53 prints the concluding dialogue
+ // after the collect for BOTH recitation variants. A standalone source
+ // note about "secunda Domine exaudi" must NOT suppress this §53 text.
+ events.push(event(ending?"DISMISSAL_DIALOGUE_SOURCE_CANDIDATE":
    "DISMISSAL_DIALOGUE_UNCOLLATED",ending?PRAYERS+"Dominus":null,{
     slot:"conclusion",variant:dialogue,
+    printedOrdinarium1961Section53Compared:!!ending,
     sourceSectionLocated:!!ending,sourceTextCollated:false}));
  events.push(event("BENEDICAMUS",PRAYERS+"Benedicamus Domino",{
   slot:"conclusion",sourceTextCollated:false}));
