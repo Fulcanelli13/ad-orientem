@@ -8,23 +8,27 @@
     "recordsScreened": 8
   },
   "counts": {
-    "sourceImageCC0PreviewCount": 0,
-    "imageHoldsAndOther": 8,
+    "sourceImageCC0PreviewCount": 2,
+    "imageHoldsAndOther": 6,
     "newImageAestheticRatings": 0,
     "nativePhotographsCertified": 0,
     "productionReleases": 0,
     "byDisposition": {
-      "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0": 8
+      "CC0_RESEARCH_CONTACT_SHEET_ONLY": 2,
+      "PREVIEW_COUNT_CAP": 5,
+      "LOW_NATIVE_RESOLUTION_HOLD": 1
     }
   },
   "restrictions": {
-    "sourcePhotoImageRightsRequired": "EXPLICIT_DIGITAL_OBJECT_CC0_OR_PUBLIC_DOMAIN_MARK",
+    "sourcePhotoImageRightsRequired": "EXACT_OBJECT_EDM_AGGREGATION_PUBLIC_DOMAIN_AND_MATCHING_IIIF_IMAGE",
     "noPhotoOriginalsDownloaded": true,
     "contactSheetsAreOriginalAspectResizedThumbnails": true,
     "aestheticGradesProhibitedUntilVisualReview": true,
     "museumArtApprovalNotInheritedFromRights": true
   },
-  "contactSheets": [],
+  "contactSheets": [
+    "assets/staged/sacred-art-rijks-b2-20261029/contact-01.jpg"
+  ],
   "sourceErrors": [],
   "records": [
     {
@@ -42,14 +46,32 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "status": "IMAGE_RIGHTS_HOLD",
-      "imageRights": "UNDECLARED",
-      "rightsUris": [],
+      "status": "CC0_IMAGE",
+      "imageRights": "CC0_OR_PDM",
+      "digitalObjectRightsMetadata": "UNDECLARED",
+      "digitalObjectRightsNotes": [],
+      "edmImageRightsProof": {
+        "status": "CC0_OR_PDM",
+        "edmRights": "http://creativecommons.org/publicdomain/mark/1.0/",
+        "edmAggregationId": "https://id.rijksmuseum.nl/200109177#aggregation",
+        "edmProvidedCHOId": "https://id.rijksmuseum.nl/200109177",
+        "edmIsShownBy": "https://iiif.micr.io/rXrek/full/max/0/default.jpg",
+        "edmObjectImage": "https://iiif.micr.io/rXrek/full/max/0/default.jpg",
+        "sameObject": true,
+        "sameImageService": true,
+        "explicitOpenRights": true,
+        "evidenceURL": "https://data.rijksmuseum.nl/200109177?_profile=edm-framed"
+      },
       "imageService": "https://iiif.micr.io/rXrek",
       "visualId": "202109177",
       "digitalId": "50012210710010473897967",
       "accession": "SK-A-3992",
-      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
+      "nativeSourceDimensions": {
+        "width": 5419,
+        "height": 5453
+      },
+      "previewURL": "https://iiif.micr.io/rXrek/full/420,/0/default.jpg",
+      "disposition": "CC0_RESEARCH_CONTACT_SHEET_ONLY"
     },
     {
       "sourceObjectId": "20025782",
@@ -66,14 +88,32 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "status": "IMAGE_RIGHTS_HOLD",
-      "imageRights": "UNDECLARED",
-      "rightsUris": [],
+      "status": "CC0_IMAGE",
+      "imageRights": "CC0_OR_PDM",
+      "digitalObjectRightsMetadata": "UNDECLARED",
+      "digitalObjectRightsNotes": [],
+      "edmImageRightsProof": {
+        "status": "CC0_OR_PDM",
+        "edmRights": "http://creativecommons.org/publicdomain/mark/1.0/",
+        "edmAggregationId": "https://id.rijksmuseum.nl/20025782#aggregation",
+        "edmProvidedCHOId": "https://id.rijksmuseum.nl/20025782",
+        "edmIsShownBy": "https://iiif.micr.io/sRdks/full/max/0/default.jpg",
+        "edmObjectImage": "https://iiif.micr.io/sRdks/full/max/0/default.jpg",
+        "sameObject": true,
+        "sameImageService": true,
+        "explicitOpenRights": true,
+        "evidenceURL": "https://data.rijksmuseum.nl/20025782?_profile=edm-framed"
+      },
       "imageService": "https://iiif.micr.io/sRdks",
       "visualId": "20225782",
       "digitalId": "5008256765054507786",
       "accession": "SK-A-282",
-      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
+      "nativeSourceDimensions": {
+        "width": 2724,
+        "height": 2756
+      },
+      "previewURL": "https://iiif.micr.io/sRdks/full/420,/0/default.jpg",
+      "disposition": "CC0_RESEARCH_CONTACT_SHEET_ONLY"
     },
     {
       "sourceObjectId": "20025781",
@@ -90,14 +130,31 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "status": "IMAGE_RIGHTS_HOLD",
-      "imageRights": "UNDECLARED",
-      "rightsUris": [],
+      "status": "CC0_IMAGE",
+      "imageRights": "CC0_OR_PDM",
+      "digitalObjectRightsMetadata": "UNDECLARED",
+      "digitalObjectRightsNotes": [],
+      "edmImageRightsProof": {
+        "status": "CC0_OR_PDM",
+        "edmRights": "http://creativecommons.org/publicdomain/mark/1.0/",
+        "edmAggregationId": "https://id.rijksmuseum.nl/20025781#aggregation",
+        "edmProvidedCHOId": "https://id.rijksmuseum.nl/20025781",
+        "edmIsShownBy": "https://iiif.micr.io/cekDK/full/max/0/default.jpg",
+        "edmObjectImage": "https://iiif.micr.io/cekDK/full/max/0/default.jpg",
+        "sameObject": true,
+        "sameImageService": true,
+        "explicitOpenRights": true,
+        "evidenceURL": "https://data.rijksmuseum.nl/20025781?_profile=edm-framed"
+      },
       "imageService": "https://iiif.micr.io/cekDK",
       "visualId": "20225781",
       "digitalId": "500109711151126711566114",
       "accession": "SK-C-1366",
-      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
+      "nativeSourceDimensions": {
+        "width": 2740,
+        "height": 3720
+      },
+      "disposition": "PREVIEW_COUNT_CAP"
     },
     {
       "sourceObjectId": "20026408",
@@ -114,14 +171,31 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "status": "IMAGE_RIGHTS_HOLD",
-      "imageRights": "UNDECLARED",
-      "rightsUris": [],
+      "status": "CC0_IMAGE",
+      "imageRights": "CC0_OR_PDM",
+      "digitalObjectRightsMetadata": "UNDECLARED",
+      "digitalObjectRightsNotes": [],
+      "edmImageRightsProof": {
+        "status": "CC0_OR_PDM",
+        "edmRights": "http://creativecommons.org/publicdomain/mark/1.0/",
+        "edmAggregationId": "https://id.rijksmuseum.nl/20026408#aggregation",
+        "edmProvidedCHOId": "https://id.rijksmuseum.nl/20026408",
+        "edmIsShownBy": "https://iiif.micr.io/oCupQ/full/max/0/default.jpg",
+        "edmObjectImage": "https://iiif.micr.io/oCupQ/full/max/0/default.jpg",
+        "sameObject": true,
+        "sameImageService": true,
+        "explicitOpenRights": true,
+        "evidenceURL": "https://data.rijksmuseum.nl/20026408?_profile=edm-framed"
+      },
       "imageService": "https://iiif.micr.io/oCupQ",
       "visualId": "20226408",
       "digitalId": "500895311083677711280",
       "accession": "SK-A-3986",
-      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
+      "nativeSourceDimensions": {
+        "width": 5456,
+        "height": 6715
+      },
+      "disposition": "PREVIEW_COUNT_CAP"
     },
     {
       "sourceObjectId": "20026409",
@@ -138,14 +212,31 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "status": "IMAGE_RIGHTS_HOLD",
-      "imageRights": "UNDECLARED",
-      "rightsUris": [],
+      "status": "CC0_IMAGE",
+      "imageRights": "CC0_OR_PDM",
+      "digitalObjectRightsMetadata": "UNDECLARED",
+      "digitalObjectRightsNotes": [],
+      "edmImageRightsProof": {
+        "status": "CC0_OR_PDM",
+        "edmRights": "http://creativecommons.org/publicdomain/mark/1.0/",
+        "edmAggregationId": "https://id.rijksmuseum.nl/20026409#aggregation",
+        "edmProvidedCHOId": "https://id.rijksmuseum.nl/20026409",
+        "edmIsShownBy": "https://iiif.micr.io/GKSQk/full/max/0/default.jpg",
+        "edmObjectImage": "https://iiif.micr.io/GKSQk/full/max/0/default.jpg",
+        "sameObject": true,
+        "sameImageService": true,
+        "explicitOpenRights": true,
+        "evidenceURL": "https://data.rijksmuseum.nl/20026409?_profile=edm-framed"
+      },
       "imageService": "https://iiif.micr.io/GKSQk",
       "visualId": "20226409",
       "digitalId": "5008469981031021208884",
       "accession": "SK-A-3987",
-      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
+      "nativeSourceDimensions": {
+        "width": 5566,
+        "height": 6845
+      },
+      "disposition": "PREVIEW_COUNT_CAP"
     },
     {
       "sourceObjectId": "200110538",
@@ -162,14 +253,31 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "status": "IMAGE_RIGHTS_HOLD",
-      "imageRights": "UNDECLARED",
-      "rightsUris": [],
+      "status": "CC0_IMAGE",
+      "imageRights": "CC0_OR_PDM",
+      "digitalObjectRightsMetadata": "UNDECLARED",
+      "digitalObjectRightsNotes": [],
+      "edmImageRightsProof": {
+        "status": "CC0_OR_PDM",
+        "edmRights": "http://creativecommons.org/publicdomain/mark/1.0/",
+        "edmAggregationId": "https://id.rijksmuseum.nl/200110538#aggregation",
+        "edmProvidedCHOId": "https://id.rijksmuseum.nl/200110538",
+        "edmIsShownBy": "https://iiif.micr.io/vWPRF/full/max/0/default.jpg",
+        "edmObjectImage": "https://iiif.micr.io/vWPRF/full/max/0/default.jpg",
+        "sameObject": true,
+        "sameImageService": true,
+        "explicitOpenRights": true,
+        "evidenceURL": "https://data.rijksmuseum.nl/200110538?_profile=edm-framed"
+      },
       "imageService": "https://iiif.micr.io/vWPRF",
       "visualId": "202110538",
       "digitalId": "50055114559965687674",
       "accession": "SK-A-4488",
-      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
+      "nativeSourceDimensions": {
+        "width": 8648,
+        "height": 6346
+      },
+      "disposition": "PREVIEW_COUNT_CAP"
     },
     {
       "sourceObjectId": "200109465",
@@ -186,14 +294,31 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "status": "IMAGE_RIGHTS_HOLD",
-      "imageRights": "UNDECLARED",
-      "rightsUris": [],
+      "status": "CC0_IMAGE",
+      "imageRights": "CC0_OR_PDM",
+      "digitalObjectRightsMetadata": "UNDECLARED",
+      "digitalObjectRightsNotes": [],
+      "edmImageRightsProof": {
+        "status": "CC0_OR_PDM",
+        "edmRights": "http://creativecommons.org/publicdomain/mark/1.0/",
+        "edmAggregationId": "https://id.rijksmuseum.nl/200109465#aggregation",
+        "edmProvidedCHOId": "https://id.rijksmuseum.nl/200109465",
+        "edmIsShownBy": "https://iiif.micr.io/OBMWo/full/max/0/default.jpg",
+        "edmObjectImage": "https://iiif.micr.io/OBMWo/full/max/0/default.jpg",
+        "sameObject": true,
+        "sameImageService": true,
+        "explicitOpenRights": true,
+        "evidenceURL": "https://data.rijksmuseum.nl/200109465?_profile=edm-framed"
+      },
       "imageService": "https://iiif.micr.io/OBMWo",
       "visualId": "202109465",
       "digitalId": "500561175068687812277",
       "accession": "SK-A-1188-B",
-      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
+      "nativeSourceDimensions": {
+        "width": 1593,
+        "height": 4943
+      },
+      "disposition": "LOW_NATIVE_RESOLUTION_HOLD"
     },
     {
       "sourceObjectId": "200109730",
@@ -210,14 +335,31 @@
       "sourceOriginalArchived": false,
       "fullNativePhotoQA": false,
       "productionPublished": false,
-      "status": "IMAGE_RIGHTS_HOLD",
-      "imageRights": "UNDECLARED",
-      "rightsUris": [],
+      "status": "CC0_IMAGE",
+      "imageRights": "CC0_OR_PDM",
+      "digitalObjectRightsMetadata": "UNDECLARED",
+      "digitalObjectRightsNotes": [],
+      "edmImageRightsProof": {
+        "status": "CC0_OR_PDM",
+        "edmRights": "http://creativecommons.org/publicdomain/mark/1.0/",
+        "edmAggregationId": "https://id.rijksmuseum.nl/200109730#aggregation",
+        "edmProvidedCHOId": "https://id.rijksmuseum.nl/200109730",
+        "edmIsShownBy": "https://iiif.micr.io/MVCje/full/max/0/default.jpg",
+        "edmObjectImage": "https://iiif.micr.io/MVCje/full/max/0/default.jpg",
+        "sameObject": true,
+        "sameImageService": true,
+        "explicitOpenRights": true,
+        "evidenceURL": "https://data.rijksmuseum.nl/200109730?_profile=edm-framed"
+      },
       "imageService": "https://iiif.micr.io/MVCje",
       "visualId": "202109730",
       "digitalId": "50057681068512111374111",
       "accession": "SK-A-3141",
-      "disposition": "HOLD_MISSING_EXACT_DIGITAL_PHOTO_CC0"
+      "nativeSourceDimensions": {
+        "width": 5956,
+        "height": 3568
+      },
+      "disposition": "PREVIEW_COUNT_CAP"
     }
   ]
 }
