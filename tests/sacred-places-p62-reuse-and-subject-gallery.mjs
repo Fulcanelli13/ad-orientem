@@ -10,7 +10,13 @@ const existingGallery=read("data/geography/approved-place-gallery.v1.json");
 const photoResearch=read("data/geography/research/sacred-places-p61-photo-candidates.v1.json");
 assert.equal(audit.schema,"AO_SACRED_PLACES_P62_P60_ADDITIONAL_REUSE_ADJUDICATION_V1");
 assert.equal(gallery.schema,"AO_SACRED_PLACES_P62_SUBJECT_PHOTOGRAPHY_PILOT_V1");
-assert.deepEqual([geo.places.length,sources.sources.length,media.items.length,existingGallery.items.length],[516,818,31,6]);
+assert.deepEqual([geo.places.length,sources.sources.length,media.items.length],[516,818,31]);
+// P62's historical six were a baseline, not a permanent cap on additional
+// independently licensed physical Place photographs.
+const historicalSix=existingGallery.items.filter(row=>row.reviewed_at==="2026-10-11");
+assert.equal(historicalSix.length,6);
+assert.equal(new Set(historicalSix.map(row=>row.media_id)).size,6);
+assert.ok(existingGallery.items.length>=historicalSix.length);
 assert.equal(gallery.publication_target_existing_gallery,"data/geography/approved-place-gallery.v1.json");
 assert.equal(gallery.existing_gallery_baseline.approved_gallery_assets,6);
 assert.equal(audit.records.length,26);
