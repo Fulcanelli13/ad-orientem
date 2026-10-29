@@ -54,6 +54,21 @@ const traceReturn=stage=>[
   "    close $ao;",
   "  }"
 ].join("\n");
+// Instrument ONLY the three early exits in the same pinned function.
+// No revision or content substitution; report the actual exit taken.
+const earlyExit=[["return '';", "PRECEDENCE_NO_COMMEMORATION"],
+  ["return '';", "1960_SECOND_VESPERS_CLASS"],
+  ["return;", "RANK_PRIVILEGE_EXCLUSION"]];
+const earlyStart=body.indexOf("  if ( $rule =~ /no\\s+");
+const earlyEnd=body.indexOf("  if ($rank[3] =~",earlyStart);
+if(earlyStart<0||earlyEnd<0)throw Error("OFFICE_DIAGNOSTIC_EARLY_RETURN_RANGE_CHANGED");
+let early=body.slice(earlyStart,earlyEnd);
+for(const [returnStatement,stage] of earlyExit){
+  const pos=early.indexOf(returnStatement);
+  if(pos<0)throw Error("OFFICE_DIAGNOSTIC_EARLY_EXIT_CHANGED:"+stage);
+  early=early.slice(0,pos)+traceReturn(stage)+"\n    "+early.slice(pos);
+}
+body=body.slice(0,earlyStart)+early+body.slice(earlyEnd);
 const exits=[
   ["  if (!$o) { return ''; }","  if (!$o) {\n"+traceReturn("MISSING_COLLECT")+"\n    return '';\n  }"],
   ["  if (!$a) { return ''; }","  if (!$a) {\n"+traceReturn("MISSING_ANTIPHON")+"\n    return '';\n  }"],
