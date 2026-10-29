@@ -50,6 +50,12 @@ def is_paint(row):
  if any(x in medium for x in BAD_MEDIUM):return False
  if not any(x in title for x in SUBJECTS):return False
  if any(x in title for x in NEGATIVE):return False
+ if re.search(r'\b(christopher|christie|christiania|magdalenenburg|sainte-adresse|saint-domingue)\b',title):return False
+ if title.startswith(('view of ','view from ','interior of ','cathedral of ','the square of ',
+ 'the fortress of ','montagne sainte','curious grassy','first landing of ',
+ 'christopher columbus','a procurator of ','miss ','steamer ','two women chatting',
+ 'a creek in ','father hennepin ','portrait of a man as ','portrait of a young woman as ')):return False
+ if 'st. peter\'s river' in title or 'st. thomas (virgin islands)' in title:return False
  if any(x in attr for x in ('el greco','fra angelico')):return False
  if pick(row,'isVirtual')=='1':return False
  return True
