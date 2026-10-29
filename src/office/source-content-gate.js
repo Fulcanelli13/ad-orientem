@@ -68,7 +68,11 @@ export function officeTranslationContentBlockers({latin,translation}={}){
       const all=normalized((translation.sections??[]).map(s=>s.text).join("\n"));
       const hasAntiphon=/jesus se retournant/.test(all);
       const hasCollect=/pardonnez, nous vous en supplions, seigneur, les offenses de vos peuples/.test(all);
-      const header=/\b(?:commemoratio|commemoration|commemoraison|memoire)\b/.test(all);
+      // The restored French generator adds the commemoration as a dedicated
+      // Vespera10 source cell. Its label may be in the source-owned headline,
+      // rather than repeated in the prayer cell text.
+      const header=/\b(?:commemoratio|commemoration|commemoraison|memoire)\b/
+        .test(all+"\n"+normalized(translation.headline));
       if(!tr||!hasAntiphon||!hasCollect||!header)
         blockers.push(Object.freeze({
           date:latin.date,hour:latin.hour,language:"fr",
