@@ -14,7 +14,7 @@ const chapletsStart=families.indexOf("chaplets:Object.freeze(");
 const chapletsEnd=families.indexOf("eucharistic:Object.freeze(",chapletsStart);
 assert.ok(chapletsStart>=0&&chapletsEnd>chapletsStart,"Chaplets discovery family missing");
 const chapletDiscovery=[...families.slice(chapletsStart,chapletsEnd).matchAll(/\['own','([^']+)'/g)].map(m=>m[1]);
-assert.deepEqual(chapletDiscovery,["pray.rosary","pray.rosary_methods","pray.divine_mercy","pray.five_wounds","pray.precious_blood"]);
+assert.deepEqual(chapletDiscovery,["pray.rosary","pray.rosary_methods","pray.divine_mercy","pray.five_wounds","pray.precious_blood","pray.little_crown"]);
 const historicalSource=families.slice(0,chapletsStart)+families.slice(chapletsEnd);
 const livePrayerIds=[...historicalSource.matchAll(/\['(?:own|external)','([^']+)',L\('/g)].map(m=>m[1]);
 assert.ok(families.includes("direct:'pray.library'"),"Prayer Library direct launcher must exist");
