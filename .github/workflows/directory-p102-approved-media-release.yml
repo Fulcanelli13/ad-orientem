@@ -1,0 +1,31 @@
+name: Directory P102 exact-place three approved photos
+on:
+  pull_request:
+    paths:
+      - assets/approved/place-media/US-st-john-cantius-chicago.webp
+      - assets/approved/place-media/IT-san-canziano-padova.webp
+      - assets/approved/place-media/FR-saint-bruno-bordeaux.webp
+      - data/geography/approved-place-media.v1.json
+      - data/geography/research/directory-place-photo-screen-p92-20261029.v1.json
+      - data/geography/research/directory-p102-three-approved-covers.v1.json
+      - data/directory/research/p102-three-photo-approved-bytes-audit.json
+      - data/directory/research/p102-three-photo-approved-media-source-lock.json
+      - tests/directory-p102-three-approved-cover-release.mjs
+      - .github/workflows/directory-p102-approved-media-release.yml
+permissions:
+  contents: read
+jobs:
+  three-exact-photos-and-bilingual-credits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/directory-p102-three-approved-cover-release.mjs
+      - run: node tests/directory-p95-two-verified-cover-photos.mjs
+      - run: node tests/directory-p99-four-exact-church-place-links.mjs
+      - run: node tests/directory-place-photo-crosswalk.mjs
