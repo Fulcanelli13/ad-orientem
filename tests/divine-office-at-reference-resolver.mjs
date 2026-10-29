@@ -186,3 +186,76 @@ test("unlisted prayers and disabled mode cannot invent a standard conclusion",as
  await assert.rejects(unknown.resolve({path:original,section:"Oratio",language:"la"}),
   /OFFICE_AT_OTHER_MACRO_OR_CONDITIONAL_UNRESOLVED/);
 });
+
+test("plain &psalm(116) reads exact pinned Psalm116 verses in each language, but no Gloria",async()=>{
+ const calls=[];
+ const readSource=async(path,language)=>({
+  sourceRevision:DIVINUM_OFFICIUM_PIN,sourcePath:path,language,
+  map:new Map([["Special Vespera 1",["&psalm(116)"]]])
+ });
+ const readPsalmSource=async(path,language)=>{
+  calls.push([path,language]);
+  return {sourceRevision:DIVINUM_OFFICIUM_PIN,sourcePath:path,language,
+   text:"116:1 "+language+" source verse first\n116:2 "+language+" source verse second\n"};
+ };
+ const resolver=createOfficeAtReferenceResolver({
+  readSource,readPsalmSource,enablePsalmVerses:true
+ });
+ const r=await resolver.resolveParallel({
+  path:"Tempora/Pasc0-0",section:"Special Vespera 1",role:"PSALM"
+ });
+ assert.equal(r.psalmVersesExpandedWithoutDoxology,true);
+ assert.equal(r.psalmDoxologyAndAntiphonVerified,false);
+ for(const lang of ["la","en","fr"]){
+  assert.match(r.texts[lang],new RegExp("116:1 "+lang));
+  assert.deepEqual(r.referenceTraces[lang].map(x=>x.sourceId),[
+   "Tempora/Pasc0-0#Special Vespera 1",
+   "Psalterium/Psalmorum/Psalm116#VERSES"
+  ]);
+ }
+ assert.equal(calls.length,3);
+ assert.equal(r.publishable,false);
+ assert.equal(r.alignmentVerified,false);
+});
+test("missing French Psalm 116 or unlisted psalm form is a hard failure",async()=>{
+ const readSource=async(path,language)=>({
+  sourceRevision:DIVINUM_OFFICIUM_PIN,sourcePath:path,language,
+  map:new Map([["Psalm",["&psalm(116)"]],["PsalmRange",["&psalm(116,1)"]]])
+ });
+ const reader=createOfficeAtReferenceResolver({readSource,enablePsalmVerses:true,
+  readPsalmSource:async(path,language)=>({
+   sourceRevision:DIVINUM_OFFICIUM_PIN,sourcePath:path,language,
+   text:language==="fr"?"":("116:1 one verse\n116:2 second verse")
+  })
+ });
+ await assert.rejects(reader.resolveParallel({
+  path:"Tempora/Pasc0-0",section:"Psalm",role:"PSALM"
+ }),/OFFICE_AT_PSALM_VERSES_INVALID/);
+ await assert.rejects(reader.resolve({
+  path:"Tempora/Pasc0-0",section:"PsalmRange",language:"la"
+ }),/OFFICE_AT_PSALM_FORM_NOT_SUPPORTED/);
+});
+test("psalm source-number confusion and upstream revision substitution cannot pass",async()=>{
+ for(const file of [
+  {sourceRevision:"0".repeat(40),text:"116:1 verse"},
+  {sourcePath:"Psalterium/Psalmorum/Psalm115",text:"116:1 verse"},
+  {text:"115:1 wrong psalm"},
+  {text:"116:2 first\n116:1 out of order"},
+  {text:"116:1 test\n116:1 repeated"},
+  {text:"116:1 $Per Dominum"}
+ ]){
+  const reader=createOfficeAtReferenceResolver({
+   enablePsalmVerses:true,
+   readSource:async(path,language)=>({
+    sourceRevision:DIVINUM_OFFICIUM_PIN,sourcePath:path,language,
+    map:new Map([["Psalm",["&psalm(116)"]]])
+   }),
+   readPsalmSource:async(path,language)=>({
+    sourceRevision:DIVINUM_OFFICIUM_PIN,sourcePath:path,language,
+    ...file
+   })
+  });
+  await assert.rejects(reader.resolve({path:"Tempora/Pasc0-0",section:"Psalm",language:"la"}),
+   /OFFICE_AT_PSALM_/);
+ }
+});
