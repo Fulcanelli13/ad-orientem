@@ -15,6 +15,9 @@ on:
       - "tests/customs-a23-second61-source-gates.mjs"
       - "tests/customs-408-complete-source-disposition-gates.mjs"
       - "tests/customs-all408-bulk-review-and-identity-gates.mjs"
+      - "tests/customs-calendar-22-variants-18-content-preview-gates.mjs"
+      - "data/customs/master/customs-calendar-22-variants-18-articles-content-preview-20261029.v1.json"
+      - "docs/CUSTOMS_CALENDAR_22_PLUS_18_BILINGUAL_PREVIEW_20261029.html"
       - "tests/customs-calendar-40-bilingual-content-preview.mjs"
       - "data/customs/master/customs-22-existing-owner-bilingual-variants-20261029.v1.json"
       - "data/customs/master/customs-calendar-bilingual-content-40-20261029.v1.json"
@@ -162,3 +165,7 @@ jobs:
         run: |
           node --check tests/customs-calendar-40-bilingual-content-preview.mjs
           node tests/customs-calendar-40-bilingual-content-preview.mjs
+      - name: Verify Calendar bilingual preview with 22 published-parent variants and 18 original drafts
+        run: |
+          node --check tests/customs-calendar-22-variants-18-content-preview-gates.mjs
+          node tests/customs-calendar-22-variants-18-content-preview-gates.mjs
