@@ -1,0 +1,27 @@
+name: P83 worldwide photo candidate screening contracts
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/directory/screen-worldwide-p83-photo-candidates.py'
+      - 'tests/directory-p83-global-photo-screen-test.py'
+      - '.github/workflows/directory-p83-global-photo-contracts.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-worldwide-screening:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate P83 source code and test full 2579-site screening fixture offline
+        run: |
+          python -m py_compile tools/directory/screen-worldwide-p83-photo-candidates.py
+          python tests/directory-p83-global-photo-screen-test.py -v
+          node tests/production-tree-hygiene.mjs
