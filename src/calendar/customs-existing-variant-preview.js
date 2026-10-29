@@ -1,11 +1,15 @@
 /**
  * EN/FR historical and regional details for 12 ALREADY published Calendar customs.
- * Source-of-truth projection: PR #1723,
+ * Pinned source snapshot: PR #1723 / research blob
+ * ad865b14afa579dbf2c6f80eaabccc73e5e44da9
  * data/customs/master/customs-22-existing-owner-bilingual-variants-20261029.v1.json.
  *
  * Do NOT treat the 22 details as additional canonical cards, current events,
  * resolved 1962 feast days, priestly rites, or indulgence grants.
- * The research entries remain editorially unapproved; preview only.
+ * Original research entries are not approved as NEW canonical Customs.
+ * Historical citations may be shown as clearly labelled contextual evidence
+ * within an already published parent; they are not endorsements of current
+ * local practice or additional devotions prescribed to the user.
  */
 const RAW_VARIANTS=[
   {
@@ -626,7 +630,7 @@ if(RAW_VARIANTS.length!==CUSTOMS_EXISTING_VARIANT_TOTAL||
 Object.freeze(RAW_VARIANTS);
 
 /**
- * Read-only editorial projection. Region strings are historical source scopes,
+ * Read-only historical-context projection. Region strings are original source scopes,
  * NOT country entitlements or current user locations. No date or region is
  * inferred from the user's locale, IP address, or the Calendar date.
  */
@@ -643,7 +647,8 @@ export function calendarCustomHistoricalVariantPreview(parentId,{fr=false}={}){
   source:Object.freeze({book:r.source_book,url:r.source_url,printed_page:r.source_printed_page,
     observation_ids:Object.freeze([...r.source_observation_ids]),
     source_group_id:r.source_group_id}),
-  editorial_preview_only:true,
+  historical_context_only:true,
+  canonical_publication_authorized:false,
   current_local_event_confirmed:false,
   current_regional_practice_verified:false,
   no_calendar_event:true,
