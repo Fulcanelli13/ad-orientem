@@ -102,6 +102,8 @@ def get_artist(r):
  return found[0] if found else 'Attribution not identified'
 def year(r):
  t=(r.get('produced_by') or {}).get('timespan') or {}
+ if isinstance(t,list):t=next((x for x in t if isinstance(x,dict)),{})
+ if not isinstance(t,dict):t={}
  v=str(t.get('begin_of_the_begin') or '')
  m=re.match(r'(-?\d{3,4})',v)
  return int(m.group(1)) if m else 0
