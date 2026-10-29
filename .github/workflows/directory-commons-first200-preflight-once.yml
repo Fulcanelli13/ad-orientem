@@ -1,0 +1,102 @@
+name: One-shot first 200 church Commons rights metadata - research only
+on:
+  push:
+    branches:
+      - research/directory-first200-commons-preflight-once-20261029
+    paths:
+      - data/directory/research/.run-commons-first200-preflight-20261029.json
+permissions:
+  contents: write
+concurrency:
+  group: ao-directory-first200-commons-preflight-once-20261029
+  cancel-in-progress: false
+jobs:
+  first200-only:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/research/directory-first200-commons-preflight-once-20261029'
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Guard exact one-time request and run offline contracts
+        run: |
+          set -euo pipefail
+          node tests/production-tree-hygiene.mjs
+          python tests/directory-commons-bulk-metadata-test.py -v
+          python - <<'PY'
+          import json
+          data=json.load(open("data/directory/research/.run-commons-first200-preflight-20261029.json"))
+          assert data=={"schema":"AO_DIRECTORY_COMMONS_FIRST200_ONCE_V1",
+                        "source_venues":200,"source_photo_leads":42,
+                        "publication":False,"original_downloads":False}
+          PY
+      - name: Read exact CL2/master and already collected candidate sources
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/directory-unified-photo-intake:refs/remotes/origin/research/directory-unified-photo-intake' \
+            'refs/heads/research/directory-photo-candidates:refs/remotes/origin/research/directory-photo-candidates' \
+            'refs/heads/data/cl2-unified-source-location-classification-20261026:refs/remotes/origin/data/cl2-unified-source-location-classification-20261026'
+          pinned='eb67711a9886a7626916b7a145787c5e99105968'
+          test "$(git rev-parse refs/remotes/origin/data/cl2-unified-source-location-classification-20261026)" = "$pinned"
+          git worktree add --detach /tmp/ao-meta-cl2 "$pinned"
+          git worktree add --detach /tmp/ao-meta-intake refs/remotes/origin/research/directory-unified-photo-intake
+          git worktree add --detach /tmp/ao-meta-pilots refs/remotes/origin/research/directory-photo-candidates
+      - name: Rebuild complete 2579-anchor baseline from the 42 existing research leads
+        run: |
+          set -euo pipefail
+          python tools/directory/build-worldwide-photo-source-index.py \
+            --intake-dir /tmp/ao-meta-intake/data/directory/research/unified-photo-intake/cl2-eb67711a-20261029 \
+            --cl2-dir /tmp/ao-meta-cl2/data/directory/research/cl2-unified-20261026 \
+            --candidate-file /tmp/ao-meta-pilots/data/directory/research/photo-candidates/r49-exterior-0-100.json \
+            --candidate-file /tmp/ao-meta-pilots/data/directory/research/photo-candidates/r49-exterior-100-100.json \
+            --output /tmp/ao-commons-first200-source-index.json
+      - name: Commons batch metadata & licence preflight (no original download)
+        run: |
+          set -euo pipefail
+          python tools/directory/verify-worldwide-commons-source-metadata.py \
+            --index /tmp/ao-commons-first200-source-index.json \
+            --output /tmp/ao-commons-first200-rights-report.json \
+            --limit 1500 --offset 0 --delay-seconds 4
+          python - <<'PY'
+          import json
+          report=json.load(open("/tmp/ao-commons-first200-rights-report.json"))
+          counts=report["counts"]
+          assert counts["source_index_anchors"]==2579
+          assert counts["selected_unique_titles"]<=42
+          assert counts["original_images_downloaded"]==0
+          assert counts["images_approved"]==0
+          assert counts["images_published"]==0
+          assert report["publication"]=="RESEARCH_ONLY_NEVER_APP_VISIBLE"
+          assert all(x["publication"]=="RESEARCH_ONLY_NEVER_APP_VISIBLE" for x in report["records"])
+          print("FIRST200_COMMONS_RIGHTS_PRECHECK",json.dumps(counts,sort_keys=True))
+          PY
+      - name: Preserve preflight and source index on fixed research archive branch
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/directory-commons-rights-reports:refs/remotes/origin/research/directory-commons-rights-reports' || true
+          if git show-ref --verify --quiet refs/remotes/origin/research/directory-commons-rights-reports; then
+            git switch -C research/directory-commons-rights-reports origin/research/directory-commons-rights-reports
+          else
+            git fetch --no-tags origin main
+            git switch -c research/directory-commons-rights-reports origin/main
+          fi
+          target="data/directory/research/commons-rights-preflight/first200-20261029"
+          test ! -e "$target" || { echo "Immutable preflight archive already exists"; exit 1; }
+          mkdir -p "$target"
+          cp /tmp/ao-commons-first200-source-index.json "$target/worldwide-source-index.json"
+          cp /tmp/ao-commons-first200-rights-report.json "$target/commons-rights-report.json"
+          git add "$target/worldwide-source-index.json" "$target/commons-rights-report.json"
+          test "$(git diff --cached --name-only | wc -l)" -eq 2
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): verify Commons rights metadata on first200 42 leads"
+          git push origin HEAD:refs/heads/research/directory-commons-rights-reports
