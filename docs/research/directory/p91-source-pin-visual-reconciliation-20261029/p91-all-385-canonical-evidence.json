@@ -6,11 +6,11 @@
   "previous_rejected": 90,
   "additional_rejected": 0,
   "cumulative_rejected": 90,
-  "previous_subject_corrob": 12,
-  "new_subject_corrob": 5,
-  "total_subject_corrob": 17,
-  "still_unverified": 278,
-  "distinct_subject_site_ids": 9,
+  "previous_subject_corrob": 17,
+  "new_subject_corrob": 40,
+  "total_subject_corrob": 57,
+  "still_unverified": 238,
+  "distinct_subject_site_ids": 19,
   "new_evidence": [
     {
       "ids": [
@@ -17628,5 +17628,13 @@
       "reason": "All four source filenames, identifying Elizabeth Street and Kingsley Street in Ann Arbor, appear in Commons' exact St Thomas the Apostle church category. The parish's official record independently lists the worship church at 530 Elizabeth Street.",
       "publication_approved": false
     }
-  ]
+  ],
+  "p91_historical_summary": {
+    "previous_subject_corrob": 12,
+    "new_subject_corrob": 5,
+    "total_subject_corrob": 17,
+    "still_unverified": 278,
+    "distinct_subject_site_ids": 9
+  },
+  "current_count_semantics": "Top-level summary fields and effective_image_site_disposition_counts reflect P92 current evidence; p91_historical_summary preserves the prior P91 snapshot. Per-record historical dispositions are immutable."
 }
