@@ -63,3 +63,14 @@ These thumbnails are not actual original-image QA, aesthetic grades, or artist a
 | 200718371 | Crucifixion of Christ, with the Virgin and St John | anonymous | CC0_RESEARCH_CONTACT_SHEET_ONLY |
 
 The image is admitted only when exact object EDM Aggregation declares CC0/PDM AND edm:isShownBy and edm:object match the same IIIF source linked from the museum DigitalObject. No museum-name blanket rights assumption. No visual beauty grade inferred from artist/title.
+
+
+## Supplementary B2 research previews
+
+- Rights-verified additional previews: **67**; failures: 0.
+- Total rights-verified research previews: **137 / 140**.
+- Aesthetic and final native photographic certification: **0**. No app release or selection changes.
+
+- [contact-04.jpg](../assets/staged/sacred-art-rijks-b2-20261029/contact-04.jpg)
+- [contact-05.jpg](../assets/staged/sacred-art-rijks-b2-20261029/contact-05.jpg)
+- [contact-06.jpg](../assets/staged/sacred-art-rijks-b2-20261029/contact-06.jpg)
