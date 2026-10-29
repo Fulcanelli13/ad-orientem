@@ -1,0 +1,90 @@
+{
+  "schema": "AO_SACRED_PLACES_P92_TWO_EXACT_DIRECTORY_PHOTO_VENUE_LINKS_V1",
+  "date": "2026-10-29",
+  "status": "PROPOSED_VIA_PULL_REQUEST_PENDING_FULL_REGRESSION",
+  "baseline": {
+    "places": 516,
+    "sources": 818,
+    "crosswalk": 516,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 9
+  },
+  "proposed": {
+    "places": 518,
+    "sources": 822,
+    "crosswalk": 518,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 11
+  },
+  "new_geo_areas": [],
+  "country_areas_added": [],
+  "new_places": 2,
+  "confirmed_directory_links_added": 2,
+  "published_new": [
+    {
+      "place_id": "place:US:st-boniface-sioux-city",
+      "candidate_id": "AO-P90-ORIG-384",
+      "place_type": "church",
+      "name": "St. Boniface Catholic Church, Sioux City",
+      "country": "US",
+      "city": "Sioux City",
+      "address": "703 West 5th Street, Sioux City, Iowa 51103",
+      "lat": 42.50055,
+      "lng": -96.41809,
+      "geo_source_kind": "OSM",
+      "geo_source_ref": "osm:node:354389668",
+      "geo_source_url": "https://www.openstreetmap.org/node/354389668",
+      "identity_source_url": "https://sccathedral.org/",
+      "identity_source_issuer": "Cathedral of the Epiphany parish",
+      "identity_source_directness": "OFFICIAL_PARISH",
+      "geo_supporting_reference": "https://mapcarta.com/22093934",
+      "source_ids": [
+        "AO-P92-SITE-BONIFACE-US",
+        "AO-P92-GEO-BONIFACE-US"
+      ],
+      "directory_venue_id": "AO-AMER-R28-US-25-03",
+      "directory_site_source_id": "RG-1A015C23D5BA",
+      "tlm_assertion": "PRESERVE_EXISTING_OPERATIONAL_DIRECTORY_CLAIMS_NO_SCHEDULE_ADDED",
+      "photograph_status": "P90_ORIGINAL_CHECKSUM_VERIFIED_RESEARCH_ONLY",
+      "photo_publication": "NONE",
+      "note": "Historic church is a distinct worship site of Cathedral of the Epiphany parish. Do not map to cathedral building at 1003 Douglas."
+    },
+    {
+      "place_id": "place:US:st-agnes-saint-paul",
+      "candidate_id": "AO-P90-ORIG-376",
+      "place_type": "church",
+      "name": "Church of Saint Agnes, Saint Paul",
+      "country": "US",
+      "city": "Saint Paul",
+      "address": "535 Thomas Avenue West, Saint Paul, Minnesota 55103",
+      "lat": 44.959722,
+      "lng": -93.123333,
+      "geo_source_kind": "OTHER",
+      "geo_source_ref": "commons:File:Stagnesa.jpg:object-location",
+      "geo_source_url": "https://commons.wikimedia.org/wiki/File:Stagnesa.jpg",
+      "identity_source_url": "https://www.archspm.org/location/st-agnes-catholic-church/",
+      "identity_source_issuer": "Archdiocese of Saint Paul and Minneapolis",
+      "identity_source_directness": "OFFICIAL_ARCHDIOCESAN",
+      "geo_supporting_reference": "https://en.wikipedia.org/wiki/Church_of_St._Agnes_(Saint_Paul,_Minnesota)",
+      "source_ids": [
+        "AO-P92-SITE-ST-AGNES-US",
+        "AO-P92-GEO-ST-AGNES-US"
+      ],
+      "directory_venue_id": "V19:DIO-US-MN-ST-PAUL-SAINT-AGNES",
+      "directory_site_source_id": "RG-368B7B3B5FA3",
+      "tlm_assertion": "PRESERVE_EXISTING_OPERATIONAL_DIRECTORY_CLAIMS_NO_SCHEDULE_ADDED",
+      "photograph_status": "P90_ORIGINAL_CHECKSUM_VERIFIED_RESEARCH_ONLY",
+      "photo_publication": "NONE",
+      "note": "Historic church object-location from Commons plus official parish address; not the adjacent school or parish offices."
+    }
+  ],
+  "policy": {
+    "canonical_registry_only": true,
+    "no_inferred_link_by_proximity": true,
+    "no_new_tlm_masses_or_schedules": true,
+    "photo_media_unapproved_until_exact_credit_and_derivative_review": true,
+    "no_expense": true
+  }
+}
