@@ -156,7 +156,7 @@ async function assertMobileNavigationReachable(page){
 }
 async function assertSourcePreview(page){
  const s=await page.locator("#status").innerText();
- assert.match(s,/Source preview assembled/);
+ assert.match(s,/Source-first research preview available|Source preview assembled/);
  assert.equal(await page.locator(".guard").innerText(),"Research preview · not published");
  assert.equal(await page.locator("#card .ref").count(),1);
  assert.equal(await page.locator("#bar").count(),1);
@@ -424,7 +424,7 @@ try{
   await lp.goto(PREVIEW_URL,{waitUntil:"domcontentloaded",timeout:45000});
   try{
    await lp.locator("#reader").waitFor({state:"visible",timeout:90000});
-   assert.ok((await lp.locator("#status").innerText()).includes("Source preview assembled"));
+   assert.match(await lp.locator("#status").innerText(),/Source-first research preview available|Source preview assembled/);
    await shot(lp,"14-mobile-390-live-pinned-sources");
    assert.deepEqual(liveErrors,[]);
    record("real browser pinned source URL/CORS delivery",{
