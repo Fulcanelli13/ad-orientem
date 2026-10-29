@@ -1,0 +1,122 @@
+name: One-shot worldwide Directory source photography - remaining 68 countries plus AU retry
+on:
+  push:
+    branches:
+      - research/directory-restworld-photo-cohorts-one-shot-20261029
+    paths:
+      - data/directory/research/.run-restworld-country-photo-cohorts-20261029.json
+permissions:
+  contents: write
+concurrency:
+  group: ao-restworld-directory-photo-cohorts-20261029
+  cancel-in-progress: false
+jobs:
+  archive-country-cohort:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/research/directory-restworld-photo-cohorts-one-shot-20261029'
+    runs-on: ubuntu-latest
+    timeout-minutes: 52
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        include:
+          - id: C1
+            countries: "GB,MX,AR,GA,JP,SE,ID,KR,SG,CM,GI,LK,PE,UY,AU"
+          - id: C2
+            countries: "PL,ES,NZ,SK,NG,TW,KE,MQ,SI,CU,GP,LV,PY,VU"
+          - id: C3
+            countries: "BR,PH,NL,CO,CL,BJ,LT,NO,UG,EC,GY,MG,SN,ZW"
+          - id: C4
+            countries: "CA,CZ,IN,ZA,DO,FJ,MY,RE,AE,EE,HK,NC,SV"
+          - id: C5
+            countries: "CH,AT,HU,PT,HR,GT,NA,RU,BY,GH,LB,PA,TZ"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Enforce expected 68-country partition plus failed-AU retry
+        env:
+          AO_COHORT: ${{ matrix.id }}
+          AO_COUNTRIES: ${{ matrix.countries }}
+        run: |
+          set -euo pipefail
+          python tests/directory-bulk-photo-source-index-test.py -v
+          node tests/production-tree-hygiene.mjs
+          git fetch --no-tags origin 'refs/heads/research/directory-unified-photo-intake:refs/remotes/origin/research/directory-unified-photo-intake'
+          git show origin/research/directory-unified-photo-intake:data/directory/research/unified-photo-intake/cl2-eb67711a-20261029/audit.json > /tmp/ao-anchor-countries.json
+          python - <<'PY'
+          import json,os
+          payload=json.load(open("data/directory/research/.run-restworld-country-photo-cohorts-20261029.json"))
+          audit=json.load(open("/tmp/ao-anchor-countries.json"))
+          cohorts={
+            "C1":"GB,MX,AR,GA,JP,SE,ID,KR,SG,CM,GI,LK,PE,UY,AU",
+            "C2":"PL,ES,NZ,SK,NG,TW,KE,MQ,SI,CU,GP,LV,PY,VU",
+            "C3":"BR,PH,NL,CO,CL,BJ,LT,NO,UG,EC,GY,MG,SN,ZW",
+            "C4":"CA,CZ,IN,ZA,DO,FJ,MY,RE,AE,EE,HK,NC,SV",
+            "C5":"CH,AT,HU,PT,HR,GT,NA,RU,BY,GH,LB,PA,TZ"}
+          assert payload=={"schema":"AO_DIRECTORY_RESTWORLD_P18_FIVE_COHORTS_ONCE_V1",
+                            "cohorts":cohorts,"max_rows_per_country":2000,
+                            "publication":False,"original_image_downloads":False}
+          assert os.environ["AO_COHORT"] in cohorts
+          assert os.environ["AO_COUNTRIES"]==cohorts[os.environ["AO_COHORT"]]
+          all_codes={c for s in cohorts.values() for c in s.split(",")}
+          assert len(all_codes)==69
+          assert sum(len(s.split(",")) for s in cohorts.values())==69
+          assert all_codes==set(audit["country_counts"])-{"MU","IE","IT","DE","FR","US","BE"}
+          assert len(audit["country_counts"])==76
+          PY
+      - name: Bounded Wikimedia country-source harvesting (metadata only)
+        env:
+          AO_COUNTRIES: ${{ matrix.countries }}
+        run: |
+          set -euo pipefail
+          python tools/directory/harvest-wikidata-country-photo-index.py \
+            --countries "$AO_COUNTRIES" --max-rows 2000 --delay-seconds 15 \
+            --output-dir /tmp/ao-country-shard
+          python - <<'PY'
+          import json,os,pathlib
+          root=pathlib.Path("/tmp/ao-country-shard")
+          audit=json.load(open(root/"audit.json"))
+          expected=os.environ["AO_COUNTRIES"].split(",")
+          assert audit["countries"]==expected
+          assert audit["counts"]["requested_countries"]==len(expected)
+          assert audit["counts"]["successful_countries"]+audit["counts"]["error_countries"]==len(expected)
+          assert audit["counts"]["photos_downloaded"]==0
+          assert audit["counts"]["photos_published"]==0
+          assert len(list(root.glob("country-*.json")))==len(expected)
+          assert all(json.load(open(root/f"country-{cc}.json"))["publication"]=="RESEARCH_ONLY_NEVER_APP_VISIBLE" for cc in expected)
+          print("RESTWORLD_COHORT_COUNTS",json.dumps(audit["counts"],sort_keys=True))
+          PY
+      - name: Commit exactly this cohort to its own permanent research branch
+        env:
+          AO_COHORT: ${{ matrix.id }}
+          AO_COUNTRIES: ${{ matrix.countries }}
+        run: |
+          set -euo pipefail
+          branch="research/directory-country-image-cohort-${AO_COHORT}-20261029"
+          if git ls-remote --exit-code --heads origin "$branch" > /dev/null; then
+            echo "Immutable cohort archive already exists; do not overwrite" >&2; exit 1
+          fi
+          git fetch --no-tags origin main
+          git switch -c "$branch" origin/main
+          target="data/directory/research/worldwide-media-sources/restworld-20261029/${AO_COHORT}"
+          test ! -e "$target" || { echo "Target already exists"; exit 1; }
+          mkdir -p "$target"
+          cp /tmp/ao-country-shard/*.json "$target/"
+          test "$(find "$target" -maxdepth 1 -name '*.json' | wc -l)" -eq "$(( $(echo "$AO_COUNTRIES" | tr -cd ',' | wc -c) + 2 ))"
+          test "$(du -sm "$target" | awk '{print $1}')" -le 55
+          git add "$target"
+          git diff --cached --name-only | while read -r f; do
+            case "$f" in "$target"/*.json) ;; *) echo "Unexpected archived file $f" >&2; exit 1;; esac
+          done
+          test -n "$(git diff --cached --name-only)"
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): archive restworld photo sources ${AO_COHORT}, no originals"
+          git push origin "HEAD:refs/heads/$branch"
