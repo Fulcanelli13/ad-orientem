@@ -13,14 +13,14 @@ The Commons file pages explicitly grant CC BY-SA 4.0. The original page, photogr
 
 ## Release mechanism — fail closed
 
-P68 implements `tools/acquire-sacred-object-photos-p68.py` with an offline `--check-manifest` mode and a networked `--acquire` mode. The latter runs on GitHub Actions **after merge to main**:
+P68 implements `tools/acquire-sacred-object-photos-p68.py` with an offline `--check-manifest` mode and a networked `--acquire` mode. **The networked mode is intentionally NOT run as a GitHub Actions mutator.** The repository's `production-tree-hygiene` gate prohibits unreviewed main-branch writes. Acquisition must be run in an authorized checked-out research branch, followed by a conventional reviewed asset pull request:
 
 - Wikimedia Commons API must return the expected exact file, photographer, CC BY-SA 4.0 licence, original MIME and dimensions.
 - Every downloaded **original** image's SHA-1 must equal the Commons media SHA-1; the Notre-Dame source additionally has a pinned historical SHA-1.
 - Entire source photograph is retained without artistic crop or retouching, resized to at most 1280 px and converted to local WebP.
 - A local binary SHA-256, attribution, licence URL, source photograph URL, date, EN/FR labels, caption, exact `relic_id`, exact `place_id`, subject type, and transformation description are recorded.
 - All selected assets are downloaded and validated before **any new approved gallery record is written**. The GitHub Actions job commits the WebP files and the existing `data/geography/approved-place-gallery.v1.json` **together**.
-- If permissions, metadata, licence, API connectivity, source bytes or Git push fail, the job fails and does **not** mark an unacquired image approved in `main`. No external hotlinked pictures, expired seven-day Actions artifacts, paid API or new map pins.
+- If metadata, licence, API connectivity or source bytes fail, acquisition aborts and does **not** mark an unacquired image approved. No external hotlinked pictures, expired seven-day Actions artifacts, paid API or new map pins.
 - Exact image-to-object lookup in `src/find/place-profiles.js` only uses approved local gallery entries with a matching Place and a matching canonical relic ID, explicitly restricted to reliquary/shrine photographs. Historical photographs do not imply present-day public accessibility.
 - The **same approved image** can appear in the general Place gallery and the appropriate Sacred Treasures card. Its photographic credit, licence and date are always visible.
 
@@ -44,4 +44,4 @@ The P68 test permits both pre-acquisition (3 approved sources, no published byte
 
 ### Validation warning
 
-The automated GitHub Actions asset-write job requires repository GitHub Actions `contents:write` permission on main. If branch rules block it, preservation must be accomplished through a standard image-asset PR. Do not claim photos are live until both the local asset commit and a READY production deployment are verified.
+Repository production hygiene **forbids** introducing an Actions workflow with `contents:write` or `git push` to main. The asset-acquisition tool is available for a separately authorized, normal git workflow in a local checkout or Work environment. This PR delivers only the safe media renderer, manifest and tool; it does **not** publish photo binaries. Do not claim new photos are live until a reviewed asset PR is merged and a READY production deployment is verified.
