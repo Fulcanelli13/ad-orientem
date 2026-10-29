@@ -56,7 +56,22 @@ try{
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.litany_saints",{returnContext:null})),true);
    const rootSel="#aoPray435930.open";
    const owner=rootSel+' [data-ao-devotional-owner="litany"]';
-   await page.locator(owner+' .aoLitanyInvocation').first().waitFor({timeout:10000});
+   try{
+    await page.locator(owner+' .aoLitanyInvocation').first().waitFor({timeout:10000});
+   }catch(e){
+    const diagnostic=await page.evaluate(()=>{
+     const root=document.querySelector("#aoPray435930.open");
+     return {root:!!root,view:root?.querySelector(".aoP435930Mount")?.dataset.aoPrayView,
+      owned:root?.querySelectorAll('[data-ao-devotional-owner="litany"]').length,
+      invocations:root?.querySelectorAll(".aoLitanyInvocation").length,
+      legacy:root?.querySelectorAll(".aoP435930LitanyLine").length,
+      cards:root?.querySelectorAll(".aoDevoCard").length,
+      note:root?.innerText?.slice(0,650)};
+    });
+    console.error("B38_LITANY_DOM_DIAGNOSTIC "+JSON.stringify({diagnostic,errors}));
+    await page.screenshot({path:resolve(out,"litany-debug-"+width+".png"),animations:"disabled"});
+    throw e;
+   }
    await page.waitForSelector(owner+'[data-ao-devotional-dual-axis="true"]',{timeout:10000});
    await page.evaluate(()=>document.fonts.ready);
    const inspect=()=>page.evaluate(()=>{
