@@ -44,8 +44,24 @@ try{
       mountOverflow:(mount?.scrollWidth||0)-(mount?.clientWidth||0)};
    });
    assert.equal((await state()).kind,"daily","card mode must retain original dual-axis reader");
+   // Source-book hierarchy is the primary navigation. Only released complete
+   // St Pius X editions are actionable; other books remain clearly partial.
+   assert.equal(await page.locator(base+'.aoDailyBookSelector').count(),1);
+   assert.equal(await page.locator(base+'.aoDailyBookPillPending').count(),3);
+   assert.equal(await page.locator(base+'.aoDailyBookEditions [aria-pressed="true"]').count(),1);
+   assert.equal(await page.locator(base+'[data-tp381-personal-value="1913"]').getAttribute("aria-pressed"),"true");
+   await page.locator(base+'[data-tp381-personal-value="1905"]').click();
+   assert.equal(await page.locator(base+'[data-tp381-personal-value="1905"]').getAttribute("aria-pressed"),"true","1905 pill must switch the existing edition owner");
+   assert.equal(await page.locator(base+'[data-ao-pray-guide-card^="piusx-1905"]').count(),1,"1905 must load its complete source-defined stage");
+   await page.screenshot({path:resolve(captures,"daily-morning-1905-book-"+width+".png"),animations:"disabled"});
+   await page.locator(base+'[data-tp381-personal-value="1913"]').click();
+   assert.equal(await page.locator(base+'[data-tp381-personal-value="1913"]').getAttribute("aria-pressed"),"true");
+   assert.equal(await page.locator(base+'[data-ao-pray-guide-card^="piusx-1913"]').count(),1,"1913 restores the original source-defined stage");
+   assert.equal(await page.locator(base+'.aoDailyReadingOptions').count(),1,"reading layout belongs to a secondary disclosure");
+   assert.equal(await page.locator(base+'.aoDailyReadingOptions').getAttribute("open"),null,"reading options must not displace source books above the prayer");
    assert.equal(await page.locator(base+'.aoDailyUxModes [aria-pressed="true"]').count(),1);
    await page.screenshot({path:resolve(captures,"daily-morning-cards-"+width+".png"),animations:"disabled"});
+   await page.locator(base+'.aoDailyReadingOptions summary').click();
    await page.locator(base+'[data-tp381-daily-presentation="continuous"]').click();
    let flow=await state();
    assert.equal(flow.mode,"continuous");
@@ -64,13 +80,14 @@ try{
    assert.equal(flow.count,sourcePlan.evening.length,"Evening must match the selected St Pius X source-edition plan, not impose the 13-step canonical baseline");
    assert.ok(flow.overflow<=1&&flow.mountOverflow<=1,"evening horizontal overflow "+JSON.stringify(flow));
    await page.screenshot({path:resolve(captures,"daily-evening-continuous-"+width+".png"),animations:"disabled"});
+   await page.locator(base+'.aoDailyReadingOptions summary').click();
    await page.locator(base+'[data-tp381-daily-presentation="guided"]').click();
    assert.equal((await state()).kind,"daily","switching back restores canonical dual-axis cards");
    assert.equal(await page.locator(base+'.aoDailyUxStage').count(),0);
    assert.equal(await page.locator(base+'.aoQuietHorizon').count(),1,"existing horizon presentation must remain");
    await page.screenshot({path:resolve(captures,"daily-evening-cards-"+width+".png"),animations:"disabled"});
    assert.deepEqual(errors,[],"Uncaught phone errors: "+errors.join("; "));
-   console.log("PASS "+width+"px: "+sourcePlan.morning.length+"/"+sourcePlan.evening.length+" source-edition stages in cards and flow; canonical baselines remain 11/13, no completion inferred");
+   console.log("PASS "+width+"px: direct 1913/1905 source pills, three pending book labels, secondary reading control and "+sourcePlan.morning.length+"/"+sourcePlan.evening.length+" source-edition stages; no completion inferred");
   }finally{await page.close()}
  }
 }finally{
