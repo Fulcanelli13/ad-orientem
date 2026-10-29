@@ -114,6 +114,12 @@ test("French II Vespers missing component is caught when heading and antiphon sp
   assert.equal(found.length,1);
   assert.equal(found[0].reason,"FR_VESPERS_SUNDAY_COMMEMORATION_INCOMPLETE");
   assert.equal(found[0].translationSourceCellId,"Vespera10");
+  const iSpelling={...latin,sections:latin.sections.map(s=>({
+    ...s,text:s.text.replace("At Jesus","At Iesus")
+  }))};
+  const variant=officeTranslationContentBlockers({latin:iSpelling,translation:fr});
+  assert.equal(variant.length,1);
+  assert.equal(variant[0].reason,"FR_VESPERS_SUNDAY_COMMEMORATION_INCOMPLETE");
   const saturday=make("la","2026-10-31",
     "Oratio Omnium Sanctorum\nCommemoratio Dominica XXIII Post Pentecosten I. Novembris",
     "Ant. Vidi Dominum sedentem. Absolve, quaesumus, Domine.");
