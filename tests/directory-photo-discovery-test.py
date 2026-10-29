@@ -186,6 +186,56 @@ class PhotoDiscoveryTests(unittest.TestCase):
         self.assertFalse(found["SACRED_DETAIL"])
         self.assertEqual(found["EXTERIOR"][0]["publication_state"],"HOLD_IDENTITY_CATEGORY_AND_RIGHTS_REVIEW")
 
+    def test_commons_recent_sampling_finds_cc_after_pd_scans(self):
+        from unittest.mock import patch
+        venue={"name":"St Benedict Church","country":"AU","locality":"Arcadia"}
+        def page(title, licence, sha, desc=""):
+            license_url = ("https://creativecommons.org/licenses/by-sa/4.0/"
+                           if licence == "CC BY-SA 4.0" else "")
+            return {"title":"File:"+title,
+                    "imageinfo":[{"mime":"image/jpeg", "width":1800,
+                     "height":1200, "sha1":sha, "extmetadata":{
+                     "LicenseShortName":{"value":licence},
+                     "LicenseUrl":{"value":license_url},
+                     "ImageDescription":{"value":desc}}}]}
+        pd = [page("Old historical St Benedict church photo "+str(n)+".jpg",
+                   "Public Domain",str(n)*40) for n in range(1,5)]
+        cc = page("St Benedict Church exterior Arcadia.jpg",
+                  "CC BY-SA 4.0","a"*40,"Church facade at Arcadia")
+        class Client:
+            def __init__(self,first):
+                self.first=first
+                self.calls=[]
+            def request(self,params,endpoint=mod.API):
+                self.calls.append(params)
+                assert params["generator"] == "categorymembers"
+                if params.get("gcmsort") == "timestamp":
+                    assert params["gcmdir"] == "desc"
+                    assert params["gcmnamespace"] == 6
+                    assert "gcmtype" not in params
+                    return {"query":{"pages":[cc]}}
+                assert params["gcmnamespace"] == 6
+                return {"query":{"pages":self.first}}
+        match={"qid":"Q12345","category":"St Benedict Church Arcadia","image":None}
+        with patch.object(mod,"wikidata_photo_identity",
+                          side_effect=lambda _client, _venue: (
+                              {"state":"GEO_AND_NAME_CORROBORATED_RESEARCH_ONLY"},match)), \
+             patch.object(mod,"relevant_commons_subcategories",return_value={}):
+            client=Client(pd)
+            info,found=mod.structured_discovery(client,venue)
+            self.assertEqual(len(client.calls),2)
+            self.assertEqual(info["recent_commons_sample"],"BOUNDED_40_NO_PAGINATION")
+            self.assertEqual(found["EXTERIOR"][0]["source_sha1"],"a"*40)
+            self.assertEqual(found["EXTERIOR"][0]["license"],"CC-BY-SA-4.0")
+            self.assertEqual(found["EXTERIOR"][0]["discovery_method"],
+                             "WIKIDATA_COMMONS_CATEGORY_RECENT")
+            self.assertEqual(len(found["EXTERIOR"]),4)
+            client=Client([cc])
+            info,found=mod.structured_discovery(client,venue)
+            self.assertEqual(len(client.calls),1)
+            self.assertNotIn("recent_commons_sample",info)
+            self.assertEqual(found["EXTERIOR"][0]["source_sha1"],"a"*40)
+
     def test_openverse_merge_never_exceeds_limit(self):
         old=[{"source_url":f"https://example.org/{n}","discovery_method":"WIKIDATA_P18"}
              for n in range(mod.MAX_CANDIDATES_PER_CATEGORY)]

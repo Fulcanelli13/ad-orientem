@@ -536,6 +536,31 @@ def structured_discovery(client, venue):
                                  "gcmlimit":30,"gcmnamespace":6}))
             except (urllib.error.URLError, ValueError, KeyError, TimeoutError):
                 info.setdefault("subcategory_errors",[]).append(role)
+    # Categorymember's default alphabetical sort is biased toward old scans.
+    # One additional, non-paginated recent-file sample is justified only when
+    # the primary P18/category/child sample has no explicit CC original SHA1.
+    # gcmsort=timestamp ignores gcmtype=file in MediaWiki, so namespace=6 is
+    # mandatory. This is an acquisition shortlist, never subject/rights proof.
+    category = str(match.get("category") or "")[:140]
+    has_stageable_page = any(
+        (page.get("imageinfo") or [{}])[0].get("sha1")
+        and license_name((page.get("imageinfo") or [{}])[0]) in STAGEABLE_COMMONS_LICENSES
+        for page, _method, _role in pages
+    )
+    if (category and not re.search(r"[\[\]{}|<>\n\r]", category)
+            and not has_stageable_page):
+        try:
+            recent_pages = commons_pages(client, {
+                "generator": "categorymembers",
+                "gcmtitle": "Category:" + category,
+                "gcmnamespace": 6, "gcmlimit": 40,
+                "gcmsort": "timestamp", "gcmdir": "desc",
+            })
+            pages.extend((page, "WIKIDATA_COMMONS_CATEGORY_RECENT", None)
+                         for page in recent_pages)
+            info["recent_commons_sample"] = "BOUNDED_40_NO_PAGINATION"
+        except (urllib.error.URLError, ValueError, KeyError, TimeoutError):
+            info["recent_category_fetch_error"] = "COMMONS_RECENT_SAMPLE_UNAVAILABLE"
     seen = set()
     for page, method, preferred_role in pages:
         title = page.get("title")
