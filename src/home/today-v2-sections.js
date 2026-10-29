@@ -107,7 +107,7 @@ export function renderTodayV2Sections(model,vm){
   const featureDetail=feature?.sub||txt("Choose a prayer for this moment","Choisir une prière pour ce moment");
   const featureRole=feature?.when||txt("Any time","À tout moment");
   const rule=model.enricherRule??null;
-  const ruleMarkup=rule&&model.enricherVisible?`<button type="button" class="aoTodayV2RuleLine" data-home-cu-static="${esc(rule.id)}"><span>${esc(rule.role||txt("Daily rule","Règle du jour"))} · ${esc(rule.title)}</span><span aria-hidden="true">›</span></button>`:"";
+  const ruleMarkup=rule?.kind==="static"&&model.enricherVisible?`<button type="button" class="aoTodayV2RuleLine" data-home-cu-static="${esc(rule.id)}"><span>${esc(rule.role||txt("Daily rule","Règle du jour"))} · ${esc(rule.title)}</span><span aria-hidden="true">›</span></button>`:"";
   // The hero already names the observance; keep this link about its context.
   // Preserve the Calendar Day owner; Saints handoff remains a separate PR.
   const saintTitle=saintOrFeast?txt("Life & sources","Vie et sources")
