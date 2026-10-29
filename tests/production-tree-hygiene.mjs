@@ -42,6 +42,25 @@ for(const name of workflows){
       name+" review-branch promotion requires explicit contents: write");
     assert.match(source,/git\s+push\s+origin\s+["']HEAD:\$\{GITHUB_REF_NAME\}["']/i,
       name+" must push only back to the triggering review branch");
+  }else if(name==="directory-open-photo-discovery-batch.yml"){
+    // Only this explicitly dispatched *metadata-only* collector may write one
+    // fixed research branch. Never allow research-batch automation to push main,
+    // approve media, or mutate the canonical repository outside that branch.
+    assert.match(source,/workflow_dispatch:/i,"photo batch requires manual dispatch");
+    assert.doesNotMatch(source,/schedule:\s*\n/,"photo batch must not run on a paid/unbounded cadence");
+    assert.match(source,/permissions:\s*\n\s*contents:\s*write/i,
+      "photo batch requires explicit research-branch write permission");
+    assert.match(source,/publication[^\\n]*RESEARCH_ONLY_NEVER_APP_VISIBLE/,
+      "photo batch cannot claim publication");
+    assert.match(source,/git add "\$target\/r49-\$OFFSET-\$LIMIT\.json"/,
+      "photo batch may stage exactly one per-batch metadata file");
+    assert.match(source,/git push origin HEAD:refs\/heads\/research\/directory-photo-candidates/,
+      "photo batch writes only the candidate research branch");
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1,
+      "photo batch may have exactly one push command");
+    assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
+    assert.doesNotMatch(source,/gh\s+api\s+-X\s+(?:PUT|PATCH|POST)/i);
   }else if(name==="branch-hygiene.yml"){
     // Merged-branch ref deletion is deliberately distinct from mutating app
     // source or restoring old production builds. Enforce the exact safeguards,
