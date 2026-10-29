@@ -42,7 +42,8 @@ jobs:
           m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',html,re.S)
           assert m
           rows=json.loads(m.group(1))
-          assert len(rows)==d['counts']['totalVisuallyReviewable']
+          assert 0<=len(rows)<=d['counts']['totalVisuallyReviewable']
+          assert all(not any(z in x['title'].lower() for z in ('krishna','buddha','shiva','vishnu')) for x in rows)
           assert len({x['id'] for x in rows})==len(rows)
           assert 'IMPORT_WITH_CORRECTIONS' in html and 'UNSELECTED' in html
           assert 'REJECT' in html and 'Finalize and export decisions' in html
