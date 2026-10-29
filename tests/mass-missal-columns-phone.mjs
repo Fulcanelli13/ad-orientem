@@ -133,6 +133,12 @@ try{
       presentation:row?.dataset.rubricPresentationOwner,
       eventIds:row?.dataset.rubricSourceEventIds?.split(" "),
       expanded:row?.getAttribute("role")==="button",
+      ink:row?getComputedStyle(row.querySelector(".ao-line-primary")).color:null,
+      position:row?{
+        marginTop:parseFloat(getComputedStyle(row).marginTop),
+        marginBottom:parseFloat(getComputedStyle(row).marginBottom),
+        nextParagraphId:row.nextElementSibling?.dataset?.paragraphId??null,
+      }:null,
       overflow:document.documentElement.scrollWidth-innerWidth,
     };
   });
@@ -148,6 +154,10 @@ try{
   assert.deepEqual(paten.eventIds,["AO.RUB.C0111.01","AO.RUB.C0111.02","AO.RUB.C0111.03"],
     "Condensation must not erase any certified paten action");
   assert.equal(paten.expanded,false,"Source rubric must not be a competing tappable paragraph");
+  assert.equal(paten.ink,"rgb(223, 126, 128)",
+    "The source-ordered book rubric must print in readable Missal red, not grey");
+  assert.ok(paten.position?.marginTop>paten.position?.marginBottom,
+    "Source rubric should have more space above than below the following prayer");
   assert.equal(await page.locator(".ao-missal-rubric-depth").count(),0,
     "Duplicate action lists are not genuine long rubrics");
   assert.ok(paten.overflow<=1,"Vernacular source rubric caused book overflow");
@@ -170,6 +180,10 @@ try{
         fontStyle:style.fontStyle,textAlign:style.textAlign,
         border:parseFloat(style.borderLeftWidth)+parseFloat(style.borderRightWidth),
         left:bounds.left,right:bounds.right,
+        color:style.color,
+        illustrations:[...block.querySelectorAll(
+          ".ao-approved-finger-rubric-art,.ao-approved-priest-gesture-rubric-art,.ao-approved-priest-head-bow-rubric-art"
+        )].map(el=>getComputedStyle(el).display),
       }:null,
     };
   });
@@ -190,6 +204,10 @@ try{
   assert.ok(offertory.type.lineHeight/offertory.type.fontSize>=1.49,
     "Missal inline rubric uses compressed line spacing");
   assert.equal(offertory.type.fontStyle,"italic");
+  assert.equal(offertory.type.color,"rgb(223, 126, 128)",
+    "The certified inline direction must use the same Missal red as the source rubrics");
+  assert.ok(offertory.type.illustrations.every(display=>display==="none"),
+    "Printed rubrics cannot contain LIVE gesture illustrations");
   assert.equal(offertory.type.textAlign,"center",
     "Two-column Missal must retain the traditional centred source rubric");
   assert.equal(offertory.type.border,0,
