@@ -137,5 +137,5 @@ export function calendarStagedPublishedCustomVariants(parentCustomId,variantRead
   is_current_parish_announcement:false,
   indulgence_associated:false,
   publication_state:"RESEARCH_VARIANT_DETAIL_NOT_PUBLISHED"
- }))));
+ })));
 }
