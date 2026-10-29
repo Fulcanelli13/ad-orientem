@@ -21,6 +21,9 @@ on:
       - 'src/office/advent-vespers-chapter-hymn.js'
       - 'src/office/advent-first-vespers-assembled-research.js'
       - 'src/office/advent-first-vespers-rubric-plan.js'
+      - 'src/office/advent-first-vespers-universal-commemoration.js'
+      - 'tests/divine-office-advent-first-vespers-universal-commemoration.mjs'
+      - 'data/office/research/advent-i-2026-universal-commemoration.json'
       - 'src/office/advent-first-vespers-latin-print-anchors.js'
       - 'src/office/advent-first-vespers-1961-magnificat-lexical-check.js'
       - 'tests/divine-office-advent-first-vespers-1961-magnificat-lexical-check.mjs'
@@ -111,6 +114,8 @@ jobs:
           node --test tests/divine-office-advent-first-vespers-assembled-research.mjs
           node --check src/office/advent-first-vespers-rubric-plan.js
           node --test tests/divine-office-advent-first-vespers-rubric-plan.mjs
+          node --check src/office/advent-first-vespers-universal-commemoration.js
+          node --test tests/divine-office-advent-first-vespers-universal-commemoration.mjs
           node --check src/office/advent-first-vespers-latin-print-anchors.js
           node --test tests/divine-office-advent-first-vespers-latin-print-anchors.mjs
           node --check src/office/advent-first-vespers-1961-magnificat-lexical-check.js
