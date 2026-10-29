@@ -13,6 +13,7 @@ on:
       - "tests/customs-a1-final66-and-identity-board-gate.mjs"
       - "tests/customs-a23-96-original-page-audit-gate.mjs"
       - "tests/customs-a23-second61-source-gates.mjs"
+      - "tests/customs-408-complete-source-disposition-gates.mjs"
       - "data/customs/indulgence-grant-research-seed-20261029.v1.json"
       - "tests/customs-pitre-1900-wave05-editorial-staging-integrity.mjs"
       - "tests/customs-weiser-readiness-pages.mjs"
@@ -132,3 +133,7 @@ jobs:
         run: |
           node --check tests/customs-a23-second61-source-gates.mjs
           node tests/customs-a23-second61-source-gates.mjs
+      - name: Verify all 408 source-review dispositions with one disclosed scan failure
+        run: |
+          node --check tests/customs-408-complete-source-disposition-gates.mjs
+          node tests/customs-408-complete-source-disposition-gates.mjs
