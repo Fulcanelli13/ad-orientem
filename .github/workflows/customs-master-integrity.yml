@@ -26,6 +26,7 @@ on:
       - "data/calendar/customs-18-bilingual-staged-context-20261029.v1.json"
       - "src/calendar/customs-research-preview.js"
       - "tests/calendar-customs-18-bilingual-staged-context.mjs"
+      - "tests/calendar-customs-40-dynamic-day-preview.mjs"
       - "data/customs/indulgence-grant-research-seed-20261029.v1.json"
       - "tests/customs-pitre-1900-wave05-editorial-staging-integrity.mjs"
       - "tests/customs-weiser-readiness-pages.mjs"
@@ -162,3 +163,8 @@ jobs:
         run: |
           node --check tests/customs-calendar-40-bilingual-content-preview.mjs
           node tests/customs-calendar-40-bilingual-content-preview.mjs
+      - name: Verify date-aware Customs variant research projection with 1962 calendar anchors
+        run: |
+          node --check src/calendar/customs-research-preview.js
+          node --check tests/calendar-customs-40-dynamic-day-preview.mjs
+          node tests/calendar-customs-40-dynamic-day-preview.mjs
