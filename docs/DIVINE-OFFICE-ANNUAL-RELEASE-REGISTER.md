@@ -161,3 +161,48 @@ concurrence resolver** backed by authoritative rubrics, resolve source
 directives with the pinned parser, and test real selected Hours against
 independent printed witnesses before any reader route. This does not need
 additional raw Office captures.
+
+## Independent Office precedence review — RG 91 / 92–114 gate
+
+`src/office/precedence-review.js` is a conservative Office-specific
+*research review* over explicitly supplied Office-calendar candidate records.
+It does not infer Office selection from Mass Proper, calendar title, a civil
+date, or a generator XHTML heading.
+
+- **Occurrence:** candidate source must identify its own RG91 table category,
+  class, scope, ID, and researched I/II Vespers eligibility. The gate applies
+  the numbered table only when positions are distinct; ties, missing local
+  proper-day information, first-class transfers and special Offices are
+  withheld. Losing candidates remain unresolved until RG93–102 determine
+  commemoration, omission, transfer or reassignment.
+- **Concurrence:** adjacent Office-day candidates are compared under
+  RG103–105; equal classes retain current II Vespers. A Saturday feria or
+  Saturday BVM Office independently known to end after None can yield to
+  the following Sunday's or I-class feast's I Vespers per RG13, 27, 37
+  and 79. Other missing-II cases remain withheld.
+- **Commemorations:** this gate *never* appoints them. RG106–114 and Breviary
+  250–259 require additional ordering, exceptions, exclusion and source
+  checks. The pilot's earlier Vespers commemoration reviews in PR #1860
+  remain research evidence, not publication authority.
+- **Special:** All Souls/Office of the Dead and the Sacred Triduum always
+  require their own rubrical path; no generic Class-I substitution.
+
+The source for these rule IDs is the 1960 Roman General Rubrics:
+https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html
+and the earlier detailed Vespers gate in draft PR #1860. Structural test
+fixtures are **not** independently selected complete Office days.
+
+    node --test tests/divine-office-precedence-review.mjs
+
+All decision outputs set `officeSelectionAuthorized=false`,
+`commemorationsApproved=false`, `liturgicallyCertified=false`, and
+`published=0`. A caller-provided source witness is not a verified
+printed-authority signature. This module is therefore a precursor to,
+not a substitute for, a real universal + local Office candidate registry,
+and it is **not yet connected to production or the structured Hour
+assembly**.
+
+The next gate is to anchor these candidates to source-owned 1960 Office
+calendar witness IDs and reconcile them with the existing research pilot;
+then connect the review to Hour-selection and perform one consolidated
+annual read-only exception sweep, with no Office XHTML batch capture.
