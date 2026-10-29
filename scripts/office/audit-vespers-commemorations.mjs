@@ -63,6 +63,15 @@ function mainFn(){
     })),
     certified:report.independentlyVerifiedOfficeCommemorations,published:report.published
   }));
+  // These two specific Latin source triplets have now been checked
+  // against independently illustrated Sunday incipits. Treat a future
+  // mismatch as a source regression, NOT as permission to substitute text.
+  if(report.sundayComparisons.length!==2||
+    report.sundayComparisons.some(c=>!c.sourceStructureMatches||
+      Object.values(c.componentIncipitsLocated).some(v=>v!==true)||
+      c.original1961BreviaryPrintedProperCertified!==false||
+      c.canPublish!==false||c.published!==0))
+    throw Error("OFFICE_VESPERS_SUNDAY_COMM_EXACT_SOURCE_MISMATCH");
   if(report.sampleDates!==5||report.cases.some(c=>
       c.absenceOfHeadingProvesNoCommemoration!==false||
       c.printAndLocalOrdoReviewRequired!==true)||report.published!==0)
