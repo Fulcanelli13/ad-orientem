@@ -35,6 +35,7 @@ const ACTIONS=Object.freeze({
  "CROSSES WITH PATEN":["The priest traces a sign of the Cross with the paten.","Le prêtre trace un signe de croix avec la patène."],
  "ELEVATES CHALICE":["The priest elevates the chalice.","Le prêtre élève le calice."],
  "ELEVATES HOST":["The priest elevates the Sacred Host.","Le prêtre élève la sainte Hostie."],
+ "ELEVATES HOST AND CHALICE SLIGHTLY":["The priest raises the chalice slightly with the Sacred Host held above it, at omnis honor et gloria.","Le prêtre élève légèrement le calice avec la sainte Hostie tenue au-dessus, à omnis honor et gloria."],
  "GENUFLECTS":["The priest genuflects.","Le prêtre fait la génuflexion."],
  "HANDS OVER OBLATIONS":["The priest extends his hands over the offerings.","Le prêtre étend les mains sur les offrandes."],
  "JOINS HANDS":["The priest joins his hands.","Le prêtre joint les mains."],
@@ -46,8 +47,8 @@ const ACTIONS=Object.freeze({
  "RAISES EYES AND HANDS":["The priest raises his eyes and hands.","Le prêtre élève les yeux et les mains."],
  "RECEIVES CHALICE":["The priest receives the Precious Blood.","Le prêtre communie au Précieux Sang."],
  "RECEIVES HOST":["The priest receives the Sacred Host.","Le prêtre communie à la sainte Hostie."],
- "REMEMBERS THE DEAD":["The priest silently commemorates the dead.","Le prêtre fait silencieusement mémoire des défunts."],
- "REMEMBERS THE LIVING":["The priest silently commemorates the living.","Le prêtre fait silencieusement mémoire des vivants."],
+ "REMEMBERS THE DEAD":["The priest joins his hands before his breast and raises them towards his face; with his eyes fixed upon the Blessed Sacrament, he commemorates the dead, then extends his hands.","Le prêtre joint les mains devant la poitrine et les élève vers le visage ; les yeux fixés sur le Saint-Sacrement, il fait mémoire des défunts, puis étend les mains."],
+ "REMEMBERS THE LIVING":["The priest raises and joins his hands towards his face or breast, pauses with head slightly bowed to commemorate the living, then extends his hands.","Le prêtre élève et joint les mains vers le visage ou la poitrine ; la tête légèrement inclinée, il fait mémoire des vivants, puis étend les mains."],
  "REPLACES AND COVERS CHALICE":["The priest replaces and covers the chalice.","Le prêtre repose et recouvre le calice."],
  "REPLACES HOST":["The priest replaces the Sacred Host.","Le prêtre repose la sainte Hostie."],
  "RISES FACING ALTAR":["The priest stands facing the altar.","Le prêtre se tient debout face à l’autel."],
@@ -77,6 +78,23 @@ const APPROVED_MISSAL_PRIEST_STATES=Object.freeze({
   fr:"Après l’ablution des doigts qui suit la communion, le prêtre cesse de tenir joints le pouce et l’index de chaque main.",
  }),
 });
+// One already-canonical 1962 action lacks an accurate pictogram and a
+// published R17 event. Reuse its immutable gesture-matrix ID as *text only*;
+// never invent a rubric-event identity or count it among the 52 R17 actions.
+const MINOR_MATRIX_ID="GM.P.C0204.01";
+function exactMinorMatrix(matrix){
+ if(matrix?.schema!=="ao-mass-gesture-matrix-v1" ||
+    matrix.status!=="CANONICAL_GESTURE_SOT" ||
+    matrix.invariants?.primaryRubricalAuthority!=="ROMAN_MISSAL_1962" ||
+    !matrix.sources?.some(s=>s.id==="MR62_RITUS"&&s.role==="NORMATIVE_PRIMARY") ||
+    !Array.isArray(matrix.items))return false;
+ const x=matrix.items.find(item=>item.id===MINOR_MATRIX_ID);
+ return x?.cueId==="AO.SM.C0204"&&x.actor==="PRIEST"&&
+   x.authorityClass==="1962_NORMATIVE"&&x.gesture==="MINOR_ELEVATION"&&
+   x.label==="ELEVATES HOST AND CHALICE SLIGHTLY"&&x.sequenceOrder===1&&
+   x.displayPrimary===true&&x.iconKey==null&&
+   x.iconStatus==="PENDING_EXACT_MASTER"&&x.sources?.includes("MR62_RITUS");
+}
 const FORM=new Set(["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const validCue=id=>/^AO\.SM\.C\d{4}$/.test(String(id??""));
 const frozen=Object.freeze;
@@ -87,7 +105,7 @@ const isCanon=id=>Number(id.slice(-4))>=150&&Number(id.slice(-4))<=207;
  * list. A citation URL is reused, not copied from unapproved French research.
  */
 export function publishedMissalRubricsForParagraph(paragraph,registry,{
- form="MISSA_CANTATA_SIMPLE",language="en",
+ form="MISSA_CANTATA_SIMPLE",language="en",gestureMatrix=null,
 }={}){
  if(registry?.schema!=="ao-reader-rubric-events-v1" ||
     registry.status!=="SOURCE_BACKED_OVERLAY" ||
@@ -131,6 +149,14 @@ export function publishedMissalRubricsForParagraph(paragraph,registry,{
   candidates.push(...rows.map(x=>({id:x.id,cueId,order:x.order,
    label:x.label,sourceUrl:source.url,kind:"STATE"})));
  }
+ // The C0204 action belongs at the exact omnis honor et gloria paragraph.
+ // A bare source anchor, a draft matrix row or a synthetic paragraph cannot
+ // confer this certification. This remains descriptive, never observed now.
+ if(ids.includes("AO.SM.C0204")&&exactMinorMatrix(gestureMatrix)){
+  candidates.push({id:MINOR_MATRIX_ID,cueId:"AO.SM.C0204",order:1,
+   label:"ELEVATES HOST AND CHALICE SLIGHTLY",kind:"MATRIX_TEXT_ONLY",
+   sourceUrl:source.url});
+ }
  const positioned=new Map(ids.map((id,i)=>[id,i]));
  return frozen(candidates.sort((a,b)=>
      positioned.get(a.cueId)-positioned.get(b.cueId)||a.order-b.order)
@@ -141,8 +167,11 @@ export function publishedMissalRubricsForParagraph(paragraph,registry,{
      kind:x.kind??"ACTION",
      latinTrigger:x.triggerLat??null,order:x.order,
      sourceId:"MR62_RITUS",
-     sourceUrl:x.sourceUrl??source.url,review:"EXISTING_PUBLISHED_R17_1962_RUBRIC",
-     observedNow:false,owner:MISSAL_RUBRIC_OWNER,
+     sourceUrl:x.sourceUrl??source.url,
+     review:x.kind==="MATRIX_TEXT_ONLY"?"EXACT_1962_GESTURE_MATRIX_RUBRIC"
+       :"EXISTING_PUBLISHED_R17_1962_RUBRIC",
+     observedNow:false,
+     owner:x.kind==="MATRIX_TEXT_ONLY"?"CERTIFIED_1962_MATRIX_TEXT_ONLY":MISSAL_RUBRIC_OWNER,
    })));
 }
 
