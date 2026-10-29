@@ -11,13 +11,14 @@ Two actual usability gaps remain in the existing reader:
 ## Patch
 - Increase the source-witness provenance label to **12px**, source disclosure summary to **14px**, and expanded source metadata to **14px** with 1.6 leading, all scoped to the existing Novena reader. Keep the source link, edition distinctions, uncertainty caveats and translation source signals intact and collapsed by default.
 - Use the existing Previous/Next buttons in a subtle **bottom sticky navigation row** within the Novena reader (not a second navigation system). Preserve the reading frame, card-local scroll, safe-area inset, disabled state and original route handlers.
+- Review of the actual captured 320px EN Novena screenshot also showed the shared reader's **30% distant / 56% adjacent** paragraph opacity is too dim for a long historical prayer. This release retains the currently focused paragraph at 100% and sets Novena-only nearby paragraphs to 80%, distant paragraphs to 65%. All other devotional readers keep their original 30%/56% focus values. The active-paragraph emphasis remains present, but prose is readable throughout.
 - Ensure each tap target has a **48px minimum height**, flexible narrow-screen width, visible keyboard focus and solid background to separate controls from prayer text.
 - Do not alter the original 16 baseline novenas, additional source-owned readers, order, prayers, chapters, progress sequence, font family, Latin/French/English texts or prior B33/B34 behaviours.
 - No new paid assets, services, external image downloads, or duplicate modules.
 
 ## Gate
 - Existing `test:pray-novenas` runs a new source/composition contract.
-- Existing Novena Playwright CI checks actual 320px/390px computed paragraph, provenance and source-summary sizes, closed source notes, 48px thumb targets, pointer hit testing and sticky geometry **on opening and after scrolling**, in EN and FR, and checks no horizontal overflow.
+- Existing Novena Playwright CI checks actual 320px/390px computed paragraph, provenance and source-summary sizes, closed source notes, minimum 65% focus opacity, 48px thumb targets, pointer hit testing and sticky geometry **on opening and after scrolling**, in EN and FR, and checks no horizontal overflow.
 - Capture 8 temporary screenshots (opening/scrolled × 320/390 × EN/FR), with 3-day GitHub Actions retention for a real visual review. Functional test success is not equivalent to human screenshot approval.
 - Merge only if the Required Main Gate and phone acceptance pass. Verify the exact merged SHA becomes READY in production.
 
