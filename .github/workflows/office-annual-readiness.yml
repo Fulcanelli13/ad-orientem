@@ -43,6 +43,8 @@ on:
       - 'tests/fixtures/office/advent-i-2026-collect-dialogue-source-sections.json'
       - 'tests/divine-office-advent-i-proper-printed-latin.mjs'
       - 'data/office/research/advent-i-2026-proper-full-2009-print.json'
+      - 'data/office/research/advent-i-2026-primary-1961-print-and-translation-audit.json'
+      - 'tests/divine-office-advent-i-1961-primary-witness.mjs'
       - 'tests/divine-office-advent-first-vespers-saturday-psalm-integrity.mjs'
       - 'tests/fixtures/office/pinned-latin-psalm143.txt'
       - 'tests/fixtures/office/pinned-latin-psalm144.txt'
@@ -147,6 +149,7 @@ jobs:
           node --test tests/divine-office-advent-i-proper-printed-latin.mjs
           node --check src/office/advent-i-collect-ending-1960-research.js
           node --test tests/divine-office-advent-i-collect-ending-1960-research.mjs
+          node --test tests/divine-office-advent-i-1961-primary-witness.mjs
           node --check src/office/advent-first-vespers-preview-model.js
           node --check src/office/advent-first-vespers-reading-focus.js
           node --check src/office/advent-first-vespers-preview-session.js
