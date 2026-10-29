@@ -9,6 +9,8 @@ import {createOfficeConditionalSourceReader}
  from "../src/office/conditional-source-reader.js";
 import {createOfficeSectionResolver}
  from "../src/office/source-section-resolver.js";
+import {createOfficeAtReferenceResolver}
+ from "../src/office/at-reference-resolver.js";
 import {reviewOfficeSourceAcceptanceSlice,composeOfficeSourceAcceptanceSlice}
  from "../src/office/source-acceptance-slice.js";
 
@@ -63,7 +65,7 @@ $Qui vivis
 [Lectio1]
 This lesson content is never exposed through metadata.
 `;
-function environment({raw=originalMetadata,french=true,collectMacro=false}={}){
+function environment({raw=originalMetadata,french=true,collectMacro=false,approvedPrayers=false,missingFrenchPrayer=false}={}){
  const calls=[];
  const fetchSource=async(url,init)=>{
   calls.push({url,init});
@@ -73,18 +75,24 @@ function environment({raw=originalMetadata,french=true,collectMacro=false}={}){
   filenameIndex,fetchSource,maxDistinctReads:2
  });
  const reads=[];
- const resolver=createOfficeSectionResolver({
-  readSource:async(path,language)=>{
-   reads.push([path,language]);
-   return {
-    sourceRevision:DIVINUM_OFFICIUM_PIN,sourcePath:path,language,
-    map:new Map([
+ const readSource=async(path,language)=>{
+  reads.push([path,language]);
+  return {
+   sourceRevision:DIVINUM_OFFICIUM_PIN,sourcePath:path,language,
+   map:path==="Psalterium/Common/Prayers"?
+    language==="fr"&&missingFrenchPrayer?new Map():
+     new Map([["Qui vivis",[
+      "r. "+language+" pinned Qui vivis source conclusion","R. Amen."
+     ]]]):
+    new Map([
      ["Ant 1",...(language==="fr"&&!french?[]:[[language+" indexed Advent antiphon"]])],
      ["Oratio",[language+" indexed collect",...(collectMacro?["$Qui vivis"]:[])]]
     ])
-   };
-  }
- });
+  };
+ };
+ const resolver=approvedPrayers?
+  createOfficeAtReferenceResolver({readSource,enableStandardPrayers:true}):
+  createOfficeSectionResolver({readSource});
  return {metadataReader,resolver,calls,reads};
 }
 const args=(env,review=handoff(),path=sourcePath,title="Dominica I Adventus")=>({
@@ -167,4 +175,34 @@ test("unlisted or nonmatching date path is withheld before original source is re
   args(env,review,"Sancti/11-01","Omnium Sanctorum")),
   /OFFICE_CONDITIONAL_SOURCE_NOT_DATE_LEAD/);
  assert.equal(env.calls.length,0);
+});
+
+test("source-owned Qui vivis supports a two-component trilingual Advent I research slice",async()=>{
+ const env=environment({collectMacro:true,approvedPrayers:true});
+ const r=await composeOfficeSourceAcceptanceSlice(args(env,handoff([
+  ...sections,{key:"collect",path:sourcePath,section:"Oratio",role:"COLLECT"}
+ ])));
+ assert.equal(r.status,"TRILINGUAL_SOURCE_COMPONENT_SLICE_UNVERIFIED");
+ assert.equal(r.sectionCount,2);
+ assert.equal(r.trilingualSectionsLocated,true);
+ for(const lang of ["la","en","fr"]){
+  const collect=r.sections.find(s=>s.key==="collect");
+  assert.match(collect.texts[lang],new RegExp(lang+" pinned Qui vivis"));
+  assert.deepEqual(collect.referenceTraces[lang].map(x=>x.sourceId),[
+   "Tempora/Adv1-0#Oratio","Psalterium/Common/Prayers#Qui vivis"
+  ]);
+ }
+ assert.equal(env.reads.length,6);
+ assert.equal(env.calls.length,1);
+ assert.equal(r.completeHourVerified,false);
+ assert.equal(r.liturgicalSelectionVerified,false);
+ assert.equal(r.translationCollationVerified,false);
+ assert.equal(r.publishable,false);
+ assert.equal(r.published,false);
+});
+test("a missing French standard-prayer conclusion blocks Advent I collect research",async()=>{
+ const env=environment({collectMacro:true,approvedPrayers:true,missingFrenchPrayer:true});
+ await assert.rejects(composeOfficeSourceAcceptanceSlice(args(env,handoff([
+  ...sections,{key:"collect",path:sourcePath,section:"Oratio",role:"COLLECT"}
+ ]))),/OFFICE_AT_SOURCE_SECTION_MISSING/);
 });
