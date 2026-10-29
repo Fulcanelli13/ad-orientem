@@ -1,0 +1,635 @@
+{
+  "schema": "AO_P101_ORIGINAL_QUALITY_GATE_TRIAGE_V1",
+  "as_of": "2026-10-30",
+  "source": "P100 merged commit f3a589b01195fdb8a53bcd99860b3ce65c090c11; P94–P99 exact-source preview/identity roles",
+  "status": "TECHNICAL_AND_PRIOR_PREVIEW_TRIAGE_ONLY_NO_NEW_INDEPENDENT_IMAGE_VIEWING",
+  "reference_viewport": "Illustrative 16:9 1920x1080 desktop hero; NOT a claim about current app's actual photo frame.",
+  "reconciliation": {
+    "p98_candidates": 31,
+    "p100_hash_verified": 11,
+    "p100_full_decode_verified": 10,
+    "p100_hash_only": 1,
+    "pending_orig_bytes": 20,
+    "p97_preview_exceptions_outside_queue": [
+      77,
+      110,
+      204,
+      261
+    ],
+    "canonical_identity": {
+      "wrong_site": 90,
+      "corroborated_research_only": 83,
+      "held": 212
+    },
+    "published": 0
+  },
+  "batch_entries": [
+    {
+      "contact_index": 12,
+      "site": "Fatimakapelle",
+      "physical_anchor_id": "RG-64607C31CF5E",
+      "exact_commons_source_page": "https://commons.wikimedia.org/wiki/File:Fatimakapelle_Schardenberg.JPG",
+      "original_sha1_recomputed": "9c6a43fd481e62d964fa34392cbe27797803d4cb",
+      "original_sha256_recomputed": "e71b37627b9e1fb5e9e6eca4febfcebb5730ad782eba10e482be8b2255761a70",
+      "original_byte_count": 510128,
+      "decoded_original_dimensions": {
+        "width": 1280,
+        "height": 960
+      },
+      "preview_role": "EXTERIOR",
+      "preview_screen": "VIABLE_EXTERIOR",
+      "prior_exact_preview_observation": "Forest-framed stone Fatima chapel is largely visible, with clear bell tower and facade; tall conifers and boulders partly obscure the edges.",
+      "source_page_license_claim": "CC BY 3.0",
+      "source_page_creator_claim": "Konrad Lackerbeck",
+      "hypothetical_16_9_crop": {
+        "crop_width_px": 1280,
+        "crop_height_px": 720,
+        "retained_original_area_percent": 75,
+        "assumed_center_crop": true,
+        "review_only_not_app_geometry": true
+      },
+      "sampled_brightness_near_white_pct": 0,
+      "sampled_near_black_pct": 0.35,
+      "editorial_workflow_status": "TARGETED_REVIEW_WITH_FLAGS",
+      "review_flags": [
+        "WIDE_1920x1080_EXPORT_NOT_SUPPORTED_WITHOUT_UPSCALING"
+      ],
+      "observations": [
+        "Original is 1,280×960; landscape 16:9 crop yields only 1,280×720 pixels, not a high-density hero.",
+        "P95 visual screening considered it viable exterior, not a final hero approval."
+      ],
+      "exact_original_visually_critically_inspected": false,
+      "frame_absence_confirmed": false,
+      "actual_app_crop_tested": false,
+      "release_license_and_attribution_cleared": false,
+      "editorial_acceptance": false,
+      "production_published": false
+    },
+    {
+      "contact_index": 15,
+      "site": "Wallfahrtskirche Maria Lebing",
+      "physical_anchor_id": "RG-2C372E709261",
+      "exact_commons_source_page": "https://commons.wikimedia.org/wiki/File:Wallfahrtskirche_Maria_Lebing_03.jpg",
+      "original_sha1_recomputed": "191a96380e5d2dacfa47e03bcb9cac4635267e37",
+      "original_sha256_recomputed": "615b8b0b232f632d56ef4c1b9897417ca37b91564a9627665a691fec47a36fa3",
+      "original_byte_count": 11840581,
+      "decoded_original_dimensions": {
+        "width": 3024,
+        "height": 4032
+      },
+      "preview_role": "EXTERIOR_FRONT",
+      "preview_screen": "PREFERRED_EXTERIOR_IN_SITE_BATCH",
+      "prior_exact_preview_observation": "Nearly frontal facade and entrance, religious mural and tower all legible; branches frame upper edges and sky is overcast.",
+      "source_page_license_claim": "CC BY-SA 4.0",
+      "source_page_creator_claim": "Sebastianposch",
+      "hypothetical_16_9_crop": {
+        "crop_width_px": 3024,
+        "crop_height_px": 1701,
+        "retained_original_area_percent": 42.2,
+        "assumed_center_crop": true,
+        "review_only_not_app_geometry": true
+      },
+      "sampled_brightness_near_white_pct": 0.15,
+      "sampled_near_black_pct": 1.48,
+      "editorial_workflow_status": "TARGETED_REVIEW_WITH_FLAGS",
+      "review_flags": [
+        "16_9_CENTER_CROP_RETENTION_UNDER_50_PERCENT"
+      ],
+      "observations": [
+        "Portrait 3,024×4,032; a 16:9 crop retains only 42% of image height; facade/tower framing must be checked.",
+        "P96 preferred exterior preview, but no original-pixel artistic review."
+      ],
+      "exact_original_visually_critically_inspected": false,
+      "frame_absence_confirmed": false,
+      "actual_app_crop_tested": false,
+      "release_license_and_attribution_cleared": false,
+      "editorial_acceptance": false,
+      "production_published": false
+    },
+    {
+      "contact_index": 20,
+      "site": "Saint Mary's Cathedral Sydney, Australia",
+      "physical_anchor_id": "RG-CCA21241D2F7",
+      "exact_commons_source_page": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_St_Mary's_Cathedral_--_2019_--_3107.jpg",
+      "original_sha1_recomputed": "c66b99f9e3ec791abc09ddba469813a69115ce37",
+      "original_sha256_recomputed": "78b54f56b4c21ddcfc16bd037e841838d4a8be693c8032ed7449a8ab3cdaf265",
+      "original_byte_count": 13987315,
+      "decoded_original_dimensions": {
+        "width": 5621,
+        "height": 4216
+      },
+      "preview_role": "EXTERIOR",
+      "preview_screen": "VIABLE_SECONDARY_EXTERIOR",
+      "prior_exact_preview_observation": "Entire Sydney St Mary's Gothic cathedral and spires visible in daylight, but busy roadway, cars, pedestrian signals and trees intrude heavily along the facade.",
+      "source_page_license_claim": "CC BY-SA 4.0",
+      "source_page_creator_claim": "Dietmar Rabich",
+      "hypothetical_16_9_crop": {
+        "crop_width_px": 5621,
+        "crop_height_px": 3161,
+        "retained_original_area_percent": 75,
+        "assumed_center_crop": true,
+        "review_only_not_app_geometry": true
+      },
+      "sampled_brightness_near_white_pct": 0.34,
+      "sampled_near_black_pct": 0.47,
+      "editorial_workflow_status": "TARGETED_REVIEW_WITH_FLAGS",
+      "review_flags": [
+        "SECONDARY_USE_ONLY_PER_PRIOR_PREVIEW",
+        "VISIBLE_OBSTRUCTION_OR_CROPPED_ARCHITECTURE_REPORTED_BY_PRIOR_PREVIEW"
+      ],
+      "observations": [
+        "P97 preview: heavy roadway, cars, pedestrian signals and trees obscure lower church architecture.",
+        "High pixel count alone does not cure image obstructions."
+      ],
+      "exact_original_visually_critically_inspected": false,
+      "frame_absence_confirmed": false,
+      "actual_app_crop_tested": false,
+      "release_license_and_attribution_cleared": false,
+      "editorial_acceptance": false,
+      "production_published": false
+    },
+    {
+      "contact_index": 52,
+      "site": "Kostel sv. Petra na Poříčí",
+      "physical_anchor_id": "RG-F0CC5DB43B5A",
+      "exact_commons_source_page": "https://commons.wikimedia.org/wiki/File:Kostel_sv._Petra_Na_Po%C5%99%C3%AD%C4%8D%C3%AD_(Nov%C3%A9_M%C4%9Bsto)_(4).jpg",
+      "original_sha1_recomputed": "c682ce690d96fc2ca62c68f28b0a3e7feabafaa1",
+      "original_sha256_recomputed": "213cafedf33760455383030199d2156d4981aee22b8cebac0914297b5b64925f",
+      "original_byte_count": 4591075,
+      "decoded_original_dimensions": {
+        "width": 2333,
+        "height": 3500
+      },
+      "preview_role": "EXTERIOR_TOWERS",
+      "preview_screen": "PREFERRED_EXTERIOR_IN_SITE_BATCH",
+      "prior_exact_preview_observation": "Distinctive three masonry towers and steeples seen obliquely from below, recognisable historic church massing, with some dark exposure.",
+      "source_page_license_claim": "CC BY-SA 3.0",
+      "source_page_creator_claim": "Ondřej Kořínek",
+      "hypothetical_16_9_crop": {
+        "crop_width_px": 2333,
+        "crop_height_px": 1312,
+        "retained_original_area_percent": 37.5,
+        "assumed_center_crop": true,
+        "review_only_not_app_geometry": true
+      },
+      "sampled_brightness_near_white_pct": 35.97,
+      "sampled_near_black_pct": 1.38,
+      "editorial_workflow_status": "TARGETED_REVIEW_WITH_FLAGS",
+      "review_flags": [
+        "16_9_CENTER_CROP_RETENTION_UNDER_50_PERCENT",
+        "NEAR_WHITE_PIXEL_SHARE_GE_15_PERCENT_REVIEW_SCENE_BEFORE_INFERENCE",
+        "POTENTIALLY_HIGH_SKY_OR_HIGHLIGHT_BRIGHTNESS_NOT_PROOF_OF_DEFECT"
+      ],
+      "observations": [
+        "P100 sampled grayscale diagnostics show 35.97% high-end near-white values; investigate whether this represents sky or architectural highlight clipping.",
+        "P96 tower-focused preferred preview; confirm whole-building suitability and skyline crop."
+      ],
+      "exact_original_visually_critically_inspected": false,
+      "frame_absence_confirmed": false,
+      "actual_app_crop_tested": false,
+      "release_license_and_attribution_cleared": false,
+      "editorial_acceptance": false,
+      "production_published": false
+    },
+    {
+      "contact_index": 58,
+      "site": "Adelhauser Kirche",
+      "physical_anchor_id": "RG-CC7E25BA567F",
+      "exact_commons_source_page": "https://commons.wikimedia.org/wiki/File:Adelhauser_Kirche_in_Freiburg.jpg",
+      "original_sha1_recomputed": "c5e3fcfcf9473362d048c830180a32b1309f418b",
+      "original_sha256_recomputed": "3987b705d3bba3e18570e7a3e24ae1998bb51db43c1c832cb3a0dac7e1db517a",
+      "original_byte_count": 4288812,
+      "decoded_original_dimensions": {
+        "width": 3944,
+        "height": 2933
+      },
+      "preview_role": "EXTERIOR",
+      "preview_screen": "VIABLE_EXTERIOR",
+      "prior_exact_preview_observation": "Frontal Adelhauser courtyard facade and fountain are visible in bright sun, though bare tree branches cast intricate shadows across the church.",
+      "source_page_license_claim": "CC BY-SA 4.0",
+      "source_page_creator_claim": "Andreas Schwarzkopf",
+      "hypothetical_16_9_crop": {
+        "crop_width_px": 3944,
+        "crop_height_px": 2218,
+        "retained_original_area_percent": 75.6,
+        "assumed_center_crop": true,
+        "review_only_not_app_geometry": true
+      },
+      "sampled_brightness_near_white_pct": 0.45,
+      "sampled_near_black_pct": 2.45,
+      "editorial_workflow_status": "FIRST_EDITORIAL_VISUAL_QUEUE",
+      "review_flags": [],
+      "observations": [
+        "P95 viable exterior but not preview-preferred; compare alternatives at source size.",
+        "Potential choice for first-stage editorial scrutiny, not app release."
+      ],
+      "exact_original_visually_critically_inspected": false,
+      "frame_absence_confirmed": false,
+      "actual_app_crop_tested": false,
+      "release_license_and_attribution_cleared": false,
+      "editorial_acceptance": false,
+      "production_published": false
+    },
+    {
+      "contact_index": 61,
+      "site": "Basilika St. Clemens",
+      "physical_anchor_id": "RG-58B096C9EE65",
+      "exact_commons_source_page": "https://commons.wikimedia.org/wiki/File:Basilica_St_Clemens_Clemensstrasse_Calenberger_Neustadt_Hannover_Germany_02.jpg",
+      "original_sha1_recomputed": "905abcea4ecfd7e99a909f693a7e38eb51a86522",
+      "original_sha256_recomputed": "7d7c7e13da1608d8db4ae2eee06378255dcf5ec7f8e523daac92341528175469",
+      "original_byte_count": 14549263,
+      "decoded_original_dimensions": {
+        "width": 5392,
+        "height": 3595
+      },
+      "preview_role": "EXTERIOR",
+      "preview_screen": "PREFERRED_EXTERIOR_IN_SITE_BATCH",
+      "prior_exact_preview_observation": "Full St Clemens Hannover front and great dome shown in blue dusk light, with balanced paved plaza and minor tree branch intrusion.",
+      "source_page_license_claim": "CC BY-SA 4.0",
+      "source_page_creator_claim": "Christian A. Schröder (ChristianSchd)",
+      "hypothetical_16_9_crop": {
+        "crop_width_px": 5392,
+        "crop_height_px": 3033,
+        "retained_original_area_percent": 84.4,
+        "assumed_center_crop": true,
+        "review_only_not_app_geometry": true
+      },
+      "sampled_brightness_near_white_pct": 0.1,
+      "sampled_near_black_pct": 0.11,
+      "editorial_workflow_status": "FIRST_EDITORIAL_VISUAL_QUEUE",
+      "review_flags": [],
+      "observations": [
+        "P97 preferred dusk whole-building exterior; strong 5,392×3,595 original with moderate crop loss.",
+        "License claim CC BY-SA 4.0; explicit author attribution compliance needed before use."
+      ],
+      "exact_original_visually_critically_inspected": false,
+      "frame_absence_confirmed": false,
+      "actual_app_crop_tested": false,
+      "release_license_and_attribution_cleared": false,
+      "editorial_acceptance": false,
+      "production_published": false
+    },
+    {
+      "contact_index": 62,
+      "site": "Basilika St. Clemens",
+      "physical_anchor_id": "RG-58B096C9EE65",
+      "exact_commons_source_page": "https://commons.wikimedia.org/wiki/File:Basilika_St._Clemens_in_Hannover,_yKrypta_3.jpg",
+      "original_sha1_recomputed": "2d9b797086250636cd256d0ee3c197f1030afe78",
+      "original_sha256_recomputed": "e67fb04c1cc535d35781843fbfc29085eedcb64e6a43ee7fabad0c89d7414f8e",
+      "original_byte_count": 2529311,
+      "decoded_original_dimensions": {
+        "width": 4000,
+        "height": 2252
+      },
+      "preview_role": "CRYPT_NAVE",
+      "preview_screen": "VIABLE_SECONDARY_INTERIOR",
+      "prior_exact_preview_observation": "Symmetrical pale barrel-vaulted crypt, plain benches and distant altar; clean view but less fitting for a high-altar hero image.",
+      "source_page_license_claim": "CC BY-SA 4.0",
+      "source_page_creator_claim": "Bernd Schwabe in Hannover",
+      "hypothetical_16_9_crop": {
+        "crop_width_px": 4000,
+        "crop_height_px": 2250,
+        "retained_original_area_percent": 99.9,
+        "assumed_center_crop": true,
+        "review_only_not_app_geometry": true
+      },
+      "sampled_brightness_near_white_pct": 0.2,
+      "sampled_near_black_pct": 0.03,
+      "editorial_workflow_status": "TARGETED_REVIEW_WITH_FLAGS",
+      "review_flags": [
+        "SECONDARY_USE_ONLY_PER_PRIOR_PREVIEW"
+      ],
+      "observations": [
+        "P97 described a crypt interior rather than the principal church sanctuary; restrict proposed role to secondary interior.",
+        "Original is almost 16:9 already, but content relevance remains independent."
+      ],
+      "exact_original_visually_critically_inspected": false,
+      "frame_absence_confirmed": false,
+      "actual_app_crop_tested": false,
+      "release_license_and_attribution_cleared": false,
+      "editorial_acceptance": false,
+      "production_published": false
+    },
+    {
+      "contact_index": 71,
+      "site": "Kapelle Hl. Bruder Konrad",
+      "physical_anchor_id": "RG-0573EEA7D76E",
+      "exact_commons_source_page": "https://commons.wikimedia.org/wiki/File:Hl._Bruder_Konrad_Kolbermoor-4.jpg",
+      "original_sha1_recomputed": "f67972deb17cd65db5ec2b3315567570569998f6",
+      "original_sha256_recomputed": "1c2f504cbf5fd66040ac91b5e51bb445f0fc8d165850e7ef75b6616438264082",
+      "original_byte_count": 3608423,
+      "decoded_original_dimensions": {
+        "width": 4475,
+        "height": 3455
+      },
+      "preview_role": "EXTERIOR",
+      "preview_screen": "PREFERRED_EXTERIOR_CANDIDATE",
+      "prior_exact_preview_observation": "Almost straight-on clear chapel front, crucifix and tower fully legible with simple blue-sky background; foreground slope is minor distraction.",
+      "source_page_license_claim": "CC BY-SA 4.0",
+      "source_page_creator_claim": "Rufus46",
+      "hypothetical_16_9_crop": {
+        "crop_width_px": 4475,
+        "crop_height_px": 2517,
+        "retained_original_area_percent": 72.9,
+        "assumed_center_crop": true,
+        "review_only_not_app_geometry": true
+      },
+      "sampled_brightness_near_white_pct": 0.03,
+      "sampled_near_black_pct": 0.49,
+      "editorial_workflow_status": "FIRST_EDITORIAL_VISUAL_QUEUE",
+      "review_flags": [],
+      "observations": [
+        "P95 preferred exterior; high-resolution original and no extreme sampled brightness issue.",
+        "Manual composition, obstruction and display-crop inspection still required."
+      ],
+      "exact_original_visually_critically_inspected": false,
+      "frame_absence_confirmed": false,
+      "actual_app_crop_tested": false,
+      "release_license_and_attribution_cleared": false,
+      "editorial_acceptance": false,
+      "production_published": false
+    },
+    {
+      "contact_index": 75,
+      "site": "Marktkirche zur Allerheiligsten Dreifaltigkeit",
+      "physical_anchor_id": "RG-72D35EC6A519",
+      "exact_commons_source_page": "https://commons.wikimedia.org/wiki/File:Marktplatz10_Grafing-01.JPG",
+      "original_sha1_recomputed": "4b36b7269ecd1352faaf6c19e4d3ead76e341963",
+      "original_sha256_recomputed": "02f9917dced20f2bc3cd5bbfd1e9a77e05d11694e62d0433f7066dc889596f17",
+      "original_byte_count": 1015526,
+      "decoded_original_dimensions": {
+        "width": 2736,
+        "height": 3648
+      },
+      "preview_role": "EXTERIOR",
+      "preview_screen": "PREFERRED_EXTERIOR_CANDIDATE",
+      "prior_exact_preview_observation": "Grafing Marktkirche street facade, entrance statue, roof and dome all legible in sun; cramped street and adjacent buildings but clear architectural identification.",
+      "source_page_license_claim": "CC BY-SA 3.0",
+      "source_page_creator_claim": "AHert",
+      "hypothetical_16_9_crop": {
+        "crop_width_px": 2736,
+        "crop_height_px": 1539,
+        "retained_original_area_percent": 42.2,
+        "assumed_center_crop": true,
+        "review_only_not_app_geometry": true
+      },
+      "sampled_brightness_near_white_pct": 0.09,
+      "sampled_near_black_pct": 0,
+      "editorial_workflow_status": "TARGETED_REVIEW_WITH_FLAGS",
+      "review_flags": [
+        "16_9_CENTER_CROP_RETENTION_UNDER_50_PERCENT"
+      ],
+      "observations": [
+        "P95 preferred Grafing exterior; strong identity but 2,736×3,648 portrait original requires 16:9 crop of ~42% height.",
+        "Keep #76 statue detail excluded from hero role; #77 remains unviewed."
+      ],
+      "exact_original_visually_critically_inspected": false,
+      "frame_absence_confirmed": false,
+      "actual_app_crop_tested": false,
+      "release_license_and_attribution_cleared": false,
+      "editorial_acceptance": false,
+      "production_published": false
+    },
+    {
+      "contact_index": 96,
+      "site": "Cathédrale Sainte-Marie de Bayonne",
+      "physical_anchor_id": "RG-91F5D7242892",
+      "exact_commons_source_page": "https://commons.wikimedia.org/wiki/File:France-Bayonne-Cathedrale_Sainte-Cecile.jpg",
+      "original_sha1_recomputed": "97d57e249fe3ce7a1031f3dd479ba92ec1b94f4a",
+      "original_sha256_recomputed": "6802a5be045bf1972569f641dca6fd39c9c2e200a397f3cc2b7c1c96075f8b1e",
+      "original_byte_count": 534638,
+      "decoded_original_dimensions": {
+        "width": 1536,
+        "height": 2048
+      },
+      "preview_role": "CLOISTER_AND_CATHEDRAL_EXTERIOR",
+      "preview_screen": "VIABLE_SECONDARY_EXTERIOR",
+      "prior_exact_preview_observation": "Bayonne cathedral twin spires and side elevation seen from the cloister courtyard, rich Gothic tracery; crop cuts upper spires and the title misleadingly says Sainte-Cecile.",
+      "source_page_license_claim": "CC BY-SA 2.5",
+      "source_page_creator_claim": "Pinpin",
+      "hypothetical_16_9_crop": {
+        "crop_width_px": 1536,
+        "crop_height_px": 864,
+        "retained_original_area_percent": 42.2,
+        "assumed_center_crop": true,
+        "review_only_not_app_geometry": true
+      },
+      "sampled_brightness_near_white_pct": 0,
+      "sampled_near_black_pct": 0,
+      "editorial_workflow_status": "TARGETED_REVIEW_WITH_FLAGS",
+      "review_flags": [
+        "WIDE_1920x1080_EXPORT_NOT_SUPPORTED_WITHOUT_UPSCALING",
+        "16_9_CENTER_CROP_RETENTION_UNDER_50_PERCENT",
+        "SECONDARY_USE_ONLY_PER_PRIOR_PREVIEW",
+        "VISIBLE_OBSTRUCTION_OR_CROPPED_ARCHITECTURE_REPORTED_BY_PRIOR_PREVIEW"
+      ],
+      "observations": [
+        "P97 preview: cloister angle gives cathedral context but crops upper spires; filename misnames Sainte-Cécile.",
+        "Portrait original 1,536×2,048 yields a 1,536×864 16:9 crop; not a high-density hero."
+      ],
+      "exact_original_visually_critically_inspected": false,
+      "frame_absence_confirmed": false,
+      "actual_app_crop_tested": false,
+      "release_license_and_attribution_cleared": false,
+      "editorial_acceptance": false,
+      "production_published": false
+    },
+    {
+      "contact_index": 195,
+      "site": "Our Lady of Lourdes and St Cecilia",
+      "physical_anchor_id": "RG-0B11C840F55E",
+      "exact_commons_source_page": "https://commons.wikimedia.org/wiki/File:Church_of_Our_Lady_of_Lourdes_and_St_Cecilia,_Whitecliff_Mill_Street,_Blandford_Forum_(September_2025)_(4).jpg",
+      "original_sha1_recomputed": "d7c7524559edea69e0f3b0b54f2d83e5fde87f3a",
+      "original_sha256_recomputed": "ab7ced153661d256f8bcd67e6ffe8f33925f0b5b385e3283a4aa525518ad1323",
+      "original_byte_count": 3209643,
+      "decoded_original_dimensions": null,
+      "preview_role": "EXTERIOR_THREE_QUARTER",
+      "preview_screen": "PREFERRED_EXTERIOR_IN_SITE_BATCH",
+      "source_page_license_claim": "CC0 1.0",
+      "source_page_creator_claim": "Hassocks5489",
+      "editorial_workflow_status": "FULL_ORIGINAL_PIXEL_DECODE_REQUIRED",
+      "review_flags": [
+        "P100_PROBE_SHA_VERIFIED_BUT_FULL_JPEG_NOT_DECODED"
+      ],
+      "observations": [
+        "P96 preferred unobstructed exterior; earlier independently recomputed original SHA-1/SHA-256.",
+        "Pixel-original JPEG was not fully decoded in P100 one-file probe; no full-resolution metrics exist."
+      ],
+      "exact_original_visually_critically_inspected": false,
+      "frame_absence_confirmed": false,
+      "actual_app_crop_tested": false,
+      "release_license_and_attribution_cleared": false,
+      "editorial_acceptance": false,
+      "production_published": false
+    }
+  ],
+  "pending_originals": [
+    {
+      "contact_index": 119,
+      "physical_anchor_id": "RG-1BDFEDD551FE",
+      "site": "Chapelle Saint-Michel d'Ingouville",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fa%C3%A7ade_ouest.JPG",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 140,
+      "physical_anchor_id": "RG-43A0B0442689",
+      "site": "Notre-Dame des Armées",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Versailles_-_Chapelle_Notre-Dame-des-Arm%C3%A9es_-_31.jpg",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 149,
+      "physical_anchor_id": "RG-D6F294379CEF",
+      "site": "Église de Duingt",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Saint-Germain_de_Duingt_(avril_2023).JPG",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 147,
+      "physical_anchor_id": "RG-D6F294379CEF",
+      "site": "Église de Duingt",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Nef_%C3%89glise_St-Germain_de_Duingt_(avril_2023).JPG",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 156,
+      "physical_anchor_id": "RG-EB1D5FDB48A1",
+      "site": "Église Saint-François-de-Paule — Toulon",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Saint-Fran%C3%A7ois-de-Paule_de_Toulon-7970.jpg",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 157,
+      "physical_anchor_id": "RG-EB1D5FDB48A1",
+      "site": "Église Saint-François-de-Paule — Toulon",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Saint-Fran%C3%A7ois-de-Paule_de_Toulon.jpg",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 164,
+      "physical_anchor_id": "RG-291B45C8980A",
+      "site": "Église Saint-Grégoire des Minimes",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Saint-Gr%C3%A9goire_des_Minimes1.JPG",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 163,
+      "physical_anchor_id": "RG-291B45C8980A",
+      "site": "Église Saint-Grégoire des Minimes",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Saint-Gr%C3%A9goire_des_Minimes_Tours.jpg",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 178,
+      "physical_anchor_id": "RG-142C68DBCDC0",
+      "site": "Cathedral Church of Our Lady of Sorrows",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Eglwys_Babyddol_Wrecsam_The_Cathedral_Church_of_Our_Lady_of_Sorrows_Wrexham_18.JPG",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 202,
+      "physical_anchor_id": "RG-DA2F4D212252",
+      "site": "Oxford Oratory — St Aloysius Gonzaga",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Inside_the_Oratory_church_of_St_Aloysius_Gonzaga_-_geograph.org.uk_-_8096124.jpg",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 205,
+      "physical_anchor_id": "RG-DA2F4D212252",
+      "site": "Oxford Oratory — St Aloysius Gonzaga",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St_Aloysius_Gonzaga_Oxford_-_geograph.org.uk_-_8095192.jpg",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 263,
+      "physical_anchor_id": "RG-1EE685BA0BDB",
+      "site": "Priorato Madonna di Loreto",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rimini_-_Spadarolo_-_Cappella_del_Priorato_Madonna_di_Loreto06.jpg",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 325,
+      "physical_anchor_id": "RG-6802ADBDA2EE",
+      "site": "Cathedral Basilica of Our Lady of Peace",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cathedral_Basilica_of_Our_Lady_of_Peace_-_Honolulu_03.jpg",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 340,
+      "physical_anchor_id": "RG-9D79E31A64C4",
+      "site": "Holy Family Log Church",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Holy_Family_Log_Church_Cahokia_065.jpg",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 341,
+      "physical_anchor_id": "RG-9D79E31A64C4",
+      "site": "Holy Family Log Church",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Holy_Family_Log_Church_Cahokia_068.jpg",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 343,
+      "physical_anchor_id": "RG-ADCE1B6B06FA",
+      "site": "Holy Family, Saginaw",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Holy_Family_-_Saginaw_01.jpg",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 347,
+      "physical_anchor_id": "RG-1484AB15A7A1",
+      "site": "Holy Name of Jesus Cathedral",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Holy_Name_of_Jesus_Cathedral_-_Raleigh,_North_Carolina_01.jpg",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 376,
+      "physical_anchor_id": "RG-0AD2B2092E4E",
+      "site": "St Thomas the Apostle, Ann Arbor",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St._Thomas_the_Apostle_Catholic_Church,_Elizabeth_Street_and_Kingsley_Street,_Ann_Arbor,_MI_-_54381570240.jpg",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 380,
+      "physical_anchor_id": "RG-BD8A8939CA37",
+      "site": "St. John Cantius Church",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St._John_Cantius_Church_(Chicago)_Nave.jpg",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    },
+    {
+      "contact_index": 378,
+      "physical_anchor_id": "RG-BD8A8939CA37",
+      "site": "St. John Cantius Church",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Saint_John_Cantius_Church_Chicago.jpg",
+      "verification_status": "HELD_UNVERIFIED_ORIGINAL_BYTES_RATE_LIMITED",
+      "publication": false
+    }
+  ],
+  "quality_rulebook": [
+    "Do not infer image artistic merit solely from pixel dimensions, luminance statistics, hash integrity or category metadata.",
+    "16:9 math is a center-crop sensitivity calculation only, not an actual evaluated visual crop, composition review or user preference.",
+    "Manual exact-image viewing is required to confirm framing, blur, obstructions, picture frames, whole church, and correct Mass venue before publication.",
+    "CC BY/CC BY-SA license claims are not final license clearance. Record creator, license URL, changes, and ShareAlike before distribution.",
+    "Do not retry blocked Wikimedia HTTP 429 requests without respecting service guidance and a separate rate-limited plan."
+  ]
+}
