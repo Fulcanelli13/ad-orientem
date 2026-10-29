@@ -83,7 +83,7 @@ function save(){try{localStorage.setItem(KEY,JSON.stringify(issues))}catch{}}
 for(const k of [...new Set(DATA.map(x=>x.lane))].sort()){const o=document.createElement("option");o.value=k;o.textContent=pretty(k);$("lane").appendChild(o)}
 for(const k of [...new Set(DATA.map(x=>x.status))].sort()){const o=document.createElement("option");o.value=k;o.textContent=labels[k]||pretty(k);$("status").appendChild(o)}
 function visible(){const q=$("query").value.toLowerCase().trim(),l=$("lane").value,st=$("status").value,f=$("flag").value;
-return DATA.filter(x=>(!l||x.lane===l)&&(!st||x.status===st)&&(!f||f==="flagged"?!!issues[x.id]?.flag:!issues[x.id]?.flag)&&(!q||[x.id,x.title,x.claim,x.geography,x.source,x.owner,x.clusters.join(" ")].join(" ").toLowerCase().includes(q)));}
+return DATA.filter(x=>(!l||x.lane===l)&&(!st||x.status===st)&&(!f||(f==="flagged"?!!issues[x.id]?.flag:!issues[x.id]?.flag))&&(!q||[x.id,x.title,x.claim,x.geography,x.source,x.owner,x.clusters.join(" ")].join(" ").toLowerCase().includes(q)));}
 function draw(){const items=visible(),size=Number($("pageSize").value),pages=Math.max(1,Math.ceil(items.length/size));page=Math.min(Math.max(0,page),pages-1);
 const sourceCounts={};for(const r of DATA)sourceCounts[r.status]=(sourceCounts[r.status]||0)+1;
 $("metrics").innerHTML='<div class="metric"><strong>408</strong><span>Source observations retained</span></div>'+
