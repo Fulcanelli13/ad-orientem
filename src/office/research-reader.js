@@ -4,6 +4,7 @@
  * All upstream material is normalized plaintext, escaped again at rendering.
  */
 import {DIVINUM_OFFICIUM_PIN} from "../app/source-transport-compat.js";
+import {allSoulsObservanceDate} from "../calendar/liturgical-year.js";
 import {officeTranslationContentBlockers} from "./source-content-gate.js";
 
 export const OFFICE_RESEARCH_READER_VERSION="ao.office.research-reader.v1";
@@ -54,6 +55,21 @@ export function missingOfficeSourceCells(document){
 }
 
 /**
+ * 1960 General Rubrics 16(b), 96(b): when November 2 is a Sunday,
+ * All Souls is celebrated Monday November 3. Detect a specifically
+ * misdated Latin source headline; never infer a whole-year Office ordo.
+ * No source text or Calendar result is rewritten.
+ */
+export function officeAllSoulsDateConflict({date,latinHeadline}={}){
+  const heading=String(latinHeadline??"").normalize("NFD")
+    .replace(/[\u0300-\u036f]/g,"").toLowerCase().split("\n")[0];
+  if(!/\bomnium fidelium defunctorum\b/u.test(heading))return false;
+  if(typeof date!=="string"||!/^[12]\d{3}-\d{2}-\d{2}$/.test(date))
+    return true;
+  return date!==allSoulsObservanceDate(Number(date.slice(0,4)));
+}
+
+/**
  * Read-only contract for paired, source-aligned *research* material.
  * No document is asserted to be liturgically complete or authoritative.
  */
@@ -70,6 +86,8 @@ export function validateResearchOfficePair({latin,translation,locale="en"}={}){
     required(missingOfficeSourceCells(document).length===0,"UPSTREAM_MISSING_TEXT");
   }
   required(latin.language==="la"&&translation.language===locale,"LANGUAGE_MISMATCH");
+  required(!officeAllSoulsDateConflict({date:latin.date,latinHeadline:latin.headline}),
+    "ALL_SOULS_DATE_CONFLICT");
   required(latin.date===translation.date&&latin.hour===translation.hour&&latin.sourceRevision===translation.sourceRevision,
     "SOURCE_CONTEXT_MISMATCH");
   required(officeTranslationContentBlockers({latin,translation}).length===0,"CONTENT_SCOPE_MISMATCH");
