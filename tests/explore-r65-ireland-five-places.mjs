@@ -13,7 +13,7 @@ const geo=read("data/geography/seed-registry.v1.json"),seed=read("data/shrines/s
  media=read("data/geography/approved-place-media.v1.json"),featured=read("data/geography/major-places-editorial.v1.json");
 assert.deepEqual([geo.places.length,seed.shrines.length,seed.pilgrimages.length,sources.sources.length],[LIVE.places,257,240,LIVE.sources]);
 assert.equal(seed.routes.length,20);assert.equal(seed.temporalLinks.length,77);
-assert.equal(featured.items.length,20);assert.equal(media.items.length,31+read("data/geography/research/directory-p95-first-two-photo-covers.v1.json").photos.length,"Existing shrine photos intact; source-verified Directory covers appended");
+assert.equal(featured.items.length,20);assert.equal(media.items.length,31+read("data/geography/research/directory-p95-first-two-photo-covers.v1.json").photos.length+read("data/geography/research/directory-p102-three-approved-covers.v1.json").photos.length,"Existing shrine photos intact; source-verified Directory covers appended");
 assert.equal(assertShrinesPilgrimagesRegistry({shrines:seed.shrines,pilgrimages:seed.pilgrimages,routes:seed.routes,
  temporalLinks:seed.temporalLinks,sources:sources.sources,places:geo.places}).pass,true);
 assert.equal(guideData.guides.length,5);

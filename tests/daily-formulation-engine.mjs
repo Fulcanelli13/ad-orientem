@@ -323,9 +323,14 @@ assert.ok(runtime.includes(':prayerCard(row.id,{focusParagraphs:true});'),
  "Canonical cards must directly render canonical source text, not a second variant path");
 assert.ok(!runtime.includes("dailyFormulationPrayerCard(")&&!runtime.includes("dailyReleasedFormOptions("),
  "Do not keep an alternate historical rendering path for canonical card IDs");
-const approvedCue=runtime.slice(runtime.indexOf("function renderDailyGuided(rows)"),runtime.indexOf("const id=step===total?",runtime.indexOf("function renderDailyGuided(rows)")));
+const sharedStageRenderer=runtime.includes("function dailyStageBody(row)");
+const approvedCue=sharedStageRenderer
+ ?runtime.slice(runtime.indexOf("function dailyStageBody(row)"),runtime.indexOf("function renderDailyGuided(rows)"))
+ :runtime.slice(runtime.indexOf("function renderDailyGuided(rows)"),runtime.indexOf("const id=step===total?",runtime.indexOf("function renderDailyGuided(rows)")));
 assert.ok(approvedCue.includes("row.editorial===true")&&approvedCue.includes("row.cue"),
  "An approved examination reflection must retain its authored cue, not inherited legacy exposition");
+if(sharedStageRenderer)assert.ok(runtime.includes('const body=step===total?"":dailyStageBody(row);'),
+ "Original card reader must use the same cue-preserving source renderer as continuous mode");
 assert.ok(runtime.includes("function dailyReadingPlan()"),"Source adapter must attach to live reader");
 assert.ok(runtime.includes("resolveDailyReaderSequence({"),"Reader must reuse one guarded sequence adapter");
 assert.ok(runtime.includes("DAILY_SEQUENCE_RELEASE.enabled!==true"),"No Short/Complete choice without the independent release switch");

@@ -12,6 +12,7 @@ import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
 import {readerPilotEnabled,LORETO_SOURCE_IDS,renderPilotLoreto,pilotFocusButton} from "./prayer-reader-design-pilot.js";
+import {prayerPilotEnabled,prayerPilotAliases,renderPilotDiscovery,renderPilotAngelusEntry,filterPilotDiscovery} from "./prayer-design-pilot.js";
 import "./adoration-folio-styles.js";
 import {installAngelusCardDeck} from "./devotional-card-deck.js";
 import {updateDevotionalProgress,devotionalProgressMarkup} from "./devotional-progress.js";
@@ -87,6 +88,9 @@ const STORE_KEY='ao.pray.v435930';
 const ROOT_ID='aoPray435930';
 const PRAYER_READER_PILOT_ENABLED=readerPilotEnabled(window);
 let PILOT_LORETO_GROUP=false;
+// The pilot changes presentation only. Direct homepage prayer routes remain immediate.
+const PRAYER_PILOT_ENABLED=prayerPilotEnabled(window);
+let ANGELUS_PILOT_ENTRY=false;
 const actionCinematics=createDevotionalActionCinematic(window);
 const DATA=window.AO_PRAY_CANONICAL_DATA_V435930||{prayers:{},categories:{}};
 const BASE=window.AO_MODULES;
@@ -408,6 +412,7 @@ function shell(){
 function mount(){return shell().querySelector('.aoP435930Mount')}
 function open(id,opts={}){
   actionCinematics.reset();
+  ANGELUS_PILOT_ENTRY=false;
   // Do not corrupt return context or Back state for an unsupported deep link.
   if(!supportedDirectPrayerRoute(id))return false;
   // A Benediction-to-Adoration transition can offer a contextual doorway
@@ -469,8 +474,7 @@ function open(id,opts={}){
   else if(id==='pray.stations'){view='stations';STATIONS.step=0}
   else if(id==='pray.visit_blessed_sacrament'){view='adoration';ADOR.mode='visit'}
   else if(id==='pray.library'){
-    // A new direct Library entry must open the index, never the last prayer.
-    // In-Library Back and search/filter navigation retain their own state.
+    // Direct Library entry resets selected prayer. In-Library Back retains its own state.
     view='library';LIB.open=null;LIB.language=null;PILOT_LORETO_GROUP=false;
   }
   else if(id==='pray.for_priests'){view='priests';PRIESTS={purpose:'priests',latin:false}}
@@ -506,7 +510,7 @@ function close({silent=false,preserve=false}={}){
   try{returnFocus?.focus?.()}catch{} returnFocus=null;
 }
 function head(title,sub=''){
- const settings=view==='angelus'?`<button type="button" class="aoFolioSettingsTrigger" data-p435930-angelus-settings aria-controls="aoAngelusOptions" aria-expanded="${angelusOptionsOpen?'true':'false'}" aria-label="${esc(L('Prayer parameters','Paramètres de prière'))}">${assetIcon('ao-ui-settings')||'⚙'}</button>`:'';
+ const settings=view==='angelus'&&!(PRAYER_PILOT_ENABLED&&ANGELUS_PILOT_ENTRY)?`<button type="button" class="aoFolioSettingsTrigger" data-p435930-angelus-settings aria-controls="aoAngelusOptions" aria-expanded="${angelusOptionsOpen?'true':'false'}" aria-label="${esc(L('Prayer parameters','Paramètres de prière'))}">${assetIcon('ao-ui-settings')||'⚙'}</button>`:'';
  // One in-session control serves all source-owned prayer card readers with real EN/FR text.
  const prayerLanguage=['adoration','benediction','stations','confession'].includes(view)||(view==='fiveWounds'&&!FIVE_WOUNDS.latin)
   ? `<button type="button" class="aoP435930SessionLanguage" data-p435930-session-language lang="${lang()}" aria-label="${esc(L('Prayer language: English. Switch to French','Langue de prière : français. Passer en anglais'))}" title="${esc(L('Switch to French','Passer en anglais'))}">${lang().toUpperCase()}</button>`
@@ -749,6 +753,7 @@ function myCustomsDoor(){
 }
 function renderPrayHome(){
  const families=prayFamilies();
+ if(PRAYER_PILOT_ENABLED)return renderPilotDiscovery({head,L,esc,DATA,families,assetIcon});
  const door=id=>prayFamilyDoor(id,families[id]);
  const intro=L('Choose the prayer suited to the moment, or open the full Prayer Library.','Choisissez la prière qui convient au moment, ou ouvrez le Livre de prières.');
  const group=(en,fr,body)=>`<section class="aoP435930RootGroup"><h3>${esc(L(en,fr))}</h3><div class="aoP435930RootGroupDoors aoP435930ModuleGrid">${body}</div></section>`;
@@ -785,13 +790,14 @@ function prayRelatedFamilyItems(id){
  return [];
 }
 function renderPrayFamily(){
- const family=prayFamilies()[familyId];
+ const family=prayFamilies()[familyId]||(PRAYER_PILOT_ENABLED?prayerPilotAliases(L)[familyId]:null);
  if(!family){familyId=null;view='home';return renderPrayHome()}
  const related=prayRelatedFamilyItems(familyId);
  return `${head(family.title,L('Choose a prayer or devotion','Choisissez une prière ou une dévotion'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro">${familyId==='chaplets'?'':`<small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(family.title)}</h2>`}<p>${esc(family.description)}</p>${({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId]?'<div class="aoP435930ContextRow">'+glossaryContextCapsule(({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId],{french:isFr()})+'</div>':''}</section><div class="aoP435930ModuleGrid">${family.items.map(prayFamilyItem).join('')}${related.map(item=>prayFamilyItem(item,true)).join('')}</div></main>`;
 }
 function openFamily(id){
- const family=prayFamilies()[String(id??'')];
+ const key=String(id??'');
+ const family=prayFamilies()[key]||(PRAYER_PILOT_ENABLED?prayerPilotAliases(L)[key]:null);
  if(!family||family.direct)return false;
  familyId=String(id);view='family';render();return true;
 }
@@ -834,6 +840,11 @@ function angelusUtterance(text,type){
  return parts.length===2?angelusDialogueHTML(parts):nl(text);
 }
 function renderAngelus(){
+ if(PRAYER_PILOT_ENABLED&&ANGELUS_PILOT_ENTRY){
+  const c=angelusChoice(),p=angelusExactPosture();
+  const posture=c.form==='regina'?L('Stand · Eastertide','Debout · temps pascal'):p.stand?L('Stand · Sunday or after Saturday Vespers','Debout · dimanche ou après les vêpres du samedi'):L('Kneel · ordinary days','À genoux · jours ordinaires');
+  return renderPilotAngelusEntry({head,L,esc,form:c.form,posture,moduleIcon,recitation:S.rosary.recitation});
+ }
  const c=angelusChoice(),form=c.form,obj=form==='regina'?DATA.regina:DATA.angelus,vern=obj?.[lang()]||'',lat=obj?.la||'';
  const unitsV=angelusUnits(vern,form),unitsL=angelusUnits(lat,form);
  const authority=c.auto&&!c.authority.ok?callout(esc(L('Automatic seasonal selection could not read the canonical liturgical context, so Angelus is shown. You can choose Regina Cæli manually.','La sélection saisonnière automatique n’a pas pu lire le contexte liturgique canonique ; l’Angelus est donc affiché. Vous pouvez choisir manuellement le Regina Cæli.')),'warn'):'';
@@ -3221,6 +3232,26 @@ function onClick(e){
   return;
  }
  const b=e.target.closest?.('button,[data-p435930-flip]');if(!b)return;
+ if(PRAYER_PILOT_ENABLED&&view==='angelus'&&ANGELUS_PILOT_ENTRY&&b.hasAttribute('data-p435930-pilot-angelus-recitation')){
+  const mode=b.dataset.p435930PilotAngelusRecitation;
+  if(mode!=='individual'&&mode!=='group')return;
+  setRecitationMode(mode);return render();
+ }
+ if(PRAYER_PILOT_ENABLED&&view==='angelus'&&b.hasAttribute('data-p435930-pilot-angelus-begin')){
+  ANGELUS_PILOT_ENTRY=false;return render();
+ }
+ if(PRAYER_PILOT_ENABLED&&view==='home'&&b.hasAttribute('data-p435930-pilot-facet')){
+  const next=b.getAttribute('aria-pressed')!=='true';
+  b.setAttribute('aria-pressed',String(next));
+  const input=mount()?.querySelector('[data-p435930-pilot-search]');
+  filterPilotDiscovery(mount(),input?.value||'');
+  return;
+ }
+ if(PRAYER_PILOT_ENABLED&&view==='home'&&b.dataset.p435930PilotPrayer){
+  const id=b.dataset.p435930PilotPrayer;
+  if(!DATA.prayers?.[id])return;
+  pushView();LIB.open=id;LIB.language=null;view='library';return render();
+ }
  if(PRAYER_READER_PILOT_ENABLED&&b.hasAttribute('data-p435930-pilot-focus')){
   const card=mount()?.querySelector('.aoReaderPilotSingle');
   if(!card)return;
@@ -3587,6 +3618,7 @@ function onClick(e){
  }
  if(b.dataset.p435930Own){
   const id=b.dataset.p435930Own;
+  if(PRAYER_PILOT_ENABLED&&(view==='home'||view==='family')&&(id==='pray.angelus_regina'||id==='pray.angelus'))ANGELUS_PILOT_ENTRY=true;
   if(id==='pray.rosary'){launchRosaryPlayer(captureResume());return}
   // Validation must precede pushView: unknown targets must never become Angelus.
   if(!internalPrayerView(id))return showInternalPrayerRouteError(b,id);
@@ -3672,7 +3704,7 @@ function onChange(e){const x=e.target;
  if(x.matches('[data-p435930-fs-confession]'))FS.confessionDate=x.value.trim()?(parseDisplayDate(x.value)||''):'';
  if(view==='firstFriday'||view==='firstSaturday')render();
 }
-function onInput(e){const x=e.target;if(x.matches('[data-p435930-since]'))CONF.since=x.value;if(x.matches('[data-p435930-lib-search]')){LIB.q=x.value;const pos=x.selectionStart;render();const n=document.querySelector('[data-p435930-lib-search]');n?.focus();try{n?.setSelectionRange(pos,pos)}catch{}}}
+function onInput(e){const x=e.target;if(PRAYER_PILOT_ENABLED&&x.matches('[data-p435930-pilot-search]')){filterPilotDiscovery(mount(),x.value);return;}if(x.matches('[data-p435930-since]'))CONF.since=x.value;if(x.matches('[data-p435930-lib-search]')){LIB.q=x.value;const pos=x.selectionStart;render();const n=document.querySelector('[data-p435930-lib-search]');n?.focus();try{n?.setSelectionRange(pos,pos)}catch{}}}
 // Keep shared Rosary preferences synchronized when the preserved canonical player changes them.
 document.addEventListener('click',e=>{
  const donorBack=e.target?.closest?.('.lab-back'),donorRoot=donorBack?.closest?.('#aoPrayerBookRoot')||rosaryDonorRoot(),donorResume=readRosaryDonorReturn();

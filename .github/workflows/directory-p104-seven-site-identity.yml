@@ -1,0 +1,28 @@
+name: Directory P104 seven church-building identity gates
+on:
+  pull_request:
+    paths:
+      - data/geography/seed-registry.v1.json
+      - data/shrines/source-registry.v1.json
+      - data/explore/heritage-place-reconciliation.review.v1.json
+      - data/geography/research/sacred-places-p104-seven-p97-directory-links.v1.json
+      - data/geography/research/directory-place-photo-screen-p92-20261029.v1.json
+      - data/geography/sacred-places-live-release-chain.v1.json
+      - tests/directory-p104-seven-p97-exact-place-links.mjs
+      - .github/workflows/directory-p104-seven-site-identity.yml
+permissions:
+  contents: read
+jobs:
+  seven-exact-site-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/directory-p104-seven-p97-exact-place-links.mjs
+      - run: node tests/sacred-places-current-live-baseline.mjs
+      - run: node tests/directory-place-photo-crosswalk.mjs

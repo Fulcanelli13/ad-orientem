@@ -7,6 +7,8 @@ on:
       - "src/pray/presentation-runtime.js"
       - "src/pray/prayer-reader-design-pilot.js"
       - "tests/pray-reader-design-pilot-phone.mjs"
+      - "src/pray/prayer-design-pilot.js"
+      - "tests/pray-design-pilot-phone.mjs"
       - "src/pray/presentation-styles.js"
       - "src/pray/devotional-card-deck-styles.js"
       - "src/pray/precious-blood-chaplet-styles.js"
@@ -34,6 +36,8 @@ jobs:
         run: node tests/pray-ux-direct-route-mobile-audit.mjs
       - name: Reader pilot F01/F03 source-owned mobile acceptance
         run: node tests/pray-reader-design-pilot-phone.mjs
+      - name: Pilot Discovery and Angelus mobile visual acceptance
+        run: node tests/pray-design-pilot-phone.mjs
       - name: Temporary route matrix and representative visual captures
         if: always()
         uses: actions/upload-artifact@v4
@@ -41,6 +45,7 @@ jobs:
           name: pray-ux-unified-phone-audit
           path: |
             artifacts/pray-ux-unified/
+            artifacts/prayer-design-pilot/
             artifacts/prayer-reader-design-pilot/
           if-no-files-found: ignore
           retention-days: 3

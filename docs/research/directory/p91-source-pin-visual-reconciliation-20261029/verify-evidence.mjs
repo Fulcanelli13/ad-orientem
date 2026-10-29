@@ -11,6 +11,8 @@ const actual = Object.fromEntries(Object.keys(expected).map(key => [key, 0]));
 const heldSites = new Set(), photoIds = new Set();
 const p94VisualIds = new Set(), p94OutcomeCounts = {};
 const p95VisualIds = new Set(), p95OutcomeCounts = {};
+const p96VisualIds = new Set(), p96OutcomeCounts = {}, p96Sites = new Set();
+const p97VisualIds = new Set(), p97OutcomeCounts = {}, p97Sites = new Set();
 const fail = msg => { throw new Error('P91/P92 gate: ' + msg); };
 
 if (ledger.records.length !== 385 || ledger.total_original_assignments !== 385) fail('385 original records must be preserved');
@@ -57,6 +59,36 @@ for (const row of ledger.records) {
     p95VisualIds.add(row.contact_index);
     p95OutcomeCounts[v.editorial_screen_outcome] = (p95OutcomeCounts[v.editorial_screen_outcome] || 0) + 1;
   }
+  if (row.p96_actual_preview_visual_review) {
+    const v = row.p96_actual_preview_visual_review;
+    if (derived !== 'EXACT_BUILDING_CORROBORATED_RESEARCH_ONLY' ||
+        v.exact_file_url !== row.source_url || !v.preview_checked ||
+        v.scope !== 'EXACT_COMMONS_SOURCE_THUMBNAIL_VISUALLY_RENDERED' ||
+        !v.observed_role || !v.editorial_role_screening || !v.image_observation ||
+        row.p94_actual_preview_visual_review || row.p95_actual_preview_visual_review)
+      fail('P96 source-specific preview missing/overlapping: ' + row.contact_index);
+    if (v.original_file_bytes_downloaded || v.original_sha1_recomputed ||
+        v.full_resolution_verified || v.original_author_rights_cleared ||
+        v.visual_publication_approval || v.app_published)
+      fail('P96 preview must not imply original/rights/app clearance: ' + row.contact_index);
+    p96VisualIds.add(row.contact_index);
+    p96Sites.add(row.physical_anchor_id);
+    p96OutcomeCounts[v.editorial_role_screening] = (p96OutcomeCounts[v.editorial_role_screening] || 0) + 1;
+  }
+  if (row.p97_actual_preview_visual_review) {
+    const v = row.p97_actual_preview_visual_review;
+    if (derived !== 'EXACT_BUILDING_CORROBORATED_RESEARCH_ONLY' ||
+      !v.preview_actually_inspected || v.scope !== 'RENDERED_EXACT_COMMONS_SOURCE_FILE_PREVIEW_NOT_ORIGINAL' ||
+      v.exact_source_file_url !== row.source_url || !v.role || !v.editorial_role_screen || !v.visible_observation ||
+      row.p94_actual_preview_visual_review || row.p95_actual_preview_visual_review || row.p96_actual_preview_visual_review)
+      fail('P97 must contain non-overlapping genuine exact-source visual proof for ' + row.contact_index);
+    if (v.original_file_bytes_downloaded || v.original_sha1_recomputed || v.full_size_quality_approved ||
+      v.rights_and_attribution_cleared || v.final_editorial_approved || v.published)
+      fail('P97 may not imply original-byte, rights or production approval for ' + row.contact_index);
+    p97VisualIds.add(row.contact_index);
+    p97Sites.add(row.physical_anchor_id);
+    p97OutcomeCounts[v.editorial_role_screen] = (p97OutcomeCounts[v.editorial_role_screen] || 0) + 1;
+  }
   if (derived === 'HELD_UNVERIFIED') heldSites.add(row.physical_anchor_id);
   actual[derived]++;
 }
@@ -86,4 +118,31 @@ if (p95VisualIds.size !== 17 || ledger.p95_new_direct_preview_reviews !== 17 ||
   fail('P95 must reflect 17 new exact source previews and 53 remaining identity matches');
 if (p94VisualIds.size + p95VisualIds.size + ledger.p95_remaining_identity_corrob_uninspected !== 83)
   fail('all corroborated images must be accounted for by actual preview review state');
-console.log('PASS: 385 rows; 90 image-to-site rejections; 83 research-only identities; 212 held; 30 source-specific image previews screened; 53 not yet previewed; 0 full-original, rights or production approvals.');
+if (p96VisualIds.size !== 22 || p96Sites.size !== 6 ||
+    ledger.p96_new_direct_preview_reviews !== 22 ||
+    ledger.p96_total_direct_preview_reviews !== 52 ||
+    ledger.p96_remaining_identity_corrob_uninspected !== 31 ||
+    ledger.p96_visual_review_sites !== 6)
+  fail('P96 counts require 22 actual source previews at six sites');
+if (Object.keys(p96OutcomeCounts).length !== Object.keys(ledger.p96_visual_screen_outcome_counts || {}).length ||
+    Object.keys(p96OutcomeCounts).some(k => p96OutcomeCounts[k] !== ledger.p96_visual_screen_outcome_counts[k]))
+  fail('P96 review outcome ledger inconsistent');
+if (p94VisualIds.size + p95VisualIds.size + p96VisualIds.size + ledger.p96_remaining_identity_corrob_uninspected !== 83)
+  fail('P96 all research corroborations must be accounted for, including 31 unreviewed');
+const leftP97 = ledger.records.filter(row =>
+  row.effective_image_site_disposition === 'EXACT_BUILDING_CORROBORATED_RESEARCH_ONLY' &&
+  !row.p94_actual_preview_visual_review && !row.p95_actual_preview_visual_review &&
+  !row.p96_actual_preview_visual_review && !row.p97_actual_preview_visual_review
+).map(row => row.contact_index).sort((a,b)=>a-b);
+if (p97VisualIds.size !== 27 || p97Sites.size !== 13 ||
+  ledger.p97_new_direct_preview_reviews !== 27 || ledger.p97_total_direct_preview_reviews !== 79 ||
+  ledger.p97_remaining_identity_corrob_uninspected !== 4 ||
+  JSON.stringify(leftP97) !== JSON.stringify([77,110,204,261]) ||
+  JSON.stringify(ledger.p97_exact_images_not_visually_retrievable) !== JSON.stringify(leftP97))
+  fail('P97 must distinguish 27 genuine previews from four inaccessible images');
+if (Object.keys(p97OutcomeCounts).length !== Object.keys(ledger.p97_visual_screen_outcome_counts || {}).length ||
+  Object.keys(p97OutcomeCounts).some(k=>p97OutcomeCounts[k] !== ledger.p97_visual_screen_outcome_counts[k]))
+  fail('P97 role screening summary mismatch');
+if (p94VisualIds.size + p95VisualIds.size + p96VisualIds.size + p97VisualIds.size + leftP97.length !== 83)
+  fail('P97 all 83 research identities must be accounted for');
+console.log('PASS: 385 images; 90 wrong, 83 research corroborated, 212 unresolved; 79 exact-source thumbnails visually viewed, four inaccessible held; zero original-byte, rights, final approval or production publication.');
