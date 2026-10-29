@@ -58,3 +58,36 @@ Published overlap review is essential: `BLSS-003` is priestly St John wine, **no
 5. The independent two-item cohort and indulgence dossier retain their own publication controls.
 
 **CI contract:** `tests/customs-r18-all18-release-ownership-reconciliation.mjs` checks that all 18 records are present with 6/7/4/1 ownership, 34 traceable source links, all bilingual fields for 11 full drafts plus the companion, no ID collisions with 38 canonical seed IDs, no grants or new Calendar events and no publication or editorial approvals. Source snapshot SHAs are pinned to detect provenance drift during later review.
+
+
+## 29 October — bulk action-level adjudication of all 11 unresolved candidates
+
+The separate editorial crosswalk now stores **11/11 preliminary identity dispositions**, action signatures, regional variants, published comparators, reciprocal relationships to other R18 records, exact-source links and gates. These are **analyst classifications**, not human editorial approval to create or publish new canonical IDs. The published canon remains 35.
+
+| R18 | Practice | Preliminary identity analysis | Shared action family | Existing-article comparators (not merges) | Related R18 | Calendar/local gate |
+|---|---|---|---|---|---|---|
+| 03 | St John Baptist's community bonfire | DISTINCT LOCAL PRACTICE IDENTITY PROVISIONAL | SAINT JOHN BAPTIST LOCAL FIRE | BLSS-003 | — | LOCAL EVENT VERIFICATION REQUIRED |
+| 04 | Decorating Easter eggs: pisanki and pysanky | ONE CRAFT ACTION FAMILY WITH NAMED SUBTYPES PROVISIONAL | EASTER EGG DECORATION | BLSS-004, FOOD-001 | — | SEASONAL HERITAGE CONTEXT ONLY |
+| 05 | Herbergsuche — Advent Marian-image visits between households | DISTINCT LOCAL PRACTICE IDENTITY PROVISIONAL | ADVENT HOLY FAMILY HOSPITALITY | ADVT-001, ADVT-002, ADVT-003 | — | LOCAL PARISH PARTICIPATION REQUIRED |
+| 07 | La guignolée — French Canadian Christmas alms collection | DISTINCT CHARITY ACTION IDENTITY PROVISIONAL | HOUSE TO HOUSE SEASONAL VISITS | XMAS-001, FOOD-001, EPIP-001 | 08 | LOCAL ORGANIZER CONFIRMATION REQUIRED |
+| 08 | Polish kolędnicy — Christmas visiting carollers | NAMED REGIONAL MEMBER OF SHARED VISITING PERFORMANCE FAMILY | CHRISTMASTIDE VISITING PERFORMERS | EPIP-001, ADVT-003 | 09, 07 | REGIONAL HERITAGE CONTEXT ONLY |
+| 09 | Hungarian betlehemezés Nativity visiting plays | NAMED REGIONAL MEMBER OF SHARED VISITING PERFORMANCE FAMILY | CHRISTMASTIDE VISITING PERFORMERS | EPIP-001, ADVT-003 | 08 | REGIONAL HERITAGE CONTEXT ONLY |
+| 13 | L-Irxoxt — Maltese running procession with the Risen Christ | DISTINCT LOCAL PRACTICE IDENTITY PROVISIONAL | LOCAL PUBLIC FEAST PROCESSIONS | EAST-001, MARI-001 | — | LOCAL EVENT VERIFICATION REQUIRED |
+| 14 | Pentecost greenery decorating Polish homes | DISTINCT SEASONAL ACTION CONTEXT PROVISIONAL | SEASONAL GREENERY DECORATIONS | BLSS-002, CORP-001 | — | REGIONAL HERITAGE CONTEXT ONLY |
+| 15 | Tivoli's Inchinata procession | DISTINCT NAMED LOCAL CEREMONIAL IDENTITY PROVISIONAL | LOCAL PUBLIC FEAST PROCESSIONS | MARI-001 | 16 | LOCAL EVENT VERIFICATION REQUIRED |
+| 16 | Faradda di li Candareri — Sassari's Marian offering procession | DISTINCT NAMED LOCAL CEREMONIAL IDENTITY PROVISIONAL | LOCAL PUBLIC FEAST PROCESSIONS | MARI-001, BLSS-003 | 15 | LOCAL EVENT VERIFICATION REQUIRED |
+| 17 | Frauendreißiger — thirty days of Marian devotion | DISTINCT LOCAL DEVOTIONAL PERIOD PROVISIONAL | MARIAN REGIONAL DEVOTIONAL CYCLES | MARI-001, BLSS-002, DEV-001 | — | SHRINE PROGRAMME VERIFICATION REQUIRED |
+
+Key distinctions:
+
+- **R18-03:** St John's Baptist bonfire is a local parish/festival action, while published `BLSS-003` is **St John the Evangelist's** wine blessing on 27 December. This difference of saint and rite prohibits a name-based merge. The diocese's [Oloron programme](https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/) is explicitly **20 June 2026**, not automatically the 23 or 24 June every year.
+- **R18-04:** Polish pisanki and Ukrainian pysanky are retained as **one craft-action family with named regional subtypes**, not two invented canonical customs. [UNESCO's 2024 inscription](https://ich.unesco.org/en/RL/pysanka-ukrainian-tradition-and-art-of-decorating-eggs-02134) recognizes the Ukrainian egg-decorating tradition among Ukrainians irrespective of religion. Household decoration is distinct from the priest's Easter-food blessing (`BLSS-004`).
+- **R18-05:** The Austrian parish [Herbergsuche witness](https://www.pfarre-grosspetersdorf.at/pfarre/1131/aktuelles/article/12277.html) documents an actual *Marian image relay between households with prayers*, not merely another Advent wreath, nor published Mexican `ADVT-003` Las Posadas lodging songs/processions. **No universal nine-day schedule**.
+- **R18-07/08/09:** Québec alms collections, Polish visiting carollers and Hungarian Nativity drama share house-to-house movement, but their primary *actions* differ: donations, songs and stage plays. Keep separate named records; the Polish and Hungarian performers are in a **shared Christmas visiting-performance family**, with reciprocal cross-links rather than two unrelated silos or an automatic merge. The [Hungarian Catholic Lexicon](https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html) documents visiting drama with shepherds and variants; actor/puppet variants must stay subordinate to the parent practice.
+- **R18-13/15/16:** Malta's Resurrection-statue procession, Tivoli's **two-image encounter/bow**, and Sassari's **guild candelieri offering** are distinguishable local ceremonial complexes, not variants of one universal Roman procession. The [2026 Tivoli diocesan account](https://diocesitivoliepalestrina.it/festa-dellinchinata-2026/) and [Sassari municipality's 2026 account](https://www.comune.sassari.it/it/novita/notizia/Candelieri-2026-segui-tutti-gli-aggiornamenti/) substantiate their respective distinctive structures, but do not authorize automatic future event schedules.
+- **R18-14:** Polish Pentecost greenery is a seasonal **home/gate** decoration, not the priestly Assumption herb blessing and not the Corpus Christi floral route decorations. No magical protection or Roman rubrical requirement is implied.
+- **R18-17:** Bavarian `Frauendreißiger` is a named period of Marian shrine devotion, distinct from published May Marian customs and Assumption processions. It is **not a new 1962 liturgical season**, and contemporary shrine schedules or indulgences are not inherited.
+
+**Identity decision accounting:** all 11 are preliminarily distinguishable at the cited action-and-geography scope, but their final canonical parent/subtype structure remains subject to independent editorial decisions. The four explicitly local-event records (03, 13, 15, 16) are hard-blocked against scheduled publication. R18-05, 07 and 17 also require present organizer/shrine participation checks for any live event. **No permanent IDs assigned; no existing published IDs merged or superseded; no publications.**
+
+These new analyses are intentionally kept inside the existing `customs-r18-all18-release-ownership-reconciliation.v1.json` alongside the complete original EN/FR drafts. The companion `R18-18` remains attached only to the six-candidate proposed `XMAS-004`. The two independently proposed PR #1642 identities `EPIP-003` and `CRIB-001` are unaffected.
