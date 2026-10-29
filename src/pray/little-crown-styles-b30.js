@@ -33,6 +33,21 @@ export function installLittleCrownStyles(doc=globalThis.document){
 #aoPray435930 .aoLittleCrownSource p{font-size:13px;line-height:1.55}
 #aoPray435930 .aoLittleCrownSource a{display:block;color:#d7bb8a;padding:8px 0;font-size:13px;overflow-wrap:anywhere}
 #aoPray435930 .aoLittleCrown button:focus-visible,#aoPray435930 .aoLittleCrown summary:focus-visible{outline:2px solid #e0c594;outline-offset:2px}
+/* The 15-bead structure remains intact, but source prayer should be visible
+   when a 320px user first enters the chaplet, not below decorative spacing. */
+@media(max-width:420px){
+ #aoPray435930 .aoLittleCrown{padding:7px 11px 28px}
+ #aoPray435930 .aoLittleCrownIntro{margin:0 auto 5px}
+ #aoPray435930 .aoLittleCrownIntro h2{font-size:22px;line-height:1.18;margin:2px 0 4px}
+ #aoPray435930 .aoLittleCrownIntro p{font-size:13px;line-height:1.35}
+ #aoPray435930 .aoLittleCrownProgress{margin:5px 0 7px}
+ #aoPray435930 .aoLittleCrownGroup{margin:3px auto}
+ #aoPray435930 .aoLittleCrownGroup h3{margin:0 0 3px;line-height:1.22}
+ #aoPray435930 .aoLittleCrownPrayer{margin:7px auto 0;padding:11px 12px}
+ #aoPray435930 .aoLittleCrownAspiration{margin:7px auto 7px}
+ #aoPray435930 .aoLittleCrownActions{margin-top:11px}
+ #aoPray435930 .aoLittleCrownSource{margin-top:12px}
+}
 @media(max-width:350px){#aoPray435930 .aoLittleCrownBeads{gap:1px}#aoPray435930 .aoLittleCrownPrayer{padding:17px 12px}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoLittleCrownProgress span{transition:none}}
 `;
