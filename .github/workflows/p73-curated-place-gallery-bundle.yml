@@ -1,0 +1,54 @@
+name: P73 curated Place image bundle (no repository write)
+on:
+  pull_request:
+    branches:
+      - research/p72-priority-commons-originals-20261029
+    paths:
+      - 'tools/acquire-curated-place-gallery-p73.py'
+      - 'data/geography/research/p73-curated-place-gallery-bundle.v1.json'
+      - 'src/find/place-profiles.js'
+      - 'tests/explore-p73-curated-place-gallery.mjs'
+      - '.github/workflows/p73-curated-place-gallery-bundle.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-and-package-six-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install pinned free image encoder
+        run: python -m pip install --disable-pip-version-check 'Pillow==11.3.0'
+      - name: Offline source identity and strict licence-version checks
+        run: |
+          python tools/acquire-curated-place-gallery-p73.py --check-manifest
+          node tests/explore-p73-curated-place-gallery.mjs
+          node tests/explore-p68-sacred-object-photo-binding.mjs
+          node tests/explore-r69-multi-place-gallery.mjs
+      - name: Re-download exact Commons original bytes and package reviewed derivatives
+        run: python tools/acquire-curated-place-gallery-p73.py --acquire --delay 4.0 --emit-handoff
+      - name: Verify generated WebP bytes and exact gallery hashes
+        run: python tools/acquire-curated-place-gallery-p73.py --verify-committed
+      - name: Ephemeral asset handoff — MUST be committed in reviewed asset PR
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p73-six-image-source-verified-asset-handoff
+          retention-days: 1
+          if-no-files-found: error
+          path: |
+            assets/approved/place-gallery/MU-port-louis-saint-louis-cathedral-2015.webp
+            assets/approved/place-gallery/MU-marie-reine-de-la-paix-sanctuary-2019.webp
+            assets/approved/place-gallery/IE-ballintubber-east-elevation-2011.webp
+            assets/approved/place-gallery/IE-ballintubber-cloisters-2011.webp
+            assets/approved/place-gallery/IE-knock-shrine-grounds-2006.webp
+            assets/approved/place-gallery/IE-ballintubber-east-range-2007.webp
+            data/geography/approved-place-gallery.v1.json
+            data/geography/research/p73-asset-acquisition-result.json
