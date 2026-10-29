@@ -67,6 +67,16 @@ function assetIcon(assetId,className="aoHomeAssetIcon"){
 function parseIso(value){return new Date(`${value}T12:00:00`);}
 function iso(date){return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;}
 function localizedText(text,language){return !text?"":((language==="fr"?text.fr:text.en)||"");}
+function introitIncipit(proper){
+  // The Latin incipit comes exclusively from the resolved Proper; a
+  // Gregorian title or historical feast association is never guessed.
+  const raw=proper?.introit?.lat;
+  if(typeof raw!=="string")return null;
+  const first=raw.split(/\r?\n/).map(s=>s.trim()).find(Boolean)||"";
+  if(!first)return null;
+  if(first.length<=90)return first;
+  return first.slice(0,90).replace(/\s+\S*$/,"").trim()+"…";
+}
 function gospelRef(text){return text.split(/\r?\n/).map(x=>x.trim()).filter(Boolean).find(x=>/\b\d{1,3}:\d/.test(x))??null;}
 function excerpt(text,reference,max=220){
   const joined=text.split(/\r?\n/).map(x=>x.trim()).filter(Boolean)
@@ -95,12 +105,19 @@ export function buildHomeViewModel(state,win=globalThis){
   const rawColour=resolution?.colourPlan?.label||day?.main?.color||"";
   const colourMapFr={Green:"Vert",Violet:"Violet",Purple:"Violet",Red:"Rouge",White:"Blanc",Black:"Noir",Rose:"Rose"};
   const gospelText=localizedText(proper?.gospel,language),reference=gospelRef(gospelText);
+  const stamped=resolution?.date??day?.date??null;
+  const resolvedForSelection=Boolean(!state.resolving&&resolution?.status!=="failed"&&(!stamped||stamped===state.selectedDate)&&day?.main);
+  const observedTitle=resolvedForSelection?(day?.main?.title||celebration):celebration;
+  const properTitle=resolvedForSelection&&proper?
+    ((language==="fr"?(proper.nameFr||proper.name):proper.name)||"").trim(): "";
+  const massFormularyName=properTitle&&properTitle!==observedTitle?properTitle:null;
+  const massIntroit=resolvedForSelection?introitIncipit(proper):null;
   const formularies=day?.massOptions?.length>1?day.massOptions.map(o=>({index:o.index,label:o.label||o.title||`${tr(language,"formulary")} ${o.index+1}`,selected:o.index===day.formularyIndex})):[];
   return{
     language,dateIso:state.selectedDate,todayIso:iso(new Date()),isToday:state.selectedDate===iso(new Date()),
     weekday:new Intl.DateTimeFormat(locale,{weekday:"long"}).format(date),
     dateLong:formatDisplayDate(date),
-    celebration,rank:rankValue?`${tr(language,"rank")} · ${rankValue}`:"",
+    celebration,observedTitle,massFormularyName,massIntroit,resolvedForSelection,rank:rankValue?`${tr(language,"rank")} · ${rankValue}`:"",
     colour:language==="fr"?(colourMapFr[rawColour]||rawColour):rawColour,
     loading:Boolean(state.resolving),calendarFailed,
     properStatus:resolution?.proper?.status==="ready"?"ready":resolution?.proper?.status==="failed"?"failed":"idle",
@@ -130,7 +147,7 @@ export function renderHomeToString(state,win=globalThis){
       esc(vm.language==="fr"?"Vous consultez le "+vm.dateLong+" · ce n’est pas aujourd’hui":"Viewing "+vm.dateLong+" · not today")+
       '</span><button type="button" data-home-restore-today>'+esc(vm.language==="fr"?"Revenir à aujourd’hui":"Return to today")+'</button></div>'
     :"";
-  const week=vm.week.map(c=>`<button class="dayCell${c.selected?" selected":""}${c.today?" today":""}" data-date="${esc(c.date)}" aria-pressed="${c.selected}"><span>${esc(c.day)}</span><b>${esc(c.number)}</b></button>`).join("");
+  const week=vm.week.map(c=>`<button class="dayCell${c.selected?" selected":""}${c.today?" today":""}${c.selected&&vm.resolvedForSelection?" aoVerifiedDay":" aoUnresolvedDay"}" data-date="${esc(c.date)}" aria-pressed="${c.selected}"><span>${esc(c.day)}</span><b>${esc(c.number)}</b><i class="aoWeekColour" aria-hidden="true"></i></button>`).join("");
   // Historic commemorations have ONE public surface: the source-labelled
   // "Also honoured today" section, not a repeated Mass-header meta line.
   const meta=[vm.rank,vm.colour?`${t("colour")} · ${vm.colour}`:"",vm.formularyLabel].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join("");
@@ -145,7 +162,7 @@ export function renderHomeToString(state,win=globalThis){
   return `<style data-ao-today-v2-style>${TODAY_V2_CSS}</style><main class="homeScreen aoTodayV2" data-home-language="${vm.language}" data-ao-asset-id="${canonicalAssetIdForSurface("home")||""}" data-ao-home-presentation-owner="${HOME_PRESENTATION_VERSION}">
 <header class="homeHeader aoTodayV2Header"><div class="brandRow"><div class="brandMark aoBrandEmblem" aria-hidden="true"></div><div class="brandText"><div class="brandName">${esc(t("brand"))}</div><div class="brandSub">${esc(t("subtitle"))}</div></div><button type="button" class="iconButton aoTodayV2PrayerJump" data-home-prayer-jump aria-label="${esc(vm.language==="fr"?"Accéder aux prières de ce jour":"Jump to prayer through the day")}" title="${esc(vm.language==="fr"?"Prières de ce jour":"Prayer through the day")}"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg></button><button type="button" class="iconButton homeUtilityButton" data-home-settings aria-label="${esc(vm.language==="fr"?"Réglages":"Settings")}">${assetIcon("ao-ui-settings")}</button></div>
 <nav class="aoTodayV2Tabs" aria-label="Calendar views"><button type="button" data-home-calendar-today aria-current="page">${esc(vm.isToday?(vm.language==="fr"?"Aujourd’hui":"Today"):(vm.language==="fr"?"Jour choisi":"Selected day"))}</button><button type="button" data-home-calendar data-home-calendar-view="picker">${esc(vm.language==="fr"?"Mois":"Month")}</button><button type="button" data-home-calendar data-home-calendar-view="year">${esc(vm.language==="fr"?"Année liturgique":"Liturgical Year")}</button></nav><div class="aoTodayV2CalendarInline" data-home-calendar-inline hidden aria-label="${esc(vm.language==="fr"?"Calendrier liturgique":"Liturgical calendar")}"></div>${browsingNotice}<div class="dateNavigator"><button class="iconButton" data-nav="previous" aria-label="${esc(t("previousDay"))}">${assetIcon("ao-ui-previous")}</button><button class="dateTitle" data-nav="today"><span>${esc(vm.weekday)}</span><b>${esc(vm.dateLong)}</b></button><button class="iconButton" data-nav="next" aria-label="${esc(t("nextDay"))}">${assetIcon("ao-ui-next")}</button></div><div class="dateRail" aria-label="Week">${week}</div><div class="aoHomeCalendarAccess" hidden><button type="button" class="aoHomeCalendarAction" data-home-calendar aria-label="${esc(vm.language==="fr"?"Ouvrir le calendrier liturgique complet":"Open full liturgical calendar")}">${assetIcon("ao-nav-calendar")}<span>${esc(vm.language==="fr"?"Calendrier complet":"Full Calendar")}</span>${assetIcon("ao-ui-next")}</button></div></header>
-<section class="celebrationBlock aoEditorialHero aoTodayV2Frontispiece"><div class="aoTodayV2Art"><div class="aoTodayV2ArtSource" data-ao-home-art-slot><div class="aoTodayV2NoArt" aria-label="Artwork awaiting editorial approval"></div></div><div class="aoTodayV2ArtOverlay"><span class="eyebrow aoEditorialKicker">${esc(vm.language==="fr"?"CALENDRIER ROMAIN · 1962":"ROMAN CALENDAR · 1962")}</span><h1 class="aoEditorialTitle">${esc(vm.celebration)}</h1></div></div><div class="aoTodayV2HeroActions"><div class="metaLine aoEditorialMeta">${meta}</div><button type="button" class="aoTodayV2SeasonMicro" data-home-calendar data-home-calendar-view="year" aria-label="${esc(vm.language==="fr"?"Voir le temps liturgique dans l’année":"View the liturgical season in Calendar")}">${esc(season)} <span aria-hidden="true">›</span></button>${chooser}${vm.loading?'<div class="loadingLine"><span></span>'+esc(t("loading"))+"</div>":""}<section class="aoTodayV2Mass">
+<section class="celebrationBlock aoEditorialHero aoTodayV2Frontispiece"><div class="aoTodayV2Art"><div class="aoTodayV2ArtSource" data-ao-home-art-slot><div class="aoTodayV2NoArt" aria-label="Artwork awaiting editorial approval"></div></div></div><div class="aoTodayV2HeroActions"><div class="aoTodayV2DayIdentity"><span class="eyebrow aoEditorialKicker">${esc(vm.language==="fr"?"CALENDRIER ROMAIN · 1962":"ROMAN CALENDAR · 1962")}</span><h1 class="aoEditorialTitle">${esc(vm.observedTitle)}</h1></div><div class="metaLine aoEditorialMeta">${meta}</div><button type="button" class="aoTodayV2SeasonMicro" data-home-calendar data-home-calendar-view="year" aria-label="${esc(vm.language==="fr"?"Voir le temps liturgique dans l’année":"View the liturgical season in Calendar")}">${esc(season)} <span aria-hidden="true">›</span></button>${vm.massFormularyName?`<div class="aoTodayV2ActualFormulary"><span>${esc(vm.language==="fr"?"MESSE DU JOUR":"MASS FORMULARY")}</span><strong>${esc(vm.massFormularyName)}</strong></div>`:""}${vm.massIntroit?`<div class="aoTodayV2Introit"><span>INTROIT</span><em lang="la">${esc(vm.massIntroit)}</em></div>`:""}${chooser}${vm.loading?'<div class="loadingLine"><span></span>'+esc(t("loading"))+"</div>":""}<section class="aoTodayV2Mass">
 <div class="sectionLabel">${esc(t("aroundMass"))}</div>
 ${resume?
 `<button type="button" class="aoTodayV2PrimaryMass phaseButton primary aoEditorialPrimary" data-resume-mass data-ao-resume-owner="${resume.source}">
