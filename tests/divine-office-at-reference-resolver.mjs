@@ -127,3 +127,62 @@ test("source conditional lines and editorial notation remain unresolved",async()
   }),/OFFICE_AT_OTHER_MACRO_OR_CONDITIONAL_UNRESOLVED/);
  }
 });
+
+test("approved $Qui vivis resolves solely through exact per-language pinned Prayers sections",async()=>{
+ const calls=[];
+ const title={la:"Qui vivis et regnas cum Deo Patre",en:"Who livest and reignest with God the Father",fr:"Vous qui étant Dieu, vivez et régnez"};
+ const readSource=async(path,language)=>{
+  calls.push([path,language]);
+  const map=path===original?new Map([
+   ["Oratio",["Collect text "+language,"$Qui vivis"]]
+  ]):path==="Psalterium/Common/Prayers"?new Map([
+   ["Qui vivis",["r. "+title[language],"R. Amen."]]
+  ]):new Map();
+  return {sourceRevision:DIVINUM_OFFICIUM_PIN,sourcePath:path,language,map};
+ };
+ const reader=createOfficeAtReferenceResolver({readSource,enableStandardPrayers:true});
+ const result=await reader.resolveParallel({path:original,section:"Oratio",role:"COLLECT"});
+ for(const lang of ["la","en","fr"]){
+  assert.match(result.texts[lang],new RegExp(title[lang]));
+  assert.deepEqual(result.referenceTraces[lang].map(x=>x.sourceId),[
+   original+"#Oratio","Psalterium/Common/Prayers#Qui vivis"
+  ]);
+ }
+ assert.equal(result.publishable,false);
+ assert.equal(result.alignmentVerified,false);
+ assert.equal(reader.standardPrayersSourceEnabled,true);
+ assert.equal(calls.length,6);
+});
+test("missing French pinned prayer conclusion blocks all three languages",async()=>{
+ const readSource=async(path,language)=>({
+  sourceRevision:DIVINUM_OFFICIUM_PIN,sourcePath:path,language,
+  map:path===original?new Map([["Oratio",["Text","$Qui vivis"]]]):
+   language==="fr"?new Map():new Map([["Qui vivis",["Exact conclusion"]]])
+ });
+ const r=createOfficeAtReferenceResolver({readSource,enableStandardPrayers:true});
+ await assert.rejects(r.resolveParallel({
+  path:original,section:"Oratio",role:"COLLECT"
+ }),/OFFICE_AT_SOURCE_SECTION_MISSING/);
+});
+test("unlisted prayers and disabled mode cannot invent a standard conclusion",async()=>{
+ const readSource=async(path,language)=>({
+  sourceRevision:DIVINUM_OFFICIUM_PIN,sourcePath:path,language,
+  map:new Map([["Oratio",["Collect","$Qui vivis"]]])
+ });
+ const disabled=createOfficeAtReferenceResolver({readSource});
+ await assert.rejects(disabled.resolve({
+  path:original,section:"Oratio",language:"la"
+ }),/OFFICE_AT_OTHER_MACRO_OR_CONDITIONAL_UNRESOLVED/);
+ const enabled=createOfficeAtReferenceResolver({readSource,enableStandardPrayers:true});
+ await assert.rejects(enabled.resolve({
+  path:original,section:"Oratio",language:"la"
+ }),/OFFICE_AT_SOURCE_SECTION_MISSING/);
+ const unknown=createOfficeAtReferenceResolver({
+  readSource:async(p,language)=>({
+   sourceRevision:DIVINUM_OFFICIUM_PIN,sourcePath:p,language,
+   map:new Map([["Oratio",["$Unknown conclusion"]]])
+  }),enableStandardPrayers:true
+ });
+ await assert.rejects(unknown.resolve({path:original,section:"Oratio",language:"la"}),
+  /OFFICE_AT_OTHER_MACRO_OR_CONDITIONAL_UNRESOLVED/);
+});
