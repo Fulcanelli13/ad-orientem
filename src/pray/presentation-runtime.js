@@ -3225,6 +3225,13 @@ function onClick(e){
  if(PRAYER_PILOT_ENABLED&&view==='angelus'&&b.hasAttribute('data-p435930-pilot-angelus-begin')){
   ANGELUS_PILOT_ENTRY=false;return render();
  }
+ if(PRAYER_PILOT_ENABLED&&view==='home'&&b.hasAttribute('data-p435930-pilot-facet')){
+  const next=b.getAttribute('aria-pressed')!=='true';
+  b.setAttribute('aria-pressed',String(next));
+  const input=mount()?.querySelector('[data-p435930-pilot-search]');
+  filterPilotDiscovery(mount(),input?.value||'');
+  return;
+ }
  if(PRAYER_PILOT_ENABLED&&view==='home'&&b.dataset.p435930PilotPrayer){
   const id=b.dataset.p435930PilotPrayer;
   if(!DATA.prayers?.[id])return;
