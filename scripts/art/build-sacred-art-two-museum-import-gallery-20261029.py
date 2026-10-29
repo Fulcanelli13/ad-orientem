@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 INPUT=ROOT/'data/calendar/sacred-art-kmska-cleveland-first-review-20261029.v1.json'
 OUTPUT=ROOT/'docs/SACRED_ART_TWO_MUSEUM_IMPORT_REVIEW_20261029.html'
+SEEDS=ROOT/'data/calendar/sacred-art-kmska-3-exact-research-preview-20261029.v1.json'
 d=json.loads(INPUT.read_text(encoding='utf-8'))
 assert d['imagesDownloaded']==0 and d['productionImports']==0
 review=[]
@@ -20,9 +21,25 @@ for r in d['records']:
   assert r['manifestRightsURL'].startswith('https://iiif.kmska.be/') and r['sourceImageRights']!='UNVERIFIED'
  review.append({k:r.get(k) for k in ('id','provider','sourceInstitution','objectId','objectUrl',
  'accession','title','artist','technique','sourceImageRights','previewURL',
- 'manifestRightsURL','sourceMediumIndicators')})
+ 'manifestRightsURL','sourceMediumIndicators','rightsConflict','productionImageRightsCleared')})
+seeded=json.loads(SEEDS.read_text(encoding='utf-8'))['records']
+assert len(seeded)==3
+for x in seeded:
+ assert x['sourcePageStatesCC0'] if 'sourcePageStatesCC0' in x else x['officialObjectPageImageRights']=='CC0'
+ assert x['manifestRights']=='https://rightsstatements.org/page/UND/1.0/'
+ assert x['reviewOnly'] and not x['productionImageRightsCleared'] and x['exactMuseumSourceAndIIIFLinked']
+ assert x['previewURL'].startswith('https://iiif.kmska.be/')
+ assert x['objectUrl'].startswith('https://vlaamsekunstcollectie.be/')
+ review=[r for r in review if r['id']!=x['sourceId']]
+ review.append({'id':x['sourceId'],'provider':'KMSKA','sourceInstitution':'Royal Museum of Fine Arts Antwerp',
+ 'objectId':x['objectId'],'objectUrl':x['objectUrl'],'accession':x['accession'],
+ 'title':x['title'],'artist':x['artist'],'technique':x['technique'],
+ 'sourceImageRights':'OFFICIAL_PAGE_CC0__IIIF_MANIFEST_UND_CONFLICT',
+ 'previewURL':x['previewURL'],'manifestRightsURL':x['manifestURL'],
+ 'rightsConflict':x['rightsConflict'],'productionImageRightsCleared':False})
 review.sort(key=lambda x:(x['provider']!='KMSKA',x['title'].lower(),x['id']))
-assert 0<=len(review)<=d['counts']['totalVisuallyReviewable']
+assert len(review)<=d['counts']['totalVisuallyReviewable']+len(seeded)
+assert sum(x['provider']=='KMSKA' for x in review)==3
 frozen=hashlib.sha256(json.dumps([r['id'] for r in review],separators=(',',':')).encode()).hexdigest()
 data=json.dumps(review,ensure_ascii=False).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
 head="""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
@@ -117,6 +134,7 @@ function render(){
   body.append(text('div','museum',work.sourceInstitution));
   body.append(text('h2','',work.title));body.append(text('div','artist',work.artist||'Attribution not recorded'));
   body.append(text('div','meta',work.accession||work.objectId));
+  if(work.rightsConflict)body.append(text('div','meta','Rights hold: museum item page labels image CC0; IIIF manifest says UND. Research-only selection, no production import.'));
   const source=text('p');const link=text('a','', 'Official museum record');link.href=work.objectUrl;link.target='_blank';link.rel='noopener noreferrer';source.append(link);body.append(source);
   const actions=text('div','actions');
   for(const [key,label] of [['IMPORT','Import'],['IMPORT_WITH_CORRECTIONS','Import with corrections']]){
@@ -149,7 +167,7 @@ function exportDecisions(finalize){
   return {museum:w.provider,sourceObjectId:w.objectId,sourceId:w.id,accession:w.accession||null,
    title:w.title,artist:w.artist||null,decision:c.decision==='UNSELECTED'?'REJECT':c.decision,
    corrections:c.decision==='IMPORT_WITH_CORRECTIONS'?c.corrections.trim():null,
-   imageRightsVerified:true,productionImported:false}
+   imageRightsVerified:!w.rightsConflict,rightsHold:!!w.rightsConflict,productionImported:false}
  });
  const payload={schema:'AO_SACRED_ART_USER_IMPORT_CHOICES_V1',date:'2026-10-29',
    batchSha256:batchHash,completeBatch:finalize,reviewedVisibleArtworkCount:works.length,
