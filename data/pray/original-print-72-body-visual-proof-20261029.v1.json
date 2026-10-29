@@ -1,0 +1,2059 @@
+{
+  "schema": "ao.pray.original-print-body-visual-proof.v1",
+  "date": "2026-10-29",
+  "evidenceSources": [
+    "data/pray/original-print-witness-locators-20261029.v1.json",
+    "data/pray/original-pdf-72-day-text-layer-screen-20261029.v1.json",
+    "data/pray/original-print-62-bulk-review-20261029.v1.json",
+    "data/pray/original-print-ten-exception-resolution-20261029.v1.json"
+  ],
+  "renderedReviewArtifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/40881455788/artifacts/12900457415",
+  "renderingInstructions": "Reproduce the 69-page review with node tools/pray/bulk-original-print-62-visual-review.mjs --out /tmp/pray-original-62; do not rely on expiring actions artifact as permanent evidence.",
+  "scope": "Word-sequence of the English proper prayer body only; not punctuation-exact diplomatic transcription, additional preparatory prayers, common prayer references, meditations, practices, French editions or indulgence grants.",
+  "counts": {
+    "dayBodies": 72,
+    "fullPrintedBodyWordSequenceChecked": 26,
+    "awaitingFullVisualWordSequenceCheck": 46,
+    "firstEditionWordForWordCertificate": 0,
+    "completeProgrammeDevotionalPrintCertificates": 0,
+    "sourcePrintBookCohorts": 4
+  },
+  "dispositionCounts": {
+    "PRINT_BODY_WORD_SEQUENCE_CHECKED": 26,
+    "AWAITING_COMPLETE_PAGE_WORD_PROOF": 36,
+    "OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED": 5,
+    "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW": 5
+  },
+  "sourceBooks": [
+    {
+      "bookId": "callan_1925_copyright_later_scan",
+      "sha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "daysTotal": 18,
+      "visuallyVerified": 18
+    },
+    {
+      "bookId": "moran_1883",
+      "sha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "daysTotal": 18,
+      "visuallyVerified": 0
+    },
+    {
+      "bookId": "hammer_1909",
+      "sha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "daysTotal": 27,
+      "visuallyVerified": 6
+    },
+    {
+      "bookId": "purgatorian_manual_1894_1907",
+      "sha256": "3739d066b2ac6de5b31c73242552ad3726a05aa02fe5f6babf8e04155952c113",
+      "daysTotal": 9,
+      "visuallyVerified": 2
+    }
+  ],
+  "auditPolicy": "A completed body word-sequence check requires actual source-page-image inspection of the entire proper English prayer against the app body. PDF text overlap or a rendered page alone is insufficient. Printed-copy evidence cannot establish a first edition where copy contains later material. The historical printed-day source and complete programme are different certification objects. Do not automatically promote statuses.",
+  "records": [
+    {
+      "id": "holy_ghost",
+      "day": 1,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        344,
+        345
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9808,
+      "latestPdfTextLayerOverlapBasisPoints": 8846,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        296
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        345
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p346.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "holy_ghost",
+      "day": 2,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        344,
+        345
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9831,
+      "latestPdfTextLayerOverlapBasisPoints": 9831,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        296
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        345
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p346.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "holy_ghost",
+      "day": 3,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        344,
+        345
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8980,
+      "latestPdfTextLayerOverlapBasisPoints": 9796,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        296
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        345
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p346.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "holy_ghost",
+      "day": 4,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        345,
+        346
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9623,
+      "latestPdfTextLayerOverlapBasisPoints": 9623,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        297
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        346
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p347.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "holy_ghost",
+      "day": 5,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        345,
+        346
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8750,
+      "latestPdfTextLayerOverlapBasisPoints": 9750,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        297
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        346
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p347.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "holy_ghost",
+      "day": 6,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        345,
+        346
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8913,
+      "latestPdfTextLayerOverlapBasisPoints": 9783,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        297
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        346
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p347.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "holy_ghost",
+      "day": 7,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        345,
+        346
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9737,
+      "latestPdfTextLayerOverlapBasisPoints": 9737,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        297
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        346
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p347.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "holy_ghost",
+      "day": 8,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        346,
+        347
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9851,
+      "latestPdfTextLayerOverlapBasisPoints": 9851,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        298
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        347
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p348.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "holy_ghost",
+      "day": 9,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        346,
+        347
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9744,
+      "latestPdfTextLayerOverlapBasisPoints": 9744,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        298
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        347
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p348.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "christmas",
+      "day": 1,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        340,
+        341
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9333,
+      "latestPdfTextLayerOverlapBasisPoints": 9333,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        292
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        341
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p342.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "christmas",
+      "day": 2,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        340,
+        341
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9677,
+      "latestPdfTextLayerOverlapBasisPoints": 9677,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        292
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        341
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p342.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "christmas",
+      "day": 3,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        341,
+        342
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8333,
+      "latestPdfTextLayerOverlapBasisPoints": 8333,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        293
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        342
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p343.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "christmas",
+      "day": 4,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        341,
+        342
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9655,
+      "latestPdfTextLayerOverlapBasisPoints": 9655,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        293
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        342
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p343.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "christmas",
+      "day": 5,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        341,
+        342
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8750,
+      "latestPdfTextLayerOverlapBasisPoints": 9750,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        293
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        342
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p343.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "christmas",
+      "day": 6,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        341,
+        342
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9565,
+      "latestPdfTextLayerOverlapBasisPoints": 9565,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        293
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        342
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p343.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "christmas",
+      "day": 7,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        342,
+        343
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8276,
+      "latestPdfTextLayerOverlapBasisPoints": 9655,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        294
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        343
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p344.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "christmas",
+      "day": 8,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        342,
+        343
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9524,
+      "latestPdfTextLayerOverlapBasisPoints": 9524,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        294
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        343
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p344.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "christmas",
+      "day": 9,
+      "cohort": "callan_1925_copyright_later_scan",
+      "sourcePdfSha256": "e52be0aae5a5739855d6e9d23abc8b10e6852b8d747ca784687c618b5d31a320",
+      "sourceCandidateWindowZeroBased": [
+        342,
+        343
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9375,
+      "latestPdfTextLayerOverlapBasisPoints": 9375,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        294
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        343
+      ],
+      "sourceImageFiles": [
+        "callan_1925_copyright_later_scan-p344.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": "PRINTED_COPY_INCLUDES_POST_1933_MATERIAL_NOT_AUTHENTICATED_1925_FIRST_EDITION"
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 1,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        578,
+        579
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9121,
+      "latestPdfTextLayerOverlapBasisPoints": 9121,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 2,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        581,
+        582
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9247,
+      "latestPdfTextLayerOverlapBasisPoints": 9247,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 3,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        581,
+        582
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8969,
+      "latestPdfTextLayerOverlapBasisPoints": 8969,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 4,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        581,
+        582
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9412,
+      "latestPdfTextLayerOverlapBasisPoints": 9412,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 5,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        582,
+        583
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9787,
+      "latestPdfTextLayerOverlapBasisPoints": 9787,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 6,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        582,
+        583
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9865,
+      "latestPdfTextLayerOverlapBasisPoints": 9865,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 7,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        583,
+        584
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9474,
+      "latestPdfTextLayerOverlapBasisPoints": 9474,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 8,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        583,
+        584
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9756,
+      "latestPdfTextLayerOverlapBasisPoints": 9756,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "immaculate_conception",
+      "day": 9,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        583,
+        584
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9901,
+      "latestPdfTextLayerOverlapBasisPoints": 9901,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "annunciation",
+      "day": 1,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        100,
+        101
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 7971,
+      "latestPdfTextLayerOverlapBasisPoints": 7971,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": [
+        97
+      ],
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "annunciation",
+      "day": 2,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        102,
+        103
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9153,
+      "latestPdfTextLayerOverlapBasisPoints": 9831,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "annunciation",
+      "day": 3,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        104,
+        105
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 6613,
+      "latestPdfTextLayerOverlapBasisPoints": 6613,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": [
+        101
+      ],
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "annunciation",
+      "day": 4,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        106,
+        107
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 7606,
+      "latestPdfTextLayerOverlapBasisPoints": 7606,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": [
+        103
+      ],
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "annunciation",
+      "day": 5,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        108,
+        109
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9661,
+      "latestPdfTextLayerOverlapBasisPoints": 9661,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "annunciation",
+      "day": 6,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        111,
+        112
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 7887,
+      "latestPdfTextLayerOverlapBasisPoints": 7887,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": [
+        107
+      ],
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "annunciation",
+      "day": 7,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        112,
+        113
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9796,
+      "latestPdfTextLayerOverlapBasisPoints": 9796,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "annunciation",
+      "day": 8,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        115,
+        116
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9167,
+      "latestPdfTextLayerOverlapBasisPoints": 9167,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        111,
+        112
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        115,
+        116
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p116.png",
+        "hammer_1909-p117.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null
+    },
+    {
+      "id": "annunciation",
+      "day": 9,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        118,
+        119
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9000,
+      "latestPdfTextLayerOverlapBasisPoints": 9800,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "assumption",
+      "day": 1,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        140,
+        141
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8681,
+      "latestPdfTextLayerOverlapBasisPoints": 9121,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        134,
+        135
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        140,
+        141
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p141.png",
+        "hammer_1909-p142.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null
+    },
+    {
+      "id": "assumption",
+      "day": 2,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        142,
+        143
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9123,
+      "latestPdfTextLayerOverlapBasisPoints": 9825,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "assumption",
+      "day": 3,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        144,
+        145
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9434,
+      "latestPdfTextLayerOverlapBasisPoints": 9623,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "assumption",
+      "day": 4,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        146,
+        147
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9718,
+      "latestPdfTextLayerOverlapBasisPoints": 9718,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "assumption",
+      "day": 5,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        148,
+        149
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8971,
+      "latestPdfTextLayerOverlapBasisPoints": 9265,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        143
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        149
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p150.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null
+    },
+    {
+      "id": "assumption",
+      "day": 6,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        151,
+        152
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9661,
+      "latestPdfTextLayerOverlapBasisPoints": 9661,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "assumption",
+      "day": 7,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        153,
+        154
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9859,
+      "latestPdfTextLayerOverlapBasisPoints": 9859,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "assumption",
+      "day": 8,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        155,
+        156
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9444,
+      "latestPdfTextLayerOverlapBasisPoints": 9444,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        148,
+        149
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        155,
+        156
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p156.png",
+        "hammer_1909-p157.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null
+    },
+    {
+      "id": "assumption",
+      "day": 9,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        156,
+        157
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9877,
+      "latestPdfTextLayerOverlapBasisPoints": 9877,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 1,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        121,
+        122
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8257,
+      "latestPdfTextLayerOverlapBasisPoints": 9541,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 2,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        124,
+        125
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9762,
+      "latestPdfTextLayerOverlapBasisPoints": 9762,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 3,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        125,
+        126
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 7045,
+      "latestPdfTextLayerOverlapBasisPoints": 7045,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "OCR_EXCEPTION_PAGES_REVIEWED_NOT_FULL_WORD_SEQUENCE_CERTIFIED",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": [
+        121
+      ],
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 4,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        127,
+        128
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9500,
+      "latestPdfTextLayerOverlapBasisPoints": 9750,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 5,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        130,
+        131
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9750,
+      "latestPdfTextLayerOverlapBasisPoints": 9750,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 6,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        131,
+        132
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8974,
+      "latestPdfTextLayerOverlapBasisPoints": 8974,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        126,
+        127
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        131,
+        132
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p132.png",
+        "hammer_1909-p133.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 7,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        132,
+        133
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8776,
+      "latestPdfTextLayerOverlapBasisPoints": 8980,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        128
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        133
+      ],
+      "sourceImageFiles": [
+        "hammer_1909-p134.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 8,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        135,
+        136
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9756,
+      "latestPdfTextLayerOverlapBasisPoints": 9756,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "seven_sorrows",
+      "day": 9,
+      "cohort": "hammer_1909",
+      "sourcePdfSha256": "97d00390027944d6c4bfd7b5a733dd79dbc7781bd6ac52d76f0e0bc86d296afb",
+      "sourceCandidateWindowZeroBased": [
+        137,
+        138
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9714,
+      "latestPdfTextLayerOverlapBasisPoints": 9714,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "st_joseph",
+      "day": 1,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        614,
+        615
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9545,
+      "latestPdfTextLayerOverlapBasisPoints": 9545,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "st_joseph",
+      "day": 2,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        615,
+        616
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8952,
+      "latestPdfTextLayerOverlapBasisPoints": 8952,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "st_joseph",
+      "day": 3,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        615,
+        616
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9505,
+      "latestPdfTextLayerOverlapBasisPoints": 9505,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "st_joseph",
+      "day": 4,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        615,
+        616
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9424,
+      "latestPdfTextLayerOverlapBasisPoints": 9424,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "st_joseph",
+      "day": 5,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        616,
+        617
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8832,
+      "latestPdfTextLayerOverlapBasisPoints": 8832,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "st_joseph",
+      "day": 6,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        617,
+        618
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9463,
+      "latestPdfTextLayerOverlapBasisPoints": 9463,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "st_joseph",
+      "day": 7,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        617,
+        618
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9518,
+      "latestPdfTextLayerOverlapBasisPoints": 9458,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "st_joseph",
+      "day": 8,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        618,
+        619
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 9594,
+      "latestPdfTextLayerOverlapBasisPoints": 9594,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "st_joseph",
+      "day": 9,
+      "cohort": "moran_1883",
+      "sourcePdfSha256": "7c5435a46fd95ef3269dde444b7543f9715853167641319f4da841a239e18302",
+      "sourceCandidateWindowZeroBased": [
+        619,
+        620
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8933,
+      "latestPdfTextLayerOverlapBasisPoints": 8933,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "holy_souls",
+      "day": 1,
+      "cohort": "purgatorian_manual_1894_1907",
+      "sourcePdfSha256": "3739d066b2ac6de5b31c73242552ad3726a05aa02fe5f6babf8e04155952c113",
+      "sourceCandidateWindowZeroBased": [
+        198,
+        199
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 7890,
+      "latestPdfTextLayerOverlapBasisPoints": null,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": [
+        199,
+        200
+      ],
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null,
+      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
+    },
+    {
+      "id": "holy_souls",
+      "day": 2,
+      "cohort": "purgatorian_manual_1894_1907",
+      "sourcePdfSha256": "3739d066b2ac6de5b31c73242552ad3726a05aa02fe5f6babf8e04155952c113",
+      "sourceCandidateWindowZeroBased": [
+        201,
+        202
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 7419,
+      "latestPdfTextLayerOverlapBasisPoints": null,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": [
+        202,
+        203
+      ],
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null,
+      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
+    },
+    {
+      "id": "holy_souls",
+      "day": 3,
+      "cohort": "purgatorian_manual_1894_1907",
+      "sourcePdfSha256": "3739d066b2ac6de5b31c73242552ad3726a05aa02fe5f6babf8e04155952c113",
+      "sourceCandidateWindowZeroBased": [
+        201,
+        202
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 10000,
+      "latestPdfTextLayerOverlapBasisPoints": 10000,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        203
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        202
+      ],
+      "sourceImageFiles": [
+        "purgatorian_manual_1894_1907-p203.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null
+    },
+    {
+      "id": "holy_souls",
+      "day": 4,
+      "cohort": "purgatorian_manual_1894_1907",
+      "sourcePdfSha256": "3739d066b2ac6de5b31c73242552ad3726a05aa02fe5f6babf8e04155952c113",
+      "sourceCandidateWindowZeroBased": [
+        202,
+        203
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 6615,
+      "latestPdfTextLayerOverlapBasisPoints": null,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": [
+        204,
+        205
+      ],
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null,
+      "correctedSourceWindowZeroBased": [
+        203,
+        204
+      ],
+      "note": "Earlier two-page automated best-hit window [202,203] omitted the end of printed day four. The visually reviewed full prayer runs PDF indices [203,204], as recorded in the ten-exception resolution.",
+      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
+    },
+    {
+      "id": "holy_souls",
+      "day": 5,
+      "cohort": "purgatorian_manual_1894_1907",
+      "sourcePdfSha256": "3739d066b2ac6de5b31c73242552ad3726a05aa02fe5f6babf8e04155952c113",
+      "sourceCandidateWindowZeroBased": [
+        203,
+        204
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8333,
+      "latestPdfTextLayerOverlapBasisPoints": 9535,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "holy_souls",
+      "day": 6,
+      "cohort": "purgatorian_manual_1894_1907",
+      "sourcePdfSha256": "3739d066b2ac6de5b31c73242552ad3726a05aa02fe5f6babf8e04155952c113",
+      "sourceCandidateWindowZeroBased": [
+        205,
+        206
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 7835,
+      "latestPdfTextLayerOverlapBasisPoints": null,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": [
+        206,
+        207
+      ],
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null,
+      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
+    },
+    {
+      "id": "holy_souls",
+      "day": 7,
+      "cohort": "purgatorian_manual_1894_1907",
+      "sourcePdfSha256": "3739d066b2ac6de5b31c73242552ad3726a05aa02fe5f6babf8e04155952c113",
+      "sourceCandidateWindowZeroBased": [
+        205,
+        206
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 10000,
+      "latestPdfTextLayerOverlapBasisPoints": 10000,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_BODY_WORD_SEQUENCE_CHECKED",
+      "wordSequenceCheckedAgainstFullPageImage": true,
+      "printedPageLabels": [
+        207
+      ],
+      "visualPdfPageIndexesZeroBased": [
+        206
+      ],
+      "sourceImageFiles": [
+        "purgatorian_manual_1894_1907-p207.png"
+      ],
+      "comparisonStandard": "ALL_WORDS_IN_PROPER_DAY_PRAYER_VISUALLY_CHECKED_AGAINST_PRINTED_BODY; DISPLAY_MAY_NORMALIZE_PUNCTUATION_CAPITALIZATION_AND_LINE_BREAKS",
+      "editionCaveat": null
+    },
+    {
+      "id": "holy_souls",
+      "day": 8,
+      "cohort": "purgatorian_manual_1894_1907",
+      "sourcePdfSha256": "3739d066b2ac6de5b31c73242552ad3726a05aa02fe5f6babf8e04155952c113",
+      "sourceCandidateWindowZeroBased": [
+        206,
+        207
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 8660,
+      "latestPdfTextLayerOverlapBasisPoints": 9184,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "AWAITING_COMPLETE_PAGE_WORD_PROOF",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": null,
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null
+    },
+    {
+      "id": "holy_souls",
+      "day": 9,
+      "cohort": "purgatorian_manual_1894_1907",
+      "sourcePdfSha256": "3739d066b2ac6de5b31c73242552ad3726a05aa02fe5f6babf8e04155952c113",
+      "sourceCandidateWindowZeroBased": [
+        208,
+        209
+      ],
+      "initialPdfTextLayerOverlapBasisPoints": 7622,
+      "latestPdfTextLayerOverlapBasisPoints": null,
+      "scope": "ENGLISH_PROPER_PRAYER_BODY_ONLY",
+      "originalFirstEditionVerified": false,
+      "originalFrenchWitnessVerified": false,
+      "currentIndulgenceCertified": false,
+      "visualEvidenceKind": "SCANNED_ORIGINAL_PAGE_IMAGE",
+      "fullDevotionalProgrammeVerified": false,
+      "disposition": "PRINT_WORDING_VARIANT_CORRECTED_PARTIAL_PAGE_REVIEW",
+      "wordSequenceCheckedAgainstFullPageImage": false,
+      "printedPageLabels": [
+        209,
+        210
+      ],
+      "visualPdfPageIndexesZeroBased": null,
+      "sourceImageFiles": [],
+      "comparisonStandard": "PENDING",
+      "editionCaveat": null,
+      "textLayerMeasurementNote": "Only pre-correction 72-day baseline retained; no complete post-correction four-book rescan for this exception. Historic wording corrected in PR #1979."
+    }
+  ]
+}
