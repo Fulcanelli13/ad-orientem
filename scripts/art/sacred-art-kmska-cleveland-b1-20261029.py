@@ -38,6 +38,7 @@ def get(url,maxsize=2500000,timeout=20):
 def interesting(title,artist,medium=''):
  t=compact(title).lower();a=compact(artist).lower();m=compact(medium).lower()
  if any(x in a for x in EXCLUDE):return False
+ if any(x in t for x in ('krishna','buddha','shiva','vishnu','ganesha','bodhisattva','hindu','quran','allah','mosque','islamic','sikh')):return False
  if not any(x in t for x in SUBJECT):return False
  if m and any(x in m for x in ('print','etching','drawing','engraving','sculpture','statue','photograph','textile','manuscript','woodcut','ceramic','medal','book','object','lithograph','printmaking')):return False
  return True
