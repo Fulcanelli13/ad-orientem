@@ -1,0 +1,112 @@
+{
+  "schema": "AO_KMSKA_EXACT_IIIF_MANIFEST_SEED_V1",
+  "date": "2026-10-29",
+  "imageDownloads": 0,
+  "records": [
+    {
+      "manifest": "https://iiif.kmska.be/iiif/2/313/manifest.json",
+      "purl": "http://kmska.be/collection/work/data/tcasyd",
+      "inventory": "307",
+      "title": "The Incredulity of Thomas",
+      "artist": "Peter Paul Rubens",
+      "officialMuseumPage": "https://vlaamsekunstcollectie.be/en/collection/307",
+      "sourcePageStatesCC0": true,
+      "manifestRightsVerified": false,
+      "imageURL": null,
+      "keys": [
+        "@context",
+        "@id",
+        "@type",
+        "label",
+        "metadata",
+        "viewingDirection",
+        "viewingHint",
+        "license",
+        "attribution",
+        "sequences"
+      ],
+      "manifestRights": "https://rightsstatements.org/page/UND/1.0/",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "The Incredulity of Thomas"
+        },
+        {
+          "@language": "nl",
+          "@value": "Ongeloof van Tomas"
+        }
+      ],
+      "imageURLCandidate": "https://iiif.kmska.be/c/iiif/2/public@316.tif/full/full/0/default.jpg"
+    },
+    {
+      "manifest": "https://iiif.kmska.be/iiif/2/1121/manifest.json",
+      "purl": "http://kmska.be/collection/work/data/65m0to",
+      "inventory": "847",
+      "title": "The Adoration of the Magi",
+      "artist": "unattributed",
+      "officialMuseumPage": "https://vlaamsekunstcollectie.be/en/collection/847",
+      "sourcePageStatesCC0": true,
+      "manifestRightsVerified": false,
+      "imageURL": null,
+      "keys": [
+        "@context",
+        "@id",
+        "@type",
+        "label",
+        "metadata",
+        "viewingDirection",
+        "viewingHint",
+        "license",
+        "attribution",
+        "sequences"
+      ],
+      "manifestRights": "https://rightsstatements.org/page/UND/1.0/",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "The Adoration of the Magi"
+        },
+        {
+          "@language": "nl",
+          "@value": "Aanbidding door de koningen"
+        }
+      ],
+      "imageURLCandidate": "https://iiif.kmska.be/c/iiif/2/public@1121.tif/full/full/0/default.jpg"
+    },
+    {
+      "manifest": "https://iiif.kmska.be/iiif/2/24381/manifest.json",
+      "purl": "http://kmska.be/collection/work/data/ulznvi",
+      "inventory": "303",
+      "title": "Saint John",
+      "artist": "Peter Paul Rubens",
+      "officialMuseumPage": "https://vlaamsekunstcollectie.be/en/collection/303",
+      "sourcePageStatesCC0": true,
+      "manifestRightsVerified": false,
+      "imageURL": null,
+      "keys": [
+        "@context",
+        "@id",
+        "@type",
+        "label",
+        "metadata",
+        "viewingDirection",
+        "viewingHint",
+        "license",
+        "attribution",
+        "sequences"
+      ],
+      "manifestRights": "https://rightsstatements.org/page/UND/1.0/",
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Saint John"
+        },
+        {
+          "@language": "nl",
+          "@value": "Heilige Johannes"
+        }
+      ],
+      "imageURLCandidate": "https://iiif.kmska.be/c/iiif/2/public@24377.tif/full/full/0/default.jpg"
+    }
+  ]
+}
