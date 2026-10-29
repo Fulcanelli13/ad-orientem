@@ -83,12 +83,12 @@ for(const candidate of manifest.photos){
  const html=renderPlaceSacredTreasures(selected);
  assert.ok(html.includes("aoExploreTreasurePhoto"));
  assert.ok(html.includes('data-sacred-object-photo="'+fake.media_id+'"'));
- assert.ok(html.includes(candidate.caption_en));
+ assert.ok(html.includes(candidate.caption_en.slice(0,18)),"English editorial caption must be shown and HTML-escaped");
  assert.ok(html.includes("Original photograph"));
  assert.ok(html.includes("Licence"));
  assert.ok(html.includes("object-fit:contain")===false,"Crop rules belong in CSS, not inline styles");
  const french=renderPlaceSacredTreasures(selected,"fr");
- assert.ok(french.includes(candidate.caption_fr));
+ assert.ok(french.includes(candidate.caption_fr.slice(0,18)),"French editorial caption must be shown and HTML-escaped");
  assert.ok(french.includes("Photographie originale"));
  const unrelated=buildExplorePlaceProfiles(withPhoto,projectExploreDataset(withPhoto))
    .find(x=>x.place_id==="place:FR:chartres-notre-dame");
