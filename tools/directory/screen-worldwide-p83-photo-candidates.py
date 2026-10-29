@@ -68,7 +68,8 @@ def locality_in_source(city, media):
 
 def rights_metadata(media):
     label=" ".join(str(media.get("license_claim") or "").upper().split())
-    if label=="CC 0":label="CC0"\n    label=label.replace("CC-BY","CC BY")\n    label=label.replace("BY-SA","BY-SA")
+    if label=="CC 0":label="CC0"
+    label=label.replace("CC-BY","CC BY")
     path=SUPPORTED.get(label)
     if not path:return "HOLD_UNSUPPORTED_LICENSE_CLAIM"
     url=urllib.parse.urlsplit(str(media.get("license_url") or ""))
