@@ -1,0 +1,37 @@
+# Sacred Art Phase 1 — Consolidated editorial register
+**29 October 2026 · Research-only · €0 · No production-image or UI mutation**
+
+## Verified source-bound decisions
+- **2,455 reviewed artwork cards**, across the initial 60-card review and B3–B13.
+- **772 IMPORT**, **84 IMPORT_WITH_CORRECTIONS**, **1,599 REJECT**; **856 accepted or conditional** in total.
+- **2,455 unique source IDs**; zero exact-source-ID collisions in these batches.
+- B4R **123/123** and B5R **250/250** recovered from the original user-exported JSON files. B12 **250/250** and B13 **250/250** also preserved.
+- Initial 60-card original user JSON recovered: 60 titles, 53 nonblank historical artist fields, 58 source URL joins from the prior research source; seven author fields were blank already in the source, and two KMSKA review IDs lack matching research-source URLs.
+- The 383-artwork existing main gallery remains a **separate locked catalogue**. Four exact source-page crosswalks currently match, **not four newly approved canonical promotions**.
+- Thirty-four candidate duplicate-work groups share normalized title and artist. Some groups contain contradictory IMPORT/REJECT choices across distinct artwork IDs. **No automatic physical-work merges.**
+
+## B13 reviewed-source divergence
+The user's frozen B13 export matches `sacred-art-b13-french-museums-250-20261029.v1.json` (SHA256 `2cc8695e6a34b24e88aa7ad6b290111134659e5d9f3a3fd5a1a0566f5cb09fe8`), **not** the subsequently re-screened v2 source (SHA256 `8fec98262dab823bc461c3e73117f5e01f356e565db4fc6facf6a20d001db858`).
+
+The later screener replaced ten image-source IDs. Four of the replaced older cards had received user IMPORT choices:
+- `commons:123828337` — Saint Apollonia
+- `commons:81902276` — Martyrdom of Saint Catherine
+- `commons:163856846` — Rubens, *Christ Triumphant over Death and Sin* (detail)
+- `commons:85666930` — Saint Jerome Writing
+
+Preserve all ten original choices against their original source IDs, including the four approvals. All ten substitute IDs in the later screener remain **unreviewed**, and none inherits the choices of a removed image.
+
+## Governing source authority
+`data/calendar/sacred-art-editorial-master-20261029.v1.json` is the discovery/validation entry point and source-ID index. It references four immutable, source-bound editorial shards (`shard-01` to `shard-04`) and their Git blob SHAs. Individual source batches and complete user choice ledgers remain separately preserved, rather than replaced by title matching. The entry point contains the four confirmed exact-source-page links and the 34 unresolved possible duplicate-work groups. Run `node scripts/art/validate-editorial-phase1-20261029.mjs` to check ledger and snapshot integrity.
+
+The 383 existing master, 22 Prayer primary hero selections, and 83 Breviarium source plates are overlapping but **not additive** catalogues. The 856 accepted review cards are **not** certified as 856 physically distinct paintings.
+
+## Remaining Phase 1 release gates
+1. Research the 34 possible same-physical-work groups using museum accession, physical work identity and exact photo-source evidence. Preserve conflicting source-ID decisions; do not reinterpret a REJECT as a rejection of every alternative image of the subject.
+2. Resolve the seven blank original artist fields only where an authoritative catalogue establishes attribution; preserve “unknown” otherwise. Recover two unresolved original source URLs if possible.
+3. Triage the four B13 selected works that were removed by later automated screening; request better photographs of the **same chosen work**, not approval by proxy of a new work. Keep the other six removed/replaced records source-bound.
+4. Reconcile all 856 accepted or conditional new records against the existing 383 canonical artwork identities. Record source/photograph/physical-work distinctions separately and leave ambiguous joins for manual evidence review.
+5. Only after identity reconciliation, hand the work to Phase 2 **image-specific rights, original photo acquisition, native visual certification and frame/crop QA**. No automatic publication.
+
+## Explicit exclusions
+The index does not grant photo rights, certify the visual content or true colour, download high-resolution originals, change the canonical 383 editorial locks, release any images, or update the live app. `productionImported:false` is the frozen review-lane field, **not** proof that an unrelated existing app asset is absent. All work uses existing GitHub research storage and no paid services.
