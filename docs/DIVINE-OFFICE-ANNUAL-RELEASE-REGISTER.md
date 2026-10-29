@@ -446,3 +446,68 @@ Pentecost and post-Pentecost) to their real recurring dates and source
 identities. Preserve competing options for independent precedence
 adjudication, rather than selecting an arbitrary file by season or
 historical numeric rank. No bulk source downloads are required.
+
+## All-season Temporal recurrence and conditional rubric preservation
+
+Implementation on draft PR #1950 adds two new **pure** research components:
+
+- `src/office/temporal-source-leads.js`: proposes Temporal source keys
+  from movable year anchors and the *actual pinned filename families*.
+  Inspected source headers confirm `Quadp3-3` = Ash Wednesday,
+  `Quad1-0` = First Sunday of Lent, `Quad5-0` = Passion Sunday,
+  `Quad6-0` = Palm Sunday, `Pasc0-0` = Easter,
+  `Pasc7-0` = Pentecost, `Pent01-0` = Trinity,
+  and `Pent24-0` = the **last** Sunday after Pentecost.
+  Provisional date-based key families now cover:
+  Nativity/early January; Epiphany weeks; Septuagesima through
+  Quinquagesima; Ash Wednesday through Holy Week; Easter through
+  Pentecost; and post-Pentecost weeks with a distinct last-week key.
+  Existing Advent keys remain owned by the earlier planner.
+  Extended source-key identities are **not** Office appointments.
+- `src/office/conditional-metadata-parser.js`: parses **only**
+  source headings `[Officium]`, `[Rank]`, `[Rule]` and `[Name]`
+  from an **already provided exact-pinned Latin source leaf**.
+  Repeated `[Rank]` sections, bracket-header rubrical qualifiers,
+  inline `(sed rubrica ...)` lines and ordinal source locations are
+  preserved separately; the parser does **not** flatten competing
+  historical alternatives or treat numeric source ranks as RG91
+  table positions. Liturgical prose outside those metadata headings
+  is not emitted. It contains no downloader, CGI code, file output
+  or source archive.
+
+**Critical after-Pentecost safety condition:** the last week is
+`Pent24`, even in civil years with more than 24 after-Pentecost
+Sundays. The planner must not invent `Pent25` or later. Any
+intervening resumed Epiphany Sundays are flagged for separate
+Office-calendar adjudication rather than silently assigned a
+wrong proper. Holy Thursday through Holy Saturday are likewise
+flagged for the existing special-office/Tenebrae path.
+
+`src/office/annual-research-sweep.js` and its CLI can now opt in to
+`--temporal expanded` and annotate full-year source-key leads with
+the pinned filename index, while leaving the prior 2026/2028
+coverage/certification totals unchanged. No source files are
+fetched by this annual report. A matched exact Latin filename
+still means *only* that the candidate source path exists at the
+pinned revision.
+
+Regression coverage:
+
+    node --test tests/divine-office-temporal-source-leads.mjs
+    node --test tests/divine-office-conditional-metadata-parser.mjs
+    node --test tests/divine-office-expanded-temporal-sweep.mjs
+    node scripts/office/sweep-annual-research.mjs --year 2026 --source-index data/office/source-index/roman-1960-pinned-latin-filenames.json --temporal expanded --out /tmp/office-all-season-2026.json
+
+CI tests 2026 and leap-year 2028, requires all proposed keys to
+balance exact pinned filename matches plus absent filenames,
+and asserts zero source documents read, zero certified text
+and zero published Office Hours.
+
+**Remaining gates:** connect the metadata parser to an on-demand
+original-source reader that retains all conditional branches (the
+Mass-style flattened source `Map` alone is insufficient); independently
+verify all Temporal date-to-source conventions including transferred
+and resumed Sundays; source-specific Sanctoral precedence and
+commemoration selection; assemble complete and aligned LA/EN/FR
+Hours with printed witnesses and rights review. No continuous
+annual source download, generator or raw XHTML archive is needed.
