@@ -44,6 +44,19 @@ export function auditRestoredFrenchVespers({baseline,candidate}={}){
     throw Error("OFFICE_FR_RECOVERY_LATIN_ENGLISH_MUTATED");
   const sameFrenchCellIDs=matched(original,fr);
   const sameTrilingualIDs=matched(la,fr);
+  // The pinned FR baseline has nine cells: the missing commemoration is
+  // NOT an empty line inside Vespera9. The corrected composer restores
+  // a dedicated tenth cell. Treat append-only recovery as the expected
+  // repair, while disallowing mutation/deletion of any earlier French cell.
+  const originalFrenchCellsPreserved=original.sections.every((section,i)=>{
+    const candidateSection=fr.sections[i];
+    return candidateSection?.sourceCellId===section.sourceCellId&&
+      candidateSection?.text===section.text;
+  });
+  const dedicatedCommemorationCellRestored=
+    fr.sections.length===original.sections.length+1&&
+    fr.sections.at(-1)?.sourceCellId==="Vespera10"&&
+    originalFrenchCellsPreserved;
   const sourceChanged=fr.sections.some((s,i)=>s.text!==original.sections[i]?.text);
   const changedSourceCellIds=fr.sections.filter((s,i)=>
     s.text!==original.sections[i]?.text).map(s=>s.sourceCellId);
@@ -72,6 +85,7 @@ export function auditRestoredFrenchVespers({baseline,candidate}={}){
     cohort:CANDIDATE_COHORT,sourceRevision:DIVINUM_OFFICIUM_PIN,
     date:"2026-11-01",hour:"VESPERS",
     sourceChanged,sameFrenchCellIDs,sameTrilingualIDs,
+    originalFrenchCellsPreserved,dedicatedCommemorationCellRestored,
     changedSourceCellIds,changedOnlyPrayerCells,
     originalSemanticBlockers:oldScope.map(x=>x.reason),
     restoredSemanticBlockers:recoveredScope.map(x=>x.reason),
@@ -114,7 +128,9 @@ function main(){
   mkdirSync(dirname(report),{recursive:true});
   writeFileSync(report,JSON.stringify(review,null,2)+"\n","utf8");
   console.log("OFFICE_FR_VESPERS_RESTORED_REVIEW",JSON.stringify({
-    sameCellIds:review.sameTrilingualIDs&&review.sameFrenchCellIDs,
+    candidateTriLanguageAligned:review.sameTrilingualIDs,
+    baselineNineCellsPreserved:review.originalFrenchCellsPreserved,
+    restoredTenthCell:review.dedicatedCommemorationCellRestored,
     changed:review.changedSourceCellIds,
     antiphon:review.fullSundayAntiphonMatchesIndependentICKSP,
     collect:review.fullSundayCollectMatchesIndependentICKSP,
@@ -123,7 +139,8 @@ function main(){
     sourceBlockersAfter:review.restoredSemanticBlockers,
     printed1961Certified:false,published:0
   }));
-  if(!review.sameFrenchCellIDs||!review.sameTrilingualIDs||
+  if(!review.dedicatedCommemorationCellRestored||
+    !review.originalFrenchCellsPreserved||!review.sameTrilingualIDs||
     !review.changedOnlyPrayerCells||!review.sourceChanged||
     !review.originalSemanticBlockers.includes("FR_VESPERS_SUNDAY_COMMEMORATION_INCOMPLETE")||
     review.restoredSemanticBlockers.length!==0||
