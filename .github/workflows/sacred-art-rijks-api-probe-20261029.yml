@@ -1,0 +1,50 @@
+name: Sacred Art Rijksmuseum official no-key resolver probe (research only)
+
+on:
+  push:
+    branches:
+      - research/sacred-art-phase1-consolidation-20261029
+    paths:
+      - .github/workflows/sacred-art-rijks-api-probe-20261029.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sacred-art-rijks-api-probe
+  cancel-in-progress: false
+
+jobs:
+  verify-three-resolver-samples:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-phase1-consolidation-20261029
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate immutable sacred art decisions
+        run: node scripts/art/validate-editorial-phase1-20261029.mjs
+      - name: Probe three official Rijksmuseum Linked Art objects
+        run: node scripts/art/probe-rijks-linked-data-20261029.mjs
+      - name: Preserve diagnostic research output without approvals
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import {readFileSync} from 'node:fs';
+          const j=JSON.parse(readFileSync('data/calendar/sacred-art-phase1-rijks-api-probe-20261029.v1.json','utf8'));
+          if(j.rows.length!==3 || j.productionMutation!==false || j.officialMuseumsVerifiedByThisProbe!==0 ||
+            j.rows.some(x=>x.identityVerifiedByThisProbe!==false || x.photoCertified!==false))throw Error('Probe gate');
+          console.log('Three official resolver diagnostics saved without promoting identity.');
+          NODE
+          git config user.name "Ad Orientem research audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-phase1-rijks-api-probe-20261029.v1.json
+          git diff --cached --check
+          git commit -m "research(sacred-art): preserve Rijksmuseum official resolver schema probe [skip ci]"
+          git pull --rebase origin research/sacred-art-phase1-consolidation-20261029
+          git push origin HEAD:research/sacred-art-phase1-consolidation-20261029
