@@ -56,10 +56,14 @@ for(const part of [
  "data-p435930-occasional-latin",
  "occasionalIntercessionFor",
  "OCCASIONAL_PURPOSES_B20",
- 'data-p435930-own="pray.occasional_intercessions"',
+ 
  "'pray.occasional_intercessions':{id:'pray.occasional_intercessions'",
  "else if(view==='occasionals')html=renderOccasionalIntercessions()"
 ]) assert.ok(UI.includes(part),"Missing actual B20 UI contract: "+part);
+assert.ok(UI.includes("['own','pray.occasional_intercessions'"),
+ "Source-owned contextual Prayer card route must be declared exactly: pray.occasional_intercessions");
+assert.ok(UI.includes("related.map(item=>prayFamilyItem(item,true))"),
+ "Contextual Prayer route must use shared illustrated module card without a duplicate owner");
 assert.ok(css.includes("min-height:48px"));
 assert.ok(css.includes("max-width:360px"));
 const register=JSON.parse(readFileSync(new URL("../data/pray/prayer-corpus-admissions-b20.v1.json",import.meta.url),"utf8"));

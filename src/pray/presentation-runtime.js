@@ -719,10 +719,13 @@ function prayFamilies(){
 function prayFamilyDoor(id,family){
  return `<button type="button" class="aoP435930ModuleCard aoP435930FamilyDoor" ${family.direct?`data-p435930-own="${esc(family.direct)}"`:`data-p435930-family="${esc(id)}"`}>${assetIcon(family.assetId,'aoP435930ModuleAsset',{preferEmbedded:true})}<small class="aoP435930ModuleKind">${esc(L('PRAYER','PRIÈRE'))}</small><b>${esc(family.title)}</b><span class="aoP435930ModuleDescription">${esc(family.description)}</span><i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button>`;
 }
-function prayFamilyItem(item){
+function prayFamilyItem(item,contextual=false){
  const [owner,route,title,description]=item;
  const attr=owner==='external'?`data-p435930-external="${esc(route)}"`:`data-p435930-own="${esc(route)}"`;
- return `<button type="button" class="aoP435930ModuleCard" ${attr}>${moduleIcon(route)}<small class="aoP435930ModuleKind">${esc(route.startsWith('programme.')?L('DEVOTION','DÉVOTION'):L('PRAYER','PRIÈRE'))}</small><b>${esc(title)}</b><span class="aoP435930ModuleDescription">${esc(description)}</span><i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button>`;
+ // Contextual entries are real illustrated cards but not extra identities
+ // in the frozen historical Prayer family inventory.
+ const context=contextual===true?' data-ao-pray-contextual="true"':'';
+ return `<button type="button" class="aoP435930ModuleCard" ${attr}${context}>${moduleIcon(route)}<small class="aoP435930ModuleKind">${esc(route.startsWith('programme.')?L('DEVOTION','DÉVOTION'):L('PRAYER','PRIÈRE'))}</small><b>${esc(title)}</b><span class="aoP435930ModuleDescription">${esc(description)}</span><i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button>`;
 }
 function myCustomsDoor(){
  const name=L('My Customs & Prayers','Mes coutumes et prières');
@@ -746,19 +749,33 @@ function renderPrayHome(){
     door('chaplets')+prayFamilyItem(['own','pray.divine_mercy',L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('Open the chaplet directly','Ouvrir directement le chapelet')]))}
  </main>`;
 }
+// Additional source-owned programmes remain contextual discovery aliases, not
+// extra entries in the frozen historic Pray family/Prayer Corpus inventories.
+// Render them with the exact same card component as the original family items.
+function prayRelatedFamilyItems(id){
+ if(id==='passion')return [
+  ['own','pray.five_wounds',L('Chaplet of the Five Wounds','Chapelet des Cinq Plaies'),
+   L('Thirty prayers across the five wounds of Our Lord.','Trente prières consacrées aux cinq plaies de Notre-Seigneur.')]
+ ];
+ if(id==='devotions')return [
+  ['own','pray.occasional_intercessions',L('Occasional intercessions','Intercessions occasionnelles'),
+   L('Prayers for sickness, family, peace and particular needs.','Prières pour la maladie, la famille, la paix et les besoins particuliers.')],
+  ['own','pray.st_joseph_seven_sorrows',L('St Joseph · Seven Sorrows and Joys','Saint Joseph · Sept douleurs et sept joies'),
+   L('Seven traditional pairs of sorrow and joy, with their complete prayers.','Sept douleurs et joies traditionnelles, avec leurs prières complètes.')],
+  ['own','pray.montfort_consecration',L('Montfort · 33-day consecration preparation','Montfort · préparation de 33 jours à la consécration'),
+   L('A day-by-day preparation for consecration to Jesus through Mary.','Préparation quotidienne à la consécration à Jésus par Marie.')]
+ ];
+ if(id==='eucharistic')return [
+  ['own','pray.for_priests',L('Pray for priests and vocations','Prier pour les prêtres et les vocations'),
+   L('Source-backed intercessions for clergy and vocations.','Intercessions sourcées pour le clergé et les vocations.')]
+ ];
+ return [];
+}
 function renderPrayFamily(){
  const family=prayFamilies()[familyId];
  if(!family){familyId=null;view='home';return renderPrayHome()}
- return `${head(family.title,L('Choose a prayer or devotion','Choisissez une prière ou une dévotion'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro">${familyId==='chaplets'?'':`<small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(family.title)}</h2>`}<p>${esc(family.description)}</p>${({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId]?'<div class="aoP435930ContextRow">'+glossaryContextCapsule(({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId],{french:isFr()})+'</div>':''}</section><div class="aoP435930ModuleGrid">${family.items.map(prayFamilyItem).join('')}</div>${familyId==='passion'
- ?'<div class="aoFiveWoundsFamilyAside"><button type="button" data-p435930-own="pray.five_wounds">'+
- esc(L('Also: Chaplet of the Five Wounds','Également : chapelet des Cinq Plaies'))+'</button></div>'
- :''}${familyId==='devotions'
- ?'<div class="aoOccasionalFamilyAside"><button type="button" data-p435930-own="pray.occasional_intercessions">'+
- esc(L('Occasional intercessions','Intercessions occasionnelles'))+'</button> <button type="button" data-p435930-own="pray.st_joseph_seven_sorrows">'+esc(L('St Joseph · Seven Sorrows and Joys','Saint Joseph · Sept douleurs et sept joies'))+'</button> <button type="button" data-p435930-own="pray.montfort_consecration">'+esc(L('Montfort · 33-day consecration preparation','Montfort · préparation de 33 jours à la consécration'))+'</button></div>'
- :''}${familyId==='eucharistic'
- ?'<div class="aoPriestsFamilyAside"><button type="button" data-p435930-own="pray.for_priests">'+
- esc(L('Pray for priests and vocations','Prier pour les prêtres et les vocations'))+'</button></div>'
- :''}</main>`;
+ const related=prayRelatedFamilyItems(familyId);
+ return `${head(family.title,L('Choose a prayer or devotion','Choisissez une prière ou une dévotion'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro">${familyId==='chaplets'?'':`<small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(family.title)}</h2>`}<p>${esc(family.description)}</p>${({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId]?'<div class="aoP435930ContextRow">'+glossaryContextCapsule(({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId],{french:isFr()})+'</div>':''}</section><div class="aoP435930ModuleGrid">${family.items.map(prayFamilyItem).join('')}${related.map(item=>prayFamilyItem(item,true)).join('')}</div></main>`;
 }
 function openFamily(id){
  const family=prayFamilies()[String(id??'')];

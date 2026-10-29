@@ -64,18 +64,24 @@ try{
    assert.ok(value.body.length>=12,id+" opened an empty reader");
    return value;
  };
- const discovered=new Map();
+ const discovered=new Map(),contextual=[];
  for(const family of ["daily","eucharistic","penance","passion","devotions"]){
   await hub();
   await page.locator('#aoPray435930.open [data-p435930-family="'+family+'"]').tap();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView==="family");
   const list=await page.locator('#aoPray435930.open .aoP435930ModuleGrid [data-p435930-own],#aoPray435930.open .aoP435930ModuleGrid [data-p435930-external]')
-   .evaluateAll(buttons=>buttons.map(button=>({id:button.dataset.p435930Own||button.dataset.p435930External,kind:button.dataset.p435930Own?"own":"external"})));
+   .evaluateAll(buttons=>buttons.map(button=>({id:button.dataset.p435930Own||button.dataset.p435930External,kind:button.dataset.p435930Own?"own":"external",contextual:button.dataset.aoPrayContextual==="true"})));
   for(const entry of list){
-    assert.equal(discovered.has(entry.id),false,"Duplicated visible Prayer entry "+entry.id);
+    if(entry.contextual){contextual.push({...entry,family});continue;}
+    assert.equal(discovered.has(entry.id),false,"Duplicated visible canonical Prayer entry "+entry.id);
     discovered.set(entry.id,{...entry,family});
   }
  }
+ assert.deepEqual(contextual.map(entry=>entry.id).sort(),[
+  "pray.five_wounds","pray.for_priests","pray.montfort_consecration",
+  "pray.occasional_intercessions","pray.st_joseph_seven_sorrows"
+ ].sort(),"Five illustrated contextual links must not inflate canonical Prayer route count");
+ assert.equal(new Set(contextual.map(x=>x.id)).size,5,"Contextual Prayer aliases duplicated");
  discovered.set("pray.library",{id:"pray.library",kind:"own",family:null});
  for(const id of canonical)assert.ok(discovered.has(id),"Canonical route missing visible Prayer launcher: "+id);
  assert.ok(discovered.has("pray.tenebrae"),"Tenebrae optional Prayer route no longer exists");

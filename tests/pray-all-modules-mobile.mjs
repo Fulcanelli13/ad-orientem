@@ -43,7 +43,7 @@ try{
  // 48 prayer texts and Rosary have independent mobile acceptance below.
  const expectedFamilyIds=JSON.parse(readFileSync("data/app/content-reachability-audit.v1.json","utf8"))
    .routes.filter(x=>x.kind==="PRAY_FAMILY_ITEM").map(x=>x.id).concat("pray.tenebrae").sort();
- const visibleFamilyIds=[],externalRoutes=[];
+ const visibleFamilyIds=[],externalRoutes=[],contextualRoutes=[];
  for(const family of ["daily","eucharistic","penance","passion","devotions"]){
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
    const door=page.locator('#aoPray435930.open [data-p435930-family="'+family+'"]');
@@ -53,12 +53,13 @@ try{
    const cards=await page.locator('#aoPray435930.open .aoP435930ModuleGrid [data-p435930-own],#aoPray435930.open .aoP435930ModuleGrid [data-p435930-external]')
      .evaluateAll(nodes=>nodes.map(n=>({
        id:n.dataset.p435930Own||n.dataset.p435930External,
-       external:!!n.dataset.p435930External,height:n.getBoundingClientRect().height
+       external:!!n.dataset.p435930External,contextual:n.dataset.aoPrayContextual==="true",height:n.getBoundingClientRect().height
      })));
    assert.ok(cards.length>=2,"Empty Prayer family "+family);
    for(const card of cards){
-     visibleFamilyIds.push(card.id);
      assert.ok(card.height>=44,"Undersized Prayer launcher "+card.id);
+     if(card.contextual){contextualRoutes.push(card.id);continue;}
+     visibleFamilyIds.push(card.id);
      if(!card.external)continue; // Existing native reader suites certify owned modules.
      externalRoutes.push(card.id);
      await page.locator('#aoPray435930.open [data-p435930-external="'+card.id+'"]').tap({timeout:10000});
@@ -87,7 +88,12 @@ try{
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
  assert.equal(await page.locator('#aoPray435930.open [data-p435930-own="pray.library"]').count(),1,"Missing Prayer Library direct door");
  visibleFamilyIds.push("pray.library");
- assert.equal(visibleFamilyIds.length,24,"Prayer family entry count drifted");
+ assert.deepEqual(contextualRoutes.sort(),[
+  "pray.five_wounds","pray.for_priests","pray.montfort_consecration",
+  "pray.occasional_intercessions","pray.st_joseph_seven_sorrows"
+ ].sort(),"All five contextual illustrated cards must remain distinct from original Prayer routes");
+ assert.equal(new Set(contextualRoutes).size,5,"Related links must not duplicate across families");
+ assert.equal(visibleFamilyIds.length,24,"Prayer canonical family entry count drifted");
  assert.equal(new Set(visibleFamilyIds).size,24,"Duplicate Prayer family entry");
  assert.deepEqual(visibleFamilyIds.sort(),expectedFamilyIds,"Production Prayer family cards are not the declared routes");
  assert.equal(externalRoutes.length,10,"Expected ten external first-use Prayer buttons");

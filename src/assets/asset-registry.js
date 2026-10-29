@@ -1233,6 +1233,18 @@ export const AO_PRAY_ROUTE_ASSET_IDS=Object.freeze({
   "pray.angelus":"ao-rich-angelus",
   "pray.angelus_regina":"ao-rich-angelus",
   "pray.rosary":"ao-rich-rosary",
+  // Reuse verified canonical artwork/icon assets for newer source-owned
+  // Prayer experiences. No new images or generic placeholder glyphs.
+  "pray.rosary_methods":"ao-rich-rosary",
+  "pray.divine_mercy":"ao-rich-sacred-heart",
+  "pray.five_wounds":"ao-rich-stations",
+  "pray.precious_blood":"ao-rich-stations",
+  "pray.little_crown":"ao-rich-rosary",
+  "pray.for_priests":"ao-refined-devotions",
+  "pray.occasional_intercessions":"ao-refined-devotions",
+  "pray.st_joseph_seven_sorrows":"ao-rich-st-joseph",
+  "pray.montfort_consecration":"ao-rich-our-lady-marian-devotions",
+  "pray.tenebrae":"ao-rich-night-prayer",
   "pray.adoration":"ao-rich-adoration",
   "pray.visit_blessed_sacrament":"ao-rich-adoration",
   "pray.benediction":"ao-rich-adoration",
