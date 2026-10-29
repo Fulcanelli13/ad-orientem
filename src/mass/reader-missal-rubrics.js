@@ -37,13 +37,17 @@ const ACTIONS=Object.freeze({
  "ELEVATES HOST":["The priest elevates the Sacred Host.","Le prêtre élève la sainte Hostie."],
  "ELEVATES HOST AND CHALICE SLIGHTLY":["The priest raises the chalice slightly with the Sacred Host held above it, at omnis honor et gloria.","Le prêtre élève légèrement le calice avec la sainte Hostie tenue au-dessus, à omnis honor et gloria."],
  "GENUFLECTS":["The priest genuflects.","Le prêtre fait la génuflexion."],
- "HANDS OVER OBLATIONS":["The priest extends his hands over the offerings.","Le prêtre étend les mains sur les offrandes."],
+ // Ritus servandus VIII.4: both palms open towards and above the Host
+ // and chalice until Per Christum Dominum nostrum, then hands joined.
+ "HANDS OVER OBLATIONS":["The priest extends both hands with open palms facing the Host and chalice, holds them over the offerings until Per Christum Dominum nostrum, then joins his hands.","Le prêtre étend les deux mains, les paumes ouvertes tournées vers l’Hostie et le calice, et les tient au-dessus des oblats jusqu’à Per Christum Dominum nostrum ; il joint alors les mains."],
  "JOINS HANDS":["The priest joins his hands.","Le prêtre joint les mains."],
  "KISSES ALTAR":["The priest kisses the altar.","Le prêtre baise l’autel."],
  "PLACES CHALICE":["The priest places the chalice on the altar.","Le prêtre pose le calice sur l’autel."],
  "PLACES HOST":["The priest places the Host on the corporal.","Le prêtre dépose l’Hostie sur le corporal."],
  "PROFOUND BOW":["The priest bows profoundly.","Le prêtre s’incline profondément."],
- "RAISES EYES":["The priest raises his eyes.","Le prêtre élève les yeux."],
+ // Ritus servandus VIII.4: eye-raising is brief and immediately followed
+ // by lowering the gaze; do not turn it into a prolonged elevation pose.
+ "RAISES EYES":["Holding the Host, the priest raises his eyes to heaven and immediately lowers them, at et elevatis oculis in caelum.","Tenant l’Hostie, le prêtre élève les yeux au ciel et les abaisse aussitôt, à et elevatis oculis in caelum."],
  "RAISES EYES AND HANDS":["The priest raises his eyes and hands.","Le prêtre élève les yeux et les mains."],
  "RECEIVES CHALICE":["The priest receives the Precious Blood.","Le prêtre communie au Précieux Sang."],
  "RECEIVES HOST":["The priest receives the Sacred Host.","Le prêtre communie à la sainte Hostie."],
