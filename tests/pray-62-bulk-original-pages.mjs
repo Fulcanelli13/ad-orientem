@@ -15,6 +15,10 @@ assert.equal(scan.counts.dayPrayers,62);
 assert.equal(scan.counts.uniqueOriginalPageImages,69);
 assert.equal(scan.counts.veryHighPreCorrection,39);
 assert.equal(scan.counts.highPreCorrection,23);
+assert.equal(scan.counts.veryHighPostCorrection,40);
+assert.equal(scan.counts.highPostCorrection,22);
+assert.match(scan.postCorrectionRun,/40881455788/);
+assert.match(scan.postCorrectionReviewArtifact,/12900457415/);
 assert.equal(scan.counts.completeHistoricalPrintEditionCertificates,0);
 assert.equal(scan.counts.fullyVisualLineCollatedProperPrayersCertified,0);
 assert.equal(scan.counts.newHistoricallyVerifiedBodyCorrections,2);
@@ -47,6 +51,22 @@ for(const r of scan.records){
 assert.equal(veryHigh,39);
 assert.equal(pageImages.size,69);
 assert.equal(seen.size,62);
+let changedScores=0;
+for(const row of scan.records){
+ const key=row.id+':'+row.day;
+ if(row.postCorrectionOverlapBasisPoints!==row.preCorrectionOverlapBasisPoints){
+  changedScores++;
+  assert.ok(key==='holy_souls:5'||key==='holy_souls:8');
+ }else assert.equal(row.postCorrectionUnmatchedAppWords,row.preCorrectionUnmatchedAppWords);
+}
+assert.equal(changedScores,2);
+const d5=scan.records.find(x=>x.id==='holy_souls'&&x.day===5);
+const d8=scan.records.find(x=>x.id==='holy_souls'&&x.day===8);
+assert.equal(d5.postCorrectionOverlapBasisPoints,9535);
+assert.equal(d8.postCorrectionOverlapBasisPoints,9184);
+assert.equal(d5.postCorrectionUnmatchedAppWords,7);
+assert.equal(d8.postCorrectionUnmatchedAppWords,14);
+
 for(const row of locators.days.filter(r=>r.id==='christmas'))assert.equal(row.sectionStartPrintedPage,292);
 assert.match(locators.cohorts.callan_1925_copyright_later_scan.boundaries,/Christmas p292/);
 assert.deepEqual([...HOLY_SOULS_PRINT_ALIGNED_DAY_IDS].sort((a,b)=>a-b),[1,2,4,5,6,8,9]);
