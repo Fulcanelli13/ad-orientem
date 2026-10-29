@@ -1,4 +1,4 @@
-name: Directory St Alphonsus two licensed photos - staged branch
+name: Directory St Alphonsus four licensed photos - staged branch
 on:
   push:
     branches:
@@ -44,7 +44,7 @@ jobs:
           r=json.loads(Path("data/geography/research/directory-st-alphonsus-photo-stage-20261029.v1.json").read_text())
           assert r["schema"]=="AO_ST_ALPHONSUS_STAGE_REPORT_V1"
           assert r["status"]=="STAGED_FOR_VISUAL_REVIEW_ONLY" and r["publication"] is False
-          assert len(r["records"])==2
+          assert len(r["records"])==4
           for item in r["records"]:
               assert item["status"]=="STAGED_REVIEW_REQUIRED_NOT_APPROVED"
               assert item["publication"] is False
@@ -57,9 +57,11 @@ jobs:
         run: |
           set -euo pipefail
           git add assets/staged/directory-st-alphonsus/US-st-alphonsus-baltimore-exterior-2018.webp
+          git add assets/staged/directory-st-alphonsus/US-st-alphonsus-baltimore-exterior-spire-2014.webp
+          git add assets/staged/directory-st-alphonsus/US-st-alphonsus-baltimore-high-altar-2013.webp
           git add assets/staged/directory-st-alphonsus/US-st-alphonsus-baltimore-nave-2013.webp
           git add data/geography/research/directory-st-alphonsus-photo-stage-20261029.v1.json
-          test "$(git diff --cached --name-only | wc -l | tr -d ' ')" -le 3
+          test "$(git diff --cached --name-only | wc -l | tr -d ' ')" -le 5
           if git diff --cached --quiet; then
             echo "Exact staged image files unchanged"
           else
@@ -73,6 +75,8 @@ jobs:
           name: st-alphonsus-two-photo-staging-diagnostics
           path: |
             assets/staged/directory-st-alphonsus/US-st-alphonsus-baltimore-exterior-2018.webp
+            assets/staged/directory-st-alphonsus/US-st-alphonsus-baltimore-exterior-spire-2014.webp
+            assets/staged/directory-st-alphonsus/US-st-alphonsus-baltimore-high-altar-2013.webp
             assets/staged/directory-st-alphonsus/US-st-alphonsus-baltimore-nave-2013.webp
             data/geography/research/directory-st-alphonsus-photo-stage-20261029.v1.json
           if-no-files-found: warn
