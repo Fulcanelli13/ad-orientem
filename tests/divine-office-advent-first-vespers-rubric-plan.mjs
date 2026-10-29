@@ -72,6 +72,8 @@ test("1960 research plan has Saturday psalter, 12 full antiphon uses, six Gloria
  assert.equal(p.orderedEvents.filter(x=>x.kind==="GLORIA_PATRI").length,6);
  const ants=p.orderedEvents.filter(x=>x.kind.startsWith("ANTIPHON_"));
  assert.equal(ants.length,12);
+ assert.deepEqual(ants.slice(0,10).map(x=>x.sourceRow),[1,1,2,2,3,3,4,4,5,5]);
+ assert.equal(ants[0].sourceId,"Tempora/Adv1-0#Ant Laudes");
  for(let i=0;i<6;i++)assert.equal(ants[2*i].sourceId,ants[2*i+1].sourceId);
  assert.equal(p.orderedEvents.some(x=>x.kind==="PRECES"),false);
  assert.equal(p.orderedEvents.some(x=>x.kind==="COMMEMORATIONS_UNADJUDICATED"),true);
