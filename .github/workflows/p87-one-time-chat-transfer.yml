@@ -1,0 +1,36 @@
+name: P87 one-time exact existing ZIP chat transfer
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/p87-one-time-chat-transfer.yml'
+permissions:
+  contents: read
+jobs:
+  exact-original:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Fetch permanently archived 385-photo ZIP without rebuilding or modifying any app content
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin 'refs/heads/research/p87-worldwide-original-preview-pack-20261029:refs/remotes/origin/research/p87-worldwide-original-preview-pack-20261029'
+          git worktree add --detach /tmp/p87-verified-archive refs/remotes/origin/research/p87-worldwide-original-preview-pack-20261029
+          root=/tmp/p87-verified-archive/docs/research/directory/p87-final-worldwide-visual-review-20261029
+          (cd "$root" && sha256sum -c SHA256SUMS)
+          file="$root/p87-one-worldwide-review-and-contact-sheets.zip"
+          echo '33055b933b9c0cada4b38664477706b37c173b985c0de929b8f9c1502d0a75c5  '"$file" | sha256sum -c -
+          test "$(stat -c %s "$file")" -eq 12349975
+          cp "$file" /tmp/p87-one-worldwide-review-and-contact-sheets.zip
+          unzip -t /tmp/p87-one-worldwide-review-and-contact-sheets.zip | tail -1
+      - name: Return original byte-identical ZIP as short-lived transport artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: P87_EXACT_385_IMAGES_CHAT_TRANSFER
+          path: /tmp/p87-one-worldwide-review-and-contact-sheets.zip
+          retention-days: 1
+          if-no-files-found: error
