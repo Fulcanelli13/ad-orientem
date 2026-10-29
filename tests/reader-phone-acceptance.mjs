@@ -344,6 +344,12 @@ try{
       postureIconHidden:posture?.querySelector('[data-icon-slot="posture"]')?.hidden??true,
       postureCopy:postureCopy?.textContent??"",
       postureCopyDisplay:postureCopy?getComputedStyle(postureCopy).display:null,
+      contextPostureDisplay:getComputedStyle(document.querySelector('[data-role="objective-posture"]')).display,
+      contextPostureLabel:document.querySelector('[data-role="objective-posture-label"]')?.textContent?.trim()??"",
+      contextPostureIconHidden:document.querySelector('[data-icon-slot="posture-context"]')?.hidden??true,
+      contextTextRight:document.querySelector('[data-role="objective-context-text"]')?.getBoundingClientRect()?.right??0,
+      musicButtonLeft:document.querySelector('[data-schola-events-open]')?.getBoundingClientRect()?.left??Infinity,
+      musicButtonVisible:document.querySelector('[data-schola-events-open]')?.hidden===false,
       rightVisible:right?.dataset.visible??null,
       positionActive:position?.dataset.active??null,
       positionLabel:position?.querySelector('[data-role="priest-position-rail"]')?.textContent??null,
@@ -359,10 +365,18 @@ try{
     "LIVE explanation did not replace the duplicate top YOU/PRIEST cells");
   assert.equal(objectiveVisual.leftVisible,"true",
     "The faithful posture must remain visible in the left rail");
-  assert.equal(objectiveVisual.postureDisplay,"grid",
-    "Context ribbon hid the actual faithful posture tile via legacy LIVE CSS");
-  assert.ok(!objectiveVisual.postureIconHidden,
-    "Visible LIVE posture tile must contain real reviewed artwork, not a text fallback");
+  assert.equal(objectiveVisual.postureDisplay,"none",
+    "Earlier C0150 posture icon floated beside Host elevation C0174");
+  assert.equal(objectiveVisual.contextPostureDisplay,"flex",
+    "The source-context ribbon failed to preserve current participant posture");
+  assert.match(objectiveVisual.contextPostureLabel,/KNEEL|STAND|SIT|GENUFLECT/,
+    "Context ribbon lost actual posture text");
+  assert.equal(objectiveVisual.contextPostureIconHidden,false,
+    "Context ribbon must use reviewed posture art, not an invented action");
+  if(objectiveVisual.musicButtonVisible)assert.ok(
+    objectiveVisual.contextTextRight+3<=objectiveVisual.musicButtonLeft,
+    "MUSIC overlaps the source context text at phone width: "+JSON.stringify(objectiveVisual)
+  );
   assert.equal(objectiveVisual.postureCopyDisplay,"none",
     "Posture text may not be miniaturized inside the icon rail");
   assert.equal(objectiveVisual.rightVisible,"true",

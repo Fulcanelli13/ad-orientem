@@ -1076,6 +1076,14 @@ button.ao-schola-control{cursor:pointer}
    Restore its existing left-rail icon, with no duplicate in other modes. */
 .ao-reader-shell[data-mode="LIVE"][data-objective-context="true"]
 .ao-rail-left .ao-rail-item[data-channel="posture"][data-active="true"]{display:grid!important}
+/* Objective-context posture is not exempt from source-line ownership.
+   The rule above formerly painted stale C0150 posture beside C0174/C0181
+   elevation even when that posture paragraph was offscreen. Only restore
+   this context tile when its ORIGINAL source cue is actually visible. */
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"]
+.ao-rail[data-source-anchored="true"] .ao-rail-item[data-channel="posture"]:not([data-source-rail-anchor="exact"]){
+  display:none!important
+}
 .ao-reader-shell[data-mode="LIVE"][data-objective-context="true"]
 .ao-rail-left .ao-rail-item[data-channel="posture"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{
   display:block!important;max-width:49px;font:600 10px/1.2 var(--ao-font-ui,system-ui,sans-serif);
@@ -1605,6 +1613,33 @@ button.ao-schola-control{cursor:pointer}
   display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
   overflow:hidden;max-width:75ch;
 }
+/* Persistent participant state lives in the source-context ribbon, not
+   beside a later prayer row whose source posture began before this card. */
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-reader-objective-context{
+  position:relative;padding-right:72px
+}
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-reader-objective-context:has(.ao-objective-posture:not([hidden])){
+  padding-left:52px
+}
+/* The MUSIC picker formerly sat over the source-context wording on
+   320px phones. Reserve its own right-hand slot during objective context. */
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-state-music-jump{
+  left:auto;right:6px;top:15px;transform:none;
+  min-height:32px;min-width:54px;padding:7px 6px
+}
+.ao-reader-objective-context .ao-objective-posture[hidden]{display:none!important}
+.ao-reader-objective-context .ao-objective-posture{
+  position:absolute;left:8px;top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:1px;
+  width:38px;color:var(--ao-text-primary,#e8e2d5)
+}
+.ao-reader-objective-context .ao-objective-posture .ao-icon-mask{
+  width:25px;height:25px;flex:0 0 25px
+}
+.ao-reader-objective-context .ao-objective-posture [data-role="objective-posture-label"]{
+  font:600 9px/1.1 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.025em;text-transform:uppercase
+}
 `;
 
 function esc(value){
@@ -2059,6 +2094,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     <div class="ao-reader-objective-context" data-role="objective-context" hidden aria-live="off">
       <small data-role="objective-context-kicker">About this part of Mass</small>
       <span data-role="objective-context-text"></span>
+      <span class="ao-objective-posture" data-role="objective-posture" hidden><span class="ao-icon-mask" data-icon-slot="posture-context" hidden></span><span data-role="objective-posture-label"></span></span>
     </div>
     <div class="ao-state-cell" data-side="faithful" data-channel="posture" data-faithful-icon-open role="button" tabindex="0" aria-label="Customize current faithful posture or gesture">
       <span class="ao-icon-mask" data-icon-slot="posture-top" hidden></span>
@@ -3866,6 +3902,15 @@ export function createReaderDomAdapter({
     const contextKicker=root.querySelector('[data-role="objective-context-kicker"]');
     if(contextKicker)contextKicker.textContent=showContext&&copy.language==="fr"
       ?"CE MOMENT DE LA MESSE":"ABOUT THIS PART OF MASS";
+    const contextPosture=root.querySelector('[data-role="objective-posture"]');
+    const postureLabel=String(textValue(current.posture)??"").trim().toUpperCase();
+    const showPersistentPosture=showContext&&[ "KNEEL","STAND","SIT","GENUFLECT" ].includes(postureLabel);
+    if(contextPosture){
+      contextPosture.hidden=!showPersistentPosture;
+      contextPosture.setAttribute("aria-label",showPersistentPosture
+        ? "Current faithful posture: "+postureLabel : "No sourced posture for this context");
+    }
+    setText(root,"objective-posture-label",showPersistentPosture?postureLabel:"");
     const musicNote=root.querySelector('[data-role="rite-music"]');
     if(musicNote){
       const metadata=current.riteMusic?.musicStatus==="EXPECTED_NOT_OBSERVED"
@@ -4035,6 +4080,11 @@ export function createReaderDomAdapter({
       Object.prototype.hasOwnProperty.call(R17_ICON_KEYS.posture,exactPosture)
       ? R17_ICON_KEYS.posture[exactPosture] : null;
     applyIcon(root,"posture",current.postureIconKey??contextualPostureIcon,iconResolver);
+    // Context replaces the ordinary two-cell ribbon. Preserve current
+    // sourced/observed posture here without attaching a persistent state
+    // to an unrelated Canon action paragraph.
+    applyIcon(root,"posture-context",showPersistentPosture
+      ? (current.postureIconKey??contextualPostureIcon) : null,iconResolver);
     applyIcon(root,"posture-change",postureChangeVisible ? (current.postureChangeIconKey??current.postureIconKey) : null,iconResolver);
     applyIcon(root,"attention",current.attentionIconKey??current.attention?.iconKey,iconResolver);
     applyIcon(root,"gesture",current.gestureIconKey,iconResolver);
