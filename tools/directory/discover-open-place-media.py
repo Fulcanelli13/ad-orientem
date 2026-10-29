@@ -231,7 +231,7 @@ def frozen_id_locality_hint(source_id, country):
         if not m:
             return ""
         terms = m.group("city").split("-")
-        if not (1 <= len(terms) <= 6) or any(len(w) < 2 for w in terms):
+        if not (1 <= len(terms) <= 6) or any(not w.isalnum() for w in terms):
             return ""
         return " ".join(terms)
     # US/CA/AU postfix may contain a compound locality; restrict to the
