@@ -155,3 +155,28 @@ test("restored French Sunday Vespera10 with headline-only commemoration clears o
   assert.equal(officeTranslationContentBlockers({latin,translation:missing})[0].reason,
     "FR_VESPERS_SUNDAY_COMMEMORATION_INCOMPLETE");
 });
+
+
+test("French native Vespera10 aligns to Latin Vespera9 without relabeling raw source IDs",()=>{
+  const la=doc("la","Office","2026-11-01","VESPERS");
+  la.headline="Omnium Sanctorum ~ I classis";
+  la.sections=[
+    {sourceCellId:"Vespera9",index:9,text:"Ant. At Iesus conversus.\nAbsolve, quaesumus, Domine.",
+      semantic:{role:"PRAYER",latinSourceCellId:"Vespera9"}},
+  ];
+  const fr=doc("fr","Office","2026-11-01","VESPERS");
+  fr.headline="Tous les Saints. Commémoraison du dimanche";
+  fr.sections=[
+    {sourceCellId:"Vespera10",index:9,
+      semantic:{role:"PRAYER",latinSourceCellId:"Vespera9"},
+      text:"Jésus, se retournant et la voyant, dit : Aie confiance, ma fille.\n"+
+        "Pardonnez, nous vous en supplions, Seigneur, les offenses de vos peuples."},
+  ];
+  assert.deepEqual(officeTranslationContentBlockers({latin:la,translation:fr}),[]);
+  const unavailable={...fr,sections:[{...fr.sections[0],
+    text:"Oratio {non disponible}"}]};
+  const blocks=officeTranslationContentBlockers({latin:la,translation:unavailable});
+  assert.equal(blocks.length,1);
+  assert.equal(blocks[0].reason,"FR_VESPERS_SUNDAY_COMMEMORATION_INCOMPLETE");
+  assert.equal(blocks[0].translationSourceCellId,"Vespera10");
+});
