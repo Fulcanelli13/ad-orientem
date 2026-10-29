@@ -97,6 +97,12 @@ assert.equal(disposition.items.filter(x=>x.latestAdaptiveArtworkReview).length,7
 assert.equal(disposition.items.filter(x=>x.actor==="FAITHFUL").length,10);
 for(const row of disposition.items.filter(x=>x.actor==="FAITHFUL"))
  assert.equal(row.latestAdaptiveArtworkReview,undefined);
+const gallery=readFileSync(new URL("../reviews/mass-seven-adaptive-gesture-archive-20261029.html",import.meta.url),"utf8");
+assert.match(gallery,/mask:var\(--src\)/,"SVGs must recolour through CSS-mask currentColor");
+assert.match(gallery,/USER APPROVED CONCEPT/);
+assert.match(gallery,/USER REJECTED/);
+assert.match(gallery,/C0193's inappropriate monstrance/);
+for(const cue of expected.keys())assert.ok(gallery.includes('"'+cue+'"'),"Archived icon omitted from theme gallery: "+cue);
 assert.equal(originalDecisions.schema,"ao-mass-icon-user-selection-v1");
 assert.equal(originalExtensions.schema,"ao-mass-icon-extension-approval-v1");
 console.log("PASS: 6 user artwork concepts approved, C0169 rejected, exact SVG hashes locked and all existing 1962 source/release holds preserved.");
