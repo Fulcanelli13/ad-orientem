@@ -63,6 +63,8 @@ test("1960 research plan has Saturday psalter, 12 full antiphon uses, six Gloria
  assert.equal(p.sourceAudit.psalmPortions,5);
  assert.equal(p.sourceAudit.fullAntiphonUsages,12);
  assert.equal(p.sourceAudit.gloriaPatriPositions,6);
+ assert.equal(p.sourceAudit.openingGloriaPatriPositions,1);
+ assert.equal(p.sourceAudit.totalDoxologyPositionsIncludingOpening,7);
  assert.equal(p.sourceAudit.preces,0);
  assert.equal(p.sourceAudit.paterAveAtOpening,0);
  assert.deepEqual(p.orderedEvents.slice(0,2).map(x=>x.sourceId),[
