@@ -1,0 +1,106 @@
+name: P80 worldwide 2579-anchor one-sweep image source harvest
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/directory/research/p80-worldwide-2579-campaign-plan.v1.json'
+      - 'tools/directory/run-worldwide-p80-photo-harvest.py'
+      - '.github/workflows/p80-worldwide-photo-2579-campaign.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  harvest-countries:
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        group: [0, 1, 2, 3, 4]
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Read immutable 11-shard Directory intake; never create a rival Place master
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/directory-unified-photo-intake:refs/remotes/origin/research/directory-unified-photo-intake'
+          test "$(git rev-parse refs/remotes/origin/research/directory-unified-photo-intake)" = f3408ab9448c1fd1fade2b8f0c2c161d3b0c21c2
+          git worktree add --detach /tmp/p80-original-intake f3408ab9448c1fd1fade2b8f0c2c161d3b0c21c2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify all 2579 exact CL2 anchors and 76 country identity columns before network
+        run: |
+          python tools/directory/run-worldwide-p80-photo-harvest.py \
+            --source-root /tmp/p80-original-intake/data/directory/research/unified-photo-intake/cl2-eb67711a-20261029 \
+            --out /tmp/p80-source-group-${{ matrix.group }} --check
+      - name: One country-source harvest pass for assigned countries, no per-church requests
+        run: |
+          python tools/directory/run-worldwide-p80-photo-harvest.py \
+            --source-root /tmp/p80-original-intake/data/directory/research/unified-photo-intake/cl2-eb67711a-20261029 \
+            --out /tmp/p80-source-group-${{ matrix.group }} \
+            --group ${{ matrix.group }} --delay 5
+      - name: Preserve original country-source evidence for single consolidation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: P80_COUNTRY_SOURCE_GROUP_${{ matrix.group }}
+          if-no-files-found: warn
+          retention-days: 3
+          path: /tmp/p80-source-group-${{ matrix.group }}/
+  consolidate-full-world:
+    needs: harvest-countries
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch exact source intake for 2579-reconciliation
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            'refs/heads/research/directory-unified-photo-intake:refs/remotes/origin/research/directory-unified-photo-intake'
+          test "$(git rev-parse refs/remotes/origin/research/directory-unified-photo-intake)" = f3408ab9448c1fd1fade2b8f0c2c161d3b0c21c2
+          git worktree add --detach /tmp/p80-original-intake f3408ab9448c1fd1fade2b8f0c2c161d3b0c21c2
+      - name: Merge every machine-group into a single world image-source index
+        uses: actions/download-artifact@v4
+        with:
+          pattern: P80_COUNTRY_SOURCE_GROUP_*
+          merge-multiple: true
+          path: /tmp/p80-all-countries
+      - name: Assert 2579 anchors, 76 countries, zero subject/site/rights approvals
+        run: |
+          python tools/directory/run-worldwide-p80-photo-harvest.py \
+            --source-root /tmp/p80-original-intake/data/directory/research/unified-photo-intake/cl2-eb67711a-20261029 \
+            --out /tmp/p80-whole-world \
+            --consolidate-from /tmp/p80-all-countries
+          python - <<'PY'
+          import json,pathlib
+          root=pathlib.Path("/tmp/p80-whole-world")
+          d=json.loads((root/"p80-2579-source-first-index.json").read_text())
+          assert d["schema"]=="AO_P80_WORLDWIDE_SOURCE_FIRST_CONSOLIDATION_V1"
+          assert d["counts"]["anchors_accounted"]==2579 and d["counts"]["countries_attempted"]==76
+          assert len(d["records"])==2579 and len({x["physical_anchor_id"] for x in d["records"]})==2579
+          assert all(not x["approved_exterior"] and not x["published"] for x in d["records"])
+          for r in d["records"]:
+              for lead in r["candidate_image_leads"]:
+                  assert lead["match_state"]=="RESEARCH_LEAD_EXACT_BUILDING_NOT_VERIFIED"
+                  assert lead["original_sha1_checked"] is False and lead["license_checked"] is False
+          print("P80_READY_FOR_GLOBAL_SOURCE_AUDIT_NOT_YET_IMAGE_REVIEW")
+          PY
+      - name: Single research package; no automatic church/photo publication
+        uses: actions/upload-artifact@v4
+        with:
+          name: P80-ONE-WORLDWIDE-2579-PHOTO-SOURCE-AUDIT
+          retention-days: 3
+          if-no-files-found: error
+          path: |
+            /tmp/p80-whole-world/
+            /tmp/p80-all-countries/
