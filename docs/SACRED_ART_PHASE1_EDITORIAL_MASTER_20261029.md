@@ -224,3 +224,32 @@ node scripts/art/reconcile-nga-opendata-126-20261029.mjs \
 ```
 
 The CSV parser's quoted-field/multiline test passed in isolated logic. **No live NGA CSV was downloaded or parsed in this conversation**, and the standalone Node script was **not** executed on the authoritative dataset. Do not count the pending 84 as verified before the resulting report is independently checked and committed. This workflow is designed to use free factual metadata without downloading images or spending money.
+
+### NGA Open Data bulk execution — all 126 source cards verified (29 October 2026)
+
+**The live official-data execution succeeded.** GitHub workflow `Sacred Art NGA 126 official object data reconcile (€0 research)` ([run 40938158126](https://github.com/Fulcanelli13/ad-orientem/actions/runs/40938158126)) downloaded NGA `objects.csv` and `object_associations.csv` on a free public-repository runner, executed `scripts/art/reconcile-nga-opendata-126-20261029.mjs`, passed the earlier Phase 1 Node integrity validation, and **committed the compact result permanently to the research branch**. The large official CSVs were kept outside the repository and not saved as expiring Actions artifacts.
+
+Permanent source-linked output: [NGA authoritative 126/126 reconciliation](../data/calendar/sacred-art-phase1-nga126-official-csv-report-20261029.v1.json).
+
+| NGA official CSV outcome | Source cards |
+|---|---:|
+| NGA object IDs found | **126 / 126** |
+| Exact reviewed accession matches | **126 / 126** |
+| Normalized official/reviewed title matches | **126 / 126** |
+| Museum classification `Painting` | **126 / 126** |
+| Accession conflicts, missing objects, virtual cover objects | **0** |
+| Source cards with NGA parent/child or front–reverse associations | **18** |
+
+The authority fingerprints are NGA `objects.csv` SHA256 `53d0757fd5a4fb53785adefdb7e6eeb3290d97157eb5d59bfdc203d6d8e909c0` and `object_associations.csv` SHA256 `59dd0f38d2756fe9400267d91c355bbbd1ff3a4165f9d76e47e9ce76a4325ca6`. These identify the **actual content read by the workflow**, rather than assuming the NGA `main` branch is immutable. The output was generated `2026-10-29T19:13:59Z`.
+
+**New authoritative physical-work relationships from the NGA dataset:**
+- `nga:46035` (`1960.6.11.a`) is the structural parent of eleven other **separable** apostle panels. This is a **series of 12 distinct physical panels**, not a single work photographed twelve ways or twelve autograph Van Dycks.
+- `nga:3200` has an **inseparable** child `3201` for another painted side; `nga:41659` has inseparable child `41660`. Neither child is an additional physical panel.
+- `nga:282` links separably to parent `10` (Duccio's `Maestà` context); `nga:30` links separably to parent `206127`. Preserve the actual NGA relation instead of guessing a catalogue merge.
+- `nga:46054` is a parent with three separable component records, including accepted `nga:228926`.
+
+**Source identity and image certification are separate:** official accession verification does not identify any of these works as equal to an existing canonical-383 artwork, does not resolve the 305 Commons-origin cards, and does not prove image bytes/licence/crop/frame/colour. All user decisions stay fixed; no new artwork was promoted to production.
+
+**Revised museum-backed queue:** CMA **29** + Met **73** + NGA **126** = **228/479 (47.6%)** externally verified by official museum source pages or metadata. **251** museum-backed unlinked cards still need independent verification: KMSKA **89**, Rijksmuseum **66**, SMK **54**, Walters **42**. The accepted-to-canonical-383 crosswalk remains **72 linked source cards / 784 not yet linked**. The next step is institution-first acquisition of these 251 official records, then the 305 Commons file-to-physical-work joins.
+
+A further integrity guard was added to `scripts/art/validate-editorial-phase1-20261029.mjs` for the exact official NGA CSV hashes, 126 frozen choices and IDs, 18 object relationships and closed release gates. This **new post-report guard** requires its own CI execution after the script change; the preceding GitHub run passed the prior version of the Phase 1 validator.
