@@ -160,5 +160,7 @@ assert.match(ui,/nextScholaMusicEvent\(itinerary,current\?\.id\)/);
 assert.match(native,/scholaMusicItinerary:\(\)=>applyScholaLocalProgramme\(buildScholaMusicItinerary/);
 assert.match(native,/onScholaLocalProgrammeChange:change=>/);
 assert.doesNotMatch(ui,/onScholaAdvance\?\.\(nextScholaMusicEvent/);
+assert.match(ui,/item\.musicWindow\?\.status==="SOURCE_ANCHORS_UNVERIFIED"/);
+assert.match(native,/event\.musicWindow\?\.status==="SOURCE_ANCHORS_UNVERIFIED"/);
 assert.doesNotMatch(read("src/mass/reader-schola-event-timeline.js"),/gr1961-proper-|gregobase-|setTimeout|Date\.now|getUserMedia/);
 console.log("PASS sourced Schola itinerary, curated card anchors, conditional organ and Benedictus, no inferred musical clock");
