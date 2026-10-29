@@ -132,6 +132,8 @@ try{
      "FINISH glyph overflows its own button at "+width+"px: "+JSON.stringify(finishFit));
    assert.ok(finishFit.nextRight<=finishFit.pauseLeft+1,
      "FINISH and PAUSE controls physically overlap at "+width+"px");
+   console.log("SCHOLA_FINISH_PHONE_FIT="+JSON.stringify({width,...finishFit}));
+   await page.screenshot({path:resolve(out,"schola-finish-fit-"+width+".png"),animations:"disabled"});
    assert.equal(await page.locator("[data-schola-next]").isDisabled(),false,
      "Last Schola phrase cannot be finished from the actual reader");
    await page.locator("[data-schola-next]").click();
