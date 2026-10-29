@@ -43,6 +43,7 @@ function main(){
   for(const date of dates)for(const hour of hours){
     const latin=JSON.parse(readFileSync(join(root,date,hour.toLowerCase(),"la.research.json"),"utf8"));
     for(const locale of ["en","fr"]){
+      if(excluded.has(date+":"+hour+":"+locale))continue;
       const translation=JSON.parse(readFileSync(join(root,date,hour.toLowerCase(),locale+".research.json"),"utf8"));
       const article=renderOfficeResearchReader({latin,translation,locale,mode:"parallel"});
       const nav=hours.filter(h=>!excluded.has(date+":"+h+":"+locale)).map(h=>'<a href="'+date+'-'+h.toLowerCase()+'-'+locale+'.html">'+h+'</a>').join(" · ");
