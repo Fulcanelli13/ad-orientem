@@ -1,11 +1,8 @@
 name: P76 thirty verified exterior previews (read-only)
+# Original-byte review already completed in run 40832362448;
+# no expensive duplicate Commons fetch on later PR review commits.
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - 'data/geography/research/p76-30-exterior-preview-manifest.v1.json'
-      - 'tools/acquire-p76-thirty-exteriors.py'
-      - '.github/workflows/p76-thirty-exterior-originals.yml'
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
