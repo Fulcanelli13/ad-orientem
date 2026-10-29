@@ -19,7 +19,7 @@
     "noAutoPromotion": true,
     "authenticSourceRequired": true,
     "userArtApprovalRequired": true,
-    "notes": "These editorial outcomes are not revisions of the frozen gesture matrix's 125/17 count. Profile owned faithful postures, text-only instructions and reviewed priest candidate drawings remain independently auditable."
+    "notes": "Editorial checks at 32/48/64px on 29 October found both prior review-only SVGs unsuitable: source pose and frozen v4.6 donor-family mismatch. These are NOT permanent user rejections, and the original 142/125/17 and all other 14 dispositions remain unchanged."
   },
   "items": [
     {
@@ -73,14 +73,32 @@
     {
       "id": "GM.P.C0117.01",
       "actor": "PRIEST",
-      "disposition": "CANDIDATE_SOURCE_REVIEW",
+      "disposition": "REDESIGN_REQUIRED",
       "reviewCandidate": "assets/review/mass-icon-candidates/priest-eyes-hands-raised.svg",
       "comparisonMasterKey": "priest_centre_arms_rich",
-      "reason": "At Deus qui humanae: raised eyes AND hands must both be visible; the v4.6 rich comparator is not exact evidence of gaze.",
+      "reason": "Immediately before Veni sanctificator after In spiritu humilitatis, the priest rises, lifts eyes and both hands, and joins them promptly; existing SVG has a generic Y-pose, no discernible gaze or approved vestments at 32px.",
       "releaseAssetKey": null,
       "sourceTextRetained": true,
       "requiresUserArtApproval": true,
-      "actorSpecific": true
+      "actorSpecific": true,
+      "artworkReview": {
+        "verdict": "EDITORIAL_NOT_RELEASE_ELIGIBLE",
+        "sourceUrl": "https://www.intratext.com/IXT/LAT0820/_PI.HTM",
+        "visualInspectedAtPx": [
+          32,
+          48,
+          64
+        ],
+        "issues": [
+          "EYE_GAZE_NOT_LEGIBLE",
+          "ARMS_TOO_HIGH_GENERIC_Y",
+          "VESTMENTS_NOT_IDENTIFIABLE",
+          "V46_FAMILY_NOT_MATCHED"
+        ],
+        "candidateCanBePromoted": false,
+        "userRejection": false,
+        "redesignNeedsFreshSourceReference": true
+      }
     },
     {
       "id": "GM.P.C0155.01",
@@ -97,14 +115,31 @@
     {
       "id": "GM.P.C0161.01",
       "actor": "PRIEST",
-      "disposition": "CANDIDATE_SOURCE_REVIEW",
+      "disposition": "REDESIGN_REQUIRED",
       "reviewCandidate": "assets/review/mass-icon-candidates/priest-hands-over-oblations.svg",
       "comparisonMasterKey": "priest_centre_hands_rich",
-      "reason": "At Hanc igitur palms remain open above Host and chalice; joined hands are false.",
+      "reason": "At Hanc igitur the priest holds BOTH open palms facing and above Host and chalice until Per Christum Dominum nostrum; candidate shows one indistinct arm and unrecognizable Host/chalice at 32–48px.",
       "releaseAssetKey": null,
       "sourceTextRetained": true,
       "requiresUserArtApproval": true,
-      "actorSpecific": true
+      "actorSpecific": true,
+      "artworkReview": {
+        "verdict": "EDITORIAL_NOT_RELEASE_ELIGIBLE",
+        "sourceUrl": "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+        "visualInspectedAtPx": [
+          32,
+          48,
+          64
+        ],
+        "issues": [
+          "ONE_OPEN_PALM_NOT_CLEAR",
+          "HOST_AND_CHALICE_NOT_LEGIBLE",
+          "V46_FAMILY_NOT_MATCHED"
+        ],
+        "candidateCanBePromoted": false,
+        "userRejection": false,
+        "redesignNeedsFreshSourceReference": true
+      }
     },
     {
       "id": "GM.P.C0169.01",
@@ -217,14 +252,32 @@
     {
       "id": "GM.P.C0263.01",
       "actor": "PRIEST",
-      "disposition": "CANDIDATE_SOURCE_REVIEW",
+      "disposition": "REDESIGN_REQUIRED",
       "reviewCandidate": "assets/review/mass-icon-candidates/priest-eyes-hands-raised.svg",
       "comparisonMasterKey": "priest_centre_arms_rich",
-      "reason": "At final blessing priest raises eyes and hands before joining and inclining to Cross; candidate may be reused only for this first phase.",
+      "reason": "At the final blessing the priest raises eyes and hands, then joins them and inclines his head to the Cross; current Y-pose cannot accurately convey gaze or moderated ceremonial elevation at 32px.",
       "releaseAssetKey": null,
       "sourceTextRetained": true,
       "requiresUserArtApproval": true,
-      "actorSpecific": true
+      "actorSpecific": true,
+      "artworkReview": {
+        "verdict": "EDITORIAL_NOT_RELEASE_ELIGIBLE",
+        "sourceUrl": "https://www.intratext.com/IXT/LAT0820/_PN.HTM",
+        "visualInspectedAtPx": [
+          32,
+          48,
+          64
+        ],
+        "issues": [
+          "EYE_GAZE_NOT_LEGIBLE",
+          "ARMS_TOO_HIGH_GENERIC_Y",
+          "VESTMENTS_NOT_IDENTIFIABLE",
+          "V46_FAMILY_NOT_MATCHED"
+        ],
+        "candidateCanBePromoted": false,
+        "userRejection": false,
+        "redesignNeedsFreshSourceReference": true
+      }
     }
   ]
 }
