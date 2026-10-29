@@ -76,7 +76,7 @@ export function assembleAdventFirstVespersResearch({
     !common(sourceSequence)||sourceSequence.psalmRowsVerifiedAsSourceCandidates!==5)
   return fail("OFFICE_ADVENT_ASSEMBLY_SOURCE_SEQUENCE_REQUIRED");
  if(psalmody?.schema!==ADVENT_FIRST_VESPERS_RESEARCH_SCHEMA||
-    psalmody.status!=="FIVE_TRILINGUAL_PSALM_VERSE_COMPONENTS_UNVERIFIED"||
+    psalmody.status!=="FIVE_SATURDAY_PSALM_SEGMENTS_TRILINGUAL_UNVERIFIED"||
     !common(psalmody)||psalmody.psalmVerseComponents?.length!==5||
     psalmody.gloriaPatriVerified!==false||
     psalmody.requiredAntiphonPlacementVerified!==false)
@@ -126,9 +126,12 @@ export function assembleAdventFirstVespersResearch({
   const chap=chapterHymn.languages[lang],mag=magnificat.languages[lang],
    verse=properWitness.languages[lang];
   const ps=psalmody.psalmVerseComponents;
-  if(ps.some((item,i)=>item.psalmNumber!==109+i||
+  const saturdaySegments=[[143,"1-8"],[143,"9-15"],[144,"1-7"],[144,"8-13a"],[144,"13b-21"]];
+  if(ps.some((item,i)=>item.psalmNumber!==saturdaySegments[i][0]||
+     item.sourceRange!==saturdaySegments[i][1]||
      item.languages?.[lang]?.sourceTrace?.[0]?.sourceId!==
-      "Psalterium/Psalmorum/Psalm"+(109+i)+"#VERSES"||
+      "Psalterium/Psalmorum/Psalm"+
+      saturdaySegments[i][0]+"#"+saturdaySegments[i][1]||
      typeof item.languages?.[lang]?.antiphon!=="string"))
    return fail("OFFICE_ADVENT_ASSEMBLY_PSALM_TRACE_INCOMPLETE:"+lang);
   if(mag.canticle?.verses?.length!==10||
@@ -172,8 +175,8 @@ export function assembleAdventFirstVespersResearch({
   blockedSlot("opening","OPENING",[
    "1960_INITIAL_PATER_AVE_AND_DEUS_IN_ADJUTORIUM_APPOINTMENT"]));
  slots.push(sourceOnlySlot("five-psalmody","PSALMODY",
-  ["Psalterium/Psalmi/Psalmi major#Day0 Vespera","Tempora/Adv1-0#Ant Laudes",
-   ...[109,110,111,112,113].map(n=>"Psalterium/Psalmorum/Psalm"+n+"#VERSES")],
+  ["Psalterium/Psalmi/Psalmi major#Day6 Vespera","Tempora/Adv1-0#Ant Laudes",
+   ...[[143,"1-8"],[143,"9-15"],[144,"1-7"],[144,"8-13a"],[144,"13b-21"]].map(([n,range])=>"Psalterium/Psalmorum/Psalm"+n+"#"+range)],
   project("psalmody"),[
    "PSALM_ANTIPHON_REPETITION_AND_GLORIA_PATRI_1960"]));
  slots.push(sourceOnlySlot("chapter","CHAPTER",[
