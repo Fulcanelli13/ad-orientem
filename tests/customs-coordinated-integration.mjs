@@ -8,7 +8,7 @@ const registry=read("../data/customs/source-registry.v1.json");
 const ext=read("../data/customs/sot07-extensions.v1.json");
 const neg=read("../data/customs/negative-knowledge.v1.json");
 assert.equal(atlas.customs.length,39);
-assert.equal(atlas.attestations.length,97);
+assert.equal(atlas.attestations.length,98);
 assert.equal(registry.sources.length,108);
 assert.equal(ext.extensions.length,22);
 assert.equal(neg.entries.length,7);
