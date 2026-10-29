@@ -453,6 +453,12 @@ function open(id,opts={}){
     return true;
   }
   else if(id==='pray.divine_mercy'){view='mercy';MERCY.step=0;}
+  // Direct-entry aliases must initialize exactly like the family-card route.
+  // These three source-owned chaplets were registered in
+  // internal-route-owner.js but absent from this entry dispatcher.
+  else if(id==='pray.five_wounds'){view='fiveWounds';FIVE_WOUNDS={index:0,latin:false}}
+  else if(id==='pray.little_crown'){view='littleCrown';LITTLE_CROWN={index:0,latin:false}}
+  else if(id==='pray.precious_blood'){view='preciousBlood';PRECIOUS_BLOOD={phase:0,bead:0,latin:false,showMeditation:false}}
   else if(id==='pray.rosary_methods'){view='rosaryMethods';}
   else if(id==='pray.confession'){view='confession';CONF=freshConfessionState();}
   else if(id==='pray.benediction'){view='benediction';BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};}
