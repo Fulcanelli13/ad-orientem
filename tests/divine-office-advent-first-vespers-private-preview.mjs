@@ -38,7 +38,7 @@ function fetcher({mutate=()=>{},onRead=()=>{}}={}){
       .join("\n\n")+"\n";
    }else throw Error("not in finite witness list:"+ref);
   }
-  content=mutate(url,content)??content;
+  content=mutate(decodeURIComponent(url),content)??content;
   onRead(url);
   return {ok:true,status:200,url,text:async()=>content};
  };
