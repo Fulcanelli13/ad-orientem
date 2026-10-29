@@ -1,3 +1,4 @@
+import {calendarCustomHistoricalVariants} from "../calendar/customs-22-regional-variants.js";
 // Customs is an independent read-model over existing canonical records.
 // Historical observations are *not* promoted into published customs.
 export const CUSTOMS_YEAR_GROUPS=Object.freeze([
@@ -93,8 +94,16 @@ export function selectCustoms(library,{view="year",group=null,query=""}={}){
     if(view==="life"&&c.temporal?.group!=="life")return false;
     if(group&&c.temporal?.group!==group)return false;
     if(!q)return true;
-    return [c.id,c.name,c.family,c.title_en,c.title_fr,c.description_en,c.description_fr,
-      c.temporal?.calendar_hint,c.temporal?.group].some(x=>S(x).toLocaleLowerCase().includes(q));
+    const terms=[c.id,c.name,c.family,c.title_en,c.title_fr,c.description_en,c.description_fr,
+      c.temporal?.calendar_hint,c.temporal?.group];
+    // Historical variations are searchable by their parent record only, never
+    // surfaced as new canonical Customs cards or as Calendar events.
+    for(const fr of [false,true]){
+      for(const v of calendarCustomHistoricalVariants(c.id,{fr})){
+        terms.push(v.title,v.history,v.context_or_practice,...v.geography);
+      }
+    }
+    return terms.some(x=>S(x).toLocaleLowerCase().includes(q));
   });
 }
 export function selectResearch(library,{query="",triage="",chapter=0}={}){
