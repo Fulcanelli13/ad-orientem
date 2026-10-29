@@ -40,6 +40,7 @@ jobs:
           node --check src/office/vespers-translation-collation.js
           node --check scripts/office/audit-vespers-commemorations.mjs
           node --check scripts/office/diagnose-french-vespers-composer.mjs
+          node --check scripts/office/experiment-french-vespers-rank-guard.mjs
           node --check src/office/mass-style-research-ui.js
           node --check scripts/office/build-mass-style-preview.mjs
           node --check src/office/sung-vespers-gate.js
@@ -53,7 +54,7 @@ jobs:
           node --check scripts/office/audit-all-souls-prime-critical.mjs
           node --check scripts/office/audit-all-souls-proper-prayers.mjs
       - name: Calendar, Tenebrae and composition probe contracts
-        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-content-scope-gate.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-prime-martyrology-split.mjs tests/divine-office-printed-rubric-pilot.mjs tests/divine-office-vespers-concurrence.mjs tests/divine-office-vespers-commemorations.mjs tests/divine-office-vespers-translations.mjs tests/divine-office-translation-risk.mjs tests/divine-office-french-directive-overlay.mjs tests/divine-office-french-provenance.mjs tests/divine-office-all-souls-prime-critical.mjs tests/divine-office-all-souls-prayers.mjs
+        run: node --test tests/divine-office-phase-a.mjs tests/divine-office-composition-probe.mjs tests/divine-office-research-reader.mjs tests/divine-office-content-scope-gate.mjs tests/divine-office-native-sung.mjs tests/divine-office-mass-style-reader.mjs tests/divine-office-prime-martyrology-split.mjs tests/divine-office-printed-rubric-pilot.mjs tests/divine-office-vespers-concurrence.mjs tests/divine-office-vespers-commemorations.mjs tests/divine-office-vespers-translations.mjs tests/divine-office-french-vespers-rank-guard.mjs tests/divine-office-translation-risk.mjs tests/divine-office-french-directive-overlay.mjs tests/divine-office-french-provenance.mjs tests/divine-office-all-souls-prime-critical.mjs tests/divine-office-all-souls-prayers.mjs
       - name: Source-cell HTML normalizer unit tests
         run: python3 -m unittest discover -s tests -p 'test_divine_office_normalizer.py' -v
 
@@ -212,6 +213,25 @@ jobs:
           node scripts/office/diagnose-french-vespers-composer.mjs \
             --upstream "$UPSTREAM" --report "$OUTPUT/french-vespers-composer-diagnostic.json"
           git -C "$UPSTREAM" diff --exit-code -- web/cgi-bin/horas/specials/orationes.pl
+      - name: Compare reversible French Sunday class guard against six exact pinned source outputs
+        env:
+          UPSTREAM: ${{ runner.temp }}/divinum-officium
+          OUTPUT: ${{ runner.temp }}/ao-office-probe
+        run: |
+          node scripts/office/experiment-french-vespers-rank-guard.mjs \
+            --upstream "$UPSTREAM" \
+            --report "$OUTPUT/french-vespers-guard-experiment.json"
+          git -C "$UPSTREAM" diff --exit-code -- web/cgi-bin/horas/specials/orationes.pl
+          node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            const d=JSON.parse(readFileSync(process.env.OUTPUT+"/french-vespers-guard-experiment.json","utf8"));
+            if(d.cases.length!==6||!d.upstreamFileRestored||
+               !d.targetFrenchSecondVespersRecovered||
+               !d.otherFiveSourceOutputsUnchanged||
+               d.releaseAuthorized!==false||d.published!==0)
+               throw Error("OFFICE_FRENCH_SUNDAY_RANK_OVERLAY_EXPERIMENT_UNPROVEN");
+            console.log("Research source overlay recovered only 1 Nov French II Vespers; 5 other outputs byte-identical, 0 published.");
+          '
       - name: Assert normalization manifest coverage (no publication)
         env:
           OUTPUT: ${{ runner.temp }}/ao-office-probe
