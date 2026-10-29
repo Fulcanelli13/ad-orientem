@@ -703,8 +703,10 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 
 /* B38: private historical Litany only. The 1883 English and 1862 French
    invocations are source-owned, not a certified 1962 public rite. */
-#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"] .aoBatch03LitanyUses{
- display:flex;flex-wrap:nowrap;gap:7px;
+/* The shared dual-axis rule hides redundant GuideNav chapter controls.
+   This one GuideNav is *edition choice*, not a duplicate chapter navigator. */
+#aoPray435930 .aoP435930DevotionalGuidedReader[data-ao-devotional-owner="litany"][data-ao-devotional-dual-axis="true"] .aoBatch03LitanyUses{
+ display:flex!important;flex-wrap:nowrap;gap:7px;
  max-width:100%;min-width:0;overflow-x:auto;overscroll-behavior-x:contain;
  scroll-snap-type:x proximity;padding:4px 3px 9px;margin:0 0 4px;
  scrollbar-width:thin;
