@@ -1,0 +1,69 @@
+{
+  "schema": "AO_B10_FRESH_SOURCE_PROBE_V1",
+  "date": "2026-10-29",
+  "requests": [
+    {
+      "name": "getty_sparql",
+      "url": "https://data.getty.edu/museum/collection/sparql?query=SELECT+%2A+WHERE+%7B+%3Fs+%3Fp+%3Fo+%7D+LIMIT+1",
+      "error": "HTTPError: HTTP Error 401: Unauthorized"
+    },
+    {
+      "name": "met_full_dept",
+      "url": "https://collectionapi.metmuseum.org/public/collection/v1.1/search?departmentId=11&hasImages=true&limit=10",
+      "http": 200,
+      "mime": "application/json",
+      "previewBytes": 99,
+      "total": 2724,
+      "ids": [
+        189655,
+        189656,
+        435570,
+        435572,
+        435573,
+        435574
+      ],
+      "keys": [
+        "total",
+        "objectIDs"
+      ]
+    },
+    {
+      "name": "met_filter_only_plus_type",
+      "url": "https://collectionapi.metmuseum.org/public/collection/v1.1/search?departmentId=11&hasImages=true&medium=Paintings&limit=10",
+      "http": 200,
+      "mime": "application/json",
+      "previewBytes": 99,
+      "total": 2644,
+      "ids": [
+        189656,
+        435570,
+        435572,
+        435573,
+        435574,
+        435575
+      ],
+      "keys": [
+        "total",
+        "objectIDs"
+      ]
+    },
+    {
+      "name": "getty_collection_ui",
+      "url": "https://www.getty.edu/art/collection/search/?q=Christ",
+      "http": 200,
+      "mime": "text/html; charset=utf-8",
+      "previewBytes": 9098,
+      "head": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"/><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\""
+    },
+    {
+      "name": "mia_picture_sample",
+      "url": "https://1.api.artsmia.org/1578/medium.jpg",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "mia_picture_old_host",
+      "url": "https://api.artsmia.org/images/1578/medium.jpg",
+      "error": "URLError: <urlopen error timed out>"
+    }
+  ]
+}
