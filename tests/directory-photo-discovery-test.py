@@ -77,6 +77,16 @@ class PhotoDiscoveryTests(unittest.TestCase):
         self.assertIsNone(chosen)
         self.assertGreater(mod.geo_distance_m((0,0),(0,1)),100000)
 
+
+    def test_visual_subject_filter(self):
+        self.assertTrue(mod.unsuitable_photo_subject(
+            "Engraving of the Brussels Minim convent", "Printed in 1727"))
+        self.assertTrue(mod.unsuitable_photo_subject(
+            "Former Minim convent during demolition", "Brussels"))
+        self.assertFalse(mod.unsuitable_photo_subject(
+            "Bruxelles Saints-Jean et Etienne aux Minimes.jpg", "Church exterior"))
+        self.assertFalse(mod.unsuitable_photo_subject(
+            "High altar of the Minimes", "Photograph of a church altar"))
     def test_structured_categorization_and_hold(self):
         v={"name":"St Benedict Church","locality":"","country":"AU",
            "lat":-33.619096,"lng":151.0455178,"precision":"building"}

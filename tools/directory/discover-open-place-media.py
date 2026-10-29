@@ -139,6 +139,20 @@ def match_score(name, locality, title, description) -> float:
     # This is discovery ordering, NOT an identity certification.
     return round(min(1.0, hit * 0.78 + (0.22 if local_match else 0.0)), 3)
 
+def unsuitable_photo_subject(title, description):
+    """Block obvious scans/drawings and no-longer-standing buildings from a
+    visitor-photo shortlist. Other evidence stays HOLD for visual review.
+    """
+    corpus = " " + " ".join(words(title + " " + description)) + " "
+    bad_phrases = (
+        " engraving ", " etching ", " lithograph ", " drawing ", " sketch ",
+        " gravure ", " gravering ", " woodcut ", " aquatint ", " plan view ",
+        " postcard ", " carte postale ", " dessin ",
+        " convent during demolition ", " demolition of the convent ",
+        " former convent during demolition ", " historic map ",
+    )
+    return any(phrase in corpus for phrase in bad_phrases)
+
 def classify_evidence(kind, title, description):
     tokens = set(words(title + " " + description))
     signal = {
@@ -242,12 +256,20 @@ def wikidata_photo_identity(client, venue):
     if latlng is None:
         return {"state": "NO_SOURCE_COORDINATES"}, None
     name = plain(venue["name"])[:120]
-    results = client.request({
-        "action": "wbsearchentities", "format": "json", "language": "en",
-        "type": "item", "search": name, "limit": 7,
-    }, endpoint=WIKIDATA_API)
-    ids = [row.get("id") for row in results.get("search", [])
-           if re.fullmatch(r"Q[1-9]\d*", str(row.get("id") or ""))]
+    variants = [name]
+    short_name = re.sub(r"\s*\([^)]*\)", "", name).strip()
+    if short_name != name and len(short_name) >= 8:
+        variants.append(short_name)
+    ids = []
+    for variant in variants:
+        results = client.request({
+            "action": "wbsearchentities", "format": "json", "language": "en",
+            "type": "item", "search": variant, "limit": 7,
+        }, endpoint=WIKIDATA_API)
+        ids.extend(row.get("id") for row in results.get("search", [])
+                   if re.fullmatch(r"Q[1-9]\d*", str(row.get("id") or "")))
+        if ids:  # Another search is worthwhile only if there was no exact hit.
+            break
     ids = list(dict.fromkeys(ids))
     if not ids:
         return {"state": "NO_WIKIDATA_SEARCH_HITS", "search_term": name}, None
@@ -308,6 +330,8 @@ def candidate_from_page(page, venue, kind, *, discovery_method, entity_id=None):
         return None
     title = str(page.get("title") or "")
     description = metadata(info, "ImageDescription")[:1800]
+    if unsuitable_photo_subject(title, description):
+        return None
     location_signal = country_signal(venue["country"], title, description)
     if location_signal == "FOREIGN_COUNTRY_MENTIONED":
         return None
@@ -349,28 +373,30 @@ def structured_discovery(client, venue):
     pages = []
     if match.get("image"):
         try:
-            pages.extend(commons_pages(client, {"titles": "File:" + match["image"]}))
+            pages.extend((page, "WIKIDATA_P18") for page in
+                         commons_pages(client, {"titles": "File:" + match["image"]}))
         except (urllib.error.URLError, ValueError, KeyError, TimeoutError):
             info["image_fetch_error"] = "COMMONS_P18_METADATA_UNAVAILABLE"
     if match.get("category"):
         category = str(match["category"])[:140]
         if not re.search(r"[\[\]{}|<>\n\r]", category):
             try:
-                pages.extend(commons_pages(client, {
+                pages.extend((page, "WIKIDATA_COMMONS_CATEGORY") for page in
+                             commons_pages(client, {
                     "generator": "categorymembers", "gcmtitle": "Category:" + category,
                     "gcmtype": "file", "gcmlimit": 40, "gcmnamespace": 6,
                 }))
             except (urllib.error.URLError, ValueError, KeyError, TimeoutError):
                 info["category_fetch_error"] = "COMMONS_CATEGORY_UNAVAILABLE"
     seen = set()
-    for page in pages:
+    for page, method in pages:
         title = page.get("title")
         if not title or title in seen:
             continue
         seen.add(title)
         for kind in CATEGORIES:
             c = candidate_from_page(page, venue, kind,
-                                    discovery_method="WIKIDATA_P18_OR_EXACT_COMMONS_CATEGORY",
+                                    discovery_method=method,
                                     entity_id=match["qid"])
             if not c:
                 continue
@@ -380,6 +406,7 @@ def structured_discovery(client, venue):
     for kind, values in out.items():
         values.sort(key=lambda x: (
             x["category_evidence"] != "CATEGORY_TEXT_MATCH",
+            x["discovery_method"] != "WIKIDATA_P18",
             -x["discovery_score_only"], -(x["width"] * x["height"]), x["commons_title"]))
         out[kind] = values[:MAX_CANDIDATES_PER_CATEGORY]
     return info, out
