@@ -1,0 +1,118 @@
+{
+  "schema": "Rijks-EDM-object-rights-probe-v1",
+  "date": "2026-10-29",
+  "imageDownloaded": false,
+  "records": [
+    {
+      "id": "200109177",
+      "profiles": [
+        {
+          "profile": "edm-framed",
+          "type": "application/ld+json",
+          "characters": 13456,
+          "rightsUris": [
+            "http://creativecommons.org/publicdomain/mark/1.0/"
+          ],
+          "textHead": "{\n  \"@context\": \"https://www.europeana.eu/schemas/context/edm.jsonld\",\n  \"id\": \"https://id.rijksmuseum.nl/200109177#aggregation\",\n  \"type\": \"Aggregation\",\n  \"aggregatedCHO\": {\n    \"id\": \"https://id.rijksmuseum.nl/200109177\",\n    \"type\": \"ProvidedCHO\",\n    \"created\": [\n      {\n        \"@language\": \"en\",\n        \"@value\": \"1583 - 1585\"\n      },\n      {\n        \"@language\": \"nl\",\n        \"@value\": \"1583 - 1585\"\n      }\n    ],\n    \"creator\": [\n      {\n        \"id\": \"https://id.rijksmuseum.nl/2102399\",\n        \"type\": \"edm:Agent\",\n        \"http://rdvocab.info/ElementsGr2/dateOfBirth\": {\n          \"",
+          "keys": [
+            "@context",
+            "id",
+            "type",
+            "aggregatedCHO",
+            "dataProvider",
+            "edmRights",
+            "isShownAt",
+            "isShownBy",
+            "object",
+            "provider"
+          ],
+          "edmRightsValues": []
+        },
+        {
+          "profile": "edm",
+          "type": "application/rdf+xml",
+          "characters": 10744,
+          "rightsUris": [
+            "http://creativecommons.org/publicdomain/mark/1.0/"
+          ],
+          "textHead": "<rdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:dcterms=\"http://purl.org/dc/terms/\" xmlns:edm=\"http://www.europeana.eu/schemas/edm/\" xmlns:ore=\"http://www.openarchives.org/ore/terms/\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:rdaGr2=\"http://rdvocab.info/ElementsGr2/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:skos=\"http://www.w3.org/2004/02/skos/core#\" xmlns:svcs=\"http://rdfs.org/sioc/services#\">\n  <ore:Aggregation rdf:about=\"https://id.rijksmuseum.nl/200109177#aggregation\">\n    <edm:aggregatedCHO rdf:resource=\"https://id.rijksmuseum.nl/200109177\"/>\n    <ed",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "id": "20025782",
+      "profiles": [
+        {
+          "profile": "edm-framed",
+          "type": "application/ld+json",
+          "characters": 10935,
+          "rightsUris": [
+            "http://creativecommons.org/publicdomain/mark/1.0/"
+          ],
+          "textHead": "{\n  \"@context\": \"https://www.europeana.eu/schemas/context/edm.jsonld\",\n  \"id\": \"https://id.rijksmuseum.nl/20025782#aggregation\",\n  \"type\": \"Aggregation\",\n  \"aggregatedCHO\": {\n    \"id\": \"https://id.rijksmuseum.nl/20025782\",\n    \"type\": \"ProvidedCHO\",\n    \"created\": [\n      {\n        \"@language\": \"en\",\n        \"@value\": \"1660 - 1680\"\n      },\n      {\n        \"@language\": \"nl\",\n        \"@value\": \"1660 - 1680\"\n      }\n    ],\n    \"creator\": [\n      {\n        \"id\": \"https://id.rijksmuseum.nl/2101122\",\n        \"type\": \"edm:Agent\",\n        \"http://rdvocab.info/ElementsGr2/dateOfBirth\": {\n          \"@l",
+          "keys": [
+            "@context",
+            "id",
+            "type",
+            "aggregatedCHO",
+            "dataProvider",
+            "edmRights",
+            "isShownAt",
+            "isShownBy",
+            "object",
+            "provider"
+          ],
+          "edmRightsValues": []
+        },
+        {
+          "profile": "edm",
+          "type": "application/rdf+xml",
+          "characters": 8679,
+          "rightsUris": [
+            "http://creativecommons.org/publicdomain/mark/1.0/"
+          ],
+          "textHead": "<rdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:dcterms=\"http://purl.org/dc/terms/\" xmlns:edm=\"http://www.europeana.eu/schemas/edm/\" xmlns:edmfp=\"http://www.europeanafashion.eu/edmfp/\" xmlns:ore=\"http://www.openarchives.org/ore/terms/\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:rdaGr2=\"http://rdvocab.info/ElementsGr2/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:skos=\"http://www.w3.org/2004/02/skos/core#\" xmlns:svcs=\"http://rdfs.org/sioc/services#\">\n  <ore:Aggregation rdf:about=\"https://id.rijksmuseum.nl/20025782#aggregation\">\n    <edm:aggregatedCHO rdf:resou",
+          "keys": []
+        }
+      ]
+    },
+    {
+      "id": "20028546",
+      "profiles": [
+        {
+          "profile": "edm-framed",
+          "type": "application/ld+json",
+          "characters": 11097,
+          "rightsUris": [
+            "http://creativecommons.org/publicdomain/mark/1.0/"
+          ],
+          "textHead": "{\n  \"@context\": \"https://www.europeana.eu/schemas/context/edm.jsonld\",\n  \"id\": \"https://id.rijksmuseum.nl/20028546#aggregation\",\n  \"type\": \"Aggregation\",\n  \"aggregatedCHO\": {\n    \"id\": \"https://id.rijksmuseum.nl/20028546\",\n    \"type\": \"ProvidedCHO\",\n    \"created\": [\n      {\n        \"@language\": \"en\",\n        \"@value\": \"1550 - 1580\"\n      },\n      {\n        \"@language\": \"nl\",\n        \"@value\": \"1550 - 1580\"\n      }\n    ],\n    \"creator\": [\n      {\n        \"id\": \"https://id.rijksmuseum.nl/2101471\",\n        \"type\": \"edm:Agent\",\n        \"http://rdvocab.info/ElementsGr2/dateOfBirth\": {\n          \"@l",
+          "keys": [
+            "@context",
+            "id",
+            "type",
+            "aggregatedCHO",
+            "dataProvider",
+            "edmRights",
+            "isShownAt",
+            "isShownBy",
+            "object",
+            "provider"
+          ],
+          "edmRightsValues": []
+        },
+        {
+          "profile": "edm",
+          "type": "application/rdf+xml",
+          "characters": 8458,
+          "rightsUris": [
+            "http://creativecommons.org/publicdomain/mark/1.0/"
+          ],
+          "textHead": "<rdf:RDF xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:dcterms=\"http://purl.org/dc/terms/\" xmlns:edm=\"http://www.europeana.eu/schemas/edm/\" xmlns:mrel=\"http://id.loc.gov/vocabulary/relators/\" xmlns:ore=\"http://www.openarchives.org/ore/terms/\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:rdaGr2=\"http://rdvocab.info/ElementsGr2/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:skos=\"http://www.w3.org/2004/02/skos/core#\" xmlns:svcs=\"http://rdfs.org/sioc/services#\">\n  <ore:Aggregation rdf:about=\"https://id.rijksmuseum.nl/20028546#aggregation\">\n    <edm:aggregatedCHO rdf:resou",
+          "keys": []
+        }
+      ]
+    }
+  ]
+}
