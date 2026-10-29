@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'src/office/annual-readiness-register.js'
+      - 'src/office/source-section-resolver.js'
+      - 'tests/divine-office-source-section-resolver.mjs'
       - 'src/office/annual-capture-ledger.js'
       - 'scripts/office/emit-annual-capture-ledger.mjs'
       - 'tests/divine-office-annual-capture-ledger.mjs'
@@ -27,6 +29,8 @@ jobs:
       - name: Compile-time and completeness contracts
         run: |
           node --check src/office/annual-readiness-register.js
+          node --check src/office/source-section-resolver.js
+          node --test tests/divine-office-source-section-resolver.mjs
           node --check src/office/annual-capture-ledger.js
           node --check scripts/office/emit-annual-capture-ledger.mjs
           node --test tests/divine-office-annual-capture-ledger.mjs
