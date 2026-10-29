@@ -66,9 +66,14 @@ export async function composeOfficeHourDraft({resolver,selection}={}){
          typeof item.sourceId==="string"&&
          item.language===lang))))
       throw Error("OFFICE_DRAFT_REFERENCE_TRACE_UNTRUSTED");
+    const psalmVersesOnly=source.psalmVersesExpandedWithoutDoxology===true;
+    if(psalmVersesOnly&&source.psalmDoxologyAndAntiphonVerified!==false)
+      throw Error("OFFICE_DRAFT_PSALM_LITURGICAL_METADATA_UNTRUSTED");
     return Object.freeze({key:ref.key,role:ref.role,sourceId:source.sourceId,
       texts:source.texts,
       ...(traces===null?{}:{referenceTraces:traces}),
+      psalmVersesExpandedWithoutDoxology:psalmVersesOnly,
+      psalmDoxologyAndAntiphonVerified:false,
       alignmentVerified:false});
   });
   return Object.freeze({
@@ -76,6 +81,8 @@ export async function composeOfficeHourDraft({resolver,selection}={}){
     date:selection.date,hour:selection.hour,officeKey:selection.officeKey,
     sourceRevision:DIVINUM_OFFICIUM_PIN,status:"STRUCTURED_UNVERIFIED",
     sections:Object.freeze(sections),sectionCount:sections.length,
+    psalmVerseOnlyComponentCount:sections.filter(s=>s.psalmVersesExpandedWithoutDoxology).length,
+    psalmDoxologyAndAntiphonVerified:false,
     // These are independent release gates, not proven by parsing.
     officePrecedenceVerified:false,officeCompletenessVerified:false,
     languagesAligned:false,printedEditionCertified:false,
