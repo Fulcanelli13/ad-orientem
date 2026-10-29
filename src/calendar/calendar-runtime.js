@@ -717,17 +717,21 @@ function disciplineReference(discipline){
   </details>`;
 }
 
-function customsHistoricalVariantPreviewEnabled(){
-  // Explicit, per-page editorial switch. Off in ordinary Calendar sessions.
-  // Not a user location preference and never authorizes publication.
-  try{return new URLSearchParams(globalThis.location?.search||"").get("customsVariantsReview")==="1"}
-  catch{return false}
+// Historical observations are additional *context* inside existing published
+// Customs, never independent Calendar entries or claims of current local practice.
+// One code-level release switch provides an immediate reversible gate.
+const CUSTOMS_HISTORICAL_PARENT_CONTEXT_RELEASE = true;
+function customsHistoricalVariantContextEnabled(){
+  if(!CUSTOMS_HISTORICAL_PARENT_CONTEXT_RELEASE)return false;
+  // An explicit off switch is provided for baseline/rollout QA only.
+  try{return new URLSearchParams(globalThis.location?.search||"").get("customsHistorical")!=="off"}
+  catch{return true}
 }
 
 function calendarCustomArticleMarkup(article){
   const isFr=fr(),lang=isFr?"fr":"en",Lcopy=(en,frText)=>isFr?frText:en;
   const sources=article.sources||[],historySources=article.history_sources||[],supportingSources=article.supporting_sources||[];
-  const historicalVariantPreview=customsHistoricalVariantPreviewEnabled()?calendarCustomHistoricalVariantPreview(article.id,{fr:isFr}):[];
+  const historicalVariantPreview=customsHistoricalVariantContextEnabled()?calendarCustomHistoricalVariantPreview(article.id,{fr:isFr}):[];
   return `<details class="aoCalCustomArticle" data-cal-custom-id="${esc(article.id)}">
     <summary><span><strong>${esc(article.title[lang])}</strong><small>${esc(article.occasion[lang]||"")}</small></span><span aria-hidden="true">›</span></summary>
     <div class="aoCalCustomArticleContent">
@@ -740,12 +744,11 @@ function calendarCustomArticleMarkup(article){
       ${historySources.length?`<h5>${esc(Lcopy("Historical sources","Sources historiques"))}</h5><ul>${historySources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a></li>`).join("")}</ul>`:""}
       ${supportingSources.length?`<h5>${esc(Lcopy("Supporting documentation","Documentation complémentaire"))}</h5><ul>${supportingSources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a></li>`).join("")}</ul>`:""}
       ${historicalVariantPreview.length?`<section class="aoCalCustomHistoricalVariants" data-cal-customs-variants-preview="${esc(article.id)}">
-        <h5>${esc(Lcopy("Editorial preview · historical regional examples","Aperçu éditorial · exemples historiques régionaux"))}</h5>
-        <p>${esc(Lcopy("Research drafts only. These examples are optional historical accounts, not proof of a current local custom, a new liturgical rule, a clergy blessing for lay use, or an indulgence.","Brouillons de recherche. Ces exemples historiques facultatifs n'attestent ni une coutume locale actuelle, ni une nouvelle règle liturgique, ni une bénédiction sacerdotale à accomplir par les laïcs, ni une indulgence."))}</p>
+        <h5>${esc(Lcopy("Historical regional examples · 1958","Exemples régionaux historiques · 1958"))}</h5>
+        <p>${esc(Lcopy("These historical descriptions concern particular communities. They do not establish present-day local practice, an announced parish event, a liturgical obligation, permission to perform a priestly blessing, or an indulgence.","Ces témoignages historiques concernent des communautés particulières. Ils ne prouvent ni un usage local actuel, ni une cérémonie paroissiale annoncée, ni une obligation liturgique, ni le droit d'accomplir une bénédiction sacerdotale, ni une indulgence."))}</p>
         ${historicalVariantPreview.map(variant=>`<details class="aoCalCustomHistoricalVariant" data-cal-custom-variant="${esc(variant.id)}">
           <summary><strong>${esc(variant.title)}</strong><small>${esc(variant.historical_region)}</small></summary>
           <p>${esc(variant.history)}</p>
-          <p>${esc(variant.optional_practice)}</p>
           <p>${esc(variant.caution)}</p>
           <small>${esc(Lcopy("Historical source","Source historique"))}: <a href="${esc(variant.source.url)}" target="_blank" rel="noopener noreferrer">${esc(variant.source.book)} · p. ${variant.source.printed_page}</a></small>
         </details>`).join("")}
@@ -1214,7 +1217,8 @@ function hybridMonthCss(){return `
  .aoCalCustomHistoricalVariants>p{opacity:.82}
  .aoCalCustomHistoricalVariant{border:1px solid rgba(227,212,187,.14);border-radius:7px;padding:8px 12px;margin:8px 0}
  .aoCalCustomHistoricalVariant>summary{cursor:pointer;display:flex;flex-wrap:wrap;gap:4px 9px;align-items:baseline}
- .aoCalCustomHistoricalVariant>summary small{opacity:.75}
+ .aoCalCustomHistoricalVariant>summary small{opacity:.75;overflow-wrap:anywhere}
+ .aoCalCustomHistoricalVariant a{overflow-wrap:anywhere}
  
 .aoCalCustomArticle{border-bottom:1px solid rgba(227,212,187,.12)}
 .aoCalCustomArticle summary{display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;min-height:56px;padding:9px 1px}
