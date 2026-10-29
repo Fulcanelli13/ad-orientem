@@ -44,10 +44,10 @@ export function sourceFeatures(raw,language){
   // into "P ardonnez" and falsely report the prayer missing. Preserve
   // inline word boundaries; separate only structural/block/BR tags.
   const text=fold(raw)
-    .replace(/<br\\s*\\/?>|<\\/(?:p|div|td|tr|h[1-6])>/g,"\\n")
+    .replace(/<br\s*\/?>|<\/(?:p|div|td|tr|h[1-6])>/g,"\n")
     .replace(/<[^>]+>/g,"")
     .replace(/&nbsp;|&#160;|&#x[a-f0-9]+;/gi," ")
-    .replace(/[ \\t]+/g," ");
+    .replace(/[ \t]+/g," ");
   const antiphon=language==="fr"?/jesus\s*,?\s*se retournant/.test(text):
     language==="en"?/but jesus turned him about/.test(text):
     /at (?:jesus|iesus) conversus/.test(text);
