@@ -32,7 +32,9 @@
     "acceptedAlreadyIn281ResearchCandidateRegistry": 74,
     "acceptedUnlinkedButAlreadyIn281ResearchCandidateRegistry": 11,
     "weakTextualWorkIdentityLeadsForReview": 13,
-    "confirmedCanonicalArtRecordsProductionImageApproved": 0
+    "confirmedCanonicalArtRecordsProductionImageApproved": 0,
+    "weakTextualWorkIdentityLeadsReviewed": 13,
+    "weakTextualWorkIdentityLeadsStillUnresolved": 5
   },
   "shards": [
     {
@@ -18407,6 +18409,12 @@
     "mergesPerformed": 0,
     "photoOrRightsApproval": false,
     "warning": "11 of 784 not yet linked are also already in the separate 281-row research candidate registry; that staging presence does not prove identity with locked canonical 383.",
-    "conserveUserDecisions": true
+    "conserveUserDecisions": true,
+    "weakLeadTriage": "data/calendar/sacred-art-phase1-weak-identity-13-triage-20261029.v1.json",
+    "weakLeadTriageCounts": {
+      "distinctOtherObjectOrSubject": 8,
+      "unresolvedMuseumIdentityEvidence": 5,
+      "promotedLinks": 0
+    }
   }
 }
