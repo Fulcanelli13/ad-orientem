@@ -379,6 +379,8 @@ try{
  assert.equal(await dp.locator("#office-date").inputValue(),"2026-11-28");
  assert.equal(await dp.locator("#office-hour").inputValue(),"VESPERS");
  await dp.locator("#office-hour").selectOption("COMPLINE");
+ await dp.waitForFunction(()=>document.querySelector("#office-title")?.textContent?.includes("Saturday Compline"),
+  null,{timeout:15000});
  await dp.locator("#reader").waitFor({state:"visible",timeout:35000});
  assert.match(await dp.locator("#office-title").innerText(),/Saturday Compline/);
  assert.match(await dp.locator("#status").innerText(),/Source-first research preview/);
@@ -405,6 +407,7 @@ try{
  assert.equal(await dp.locator("#next").isDisabled(),true);
  await dp.locator('[data-view="focus"]').click();
  await dp.locator("#office-hour").selectOption("VESPERS");
+ await dp.waitForFunction(()=>document.querySelector("#office-title")?.textContent?.includes("First Vespers"),null,{timeout:15000});
  await dp.locator("#reader").waitFor({state:"visible",timeout:10000});
  await dp.locator("#office-date").fill("2026-11-29");
  await dp.locator("#office-date").dispatchEvent("change");
@@ -461,6 +464,7 @@ try{
    assert.match(await lp.locator("#status").innerText(),/Source-first research preview available|Source preview assembled/);
    await shot(lp,"14-mobile-390-live-pinned-sources");
    await lp.locator("#office-hour").selectOption("COMPLINE");
+   await lp.waitForFunction(()=>document.querySelector("#office-title")?.textContent?.includes("Saturday Compline"),null,{timeout:15000});
    await lp.locator("#reader").waitFor({state:"visible",timeout:90000});
    assert.match(await lp.locator("#office-title").innerText(),/Saturday Compline/);
    await shot(lp,"23-mobile-390-live-saturday-compline-sources");
