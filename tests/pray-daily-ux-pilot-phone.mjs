@@ -28,7 +28,7 @@ try{
   const errors=[];page.on("pageerror",e=>errors.push(e.message));
   try{
    const origin="http://127.0.0.1:"+server.address().port;
-   await page.goto(origin+"/index.html?aoDailyUxPilot=1",{waitUntil:"domcontentloaded",timeout:90000});
+   await page.goto(origin+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:40000});
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
    const opened=await page.evaluate(()=>globalThis.AO_MODULES.open("pray.morning_evening"));
@@ -96,7 +96,7 @@ try{
  const frenchErrors=[];frPage.on("pageerror",e=>frenchErrors.push(e.message));
  try{
   const origin="http://127.0.0.1:"+server.address().port;
-  await frPage.goto(origin+"/index.html?aoDailyUxPilot=1",{waitUntil:"domcontentloaded",timeout:90000});
+  await frPage.goto(origin+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
   await frPage.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().installed===true&&typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:40000});
   await frPage.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("settings"));
   await frPage.waitForSelector('#ao-settings-modular-root [data-settings-route="/settings/language-reading"]',{timeout:20000});
@@ -129,6 +129,21 @@ try{
   assert.deepEqual(frenchErrors,[],"French pilot errors: "+frenchErrors.join("; "));
   console.log("PASS French 320px: complete source prayer text and edition selector fit without horizontal overflow");
  }finally{await frPage.close()}
+ // Explicit legacy rollback must remain possible without changing saved prayer rules.
+ const rollback=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,serviceWorkers:"block"});
+ try{
+  const origin="http://127.0.0.1:"+server.address().port;
+  await rollback.goto(origin+"/index.html?aoDailyUxPilot=0",{waitUntil:"domcontentloaded",timeout:90000});
+  await rollback.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:40000});
+  assert.equal(await rollback.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
+  assert.notEqual(await rollback.evaluate(()=>globalThis.AO_MODULES.open("pray.morning_evening")),false);
+  await rollback.waitForSelector("#aoPray435930.open .aoDailyAccessNav",{timeout:20000});
+  assert.equal(await rollback.locator("#aoPray435930.open .aoDailyBookSelector").count(),0,
+    "Rollback must restore the pre-book-first reader without altering source texts");
+  assert.equal(await rollback.locator("#aoPray435930.open [data-tp381-personal-action='edition']").count(),2,
+    "Legacy edition settings remain available in Customize");
+  console.log("PASS rollback query: legacy daily navigation preserved");
+ }finally{await rollback.close()}
 }finally{
  await browser?.close();
  await new Promise(ok=>server.close(ok));
