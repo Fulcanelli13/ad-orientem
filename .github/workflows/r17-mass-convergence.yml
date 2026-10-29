@@ -88,6 +88,8 @@ jobs:
       - name: Certify Requiem choir posture source cues in LIVE and Missal on phones
         run: node tests/reader-requiem-choir-posture-phone.mjs
       - run: npm run test:phone-curated65
+      - name: Certify 1962 Memento and minor elevation rubrics in LIVE and Missal at phone widths
+        run: node tests/mass-1962-memento-minor-phone.mjs
       # Independently certify Ordinary priest/Schola separation. The broad
       # npm run test:phone sequence can stop earlier on non-Mass regressions;
       # it must not hide an Agnus/Gloria/Creed renderer failure.
@@ -113,6 +115,14 @@ jobs:
           path: artifacts/curated65-phone/*.png
           if-no-files-found: ignore
           retention-days: 7
+      - name: Retain exact 1962 Memento and minor-elevation phone evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1962-memento-minor-phone
+          path: artifacts/mass-1962-memento-minor-phone/
+          if-no-files-found: warn
+          retention-days: 14
       - name: Retain bilingual Missal book-view phone evidence
         if: always()
         uses: actions/upload-artifact@v4
