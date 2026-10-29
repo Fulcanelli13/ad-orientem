@@ -1,0 +1,26 @@
+name: Directory P99 four exact building Place links
+on:
+  pull_request:
+    paths:
+      - data/geography/seed-registry.v1.json
+      - data/shrines/source-registry.v1.json
+      - data/geography/research/sacred-places-p99-four-exact-directory-churches.v1.json
+      - data/geography/research/directory-place-photo-screen-p92-20261029.v1.json
+      - data/geography/sacred-places-live-release-chain.v1.json
+      - data/directory/research/p100-four-p99-photo-preview-release-holds-20261029.json
+      - tests/directory-p99-four-exact-church-place-links.mjs
+      - .github/workflows/directory-p99-four-church-place-links.yml
+permissions:
+  contents: read
+jobs:
+  exact-site-and-photo-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/directory-p99-four-exact-church-place-links.mjs

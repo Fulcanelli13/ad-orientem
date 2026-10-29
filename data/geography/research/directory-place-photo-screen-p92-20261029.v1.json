@@ -11,16 +11,16 @@
   "policy": "Nearby coordinates or name overlaps never certify the same physical worship building. No link, source, image or calendar publication may be inferred.",
   "counts": {
     "venues_screened": 1879,
-    "canonical_places": 518,
-    "confirmed_links": 11,
-    "approved_covers": 31,
+    "canonical_places": 522,
+    "confirmed_links": 15,
+    "approved_covers": 33,
     "approved_gallery_images": 33,
-    "within_350m_pairs": 42,
-    "venues_near_place": 39,
-    "pairs_within_100m": 18,
-    "high_name_geo_pairs": 8,
-    "nearby_approved_photo_pairs": 7,
-    "exact_confirmed_photo_joins": 0,
+    "within_350m_pairs": 46,
+    "venues_near_place": 43,
+    "pairs_within_100m": 22,
+    "high_name_geo_pairs": 12,
+    "nearby_approved_photo_pairs": 9,
+    "exact_confirmed_photo_joins": 2,
     "published_new_links": 0,
     "published_new_photos": 0
   },
@@ -28,7 +28,7 @@
     {
       "offset": 0,
       "limit": 200,
-      "nearby_venues": 9,
+      "nearby_venues": 12,
       "nearby_approved_photo_venues": 0
     },
     {
@@ -64,14 +64,14 @@
     {
       "offset": 1200,
       "limit": 200,
-      "nearby_venues": 5,
-      "nearby_approved_photo_venues": 1
+      "nearby_venues": 6,
+      "nearby_approved_photo_venues": 2
     },
     {
       "offset": 1400,
       "limit": 200,
       "nearby_venues": 1,
-      "nearby_approved_photo_venues": 0
+      "nearby_approved_photo_venues": 1
     },
     {
       "offset": 1600,
@@ -173,6 +173,40 @@
       "auto_publish": false
     },
     {
+      "directory_record_index": 66,
+      "venue_id": "ao-fssp-eglise-saint-bruno-place-du-11-novembre-f-33000-bordeaux-france",
+      "venue_name": "Eglise Saint-Bruno",
+      "country": "FR",
+      "venue_source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/directory/generated/fssp/geo.v1.geojson",
+      "venue_pin_precision": "street",
+      "place_id": "place:FR:saint-bruno-bordeaux",
+      "place_name": "Église Saint-Bruno de Bordeaux",
+      "place_source_url": "https://www.openstreetmap.org/way/115526560",
+      "place_pin_precision": "site",
+      "distance_m": 64.9,
+      "name_overlap": 1,
+      "place_has_approved_photo": false,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "auto_publish": false
+    },
+    {
+      "directory_record_index": 80,
+      "venue_id": "ao-fssp-chapelle-saint-louis-de-gonzague-place-saint-louis-de-gonzague-f-64000-pau-france",
+      "venue_name": "Chapelle Saint-Louis-de-Gonzague",
+      "country": "FR",
+      "venue_source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/directory/generated/fssp/geo.v1.geojson",
+      "venue_pin_precision": "street",
+      "place_id": "place:FR:saint-louis-de-gonzague-pau",
+      "place_name": "Église Saint-Louis-de-Gonzague de Pau",
+      "place_source_url": "https://www.openstreetmap.org/way/62885578",
+      "place_pin_precision": "site",
+      "distance_m": 26.6,
+      "name_overlap": 1,
+      "place_has_approved_photo": false,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "auto_publish": false
+    },
+    {
       "directory_record_index": 106,
       "venue_id": "ao-fssp-ermitage-notre-dame-de-bermont-chapelle-notre-dame-de-bermont-f-88630-greux-france",
       "venue_name": "Ermitage Notre-Dame de Bermont",
@@ -184,6 +218,23 @@
       "place_source_url": "https://mapcarta.com/fr/W161619740",
       "place_pin_precision": "site",
       "distance_m": 0.8,
+      "name_overlap": 1,
+      "place_has_approved_photo": false,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "auto_publish": false
+    },
+    {
+      "directory_record_index": 117,
+      "venue_id": "ao-fssp-chiesa-di-san-canziano-via-s-canziano-9-i-35100-padova-italia",
+      "venue_name": "Chiesa di San Canziano",
+      "country": "IT",
+      "venue_source_url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/data/directory/generated/fssp/geo.v1.geojson",
+      "venue_pin_precision": "address",
+      "place_id": "place:IT:san-canziano-padova",
+      "place_name": "Chiesa di San Canziano, Padova",
+      "place_source_url": "https://www.openstreetmap.org/way/131987476",
+      "place_pin_precision": "site",
+      "distance_m": 9.7,
       "name_overlap": 1,
       "place_has_approved_photo": false,
       "disposition": "EXISTING_CONFIRMED_LINK",
@@ -474,6 +525,23 @@
       "place_pin_precision": "site",
       "distance_m": 50.5,
       "name_overlap": 0.5,
+      "place_has_approved_photo": true,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "auto_publish": false
+    },
+    {
+      "directory_record_index": 1234,
+      "venue_id": "V19:SJC-001",
+      "venue_name": "St. John Cantius Church",
+      "country": "US",
+      "venue_source_url": "https://www.cantius.org/full-liturgy-schedule",
+      "venue_pin_precision": "building",
+      "place_id": "place:US:st-john-cantius-chicago",
+      "place_name": "St. John Cantius Church, Chicago",
+      "place_source_url": "https://www.openstreetmap.org/way/210308153",
+      "place_pin_precision": "site",
+      "distance_m": 46,
+      "name_overlap": 1,
       "place_has_approved_photo": false,
       "disposition": "EXISTING_CONFIRMED_LINK",
       "auto_publish": false
@@ -559,7 +627,7 @@
       "place_pin_precision": "site",
       "distance_m": 28,
       "name_overlap": 1,
-      "place_has_approved_photo": false,
+      "place_has_approved_photo": true,
       "disposition": "EXISTING_CONFIRMED_LINK",
       "auto_publish": false
     },
@@ -844,6 +912,16 @@
       "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
     },
     {
+      "venue_id": "V19:DIO-US-MN-ST-PAUL-SAINT-AGNES",
+      "venue_name": "Church of Saint Agnes",
+      "place_id": "place:US:st-agnes-saint-paul",
+      "place_name": "Church of Saint Agnes, Saint Paul",
+      "distance_m": 50.5,
+      "name_overlap": 0.5,
+      "disposition": "EXISTING_CONFIRMED_LINK",
+      "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
+    },
+    {
       "venue_id": "ao-fssp-maison-saint-aignan-21-rue-de-la-couronne-f-28000-chartres-france",
       "venue_name": "Maison Saint-Aignan",
       "place_id": "place:FR:chartres-notre-dame",
@@ -851,6 +929,16 @@
       "distance_m": 340.1,
       "name_overlap": 0,
       "disposition": "DIFFERENT_OR_GENERIC_DEDICATION_HOLD",
+      "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
+    },
+    {
+      "venue_id": "AO-AMER-R28-US-25-03",
+      "venue_name": "St Boniface Catholic Church",
+      "place_id": "place:US:st-boniface-sioux-city",
+      "place_name": "St. Boniface Catholic Church, Sioux City",
+      "distance_m": 28,
+      "name_overlap": 1,
+      "disposition": "EXISTING_CONFIRMED_LINK",
       "review": "HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"
     },
     {

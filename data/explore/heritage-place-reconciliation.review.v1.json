@@ -11,8 +11,8 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 518,
-    "places_with_linked_records": 261,
+    "places": 522,
+    "places_with_linked_records": 265,
     "places_without_direct_claim": 257,
     "multicategory_heritage_places": 212,
     "shrines": 257,
@@ -23,7 +23,7 @@
     "custom_attestations": 71,
     "novena_context_links": 18,
     "route_records": 20,
-    "directory_place_links": 11
+    "directory_place_links": 15
   },
   "exception_queues": {
     "dangling_place_references": [],
@@ -5889,6 +5889,46 @@
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:st-john-cantius-chicago",
+      "display_name": "St. John Cantius Church, Chicago",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:US:st-john-cantius-chicago"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:san-canziano-padova",
+      "display_name": "Chiesa di San Canziano, Padova",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:IT:san-canziano-padova"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:saint-louis-de-gonzague-pau",
+      "display_name": "Église Saint-Louis-de-Gonzague de Pau",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:FR:saint-louis-de-gonzague-pau"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:saint-bruno-bordeaux",
+      "display_name": "Église Saint-Bruno de Bordeaux",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:FR:saint-bruno-bordeaux"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }
   ],
   "distinct_place_links": {
@@ -5899,7 +5939,7 @@
     "customs": 55,
     "novena_context": 10,
     "routes": 18,
-    "directory_links": 11
+    "directory_links": 15
   },
   "map_policy_note": "The distinct-place counts include address-only or coordinate-pending Places. They are not counts of publishable map pins.",
   "georeference_tranche_20261010": {
@@ -6161,6 +6201,23 @@
     "added_link_ids": [
       "link:directory-place:US:st-boniface-sioux-city",
       "link:directory-place:US:st-agnes-saint-paul"
+    ],
+    "photos_published": 0
+  },
+  "georeference_tranche_20261029_p99": {
+    "schema": "AO_P99_FOUR_CANONICAL_DIRECTORY_EXACT_CHURCHES_V1",
+    "release_manifest": "data/geography/research/sacred-places-p99-four-exact-directory-churches.v1.json",
+    "added_place_ids": [
+      "place:US:st-john-cantius-chicago",
+      "place:IT:san-canziano-padova",
+      "place:FR:saint-louis-de-gonzague-pau",
+      "place:FR:saint-bruno-bordeaux"
+    ],
+    "added_link_ids": [
+      "link:directory-place:US:st-john-cantius-chicago",
+      "link:directory-place:IT:san-canziano-padova",
+      "link:directory-place:FR:saint-louis-de-gonzague-pau",
+      "link:directory-place:FR:saint-bruno-bordeaux"
     ],
     "photos_published": 0
   }

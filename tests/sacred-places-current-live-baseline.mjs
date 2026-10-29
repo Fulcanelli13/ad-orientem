@@ -28,9 +28,9 @@ for(const release of RELEASES){
   assert.ok(p.source_ids?.length>=1,"Identity source provenance not retained: "+item.place_id);
   for(const sid of p.source_ids)assert.ok(sourceById.has(sid),"Dangling typed site source "+sid);
   const links=geo.directoryPlaceLinks.filter(link=>link.place_id===p.place_id);
-  if(release.id==="P92"){
+  if(["P92","P99"].includes(release.id)){
     const expected=release.data.published_new.find(x=>x.place_id===p.place_id);
-    assert.equal(links.length,1,"P92 requires one independently sourced exact venue bridge");
+    assert.equal(links.length,1 ,"P92/P99 require one independently sourced exact venue bridge");
     assert.equal(links[0].venue_id,expected.directory_venue_id);
     assert.equal(links[0].confidence,"CONFIRMED");
     assert.equal(links[0].relationship,"LOCATED_AT");

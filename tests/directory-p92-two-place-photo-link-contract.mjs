@@ -10,8 +10,8 @@ const r49=read("data/directory/preliminary-map-r49.v1.json");
 const approved=read("data/geography/approved-place-media.v1.json");
 const gallery=read("data/geography/approved-place-gallery.v1.json");
 assert.equal(receipt.schema,"AO_SACRED_PLACES_P92_TWO_EXACT_DIRECTORY_PHOTO_VENUE_LINKS_V1");
-assert.deepEqual([g.places.length,g.directoryPlaceLinks.length],[518,11]);
-assert.deepEqual([LIVE.places,LIVE.links],[518,11]);
+assert.deepEqual([g.places.length,g.directoryPlaceLinks.length],[LIVE.places,LIVE.links]);
+assert.ok(LIVE.places>=518 && LIVE.links>=11,"P92 frozen historical counts may be extended by later releases");
 assert.deepEqual([receipt.baseline.places,receipt.baseline.directory_links,receipt.proposed.places,receipt.proposed.directory_links],[516,9,518,11]);
 assert.deepEqual(receipt.published_new.map(x=>x.place_id),["place:US:st-boniface-sioux-city","place:US:st-agnes-saint-paul"]);
 assertExploreGeographyRegistry({geoAreas:g.geoAreas,places:g.places,directoryPlaceLinks:g.directoryPlaceLinks});
@@ -36,14 +36,14 @@ for(const [venue,place] of expected){
  assert.equal(links[0].relationship,"LOCATED_AT");
  assert.equal(links[0].confidence,"CONFIRMED");
  assert.ok(links[0].source_ids.length>=2);
- assert.equal(approved.items.some(x=>x.place_id===place),false);
+ assert.equal(approved.items.some(x=>x.place_id===place&&x.status==="APPROVED"),true,"P95 has since published this approved church cover");
  assert.equal(gallery.items.some(x=>x.place_id===place),false);
  const item={kind:"TLM_VENUE",source_id:venue};
- assert.equal(attachApprovedDirectoryMedia([item],{directoryPlaceLinks:g.directoryPlaceLinks,approved:approved.items,gallery:gallery.items})[0].cover_media,undefined,"no production photo until signed-off derivative registry entry");
+ assert.equal(attachApprovedDirectoryMedia([item],{directoryPlaceLinks:g.directoryPlaceLinks,approved:approved.items,gallery:gallery.items})[0].cover_media?.place_id,place,"P95 release must attach only exact approved Place cover");
 }
 assert.equal(g.places.filter(p=>expected.has(p.place_id)).length,0);
 assert.equal(receipt.new_places,2);
 assert.equal(receipt.confirmed_directory_links_added,2);
 assert.equal(receipt.policy.no_new_tlm_masses_or_schedules,true);
 assert.equal(receipt.policy.photo_media_unapproved_until_exact_credit_and_derivative_review,true);
-console.log("P92 PASS — 518 canonical Places, 11 exact Directory links, 2 verified church identities, 0 media release");
+console.log("P92 PASS — frozen 518/11 receipt retained; exact identity links survive later releases and 2 P95 approved covers");
