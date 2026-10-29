@@ -39,7 +39,8 @@ const position=(office,part)=>{
 };
 const before=(a,b)=>a.section<b.section||(a.section===b.section&&a.character<b.character);
 const contentOverlap=(a,b)=>lineNorm(a.literal)===lineNorm(b.literal);
-const ordinaryKinds=new Set(["PRIVILEGED","ORDINARY","INSEPARABLE_PETER_PAUL"]);
+const ordinaryKinds=new Set(["PRIVILEGED","ORDINARY","INSEPARABLE_PETER_PAUL",
+  "PRIVILEGED_BR259_BOTH_OMITTED"]);
 
 /**
  * Source spans MUST be exact substrings in source-owned cells.
@@ -72,6 +73,28 @@ export function reviewVespersCommemorationEvidence({office,candidate}={}){
       reason:"RG_110_INSEPARABLE_PRAYER_ONLY",
       sourceComponentsLocated:true,mainCollectLocation:main,collectLocation:prayer,
       sourceProvenanceOnly:true,independentlyPrintedTextCertified:false,
+      commemorationAuthorized:false,officePublicationAuthorized:false,published:0
+    });
+  }
+  if(candidate.kind==="PRIVILEGED_BR259_BOTH_OMITTED"){
+    // BR 259 does NOT permit inventing a replacement antiphon or versicle
+    // from another Hour. This is only a research record of their absence;
+    // proof that both are inapplicable remains an independent editorial gate.
+    if(candidate.antiphon||candidate.versicle||
+      candidate.rubric259Review!=="BOTH_PROPER_PARTS_INAPPLICABLE_REVIEW_PENDING")
+      return failure("BR_259_EXCEPTION_NOT_INDEPENDENTLY_ESTABLISHED");
+    const oremusOmission=position(office,candidate.oremus);
+    if(!oremusOmission||!before(main,oremusOmission)||
+      !before(oremusOmission,prayer))
+      return failure("BR_249_259_OMITTED_PARTS_COLLECT_ORDER");
+    return Object.freeze({
+      schema:OFFICE_VESPERS_COMMEMORATION_GATE,
+      status:"SOURCE_EVIDENCE_PRESENT_REVIEW_REQUIRED",
+      reason:"BR_259_NO_TRANSFER_OF_UNUSABLE_PROPER_PARTS",
+      sourceComponentsLocated:true,mainCollectLocation:main,
+      oremusLocation:oremusOmission,collectLocation:prayer,
+      properOmissionIndependentlyEstablished:false,
+      independentlyPrintedTextCertified:false,
       commemorationAuthorized:false,officePublicationAuthorized:false,published:0
     });
   }
