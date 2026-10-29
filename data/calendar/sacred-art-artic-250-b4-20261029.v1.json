@@ -1,0 +1,2174 @@
+{
+  "schema": "AO_SACRED_ART_B4_ARTIC_250_IMAGE_VERIFIED_V1",
+  "date": "2026-10-29",
+  "batchId": "B4",
+  "targetSize": 250,
+  "batchReady": false,
+  "priorBatchB3CardCount": 250,
+  "priorFinalized60Count": 60,
+  "source": "Art Institute of Chicago official public REST API and public domain IIIF image service",
+  "counts": {
+    "uniqueImageVisiblePaintings": 0,
+    "newMuseum": "Art Institute of Chicago",
+    "metadataPaintings": 192,
+    "searchesAttempted": 205,
+    "imageHeadersChecked": 192,
+    "imageCheckErrors": 192,
+    "sourceErrors": 192,
+    "overlapWithPrior310": 0,
+    "newUserAestheticApprovals": 0,
+    "newArtworkRejections": 0,
+    "productionImports": 0
+  },
+  "gates": {
+    "materialPaintingRequired": true,
+    "museumArtworkPublicDomainRequired": true,
+    "officialImageIdAndIIIFRequired": true,
+    "sourceImageHeaderChecked": true,
+    "nativePhotoQualityCertified": false,
+    "sourceImagesDownloadedAndStored": 0,
+    "noExistingArtUserDecisionChanged": true,
+    "noImplicitRejection": true,
+    "providerIsOneOfPreviouslyRegistered186": true
+  },
+  "searchLog": [
+    {
+      "term": "saint jerome",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 13,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint jerome",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 34,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint jerome",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 21,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "madonna and child",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 26,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "madonna and child",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 6,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "madonna and child",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "crucifixion",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 15,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "crucifixion",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "crucifixion",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "christ",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 11,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "christ",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "christ",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint john",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 4,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint john",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 2,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint john",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 3,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint francis",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint francis",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint francis",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "annunciation",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 5,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "annunciation",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "annunciation",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 2,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "nativity",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 2,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "nativity",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "nativity",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "adoration of the magi",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "adoration of the magi",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "adoration of the magi",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "adoration of the shepherds",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "adoration of the shepherds",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "adoration of the shepherds",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "virgin mary",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 6,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "virgin mary",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 3,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "virgin mary",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 2,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "virgin and child",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "virgin and child",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "virgin and child",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint peter",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 2,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint peter",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint peter",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint paul",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 2,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint paul",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint paul",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint sebastian",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint sebastian",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint sebastian",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 3,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "mary magdalene",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 2,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "mary magdalene",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "mary magdalene",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the holy family",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the holy family",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the holy family",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 3,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the resurrection",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the resurrection",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the resurrection",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "deposition",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "deposition",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "deposition",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "lamentation",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "lamentation",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "lamentation",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint anthony",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint anthony",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint anthony",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint george",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint george",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint george",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint joseph",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint joseph",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint joseph",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint catherine",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint catherine",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint catherine",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint anne",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint anne",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint anne",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint agnes",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint agnes",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint agnes",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint dominic",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint dominic",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint dominic",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint teresa",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint teresa",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint teresa",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 3,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint augustine",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint augustine",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint augustine",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint ambrose",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint ambrose",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint ambrose",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint gregory",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint gregory",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint gregory",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint michael",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint michael",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint michael",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint nicholas",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint nicholas",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint nicholas",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint stephen",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint stephen",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint stephen",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint andrew",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint andrew",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint andrew",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint barbara",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint barbara",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint barbara",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint lucy",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint lucy",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint lucy",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint matthew",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint matthew",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint matthew",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint mark",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint mark",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint mark",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint luke",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint luke",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint luke",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint james",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint james",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint james",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint elizabeth",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint elizabeth",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint elizabeth",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint francis of assisi",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint francis of assisi",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint francis of assisi",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "john the baptist",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "john the baptist",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "john the baptist",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint mary",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint mary",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint mary",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "sacred heart",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "sacred heart",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "sacred heart",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "immaculate conception",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "immaculate conception",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "immaculate conception",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint benedict",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint benedict",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint benedict",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "baptism of christ",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "baptism of christ",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "baptism of christ",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the transfiguration",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the transfiguration",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the transfiguration",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the assumption",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 3,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the assumption",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the assumption",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the ascension",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the ascension",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the ascension",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the last supper",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the last supper",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the last supper",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the annunciation",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the annunciation",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the annunciation",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "ecce homo",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "ecce homo",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "ecce homo",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "christ carrying the cross",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "christ carrying the cross",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "christ carrying the cross",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the pietà",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the pietà",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the pietà",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint jerome in the wilderness",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint jerome in the wilderness",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint jerome in the wilderness",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint roch",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint roch",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint roch",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint charles borromeo",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint charles borromeo",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint charles borromeo",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint philip neri",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint philip neri",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint philip neri",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint ignatius",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint ignatius",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint ignatius",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint francis xavier",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint francis xavier",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint francis xavier",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint bridget",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint bridget",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "saint bridget",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the martyrdom",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the martyrdom",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the martyrdom",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the holy trinity",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the holy trinity",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "the holy trinity",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "supper at emmaus",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "supper at emmaus",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "supper at emmaus",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "tobias and the angel",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 2,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "tobias and the angel",
+      "page": 2,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "tobias and the angel",
+      "page": 3,
+      "sourceReturned": 85,
+      "newPaintingObjects": 1,
+      "reportedTotal": 62119
+    },
+    {
+      "term": "moses",
+      "page": 1,
+      "sourceReturned": 85,
+      "newPaintingObjects": 0,
+      "reportedTotal": 62119
+    }
+  ],
+  "errors": [
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 53061,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 5848,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 120172,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 10509,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 59974,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 6831,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 61665,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 11434,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 80084,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16434,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 100342,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 25790,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 25743,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 27310,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 111613,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 203330,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 23972,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 87633,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 8104,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 19336,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 28874,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 109220,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16571,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 9672,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 61642,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 100353,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 21445,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 44829,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 105604,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 50306,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 31173,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 11575,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 99424,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 53067,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 105704,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 35161,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 26217,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 24677,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 7503,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 109693,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 14598,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 30901,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 160030,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 12891,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16494,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 109323,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 60514,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 80538,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 21937,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 102088,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16192,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16200,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 59897,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 59912,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 111455,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 234781,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 40507,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 56133,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 22871,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16293,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 19322,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 58052,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 22527,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 242449,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 59940,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16241,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 183006,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 25749,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 82511,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16261,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 111453,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 36495,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 269805,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 110673,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 139884,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 139887,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 139888,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 139889,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 102096,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 139885,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 139886,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16316,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16319,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16321,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16309,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16313,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16312,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16307,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 79777,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16231,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 111444,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16264,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16183,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 100347,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 100346,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 12683,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 25778,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16228,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 15468,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 236975,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 139883,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16156,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16162,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 152019,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 213758,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16290,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 190405,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 22862,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 22866,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 100354,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 111660,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 80570,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 8034,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 59971,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16166,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 25740,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 99652,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 80537,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 100345,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 111441,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16327,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16333,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 37743,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16197,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16169,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 102090,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16234,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 25770,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 59837,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 59856,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 111622,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16177,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16179,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16171,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 111250,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 48532,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 110242,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 25787,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 16336,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "stage": "IMAGE_HEADERS",
+      "id": 29446,
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    }
+  ],
+  "rows": []
+}
