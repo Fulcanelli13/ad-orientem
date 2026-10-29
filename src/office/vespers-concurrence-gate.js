@@ -10,7 +10,7 @@
  * This never selects, publishes, or imports Office text. The Mass Calendar
  * owns observed day facts but does not supply an Office precedence verdict.
  */
-import {addDaysIso,buildLiturgicalYear,allSoulsObservanceDate} from "../calendar/liturgical-year.js";
+import {addDaysIso,buildLiturgicalYear,buildMajorCelebrations,allSoulsObservanceDate} from "../calendar/liturgical-year.js";
 import {DIVINUM_OFFICIUM_PIN} from "../app/source-transport-compat.js";
 
 export const OFFICE_VESPERS_CONCURRENCE_VERSION="ao.office.vespers-concurrence.v1";
@@ -60,6 +60,11 @@ export function reviewOfficeVespersConcurrence({date,followingDate,
   if(current.officeKind==="OFFICE_OF_DEAD"||
      following.officeKind==="OFFICE_OF_DEAD")
     return withhold("BR_173_SPECIAL_OFFICE_OF_DEAD_REQUIRES_OWN_PROPER");
+  // Missing Office classification is not evidence that the ordinary
+  // concurrence rubric applies. Do not infer type from Mass rank alone.
+  const ordinaryKinds=new Set(["SUNDAY","FESTIVE","SEMIFESTIVE","ORDINARY","FERIAL"]);
+  if(!ordinaryKinds.has(current.officeKind)||!ordinaryKinds.has(following.officeKind))
+    return withhold("OFFICE_TYPE_NOT_INDEPENDENTLY_CLASSIFIED");
   if(current.hasSecondVespers!==true||
     typeof following.hasFirstVespers!=="boolean")
     return withhold("SECOND_AND_FIRST_VESPERS_ELIGIBILITY_UNPROVEN");
@@ -110,9 +115,12 @@ export function inspectOfficeVespersPair({id,eve,day}={}){
   const match=expected.title.test(eveHeading)&&expected.title.test(dayHeading);
   const first=/\bvespera de sequenti\b/u.test(eveHeading);
   const second=!/\bvespera de sequenti\b/u.test(dayHeading);
+  // Shared Calendar major-celebration listing is a date witness only,
+  // not the Office's independently adjudicated rank or local precedence.
   const sharedCalendarAnchor=id==="ADVENT_I"?
     buildLiturgicalYear(expected.day).start===expected.day:
-    allSoulsObservanceDate(2026)==="2026-11-02";
+    buildMajorCelebrations(expected.day).some(c=>
+      c.date===expected.day&&c.en==="All Saints");
   return Object.freeze({
     id,firstDate:expected.eve,secondDate:expected.day,
     sourceTitleMatch:match,explicitFirstVespersMarker:first,
