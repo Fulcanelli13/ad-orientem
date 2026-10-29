@@ -10,7 +10,7 @@ WORDS=('christ','jesus','virgin','madonna','saint ','st. ','saints','apostle',
 'ascension','pieta','pietà','ecce homo','pentecost','martyr','baptism','holy family',
 'john the baptist','visitation','lamentation','deposition','holy trinity')
 BLOCK=('saint louis','saint tropez','view of','church at','city of','square of','columbus',
-'christie','christopher','christs church','st. peter\\'s square')
+'christie','christopher','christs church',"st. peter's square")
 def csvsource(name):
  req=urllib.request.Request(URL+name,headers={'User-Agent':UA,'Accept':'text/csv'})
  f=urllib.request.urlopen(req,timeout=60)
