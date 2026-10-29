@@ -13,7 +13,7 @@ import {updateDevotionalProgress} from "./devotional-progress.js";
 export const SEQUENTIAL_DEVOTIONAL_SCHEMA = "dual-axis-sequential-devotional-v1";
 
 /** The Novena stages are source-owned; this merely names their presentation. */
-export function novenaStageChapters({pattern="STANDARD",sharedClosing=false}={}, {french=false}={}){
+export function novenaStageChapters({pattern="STANDARD",sharedClosing=false,commonRequired=true}={}, {french=false}={}){
  const labels={
   prepare:["Recollection","Recueillement"],opening:["Opening prayer","Prière d’ouverture"],
   church:["Prayer of the Church","Prière de l’Église"],
@@ -29,7 +29,8 @@ export function novenaStageChapters({pattern="STANDARD",sharedClosing=false}={},
    :pattern==="COMMON_BEFORE_REPEAT"
    ?["prepare","common","day","close"]
    :sharedClosing?["prepare","day","common","shared","close"]
-   :["prepare","day","common","close"];
+   :commonRequired?["prepare","day","common","close"]
+   :["prepare","day","close"];
  return Object.freeze(keys.map((id,i)=>Object.freeze({
   id,title:labels[id][french?1:0],start:i
  })));
