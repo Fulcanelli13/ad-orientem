@@ -39,4 +39,20 @@ for(const row of geo.directoryPlaceLinks){
 }
 assert.equal(buildScreen({...geo,directoryPlaceLinks:[...geo.directoryPlaceLinks,{
  venue_id:"fake-proximity-match",place_id:"place:FR:pontmain",confidence:"PENDING",relationship:"LOCATED_AT"}]},r49,cover,gallery).counts.exact_confirmed_photo_joins,0);
+const adjudication=read("data/geography/research/directory-place-identity-editorial-20261029.v1.json");
+assert.equal(adjudication.schema,"AO_DIRECTORY_PLACE_EXACT_BUILDING_EDITORIAL_REVIEW_V1");
+assert.equal(adjudication.release_candidate_count,0);
+assert.equal(adjudication.verified_photo_release_count,0);
+assert.equal(adjudication.adjudications.length,5);
+for(const row of adjudication.adjudications){
+ assert.ok(review.candidate_pairs.some(p=>p.venue_id===row.venue_id&&p.place_id===row.place_id));
+ assert.ok(row.source_url.startsWith("https://"));
+ assert.equal(row.editorial_state,"RESEARCH_EVIDENCE_REVIEW_ONLY__NO_SEED_REGISTRY_CHANGE");
+ assert.equal(row.safe_public_photo,false);
+ assert.equal(row.safe_schedule_publication,false);
+}
+assert.equal(adjudication.adjudications.find(x=>x.venue_id==="AO-EUR-DE-049")?.place_id,
+ "place:DE:kevelaer-kerzenkapelle");
+assert.ok(adjudication.forbidden_join_examples.some(x=>x.incorrect_place==="place:DE:kevelaer-gnadenkapelle"));
+
 console.log("PASS 1,879 venues x 516 canonical Places: 40 proximity review pairs, 6 photo leads, zero inferred publication");
