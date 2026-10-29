@@ -104,8 +104,17 @@ try{
     const n=await measured();
     assert.ok(n.font>=18&&n.opacity.every(x=>x>=.75)&&n.overflow<=1,"Source pagination must preserve reading comfort");
     await page.screenshot({path:resolve(dest,"litany-"+language+"-"+width+"-section2.png"),animations:"disabled"});
+    // The source/rite selector is not a redundant stage navigator. The
+    // historic dual-axis CSS must leave it accessible after disclosure.
+    const editionPicker=page.locator(owner+' .aoPrivateLitanyEditionChooser');
+    assert.equal(await editionPicker.count(),1);
+    assert.equal(await editionPicker.evaluate(x=>x.open),false,"Private Litany edition selector should be quiet by default");
+    await editionPicker.locator('summary').click();
+    assert.equal(await editionPicker.evaluate(x=>x.open),true,"Edition and liturgical use selection must be accessible");
+    assert.ok(await editionPicker.locator('[data-p435930-lit-use="major"]').isVisible(),
+     "Major Litanies source reference must not be hidden by the stage navigation CSS");
     // Public Major Litanies must be a distinct reference-only screen.
-    await page.locator(owner+' [data-p435930-lit-use="major"]').click();
+    await editionPicker.locator('[data-p435930-lit-use="major"]').click();
     assert.equal(await page.locator(owner).count(),0,"Historical private reader must not masquerade as the public rite");
     const publicRoot="#aoPray435930.open [data-ao-litany-use='major']";
     await page.locator(publicRoot).waitFor();
