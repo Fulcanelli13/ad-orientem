@@ -1,0 +1,83 @@
+name: One-shot Directory C4-only Wikimedia country photo recovery
+on:
+  push:
+    branches:
+      - research/directory-C4-recovery-once-20261029
+    paths:
+      - data/directory/research/.run-C4-recovery-photo-20261029.json
+permissions:
+  contents: write
+concurrency:
+  group: ao-directory-C4-recovery-source-20261029
+  cancel-in-progress: false
+jobs:
+  c4-recovery:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/research/directory-C4-recovery-once-20261029'
+    runs-on: ubuntu-latest
+    timeout-minutes: 48
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Strict C4 cohort and retryable HTTP failure contract
+        run: |
+          set -euo pipefail
+          node tests/production-tree-hygiene.mjs
+          python tests/directory-bulk-photo-source-index-test.py -v
+          python - <<'PY'
+          import json
+          j=json.load(open("data/directory/research/.run-C4-recovery-photo-20261029.json"))
+          assert j=={"schema":"AO_DIRECTORY_C4_RECOVERY_ONCE_V1",
+                     "countries":["CA","CZ","IN","ZA","DO","FJ","MY","RE","AE","EE","HK","NC","SV"],
+                     "query_row_limit":2000,"original_downloads":False,"publication":False}
+          PY
+      - name: Harvest exactly 13 C4 country photo indexes; source errors are preserved
+        run: |
+          set -euo pipefail
+          python tools/directory/harvest-wikidata-country-photo-index.py \
+            --countries CA,CZ,IN,ZA,DO,FJ,MY,RE,AE,EE,HK,NC,SV \
+            --max-rows 2000 --delay-seconds 15 \
+            --output-dir /tmp/ao-directory-C4-country-photo-20261029
+          python - <<'PY'
+          import pathlib,json
+          root=pathlib.Path("/tmp/ao-directory-C4-country-photo-20261029")
+          j=json.load(open(root/"audit.json"))
+          c=j["counts"]
+          assert c["requested_countries"]==13
+          assert c["successful_countries"]+c["error_countries"]==13
+          assert c["photos_downloaded"]==0 and c["photos_published"]==0
+          assert len(list(root.glob("country-*.json")))==13
+          for cc in j["countries"]:
+            f=json.load(open(root/f"country-{cc}.json"))
+            assert f["country"]==cc and f["publication"]=="RESEARCH_ONLY_NEVER_APP_VISIBLE"
+          print("C4_RECOVERY_RESULTS",json.dumps(c,sort_keys=True),flush=True)
+          PY
+      - name: Archive 13 country files + full audit on its own immutable research branch
+        run: |
+          set -euo pipefail
+          branch="research/directory-country-image-cohort-C4-20261029"
+          if git ls-remote --exit-code --heads origin "$branch" > /dev/null; then
+            echo "Archive already exists, refusing overwrite" >&2; exit 1
+          fi
+          git fetch --no-tags origin main
+          git switch -c "$branch" origin/main
+          target="data/directory/research/worldwide-media-sources/restworld-20261029/C4"
+          test ! -e "$target"
+          mkdir -p "$target"
+          cp /tmp/ao-directory-C4-country-photo-20261029/*.json "$target/"
+          test "$(find "$target" -maxdepth 1 -name '*.json' | wc -l)" -eq 14
+          test "$(du -sm "$target" | awk '{print $1}')" -le 55
+          git add "$target"
+          git diff --cached --name-only | while read -r f; do
+            case "$f" in "$target"/*.json) ;; *) echo "Unexpected committed path $f" >&2; exit 1;; esac
+          done
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): C4 13-country photo metadata recovered, never published"
+          git push origin "HEAD:refs/heads/$branch"
