@@ -34,7 +34,7 @@ try{
    const opened=await page.evaluate(()=>globalThis.AO_MODULES.open("pray.morning_evening"));
    assert.notEqual(opened,false,"daily reader module must open");
    const base="#aoPray435930.open ";
-   await page.waitForSelector(base+'[data-tp381-daily-presentation="continuous"]',{timeout:20000});
+   await page.waitForSelector(base+'.aoDailyBookSelector',{timeout:20000});
    const state=()=>page.evaluate(()=>{
     const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
     return {kind:mount?.dataset.aoTraditionalDualAxis,
