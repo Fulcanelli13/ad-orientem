@@ -16,7 +16,7 @@ function sources(){
     ["Ant Vespera",["@:Ant Laudes"]],
     ["Ant Laudes",[
      "In illa die * stillabunt montes",
-     "Jucundare, * filia Sion",
+     "Jucundare, * filia Sion et exsulta",
      "Ecce Dominus veniet * et omnes",
      "Omnes sitientes * venite ad aquas",
      "Ecce veniet * Propheta magnus"
