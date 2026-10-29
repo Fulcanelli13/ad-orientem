@@ -1514,6 +1514,63 @@
             "institution:musea_brugge"
           ]
         }
+      ],
+      "oaiErrors": []
+    },
+    {
+      "name": "kmska-exact",
+      "url": "https://datahub.vlaamsekunstcollectie.be/oai/?verb=GetRecord&metadataPrefix=oai_lido&identifier=oai%3Adatahub.vlaamsekunstcollectie.be%3Akmska.be%3Aah3b99",
+      "status": "ACCESSIBLE",
+      "imageBytes": 0,
+      "httpCode": 200,
+      "type": "text/xml; charset=utf8",
+      "recordSample": [
+        {
+          "identifier": [
+            "oai:datahub.vlaamsekunstcollectie.be:kmska.be:ah3b99",
+            "http://kmska.be/collection/work/data/ah3b99",
+            "oai:datahub.vlaamsekunstcollectie.be:kmska.be:ah3b99",
+            "http://kmska.be/collection/work/data/ah3b99",
+            "15"
+          ],
+          "institutions": [
+            "Zelfportret",
+            "Autoportrait",
+            "Self Portrait",
+            "Selbstporträt",
+            "Autorretrato",
+            "Autoritratto",
+            "\n            ",
+            "\n              ",
+            "Koninklijk Museum voor Schone Kunsten Antwerpen",
+            "Royal Museum of Fine Arts Antwerp",
+            "In depot / in bruikleen",
+            "In depot / on loan"
+          ],
+          "headerSets": [
+            "institution:koninklijk_museum_voor_schone_kunsten_antwerpen",
+            "creator:balthasar_beschey",
+            "creator:balthasar_beschey",
+            "creator:beschey_balthasar",
+            "period:18de_eeuw"
+          ]
+        }
+      ],
+      "oaiErrors": []
+    },
+    {
+      "name": "kmska-set",
+      "url": "https://datahub.vlaamsekunstcollectie.be/oai/?verb=ListRecords&metadataPrefix=oai_lido&set=institution%3Akmska",
+      "status": "ACCESSIBLE",
+      "imageBytes": 0,
+      "httpCode": 200,
+      "type": "text/xml; charset=utf8",
+      "recordSample": [],
+      "oaiErrors": [
+        {
+          "code": "noRecordsMatch",
+          "message": "The combination of the values of the from, until, set and metadataPrefix arguments results in an empty list."
+        }
       ]
     },
     {
