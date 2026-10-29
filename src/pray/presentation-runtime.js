@@ -3204,7 +3204,7 @@ function onClick(e){
   return;
  }
  const b=e.target.closest?.('button,[data-p435930-flip]');if(!b)return;
- if(b.hasAttribute('data-p435930-session-language')&&['adoration','benediction','stations','confession'].includes(view)||b.hasAttribute('data-p435930-session-language')&&view==='fiveWounds'){
+ if(b.hasAttribute('data-p435930-session-language')&&['adoration','benediction','stations','confession'].includes(view)){
   const current=mount(),outerScroll=current?.scrollTop||0;
   const innerScroll=current?.querySelector('.aoDevoCardScroll')?.scrollTop||0;
   praySessionLanguage=isFr()?'en':'fr';
@@ -3213,6 +3213,19 @@ function onClick(e){
    const next=mount();if(!next)return;
    next.scrollTop=outerScroll;
    const card=next.querySelector('.aoDevoCardScroll');if(card)card.scrollTop=innerScroll;
+   next.querySelector('[data-p435930-session-language]')?.focus?.({preventScroll:true});
+  });
+  return;
+ }
+ // A chaplet-specific extension leaves the historic four-reader language
+ // handler above byte-for-byte intact for the established public/pray tests.
+ if(view==='fiveWounds'&&b.hasAttribute('data-p435930-session-language')&&!FIVE_WOUNDS.latin){
+  const current=mount(),outerScroll=current?.scrollTop||0;
+  praySessionLanguage=isFr()?'en':'fr';
+  render();
+  queueMicrotask(()=>{
+   const next=mount();if(!next)return;
+   next.scrollTop=outerScroll;
    next.querySelector('[data-p435930-session-language]')?.focus?.({preventScroll:true});
   });
   return;
