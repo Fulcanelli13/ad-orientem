@@ -108,12 +108,59 @@ def year(r):
  m=re.match(r'(-?\d{3,4})',v)
  return int(m.group(1)) if m else 0
 def likely(r):
- t=record_title(r)
+ t=record_title(r).strip()
  if not t:return False
  lo=t.lower()
+ # A museum search keyword is not an iconographic subject. Reject people,
+ # street scenes, annual Dutch festivals and family names outright.
  if any(z in lo for z in NEG):return False
- if any(z in lo for z in DUTCH):return True
- return M.is_sacred({'title':t})
+ if re.search(r'\b(?:portret|portrait|echtgenote|wife of|daughter of|zoon van|gouverneur|koningin|queen of|king of|prinses|prince of|princess|burgemeester|officier|kapitein|schout|gemeenteraad|geportretteerde|schoolmeester|graaf van|gravin|stadhouder|schutterij|admiral|ambassadeur)\b',lo):
+  return False
+ if re.search(r'\b(?:sint-[a-z]+vloed|sint [a-z]+vloed|sint [a-z]+kerk|sint-[a-z]+kerk|sint [a-z]+feest|sint-[a-z]+feest|sint [a-z]+doelen)\b',lo):
+  return False
+ if re.search(r'\b(?:landschap|landscape|herders met|shepherds with|italiaans landschap|arcadian landscape)\b',lo):
+  # Explicit biblical foreground may still be admitted, but ordinary
+  # pastoral landscape or architectural view is out of scope.
+  if not re.search(r'\b(?:christus|jezus|heilige|saint|tobias|engel|baptism|doop|samaria|bekering|conversion)\b',lo):
+   return False
+ if re.search(r'\b(?:paulus (?:cornelisz|verschuur)|petrus (?:baard|bertius|schaak|scriverius)|abraham (?:de|van|patras|casteleyn)|isaac (?:parker|pontanus|sweers|verburg|de l)|johannes (?:camprich|lublink)|magdalena (?:moons|de cuyper)|judith allijn)\b',lo):
+  return False
+ # Personal names containing Maria, Christina, Saint Martin, etc do not
+ # qualify by substring. Require a sacred phrase, biblical event or figure.
+ patterns=[
+  r'\bchrist(?:us)?\b',r'\bjezus\b',r'\bcrucifixion\b',r'\bkruisiging\b',
+  r'\bkruisdraging\b',r'\bkruisafneming\b',r'\bannunciation\b',
+  r'\bverkondiging aan (?:maria|de herders)\b',
+  r'\bannunciatie\b',r'\bgeboorte van (?:christus|jezus)\b',
+  r'\bmadonna\b',r'\bvirgin\b',r'\bmaagd maria\b',
+  r'^maria(?:\s+in gebed|\s+met kind(?:\s+en.*)?|\s+magdalena)?$',
+  r'\bmaria magdalena\b',r'\bboetvaardige maria\b',
+  r'\bsaint (?!bernard dog|martin street|petersburg)[a-z]+\b',
+  r'\bsaints?\b',r'\bheilige (?!roomse rijk|graf,|land|orde)[a-z]+\b',
+  r'\bheiligen\b',r'\bheilige familie\b',r'\bheilige maagschap\b',
+  r'\bapostel\b',r'\bapostle\b',r'\bevangelist\b',
+  r'\b(?:sint|st\.) (?:petrus|paulus|catharina|elisabeth|franciscus|antonius|sebastiaan|jacobus|joseph|andreas|nicolaas|dominicus|lucia|maarten|joris)\b',
+  r'\bjohannes de doper\b',r'\bjohn the baptist\b',
+  r'\b(?:baptism of|doop van christus|doop van jezus)\b',
+  r'\b(?:laatste avondmaal|last supper|supper at emmaus)\b',
+  r'\b(?:verrijzenis|opstanding|resurrection|hemelvaart|ascension|pinksteren|pentecost)\b',
+  r'\b(?:graflegging|entombment|deposition|lamentation|piet[aà])\b',
+  r'\b(?:aanbidding|adoration|driekoningen|magi)\b',
+  r'\b(?:verloochening van petrus|prediking van johannes|evangelist johannes|petrus en paulus)\b',
+  r'\b(?:abraham en|abraham entertaining|abraham leaves|offer van abraham|sacrifice of isaac|abraham sacrificing)\b',
+  r'\b(?:isaac blessing|isaak zegent|mozes|moses|prof[eé]et elia|elia door|elijah)\b',
+  r'\b(?:david en|david and|king david|koning david|goliath)\b',
+  r'\b(?:judith and holofernes|judith en holofernes|judith with the)\b',
+  r'\b(?:susanna and|susanna en|tobias and|tobias en|tobit and|tobit en)\b',
+  r'\b(?:samaritaan|good samaritan|verloren zoon|prodigal son)\b',
+  r'\b(?:samson and|samson en|simson en|saul welcoming david|saul en david)\b',
+  r'\b(?:adam en eva|adam and eve|adam and|adam en|noach|noah|ark van noach)\b',
+  r'\b(?:salome.*johannes|salome.*john|head of john the baptist)\b',
+  r'\b(?:lazarus|lazarius|ecce homo|veronica|god houdt adam)\b',
+  r'\b(?:holy women|holy family|holy trinity|last judgment|apocalypse|dag des oordeels)\b',
+  r'\b(?:triptych with|drieluik met|altaarstuk met)\b.*\b(?:kruis|heilige|christ|jezus|maria|annunciatie)\b',
+ ]
+ return any(re.search(p,lo) for p in patterns)
 def parse_rec(id,r):
  t=record_title(r);a=get_artist(r);y=year(r)
  return {'id':'rijks:'+str(id),'sourceObjectId':str(id),'title':t,'artist':a,'year':y}
