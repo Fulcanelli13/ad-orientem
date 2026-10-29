@@ -1,7 +1,7 @@
 {
   "schema": "AO_CUSTOMS_A23_THIRD_DIRECT_SOURCE_39_V1",
   "as_of": "2026-10-29",
-  "status": "SOURCE_IMAGE_ACTION_SCREEN_COMPLETE_FOR_39_CASES_NOT_FINAL_EDITORIAL_OR_INDEPENDENT_VERIFICATION",
+  "status": "SOURCE_IMAGE_ACTION_SCREEN_COMPLETE_FOR_39_CASES_WITH_3_SOURCE_SCOPE_HOLDS_NOT_FINAL_IDENTITY_APPROVAL",
   "review_method": "Examined original Weiser PDF page images; confirmed narrow textual support or identified missing support. Page-only matches explicitly held. No claims about later legal/ritual authorisation, modern community usage, or uniqueness.",
   "parents": [
     "data/customs/master/customs-a23-96-direct-weiser-page-review-20261029.v1.json",
@@ -49,11 +49,11 @@
     "primary_printed_pages_scanned": 35,
     "cumulative_408_source_review": 346,
     "remaining_408_original_page_reviews": 62,
-    "source_narrow_historical_action": 8,
+    "source_narrow_historical_action": 9,
     "folk_secular_legend": 13,
     "historic_liturgy_or_other_prayer": 14,
-    "source_page_gap": 4,
-    "corrected_action_start_page": 2,
+    "source_page_gap": 3,
+    "corrected_action_start_page": 3,
     "approved_new_identities": 0,
     "published_new_records": 0
   },
@@ -225,12 +225,14 @@
       "indexed_print_page": 147,
       "inspected_original_print_page": 147,
       "inspected_pdf_page_index": 164,
-      "additional_page_inspected": [],
-      "verified_claim_page": 147,
+      "additional_page_inspected": [
+        148
+      ],
+      "verified_claim_page": 148,
       "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-      "limited_original_source_note_en": "The inspected printed page 147 discusses Magi legend and names; no Cologne shrine pilgrimage appears on that leaf.",
-      "claim_scope": "SOURCE_PAGE_OR_LABEL_GAP",
-      "source_action_evidence_certainty": "NOT_CERTIFIED_FROM_INDEXED_PAGE",
+      "limited_original_source_note_en": "Printed page 148 mentions the famous Three Magi relic shrine in Cologne and visitors offering devotion there. Index p147 recounts the names and associated legend; p148 is the direct witness. Shrine status, present pilgrimage availability and any indulgence must be verified separately.",
+      "claim_scope": "ORIGINAL_PASSAGE_NARROW_HISTORICAL_ACTION",
+      "source_action_evidence_certainty": "NARROW_PASSAGE_VISIBLE_HISTORICAL_CONTEXT_ONLY",
       "human_canonical_identity_signoff": false,
       "independent_source_witness_certified": false,
       "modern_continuity_verified": false,
@@ -1076,5 +1078,8 @@
       "final_bilingual_copy_approved": false,
       "publication_authorized": false
     }
+  ],
+  "printed_pages_supplementary": [
+    148
   ]
 }
