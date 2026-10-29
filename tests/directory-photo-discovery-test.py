@@ -236,6 +236,46 @@ class PhotoDiscoveryTests(unittest.TestCase):
         self.assertEqual(queries,2)
         self.assertEqual(c.queries,2)
         self.assertFalse(any(found.values()))
+    def test_openverse_global_run_budget(self):
+        class BudgetClient:
+            def __init__(self):
+                self.requests=[]
+            def request(self,params,endpoint=mod.API):
+                self.requests.append(endpoint)
+                return {"results":[]}
+        inner=BudgetClient()
+        bounded=mod.BoundedOpenverseClient(inner,2)
+        self.assertEqual(mod.openverse_discovery(bounded,
+            {"name":"Church of Saint Joseph","country":"FR","locality":""},max_queries=2)[1],2)
+        self.assertEqual(bounded.used,2)
+        self.assertEqual(bounded.remaining,0)
+        self.assertEqual(mod.openverse_discovery(bounded,
+            {"name":"Church of Saint John","country":"FR","locality":""},max_queries=0)[1],0)
+        self.assertEqual(len(inner.requests),2)
+        with self.assertRaises(ValueError):
+            bounded.request({"q":"third"}, endpoint=mod.OPENVERSE_API)
+        self.assertEqual(bounded.used,2)
+
+    def test_representative_indices_fail_closed(self):
+        class NoNetwork:
+            def request(self,params,endpoint=mod.API):
+                if params.get("action")=="wbsearchentities":return {"search":[]}
+                return {"query":{"pages":[]}, "results":[]}
+        import tempfile,json
+        with tempfile.TemporaryDirectory() as td:
+            out=Path(td)/"result.json"
+            data=mod.run(mod.R49,out,0,2,NoNetwork(),
+                         indices=[58,116,274],openverse_budget=1)
+            self.assertEqual(data["processed"],3)
+            self.assertEqual(data["selected_source_indices"],[58,116,274])
+            self.assertEqual(data["source_countries_in_sample"],["FR","IT","MU"])
+            self.assertEqual(data["pilot_metrics"]["openverse_api_queries"],1)
+            self.assertEqual(data["pilot_metrics"]["venues_skipped_due_to_openverse_budget"],2)
+            self.assertEqual(data["publications"],0)
+            self.assertTrue(out.is_file())
+            with self.assertRaises(ValueError):
+                mod.run(mod.R49,out,0,2,NoNetwork(),indices=[58,58],openverse_budget=1)
+
     def test_all_categories(self):
         self.assertEqual(set(mod.CATEGORIES),{"EXTERIOR","INTERIOR","SACRED_DETAIL"})
     def test_discovery_only(self):

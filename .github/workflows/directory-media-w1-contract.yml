@@ -36,7 +36,9 @@ jobs:
       - name: Wikimedia Commons live smoke (research only, nonblocking)
         continue-on-error: true
         run: |
-          python tools/directory/discover-open-place-media.py --offset 2 --limit 6 --output /tmp/ao-directory-photo-pilot.json
+          python tools/directory/discover-open-place-media.py \
+            --indices 58,116,144,274,6,2,10 --offset 0 --limit 7 \
+            --openverse-budget 8 --output /tmp/ao-directory-photo-pilot.json
           python -c 'import json; j=json.load(open("/tmp/ao-directory-photo-pilot.json")); print("PHOTO PILOT: venues",len(j["venues"]),"candidates by category", {k:sum(len(v["categories"].get(k,[])) for v in j["venues"]) for k in j["categories"]},"errors",sum(len(v["errors"]) for v in j["venues"]),"published",j["publications"])'
       - name: Retain small diagnostic pilot manifest for archive review
         if: always()

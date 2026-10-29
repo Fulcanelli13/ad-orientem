@@ -31,6 +31,7 @@ API = "https://commons.wikimedia.org/w/api.php"
 WIKIDATA_API = "https://www.wikidata.org/w/api.php"
 OPENVERSE_API = "https://api.openverse.org/v1/images/"
 OPENVERSE_REQUEST_BUDGET_PER_VENUE = 2
+OPENVERSE_DEFAULT_RUN_REQUEST_BUDGET = 20
 OPENVERSE_RESULTS_PER_QUERY = 20
 WIKIDATA_DISTANCE_M = {"building": 250, "address": 350, "street": 500}
 USER_AGENT = "AdOrientem-SacredMediaResearch/0.1 (https://github.com/Fulcanelli13/ad-orientem; Commons metadata only)"
@@ -654,23 +655,25 @@ def openverse_candidate(item, venue):
         "rights_note": "Openverse metadata is not independent proof of reuse rights; verify at original provider",
     }
 
-def openverse_discovery(client, venue):
+def openverse_discovery(client, venue, max_queries=OPENVERSE_REQUEST_BUDGET_PER_VENUE):
     """At most two ordinary Openverse API searches, never website scraping.
 
     No pagination, image downloads or cross-query collection enumeration. Each
     candidate is subject to the same manual identity/subject/rights gates.
     """
     output = {kind: [] for kind in CATEGORIES}
+    if max_queries <= 0:
+        return output, 0
     variants = search_name_variants(venue["name"])
     country = COUNTRY_TERMS.get(str(venue["country"]).upper(), ("",))[0]
     # First query remains country-specific; the fallback drops the country
     # qualifier to improve recall, but retains the venue name and all holds.
     query_options = [" ".join(filter(None, (name, venue.get("locality", ""), country)))[:200]
-                     for name in variants[:OPENVERSE_REQUEST_BUDGET_PER_VENUE]]
-    if len(query_options) < OPENVERSE_REQUEST_BUDGET_PER_VENUE:
+                     for name in variants[:max_queries]]
+    if len(query_options) < max_queries:
         query_options.append(" ".join(filter(None, (variants[0], venue.get("locality", ""))))[:200])
     searched = []
-    for query in query_options[:OPENVERSE_REQUEST_BUDGET_PER_VENUE]:
+    for query in query_options[:max_queries]:
         if query in searched:
             continue
         searched.append(query)
@@ -719,11 +722,30 @@ def merge_photo_candidates(existing, additional):
         seen.add(key)
     return retained
 
-def run(source, output, offset, limit, client):
+class BoundedOpenverseClient:
+    """Shared per-run quota. Counts attempted Openverse API calls, even on error."""
+    def __init__(self, inner, budget):
+        self.inner = inner
+        self.remaining = max(0, int(budget))
+        self.used = 0
+
+    def request(self, params, endpoint=API):
+        if endpoint == OPENVERSE_API:
+            if self.remaining <= 0:
+                raise ValueError("Openverse request budget exhausted")
+            self.remaining -= 1
+            self.used += 1
+        return self.inner.request(params, endpoint=endpoint)
+
+def run(source, output, offset, limit, client, *, indices=None, openverse_budget=OPENVERSE_DEFAULT_RUN_REQUEST_BUDGET):
     rows = source_rows(source)
-    subset = rows[offset:offset + limit]
-    if not subset:
-        raise ValueError("No source records in requested window")
+    selected_indices = list(indices) if indices is not None else list(range(offset, min(offset+limit, len(rows))))
+    if not selected_indices or len(selected_indices) > MAX_BATCH or len(set(selected_indices)) != len(selected_indices):
+        raise ValueError("Invalid/duplicate batch source indices")
+    if any(i < 0 or i >= len(rows) for i in selected_indices):
+        raise ValueError("Batch index out of frozen R49 range")
+    subset = [rows[i] for i in selected_indices]
+    bounded_openverse = BoundedOpenverseClient(client, openverse_budget)
     results = []
     for venue in subset:
         row = {
@@ -753,14 +775,19 @@ def run(source, output, offset, limit, client):
             except (urllib.error.URLError, ValueError, KeyError, TimeoutError) as exc:
                 row["categories"][kind] = []
                 row["errors"][kind] = type(exc).__name__ + ": " + str(exc)[:160]
+        row["openverse_queries"] = 0
+        row["openverse_budget_exhausted"] = bounded_openverse.remaining == 0
         try:
-            alternatives, query_count = openverse_discovery(client, venue)
-            row["openverse_queries"] = query_count
+            before = bounded_openverse.used
+            alternatives, query_count = openverse_discovery(
+                bounded_openverse, venue, max_queries=min(
+                    OPENVERSE_REQUEST_BUDGET_PER_VENUE, bounded_openverse.remaining))
+            row["openverse_queries"] = bounded_openverse.used-before
             for kind in CATEGORIES:
                 row["categories"][kind] = merge_photo_candidates(
                     row["categories"][kind], alternatives[kind])
         except (urllib.error.URLError, urllib.error.HTTPError, ValueError, KeyError, TimeoutError) as exc:
-            row["openverse_queries"] = 0
+            row["openverse_queries"] = bounded_openverse.used-before
             row["errors"]["OPENVERSE"] = type(exc).__name__ + ": " + str(exc)[:160]
         results.append(row)
         print("STAGED", venue["id"], {k: len(v) for k, v in row["categories"].items()}, flush=True)
@@ -783,7 +810,9 @@ def run(source, output, offset, limit, client):
             row.get("wikidata_identity_research", {}).get("state") ==
             "GEO_AND_NAME_CORROBORATED_RESEARCH_ONLY" for row in results),
         "venues_with_openverse_error": sum("OPENVERSE" in row["errors"] for row in results),
-        "openverse_api_queries": sum(row.get("openverse_queries", 0) for row in results),
+        "openverse_api_queries": bounded_openverse.used,
+        "openverse_request_budget": openverse_budget,
+        "venues_skipped_due_to_openverse_budget": sum(row["openverse_budget_exhausted"] for row in results),
         "approved_images": 0,
         "published_images": 0,
     }
@@ -792,6 +821,8 @@ def run(source, output, offset, limit, client):
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "source_schema": "AO_PRELIMINARY_TLM_MAP_R49",
         "offset": offset, "processed": len(results),
+        "selected_source_indices": selected_indices,
+        "source_countries_in_sample": sorted({row["country"] for row in results}),
         "licensing_policy": "Metadata screening only; no copyright or identity publication decision",
         "publication": "RESEARCH_ONLY_NEVER_APP_VISIBLE",
         "image_downloads": 0, "publications": 0,
@@ -812,10 +843,21 @@ def main():
     ap.add_argument("--offset", type=int, default=0)
     ap.add_argument("--limit", type=int, default=200)
     ap.add_argument("--delay", type=float, default=1.2)
+    ap.add_argument("--indices", type=str, default=None,
+                    help="Comma-separated frozen R49 indices for representative sampling")
+    ap.add_argument("--openverse-budget", type=int, default=OPENVERSE_DEFAULT_RUN_REQUEST_BUDGET,
+                    help="Maximum total Openverse requests in this run (default 20, max 40)")
     args = ap.parse_args()
+    if not 0 <= args.openverse_budget <= 40:
+        ap.error("Openverse quota must be 0..40 requests per batch")
     if not 0 <= args.offset < 1879 or not 1 <= args.limit <= MAX_BATCH or args.offset+args.limit > 1879:
         ap.error("Offset 0..1878 and limit 1..500 required")
-    result = run(args.source, args.output, args.offset, args.limit, WikimediaClient(args.delay))
+    try:
+        indices = [int(x.strip()) for x in args.indices.split(",")] if args.indices else None
+    except ValueError:
+        ap.error("indices must be comma-separated integers")
+    result = run(args.source, args.output, args.offset, args.limit, WikimediaClient(args.delay),
+                 indices=indices, openverse_budget=args.openverse_budget)
     print("RESEARCH ONLY", result["processed"], "venues; 3 categories; zero images published", flush=True)
     print("CANDIDATE METRICS", json.dumps(result["pilot_metrics"], sort_keys=True), flush=True)
 
