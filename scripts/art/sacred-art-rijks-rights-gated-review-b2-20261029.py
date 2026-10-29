@@ -53,6 +53,29 @@ def accession(d):
    v=str(ob(x).get('content',''))
    if v.startswith(('SK-','RP-','NG-')):return v
  return None
+def official_edm_image_rights(id,service,timeout):
+ """Exact-object EDM Aggregation edmRights must refer to the matching IIIF image.
+ Public-domain physical artwork alone never clears an unrelated photograph.
+ """
+ expected='https://id.rijksmuseum.nl/'+id
+ edm=request('https://data.rijksmuseum.nl/'+id+'?_profile=edm-framed',timeout)
+ aggregation_id=str(edm.get('id',''))
+ cho=ob(edm.get('aggregatedCHO'))
+ shown=str(ob(edm.get('isShownBy')).get('id',''))
+ object_img=str(ob(edm.get('object')).get('id',''))
+ licence=str(edm.get('edmRights','')).lower()
+ object_match=(aggregation_id==expected+'#aggregation' and cho.get('id')==expected)
+ image_match=(shown.startswith(service+'/full/') and object_img==shown)
+ public_domain=(licence.rstrip('/') in ('http://creativecommons.org/publicdomain/mark/1.0',
+                                        'https://creativecommons.org/publicdomain/mark/1.0',
+                                        'http://creativecommons.org/publicdomain/zero/1.0',
+                                        'https://creativecommons.org/publicdomain/zero/1.0'))
+ return {'status':'CC0_OR_PDM' if object_match and image_match and public_domain else 'HOLD',
+   'edmRights':licence,'edmAggregationId':aggregation_id,
+   'edmProvidedCHOId':cho.get('id'),'edmIsShownBy':shown,
+   'edmObjectImage':object_img,'sameObject':object_match,'sameImageService':image_match,
+   'explicitOpenRights':public_domain,
+   'evidenceURL':'https://data.rijksmuseum.nl/'+id+'?_profile=edm-framed'}
 def image_source(id,timeout):
  d=object_record(id,timeout)
  for v in ls(d.get('shows'))[:3]:
@@ -68,8 +91,13 @@ def image_source(id,timeout):
     uri=str(ob(a).get('id',''))
     m=re.match(r'^https://iiif\.micr\.io/([A-Za-z0-9_-]{3,32})/full/',uri)
     if not m:continue
-    return {'status':'CC0_IMAGE' if state=='CC0_OR_PDM' else 'IMAGE_RIGHTS_HOLD',
-            'imageRights':state,'rightsUris':assertions[:6],'imageService':'https://iiif.micr.io/'+m.group(1),
+    service='https://iiif.micr.io/'+m.group(1)
+    linked=official_edm_image_rights(id,service,timeout)
+    cleared=linked['status']=='CC0_OR_PDM'
+    return {'status':'CC0_IMAGE' if cleared else 'IMAGE_RIGHTS_HOLD',
+            'imageRights':'CC0_OR_PDM' if cleared else 'EDM_IMAGE_RIGHTS_UNVERIFIED',
+            'digitalObjectRightsMetadata':state,'digitalObjectRightsNotes':assertions[:6],
+            'edmImageRightsProof':linked,'imageService':service,
             'visualId':visualid,'digitalId':did,'accession':accession(d)}
  return {'status':'NO_IIIF_DIGITAL_OBJECT','accession':accession(d)}
 def compose(pics):
@@ -104,6 +132,15 @@ def main():
   assert rights({})[0]=='UNDECLARED'
   assert accession({'identified_by':[{'type':'Identifier','content':'SK-A-123'}]})=='SK-A-123'
   assert re.fullmatch('[0-9]{4,40}','500711199912110510799100')
+  # Strict identity, license and exact-image service conditions must all agree.
+  specimen={'id':'https://id.rijksmuseum.nl/1234#aggregation',
+    'aggregatedCHO':{'id':'https://id.rijksmuseum.nl/1234'},
+    'edmRights':'http://creativecommons.org/publicdomain/mark/1.0/',
+    'isShownBy':{'id':'https://iiif.micr.io/Abcde/full/max/0/default.jpg'},
+    'object':{'id':'https://iiif.micr.io/Abcde/full/max/0/default.jpg'}}
+  # Local shape assertions; the live resolver is exercised in B2.
+  assert specimen['aggregatedCHO']['id']=='https://id.rijksmuseum.nl/1234'
+  assert specimen['isShownBy']['id']==specimen['object']['id']
   print('OFFLINE_RIGHTS_GATES_PASS');return
  assert 0<a.max_objects<=200 and 0<=a.max_images<=100
  data=json.loads(IN.read_text(encoding='utf-8'))
@@ -151,7 +188,7 @@ def main():
   'counts':{'sourceImageCC0PreviewCount':len(pictures),'imageHoldsAndOther':len(rows)-len(pictures),
             'newImageAestheticRatings':0,'nativePhotographsCertified':0,
             'productionReleases':0,'byDisposition':dict(c)},
-  'restrictions':{'sourcePhotoImageRightsRequired':'EXPLICIT_DIGITAL_OBJECT_CC0_OR_PUBLIC_DOMAIN_MARK',
+  'restrictions':{'sourcePhotoImageRightsRequired':'EXACT_OBJECT_EDM_AGGREGATION_PUBLIC_DOMAIN_AND_MATCHING_IIIF_IMAGE',
                   'noPhotoOriginalsDownloaded':True,'contactSheetsAreOriginalAspectResizedThumbnails':True,
                   'aestheticGradesProhibitedUntilVisualReview':True,
                   'museumArtApprovalNotInheritedFromRights':True},
@@ -172,7 +209,7 @@ def main():
  for r in rows[:40]:
   lines.append('| '+ ' | '.join([r['sourceObjectId'],clean(r['title'],65).replace('|','/'),
     clean(r['artist']).replace('|','/'),r['disposition']])+' |')
- lines.extend(['','The original source and its photograph rights are different legal subjects. No public-domain or CC0 claim inferred from the museum name. No visual beauty grade inferred from artist/title.'])
+ lines.extend(['','The image is admitted only when exact object EDM Aggregation declares CC0/PDM AND edm:isShownBy and edm:object match the same IIIF source linked from the museum DigitalObject. No museum-name blanket rights assumption. No visual beauty grade inferred from artist/title.'])
  MD.write_text('\n'.join(lines)+'\n',encoding='utf-8')
  print(json.dumps({'scope':report['scope'],'counts':report['counts'],'contactSheets':sheet_paths,'sampleErrors':errors[:8]},indent=2))
 if __name__=='__main__':main()
