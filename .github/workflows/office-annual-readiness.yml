@@ -9,6 +9,8 @@ on:
       - 'src/office/precedence-review.js'
       - 'src/office/reviewed-hour-handoff.js'
       - 'src/office/annual-research-sweep.js'
+      - 'src/office/universal-source-descriptors.js'
+      - 'tests/divine-office-universal-source-descriptors.mjs'
       - 'data/office/research/2026-office-pilot-ordo-roster.json'
       - 'tests/divine-office-research-roster.mjs'
       - 'scripts/office/sweep-annual-research.mjs'
@@ -53,6 +55,8 @@ jobs:
           node --check src/office/annual-research-sweep.js
           node --check scripts/office/sweep-annual-research.mjs
           node --test tests/divine-office-annual-research-sweep.mjs
+          node --check src/office/universal-source-descriptors.js
+          node --test tests/divine-office-universal-source-descriptors.mjs
           node --test tests/divine-office-research-roster.mjs
           node --check src/office/annual-capture-ledger.js
           node --check scripts/office/emit-annual-capture-ledger.mjs
@@ -97,6 +101,10 @@ jobs:
                 doc.summary.plannedLocaleSlots!==days*8*3||
                 doc.summary.researchCandidateHours!==0||
                 doc.summary.withheldHours!==days*8||
+                doc.summary.proposedFixedSanctoralPaths!==days||
+                doc.summary.proposedAdventTemporalPaths!==(year===2026?26:22)||
+                doc.summary.totalUnverifiedSourcePathLeads!==(year===2026?391:388)||
+                doc.summary.sourceFilesVerifiedByThisSweep!==0||
                 doc.summary.independentlyCertifiedHours!==0||
                 doc.summary.publishedHours!==0||
                 doc.allYearLiturgicalDiscrepanciesActuallyChecked!==false)
