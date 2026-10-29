@@ -10,7 +10,7 @@ permissions:
   contents: write
 concurrency:
   group: ao-sacred-art-rijks-visual-review-b2
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   rijks-cc0-research-review:
     runs-on: ubuntu-latest
