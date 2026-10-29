@@ -8,27 +8,42 @@
     "primary_edition": "1999 fourth edition, web-hosted by Holy See",
     "exhaustiveness": "SEED_GRANTS_ONLY_NOT_ENTIRE_ENCHIRIDION_AND_NOT_ALL_LATER_DECREES",
     "current_special_decrees_screen": "NOT_COMPLETE",
-    "raccolta_historical_edition": "SEPARATE_UNREVIEWED"
+    "raccolta_historical_edition": "SEPARATE_UNREVIEWED",
+    "authority_checks": {
+      "official_document_url": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
+      "norms": "Norms 17–20",
+      "concessions": [
+        "7 §1",
+        "26 §1",
+        "29 §1",
+        "33 §1"
+      ],
+      "status": "DIRECT_ONLINE_LATIN_TEXT_CHECKED",
+      "later_decrees_complete": false
+    }
   },
   "general_plenary_conditions": {
-    "id": "EI99_GENERAL_NORMS_7_10",
+    "id": "EI99_GENERAL_NORMS_17_20",
     "source": "https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html",
     "refs": [
-      "Normae N. 7",
-      "Normae N. 8",
-      "Normae N. 9",
-      "Normae N. 10"
+      "Normae N. 17 §§1–2",
+      "Normae N. 18 §§1–2",
+      "Normae N. 19",
+      "Normae N. 20 §§1–5"
     ],
     "conditions_en": [
       "Perform the precise indulgenced work with the requisite devout disposition",
-      "Be in the state of grace and have complete detachment from every sin, even venial sin",
+      "Have at least the general intention to gain the indulgence and perform the prescribed work in the required manner and time",
+      "Be baptized, not excommunicated, in the state of grace at least at the end of the prescribed work, and—specifically for a plenary indulgence—have complete detachment from all sin, even venial sin",
       "Sacramental confession",
       "Eucharistic Communion",
       "Prayer for the intentions of the Supreme Pontiff"
     ],
     "temporal_note_en": "The three sacramental/prayer conditions may be fulfilled on days before or after the work; Communion and prayer for the Pope's intentions are fittingly made on the day of the indulgenced work. See the norms for detailed application.",
     "frequency_note_en": "Ordinarily one plenary indulgence per day, apart from the exception at the point of death; one sacramental confession may serve several plenary indulgences but each plenary indulgence requires its own Communion and prayer for the Pope's intentions.",
-    "incomplete_conditions_note_en": "If the required complete disposition or plenary conditions are lacking, the grant may be partial under Norm N.7, subject to the other norms and exceptions."
+    "incomplete_conditions_note_en": "If the required complete disposition or plenary conditions are lacking, the grant may be partial under Norm N.7, subject to the other norms and exceptions.",
+    "source_text_check": "PRIMARY_LATIN_WITNESS_DIRECTLY_RECHECKED_2026_10_29",
+    "citation_correction": "The previous reference to Norms 7–10 was erroneous: those norms primarily discuss diocesan/eparchial competence. The ordinary plenary conditions, eligibility, and frequency are set out in Norms 17–20."
   },
   "grants": [
     {
@@ -42,14 +57,15 @@
       "title_en": "Holy Thursday Tantum ergo",
       "occasion_or_frequency": "Holy Thursday",
       "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
-      "usual_conditions_ref": "EI99_GENERAL_NORMS_7_10",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
       "special_conditions": [
         "Solemn reposition after the Mass in Cena Domini; mere visits to altars of repose do not constitute this specific prescribed work"
       ],
       "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
       "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
       "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
     },
     {
       "grant_id": "EI99-7-1-3",
@@ -62,14 +78,15 @@
       "title_en": "Solemn Eucharistic procession",
       "occasion_or_frequency": "When a genuine solemn Eucharistic procession occurs; particularly Corpus Christi",
       "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
-      "usual_conditions_ref": "EI99_GENERAL_NORMS_7_10",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
       "special_conditions": [
         "Floral carpets and devotional decorations are not in themselves the specified participation"
       ],
       "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
       "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
       "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
     },
     {
       "grant_id": "EI99-29-1-1",
@@ -82,14 +99,15 @@
       "title_en": "Prayer at a cemetery, 1–8 November",
       "occasion_or_frequency": "1–8 November",
       "beneficiary": "ONLY_SOULS_IN_PURGATORY",
-      "usual_conditions_ref": "EI99_GENERAL_NORMS_7_10",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
       "special_conditions": [
         "The place must be a cemetery and the prayer must be for the departed"
       ],
       "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
       "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
       "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
     },
     {
       "grant_id": "EI99-29-1-2",
@@ -102,14 +120,15 @@
       "title_en": "All Souls church visit",
       "occasion_or_frequency": "All Souls' Day, or an authorised substitute day under the Ordinary's consent",
       "beneficiary": "ONLY_SOULS_IN_PURGATORY",
-      "usual_conditions_ref": "EI99_GENERAL_NORMS_7_10",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
       "special_conditions": [
         "Prescribed church/oratory visit and both prayers; a generic All Souls prayer is insufficient"
       ],
       "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
       "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
       "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
     },
     {
       "grant_id": "EI99-33-1-5",
@@ -122,14 +141,15 @@
       "title_en": "Parish church feast or Portiuncula visit",
       "occasion_or_frequency": "Titular solemnity of the parish church or 2 August",
       "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
-      "usual_conditions_ref": "EI99_GENERAL_NORMS_7_10",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
       "special_conditions": [
         "The grant applies to the qualifying parish church visit, not merely a village fair, patronal procession or local celebration"
       ],
       "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
       "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
       "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
     },
     {
       "grant_id": "EI99-33-1-4",
@@ -142,14 +162,15 @@
       "title_en": "Visit an officially established shrine",
       "occasion_or_frequency": "The shrine's titular solemnity; once in a year on a chosen day; or on a group pilgrimage",
       "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
-      "usual_conditions_ref": "EI99_GENERAL_NORMS_7_10",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
       "special_conditions": [
         "Official shrine status and one of the specific occasions must be established; not any destination bearing a religious name"
       ],
       "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
       "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
       "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
     },
     {
       "grant_id": "EI99-26-1-1",
@@ -162,14 +183,15 @@
       "title_en": "Veni Creator on 1 January or Pentecost",
       "occasion_or_frequency": "1 January or Pentecost",
       "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
-      "usual_conditions_ref": "EI99_GENERAL_NORMS_7_10",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
       "special_conditions": [
         "Public solemn recitation or singing in church/oratory; a private casual recitation is not the specified plenary work"
       ],
       "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
       "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
       "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
     },
     {
       "grant_id": "EI99-26-1-2",
@@ -182,14 +204,15 @@
       "title_en": "Te Deum on 31 December",
       "occasion_or_frequency": "31 December",
       "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
-      "usual_conditions_ref": "EI99_GENERAL_NORMS_7_10",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
       "special_conditions": [
         "Public solemn recitation or singing in church/oratory, with thanksgiving purpose"
       ],
       "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
       "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
       "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
     },
     {
       "grant_id": "EI99-7-1-1",
@@ -202,14 +225,15 @@
       "title_en": "Eucharistic adoration for half an hour",
       "occasion_or_frequency": "Any day",
       "beneficiary": "SELF_OR_DEPARTED_BY_SUFFRAGE",
-      "usual_conditions_ref": "EI99_GENERAL_NORMS_7_10",
+      "usual_conditions_ref": "EI99_GENERAL_NORMS_17_20",
       "special_conditions": [
         "A mere church visit or tour does not fulfil the specified work"
       ],
       "any_history_from_raccolta": "NOT_REVIEWED_SEPARATE_EDITION",
       "legal_version_scope": "1999_GENERAL_GRANT_AS_AT_PRIMARY_SOURCE_LATER_DECREES_NOT_EXHAUSTIVELY_SCREENED",
       "custom_association_status": "NO_AUTOMATIC_CUSTOM_LINK",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "source_text_check": "PRIMARY_LATIN_CONCESSION_REFERENCE_RECHECKED_2026_10_29"
     }
   ],
   "canonical_customs_crosswalk": [
