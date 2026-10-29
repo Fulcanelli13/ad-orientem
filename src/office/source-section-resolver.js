@@ -19,12 +19,12 @@ export const OFFICE_SECTION_ROLES=Object.freeze([
 const LANGUAGES=Object.freeze(["la","en","fr"]);
 // Source paths and section names belong to the Office source, never the Mass
 // Calendar. Slash and case are significant; no generic Common substitution.
-const PATH=/^(?:Tempora|Sancti|Commune|Psalterium|Ordinarium|Special|Martyrologium)\/[a-zA-Z0-9_.\/-]+$/;
+const PATH=/^(?:Tempora|Sancti|Commune|Psalterium|Ordinarium|Special|Martyrologium)\/[A-Za-z0-9][A-Za-z0-9_. \/-]*$/;
 const SECTION=/^[a-zA-Z][a-zA-Z0-9_. -]{0,100}$/;
 const UNRESOLVED=/(?:^|\n)\s*(?:[@$&][A-Za-z]|\(sed\s|\{(?:omit|omises)\})/iu;
 
 function selection({path,section,language,role}={}){
-  if(typeof path!=="string"||!PATH.test(path)||path.includes("..")||
+  if(typeof path!=="string"||!PATH.test(path)||path.includes("..")||path.includes("//")||path.endsWith("/")||
      path.length>180)throw Error("OFFICE_SOURCE_PATH_INVALID");
   if(typeof section!=="string"||!SECTION.test(section))
     throw Error("OFFICE_SOURCE_SECTION_INVALID");
