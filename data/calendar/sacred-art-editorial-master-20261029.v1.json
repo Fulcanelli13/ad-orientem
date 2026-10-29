@@ -18562,5 +18562,34 @@
     "productionImports": 0,
     "userChoicesChanged": false,
     "productionMutation": false
+  },
+  "phase1SmkOfficialVerification": {
+    "report": "data/calendar/sacred-art-phase1-smk-54-official-object-report-20261029.v1.json",
+    "exceptions": "data/calendar/sacred-art-phase1-smk-54-curatorial-exceptions-20261029.v1.json",
+    "probe": "data/calendar/sacred-art-phase1-smk-api-probe-20261029.v1.json",
+    "officialAuthority": "Statens Museum for Kunst API v1",
+    "frozenSourceCards": 54,
+    "exactOfficialIdAndTitleMatches": 54,
+    "caseExactOfficialInventory": 20,
+    "caseFoldOnlyOfficialInventory": 34,
+    "missingOrConflictingOfficialObjects": 0,
+    "sourceRecordsPublicDomainFieldTrue": 54,
+    "sourceRecordsWithHistoricCreatorFlags": 5,
+    "authorQualificationReviewLeads": 18,
+    "unverifiedPhysicalGroupLeads": 3,
+    "originalConditionalDecisionsPreserved": 2,
+    "museumBackedOfficialVerifiedToDate": 437,
+    "museumBackedOfficialStillUnverified": 42,
+    "remainingByMuseum": {
+      "walters": 42
+    },
+    "commonsSourcedUnlinkedStill": 305,
+    "acceptedToCanonical383LinkedSourceCardsStill": 72,
+    "acceptedToCanonical383UnlinkedSourceCardsStill": 784,
+    "newCanonical383Links": 0,
+    "photosCertified": 0,
+    "physicalPaintingUniquenessCertified": 0,
+    "userChoicesChanged": false,
+    "productionMutation": false
   }
 }
