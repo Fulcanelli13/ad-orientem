@@ -156,6 +156,76 @@ class PhotoDiscoveryTests(unittest.TestCase):
         self.assertFalse(found["INTERIOR"])
         self.assertFalse(found["SACRED_DETAIL"])
         self.assertEqual(found["EXTERIOR"][0]["publication_state"],"HOLD_IDENTITY_CATEGORY_AND_RIGHTS_REVIEW")
+
+    def test_openverse_name_variants_source_only(self):
+        names=mod.search_name_variants("St. John the Baptist Church")
+        self.assertEqual(names[0],"St. John the Baptist Church")
+        self.assertIn("Saint John the Baptist Church",names)
+        self.assertTrue(all("Baptist" in n for n in names))
+        self.assertNotIn("church",mod.search_name_variants("Church"))
+
+    def test_openverse_license_restrictions(self):
+        def mk(license,version,link):
+            return {"license":license,"license_version":version,"license_url":link}
+        self.assertEqual(mod.openverse_license(mk("by-sa","4.0",
+            "https://creativecommons.org/licenses/by-sa/4.0/")),"CC-BY-SA-4.0")
+        self.assertEqual(mod.openverse_license(mk("cc0","1.0",
+            "https://creativecommons.org/publicdomain/zero/1.0/")),"CC0")
+        self.assertIsNone(mod.openverse_license(mk("by-nc","4.0",
+            "https://creativecommons.org/licenses/by-nc/4.0/")))
+        self.assertIsNone(mod.openverse_license(mk("by","4.0",
+            "https://example.com/forged-license")))
+        self.assertIsNone(mod.openverse_license(mk("by-nd","4.0",
+            "https://creativecommons.org/licenses/by-nd/4.0/")))
+
+    def test_openverse_metadata_only_held(self):
+        target={"name":"Church of the Holy Name","country":"AU","locality":"Stepney"}
+        image={"id":"f9c119f6-3d45-4d1f-82d1-2aadfc9e12f0",
+               "title":"Church of the Holy Name exterior Stepney Australia",
+               "foreign_landing_url":"https://photos.example.org/church-holy-name",
+               "url":"https://photos.example.org/file.jpg",
+               "width":1900,"height":1200,"category":"photograph",
+               "license":"by-sa","license_version":"4.0",
+               "license_url":"https://creativecommons.org/licenses/by-sa/4.0/",
+               "creator":"A Photographer","provider":"Example","source":"example",
+               "tags":[{"name":"Stepney"}]}
+        item=mod.openverse_candidate(image,target)
+        self.assertIsNotNone(item)
+        self.assertEqual(item["category_requested"],"EXTERIOR")
+        self.assertEqual(item["discovery_method"],"OPENVERSE_API_SEARCH")
+        self.assertEqual(item["publication_state"],"HOLD_IDENTITY_CATEGORY_AND_RIGHTS_REVIEW")
+        self.assertIsNone(mod.openverse_candidate({**image,"title":"Church of the Holy Name United States"},target))
+        self.assertIsNone(mod.openverse_candidate({**image,"title":"Lithograph of Church of the Holy Name"},target))
+        self.assertIsNone(mod.openverse_candidate({**image,"foreign_landing_url":"http://example.org/unlicensed"},target))
+        self.assertIsNone(mod.openverse_candidate({**image,"license":"by-nc"},target))
+        self.assertIsNone(mod.openverse_candidate({**image,"width":100},target))
+        self.assertIsNone(mod.openverse_candidate({**image,"mature":True},target))
+        class Client:
+            def __init__(self): self.requests=[]
+            def request(self,params,endpoint=mod.API):
+                self.requests.append((endpoint,params))
+                return {"results":[image, {**image,"id":"8199ca9b-5986-4c51-ac64-070b7b02f3af"}]}
+        client=Client()
+        result,queries=mod.openverse_discovery(client,target)
+        self.assertEqual(queries,1)
+        self.assertEqual(len(client.requests),1)
+        self.assertEqual(client.requests[0][0],mod.OPENVERSE_API)
+        self.assertEqual(client.requests[0][1]["page"],1)
+        self.assertEqual(len(result["EXTERIOR"]),1)
+        self.assertEqual(len(result["INTERIOR"]),0)
+        self.assertEqual(len(result["SACRED_DETAIL"]),0)
+
+    def test_openverse_fail_closed_to_empty(self):
+        class Client:
+            def __init__(self): self.queries=0
+            def request(self,params,endpoint=mod.API):
+                self.queries += 1
+                return {"results":[{"title":"Unrelated mountain image"}]}
+        c=Client()
+        found,queries=mod.openverse_discovery(c,{"name":"Notre Dame de la Licourt","country":"BE","locality":""})
+        self.assertEqual(queries,2)
+        self.assertEqual(c.queries,2)
+        self.assertFalse(any(found.values()))
     def test_all_categories(self):
         self.assertEqual(set(mod.CATEGORIES),{"EXTERIOR","INTERIOR","SACRED_DETAIL"})
     def test_discovery_only(self):

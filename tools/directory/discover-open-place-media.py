@@ -29,6 +29,9 @@ ROOT = Path(__file__).resolve().parents[2]
 R49 = ROOT / "data/directory/preliminary-map-r49.v1.json"
 API = "https://commons.wikimedia.org/w/api.php"
 WIKIDATA_API = "https://www.wikidata.org/w/api.php"
+OPENVERSE_API = "https://api.openverse.org/v1/images/"
+OPENVERSE_REQUEST_BUDGET_PER_VENUE = 2
+OPENVERSE_RESULTS_PER_QUERY = 20
 WIKIDATA_DISTANCE_M = {"building": 250, "address": 350, "street": 500}
 USER_AGENT = "AdOrientem-SacredMediaResearch/0.1 (https://github.com/Fulcanelli13/ad-orientem; Commons metadata only)"
 CATEGORIES = {
@@ -532,6 +535,170 @@ def discover(client, venue, kind):
     found.sort(key=lambda r: (-r["discovery_score_only"], -r["width"] * r["height"], r["commons_title"]))
     return found[:MAX_CANDIDATES_PER_CATEGORY]
 
+
+# Search query variants are derived only from the venue's existing source name.
+# They are search hints; they never constitute alternate-site identities.
+def search_name_variants(name):
+    name = re.sub(r"\s+", " ", plain(name)).strip()
+    variants = [name]
+    unparenthesized = re.sub(r"\s*\([^)]*\)", "", name).strip()
+    if unparenthesized != name and unparenthesized:
+        variants.append(unparenthesized)
+    # Orthographic variants, not translations of the dedication itself.
+    forms = [
+        (r"\bSt\.\s+", "Saint "), (r"\bSt\s+", "Saint "),
+        (r"\bSte\.\s+", "Sainte "), (r"\bSte\s+", "Sainte "),
+        (r"\bSaint\s+", "St "), (r"\bSainte\s+", "Ste "),
+        (r"\bEglise\s+", "Église "), (r"\bÉglise\s+", "Eglise "),
+        (r"\bSs\.\s+", "Saints "),
+    ]
+    for root in list(variants):
+        for pattern, repl in forms:
+            alt = re.sub(pattern, repl, root, count=1, flags=re.I)
+            if alt != root:
+                variants.append(alt)
+    # As a last resort, remove the generic building prefix while retaining
+    # at least two nontrivial title words. Never search for just "church".
+    for root in list(variants[:2]):
+        stripped = re.sub(
+            r"^(?:church|chapel|église|eglise|kapelle|kirche|chiesa|"
+            r"iglesia|igreja|kerk)\s+(?:(?:of|de|des|du|la|the|della)\s+)*",
+            "", root, count=1, flags=re.I,
+        ).strip()
+        distinctive = [w for w in words(stripped) if w not in STOP and len(w)>2]
+        if stripped != root and len(distinctive)>=2:
+            variants.append(stripped)
+    return list(dict.fromkeys(variants))[:5]
+
+def openverse_license(item):
+    """Openverse is only a discovery index; these rights remain unverified."""
+    key = str(item.get("license") or "").lower()
+    ver = str(item.get("license_version") or "").strip()
+    if key in ("by", "by-sa") and ver in ("2.0", "3.0", "4.0"):
+        canonical = "CC-" + key.upper() + "-" + ver
+        suffix = "by-sa" if key == "by-sa" else "by"
+        expected = "https://creativecommons.org/licenses/" + suffix + "/" + ver + "/"
+    elif key == "cc0":
+        canonical = "CC0"
+        expected = "https://creativecommons.org/publicdomain/zero/1.0/"
+    elif key == "pdm":
+        canonical = "PUBLIC_DOMAIN"
+        expected = "https://creativecommons.org/publicdomain/mark/1.0/"
+    else:
+        return None
+    link = str(item.get("license_url") or "")
+    if not link.startswith(expected):
+        return None
+    return canonical
+
+def valid_external_url(value):
+    parsed = urllib.parse.urlparse(str(value or ""))
+    return parsed.scheme == "https" and bool(parsed.hostname) and not parsed.username and not parsed.password
+
+def openverse_candidate(item, venue):
+    if not isinstance(item, dict) or item.get("mature"):
+        return None
+    license_id = openverse_license(item)
+    if not license_id:
+        return None
+    title = plain(item.get("title"))[:200]
+    source_url = item.get("foreign_landing_url") or ""
+    if not title or not valid_external_url(source_url):
+        return None
+    try:
+        width, height = int(item.get("width")), int(item.get("height"))
+    except (ValueError, TypeError):
+        return None
+    if min(width, height) < MIN_EDGE:
+        return None
+    category = str(item.get("category") or "").lower()
+    if category and category not in ("photograph", "photography"):
+        return None
+    tags = " ".join(str(tag.get("name") or "")[:70] for tag in (item.get("tags") or [])[:8]
+                    if isinstance(tag, dict))
+    description = title + " " + tags
+    if unsuitable_photo_subject(title, description):
+        return None
+    country = country_signal(venue["country"], title, description)
+    if country == "FOREIGN_COUNTRY_MENTIONED":
+        return None
+    name = plain(venue["name"])
+    # Name matching is discovery filtering, not proof the depicted subject is
+    # this church. Country often goes unmentioned even when a source is correct.
+    score = max((match_score(variant, venue.get("locality"), title, description)
+                 for variant in search_name_variants(name)[:3]), default=0)
+    if score < 0.60:
+        return None
+    media_id = str(item.get("id") or "")
+    if not re.fullmatch(r"[0-9a-fA-F-]{36}", media_id):
+        return None
+    direct_image_url = str(item.get("url") or "")
+    roles = [role for role in ("INTERIOR", "SACRED_DETAIL")
+             if classify_evidence(role, title, description) == "CATEGORY_TEXT_MATCH"]
+    role = roles[0] if roles else "EXTERIOR"
+    return {
+        "openverse_id": media_id,
+        "source_url": source_url,
+        "image_url_research_only": direct_image_url if valid_external_url(direct_image_url) else None,
+        "title": title, "width": width, "height": height,
+        "license": license_id, "license_url": str(item["license_url"]),
+        "photographer": plain(item.get("creator"))[:250],
+        "provider": str(item.get("provider") or "")[:70],
+        "source": str(item.get("source") or "")[:70],
+        "category_requested": role,
+        "category_evidence": classify_evidence(role, title, description),
+        "country_evidence": country,
+        "discovery_score_only": score,
+        "discovery_method": "OPENVERSE_API_SEARCH",
+        "publication_state": "HOLD_IDENTITY_CATEGORY_AND_RIGHTS_REVIEW",
+        "rights_note": "Openverse metadata is not independent proof of reuse rights; verify at original provider",
+    }
+
+def openverse_discovery(client, venue):
+    """At most two ordinary Openverse API searches, never website scraping.
+
+    No pagination, image downloads or cross-query collection enumeration. Each
+    candidate is subject to the same manual identity/subject/rights gates.
+    """
+    output = {kind: [] for kind in CATEGORIES}
+    variants = search_name_variants(venue["name"])
+    country = COUNTRY_TERMS.get(str(venue["country"]).upper(), ("",))[0]
+    searched = []
+    for name in variants[:OPENVERSE_REQUEST_BUDGET_PER_VENUE]:
+        query = " ".join(filter(None, (name, venue.get("locality", ""), country)))[:200]
+        if query in searched:
+            continue
+        searched.append(query)
+        data = client.request({
+            "q": query, "page": 1, "page_size": OPENVERSE_RESULTS_PER_QUERY,
+            "category": "photograph",
+            "license": "by,by-sa,cc0,pdm",
+            "filter_dead": "true",
+        }, endpoint=OPENVERSE_API)
+        if not isinstance(data, dict):
+            raise ValueError("Unexpected Openverse response")
+        for item in data.get("results") or []:
+            result = openverse_candidate(item, venue)
+            if result:
+                output[result["category_requested"]].append(result)
+        if any(output.values()):
+            break
+    for kind in CATEGORIES:
+        seen = set()
+        ordered = sorted(output[kind], key=lambda c: (
+            c["country_evidence"] != "TARGET_COUNTRY_MENTIONED",
+            -c["discovery_score_only"], -c["width"]*c["height"],
+            c["source_url"]))
+        output[kind] = []
+        for candidate in ordered:
+            if candidate["source_url"] not in seen:
+                output[kind].append(candidate)
+                seen.add(candidate["source_url"])
+            if len(output[kind]) >= MAX_CANDIDATES_PER_CATEGORY:
+                break
+    return output, len(searched)
+
+
 def run(source, output, offset, limit, client):
     rows = source_rows(source)
     subset = rows[offset:offset + limit]
@@ -566,6 +733,21 @@ def run(source, output, offset, limit, client):
             except (urllib.error.URLError, ValueError, KeyError, TimeoutError) as exc:
                 row["categories"][kind] = []
                 row["errors"][kind] = type(exc).__name__ + ": " + str(exc)[:160]
+        try:
+            alternatives, query_count = openverse_discovery(client, venue)
+            row["openverse_queries"] = query_count
+            for kind in CATEGORIES:
+                used = {entry["source_url"] for entry in row["categories"][kind]}
+                for candidate in alternatives[kind]:
+                    if candidate["source_url"] in used:
+                        continue
+                    row["categories"][kind].append(candidate)
+                    used.add(candidate["source_url"])
+                    if len(row["categories"][kind]) >= MAX_CANDIDATES_PER_CATEGORY:
+                        break
+        except (urllib.error.URLError, urllib.error.HTTPError, ValueError, KeyError, TimeoutError) as exc:
+            row["openverse_queries"] = 0
+            row["errors"]["OPENVERSE"] = type(exc).__name__ + ": " + str(exc)[:160]
         results.append(row)
         print("STAGED", venue["id"], {k: len(v) for k, v in row["categories"].items()}, flush=True)
     payload = {
@@ -576,6 +758,7 @@ def run(source, output, offset, limit, client):
         "licensing_policy": "Metadata screening only; no copyright or identity publication decision",
         "publication": "RESEARCH_ONLY_NEVER_APP_VISIBLE",
         "image_downloads": 0, "publications": 0,
+        "openverse_api_queries": sum(r.get("openverse_queries", 0) for r in results),
         "categories": list(CATEGORIES), "venues": results,
     }
     output.parent.mkdir(parents=True, exist_ok=True)
