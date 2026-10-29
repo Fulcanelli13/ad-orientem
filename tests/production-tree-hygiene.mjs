@@ -76,6 +76,22 @@ for(const name of workflows){
     assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
     assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
     assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
+  }else if(name==="directory-cl2-photo-intake-one-shot.yml"){
+    // Single-source-pinned 2,579-anchor read/archives; no app or main mutation.
+    assert.match(source,/push:\s*\n\s*branches:\s*\n\s*-\s*research\/directory-photo-intake-once-20261029/);
+    assert.match(source,/paths:\s*\n\s*-\s*data\/directory\/research\/\.run-cl2-photo-intake-20261029\.json/);
+    assert.match(source,/github\.ref == 'refs\/heads\/research\/directory-photo-intake-once-20261029'/);
+    assert.match(source,/permissions:\s*\n\s*contents:\s*write/i);
+    assert.doesNotMatch(source,/schedule:\s*\n|workflow_dispatch:/);
+    assert.match(source,/cl2_commit/);
+    assert.match(source,/--shard-size 250 --cl2-commit/);
+    assert.match(source,/r49_exact_source_ids_crosswalked/);
+    assert.match(source,/test "\$\(git diff --cached --name-only \| wc -l\)" -eq 13/);
+    assert.match(source,/git push origin HEAD:refs\/heads\/research\/directory-unified-photo-intake/);
+    assert.equal((source.match(/git\s+push\s+/g)||[]).length,1);
+    assert.doesNotMatch(source,/git\s+push\s+[^\n]*(?:main|master|production)\b/i);
+    assert.doesNotMatch(source,/approved-place-media|approved-place-gallery/i);
+    assert.doesNotMatch(source,/git\s+add\s+(?:-A|--all|\.)/i);
   }else if(name==="branch-hygiene.yml"){
     // Merged-branch ref deletion is deliberately distinct from mutating app
     // source or restoring old production builds. Enforce the exact safeguards,
