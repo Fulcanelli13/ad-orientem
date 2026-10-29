@@ -1881,6 +1881,12 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
           ((event.review==="EXISTING_PUBLISHED_R17_1962_RUBRIC" &&
             event.owner==="PUBLISHED_R17_MISSAL_INLINE" &&
             event.actor==="PRIEST" && event.sourceId==="MR62_RITUS") ||
+           (event.review==="EXACT_1962_GESTURE_MATRIX_RUBRIC" &&
+            event.owner==="CERTIFIED_1962_MATRIX_TEXT_ONLY" &&
+            event.actor==="PRIEST" && event.sourceId==="MR62_RITUS" &&
+            event.kind==="MATRIX_TEXT_ONLY" &&
+            event.id==="GM.P.C0204.01" &&
+            event.sourceCueId==="AO.SM.C0204") ||
            (event.review==="RITUS_1962_EXPLICIT_PRIEST_SUCCESSION" &&
             event.owner==="RITUS_XIV_SOURCE_CONDITIONAL" &&
             event.actor==="PRIEST" && event.sourceId==="MR62_RITUS" &&
@@ -4394,7 +4400,17 @@ export function createReaderDomAdapter({
             ? missalSourceRubricCopy(p,{language:frenchReader?"fr":"en"}):null;
           // Only shorten complete, certified action sequences; never change
           // the original Latin/prayer row or expose editorial research drafts.
+          // Both modes must print the actual 1962 Memento hand/head rubrics,
+          // not the Sung donor's abbreviated "[silent commemoration]" gloss.
+          // Require the existing published R17 event identity and original
+          // source paragraph; never convert an unapproved editorial draft.
+          const liveMemento=mode==="LIVE"&&p.kind==="RUBRIC"&&
+            p.sourceCueIds?.length===1 &&
+            ["AO.SM.C0155","AO.SM.C0193"].includes(p.sourceCueIds[0]);
           const conciseSource=bookRubric ? conciseMissalSourceRubric(p,{
+            form:prepared?.session?.resolvedMass?.form,
+            language:frenchReader?"fr":"en",
+          }):liveMemento ? conciseMissalSourceRubric(p,{
             form:prepared?.session?.resolvedMass?.form,
             language:frenchReader?"fr":"en",
           }):null;
@@ -4536,7 +4552,13 @@ export function createReaderDomAdapter({
                   ?event.displayText:event.shortAction).join(" · ");
             }
             note.append(actions);
-            node.append(note);
+            // In a printed Missal the slight elevation rubric precedes the
+            // doxology text; LIVE retains its existing inline treatment.
+            if(mode==="MISSAL" && shortRubrics.some(event=>
+              event.id==="GM.P.C0204.01"&&
+              event.owner==="CERTIFIED_1962_MATRIX_TEXT_ONLY"))
+              node.prepend(note);
+            else node.append(note);
           }
           // Existing "long" registry data contains only the SAME short
           // actions again. No fake detail buttons, source-link repetition
