@@ -33,7 +33,7 @@ assert.ok(art.unmatched_customs.every(x=>x.placement_status==="NO_SUITABLE_APPRO
   "no unsuitable visual substitution allowed");
 
 assert.equal(library.stats.canonical,39,"38 current canonical IDs retained");
-assert.equal(data.temporal.records.filter(x=>x.calendar_hint).length,26,"exactly 26 dated seasonal notices");
+assert.equal(data.temporal.records.filter(x=>x.calendar_hint).length,27,"26 prior notices plus PENT-001 historic Pentecost context");
 assert.equal(data.temporal.records.filter(x=>x.calendar_hint).every(x=>x.calendar_hint_fr),true,
   "every dated seasonal notice must be bilingual");
 assert.equal(data.historical.entries.length,27,"historical folio parity");
