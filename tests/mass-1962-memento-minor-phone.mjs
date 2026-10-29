@@ -89,7 +89,7 @@ try{
      const liveRubric=row.querySelector('[data-source-gesture-id="GM.P.C0204.01"]')??
        row.querySelector(".ao-iconless-source-rubric");
      const missalRubric=row.querySelector(
-      '.ao-missal-inline-rubrics [data-rubric-id="GM.P.C0204.01"]');
+      '.ao-missal-inline-rubrics [data-source-gesture-id="GM.P.C0204.01"]');
      const missalContainer=missalRubric?.closest(".ao-missal-inline-rubrics");
      const primaryStyle=primary?getComputedStyle(primary):null;
      const noteStyle=missalContainer?getComputedStyle(missalContainer):null;
