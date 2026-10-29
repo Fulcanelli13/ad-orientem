@@ -22,7 +22,17 @@
     "parentComponentOrEnsembleGroupRelations": 3,
     "distinctCatalogueObjectGroupDispositions": 30,
     "b13ApprovedSourceRepairCases": 4,
-    "b13ConfirmedPhotographCopyrightMisclassifications": 1
+    "b13ConfirmedPhotographCopyrightMisclassifications": 1,
+    "acceptedToCanonical383VerifiedSourceLinks": 72,
+    "acceptedWithoutCanonicalPhysicalIdentityLink": 784,
+    "exactCanonicalObjectIdLinks": 63,
+    "exactCanonicalCommonsImageLinks": 4,
+    "exactLegacyCommonsFilenameLinks": 4,
+    "externalVerifiedMuseumAccessionLinks": 1,
+    "acceptedAlreadyIn281ResearchCandidateRegistry": 74,
+    "acceptedUnlinkedButAlreadyIn281ResearchCandidateRegistry": 11,
+    "weakTextualWorkIdentityLeadsForReview": 13,
+    "confirmedCanonicalArtRecordsProductionImageApproved": 0
   },
   "shards": [
     {
@@ -18385,5 +18395,18 @@
     "noAutomaticPhysicalWorkMerges": true,
     "sourceChoicesStillImmutable": true,
     "productionMutation": false
+  },
+  "phase1AcceptedCrosswalk": {
+    "artifact": "data/calendar/sacred-art-accepted-856-to-canonical-383-20261029.v1.json",
+    "weakIdentityQueue": "data/calendar/sacred-art-phase1-identity-review-13-20261029.v1.json",
+    "baseline": "383 locked canonical artwork records",
+    "acceptedCount": 856,
+    "confirmedEvidenceBasedCanonicalLinks": 72,
+    "unlinkedForFurtherObjectIdentityResearch": 784,
+    "neverCallUnlinkedProvenNew": true,
+    "mergesPerformed": 0,
+    "photoOrRightsApproval": false,
+    "warning": "11 of 784 not yet linked are also already in the separate 281-row research candidate registry; that staging presence does not prove identity with locked canonical 383.",
+    "conserveUserDecisions": true
   }
 }
