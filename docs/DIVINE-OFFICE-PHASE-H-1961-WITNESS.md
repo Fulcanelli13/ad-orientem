@@ -60,3 +60,25 @@ The existing 2026 All Saints Vespers pilot has now moved beyond counting a `Comm
 **Do not overclaim:** this external PDF is a modern bilingual *compilation*, not an authenticated original printed **1961** Roman Breviary exemplar. Source matching does **not** establish historic source lineage, version parity, exact full antiphon/verse/collect wording, English/French translations, all local rubrics, or all-year concurrence. It does **not** settle the special All Souls Office or its English Prime. The two source comparisons are accepted as **engineering source integrity**, not liturgical publication certification.
 
 The current code now treats a future loss of either quadruplet as a CI failure. It still always reports `independentlyVerifiedOfficeCommemorations=0`, `certifiedVespersTextComponents=0`, `canPublish=false`, `published=0`; no content rewritten and no public Office route.
+
+
+## 2026-11-01 French Second Vespers — restored Sunday commemoration, all four components (29 October 2026)
+
+This is a **one-Office, research-only, separately labelled candidate**. The pinned Divinum Officium composer’s 1960 concurrence filter erroneously recognized `Dominica` but not the French rank word `dimanche`. The reviewed experiment adds the one word to the 1960-rank recognition regexp **only in scratch**, generates the trilingual Office, then restores the upstream Perl file byte-for-byte. Its six-case exact XHTML comparison changed **only** 1 November French Second Vespers; the other five outputs stayed byte-identical.
+
+**Source-cell identity matters:** Latin source `Vespera9` corresponds, at the same normalized display position, to **French/English native `Vespera10`**. The baseline and candidate both have ten French cells; only the *text of* `Vespera10` is restored. All other nine French source cells are preserved, and the Latin/English normalized Office documents are unchanged. The Latin projection is recorded under `semantic.latinSourceCellId`; do not relabel raw source-cell IDs or fake exact raw-ID equivalence.
+
+**Independent content witnesses (distinct, not blended translations):**
+
+| French commemoration component | Source / corroboration | Provenance decision |
+| --- | --- | --- |
+| Magnificat antiphon, complete | ICKSP [XXIII Sunday after Pentecost traditional text](https://icrspfrance.fr/textes-liturgiques.php?article=a0245_ancien) | Entire French antiphon matched in the recovered `Vespera10` |
+| Vespers versicle `Dirigatur, Domine, oratio mea` | [Latin–French 1960-Breviary Sunday commemoration booklet](https://gregorian-booklets.gitlab.io/vespers/PDF/saints_pierre_paul_II_vepres/traduction/saints_pierre_paul_II_vepres-traduction.pdf), *Collégiale Saint-André, Grenoble*, revision 18 July 2023, printed p. 11 (PDF page index 10) | Recovered French versicle exactly matches this booklet’s rendering |
+| Response `Sicut incensum in conspectu tuo` | Same 1960-Breviary booklet, printed p. 11 | Recovered French response exactly matches this booklet’s rendering and follows the versicle |
+| Sunday collect, complete | Same ICKSP traditional Sunday text | Entire French collect matched after the response |
+
+The ICKSP [Trinity Sunday traditional article](https://icrspfrance.fr/textes-liturgiques.php?article=a0294_ancien) also prints the *same Latin versicle and response*, with a **different French rendering**. It supports the shared Latin wording, not verbatim French agreement with the Grenoble booklet. The 2023 Grenoble booklet is not an original 1961 printed Breviary and is not itself a rights clearance.
+
+**CI evidence:** [Research workflow #40826633868](https://github.com/Fulcanelli13/ad-orientem/actions/runs/40826633868) passed 3/3 jobs, **80/80 JS**, 9/9 Python, 10/10 Chromium and verified the source-cell/content restoration. The subsequent [wording comparison workflow #40829315898](https://github.com/Fulcanelli13/ad-orientem/actions/runs/40829315898) passed 3/3, **81/81 JS**, 9/9 Python and 10/10 Chromium; real generated `Vespera10` matched **both** Grenoble French versicle/response lines, in order, in addition to the full antiphon/collect. A following strict-regression commit requires this exact witness pair on every CI rerun.
+
+**Decision:** the bounded French four-component **text-source integrity comparison** is complete for *this* Office candidate. Do not call the **original 1961 printed-edition collation**, local calendar and Office appointment, all-year concurrence, rights review, or Divine Office publication complete. The baseline remains at **63 safe main research preview pages and one quarantined 1 Nov French Vespers**; the restored candidate is separate. `original1961PrintedFrenchBreviaryCertified=false`, `sourceRightsForPublicationApproved=false`, `canPublish=false`, `published=0`, no production Office route.
