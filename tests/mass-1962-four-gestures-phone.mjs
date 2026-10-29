@@ -94,6 +94,9 @@ try{
       primaryColor:pStyle?.color??"",rubricColor:noteStyle?.color??"",
       rubricBeforePrayer:Boolean(noteBox&&p&&
        (noteBox.compareDocumentPosition(p)&Node.DOCUMENT_POSITION_FOLLOWING)),
+      rubricPhysicallyAbove:Boolean(noteBox&&p&&
+       noteBox.getBoundingClientRect().bottom<=p.getBoundingClientRect().top+1),
+      sourceGridBefore:row.dataset.missalRubricBefore??null,
       rubricHidden:noteBox?.hidden??null,visibleRubric:Boolean(note&&noteRect?.width>=18&&
        noteRect?.height>=12&&noteStyle?.display!=="none"&&noteStyle?.visibility!=="hidden"),
       art:note?.querySelector(".ao-approved-priest-gesture-rubric-art,.ao-approved-finger-rubric-art,.ao-approved-priest-head-bow-rubric-art")?.dataset.approvedAsset??null,
@@ -130,7 +133,11 @@ try{
       assert.equal(snapshot.rubricColor,"rgb(223, 126, 128)",
        "Missal inline rubric not red");
       assert.equal(snapshot.rubricBeforePrayer,true,
-       "Missal rubric must appear before the words prescribing that gesture");
+       "Missal rubric must precede the original prayer in DOM order");
+      assert.equal(snapshot.sourceGridBefore,"true",
+       "Missal must explicitly reserve an earlier visual grid row");
+      assert.equal(snapshot.rubricPhysicallyAbove,true,
+       "Red rubric is physically BELOW its Latin/vernacular text despite DOM order");
      }
     }
    }
