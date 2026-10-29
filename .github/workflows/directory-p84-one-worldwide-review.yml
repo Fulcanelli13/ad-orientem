@@ -1,0 +1,160 @@
+name: P84 one worldwide Directory photo preview and editorial gallery
+on:
+  workflow_run:
+    workflows:
+      - "P83 one worldwide photo screening and research-only permanent archive"
+    types:
+      - completed
+permissions:
+  contents: read
+concurrency:
+  group: ao-p84-2579-worldwide-one-review-20261029
+  cancel-in-progress: false
+jobs:
+  previews:
+    if: >-
+      github.repository == 'Fulcanelli13/ad-orientem' &&
+      github.event.workflow_run.repository.full_name == 'Fulcanelli13/ad-orientem' &&
+      github.event.workflow_run.name == 'P83 one worldwide photo screening and research-only permanent archive' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'workflow_run' &&
+      github.event.workflow_run.head_branch == 'main'
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    runs-on: ubuntu-latest
+    timeout-minutes: 42
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install already pinned image decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Restore one immutable P83 global research source
+        run: |
+          set -euo pipefail
+          branch="research/p83-screened-worldwide-photo-candidates-20261029"
+          git fetch --no-tags origin "refs/heads/$branch:refs/remotes/origin/$branch"
+          git worktree add --detach /tmp/p84-p83-global "refs/remotes/origin/$branch"
+          dir="/tmp/p84-p83-global/data/directory/research/archives/p83-worldwide-screened-photography"
+          (cd "$dir" && sha256sum -c SHA256SUMS)
+          python tools/directory/p84-worldwide-preview-review.py \
+            --queue "$dir/p83-source-screened-preview-queue.jsonl" \
+            --summary "$dir/p83-worldwide-summary.json" \
+            --out /tmp/p84-unused --check
+      - name: Independently screen current Commons rights and download small previews
+        run: |
+          set -euo pipefail
+          dir="/tmp/p84-p83-global/data/directory/research/archives/p83-worldwide-screened-photography"
+          python tools/directory/p84-worldwide-preview-review.py \
+            --queue "$dir/p83-source-screened-preview-queue.jsonl" \
+            --summary "$dir/p83-worldwide-summary.json" \
+            --shard ${{ matrix.shard }} --delay 0.35 \
+            --out "/tmp/p84-technical-shard-${{ matrix.shard }}"
+      - name: Save technical transport only (not a review batch)
+        uses: actions/upload-artifact@v4
+        with:
+          name: P84_WORLDWIDE_PHOTO_PREVIEW_TRANSPORT_${{ matrix.shard }}
+          path: /tmp/p84-technical-shard-${{ matrix.shard }}/
+          retention-days: 3
+          if-no-files-found: error
+
+  one-worldwide-review:
+    needs: previews
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned image decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Get exact immutable P83 global source and verify checksum
+        run: |
+          set -euo pipefail
+          branch="research/p83-screened-worldwide-photo-candidates-20261029"
+          git fetch --no-tags origin "refs/heads/$branch:refs/remotes/origin/$branch"
+          git worktree add --detach /tmp/p84-p83-global "refs/remotes/origin/$branch"
+          dir="/tmp/p84-p83-global/data/directory/research/archives/p83-worldwide-screened-photography"
+          (cd "$dir" && sha256sum -c SHA256SUMS)
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: P84_WORLDWIDE_PHOTO_PREVIEW_TRANSPORT_*
+          merge-multiple: true
+          path: /tmp/p84-all-transport
+      - name: Reconcile every P83 candidate, generate 250-per-page review and contact sheets
+        run: |
+          set -euo pipefail
+          dir="/tmp/p84-p83-global/data/directory/research/archives/p83-worldwide-screened-photography"
+          python tools/directory/p84-worldwide-preview-review.py \
+            --queue "$dir/p83-source-screened-preview-queue.jsonl" \
+            --summary "$dir/p83-worldwide-summary.json" \
+            --parts /tmp/p84-all-transport \
+            --out /tmp/p84-one-worldwide-editorial
+      - name: Downloadable single campaign: source audit, previews, contact sheets, interactive review
+        uses: actions/upload-artifact@v4
+        with:
+          name: P84-ONE-WORLDWIDE-2579-IDENTITIES-PHOTO-REVIEW
+          path: /tmp/p84-one-worldwide-editorial/
+          retention-days: 3
+          if-no-files-found: error
+
+  permanent-review-index:
+    needs: one-worldwide-review
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/download-artifact@v4
+        with:
+          name: P84-ONE-WORLDWIDE-2579-IDENTITIES-PHOTO-REVIEW
+          path: /tmp/p84-for-git
+      - name: Verify archive and permanently store one rebuildable HTML review without binaries
+        run: |
+          set -euo pipefail
+          branch="research/p84-worldwide-directory-photo-review-20261029"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            echo "P84 permanent review already exists; do not overwrite" >&2
+            exit 1
+          fi
+          python - <<'PY'
+          import json,pathlib
+          base=pathlib.Path('/tmp/p84-for-git')
+          j=json.loads((base/'p84-one-worldwide-review-summary.json').read_text())
+          assert j['schema']=='AO_P84_SINGLE_WORLDWIDE_PREVIEW_REVIEW_V1'
+          assert j['anchors_accounted']==2579 and j['countries_accounted']==76
+          assert j['original_bytes_downloaded']==j['original_sha1_bytes_verified']==0
+          assert j['subject_approvals']==j['licence_approvals']==j['photo_publications']==0
+          assert j['source_screened_assignments']==j['preview_verified']+j['preview_holds']
+          page=(base/'index.html').read_text()
+          assert 'Export one decisions JSON' in page and 'Previous 250' in page
+          print('P84_ARCHIVE_READY',json.dumps(j,sort_keys=True),flush=True)
+          PY
+          git fetch --no-tags origin main
+          git switch -c "$branch" origin/main
+          target="data/directory/research/archives/p84-worldwide-photo-review"
+          test ! -e "$target"
+          mkdir -p "$target"
+          cp /tmp/p84-for-git/index.html "$target/"
+          cp /tmp/p84-for-git/p84-one-worldwide-review-summary.json "$target/"
+          cp /tmp/p84-for-git/p84-one-worldwide-review-source-audit.json "$target/"
+          (cd "$target" && sha256sum index.html p84-one-worldwide-review-summary.json p84-one-worldwide-review-source-audit.json > SHA256SUMS && sha256sum -c SHA256SUMS)
+          test "$(du -sm "$target" | awk '{print $1}')" -le 35
+          git add "$target/index.html" "$target/p84-one-worldwide-review-summary.json" "$target/p84-one-worldwide-review-source-audit.json" "$target/SHA256SUMS"
+          test "$(git diff --cached --name-only | wc -l)" -eq 4
+          git -c user.name='ad-orientem-research-bot' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "research(directory): permanent one-worldwide photograph editorial review"
+          git push origin "HEAD:refs/heads/$branch"
