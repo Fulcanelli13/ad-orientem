@@ -3241,7 +3241,9 @@ function onClick(e){
    LIB.language=language;return render();
   }
   if(b.hasAttribute('data-p435930-pilot-loreto-group')){
-   PILOT_LORETO_GROUP=!PILOT_LORETO_GROUP;return render();
+   const selected=b.dataset.p435930PilotLoretoGroup;
+   if(selected!=='individual'&&selected!=='group')return;
+   PILOT_LORETO_GROUP=selected==='group';return render();
   }
  }
  if(b.hasAttribute('data-p435930-session-language')&&['adoration','benediction','stations','confession'].includes(view)){
