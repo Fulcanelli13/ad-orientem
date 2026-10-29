@@ -16,6 +16,8 @@ on:
       - 'src/office/conditional-metadata-parser.js'
       - 'src/office/source-acceptance-slice.js'
       - 'src/office/advent-first-vespers-source-sequence.js'
+      - 'src/office/advent-vespers-remainder-research.js'
+      - 'tests/divine-office-advent-vespers-remainder-research.mjs'
       - 'tests/divine-office-advent-first-vespers-source-sequence.mjs'
       - 'tests/divine-office-source-acceptance-slice.mjs'
       - 'src/office/conditional-source-reader.js'
@@ -85,6 +87,8 @@ jobs:
           node --test tests/divine-office-source-acceptance-slice.mjs
           node --check src/office/advent-first-vespers-source-sequence.js
           node --test tests/divine-office-advent-first-vespers-source-sequence.mjs
+          node --check src/office/advent-vespers-remainder-research.js
+          node --test tests/divine-office-advent-vespers-remainder-research.mjs
           node --check src/office/conditional-source-reader.js
           node --test tests/divine-office-conditional-source-reader.mjs
           node --test tests/divine-office-expanded-temporal-sweep.mjs
