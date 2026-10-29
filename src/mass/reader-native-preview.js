@@ -2250,7 +2250,10 @@ export async function mountNativeReaderPreview({
         organPermission:project1962ReaderOrganNote({
           riteId:kind,stageId:card.id??card.recordId,
         }),
-        guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
+        guide:card.guide ? {registryAvailable:true,text:
+          kind==="REQUIEM_ABSOLUTION" &&
+          String(ready.prepared?.readerPreferences?.language??"en").toLowerCase().startsWith("fr") &&
+          card.guideFr ? card.guideFr : card.guide} : null,
       }),
     });
   }
