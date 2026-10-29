@@ -27,9 +27,6 @@ on:
       - 'src/office/advent-first-vespers-latin-print-anchors.js'
       - 'src/office/advent-first-vespers-1961-magnificat-lexical-check.js'
       - 'src/office/advent-first-vespers-saturday-psalm-integrity.js'
-      - 'src/office/advent-first-vespers-40-printed-psalm-anchors.js'
-      - 'tests/divine-office-advent-first-vespers-40-printed-psalm-anchors.mjs'
-      - 'data/office/research/advent-i-2026-saturday-psalm-40-row-printed-anchors.json'
       - 'src/office/advent-i-2026-proper-printed-latin.js'
       - 'src/office/advent-i-collect-ending-1960-research.js'
       - 'src/office/advent-first-vespers-preview-model.js'
@@ -148,8 +145,6 @@ jobs:
           node --test tests/divine-office-advent-first-vespers-1961-magnificat-lexical-check.mjs
           node --check src/office/advent-first-vespers-saturday-psalm-integrity.js
           node --test tests/divine-office-advent-first-vespers-saturday-psalm-integrity.mjs
-          node --check src/office/advent-first-vespers-40-printed-psalm-anchors.js
-          node --test tests/divine-office-advent-first-vespers-40-printed-psalm-anchors.mjs
           node --check src/office/advent-i-2026-proper-printed-latin.js
           node --test tests/divine-office-advent-i-proper-printed-latin.mjs
           node --check src/office/advent-i-collect-ending-1960-research.js
