@@ -63,4 +63,25 @@ assert.equal(crosswalk.counts.exact_confirmed_photo_joins,2,"pre-existing P95 ap
 assert.equal(manifest.policy.no_new_tlm_masses_or_schedules,true);
 assert.equal(manifest.policy.photo_media_unapproved_until_native_rights_derivative_review,true);
 assert.equal(manifest.policy.no_expense,true);
+
+const photoReview=read("data/directory/research/p100-four-p99-photo-preview-release-holds-20261029.json");
+assert.equal(photoReview.schema,"AO_P100_FOUR_P99_PHOTO_PREVIEW_VISUAL_RELEASE_HOLDS_V1");
+assert.deepEqual([photoReview.counts.photos_advanced_from_p97,photoReview.counts.individual_web_image_previews_manually_seen,photoReview.counts.visually_promising_primary,photoReview.counts.held_primary_weak_foreground],[4,4,3,1]);
+assert.equal(photoReview.records.length,4);
+for(const item of photoReview.records){
+ assert.ok(manifest.published_new.some(x=>x.place_id===item.place_id));
+ assert.ok(item.download_original_sha256?.length===64&&item.source_sha1?.length===40);
+ assert.equal(item.original_sha_verified,true);
+ assert.equal(item.web_preview_reviewed,true);
+ assert.equal(item.native_pixel_source_original_manually_inspected,false);
+ assert.equal(item.source_rights_release_cleared,false);
+ assert.equal(item.derivative_generated_and_hash_verified,false);
+ assert.equal(item.mobile_card_render_inspected,false);
+ assert.equal(item.approved_media_entry_created,false);
+ assert.equal(item.published,false);
+}
+assert.equal(photoReview.records.find(x=>x.row===322)?.visual_status,"HOLD_PRIMARY_OBTRUSIVE_FOREGROUND_BOLLARD");
+assert.equal(photoReview.counts.new_approved_media,0);
+assert.equal(photoReview.counts.new_published_photos,0);
+
 console.log("P99 PASS: 4 building-ID Place links, 15 Directory links, zero new media; 2 pre-existing covers preserved");
