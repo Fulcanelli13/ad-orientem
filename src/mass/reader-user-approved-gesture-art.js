@@ -22,7 +22,7 @@ export function userApprovedMassGestureArt({cueId=null,matrixAction=null,priestA
  const cue=String(cueId??"");
  const key=CUES[cue]??null;
  if(!key||!matrixAction||!priestAction)return null;
- if(matrixAction.cueId!==cue||matrixAction.sourceGestureId!=="GM.P."+cue.slice(6)+".01"||
+ if(matrixAction.cueId!==cue||matrixAction.sourceGestureId!=="GM.P."+cue.slice(6-1)+".01"||
    matrixAction.owner!=="GESTURE_MATRIX_SOT"||
    matrixAction.authorityClass!=="1962_NORMATIVE"||
    !matrixAction.sources?.includes("MR62_RITUS")||
