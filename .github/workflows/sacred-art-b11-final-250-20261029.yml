@@ -1,0 +1,67 @@
+name: Sacred Art B11 — final 250 verified Baroque painting reviewer
+on:
+  push:
+    branches: [research/sacred-art-b11-20261029]
+    paths:
+      - scripts/art/sacred-art-b11-consolidate-final-250-20261029.py
+      - .github/workflows/sacred-art-b11-final-250-20261029.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  consolidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b11-20261029
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Consolidate prior validated images without new Wikimedia requests
+        run: |
+          python -m py_compile scripts/art/sacred-art-b11-consolidate-final-250-20261029.py
+          python -u scripts/art/sacred-art-b11-consolidate-final-250-20261029.py
+      - name: Validate distinct final 250-card review with individual licenses and 0 import
+        run: |
+          python - <<'PY'
+          import json,re,hashlib
+          from pathlib import Path
+          d=json.load(open('data/calendar/sacred-art-b11-final-250-merged-verified-20261029.v1.json'))
+          r=d['rows'];c=d['counts']
+          assert d['batchReady'] and len(r)==d['reviewedArtworkCount']==d['targetSize']==250
+          assert c['sourceVerifiedUniqueFileUnion']==274 and c['finalGalleryCards']==250
+          assert c['previousReviewIDsExcluded']==1705
+          assert c['nativeOriginalsDownloaded']==c['productionImports']==c['additionalWikimediaRequests']==0
+          assert len({x['id'] for x in r})==len({x['previewURL'] for x in r})==250
+          assert all(x['id']=='commons:'+x['objectId'] for x in r)
+          assert all(x['licenseShortName'].lower().startswith(('public domain','cc0')) for x in r)
+          assert all(min(x['nativeSourceDimensions'].values())>=1400 for x in r)
+          assert all(x['imageRightsVerified'] and x['rightsConflict'] is None and not x['productionImported'] for x in r)
+          digest=hashlib.sha256(json.dumps([x['id'] for x in r],separators=(',',':')).encode()).hexdigest()
+          assert digest==d['batchHash']
+          h=Path('docs/SACRED_ART_NEXT_250_IMPORT_REVIEW_B11_FINAL_20261029.html').read_text()
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert m and json.loads(m.group(1))==r
+          assert "batchId:'B11'" in h and 'const PAGE_SIZE=50;' in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'seenPages.length<TOTAL_PAGES' in h
+          j=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert j
+          Path('/tmp/ao-b11-final-review.js').write_text(j.group(1))
+          print('PASS 250 distinct PD licensed 1400+ pixel Commons image records; no original downloads or repeat')
+          PY
+          node --check /tmp/ao-b11-final-review.js
+      - name: Archive final verified research review only
+        run: |
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-b11-final-250-merged-verified-20261029.v1.json
+          git add docs/SACRED_ART_B11_250_FINAL_MERGED_SOURCE_QA_20261029.md
+          git add docs/SACRED_ART_NEXT_250_IMPORT_REVIEW_B11_FINAL_20261029.html
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): finalize B11 source-backed 250 unique public-domain sacred paintings"
+          git pull --rebase origin research/sacred-art-b11-20261029
+          git push origin HEAD:research/sacred-art-b11-20261029
