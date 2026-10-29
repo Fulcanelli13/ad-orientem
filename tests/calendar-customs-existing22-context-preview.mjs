@@ -8,6 +8,7 @@ import {
 import {
  calendarCustomArticle, calendarCustomArticleIds, calendarCustomRecommendations
 } from "../src/calendar/customs-read-model.js";
+import {normaliseCustomSearch,calendarCustomSearchIndex,calendarCustomSearchMatches} from "../src/calendar/customs-search.js";
 
 const runtime=readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
 const sourceIds=calendarCustomArticleIds();
@@ -55,7 +56,22 @@ for(const date of ["2026-03-29","2026-04-04","2026-06-04","2026-08-15","2026-11-
  assert.ok(rows.every(r=>!r.id.startsWith("AO-CUST-VAR-")));
 }
 
-// Review-only switch: no default, no region/geolocation inference,
+
+// Regional terms must resolve to the published parent article in both languages.
+function historicalIndex(id){
+ const published=calendarCustomArticle(id);
+ const related=[...calendarCustomHistoricalVariantPreview(id,{fr:false}),
+  ...calendarCustomHistoricalVariantPreview(id,{fr:true})];
+ return normaliseCustomSearch([calendarCustomSearchIndex(published),
+  ...related.flatMap(x=>[x.title,x.history,x.historical_region])].join(" "));
+}
+assert.ok(calendarCustomSearchMatches(historicalIndex("DEAD-001"),"Philippines"));
+assert.ok(calendarCustomSearchMatches(historicalIndex("DEAD-001"),"Porto Rico"));
+assert.ok(calendarCustomSearchMatches(historicalIndex("BLSS-004"),"paska"));
+assert.ok(calendarCustomSearchMatches(historicalIndex("ADVT-001"),"Jeanne"));
+assert.equal(calendarCustomSearchMatches(historicalIndex("ADVT-001"),"paska"),false);
+assert.match(runtime,/related\.flatMap\(x=>\[x\.title,x\.history,x\.historical_region\]\)/);
+// Historical-parent-context release: no region/geolocation inference,
 // and preview content stays nested within the existing article renderer.
 assert.match(runtime,/CUSTOMS_HISTORICAL_PARENT_CONTEXT_RELEASE = true/);
 assert.match(runtime,/new URLSearchParams\(globalThis\.location\?\.search\|\|""\)\.get\("customsHistorical"\)!=="off"/);
