@@ -1,0 +1,1385 @@
+{
+  "schema": "AO_RIJKS_LINKED_DATA_THREE_OBJECT_DIAGNOSTIC_V1",
+  "at": "2026-10-29T21:09:54.698Z",
+  "rows": [
+    {
+      "sourceId": "rijks:200107945",
+      "originalAccession": "SK-A-4717",
+      "reviewedTitle": "Tobit and Anna with the Kid",
+      "sourceUrl": "https://id.rijksmuseum.nl/200107945",
+      "apiUrl": "https://data.rijksmuseum.nl/200107945?_profile=la-framed",
+      "response": {
+        "httpStatus": 200,
+        "returnedUrl": "https://data.rijksmuseum.nl/200107945?_profile=la-framed",
+        "mime": "application/ld+json",
+        "bytes": 49960,
+        "sha256": "da19097971121de5d69615c6aa8ed5d1114144b49b28d0326cca4b62ea1b56e8",
+        "jsonParsable": true,
+        "rootKeys": [
+          "@context",
+          "id",
+          "type",
+          "assigned_by",
+          "attributed_by",
+          "classified_as",
+          "current_location",
+          "dimension",
+          "equivalent",
+          "identified_by",
+          "made_of",
+          "member_of",
+          "produced_by",
+          "referred_to_by",
+          "shows",
+          "subject_of"
+        ],
+        "rootArray": false,
+        "id": "https://id.rijksmuseum.nl/200107945",
+        "objectType": "HumanMadeObject",
+        "identifiedBy": [
+          {
+            "type": "Identifier",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300312355",
+                "type": "Type"
+              },
+              {
+                "id": "https://id.rijksmuseum.nl/22015218",
+                "type": "Type",
+                "notation": [
+                  {
+                    "@language": "en",
+                    "@value": "object number"
+                  },
+                  {
+                    "@language": "nl",
+                    "@value": "objectnummer"
+                  }
+                ]
+              }
+            ],
+            "content": "SK-A-4717"
+          },
+          {
+            "id": "_:bnode0",
+            "type": "Name",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300404670",
+                "type": "Type",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300418049",
+                    "type": "Type",
+                    "_label": "brief text"
+                  }
+                ]
+              },
+              {
+                "id": "http://vocab.getty.edu/aat/300417207",
+                "type": "Type"
+              }
+            ],
+            "content": "Tobit and Anna with the Kid",
+            "language": [
+              {
+                "id": "http://vocab.getty.edu/aat/300388277",
+                "type": "Language"
+              }
+            ]
+          },
+          {
+            "id": "_:bnode1",
+            "type": "Name",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300404670",
+                "type": "Type",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300418049",
+                    "type": "Type",
+                    "_label": "brief text"
+                  }
+                ]
+              },
+              {
+                "id": "http://vocab.getty.edu/aat/300417207",
+                "type": "Type"
+              }
+            ],
+            "content": "Tobit en Anna met het bokje",
+            "language": [
+              {
+                "id": "http://vocab.getty.edu/aat/300388256",
+                "type": "Language"
+              }
+            ]
+          },
+          {
+            "type": "Name",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300417200",
+                "type": "Type"
+              }
+            ],
+            "content": "Tobit and Anna with the Kid",
+            "identified_by": [
+              {
+                "type": "Identifier",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300456575",
+                    "type": "Type"
+                  }
+                ],
+                "content": "1"
+              }
+            ],
+            "language": [
+              {
+                "id": "http://vocab.getty.edu/aat/300388277",
+                "type": "Language"
+              }
+            ],
+            "translation_of": [
+              {
+                "id": "_:bnode2",
+                "type": "Name",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300417200",
+                    "type": "Type"
+                  }
+                ],
+                "content": "Tobit en Anna met het bokje",
+                "identified_by": [
+                  {
+                    "id": "_:bnode3",
+                    "type": "Identifier",
+                    "classified_as": [
+                      {
+                        "id": "http://vocab.getty.edu/aat/300456575",
+                        "type": "Type"
+                      }
+                    ],
+                    "content": "1"
+                  }
+                ],
+                "language": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300388256",
+                    "type": "Language"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "_:bnode2",
+            "type": "Name",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300417200",
+                "type": "Type"
+              }
+            ],
+            "content": "Tobit en Anna met het bokje",
+            "identified_by": [
+              {
+                "id": "_:bnode3",
+                "type": "Identifier",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300456575",
+                    "type": "Type"
+                  }
+                ],
+                "content": "1"
+              }
+            ],
+            "language": [
+              {
+                "id": "http://vocab.getty.edu/aat/300388256",
+                "type": "Language"
+              }
+            ]
+          },
+          {
+            "type": "Name",
+            "classified_as": [
+              {
+                "id": "https://id.rijksmuseum.nl/22015528",
+                "type": "Type",
+                "notation": [
+                  {
+                    "@language": "en",
+                    "@value": "former title"
+                  },
+                  {
+                    "@language": "nl",
+                    "@value": "voormalige titel"
+                  }
+                ]
+              }
+            ],
+            "content": "Tobit beschuldigt Anna van het stelen van een bokje",
+            "identified_by": [
+              {
+                "type": "Identifier",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300456575",
+                    "type": "Type"
+                  }
+                ],
+                "content": "2"
+              }
+            ],
+            "language": [
+              {
+                "id": "http://vocab.getty.edu/aat/300388256",
+                "type": "Language"
+              }
+            ]
+          }
+        ],
+        "classifiedAs": [
+          {
+            "id": "https://id.rijksmuseum.nl/2208",
+            "type": "Type",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300435443",
+                "type": "Type",
+                "_label": "Type of Work"
+              }
+            ],
+            "equivalent": [
+              {
+                "id": "http://vocab.getty.edu/aat/300033618",
+                "type": "Type"
+              },
+              {
+                "id": "http://www.wikidata.org/entity/Q3305213",
+                "type": "Type"
+              }
+            ],
+            "notation": [
+              {
+                "@language": "en",
+                "@value": "painting"
+              },
+              {
+                "@language": "nl",
+                "@value": "schilderij"
+              }
+            ]
+          }
+        ],
+        "producedBy": {
+          "type": "Production",
+          "part": [
+            {
+              "type": "Production",
+              "carried_out_by": [
+                {
+                  "id": "https://id.rijksmuseum.nl/2103429",
+                  "type": "Person",
+                  "equivalent": [
+                    {
+                      "id": "http://viaf.org/viaf/64013650",
+                      "type": "Person"
+                    },
+                    {
+                      "id": "http://vocab.getty.edu/ulan/500011051",
+                      "type": "Person"
+                    },
+                    {
+                      "id": "http://www.wikidata.org/entity/Q5598",
+                      "type": "Person"
+                    },
+                    {
+                      "id": "https://rkd.nl/artists/66219",
+                      "type": "Person"
+                    }
+                  ],
+                  "notation": [
+                    {
+                      "@language": "en",
+                      "@value": "Rembrandt van Rijn"
+                    },
+                    {
+                      "@language": "nl",
+                      "@value": "Rembrandt van Rijn"
+                    }
+                  ]
+                }
+              ],
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300404450",
+                  "type": "Type"
+                }
+              ],
+              "identified_by": [
+                {
+                  "type": "Identifier",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300456575",
+                      "type": "Type"
+                    }
+                  ],
+                  "content": "1"
+                }
+              ],
+              "referred_to_by": [
+                {
+                  "type": "LinguisticObject",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300435416",
+                      "type": "Type"
+                    }
+                  ],
+                  "content": "painter: Rembrandt van Rijn",
+                  "language": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300388277",
+                      "type": "Language"
+                    }
+                  ]
+                },
+                {
+                  "type": "LinguisticObject",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300435416",
+                      "type": "Type"
+                    }
+                  ],
+                  "content": "schilder: Rembrandt van Rijn",
+                  "language": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300388256",
+                      "type": "Language"
+                    }
+                  ]
+                },
+                {
+                  "type": "LinguisticObject",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300435417",
+                      "type": "Type"
+                    }
+                  ],
+                  "content": "Rembrandt van Rijn",
+                  "language": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300388256",
+                      "type": "Language"
+                    }
+                  ]
+                },
+                {
+                  "type": "LinguisticObject",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300435417",
+                      "type": "Type"
+                    }
+                  ],
+                  "content": "Rembrandt van Rijn",
+                  "language": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300388277",
+                      "type": "Language"
+                    }
+                  ]
+                }
+              ],
+              "technique": [
+                {
+                  "id": "https://id.rijksmuseum.nl/2202217",
+                  "type": "Type",
+                  "equivalent": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300025136",
+                      "type": "Type"
+                    }
+                  ],
+                  "notation": [
+                    {
+                      "@language": "en",
+                      "@value": "painter"
+                    },
+                    {
+                      "@language": "nl",
+                      "@value": "schilder"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "referred_to_by": [
+            {
+              "type": "LinguisticObject",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300435416",
+                  "type": "Type"
+                }
+              ],
+              "content": "Rembrandt van Rijn",
+              "language": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300388256",
+                  "type": "Language"
+                }
+              ]
+            },
+            {
+              "type": "LinguisticObject",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300435416",
+                  "type": "Type"
+                }
+              ],
+              "content": "Rembrandt van Rijn",
+              "language": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300388277",
+                  "type": "Language"
+                }
+              ]
+            }
+          ],
+          "timespan": {
+            "type": "TimeSpan",
+            "begin_of_the_begin": "1626-01-01T00:00:00Z",
+            "end_of_the_end": "1626-12-31T23:59:59Z",
+            "identified_by": [
+              {
+                "type": "Name",
+                "content": "1626",
+                "language": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300388256",
+                    "type": "Language"
+                  }
+                ]
+              },
+              {
+                "type": "Name",
+                "content": "1626",
+                "language": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300388277",
+                    "type": "Language"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "rootSnippet": "{\n  \"@context\": \"https://linked.art/ns/v1/linked-art.json\",\n  \"id\": \"https://id.rijksmuseum.nl/200107945\",\n  \"type\": \"HumanMadeObject\",\n  \"assigned_by\": [\n    {\n      \"type\": \"AttributeAssignment\",\n      \"assigned\": [\n        {\n          \"type\": \"LinguisticObject\",\n          \"identified_by\": [\n            {\n              \"type\": \"Identifier\",\n              \"classified_as\": [\n                {\n                  \"id\": \"http://vocab.getty.edu/aat/300311705\",\n                  \"type\": \"Type\"\n                }\n              ],\n              \"content\": \"Ernst van de Wetering, De jonge Rembrandt aan het werk: Materiaalgebruik en schildertechniek van Rembrandt in het begin van zijn Leidse periode, u"
+      },
+      "identityVerifiedByThisProbe": false,
+      "photoCertified": false
+    },
+    {
+      "sourceId": "rijks:200108285",
+      "originalAccession": "SK-A-4252",
+      "reviewedTitle": "Ecce Homo",
+      "sourceUrl": "https://id.rijksmuseum.nl/200108285",
+      "apiUrl": "https://data.rijksmuseum.nl/200108285?_profile=la-framed",
+      "response": {
+        "httpStatus": 200,
+        "returnedUrl": "https://data.rijksmuseum.nl/200108285?_profile=la-framed",
+        "mime": "application/ld+json",
+        "bytes": 30741,
+        "sha256": "edee2695729158390810f0f07197f70e8e692d97740dd68b59051f8aea50711a",
+        "jsonParsable": true,
+        "rootKeys": [
+          "@context",
+          "id",
+          "type",
+          "assigned_by",
+          "attributed_by",
+          "classified_as",
+          "dimension",
+          "equivalent",
+          "identified_by",
+          "made_of",
+          "member_of",
+          "produced_by",
+          "referred_to_by",
+          "shows",
+          "subject_of"
+        ],
+        "rootArray": false,
+        "id": "https://id.rijksmuseum.nl/200108285",
+        "objectType": "HumanMadeObject",
+        "identifiedBy": [
+          {
+            "type": "Identifier",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300312355",
+                "type": "Type"
+              },
+              {
+                "id": "https://id.rijksmuseum.nl/22015218",
+                "type": "Type",
+                "notation": [
+                  {
+                    "@language": "en",
+                    "@value": "object number"
+                  },
+                  {
+                    "@language": "nl",
+                    "@value": "objectnummer"
+                  }
+                ]
+              }
+            ],
+            "content": "SK-A-4252"
+          },
+          {
+            "type": "Name",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300404670",
+                "type": "Type",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300418049",
+                    "type": "Type",
+                    "_label": "brief text"
+                  }
+                ]
+              },
+              {
+                "id": "http://vocab.getty.edu/aat/300417200",
+                "type": "Type"
+              }
+            ],
+            "content": "Ecce Homo",
+            "identified_by": [
+              {
+                "type": "Identifier",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300456575",
+                    "type": "Type"
+                  }
+                ],
+                "content": "1"
+              }
+            ],
+            "language": [
+              {
+                "id": "http://vocab.getty.edu/aat/300388277",
+                "type": "Language"
+              }
+            ],
+            "translation_of": [
+              {
+                "id": "_:bnode0",
+                "type": "Name",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300404670",
+                    "type": "Type",
+                    "classified_as": [
+                      {
+                        "id": "http://vocab.getty.edu/aat/300418049",
+                        "type": "Type",
+                        "_label": "brief text"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "http://vocab.getty.edu/aat/300417200",
+                    "type": "Type"
+                  }
+                ],
+                "content": "Ecce homo",
+                "identified_by": [
+                  {
+                    "id": "_:bnode1",
+                    "type": "Identifier",
+                    "classified_as": [
+                      {
+                        "id": "http://vocab.getty.edu/aat/300456575",
+                        "type": "Type"
+                      }
+                    ],
+                    "content": "1"
+                  }
+                ],
+                "language": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300388256",
+                    "type": "Language"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "_:bnode0",
+            "type": "Name",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300404670",
+                "type": "Type",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300418049",
+                    "type": "Type",
+                    "_label": "brief text"
+                  }
+                ]
+              },
+              {
+                "id": "http://vocab.getty.edu/aat/300417200",
+                "type": "Type"
+              }
+            ],
+            "content": "Ecce homo",
+            "identified_by": [
+              {
+                "id": "_:bnode1",
+                "type": "Identifier",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300456575",
+                    "type": "Type"
+                  }
+                ],
+                "content": "1"
+              }
+            ],
+            "language": [
+              {
+                "id": "http://vocab.getty.edu/aat/300388256",
+                "type": "Language"
+              }
+            ]
+          }
+        ],
+        "classifiedAs": [
+          {
+            "id": "https://id.rijksmuseum.nl/2208",
+            "type": "Type",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300435443",
+                "type": "Type",
+                "_label": "Type of Work"
+              }
+            ],
+            "equivalent": [
+              {
+                "id": "http://vocab.getty.edu/aat/300033618",
+                "type": "Type"
+              },
+              {
+                "id": "http://www.wikidata.org/entity/Q3305213",
+                "type": "Type"
+              }
+            ],
+            "notation": [
+              {
+                "@language": "en",
+                "@value": "painting"
+              },
+              {
+                "@language": "nl",
+                "@value": "schilderij"
+              }
+            ]
+          }
+        ],
+        "producedBy": {
+          "type": "Production",
+          "part": [
+            {
+              "type": "Production",
+              "assigned_by": [
+                {
+                  "type": "AttributeAssignment",
+                  "assigned": [
+                    {
+                      "id": "https://id.rijksmuseum.nl/21030970",
+                      "type": "Person"
+                    }
+                  ],
+                  "assigned_property": "influenced_by",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300404287",
+                      "type": "Type"
+                    }
+                  ]
+                }
+              ],
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300404450",
+                  "type": "Type"
+                }
+              ],
+              "identified_by": [
+                {
+                  "type": "Identifier",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300456575",
+                      "type": "Type"
+                    }
+                  ],
+                  "content": "1"
+                }
+              ],
+              "referred_to_by": [
+                {
+                  "type": "LinguisticObject",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300435416",
+                      "type": "Type"
+                    }
+                  ],
+                  "content": "painter: copy after Jheronimus Bosch",
+                  "language": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300388277",
+                      "type": "Language"
+                    }
+                  ]
+                },
+                {
+                  "type": "LinguisticObject",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300435416",
+                      "type": "Type"
+                    }
+                  ],
+                  "content": "schilder: kopie naar Jheronimus Bosch",
+                  "language": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300388256",
+                      "type": "Language"
+                    }
+                  ]
+                },
+                {
+                  "type": "LinguisticObject",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300435417",
+                      "type": "Type"
+                    }
+                  ],
+                  "content": "copy after Jheronimus Bosch",
+                  "language": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300388277",
+                      "type": "Language"
+                    }
+                  ]
+                },
+                {
+                  "type": "LinguisticObject",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300435417",
+                      "type": "Type"
+                    }
+                  ],
+                  "content": "kopie naar Jheronimus Bosch",
+                  "language": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300388256",
+                      "type": "Language"
+                    }
+                  ]
+                }
+              ],
+              "technique": [
+                {
+                  "id": "https://id.rijksmuseum.nl/2202217",
+                  "type": "Type",
+                  "equivalent": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300025136",
+                      "type": "Type"
+                    }
+                  ],
+                  "notation": [
+                    {
+                      "@language": "en",
+                      "@value": "painter"
+                    },
+                    {
+                      "@language": "nl",
+                      "@value": "schilder"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "referred_to_by": [
+            {
+              "type": "LinguisticObject",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300435416",
+                  "type": "Type"
+                }
+              ],
+              "content": "copy after Jheronimus Bosch",
+              "language": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300388277",
+                  "type": "Language"
+                }
+              ]
+            },
+            {
+              "type": "LinguisticObject",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300435416",
+                  "type": "Type"
+                }
+              ],
+              "content": "kopie naar Jheronimus Bosch",
+              "language": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300388256",
+                  "type": "Language"
+                }
+              ]
+            }
+          ],
+          "timespan": {
+            "type": "TimeSpan",
+            "begin_of_the_begin": "1530-01-01T00:00:00Z",
+            "end_of_the_end": "1550-12-31T23:59:59Z",
+            "identified_by": [
+              {
+                "type": "Name",
+                "content": "c. 1530 - c. 1550",
+                "language": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300388277",
+                    "type": "Language"
+                  }
+                ]
+              },
+              {
+                "type": "Name",
+                "content": "ca. 1530 - ca. 1550",
+                "language": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300388256",
+                    "type": "Language"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "rootSnippet": "{\n  \"@context\": \"https://linked.art/ns/v1/linked-art.json\",\n  \"id\": \"https://id.rijksmuseum.nl/200108285\",\n  \"type\": \"HumanMadeObject\",\n  \"assigned_by\": [\n    {\n      \"type\": \"AttributeAssignment\",\n      \"assigned\": [\n        {\n          \"type\": \"LinguisticObject\",\n          \"identified_by\": [\n            {\n              \"type\": \"Identifier\",\n              \"classified_as\": [\n                {\n                  \"id\": \"http://vocab.getty.edu/aat/300311705\",\n                  \"type\": \"Type\"\n                }\n              ],\n              \"part\": [\n                {\n                  \"type\": \"Identifier\",\n                  \"classified_as\": [\n                    {\n                      \"id\": \"ht"
+      },
+      "identityVerifiedByThisProbe": false,
+      "photoCertified": false
+    },
+    {
+      "sourceId": "rijks:20025870",
+      "originalAccession": "SK-A-1599-1",
+      "reviewedTitle": "Altarpiece Wing with the Circumcision. On the outside are John the Baptist with the Lamb of God",
+      "sourceUrl": "https://id.rijksmuseum.nl/20025870",
+      "apiUrl": "https://data.rijksmuseum.nl/20025870?_profile=la-framed",
+      "response": {
+        "httpStatus": 200,
+        "returnedUrl": "https://data.rijksmuseum.nl/20025870?_profile=la-framed",
+        "mime": "application/ld+json",
+        "bytes": 27915,
+        "sha256": "d310947c257c2a111eccb59247d5b510e6a311ef63b6515858b8c84e782e801e",
+        "jsonParsable": true,
+        "rootKeys": [
+          "@context",
+          "id",
+          "type",
+          "assigned_by",
+          "attributed_by",
+          "classified_as",
+          "dimension",
+          "equivalent",
+          "identified_by",
+          "made_of",
+          "member_of",
+          "produced_by",
+          "referred_to_by",
+          "shows",
+          "subject_of"
+        ],
+        "rootArray": false,
+        "id": "https://id.rijksmuseum.nl/20025870",
+        "objectType": "HumanMadeObject",
+        "identifiedBy": [
+          {
+            "type": "Identifier",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300312355",
+                "type": "Type"
+              },
+              {
+                "id": "https://id.rijksmuseum.nl/22015218",
+                "type": "Type",
+                "notation": [
+                  {
+                    "@language": "en",
+                    "@value": "object number"
+                  },
+                  {
+                    "@language": "nl",
+                    "@value": "objectnummer"
+                  }
+                ]
+              }
+            ],
+            "content": "SK-A-1599-1"
+          },
+          {
+            "type": "Name",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300404670",
+                "type": "Type",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300418049",
+                    "type": "Type",
+                    "_label": "brief text"
+                  }
+                ]
+              },
+              {
+                "id": "http://vocab.getty.edu/aat/300417200",
+                "type": "Type"
+              }
+            ],
+            "content": "Altarpiece Wing with the Circumcision. On the outside are John the Baptist with the Lamb of God",
+            "identified_by": [
+              {
+                "type": "Identifier",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300456575",
+                    "type": "Type"
+                  }
+                ],
+                "content": "1"
+              }
+            ],
+            "language": [
+              {
+                "id": "http://vocab.getty.edu/aat/300388277",
+                "type": "Language"
+              }
+            ],
+            "translation_of": [
+              {
+                "id": "_:bnode0",
+                "type": "Name",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300404670",
+                    "type": "Type",
+                    "classified_as": [
+                      {
+                        "id": "http://vocab.getty.edu/aat/300418049",
+                        "type": "Type",
+                        "_label": "brief text"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "http://vocab.getty.edu/aat/300417200",
+                    "type": "Type"
+                  }
+                ],
+                "content": "Zijluik van een altaarstuk met de besnijdenis",
+                "identified_by": [
+                  {
+                    "id": "_:bnode1",
+                    "type": "Identifier",
+                    "classified_as": [
+                      {
+                        "id": "http://vocab.getty.edu/aat/300456575",
+                        "type": "Type"
+                      }
+                    ],
+                    "content": "1"
+                  }
+                ],
+                "language": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300388256",
+                    "type": "Language"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "_:bnode0",
+            "type": "Name",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300404670",
+                "type": "Type",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300418049",
+                    "type": "Type",
+                    "_label": "brief text"
+                  }
+                ]
+              },
+              {
+                "id": "http://vocab.getty.edu/aat/300417200",
+                "type": "Type"
+              }
+            ],
+            "content": "Zijluik van een altaarstuk met de besnijdenis",
+            "identified_by": [
+              {
+                "id": "_:bnode1",
+                "type": "Identifier",
+                "classified_as": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300456575",
+                    "type": "Type"
+                  }
+                ],
+                "content": "1"
+              }
+            ],
+            "language": [
+              {
+                "id": "http://vocab.getty.edu/aat/300388256",
+                "type": "Language"
+              }
+            ]
+          }
+        ],
+        "classifiedAs": [
+          {
+            "id": "https://id.rijksmuseum.nl/2208",
+            "type": "Type",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300435443",
+                "type": "Type",
+                "_label": "Type of Work"
+              }
+            ],
+            "equivalent": [
+              {
+                "id": "http://vocab.getty.edu/aat/300033618",
+                "type": "Type"
+              },
+              {
+                "id": "http://www.wikidata.org/entity/Q3305213",
+                "type": "Type"
+              }
+            ],
+            "notation": [
+              {
+                "@language": "en",
+                "@value": "painting"
+              },
+              {
+                "@language": "nl",
+                "@value": "schilderij"
+              }
+            ]
+          },
+          {
+            "id": "https://id.rijksmuseum.nl/220891",
+            "type": "Type",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300435443",
+                "type": "Type",
+                "_label": "Type of Work"
+              }
+            ],
+            "equivalent": [
+              {
+                "id": "http://www.wikidata.org/entity/Q71668307",
+                "type": "Type"
+              }
+            ],
+            "notation": {
+              "@language": "nl",
+              "@value": "zijpaneel"
+            }
+          }
+        ],
+        "producedBy": {
+          "type": "Production",
+          "part": [
+            {
+              "type": "Production",
+              "carried_out_by": [
+                {
+                  "id": "https://id.rijksmuseum.nl/210640",
+                  "type": "Person",
+                  "equivalent": [
+                    {
+                      "id": "http://viaf.org/viaf/100627125",
+                      "type": "Person"
+                    },
+                    {
+                      "id": "http://vocab.getty.edu/ulan/500397994",
+                      "type": "Person"
+                    },
+                    {
+                      "id": "http://www.wikidata.org/entity/Q4233718",
+                      "type": "Person"
+                    },
+                    {
+                      "id": "https://rkd.nl/artists/1984",
+                      "type": "Person"
+                    }
+                  ],
+                  "notation": [
+                    {
+                      "@language": "en",
+                      "@value": "anonymous"
+                    },
+                    {
+                      "@language": "nl",
+                      "@value": "anoniem"
+                    }
+                  ]
+                }
+              ],
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300404450",
+                  "type": "Type"
+                }
+              ],
+              "identified_by": [
+                {
+                  "type": "Identifier",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300456575",
+                      "type": "Type"
+                    }
+                  ],
+                  "content": "1"
+                }
+              ],
+              "referred_to_by": [
+                {
+                  "type": "LinguisticObject",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300435416",
+                      "type": "Type"
+                    }
+                  ],
+                  "content": "painter: anonymous, Northern Netherlands",
+                  "language": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300388277",
+                      "type": "Language"
+                    }
+                  ]
+                },
+                {
+                  "type": "LinguisticObject",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300435416",
+                      "type": "Type"
+                    }
+                  ],
+                  "content": "schilder: anoniem, Noordelijke Nederlanden",
+                  "language": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300388256",
+                      "type": "Language"
+                    }
+                  ]
+                },
+                {
+                  "type": "LinguisticObject",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300435417",
+                      "type": "Type"
+                    }
+                  ],
+                  "content": "anoniem",
+                  "language": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300388256",
+                      "type": "Language"
+                    }
+                  ]
+                },
+                {
+                  "type": "LinguisticObject",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300435417",
+                      "type": "Type"
+                    }
+                  ],
+                  "content": "anonymous",
+                  "language": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300388277",
+                      "type": "Language"
+                    }
+                  ]
+                }
+              ],
+              "technique": [
+                {
+                  "id": "https://id.rijksmuseum.nl/2202217",
+                  "type": "Type",
+                  "equivalent": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300025136",
+                      "type": "Type"
+                    }
+                  ],
+                  "notation": [
+                    {
+                      "@language": "en",
+                      "@value": "painter"
+                    },
+                    {
+                      "@language": "nl",
+                      "@value": "schilder"
+                    }
+                  ]
+                }
+              ],
+              "took_place_at": [
+                {
+                  "id": "https://id.rijksmuseum.nl/230143",
+                  "type": "Place",
+                  "equivalent": [
+                    {
+                      "id": "http://www.wikidata.org/entity/Q27996474",
+                      "type": "Place"
+                    }
+                  ],
+                  "notation": [
+                    {
+                      "@language": "en",
+                      "@value": "Northern Netherlands"
+                    },
+                    {
+                      "@language": "nl",
+                      "@value": "Noordelijke Nederlanden"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "referred_to_by": [
+            {
+              "type": "LinguisticObject",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300435416",
+                  "type": "Type"
+                }
+              ],
+              "content": "anoniem",
+              "language": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300388256",
+                  "type": "Language"
+                }
+              ]
+            },
+            {
+              "type": "LinguisticObject",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300435416",
+                  "type": "Type"
+                }
+              ],
+              "content": "anonymous",
+              "language": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300388277",
+                  "type": "Language"
+                }
+              ]
+            }
+          ],
+          "timespan": {
+            "type": "TimeSpan",
+            "begin_of_the_begin": "1570-01-01T00:00:00Z",
+            "end_of_the_end": "1570-12-31T23:59:59Z",
+            "identified_by": [
+              {
+                "type": "Name",
+                "content": "c. 1570",
+                "language": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300388277",
+                    "type": "Language"
+                  }
+                ]
+              },
+              {
+                "type": "Name",
+                "content": "ca. 1570",
+                "language": [
+                  {
+                    "id": "http://vocab.getty.edu/aat/300388256",
+                    "type": "Language"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "rootSnippet": "{\n  \"@context\": \"https://linked.art/ns/v1/linked-art.json\",\n  \"id\": \"https://id.rijksmuseum.nl/20025870\",\n  \"type\": \"HumanMadeObject\",\n  \"assigned_by\": [\n    {\n      \"type\": \"AttributeAssignment\",\n      \"assigned\": [\n        {\n          \"id\": \"https://id.rijksmuseum.nl/301154610\",\n          \"type\": \"http://id.loc.gov/ontologies/bibframe/Instance\"\n        }\n      ],\n      \"assigned_property\": \"referred_to_by\",\n      \"classified_as\": [\n        {\n          \"id\": \"http://vocab.getty.edu/aat/300311954\",\n          \"type\": \"Type\"\n        }\n      ]\n    }\n  ],\n  \"attributed_by\": [\n    {\n      \"type\": \"AttributeAssignment\",\n      \"assigned\": [\n        {\n          \"id\": \"https://id.rijksmuseum.nl/20088"
+      },
+      "identityVerifiedByThisProbe": false,
+      "photoCertified": false
+    }
+  ],
+  "researchOnly": true,
+  "officialMuseumsVerifiedByThisProbe": 0,
+  "productionMutation": false
+}
