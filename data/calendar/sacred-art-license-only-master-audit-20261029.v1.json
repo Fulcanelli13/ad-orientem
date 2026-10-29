@@ -25,7 +25,8 @@
       "NO_COMPLETE_IMAGE_FOR_LICENSE": 25,
       "UNVERIFIED_SOURCE_RIGHTS": 76,
       "PD_CLAIM_NOT_EXACT_IMAGE_CLEARANCE": 6,
-      "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE": 136,
+      "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE": 33,
+      "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING": 103,
       "OPEN_METADATA_ONLY": 107,
       "CC0_EXACT_ARCHIVED_FILE_CONFIRMED": 18,
       "BLOCKED_CONTRADICTORY_EDITORIAL_HISTORY": 1,
@@ -48,7 +49,11 @@
     },
     "nonconditional_cc0_plus_pd_claims_from_breviarium": 73,
     "conditional_cc_sources": 4,
-    "excluded_from_breviarium": 7
+    "excluded_from_breviarium": 7,
+    "live_official_museum_objects_queried": 103,
+    "live_open_access_confirmed": 103,
+    "live_unavailable_or_rights_hold": 0,
+    "visual_inspections": 0
   },
   "main_383": [
     {
@@ -975,8 +980,8 @@
       "artist": "Berlinghiero",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1966.237.a",
       "source_policy_url": "https://www.clevelandart.org/open-access",
       "archived_source_path": "originals/cma-142473.jpg",
@@ -985,7 +990,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/142473"
     },
     {
       "artwork_id": "nga-56668",
@@ -3837,8 +3844,8 @@
       "artist": "Philippe de Champaigne",
       "approved": true,
       "prior_user_editorial_state": "APPROVED_LOCKED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/438724",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-438724.jpg",
@@ -3847,7 +3854,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438724"
     },
     {
       "artwork_id": "met-442488",
@@ -4035,8 +4044,8 @@
       "artist": "Giovanni Battista Pittoni",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1982.36",
       "source_policy_url": "https://www.clevelandart.org/open-access",
       "archived_source_path": "cma-150955.jpg",
@@ -4045,7 +4054,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/150955"
     },
     {
       "artwork_id": "met-438434",
@@ -4053,8 +4064,8 @@
       "artist": "Jean Auguste Dominique Ingres",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/438434",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-438434.jpg",
@@ -4063,7 +4074,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438434"
     },
     {
       "artwork_id": "met-437542",
@@ -4071,8 +4084,8 @@
       "artist": "Workshop of Peter Paul Rubens",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437542",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-437542.jpg",
@@ -4081,7 +4094,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437542"
     },
     {
       "artwork_id": "met-437743",
@@ -4089,8 +4104,8 @@
       "artist": "Spanish Painter",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437743",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-437743.jpg",
@@ -4099,7 +4114,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437743"
     },
     {
       "artwork_id": "cma-150046",
@@ -4107,8 +4124,8 @@
       "artist": "John Faed",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1980.258",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-150046.jpg",
@@ -4117,7 +4134,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/150046"
     },
     {
       "artwork_id": "met-437849",
@@ -4125,8 +4144,8 @@
       "artist": "Cosmè Tura",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437849",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-437849.jpg",
@@ -4135,7 +4154,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437849"
     },
     {
       "artwork_id": "met-816629",
@@ -4143,8 +4164,8 @@
       "artist": "Carlo Maratti",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/816629",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-816629.jpg",
@@ -4153,7 +4174,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/816629"
     },
     {
       "artwork_id": "cma-137195",
@@ -4161,8 +4184,8 @@
       "artist": "Claude Lorrain",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1962.151",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-137195.jpg",
@@ -4171,7 +4194,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/137195"
     },
     {
       "artwork_id": "cma-127746",
@@ -4179,8 +4204,8 @@
       "artist": "workshop of Jacopo Tintoretto",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1950.400",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-127746.jpg",
@@ -4189,7 +4214,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/127746"
     },
     {
       "artwork_id": "met-437457",
@@ -4197,8 +4224,8 @@
       "artist": "Sebastiano Ricci",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437457",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-437457.jpg",
@@ -4207,7 +4234,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437457"
     },
     {
       "artwork_id": "met-435755",
@@ -4215,8 +4244,8 @@
       "artist": "Sébastien Bourdon",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/435755",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-435755.jpg",
@@ -4225,7 +4254,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435755"
     },
     {
       "artwork_id": "nga-50726",
@@ -4269,8 +4300,8 @@
       "artist": "Juan de Flandes",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/436801",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-436801.jpg",
@@ -4279,7 +4310,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436801"
     },
     {
       "artwork_id": "met-702752",
@@ -4287,8 +4320,8 @@
       "artist": "Benedetto Luti",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/702752",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-702752.jpg",
@@ -4297,7 +4330,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/702752"
     },
     {
       "artwork_id": "met-437403",
@@ -4305,8 +4340,8 @@
       "artist": "Style of Rembrandt",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437403",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-437403.jpg",
@@ -4315,7 +4350,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437403"
     },
     {
       "artwork_id": "kress-k2016",
@@ -4341,8 +4378,8 @@
       "artist": "Workshop of Domenico Fetti",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/436302",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-436302.jpg",
@@ -4351,7 +4388,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436302"
     },
     {
       "artwork_id": "cma-150040",
@@ -4359,8 +4398,8 @@
       "artist": "Alexandre-Gabriel Decamps",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1980.253",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-150040.jpg",
@@ -4369,7 +4408,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/150040"
     },
     {
       "artwork_id": "met-436115",
@@ -4377,8 +4418,8 @@
       "artist": "Alexandre-Gabriel Decamps",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/436115",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-436115.jpg",
@@ -4387,7 +4428,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436115"
     },
     {
       "artwork_id": "cma-159488",
@@ -4395,8 +4438,8 @@
       "artist": "Hendrik van Balen",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1996.26",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-159488.jpg",
@@ -4405,7 +4448,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/159488"
     },
     {
       "artwork_id": "met-437298",
@@ -4413,8 +4458,8 @@
       "artist": "Alvaro Pirez",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437298",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-437298.jpg",
@@ -4423,7 +4468,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437298"
     },
     {
       "artwork_id": "met-436513",
@@ -4431,8 +4478,8 @@
       "artist": "Giovanni di Paolo",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/436513",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-436513.jpg",
@@ -4441,7 +4488,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436513"
     },
     {
       "artwork_id": "met-437216",
@@ -4449,8 +4498,8 @@
       "artist": "Netherlandish (Brussels) Painter",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437216",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-437216.jpg",
@@ -4459,7 +4508,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437216"
     },
     {
       "artwork_id": "met-435656",
@@ -4467,8 +4518,8 @@
       "artist": "Bergognone",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/435656",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-435656.jpg",
@@ -4477,7 +4528,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435656"
     },
     {
       "artwork_id": "met-437673",
@@ -4485,8 +4538,8 @@
       "artist": "Luca Signorelli",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437673",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-437673.jpg",
@@ -4495,7 +4548,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437673"
     },
     {
       "artwork_id": "met-458961",
@@ -4503,8 +4558,8 @@
       "artist": "Niccolò di Buonaccorso",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/458961",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-458961.jpg",
@@ -4513,7 +4568,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/458961"
     },
     {
       "artwork_id": "met-438462",
@@ -4521,8 +4578,8 @@
       "artist": "François Joseph Navez",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/438462",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-438462.jpg",
@@ -4531,7 +4588,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438462"
     },
     {
       "artwork_id": "met-438824",
@@ -4539,8 +4598,8 @@
       "artist": "Mattia Preti (Il Cavalier Calabrese)",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/438824",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-438824.jpg",
@@ -4549,7 +4608,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438824"
     },
     {
       "artwork_id": "met-436100",
@@ -4557,8 +4618,8 @@
       "artist": "Gerard David",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/436100",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-436100.jpg",
@@ -4567,7 +4628,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436100"
     },
     {
       "artwork_id": "met-436794",
@@ -4575,8 +4638,8 @@
       "artist": "Joos van Cleve",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/436794",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-436794.jpg",
@@ -4585,7 +4648,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436794"
     },
     {
       "artwork_id": "met-440393",
@@ -4593,8 +4658,8 @@
       "artist": "Jacopo Bassano",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/440393",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-440393.jpg",
@@ -4603,7 +4668,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/440393"
     },
     {
       "artwork_id": "cma-94846",
@@ -4611,8 +4678,8 @@
       "artist": "Unknown old master",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1915.407",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-94846.jpg",
@@ -4621,7 +4688,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/94846"
     },
     {
       "artwork_id": "met-459061",
@@ -4629,8 +4698,8 @@
       "artist": "Gerard David",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/459061",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-459061.jpg",
@@ -4639,7 +4708,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/459061"
     },
     {
       "artwork_id": "met-436096",
@@ -4647,8 +4718,8 @@
       "artist": "Gerard David",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/436096",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-436096.jpg",
@@ -4657,7 +4728,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436096"
     },
     {
       "artwork_id": "met-437250",
@@ -4665,8 +4738,8 @@
       "artist": "Girolamo Mazzola Bedoli",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437250",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-437250.jpg",
@@ -4675,7 +4748,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437250"
     },
     {
       "artwork_id": "met-437490",
@@ -4683,8 +4758,8 @@
       "artist": "Hans Memling",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437490",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-437490.jpg",
@@ -4693,7 +4768,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437490"
     },
     {
       "artwork_id": "met-459055",
@@ -4701,8 +4778,8 @@
       "artist": "Hans Memling",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/459055",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-459055.jpg",
@@ -4711,7 +4788,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/459055"
     },
     {
       "artwork_id": "cma-130980",
@@ -4719,8 +4798,8 @@
       "artist": "Jaume Ferrer the Younger",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1953.660",
       "source_policy_url": "https://www.clevelandart.org/open-access",
       "archived_source_path": "originals/cma-130980.jpg",
@@ -4729,7 +4808,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/130980"
     },
     {
       "artwork_id": "met-441233",
@@ -4737,8 +4818,8 @@
       "artist": "Peter Candid",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/441233",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-441233.jpg",
@@ -4747,7 +4828,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/441233"
     },
     {
       "artwork_id": "met-435899",
@@ -4755,8 +4838,8 @@
       "artist": "Petrus Christus",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/435899",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-435899.jpg",
@@ -4765,7 +4848,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435899"
     },
     {
       "artwork_id": "met-459016",
@@ -4773,8 +4858,8 @@
       "artist": "Sandro Botticelli",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/459016",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-459016.jpg",
@@ -4783,7 +4868,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/459016"
     },
     {
       "artwork_id": "cma-125248",
@@ -4791,8 +4878,8 @@
       "artist": "Master of Rubielos de Mora",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1947.208",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "museum-originals/cma-125248.jpg",
@@ -4801,7 +4888,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/125248"
     },
     {
       "artwork_id": "cma-111435",
@@ -4809,8 +4898,8 @@
       "artist": "Master of the Fröndenberg Altarpiece",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1929.920",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "museum-originals/cma-111435.jpg",
@@ -4819,7 +4908,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/111435"
     },
     {
       "artwork_id": "cma-136922",
@@ -4827,8 +4918,8 @@
       "artist": "Ugolino di Nerio",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1961.40",
       "source_policy_url": "https://www.clevelandart.org/open-access",
       "archived_source_path": "originals/cma-136922.jpg",
@@ -4837,7 +4928,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/136922"
     },
     {
       "artwork_id": "cma-142472",
@@ -4845,8 +4938,8 @@
       "artist": "Berlinghiero",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1966.237",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-142472.jpg",
@@ -4855,7 +4948,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/142472"
     },
     {
       "artwork_id": "met-436104",
@@ -4863,8 +4958,8 @@
       "artist": "Gerard David and Workshop",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/436104",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-436104.jpg",
@@ -4873,7 +4968,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436104"
     },
     {
       "artwork_id": "cma-122223",
@@ -4881,8 +4978,8 @@
       "artist": "Giovanni di Paolo",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1942.536",
       "source_policy_url": "https://www.clevelandart.org/open-access",
       "archived_source_path": "originals/cma-122223.jpg",
@@ -4891,7 +4988,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/122223"
     },
     {
       "artwork_id": "cma-115394",
@@ -4899,8 +4998,8 @@
       "artist": "Konrad Laib",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1936.18",
       "source_policy_url": "https://www.clevelandart.org/open-access",
       "archived_source_path": "originals/cma-115394.jpg",
@@ -4909,7 +5008,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/115394"
     },
     {
       "artwork_id": "met-437212",
@@ -4917,8 +5018,8 @@
       "artist": "Netherlandish (Antwerp Mannerist) Painter",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437212",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-437212.jpg",
@@ -4927,7 +5028,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437212"
     },
     {
       "artwork_id": "met-769294",
@@ -4935,8 +5038,8 @@
       "artist": "Girolamo da Carpi",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/769294",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-769294.jpg",
@@ -4945,7 +5048,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/769294"
     },
     {
       "artwork_id": "met-437231",
@@ -4953,8 +5058,8 @@
       "artist": "L'Ortolano",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437231",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-437231.jpg",
@@ -4963,7 +5068,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437231"
     },
     {
       "artwork_id": "cma-97143",
@@ -4971,8 +5078,8 @@
       "artist": "Unknown old master",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1916.782",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-97143.jpg",
@@ -4981,7 +5088,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/97143"
     },
     {
       "artwork_id": "met-435859",
@@ -4989,8 +5098,8 @@
       "artist": "Vincenzo Catena",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/435859",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-435859.jpg",
@@ -4999,7 +5108,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435859"
     },
     {
       "artwork_id": "met-435584",
@@ -5007,8 +5118,8 @@
       "artist": "Antoniazzo Romano",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/435584",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-435584.jpg",
@@ -5017,7 +5128,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435584"
     },
     {
       "artwork_id": "met-458971",
@@ -5025,8 +5138,8 @@
       "artist": "Giovanni di Paolo",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/458971",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-458971.jpg",
@@ -5035,7 +5148,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/458971"
     },
     {
       "artwork_id": "met-437371",
@@ -5043,8 +5158,8 @@
       "artist": "Raphael",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437371",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-437371.jpg",
@@ -5053,7 +5168,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437371"
     },
     {
       "artwork_id": "met-438338",
@@ -5061,8 +5178,8 @@
       "artist": "Annibale Carracci",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/438338",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-438338.jpg",
@@ -5071,7 +5188,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438338"
     },
     {
       "artwork_id": "met-437338",
@@ -5079,8 +5198,8 @@
       "artist": "Circle of Jan Provoost",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437338",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-437338.jpg",
@@ -5089,7 +5208,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437338"
     },
     {
       "artwork_id": "cma-119698",
@@ -5097,8 +5218,8 @@
       "artist": "Matteo di Giovanni",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1940.535",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-119698.jpg",
@@ -5107,7 +5228,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/119698"
     },
     {
       "artwork_id": "met-652416",
@@ -5115,8 +5238,8 @@
       "artist": "Pedro Orrente",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/652416",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-652416.jpg",
@@ -5125,7 +5248,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/652416"
     },
     {
       "artwork_id": "cma-112856",
@@ -5133,8 +5258,8 @@
       "artist": "Rogier van der Weyden",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1931.449",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-112856.jpg",
@@ -5143,7 +5268,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/112856"
     },
     {
       "artwork_id": "cma-97147",
@@ -5151,8 +5278,8 @@
       "artist": "Sodoma",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1916.786",
       "source_policy_url": "https://www.clevelandart.org/open-access",
       "archived_source_path": "originals/cma-97147.jpg",
@@ -5161,7 +5288,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/97147"
     },
     {
       "artwork_id": "cma-97181",
@@ -5169,8 +5298,8 @@
       "artist": "Unknown old master",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1916.816",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-97181.jpg",
@@ -5179,7 +5308,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/97181"
     },
     {
       "artwork_id": "met-437986",
@@ -5187,8 +5318,8 @@
       "artist": "Caravaggio (Michelangelo Merisi)",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437986",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-437986.jpg",
@@ -5197,7 +5328,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437986"
     },
     {
       "artwork_id": "met-437008",
@@ -5205,8 +5338,8 @@
       "artist": "Master of the Holy Blood",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437008",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-437008.jpg",
@@ -5215,7 +5348,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437008"
     },
     {
       "artwork_id": "met-435900",
@@ -5223,8 +5358,8 @@
       "artist": "Cigoli (Ludovico Cardi)",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/435900",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-435900.jpg",
@@ -5233,7 +5368,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435900"
     },
     {
       "artwork_id": "met-458963",
@@ -5241,8 +5378,8 @@
       "artist": "Paolo di Giovanni Fei",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/458963",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-458963.jpg",
@@ -5251,7 +5388,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/458963"
     },
     {
       "artwork_id": "cma-140148",
@@ -5259,8 +5398,8 @@
       "artist": "Fra Filippo Lippi",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1964.150",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-140148.jpg",
@@ -5269,7 +5408,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/140148"
     },
     {
       "artwork_id": "met-438467",
@@ -5277,8 +5418,8 @@
       "artist": "Bernard van Orley",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/438467",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-438467.jpg",
@@ -5287,7 +5428,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438467"
     },
     {
       "artwork_id": "met-712946",
@@ -5295,8 +5438,8 @@
       "artist": "Giovanni Battista Caracciolo",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/712946",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-712946.jpg",
@@ -5305,7 +5448,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/712946"
     },
     {
       "artwork_id": "met-436098",
@@ -5313,8 +5458,8 @@
       "artist": "Gerard David",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/436098",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-436098.jpg",
@@ -5323,7 +5468,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436098"
     },
     {
       "artwork_id": "met-438561",
@@ -5331,8 +5478,8 @@
       "artist": "Ludovico Carracci",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/438561",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-438561.jpg",
@@ -5341,7 +5488,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438561"
     },
     {
       "artwork_id": "met-647338",
@@ -5349,8 +5498,8 @@
       "artist": "Giovanni Benedetto Castiglione",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/647338",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-647338.jpg",
@@ -5359,7 +5508,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/647338"
     },
     {
       "artwork_id": "cma-138444",
@@ -5367,8 +5518,8 @@
       "artist": "Sassetta",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1962.36",
       "source_policy_url": "https://www.clevelandart.org/open-access",
       "archived_source_path": "originals/cma-138444.jpg",
@@ -5377,7 +5528,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/138444"
     },
     {
       "artwork_id": "met-435728",
@@ -5385,8 +5538,8 @@
       "artist": "Sandro Botticelli",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/435728",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-435728.jpg",
@@ -5395,7 +5548,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435728"
     },
     {
       "artwork_id": "met-436567",
@@ -5403,8 +5558,8 @@
       "artist": "Francesco Granacci",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/436567",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-436567.jpg",
@@ -5413,7 +5568,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436567"
     },
     {
       "artwork_id": "met-435616",
@@ -5421,8 +5578,8 @@
       "artist": "Bartolomeo degli Erri",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/435616",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-435616.jpg",
@@ -5431,7 +5588,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435616"
     },
     {
       "artwork_id": "met-436411",
@@ -5439,8 +5598,8 @@
       "artist": "Northern French Painter",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/436411",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-436411.jpg",
@@ -5449,7 +5608,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436411"
     },
     {
       "artwork_id": "met-436982",
@@ -5493,8 +5654,8 @@
       "artist": "Paolo Veronese (Paolo Caliari)",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/438134",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-438134.jpg",
@@ -5503,7 +5664,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438134"
     },
     {
       "artwork_id": "met-436198",
@@ -5511,8 +5674,8 @@
       "artist": "Abraham van Diepenbeeck",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/436198",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-436198.jpg",
@@ -5521,7 +5684,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436198"
     },
     {
       "artwork_id": "met-692597",
@@ -5529,8 +5694,8 @@
       "artist": "Antoniazzo Romano",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/692597",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-692597.jpg",
@@ -5539,7 +5704,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/692597"
     },
     {
       "artwork_id": "cma-136680",
@@ -5547,8 +5714,8 @@
       "artist": "Jusepe de Ribera",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1961.219",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-136680.jpg",
@@ -5557,7 +5724,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/136680"
     },
     {
       "artwork_id": "met-437273",
@@ -5583,8 +5752,8 @@
       "artist": "Placido Costanzi",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/724811",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-724811.jpg",
@@ -5593,7 +5762,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/724811"
     },
     {
       "artwork_id": "met-436050",
@@ -5619,8 +5790,8 @@
       "artist": "Ignacio de Ries",
       "approved": false,
       "prior_user_editorial_state": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437729",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-437729.jpg",
@@ -5629,7 +5800,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437729"
     },
     {
       "artwork_id": "met-459258",
@@ -5727,8 +5900,8 @@
       "artist": "Jusepe de Ribera",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/441971",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-441971.jpg",
@@ -5737,7 +5910,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/441971"
     },
     {
       "artwork_id": "C34:luketheevangelistbyjanjanszdestommejpg",
@@ -6339,8 +6514,8 @@
       "artist": "Guercino",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1967.123",
       "source_policy_url": "https://www.clevelandart.org/open-access",
       "archived_source_path": "originals/cma-143138.jpg",
@@ -6349,7 +6524,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/143138"
     },
     {
       "artwork_id": "nga-12205",
@@ -6429,8 +6606,8 @@
       "artist": "Diego Velázquez",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437871",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-437871.jpg",
@@ -6439,7 +6616,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437871"
     },
     {
       "artwork_id": "cma-112626",
@@ -6447,8 +6626,8 @@
       "artist": "Giovanni Battista Piazzetta",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1931.245",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "museum-originals/cma-112626.jpg",
@@ -6457,7 +6636,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/112626"
     },
     {
       "artwork_id": "kress-k2017",
@@ -6681,8 +6862,8 @@
       "artist": "Gerard David",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/436102",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-436102.jpg",
@@ -6691,7 +6872,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436102"
     },
     {
       "artwork_id": "met-436035",
@@ -6699,8 +6882,8 @@
       "artist": "Lucas Cranach the Younger and Workshop",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/436035",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-436035.jpg",
@@ -6709,7 +6892,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436035"
     },
     {
       "artwork_id": "met-436984",
@@ -6717,8 +6902,8 @@
       "artist": "Quinten Massys",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/436984",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-436984.jpg",
@@ -6727,7 +6912,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436984"
     },
     {
       "artwork_id": "cma-113202",
@@ -6735,8 +6922,8 @@
       "artist": "Filippino Lippi",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1932.227",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-113202.jpg",
@@ -6745,7 +6932,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/113202"
     },
     {
       "artwork_id": "cma-126768",
@@ -6753,8 +6942,8 @@
       "artist": "Battista Dossi",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1949.185",
       "source_policy_url": "https://www.clevelandart.org/open-access",
       "archived_source_path": "originals/cma-126768.jpg",
@@ -6763,7 +6952,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/126768"
     },
     {
       "artwork_id": "cma-130392",
@@ -6771,8 +6962,8 @@
       "artist": "Nicolas Poussin",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1953.156",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-130392.jpg",
@@ -6781,7 +6972,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/130392"
     },
     {
       "artwork_id": "cma-150389",
@@ -6789,8 +6982,8 @@
       "artist": "Nicolas Poussin",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1981.18",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-150389.jpg",
@@ -6799,7 +6992,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/150389"
     },
     {
       "artwork_id": "cma-160143",
@@ -6807,8 +7002,8 @@
       "artist": "Gaetano Gandolfi",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/1998.10",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-160143.jpg",
@@ -6817,7 +7012,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/160143"
     },
     {
       "artwork_id": "cma-170814",
@@ -6825,8 +7022,8 @@
       "artist": "Unknown old master",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/2013.312",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "originals/cma-170814.jpg",
@@ -6835,7 +7032,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/170814"
     },
     {
       "artwork_id": "cma-370119",
@@ -6843,8 +7042,8 @@
       "artist": "Maso da San Friano",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/2019.168",
       "source_policy_url": "https://www.clevelandart.org/open-access",
       "archived_source_path": "originals/cma-370119.jpg",
@@ -6853,7 +7052,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/370119"
     },
     {
       "artwork_id": "met-439327",
@@ -6861,8 +7062,8 @@
       "artist": "Gerard David",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/439327",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-439327.jpg",
@@ -6871,7 +7072,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/439327"
     },
     {
       "artwork_id": "met-437458",
@@ -6879,8 +7082,8 @@
       "artist": "Sebastiano Ricci",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437458",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-437458.jpg",
@@ -6889,7 +7092,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437458"
     },
     {
       "artwork_id": "met-437156",
@@ -6897,8 +7102,8 @@
       "artist": "Moretto da Brescia",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437156",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "museum-originals/met-437156.jpg",
@@ -6907,7 +7112,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437156"
     },
     {
       "artwork_id": "cma-78982",
@@ -6915,8 +7122,8 @@
       "artist": "Johann König",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://clevelandart.org/art/2017.192",
       "source_policy_url": "https://www.clevelandart.org/open-access-api",
       "archived_source_path": "museum-originals/cma-78982.jpg",
@@ -6925,7 +7132,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://openaccess-api.clevelandart.org/api/artworks/78982"
     },
     {
       "artwork_id": "met-437336",
@@ -6933,8 +7142,8 @@
       "artist": "Giulio Cesare Procaccini",
       "approved": false,
       "prior_user_editorial_state": "UNREVIEWED",
-      "photo_licence_status": "INSTITUTION_CC0_ARCHIVED_IMAGE_SOURCE_EVIDENCE",
-      "required_licence_action": "VERIFY_SELECTED_SHA_AGAINST_ISSUED_MUSEUM_FILE",
+      "photo_licence_status": "OFFICIAL_CC0_POLICY_RECONFIRMED_ARCHIVED_SOURCE_CHAIN_PENDING",
+      "required_licence_action": "MATCH_SAVED_SOURCE_SHA_TO_OFFICIAL_CURRENT_FILE",
       "museum_object_url": "https://www.metmuseum.org/art/collection/search/437336",
       "source_policy_url": "https://www.metmuseum.org/hubs/open-access",
       "archived_source_path": "originals/met-437336.jpg",
@@ -6943,7 +7152,9 @@
       "independent_exact_current_sha_checked": false,
       "definitive_reuse_clearance": false,
       "quality_unchecked_in_this_pass": true,
-      "production_approved": false
+      "production_approved": false,
+      "latest_official_object_rights_check": "OBJECT_CC0_RECONFIRMED",
+      "latest_institutional_api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437336"
     }
   ],
   "prayer_22_overlapping": [
@@ -8397,5 +8608,1044 @@
       "certified_exact_archived_file_rights": false,
       "quality_unchecked_in_this_pass": true
     }
-  ]
+  ],
+  "live_museum_recheck": {
+    "checked": 103,
+    "status_counts": {
+      "OBJECT_CC0_RECONFIRMED": 103
+    },
+    "official_object_checks": [
+      {
+        "artwork_id": "cma-142473",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/142473",
+        "institution": "cma",
+        "archived_image_sha256": "8d23530f7c24d1a9b16bf6faa1584bee8fc283796af64e6de377ccd169acf17e",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-150955",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/150955",
+        "institution": "cma",
+        "archived_image_sha256": "d738e33cf352a13f1bc8e4178449c0938cc59f6d149f4cfb2477d7dd93ccc71a",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437542",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437542",
+        "institution": "met",
+        "archived_image_sha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-438724",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438724",
+        "institution": "met",
+        "archived_image_sha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-438434",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438434",
+        "institution": "met",
+        "archived_image_sha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-150046",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/150046",
+        "institution": "cma",
+        "archived_image_sha256": "a8aa262ef0dedc4836b9944b4990560ed118a75001c6e2f6fa38ec8da677a0c5",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-816629",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/816629",
+        "institution": "met",
+        "archived_image_sha256": "61630e0254184d4bf79c36a24d6cf1707b9aa60fbc308584436b7955fd0bd9c7",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437743",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437743",
+        "institution": "met",
+        "archived_image_sha256": "93690bf1b31ed4b7459bacec00017dc9642a005744002dd57e9348e4ab106924",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-137195",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/137195",
+        "institution": "cma",
+        "archived_image_sha256": "8144d44e89b100a991a12c1bffbccb5665eb505a1f6087286a27063550d928db",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-127746",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/127746",
+        "institution": "cma",
+        "archived_image_sha256": "3ec7f722c11141337c98a884cd34c87cf09ed4f22e648603136bca0239ba046e",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437849",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437849",
+        "institution": "met",
+        "archived_image_sha256": "a4c2c2f6c7e1a844658f941a0fc1c14c58821db58e8be5f29c9390ef3c6f74e6",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-435755",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435755",
+        "institution": "met",
+        "archived_image_sha256": "44529c53ef6f8d3643a391a9b49f28b01145fed9fd6fd2abe451265ff1b9e32a",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437457",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437457",
+        "institution": "met",
+        "archived_image_sha256": "7519c33f727e462fc1b1f9ecb6cc7316105a35d68a212a9c984cd475a8d0de55",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-702752",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/702752",
+        "institution": "met",
+        "archived_image_sha256": "855b6176890e6dde6bac386b28aaea39470725df5ae74b1b234b7cd8f40ec910",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-436801",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436801",
+        "institution": "met",
+        "archived_image_sha256": "45fa890f6d70b6a1aa4d22a120fe4c86deb752a4290740154385e177a1656400",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-150040",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/150040",
+        "institution": "cma",
+        "archived_image_sha256": "50b5483495666044ea418c187ee3a987e1e593ae54939cdd9d0eb109406453ee",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-436302",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436302",
+        "institution": "met",
+        "archived_image_sha256": "9fc2875bc115caf055b8816a1519489a50651963b04bf5a37e445f0d6e93e0da",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437403",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437403",
+        "institution": "met",
+        "archived_image_sha256": "3c748a4137bae35764fa9fb607bf4af21366436db4c18594ec7aaba72427d108",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-159488",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/159488",
+        "institution": "cma",
+        "archived_image_sha256": "1880866ce9b1cfc27c59a177fbe16689d6d2a595aa69b3cf2fbf9a62c59f49a7",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-436115",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436115",
+        "institution": "met",
+        "archived_image_sha256": "22350106ae8a847e74a056f073b93be650796ba0e28e068e9ff0b5d022aa9e36",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437298",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437298",
+        "institution": "met",
+        "archived_image_sha256": "d89337600ea0e5702e68cf17ef7caf1d59755195da78c04313a6faff2bc598d9",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-436513",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436513",
+        "institution": "met",
+        "archived_image_sha256": "7728e97a8b99a4a79cd27175311024f2b081b5739c445eba59df9be58bb44984",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437216",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437216",
+        "institution": "met",
+        "archived_image_sha256": "5f3f6c1b4c9f74d0defe77bf286adc8f36c4dfcc4c86b4a22f8121ba11d00b99",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-435656",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435656",
+        "institution": "met",
+        "archived_image_sha256": "2cbb4291867ff44d99e3e81b8ed99b0f239ed212497e5502cb5c729453c6b19b",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437673",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437673",
+        "institution": "met",
+        "archived_image_sha256": "4dad30dbf33803fd4c79d07a1eed242bd757a8677bf72fdc91d1b05d502b2ff8",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-438824",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438824",
+        "institution": "met",
+        "archived_image_sha256": "2cf40d7d5fe0c8a513b3054281d60ee5c31ce03adcb53be40f79d2d588b2929a",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-438462",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438462",
+        "institution": "met",
+        "archived_image_sha256": "315d83f40ce37d5a5816eb493c9b114295693cca1f1fffdc31164934fe57728f",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-458961",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/458961",
+        "institution": "met",
+        "archived_image_sha256": "23e130e69d12b38c6e414d4e1d521b0c1a638cdab3ced14206f8fa75cd7fc778",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-436794",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436794",
+        "institution": "met",
+        "archived_image_sha256": "a96c2979bbce3032a6fa7c0a1213833c645ec3586e612ae814080808838bedeb",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-440393",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/440393",
+        "institution": "met",
+        "archived_image_sha256": "240532f3efec68b9d606873fde65b0978b1f7333c8b5c5a1f460df3d208a6c64",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-436100",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436100",
+        "institution": "met",
+        "archived_image_sha256": "755de619133017096650118dba3c96f3cb0f1b6cca903baaaa057c94b7e8e4e0",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-94846",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/94846",
+        "institution": "cma",
+        "archived_image_sha256": "e76eab273a2ce74b4b0077ff517fbb94906ada94735a86225fe12f0e6c955415",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-459061",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/459061",
+        "institution": "met",
+        "archived_image_sha256": "1af708834e149b6544a0e038ce187eeb99bbf86bc7e696f16f0ee49e89022fa0",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437250",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437250",
+        "institution": "met",
+        "archived_image_sha256": "97d061e06bda7f3f564f8b7997c3bc60fbc21ca1ccbda76514ee3466756cd3d3",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-436096",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436096",
+        "institution": "met",
+        "archived_image_sha256": "a5868af6037f575d05076c409bca27784cff735252bf3d7d2e6af2d01b13dbee",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-130980",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/130980",
+        "institution": "cma",
+        "archived_image_sha256": "918b2bb2ac6aa5cd5fcfc52e463d14c1c831db7da53895addfd49ef77953161f",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-459055",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/459055",
+        "institution": "met",
+        "archived_image_sha256": "944c9aa2d96068087c3015c2c134fe9707163e5a0662e3e90116499653382a1c",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437490",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437490",
+        "institution": "met",
+        "archived_image_sha256": "4a5b21d087c1c827c792b89b0c37c689e1c72b0779cc1a3b8bea92a1de69a36a",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-441233",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/441233",
+        "institution": "met",
+        "archived_image_sha256": "72c2c54a263ee67a0b7ed8ffc99474b64ce5c45096d75be0da16ca95ccab92d6",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-125248",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/125248",
+        "institution": "cma",
+        "archived_image_sha256": "a0e5686b8293d3d2567260a2900e1a7cf7fbf50046e55fb1ddb6a75f0b7e6873",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-111435",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/111435",
+        "institution": "cma",
+        "archived_image_sha256": "ca3477cec38703486c8a9d050e79d48d94bbda9668035a7d3447690da00b76ee",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-459016",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/459016",
+        "institution": "met",
+        "archived_image_sha256": "054284b4a8e2e5d6cc89696f5ec6a9d7d3d8f44df0d23f08069fcc9d08ac1bf8",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-136922",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/136922",
+        "institution": "cma",
+        "archived_image_sha256": "bbe1f62fabdd4018dc99cb8ca8bcca662451cd566a237ecd4834a84052afbf60",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-142472",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/142472",
+        "institution": "cma",
+        "archived_image_sha256": "114ef56e52c0f6a8ddc1c86afb91b888616b8d439d737aec6c1c85a004716871",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-122223",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/122223",
+        "institution": "cma",
+        "archived_image_sha256": "6055f95de874861bf78662655a689bf4c293b9331b9fe7cbf7363ead48342347",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-435899",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435899",
+        "institution": "met",
+        "archived_image_sha256": "08375c7fbd4b1a7106f4bc0a4cd5070c38f5caf12d589599f33fff60451210ef",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-115394",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/115394",
+        "institution": "cma",
+        "archived_image_sha256": "4eaeeb997a94d719c1c77b958100895438017d0c209c429493899b98ed897324",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-436104",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436104",
+        "institution": "met",
+        "archived_image_sha256": "c1cef22d2294b0f8574e30e0e90e2f9db8e70e7c226793ef1578fa1b6c79306b",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437212",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437212",
+        "institution": "met",
+        "archived_image_sha256": "33ee04b680360b08047e09e6f9f0b72cdb886a2ba663d7f133c79b9b2ed80fcb",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-769294",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/769294",
+        "institution": "met",
+        "archived_image_sha256": "fa268c569f69ee456946c71742199a1b85ebd082f27f68630184a9d33f293078",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-97143",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/97143",
+        "institution": "cma",
+        "archived_image_sha256": "bbd7a0d0f59e9accc3b5cf45017709895ef5b8e7e49f242d2f9c0f959241776d",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437231",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437231",
+        "institution": "met",
+        "archived_image_sha256": "3a736ed3e0f57755e1872ec4726de232c2d82e2f5ec873811007978f9e548e09",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-435859",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435859",
+        "institution": "met",
+        "archived_image_sha256": "2826fdfe6d5f1fd990d133889326d95b6655b17607b70d2f7cb81e4ce9ca2119",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-435584",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435584",
+        "institution": "met",
+        "archived_image_sha256": "f9293a3fe3c493805a59c912651cfbdc6ec6decbc75d0cf5c460638c1ad862e4",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-458971",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/458971",
+        "institution": "met",
+        "archived_image_sha256": "dbaf467f7769710340bd1f095c6a7317c7fba1420039ea66d2594ad23c8de4e0",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437338",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437338",
+        "institution": "met",
+        "archived_image_sha256": "ccc4a3b12d18a15af2ff47fc6f30ba404e86e3a98764758aa7ac9ea94d9e0ba0",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437371",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437371",
+        "institution": "met",
+        "archived_image_sha256": "f8d08f533183a99c36d021f8e4bf089cc91204a5c5694bfd22676b1dd787e35f",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-119698",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/119698",
+        "institution": "cma",
+        "archived_image_sha256": "5fbf39792f104c04a9327100e65cf4628db32fd9909e235a1704246bb4154c05",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-112856",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/112856",
+        "institution": "cma",
+        "archived_image_sha256": "90c986e166f476ebcdee174e0560a7d795f708004095e2eb13393dfeb02ad78e",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-652416",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/652416",
+        "institution": "met",
+        "archived_image_sha256": "dc5b87d8f35213f971f5baea844a43aaef6d05b1eacd5eeea3e7442a52f0116f",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-438338",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438338",
+        "institution": "met",
+        "archived_image_sha256": "6146de5ad9544812623cee4499e7cc717d1b0c152500be72c73103a781fc5757",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-97147",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/97147",
+        "institution": "cma",
+        "archived_image_sha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-97181",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/97181",
+        "institution": "cma",
+        "archived_image_sha256": "944ba04f66faaf903df9b945dc32952b8bf0b0f5e606eb45f7073c0739c7cc74",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437008",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437008",
+        "institution": "met",
+        "archived_image_sha256": "d1b9128deb55d1df3de1bd4b751d042f99e8bac5639e22938954a43531a67b11",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-435900",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435900",
+        "institution": "met",
+        "archived_image_sha256": "71735160551b379138067a3386e5559bad881566959e2b039fc11bb2feddd839",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-140148",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/140148",
+        "institution": "cma",
+        "archived_image_sha256": "9c4b503b069961ed89570b47bb527bab36c2d6b0d16a1f0aa0a9cc2f3f548b2f",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437986",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437986",
+        "institution": "met",
+        "archived_image_sha256": "566616872ca68aa9301a91f4e8ebd7631433cc42358f963e3230cbe6dd913dea",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-458963",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/458963",
+        "institution": "met",
+        "archived_image_sha256": "8a1138126560ff5087bfc2f9632b0f526171b7200e658652b504d03b0d968563",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-712946",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/712946",
+        "institution": "met",
+        "archived_image_sha256": "9d0fff62d386d550b93e99c399857d120c629f614b5b7870c4d4049e29efb668",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-438561",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438561",
+        "institution": "met",
+        "archived_image_sha256": "c69f9767527a3ea7249d8a2523bc8eec50810dd147dfcfb4bd0cdf7e3babc2ca",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-438467",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438467",
+        "institution": "met",
+        "archived_image_sha256": "2ed2f5a5294815d7332c713eef824d2f616db12e5636ff5253908d87469832df",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-436098",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436098",
+        "institution": "met",
+        "archived_image_sha256": "5a6de0cc6c1a3e16c9a52d2bbe39dde87202fd678f3f029aeef472bdab5881fb",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-138444",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/138444",
+        "institution": "cma",
+        "archived_image_sha256": "7b18fe56cecdd6ceb29cfe5824334dddbb98c35f1364119458e69aff086c5af5",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-647338",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/647338",
+        "institution": "met",
+        "archived_image_sha256": "ea1999a8bf70a3eedf2a1d3a059fbed4d6623c3970bf813645572a379c084f5a",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-436567",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436567",
+        "institution": "met",
+        "archived_image_sha256": "ae83f3ea09efd0540a86716d7bf215ad8251aad83b55d2842518e3aaa25bd852",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-435616",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435616",
+        "institution": "met",
+        "archived_image_sha256": "72a40ba5f4f3136162e19ff40eb81d1f6562f25a64be325bd6791f1570892b38",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-435728",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435728",
+        "institution": "met",
+        "archived_image_sha256": "fe7bee03b4a23f8b9c3edf491e4d2ab6e711f39600759b8be0473611d35771ea",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-438134",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438134",
+        "institution": "met",
+        "archived_image_sha256": "263c9e06dbc7f5ef80325def8bae06f2369ee79c41f4b04930c610771d0a0fa7",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-436411",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436411",
+        "institution": "met",
+        "archived_image_sha256": "94f832160df265e6ceeb8757955557f9d783c5dcbf1d7cd5440ff60596094312",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-436198",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436198",
+        "institution": "met",
+        "archived_image_sha256": "95566ebeb14d227a44c2464864556ad0049b40a1ce5128fbb8a065713027bc7f",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-136680",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/136680",
+        "institution": "cma",
+        "archived_image_sha256": "0b876319f895d7758a7bdac6e7c0c9a247054d825f4800991146daf1709a8bcd",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-692597",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/692597",
+        "institution": "met",
+        "archived_image_sha256": "9cdcf81fc3c217099dfc937947cb858dd26d5e937690c866d6922c616ed84b78",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-724811",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/724811",
+        "institution": "met",
+        "archived_image_sha256": "9eac04d11fbab1ce0e2b6cf8303591ff1e44d27c3fabd8dcfa2ab6e592db6751",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437729",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437729",
+        "institution": "met",
+        "archived_image_sha256": "26be17aa91fd738b87c38204430e9cff8333197c585fd4f95706d25e43fc3b4e",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-143138",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/143138",
+        "institution": "cma",
+        "archived_image_sha256": "36fcfd50c6b19294fb5f240fcf5ec9953d91a60c82baa7d9f535ee62c876bf5d",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-112626",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/112626",
+        "institution": "cma",
+        "archived_image_sha256": "8e839b5a58229decac79b7f6d9458f6713043c0fc5c9ca6dbf565839d0746d48",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-441971",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/441971",
+        "institution": "met",
+        "archived_image_sha256": "d3575d5455b46be66e0fc14e7ee1e7daf9194d2e8f68bd29d99608fea4a6e68e",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437871",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437871",
+        "institution": "met",
+        "archived_image_sha256": "a95fc8ee98280bf7e29c191ecdec02f5e7a8bdb4b6596b9c125794e47f1ab1fc",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-436035",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436035",
+        "institution": "met",
+        "archived_image_sha256": "acb7948243971ebd7d97fb4a4ad4f626b17b5662771efc98d3277d613f9ba723",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-436102",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436102",
+        "institution": "met",
+        "archived_image_sha256": "3a9ca2b198d9d8cb1bb4ec7651961bcd855346b7a98b7f5a9b0c0f3272a5037b",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-436984",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436984",
+        "institution": "met",
+        "archived_image_sha256": "254e94beee4b50c8d61e9f214cfee1663bb31bedd0cc51a47164a3717c1515c7",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-113202",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/113202",
+        "institution": "cma",
+        "archived_image_sha256": "93fe169c654cac0a872d2db89ee955facf9ca66c2e996327eeaacad11fcafc05",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-126768",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/126768",
+        "institution": "cma",
+        "archived_image_sha256": "ad354b41cb5b18f54f1362c6bbee187b4d03859b6f8c0cc7dcd6078cf66698ad",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-130392",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/130392",
+        "institution": "cma",
+        "archived_image_sha256": "87c75f556071d28bbda0584a070886d9704cd8ad68245dd1942ef4030ed5b414",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-150389",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/150389",
+        "institution": "cma",
+        "archived_image_sha256": "4d3e81096c456cb1b5ad9d36c69e82cba0e14655a1cd0a68a1d4776b4b1f55aa",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-170814",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/170814",
+        "institution": "cma",
+        "archived_image_sha256": "cca07856c983260deb9bf9c9e1bf637e648efd9b5cfcebcf86e9918d88325f9a",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-160143",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/160143",
+        "institution": "cma",
+        "archived_image_sha256": "6edb1762e9001a78a19efb71173959befeb9cf7f90a9538bab62b6bffd3f3814",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-370119",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/370119",
+        "institution": "cma",
+        "archived_image_sha256": "f0e2a6a0727d4c323bf78ab9b999b1ad4c2240c79a696cc0e8b250ec58fc2d10",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-439327",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/439327",
+        "institution": "met",
+        "archived_image_sha256": "cd131e409fc0b83366df017d216e2085ad21776fba13503a3cc300e37a57117f",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437458",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437458",
+        "institution": "met",
+        "archived_image_sha256": "6c980df07e2fd9ddc2bfc4b00b913fb6b60890f06fee9f11a8d640f8488b3abe",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "cma-78982",
+        "official_api": "https://openaccess-api.clevelandart.org/api/artworks/78982",
+        "institution": "cma",
+        "archived_image_sha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437156",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437156",
+        "institution": "met",
+        "archived_image_sha256": "6825656670d25b88c12aa833984db007876698c7d6fbdbdadeb6d020cf1bbb67",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      },
+      {
+        "artwork_id": "met-437336",
+        "official_api": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437336",
+        "institution": "met",
+        "archived_image_sha256": "934a14aa1e9c3efe31a9170825f24bf37b5bd6083953ebeb5c91cdc7265baf27",
+        "object_id_confirmed": true,
+        "public_domain_or_cc0": true,
+        "image_link_available": true,
+        "result": "OBJECT_CC0_RECONFIRMED"
+      }
+    ],
+    "no_image_downloads": true
+  }
 }
