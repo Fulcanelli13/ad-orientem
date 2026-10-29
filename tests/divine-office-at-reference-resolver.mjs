@@ -216,6 +216,20 @@ test("plain &psalm(116) reads exact pinned Psalm116 verses in each language, but
  assert.equal(calls.length,3);
  assert.equal(r.publishable,false);
  assert.equal(r.alignmentVerified,false);
+ const draft=await composeOfficeHourDraft({resolver,selection:{
+  edition:"ROMAN_1960",date:"2026-04-05",hour:"VESPERS",
+  officeKey:"easter-research-only",sourceRevision:DIVINUM_OFFICIUM_PIN,
+  status:"RESEARCH_SELECTION",orderedSections:[
+   {key:"plain-psalm-verses",path:"Tempora/Pasc0-0",
+    section:"Special Vespera 1",role:"PSALM"}
+  ]
+ }});
+ assert.equal(draft.psalmVerseOnlyComponentCount,1);
+ assert.equal(draft.psalmDoxologyAndAntiphonVerified,false);
+ assert.equal(draft.sections[0].psalmVersesExpandedWithoutDoxology,true);
+ assert.equal(draft.sections[0].psalmDoxologyAndAntiphonVerified,false);
+ assert.equal(draft.officeCompletenessVerified,false);
+ assert.equal(draft.publishable,false);
 });
 test("missing French Psalm 116 or unlisted psalm form is a hard failure",async()=>{
  const readSource=async(path,language)=>({
