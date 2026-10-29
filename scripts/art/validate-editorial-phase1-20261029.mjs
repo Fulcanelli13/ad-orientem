@@ -474,4 +474,53 @@ if (importedKmska !== 56 || correctedKmska !== 33 ||
   fail("KMSKA source review integrity gate changed");
 console.log("PASS KMSKA 89 queued accession records, 33 conditional, 5 preserved relations; zero premature promotions.");
 
+
+const kmskaOfficial2 = load("sacred-art-phase1-kmska-89-official-first2-20261029.v1.json");
+const verifiedKmskaById = new Map(kmskaQueue.rows.map(r => [r.sourceId, r]));
+const verifiedInventoryPages = {
+  "kmska:7v3wb4": ["208", "https://kmska.be/nl/meesterwerk/aanbidding-door-de-koningen-3"],
+  "kmska:9tct5i": ["209bis", "https://kmska.be/nl/meesterwerk/annunciatie"]
+};
+if (kmskaOfficial2.rows.length !== 2 ||
+    kmskaOfficial2.counts.kmskaSourceCards !== 89 ||
+    kmskaOfficial2.counts.exactOfficialMuseumPagesVerified !== 2 ||
+    kmskaOfficial2.counts.awaitingExactOfficialVerification !== 87 ||
+    kmskaOfficial2.counts.verifiedTriptychComponentOrSurfaceRecords !== 2 ||
+    kmskaOfficial2.counts.confirmedCanonical383LinksAdded !== 0 ||
+    kmskaOfficial2.counts.sourcePhotosCertified !== 0 ||
+    kmskaOfficial2.counts.userDecisionsChanged !== 0 ||
+    kmskaOfficial2.counts.productionMutations !== 0)
+  fail("KMSKA two exact institutional pages audit count drift");
+for (const r of kmskaOfficial2.rows) {
+  const frozen = verifiedKmskaById.get(r.sourceId);
+  const expectedPage = verifiedInventoryPages[r.sourceId];
+  if (!frozen || !expectedPage || r.accession !== expectedPage[0] ||
+      r.officialObjectPage !== expectedPage[1] ||
+      r.sourceBatch !== frozen.batch || r.userDecision !== frozen.originalUserDecision ||
+      r.originalReviewedTitle !== frozen.originalReviewedTitle ||
+      r.originalReviewedArtist !== frozen.originalReviewedArtist ||
+      r.accession !== frozen.inventoryNumberExactString ||
+      r.officialVerified.title !== true || r.officialVerified.inventory !== true ||
+      r.officialVerified.artist !== true || r.officialVerified.paintingMedium !== true ||
+      !r.objectRelation || r.objectRelation.parentMuseumInventory !== "208-210" ||
+      r.objectRelation.sourceDecisionNotTransferred !== true ||
+      r.photoLicenceCertified !== false || r.nativePhotoVisualCertified !== false ||
+      r.canonical383MatchEstablished !== false || r.productionReleased !== false)
+    fail("KMSKA exact official accession or approval/ensemble link mismatch " + r.sourceId);
+}
+if (kmskaOfficial2.officialParentEvidence.museumInventory !== "208-210" ||
+    kmskaOfficial2.officialParentEvidence.priorFrozenDecision !== "REJECT" ||
+    kmskaOfficial2.restrictions.doNotMergeAcceptedComponentWithRejectedWhole !== true ||
+    kmskaOfficial2.restrictions.productionMutation !== false ||
+    master.phase1KmskaVerification.sourceCards !== 89 ||
+    master.phase1KmskaVerification.frozenConditionalChoices !== 33 ||
+    master.phase1KmskaVerification.exactOfficialPagesVerified !== 2 ||
+    master.phase1KmskaVerification.exactOfficialPagesStillPending !== 87 ||
+    master.phase1KmskaVerification.museumBackedOfficialVerifiedToDate !== 230 ||
+    master.phase1KmskaVerification.museumBackedOfficialStillUnverified !== 249 ||
+    master.phase1KmskaVerification.canonical383NewLinks !== 0 ||
+    master.phase1KmskaVerification.productionMutation !== false)
+  fail("KMSKA master canonical/release source-page totals mismatch");
+console.log("PASS KMSKA two official accession pages, protected triptych parent and rejected-source distinction.");
+
 console.log("PASS Sacred Art Phase 1: " + records.length + " reviewed; " + expected.acceptedOrConditional + " accepted/conditional; " + counts.REJECT + " rejected; no production mutations.");
