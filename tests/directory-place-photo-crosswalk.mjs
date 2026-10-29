@@ -6,25 +6,32 @@ const geo=read("data/geography/seed-registry.v1.json");
 const r49=read("data/directory/preliminary-map-r49.v1.json");
 const cover=read("data/geography/approved-place-media.v1.json");
 const gallery=read("data/geography/approved-place-gallery.v1.json");
-const review=read("data/geography/research/directory-place-photo-screen-20261029.v1.json");
+const review=read("data/geography/research/directory-place-photo-screen-p92-20261029.v1.json");
 assert.deepEqual(review,buildScreen(geo,r49,cover,gallery),
   "The review registry must exactly reflect authoritative R49 and Place/media manifests");
 assert.equal(review.state,"RESEARCH_ONLY_NEVER_APP_VISIBLE");
 assert.deepEqual([review.counts.venues_screened,review.counts.canonical_places,
  review.counts.within_350m_pairs,review.counts.venues_near_place],
- [1879,516,40,37]);
-assert.equal(review.counts.confirmed_links,9);
-assert.equal(review.counts.nearby_approved_photo_pairs,6);
+ [1879,518,42,39]);
+assert.equal(review.counts.confirmed_links,11);
+assert.equal(review.counts.nearby_approved_photo_pairs,7);
 assert.equal(review.counts.exact_confirmed_photo_joins,0);
 assert.equal(review.counts.published_new_links,0);
 assert.equal(review.counts.published_new_photos,0);
+assert.equal(review.counts.approved_gallery_images,33);
+for(const [venue,place] of [["AO-AMER-R28-US-25-03","place:US:st-boniface-sioux-city"],["V19:DIO-US-MN-ST-PAUL-SAINT-AGNES","place:US:st-agnes-saint-paul"]]) {
+ const exact=review.candidate_pairs.filter(x=>x.venue_id===venue&&x.place_id===place);
+ assert.equal(exact.length,1);
+ assert.equal(exact[0].disposition,"EXISTING_CONFIRMED_LINK");
+ assert.equal(exact[0].place_has_approved_photo,false);
+}
 assert.equal(review.batches.length,10);
 assert.equal(review.batches.reduce((n,b)=>n+b.limit,0),1879);
-assert.equal(review.candidate_pairs.length,40);
+assert.equal(review.candidate_pairs.length,42);
 assert.equal(new Set(review.candidate_pairs.map(x=>x.venue_id+"|"+x.place_id)).size,40);
 assert.equal(review.candidate_pairs.every(x=>x.auto_publish===false),true);
 assert.equal(review.candidate_pairs.every(x=>x.distance_m>=0&&x.distance_m<=350),true);
-assert.equal(review.photo_review_queue.length,6);
+assert.equal(review.photo_review_queue.length,7);
 assert.equal(review.photo_review_queue.every(x=>x.review==="HOLD_SEPARATE_BUILDING_AND_RIGHTS_VERIFICATION"),true);
 const unrelated=review.candidate_pairs.find(x=>x.venue_name==="Friedhofskirche St. Michael"
   &&x.place_id==="place:DE:altoetting-gnadenkapelle");
@@ -73,4 +80,4 @@ assert.equal(trio.photos[0].license,"CC0");
 assert.equal(trio.photos[1].license,"CC-BY-SA-3.0");
 assert.equal(trio.photos[2].license,null,"Unknown altar copyright must remain unverified");
 
-console.log("PASS 1,879 venues x 516 canonical Places: 40 proximity review pairs, 6 photo leads, zero inferred publication");
+console.log("PASS 1,879 venues x 518 canonical Places: 42 proximity review pairs, 7 photo leads, zero inferred publication");
