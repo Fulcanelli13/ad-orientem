@@ -28,10 +28,11 @@ const base="http://127.0.0.1:"+server.address().port;
 let browser;
 try{
  browser=await chromium.launch({headless:true});
- for(const width of [320,390]){
-  for(const review of [false,true]){
+ const cases=[320,390].flatMap(width=>["en","fr"].flatMap(lang=>[false,true].map(review=>({width,lang,review}))));
+ for(const {width,lang,review} of cases){
    const page=await browser.newPage({viewport:{width,height:width===320?740:844},
-    isMobile:true,hasTouch:true,deviceScaleFactor:1,reducedMotion:"reduce"});
+    isMobile:true,hasTouch:true,deviceScaleFactor:1,reducedMotion:"reduce",
+    locale:lang==="fr"?"fr-FR":"en-GB"});
    const errors=[];
    page.on("pageerror",e=>errors.push(String(e?.message||e)));
    try{
@@ -39,6 +40,15 @@ try{
       {waitUntil:"domcontentloaded",timeout:90000});
     await page.waitForFunction(()=>window.AO_APP_SHELL_V1?.status?.().visibleOwner===true,
       null,{timeout:45000});
+    if(lang==="fr"){
+      await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
+      await page.locator("#ao-settings-modular-root").waitFor({state:"visible",timeout:20000});
+      await page.locator('[data-settings-route="/settings/language-reading"]').click();
+      await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="/settings/language-reading");
+      await page.locator('[data-pref-path="general.uiLanguage"][data-pref-value="fr"]').click();
+      await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr");
+      await page.evaluate(()=>globalThis.AO_SETTINGS_APP_V1?.close?.());
+    }
     const opened=await page.evaluate(async()=>{
      const {installCalendarBrowserOwner}=await import("/src/calendar/calendar-runtime.js");
      return installCalendarBrowserOwner(globalThis).open();
@@ -55,7 +65,7 @@ try{
     assert.equal(count,review?1:0,"Variant should be visible only with explicit editorial preview flag");
     if(review){
       assert.equal(await cal.locator('[data-cal-customs-variants-preview="ADVT-001"]').count(),1);
-      assert.match(await variant.textContent(),/John or Joan/);
+      assert.match(await variant.textContent(),lang==="fr"?/Jean ou Jeanne/:/John or Joan/);
       await variant.locator("summary").click();
       assert.match(await variant.textContent(),/1958|Weiser|Advent/);
       const source=variant.locator('a[href^="https://www.fisheaters.com/srpdf/"]');
@@ -78,11 +88,10 @@ try{
       const node=document.querySelector('[data-cal-custom-id="ADVT-001"]');
       node?.scrollIntoView({block:"start",behavior:"instant"});
     });
-    await page.screenshot({path:resolve(output,`calendar-customs-${review?"review":"default"}-en-${width}.png`),
+    await page.screenshot({path:resolve(output,`calendar-customs-${review?"review":"default"}-${lang}-${width}.png`),
       fullPage:false,animations:"disabled"});
-    console.log("PASS browser Calendar Customs: "+width+"px, "+(review?"review":"ordinary")+
+    console.log("PASS browser Calendar Customs: "+lang+" "+width+"px, "+(review?"review":"ordinary")+
       ", published=35, variant="+count+", no Calendar overflow");
    }finally{await page.close();}
   }
- }
 }finally{await browser?.close();await new Promise(ok=>server.close(ok));}
