@@ -50,6 +50,7 @@ export function buildTodayV2Sections(state,vm,enrichers,readModel=getSharedSanct
   const historicalCommemorations=observed?observedCommemorationLabels(observed,{language}):Object.freeze([]);
   const modernHonours=homeReviewedHonours(observed,selected,language,readModel);
   return Object.freeze({selected,language,period,upcoming:unique,feature,daily,spotlight,
+    enricherVisible:Boolean(enrichers?.visible),enricherRule:enrichers?.visible?enrichers.comingUp?.rows?.[1]??null:null,
     saintOrFeast,hasObservedDay:!!observed,historicalCommemorations,modernHonours,
     gospelReference:vm.gospelReference||null,
     gospelStatus:vm.properStatus,
@@ -105,6 +106,8 @@ export function renderTodayV2Sections(model,vm){
   const featureName=feature?.title||txt("Prayer Library","Livre de prières");
   const featureDetail=feature?.sub||txt("Choose a prayer for this moment","Choisir une prière pour ce moment");
   const featureRole=feature?.when||txt("Any time","À tout moment");
+  const rule=model.enricherRule??null;
+  const ruleMarkup=rule&&model.enricherVisible?`<button type="button" class="aoTodayV2RuleLine" data-home-cu-static="${esc(rule.id)}"><span>${esc(rule.role||txt("Daily rule","Règle du jour"))} · ${esc(rule.title)}</span><span aria-hidden="true">›</span></button>`:"";
   // The hero already names the observance; keep this link about its context.
   // Preserve the Calendar Day owner; Saints handoff remains a separate PR.
   const saintTitle=saintOrFeast?txt("Life & sources","Vie et sources")
@@ -117,7 +120,7 @@ export function renderTodayV2Sections(model,vm){
     model.gospelStatus==="ready"?txt("Read and explore the appointed Gospel","Lire et méditer l’Évangile du jour")
     :txt("Available when the Proper resolves","Disponible après résolution du Propre"));
   const cateTitle=daily?.title||txt("Daily Catechism","Catéchisme quotidien");
-  const cateDetail=daily?.description||txt("Saint Pius X catechism","Catéchisme de saint Pie X");
+  const cateDetail=daily?.badge?`${daily.badge} · ${daily.description||""}`:txt("Saint Pius X catechism","Catéchisme de saint Pie X");
 
   // Version C: one Home-owned calendar summary; source ownership remains
   // with the 1962 resolver and the separately reviewed later-calendar data.
@@ -143,7 +146,18 @@ export function renderTodayV2Sections(model,vm){
     return `<button type="button" class="aoTodayV2Event" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="${esc(rowData.date)}" aria-label="${esc(dateDisplay(rowData.date,language)+" · "+name)}"><span class="aoTodayV2EventDate">${esc(dateDisplay(rowData.date,language))}</span><strong>${esc(name)}</strong></button>`;
   }).join("");
   const glanceNote=txt("Upcoming calendar dates · confirm actual 1962 observance in Calendar","Dates à venir · vérifier la célébration effective de 1962 dans le calendrier");
-  return `<section class="aoTodayV2CalendarGlance" aria-label="${esc(txt("Calendar at a glance","Aperçu du calendrier"))}">
+  return `<div class="aoTodayV2PrayerThroughDay" id="ao-home-prayer-through-day" tabindex="-1">
+    <section class="aoTodayV2Zone aoTodayV2PrayNow"><div class="aoTodayV2SectionHead"><div><h2>${esc(txt("Prayer through the day","Prier au fil du jour"))}</h2></div><button type="button" data-home-cu-route="pray.library">${esc(txt("All prayers","Toutes les prières"))} →</button></div>
+      <div class="aoTodayV2PrayerFeature"><div class="aoTodayV2PrayerGlyph" aria-hidden="true"></div><div><small>${esc(featureRole)}</small><strong>${esc(featureName)}</strong><span>${esc(featureDetail)}</span></div><button type="button" ${featureAttrs}>${esc(txt("Pray","Prier"))}</button></div>
+      ${ruleMarkup}
+      <div class="aoTodayV2PrayerShortcuts">
+        <button type="button" data-home-cu-route="pray.rosary">${esc(txt("Rosary","Rosaire"))}</button>
+        <button type="button" data-home-cu-route="pray.confession">${esc(txt("Confession","Confession"))}</button>
+        <button type="button" data-home-cu-route="pray.adoration">${esc(txt("Adoration","Adoration"))}</button>
+      </div>
+    </section>
+  </div>
+  <section class="aoTodayV2CalendarGlance" aria-label="${esc(txt("Calendar at a glance","Aperçu du calendrier"))}">
     <h2>${esc(txt("Calendar at a glance","Aperçu du calendrier"))}</h2>
     ${calendarHonours}${calendarLater}
     <div class="aoTodayV2GlanceEvents">${calendarDates||'<p class="aoTodayV2GlanceEmpty">'+esc(txt("See dates in Calendar","Consulter les dates dans le calendrier"))+'</p>'}</div>
@@ -151,14 +165,6 @@ export function renderTodayV2Sections(model,vm){
   </section>
   ${renderSeasonalCustomsSpotlight(spotlight,language)}
   <div class="aoTodayV2Below" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}">
-    <section class="aoTodayV2Zone aoTodayV2PrayNow"><div class="aoTodayV2SectionHead"><div><h2>${esc(txt("Pray now","Prier maintenant"))}</h2></div><button type="button" data-home-cu-route="pray.library">${esc(txt("All prayers","Toutes les prières"))} →</button></div>
-      <div class="aoTodayV2PrayerFeature"><div class="aoTodayV2PrayerGlyph" aria-hidden="true"></div><div><small>${esc(featureRole)}</small><strong>${esc(featureName)}</strong><span>${esc(featureDetail)}</span></div><button type="button" ${featureAttrs}>${esc(txt("Pray","Prier"))}</button></div>
-      <div class="aoTodayV2PrayerShortcuts">
-        <button type="button" data-home-cu-route="pray.rosary">${esc(txt("Rosary","Rosaire"))}</button>
-        <button type="button" data-home-cu-route="pray.confession">${esc(txt("Confession","Confession"))}</button>
-        <button type="button" data-home-cu-route="pray.adoration">${esc(txt("Adoration","Adoration"))}</button>
-      </div>
-    </section>
     <section class="aoTodayV2Zone aoTodayV2ReadReflect"><div class="aoTodayV2SectionHead"><div><h2>${esc(txt("Read & reflect","Lire et méditer"))}</h2></div></div>
       ${row(saintTitle,saintDetail,'data-home-calendar data-home-calendar-view="day"')}
       ${row(txt("The Gospel of the Mass","Évangile de la messe"),gospelDetail,'data-action="gospel"')}
