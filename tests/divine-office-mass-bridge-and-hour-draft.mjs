@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {DIVINUM_OFFICIUM_PIN} from "../src/app/source-transport-compat.js";
-import {createOfficeMassHostBridge} from "../src/office/mass-host-source-bridge.js";
+import {createOfficeMassHostBridge,createOfficeAtHostBridge} from "../src/office/mass-host-source-bridge.js";
 import {composeOfficeHourDraft,OFFICE_HOUR_DRAFT_SCHEMA}
   from "../src/office/structured-hour-draft.js";
 
@@ -117,4 +117,53 @@ test("two sections of same original document keep stable identities",async()=>{
     [path+"#Antiphona",path+"#Oratio"]);
   assert.deepEqual(hour.sections.map(s=>s.key),["antiphon-a","collect-a"]);
   assert.equal("html" in hour,false);
+});
+
+test("same pinned Mass host resolves $Qui vivis without introducing a second source client",async()=>{
+ const calls=[];
+ const h={
+  sourceRevision:DIVINUM_OFFICIUM_PIN,
+  async resolveSource(p,lang,diagnostic){
+   calls.push({p,lang,diagnostic});
+   return {map:p==="Psalterium/Common/Prayers"?
+    new Map([["Qui vivis",["r. "+lang+" pinned source conclusion","R. Amen."]]]):
+    new Map([["Oratio",["Collect "+lang,"$Qui vivis"]]])};
+  }
+ };
+ const bridge=createOfficeAtHostBridge({
+  hostResolver:h,enableStandardPrayers:true
+ });
+ const hour=await composeOfficeHourDraft({
+  resolver:bridge,
+  selection:{...selection,orderedSections:[
+   {key:"collect-only",role:"COLLECT",path,section:"Oratio"}
+  ]}
+ });
+ assert.equal(hour.sectionCount,1);
+ assert.equal(hour.sections[0].texts.fr,
+  "Collect fr\nr. fr pinned source conclusion\nR. Amen.");
+ for(const lang of ["la","en","fr"]){
+  assert.deepEqual(hour.sections[0].referenceTraces[lang].map(x=>x.sourceId),[
+   path+"#Oratio","Psalterium/Common/Prayers#Qui vivis"
+  ]);
+ }
+ assert.equal(calls.length,6);
+ assert.ok(calls.every(c=>c.diagnostic==="office-source-first"));
+ assert.equal(hour.officeCompletenessVerified,false);
+ assert.equal(hour.languagesAligned,false);
+ assert.equal(hour.publishable,false);
+ assert.equal(hour.published,false);
+});
+test("host source macro bridge rejects unpinned host and refuses macros by default",async()=>{
+ const h=host();
+ h.resolver.sourceRevision="0".repeat(40);
+ assert.throws(()=>createOfficeAtHostBridge({hostResolver:h.resolver}),
+  /OFFICE_MASS_SOURCE_PIN_NOT_VERIFIED/);
+ const hostWithMacro=host({modify:(p,lang)=>({
+  map:new Map([["Oratio",["$Qui vivis"]]])
+ })});
+ const defaultBridge=createOfficeAtHostBridge({hostResolver:hostWithMacro.resolver});
+ await assert.rejects(defaultBridge.resolve({
+  path,section:"Oratio",language:"la"
+ }),/OFFICE_AT_OTHER_MACRO_OR_CONDITIONAL_UNRESOLVED/);
 });
