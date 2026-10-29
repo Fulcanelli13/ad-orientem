@@ -1,0 +1,42 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {NOVENA_CORPUS_V4,NOVENA_CORPUS_V4_IDS} from '../src/pray/novena-corpus-v4.js';
+const j=JSON.parse(readFileSync(new URL('../data/pray/novena-digital-witness-bulk-result-20261029.v1.json',import.meta.url),'utf8'));
+assert.equal(j.schema,'ao.pray.novena-digital-witness-bulk-result.v1');
+assert.equal(j.population.programmes,16);
+assert.equal(j.population.daySpecific,72);
+assert.equal(j.population.repeatForms,8);
+assert.equal(j.population.sharedPrayers,11);
+assert.equal(j.population.allComponents,91);
+assert.equal(j.population.distinctUrls,21);
+assert.equal(j.population.fetchedHtml,20);
+assert.equal(j.population.pdfHeld,1);
+assert.equal(j.sourceContentSha256.length,21);
+assert.equal(new Set(j.sourceContentSha256.map(x=>x.url)).size,21);
+for(const r of j.sourceContentSha256){
+ assert.ok(/^https:\/\//.test(r.url));
+ assert.ok(r.sha256===null||/^[a-f0-9]{64}$/.test(r.sha256));
+}
+assert.deepEqual([...Object.keys(j.dayBodyShingleCoverageThousandths)].sort(),
+ [...NOVENA_CORPUS_V4_IDS.filter(id=>NOVENA_CORPUS_V4[id].form==='DAY_SPECIFIC')].sort());
+const values=Object.values(j.dayBodyShingleCoverageThousandths).flat();
+assert.equal(values.length,72);
+assert.ok(values.every(v=>Number.isInteger(v)&&v>=900&&v<=1000));
+assert.equal(j.additionalComponents.length,19);
+const decisions={...j.summary};
+assert.equal(Object.values(decisions).reduce((a,v)=>a+v,0),91);
+assert.equal(decisions.HIGH_DIGITAL_OVERLAP,85);
+assert.equal(decisions.LOW_DIGITAL_OVERLAP,2);
+assert.equal(decisions.PARTIAL_DIGITAL_OVERLAP,1);
+assert.equal(decisions.NO_DIGITAL_COMPARISON,1);
+const exceptions=j.pendingExceptions.map(x=>x.id);
+for(const id of ['holy_souls','st_anthony_nine_tuesdays','immaculate_heart','christ_the_king','st_michael','assumption'])assert.ok(exceptions.includes(id));
+assert.match(NOVENA_CORPUS_V4.st_anthony_nine_tuesdays.source.status,/ENGLISH_ARCHAIZED_ADAPTATION/);
+assert.match(NOVENA_CORPUS_V4.immaculate_heart.source.status,/ENGLISH_ADAPTED_VARIANT_NOT_VERBATIM/);
+assert.ok(NOVENA_CORPUS_V4.st_anthony_nine_tuesdays.source.adaptation.includes('Reproduction rights'));
+assert.ok(NOVENA_CORPUS_V4.immaculate_heart.source.adaptation.includes('not a verbatim transcription'));
+assert.equal(j.verificationLimits.originalPrintFullCertificatesAdded,0);
+assert.equal(j.verificationLimits.historicalFrenchPrintCertificatesAdded,0);
+assert.equal(j.verificationLimits.currentIndulgenceClaimsCertified,0);
+assert.equal(j.verificationLimits.publishedPrayerWordsChanged,false);
+console.log('PASS 16 programmes; 72/72 English day bodies at 90%+ digital overlap; 8 repeat forms and 11 shared texts classified; 21 URLs fingerprinted, no invented print/translation certification.');
