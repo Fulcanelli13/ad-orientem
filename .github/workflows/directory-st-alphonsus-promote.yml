@@ -1,0 +1,58 @@
+name: Directory St Alphonsus two reviewed exterior photos - guarded promotion
+on:
+  push:
+    branches:
+      - feat/directory-st-alphonsus-media-20261029
+    paths:
+      - tools/directory/promote-st-alphonsus-photos.py
+      - data/geography/research/directory-st-alphonsus-photo-editorial-20261029.v1.json
+      - .github/workflows/directory-st-alphonsus-promote.yml
+  # No workflow_dispatch, pull_request write scope or schedule.
+permissions:
+  contents: write
+concurrency:
+  group: directory-st-alphonsus-exact-promotion
+  cancel-in-progress: false
+jobs:
+  promote-on-feature-branch-only:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/feat/directory-st-alphonsus-media-20261029'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate rights, exact Place identity, staged SHA256 and branch mutation guard
+        run: |
+          node tests/production-tree-hygiene.mjs
+          python tools/directory/promote-st-alphonsus-photos.py --validate-only
+      - name: Copy only two accepted WebPs and append to existing canonical photo manifests
+        run: python tools/directory/promote-st-alphonsus-photos.py
+      - name: Validate source integrity, photo binding, historical gallery and existing application contracts
+        run: |
+          node tests/directory-st-alphonsus-approved.mjs
+          node tests/directory-media-card-contract.mjs
+          node tests/explore-photo-research.mjs
+          node tests/explore-photo-r59.mjs
+          node tests/explore-r69-multi-place-gallery.mjs
+      - name: Commit exact two optimized photos and two canonical manifest updates to same feature branch
+        run: |
+          set -euo pipefail
+          git add assets/approved/place-media/US-st-alphonsus-baltimore.webp
+          git add assets/approved/place-gallery/US-st-alphonsus-baltimore-facade.webp
+          git add data/geography/approved-place-media.v1.json
+          git add data/geography/approved-place-gallery.v1.json
+          test "$(git diff --cached --name-only | wc -l | tr -d ' ')" -le 4
+          if git diff --cached --quiet; then
+            echo "No changes to exact approved photo records"
+          else
+            git -c user.name='ad-orientem-photo-review' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'feat(directory): approved St Alphonsus full-spire hero and sunny facade gallery'
+            git pull --rebase origin feat/directory-st-alphonsus-media-20261029
+            git push origin HEAD:refs/heads/feat/directory-st-alphonsus-media-20261029
+          fi
