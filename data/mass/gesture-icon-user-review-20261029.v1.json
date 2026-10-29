@@ -9,11 +9,17 @@
     "packageName": "Ad_Orientem_7_Adaptive_Gesture_SVG_Review.zip",
     "packageSha256": "21e50cacc4397c61e5e8b19d25300651be286fac34da4d72c1feb41f6931b5a4",
     "sourceManifest": "ao_gesture_review/manifest.json",
-    "sourceAssetPersistence": "REVIEW_PACKAGE_IN_CONVERSATION_NOT_YET_COMMITTED_AS_SEVEN_SVG_FILES",
+    "sourceAssetPersistence": "EXACT_SEVEN_SVG_FILES_ARCHIVED_IN_GITHUB_REVIEW_ONLY_AND_PERSISTENT_LIBRARY",
     "theme": "MONOCHROME_CURRENT_COLOR",
     "transparency": true,
     "sourceFormat": "SVG_TRUE_VECTOR_PATHS",
-    "warning": "The SHA-256 values identify the exact 7 SVGs the user reviewed; do not substitute earlier 2026-10-10 review candidates or unrelated generated image files."
+    "warning": "The SHA-256 values identify the exact 7 SVGs the user reviewed; do not substitute earlier 2026-10-10 review candidates or unrelated generated image files.",
+    "archivedReviewSvgRoot": "assets/review/mass-adaptive-gesture-20261029",
+    "libraryArchivePath": "/Ad Orientem/Mass Reader/Adaptive Gesture SVG Review 2026-10-29/Ad_Orientem_7_Adaptive_Gesture_SVG_Review.zip",
+    "libraryArchiveFileId": "libfile_7626efe453f08191858c77a5ec72ea47",
+    "artworkFilesArchivedCount": 7,
+    "originalArchiveSha256": "21e50cacc4397c61e5e8b19d25300651be286fac34da4d72c1feb41f6931b5a4",
+    "assetInspectionNote": "2026-10-29: all seven original files archived bit-identically as review-only SVGs; C0193 digest transcription repaired from original archive manifest and raw bytes; no user preference changed."
   },
   "counts": {
     "reviewed": 7,
@@ -34,7 +40,9 @@
       "assetStatus": "REVIEW_ONLY_NOT_RELEASED",
       "productionBinding": null,
       "originalUserSelection": true,
-      "updatedBy": "EXPLICIT_USER_REVIEW_2026_10_29"
+      "updatedBy": "EXPLICIT_USER_REVIEW_2026_10_29",
+      "archivedReviewSvg": "assets/review/mass-adaptive-gesture-20261029/C0117.svg",
+      "archivedReviewOnly": true
     },
     {
       "cueId": "C0155",
@@ -48,7 +56,9 @@
       "assetStatus": "REVIEW_ONLY_NOT_RELEASED",
       "productionBinding": null,
       "originalUserSelection": true,
-      "updatedBy": "EXPLICIT_USER_REVIEW_2026_10_29"
+      "updatedBy": "EXPLICIT_USER_REVIEW_2026_10_29",
+      "archivedReviewSvg": "assets/review/mass-adaptive-gesture-20261029/C0155.svg",
+      "archivedReviewOnly": true
     },
     {
       "cueId": "C0161",
@@ -62,7 +72,9 @@
       "assetStatus": "REVIEW_ONLY_NOT_RELEASED",
       "productionBinding": null,
       "originalUserSelection": true,
-      "updatedBy": "EXPLICIT_USER_REVIEW_2026_10_29"
+      "updatedBy": "EXPLICIT_USER_REVIEW_2026_10_29",
+      "archivedReviewSvg": "assets/review/mass-adaptive-gesture-20261029/C0161.svg",
+      "archivedReviewOnly": true
     },
     {
       "cueId": "C0169",
@@ -76,7 +88,9 @@
       "assetStatus": "REVIEW_ONLY_NOT_RELEASED",
       "productionBinding": null,
       "originalUserSelection": true,
-      "updatedBy": "EXPLICIT_USER_REVIEW_2026_10_29"
+      "updatedBy": "EXPLICIT_USER_REVIEW_2026_10_29",
+      "archivedReviewSvg": "assets/review/mass-adaptive-gesture-20261029/C0169.svg",
+      "archivedReviewOnly": true
     },
     {
       "cueId": "C0193",
@@ -84,13 +98,15 @@
       "decision": "APPROVE",
       "artworkUserDecision": "USER_APPROVED_CONCEPT",
       "submittedSvg": "svg/C0193.svg",
-      "submittedSvgSha256": "8d156dd5cc83d3b2ee02c4db02ab7867b9775b30",
+      "submittedSvgSha256": "8d156dd5cc83d3b2ee02c4db02ab7867b9771b9935efebce69397cc3c9775b30",
       "description": "Memento of the Dead: accepted artwork direction; existing candidate image contains a non-rubrical monstrance",
       "ceremonialStatus": "WRONG_MONSTRANCE_OBJECT_MUST_BE_CORRECTED",
       "assetStatus": "REVIEW_ONLY_NOT_RELEASED",
       "productionBinding": null,
       "originalUserSelection": true,
-      "updatedBy": "EXPLICIT_USER_REVIEW_2026_10_29"
+      "updatedBy": "EXPLICIT_USER_REVIEW_2026_10_29",
+      "archivedReviewSvg": "assets/review/mass-adaptive-gesture-20261029/C0193.svg",
+      "archivedReviewOnly": true
     },
     {
       "cueId": "C0204",
@@ -104,7 +120,9 @@
       "assetStatus": "REVIEW_ONLY_NOT_RELEASED",
       "productionBinding": null,
       "originalUserSelection": true,
-      "updatedBy": "EXPLICIT_USER_REVIEW_2026_10_29"
+      "updatedBy": "EXPLICIT_USER_REVIEW_2026_10_29",
+      "archivedReviewSvg": "assets/review/mass-adaptive-gesture-20261029/C0204.svg",
+      "archivedReviewOnly": true
     },
     {
       "cueId": "C0263",
@@ -118,7 +136,9 @@
       "assetStatus": "REVIEW_ONLY_NOT_RELEASED",
       "productionBinding": null,
       "originalUserSelection": true,
-      "updatedBy": "EXPLICIT_USER_REVIEW_2026_10_29"
+      "updatedBy": "EXPLICIT_USER_REVIEW_2026_10_29",
+      "archivedReviewSvg": "assets/review/mass-adaptive-gesture-20261029/C0263.svg",
+      "archivedReviewOnly": true
     }
   ],
   "guardrails": {
