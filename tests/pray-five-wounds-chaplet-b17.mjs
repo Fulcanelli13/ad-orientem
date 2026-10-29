@@ -67,10 +67,10 @@ assert.ok(runtime.includes("FIVE_WOUNDS.index=Math.max(0,FIVE_WOUNDS.index-1)"))
 assert.ok(runtime.includes("FIVE_WOUNDS.index=Math.min(29,FIVE_WOUNDS.index+1)"));
 assert.ok(runtime.includes("if(b.hasAttribute('data-p435930-five-finish')&&FIVE_WOUNDS.index===29)"));
 assert.ok(runtime.includes("FIVE_WOUNDS.latin=!FIVE_WOUNDS.latin"));
-assert.ok(runtime.includes("['adoration','benediction','stations','confession','fiveWounds'].includes(view)"),
- "Five Wounds must have the same session-only EN/FR switch as its neighbouring readers");
-assert.ok(runtime.includes("view==='fiveWounds'&&FIVE_WOUNDS.latin"),
- "Do not imply the Latin prayer text is an English/French session face");
+assert.ok(runtime.includes("const prayerLanguage=['adoration','benediction','stations','confession'].includes(view)||(view==='fiveWounds'&&!FIVE_WOUNDS.latin)"),
+ "Five Wounds must have the same session-only EN/FR switch while preserving the original four-reader contract");
+assert.ok(runtime.includes("b.hasAttribute('data-p435930-session-language')&&view==='fiveWounds'"),
+ "The shared language action must also handle the chaplet without changing its position");
 assert.ok(runtime.includes('data-p435930-own="${esc(route)}"'));
 assert.ok(runtime.includes("'pray.five_wounds',L('Chaplet of the Five Wounds'"));
 assert.ok(runtime.includes("'pray.five_wounds':{id:'pray.five_wounds'"));
