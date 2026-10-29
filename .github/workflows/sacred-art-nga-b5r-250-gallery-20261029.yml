@@ -1,0 +1,80 @@
+name: Sacred Art — NGA Washington 250-new-painting review batch B5R
+on:
+  push:
+    branches: [research/prayer-artwork-pristine-registry-bulk-20261028]
+    paths:
+      - .github/workflows/sacred-art-nga-b5r-250-gallery-20261029.yml
+      - scripts/art/sacred-art-nga-next-250-b5r-20261029.py
+      - scripts/art/build-sacred-art-nga-b5r-gallery-20261029.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-art-nga-b5r-250
+  cancel-in-progress: true
+jobs:
+  discover-and-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/prayer-artwork-pristine-registry-bulk-20261028
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Join official NGA painting records with openaccess=1 published images and test JPEGs
+        run: |
+          python -m py_compile scripts/art/sacred-art-nga-next-250-b5r-20261029.py scripts/art/build-sacred-art-nga-b5r-gallery-20261029.py
+          python scripts/art/sacred-art-nga-next-250-b5r-20261029.py --target 250 --max-previews 410 --delay .10
+      - name: Generate self-contained offline HTML with import and correction choices
+        run: |
+          python scripts/art/build-sacred-art-nga-b5r-gallery-20261029.py
+      - name: Verify user decision exclusions, legal image rights and actual card JavaScript
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          b5=json.loads(Path('data/calendar/sacred-art-nga-open-250-b5r-20261029.v1.json').read_text())
+          b3=json.loads(Path('data/calendar/sacred-art-250-review-source-b3-20261029.v1.json').read_text())
+          b4=json.loads(Path('data/calendar/sacred-art-b4-multimuseum-working-review-20261029.v1.json').read_text())
+          old60=json.loads(Path('data/calendar/sacred-art-20261029-user-60-import-reject-ledger.v1.json').read_text())
+          past={x['id'] for x in b3['rows']}|{x['id'] for x in b4['rows']}|{x['sourceId'] for z in ('imports','rejects') for x in old60[z]}
+          assert len(past)==433
+          ids={x['id'] for x in b5['rows']}
+          assert b5['batchReady'] and 200<=len(ids)<=250,b5['counts']
+          assert len(ids)==len(b5['rows']) and not ids&past
+          assert all(x['sourceImageService'].startswith('https://api.nga.gov/iiif/') for x in b5['rows'])
+          assert all(x['rightsBasis']=='NGA_EXACT_PUBLISHED_IMAGE_OPENACCESS_1' for x in b5['rows'])
+          assert all(not x['rightsHold'] and not x['productionImported'] for x in b5['rows'])
+          assert b5['gates']['originalImageBytesArchived']==0
+          h=Path('docs/SACRED_ART_NGA_250_IMPORT_REVIEW_B5R_20261029.html').read_text(encoding='utf8')
+          m=re.search(r'<script id="catalog-data" type="application/json">(.*?)</script>',h,re.S)
+          assert m
+          rows=json.loads(m.group(1))
+          assert len(rows)==len(ids) and {x['id'] for x in rows}==ids
+          assert 'const PAGE_SIZE=50;' in h and 'seenPages.length<TOTAL_PAGES' in h
+          assert 'IMPORT_WITH_CORRECTIONS' in h and 'Finalize and export decisions' in h
+          assert "batchId:'B5R'" in h and 'for(let score=' not in h
+          js=re.search(r'</script><script>(.*?)</script></body></html>',h,re.S)
+          assert js
+          Path('/tmp/ao-nga-b5r-gallery.js').write_text(js.group(1),encoding='utf8')
+          print('B5R_NGA_VALID',b5['counts'])
+          PY
+          node --check /tmp/ao-nga-b5r-gallery.js
+          git diff --exit-code -- data/calendar/sacred-art-250-review-source-b3-20261029.v1.json data/calendar/sacred-art-b4-multimuseum-working-review-20261029.v1.json data/calendar/sacred-art-b3-final-user-decisions-20261029.v1.json
+      - name: Archive verified source records and gallery to research branch only
+        if: always()
+        run: |
+          if [ ! -f data/calendar/sacred-art-nga-open-250-b5r-20261029.v1.json ]; then exit 0; fi
+          git config user.name "Ad Orientem sacred art research"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar/sacred-art-nga-open-250-b5r-20261029.v1.json docs/SACRED_ART_NGA_250_B5R_SOURCE_QA_20261029.md
+          if [ -f docs/SACRED_ART_NGA_250_IMPORT_REVIEW_B5R_20261029.html ]; then
+            git add docs/SACRED_ART_NGA_250_IMPORT_REVIEW_B5R_20261029.html
+          fi
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(art): archive NGA B5R 250 exact open-image painting previews and user review"
+          git pull --rebase origin research/prayer-artwork-pristine-registry-bulk-20261028
+          git push origin HEAD:research/prayer-artwork-pristine-registry-bulk-20261028
