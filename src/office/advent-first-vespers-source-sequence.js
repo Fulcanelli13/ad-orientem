@@ -181,3 +181,91 @@ export async function reviewAdventFirstVespersSourceSequence({
   rightsApproved:false,publishable:false,published:false
  });
 }
+
+/**
+ * Research-only verse composition for the source-identified Sunday five
+ * psalms. Caller supplies the existing bounded pinned verse reader; this
+ * method has no downloader, psalm fallback or new Office Ordo. A missing
+ * language withholds all five rather than returning a partly usable Hour.
+ */
+export async function assembleAdventFirstVespersPsalmodyResearch({
+ sourceSequence,psalmVerseResolver
+}={}){
+ if(sourceSequence?.schema!==ADVENT_FIRST_VESPERS_RESEARCH_SCHEMA||
+    sourceSequence.status!=="SOURCE_SEQUENCE_COMPONENTS_MAPPED_UNVERIFIED"||
+    sourceSequence.sourceRevision!==DIVINUM_OFFICIUM_PIN||
+    sourceSequence.civilDate!=="2026-11-28"||
+    sourceSequence.officeDate!=="2026-11-29"||
+    sourceSequence.officePart!=="FIRST"||
+    sourceSequence.psalmRowsVerifiedAsSourceCandidates!==5||
+    sourceSequence.appointedOfficeVerified!==false||
+    sourceSequence.completeHourVerified!==false||
+    sourceSequence.publishable!==false||
+    sourceSequence.published!==false||
+    !Array.isArray(sourceSequence.psalmCandidates)||
+    sourceSequence.psalmCandidates.length!==5||
+    typeof psalmVerseResolver?.resolvePlainPsalmParallel!=="function")
+  return withhold("OFFICE_FIRST_VESPERS_PSALM_VERSE_GATE_INVALID");
+ const checked=[];
+ for(let i=0;i<5;i++){
+  const candidate=sourceSequence.psalmCandidates[i];
+  if(candidate?.number!==EXPECTED_PSALMS[i]||
+     candidate.position!==i+1||
+     candidate.psalmSourcePath!=="Psalterium/Psalmorum/Psalm"+candidate.number||
+     candidate.psalmVersesFetched!==false||
+     candidate.gloriaPatriVerified!==false||
+     !LANGUAGES.every(lang=>candidate.languages?.[lang]?.antiphon))
+   return withhold("OFFICE_FIRST_VESPERS_SOURCE_CANDIDATE_CHANGED");
+ }
+ const resolved=await Promise.all(sourceSequence.psalmCandidates.map(
+  candidate=>psalmVerseResolver.resolvePlainPsalmParallel({
+   number:candidate.number
+  })
+ ));
+ for(let i=0;i<5;i++){
+  const source=resolved[i],candidate=sourceSequence.psalmCandidates[i];
+  if(source?.schema!=="ao.office.plain-psalm-source-verses.v1"||
+     source.status!=="THREE_LANGUAGE_SOURCE_VERSES_UNVERIFIED"||
+     source.sourceRevision!==DIVINUM_OFFICIUM_PIN||
+     source.psalmNumber!==candidate.number||
+     source.sourcePath!==candidate.psalmSourcePath||
+     source.rawVersesLocated!==true||
+     source.psalmDoxologyVerified!==false||
+     source.antiphonApplicationVerified!==false||
+     source.publishable!==false||source.published!==false||
+     !LANGUAGES.every(lang=>typeof source.texts?.[lang]==="string"&&
+      source.texts[lang].trim().startsWith(candidate.number+":")&&
+      source.referenceTraces?.[lang]?.[0]?.sourceId===
+        candidate.psalmSourcePath+"#VERSES"))
+   return withhold("OFFICE_FIRST_VESPERS_PSALM_VERSE_SOURCE_UNTRUSTED");
+  checked.push(Object.freeze({
+   position:i+1,psalmNumber:candidate.number,
+   psalmSourceId:candidate.psalmSourcePath+"#VERSES",
+   antiphonSourceId:PROPER+"#Ant Laudes:"+(i+1),
+   languages:Object.freeze(Object.fromEntries(LANGUAGES.map(lang=>[
+    lang,Object.freeze({
+     antiphon:candidate.languages[lang].antiphon,
+     psalmVerses:source.texts[lang],
+     sourceTrace:source.referenceTraces[lang]
+    })
+   ]))),
+   exactSourceVersesLocated:true,antiphonUseAuthorized:false,
+   psalmDoxologyVerified:false,liturgicalPlacementVerified:false,
+   translationAlignmentVerified:false,publishable:false
+  }));
+ }
+ return Object.freeze({
+  schema:ADVENT_FIRST_VESPERS_RESEARCH_SCHEMA,
+  status:"FIVE_TRILINGUAL_PSALM_VERSE_COMPONENTS_UNVERIFIED",
+  civilDate:sourceSequence.civilDate,officeDate:sourceSequence.officeDate,
+  officePart:"FIRST",hour:"VESPERS",
+  sourceRevision:DIVINUM_OFFICIUM_PIN,
+  psalmVerseComponents: Object.freeze(checked),
+  fivePsalmsReadFromExactSources:true,
+  requiredAntiphonPlacementVerified:false,gloriaPatriVerified:false,
+  sourceOnlyNotAnOffice:true,
+  appointedOfficeVerified:false,completeHourVerified:false,
+  printedEditionCertified:false,translationAlignmentVerified:false,
+  rightsApproved:false,publishable:false,published:false
+ });
+}
