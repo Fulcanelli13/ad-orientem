@@ -1,0 +1,111 @@
+name: P86 one-shot internal QA contact sheets for the 301 Directory photos
+on:
+  push:
+    branches:
+      - research/p86-visual-photo-qa-20261029
+    paths:
+      - data/directory/research/.run-p86-contact-sheets-20261029.json
+permissions:
+  contents: read
+concurrency:
+  group: ao-p84-2579-worldwide-one-review-20261029
+  cancel-in-progress: false
+jobs:
+  previews:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/research/p86-visual-photo-qa-20261029'
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    runs-on: ubuntu-latest
+    timeout-minutes: 42
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate exact 301-item QA-only trigger
+        run: |
+          python - <<'PY'
+          import json
+          j=json.load(open('data/directory/research/.run-p86-contact-sheets-20261029.json'))
+          assert j=={"schema":"AO_DIRECTORY_P86_QA_CONTACT_SHEETS_ONCE_V1",
+                     "p83_review_candidates":301,"photos_published":0,
+                     "originals_downloaded":0,"purpose":"ASSISTANT_VISUAL_QA_ONLY"}
+          PY
+      - name: Install already pinned image decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Restore one immutable P83 global research source
+        run: |
+          set -euo pipefail
+          branch="research/p83-screened-worldwide-photo-candidates-20261029"
+          git fetch --no-tags origin "refs/heads/$branch:refs/remotes/origin/$branch"
+          git worktree add --detach /tmp/p84-p83-global "refs/remotes/origin/$branch"
+          dir="/tmp/p84-p83-global/data/directory/research/archives/p83-worldwide-screened-photography"
+          (cd "$dir" && sha256sum -c SHA256SUMS)
+          python tools/directory/p84-worldwide-preview-review.py \
+            --queue "$dir/p83-source-screened-preview-queue.jsonl" \
+            --summary "$dir/p83-worldwide-summary.json" \
+            --out /tmp/p84-unused --check
+      - name: Independently screen current Commons rights and download small previews
+        run: |
+          set -euo pipefail
+          dir="/tmp/p84-p83-global/data/directory/research/archives/p83-worldwide-screened-photography"
+          python tools/directory/p84-worldwide-preview-review.py \
+            --queue "$dir/p83-source-screened-preview-queue.jsonl" \
+            --summary "$dir/p83-worldwide-summary.json" \
+            --shard ${{ matrix.shard }} --delay 0.35 \
+            --out "/tmp/p84-technical-shard-${{ matrix.shard }}"
+      - name: Save technical transport only (not a review batch)
+        uses: actions/upload-artifact@v4
+        with:
+          name: P86_INTERNAL_VISUAL_QA_SHARD_${{ matrix.shard }}
+          path: /tmp/p84-technical-shard-${{ matrix.shard }}/
+          retention-days: 7
+          if-no-files-found: error
+
+  one-worldwide-review:
+    needs: previews
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned image decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Get exact immutable P83 global source and verify checksum
+        run: |
+          set -euo pipefail
+          branch="research/p83-screened-worldwide-photo-candidates-20261029"
+          git fetch --no-tags origin "refs/heads/$branch:refs/remotes/origin/$branch"
+          git worktree add --detach /tmp/p84-p83-global "refs/remotes/origin/$branch"
+          dir="/tmp/p84-p83-global/data/directory/research/archives/p83-worldwide-screened-photography"
+          (cd "$dir" && sha256sum -c SHA256SUMS)
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: P86_INTERNAL_VISUAL_QA_SHARD_*
+          merge-multiple: true
+          path: /tmp/p84-all-transport
+      - name: Reconcile every P83 candidate, generate 250-per-page review and contact sheets
+        run: |
+          set -euo pipefail
+          dir="/tmp/p84-p83-global/data/directory/research/archives/p83-worldwide-screened-photography"
+          python tools/directory/p84-worldwide-preview-review.py \
+            --queue "$dir/p83-source-screened-preview-queue.jsonl" \
+            --summary "$dir/p83-worldwide-summary.json" \
+            --parts /tmp/p84-all-transport \
+            --out /tmp/p84-one-worldwide-editorial
+      - name: Single downloadable campaign with source audit, previews and interactive review
+        uses: actions/upload-artifact@v4
+        with:
+          name: P86-INTERNAL-301-CHURCH-CONTACT-SHEETS
+          path: /tmp/p84-one-worldwide-editorial/
+          retention-days: 7
+          if-no-files-found: error
