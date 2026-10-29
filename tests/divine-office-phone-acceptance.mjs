@@ -23,6 +23,14 @@ const locations={
 };
 for(const dir of Object.values(locations))
   if(!existsSync(join(dir,"preview-manifest.json")))throw Error("OFFICE_PHONE_MISSING_PREVIEW:"+dir);
+// The source generator presently omits the XXIII Sunday commemoration from
+// French 1 Nov Vespers. An unsafe page must not exist even in research output.
+const mainPreview=JSON.parse(readFileSync(join(locations.main,"preview-manifest.json"),"utf8"));
+assert.equal(mainPreview.blockedLocalePageCount,1);
+assert.ok(mainPreview.blockedLocalePages.some(x=>
+  x.date==="2026-11-01"&&x.hour==="VESPERS"&&x.locale==="fr"&&
+  x.semanticBlockerReasons.includes("FR_VESPERS_SUNDAY_COMMEMORATION_INCOMPLETE")));
+assert.equal(existsSync(join(locations.main,"2026-11-01-vespers-fr.html")),false);
 const mime={".html":"text/html; charset=utf-8",".css":"text/css; charset=utf-8",".js":"text/javascript; charset=utf-8"};
 let port;
 const server=http.createServer((req,res)=>{
@@ -46,7 +54,7 @@ await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0
 let browser;
 const cases=[
   {width:320,height:568,isMobile:true,hasTouch:true,bucket:"main",file:"2026-10-28-matins-en.html"},
-  {width:390,height:844,isMobile:true,hasTouch:true,bucket:"main",file:"2026-11-01-vespers-fr.html"},
+  {width:390,height:844,isMobile:true,hasTouch:true,bucket:"main",file:"2026-11-01-vespers-en.html"},
   {width:390,height:844,isMobile:true,hasTouch:true,bucket:"advent",file:"2026-11-28-vespers-en.html"},
   {width:390,height:844,isMobile:true,hasTouch:true,bucket:"advent",file:"2026-11-29-vespers-fr.html"},
   {width:320,height:568,isMobile:true,hasTouch:true,bucket:"souls",file:"2026-11-02-sext-en.html"},
