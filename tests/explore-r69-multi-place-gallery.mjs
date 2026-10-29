@@ -75,6 +75,21 @@ const dataset={
 };
 const projected=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projected,{today:"2026-10-11"});
+if(later.length){
+  // P74's first main images must actually appear in the Place card rather
+  // than remain hidden in the expanded gallery only.
+  for(const source of p73.candidates.filter(x=>x.display_role==="HERO")){
+    const profile=profiles.find(x=>x.place_id===source.place_id);
+    assert.equal(profile?.media?.asset_path,
+      "assets/approved/place-gallery/"+source.asset_filename,
+      "Selected HERO photograph did not bind to its own Place card "+source.place_id);
+    assert.equal(profile.gallery.find(x=>x.media_id===source.media_id)?.display_role,"HERO");
+  }
+  // Abbey gallery details may not hijack the primary hero; no generic fallback
+  // is permitted on Knock (which has only a secondary site picture).
+  const knock=profiles.find(x=>x.place_id==="place:IE:knock-shrine");
+  assert.equal(knock?.media,null,"Gallery-only Knock photo must not become hero");
+}
 assert.equal(profiles.filter(p=>p.illustrated_guide).length,14);
 assert.equal(profiles.filter(p=>p.gallery.length>0).length,
   new Set(registry.items.map(x=>x.place_id)).size);
