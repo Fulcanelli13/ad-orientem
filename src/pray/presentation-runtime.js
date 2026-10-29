@@ -495,7 +495,7 @@ function close({silent=false,preserve=false}={}){
 function head(title,sub=''){
  const settings=view==='angelus'?`<button type="button" class="aoFolioSettingsTrigger" data-p435930-angelus-settings aria-controls="aoAngelusOptions" aria-expanded="${angelusOptionsOpen?'true':'false'}" aria-label="${esc(L('Prayer parameters','Paramètres de prière'))}">${assetIcon('ao-ui-settings')||'⚙'}</button>`:'';
  // One in-session control serves all source-owned prayer card readers with real EN/FR text.
- const prayerLanguage=['adoration','benediction','stations','confession'].includes(view)
+ const prayerLanguage=['adoration','benediction','stations','confession'].includes(view)||(view==='fiveWounds'&&!FIVE_WOUNDS.latin)
   ? `<button type="button" class="aoP435930SessionLanguage" data-p435930-session-language lang="${lang()}" aria-label="${esc(L('Prayer language: English. Switch to French','Langue de prière : français. Passer en anglais'))}" title="${esc(L('Switch to French','Passer en anglais'))}">${lang().toUpperCase()}</button>`
   :'';
  const trailing=settings+prayerLanguage+`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
@@ -3213,6 +3213,19 @@ function onClick(e){
    const next=mount();if(!next)return;
    next.scrollTop=outerScroll;
    const card=next.querySelector('.aoDevoCardScroll');if(card)card.scrollTop=innerScroll;
+   next.querySelector('[data-p435930-session-language]')?.focus?.({preventScroll:true});
+  });
+  return;
+ }
+ // A chaplet-specific extension leaves the historic four-reader language
+ // handler above byte-for-byte intact for the established public/pray tests.
+ if(view==='fiveWounds'&&b.hasAttribute('data-p435930-session-language')&&!FIVE_WOUNDS.latin){
+  const current=mount(),outerScroll=current?.scrollTop||0;
+  praySessionLanguage=isFr()?'en':'fr';
+  render();
+  queueMicrotask(()=>{
+   const next=mount();if(!next)return;
+   next.scrollTop=outerScroll;
    next.querySelector('[data-p435930-session-language]')?.focus?.({preventScroll:true});
   });
   return;

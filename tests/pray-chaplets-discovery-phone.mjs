@@ -81,6 +81,18 @@ try{
    // The new Five Wounds uses one reader, existing prayers, and no duplicate top-level module.
    await page.locator(rootSel+' [data-p435930-own="pray.five_wounds"]').click();
    assert.equal(await page.locator(rootSel+' [data-ao-five-wounds-reader]').count(),1);
+   const openingLayout=await page.evaluate(()=>{
+    const reader=document.querySelector("#aoPray435930.open .aoFiveWounds");
+    const prayer=reader.querySelector(".aoFiveWoundsPrayerText");
+    const actions=reader.querySelector(".aoFiveWoundsActions");
+    const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
+    const p=prayer.getBoundingClientRect(),a=actions.getBoundingClientRect(),v=mount.getBoundingClientRect();
+    return {visibleAboveDock:Math.max(0,Math.min(p.bottom,a.top,v.bottom)-Math.max(p.top,v.top)),
+      prayerTop:p.top,dockTop:a.top,viewportBottom:v.bottom,scrollTop:mount.scrollTop};
+   });
+   assert.ok(openingLayout.visibleAboveDock>=40,
+    "The actual source prayer must appear on the initial phone screen, not only the wound rail: "+JSON.stringify(openingLayout));
+   await page.screenshot({path:resolve(out,"five-wounds-opening-"+width+".png"),animations:"disabled"});
    assert.equal(await page.locator(rootSel+' [data-ao-five-wounds-reader] [role="progressbar"]').getAttribute("aria-valuenow"),"1");
    assert.match(await page.locator(rootSel+' .aoFiveWoundsPrayerText').innerText(),/Glory be to the Father/);
    await page.locator(rootSel+' [data-p435930-five-next]').click();
@@ -91,6 +103,57 @@ try{
    assert.match(await page.locator(rootSel+' .aoFiveWoundsPrayerText').innerText(),/Gloria Patri/);
    await page.screenshot({path:resolve(out,"five-wounds-guided-"+width+".png"),animations:"disabled"});
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),"Five Wounds reader must not clip horizontally");
+   // B36: check the actual chapter rail and thumb controls on a narrow phone.
+   // The five wound labels must not fall back to 10px. Keep the original
+   // 30-prayer and EN/FR/LA content ownership unchanged.
+   const fiveMetrics=()=>page.evaluate(()=>{
+    const root=document.querySelector("#aoPray435930.open");
+    const reader=root.querySelector(".aoFiveWounds"),mount=root.querySelector(".aoP435930Mount");
+    const nav=reader.querySelector(".aoFiveWoundsActions");
+    const next=nav.querySelector("[data-p435930-five-next],[data-p435930-five-finish]");
+    const labels=[...reader.querySelectorAll(".aoFiveWoundsRail button small")];
+    const btn=next.getBoundingClientRect(),rect=nav.getBoundingClientRect(),viewport=mount.getBoundingClientRect();
+    const hit=document.elementFromPoint(btn.left+btn.width/2,btn.top+btn.height/2);
+    return {position:getComputedStyle(nav).position,navTop:rect.top,navBottom:rect.bottom,
+      viewportTop:viewport.top,viewportBottom:viewport.bottom,
+      labelFonts:labels.map(x=>parseFloat(getComputedStyle(x).fontSize)),
+      labelOpacities:labels.map(x=>parseFloat(getComputedStyle(x).opacity)),
+      buttonHeight:btn.height,buttonWidth:btn.width,
+      hit:hit===next||next.contains(hit),scrollRange:mount.scrollHeight-mount.clientHeight,
+      overflow:document.documentElement.scrollWidth-innerWidth};
+   });
+   const fiveBefore=await fiveMetrics();
+   assert.equal(fiveBefore.position,"sticky","Five Wounds navigation must use the original sticky footer");
+   assert.equal(fiveBefore.labelFonts.length,5);
+   assert.ok(fiveBefore.labelFonts.every(x=>x>=12),"Five Wounds labels must stay legible on narrow screens");
+   assert.ok(fiveBefore.labelOpacities.every(x=>x>=.99),"Inactive wound names must not be dimmed");
+   assert.ok(fiveBefore.buttonHeight>=48&&fiveBefore.buttonWidth>=100,
+    "Next prayer must be a substantial touch target: "+JSON.stringify(fiveBefore));
+   await page.evaluate(()=>{
+    const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
+    m.scrollTop=Math.min(200,Math.max(0,m.scrollHeight-m.clientHeight));
+   });
+   const fiveScrolled=await fiveMetrics();
+   assert.ok(fiveScrolled.hit&&fiveScrolled.navTop>=fiveScrolled.viewportTop-3&&fiveScrolled.navBottom<=fiveScrolled.viewportBottom+3,
+    "Five Wounds thumb dock must remain reachable while reading: "+JSON.stringify(fiveScrolled));
+   await page.screenshot({path:resolve(out,"five-wounds-thumb-scroll-"+width+".png"),animations:"disabled"});
+   await page.locator(rootSel+' [data-p435930-five-latin]').click(); // return to vernacular from Latin
+   const sessionLanguage=page.locator(rootSel+' [data-p435930-session-language]');
+   assert.equal(await sessionLanguage.count(),1,"Five Wounds needs the same in-session EN/FR switch as other Prayer readers");
+   await sessionLanguage.click(); // English -> French without resetting the reader
+   await page.locator(rootSel+' [data-p435930-five-wound="4"]').click();
+   assert.equal(await page.locator(rootSel+' .aoFiveWoundsPrayerText').getAttribute("lang"),"fr",
+    "French Five Wounds must use canonical French text, not an English label");
+   assert.equal(await page.locator(rootSel+' .aoFiveWoundsProgress').getAttribute("aria-valuenow"),"25");
+   assert.ok((await page.locator(rootSel+' .aoFiveWoundsRail button small').allTextContents()).some(x=>x.length>3));
+   await page.screenshot({path:resolve(out,"five-wounds-french-"+width+".png"),animations:"disabled"});
+   const fiveFr=await fiveMetrics();
+   assert.ok(fiveFr.labelFonts.every(x=>x>=12)&&fiveFr.overflow<=1,
+    "French wound labels must also be >=12px and not overflow the phone");
+   await sessionLanguage.click(); // French -> English, still the same chaplet step
+   assert.equal(await page.locator(rootSel+' .aoFiveWoundsPrayerText').getAttribute("lang"),"en");
+   assert.equal(await page.locator(rootSel+' .aoFiveWoundsProgress').getAttribute("aria-valuenow"),"25",
+    "In-session language switching must never restart the 30-prayer chaplet");
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
    await page.locator(rootSel+' [data-p435930-family="chaplets"]').click();
    // Full Raccolta 33-Pater chaplet is one extra guided choice, not the held short form.
