@@ -1,0 +1,464 @@
+{
+  "schema": "AO_CUSTOMS_SIX_RELEASE_CANDIDATE_V1",
+  "date": "2026-10-26",
+  "source_branch": "feature/customs-r18-first-six-calendar-staging-20261026",
+  "main_current": 35,
+  "if_approved_total": 41,
+  "reserved_other_open_branch_ids": [
+    "EPIP-003",
+    "CRIB-001"
+  ],
+  "release_record_status": "BLOCKED_PENDING_AUTHORISATIONS",
+  "policy": {
+    "exact_region_only": true,
+    "existing_calendar_only": true,
+    "global_browse_with_scope": true,
+    "no_inferred_future_event": true
+  },
+  "rows": [
+    {
+      "proposed_id": "PATR-002",
+      "working_master_id": "CANDIDATE-STPATRICK-RIBBON",
+      "title_en": "St Patrick's ribbon cross",
+      "title_fr": "La croix de rubans de saint Patrick",
+      "article": {
+        "title": {
+          "en": "St Patrick's ribbon cross",
+          "fr": "La croix de rubans de saint Patrick"
+        },
+        "description": {
+          "en": "Historically, Irish people wore homemade silk, paper or ribbon crosses on St Patrick's Day to honour the saint; the older practice later declined.",
+          "fr": "Autrefois, des Irlandais portaient à la Saint-Patrick des croix faites de soie, de papier ou de rubans pour honorer le saint ; cette pratique ancienne a ensuite décliné."
+        },
+        "history": {
+          "en": "Galway City Museum recounts Thomas Dineley’s report from the 1680s and later children’s ribbon-and-card badges. Folklore recorded in the late 1930s describes the usage mainly in the past tense; continuity cannot be assumed.",
+          "fr": "Le Galway City Museum rapporte le témoignage de Thomas Dineley dans les années 1680 et décrit les insignes en carton et rubans portés ensuite par les enfants. Les collectes folkloriques de la fin des années 1930 présentent l’usage surtout au passé ; on ne peut présumer sa continuité."
+        },
+        "meaning": {
+          "en": "A decorative cross honours the saint and recalls Christian faith.",
+          "fr": "La croix décorative honore le saint et rappelle la foi chrétienne."
+        },
+        "practice": {
+          "en": "Families made badges for children to wear on the feast, with varied colours and forms.",
+          "fr": "Les familles confectionnaient des insignes que les enfants portaient le jour de la fête, selon des formes et couleurs diverses."
+        },
+        "caution": {
+          "en": "No obligatory design, sacramental status or automatic exemption from Lenten discipline is implied.",
+          "fr": "Aucun motif obligatoire, statut de sacramental ou dispense automatique des règles du Carême n'est sous-entendu."
+        },
+        "occasion": {
+          "en": "17 March",
+          "fr": "Le 17 mars, jour de la Saint-Patrick."
+        },
+        "scope": {
+          "en": "Historical Irish household practice, with regional forms; continuity today is not established.",
+          "fr": "Usage domestique irlandais historique, avec des formes régionales ; la continuité actuelle n'est pas établie."
+        }
+      },
+      "sources": [
+        {
+          "id": "NMI-STPATRICK-CROSSES",
+          "title": "National Museum of Ireland",
+          "url": "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/St-Patrick"
+        },
+        {
+          "id": "GALWAY-CROSSES-REVIVAL",
+          "title": "Galway City Museum",
+          "url": "https://galwaycitymuseum.ie/blog/1-reviving-an-old-tradition-st-patricks-crosses/"
+        }
+      ],
+      "source_review": {
+        "principal_source": "https://galwaycitymuseum.ie/blog/1-reviving-an-old-tradition-st-patricks-crosses/",
+        "recheck": "PRIMARY_INSTITUTIONAL_NARROW_CLAIM_CONFIRMED",
+        "source_independence_fully_certified": false
+      },
+      "region_interest": "IE",
+      "dates": [
+        "03-17"
+      ],
+      "role": "HOUSEHOLD_OR_HISTORICAL_CULTURAL_NOT_MASS_RITE",
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "publication_allowed": false
+    },
+    {
+      "proposed_id": "XMAS-002",
+      "working_master_id": "CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "title_en": "The Irish Christmas candle",
+      "title_fr": "La bougie de Noël dans les foyers irlandais",
+      "article": {
+        "title": {
+          "en": "The Irish Christmas candle",
+          "fr": "La bougie de Noël dans les foyers irlandais"
+        },
+        "description": {
+          "en": "Irish folklore records Christmas-night candles placed on tables or by windows, associated with welcoming the Holy Family or remembering the departed.",
+          "fr": "Le folklore irlandais évoque des bougies de la nuit de Noël placées sur les tables ou près des fenêtres, associées à l’accueil de la Sainte Famille ou au souvenir des défunts."
+        },
+        "history": {
+          "en": "The National Museum of Ireland cites an Annascaul, County Kerry, account from 1941 describing a Christmas-night table candle and a folk belief about the Blessed Virgin passing by. Other recollections connect candles with deceased relatives. These are recorded beliefs, not guaranteed supernatural effects.",
+          "fr": "Le National Museum of Ireland cite un témoignage de 1941 recueilli à Annascaul, dans le comté de Kerry, décrivant une bougie sur la table durant la nuit de Noël et une croyance populaire liée au passage de la Sainte Vierge. D’autres souvenirs rattachent les bougies aux proches défunts. Il s’agit de croyances rapportées, sans effet surnaturel garanti."
+        },
+        "meaning": {
+          "en": "A light can accompany welcome for Christ and remembrance of loved ones.",
+          "fr": "Une lumière peut accompagner l'accueil du Christ et le souvenir des proches."
+        },
+        "practice": {
+          "en": "Where a household wishes to adopt the custom, use a safe electric candle by a window or on the table during Christmas prayer; no universal duration is prescribed.",
+          "fr": "Une famille souhaitant reprendre cet usage peut placer une bougie électrique à la fenêtre ou sur la table pendant la prière de Noël ; aucune durée universelle n’est prescrite."
+        },
+        "caution": {
+          "en": "Use an electric candle where appropriate. Historical beliefs about returning spirits or guaranteed favours are not taught as Catholic doctrine.",
+          "fr": "Préférer une bougie électrique si nécessaire. Les croyances historiques sur le retour des esprits ou les faveurs garanties ne sont pas enseignées comme doctrine catholique."
+        },
+        "occasion": {
+          "en": "24–25 December; local duration varies",
+          "fr": "La veille et la nuit de Noël, selon des horaires familiaux variables."
+        },
+        "scope": {
+          "en": "Irish Christmas household tradition with locality-dependent testimony; not a national obligation.",
+          "fr": "Tradition domestique irlandaise de Noël attestée selon les régions ; sans obligation nationale."
+        }
+      },
+      "sources": [
+        {
+          "id": "DUCHAS-ADARE-0506-062",
+          "title": "National Folklore Collection, UCD / Dúchas",
+          "url": "https://www.duchas.ie/en/cbes/4922029/4920129/4948861"
+        },
+        {
+          "id": "NMI-CHRISTMAS-REMEMBRANCE",
+          "title": "National Museum of Ireland; Clodagh Doyle, Irish Folklife Division",
+          "url": "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/Generations-past-how-Christmas-was-celebrated-in-y"
+        },
+        {
+          "id": "R18-ADDITIONAL-EVIDENCE-02",
+          "title": "Dúchas Schools' Collection — Graine school (Kilkenny), M. Delahunty (Tipperary)",
+          "url": "https://www.duchas.ie/en/cbes/4758582/4756445/4934128"
+        }
+      ],
+      "source_review": {
+        "principal_source": "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/Generations-past-how-Christmas-was-celebrated-in-y",
+        "recheck": "NATIONAL_MUSEUM_DIRECT_WITH_ARCHIVAL_DUCHAS_REOPEN_BLOCKED",
+        "source_independence_fully_certified": false,
+        "archival_source_url": "https://www.duchas.ie/en/cbes/4758582/4756445/4934128",
+        "archival_reopen_state": "CHALLENGE_PAGE_ON_2026_10_26_NOT_CURRENTLY_INSPECTABLE",
+        "archival_previous_metadata_state": "PRESERVED_AS_PREVIOUSLY_RESEARCHED_NOT_REVERIFIED_THIS_PASS",
+        "primary_reason": "NMI original museum article is accessible and directly quotes the 1941 Annascaul original folklore witness; Dúchas record retained as a distinct provenance lead with present access caveat."
+      },
+      "region_interest": "IE",
+      "dates": [
+        "12-24",
+        "12-25"
+      ],
+      "role": "HOUSEHOLD_OR_HISTORICAL_CULTURAL_NOT_MASS_RITE",
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "publication_allowed": false
+    },
+    {
+      "proposed_id": "XMAS-003",
+      "working_master_id": "CUST-XMAS-POLISH-HAY",
+      "title_en": "Christmas Eve hay beneath the tablecloth",
+      "title_fr": "Foin sous la nappe de la veille de Noël",
+      "article": {
+        "title": {
+          "en": "Christmas Eve hay beneath the tablecloth",
+          "fr": "Foin sous la nappe de la veille de Noël"
+        },
+        "description": {
+          "en": "In Polish households observing Wigilia, hay placed beneath the white Christmas Eve tablecloth recalls Christ's humility and birth in a stable.",
+          "fr": "Dans les foyers polonais célébrant la Wigilia, le foin placé sous la nappe blanche du soir de Noël rappelle l’humilité du Christ et sa naissance dans une étable."
+        },
+        "history": {
+          "en": "Poland’s Ministry of Culture identifies this custom as part of Wigilia, the Christmas Eve family meal, alongside other distinct customs such as sharing opłatek and leaving an extra table setting.",
+          "fr": "Le ministère polonais de la Culture décrit cet usage dans le repas familial de la Wigilia, à côté d’autres coutumes distinctes comme le partage de l’opłatek et l’assiette réservée à un invité."
+        },
+        "meaning": {
+          "en": "The hay recalls the poverty and humility of Christ's Nativity and invites grateful remembrance of the manger.",
+          "fr": "Le foin rappelle la pauvreté et l’humilité de la Nativité du Christ et invite à se souvenir avec reconnaissance de la crèche."
+        },
+        "practice": {
+          "en": "A little clean hay may be placed beneath the Christmas Eve tablecloth where this is customary; do not interpret straw lengths as predictions.",
+          "fr": "Mettre un peu de foin propre sous la nappe de Noël selon l’usage local, sans tirer de présages des brins."
+        },
+        "caution": {
+          "en": "This voluntary Christmas Eve table custom is not the Advent manger-straw practice, a priestly blessing or a way to predict the future.",
+          "fr": "Cette coutume facultative de la veille de Noël se distingue de la paille ajoutée à la crèche de l’Avent ; elle ne constitue ni une bénédiction sacerdotale ni un moyen de prédire l’avenir."
+        },
+        "occasion": {
+          "en": "24 December, Christmas Eve in Polish households",
+          "fr": "24 décembre — veille de Noël (coutume domestique polonaise)"
+        },
+        "scope": {
+          "en": "Polish Christmas Eve family custom; optional and regionally variable.",
+          "fr": "Coutume familiale polonaise du réveillon de Noël ; facultative et variable selon les régions."
+        }
+      },
+      "sources": [
+        {
+          "id": "PL-MINISTRY-WIGILIA",
+          "title": "Polish Ministry of Culture",
+          "url": "https://www.gov.pl/web/kultura/nowy-wpis-na-krajowej-liscie-niematerialnego-dziedzictwa-kulturowego"
+        },
+        {
+          "id": "PL-FORESTRY-WIGILIA",
+          "title": "Polish State Forests",
+          "url": "https://www.lasy.gov.pl/pl/informacje/aktualnosci/podlazniczka-i-diduch-czyli-tradycje-i-swiateczne-zwyczaje"
+        }
+      ],
+      "source_review": {
+        "principal_source": "https://www.gov.pl/web/kultura/nowy-wpis-na-krajowej-liscie-niematerialnego-dziedzictwa-kulturowego",
+        "recheck": "PRIMARY_INSTITUTIONAL_NARROW_CLAIM_CONFIRMED",
+        "source_independence_fully_certified": false
+      },
+      "region_interest": "PL",
+      "dates": [
+        "12-24"
+      ],
+      "role": "HOUSEHOLD_OR_HISTORICAL_CULTURAL_NOT_MASS_RITE",
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "publication_allowed": false
+    },
+    {
+      "proposed_id": "SBAR-001",
+      "working_master_id": "CUST-BARBARA-BRANCHES",
+      "title_en": "St Barbara branches — Barbarazweige",
+      "title_fr": "Rameaux de sainte Barbe — Barbarazweige",
+      "article": {
+        "title": {
+          "en": "St Barbara branches — Barbarazweige",
+          "fr": "Rameaux de sainte Barbe — Barbarazweige"
+        },
+        "description": {
+          "en": "On 4 December, some Central European households put cherry or apple branches in water, hoping for blossoms around Christmas.",
+          "fr": "Le 4 décembre, certains foyers d’Europe centrale mettent des rameaux de cerisier ou de pommier dans l’eau, dans l’espoir qu’ils fleurissent vers Noël."
+        },
+        "history": {
+          "en": "The Archdiocese of Vienna describes this household custom and a later legend about St Barbara’s imprisonment. It also notes that her precise historical existence is uncertain; the practice does not establish the story as fact.",
+          "fr": "L’archidiocèse de Vienne décrit cet usage familial et une légende tardive relative à l’emprisonnement de sainte Barbe. Il souligne aussi l’incertitude de son existence historique ; la coutume ne suffit pas à établir la légende comme un fait."
+        },
+        "meaning": {
+          "en": "A winter sign of hope and patient preparation for Christmas.",
+          "fr": "Un signe d’espérance en hiver et une préparation patiente à Noël."
+        },
+        "practice": {
+          "en": "Place appropriate fruit-tree branches in water, where locally customary; pray for perseverance and hope.",
+          "fr": "Mettre des rameaux adaptés dans l’eau selon l’usage local, et prier pour la persévérance et l’espérance."
+        },
+        "caution": {
+          "en": "Whether a branch blooms is a natural outcome, not a guarantee of future fortune or favour.",
+          "fr": "La floraison est un phénomène naturel, non une garantie de bonheur ou de faveur future."
+        },
+        "occasion": {
+          "en": "4 December, traditional St Barbara household observance; not a Mass rite",
+          "fr": "4 décembre — coutume domestique traditionnelle de la Sainte-Barbe, distincte de la messe"
+        },
+        "scope": {
+          "en": "Traditional household custom in Austria and some Central European communities.",
+          "fr": "Coutume domestique traditionnelle en Autriche et dans certaines régions d'Europe centrale."
+        }
+      },
+      "sources": [
+        {
+          "id": "AT-VIENNA-BARBARA",
+          "title": "Archdiocese of Vienna — St Barbara, 4 December",
+          "url": "https://www.erzdioezese-wien.at/heilige-barbara"
+        }
+      ],
+      "source_review": {
+        "principal_source": "https://www.erzdioezese-wien.at/heilige-barbara",
+        "recheck": "PRIMARY_INSTITUTIONAL_NARROW_CLAIM_CONFIRMED",
+        "source_independence_fully_certified": false
+      },
+      "region_interest": "AT",
+      "dates": [
+        "12-04"
+      ],
+      "role": "HOUSEHOLD_OR_HISTORICAL_CULTURAL_NOT_MASS_RITE",
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "publication_allowed": false
+    },
+    {
+      "proposed_id": "XMAS-004",
+      "working_master_id": "CUST-XMAS-PROVENCAL-PAIN-CALENDAL",
+      "title_en": "Provençal Christmas pain calendal and the poor person's portion",
+      "title_fr": "Le pain calendal provençal et la part du pauvre",
+      "article": {
+        "title": {
+          "en": "Provençal Christmas pain calendal and the poor person's portion",
+          "fr": "Le pain calendal provençal et la part du pauvre"
+        },
+        "description": {
+          "en": "The Provençal Christmas Eve Gros Souper traditionally features pain calendal, a round cross-scored loaf divided into portions, including one for the poor.",
+          "fr": "Le gros souper provençal du 24 décembre comprend traditionnellement le pain calendal, une miche ronde incisée d’une croix et partagée en plusieurs parts, dont celle des pauvres."
+        },
+        "history": {
+          "en": "Var regional heritage documentation describes portions of the pain calendal for the poor, for supper and for ‘miracles’ in the reported local folklore. This domestic bread is neither Eucharistic bread nor a universal blessing.",
+          "fr": "La documentation patrimoniale du Var décrit des parts du pain calendal destinées aux pauvres, au souper et aux « miracles » selon le folklore rapporté. Ce pain domestique n’est ni eucharistique ni l’objet d’une bénédiction universelle."
+        },
+        "meaning": {
+          "en": "Generosity, Christian hospitality and remembrance of those in need at Christmas.",
+          "fr": "Générosité, hospitalité chrétienne et attention aux plus démunis à Noël."
+        },
+        "practice": {
+          "en": "Where a family keeps the tradition, share festive bread and make a real charitable offering.",
+          "fr": "Dans une famille qui conserve l’usage, partager le pain de fête et accomplir un geste concret de charité."
+        },
+        "caution": {
+          "en": "Documented as Provençal regional culture; parts associated with miracles or special protection remain folklore, not promises.",
+          "fr": "Coutume provençale locale ; les parts auxquelles on prête des miracles ou une protection particulière relèvent du folklore, non d’une promesse."
+        },
+        "occasion": {
+          "en": "24 December, traditional Provençal Gros Souper; local family observance",
+          "fr": "24 décembre — gros souper provençal"
+        },
+        "scope": {
+          "en": "Provençal Gros Souper household bread custom; not liturgical blessed bread.",
+          "fr": "Coutume du pain du gros souper provençal, distincte d'un pain bénit liturgique."
+        }
+      },
+      "sources": [
+        {
+          "id": "FR-VAR-PAIN-CALENDAL",
+          "title": "Le Var — regional tourism authority",
+          "url": "https://www.visitvar.fr/agenda/evenements-incontournables/noel-provence/traditions-de-noel-provence"
+        },
+        {
+          "id": "FR-PACA-GROS-SOUPER",
+          "title": "Provence-Alpes-Côte d’Azur regional tourism",
+          "url": "https://provence-alpes-cotedazur.com/decouvrir/les-destinations/la-provence/la-veillee-de-noel/"
+        }
+      ],
+      "source_review": {
+        "principal_source": "https://www.visitvar.fr/agenda/evenements-incontournables/noel-provence/traditions-de-noel-provence",
+        "recheck": "PRIMARY_INSTITUTIONAL_NARROW_CLAIM_CONFIRMED",
+        "source_independence_fully_certified": false
+      },
+      "region_interest": "FR-PROVENCE",
+      "dates": [
+        "12-24"
+      ],
+      "role": "HOUSEHOLD_OR_HISTORICAL_CULTURAL_NOT_MASS_RITE",
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "publication_allowed": false
+    },
+    {
+      "proposed_id": "EPIP-004",
+      "working_master_id": "CUST-EPIPHANY-SPANISH-MAGI-GIFTS",
+      "title_en": "Three Kings gifts left in children's shoes",
+      "title_fr": "Les cadeaux des Rois mages dans les chaussures des enfants",
+      "article": {
+        "title": {
+          "en": "Three Kings gifts left in children's shoes",
+          "fr": "Les cadeaux des Rois mages dans les chaussures des enfants"
+        },
+        "description": {
+          "en": "In Spain, children traditionally set out a shoe on the evening of 5 January for gifts associated with the Three Kings at Epiphany.",
+          "fr": "En Espagne, des enfants déposent traditionnellement une chaussure le soir du 5 janvier pour les cadeaux associés aux Rois mages à l’Épiphanie."
+        },
+        "history": {
+          "en": "Spain’s official tourism service documented the shoe custom and parades with actors portraying the Magi in a guide published in 2023 for 2024. The guide does not establish the tradition’s first origin or current local parade dates.",
+          "fr": "L’office du tourisme espagnol a décrit les chaussures et les défilés où des acteurs représentent les Mages dans un guide publié en 2023 pour 2024. Cette source ne prouve ni la date d’origine de l’usage ni les horaires actuels des défilés."
+        },
+        "meaning": {
+          "en": "A family festival associated with the Epiphany story and generosity.",
+          "fr": "Une fête familiale liée au récit de l’Épiphanie et à la générosité."
+        },
+        "practice": {
+          "en": "On the evening of 5 January, a family may set out children's shoes for a customary gift and, separately, read Matthew 2 or pray for generosity.",
+          "fr": "Le soir du 5 janvier, une famille peut déposer les chaussures des enfants pour les cadeaux traditionnels puis, séparément, lire Matthieu 2 ou prier pour grandir dans la générosité."
+        },
+        "caution": {
+          "en": "Not a Roman liturgical rubric or claim that the Magi literally deliver gifts.",
+          "fr": "Ni rubrique de la liturgie romaine, ni affirmation d’une distribution surnaturelle effective par les Mages."
+        },
+        "occasion": {
+          "en": "Evening of 5 January into 6 January; Spanish household custom",
+          "fr": "Soir du 5 au 6 janvier — cadeaux des Rois mages"
+        },
+        "scope": {
+          "en": "Spanish Epiphany family gift custom; not a universal Catholic practice.",
+          "fr": "Coutume espagnole des cadeaux de l'Épiphanie en famille, non universelle dans l'Église."
+        }
+      },
+      "sources": [
+        {
+          "id": "ES-TOURISM-SHOE-KINGS",
+          "title": "Spain's official tourism promotion service",
+          "url": "https://socialnewsroom.spain.info/three-kings-day-in-spain-2024/"
+        },
+        {
+          "id": "ES-TOURISM-MADRID",
+          "title": "Spain's official tourism portal",
+          "url": "https://www.spain.info/en/top/christmas-madrid/"
+        }
+      ],
+      "source_review": {
+        "principal_source": "https://socialnewsroom.spain.info/three-kings-day-in-spain-2024/",
+        "recheck": "PRIMARY_INSTITUTIONAL_NARROW_CLAIM_CONFIRMED",
+        "source_independence_fully_certified": false
+      },
+      "region_interest": "ES",
+      "dates": [
+        "01-05",
+        "01-06"
+      ],
+      "role": "HOUSEHOLD_OR_HISTORICAL_CULTURAL_NOT_MASS_RITE",
+      "signoffs": {
+        "identity": false,
+        "source": false,
+        "english": false,
+        "french": false,
+        "geography": false,
+        "liturgical": false,
+        "calendar": false,
+        "activation": false
+      },
+      "publication_allowed": false
+    }
+  ]
+}

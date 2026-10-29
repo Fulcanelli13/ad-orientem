@@ -1,0 +1,40 @@
+name: Customs R18 six canonical release candidate
+on:
+  pull_request:
+    paths:
+      - 'data/customs/customs-r18-six-canonical-release-candidate.v1.json'
+      - 'data/customs/customs-r18-six-canonical-promotion-payload.v1.json'
+      - 'data/customs/customs-r18-six-identity-comparator-review.v1.json'
+      - 'tools/customs/simulate-r18-six-canonical-release.mjs'
+      - 'docs/CUSTOMS_R18_SIX_FULL_BILINGUAL_EDITORIAL_ACCEPTANCE_20261026.md'
+      - 'tests/customs-r18-six-editorial-dossier-parity.mjs'
+      - 'tests/customs-r18-six-canonical-release-candidate.mjs'
+      - 'data/customs/customs-r18-all18-release-ownership-reconciliation.v1.json'
+      - 'data/customs/customs-r18-eleven-calendar-parent-subtype-structure.v1.json'
+      - 'data/customs/customs-r18-eleven-bilingual-editorial-copy-review.v1.json'
+      - 'data/customs/customs-r18-eleven-source-checked-full-bilingual-article-pack.v1.json'
+      - 'data/customs/customs-r18-eleven-bilingual-qa-amendments.v1.json'
+      - 'data/customs/customs-r18-eleven-editorial-publication-lanes.v1.json'
+      - 'docs/CUSTOMS_R18_ELEVEN_SOURCE_CHECK_AND_FINAL_COPY_20261029.md'
+      - 'tools/customs/simulate-r18-eleven-calendar-context.mjs'
+      - 'docs/CUSTOMS_R18_ALL18_RELEASE_RECONCILIATION_20261029.md'
+      - 'tests/customs-r18-all18-release-ownership-reconciliation.mjs'
+      - '.github/workflows/customs-r18-six-release-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  six-source-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prevent unsigned R18 publication and canonical ID collisions
+        run: |
+          node tests/customs-r18-six-canonical-release-candidate.mjs
+          node tools/customs/simulate-r18-six-canonical-release.mjs
+          node tests/customs-r18-six-editorial-dossier-parity.mjs
+          node tests/customs-r18-all18-release-ownership-reconciliation.mjs
+          node tools/customs/simulate-r18-eleven-calendar-context.mjs
