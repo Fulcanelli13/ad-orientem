@@ -63,7 +63,7 @@ const SOURCE="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium
 const LOCALE={Latin:"la",English:"en",Francais:"fr"};
 function originalSourceFixture(url){
  if(!url.startsWith(SOURCE))throw Error("OFFICE_VISUAL_NON_PINNED_SOURCE_URL");
- const path=url.slice(SOURCE.length);
+ const path=decodeURIComponent(url.slice(SOURCE.length));
  if(path==="Ordinarium/Vespera.txt")return ordinary;
  const m=/^(Latin|English|Francais)\/(.+)\.txt$/u.exec(path);
  if(!m)throw Error("OFFICE_VISUAL_UNKNOWN_SOURCE_URL:"+path);
