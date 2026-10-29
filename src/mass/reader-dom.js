@@ -4564,12 +4564,20 @@ export function createReaderDomAdapter({
                   ?event.displayText:event.shortAction).join(" · ");
             }
             note.append(actions);
-            // In a printed Missal the slight elevation rubric precedes the
-            // doxology text; LIVE retains its existing inline treatment.
-            if(mode==="MISSAL" && shortRubrics.some(event=>
-              event.id==="GM.P.C0204.01"&&
-              event.owner==="CERTIFIED_1962_MATRIX_TEXT_ONLY"))
-              node.prepend(note);
+            // A printed Missal puts these rubrics BEFORE the exact words
+            // they direct: Hanc igitur hands, Institution eyes, and minor
+            // elevation at omnis honor. LIVE keeps source-adjacent guidance.
+            // Guard each by its already-published 1962 ID and source cue;
+            // generic actions and uncited additions never gain precedence.
+            const printedBeforeText=mode==="MISSAL"&&shortRubrics.some(event=>
+              (event.id==="GM.P.C0204.01"&&
+                event.owner==="CERTIFIED_1962_MATRIX_TEXT_ONLY")||
+              (event.sourceId==="MR62_RITUS"&&
+               event.review==="EXISTING_PUBLISHED_R17_1962_RUBRIC"&&
+               event.owner==="PUBLISHED_R17_MISSAL_INLINE"&&
+               (event.id==="AO.RUB.C0161.01"&&event.sourceCueId==="AO.SM.C0161"||
+                event.id==="AO.RUB.C0169.01"&&event.sourceCueId==="AO.SM.C0169")));
+            if(printedBeforeText)node.prepend(note);
             else node.append(note);
           }
           // Existing "long" registry data contains only the SAME short
