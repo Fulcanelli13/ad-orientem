@@ -108,6 +108,9 @@ try{
       missalColor:noteStyle?.color??"",
       missalRubricBeforeText:Boolean(missalContainer&&primary&&
         (missalContainer.compareDocumentPosition(primary)&Node.DOCUMENT_POSITION_FOLLOWING)),
+      missalRubricPhysicallyAbove:Boolean(missalContainer&&primary&&
+        missalContainer.getBoundingClientRect().bottom<=primary.getBoundingClientRect().top+1),
+      sourceGridBefore:row.dataset.missalRubricBefore??null,
       duplicateInline:row.querySelectorAll(".ao-live-inline-rubrics").length,
       actionIconKey:current?.priestActionIconKey??null,
       width:innerWidth,documentWidth:document.documentElement.scrollWidth,
@@ -143,7 +146,11 @@ try{
      assert.equal(snapshot.missalColor,"rgb(223, 126, 128)",
       "Missal C0204 rubric must be red");
      assert.equal(snapshot.missalRubricBeforeText,true,
-      "Missal minor elevation must precede omnis honor et gloria");
+      "Missal minor elevation must precede omnis honor et gloria in DOM");
+     assert.equal(snapshot.sourceGridBefore,"true",
+      "Minor elevation requires physical earlier red rubric grid row");
+     assert.equal(snapshot.missalRubricPhysicallyAbove,true,
+      "Missal minor elevation red rubric is visually below omnis honor et gloria");
     }else{
      assert.match(snapshot.primary,/omnis honor|all honou?r and glory|honneur et (?:toute )?gloire/i,
       "Source doxology text must remain readable in the selected vernacular/Latin mode");
