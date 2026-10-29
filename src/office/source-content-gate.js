@@ -21,8 +21,13 @@ export function officeTranslationContentBlockers({latin,translation}={}){
     latin.date!==translation.date||latin.hour!==translation.hour)
     throw Error("OFFICE_CONTENT_GATE_CONTEXT_OR_PIN_INVALID");
   const blockers=[];
-  if(latin.date==="2026-11-02"&&latin.hour==="PRIME"&&
-    latin.language==="la"&&translation.language==="en"){
+  // This is a concrete Latin/English *text* contradiction, not a special
+  // exemption for a single pilot date. The same pairing can recur in future
+  // years (including when All Souls is transferred from a Sunday).
+  // Restrict the gate to the attested Prime Prima5 pairing and the exact
+  // beneficiary phrases: never infer that an unrelated collect is wrong.
+  if(latin.hour==="PRIME"&&latin.language==="la"&&
+    translation.language==="en"){
     const l=find(latin,"Prima5"),e=find(translation,"Prima5");
     if(!l||!e)throw Error("OFFICE_CONTENT_GATE_PRIMA5_MISSING");
     const L=normalized(l.text),E=normalized(e.text);
