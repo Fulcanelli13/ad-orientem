@@ -1,0 +1,28 @@
+name: P77 21 approved Place WebP binary and UI integration
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'assets/approved/place-gallery/p77-*.webp'
+      - 'data/geography/approved-place-gallery.v1.json'
+      - 'data/geography/research/p77-approved-exterior-gallery-manifest.v1.json'
+      - 'src/find/place-profiles.js'
+      - 'tests/explore-r69-multi-place-gallery.mjs'
+      - 'tests/explore-p77-reviewed-place-photos.mjs'
+      - '.github/workflows/p77-approved-place-webps.yml'
+permissions:
+  contents: read
+jobs:
+  exact-original-place-photo-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check actual 21 committed binaries, exact role/rights and source proofs
+        run: |
+          node tests/explore-p77-reviewed-place-photos.mjs
+          node tests/explore-r69-multi-place-gallery.mjs
+          node tests/sacred-places-p62-reuse-and-subject-gallery.mjs
