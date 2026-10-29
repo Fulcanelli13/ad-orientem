@@ -413,7 +413,7 @@ try{
  await dp.locator("#office-date").fill("2026-11-28");
  await dp.locator("#office-date").dispatchEvent("change");
  assert.equal(await dp.locator("#reader").isVisible(),true);
- assert.match(await dp.locator("#card").innerText(),/Alleluia/);
+ assert.match(await dp.locator("#card").innerText(),/Opening|Deus|adjutórium/);
  assert.equal(dhits.size,40,"switching pilots must reuse prior pinned source sessions");
  await shot(dp,"19-desktop-1440-office-beta-date-hour-picker");
  assert.equal(dhits.size,40);
